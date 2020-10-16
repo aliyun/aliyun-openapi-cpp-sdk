@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_CREATESERVERLESSCLUSTERRESULT_H_
-#define ALIBABACLOUD_HBASE_MODEL_CREATESERVERLESSCLUSTERRESULT_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_DELETESERVERLESSCLUSTERRESULT_H_
+#define ALIBABACLOUD_HBASE_MODEL_DELETESERVERLESSCLUSTERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT CreateServerlessClusterResult : public ServiceResult
+			class ALIBABACLOUD_HBASE_EXPORT DeleteServerlessClusterResult : public ServiceResult
 			{
 			public:
 
 
-				CreateServerlessClusterResult();
-				explicit CreateServerlessClusterResult(const std::string &payload);
-				~CreateServerlessClusterResult();
-				std::string getClusterId()const;
-				std::string getOrderId()const;
-				std::string getPassWord()const;
+				DeleteServerlessClusterResult();
+				explicit DeleteServerlessClusterResult(const std::string &payload);
+				~DeleteServerlessClusterResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string clusterId_;
-				std::string orderId_;
-				std::string passWord_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_CREATESERVERLESSCLUSTERRESULT_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_DELETESERVERLESSCLUSTERRESULT_H_

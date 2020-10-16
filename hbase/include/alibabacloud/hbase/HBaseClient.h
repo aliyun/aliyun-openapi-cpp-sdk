@@ -46,6 +46,8 @@
 #include "model/DeleteInstanceResult.h"
 #include "model/DeleteMultiZoneClusterRequest.h"
 #include "model/DeleteMultiZoneClusterResult.h"
+#include "model/DeleteServerlessClusterRequest.h"
+#include "model/DeleteServerlessClusterResult.h"
 #include "model/DeleteUserHdfsInfoRequest.h"
 #include "model/DeleteUserHdfsInfoResult.h"
 #include "model/DescribeAvailableResourceRequest.h"
@@ -193,6 +195,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteMultiZoneClusterResult> DeleteMultiZoneClusterOutcome;
 			typedef std::future<DeleteMultiZoneClusterOutcome> DeleteMultiZoneClusterOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DeleteMultiZoneClusterRequest&, const DeleteMultiZoneClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMultiZoneClusterAsyncHandler;
+			typedef Outcome<Error, Model::DeleteServerlessClusterResult> DeleteServerlessClusterOutcome;
+			typedef std::future<DeleteServerlessClusterOutcome> DeleteServerlessClusterOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DeleteServerlessClusterRequest&, const DeleteServerlessClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessClusterAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserHdfsInfoResult> DeleteUserHdfsInfoOutcome;
 			typedef std::future<DeleteUserHdfsInfoOutcome> DeleteUserHdfsInfoOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DeleteUserHdfsInfoRequest&, const DeleteUserHdfsInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserHdfsInfoAsyncHandler;
@@ -387,6 +392,9 @@ namespace AlibabaCloud
 			DeleteMultiZoneClusterOutcome deleteMultiZoneCluster(const Model::DeleteMultiZoneClusterRequest &request)const;
 			void deleteMultiZoneClusterAsync(const Model::DeleteMultiZoneClusterRequest& request, const DeleteMultiZoneClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMultiZoneClusterOutcomeCallable deleteMultiZoneClusterCallable(const Model::DeleteMultiZoneClusterRequest& request) const;
+			DeleteServerlessClusterOutcome deleteServerlessCluster(const Model::DeleteServerlessClusterRequest &request)const;
+			void deleteServerlessClusterAsync(const Model::DeleteServerlessClusterRequest& request, const DeleteServerlessClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteServerlessClusterOutcomeCallable deleteServerlessClusterCallable(const Model::DeleteServerlessClusterRequest& request) const;
 			DeleteUserHdfsInfoOutcome deleteUserHdfsInfo(const Model::DeleteUserHdfsInfoRequest &request)const;
 			void deleteUserHdfsInfoAsync(const Model::DeleteUserHdfsInfoRequest& request, const DeleteUserHdfsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserHdfsInfoOutcomeCallable deleteUserHdfsInfoCallable(const Model::DeleteUserHdfsInfoRequest& request) const;

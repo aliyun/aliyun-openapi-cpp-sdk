@@ -14,52 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/hbase/model/CreateServerlessClusterResult.h>
+#include <alibabacloud/hbase/model/DeleteServerlessClusterResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::HBase;
 using namespace AlibabaCloud::HBase::Model;
 
-CreateServerlessClusterResult::CreateServerlessClusterResult() :
+DeleteServerlessClusterResult::DeleteServerlessClusterResult() :
 	ServiceResult()
 {}
 
-CreateServerlessClusterResult::CreateServerlessClusterResult(const std::string &payload) :
+DeleteServerlessClusterResult::DeleteServerlessClusterResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateServerlessClusterResult::~CreateServerlessClusterResult()
+DeleteServerlessClusterResult::~DeleteServerlessClusterResult()
 {}
 
-void CreateServerlessClusterResult::parse(const std::string &payload)
+void DeleteServerlessClusterResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ClusterId"].isNull())
-		clusterId_ = value["ClusterId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
-	if(!value["PassWord"].isNull())
-		passWord_ = value["PassWord"].asString();
 
-}
-
-std::string CreateServerlessClusterResult::getClusterId()const
-{
-	return clusterId_;
-}
-
-std::string CreateServerlessClusterResult::getOrderId()const
-{
-	return orderId_;
-}
-
-std::string CreateServerlessClusterResult::getPassWord()const
-{
-	return passWord_;
 }
 

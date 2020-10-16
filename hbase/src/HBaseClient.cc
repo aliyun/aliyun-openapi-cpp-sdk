@@ -483,6 +483,42 @@ HBaseClient::DeleteMultiZoneClusterOutcomeCallable HBaseClient::deleteMultiZoneC
 	return task->get_future();
 }
 
+HBaseClient::DeleteServerlessClusterOutcome HBaseClient::deleteServerlessCluster(const DeleteServerlessClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteServerlessClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteServerlessClusterOutcome(DeleteServerlessClusterResult(outcome.result()));
+	else
+		return DeleteServerlessClusterOutcome(outcome.error());
+}
+
+void HBaseClient::deleteServerlessClusterAsync(const DeleteServerlessClusterRequest& request, const DeleteServerlessClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteServerlessCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DeleteServerlessClusterOutcomeCallable HBaseClient::deleteServerlessClusterCallable(const DeleteServerlessClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteServerlessClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteServerlessCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DeleteUserHdfsInfoOutcome HBaseClient::deleteUserHdfsInfo(const DeleteUserHdfsInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

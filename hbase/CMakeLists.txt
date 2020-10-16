@@ -45,6 +45,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DeleteInstanceResult.h
 	include/alibabacloud/hbase/model/DeleteMultiZoneClusterRequest.h
 	include/alibabacloud/hbase/model/DeleteMultiZoneClusterResult.h
+	include/alibabacloud/hbase/model/DeleteServerlessClusterRequest.h
+	include/alibabacloud/hbase/model/DeleteServerlessClusterResult.h
 	include/alibabacloud/hbase/model/DeleteUserHdfsInfoRequest.h
 	include/alibabacloud/hbase/model/DeleteUserHdfsInfoResult.h
 	include/alibabacloud/hbase/model/DescribeAvailableResourceRequest.h
@@ -174,6 +176,8 @@ set(hbase_src
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteMultiZoneClusterRequest.cc
 	src/model/DeleteMultiZoneClusterResult.cc
+	src/model/DeleteServerlessClusterRequest.cc
+	src/model/DeleteServerlessClusterResult.cc
 	src/model/DeleteUserHdfsInfoRequest.cc
 	src/model/DeleteUserHdfsInfoResult.cc
 	src/model/DescribeAvailableResourceRequest.cc

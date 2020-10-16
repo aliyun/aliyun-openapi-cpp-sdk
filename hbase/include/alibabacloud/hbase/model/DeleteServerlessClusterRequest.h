@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_CREATESERVERLESSCLUSTERRESULT_H_
-#define ALIBABACLOUD_HBASE_MODEL_CREATESERVERLESSCLUSTERRESULT_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_DELETESERVERLESSCLUSTERREQUEST_H_
+#define ALIBABACLOUD_HBASE_MODEL_DELETESERVERLESSCLUSTERREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/hbase/HBaseExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT CreateServerlessClusterResult : public ServiceResult
+			class ALIBABACLOUD_HBASE_EXPORT DeleteServerlessClusterRequest : public RpcServiceRequest
 			{
+
 			public:
+				DeleteServerlessClusterRequest();
+				~DeleteServerlessClusterRequest();
 
-
-				CreateServerlessClusterResult();
-				explicit CreateServerlessClusterResult(const std::string &payload);
-				~CreateServerlessClusterResult();
 				std::string getClusterId()const;
-				std::string getOrderId()const;
-				std::string getPassWord()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
+            private:
 				std::string clusterId_;
-				std::string orderId_;
-				std::string passWord_;
+				std::string regionId_;
+				std::string zoneId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_CREATESERVERLESSCLUSTERRESULT_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_DELETESERVERLESSCLUSTERREQUEST_H_
