@@ -129,6 +129,9 @@ RoaServiceClient::buildHttpRequest(const std::string &endpoint,
                       ComputeContentMD5(msg.content(), msg.contentSize()));
     request.setBody(msg.content(), msg.contentSize());
   } else {
+    if (msg.parameter("Content-Type").empty()) {
+      request.setHeader("Content-Type", "application/x-www-form-urlencoded");
+    }
     request.setHeader("Content-MD5",
                       ComputeContentMD5(msg.content(), msg.contentSize()));
   }
