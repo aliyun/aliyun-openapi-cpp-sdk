@@ -279,6 +279,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeTagResourcesResult.h
 	include/alibabacloud/cdn/model/DescribeTopDomainsByFlowRequest.h
 	include/alibabacloud/cdn/model/DescribeTopDomainsByFlowResult.h
+	include/alibabacloud/cdn/model/DescribeUserCertificateExpireCountRequest.h
+	include/alibabacloud/cdn/model/DescribeUserCertificateExpireCountResult.h
 	include/alibabacloud/cdn/model/DescribeUserConfigsRequest.h
 	include/alibabacloud/cdn/model/DescribeUserConfigsResult.h
 	include/alibabacloud/cdn/model/DescribeUserCustomLogConfigRequest.h
@@ -678,6 +680,8 @@ set(cdn_src
 	src/model/DescribeTagResourcesResult.cc
 	src/model/DescribeTopDomainsByFlowRequest.cc
 	src/model/DescribeTopDomainsByFlowResult.cc
+	src/model/DescribeUserCertificateExpireCountRequest.cc
+	src/model/DescribeUserCertificateExpireCountResult.cc
 	src/model/DescribeUserConfigsRequest.cc
 	src/model/DescribeUserConfigsResult.cc
 	src/model/DescribeUserCustomLogConfigRequest.cc

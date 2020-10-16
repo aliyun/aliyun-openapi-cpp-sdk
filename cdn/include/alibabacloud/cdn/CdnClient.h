@@ -280,6 +280,8 @@
 #include "model/DescribeTagResourcesResult.h"
 #include "model/DescribeTopDomainsByFlowRequest.h"
 #include "model/DescribeTopDomainsByFlowResult.h"
+#include "model/DescribeUserCertificateExpireCountRequest.h"
+#include "model/DescribeUserCertificateExpireCountResult.h"
 #include "model/DescribeUserConfigsRequest.h"
 #include "model/DescribeUserConfigsResult.h"
 #include "model/DescribeUserCustomLogConfigRequest.h"
@@ -814,6 +816,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTopDomainsByFlowResult> DescribeTopDomainsByFlowOutcome;
 			typedef std::future<DescribeTopDomainsByFlowOutcome> DescribeTopDomainsByFlowOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeTopDomainsByFlowRequest&, const DescribeTopDomainsByFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopDomainsByFlowAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserCertificateExpireCountResult> DescribeUserCertificateExpireCountOutcome;
+			typedef std::future<DescribeUserCertificateExpireCountOutcome> DescribeUserCertificateExpireCountOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeUserCertificateExpireCountRequest&, const DescribeUserCertificateExpireCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCertificateExpireCountAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserConfigsResult> DescribeUserConfigsOutcome;
 			typedef std::future<DescribeUserConfigsOutcome> DescribeUserConfigsOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeUserConfigsRequest&, const DescribeUserConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserConfigsAsyncHandler;
@@ -1413,6 +1418,9 @@ namespace AlibabaCloud
 			DescribeTopDomainsByFlowOutcome describeTopDomainsByFlow(const Model::DescribeTopDomainsByFlowRequest &request)const;
 			void describeTopDomainsByFlowAsync(const Model::DescribeTopDomainsByFlowRequest& request, const DescribeTopDomainsByFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTopDomainsByFlowOutcomeCallable describeTopDomainsByFlowCallable(const Model::DescribeTopDomainsByFlowRequest& request) const;
+			DescribeUserCertificateExpireCountOutcome describeUserCertificateExpireCount(const Model::DescribeUserCertificateExpireCountRequest &request)const;
+			void describeUserCertificateExpireCountAsync(const Model::DescribeUserCertificateExpireCountRequest& request, const DescribeUserCertificateExpireCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserCertificateExpireCountOutcomeCallable describeUserCertificateExpireCountCallable(const Model::DescribeUserCertificateExpireCountRequest& request) const;
 			DescribeUserConfigsOutcome describeUserConfigs(const Model::DescribeUserConfigsRequest &request)const;
 			void describeUserConfigsAsync(const Model::DescribeUserConfigsRequest& request, const DescribeUserConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserConfigsOutcomeCallable describeUserConfigsCallable(const Model::DescribeUserConfigsRequest& request) const;

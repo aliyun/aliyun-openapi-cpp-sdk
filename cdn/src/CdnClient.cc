@@ -4695,6 +4695,42 @@ CdnClient::DescribeTopDomainsByFlowOutcomeCallable CdnClient::describeTopDomains
 	return task->get_future();
 }
 
+CdnClient::DescribeUserCertificateExpireCountOutcome CdnClient::describeUserCertificateExpireCount(const DescribeUserCertificateExpireCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserCertificateExpireCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserCertificateExpireCountOutcome(DescribeUserCertificateExpireCountResult(outcome.result()));
+	else
+		return DescribeUserCertificateExpireCountOutcome(outcome.error());
+}
+
+void CdnClient::describeUserCertificateExpireCountAsync(const DescribeUserCertificateExpireCountRequest& request, const DescribeUserCertificateExpireCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserCertificateExpireCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeUserCertificateExpireCountOutcomeCallable CdnClient::describeUserCertificateExpireCountCallable(const DescribeUserCertificateExpireCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserCertificateExpireCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserCertificateExpireCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeUserConfigsOutcome CdnClient::describeUserConfigs(const DescribeUserConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
