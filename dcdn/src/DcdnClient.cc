@@ -375,6 +375,42 @@ DcdnClient::BatchStopDcdnDomainOutcomeCallable DcdnClient::batchStopDcdnDomainCa
 	return task->get_future();
 }
 
+DcdnClient::CreateDcdnCertificateSigningRequestOutcome DcdnClient::createDcdnCertificateSigningRequest(const CreateDcdnCertificateSigningRequestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDcdnCertificateSigningRequestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDcdnCertificateSigningRequestOutcome(CreateDcdnCertificateSigningRequestResult(outcome.result()));
+	else
+		return CreateDcdnCertificateSigningRequestOutcome(outcome.error());
+}
+
+void DcdnClient::createDcdnCertificateSigningRequestAsync(const CreateDcdnCertificateSigningRequestRequest& request, const CreateDcdnCertificateSigningRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDcdnCertificateSigningRequest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::CreateDcdnCertificateSigningRequestOutcomeCallable DcdnClient::createDcdnCertificateSigningRequestCallable(const CreateDcdnCertificateSigningRequestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDcdnCertificateSigningRequestOutcome()>>(
+			[this, request]()
+			{
+			return this->createDcdnCertificateSigningRequest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DeleteDcdnDomainOutcome DcdnClient::deleteDcdnDomain(const DeleteDcdnDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2607,6 +2643,42 @@ DcdnClient::DescribeDcdnUserTagsOutcomeCallable DcdnClient::describeDcdnUserTags
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnVerifyContentOutcome DcdnClient::describeDcdnVerifyContent(const DescribeDcdnVerifyContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnVerifyContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnVerifyContentOutcome(DescribeDcdnVerifyContentResult(outcome.result()));
+	else
+		return DescribeDcdnVerifyContentOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnVerifyContentAsync(const DescribeDcdnVerifyContentRequest& request, const DescribeDcdnVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnVerifyContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnVerifyContentOutcomeCallable DcdnClient::describeDcdnVerifyContentCallable(const DescribeDcdnVerifyContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnVerifyContentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnVerifyContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeUserDcdnIpaStatusOutcome DcdnClient::describeUserDcdnIpaStatus(const DescribeUserDcdnIpaStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2889,6 +2961,42 @@ DcdnClient::SetDcdnConfigOfVersionOutcomeCallable DcdnClient::setDcdnConfigOfVer
 			[this, request]()
 			{
 			return this->setDcdnConfigOfVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::SetDcdnDomainCSRCertificateOutcome DcdnClient::setDcdnDomainCSRCertificate(const SetDcdnDomainCSRCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDcdnDomainCSRCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDcdnDomainCSRCertificateOutcome(SetDcdnDomainCSRCertificateResult(outcome.result()));
+	else
+		return SetDcdnDomainCSRCertificateOutcome(outcome.error());
+}
+
+void DcdnClient::setDcdnDomainCSRCertificateAsync(const SetDcdnDomainCSRCertificateRequest& request, const SetDcdnDomainCSRCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDcdnDomainCSRCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::SetDcdnDomainCSRCertificateOutcomeCallable DcdnClient::setDcdnDomainCSRCertificateCallable(const SetDcdnDomainCSRCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDcdnDomainCSRCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->setDcdnDomainCSRCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3249,6 +3357,42 @@ DcdnClient::UpdateDcdnIpaDomainOutcomeCallable DcdnClient::updateDcdnIpaDomainCa
 			[this, request]()
 			{
 			return this->updateDcdnIpaDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::VerifyDcdnDomainOwnerOutcome DcdnClient::verifyDcdnDomainOwner(const VerifyDcdnDomainOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyDcdnDomainOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyDcdnDomainOwnerOutcome(VerifyDcdnDomainOwnerResult(outcome.result()));
+	else
+		return VerifyDcdnDomainOwnerOutcome(outcome.error());
+}
+
+void DcdnClient::verifyDcdnDomainOwnerAsync(const VerifyDcdnDomainOwnerRequest& request, const VerifyDcdnDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyDcdnDomainOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::VerifyDcdnDomainOwnerOutcomeCallable DcdnClient::verifyDcdnDomainOwnerCallable(const VerifyDcdnDomainOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyDcdnDomainOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyDcdnDomainOwner(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

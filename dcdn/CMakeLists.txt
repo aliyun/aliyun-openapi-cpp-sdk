@@ -39,6 +39,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/BatchStartDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/BatchStopDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/BatchStopDcdnDomainResult.h
+	include/alibabacloud/dcdn/model/CreateDcdnCertificateSigningRequestRequest.h
+	include/alibabacloud/dcdn/model/CreateDcdnCertificateSigningRequestResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnIpaDomainRequest.h
@@ -163,6 +165,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnUserResourcePackageResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserTagsRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserTagsResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnVerifyContentRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnVerifyContentResult.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnIpaStatusRequest.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnIpaStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnStatusRequest.h
@@ -179,6 +183,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/RollbackDcdnStagingConfigResult.h
 	include/alibabacloud/dcdn/model/SetDcdnConfigOfVersionRequest.h
 	include/alibabacloud/dcdn/model/SetDcdnConfigOfVersionResult.h
+	include/alibabacloud/dcdn/model/SetDcdnDomainCSRCertificateRequest.h
+	include/alibabacloud/dcdn/model/SetDcdnDomainCSRCertificateResult.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateRequest.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainCertificateResult.h
 	include/alibabacloud/dcdn/model/SetDcdnDomainStagingConfigRequest.h
@@ -198,7 +204,9 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/UpdateDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/UpdateDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/UpdateDcdnIpaDomainRequest.h
-	include/alibabacloud/dcdn/model/UpdateDcdnIpaDomainResult.h )
+	include/alibabacloud/dcdn/model/UpdateDcdnIpaDomainResult.h
+	include/alibabacloud/dcdn/model/VerifyDcdnDomainOwnerRequest.h
+	include/alibabacloud/dcdn/model/VerifyDcdnDomainOwnerResult.h )
 
 set(dcdn_src 
 	src/DcdnClient.cc
@@ -220,6 +228,8 @@ set(dcdn_src
 	src/model/BatchStartDcdnDomainResult.cc
 	src/model/BatchStopDcdnDomainRequest.cc
 	src/model/BatchStopDcdnDomainResult.cc
+	src/model/CreateDcdnCertificateSigningRequestRequest.cc
+	src/model/CreateDcdnCertificateSigningRequestResult.cc
 	src/model/DeleteDcdnDomainRequest.cc
 	src/model/DeleteDcdnDomainResult.cc
 	src/model/DeleteDcdnIpaDomainRequest.cc
@@ -344,6 +354,8 @@ set(dcdn_src
 	src/model/DescribeDcdnUserResourcePackageResult.cc
 	src/model/DescribeDcdnUserTagsRequest.cc
 	src/model/DescribeDcdnUserTagsResult.cc
+	src/model/DescribeDcdnVerifyContentRequest.cc
+	src/model/DescribeDcdnVerifyContentResult.cc
 	src/model/DescribeUserDcdnIpaStatusRequest.cc
 	src/model/DescribeUserDcdnIpaStatusResult.cc
 	src/model/DescribeUserDcdnStatusRequest.cc
@@ -360,6 +372,8 @@ set(dcdn_src
 	src/model/RollbackDcdnStagingConfigResult.cc
 	src/model/SetDcdnConfigOfVersionRequest.cc
 	src/model/SetDcdnConfigOfVersionResult.cc
+	src/model/SetDcdnDomainCSRCertificateRequest.cc
+	src/model/SetDcdnDomainCSRCertificateResult.cc
 	src/model/SetDcdnDomainCertificateRequest.cc
 	src/model/SetDcdnDomainCertificateResult.cc
 	src/model/SetDcdnDomainStagingConfigRequest.cc
@@ -379,7 +393,9 @@ set(dcdn_src
 	src/model/UpdateDcdnDomainRequest.cc
 	src/model/UpdateDcdnDomainResult.cc
 	src/model/UpdateDcdnIpaDomainRequest.cc
-	src/model/UpdateDcdnIpaDomainResult.cc )
+	src/model/UpdateDcdnIpaDomainResult.cc
+	src/model/VerifyDcdnDomainOwnerRequest.cc
+	src/model/VerifyDcdnDomainOwnerResult.cc )
 
 add_library(dcdn ${LIB_TYPE}
 	${dcdn_public_header}

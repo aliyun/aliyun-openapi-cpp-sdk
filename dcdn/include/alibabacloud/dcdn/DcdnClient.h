@@ -40,6 +40,8 @@
 #include "model/BatchStartDcdnDomainResult.h"
 #include "model/BatchStopDcdnDomainRequest.h"
 #include "model/BatchStopDcdnDomainResult.h"
+#include "model/CreateDcdnCertificateSigningRequestRequest.h"
+#include "model/CreateDcdnCertificateSigningRequestResult.h"
 #include "model/DeleteDcdnDomainRequest.h"
 #include "model/DeleteDcdnDomainResult.h"
 #include "model/DeleteDcdnIpaDomainRequest.h"
@@ -164,6 +166,8 @@
 #include "model/DescribeDcdnUserResourcePackageResult.h"
 #include "model/DescribeDcdnUserTagsRequest.h"
 #include "model/DescribeDcdnUserTagsResult.h"
+#include "model/DescribeDcdnVerifyContentRequest.h"
+#include "model/DescribeDcdnVerifyContentResult.h"
 #include "model/DescribeUserDcdnIpaStatusRequest.h"
 #include "model/DescribeUserDcdnIpaStatusResult.h"
 #include "model/DescribeUserDcdnStatusRequest.h"
@@ -180,6 +184,8 @@
 #include "model/RollbackDcdnStagingConfigResult.h"
 #include "model/SetDcdnConfigOfVersionRequest.h"
 #include "model/SetDcdnConfigOfVersionResult.h"
+#include "model/SetDcdnDomainCSRCertificateRequest.h"
+#include "model/SetDcdnDomainCSRCertificateResult.h"
 #include "model/SetDcdnDomainCertificateRequest.h"
 #include "model/SetDcdnDomainCertificateResult.h"
 #include "model/SetDcdnDomainStagingConfigRequest.h"
@@ -200,6 +206,8 @@
 #include "model/UpdateDcdnDomainResult.h"
 #include "model/UpdateDcdnIpaDomainRequest.h"
 #include "model/UpdateDcdnIpaDomainResult.h"
+#include "model/VerifyDcdnDomainOwnerRequest.h"
+#include "model/VerifyDcdnDomainOwnerResult.h"
 
 
 namespace AlibabaCloud
@@ -236,6 +244,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchStopDcdnDomainResult> BatchStopDcdnDomainOutcome;
 			typedef std::future<BatchStopDcdnDomainOutcome> BatchStopDcdnDomainOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::BatchStopDcdnDomainRequest&, const BatchStopDcdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchStopDcdnDomainAsyncHandler;
+			typedef Outcome<Error, Model::CreateDcdnCertificateSigningRequestResult> CreateDcdnCertificateSigningRequestOutcome;
+			typedef std::future<CreateDcdnCertificateSigningRequestOutcome> CreateDcdnCertificateSigningRequestOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::CreateDcdnCertificateSigningRequestRequest&, const CreateDcdnCertificateSigningRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDcdnCertificateSigningRequestAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDcdnDomainResult> DeleteDcdnDomainOutcome;
 			typedef std::future<DeleteDcdnDomainOutcome> DeleteDcdnDomainOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DeleteDcdnDomainRequest&, const DeleteDcdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDcdnDomainAsyncHandler;
@@ -422,6 +433,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnUserTagsResult> DescribeDcdnUserTagsOutcome;
 			typedef std::future<DescribeDcdnUserTagsOutcome> DescribeDcdnUserTagsOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnUserTagsRequest&, const DescribeDcdnUserTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnUserTagsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnVerifyContentResult> DescribeDcdnVerifyContentOutcome;
+			typedef std::future<DescribeDcdnVerifyContentOutcome> DescribeDcdnVerifyContentOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnVerifyContentRequest&, const DescribeDcdnVerifyContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnVerifyContentAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserDcdnIpaStatusResult> DescribeUserDcdnIpaStatusOutcome;
 			typedef std::future<DescribeUserDcdnIpaStatusOutcome> DescribeUserDcdnIpaStatusOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeUserDcdnIpaStatusRequest&, const DescribeUserDcdnIpaStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDcdnIpaStatusAsyncHandler;
@@ -446,6 +460,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDcdnConfigOfVersionResult> SetDcdnConfigOfVersionOutcome;
 			typedef std::future<SetDcdnConfigOfVersionOutcome> SetDcdnConfigOfVersionOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::SetDcdnConfigOfVersionRequest&, const SetDcdnConfigOfVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnConfigOfVersionAsyncHandler;
+			typedef Outcome<Error, Model::SetDcdnDomainCSRCertificateResult> SetDcdnDomainCSRCertificateOutcome;
+			typedef std::future<SetDcdnDomainCSRCertificateOutcome> SetDcdnDomainCSRCertificateOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::SetDcdnDomainCSRCertificateRequest&, const SetDcdnDomainCSRCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnDomainCSRCertificateAsyncHandler;
 			typedef Outcome<Error, Model::SetDcdnDomainCertificateResult> SetDcdnDomainCertificateOutcome;
 			typedef std::future<SetDcdnDomainCertificateOutcome> SetDcdnDomainCertificateOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::SetDcdnDomainCertificateRequest&, const SetDcdnDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDcdnDomainCertificateAsyncHandler;
@@ -476,6 +493,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDcdnIpaDomainResult> UpdateDcdnIpaDomainOutcome;
 			typedef std::future<UpdateDcdnIpaDomainOutcome> UpdateDcdnIpaDomainOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::UpdateDcdnIpaDomainRequest&, const UpdateDcdnIpaDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDcdnIpaDomainAsyncHandler;
+			typedef Outcome<Error, Model::VerifyDcdnDomainOwnerResult> VerifyDcdnDomainOwnerOutcome;
+			typedef std::future<VerifyDcdnDomainOwnerOutcome> VerifyDcdnDomainOwnerOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::VerifyDcdnDomainOwnerRequest&, const VerifyDcdnDomainOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDcdnDomainOwnerAsyncHandler;
 
 			DcdnClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			DcdnClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -508,6 +528,9 @@ namespace AlibabaCloud
 			BatchStopDcdnDomainOutcome batchStopDcdnDomain(const Model::BatchStopDcdnDomainRequest &request)const;
 			void batchStopDcdnDomainAsync(const Model::BatchStopDcdnDomainRequest& request, const BatchStopDcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchStopDcdnDomainOutcomeCallable batchStopDcdnDomainCallable(const Model::BatchStopDcdnDomainRequest& request) const;
+			CreateDcdnCertificateSigningRequestOutcome createDcdnCertificateSigningRequest(const Model::CreateDcdnCertificateSigningRequestRequest &request)const;
+			void createDcdnCertificateSigningRequestAsync(const Model::CreateDcdnCertificateSigningRequestRequest& request, const CreateDcdnCertificateSigningRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDcdnCertificateSigningRequestOutcomeCallable createDcdnCertificateSigningRequestCallable(const Model::CreateDcdnCertificateSigningRequestRequest& request) const;
 			DeleteDcdnDomainOutcome deleteDcdnDomain(const Model::DeleteDcdnDomainRequest &request)const;
 			void deleteDcdnDomainAsync(const Model::DeleteDcdnDomainRequest& request, const DeleteDcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDcdnDomainOutcomeCallable deleteDcdnDomainCallable(const Model::DeleteDcdnDomainRequest& request) const;
@@ -694,6 +717,9 @@ namespace AlibabaCloud
 			DescribeDcdnUserTagsOutcome describeDcdnUserTags(const Model::DescribeDcdnUserTagsRequest &request)const;
 			void describeDcdnUserTagsAsync(const Model::DescribeDcdnUserTagsRequest& request, const DescribeDcdnUserTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnUserTagsOutcomeCallable describeDcdnUserTagsCallable(const Model::DescribeDcdnUserTagsRequest& request) const;
+			DescribeDcdnVerifyContentOutcome describeDcdnVerifyContent(const Model::DescribeDcdnVerifyContentRequest &request)const;
+			void describeDcdnVerifyContentAsync(const Model::DescribeDcdnVerifyContentRequest& request, const DescribeDcdnVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnVerifyContentOutcomeCallable describeDcdnVerifyContentCallable(const Model::DescribeDcdnVerifyContentRequest& request) const;
 			DescribeUserDcdnIpaStatusOutcome describeUserDcdnIpaStatus(const Model::DescribeUserDcdnIpaStatusRequest &request)const;
 			void describeUserDcdnIpaStatusAsync(const Model::DescribeUserDcdnIpaStatusRequest& request, const DescribeUserDcdnIpaStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserDcdnIpaStatusOutcomeCallable describeUserDcdnIpaStatusCallable(const Model::DescribeUserDcdnIpaStatusRequest& request) const;
@@ -718,6 +744,9 @@ namespace AlibabaCloud
 			SetDcdnConfigOfVersionOutcome setDcdnConfigOfVersion(const Model::SetDcdnConfigOfVersionRequest &request)const;
 			void setDcdnConfigOfVersionAsync(const Model::SetDcdnConfigOfVersionRequest& request, const SetDcdnConfigOfVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDcdnConfigOfVersionOutcomeCallable setDcdnConfigOfVersionCallable(const Model::SetDcdnConfigOfVersionRequest& request) const;
+			SetDcdnDomainCSRCertificateOutcome setDcdnDomainCSRCertificate(const Model::SetDcdnDomainCSRCertificateRequest &request)const;
+			void setDcdnDomainCSRCertificateAsync(const Model::SetDcdnDomainCSRCertificateRequest& request, const SetDcdnDomainCSRCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDcdnDomainCSRCertificateOutcomeCallable setDcdnDomainCSRCertificateCallable(const Model::SetDcdnDomainCSRCertificateRequest& request) const;
 			SetDcdnDomainCertificateOutcome setDcdnDomainCertificate(const Model::SetDcdnDomainCertificateRequest &request)const;
 			void setDcdnDomainCertificateAsync(const Model::SetDcdnDomainCertificateRequest& request, const SetDcdnDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDcdnDomainCertificateOutcomeCallable setDcdnDomainCertificateCallable(const Model::SetDcdnDomainCertificateRequest& request) const;
@@ -748,6 +777,9 @@ namespace AlibabaCloud
 			UpdateDcdnIpaDomainOutcome updateDcdnIpaDomain(const Model::UpdateDcdnIpaDomainRequest &request)const;
 			void updateDcdnIpaDomainAsync(const Model::UpdateDcdnIpaDomainRequest& request, const UpdateDcdnIpaDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDcdnIpaDomainOutcomeCallable updateDcdnIpaDomainCallable(const Model::UpdateDcdnIpaDomainRequest& request) const;
+			VerifyDcdnDomainOwnerOutcome verifyDcdnDomainOwner(const Model::VerifyDcdnDomainOwnerRequest &request)const;
+			void verifyDcdnDomainOwnerAsync(const Model::VerifyDcdnDomainOwnerRequest& request, const VerifyDcdnDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VerifyDcdnDomainOwnerOutcomeCallable verifyDcdnDomainOwnerCallable(const Model::VerifyDcdnDomainOwnerRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
