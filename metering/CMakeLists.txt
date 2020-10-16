@@ -21,11 +21,15 @@ set(metering_public_header
 	include/alibabacloud/metering/MeteringExport.h )
 
 set(metering_public_header_model 
+	include/alibabacloud/metering/model/PostDataRequest.h
+	include/alibabacloud/metering/model/PostDataResult.h
 	include/alibabacloud/metering/model/SyncDataRequest.h
 	include/alibabacloud/metering/model/SyncDataResult.h )
 
 set(metering_src 
 	src/MeteringClient.cc
+	src/model/PostDataRequest.cc
+	src/model/PostDataResult.cc
 	src/model/SyncDataRequest.cc
 	src/model/SyncDataResult.cc )
 

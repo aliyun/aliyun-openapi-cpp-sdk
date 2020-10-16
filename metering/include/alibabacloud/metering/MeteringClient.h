@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include "MeteringExport.h"
+#include "model/PostDataRequest.h"
+#include "model/PostDataResult.h"
 #include "model/SyncDataRequest.h"
 #include "model/SyncDataResult.h"
 
@@ -33,6 +35,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_METERING_EXPORT MeteringClient : public RoaServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::PostDataResult> PostDataOutcome;
+			typedef std::future<PostDataOutcome> PostDataOutcomeCallable;
+			typedef std::function<void(const MeteringClient*, const Model::PostDataRequest&, const PostDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PostDataAsyncHandler;
 			typedef Outcome<Error, Model::SyncDataResult> SyncDataOutcome;
 			typedef std::future<SyncDataOutcome> SyncDataOutcomeCallable;
 			typedef std::function<void(const MeteringClient*, const Model::SyncDataRequest&, const SyncDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncDataAsyncHandler;
@@ -41,6 +46,9 @@ namespace AlibabaCloud
 			MeteringClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			MeteringClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~MeteringClient();
+			PostDataOutcome postData(const Model::PostDataRequest &request)const;
+			void postDataAsync(const Model::PostDataRequest& request, const PostDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PostDataOutcomeCallable postDataCallable(const Model::PostDataRequest& request) const;
 			SyncDataOutcome syncData(const Model::SyncDataRequest &request)const;
 			void syncDataAsync(const Model::SyncDataRequest& request, const SyncDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SyncDataOutcomeCallable syncDataCallable(const Model::SyncDataRequest& request) const;

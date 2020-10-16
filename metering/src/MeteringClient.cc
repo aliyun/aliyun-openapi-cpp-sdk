@@ -51,6 +51,42 @@ MeteringClient::MeteringClient(const std::string & accessKeyId, const std::strin
 MeteringClient::~MeteringClient()
 {}
 
+MeteringClient::PostDataOutcome MeteringClient::postData(const PostDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PostDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PostDataOutcome(PostDataResult(outcome.result()));
+	else
+		return PostDataOutcome(outcome.error());
+}
+
+void MeteringClient::postDataAsync(const PostDataRequest& request, const PostDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, postData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MeteringClient::PostDataOutcomeCallable MeteringClient::postDataCallable(const PostDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PostDataOutcome()>>(
+			[this, request]()
+			{
+			return this->postData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MeteringClient::SyncDataOutcome MeteringClient::syncData(const SyncDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
