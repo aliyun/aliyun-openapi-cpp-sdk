@@ -131,9 +131,19 @@ RoaServiceClient::buildHttpRequest(const std::string &endpoint,
   } else {
     if (msg.parameter("Content-Type").empty()) {
       request.setHeader("Content-Type", "application/x-www-form-urlencoded");
+      auto body_params = msg.bodyParameters();
+      std::stringstream sbody;
+      for (const auto &p : body_params) {
+        sbody << "&" << p.first << "=" << UrlEncode(p.second);
+      }
+      request.setBody(sbody.str().c_str(), sbody.str().size());
+      request.setHeader("Content-Length", std::to_string(request.bodySize()));
+      request.setHeader("Content-MD5",
+                        ComputeContentMD5(request.body(), request.bodySize()));
+    } else {
+      request.setHeader("Content-MD5",
+                        ComputeContentMD5(msg.content(), msg.contentSize()));
     }
-    request.setHeader("Content-MD5",
-                      ComputeContentMD5(msg.content(), msg.contentSize()));
   }
 
   std::time_t t = std::time(nullptr);
