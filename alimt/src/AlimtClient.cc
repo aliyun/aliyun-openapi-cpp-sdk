@@ -87,6 +87,42 @@ AlimtClient::CreateDocTranslateTaskOutcomeCallable AlimtClient::createDocTransla
 	return task->get_future();
 }
 
+AlimtClient::CreateImageTranslateTaskOutcome AlimtClient::createImageTranslateTask(const CreateImageTranslateTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateImageTranslateTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateImageTranslateTaskOutcome(CreateImageTranslateTaskResult(outcome.result()));
+	else
+		return CreateImageTranslateTaskOutcome(outcome.error());
+}
+
+void AlimtClient::createImageTranslateTaskAsync(const CreateImageTranslateTaskRequest& request, const CreateImageTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createImageTranslateTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::CreateImageTranslateTaskOutcomeCallable AlimtClient::createImageTranslateTaskCallable(const CreateImageTranslateTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateImageTranslateTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createImageTranslateTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlimtClient::GetDetectLanguageOutcome AlimtClient::getDetectLanguage(const GetDetectLanguageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +261,42 @@ AlimtClient::GetImageTranslateOutcomeCallable AlimtClient::getImageTranslateCall
 			[this, request]()
 			{
 			return this->getImageTranslate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::GetImageTranslateTaskOutcome AlimtClient::getImageTranslateTask(const GetImageTranslateTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetImageTranslateTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetImageTranslateTaskOutcome(GetImageTranslateTaskResult(outcome.result()));
+	else
+		return GetImageTranslateTaskOutcome(outcome.error());
+}
+
+void AlimtClient::getImageTranslateTaskAsync(const GetImageTranslateTaskRequest& request, const GetImageTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getImageTranslateTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetImageTranslateTaskOutcomeCallable AlimtClient::getImageTranslateTaskCallable(const GetImageTranslateTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetImageTranslateTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getImageTranslateTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

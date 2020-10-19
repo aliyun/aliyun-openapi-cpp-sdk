@@ -1,4 +1,7 @@
 2020-10-19 Version: patch
+- Add a new interface for asynchronous image translation.
+
+2020-10-19 Version: patch
 - Metering 1019.
 
 2020-10-19 Version: patch
