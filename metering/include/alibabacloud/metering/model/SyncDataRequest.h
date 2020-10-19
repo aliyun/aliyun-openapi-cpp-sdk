@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setCommodityCode(const std::string& commodityCode);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
+				std::string getServiceId()const;
+				void setServiceId(const std::string& serviceId);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				std::string startTime_;
 				std::string commodityCode_;
 				std::string region_;
+				std::string serviceId_;
 				std::string userId_;
 
 			};

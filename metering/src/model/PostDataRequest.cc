@@ -105,6 +105,17 @@ void PostDataRequest::setRegion(const std::string& region)
 	setBodyParameter("Region", region);
 }
 
+std::string PostDataRequest::getServiceId()const
+{
+	return serviceId_;
+}
+
+void PostDataRequest::setServiceId(const std::string& serviceId)
+{
+	serviceId_ = serviceId;
+	setBodyParameter("ServiceId", serviceId);
+}
+
 std::string PostDataRequest::getUserId()const
 {
 	return userId_;

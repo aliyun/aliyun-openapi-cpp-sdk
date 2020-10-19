@@ -105,6 +105,17 @@ void SyncDataRequest::setRegion(const std::string& region)
 	setParameter("Region", region);
 }
 
+std::string SyncDataRequest::getServiceId()const
+{
+	return serviceId_;
+}
+
+void SyncDataRequest::setServiceId(const std::string& serviceId)
+{
+	serviceId_ = serviceId;
+	setParameter("ServiceId", serviceId);
+}
+
 std::string SyncDataRequest::getUserId()const
 {
 	return userId_;
