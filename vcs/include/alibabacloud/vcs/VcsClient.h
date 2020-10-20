@@ -86,6 +86,8 @@
 #include "model/GetFaceOptionsResult.h"
 #include "model/GetInventoryRequest.h"
 #include "model/GetInventoryResult.h"
+#include "model/GetMonitorListRequest.h"
+#include "model/GetMonitorListResult.h"
 #include "model/GetMonitorResultRequest.h"
 #include "model/GetMonitorResultResult.h"
 #include "model/GetPersonDetailRequest.h"
@@ -130,6 +132,8 @@
 #include "model/ListMotorAlgorithmResultsResult.h"
 #include "model/ListPersonTraceRequest.h"
 #include "model/ListPersonTraceResult.h"
+#include "model/ListPersonTraceDetailsRequest.h"
+#include "model/ListPersonTraceDetailsResult.h"
 #include "model/ListPersonVisitCountRequest.h"
 #include "model/ListPersonVisitCountResult.h"
 #include "model/ListPersonsRequest.h"
@@ -287,6 +291,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInventoryResult> GetInventoryOutcome;
 			typedef std::future<GetInventoryOutcome> GetInventoryOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetInventoryRequest&, const GetInventoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInventoryAsyncHandler;
+			typedef Outcome<Error, Model::GetMonitorListResult> GetMonitorListOutcome;
+			typedef std::future<GetMonitorListOutcome> GetMonitorListOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::GetMonitorListRequest&, const GetMonitorListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorListAsyncHandler;
 			typedef Outcome<Error, Model::GetMonitorResultResult> GetMonitorResultOutcome;
 			typedef std::future<GetMonitorResultOutcome> GetMonitorResultOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetMonitorResultRequest&, const GetMonitorResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorResultAsyncHandler;
@@ -353,6 +360,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPersonTraceResult> ListPersonTraceOutcome;
 			typedef std::future<ListPersonTraceOutcome> ListPersonTraceOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonTraceRequest&, const ListPersonTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonTraceAsyncHandler;
+			typedef Outcome<Error, Model::ListPersonTraceDetailsResult> ListPersonTraceDetailsOutcome;
+			typedef std::future<ListPersonTraceDetailsOutcome> ListPersonTraceDetailsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListPersonTraceDetailsRequest&, const ListPersonTraceDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonTraceDetailsAsyncHandler;
 			typedef Outcome<Error, Model::ListPersonVisitCountResult> ListPersonVisitCountOutcome;
 			typedef std::future<ListPersonVisitCountOutcome> ListPersonVisitCountOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonVisitCountRequest&, const ListPersonVisitCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonVisitCountAsyncHandler;
@@ -532,6 +542,9 @@ namespace AlibabaCloud
 			GetInventoryOutcome getInventory(const Model::GetInventoryRequest &request)const;
 			void getInventoryAsync(const Model::GetInventoryRequest& request, const GetInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInventoryOutcomeCallable getInventoryCallable(const Model::GetInventoryRequest& request) const;
+			GetMonitorListOutcome getMonitorList(const Model::GetMonitorListRequest &request)const;
+			void getMonitorListAsync(const Model::GetMonitorListRequest& request, const GetMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMonitorListOutcomeCallable getMonitorListCallable(const Model::GetMonitorListRequest& request) const;
 			GetMonitorResultOutcome getMonitorResult(const Model::GetMonitorResultRequest &request)const;
 			void getMonitorResultAsync(const Model::GetMonitorResultRequest& request, const GetMonitorResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMonitorResultOutcomeCallable getMonitorResultCallable(const Model::GetMonitorResultRequest& request) const;
@@ -598,6 +611,9 @@ namespace AlibabaCloud
 			ListPersonTraceOutcome listPersonTrace(const Model::ListPersonTraceRequest &request)const;
 			void listPersonTraceAsync(const Model::ListPersonTraceRequest& request, const ListPersonTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonTraceOutcomeCallable listPersonTraceCallable(const Model::ListPersonTraceRequest& request) const;
+			ListPersonTraceDetailsOutcome listPersonTraceDetails(const Model::ListPersonTraceDetailsRequest &request)const;
+			void listPersonTraceDetailsAsync(const Model::ListPersonTraceDetailsRequest& request, const ListPersonTraceDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPersonTraceDetailsOutcomeCallable listPersonTraceDetailsCallable(const Model::ListPersonTraceDetailsRequest& request) const;
 			ListPersonVisitCountOutcome listPersonVisitCount(const Model::ListPersonVisitCountRequest &request)const;
 			void listPersonVisitCountAsync(const Model::ListPersonVisitCountRequest& request, const ListPersonVisitCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonVisitCountOutcomeCallable listPersonVisitCountCallable(const Model::ListPersonVisitCountRequest& request) const;

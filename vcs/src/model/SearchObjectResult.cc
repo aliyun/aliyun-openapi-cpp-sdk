@@ -39,57 +39,46 @@ void SearchObjectResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["DataItem"];
-	for (auto valueDataDataItem : allDataNode)
+	auto dataNode = value["Data"];
+	if(!dataNode["PageNumber"].isNull())
+		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	if(!dataNode["TotalPage"].isNull())
+		data_.totalPage = std::stoi(dataNode["TotalPage"].asString());
+	auto allRecordsNode = dataNode["Records"]["RecordsItem"];
+	for (auto dataNodeRecordsRecordsItem : allRecordsNode)
 	{
-		DataItem dataObject;
-		if(!valueDataDataItem["PageNumber"].isNull())
-			dataObject.pageNumber = std::stoi(valueDataDataItem["PageNumber"].asString());
-		if(!valueDataDataItem["PageSize"].isNull())
-			dataObject.pageSize = std::stoi(valueDataDataItem["PageSize"].asString());
-		if(!valueDataDataItem["TotalCount"].isNull())
-			dataObject.totalCount = std::stoi(valueDataDataItem["TotalCount"].asString());
-		if(!valueDataDataItem["TotalPage"].isNull())
-			dataObject.totalPage = std::stoi(valueDataDataItem["TotalPage"].asString());
-		auto allRecordsNode = allDataNode["Records"]["RecordsItem"];
-		for (auto allDataNodeRecordsRecordsItem : allRecordsNode)
-		{
-			DataItem::RecordsItem recordsObject;
-			if(!allDataNodeRecordsRecordsItem["BodyShotTime"].isNull())
-				recordsObject.bodyShotTime = allDataNodeRecordsRecordsItem["BodyShotTime"].asString();
-			if(!allDataNodeRecordsRecordsItem["CompareResult"].isNull())
-				recordsObject.compareResult = allDataNodeRecordsRecordsItem["CompareResult"].asString();
-			if(!allDataNodeRecordsRecordsItem["DeviceID"].isNull())
-				recordsObject.deviceID = allDataNodeRecordsRecordsItem["DeviceID"].asString();
-			if(!allDataNodeRecordsRecordsItem["FaceShotTime"].isNull())
-				recordsObject.faceShotTime = std::stol(allDataNodeRecordsRecordsItem["FaceShotTime"].asString());
-			if(!allDataNodeRecordsRecordsItem["LeftTopX"].isNull())
-				recordsObject.leftTopX = std::stoi(allDataNodeRecordsRecordsItem["LeftTopX"].asString());
-			if(!allDataNodeRecordsRecordsItem["LeftTopY"].isNull())
-				recordsObject.leftTopY = std::stoi(allDataNodeRecordsRecordsItem["LeftTopY"].asString());
-			if(!allDataNodeRecordsRecordsItem["MotorShotTime"].isNull())
-				recordsObject.motorShotTime = allDataNodeRecordsRecordsItem["MotorShotTime"].asString();
-			if(!allDataNodeRecordsRecordsItem["PassTime"].isNull())
-				recordsObject.passTime = allDataNodeRecordsRecordsItem["PassTime"].asString();
-			if(!allDataNodeRecordsRecordsItem["RightBtmX"].isNull())
-				recordsObject.rightBtmX = std::stoi(allDataNodeRecordsRecordsItem["RightBtmX"].asString());
-			if(!allDataNodeRecordsRecordsItem["RightBtmY"].isNull())
-				recordsObject.rightBtmY = std::stoi(allDataNodeRecordsRecordsItem["RightBtmY"].asString());
-			if(!allDataNodeRecordsRecordsItem["Score"].isNull())
-				recordsObject.score = std::stof(allDataNodeRecordsRecordsItem["Score"].asString());
-			if(!allDataNodeRecordsRecordsItem["SourceID"].isNull())
-				recordsObject.sourceID = allDataNodeRecordsRecordsItem["SourceID"].asString();
-			if(!allDataNodeRecordsRecordsItem["SourceImagePath"].isNull())
-				recordsObject.sourceImagePath = allDataNodeRecordsRecordsItem["SourceImagePath"].asString();
-			if(!allDataNodeRecordsRecordsItem["SourceImageUrl"].isNull())
-				recordsObject.sourceImageUrl = allDataNodeRecordsRecordsItem["SourceImageUrl"].asString();
-			if(!allDataNodeRecordsRecordsItem["TargetImagePath"].isNull())
-				recordsObject.targetImagePath = allDataNodeRecordsRecordsItem["TargetImagePath"].asString();
-			if(!allDataNodeRecordsRecordsItem["TargetImageUrl"].isNull())
-				recordsObject.targetImageUrl = allDataNodeRecordsRecordsItem["TargetImageUrl"].asString();
-			dataObject.records.push_back(recordsObject);
-		}
-		data_.push_back(dataObject);
+		Data::RecordsItem recordsItemObject;
+		if(!dataNodeRecordsRecordsItem["CompareResult"].isNull())
+			recordsItemObject.compareResult = dataNodeRecordsRecordsItem["CompareResult"].asString();
+		if(!dataNodeRecordsRecordsItem["DeviceID"].isNull())
+			recordsItemObject.deviceID = dataNodeRecordsRecordsItem["DeviceID"].asString();
+		if(!dataNodeRecordsRecordsItem["ShotTime"].isNull())
+			recordsItemObject.shotTime = std::stol(dataNodeRecordsRecordsItem["ShotTime"].asString());
+		if(!dataNodeRecordsRecordsItem["LeftTopX"].isNull())
+			recordsItemObject.leftTopX = std::stoi(dataNodeRecordsRecordsItem["LeftTopX"].asString());
+		if(!dataNodeRecordsRecordsItem["LeftTopY"].isNull())
+			recordsItemObject.leftTopY = std::stoi(dataNodeRecordsRecordsItem["LeftTopY"].asString());
+		if(!dataNodeRecordsRecordsItem["RightBtmX"].isNull())
+			recordsItemObject.rightBtmX = std::stoi(dataNodeRecordsRecordsItem["RightBtmX"].asString());
+		if(!dataNodeRecordsRecordsItem["RightBtmY"].isNull())
+			recordsItemObject.rightBtmY = std::stoi(dataNodeRecordsRecordsItem["RightBtmY"].asString());
+		if(!dataNodeRecordsRecordsItem["Score"].isNull())
+			recordsItemObject.score = std::stof(dataNodeRecordsRecordsItem["Score"].asString());
+		if(!dataNodeRecordsRecordsItem["SourceID"].isNull())
+			recordsItemObject.sourceID = dataNodeRecordsRecordsItem["SourceID"].asString();
+		if(!dataNodeRecordsRecordsItem["SourceImagePath"].isNull())
+			recordsItemObject.sourceImagePath = dataNodeRecordsRecordsItem["SourceImagePath"].asString();
+		if(!dataNodeRecordsRecordsItem["SourceImageUrl"].isNull())
+			recordsItemObject.sourceImageUrl = dataNodeRecordsRecordsItem["SourceImageUrl"].asString();
+		if(!dataNodeRecordsRecordsItem["TargetImagePath"].isNull())
+			recordsItemObject.targetImagePath = dataNodeRecordsRecordsItem["TargetImagePath"].asString();
+		if(!dataNodeRecordsRecordsItem["TargetImageUrl"].isNull())
+			recordsItemObject.targetImageUrl = dataNodeRecordsRecordsItem["TargetImageUrl"].asString();
+		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
@@ -103,7 +92,7 @@ std::string SearchObjectResult::getMessage()const
 	return message_;
 }
 
-std::vector<SearchObjectResult::DataItem> SearchObjectResult::getData()const
+SearchObjectResult::Data SearchObjectResult::getData()const
 {
 	return data_;
 }

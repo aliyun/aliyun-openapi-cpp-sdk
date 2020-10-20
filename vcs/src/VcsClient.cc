@@ -31,21 +31,21 @@ VcsClient::VcsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VcsClient::VcsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VcsClient::VcsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VcsClient::~VcsClient()
@@ -1203,6 +1203,42 @@ VcsClient::GetInventoryOutcomeCallable VcsClient::getInventoryCallable(const Get
 	return task->get_future();
 }
 
+VcsClient::GetMonitorListOutcome VcsClient::getMonitorList(const GetMonitorListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMonitorListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMonitorListOutcome(GetMonitorListResult(outcome.result()));
+	else
+		return GetMonitorListOutcome(outcome.error());
+}
+
+void VcsClient::getMonitorListAsync(const GetMonitorListRequest& request, const GetMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMonitorList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetMonitorListOutcomeCallable VcsClient::getMonitorListCallable(const GetMonitorListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMonitorListOutcome()>>(
+			[this, request]()
+			{
+			return this->getMonitorList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::GetMonitorResultOutcome VcsClient::getMonitorResult(const GetMonitorResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2025,42 @@ VcsClient::ListPersonTraceOutcomeCallable VcsClient::listPersonTraceCallable(con
 			[this, request]()
 			{
 			return this->listPersonTrace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListPersonTraceDetailsOutcome VcsClient::listPersonTraceDetails(const ListPersonTraceDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPersonTraceDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPersonTraceDetailsOutcome(ListPersonTraceDetailsResult(outcome.result()));
+	else
+		return ListPersonTraceDetailsOutcome(outcome.error());
+}
+
+void VcsClient::listPersonTraceDetailsAsync(const ListPersonTraceDetailsRequest& request, const ListPersonTraceDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPersonTraceDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListPersonTraceDetailsOutcomeCallable VcsClient::listPersonTraceDetailsCallable(const ListPersonTraceDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPersonTraceDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->listPersonTraceDetails(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

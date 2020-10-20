@@ -66,6 +66,11 @@ void GetMonitorResultResult::parse(const std::string &payload)
 			recordsItemObject.monitorPicUrl = dataNodeRecordsRecordsItem["MonitorPicUrl"].asString();
 		if(!dataNodeRecordsRecordsItem["TargetPicUrl"].isNull())
 			recordsItemObject.targetPicUrl = dataNodeRecordsRecordsItem["TargetPicUrl"].asString();
+		if(!dataNodeRecordsRecordsItem["TaskId"].isNull())
+			recordsItemObject.taskId = dataNodeRecordsRecordsItem["TaskId"].asString();
+		auto extendInfoNode = value["ExtendInfo"];
+		if(!extendInfoNode["PlateNo"].isNull())
+			recordsItemObject.extendInfo.plateNo = extendInfoNode["PlateNo"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())

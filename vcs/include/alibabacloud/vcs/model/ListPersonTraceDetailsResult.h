@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_LISTPERSONTRACEDETAILSRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_LISTPERSONTRACEDETAILSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,51 +29,46 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT GetMonitorResultResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT ListPersonTraceDetailsResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct Datas
 				{
-					struct RecordsItem
-					{
-						struct ExtendInfo
-						{
-							std::string plateNo;
-						};
-						std::string leftUpX;
-						std::string leftUpY;
-						std::string score;
-						std::string taskId;
-						std::string targetPicUrl;
-						std::string rightBottomX;
-						std::string rightBottomY;
-						std::string gbId;
-						std::string monitorPicUrl;
-						std::string shotTime;
-						std::string picUrl;
-						ExtendInfo extendInfo;
-					};
-					std::string maxId;
-					std::vector<RecordsItem> records;
+					std::string picUrlPath;
+					std::string corpId;
+					long pageSize;
+					std::string rightBottomX;
+					std::string targetPicUrlPath;
+					std::string rightBottomY;
+					std::string leftTopY;
+					std::string leftTopX;
+					long totalCount;
+					std::string subId;
+					long totalPage;
+					std::string personId;
+					long pageNumber;
+					std::string shotTime;
+					std::string isvId;
+					std::string dataSourceId;
 				};
 
 
-				GetMonitorResultResult();
-				explicit GetMonitorResultResult(const std::string &payload);
-				~GetMonitorResultResult();
+				ListPersonTraceDetailsResult();
+				explicit ListPersonTraceDetailsResult(const std::string &payload);
+				~ListPersonTraceDetailsResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::vector<Datas> getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::vector<Datas> data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_LISTPERSONTRACEDETAILSRESULT_H_

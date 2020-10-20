@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_GETMONITORLISTRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_GETMONITORLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,40 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT GetMonitorResultResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT GetMonitorListResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct RecordsItem
+					struct Record
 					{
-						struct ExtendInfo
-						{
-							std::string plateNo;
-						};
-						std::string leftUpX;
-						std::string leftUpY;
-						std::string score;
+						std::string status;
 						std::string taskId;
-						std::string targetPicUrl;
-						std::string rightBottomX;
-						std::string rightBottomY;
-						std::string gbId;
-						std::string monitorPicUrl;
-						std::string shotTime;
-						std::string picUrl;
-						ExtendInfo extendInfo;
+						std::string description;
+						std::string monitorType;
+						std::string imageMatch;
+						std::string attributes;
+						std::string deviceList;
+						std::string modifiedDate;
+						std::string createDate;
+						std::string notifierType;
+						std::string ruleExpression;
+						std::string algorithmVendor;
+						std::string expression;
+						std::string ruleName;
+						std::string notifierExtra;
 					};
-					std::string maxId;
-					std::vector<RecordsItem> records;
+					int totalCount;
+					int pageSize;
+					int totalPage;
+					int pageNo;
+					std::vector<Record> records;
 				};
 
 
-				GetMonitorResultResult();
-				explicit GetMonitorResultResult(const std::string &payload);
-				~GetMonitorResultResult();
+				GetMonitorListResult();
+				explicit GetMonitorListResult(const std::string &payload);
+				~GetMonitorListResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -76,4 +78,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_GETMONITORLISTRESULT_H_

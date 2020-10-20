@@ -36,12 +36,16 @@ namespace AlibabaCloud
 				{
 					struct ListItem
 					{
-						std::string codingFormat;
 						std::string installAddress;
+						std::string deviceSn;
+						std::string deviceComputeStatus;
+						std::string deviceStreamStatus;
+						std::string deviceGroup;
+						std::string codingFormat;
 						std::string regionName;
 						std::string dataSourceType;
-						std::string deviceGroup;
 						std::string deviceCode;
+						std::string deviceStatus;
 						std::string regionId;
 						std::string bitRate;
 						std::string resolvingPower;

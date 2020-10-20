@@ -32,32 +32,29 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VCS_EXPORT SearchObjectResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct Data
 				{
 					struct RecordsItem
 					{
 						std::string targetImageUrl;
 						std::string deviceID;
 						std::string sourceID;
-						std::string passTime;
 						std::string sourceImagePath;
 						std::string sourceImageUrl;
 						int leftTopY;
 						std::string compareResult;
 						int leftTopX;
 						float score;
-						std::string bodyShotTime;
 						int rightBtmY;
+						long shotTime;
 						int rightBtmX;
-						long faceShotTime;
 						std::string targetImagePath;
-						std::string motorShotTime;
 					};
 					int totalCount;
 					int pageSize;
 					int totalPage;
 					int pageNumber;
-					std::vector<DataItem::RecordsItem> records;
+					std::vector<RecordsItem> records;
 				};
 
 
@@ -65,14 +62,14 @@ namespace AlibabaCloud
 				explicit SearchObjectResult(const std::string &payload);
 				~SearchObjectResult();
 				std::string getMessage()const;
-				std::vector<DataItem> getData()const;
+				Data getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<DataItem> data_;
+				Data data_;
 				std::string code_;
 
 			};

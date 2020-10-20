@@ -69,6 +69,14 @@ void ListDeviceGroupsResult::parse(const std::string &payload)
 				listObject.regionId = allDataNodeListListItem["RegionId"].asString();
 			if(!allDataNodeListListItem["InstallAddress"].isNull())
 				listObject.installAddress = allDataNodeListListItem["InstallAddress"].asString();
+			if(!allDataNodeListListItem["DeviceSn"].isNull())
+				listObject.deviceSn = allDataNodeListListItem["DeviceSn"].asString();
+			if(!allDataNodeListListItem["DeviceStatus"].isNull())
+				listObject.deviceStatus = allDataNodeListListItem["DeviceStatus"].asString();
+			if(!allDataNodeListListItem["DeviceStreamStatus"].isNull())
+				listObject.deviceStreamStatus = allDataNodeListListItem["DeviceStreamStatus"].asString();
+			if(!allDataNodeListListItem["DeviceComputeStatus"].isNull())
+				listObject.deviceComputeStatus = allDataNodeListListItem["DeviceComputeStatus"].asString();
 			dataObject.list.push_back(listObject);
 		}
 		data_.push_back(dataObject);
