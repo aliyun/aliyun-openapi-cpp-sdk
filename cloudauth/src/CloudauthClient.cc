@@ -1167,6 +1167,42 @@ CloudauthClient::InitSmartVerifyOutcomeCallable CloudauthClient::initSmartVerify
 	return task->get_future();
 }
 
+CloudauthClient::LivenessFaceVerifyOutcome CloudauthClient::livenessFaceVerify(const LivenessFaceVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LivenessFaceVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LivenessFaceVerifyOutcome(LivenessFaceVerifyResult(outcome.result()));
+	else
+		return LivenessFaceVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::livenessFaceVerifyAsync(const LivenessFaceVerifyRequest& request, const LivenessFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, livenessFaceVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::LivenessFaceVerifyOutcomeCallable CloudauthClient::livenessFaceVerifyCallable(const LivenessFaceVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LivenessFaceVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->livenessFaceVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::ModifyDeviceInfoOutcome CloudauthClient::modifyDeviceInfo(const ModifyDeviceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

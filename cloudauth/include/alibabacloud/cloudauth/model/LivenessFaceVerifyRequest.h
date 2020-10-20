@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_INITFACEVERIFYREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_INITFACEVERIFYREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_LIVENESSFACEVERIFYREQUEST_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_LIVENESSFACEVERIFYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,75 +28,57 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT InitFaceVerifyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT LivenessFaceVerifyRequest : public RpcServiceRequest
 			{
 
 			public:
-				InitFaceVerifyRequest();
-				~InitFaceVerifyRequest();
+				LivenessFaceVerifyRequest();
+				~LivenessFaceVerifyRequest();
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				std::string getFaceContrastPicture()const;
-				void setFaceContrastPicture(const std::string& faceContrastPicture);
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
-				std::string getCertifyId()const;
-				void setCertifyId(const std::string& certifyId);
-				std::string getCertNo()const;
-				void setCertNo(const std::string& certNo);
-				std::string getOuterOrderNo()const;
-				void setOuterOrderNo(const std::string& outerOrderNo);
-				std::string getCertType()const;
-				void setCertType(const std::string& certType);
-				std::string getFaceContrastPictureUrl()const;
-				void setFaceContrastPictureUrl(const std::string& faceContrastPictureUrl);
-				std::string getModel()const;
-				void setModel(const std::string& model);
-				std::string getMetaInfo()const;
-				void setMetaInfo(const std::string& metaInfo);
 				std::string getOssObjectName()const;
 				void setOssObjectName(const std::string& ossObjectName);
-				std::string getCertName()const;
-				void setCertName(const std::string& certName);
+				std::string getFaceContrastPicture()const;
+				void setFaceContrastPicture(const std::string& faceContrastPicture);
 				std::string getIp()const;
 				void setIp(const std::string& ip);
 				std::string getMobile()const;
 				void setMobile(const std::string& mobile);
+				std::string getDeviceToken()const;
+				void setDeviceToken(const std::string& deviceToken);
+				std::string getUserId()const;
+				void setUserId(const std::string& userId);
+				std::string getCertifyId()const;
+				void setCertifyId(const std::string& certifyId);
+				std::string getOuterOrderNo()const;
+				void setOuterOrderNo(const std::string& outerOrderNo);
+				std::string getFaceContrastPictureUrl()const;
+				void setFaceContrastPictureUrl(const std::string& faceContrastPictureUrl);
 				long getSceneId()const;
 				void setSceneId(long sceneId);
 				std::string getOssBucketName()const;
 				void setOssBucketName(const std::string& ossBucketName);
-				std::string getCallbackToken()const;
-				void setCallbackToken(const std::string& callbackToken);
-				std::string getReturnUrl()const;
-				void setReturnUrl(const std::string& returnUrl);
-				std::string getCallbackUrl()const;
-				void setCallbackUrl(const std::string& callbackUrl);
+				std::string getModel()const;
+				void setModel(const std::string& model);
 
             private:
 				std::string productCode_;
-				std::string faceContrastPicture_;
-				std::string userId_;
-				std::string certifyId_;
-				std::string certNo_;
-				std::string outerOrderNo_;
-				std::string certType_;
-				std::string faceContrastPictureUrl_;
-				std::string model_;
-				std::string metaInfo_;
 				std::string ossObjectName_;
-				std::string certName_;
+				std::string faceContrastPicture_;
 				std::string ip_;
 				std::string mobile_;
+				std::string deviceToken_;
+				std::string userId_;
+				std::string certifyId_;
+				std::string outerOrderNo_;
+				std::string faceContrastPictureUrl_;
 				long sceneId_;
 				std::string ossBucketName_;
-				std::string callbackToken_;
-				std::string returnUrl_;
-				std::string callbackUrl_;
+				std::string model_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_INITFACEVERIFYREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_LIVENESSFACEVERIFYREQUEST_H_

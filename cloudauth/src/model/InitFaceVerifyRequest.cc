@@ -203,6 +203,17 @@ void InitFaceVerifyRequest::setOssBucketName(const std::string& ossBucketName)
 	setParameter("OssBucketName", ossBucketName);
 }
 
+std::string InitFaceVerifyRequest::getCallbackToken()const
+{
+	return callbackToken_;
+}
+
+void InitFaceVerifyRequest::setCallbackToken(const std::string& callbackToken)
+{
+	callbackToken_ = callbackToken;
+	setParameter("CallbackToken", callbackToken);
+}
+
 std::string InitFaceVerifyRequest::getReturnUrl()const
 {
 	return returnUrl_;
@@ -212,5 +223,16 @@ void InitFaceVerifyRequest::setReturnUrl(const std::string& returnUrl)
 {
 	returnUrl_ = returnUrl;
 	setParameter("ReturnUrl", returnUrl);
+}
+
+std::string InitFaceVerifyRequest::getCallbackUrl()const
+{
+	return callbackUrl_;
+}
+
+void InitFaceVerifyRequest::setCallbackUrl(const std::string& callbackUrl)
+{
+	callbackUrl_ = callbackUrl;
+	setParameter("CallbackUrl", callbackUrl);
 }
 

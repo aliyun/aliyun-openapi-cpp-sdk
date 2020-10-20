@@ -27,39 +27,6 @@ InitSmartVerifyRequest::InitSmartVerifyRequest() :
 InitSmartVerifyRequest::~InitSmartVerifyRequest()
 {}
 
-std::string InitSmartVerifyRequest::getIp()const
-{
-	return ip_;
-}
-
-void InitSmartVerifyRequest::setIp(const std::string& ip)
-{
-	ip_ = ip;
-	setBodyParameter("Ip", ip);
-}
-
-std::string InitSmartVerifyRequest::getCertName()const
-{
-	return certName_;
-}
-
-void InitSmartVerifyRequest::setCertName(const std::string& certName)
-{
-	certName_ = certName;
-	setBodyParameter("CertName", certName);
-}
-
-std::string InitSmartVerifyRequest::getMobile()const
-{
-	return mobile_;
-}
-
-void InitSmartVerifyRequest::setMobile(const std::string& mobile)
-{
-	mobile_ = mobile;
-	setBodyParameter("Mobile", mobile);
-}
-
 std::string InitSmartVerifyRequest::getUserId()const
 {
 	return userId_;
@@ -69,6 +36,28 @@ void InitSmartVerifyRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
 	setBodyParameter("UserId", userId);
+}
+
+std::string InitSmartVerifyRequest::getCertifyId()const
+{
+	return certifyId_;
+}
+
+void InitSmartVerifyRequest::setCertifyId(const std::string& certifyId)
+{
+	certifyId_ = certifyId;
+	setBodyParameter("CertifyId", certifyId);
+}
+
+std::string InitSmartVerifyRequest::getFacePictureBase64()const
+{
+	return facePictureBase64_;
+}
+
+void InitSmartVerifyRequest::setFacePictureBase64(const std::string& facePictureBase64)
+{
+	facePictureBase64_ = facePictureBase64;
+	setBodyParameter("FacePictureBase64", facePictureBase64);
 }
 
 std::string InitSmartVerifyRequest::getMode()const
@@ -115,17 +104,6 @@ void InitSmartVerifyRequest::setCertType(const std::string& certType)
 	setBodyParameter("CertType", certType);
 }
 
-long InitSmartVerifyRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void InitSmartVerifyRequest::setSceneId(long sceneId)
-{
-	sceneId_ = sceneId;
-	setBodyParameter("SceneId", std::to_string(sceneId));
-}
-
 std::string InitSmartVerifyRequest::getMetaInfo()const
 {
 	return metaInfo_;
@@ -146,5 +124,104 @@ void InitSmartVerifyRequest::setOcr(const std::string& ocr)
 {
 	ocr_ = ocr;
 	setBodyParameter("Ocr", ocr);
+}
+
+std::string InitSmartVerifyRequest::getOssObjectName()const
+{
+	return ossObjectName_;
+}
+
+void InitSmartVerifyRequest::setOssObjectName(const std::string& ossObjectName)
+{
+	ossObjectName_ = ossObjectName;
+	setBodyParameter("OssObjectName", ossObjectName);
+}
+
+std::string InitSmartVerifyRequest::getFacePictureUrl()const
+{
+	return facePictureUrl_;
+}
+
+void InitSmartVerifyRequest::setFacePictureUrl(const std::string& facePictureUrl)
+{
+	facePictureUrl_ = facePictureUrl;
+	setBodyParameter("FacePictureUrl", facePictureUrl);
+}
+
+std::string InitSmartVerifyRequest::getIp()const
+{
+	return ip_;
+}
+
+void InitSmartVerifyRequest::setIp(const std::string& ip)
+{
+	ip_ = ip;
+	setBodyParameter("Ip", ip);
+}
+
+std::string InitSmartVerifyRequest::getCertName()const
+{
+	return certName_;
+}
+
+void InitSmartVerifyRequest::setCertName(const std::string& certName)
+{
+	certName_ = certName;
+	setBodyParameter("CertName", certName);
+}
+
+std::string InitSmartVerifyRequest::getMobile()const
+{
+	return mobile_;
+}
+
+void InitSmartVerifyRequest::setMobile(const std::string& mobile)
+{
+	mobile_ = mobile;
+	setBodyParameter("Mobile", mobile);
+}
+
+long InitSmartVerifyRequest::getSceneId()const
+{
+	return sceneId_;
+}
+
+void InitSmartVerifyRequest::setSceneId(long sceneId)
+{
+	sceneId_ = sceneId;
+	setBodyParameter("SceneId", std::to_string(sceneId));
+}
+
+std::string InitSmartVerifyRequest::getCallbackToken()const
+{
+	return callbackToken_;
+}
+
+void InitSmartVerifyRequest::setCallbackToken(const std::string& callbackToken)
+{
+	callbackToken_ = callbackToken;
+	setBodyParameter("CallbackToken", callbackToken);
+}
+
+std::string InitSmartVerifyRequest::getOssBucketName()const
+{
+	return ossBucketName_;
+}
+
+void InitSmartVerifyRequest::setOssBucketName(const std::string& ossBucketName)
+{
+	ossBucketName_ = ossBucketName;
+	setBodyParameter("OssBucketName", ossBucketName);
+}
+
+std::string InitSmartVerifyRequest::getCallbackUrl()const
+{
+	return callbackUrl_;
+}
+
+void InitSmartVerifyRequest::setCallbackUrl(const std::string& callbackUrl)
+{
+	callbackUrl_ = callbackUrl;
+	setBodyParameter("CallbackUrl", callbackUrl);
 }
 

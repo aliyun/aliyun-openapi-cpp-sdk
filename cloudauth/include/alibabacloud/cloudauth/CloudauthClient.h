@@ -84,6 +84,8 @@
 #include "model/InitFaceVerifyResult.h"
 #include "model/InitSmartVerifyRequest.h"
 #include "model/InitSmartVerifyResult.h"
+#include "model/LivenessFaceVerifyRequest.h"
+#include "model/LivenessFaceVerifyResult.h"
 #include "model/ModifyDeviceInfoRequest.h"
 #include "model/ModifyDeviceInfoResult.h"
 #include "model/SubmitMaterialsRequest.h"
@@ -200,6 +202,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InitSmartVerifyResult> InitSmartVerifyOutcome;
 			typedef std::future<InitSmartVerifyOutcome> InitSmartVerifyOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::InitSmartVerifyRequest&, const InitSmartVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitSmartVerifyAsyncHandler;
+			typedef Outcome<Error, Model::LivenessFaceVerifyResult> LivenessFaceVerifyOutcome;
+			typedef std::future<LivenessFaceVerifyOutcome> LivenessFaceVerifyOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::LivenessFaceVerifyRequest&, const LivenessFaceVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LivenessFaceVerifyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDeviceInfoResult> ModifyDeviceInfoOutcome;
 			typedef std::future<ModifyDeviceInfoOutcome> ModifyDeviceInfoOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::ModifyDeviceInfoRequest&, const ModifyDeviceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceInfoAsyncHandler;
@@ -319,6 +324,9 @@ namespace AlibabaCloud
 			InitSmartVerifyOutcome initSmartVerify(const Model::InitSmartVerifyRequest &request)const;
 			void initSmartVerifyAsync(const Model::InitSmartVerifyRequest& request, const InitSmartVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InitSmartVerifyOutcomeCallable initSmartVerifyCallable(const Model::InitSmartVerifyRequest& request) const;
+			LivenessFaceVerifyOutcome livenessFaceVerify(const Model::LivenessFaceVerifyRequest &request)const;
+			void livenessFaceVerifyAsync(const Model::LivenessFaceVerifyRequest& request, const LivenessFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			LivenessFaceVerifyOutcomeCallable livenessFaceVerifyCallable(const Model::LivenessFaceVerifyRequest& request) const;
 			ModifyDeviceInfoOutcome modifyDeviceInfo(const Model::ModifyDeviceInfoRequest &request)const;
 			void modifyDeviceInfoAsync(const Model::ModifyDeviceInfoRequest& request, const ModifyDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDeviceInfoOutcomeCallable modifyDeviceInfoCallable(const Model::ModifyDeviceInfoRequest& request) const;

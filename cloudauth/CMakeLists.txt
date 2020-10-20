@@ -83,6 +83,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/InitSmartVerifyRequest.h
 	include/alibabacloud/cloudauth/model/InitSmartVerifyResult.h
+	include/alibabacloud/cloudauth/model/LivenessFaceVerifyRequest.h
+	include/alibabacloud/cloudauth/model/LivenessFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
 	include/alibabacloud/cloudauth/model/SubmitMaterialsRequest.h
@@ -162,6 +164,8 @@ set(cloudauth_src
 	src/model/InitFaceVerifyResult.cc
 	src/model/InitSmartVerifyRequest.cc
 	src/model/InitSmartVerifyResult.cc
+	src/model/LivenessFaceVerifyRequest.cc
+	src/model/LivenessFaceVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
 	src/model/ModifyDeviceInfoResult.cc
 	src/model/SubmitMaterialsRequest.cc
