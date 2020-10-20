@@ -60,10 +60,14 @@
 #include "model/DescribeBackupSummaryResult.h"
 #include "model/DescribeBackupTablesRequest.h"
 #include "model/DescribeBackupTablesResult.h"
+#include "model/DescribeClusterConnectionRequest.h"
+#include "model/DescribeClusterConnectionResult.h"
 #include "model/DescribeDBInstanceUsageRequest.h"
 #include "model/DescribeDBInstanceUsageResult.h"
 #include "model/DescribeDeletedInstancesRequest.h"
 #include "model/DescribeDeletedInstancesResult.h"
+#include "model/DescribeDiskWarningLineRequest.h"
+#include "model/DescribeDiskWarningLineResult.h"
 #include "model/DescribeEndpointsRequest.h"
 #include "model/DescribeEndpointsResult.h"
 #include "model/DescribeInstanceRequest.h"
@@ -110,10 +114,14 @@
 #include "model/ModifyBackupPlanConfigResult.h"
 #include "model/ModifyClusterDeletionProtectionRequest.h"
 #include "model/ModifyClusterDeletionProtectionResult.h"
+#include "model/ModifyDiskWarningLineRequest.h"
+#include "model/ModifyDiskWarningLineResult.h"
 #include "model/ModifyInstanceMaintainTimeRequest.h"
 #include "model/ModifyInstanceMaintainTimeResult.h"
 #include "model/ModifyInstanceNameRequest.h"
 #include "model/ModifyInstanceNameResult.h"
+#include "model/ModifyInstanceTypeRequest.h"
+#include "model/ModifyInstanceTypeResult.h"
 #include "model/ModifyIpWhitelistRequest.h"
 #include "model/ModifyIpWhitelistResult.h"
 #include "model/ModifyMultiZoneClusterNodeTypeRequest.h"
@@ -130,6 +138,8 @@
 #include "model/QueryXpackRelateDBResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
+#include "model/ResizeColdStorageSizeRequest.h"
+#include "model/ResizeColdStorageSizeResult.h"
 #include "model/ResizeDiskSizeRequest.h"
 #include "model/ResizeDiskSizeResult.h"
 #include "model/ResizeMultiZoneClusterDiskSizeRequest.h"
@@ -216,12 +226,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBackupTablesResult> DescribeBackupTablesOutcome;
 			typedef std::future<DescribeBackupTablesOutcome> DescribeBackupTablesOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeBackupTablesRequest&, const DescribeBackupTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupTablesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterConnectionResult> DescribeClusterConnectionOutcome;
+			typedef std::future<DescribeClusterConnectionOutcome> DescribeClusterConnectionOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeClusterConnectionRequest&, const DescribeClusterConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterConnectionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBInstanceUsageResult> DescribeDBInstanceUsageOutcome;
 			typedef std::future<DescribeDBInstanceUsageOutcome> DescribeDBInstanceUsageOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeDBInstanceUsageRequest&, const DescribeDBInstanceUsageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceUsageAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDeletedInstancesResult> DescribeDeletedInstancesOutcome;
 			typedef std::future<DescribeDeletedInstancesOutcome> DescribeDeletedInstancesOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeDeletedInstancesRequest&, const DescribeDeletedInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeletedInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiskWarningLineResult> DescribeDiskWarningLineOutcome;
+			typedef std::future<DescribeDiskWarningLineOutcome> DescribeDiskWarningLineOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeDiskWarningLineRequest&, const DescribeDiskWarningLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskWarningLineAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEndpointsResult> DescribeEndpointsOutcome;
 			typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeEndpointsRequest&, const DescribeEndpointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndpointsAsyncHandler;
@@ -291,12 +307,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyClusterDeletionProtectionResult> ModifyClusterDeletionProtectionOutcome;
 			typedef std::future<ModifyClusterDeletionProtectionOutcome> ModifyClusterDeletionProtectionOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifyClusterDeletionProtectionRequest&, const ModifyClusterDeletionProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterDeletionProtectionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDiskWarningLineResult> ModifyDiskWarningLineOutcome;
+			typedef std::future<ModifyDiskWarningLineOutcome> ModifyDiskWarningLineOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::ModifyDiskWarningLineRequest&, const ModifyDiskWarningLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskWarningLineAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceMaintainTimeResult> ModifyInstanceMaintainTimeOutcome;
 			typedef std::future<ModifyInstanceMaintainTimeOutcome> ModifyInstanceMaintainTimeOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifyInstanceMaintainTimeRequest&, const ModifyInstanceMaintainTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceMaintainTimeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceNameResult> ModifyInstanceNameOutcome;
 			typedef std::future<ModifyInstanceNameOutcome> ModifyInstanceNameOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifyInstanceNameRequest&, const ModifyInstanceNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNameAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceTypeResult> ModifyInstanceTypeOutcome;
+			typedef std::future<ModifyInstanceTypeOutcome> ModifyInstanceTypeOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::ModifyInstanceTypeRequest&, const ModifyInstanceTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTypeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyIpWhitelistResult> ModifyIpWhitelistOutcome;
 			typedef std::future<ModifyIpWhitelistOutcome> ModifyIpWhitelistOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifyIpWhitelistRequest&, const ModifyIpWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpWhitelistAsyncHandler;
@@ -321,6 +343,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ResizeColdStorageSizeResult> ResizeColdStorageSizeOutcome;
+			typedef std::future<ResizeColdStorageSizeOutcome> ResizeColdStorageSizeOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::ResizeColdStorageSizeRequest&, const ResizeColdStorageSizeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeColdStorageSizeAsyncHandler;
 			typedef Outcome<Error, Model::ResizeDiskSizeResult> ResizeDiskSizeOutcome;
 			typedef std::future<ResizeDiskSizeOutcome> ResizeDiskSizeOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ResizeDiskSizeRequest&, const ResizeDiskSizeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDiskSizeAsyncHandler;
@@ -413,12 +438,18 @@ namespace AlibabaCloud
 			DescribeBackupTablesOutcome describeBackupTables(const Model::DescribeBackupTablesRequest &request)const;
 			void describeBackupTablesAsync(const Model::DescribeBackupTablesRequest& request, const DescribeBackupTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupTablesOutcomeCallable describeBackupTablesCallable(const Model::DescribeBackupTablesRequest& request) const;
+			DescribeClusterConnectionOutcome describeClusterConnection(const Model::DescribeClusterConnectionRequest &request)const;
+			void describeClusterConnectionAsync(const Model::DescribeClusterConnectionRequest& request, const DescribeClusterConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterConnectionOutcomeCallable describeClusterConnectionCallable(const Model::DescribeClusterConnectionRequest& request) const;
 			DescribeDBInstanceUsageOutcome describeDBInstanceUsage(const Model::DescribeDBInstanceUsageRequest &request)const;
 			void describeDBInstanceUsageAsync(const Model::DescribeDBInstanceUsageRequest& request, const DescribeDBInstanceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceUsageOutcomeCallable describeDBInstanceUsageCallable(const Model::DescribeDBInstanceUsageRequest& request) const;
 			DescribeDeletedInstancesOutcome describeDeletedInstances(const Model::DescribeDeletedInstancesRequest &request)const;
 			void describeDeletedInstancesAsync(const Model::DescribeDeletedInstancesRequest& request, const DescribeDeletedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeletedInstancesOutcomeCallable describeDeletedInstancesCallable(const Model::DescribeDeletedInstancesRequest& request) const;
+			DescribeDiskWarningLineOutcome describeDiskWarningLine(const Model::DescribeDiskWarningLineRequest &request)const;
+			void describeDiskWarningLineAsync(const Model::DescribeDiskWarningLineRequest& request, const DescribeDiskWarningLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiskWarningLineOutcomeCallable describeDiskWarningLineCallable(const Model::DescribeDiskWarningLineRequest& request) const;
 			DescribeEndpointsOutcome describeEndpoints(const Model::DescribeEndpointsRequest &request)const;
 			void describeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEndpointsOutcomeCallable describeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
@@ -488,12 +519,18 @@ namespace AlibabaCloud
 			ModifyClusterDeletionProtectionOutcome modifyClusterDeletionProtection(const Model::ModifyClusterDeletionProtectionRequest &request)const;
 			void modifyClusterDeletionProtectionAsync(const Model::ModifyClusterDeletionProtectionRequest& request, const ModifyClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyClusterDeletionProtectionOutcomeCallable modifyClusterDeletionProtectionCallable(const Model::ModifyClusterDeletionProtectionRequest& request) const;
+			ModifyDiskWarningLineOutcome modifyDiskWarningLine(const Model::ModifyDiskWarningLineRequest &request)const;
+			void modifyDiskWarningLineAsync(const Model::ModifyDiskWarningLineRequest& request, const ModifyDiskWarningLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDiskWarningLineOutcomeCallable modifyDiskWarningLineCallable(const Model::ModifyDiskWarningLineRequest& request) const;
 			ModifyInstanceMaintainTimeOutcome modifyInstanceMaintainTime(const Model::ModifyInstanceMaintainTimeRequest &request)const;
 			void modifyInstanceMaintainTimeAsync(const Model::ModifyInstanceMaintainTimeRequest& request, const ModifyInstanceMaintainTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceMaintainTimeOutcomeCallable modifyInstanceMaintainTimeCallable(const Model::ModifyInstanceMaintainTimeRequest& request) const;
 			ModifyInstanceNameOutcome modifyInstanceName(const Model::ModifyInstanceNameRequest &request)const;
 			void modifyInstanceNameAsync(const Model::ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceNameOutcomeCallable modifyInstanceNameCallable(const Model::ModifyInstanceNameRequest& request) const;
+			ModifyInstanceTypeOutcome modifyInstanceType(const Model::ModifyInstanceTypeRequest &request)const;
+			void modifyInstanceTypeAsync(const Model::ModifyInstanceTypeRequest& request, const ModifyInstanceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceTypeOutcomeCallable modifyInstanceTypeCallable(const Model::ModifyInstanceTypeRequest& request) const;
 			ModifyIpWhitelistOutcome modifyIpWhitelist(const Model::ModifyIpWhitelistRequest &request)const;
 			void modifyIpWhitelistAsync(const Model::ModifyIpWhitelistRequest& request, const ModifyIpWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyIpWhitelistOutcomeCallable modifyIpWhitelistCallable(const Model::ModifyIpWhitelistRequest& request) const;
@@ -518,6 +555,9 @@ namespace AlibabaCloud
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
+			ResizeColdStorageSizeOutcome resizeColdStorageSize(const Model::ResizeColdStorageSizeRequest &request)const;
+			void resizeColdStorageSizeAsync(const Model::ResizeColdStorageSizeRequest& request, const ResizeColdStorageSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResizeColdStorageSizeOutcomeCallable resizeColdStorageSizeCallable(const Model::ResizeColdStorageSizeRequest& request) const;
 			ResizeDiskSizeOutcome resizeDiskSize(const Model::ResizeDiskSizeRequest &request)const;
 			void resizeDiskSizeAsync(const Model::ResizeDiskSizeRequest& request, const ResizeDiskSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResizeDiskSizeOutcomeCallable resizeDiskSizeCallable(const Model::ResizeDiskSizeRequest& request) const;

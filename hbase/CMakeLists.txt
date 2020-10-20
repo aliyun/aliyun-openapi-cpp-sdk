@@ -59,10 +59,14 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeBackupSummaryResult.h
 	include/alibabacloud/hbase/model/DescribeBackupTablesRequest.h
 	include/alibabacloud/hbase/model/DescribeBackupTablesResult.h
+	include/alibabacloud/hbase/model/DescribeClusterConnectionRequest.h
+	include/alibabacloud/hbase/model/DescribeClusterConnectionResult.h
 	include/alibabacloud/hbase/model/DescribeDBInstanceUsageRequest.h
 	include/alibabacloud/hbase/model/DescribeDBInstanceUsageResult.h
 	include/alibabacloud/hbase/model/DescribeDeletedInstancesRequest.h
 	include/alibabacloud/hbase/model/DescribeDeletedInstancesResult.h
+	include/alibabacloud/hbase/model/DescribeDiskWarningLineRequest.h
+	include/alibabacloud/hbase/model/DescribeDiskWarningLineResult.h
 	include/alibabacloud/hbase/model/DescribeEndpointsRequest.h
 	include/alibabacloud/hbase/model/DescribeEndpointsResult.h
 	include/alibabacloud/hbase/model/DescribeInstanceRequest.h
@@ -109,10 +113,14 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/ModifyBackupPlanConfigResult.h
 	include/alibabacloud/hbase/model/ModifyClusterDeletionProtectionRequest.h
 	include/alibabacloud/hbase/model/ModifyClusterDeletionProtectionResult.h
+	include/alibabacloud/hbase/model/ModifyDiskWarningLineRequest.h
+	include/alibabacloud/hbase/model/ModifyDiskWarningLineResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceMaintainTimeRequest.h
 	include/alibabacloud/hbase/model/ModifyInstanceMaintainTimeResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceNameRequest.h
 	include/alibabacloud/hbase/model/ModifyInstanceNameResult.h
+	include/alibabacloud/hbase/model/ModifyInstanceTypeRequest.h
+	include/alibabacloud/hbase/model/ModifyInstanceTypeResult.h
 	include/alibabacloud/hbase/model/ModifyIpWhitelistRequest.h
 	include/alibabacloud/hbase/model/ModifyIpWhitelistResult.h
 	include/alibabacloud/hbase/model/ModifyMultiZoneClusterNodeTypeRequest.h
@@ -129,6 +137,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/QueryXpackRelateDBResult.h
 	include/alibabacloud/hbase/model/RenewInstanceRequest.h
 	include/alibabacloud/hbase/model/RenewInstanceResult.h
+	include/alibabacloud/hbase/model/ResizeColdStorageSizeRequest.h
+	include/alibabacloud/hbase/model/ResizeColdStorageSizeResult.h
 	include/alibabacloud/hbase/model/ResizeDiskSizeRequest.h
 	include/alibabacloud/hbase/model/ResizeDiskSizeResult.h
 	include/alibabacloud/hbase/model/ResizeMultiZoneClusterDiskSizeRequest.h
@@ -190,10 +200,14 @@ set(hbase_src
 	src/model/DescribeBackupSummaryResult.cc
 	src/model/DescribeBackupTablesRequest.cc
 	src/model/DescribeBackupTablesResult.cc
+	src/model/DescribeClusterConnectionRequest.cc
+	src/model/DescribeClusterConnectionResult.cc
 	src/model/DescribeDBInstanceUsageRequest.cc
 	src/model/DescribeDBInstanceUsageResult.cc
 	src/model/DescribeDeletedInstancesRequest.cc
 	src/model/DescribeDeletedInstancesResult.cc
+	src/model/DescribeDiskWarningLineRequest.cc
+	src/model/DescribeDiskWarningLineResult.cc
 	src/model/DescribeEndpointsRequest.cc
 	src/model/DescribeEndpointsResult.cc
 	src/model/DescribeInstanceRequest.cc
@@ -240,10 +254,14 @@ set(hbase_src
 	src/model/ModifyBackupPlanConfigResult.cc
 	src/model/ModifyClusterDeletionProtectionRequest.cc
 	src/model/ModifyClusterDeletionProtectionResult.cc
+	src/model/ModifyDiskWarningLineRequest.cc
+	src/model/ModifyDiskWarningLineResult.cc
 	src/model/ModifyInstanceMaintainTimeRequest.cc
 	src/model/ModifyInstanceMaintainTimeResult.cc
 	src/model/ModifyInstanceNameRequest.cc
 	src/model/ModifyInstanceNameResult.cc
+	src/model/ModifyInstanceTypeRequest.cc
+	src/model/ModifyInstanceTypeResult.cc
 	src/model/ModifyIpWhitelistRequest.cc
 	src/model/ModifyIpWhitelistResult.cc
 	src/model/ModifyMultiZoneClusterNodeTypeRequest.cc
@@ -260,6 +278,8 @@ set(hbase_src
 	src/model/QueryXpackRelateDBResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
+	src/model/ResizeColdStorageSizeRequest.cc
+	src/model/ResizeColdStorageSizeResult.cc
 	src/model/ResizeDiskSizeRequest.cc
 	src/model/ResizeDiskSizeResult.cc
 	src/model/ResizeMultiZoneClusterDiskSizeRequest.cc

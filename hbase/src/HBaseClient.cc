@@ -735,6 +735,42 @@ HBaseClient::DescribeBackupTablesOutcomeCallable HBaseClient::describeBackupTabl
 	return task->get_future();
 }
 
+HBaseClient::DescribeClusterConnectionOutcome HBaseClient::describeClusterConnection(const DescribeClusterConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterConnectionOutcome(DescribeClusterConnectionResult(outcome.result()));
+	else
+		return DescribeClusterConnectionOutcome(outcome.error());
+}
+
+void HBaseClient::describeClusterConnectionAsync(const DescribeClusterConnectionRequest& request, const DescribeClusterConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeClusterConnectionOutcomeCallable HBaseClient::describeClusterConnectionCallable(const DescribeClusterConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DescribeDBInstanceUsageOutcome HBaseClient::describeDBInstanceUsage(const DescribeDBInstanceUsageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +837,42 @@ HBaseClient::DescribeDeletedInstancesOutcomeCallable HBaseClient::describeDelete
 			[this, request]()
 			{
 			return this->describeDeletedInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeDiskWarningLineOutcome HBaseClient::describeDiskWarningLine(const DescribeDiskWarningLineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiskWarningLineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiskWarningLineOutcome(DescribeDiskWarningLineResult(outcome.result()));
+	else
+		return DescribeDiskWarningLineOutcome(outcome.error());
+}
+
+void HBaseClient::describeDiskWarningLineAsync(const DescribeDiskWarningLineRequest& request, const DescribeDiskWarningLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiskWarningLine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeDiskWarningLineOutcomeCallable HBaseClient::describeDiskWarningLineCallable(const DescribeDiskWarningLineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiskWarningLineOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiskWarningLine(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,6 +1707,42 @@ HBaseClient::ModifyClusterDeletionProtectionOutcomeCallable HBaseClient::modifyC
 	return task->get_future();
 }
 
+HBaseClient::ModifyDiskWarningLineOutcome HBaseClient::modifyDiskWarningLine(const ModifyDiskWarningLineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDiskWarningLineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDiskWarningLineOutcome(ModifyDiskWarningLineResult(outcome.result()));
+	else
+		return ModifyDiskWarningLineOutcome(outcome.error());
+}
+
+void HBaseClient::modifyDiskWarningLineAsync(const ModifyDiskWarningLineRequest& request, const ModifyDiskWarningLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDiskWarningLine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ModifyDiskWarningLineOutcomeCallable HBaseClient::modifyDiskWarningLineCallable(const ModifyDiskWarningLineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDiskWarningLineOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDiskWarningLine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::ModifyInstanceMaintainTimeOutcome HBaseClient::modifyInstanceMaintainTime(const ModifyInstanceMaintainTimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +1809,42 @@ HBaseClient::ModifyInstanceNameOutcomeCallable HBaseClient::modifyInstanceNameCa
 			[this, request]()
 			{
 			return this->modifyInstanceName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::ModifyInstanceTypeOutcome HBaseClient::modifyInstanceType(const ModifyInstanceTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceTypeOutcome(ModifyInstanceTypeResult(outcome.result()));
+	else
+		return ModifyInstanceTypeOutcome(outcome.error());
+}
+
+void HBaseClient::modifyInstanceTypeAsync(const ModifyInstanceTypeRequest& request, const ModifyInstanceTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ModifyInstanceTypeOutcomeCallable HBaseClient::modifyInstanceTypeCallable(const ModifyInstanceTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1989,6 +2133,42 @@ HBaseClient::RenewInstanceOutcomeCallable HBaseClient::renewInstanceCallable(con
 			[this, request]()
 			{
 			return this->renewInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::ResizeColdStorageSizeOutcome HBaseClient::resizeColdStorageSize(const ResizeColdStorageSizeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResizeColdStorageSizeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResizeColdStorageSizeOutcome(ResizeColdStorageSizeResult(outcome.result()));
+	else
+		return ResizeColdStorageSizeOutcome(outcome.error());
+}
+
+void HBaseClient::resizeColdStorageSizeAsync(const ResizeColdStorageSizeRequest& request, const ResizeColdStorageSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resizeColdStorageSize(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ResizeColdStorageSizeOutcomeCallable HBaseClient::resizeColdStorageSizeCallable(const ResizeColdStorageSizeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResizeColdStorageSizeOutcome()>>(
+			[this, request]()
+			{
+			return this->resizeColdStorageSize(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
