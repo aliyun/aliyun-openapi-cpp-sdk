@@ -60,17 +60,6 @@ void DescribeDcdnRefreshTasksRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeDcdnRefreshTasksRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DescribeDcdnRefreshTasksRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DescribeDcdnRefreshTasksRequest::getSecurityToken()const
 {
 	return securityToken_;
