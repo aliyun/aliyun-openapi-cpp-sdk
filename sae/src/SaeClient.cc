@@ -1,0 +1,2177 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/sae/SaeClient.h>
+#include <alibabacloud/core/SimpleCredentialsProvider.h>
+
+using namespace AlibabaCloud;
+using namespace AlibabaCloud::Location;
+using namespace AlibabaCloud::Sae;
+using namespace AlibabaCloud::Sae::Model;
+
+namespace
+{
+	const std::string SERVICE_NAME = "sae";
+}
+
+SaeClient::SaeClient(const Credentials &credentials, const ClientConfiguration &configuration) :
+	RoaServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+{
+	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "serverless");
+}
+
+SaeClient::SaeClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
+	RoaServiceClient(SERVICE_NAME, credentialsProvider, configuration)
+{
+	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "serverless");
+}
+
+SaeClient::SaeClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
+	RoaServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+{
+	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "serverless");
+}
+
+SaeClient::~SaeClient()
+{}
+
+SaeClient::AbortAndRollbackChangeOrderOutcome SaeClient::abortAndRollbackChangeOrder(const AbortAndRollbackChangeOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AbortAndRollbackChangeOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AbortAndRollbackChangeOrderOutcome(AbortAndRollbackChangeOrderResult(outcome.result()));
+	else
+		return AbortAndRollbackChangeOrderOutcome(outcome.error());
+}
+
+void SaeClient::abortAndRollbackChangeOrderAsync(const AbortAndRollbackChangeOrderRequest& request, const AbortAndRollbackChangeOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, abortAndRollbackChangeOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::AbortAndRollbackChangeOrderOutcomeCallable SaeClient::abortAndRollbackChangeOrderCallable(const AbortAndRollbackChangeOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AbortAndRollbackChangeOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->abortAndRollbackChangeOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::AbortChangeOrderOutcome SaeClient::abortChangeOrder(const AbortChangeOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AbortChangeOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AbortChangeOrderOutcome(AbortChangeOrderResult(outcome.result()));
+	else
+		return AbortChangeOrderOutcome(outcome.error());
+}
+
+void SaeClient::abortChangeOrderAsync(const AbortChangeOrderRequest& request, const AbortChangeOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, abortChangeOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::AbortChangeOrderOutcomeCallable SaeClient::abortChangeOrderCallable(const AbortChangeOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AbortChangeOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->abortChangeOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::BatchStartApplicationsOutcome SaeClient::batchStartApplications(const BatchStartApplicationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchStartApplicationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchStartApplicationsOutcome(BatchStartApplicationsResult(outcome.result()));
+	else
+		return BatchStartApplicationsOutcome(outcome.error());
+}
+
+void SaeClient::batchStartApplicationsAsync(const BatchStartApplicationsRequest& request, const BatchStartApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchStartApplications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::BatchStartApplicationsOutcomeCallable SaeClient::batchStartApplicationsCallable(const BatchStartApplicationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchStartApplicationsOutcome()>>(
+			[this, request]()
+			{
+			return this->batchStartApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::BatchStopApplicationsOutcome SaeClient::batchStopApplications(const BatchStopApplicationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchStopApplicationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchStopApplicationsOutcome(BatchStopApplicationsResult(outcome.result()));
+	else
+		return BatchStopApplicationsOutcome(outcome.error());
+}
+
+void SaeClient::batchStopApplicationsAsync(const BatchStopApplicationsRequest& request, const BatchStopApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchStopApplications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::BatchStopApplicationsOutcomeCallable SaeClient::batchStopApplicationsCallable(const BatchStopApplicationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchStopApplicationsOutcome()>>(
+			[this, request]()
+			{
+			return this->batchStopApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::BindSlbOutcome SaeClient::bindSlb(const BindSlbRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindSlbOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindSlbOutcome(BindSlbResult(outcome.result()));
+	else
+		return BindSlbOutcome(outcome.error());
+}
+
+void SaeClient::bindSlbAsync(const BindSlbRequest& request, const BindSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindSlb(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::BindSlbOutcomeCallable SaeClient::bindSlbCallable(const BindSlbRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindSlbOutcome()>>(
+			[this, request]()
+			{
+			return this->bindSlb(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ConfirmPipelineBatchOutcome SaeClient::confirmPipelineBatch(const ConfirmPipelineBatchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfirmPipelineBatchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfirmPipelineBatchOutcome(ConfirmPipelineBatchResult(outcome.result()));
+	else
+		return ConfirmPipelineBatchOutcome(outcome.error());
+}
+
+void SaeClient::confirmPipelineBatchAsync(const ConfirmPipelineBatchRequest& request, const ConfirmPipelineBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, confirmPipelineBatch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ConfirmPipelineBatchOutcomeCallable SaeClient::confirmPipelineBatchCallable(const ConfirmPipelineBatchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfirmPipelineBatchOutcome()>>(
+			[this, request]()
+			{
+			return this->confirmPipelineBatch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::CreateApplicationOutcome SaeClient::createApplication(const CreateApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApplicationOutcome(CreateApplicationResult(outcome.result()));
+	else
+		return CreateApplicationOutcome(outcome.error());
+}
+
+void SaeClient::createApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::CreateApplicationOutcomeCallable SaeClient::createApplicationCallable(const CreateApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->createApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::CreateConfigMapOutcome SaeClient::createConfigMap(const CreateConfigMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateConfigMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateConfigMapOutcome(CreateConfigMapResult(outcome.result()));
+	else
+		return CreateConfigMapOutcome(outcome.error());
+}
+
+void SaeClient::createConfigMapAsync(const CreateConfigMapRequest& request, const CreateConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createConfigMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::CreateConfigMapOutcomeCallable SaeClient::createConfigMapCallable(const CreateConfigMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateConfigMapOutcome()>>(
+			[this, request]()
+			{
+			return this->createConfigMap(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::CreateIngressOutcome SaeClient::createIngress(const CreateIngressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIngressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIngressOutcome(CreateIngressResult(outcome.result()));
+	else
+		return CreateIngressOutcome(outcome.error());
+}
+
+void SaeClient::createIngressAsync(const CreateIngressRequest& request, const CreateIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIngress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::CreateIngressOutcomeCallable SaeClient::createIngressCallable(const CreateIngressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIngressOutcome()>>(
+			[this, request]()
+			{
+			return this->createIngress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::CreateNamespaceOutcome SaeClient::createNamespace(const CreateNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNamespaceOutcome(CreateNamespaceResult(outcome.result()));
+	else
+		return CreateNamespaceOutcome(outcome.error());
+}
+
+void SaeClient::createNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::CreateNamespaceOutcomeCallable SaeClient::createNamespaceCallable(const CreateNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->createNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DeleteApplicationOutcome SaeClient::deleteApplication(const DeleteApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteApplicationOutcome(DeleteApplicationResult(outcome.result()));
+	else
+		return DeleteApplicationOutcome(outcome.error());
+}
+
+void SaeClient::deleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteApplicationOutcomeCallable SaeClient::deleteApplicationCallable(const DeleteApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DeleteConfigMapOutcome SaeClient::deleteConfigMap(const DeleteConfigMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteConfigMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteConfigMapOutcome(DeleteConfigMapResult(outcome.result()));
+	else
+		return DeleteConfigMapOutcome(outcome.error());
+}
+
+void SaeClient::deleteConfigMapAsync(const DeleteConfigMapRequest& request, const DeleteConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteConfigMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteConfigMapOutcomeCallable SaeClient::deleteConfigMapCallable(const DeleteConfigMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteConfigMapOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteConfigMap(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DeleteIngressOutcome SaeClient::deleteIngress(const DeleteIngressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIngressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIngressOutcome(DeleteIngressResult(outcome.result()));
+	else
+		return DeleteIngressOutcome(outcome.error());
+}
+
+void SaeClient::deleteIngressAsync(const DeleteIngressRequest& request, const DeleteIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIngress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteIngressOutcomeCallable SaeClient::deleteIngressCallable(const DeleteIngressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIngressOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIngress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DeleteNamespaceOutcome SaeClient::deleteNamespace(const DeleteNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNamespaceOutcome(DeleteNamespaceResult(outcome.result()));
+	else
+		return DeleteNamespaceOutcome(outcome.error());
+}
+
+void SaeClient::deleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteNamespaceOutcomeCallable SaeClient::deleteNamespaceCallable(const DeleteNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DeployApplicationOutcome SaeClient::deployApplication(const DeployApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeployApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeployApplicationOutcome(DeployApplicationResult(outcome.result()));
+	else
+		return DeployApplicationOutcome(outcome.error());
+}
+
+void SaeClient::deployApplicationAsync(const DeployApplicationRequest& request, const DeployApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deployApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeployApplicationOutcomeCallable SaeClient::deployApplicationCallable(const DeployApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeployApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->deployApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeApplicationConfigOutcome SaeClient::describeApplicationConfig(const DescribeApplicationConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationConfigOutcome(DescribeApplicationConfigResult(outcome.result()));
+	else
+		return DescribeApplicationConfigOutcome(outcome.error());
+}
+
+void SaeClient::describeApplicationConfigAsync(const DescribeApplicationConfigRequest& request, const DescribeApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeApplicationConfigOutcomeCallable SaeClient::describeApplicationConfigCallable(const DescribeApplicationConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeApplicationGroupsOutcome SaeClient::describeApplicationGroups(const DescribeApplicationGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationGroupsOutcome(DescribeApplicationGroupsResult(outcome.result()));
+	else
+		return DescribeApplicationGroupsOutcome(outcome.error());
+}
+
+void SaeClient::describeApplicationGroupsAsync(const DescribeApplicationGroupsRequest& request, const DescribeApplicationGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeApplicationGroupsOutcomeCallable SaeClient::describeApplicationGroupsCallable(const DescribeApplicationGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeApplicationImageOutcome SaeClient::describeApplicationImage(const DescribeApplicationImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationImageOutcome(DescribeApplicationImageResult(outcome.result()));
+	else
+		return DescribeApplicationImageOutcome(outcome.error());
+}
+
+void SaeClient::describeApplicationImageAsync(const DescribeApplicationImageRequest& request, const DescribeApplicationImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeApplicationImageOutcomeCallable SaeClient::describeApplicationImageCallable(const DescribeApplicationImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationImageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeApplicationInstancesOutcome SaeClient::describeApplicationInstances(const DescribeApplicationInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationInstancesOutcome(DescribeApplicationInstancesResult(outcome.result()));
+	else
+		return DescribeApplicationInstancesOutcome(outcome.error());
+}
+
+void SaeClient::describeApplicationInstancesAsync(const DescribeApplicationInstancesRequest& request, const DescribeApplicationInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeApplicationInstancesOutcomeCallable SaeClient::describeApplicationInstancesCallable(const DescribeApplicationInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeApplicationSlbsOutcome SaeClient::describeApplicationSlbs(const DescribeApplicationSlbsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationSlbsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationSlbsOutcome(DescribeApplicationSlbsResult(outcome.result()));
+	else
+		return DescribeApplicationSlbsOutcome(outcome.error());
+}
+
+void SaeClient::describeApplicationSlbsAsync(const DescribeApplicationSlbsRequest& request, const DescribeApplicationSlbsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationSlbs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeApplicationSlbsOutcomeCallable SaeClient::describeApplicationSlbsCallable(const DescribeApplicationSlbsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationSlbsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationSlbs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeApplicationStatusOutcome SaeClient::describeApplicationStatus(const DescribeApplicationStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationStatusOutcome(DescribeApplicationStatusResult(outcome.result()));
+	else
+		return DescribeApplicationStatusOutcome(outcome.error());
+}
+
+void SaeClient::describeApplicationStatusAsync(const DescribeApplicationStatusRequest& request, const DescribeApplicationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeApplicationStatusOutcomeCallable SaeClient::describeApplicationStatusCallable(const DescribeApplicationStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeChangeOrderOutcome SaeClient::describeChangeOrder(const DescribeChangeOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeChangeOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeChangeOrderOutcome(DescribeChangeOrderResult(outcome.result()));
+	else
+		return DescribeChangeOrderOutcome(outcome.error());
+}
+
+void SaeClient::describeChangeOrderAsync(const DescribeChangeOrderRequest& request, const DescribeChangeOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeChangeOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeChangeOrderOutcomeCallable SaeClient::describeChangeOrderCallable(const DescribeChangeOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeChangeOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->describeChangeOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeComponentsOutcome SaeClient::describeComponents(const DescribeComponentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeComponentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeComponentsOutcome(DescribeComponentsResult(outcome.result()));
+	else
+		return DescribeComponentsOutcome(outcome.error());
+}
+
+void SaeClient::describeComponentsAsync(const DescribeComponentsRequest& request, const DescribeComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeComponents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeComponentsOutcomeCallable SaeClient::describeComponentsCallable(const DescribeComponentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeComponentsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeComponents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeConfigMapOutcome SaeClient::describeConfigMap(const DescribeConfigMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeConfigMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeConfigMapOutcome(DescribeConfigMapResult(outcome.result()));
+	else
+		return DescribeConfigMapOutcome(outcome.error());
+}
+
+void SaeClient::describeConfigMapAsync(const DescribeConfigMapRequest& request, const DescribeConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeConfigMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeConfigMapOutcomeCallable SaeClient::describeConfigMapCallable(const DescribeConfigMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeConfigMapOutcome()>>(
+			[this, request]()
+			{
+			return this->describeConfigMap(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeEdasContainersOutcome SaeClient::describeEdasContainers(const DescribeEdasContainersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEdasContainersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEdasContainersOutcome(DescribeEdasContainersResult(outcome.result()));
+	else
+		return DescribeEdasContainersOutcome(outcome.error());
+}
+
+void SaeClient::describeEdasContainersAsync(const DescribeEdasContainersRequest& request, const DescribeEdasContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEdasContainers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeEdasContainersOutcomeCallable SaeClient::describeEdasContainersCallable(const DescribeEdasContainersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEdasContainersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEdasContainers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeIngressOutcome SaeClient::describeIngress(const DescribeIngressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIngressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIngressOutcome(DescribeIngressResult(outcome.result()));
+	else
+		return DescribeIngressOutcome(outcome.error());
+}
+
+void SaeClient::describeIngressAsync(const DescribeIngressRequest& request, const DescribeIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIngress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeIngressOutcomeCallable SaeClient::describeIngressCallable(const DescribeIngressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIngressOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIngress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeInstanceLogOutcome SaeClient::describeInstanceLog(const DescribeInstanceLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceLogOutcome(DescribeInstanceLogResult(outcome.result()));
+	else
+		return DescribeInstanceLogOutcome(outcome.error());
+}
+
+void SaeClient::describeInstanceLogAsync(const DescribeInstanceLogRequest& request, const DescribeInstanceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeInstanceLogOutcomeCallable SaeClient::describeInstanceLogCallable(const DescribeInstanceLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeInstanceSpecificationsOutcome SaeClient::describeInstanceSpecifications(const DescribeInstanceSpecificationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceSpecificationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceSpecificationsOutcome(DescribeInstanceSpecificationsResult(outcome.result()));
+	else
+		return DescribeInstanceSpecificationsOutcome(outcome.error());
+}
+
+void SaeClient::describeInstanceSpecificationsAsync(const DescribeInstanceSpecificationsRequest& request, const DescribeInstanceSpecificationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceSpecifications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeInstanceSpecificationsOutcomeCallable SaeClient::describeInstanceSpecificationsCallable(const DescribeInstanceSpecificationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceSpecificationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceSpecifications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeNamespaceOutcome SaeClient::describeNamespace(const DescribeNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNamespaceOutcome(DescribeNamespaceResult(outcome.result()));
+	else
+		return DescribeNamespaceOutcome(outcome.error());
+}
+
+void SaeClient::describeNamespaceAsync(const DescribeNamespaceRequest& request, const DescribeNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeNamespaceOutcomeCallable SaeClient::describeNamespaceCallable(const DescribeNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeNamespaceListOutcome SaeClient::describeNamespaceList(const DescribeNamespaceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNamespaceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNamespaceListOutcome(DescribeNamespaceListResult(outcome.result()));
+	else
+		return DescribeNamespaceListOutcome(outcome.error());
+}
+
+void SaeClient::describeNamespaceListAsync(const DescribeNamespaceListRequest& request, const DescribeNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNamespaceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeNamespaceListOutcomeCallable SaeClient::describeNamespaceListCallable(const DescribeNamespaceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNamespaceListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNamespaceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeNamespaceResourcesOutcome SaeClient::describeNamespaceResources(const DescribeNamespaceResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNamespaceResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNamespaceResourcesOutcome(DescribeNamespaceResourcesResult(outcome.result()));
+	else
+		return DescribeNamespaceResourcesOutcome(outcome.error());
+}
+
+void SaeClient::describeNamespaceResourcesAsync(const DescribeNamespaceResourcesRequest& request, const DescribeNamespaceResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNamespaceResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeNamespaceResourcesOutcomeCallable SaeClient::describeNamespaceResourcesCallable(const DescribeNamespaceResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNamespaceResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNamespaceResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeNamespacesOutcome SaeClient::describeNamespaces(const DescribeNamespacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNamespacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNamespacesOutcome(DescribeNamespacesResult(outcome.result()));
+	else
+		return DescribeNamespacesOutcome(outcome.error());
+}
+
+void SaeClient::describeNamespacesAsync(const DescribeNamespacesRequest& request, const DescribeNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNamespaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeNamespacesOutcomeCallable SaeClient::describeNamespacesCallable(const DescribeNamespacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNamespacesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNamespaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeRegionsOutcome SaeClient::describeRegions(const DescribeRegionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRegionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
+	else
+		return DescribeRegionsOutcome(outcome.error());
+}
+
+void SaeClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRegions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeRegionsOutcomeCallable SaeClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRegions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListAppEventsOutcome SaeClient::listAppEvents(const ListAppEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppEventsOutcome(ListAppEventsResult(outcome.result()));
+	else
+		return ListAppEventsOutcome(outcome.error());
+}
+
+void SaeClient::listAppEventsAsync(const ListAppEventsRequest& request, const ListAppEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListAppEventsOutcomeCallable SaeClient::listAppEventsCallable(const ListAppEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListAppVersionsOutcome SaeClient::listAppVersions(const ListAppVersionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppVersionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppVersionsOutcome(ListAppVersionsResult(outcome.result()));
+	else
+		return ListAppVersionsOutcome(outcome.error());
+}
+
+void SaeClient::listAppVersionsAsync(const ListAppVersionsRequest& request, const ListAppVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppVersions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListAppVersionsOutcomeCallable SaeClient::listAppVersionsCallable(const ListAppVersionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppVersionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppVersions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListApplicationsOutcome SaeClient::listApplications(const ListApplicationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationsOutcome(ListApplicationsResult(outcome.result()));
+	else
+		return ListApplicationsOutcome(outcome.error());
+}
+
+void SaeClient::listApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListApplicationsOutcomeCallable SaeClient::listApplicationsCallable(const ListApplicationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListChangeOrdersOutcome SaeClient::listChangeOrders(const ListChangeOrdersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListChangeOrdersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListChangeOrdersOutcome(ListChangeOrdersResult(outcome.result()));
+	else
+		return ListChangeOrdersOutcome(outcome.error());
+}
+
+void SaeClient::listChangeOrdersAsync(const ListChangeOrdersRequest& request, const ListChangeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listChangeOrders(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListChangeOrdersOutcomeCallable SaeClient::listChangeOrdersCallable(const ListChangeOrdersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListChangeOrdersOutcome()>>(
+			[this, request]()
+			{
+			return this->listChangeOrders(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListConsumedServicesOutcome SaeClient::listConsumedServices(const ListConsumedServicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListConsumedServicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListConsumedServicesOutcome(ListConsumedServicesResult(outcome.result()));
+	else
+		return ListConsumedServicesOutcome(outcome.error());
+}
+
+void SaeClient::listConsumedServicesAsync(const ListConsumedServicesRequest& request, const ListConsumedServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listConsumedServices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListConsumedServicesOutcomeCallable SaeClient::listConsumedServicesCallable(const ListConsumedServicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListConsumedServicesOutcome()>>(
+			[this, request]()
+			{
+			return this->listConsumedServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListIngressesOutcome SaeClient::listIngresses(const ListIngressesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIngressesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIngressesOutcome(ListIngressesResult(outcome.result()));
+	else
+		return ListIngressesOutcome(outcome.error());
+}
+
+void SaeClient::listIngressesAsync(const ListIngressesRequest& request, const ListIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIngresses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListIngressesOutcomeCallable SaeClient::listIngressesCallable(const ListIngressesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIngressesOutcome()>>(
+			[this, request]()
+			{
+			return this->listIngresses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListLogConfigsOutcome SaeClient::listLogConfigs(const ListLogConfigsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLogConfigsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLogConfigsOutcome(ListLogConfigsResult(outcome.result()));
+	else
+		return ListLogConfigsOutcome(outcome.error());
+}
+
+void SaeClient::listLogConfigsAsync(const ListLogConfigsRequest& request, const ListLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLogConfigs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListLogConfigsOutcomeCallable SaeClient::listLogConfigsCallable(const ListLogConfigsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLogConfigsOutcome()>>(
+			[this, request]()
+			{
+			return this->listLogConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListNamespaceChangeOrdersOutcome SaeClient::listNamespaceChangeOrders(const ListNamespaceChangeOrdersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNamespaceChangeOrdersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNamespaceChangeOrdersOutcome(ListNamespaceChangeOrdersResult(outcome.result()));
+	else
+		return ListNamespaceChangeOrdersOutcome(outcome.error());
+}
+
+void SaeClient::listNamespaceChangeOrdersAsync(const ListNamespaceChangeOrdersRequest& request, const ListNamespaceChangeOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNamespaceChangeOrders(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListNamespaceChangeOrdersOutcomeCallable SaeClient::listNamespaceChangeOrdersCallable(const ListNamespaceChangeOrdersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNamespaceChangeOrdersOutcome()>>(
+			[this, request]()
+			{
+			return this->listNamespaceChangeOrders(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListNamespacedConfigMapsOutcome SaeClient::listNamespacedConfigMaps(const ListNamespacedConfigMapsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNamespacedConfigMapsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNamespacedConfigMapsOutcome(ListNamespacedConfigMapsResult(outcome.result()));
+	else
+		return ListNamespacedConfigMapsOutcome(outcome.error());
+}
+
+void SaeClient::listNamespacedConfigMapsAsync(const ListNamespacedConfigMapsRequest& request, const ListNamespacedConfigMapsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNamespacedConfigMaps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListNamespacedConfigMapsOutcomeCallable SaeClient::listNamespacedConfigMapsCallable(const ListNamespacedConfigMapsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNamespacedConfigMapsOutcome()>>(
+			[this, request]()
+			{
+			return this->listNamespacedConfigMaps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListPublishedServicesOutcome SaeClient::listPublishedServices(const ListPublishedServicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPublishedServicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPublishedServicesOutcome(ListPublishedServicesResult(outcome.result()));
+	else
+		return ListPublishedServicesOutcome(outcome.error());
+}
+
+void SaeClient::listPublishedServicesAsync(const ListPublishedServicesRequest& request, const ListPublishedServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPublishedServices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListPublishedServicesOutcomeCallable SaeClient::listPublishedServicesCallable(const ListPublishedServicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPublishedServicesOutcome()>>(
+			[this, request]()
+			{
+			return this->listPublishedServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListTagResourcesOutcome SaeClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void SaeClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListTagResourcesOutcomeCallable SaeClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::QueryResourceStaticsOutcome SaeClient::queryResourceStatics(const QueryResourceStaticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryResourceStaticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryResourceStaticsOutcome(QueryResourceStaticsResult(outcome.result()));
+	else
+		return QueryResourceStaticsOutcome(outcome.error());
+}
+
+void SaeClient::queryResourceStaticsAsync(const QueryResourceStaticsRequest& request, const QueryResourceStaticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryResourceStatics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::QueryResourceStaticsOutcomeCallable SaeClient::queryResourceStaticsCallable(const QueryResourceStaticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryResourceStaticsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryResourceStatics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::RescaleApplicationOutcome SaeClient::rescaleApplication(const RescaleApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RescaleApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RescaleApplicationOutcome(RescaleApplicationResult(outcome.result()));
+	else
+		return RescaleApplicationOutcome(outcome.error());
+}
+
+void SaeClient::rescaleApplicationAsync(const RescaleApplicationRequest& request, const RescaleApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rescaleApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::RescaleApplicationOutcomeCallable SaeClient::rescaleApplicationCallable(const RescaleApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RescaleApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->rescaleApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::RescaleApplicationVerticallyOutcome SaeClient::rescaleApplicationVertically(const RescaleApplicationVerticallyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RescaleApplicationVerticallyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RescaleApplicationVerticallyOutcome(RescaleApplicationVerticallyResult(outcome.result()));
+	else
+		return RescaleApplicationVerticallyOutcome(outcome.error());
+}
+
+void SaeClient::rescaleApplicationVerticallyAsync(const RescaleApplicationVerticallyRequest& request, const RescaleApplicationVerticallyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rescaleApplicationVertically(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::RescaleApplicationVerticallyOutcomeCallable SaeClient::rescaleApplicationVerticallyCallable(const RescaleApplicationVerticallyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RescaleApplicationVerticallyOutcome()>>(
+			[this, request]()
+			{
+			return this->rescaleApplicationVertically(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::RestartApplicationOutcome SaeClient::restartApplication(const RestartApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartApplicationOutcome(RestartApplicationResult(outcome.result()));
+	else
+		return RestartApplicationOutcome(outcome.error());
+}
+
+void SaeClient::restartApplicationAsync(const RestartApplicationRequest& request, const RestartApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::RestartApplicationOutcomeCallable SaeClient::restartApplicationCallable(const RestartApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->restartApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::RollbackApplicationOutcome SaeClient::rollbackApplication(const RollbackApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RollbackApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RollbackApplicationOutcome(RollbackApplicationResult(outcome.result()));
+	else
+		return RollbackApplicationOutcome(outcome.error());
+}
+
+void SaeClient::rollbackApplicationAsync(const RollbackApplicationRequest& request, const RollbackApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rollbackApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::RollbackApplicationOutcomeCallable SaeClient::rollbackApplicationCallable(const RollbackApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RollbackApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->rollbackApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::StartApplicationOutcome SaeClient::startApplication(const StartApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartApplicationOutcome(StartApplicationResult(outcome.result()));
+	else
+		return StartApplicationOutcome(outcome.error());
+}
+
+void SaeClient::startApplicationAsync(const StartApplicationRequest& request, const StartApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::StartApplicationOutcomeCallable SaeClient::startApplicationCallable(const StartApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->startApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::StopApplicationOutcome SaeClient::stopApplication(const StopApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopApplicationOutcome(StopApplicationResult(outcome.result()));
+	else
+		return StopApplicationOutcome(outcome.error());
+}
+
+void SaeClient::stopApplicationAsync(const StopApplicationRequest& request, const StopApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::StopApplicationOutcomeCallable SaeClient::stopApplicationCallable(const StopApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->stopApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::TagResourcesOutcome SaeClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void SaeClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::TagResourcesOutcomeCallable SaeClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UnbindSlbOutcome SaeClient::unbindSlb(const UnbindSlbRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindSlbOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindSlbOutcome(UnbindSlbResult(outcome.result()));
+	else
+		return UnbindSlbOutcome(outcome.error());
+}
+
+void SaeClient::unbindSlbAsync(const UnbindSlbRequest& request, const UnbindSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindSlb(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UnbindSlbOutcomeCallable SaeClient::unbindSlbCallable(const UnbindSlbRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindSlbOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindSlb(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UntagResourcesOutcome SaeClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void SaeClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UntagResourcesOutcomeCallable SaeClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UpdateAppSecurityGroupOutcome SaeClient::updateAppSecurityGroup(const UpdateAppSecurityGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAppSecurityGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAppSecurityGroupOutcome(UpdateAppSecurityGroupResult(outcome.result()));
+	else
+		return UpdateAppSecurityGroupOutcome(outcome.error());
+}
+
+void SaeClient::updateAppSecurityGroupAsync(const UpdateAppSecurityGroupRequest& request, const UpdateAppSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAppSecurityGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateAppSecurityGroupOutcomeCallable SaeClient::updateAppSecurityGroupCallable(const UpdateAppSecurityGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAppSecurityGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAppSecurityGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UpdateConfigMapOutcome SaeClient::updateConfigMap(const UpdateConfigMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateConfigMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateConfigMapOutcome(UpdateConfigMapResult(outcome.result()));
+	else
+		return UpdateConfigMapOutcome(outcome.error());
+}
+
+void SaeClient::updateConfigMapAsync(const UpdateConfigMapRequest& request, const UpdateConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateConfigMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateConfigMapOutcomeCallable SaeClient::updateConfigMapCallable(const UpdateConfigMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateConfigMapOutcome()>>(
+			[this, request]()
+			{
+			return this->updateConfigMap(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UpdateIngressOutcome SaeClient::updateIngress(const UpdateIngressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateIngressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateIngressOutcome(UpdateIngressResult(outcome.result()));
+	else
+		return UpdateIngressOutcome(outcome.error());
+}
+
+void SaeClient::updateIngressAsync(const UpdateIngressRequest& request, const UpdateIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateIngress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateIngressOutcomeCallable SaeClient::updateIngressCallable(const UpdateIngressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateIngressOutcome()>>(
+			[this, request]()
+			{
+			return this->updateIngress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UpdateNamespaceOutcome SaeClient::updateNamespace(const UpdateNamespaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNamespaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNamespaceOutcome(UpdateNamespaceResult(outcome.result()));
+	else
+		return UpdateNamespaceOutcome(outcome.error());
+}
+
+void SaeClient::updateNamespaceAsync(const UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNamespace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateNamespaceOutcomeCallable SaeClient::updateNamespaceCallable(const UpdateNamespaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNamespaceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UpdateNamespaceVpcOutcome SaeClient::updateNamespaceVpc(const UpdateNamespaceVpcRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNamespaceVpcOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNamespaceVpcOutcome(UpdateNamespaceVpcResult(outcome.result()));
+	else
+		return UpdateNamespaceVpcOutcome(outcome.error());
+}
+
+void SaeClient::updateNamespaceVpcAsync(const UpdateNamespaceVpcRequest& request, const UpdateNamespaceVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNamespaceVpc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateNamespaceVpcOutcomeCallable SaeClient::updateNamespaceVpcCallable(const UpdateNamespaceVpcRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNamespaceVpcOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNamespaceVpc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
