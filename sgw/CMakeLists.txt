@@ -1,0 +1,542 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(sgw_public_header 
+	include/alibabacloud/sgw/SgwClient.h
+	include/alibabacloud/sgw/SgwExport.h )
+
+set(sgw_public_header_model 
+	include/alibabacloud/sgw/model/ActivateAllInOneGatewayRequest.h
+	include/alibabacloud/sgw/model/ActivateAllInOneGatewayResult.h
+	include/alibabacloud/sgw/model/ActivateGatewayRequest.h
+	include/alibabacloud/sgw/model/ActivateGatewayResult.h
+	include/alibabacloud/sgw/model/AddSharesToExpressSyncRequest.h
+	include/alibabacloud/sgw/model/AddSharesToExpressSyncResult.h
+	include/alibabacloud/sgw/model/AddTagsToGatewayRequest.h
+	include/alibabacloud/sgw/model/AddTagsToGatewayResult.h
+	include/alibabacloud/sgw/model/CheckActivationKeyRequest.h
+	include/alibabacloud/sgw/model/CheckActivationKeyResult.h
+	include/alibabacloud/sgw/model/CheckBlockVolumeNameRequest.h
+	include/alibabacloud/sgw/model/CheckBlockVolumeNameResult.h
+	include/alibabacloud/sgw/model/CheckGatewayEssdSupportRequest.h
+	include/alibabacloud/sgw/model/CheckGatewayEssdSupportResult.h
+	include/alibabacloud/sgw/model/CheckMnsServiceRequest.h
+	include/alibabacloud/sgw/model/CheckMnsServiceResult.h
+	include/alibabacloud/sgw/model/CheckRoleRequest.h
+	include/alibabacloud/sgw/model/CheckRoleResult.h
+	include/alibabacloud/sgw/model/CheckSlrRoleRequest.h
+	include/alibabacloud/sgw/model/CheckSlrRoleResult.h
+	include/alibabacloud/sgw/model/CheckUpgradeVersionRequest.h
+	include/alibabacloud/sgw/model/CheckUpgradeVersionResult.h
+	include/alibabacloud/sgw/model/CreateCacheRequest.h
+	include/alibabacloud/sgw/model/CreateCacheResult.h
+	include/alibabacloud/sgw/model/CreateExpressSyncRequest.h
+	include/alibabacloud/sgw/model/CreateExpressSyncResult.h
+	include/alibabacloud/sgw/model/CreateGatewayRequest.h
+	include/alibabacloud/sgw/model/CreateGatewayResult.h
+	include/alibabacloud/sgw/model/CreateGatewayBlockVolumeRequest.h
+	include/alibabacloud/sgw/model/CreateGatewayBlockVolumeResult.h
+	include/alibabacloud/sgw/model/CreateGatewayCacheDiskRequest.h
+	include/alibabacloud/sgw/model/CreateGatewayCacheDiskResult.h
+	include/alibabacloud/sgw/model/CreateGatewayFileShareRequest.h
+	include/alibabacloud/sgw/model/CreateGatewayFileShareResult.h
+	include/alibabacloud/sgw/model/CreateGatewayLoggingRequest.h
+	include/alibabacloud/sgw/model/CreateGatewayLoggingResult.h
+	include/alibabacloud/sgw/model/CreateGatewaySMBUserRequest.h
+	include/alibabacloud/sgw/model/CreateGatewaySMBUserResult.h
+	include/alibabacloud/sgw/model/CreateStorageBundleRequest.h
+	include/alibabacloud/sgw/model/CreateStorageBundleResult.h
+	include/alibabacloud/sgw/model/DeleteExpressSyncRequest.h
+	include/alibabacloud/sgw/model/DeleteExpressSyncResult.h
+	include/alibabacloud/sgw/model/DeleteGatewayRequest.h
+	include/alibabacloud/sgw/model/DeleteGatewayResult.h
+	include/alibabacloud/sgw/model/DeleteGatewayBlockVolumesRequest.h
+	include/alibabacloud/sgw/model/DeleteGatewayBlockVolumesResult.h
+	include/alibabacloud/sgw/model/DeleteGatewayCacheDiskRequest.h
+	include/alibabacloud/sgw/model/DeleteGatewayCacheDiskResult.h
+	include/alibabacloud/sgw/model/DeleteGatewayFileSharesRequest.h
+	include/alibabacloud/sgw/model/DeleteGatewayFileSharesResult.h
+	include/alibabacloud/sgw/model/DeleteGatewayLoggingRequest.h
+	include/alibabacloud/sgw/model/DeleteGatewayLoggingResult.h
+	include/alibabacloud/sgw/model/DeleteGatewaySMBUserRequest.h
+	include/alibabacloud/sgw/model/DeleteGatewaySMBUserResult.h
+	include/alibabacloud/sgw/model/DeleteStorageBundleRequest.h
+	include/alibabacloud/sgw/model/DeleteStorageBundleResult.h
+	include/alibabacloud/sgw/model/DeployCacheDiskRequest.h
+	include/alibabacloud/sgw/model/DeployCacheDiskResult.h
+	include/alibabacloud/sgw/model/DeployGatewayRequest.h
+	include/alibabacloud/sgw/model/DeployGatewayResult.h
+	include/alibabacloud/sgw/model/DescribeAccountConfigRequest.h
+	include/alibabacloud/sgw/model/DescribeAccountConfigResult.h
+	include/alibabacloud/sgw/model/DescribeBlockVolumeSnapshotsRequest.h
+	include/alibabacloud/sgw/model/DescribeBlockVolumeSnapshotsResult.h
+	include/alibabacloud/sgw/model/DescribeDashboardRequest.h
+	include/alibabacloud/sgw/model/DescribeDashboardResult.h
+	include/alibabacloud/sgw/model/DescribeExpireCachesRequest.h
+	include/alibabacloud/sgw/model/DescribeExpireCachesResult.h
+	include/alibabacloud/sgw/model/DescribeExpressSyncSharesRequest.h
+	include/alibabacloud/sgw/model/DescribeExpressSyncSharesResult.h
+	include/alibabacloud/sgw/model/DescribeExpressSyncsRequest.h
+	include/alibabacloud/sgw/model/DescribeExpressSyncsResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayADInfoRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayADInfoResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayActionsRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayActionsResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayAuthInfoRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayAuthInfoResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayBlockVolumesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayBlockVolumesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayBucketCachesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayBucketCachesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayCachesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayCachesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayCapacityLimitRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayCapacityLimitResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayCategoriesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayCategoriesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayClassesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayClassesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayCredentialRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayCredentialResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayDNSRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayDNSResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayFileSharesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayFileSharesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayFileStatusRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayFileStatusResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayImagesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayImagesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayInfoRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayInfoResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayLDAPInfoRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayLDAPInfoResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayLocationsRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayLocationsResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayLoggingRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayLoggingResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayLogsRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayLogsResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayModificationClassesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayModificationClassesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewaySMBUsersRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewaySMBUsersResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayStatisticsRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayStatisticsResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayStockRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayStockResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayTypesRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayTypesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewaysRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewaysResult.h
+	include/alibabacloud/sgw/model/DescribeGatewaysForCmsRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewaysForCmsResult.h
+	include/alibabacloud/sgw/model/DescribeGatewaysTagsRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewaysTagsResult.h
+	include/alibabacloud/sgw/model/DescribeKmsKeyRequest.h
+	include/alibabacloud/sgw/model/DescribeKmsKeyResult.h
+	include/alibabacloud/sgw/model/DescribeMqttConfigRequest.h
+	include/alibabacloud/sgw/model/DescribeMqttConfigResult.h
+	include/alibabacloud/sgw/model/DescribeOssBucketInfoRequest.h
+	include/alibabacloud/sgw/model/DescribeOssBucketInfoResult.h
+	include/alibabacloud/sgw/model/DescribeOssBucketsRequest.h
+	include/alibabacloud/sgw/model/DescribeOssBucketsResult.h
+	include/alibabacloud/sgw/model/DescribePayAsYouGoPriceRequest.h
+	include/alibabacloud/sgw/model/DescribePayAsYouGoPriceResult.h
+	include/alibabacloud/sgw/model/DescribeRegionsRequest.h
+	include/alibabacloud/sgw/model/DescribeRegionsResult.h
+	include/alibabacloud/sgw/model/DescribeSharesBucketInfoForExpressSyncRequest.h
+	include/alibabacloud/sgw/model/DescribeSharesBucketInfoForExpressSyncResult.h
+	include/alibabacloud/sgw/model/DescribeStorageBundleRequest.h
+	include/alibabacloud/sgw/model/DescribeStorageBundleResult.h
+	include/alibabacloud/sgw/model/DescribeStorageBundlesRequest.h
+	include/alibabacloud/sgw/model/DescribeStorageBundlesResult.h
+	include/alibabacloud/sgw/model/DescribeSubscriptionPriceRequest.h
+	include/alibabacloud/sgw/model/DescribeSubscriptionPriceResult.h
+	include/alibabacloud/sgw/model/DescribeTasksRequest.h
+	include/alibabacloud/sgw/model/DescribeTasksResult.h
+	include/alibabacloud/sgw/model/DescribeUserBusinessStatusRequest.h
+	include/alibabacloud/sgw/model/DescribeUserBusinessStatusResult.h
+	include/alibabacloud/sgw/model/DescribeVSwitchesRequest.h
+	include/alibabacloud/sgw/model/DescribeVSwitchesResult.h
+	include/alibabacloud/sgw/model/DescribeVpcsRequest.h
+	include/alibabacloud/sgw/model/DescribeVpcsResult.h
+	include/alibabacloud/sgw/model/DescribeZonesRequest.h
+	include/alibabacloud/sgw/model/DescribeZonesResult.h
+	include/alibabacloud/sgw/model/DisableGatewayLoggingRequest.h
+	include/alibabacloud/sgw/model/DisableGatewayLoggingResult.h
+	include/alibabacloud/sgw/model/EnableGatewayLoggingRequest.h
+	include/alibabacloud/sgw/model/EnableGatewayLoggingResult.h
+	include/alibabacloud/sgw/model/ExpandCacheDiskRequest.h
+	include/alibabacloud/sgw/model/ExpandCacheDiskResult.h
+	include/alibabacloud/sgw/model/ExpandGatewayNetworkBandwidthRequest.h
+	include/alibabacloud/sgw/model/ExpandGatewayNetworkBandwidthResult.h
+	include/alibabacloud/sgw/model/GenerateGatewayTokenRequest.h
+	include/alibabacloud/sgw/model/GenerateGatewayTokenResult.h
+	include/alibabacloud/sgw/model/GenerateMqttTokenRequest.h
+	include/alibabacloud/sgw/model/GenerateMqttTokenResult.h
+	include/alibabacloud/sgw/model/GenerateStsTokenRequest.h
+	include/alibabacloud/sgw/model/GenerateStsTokenResult.h
+	include/alibabacloud/sgw/model/ListTagResourcesRequest.h
+	include/alibabacloud/sgw/model/ListTagResourcesResult.h
+	include/alibabacloud/sgw/model/ModifyGatewayRequest.h
+	include/alibabacloud/sgw/model/ModifyGatewayResult.h
+	include/alibabacloud/sgw/model/ModifyGatewayBlockVolumeRequest.h
+	include/alibabacloud/sgw/model/ModifyGatewayBlockVolumeResult.h
+	include/alibabacloud/sgw/model/ModifyGatewayClassRequest.h
+	include/alibabacloud/sgw/model/ModifyGatewayClassResult.h
+	include/alibabacloud/sgw/model/ModifyGatewayFileShareRequest.h
+	include/alibabacloud/sgw/model/ModifyGatewayFileShareResult.h
+	include/alibabacloud/sgw/model/ModifyStorageBundleRequest.h
+	include/alibabacloud/sgw/model/ModifyStorageBundleResult.h
+	include/alibabacloud/sgw/model/OperateGatewayRequest.h
+	include/alibabacloud/sgw/model/OperateGatewayResult.h
+	include/alibabacloud/sgw/model/ReleaseServiceRequest.h
+	include/alibabacloud/sgw/model/ReleaseServiceResult.h
+	include/alibabacloud/sgw/model/RemoveSharesFromExpressSyncRequest.h
+	include/alibabacloud/sgw/model/RemoveSharesFromExpressSyncResult.h
+	include/alibabacloud/sgw/model/RemoveTagsFromGatewayRequest.h
+	include/alibabacloud/sgw/model/RemoveTagsFromGatewayResult.h
+	include/alibabacloud/sgw/model/ReportBlockVolumesRequest.h
+	include/alibabacloud/sgw/model/ReportBlockVolumesResult.h
+	include/alibabacloud/sgw/model/ReportFileSharesRequest.h
+	include/alibabacloud/sgw/model/ReportFileSharesResult.h
+	include/alibabacloud/sgw/model/ReportGatewayInfoRequest.h
+	include/alibabacloud/sgw/model/ReportGatewayInfoResult.h
+	include/alibabacloud/sgw/model/ReportGatewayUsageRequest.h
+	include/alibabacloud/sgw/model/ReportGatewayUsageResult.h
+	include/alibabacloud/sgw/model/ResetGatewayPasswordRequest.h
+	include/alibabacloud/sgw/model/ResetGatewayPasswordResult.h
+	include/alibabacloud/sgw/model/RestartFileSharesRequest.h
+	include/alibabacloud/sgw/model/RestartFileSharesResult.h
+	include/alibabacloud/sgw/model/SetGatewayADInfoRequest.h
+	include/alibabacloud/sgw/model/SetGatewayADInfoResult.h
+	include/alibabacloud/sgw/model/SetGatewayDNSRequest.h
+	include/alibabacloud/sgw/model/SetGatewayDNSResult.h
+	include/alibabacloud/sgw/model/SetGatewayLDAPInfoRequest.h
+	include/alibabacloud/sgw/model/SetGatewayLDAPInfoResult.h
+	include/alibabacloud/sgw/model/SwitchGatewayExpirationPolicyRequest.h
+	include/alibabacloud/sgw/model/SwitchGatewayExpirationPolicyResult.h
+	include/alibabacloud/sgw/model/SwitchToSubscriptionRequest.h
+	include/alibabacloud/sgw/model/SwitchToSubscriptionResult.h
+	include/alibabacloud/sgw/model/TagResourcesRequest.h
+	include/alibabacloud/sgw/model/TagResourcesResult.h
+	include/alibabacloud/sgw/model/UntagResourcesRequest.h
+	include/alibabacloud/sgw/model/UntagResourcesResult.h
+	include/alibabacloud/sgw/model/UpdateGatewayBlockVolumeRequest.h
+	include/alibabacloud/sgw/model/UpdateGatewayBlockVolumeResult.h
+	include/alibabacloud/sgw/model/UpdateGatewayFileShareRequest.h
+	include/alibabacloud/sgw/model/UpdateGatewayFileShareResult.h
+	include/alibabacloud/sgw/model/UpgradeGatewayRequest.h
+	include/alibabacloud/sgw/model/UpgradeGatewayResult.h
+	include/alibabacloud/sgw/model/UploadGatewayLogRequest.h
+	include/alibabacloud/sgw/model/UploadGatewayLogResult.h
+	include/alibabacloud/sgw/model/ValidateExpressSyncConfigRequest.h
+	include/alibabacloud/sgw/model/ValidateExpressSyncConfigResult.h
+	include/alibabacloud/sgw/model/ValidateGatewayNameRequest.h
+	include/alibabacloud/sgw/model/ValidateGatewayNameResult.h )
+
+set(sgw_src 
+	src/SgwClient.cc
+	src/model/ActivateAllInOneGatewayRequest.cc
+	src/model/ActivateAllInOneGatewayResult.cc
+	src/model/ActivateGatewayRequest.cc
+	src/model/ActivateGatewayResult.cc
+	src/model/AddSharesToExpressSyncRequest.cc
+	src/model/AddSharesToExpressSyncResult.cc
+	src/model/AddTagsToGatewayRequest.cc
+	src/model/AddTagsToGatewayResult.cc
+	src/model/CheckActivationKeyRequest.cc
+	src/model/CheckActivationKeyResult.cc
+	src/model/CheckBlockVolumeNameRequest.cc
+	src/model/CheckBlockVolumeNameResult.cc
+	src/model/CheckGatewayEssdSupportRequest.cc
+	src/model/CheckGatewayEssdSupportResult.cc
+	src/model/CheckMnsServiceRequest.cc
+	src/model/CheckMnsServiceResult.cc
+	src/model/CheckRoleRequest.cc
+	src/model/CheckRoleResult.cc
+	src/model/CheckSlrRoleRequest.cc
+	src/model/CheckSlrRoleResult.cc
+	src/model/CheckUpgradeVersionRequest.cc
+	src/model/CheckUpgradeVersionResult.cc
+	src/model/CreateCacheRequest.cc
+	src/model/CreateCacheResult.cc
+	src/model/CreateExpressSyncRequest.cc
+	src/model/CreateExpressSyncResult.cc
+	src/model/CreateGatewayRequest.cc
+	src/model/CreateGatewayResult.cc
+	src/model/CreateGatewayBlockVolumeRequest.cc
+	src/model/CreateGatewayBlockVolumeResult.cc
+	src/model/CreateGatewayCacheDiskRequest.cc
+	src/model/CreateGatewayCacheDiskResult.cc
+	src/model/CreateGatewayFileShareRequest.cc
+	src/model/CreateGatewayFileShareResult.cc
+	src/model/CreateGatewayLoggingRequest.cc
+	src/model/CreateGatewayLoggingResult.cc
+	src/model/CreateGatewaySMBUserRequest.cc
+	src/model/CreateGatewaySMBUserResult.cc
+	src/model/CreateStorageBundleRequest.cc
+	src/model/CreateStorageBundleResult.cc
+	src/model/DeleteExpressSyncRequest.cc
+	src/model/DeleteExpressSyncResult.cc
+	src/model/DeleteGatewayRequest.cc
+	src/model/DeleteGatewayResult.cc
+	src/model/DeleteGatewayBlockVolumesRequest.cc
+	src/model/DeleteGatewayBlockVolumesResult.cc
+	src/model/DeleteGatewayCacheDiskRequest.cc
+	src/model/DeleteGatewayCacheDiskResult.cc
+	src/model/DeleteGatewayFileSharesRequest.cc
+	src/model/DeleteGatewayFileSharesResult.cc
+	src/model/DeleteGatewayLoggingRequest.cc
+	src/model/DeleteGatewayLoggingResult.cc
+	src/model/DeleteGatewaySMBUserRequest.cc
+	src/model/DeleteGatewaySMBUserResult.cc
+	src/model/DeleteStorageBundleRequest.cc
+	src/model/DeleteStorageBundleResult.cc
+	src/model/DeployCacheDiskRequest.cc
+	src/model/DeployCacheDiskResult.cc
+	src/model/DeployGatewayRequest.cc
+	src/model/DeployGatewayResult.cc
+	src/model/DescribeAccountConfigRequest.cc
+	src/model/DescribeAccountConfigResult.cc
+	src/model/DescribeBlockVolumeSnapshotsRequest.cc
+	src/model/DescribeBlockVolumeSnapshotsResult.cc
+	src/model/DescribeDashboardRequest.cc
+	src/model/DescribeDashboardResult.cc
+	src/model/DescribeExpireCachesRequest.cc
+	src/model/DescribeExpireCachesResult.cc
+	src/model/DescribeExpressSyncSharesRequest.cc
+	src/model/DescribeExpressSyncSharesResult.cc
+	src/model/DescribeExpressSyncsRequest.cc
+	src/model/DescribeExpressSyncsResult.cc
+	src/model/DescribeGatewayRequest.cc
+	src/model/DescribeGatewayResult.cc
+	src/model/DescribeGatewayADInfoRequest.cc
+	src/model/DescribeGatewayADInfoResult.cc
+	src/model/DescribeGatewayActionsRequest.cc
+	src/model/DescribeGatewayActionsResult.cc
+	src/model/DescribeGatewayAuthInfoRequest.cc
+	src/model/DescribeGatewayAuthInfoResult.cc
+	src/model/DescribeGatewayBlockVolumesRequest.cc
+	src/model/DescribeGatewayBlockVolumesResult.cc
+	src/model/DescribeGatewayBucketCachesRequest.cc
+	src/model/DescribeGatewayBucketCachesResult.cc
+	src/model/DescribeGatewayCachesRequest.cc
+	src/model/DescribeGatewayCachesResult.cc
+	src/model/DescribeGatewayCapacityLimitRequest.cc
+	src/model/DescribeGatewayCapacityLimitResult.cc
+	src/model/DescribeGatewayCategoriesRequest.cc
+	src/model/DescribeGatewayCategoriesResult.cc
+	src/model/DescribeGatewayClassesRequest.cc
+	src/model/DescribeGatewayClassesResult.cc
+	src/model/DescribeGatewayCredentialRequest.cc
+	src/model/DescribeGatewayCredentialResult.cc
+	src/model/DescribeGatewayDNSRequest.cc
+	src/model/DescribeGatewayDNSResult.cc
+	src/model/DescribeGatewayFileSharesRequest.cc
+	src/model/DescribeGatewayFileSharesResult.cc
+	src/model/DescribeGatewayFileStatusRequest.cc
+	src/model/DescribeGatewayFileStatusResult.cc
+	src/model/DescribeGatewayImagesRequest.cc
+	src/model/DescribeGatewayImagesResult.cc
+	src/model/DescribeGatewayInfoRequest.cc
+	src/model/DescribeGatewayInfoResult.cc
+	src/model/DescribeGatewayLDAPInfoRequest.cc
+	src/model/DescribeGatewayLDAPInfoResult.cc
+	src/model/DescribeGatewayLocationsRequest.cc
+	src/model/DescribeGatewayLocationsResult.cc
+	src/model/DescribeGatewayLoggingRequest.cc
+	src/model/DescribeGatewayLoggingResult.cc
+	src/model/DescribeGatewayLogsRequest.cc
+	src/model/DescribeGatewayLogsResult.cc
+	src/model/DescribeGatewayModificationClassesRequest.cc
+	src/model/DescribeGatewayModificationClassesResult.cc
+	src/model/DescribeGatewaySMBUsersRequest.cc
+	src/model/DescribeGatewaySMBUsersResult.cc
+	src/model/DescribeGatewayStatisticsRequest.cc
+	src/model/DescribeGatewayStatisticsResult.cc
+	src/model/DescribeGatewayStockRequest.cc
+	src/model/DescribeGatewayStockResult.cc
+	src/model/DescribeGatewayTypesRequest.cc
+	src/model/DescribeGatewayTypesResult.cc
+	src/model/DescribeGatewaysRequest.cc
+	src/model/DescribeGatewaysResult.cc
+	src/model/DescribeGatewaysForCmsRequest.cc
+	src/model/DescribeGatewaysForCmsResult.cc
+	src/model/DescribeGatewaysTagsRequest.cc
+	src/model/DescribeGatewaysTagsResult.cc
+	src/model/DescribeKmsKeyRequest.cc
+	src/model/DescribeKmsKeyResult.cc
+	src/model/DescribeMqttConfigRequest.cc
+	src/model/DescribeMqttConfigResult.cc
+	src/model/DescribeOssBucketInfoRequest.cc
+	src/model/DescribeOssBucketInfoResult.cc
+	src/model/DescribeOssBucketsRequest.cc
+	src/model/DescribeOssBucketsResult.cc
+	src/model/DescribePayAsYouGoPriceRequest.cc
+	src/model/DescribePayAsYouGoPriceResult.cc
+	src/model/DescribeRegionsRequest.cc
+	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSharesBucketInfoForExpressSyncRequest.cc
+	src/model/DescribeSharesBucketInfoForExpressSyncResult.cc
+	src/model/DescribeStorageBundleRequest.cc
+	src/model/DescribeStorageBundleResult.cc
+	src/model/DescribeStorageBundlesRequest.cc
+	src/model/DescribeStorageBundlesResult.cc
+	src/model/DescribeSubscriptionPriceRequest.cc
+	src/model/DescribeSubscriptionPriceResult.cc
+	src/model/DescribeTasksRequest.cc
+	src/model/DescribeTasksResult.cc
+	src/model/DescribeUserBusinessStatusRequest.cc
+	src/model/DescribeUserBusinessStatusResult.cc
+	src/model/DescribeVSwitchesRequest.cc
+	src/model/DescribeVSwitchesResult.cc
+	src/model/DescribeVpcsRequest.cc
+	src/model/DescribeVpcsResult.cc
+	src/model/DescribeZonesRequest.cc
+	src/model/DescribeZonesResult.cc
+	src/model/DisableGatewayLoggingRequest.cc
+	src/model/DisableGatewayLoggingResult.cc
+	src/model/EnableGatewayLoggingRequest.cc
+	src/model/EnableGatewayLoggingResult.cc
+	src/model/ExpandCacheDiskRequest.cc
+	src/model/ExpandCacheDiskResult.cc
+	src/model/ExpandGatewayNetworkBandwidthRequest.cc
+	src/model/ExpandGatewayNetworkBandwidthResult.cc
+	src/model/GenerateGatewayTokenRequest.cc
+	src/model/GenerateGatewayTokenResult.cc
+	src/model/GenerateMqttTokenRequest.cc
+	src/model/GenerateMqttTokenResult.cc
+	src/model/GenerateStsTokenRequest.cc
+	src/model/GenerateStsTokenResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
+	src/model/ModifyGatewayRequest.cc
+	src/model/ModifyGatewayResult.cc
+	src/model/ModifyGatewayBlockVolumeRequest.cc
+	src/model/ModifyGatewayBlockVolumeResult.cc
+	src/model/ModifyGatewayClassRequest.cc
+	src/model/ModifyGatewayClassResult.cc
+	src/model/ModifyGatewayFileShareRequest.cc
+	src/model/ModifyGatewayFileShareResult.cc
+	src/model/ModifyStorageBundleRequest.cc
+	src/model/ModifyStorageBundleResult.cc
+	src/model/OperateGatewayRequest.cc
+	src/model/OperateGatewayResult.cc
+	src/model/ReleaseServiceRequest.cc
+	src/model/ReleaseServiceResult.cc
+	src/model/RemoveSharesFromExpressSyncRequest.cc
+	src/model/RemoveSharesFromExpressSyncResult.cc
+	src/model/RemoveTagsFromGatewayRequest.cc
+	src/model/RemoveTagsFromGatewayResult.cc
+	src/model/ReportBlockVolumesRequest.cc
+	src/model/ReportBlockVolumesResult.cc
+	src/model/ReportFileSharesRequest.cc
+	src/model/ReportFileSharesResult.cc
+	src/model/ReportGatewayInfoRequest.cc
+	src/model/ReportGatewayInfoResult.cc
+	src/model/ReportGatewayUsageRequest.cc
+	src/model/ReportGatewayUsageResult.cc
+	src/model/ResetGatewayPasswordRequest.cc
+	src/model/ResetGatewayPasswordResult.cc
+	src/model/RestartFileSharesRequest.cc
+	src/model/RestartFileSharesResult.cc
+	src/model/SetGatewayADInfoRequest.cc
+	src/model/SetGatewayADInfoResult.cc
+	src/model/SetGatewayDNSRequest.cc
+	src/model/SetGatewayDNSResult.cc
+	src/model/SetGatewayLDAPInfoRequest.cc
+	src/model/SetGatewayLDAPInfoResult.cc
+	src/model/SwitchGatewayExpirationPolicyRequest.cc
+	src/model/SwitchGatewayExpirationPolicyResult.cc
+	src/model/SwitchToSubscriptionRequest.cc
+	src/model/SwitchToSubscriptionResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
+	src/model/UpdateGatewayBlockVolumeRequest.cc
+	src/model/UpdateGatewayBlockVolumeResult.cc
+	src/model/UpdateGatewayFileShareRequest.cc
+	src/model/UpdateGatewayFileShareResult.cc
+	src/model/UpgradeGatewayRequest.cc
+	src/model/UpgradeGatewayResult.cc
+	src/model/UploadGatewayLogRequest.cc
+	src/model/UploadGatewayLogResult.cc
+	src/model/ValidateExpressSyncConfigRequest.cc
+	src/model/ValidateExpressSyncConfigResult.cc
+	src/model/ValidateGatewayNameRequest.cc
+	src/model/ValidateGatewayNameResult.cc )
+
+add_library(sgw ${LIB_TYPE}
+	${sgw_public_header}
+	${sgw_public_header_model}
+	${sgw_src})
+
+set_target_properties(sgw
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}sgw
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(sgw
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_SGW_LIBRARY)
+endif()
+
+target_include_directories(sgw
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(sgw
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(sgw
+		jsoncpp)
+	target_include_directories(sgw
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(sgw
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(sgw
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(sgw
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(sgw
+		jsoncpp)
+endif()
+
+install(FILES ${sgw_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/sgw)
+install(FILES ${sgw_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/sgw/model)
+install(TARGETS sgw
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
