@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					long port;
 					std::string destroyTime;
 					bool hasRenewChangeOrder;
+					int shardCount;
 					std::string connectionDomain;
 					long capacity;
 					long qPS;
@@ -72,6 +73,7 @@ namespace AlibabaCloud
 					std::string chargeType;
 					std::string nodeType;
 					std::string connectionMode;
+					int proxyCount;
 					std::string vpcCloudInstanceId;
 					std::string regionId;
 				};

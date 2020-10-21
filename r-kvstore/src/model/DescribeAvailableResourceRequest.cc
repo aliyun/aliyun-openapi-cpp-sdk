@@ -148,6 +148,17 @@ void DescribeAvailableResourceRequest::setInstanceId(const std::string& instance
 	setParameter("InstanceId", instanceId);
 }
 
+std::string DescribeAvailableResourceRequest::getAcceptLanguage()const
+{
+	return acceptLanguage_;
+}
+
+void DescribeAvailableResourceRequest::setAcceptLanguage(const std::string& acceptLanguage)
+{
+	acceptLanguage_ = acceptLanguage;
+	setParameter("AcceptLanguage", acceptLanguage);
+}
+
 std::string DescribeAvailableResourceRequest::getZoneId()const
 {
 	return zoneId_;

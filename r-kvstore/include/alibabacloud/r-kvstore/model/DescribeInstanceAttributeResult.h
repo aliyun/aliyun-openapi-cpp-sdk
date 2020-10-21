@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string config;
 					long port;
 					std::string hasRenewChangeOrder;
+					int shardCount;
 					std::string connectionDomain;
 					std::string maintainEndTime;
 					long capacity;

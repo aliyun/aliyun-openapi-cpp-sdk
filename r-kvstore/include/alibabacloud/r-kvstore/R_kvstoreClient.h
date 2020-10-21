@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "R_kvstoreExport.h"
+#include "model/AddShardingNodeRequest.h"
+#include "model/AddShardingNodeResult.h"
 #include "model/AllocateDirectConnectionRequest.h"
 #include "model/AllocateDirectConnectionResult.h"
 #include "model/AllocateInstancePublicConnectionRequest.h"
@@ -50,6 +52,8 @@
 #include "model/DeleteDedicatedUserClusterResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
+#include "model/DeleteShardingNodeRequest.h"
+#include "model/DeleteShardingNodeResult.h"
 #include "model/DeleteUserClusterHostRequest.h"
 #include "model/DeleteUserClusterHostResult.h"
 #include "model/DescribeAccountsRequest.h"
@@ -66,6 +70,8 @@
 #include "model/DescribeCacheAnalysisReportResult.h"
 #include "model/DescribeCacheAnalysisReportListRequest.h"
 #include "model/DescribeCacheAnalysisReportListResult.h"
+#include "model/DescribeClusterMemberInfoRequest.h"
+#include "model/DescribeClusterMemberInfoResult.h"
 #include "model/DescribeDBInstanceNetInfoRequest.h"
 #include "model/DescribeDBInstanceNetInfoResult.h"
 #include "model/DescribeDedicatedClusterInstanceListRequest.h"
@@ -197,6 +203,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_R_KVSTORE_EXPORT R_kvstoreClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddShardingNodeResult> AddShardingNodeOutcome;
+			typedef std::future<AddShardingNodeOutcome> AddShardingNodeOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::AddShardingNodeRequest&, const AddShardingNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddShardingNodeAsyncHandler;
 			typedef Outcome<Error, Model::AllocateDirectConnectionResult> AllocateDirectConnectionOutcome;
 			typedef std::future<AllocateDirectConnectionOutcome> AllocateDirectConnectionOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::AllocateDirectConnectionRequest&, const AllocateDirectConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateDirectConnectionAsyncHandler;
@@ -239,6 +248,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
 			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteShardingNodeResult> DeleteShardingNodeOutcome;
+			typedef std::future<DeleteShardingNodeOutcome> DeleteShardingNodeOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteShardingNodeRequest&, const DeleteShardingNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShardingNodeAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserClusterHostResult> DeleteUserClusterHostOutcome;
 			typedef std::future<DeleteUserClusterHostOutcome> DeleteUserClusterHostOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DeleteUserClusterHostRequest&, const DeleteUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserClusterHostAsyncHandler;
@@ -263,6 +275,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCacheAnalysisReportListResult> DescribeCacheAnalysisReportListOutcome;
 			typedef std::future<DescribeCacheAnalysisReportListOutcome> DescribeCacheAnalysisReportListOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeCacheAnalysisReportListRequest&, const DescribeCacheAnalysisReportListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCacheAnalysisReportListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterMemberInfoResult> DescribeClusterMemberInfoOutcome;
+			typedef std::future<DescribeClusterMemberInfoOutcome> DescribeClusterMemberInfoOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeClusterMemberInfoRequest&, const DescribeClusterMemberInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterMemberInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBInstanceNetInfoResult> DescribeDBInstanceNetInfoOutcome;
 			typedef std::future<DescribeDBInstanceNetInfoOutcome> DescribeDBInstanceNetInfoOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeDBInstanceNetInfoRequest&, const DescribeDBInstanceNetInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceNetInfoAsyncHandler;
@@ -451,6 +466,9 @@ namespace AlibabaCloud
 			R_kvstoreClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			R_kvstoreClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~R_kvstoreClient();
+			AddShardingNodeOutcome addShardingNode(const Model::AddShardingNodeRequest &request)const;
+			void addShardingNodeAsync(const Model::AddShardingNodeRequest& request, const AddShardingNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddShardingNodeOutcomeCallable addShardingNodeCallable(const Model::AddShardingNodeRequest& request) const;
 			AllocateDirectConnectionOutcome allocateDirectConnection(const Model::AllocateDirectConnectionRequest &request)const;
 			void allocateDirectConnectionAsync(const Model::AllocateDirectConnectionRequest& request, const AllocateDirectConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateDirectConnectionOutcomeCallable allocateDirectConnectionCallable(const Model::AllocateDirectConnectionRequest& request) const;
@@ -493,6 +511,9 @@ namespace AlibabaCloud
 			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
 			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
+			DeleteShardingNodeOutcome deleteShardingNode(const Model::DeleteShardingNodeRequest &request)const;
+			void deleteShardingNodeAsync(const Model::DeleteShardingNodeRequest& request, const DeleteShardingNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteShardingNodeOutcomeCallable deleteShardingNodeCallable(const Model::DeleteShardingNodeRequest& request) const;
 			DeleteUserClusterHostOutcome deleteUserClusterHost(const Model::DeleteUserClusterHostRequest &request)const;
 			void deleteUserClusterHostAsync(const Model::DeleteUserClusterHostRequest& request, const DeleteUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserClusterHostOutcomeCallable deleteUserClusterHostCallable(const Model::DeleteUserClusterHostRequest& request) const;
@@ -517,6 +538,9 @@ namespace AlibabaCloud
 			DescribeCacheAnalysisReportListOutcome describeCacheAnalysisReportList(const Model::DescribeCacheAnalysisReportListRequest &request)const;
 			void describeCacheAnalysisReportListAsync(const Model::DescribeCacheAnalysisReportListRequest& request, const DescribeCacheAnalysisReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCacheAnalysisReportListOutcomeCallable describeCacheAnalysisReportListCallable(const Model::DescribeCacheAnalysisReportListRequest& request) const;
+			DescribeClusterMemberInfoOutcome describeClusterMemberInfo(const Model::DescribeClusterMemberInfoRequest &request)const;
+			void describeClusterMemberInfoAsync(const Model::DescribeClusterMemberInfoRequest& request, const DescribeClusterMemberInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterMemberInfoOutcomeCallable describeClusterMemberInfoCallable(const Model::DescribeClusterMemberInfoRequest& request) const;
 			DescribeDBInstanceNetInfoOutcome describeDBInstanceNetInfo(const Model::DescribeDBInstanceNetInfoRequest &request)const;
 			void describeDBInstanceNetInfoAsync(const Model::DescribeDBInstanceNetInfoRequest& request, const DescribeDBInstanceNetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceNetInfoOutcomeCallable describeDBInstanceNetInfoCallable(const Model::DescribeDBInstanceNetInfoRequest& request) const;

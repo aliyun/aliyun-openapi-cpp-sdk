@@ -111,6 +111,10 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.vpcCloudInstanceId = valueInstancesKVStoreInstance["VpcCloudInstanceId"].asString();
 		if(!valueInstancesKVStoreInstance["ResourceGroupId"].isNull())
 			instancesObject.resourceGroupId = valueInstancesKVStoreInstance["ResourceGroupId"].asString();
+		if(!valueInstancesKVStoreInstance["ShardCount"].isNull())
+			instancesObject.shardCount = std::stoi(valueInstancesKVStoreInstance["ShardCount"].asString());
+		if(!valueInstancesKVStoreInstance["ProxyCount"].isNull())
+			instancesObject.proxyCount = std::stoi(valueInstancesKVStoreInstance["ProxyCount"].asString());
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{

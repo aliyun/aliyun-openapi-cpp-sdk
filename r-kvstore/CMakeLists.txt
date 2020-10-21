@@ -21,6 +21,8 @@ set(r-kvstore_public_header
 	include/alibabacloud/r-kvstore/R_kvstoreExport.h )
 
 set(r-kvstore_public_header_model 
+	include/alibabacloud/r-kvstore/model/AddShardingNodeRequest.h
+	include/alibabacloud/r-kvstore/model/AddShardingNodeResult.h
 	include/alibabacloud/r-kvstore/model/AllocateDirectConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/AllocateDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/AllocateInstancePublicConnectionRequest.h
@@ -49,6 +51,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DeleteDedicatedUserClusterResult.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceResult.h
+	include/alibabacloud/r-kvstore/model/DeleteShardingNodeRequest.h
+	include/alibabacloud/r-kvstore/model/DeleteShardingNodeResult.h
 	include/alibabacloud/r-kvstore/model/DeleteUserClusterHostRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteUserClusterHostResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAccountsRequest.h
@@ -65,6 +69,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportResult.h
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportListRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportListResult.h
+	include/alibabacloud/r-kvstore/model/DescribeClusterMemberInfoRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeClusterMemberInfoResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListRequest.h
@@ -190,6 +196,8 @@ set(r-kvstore_public_header_model
 
 set(r-kvstore_src 
 	src/R-kvstoreClient.cc
+	src/model/AddShardingNodeRequest.cc
+	src/model/AddShardingNodeResult.cc
 	src/model/AllocateDirectConnectionRequest.cc
 	src/model/AllocateDirectConnectionResult.cc
 	src/model/AllocateInstancePublicConnectionRequest.cc
@@ -218,6 +226,8 @@ set(r-kvstore_src
 	src/model/DeleteDedicatedUserClusterResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/DeleteShardingNodeRequest.cc
+	src/model/DeleteShardingNodeResult.cc
 	src/model/DeleteUserClusterHostRequest.cc
 	src/model/DeleteUserClusterHostResult.cc
 	src/model/DescribeAccountsRequest.cc
@@ -234,6 +244,8 @@ set(r-kvstore_src
 	src/model/DescribeCacheAnalysisReportResult.cc
 	src/model/DescribeCacheAnalysisReportListRequest.cc
 	src/model/DescribeCacheAnalysisReportListResult.cc
+	src/model/DescribeClusterMemberInfoRequest.cc
+	src/model/DescribeClusterMemberInfoResult.cc
 	src/model/DescribeDBInstanceNetInfoRequest.cc
 	src/model/DescribeDBInstanceNetInfoResult.cc
 	src/model/DescribeDedicatedClusterInstanceListRequest.cc

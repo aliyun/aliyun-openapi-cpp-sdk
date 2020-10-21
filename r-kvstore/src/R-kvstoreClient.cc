@@ -51,6 +51,42 @@ R_kvstoreClient::R_kvstoreClient(const std::string & accessKeyId, const std::str
 R_kvstoreClient::~R_kvstoreClient()
 {}
 
+R_kvstoreClient::AddShardingNodeOutcome R_kvstoreClient::addShardingNode(const AddShardingNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddShardingNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddShardingNodeOutcome(AddShardingNodeResult(outcome.result()));
+	else
+		return AddShardingNodeOutcome(outcome.error());
+}
+
+void R_kvstoreClient::addShardingNodeAsync(const AddShardingNodeRequest& request, const AddShardingNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addShardingNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::AddShardingNodeOutcomeCallable R_kvstoreClient::addShardingNodeCallable(const AddShardingNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddShardingNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->addShardingNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::AllocateDirectConnectionOutcome R_kvstoreClient::allocateDirectConnection(const AllocateDirectConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,6 +591,42 @@ R_kvstoreClient::DeleteInstanceOutcomeCallable R_kvstoreClient::deleteInstanceCa
 	return task->get_future();
 }
 
+R_kvstoreClient::DeleteShardingNodeOutcome R_kvstoreClient::deleteShardingNode(const DeleteShardingNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteShardingNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteShardingNodeOutcome(DeleteShardingNodeResult(outcome.result()));
+	else
+		return DeleteShardingNodeOutcome(outcome.error());
+}
+
+void R_kvstoreClient::deleteShardingNodeAsync(const DeleteShardingNodeRequest& request, const DeleteShardingNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteShardingNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DeleteShardingNodeOutcomeCallable R_kvstoreClient::deleteShardingNodeCallable(const DeleteShardingNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteShardingNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteShardingNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DeleteUserClusterHostOutcome R_kvstoreClient::deleteUserClusterHost(const DeleteUserClusterHostRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,6 +909,42 @@ R_kvstoreClient::DescribeCacheAnalysisReportListOutcomeCallable R_kvstoreClient:
 			[this, request]()
 			{
 			return this->describeCacheAnalysisReportList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeClusterMemberInfoOutcome R_kvstoreClient::describeClusterMemberInfo(const DescribeClusterMemberInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterMemberInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterMemberInfoOutcome(DescribeClusterMemberInfoResult(outcome.result()));
+	else
+		return DescribeClusterMemberInfoOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeClusterMemberInfoAsync(const DescribeClusterMemberInfoRequest& request, const DescribeClusterMemberInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterMemberInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeClusterMemberInfoOutcomeCallable R_kvstoreClient::describeClusterMemberInfoCallable(const DescribeClusterMemberInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterMemberInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterMemberInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

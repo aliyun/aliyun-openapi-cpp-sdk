@@ -123,6 +123,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.instanceReleaseProtection = valueInstancesDBInstanceAttribute["InstanceReleaseProtection"].asString() == "true";
 		if(!valueInstancesDBInstanceAttribute["ResourceGroupId"].isNull())
 			instancesObject.resourceGroupId = valueInstancesDBInstanceAttribute["ResourceGroupId"].asString();
+		if(!valueInstancesDBInstanceAttribute["ShardCount"].isNull())
+			instancesObject.shardCount = std::stoi(valueInstancesDBInstanceAttribute["ShardCount"].asString());
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{
