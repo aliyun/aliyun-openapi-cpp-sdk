@@ -48,7 +48,6 @@ namespace AlibabaCloud
 					std::string personId;
 					long pageNumber;
 					std::string shotTime;
-					std::string isvId;
 					std::string dataSourceId;
 				};
 

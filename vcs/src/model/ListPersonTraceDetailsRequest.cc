@@ -104,14 +104,3 @@ void ListPersonTraceDetailsRequest::setPersonId(const std::string& personId)
 	setBodyParameter("PersonId", personId);
 }
 
-std::string ListPersonTraceDetailsRequest::getIsvId()const
-{
-	return isvId_;
-}
-
-void ListPersonTraceDetailsRequest::setIsvId(const std::string& isvId)
-{
-	isvId_ = isvId;
-	setBodyParameter("IsvId", isvId);
-}
-

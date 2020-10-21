@@ -59,8 +59,6 @@ void ListPersonTraceDetailsResult::parse(const std::string &payload)
 			dataObject.personId = valueDataDatas["PersonId"].asString();
 		if(!valueDataDatas["PicUrlPath"].isNull())
 			dataObject.picUrlPath = valueDataDatas["PicUrlPath"].asString();
-		if(!valueDataDatas["IsvId"].isNull())
-			dataObject.isvId = valueDataDatas["IsvId"].asString();
 		if(!valueDataDatas["RightBottomY"].isNull())
 			dataObject.rightBottomY = valueDataDatas["RightBottomY"].asString();
 		if(!valueDataDatas["RightBottomX"].isNull())
