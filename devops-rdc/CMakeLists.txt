@@ -51,6 +51,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectSprintResult.h
 	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectTaskRequest.h
 	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectTaskResult.h
+	include/alibabacloud/devops-rdc/model/DeletePipelineMemberRequest.h
+	include/alibabacloud/devops-rdc/model/DeletePipelineMemberResult.h
 	include/alibabacloud/devops-rdc/model/ExecutePipelineRequest.h
 	include/alibabacloud/devops-rdc/model/ExecutePipelineResult.h
 	include/alibabacloud/devops-rdc/model/GetDevopsOrganizationMembersRequest.h
@@ -79,6 +81,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/GetUserByAliyunUidResult.h
 	include/alibabacloud/devops-rdc/model/InsertDevopsUserRequest.h
 	include/alibabacloud/devops-rdc/model/InsertDevopsUserResult.h
+	include/alibabacloud/devops-rdc/model/InsertPipelineMemberRequest.h
+	include/alibabacloud/devops-rdc/model/InsertPipelineMemberResult.h
 	include/alibabacloud/devops-rdc/model/InsertProjectMembersRequest.h
 	include/alibabacloud/devops-rdc/model/InsertProjectMembersResult.h
 	include/alibabacloud/devops-rdc/model/ListCredentialsRequest.h
@@ -99,12 +103,16 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/ListServiceConnectionsResult.h
 	include/alibabacloud/devops-rdc/model/ListUserOrganizationRequest.h
 	include/alibabacloud/devops-rdc/model/ListUserOrganizationResult.h
+	include/alibabacloud/devops-rdc/model/TransferPipelineOwnerRequest.h
+	include/alibabacloud/devops-rdc/model/TransferPipelineOwnerResult.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectRequest.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectResult.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectSprintRequest.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectSprintResult.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskRequest.h
-	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskResult.h )
+	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskResult.h
+	include/alibabacloud/devops-rdc/model/UpdatePipelineMemberRequest.h
+	include/alibabacloud/devops-rdc/model/UpdatePipelineMemberResult.h )
 
 set(devops-rdc_src 
 	src/Devops-rdcClient.cc
@@ -138,6 +146,8 @@ set(devops-rdc_src
 	src/model/DeleteDevopsProjectSprintResult.cc
 	src/model/DeleteDevopsProjectTaskRequest.cc
 	src/model/DeleteDevopsProjectTaskResult.cc
+	src/model/DeletePipelineMemberRequest.cc
+	src/model/DeletePipelineMemberResult.cc
 	src/model/ExecutePipelineRequest.cc
 	src/model/ExecutePipelineResult.cc
 	src/model/GetDevopsOrganizationMembersRequest.cc
@@ -166,6 +176,8 @@ set(devops-rdc_src
 	src/model/GetUserByAliyunUidResult.cc
 	src/model/InsertDevopsUserRequest.cc
 	src/model/InsertDevopsUserResult.cc
+	src/model/InsertPipelineMemberRequest.cc
+	src/model/InsertPipelineMemberResult.cc
 	src/model/InsertProjectMembersRequest.cc
 	src/model/InsertProjectMembersResult.cc
 	src/model/ListCredentialsRequest.cc
@@ -186,12 +198,16 @@ set(devops-rdc_src
 	src/model/ListServiceConnectionsResult.cc
 	src/model/ListUserOrganizationRequest.cc
 	src/model/ListUserOrganizationResult.cc
+	src/model/TransferPipelineOwnerRequest.cc
+	src/model/TransferPipelineOwnerResult.cc
 	src/model/UpdateDevopsProjectRequest.cc
 	src/model/UpdateDevopsProjectResult.cc
 	src/model/UpdateDevopsProjectSprintRequest.cc
 	src/model/UpdateDevopsProjectSprintResult.cc
 	src/model/UpdateDevopsProjectTaskRequest.cc
-	src/model/UpdateDevopsProjectTaskResult.cc )
+	src/model/UpdateDevopsProjectTaskResult.cc
+	src/model/UpdatePipelineMemberRequest.cc
+	src/model/UpdatePipelineMemberResult.cc )
 
 add_library(devops-rdc ${LIB_TYPE}
 	${devops-rdc_public_header}

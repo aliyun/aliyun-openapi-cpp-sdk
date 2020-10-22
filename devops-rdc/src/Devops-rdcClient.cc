@@ -591,6 +591,42 @@ Devops_rdcClient::DeleteDevopsProjectTaskOutcomeCallable Devops_rdcClient::delet
 	return task->get_future();
 }
 
+Devops_rdcClient::DeletePipelineMemberOutcome Devops_rdcClient::deletePipelineMember(const DeletePipelineMemberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePipelineMemberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePipelineMemberOutcome(DeletePipelineMemberResult(outcome.result()));
+	else
+		return DeletePipelineMemberOutcome(outcome.error());
+}
+
+void Devops_rdcClient::deletePipelineMemberAsync(const DeletePipelineMemberRequest& request, const DeletePipelineMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePipelineMember(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::DeletePipelineMemberOutcomeCallable Devops_rdcClient::deletePipelineMemberCallable(const DeletePipelineMemberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePipelineMemberOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePipelineMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::ExecutePipelineOutcome Devops_rdcClient::executePipeline(const ExecutePipelineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1095,6 +1131,42 @@ Devops_rdcClient::InsertDevopsUserOutcomeCallable Devops_rdcClient::insertDevops
 	return task->get_future();
 }
 
+Devops_rdcClient::InsertPipelineMemberOutcome Devops_rdcClient::insertPipelineMember(const InsertPipelineMemberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InsertPipelineMemberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InsertPipelineMemberOutcome(InsertPipelineMemberResult(outcome.result()));
+	else
+		return InsertPipelineMemberOutcome(outcome.error());
+}
+
+void Devops_rdcClient::insertPipelineMemberAsync(const InsertPipelineMemberRequest& request, const InsertPipelineMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, insertPipelineMember(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::InsertPipelineMemberOutcomeCallable Devops_rdcClient::insertPipelineMemberCallable(const InsertPipelineMemberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InsertPipelineMemberOutcome()>>(
+			[this, request]()
+			{
+			return this->insertPipelineMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::InsertProjectMembersOutcome Devops_rdcClient::insertProjectMembers(const InsertProjectMembersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1455,6 +1527,42 @@ Devops_rdcClient::ListUserOrganizationOutcomeCallable Devops_rdcClient::listUser
 	return task->get_future();
 }
 
+Devops_rdcClient::TransferPipelineOwnerOutcome Devops_rdcClient::transferPipelineOwner(const TransferPipelineOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransferPipelineOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransferPipelineOwnerOutcome(TransferPipelineOwnerResult(outcome.result()));
+	else
+		return TransferPipelineOwnerOutcome(outcome.error());
+}
+
+void Devops_rdcClient::transferPipelineOwnerAsync(const TransferPipelineOwnerRequest& request, const TransferPipelineOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transferPipelineOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::TransferPipelineOwnerOutcomeCallable Devops_rdcClient::transferPipelineOwnerCallable(const TransferPipelineOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransferPipelineOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->transferPipelineOwner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::UpdateDevopsProjectOutcome Devops_rdcClient::updateDevopsProject(const UpdateDevopsProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1665,42 @@ Devops_rdcClient::UpdateDevopsProjectTaskOutcomeCallable Devops_rdcClient::updat
 			[this, request]()
 			{
 			return this->updateDevopsProjectTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::UpdatePipelineMemberOutcome Devops_rdcClient::updatePipelineMember(const UpdatePipelineMemberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePipelineMemberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePipelineMemberOutcome(UpdatePipelineMemberResult(outcome.result()));
+	else
+		return UpdatePipelineMemberOutcome(outcome.error());
+}
+
+void Devops_rdcClient::updatePipelineMemberAsync(const UpdatePipelineMemberRequest& request, const UpdatePipelineMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePipelineMember(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::UpdatePipelineMemberOutcomeCallable Devops_rdcClient::updatePipelineMemberCallable(const UpdatePipelineMemberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePipelineMemberOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePipelineMember(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

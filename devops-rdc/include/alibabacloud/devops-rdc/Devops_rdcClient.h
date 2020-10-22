@@ -52,6 +52,8 @@
 #include "model/DeleteDevopsProjectSprintResult.h"
 #include "model/DeleteDevopsProjectTaskRequest.h"
 #include "model/DeleteDevopsProjectTaskResult.h"
+#include "model/DeletePipelineMemberRequest.h"
+#include "model/DeletePipelineMemberResult.h"
 #include "model/ExecutePipelineRequest.h"
 #include "model/ExecutePipelineResult.h"
 #include "model/GetDevopsOrganizationMembersRequest.h"
@@ -80,6 +82,8 @@
 #include "model/GetUserByAliyunUidResult.h"
 #include "model/InsertDevopsUserRequest.h"
 #include "model/InsertDevopsUserResult.h"
+#include "model/InsertPipelineMemberRequest.h"
+#include "model/InsertPipelineMemberResult.h"
 #include "model/InsertProjectMembersRequest.h"
 #include "model/InsertProjectMembersResult.h"
 #include "model/ListCredentialsRequest.h"
@@ -100,12 +104,16 @@
 #include "model/ListServiceConnectionsResult.h"
 #include "model/ListUserOrganizationRequest.h"
 #include "model/ListUserOrganizationResult.h"
+#include "model/TransferPipelineOwnerRequest.h"
+#include "model/TransferPipelineOwnerResult.h"
 #include "model/UpdateDevopsProjectRequest.h"
 #include "model/UpdateDevopsProjectResult.h"
 #include "model/UpdateDevopsProjectSprintRequest.h"
 #include "model/UpdateDevopsProjectSprintResult.h"
 #include "model/UpdateDevopsProjectTaskRequest.h"
 #include "model/UpdateDevopsProjectTaskResult.h"
+#include "model/UpdatePipelineMemberRequest.h"
+#include "model/UpdatePipelineMemberResult.h"
 
 
 namespace AlibabaCloud
@@ -160,6 +168,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDevopsProjectTaskResult> DeleteDevopsProjectTaskOutcome;
 			typedef std::future<DeleteDevopsProjectTaskOutcome> DeleteDevopsProjectTaskOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::DeleteDevopsProjectTaskRequest&, const DeleteDevopsProjectTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevopsProjectTaskAsyncHandler;
+			typedef Outcome<Error, Model::DeletePipelineMemberResult> DeletePipelineMemberOutcome;
+			typedef std::future<DeletePipelineMemberOutcome> DeletePipelineMemberOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::DeletePipelineMemberRequest&, const DeletePipelineMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePipelineMemberAsyncHandler;
 			typedef Outcome<Error, Model::ExecutePipelineResult> ExecutePipelineOutcome;
 			typedef std::future<ExecutePipelineOutcome> ExecutePipelineOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ExecutePipelineRequest&, const ExecutePipelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecutePipelineAsyncHandler;
@@ -202,6 +213,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InsertDevopsUserResult> InsertDevopsUserOutcome;
 			typedef std::future<InsertDevopsUserOutcome> InsertDevopsUserOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::InsertDevopsUserRequest&, const InsertDevopsUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertDevopsUserAsyncHandler;
+			typedef Outcome<Error, Model::InsertPipelineMemberResult> InsertPipelineMemberOutcome;
+			typedef std::future<InsertPipelineMemberOutcome> InsertPipelineMemberOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::InsertPipelineMemberRequest&, const InsertPipelineMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertPipelineMemberAsyncHandler;
 			typedef Outcome<Error, Model::InsertProjectMembersResult> InsertProjectMembersOutcome;
 			typedef std::future<InsertProjectMembersOutcome> InsertProjectMembersOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::InsertProjectMembersRequest&, const InsertProjectMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertProjectMembersAsyncHandler;
@@ -232,6 +246,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUserOrganizationResult> ListUserOrganizationOutcome;
 			typedef std::future<ListUserOrganizationOutcome> ListUserOrganizationOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListUserOrganizationRequest&, const ListUserOrganizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserOrganizationAsyncHandler;
+			typedef Outcome<Error, Model::TransferPipelineOwnerResult> TransferPipelineOwnerOutcome;
+			typedef std::future<TransferPipelineOwnerOutcome> TransferPipelineOwnerOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::TransferPipelineOwnerRequest&, const TransferPipelineOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferPipelineOwnerAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDevopsProjectResult> UpdateDevopsProjectOutcome;
 			typedef std::future<UpdateDevopsProjectOutcome> UpdateDevopsProjectOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::UpdateDevopsProjectRequest&, const UpdateDevopsProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevopsProjectAsyncHandler;
@@ -241,6 +258,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDevopsProjectTaskResult> UpdateDevopsProjectTaskOutcome;
 			typedef std::future<UpdateDevopsProjectTaskOutcome> UpdateDevopsProjectTaskOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::UpdateDevopsProjectTaskRequest&, const UpdateDevopsProjectTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevopsProjectTaskAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePipelineMemberResult> UpdatePipelineMemberOutcome;
+			typedef std::future<UpdatePipelineMemberOutcome> UpdatePipelineMemberOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::UpdatePipelineMemberRequest&, const UpdatePipelineMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePipelineMemberAsyncHandler;
 
 			Devops_rdcClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Devops_rdcClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -291,6 +311,9 @@ namespace AlibabaCloud
 			DeleteDevopsProjectTaskOutcome deleteDevopsProjectTask(const Model::DeleteDevopsProjectTaskRequest &request)const;
 			void deleteDevopsProjectTaskAsync(const Model::DeleteDevopsProjectTaskRequest& request, const DeleteDevopsProjectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDevopsProjectTaskOutcomeCallable deleteDevopsProjectTaskCallable(const Model::DeleteDevopsProjectTaskRequest& request) const;
+			DeletePipelineMemberOutcome deletePipelineMember(const Model::DeletePipelineMemberRequest &request)const;
+			void deletePipelineMemberAsync(const Model::DeletePipelineMemberRequest& request, const DeletePipelineMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePipelineMemberOutcomeCallable deletePipelineMemberCallable(const Model::DeletePipelineMemberRequest& request) const;
 			ExecutePipelineOutcome executePipeline(const Model::ExecutePipelineRequest &request)const;
 			void executePipelineAsync(const Model::ExecutePipelineRequest& request, const ExecutePipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecutePipelineOutcomeCallable executePipelineCallable(const Model::ExecutePipelineRequest& request) const;
@@ -333,6 +356,9 @@ namespace AlibabaCloud
 			InsertDevopsUserOutcome insertDevopsUser(const Model::InsertDevopsUserRequest &request)const;
 			void insertDevopsUserAsync(const Model::InsertDevopsUserRequest& request, const InsertDevopsUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InsertDevopsUserOutcomeCallable insertDevopsUserCallable(const Model::InsertDevopsUserRequest& request) const;
+			InsertPipelineMemberOutcome insertPipelineMember(const Model::InsertPipelineMemberRequest &request)const;
+			void insertPipelineMemberAsync(const Model::InsertPipelineMemberRequest& request, const InsertPipelineMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InsertPipelineMemberOutcomeCallable insertPipelineMemberCallable(const Model::InsertPipelineMemberRequest& request) const;
 			InsertProjectMembersOutcome insertProjectMembers(const Model::InsertProjectMembersRequest &request)const;
 			void insertProjectMembersAsync(const Model::InsertProjectMembersRequest& request, const InsertProjectMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InsertProjectMembersOutcomeCallable insertProjectMembersCallable(const Model::InsertProjectMembersRequest& request) const;
@@ -363,6 +389,9 @@ namespace AlibabaCloud
 			ListUserOrganizationOutcome listUserOrganization(const Model::ListUserOrganizationRequest &request)const;
 			void listUserOrganizationAsync(const Model::ListUserOrganizationRequest& request, const ListUserOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserOrganizationOutcomeCallable listUserOrganizationCallable(const Model::ListUserOrganizationRequest& request) const;
+			TransferPipelineOwnerOutcome transferPipelineOwner(const Model::TransferPipelineOwnerRequest &request)const;
+			void transferPipelineOwnerAsync(const Model::TransferPipelineOwnerRequest& request, const TransferPipelineOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TransferPipelineOwnerOutcomeCallable transferPipelineOwnerCallable(const Model::TransferPipelineOwnerRequest& request) const;
 			UpdateDevopsProjectOutcome updateDevopsProject(const Model::UpdateDevopsProjectRequest &request)const;
 			void updateDevopsProjectAsync(const Model::UpdateDevopsProjectRequest& request, const UpdateDevopsProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDevopsProjectOutcomeCallable updateDevopsProjectCallable(const Model::UpdateDevopsProjectRequest& request) const;
@@ -372,6 +401,9 @@ namespace AlibabaCloud
 			UpdateDevopsProjectTaskOutcome updateDevopsProjectTask(const Model::UpdateDevopsProjectTaskRequest &request)const;
 			void updateDevopsProjectTaskAsync(const Model::UpdateDevopsProjectTaskRequest& request, const UpdateDevopsProjectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDevopsProjectTaskOutcomeCallable updateDevopsProjectTaskCallable(const Model::UpdateDevopsProjectTaskRequest& request) const;
+			UpdatePipelineMemberOutcome updatePipelineMember(const Model::UpdatePipelineMemberRequest &request)const;
+			void updatePipelineMemberAsync(const Model::UpdatePipelineMemberRequest& request, const UpdatePipelineMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePipelineMemberOutcomeCallable updatePipelineMemberCallable(const Model::UpdatePipelineMemberRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
