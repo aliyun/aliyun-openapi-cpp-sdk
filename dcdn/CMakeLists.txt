@@ -113,6 +113,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeSrcHttpCodeDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeSrcTrafficDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeSrcTrafficDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeTrafficDataRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainRealTimeTrafficDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRegionDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainRegionDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainStagingConfigRequest.h
@@ -155,6 +157,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnTagResourcesResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnTopDomainsByFlowRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnTopDomainsByFlowResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserBillHistoryRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserBillHistoryResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserBillTypeRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserBillTypeResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsRequest.h
@@ -302,6 +306,8 @@ set(dcdn_src
 	src/model/DescribeDcdnDomainRealTimeSrcHttpCodeDataResult.cc
 	src/model/DescribeDcdnDomainRealTimeSrcTrafficDataRequest.cc
 	src/model/DescribeDcdnDomainRealTimeSrcTrafficDataResult.cc
+	src/model/DescribeDcdnDomainRealTimeTrafficDataRequest.cc
+	src/model/DescribeDcdnDomainRealTimeTrafficDataResult.cc
 	src/model/DescribeDcdnDomainRegionDataRequest.cc
 	src/model/DescribeDcdnDomainRegionDataResult.cc
 	src/model/DescribeDcdnDomainStagingConfigRequest.cc
@@ -344,6 +350,8 @@ set(dcdn_src
 	src/model/DescribeDcdnTagResourcesResult.cc
 	src/model/DescribeDcdnTopDomainsByFlowRequest.cc
 	src/model/DescribeDcdnTopDomainsByFlowResult.cc
+	src/model/DescribeDcdnUserBillHistoryRequest.cc
+	src/model/DescribeDcdnUserBillHistoryResult.cc
 	src/model/DescribeDcdnUserBillTypeRequest.cc
 	src/model/DescribeDcdnUserBillTypeResult.cc
 	src/model/DescribeDcdnUserDomainsRequest.cc

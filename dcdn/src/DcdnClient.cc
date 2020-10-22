@@ -1707,6 +1707,42 @@ DcdnClient::DescribeDcdnDomainRealTimeSrcTrafficDataOutcomeCallable DcdnClient::
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnDomainRealTimeTrafficDataOutcome DcdnClient::describeDcdnDomainRealTimeTrafficData(const DescribeDcdnDomainRealTimeTrafficDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnDomainRealTimeTrafficDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnDomainRealTimeTrafficDataOutcome(DescribeDcdnDomainRealTimeTrafficDataResult(outcome.result()));
+	else
+		return DescribeDcdnDomainRealTimeTrafficDataOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnDomainRealTimeTrafficDataAsync(const DescribeDcdnDomainRealTimeTrafficDataRequest& request, const DescribeDcdnDomainRealTimeTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnDomainRealTimeTrafficData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnDomainRealTimeTrafficDataOutcomeCallable DcdnClient::describeDcdnDomainRealTimeTrafficDataCallable(const DescribeDcdnDomainRealTimeTrafficDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnDomainRealTimeTrafficDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnDomainRealTimeTrafficData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnDomainRegionDataOutcome DcdnClient::describeDcdnDomainRegionData(const DescribeDcdnDomainRegionDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2457,6 +2493,42 @@ DcdnClient::DescribeDcdnTopDomainsByFlowOutcomeCallable DcdnClient::describeDcdn
 			[this, request]()
 			{
 			return this->describeDcdnTopDomainsByFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::DescribeDcdnUserBillHistoryOutcome DcdnClient::describeDcdnUserBillHistory(const DescribeDcdnUserBillHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnUserBillHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnUserBillHistoryOutcome(DescribeDcdnUserBillHistoryResult(outcome.result()));
+	else
+		return DescribeDcdnUserBillHistoryOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnUserBillHistoryAsync(const DescribeDcdnUserBillHistoryRequest& request, const DescribeDcdnUserBillHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnUserBillHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnUserBillHistoryOutcomeCallable DcdnClient::describeDcdnUserBillHistoryCallable(const DescribeDcdnUserBillHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnUserBillHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnUserBillHistory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
