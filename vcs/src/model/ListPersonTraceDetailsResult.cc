@@ -43,14 +43,6 @@ void ListPersonTraceDetailsResult::parse(const std::string &payload)
 	for (auto valueDataDatas : allDataNode)
 	{
 		Datas dataObject;
-		if(!valueDataDatas["PageNumber"].isNull())
-			dataObject.pageNumber = std::stol(valueDataDatas["PageNumber"].asString());
-		if(!valueDataDatas["PageSize"].isNull())
-			dataObject.pageSize = std::stol(valueDataDatas["PageSize"].asString());
-		if(!valueDataDatas["TotalCount"].isNull())
-			dataObject.totalCount = std::stol(valueDataDatas["TotalCount"].asString());
-		if(!valueDataDatas["TotalPage"].isNull())
-			dataObject.totalPage = std::stol(valueDataDatas["TotalPage"].asString());
 		if(!valueDataDatas["TargetPicUrlPath"].isNull())
 			dataObject.targetPicUrlPath = valueDataDatas["TargetPicUrlPath"].asString();
 		if(!valueDataDatas["DataSourceId"].isNull())
@@ -79,12 +71,33 @@ void ListPersonTraceDetailsResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
+}
+
+long ListPersonTraceDetailsResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string ListPersonTraceDetailsResult::getMessage()const
 {
 	return message_;
+}
+
+long ListPersonTraceDetailsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+long ListPersonTraceDetailsResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::vector<ListPersonTraceDetailsResult::Datas> ListPersonTraceDetailsResult::getData()const

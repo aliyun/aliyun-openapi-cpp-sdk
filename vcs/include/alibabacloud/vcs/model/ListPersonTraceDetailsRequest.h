@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setSubId(const std::string& subId);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
+				std::string getDataSourceId()const;
+				void setDataSourceId(const std::string& dataSourceId);
 				std::string getPersonId()const;
 				void setPersonId(const std::string& personId);
 
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				long pageNumber_;
 				std::string subId_;
 				long pageSize_;
+				std::string dataSourceId_;
 				std::string personId_;
 
 			};

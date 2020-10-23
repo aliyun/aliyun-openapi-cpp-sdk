@@ -93,6 +93,17 @@ void ListPersonTraceDetailsRequest::setPageSize(long pageSize)
 	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListPersonTraceDetailsRequest::getDataSourceId()const
+{
+	return dataSourceId_;
+}
+
+void ListPersonTraceDetailsRequest::setDataSourceId(const std::string& dataSourceId)
+{
+	dataSourceId_ = dataSourceId;
+	setBodyParameter("DataSourceId", dataSourceId);
+}
+
 std::string ListPersonTraceDetailsRequest::getPersonId()const
 {
 	return personId_;

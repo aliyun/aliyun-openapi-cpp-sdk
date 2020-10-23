@@ -138,6 +138,8 @@
 #include "model/ListPersonVisitCountResult.h"
 #include "model/ListPersonsRequest.h"
 #include "model/ListPersonsResult.h"
+#include "model/ListSubscribeDeviceRequest.h"
+#include "model/ListSubscribeDeviceResult.h"
 #include "model/ListUserGroupsRequest.h"
 #include "model/ListUserGroupsResult.h"
 #include "model/ListUsersRequest.h"
@@ -160,6 +162,10 @@
 #include "model/SearchObjectResult.h"
 #include "model/StopMonitorRequest.h"
 #include "model/StopMonitorResult.h"
+#include "model/SubscribeDeviceEventRequest.h"
+#include "model/SubscribeDeviceEventResult.h"
+#include "model/SubscribeSpaceEventRequest.h"
+#include "model/SubscribeSpaceEventResult.h"
 #include "model/SyncDeviceTimeRequest.h"
 #include "model/SyncDeviceTimeResult.h"
 #include "model/UnbindCorpGroupRequest.h"
@@ -168,6 +174,10 @@
 #include "model/UnbindPersonResult.h"
 #include "model/UnbindUserRequest.h"
 #include "model/UnbindUserResult.h"
+#include "model/UnsubscribeDeviceEventRequest.h"
+#include "model/UnsubscribeDeviceEventResult.h"
+#include "model/UnsubscribeSpaceEventRequest.h"
+#include "model/UnsubscribeSpaceEventResult.h"
 #include "model/UpdateCorpRequest.h"
 #include "model/UpdateCorpResult.h"
 #include "model/UpdateDeviceRequest.h"
@@ -369,6 +379,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPersonsResult> ListPersonsOutcome;
 			typedef std::future<ListPersonsOutcome> ListPersonsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonsRequest&, const ListPersonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonsAsyncHandler;
+			typedef Outcome<Error, Model::ListSubscribeDeviceResult> ListSubscribeDeviceOutcome;
+			typedef std::future<ListSubscribeDeviceOutcome> ListSubscribeDeviceOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListSubscribeDeviceRequest&, const ListSubscribeDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSubscribeDeviceAsyncHandler;
 			typedef Outcome<Error, Model::ListUserGroupsResult> ListUserGroupsOutcome;
 			typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListUserGroupsRequest&, const ListUserGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsAsyncHandler;
@@ -402,6 +415,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopMonitorResult> StopMonitorOutcome;
 			typedef std::future<StopMonitorOutcome> StopMonitorOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::StopMonitorRequest&, const StopMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMonitorAsyncHandler;
+			typedef Outcome<Error, Model::SubscribeDeviceEventResult> SubscribeDeviceEventOutcome;
+			typedef std::future<SubscribeDeviceEventOutcome> SubscribeDeviceEventOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::SubscribeDeviceEventRequest&, const SubscribeDeviceEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubscribeDeviceEventAsyncHandler;
+			typedef Outcome<Error, Model::SubscribeSpaceEventResult> SubscribeSpaceEventOutcome;
+			typedef std::future<SubscribeSpaceEventOutcome> SubscribeSpaceEventOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::SubscribeSpaceEventRequest&, const SubscribeSpaceEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubscribeSpaceEventAsyncHandler;
 			typedef Outcome<Error, Model::SyncDeviceTimeResult> SyncDeviceTimeOutcome;
 			typedef std::future<SyncDeviceTimeOutcome> SyncDeviceTimeOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::SyncDeviceTimeRequest&, const SyncDeviceTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncDeviceTimeAsyncHandler;
@@ -414,6 +433,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnbindUserResult> UnbindUserOutcome;
 			typedef std::future<UnbindUserOutcome> UnbindUserOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::UnbindUserRequest&, const UnbindUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindUserAsyncHandler;
+			typedef Outcome<Error, Model::UnsubscribeDeviceEventResult> UnsubscribeDeviceEventOutcome;
+			typedef std::future<UnsubscribeDeviceEventOutcome> UnsubscribeDeviceEventOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::UnsubscribeDeviceEventRequest&, const UnsubscribeDeviceEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnsubscribeDeviceEventAsyncHandler;
+			typedef Outcome<Error, Model::UnsubscribeSpaceEventResult> UnsubscribeSpaceEventOutcome;
+			typedef std::future<UnsubscribeSpaceEventOutcome> UnsubscribeSpaceEventOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::UnsubscribeSpaceEventRequest&, const UnsubscribeSpaceEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnsubscribeSpaceEventAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCorpResult> UpdateCorpOutcome;
 			typedef std::future<UpdateCorpOutcome> UpdateCorpOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::UpdateCorpRequest&, const UpdateCorpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCorpAsyncHandler;
@@ -620,6 +645,9 @@ namespace AlibabaCloud
 			ListPersonsOutcome listPersons(const Model::ListPersonsRequest &request)const;
 			void listPersonsAsync(const Model::ListPersonsRequest& request, const ListPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonsOutcomeCallable listPersonsCallable(const Model::ListPersonsRequest& request) const;
+			ListSubscribeDeviceOutcome listSubscribeDevice(const Model::ListSubscribeDeviceRequest &request)const;
+			void listSubscribeDeviceAsync(const Model::ListSubscribeDeviceRequest& request, const ListSubscribeDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSubscribeDeviceOutcomeCallable listSubscribeDeviceCallable(const Model::ListSubscribeDeviceRequest& request) const;
 			ListUserGroupsOutcome listUserGroups(const Model::ListUserGroupsRequest &request)const;
 			void listUserGroupsAsync(const Model::ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserGroupsOutcomeCallable listUserGroupsCallable(const Model::ListUserGroupsRequest& request) const;
@@ -653,6 +681,12 @@ namespace AlibabaCloud
 			StopMonitorOutcome stopMonitor(const Model::StopMonitorRequest &request)const;
 			void stopMonitorAsync(const Model::StopMonitorRequest& request, const StopMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopMonitorOutcomeCallable stopMonitorCallable(const Model::StopMonitorRequest& request) const;
+			SubscribeDeviceEventOutcome subscribeDeviceEvent(const Model::SubscribeDeviceEventRequest &request)const;
+			void subscribeDeviceEventAsync(const Model::SubscribeDeviceEventRequest& request, const SubscribeDeviceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubscribeDeviceEventOutcomeCallable subscribeDeviceEventCallable(const Model::SubscribeDeviceEventRequest& request) const;
+			SubscribeSpaceEventOutcome subscribeSpaceEvent(const Model::SubscribeSpaceEventRequest &request)const;
+			void subscribeSpaceEventAsync(const Model::SubscribeSpaceEventRequest& request, const SubscribeSpaceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubscribeSpaceEventOutcomeCallable subscribeSpaceEventCallable(const Model::SubscribeSpaceEventRequest& request) const;
 			SyncDeviceTimeOutcome syncDeviceTime(const Model::SyncDeviceTimeRequest &request)const;
 			void syncDeviceTimeAsync(const Model::SyncDeviceTimeRequest& request, const SyncDeviceTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SyncDeviceTimeOutcomeCallable syncDeviceTimeCallable(const Model::SyncDeviceTimeRequest& request) const;
@@ -665,6 +699,12 @@ namespace AlibabaCloud
 			UnbindUserOutcome unbindUser(const Model::UnbindUserRequest &request)const;
 			void unbindUserAsync(const Model::UnbindUserRequest& request, const UnbindUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindUserOutcomeCallable unbindUserCallable(const Model::UnbindUserRequest& request) const;
+			UnsubscribeDeviceEventOutcome unsubscribeDeviceEvent(const Model::UnsubscribeDeviceEventRequest &request)const;
+			void unsubscribeDeviceEventAsync(const Model::UnsubscribeDeviceEventRequest& request, const UnsubscribeDeviceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnsubscribeDeviceEventOutcomeCallable unsubscribeDeviceEventCallable(const Model::UnsubscribeDeviceEventRequest& request) const;
+			UnsubscribeSpaceEventOutcome unsubscribeSpaceEvent(const Model::UnsubscribeSpaceEventRequest &request)const;
+			void unsubscribeSpaceEventAsync(const Model::UnsubscribeSpaceEventRequest& request, const UnsubscribeSpaceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnsubscribeSpaceEventOutcomeCallable unsubscribeSpaceEventCallable(const Model::UnsubscribeSpaceEventRequest& request) const;
 			UpdateCorpOutcome updateCorp(const Model::UpdateCorpRequest &request)const;
 			void updateCorpAsync(const Model::UpdateCorpRequest& request, const UpdateCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCorpOutcomeCallable updateCorpCallable(const Model::UpdateCorpRequest& request) const;

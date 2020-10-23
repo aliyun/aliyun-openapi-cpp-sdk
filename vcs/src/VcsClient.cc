@@ -2139,6 +2139,42 @@ VcsClient::ListPersonsOutcomeCallable VcsClient::listPersonsCallable(const ListP
 	return task->get_future();
 }
 
+VcsClient::ListSubscribeDeviceOutcome VcsClient::listSubscribeDevice(const ListSubscribeDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSubscribeDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSubscribeDeviceOutcome(ListSubscribeDeviceResult(outcome.result()));
+	else
+		return ListSubscribeDeviceOutcome(outcome.error());
+}
+
+void VcsClient::listSubscribeDeviceAsync(const ListSubscribeDeviceRequest& request, const ListSubscribeDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSubscribeDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListSubscribeDeviceOutcomeCallable VcsClient::listSubscribeDeviceCallable(const ListSubscribeDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSubscribeDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->listSubscribeDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListUserGroupsOutcome VcsClient::listUserGroups(const ListUserGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2535,6 +2571,78 @@ VcsClient::StopMonitorOutcomeCallable VcsClient::stopMonitorCallable(const StopM
 	return task->get_future();
 }
 
+VcsClient::SubscribeDeviceEventOutcome VcsClient::subscribeDeviceEvent(const SubscribeDeviceEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubscribeDeviceEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubscribeDeviceEventOutcome(SubscribeDeviceEventResult(outcome.result()));
+	else
+		return SubscribeDeviceEventOutcome(outcome.error());
+}
+
+void VcsClient::subscribeDeviceEventAsync(const SubscribeDeviceEventRequest& request, const SubscribeDeviceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, subscribeDeviceEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::SubscribeDeviceEventOutcomeCallable VcsClient::subscribeDeviceEventCallable(const SubscribeDeviceEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubscribeDeviceEventOutcome()>>(
+			[this, request]()
+			{
+			return this->subscribeDeviceEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::SubscribeSpaceEventOutcome VcsClient::subscribeSpaceEvent(const SubscribeSpaceEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubscribeSpaceEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubscribeSpaceEventOutcome(SubscribeSpaceEventResult(outcome.result()));
+	else
+		return SubscribeSpaceEventOutcome(outcome.error());
+}
+
+void VcsClient::subscribeSpaceEventAsync(const SubscribeSpaceEventRequest& request, const SubscribeSpaceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, subscribeSpaceEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::SubscribeSpaceEventOutcomeCallable VcsClient::subscribeSpaceEventCallable(const SubscribeSpaceEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubscribeSpaceEventOutcome()>>(
+			[this, request]()
+			{
+			return this->subscribeSpaceEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::SyncDeviceTimeOutcome VcsClient::syncDeviceTime(const SyncDeviceTimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +2781,78 @@ VcsClient::UnbindUserOutcomeCallable VcsClient::unbindUserCallable(const UnbindU
 			[this, request]()
 			{
 			return this->unbindUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UnsubscribeDeviceEventOutcome VcsClient::unsubscribeDeviceEvent(const UnsubscribeDeviceEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnsubscribeDeviceEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnsubscribeDeviceEventOutcome(UnsubscribeDeviceEventResult(outcome.result()));
+	else
+		return UnsubscribeDeviceEventOutcome(outcome.error());
+}
+
+void VcsClient::unsubscribeDeviceEventAsync(const UnsubscribeDeviceEventRequest& request, const UnsubscribeDeviceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unsubscribeDeviceEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UnsubscribeDeviceEventOutcomeCallable VcsClient::unsubscribeDeviceEventCallable(const UnsubscribeDeviceEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnsubscribeDeviceEventOutcome()>>(
+			[this, request]()
+			{
+			return this->unsubscribeDeviceEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UnsubscribeSpaceEventOutcome VcsClient::unsubscribeSpaceEvent(const UnsubscribeSpaceEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnsubscribeSpaceEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnsubscribeSpaceEventOutcome(UnsubscribeSpaceEventResult(outcome.result()));
+	else
+		return UnsubscribeSpaceEventOutcome(outcome.error());
+}
+
+void VcsClient::unsubscribeSpaceEventAsync(const UnsubscribeSpaceEventRequest& request, const UnsubscribeSpaceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unsubscribeSpaceEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UnsubscribeSpaceEventOutcomeCallable VcsClient::unsubscribeSpaceEventCallable(const UnsubscribeSpaceEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnsubscribeSpaceEventOutcome()>>(
+			[this, request]()
+			{
+			return this->unsubscribeSpaceEvent(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

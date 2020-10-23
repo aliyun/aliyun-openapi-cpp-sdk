@@ -137,6 +137,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/ListPersonVisitCountResult.h
 	include/alibabacloud/vcs/model/ListPersonsRequest.h
 	include/alibabacloud/vcs/model/ListPersonsResult.h
+	include/alibabacloud/vcs/model/ListSubscribeDeviceRequest.h
+	include/alibabacloud/vcs/model/ListSubscribeDeviceResult.h
 	include/alibabacloud/vcs/model/ListUserGroupsRequest.h
 	include/alibabacloud/vcs/model/ListUserGroupsResult.h
 	include/alibabacloud/vcs/model/ListUsersRequest.h
@@ -159,6 +161,10 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/SearchObjectResult.h
 	include/alibabacloud/vcs/model/StopMonitorRequest.h
 	include/alibabacloud/vcs/model/StopMonitorResult.h
+	include/alibabacloud/vcs/model/SubscribeDeviceEventRequest.h
+	include/alibabacloud/vcs/model/SubscribeDeviceEventResult.h
+	include/alibabacloud/vcs/model/SubscribeSpaceEventRequest.h
+	include/alibabacloud/vcs/model/SubscribeSpaceEventResult.h
 	include/alibabacloud/vcs/model/SyncDeviceTimeRequest.h
 	include/alibabacloud/vcs/model/SyncDeviceTimeResult.h
 	include/alibabacloud/vcs/model/UnbindCorpGroupRequest.h
@@ -167,6 +173,10 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/UnbindPersonResult.h
 	include/alibabacloud/vcs/model/UnbindUserRequest.h
 	include/alibabacloud/vcs/model/UnbindUserResult.h
+	include/alibabacloud/vcs/model/UnsubscribeDeviceEventRequest.h
+	include/alibabacloud/vcs/model/UnsubscribeDeviceEventResult.h
+	include/alibabacloud/vcs/model/UnsubscribeSpaceEventRequest.h
+	include/alibabacloud/vcs/model/UnsubscribeSpaceEventResult.h
 	include/alibabacloud/vcs/model/UpdateCorpRequest.h
 	include/alibabacloud/vcs/model/UpdateCorpResult.h
 	include/alibabacloud/vcs/model/UpdateDeviceRequest.h
@@ -304,6 +314,8 @@ set(vcs_src
 	src/model/ListPersonVisitCountResult.cc
 	src/model/ListPersonsRequest.cc
 	src/model/ListPersonsResult.cc
+	src/model/ListSubscribeDeviceRequest.cc
+	src/model/ListSubscribeDeviceResult.cc
 	src/model/ListUserGroupsRequest.cc
 	src/model/ListUserGroupsResult.cc
 	src/model/ListUsersRequest.cc
@@ -326,6 +338,10 @@ set(vcs_src
 	src/model/SearchObjectResult.cc
 	src/model/StopMonitorRequest.cc
 	src/model/StopMonitorResult.cc
+	src/model/SubscribeDeviceEventRequest.cc
+	src/model/SubscribeDeviceEventResult.cc
+	src/model/SubscribeSpaceEventRequest.cc
+	src/model/SubscribeSpaceEventResult.cc
 	src/model/SyncDeviceTimeRequest.cc
 	src/model/SyncDeviceTimeResult.cc
 	src/model/UnbindCorpGroupRequest.cc
@@ -334,6 +350,10 @@ set(vcs_src
 	src/model/UnbindPersonResult.cc
 	src/model/UnbindUserRequest.cc
 	src/model/UnbindUserResult.cc
+	src/model/UnsubscribeDeviceEventRequest.cc
+	src/model/UnsubscribeDeviceEventResult.cc
+	src/model/UnsubscribeSpaceEventRequest.cc
+	src/model/UnsubscribeSpaceEventResult.cc
 	src/model/UpdateCorpRequest.cc
 	src/model/UpdateCorpResult.cc
 	src/model/UpdateDeviceRequest.cc
