@@ -2859,3 +2859,39 @@ ImmClient::UpdateSetOutcomeCallable ImmClient::updateSetCallable(const UpdateSet
 	return task->get_future();
 }
 
+ImmClient::VideoAnalyseFeedbackOutcome ImmClient::videoAnalyseFeedback(const VideoAnalyseFeedbackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VideoAnalyseFeedbackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VideoAnalyseFeedbackOutcome(VideoAnalyseFeedbackResult(outcome.result()));
+	else
+		return VideoAnalyseFeedbackOutcome(outcome.error());
+}
+
+void ImmClient::videoAnalyseFeedbackAsync(const VideoAnalyseFeedbackRequest& request, const VideoAnalyseFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, videoAnalyseFeedback(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::VideoAnalyseFeedbackOutcomeCallable ImmClient::videoAnalyseFeedbackCallable(const VideoAnalyseFeedbackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VideoAnalyseFeedbackOutcome()>>(
+			[this, request]()
+			{
+			return this->videoAnalyseFeedback(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

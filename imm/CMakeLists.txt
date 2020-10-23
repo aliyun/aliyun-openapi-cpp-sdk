@@ -176,7 +176,9 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/UpdateProjectRequest.h
 	include/alibabacloud/imm/model/UpdateProjectResult.h
 	include/alibabacloud/imm/model/UpdateSetRequest.h
-	include/alibabacloud/imm/model/UpdateSetResult.h )
+	include/alibabacloud/imm/model/UpdateSetResult.h
+	include/alibabacloud/imm/model/VideoAnalyseFeedbackRequest.h
+	include/alibabacloud/imm/model/VideoAnalyseFeedbackResult.h )
 
 set(imm_src 
 	src/ImmClient.cc
@@ -335,7 +337,9 @@ set(imm_src
 	src/model/UpdateProjectRequest.cc
 	src/model/UpdateProjectResult.cc
 	src/model/UpdateSetRequest.cc
-	src/model/UpdateSetResult.cc )
+	src/model/UpdateSetResult.cc
+	src/model/VideoAnalyseFeedbackRequest.cc
+	src/model/VideoAnalyseFeedbackResult.cc )
 
 add_library(imm ${LIB_TYPE}
 	${imm_public_header}

@@ -178,6 +178,8 @@
 #include "model/UpdateProjectResult.h"
 #include "model/UpdateSetRequest.h"
 #include "model/UpdateSetResult.h"
+#include "model/VideoAnalyseFeedbackRequest.h"
+#include "model/VideoAnalyseFeedbackResult.h"
 
 
 namespace AlibabaCloud
@@ -421,6 +423,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateSetResult> UpdateSetOutcome;
 			typedef std::future<UpdateSetOutcome> UpdateSetOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::UpdateSetRequest&, const UpdateSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSetAsyncHandler;
+			typedef Outcome<Error, Model::VideoAnalyseFeedbackResult> VideoAnalyseFeedbackOutcome;
+			typedef std::future<VideoAnalyseFeedbackOutcome> VideoAnalyseFeedbackOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::VideoAnalyseFeedbackRequest&, const VideoAnalyseFeedbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoAnalyseFeedbackAsyncHandler;
 
 			ImmClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			ImmClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -660,6 +665,9 @@ namespace AlibabaCloud
 			UpdateSetOutcome updateSet(const Model::UpdateSetRequest &request)const;
 			void updateSetAsync(const Model::UpdateSetRequest& request, const UpdateSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSetOutcomeCallable updateSetCallable(const Model::UpdateSetRequest& request) const;
+			VideoAnalyseFeedbackOutcome videoAnalyseFeedback(const Model::VideoAnalyseFeedbackRequest &request)const;
+			void videoAnalyseFeedbackAsync(const Model::VideoAnalyseFeedbackRequest& request, const VideoAnalyseFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VideoAnalyseFeedbackOutcomeCallable videoAnalyseFeedbackCallable(const Model::VideoAnalyseFeedbackRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
