@@ -72,6 +72,8 @@ void DetectLungNoduleResult::parse(const std::string &payload)
 				elementsObject.imageY = std::stof(allSeriesNodeElementsElement["ImageY"].asString());
 			if(!allSeriesNodeElementsElement["ImageZ"].isNull())
 				elementsObject.imageZ = std::stof(allSeriesNodeElementsElement["ImageZ"].asString());
+			if(!allSeriesNodeElementsElement["SOPInstanceUID"].isNull())
+				elementsObject.sOPInstanceUID = allSeriesNodeElementsElement["SOPInstanceUID"].asString();
 			serieObject.elements.push_back(elementsObject);
 		}
 		auto allOrigin = value["Origin"]["Origin"];

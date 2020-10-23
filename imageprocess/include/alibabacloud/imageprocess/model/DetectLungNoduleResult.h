@@ -48,6 +48,7 @@ namespace AlibabaCloud
 							float x;
 							float y;
 							float z;
+							std::string sOPInstanceUID;
 							float diameter;
 						};
 						std::vector<std::string> origin;
