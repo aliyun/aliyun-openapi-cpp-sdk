@@ -1131,6 +1131,42 @@ EcsClient::CreateAutoSnapshotPolicyOutcomeCallable EcsClient::createAutoSnapshot
 	return task->get_future();
 }
 
+EcsClient::CreateCapacityReservationOutcome EcsClient::createCapacityReservation(const CreateCapacityReservationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCapacityReservationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCapacityReservationOutcome(CreateCapacityReservationResult(outcome.result()));
+	else
+		return CreateCapacityReservationOutcome(outcome.error());
+}
+
+void EcsClient::createCapacityReservationAsync(const CreateCapacityReservationRequest& request, const CreateCapacityReservationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCapacityReservation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateCapacityReservationOutcomeCallable EcsClient::createCapacityReservationCallable(const CreateCapacityReservationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCapacityReservationOutcome()>>(
+			[this, request]()
+			{
+			return this->createCapacityReservation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateCommandOutcome EcsClient::createCommand(const CreateCommandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3501,6 +3537,78 @@ EcsClient::DescribeBandwidthPackagesOutcomeCallable EcsClient::describeBandwidth
 			[this, request]()
 			{
 			return this->describeBandwidthPackages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeCapacityReservationInstancesOutcome EcsClient::describeCapacityReservationInstances(const DescribeCapacityReservationInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCapacityReservationInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCapacityReservationInstancesOutcome(DescribeCapacityReservationInstancesResult(outcome.result()));
+	else
+		return DescribeCapacityReservationInstancesOutcome(outcome.error());
+}
+
+void EcsClient::describeCapacityReservationInstancesAsync(const DescribeCapacityReservationInstancesRequest& request, const DescribeCapacityReservationInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCapacityReservationInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeCapacityReservationInstancesOutcomeCallable EcsClient::describeCapacityReservationInstancesCallable(const DescribeCapacityReservationInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCapacityReservationInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCapacityReservationInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeCapacityReservationsOutcome EcsClient::describeCapacityReservations(const DescribeCapacityReservationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCapacityReservationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCapacityReservationsOutcome(DescribeCapacityReservationsResult(outcome.result()));
+	else
+		return DescribeCapacityReservationsOutcome(outcome.error());
+}
+
+void EcsClient::describeCapacityReservationsAsync(const DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCapacityReservations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeCapacityReservationsOutcomeCallable EcsClient::describeCapacityReservationsCallable(const DescribeCapacityReservationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCapacityReservationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCapacityReservations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9657,6 +9765,42 @@ EcsClient::RedeployInstanceOutcomeCallable EcsClient::redeployInstanceCallable(c
 			[this, request]()
 			{
 			return this->redeployInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ReleaseCapacityReservationOutcome EcsClient::releaseCapacityReservation(const ReleaseCapacityReservationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReleaseCapacityReservationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReleaseCapacityReservationOutcome(ReleaseCapacityReservationResult(outcome.result()));
+	else
+		return ReleaseCapacityReservationOutcome(outcome.error());
+}
+
+void EcsClient::releaseCapacityReservationAsync(const ReleaseCapacityReservationRequest& request, const ReleaseCapacityReservationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, releaseCapacityReservation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ReleaseCapacityReservationOutcomeCallable EcsClient::releaseCapacityReservationCallable(const ReleaseCapacityReservationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReleaseCapacityReservationOutcome()>>(
+			[this, request]()
+			{
+			return this->releaseCapacityReservation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

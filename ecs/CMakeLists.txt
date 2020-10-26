@@ -81,6 +81,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateAutoProvisioningGroupResult.h
 	include/alibabacloud/ecs/model/CreateAutoSnapshotPolicyRequest.h
 	include/alibabacloud/ecs/model/CreateAutoSnapshotPolicyResult.h
+	include/alibabacloud/ecs/model/CreateCapacityReservationRequest.h
+	include/alibabacloud/ecs/model/CreateCapacityReservationResult.h
 	include/alibabacloud/ecs/model/CreateCommandRequest.h
 	include/alibabacloud/ecs/model/CreateCommandResult.h
 	include/alibabacloud/ecs/model/CreateDedicatedHostClusterRequest.h
@@ -213,6 +215,10 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeBandwidthLimitationResult.h
 	include/alibabacloud/ecs/model/DescribeBandwidthPackagesRequest.h
 	include/alibabacloud/ecs/model/DescribeBandwidthPackagesResult.h
+	include/alibabacloud/ecs/model/DescribeCapacityReservationInstancesRequest.h
+	include/alibabacloud/ecs/model/DescribeCapacityReservationInstancesResult.h
+	include/alibabacloud/ecs/model/DescribeCapacityReservationsRequest.h
+	include/alibabacloud/ecs/model/DescribeCapacityReservationsResult.h
 	include/alibabacloud/ecs/model/DescribeClassicLinkInstancesRequest.h
 	include/alibabacloud/ecs/model/DescribeClassicLinkInstancesResult.h
 	include/alibabacloud/ecs/model/DescribeCloudAssistantStatusRequest.h
@@ -555,6 +561,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RedeployDedicatedHostResult.h
 	include/alibabacloud/ecs/model/RedeployInstanceRequest.h
 	include/alibabacloud/ecs/model/RedeployInstanceResult.h
+	include/alibabacloud/ecs/model/ReleaseCapacityReservationRequest.h
+	include/alibabacloud/ecs/model/ReleaseCapacityReservationResult.h
 	include/alibabacloud/ecs/model/ReleaseDedicatedHostRequest.h
 	include/alibabacloud/ecs/model/ReleaseDedicatedHostResult.h
 	include/alibabacloud/ecs/model/ReleaseEipAddressRequest.h
@@ -678,6 +686,8 @@ set(ecs_src
 	src/model/CreateAutoProvisioningGroupResult.cc
 	src/model/CreateAutoSnapshotPolicyRequest.cc
 	src/model/CreateAutoSnapshotPolicyResult.cc
+	src/model/CreateCapacityReservationRequest.cc
+	src/model/CreateCapacityReservationResult.cc
 	src/model/CreateCommandRequest.cc
 	src/model/CreateCommandResult.cc
 	src/model/CreateDedicatedHostClusterRequest.cc
@@ -810,6 +820,10 @@ set(ecs_src
 	src/model/DescribeBandwidthLimitationResult.cc
 	src/model/DescribeBandwidthPackagesRequest.cc
 	src/model/DescribeBandwidthPackagesResult.cc
+	src/model/DescribeCapacityReservationInstancesRequest.cc
+	src/model/DescribeCapacityReservationInstancesResult.cc
+	src/model/DescribeCapacityReservationsRequest.cc
+	src/model/DescribeCapacityReservationsResult.cc
 	src/model/DescribeClassicLinkInstancesRequest.cc
 	src/model/DescribeClassicLinkInstancesResult.cc
 	src/model/DescribeCloudAssistantStatusRequest.cc
@@ -1152,6 +1166,8 @@ set(ecs_src
 	src/model/RedeployDedicatedHostResult.cc
 	src/model/RedeployInstanceRequest.cc
 	src/model/RedeployInstanceResult.cc
+	src/model/ReleaseCapacityReservationRequest.cc
+	src/model/ReleaseCapacityReservationResult.cc
 	src/model/ReleaseDedicatedHostRequest.cc
 	src/model/ReleaseDedicatedHostResult.cc
 	src/model/ReleaseEipAddressRequest.cc

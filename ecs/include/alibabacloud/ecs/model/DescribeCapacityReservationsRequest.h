@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEELASTICITYASSURANCESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEELASTICITYASSURANCESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBECAPACITYRESERVATIONSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBECAPACITYRESERVATIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeElasticityAssurancesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeCapacityReservationsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeElasticityAssurancesRequest();
-				~DescribeElasticityAssurancesRequest();
+				DescribeCapacityReservationsRequest();
+				~DescribeCapacityReservationsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
@@ -81,4 +81,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEELASTICITYASSURANCESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBECAPACITYRESERVATIONSREQUEST_H_

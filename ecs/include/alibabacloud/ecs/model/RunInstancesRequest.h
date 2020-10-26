@@ -226,6 +226,8 @@ namespace AlibabaCloud
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				long getLaunchTemplateVersion()const;
 				void setLaunchTemplateVersion(long launchTemplateVersion);
+				std::string getSchedulerOptionsManagedPrivateSpaceId()const;
+				void setSchedulerOptionsManagedPrivateSpaceId(const std::string& schedulerOptionsManagedPrivateSpaceId);
 				std::string getStorageSetId()const;
 				void setStorageSetId(const std::string& storageSetId);
 				std::string getHttpTokens()const;
@@ -311,6 +313,7 @@ namespace AlibabaCloud
 				std::string creditSpecification_;
 				std::vector<DataDisk> dataDisk_;
 				long launchTemplateVersion_;
+				std::string schedulerOptionsManagedPrivateSpaceId_;
 				std::string storageSetId_;
 				std::string httpTokens_;
 				std::string systemDiskDescription_;

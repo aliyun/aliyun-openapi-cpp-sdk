@@ -916,6 +916,17 @@ void RunInstancesRequest::setLaunchTemplateVersion(long launchTemplateVersion)
 	setParameter("LaunchTemplateVersion", std::to_string(launchTemplateVersion));
 }
 
+std::string RunInstancesRequest::getSchedulerOptionsManagedPrivateSpaceId()const
+{
+	return schedulerOptionsManagedPrivateSpaceId_;
+}
+
+void RunInstancesRequest::setSchedulerOptionsManagedPrivateSpaceId(const std::string& schedulerOptionsManagedPrivateSpaceId)
+{
+	schedulerOptionsManagedPrivateSpaceId_ = schedulerOptionsManagedPrivateSpaceId;
+	setParameter("SchedulerOptionsManagedPrivateSpaceId", schedulerOptionsManagedPrivateSpaceId);
+}
+
 std::string RunInstancesRequest::getStorageSetId()const
 {
 	return storageSetId_;

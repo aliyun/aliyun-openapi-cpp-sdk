@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEELASTICITYASSURANCESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBEELASTICITYASSURANCESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBECAPACITYRESERVATIONINSTANCESREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBECAPACITYRESERVATIONINSTANCESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,57 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeElasticityAssurancesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeCapacityReservationInstancesRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeElasticityAssurancesRequest();
-				~DescribeElasticityAssurancesRequest();
+				DescribeCapacityReservationInstancesRequest();
+				~DescribeCapacityReservationInstancesRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPlatform()const;
-				void setPlatform(const std::string& platform);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getNextToken()const;
 				void setNextToken(const std::string& nextToken);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
+				std::string getPrivatePoolOptionsId()const;
+				void setPrivatePoolOptionsId(const std::string& privatePoolOptionsId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPrivatePoolOptionsIds()const;
-				void setPrivatePoolOptionsIds(const std::string& privatePoolOptionsIds);
 				int getMaxResults()const;
 				void setMaxResults(int maxResults);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
 				std::string getPackageType()const;
 				void setPackageType(const std::string& packageType);
 
             private:
 				long resourceOwnerId_;
-				std::string platform_;
 				std::string regionId_;
 				std::string nextToken_;
-				std::string instanceType_;
-				std::string instanceChargeType_;
+				std::string privatePoolOptionsId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string privatePoolOptionsIds_;
 				int maxResults_;
-				std::string zoneId_;
 				std::string packageType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEELASTICITYASSURANCESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBECAPACITYRESERVATIONINSTANCESREQUEST_H_

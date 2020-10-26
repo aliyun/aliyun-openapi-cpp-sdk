@@ -38,6 +38,17 @@ void DescribeElasticityAssurancesRequest::setResourceOwnerId(long resourceOwnerI
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeElasticityAssurancesRequest::getPlatform()const
+{
+	return platform_;
+}
+
+void DescribeElasticityAssurancesRequest::setPlatform(const std::string& platform)
+{
+	platform_ = platform;
+	setParameter("Platform", platform);
+}
+
 std::string DescribeElasticityAssurancesRequest::getRegionId()const
 {
 	return regionId_;
@@ -58,6 +69,28 @@ void DescribeElasticityAssurancesRequest::setNextToken(const std::string& nextTo
 {
 	nextToken_ = nextToken;
 	setParameter("NextToken", nextToken);
+}
+
+std::string DescribeElasticityAssurancesRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void DescribeElasticityAssurancesRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
+}
+
+std::string DescribeElasticityAssurancesRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void DescribeElasticityAssurancesRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeElasticityAssurancesRequest::getResourceOwnerAccount()const
@@ -113,6 +146,17 @@ void DescribeElasticityAssurancesRequest::setMaxResults(int maxResults)
 {
 	maxResults_ = maxResults;
 	setParameter("MaxResults", std::to_string(maxResults));
+}
+
+std::string DescribeElasticityAssurancesRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeElasticityAssurancesRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeElasticityAssurancesRequest::getPackageType()const

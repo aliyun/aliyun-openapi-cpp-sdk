@@ -82,6 +82,8 @@
 #include "model/CreateAutoProvisioningGroupResult.h"
 #include "model/CreateAutoSnapshotPolicyRequest.h"
 #include "model/CreateAutoSnapshotPolicyResult.h"
+#include "model/CreateCapacityReservationRequest.h"
+#include "model/CreateCapacityReservationResult.h"
 #include "model/CreateCommandRequest.h"
 #include "model/CreateCommandResult.h"
 #include "model/CreateDedicatedHostClusterRequest.h"
@@ -214,6 +216,10 @@
 #include "model/DescribeBandwidthLimitationResult.h"
 #include "model/DescribeBandwidthPackagesRequest.h"
 #include "model/DescribeBandwidthPackagesResult.h"
+#include "model/DescribeCapacityReservationInstancesRequest.h"
+#include "model/DescribeCapacityReservationInstancesResult.h"
+#include "model/DescribeCapacityReservationsRequest.h"
+#include "model/DescribeCapacityReservationsResult.h"
 #include "model/DescribeClassicLinkInstancesRequest.h"
 #include "model/DescribeClassicLinkInstancesResult.h"
 #include "model/DescribeCloudAssistantStatusRequest.h"
@@ -556,6 +562,8 @@
 #include "model/RedeployDedicatedHostResult.h"
 #include "model/RedeployInstanceRequest.h"
 #include "model/RedeployInstanceResult.h"
+#include "model/ReleaseCapacityReservationRequest.h"
+#include "model/ReleaseCapacityReservationResult.h"
 #include "model/ReleaseDedicatedHostRequest.h"
 #include "model/ReleaseDedicatedHostResult.h"
 #include "model/ReleaseEipAddressRequest.h"
@@ -715,6 +723,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAutoSnapshotPolicyResult> CreateAutoSnapshotPolicyOutcome;
 			typedef std::future<CreateAutoSnapshotPolicyOutcome> CreateAutoSnapshotPolicyOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateAutoSnapshotPolicyRequest&, const CreateAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoSnapshotPolicyAsyncHandler;
+			typedef Outcome<Error, Model::CreateCapacityReservationResult> CreateCapacityReservationOutcome;
+			typedef std::future<CreateCapacityReservationOutcome> CreateCapacityReservationOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateCapacityReservationRequest&, const CreateCapacityReservationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCapacityReservationAsyncHandler;
 			typedef Outcome<Error, Model::CreateCommandResult> CreateCommandOutcome;
 			typedef std::future<CreateCommandOutcome> CreateCommandOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateCommandRequest&, const CreateCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommandAsyncHandler;
@@ -913,6 +924,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBandwidthPackagesResult> DescribeBandwidthPackagesOutcome;
 			typedef std::future<DescribeBandwidthPackagesOutcome> DescribeBandwidthPackagesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeBandwidthPackagesRequest&, const DescribeBandwidthPackagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackagesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCapacityReservationInstancesResult> DescribeCapacityReservationInstancesOutcome;
+			typedef std::future<DescribeCapacityReservationInstancesOutcome> DescribeCapacityReservationInstancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeCapacityReservationInstancesRequest&, const DescribeCapacityReservationInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCapacityReservationInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCapacityReservationsResult> DescribeCapacityReservationsOutcome;
+			typedef std::future<DescribeCapacityReservationsOutcome> DescribeCapacityReservationsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeCapacityReservationsRequest&, const DescribeCapacityReservationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCapacityReservationsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeClassicLinkInstancesResult> DescribeClassicLinkInstancesOutcome;
 			typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeClassicLinkInstancesRequest&, const DescribeClassicLinkInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicLinkInstancesAsyncHandler;
@@ -1426,6 +1443,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RedeployInstanceResult> RedeployInstanceOutcome;
 			typedef std::future<RedeployInstanceOutcome> RedeployInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RedeployInstanceRequest&, const RedeployInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RedeployInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseCapacityReservationResult> ReleaseCapacityReservationOutcome;
+			typedef std::future<ReleaseCapacityReservationOutcome> ReleaseCapacityReservationOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ReleaseCapacityReservationRequest&, const ReleaseCapacityReservationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseCapacityReservationAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseDedicatedHostResult> ReleaseDedicatedHostOutcome;
 			typedef std::future<ReleaseDedicatedHostOutcome> ReleaseDedicatedHostOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ReleaseDedicatedHostRequest&, const ReleaseDedicatedHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseDedicatedHostAsyncHandler;
@@ -1611,6 +1631,9 @@ namespace AlibabaCloud
 			CreateAutoSnapshotPolicyOutcome createAutoSnapshotPolicy(const Model::CreateAutoSnapshotPolicyRequest &request)const;
 			void createAutoSnapshotPolicyAsync(const Model::CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAutoSnapshotPolicyOutcomeCallable createAutoSnapshotPolicyCallable(const Model::CreateAutoSnapshotPolicyRequest& request) const;
+			CreateCapacityReservationOutcome createCapacityReservation(const Model::CreateCapacityReservationRequest &request)const;
+			void createCapacityReservationAsync(const Model::CreateCapacityReservationRequest& request, const CreateCapacityReservationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCapacityReservationOutcomeCallable createCapacityReservationCallable(const Model::CreateCapacityReservationRequest& request) const;
 			CreateCommandOutcome createCommand(const Model::CreateCommandRequest &request)const;
 			void createCommandAsync(const Model::CreateCommandRequest& request, const CreateCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCommandOutcomeCallable createCommandCallable(const Model::CreateCommandRequest& request) const;
@@ -1809,6 +1832,12 @@ namespace AlibabaCloud
 			DescribeBandwidthPackagesOutcome describeBandwidthPackages(const Model::DescribeBandwidthPackagesRequest &request)const;
 			void describeBandwidthPackagesAsync(const Model::DescribeBandwidthPackagesRequest& request, const DescribeBandwidthPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBandwidthPackagesOutcomeCallable describeBandwidthPackagesCallable(const Model::DescribeBandwidthPackagesRequest& request) const;
+			DescribeCapacityReservationInstancesOutcome describeCapacityReservationInstances(const Model::DescribeCapacityReservationInstancesRequest &request)const;
+			void describeCapacityReservationInstancesAsync(const Model::DescribeCapacityReservationInstancesRequest& request, const DescribeCapacityReservationInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCapacityReservationInstancesOutcomeCallable describeCapacityReservationInstancesCallable(const Model::DescribeCapacityReservationInstancesRequest& request) const;
+			DescribeCapacityReservationsOutcome describeCapacityReservations(const Model::DescribeCapacityReservationsRequest &request)const;
+			void describeCapacityReservationsAsync(const Model::DescribeCapacityReservationsRequest& request, const DescribeCapacityReservationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCapacityReservationsOutcomeCallable describeCapacityReservationsCallable(const Model::DescribeCapacityReservationsRequest& request) const;
 			DescribeClassicLinkInstancesOutcome describeClassicLinkInstances(const Model::DescribeClassicLinkInstancesRequest &request)const;
 			void describeClassicLinkInstancesAsync(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClassicLinkInstancesOutcomeCallable describeClassicLinkInstancesCallable(const Model::DescribeClassicLinkInstancesRequest& request) const;
@@ -2322,6 +2351,9 @@ namespace AlibabaCloud
 			RedeployInstanceOutcome redeployInstance(const Model::RedeployInstanceRequest &request)const;
 			void redeployInstanceAsync(const Model::RedeployInstanceRequest& request, const RedeployInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RedeployInstanceOutcomeCallable redeployInstanceCallable(const Model::RedeployInstanceRequest& request) const;
+			ReleaseCapacityReservationOutcome releaseCapacityReservation(const Model::ReleaseCapacityReservationRequest &request)const;
+			void releaseCapacityReservationAsync(const Model::ReleaseCapacityReservationRequest& request, const ReleaseCapacityReservationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseCapacityReservationOutcomeCallable releaseCapacityReservationCallable(const Model::ReleaseCapacityReservationRequest& request) const;
 			ReleaseDedicatedHostOutcome releaseDedicatedHost(const Model::ReleaseDedicatedHostRequest &request)const;
 			void releaseDedicatedHostAsync(const Model::ReleaseDedicatedHostRequest& request, const ReleaseDedicatedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseDedicatedHostOutcomeCallable releaseDedicatedHostCallable(const Model::ReleaseDedicatedHostRequest& request) const;
