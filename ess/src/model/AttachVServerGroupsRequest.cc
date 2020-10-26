@@ -27,6 +27,17 @@ AttachVServerGroupsRequest::AttachVServerGroupsRequest() :
 AttachVServerGroupsRequest::~AttachVServerGroupsRequest()
 {}
 
+std::string AttachVServerGroupsRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AttachVServerGroupsRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string AttachVServerGroupsRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;

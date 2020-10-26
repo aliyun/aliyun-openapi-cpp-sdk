@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getLifecycleActionToken()const;
 				void setLifecycleActionToken(const std::string& lifecycleActionToken);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 
             private:
 				std::string lifecycleActionToken_;
+				std::string clientToken_;
 				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
 				std::string lifecycleHookId_;

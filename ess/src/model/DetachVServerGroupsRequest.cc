@@ -27,6 +27,17 @@ DetachVServerGroupsRequest::DetachVServerGroupsRequest() :
 DetachVServerGroupsRequest::~DetachVServerGroupsRequest()
 {}
 
+std::string DetachVServerGroupsRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DetachVServerGroupsRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string DetachVServerGroupsRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;

@@ -69,6 +69,8 @@ void DescribeAlarmsResult::parse(const std::string &payload)
 			alarmListObject.scalingGroupId = valueAlarmListAlarm["ScalingGroupId"].asString();
 		if(!valueAlarmListAlarm["Enable"].isNull())
 			alarmListObject.enable = valueAlarmListAlarm["Enable"].asString() == "true";
+		if(!valueAlarmListAlarm["Effective"].isNull())
+			alarmListObject.effective = valueAlarmListAlarm["Effective"].asString();
 		auto allDimensionsNode = allAlarmListNode["Dimensions"]["Dimension"];
 		for (auto allAlarmListNodeDimensionsDimension : allDimensionsNode)
 		{

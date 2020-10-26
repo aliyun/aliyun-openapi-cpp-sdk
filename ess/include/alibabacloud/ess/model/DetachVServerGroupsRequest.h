@@ -46,6 +46,8 @@ namespace AlibabaCloud
 				DetachVServerGroupsRequest();
 				~DetachVServerGroupsRequest();
 
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
 				std::string getAccessKeyId()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				void setVServerGroup(const std::vector<VServerGroup>& vServerGroup);
 
             private:
+				std::string clientToken_;
 				std::string scalingGroupId_;
 				std::string accessKeyId_;
 				std::string regionId_;

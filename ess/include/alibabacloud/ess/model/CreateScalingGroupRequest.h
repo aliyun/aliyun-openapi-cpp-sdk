@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setVSwitchIds(const std::vector<std::string>& vSwitchIds);
 				bool getSpotInstanceRemedy()const;
 				void setSpotInstanceRemedy(bool spotInstanceRemedy);
+				bool getScaleOutAmountCheck()const;
+				void setScaleOutAmountCheck(bool scaleOutAmountCheck);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				int getDefaultCooldown()const;
@@ -77,6 +79,8 @@ namespace AlibabaCloud
 				void setLaunchTemplateId(const std::string& launchTemplateId);
 				int getDesiredCapacity()const;
 				void setDesiredCapacity(int desiredCapacity);
+				bool getCompensateWithOnDemand()const;
+				void setCompensateWithOnDemand(bool compensateWithOnDemand);
 				int getMinSize()const;
 				void setMinSize(int minSize);
 				long getOwnerId()const;
@@ -127,12 +131,14 @@ namespace AlibabaCloud
             private:
 				std::vector<std::string> vSwitchIds_;
 				bool spotInstanceRemedy_;
+				bool scaleOutAmountCheck_;
 				std::vector<Tag> tag_;
 				int defaultCooldown_;
 				std::string multiAZPolicy_;
 				std::string dBInstanceIds_;
 				std::string launchTemplateId_;
 				int desiredCapacity_;
+				bool compensateWithOnDemand_;
 				int minSize_;
 				long ownerId_;
 				std::string vSwitchId_;

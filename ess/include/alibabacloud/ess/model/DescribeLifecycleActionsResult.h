@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ESS_MODEL_DESCRIBECAPACITYHISTORYRESULT_H_
-#define ALIBABACLOUD_ESS_MODEL_DESCRIBECAPACITYHISTORYRESULT_H_
+#ifndef ALIBABACLOUD_ESS_MODEL_DESCRIBELIFECYCLEACTIONSRESULT_H_
+#define ALIBABACLOUD_ESS_MODEL_DESCRIBELIFECYCLEACTIONSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ESS_EXPORT DescribeCapacityHistoryResult : public ServiceResult
+			class ALIBABACLOUD_ESS_EXPORT DescribeLifecycleActionsResult : public ServiceResult
 			{
 			public:
-				struct CapacityHistoryModel
+				struct LifecycleAction
 				{
-					int attachedCapacity;
-					std::string scalingGroupId;
-					int totalCapacity;
-					int autoCreatedCapacity;
-					std::string timestamp;
+					std::string lifecycleActionStatus;
+					std::string lifecycleActionResult;
+					std::vector<std::string> instanceIds;
+					std::string lifecycleActionToken;
+					std::string lifecycleHookId;
 				};
 
 
-				DescribeCapacityHistoryResult();
-				explicit DescribeCapacityHistoryResult(const std::string &payload);
-				~DescribeCapacityHistoryResult();
+				DescribeLifecycleActionsResult();
+				explicit DescribeLifecycleActionsResult(const std::string &payload);
+				~DescribeLifecycleActionsResult();
 				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<CapacityHistoryModel> getCapacityHistoryItems()const;
+				std::string getNextToken()const;
+				int getMaxResults()const;
+				std::vector<LifecycleAction> getLifecycleActions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<CapacityHistoryModel> capacityHistoryItems_;
+				std::string nextToken_;
+				int maxResults_;
+				std::vector<LifecycleAction> lifecycleActions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ESS_MODEL_DESCRIBECAPACITYHISTORYRESULT_H_
+#endif // !ALIBABACLOUD_ESS_MODEL_DESCRIBELIFECYCLEACTIONSRESULT_H_

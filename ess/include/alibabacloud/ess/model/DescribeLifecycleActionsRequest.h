@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ESS_MODEL_MODIFYALERTCONFIGREQUEST_H_
-#define ALIBABACLOUD_ESS_MODEL_MODIFYALERTCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_ESS_MODEL_DESCRIBELIFECYCLEACTIONSREQUEST_H_
+#define ALIBABACLOUD_ESS_MODEL_DESCRIBELIFECYCLEACTIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ESS_EXPORT ModifyAlertConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ESS_EXPORT DescribeLifecycleActionsRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyAlertConfigRequest();
-				~ModifyAlertConfigRequest();
+				DescribeLifecycleActionsRequest();
+				~DescribeLifecycleActionsRequest();
 
-				int getRejectConfig()const;
-				void setRejectConfig(int rejectConfig);
-				std::string getScalingGroupId()const;
-				void setScalingGroupId(const std::string& scalingGroupId);
-				int getFailConfig()const;
-				void setFailConfig(int failConfig);
+				std::string getLifecycleActionStatus()const;
+				void setLifecycleActionStatus(const std::string& lifecycleActionStatus);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getSuccessConfig()const;
-				void setSuccessConfig(int successConfig);
+				std::string getScalingActivityId()const;
+				void setScalingActivityId(const std::string& scalingActivityId);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 
             private:
-				int rejectConfig_;
-				std::string scalingGroupId_;
-				int failConfig_;
+				std::string lifecycleActionStatus_;
 				std::string accessKeyId_;
+				std::string nextToken_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
-				int successConfig_;
+				std::string scalingActivityId_;
+				int maxResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ESS_MODEL_MODIFYALERTCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_ESS_MODEL_DESCRIBELIFECYCLEACTIONSREQUEST_H_

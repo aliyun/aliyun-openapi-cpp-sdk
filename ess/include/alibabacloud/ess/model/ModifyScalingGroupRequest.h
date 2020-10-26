@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOnDemandPercentageAboveBaseCapacity(int onDemandPercentageAboveBaseCapacity);
 				bool getSpotInstanceRemedy()const;
 				void setSpotInstanceRemedy(bool spotInstanceRemedy);
+				bool getScaleOutAmountCheck()const;
+				void setScaleOutAmountCheck(bool scaleOutAmountCheck);
 				int getDefaultCooldown()const;
 				void setDefaultCooldown(int defaultCooldown);
 				std::string getRemovalPolicy1()const;
@@ -69,6 +71,8 @@ namespace AlibabaCloud
 				void setScalingGroupName(const std::string& scalingGroupName);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				bool getCompensateWithOnDemand()const;
+				void setCompensateWithOnDemand(bool compensateWithOnDemand);
 				int getSpotInstancePools()const;
 				void setSpotInstancePools(int spotInstancePools);
 				int getMinSize()const;
@@ -91,6 +95,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				int onDemandPercentageAboveBaseCapacity_;
 				bool spotInstanceRemedy_;
+				bool scaleOutAmountCheck_;
 				int defaultCooldown_;
 				std::string removalPolicy1_;
 				std::string removalPolicy2_;
@@ -100,6 +105,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string scalingGroupName_;
 				std::string ownerAccount_;
+				bool compensateWithOnDemand_;
 				int spotInstancePools_;
 				int minSize_;
 				bool groupDeletionProtection_;

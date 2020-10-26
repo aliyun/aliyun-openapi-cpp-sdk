@@ -34,6 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct ScalingConfiguration
 				{
+					struct SchedulerOptions
+					{
+						std::string managedPrivateSpaceId;
+					};
 					struct DataDisk
 					{
 						std::string snapshotId;
@@ -58,45 +62,54 @@ namespace AlibabaCloud
 						std::string instanceType;
 					};
 					std::string scalingConfigurationName;
+					std::string dedicatedHostId;
 					std::vector<ScalingConfiguration::DataDisk> dataDisks;
 					std::string resourceGroupId;
-					int systemDiskSize;
 					std::string systemDiskDescription;
-					std::string userData;
 					int memory;
 					int cpu;
+					std::string ramRoleName;
+					std::string imageId;
+					std::vector<ScalingConfiguration::Tag> tags;
+					std::string hostName;
+					int loadBalancerWeight;
+					std::string scalingGroupId;
+					std::string imageFamily;
+					std::string privatePoolOptionsMatchCriteria;
+					std::vector<std::string> securityGroupIds;
+					std::string internetChargeType;
+					std::string privatePoolOptionsId;
+					std::string instanceName;
+					std::string deploymentSetId;
+					int internetMaxBandwidthOut;
+					std::string creationTime;
+					std::string affinity;
+					std::string scalingConfigurationId;
+					std::string securityEnhancementStrategy;
+					std::string tenancy;
+					int systemDiskSize;
+					std::string userData;
 					std::string lifecycleState;
 					std::string systemDiskAutoSnapshotPolicyId;
 					std::string systemDiskName;
-					std::string ramRoleName;
 					int ipv6AddressCount;
-					std::string imageId;
+					SchedulerOptions schedulerOptions;
 					std::vector<ScalingConfiguration::SpotPriceModel> spotPriceLimit;
 					std::vector<std::string> instanceTypes;
 					std::string instanceType;
-					std::vector<ScalingConfiguration::Tag> tags;
-					std::string hostName;
 					std::string spotStrategy;
 					bool passwordInherit;
 					std::string keyPairName;
-					int loadBalancerWeight;
 					std::string ioOptimized;
-					std::string scalingGroupId;
+					std::string zoneId;
 					std::string hpcClusterId;
 					std::string securityGroupId;
-					std::vector<std::string> securityGroupIds;
-					std::string internetChargeType;
 					std::string systemDiskCategory;
-					std::string instanceName;
-					std::string deploymentSetId;
 					std::string imageName;
-					int internetMaxBandwidthOut;
 					int internetMaxBandwidthIn;
-					std::string creationTime;
 					std::string instanceGeneration;
 					std::string instanceDescription;
-					std::string scalingConfigurationId;
-					std::string securityEnhancementStrategy;
+					std::string creditSpecification;
 				};
 
 

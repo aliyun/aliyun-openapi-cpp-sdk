@@ -73,6 +73,10 @@ void DescribeScalingRulesResult::parse(const std::string &payload)
 			scalingRulesObject.targetValue = std::stof(valueScalingRulesScalingRule["TargetValue"].asString());
 		if(!valueScalingRulesScalingRule["DisableScaleIn"].isNull())
 			scalingRulesObject.disableScaleIn = valueScalingRulesScalingRule["DisableScaleIn"].asString() == "true";
+		if(!valueScalingRulesScalingRule["ScaleInEvaluationCount"].isNull())
+			scalingRulesObject.scaleInEvaluationCount = std::stoi(valueScalingRulesScalingRule["ScaleInEvaluationCount"].asString());
+		if(!valueScalingRulesScalingRule["ScaleOutEvaluationCount"].isNull())
+			scalingRulesObject.scaleOutEvaluationCount = std::stoi(valueScalingRulesScalingRule["ScaleOutEvaluationCount"].asString());
 		if(!valueScalingRulesScalingRule["PredictiveScalingMode"].isNull())
 			scalingRulesObject.predictiveScalingMode = valueScalingRulesScalingRule["PredictiveScalingMode"].asString();
 		if(!valueScalingRulesScalingRule["PredictiveValueBehavior"].isNull())

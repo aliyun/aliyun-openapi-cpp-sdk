@@ -27,15 +27,15 @@ EnterStandbyRequest::EnterStandbyRequest() :
 EnterStandbyRequest::~EnterStandbyRequest()
 {}
 
-std::string EnterStandbyRequest::getResourceOwnerAccount()const
+std::string EnterStandbyRequest::getClientToken()const
 {
-	return resourceOwnerAccount_;
+	return clientToken_;
 }
 
-void EnterStandbyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void EnterStandbyRequest::setClientToken(const std::string& clientToken)
 {
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
 }
 
 std::string EnterStandbyRequest::getScalingGroupId()const
@@ -49,17 +49,6 @@ void EnterStandbyRequest::setScalingGroupId(const std::string& scalingGroupId)
 	setParameter("ScalingGroupId", scalingGroupId);
 }
 
-long EnterStandbyRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void EnterStandbyRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string EnterStandbyRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,28 @@ void EnterStandbyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string EnterStandbyRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void EnterStandbyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long EnterStandbyRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void EnterStandbyRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> EnterStandbyRequest::getInstanceId()const

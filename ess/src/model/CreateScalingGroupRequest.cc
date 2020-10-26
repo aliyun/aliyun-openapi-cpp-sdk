@@ -51,6 +51,17 @@ void CreateScalingGroupRequest::setSpotInstanceRemedy(bool spotInstanceRemedy)
 	setParameter("SpotInstanceRemedy", spotInstanceRemedy ? "true" : "false");
 }
 
+bool CreateScalingGroupRequest::getScaleOutAmountCheck()const
+{
+	return scaleOutAmountCheck_;
+}
+
+void CreateScalingGroupRequest::setScaleOutAmountCheck(bool scaleOutAmountCheck)
+{
+	scaleOutAmountCheck_ = scaleOutAmountCheck;
+	setParameter("ScaleOutAmountCheck", scaleOutAmountCheck ? "true" : "false");
+}
+
 std::vector<CreateScalingGroupRequest::Tag> CreateScalingGroupRequest::getTag()const
 {
 	return tag_;
@@ -120,6 +131,17 @@ void CreateScalingGroupRequest::setDesiredCapacity(int desiredCapacity)
 {
 	desiredCapacity_ = desiredCapacity;
 	setParameter("DesiredCapacity", std::to_string(desiredCapacity));
+}
+
+bool CreateScalingGroupRequest::getCompensateWithOnDemand()const
+{
+	return compensateWithOnDemand_;
+}
+
+void CreateScalingGroupRequest::setCompensateWithOnDemand(bool compensateWithOnDemand)
+{
+	compensateWithOnDemand_ = compensateWithOnDemand;
+	setParameter("CompensateWithOnDemand", compensateWithOnDemand ? "true" : "false");
 }
 
 int CreateScalingGroupRequest::getMinSize()const

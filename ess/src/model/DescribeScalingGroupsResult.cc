@@ -101,12 +101,16 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.onDemandPercentageAboveBaseCapacity = std::stoi(valueScalingGroupsScalingGroup["OnDemandPercentageAboveBaseCapacity"].asString());
 		if(!valueScalingGroupsScalingGroup["SpotInstanceRemedy"].isNull())
 			scalingGroupsObject.spotInstanceRemedy = valueScalingGroupsScalingGroup["SpotInstanceRemedy"].asString() == "true";
+		if(!valueScalingGroupsScalingGroup["CompensateWithOnDemand"].isNull())
+			scalingGroupsObject.compensateWithOnDemand = valueScalingGroupsScalingGroup["CompensateWithOnDemand"].asString() == "true";
 		if(!valueScalingGroupsScalingGroup["SpotInstancePools"].isNull())
 			scalingGroupsObject.spotInstancePools = std::stoi(valueScalingGroupsScalingGroup["SpotInstancePools"].asString());
 		if(!valueScalingGroupsScalingGroup["DesiredCapacity"].isNull())
 			scalingGroupsObject.desiredCapacity = std::stoi(valueScalingGroupsScalingGroup["DesiredCapacity"].asString());
 		if(!valueScalingGroupsScalingGroup["GroupDeletionProtection"].isNull())
 			scalingGroupsObject.groupDeletionProtection = valueScalingGroupsScalingGroup["GroupDeletionProtection"].asString() == "true";
+		if(!valueScalingGroupsScalingGroup["ScaleOutAmountCheck"].isNull())
+			scalingGroupsObject.scaleOutAmountCheck = valueScalingGroupsScalingGroup["ScaleOutAmountCheck"].asString() == "true";
 		auto allVServerGroupsNode = allScalingGroupsNode["VServerGroups"]["VServerGroup"];
 		for (auto allScalingGroupsNodeVServerGroupsVServerGroup : allVServerGroupsNode)
 		{

@@ -71,6 +71,17 @@ void VerifyAuthenticationRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+bool VerifyAuthenticationRequest::getOnlyCheck()const
+{
+	return onlyCheck_;
+}
+
+void VerifyAuthenticationRequest::setOnlyCheck(bool onlyCheck)
+{
+	onlyCheck_ = onlyCheck;
+	setParameter("OnlyCheck", onlyCheck ? "true" : "false");
+}
+
 long VerifyAuthenticationRequest::getUid()const
 {
 	return uid_;

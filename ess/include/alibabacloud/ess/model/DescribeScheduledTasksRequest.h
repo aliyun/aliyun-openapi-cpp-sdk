@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setScheduledTaskName18(const std::string& scheduledTaskName18);
 				std::string getScheduledTaskId20()const;
 				void setScheduledTaskId20(const std::string& scheduledTaskId20);
+				std::string getScalingGroupId()const;
+				void setScalingGroupId(const std::string& scalingGroupId);
 				std::string getScheduledTaskName13()const;
 				void setScheduledTaskName13(const std::string& scheduledTaskName13);
 				std::string getScheduledTaskName12()const;
@@ -188,6 +190,7 @@ namespace AlibabaCloud
 				std::string scheduledTaskName19_;
 				std::string scheduledTaskName18_;
 				std::string scheduledTaskId20_;
+				std::string scalingGroupId_;
 				std::string scheduledTaskName13_;
 				std::string scheduledTaskName12_;
 				std::string scheduledTaskName11_;

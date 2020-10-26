@@ -76,6 +76,17 @@ void ModifyScalingConfigurationRequest::setResourceGroupId(const std::string& re
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string ModifyScalingConfigurationRequest::getPrivatePoolOptionsMatchCriteria()const
+{
+	return privatePoolOptionsMatchCriteria_;
+}
+
+void ModifyScalingConfigurationRequest::setPrivatePoolOptionsMatchCriteria(const std::string& privatePoolOptionsMatchCriteria)
+{
+	privatePoolOptionsMatchCriteria_ = privatePoolOptionsMatchCriteria;
+	setParameter("PrivatePoolOptionsMatchCriteria", privatePoolOptionsMatchCriteria);
+}
+
 std::string ModifyScalingConfigurationRequest::getHostName()const
 {
 	return hostName_;
@@ -107,6 +118,17 @@ void ModifyScalingConfigurationRequest::setSystemDiskAutoSnapshotPolicyId(const 
 {
 	systemDiskAutoSnapshotPolicyId_ = systemDiskAutoSnapshotPolicyId;
 	setParameter("SystemDiskAutoSnapshotPolicyId", systemDiskAutoSnapshotPolicyId);
+}
+
+std::string ModifyScalingConfigurationRequest::getPrivatePoolOptionsId()const
+{
+	return privatePoolOptionsId_;
+}
+
+void ModifyScalingConfigurationRequest::setPrivatePoolOptionsId(const std::string& privatePoolOptionsId)
+{
+	privatePoolOptionsId_ = privatePoolOptionsId;
+	setParameter("PrivatePoolOptionsId", privatePoolOptionsId);
 }
 
 int ModifyScalingConfigurationRequest::getIpv6AddressCount()const
@@ -206,6 +228,28 @@ void ModifyScalingConfigurationRequest::setInternetChargeType(const std::string&
 {
 	internetChargeType_ = internetChargeType;
 	setParameter("InternetChargeType", internetChargeType);
+}
+
+std::string ModifyScalingConfigurationRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void ModifyScalingConfigurationRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
+}
+
+std::string ModifyScalingConfigurationRequest::getAffinity()const
+{
+	return affinity_;
+}
+
+void ModifyScalingConfigurationRequest::setAffinity(const std::string& affinity)
+{
+	affinity_ = affinity;
+	setParameter("Affinity", affinity);
 }
 
 std::string ModifyScalingConfigurationRequest::getImageId()const
@@ -342,6 +386,17 @@ void ModifyScalingConfigurationRequest::setOverride(bool override)
 	setParameter("Override", override ? "true" : "false");
 }
 
+std::map<std::string, std::string> ModifyScalingConfigurationRequest::getSchedulerOptions()const
+{
+	return schedulerOptions_;
+}
+
+void ModifyScalingConfigurationRequest::setSchedulerOptions(const std::map<std::string, std::string>& schedulerOptions)
+{
+	schedulerOptions_ = schedulerOptions;
+	setJsonParameters("SchedulerOptions", schedulerOptions);
+}
+
 std::string ModifyScalingConfigurationRequest::getDeploymentSetId()const
 {
 	return deploymentSetId_;
@@ -375,6 +430,17 @@ void ModifyScalingConfigurationRequest::setOwnerAccount(const std::string& owner
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string ModifyScalingConfigurationRequest::getTenancy()const
+{
+	return tenancy_;
+}
+
+void ModifyScalingConfigurationRequest::setTenancy(const std::string& tenancy)
+{
+	tenancy_ = tenancy;
+	setParameter("Tenancy", tenancy);
+}
+
 std::string ModifyScalingConfigurationRequest::getSystemDiskDiskName()const
 {
 	return systemDiskDiskName_;
@@ -395,6 +461,28 @@ void ModifyScalingConfigurationRequest::setRamRoleName(const std::string& ramRol
 {
 	ramRoleName_ = ramRoleName;
 	setParameter("RamRoleName", ramRoleName);
+}
+
+std::string ModifyScalingConfigurationRequest::getDedicatedHostId()const
+{
+	return dedicatedHostId_;
+}
+
+void ModifyScalingConfigurationRequest::setDedicatedHostId(const std::string& dedicatedHostId)
+{
+	dedicatedHostId_ = dedicatedHostId;
+	setParameter("DedicatedHostId", dedicatedHostId);
+}
+
+std::string ModifyScalingConfigurationRequest::getCreditSpecification()const
+{
+	return creditSpecification_;
+}
+
+void ModifyScalingConfigurationRequest::setCreditSpecification(const std::string& creditSpecification)
+{
+	creditSpecification_ = creditSpecification;
+	setParameter("CreditSpecification", creditSpecification);
 }
 
 std::vector<std::string> ModifyScalingConfigurationRequest::getSecurityGroupIds()const
@@ -454,6 +542,17 @@ void ModifyScalingConfigurationRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
 	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
+}
+
+std::string ModifyScalingConfigurationRequest::getImageFamily()const
+{
+	return imageFamily_;
+}
+
+void ModifyScalingConfigurationRequest::setImageFamily(const std::string& imageFamily)
+{
+	imageFamily_ = imageFamily;
+	setParameter("ImageFamily", imageFamily);
 }
 
 std::string ModifyScalingConfigurationRequest::getSystemDiskDescription()const

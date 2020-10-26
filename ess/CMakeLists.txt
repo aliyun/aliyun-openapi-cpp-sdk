@@ -61,14 +61,10 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/DeleteScalingRuleResult.h
 	include/alibabacloud/ess/model/DeleteScheduledTaskRequest.h
 	include/alibabacloud/ess/model/DeleteScheduledTaskResult.h
-	include/alibabacloud/ess/model/DescribeAccountAttributesRequest.h
-	include/alibabacloud/ess/model/DescribeAccountAttributesResult.h
 	include/alibabacloud/ess/model/DescribeAlarmsRequest.h
 	include/alibabacloud/ess/model/DescribeAlarmsResult.h
-	include/alibabacloud/ess/model/DescribeAlertConfigRequest.h
-	include/alibabacloud/ess/model/DescribeAlertConfigResult.h
-	include/alibabacloud/ess/model/DescribeCapacityHistoryRequest.h
-	include/alibabacloud/ess/model/DescribeCapacityHistoryResult.h
+	include/alibabacloud/ess/model/DescribeLifecycleActionsRequest.h
+	include/alibabacloud/ess/model/DescribeLifecycleActionsResult.h
 	include/alibabacloud/ess/model/DescribeLifecycleHooksRequest.h
 	include/alibabacloud/ess/model/DescribeLifecycleHooksResult.h
 	include/alibabacloud/ess/model/DescribeLimitationRequest.h
@@ -123,8 +119,6 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/ListTagValuesResult.h
 	include/alibabacloud/ess/model/ModifyAlarmRequest.h
 	include/alibabacloud/ess/model/ModifyAlarmResult.h
-	include/alibabacloud/ess/model/ModifyAlertConfigRequest.h
-	include/alibabacloud/ess/model/ModifyAlertConfigResult.h
 	include/alibabacloud/ess/model/ModifyLifecycleHookRequest.h
 	include/alibabacloud/ess/model/ModifyLifecycleHookResult.h
 	include/alibabacloud/ess/model/ModifyNotificationConfigurationRequest.h
@@ -204,14 +198,10 @@ set(ess_src
 	src/model/DeleteScalingRuleResult.cc
 	src/model/DeleteScheduledTaskRequest.cc
 	src/model/DeleteScheduledTaskResult.cc
-	src/model/DescribeAccountAttributesRequest.cc
-	src/model/DescribeAccountAttributesResult.cc
 	src/model/DescribeAlarmsRequest.cc
 	src/model/DescribeAlarmsResult.cc
-	src/model/DescribeAlertConfigRequest.cc
-	src/model/DescribeAlertConfigResult.cc
-	src/model/DescribeCapacityHistoryRequest.cc
-	src/model/DescribeCapacityHistoryResult.cc
+	src/model/DescribeLifecycleActionsRequest.cc
+	src/model/DescribeLifecycleActionsResult.cc
 	src/model/DescribeLifecycleHooksRequest.cc
 	src/model/DescribeLifecycleHooksResult.cc
 	src/model/DescribeLimitationRequest.cc
@@ -266,8 +256,6 @@ set(ess_src
 	src/model/ListTagValuesResult.cc
 	src/model/ModifyAlarmRequest.cc
 	src/model/ModifyAlarmResult.cc
-	src/model/ModifyAlertConfigRequest.cc
-	src/model/ModifyAlertConfigResult.cc
 	src/model/ModifyLifecycleHookRequest.cc
 	src/model/ModifyLifecycleHookResult.cc
 	src/model/ModifyNotificationConfigurationRequest.cc

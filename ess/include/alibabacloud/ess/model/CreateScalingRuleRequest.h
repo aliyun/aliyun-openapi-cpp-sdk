@@ -58,6 +58,8 @@ namespace AlibabaCloud
 				void setCooldown(int cooldown);
 				std::string getPredictiveValueBehavior()const;
 				void setPredictiveValueBehavior(const std::string& predictiveValueBehavior);
+				int getScaleInEvaluationCount()const;
+				void setScaleInEvaluationCount(int scaleInEvaluationCount);
 				std::string getScalingRuleType()const;
 				void setScalingRuleType(const std::string& scalingRuleType);
 				std::string getMetricName()const;
@@ -80,6 +82,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getPredictiveValueBuffer()const;
 				void setPredictiveValueBuffer(int predictiveValueBuffer);
+				int getScaleOutEvaluationCount()const;
+				void setScaleOutEvaluationCount(int scaleOutEvaluationCount);
 				int getMinAdjustmentMagnitude()const;
 				void setMinAdjustmentMagnitude(int minAdjustmentMagnitude);
 				float getTargetValue()const;
@@ -94,6 +98,7 @@ namespace AlibabaCloud
 				std::string scalingRuleName_;
 				int cooldown_;
 				std::string predictiveValueBehavior_;
+				int scaleInEvaluationCount_;
 				std::string scalingRuleType_;
 				std::string metricName_;
 				std::string predictiveScalingMode_;
@@ -105,6 +110,7 @@ namespace AlibabaCloud
 				std::string adjustmentType_;
 				long ownerId_;
 				int predictiveValueBuffer_;
+				int scaleOutEvaluationCount_;
 				int minAdjustmentMagnitude_;
 				float targetValue_;
 

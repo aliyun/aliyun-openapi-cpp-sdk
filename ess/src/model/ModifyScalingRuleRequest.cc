@@ -132,6 +132,17 @@ void ModifyScalingRuleRequest::setPredictiveValueBehavior(const std::string& pre
 	setParameter("PredictiveValueBehavior", predictiveValueBehavior);
 }
 
+int ModifyScalingRuleRequest::getScaleInEvaluationCount()const
+{
+	return scaleInEvaluationCount_;
+}
+
+void ModifyScalingRuleRequest::setScaleInEvaluationCount(int scaleInEvaluationCount)
+{
+	scaleInEvaluationCount_ = scaleInEvaluationCount;
+	setParameter("ScaleInEvaluationCount", std::to_string(scaleInEvaluationCount));
+}
+
 std::string ModifyScalingRuleRequest::getMetricName()const
 {
 	return metricName_;
@@ -240,6 +251,17 @@ void ModifyScalingRuleRequest::setPredictiveValueBuffer(int predictiveValueBuffe
 {
 	predictiveValueBuffer_ = predictiveValueBuffer;
 	setParameter("PredictiveValueBuffer", std::to_string(predictiveValueBuffer));
+}
+
+int ModifyScalingRuleRequest::getScaleOutEvaluationCount()const
+{
+	return scaleOutEvaluationCount_;
+}
+
+void ModifyScalingRuleRequest::setScaleOutEvaluationCount(int scaleOutEvaluationCount)
+{
+	scaleOutEvaluationCount_ = scaleOutEvaluationCount;
+	setParameter("ScaleOutEvaluationCount", std::to_string(scaleOutEvaluationCount));
 }
 
 int ModifyScalingRuleRequest::getMinAdjustmentMagnitude()const

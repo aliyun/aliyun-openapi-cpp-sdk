@@ -27,6 +27,17 @@ AttachDBInstancesRequest::AttachDBInstancesRequest() :
 AttachDBInstancesRequest::~AttachDBInstancesRequest()
 {}
 
+std::string AttachDBInstancesRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AttachDBInstancesRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string AttachDBInstancesRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;

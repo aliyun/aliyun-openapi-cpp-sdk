@@ -117,3 +117,14 @@ void DetachInstancesRequest::setInstanceId(const std::vector<std::string>& insta
 	}
 }
 
+std::string DetachInstancesRequest::getDetachOption()const
+{
+	return detachOption_;
+}
+
+void DetachInstancesRequest::setDetachOption(const std::string& detachOption)
+{
+	detachOption_ = detachOption;
+	setParameter("DetachOption", detachOption);
+}
+

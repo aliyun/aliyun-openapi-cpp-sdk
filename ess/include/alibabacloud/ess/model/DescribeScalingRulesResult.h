@@ -72,9 +72,11 @@ namespace AlibabaCloud
 					std::string metricName;
 					std::string scalingRuleName;
 					int adjustmentValue;
+					int scaleOutEvaluationCount;
 					int initialMaxSize;
 					std::string scalingRuleType;
 					int estimatedInstanceWarmup;
+					int scaleInEvaluationCount;
 					std::string predictiveScalingMode;
 					int predictiveValueBuffer;
 					int predictiveTaskBufferTime;

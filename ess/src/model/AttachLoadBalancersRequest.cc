@@ -27,6 +27,17 @@ AttachLoadBalancersRequest::AttachLoadBalancersRequest() :
 AttachLoadBalancersRequest::~AttachLoadBalancersRequest()
 {}
 
+std::string AttachLoadBalancersRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AttachLoadBalancersRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string AttachLoadBalancersRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;

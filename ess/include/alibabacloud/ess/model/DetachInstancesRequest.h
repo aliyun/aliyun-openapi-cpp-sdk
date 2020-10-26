@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::vector<std::string> getInstanceId()const;
 				void setInstanceId(const std::vector<std::string>& instanceId);
+				std::string getDetachOption()const;
+				void setDetachOption(const std::string& detachOption);
 
             private:
 				long resourceOwnerId_;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::vector<std::string> instanceId_;
+				std::string detachOption_;
 
 			};
 		}

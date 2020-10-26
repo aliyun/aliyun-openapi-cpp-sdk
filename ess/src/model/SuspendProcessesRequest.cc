@@ -27,6 +27,39 @@ SuspendProcessesRequest::SuspendProcessesRequest() :
 SuspendProcessesRequest::~SuspendProcessesRequest()
 {}
 
+std::string SuspendProcessesRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void SuspendProcessesRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
+std::string SuspendProcessesRequest::getScalingGroupId()const
+{
+	return scalingGroupId_;
+}
+
+void SuspendProcessesRequest::setScalingGroupId(const std::string& scalingGroupId)
+{
+	scalingGroupId_ = scalingGroupId;
+	setParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string SuspendProcessesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SuspendProcessesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<std::string> SuspendProcessesRequest::getProcess()const
 {
 	return process_;
@@ -51,17 +84,6 @@ void SuspendProcessesRequest::setResourceOwnerAccount(const std::string& resourc
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string SuspendProcessesRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void SuspendProcessesRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
-}
-
 long SuspendProcessesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -71,16 +93,5 @@ void SuspendProcessesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string SuspendProcessesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void SuspendProcessesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

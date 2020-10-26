@@ -121,6 +121,17 @@ void CreateScalingRuleRequest::setPredictiveValueBehavior(const std::string& pre
 	setParameter("PredictiveValueBehavior", predictiveValueBehavior);
 }
 
+int CreateScalingRuleRequest::getScaleInEvaluationCount()const
+{
+	return scaleInEvaluationCount_;
+}
+
+void CreateScalingRuleRequest::setScaleInEvaluationCount(int scaleInEvaluationCount)
+{
+	scaleInEvaluationCount_ = scaleInEvaluationCount;
+	setParameter("ScaleInEvaluationCount", std::to_string(scaleInEvaluationCount));
+}
+
 std::string CreateScalingRuleRequest::getScalingRuleType()const
 {
 	return scalingRuleType_;
@@ -240,6 +251,17 @@ void CreateScalingRuleRequest::setPredictiveValueBuffer(int predictiveValueBuffe
 {
 	predictiveValueBuffer_ = predictiveValueBuffer;
 	setParameter("PredictiveValueBuffer", std::to_string(predictiveValueBuffer));
+}
+
+int CreateScalingRuleRequest::getScaleOutEvaluationCount()const
+{
+	return scaleOutEvaluationCount_;
+}
+
+void CreateScalingRuleRequest::setScaleOutEvaluationCount(int scaleOutEvaluationCount)
+{
+	scaleOutEvaluationCount_ = scaleOutEvaluationCount;
+	setParameter("ScaleOutEvaluationCount", std::to_string(scaleOutEvaluationCount));
 }
 
 int CreateScalingRuleRequest::getMinAdjustmentMagnitude()const

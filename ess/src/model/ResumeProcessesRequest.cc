@@ -27,6 +27,39 @@ ResumeProcessesRequest::ResumeProcessesRequest() :
 ResumeProcessesRequest::~ResumeProcessesRequest()
 {}
 
+std::string ResumeProcessesRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ResumeProcessesRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
+std::string ResumeProcessesRequest::getScalingGroupId()const
+{
+	return scalingGroupId_;
+}
+
+void ResumeProcessesRequest::setScalingGroupId(const std::string& scalingGroupId)
+{
+	scalingGroupId_ = scalingGroupId;
+	setParameter("ScalingGroupId", scalingGroupId);
+}
+
+std::string ResumeProcessesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ResumeProcessesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::vector<std::string> ResumeProcessesRequest::getProcess()const
 {
 	return process_;
@@ -51,17 +84,6 @@ void ResumeProcessesRequest::setResourceOwnerAccount(const std::string& resource
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ResumeProcessesRequest::getScalingGroupId()const
-{
-	return scalingGroupId_;
-}
-
-void ResumeProcessesRequest::setScalingGroupId(const std::string& scalingGroupId)
-{
-	scalingGroupId_ = scalingGroupId;
-	setParameter("ScalingGroupId", scalingGroupId);
-}
-
 long ResumeProcessesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -71,16 +93,5 @@ void ResumeProcessesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ResumeProcessesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ResumeProcessesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

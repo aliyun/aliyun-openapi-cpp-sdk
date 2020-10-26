@@ -35,23 +35,26 @@ namespace AlibabaCloud
 				ResumeProcessesRequest();
 				~ResumeProcessesRequest();
 
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getScalingGroupId()const;
+				void setScalingGroupId(const std::string& scalingGroupId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::vector<std::string> getProcess()const;
 				void setProcess(const std::vector<std::string>& process);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getScalingGroupId()const;
-				void setScalingGroupId(const std::string& scalingGroupId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string clientToken_;
+				std::string scalingGroupId_;
+				std::string accessKeyId_;
 				std::vector<std::string> process_;
 				std::string resourceOwnerAccount_;
-				std::string scalingGroupId_;
 				long ownerId_;
-				std::string accessKeyId_;
 
 			};
 		}

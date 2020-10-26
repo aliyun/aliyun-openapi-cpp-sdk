@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setThreshold(float threshold);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getEffective()const;
+				void setEffective(const std::string& effective);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getEvaluationCount()const;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 				std::vector<std::string> alarmAction_;
 				float threshold_;
 				std::string accessKeyId_;
+				std::string effective_;
 				std::string regionId_;
 				int evaluationCount_;
 				std::string metricName_;

@@ -117,6 +117,17 @@ void ModifyScalingGroupRequest::setSpotInstanceRemedy(bool spotInstanceRemedy)
 	setParameter("SpotInstanceRemedy", spotInstanceRemedy ? "true" : "false");
 }
 
+bool ModifyScalingGroupRequest::getScaleOutAmountCheck()const
+{
+	return scaleOutAmountCheck_;
+}
+
+void ModifyScalingGroupRequest::setScaleOutAmountCheck(bool scaleOutAmountCheck)
+{
+	scaleOutAmountCheck_ = scaleOutAmountCheck;
+	setParameter("ScaleOutAmountCheck", scaleOutAmountCheck ? "true" : "false");
+}
+
 int ModifyScalingGroupRequest::getDefaultCooldown()const
 {
 	return defaultCooldown_;
@@ -214,6 +225,17 @@ void ModifyScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+bool ModifyScalingGroupRequest::getCompensateWithOnDemand()const
+{
+	return compensateWithOnDemand_;
+}
+
+void ModifyScalingGroupRequest::setCompensateWithOnDemand(bool compensateWithOnDemand)
+{
+	compensateWithOnDemand_ = compensateWithOnDemand;
+	setParameter("CompensateWithOnDemand", compensateWithOnDemand ? "true" : "false");
 }
 
 int ModifyScalingGroupRequest::getSpotInstancePools()const

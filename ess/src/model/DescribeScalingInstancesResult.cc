@@ -67,6 +67,8 @@ void DescribeScalingInstancesResult::parse(const std::string &payload)
 			scalingInstancesObject.warmupState = valueScalingInstancesScalingInstance["WarmupState"].asString();
 		if(!valueScalingInstancesScalingInstance["Entrusted"].isNull())
 			scalingInstancesObject.entrusted = valueScalingInstancesScalingInstance["Entrusted"].asString() == "true";
+		if(!valueScalingInstancesScalingInstance["CreatedTime"].isNull())
+			scalingInstancesObject.createdTime = valueScalingInstancesScalingInstance["CreatedTime"].asString();
 		scalingInstances_.push_back(scalingInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

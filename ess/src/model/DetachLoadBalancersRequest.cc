@@ -27,6 +27,17 @@ DetachLoadBalancersRequest::DetachLoadBalancersRequest() :
 DetachLoadBalancersRequest::~DetachLoadBalancersRequest()
 {}
 
+std::string DetachLoadBalancersRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DetachLoadBalancersRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string DetachLoadBalancersRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;

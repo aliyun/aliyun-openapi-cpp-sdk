@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					int evaluationCount;
 					std::string statistics;
 					std::string name;
+					std::string effective;
 					std::vector<std::string> alarmActions;
 					std::string metricName;
 					std::string state;

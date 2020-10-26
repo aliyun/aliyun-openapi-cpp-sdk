@@ -38,6 +38,17 @@ void CompleteLifecycleActionRequest::setLifecycleActionToken(const std::string& 
 	setParameter("LifecycleActionToken", lifecycleActionToken);
 }
 
+std::string CompleteLifecycleActionRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CompleteLifecycleActionRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string CompleteLifecycleActionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

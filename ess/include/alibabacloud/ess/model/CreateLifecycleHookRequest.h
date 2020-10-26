@@ -30,16 +30,6 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ESS_EXPORT CreateLifecycleHookRequest : public RpcServiceRequest
 			{
-			public:
-				struct LifecycleHook
-				{
-					std::string defaultResult;
-					std::string lifecycleHookName;
-					int heartbeatTimeout;
-					std::string notificationArn;
-					std::string notificationMetadata;
-					std::string lifecycleTransition;
-				};
 
 			public:
 				CreateLifecycleHookRequest();
@@ -67,8 +57,6 @@ namespace AlibabaCloud
 				void setNotificationMetadata(const std::string& notificationMetadata);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<LifecycleHook> getLifecycleHook()const;
-				void setLifecycleHook(const std::vector<LifecycleHook>& lifecycleHook);
 
             private:
 				std::string defaultResult_;
@@ -82,7 +70,6 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string notificationMetadata_;
 				long ownerId_;
-				std::vector<LifecycleHook> lifecycleHook_;
 
 			};
 		}

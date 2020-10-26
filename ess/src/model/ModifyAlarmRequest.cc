@@ -84,6 +84,17 @@ void ModifyAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyAlarmRequest::getEffective()const
+{
+	return effective_;
+}
+
+void ModifyAlarmRequest::setEffective(const std::string& effective)
+{
+	effective_ = effective;
+	setParameter("Effective", effective);
+}
+
 std::string ModifyAlarmRequest::getRegionId()const
 {
 	return regionId_;

@@ -148,23 +148,3 @@ void CreateLifecycleHookRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::vector<CreateLifecycleHookRequest::LifecycleHook> CreateLifecycleHookRequest::getLifecycleHook()const
-{
-	return lifecycleHook_;
-}
-
-void CreateLifecycleHookRequest::setLifecycleHook(const std::vector<LifecycleHook>& lifecycleHook)
-{
-	lifecycleHook_ = lifecycleHook;
-	for(int dep1 = 0; dep1!= lifecycleHook.size(); dep1++) {
-		auto lifecycleHookObj = lifecycleHook.at(dep1);
-		std::string lifecycleHookObjStr = "LifecycleHook." + std::to_string(dep1 + 1);
-		setParameter(lifecycleHookObjStr + ".DefaultResult", lifecycleHookObj.defaultResult);
-		setParameter(lifecycleHookObjStr + ".LifecycleHookName", lifecycleHookObj.lifecycleHookName);
-		setParameter(lifecycleHookObjStr + ".HeartbeatTimeout", std::to_string(lifecycleHookObj.heartbeatTimeout));
-		setParameter(lifecycleHookObjStr + ".NotificationArn", lifecycleHookObj.notificationArn);
-		setParameter(lifecycleHookObjStr + ".NotificationMetadata", lifecycleHookObj.notificationMetadata);
-		setParameter(lifecycleHookObjStr + ".LifecycleTransition", lifecycleHookObj.lifecycleTransition);
-	}
-}
-

@@ -192,6 +192,17 @@ void DescribeScheduledTasksRequest::setScheduledTaskId20(const std::string& sche
 	setParameter("ScheduledTaskId20", scheduledTaskId20);
 }
 
+std::string DescribeScheduledTasksRequest::getScalingGroupId()const
+{
+	return scalingGroupId_;
+}
+
+void DescribeScheduledTasksRequest::setScalingGroupId(const std::string& scalingGroupId)
+{
+	scalingGroupId_ = scalingGroupId;
+	setParameter("ScalingGroupId", scalingGroupId);
+}
+
 std::string DescribeScheduledTasksRequest::getScheduledTaskName13()const
 {
 	return scheduledTaskName13_;

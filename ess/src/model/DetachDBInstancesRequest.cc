@@ -27,6 +27,17 @@ DetachDBInstancesRequest::DetachDBInstancesRequest() :
 DetachDBInstancesRequest::~DetachDBInstancesRequest()
 {}
 
+std::string DetachDBInstancesRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DetachDBInstancesRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string DetachDBInstancesRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				AttachDBInstancesRequest();
 				~AttachDBInstancesRequest();
 
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getScalingGroupId()const;
 				void setScalingGroupId(const std::string& scalingGroupId);
 				bool getForceAttach()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 
             private:
+				std::string clientToken_;
 				std::string scalingGroupId_;
 				bool forceAttach_;
 				std::string accessKeyId_;

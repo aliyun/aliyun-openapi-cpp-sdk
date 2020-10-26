@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					};
 					bool spotInstanceRemedy;
 					std::string activeScalingConfigurationId;
+					bool compensateWithOnDemand;
 					int onDemandPercentageAboveBaseCapacity;
 					int desiredCapacity;
 					std::string lifecycleState;
@@ -74,6 +75,7 @@ namespace AlibabaCloud
 					int activeCapacity;
 					int minSize;
 					int defaultCooldown;
+					bool scaleOutAmountCheck;
 					std::string vpcId;
 					std::string launchTemplateVersion;
 					std::string creationTime;

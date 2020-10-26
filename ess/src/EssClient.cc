@@ -771,42 +771,6 @@ EssClient::DeleteScheduledTaskOutcomeCallable EssClient::deleteScheduledTaskCall
 	return task->get_future();
 }
 
-EssClient::DescribeAccountAttributesOutcome EssClient::describeAccountAttributes(const DescribeAccountAttributesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAccountAttributesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAccountAttributesOutcome(DescribeAccountAttributesResult(outcome.result()));
-	else
-		return DescribeAccountAttributesOutcome(outcome.error());
-}
-
-void EssClient::describeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAccountAttributes(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::DescribeAccountAttributesOutcomeCallable EssClient::describeAccountAttributesCallable(const DescribeAccountAttributesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAccountAttributesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAccountAttributes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EssClient::DescribeAlarmsOutcome EssClient::describeAlarms(const DescribeAlarmsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -843,72 +807,36 @@ EssClient::DescribeAlarmsOutcomeCallable EssClient::describeAlarmsCallable(const
 	return task->get_future();
 }
 
-EssClient::DescribeAlertConfigOutcome EssClient::describeAlertConfig(const DescribeAlertConfigRequest &request) const
+EssClient::DescribeLifecycleActionsOutcome EssClient::describeLifecycleActions(const DescribeLifecycleActionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeAlertConfigOutcome(endpointOutcome.error());
+		return DescribeLifecycleActionsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeAlertConfigOutcome(DescribeAlertConfigResult(outcome.result()));
+		return DescribeLifecycleActionsOutcome(DescribeLifecycleActionsResult(outcome.result()));
 	else
-		return DescribeAlertConfigOutcome(outcome.error());
+		return DescribeLifecycleActionsOutcome(outcome.error());
 }
 
-void EssClient::describeAlertConfigAsync(const DescribeAlertConfigRequest& request, const DescribeAlertConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EssClient::describeLifecycleActionsAsync(const DescribeLifecycleActionsRequest& request, const DescribeLifecycleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeAlertConfig(request), context);
+		handler(this, request, describeLifecycleActions(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EssClient::DescribeAlertConfigOutcomeCallable EssClient::describeAlertConfigCallable(const DescribeAlertConfigRequest &request) const
+EssClient::DescribeLifecycleActionsOutcomeCallable EssClient::describeLifecycleActionsCallable(const DescribeLifecycleActionsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeAlertConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLifecycleActionsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeAlertConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EssClient::DescribeCapacityHistoryOutcome EssClient::describeCapacityHistory(const DescribeCapacityHistoryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCapacityHistoryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCapacityHistoryOutcome(DescribeCapacityHistoryResult(outcome.result()));
-	else
-		return DescribeCapacityHistoryOutcome(outcome.error());
-}
-
-void EssClient::describeCapacityHistoryAsync(const DescribeCapacityHistoryRequest& request, const DescribeCapacityHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCapacityHistory(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::DescribeCapacityHistoryOutcomeCallable EssClient::describeCapacityHistoryCallable(const DescribeCapacityHistoryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCapacityHistoryOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCapacityHistory(request);
+			return this->describeLifecycleActions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1881,42 +1809,6 @@ EssClient::ModifyAlarmOutcomeCallable EssClient::modifyAlarmCallable(const Modif
 			[this, request]()
 			{
 			return this->modifyAlarm(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EssClient::ModifyAlertConfigOutcome EssClient::modifyAlertConfig(const ModifyAlertConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyAlertConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyAlertConfigOutcome(ModifyAlertConfigResult(outcome.result()));
-	else
-		return ModifyAlertConfigOutcome(outcome.error());
-}
-
-void EssClient::modifyAlertConfigAsync(const ModifyAlertConfigRequest& request, const ModifyAlertConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyAlertConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::ModifyAlertConfigOutcomeCallable EssClient::modifyAlertConfigCallable(const ModifyAlertConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyAlertConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyAlertConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

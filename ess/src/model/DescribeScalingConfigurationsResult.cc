@@ -111,6 +111,22 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.hpcClusterId = valueScalingConfigurationsScalingConfiguration["HpcClusterId"].asString();
 		if(!valueScalingConfigurationsScalingConfiguration["InstanceDescription"].isNull())
 			scalingConfigurationsObject.instanceDescription = valueScalingConfigurationsScalingConfiguration["InstanceDescription"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["CreditSpecification"].isNull())
+			scalingConfigurationsObject.creditSpecification = valueScalingConfigurationsScalingConfiguration["CreditSpecification"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["ImageFamily"].isNull())
+			scalingConfigurationsObject.imageFamily = valueScalingConfigurationsScalingConfiguration["ImageFamily"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["ZoneId"].isNull())
+			scalingConfigurationsObject.zoneId = valueScalingConfigurationsScalingConfiguration["ZoneId"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["DedicatedHostId"].isNull())
+			scalingConfigurationsObject.dedicatedHostId = valueScalingConfigurationsScalingConfiguration["DedicatedHostId"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["Affinity"].isNull())
+			scalingConfigurationsObject.affinity = valueScalingConfigurationsScalingConfiguration["Affinity"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["Tenancy"].isNull())
+			scalingConfigurationsObject.tenancy = valueScalingConfigurationsScalingConfiguration["Tenancy"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["PrivatePoolOptions.MatchCriteria"].isNull())
+			scalingConfigurationsObject.privatePoolOptionsMatchCriteria = valueScalingConfigurationsScalingConfiguration["PrivatePoolOptions.MatchCriteria"].asString();
+		if(!valueScalingConfigurationsScalingConfiguration["PrivatePoolOptions.Id"].isNull())
+			scalingConfigurationsObject.privatePoolOptionsId = valueScalingConfigurationsScalingConfiguration["PrivatePoolOptions.Id"].asString();
 		if(!valueScalingConfigurationsScalingConfiguration["Ipv6AddressCount"].isNull())
 			scalingConfigurationsObject.ipv6AddressCount = std::stoi(valueScalingConfigurationsScalingConfiguration["Ipv6AddressCount"].asString());
 		auto allDataDisksNode = allScalingConfigurationsNode["DataDisks"]["DataDisk"];
@@ -159,6 +175,9 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 				spotPriceLimitObject.priceLimit = std::stof(allScalingConfigurationsNodeSpotPriceLimitSpotPriceModel["PriceLimit"].asString());
 			scalingConfigurationsObject.spotPriceLimit.push_back(spotPriceLimitObject);
 		}
+		auto schedulerOptionsNode = value["SchedulerOptions"];
+		if(!schedulerOptionsNode["ManagedPrivateSpaceId"].isNull())
+			scalingConfigurationsObject.schedulerOptions.managedPrivateSpaceId = schedulerOptionsNode["ManagedPrivateSpaceId"].asString();
 		auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
 		for (auto value : allInstanceTypes)
 			scalingConfigurationsObject.instanceTypes.push_back(value.asString());
