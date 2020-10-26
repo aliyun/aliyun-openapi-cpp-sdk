@@ -415,8 +415,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/StopLiveIndexResult.h
 	include/alibabacloud/live/model/TagLiveResourcesRequest.h
 	include/alibabacloud/live/model/TagLiveResourcesResult.h
-	include/alibabacloud/live/model/TriggerRecordRequest.h
-	include/alibabacloud/live/model/TriggerRecordResult.h
 	include/alibabacloud/live/model/UnTagLiveResourcesRequest.h
 	include/alibabacloud/live/model/UnTagLiveResourcesResult.h
 	include/alibabacloud/live/model/UpdateBoardRequest.h
@@ -842,8 +840,6 @@ set(live_src
 	src/model/StopLiveIndexResult.cc
 	src/model/TagLiveResourcesRequest.cc
 	src/model/TagLiveResourcesResult.cc
-	src/model/TriggerRecordRequest.cc
-	src/model/TriggerRecordResult.cc
 	src/model/UnTagLiveResourcesRequest.cc
 	src/model/UnTagLiveResourcesResult.cc
 	src/model/UpdateBoardRequest.cc

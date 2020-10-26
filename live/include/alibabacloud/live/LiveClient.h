@@ -416,8 +416,6 @@
 #include "model/StopLiveIndexResult.h"
 #include "model/TagLiveResourcesRequest.h"
 #include "model/TagLiveResourcesResult.h"
-#include "model/TriggerRecordRequest.h"
-#include "model/TriggerRecordResult.h"
 #include "model/UnTagLiveResourcesRequest.h"
 #include "model/UnTagLiveResourcesResult.h"
 #include "model/UpdateBoardRequest.h"
@@ -1046,9 +1044,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagLiveResourcesResult> TagLiveResourcesOutcome;
 			typedef std::future<TagLiveResourcesOutcome> TagLiveResourcesOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::TagLiveResourcesRequest&, const TagLiveResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagLiveResourcesAsyncHandler;
-			typedef Outcome<Error, Model::TriggerRecordResult> TriggerRecordOutcome;
-			typedef std::future<TriggerRecordOutcome> TriggerRecordOutcomeCallable;
-			typedef std::function<void(const LiveClient*, const Model::TriggerRecordRequest&, const TriggerRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TriggerRecordAsyncHandler;
 			typedef Outcome<Error, Model::UnTagLiveResourcesResult> UnTagLiveResourcesOutcome;
 			typedef std::future<UnTagLiveResourcesOutcome> UnTagLiveResourcesOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UnTagLiveResourcesRequest&, const UnTagLiveResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnTagLiveResourcesAsyncHandler;
@@ -1687,9 +1682,6 @@ namespace AlibabaCloud
 			TagLiveResourcesOutcome tagLiveResources(const Model::TagLiveResourcesRequest &request)const;
 			void tagLiveResourcesAsync(const Model::TagLiveResourcesRequest& request, const TagLiveResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagLiveResourcesOutcomeCallable tagLiveResourcesCallable(const Model::TagLiveResourcesRequest& request) const;
-			TriggerRecordOutcome triggerRecord(const Model::TriggerRecordRequest &request)const;
-			void triggerRecordAsync(const Model::TriggerRecordRequest& request, const TriggerRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TriggerRecordOutcomeCallable triggerRecordCallable(const Model::TriggerRecordRequest& request) const;
 			UnTagLiveResourcesOutcome unTagLiveResources(const Model::UnTagLiveResourcesRequest &request)const;
 			void unTagLiveResourcesAsync(const Model::UnTagLiveResourcesRequest& request, const UnTagLiveResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnTagLiveResourcesOutcomeCallable unTagLiveResourcesCallable(const Model::UnTagLiveResourcesRequest& request) const;

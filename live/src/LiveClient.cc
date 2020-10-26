@@ -7143,42 +7143,6 @@ LiveClient::TagLiveResourcesOutcomeCallable LiveClient::tagLiveResourcesCallable
 	return task->get_future();
 }
 
-LiveClient::TriggerRecordOutcome LiveClient::triggerRecord(const TriggerRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TriggerRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TriggerRecordOutcome(TriggerRecordResult(outcome.result()));
-	else
-		return TriggerRecordOutcome(outcome.error());
-}
-
-void LiveClient::triggerRecordAsync(const TriggerRecordRequest& request, const TriggerRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, triggerRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::TriggerRecordOutcomeCallable LiveClient::triggerRecordCallable(const TriggerRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TriggerRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->triggerRecord(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::UnTagLiveResourcesOutcome LiveClient::unTagLiveResources(const UnTagLiveResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
