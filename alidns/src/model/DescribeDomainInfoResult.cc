@@ -93,6 +93,8 @@ void DescribeDomainInfoResult::parse(const std::string &payload)
 		inClean_ = value["InClean"].asString() == "true";
 	if(!value["SlaveDns"].isNull())
 		slaveDns_ = value["SlaveDns"].asString() == "true";
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -124,6 +126,11 @@ bool DescribeDomainInfoResult::getAliDomain()const
 bool DescribeDomainInfoResult::getSlaveDns()const
 {
 	return slaveDns_;
+}
+
+std::string DescribeDomainInfoResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string DescribeDomainInfoResult::getDomainName()const

@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string dnsSecurity;
 					long uRLForwardCount;
 					long tTLMinValue;
+					std::string paymentType;
 					std::string versionName;
 					std::string overseaLine;
 					std::string iSPRegionLines;

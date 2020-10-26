@@ -1059,6 +1059,222 @@ AlidnsClient::DescribeDnsProductInstancesOutcomeCallable AlidnsClient::describeD
 	return task->get_future();
 }
 
+AlidnsClient::DescribeDohAccountStatisticsOutcome AlidnsClient::describeDohAccountStatistics(const DescribeDohAccountStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDohAccountStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDohAccountStatisticsOutcome(DescribeDohAccountStatisticsResult(outcome.result()));
+	else
+		return DescribeDohAccountStatisticsOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDohAccountStatisticsAsync(const DescribeDohAccountStatisticsRequest& request, const DescribeDohAccountStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDohAccountStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDohAccountStatisticsOutcomeCallable AlidnsClient::describeDohAccountStatisticsCallable(const DescribeDohAccountStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDohAccountStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDohAccountStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDohDomainStatisticsOutcome AlidnsClient::describeDohDomainStatistics(const DescribeDohDomainStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDohDomainStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDohDomainStatisticsOutcome(DescribeDohDomainStatisticsResult(outcome.result()));
+	else
+		return DescribeDohDomainStatisticsOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDohDomainStatisticsAsync(const DescribeDohDomainStatisticsRequest& request, const DescribeDohDomainStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDohDomainStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDohDomainStatisticsOutcomeCallable AlidnsClient::describeDohDomainStatisticsCallable(const DescribeDohDomainStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDohDomainStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDohDomainStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDohDomainStatisticsSummaryOutcome AlidnsClient::describeDohDomainStatisticsSummary(const DescribeDohDomainStatisticsSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDohDomainStatisticsSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDohDomainStatisticsSummaryOutcome(DescribeDohDomainStatisticsSummaryResult(outcome.result()));
+	else
+		return DescribeDohDomainStatisticsSummaryOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDohDomainStatisticsSummaryAsync(const DescribeDohDomainStatisticsSummaryRequest& request, const DescribeDohDomainStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDohDomainStatisticsSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDohDomainStatisticsSummaryOutcomeCallable AlidnsClient::describeDohDomainStatisticsSummaryCallable(const DescribeDohDomainStatisticsSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDohDomainStatisticsSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDohDomainStatisticsSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDohSubDomainStatisticsOutcome AlidnsClient::describeDohSubDomainStatistics(const DescribeDohSubDomainStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDohSubDomainStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDohSubDomainStatisticsOutcome(DescribeDohSubDomainStatisticsResult(outcome.result()));
+	else
+		return DescribeDohSubDomainStatisticsOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDohSubDomainStatisticsAsync(const DescribeDohSubDomainStatisticsRequest& request, const DescribeDohSubDomainStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDohSubDomainStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDohSubDomainStatisticsOutcomeCallable AlidnsClient::describeDohSubDomainStatisticsCallable(const DescribeDohSubDomainStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDohSubDomainStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDohSubDomainStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDohSubDomainStatisticsSummaryOutcome AlidnsClient::describeDohSubDomainStatisticsSummary(const DescribeDohSubDomainStatisticsSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDohSubDomainStatisticsSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDohSubDomainStatisticsSummaryOutcome(DescribeDohSubDomainStatisticsSummaryResult(outcome.result()));
+	else
+		return DescribeDohSubDomainStatisticsSummaryOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDohSubDomainStatisticsSummaryAsync(const DescribeDohSubDomainStatisticsSummaryRequest& request, const DescribeDohSubDomainStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDohSubDomainStatisticsSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDohSubDomainStatisticsSummaryOutcomeCallable AlidnsClient::describeDohSubDomainStatisticsSummaryCallable(const DescribeDohSubDomainStatisticsSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDohSubDomainStatisticsSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDohSubDomainStatisticsSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDohUserInfoOutcome AlidnsClient::describeDohUserInfo(const DescribeDohUserInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDohUserInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDohUserInfoOutcome(DescribeDohUserInfoResult(outcome.result()));
+	else
+		return DescribeDohUserInfoOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDohUserInfoAsync(const DescribeDohUserInfoRequest& request, const DescribeDohUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDohUserInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDohUserInfoOutcomeCallable AlidnsClient::describeDohUserInfoCallable(const DescribeDohUserInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDohUserInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDohUserInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DescribeDomainDnssecInfoOutcome AlidnsClient::describeDomainDnssecInfo(const DescribeDomainDnssecInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

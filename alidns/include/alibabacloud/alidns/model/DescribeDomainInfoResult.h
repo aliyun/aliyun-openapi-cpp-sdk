@@ -50,6 +50,7 @@ namespace AlibabaCloud
 				bool getRegionLines()const;
 				bool getAliDomain()const;
 				bool getSlaveDns()const;
+				std::string getResourceGroupId()const;
 				std::string getDomainName()const;
 				std::string getInstanceId()const;
 				std::string getPunyCode()const;
@@ -74,6 +75,7 @@ namespace AlibabaCloud
 				bool regionLines_;
 				bool aliDomain_;
 				bool slaveDns_;
+				std::string resourceGroupId_;
 				std::string domainName_;
 				std::string instanceId_;
 				std::string punyCode_;

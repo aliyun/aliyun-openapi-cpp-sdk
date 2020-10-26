@@ -105,6 +105,8 @@ void DescribeDnsProductInstancesResult::parse(const std::string &payload)
 			dnsProductsObject.bindDomainUsedCount = std::stol(valueDnsProductsDnsProduct["BindDomainUsedCount"].asString());
 		if(!valueDnsProductsDnsProduct["DnsSecurity"].isNull())
 			dnsProductsObject.dnsSecurity = valueDnsProductsDnsProduct["DnsSecurity"].asString();
+		if(!valueDnsProductsDnsProduct["PaymentType"].isNull())
+			dnsProductsObject.paymentType = valueDnsProductsDnsProduct["PaymentType"].asString();
 		dnsProducts_.push_back(dnsProductsObject);
 	}
 	if(!value["TotalCount"].isNull())

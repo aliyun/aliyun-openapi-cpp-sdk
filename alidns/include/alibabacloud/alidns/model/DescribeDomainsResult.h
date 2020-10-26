@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					};
 					std::string groupName;
 					bool aliDomain;
+					std::string resourceGroupId;
 					std::string domainName;
 					std::string instanceId;
 					std::string createTime;

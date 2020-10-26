@@ -78,6 +78,18 @@
 #include "model/DescribeDnsProductInstanceResult.h"
 #include "model/DescribeDnsProductInstancesRequest.h"
 #include "model/DescribeDnsProductInstancesResult.h"
+#include "model/DescribeDohAccountStatisticsRequest.h"
+#include "model/DescribeDohAccountStatisticsResult.h"
+#include "model/DescribeDohDomainStatisticsRequest.h"
+#include "model/DescribeDohDomainStatisticsResult.h"
+#include "model/DescribeDohDomainStatisticsSummaryRequest.h"
+#include "model/DescribeDohDomainStatisticsSummaryResult.h"
+#include "model/DescribeDohSubDomainStatisticsRequest.h"
+#include "model/DescribeDohSubDomainStatisticsResult.h"
+#include "model/DescribeDohSubDomainStatisticsSummaryRequest.h"
+#include "model/DescribeDohSubDomainStatisticsSummaryResult.h"
+#include "model/DescribeDohUserInfoRequest.h"
+#include "model/DescribeDohUserInfoResult.h"
 #include "model/DescribeDomainDnssecInfoRequest.h"
 #include "model/DescribeDomainDnssecInfoResult.h"
 #include "model/DescribeDomainGroupsRequest.h"
@@ -297,6 +309,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDnsProductInstancesResult> DescribeDnsProductInstancesOutcome;
 			typedef std::future<DescribeDnsProductInstancesOutcome> DescribeDnsProductInstancesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDnsProductInstancesRequest&, const DescribeDnsProductInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsProductInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDohAccountStatisticsResult> DescribeDohAccountStatisticsOutcome;
+			typedef std::future<DescribeDohAccountStatisticsOutcome> DescribeDohAccountStatisticsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDohAccountStatisticsRequest&, const DescribeDohAccountStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDohAccountStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDohDomainStatisticsResult> DescribeDohDomainStatisticsOutcome;
+			typedef std::future<DescribeDohDomainStatisticsOutcome> DescribeDohDomainStatisticsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDohDomainStatisticsRequest&, const DescribeDohDomainStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDohDomainStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDohDomainStatisticsSummaryResult> DescribeDohDomainStatisticsSummaryOutcome;
+			typedef std::future<DescribeDohDomainStatisticsSummaryOutcome> DescribeDohDomainStatisticsSummaryOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDohDomainStatisticsSummaryRequest&, const DescribeDohDomainStatisticsSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDohDomainStatisticsSummaryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDohSubDomainStatisticsResult> DescribeDohSubDomainStatisticsOutcome;
+			typedef std::future<DescribeDohSubDomainStatisticsOutcome> DescribeDohSubDomainStatisticsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDohSubDomainStatisticsRequest&, const DescribeDohSubDomainStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDohSubDomainStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDohSubDomainStatisticsSummaryResult> DescribeDohSubDomainStatisticsSummaryOutcome;
+			typedef std::future<DescribeDohSubDomainStatisticsSummaryOutcome> DescribeDohSubDomainStatisticsSummaryOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDohSubDomainStatisticsSummaryRequest&, const DescribeDohSubDomainStatisticsSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDohSubDomainStatisticsSummaryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDohUserInfoResult> DescribeDohUserInfoOutcome;
+			typedef std::future<DescribeDohUserInfoOutcome> DescribeDohUserInfoOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDohUserInfoRequest&, const DescribeDohUserInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDohUserInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainDnssecInfoResult> DescribeDomainDnssecInfoOutcome;
 			typedef std::future<DescribeDomainDnssecInfoOutcome> DescribeDomainDnssecInfoOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainDnssecInfoRequest&, const DescribeDomainDnssecInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainDnssecInfoAsyncHandler;
@@ -575,6 +605,24 @@ namespace AlibabaCloud
 			DescribeDnsProductInstancesOutcome describeDnsProductInstances(const Model::DescribeDnsProductInstancesRequest &request)const;
 			void describeDnsProductInstancesAsync(const Model::DescribeDnsProductInstancesRequest& request, const DescribeDnsProductInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDnsProductInstancesOutcomeCallable describeDnsProductInstancesCallable(const Model::DescribeDnsProductInstancesRequest& request) const;
+			DescribeDohAccountStatisticsOutcome describeDohAccountStatistics(const Model::DescribeDohAccountStatisticsRequest &request)const;
+			void describeDohAccountStatisticsAsync(const Model::DescribeDohAccountStatisticsRequest& request, const DescribeDohAccountStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDohAccountStatisticsOutcomeCallable describeDohAccountStatisticsCallable(const Model::DescribeDohAccountStatisticsRequest& request) const;
+			DescribeDohDomainStatisticsOutcome describeDohDomainStatistics(const Model::DescribeDohDomainStatisticsRequest &request)const;
+			void describeDohDomainStatisticsAsync(const Model::DescribeDohDomainStatisticsRequest& request, const DescribeDohDomainStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDohDomainStatisticsOutcomeCallable describeDohDomainStatisticsCallable(const Model::DescribeDohDomainStatisticsRequest& request) const;
+			DescribeDohDomainStatisticsSummaryOutcome describeDohDomainStatisticsSummary(const Model::DescribeDohDomainStatisticsSummaryRequest &request)const;
+			void describeDohDomainStatisticsSummaryAsync(const Model::DescribeDohDomainStatisticsSummaryRequest& request, const DescribeDohDomainStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDohDomainStatisticsSummaryOutcomeCallable describeDohDomainStatisticsSummaryCallable(const Model::DescribeDohDomainStatisticsSummaryRequest& request) const;
+			DescribeDohSubDomainStatisticsOutcome describeDohSubDomainStatistics(const Model::DescribeDohSubDomainStatisticsRequest &request)const;
+			void describeDohSubDomainStatisticsAsync(const Model::DescribeDohSubDomainStatisticsRequest& request, const DescribeDohSubDomainStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDohSubDomainStatisticsOutcomeCallable describeDohSubDomainStatisticsCallable(const Model::DescribeDohSubDomainStatisticsRequest& request) const;
+			DescribeDohSubDomainStatisticsSummaryOutcome describeDohSubDomainStatisticsSummary(const Model::DescribeDohSubDomainStatisticsSummaryRequest &request)const;
+			void describeDohSubDomainStatisticsSummaryAsync(const Model::DescribeDohSubDomainStatisticsSummaryRequest& request, const DescribeDohSubDomainStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDohSubDomainStatisticsSummaryOutcomeCallable describeDohSubDomainStatisticsSummaryCallable(const Model::DescribeDohSubDomainStatisticsSummaryRequest& request) const;
+			DescribeDohUserInfoOutcome describeDohUserInfo(const Model::DescribeDohUserInfoRequest &request)const;
+			void describeDohUserInfoAsync(const Model::DescribeDohUserInfoRequest& request, const DescribeDohUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDohUserInfoOutcomeCallable describeDohUserInfoCallable(const Model::DescribeDohUserInfoRequest& request) const;
 			DescribeDomainDnssecInfoOutcome describeDomainDnssecInfo(const Model::DescribeDomainDnssecInfoRequest &request)const;
 			void describeDomainDnssecInfoAsync(const Model::DescribeDomainDnssecInfoRequest& request, const DescribeDomainDnssecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainDnssecInfoOutcomeCallable describeDomainDnssecInfoCallable(const Model::DescribeDomainDnssecInfoRequest& request) const;

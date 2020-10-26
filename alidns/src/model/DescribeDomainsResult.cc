@@ -77,6 +77,8 @@ void DescribeDomainsResult::parse(const std::string &payload)
 			domainsObject.createTime = valueDomainsDomain["CreateTime"].asString();
 		if(!valueDomainsDomain["CreateTimestamp"].isNull())
 			domainsObject.createTimestamp = std::stol(valueDomainsDomain["CreateTimestamp"].asString());
+		if(!valueDomainsDomain["ResourceGroupId"].isNull())
+			domainsObject.resourceGroupId = valueDomainsDomain["ResourceGroupId"].asString();
 		auto allTagsNode = allDomainsNode["Tags"]["Tag"];
 		for (auto allDomainsNodeTagsTag : allTagsNode)
 		{

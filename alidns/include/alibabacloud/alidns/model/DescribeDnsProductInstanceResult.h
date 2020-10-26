@@ -51,6 +51,7 @@ namespace AlibabaCloud
 				std::string getDnsSecurity()const;
 				long getURLForwardCount()const;
 				long getTTLMinValue()const;
+				std::string getPaymentType()const;
 				std::string getVersionName()const;
 				std::string getOverseaLine()const;
 				std::string getISPRegionLines()const;
@@ -87,6 +88,7 @@ namespace AlibabaCloud
 				std::string dnsSecurity_;
 				long uRLForwardCount_;
 				long tTLMinValue_;
+				std::string paymentType_;
 				std::string versionName_;
 				std::string overseaLine_;
 				std::string iSPRegionLines_;

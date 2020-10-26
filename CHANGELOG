@@ -1,4 +1,7 @@
 2020-10-26 Version: patch
+- Supported PaymentType for DescribeDnsProductInstance.
+
+2020-10-26 Version: patch
 - Update ScalingConfig parameters.
 
 2020-10-23 Version: patch

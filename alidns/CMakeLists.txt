@@ -77,6 +77,18 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribeDnsProductInstanceResult.h
 	include/alibabacloud/alidns/model/DescribeDnsProductInstancesRequest.h
 	include/alibabacloud/alidns/model/DescribeDnsProductInstancesResult.h
+	include/alibabacloud/alidns/model/DescribeDohAccountStatisticsRequest.h
+	include/alibabacloud/alidns/model/DescribeDohAccountStatisticsResult.h
+	include/alibabacloud/alidns/model/DescribeDohDomainStatisticsRequest.h
+	include/alibabacloud/alidns/model/DescribeDohDomainStatisticsResult.h
+	include/alibabacloud/alidns/model/DescribeDohDomainStatisticsSummaryRequest.h
+	include/alibabacloud/alidns/model/DescribeDohDomainStatisticsSummaryResult.h
+	include/alibabacloud/alidns/model/DescribeDohSubDomainStatisticsRequest.h
+	include/alibabacloud/alidns/model/DescribeDohSubDomainStatisticsResult.h
+	include/alibabacloud/alidns/model/DescribeDohSubDomainStatisticsSummaryRequest.h
+	include/alibabacloud/alidns/model/DescribeDohSubDomainStatisticsSummaryResult.h
+	include/alibabacloud/alidns/model/DescribeDohUserInfoRequest.h
+	include/alibabacloud/alidns/model/DescribeDohUserInfoResult.h
 	include/alibabacloud/alidns/model/DescribeDomainDnssecInfoRequest.h
 	include/alibabacloud/alidns/model/DescribeDomainDnssecInfoResult.h
 	include/alibabacloud/alidns/model/DescribeDomainGroupsRequest.h
@@ -262,6 +274,18 @@ set(alidns_src
 	src/model/DescribeDnsProductInstanceResult.cc
 	src/model/DescribeDnsProductInstancesRequest.cc
 	src/model/DescribeDnsProductInstancesResult.cc
+	src/model/DescribeDohAccountStatisticsRequest.cc
+	src/model/DescribeDohAccountStatisticsResult.cc
+	src/model/DescribeDohDomainStatisticsRequest.cc
+	src/model/DescribeDohDomainStatisticsResult.cc
+	src/model/DescribeDohDomainStatisticsSummaryRequest.cc
+	src/model/DescribeDohDomainStatisticsSummaryResult.cc
+	src/model/DescribeDohSubDomainStatisticsRequest.cc
+	src/model/DescribeDohSubDomainStatisticsResult.cc
+	src/model/DescribeDohSubDomainStatisticsSummaryRequest.cc
+	src/model/DescribeDohSubDomainStatisticsSummaryResult.cc
+	src/model/DescribeDohUserInfoRequest.cc
+	src/model/DescribeDohUserInfoResult.cc
 	src/model/DescribeDomainDnssecInfoRequest.cc
 	src/model/DescribeDomainDnssecInfoResult.cc
 	src/model/DescribeDomainGroupsRequest.cc

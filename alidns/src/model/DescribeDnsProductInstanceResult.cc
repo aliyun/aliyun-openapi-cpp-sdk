@@ -104,6 +104,8 @@ void DescribeDnsProductInstanceResult::parse(const std::string &payload)
 		bindDomainUsedCount_ = std::stol(value["BindDomainUsedCount"].asString());
 	if(!value["DnsSecurity"].isNull())
 		dnsSecurity_ = value["DnsSecurity"].asString();
+	if(!value["PaymentType"].isNull())
+		paymentType_ = value["PaymentType"].asString();
 
 }
 
@@ -175,6 +177,11 @@ long DescribeDnsProductInstanceResult::getURLForwardCount()const
 long DescribeDnsProductInstanceResult::getTTLMinValue()const
 {
 	return tTLMinValue_;
+}
+
+std::string DescribeDnsProductInstanceResult::getPaymentType()const
+{
+	return paymentType_;
 }
 
 std::string DescribeDnsProductInstanceResult::getVersionName()const
