@@ -35,14 +35,16 @@ namespace AlibabaCloud
 				DescribeAlarmsRequest();
 				~DescribeAlarmsRequest();
 
-				std::string getExtraParams()const;
-				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getFromAlarmTime()const;
+				void setFromAlarmTime(const std::string& fromAlarmTime);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getToAlarmTime()const;
+				void setToAlarmTime(const std::string& toAlarmTime);
 				std::string getAlarmType()const;
 				void setAlarmType(const std::string& alarmType);
 				std::string getAlarmStatus()const;
@@ -51,19 +53,17 @@ namespace AlibabaCloud
 				void setErrorType(const std::string& errorType);
 				std::string getAlarmId()const;
 				void setAlarmId(const std::string& alarmId);
-				std::string getDeviceMac()const;
-				void setDeviceMac(const std::string& deviceMac);
 
             private:
-				std::string extraParams_;
 				std::string storeId_;
 				int pageNumber_;
+				std::string fromAlarmTime_;
 				int pageSize_;
+				std::string toAlarmTime_;
 				std::string alarmType_;
 				std::string alarmStatus_;
 				std::string errorType_;
 				std::string alarmId_;
-				std::string deviceMac_;
 
 			};
 		}

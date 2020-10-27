@@ -19,24 +19,13 @@
 using AlibabaCloud::Cloudesl::Model::DescribeItemsRequest;
 
 DescribeItemsRequest::DescribeItemsRequest() :
-	RpcServiceRequest("cloudesl", "2020-02-01", "DescribeItems")
+	RpcServiceRequest("cloudesl", "2018-08-01", "DescribeItems")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeItemsRequest::~DescribeItemsRequest()
 {}
-
-std::string DescribeItemsRequest::getExtraParams()const
-{
-	return extraParams_;
-}
-
-void DescribeItemsRequest::setExtraParams(const std::string& extraParams)
-{
-	extraParams_ = extraParams;
-	setBodyParameter("ExtraParams", extraParams);
-}
 
 std::string DescribeItemsRequest::getStoreId()const
 {
@@ -46,7 +35,7 @@ std::string DescribeItemsRequest::getStoreId()const
 void DescribeItemsRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setBodyParameter("StoreId", storeId);
+	setParameter("StoreId", storeId);
 }
 
 int DescribeItemsRequest::getPageNumber()const
@@ -57,18 +46,18 @@ int DescribeItemsRequest::getPageNumber()const
 void DescribeItemsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setBodyParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string DescribeItemsRequest::getItemId()const
+long DescribeItemsRequest::getItemId()const
 {
 	return itemId_;
 }
 
-void DescribeItemsRequest::setItemId(const std::string& itemId)
+void DescribeItemsRequest::setItemId(long itemId)
 {
 	itemId_ = itemId;
-	setBodyParameter("ItemId", itemId);
+	setParameter("ItemId", std::to_string(itemId));
 }
 
 int DescribeItemsRequest::getPageSize()const
@@ -79,7 +68,7 @@ int DescribeItemsRequest::getPageSize()const
 void DescribeItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setBodyParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeItemsRequest::getItemBarCode()const
@@ -90,7 +79,7 @@ std::string DescribeItemsRequest::getItemBarCode()const
 void DescribeItemsRequest::setItemBarCode(const std::string& itemBarCode)
 {
 	itemBarCode_ = itemBarCode;
-	setBodyParameter("ItemBarCode", itemBarCode);
+	setParameter("ItemBarCode", itemBarCode);
 }
 
 bool DescribeItemsRequest::getBePromotion()const
@@ -101,7 +90,7 @@ bool DescribeItemsRequest::getBePromotion()const
 void DescribeItemsRequest::setBePromotion(bool bePromotion)
 {
 	bePromotion_ = bePromotion;
-	setBodyParameter("BePromotion", bePromotion ? "true" : "false");
+	setParameter("BePromotion", bePromotion ? "true" : "false");
 }
 
 std::string DescribeItemsRequest::getItemTitle()const
@@ -112,7 +101,18 @@ std::string DescribeItemsRequest::getItemTitle()const
 void DescribeItemsRequest::setItemTitle(const std::string& itemTitle)
 {
 	itemTitle_ = itemTitle;
-	setBodyParameter("ItemTitle", itemTitle);
+	setParameter("ItemTitle", itemTitle);
+}
+
+std::string DescribeItemsRequest::getShelfCode()const
+{
+	return shelfCode_;
+}
+
+void DescribeItemsRequest::setShelfCode(const std::string& shelfCode)
+{
+	shelfCode_ = shelfCode;
+	setParameter("ShelfCode", shelfCode);
 }
 
 std::string DescribeItemsRequest::getSkuId()const
@@ -123,6 +123,6 @@ std::string DescribeItemsRequest::getSkuId()const
 void DescribeItemsRequest::setSkuId(const std::string& skuId)
 {
 	skuId_ = skuId;
-	setBodyParameter("SkuId", skuId);
+	setParameter("SkuId", skuId);
 }
 

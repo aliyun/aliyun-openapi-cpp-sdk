@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudesl::Model::DescribeEslDevicesRequest;
 
 DescribeEslDevicesRequest::DescribeEslDevicesRequest() :
-	RpcServiceRequest("cloudesl", "2020-02-01", "DescribeEslDevices")
+	RpcServiceRequest("cloudesl", "2018-08-01", "DescribeEslDevices")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,15 +27,15 @@ DescribeEslDevicesRequest::DescribeEslDevicesRequest() :
 DescribeEslDevicesRequest::~DescribeEslDevicesRequest()
 {}
 
-std::string DescribeEslDevicesRequest::getExtraParams()const
+std::string DescribeEslDevicesRequest::getStoreId()const
 {
-	return extraParams_;
+	return storeId_;
 }
 
-void DescribeEslDevicesRequest::setExtraParams(const std::string& extraParams)
+void DescribeEslDevicesRequest::setStoreId(const std::string& storeId)
 {
-	extraParams_ = extraParams;
-	setBodyParameter("ExtraParams", extraParams);
+	storeId_ = storeId;
+	setParameter("StoreId", storeId);
 }
 
 std::string DescribeEslDevicesRequest::getType()const
@@ -46,18 +46,18 @@ std::string DescribeEslDevicesRequest::getType()const
 void DescribeEslDevicesRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setBodyParameter("Type", type);
+	setParameter("Type", type);
 }
 
-std::string DescribeEslDevicesRequest::getStoreId()const
+std::string DescribeEslDevicesRequest::getMac()const
 {
-	return storeId_;
+	return mac_;
 }
 
-void DescribeEslDevicesRequest::setStoreId(const std::string& storeId)
+void DescribeEslDevicesRequest::setMac(const std::string& mac)
 {
-	storeId_ = storeId;
-	setBodyParameter("StoreId", storeId);
+	mac_ = mac;
+	setParameter("Mac", mac);
 }
 
 int DescribeEslDevicesRequest::getPageNumber()const
@@ -68,7 +68,7 @@ int DescribeEslDevicesRequest::getPageNumber()const
 void DescribeEslDevicesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setBodyParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeEslDevicesRequest::getEslBarCode()const
@@ -79,7 +79,18 @@ std::string DescribeEslDevicesRequest::getEslBarCode()const
 void DescribeEslDevicesRequest::setEslBarCode(const std::string& eslBarCode)
 {
 	eslBarCode_ = eslBarCode;
-	setBodyParameter("EslBarCode", eslBarCode);
+	setParameter("EslBarCode", eslBarCode);
+}
+
+std::string DescribeEslDevicesRequest::getVendor()const
+{
+	return vendor_;
+}
+
+void DescribeEslDevicesRequest::setVendor(const std::string& vendor)
+{
+	vendor_ = vendor;
+	setParameter("Vendor", vendor);
 }
 
 int DescribeEslDevicesRequest::getPageSize()const
@@ -90,7 +101,18 @@ int DescribeEslDevicesRequest::getPageSize()const
 void DescribeEslDevicesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setBodyParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeEslDevicesRequest::getItemBarCode()const
+{
+	return itemBarCode_;
+}
+
+void DescribeEslDevicesRequest::setItemBarCode(const std::string& itemBarCode)
+{
+	itemBarCode_ = itemBarCode;
+	setParameter("ItemBarCode", itemBarCode);
 }
 
 std::string DescribeEslDevicesRequest::getEslStatus()const
@@ -101,7 +123,7 @@ std::string DescribeEslDevicesRequest::getEslStatus()const
 void DescribeEslDevicesRequest::setEslStatus(const std::string& eslStatus)
 {
 	eslStatus_ = eslStatus;
-	setBodyParameter("EslStatus", eslStatus);
+	setParameter("EslStatus", eslStatus);
 }
 
 int DescribeEslDevicesRequest::getToBatteryLevel()const
@@ -112,7 +134,7 @@ int DescribeEslDevicesRequest::getToBatteryLevel()const
 void DescribeEslDevicesRequest::setToBatteryLevel(int toBatteryLevel)
 {
 	toBatteryLevel_ = toBatteryLevel;
-	setBodyParameter("ToBatteryLevel", std::to_string(toBatteryLevel));
+	setParameter("ToBatteryLevel", std::to_string(toBatteryLevel));
 }
 
 int DescribeEslDevicesRequest::getFromBatteryLevel()const
@@ -123,6 +145,28 @@ int DescribeEslDevicesRequest::getFromBatteryLevel()const
 void DescribeEslDevicesRequest::setFromBatteryLevel(int fromBatteryLevel)
 {
 	fromBatteryLevel_ = fromBatteryLevel;
-	setBodyParameter("FromBatteryLevel", std::to_string(fromBatteryLevel));
+	setParameter("FromBatteryLevel", std::to_string(fromBatteryLevel));
+}
+
+std::string DescribeEslDevicesRequest::getShelfCode()const
+{
+	return shelfCode_;
+}
+
+void DescribeEslDevicesRequest::setShelfCode(const std::string& shelfCode)
+{
+	shelfCode_ = shelfCode;
+	setParameter("ShelfCode", shelfCode);
+}
+
+bool DescribeEslDevicesRequest::getBeBind()const
+{
+	return beBind_;
+}
+
+void DescribeEslDevicesRequest::setBeBind(bool beBind)
+{
+	beBind_ = beBind;
+	setParameter("BeBind", beBind ? "true" : "false");
 }
 

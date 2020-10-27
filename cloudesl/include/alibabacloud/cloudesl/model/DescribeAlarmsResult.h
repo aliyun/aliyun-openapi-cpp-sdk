@@ -35,22 +35,21 @@ namespace AlibabaCloud
 				struct AlarmInfo
 				{
 					std::string alarmId;
-					std::string retryGmtCreate;
+					std::string companyId;
 					std::string alarmType;
 					std::string deviceBarCode;
 					std::string deviceMac;
 					std::string itemBarCode;
-					std::string remark;
+					std::string vendor;
 					std::string deviceType;
-					std::string storeId;
 					std::string errorType;
+					std::string storeId;
 					std::string alarmTime;
-					std::string dealUserId;
+					long dealUserId;
 					std::string itemTitle;
-					std::string retryGmtModified;
 					std::string alarmStatus;
+					std::string model;
 					std::string dealTime;
-					long retryTimes;
 				};
 
 
@@ -58,30 +57,22 @@ namespace AlibabaCloud
 				explicit DescribeAlarmsResult(const std::string &payload);
 				~DescribeAlarmsResult();
 				int getTotalCount()const;
-				int getPageSize()const;
 				std::string getMessage()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<AlarmInfo> getAlarms()const;
-				std::string getDynamicCode()const;
 				std::string getErrorCode()const;
-				std::string getDynamicMessage()const;
-				std::string getErrorMessage()const;
-				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
 				std::string message_;
+				int pageSize_;
 				int pageNumber_;
 				std::vector<AlarmInfo> alarms_;
-				std::string dynamicCode_;
 				std::string errorCode_;
-				std::string dynamicMessage_;
-				std::string errorMessage_;
-				std::string code_;
 				bool success_;
 
 			};

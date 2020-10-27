@@ -19,24 +19,13 @@
 using AlibabaCloud::Cloudesl::Model::BatchInsertItemsRequest;
 
 BatchInsertItemsRequest::BatchInsertItemsRequest() :
-	RpcServiceRequest("cloudesl", "2020-02-01", "BatchInsertItems")
+	RpcServiceRequest("cloudesl", "2018-08-01", "BatchInsertItems")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 BatchInsertItemsRequest::~BatchInsertItemsRequest()
 {}
-
-std::string BatchInsertItemsRequest::getExtraParams()const
-{
-	return extraParams_;
-}
-
-void BatchInsertItemsRequest::setExtraParams(const std::string& extraParams)
-{
-	extraParams_ = extraParams;
-	setBodyParameter("ExtraParams", extraParams);
-}
 
 std::string BatchInsertItemsRequest::getStoreId()const
 {
@@ -46,7 +35,7 @@ std::string BatchInsertItemsRequest::getStoreId()const
 void BatchInsertItemsRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setBodyParameter("StoreId", storeId);
+	setParameter("StoreId", storeId);
 }
 
 std::vector<BatchInsertItemsRequest::ItemInfo> BatchInsertItemsRequest::getItemInfo()const
@@ -62,54 +51,45 @@ void BatchInsertItemsRequest::setItemInfo(const std::vector<ItemInfo>& itemInfo)
 		std::string itemInfoObjStr = "ItemInfo." + std::to_string(dep1 + 1);
 		setParameter(itemInfoObjStr + ".MemberPrice", std::to_string(itemInfoObj.memberPrice));
 		setParameter(itemInfoObjStr + ".ActionPrice", std::to_string(itemInfoObj.actionPrice));
+		setParameter(itemInfoObjStr + ".ProductionPlace", itemInfoObj.productionPlace);
 		setParameter(itemInfoObjStr + ".BeSourceCode", itemInfoObj.beSourceCode ? "true" : "false");
+		setParameter(itemInfoObjStr + ".StoreId", itemInfoObj.storeId);
 		setParameter(itemInfoObjStr + ".BrandName", itemInfoObj.brandName);
 		setParameter(itemInfoObjStr + ".PromotionStart", itemInfoObj.promotionStart);
+		setParameter(itemInfoObjStr + ".SourceCode", itemInfoObj.sourceCode);
+		setParameter(itemInfoObjStr + ".ItemId", std::to_string(itemInfoObj.itemId));
+		setParameter(itemInfoObjStr + ".ExtraAttribute", itemInfoObj.extraAttribute);
+		setParameter(itemInfoObjStr + ".CompanyId", itemInfoObj.companyId);
 		setParameter(itemInfoObjStr + ".PriceUnit", itemInfoObj.priceUnit);
 		setParameter(itemInfoObjStr + ".Rank", itemInfoObj.rank);
-		setParameter(itemInfoObjStr + ".ItemInfoIndex", std::to_string(itemInfoObj.itemInfoIndex));
 		setParameter(itemInfoObjStr + ".ItemBarCode", itemInfoObj.itemBarCode);
-		setParameter(itemInfoObjStr + ".CustomizeFeatureK", itemInfoObj.customizeFeatureK);
-		setParameter(itemInfoObjStr + ".CustomizeFeatureL", itemInfoObj.customizeFeatureL);
-		setParameter(itemInfoObjStr + ".CustomizeFeatureM", itemInfoObj.customizeFeatureM);
 		setParameter(itemInfoObjStr + ".BePromotion", itemInfoObj.bePromotion ? "true" : "false");
-		setParameter(itemInfoObjStr + ".CustomizeFeatureN", itemInfoObj.customizeFeatureN);
-		setParameter(itemInfoObjStr + ".CustomizeFeatureO", itemInfoObj.customizeFeatureO);
 		setParameter(itemInfoObjStr + ".PromotionEnd", itemInfoObj.promotionEnd);
 		setParameter(itemInfoObjStr + ".ItemTitle", itemInfoObj.itemTitle);
+		setParameter(itemInfoObjStr + ".OriginalPrice", std::to_string(itemInfoObj.originalPrice));
+		setParameter(itemInfoObjStr + ".ItemShortTitle", itemInfoObj.itemShortTitle);
 		setParameter(itemInfoObjStr + ".CustomizeFeatureC", itemInfoObj.customizeFeatureC);
-		setParameter(itemInfoObjStr + ".CustomizeFeatureD", itemInfoObj.customizeFeatureD);
 		setParameter(itemInfoObjStr + ".ItemQrCode", itemInfoObj.itemQrCode);
-		setParameter(itemInfoObjStr + ".CustomizeFeatureE", itemInfoObj.customizeFeatureE);
-		setParameter(itemInfoObjStr + ".InventoryStatus", itemInfoObj.inventoryStatus);
+		setParameter(itemInfoObjStr + ".CustomizeFeatureD", itemInfoObj.customizeFeatureD);
 		setParameter(itemInfoObjStr + ".PromotionReason", itemInfoObj.promotionReason);
+		setParameter(itemInfoObjStr + ".CustomizeFeatureE", itemInfoObj.customizeFeatureE);
 		setParameter(itemInfoObjStr + ".CustomizeFeatureF", itemInfoObj.customizeFeatureF);
+		setParameter(itemInfoObjStr + ".ForestSecondId", itemInfoObj.forestSecondId);
 		setParameter(itemInfoObjStr + ".CustomizeFeatureG", itemInfoObj.customizeFeatureG);
 		setParameter(itemInfoObjStr + ".CustomizeFeatureH", itemInfoObj.customizeFeatureH);
 		setParameter(itemInfoObjStr + ".CustomizeFeatureI", itemInfoObj.customizeFeatureI);
 		setParameter(itemInfoObjStr + ".CustomizeFeatureJ", itemInfoObj.customizeFeatureJ);
+		setParameter(itemInfoObjStr + ".OptionGroups", itemInfoObj.optionGroups);
+		setParameter(itemInfoObjStr + ".ModelNumber", itemInfoObj.modelNumber);
+		setParameter(itemInfoObjStr + ".SaleSpec", itemInfoObj.saleSpec);
 		setParameter(itemInfoObjStr + ".CustomizeFeatureA", itemInfoObj.customizeFeatureA);
 		setParameter(itemInfoObjStr + ".CustomizeFeatureB", itemInfoObj.customizeFeatureB);
 		setParameter(itemInfoObjStr + ".SuggestPrice", std::to_string(itemInfoObj.suggestPrice));
 		setParameter(itemInfoObjStr + ".ForestFirstId", itemInfoObj.forestFirstId);
-		setParameter(itemInfoObjStr + ".ProductionPlace", itemInfoObj.productionPlace);
-		setParameter(itemInfoObjStr + ".Manufacturer", itemInfoObj.manufacturer);
-		setParameter(itemInfoObjStr + ".SourceCode", itemInfoObj.sourceCode);
-		setParameter(itemInfoObjStr + ".ItemId", itemInfoObj.itemId);
-		setParameter(itemInfoObjStr + ".SalesPrice", std::to_string(itemInfoObj.salesPrice));
-		setParameter(itemInfoObjStr + ".OriginalPrice", std::to_string(itemInfoObj.originalPrice));
-		setParameter(itemInfoObjStr + ".ItemShortTitle", itemInfoObj.itemShortTitle);
-		setParameter(itemInfoObjStr + ".ForestSecondId", itemInfoObj.forestSecondId);
-		setParameter(itemInfoObjStr + ".ItemPicUrl", itemInfoObj.itemPicUrl);
-		setParameter(itemInfoObjStr + ".SupplierName", itemInfoObj.supplierName);
-		setParameter(itemInfoObjStr + ".Material", itemInfoObj.material);
-		setParameter(itemInfoObjStr + ".ModelNumber", itemInfoObj.modelNumber);
-		setParameter(itemInfoObjStr + ".SaleSpec", itemInfoObj.saleSpec);
 		setParameter(itemInfoObjStr + ".CategoryName", itemInfoObj.categoryName);
-		setParameter(itemInfoObjStr + ".TaxFee", itemInfoObj.taxFee);
 		setParameter(itemInfoObjStr + ".EnergyEfficiency", itemInfoObj.energyEfficiency);
-		setParameter(itemInfoObjStr + ".PromotionText", itemInfoObj.promotionText);
 		setParameter(itemInfoObjStr + ".SkuId", itemInfoObj.skuId);
+		setParameter(itemInfoObjStr + ".PromotionText", itemInfoObj.promotionText);
 	}
 }
 

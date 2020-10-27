@@ -39,20 +39,12 @@ void UpdateStoreResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["DynamicCode"].isNull())
-		dynamicCode_ = value["DynamicCode"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 
@@ -61,29 +53,9 @@ std::string UpdateStoreResult::getMessage()const
 	return message_;
 }
 
-std::string UpdateStoreResult::getDynamicCode()const
-{
-	return dynamicCode_;
-}
-
 std::string UpdateStoreResult::getErrorCode()const
 {
 	return errorCode_;
-}
-
-std::string UpdateStoreResult::getDynamicMessage()const
-{
-	return dynamicMessage_;
-}
-
-std::string UpdateStoreResult::getErrorMessage()const
-{
-	return errorMessage_;
-}
-
-std::string UpdateStoreResult::getCode()const
-{
-	return code_;
 }
 
 bool UpdateStoreResult::getSuccess()const

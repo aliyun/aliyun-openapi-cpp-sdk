@@ -34,13 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct StoreInfo
 				{
+					std::string brand;
 					std::string parentId;
 					std::string gmtCreate;
-					std::string userStoreCode;
-					std::string storeName;
+					std::string companyId;
 					std::string storeId;
+					std::string storeName;
 					std::string phone;
+					std::string groups;
+					std::string comments;
 					std::string gmtModified;
+					std::string outId;
 					std::string level;
 				};
 
@@ -52,12 +56,8 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::string getDynamicCode()const;
 				std::vector<StoreInfo> getStores()const;
 				std::string getErrorCode()const;
-				std::string getDynamicMessage()const;
-				std::string getErrorMessage()const;
-				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
@@ -67,12 +67,8 @@ namespace AlibabaCloud
 				std::string message_;
 				int pageSize_;
 				int pageNumber_;
-				std::string dynamicCode_;
 				std::vector<StoreInfo> stores_;
 				std::string errorCode_;
-				std::string dynamicMessage_;
-				std::string errorMessage_;
-				std::string code_;
 				bool success_;
 
 			};

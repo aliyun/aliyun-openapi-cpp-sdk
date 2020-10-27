@@ -19,24 +19,13 @@
 using AlibabaCloud::Cloudesl::Model::DescribeAlarmsRequest;
 
 DescribeAlarmsRequest::DescribeAlarmsRequest() :
-	RpcServiceRequest("cloudesl", "2020-02-01", "DescribeAlarms")
+	RpcServiceRequest("cloudesl", "2018-08-01", "DescribeAlarms")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeAlarmsRequest::~DescribeAlarmsRequest()
 {}
-
-std::string DescribeAlarmsRequest::getExtraParams()const
-{
-	return extraParams_;
-}
-
-void DescribeAlarmsRequest::setExtraParams(const std::string& extraParams)
-{
-	extraParams_ = extraParams;
-	setBodyParameter("ExtraParams", extraParams);
-}
 
 std::string DescribeAlarmsRequest::getStoreId()const
 {
@@ -46,7 +35,7 @@ std::string DescribeAlarmsRequest::getStoreId()const
 void DescribeAlarmsRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setBodyParameter("StoreId", storeId);
+	setParameter("StoreId", storeId);
 }
 
 int DescribeAlarmsRequest::getPageNumber()const
@@ -57,7 +46,18 @@ int DescribeAlarmsRequest::getPageNumber()const
 void DescribeAlarmsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setBodyParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeAlarmsRequest::getFromAlarmTime()const
+{
+	return fromAlarmTime_;
+}
+
+void DescribeAlarmsRequest::setFromAlarmTime(const std::string& fromAlarmTime)
+{
+	fromAlarmTime_ = fromAlarmTime;
+	setParameter("FromAlarmTime", fromAlarmTime);
 }
 
 int DescribeAlarmsRequest::getPageSize()const
@@ -68,7 +68,18 @@ int DescribeAlarmsRequest::getPageSize()const
 void DescribeAlarmsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setBodyParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeAlarmsRequest::getToAlarmTime()const
+{
+	return toAlarmTime_;
+}
+
+void DescribeAlarmsRequest::setToAlarmTime(const std::string& toAlarmTime)
+{
+	toAlarmTime_ = toAlarmTime;
+	setParameter("ToAlarmTime", toAlarmTime);
 }
 
 std::string DescribeAlarmsRequest::getAlarmType()const
@@ -79,7 +90,7 @@ std::string DescribeAlarmsRequest::getAlarmType()const
 void DescribeAlarmsRequest::setAlarmType(const std::string& alarmType)
 {
 	alarmType_ = alarmType;
-	setBodyParameter("AlarmType", alarmType);
+	setParameter("AlarmType", alarmType);
 }
 
 std::string DescribeAlarmsRequest::getAlarmStatus()const
@@ -90,7 +101,7 @@ std::string DescribeAlarmsRequest::getAlarmStatus()const
 void DescribeAlarmsRequest::setAlarmStatus(const std::string& alarmStatus)
 {
 	alarmStatus_ = alarmStatus;
-	setBodyParameter("AlarmStatus", alarmStatus);
+	setParameter("AlarmStatus", alarmStatus);
 }
 
 std::string DescribeAlarmsRequest::getErrorType()const
@@ -101,7 +112,7 @@ std::string DescribeAlarmsRequest::getErrorType()const
 void DescribeAlarmsRequest::setErrorType(const std::string& errorType)
 {
 	errorType_ = errorType;
-	setBodyParameter("ErrorType", errorType);
+	setParameter("ErrorType", errorType);
 }
 
 std::string DescribeAlarmsRequest::getAlarmId()const
@@ -112,17 +123,6 @@ std::string DescribeAlarmsRequest::getAlarmId()const
 void DescribeAlarmsRequest::setAlarmId(const std::string& alarmId)
 {
 	alarmId_ = alarmId;
-	setBodyParameter("AlarmId", alarmId);
-}
-
-std::string DescribeAlarmsRequest::getDeviceMac()const
-{
-	return deviceMac_;
-}
-
-void DescribeAlarmsRequest::setDeviceMac(const std::string& deviceMac)
-{
-	deviceMac_ = deviceMac;
-	setBodyParameter("DeviceMac", deviceMac);
+	setParameter("AlarmId", alarmId);
 }
 

@@ -34,16 +34,27 @@ namespace AlibabaCloud
 			public:
 				struct EslDeviceInfo
 				{
+					int itemActionPrice;
+					int batteryLevel;
+					std::string itemPriceUnit;
+					std::string companyId;
+					std::string itemBarCode;
+					std::string vendor;
+					std::string screenHeight;
+					std::string lastCommunicateTime;
+					long itemId;
+					std::string mac;
+					std::string beBind;
 					std::string eslBarCode;
 					std::string type;
-					int batteryLevel;
 					std::string storeId;
+					std::string connectAp;
+					std::string itemTitle;
 					std::string model;
-					int screenWidth;
+					std::string screenWidth;
 					std::string eslStatus;
-					int screenHeight;
-					std::string lastCommunicateTime;
-					std::string mac;
+					std::string positionCode;
+					std::string shelfCode;
 				};
 
 
@@ -51,30 +62,22 @@ namespace AlibabaCloud
 				explicit DescribeEslDevicesResult(const std::string &payload);
 				~DescribeEslDevicesResult();
 				int getTotalCount()const;
-				int getPageSize()const;
 				std::string getMessage()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<EslDeviceInfo> getEslDevices()const;
-				std::string getDynamicCode()const;
 				std::string getErrorCode()const;
-				std::string getDynamicMessage()const;
-				std::string getErrorMessage()const;
-				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
 				std::string message_;
+				int pageSize_;
 				int pageNumber_;
 				std::vector<EslDeviceInfo> eslDevices_;
-				std::string dynamicCode_;
 				std::string errorCode_;
-				std::string dynamicMessage_;
-				std::string errorMessage_;
-				std::string code_;
 				bool success_;
 
 			};

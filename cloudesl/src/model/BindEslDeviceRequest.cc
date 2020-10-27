@@ -19,24 +19,13 @@
 using AlibabaCloud::Cloudesl::Model::BindEslDeviceRequest;
 
 BindEslDeviceRequest::BindEslDeviceRequest() :
-	RpcServiceRequest("cloudesl", "2020-02-01", "BindEslDevice")
+	RpcServiceRequest("cloudesl", "2018-08-01", "BindEslDevice")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 BindEslDeviceRequest::~BindEslDeviceRequest()
 {}
-
-std::string BindEslDeviceRequest::getExtraParams()const
-{
-	return extraParams_;
-}
-
-void BindEslDeviceRequest::setExtraParams(const std::string& extraParams)
-{
-	extraParams_ = extraParams;
-	setBodyParameter("ExtraParams", extraParams);
-}
 
 std::string BindEslDeviceRequest::getStoreId()const
 {
@@ -46,18 +35,7 @@ std::string BindEslDeviceRequest::getStoreId()const
 void BindEslDeviceRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setBodyParameter("StoreId", storeId);
-}
-
-int BindEslDeviceRequest::getLayer()const
-{
-	return layer_;
-}
-
-void BindEslDeviceRequest::setLayer(int layer)
-{
-	layer_ = layer;
-	setBodyParameter("Layer", std::to_string(layer));
+	setParameter("StoreId", storeId);
 }
 
 std::string BindEslDeviceRequest::getEslBarCode()const
@@ -68,7 +46,7 @@ std::string BindEslDeviceRequest::getEslBarCode()const
 void BindEslDeviceRequest::setEslBarCode(const std::string& eslBarCode)
 {
 	eslBarCode_ = eslBarCode;
-	setBodyParameter("EslBarCode", eslBarCode);
+	setParameter("EslBarCode", eslBarCode);
 }
 
 std::string BindEslDeviceRequest::getItemBarCode()const
@@ -79,28 +57,6 @@ std::string BindEslDeviceRequest::getItemBarCode()const
 void BindEslDeviceRequest::setItemBarCode(const std::string& itemBarCode)
 {
 	itemBarCode_ = itemBarCode;
-	setBodyParameter("ItemBarCode", itemBarCode);
-}
-
-std::string BindEslDeviceRequest::getColumn()const
-{
-	return column_;
-}
-
-void BindEslDeviceRequest::setColumn(const std::string& column)
-{
-	column_ = column;
-	setBodyParameter("Column", column);
-}
-
-std::string BindEslDeviceRequest::getShelf()const
-{
-	return shelf_;
-}
-
-void BindEslDeviceRequest::setShelf(const std::string& shelf)
-{
-	shelf_ = shelf;
-	setBodyParameter("Shelf", shelf);
+	setParameter("ItemBarCode", itemBarCode);
 }
 

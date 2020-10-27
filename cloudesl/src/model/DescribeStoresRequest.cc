@@ -19,24 +19,13 @@
 using AlibabaCloud::Cloudesl::Model::DescribeStoresRequest;
 
 DescribeStoresRequest::DescribeStoresRequest() :
-	RpcServiceRequest("cloudesl", "2020-02-01", "DescribeStores")
+	RpcServiceRequest("cloudesl", "2018-08-01", "DescribeStores")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeStoresRequest::~DescribeStoresRequest()
 {}
-
-std::string DescribeStoresRequest::getExtraParams()const
-{
-	return extraParams_;
-}
-
-void DescribeStoresRequest::setExtraParams(const std::string& extraParams)
-{
-	extraParams_ = extraParams;
-	setBodyParameter("ExtraParams", extraParams);
-}
 
 std::string DescribeStoresRequest::getStoreName()const
 {
@@ -46,7 +35,7 @@ std::string DescribeStoresRequest::getStoreName()const
 void DescribeStoresRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setBodyParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string DescribeStoresRequest::getStoreId()const
@@ -57,7 +46,7 @@ std::string DescribeStoresRequest::getStoreId()const
 void DescribeStoresRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setBodyParameter("StoreId", storeId);
+	setParameter("StoreId", storeId);
 }
 
 int DescribeStoresRequest::getPageNumber()const
@@ -68,7 +57,7 @@ int DescribeStoresRequest::getPageNumber()const
 void DescribeStoresRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setBodyParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeStoresRequest::getFromDate()const
@@ -79,7 +68,7 @@ std::string DescribeStoresRequest::getFromDate()const
 void DescribeStoresRequest::setFromDate(const std::string& fromDate)
 {
 	fromDate_ = fromDate;
-	setBodyParameter("FromDate", fromDate);
+	setParameter("FromDate", fromDate);
 }
 
 std::string DescribeStoresRequest::getToDate()const
@@ -90,7 +79,7 @@ std::string DescribeStoresRequest::getToDate()const
 void DescribeStoresRequest::setToDate(const std::string& toDate)
 {
 	toDate_ = toDate;
-	setBodyParameter("ToDate", toDate);
+	setParameter("ToDate", toDate);
 }
 
 int DescribeStoresRequest::getPageSize()const
@@ -101,17 +90,28 @@ int DescribeStoresRequest::getPageSize()const
 void DescribeStoresRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setBodyParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeStoresRequest::getUserStoreCode()const
+std::string DescribeStoresRequest::getBrand()const
 {
-	return userStoreCode_;
+	return brand_;
 }
 
-void DescribeStoresRequest::setUserStoreCode(const std::string& userStoreCode)
+void DescribeStoresRequest::setBrand(const std::string& brand)
 {
-	userStoreCode_ = userStoreCode;
-	setBodyParameter("UserStoreCode", userStoreCode);
+	brand_ = brand;
+	setParameter("Brand", brand);
+}
+
+std::string DescribeStoresRequest::getGroups()const
+{
+	return groups_;
+}
+
+void DescribeStoresRequest::setGroups(const std::string& groups)
+{
+	groups_ = groups;
+	setParameter("Groups", groups);
 }
 

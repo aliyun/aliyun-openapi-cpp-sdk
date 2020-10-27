@@ -35,69 +35,57 @@ namespace AlibabaCloud
 				{
 					int memberPrice;
 					int actionPrice;
+					std::string productionPlace;
 					bool beSourceCode;
+					std::string storeId;
 					std::string brandName;
 					std::string promotionStart;
+					std::string sourceCode;
+					long itemId;
+					std::string extraAttribute;
+					std::string companyId;
 					std::string priceUnit;
 					std::string rank;
-					int itemInfoIndex;
 					std::string itemBarCode;
-					std::string customizeFeatureK;
-					std::string customizeFeatureL;
-					std::string customizeFeatureM;
 					bool bePromotion;
-					std::string customizeFeatureN;
-					std::string customizeFeatureO;
 					std::string promotionEnd;
 					std::string itemTitle;
+					int originalPrice;
+					std::string itemShortTitle;
 					std::string customizeFeatureC;
-					std::string customizeFeatureD;
 					std::string itemQrCode;
-					std::string customizeFeatureE;
-					std::string inventoryStatus;
+					std::string customizeFeatureD;
 					std::string promotionReason;
+					std::string customizeFeatureE;
 					std::string customizeFeatureF;
+					std::string forestSecondId;
 					std::string customizeFeatureG;
 					std::string customizeFeatureH;
 					std::string customizeFeatureI;
 					std::string customizeFeatureJ;
+					std::string optionGroups;
+					std::string modelNumber;
+					std::string saleSpec;
 					std::string customizeFeatureA;
 					std::string customizeFeatureB;
 					int suggestPrice;
 					std::string forestFirstId;
-					std::string productionPlace;
-					std::string manufacturer;
-					std::string sourceCode;
-					std::string itemId;
-					int salesPrice;
-					int originalPrice;
-					std::string itemShortTitle;
-					std::string forestSecondId;
-					std::string itemPicUrl;
-					std::string supplierName;
-					std::string material;
-					std::string modelNumber;
-					std::string saleSpec;
 					std::string categoryName;
-					std::string taxFee;
 					std::string energyEfficiency;
-					std::string promotionText;
 					std::string skuId;
+					std::string promotionText;
 				};
 
 			public:
 				BatchInsertItemsRequest();
 				~BatchInsertItemsRequest();
 
-				std::string getExtraParams()const;
-				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				std::vector<ItemInfo> getItemInfo()const;
 				void setItemInfo(const std::vector<ItemInfo>& itemInfo);
 
             private:
-				std::string extraParams_;
 				std::string storeId_;
 				std::vector<ItemInfo> itemInfo_;
 
