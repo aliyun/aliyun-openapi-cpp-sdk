@@ -27,6 +27,28 @@ AddUserRequest::AddUserRequest() :
 AddUserRequest::~AddUserRequest()
 {}
 
+std::string AddUserRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void AddUserRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
+std::string AddUserRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddUserRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setBodyParameter("ClientToken", clientToken);
+}
+
 std::string AddUserRequest::getUserId()const
 {
 	return userId_;

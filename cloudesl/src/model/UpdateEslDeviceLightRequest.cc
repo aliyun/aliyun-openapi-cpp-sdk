@@ -27,6 +27,17 @@ UpdateEslDeviceLightRequest::UpdateEslDeviceLightRequest() :
 UpdateEslDeviceLightRequest::~UpdateEslDeviceLightRequest()
 {}
 
+std::string UpdateEslDeviceLightRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void UpdateEslDeviceLightRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 int UpdateEslDeviceLightRequest::getLightUpTime()const
 {
 	return lightUpTime_;

@@ -35,10 +35,16 @@ namespace AlibabaCloud
 				AddUserRequest();
 				~AddUserRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 
             private:
+				std::string extraParams_;
+				std::string clientToken_;
 				std::string userId_;
 
 			};

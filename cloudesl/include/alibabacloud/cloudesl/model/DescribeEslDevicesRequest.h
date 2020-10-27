@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeEslDevicesRequest();
 				~DescribeEslDevicesRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getStoreId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setFromBatteryLevel(int fromBatteryLevel);
 
             private:
+				std::string extraParams_;
 				std::string type_;
 				std::string storeId_;
 				int pageNumber_;

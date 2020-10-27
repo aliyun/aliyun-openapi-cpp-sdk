@@ -27,6 +27,17 @@ DeleteUserRequest::DeleteUserRequest() :
 DeleteUserRequest::~DeleteUserRequest()
 {}
 
+std::string DeleteUserRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DeleteUserRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DeleteUserRequest::getUserId()const
 {
 	return userId_;

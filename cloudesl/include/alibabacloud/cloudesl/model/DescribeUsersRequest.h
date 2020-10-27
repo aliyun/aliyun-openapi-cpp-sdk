@@ -35,22 +35,25 @@ namespace AlibabaCloud
 				DescribeUsersRequest();
 				~DescribeUsersRequest();
 
-				std::string getUserType()const;
-				void setUserType(const std::string& userType);
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getUserType()const;
+				void setUserType(const std::string& userType);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
-				std::string userType_;
+				std::string extraParams_;
 				std::string userId_;
 				int pageNumber_;
 				int pageSize_;
+				std::string userType_;
 				std::string userName_;
 
 			};

@@ -35,19 +35,22 @@ namespace AlibabaCloud
 				UpdateStoreConfigRequest();
 				~UpdateStoreConfigRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
+				std::string getStoreId()const;
+				void setStoreId(const std::string& storeId);
 				bool getEnableNotification()const;
 				void setEnableNotification(bool enableNotification);
 				std::string getNotificationWebHook()const;
 				void setNotificationWebHook(const std::string& notificationWebHook);
-				std::string getStoreId()const;
-				void setStoreId(const std::string& storeId);
 				std::string getNotificationSilentTimes()const;
 				void setNotificationSilentTimes(const std::string& notificationSilentTimes);
 
             private:
+				std::string extraParams_;
+				std::string storeId_;
 				bool enableNotification_;
 				std::string notificationWebHook_;
-				std::string storeId_;
 				std::string notificationSilentTimes_;
 
 			};

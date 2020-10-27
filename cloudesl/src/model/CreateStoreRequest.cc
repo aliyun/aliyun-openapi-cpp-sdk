@@ -27,6 +27,28 @@ CreateStoreRequest::CreateStoreRequest() :
 CreateStoreRequest::~CreateStoreRequest()
 {}
 
+std::string CreateStoreRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void CreateStoreRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
+std::string CreateStoreRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateStoreRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setBodyParameter("ClientToken", clientToken);
+}
+
 std::string CreateStoreRequest::getStoreName()const
 {
 	return storeName_;
@@ -49,17 +71,6 @@ void CreateStoreRequest::setParentId(const std::string& parentId)
 	setBodyParameter("ParentId", parentId);
 }
 
-std::string CreateStoreRequest::getPhone()const
-{
-	return phone_;
-}
-
-void CreateStoreRequest::setPhone(const std::string& phone)
-{
-	phone_ = phone;
-	setBodyParameter("Phone", phone);
-}
-
 std::string CreateStoreRequest::getUserStoreCode()const
 {
 	return userStoreCode_;
@@ -69,5 +80,16 @@ void CreateStoreRequest::setUserStoreCode(const std::string& userStoreCode)
 {
 	userStoreCode_ = userStoreCode;
 	setBodyParameter("UserStoreCode", userStoreCode);
+}
+
+std::string CreateStoreRequest::getPhone()const
+{
+	return phone_;
+}
+
+void CreateStoreRequest::setPhone(const std::string& phone)
+{
+	phone_ = phone;
+	setBodyParameter("Phone", phone);
 }
 

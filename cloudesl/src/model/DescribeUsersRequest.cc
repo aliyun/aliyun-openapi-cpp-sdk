@@ -27,15 +27,15 @@ DescribeUsersRequest::DescribeUsersRequest() :
 DescribeUsersRequest::~DescribeUsersRequest()
 {}
 
-std::string DescribeUsersRequest::getUserType()const
+std::string DescribeUsersRequest::getExtraParams()const
 {
-	return userType_;
+	return extraParams_;
 }
 
-void DescribeUsersRequest::setUserType(const std::string& userType)
+void DescribeUsersRequest::setExtraParams(const std::string& extraParams)
 {
-	userType_ = userType;
-	setBodyParameter("UserType", userType);
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
 }
 
 std::string DescribeUsersRequest::getUserId()const
@@ -69,6 +69,17 @@ void DescribeUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeUsersRequest::getUserType()const
+{
+	return userType_;
+}
+
+void DescribeUsersRequest::setUserType(const std::string& userType)
+{
+	userType_ = userType;
+	setBodyParameter("UserType", userType);
 }
 
 std::string DescribeUsersRequest::getUserName()const

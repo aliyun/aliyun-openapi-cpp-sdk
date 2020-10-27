@@ -27,6 +27,17 @@ DescribeAlarmsRequest::DescribeAlarmsRequest() :
 DescribeAlarmsRequest::~DescribeAlarmsRequest()
 {}
 
+std::string DescribeAlarmsRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribeAlarmsRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribeAlarmsRequest::getStoreId()const
 {
 	return storeId_;

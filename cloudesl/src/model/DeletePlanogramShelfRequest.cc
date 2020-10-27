@@ -27,6 +27,17 @@ DeletePlanogramShelfRequest::DeletePlanogramShelfRequest() :
 DeletePlanogramShelfRequest::~DeletePlanogramShelfRequest()
 {}
 
+std::string DeletePlanogramShelfRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DeletePlanogramShelfRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 bool DeletePlanogramShelfRequest::getBeAutoRefresh()const
 {
 	return beAutoRefresh_;

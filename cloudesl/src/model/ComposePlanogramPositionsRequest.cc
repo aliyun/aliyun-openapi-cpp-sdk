@@ -38,15 +38,15 @@ void ComposePlanogramPositionsRequest::setActionType(const std::string& actionTy
 	setBodyParameter("ActionType", actionType);
 }
 
-bool ComposePlanogramPositionsRequest::getBeAutoRefresh()const
+std::string ComposePlanogramPositionsRequest::getExtraParams()const
 {
-	return beAutoRefresh_;
+	return extraParams_;
 }
 
-void ComposePlanogramPositionsRequest::setBeAutoRefresh(bool beAutoRefresh)
+void ComposePlanogramPositionsRequest::setExtraParams(const std::string& extraParams)
 {
-	beAutoRefresh_ = beAutoRefresh;
-	setBodyParameter("BeAutoRefresh", beAutoRefresh ? "true" : "false");
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
 }
 
 std::string ComposePlanogramPositionsRequest::getStoreId()const
@@ -71,17 +71,6 @@ void ComposePlanogramPositionsRequest::setLayer(int layer)
 	setBodyParameter("Layer", std::to_string(layer));
 }
 
-std::string ComposePlanogramPositionsRequest::getShelf()const
-{
-	return shelf_;
-}
-
-void ComposePlanogramPositionsRequest::setShelf(const std::string& shelf)
-{
-	shelf_ = shelf;
-	setBodyParameter("Shelf", shelf);
-}
-
 std::string ComposePlanogramPositionsRequest::getLayerOrigin()const
 {
 	return layerOrigin_;
@@ -91,6 +80,28 @@ void ComposePlanogramPositionsRequest::setLayerOrigin(const std::string& layerOr
 {
 	layerOrigin_ = layerOrigin;
 	setBodyParameter("LayerOrigin", layerOrigin);
+}
+
+bool ComposePlanogramPositionsRequest::getBeAutoRefresh()const
+{
+	return beAutoRefresh_;
+}
+
+void ComposePlanogramPositionsRequest::setBeAutoRefresh(bool beAutoRefresh)
+{
+	beAutoRefresh_ = beAutoRefresh;
+	setBodyParameter("BeAutoRefresh", beAutoRefresh ? "true" : "false");
+}
+
+std::string ComposePlanogramPositionsRequest::getShelf()const
+{
+	return shelf_;
+}
+
+void ComposePlanogramPositionsRequest::setShelf(const std::string& shelf)
+{
+	shelf_ = shelf;
+	setBodyParameter("Shelf", shelf);
 }
 
 std::vector<ComposePlanogramPositionsRequest::ShelfPositionInfo> ComposePlanogramPositionsRequest::getShelfPositionInfo()const

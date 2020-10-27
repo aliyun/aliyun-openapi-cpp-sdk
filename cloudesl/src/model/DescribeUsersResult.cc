@@ -51,6 +51,20 @@ void DescribeUsersResult::parse(const std::string &payload)
 			usersObject.userId = valueUsersUserInfo["UserId"].asString();
 		if(!valueUsersUserInfo["UserType"].isNull())
 			usersObject.userType = valueUsersUserInfo["UserType"].asString();
+		if(!valueUsersUserInfo["OwnerId"].isNull())
+			usersObject.ownerId = valueUsersUserInfo["OwnerId"].asString();
+		if(!valueUsersUserInfo["Bid"].isNull())
+			usersObject.bid = valueUsersUserInfo["Bid"].asString();
+		auto allDingTalkInfosNode = allUsersNode["DingTalkInfos"]["DingTalkInfo"];
+		for (auto allUsersNodeDingTalkInfosDingTalkInfo : allDingTalkInfosNode)
+		{
+			UserInfo::DingTalkInfo dingTalkInfosObject;
+			if(!allUsersNodeDingTalkInfosDingTalkInfo["DingTalkCompanyId"].isNull())
+				dingTalkInfosObject.dingTalkCompanyId = allUsersNodeDingTalkInfosDingTalkInfo["DingTalkCompanyId"].asString();
+			if(!allUsersNodeDingTalkInfosDingTalkInfo["DingTalkUserId"].isNull())
+				dingTalkInfosObject.dingTalkUserId = allUsersNodeDingTalkInfosDingTalkInfo["DingTalkUserId"].asString();
+			usersObject.dingTalkInfos.push_back(dingTalkInfosObject);
+		}
 		users_.push_back(usersObject);
 	}
 	if(!value["ErrorMessage"].isNull())

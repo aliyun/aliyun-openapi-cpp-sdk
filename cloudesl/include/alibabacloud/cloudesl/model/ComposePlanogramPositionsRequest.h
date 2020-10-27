@@ -47,26 +47,29 @@ namespace AlibabaCloud
 
 				std::string getActionType()const;
 				void setActionType(const std::string& actionType);
-				bool getBeAutoRefresh()const;
-				void setBeAutoRefresh(bool beAutoRefresh);
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getLayer()const;
 				void setLayer(int layer);
-				std::string getShelf()const;
-				void setShelf(const std::string& shelf);
 				std::string getLayerOrigin()const;
 				void setLayerOrigin(const std::string& layerOrigin);
+				bool getBeAutoRefresh()const;
+				void setBeAutoRefresh(bool beAutoRefresh);
+				std::string getShelf()const;
+				void setShelf(const std::string& shelf);
 				std::vector<ShelfPositionInfo> getShelfPositionInfo()const;
 				void setShelfPositionInfo(const std::vector<ShelfPositionInfo>& shelfPositionInfo);
 
             private:
 				std::string actionType_;
-				bool beAutoRefresh_;
+				std::string extraParams_;
 				std::string storeId_;
 				int layer_;
-				std::string shelf_;
 				std::string layerOrigin_;
+				bool beAutoRefresh_;
+				std::string shelf_;
 				std::vector<ShelfPositionInfo> shelfPositionInfo_;
 
 			};

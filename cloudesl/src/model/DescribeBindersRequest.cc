@@ -27,15 +27,15 @@ DescribeBindersRequest::DescribeBindersRequest() :
 DescribeBindersRequest::~DescribeBindersRequest()
 {}
 
-std::string DescribeBindersRequest::getItemTitle()const
+std::string DescribeBindersRequest::getExtraParams()const
 {
-	return itemTitle_;
+	return extraParams_;
 }
 
-void DescribeBindersRequest::setItemTitle(const std::string& itemTitle)
+void DescribeBindersRequest::setExtraParams(const std::string& extraParams)
 {
-	itemTitle_ = itemTitle;
-	setBodyParameter("ItemTitle", itemTitle);
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
 }
 
 std::string DescribeBindersRequest::getStoreId()const
@@ -91,5 +91,16 @@ void DescribeBindersRequest::setItemBarCode(const std::string& itemBarCode)
 {
 	itemBarCode_ = itemBarCode;
 	setBodyParameter("ItemBarCode", itemBarCode);
+}
+
+std::string DescribeBindersRequest::getItemTitle()const
+{
+	return itemTitle_;
+}
+
+void DescribeBindersRequest::setItemTitle(const std::string& itemTitle)
+{
+	itemTitle_ = itemTitle;
+	setBodyParameter("ItemTitle", itemTitle);
 }
 

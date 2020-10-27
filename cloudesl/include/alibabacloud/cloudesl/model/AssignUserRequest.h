@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				AssignUserRequest();
 				~AssignUserRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStores()const;
 				void setStores(const std::string& stores);
 				std::string getUserType()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setUserId(const std::string& userId);
 
             private:
+				std::string extraParams_;
 				std::string stores_;
 				std::string userType_;
 				std::string userId_;

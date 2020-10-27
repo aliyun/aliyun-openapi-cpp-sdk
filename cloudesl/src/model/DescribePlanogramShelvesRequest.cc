@@ -27,6 +27,17 @@ DescribePlanogramShelvesRequest::DescribePlanogramShelvesRequest() :
 DescribePlanogramShelvesRequest::~DescribePlanogramShelvesRequest()
 {}
 
+std::string DescribePlanogramShelvesRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribePlanogramShelvesRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribePlanogramShelvesRequest::getStoreId()const
 {
 	return storeId_;
@@ -36,5 +47,27 @@ void DescribePlanogramShelvesRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
 	setBodyParameter("StoreId", storeId);
+}
+
+int DescribePlanogramShelvesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribePlanogramShelvesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setBodyParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int DescribePlanogramShelvesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribePlanogramShelvesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 

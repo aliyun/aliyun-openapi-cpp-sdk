@@ -27,6 +27,17 @@ DescribeStoreConfigRequest::DescribeStoreConfigRequest() :
 DescribeStoreConfigRequest::~DescribeStoreConfigRequest()
 {}
 
+std::string DescribeStoreConfigRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribeStoreConfigRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribeStoreConfigRequest::getStoreId()const
 {
 	return storeId_;

@@ -35,11 +35,20 @@ namespace AlibabaCloud
 				DescribePlanogramShelvesRequest();
 				~DescribePlanogramShelvesRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
+				int pageNumber_;
+				int pageSize_;
 
 			};
 		}

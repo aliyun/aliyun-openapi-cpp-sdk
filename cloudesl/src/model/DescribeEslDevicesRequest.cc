@@ -27,6 +27,17 @@ DescribeEslDevicesRequest::DescribeEslDevicesRequest() :
 DescribeEslDevicesRequest::~DescribeEslDevicesRequest()
 {}
 
+std::string DescribeEslDevicesRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribeEslDevicesRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribeEslDevicesRequest::getType()const
 {
 	return type_;

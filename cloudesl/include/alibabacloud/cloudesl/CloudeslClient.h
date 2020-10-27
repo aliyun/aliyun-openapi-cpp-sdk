@@ -28,6 +28,8 @@
 #include "model/AddApDeviceResult.h"
 #include "model/AddPlanogramShelfRequest.h"
 #include "model/AddPlanogramShelfResult.h"
+#include "model/AddRoleActionsRequest.h"
+#include "model/AddRoleActionsResult.h"
 #include "model/AddUserRequest.h"
 #include "model/AddUserResult.h"
 #include "model/AssignUserRequest.h"
@@ -46,6 +48,8 @@
 #include "model/DeleteApDeviceResult.h"
 #include "model/DeletePlanogramShelfRequest.h"
 #include "model/DeletePlanogramShelfResult.h"
+#include "model/DeleteRoleActionsRequest.h"
+#include "model/DeleteRoleActionsResult.h"
 #include "model/DeleteStoreRequest.h"
 #include "model/DeleteStoreResult.h"
 #include "model/DeleteUserRequest.h"
@@ -56,6 +60,8 @@
 #include "model/DescribeApDevicesResult.h"
 #include "model/DescribeBindersRequest.h"
 #include "model/DescribeBindersResult.h"
+#include "model/DescribeClientPackageRequest.h"
+#include "model/DescribeClientPackageResult.h"
 #include "model/DescribeEslDevicesRequest.h"
 #include "model/DescribeEslDevicesResult.h"
 #include "model/DescribeItemsRequest.h"
@@ -68,6 +74,8 @@
 #include "model/DescribePlanogramRailsResult.h"
 #include "model/DescribePlanogramShelvesRequest.h"
 #include "model/DescribePlanogramShelvesResult.h"
+#include "model/DescribeRoleActionsRequest.h"
+#include "model/DescribeRoleActionsResult.h"
 #include "model/DescribeStoreConfigRequest.h"
 #include "model/DescribeStoreConfigResult.h"
 #include "model/DescribeStoresRequest.h"
@@ -90,6 +98,8 @@
 #include "model/UpdateStoreResult.h"
 #include "model/UpdateStoreConfigRequest.h"
 #include "model/UpdateStoreConfigResult.h"
+#include "model/UpdateUserRequest.h"
+#include "model/UpdateUserResult.h"
 
 
 namespace AlibabaCloud
@@ -108,6 +118,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddPlanogramShelfResult> AddPlanogramShelfOutcome;
 			typedef std::future<AddPlanogramShelfOutcome> AddPlanogramShelfOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::AddPlanogramShelfRequest&, const AddPlanogramShelfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddPlanogramShelfAsyncHandler;
+			typedef Outcome<Error, Model::AddRoleActionsResult> AddRoleActionsOutcome;
+			typedef std::future<AddRoleActionsOutcome> AddRoleActionsOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::AddRoleActionsRequest&, const AddRoleActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddRoleActionsAsyncHandler;
 			typedef Outcome<Error, Model::AddUserResult> AddUserOutcome;
 			typedef std::future<AddUserOutcome> AddUserOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::AddUserRequest&, const AddUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserAsyncHandler;
@@ -135,6 +148,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePlanogramShelfResult> DeletePlanogramShelfOutcome;
 			typedef std::future<DeletePlanogramShelfOutcome> DeletePlanogramShelfOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeletePlanogramShelfRequest&, const DeletePlanogramShelfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePlanogramShelfAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRoleActionsResult> DeleteRoleActionsOutcome;
+			typedef std::future<DeleteRoleActionsOutcome> DeleteRoleActionsOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::DeleteRoleActionsRequest&, const DeleteRoleActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleActionsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteStoreResult> DeleteStoreOutcome;
 			typedef std::future<DeleteStoreOutcome> DeleteStoreOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeleteStoreRequest&, const DeleteStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStoreAsyncHandler;
@@ -150,6 +166,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBindersResult> DescribeBindersOutcome;
 			typedef std::future<DescribeBindersOutcome> DescribeBindersOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeBindersRequest&, const DescribeBindersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClientPackageResult> DescribeClientPackageOutcome;
+			typedef std::future<DescribeClientPackageOutcome> DescribeClientPackageOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::DescribeClientPackageRequest&, const DescribeClientPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientPackageAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEslDevicesResult> DescribeEslDevicesOutcome;
 			typedef std::future<DescribeEslDevicesOutcome> DescribeEslDevicesOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeEslDevicesRequest&, const DescribeEslDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEslDevicesAsyncHandler;
@@ -168,6 +187,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePlanogramShelvesResult> DescribePlanogramShelvesOutcome;
 			typedef std::future<DescribePlanogramShelvesOutcome> DescribePlanogramShelvesOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribePlanogramShelvesRequest&, const DescribePlanogramShelvesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlanogramShelvesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRoleActionsResult> DescribeRoleActionsOutcome;
+			typedef std::future<DescribeRoleActionsOutcome> DescribeRoleActionsOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::DescribeRoleActionsRequest&, const DescribeRoleActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleActionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStoreConfigResult> DescribeStoreConfigOutcome;
 			typedef std::future<DescribeStoreConfigOutcome> DescribeStoreConfigOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeStoreConfigRequest&, const DescribeStoreConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoreConfigAsyncHandler;
@@ -201,6 +223,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateStoreConfigResult> UpdateStoreConfigOutcome;
 			typedef std::future<UpdateStoreConfigOutcome> UpdateStoreConfigOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::UpdateStoreConfigRequest&, const UpdateStoreConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStoreConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdateUserResult> UpdateUserOutcome;
+			typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::UpdateUserRequest&, const UpdateUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserAsyncHandler;
 
 			CloudeslClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CloudeslClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -215,6 +240,9 @@ namespace AlibabaCloud
 			AddPlanogramShelfOutcome addPlanogramShelf(const Model::AddPlanogramShelfRequest &request)const;
 			void addPlanogramShelfAsync(const Model::AddPlanogramShelfRequest& request, const AddPlanogramShelfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddPlanogramShelfOutcomeCallable addPlanogramShelfCallable(const Model::AddPlanogramShelfRequest& request) const;
+			AddRoleActionsOutcome addRoleActions(const Model::AddRoleActionsRequest &request)const;
+			void addRoleActionsAsync(const Model::AddRoleActionsRequest& request, const AddRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddRoleActionsOutcomeCallable addRoleActionsCallable(const Model::AddRoleActionsRequest& request) const;
 			AddUserOutcome addUser(const Model::AddUserRequest &request)const;
 			void addUserAsync(const Model::AddUserRequest& request, const AddUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUserOutcomeCallable addUserCallable(const Model::AddUserRequest& request) const;
@@ -242,6 +270,9 @@ namespace AlibabaCloud
 			DeletePlanogramShelfOutcome deletePlanogramShelf(const Model::DeletePlanogramShelfRequest &request)const;
 			void deletePlanogramShelfAsync(const Model::DeletePlanogramShelfRequest& request, const DeletePlanogramShelfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePlanogramShelfOutcomeCallable deletePlanogramShelfCallable(const Model::DeletePlanogramShelfRequest& request) const;
+			DeleteRoleActionsOutcome deleteRoleActions(const Model::DeleteRoleActionsRequest &request)const;
+			void deleteRoleActionsAsync(const Model::DeleteRoleActionsRequest& request, const DeleteRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRoleActionsOutcomeCallable deleteRoleActionsCallable(const Model::DeleteRoleActionsRequest& request) const;
 			DeleteStoreOutcome deleteStore(const Model::DeleteStoreRequest &request)const;
 			void deleteStoreAsync(const Model::DeleteStoreRequest& request, const DeleteStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteStoreOutcomeCallable deleteStoreCallable(const Model::DeleteStoreRequest& request) const;
@@ -257,6 +288,9 @@ namespace AlibabaCloud
 			DescribeBindersOutcome describeBinders(const Model::DescribeBindersRequest &request)const;
 			void describeBindersAsync(const Model::DescribeBindersRequest& request, const DescribeBindersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBindersOutcomeCallable describeBindersCallable(const Model::DescribeBindersRequest& request) const;
+			DescribeClientPackageOutcome describeClientPackage(const Model::DescribeClientPackageRequest &request)const;
+			void describeClientPackageAsync(const Model::DescribeClientPackageRequest& request, const DescribeClientPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClientPackageOutcomeCallable describeClientPackageCallable(const Model::DescribeClientPackageRequest& request) const;
 			DescribeEslDevicesOutcome describeEslDevices(const Model::DescribeEslDevicesRequest &request)const;
 			void describeEslDevicesAsync(const Model::DescribeEslDevicesRequest& request, const DescribeEslDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEslDevicesOutcomeCallable describeEslDevicesCallable(const Model::DescribeEslDevicesRequest& request) const;
@@ -275,6 +309,9 @@ namespace AlibabaCloud
 			DescribePlanogramShelvesOutcome describePlanogramShelves(const Model::DescribePlanogramShelvesRequest &request)const;
 			void describePlanogramShelvesAsync(const Model::DescribePlanogramShelvesRequest& request, const DescribePlanogramShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePlanogramShelvesOutcomeCallable describePlanogramShelvesCallable(const Model::DescribePlanogramShelvesRequest& request) const;
+			DescribeRoleActionsOutcome describeRoleActions(const Model::DescribeRoleActionsRequest &request)const;
+			void describeRoleActionsAsync(const Model::DescribeRoleActionsRequest& request, const DescribeRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRoleActionsOutcomeCallable describeRoleActionsCallable(const Model::DescribeRoleActionsRequest& request) const;
 			DescribeStoreConfigOutcome describeStoreConfig(const Model::DescribeStoreConfigRequest &request)const;
 			void describeStoreConfigAsync(const Model::DescribeStoreConfigRequest& request, const DescribeStoreConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStoreConfigOutcomeCallable describeStoreConfigCallable(const Model::DescribeStoreConfigRequest& request) const;
@@ -308,6 +345,9 @@ namespace AlibabaCloud
 			UpdateStoreConfigOutcome updateStoreConfig(const Model::UpdateStoreConfigRequest &request)const;
 			void updateStoreConfigAsync(const Model::UpdateStoreConfigRequest& request, const UpdateStoreConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateStoreConfigOutcomeCallable updateStoreConfigCallable(const Model::UpdateStoreConfigRequest& request) const;
+			UpdateUserOutcome updateUser(const Model::UpdateUserRequest &request)const;
+			void updateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateUserOutcomeCallable updateUserCallable(const Model::UpdateUserRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

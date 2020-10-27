@@ -27,6 +27,17 @@ DissociatePlanogramRailRequest::DissociatePlanogramRailRequest() :
 DissociatePlanogramRailRequest::~DissociatePlanogramRailRequest()
 {}
 
+std::string DissociatePlanogramRailRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DissociatePlanogramRailRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DissociatePlanogramRailRequest::getStoreId()const
 {
 	return storeId_;

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribePlanogramPositionsRequest();
 				~DescribePlanogramPositionsRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getLayer()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setShelf(const std::string& shelf);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 				int layer_;
 				std::string shelf_;

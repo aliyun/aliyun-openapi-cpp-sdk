@@ -143,6 +143,10 @@ void DescribeItemsResult::parse(const std::string &payload)
 			itemsObject.itemId = valueItemsItemInfo["ItemId"].asString();
 		if(!valueItemsItemInfo["PromotionStart"].isNull())
 			itemsObject.promotionStart = valueItemsItemInfo["PromotionStart"].asString();
+		if(!valueItemsItemInfo["GmtCreate"].isNull())
+			itemsObject.gmtCreate = valueItemsItemInfo["GmtCreate"].asString();
+		if(!valueItemsItemInfo["GmtModified"].isNull())
+			itemsObject.gmtModified = valueItemsItemInfo["GmtModified"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["ErrorMessage"].isNull())

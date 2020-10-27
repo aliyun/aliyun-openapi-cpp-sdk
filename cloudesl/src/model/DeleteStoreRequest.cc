@@ -27,6 +27,17 @@ DeleteStoreRequest::DeleteStoreRequest() :
 DeleteStoreRequest::~DeleteStoreRequest()
 {}
 
+std::string DeleteStoreRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DeleteStoreRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DeleteStoreRequest::getStoreId()const
 {
 	return storeId_;

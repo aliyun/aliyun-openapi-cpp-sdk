@@ -34,9 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct User
 				{
+					struct DingTalkInfo
+					{
+						std::string dingTalkCompanyId;
+						std::string dingTalkUserId;
+					};
 					std::string userName;
+					std::string ownerId;
 					std::string userId;
+					std::vector<DingTalkInfo> dingTalkInfos;
 					std::string stores;
+					std::string bid;
 					std::string userType;
 				};
 

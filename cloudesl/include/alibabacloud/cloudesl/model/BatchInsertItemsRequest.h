@@ -89,12 +89,15 @@ namespace AlibabaCloud
 				BatchInsertItemsRequest();
 				~BatchInsertItemsRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				std::vector<ItemInfo> getItemInfo()const;
 				void setItemInfo(const std::vector<ItemInfo>& itemInfo);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 				std::vector<ItemInfo> itemInfo_;
 

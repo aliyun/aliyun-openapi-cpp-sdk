@@ -27,6 +27,28 @@ AddPlanogramShelfRequest::AddPlanogramShelfRequest() :
 AddPlanogramShelfRequest::~AddPlanogramShelfRequest()
 {}
 
+std::string AddPlanogramShelfRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void AddPlanogramShelfRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
+std::string AddPlanogramShelfRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddPlanogramShelfRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setBodyParameter("ClientToken", clientToken);
+}
+
 std::string AddPlanogramShelfRequest::getShelfType()const
 {
 	return shelfType_;
@@ -49,6 +71,17 @@ void AddPlanogramShelfRequest::setStoreId(const std::string& storeId)
 	setBodyParameter("StoreId", storeId);
 }
 
+std::string AddPlanogramShelfRequest::getZone()const
+{
+	return zone_;
+}
+
+void AddPlanogramShelfRequest::setZone(const std::string& zone)
+{
+	zone_ = zone;
+	setBodyParameter("Zone", zone);
+}
+
 std::string AddPlanogramShelfRequest::getShelf()const
 {
 	return shelf_;
@@ -58,5 +91,16 @@ void AddPlanogramShelfRequest::setShelf(const std::string& shelf)
 {
 	shelf_ = shelf;
 	setBodyParameter("Shelf", shelf);
+}
+
+std::string AddPlanogramShelfRequest::getCategory()const
+{
+	return category_;
+}
+
+void AddPlanogramShelfRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setBodyParameter("Category", category);
 }
 

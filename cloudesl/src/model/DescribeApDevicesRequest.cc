@@ -27,6 +27,17 @@ DescribeApDevicesRequest::DescribeApDevicesRequest() :
 DescribeApDevicesRequest::~DescribeApDevicesRequest()
 {}
 
+std::string DescribeApDevicesRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribeApDevicesRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribeApDevicesRequest::getApMac()const
 {
 	return apMac_;

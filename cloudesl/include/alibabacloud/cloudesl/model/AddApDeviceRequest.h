@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				AddApDeviceRequest();
 				~AddApDeviceRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
 				std::string getApMac()const;
@@ -43,6 +47,8 @@ namespace AlibabaCloud
 				void setStoreId(const std::string& storeId);
 
             private:
+				std::string extraParams_;
+				std::string clientToken_;
 				std::string remark_;
 				std::string apMac_;
 				std::string storeId_;

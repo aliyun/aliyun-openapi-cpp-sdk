@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeApDevicesRequest();
 				~DescribeApDevicesRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getApMac()const;
 				void setApMac(const std::string& apMac);
 				std::string getStoreId()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setStatus(bool status);
 
             private:
+				std::string extraParams_;
 				std::string apMac_;
 				std::string storeId_;
 				int pageNumber_;

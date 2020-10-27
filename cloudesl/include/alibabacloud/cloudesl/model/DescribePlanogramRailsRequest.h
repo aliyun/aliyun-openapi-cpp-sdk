@@ -35,26 +35,29 @@ namespace AlibabaCloud
 				DescribePlanogramRailsRequest();
 				~DescribePlanogramRailsRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getLayer()const;
 				void setLayer(int layer);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getShelf()const;
 				void setShelf(const std::string& shelf);
 				std::string getRailCode()const;
 				void setRailCode(const std::string& railCode);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 				int layer_;
 				int pageNumber_;
+				int pageSize_;
 				std::string shelf_;
 				std::string railCode_;
-				int pageSize_;
 
 			};
 		}

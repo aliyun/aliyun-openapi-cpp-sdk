@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeStoresRequest();
 				~DescribeStoresRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
 				std::string getStoreId()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setUserStoreCode(const std::string& userStoreCode);
 
             private:
+				std::string extraParams_;
 				std::string storeName_;
 				std::string storeId_;
 				int pageNumber_;

@@ -27,6 +27,8 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/AddApDeviceResult.h
 	include/alibabacloud/cloudesl/model/AddPlanogramShelfRequest.h
 	include/alibabacloud/cloudesl/model/AddPlanogramShelfResult.h
+	include/alibabacloud/cloudesl/model/AddRoleActionsRequest.h
+	include/alibabacloud/cloudesl/model/AddRoleActionsResult.h
 	include/alibabacloud/cloudesl/model/AddUserRequest.h
 	include/alibabacloud/cloudesl/model/AddUserResult.h
 	include/alibabacloud/cloudesl/model/AssignUserRequest.h
@@ -45,6 +47,8 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/DeleteApDeviceResult.h
 	include/alibabacloud/cloudesl/model/DeletePlanogramShelfRequest.h
 	include/alibabacloud/cloudesl/model/DeletePlanogramShelfResult.h
+	include/alibabacloud/cloudesl/model/DeleteRoleActionsRequest.h
+	include/alibabacloud/cloudesl/model/DeleteRoleActionsResult.h
 	include/alibabacloud/cloudesl/model/DeleteStoreRequest.h
 	include/alibabacloud/cloudesl/model/DeleteStoreResult.h
 	include/alibabacloud/cloudesl/model/DeleteUserRequest.h
@@ -55,6 +59,8 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/DescribeApDevicesResult.h
 	include/alibabacloud/cloudesl/model/DescribeBindersRequest.h
 	include/alibabacloud/cloudesl/model/DescribeBindersResult.h
+	include/alibabacloud/cloudesl/model/DescribeClientPackageRequest.h
+	include/alibabacloud/cloudesl/model/DescribeClientPackageResult.h
 	include/alibabacloud/cloudesl/model/DescribeEslDevicesRequest.h
 	include/alibabacloud/cloudesl/model/DescribeEslDevicesResult.h
 	include/alibabacloud/cloudesl/model/DescribeItemsRequest.h
@@ -67,6 +73,8 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/DescribePlanogramRailsResult.h
 	include/alibabacloud/cloudesl/model/DescribePlanogramShelvesRequest.h
 	include/alibabacloud/cloudesl/model/DescribePlanogramShelvesResult.h
+	include/alibabacloud/cloudesl/model/DescribeRoleActionsRequest.h
+	include/alibabacloud/cloudesl/model/DescribeRoleActionsResult.h
 	include/alibabacloud/cloudesl/model/DescribeStoreConfigRequest.h
 	include/alibabacloud/cloudesl/model/DescribeStoreConfigResult.h
 	include/alibabacloud/cloudesl/model/DescribeStoresRequest.h
@@ -88,7 +96,9 @@ set(cloudesl_public_header_model
 	include/alibabacloud/cloudesl/model/UpdateStoreRequest.h
 	include/alibabacloud/cloudesl/model/UpdateStoreResult.h
 	include/alibabacloud/cloudesl/model/UpdateStoreConfigRequest.h
-	include/alibabacloud/cloudesl/model/UpdateStoreConfigResult.h )
+	include/alibabacloud/cloudesl/model/UpdateStoreConfigResult.h
+	include/alibabacloud/cloudesl/model/UpdateUserRequest.h
+	include/alibabacloud/cloudesl/model/UpdateUserResult.h )
 
 set(cloudesl_src 
 	src/CloudeslClient.cc
@@ -98,6 +108,8 @@ set(cloudesl_src
 	src/model/AddApDeviceResult.cc
 	src/model/AddPlanogramShelfRequest.cc
 	src/model/AddPlanogramShelfResult.cc
+	src/model/AddRoleActionsRequest.cc
+	src/model/AddRoleActionsResult.cc
 	src/model/AddUserRequest.cc
 	src/model/AddUserResult.cc
 	src/model/AssignUserRequest.cc
@@ -116,6 +128,8 @@ set(cloudesl_src
 	src/model/DeleteApDeviceResult.cc
 	src/model/DeletePlanogramShelfRequest.cc
 	src/model/DeletePlanogramShelfResult.cc
+	src/model/DeleteRoleActionsRequest.cc
+	src/model/DeleteRoleActionsResult.cc
 	src/model/DeleteStoreRequest.cc
 	src/model/DeleteStoreResult.cc
 	src/model/DeleteUserRequest.cc
@@ -126,6 +140,8 @@ set(cloudesl_src
 	src/model/DescribeApDevicesResult.cc
 	src/model/DescribeBindersRequest.cc
 	src/model/DescribeBindersResult.cc
+	src/model/DescribeClientPackageRequest.cc
+	src/model/DescribeClientPackageResult.cc
 	src/model/DescribeEslDevicesRequest.cc
 	src/model/DescribeEslDevicesResult.cc
 	src/model/DescribeItemsRequest.cc
@@ -138,6 +154,8 @@ set(cloudesl_src
 	src/model/DescribePlanogramRailsResult.cc
 	src/model/DescribePlanogramShelvesRequest.cc
 	src/model/DescribePlanogramShelvesResult.cc
+	src/model/DescribeRoleActionsRequest.cc
+	src/model/DescribeRoleActionsResult.cc
 	src/model/DescribeStoreConfigRequest.cc
 	src/model/DescribeStoreConfigResult.cc
 	src/model/DescribeStoresRequest.cc
@@ -159,7 +177,9 @@ set(cloudesl_src
 	src/model/UpdateStoreRequest.cc
 	src/model/UpdateStoreResult.cc
 	src/model/UpdateStoreConfigRequest.cc
-	src/model/UpdateStoreConfigResult.cc )
+	src/model/UpdateStoreConfigResult.cc
+	src/model/UpdateUserRequest.cc
+	src/model/UpdateUserResult.cc )
 
 add_library(cloudesl ${LIB_TYPE}
 	${cloudesl_public_header}

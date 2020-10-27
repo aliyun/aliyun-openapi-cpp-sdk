@@ -27,6 +27,17 @@ GetUserRequest::GetUserRequest() :
 GetUserRequest::~GetUserRequest()
 {}
 
+std::string GetUserRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void GetUserRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string GetUserRequest::getUserId()const
 {
 	return userId_;

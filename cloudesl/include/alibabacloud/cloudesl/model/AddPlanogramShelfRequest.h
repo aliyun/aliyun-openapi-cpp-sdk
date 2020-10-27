@@ -35,17 +35,29 @@ namespace AlibabaCloud
 				AddPlanogramShelfRequest();
 				~AddPlanogramShelfRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getShelfType()const;
 				void setShelfType(const std::string& shelfType);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
+				std::string getZone()const;
+				void setZone(const std::string& zone);
 				std::string getShelf()const;
 				void setShelf(const std::string& shelf);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
+				std::string extraParams_;
+				std::string clientToken_;
 				std::string shelfType_;
 				std::string storeId_;
+				std::string zone_;
 				std::string shelf_;
+				std::string category_;
 
 			};
 		}

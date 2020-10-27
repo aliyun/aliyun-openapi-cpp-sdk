@@ -27,6 +27,17 @@ DescribeUserLogRequest::DescribeUserLogRequest() :
 DescribeUserLogRequest::~DescribeUserLogRequest()
 {}
 
+std::string DescribeUserLogRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribeUserLogRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribeUserLogRequest::getStoreId()const
 {
 	return storeId_;

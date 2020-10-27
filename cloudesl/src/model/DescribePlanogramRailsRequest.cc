@@ -27,6 +27,17 @@ DescribePlanogramRailsRequest::DescribePlanogramRailsRequest() :
 DescribePlanogramRailsRequest::~DescribePlanogramRailsRequest()
 {}
 
+std::string DescribePlanogramRailsRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribePlanogramRailsRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribePlanogramRailsRequest::getStoreId()const
 {
 	return storeId_;
@@ -60,6 +71,17 @@ void DescribePlanogramRailsRequest::setPageNumber(int pageNumber)
 	setBodyParameter("PageNumber", std::to_string(pageNumber));
 }
 
+int DescribePlanogramRailsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribePlanogramRailsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string DescribePlanogramRailsRequest::getShelf()const
 {
 	return shelf_;
@@ -80,16 +102,5 @@ void DescribePlanogramRailsRequest::setRailCode(const std::string& railCode)
 {
 	railCode_ = railCode;
 	setBodyParameter("RailCode", railCode);
-}
-
-int DescribePlanogramRailsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribePlanogramRailsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 

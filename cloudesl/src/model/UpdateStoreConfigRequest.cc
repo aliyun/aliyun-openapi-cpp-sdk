@@ -27,6 +27,28 @@ UpdateStoreConfigRequest::UpdateStoreConfigRequest() :
 UpdateStoreConfigRequest::~UpdateStoreConfigRequest()
 {}
 
+std::string UpdateStoreConfigRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void UpdateStoreConfigRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
+std::string UpdateStoreConfigRequest::getStoreId()const
+{
+	return storeId_;
+}
+
+void UpdateStoreConfigRequest::setStoreId(const std::string& storeId)
+{
+	storeId_ = storeId;
+	setBodyParameter("StoreId", storeId);
+}
+
 bool UpdateStoreConfigRequest::getEnableNotification()const
 {
 	return enableNotification_;
@@ -47,17 +69,6 @@ void UpdateStoreConfigRequest::setNotificationWebHook(const std::string& notific
 {
 	notificationWebHook_ = notificationWebHook;
 	setBodyParameter("NotificationWebHook", notificationWebHook);
-}
-
-std::string UpdateStoreConfigRequest::getStoreId()const
-{
-	return storeId_;
-}
-
-void UpdateStoreConfigRequest::setStoreId(const std::string& storeId)
-{
-	storeId_ = storeId;
-	setBodyParameter("StoreId", storeId);
 }
 
 std::string UpdateStoreConfigRequest::getNotificationSilentTimes()const

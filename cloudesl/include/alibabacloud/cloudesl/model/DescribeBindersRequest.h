@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				DescribeBindersRequest();
 				~DescribeBindersRequest();
 
-				std::string getItemTitle()const;
-				void setItemTitle(const std::string& itemTitle);
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getPageNumber()const;
@@ -47,14 +47,17 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getItemBarCode()const;
 				void setItemBarCode(const std::string& itemBarCode);
+				std::string getItemTitle()const;
+				void setItemTitle(const std::string& itemTitle);
 
             private:
-				std::string itemTitle_;
+				std::string extraParams_;
 				std::string storeId_;
 				int pageNumber_;
 				std::string eslBarCode_;
 				int pageSize_;
 				std::string itemBarCode_;
+				std::string itemTitle_;
 
 			};
 		}

@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				DescribeStoreConfigRequest();
 				~DescribeStoreConfigRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 
 			};

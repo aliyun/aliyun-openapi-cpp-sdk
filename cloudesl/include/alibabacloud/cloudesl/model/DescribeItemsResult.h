@@ -61,6 +61,7 @@ namespace AlibabaCloud
 					std::string customizeFeatureK;
 					int itemInfoIndex;
 					std::string itemQrCode;
+					std::string gmtCreate;
 					std::string customizeFeatureB;
 					std::string customizeFeatureA;
 					int memberPrice;
@@ -68,6 +69,7 @@ namespace AlibabaCloud
 					bool bePromotion;
 					int suggestPrice;
 					std::string sourceCode;
+					std::string gmtModified;
 					std::string itemBarCode;
 					int salesPrice;
 					std::string itemShortTitle;

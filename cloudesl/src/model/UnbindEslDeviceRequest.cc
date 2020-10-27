@@ -27,15 +27,15 @@ UnbindEslDeviceRequest::UnbindEslDeviceRequest() :
 UnbindEslDeviceRequest::~UnbindEslDeviceRequest()
 {}
 
-std::string UnbindEslDeviceRequest::getColumn()const
+std::string UnbindEslDeviceRequest::getExtraParams()const
 {
-	return column_;
+	return extraParams_;
 }
 
-void UnbindEslDeviceRequest::setColumn(const std::string& column)
+void UnbindEslDeviceRequest::setExtraParams(const std::string& extraParams)
 {
-	column_ = column;
-	setBodyParameter("Column", column);
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
 }
 
 std::string UnbindEslDeviceRequest::getStoreId()const
@@ -60,17 +60,6 @@ void UnbindEslDeviceRequest::setLayer(int layer)
 	setBodyParameter("Layer", std::to_string(layer));
 }
 
-std::string UnbindEslDeviceRequest::getShelf()const
-{
-	return shelf_;
-}
-
-void UnbindEslDeviceRequest::setShelf(const std::string& shelf)
-{
-	shelf_ = shelf;
-	setBodyParameter("Shelf", shelf);
-}
-
 std::string UnbindEslDeviceRequest::getEslBarCode()const
 {
 	return eslBarCode_;
@@ -91,5 +80,27 @@ void UnbindEslDeviceRequest::setItemBarCode(const std::string& itemBarCode)
 {
 	itemBarCode_ = itemBarCode;
 	setBodyParameter("ItemBarCode", itemBarCode);
+}
+
+std::string UnbindEslDeviceRequest::getColumn()const
+{
+	return column_;
+}
+
+void UnbindEslDeviceRequest::setColumn(const std::string& column)
+{
+	column_ = column;
+	setBodyParameter("Column", column);
+}
+
+std::string UnbindEslDeviceRequest::getShelf()const
+{
+	return shelf_;
+}
+
+void UnbindEslDeviceRequest::setShelf(const std::string& shelf)
+{
+	shelf_ = shelf;
+	setBodyParameter("Shelf", shelf);
 }
 

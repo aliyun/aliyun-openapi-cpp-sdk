@@ -27,6 +27,17 @@ UnassignUserRequest::UnassignUserRequest() :
 UnassignUserRequest::~UnassignUserRequest()
 {}
 
+std::string UnassignUserRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void UnassignUserRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string UnassignUserRequest::getUserId()const
 {
 	return userId_;

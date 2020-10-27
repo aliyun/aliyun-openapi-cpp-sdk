@@ -27,6 +27,17 @@ DescribePlanogramPositionsRequest::DescribePlanogramPositionsRequest() :
 DescribePlanogramPositionsRequest::~DescribePlanogramPositionsRequest()
 {}
 
+std::string DescribePlanogramPositionsRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribePlanogramPositionsRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribePlanogramPositionsRequest::getStoreId()const
 {
 	return storeId_;

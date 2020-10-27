@@ -27,6 +27,17 @@ ActivateApDeviceRequest::ActivateApDeviceRequest() :
 ActivateApDeviceRequest::~ActivateApDeviceRequest()
 {}
 
+std::string ActivateApDeviceRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void ActivateApDeviceRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string ActivateApDeviceRequest::getApMac()const
 {
 	return apMac_;

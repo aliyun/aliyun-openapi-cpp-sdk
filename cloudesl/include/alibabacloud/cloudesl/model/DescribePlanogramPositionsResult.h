@@ -45,6 +45,7 @@ namespace AlibabaCloud
 						float depth;
 					};
 					std::string layerOrigin;
+					std::string railCode;
 					int layer;
 					std::vector<LayerInfo::ShelfPositionInfo> shelfPositionInfos;
 				};
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 				~DescribePlanogramPositionsResult();
 				std::string getMessage()const;
 				std::string getStoreId()const;
+				std::string getShelfType()const;
 				std::string getShelf()const;
 				std::string getDynamicCode()const;
 				std::vector<LayerInfo> getLayerInfos()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				std::string storeId_;
+				std::string shelfType_;
 				std::string shelf_;
 				std::string dynamicCode_;
 				std::vector<LayerInfo> layerInfos_;

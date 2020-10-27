@@ -27,6 +27,17 @@ BatchInsertItemsRequest::BatchInsertItemsRequest() :
 BatchInsertItemsRequest::~BatchInsertItemsRequest()
 {}
 
+std::string BatchInsertItemsRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void BatchInsertItemsRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string BatchInsertItemsRequest::getStoreId()const
 {
 	return storeId_;

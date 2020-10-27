@@ -27,6 +27,17 @@ UpdateStoreRequest::UpdateStoreRequest() :
 UpdateStoreRequest::~UpdateStoreRequest()
 {}
 
+std::string UpdateStoreRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void UpdateStoreRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string UpdateStoreRequest::getStoreName()const
 {
 	return storeName_;
@@ -49,17 +60,6 @@ void UpdateStoreRequest::setStoreId(const std::string& storeId)
 	setBodyParameter("StoreId", storeId);
 }
 
-std::string UpdateStoreRequest::getPhone()const
-{
-	return phone_;
-}
-
-void UpdateStoreRequest::setPhone(const std::string& phone)
-{
-	phone_ = phone;
-	setBodyParameter("Phone", phone);
-}
-
 std::string UpdateStoreRequest::getUserStoreCode()const
 {
 	return userStoreCode_;
@@ -69,5 +69,16 @@ void UpdateStoreRequest::setUserStoreCode(const std::string& userStoreCode)
 {
 	userStoreCode_ = userStoreCode;
 	setBodyParameter("UserStoreCode", userStoreCode);
+}
+
+std::string UpdateStoreRequest::getPhone()const
+{
+	return phone_;
+}
+
+void UpdateStoreRequest::setPhone(const std::string& phone)
+{
+	phone_ = phone;
+	setBodyParameter("Phone", phone);
 }
 

@@ -45,6 +45,14 @@ void DescribePlanogramShelvesResult::parse(const std::string &payload)
 		ShelfInfo shelfInfosObject;
 		if(!valueShelfInfosShelfInfo["Shelf"].isNull())
 			shelfInfosObject.shelf = valueShelfInfosShelfInfo["Shelf"].asString();
+		if(!valueShelfInfosShelfInfo["BeMatch"].isNull())
+			shelfInfosObject.beMatch = valueShelfInfosShelfInfo["BeMatch"].asString() == "true";
+		if(!valueShelfInfosShelfInfo["Zone"].isNull())
+			shelfInfosObject.zone = valueShelfInfosShelfInfo["Zone"].asString();
+		if(!valueShelfInfosShelfInfo["Category"].isNull())
+			shelfInfosObject.category = valueShelfInfosShelfInfo["Category"].asString();
+		if(!valueShelfInfosShelfInfo["ShelfType"].isNull())
+			shelfInfosObject.shelfType = valueShelfInfosShelfInfo["ShelfType"].asString();
 		auto allLayerInfosNode = allShelfInfosNode["LayerInfos"]["LayerInfo"];
 		for (auto allShelfInfosNodeLayerInfosLayerInfo : allLayerInfosNode)
 		{
@@ -71,12 +79,23 @@ void DescribePlanogramShelvesResult::parse(const std::string &payload)
 		storeId_ = value["StoreId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
 std::vector<DescribePlanogramShelvesResult::ShelfInfo> DescribePlanogramShelvesResult::getShelfInfos()const
 {
 	return shelfInfos_;
+}
+
+int DescribePlanogramShelvesResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string DescribePlanogramShelvesResult::getMessage()const
@@ -87,6 +106,16 @@ std::string DescribePlanogramShelvesResult::getMessage()const
 std::string DescribePlanogramShelvesResult::getStoreId()const
 {
 	return storeId_;
+}
+
+int DescribePlanogramShelvesResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribePlanogramShelvesResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::string DescribePlanogramShelvesResult::getDynamicCode()const

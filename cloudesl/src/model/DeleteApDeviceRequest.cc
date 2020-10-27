@@ -27,6 +27,17 @@ DeleteApDeviceRequest::DeleteApDeviceRequest() :
 DeleteApDeviceRequest::~DeleteApDeviceRequest()
 {}
 
+std::string DeleteApDeviceRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DeleteApDeviceRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DeleteApDeviceRequest::getApMac()const
 {
 	return apMac_;

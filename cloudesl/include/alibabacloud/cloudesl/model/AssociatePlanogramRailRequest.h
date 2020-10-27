@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				AssociatePlanogramRailRequest();
 				~AssociatePlanogramRailRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getLayer()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setRailCode(const std::string& railCode);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 				int layer_;
 				std::string shelf_;

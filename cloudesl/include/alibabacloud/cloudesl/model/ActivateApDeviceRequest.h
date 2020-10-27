@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				ActivateApDeviceRequest();
 				~ActivateApDeviceRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getApMac()const;
 				void setApMac(const std::string& apMac);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 
             private:
+				std::string extraParams_;
 				std::string apMac_;
 				std::string storeId_;
 

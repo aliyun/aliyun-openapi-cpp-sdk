@@ -27,6 +27,17 @@ AssociatePlanogramRailRequest::AssociatePlanogramRailRequest() :
 AssociatePlanogramRailRequest::~AssociatePlanogramRailRequest()
 {}
 
+std::string AssociatePlanogramRailRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void AssociatePlanogramRailRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string AssociatePlanogramRailRequest::getStoreId()const
 {
 	return storeId_;

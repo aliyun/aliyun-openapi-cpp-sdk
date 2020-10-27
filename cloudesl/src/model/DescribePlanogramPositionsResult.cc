@@ -47,6 +47,8 @@ void DescribePlanogramPositionsResult::parse(const std::string &payload)
 			layerInfosObject.layer = std::stoi(valueLayerInfosLayerInfo["Layer"].asString());
 		if(!valueLayerInfosLayerInfo["LayerOrigin"].isNull())
 			layerInfosObject.layerOrigin = valueLayerInfosLayerInfo["LayerOrigin"].asString();
+		if(!valueLayerInfosLayerInfo["RailCode"].isNull())
+			layerInfosObject.railCode = valueLayerInfosLayerInfo["RailCode"].asString();
 		auto allShelfPositionInfosNode = allLayerInfosNode["ShelfPositionInfos"]["ShelfPositionInfo"];
 		for (auto allLayerInfosNodeShelfPositionInfosShelfPositionInfo : allShelfPositionInfosNode)
 		{
@@ -87,6 +89,8 @@ void DescribePlanogramPositionsResult::parse(const std::string &payload)
 		storeId_ = value["StoreId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ShelfType"].isNull())
+		shelfType_ = value["ShelfType"].asString();
 
 }
 
@@ -98,6 +102,11 @@ std::string DescribePlanogramPositionsResult::getMessage()const
 std::string DescribePlanogramPositionsResult::getStoreId()const
 {
 	return storeId_;
+}
+
+std::string DescribePlanogramPositionsResult::getShelfType()const
+{
+	return shelfType_;
 }
 
 std::string DescribePlanogramPositionsResult::getShelf()const

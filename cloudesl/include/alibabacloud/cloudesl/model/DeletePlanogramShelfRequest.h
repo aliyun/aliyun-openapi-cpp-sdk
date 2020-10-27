@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DeletePlanogramShelfRequest();
 				~DeletePlanogramShelfRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				bool getBeAutoRefresh()const;
 				void setBeAutoRefresh(bool beAutoRefresh);
 				std::string getStoreId()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setShelf(const std::string& shelf);
 
             private:
+				std::string extraParams_;
 				bool beAutoRefresh_;
 				std::string storeId_;
 				std::string shelf_;

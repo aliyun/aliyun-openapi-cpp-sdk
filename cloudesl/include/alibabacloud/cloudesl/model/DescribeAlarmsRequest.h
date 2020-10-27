@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeAlarmsRequest();
 				~DescribeAlarmsRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getPageNumber()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setDeviceMac(const std::string& deviceMac);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 				int pageNumber_;
 				int pageSize_;

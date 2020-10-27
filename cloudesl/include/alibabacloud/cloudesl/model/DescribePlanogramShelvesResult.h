@@ -38,8 +38,12 @@ namespace AlibabaCloud
 					{
 						int layer;
 					};
+					std::string category;
+					std::string shelfType;
+					std::string zone;
 					std::string shelf;
 					std::vector<ShelfInfo::LayerInfo> layerInfos;
+					bool beMatch;
 				};
 
 
@@ -47,8 +51,11 @@ namespace AlibabaCloud
 				explicit DescribePlanogramShelvesResult(const std::string &payload);
 				~DescribePlanogramShelvesResult();
 				std::vector<ShelfInfo> getShelfInfos()const;
+				int getTotalCount()const;
 				std::string getMessage()const;
 				std::string getStoreId()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				std::string getDynamicCode()const;
 				std::string getDynamicMessage()const;
 				std::string getErrorCode()const;
@@ -60,8 +67,11 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<ShelfInfo> shelfInfos_;
+				int totalCount_;
 				std::string message_;
 				std::string storeId_;
+				int pageSize_;
+				int pageNumber_;
 				std::string dynamicCode_;
 				std::string dynamicMessage_;
 				std::string errorCode_;

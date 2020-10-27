@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				DissociatePlanogramRailRequest();
 				~DissociatePlanogramRailRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				std::string getRailCode()const;
 				void setRailCode(const std::string& railCode);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 				std::string railCode_;
 

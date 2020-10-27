@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				UpdateEslDeviceLightRequest();
 				~UpdateEslDeviceLightRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				int getLightUpTime()const;
 				void setLightUpTime(int lightUpTime);
 				std::string getStoreId()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				void setItemBarCode(const std::string& itemBarCode);
 
             private:
+				std::string extraParams_;
 				int lightUpTime_;
 				std::string storeId_;
 				std::string frequency_;

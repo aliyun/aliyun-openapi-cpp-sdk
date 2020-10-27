@@ -159,6 +159,42 @@ CloudeslClient::AddPlanogramShelfOutcomeCallable CloudeslClient::addPlanogramShe
 	return task->get_future();
 }
 
+CloudeslClient::AddRoleActionsOutcome CloudeslClient::addRoleActions(const AddRoleActionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddRoleActionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddRoleActionsOutcome(AddRoleActionsResult(outcome.result()));
+	else
+		return AddRoleActionsOutcome(outcome.error());
+}
+
+void CloudeslClient::addRoleActionsAsync(const AddRoleActionsRequest& request, const AddRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addRoleActions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::AddRoleActionsOutcomeCallable CloudeslClient::addRoleActionsCallable(const AddRoleActionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddRoleActionsOutcome()>>(
+			[this, request]()
+			{
+			return this->addRoleActions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::AddUserOutcome CloudeslClient::addUser(const AddUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +519,42 @@ CloudeslClient::DeletePlanogramShelfOutcomeCallable CloudeslClient::deletePlanog
 	return task->get_future();
 }
 
+CloudeslClient::DeleteRoleActionsOutcome CloudeslClient::deleteRoleActions(const DeleteRoleActionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRoleActionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRoleActionsOutcome(DeleteRoleActionsResult(outcome.result()));
+	else
+		return DeleteRoleActionsOutcome(outcome.error());
+}
+
+void CloudeslClient::deleteRoleActionsAsync(const DeleteRoleActionsRequest& request, const DeleteRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRoleActions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DeleteRoleActionsOutcomeCallable CloudeslClient::deleteRoleActionsCallable(const DeleteRoleActionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRoleActionsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRoleActions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudeslClient::DeleteStoreOutcome CloudeslClient::deleteStore(const DeleteStoreRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +729,42 @@ CloudeslClient::DescribeBindersOutcomeCallable CloudeslClient::describeBindersCa
 			[this, request]()
 			{
 			return this->describeBinders(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeClientPackageOutcome CloudeslClient::describeClientPackage(const DescribeClientPackageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClientPackageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClientPackageOutcome(DescribeClientPackageResult(outcome.result()));
+	else
+		return DescribeClientPackageOutcome(outcome.error());
+}
+
+void CloudeslClient::describeClientPackageAsync(const DescribeClientPackageRequest& request, const DescribeClientPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClientPackage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeClientPackageOutcomeCallable CloudeslClient::describeClientPackageCallable(const DescribeClientPackageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClientPackageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClientPackage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,6 +981,42 @@ CloudeslClient::DescribePlanogramShelvesOutcomeCallable CloudeslClient::describe
 			[this, request]()
 			{
 			return this->describePlanogramShelves(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::DescribeRoleActionsOutcome CloudeslClient::describeRoleActions(const DescribeRoleActionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRoleActionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRoleActionsOutcome(DescribeRoleActionsResult(outcome.result()));
+	else
+		return DescribeRoleActionsOutcome(outcome.error());
+}
+
+void CloudeslClient::describeRoleActionsAsync(const DescribeRoleActionsRequest& request, const DescribeRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRoleActions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::DescribeRoleActionsOutcomeCallable CloudeslClient::describeRoleActionsCallable(const DescribeRoleActionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRoleActionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRoleActions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1269,6 +1413,42 @@ CloudeslClient::UpdateStoreConfigOutcomeCallable CloudeslClient::updateStoreConf
 			[this, request]()
 			{
 			return this->updateStoreConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudeslClient::UpdateUserOutcome CloudeslClient::updateUser(const UpdateUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateUserOutcome(UpdateUserResult(outcome.result()));
+	else
+		return UpdateUserOutcome(outcome.error());
+}
+
+void CloudeslClient::updateUserAsync(const UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudeslClient::UpdateUserOutcomeCallable CloudeslClient::updateUserCallable(const UpdateUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateUserOutcome()>>(
+			[this, request]()
+			{
+			return this->updateUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

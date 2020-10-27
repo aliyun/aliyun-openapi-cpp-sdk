@@ -27,6 +27,28 @@ AddApDeviceRequest::AddApDeviceRequest() :
 AddApDeviceRequest::~AddApDeviceRequest()
 {}
 
+std::string AddApDeviceRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void AddApDeviceRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
+std::string AddApDeviceRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddApDeviceRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setBodyParameter("ClientToken", clientToken);
+}
+
 std::string AddApDeviceRequest::getRemark()const
 {
 	return remark_;

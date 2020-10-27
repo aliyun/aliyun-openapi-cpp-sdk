@@ -27,6 +27,17 @@ DescribeItemsRequest::DescribeItemsRequest() :
 DescribeItemsRequest::~DescribeItemsRequest()
 {}
 
+std::string DescribeItemsRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribeItemsRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribeItemsRequest::getStoreId()const
 {
 	return storeId_;

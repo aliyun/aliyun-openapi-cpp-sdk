@@ -27,6 +27,17 @@ DescribePlanogramEslDevicesRequest::DescribePlanogramEslDevicesRequest() :
 DescribePlanogramEslDevicesRequest::~DescribePlanogramEslDevicesRequest()
 {}
 
+std::string DescribePlanogramEslDevicesRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribePlanogramEslDevicesRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribePlanogramEslDevicesRequest::getStoreId()const
 {
 	return storeId_;
@@ -47,6 +58,17 @@ void DescribePlanogramEslDevicesRequest::setLayer(int layer)
 {
 	layer_ = layer;
 	setBodyParameter("Layer", std::to_string(layer));
+}
+
+std::string DescribePlanogramEslDevicesRequest::getEslBarCode()const
+{
+	return eslBarCode_;
+}
+
+void DescribePlanogramEslDevicesRequest::setEslBarCode(const std::string& eslBarCode)
+{
+	eslBarCode_ = eslBarCode;
+	setBodyParameter("EslBarCode", eslBarCode);
 }
 
 std::string DescribePlanogramEslDevicesRequest::getShelf()const

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeUserLogRequest();
 				~DescribeUserLogRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				std::string getUserId()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				void setLogId(const std::string& logId);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 				std::string userId_;
 				int pageNumber_;

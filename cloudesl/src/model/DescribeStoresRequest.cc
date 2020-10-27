@@ -27,6 +27,17 @@ DescribeStoresRequest::DescribeStoresRequest() :
 DescribeStoresRequest::~DescribeStoresRequest()
 {}
 
+std::string DescribeStoresRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DescribeStoresRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string DescribeStoresRequest::getStoreName()const
 {
 	return storeName_;

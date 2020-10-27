@@ -48,6 +48,20 @@ void GetUserResult::parse(const std::string &payload)
 		user_.userId = userNode["UserId"].asString();
 	if(!userNode["UserType"].isNull())
 		user_.userType = userNode["UserType"].asString();
+	if(!userNode["OwnerId"].isNull())
+		user_.ownerId = userNode["OwnerId"].asString();
+	if(!userNode["Bid"].isNull())
+		user_.bid = userNode["Bid"].asString();
+	auto allDingTalkInfosNode = userNode["DingTalkInfos"]["DingTalkInfo"];
+	for (auto userNodeDingTalkInfosDingTalkInfo : allDingTalkInfosNode)
+	{
+		User::DingTalkInfo dingTalkInfoObject;
+		if(!userNodeDingTalkInfosDingTalkInfo["DingTalkCompanyId"].isNull())
+			dingTalkInfoObject.dingTalkCompanyId = userNodeDingTalkInfosDingTalkInfo["DingTalkCompanyId"].asString();
+		if(!userNodeDingTalkInfosDingTalkInfo["DingTalkUserId"].isNull())
+			dingTalkInfoObject.dingTalkUserId = userNodeDingTalkInfosDingTalkInfo["DingTalkUserId"].asString();
+		user_.dingTalkInfos.push_back(dingTalkInfoObject);
+	}
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())

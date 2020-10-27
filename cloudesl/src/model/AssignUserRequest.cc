@@ -27,6 +27,17 @@ AssignUserRequest::AssignUserRequest() :
 AssignUserRequest::~AssignUserRequest()
 {}
 
+std::string AssignUserRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void AssignUserRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
 std::string AssignUserRequest::getStores()const
 {
 	return stores_;
