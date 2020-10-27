@@ -22,6 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "XtraceExport.h"
+#include "model/CheckServiceLinkedRoleForDeletingRequest.h"
+#include "model/CheckServiceLinkedRoleForDeletingResult.h"
+#include "model/GetSamplingRequest.h"
+#include "model/GetSamplingResult.h"
 #include "model/GetTagKeyRequest.h"
 #include "model/GetTagKeyResult.h"
 #include "model/GetTagValRequest.h"
@@ -30,6 +34,8 @@
 #include "model/GetTokenResult.h"
 #include "model/GetTraceRequest.h"
 #include "model/GetTraceResult.h"
+#include "model/GetTraceAnalysisRequest.h"
+#include "model/GetTraceAnalysisResult.h"
 #include "model/ListIpOrHostsRequest.h"
 #include "model/ListIpOrHostsResult.h"
 #include "model/ListServicesRequest.h"
@@ -40,6 +46,8 @@
 #include "model/QueryMetricResult.h"
 #include "model/SearchTracesRequest.h"
 #include "model/SearchTracesResult.h"
+#include "model/UpdateSamplingRequest.h"
+#include "model/UpdateSamplingResult.h"
 
 
 namespace AlibabaCloud
@@ -49,6 +57,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_XTRACE_EXPORT XtraceClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CheckServiceLinkedRoleForDeletingResult> CheckServiceLinkedRoleForDeletingOutcome;
+			typedef std::future<CheckServiceLinkedRoleForDeletingOutcome> CheckServiceLinkedRoleForDeletingOutcomeCallable;
+			typedef std::function<void(const XtraceClient*, const Model::CheckServiceLinkedRoleForDeletingRequest&, const CheckServiceLinkedRoleForDeletingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceLinkedRoleForDeletingAsyncHandler;
+			typedef Outcome<Error, Model::GetSamplingResult> GetSamplingOutcome;
+			typedef std::future<GetSamplingOutcome> GetSamplingOutcomeCallable;
+			typedef std::function<void(const XtraceClient*, const Model::GetSamplingRequest&, const GetSamplingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSamplingAsyncHandler;
 			typedef Outcome<Error, Model::GetTagKeyResult> GetTagKeyOutcome;
 			typedef std::future<GetTagKeyOutcome> GetTagKeyOutcomeCallable;
 			typedef std::function<void(const XtraceClient*, const Model::GetTagKeyRequest&, const GetTagKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTagKeyAsyncHandler;
@@ -61,6 +75,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTraceResult> GetTraceOutcome;
 			typedef std::future<GetTraceOutcome> GetTraceOutcomeCallable;
 			typedef std::function<void(const XtraceClient*, const Model::GetTraceRequest&, const GetTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTraceAsyncHandler;
+			typedef Outcome<Error, Model::GetTraceAnalysisResult> GetTraceAnalysisOutcome;
+			typedef std::future<GetTraceAnalysisOutcome> GetTraceAnalysisOutcomeCallable;
+			typedef std::function<void(const XtraceClient*, const Model::GetTraceAnalysisRequest&, const GetTraceAnalysisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTraceAnalysisAsyncHandler;
 			typedef Outcome<Error, Model::ListIpOrHostsResult> ListIpOrHostsOutcome;
 			typedef std::future<ListIpOrHostsOutcome> ListIpOrHostsOutcomeCallable;
 			typedef std::function<void(const XtraceClient*, const Model::ListIpOrHostsRequest&, const ListIpOrHostsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIpOrHostsAsyncHandler;
@@ -76,11 +93,20 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchTracesResult> SearchTracesOutcome;
 			typedef std::future<SearchTracesOutcome> SearchTracesOutcomeCallable;
 			typedef std::function<void(const XtraceClient*, const Model::SearchTracesRequest&, const SearchTracesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchTracesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSamplingResult> UpdateSamplingOutcome;
+			typedef std::future<UpdateSamplingOutcome> UpdateSamplingOutcomeCallable;
+			typedef std::function<void(const XtraceClient*, const Model::UpdateSamplingRequest&, const UpdateSamplingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSamplingAsyncHandler;
 
 			XtraceClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			XtraceClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			XtraceClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~XtraceClient();
+			CheckServiceLinkedRoleForDeletingOutcome checkServiceLinkedRoleForDeleting(const Model::CheckServiceLinkedRoleForDeletingRequest &request)const;
+			void checkServiceLinkedRoleForDeletingAsync(const Model::CheckServiceLinkedRoleForDeletingRequest& request, const CheckServiceLinkedRoleForDeletingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckServiceLinkedRoleForDeletingOutcomeCallable checkServiceLinkedRoleForDeletingCallable(const Model::CheckServiceLinkedRoleForDeletingRequest& request) const;
+			GetSamplingOutcome getSampling(const Model::GetSamplingRequest &request)const;
+			void getSamplingAsync(const Model::GetSamplingRequest& request, const GetSamplingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSamplingOutcomeCallable getSamplingCallable(const Model::GetSamplingRequest& request) const;
 			GetTagKeyOutcome getTagKey(const Model::GetTagKeyRequest &request)const;
 			void getTagKeyAsync(const Model::GetTagKeyRequest& request, const GetTagKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTagKeyOutcomeCallable getTagKeyCallable(const Model::GetTagKeyRequest& request) const;
@@ -93,6 +119,9 @@ namespace AlibabaCloud
 			GetTraceOutcome getTrace(const Model::GetTraceRequest &request)const;
 			void getTraceAsync(const Model::GetTraceRequest& request, const GetTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTraceOutcomeCallable getTraceCallable(const Model::GetTraceRequest& request) const;
+			GetTraceAnalysisOutcome getTraceAnalysis(const Model::GetTraceAnalysisRequest &request)const;
+			void getTraceAnalysisAsync(const Model::GetTraceAnalysisRequest& request, const GetTraceAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTraceAnalysisOutcomeCallable getTraceAnalysisCallable(const Model::GetTraceAnalysisRequest& request) const;
 			ListIpOrHostsOutcome listIpOrHosts(const Model::ListIpOrHostsRequest &request)const;
 			void listIpOrHostsAsync(const Model::ListIpOrHostsRequest& request, const ListIpOrHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListIpOrHostsOutcomeCallable listIpOrHostsCallable(const Model::ListIpOrHostsRequest& request) const;
@@ -108,6 +137,9 @@ namespace AlibabaCloud
 			SearchTracesOutcome searchTraces(const Model::SearchTracesRequest &request)const;
 			void searchTracesAsync(const Model::SearchTracesRequest& request, const SearchTracesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchTracesOutcomeCallable searchTracesCallable(const Model::SearchTracesRequest& request) const;
+			UpdateSamplingOutcome updateSampling(const Model::UpdateSamplingRequest &request)const;
+			void updateSamplingAsync(const Model::UpdateSamplingRequest& request, const UpdateSamplingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSamplingOutcomeCallable updateSamplingCallable(const Model::UpdateSamplingRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

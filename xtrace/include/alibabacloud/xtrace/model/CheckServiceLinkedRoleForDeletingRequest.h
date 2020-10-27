@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
-#define ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
+#ifndef ALIBABACLOUD_XTRACE_MODEL_CHECKSERVICELINKEDROLEFORDELETINGREQUEST_H_
+#define ALIBABACLOUD_XTRACE_MODEL_CHECKSERVICELINKEDROLEFORDELETINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_XTRACE_EXPORT GetTokenRequest : public RpcServiceRequest
+			class ALIBABACLOUD_XTRACE_EXPORT CheckServiceLinkedRoleForDeletingRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetTokenRequest();
-				~GetTokenRequest();
+				CheckServiceLinkedRoleForDeletingRequest();
+				~CheckServiceLinkedRoleForDeletingRequest();
 
+				std::string getSPIRegionId()const;
+				void setSPIRegionId(const std::string& sPIRegionId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getAppType()const;
-				void setAppType(const std::string& appType);
-				std::string getProxyUserId()const;
-				void setProxyUserId(const std::string& proxyUserId);
+				std::string getRoleArn()const;
+				void setRoleArn(const std::string& roleArn);
+				std::string getDeletionTaskId()const;
+				void setDeletionTaskId(const std::string& deletionTaskId);
+				std::string getServiceName()const;
+				void setServiceName(const std::string& serviceName);
 
             private:
+				std::string sPIRegionId_;
 				std::string regionId_;
-				std::string appType_;
-				std::string proxyUserId_;
+				std::string roleArn_;
+				std::string deletionTaskId_;
+				std::string serviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
+#endif // !ALIBABACLOUD_XTRACE_MODEL_CHECKSERVICELINKEDROLEFORDELETINGREQUEST_H_

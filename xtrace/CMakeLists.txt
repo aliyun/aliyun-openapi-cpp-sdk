@@ -21,6 +21,10 @@ set(xtrace_public_header
 	include/alibabacloud/xtrace/XtraceExport.h )
 
 set(xtrace_public_header_model 
+	include/alibabacloud/xtrace/model/CheckServiceLinkedRoleForDeletingRequest.h
+	include/alibabacloud/xtrace/model/CheckServiceLinkedRoleForDeletingResult.h
+	include/alibabacloud/xtrace/model/GetSamplingRequest.h
+	include/alibabacloud/xtrace/model/GetSamplingResult.h
 	include/alibabacloud/xtrace/model/GetTagKeyRequest.h
 	include/alibabacloud/xtrace/model/GetTagKeyResult.h
 	include/alibabacloud/xtrace/model/GetTagValRequest.h
@@ -29,6 +33,8 @@ set(xtrace_public_header_model
 	include/alibabacloud/xtrace/model/GetTokenResult.h
 	include/alibabacloud/xtrace/model/GetTraceRequest.h
 	include/alibabacloud/xtrace/model/GetTraceResult.h
+	include/alibabacloud/xtrace/model/GetTraceAnalysisRequest.h
+	include/alibabacloud/xtrace/model/GetTraceAnalysisResult.h
 	include/alibabacloud/xtrace/model/ListIpOrHostsRequest.h
 	include/alibabacloud/xtrace/model/ListIpOrHostsResult.h
 	include/alibabacloud/xtrace/model/ListServicesRequest.h
@@ -38,10 +44,16 @@ set(xtrace_public_header_model
 	include/alibabacloud/xtrace/model/QueryMetricRequest.h
 	include/alibabacloud/xtrace/model/QueryMetricResult.h
 	include/alibabacloud/xtrace/model/SearchTracesRequest.h
-	include/alibabacloud/xtrace/model/SearchTracesResult.h )
+	include/alibabacloud/xtrace/model/SearchTracesResult.h
+	include/alibabacloud/xtrace/model/UpdateSamplingRequest.h
+	include/alibabacloud/xtrace/model/UpdateSamplingResult.h )
 
 set(xtrace_src 
 	src/XtraceClient.cc
+	src/model/CheckServiceLinkedRoleForDeletingRequest.cc
+	src/model/CheckServiceLinkedRoleForDeletingResult.cc
+	src/model/GetSamplingRequest.cc
+	src/model/GetSamplingResult.cc
 	src/model/GetTagKeyRequest.cc
 	src/model/GetTagKeyResult.cc
 	src/model/GetTagValRequest.cc
@@ -50,6 +62,8 @@ set(xtrace_src
 	src/model/GetTokenResult.cc
 	src/model/GetTraceRequest.cc
 	src/model/GetTraceResult.cc
+	src/model/GetTraceAnalysisRequest.cc
+	src/model/GetTraceAnalysisResult.cc
 	src/model/ListIpOrHostsRequest.cc
 	src/model/ListIpOrHostsResult.cc
 	src/model/ListServicesRequest.cc
@@ -59,7 +73,9 @@ set(xtrace_src
 	src/model/QueryMetricRequest.cc
 	src/model/QueryMetricResult.cc
 	src/model/SearchTracesRequest.cc
-	src/model/SearchTracesResult.cc )
+	src/model/SearchTracesResult.cc
+	src/model/UpdateSamplingRequest.cc
+	src/model/UpdateSamplingResult.cc )
 
 add_library(xtrace ${LIB_TYPE}
 	${xtrace_public_header}

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
-#define ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
+#ifndef ALIBABACLOUD_XTRACE_MODEL_GETTRACEANALYSISRESULT_H_
+#define ALIBABACLOUD_XTRACE_MODEL_GETTRACEANALYSISRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/xtrace/XtraceExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_XTRACE_EXPORT GetTokenRequest : public RpcServiceRequest
+			class ALIBABACLOUD_XTRACE_EXPORT GetTraceAnalysisResult : public ServiceResult
 			{
-
 			public:
-				GetTokenRequest();
-				~GetTokenRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getAppType()const;
-				void setAppType(const std::string& appType);
-				std::string getProxyUserId()const;
-				void setProxyUserId(const std::string& proxyUserId);
 
-            private:
-				std::string regionId_;
-				std::string appType_;
-				std::string proxyUserId_;
+				GetTraceAnalysisResult();
+				explicit GetTraceAnalysisResult(const std::string &payload);
+				~GetTraceAnalysisResult();
+				std::string getData()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
+#endif // !ALIBABACLOUD_XTRACE_MODEL_GETTRACEANALYSISRESULT_H_

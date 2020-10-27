@@ -14,47 +14,47 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/xtrace/model/GetTokenRequest.h>
+#include <alibabacloud/xtrace/model/UpdateSamplingRequest.h>
 
-using AlibabaCloud::Xtrace::Model::GetTokenRequest;
+using AlibabaCloud::Xtrace::Model::UpdateSamplingRequest;
 
-GetTokenRequest::GetTokenRequest() :
-	RpcServiceRequest("xtrace", "2019-08-08", "GetToken")
+UpdateSamplingRequest::UpdateSamplingRequest() :
+	RpcServiceRequest("xtrace", "2019-08-08", "UpdateSampling")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetTokenRequest::~GetTokenRequest()
+UpdateSamplingRequest::~UpdateSamplingRequest()
 {}
 
-std::string GetTokenRequest::getRegionId()const
+std::string UpdateSamplingRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void GetTokenRequest::setRegionId(const std::string& regionId)
+void UpdateSamplingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
 }
 
-std::string GetTokenRequest::getAppType()const
+std::string UpdateSamplingRequest::getSampling()const
 {
-	return appType_;
+	return sampling_;
 }
 
-void GetTokenRequest::setAppType(const std::string& appType)
+void UpdateSamplingRequest::setSampling(const std::string& sampling)
 {
-	appType_ = appType;
-	setParameter("AppType", appType);
+	sampling_ = sampling;
+	setParameter("Sampling", sampling);
 }
 
-std::string GetTokenRequest::getProxyUserId()const
+std::string UpdateSamplingRequest::getProxyUserId()const
 {
 	return proxyUserId_;
 }
 
-void GetTokenRequest::setProxyUserId(const std::string& proxyUserId)
+void UpdateSamplingRequest::setProxyUserId(const std::string& proxyUserId)
 {
 	proxyUserId_ = proxyUserId;
 	setParameter("ProxyUserId", proxyUserId);

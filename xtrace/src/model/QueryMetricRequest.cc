@@ -76,6 +76,17 @@ void QueryMetricRequest::setFilters(const std::vector<Filters>& filters)
 	}
 }
 
+std::string QueryMetricRequest::getProxyUserId()const
+{
+	return proxyUserId_;
+}
+
+void QueryMetricRequest::setProxyUserId(const std::string& proxyUserId)
+{
+	proxyUserId_ = proxyUserId;
+	setParameter("ProxyUserId", proxyUserId);
+}
+
 std::vector<std::string> QueryMetricRequest::getMeasures()const
 {
 	return measures_;

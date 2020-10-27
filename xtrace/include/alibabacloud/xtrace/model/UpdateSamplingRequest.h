@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
-#define ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
+#ifndef ALIBABACLOUD_XTRACE_MODEL_UPDATESAMPLINGREQUEST_H_
+#define ALIBABACLOUD_XTRACE_MODEL_UPDATESAMPLINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_XTRACE_EXPORT GetTokenRequest : public RpcServiceRequest
+			class ALIBABACLOUD_XTRACE_EXPORT UpdateSamplingRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetTokenRequest();
-				~GetTokenRequest();
+				UpdateSamplingRequest();
+				~UpdateSamplingRequest();
 
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getAppType()const;
-				void setAppType(const std::string& appType);
+				std::string getSampling()const;
+				void setSampling(const std::string& sampling);
 				std::string getProxyUserId()const;
 				void setProxyUserId(const std::string& proxyUserId);
 
             private:
 				std::string regionId_;
-				std::string appType_;
+				std::string sampling_;
 				std::string proxyUserId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_XTRACE_MODEL_GETTOKENREQUEST_H_
+#endif // !ALIBABACLOUD_XTRACE_MODEL_UPDATESAMPLINGREQUEST_H_

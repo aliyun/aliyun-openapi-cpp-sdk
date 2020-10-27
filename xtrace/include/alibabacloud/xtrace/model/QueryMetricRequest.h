@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setStartTime(long startTime);
 				std::vector<Filters> getFilters()const;
 				void setFilters(const std::vector<Filters>& filters);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 				std::vector<std::string> getMeasures()const;
 				void setMeasures(const std::vector<std::string>& measures);
 				int getIntervalInSec()const;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				std::string orderBy_;
 				long startTime_;
 				std::vector<Filters> filters_;
+				std::string proxyUserId_;
 				std::vector<std::string> measures_;
 				int intervalInSec_;
 				std::string metric_;
