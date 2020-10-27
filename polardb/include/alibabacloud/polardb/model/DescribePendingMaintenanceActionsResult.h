@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKCOUNTRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKCOUNTRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPENDINGMAINTENANCEACTIONSRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPENDINGMAINTENANCEACTIONSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeActiveOperationTaskCountResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DescribePendingMaintenanceActionsResult : public ServiceResult
 			{
 			public:
+				struct Items
+				{
+					std::string taskType;
+					int count;
+				};
 
 
-				DescribeActiveOperationTaskCountResult();
-				explicit DescribeActiveOperationTaskCountResult(const std::string &payload);
-				~DescribeActiveOperationTaskCountResult();
-				int getNeedPop()const;
-				int getTaskCount()const;
+				DescribePendingMaintenanceActionsResult();
+				explicit DescribePendingMaintenanceActionsResult(const std::string &payload);
+				~DescribePendingMaintenanceActionsResult();
+				std::vector<Items> getTypeList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int needPop_;
-				int taskCount_;
+				std::vector<Items> typeList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKCOUNTRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPENDINGMAINTENANCEACTIONSRESULT_H_

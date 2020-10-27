@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKREGIONREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKREGIONREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYPENDINGMAINTENANCEACTIONREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_MODIFYPENDINGMAINTENANCEACTIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeActiveOperationTaskRegionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT ModifyPendingMaintenanceActionRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeActiveOperationTaskRegionRequest();
-				~DescribeActiveOperationTaskRegionRequest();
+				ModifyPendingMaintenanceActionRequest();
+				~ModifyPendingMaintenanceActionRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				int getIsHistory()const;
-				void setIsHistory(int isHistory);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getTaskType()const;
-				void setTaskType(const std::string& taskType);
+				std::string getSwitchTime()const;
+				void setSwitchTime(const std::string& switchTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getIds()const;
+				void setIds(const std::string& ids);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
-				int isHistory_;
 				std::string securityToken_;
-				std::string taskType_;
+				std::string switchTime_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string ids_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKREGIONREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYPENDINGMAINTENANCEACTIONREQUEST_H_

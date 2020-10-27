@@ -38,6 +38,17 @@ void ModifyDBClusterAuditLogCollectorRequest::setResourceOwnerId(long resourceOw
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBClusterAuditLogCollectorRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBClusterAuditLogCollectorRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyDBClusterAuditLogCollectorRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -91,16 +102,5 @@ void ModifyDBClusterAuditLogCollectorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyDBClusterAuditLogCollectorRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBClusterAuditLogCollectorRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

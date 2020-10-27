@@ -53,14 +53,6 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DeleteDatabaseResult.h
 	include/alibabacloud/polardb/model/DescribeAccountsRequest.h
 	include/alibabacloud/polardb/model/DescribeAccountsResult.h
-	include/alibabacloud/polardb/model/DescribeActiveOperationTaskRequest.h
-	include/alibabacloud/polardb/model/DescribeActiveOperationTaskResult.h
-	include/alibabacloud/polardb/model/DescribeActiveOperationTaskCountRequest.h
-	include/alibabacloud/polardb/model/DescribeActiveOperationTaskCountResult.h
-	include/alibabacloud/polardb/model/DescribeActiveOperationTaskRegionRequest.h
-	include/alibabacloud/polardb/model/DescribeActiveOperationTaskRegionResult.h
-	include/alibabacloud/polardb/model/DescribeActiveOperationTaskTypeRequest.h
-	include/alibabacloud/polardb/model/DescribeActiveOperationTaskTypeResult.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeResult.h
 	include/alibabacloud/polardb/model/DescribeBackupLogsRequest.h
@@ -103,6 +95,10 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsResult.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyResult.h
+	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionRequest.h
+	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionResult.h
+	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionsRequest.h
+	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionsResult.h
 	include/alibabacloud/polardb/model/DescribeRegionsRequest.h
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
@@ -119,8 +115,6 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordRequest.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordResult.h
-	include/alibabacloud/polardb/model/ModifyActiveOperationTaskRequest.h
-	include/alibabacloud/polardb/model/ModifyActiveOperationTaskResult.h
 	include/alibabacloud/polardb/model/ModifyAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/ModifyAutoRenewAttributeResult.h
 	include/alibabacloud/polardb/model/ModifyBackupPolicyRequest.h
@@ -151,6 +145,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBNodeClassResult.h
 	include/alibabacloud/polardb/model/ModifyLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/ModifyLogBackupPolicyResult.h
+	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionRequest.h
+	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionResult.h
 	include/alibabacloud/polardb/model/ResetAccountRequest.h
 	include/alibabacloud/polardb/model/ResetAccountResult.h
 	include/alibabacloud/polardb/model/RestartDBNodeRequest.h
@@ -196,14 +192,6 @@ set(polardb_src
 	src/model/DeleteDatabaseResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
-	src/model/DescribeActiveOperationTaskRequest.cc
-	src/model/DescribeActiveOperationTaskResult.cc
-	src/model/DescribeActiveOperationTaskCountRequest.cc
-	src/model/DescribeActiveOperationTaskCountResult.cc
-	src/model/DescribeActiveOperationTaskRegionRequest.cc
-	src/model/DescribeActiveOperationTaskRegionResult.cc
-	src/model/DescribeActiveOperationTaskTypeRequest.cc
-	src/model/DescribeActiveOperationTaskTypeResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
 	src/model/DescribeAutoRenewAttributeResult.cc
 	src/model/DescribeBackupLogsRequest.cc
@@ -246,6 +234,10 @@ set(polardb_src
 	src/model/DescribeDetachedBackupsResult.cc
 	src/model/DescribeLogBackupPolicyRequest.cc
 	src/model/DescribeLogBackupPolicyResult.cc
+	src/model/DescribePendingMaintenanceActionRequest.cc
+	src/model/DescribePendingMaintenanceActionResult.cc
+	src/model/DescribePendingMaintenanceActionsRequest.cc
+	src/model/DescribePendingMaintenanceActionsResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
@@ -262,8 +254,6 @@ set(polardb_src
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPasswordRequest.cc
 	src/model/ModifyAccountPasswordResult.cc
-	src/model/ModifyActiveOperationTaskRequest.cc
-	src/model/ModifyActiveOperationTaskResult.cc
 	src/model/ModifyAutoRenewAttributeRequest.cc
 	src/model/ModifyAutoRenewAttributeResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
@@ -294,6 +284,8 @@ set(polardb_src
 	src/model/ModifyDBNodeClassResult.cc
 	src/model/ModifyLogBackupPolicyRequest.cc
 	src/model/ModifyLogBackupPolicyResult.cc
+	src/model/ModifyPendingMaintenanceActionRequest.cc
+	src/model/ModifyPendingMaintenanceActionResult.cc
 	src/model/ResetAccountRequest.cc
 	src/model/ResetAccountResult.cc
 	src/model/RestartDBNodeRequest.cc

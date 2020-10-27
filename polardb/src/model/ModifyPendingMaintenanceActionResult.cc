@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/ModifyActiveOperationTaskResult.h>
+#include <alibabacloud/polardb/model/ModifyPendingMaintenanceActionResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-ModifyActiveOperationTaskResult::ModifyActiveOperationTaskResult() :
+ModifyPendingMaintenanceActionResult::ModifyPendingMaintenanceActionResult() :
 	ServiceResult()
 {}
 
-ModifyActiveOperationTaskResult::ModifyActiveOperationTaskResult(const std::string &payload) :
+ModifyPendingMaintenanceActionResult::ModifyPendingMaintenanceActionResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyActiveOperationTaskResult::~ModifyActiveOperationTaskResult()
+ModifyPendingMaintenanceActionResult::~ModifyPendingMaintenanceActionResult()
 {}
 
-void ModifyActiveOperationTaskResult::parse(const std::string &payload)
+void ModifyPendingMaintenanceActionResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -44,7 +44,7 @@ void ModifyActiveOperationTaskResult::parse(const std::string &payload)
 
 }
 
-std::string ModifyActiveOperationTaskResult::getIds()const
+std::string ModifyPendingMaintenanceActionResult::getIds()const
 {
 	return ids_;
 }

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/DescribeActiveOperationTaskTypeResult.h>
+#include <alibabacloud/polardb/model/DescribePendingMaintenanceActionsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-DescribeActiveOperationTaskTypeResult::DescribeActiveOperationTaskTypeResult() :
+DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult() :
 	ServiceResult()
 {}
 
-DescribeActiveOperationTaskTypeResult::DescribeActiveOperationTaskTypeResult(const std::string &payload) :
+DescribePendingMaintenanceActionsResult::DescribePendingMaintenanceActionsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeActiveOperationTaskTypeResult::~DescribeActiveOperationTaskTypeResult()
+DescribePendingMaintenanceActionsResult::~DescribePendingMaintenanceActionsResult()
 {}
 
-void DescribeActiveOperationTaskTypeResult::parse(const std::string &payload)
+void DescribePendingMaintenanceActionsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -52,7 +52,7 @@ void DescribeActiveOperationTaskTypeResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeActiveOperationTaskTypeResult::Items> DescribeActiveOperationTaskTypeResult::getTypeList()const
+std::vector<DescribePendingMaintenanceActionsResult::Items> DescribePendingMaintenanceActionsResult::getTypeList()const
 {
 	return typeList_;
 }

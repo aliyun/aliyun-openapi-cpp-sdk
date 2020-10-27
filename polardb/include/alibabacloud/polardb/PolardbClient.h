@@ -54,14 +54,6 @@
 #include "model/DeleteDatabaseResult.h"
 #include "model/DescribeAccountsRequest.h"
 #include "model/DescribeAccountsResult.h"
-#include "model/DescribeActiveOperationTaskRequest.h"
-#include "model/DescribeActiveOperationTaskResult.h"
-#include "model/DescribeActiveOperationTaskCountRequest.h"
-#include "model/DescribeActiveOperationTaskCountResult.h"
-#include "model/DescribeActiveOperationTaskRegionRequest.h"
-#include "model/DescribeActiveOperationTaskRegionResult.h"
-#include "model/DescribeActiveOperationTaskTypeRequest.h"
-#include "model/DescribeActiveOperationTaskTypeResult.h"
 #include "model/DescribeAutoRenewAttributeRequest.h"
 #include "model/DescribeAutoRenewAttributeResult.h"
 #include "model/DescribeBackupLogsRequest.h"
@@ -104,6 +96,10 @@
 #include "model/DescribeDetachedBackupsResult.h"
 #include "model/DescribeLogBackupPolicyRequest.h"
 #include "model/DescribeLogBackupPolicyResult.h"
+#include "model/DescribePendingMaintenanceActionRequest.h"
+#include "model/DescribePendingMaintenanceActionResult.h"
+#include "model/DescribePendingMaintenanceActionsRequest.h"
+#include "model/DescribePendingMaintenanceActionsResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
@@ -120,8 +116,6 @@
 #include "model/ModifyAccountDescriptionResult.h"
 #include "model/ModifyAccountPasswordRequest.h"
 #include "model/ModifyAccountPasswordResult.h"
-#include "model/ModifyActiveOperationTaskRequest.h"
-#include "model/ModifyActiveOperationTaskResult.h"
 #include "model/ModifyAutoRenewAttributeRequest.h"
 #include "model/ModifyAutoRenewAttributeResult.h"
 #include "model/ModifyBackupPolicyRequest.h"
@@ -152,6 +146,8 @@
 #include "model/ModifyDBNodeClassResult.h"
 #include "model/ModifyLogBackupPolicyRequest.h"
 #include "model/ModifyLogBackupPolicyResult.h"
+#include "model/ModifyPendingMaintenanceActionRequest.h"
+#include "model/ModifyPendingMaintenanceActionResult.h"
 #include "model/ResetAccountRequest.h"
 #include "model/ResetAccountResult.h"
 #include "model/RestartDBNodeRequest.h"
@@ -219,18 +215,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAccountsResult> DescribeAccountsOutcome;
 			typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeAccountsRequest&, const DescribeAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeActiveOperationTaskResult> DescribeActiveOperationTaskOutcome;
-			typedef std::future<DescribeActiveOperationTaskOutcome> DescribeActiveOperationTaskOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeActiveOperationTaskRequest&, const DescribeActiveOperationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskAsyncHandler;
-			typedef Outcome<Error, Model::DescribeActiveOperationTaskCountResult> DescribeActiveOperationTaskCountOutcome;
-			typedef std::future<DescribeActiveOperationTaskCountOutcome> DescribeActiveOperationTaskCountOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeActiveOperationTaskCountRequest&, const DescribeActiveOperationTaskCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskCountAsyncHandler;
-			typedef Outcome<Error, Model::DescribeActiveOperationTaskRegionResult> DescribeActiveOperationTaskRegionOutcome;
-			typedef std::future<DescribeActiveOperationTaskRegionOutcome> DescribeActiveOperationTaskRegionOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeActiveOperationTaskRegionRequest&, const DescribeActiveOperationTaskRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskRegionAsyncHandler;
-			typedef Outcome<Error, Model::DescribeActiveOperationTaskTypeResult> DescribeActiveOperationTaskTypeOutcome;
-			typedef std::future<DescribeActiveOperationTaskTypeOutcome> DescribeActiveOperationTaskTypeOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeActiveOperationTaskTypeRequest&, const DescribeActiveOperationTaskTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskTypeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAutoRenewAttributeResult> DescribeAutoRenewAttributeOutcome;
 			typedef std::future<DescribeAutoRenewAttributeOutcome> DescribeAutoRenewAttributeOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeAutoRenewAttributeRequest&, const DescribeAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoRenewAttributeAsyncHandler;
@@ -294,6 +278,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLogBackupPolicyResult> DescribeLogBackupPolicyOutcome;
 			typedef std::future<DescribeLogBackupPolicyOutcome> DescribeLogBackupPolicyOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeLogBackupPolicyRequest&, const DescribeLogBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DescribePendingMaintenanceActionResult> DescribePendingMaintenanceActionOutcome;
+			typedef std::future<DescribePendingMaintenanceActionOutcome> DescribePendingMaintenanceActionOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribePendingMaintenanceActionRequest&, const DescribePendingMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePendingMaintenanceActionAsyncHandler;
+			typedef Outcome<Error, Model::DescribePendingMaintenanceActionsResult> DescribePendingMaintenanceActionsOutcome;
+			typedef std::future<DescribePendingMaintenanceActionsOutcome> DescribePendingMaintenanceActionsOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribePendingMaintenanceActionsRequest&, const DescribePendingMaintenanceActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePendingMaintenanceActionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -318,9 +308,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAccountPasswordResult> ModifyAccountPasswordOutcome;
 			typedef std::future<ModifyAccountPasswordOutcome> ModifyAccountPasswordOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyAccountPasswordRequest&, const ModifyAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountPasswordAsyncHandler;
-			typedef Outcome<Error, Model::ModifyActiveOperationTaskResult> ModifyActiveOperationTaskOutcome;
-			typedef std::future<ModifyActiveOperationTaskOutcome> ModifyActiveOperationTaskOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::ModifyActiveOperationTaskRequest&, const ModifyActiveOperationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyActiveOperationTaskAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAutoRenewAttributeResult> ModifyAutoRenewAttributeOutcome;
 			typedef std::future<ModifyAutoRenewAttributeOutcome> ModifyAutoRenewAttributeOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyAutoRenewAttributeRequest&, const ModifyAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoRenewAttributeAsyncHandler;
@@ -366,6 +353,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyLogBackupPolicyResult> ModifyLogBackupPolicyOutcome;
 			typedef std::future<ModifyLogBackupPolicyOutcome> ModifyLogBackupPolicyOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyLogBackupPolicyRequest&, const ModifyLogBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyPendingMaintenanceActionResult> ModifyPendingMaintenanceActionOutcome;
+			typedef std::future<ModifyPendingMaintenanceActionOutcome> ModifyPendingMaintenanceActionOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyPendingMaintenanceActionRequest&, const ModifyPendingMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPendingMaintenanceActionAsyncHandler;
 			typedef Outcome<Error, Model::ResetAccountResult> ResetAccountOutcome;
 			typedef std::future<ResetAccountOutcome> ResetAccountOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ResetAccountRequest&, const ResetAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountAsyncHandler;
@@ -434,18 +424,6 @@ namespace AlibabaCloud
 			DescribeAccountsOutcome describeAccounts(const Model::DescribeAccountsRequest &request)const;
 			void describeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountsOutcomeCallable describeAccountsCallable(const Model::DescribeAccountsRequest& request) const;
-			DescribeActiveOperationTaskOutcome describeActiveOperationTask(const Model::DescribeActiveOperationTaskRequest &request)const;
-			void describeActiveOperationTaskAsync(const Model::DescribeActiveOperationTaskRequest& request, const DescribeActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeActiveOperationTaskOutcomeCallable describeActiveOperationTaskCallable(const Model::DescribeActiveOperationTaskRequest& request) const;
-			DescribeActiveOperationTaskCountOutcome describeActiveOperationTaskCount(const Model::DescribeActiveOperationTaskCountRequest &request)const;
-			void describeActiveOperationTaskCountAsync(const Model::DescribeActiveOperationTaskCountRequest& request, const DescribeActiveOperationTaskCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeActiveOperationTaskCountOutcomeCallable describeActiveOperationTaskCountCallable(const Model::DescribeActiveOperationTaskCountRequest& request) const;
-			DescribeActiveOperationTaskRegionOutcome describeActiveOperationTaskRegion(const Model::DescribeActiveOperationTaskRegionRequest &request)const;
-			void describeActiveOperationTaskRegionAsync(const Model::DescribeActiveOperationTaskRegionRequest& request, const DescribeActiveOperationTaskRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeActiveOperationTaskRegionOutcomeCallable describeActiveOperationTaskRegionCallable(const Model::DescribeActiveOperationTaskRegionRequest& request) const;
-			DescribeActiveOperationTaskTypeOutcome describeActiveOperationTaskType(const Model::DescribeActiveOperationTaskTypeRequest &request)const;
-			void describeActiveOperationTaskTypeAsync(const Model::DescribeActiveOperationTaskTypeRequest& request, const DescribeActiveOperationTaskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeActiveOperationTaskTypeOutcomeCallable describeActiveOperationTaskTypeCallable(const Model::DescribeActiveOperationTaskTypeRequest& request) const;
 			DescribeAutoRenewAttributeOutcome describeAutoRenewAttribute(const Model::DescribeAutoRenewAttributeRequest &request)const;
 			void describeAutoRenewAttributeAsync(const Model::DescribeAutoRenewAttributeRequest& request, const DescribeAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAutoRenewAttributeOutcomeCallable describeAutoRenewAttributeCallable(const Model::DescribeAutoRenewAttributeRequest& request) const;
@@ -509,6 +487,12 @@ namespace AlibabaCloud
 			DescribeLogBackupPolicyOutcome describeLogBackupPolicy(const Model::DescribeLogBackupPolicyRequest &request)const;
 			void describeLogBackupPolicyAsync(const Model::DescribeLogBackupPolicyRequest& request, const DescribeLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLogBackupPolicyOutcomeCallable describeLogBackupPolicyCallable(const Model::DescribeLogBackupPolicyRequest& request) const;
+			DescribePendingMaintenanceActionOutcome describePendingMaintenanceAction(const Model::DescribePendingMaintenanceActionRequest &request)const;
+			void describePendingMaintenanceActionAsync(const Model::DescribePendingMaintenanceActionRequest& request, const DescribePendingMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePendingMaintenanceActionOutcomeCallable describePendingMaintenanceActionCallable(const Model::DescribePendingMaintenanceActionRequest& request) const;
+			DescribePendingMaintenanceActionsOutcome describePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest &request)const;
+			void describePendingMaintenanceActionsAsync(const Model::DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePendingMaintenanceActionsOutcomeCallable describePendingMaintenanceActionsCallable(const Model::DescribePendingMaintenanceActionsRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -533,9 +517,6 @@ namespace AlibabaCloud
 			ModifyAccountPasswordOutcome modifyAccountPassword(const Model::ModifyAccountPasswordRequest &request)const;
 			void modifyAccountPasswordAsync(const Model::ModifyAccountPasswordRequest& request, const ModifyAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountPasswordOutcomeCallable modifyAccountPasswordCallable(const Model::ModifyAccountPasswordRequest& request) const;
-			ModifyActiveOperationTaskOutcome modifyActiveOperationTask(const Model::ModifyActiveOperationTaskRequest &request)const;
-			void modifyActiveOperationTaskAsync(const Model::ModifyActiveOperationTaskRequest& request, const ModifyActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyActiveOperationTaskOutcomeCallable modifyActiveOperationTaskCallable(const Model::ModifyActiveOperationTaskRequest& request) const;
 			ModifyAutoRenewAttributeOutcome modifyAutoRenewAttribute(const Model::ModifyAutoRenewAttributeRequest &request)const;
 			void modifyAutoRenewAttributeAsync(const Model::ModifyAutoRenewAttributeRequest& request, const ModifyAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAutoRenewAttributeOutcomeCallable modifyAutoRenewAttributeCallable(const Model::ModifyAutoRenewAttributeRequest& request) const;
@@ -581,6 +562,9 @@ namespace AlibabaCloud
 			ModifyLogBackupPolicyOutcome modifyLogBackupPolicy(const Model::ModifyLogBackupPolicyRequest &request)const;
 			void modifyLogBackupPolicyAsync(const Model::ModifyLogBackupPolicyRequest& request, const ModifyLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLogBackupPolicyOutcomeCallable modifyLogBackupPolicyCallable(const Model::ModifyLogBackupPolicyRequest& request) const;
+			ModifyPendingMaintenanceActionOutcome modifyPendingMaintenanceAction(const Model::ModifyPendingMaintenanceActionRequest &request)const;
+			void modifyPendingMaintenanceActionAsync(const Model::ModifyPendingMaintenanceActionRequest& request, const ModifyPendingMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyPendingMaintenanceActionOutcomeCallable modifyPendingMaintenanceActionCallable(const Model::ModifyPendingMaintenanceActionRequest& request) const;
 			ResetAccountOutcome resetAccount(const Model::ResetAccountRequest &request)const;
 			void resetAccountAsync(const Model::ResetAccountRequest& request, const ResetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountOutcomeCallable resetAccountCallable(const Model::ResetAccountRequest& request) const;

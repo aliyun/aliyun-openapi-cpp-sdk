@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/DescribeActiveOperationTaskResult.h>
+#include <alibabacloud/polardb/model/DescribePendingMaintenanceActionResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-DescribeActiveOperationTaskResult::DescribeActiveOperationTaskResult() :
+DescribePendingMaintenanceActionResult::DescribePendingMaintenanceActionResult() :
 	ServiceResult()
 {}
 
-DescribeActiveOperationTaskResult::DescribeActiveOperationTaskResult(const std::string &payload) :
+DescribePendingMaintenanceActionResult::DescribePendingMaintenanceActionResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeActiveOperationTaskResult::~DescribeActiveOperationTaskResult()
+DescribePendingMaintenanceActionResult::~DescribePendingMaintenanceActionResult()
 {}
 
-void DescribeActiveOperationTaskResult::parse(const std::string &payload)
+void DescribePendingMaintenanceActionResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,10 +45,10 @@ void DescribeActiveOperationTaskResult::parse(const std::string &payload)
 		ItemsItem itemsObject;
 		if(!valueItemsItemsItem["Id"].isNull())
 			itemsObject.id = std::stoi(valueItemsItemsItem["Id"].asString());
-		if(!valueItemsItemsItem["InsName"].isNull())
-			itemsObject.insName = valueItemsItemsItem["InsName"].asString();
-		if(!valueItemsItemsItem["DbType"].isNull())
-			itemsObject.dbType = valueItemsItemsItem["DbType"].asString();
+		if(!valueItemsItemsItem["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsItemsItem["DBClusterId"].asString();
+		if(!valueItemsItemsItem["DBType"].isNull())
+			itemsObject.dBType = valueItemsItemsItem["DBType"].asString();
 		if(!valueItemsItemsItem["StartTime"].isNull())
 			itemsObject.startTime = valueItemsItemsItem["StartTime"].asString();
 		if(!valueItemsItemsItem["SwitchTime"].isNull())
@@ -65,12 +65,10 @@ void DescribeActiveOperationTaskResult::parse(const std::string &payload)
 			itemsObject.resultInfo = valueItemsItemsItem["ResultInfo"].asString();
 		if(!valueItemsItemsItem["PrepareInterval"].isNull())
 			itemsObject.prepareInterval = valueItemsItemsItem["PrepareInterval"].asString();
-		if(!valueItemsItemsItem["TaskParams"].isNull())
-			itemsObject.taskParams = valueItemsItemsItem["TaskParams"].asString();
 		if(!valueItemsItemsItem["TaskType"].isNull())
 			itemsObject.taskType = valueItemsItemsItem["TaskType"].asString();
-		if(!valueItemsItemsItem["DbVersion"].isNull())
-			itemsObject.dbVersion = valueItemsItemsItem["DbVersion"].asString();
+		if(!valueItemsItemsItem["DBVersion"].isNull())
+			itemsObject.dBVersion = valueItemsItemsItem["DBVersion"].asString();
 		if(!valueItemsItemsItem["Region"].isNull())
 			itemsObject.region = valueItemsItemsItem["Region"].asString();
 		items_.push_back(itemsObject);
@@ -84,22 +82,22 @@ void DescribeActiveOperationTaskResult::parse(const std::string &payload)
 
 }
 
-int DescribeActiveOperationTaskResult::getTotalRecordCount()const
+int DescribePendingMaintenanceActionResult::getTotalRecordCount()const
 {
 	return totalRecordCount_;
 }
 
-int DescribeActiveOperationTaskResult::getPageSize()const
+int DescribePendingMaintenanceActionResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-int DescribeActiveOperationTaskResult::getPageNumber()const
+int DescribePendingMaintenanceActionResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-std::vector<DescribeActiveOperationTaskResult::ItemsItem> DescribeActiveOperationTaskResult::getItems()const
+std::vector<DescribePendingMaintenanceActionResult::ItemsItem> DescribePendingMaintenanceActionResult::getItems()const
 {
 	return items_;
 }

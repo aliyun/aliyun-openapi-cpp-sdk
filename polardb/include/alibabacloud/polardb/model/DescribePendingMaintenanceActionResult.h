@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPENDINGMAINTENANCEACTIONRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPENDINGMAINTENANCEACTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeActiveOperationTaskResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DescribePendingMaintenanceActionResult : public ServiceResult
 			{
 			public:
 				struct ItemsItem
@@ -37,12 +37,11 @@ namespace AlibabaCloud
 					int status;
 					std::string createdTime;
 					std::string deadline;
+					std::string dBClusterId;
 					std::string startTime;
-					std::string insName;
-					std::string dbType;
-					std::string taskParams;
+					std::string dBType;
+					std::string dBVersion;
 					std::string modifiedTime;
-					std::string dbVersion;
 					std::string taskType;
 					std::string prepareInterval;
 					std::string region;
@@ -52,9 +51,9 @@ namespace AlibabaCloud
 				};
 
 
-				DescribeActiveOperationTaskResult();
-				explicit DescribeActiveOperationTaskResult(const std::string &payload);
-				~DescribeActiveOperationTaskResult();
+				DescribePendingMaintenanceActionResult();
+				explicit DescribePendingMaintenanceActionResult(const std::string &payload);
+				~DescribePendingMaintenanceActionResult();
 				int getTotalRecordCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
@@ -72,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPENDINGMAINTENANCEACTIONRESULT_H_
