@@ -60,6 +60,8 @@ void UpdateParameterResult::parse(const std::string &payload)
 		_parameter_.parameterVersion = std::stoi(_parameterNode["ParameterVersion"].asString());
 	if(!_parameterNode["Type"].isNull())
 		_parameter_.type = _parameterNode["Type"].asString();
+	if(!_parameterNode["Constraints"].isNull())
+		_parameter_.constraints = _parameterNode["Constraints"].asString();
 
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_UPDATEPARAMETERRESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_UPDATEPARAMETERRESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_UPDATEINSTANCEINFORMATIONRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_UPDATEINSTANCEINFORMATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT UpdateParameterResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT UpdateInstanceInformationResult : public ServiceResult
 			{
 			public:
-				struct _Parameter
-				{
-					std::string updatedBy;
-					std::string type;
-					std::string createdBy;
-					std::string description;
-					std::string constraints;
-					std::string updatedDate;
-					int parameterVersion;
-					std::string createdDate;
-					std::string id;
-					std::string name;
-					std::string shareType;
-				};
 
 
-				UpdateParameterResult();
-				explicit UpdateParameterResult(const std::string &payload);
-				~UpdateParameterResult();
-				_Parameter get_Parameter()const;
+				UpdateInstanceInformationResult();
+				explicit UpdateInstanceInformationResult(const std::string &payload);
+				~UpdateInstanceInformationResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				_Parameter _parameter_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_UPDATEPARAMETERRESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_UPDATEINSTANCEINFORMATIONRESULT_H_

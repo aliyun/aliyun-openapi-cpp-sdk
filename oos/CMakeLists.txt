@@ -45,10 +45,20 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/GenerateExecutionPolicyResult.h
 	include/alibabacloud/oos/model/GetExecutionTemplateRequest.h
 	include/alibabacloud/oos/model/GetExecutionTemplateResult.h
+	include/alibabacloud/oos/model/GetInventorySchemaRequest.h
+	include/alibabacloud/oos/model/GetInventorySchemaResult.h
 	include/alibabacloud/oos/model/GetParameterRequest.h
 	include/alibabacloud/oos/model/GetParameterResult.h
+	include/alibabacloud/oos/model/GetParametersRequest.h
+	include/alibabacloud/oos/model/GetParametersResult.h
+	include/alibabacloud/oos/model/GetParametersByPathRequest.h
+	include/alibabacloud/oos/model/GetParametersByPathResult.h
 	include/alibabacloud/oos/model/GetSecretParameterRequest.h
 	include/alibabacloud/oos/model/GetSecretParameterResult.h
+	include/alibabacloud/oos/model/GetSecretParametersRequest.h
+	include/alibabacloud/oos/model/GetSecretParametersResult.h
+	include/alibabacloud/oos/model/GetSecretParametersByPathRequest.h
+	include/alibabacloud/oos/model/GetSecretParametersByPathResult.h
 	include/alibabacloud/oos/model/GetTemplateRequest.h
 	include/alibabacloud/oos/model/GetTemplateResult.h
 	include/alibabacloud/oos/model/ListActionsRequest.h
@@ -59,6 +69,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListExecutionRiskyTasksResult.h
 	include/alibabacloud/oos/model/ListExecutionsRequest.h
 	include/alibabacloud/oos/model/ListExecutionsResult.h
+	include/alibabacloud/oos/model/ListInventoryEntriesRequest.h
+	include/alibabacloud/oos/model/ListInventoryEntriesResult.h
 	include/alibabacloud/oos/model/ListParameterVersionsRequest.h
 	include/alibabacloud/oos/model/ListParameterVersionsResult.h
 	include/alibabacloud/oos/model/ListParametersRequest.h
@@ -83,6 +95,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListTemplatesResult.h
 	include/alibabacloud/oos/model/NotifyExecutionRequest.h
 	include/alibabacloud/oos/model/NotifyExecutionResult.h
+	include/alibabacloud/oos/model/SearchInventoryRequest.h
+	include/alibabacloud/oos/model/SearchInventoryResult.h
 	include/alibabacloud/oos/model/StartExecutionRequest.h
 	include/alibabacloud/oos/model/StartExecutionResult.h
 	include/alibabacloud/oos/model/TagResourcesRequest.h
@@ -91,6 +105,10 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/TriggerExecutionResult.h
 	include/alibabacloud/oos/model/UntagResourcesRequest.h
 	include/alibabacloud/oos/model/UntagResourcesResult.h
+	include/alibabacloud/oos/model/UpdateExecutionRequest.h
+	include/alibabacloud/oos/model/UpdateExecutionResult.h
+	include/alibabacloud/oos/model/UpdateInstanceInformationRequest.h
+	include/alibabacloud/oos/model/UpdateInstanceInformationResult.h
 	include/alibabacloud/oos/model/UpdateParameterRequest.h
 	include/alibabacloud/oos/model/UpdateParameterResult.h
 	include/alibabacloud/oos/model/UpdateSecretParameterRequest.h
@@ -126,10 +144,20 @@ set(oos_src
 	src/model/GenerateExecutionPolicyResult.cc
 	src/model/GetExecutionTemplateRequest.cc
 	src/model/GetExecutionTemplateResult.cc
+	src/model/GetInventorySchemaRequest.cc
+	src/model/GetInventorySchemaResult.cc
 	src/model/GetParameterRequest.cc
 	src/model/GetParameterResult.cc
+	src/model/GetParametersRequest.cc
+	src/model/GetParametersResult.cc
+	src/model/GetParametersByPathRequest.cc
+	src/model/GetParametersByPathResult.cc
 	src/model/GetSecretParameterRequest.cc
 	src/model/GetSecretParameterResult.cc
+	src/model/GetSecretParametersRequest.cc
+	src/model/GetSecretParametersResult.cc
+	src/model/GetSecretParametersByPathRequest.cc
+	src/model/GetSecretParametersByPathResult.cc
 	src/model/GetTemplateRequest.cc
 	src/model/GetTemplateResult.cc
 	src/model/ListActionsRequest.cc
@@ -140,6 +168,8 @@ set(oos_src
 	src/model/ListExecutionRiskyTasksResult.cc
 	src/model/ListExecutionsRequest.cc
 	src/model/ListExecutionsResult.cc
+	src/model/ListInventoryEntriesRequest.cc
+	src/model/ListInventoryEntriesResult.cc
 	src/model/ListParameterVersionsRequest.cc
 	src/model/ListParameterVersionsResult.cc
 	src/model/ListParametersRequest.cc
@@ -164,6 +194,8 @@ set(oos_src
 	src/model/ListTemplatesResult.cc
 	src/model/NotifyExecutionRequest.cc
 	src/model/NotifyExecutionResult.cc
+	src/model/SearchInventoryRequest.cc
+	src/model/SearchInventoryResult.cc
 	src/model/StartExecutionRequest.cc
 	src/model/StartExecutionResult.cc
 	src/model/TagResourcesRequest.cc
@@ -172,6 +204,10 @@ set(oos_src
 	src/model/TriggerExecutionResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
+	src/model/UpdateExecutionRequest.cc
+	src/model/UpdateExecutionResult.cc
+	src/model/UpdateInstanceInformationRequest.cc
+	src/model/UpdateInstanceInformationResult.cc
 	src/model/UpdateParameterRequest.cc
 	src/model/UpdateParameterResult.cc
 	src/model/UpdateSecretParameterRequest.cc

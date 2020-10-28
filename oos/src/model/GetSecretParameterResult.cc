@@ -62,6 +62,10 @@ void GetSecretParameterResult::parse(const std::string &payload)
 		_parameter_.type = _parameterNode["Type"].asString();
 	if(!_parameterNode["Value"].isNull())
 		_parameter_.value = _parameterNode["Value"].asString();
+	if(!_parameterNode["Constraints"].isNull())
+		_parameter_.constraints = _parameterNode["Constraints"].asString();
+	if(!_parameterNode["KeyId"].isNull())
+		_parameter_.keyId = _parameterNode["KeyId"].asString();
 
 }
 

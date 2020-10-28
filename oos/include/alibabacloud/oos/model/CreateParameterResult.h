@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string type;
 					std::string createdBy;
 					std::string description;
+					std::string constraints;
 					std::string updatedDate;
 					int parameterVersion;
 					std::string createdDate;

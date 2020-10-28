@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_GETPARAMETERSRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_GETPARAMETERSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT ListSecretParametersResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT GetParametersResult : public ServiceResult
 			{
 			public:
 				struct _Parameter
@@ -38,32 +38,31 @@ namespace AlibabaCloud
 					std::string type;
 					std::string createdBy;
 					std::string description;
+					std::string constraints;
 					std::string updatedDate;
-					std::string parameterVersion;
+					int parameterVersion;
 					std::string createdDate;
-					std::string keyId;
+					std::string value;
 					std::string id;
 					std::string name;
 					std::string shareType;
 				};
 
 
-				ListSecretParametersResult();
-				explicit ListSecretParametersResult(const std::string &payload);
-				~ListSecretParametersResult();
+				GetParametersResult();
+				explicit GetParametersResult(const std::string &payload);
+				~GetParametersResult();
 				std::vector<_Parameter> getParameters()const;
-				std::string getNextToken()const;
-				int getMaxResults()const;
+				std::vector<std::string> getInvalidParameters()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<_Parameter> parameters_;
-				std::string nextToken_;
-				int maxResults_;
+				std::vector<std::string> invalidParameters_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_GETPARAMETERSRESULT_H_

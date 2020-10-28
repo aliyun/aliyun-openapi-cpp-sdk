@@ -483,6 +483,42 @@ OosClient::GetExecutionTemplateOutcomeCallable OosClient::getExecutionTemplateCa
 	return task->get_future();
 }
 
+OosClient::GetInventorySchemaOutcome OosClient::getInventorySchema(const GetInventorySchemaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInventorySchemaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInventorySchemaOutcome(GetInventorySchemaResult(outcome.result()));
+	else
+		return GetInventorySchemaOutcome(outcome.error());
+}
+
+void OosClient::getInventorySchemaAsync(const GetInventorySchemaRequest& request, const GetInventorySchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInventorySchema(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetInventorySchemaOutcomeCallable OosClient::getInventorySchemaCallable(const GetInventorySchemaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInventorySchemaOutcome()>>(
+			[this, request]()
+			{
+			return this->getInventorySchema(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::GetParameterOutcome OosClient::getParameter(const GetParameterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +555,78 @@ OosClient::GetParameterOutcomeCallable OosClient::getParameterCallable(const Get
 	return task->get_future();
 }
 
+OosClient::GetParametersOutcome OosClient::getParameters(const GetParametersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetParametersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetParametersOutcome(GetParametersResult(outcome.result()));
+	else
+		return GetParametersOutcome(outcome.error());
+}
+
+void OosClient::getParametersAsync(const GetParametersRequest& request, const GetParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getParameters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetParametersOutcomeCallable OosClient::getParametersCallable(const GetParametersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetParametersOutcome()>>(
+			[this, request]()
+			{
+			return this->getParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::GetParametersByPathOutcome OosClient::getParametersByPath(const GetParametersByPathRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetParametersByPathOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetParametersByPathOutcome(GetParametersByPathResult(outcome.result()));
+	else
+		return GetParametersByPathOutcome(outcome.error());
+}
+
+void OosClient::getParametersByPathAsync(const GetParametersByPathRequest& request, const GetParametersByPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getParametersByPath(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetParametersByPathOutcomeCallable OosClient::getParametersByPathCallable(const GetParametersByPathRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetParametersByPathOutcome()>>(
+			[this, request]()
+			{
+			return this->getParametersByPath(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::GetSecretParameterOutcome OosClient::getSecretParameter(const GetSecretParameterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +657,78 @@ OosClient::GetSecretParameterOutcomeCallable OosClient::getSecretParameterCallab
 			[this, request]()
 			{
 			return this->getSecretParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::GetSecretParametersOutcome OosClient::getSecretParameters(const GetSecretParametersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSecretParametersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSecretParametersOutcome(GetSecretParametersResult(outcome.result()));
+	else
+		return GetSecretParametersOutcome(outcome.error());
+}
+
+void OosClient::getSecretParametersAsync(const GetSecretParametersRequest& request, const GetSecretParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSecretParameters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetSecretParametersOutcomeCallable OosClient::getSecretParametersCallable(const GetSecretParametersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSecretParametersOutcome()>>(
+			[this, request]()
+			{
+			return this->getSecretParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::GetSecretParametersByPathOutcome OosClient::getSecretParametersByPath(const GetSecretParametersByPathRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSecretParametersByPathOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSecretParametersByPathOutcome(GetSecretParametersByPathResult(outcome.result()));
+	else
+		return GetSecretParametersByPathOutcome(outcome.error());
+}
+
+void OosClient::getSecretParametersByPathAsync(const GetSecretParametersByPathRequest& request, const GetSecretParametersByPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSecretParametersByPath(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetSecretParametersByPathOutcomeCallable OosClient::getSecretParametersByPathCallable(const GetSecretParametersByPathRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSecretParametersByPathOutcome()>>(
+			[this, request]()
+			{
+			return this->getSecretParametersByPath(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +909,42 @@ OosClient::ListExecutionsOutcomeCallable OosClient::listExecutionsCallable(const
 			[this, request]()
 			{
 			return this->listExecutions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListInventoryEntriesOutcome OosClient::listInventoryEntries(const ListInventoryEntriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInventoryEntriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInventoryEntriesOutcome(ListInventoryEntriesResult(outcome.result()));
+	else
+		return ListInventoryEntriesOutcome(outcome.error());
+}
+
+void OosClient::listInventoryEntriesAsync(const ListInventoryEntriesRequest& request, const ListInventoryEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInventoryEntries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListInventoryEntriesOutcomeCallable OosClient::listInventoryEntriesCallable(const ListInventoryEntriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInventoryEntriesOutcome()>>(
+			[this, request]()
+			{
+			return this->listInventoryEntries(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,6 +1383,42 @@ OosClient::NotifyExecutionOutcomeCallable OosClient::notifyExecutionCallable(con
 	return task->get_future();
 }
 
+OosClient::SearchInventoryOutcome OosClient::searchInventory(const SearchInventoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchInventoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchInventoryOutcome(SearchInventoryResult(outcome.result()));
+	else
+		return SearchInventoryOutcome(outcome.error());
+}
+
+void OosClient::searchInventoryAsync(const SearchInventoryRequest& request, const SearchInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchInventory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::SearchInventoryOutcomeCallable OosClient::searchInventoryCallable(const SearchInventoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchInventoryOutcome()>>(
+			[this, request]()
+			{
+			return this->searchInventory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::StartExecutionOutcome OosClient::startExecution(const StartExecutionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1557,78 @@ OosClient::UntagResourcesOutcomeCallable OosClient::untagResourcesCallable(const
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::UpdateExecutionOutcome OosClient::updateExecution(const UpdateExecutionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateExecutionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateExecutionOutcome(UpdateExecutionResult(outcome.result()));
+	else
+		return UpdateExecutionOutcome(outcome.error());
+}
+
+void OosClient::updateExecutionAsync(const UpdateExecutionRequest& request, const UpdateExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateExecution(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdateExecutionOutcomeCallable OosClient::updateExecutionCallable(const UpdateExecutionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateExecutionOutcome()>>(
+			[this, request]()
+			{
+			return this->updateExecution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::UpdateInstanceInformationOutcome OosClient::updateInstanceInformation(const UpdateInstanceInformationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateInstanceInformationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateInstanceInformationOutcome(UpdateInstanceInformationResult(outcome.result()));
+	else
+		return UpdateInstanceInformationOutcome(outcome.error());
+}
+
+void OosClient::updateInstanceInformationAsync(const UpdateInstanceInformationRequest& request, const UpdateInstanceInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateInstanceInformation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdateInstanceInformationOutcomeCallable OosClient::updateInstanceInformationCallable(const UpdateInstanceInformationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateInstanceInformationOutcome()>>(
+			[this, request]()
+			{
+			return this->updateInstanceInformation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

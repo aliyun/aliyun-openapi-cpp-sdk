@@ -46,10 +46,20 @@
 #include "model/GenerateExecutionPolicyResult.h"
 #include "model/GetExecutionTemplateRequest.h"
 #include "model/GetExecutionTemplateResult.h"
+#include "model/GetInventorySchemaRequest.h"
+#include "model/GetInventorySchemaResult.h"
 #include "model/GetParameterRequest.h"
 #include "model/GetParameterResult.h"
+#include "model/GetParametersRequest.h"
+#include "model/GetParametersResult.h"
+#include "model/GetParametersByPathRequest.h"
+#include "model/GetParametersByPathResult.h"
 #include "model/GetSecretParameterRequest.h"
 #include "model/GetSecretParameterResult.h"
+#include "model/GetSecretParametersRequest.h"
+#include "model/GetSecretParametersResult.h"
+#include "model/GetSecretParametersByPathRequest.h"
+#include "model/GetSecretParametersByPathResult.h"
 #include "model/GetTemplateRequest.h"
 #include "model/GetTemplateResult.h"
 #include "model/ListActionsRequest.h"
@@ -60,6 +70,8 @@
 #include "model/ListExecutionRiskyTasksResult.h"
 #include "model/ListExecutionsRequest.h"
 #include "model/ListExecutionsResult.h"
+#include "model/ListInventoryEntriesRequest.h"
+#include "model/ListInventoryEntriesResult.h"
 #include "model/ListParameterVersionsRequest.h"
 #include "model/ListParameterVersionsResult.h"
 #include "model/ListParametersRequest.h"
@@ -84,6 +96,8 @@
 #include "model/ListTemplatesResult.h"
 #include "model/NotifyExecutionRequest.h"
 #include "model/NotifyExecutionResult.h"
+#include "model/SearchInventoryRequest.h"
+#include "model/SearchInventoryResult.h"
 #include "model/StartExecutionRequest.h"
 #include "model/StartExecutionResult.h"
 #include "model/TagResourcesRequest.h"
@@ -92,6 +106,10 @@
 #include "model/TriggerExecutionResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
+#include "model/UpdateExecutionRequest.h"
+#include "model/UpdateExecutionResult.h"
+#include "model/UpdateInstanceInformationRequest.h"
+#include "model/UpdateInstanceInformationResult.h"
 #include "model/UpdateParameterRequest.h"
 #include "model/UpdateParameterResult.h"
 #include "model/UpdateSecretParameterRequest.h"
@@ -145,12 +163,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetExecutionTemplateResult> GetExecutionTemplateOutcome;
 			typedef std::future<GetExecutionTemplateOutcome> GetExecutionTemplateOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::GetExecutionTemplateRequest&, const GetExecutionTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetExecutionTemplateAsyncHandler;
+			typedef Outcome<Error, Model::GetInventorySchemaResult> GetInventorySchemaOutcome;
+			typedef std::future<GetInventorySchemaOutcome> GetInventorySchemaOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::GetInventorySchemaRequest&, const GetInventorySchemaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInventorySchemaAsyncHandler;
 			typedef Outcome<Error, Model::GetParameterResult> GetParameterOutcome;
 			typedef std::future<GetParameterOutcome> GetParameterOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::GetParameterRequest&, const GetParameterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetParameterAsyncHandler;
+			typedef Outcome<Error, Model::GetParametersResult> GetParametersOutcome;
+			typedef std::future<GetParametersOutcome> GetParametersOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::GetParametersRequest&, const GetParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetParametersAsyncHandler;
+			typedef Outcome<Error, Model::GetParametersByPathResult> GetParametersByPathOutcome;
+			typedef std::future<GetParametersByPathOutcome> GetParametersByPathOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::GetParametersByPathRequest&, const GetParametersByPathOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetParametersByPathAsyncHandler;
 			typedef Outcome<Error, Model::GetSecretParameterResult> GetSecretParameterOutcome;
 			typedef std::future<GetSecretParameterOutcome> GetSecretParameterOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::GetSecretParameterRequest&, const GetSecretParameterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSecretParameterAsyncHandler;
+			typedef Outcome<Error, Model::GetSecretParametersResult> GetSecretParametersOutcome;
+			typedef std::future<GetSecretParametersOutcome> GetSecretParametersOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::GetSecretParametersRequest&, const GetSecretParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSecretParametersAsyncHandler;
+			typedef Outcome<Error, Model::GetSecretParametersByPathResult> GetSecretParametersByPathOutcome;
+			typedef std::future<GetSecretParametersByPathOutcome> GetSecretParametersByPathOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::GetSecretParametersByPathRequest&, const GetSecretParametersByPathOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSecretParametersByPathAsyncHandler;
 			typedef Outcome<Error, Model::GetTemplateResult> GetTemplateOutcome;
 			typedef std::future<GetTemplateOutcome> GetTemplateOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::GetTemplateRequest&, const GetTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTemplateAsyncHandler;
@@ -166,6 +199,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListExecutionsResult> ListExecutionsOutcome;
 			typedef std::future<ListExecutionsOutcome> ListExecutionsOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListExecutionsRequest&, const ListExecutionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExecutionsAsyncHandler;
+			typedef Outcome<Error, Model::ListInventoryEntriesResult> ListInventoryEntriesOutcome;
+			typedef std::future<ListInventoryEntriesOutcome> ListInventoryEntriesOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::ListInventoryEntriesRequest&, const ListInventoryEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInventoryEntriesAsyncHandler;
 			typedef Outcome<Error, Model::ListParameterVersionsResult> ListParameterVersionsOutcome;
 			typedef std::future<ListParameterVersionsOutcome> ListParameterVersionsOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListParameterVersionsRequest&, const ListParameterVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListParameterVersionsAsyncHandler;
@@ -202,6 +238,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::NotifyExecutionResult> NotifyExecutionOutcome;
 			typedef std::future<NotifyExecutionOutcome> NotifyExecutionOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::NotifyExecutionRequest&, const NotifyExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NotifyExecutionAsyncHandler;
+			typedef Outcome<Error, Model::SearchInventoryResult> SearchInventoryOutcome;
+			typedef std::future<SearchInventoryOutcome> SearchInventoryOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::SearchInventoryRequest&, const SearchInventoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchInventoryAsyncHandler;
 			typedef Outcome<Error, Model::StartExecutionResult> StartExecutionOutcome;
 			typedef std::future<StartExecutionOutcome> StartExecutionOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::StartExecutionRequest&, const StartExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartExecutionAsyncHandler;
@@ -214,6 +253,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateExecutionResult> UpdateExecutionOutcome;
+			typedef std::future<UpdateExecutionOutcome> UpdateExecutionOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::UpdateExecutionRequest&, const UpdateExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExecutionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateInstanceInformationResult> UpdateInstanceInformationOutcome;
+			typedef std::future<UpdateInstanceInformationOutcome> UpdateInstanceInformationOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::UpdateInstanceInformationRequest&, const UpdateInstanceInformationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceInformationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateParameterResult> UpdateParameterOutcome;
 			typedef std::future<UpdateParameterOutcome> UpdateParameterOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::UpdateParameterRequest&, const UpdateParameterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateParameterAsyncHandler;
@@ -267,12 +312,27 @@ namespace AlibabaCloud
 			GetExecutionTemplateOutcome getExecutionTemplate(const Model::GetExecutionTemplateRequest &request)const;
 			void getExecutionTemplateAsync(const Model::GetExecutionTemplateRequest& request, const GetExecutionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetExecutionTemplateOutcomeCallable getExecutionTemplateCallable(const Model::GetExecutionTemplateRequest& request) const;
+			GetInventorySchemaOutcome getInventorySchema(const Model::GetInventorySchemaRequest &request)const;
+			void getInventorySchemaAsync(const Model::GetInventorySchemaRequest& request, const GetInventorySchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetInventorySchemaOutcomeCallable getInventorySchemaCallable(const Model::GetInventorySchemaRequest& request) const;
 			GetParameterOutcome getParameter(const Model::GetParameterRequest &request)const;
 			void getParameterAsync(const Model::GetParameterRequest& request, const GetParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetParameterOutcomeCallable getParameterCallable(const Model::GetParameterRequest& request) const;
+			GetParametersOutcome getParameters(const Model::GetParametersRequest &request)const;
+			void getParametersAsync(const Model::GetParametersRequest& request, const GetParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetParametersOutcomeCallable getParametersCallable(const Model::GetParametersRequest& request) const;
+			GetParametersByPathOutcome getParametersByPath(const Model::GetParametersByPathRequest &request)const;
+			void getParametersByPathAsync(const Model::GetParametersByPathRequest& request, const GetParametersByPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetParametersByPathOutcomeCallable getParametersByPathCallable(const Model::GetParametersByPathRequest& request) const;
 			GetSecretParameterOutcome getSecretParameter(const Model::GetSecretParameterRequest &request)const;
 			void getSecretParameterAsync(const Model::GetSecretParameterRequest& request, const GetSecretParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSecretParameterOutcomeCallable getSecretParameterCallable(const Model::GetSecretParameterRequest& request) const;
+			GetSecretParametersOutcome getSecretParameters(const Model::GetSecretParametersRequest &request)const;
+			void getSecretParametersAsync(const Model::GetSecretParametersRequest& request, const GetSecretParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSecretParametersOutcomeCallable getSecretParametersCallable(const Model::GetSecretParametersRequest& request) const;
+			GetSecretParametersByPathOutcome getSecretParametersByPath(const Model::GetSecretParametersByPathRequest &request)const;
+			void getSecretParametersByPathAsync(const Model::GetSecretParametersByPathRequest& request, const GetSecretParametersByPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSecretParametersByPathOutcomeCallable getSecretParametersByPathCallable(const Model::GetSecretParametersByPathRequest& request) const;
 			GetTemplateOutcome getTemplate(const Model::GetTemplateRequest &request)const;
 			void getTemplateAsync(const Model::GetTemplateRequest& request, const GetTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTemplateOutcomeCallable getTemplateCallable(const Model::GetTemplateRequest& request) const;
@@ -288,6 +348,9 @@ namespace AlibabaCloud
 			ListExecutionsOutcome listExecutions(const Model::ListExecutionsRequest &request)const;
 			void listExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListExecutionsOutcomeCallable listExecutionsCallable(const Model::ListExecutionsRequest& request) const;
+			ListInventoryEntriesOutcome listInventoryEntries(const Model::ListInventoryEntriesRequest &request)const;
+			void listInventoryEntriesAsync(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListInventoryEntriesOutcomeCallable listInventoryEntriesCallable(const Model::ListInventoryEntriesRequest& request) const;
 			ListParameterVersionsOutcome listParameterVersions(const Model::ListParameterVersionsRequest &request)const;
 			void listParameterVersionsAsync(const Model::ListParameterVersionsRequest& request, const ListParameterVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListParameterVersionsOutcomeCallable listParameterVersionsCallable(const Model::ListParameterVersionsRequest& request) const;
@@ -324,6 +387,9 @@ namespace AlibabaCloud
 			NotifyExecutionOutcome notifyExecution(const Model::NotifyExecutionRequest &request)const;
 			void notifyExecutionAsync(const Model::NotifyExecutionRequest& request, const NotifyExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			NotifyExecutionOutcomeCallable notifyExecutionCallable(const Model::NotifyExecutionRequest& request) const;
+			SearchInventoryOutcome searchInventory(const Model::SearchInventoryRequest &request)const;
+			void searchInventoryAsync(const Model::SearchInventoryRequest& request, const SearchInventoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchInventoryOutcomeCallable searchInventoryCallable(const Model::SearchInventoryRequest& request) const;
 			StartExecutionOutcome startExecution(const Model::StartExecutionRequest &request)const;
 			void startExecutionAsync(const Model::StartExecutionRequest& request, const StartExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartExecutionOutcomeCallable startExecutionCallable(const Model::StartExecutionRequest& request) const;
@@ -336,6 +402,12 @@ namespace AlibabaCloud
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
+			UpdateExecutionOutcome updateExecution(const Model::UpdateExecutionRequest &request)const;
+			void updateExecutionAsync(const Model::UpdateExecutionRequest& request, const UpdateExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateExecutionOutcomeCallable updateExecutionCallable(const Model::UpdateExecutionRequest& request) const;
+			UpdateInstanceInformationOutcome updateInstanceInformation(const Model::UpdateInstanceInformationRequest &request)const;
+			void updateInstanceInformationAsync(const Model::UpdateInstanceInformationRequest& request, const UpdateInstanceInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateInstanceInformationOutcomeCallable updateInstanceInformationCallable(const Model::UpdateInstanceInformationRequest& request) const;
 			UpdateParameterOutcome updateParameter(const Model::UpdateParameterRequest &request)const;
 			void updateParameterAsync(const Model::UpdateParameterRequest& request, const UpdateParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateParameterOutcomeCallable updateParameterCallable(const Model::UpdateParameterRequest& request) const;

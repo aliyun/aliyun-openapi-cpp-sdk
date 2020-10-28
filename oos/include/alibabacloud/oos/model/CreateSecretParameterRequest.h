@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setKeyId(const std::string& keyId);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getConstraints()const;
+				void setConstraints(const std::string& constraints);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string keyId_;
 				std::string type_;
+				std::string constraints_;
 				std::string regionId_;
 				std::string name_;
 				std::string value_;

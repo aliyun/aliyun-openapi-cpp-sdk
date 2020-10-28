@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/oos/model/ListSecretParametersResult.h>
+#include <alibabacloud/oos/model/GetSecretParametersByPathResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Oos;
 using namespace AlibabaCloud::Oos::Model;
 
-ListSecretParametersResult::ListSecretParametersResult() :
+GetSecretParametersByPathResult::GetSecretParametersByPathResult() :
 	ServiceResult()
 {}
 
-ListSecretParametersResult::ListSecretParametersResult(const std::string &payload) :
+GetSecretParametersByPathResult::GetSecretParametersByPathResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListSecretParametersResult::~ListSecretParametersResult()
+GetSecretParametersByPathResult::~GetSecretParametersByPathResult()
 {}
 
-void ListSecretParametersResult::parse(const std::string &payload)
+void GetSecretParametersByPathResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -43,10 +43,10 @@ void ListSecretParametersResult::parse(const std::string &payload)
 	for (auto valueParametersParameter : allParametersNode)
 	{
 		_Parameter parametersObject;
-		if(!valueParametersParameter["Name"].isNull())
-			parametersObject.name = valueParametersParameter["Name"].asString();
 		if(!valueParametersParameter["Id"].isNull())
 			parametersObject.id = valueParametersParameter["Id"].asString();
+		if(!valueParametersParameter["Name"].isNull())
+			parametersObject.name = valueParametersParameter["Name"].asString();
 		if(!valueParametersParameter["CreatedDate"].isNull())
 			parametersObject.createdDate = valueParametersParameter["CreatedDate"].asString();
 		if(!valueParametersParameter["CreatedBy"].isNull())
@@ -60,31 +60,42 @@ void ListSecretParametersResult::parse(const std::string &payload)
 		if(!valueParametersParameter["ShareType"].isNull())
 			parametersObject.shareType = valueParametersParameter["ShareType"].asString();
 		if(!valueParametersParameter["ParameterVersion"].isNull())
-			parametersObject.parameterVersion = valueParametersParameter["ParameterVersion"].asString();
+			parametersObject.parameterVersion = std::stoi(valueParametersParameter["ParameterVersion"].asString());
 		if(!valueParametersParameter["Type"].isNull())
 			parametersObject.type = valueParametersParameter["Type"].asString();
+		if(!valueParametersParameter["Value"].isNull())
+			parametersObject.value = valueParametersParameter["Value"].asString();
+		if(!valueParametersParameter["Constraints"].isNull())
+			parametersObject.constraints = valueParametersParameter["Constraints"].asString();
 		if(!valueParametersParameter["KeyId"].isNull())
 			parametersObject.keyId = valueParametersParameter["KeyId"].asString();
 		parameters_.push_back(parametersObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
-std::vector<ListSecretParametersResult::_Parameter> ListSecretParametersResult::getParameters()const
+int GetSecretParametersByPathResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+std::vector<GetSecretParametersByPathResult::_Parameter> GetSecretParametersByPathResult::getParameters()const
 {
 	return parameters_;
 }
 
-std::string ListSecretParametersResult::getNextToken()const
+std::string GetSecretParametersByPathResult::getNextToken()const
 {
 	return nextToken_;
 }
 
-int ListSecretParametersResult::getMaxResults()const
+int GetSecretParametersByPathResult::getMaxResults()const
 {
 	return maxResults_;
 }

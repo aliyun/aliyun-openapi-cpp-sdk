@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_CREATEPARAMETERREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_CREATEPARAMETERREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_UPDATEEXECUTIONREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_UPDATEEXECUTIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT CreateParameterRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OOS_EXPORT UpdateExecutionRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateParameterRequest();
-				~CreateParameterRequest();
+				UpdateExecutionRequest();
+				~UpdateExecutionRequest();
 
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getType()const;
-				void setType(const std::string& type);
-				std::string getConstraints()const;
-				void setConstraints(const std::string& constraints);
+				std::string getExecutionId()const;
+				void setExecutionId(const std::string& executionId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getValue()const;
-				void setValue(const std::string& value);
+				std::string getParameters()const;
+				void setParameters(const std::string& parameters);
 
             private:
 				std::string clientToken_;
-				std::string description_;
-				std::string type_;
-				std::string constraints_;
+				std::string executionId_;
 				std::string regionId_;
-				std::string name_;
-				std::string value_;
+				std::string parameters_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_CREATEPARAMETERREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_UPDATEEXECUTIONREQUEST_H_

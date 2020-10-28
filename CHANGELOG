@@ -1,4 +1,7 @@
 2020-10-28 Version: patch
+- Support GetParameters, GetParametersByPath, GetSecretParameters, GetSecretParametersByPath.
+
+2020-10-28 Version: patch
 - Supported all language sdk.
 - Fixed some bugs for polardbx.
 

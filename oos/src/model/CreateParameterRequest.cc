@@ -60,6 +60,17 @@ void CreateParameterRequest::setType(const std::string& type)
 	setParameter("Type", type);
 }
 
+std::string CreateParameterRequest::getConstraints()const
+{
+	return constraints_;
+}
+
+void CreateParameterRequest::setConstraints(const std::string& constraints)
+{
+	constraints_ = constraints;
+	setParameter("Constraints", constraints);
+}
+
 std::string CreateParameterRequest::getRegionId()const
 {
 	return regionId_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_GETINVENTORYSCHEMARESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_GETINVENTORYSCHEMARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT ListSecretParametersResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT GetInventorySchemaResult : public ServiceResult
 			{
 			public:
-				struct _Parameter
+				struct Schema
 				{
-					std::string updatedBy;
-					std::string type;
-					std::string createdBy;
-					std::string description;
-					std::string updatedDate;
-					std::string parameterVersion;
-					std::string createdDate;
-					std::string keyId;
-					std::string id;
-					std::string name;
-					std::string shareType;
+					struct Attribute
+					{
+						std::string dataType;
+						std::string name;
+					};
+					std::string typeName;
+					std::string version;
+					std::vector<Schema::Attribute> attributes;
 				};
 
 
-				ListSecretParametersResult();
-				explicit ListSecretParametersResult(const std::string &payload);
-				~ListSecretParametersResult();
-				std::vector<_Parameter> getParameters()const;
+				GetInventorySchemaResult();
+				explicit GetInventorySchemaResult(const std::string &payload);
+				~GetInventorySchemaResult();
 				std::string getNextToken()const;
-				int getMaxResults()const;
+				std::vector<Schema> getSchemas()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<_Parameter> parameters_;
 				std::string nextToken_;
-				int maxResults_;
+				std::vector<Schema> schemas_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_GETINVENTORYSCHEMARESULT_H_

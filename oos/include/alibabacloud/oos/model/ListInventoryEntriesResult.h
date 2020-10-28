@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_LISTINVENTORYENTRIESRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_LISTINVENTORYENTRIESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT ListSecretParametersResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT ListInventoryEntriesResult : public ServiceResult
 			{
 			public:
-				struct _Parameter
-				{
-					std::string updatedBy;
-					std::string type;
-					std::string createdBy;
-					std::string description;
-					std::string updatedDate;
-					std::string parameterVersion;
-					std::string createdDate;
-					std::string keyId;
-					std::string id;
-					std::string name;
-					std::string shareType;
-				};
 
 
-				ListSecretParametersResult();
-				explicit ListSecretParametersResult(const std::string &payload);
-				~ListSecretParametersResult();
-				std::vector<_Parameter> getParameters()const;
+				ListInventoryEntriesResult();
+				explicit ListInventoryEntriesResult(const std::string &payload);
+				~ListInventoryEntriesResult();
+				std::string getTypeName()const;
+				std::string getCaptureTime()const;
 				std::string getNextToken()const;
+				std::string getSchemaVersion()const;
+				std::string getInstanceId()const;
 				int getMaxResults()const;
+				std::vector<std::string> getEntries()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<_Parameter> parameters_;
+				std::string typeName_;
+				std::string captureTime_;
 				std::string nextToken_;
+				std::string schemaVersion_;
+				std::string instanceId_;
 				int maxResults_;
+				std::vector<std::string> entries_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_LISTSECRETPARAMETERSRESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_LISTINVENTORYENTRIESRESULT_H_
