@@ -60,3 +60,14 @@ void DescribeRdsListRequest::setDbName(const std::string& dbName)
 	setParameter("DbName", dbName);
 }
 
+std::string DescribeRdsListRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeRdsListRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

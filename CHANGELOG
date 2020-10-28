@@ -1,3 +1,7 @@
+2020-10-28 Version: patch
+- Supported golang sdk.
+- Fixed some bugs for drds.
+
 2020-10-27 Version: patch
 - Support DescribePendingMaintenanceAction.
 - Support ModifyPendingMaintenanceAction.
