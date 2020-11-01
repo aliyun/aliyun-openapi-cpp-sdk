@@ -40,28 +40,28 @@ void ModifyElastictaskResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	auto elasticExpansionTaskNode = resultNode["ElasticExpansionTask"];
-	if(!elasticExpansionTaskNode["TriggerType"].isNull())
-		result_.elasticExpansionTask.triggerType = elasticExpansionTaskNode["TriggerType"].asString();
-	if(!elasticExpansionTaskNode["CronExpression"].isNull())
-		result_.elasticExpansionTask.cronExpression = elasticExpansionTaskNode["CronExpression"].asString();
-	if(!elasticExpansionTaskNode["ElasticNodeCount"].isNull())
-		result_.elasticExpansionTask.elasticNodeCount = std::stoi(elasticExpansionTaskNode["ElasticNodeCount"].asString());
-	if(!elasticExpansionTaskNode["ReplicaCount"].isNull())
-		result_.elasticExpansionTask.replicaCount = std::stoi(elasticExpansionTaskNode["ReplicaCount"].asString());
-		auto allTargetIndices = elasticExpansionTaskNode["TargetIndices"]["TargetIndices"];
+	auto elasticExpansionTaskNode = resultNode["elasticExpansionTask"];
+	if(!elasticExpansionTaskNode["triggerType"].isNull())
+		result_.elasticExpansionTask.triggerType = elasticExpansionTaskNode["triggerType"].asString();
+	if(!elasticExpansionTaskNode["cronExpression"].isNull())
+		result_.elasticExpansionTask.cronExpression = elasticExpansionTaskNode["cronExpression"].asString();
+	if(!elasticExpansionTaskNode["elasticNodeCount"].isNull())
+		result_.elasticExpansionTask.elasticNodeCount = std::stoi(elasticExpansionTaskNode["elasticNodeCount"].asString());
+	if(!elasticExpansionTaskNode["replicaCount"].isNull())
+		result_.elasticExpansionTask.replicaCount = std::stoi(elasticExpansionTaskNode["replicaCount"].asString());
+		auto allTargetIndices = elasticExpansionTaskNode["targetIndices"]["TargetIndices"];
 		for (auto value : allTargetIndices)
 			result_.elasticExpansionTask.targetIndices.push_back(value.asString());
-	auto elasticShrinkTaskNode = resultNode["ElasticShrinkTask"];
-	if(!elasticShrinkTaskNode["TriggerType"].isNull())
-		result_.elasticShrinkTask.triggerType = elasticShrinkTaskNode["TriggerType"].asString();
-	if(!elasticShrinkTaskNode["CronExpression"].isNull())
-		result_.elasticShrinkTask.cronExpression = elasticShrinkTaskNode["CronExpression"].asString();
-	if(!elasticShrinkTaskNode["ElasticNodeCount"].isNull())
-		result_.elasticShrinkTask.elasticNodeCount = std::stoi(elasticShrinkTaskNode["ElasticNodeCount"].asString());
-	if(!elasticShrinkTaskNode["ReplicaCount"].isNull())
-		result_.elasticShrinkTask.replicaCount = std::stoi(elasticShrinkTaskNode["ReplicaCount"].asString());
-		auto allTargetIndices1 = elasticShrinkTaskNode["TargetIndices"]["TargetIndices"];
+	auto elasticShrinkTaskNode = resultNode["elasticShrinkTask"];
+	if(!elasticShrinkTaskNode["triggerType"].isNull())
+		result_.elasticShrinkTask.triggerType = elasticShrinkTaskNode["triggerType"].asString();
+	if(!elasticShrinkTaskNode["cronExpression"].isNull())
+		result_.elasticShrinkTask.cronExpression = elasticShrinkTaskNode["cronExpression"].asString();
+	if(!elasticShrinkTaskNode["elasticNodeCount"].isNull())
+		result_.elasticShrinkTask.elasticNodeCount = std::stoi(elasticShrinkTaskNode["elasticNodeCount"].asString());
+	if(!elasticShrinkTaskNode["replicaCount"].isNull())
+		result_.elasticShrinkTask.replicaCount = std::stoi(elasticShrinkTaskNode["replicaCount"].asString());
+		auto allTargetIndices1 = elasticShrinkTaskNode["targetIndices"]["TargetIndices"];
 		for (auto value : allTargetIndices1)
 			result_.elasticShrinkTask.targetIndices1.push_back(value.asString());
 

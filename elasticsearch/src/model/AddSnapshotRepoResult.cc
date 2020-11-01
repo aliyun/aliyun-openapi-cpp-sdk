@@ -39,23 +39,9 @@ void AddSnapshotRepoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Result"].isNull())
 		result_ = value["Result"].asString() == "true";
 
-}
-
-std::string AddSnapshotRepoResult::getMessage()const
-{
-	return message_;
-}
-
-std::string AddSnapshotRepoResult::getCode()const
-{
-	return code_;
 }
 
 bool AddSnapshotRepoResult::getResult()const

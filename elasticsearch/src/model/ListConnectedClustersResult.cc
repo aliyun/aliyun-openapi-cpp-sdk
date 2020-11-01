@@ -39,20 +39,20 @@ void ListConnectedClustersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ConnectableClustersInfo"];
-	for (auto valueResultConnectableClustersInfo : allResultNode)
+	auto allResultNode = value["Result"]["ResultItem"];
+	for (auto valueResultResultItem : allResultNode)
 	{
-		ConnectableClustersInfo resultObject;
-		if(!valueResultConnectableClustersInfo["instances"].isNull())
-			resultObject.instances = valueResultConnectableClustersInfo["instances"].asString();
-		if(!valueResultConnectableClustersInfo["networkType"].isNull())
-			resultObject.networkType = valueResultConnectableClustersInfo["networkType"].asString();
+		ResultItem resultObject;
+		if(!valueResultResultItem["instances"].isNull())
+			resultObject.instances = valueResultResultItem["instances"].asString();
+		if(!valueResultResultItem["networkType"].isNull())
+			resultObject.networkType = valueResultResultItem["networkType"].asString();
 		result_.push_back(resultObject);
 	}
 
 }
 
-std::vector<ListConnectedClustersResult::ConnectableClustersInfo> ListConnectedClustersResult::getResult()const
+std::vector<ListConnectedClustersResult::ResultItem> ListConnectedClustersResult::getResult()const
 {
 	return result_;
 }

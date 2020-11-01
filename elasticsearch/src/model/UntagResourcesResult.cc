@@ -39,6 +39,13 @@ void UntagResourcesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Result"].isNull())
+		result_ = value["Result"].asString() == "true";
 
+}
+
+bool UntagResourcesResult::getResult()const
+{
+	return result_;
 }
 

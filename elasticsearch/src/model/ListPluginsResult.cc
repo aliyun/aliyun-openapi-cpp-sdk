@@ -51,6 +51,8 @@ void ListPluginsResult::parse(const std::string &payload)
 			resultObject.source = valueResultResultItem["source"].asString();
 		if(!valueResultResultItem["description"].isNull())
 			resultObject.description = valueResultResultItem["description"].asString();
+		if(!valueResultResultItem["specificationUrl"].isNull())
+			resultObject.specificationUrl = valueResultResultItem["specificationUrl"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

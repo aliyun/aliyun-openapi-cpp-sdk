@@ -46,6 +46,8 @@ void DescribePipelineManagementConfigResult::parse(const std::string &payload)
 		result_.endpoints = resultNode["endpoints"].asString();
 	if(!resultNode["userName"].isNull())
 		result_.userName = resultNode["userName"].asString();
+	if(!resultNode["esInstanceId"].isNull())
+		result_.esInstanceId = resultNode["esInstanceId"].asString();
 		auto allPipelineIds = resultNode["pipelineIds"]["pipelineid"];
 		for (auto value : allPipelineIds)
 			result_.pipelineIds.push_back(value.asString());

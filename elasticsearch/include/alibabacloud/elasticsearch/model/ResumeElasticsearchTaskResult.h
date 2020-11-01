@@ -37,15 +37,11 @@ namespace AlibabaCloud
 				ResumeElasticsearchTaskResult();
 				explicit ResumeElasticsearchTaskResult(const std::string &payload);
 				~ResumeElasticsearchTaskResult();
-				std::string getMessage()const;
-				std::string getCode()const;
 				bool getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::string code_;
 				bool result_;
 
 			};

@@ -34,15 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct DictList
 				{
-					struct OssObject
-					{
-						std::string bucketName;
-						std::string etag;
-						std::string key;
-					};
 					std::string type;
 					std::string sourceType;
-					OssObject ossObject;
 					std::string name;
 					long fileSize;
 				};

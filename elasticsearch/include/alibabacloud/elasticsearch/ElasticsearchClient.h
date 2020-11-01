@@ -30,28 +30,48 @@
 #include "model/AddSnapshotRepoResult.h"
 #include "model/CancelTaskRequest.h"
 #include "model/CancelTaskResult.h"
+#include "model/CloseDiagnosisRequest.h"
+#include "model/CloseDiagnosisResult.h"
 #include "model/CloseHttpsRequest.h"
 #include "model/CloseHttpsResult.h"
+#include "model/CreateDataTasksRequest.h"
+#include "model/CreateDataTasksResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
 #include "model/CreateLogstashRequest.h"
 #include "model/CreateLogstashResult.h"
+#include "model/CreatePipelinesRequest.h"
+#include "model/CreatePipelinesResult.h"
 #include "model/CreateProjectRequest.h"
 #include "model/CreateProjectResult.h"
+#include "model/CreateSnapshotRequest.h"
+#include "model/CreateSnapshotResult.h"
 #include "model/DeactivateZonesRequest.h"
 #include "model/DeactivateZonesResult.h"
+#include "model/DeleteCollectorRequest.h"
+#include "model/DeleteCollectorResult.h"
 #include "model/DeleteConnectedClusterRequest.h"
 #include "model/DeleteConnectedClusterResult.h"
+#include "model/DeleteDataTaskRequest.h"
+#include "model/DeleteDataTaskResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
 #include "model/DeleteLogstashRequest.h"
 #include "model/DeleteLogstashResult.h"
+#include "model/DeletePipelinesRequest.h"
+#include "model/DeletePipelinesResult.h"
 #include "model/DeleteProjectRequest.h"
 #include "model/DeleteProjectResult.h"
 #include "model/DeleteSnapshotRepoRequest.h"
 #include "model/DeleteSnapshotRepoResult.h"
+#include "model/DescribeCollectorRequest.h"
+#include "model/DescribeCollectorResult.h"
 #include "model/DescribeConnectableClustersRequest.h"
 #include "model/DescribeConnectableClustersResult.h"
+#include "model/DescribeDiagnoseReportRequest.h"
+#include "model/DescribeDiagnoseReportResult.h"
+#include "model/DescribeDiagnosisSettingsRequest.h"
+#include "model/DescribeDiagnosisSettingsResult.h"
 #include "model/DescribeElasticsearchHealthRequest.h"
 #include "model/DescribeElasticsearchHealthResult.h"
 #include "model/DescribeInstanceRequest.h"
@@ -60,12 +80,26 @@
 #include "model/DescribeKibanaSettingsResult.h"
 #include "model/DescribeLogstashRequest.h"
 #include "model/DescribeLogstashResult.h"
+#include "model/DescribePipelineRequest.h"
+#include "model/DescribePipelineResult.h"
 #include "model/DescribePipelineManagementConfigRequest.h"
 #include "model/DescribePipelineManagementConfigResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeSnapshotSettingRequest.h"
 #include "model/DescribeSnapshotSettingResult.h"
+#include "model/DescribeTemplatesRequest.h"
+#include "model/DescribeTemplatesResult.h"
+#include "model/DescribeXpackMonitorConfigRequest.h"
+#include "model/DescribeXpackMonitorConfigResult.h"
+#include "model/DiagnoseInstanceRequest.h"
+#include "model/DiagnoseInstanceResult.h"
+#include "model/EstimatedLogstashRestartTimeRequest.h"
+#include "model/EstimatedLogstashRestartTimeResult.h"
+#include "model/EstimatedRestartTimeRequest.h"
+#include "model/EstimatedRestartTimeResult.h"
+#include "model/GetClusterDataInformationRequest.h"
+#include "model/GetClusterDataInformationResult.h"
 #include "model/GetElastictaskRequest.h"
 #include "model/GetElastictaskResult.h"
 #include "model/GetRegionConfigurationRequest.h"
@@ -90,10 +124,28 @@
 #include "model/ListAllNodeResult.h"
 #include "model/ListAlternativeSnapshotReposRequest.h"
 #include "model/ListAlternativeSnapshotReposResult.h"
+#include "model/ListAvailableEsInstanceIdsRequest.h"
+#include "model/ListAvailableEsInstanceIdsResult.h"
+#include "model/ListCollectorsRequest.h"
+#include "model/ListCollectorsResult.h"
 #include "model/ListConnectedClustersRequest.h"
 #include "model/ListConnectedClustersResult.h"
+#include "model/ListDataTasksRequest.h"
+#include "model/ListDataTasksResult.h"
+#include "model/ListDiagnoseReportRequest.h"
+#include "model/ListDiagnoseReportResult.h"
+#include "model/ListDiagnoseReportIdsRequest.h"
+#include "model/ListDiagnoseReportIdsResult.h"
+#include "model/ListDictInformationRequest.h"
+#include "model/ListDictInformationResult.h"
+#include "model/ListEcsInstancesRequest.h"
+#include "model/ListEcsInstancesResult.h"
+#include "model/ListExtendfilesRequest.h"
+#include "model/ListExtendfilesResult.h"
 #include "model/ListInstanceRequest.h"
 #include "model/ListInstanceResult.h"
+#include "model/ListInstanceIndicesRequest.h"
+#include "model/ListInstanceIndicesResult.h"
 #include "model/ListKibanaPluginsRequest.h"
 #include "model/ListKibanaPluginsResult.h"
 #include "model/ListLogstashRequest.h"
@@ -102,6 +154,12 @@
 #include "model/ListLogstashLogResult.h"
 #include "model/ListLogstashPluginsRequest.h"
 #include "model/ListLogstashPluginsResult.h"
+#include "model/ListNodesRequest.h"
+#include "model/ListNodesResult.h"
+#include "model/ListPipelineRequest.h"
+#include "model/ListPipelineResult.h"
+#include "model/ListPipelineIdsRequest.h"
+#include "model/ListPipelineIdsResult.h"
 #include "model/ListPluginsRequest.h"
 #include "model/ListPluginsResult.h"
 #include "model/ListSearchLogRequest.h"
@@ -110,14 +168,26 @@
 #include "model/ListSnapshotReposByInstanceIdResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
+#include "model/ListTagsRequest.h"
+#include "model/ListTagsResult.h"
+#include "model/MigrateToOtherZoneRequest.h"
+#include "model/MigrateToOtherZoneResult.h"
+#include "model/ModifyDeployMachineRequest.h"
+#include "model/ModifyDeployMachineResult.h"
 #include "model/ModifyElastictaskRequest.h"
 #include "model/ModifyElastictaskResult.h"
+#include "model/ModifyInstanceMaintainTimeRequest.h"
+#include "model/ModifyInstanceMaintainTimeResult.h"
 #include "model/ModifyWhiteIpsRequest.h"
 #include "model/ModifyWhiteIpsResult.h"
 #include "model/MoveResourceGroupRequest.h"
 #include "model/MoveResourceGroupResult.h"
+#include "model/OpenDiagnosisRequest.h"
+#include "model/OpenDiagnosisResult.h"
 #include "model/OpenHttpsRequest.h"
 #include "model/OpenHttpsResult.h"
+#include "model/ReinstallCollectorRequest.h"
+#include "model/ReinstallCollectorResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
 #include "model/RenewLogstashRequest.h"
@@ -132,8 +202,16 @@
 #include "model/ResumeLogstashTaskResult.h"
 #include "model/RollbackInstanceRequest.h"
 #include "model/RollbackInstanceResult.h"
+#include "model/RunPipelinesRequest.h"
+#include "model/RunPipelinesResult.h"
 #include "model/ShrinkNodeRequest.h"
 #include "model/ShrinkNodeResult.h"
+#include "model/StartCollectorRequest.h"
+#include "model/StartCollectorResult.h"
+#include "model/StopCollectorRequest.h"
+#include "model/StopCollectorResult.h"
+#include "model/StopPipelinesRequest.h"
+#include "model/StopPipelinesResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
 #include "model/TransferNodeRequest.h"
@@ -156,10 +234,20 @@
 #include "model/UpdateAliwsDictResult.h"
 #include "model/UpdateBlackIpsRequest.h"
 #include "model/UpdateBlackIpsResult.h"
+#include "model/UpdateCollectorRequest.h"
+#include "model/UpdateCollectorResult.h"
+#include "model/UpdateCollectorNameRequest.h"
+#include "model/UpdateCollectorNameResult.h"
 #include "model/UpdateDescriptionRequest.h"
 #include "model/UpdateDescriptionResult.h"
+#include "model/UpdateDiagnosisSettingsRequest.h"
+#include "model/UpdateDiagnosisSettingsResult.h"
 #include "model/UpdateDictRequest.h"
 #include "model/UpdateDictResult.h"
+#include "model/UpdateExtendConfigRequest.h"
+#include "model/UpdateExtendConfigResult.h"
+#include "model/UpdateExtendfilesRequest.h"
+#include "model/UpdateExtendfilesResult.h"
 #include "model/UpdateHotIkDictsRequest.h"
 #include "model/UpdateHotIkDictsResult.h"
 #include "model/UpdateInstanceRequest.h"
@@ -190,14 +278,22 @@
 #include "model/UpdatePublicNetworkResult.h"
 #include "model/UpdatePublicWhiteIpsRequest.h"
 #include "model/UpdatePublicWhiteIpsResult.h"
+#include "model/UpdateReadWritePolicyRequest.h"
+#include "model/UpdateReadWritePolicyResult.h"
 #include "model/UpdateSnapshotSettingRequest.h"
 #include "model/UpdateSnapshotSettingResult.h"
 #include "model/UpdateSynonymsDictsRequest.h"
 #include "model/UpdateSynonymsDictsResult.h"
+#include "model/UpdateTemplateRequest.h"
+#include "model/UpdateTemplateResult.h"
 #include "model/UpdateWhiteIpsRequest.h"
 #include "model/UpdateWhiteIpsResult.h"
+#include "model/UpdateXpackMonitorConfigRequest.h"
+#include "model/UpdateXpackMonitorConfigResult.h"
 #include "model/UpgradeEngineVersionRequest.h"
 #include "model/UpgradeEngineVersionResult.h"
+#include "model/ValidateConnectionRequest.h"
+#include "model/ValidateConnectionResult.h"
 #include "model/ValidateShrinkNodesRequest.h"
 #include "model/ValidateShrinkNodesResult.h"
 #include "model/ValidateTransferableNodesRequest.h"
@@ -223,39 +319,69 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelTaskResult> CancelTaskOutcome;
 			typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CancelTaskRequest&, const CancelTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
+			typedef Outcome<Error, Model::CloseDiagnosisResult> CloseDiagnosisOutcome;
+			typedef std::future<CloseDiagnosisOutcome> CloseDiagnosisOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CloseDiagnosisRequest&, const CloseDiagnosisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseDiagnosisAsyncHandler;
 			typedef Outcome<Error, Model::CloseHttpsResult> CloseHttpsOutcome;
 			typedef std::future<CloseHttpsOutcome> CloseHttpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CloseHttpsRequest&, const CloseHttpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseHttpsAsyncHandler;
+			typedef Outcome<Error, Model::CreateDataTasksResult> CreateDataTasksOutcome;
+			typedef std::future<CreateDataTasksOutcome> CreateDataTasksOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CreateDataTasksRequest&, const CreateDataTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataTasksAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CreateLogstashResult> CreateLogstashOutcome;
 			typedef std::future<CreateLogstashOutcome> CreateLogstashOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateLogstashRequest&, const CreateLogstashOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogstashAsyncHandler;
+			typedef Outcome<Error, Model::CreatePipelinesResult> CreatePipelinesOutcome;
+			typedef std::future<CreatePipelinesOutcome> CreatePipelinesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CreatePipelinesRequest&, const CreatePipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePipelinesAsyncHandler;
 			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
 			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
+			typedef Outcome<Error, Model::CreateSnapshotResult> CreateSnapshotOutcome;
+			typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CreateSnapshotRequest&, const CreateSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
 			typedef Outcome<Error, Model::DeactivateZonesResult> DeactivateZonesOutcome;
 			typedef std::future<DeactivateZonesOutcome> DeactivateZonesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeactivateZonesRequest&, const DeactivateZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeactivateZonesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCollectorResult> DeleteCollectorOutcome;
+			typedef std::future<DeleteCollectorOutcome> DeleteCollectorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteCollectorRequest&, const DeleteCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCollectorAsyncHandler;
 			typedef Outcome<Error, Model::DeleteConnectedClusterResult> DeleteConnectedClusterOutcome;
 			typedef std::future<DeleteConnectedClusterOutcome> DeleteConnectedClusterOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteConnectedClusterRequest&, const DeleteConnectedClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConnectedClusterAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDataTaskResult> DeleteDataTaskOutcome;
+			typedef std::future<DeleteDataTaskOutcome> DeleteDataTaskOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteDataTaskRequest&, const DeleteDataTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataTaskAsyncHandler;
 			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
 			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLogstashResult> DeleteLogstashOutcome;
 			typedef std::future<DeleteLogstashOutcome> DeleteLogstashOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteLogstashRequest&, const DeleteLogstashOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogstashAsyncHandler;
+			typedef Outcome<Error, Model::DeletePipelinesResult> DeletePipelinesOutcome;
+			typedef std::future<DeletePipelinesOutcome> DeletePipelinesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DeletePipelinesRequest&, const DeletePipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePipelinesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteProjectResult> DeleteProjectOutcome;
 			typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteProjectRequest&, const DeleteProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSnapshotRepoResult> DeleteSnapshotRepoOutcome;
 			typedef std::future<DeleteSnapshotRepoOutcome> DeleteSnapshotRepoOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteSnapshotRepoRequest&, const DeleteSnapshotRepoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotRepoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCollectorResult> DescribeCollectorOutcome;
+			typedef std::future<DescribeCollectorOutcome> DescribeCollectorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeCollectorRequest&, const DescribeCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCollectorAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConnectableClustersResult> DescribeConnectableClustersOutcome;
 			typedef std::future<DescribeConnectableClustersOutcome> DescribeConnectableClustersOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeConnectableClustersRequest&, const DescribeConnectableClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectableClustersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiagnoseReportResult> DescribeDiagnoseReportOutcome;
+			typedef std::future<DescribeDiagnoseReportOutcome> DescribeDiagnoseReportOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeDiagnoseReportRequest&, const DescribeDiagnoseReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseReportAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiagnosisSettingsResult> DescribeDiagnosisSettingsOutcome;
+			typedef std::future<DescribeDiagnosisSettingsOutcome> DescribeDiagnosisSettingsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeDiagnosisSettingsRequest&, const DescribeDiagnosisSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosisSettingsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeElasticsearchHealthResult> DescribeElasticsearchHealthOutcome;
 			typedef std::future<DescribeElasticsearchHealthOutcome> DescribeElasticsearchHealthOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeElasticsearchHealthRequest&, const DescribeElasticsearchHealthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticsearchHealthAsyncHandler;
@@ -268,6 +394,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLogstashResult> DescribeLogstashOutcome;
 			typedef std::future<DescribeLogstashOutcome> DescribeLogstashOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeLogstashRequest&, const DescribeLogstashOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogstashAsyncHandler;
+			typedef Outcome<Error, Model::DescribePipelineResult> DescribePipelineOutcome;
+			typedef std::future<DescribePipelineOutcome> DescribePipelineOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribePipelineRequest&, const DescribePipelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePipelineAsyncHandler;
 			typedef Outcome<Error, Model::DescribePipelineManagementConfigResult> DescribePipelineManagementConfigOutcome;
 			typedef std::future<DescribePipelineManagementConfigOutcome> DescribePipelineManagementConfigOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribePipelineManagementConfigRequest&, const DescribePipelineManagementConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePipelineManagementConfigAsyncHandler;
@@ -277,6 +406,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSnapshotSettingResult> DescribeSnapshotSettingOutcome;
 			typedef std::future<DescribeSnapshotSettingOutcome> DescribeSnapshotSettingOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeSnapshotSettingRequest&, const DescribeSnapshotSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTemplatesResult> DescribeTemplatesOutcome;
+			typedef std::future<DescribeTemplatesOutcome> DescribeTemplatesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeTemplatesRequest&, const DescribeTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplatesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeXpackMonitorConfigResult> DescribeXpackMonitorConfigOutcome;
+			typedef std::future<DescribeXpackMonitorConfigOutcome> DescribeXpackMonitorConfigOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeXpackMonitorConfigRequest&, const DescribeXpackMonitorConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeXpackMonitorConfigAsyncHandler;
+			typedef Outcome<Error, Model::DiagnoseInstanceResult> DiagnoseInstanceOutcome;
+			typedef std::future<DiagnoseInstanceOutcome> DiagnoseInstanceOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DiagnoseInstanceRequest&, const DiagnoseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DiagnoseInstanceAsyncHandler;
+			typedef Outcome<Error, Model::EstimatedLogstashRestartTimeResult> EstimatedLogstashRestartTimeOutcome;
+			typedef std::future<EstimatedLogstashRestartTimeOutcome> EstimatedLogstashRestartTimeOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::EstimatedLogstashRestartTimeRequest&, const EstimatedLogstashRestartTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EstimatedLogstashRestartTimeAsyncHandler;
+			typedef Outcome<Error, Model::EstimatedRestartTimeResult> EstimatedRestartTimeOutcome;
+			typedef std::future<EstimatedRestartTimeOutcome> EstimatedRestartTimeOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::EstimatedRestartTimeRequest&, const EstimatedRestartTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EstimatedRestartTimeAsyncHandler;
+			typedef Outcome<Error, Model::GetClusterDataInformationResult> GetClusterDataInformationOutcome;
+			typedef std::future<GetClusterDataInformationOutcome> GetClusterDataInformationOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::GetClusterDataInformationRequest&, const GetClusterDataInformationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterDataInformationAsyncHandler;
 			typedef Outcome<Error, Model::GetElastictaskResult> GetElastictaskOutcome;
 			typedef std::future<GetElastictaskOutcome> GetElastictaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetElastictaskRequest&, const GetElastictaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetElastictaskAsyncHandler;
@@ -313,12 +460,39 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAlternativeSnapshotReposResult> ListAlternativeSnapshotReposOutcome;
 			typedef std::future<ListAlternativeSnapshotReposOutcome> ListAlternativeSnapshotReposOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListAlternativeSnapshotReposRequest&, const ListAlternativeSnapshotReposOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlternativeSnapshotReposAsyncHandler;
+			typedef Outcome<Error, Model::ListAvailableEsInstanceIdsResult> ListAvailableEsInstanceIdsOutcome;
+			typedef std::future<ListAvailableEsInstanceIdsOutcome> ListAvailableEsInstanceIdsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListAvailableEsInstanceIdsRequest&, const ListAvailableEsInstanceIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAvailableEsInstanceIdsAsyncHandler;
+			typedef Outcome<Error, Model::ListCollectorsResult> ListCollectorsOutcome;
+			typedef std::future<ListCollectorsOutcome> ListCollectorsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListCollectorsRequest&, const ListCollectorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCollectorsAsyncHandler;
 			typedef Outcome<Error, Model::ListConnectedClustersResult> ListConnectedClustersOutcome;
 			typedef std::future<ListConnectedClustersOutcome> ListConnectedClustersOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListConnectedClustersRequest&, const ListConnectedClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConnectedClustersAsyncHandler;
+			typedef Outcome<Error, Model::ListDataTasksResult> ListDataTasksOutcome;
+			typedef std::future<ListDataTasksOutcome> ListDataTasksOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDataTasksRequest&, const ListDataTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataTasksAsyncHandler;
+			typedef Outcome<Error, Model::ListDiagnoseReportResult> ListDiagnoseReportOutcome;
+			typedef std::future<ListDiagnoseReportOutcome> ListDiagnoseReportOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDiagnoseReportRequest&, const ListDiagnoseReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseReportAsyncHandler;
+			typedef Outcome<Error, Model::ListDiagnoseReportIdsResult> ListDiagnoseReportIdsOutcome;
+			typedef std::future<ListDiagnoseReportIdsOutcome> ListDiagnoseReportIdsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDiagnoseReportIdsRequest&, const ListDiagnoseReportIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseReportIdsAsyncHandler;
+			typedef Outcome<Error, Model::ListDictInformationResult> ListDictInformationOutcome;
+			typedef std::future<ListDictInformationOutcome> ListDictInformationOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDictInformationRequest&, const ListDictInformationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDictInformationAsyncHandler;
+			typedef Outcome<Error, Model::ListEcsInstancesResult> ListEcsInstancesOutcome;
+			typedef std::future<ListEcsInstancesOutcome> ListEcsInstancesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListEcsInstancesRequest&, const ListEcsInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEcsInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListExtendfilesResult> ListExtendfilesOutcome;
+			typedef std::future<ListExtendfilesOutcome> ListExtendfilesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListExtendfilesRequest&, const ListExtendfilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExtendfilesAsyncHandler;
 			typedef Outcome<Error, Model::ListInstanceResult> ListInstanceOutcome;
 			typedef std::future<ListInstanceOutcome> ListInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListInstanceRequest&, const ListInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ListInstanceIndicesResult> ListInstanceIndicesOutcome;
+			typedef std::future<ListInstanceIndicesOutcome> ListInstanceIndicesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListInstanceIndicesRequest&, const ListInstanceIndicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceIndicesAsyncHandler;
 			typedef Outcome<Error, Model::ListKibanaPluginsResult> ListKibanaPluginsOutcome;
 			typedef std::future<ListKibanaPluginsOutcome> ListKibanaPluginsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListKibanaPluginsRequest&, const ListKibanaPluginsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListKibanaPluginsAsyncHandler;
@@ -331,6 +505,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListLogstashPluginsResult> ListLogstashPluginsOutcome;
 			typedef std::future<ListLogstashPluginsOutcome> ListLogstashPluginsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListLogstashPluginsRequest&, const ListLogstashPluginsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLogstashPluginsAsyncHandler;
+			typedef Outcome<Error, Model::ListNodesResult> ListNodesOutcome;
+			typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListNodesRequest&, const ListNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodesAsyncHandler;
+			typedef Outcome<Error, Model::ListPipelineResult> ListPipelineOutcome;
+			typedef std::future<ListPipelineOutcome> ListPipelineOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListPipelineRequest&, const ListPipelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPipelineAsyncHandler;
+			typedef Outcome<Error, Model::ListPipelineIdsResult> ListPipelineIdsOutcome;
+			typedef std::future<ListPipelineIdsOutcome> ListPipelineIdsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListPipelineIdsRequest&, const ListPipelineIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPipelineIdsAsyncHandler;
 			typedef Outcome<Error, Model::ListPluginsResult> ListPluginsOutcome;
 			typedef std::future<ListPluginsOutcome> ListPluginsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListPluginsRequest&, const ListPluginsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPluginsAsyncHandler;
@@ -343,18 +526,36 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ListTagsResult> ListTagsOutcome;
+			typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListTagsRequest&, const ListTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsAsyncHandler;
+			typedef Outcome<Error, Model::MigrateToOtherZoneResult> MigrateToOtherZoneOutcome;
+			typedef std::future<MigrateToOtherZoneOutcome> MigrateToOtherZoneOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::MigrateToOtherZoneRequest&, const MigrateToOtherZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateToOtherZoneAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDeployMachineResult> ModifyDeployMachineOutcome;
+			typedef std::future<ModifyDeployMachineOutcome> ModifyDeployMachineOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ModifyDeployMachineRequest&, const ModifyDeployMachineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeployMachineAsyncHandler;
 			typedef Outcome<Error, Model::ModifyElastictaskResult> ModifyElastictaskOutcome;
 			typedef std::future<ModifyElastictaskOutcome> ModifyElastictaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ModifyElastictaskRequest&, const ModifyElastictaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElastictaskAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceMaintainTimeResult> ModifyInstanceMaintainTimeOutcome;
+			typedef std::future<ModifyInstanceMaintainTimeOutcome> ModifyInstanceMaintainTimeOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ModifyInstanceMaintainTimeRequest&, const ModifyInstanceMaintainTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceMaintainTimeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyWhiteIpsResult> ModifyWhiteIpsOutcome;
 			typedef std::future<ModifyWhiteIpsOutcome> ModifyWhiteIpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ModifyWhiteIpsRequest&, const ModifyWhiteIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWhiteIpsAsyncHandler;
 			typedef Outcome<Error, Model::MoveResourceGroupResult> MoveResourceGroupOutcome;
 			typedef std::future<MoveResourceGroupOutcome> MoveResourceGroupOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::MoveResourceGroupRequest&, const MoveResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceGroupAsyncHandler;
+			typedef Outcome<Error, Model::OpenDiagnosisResult> OpenDiagnosisOutcome;
+			typedef std::future<OpenDiagnosisOutcome> OpenDiagnosisOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::OpenDiagnosisRequest&, const OpenDiagnosisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenDiagnosisAsyncHandler;
 			typedef Outcome<Error, Model::OpenHttpsResult> OpenHttpsOutcome;
 			typedef std::future<OpenHttpsOutcome> OpenHttpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::OpenHttpsRequest&, const OpenHttpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenHttpsAsyncHandler;
+			typedef Outcome<Error, Model::ReinstallCollectorResult> ReinstallCollectorOutcome;
+			typedef std::future<ReinstallCollectorOutcome> ReinstallCollectorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ReinstallCollectorRequest&, const ReinstallCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReinstallCollectorAsyncHandler;
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -376,9 +577,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RollbackInstanceResult> RollbackInstanceOutcome;
 			typedef std::future<RollbackInstanceOutcome> RollbackInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::RollbackInstanceRequest&, const RollbackInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RunPipelinesResult> RunPipelinesOutcome;
+			typedef std::future<RunPipelinesOutcome> RunPipelinesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::RunPipelinesRequest&, const RunPipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunPipelinesAsyncHandler;
 			typedef Outcome<Error, Model::ShrinkNodeResult> ShrinkNodeOutcome;
 			typedef std::future<ShrinkNodeOutcome> ShrinkNodeOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ShrinkNodeRequest&, const ShrinkNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ShrinkNodeAsyncHandler;
+			typedef Outcome<Error, Model::StartCollectorResult> StartCollectorOutcome;
+			typedef std::future<StartCollectorOutcome> StartCollectorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::StartCollectorRequest&, const StartCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartCollectorAsyncHandler;
+			typedef Outcome<Error, Model::StopCollectorResult> StopCollectorOutcome;
+			typedef std::future<StopCollectorOutcome> StopCollectorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::StopCollectorRequest&, const StopCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopCollectorAsyncHandler;
+			typedef Outcome<Error, Model::StopPipelinesResult> StopPipelinesOutcome;
+			typedef std::future<StopPipelinesOutcome> StopPipelinesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::StopPipelinesRequest&, const StopPipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopPipelinesAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
@@ -412,12 +625,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateBlackIpsResult> UpdateBlackIpsOutcome;
 			typedef std::future<UpdateBlackIpsOutcome> UpdateBlackIpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateBlackIpsRequest&, const UpdateBlackIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBlackIpsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCollectorResult> UpdateCollectorOutcome;
+			typedef std::future<UpdateCollectorOutcome> UpdateCollectorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateCollectorRequest&, const UpdateCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCollectorAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCollectorNameResult> UpdateCollectorNameOutcome;
+			typedef std::future<UpdateCollectorNameOutcome> UpdateCollectorNameOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateCollectorNameRequest&, const UpdateCollectorNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCollectorNameAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDescriptionResult> UpdateDescriptionOutcome;
 			typedef std::future<UpdateDescriptionOutcome> UpdateDescriptionOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateDescriptionRequest&, const UpdateDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDiagnosisSettingsResult> UpdateDiagnosisSettingsOutcome;
+			typedef std::future<UpdateDiagnosisSettingsOutcome> UpdateDiagnosisSettingsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateDiagnosisSettingsRequest&, const UpdateDiagnosisSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDiagnosisSettingsAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDictResult> UpdateDictOutcome;
 			typedef std::future<UpdateDictOutcome> UpdateDictOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateDictRequest&, const UpdateDictOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDictAsyncHandler;
+			typedef Outcome<Error, Model::UpdateExtendConfigResult> UpdateExtendConfigOutcome;
+			typedef std::future<UpdateExtendConfigOutcome> UpdateExtendConfigOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateExtendConfigRequest&, const UpdateExtendConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExtendConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdateExtendfilesResult> UpdateExtendfilesOutcome;
+			typedef std::future<UpdateExtendfilesOutcome> UpdateExtendfilesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateExtendfilesRequest&, const UpdateExtendfilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExtendfilesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateHotIkDictsResult> UpdateHotIkDictsOutcome;
 			typedef std::future<UpdateHotIkDictsOutcome> UpdateHotIkDictsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateHotIkDictsRequest&, const UpdateHotIkDictsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateHotIkDictsAsyncHandler;
@@ -463,18 +691,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdatePublicWhiteIpsResult> UpdatePublicWhiteIpsOutcome;
 			typedef std::future<UpdatePublicWhiteIpsOutcome> UpdatePublicWhiteIpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdatePublicWhiteIpsRequest&, const UpdatePublicWhiteIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePublicWhiteIpsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateReadWritePolicyResult> UpdateReadWritePolicyOutcome;
+			typedef std::future<UpdateReadWritePolicyOutcome> UpdateReadWritePolicyOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateReadWritePolicyRequest&, const UpdateReadWritePolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateReadWritePolicyAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSnapshotSettingResult> UpdateSnapshotSettingOutcome;
 			typedef std::future<UpdateSnapshotSettingOutcome> UpdateSnapshotSettingOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateSnapshotSettingRequest&, const UpdateSnapshotSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSnapshotSettingAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSynonymsDictsResult> UpdateSynonymsDictsOutcome;
 			typedef std::future<UpdateSynonymsDictsOutcome> UpdateSynonymsDictsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateSynonymsDictsRequest&, const UpdateSynonymsDictsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSynonymsDictsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTemplateResult> UpdateTemplateOutcome;
+			typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateTemplateRequest&, const UpdateTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTemplateAsyncHandler;
 			typedef Outcome<Error, Model::UpdateWhiteIpsResult> UpdateWhiteIpsOutcome;
 			typedef std::future<UpdateWhiteIpsOutcome> UpdateWhiteIpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateWhiteIpsRequest&, const UpdateWhiteIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWhiteIpsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateXpackMonitorConfigResult> UpdateXpackMonitorConfigOutcome;
+			typedef std::future<UpdateXpackMonitorConfigOutcome> UpdateXpackMonitorConfigOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateXpackMonitorConfigRequest&, const UpdateXpackMonitorConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateXpackMonitorConfigAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeEngineVersionResult> UpgradeEngineVersionOutcome;
 			typedef std::future<UpgradeEngineVersionOutcome> UpgradeEngineVersionOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpgradeEngineVersionRequest&, const UpgradeEngineVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeEngineVersionAsyncHandler;
+			typedef Outcome<Error, Model::ValidateConnectionResult> ValidateConnectionOutcome;
+			typedef std::future<ValidateConnectionOutcome> ValidateConnectionOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ValidateConnectionRequest&, const ValidateConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateConnectionAsyncHandler;
 			typedef Outcome<Error, Model::ValidateShrinkNodesResult> ValidateShrinkNodesOutcome;
 			typedef std::future<ValidateShrinkNodesOutcome> ValidateShrinkNodesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ValidateShrinkNodesRequest&, const ValidateShrinkNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateShrinkNodesAsyncHandler;
@@ -498,39 +738,69 @@ namespace AlibabaCloud
 			CancelTaskOutcome cancelTask(const Model::CancelTaskRequest &request)const;
 			void cancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelTaskOutcomeCallable cancelTaskCallable(const Model::CancelTaskRequest& request) const;
+			CloseDiagnosisOutcome closeDiagnosis(const Model::CloseDiagnosisRequest &request)const;
+			void closeDiagnosisAsync(const Model::CloseDiagnosisRequest& request, const CloseDiagnosisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CloseDiagnosisOutcomeCallable closeDiagnosisCallable(const Model::CloseDiagnosisRequest& request) const;
 			CloseHttpsOutcome closeHttps(const Model::CloseHttpsRequest &request)const;
 			void closeHttpsAsync(const Model::CloseHttpsRequest& request, const CloseHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseHttpsOutcomeCallable closeHttpsCallable(const Model::CloseHttpsRequest& request) const;
+			CreateDataTasksOutcome createDataTasks(const Model::CreateDataTasksRequest &request)const;
+			void createDataTasksAsync(const Model::CreateDataTasksRequest& request, const CreateDataTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDataTasksOutcomeCallable createDataTasksCallable(const Model::CreateDataTasksRequest& request) const;
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
 			CreateLogstashOutcome createLogstash(const Model::CreateLogstashRequest &request)const;
 			void createLogstashAsync(const Model::CreateLogstashRequest& request, const CreateLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLogstashOutcomeCallable createLogstashCallable(const Model::CreateLogstashRequest& request) const;
+			CreatePipelinesOutcome createPipelines(const Model::CreatePipelinesRequest &request)const;
+			void createPipelinesAsync(const Model::CreatePipelinesRequest& request, const CreatePipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePipelinesOutcomeCallable createPipelinesCallable(const Model::CreatePipelinesRequest& request) const;
 			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
 			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
+			CreateSnapshotOutcome createSnapshot(const Model::CreateSnapshotRequest &request)const;
+			void createSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSnapshotOutcomeCallable createSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
 			DeactivateZonesOutcome deactivateZones(const Model::DeactivateZonesRequest &request)const;
 			void deactivateZonesAsync(const Model::DeactivateZonesRequest& request, const DeactivateZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeactivateZonesOutcomeCallable deactivateZonesCallable(const Model::DeactivateZonesRequest& request) const;
+			DeleteCollectorOutcome deleteCollector(const Model::DeleteCollectorRequest &request)const;
+			void deleteCollectorAsync(const Model::DeleteCollectorRequest& request, const DeleteCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCollectorOutcomeCallable deleteCollectorCallable(const Model::DeleteCollectorRequest& request) const;
 			DeleteConnectedClusterOutcome deleteConnectedCluster(const Model::DeleteConnectedClusterRequest &request)const;
 			void deleteConnectedClusterAsync(const Model::DeleteConnectedClusterRequest& request, const DeleteConnectedClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteConnectedClusterOutcomeCallable deleteConnectedClusterCallable(const Model::DeleteConnectedClusterRequest& request) const;
+			DeleteDataTaskOutcome deleteDataTask(const Model::DeleteDataTaskRequest &request)const;
+			void deleteDataTaskAsync(const Model::DeleteDataTaskRequest& request, const DeleteDataTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDataTaskOutcomeCallable deleteDataTaskCallable(const Model::DeleteDataTaskRequest& request) const;
 			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
 			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
 			DeleteLogstashOutcome deleteLogstash(const Model::DeleteLogstashRequest &request)const;
 			void deleteLogstashAsync(const Model::DeleteLogstashRequest& request, const DeleteLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLogstashOutcomeCallable deleteLogstashCallable(const Model::DeleteLogstashRequest& request) const;
+			DeletePipelinesOutcome deletePipelines(const Model::DeletePipelinesRequest &request)const;
+			void deletePipelinesAsync(const Model::DeletePipelinesRequest& request, const DeletePipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePipelinesOutcomeCallable deletePipelinesCallable(const Model::DeletePipelinesRequest& request) const;
 			DeleteProjectOutcome deleteProject(const Model::DeleteProjectRequest &request)const;
 			void deleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteProjectOutcomeCallable deleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 			DeleteSnapshotRepoOutcome deleteSnapshotRepo(const Model::DeleteSnapshotRepoRequest &request)const;
 			void deleteSnapshotRepoAsync(const Model::DeleteSnapshotRepoRequest& request, const DeleteSnapshotRepoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotRepoOutcomeCallable deleteSnapshotRepoCallable(const Model::DeleteSnapshotRepoRequest& request) const;
+			DescribeCollectorOutcome describeCollector(const Model::DescribeCollectorRequest &request)const;
+			void describeCollectorAsync(const Model::DescribeCollectorRequest& request, const DescribeCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCollectorOutcomeCallable describeCollectorCallable(const Model::DescribeCollectorRequest& request) const;
 			DescribeConnectableClustersOutcome describeConnectableClusters(const Model::DescribeConnectableClustersRequest &request)const;
 			void describeConnectableClustersAsync(const Model::DescribeConnectableClustersRequest& request, const DescribeConnectableClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConnectableClustersOutcomeCallable describeConnectableClustersCallable(const Model::DescribeConnectableClustersRequest& request) const;
+			DescribeDiagnoseReportOutcome describeDiagnoseReport(const Model::DescribeDiagnoseReportRequest &request)const;
+			void describeDiagnoseReportAsync(const Model::DescribeDiagnoseReportRequest& request, const DescribeDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiagnoseReportOutcomeCallable describeDiagnoseReportCallable(const Model::DescribeDiagnoseReportRequest& request) const;
+			DescribeDiagnosisSettingsOutcome describeDiagnosisSettings(const Model::DescribeDiagnosisSettingsRequest &request)const;
+			void describeDiagnosisSettingsAsync(const Model::DescribeDiagnosisSettingsRequest& request, const DescribeDiagnosisSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiagnosisSettingsOutcomeCallable describeDiagnosisSettingsCallable(const Model::DescribeDiagnosisSettingsRequest& request) const;
 			DescribeElasticsearchHealthOutcome describeElasticsearchHealth(const Model::DescribeElasticsearchHealthRequest &request)const;
 			void describeElasticsearchHealthAsync(const Model::DescribeElasticsearchHealthRequest& request, const DescribeElasticsearchHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeElasticsearchHealthOutcomeCallable describeElasticsearchHealthCallable(const Model::DescribeElasticsearchHealthRequest& request) const;
@@ -543,6 +813,9 @@ namespace AlibabaCloud
 			DescribeLogstashOutcome describeLogstash(const Model::DescribeLogstashRequest &request)const;
 			void describeLogstashAsync(const Model::DescribeLogstashRequest& request, const DescribeLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLogstashOutcomeCallable describeLogstashCallable(const Model::DescribeLogstashRequest& request) const;
+			DescribePipelineOutcome describePipeline(const Model::DescribePipelineRequest &request)const;
+			void describePipelineAsync(const Model::DescribePipelineRequest& request, const DescribePipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePipelineOutcomeCallable describePipelineCallable(const Model::DescribePipelineRequest& request) const;
 			DescribePipelineManagementConfigOutcome describePipelineManagementConfig(const Model::DescribePipelineManagementConfigRequest &request)const;
 			void describePipelineManagementConfigAsync(const Model::DescribePipelineManagementConfigRequest& request, const DescribePipelineManagementConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePipelineManagementConfigOutcomeCallable describePipelineManagementConfigCallable(const Model::DescribePipelineManagementConfigRequest& request) const;
@@ -552,6 +825,24 @@ namespace AlibabaCloud
 			DescribeSnapshotSettingOutcome describeSnapshotSetting(const Model::DescribeSnapshotSettingRequest &request)const;
 			void describeSnapshotSettingAsync(const Model::DescribeSnapshotSettingRequest& request, const DescribeSnapshotSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSnapshotSettingOutcomeCallable describeSnapshotSettingCallable(const Model::DescribeSnapshotSettingRequest& request) const;
+			DescribeTemplatesOutcome describeTemplates(const Model::DescribeTemplatesRequest &request)const;
+			void describeTemplatesAsync(const Model::DescribeTemplatesRequest& request, const DescribeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTemplatesOutcomeCallable describeTemplatesCallable(const Model::DescribeTemplatesRequest& request) const;
+			DescribeXpackMonitorConfigOutcome describeXpackMonitorConfig(const Model::DescribeXpackMonitorConfigRequest &request)const;
+			void describeXpackMonitorConfigAsync(const Model::DescribeXpackMonitorConfigRequest& request, const DescribeXpackMonitorConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeXpackMonitorConfigOutcomeCallable describeXpackMonitorConfigCallable(const Model::DescribeXpackMonitorConfigRequest& request) const;
+			DiagnoseInstanceOutcome diagnoseInstance(const Model::DiagnoseInstanceRequest &request)const;
+			void diagnoseInstanceAsync(const Model::DiagnoseInstanceRequest& request, const DiagnoseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DiagnoseInstanceOutcomeCallable diagnoseInstanceCallable(const Model::DiagnoseInstanceRequest& request) const;
+			EstimatedLogstashRestartTimeOutcome estimatedLogstashRestartTime(const Model::EstimatedLogstashRestartTimeRequest &request)const;
+			void estimatedLogstashRestartTimeAsync(const Model::EstimatedLogstashRestartTimeRequest& request, const EstimatedLogstashRestartTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EstimatedLogstashRestartTimeOutcomeCallable estimatedLogstashRestartTimeCallable(const Model::EstimatedLogstashRestartTimeRequest& request) const;
+			EstimatedRestartTimeOutcome estimatedRestartTime(const Model::EstimatedRestartTimeRequest &request)const;
+			void estimatedRestartTimeAsync(const Model::EstimatedRestartTimeRequest& request, const EstimatedRestartTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EstimatedRestartTimeOutcomeCallable estimatedRestartTimeCallable(const Model::EstimatedRestartTimeRequest& request) const;
+			GetClusterDataInformationOutcome getClusterDataInformation(const Model::GetClusterDataInformationRequest &request)const;
+			void getClusterDataInformationAsync(const Model::GetClusterDataInformationRequest& request, const GetClusterDataInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetClusterDataInformationOutcomeCallable getClusterDataInformationCallable(const Model::GetClusterDataInformationRequest& request) const;
 			GetElastictaskOutcome getElastictask(const Model::GetElastictaskRequest &request)const;
 			void getElastictaskAsync(const Model::GetElastictaskRequest& request, const GetElastictaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetElastictaskOutcomeCallable getElastictaskCallable(const Model::GetElastictaskRequest& request) const;
@@ -588,12 +879,39 @@ namespace AlibabaCloud
 			ListAlternativeSnapshotReposOutcome listAlternativeSnapshotRepos(const Model::ListAlternativeSnapshotReposRequest &request)const;
 			void listAlternativeSnapshotReposAsync(const Model::ListAlternativeSnapshotReposRequest& request, const ListAlternativeSnapshotReposAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAlternativeSnapshotReposOutcomeCallable listAlternativeSnapshotReposCallable(const Model::ListAlternativeSnapshotReposRequest& request) const;
+			ListAvailableEsInstanceIdsOutcome listAvailableEsInstanceIds(const Model::ListAvailableEsInstanceIdsRequest &request)const;
+			void listAvailableEsInstanceIdsAsync(const Model::ListAvailableEsInstanceIdsRequest& request, const ListAvailableEsInstanceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAvailableEsInstanceIdsOutcomeCallable listAvailableEsInstanceIdsCallable(const Model::ListAvailableEsInstanceIdsRequest& request) const;
+			ListCollectorsOutcome listCollectors(const Model::ListCollectorsRequest &request)const;
+			void listCollectorsAsync(const Model::ListCollectorsRequest& request, const ListCollectorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCollectorsOutcomeCallable listCollectorsCallable(const Model::ListCollectorsRequest& request) const;
 			ListConnectedClustersOutcome listConnectedClusters(const Model::ListConnectedClustersRequest &request)const;
 			void listConnectedClustersAsync(const Model::ListConnectedClustersRequest& request, const ListConnectedClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConnectedClustersOutcomeCallable listConnectedClustersCallable(const Model::ListConnectedClustersRequest& request) const;
+			ListDataTasksOutcome listDataTasks(const Model::ListDataTasksRequest &request)const;
+			void listDataTasksAsync(const Model::ListDataTasksRequest& request, const ListDataTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDataTasksOutcomeCallable listDataTasksCallable(const Model::ListDataTasksRequest& request) const;
+			ListDiagnoseReportOutcome listDiagnoseReport(const Model::ListDiagnoseReportRequest &request)const;
+			void listDiagnoseReportAsync(const Model::ListDiagnoseReportRequest& request, const ListDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDiagnoseReportOutcomeCallable listDiagnoseReportCallable(const Model::ListDiagnoseReportRequest& request) const;
+			ListDiagnoseReportIdsOutcome listDiagnoseReportIds(const Model::ListDiagnoseReportIdsRequest &request)const;
+			void listDiagnoseReportIdsAsync(const Model::ListDiagnoseReportIdsRequest& request, const ListDiagnoseReportIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDiagnoseReportIdsOutcomeCallable listDiagnoseReportIdsCallable(const Model::ListDiagnoseReportIdsRequest& request) const;
+			ListDictInformationOutcome listDictInformation(const Model::ListDictInformationRequest &request)const;
+			void listDictInformationAsync(const Model::ListDictInformationRequest& request, const ListDictInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDictInformationOutcomeCallable listDictInformationCallable(const Model::ListDictInformationRequest& request) const;
+			ListEcsInstancesOutcome listEcsInstances(const Model::ListEcsInstancesRequest &request)const;
+			void listEcsInstancesAsync(const Model::ListEcsInstancesRequest& request, const ListEcsInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEcsInstancesOutcomeCallable listEcsInstancesCallable(const Model::ListEcsInstancesRequest& request) const;
+			ListExtendfilesOutcome listExtendfiles(const Model::ListExtendfilesRequest &request)const;
+			void listExtendfilesAsync(const Model::ListExtendfilesRequest& request, const ListExtendfilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListExtendfilesOutcomeCallable listExtendfilesCallable(const Model::ListExtendfilesRequest& request) const;
 			ListInstanceOutcome listInstance(const Model::ListInstanceRequest &request)const;
 			void listInstanceAsync(const Model::ListInstanceRequest& request, const ListInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceOutcomeCallable listInstanceCallable(const Model::ListInstanceRequest& request) const;
+			ListInstanceIndicesOutcome listInstanceIndices(const Model::ListInstanceIndicesRequest &request)const;
+			void listInstanceIndicesAsync(const Model::ListInstanceIndicesRequest& request, const ListInstanceIndicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListInstanceIndicesOutcomeCallable listInstanceIndicesCallable(const Model::ListInstanceIndicesRequest& request) const;
 			ListKibanaPluginsOutcome listKibanaPlugins(const Model::ListKibanaPluginsRequest &request)const;
 			void listKibanaPluginsAsync(const Model::ListKibanaPluginsRequest& request, const ListKibanaPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListKibanaPluginsOutcomeCallable listKibanaPluginsCallable(const Model::ListKibanaPluginsRequest& request) const;
@@ -606,6 +924,15 @@ namespace AlibabaCloud
 			ListLogstashPluginsOutcome listLogstashPlugins(const Model::ListLogstashPluginsRequest &request)const;
 			void listLogstashPluginsAsync(const Model::ListLogstashPluginsRequest& request, const ListLogstashPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLogstashPluginsOutcomeCallable listLogstashPluginsCallable(const Model::ListLogstashPluginsRequest& request) const;
+			ListNodesOutcome listNodes(const Model::ListNodesRequest &request)const;
+			void listNodesAsync(const Model::ListNodesRequest& request, const ListNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListNodesOutcomeCallable listNodesCallable(const Model::ListNodesRequest& request) const;
+			ListPipelineOutcome listPipeline(const Model::ListPipelineRequest &request)const;
+			void listPipelineAsync(const Model::ListPipelineRequest& request, const ListPipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPipelineOutcomeCallable listPipelineCallable(const Model::ListPipelineRequest& request) const;
+			ListPipelineIdsOutcome listPipelineIds(const Model::ListPipelineIdsRequest &request)const;
+			void listPipelineIdsAsync(const Model::ListPipelineIdsRequest& request, const ListPipelineIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPipelineIdsOutcomeCallable listPipelineIdsCallable(const Model::ListPipelineIdsRequest& request) const;
 			ListPluginsOutcome listPlugins(const Model::ListPluginsRequest &request)const;
 			void listPluginsAsync(const Model::ListPluginsRequest& request, const ListPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPluginsOutcomeCallable listPluginsCallable(const Model::ListPluginsRequest& request) const;
@@ -618,18 +945,36 @@ namespace AlibabaCloud
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			ListTagsOutcome listTags(const Model::ListTagsRequest &request)const;
+			void listTagsAsync(const Model::ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagsOutcomeCallable listTagsCallable(const Model::ListTagsRequest& request) const;
+			MigrateToOtherZoneOutcome migrateToOtherZone(const Model::MigrateToOtherZoneRequest &request)const;
+			void migrateToOtherZoneAsync(const Model::MigrateToOtherZoneRequest& request, const MigrateToOtherZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MigrateToOtherZoneOutcomeCallable migrateToOtherZoneCallable(const Model::MigrateToOtherZoneRequest& request) const;
+			ModifyDeployMachineOutcome modifyDeployMachine(const Model::ModifyDeployMachineRequest &request)const;
+			void modifyDeployMachineAsync(const Model::ModifyDeployMachineRequest& request, const ModifyDeployMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDeployMachineOutcomeCallable modifyDeployMachineCallable(const Model::ModifyDeployMachineRequest& request) const;
 			ModifyElastictaskOutcome modifyElastictask(const Model::ModifyElastictaskRequest &request)const;
 			void modifyElastictaskAsync(const Model::ModifyElastictaskRequest& request, const ModifyElastictaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyElastictaskOutcomeCallable modifyElastictaskCallable(const Model::ModifyElastictaskRequest& request) const;
+			ModifyInstanceMaintainTimeOutcome modifyInstanceMaintainTime(const Model::ModifyInstanceMaintainTimeRequest &request)const;
+			void modifyInstanceMaintainTimeAsync(const Model::ModifyInstanceMaintainTimeRequest& request, const ModifyInstanceMaintainTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceMaintainTimeOutcomeCallable modifyInstanceMaintainTimeCallable(const Model::ModifyInstanceMaintainTimeRequest& request) const;
 			ModifyWhiteIpsOutcome modifyWhiteIps(const Model::ModifyWhiteIpsRequest &request)const;
 			void modifyWhiteIpsAsync(const Model::ModifyWhiteIpsRequest& request, const ModifyWhiteIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyWhiteIpsOutcomeCallable modifyWhiteIpsCallable(const Model::ModifyWhiteIpsRequest& request) const;
 			MoveResourceGroupOutcome moveResourceGroup(const Model::MoveResourceGroupRequest &request)const;
 			void moveResourceGroupAsync(const Model::MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoveResourceGroupOutcomeCallable moveResourceGroupCallable(const Model::MoveResourceGroupRequest& request) const;
+			OpenDiagnosisOutcome openDiagnosis(const Model::OpenDiagnosisRequest &request)const;
+			void openDiagnosisAsync(const Model::OpenDiagnosisRequest& request, const OpenDiagnosisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenDiagnosisOutcomeCallable openDiagnosisCallable(const Model::OpenDiagnosisRequest& request) const;
 			OpenHttpsOutcome openHttps(const Model::OpenHttpsRequest &request)const;
 			void openHttpsAsync(const Model::OpenHttpsRequest& request, const OpenHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenHttpsOutcomeCallable openHttpsCallable(const Model::OpenHttpsRequest& request) const;
+			ReinstallCollectorOutcome reinstallCollector(const Model::ReinstallCollectorRequest &request)const;
+			void reinstallCollectorAsync(const Model::ReinstallCollectorRequest& request, const ReinstallCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReinstallCollectorOutcomeCallable reinstallCollectorCallable(const Model::ReinstallCollectorRequest& request) const;
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
@@ -651,9 +996,21 @@ namespace AlibabaCloud
 			RollbackInstanceOutcome rollbackInstance(const Model::RollbackInstanceRequest &request)const;
 			void rollbackInstanceAsync(const Model::RollbackInstanceRequest& request, const RollbackInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RollbackInstanceOutcomeCallable rollbackInstanceCallable(const Model::RollbackInstanceRequest& request) const;
+			RunPipelinesOutcome runPipelines(const Model::RunPipelinesRequest &request)const;
+			void runPipelinesAsync(const Model::RunPipelinesRequest& request, const RunPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunPipelinesOutcomeCallable runPipelinesCallable(const Model::RunPipelinesRequest& request) const;
 			ShrinkNodeOutcome shrinkNode(const Model::ShrinkNodeRequest &request)const;
 			void shrinkNodeAsync(const Model::ShrinkNodeRequest& request, const ShrinkNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ShrinkNodeOutcomeCallable shrinkNodeCallable(const Model::ShrinkNodeRequest& request) const;
+			StartCollectorOutcome startCollector(const Model::StartCollectorRequest &request)const;
+			void startCollectorAsync(const Model::StartCollectorRequest& request, const StartCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartCollectorOutcomeCallable startCollectorCallable(const Model::StartCollectorRequest& request) const;
+			StopCollectorOutcome stopCollector(const Model::StopCollectorRequest &request)const;
+			void stopCollectorAsync(const Model::StopCollectorRequest& request, const StopCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopCollectorOutcomeCallable stopCollectorCallable(const Model::StopCollectorRequest& request) const;
+			StopPipelinesOutcome stopPipelines(const Model::StopPipelinesRequest &request)const;
+			void stopPipelinesAsync(const Model::StopPipelinesRequest& request, const StopPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopPipelinesOutcomeCallable stopPipelinesCallable(const Model::StopPipelinesRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
@@ -687,12 +1044,27 @@ namespace AlibabaCloud
 			UpdateBlackIpsOutcome updateBlackIps(const Model::UpdateBlackIpsRequest &request)const;
 			void updateBlackIpsAsync(const Model::UpdateBlackIpsRequest& request, const UpdateBlackIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateBlackIpsOutcomeCallable updateBlackIpsCallable(const Model::UpdateBlackIpsRequest& request) const;
+			UpdateCollectorOutcome updateCollector(const Model::UpdateCollectorRequest &request)const;
+			void updateCollectorAsync(const Model::UpdateCollectorRequest& request, const UpdateCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCollectorOutcomeCallable updateCollectorCallable(const Model::UpdateCollectorRequest& request) const;
+			UpdateCollectorNameOutcome updateCollectorName(const Model::UpdateCollectorNameRequest &request)const;
+			void updateCollectorNameAsync(const Model::UpdateCollectorNameRequest& request, const UpdateCollectorNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCollectorNameOutcomeCallable updateCollectorNameCallable(const Model::UpdateCollectorNameRequest& request) const;
 			UpdateDescriptionOutcome updateDescription(const Model::UpdateDescriptionRequest &request)const;
 			void updateDescriptionAsync(const Model::UpdateDescriptionRequest& request, const UpdateDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDescriptionOutcomeCallable updateDescriptionCallable(const Model::UpdateDescriptionRequest& request) const;
+			UpdateDiagnosisSettingsOutcome updateDiagnosisSettings(const Model::UpdateDiagnosisSettingsRequest &request)const;
+			void updateDiagnosisSettingsAsync(const Model::UpdateDiagnosisSettingsRequest& request, const UpdateDiagnosisSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDiagnosisSettingsOutcomeCallable updateDiagnosisSettingsCallable(const Model::UpdateDiagnosisSettingsRequest& request) const;
 			UpdateDictOutcome updateDict(const Model::UpdateDictRequest &request)const;
 			void updateDictAsync(const Model::UpdateDictRequest& request, const UpdateDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDictOutcomeCallable updateDictCallable(const Model::UpdateDictRequest& request) const;
+			UpdateExtendConfigOutcome updateExtendConfig(const Model::UpdateExtendConfigRequest &request)const;
+			void updateExtendConfigAsync(const Model::UpdateExtendConfigRequest& request, const UpdateExtendConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateExtendConfigOutcomeCallable updateExtendConfigCallable(const Model::UpdateExtendConfigRequest& request) const;
+			UpdateExtendfilesOutcome updateExtendfiles(const Model::UpdateExtendfilesRequest &request)const;
+			void updateExtendfilesAsync(const Model::UpdateExtendfilesRequest& request, const UpdateExtendfilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateExtendfilesOutcomeCallable updateExtendfilesCallable(const Model::UpdateExtendfilesRequest& request) const;
 			UpdateHotIkDictsOutcome updateHotIkDicts(const Model::UpdateHotIkDictsRequest &request)const;
 			void updateHotIkDictsAsync(const Model::UpdateHotIkDictsRequest& request, const UpdateHotIkDictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateHotIkDictsOutcomeCallable updateHotIkDictsCallable(const Model::UpdateHotIkDictsRequest& request) const;
@@ -738,18 +1110,30 @@ namespace AlibabaCloud
 			UpdatePublicWhiteIpsOutcome updatePublicWhiteIps(const Model::UpdatePublicWhiteIpsRequest &request)const;
 			void updatePublicWhiteIpsAsync(const Model::UpdatePublicWhiteIpsRequest& request, const UpdatePublicWhiteIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePublicWhiteIpsOutcomeCallable updatePublicWhiteIpsCallable(const Model::UpdatePublicWhiteIpsRequest& request) const;
+			UpdateReadWritePolicyOutcome updateReadWritePolicy(const Model::UpdateReadWritePolicyRequest &request)const;
+			void updateReadWritePolicyAsync(const Model::UpdateReadWritePolicyRequest& request, const UpdateReadWritePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateReadWritePolicyOutcomeCallable updateReadWritePolicyCallable(const Model::UpdateReadWritePolicyRequest& request) const;
 			UpdateSnapshotSettingOutcome updateSnapshotSetting(const Model::UpdateSnapshotSettingRequest &request)const;
 			void updateSnapshotSettingAsync(const Model::UpdateSnapshotSettingRequest& request, const UpdateSnapshotSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSnapshotSettingOutcomeCallable updateSnapshotSettingCallable(const Model::UpdateSnapshotSettingRequest& request) const;
 			UpdateSynonymsDictsOutcome updateSynonymsDicts(const Model::UpdateSynonymsDictsRequest &request)const;
 			void updateSynonymsDictsAsync(const Model::UpdateSynonymsDictsRequest& request, const UpdateSynonymsDictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSynonymsDictsOutcomeCallable updateSynonymsDictsCallable(const Model::UpdateSynonymsDictsRequest& request) const;
+			UpdateTemplateOutcome updateTemplate(const Model::UpdateTemplateRequest &request)const;
+			void updateTemplateAsync(const Model::UpdateTemplateRequest& request, const UpdateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTemplateOutcomeCallable updateTemplateCallable(const Model::UpdateTemplateRequest& request) const;
 			UpdateWhiteIpsOutcome updateWhiteIps(const Model::UpdateWhiteIpsRequest &request)const;
 			void updateWhiteIpsAsync(const Model::UpdateWhiteIpsRequest& request, const UpdateWhiteIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateWhiteIpsOutcomeCallable updateWhiteIpsCallable(const Model::UpdateWhiteIpsRequest& request) const;
+			UpdateXpackMonitorConfigOutcome updateXpackMonitorConfig(const Model::UpdateXpackMonitorConfigRequest &request)const;
+			void updateXpackMonitorConfigAsync(const Model::UpdateXpackMonitorConfigRequest& request, const UpdateXpackMonitorConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateXpackMonitorConfigOutcomeCallable updateXpackMonitorConfigCallable(const Model::UpdateXpackMonitorConfigRequest& request) const;
 			UpgradeEngineVersionOutcome upgradeEngineVersion(const Model::UpgradeEngineVersionRequest &request)const;
 			void upgradeEngineVersionAsync(const Model::UpgradeEngineVersionRequest& request, const UpgradeEngineVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeEngineVersionOutcomeCallable upgradeEngineVersionCallable(const Model::UpgradeEngineVersionRequest& request) const;
+			ValidateConnectionOutcome validateConnection(const Model::ValidateConnectionRequest &request)const;
+			void validateConnectionAsync(const Model::ValidateConnectionRequest& request, const ValidateConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ValidateConnectionOutcomeCallable validateConnectionCallable(const Model::ValidateConnectionRequest& request) const;
 			ValidateShrinkNodesOutcome validateShrinkNodes(const Model::ValidateShrinkNodesRequest &request)const;
 			void validateShrinkNodesAsync(const Model::ValidateShrinkNodesRequest& request, const ValidateShrinkNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateShrinkNodesOutcomeCallable validateShrinkNodesCallable(const Model::ValidateShrinkNodesRequest& request) const;

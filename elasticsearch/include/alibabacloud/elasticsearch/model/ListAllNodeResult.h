@@ -35,7 +35,8 @@ namespace AlibabaCloud
 				struct ResultItem
 				{
 					std::string zoneId;
-					std::string loadFiveM;
+					std::string loadOneM;
+					std::string diskUsedPercent;
 					std::string health;
 					int port;
 					std::string nodeType;

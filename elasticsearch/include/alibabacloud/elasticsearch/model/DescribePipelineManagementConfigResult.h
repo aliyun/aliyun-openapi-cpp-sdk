@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string endpoints;
 					std::string pipelineManagementType;
 					std::string userName;
+					std::string esInstanceId;
 					std::vector<std::string> pipelineIds;
 				};
 

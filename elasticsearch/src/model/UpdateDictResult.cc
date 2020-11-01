@@ -51,13 +51,6 @@ void UpdateDictResult::parse(const std::string &payload)
 			resultObject.type = valueResultDictList["type"].asString();
 		if(!valueResultDictList["sourceType"].isNull())
 			resultObject.sourceType = valueResultDictList["sourceType"].asString();
-		auto ossObjectNode = value["ossObject"];
-		if(!ossObjectNode["bucketName"].isNull())
-			resultObject.ossObject.bucketName = ossObjectNode["bucketName"].asString();
-		if(!ossObjectNode["key"].isNull())
-			resultObject.ossObject.key = ossObjectNode["key"].asString();
-		if(!ossObjectNode["etag"].isNull())
-			resultObject.ossObject.etag = ossObjectNode["etag"].asString();
 		result_.push_back(resultObject);
 	}
 

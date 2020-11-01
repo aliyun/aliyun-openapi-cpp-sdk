@@ -53,12 +53,14 @@ void ListAllNodeResult::parse(const std::string &payload)
 			resultObject.nodeType = valueResultResultItem["nodeType"].asString();
 		if(!valueResultResultItem["cpuPercent"].isNull())
 			resultObject.cpuPercent = valueResultResultItem["cpuPercent"].asString();
-		if(!valueResultResultItem["loadFiveM"].isNull())
-			resultObject.loadFiveM = valueResultResultItem["loadFiveM"].asString();
+		if(!valueResultResultItem["loadOneM"].isNull())
+			resultObject.loadOneM = valueResultResultItem["loadOneM"].asString();
 		if(!valueResultResultItem["heapPercent"].isNull())
 			resultObject.heapPercent = valueResultResultItem["heapPercent"].asString();
 		if(!valueResultResultItem["health"].isNull())
 			resultObject.health = valueResultResultItem["health"].asString();
+		if(!valueResultResultItem["diskUsedPercent"].isNull())
+			resultObject.diskUsedPercent = valueResultResultItem["diskUsedPercent"].asString();
 		result_.push_back(resultObject);
 	}
 

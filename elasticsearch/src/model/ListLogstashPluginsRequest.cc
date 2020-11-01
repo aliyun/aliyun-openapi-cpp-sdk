@@ -61,15 +61,15 @@ void ListLogstashPluginsRequest::setName(const std::string& name)
 	setParameter("Name", name);
 }
 
-std::string ListLogstashPluginsRequest::getPage()const
+int ListLogstashPluginsRequest::getPage()const
 {
 	return page_;
 }
 
-void ListLogstashPluginsRequest::setPage(const std::string& page)
+void ListLogstashPluginsRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", page);
+	setParameter("Page", std::to_string(page));
 }
 
 std::string ListLogstashPluginsRequest::getSource()const

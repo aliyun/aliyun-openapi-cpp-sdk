@@ -45,8 +45,6 @@ void ListAlternativeSnapshotReposResult::parse(const std::string &payload)
 		Repo resultObject;
 		if(!valueResultrepo["instanceId"].isNull())
 			resultObject.instanceId = valueResultrepo["instanceId"].asString();
-		if(!valueResultrepo["snapWarehouse"].isNull())
-			resultObject.snapWarehouse = valueResultrepo["snapWarehouse"].asString();
 		if(!valueResultrepo["repoPath"].isNull())
 			resultObject.repoPath = valueResultrepo["repoPath"].asString();
 		result_.push_back(resultObject);

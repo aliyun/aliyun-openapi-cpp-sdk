@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct ResultItem
 				{
 					std::string description;
+					std::string specificationUrl;
 					std::string state;
 					std::string source;
 					std::string name;

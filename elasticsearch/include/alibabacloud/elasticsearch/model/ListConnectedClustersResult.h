@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListConnectedClustersResult : public ServiceResult
 			{
 			public:
-				struct ConnectableClustersInfo
+				struct ResultItem
 				{
 					std::string instances;
 					std::string networkType;
@@ -42,12 +42,12 @@ namespace AlibabaCloud
 				ListConnectedClustersResult();
 				explicit ListConnectedClustersResult(const std::string &payload);
 				~ListConnectedClustersResult();
-				std::vector<ConnectableClustersInfo> getResult()const;
+				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ConnectableClustersInfo> result_;
+				std::vector<ResultItem> result_;
 
 			};
 		}

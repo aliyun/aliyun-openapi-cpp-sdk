@@ -32,15 +32,80 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ELASTICSEARCH_EXPORT RestartInstanceResult : public ServiceResult
 			{
 			public:
+				struct Result
+				{
+					struct KibanaConfiguration
+					{
+						std::string diskType;
+						int amount;
+						std::string spec;
+						int disk;
+					};
+					struct MasterConfiguration
+					{
+						std::string diskType;
+						int amount;
+						std::string spec;
+						int disk;
+					};
+					struct NetworkConfig
+					{
+						std::string type;
+						std::string vpcId;
+						std::string vswitchId;
+						std::string vsArea;
+					};
+					struct NodeSpec
+					{
+						std::string diskType;
+						std::string spec;
+						int disk;
+					};
+					struct DictListItem
+					{
+						std::string type;
+						std::string sourceType;
+						long fileSize;
+						std::string name;
+					};
+					struct SynonymsDictsItem
+					{
+						std::string type;
+						std::string sourceType;
+						long fileSize;
+						std::string name;
+					};
+					MasterConfiguration masterConfiguration;
+					std::string status;
+					std::string description;
+					std::string instanceId;
+					int kibanaPort;
+					std::string createdAt;
+					NetworkConfig networkConfig;
+					std::string esVersion;
+					int nodeAmount;
+					std::string updatedAt;
+					std::vector<DictListItem> dictList;
+					std::string kibanaDomain;
+					std::string publicDomain;
+					KibanaConfiguration kibanaConfiguration;
+					NodeSpec nodeSpec;
+					std::string paymentType;
+					std::vector<SynonymsDictsItem> synonymsDicts;
+					std::string domain;
+					int publicPort;
+				};
 
 
 				RestartInstanceResult();
 				explicit RestartInstanceResult(const std::string &payload);
 				~RestartInstanceResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Result result_;
 
 			};
 		}

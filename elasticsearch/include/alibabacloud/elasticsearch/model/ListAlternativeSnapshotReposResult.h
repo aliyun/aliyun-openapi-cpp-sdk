@@ -35,7 +35,6 @@ namespace AlibabaCloud
 				struct Repo
 				{
 					std::string repoPath;
-					std::string snapWarehouse;
 					std::string instanceId;
 				};
 
