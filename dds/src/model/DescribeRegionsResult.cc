@@ -55,6 +55,8 @@ void DescribeRegionsResult::parse(const std::string &payload)
 				zonesObject.zoneId = allRegionsNodeZonesZone["ZoneId"].asString();
 			if(!allRegionsNodeZonesZone["VpcEnabled"].isNull())
 				zonesObject.vpcEnabled = allRegionsNodeZonesZone["VpcEnabled"].asString() == "true";
+			if(!allRegionsNodeZonesZone["ZoneName"].isNull())
+				zonesObject.zoneName = allRegionsNodeZonesZone["ZoneName"].asString();
 			regionsObject.zones.push_back(zonesObject);
 		}
 		regions_.push_back(regionsObject);

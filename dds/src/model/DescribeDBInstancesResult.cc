@@ -61,6 +61,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.dBInstanceClass = valueDBInstancesDBInstance["DBInstanceClass"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceStorage"].isNull())
 			dBInstancesObject.dBInstanceStorage = std::stoi(valueDBInstancesDBInstance["DBInstanceStorage"].asString());
+		if(!valueDBInstancesDBInstance["KindCode"].isNull())
+			dBInstancesObject.kindCode = valueDBInstancesDBInstance["KindCode"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceStatus"].isNull())
 			dBInstancesObject.dBInstanceStatus = valueDBInstancesDBInstance["DBInstanceStatus"].asString();
 		if(!valueDBInstancesDBInstance["LockMode"].isNull())

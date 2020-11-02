@@ -91,6 +91,8 @@ namespace AlibabaCloud
 				void setSrcDBInstanceId(const std::string& srcDBInstanceId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getAccountPassword()const;
 				void setAccountPassword(const std::string& accountPassword);
 				std::string getVpcId()const;
@@ -127,6 +129,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string srcDBInstanceId_;
 				std::string ownerAccount_;
+				std::string clusterId_;
 				std::string accountPassword_;
 				std::string vpcId_;
 				std::string chargeType_;

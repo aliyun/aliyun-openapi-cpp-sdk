@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEREGIONSRESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DESCRIBEREGIONSRESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_CREATESERVERLESSDBINSTANCERESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_CREATESERVERLESSDBINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DescribeRegionsResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT CreateServerlessDBInstanceResult : public ServiceResult
 			{
 			public:
-				struct DdsRegion
-				{
-					struct Zone
-					{
-						bool vpcEnabled;
-						std::string zoneName;
-						std::string zoneId;
-					};
-					std::string regionId;
-					std::string zoneIds;
-					std::vector<DdsRegion::Zone> zones;
-				};
 
 
-				DescribeRegionsResult();
-				explicit DescribeRegionsResult(const std::string &payload);
-				~DescribeRegionsResult();
-				std::vector<DdsRegion> getRegions()const;
+				CreateServerlessDBInstanceResult();
+				explicit CreateServerlessDBInstanceResult(const std::string &payload);
+				~CreateServerlessDBInstanceResult();
+				std::string getDBInstanceId()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DdsRegion> regions_;
+				std::string dBInstanceId_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEREGIONSRESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_CREATESERVERLESSDBINSTANCERESULT_H_

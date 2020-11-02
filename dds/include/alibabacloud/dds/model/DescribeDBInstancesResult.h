@@ -72,6 +72,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string regionId;
 					std::string expireTime;
+					std::string kindCode;
 					std::vector<DBInstance::Tag> tags;
 					std::string dBInstanceDescription;
 					std::string engine;

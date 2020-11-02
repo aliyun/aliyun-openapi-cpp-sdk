@@ -38,6 +38,8 @@
 #include "model/CreateNodeResult.h"
 #include "model/CreateRecommendationTaskRequest.h"
 #include "model/CreateRecommendationTaskResult.h"
+#include "model/CreateServerlessDBInstanceRequest.h"
+#include "model/CreateServerlessDBInstanceResult.h"
 #include "model/CreateShardingDBInstanceRequest.h"
 #include "model/CreateShardingDBInstanceResult.h"
 #include "model/DeleteDBInstanceRequest.h"
@@ -84,6 +86,8 @@
 #include "model/DescribeDBInstanceTDEInfoResult.h"
 #include "model/DescribeDBInstancesRequest.h"
 #include "model/DescribeDBInstancesResult.h"
+#include "model/DescribeDedicatedClusterInstanceListRequest.h"
+#include "model/DescribeDedicatedClusterInstanceListResult.h"
 #include "model/DescribeErrorLogRecordsRequest.h"
 #include "model/DescribeErrorLogRecordsResult.h"
 #include "model/DescribeIndexRecommendationRequest.h"
@@ -229,6 +233,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRecommendationTaskResult> CreateRecommendationTaskOutcome;
 			typedef std::future<CreateRecommendationTaskOutcome> CreateRecommendationTaskOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateRecommendationTaskRequest&, const CreateRecommendationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecommendationTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateServerlessDBInstanceResult> CreateServerlessDBInstanceOutcome;
+			typedef std::future<CreateServerlessDBInstanceOutcome> CreateServerlessDBInstanceOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::CreateServerlessDBInstanceRequest&, const CreateServerlessDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessDBInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CreateShardingDBInstanceResult> CreateShardingDBInstanceOutcome;
 			typedef std::future<CreateShardingDBInstanceOutcome> CreateShardingDBInstanceOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateShardingDBInstanceRequest&, const CreateShardingDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateShardingDBInstanceAsyncHandler;
@@ -298,6 +305,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstancesResult> DescribeDBInstancesOutcome;
 			typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeDBInstancesRequest&, const DescribeDBInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDedicatedClusterInstanceListResult> DescribeDedicatedClusterInstanceListOutcome;
+			typedef std::future<DescribeDedicatedClusterInstanceListOutcome> DescribeDedicatedClusterInstanceListOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeDedicatedClusterInstanceListRequest&, const DescribeDedicatedClusterInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedClusterInstanceListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeErrorLogRecordsResult> DescribeErrorLogRecordsOutcome;
 			typedef std::future<DescribeErrorLogRecordsOutcome> DescribeErrorLogRecordsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeErrorLogRecordsRequest&, const DescribeErrorLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorLogRecordsAsyncHandler;
@@ -495,6 +505,9 @@ namespace AlibabaCloud
 			CreateRecommendationTaskOutcome createRecommendationTask(const Model::CreateRecommendationTaskRequest &request)const;
 			void createRecommendationTaskAsync(const Model::CreateRecommendationTaskRequest& request, const CreateRecommendationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRecommendationTaskOutcomeCallable createRecommendationTaskCallable(const Model::CreateRecommendationTaskRequest& request) const;
+			CreateServerlessDBInstanceOutcome createServerlessDBInstance(const Model::CreateServerlessDBInstanceRequest &request)const;
+			void createServerlessDBInstanceAsync(const Model::CreateServerlessDBInstanceRequest& request, const CreateServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateServerlessDBInstanceOutcomeCallable createServerlessDBInstanceCallable(const Model::CreateServerlessDBInstanceRequest& request) const;
 			CreateShardingDBInstanceOutcome createShardingDBInstance(const Model::CreateShardingDBInstanceRequest &request)const;
 			void createShardingDBInstanceAsync(const Model::CreateShardingDBInstanceRequest& request, const CreateShardingDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateShardingDBInstanceOutcomeCallable createShardingDBInstanceCallable(const Model::CreateShardingDBInstanceRequest& request) const;
@@ -564,6 +577,9 @@ namespace AlibabaCloud
 			DescribeDBInstancesOutcome describeDBInstances(const Model::DescribeDBInstancesRequest &request)const;
 			void describeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstancesOutcomeCallable describeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request) const;
+			DescribeDedicatedClusterInstanceListOutcome describeDedicatedClusterInstanceList(const Model::DescribeDedicatedClusterInstanceListRequest &request)const;
+			void describeDedicatedClusterInstanceListAsync(const Model::DescribeDedicatedClusterInstanceListRequest& request, const DescribeDedicatedClusterInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDedicatedClusterInstanceListOutcomeCallable describeDedicatedClusterInstanceListCallable(const Model::DescribeDedicatedClusterInstanceListRequest& request) const;
 			DescribeErrorLogRecordsOutcome describeErrorLogRecords(const Model::DescribeErrorLogRecordsRequest &request)const;
 			void describeErrorLogRecordsAsync(const Model::DescribeErrorLogRecordsRequest& request, const DescribeErrorLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeErrorLogRecordsOutcomeCallable describeErrorLogRecordsCallable(const Model::DescribeErrorLogRecordsRequest& request) const;

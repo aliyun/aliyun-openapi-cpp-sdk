@@ -335,6 +335,17 @@ void CreateDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string CreateDBInstanceRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void CreateDBInstanceRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 std::string CreateDBInstanceRequest::getAccountPassword()const
 {
 	return accountPassword_;

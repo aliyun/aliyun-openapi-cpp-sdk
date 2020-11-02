@@ -37,6 +37,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CreateNodeResult.h
 	include/alibabacloud/dds/model/CreateRecommendationTaskRequest.h
 	include/alibabacloud/dds/model/CreateRecommendationTaskResult.h
+	include/alibabacloud/dds/model/CreateServerlessDBInstanceRequest.h
+	include/alibabacloud/dds/model/CreateServerlessDBInstanceResult.h
 	include/alibabacloud/dds/model/CreateShardingDBInstanceRequest.h
 	include/alibabacloud/dds/model/CreateShardingDBInstanceResult.h
 	include/alibabacloud/dds/model/DeleteDBInstanceRequest.h
@@ -83,6 +85,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeDBInstanceTDEInfoResult.h
 	include/alibabacloud/dds/model/DescribeDBInstancesRequest.h
 	include/alibabacloud/dds/model/DescribeDBInstancesResult.h
+	include/alibabacloud/dds/model/DescribeDedicatedClusterInstanceListRequest.h
+	include/alibabacloud/dds/model/DescribeDedicatedClusterInstanceListResult.h
 	include/alibabacloud/dds/model/DescribeErrorLogRecordsRequest.h
 	include/alibabacloud/dds/model/DescribeErrorLogRecordsResult.h
 	include/alibabacloud/dds/model/DescribeIndexRecommendationRequest.h
@@ -214,6 +218,8 @@ set(dds_src
 	src/model/CreateNodeResult.cc
 	src/model/CreateRecommendationTaskRequest.cc
 	src/model/CreateRecommendationTaskResult.cc
+	src/model/CreateServerlessDBInstanceRequest.cc
+	src/model/CreateServerlessDBInstanceResult.cc
 	src/model/CreateShardingDBInstanceRequest.cc
 	src/model/CreateShardingDBInstanceResult.cc
 	src/model/DeleteDBInstanceRequest.cc
@@ -260,6 +266,8 @@ set(dds_src
 	src/model/DescribeDBInstanceTDEInfoResult.cc
 	src/model/DescribeDBInstancesRequest.cc
 	src/model/DescribeDBInstancesResult.cc
+	src/model/DescribeDedicatedClusterInstanceListRequest.cc
+	src/model/DescribeDedicatedClusterInstanceListResult.cc
 	src/model/DescribeErrorLogRecordsRequest.cc
 	src/model/DescribeErrorLogRecordsResult.cc
 	src/model/DescribeIndexRecommendationRequest.cc
