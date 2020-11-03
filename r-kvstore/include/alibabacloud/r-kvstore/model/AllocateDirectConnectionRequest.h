@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setConnectionString(const std::string& connectionString);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				bool getOnlyAllocateIp()const;
+				void setOnlyAllocateIp(bool onlyAllocateIp);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getResourceOwnerAccount()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string connectionString_;
 				std::string accessKeyId_;
+				bool onlyAllocateIp_;
 				std::string securityToken_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

@@ -60,6 +60,17 @@ void AllocateDirectConnectionRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+bool AllocateDirectConnectionRequest::getOnlyAllocateIp()const
+{
+	return onlyAllocateIp_;
+}
+
+void AllocateDirectConnectionRequest::setOnlyAllocateIp(bool onlyAllocateIp)
+{
+	onlyAllocateIp_ = onlyAllocateIp;
+	setParameter("OnlyAllocateIp", onlyAllocateIp ? "true" : "false");
+}
+
 std::string AllocateDirectConnectionRequest::getSecurityToken()const
 {
 	return securityToken_;
