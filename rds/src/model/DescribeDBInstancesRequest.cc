@@ -60,6 +60,17 @@ void DescribeDBInstancesRequest::setTag2key(const std::string& tag2key)
 	setParameter("Tag2key", tag2key);
 }
 
+bool DescribeDBInstancesRequest::getNeedVpcName()const
+{
+	return needVpcName_;
+}
+
+void DescribeDBInstancesRequest::setNeedVpcName(bool needVpcName)
+{
+	needVpcName_ = needVpcName;
+	setParameter("NeedVpcName", needVpcName ? "true" : "false");
+}
+
 std::string DescribeDBInstancesRequest::getTag3key()const
 {
 	return tag3key_;

@@ -63,14 +63,14 @@ void DescribeParameterGroupResult::parse(const std::string &payload)
 			paramGroupObject.createTime = valueParamGroupParameterGroup["CreateTime"].asString();
 		if(!valueParamGroupParameterGroup["UpdateTime"].isNull())
 			paramGroupObject.updateTime = valueParamGroupParameterGroup["UpdateTime"].asString();
-		auto allParamDetailNode = allParamGroupNode["ParamDetail"]["ParameterDetail"];
-		for (auto allParamGroupNodeParamDetailParameterDetail : allParamDetailNode)
+		auto allParamDetailNode = valueParamGroupParameterGroup["ParamDetail"]["ParameterDetail"];
+		for (auto valueParamGroupParameterGroupParamDetailParameterDetail : allParamDetailNode)
 		{
 			ParameterGroup::ParameterDetail paramDetailObject;
-			if(!allParamGroupNodeParamDetailParameterDetail["ParamName"].isNull())
-				paramDetailObject.paramName = allParamGroupNodeParamDetailParameterDetail["ParamName"].asString();
-			if(!allParamGroupNodeParamDetailParameterDetail["ParamValue"].isNull())
-				paramDetailObject.paramValue = allParamGroupNodeParamDetailParameterDetail["ParamValue"].asString();
+			if(!valueParamGroupParameterGroupParamDetailParameterDetail["ParamName"].isNull())
+				paramDetailObject.paramName = valueParamGroupParameterGroupParamDetailParameterDetail["ParamName"].asString();
+			if(!valueParamGroupParameterGroupParamDetailParameterDetail["ParamValue"].isNull())
+				paramDetailObject.paramValue = valueParamGroupParameterGroupParamDetailParameterDetail["ParamValue"].asString();
 			paramGroupObject.paramDetail.push_back(paramDetailObject);
 		}
 		paramGroup_.push_back(paramGroupObject);

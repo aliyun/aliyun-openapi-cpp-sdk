@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setEngineVersion(const std::string& engineVersion);
 				int getStorage()const;
 				void setStorage(int storage);
+				std::string getZoneIdForFollower()const;
+				void setZoneIdForFollower(const std::string& zoneIdForFollower);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
@@ -65,6 +67,8 @@ namespace AlibabaCloud
 				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getZoneIdForLog()const;
+				void setZoneIdForLog(const std::string& zoneIdForLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getTargetDBInstanceClass()const;
@@ -84,6 +88,7 @@ namespace AlibabaCloud
 				std::string zoneIdSlave2_;
 				std::string engineVersion_;
 				int storage_;
+				std::string zoneIdForFollower_;
 				std::string accessKeyId_;
 				std::string regionId_;
 				std::string effectiveTime_;
@@ -92,6 +97,7 @@ namespace AlibabaCloud
 				std::string dBInstanceId_;
 				std::string dedicatedHostGroupId_;
 				std::string resourceOwnerAccount_;
+				std::string zoneIdForLog_;
 				long ownerId_;
 				std::string targetDBInstanceClass_;
 				std::string vSwitchId_;

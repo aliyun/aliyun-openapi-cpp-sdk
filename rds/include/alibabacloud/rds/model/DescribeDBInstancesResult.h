@@ -65,6 +65,7 @@ namespace AlibabaCloud
 					std::string dBInstanceClass;
 					std::string createTime;
 					std::string vSwitchId;
+					std::string dedicatedHostGroupName;
 					std::string payType;
 					std::string lockMode;
 					std::string guardDBInstanceId;
@@ -76,6 +77,7 @@ namespace AlibabaCloud
 					std::string connectionMode;
 					std::string dedicatedHostZoneIdForLog;
 					std::string vpcCloudInstanceId;
+					std::string vpcName;
 					std::string regionId;
 					std::string expireTime;
 					std::string dedicatedHostIdForMaster;

@@ -34,15 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct SQLSlowRecord
 				{
-					long queryTimes;
+					long writeIOCount;
+					std::string userName;
+					std::string applicationName;
 					std::string executionStartTime;
+					long lastRowsAffectedCount;
+					long rowsAffectedCount;
+					long parseRowCounts;
+					long physicalIORead;
+					std::string hostAddress;
+					long queryTimeMS;
+					long cpuTime;
+					long logicalIORead;
+					std::string sQLText;
+					long queryTimes;
 					long returnRowCounts;
 					long lockTimes;
 					std::string dBName;
-					long parseRowCounts;
-					std::string hostAddress;
-					long queryTimeMS;
-					std::string sQLText;
+					std::string clientHostName;
 				};
 
 
@@ -51,6 +60,14 @@ namespace AlibabaCloud
 				~DescribeSlowLogRecordsResult();
 				int getTotalRecordCount()const;
 				int getPageRecordCount()const;
+				std::string getUserName()const;
+				long getLastRowsAffectedCount()const;
+				long getRowsAffectedCount()const;
+				long getPhysicalIORead()const;
+				long getWritesIOCount()const;
+				long getLogicalIORead()const;
+				long getCPUTime()const;
+				std::string getSQLHash()const;
 				std::string getDBInstanceId()const;
 				int getPageNumber()const;
 				std::vector<SQLSlowRecord> getItems()const;
@@ -61,6 +78,14 @@ namespace AlibabaCloud
 			private:
 				int totalRecordCount_;
 				int pageRecordCount_;
+				std::string userName_;
+				long lastRowsAffectedCount_;
+				long rowsAffectedCount_;
+				long physicalIORead_;
+				long writesIOCount_;
+				long logicalIORead_;
+				long cPUTime_;
+				std::string sQLHash_;
 				std::string dBInstanceId_;
 				int pageNumber_;
 				std::vector<SQLSlowRecord> items_;

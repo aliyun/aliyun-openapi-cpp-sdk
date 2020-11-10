@@ -191,20 +191,20 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.dedicatedHostGroupId = valueItemsDBInstanceAttribute["DedicatedHostGroupId"].asString();
 		if(!valueItemsDBInstanceAttribute["SuperPermissionMode"].isNull())
 			itemsObject.superPermissionMode = valueItemsDBInstanceAttribute["SuperPermissionMode"].asString();
-		auto allSlaveZonesNode = allItemsNode["SlaveZones"]["SlaveZone"];
-		for (auto allItemsNodeSlaveZonesSlaveZone : allSlaveZonesNode)
+		auto allSlaveZonesNode = valueItemsDBInstanceAttribute["SlaveZones"]["SlaveZone"];
+		for (auto valueItemsDBInstanceAttributeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{
 			DBInstanceAttribute::SlaveZone slaveZonesObject;
-			if(!allItemsNodeSlaveZonesSlaveZone["ZoneId"].isNull())
-				slaveZonesObject.zoneId = allItemsNodeSlaveZonesSlaveZone["ZoneId"].asString();
+			if(!valueItemsDBInstanceAttributeSlaveZonesSlaveZone["ZoneId"].isNull())
+				slaveZonesObject.zoneId = valueItemsDBInstanceAttributeSlaveZonesSlaveZone["ZoneId"].asString();
 			itemsObject.slaveZones.push_back(slaveZonesObject);
 		}
-		auto allReadOnlyDBInstanceIdsNode = allItemsNode["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
-		for (auto allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
+		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstanceAttribute["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
+		for (auto valueItemsDBInstanceAttributeReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{
 			DBInstanceAttribute::ReadOnlyDBInstanceId readOnlyDBInstanceIdsObject;
-			if(!allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].isNull())
-				readOnlyDBInstanceIdsObject.dBInstanceId = allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].asString();
+			if(!valueItemsDBInstanceAttributeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].isNull())
+				readOnlyDBInstanceIdsObject.dBInstanceId = valueItemsDBInstanceAttributeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].asString();
 			itemsObject.readOnlyDBInstanceIds.push_back(readOnlyDBInstanceIdsObject);
 		}
 		auto extraNode = value["Extra"];

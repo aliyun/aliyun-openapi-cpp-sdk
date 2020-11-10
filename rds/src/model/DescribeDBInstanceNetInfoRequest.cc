@@ -38,15 +38,15 @@ void DescribeDBInstanceNetInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstanceNetInfoRequest::getFlag()const
+int DescribeDBInstanceNetInfoRequest::getFlag()const
 {
 	return flag_;
 }
 
-void DescribeDBInstanceNetInfoRequest::setFlag(const std::string& flag)
+void DescribeDBInstanceNetInfoRequest::setFlag(int flag)
 {
 	flag_ = flag;
-	setParameter("Flag", flag);
+	setParameter("Flag", std::to_string(flag));
 }
 
 std::string DescribeDBInstanceNetInfoRequest::getClientToken()const

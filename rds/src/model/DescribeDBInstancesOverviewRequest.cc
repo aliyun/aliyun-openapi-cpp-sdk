@@ -60,6 +60,17 @@ void DescribeDBInstancesOverviewRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDBInstancesOverviewRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeDBInstancesOverviewRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeDBInstancesOverviewRequest::getExpired()const
 {
 	return expired_;

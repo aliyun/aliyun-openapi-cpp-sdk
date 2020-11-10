@@ -31,21 +31,21 @@ RdsClient::RdsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 RdsClient::RdsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 RdsClient::RdsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 RdsClient::~RdsClient()
@@ -441,6 +441,42 @@ RdsClient::CheckRecoveryConditionsOutcomeCallable RdsClient::checkRecoveryCondit
 			[this, request]()
 			{
 			return this->checkRecoveryConditions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::CheckRegionSupportBackupEncryptionOutcome RdsClient::checkRegionSupportBackupEncryption(const CheckRegionSupportBackupEncryptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckRegionSupportBackupEncryptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckRegionSupportBackupEncryptionOutcome(CheckRegionSupportBackupEncryptionResult(outcome.result()));
+	else
+		return CheckRegionSupportBackupEncryptionOutcome(outcome.error());
+}
+
+void RdsClient::checkRegionSupportBackupEncryptionAsync(const CheckRegionSupportBackupEncryptionRequest& request, const CheckRegionSupportBackupEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkRegionSupportBackupEncryption(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::CheckRegionSupportBackupEncryptionOutcomeCallable RdsClient::checkRegionSupportBackupEncryptionCallable(const CheckRegionSupportBackupEncryptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckRegionSupportBackupEncryptionOutcome()>>(
+			[this, request]()
+			{
+			return this->checkRegionSupportBackupEncryption(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2457,6 +2493,42 @@ RdsClient::DescribeDBInstanceByTagsOutcomeCallable RdsClient::describeDBInstance
 			[this, request]()
 			{
 			return this->describeDBInstanceByTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeDBInstanceDetailOutcome RdsClient::describeDBInstanceDetail(const DescribeDBInstanceDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceDetailOutcome(DescribeDBInstanceDetailResult(outcome.result()));
+	else
+		return DescribeDBInstanceDetailOutcome(outcome.error());
+}
+
+void RdsClient::describeDBInstanceDetailAsync(const DescribeDBInstanceDetailRequest& request, const DescribeDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDBInstanceDetailOutcomeCallable RdsClient::describeDBInstanceDetailCallable(const DescribeDBInstanceDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4947,6 +5019,78 @@ RdsClient::EvaluateDedicatedHostInstanceResourceOutcomeCallable RdsClient::evalu
 	return task->get_future();
 }
 
+RdsClient::GetDBInstanceTopologyOutcome RdsClient::getDBInstanceTopology(const GetDBInstanceTopologyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDBInstanceTopologyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDBInstanceTopologyOutcome(GetDBInstanceTopologyResult(outcome.result()));
+	else
+		return GetDBInstanceTopologyOutcome(outcome.error());
+}
+
+void RdsClient::getDBInstanceTopologyAsync(const GetDBInstanceTopologyRequest& request, const GetDBInstanceTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDBInstanceTopology(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::GetDBInstanceTopologyOutcomeCallable RdsClient::getDBInstanceTopologyCallable(const GetDBInstanceTopologyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDBInstanceTopologyOutcome()>>(
+			[this, request]()
+			{
+			return this->getDBInstanceTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::GetDbProxyInstanceSslOutcome RdsClient::getDbProxyInstanceSsl(const GetDbProxyInstanceSslRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDbProxyInstanceSslOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDbProxyInstanceSslOutcome(GetDbProxyInstanceSslResult(outcome.result()));
+	else
+		return GetDbProxyInstanceSslOutcome(outcome.error());
+}
+
+void RdsClient::getDbProxyInstanceSslAsync(const GetDbProxyInstanceSslRequest& request, const GetDbProxyInstanceSslAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDbProxyInstanceSsl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::GetDbProxyInstanceSslOutcomeCallable RdsClient::getDbProxyInstanceSslCallable(const GetDbProxyInstanceSslRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDbProxyInstanceSslOutcome()>>(
+			[this, request]()
+			{
+			return this->getDbProxyInstanceSsl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::GrantAccountPrivilegeOutcome RdsClient::grantAccountPrivilege(const GrantAccountPrivilegeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5121,6 +5265,42 @@ RdsClient::LockAccountOutcomeCallable RdsClient::lockAccountCallable(const LockA
 			[this, request]()
 			{
 			return this->lockAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::MigrateConnectionToOtherZoneOutcome RdsClient::migrateConnectionToOtherZone(const MigrateConnectionToOtherZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MigrateConnectionToOtherZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MigrateConnectionToOtherZoneOutcome(MigrateConnectionToOtherZoneResult(outcome.result()));
+	else
+		return MigrateConnectionToOtherZoneOutcome(outcome.error());
+}
+
+void RdsClient::migrateConnectionToOtherZoneAsync(const MigrateConnectionToOtherZoneRequest& request, const MigrateConnectionToOtherZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, migrateConnectionToOtherZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::MigrateConnectionToOtherZoneOutcomeCallable RdsClient::migrateConnectionToOtherZoneCallable(const MigrateConnectionToOtherZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MigrateConnectionToOtherZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->migrateConnectionToOtherZone(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6171,6 +6351,42 @@ RdsClient::ModifyDasInstanceConfigOutcomeCallable RdsClient::modifyDasInstanceCo
 	return task->get_future();
 }
 
+RdsClient::ModifyDbProxyInstanceSslOutcome RdsClient::modifyDbProxyInstanceSsl(const ModifyDbProxyInstanceSslRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDbProxyInstanceSslOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDbProxyInstanceSslOutcome(ModifyDbProxyInstanceSslResult(outcome.result()));
+	else
+		return ModifyDbProxyInstanceSslOutcome(outcome.error());
+}
+
+void RdsClient::modifyDbProxyInstanceSslAsync(const ModifyDbProxyInstanceSslRequest& request, const ModifyDbProxyInstanceSslAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDbProxyInstanceSsl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyDbProxyInstanceSslOutcomeCallable RdsClient::modifyDbProxyInstanceSslCallable(const ModifyDbProxyInstanceSslRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDbProxyInstanceSslOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDbProxyInstanceSsl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::ModifyDedicatedHostAccountOutcome RdsClient::modifyDedicatedHostAccount(const ModifyDedicatedHostAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6417,6 +6633,42 @@ RdsClient::ModifyInstanceCrossBackupPolicyOutcomeCallable RdsClient::modifyInsta
 			[this, request]()
 			{
 			return this->modifyInstanceCrossBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyLicenseInfoOutcome RdsClient::modifyLicenseInfo(const ModifyLicenseInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLicenseInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLicenseInfoOutcome(ModifyLicenseInfoResult(outcome.result()));
+	else
+		return ModifyLicenseInfoOutcome(outcome.error());
+}
+
+void RdsClient::modifyLicenseInfoAsync(const ModifyLicenseInfoRequest& request, const ModifyLicenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLicenseInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyLicenseInfoOutcomeCallable RdsClient::modifyLicenseInfoCallable(const ModifyLicenseInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLicenseInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLicenseInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

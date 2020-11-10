@@ -45,26 +45,26 @@ void DescribeReadDBInstanceDelayResult::parse(const std::string &payload)
 		ItemsItem itemsObject;
 		if(!valueItemsItemsItem["DBInstanceId"].isNull())
 			itemsObject.dBInstanceId = valueItemsItemsItem["DBInstanceId"].asString();
-		auto allReadonlyInstanceDelayNode = allItemsNode["ReadonlyInstanceDelay"]["ReadonlyInstanceDelayItem"];
-		for (auto allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem : allReadonlyInstanceDelayNode)
+		auto allReadonlyInstanceDelayNode = valueItemsItemsItem["ReadonlyInstanceDelay"]["ReadonlyInstanceDelayItem"];
+		for (auto valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem : allReadonlyInstanceDelayNode)
 		{
 			ItemsItem::ReadonlyInstanceDelayItem readonlyInstanceDelayObject;
-			if(!allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["ReplayLatency"].isNull())
-				readonlyInstanceDelayObject.replayLatency = allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["ReplayLatency"].asString();
-			if(!allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["FlushLag"].isNull())
-				readonlyInstanceDelayObject.flushLag = allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["FlushLag"].asString();
-			if(!allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["FlushLatency"].isNull())
-				readonlyInstanceDelayObject.flushLatency = allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["FlushLatency"].asString();
-			if(!allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["SendLatency"].isNull())
-				readonlyInstanceDelayObject.sendLatency = allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["SendLatency"].asString();
-			if(!allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["WriteLag"].isNull())
-				readonlyInstanceDelayObject.writeLag = allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["WriteLag"].asString();
-			if(!allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["ReplayLag"].isNull())
-				readonlyInstanceDelayObject.replayLag = allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["ReplayLag"].asString();
-			if(!allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["WriteLatency"].isNull())
-				readonlyInstanceDelayObject.writeLatency = allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["WriteLatency"].asString();
-			if(!allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["ReadDBInstanceName"].isNull())
-				readonlyInstanceDelayObject.readDBInstanceName = allItemsNodeReadonlyInstanceDelayReadonlyInstanceDelayItem["ReadDBInstanceName"].asString();
+			if(!valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["ReplayLatency"].isNull())
+				readonlyInstanceDelayObject.replayLatency = valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["ReplayLatency"].asString();
+			if(!valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["FlushLag"].isNull())
+				readonlyInstanceDelayObject.flushLag = valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["FlushLag"].asString();
+			if(!valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["FlushLatency"].isNull())
+				readonlyInstanceDelayObject.flushLatency = valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["FlushLatency"].asString();
+			if(!valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["SendLatency"].isNull())
+				readonlyInstanceDelayObject.sendLatency = valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["SendLatency"].asString();
+			if(!valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["WriteLag"].isNull())
+				readonlyInstanceDelayObject.writeLag = valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["WriteLag"].asString();
+			if(!valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["ReplayLag"].isNull())
+				readonlyInstanceDelayObject.replayLag = valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["ReplayLag"].asString();
+			if(!valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["WriteLatency"].isNull())
+				readonlyInstanceDelayObject.writeLatency = valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["WriteLatency"].asString();
+			if(!valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["ReadDBInstanceName"].isNull())
+				readonlyInstanceDelayObject.readDBInstanceName = valueItemsItemsItemReadonlyInstanceDelayReadonlyInstanceDelayItem["ReadDBInstanceName"].asString();
 			itemsObject.readonlyInstanceDelay.push_back(readonlyInstanceDelayObject);
 		}
 		auto allReadDBInstanceNames = value["ReadDBInstanceNames"]["ReadDBInstanceName"];

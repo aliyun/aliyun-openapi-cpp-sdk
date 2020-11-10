@@ -104,6 +104,17 @@ void MigrateDBInstanceRequest::setStorage(int storage)
 	setParameter("Storage", std::to_string(storage));
 }
 
+std::string MigrateDBInstanceRequest::getZoneIdForFollower()const
+{
+	return zoneIdForFollower_;
+}
+
+void MigrateDBInstanceRequest::setZoneIdForFollower(const std::string& zoneIdForFollower)
+{
+	zoneIdForFollower_ = zoneIdForFollower;
+	setParameter("ZoneIdForFollower", zoneIdForFollower);
+}
+
 std::string MigrateDBInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -190,6 +201,17 @@ void MigrateDBInstanceRequest::setResourceOwnerAccount(const std::string& resour
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string MigrateDBInstanceRequest::getZoneIdForLog()const
+{
+	return zoneIdForLog_;
+}
+
+void MigrateDBInstanceRequest::setZoneIdForLog(const std::string& zoneIdForLog)
+{
+	zoneIdForLog_ = zoneIdForLog;
+	setParameter("ZoneIdForLog", zoneIdForLog);
 }
 
 long MigrateDBInstanceRequest::getOwnerId()const

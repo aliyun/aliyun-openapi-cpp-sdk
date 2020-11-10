@@ -43,18 +43,18 @@ void DescribeErrorLogsResult::parse(const std::string &payload)
 	for (auto valueItemsErrorLog : allItemsNode)
 	{
 		ErrorLog itemsObject;
-		if(!valueItemsErrorLog["ErrorInfo"].isNull())
-			itemsObject.errorInfo = valueItemsErrorLog["ErrorInfo"].asString();
 		if(!valueItemsErrorLog["CreateTime"].isNull())
 			itemsObject.createTime = valueItemsErrorLog["CreateTime"].asString();
+		if(!valueItemsErrorLog["ErrorInfo"].isNull())
+			itemsObject.errorInfo = valueItemsErrorLog["ErrorInfo"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
 }
 

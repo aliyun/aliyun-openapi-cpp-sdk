@@ -55,16 +55,16 @@ void DescribeAccountsResult::parse(const std::string &payload)
 			accountsObject.accountDescription = valueAccountsDBInstanceAccount["AccountDescription"].asString();
 		if(!valueAccountsDBInstanceAccount["PrivExceeded"].isNull())
 			accountsObject.privExceeded = valueAccountsDBInstanceAccount["PrivExceeded"].asString();
-		auto allDatabasePrivilegesNode = allAccountsNode["DatabasePrivileges"]["DatabasePrivilege"];
-		for (auto allAccountsNodeDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
+		auto allDatabasePrivilegesNode = valueAccountsDBInstanceAccount["DatabasePrivileges"]["DatabasePrivilege"];
+		for (auto valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{
 			DBInstanceAccount::DatabasePrivilege databasePrivilegesObject;
-			if(!allAccountsNodeDatabasePrivilegesDatabasePrivilege["DBName"].isNull())
-				databasePrivilegesObject.dBName = allAccountsNodeDatabasePrivilegesDatabasePrivilege["DBName"].asString();
-			if(!allAccountsNodeDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].isNull())
-				databasePrivilegesObject.accountPrivilege = allAccountsNodeDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].asString();
-			if(!allAccountsNodeDatabasePrivilegesDatabasePrivilege["AccountPrivilegeDetail"].isNull())
-				databasePrivilegesObject.accountPrivilegeDetail = allAccountsNodeDatabasePrivilegesDatabasePrivilege["AccountPrivilegeDetail"].asString();
+			if(!valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["DBName"].isNull())
+				databasePrivilegesObject.dBName = valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["DBName"].asString();
+			if(!valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].isNull())
+				databasePrivilegesObject.accountPrivilege = valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilege"].asString();
+			if(!valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilegeDetail"].isNull())
+				databasePrivilegesObject.accountPrivilegeDetail = valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege["AccountPrivilegeDetail"].asString();
 			accountsObject.databasePrivileges.push_back(databasePrivilegesObject);
 		}
 		accounts_.push_back(accountsObject);

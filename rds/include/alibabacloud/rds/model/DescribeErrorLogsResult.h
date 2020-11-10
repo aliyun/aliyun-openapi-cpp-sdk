@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct ErrorLog
 				{
-					std::string errorInfo;
 					std::string createTime;
+					std::string errorInfo;
 				};
 
 

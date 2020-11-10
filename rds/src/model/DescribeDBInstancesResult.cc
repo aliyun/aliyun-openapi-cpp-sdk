@@ -125,12 +125,16 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.dedicatedHostZoneIdForSlave = valueItemsDBInstance["DedicatedHostZoneIdForSlave"].asString();
 		if(!valueItemsDBInstance["DedicatedHostZoneIdForLog"].isNull())
 			itemsObject.dedicatedHostZoneIdForLog = valueItemsDBInstance["DedicatedHostZoneIdForLog"].asString();
-		auto allReadOnlyDBInstanceIdsNode = allItemsNode["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
-		for (auto allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
+		if(!valueItemsDBInstance["VpcName"].isNull())
+			itemsObject.vpcName = valueItemsDBInstance["VpcName"].asString();
+		if(!valueItemsDBInstance["DedicatedHostGroupName"].isNull())
+			itemsObject.dedicatedHostGroupName = valueItemsDBInstance["DedicatedHostGroupName"].asString();
+		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstance["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
+		for (auto valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{
 			DBInstance::ReadOnlyDBInstanceId readOnlyDBInstanceIdsObject;
-			if(!allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].isNull())
-				readOnlyDBInstanceIdsObject.dBInstanceId = allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].asString();
+			if(!valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].isNull())
+				readOnlyDBInstanceIdsObject.dBInstanceId = valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].asString();
 			itemsObject.readOnlyDBInstanceIds.push_back(readOnlyDBInstanceIdsObject);
 		}
 		items_.push_back(itemsObject);

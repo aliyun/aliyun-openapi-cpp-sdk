@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getTag2key()const;
 				void setTag2key(const std::string& tag2key);
+				bool getNeedVpcName()const;
+				void setNeedVpcName(bool needVpcName);
 				std::string getTag3key()const;
 				void setTag3key(const std::string& tag3key);
 				std::string getEngineVersion()const;
@@ -118,6 +120,7 @@ namespace AlibabaCloud
 				std::string tag4value_;
 				long resourceOwnerId_;
 				std::string tag2key_;
+				bool needVpcName_;
 				std::string tag3key_;
 				std::string engineVersion_;
 				std::string tag1value_;

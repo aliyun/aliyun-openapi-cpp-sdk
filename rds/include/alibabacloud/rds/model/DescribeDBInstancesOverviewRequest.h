@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getExpired()const;
 				void setExpired(const std::string& expired);
 				std::string getEngine()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string expired_;
 				std::string engine_;
 				std::string regionId_;
