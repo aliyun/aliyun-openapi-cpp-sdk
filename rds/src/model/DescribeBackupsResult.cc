@@ -93,6 +93,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.storageClass = valueItemsBackup["StorageClass"].asString();
 		if(!valueItemsBackup["IsAvail"].isNull())
 			itemsObject.isAvail = std::stoi(valueItemsBackup["IsAvail"].asString());
+		if(!valueItemsBackup["Encryption"].isNull())
+			itemsObject.encryption = valueItemsBackup["Encryption"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

@@ -34,27 +34,52 @@ namespace AlibabaCloud
 			public:
 				struct SQLSlowLog
 				{
-					long maxLockTime;
-					std::string createTime;
-					long slowLogId;
+					long minLogicalReadCounts;
+					long avgLastRowsAffectedCounts;
 					long totalPhysicalReadCounts;
-					long totalLogicalReadCounts;
 					long totalLockTimes;
-					long returnMaxRowCount;
 					long avgExecutionTime;
 					std::string sQLText;
 					long parseMaxRowCount;
-					long maxExecutionTime;
-					std::string reportTime;
+					long maxLogicalReadCounts;
+					long avgIOWriteCounts;
 					std::string sQLHASH;
+					long minPhysicalReadCounts;
+					long sQLServerMaxCpuTime;
+					long minRowsAffectedCounts;
+					long maxIOWriteCounts;
+					long minIOWriteCounts;
+					long sQLServerTotalExecutionCounts;
+					long sQLServerAvgExecutionTime;
+					long totalIOWriteCounts;
+					long sQLServerAvgCpuTime;
+					long mySQLTotalExecutionTimes;
+					long totalLastRowsAffectedCounts;
+					long maxRowsAffectedCounts;
+					long maxLockTime;
+					long sQLServerMinExecutionTime;
+					long sQLServerTotalCpuTime;
+					std::string createTime;
+					long maxLastRowsAffectedCounts;
+					long slowLogId;
+					long totalPhysicalReadCounts1;
+					long totalLogicalReadCounts;
+					long returnMaxRowCount;
+					long maxExecutionTime;
+					long minLastRowsAffectedCounts;
+					std::string reportTime;
 					long sQLServerTotalExecutionTimes;
+					long avgLogicalReadCounts;
 					std::string sQLIdStr;
 					long returnTotalRowCounts;
-					long sQLServerTotalExecutionCounts;
+					long avgPhysicalReadCounts;
+					long totalRowsAffectedCounts;
 					long mySQLTotalExecutionCounts;
 					long parseTotalRowCounts;
 					std::string dBName;
-					long mySQLTotalExecutionTimes;
+					long avgRowsAffectedCounts;
+					long sQLServerMinCpuTime;
+					long maxPhysicalReadCounts;
 				};
 
 

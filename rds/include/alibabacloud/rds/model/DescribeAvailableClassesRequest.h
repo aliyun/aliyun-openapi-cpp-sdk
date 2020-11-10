@@ -53,10 +53,14 @@ namespace AlibabaCloud
 				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
+				std::string getDispenseMode()const;
+				void setDispenseMode(const std::string& dispenseMode);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getCommodityCode()const;
+				void setCommodityCode(const std::string& commodityCode);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				bool getEvaluateResource()const;
@@ -78,8 +82,10 @@ namespace AlibabaCloud
 				std::string dBInstanceId_;
 				std::string dBInstanceStorageType_;
 				std::string instanceChargeType_;
+				std::string dispenseMode_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string commodityCode_;
 				long ownerId_;
 				bool evaluateResource_;
 				std::string zoneId_;

@@ -38,6 +38,17 @@ void RebuildDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RebuildDBInstanceRequest::getRebuildNodeType()const
+{
+	return rebuildNodeType_;
+}
+
+void RebuildDBInstanceRequest::setRebuildNodeType(const std::string& rebuildNodeType)
+{
+	rebuildNodeType_ = rebuildNodeType;
+	setParameter("RebuildNodeType", rebuildNodeType);
+}
+
 std::string RebuildDBInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

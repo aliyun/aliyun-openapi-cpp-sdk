@@ -93,6 +93,17 @@ void DescribeAvailableZonesRequest::setInstanceChargeType(const std::string& ins
 	setParameter("InstanceChargeType", instanceChargeType);
 }
 
+std::string DescribeAvailableZonesRequest::getDispenseMode()const
+{
+	return dispenseMode_;
+}
+
+void DescribeAvailableZonesRequest::setDispenseMode(const std::string& dispenseMode)
+{
+	dispenseMode_ = dispenseMode;
+	setParameter("DispenseMode", dispenseMode);
+}
+
 std::string DescribeAvailableZonesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -102,6 +113,17 @@ void DescribeAvailableZonesRequest::setResourceOwnerAccount(const std::string& r
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAvailableZonesRequest::getCommodityCode()const
+{
+	return commodityCode_;
+}
+
+void DescribeAvailableZonesRequest::setCommodityCode(const std::string& commodityCode)
+{
+	commodityCode_ = commodityCode;
+	setParameter("CommodityCode", commodityCode);
 }
 
 long DescribeAvailableZonesRequest::getOwnerId()const

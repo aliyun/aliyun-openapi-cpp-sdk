@@ -38,28 +38,6 @@ void UpgradeDBInstanceKernelVersionRequest::setResourceOwnerId(long resourceOwne
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UpgradeDBInstanceKernelVersionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void UpgradeDBInstanceKernelVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-long UpgradeDBInstanceKernelVersionRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpgradeDBInstanceKernelVersionRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string UpgradeDBInstanceKernelVersionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,17 +47,6 @@ void UpgradeDBInstanceKernelVersionRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string UpgradeDBInstanceKernelVersionRequest::getUpgradeTime()const
-{
-	return upgradeTime_;
-}
-
-void UpgradeDBInstanceKernelVersionRequest::setUpgradeTime(const std::string& upgradeTime)
-{
-	upgradeTime_ = upgradeTime;
-	setParameter("UpgradeTime", upgradeTime);
 }
 
 std::string UpgradeDBInstanceKernelVersionRequest::getDBInstanceId()const
@@ -102,5 +69,49 @@ void UpgradeDBInstanceKernelVersionRequest::setSwitchTime(const std::string& swi
 {
 	switchTime_ = switchTime;
 	setParameter("SwitchTime", switchTime);
+}
+
+std::string UpgradeDBInstanceKernelVersionRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void UpgradeDBInstanceKernelVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long UpgradeDBInstanceKernelVersionRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void UpgradeDBInstanceKernelVersionRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UpgradeDBInstanceKernelVersionRequest::getTargetMinorVersion()const
+{
+	return targetMinorVersion_;
+}
+
+void UpgradeDBInstanceKernelVersionRequest::setTargetMinorVersion(const std::string& targetMinorVersion)
+{
+	targetMinorVersion_ = targetMinorVersion;
+	setParameter("TargetMinorVersion", targetMinorVersion);
+}
+
+std::string UpgradeDBInstanceKernelVersionRequest::getUpgradeTime()const
+{
+	return upgradeTime_;
+}
+
+void UpgradeDBInstanceKernelVersionRequest::setUpgradeTime(const std::string& upgradeTime)
+{
+	upgradeTime_ = upgradeTime;
+	setParameter("UpgradeTime", upgradeTime);
 }
 

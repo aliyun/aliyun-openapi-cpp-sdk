@@ -103,12 +103,12 @@ void DescribeDBInstancesForCloneResult::parse(const std::string &payload)
 			itemsObject.replicateId = valueItemsDBInstance["ReplicateId"].asString();
 		if(!valueItemsDBInstance["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = valueItemsDBInstance["ResourceGroupId"].asString();
-		auto allReadOnlyDBInstanceIdsNode = allItemsNode["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
-		for (auto allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
+		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstance["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
+		for (auto valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{
 			DBInstance::ReadOnlyDBInstanceId readOnlyDBInstanceIdsObject;
-			if(!allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].isNull())
-				readOnlyDBInstanceIdsObject.dBInstanceId = allItemsNodeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].asString();
+			if(!valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].isNull())
+				readOnlyDBInstanceIdsObject.dBInstanceId = valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].asString();
 			itemsObject.readOnlyDBInstanceIds.push_back(readOnlyDBInstanceIdsObject);
 		}
 		items_.push_back(itemsObject);

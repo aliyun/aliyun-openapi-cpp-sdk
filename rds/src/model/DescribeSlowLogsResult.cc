@@ -85,6 +85,56 @@ void DescribeSlowLogsResult::parse(const std::string &payload)
 			itemsObject.maxExecutionTime = std::stol(valueItemsSQLSlowLog["MaxExecutionTime"].asString());
 		if(!valueItemsSQLSlowLog["AvgExecutionTime"].isNull())
 			itemsObject.avgExecutionTime = std::stol(valueItemsSQLSlowLog["AvgExecutionTime"].asString());
+		if(!valueItemsSQLSlowLog["TotalPhysicalReadCounts"].isNull())
+			itemsObject.totalPhysicalReadCounts1 = std::stol(valueItemsSQLSlowLog["TotalPhysicalReadCounts"].asString());
+		if(!valueItemsSQLSlowLog["AvgPhysicalReadCounts"].isNull())
+			itemsObject.avgPhysicalReadCounts = std::stol(valueItemsSQLSlowLog["AvgPhysicalReadCounts"].asString());
+		if(!valueItemsSQLSlowLog["MaxPhysicalReadCounts"].isNull())
+			itemsObject.maxPhysicalReadCounts = std::stol(valueItemsSQLSlowLog["MaxPhysicalReadCounts"].asString());
+		if(!valueItemsSQLSlowLog["MinPhysicalReadCounts"].isNull())
+			itemsObject.minPhysicalReadCounts = std::stol(valueItemsSQLSlowLog["MinPhysicalReadCounts"].asString());
+		if(!valueItemsSQLSlowLog["AvgLogicalReadCounts"].isNull())
+			itemsObject.avgLogicalReadCounts = std::stol(valueItemsSQLSlowLog["AvgLogicalReadCounts"].asString());
+		if(!valueItemsSQLSlowLog["MaxLogicalReadCounts"].isNull())
+			itemsObject.maxLogicalReadCounts = std::stol(valueItemsSQLSlowLog["MaxLogicalReadCounts"].asString());
+		if(!valueItemsSQLSlowLog["MinLogicalReadCounts"].isNull())
+			itemsObject.minLogicalReadCounts = std::stol(valueItemsSQLSlowLog["MinLogicalReadCounts"].asString());
+		if(!valueItemsSQLSlowLog["TotalIOWriteCounts"].isNull())
+			itemsObject.totalIOWriteCounts = std::stol(valueItemsSQLSlowLog["TotalIOWriteCounts"].asString());
+		if(!valueItemsSQLSlowLog["AvgIOWriteCounts"].isNull())
+			itemsObject.avgIOWriteCounts = std::stol(valueItemsSQLSlowLog["AvgIOWriteCounts"].asString());
+		if(!valueItemsSQLSlowLog["MaxIOWriteCounts"].isNull())
+			itemsObject.maxIOWriteCounts = std::stol(valueItemsSQLSlowLog["MaxIOWriteCounts"].asString());
+		if(!valueItemsSQLSlowLog["MinIOWriteCounts"].isNull())
+			itemsObject.minIOWriteCounts = std::stol(valueItemsSQLSlowLog["MinIOWriteCounts"].asString());
+		if(!valueItemsSQLSlowLog["TotalRowsAffectedCounts"].isNull())
+			itemsObject.totalRowsAffectedCounts = std::stol(valueItemsSQLSlowLog["TotalRowsAffectedCounts"].asString());
+		if(!valueItemsSQLSlowLog["AvgRowsAffectedCounts"].isNull())
+			itemsObject.avgRowsAffectedCounts = std::stol(valueItemsSQLSlowLog["AvgRowsAffectedCounts"].asString());
+		if(!valueItemsSQLSlowLog["MaxRowsAffectedCounts"].isNull())
+			itemsObject.maxRowsAffectedCounts = std::stol(valueItemsSQLSlowLog["MaxRowsAffectedCounts"].asString());
+		if(!valueItemsSQLSlowLog["MinRowsAffectedCounts"].isNull())
+			itemsObject.minRowsAffectedCounts = std::stol(valueItemsSQLSlowLog["MinRowsAffectedCounts"].asString());
+		if(!valueItemsSQLSlowLog["TotalLastRowsAffectedCounts"].isNull())
+			itemsObject.totalLastRowsAffectedCounts = std::stol(valueItemsSQLSlowLog["TotalLastRowsAffectedCounts"].asString());
+		if(!valueItemsSQLSlowLog["AvgLastRowsAffectedCounts"].isNull())
+			itemsObject.avgLastRowsAffectedCounts = std::stol(valueItemsSQLSlowLog["AvgLastRowsAffectedCounts"].asString());
+		if(!valueItemsSQLSlowLog["MaxLastRowsAffectedCounts"].isNull())
+			itemsObject.maxLastRowsAffectedCounts = std::stol(valueItemsSQLSlowLog["MaxLastRowsAffectedCounts"].asString());
+		if(!valueItemsSQLSlowLog["MinLastRowsAffectedCounts"].isNull())
+			itemsObject.minLastRowsAffectedCounts = std::stol(valueItemsSQLSlowLog["MinLastRowsAffectedCounts"].asString());
+		if(!valueItemsSQLSlowLog["SQLServerMinExecutionTime"].isNull())
+			itemsObject.sQLServerMinExecutionTime = std::stol(valueItemsSQLSlowLog["SQLServerMinExecutionTime"].asString());
+		if(!valueItemsSQLSlowLog["SQLServerAvgExecutionTime"].isNull())
+			itemsObject.sQLServerAvgExecutionTime = std::stol(valueItemsSQLSlowLog["SQLServerAvgExecutionTime"].asString());
+		if(!valueItemsSQLSlowLog["SQLServerTotalCpuTime"].isNull())
+			itemsObject.sQLServerTotalCpuTime = std::stol(valueItemsSQLSlowLog["SQLServerTotalCpuTime"].asString());
+		if(!valueItemsSQLSlowLog["SQLServerAvgCpuTime"].isNull())
+			itemsObject.sQLServerAvgCpuTime = std::stol(valueItemsSQLSlowLog["SQLServerAvgCpuTime"].asString());
+		if(!valueItemsSQLSlowLog["SQLServerMaxCpuTime"].isNull())
+			itemsObject.sQLServerMaxCpuTime = std::stol(valueItemsSQLSlowLog["SQLServerMaxCpuTime"].asString());
+		if(!valueItemsSQLSlowLog["SQLServerMinCpuTime"].isNull())
+			itemsObject.sQLServerMinCpuTime = std::stol(valueItemsSQLSlowLog["SQLServerMinCpuTime"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

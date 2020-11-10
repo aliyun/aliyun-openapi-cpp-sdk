@@ -65,28 +65,28 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 			dBInstanceNetInfosObject.maxDelayTime = valueDBInstanceNetInfosDBInstanceNetInfo["MaxDelayTime"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["DistributionType"].isNull())
 			dBInstanceNetInfosObject.distributionType = valueDBInstanceNetInfosDBInstanceNetInfo["DistributionType"].asString();
-		auto allSecurityIPGroupsNode = allDBInstanceNetInfosNode["SecurityIPGroups"]["securityIPGroup"];
-		for (auto allDBInstanceNetInfosNodeSecurityIPGroupssecurityIPGroup : allSecurityIPGroupsNode)
+		auto allSecurityIPGroupsNode = valueDBInstanceNetInfosDBInstanceNetInfo["SecurityIPGroups"]["securityIPGroup"];
+		for (auto valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup : allSecurityIPGroupsNode)
 		{
 			DBInstanceNetInfo::SecurityIPGroup securityIPGroupsObject;
-			if(!allDBInstanceNetInfosNodeSecurityIPGroupssecurityIPGroup["SecurityIPGroupName"].isNull())
-				securityIPGroupsObject.securityIPGroupName = allDBInstanceNetInfosNodeSecurityIPGroupssecurityIPGroup["SecurityIPGroupName"].asString();
-			if(!allDBInstanceNetInfosNodeSecurityIPGroupssecurityIPGroup["SecurityIPs"].isNull())
-				securityIPGroupsObject.securityIPs = allDBInstanceNetInfosNodeSecurityIPGroupssecurityIPGroup["SecurityIPs"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPGroupName"].isNull())
+				securityIPGroupsObject.securityIPGroupName = valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPGroupName"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPs"].isNull())
+				securityIPGroupsObject.securityIPs = valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup["SecurityIPs"].asString();
 			dBInstanceNetInfosObject.securityIPGroups.push_back(securityIPGroupsObject);
 		}
-		auto allDBInstanceWeightsNode = allDBInstanceNetInfosNode["DBInstanceWeights"]["DBInstanceWeight"];
-		for (auto allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight : allDBInstanceWeightsNode)
+		auto allDBInstanceWeightsNode = valueDBInstanceNetInfosDBInstanceNetInfo["DBInstanceWeights"]["DBInstanceWeight"];
+		for (auto valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight : allDBInstanceWeightsNode)
 		{
 			DBInstanceNetInfo::DBInstanceWeight dBInstanceWeightsObject;
-			if(!allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight["DBInstanceId"].isNull())
-				dBInstanceWeightsObject.dBInstanceId = allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight["DBInstanceId"].asString();
-			if(!allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight["DBInstanceType"].isNull())
-				dBInstanceWeightsObject.dBInstanceType = allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight["DBInstanceType"].asString();
-			if(!allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight["Availability"].isNull())
-				dBInstanceWeightsObject.availability = allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight["Availability"].asString();
-			if(!allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight["Weight"].isNull())
-				dBInstanceWeightsObject.weight = allDBInstanceNetInfosNodeDBInstanceWeightsDBInstanceWeight["Weight"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceId"].isNull())
+				dBInstanceWeightsObject.dBInstanceId = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceId"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceType"].isNull())
+				dBInstanceWeightsObject.dBInstanceType = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["DBInstanceType"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Availability"].isNull())
+				dBInstanceWeightsObject.availability = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Availability"].asString();
+			if(!valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Weight"].isNull())
+				dBInstanceWeightsObject.weight = valueDBInstanceNetInfosDBInstanceNetInfoDBInstanceWeightsDBInstanceWeight["Weight"].asString();
 			dBInstanceNetInfosObject.dBInstanceWeights.push_back(dBInstanceWeightsObject);
 		}
 		dBInstanceNetInfos_.push_back(dBInstanceNetInfosObject);

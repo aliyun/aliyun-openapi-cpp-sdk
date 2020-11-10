@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string backupMode;
 					std::string backupId;
+					std::string encryption;
 					std::string backupDBNames;
 					std::string dBInstanceId;
 					std::string backupType;

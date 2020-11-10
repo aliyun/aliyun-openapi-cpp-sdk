@@ -126,6 +126,17 @@ void DescribeAvailableClassesRequest::setInstanceChargeType(const std::string& i
 	setParameter("InstanceChargeType", instanceChargeType);
 }
 
+std::string DescribeAvailableClassesRequest::getDispenseMode()const
+{
+	return dispenseMode_;
+}
+
+void DescribeAvailableClassesRequest::setDispenseMode(const std::string& dispenseMode)
+{
+	dispenseMode_ = dispenseMode;
+	setParameter("DispenseMode", dispenseMode);
+}
+
 std::string DescribeAvailableClassesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -146,6 +157,17 @@ void DescribeAvailableClassesRequest::setOwnerAccount(const std::string& ownerAc
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeAvailableClassesRequest::getCommodityCode()const
+{
+	return commodityCode_;
+}
+
+void DescribeAvailableClassesRequest::setCommodityCode(const std::string& commodityCode)
+{
+	commodityCode_ = commodityCode;
+	setParameter("CommodityCode", commodityCode);
 }
 
 long DescribeAvailableClassesRequest::getOwnerId()const

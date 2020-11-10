@@ -61,6 +61,24 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 			itemsObject.executionStartTime = valueItemsSQLSlowRecord["ExecutionStartTime"].asString();
 		if(!valueItemsSQLSlowRecord["QueryTimeMS"].isNull())
 			itemsObject.queryTimeMS = std::stol(valueItemsSQLSlowRecord["QueryTimeMS"].asString());
+		if(!valueItemsSQLSlowRecord["CpuTime"].isNull())
+			itemsObject.cpuTime = std::stol(valueItemsSQLSlowRecord["CpuTime"].asString());
+		if(!valueItemsSQLSlowRecord["LogicalIORead"].isNull())
+			itemsObject.logicalIORead = std::stol(valueItemsSQLSlowRecord["LogicalIORead"].asString());
+		if(!valueItemsSQLSlowRecord["PhysicalIORead"].isNull())
+			itemsObject.physicalIORead = std::stol(valueItemsSQLSlowRecord["PhysicalIORead"].asString());
+		if(!valueItemsSQLSlowRecord["WriteIOCount"].isNull())
+			itemsObject.writeIOCount = std::stol(valueItemsSQLSlowRecord["WriteIOCount"].asString());
+		if(!valueItemsSQLSlowRecord["RowsAffectedCount"].isNull())
+			itemsObject.rowsAffectedCount = std::stol(valueItemsSQLSlowRecord["RowsAffectedCount"].asString());
+		if(!valueItemsSQLSlowRecord["LastRowsAffectedCount"].isNull())
+			itemsObject.lastRowsAffectedCount = std::stol(valueItemsSQLSlowRecord["LastRowsAffectedCount"].asString());
+		if(!valueItemsSQLSlowRecord["UserName"].isNull())
+			itemsObject.userName = valueItemsSQLSlowRecord["UserName"].asString();
+		if(!valueItemsSQLSlowRecord["ApplicationName"].isNull())
+			itemsObject.applicationName = valueItemsSQLSlowRecord["ApplicationName"].asString();
+		if(!valueItemsSQLSlowRecord["ClientHostName"].isNull())
+			itemsObject.clientHostName = valueItemsSQLSlowRecord["ClientHostName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())
@@ -73,6 +91,22 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["SQLHash"].isNull())
+		sQLHash_ = value["SQLHash"].asString();
+	if(!value["CPUTime"].isNull())
+		cPUTime_ = std::stol(value["CPUTime"].asString());
+	if(!value["LogicalIORead"].isNull())
+		logicalIORead_ = std::stol(value["LogicalIORead"].asString());
+	if(!value["PhysicalIORead"].isNull())
+		physicalIORead_ = std::stol(value["PhysicalIORead"].asString());
+	if(!value["WritesIOCount"].isNull())
+		writesIOCount_ = std::stol(value["WritesIOCount"].asString());
+	if(!value["RowsAffectedCount"].isNull())
+		rowsAffectedCount_ = std::stol(value["RowsAffectedCount"].asString());
+	if(!value["LastRowsAffectedCount"].isNull())
+		lastRowsAffectedCount_ = std::stol(value["LastRowsAffectedCount"].asString());
+	if(!value["UserName"].isNull())
+		userName_ = value["UserName"].asString();
 
 }
 
@@ -84,6 +118,46 @@ int DescribeSlowLogRecordsResult::getTotalRecordCount()const
 int DescribeSlowLogRecordsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
+}
+
+std::string DescribeSlowLogRecordsResult::getUserName()const
+{
+	return userName_;
+}
+
+long DescribeSlowLogRecordsResult::getLastRowsAffectedCount()const
+{
+	return lastRowsAffectedCount_;
+}
+
+long DescribeSlowLogRecordsResult::getRowsAffectedCount()const
+{
+	return rowsAffectedCount_;
+}
+
+long DescribeSlowLogRecordsResult::getPhysicalIORead()const
+{
+	return physicalIORead_;
+}
+
+long DescribeSlowLogRecordsResult::getWritesIOCount()const
+{
+	return writesIOCount_;
+}
+
+long DescribeSlowLogRecordsResult::getLogicalIORead()const
+{
+	return logicalIORead_;
+}
+
+long DescribeSlowLogRecordsResult::getCPUTime()const
+{
+	return cPUTime_;
+}
+
+std::string DescribeSlowLogRecordsResult::getSQLHash()const
+{
+	return sQLHash_;
 }
 
 std::string DescribeSlowLogRecordsResult::getDBInstanceId()const
