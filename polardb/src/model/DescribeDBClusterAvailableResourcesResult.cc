@@ -47,20 +47,20 @@ void DescribeDBClusterAvailableResourcesResult::parse(const std::string &payload
 			availableZonesObject.regionId = valueAvailableZonesAvailableZone["RegionId"].asString();
 		if(!valueAvailableZonesAvailableZone["ZoneId"].isNull())
 			availableZonesObject.zoneId = valueAvailableZonesAvailableZone["ZoneId"].asString();
-		auto allSupportedEnginesNode = allAvailableZonesNode["SupportedEngines"]["SupportedEngine"];
-		for (auto allAvailableZonesNodeSupportedEnginesSupportedEngine : allSupportedEnginesNode)
+		auto allSupportedEnginesNode = valueAvailableZonesAvailableZone["SupportedEngines"]["SupportedEngine"];
+		for (auto valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngine : allSupportedEnginesNode)
 		{
 			AvailableZone::SupportedEngine supportedEnginesObject;
-			if(!allAvailableZonesNodeSupportedEnginesSupportedEngine["Engine"].isNull())
-				supportedEnginesObject.engine = allAvailableZonesNodeSupportedEnginesSupportedEngine["Engine"].asString();
-			auto allAvailableResourcesNode = allSupportedEnginesNode["AvailableResources"]["AvailableResource"];
-			for (auto allSupportedEnginesNodeAvailableResourcesAvailableResource : allAvailableResourcesNode)
+			if(!valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngine["Engine"].isNull())
+				supportedEnginesObject.engine = valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngine["Engine"].asString();
+			auto allAvailableResourcesNode = valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngine["AvailableResources"]["AvailableResource"];
+			for (auto valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngineAvailableResourcesAvailableResource : allAvailableResourcesNode)
 			{
 				AvailableZone::SupportedEngine::AvailableResource availableResourcesObject;
-				if(!allSupportedEnginesNodeAvailableResourcesAvailableResource["DBNodeClass"].isNull())
-					availableResourcesObject.dBNodeClass = allSupportedEnginesNodeAvailableResourcesAvailableResource["DBNodeClass"].asString();
-				if(!allSupportedEnginesNodeAvailableResourcesAvailableResource["Category"].isNull())
-					availableResourcesObject.category = allSupportedEnginesNodeAvailableResourcesAvailableResource["Category"].asString();
+				if(!valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngineAvailableResourcesAvailableResource["DBNodeClass"].isNull())
+					availableResourcesObject.dBNodeClass = valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngineAvailableResourcesAvailableResource["DBNodeClass"].asString();
+				if(!valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngineAvailableResourcesAvailableResource["Category"].isNull())
+					availableResourcesObject.category = valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngineAvailableResourcesAvailableResource["Category"].asString();
 				supportedEnginesObject.availableResources.push_back(availableResourcesObject);
 			}
 			availableZonesObject.supportedEngines.push_back(supportedEnginesObject);

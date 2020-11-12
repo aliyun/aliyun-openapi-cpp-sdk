@@ -49,14 +49,14 @@ void DescribeDBClusterPerformanceResult::parse(const std::string &payload)
 			performanceKeysObject.measurement = valuePerformanceKeysPerformanceItem["Measurement"].asString();
 		if(!valuePerformanceKeysPerformanceItem["MetricName"].isNull())
 			performanceKeysObject.metricName = valuePerformanceKeysPerformanceItem["MetricName"].asString();
-		auto allPointsNode = allPerformanceKeysNode["Points"]["PerformanceItemValue"];
-		for (auto allPerformanceKeysNodePointsPerformanceItemValue : allPointsNode)
+		auto allPointsNode = valuePerformanceKeysPerformanceItem["Points"]["PerformanceItemValue"];
+		for (auto valuePerformanceKeysPerformanceItemPointsPerformanceItemValue : allPointsNode)
 		{
 			PerformanceItem::PerformanceItemValue pointsObject;
-			if(!allPerformanceKeysNodePointsPerformanceItemValue["Value"].isNull())
-				pointsObject.value = allPerformanceKeysNodePointsPerformanceItemValue["Value"].asString();
-			if(!allPerformanceKeysNodePointsPerformanceItemValue["Timestamp"].isNull())
-				pointsObject.timestamp = std::stol(allPerformanceKeysNodePointsPerformanceItemValue["Timestamp"].asString());
+			if(!valuePerformanceKeysPerformanceItemPointsPerformanceItemValue["Value"].isNull())
+				pointsObject.value = valuePerformanceKeysPerformanceItemPointsPerformanceItemValue["Value"].asString();
+			if(!valuePerformanceKeysPerformanceItemPointsPerformanceItemValue["Timestamp"].isNull())
+				pointsObject.timestamp = std::stol(valuePerformanceKeysPerformanceItemPointsPerformanceItemValue["Timestamp"].asString());
 			performanceKeysObject.points.push_back(pointsObject);
 		}
 		performanceKeys_.push_back(performanceKeysObject);

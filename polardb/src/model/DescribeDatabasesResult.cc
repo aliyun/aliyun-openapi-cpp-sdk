@@ -53,18 +53,18 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
 		if(!valueDatabasesDatabase["Engine"].isNull())
 			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
-		auto allAccountsNode = allDatabasesNode["Accounts"]["Account"];
-		for (auto allDatabasesNodeAccountsAccount : allAccountsNode)
+		auto allAccountsNode = valueDatabasesDatabase["Accounts"]["Account"];
+		for (auto valueDatabasesDatabaseAccountsAccount : allAccountsNode)
 		{
 			Database::Account accountsObject;
-			if(!allDatabasesNodeAccountsAccount["AccountName"].isNull())
-				accountsObject.accountName = allDatabasesNodeAccountsAccount["AccountName"].asString();
-			if(!allDatabasesNodeAccountsAccount["AccountStatus"].isNull())
-				accountsObject.accountStatus = allDatabasesNodeAccountsAccount["AccountStatus"].asString();
-			if(!allDatabasesNodeAccountsAccount["AccountPrivilege"].isNull())
-				accountsObject.accountPrivilege = allDatabasesNodeAccountsAccount["AccountPrivilege"].asString();
-			if(!allDatabasesNodeAccountsAccount["PrivilegeStatus"].isNull())
-				accountsObject.privilegeStatus = allDatabasesNodeAccountsAccount["PrivilegeStatus"].asString();
+			if(!valueDatabasesDatabaseAccountsAccount["AccountName"].isNull())
+				accountsObject.accountName = valueDatabasesDatabaseAccountsAccount["AccountName"].asString();
+			if(!valueDatabasesDatabaseAccountsAccount["AccountStatus"].isNull())
+				accountsObject.accountStatus = valueDatabasesDatabaseAccountsAccount["AccountStatus"].asString();
+			if(!valueDatabasesDatabaseAccountsAccount["AccountPrivilege"].isNull())
+				accountsObject.accountPrivilege = valueDatabasesDatabaseAccountsAccount["AccountPrivilege"].asString();
+			if(!valueDatabasesDatabaseAccountsAccount["PrivilegeStatus"].isNull())
+				accountsObject.privilegeStatus = valueDatabasesDatabaseAccountsAccount["PrivilegeStatus"].asString();
 			databasesObject.accounts.push_back(accountsObject);
 		}
 		databases_.push_back(databasesObject);

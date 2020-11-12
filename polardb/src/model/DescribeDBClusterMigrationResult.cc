@@ -47,22 +47,22 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 			dBClusterEndpointListObject.dBEndpointId = valueDBClusterEndpointListDBClusterEndpoint["DBEndpointId"].asString();
 		if(!valueDBClusterEndpointListDBClusterEndpoint["EndpointType"].isNull())
 			dBClusterEndpointListObject.endpointType = valueDBClusterEndpointListDBClusterEndpoint["EndpointType"].asString();
-		auto allAddressItemsNode = allDBClusterEndpointListNode["AddressItems"]["Address"];
-		for (auto allDBClusterEndpointListNodeAddressItemsAddress : allAddressItemsNode)
+		auto allAddressItemsNode = valueDBClusterEndpointListDBClusterEndpoint["AddressItems"]["Address"];
+		for (auto valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress : allAddressItemsNode)
 		{
 			DBClusterEndpoint::Address addressItemsObject;
-			if(!allDBClusterEndpointListNodeAddressItemsAddress["ConnectionString"].isNull())
-				addressItemsObject.connectionString = allDBClusterEndpointListNodeAddressItemsAddress["ConnectionString"].asString();
-			if(!allDBClusterEndpointListNodeAddressItemsAddress["IPAddress"].isNull())
-				addressItemsObject.iPAddress = allDBClusterEndpointListNodeAddressItemsAddress["IPAddress"].asString();
-			if(!allDBClusterEndpointListNodeAddressItemsAddress["NetType"].isNull())
-				addressItemsObject.netType = allDBClusterEndpointListNodeAddressItemsAddress["NetType"].asString();
-			if(!allDBClusterEndpointListNodeAddressItemsAddress["Port"].isNull())
-				addressItemsObject.port = allDBClusterEndpointListNodeAddressItemsAddress["Port"].asString();
-			if(!allDBClusterEndpointListNodeAddressItemsAddress["VPCId"].isNull())
-				addressItemsObject.vPCId = allDBClusterEndpointListNodeAddressItemsAddress["VPCId"].asString();
-			if(!allDBClusterEndpointListNodeAddressItemsAddress["VSwitchId"].isNull())
-				addressItemsObject.vSwitchId = allDBClusterEndpointListNodeAddressItemsAddress["VSwitchId"].asString();
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["ConnectionString"].isNull())
+				addressItemsObject.connectionString = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["ConnectionString"].asString();
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["IPAddress"].isNull())
+				addressItemsObject.iPAddress = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["IPAddress"].asString();
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["NetType"].isNull())
+				addressItemsObject.netType = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["NetType"].asString();
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["Port"].isNull())
+				addressItemsObject.port = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["Port"].asString();
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VPCId"].isNull())
+				addressItemsObject.vPCId = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VPCId"].asString();
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VSwitchId"].isNull())
+				addressItemsObject.vSwitchId = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VSwitchId"].asString();
 			dBClusterEndpointListObject.addressItems.push_back(addressItemsObject);
 		}
 		dBClusterEndpointList_.push_back(dBClusterEndpointListObject);
@@ -75,22 +75,22 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 			rdsEndpointListObject.dBEndpointId = valueRdsEndpointListRdsEndpoint["DBEndpointId"].asString();
 		if(!valueRdsEndpointListRdsEndpoint["EndpointType"].isNull())
 			rdsEndpointListObject.endpointType = valueRdsEndpointListRdsEndpoint["EndpointType"].asString();
-		auto allAddressItems1Node = allRdsEndpointListNode["AddressItems"]["Address"];
-		for (auto allRdsEndpointListNodeAddressItemsAddress : allAddressItems1Node)
+		auto allAddressItems1Node = valueRdsEndpointListRdsEndpoint["AddressItems"]["Address"];
+		for (auto valueRdsEndpointListRdsEndpointAddressItemsAddress : allAddressItems1Node)
 		{
 			RdsEndpoint::Address2 addressItems1Object;
-			if(!allRdsEndpointListNodeAddressItemsAddress["ConnectionString"].isNull())
-				addressItems1Object.connectionString = allRdsEndpointListNodeAddressItemsAddress["ConnectionString"].asString();
-			if(!allRdsEndpointListNodeAddressItemsAddress["IPAddress"].isNull())
-				addressItems1Object.iPAddress = allRdsEndpointListNodeAddressItemsAddress["IPAddress"].asString();
-			if(!allRdsEndpointListNodeAddressItemsAddress["NetType"].isNull())
-				addressItems1Object.netType = allRdsEndpointListNodeAddressItemsAddress["NetType"].asString();
-			if(!allRdsEndpointListNodeAddressItemsAddress["Port"].isNull())
-				addressItems1Object.port = allRdsEndpointListNodeAddressItemsAddress["Port"].asString();
-			if(!allRdsEndpointListNodeAddressItemsAddress["VPCId"].isNull())
-				addressItems1Object.vPCId = allRdsEndpointListNodeAddressItemsAddress["VPCId"].asString();
-			if(!allRdsEndpointListNodeAddressItemsAddress["VSwitchId"].isNull())
-				addressItems1Object.vSwitchId = allRdsEndpointListNodeAddressItemsAddress["VSwitchId"].asString();
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["ConnectionString"].isNull())
+				addressItems1Object.connectionString = valueRdsEndpointListRdsEndpointAddressItemsAddress["ConnectionString"].asString();
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["IPAddress"].isNull())
+				addressItems1Object.iPAddress = valueRdsEndpointListRdsEndpointAddressItemsAddress["IPAddress"].asString();
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["NetType"].isNull())
+				addressItems1Object.netType = valueRdsEndpointListRdsEndpointAddressItemsAddress["NetType"].asString();
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["Port"].isNull())
+				addressItems1Object.port = valueRdsEndpointListRdsEndpointAddressItemsAddress["Port"].asString();
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["VPCId"].isNull())
+				addressItems1Object.vPCId = valueRdsEndpointListRdsEndpointAddressItemsAddress["VPCId"].asString();
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["VSwitchId"].isNull())
+				addressItems1Object.vSwitchId = valueRdsEndpointListRdsEndpointAddressItemsAddress["VSwitchId"].asString();
 			rdsEndpointListObject.addressItems1.push_back(addressItems1Object);
 		}
 		rdsEndpointList_.push_back(rdsEndpointListObject);

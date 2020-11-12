@@ -83,30 +83,30 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.storageUsed = std::stol(valueItemsDBCluster["StorageUsed"].asString());
 		if(!valueItemsDBCluster["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
-		auto allDBNodesNode = allItemsNode["DBNodes"]["DBNode"];
-		for (auto allItemsNodeDBNodesDBNode : allDBNodesNode)
+		auto allDBNodesNode = valueItemsDBCluster["DBNodes"]["DBNode"];
+		for (auto valueItemsDBClusterDBNodesDBNode : allDBNodesNode)
 		{
 			DBCluster::DBNode dBNodesObject;
-			if(!allItemsNodeDBNodesDBNode["DBNodeId"].isNull())
-				dBNodesObject.dBNodeId = allItemsNodeDBNodesDBNode["DBNodeId"].asString();
-			if(!allItemsNodeDBNodesDBNode["DBNodeClass"].isNull())
-				dBNodesObject.dBNodeClass = allItemsNodeDBNodesDBNode["DBNodeClass"].asString();
-			if(!allItemsNodeDBNodesDBNode["DBNodeRole"].isNull())
-				dBNodesObject.dBNodeRole = allItemsNodeDBNodesDBNode["DBNodeRole"].asString();
-			if(!allItemsNodeDBNodesDBNode["RegionId"].isNull())
-				dBNodesObject.regionId = allItemsNodeDBNodesDBNode["RegionId"].asString();
-			if(!allItemsNodeDBNodesDBNode["ZoneId"].isNull())
-				dBNodesObject.zoneId = allItemsNodeDBNodesDBNode["ZoneId"].asString();
+			if(!valueItemsDBClusterDBNodesDBNode["DBNodeId"].isNull())
+				dBNodesObject.dBNodeId = valueItemsDBClusterDBNodesDBNode["DBNodeId"].asString();
+			if(!valueItemsDBClusterDBNodesDBNode["DBNodeClass"].isNull())
+				dBNodesObject.dBNodeClass = valueItemsDBClusterDBNodesDBNode["DBNodeClass"].asString();
+			if(!valueItemsDBClusterDBNodesDBNode["DBNodeRole"].isNull())
+				dBNodesObject.dBNodeRole = valueItemsDBClusterDBNodesDBNode["DBNodeRole"].asString();
+			if(!valueItemsDBClusterDBNodesDBNode["RegionId"].isNull())
+				dBNodesObject.regionId = valueItemsDBClusterDBNodesDBNode["RegionId"].asString();
+			if(!valueItemsDBClusterDBNodesDBNode["ZoneId"].isNull())
+				dBNodesObject.zoneId = valueItemsDBClusterDBNodesDBNode["ZoneId"].asString();
 			itemsObject.dBNodes.push_back(dBNodesObject);
 		}
-		auto allTagsNode = allItemsNode["Tags"]["Tag"];
-		for (auto allItemsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueItemsDBCluster["Tags"]["Tag"];
+		for (auto valueItemsDBClusterTagsTag : allTagsNode)
 		{
 			DBCluster::Tag tagsObject;
-			if(!allItemsNodeTagsTag["Key"].isNull())
-				tagsObject.key = allItemsNodeTagsTag["Key"].asString();
-			if(!allItemsNodeTagsTag["Value"].isNull())
-				tagsObject.value = allItemsNodeTagsTag["Value"].asString();
+			if(!valueItemsDBClusterTagsTag["Key"].isNull())
+				tagsObject.key = valueItemsDBClusterTagsTag["Key"].asString();
+			if(!valueItemsDBClusterTagsTag["Value"].isNull())
+				tagsObject.value = valueItemsDBClusterTagsTag["Value"].asString();
 			itemsObject.tags.push_back(tagsObject);
 		}
 		items_.push_back(itemsObject);
