@@ -75,12 +75,9 @@ void DescribeZoneInfoResult::parse(const std::string &payload)
 		proxyPattern_ = value["ProxyPattern"].asString();
 	if(!value["SlaveDns"].isNull())
 		slaveDns_ = value["SlaveDns"].asString() == "true";
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
-}
-
-std::string DescribeZoneInfoResult::getZoneName()const
-{
-	return zoneName_;
 }
 
 std::string DescribeZoneInfoResult::getZoneId()const
@@ -93,6 +90,11 @@ bool DescribeZoneInfoResult::getSlaveDns()const
 	return slaveDns_;
 }
 
+std::string DescribeZoneInfoResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
 std::string DescribeZoneInfoResult::getProxyPattern()const
 {
 	return proxyPattern_;
@@ -101,6 +103,16 @@ std::string DescribeZoneInfoResult::getProxyPattern()const
 std::string DescribeZoneInfoResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string DescribeZoneInfoResult::getRemark()const
+{
+	return remark_;
+}
+
+std::string DescribeZoneInfoResult::getZoneName()const
+{
+	return zoneName_;
 }
 
 std::string DescribeZoneInfoResult::getUpdateTime()const
@@ -131,10 +143,5 @@ long DescribeZoneInfoResult::getCreateTimestamp()const
 bool DescribeZoneInfoResult::getIsPtr()const
 {
 	return isPtr_;
-}
-
-std::string DescribeZoneInfoResult::getRemark()const
-{
-	return remark_;
 }
 

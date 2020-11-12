@@ -63,6 +63,8 @@ void DescribeZonesResult::parse(const std::string &payload)
 			zonesObject.isPtr = valueZonesZone["IsPtr"].asString() == "true";
 		if(!valueZonesZone["ProxyPattern"].isNull())
 			zonesObject.proxyPattern = valueZonesZone["ProxyPattern"].asString();
+		if(!valueZonesZone["ResourceGroupId"].isNull())
+			zonesObject.resourceGroupId = valueZonesZone["ResourceGroupId"].asString();
 		zones_.push_back(zonesObject);
 	}
 	if(!value["TotalItems"].isNull())

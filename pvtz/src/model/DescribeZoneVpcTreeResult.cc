@@ -61,18 +61,18 @@ void DescribeZoneVpcTreeResult::parse(const std::string &payload)
 			zonesObject.updateTimestamp = std::stol(valueZonesZone["UpdateTimestamp"].asString());
 		if(!valueZonesZone["IsPtr"].isNull())
 			zonesObject.isPtr = valueZonesZone["IsPtr"].asString() == "true";
-		auto allVpcsNode = allZonesNode["Vpcs"]["Vpc"];
-		for (auto allZonesNodeVpcsVpc : allVpcsNode)
+		auto allVpcsNode = valueZonesZone["Vpcs"]["Vpc"];
+		for (auto valueZonesZoneVpcsVpc : allVpcsNode)
 		{
 			Zone::Vpc vpcsObject;
-			if(!allZonesNodeVpcsVpc["RegionId"].isNull())
-				vpcsObject.regionId = allZonesNodeVpcsVpc["RegionId"].asString();
-			if(!allZonesNodeVpcsVpc["RegionName"].isNull())
-				vpcsObject.regionName = allZonesNodeVpcsVpc["RegionName"].asString();
-			if(!allZonesNodeVpcsVpc["VpcId"].isNull())
-				vpcsObject.vpcId = allZonesNodeVpcsVpc["VpcId"].asString();
-			if(!allZonesNodeVpcsVpc["VpcName"].isNull())
-				vpcsObject.vpcName = allZonesNodeVpcsVpc["VpcName"].asString();
+			if(!valueZonesZoneVpcsVpc["RegionId"].isNull())
+				vpcsObject.regionId = valueZonesZoneVpcsVpc["RegionId"].asString();
+			if(!valueZonesZoneVpcsVpc["RegionName"].isNull())
+				vpcsObject.regionName = valueZonesZoneVpcsVpc["RegionName"].asString();
+			if(!valueZonesZoneVpcsVpc["VpcId"].isNull())
+				vpcsObject.vpcId = valueZonesZoneVpcsVpc["VpcId"].asString();
+			if(!valueZonesZoneVpcsVpc["VpcName"].isNull())
+				vpcsObject.vpcName = valueZonesZoneVpcsVpc["VpcName"].asString();
 			zonesObject.vpcs.push_back(vpcsObject);
 		}
 		zones_.push_back(zonesObject);

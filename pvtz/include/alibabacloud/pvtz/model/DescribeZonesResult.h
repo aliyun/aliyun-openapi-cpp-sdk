@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string zoneName;
 					std::string zoneId;
+					std::string resourceGroupId;
 					std::string proxyPattern;
 					std::string createTime;
 					std::string updateTime;

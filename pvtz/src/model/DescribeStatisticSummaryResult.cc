@@ -47,6 +47,8 @@ void DescribeStatisticSummaryResult::parse(const std::string &payload)
 			zoneRequestTopsObject.zoneName = valueZoneRequestTopsZoneRequestTop["ZoneName"].asString();
 		if(!valueZoneRequestTopsZoneRequestTop["RequestCount"].isNull())
 			zoneRequestTopsObject.requestCount = std::stol(valueZoneRequestTopsZoneRequestTop["RequestCount"].asString());
+		if(!valueZoneRequestTopsZoneRequestTop["BizType"].isNull())
+			zoneRequestTopsObject.bizType = valueZoneRequestTopsZoneRequestTop["BizType"].asString();
 		zoneRequestTops_.push_back(zoneRequestTopsObject);
 	}
 	auto allVpcRequestTopsNode = value["VpcRequestTops"]["VpcRequestTop"];

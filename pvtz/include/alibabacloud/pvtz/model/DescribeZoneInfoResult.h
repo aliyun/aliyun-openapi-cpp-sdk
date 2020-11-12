@@ -44,34 +44,36 @@ namespace AlibabaCloud
 				DescribeZoneInfoResult();
 				explicit DescribeZoneInfoResult(const std::string &payload);
 				~DescribeZoneInfoResult();
-				std::string getZoneName()const;
 				std::string getZoneId()const;
 				bool getSlaveDns()const;
+				std::string getResourceGroupId()const;
 				std::string getProxyPattern()const;
 				std::string getCreateTime()const;
+				std::string getRemark()const;
+				std::string getZoneName()const;
 				std::string getUpdateTime()const;
 				long getUpdateTimestamp()const;
 				std::vector<Vpc> getBindVpcs()const;
 				int getRecordCount()const;
 				long getCreateTimestamp()const;
 				bool getIsPtr()const;
-				std::string getRemark()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string zoneName_;
 				std::string zoneId_;
 				bool slaveDns_;
+				std::string resourceGroupId_;
 				std::string proxyPattern_;
 				std::string createTime_;
+				std::string remark_;
+				std::string zoneName_;
 				std::string updateTime_;
 				long updateTimestamp_;
 				std::vector<Vpc> bindVpcs_;
 				int recordCount_;
 				long createTimestamp_;
 				bool isPtr_;
-				std::string remark_;
 
 			};
 		}

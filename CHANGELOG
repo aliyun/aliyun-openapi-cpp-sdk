@@ -1,4 +1,7 @@
 2020-11-12 Version: patch
+- Update new version.
+
+2020-11-12 Version: patch
 - Support DescribeDBClusterTDE.
 - Support ModifyDBClusterTDE.
 

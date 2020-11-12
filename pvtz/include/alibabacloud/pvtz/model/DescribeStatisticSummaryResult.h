@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct ZoneRequestTop
 				{
 					std::string zoneName;
+					std::string bizType;
 					long requestCount;
 				};
 				struct VpcRequestTop

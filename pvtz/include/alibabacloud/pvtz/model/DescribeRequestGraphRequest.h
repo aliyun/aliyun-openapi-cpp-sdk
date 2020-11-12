@@ -39,10 +39,14 @@ namespace AlibabaCloud
 				void setStartTimestamp(long startTimestamp);
 				long getEndTimestamp()const;
 				void setEndTimestamp(long endTimestamp);
+				std::string getBizType()const;
+				void setBizType(const std::string& bizType);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
+				std::string getBizId()const;
+				void setBizId(const std::string& bizId);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 				std::string getLang()const;
@@ -51,8 +55,10 @@ namespace AlibabaCloud
             private:
 				long startTimestamp_;
 				long endTimestamp_;
+				std::string bizType_;
 				std::string vpcId_;
 				std::string userClientIp_;
+				std::string bizId_;
 				std::string zoneId_;
 				std::string lang_;
 

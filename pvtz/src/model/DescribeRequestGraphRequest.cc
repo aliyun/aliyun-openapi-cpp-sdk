@@ -49,6 +49,17 @@ void DescribeRequestGraphRequest::setEndTimestamp(long endTimestamp)
 	setParameter("EndTimestamp", std::to_string(endTimestamp));
 }
 
+std::string DescribeRequestGraphRequest::getBizType()const
+{
+	return bizType_;
+}
+
+void DescribeRequestGraphRequest::setBizType(const std::string& bizType)
+{
+	bizType_ = bizType;
+	setParameter("BizType", bizType);
+}
+
 std::string DescribeRequestGraphRequest::getVpcId()const
 {
 	return vpcId_;
@@ -69,6 +80,17 @@ void DescribeRequestGraphRequest::setUserClientIp(const std::string& userClientI
 {
 	userClientIp_ = userClientIp;
 	setParameter("UserClientIp", userClientIp);
+}
+
+std::string DescribeRequestGraphRequest::getBizId()const
+{
+	return bizId_;
+}
+
+void DescribeRequestGraphRequest::setBizId(const std::string& bizId)
+{
+	bizId_ = bizId;
+	setParameter("BizId", bizId);
 }
 
 std::string DescribeRequestGraphRequest::getZoneId()const
