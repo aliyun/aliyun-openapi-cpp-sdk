@@ -45,12 +45,12 @@ void DetectQRCodesResult::parse(const std::string &payload)
 		SuccessDetailsItem successDetailsObject;
 		if(!valueSuccessDetailsSuccessDetailsItem["SrcUri"].isNull())
 			successDetailsObject.srcUri = valueSuccessDetailsSuccessDetailsItem["SrcUri"].asString();
-		auto allQRCodesNode = allSuccessDetailsNode["QRCodes"]["QRCodesItem"];
-		for (auto allSuccessDetailsNodeQRCodesQRCodesItem : allQRCodesNode)
+		auto allQRCodesNode = valueSuccessDetailsSuccessDetailsItem["QRCodes"]["QRCodesItem"];
+		for (auto valueSuccessDetailsSuccessDetailsItemQRCodesQRCodesItem : allQRCodesNode)
 		{
 			SuccessDetailsItem::QRCodesItem qRCodesObject;
-			if(!allSuccessDetailsNodeQRCodesQRCodesItem["Content"].isNull())
-				qRCodesObject.content = allSuccessDetailsNodeQRCodesQRCodesItem["Content"].asString();
+			if(!valueSuccessDetailsSuccessDetailsItemQRCodesQRCodesItem["Content"].isNull())
+				qRCodesObject.content = valueSuccessDetailsSuccessDetailsItemQRCodesQRCodesItem["Content"].asString();
 			auto qRCodesRectangleNode = value["QRCodesRectangle"];
 			if(!qRCodesRectangleNode["Left"].isNull())
 				qRCodesObject.qRCodesRectangle.left = qRCodesRectangleNode["Left"].asString();

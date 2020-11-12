@@ -45,6 +45,17 @@ namespace AlibabaCloud
 							std::string district;
 							std::string province;
 						};
+						struct Tag
+						{
+							std::string artist;
+							std::string composer;
+							std::string performer;
+							std::string language;
+							std::string creationTime;
+							std::string album;
+							std::string title;
+							std::string albumArtist;
+						};
 						Address address;
 						int numberStreams;
 						std::string size;
@@ -53,6 +64,7 @@ namespace AlibabaCloud
 						std::string creationTime;
 						std::string formatName;
 						std::string duration;
+						Tag tag;
 						std::string bitrate;
 						int numberPrograms;
 						std::string location;

@@ -51,18 +51,18 @@ void FindSimilarFacesResult::parse(const std::string &payload)
 			facesObject.similarity = std::stof(valueFacesFacesItem["Similarity"].asString());
 		if(!valueFacesFacesItem["ExternalId"].isNull())
 			facesObject.externalId = valueFacesFacesItem["ExternalId"].asString();
-		auto allSimilarFacesNode = allFacesNode["SimilarFaces"]["SimilarFacesItem"];
-		for (auto allFacesNodeSimilarFacesSimilarFacesItem : allSimilarFacesNode)
+		auto allSimilarFacesNode = valueFacesFacesItem["SimilarFaces"]["SimilarFacesItem"];
+		for (auto valueFacesFacesItemSimilarFacesSimilarFacesItem : allSimilarFacesNode)
 		{
 			FacesItem::SimilarFacesItem similarFacesObject;
-			if(!allFacesNodeSimilarFacesSimilarFacesItem["FaceId"].isNull())
-				similarFacesObject.faceId = allFacesNodeSimilarFacesSimilarFacesItem["FaceId"].asString();
-			if(!allFacesNodeSimilarFacesSimilarFacesItem["ImageUri"].isNull())
-				similarFacesObject.imageUri = allFacesNodeSimilarFacesSimilarFacesItem["ImageUri"].asString();
-			if(!allFacesNodeSimilarFacesSimilarFacesItem["Similarity"].isNull())
-				similarFacesObject.similarity = std::stof(allFacesNodeSimilarFacesSimilarFacesItem["Similarity"].asString());
-			if(!allFacesNodeSimilarFacesSimilarFacesItem["ExternalId"].isNull())
-				similarFacesObject.externalId = allFacesNodeSimilarFacesSimilarFacesItem["ExternalId"].asString();
+			if(!valueFacesFacesItemSimilarFacesSimilarFacesItem["FaceId"].isNull())
+				similarFacesObject.faceId = valueFacesFacesItemSimilarFacesSimilarFacesItem["FaceId"].asString();
+			if(!valueFacesFacesItemSimilarFacesSimilarFacesItem["ImageUri"].isNull())
+				similarFacesObject.imageUri = valueFacesFacesItemSimilarFacesSimilarFacesItem["ImageUri"].asString();
+			if(!valueFacesFacesItemSimilarFacesSimilarFacesItem["Similarity"].isNull())
+				similarFacesObject.similarity = std::stof(valueFacesFacesItemSimilarFacesSimilarFacesItem["Similarity"].asString());
+			if(!valueFacesFacesItemSimilarFacesSimilarFacesItem["ExternalId"].isNull())
+				similarFacesObject.externalId = valueFacesFacesItemSimilarFacesSimilarFacesItem["ExternalId"].asString();
 			auto faceAttributes1Node = value["FaceAttributes"];
 			auto faceBoundaryNode = faceAttributes1Node["FaceBoundary"];
 			if(!faceBoundaryNode["Left"].isNull())

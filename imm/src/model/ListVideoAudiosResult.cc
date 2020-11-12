@@ -85,30 +85,30 @@ void ListVideoAudiosResult::parse(const std::string &payload)
 			audiosObject.remarksD = valueAudiosAudiosItem["RemarksD"].asString();
 		if(!valueAudiosAudiosItem["ExternalId"].isNull())
 			audiosObject.externalId = valueAudiosAudiosItem["ExternalId"].asString();
-		auto allAudioTextsNode = allAudiosNode["AudioTexts"]["AudioTextsItem"];
-		for (auto allAudiosNodeAudioTextsAudioTextsItem : allAudioTextsNode)
+		auto allAudioTextsNode = valueAudiosAudiosItem["AudioTexts"]["AudioTextsItem"];
+		for (auto valueAudiosAudiosItemAudioTextsAudioTextsItem : allAudioTextsNode)
 		{
 			AudiosItem::AudioTextsItem audioTextsObject;
-			if(!allAudiosNodeAudioTextsAudioTextsItem["Text"].isNull())
-				audioTextsObject.text = allAudiosNodeAudioTextsAudioTextsItem["Text"].asString();
-			if(!allAudiosNodeAudioTextsAudioTextsItem["BeginTime"].isNull())
-				audioTextsObject.beginTime = std::stof(allAudiosNodeAudioTextsAudioTextsItem["BeginTime"].asString());
-			if(!allAudiosNodeAudioTextsAudioTextsItem["EndTime"].isNull())
-				audioTextsObject.endTime = std::stof(allAudiosNodeAudioTextsAudioTextsItem["EndTime"].asString());
-			if(!allAudiosNodeAudioTextsAudioTextsItem["SilenceDuration"].isNull())
-				audioTextsObject.silenceDuration = std::stof(allAudiosNodeAudioTextsAudioTextsItem["SilenceDuration"].asString());
-			if(!allAudiosNodeAudioTextsAudioTextsItem["EmotionValue"].isNull())
-				audioTextsObject.emotionValue = std::stof(allAudiosNodeAudioTextsAudioTextsItem["EmotionValue"].asString());
-			if(!allAudiosNodeAudioTextsAudioTextsItem["ChannelId"].isNull())
-				audioTextsObject.channelId = std::stoi(allAudiosNodeAudioTextsAudioTextsItem["ChannelId"].asString());
-			if(!allAudiosNodeAudioTextsAudioTextsItem["SpeechRate"].isNull())
-				audioTextsObject.speechRate = std::stoi(allAudiosNodeAudioTextsAudioTextsItem["SpeechRate"].asString());
-			if(!allAudiosNodeAudioTextsAudioTextsItem["Confidence"].isNull())
-				audioTextsObject.confidence = std::stof(allAudiosNodeAudioTextsAudioTextsItem["Confidence"].asString());
-			if(!allAudiosNodeAudioTextsAudioTextsItem["Person"].isNull())
-				audioTextsObject.person = allAudiosNodeAudioTextsAudioTextsItem["Person"].asString();
-			if(!allAudiosNodeAudioTextsAudioTextsItem["Library"].isNull())
-				audioTextsObject.library = allAudiosNodeAudioTextsAudioTextsItem["Library"].asString();
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["Text"].isNull())
+				audioTextsObject.text = valueAudiosAudiosItemAudioTextsAudioTextsItem["Text"].asString();
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["BeginTime"].isNull())
+				audioTextsObject.beginTime = std::stof(valueAudiosAudiosItemAudioTextsAudioTextsItem["BeginTime"].asString());
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["EndTime"].isNull())
+				audioTextsObject.endTime = std::stof(valueAudiosAudiosItemAudioTextsAudioTextsItem["EndTime"].asString());
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["SilenceDuration"].isNull())
+				audioTextsObject.silenceDuration = std::stof(valueAudiosAudiosItemAudioTextsAudioTextsItem["SilenceDuration"].asString());
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["EmotionValue"].isNull())
+				audioTextsObject.emotionValue = std::stof(valueAudiosAudiosItemAudioTextsAudioTextsItem["EmotionValue"].asString());
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["ChannelId"].isNull())
+				audioTextsObject.channelId = std::stoi(valueAudiosAudiosItemAudioTextsAudioTextsItem["ChannelId"].asString());
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["SpeechRate"].isNull())
+				audioTextsObject.speechRate = std::stoi(valueAudiosAudiosItemAudioTextsAudioTextsItem["SpeechRate"].asString());
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["Confidence"].isNull())
+				audioTextsObject.confidence = std::stof(valueAudiosAudiosItemAudioTextsAudioTextsItem["Confidence"].asString());
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["Person"].isNull())
+				audioTextsObject.person = valueAudiosAudiosItemAudioTextsAudioTextsItem["Person"].asString();
+			if(!valueAudiosAudiosItemAudioTextsAudioTextsItem["Library"].isNull())
+				audioTextsObject.library = valueAudiosAudiosItemAudioTextsAudioTextsItem["Library"].asString();
 			audiosObject.audioTexts.push_back(audioTextsObject);
 		}
 		audios_.push_back(audiosObject);

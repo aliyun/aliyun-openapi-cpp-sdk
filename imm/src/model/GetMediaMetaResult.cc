@@ -74,6 +74,23 @@ void GetMediaMetaResult::parse(const std::string &payload)
 		mediaMeta_.mediaFormat.address.district = addressNode["District"].asString();
 	if(!addressNode["Township"].isNull())
 		mediaMeta_.mediaFormat.address.township = addressNode["Township"].asString();
+	auto tagNode = mediaFormatNode["Tag"];
+	if(!tagNode["Language"].isNull())
+		mediaMeta_.mediaFormat.tag.language = tagNode["Language"].asString();
+	if(!tagNode["CreationTime"].isNull())
+		mediaMeta_.mediaFormat.tag.creationTime = tagNode["CreationTime"].asString();
+	if(!tagNode["Album"].isNull())
+		mediaMeta_.mediaFormat.tag.album = tagNode["Album"].asString();
+	if(!tagNode["AlbumArtist"].isNull())
+		mediaMeta_.mediaFormat.tag.albumArtist = tagNode["AlbumArtist"].asString();
+	if(!tagNode["Artist"].isNull())
+		mediaMeta_.mediaFormat.tag.artist = tagNode["Artist"].asString();
+	if(!tagNode["Composer"].isNull())
+		mediaMeta_.mediaFormat.tag.composer = tagNode["Composer"].asString();
+	if(!tagNode["Title"].isNull())
+		mediaMeta_.mediaFormat.tag.title = tagNode["Title"].asString();
+	if(!tagNode["Performer"].isNull())
+		mediaMeta_.mediaFormat.tag.performer = tagNode["Performer"].asString();
 	auto mediaStreamsNode = mediaMetaNode["MediaStreams"];
 	auto allVideoStreamsNode = mediaStreamsNode["VideoStreams"]["VideoStream"];
 	for (auto mediaStreamsNodeVideoStreamsVideoStream : allVideoStreamsNode)

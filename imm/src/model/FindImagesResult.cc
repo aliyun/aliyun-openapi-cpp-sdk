@@ -127,14 +127,14 @@ void FindImagesResult::parse(const std::string &payload)
 			imagesObject.croppingSuggestionFailReason = valueImagesImagesItem["CroppingSuggestionFailReason"].asString();
 		if(!valueImagesImagesItem["CroppingSuggestionModifyTime"].isNull())
 			imagesObject.croppingSuggestionModifyTime = valueImagesImagesItem["CroppingSuggestionModifyTime"].asString();
-		auto allCroppingSuggestionNode = allImagesNode["CroppingSuggestion"]["CroppingSuggestionItem"];
-		for (auto allImagesNodeCroppingSuggestionCroppingSuggestionItem : allCroppingSuggestionNode)
+		auto allCroppingSuggestionNode = valueImagesImagesItem["CroppingSuggestion"]["CroppingSuggestionItem"];
+		for (auto valueImagesImagesItemCroppingSuggestionCroppingSuggestionItem : allCroppingSuggestionNode)
 		{
 			ImagesItem::CroppingSuggestionItem croppingSuggestionObject;
-			if(!allImagesNodeCroppingSuggestionCroppingSuggestionItem["AspectRatio"].isNull())
-				croppingSuggestionObject.aspectRatio = allImagesNodeCroppingSuggestionCroppingSuggestionItem["AspectRatio"].asString();
-			if(!allImagesNodeCroppingSuggestionCroppingSuggestionItem["Score"].isNull())
-				croppingSuggestionObject.score = std::stof(allImagesNodeCroppingSuggestionCroppingSuggestionItem["Score"].asString());
+			if(!valueImagesImagesItemCroppingSuggestionCroppingSuggestionItem["AspectRatio"].isNull())
+				croppingSuggestionObject.aspectRatio = valueImagesImagesItemCroppingSuggestionCroppingSuggestionItem["AspectRatio"].asString();
+			if(!valueImagesImagesItemCroppingSuggestionCroppingSuggestionItem["Score"].isNull())
+				croppingSuggestionObject.score = std::stof(valueImagesImagesItemCroppingSuggestionCroppingSuggestionItem["Score"].asString());
 			auto croppingBoundaryNode = value["CroppingBoundary"];
 			if(!croppingBoundaryNode["Width"].isNull())
 				croppingSuggestionObject.croppingBoundary.width = std::stoi(croppingBoundaryNode["Width"].asString());
@@ -146,30 +146,30 @@ void FindImagesResult::parse(const std::string &payload)
 				croppingSuggestionObject.croppingBoundary.top = std::stoi(croppingBoundaryNode["Top"].asString());
 			imagesObject.croppingSuggestion.push_back(croppingSuggestionObject);
 		}
-		auto allFacesNode = allImagesNode["Faces"]["FacesItem"];
-		for (auto allImagesNodeFacesFacesItem : allFacesNode)
+		auto allFacesNode = valueImagesImagesItem["Faces"]["FacesItem"];
+		for (auto valueImagesImagesItemFacesFacesItem : allFacesNode)
 		{
 			ImagesItem::FacesItem facesObject;
-			if(!allImagesNodeFacesFacesItem["Age"].isNull())
-				facesObject.age = std::stoi(allImagesNodeFacesFacesItem["Age"].asString());
-			if(!allImagesNodeFacesFacesItem["GenderConfidence"].isNull())
-				facesObject.genderConfidence = std::stof(allImagesNodeFacesFacesItem["GenderConfidence"].asString());
-			if(!allImagesNodeFacesFacesItem["Attractive"].isNull())
-				facesObject.attractive = std::stof(allImagesNodeFacesFacesItem["Attractive"].asString());
-			if(!allImagesNodeFacesFacesItem["Gender"].isNull())
-				facesObject.gender = allImagesNodeFacesFacesItem["Gender"].asString();
-			if(!allImagesNodeFacesFacesItem["FaceConfidence"].isNull())
-				facesObject.faceConfidence = std::stof(allImagesNodeFacesFacesItem["FaceConfidence"].asString());
-			if(!allImagesNodeFacesFacesItem["Emotion"].isNull())
-				facesObject.emotion = allImagesNodeFacesFacesItem["Emotion"].asString();
-			if(!allImagesNodeFacesFacesItem["FaceId"].isNull())
-				facesObject.faceId = allImagesNodeFacesFacesItem["FaceId"].asString();
-			if(!allImagesNodeFacesFacesItem["EmotionConfidence"].isNull())
-				facesObject.emotionConfidence = std::stof(allImagesNodeFacesFacesItem["EmotionConfidence"].asString());
-			if(!allImagesNodeFacesFacesItem["GroupId"].isNull())
-				facesObject.groupId = allImagesNodeFacesFacesItem["GroupId"].asString();
-			if(!allImagesNodeFacesFacesItem["FaceQuality"].isNull())
-				facesObject.faceQuality = std::stof(allImagesNodeFacesFacesItem["FaceQuality"].asString());
+			if(!valueImagesImagesItemFacesFacesItem["Age"].isNull())
+				facesObject.age = std::stoi(valueImagesImagesItemFacesFacesItem["Age"].asString());
+			if(!valueImagesImagesItemFacesFacesItem["GenderConfidence"].isNull())
+				facesObject.genderConfidence = std::stof(valueImagesImagesItemFacesFacesItem["GenderConfidence"].asString());
+			if(!valueImagesImagesItemFacesFacesItem["Attractive"].isNull())
+				facesObject.attractive = std::stof(valueImagesImagesItemFacesFacesItem["Attractive"].asString());
+			if(!valueImagesImagesItemFacesFacesItem["Gender"].isNull())
+				facesObject.gender = valueImagesImagesItemFacesFacesItem["Gender"].asString();
+			if(!valueImagesImagesItemFacesFacesItem["FaceConfidence"].isNull())
+				facesObject.faceConfidence = std::stof(valueImagesImagesItemFacesFacesItem["FaceConfidence"].asString());
+			if(!valueImagesImagesItemFacesFacesItem["Emotion"].isNull())
+				facesObject.emotion = valueImagesImagesItemFacesFacesItem["Emotion"].asString();
+			if(!valueImagesImagesItemFacesFacesItem["FaceId"].isNull())
+				facesObject.faceId = valueImagesImagesItemFacesFacesItem["FaceId"].asString();
+			if(!valueImagesImagesItemFacesFacesItem["EmotionConfidence"].isNull())
+				facesObject.emotionConfidence = std::stof(valueImagesImagesItemFacesFacesItem["EmotionConfidence"].asString());
+			if(!valueImagesImagesItemFacesFacesItem["GroupId"].isNull())
+				facesObject.groupId = valueImagesImagesItemFacesFacesItem["GroupId"].asString();
+			if(!valueImagesImagesItemFacesFacesItem["FaceQuality"].isNull())
+				facesObject.faceQuality = std::stof(valueImagesImagesItemFacesFacesItem["FaceQuality"].asString());
 			auto emotionDetailsNode = value["EmotionDetails"];
 			if(!emotionDetailsNode["SAD"].isNull())
 				facesObject.emotionDetails.sAD = std::stof(emotionDetailsNode["SAD"].asString());
@@ -220,28 +220,28 @@ void FindImagesResult::parse(const std::string &payload)
 				facesObject.faceAttributes.headPose.yaw = std::stof(headPoseNode["Yaw"].asString());
 			imagesObject.faces.push_back(facesObject);
 		}
-		auto allTagsNode = allImagesNode["Tags"]["TagsItem"];
-		for (auto allImagesNodeTagsTagsItem : allTagsNode)
+		auto allTagsNode = valueImagesImagesItem["Tags"]["TagsItem"];
+		for (auto valueImagesImagesItemTagsTagsItem : allTagsNode)
 		{
 			ImagesItem::TagsItem tagsObject;
-			if(!allImagesNodeTagsTagsItem["TagConfidence"].isNull())
-				tagsObject.tagConfidence = std::stof(allImagesNodeTagsTagsItem["TagConfidence"].asString());
-			if(!allImagesNodeTagsTagsItem["TagLevel"].isNull())
-				tagsObject.tagLevel = std::stoi(allImagesNodeTagsTagsItem["TagLevel"].asString());
-			if(!allImagesNodeTagsTagsItem["TagName"].isNull())
-				tagsObject.tagName = allImagesNodeTagsTagsItem["TagName"].asString();
-			if(!allImagesNodeTagsTagsItem["ParentTagName"].isNull())
-				tagsObject.parentTagName = allImagesNodeTagsTagsItem["ParentTagName"].asString();
+			if(!valueImagesImagesItemTagsTagsItem["TagConfidence"].isNull())
+				tagsObject.tagConfidence = std::stof(valueImagesImagesItemTagsTagsItem["TagConfidence"].asString());
+			if(!valueImagesImagesItemTagsTagsItem["TagLevel"].isNull())
+				tagsObject.tagLevel = std::stoi(valueImagesImagesItemTagsTagsItem["TagLevel"].asString());
+			if(!valueImagesImagesItemTagsTagsItem["TagName"].isNull())
+				tagsObject.tagName = valueImagesImagesItemTagsTagsItem["TagName"].asString();
+			if(!valueImagesImagesItemTagsTagsItem["ParentTagName"].isNull())
+				tagsObject.parentTagName = valueImagesImagesItemTagsTagsItem["ParentTagName"].asString();
 			imagesObject.tags.push_back(tagsObject);
 		}
-		auto allOCRNode = allImagesNode["OCR"]["OCRItem"];
-		for (auto allImagesNodeOCROCRItem : allOCRNode)
+		auto allOCRNode = valueImagesImagesItem["OCR"]["OCRItem"];
+		for (auto valueImagesImagesItemOCROCRItem : allOCRNode)
 		{
 			ImagesItem::OCRItem oCRObject;
-			if(!allImagesNodeOCROCRItem["OCRContents"].isNull())
-				oCRObject.oCRContents = allImagesNodeOCROCRItem["OCRContents"].asString();
-			if(!allImagesNodeOCROCRItem["OCRConfidence"].isNull())
-				oCRObject.oCRConfidence = std::stof(allImagesNodeOCROCRItem["OCRConfidence"].asString());
+			if(!valueImagesImagesItemOCROCRItem["OCRContents"].isNull())
+				oCRObject.oCRContents = valueImagesImagesItemOCROCRItem["OCRContents"].asString();
+			if(!valueImagesImagesItemOCROCRItem["OCRConfidence"].isNull())
+				oCRObject.oCRConfidence = std::stof(valueImagesImagesItemOCROCRItem["OCRConfidence"].asString());
 			auto oCRBoundaryNode = value["OCRBoundary"];
 			if(!oCRBoundaryNode["Left"].isNull())
 				oCRObject.oCRBoundary.left = std::stoi(oCRBoundaryNode["Left"].asString());
@@ -253,18 +253,18 @@ void FindImagesResult::parse(const std::string &payload)
 				oCRObject.oCRBoundary.height = std::stoi(oCRBoundaryNode["Height"].asString());
 			imagesObject.oCR.push_back(oCRObject);
 		}
-		auto allCelebrityNode = allImagesNode["Celebrity"]["CelebrityItem"];
-		for (auto allImagesNodeCelebrityCelebrityItem : allCelebrityNode)
+		auto allCelebrityNode = valueImagesImagesItem["Celebrity"]["CelebrityItem"];
+		for (auto valueImagesImagesItemCelebrityCelebrityItem : allCelebrityNode)
 		{
 			ImagesItem::CelebrityItem celebrityObject;
-			if(!allImagesNodeCelebrityCelebrityItem["CelebrityName"].isNull())
-				celebrityObject.celebrityName = allImagesNodeCelebrityCelebrityItem["CelebrityName"].asString();
-			if(!allImagesNodeCelebrityCelebrityItem["CelebrityGender"].isNull())
-				celebrityObject.celebrityGender = allImagesNodeCelebrityCelebrityItem["CelebrityGender"].asString();
-			if(!allImagesNodeCelebrityCelebrityItem["CelebrityConfidence"].isNull())
-				celebrityObject.celebrityConfidence = std::stof(allImagesNodeCelebrityCelebrityItem["CelebrityConfidence"].asString());
-			if(!allImagesNodeCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
-				celebrityObject.celebrityLibraryName = allImagesNodeCelebrityCelebrityItem["CelebrityLibraryName"].asString();
+			if(!valueImagesImagesItemCelebrityCelebrityItem["CelebrityName"].isNull())
+				celebrityObject.celebrityName = valueImagesImagesItemCelebrityCelebrityItem["CelebrityName"].asString();
+			if(!valueImagesImagesItemCelebrityCelebrityItem["CelebrityGender"].isNull())
+				celebrityObject.celebrityGender = valueImagesImagesItemCelebrityCelebrityItem["CelebrityGender"].asString();
+			if(!valueImagesImagesItemCelebrityCelebrityItem["CelebrityConfidence"].isNull())
+				celebrityObject.celebrityConfidence = std::stof(valueImagesImagesItemCelebrityCelebrityItem["CelebrityConfidence"].asString());
+			if(!valueImagesImagesItemCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
+				celebrityObject.celebrityLibraryName = valueImagesImagesItemCelebrityCelebrityItem["CelebrityLibraryName"].asString();
 			auto celebrityBoundaryNode = value["CelebrityBoundary"];
 			if(!celebrityBoundaryNode["Left"].isNull())
 				celebrityObject.celebrityBoundary.left = std::stoi(celebrityBoundaryNode["Left"].asString());

@@ -95,46 +95,46 @@ void ListVideosResult::parse(const std::string &payload)
 			videosObject.remarksD = valueVideosVideosItem["RemarksD"].asString();
 		if(!valueVideosVideosItem["ExternalId"].isNull())
 			videosObject.externalId = valueVideosVideosItem["ExternalId"].asString();
-		auto allVideoTagsNode = allVideosNode["VideoTags"]["VideoTagsItem"];
-		for (auto allVideosNodeVideoTagsVideoTagsItem : allVideoTagsNode)
+		auto allVideoTagsNode = valueVideosVideosItem["VideoTags"]["VideoTagsItem"];
+		for (auto valueVideosVideosItemVideoTagsVideoTagsItem : allVideoTagsNode)
 		{
 			VideosItem::VideoTagsItem videoTagsObject;
-			if(!allVideosNodeVideoTagsVideoTagsItem["TagName"].isNull())
-				videoTagsObject.tagName = allVideosNodeVideoTagsVideoTagsItem["TagName"].asString();
-			if(!allVideosNodeVideoTagsVideoTagsItem["ParentTagName"].isNull())
-				videoTagsObject.parentTagName = allVideosNodeVideoTagsVideoTagsItem["ParentTagName"].asString();
-			if(!allVideosNodeVideoTagsVideoTagsItem["TagConfidence"].isNull())
-				videoTagsObject.tagConfidence = std::stof(allVideosNodeVideoTagsVideoTagsItem["TagConfidence"].asString());
-			if(!allVideosNodeVideoTagsVideoTagsItem["TagLevel"].isNull())
-				videoTagsObject.tagLevel = std::stoi(allVideosNodeVideoTagsVideoTagsItem["TagLevel"].asString());
+			if(!valueVideosVideosItemVideoTagsVideoTagsItem["TagName"].isNull())
+				videoTagsObject.tagName = valueVideosVideosItemVideoTagsVideoTagsItem["TagName"].asString();
+			if(!valueVideosVideosItemVideoTagsVideoTagsItem["ParentTagName"].isNull())
+				videoTagsObject.parentTagName = valueVideosVideosItemVideoTagsVideoTagsItem["ParentTagName"].asString();
+			if(!valueVideosVideosItemVideoTagsVideoTagsItem["TagConfidence"].isNull())
+				videoTagsObject.tagConfidence = std::stof(valueVideosVideosItemVideoTagsVideoTagsItem["TagConfidence"].asString());
+			if(!valueVideosVideosItemVideoTagsVideoTagsItem["TagLevel"].isNull())
+				videoTagsObject.tagLevel = std::stoi(valueVideosVideosItemVideoTagsVideoTagsItem["TagLevel"].asString());
 			videosObject.videoTags.push_back(videoTagsObject);
 		}
-		auto allCelebrityNode = allVideosNode["Celebrity"]["CelebrityItem"];
-		for (auto allVideosNodeCelebrityCelebrityItem : allCelebrityNode)
+		auto allCelebrityNode = valueVideosVideosItem["Celebrity"]["CelebrityItem"];
+		for (auto valueVideosVideosItemCelebrityCelebrityItem : allCelebrityNode)
 		{
 			VideosItem::CelebrityItem celebrityObject;
-			if(!allVideosNodeCelebrityCelebrityItem["CelebrityName"].isNull())
-				celebrityObject.celebrityName = allVideosNodeCelebrityCelebrityItem["CelebrityName"].asString();
-			if(!allVideosNodeCelebrityCelebrityItem["CelebrityNum"].isNull())
-				celebrityObject.celebrityNum = std::stoi(allVideosNodeCelebrityCelebrityItem["CelebrityNum"].asString());
-			if(!allVideosNodeCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
-				celebrityObject.celebrityLibraryName = allVideosNodeCelebrityCelebrityItem["CelebrityLibraryName"].asString();
+			if(!valueVideosVideosItemCelebrityCelebrityItem["CelebrityName"].isNull())
+				celebrityObject.celebrityName = valueVideosVideosItemCelebrityCelebrityItem["CelebrityName"].asString();
+			if(!valueVideosVideosItemCelebrityCelebrityItem["CelebrityNum"].isNull())
+				celebrityObject.celebrityNum = std::stoi(valueVideosVideosItemCelebrityCelebrityItem["CelebrityNum"].asString());
+			if(!valueVideosVideosItemCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
+				celebrityObject.celebrityLibraryName = valueVideosVideosItemCelebrityCelebrityItem["CelebrityLibraryName"].asString();
 			videosObject.celebrity.push_back(celebrityObject);
 		}
-		auto allPersonsNode = allVideosNode["Persons"]["PersonsItem"];
-		for (auto allVideosNodePersonsPersonsItem : allPersonsNode)
+		auto allPersonsNode = valueVideosVideosItem["Persons"]["PersonsItem"];
+		for (auto valueVideosVideosItemPersonsPersonsItem : allPersonsNode)
 		{
 			VideosItem::PersonsItem personsObject;
-			if(!allVideosNodePersonsPersonsItem["PersonId"].isNull())
-				personsObject.personId = allVideosNodePersonsPersonsItem["PersonId"].asString();
-			if(!allVideosNodePersonsPersonsItem["Age"].isNull())
-				personsObject.age = std::stoi(allVideosNodePersonsPersonsItem["Age"].asString());
-			if(!allVideosNodePersonsPersonsItem["AgeConfidence"].isNull())
-				personsObject.ageConfidence = std::stof(allVideosNodePersonsPersonsItem["AgeConfidence"].asString());
-			if(!allVideosNodePersonsPersonsItem["Gender"].isNull())
-				personsObject.gender = allVideosNodePersonsPersonsItem["Gender"].asString();
-			if(!allVideosNodePersonsPersonsItem["GenderConfidence"].isNull())
-				personsObject.genderConfidence = std::stof(allVideosNodePersonsPersonsItem["GenderConfidence"].asString());
+			if(!valueVideosVideosItemPersonsPersonsItem["PersonId"].isNull())
+				personsObject.personId = valueVideosVideosItemPersonsPersonsItem["PersonId"].asString();
+			if(!valueVideosVideosItemPersonsPersonsItem["Age"].isNull())
+				personsObject.age = std::stoi(valueVideosVideosItemPersonsPersonsItem["Age"].asString());
+			if(!valueVideosVideosItemPersonsPersonsItem["AgeConfidence"].isNull())
+				personsObject.ageConfidence = std::stof(valueVideosVideosItemPersonsPersonsItem["AgeConfidence"].asString());
+			if(!valueVideosVideosItemPersonsPersonsItem["Gender"].isNull())
+				personsObject.gender = valueVideosVideosItemPersonsPersonsItem["Gender"].asString();
+			if(!valueVideosVideosItemPersonsPersonsItem["GenderConfidence"].isNull())
+				personsObject.genderConfidence = std::stof(valueVideosVideosItemPersonsPersonsItem["GenderConfidence"].asString());
 			videosObject.persons.push_back(personsObject);
 		}
 		videos_.push_back(videosObject);
