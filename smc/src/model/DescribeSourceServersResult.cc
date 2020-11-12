@@ -75,17 +75,49 @@ void DescribeSourceServersResult::parse(const std::string &payload)
 			sourceServersObject.statusInfo = valueSourceServersSourceServer["StatusInfo"].asString();
 		if(!valueSourceServersSourceServer["HeartbeatRate"].isNull())
 			sourceServersObject.heartbeatRate = std::stoi(valueSourceServersSourceServer["HeartbeatRate"].asString());
-		auto allDataDisksNode = allSourceServersNode["DataDisks"]["DataDisk"];
-		for (auto allSourceServersNodeDataDisksDataDisk : allDataDisksNode)
+		auto allDataDisksNode = valueSourceServersSourceServer["DataDisks"]["DataDisk"];
+		for (auto valueSourceServersSourceServerDataDisksDataDisk : allDataDisksNode)
 		{
 			SourceServer::DataDisk dataDisksObject;
-			if(!allSourceServersNodeDataDisksDataDisk["Index"].isNull())
-				dataDisksObject.index = std::stoi(allSourceServersNodeDataDisksDataDisk["Index"].asString());
-			if(!allSourceServersNodeDataDisksDataDisk["Size"].isNull())
-				dataDisksObject.size = std::stoi(allSourceServersNodeDataDisksDataDisk["Size"].asString());
-			if(!allSourceServersNodeDataDisksDataDisk["Path"].isNull())
-				dataDisksObject.path = allSourceServersNodeDataDisksDataDisk["Path"].asString();
+			if(!valueSourceServersSourceServerDataDisksDataDisk["Index"].isNull())
+				dataDisksObject.index = std::stoi(valueSourceServersSourceServerDataDisksDataDisk["Index"].asString());
+			if(!valueSourceServersSourceServerDataDisksDataDisk["Size"].isNull())
+				dataDisksObject.size = std::stoi(valueSourceServersSourceServerDataDisksDataDisk["Size"].asString());
+			if(!valueSourceServersSourceServerDataDisksDataDisk["Path"].isNull())
+				dataDisksObject.path = valueSourceServersSourceServerDataDisksDataDisk["Path"].asString();
+			auto allPartsNode = valueSourceServersSourceServerDataDisksDataDisk["Parts"]["Part"];
+			for (auto valueSourceServersSourceServerDataDisksDataDiskPartsPart : allPartsNode)
+			{
+				SourceServer::DataDisk::Part partsObject;
+				if(!valueSourceServersSourceServerDataDisksDataDiskPartsPart["Path"].isNull())
+					partsObject.path = valueSourceServersSourceServerDataDisksDataDiskPartsPart["Path"].asString();
+				if(!valueSourceServersSourceServerDataDisksDataDiskPartsPart["Device"].isNull())
+					partsObject.device = valueSourceServersSourceServerDataDisksDataDiskPartsPart["Device"].asString();
+				if(!valueSourceServersSourceServerDataDisksDataDiskPartsPart["SizeBytes"].isNull())
+					partsObject.sizeBytes = std::stol(valueSourceServersSourceServerDataDisksDataDiskPartsPart["SizeBytes"].asString());
+				if(!valueSourceServersSourceServerDataDisksDataDiskPartsPart["Need"].isNull())
+					partsObject.need = valueSourceServersSourceServerDataDisksDataDiskPartsPart["Need"].asString() == "true";
+				if(!valueSourceServersSourceServerDataDisksDataDiskPartsPart["CanBlock"].isNull())
+					partsObject.canBlock = valueSourceServersSourceServerDataDisksDataDiskPartsPart["CanBlock"].asString() == "true";
+				dataDisksObject.parts.push_back(partsObject);
+			}
 			sourceServersObject.dataDisks.push_back(dataDisksObject);
+		}
+		auto allSystemDiskPartsNode = valueSourceServersSourceServer["SystemDiskParts"]["SystemDiskPart"];
+		for (auto valueSourceServersSourceServerSystemDiskPartsSystemDiskPart : allSystemDiskPartsNode)
+		{
+			SourceServer::SystemDiskPart systemDiskPartsObject;
+			if(!valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["Path"].isNull())
+				systemDiskPartsObject.path = valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["Path"].asString();
+			if(!valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["Device"].isNull())
+				systemDiskPartsObject.device = valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["Device"].asString();
+			if(!valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["SizeBytes"].isNull())
+				systemDiskPartsObject.sizeBytes = std::stol(valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["SizeBytes"].asString());
+			if(!valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["Need"].isNull())
+				systemDiskPartsObject.need = valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["Need"].asString() == "true";
+			if(!valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["CanBlock"].isNull())
+				systemDiskPartsObject.canBlock = valueSourceServersSourceServerSystemDiskPartsSystemDiskPart["CanBlock"].asString() == "true";
+			sourceServersObject.systemDiskParts.push_back(systemDiskPartsObject);
 		}
 		sourceServers_.push_back(sourceServersObject);
 	}

@@ -36,9 +36,26 @@ namespace AlibabaCloud
 				{
 					struct DataDisk
 					{
+						struct Part
+						{
+							std::string path;
+							bool need;
+							std::string device;
+							bool canBlock;
+							long sizeBytes;
+						};
 						std::string path;
+						std::vector<DataDisk::Part> parts;
 						int size;
 						int index;
+					};
+					struct SystemDiskPart
+					{
+						std::string path;
+						bool need;
+						std::string device;
+						bool canBlock;
+						long sizeBytes;
 					};
 					std::string description;
 					std::string systemInfo;
@@ -47,6 +64,7 @@ namespace AlibabaCloud
 					std::string architecture;
 					std::string agentVersion;
 					int systemDiskSize;
+					std::vector<SourceServer::SystemDiskPart> systemDiskParts;
 					std::string sourceId;
 					std::string name;
 					int kernelLevel;

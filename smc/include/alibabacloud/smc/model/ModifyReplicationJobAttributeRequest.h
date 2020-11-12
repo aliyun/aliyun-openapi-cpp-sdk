@@ -31,9 +31,22 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SMC_EXPORT ModifyReplicationJobAttributeRequest : public RpcServiceRequest
 			{
 			public:
+				struct SystemDiskPart
+				{
+					long sizeBytes;
+					bool block;
+					std::string device;
+				};
 				struct DataDisk
 				{
 					int size;
+					struct Part
+					{
+						long sizeBytes;
+						bool block;
+						std::string device;
+					};
+					std::vector<Part> part;
 					int index;
 				};
 
@@ -57,10 +70,20 @@ namespace AlibabaCloud
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getContainerRepository()const;
+				void setContainerRepository(const std::string& containerRepository);
+				std::string getContainerTag()const;
+				void setContainerTag(const std::string& containerTag);
+				std::string getContainerNamespace()const;
+				void setContainerNamespace(const std::string& containerNamespace);
 				std::string getLaunchTemplateId()const;
 				void setLaunchTemplateId(const std::string& launchTemplateId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::vector<SystemDiskPart> getSystemDiskPart()const;
+				void setSystemDiskPart(const std::vector<SystemDiskPart>& systemDiskPart);
+				std::string getValidTime()const;
+				void setValidTime(const std::string& validTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::vector<DataDisk> getDataDisk()const;
@@ -71,6 +94,8 @@ namespace AlibabaCloud
 				void setScheduledStartTime(const std::string& scheduledStartTime);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getInstanceRamRole()const;
+				void setInstanceRamRole(const std::string& instanceRamRole);
 				std::string getName()const;
 				void setName(const std::string& name);
 				int getMaxNumberOfImageToKeep()const;
@@ -85,13 +110,19 @@ namespace AlibabaCloud
 				std::string imageName_;
 				int systemDiskSize_;
 				std::string instanceType_;
+				std::string containerRepository_;
+				std::string containerTag_;
+				std::string containerNamespace_;
 				std::string launchTemplateId_;
 				std::string resourceOwnerAccount_;
+				std::vector<SystemDiskPart> systemDiskPart_;
+				std::string validTime_;
 				long ownerId_;
 				std::vector<DataDisk> dataDisk_;
 				std::string launchTemplateVersion_;
 				std::string scheduledStartTime_;
 				std::string instanceId_;
+				std::string instanceRamRole_;
 				std::string name_;
 				int maxNumberOfImageToKeep_;
 

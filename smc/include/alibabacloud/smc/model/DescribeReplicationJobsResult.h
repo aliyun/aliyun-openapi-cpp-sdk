@@ -34,8 +34,21 @@ namespace AlibabaCloud
 			public:
 				struct ReplicationJob
 				{
+					struct SystemDiskPart
+					{
+						std::string device;
+						bool block;
+						long sizeBytes;
+					};
 					struct DataDisk
 					{
+						struct Part
+						{
+							std::string device;
+							bool block;
+							long sizeBytes;
+						};
+						std::vector<DataDisk::Part> parts;
 						int size;
 						int index;
 					};
@@ -52,12 +65,16 @@ namespace AlibabaCloud
 					std::string transitionInstanceId;
 					int systemDiskSize;
 					int netMode;
+					std::vector<ReplicationJob::SystemDiskPart> systemDiskParts;
 					std::string sourceId;
+					std::string containerTag;
 					std::string businessStatus;
 					std::string name;
 					std::string validTime;
 					int maxNumberOfImageToKeep;
 					bool runOnce;
+					std::string instanceRamRole;
+					std::string containerRepository;
 					std::string targetType;
 					std::string imageId;
 					std::string instanceType;
@@ -73,6 +90,7 @@ namespace AlibabaCloud
 					std::string imageName;
 					std::string vpcId;
 					std::string statusInfo;
+					std::string containerNamespace;
 					std::string creationTime;
 					std::string launchTemplateVersion;
 					int frequency;

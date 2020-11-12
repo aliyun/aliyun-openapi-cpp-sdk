@@ -105,28 +105,60 @@ void DescribeReplicationJobsResult::parse(const std::string &payload)
 			replicationJobsObject.launchTemplateId = valueReplicationJobsReplicationJob["LaunchTemplateId"].asString();
 		if(!valueReplicationJobsReplicationJob["LaunchTemplateVersion"].isNull())
 			replicationJobsObject.launchTemplateVersion = valueReplicationJobsReplicationJob["LaunchTemplateVersion"].asString();
-		auto allDataDisksNode = allReplicationJobsNode["DataDisks"]["DataDisk"];
-		for (auto allReplicationJobsNodeDataDisksDataDisk : allDataDisksNode)
+		if(!valueReplicationJobsReplicationJob["InstanceRamRole"].isNull())
+			replicationJobsObject.instanceRamRole = valueReplicationJobsReplicationJob["InstanceRamRole"].asString();
+		if(!valueReplicationJobsReplicationJob["ContainerNamespace"].isNull())
+			replicationJobsObject.containerNamespace = valueReplicationJobsReplicationJob["ContainerNamespace"].asString();
+		if(!valueReplicationJobsReplicationJob["ContainerRepository"].isNull())
+			replicationJobsObject.containerRepository = valueReplicationJobsReplicationJob["ContainerRepository"].asString();
+		if(!valueReplicationJobsReplicationJob["ContainerTag"].isNull())
+			replicationJobsObject.containerTag = valueReplicationJobsReplicationJob["ContainerTag"].asString();
+		auto allSystemDiskPartsNode = valueReplicationJobsReplicationJob["SystemDiskParts"]["SystemDiskPart"];
+		for (auto valueReplicationJobsReplicationJobSystemDiskPartsSystemDiskPart : allSystemDiskPartsNode)
+		{
+			ReplicationJob::SystemDiskPart systemDiskPartsObject;
+			if(!valueReplicationJobsReplicationJobSystemDiskPartsSystemDiskPart["Device"].isNull())
+				systemDiskPartsObject.device = valueReplicationJobsReplicationJobSystemDiskPartsSystemDiskPart["Device"].asString();
+			if(!valueReplicationJobsReplicationJobSystemDiskPartsSystemDiskPart["SizeBytes"].isNull())
+				systemDiskPartsObject.sizeBytes = std::stol(valueReplicationJobsReplicationJobSystemDiskPartsSystemDiskPart["SizeBytes"].asString());
+			if(!valueReplicationJobsReplicationJobSystemDiskPartsSystemDiskPart["Block"].isNull())
+				systemDiskPartsObject.block = valueReplicationJobsReplicationJobSystemDiskPartsSystemDiskPart["Block"].asString() == "true";
+			replicationJobsObject.systemDiskParts.push_back(systemDiskPartsObject);
+		}
+		auto allDataDisksNode = valueReplicationJobsReplicationJob["DataDisks"]["DataDisk"];
+		for (auto valueReplicationJobsReplicationJobDataDisksDataDisk : allDataDisksNode)
 		{
 			ReplicationJob::DataDisk dataDisksObject;
-			if(!allReplicationJobsNodeDataDisksDataDisk["Size"].isNull())
-				dataDisksObject.size = std::stoi(allReplicationJobsNodeDataDisksDataDisk["Size"].asString());
-			if(!allReplicationJobsNodeDataDisksDataDisk["Index"].isNull())
-				dataDisksObject.index = std::stoi(allReplicationJobsNodeDataDisksDataDisk["Index"].asString());
+			if(!valueReplicationJobsReplicationJobDataDisksDataDisk["Size"].isNull())
+				dataDisksObject.size = std::stoi(valueReplicationJobsReplicationJobDataDisksDataDisk["Size"].asString());
+			if(!valueReplicationJobsReplicationJobDataDisksDataDisk["Index"].isNull())
+				dataDisksObject.index = std::stoi(valueReplicationJobsReplicationJobDataDisksDataDisk["Index"].asString());
+			auto allPartsNode = valueReplicationJobsReplicationJobDataDisksDataDisk["Parts"]["Part"];
+			for (auto valueReplicationJobsReplicationJobDataDisksDataDiskPartsPart : allPartsNode)
+			{
+				ReplicationJob::DataDisk::Part partsObject;
+				if(!valueReplicationJobsReplicationJobDataDisksDataDiskPartsPart["Device"].isNull())
+					partsObject.device = valueReplicationJobsReplicationJobDataDisksDataDiskPartsPart["Device"].asString();
+				if(!valueReplicationJobsReplicationJobDataDisksDataDiskPartsPart["SizeBytes"].isNull())
+					partsObject.sizeBytes = std::stol(valueReplicationJobsReplicationJobDataDisksDataDiskPartsPart["SizeBytes"].asString());
+				if(!valueReplicationJobsReplicationJobDataDisksDataDiskPartsPart["Block"].isNull())
+					partsObject.block = valueReplicationJobsReplicationJobDataDisksDataDiskPartsPart["Block"].asString() == "true";
+				dataDisksObject.parts.push_back(partsObject);
+			}
 			replicationJobsObject.dataDisks.push_back(dataDisksObject);
 		}
-		auto allReplicationJobRunsNode = allReplicationJobsNode["ReplicationJobRuns"]["ReplicationJobRun"];
-		for (auto allReplicationJobsNodeReplicationJobRunsReplicationJobRun : allReplicationJobRunsNode)
+		auto allReplicationJobRunsNode = valueReplicationJobsReplicationJob["ReplicationJobRuns"]["ReplicationJobRun"];
+		for (auto valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun : allReplicationJobRunsNode)
 		{
 			ReplicationJob::ReplicationJobRun replicationJobRunsObject;
-			if(!allReplicationJobsNodeReplicationJobRunsReplicationJobRun["ImageId"].isNull())
-				replicationJobRunsObject.imageId = allReplicationJobsNodeReplicationJobRunsReplicationJobRun["ImageId"].asString();
-			if(!allReplicationJobsNodeReplicationJobRunsReplicationJobRun["Type"].isNull())
-				replicationJobRunsObject.type = allReplicationJobsNodeReplicationJobRunsReplicationJobRun["Type"].asString();
-			if(!allReplicationJobsNodeReplicationJobRunsReplicationJobRun["StartTime"].isNull())
-				replicationJobRunsObject.startTime = allReplicationJobsNodeReplicationJobRunsReplicationJobRun["StartTime"].asString();
-			if(!allReplicationJobsNodeReplicationJobRunsReplicationJobRun["EndTime"].isNull())
-				replicationJobRunsObject.endTime = allReplicationJobsNodeReplicationJobRunsReplicationJobRun["EndTime"].asString();
+			if(!valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun["ImageId"].isNull())
+				replicationJobRunsObject.imageId = valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun["ImageId"].asString();
+			if(!valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun["Type"].isNull())
+				replicationJobRunsObject.type = valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun["Type"].asString();
+			if(!valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun["StartTime"].isNull())
+				replicationJobRunsObject.startTime = valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun["StartTime"].asString();
+			if(!valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun["EndTime"].isNull())
+				replicationJobRunsObject.endTime = valueReplicationJobsReplicationJobReplicationJobRunsReplicationJobRun["EndTime"].asString();
 			replicationJobsObject.replicationJobRuns.push_back(replicationJobRunsObject);
 		}
 		replicationJobs_.push_back(replicationJobsObject);
