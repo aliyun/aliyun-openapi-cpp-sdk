@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeAccountsResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeTasksResult : public ServiceResult
 			{
 			public:
-				struct Account
+				struct TaskProgressInfo
 				{
-					struct DatabasePrivilege
-					{
-						std::string accountPrivilege;
-						std::string accountPrivilegeDetail;
-					};
-					std::string accountDescription;
-					std::string accountStatus;
-					std::string instanceId;
-					std::string accountType;
-					std::vector<Account::DatabasePrivilege> databasePrivileges;
-					std::string accountName;
+					std::string status;
+					std::string stepProgressInfo;
+					float progress;
+					std::string taskId;
+					int remain;
+					std::string finishTime;
+					std::string taskAction;
+					std::string stepsInfo;
+					std::string currentStepName;
+					std::string beginTime;
 				};
 
 
-				DescribeAccountsResult();
-				explicit DescribeAccountsResult(const std::string &payload);
-				~DescribeAccountsResult();
-				std::vector<Account> getAccounts()const;
+				DescribeTasksResult();
+				explicit DescribeTasksResult(const std::string &payload);
+				~DescribeTasksResult();
+				int getTotalRecordCount()const;
+				int getPageSize()const;
+				int getPageNumber()const;
+				std::vector<TaskProgressInfo> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Account> accounts_;
+				int totalRecordCount_;
+				int pageSize_;
+				int pageNumber_;
+				std::vector<TaskProgressInfo> items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBETASKSRESULT_H_

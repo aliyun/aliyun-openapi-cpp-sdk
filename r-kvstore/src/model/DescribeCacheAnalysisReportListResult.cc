@@ -45,18 +45,18 @@ void DescribeCacheAnalysisReportListResult::parse(const std::string &payload)
 		DailyTask dailyTasksObject;
 		if(!valueDailyTasksDailyTask["Date"].isNull())
 			dailyTasksObject.date = valueDailyTasksDailyTask["Date"].asString();
-		auto allTasksNode = allDailyTasksNode["Tasks"]["Task"];
-		for (auto allDailyTasksNodeTasksTask : allTasksNode)
+		auto allTasksNode = valueDailyTasksDailyTask["Tasks"]["Task"];
+		for (auto valueDailyTasksDailyTaskTasksTask : allTasksNode)
 		{
 			DailyTask::Task tasksObject;
-			if(!allDailyTasksNodeTasksTask["TaskId"].isNull())
-				tasksObject.taskId = allDailyTasksNodeTasksTask["TaskId"].asString();
-			if(!allDailyTasksNodeTasksTask["NodeId"].isNull())
-				tasksObject.nodeId = allDailyTasksNodeTasksTask["NodeId"].asString();
-			if(!allDailyTasksNodeTasksTask["StartTime"].isNull())
-				tasksObject.startTime = allDailyTasksNodeTasksTask["StartTime"].asString();
-			if(!allDailyTasksNodeTasksTask["Status"].isNull())
-				tasksObject.status = allDailyTasksNodeTasksTask["Status"].asString();
+			if(!valueDailyTasksDailyTaskTasksTask["TaskId"].isNull())
+				tasksObject.taskId = valueDailyTasksDailyTaskTasksTask["TaskId"].asString();
+			if(!valueDailyTasksDailyTaskTasksTask["NodeId"].isNull())
+				tasksObject.nodeId = valueDailyTasksDailyTaskTasksTask["NodeId"].asString();
+			if(!valueDailyTasksDailyTaskTasksTask["StartTime"].isNull())
+				tasksObject.startTime = valueDailyTasksDailyTaskTasksTask["StartTime"].asString();
+			if(!valueDailyTasksDailyTaskTasksTask["Status"].isNull())
+				tasksObject.status = valueDailyTasksDailyTaskTasksTask["Status"].asString();
 			dailyTasksObject.tasks.push_back(tasksObject);
 		}
 		dailyTasks_.push_back(dailyTasksObject);

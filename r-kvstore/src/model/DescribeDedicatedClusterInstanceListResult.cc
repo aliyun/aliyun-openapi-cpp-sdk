@@ -81,26 +81,26 @@ void DescribeDedicatedClusterInstanceListResult::parse(const std::string &payloa
 			instancesObject.connectionDomain = valueInstancesInstancesItem["ConnectionDomain"].asString();
 		if(!valueInstancesInstancesItem["CreateTime"].isNull())
 			instancesObject.createTime = valueInstancesInstancesItem["CreateTime"].asString();
-		auto allInstanceNodeListNode = allInstancesNode["InstanceNodeList"]["InstanceNodes"];
-		for (auto allInstancesNodeInstanceNodeListInstanceNodes : allInstanceNodeListNode)
+		auto allInstanceNodeListNode = valueInstancesInstancesItem["InstanceNodeList"]["InstanceNodes"];
+		for (auto valueInstancesInstancesItemInstanceNodeListInstanceNodes : allInstanceNodeListNode)
 		{
 			InstancesItem::InstanceNodes instanceNodeListObject;
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["NodeId"].isNull())
-				instanceNodeListObject.nodeId = std::stoi(allInstancesNodeInstanceNodeListInstanceNodes["NodeId"].asString());
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["NodeIp"].isNull())
-				instanceNodeListObject.nodeIp = allInstancesNodeInstanceNodeListInstanceNodes["NodeIp"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["NodeType"].isNull())
-				instanceNodeListObject.nodeType = allInstancesNodeInstanceNodeListInstanceNodes["NodeType"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["Port"].isNull())
-				instanceNodeListObject.port = std::stoi(allInstancesNodeInstanceNodeListInstanceNodes["Port"].asString());
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["Role"].isNull())
-				instanceNodeListObject.role = allInstancesNodeInstanceNodeListInstanceNodes["Role"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["ZoneId"].isNull())
-				instanceNodeListObject.zoneId = allInstancesNodeInstanceNodeListInstanceNodes["ZoneId"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["InstanceId"].isNull())
-				instanceNodeListObject.instanceId = allInstancesNodeInstanceNodeListInstanceNodes["InstanceId"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["DedicatedHostName"].isNull())
-				instanceNodeListObject.dedicatedHostName = allInstancesNodeInstanceNodeListInstanceNodes["DedicatedHostName"].asString();
+			if(!valueInstancesInstancesItemInstanceNodeListInstanceNodes["NodeId"].isNull())
+				instanceNodeListObject.nodeId = std::stoi(valueInstancesInstancesItemInstanceNodeListInstanceNodes["NodeId"].asString());
+			if(!valueInstancesInstancesItemInstanceNodeListInstanceNodes["NodeIp"].isNull())
+				instanceNodeListObject.nodeIp = valueInstancesInstancesItemInstanceNodeListInstanceNodes["NodeIp"].asString();
+			if(!valueInstancesInstancesItemInstanceNodeListInstanceNodes["NodeType"].isNull())
+				instanceNodeListObject.nodeType = valueInstancesInstancesItemInstanceNodeListInstanceNodes["NodeType"].asString();
+			if(!valueInstancesInstancesItemInstanceNodeListInstanceNodes["Port"].isNull())
+				instanceNodeListObject.port = std::stoi(valueInstancesInstancesItemInstanceNodeListInstanceNodes["Port"].asString());
+			if(!valueInstancesInstancesItemInstanceNodeListInstanceNodes["Role"].isNull())
+				instanceNodeListObject.role = valueInstancesInstancesItemInstanceNodeListInstanceNodes["Role"].asString();
+			if(!valueInstancesInstancesItemInstanceNodeListInstanceNodes["ZoneId"].isNull())
+				instanceNodeListObject.zoneId = valueInstancesInstancesItemInstanceNodeListInstanceNodes["ZoneId"].asString();
+			if(!valueInstancesInstancesItemInstanceNodeListInstanceNodes["InstanceId"].isNull())
+				instanceNodeListObject.instanceId = valueInstancesInstancesItemInstanceNodeListInstanceNodes["InstanceId"].asString();
+			if(!valueInstancesInstancesItemInstanceNodeListInstanceNodes["DedicatedHostName"].isNull())
+				instanceNodeListObject.dedicatedHostName = valueInstancesInstancesItemInstanceNodeListInstanceNodes["DedicatedHostName"].asString();
 			instancesObject.instanceNodeList.push_back(instanceNodeListObject);
 		}
 		instances_.push_back(instancesObject);

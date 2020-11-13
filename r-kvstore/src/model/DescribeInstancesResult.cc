@@ -115,14 +115,14 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.shardCount = std::stoi(valueInstancesKVStoreInstance["ShardCount"].asString());
 		if(!valueInstancesKVStoreInstance["ProxyCount"].isNull())
 			instancesObject.proxyCount = std::stoi(valueInstancesKVStoreInstance["ProxyCount"].asString());
-		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
-		for (auto allInstancesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueInstancesKVStoreInstance["Tags"]["Tag"];
+		for (auto valueInstancesKVStoreInstanceTagsTag : allTagsNode)
 		{
 			KVStoreInstance::Tag tagsObject;
-			if(!allInstancesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allInstancesNodeTagsTag["Key"].asString();
-			if(!allInstancesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allInstancesNodeTagsTag["Value"].asString();
+			if(!valueInstancesKVStoreInstanceTagsTag["Key"].isNull())
+				tagsObject.key = valueInstancesKVStoreInstanceTagsTag["Key"].asString();
+			if(!valueInstancesKVStoreInstanceTagsTag["Value"].isNull())
+				tagsObject.value = valueInstancesKVStoreInstanceTagsTag["Value"].asString();
 			instancesObject.tags.push_back(tagsObject);
 		}
 		instances_.push_back(instancesObject);

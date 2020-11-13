@@ -49,18 +49,18 @@ void DescribeGlobalDistributeCacheResult::parse(const std::string &payload)
 			globalDistributeCachesObject.globalInstanceName = valueGlobalDistributeCachesGlobalDistributeCache["GlobalInstanceName"].asString();
 		if(!valueGlobalDistributeCachesGlobalDistributeCache["Status"].isNull())
 			globalDistributeCachesObject.status = valueGlobalDistributeCachesGlobalDistributeCache["Status"].asString();
-		auto allSubInstancesNode = allGlobalDistributeCachesNode["SubInstances"]["SubInstance"];
-		for (auto allGlobalDistributeCachesNodeSubInstancesSubInstance : allSubInstancesNode)
+		auto allSubInstancesNode = valueGlobalDistributeCachesGlobalDistributeCache["SubInstances"]["SubInstance"];
+		for (auto valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance : allSubInstancesNode)
 		{
 			GlobalDistributeCache::SubInstance subInstancesObject;
-			if(!allGlobalDistributeCachesNodeSubInstancesSubInstance["GlobalInstanceId"].isNull())
-				subInstancesObject.globalInstanceId = allGlobalDistributeCachesNodeSubInstancesSubInstance["GlobalInstanceId"].asString();
-			if(!allGlobalDistributeCachesNodeSubInstancesSubInstance["InstanceID"].isNull())
-				subInstancesObject.instanceID = allGlobalDistributeCachesNodeSubInstancesSubInstance["InstanceID"].asString();
-			if(!allGlobalDistributeCachesNodeSubInstancesSubInstance["RegionId"].isNull())
-				subInstancesObject.regionId = allGlobalDistributeCachesNodeSubInstancesSubInstance["RegionId"].asString();
-			if(!allGlobalDistributeCachesNodeSubInstancesSubInstance["InstanceStatus"].isNull())
-				subInstancesObject.instanceStatus = allGlobalDistributeCachesNodeSubInstancesSubInstance["InstanceStatus"].asString();
+			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["GlobalInstanceId"].isNull())
+				subInstancesObject.globalInstanceId = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["GlobalInstanceId"].asString();
+			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceID"].isNull())
+				subInstancesObject.instanceID = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceID"].asString();
+			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["RegionId"].isNull())
+				subInstancesObject.regionId = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["RegionId"].asString();
+			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceStatus"].isNull())
+				subInstancesObject.instanceStatus = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceStatus"].asString();
 			globalDistributeCachesObject.subInstances.push_back(subInstancesObject);
 		}
 		globalDistributeCaches_.push_back(globalDistributeCachesObject);

@@ -1,4 +1,7 @@
 2020-11-13 Version: patch
+- Add DeccribeEngineVersion DescribeTasks DescribeInstanceConfig and more APIs.
+
+2020-11-13 Version: patch
 - Fix GetBranchInfo and DeleteBranch API 404 error.
 - Add ListRepositoryBranches and GetGroupDetail API.
 

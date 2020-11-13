@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEENGINEVERSIONRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEENGINEVERSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeAccountsResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeEngineVersionResult : public ServiceResult
 			{
 			public:
-				struct Account
-				{
-					struct DatabasePrivilege
-					{
-						std::string accountPrivilege;
-						std::string accountPrivilegeDetail;
-					};
-					std::string accountDescription;
-					std::string accountStatus;
-					std::string instanceId;
-					std::string accountType;
-					std::vector<Account::DatabasePrivilege> databasePrivileges;
-					std::string accountName;
-				};
 
 
-				DescribeAccountsResult();
-				explicit DescribeAccountsResult(const std::string &payload);
-				~DescribeAccountsResult();
-				std::vector<Account> getAccounts()const;
+				DescribeEngineVersionResult();
+				explicit DescribeEngineVersionResult(const std::string &payload);
+				~DescribeEngineVersionResult();
+				std::string getMajorVersion()const;
+				bool getIsLatestVersion()const;
+				std::string getMinorVersion()const;
+				std::string getEngine()const;
+				bool getEnableUpgradeMinorVersion()const;
+				bool getEnableUpgradeMajorVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Account> accounts_;
+				std::string majorVersion_;
+				bool isLatestVersion_;
+				std::string minorVersion_;
+				std::string engine_;
+				bool enableUpgradeMinorVersion_;
+				bool enableUpgradeMajorVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEENGINEVERSIONRESULT_H_

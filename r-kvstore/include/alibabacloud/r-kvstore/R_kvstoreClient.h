@@ -78,6 +78,8 @@
 #include "model/DescribeDedicatedClusterInstanceListResult.h"
 #include "model/DescribeDedicatedUserClusterRequest.h"
 #include "model/DescribeDedicatedUserClusterResult.h"
+#include "model/DescribeEngineVersionRequest.h"
+#include "model/DescribeEngineVersionResult.h"
 #include "model/DescribeGlobalDistributeCacheRequest.h"
 #include "model/DescribeGlobalDistributeCacheResult.h"
 #include "model/DescribeHistoryMonitorValuesRequest.h"
@@ -86,6 +88,8 @@
 #include "model/DescribeInstanceAttributeResult.h"
 #include "model/DescribeInstanceAutoRenewalAttributeRequest.h"
 #include "model/DescribeInstanceAutoRenewalAttributeResult.h"
+#include "model/DescribeInstanceConfigRequest.h"
+#include "model/DescribeInstanceConfigResult.h"
 #include "model/DescribeInstanceSSLRequest.h"
 #include "model/DescribeInstanceSSLResult.h"
 #include "model/DescribeInstancesRequest.h"
@@ -96,12 +100,16 @@
 #include "model/DescribeLogicInstanceTopologyResult.h"
 #include "model/DescribeMonitorItemsRequest.h"
 #include "model/DescribeMonitorItemsResult.h"
+#include "model/DescribeParameterTemplatesRequest.h"
+#include "model/DescribeParameterTemplatesResult.h"
 #include "model/DescribeParametersRequest.h"
 #include "model/DescribeParametersResult.h"
 #include "model/DescribePriceRequest.h"
 #include "model/DescribePriceResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeRoleZoneInfoRequest.h"
+#include "model/DescribeRoleZoneInfoResult.h"
 #include "model/DescribeRunningLogRecordsRequest.h"
 #include "model/DescribeRunningLogRecordsResult.h"
 #include "model/DescribeSecurityGroupConfigurationRequest.h"
@@ -110,6 +118,8 @@
 #include "model/DescribeSecurityIpsResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
 #include "model/DescribeSlowLogRecordsResult.h"
+#include "model/DescribeTasksRequest.h"
+#include "model/DescribeTasksResult.h"
 #include "model/DescribeUserClusterHostRequest.h"
 #include "model/DescribeUserClusterHostResult.h"
 #include "model/DescribeUserClusterHostInstanceRequest.h"
@@ -287,6 +297,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDedicatedUserClusterResult> DescribeDedicatedUserClusterOutcome;
 			typedef std::future<DescribeDedicatedUserClusterOutcome> DescribeDedicatedUserClusterOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeDedicatedUserClusterRequest&, const DescribeDedicatedUserClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedUserClusterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEngineVersionResult> DescribeEngineVersionOutcome;
+			typedef std::future<DescribeEngineVersionOutcome> DescribeEngineVersionOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeEngineVersionRequest&, const DescribeEngineVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEngineVersionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGlobalDistributeCacheResult> DescribeGlobalDistributeCacheOutcome;
 			typedef std::future<DescribeGlobalDistributeCacheOutcome> DescribeGlobalDistributeCacheOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeGlobalDistributeCacheRequest&, const DescribeGlobalDistributeCacheOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalDistributeCacheAsyncHandler;
@@ -299,6 +312,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceAutoRenewalAttributeResult> DescribeInstanceAutoRenewalAttributeOutcome;
 			typedef std::future<DescribeInstanceAutoRenewalAttributeOutcome> DescribeInstanceAutoRenewalAttributeOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeInstanceAutoRenewalAttributeRequest&, const DescribeInstanceAutoRenewalAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAutoRenewalAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceConfigResult> DescribeInstanceConfigOutcome;
+			typedef std::future<DescribeInstanceConfigOutcome> DescribeInstanceConfigOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeInstanceConfigRequest&, const DescribeInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceSSLResult> DescribeInstanceSSLOutcome;
 			typedef std::future<DescribeInstanceSSLOutcome> DescribeInstanceSSLOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeInstanceSSLRequest&, const DescribeInstanceSSLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSSLAsyncHandler;
@@ -314,6 +330,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeMonitorItemsResult> DescribeMonitorItemsOutcome;
 			typedef std::future<DescribeMonitorItemsOutcome> DescribeMonitorItemsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeMonitorItemsRequest&, const DescribeMonitorItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorItemsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeParameterTemplatesResult> DescribeParameterTemplatesOutcome;
+			typedef std::future<DescribeParameterTemplatesOutcome> DescribeParameterTemplatesOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeParameterTemplatesRequest&, const DescribeParameterTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeParametersResult> DescribeParametersOutcome;
 			typedef std::future<DescribeParametersOutcome> DescribeParametersOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeParametersRequest&, const DescribeParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParametersAsyncHandler;
@@ -323,6 +342,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRoleZoneInfoResult> DescribeRoleZoneInfoOutcome;
+			typedef std::future<DescribeRoleZoneInfoOutcome> DescribeRoleZoneInfoOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeRoleZoneInfoRequest&, const DescribeRoleZoneInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleZoneInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRunningLogRecordsResult> DescribeRunningLogRecordsOutcome;
 			typedef std::future<DescribeRunningLogRecordsOutcome> DescribeRunningLogRecordsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeRunningLogRecordsRequest&, const DescribeRunningLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRunningLogRecordsAsyncHandler;
@@ -335,6 +357,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlowLogRecordsResult> DescribeSlowLogRecordsOutcome;
 			typedef std::future<DescribeSlowLogRecordsOutcome> DescribeSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeSlowLogRecordsRequest&, const DescribeSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
+			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserClusterHostResult> DescribeUserClusterHostOutcome;
 			typedef std::future<DescribeUserClusterHostOutcome> DescribeUserClusterHostOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeUserClusterHostRequest&, const DescribeUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserClusterHostAsyncHandler;
@@ -550,6 +575,9 @@ namespace AlibabaCloud
 			DescribeDedicatedUserClusterOutcome describeDedicatedUserCluster(const Model::DescribeDedicatedUserClusterRequest &request)const;
 			void describeDedicatedUserClusterAsync(const Model::DescribeDedicatedUserClusterRequest& request, const DescribeDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDedicatedUserClusterOutcomeCallable describeDedicatedUserClusterCallable(const Model::DescribeDedicatedUserClusterRequest& request) const;
+			DescribeEngineVersionOutcome describeEngineVersion(const Model::DescribeEngineVersionRequest &request)const;
+			void describeEngineVersionAsync(const Model::DescribeEngineVersionRequest& request, const DescribeEngineVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEngineVersionOutcomeCallable describeEngineVersionCallable(const Model::DescribeEngineVersionRequest& request) const;
 			DescribeGlobalDistributeCacheOutcome describeGlobalDistributeCache(const Model::DescribeGlobalDistributeCacheRequest &request)const;
 			void describeGlobalDistributeCacheAsync(const Model::DescribeGlobalDistributeCacheRequest& request, const DescribeGlobalDistributeCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGlobalDistributeCacheOutcomeCallable describeGlobalDistributeCacheCallable(const Model::DescribeGlobalDistributeCacheRequest& request) const;
@@ -562,6 +590,9 @@ namespace AlibabaCloud
 			DescribeInstanceAutoRenewalAttributeOutcome describeInstanceAutoRenewalAttribute(const Model::DescribeInstanceAutoRenewalAttributeRequest &request)const;
 			void describeInstanceAutoRenewalAttributeAsync(const Model::DescribeInstanceAutoRenewalAttributeRequest& request, const DescribeInstanceAutoRenewalAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceAutoRenewalAttributeOutcomeCallable describeInstanceAutoRenewalAttributeCallable(const Model::DescribeInstanceAutoRenewalAttributeRequest& request) const;
+			DescribeInstanceConfigOutcome describeInstanceConfig(const Model::DescribeInstanceConfigRequest &request)const;
+			void describeInstanceConfigAsync(const Model::DescribeInstanceConfigRequest& request, const DescribeInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceConfigOutcomeCallable describeInstanceConfigCallable(const Model::DescribeInstanceConfigRequest& request) const;
 			DescribeInstanceSSLOutcome describeInstanceSSL(const Model::DescribeInstanceSSLRequest &request)const;
 			void describeInstanceSSLAsync(const Model::DescribeInstanceSSLRequest& request, const DescribeInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceSSLOutcomeCallable describeInstanceSSLCallable(const Model::DescribeInstanceSSLRequest& request) const;
@@ -577,6 +608,9 @@ namespace AlibabaCloud
 			DescribeMonitorItemsOutcome describeMonitorItems(const Model::DescribeMonitorItemsRequest &request)const;
 			void describeMonitorItemsAsync(const Model::DescribeMonitorItemsRequest& request, const DescribeMonitorItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMonitorItemsOutcomeCallable describeMonitorItemsCallable(const Model::DescribeMonitorItemsRequest& request) const;
+			DescribeParameterTemplatesOutcome describeParameterTemplates(const Model::DescribeParameterTemplatesRequest &request)const;
+			void describeParameterTemplatesAsync(const Model::DescribeParameterTemplatesRequest& request, const DescribeParameterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeParameterTemplatesOutcomeCallable describeParameterTemplatesCallable(const Model::DescribeParameterTemplatesRequest& request) const;
 			DescribeParametersOutcome describeParameters(const Model::DescribeParametersRequest &request)const;
 			void describeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParametersOutcomeCallable describeParametersCallable(const Model::DescribeParametersRequest& request) const;
@@ -586,6 +620,9 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DescribeRoleZoneInfoOutcome describeRoleZoneInfo(const Model::DescribeRoleZoneInfoRequest &request)const;
+			void describeRoleZoneInfoAsync(const Model::DescribeRoleZoneInfoRequest& request, const DescribeRoleZoneInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRoleZoneInfoOutcomeCallable describeRoleZoneInfoCallable(const Model::DescribeRoleZoneInfoRequest& request) const;
 			DescribeRunningLogRecordsOutcome describeRunningLogRecords(const Model::DescribeRunningLogRecordsRequest &request)const;
 			void describeRunningLogRecordsAsync(const Model::DescribeRunningLogRecordsRequest& request, const DescribeRunningLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRunningLogRecordsOutcomeCallable describeRunningLogRecordsCallable(const Model::DescribeRunningLogRecordsRequest& request) const;
@@ -598,6 +635,9 @@ namespace AlibabaCloud
 			DescribeSlowLogRecordsOutcome describeSlowLogRecords(const Model::DescribeSlowLogRecordsRequest &request)const;
 			void describeSlowLogRecordsAsync(const Model::DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowLogRecordsOutcomeCallable describeSlowLogRecordsCallable(const Model::DescribeSlowLogRecordsRequest& request) const;
+			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
+			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;
 			DescribeUserClusterHostOutcome describeUserClusterHost(const Model::DescribeUserClusterHostRequest &request)const;
 			void describeUserClusterHostAsync(const Model::DescribeUserClusterHostRequest& request, const DescribeUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserClusterHostOutcomeCallable describeUserClusterHostCallable(const Model::DescribeUserClusterHostRequest& request) const;

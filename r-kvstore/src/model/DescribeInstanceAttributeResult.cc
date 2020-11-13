@@ -105,8 +105,6 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.instanceType = valueInstancesDBInstanceAttribute["InstanceType"].asString();
 		if(!valueInstancesDBInstanceAttribute["ArchitectureType"].isNull())
 			instancesObject.architectureType = valueInstancesDBInstanceAttribute["ArchitectureType"].asString();
-		if(!valueInstancesDBInstanceAttribute["NodeType"].isNull())
-			instancesObject.nodeType1 = valueInstancesDBInstanceAttribute["NodeType"].asString();
 		if(!valueInstancesDBInstanceAttribute["PackageType"].isNull())
 			instancesObject.packageType = valueInstancesDBInstanceAttribute["PackageType"].asString();
 		if(!valueInstancesDBInstanceAttribute["ReplicaId"].isNull())
@@ -125,14 +123,14 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.resourceGroupId = valueInstancesDBInstanceAttribute["ResourceGroupId"].asString();
 		if(!valueInstancesDBInstanceAttribute["ShardCount"].isNull())
 			instancesObject.shardCount = std::stoi(valueInstancesDBInstanceAttribute["ShardCount"].asString());
-		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
-		for (auto allInstancesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueInstancesDBInstanceAttribute["Tags"]["Tag"];
+		for (auto valueInstancesDBInstanceAttributeTagsTag : allTagsNode)
 		{
 			DBInstanceAttribute::Tag tagsObject;
-			if(!allInstancesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allInstancesNodeTagsTag["Key"].asString();
-			if(!allInstancesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allInstancesNodeTagsTag["Value"].asString();
+			if(!valueInstancesDBInstanceAttributeTagsTag["Key"].isNull())
+				tagsObject.key = valueInstancesDBInstanceAttributeTagsTag["Key"].asString();
+			if(!valueInstancesDBInstanceAttributeTagsTag["Value"].isNull())
+				tagsObject.value = valueInstancesDBInstanceAttributeTagsTag["Value"].asString();
 			instancesObject.tags.push_back(tagsObject);
 		}
 		instances_.push_back(instancesObject);

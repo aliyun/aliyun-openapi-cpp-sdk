@@ -77,6 +77,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedUserClusterRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedUserClusterResult.h
+	include/alibabacloud/r-kvstore/model/DescribeEngineVersionRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeEngineVersionResult.h
 	include/alibabacloud/r-kvstore/model/DescribeGlobalDistributeCacheRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeGlobalDistributeCacheResult.h
 	include/alibabacloud/r-kvstore/model/DescribeHistoryMonitorValuesRequest.h
@@ -85,6 +87,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAttributeResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAutoRenewalAttributeResult.h
+	include/alibabacloud/r-kvstore/model/DescribeInstanceConfigRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeInstanceConfigResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceSSLRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceSSLResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstancesRequest.h
@@ -95,12 +99,16 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeLogicInstanceTopologyResult.h
 	include/alibabacloud/r-kvstore/model/DescribeMonitorItemsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeMonitorItemsResult.h
+	include/alibabacloud/r-kvstore/model/DescribeParameterTemplatesRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeParameterTemplatesResult.h
 	include/alibabacloud/r-kvstore/model/DescribeParametersRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeParametersResult.h
 	include/alibabacloud/r-kvstore/model/DescribePriceRequest.h
 	include/alibabacloud/r-kvstore/model/DescribePriceResult.h
 	include/alibabacloud/r-kvstore/model/DescribeRegionsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeRegionsResult.h
+	include/alibabacloud/r-kvstore/model/DescribeRoleZoneInfoRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeRoleZoneInfoResult.h
 	include/alibabacloud/r-kvstore/model/DescribeRunningLogRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeRunningLogRecordsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeSecurityGroupConfigurationRequest.h
@@ -109,6 +117,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeSecurityIpsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeSlowLogRecordsResult.h
+	include/alibabacloud/r-kvstore/model/DescribeTasksRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeTasksResult.h
 	include/alibabacloud/r-kvstore/model/DescribeUserClusterHostRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeUserClusterHostResult.h
 	include/alibabacloud/r-kvstore/model/DescribeUserClusterHostInstanceRequest.h
@@ -252,6 +262,8 @@ set(r-kvstore_src
 	src/model/DescribeDedicatedClusterInstanceListResult.cc
 	src/model/DescribeDedicatedUserClusterRequest.cc
 	src/model/DescribeDedicatedUserClusterResult.cc
+	src/model/DescribeEngineVersionRequest.cc
+	src/model/DescribeEngineVersionResult.cc
 	src/model/DescribeGlobalDistributeCacheRequest.cc
 	src/model/DescribeGlobalDistributeCacheResult.cc
 	src/model/DescribeHistoryMonitorValuesRequest.cc
@@ -260,6 +272,8 @@ set(r-kvstore_src
 	src/model/DescribeInstanceAttributeResult.cc
 	src/model/DescribeInstanceAutoRenewalAttributeRequest.cc
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
+	src/model/DescribeInstanceConfigRequest.cc
+	src/model/DescribeInstanceConfigResult.cc
 	src/model/DescribeInstanceSSLRequest.cc
 	src/model/DescribeInstanceSSLResult.cc
 	src/model/DescribeInstancesRequest.cc
@@ -270,12 +284,16 @@ set(r-kvstore_src
 	src/model/DescribeLogicInstanceTopologyResult.cc
 	src/model/DescribeMonitorItemsRequest.cc
 	src/model/DescribeMonitorItemsResult.cc
+	src/model/DescribeParameterTemplatesRequest.cc
+	src/model/DescribeParameterTemplatesResult.cc
 	src/model/DescribeParametersRequest.cc
 	src/model/DescribeParametersResult.cc
 	src/model/DescribePriceRequest.cc
 	src/model/DescribePriceResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeRoleZoneInfoRequest.cc
+	src/model/DescribeRoleZoneInfoResult.cc
 	src/model/DescribeRunningLogRecordsRequest.cc
 	src/model/DescribeRunningLogRecordsResult.cc
 	src/model/DescribeSecurityGroupConfigurationRequest.cc
@@ -284,6 +302,8 @@ set(r-kvstore_src
 	src/model/DescribeSecurityIpsResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
+	src/model/DescribeTasksRequest.cc
+	src/model/DescribeTasksResult.cc
 	src/model/DescribeUserClusterHostRequest.cc
 	src/model/DescribeUserClusterHostResult.cc
 	src/model/DescribeUserClusterHostInstanceRequest.cc

@@ -68,7 +68,6 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string vSwitchId;
 					std::string createTime;
-					std::string nodeType1;
 					std::string instanceClass;
 					std::string auditLogRetention;
 					bool isRds;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCECONFIGRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCECONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeAccountsResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeInstanceConfigResult : public ServiceResult
 			{
 			public:
-				struct Account
-				{
-					struct DatabasePrivilege
-					{
-						std::string accountPrivilege;
-						std::string accountPrivilegeDetail;
-					};
-					std::string accountDescription;
-					std::string accountStatus;
-					std::string instanceId;
-					std::string accountType;
-					std::vector<Account::DatabasePrivilege> databasePrivileges;
-					std::string accountName;
-				};
 
 
-				DescribeAccountsResult();
-				explicit DescribeAccountsResult(const std::string &payload);
-				~DescribeAccountsResult();
-				std::vector<Account> getAccounts()const;
+				DescribeInstanceConfigResult();
+				explicit DescribeInstanceConfigResult(const std::string &payload);
+				~DescribeInstanceConfigResult();
+				std::string getConfig()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Account> accounts_;
+				std::string config_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACCOUNTSRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINSTANCECONFIGRESULT_H_
