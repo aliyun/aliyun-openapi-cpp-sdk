@@ -73,7 +73,7 @@ namespace AlibabaCloud
 					std::string registerNumber;
 					QRCode qRCode;
 					std::string type;
-					std::string angle;
+					float angle;
 					Emblem emblem;
 					std::string business;
 				};

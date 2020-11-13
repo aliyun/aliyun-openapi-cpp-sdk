@@ -51,6 +51,42 @@ OcrClient::OcrClient(const std::string & accessKeyId, const std::string & access
 OcrClient::~OcrClient()
 {}
 
+OcrClient::DetectCardScreenshotOutcome OcrClient::detectCardScreenshot(const DetectCardScreenshotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectCardScreenshotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectCardScreenshotOutcome(DetectCardScreenshotResult(outcome.result()));
+	else
+		return DetectCardScreenshotOutcome(outcome.error());
+}
+
+void OcrClient::detectCardScreenshotAsync(const DetectCardScreenshotRequest& request, const DetectCardScreenshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectCardScreenshot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OcrClient::DetectCardScreenshotOutcomeCallable OcrClient::detectCardScreenshotCallable(const DetectCardScreenshotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectCardScreenshotOutcome()>>(
+			[this, request]()
+			{
+			return this->detectCardScreenshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OcrClient::GetAsyncJobResultOutcome OcrClient::getAsyncJobResult(const GetAsyncJobResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,42 @@ OcrClient::RecognizePassportMRZOutcomeCallable OcrClient::recognizePassportMRZCa
 			[this, request]()
 			{
 			return this->recognizePassportMRZ(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OcrClient::RecognizePoiNameOutcome OcrClient::recognizePoiName(const RecognizePoiNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizePoiNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizePoiNameOutcome(RecognizePoiNameResult(outcome.result()));
+	else
+		return RecognizePoiNameOutcome(outcome.error());
+}
+
+void OcrClient::recognizePoiNameAsync(const RecognizePoiNameRequest& request, const RecognizePoiNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizePoiName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OcrClient::RecognizePoiNameOutcomeCallable OcrClient::recognizePoiNameCallable(const RecognizePoiNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizePoiNameOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizePoiName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -21,6 +21,8 @@ set(ocr_public_header
 	include/alibabacloud/ocr/OcrExport.h )
 
 set(ocr_public_header_model 
+	include/alibabacloud/ocr/model/DetectCardScreenshotRequest.h
+	include/alibabacloud/ocr/model/DetectCardScreenshotResult.h
 	include/alibabacloud/ocr/model/GetAsyncJobResultRequest.h
 	include/alibabacloud/ocr/model/GetAsyncJobResultResult.h
 	include/alibabacloud/ocr/model/RecognizeAccountPageRequest.h
@@ -45,6 +47,8 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeLicensePlateResult.h
 	include/alibabacloud/ocr/model/RecognizePassportMRZRequest.h
 	include/alibabacloud/ocr/model/RecognizePassportMRZResult.h
+	include/alibabacloud/ocr/model/RecognizePoiNameRequest.h
+	include/alibabacloud/ocr/model/RecognizePoiNameResult.h
 	include/alibabacloud/ocr/model/RecognizeQrCodeRequest.h
 	include/alibabacloud/ocr/model/RecognizeQrCodeResult.h
 	include/alibabacloud/ocr/model/RecognizeStampRequest.h
@@ -68,6 +72,8 @@ set(ocr_public_header_model
 
 set(ocr_src 
 	src/OcrClient.cc
+	src/model/DetectCardScreenshotRequest.cc
+	src/model/DetectCardScreenshotResult.cc
 	src/model/GetAsyncJobResultRequest.cc
 	src/model/GetAsyncJobResultResult.cc
 	src/model/RecognizeAccountPageRequest.cc
@@ -92,6 +98,8 @@ set(ocr_src
 	src/model/RecognizeLicensePlateResult.cc
 	src/model/RecognizePassportMRZRequest.cc
 	src/model/RecognizePassportMRZResult.cc
+	src/model/RecognizePoiNameRequest.cc
+	src/model/RecognizePoiNameResult.cc
 	src/model/RecognizeQrCodeRequest.cc
 	src/model/RecognizeQrCodeResult.cc
 	src/model/RecognizeStampRequest.cc

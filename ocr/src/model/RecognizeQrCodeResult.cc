@@ -48,16 +48,16 @@ void RecognizeQrCodeResult::parse(const std::string &payload)
 			elementObject.taskId = dataNodeElementsElement["TaskId"].asString();
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
-		auto allResultsNode = allElementsNode["Results"]["Result"];
-		for (auto allElementsNodeResultsResult : allResultsNode)
+		auto allResultsNode = dataNodeElementsElement["Results"]["Result"];
+		for (auto dataNodeElementsElementResultsResult : allResultsNode)
 		{
 			Data::Element::Result resultsObject;
-			if(!allElementsNodeResultsResult["Label"].isNull())
-				resultsObject.label = allElementsNodeResultsResult["Label"].asString();
-			if(!allElementsNodeResultsResult["Suggestion"].isNull())
-				resultsObject.suggestion = allElementsNodeResultsResult["Suggestion"].asString();
-			if(!allElementsNodeResultsResult["Rate"].isNull())
-				resultsObject.rate = std::stof(allElementsNodeResultsResult["Rate"].asString());
+			if(!dataNodeElementsElementResultsResult["Label"].isNull())
+				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
+			if(!dataNodeElementsElementResultsResult["Suggestion"].isNull())
+				resultsObject.suggestion = dataNodeElementsElementResultsResult["Suggestion"].asString();
+			if(!dataNodeElementsElementResultsResult["Rate"].isNull())
+				resultsObject.rate = std::stof(dataNodeElementsElementResultsResult["Rate"].asString());
 			auto allQrCodesData = value["QrCodesData"]["QrCodeData"];
 			for (auto value : allQrCodesData)
 				resultsObject.qrCodesData.push_back(value.asString());

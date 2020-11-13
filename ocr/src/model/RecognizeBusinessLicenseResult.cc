@@ -41,7 +41,7 @@ void RecognizeBusinessLicenseResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["Angle"].isNull())
-		data_.angle = dataNode["Angle"].asString();
+		data_.angle = std::stof(dataNode["Angle"].asString());
 	if(!dataNode["RegisterNumber"].isNull())
 		data_.registerNumber = dataNode["RegisterNumber"].asString();
 	if(!dataNode["Name"].isNull())

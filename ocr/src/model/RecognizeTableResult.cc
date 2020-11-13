@@ -46,26 +46,26 @@ void RecognizeTableResult::parse(const std::string &payload)
 	for (auto dataNodeTablesTable : allTablesNode)
 	{
 		Data::Table tableObject;
-		auto allTableRowsNode = allTablesNode["TableRows"]["TableRow"];
-		for (auto allTablesNodeTableRowsTableRow : allTableRowsNode)
+		auto allTableRowsNode = dataNodeTablesTable["TableRows"]["TableRow"];
+		for (auto dataNodeTablesTableTableRowsTableRow : allTableRowsNode)
 		{
 			Data::Table::TableRow tableRowsObject;
-			auto allTableColumnsNode = allTableRowsNode["TableColumns"]["TableColumn"];
-			for (auto allTableRowsNodeTableColumnsTableColumn : allTableColumnsNode)
+			auto allTableColumnsNode = dataNodeTablesTableTableRowsTableRow["TableColumns"]["TableColumn"];
+			for (auto dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn : allTableColumnsNode)
 			{
 				Data::Table::TableRow::TableColumn tableColumnsObject;
-				if(!allTableRowsNodeTableColumnsTableColumn["StartColumn"].isNull())
-					tableColumnsObject.startColumn = std::stoi(allTableRowsNodeTableColumnsTableColumn["StartColumn"].asString());
-				if(!allTableRowsNodeTableColumnsTableColumn["StartRow"].isNull())
-					tableColumnsObject.startRow = std::stoi(allTableRowsNodeTableColumnsTableColumn["StartRow"].asString());
-				if(!allTableRowsNodeTableColumnsTableColumn["EndColumn"].isNull())
-					tableColumnsObject.endColumn = std::stoi(allTableRowsNodeTableColumnsTableColumn["EndColumn"].asString());
-				if(!allTableRowsNodeTableColumnsTableColumn["EndRow"].isNull())
-					tableColumnsObject.endRow = std::stoi(allTableRowsNodeTableColumnsTableColumn["EndRow"].asString());
-				if(!allTableRowsNodeTableColumnsTableColumn["Height"].isNull())
-					tableColumnsObject.height = std::stoi(allTableRowsNodeTableColumnsTableColumn["Height"].asString());
-				if(!allTableRowsNodeTableColumnsTableColumn["Width"].isNull())
-					tableColumnsObject.width = std::stoi(allTableRowsNodeTableColumnsTableColumn["Width"].asString());
+				if(!dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["StartColumn"].isNull())
+					tableColumnsObject.startColumn = std::stoi(dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["StartColumn"].asString());
+				if(!dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["StartRow"].isNull())
+					tableColumnsObject.startRow = std::stoi(dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["StartRow"].asString());
+				if(!dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["EndColumn"].isNull())
+					tableColumnsObject.endColumn = std::stoi(dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["EndColumn"].asString());
+				if(!dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["EndRow"].isNull())
+					tableColumnsObject.endRow = std::stoi(dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["EndRow"].asString());
+				if(!dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["Height"].isNull())
+					tableColumnsObject.height = std::stoi(dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["Height"].asString());
+				if(!dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["Width"].isNull())
+					tableColumnsObject.width = std::stoi(dataNodeTablesTableTableRowsTableRowTableColumnsTableColumn["Width"].asString());
 				auto allTexts = value["Texts"]["Text"];
 				for (auto value : allTexts)
 					tableColumnsObject.texts.push_back(value.asString());

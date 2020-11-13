@@ -46,12 +46,12 @@ void RecognizeTaxiInvoiceResult::parse(const std::string &payload)
 		Data::Invoice invoiceObject;
 		if(!dataNodeInvoicesInvoice["RotateType"].isNull())
 			invoiceObject.rotateType = std::stoi(dataNodeInvoicesInvoice["RotateType"].asString());
-		auto allItemsNode = allInvoicesNode["Items"]["Item"];
-		for (auto allInvoicesNodeItemsItem : allItemsNode)
+		auto allItemsNode = dataNodeInvoicesInvoice["Items"]["Item"];
+		for (auto dataNodeInvoicesInvoiceItemsItem : allItemsNode)
 		{
 			Data::Invoice::Item itemsObject;
-			if(!allInvoicesNodeItemsItem["Text"].isNull())
-				itemsObject.text = allInvoicesNodeItemsItem["Text"].asString();
+			if(!dataNodeInvoicesInvoiceItemsItem["Text"].isNull())
+				itemsObject.text = dataNodeInvoicesInvoiceItemsItem["Text"].asString();
 			auto itemRoiNode = value["ItemRoi"];
 			if(!itemRoiNode["Angle"].isNull())
 				itemsObject.itemRoi.angle = std::stof(itemRoiNode["Angle"].asString());

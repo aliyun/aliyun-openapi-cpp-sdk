@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "OcrExport.h"
+#include "model/DetectCardScreenshotRequest.h"
+#include "model/DetectCardScreenshotResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
 #include "model/RecognizeAccountPageRequest.h"
@@ -46,6 +48,8 @@
 #include "model/RecognizeLicensePlateResult.h"
 #include "model/RecognizePassportMRZRequest.h"
 #include "model/RecognizePassportMRZResult.h"
+#include "model/RecognizePoiNameRequest.h"
+#include "model/RecognizePoiNameResult.h"
 #include "model/RecognizeQrCodeRequest.h"
 #include "model/RecognizeQrCodeResult.h"
 #include "model/RecognizeStampRequest.h"
@@ -75,6 +79,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_OCR_EXPORT OcrClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::DetectCardScreenshotResult> DetectCardScreenshotOutcome;
+			typedef std::future<DetectCardScreenshotOutcome> DetectCardScreenshotOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::DetectCardScreenshotRequest&, const DetectCardScreenshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectCardScreenshotAsyncHandler;
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
@@ -111,6 +118,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizePassportMRZResult> RecognizePassportMRZOutcome;
 			typedef std::future<RecognizePassportMRZOutcome> RecognizePassportMRZOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizePassportMRZRequest&, const RecognizePassportMRZOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePassportMRZAsyncHandler;
+			typedef Outcome<Error, Model::RecognizePoiNameResult> RecognizePoiNameOutcome;
+			typedef std::future<RecognizePoiNameOutcome> RecognizePoiNameOutcomeCallable;
+			typedef std::function<void(const OcrClient*, const Model::RecognizePoiNameRequest&, const RecognizePoiNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePoiNameAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeQrCodeResult> RecognizeQrCodeOutcome;
 			typedef std::future<RecognizeQrCodeOutcome> RecognizeQrCodeOutcomeCallable;
 			typedef std::function<void(const OcrClient*, const Model::RecognizeQrCodeRequest&, const RecognizeQrCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeQrCodeAsyncHandler;
@@ -146,6 +156,9 @@ namespace AlibabaCloud
 			OcrClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			OcrClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~OcrClient();
+			DetectCardScreenshotOutcome detectCardScreenshot(const Model::DetectCardScreenshotRequest &request)const;
+			void detectCardScreenshotAsync(const Model::DetectCardScreenshotRequest& request, const DetectCardScreenshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectCardScreenshotOutcomeCallable detectCardScreenshotCallable(const Model::DetectCardScreenshotRequest& request) const;
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
@@ -182,6 +195,9 @@ namespace AlibabaCloud
 			RecognizePassportMRZOutcome recognizePassportMRZ(const Model::RecognizePassportMRZRequest &request)const;
 			void recognizePassportMRZAsync(const Model::RecognizePassportMRZRequest& request, const RecognizePassportMRZAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizePassportMRZOutcomeCallable recognizePassportMRZCallable(const Model::RecognizePassportMRZRequest& request) const;
+			RecognizePoiNameOutcome recognizePoiName(const Model::RecognizePoiNameRequest &request)const;
+			void recognizePoiNameAsync(const Model::RecognizePoiNameRequest& request, const RecognizePoiNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizePoiNameOutcomeCallable recognizePoiNameCallable(const Model::RecognizePoiNameRequest& request) const;
 			RecognizeQrCodeOutcome recognizeQrCode(const Model::RecognizeQrCodeRequest &request)const;
 			void recognizeQrCodeAsync(const Model::RecognizeQrCodeRequest& request, const RecognizeQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeQrCodeOutcomeCallable recognizeQrCodeCallable(const Model::RecognizeQrCodeRequest& request) const;

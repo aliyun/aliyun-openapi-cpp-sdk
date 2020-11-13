@@ -44,14 +44,14 @@ void RecognizeStampResult::parse(const std::string &payload)
 	for (auto dataNodeResultsResultsItem : allResultsNode)
 	{
 		Data::ResultsItem resultsItemObject;
-		auto allGeneralTextNode = allResultsNode["GeneralText"]["GeneralTextItem"];
-		for (auto allResultsNodeGeneralTextGeneralTextItem : allGeneralTextNode)
+		auto allGeneralTextNode = dataNodeResultsResultsItem["GeneralText"]["GeneralTextItem"];
+		for (auto dataNodeResultsResultsItemGeneralTextGeneralTextItem : allGeneralTextNode)
 		{
 			Data::ResultsItem::GeneralTextItem generalTextObject;
-			if(!allResultsNodeGeneralTextGeneralTextItem["Content"].isNull())
-				generalTextObject.content = allResultsNodeGeneralTextGeneralTextItem["Content"].asString();
-			if(!allResultsNodeGeneralTextGeneralTextItem["Confidence"].isNull())
-				generalTextObject.confidence = std::stof(allResultsNodeGeneralTextGeneralTextItem["Confidence"].asString());
+			if(!dataNodeResultsResultsItemGeneralTextGeneralTextItem["Content"].isNull())
+				generalTextObject.content = dataNodeResultsResultsItemGeneralTextGeneralTextItem["Content"].asString();
+			if(!dataNodeResultsResultsItemGeneralTextGeneralTextItem["Confidence"].isNull())
+				generalTextObject.confidence = std::stof(dataNodeResultsResultsItemGeneralTextGeneralTextItem["Confidence"].asString());
 			resultsItemObject.generalText.push_back(generalTextObject);
 		}
 		auto roiNode = value["Roi"];
