@@ -47,6 +47,10 @@ set(imageseg_public_header_model
 	include/alibabacloud/imageseg/model/SegmentFurnitureResult.h
 	include/alibabacloud/imageseg/model/SegmentHDBodyRequest.h
 	include/alibabacloud/imageseg/model/SegmentHDBodyResult.h
+	include/alibabacloud/imageseg/model/SegmentHDCommonImageRequest.h
+	include/alibabacloud/imageseg/model/SegmentHDCommonImageResult.h
+	include/alibabacloud/imageseg/model/SegmentHDSkyRequest.h
+	include/alibabacloud/imageseg/model/SegmentHDSkyResult.h
 	include/alibabacloud/imageseg/model/SegmentHairRequest.h
 	include/alibabacloud/imageseg/model/SegmentHairResult.h
 	include/alibabacloud/imageseg/model/SegmentHeadRequest.h
@@ -90,6 +94,10 @@ set(imageseg_src
 	src/model/SegmentFurnitureResult.cc
 	src/model/SegmentHDBodyRequest.cc
 	src/model/SegmentHDBodyResult.cc
+	src/model/SegmentHDCommonImageRequest.cc
+	src/model/SegmentHDCommonImageResult.cc
+	src/model/SegmentHDSkyRequest.cc
+	src/model/SegmentHDSkyResult.cc
 	src/model/SegmentHairRequest.cc
 	src/model/SegmentHairResult.cc
 	src/model/SegmentHeadRequest.cc

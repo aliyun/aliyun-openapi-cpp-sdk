@@ -48,6 +48,10 @@
 #include "model/SegmentFurnitureResult.h"
 #include "model/SegmentHDBodyRequest.h"
 #include "model/SegmentHDBodyResult.h"
+#include "model/SegmentHDCommonImageRequest.h"
+#include "model/SegmentHDCommonImageResult.h"
+#include "model/SegmentHDSkyRequest.h"
+#include "model/SegmentHDSkyResult.h"
 #include "model/SegmentHairRequest.h"
 #include "model/SegmentHairResult.h"
 #include "model/SegmentHeadRequest.h"
@@ -110,6 +114,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SegmentHDBodyResult> SegmentHDBodyOutcome;
 			typedef std::future<SegmentHDBodyOutcome> SegmentHDBodyOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentHDBodyRequest&, const SegmentHDBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentHDBodyAsyncHandler;
+			typedef Outcome<Error, Model::SegmentHDCommonImageResult> SegmentHDCommonImageOutcome;
+			typedef std::future<SegmentHDCommonImageOutcome> SegmentHDCommonImageOutcomeCallable;
+			typedef std::function<void(const ImagesegClient*, const Model::SegmentHDCommonImageRequest&, const SegmentHDCommonImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentHDCommonImageAsyncHandler;
+			typedef Outcome<Error, Model::SegmentHDSkyResult> SegmentHDSkyOutcome;
+			typedef std::future<SegmentHDSkyOutcome> SegmentHDSkyOutcomeCallable;
+			typedef std::function<void(const ImagesegClient*, const Model::SegmentHDSkyRequest&, const SegmentHDSkyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentHDSkyAsyncHandler;
 			typedef Outcome<Error, Model::SegmentHairResult> SegmentHairOutcome;
 			typedef std::future<SegmentHairOutcome> SegmentHairOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentHairRequest&, const SegmentHairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentHairAsyncHandler;
@@ -175,6 +185,12 @@ namespace AlibabaCloud
 			SegmentHDBodyOutcome segmentHDBody(const Model::SegmentHDBodyRequest &request)const;
 			void segmentHDBodyAsync(const Model::SegmentHDBodyRequest& request, const SegmentHDBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentHDBodyOutcomeCallable segmentHDBodyCallable(const Model::SegmentHDBodyRequest& request) const;
+			SegmentHDCommonImageOutcome segmentHDCommonImage(const Model::SegmentHDCommonImageRequest &request)const;
+			void segmentHDCommonImageAsync(const Model::SegmentHDCommonImageRequest& request, const SegmentHDCommonImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SegmentHDCommonImageOutcomeCallable segmentHDCommonImageCallable(const Model::SegmentHDCommonImageRequest& request) const;
+			SegmentHDSkyOutcome segmentHDSky(const Model::SegmentHDSkyRequest &request)const;
+			void segmentHDSkyAsync(const Model::SegmentHDSkyRequest& request, const SegmentHDSkyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SegmentHDSkyOutcomeCallable segmentHDSkyCallable(const Model::SegmentHDSkyRequest& request) const;
 			SegmentHairOutcome segmentHair(const Model::SegmentHairRequest &request)const;
 			void segmentHairAsync(const Model::SegmentHairRequest& request, const SegmentHairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentHairOutcomeCallable segmentHairCallable(const Model::SegmentHairRequest& request) const;

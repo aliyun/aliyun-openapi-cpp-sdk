@@ -519,6 +519,78 @@ ImagesegClient::SegmentHDBodyOutcomeCallable ImagesegClient::segmentHDBodyCallab
 	return task->get_future();
 }
 
+ImagesegClient::SegmentHDCommonImageOutcome ImagesegClient::segmentHDCommonImage(const SegmentHDCommonImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SegmentHDCommonImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SegmentHDCommonImageOutcome(SegmentHDCommonImageResult(outcome.result()));
+	else
+		return SegmentHDCommonImageOutcome(outcome.error());
+}
+
+void ImagesegClient::segmentHDCommonImageAsync(const SegmentHDCommonImageRequest& request, const SegmentHDCommonImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, segmentHDCommonImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImagesegClient::SegmentHDCommonImageOutcomeCallable ImagesegClient::segmentHDCommonImageCallable(const SegmentHDCommonImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SegmentHDCommonImageOutcome()>>(
+			[this, request]()
+			{
+			return this->segmentHDCommonImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImagesegClient::SegmentHDSkyOutcome ImagesegClient::segmentHDSky(const SegmentHDSkyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SegmentHDSkyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SegmentHDSkyOutcome(SegmentHDSkyResult(outcome.result()));
+	else
+		return SegmentHDSkyOutcome(outcome.error());
+}
+
+void ImagesegClient::segmentHDSkyAsync(const SegmentHDSkyRequest& request, const SegmentHDSkyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, segmentHDSky(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImagesegClient::SegmentHDSkyOutcomeCallable ImagesegClient::segmentHDSkyCallable(const SegmentHDSkyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SegmentHDSkyOutcome()>>(
+			[this, request]()
+			{
+			return this->segmentHDSky(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImagesegClient::SegmentHairOutcome ImagesegClient::segmentHair(const SegmentHairRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
