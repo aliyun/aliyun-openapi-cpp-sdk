@@ -699,6 +699,42 @@ CodeupClient::GetFileBlobsOutcomeCallable CodeupClient::getFileBlobsCallable(con
 	return task->get_future();
 }
 
+CodeupClient::GetGroupDetailOutcome CodeupClient::getGroupDetail(const GetGroupDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetGroupDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetGroupDetailOutcome(GetGroupDetailResult(outcome.result()));
+	else
+		return GetGroupDetailOutcome(outcome.error());
+}
+
+void CodeupClient::getGroupDetailAsync(const GetGroupDetailRequest& request, const GetGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getGroupDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetGroupDetailOutcomeCallable CodeupClient::getGroupDetailCallable(const GetGroupDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetGroupDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getGroupDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::GetProjectMemberOutcome CodeupClient::getProjectMember(const GetProjectMemberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +909,42 @@ CodeupClient::ListGroupsOutcomeCallable CodeupClient::listGroupsCallable(const L
 			[this, request]()
 			{
 			return this->listGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListRepositoryBranchesOutcome CodeupClient::listRepositoryBranches(const ListRepositoryBranchesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRepositoryBranchesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRepositoryBranchesOutcome(ListRepositoryBranchesResult(outcome.result()));
+	else
+		return ListRepositoryBranchesOutcome(outcome.error());
+}
+
+void CodeupClient::listRepositoryBranchesAsync(const ListRepositoryBranchesRequest& request, const ListRepositoryBranchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRepositoryBranches(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListRepositoryBranchesOutcomeCallable CodeupClient::listRepositoryBranchesCallable(const ListRepositoryBranchesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRepositoryBranchesOutcome()>>(
+			[this, request]()
+			{
+			return this->listRepositoryBranches(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

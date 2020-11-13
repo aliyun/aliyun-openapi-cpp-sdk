@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTGROUPREPOSITORIESRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_LISTGROUPREPOSITORIESRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYBRANCHESRESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYBRANCHESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT ListGroupRepositoriesResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT ListRepositoryBranchesResult : public ServiceResult
 			{
 			public:
 				struct ResultItem
 				{
-					std::string lastActivityAt;
-					std::string path;
-					std::string pathWithNamespace;
-					bool archive;
-					long creatorId;
-					std::string createdAt;
-					std::string nameWithNamespace;
-					std::string webUrl;
-					int visibilityLevel;
-					std::string updatedAt;
-					std::string name;
-					std::string importStatus;
-					long id;
-					long namespaceId;
-					std::string httpCloneUrl;
-					std::string sshCloneUrl;
+					struct CommitInfo
+					{
+						std::string authorName;
+						std::string message;
+						std::string authorDate;
+						std::string committedDate;
+						std::string committerEmail;
+						std::vector<std::string> parentIds;
+						std::string createdAt;
+						std::string shortId;
+						std::string title;
+						std::string id;
+						std::string authorEmail;
+						std::string committerName;
+					};
+					bool protectedBranch;
+					CommitInfo commitInfo;
+					std::string branchName;
 				};
 
 
-				ListGroupRepositoriesResult();
-				explicit ListGroupRepositoriesResult(const std::string &payload);
-				~ListGroupRepositoriesResult();
+				ListRepositoryBranchesResult();
+				explicit ListRepositoryBranchesResult(const std::string &payload);
+				~ListRepositoryBranchesResult();
 				long getTotal()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
@@ -75,4 +77,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTGROUPREPOSITORIESRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYBRANCHESRESULT_H_

@@ -1,4 +1,8 @@
 2020-11-13 Version: patch
+- Fix GetBranchInfo and DeleteBranch API 404 error.
+- Add ListRepositoryBranches and GetGroupDetail API.
+
+2020-11-13 Version: patch
 - Release ErasePerson.
 
 2020-11-13 Version: patch

@@ -57,6 +57,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/GetCodeupOrganizationResult.h
 	include/alibabacloud/codeup/model/GetFileBlobsRequest.h
 	include/alibabacloud/codeup/model/GetFileBlobsResult.h
+	include/alibabacloud/codeup/model/GetGroupDetailRequest.h
+	include/alibabacloud/codeup/model/GetGroupDetailResult.h
 	include/alibabacloud/codeup/model/GetProjectMemberRequest.h
 	include/alibabacloud/codeup/model/GetProjectMemberResult.h
 	include/alibabacloud/codeup/model/GetRepositoryInfoRequest.h
@@ -67,6 +69,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/ListGroupRepositoriesResult.h
 	include/alibabacloud/codeup/model/ListGroupsRequest.h
 	include/alibabacloud/codeup/model/ListGroupsResult.h
+	include/alibabacloud/codeup/model/ListRepositoryBranchesRequest.h
+	include/alibabacloud/codeup/model/ListRepositoryBranchesResult.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberResult.h
 	include/alibabacloud/codeup/model/ListRepositoryTreeRequest.h
@@ -118,6 +122,8 @@ set(codeup_src
 	src/model/GetCodeupOrganizationResult.cc
 	src/model/GetFileBlobsRequest.cc
 	src/model/GetFileBlobsResult.cc
+	src/model/GetGroupDetailRequest.cc
+	src/model/GetGroupDetailResult.cc
 	src/model/GetProjectMemberRequest.cc
 	src/model/GetProjectMemberResult.cc
 	src/model/GetRepositoryInfoRequest.cc
@@ -128,6 +134,8 @@ set(codeup_src
 	src/model/ListGroupRepositoriesResult.cc
 	src/model/ListGroupsRequest.cc
 	src/model/ListGroupsResult.cc
+	src/model/ListRepositoryBranchesRequest.cc
+	src/model/ListRepositoryBranchesResult.cc
 	src/model/ListRepositoryMemberRequest.cc
 	src/model/ListRepositoryMemberResult.cc
 	src/model/ListRepositoryTreeRequest.cc

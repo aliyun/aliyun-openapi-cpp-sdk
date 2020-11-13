@@ -21,7 +21,7 @@ using AlibabaCloud::Codeup::Model::DeleteBranchRequest;
 DeleteBranchRequest::DeleteBranchRequest() :
 	RoaServiceRequest("codeup", "2020-04-14")
 {
-	setResourcePath("/api/v3/projects/[ProjectId]/repository/branches/[BranchName]");
+	setResourcePath("/api/v3/projects/[ProjectId]/repository/branches/delete");
 	setMethod(HttpRequest::Method::Delete);
 }
 

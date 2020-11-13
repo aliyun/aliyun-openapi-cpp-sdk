@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTGROUPREPOSITORIESRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_LISTGROUPREPOSITORIESRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_GETGROUPDETAILRESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_GETGROUPDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,50 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT ListGroupRepositoriesResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT GetGroupDetailResult : public ServiceResult
 			{
 			public:
-				struct ResultItem
+				struct Result
 				{
-					std::string lastActivityAt;
 					std::string path;
 					std::string pathWithNamespace;
-					bool archive;
-					long creatorId;
-					std::string createdAt;
-					std::string nameWithNamespace;
+					long parentId;
+					std::string type;
+					std::string description;
+					std::string avatarUrl;
+					long ownerId;
 					std::string webUrl;
-					int visibilityLevel;
-					std::string updatedAt;
-					std::string name;
-					std::string importStatus;
+					std::string nameWithNamespace;
+					std::string visibilityLevel;
 					long id;
-					long namespaceId;
-					std::string httpCloneUrl;
-					std::string sshCloneUrl;
+					std::string name;
 				};
 
 
-				ListGroupRepositoriesResult();
-				explicit ListGroupRepositoriesResult(const std::string &payload);
-				~ListGroupRepositoriesResult();
-				long getTotal()const;
+				GetGroupDetailResult();
+				explicit GetGroupDetailResult(const std::string &payload);
+				~GetGroupDetailResult();
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
-				std::vector<ResultItem> getResult()const;
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long total_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
-				std::vector<ResultItem> result_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTGROUPREPOSITORIESRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_GETGROUPDETAILRESULT_H_

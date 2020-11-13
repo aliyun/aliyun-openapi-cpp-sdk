@@ -58,6 +58,8 @@
 #include "model/GetCodeupOrganizationResult.h"
 #include "model/GetFileBlobsRequest.h"
 #include "model/GetFileBlobsResult.h"
+#include "model/GetGroupDetailRequest.h"
+#include "model/GetGroupDetailResult.h"
 #include "model/GetProjectMemberRequest.h"
 #include "model/GetProjectMemberResult.h"
 #include "model/GetRepositoryInfoRequest.h"
@@ -68,6 +70,8 @@
 #include "model/ListGroupRepositoriesResult.h"
 #include "model/ListGroupsRequest.h"
 #include "model/ListGroupsResult.h"
+#include "model/ListRepositoryBranchesRequest.h"
+#include "model/ListRepositoryBranchesResult.h"
 #include "model/ListRepositoryMemberRequest.h"
 #include "model/ListRepositoryMemberResult.h"
 #include "model/ListRepositoryTreeRequest.h"
@@ -143,6 +147,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetFileBlobsResult> GetFileBlobsOutcome;
 			typedef std::future<GetFileBlobsOutcome> GetFileBlobsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetFileBlobsRequest&, const GetFileBlobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFileBlobsAsyncHandler;
+			typedef Outcome<Error, Model::GetGroupDetailResult> GetGroupDetailOutcome;
+			typedef std::future<GetGroupDetailOutcome> GetGroupDetailOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetGroupDetailRequest&, const GetGroupDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetProjectMemberResult> GetProjectMemberOutcome;
 			typedef std::future<GetProjectMemberOutcome> GetProjectMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetProjectMemberRequest&, const GetProjectMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectMemberAsyncHandler;
@@ -158,6 +165,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListGroupsResult> ListGroupsOutcome;
 			typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListGroupsRequest&, const ListGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListRepositoryBranchesResult> ListRepositoryBranchesOutcome;
+			typedef std::future<ListRepositoryBranchesOutcome> ListRepositoryBranchesOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryBranchesRequest&, const ListRepositoryBranchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryBranchesAsyncHandler;
 			typedef Outcome<Error, Model::ListRepositoryMemberResult> ListRepositoryMemberOutcome;
 			typedef std::future<ListRepositoryMemberOutcome> ListRepositoryMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryMemberRequest&, const ListRepositoryMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryMemberAsyncHandler;
@@ -235,6 +245,9 @@ namespace AlibabaCloud
 			GetFileBlobsOutcome getFileBlobs(const Model::GetFileBlobsRequest &request)const;
 			void getFileBlobsAsync(const Model::GetFileBlobsRequest& request, const GetFileBlobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFileBlobsOutcomeCallable getFileBlobsCallable(const Model::GetFileBlobsRequest& request) const;
+			GetGroupDetailOutcome getGroupDetail(const Model::GetGroupDetailRequest &request)const;
+			void getGroupDetailAsync(const Model::GetGroupDetailRequest& request, const GetGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetGroupDetailOutcomeCallable getGroupDetailCallable(const Model::GetGroupDetailRequest& request) const;
 			GetProjectMemberOutcome getProjectMember(const Model::GetProjectMemberRequest &request)const;
 			void getProjectMemberAsync(const Model::GetProjectMemberRequest& request, const GetProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProjectMemberOutcomeCallable getProjectMemberCallable(const Model::GetProjectMemberRequest& request) const;
@@ -250,6 +263,9 @@ namespace AlibabaCloud
 			ListGroupsOutcome listGroups(const Model::ListGroupsRequest &request)const;
 			void listGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGroupsOutcomeCallable listGroupsCallable(const Model::ListGroupsRequest& request) const;
+			ListRepositoryBranchesOutcome listRepositoryBranches(const Model::ListRepositoryBranchesRequest &request)const;
+			void listRepositoryBranchesAsync(const Model::ListRepositoryBranchesRequest& request, const ListRepositoryBranchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRepositoryBranchesOutcomeCallable listRepositoryBranchesCallable(const Model::ListRepositoryBranchesRequest& request) const;
 			ListRepositoryMemberOutcome listRepositoryMember(const Model::ListRepositoryMemberRequest &request)const;
 			void listRepositoryMemberAsync(const Model::ListRepositoryMemberRequest& request, const ListRepositoryMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryMemberOutcomeCallable listRepositoryMemberCallable(const Model::ListRepositoryMemberRequest& request) const;

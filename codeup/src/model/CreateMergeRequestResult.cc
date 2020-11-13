@@ -112,18 +112,18 @@ void CreateMergeRequestResult::parse(const std::string &payload)
 			satisfiedCheckResultsItemObject.checkName = approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItem["CheckName"].asString();
 		if(!approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItem["CheckType"].isNull())
 			satisfiedCheckResultsItemObject.checkType = approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItem["CheckType"].asString();
-		auto allExtraUsersNode = allSatisfiedCheckResultsNode["ExtraUsers"]["ExtraUsersItem"];
-		for (auto allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem : allExtraUsersNode)
+		auto allExtraUsersNode = approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItem["ExtraUsers"]["ExtraUsersItem"];
+		for (auto approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem : allExtraUsersNode)
 		{
 			Result::ApproveCheckResult::SatisfiedCheckResultsItem::ExtraUsersItem extraUsersObject;
-			if(!allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem["Id"].isNull())
-				extraUsersObject.id = std::stol(allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem["Id"].asString());
-			if(!allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem["ExternUserId"].isNull())
-				extraUsersObject.externUserId = allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem["ExternUserId"].asString();
-			if(!allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem["AvatarUrl"].isNull())
-				extraUsersObject.avatarUrl = allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem["AvatarUrl"].asString();
-			if(!allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem["Name"].isNull())
-				extraUsersObject.name = allSatisfiedCheckResultsNodeExtraUsersExtraUsersItem["Name"].asString();
+			if(!approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem["Id"].isNull())
+				extraUsersObject.id = std::stol(approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem["Id"].asString());
+			if(!approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem["ExternUserId"].isNull())
+				extraUsersObject.externUserId = approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem["ExternUserId"].asString();
+			if(!approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem["AvatarUrl"].isNull())
+				extraUsersObject.avatarUrl = approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem["AvatarUrl"].asString();
+			if(!approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem["Name"].isNull())
+				extraUsersObject.name = approveCheckResultNodeSatisfiedCheckResultsSatisfiedCheckResultsItemExtraUsersExtraUsersItem["Name"].asString();
 			satisfiedCheckResultsItemObject.extraUsers.push_back(extraUsersObject);
 		}
 		auto allSatisfiedItems = value["SatisfiedItems"]["SatisfiedItems"];
@@ -144,18 +144,18 @@ void CreateMergeRequestResult::parse(const std::string &payload)
 			unsatisfiedCheckResultsItemObject.checkName = approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItem["CheckName"].asString();
 		if(!approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItem["CheckType"].isNull())
 			unsatisfiedCheckResultsItemObject.checkType = approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItem["CheckType"].asString();
-		auto allExtraUsers3Node = allUnsatisfiedCheckResultsNode["ExtraUsers"]["ExtraUsersItem"];
-		for (auto allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem : allExtraUsers3Node)
+		auto allExtraUsers3Node = approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItem["ExtraUsers"]["ExtraUsersItem"];
+		for (auto approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem : allExtraUsers3Node)
 		{
 			Result::ApproveCheckResult::UnsatisfiedCheckResultsItem::ExtraUsersItem4 extraUsers3Object;
-			if(!allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem["Id"].isNull())
-				extraUsers3Object.id = std::stol(allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem["Id"].asString());
-			if(!allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem["ExternUserId"].isNull())
-				extraUsers3Object.externUserId = allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem["ExternUserId"].asString();
-			if(!allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem["AvatarUrl"].isNull())
-				extraUsers3Object.avatarUrl = allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem["AvatarUrl"].asString();
-			if(!allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem["Name"].isNull())
-				extraUsers3Object.name = allUnsatisfiedCheckResultsNodeExtraUsersExtraUsersItem["Name"].asString();
+			if(!approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem["Id"].isNull())
+				extraUsers3Object.id = std::stol(approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem["Id"].asString());
+			if(!approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem["ExternUserId"].isNull())
+				extraUsers3Object.externUserId = approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem["ExternUserId"].asString();
+			if(!approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem["AvatarUrl"].isNull())
+				extraUsers3Object.avatarUrl = approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem["AvatarUrl"].asString();
+			if(!approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem["Name"].isNull())
+				extraUsers3Object.name = approveCheckResultNodeUnsatisfiedCheckResultsUnsatisfiedCheckResultsItemExtraUsersExtraUsersItem["Name"].asString();
 			unsatisfiedCheckResultsItemObject.extraUsers3.push_back(extraUsers3Object);
 		}
 		auto allSatisfiedItems1 = value["SatisfiedItems"]["SatisfiedItems"];

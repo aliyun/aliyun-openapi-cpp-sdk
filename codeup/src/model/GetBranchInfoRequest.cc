@@ -21,7 +21,7 @@ using AlibabaCloud::Codeup::Model::GetBranchInfoRequest;
 GetBranchInfoRequest::GetBranchInfoRequest() :
 	RoaServiceRequest("codeup", "2020-04-14")
 {
-	setResourcePath("/api/v3/projects/[ProjectId]/repository/branches/[BranchName]");
+	setResourcePath("/api/v3/projects/[ProjectId]/repository/branches/detail");
 	setMethod(HttpRequest::Method::Get);
 }
 

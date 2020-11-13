@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				ListRepositoryMemberResult();
 				explicit ListRepositoryMemberResult(const std::string &payload);
 				~ListRepositoryMemberResult();
+				long getTotal()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -54,6 +55,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long total_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;

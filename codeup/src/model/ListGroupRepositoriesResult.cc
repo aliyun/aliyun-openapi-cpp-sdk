@@ -83,7 +83,14 @@ void ListGroupRepositoriesResult::parse(const std::string &payload)
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
 
+}
+
+long ListGroupRepositoriesResult::getTotal()const
+{
+	return total_;
 }
 
 std::string ListGroupRepositoriesResult::getErrorCode()const
