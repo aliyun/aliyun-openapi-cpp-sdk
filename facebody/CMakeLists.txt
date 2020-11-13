@@ -31,6 +31,8 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/BodyPostureResult.h
 	include/alibabacloud/facebody/model/CompareFaceRequest.h
 	include/alibabacloud/facebody/model/CompareFaceResult.h
+	include/alibabacloud/facebody/model/CountCrowdRequest.h
+	include/alibabacloud/facebody/model/CountCrowdResult.h
 	include/alibabacloud/facebody/model/CreateFaceDbRequest.h
 	include/alibabacloud/facebody/model/CreateFaceDbResult.h
 	include/alibabacloud/facebody/model/DeleteFaceRequest.h
@@ -71,6 +73,8 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/FaceMakeupResult.h
 	include/alibabacloud/facebody/model/FaceTidyupRequest.h
 	include/alibabacloud/facebody/model/FaceTidyupResult.h
+	include/alibabacloud/facebody/model/GenerateHumanAnimeStyleRequest.h
+	include/alibabacloud/facebody/model/GenerateHumanAnimeStyleResult.h
 	include/alibabacloud/facebody/model/GetFaceEntityRequest.h
 	include/alibabacloud/facebody/model/GetFaceEntityResult.h
 	include/alibabacloud/facebody/model/HandPostureRequest.h
@@ -110,6 +114,8 @@ set(facebody_src
 	src/model/BodyPostureResult.cc
 	src/model/CompareFaceRequest.cc
 	src/model/CompareFaceResult.cc
+	src/model/CountCrowdRequest.cc
+	src/model/CountCrowdResult.cc
 	src/model/CreateFaceDbRequest.cc
 	src/model/CreateFaceDbResult.cc
 	src/model/DeleteFaceRequest.cc
@@ -150,6 +156,8 @@ set(facebody_src
 	src/model/FaceMakeupResult.cc
 	src/model/FaceTidyupRequest.cc
 	src/model/FaceTidyupResult.cc
+	src/model/GenerateHumanAnimeStyleRequest.cc
+	src/model/GenerateHumanAnimeStyleResult.cc
 	src/model/GetFaceEntityRequest.cc
 	src/model/GetFaceEntityResult.cc
 	src/model/HandPostureRequest.cc

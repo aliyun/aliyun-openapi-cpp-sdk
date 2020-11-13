@@ -32,6 +32,8 @@
 #include "model/BodyPostureResult.h"
 #include "model/CompareFaceRequest.h"
 #include "model/CompareFaceResult.h"
+#include "model/CountCrowdRequest.h"
+#include "model/CountCrowdResult.h"
 #include "model/CreateFaceDbRequest.h"
 #include "model/CreateFaceDbResult.h"
 #include "model/DeleteFaceRequest.h"
@@ -72,6 +74,8 @@
 #include "model/FaceMakeupResult.h"
 #include "model/FaceTidyupRequest.h"
 #include "model/FaceTidyupResult.h"
+#include "model/GenerateHumanAnimeStyleRequest.h"
+#include "model/GenerateHumanAnimeStyleResult.h"
 #include "model/GetFaceEntityRequest.h"
 #include "model/GetFaceEntityResult.h"
 #include "model/HandPostureRequest.h"
@@ -122,6 +126,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CompareFaceResult> CompareFaceOutcome;
 			typedef std::future<CompareFaceOutcome> CompareFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CompareFaceRequest&, const CompareFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFaceAsyncHandler;
+			typedef Outcome<Error, Model::CountCrowdResult> CountCrowdOutcome;
+			typedef std::future<CountCrowdOutcome> CountCrowdOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::CountCrowdRequest&, const CountCrowdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CountCrowdAsyncHandler;
 			typedef Outcome<Error, Model::CreateFaceDbResult> CreateFaceDbOutcome;
 			typedef std::future<CreateFaceDbOutcome> CreateFaceDbOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CreateFaceDbRequest&, const CreateFaceDbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFaceDbAsyncHandler;
@@ -182,6 +189,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FaceTidyupResult> FaceTidyupOutcome;
 			typedef std::future<FaceTidyupOutcome> FaceTidyupOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::FaceTidyupRequest&, const FaceTidyupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FaceTidyupAsyncHandler;
+			typedef Outcome<Error, Model::GenerateHumanAnimeStyleResult> GenerateHumanAnimeStyleOutcome;
+			typedef std::future<GenerateHumanAnimeStyleOutcome> GenerateHumanAnimeStyleOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::GenerateHumanAnimeStyleRequest&, const GenerateHumanAnimeStyleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateHumanAnimeStyleAsyncHandler;
 			typedef Outcome<Error, Model::GetFaceEntityResult> GetFaceEntityOutcome;
 			typedef std::future<GetFaceEntityOutcome> GetFaceEntityOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::GetFaceEntityRequest&, const GetFaceEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceEntityAsyncHandler;
@@ -241,6 +251,9 @@ namespace AlibabaCloud
 			CompareFaceOutcome compareFace(const Model::CompareFaceRequest &request)const;
 			void compareFaceAsync(const Model::CompareFaceRequest& request, const CompareFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompareFaceOutcomeCallable compareFaceCallable(const Model::CompareFaceRequest& request) const;
+			CountCrowdOutcome countCrowd(const Model::CountCrowdRequest &request)const;
+			void countCrowdAsync(const Model::CountCrowdRequest& request, const CountCrowdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CountCrowdOutcomeCallable countCrowdCallable(const Model::CountCrowdRequest& request) const;
 			CreateFaceDbOutcome createFaceDb(const Model::CreateFaceDbRequest &request)const;
 			void createFaceDbAsync(const Model::CreateFaceDbRequest& request, const CreateFaceDbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFaceDbOutcomeCallable createFaceDbCallable(const Model::CreateFaceDbRequest& request) const;
@@ -301,6 +314,9 @@ namespace AlibabaCloud
 			FaceTidyupOutcome faceTidyup(const Model::FaceTidyupRequest &request)const;
 			void faceTidyupAsync(const Model::FaceTidyupRequest& request, const FaceTidyupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FaceTidyupOutcomeCallable faceTidyupCallable(const Model::FaceTidyupRequest& request) const;
+			GenerateHumanAnimeStyleOutcome generateHumanAnimeStyle(const Model::GenerateHumanAnimeStyleRequest &request)const;
+			void generateHumanAnimeStyleAsync(const Model::GenerateHumanAnimeStyleRequest& request, const GenerateHumanAnimeStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateHumanAnimeStyleOutcomeCallable generateHumanAnimeStyleCallable(const Model::GenerateHumanAnimeStyleRequest& request) const;
 			GetFaceEntityOutcome getFaceEntity(const Model::GetFaceEntityRequest &request)const;
 			void getFaceEntityAsync(const Model::GetFaceEntityRequest& request, const GetFaceEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFaceEntityOutcomeCallable getFaceEntityCallable(const Model::GetFaceEntityRequest& request) const;

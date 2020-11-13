@@ -46,8 +46,8 @@ void RecognizeActionResult::parse(const std::string &payload)
 		Data::Element elementObject;
 		if(!dataNodeElementsElement["Timestamp"].isNull())
 			elementObject.timestamp = std::stoi(dataNodeElementsElement["Timestamp"].asString());
-		auto allBoxesNode = allElementsNode["Boxes"]["BoxesItem"];
-		for (auto allElementsNodeBoxesBoxesItem : allBoxesNode)
+		auto allBoxesNode = dataNodeElementsElement["Boxes"]["BoxesItem"];
+		for (auto dataNodeElementsElementBoxesBoxesItem : allBoxesNode)
 		{
 			Data::Element::BoxesItem boxesObject;
 			auto allBox = value["Box"]["Box"];

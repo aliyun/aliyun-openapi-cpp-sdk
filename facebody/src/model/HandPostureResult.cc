@@ -46,8 +46,8 @@ void HandPostureResult::parse(const std::string &payload)
 		Data::Output outputObject;
 		if(!dataNodeOutputsOutput["HandCount"].isNull())
 			outputObject.handCount = std::stoi(dataNodeOutputsOutput["HandCount"].asString());
-		auto allResultsNode = allOutputsNode["Results"]["Result"];
-		for (auto allOutputsNodeResultsResult : allResultsNode)
+		auto allResultsNode = dataNodeOutputsOutput["Results"]["Result"];
+		for (auto dataNodeOutputsOutputResultsResult : allResultsNode)
 		{
 			Data::Output::Result resultsObject;
 			auto boxNode = value["Box"];
@@ -71,8 +71,8 @@ void HandPostureResult::parse(const std::string &payload)
 				Data::Output::Result::Hands::KeyPoint keyPointObject;
 				if(!handsNodeKeyPointsKeyPoint["Label"].isNull())
 					keyPointObject.label = handsNodeKeyPointsKeyPoint["Label"].asString();
-				auto allPositions1Node = allKeyPointsNode["Positions"]["Position"];
-				for (auto allKeyPointsNodePositionsPosition : allPositions1Node)
+				auto allPositions1Node = handsNodeKeyPointsKeyPoint["Positions"]["Position"];
+				for (auto handsNodeKeyPointsKeyPointPositionsPosition : allPositions1Node)
 				{
 					Data::Output::Result::Hands::KeyPoint::Position2 positions1Object;
 					auto allPoints3 = value["Points"]["Point"];

@@ -50,12 +50,12 @@ void DetectIPCPedestrianResult::parse(const std::string &payload)
 			imageInfoListItemObject.errorMessage = dataNodeImageInfoListImageInfoListItem["ErrorMessage"].asString();
 		if(!dataNodeImageInfoListImageInfoListItem["DataId"].isNull())
 			imageInfoListItemObject.dataId = dataNodeImageInfoListImageInfoListItem["DataId"].asString();
-		auto allElementsNode = allImageInfoListNode["Elements"]["Element"];
-		for (auto allImageInfoListNodeElementsElement : allElementsNode)
+		auto allElementsNode = dataNodeImageInfoListImageInfoListItem["Elements"]["Element"];
+		for (auto dataNodeImageInfoListImageInfoListItemElementsElement : allElementsNode)
 		{
 			Data::ImageInfoListItem::Element elementsObject;
-			if(!allImageInfoListNodeElementsElement["Score"].isNull())
-				elementsObject.score = std::stof(allImageInfoListNodeElementsElement["Score"].asString());
+			if(!dataNodeImageInfoListImageInfoListItemElementsElement["Score"].isNull())
+				elementsObject.score = std::stof(dataNodeImageInfoListImageInfoListItemElementsElement["Score"].asString());
 			auto allBoxes = value["Boxes"]["Box"];
 			for (auto value : allBoxes)
 				elementsObject.boxes.push_back(value.asString());

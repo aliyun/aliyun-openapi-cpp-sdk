@@ -231,6 +231,42 @@ FacebodyClient::CompareFaceOutcomeCallable FacebodyClient::compareFaceCallable(c
 	return task->get_future();
 }
 
+FacebodyClient::CountCrowdOutcome FacebodyClient::countCrowd(const CountCrowdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CountCrowdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CountCrowdOutcome(CountCrowdResult(outcome.result()));
+	else
+		return CountCrowdOutcome(outcome.error());
+}
+
+void FacebodyClient::countCrowdAsync(const CountCrowdRequest& request, const CountCrowdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, countCrowd(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::CountCrowdOutcomeCallable FacebodyClient::countCrowdCallable(const CountCrowdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CountCrowdOutcome()>>(
+			[this, request]()
+			{
+			return this->countCrowd(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::CreateFaceDbOutcome FacebodyClient::createFaceDb(const CreateFaceDbRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +981,42 @@ FacebodyClient::FaceTidyupOutcomeCallable FacebodyClient::faceTidyupCallable(con
 			[this, request]()
 			{
 			return this->faceTidyup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FacebodyClient::GenerateHumanAnimeStyleOutcome FacebodyClient::generateHumanAnimeStyle(const GenerateHumanAnimeStyleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateHumanAnimeStyleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateHumanAnimeStyleOutcome(GenerateHumanAnimeStyleResult(outcome.result()));
+	else
+		return GenerateHumanAnimeStyleOutcome(outcome.error());
+}
+
+void FacebodyClient::generateHumanAnimeStyleAsync(const GenerateHumanAnimeStyleRequest& request, const GenerateHumanAnimeStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateHumanAnimeStyle(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::GenerateHumanAnimeStyleOutcomeCallable FacebodyClient::generateHumanAnimeStyleCallable(const GenerateHumanAnimeStyleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateHumanAnimeStyleOutcome()>>(
+			[this, request]()
+			{
+			return this->generateHumanAnimeStyle(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

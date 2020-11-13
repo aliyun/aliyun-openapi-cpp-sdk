@@ -27,6 +27,21 @@ ExtractPedestrianFeatureAttributeRequest::ExtractPedestrianFeatureAttributeReque
 ExtractPedestrianFeatureAttributeRequest::~ExtractPedestrianFeatureAttributeRequest()
 {}
 
+std::vector<ExtractPedestrianFeatureAttributeRequest::UrlList> ExtractPedestrianFeatureAttributeRequest::getUrlList()const
+{
+	return urlList_;
+}
+
+void ExtractPedestrianFeatureAttributeRequest::setUrlList(const std::vector<UrlList>& urlList)
+{
+	urlList_ = urlList;
+	for(int dep1 = 0; dep1!= urlList.size(); dep1++) {
+		auto urlListObj = urlList.at(dep1);
+		std::string urlListObjStr = "UrlList." + std::to_string(dep1 + 1);
+		setParameter(urlListObjStr + ".Url", urlListObj.url);
+	}
+}
+
 std::string ExtractPedestrianFeatureAttributeRequest::getMode()const
 {
 	return mode_;

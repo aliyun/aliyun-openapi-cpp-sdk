@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_EXTRACTPEDESTRIANFEATUREATTRIBUTEREQUEST_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_EXTRACTPEDESTRIANFEATUREATTRIBUTEREQUEST_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_COUNTCROWDREQUEST_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_COUNTCROWDREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,32 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT ExtractPedestrianFeatureAttributeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_FACEBODY_EXPORT CountCrowdRequest : public RpcServiceRequest
 			{
-			public:
-				struct UrlList
-				{
-					std::string url;
-				};
 
 			public:
-				ExtractPedestrianFeatureAttributeRequest();
-				~ExtractPedestrianFeatureAttributeRequest();
+				CountCrowdRequest();
+				~CountCrowdRequest();
 
-				std::vector<UrlList> getUrlList()const;
-				void setUrlList(const std::vector<UrlList>& urlList);
-				std::string getMode()const;
-				void setMode(const std::string& mode);
+				bool getIsShow()const;
+				void setIsShow(bool isShow);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
-				std::vector<UrlList> urlList_;
-				std::string mode_;
+				bool isShow_;
 				std::string imageURL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_EXTRACTPEDESTRIANFEATUREATTRIBUTEREQUEST_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_COUNTCROWDREQUEST_H_

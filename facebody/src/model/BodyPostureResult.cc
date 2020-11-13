@@ -46,20 +46,20 @@ void BodyPostureResult::parse(const std::string &payload)
 		Data::Output outputObject;
 		if(!dataNodeOutputsOutput["HumanCount"].isNull())
 			outputObject.humanCount = std::stoi(dataNodeOutputsOutput["HumanCount"].asString());
-		auto allResultsNode = allOutputsNode["Results"]["Result"];
-		for (auto allOutputsNodeResultsResult : allResultsNode)
+		auto allResultsNode = dataNodeOutputsOutput["Results"]["Result"];
+		for (auto dataNodeOutputsOutputResultsResult : allResultsNode)
 		{
 			Data::Output::Result resultsObject;
-			auto allBodiesNode = allResultsNode["Bodies"]["Body"];
-			for (auto allResultsNodeBodiesBody : allBodiesNode)
+			auto allBodiesNode = dataNodeOutputsOutputResultsResult["Bodies"]["Body"];
+			for (auto dataNodeOutputsOutputResultsResultBodiesBody : allBodiesNode)
 			{
 				Data::Output::Result::Body bodiesObject;
-				if(!allResultsNodeBodiesBody["Confident"].isNull())
-					bodiesObject.confident = std::stof(allResultsNodeBodiesBody["Confident"].asString());
-				if(!allResultsNodeBodiesBody["Label"].isNull())
-					bodiesObject.label = allResultsNodeBodiesBody["Label"].asString();
-				auto allPositionsNode = allBodiesNode["Positions"]["Position"];
-				for (auto allBodiesNodePositionsPosition : allPositionsNode)
+				if(!dataNodeOutputsOutputResultsResultBodiesBody["Confident"].isNull())
+					bodiesObject.confident = std::stof(dataNodeOutputsOutputResultsResultBodiesBody["Confident"].asString());
+				if(!dataNodeOutputsOutputResultsResultBodiesBody["Label"].isNull())
+					bodiesObject.label = dataNodeOutputsOutputResultsResultBodiesBody["Label"].asString();
+				auto allPositionsNode = dataNodeOutputsOutputResultsResultBodiesBody["Positions"]["Position"];
+				for (auto dataNodeOutputsOutputResultsResultBodiesBodyPositionsPosition : allPositionsNode)
 				{
 					Data::Output::Result::Body::Position positionsObject;
 					auto allPoints = value["Points"]["Point"];

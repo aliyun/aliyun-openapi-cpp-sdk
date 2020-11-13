@@ -48,24 +48,24 @@ void DetectLivingFaceResult::parse(const std::string &payload)
 			elementObject.taskId = dataNodeElementsElement["TaskId"].asString();
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
-		auto allResultsNode = allElementsNode["Results"]["Result"];
-		for (auto allElementsNodeResultsResult : allResultsNode)
+		auto allResultsNode = dataNodeElementsElement["Results"]["Result"];
+		for (auto dataNodeElementsElementResultsResult : allResultsNode)
 		{
 			Data::Element::Result resultsObject;
-			if(!allElementsNodeResultsResult["Label"].isNull())
-				resultsObject.label = allElementsNodeResultsResult["Label"].asString();
-			if(!allElementsNodeResultsResult["Suggestion"].isNull())
-				resultsObject.suggestion = allElementsNodeResultsResult["Suggestion"].asString();
-			if(!allElementsNodeResultsResult["Rate"].isNull())
-				resultsObject.rate = std::stof(allElementsNodeResultsResult["Rate"].asString());
-			auto allFramesNode = allResultsNode["Frames"]["Frame"];
-			for (auto allResultsNodeFramesFrame : allFramesNode)
+			if(!dataNodeElementsElementResultsResult["Label"].isNull())
+				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
+			if(!dataNodeElementsElementResultsResult["Suggestion"].isNull())
+				resultsObject.suggestion = dataNodeElementsElementResultsResult["Suggestion"].asString();
+			if(!dataNodeElementsElementResultsResult["Rate"].isNull())
+				resultsObject.rate = std::stof(dataNodeElementsElementResultsResult["Rate"].asString());
+			auto allFramesNode = dataNodeElementsElementResultsResult["Frames"]["Frame"];
+			for (auto dataNodeElementsElementResultsResultFramesFrame : allFramesNode)
 			{
 				Data::Element::Result::Frame framesObject;
-				if(!allResultsNodeFramesFrame["Rate"].isNull())
-					framesObject.rate = std::stof(allResultsNodeFramesFrame["Rate"].asString());
-				if(!allResultsNodeFramesFrame["Url"].isNull())
-					framesObject.url = allResultsNodeFramesFrame["Url"].asString();
+				if(!dataNodeElementsElementResultsResultFramesFrame["Rate"].isNull())
+					framesObject.rate = std::stof(dataNodeElementsElementResultsResultFramesFrame["Rate"].asString());
+				if(!dataNodeElementsElementResultsResultFramesFrame["Url"].isNull())
+					framesObject.url = dataNodeElementsElementResultsResultFramesFrame["Url"].asString();
 				resultsObject.frames.push_back(framesObject);
 			}
 			elementObject.results.push_back(resultsObject);

@@ -76,6 +76,48 @@ void ExtractPedestrianFeatureAttributeResult::parse(const std::string &payload)
 		data_.age = dataNode["Age"].asString();
 	if(!dataNode["AgeScore"].isNull())
 		data_.ageScore = std::stof(dataNode["AgeScore"].asString());
+	auto allElementsNode = dataNode["Elements"]["Element"];
+	for (auto dataNodeElementsElement : allElementsNode)
+	{
+		Data::Element elementObject;
+		if(!dataNodeElementsElement["ObjType"].isNull())
+			elementObject.objType = dataNodeElementsElement["ObjType"].asString();
+		if(!dataNodeElementsElement["ObjTypeScore"].isNull())
+			elementObject.objTypeScore = std::stof(dataNodeElementsElement["ObjTypeScore"].asString());
+		if(!dataNodeElementsElement["Feature"].isNull())
+			elementObject.feature = dataNodeElementsElement["Feature"].asString();
+		if(!dataNodeElementsElement["QualityScore"].isNull())
+			elementObject.qualityScore = std::stof(dataNodeElementsElement["QualityScore"].asString());
+		if(!dataNodeElementsElement["UpperColor"].isNull())
+			elementObject.upperColor = dataNodeElementsElement["UpperColor"].asString();
+		if(!dataNodeElementsElement["UpperColorScore"].isNull())
+			elementObject.upperColorScore = std::stof(dataNodeElementsElement["UpperColorScore"].asString());
+		if(!dataNodeElementsElement["UpperType"].isNull())
+			elementObject.upperType = dataNodeElementsElement["UpperType"].asString();
+		if(!dataNodeElementsElement["UpperTypeScore"].isNull())
+			elementObject.upperTypeScore = std::stof(dataNodeElementsElement["UpperTypeScore"].asString());
+		if(!dataNodeElementsElement["LowerColor"].isNull())
+			elementObject.lowerColor = dataNodeElementsElement["LowerColor"].asString();
+		if(!dataNodeElementsElement["LowerColorScore"].isNull())
+			elementObject.lowerColorScore = std::stof(dataNodeElementsElement["LowerColorScore"].asString());
+		if(!dataNodeElementsElement["LowerType"].isNull())
+			elementObject.lowerType = dataNodeElementsElement["LowerType"].asString();
+		if(!dataNodeElementsElement["LowerTypeScore"].isNull())
+			elementObject.lowerTypeScore = std::stof(dataNodeElementsElement["LowerTypeScore"].asString());
+		if(!dataNodeElementsElement["Gender"].isNull())
+			elementObject.gender = dataNodeElementsElement["Gender"].asString();
+		if(!dataNodeElementsElement["GenderScore"].isNull())
+			elementObject.genderScore = std::stof(dataNodeElementsElement["GenderScore"].asString());
+		if(!dataNodeElementsElement["Hair"].isNull())
+			elementObject.hair = dataNodeElementsElement["Hair"].asString();
+		if(!dataNodeElementsElement["HairScore"].isNull())
+			elementObject.hairScore = std::stof(dataNodeElementsElement["HairScore"].asString());
+		if(!dataNodeElementsElement["Age"].isNull())
+			elementObject.age = dataNodeElementsElement["Age"].asString();
+		if(!dataNodeElementsElement["AgeScore"].isNull())
+			elementObject.ageScore = std::stof(dataNodeElementsElement["AgeScore"].asString());
+		data_.elements.push_back(elementObject);
+	}
 
 }
 

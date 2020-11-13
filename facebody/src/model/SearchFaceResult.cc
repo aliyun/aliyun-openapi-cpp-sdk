@@ -44,18 +44,18 @@ void SearchFaceResult::parse(const std::string &payload)
 	for (auto dataNodeMatchListMatchListItem : allMatchListNode)
 	{
 		Data::MatchListItem matchListItemObject;
-		auto allFaceItemsNode = allMatchListNode["FaceItems"]["FaceItemsItem"];
-		for (auto allMatchListNodeFaceItemsFaceItemsItem : allFaceItemsNode)
+		auto allFaceItemsNode = dataNodeMatchListMatchListItem["FaceItems"]["FaceItemsItem"];
+		for (auto dataNodeMatchListMatchListItemFaceItemsFaceItemsItem : allFaceItemsNode)
 		{
 			Data::MatchListItem::FaceItemsItem faceItemsObject;
-			if(!allMatchListNodeFaceItemsFaceItemsItem["FaceId"].isNull())
-				faceItemsObject.faceId = allMatchListNodeFaceItemsFaceItemsItem["FaceId"].asString();
-			if(!allMatchListNodeFaceItemsFaceItemsItem["Score"].isNull())
-				faceItemsObject.score = std::stof(allMatchListNodeFaceItemsFaceItemsItem["Score"].asString());
-			if(!allMatchListNodeFaceItemsFaceItemsItem["ExtraData"].isNull())
-				faceItemsObject.extraData = allMatchListNodeFaceItemsFaceItemsItem["ExtraData"].asString();
-			if(!allMatchListNodeFaceItemsFaceItemsItem["EntityId"].isNull())
-				faceItemsObject.entityId = allMatchListNodeFaceItemsFaceItemsItem["EntityId"].asString();
+			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["FaceId"].isNull())
+				faceItemsObject.faceId = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["FaceId"].asString();
+			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["Score"].isNull())
+				faceItemsObject.score = std::stof(dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["Score"].asString());
+			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["ExtraData"].isNull())
+				faceItemsObject.extraData = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["ExtraData"].asString();
+			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["EntityId"].isNull())
+				faceItemsObject.entityId = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["EntityId"].asString();
 			matchListItemObject.faceItems.push_back(faceItemsObject);
 		}
 		auto locationNode = value["Location"];

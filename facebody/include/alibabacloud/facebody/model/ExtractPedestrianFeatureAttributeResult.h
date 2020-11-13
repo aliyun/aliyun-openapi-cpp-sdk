@@ -34,12 +34,34 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct Element
+					{
+						std::string hair;
+						std::string upperType;
+						float upperTypeScore;
+						float qualityScore;
+						std::string lowerColor;
+						std::string gender;
+						std::string feature;
+						float upperColorScore;
+						float lowerColorScore;
+						float genderScore;
+						std::string objType;
+						float lowerTypeScore;
+						float hairScore;
+						std::string upperColor;
+						std::string lowerType;
+						float ageScore;
+						float objTypeScore;
+						std::string age;
+					};
 					std::string hair;
 					std::string upperType;
 					float upperTypeScore;
 					float qualityScore;
 					std::string lowerColor;
 					std::string gender;
+					std::vector<Element> elements;
 					std::string feature;
 					float upperColorScore;
 					float lowerColorScore;

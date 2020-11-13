@@ -48,38 +48,38 @@ void RecognizePublicFaceResult::parse(const std::string &payload)
 			elementObject.taskId = dataNodeElementsElement["TaskId"].asString();
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
-		auto allResultsNode = allElementsNode["Results"]["Result"];
-		for (auto allElementsNodeResultsResult : allResultsNode)
+		auto allResultsNode = dataNodeElementsElement["Results"]["Result"];
+		for (auto dataNodeElementsElementResultsResult : allResultsNode)
 		{
 			Data::Element::Result resultsObject;
-			if(!allElementsNodeResultsResult["Label"].isNull())
-				resultsObject.label = allElementsNodeResultsResult["Label"].asString();
-			if(!allElementsNodeResultsResult["Suggestion"].isNull())
-				resultsObject.suggestion = allElementsNodeResultsResult["Suggestion"].asString();
-			if(!allElementsNodeResultsResult["Rate"].isNull())
-				resultsObject.rate = std::stof(allElementsNodeResultsResult["Rate"].asString());
-			auto allSubResultsNode = allResultsNode["SubResults"]["SubResult"];
-			for (auto allResultsNodeSubResultsSubResult : allSubResultsNode)
+			if(!dataNodeElementsElementResultsResult["Label"].isNull())
+				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
+			if(!dataNodeElementsElementResultsResult["Suggestion"].isNull())
+				resultsObject.suggestion = dataNodeElementsElementResultsResult["Suggestion"].asString();
+			if(!dataNodeElementsElementResultsResult["Rate"].isNull())
+				resultsObject.rate = std::stof(dataNodeElementsElementResultsResult["Rate"].asString());
+			auto allSubResultsNode = dataNodeElementsElementResultsResult["SubResults"]["SubResult"];
+			for (auto dataNodeElementsElementResultsResultSubResultsSubResult : allSubResultsNode)
 			{
 				Data::Element::Result::SubResult subResultsObject;
-				if(!allResultsNodeSubResultsSubResult["H"].isNull())
-					subResultsObject.h = std::stof(allResultsNodeSubResultsSubResult["H"].asString());
-				if(!allResultsNodeSubResultsSubResult["W"].isNull())
-					subResultsObject.w = std::stof(allResultsNodeSubResultsSubResult["W"].asString());
-				if(!allResultsNodeSubResultsSubResult["X"].isNull())
-					subResultsObject.x = std::stof(allResultsNodeSubResultsSubResult["X"].asString());
-				if(!allResultsNodeSubResultsSubResult["Y"].isNull())
-					subResultsObject.y = std::stof(allResultsNodeSubResultsSubResult["Y"].asString());
-				auto allFacesNode = allSubResultsNode["Faces"]["Face"];
-				for (auto allSubResultsNodeFacesFace : allFacesNode)
+				if(!dataNodeElementsElementResultsResultSubResultsSubResult["H"].isNull())
+					subResultsObject.h = std::stof(dataNodeElementsElementResultsResultSubResultsSubResult["H"].asString());
+				if(!dataNodeElementsElementResultsResultSubResultsSubResult["W"].isNull())
+					subResultsObject.w = std::stof(dataNodeElementsElementResultsResultSubResultsSubResult["W"].asString());
+				if(!dataNodeElementsElementResultsResultSubResultsSubResult["X"].isNull())
+					subResultsObject.x = std::stof(dataNodeElementsElementResultsResultSubResultsSubResult["X"].asString());
+				if(!dataNodeElementsElementResultsResultSubResultsSubResult["Y"].isNull())
+					subResultsObject.y = std::stof(dataNodeElementsElementResultsResultSubResultsSubResult["Y"].asString());
+				auto allFacesNode = dataNodeElementsElementResultsResultSubResultsSubResult["Faces"]["Face"];
+				for (auto dataNodeElementsElementResultsResultSubResultsSubResultFacesFace : allFacesNode)
 				{
 					Data::Element::Result::SubResult::Face facesObject;
-					if(!allSubResultsNodeFacesFace["Id"].isNull())
-						facesObject.id = allSubResultsNodeFacesFace["Id"].asString();
-					if(!allSubResultsNodeFacesFace["Name"].isNull())
-						facesObject.name = allSubResultsNodeFacesFace["Name"].asString();
-					if(!allSubResultsNodeFacesFace["Rate"].isNull())
-						facesObject.rate = std::stof(allSubResultsNodeFacesFace["Rate"].asString());
+					if(!dataNodeElementsElementResultsResultSubResultsSubResultFacesFace["Id"].isNull())
+						facesObject.id = dataNodeElementsElementResultsResultSubResultsSubResultFacesFace["Id"].asString();
+					if(!dataNodeElementsElementResultsResultSubResultsSubResultFacesFace["Name"].isNull())
+						facesObject.name = dataNodeElementsElementResultsResultSubResultsSubResultFacesFace["Name"].asString();
+					if(!dataNodeElementsElementResultsResultSubResultsSubResultFacesFace["Rate"].isNull())
+						facesObject.rate = std::stof(dataNodeElementsElementResultsResultSubResultsSubResultFacesFace["Rate"].asString());
 					subResultsObject.faces.push_back(facesObject);
 				}
 				resultsObject.subResults.push_back(subResultsObject);

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_EXTRACTPEDESTRIANFEATUREATTRIBUTEREQUEST_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_EXTRACTPEDESTRIANFEATUREATTRIBUTEREQUEST_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_GENERATEHUMANANIMESTYLEREQUEST_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_GENERATEHUMANANIMESTYLEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,32 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT ExtractPedestrianFeatureAttributeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_FACEBODY_EXPORT GenerateHumanAnimeStyleRequest : public RpcServiceRequest
 			{
-			public:
-				struct UrlList
-				{
-					std::string url;
-				};
 
 			public:
-				ExtractPedestrianFeatureAttributeRequest();
-				~ExtractPedestrianFeatureAttributeRequest();
+				GenerateHumanAnimeStyleRequest();
+				~GenerateHumanAnimeStyleRequest();
 
-				std::vector<UrlList> getUrlList()const;
-				void setUrlList(const std::vector<UrlList>& urlList);
-				std::string getMode()const;
-				void setMode(const std::string& mode);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
-				std::vector<UrlList> urlList_;
-				std::string mode_;
 				std::string imageURL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_EXTRACTPEDESTRIANFEATUREATTRIBUTEREQUEST_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_GENERATEHUMANANIMESTYLEREQUEST_H_
