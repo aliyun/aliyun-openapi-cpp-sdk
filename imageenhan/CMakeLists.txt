@@ -31,6 +31,8 @@ set(imageenhan_public_header_model
 	include/alibabacloud/imageenhan/model/ChangeImageSizeResult.h
 	include/alibabacloud/imageenhan/model/EnhanceImageColorRequest.h
 	include/alibabacloud/imageenhan/model/EnhanceImageColorResult.h
+	include/alibabacloud/imageenhan/model/ErasePersonRequest.h
+	include/alibabacloud/imageenhan/model/ErasePersonResult.h
 	include/alibabacloud/imageenhan/model/ExtendImageStyleRequest.h
 	include/alibabacloud/imageenhan/model/ExtendImageStyleResult.h
 	include/alibabacloud/imageenhan/model/GenerateDynamicImageRequest.h
@@ -68,6 +70,8 @@ set(imageenhan_src
 	src/model/ChangeImageSizeResult.cc
 	src/model/EnhanceImageColorRequest.cc
 	src/model/EnhanceImageColorResult.cc
+	src/model/ErasePersonRequest.cc
+	src/model/ErasePersonResult.cc
 	src/model/ExtendImageStyleRequest.cc
 	src/model/ExtendImageStyleResult.cc
 	src/model/GenerateDynamicImageRequest.cc

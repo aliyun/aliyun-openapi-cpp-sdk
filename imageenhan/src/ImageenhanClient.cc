@@ -231,6 +231,42 @@ ImageenhanClient::EnhanceImageColorOutcomeCallable ImageenhanClient::enhanceImag
 	return task->get_future();
 }
 
+ImageenhanClient::ErasePersonOutcome ImageenhanClient::erasePerson(const ErasePersonRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ErasePersonOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ErasePersonOutcome(ErasePersonResult(outcome.result()));
+	else
+		return ErasePersonOutcome(outcome.error());
+}
+
+void ImageenhanClient::erasePersonAsync(const ErasePersonRequest& request, const ErasePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, erasePerson(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageenhanClient::ErasePersonOutcomeCallable ImageenhanClient::erasePersonCallable(const ErasePersonRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ErasePersonOutcome()>>(
+			[this, request]()
+			{
+			return this->erasePerson(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageenhanClient::ExtendImageStyleOutcome ImageenhanClient::extendImageStyle(const ExtendImageStyleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

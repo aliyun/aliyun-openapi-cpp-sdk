@@ -32,6 +32,8 @@
 #include "model/ChangeImageSizeResult.h"
 #include "model/EnhanceImageColorRequest.h"
 #include "model/EnhanceImageColorResult.h"
+#include "model/ErasePersonRequest.h"
+#include "model/ErasePersonResult.h"
 #include "model/ExtendImageStyleRequest.h"
 #include "model/ExtendImageStyleResult.h"
 #include "model/GenerateDynamicImageRequest.h"
@@ -80,6 +82,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnhanceImageColorResult> EnhanceImageColorOutcome;
 			typedef std::future<EnhanceImageColorOutcome> EnhanceImageColorOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::EnhanceImageColorRequest&, const EnhanceImageColorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceImageColorAsyncHandler;
+			typedef Outcome<Error, Model::ErasePersonResult> ErasePersonOutcome;
+			typedef std::future<ErasePersonOutcome> ErasePersonOutcomeCallable;
+			typedef std::function<void(const ImageenhanClient*, const Model::ErasePersonRequest&, const ErasePersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ErasePersonAsyncHandler;
 			typedef Outcome<Error, Model::ExtendImageStyleResult> ExtendImageStyleOutcome;
 			typedef std::future<ExtendImageStyleOutcome> ExtendImageStyleOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::ExtendImageStyleRequest&, const ExtendImageStyleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtendImageStyleAsyncHandler;
@@ -136,6 +141,9 @@ namespace AlibabaCloud
 			EnhanceImageColorOutcome enhanceImageColor(const Model::EnhanceImageColorRequest &request)const;
 			void enhanceImageColorAsync(const Model::EnhanceImageColorRequest& request, const EnhanceImageColorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnhanceImageColorOutcomeCallable enhanceImageColorCallable(const Model::EnhanceImageColorRequest& request) const;
+			ErasePersonOutcome erasePerson(const Model::ErasePersonRequest &request)const;
+			void erasePersonAsync(const Model::ErasePersonRequest& request, const ErasePersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ErasePersonOutcomeCallable erasePersonCallable(const Model::ErasePersonRequest& request) const;
 			ExtendImageStyleOutcome extendImageStyle(const Model::ExtendImageStyleRequest &request)const;
 			void extendImageStyleAsync(const Model::ExtendImageStyleRequest& request, const ExtendImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExtendImageStyleOutcomeCallable extendImageStyleCallable(const Model::ExtendImageStyleRequest& request) const;
