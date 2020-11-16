@@ -65,18 +65,18 @@ void DescribeElasticityAssurancesResult::parse(const std::string &payload)
 			elasticityAssuranceSetObject.endTime = valueElasticityAssuranceSetElasticityAssuranceItem["EndTime"].asString();
 		if(!valueElasticityAssuranceSetElasticityAssuranceItem["LatestStartTime"].isNull())
 			elasticityAssuranceSetObject.latestStartTime = valueElasticityAssuranceSetElasticityAssuranceItem["LatestStartTime"].asString();
-		auto allAllocatedResourcesNode = allElasticityAssuranceSetNode["AllocatedResources"]["AllocatedResource"];
-		for (auto allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
+		auto allAllocatedResourcesNode = valueElasticityAssuranceSetElasticityAssuranceItem["AllocatedResources"]["AllocatedResource"];
+		for (auto valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{
 			ElasticityAssuranceItem::AllocatedResource allocatedResourcesObject;
-			if(!allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource["zoneId"].isNull())
-				allocatedResourcesObject.zoneId = allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource["zoneId"].asString();
-			if(!allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource["InstanceType"].isNull())
-				allocatedResourcesObject.instanceType = allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource["InstanceType"].asString();
-			if(!allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource["TotalAmount"].isNull())
-				allocatedResourcesObject.totalAmount = std::stoi(allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource["TotalAmount"].asString());
-			if(!allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource["UsedAmount"].isNull())
-				allocatedResourcesObject.usedAmount = std::stoi(allElasticityAssuranceSetNodeAllocatedResourcesAllocatedResource["UsedAmount"].asString());
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["zoneId"].isNull())
+				allocatedResourcesObject.zoneId = valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["zoneId"].asString();
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["InstanceType"].isNull())
+				allocatedResourcesObject.instanceType = valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["InstanceType"].asString();
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["TotalAmount"].isNull())
+				allocatedResourcesObject.totalAmount = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["TotalAmount"].asString());
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["UsedAmount"].isNull())
+				allocatedResourcesObject.usedAmount = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["UsedAmount"].asString());
 			elasticityAssuranceSetObject.allocatedResources.push_back(allocatedResourcesObject);
 		}
 		elasticityAssuranceSet_.push_back(elasticityAssuranceSetObject);

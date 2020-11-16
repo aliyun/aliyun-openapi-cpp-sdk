@@ -45,14 +45,14 @@ void DescribeSecurityGroupReferencesResult::parse(const std::string &payload)
 		SecurityGroupReference securityGroupReferencesObject;
 		if(!valueSecurityGroupReferencesSecurityGroupReference["SecurityGroupId"].isNull())
 			securityGroupReferencesObject.securityGroupId = valueSecurityGroupReferencesSecurityGroupReference["SecurityGroupId"].asString();
-		auto allReferencingSecurityGroupsNode = allSecurityGroupReferencesNode["ReferencingSecurityGroups"]["ReferencingSecurityGroup"];
-		for (auto allSecurityGroupReferencesNodeReferencingSecurityGroupsReferencingSecurityGroup : allReferencingSecurityGroupsNode)
+		auto allReferencingSecurityGroupsNode = valueSecurityGroupReferencesSecurityGroupReference["ReferencingSecurityGroups"]["ReferencingSecurityGroup"];
+		for (auto valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup : allReferencingSecurityGroupsNode)
 		{
 			SecurityGroupReference::ReferencingSecurityGroup referencingSecurityGroupsObject;
-			if(!allSecurityGroupReferencesNodeReferencingSecurityGroupsReferencingSecurityGroup["AliUid"].isNull())
-				referencingSecurityGroupsObject.aliUid = allSecurityGroupReferencesNodeReferencingSecurityGroupsReferencingSecurityGroup["AliUid"].asString();
-			if(!allSecurityGroupReferencesNodeReferencingSecurityGroupsReferencingSecurityGroup["SecurityGroupId"].isNull())
-				referencingSecurityGroupsObject.securityGroupId = allSecurityGroupReferencesNodeReferencingSecurityGroupsReferencingSecurityGroup["SecurityGroupId"].asString();
+			if(!valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["AliUid"].isNull())
+				referencingSecurityGroupsObject.aliUid = valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["AliUid"].asString();
+			if(!valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["SecurityGroupId"].isNull())
+				referencingSecurityGroupsObject.securityGroupId = valueSecurityGroupReferencesSecurityGroupReferenceReferencingSecurityGroupsReferencingSecurityGroup["SecurityGroupId"].asString();
 			securityGroupReferencesObject.referencingSecurityGroups.push_back(referencingSecurityGroupsObject);
 		}
 		securityGroupReferences_.push_back(securityGroupReferencesObject);

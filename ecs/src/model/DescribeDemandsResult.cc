@@ -79,18 +79,18 @@ void DescribeDemandsResult::parse(const std::string &payload)
 			demandsObject.usedAmount = std::stoi(valueDemandsDemand["UsedAmount"].asString());
 		if(!valueDemandsDemand["DeliveringAmount"].isNull())
 			demandsObject.deliveringAmount = std::stoi(valueDemandsDemand["DeliveringAmount"].asString());
-		auto allSupplyInfosNode = allDemandsNode["SupplyInfos"]["SupplyInfo"];
-		for (auto allDemandsNodeSupplyInfosSupplyInfo : allSupplyInfosNode)
+		auto allSupplyInfosNode = valueDemandsDemand["SupplyInfos"]["SupplyInfo"];
+		for (auto valueDemandsDemandSupplyInfosSupplyInfo : allSupplyInfosNode)
 		{
 			Demand::SupplyInfo supplyInfosObject;
-			if(!allDemandsNodeSupplyInfosSupplyInfo["Amount"].isNull())
-				supplyInfosObject.amount = std::stoi(allDemandsNodeSupplyInfosSupplyInfo["Amount"].asString());
-			if(!allDemandsNodeSupplyInfosSupplyInfo["SupplyStatus"].isNull())
-				supplyInfosObject.supplyStatus = allDemandsNodeSupplyInfosSupplyInfo["SupplyStatus"].asString();
-			if(!allDemandsNodeSupplyInfosSupplyInfo["SupplyStartTime"].isNull())
-				supplyInfosObject.supplyStartTime = allDemandsNodeSupplyInfosSupplyInfo["SupplyStartTime"].asString();
-			if(!allDemandsNodeSupplyInfosSupplyInfo["SupplyEndTime"].isNull())
-				supplyInfosObject.supplyEndTime = allDemandsNodeSupplyInfosSupplyInfo["SupplyEndTime"].asString();
+			if(!valueDemandsDemandSupplyInfosSupplyInfo["Amount"].isNull())
+				supplyInfosObject.amount = std::stoi(valueDemandsDemandSupplyInfosSupplyInfo["Amount"].asString());
+			if(!valueDemandsDemandSupplyInfosSupplyInfo["SupplyStatus"].isNull())
+				supplyInfosObject.supplyStatus = valueDemandsDemandSupplyInfosSupplyInfo["SupplyStatus"].asString();
+			if(!valueDemandsDemandSupplyInfosSupplyInfo["SupplyStartTime"].isNull())
+				supplyInfosObject.supplyStartTime = valueDemandsDemandSupplyInfosSupplyInfo["SupplyStartTime"].asString();
+			if(!valueDemandsDemandSupplyInfosSupplyInfo["SupplyEndTime"].isNull())
+				supplyInfosObject.supplyEndTime = valueDemandsDemandSupplyInfosSupplyInfo["SupplyEndTime"].asString();
 			demandsObject.supplyInfos.push_back(supplyInfosObject);
 		}
 		demands_.push_back(demandsObject);

@@ -49,18 +49,18 @@ void DescribeDisksFullStatusResult::parse(const std::string &payload)
 			diskFullStatusSetObject.instanceId = valueDiskFullStatusSetDiskFullStatusType["InstanceId"].asString();
 		if(!valueDiskFullStatusSetDiskFullStatusType["Device"].isNull())
 			diskFullStatusSetObject.device = valueDiskFullStatusSetDiskFullStatusType["Device"].asString();
-		auto allDiskEventSetNode = allDiskFullStatusSetNode["DiskEventSet"]["DiskEventType"];
-		for (auto allDiskFullStatusSetNodeDiskEventSetDiskEventType : allDiskEventSetNode)
+		auto allDiskEventSetNode = valueDiskFullStatusSetDiskFullStatusType["DiskEventSet"]["DiskEventType"];
+		for (auto valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType : allDiskEventSetNode)
 		{
 			DiskFullStatusType::DiskEventType diskEventSetObject;
-			if(!allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventId"].isNull())
-				diskEventSetObject.eventId = allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventId"].asString();
-			if(!allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventTime"].isNull())
-				diskEventSetObject.eventTime = allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventTime"].asString();
-			if(!allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventEndTime"].isNull())
-				diskEventSetObject.eventEndTime = allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventEndTime"].asString();
-			if(!allDiskFullStatusSetNodeDiskEventSetDiskEventType["ImpactLevel"].isNull())
-				diskEventSetObject.impactLevel = allDiskFullStatusSetNodeDiskEventSetDiskEventType["ImpactLevel"].asString();
+			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventId"].isNull())
+				diskEventSetObject.eventId = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventId"].asString();
+			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventTime"].isNull())
+				diskEventSetObject.eventTime = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventTime"].asString();
+			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventEndTime"].isNull())
+				diskEventSetObject.eventEndTime = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["EventEndTime"].asString();
+			if(!valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["ImpactLevel"].isNull())
+				diskEventSetObject.impactLevel = valueDiskFullStatusSetDiskFullStatusTypeDiskEventSetDiskEventType["ImpactLevel"].asString();
 			auto eventTypeNode = value["EventType"];
 			if(!eventTypeNode["Code"].isNull())
 				diskEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());

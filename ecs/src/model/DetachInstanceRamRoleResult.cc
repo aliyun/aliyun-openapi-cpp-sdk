@@ -51,14 +51,14 @@ void DetachInstanceRamRoleResult::parse(const std::string &payload)
 			detachInstanceRamRoleResultsObject.code = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Code"].asString();
 		if(!valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Message"].isNull())
 			detachInstanceRamRoleResultsObject.message = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["Message"].asString();
-		auto allInstanceRamRoleSetsNode = allDetachInstanceRamRoleResultsNode["InstanceRamRoleSets"]["InstanceRamRoleSet"];
-		for (auto allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet : allInstanceRamRoleSetsNode)
+		auto allInstanceRamRoleSetsNode = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResult["InstanceRamRoleSets"]["InstanceRamRoleSet"];
+		for (auto valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResultInstanceRamRoleSetsInstanceRamRoleSet : allInstanceRamRoleSetsNode)
 		{
 			Result::InstanceRamRoleSet instanceRamRoleSetsObject;
-			if(!allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].isNull())
-				instanceRamRoleSetsObject.instanceId = allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].asString();
-			if(!allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].isNull())
-				instanceRamRoleSetsObject.ramRoleName = allDetachInstanceRamRoleResultsNodeInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].asString();
+			if(!valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResultInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].isNull())
+				instanceRamRoleSetsObject.instanceId = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResultInstanceRamRoleSetsInstanceRamRoleSet["InstanceId"].asString();
+			if(!valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResultInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].isNull())
+				instanceRamRoleSetsObject.ramRoleName = valueDetachInstanceRamRoleResultsDetachInstanceRamRoleResultInstanceRamRoleSetsInstanceRamRoleSet["RamRoleName"].asString();
 			detachInstanceRamRoleResultsObject.instanceRamRoleSets.push_back(instanceRamRoleSetsObject);
 		}
 		detachInstanceRamRoleResults_.push_back(detachInstanceRamRoleResultsObject);

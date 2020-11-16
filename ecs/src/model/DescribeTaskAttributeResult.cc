@@ -49,14 +49,14 @@ void DescribeTaskAttributeResult::parse(const std::string &payload)
 			operationProgressSetObject.errorCode = valueOperationProgressSetOperationProgress["ErrorCode"].asString();
 		if(!valueOperationProgressSetOperationProgress["ErrorMsg"].isNull())
 			operationProgressSetObject.errorMsg = valueOperationProgressSetOperationProgress["ErrorMsg"].asString();
-		auto allRelatedItemSetNode = allOperationProgressSetNode["RelatedItemSet"]["RelatedItem"];
-		for (auto allOperationProgressSetNodeRelatedItemSetRelatedItem : allRelatedItemSetNode)
+		auto allRelatedItemSetNode = valueOperationProgressSetOperationProgress["RelatedItemSet"]["RelatedItem"];
+		for (auto valueOperationProgressSetOperationProgressRelatedItemSetRelatedItem : allRelatedItemSetNode)
 		{
 			OperationProgress::RelatedItem relatedItemSetObject;
-			if(!allOperationProgressSetNodeRelatedItemSetRelatedItem["Name"].isNull())
-				relatedItemSetObject.name = allOperationProgressSetNodeRelatedItemSetRelatedItem["Name"].asString();
-			if(!allOperationProgressSetNodeRelatedItemSetRelatedItem["Value"].isNull())
-				relatedItemSetObject.value = allOperationProgressSetNodeRelatedItemSetRelatedItem["Value"].asString();
+			if(!valueOperationProgressSetOperationProgressRelatedItemSetRelatedItem["Name"].isNull())
+				relatedItemSetObject.name = valueOperationProgressSetOperationProgressRelatedItemSetRelatedItem["Name"].asString();
+			if(!valueOperationProgressSetOperationProgressRelatedItemSetRelatedItem["Value"].isNull())
+				relatedItemSetObject.value = valueOperationProgressSetOperationProgressRelatedItemSetRelatedItem["Value"].asString();
 			operationProgressSetObject.relatedItemSet.push_back(relatedItemSetObject);
 		}
 		operationProgressSet_.push_back(operationProgressSetObject);

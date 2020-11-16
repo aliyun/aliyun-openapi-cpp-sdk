@@ -51,14 +51,14 @@ void DescribeAutoProvisioningGroupHistoryResult::parse(const std::string &payloa
 			autoProvisioningGroupHistoriesObject.lastEventTime = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["LastEventTime"].asString();
 		if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["StartTime"].isNull())
 			autoProvisioningGroupHistoriesObject.startTime = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["StartTime"].asString();
-		auto allActivityDetailsNode = allAutoProvisioningGroupHistoriesNode["ActivityDetails"]["ActivityDetail"];
-		for (auto allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail : allActivityDetailsNode)
+		auto allActivityDetailsNode = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistory["ActivityDetails"]["ActivityDetail"];
+		for (auto valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail : allActivityDetailsNode)
 		{
 			AutoProvisioningGroupHistory::ActivityDetail activityDetailsObject;
-			if(!allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail["Detail"].isNull())
-				activityDetailsObject.detail = allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail["Detail"].asString();
-			if(!allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail["Status"].isNull())
-				activityDetailsObject.status = allAutoProvisioningGroupHistoriesNodeActivityDetailsActivityDetail["Status"].asString();
+			if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Detail"].isNull())
+				activityDetailsObject.detail = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Detail"].asString();
+			if(!valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Status"].isNull())
+				activityDetailsObject.status = valueAutoProvisioningGroupHistoriesAutoProvisioningGroupHistoryActivityDetailsActivityDetail["Status"].asString();
 			autoProvisioningGroupHistoriesObject.activityDetails.push_back(activityDetailsObject);
 		}
 		autoProvisioningGroupHistories_.push_back(autoProvisioningGroupHistoriesObject);

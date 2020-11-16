@@ -236,6 +236,17 @@ void CreateCapacityReservationRequest::setPeriodUnit(const std::string& periodUn
 	setParameter("PeriodUnit", periodUnit);
 }
 
+std::string CreateCapacityReservationRequest::getTimeSlot()const
+{
+	return timeSlot_;
+}
+
+void CreateCapacityReservationRequest::setTimeSlot(const std::string& timeSlot)
+{
+	timeSlot_ = timeSlot;
+	setParameter("TimeSlot", timeSlot);
+}
+
 std::vector<std::string> CreateCapacityReservationRequest::getZoneId()const
 {
 	return zoneId_;

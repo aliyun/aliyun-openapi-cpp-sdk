@@ -85,14 +85,14 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.category = valueSnapshotsSnapshot["Category"].asString();
 		if(!valueSnapshotsSnapshot["SnapshotType"].isNull())
 			snapshotsObject.snapshotType = valueSnapshotsSnapshot["SnapshotType"].asString();
-		auto allTagsNode = allSnapshotsNode["Tags"]["Tag"];
-		for (auto allSnapshotsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueSnapshotsSnapshot["Tags"]["Tag"];
+		for (auto valueSnapshotsSnapshotTagsTag : allTagsNode)
 		{
 			Snapshot::Tag tagsObject;
-			if(!allSnapshotsNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allSnapshotsNodeTagsTag["TagKey"].asString();
-			if(!allSnapshotsNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allSnapshotsNodeTagsTag["TagValue"].asString();
+			if(!valueSnapshotsSnapshotTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueSnapshotsSnapshotTagsTag["TagKey"].asString();
+			if(!valueSnapshotsSnapshotTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueSnapshotsSnapshotTagsTag["TagValue"].asString();
 			snapshotsObject.tags.push_back(tagsObject);
 		}
 		snapshots_.push_back(snapshotsObject);

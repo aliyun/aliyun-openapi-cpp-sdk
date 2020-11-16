@@ -59,14 +59,14 @@ void DescribeLaunchTemplatesResult::parse(const std::string &payload)
 			launchTemplateSetsObject.createdBy = valueLaunchTemplateSetsLaunchTemplateSet["CreatedBy"].asString();
 		if(!valueLaunchTemplateSetsLaunchTemplateSet["ResourceGroupId"].isNull())
 			launchTemplateSetsObject.resourceGroupId = valueLaunchTemplateSetsLaunchTemplateSet["ResourceGroupId"].asString();
-		auto allTagsNode = allLaunchTemplateSetsNode["Tags"]["Tag"];
-		for (auto allLaunchTemplateSetsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueLaunchTemplateSetsLaunchTemplateSet["Tags"]["Tag"];
+		for (auto valueLaunchTemplateSetsLaunchTemplateSetTagsTag : allTagsNode)
 		{
 			LaunchTemplateSet::Tag tagsObject;
-			if(!allLaunchTemplateSetsNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allLaunchTemplateSetsNodeTagsTag["TagKey"].asString();
-			if(!allLaunchTemplateSetsNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allLaunchTemplateSetsNodeTagsTag["TagValue"].asString();
+			if(!valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagKey"].asString();
+			if(!valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueLaunchTemplateSetsLaunchTemplateSetTagsTag["TagValue"].asString();
 			launchTemplateSetsObject.tags.push_back(tagsObject);
 		}
 		launchTemplateSets_.push_back(launchTemplateSetsObject);

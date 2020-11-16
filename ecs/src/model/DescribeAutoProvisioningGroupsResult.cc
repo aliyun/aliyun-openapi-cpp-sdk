@@ -73,20 +73,20 @@ void DescribeAutoProvisioningGroupsResult::parse(const std::string &payload)
 			autoProvisioningGroupsObject.terminateInstancesWithExpiration = valueAutoProvisioningGroupsAutoProvisioningGroup["TerminateInstancesWithExpiration"].asString() == "true";
 		if(!valueAutoProvisioningGroupsAutoProvisioningGroup["CreationTime"].isNull())
 			autoProvisioningGroupsObject.creationTime = valueAutoProvisioningGroupsAutoProvisioningGroup["CreationTime"].asString();
-		auto allLaunchTemplateConfigsNode = allAutoProvisioningGroupsNode["LaunchTemplateConfigs"]["LaunchTemplateConfig"];
-		for (auto allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig : allLaunchTemplateConfigsNode)
+		auto allLaunchTemplateConfigsNode = valueAutoProvisioningGroupsAutoProvisioningGroup["LaunchTemplateConfigs"]["LaunchTemplateConfig"];
+		for (auto valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig : allLaunchTemplateConfigsNode)
 		{
 			AutoProvisioningGroup::LaunchTemplateConfig launchTemplateConfigsObject;
-			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].isNull())
-				launchTemplateConfigsObject.instanceType = allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].asString();
-			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["MaxPrice"].isNull())
-				launchTemplateConfigsObject.maxPrice = std::stof(allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["MaxPrice"].asString());
-			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["VSwitchId"].isNull())
-				launchTemplateConfigsObject.vSwitchId = allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["VSwitchId"].asString();
-			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["WeightedCapacity"].isNull())
-				launchTemplateConfigsObject.weightedCapacity = std::stof(allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["WeightedCapacity"].asString());
-			if(!allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["Priority"].isNull())
-				launchTemplateConfigsObject.priority = std::stof(allAutoProvisioningGroupsNodeLaunchTemplateConfigsLaunchTemplateConfig["Priority"].asString());
+			if(!valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].isNull())
+				launchTemplateConfigsObject.instanceType = valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["InstanceType"].asString();
+			if(!valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["MaxPrice"].isNull())
+				launchTemplateConfigsObject.maxPrice = std::stof(valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["MaxPrice"].asString());
+			if(!valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["VSwitchId"].isNull())
+				launchTemplateConfigsObject.vSwitchId = valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["VSwitchId"].asString();
+			if(!valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["WeightedCapacity"].isNull())
+				launchTemplateConfigsObject.weightedCapacity = std::stof(valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["WeightedCapacity"].asString());
+			if(!valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["Priority"].isNull())
+				launchTemplateConfigsObject.priority = std::stof(valueAutoProvisioningGroupsAutoProvisioningGroupLaunchTemplateConfigsLaunchTemplateConfig["Priority"].asString());
 			autoProvisioningGroupsObject.launchTemplateConfigs.push_back(launchTemplateConfigsObject);
 		}
 		auto spotOptionsNode = value["SpotOptions"];

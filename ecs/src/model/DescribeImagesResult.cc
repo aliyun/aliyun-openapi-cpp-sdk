@@ -89,38 +89,38 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.isCopied = valueImagesImage["IsCopied"].asString() == "true";
 		if(!valueImagesImage["ResourceGroupId"].isNull())
 			imagesObject.resourceGroupId = valueImagesImage["ResourceGroupId"].asString();
-		auto allDiskDeviceMappingsNode = allImagesNode["DiskDeviceMappings"]["DiskDeviceMapping"];
-		for (auto allImagesNodeDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
+		auto allDiskDeviceMappingsNode = valueImagesImage["DiskDeviceMappings"]["DiskDeviceMapping"];
+		for (auto valueImagesImageDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
 		{
 			Image::DiskDeviceMapping diskDeviceMappingsObject;
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["SnapshotId"].isNull())
-				diskDeviceMappingsObject.snapshotId = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["SnapshotId"].asString();
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Size"].isNull())
-				diskDeviceMappingsObject.size = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Size"].asString();
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Device"].isNull())
-				diskDeviceMappingsObject.device = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Device"].asString();
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Type"].isNull())
-				diskDeviceMappingsObject.type = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Type"].asString();
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Format"].isNull())
-				diskDeviceMappingsObject.format = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Format"].asString();
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].isNull())
-				diskDeviceMappingsObject.importOSSBucket = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].asString();
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].isNull())
-				diskDeviceMappingsObject.importOSSObject = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].asString();
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Progress"].isNull())
-				diskDeviceMappingsObject.progress = allImagesNodeDiskDeviceMappingsDiskDeviceMapping["Progress"].asString();
-			if(!allImagesNodeDiskDeviceMappingsDiskDeviceMapping["RemainTime"].isNull())
-				diskDeviceMappingsObject.remainTime = std::stoi(allImagesNodeDiskDeviceMappingsDiskDeviceMapping["RemainTime"].asString());
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["SnapshotId"].isNull())
+				diskDeviceMappingsObject.snapshotId = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["SnapshotId"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Size"].isNull())
+				diskDeviceMappingsObject.size = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Size"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Device"].isNull())
+				diskDeviceMappingsObject.device = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Device"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Type"].isNull())
+				diskDeviceMappingsObject.type = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Type"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Format"].isNull())
+				diskDeviceMappingsObject.format = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Format"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].isNull())
+				diskDeviceMappingsObject.importOSSBucket = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["ImportOSSBucket"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].isNull())
+				diskDeviceMappingsObject.importOSSObject = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["ImportOSSObject"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Progress"].isNull())
+				diskDeviceMappingsObject.progress = valueImagesImageDiskDeviceMappingsDiskDeviceMapping["Progress"].asString();
+			if(!valueImagesImageDiskDeviceMappingsDiskDeviceMapping["RemainTime"].isNull())
+				diskDeviceMappingsObject.remainTime = std::stoi(valueImagesImageDiskDeviceMappingsDiskDeviceMapping["RemainTime"].asString());
 			imagesObject.diskDeviceMappings.push_back(diskDeviceMappingsObject);
 		}
-		auto allTagsNode = allImagesNode["Tags"]["Tag"];
-		for (auto allImagesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueImagesImage["Tags"]["Tag"];
+		for (auto valueImagesImageTagsTag : allTagsNode)
 		{
 			Image::Tag tagsObject;
-			if(!allImagesNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allImagesNodeTagsTag["TagKey"].asString();
-			if(!allImagesNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allImagesNodeTagsTag["TagValue"].asString();
+			if(!valueImagesImageTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueImagesImageTagsTag["TagKey"].asString();
+			if(!valueImagesImageTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueImagesImageTagsTag["TagValue"].asString();
 			imagesObject.tags.push_back(tagsObject);
 		}
 		images_.push_back(imagesObject);

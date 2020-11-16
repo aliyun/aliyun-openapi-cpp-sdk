@@ -55,14 +55,14 @@ void DescribeDedicatedHostClustersResult::parse(const std::string &payload)
 			dedicatedHostClustersObject.description = valueDedicatedHostClustersDedicatedHostCluster["Description"].asString();
 		if(!valueDedicatedHostClustersDedicatedHostCluster["ResourceGroupId"].isNull())
 			dedicatedHostClustersObject.resourceGroupId = valueDedicatedHostClustersDedicatedHostCluster["ResourceGroupId"].asString();
-		auto allTagsNode = allDedicatedHostClustersNode["Tags"]["Tag"];
-		for (auto allDedicatedHostClustersNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueDedicatedHostClustersDedicatedHostCluster["Tags"]["Tag"];
+		for (auto valueDedicatedHostClustersDedicatedHostClusterTagsTag : allTagsNode)
 		{
 			DedicatedHostCluster::Tag tagsObject;
-			if(!allDedicatedHostClustersNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allDedicatedHostClustersNodeTagsTag["TagKey"].asString();
-			if(!allDedicatedHostClustersNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allDedicatedHostClustersNodeTagsTag["TagValue"].asString();
+			if(!valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagKey"].asString();
+			if(!valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueDedicatedHostClustersDedicatedHostClusterTagsTag["TagValue"].asString();
 			dedicatedHostClustersObject.tags.push_back(tagsObject);
 		}
 		auto dedicatedHostClusterCapacityNode = value["DedicatedHostClusterCapacity"];

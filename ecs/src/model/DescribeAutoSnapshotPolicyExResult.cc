@@ -69,14 +69,14 @@ void DescribeAutoSnapshotPolicyExResult::parse(const std::string &payload)
 			autoSnapshotPoliciesObject.targetCopyRegions = valueAutoSnapshotPoliciesAutoSnapshotPolicy["TargetCopyRegions"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["CopiedSnapshotsRetentionDays"].isNull())
 			autoSnapshotPoliciesObject.copiedSnapshotsRetentionDays = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["CopiedSnapshotsRetentionDays"].asString());
-		auto allTagsNode = allAutoSnapshotPoliciesNode["Tags"]["Tag"];
-		for (auto allAutoSnapshotPoliciesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Tags"]["Tag"];
+		for (auto valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag : allTagsNode)
 		{
 			AutoSnapshotPolicy::Tag tagsObject;
-			if(!allAutoSnapshotPoliciesNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allAutoSnapshotPoliciesNodeTagsTag["TagKey"].asString();
-			if(!allAutoSnapshotPoliciesNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allAutoSnapshotPoliciesNodeTagsTag["TagValue"].asString();
+			if(!valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagKey"].asString();
+			if(!valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueAutoSnapshotPoliciesAutoSnapshotPolicyTagsTag["TagValue"].asString();
 			autoSnapshotPoliciesObject.tags.push_back(tagsObject);
 		}
 		autoSnapshotPolicies_.push_back(autoSnapshotPoliciesObject);

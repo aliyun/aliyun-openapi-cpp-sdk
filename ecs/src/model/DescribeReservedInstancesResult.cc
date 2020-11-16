@@ -75,22 +75,22 @@ void DescribeReservedInstancesResult::parse(const std::string &payload)
 			reservedInstancesObject.resourceGroupId = valueReservedInstancesReservedInstance["ResourceGroupId"].asString();
 		if(!valueReservedInstancesReservedInstance["AllocationStatus"].isNull())
 			reservedInstancesObject.allocationStatus = valueReservedInstancesReservedInstance["AllocationStatus"].asString();
-		auto allOperationLocksNode = allReservedInstancesNode["OperationLocks"]["OperationLock"];
-		for (auto allReservedInstancesNodeOperationLocksOperationLock : allOperationLocksNode)
+		auto allOperationLocksNode = valueReservedInstancesReservedInstance["OperationLocks"]["OperationLock"];
+		for (auto valueReservedInstancesReservedInstanceOperationLocksOperationLock : allOperationLocksNode)
 		{
 			ReservedInstance::OperationLock operationLocksObject;
-			if(!allReservedInstancesNodeOperationLocksOperationLock["LockReason"].isNull())
-				operationLocksObject.lockReason = allReservedInstancesNodeOperationLocksOperationLock["LockReason"].asString();
+			if(!valueReservedInstancesReservedInstanceOperationLocksOperationLock["LockReason"].isNull())
+				operationLocksObject.lockReason = valueReservedInstancesReservedInstanceOperationLocksOperationLock["LockReason"].asString();
 			reservedInstancesObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allTagsNode = allReservedInstancesNode["Tags"]["Tag"];
-		for (auto allReservedInstancesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueReservedInstancesReservedInstance["Tags"]["Tag"];
+		for (auto valueReservedInstancesReservedInstanceTagsTag : allTagsNode)
 		{
 			ReservedInstance::Tag tagsObject;
-			if(!allReservedInstancesNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allReservedInstancesNodeTagsTag["TagKey"].asString();
-			if(!allReservedInstancesNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allReservedInstancesNodeTagsTag["TagValue"].asString();
+			if(!valueReservedInstancesReservedInstanceTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueReservedInstancesReservedInstanceTagsTag["TagKey"].asString();
+			if(!valueReservedInstancesReservedInstanceTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueReservedInstancesReservedInstanceTagsTag["TagValue"].asString();
 			reservedInstancesObject.tags.push_back(tagsObject);
 		}
 		reservedInstances_.push_back(reservedInstancesObject);

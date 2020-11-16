@@ -51,14 +51,14 @@ void DescribeKeyPairsResult::parse(const std::string &payload)
 			keyPairsObject.creationTime = valueKeyPairsKeyPair["CreationTime"].asString();
 		if(!valueKeyPairsKeyPair["ResourceGroupId"].isNull())
 			keyPairsObject.resourceGroupId = valueKeyPairsKeyPair["ResourceGroupId"].asString();
-		auto allTagsNode = allKeyPairsNode["Tags"]["Tag"];
-		for (auto allKeyPairsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueKeyPairsKeyPair["Tags"]["Tag"];
+		for (auto valueKeyPairsKeyPairTagsTag : allTagsNode)
 		{
 			KeyPair::Tag tagsObject;
-			if(!allKeyPairsNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allKeyPairsNodeTagsTag["TagKey"].asString();
-			if(!allKeyPairsNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allKeyPairsNodeTagsTag["TagValue"].asString();
+			if(!valueKeyPairsKeyPairTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueKeyPairsKeyPairTagsTag["TagKey"].asString();
+			if(!valueKeyPairsKeyPairTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueKeyPairsKeyPairTagsTag["TagValue"].asString();
 			keyPairsObject.tags.push_back(tagsObject);
 		}
 		keyPairs_.push_back(keyPairsObject);

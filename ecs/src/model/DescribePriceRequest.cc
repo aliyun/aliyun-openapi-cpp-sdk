@@ -60,6 +60,17 @@ void DescribePriceRequest::setDataDisk3Category(const std::string& dataDisk3Cate
 	setParameter("DataDisk3Category", dataDisk3Category);
 }
 
+std::string DescribePriceRequest::getIsp()const
+{
+	return isp_;
+}
+
+void DescribePriceRequest::setIsp(const std::string& isp)
+{
+	isp_ = isp;
+	setParameter("Isp", isp);
+}
+
 int DescribePriceRequest::getDataDisk4Size()const
 {
 	return dataDisk4Size_;

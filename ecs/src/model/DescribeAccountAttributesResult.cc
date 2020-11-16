@@ -45,24 +45,24 @@ void DescribeAccountAttributesResult::parse(const std::string &payload)
 		AccountAttributeItem accountAttributeItemsObject;
 		if(!valueAccountAttributeItemsAccountAttributeItem["AttributeName"].isNull())
 			accountAttributeItemsObject.attributeName = valueAccountAttributeItemsAccountAttributeItem["AttributeName"].asString();
-		auto allAttributeValuesNode = allAccountAttributeItemsNode["AttributeValues"]["ValueItem"];
-		for (auto allAccountAttributeItemsNodeAttributeValuesValueItem : allAttributeValuesNode)
+		auto allAttributeValuesNode = valueAccountAttributeItemsAccountAttributeItem["AttributeValues"]["ValueItem"];
+		for (auto valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem : allAttributeValuesNode)
 		{
 			AccountAttributeItem::ValueItem attributeValuesObject;
-			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["Value"].isNull())
-				attributeValuesObject.value = allAccountAttributeItemsNodeAttributeValuesValueItem["Value"].asString();
-			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["ExpiredTime"].isNull())
-				attributeValuesObject.expiredTime = allAccountAttributeItemsNodeAttributeValuesValueItem["ExpiredTime"].asString();
-			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["ZoneId"].isNull())
-				attributeValuesObject.zoneId = allAccountAttributeItemsNodeAttributeValuesValueItem["ZoneId"].asString();
-			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceChargeType"].isNull())
-				attributeValuesObject.instanceChargeType = allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceChargeType"].asString();
-			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceType"].isNull())
-				attributeValuesObject.instanceType = allAccountAttributeItemsNodeAttributeValuesValueItem["InstanceType"].asString();
-			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["Count"].isNull())
-				attributeValuesObject.count = std::stoi(allAccountAttributeItemsNodeAttributeValuesValueItem["Count"].asString());
-			if(!allAccountAttributeItemsNodeAttributeValuesValueItem["DiskCategory"].isNull())
-				attributeValuesObject.diskCategory = allAccountAttributeItemsNodeAttributeValuesValueItem["DiskCategory"].asString();
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["Value"].isNull())
+				attributeValuesObject.value = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["Value"].asString();
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["ExpiredTime"].isNull())
+				attributeValuesObject.expiredTime = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["ExpiredTime"].asString();
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["ZoneId"].isNull())
+				attributeValuesObject.zoneId = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["ZoneId"].asString();
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceChargeType"].isNull())
+				attributeValuesObject.instanceChargeType = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceChargeType"].asString();
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceType"].isNull())
+				attributeValuesObject.instanceType = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["InstanceType"].asString();
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["Count"].isNull())
+				attributeValuesObject.count = std::stoi(valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["Count"].asString());
+			if(!valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["DiskCategory"].isNull())
+				attributeValuesObject.diskCategory = valueAccountAttributeItemsAccountAttributeItemAttributeValuesValueItem["DiskCategory"].asString();
 			accountAttributeItemsObject.attributeValues.push_back(attributeValuesObject);
 		}
 		accountAttributeItems_.push_back(accountAttributeItemsObject);

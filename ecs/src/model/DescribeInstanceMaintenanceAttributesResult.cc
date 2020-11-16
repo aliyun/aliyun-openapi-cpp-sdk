@@ -45,14 +45,14 @@ void DescribeInstanceMaintenanceAttributesResult::parse(const std::string &paylo
 		MaintenanceAttribute maintenanceAttributesObject;
 		if(!valueMaintenanceAttributesMaintenanceAttribute["InstanceId"].isNull())
 			maintenanceAttributesObject.instanceId = valueMaintenanceAttributesMaintenanceAttribute["InstanceId"].asString();
-		auto allMaintenanceWindowsNode = allMaintenanceAttributesNode["MaintenanceWindows"]["MaintenanceWindow"];
-		for (auto allMaintenanceAttributesNodeMaintenanceWindowsMaintenanceWindow : allMaintenanceWindowsNode)
+		auto allMaintenanceWindowsNode = valueMaintenanceAttributesMaintenanceAttribute["MaintenanceWindows"]["MaintenanceWindow"];
+		for (auto valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow : allMaintenanceWindowsNode)
 		{
 			MaintenanceAttribute::MaintenanceWindow maintenanceWindowsObject;
-			if(!allMaintenanceAttributesNodeMaintenanceWindowsMaintenanceWindow["StartTime"].isNull())
-				maintenanceWindowsObject.startTime = allMaintenanceAttributesNodeMaintenanceWindowsMaintenanceWindow["StartTime"].asString();
-			if(!allMaintenanceAttributesNodeMaintenanceWindowsMaintenanceWindow["EndTime"].isNull())
-				maintenanceWindowsObject.endTime = allMaintenanceAttributesNodeMaintenanceWindowsMaintenanceWindow["EndTime"].asString();
+			if(!valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["StartTime"].isNull())
+				maintenanceWindowsObject.startTime = valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["StartTime"].asString();
+			if(!valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["EndTime"].isNull())
+				maintenanceWindowsObject.endTime = valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow["EndTime"].asString();
 			maintenanceAttributesObject.maintenanceWindows.push_back(maintenanceWindowsObject);
 		}
 		auto actionOnMaintenanceNode = value["ActionOnMaintenance"];

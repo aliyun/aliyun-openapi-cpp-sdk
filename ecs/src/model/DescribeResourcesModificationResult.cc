@@ -51,28 +51,28 @@ void DescribeResourcesModificationResult::parse(const std::string &payload)
 			availableZonesObject.status = valueAvailableZonesAvailableZone["Status"].asString();
 		if(!valueAvailableZonesAvailableZone["StatusCategory"].isNull())
 			availableZonesObject.statusCategory = valueAvailableZonesAvailableZone["StatusCategory"].asString();
-		auto allAvailableResourcesNode = allAvailableZonesNode["AvailableResources"]["AvailableResource"];
-		for (auto allAvailableZonesNodeAvailableResourcesAvailableResource : allAvailableResourcesNode)
+		auto allAvailableResourcesNode = valueAvailableZonesAvailableZone["AvailableResources"]["AvailableResource"];
+		for (auto valueAvailableZonesAvailableZoneAvailableResourcesAvailableResource : allAvailableResourcesNode)
 		{
 			AvailableZone::AvailableResource availableResourcesObject;
-			if(!allAvailableZonesNodeAvailableResourcesAvailableResource["Type"].isNull())
-				availableResourcesObject.type = allAvailableZonesNodeAvailableResourcesAvailableResource["Type"].asString();
-			auto allSupportedResourcesNode = allAvailableResourcesNode["SupportedResources"]["SupportedResource"];
-			for (auto allAvailableResourcesNodeSupportedResourcesSupportedResource : allSupportedResourcesNode)
+			if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResource["Type"].isNull())
+				availableResourcesObject.type = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResource["Type"].asString();
+			auto allSupportedResourcesNode = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResource["SupportedResources"]["SupportedResource"];
+			for (auto valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource : allSupportedResourcesNode)
 			{
 				AvailableZone::AvailableResource::SupportedResource supportedResourcesObject;
-				if(!allAvailableResourcesNodeSupportedResourcesSupportedResource["Value"].isNull())
-					supportedResourcesObject.value = allAvailableResourcesNodeSupportedResourcesSupportedResource["Value"].asString();
-				if(!allAvailableResourcesNodeSupportedResourcesSupportedResource["Status"].isNull())
-					supportedResourcesObject.status = allAvailableResourcesNodeSupportedResourcesSupportedResource["Status"].asString();
-				if(!allAvailableResourcesNodeSupportedResourcesSupportedResource["StatusCategory"].isNull())
-					supportedResourcesObject.statusCategory = allAvailableResourcesNodeSupportedResourcesSupportedResource["StatusCategory"].asString();
-				if(!allAvailableResourcesNodeSupportedResourcesSupportedResource["Min"].isNull())
-					supportedResourcesObject.min = std::stoi(allAvailableResourcesNodeSupportedResourcesSupportedResource["Min"].asString());
-				if(!allAvailableResourcesNodeSupportedResourcesSupportedResource["Max"].isNull())
-					supportedResourcesObject.max = std::stoi(allAvailableResourcesNodeSupportedResourcesSupportedResource["Max"].asString());
-				if(!allAvailableResourcesNodeSupportedResourcesSupportedResource["Unit"].isNull())
-					supportedResourcesObject.unit = allAvailableResourcesNodeSupportedResourcesSupportedResource["Unit"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Value"].isNull())
+					supportedResourcesObject.value = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Value"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Status"].isNull())
+					supportedResourcesObject.status = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Status"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["StatusCategory"].isNull())
+					supportedResourcesObject.statusCategory = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["StatusCategory"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Min"].isNull())
+					supportedResourcesObject.min = std::stoi(valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Min"].asString());
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Max"].isNull())
+					supportedResourcesObject.max = std::stoi(valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Max"].asString());
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Unit"].isNull())
+					supportedResourcesObject.unit = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Unit"].asString();
 				availableResourcesObject.supportedResources.push_back(supportedResourcesObject);
 			}
 			availableZonesObject.availableResources.push_back(availableResourcesObject);

@@ -71,14 +71,14 @@ void DescribeBandwidthPackagesResult::parse(const std::string &payload)
 			bandwidthPackagesObject.creationTime = valueBandwidthPackagesBandwidthPackage["CreationTime"].asString();
 		if(!valueBandwidthPackagesBandwidthPackage["Status"].isNull())
 			bandwidthPackagesObject.status = valueBandwidthPackagesBandwidthPackage["Status"].asString();
-		auto allPublicIpAddressesNode = allBandwidthPackagesNode["PublicIpAddresses"]["PublicIpAddresse"];
-		for (auto allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse : allPublicIpAddressesNode)
+		auto allPublicIpAddressesNode = valueBandwidthPackagesBandwidthPackage["PublicIpAddresses"]["PublicIpAddresse"];
+		for (auto valueBandwidthPackagesBandwidthPackagePublicIpAddressesPublicIpAddresse : allPublicIpAddressesNode)
 		{
 			BandwidthPackage::PublicIpAddresse publicIpAddressesObject;
-			if(!allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["AllocationId"].isNull())
-				publicIpAddressesObject.allocationId = allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["AllocationId"].asString();
-			if(!allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["IpAddress"].isNull())
-				publicIpAddressesObject.ipAddress = allBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["IpAddress"].asString();
+			if(!valueBandwidthPackagesBandwidthPackagePublicIpAddressesPublicIpAddresse["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = valueBandwidthPackagesBandwidthPackagePublicIpAddressesPublicIpAddresse["AllocationId"].asString();
+			if(!valueBandwidthPackagesBandwidthPackagePublicIpAddressesPublicIpAddresse["IpAddress"].isNull())
+				publicIpAddressesObject.ipAddress = valueBandwidthPackagesBandwidthPackagePublicIpAddressesPublicIpAddresse["IpAddress"].asString();
 			bandwidthPackagesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
 		bandwidthPackages_.push_back(bandwidthPackagesObject);

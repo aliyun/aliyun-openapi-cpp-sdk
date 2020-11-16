@@ -45,20 +45,20 @@ void DescribeInstancesFullStatusResult::parse(const std::string &payload)
 		InstanceFullStatusType instanceFullStatusSetObject;
 		if(!valueInstanceFullStatusSetInstanceFullStatusType["InstanceId"].isNull())
 			instanceFullStatusSetObject.instanceId = valueInstanceFullStatusSetInstanceFullStatusType["InstanceId"].asString();
-		auto allScheduledSystemEventSetNode = allInstanceFullStatusSetNode["ScheduledSystemEventSet"]["ScheduledSystemEventType"];
-		for (auto allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType : allScheduledSystemEventSetNode)
+		auto allScheduledSystemEventSetNode = valueInstanceFullStatusSetInstanceFullStatusType["ScheduledSystemEventSet"]["ScheduledSystemEventType"];
+		for (auto valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType : allScheduledSystemEventSetNode)
 		{
 			InstanceFullStatusType::ScheduledSystemEventType scheduledSystemEventSetObject;
-			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["EventId"].isNull())
-				scheduledSystemEventSetObject.eventId = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["EventId"].asString();
-			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["EventPublishTime"].isNull())
-				scheduledSystemEventSetObject.eventPublishTime = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["EventPublishTime"].asString();
-			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].isNull())
-				scheduledSystemEventSetObject.notBefore = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].asString();
-			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["Reason"].isNull())
-				scheduledSystemEventSetObject.reason = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["Reason"].asString();
-			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["ImpactLevel"].isNull())
-				scheduledSystemEventSetObject.impactLevel = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["ImpactLevel"].asString();
+			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventId"].isNull())
+				scheduledSystemEventSetObject.eventId = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventId"].asString();
+			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventPublishTime"].isNull())
+				scheduledSystemEventSetObject.eventPublishTime = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["EventPublishTime"].asString();
+			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].isNull())
+				scheduledSystemEventSetObject.notBefore = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].asString();
+			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["Reason"].isNull())
+				scheduledSystemEventSetObject.reason = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["Reason"].asString();
+			if(!valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["ImpactLevel"].isNull())
+				scheduledSystemEventSetObject.impactLevel = valueInstanceFullStatusSetInstanceFullStatusTypeScheduledSystemEventSetScheduledSystemEventType["ImpactLevel"].asString();
 			auto eventCycleStatusNode = value["EventCycleStatus"];
 			if(!eventCycleStatusNode["Code"].isNull())
 				scheduledSystemEventSetObject.eventCycleStatus.code = std::stoi(eventCycleStatusNode["Code"].asString());

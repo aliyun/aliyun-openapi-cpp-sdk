@@ -143,6 +143,7 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string clusterId;
 					std::string hpcClusterId;
+					std::string iSP;
 					int deploymentSetGroupNo;
 					EcsCapacityReservationAttr ecsCapacityReservationAttr;
 					DedicatedHostAttribute dedicatedHostAttribute;

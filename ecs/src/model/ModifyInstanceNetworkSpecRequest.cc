@@ -49,6 +49,17 @@ void ModifyInstanceNetworkSpecRequest::setClientToken(const std::string& clientT
 	setParameter("ClientToken", clientToken);
 }
 
+std::string ModifyInstanceNetworkSpecRequest::getISP()const
+{
+	return iSP_;
+}
+
+void ModifyInstanceNetworkSpecRequest::setISP(const std::string& iSP)
+{
+	iSP_ = iSP;
+	setParameter("ISP", iSP);
+}
+
 int ModifyInstanceNetworkSpecRequest::getInternetMaxBandwidthOut()const
 {
 	return internetMaxBandwidthOut_;

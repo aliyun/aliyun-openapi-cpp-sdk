@@ -55,12 +55,12 @@ void DescribeRecommendInstanceTypeResult::parse(const std::string &payload)
 			dataObject.spotStrategy = valueDataRecommendInstanceType["SpotStrategy"].asString();
 		if(!valueDataRecommendInstanceType["Priority"].isNull())
 			dataObject.priority = std::stoi(valueDataRecommendInstanceType["Priority"].asString());
-		auto allZonesNode = allDataNode["Zones"]["zone"];
-		for (auto allDataNodeZoneszone : allZonesNode)
+		auto allZonesNode = valueDataRecommendInstanceType["Zones"]["zone"];
+		for (auto valueDataRecommendInstanceTypeZoneszone : allZonesNode)
 		{
 			RecommendInstanceType::Zone zonesObject;
-			if(!allDataNodeZoneszone["ZoneNo"].isNull())
-				zonesObject.zoneNo = allDataNodeZoneszone["ZoneNo"].asString();
+			if(!valueDataRecommendInstanceTypeZoneszone["ZoneNo"].isNull())
+				zonesObject.zoneNo = valueDataRecommendInstanceTypeZoneszone["ZoneNo"].asString();
 			auto allNetworkTypes = value["NetworkTypes"]["NetworkType"];
 			for (auto value : allNetworkTypes)
 				zonesObject.networkTypes.push_back(value.asString());

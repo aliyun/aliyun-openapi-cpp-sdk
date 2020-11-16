@@ -73,6 +73,8 @@ namespace AlibabaCloud
 				void setResourceType(const std::string& resourceType);
 				std::string getPeriodUnit()const;
 				void setPeriodUnit(const std::string& periodUnit);
+				std::string getTimeSlot()const;
+				void setTimeSlot(const std::string& timeSlot);
 				std::vector<std::string> getZoneId()const;
 				void setZoneId(const std::vector<std::string>& zoneId);
 				std::string getChargeType()const;
@@ -102,6 +104,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string resourceType_;
 				std::string periodUnit_;
+				std::string timeSlot_;
 				std::vector<std::string> zoneId_;
 				std::string chargeType_;
 				std::string packageType_;

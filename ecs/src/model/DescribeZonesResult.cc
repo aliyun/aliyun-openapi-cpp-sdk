@@ -47,12 +47,12 @@ void DescribeZonesResult::parse(const std::string &payload)
 			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
 		if(!valueZonesZone["LocalName"].isNull())
 			zonesObject.localName = valueZonesZone["LocalName"].asString();
-		auto allAvailableResourcesNode = allZonesNode["AvailableResources"]["ResourcesInfo"];
-		for (auto allZonesNodeAvailableResourcesResourcesInfo : allAvailableResourcesNode)
+		auto allAvailableResourcesNode = valueZonesZone["AvailableResources"]["ResourcesInfo"];
+		for (auto valueZonesZoneAvailableResourcesResourcesInfo : allAvailableResourcesNode)
 		{
 			Zone::ResourcesInfo availableResourcesObject;
-			if(!allZonesNodeAvailableResourcesResourcesInfo["IoOptimized"].isNull())
-				availableResourcesObject.ioOptimized = allZonesNodeAvailableResourcesResourcesInfo["IoOptimized"].asString() == "true";
+			if(!valueZonesZoneAvailableResourcesResourcesInfo["IoOptimized"].isNull())
+				availableResourcesObject.ioOptimized = valueZonesZoneAvailableResourcesResourcesInfo["IoOptimized"].asString() == "true";
 			auto allSystemDiskCategories = value["SystemDiskCategories"]["supportedSystemDiskCategory"];
 			for (auto value : allSystemDiskCategories)
 				availableResourcesObject.systemDiskCategories.push_back(value.asString());

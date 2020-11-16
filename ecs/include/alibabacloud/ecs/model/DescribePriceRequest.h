@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getDataDisk3Category()const;
 				void setDataDisk3Category(const std::string& dataDisk3Category);
+				std::string getIsp()const;
+				void setIsp(const std::string& isp);
 				int getDataDisk4Size()const;
 				void setDataDisk4Size(int dataDisk4Size);
 				std::string getPriceUnit()const;
@@ -116,6 +118,7 @@ namespace AlibabaCloud
 				int dataDisk3Size_;
 				long resourceOwnerId_;
 				std::string dataDisk3Category_;
+				std::string isp_;
 				int dataDisk4Size_;
 				std::string priceUnit_;
 				int period_;

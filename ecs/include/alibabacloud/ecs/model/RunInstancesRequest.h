@@ -160,6 +160,8 @@ namespace AlibabaCloud
 				void setHpcClusterId(const std::string& hpcClusterId);
 				int getHttpPutResponseHopLimit()const;
 				void setHttpPutResponseHopLimit(int httpPutResponseHopLimit);
+				std::string getIsp()const;
+				void setIsp(const std::string& isp);
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
 				float getSpotPriceLimit()const;
@@ -280,6 +282,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string hpcClusterId_;
 				int httpPutResponseHopLimit_;
+				std::string isp_;
 				std::string keyPairName_;
 				float spotPriceLimit_;
 				int storageSetPartitionNumber_;

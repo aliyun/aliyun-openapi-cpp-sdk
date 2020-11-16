@@ -135,36 +135,38 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.creditSpecification = valueInstancesInstance["CreditSpecification"].asString();
 		if(!valueInstancesInstance["DeletionProtection"].isNull())
 			instancesObject.deletionProtection = valueInstancesInstance["DeletionProtection"].asString() == "true";
-		auto allNetworkInterfacesNode = allInstancesNode["NetworkInterfaces"]["NetworkInterface"];
-		for (auto allInstancesNodeNetworkInterfacesNetworkInterface : allNetworkInterfacesNode)
+		if(!valueInstancesInstance["ISP"].isNull())
+			instancesObject.iSP = valueInstancesInstance["ISP"].asString();
+		auto allNetworkInterfacesNode = valueInstancesInstance["NetworkInterfaces"]["NetworkInterface"];
+		for (auto valueInstancesInstanceNetworkInterfacesNetworkInterface : allNetworkInterfacesNode)
 		{
 			Instance::NetworkInterface networkInterfacesObject;
-			if(!allInstancesNodeNetworkInterfacesNetworkInterface["NetworkInterfaceId"].isNull())
-				networkInterfacesObject.networkInterfaceId = allInstancesNodeNetworkInterfacesNetworkInterface["NetworkInterfaceId"].asString();
-			if(!allInstancesNodeNetworkInterfacesNetworkInterface["MacAddress"].isNull())
-				networkInterfacesObject.macAddress = allInstancesNodeNetworkInterfacesNetworkInterface["MacAddress"].asString();
-			if(!allInstancesNodeNetworkInterfacesNetworkInterface["PrimaryIpAddress"].isNull())
-				networkInterfacesObject.primaryIpAddress = allInstancesNodeNetworkInterfacesNetworkInterface["PrimaryIpAddress"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["NetworkInterfaceId"].isNull())
+				networkInterfacesObject.networkInterfaceId = valueInstancesInstanceNetworkInterfacesNetworkInterface["NetworkInterfaceId"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["MacAddress"].isNull())
+				networkInterfacesObject.macAddress = valueInstancesInstanceNetworkInterfacesNetworkInterface["MacAddress"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["PrimaryIpAddress"].isNull())
+				networkInterfacesObject.primaryIpAddress = valueInstancesInstanceNetworkInterfacesNetworkInterface["PrimaryIpAddress"].asString();
 			instancesObject.networkInterfaces.push_back(networkInterfacesObject);
 		}
-		auto allOperationLocksNode = allInstancesNode["OperationLocks"]["LockReason"];
-		for (auto allInstancesNodeOperationLocksLockReason : allOperationLocksNode)
+		auto allOperationLocksNode = valueInstancesInstance["OperationLocks"]["LockReason"];
+		for (auto valueInstancesInstanceOperationLocksLockReason : allOperationLocksNode)
 		{
 			Instance::LockReason operationLocksObject;
-			if(!allInstancesNodeOperationLocksLockReason["LockReason"].isNull())
-				operationLocksObject.lockReason = allInstancesNodeOperationLocksLockReason["LockReason"].asString();
-			if(!allInstancesNodeOperationLocksLockReason["LockMsg"].isNull())
-				operationLocksObject.lockMsg = allInstancesNodeOperationLocksLockReason["LockMsg"].asString();
+			if(!valueInstancesInstanceOperationLocksLockReason["LockReason"].isNull())
+				operationLocksObject.lockReason = valueInstancesInstanceOperationLocksLockReason["LockReason"].asString();
+			if(!valueInstancesInstanceOperationLocksLockReason["LockMsg"].isNull())
+				operationLocksObject.lockMsg = valueInstancesInstanceOperationLocksLockReason["LockMsg"].asString();
 			instancesObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
-		for (auto allInstancesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueInstancesInstance["Tags"]["Tag"];
+		for (auto valueInstancesInstanceTagsTag : allTagsNode)
 		{
 			Instance::Tag tagsObject;
-			if(!allInstancesNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allInstancesNodeTagsTag["TagKey"].asString();
-			if(!allInstancesNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allInstancesNodeTagsTag["TagValue"].asString();
+			if(!valueInstancesInstanceTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueInstancesInstanceTagsTag["TagKey"].asString();
+			if(!valueInstancesInstanceTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueInstancesInstanceTagsTag["TagValue"].asString();
 			instancesObject.tags.push_back(tagsObject);
 		}
 		auto vpcAttributesNode = value["VpcAttributes"];

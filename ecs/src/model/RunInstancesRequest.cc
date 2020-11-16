@@ -519,6 +519,17 @@ void RunInstancesRequest::setHttpPutResponseHopLimit(int httpPutResponseHopLimit
 	setParameter("HttpPutResponseHopLimit", std::to_string(httpPutResponseHopLimit));
 }
 
+std::string RunInstancesRequest::getIsp()const
+{
+	return isp_;
+}
+
+void RunInstancesRequest::setIsp(const std::string& isp)
+{
+	isp_ = isp;
+	setParameter("Isp", isp);
+}
+
 std::string RunInstancesRequest::getKeyPairName()const
 {
 	return keyPairName_;

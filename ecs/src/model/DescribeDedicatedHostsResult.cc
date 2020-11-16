@@ -87,32 +87,32 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.dedicatedHostClusterId = valueDedicatedHostsDedicatedHost["DedicatedHostClusterId"].asString();
 		if(!valueDedicatedHostsDedicatedHost["CpuOverCommitRatio"].isNull())
 			dedicatedHostsObject.cpuOverCommitRatio = std::stof(valueDedicatedHostsDedicatedHost["CpuOverCommitRatio"].asString());
-		auto allInstancesNode = allDedicatedHostsNode["Instances"]["Instance"];
-		for (auto allDedicatedHostsNodeInstancesInstance : allInstancesNode)
+		auto allInstancesNode = valueDedicatedHostsDedicatedHost["Instances"]["Instance"];
+		for (auto valueDedicatedHostsDedicatedHostInstancesInstance : allInstancesNode)
 		{
 			DedicatedHost::Instance instancesObject;
-			if(!allDedicatedHostsNodeInstancesInstance["InstanceId"].isNull())
-				instancesObject.instanceId = allDedicatedHostsNodeInstancesInstance["InstanceId"].asString();
-			if(!allDedicatedHostsNodeInstancesInstance["InstanceType"].isNull())
-				instancesObject.instanceType = allDedicatedHostsNodeInstancesInstance["InstanceType"].asString();
+			if(!valueDedicatedHostsDedicatedHostInstancesInstance["InstanceId"].isNull())
+				instancesObject.instanceId = valueDedicatedHostsDedicatedHostInstancesInstance["InstanceId"].asString();
+			if(!valueDedicatedHostsDedicatedHostInstancesInstance["InstanceType"].isNull())
+				instancesObject.instanceType = valueDedicatedHostsDedicatedHostInstancesInstance["InstanceType"].asString();
 			dedicatedHostsObject.instances.push_back(instancesObject);
 		}
-		auto allOperationLocksNode = allDedicatedHostsNode["OperationLocks"]["OperationLock"];
-		for (auto allDedicatedHostsNodeOperationLocksOperationLock : allOperationLocksNode)
+		auto allOperationLocksNode = valueDedicatedHostsDedicatedHost["OperationLocks"]["OperationLock"];
+		for (auto valueDedicatedHostsDedicatedHostOperationLocksOperationLock : allOperationLocksNode)
 		{
 			DedicatedHost::OperationLock operationLocksObject;
-			if(!allDedicatedHostsNodeOperationLocksOperationLock["LockReason"].isNull())
-				operationLocksObject.lockReason = allDedicatedHostsNodeOperationLocksOperationLock["LockReason"].asString();
+			if(!valueDedicatedHostsDedicatedHostOperationLocksOperationLock["LockReason"].isNull())
+				operationLocksObject.lockReason = valueDedicatedHostsDedicatedHostOperationLocksOperationLock["LockReason"].asString();
 			dedicatedHostsObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allTagsNode = allDedicatedHostsNode["Tags"]["Tag"];
-		for (auto allDedicatedHostsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueDedicatedHostsDedicatedHost["Tags"]["Tag"];
+		for (auto valueDedicatedHostsDedicatedHostTagsTag : allTagsNode)
 		{
 			DedicatedHost::Tag tagsObject;
-			if(!allDedicatedHostsNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allDedicatedHostsNodeTagsTag["TagKey"].asString();
-			if(!allDedicatedHostsNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allDedicatedHostsNodeTagsTag["TagValue"].asString();
+			if(!valueDedicatedHostsDedicatedHostTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueDedicatedHostsDedicatedHostTagsTag["TagKey"].asString();
+			if(!valueDedicatedHostsDedicatedHostTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueDedicatedHostsDedicatedHostTagsTag["TagValue"].asString();
 			dedicatedHostsObject.tags.push_back(tagsObject);
 		}
 		auto capacityNode = value["Capacity"];

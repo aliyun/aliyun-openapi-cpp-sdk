@@ -67,12 +67,12 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.chargeType = valueEipAddressesEipAddress["ChargeType"].asString();
 		if(!valueEipAddressesEipAddress["ExpiredTime"].isNull())
 			eipAddressesObject.expiredTime = valueEipAddressesEipAddress["ExpiredTime"].asString();
-		auto allOperationLocksNode = allEipAddressesNode["OperationLocks"]["LockReason"];
-		for (auto allEipAddressesNodeOperationLocksLockReason : allOperationLocksNode)
+		auto allOperationLocksNode = valueEipAddressesEipAddress["OperationLocks"]["LockReason"];
+		for (auto valueEipAddressesEipAddressOperationLocksLockReason : allOperationLocksNode)
 		{
 			EipAddress::LockReason operationLocksObject;
-			if(!allEipAddressesNodeOperationLocksLockReason["LockReason"].isNull())
-				operationLocksObject.lockReason = allEipAddressesNodeOperationLocksLockReason["LockReason"].asString();
+			if(!valueEipAddressesEipAddressOperationLocksLockReason["LockReason"].isNull())
+				operationLocksObject.lockReason = valueEipAddressesEipAddressOperationLocksLockReason["LockReason"].asString();
 			eipAddressesObject.operationLocks.push_back(operationLocksObject);
 		}
 		eipAddresses_.push_back(eipAddressesObject);

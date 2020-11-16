@@ -65,18 +65,18 @@ void DescribeCapacityReservationsResult::parse(const std::string &payload)
 			capacityReservationSetObject.instanceChargeType = valueCapacityReservationSetCapacityReservationItem["InstanceChargeType"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["Platform"].isNull())
 			capacityReservationSetObject.platform = valueCapacityReservationSetCapacityReservationItem["Platform"].asString();
-		auto allAllocatedResourcesNode = allCapacityReservationSetNode["AllocatedResources"]["AllocatedResource"];
-		for (auto allCapacityReservationSetNodeAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
+		auto allAllocatedResourcesNode = valueCapacityReservationSetCapacityReservationItem["AllocatedResources"]["AllocatedResource"];
+		for (auto valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{
 			CapacityReservationItem::AllocatedResource allocatedResourcesObject;
-			if(!allCapacityReservationSetNodeAllocatedResourcesAllocatedResource["zoneId"].isNull())
-				allocatedResourcesObject.zoneId = allCapacityReservationSetNodeAllocatedResourcesAllocatedResource["zoneId"].asString();
-			if(!allCapacityReservationSetNodeAllocatedResourcesAllocatedResource["InstanceType"].isNull())
-				allocatedResourcesObject.instanceType = allCapacityReservationSetNodeAllocatedResourcesAllocatedResource["InstanceType"].asString();
-			if(!allCapacityReservationSetNodeAllocatedResourcesAllocatedResource["TotalAmount"].isNull())
-				allocatedResourcesObject.totalAmount = std::stoi(allCapacityReservationSetNodeAllocatedResourcesAllocatedResource["TotalAmount"].asString());
-			if(!allCapacityReservationSetNodeAllocatedResourcesAllocatedResource["UsedAmount"].isNull())
-				allocatedResourcesObject.usedAmount = std::stoi(allCapacityReservationSetNodeAllocatedResourcesAllocatedResource["UsedAmount"].asString());
+			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["zoneId"].isNull())
+				allocatedResourcesObject.zoneId = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["zoneId"].asString();
+			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["InstanceType"].isNull())
+				allocatedResourcesObject.instanceType = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["InstanceType"].asString();
+			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["TotalAmount"].isNull())
+				allocatedResourcesObject.totalAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["TotalAmount"].asString());
+			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].isNull())
+				allocatedResourcesObject.usedAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].asString());
 			capacityReservationSetObject.allocatedResources.push_back(allocatedResourcesObject);
 		}
 		capacityReservationSet_.push_back(capacityReservationSetObject);

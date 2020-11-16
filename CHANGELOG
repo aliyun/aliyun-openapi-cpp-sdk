@@ -1,4 +1,7 @@
 2020-11-16 Version: patch
+- Nat public IP supports the ISP attribute.
+
+2020-11-16 Version: patch
 - Add a new interface for asynchronous image translation.
 
 2020-11-16 Version: patch

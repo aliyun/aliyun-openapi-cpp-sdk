@@ -117,34 +117,34 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.bdfId = valueDisksDisk["BdfId"].asString();
 		if(!valueDisksDisk["SerialNumber"].isNull())
 			disksObject.serialNumber = valueDisksDisk["SerialNumber"].asString();
-		auto allOperationLocksNode = allDisksNode["OperationLocks"]["OperationLock"];
-		for (auto allDisksNodeOperationLocksOperationLock : allOperationLocksNode)
+		auto allOperationLocksNode = valueDisksDisk["OperationLocks"]["OperationLock"];
+		for (auto valueDisksDiskOperationLocksOperationLock : allOperationLocksNode)
 		{
 			Disk::OperationLock operationLocksObject;
-			if(!allDisksNodeOperationLocksOperationLock["LockReason"].isNull())
-				operationLocksObject.lockReason = allDisksNodeOperationLocksOperationLock["LockReason"].asString();
+			if(!valueDisksDiskOperationLocksOperationLock["LockReason"].isNull())
+				operationLocksObject.lockReason = valueDisksDiskOperationLocksOperationLock["LockReason"].asString();
 			disksObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allMountInstancesNode = allDisksNode["MountInstances"]["MountInstance"];
-		for (auto allDisksNodeMountInstancesMountInstance : allMountInstancesNode)
+		auto allMountInstancesNode = valueDisksDisk["MountInstances"]["MountInstance"];
+		for (auto valueDisksDiskMountInstancesMountInstance : allMountInstancesNode)
 		{
 			Disk::MountInstance mountInstancesObject;
-			if(!allDisksNodeMountInstancesMountInstance["InstanceId"].isNull())
-				mountInstancesObject.instanceId = allDisksNodeMountInstancesMountInstance["InstanceId"].asString();
-			if(!allDisksNodeMountInstancesMountInstance["Device"].isNull())
-				mountInstancesObject.device = allDisksNodeMountInstancesMountInstance["Device"].asString();
-			if(!allDisksNodeMountInstancesMountInstance["AttachedTime"].isNull())
-				mountInstancesObject.attachedTime = allDisksNodeMountInstancesMountInstance["AttachedTime"].asString();
+			if(!valueDisksDiskMountInstancesMountInstance["InstanceId"].isNull())
+				mountInstancesObject.instanceId = valueDisksDiskMountInstancesMountInstance["InstanceId"].asString();
+			if(!valueDisksDiskMountInstancesMountInstance["Device"].isNull())
+				mountInstancesObject.device = valueDisksDiskMountInstancesMountInstance["Device"].asString();
+			if(!valueDisksDiskMountInstancesMountInstance["AttachedTime"].isNull())
+				mountInstancesObject.attachedTime = valueDisksDiskMountInstancesMountInstance["AttachedTime"].asString();
 			disksObject.mountInstances.push_back(mountInstancesObject);
 		}
-		auto allTagsNode = allDisksNode["Tags"]["Tag"];
-		for (auto allDisksNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueDisksDisk["Tags"]["Tag"];
+		for (auto valueDisksDiskTagsTag : allTagsNode)
 		{
 			Disk::Tag tagsObject;
-			if(!allDisksNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allDisksNodeTagsTag["TagKey"].asString();
-			if(!allDisksNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allDisksNodeTagsTag["TagValue"].asString();
+			if(!valueDisksDiskTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueDisksDiskTagsTag["TagKey"].asString();
+			if(!valueDisksDiskTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueDisksDiskTagsTag["TagValue"].asString();
 			disksObject.tags.push_back(tagsObject);
 		}
 		disks_.push_back(disksObject);

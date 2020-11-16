@@ -65,14 +65,14 @@ void DescribeSecurityGroupsResult::parse(const std::string &payload)
 			securityGroupsObject.serviceID = std::stol(valueSecurityGroupsSecurityGroup["ServiceID"].asString());
 		if(!valueSecurityGroupsSecurityGroup["ServiceManaged"].isNull())
 			securityGroupsObject.serviceManaged = valueSecurityGroupsSecurityGroup["ServiceManaged"].asString() == "true";
-		auto allTagsNode = allSecurityGroupsNode["Tags"]["Tag"];
-		for (auto allSecurityGroupsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueSecurityGroupsSecurityGroup["Tags"]["Tag"];
+		for (auto valueSecurityGroupsSecurityGroupTagsTag : allTagsNode)
 		{
 			SecurityGroup::Tag tagsObject;
-			if(!allSecurityGroupsNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allSecurityGroupsNodeTagsTag["TagKey"].asString();
-			if(!allSecurityGroupsNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allSecurityGroupsNodeTagsTag["TagValue"].asString();
+			if(!valueSecurityGroupsSecurityGroupTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueSecurityGroupsSecurityGroupTagsTag["TagKey"].asString();
+			if(!valueSecurityGroupsSecurityGroupTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueSecurityGroupsSecurityGroupTagsTag["TagValue"].asString();
 			securityGroupsObject.tags.push_back(tagsObject);
 		}
 		securityGroups_.push_back(securityGroupsObject);
