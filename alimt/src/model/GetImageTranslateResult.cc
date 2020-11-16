@@ -44,6 +44,8 @@ void GetImageTranslateResult::parse(const std::string &payload)
 		data_.url = dataNode["Url"].asString();
 	if(!dataNode["Orc"].isNull())
 		data_.orc = dataNode["Orc"].asString();
+	if(!dataNode["PictureEditor"].isNull())
+		data_.pictureEditor = dataNode["PictureEditor"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

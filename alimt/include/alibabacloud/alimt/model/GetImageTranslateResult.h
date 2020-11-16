@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string orc;
+					std::string pictureEditor;
 					std::string url;
 				};
 
