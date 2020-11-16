@@ -1,0 +1,57 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_GOODSTECH_MODEL_RECOGNIZEFURNITURESPUREQUEST_H_
+#define ALIBABACLOUD_GOODSTECH_MODEL_RECOGNIZEFURNITURESPUREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/goodstech/GoodstechExport.h>
+
+namespace AlibabaCloud
+{
+	namespace Goodstech
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_GOODSTECH_EXPORT RecognizeFurnitureSpuRequest : public RpcServiceRequest
+			{
+
+			public:
+				RecognizeFurnitureSpuRequest();
+				~RecognizeFurnitureSpuRequest();
+
+				float getXLength()const;
+				void setXLength(float xLength);
+				float getZLength()const;
+				void setZLength(float zLength);
+				std::string getImageURL()const;
+				void setImageURL(const std::string& imageURL);
+				float getYLength()const;
+				void setYLength(float yLength);
+
+            private:
+				float xLength_;
+				float zLength_;
+				std::string imageURL_;
+				float yLength_;
+
+			};
+		}
+	}
+}
+#endif // !ALIBABACLOUD_GOODSTECH_MODEL_RECOGNIZEFURNITURESPUREQUEST_H_
