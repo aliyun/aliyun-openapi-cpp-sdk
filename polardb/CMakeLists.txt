@@ -95,6 +95,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDatabasesResult.h
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsRequest.h
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsResult.h
+	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksRequest.h
+	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksResult.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyResult.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionRequest.h
@@ -137,6 +139,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBClusterMonitorResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterParametersRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterParametersResult.h
+	include/alibabacloud/polardb/model/ModifyDBClusterPrimaryZoneRequest.h
+	include/alibabacloud/polardb/model/ModifyDBClusterPrimaryZoneResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterSSLRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterSSLResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterTDERequest.h
@@ -238,6 +242,8 @@ set(polardb_src
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDetachedBackupsRequest.cc
 	src/model/DescribeDetachedBackupsResult.cc
+	src/model/DescribeGlobalDatabaseNetworksRequest.cc
+	src/model/DescribeGlobalDatabaseNetworksResult.cc
 	src/model/DescribeLogBackupPolicyRequest.cc
 	src/model/DescribeLogBackupPolicyResult.cc
 	src/model/DescribePendingMaintenanceActionRequest.cc
@@ -280,6 +286,8 @@ set(polardb_src
 	src/model/ModifyDBClusterMonitorResult.cc
 	src/model/ModifyDBClusterParametersRequest.cc
 	src/model/ModifyDBClusterParametersResult.cc
+	src/model/ModifyDBClusterPrimaryZoneRequest.cc
+	src/model/ModifyDBClusterPrimaryZoneResult.cc
 	src/model/ModifyDBClusterSSLRequest.cc
 	src/model/ModifyDBClusterSSLResult.cc
 	src/model/ModifyDBClusterTDERequest.cc
