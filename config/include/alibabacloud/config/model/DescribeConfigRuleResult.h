@@ -103,6 +103,7 @@ namespace AlibabaCloud
 					ConfigRuleEvaluationStatus configRuleEvaluationStatus;
 					Source source;
 					std::string configRuleState;
+					std::string maximumExecutionFrequency;
 					std::string configRuleId;
 					Scope scope;
 					std::string configRuleArn;

@@ -60,17 +60,6 @@ void ListConfigRulesRequest::setConfigRuleState(const std::string& configRuleSta
 	setParameter("ConfigRuleState", configRuleState);
 }
 
-int ListConfigRulesRequest::getRiskLevel()const
-{
-	return riskLevel_;
-}
-
-void ListConfigRulesRequest::setRiskLevel(int riskLevel)
-{
-	riskLevel_ = riskLevel;
-	setParameter("RiskLevel", std::to_string(riskLevel));
-}
-
 int ListConfigRulesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -102,6 +91,28 @@ void ListConfigRulesRequest::setComplianceType(const std::string& complianceType
 {
 	complianceType_ = complianceType;
 	setParameter("ComplianceType", complianceType);
+}
+
+std::string ListConfigRulesRequest::getConfigRuleSceneId()const
+{
+	return configRuleSceneId_;
+}
+
+void ListConfigRulesRequest::setConfigRuleSceneId(const std::string& configRuleSceneId)
+{
+	configRuleSceneId_ = configRuleSceneId;
+	setParameter("ConfigRuleSceneId", configRuleSceneId);
+}
+
+int ListConfigRulesRequest::getRiskLevel()const
+{
+	return riskLevel_;
+}
+
+void ListConfigRulesRequest::setRiskLevel(int riskLevel)
+{
+	riskLevel_ = riskLevel;
+	setParameter("RiskLevel", std::to_string(riskLevel));
 }
 
 long ListConfigRulesRequest::getMemberId()const

@@ -74,6 +74,8 @@ void GetResourceConfigurationTimelineResult::parse(const std::string &payload)
 			configurationListItemObject.resourceType = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceType"].asString();
 		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Tags"].isNull())
 			configurationListItemObject.tags = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["Tags"].asString();
+		if(!resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceEventType"].isNull())
+			configurationListItemObject.resourceEventType = resourceConfigurationTimelineNodeConfigurationListConfigurationListItem["ResourceEventType"].asString();
 		resourceConfigurationTimeline_.configurationList.push_back(configurationListItemObject);
 	}
 

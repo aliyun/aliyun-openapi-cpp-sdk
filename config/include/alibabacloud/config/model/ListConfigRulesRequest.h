@@ -41,14 +41,16 @@ namespace AlibabaCloud
 				void setMessageType(const std::string& messageType);
 				std::string getConfigRuleState()const;
 				void setConfigRuleState(const std::string& configRuleState);
-				int getRiskLevel()const;
-				void setRiskLevel(int riskLevel);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getComplianceType()const;
 				void setComplianceType(const std::string& complianceType);
+				std::string getConfigRuleSceneId()const;
+				void setConfigRuleSceneId(const std::string& configRuleSceneId);
+				int getRiskLevel()const;
+				void setRiskLevel(int riskLevel);
 				long getMemberId()const;
 				void setMemberId(long memberId);
 
@@ -56,10 +58,11 @@ namespace AlibabaCloud
 				bool multiAccount_;
 				std::string messageType_;
 				std::string configRuleState_;
-				int riskLevel_;
 				int pageNumber_;
 				int pageSize_;
 				std::string complianceType_;
+				std::string configRuleSceneId_;
+				int riskLevel_;
 				long memberId_;
 
 			};

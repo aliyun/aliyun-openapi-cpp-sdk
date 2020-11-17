@@ -37,16 +37,17 @@ namespace AlibabaCloud
 					struct ConfigurationListItem
 					{
 						long accountId;
+						std::string resourceName;
+						std::string availabilityZone;
+						std::string resourceType;
+						std::string resourceEventType;
+						std::string resourceCreateTime;
+						std::string relationshipDiff;
 						std::string captureTime;
 						std::string configurationDiff;
 						std::string resourceId;
-						std::string resourceName;
 						std::string relationship;
-						std::string availabilityZone;
 						std::string region;
-						std::string resourceType;
-						std::string resourceCreateTime;
-						std::string relationshipDiff;
 						std::string tags;
 					};
 					long totalCount;

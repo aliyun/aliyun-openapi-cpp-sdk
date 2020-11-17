@@ -58,6 +58,8 @@ void DescribeConfigRuleResult::parse(const std::string &payload)
 		configRule_.modifiedTimestamp = std::stol(configRuleNode["ModifiedTimestamp"].asString());
 	if(!configRuleNode["RiskLevel"].isNull())
 		configRule_.riskLevel = std::stoi(configRuleNode["RiskLevel"].asString());
+	if(!configRuleNode["MaximumExecutionFrequency"].isNull())
+		configRule_.maximumExecutionFrequency = configRuleNode["MaximumExecutionFrequency"].asString();
 	auto createByNode = configRuleNode["CreateBy"];
 	if(!createByNode["CreatorType"].isNull())
 		configRule_.createBy.creatorType = createByNode["CreatorType"].asString();

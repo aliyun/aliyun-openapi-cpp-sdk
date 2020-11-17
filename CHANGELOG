@@ -1,4 +1,10 @@
 2020-11-17 Version: patch
+- Support event type in timeline of resource properties.
+- Support resourceOwnerId in evaluation result.
+- Support resource directory in config rule scene.
+- Fix terraform related bugs.
+
+2020-11-17 Version: patch
 - Support ModifyDBClusterPrimaryZone.
 - Support DescribeGlobalDatabaseNetworks.
 
