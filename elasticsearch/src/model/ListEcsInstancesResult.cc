@@ -55,78 +55,78 @@ void ListEcsInstancesResult::parse(const std::string &payload)
 			resultObject.osType = valueResultResultItem["osType"].asString();
 		if(!valueResultResultItem["cloudAssistantStatus"].isNull())
 			resultObject.cloudAssistantStatus = valueResultResultItem["cloudAssistantStatus"].asString();
-		auto allipAddressNode = allResultNode["ipAddress"]["ipAddressItem"];
-		for (auto allResultNodeipAddressipAddressItem : allipAddressNode)
+		auto allipAddressNode = valueResultResultItem["ipAddress"]["ipAddressItem"];
+		for (auto valueResultResultItemipAddressipAddressItem : allipAddressNode)
 		{
 			ResultItem::IpAddressItem ipAddressObject;
-			if(!allResultNodeipAddressipAddressItem["host"].isNull())
-				ipAddressObject.host = allResultNodeipAddressipAddressItem["host"].asString();
-			if(!allResultNodeipAddressipAddressItem["ipType"].isNull())
-				ipAddressObject.ipType = allResultNodeipAddressipAddressItem["ipType"].asString();
+			if(!valueResultResultItemipAddressipAddressItem["host"].isNull())
+				ipAddressObject.host = valueResultResultItemipAddressipAddressItem["host"].asString();
+			if(!valueResultResultItemipAddressipAddressItem["ipType"].isNull())
+				ipAddressObject.ipType = valueResultResultItemipAddressipAddressItem["ipType"].asString();
 			resultObject.ipAddress.push_back(ipAddressObject);
 		}
-		auto allcollectorsNode = allResultNode["collectors"]["collectorsItem"];
-		for (auto allResultNodecollectorscollectorsItem : allcollectorsNode)
+		auto allcollectorsNode = valueResultResultItem["collectors"]["collectorsItem"];
+		for (auto valueResultResultItemcollectorscollectorsItem : allcollectorsNode)
 		{
 			ResultItem::CollectorsItem collectorsObject;
-			if(!allResultNodecollectorscollectorsItem["gmtCreatedTime"].isNull())
-				collectorsObject.gmtCreatedTime = allResultNodecollectorscollectorsItem["gmtCreatedTime"].asString();
-			if(!allResultNodecollectorscollectorsItem["gmtUpdateTime"].isNull())
-				collectorsObject.gmtUpdateTime = allResultNodecollectorscollectorsItem["gmtUpdateTime"].asString();
-			if(!allResultNodecollectorscollectorsItem["name"].isNull())
-				collectorsObject.name = allResultNodecollectorscollectorsItem["name"].asString();
-			if(!allResultNodecollectorscollectorsItem["resId"].isNull())
-				collectorsObject.resId = allResultNodecollectorscollectorsItem["resId"].asString();
-			if(!allResultNodecollectorscollectorsItem["resVersion"].isNull())
-				collectorsObject.resVersion = allResultNodecollectorscollectorsItem["resVersion"].asString();
-			if(!allResultNodecollectorscollectorsItem["vpcId"].isNull())
-				collectorsObject.vpcId = allResultNodecollectorscollectorsItem["vpcId"].asString();
-			if(!allResultNodecollectorscollectorsItem["resType"].isNull())
-				collectorsObject.resType = allResultNodecollectorscollectorsItem["resType"].asString();
-			if(!allResultNodecollectorscollectorsItem["ownerId"].isNull())
-				collectorsObject.ownerId = allResultNodecollectorscollectorsItem["ownerId"].asString();
-			if(!allResultNodecollectorscollectorsItem["status"].isNull())
-				collectorsObject.status = allResultNodecollectorscollectorsItem["status"].asString();
-			if(!allResultNodecollectorscollectorsItem["dryRun"].isNull())
-				collectorsObject.dryRun = allResultNodecollectorscollectorsItem["dryRun"].asString() == "true";
-			auto allconfigsNode = allcollectorsNode["configs"]["configsItem"];
-			for (auto allcollectorsNodeconfigsconfigsItem : allconfigsNode)
+			if(!valueResultResultItemcollectorscollectorsItem["gmtCreatedTime"].isNull())
+				collectorsObject.gmtCreatedTime = valueResultResultItemcollectorscollectorsItem["gmtCreatedTime"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["gmtUpdateTime"].isNull())
+				collectorsObject.gmtUpdateTime = valueResultResultItemcollectorscollectorsItem["gmtUpdateTime"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["name"].isNull())
+				collectorsObject.name = valueResultResultItemcollectorscollectorsItem["name"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["resId"].isNull())
+				collectorsObject.resId = valueResultResultItemcollectorscollectorsItem["resId"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["resVersion"].isNull())
+				collectorsObject.resVersion = valueResultResultItemcollectorscollectorsItem["resVersion"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["vpcId"].isNull())
+				collectorsObject.vpcId = valueResultResultItemcollectorscollectorsItem["vpcId"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["resType"].isNull())
+				collectorsObject.resType = valueResultResultItemcollectorscollectorsItem["resType"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["ownerId"].isNull())
+				collectorsObject.ownerId = valueResultResultItemcollectorscollectorsItem["ownerId"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["status"].isNull())
+				collectorsObject.status = valueResultResultItemcollectorscollectorsItem["status"].asString();
+			if(!valueResultResultItemcollectorscollectorsItem["dryRun"].isNull())
+				collectorsObject.dryRun = valueResultResultItemcollectorscollectorsItem["dryRun"].asString() == "true";
+			auto allconfigsNode = valueResultResultItemcollectorscollectorsItem["configs"]["configsItem"];
+			for (auto valueResultResultItemcollectorscollectorsItemconfigsconfigsItem : allconfigsNode)
 			{
 				ResultItem::CollectorsItem::ConfigsItem configsObject;
-				if(!allcollectorsNodeconfigsconfigsItem["fileName"].isNull())
-					configsObject.fileName = allcollectorsNodeconfigsconfigsItem["fileName"].asString();
-				if(!allcollectorsNodeconfigsconfigsItem["content"].isNull())
-					configsObject.content = allcollectorsNodeconfigsconfigsItem["content"].asString();
+				if(!valueResultResultItemcollectorscollectorsItemconfigsconfigsItem["fileName"].isNull())
+					configsObject.fileName = valueResultResultItemcollectorscollectorsItemconfigsconfigsItem["fileName"].asString();
+				if(!valueResultResultItemcollectorscollectorsItemconfigsconfigsItem["content"].isNull())
+					configsObject.content = valueResultResultItemcollectorscollectorsItemconfigsconfigsItem["content"].asString();
 				collectorsObject.configs.push_back(configsObject);
 			}
-			auto allextendConfigsNode = allcollectorsNode["extendConfigs"]["extendConfigsItem"];
-			for (auto allcollectorsNodeextendConfigsextendConfigsItem : allextendConfigsNode)
+			auto allextendConfigsNode = valueResultResultItemcollectorscollectorsItem["extendConfigs"]["extendConfigsItem"];
+			for (auto valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem : allextendConfigsNode)
 			{
 				ResultItem::CollectorsItem::ExtendConfigsItem extendConfigsObject;
-				if(!allcollectorsNodeextendConfigsextendConfigsItem["configType"].isNull())
-					extendConfigsObject.configType = allcollectorsNodeextendConfigsextendConfigsItem["configType"].asString();
-				if(!allcollectorsNodeextendConfigsextendConfigsItem["instanceId"].isNull())
-					extendConfigsObject.instanceId = allcollectorsNodeextendConfigsextendConfigsItem["instanceId"].asString();
-				if(!allcollectorsNodeextendConfigsextendConfigsItem["instanceType"].isNull())
-					extendConfigsObject.instanceType = allcollectorsNodeextendConfigsextendConfigsItem["instanceType"].asString();
-				if(!allcollectorsNodeextendConfigsextendConfigsItem["protocol"].isNull())
-					extendConfigsObject.protocol = allcollectorsNodeextendConfigsextendConfigsItem["protocol"].asString();
-				if(!allcollectorsNodeextendConfigsextendConfigsItem["userName"].isNull())
-					extendConfigsObject.userName = allcollectorsNodeextendConfigsextendConfigsItem["userName"].asString();
-				if(!allcollectorsNodeextendConfigsextendConfigsItem["enableMonitoring"].isNull())
-					extendConfigsObject.enableMonitoring = allcollectorsNodeextendConfigsextendConfigsItem["enableMonitoring"].asString() == "true";
-				if(!allcollectorsNodeextendConfigsextendConfigsItem["type"].isNull())
-					extendConfigsObject.type = allcollectorsNodeextendConfigsextendConfigsItem["type"].asString();
-				if(!allcollectorsNodeextendConfigsextendConfigsItem["groupId"].isNull())
-					extendConfigsObject.groupId = allcollectorsNodeextendConfigsextendConfigsItem["groupId"].asString();
-				auto allmachinesNode = allextendConfigsNode["machines"]["machinesItem"];
-				for (auto allextendConfigsNodemachinesmachinesItem : allmachinesNode)
+				if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["configType"].isNull())
+					extendConfigsObject.configType = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["configType"].asString();
+				if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["instanceId"].isNull())
+					extendConfigsObject.instanceId = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["instanceId"].asString();
+				if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["instanceType"].isNull())
+					extendConfigsObject.instanceType = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["instanceType"].asString();
+				if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["protocol"].isNull())
+					extendConfigsObject.protocol = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["protocol"].asString();
+				if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["userName"].isNull())
+					extendConfigsObject.userName = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["userName"].asString();
+				if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["enableMonitoring"].isNull())
+					extendConfigsObject.enableMonitoring = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["enableMonitoring"].asString() == "true";
+				if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["type"].isNull())
+					extendConfigsObject.type = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["type"].asString();
+				if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["groupId"].isNull())
+					extendConfigsObject.groupId = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["groupId"].asString();
+				auto allmachinesNode = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItem["machines"]["machinesItem"];
+				for (auto valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItemmachinesmachinesItem : allmachinesNode)
 				{
 					ResultItem::CollectorsItem::ExtendConfigsItem::MachinesItem machinesObject;
-					if(!allextendConfigsNodemachinesmachinesItem["instanceId"].isNull())
-						machinesObject.instanceId = allextendConfigsNodemachinesmachinesItem["instanceId"].asString();
-					if(!allextendConfigsNodemachinesmachinesItem["agentStatus"].isNull())
-						machinesObject.agentStatus = allextendConfigsNodemachinesmachinesItem["agentStatus"].asString();
+					if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItemmachinesmachinesItem["instanceId"].isNull())
+						machinesObject.instanceId = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItemmachinesmachinesItem["instanceId"].asString();
+					if(!valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItemmachinesmachinesItem["agentStatus"].isNull())
+						machinesObject.agentStatus = valueResultResultItemcollectorscollectorsItemextendConfigsextendConfigsItemmachinesmachinesItem["agentStatus"].asString();
 					extendConfigsObject.machines.push_back(machinesObject);
 				}
 				auto allHosts = value["hosts"]["hosts"];

@@ -94,14 +94,14 @@ void UpdateCollectorNameResult::parse(const std::string &payload)
 			extendConfigsItemObject.host = resultNodeextendConfigsextendConfigsItem["host"].asString();
 		if(!resultNodeextendConfigsextendConfigsItem["kibanaHost"].isNull())
 			extendConfigsItemObject.kibanaHost = resultNodeextendConfigsextendConfigsItem["kibanaHost"].asString();
-		auto allmachinesNode = allextendConfigsNode["machines"]["machinesItem"];
-		for (auto allextendConfigsNodemachinesmachinesItem : allmachinesNode)
+		auto allmachinesNode = resultNodeextendConfigsextendConfigsItem["machines"]["machinesItem"];
+		for (auto resultNodeextendConfigsextendConfigsItemmachinesmachinesItem : allmachinesNode)
 		{
 			Result::ExtendConfigsItem::MachinesItem machinesObject;
-			if(!allextendConfigsNodemachinesmachinesItem["instanceId"].isNull())
-				machinesObject.instanceId = allextendConfigsNodemachinesmachinesItem["instanceId"].asString();
-			if(!allextendConfigsNodemachinesmachinesItem["agentStatus"].isNull())
-				machinesObject.agentStatus = allextendConfigsNodemachinesmachinesItem["agentStatus"].asString();
+			if(!resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["instanceId"].isNull())
+				machinesObject.instanceId = resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["instanceId"].asString();
+			if(!resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["agentStatus"].isNull())
+				machinesObject.agentStatus = resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["agentStatus"].asString();
 			extendConfigsItemObject.machines.push_back(machinesObject);
 		}
 		auto allHosts = value["hosts"]["hosts"];

@@ -127,14 +127,14 @@ void GetRegionConfigurationResult::parse(const std::string &payload)
 		Result::CategoryEntity categoryEntityObject;
 		if(!resultNodesupportVersionsCategoryEntity["instanceCategory"].isNull())
 			categoryEntityObject.instanceCategory = resultNodesupportVersionsCategoryEntity["instanceCategory"].asString();
-		auto allsupportVersionListNode = allsupportVersionsNode["supportVersionList"]["VersionEntity"];
-		for (auto allsupportVersionsNodesupportVersionListVersionEntity : allsupportVersionListNode)
+		auto allsupportVersionListNode = resultNodesupportVersionsCategoryEntity["supportVersionList"]["VersionEntity"];
+		for (auto resultNodesupportVersionsCategoryEntitysupportVersionListVersionEntity : allsupportVersionListNode)
 		{
 			Result::CategoryEntity::VersionEntity supportVersionListObject;
-			if(!allsupportVersionsNodesupportVersionListVersionEntity["key"].isNull())
-				supportVersionListObject.key = allsupportVersionsNodesupportVersionListVersionEntity["key"].asString();
-			if(!allsupportVersionsNodesupportVersionListVersionEntity["value"].isNull())
-				supportVersionListObject.value = allsupportVersionsNodesupportVersionListVersionEntity["value"].asString();
+			if(!resultNodesupportVersionsCategoryEntitysupportVersionListVersionEntity["key"].isNull())
+				supportVersionListObject.key = resultNodesupportVersionsCategoryEntitysupportVersionListVersionEntity["key"].asString();
+			if(!resultNodesupportVersionsCategoryEntitysupportVersionListVersionEntity["value"].isNull())
+				supportVersionListObject.value = resultNodesupportVersionsCategoryEntitysupportVersionListVersionEntity["value"].asString();
 			categoryEntityObject.supportVersionList.push_back(supportVersionListObject);
 		}
 		result_.supportVersions.push_back(categoryEntityObject);

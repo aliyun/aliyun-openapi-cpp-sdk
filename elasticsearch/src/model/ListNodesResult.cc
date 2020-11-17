@@ -55,24 +55,24 @@ void ListNodesResult::parse(const std::string &payload)
 			resultObject.cloudAssistantStatus = valueResultResultItem["cloudAssistantStatus"].asString();
 		if(!valueResultResultItem["agentStatus"].isNull())
 			resultObject.agentStatus = valueResultResultItem["agentStatus"].asString();
-		auto alltagsNode = allResultNode["tags"]["tagsItem"];
-		for (auto allResultNodetagstagsItem : alltagsNode)
+		auto alltagsNode = valueResultResultItem["tags"]["tagsItem"];
+		for (auto valueResultResultItemtagstagsItem : alltagsNode)
 		{
 			ResultItem::TagsItem tagsObject;
-			if(!allResultNodetagstagsItem["tagKey"].isNull())
-				tagsObject.tagKey = allResultNodetagstagsItem["tagKey"].asString();
-			if(!allResultNodetagstagsItem["tagValue"].isNull())
-				tagsObject.tagValue = allResultNodetagstagsItem["tagValue"].asString();
+			if(!valueResultResultItemtagstagsItem["tagKey"].isNull())
+				tagsObject.tagKey = valueResultResultItemtagstagsItem["tagKey"].asString();
+			if(!valueResultResultItemtagstagsItem["tagValue"].isNull())
+				tagsObject.tagValue = valueResultResultItemtagstagsItem["tagValue"].asString();
 			resultObject.tags.push_back(tagsObject);
 		}
-		auto allipAddressNode = allResultNode["ipAddress"]["ipAddressItem"];
-		for (auto allResultNodeipAddressipAddressItem : allipAddressNode)
+		auto allipAddressNode = valueResultResultItem["ipAddress"]["ipAddressItem"];
+		for (auto valueResultResultItemipAddressipAddressItem : allipAddressNode)
 		{
 			ResultItem::IpAddressItem ipAddressObject;
-			if(!allResultNodeipAddressipAddressItem["host"].isNull())
-				ipAddressObject.host = allResultNodeipAddressipAddressItem["host"].asString();
-			if(!allResultNodeipAddressipAddressItem["ipType"].isNull())
-				ipAddressObject.ipType = allResultNodeipAddressipAddressItem["ipType"].asString();
+			if(!valueResultResultItemipAddressipAddressItem["host"].isNull())
+				ipAddressObject.host = valueResultResultItemipAddressipAddressItem["host"].asString();
+			if(!valueResultResultItemipAddressipAddressItem["ipType"].isNull())
+				ipAddressObject.ipType = valueResultResultItemipAddressipAddressItem["ipType"].asString();
 			resultObject.ipAddress.push_back(ipAddressObject);
 		}
 		result_.push_back(resultObject);

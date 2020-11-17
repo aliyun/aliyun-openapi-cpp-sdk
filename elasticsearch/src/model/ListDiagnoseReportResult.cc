@@ -55,14 +55,14 @@ void ListDiagnoseReportResult::parse(const std::string &payload)
 			resultObject.health = valueResultResultItem["health"].asString();
 		if(!valueResultResultItem["createTime"].isNull())
 			resultObject.createTime = std::stol(valueResultResultItem["createTime"].asString());
-		auto alldiagnoseItemsNode = allResultNode["diagnoseItems"]["diagnoseItemsItem"];
-		for (auto allResultNodediagnoseItemsdiagnoseItemsItem : alldiagnoseItemsNode)
+		auto alldiagnoseItemsNode = valueResultResultItem["diagnoseItems"]["diagnoseItemsItem"];
+		for (auto valueResultResultItemdiagnoseItemsdiagnoseItemsItem : alldiagnoseItemsNode)
 		{
 			ResultItem::DiagnoseItemsItem diagnoseItemsObject;
-			if(!allResultNodediagnoseItemsdiagnoseItemsItem["item"].isNull())
-				diagnoseItemsObject.item = allResultNodediagnoseItemsdiagnoseItemsItem["item"].asString();
-			if(!allResultNodediagnoseItemsdiagnoseItemsItem["health"].isNull())
-				diagnoseItemsObject.health = allResultNodediagnoseItemsdiagnoseItemsItem["health"].asString();
+			if(!valueResultResultItemdiagnoseItemsdiagnoseItemsItem["item"].isNull())
+				diagnoseItemsObject.item = valueResultResultItemdiagnoseItemsdiagnoseItemsItem["item"].asString();
+			if(!valueResultResultItemdiagnoseItemsdiagnoseItemsItem["health"].isNull())
+				diagnoseItemsObject.health = valueResultResultItemdiagnoseItemsdiagnoseItemsItem["health"].asString();
 			auto detailNode = value["detail"];
 			if(!detailNode["name"].isNull())
 				diagnoseItemsObject.detail.name = detailNode["name"].asString();

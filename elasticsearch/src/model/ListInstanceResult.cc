@@ -65,14 +65,14 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.dedicateMaster = valueResultInstance["dedicateMaster"].asString() == "true";
 		if(!valueResultInstance["resourceGroupId"].isNull())
 			resultObject.resourceGroupId = valueResultInstance["resourceGroupId"].asString();
-		auto alltagsNode = allResultNode["tags"]["Tag"];
-		for (auto allResultNodetagsTag : alltagsNode)
+		auto alltagsNode = valueResultInstance["tags"]["Tag"];
+		for (auto valueResultInstancetagsTag : alltagsNode)
 		{
 			Instance::Tag tagsObject;
-			if(!allResultNodetagsTag["tagKey"].isNull())
-				tagsObject.tagKey = allResultNodetagsTag["tagKey"].asString();
-			if(!allResultNodetagsTag["tagValue"].isNull())
-				tagsObject.tagValue = allResultNodetagsTag["tagValue"].asString();
+			if(!valueResultInstancetagsTag["tagKey"].isNull())
+				tagsObject.tagKey = valueResultInstancetagsTag["tagKey"].asString();
+			if(!valueResultInstancetagsTag["tagValue"].isNull())
+				tagsObject.tagValue = valueResultInstancetagsTag["tagValue"].asString();
 			resultObject.tags.push_back(tagsObject);
 		}
 		auto nodeSpecNode = value["nodeSpec"];
