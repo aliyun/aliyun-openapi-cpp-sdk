@@ -45,42 +45,42 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 		SupportedDBType supportedDBTypesObject;
 		if(!valueSupportedDBTypesSupportedDBType["DbType"].isNull())
 			supportedDBTypesObject.dbType = valueSupportedDBTypesSupportedDBType["DbType"].asString();
-		auto allAvailableZonesNode = allSupportedDBTypesNode["AvailableZones"]["AvailableZone"];
-		for (auto allSupportedDBTypesNodeAvailableZonesAvailableZone : allAvailableZonesNode)
+		auto allAvailableZonesNode = valueSupportedDBTypesSupportedDBType["AvailableZones"]["AvailableZone"];
+		for (auto valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone : allAvailableZonesNode)
 		{
 			SupportedDBType::AvailableZone availableZonesObject;
-			if(!allSupportedDBTypesNodeAvailableZonesAvailableZone["RegionId"].isNull())
-				availableZonesObject.regionId = allSupportedDBTypesNodeAvailableZonesAvailableZone["RegionId"].asString();
-			if(!allSupportedDBTypesNodeAvailableZonesAvailableZone["ZoneId"].isNull())
-				availableZonesObject.zoneId = allSupportedDBTypesNodeAvailableZonesAvailableZone["ZoneId"].asString();
-			auto allSupportedEngineVersionsNode = allAvailableZonesNode["SupportedEngineVersions"]["SupportedEngineVersion"];
-			for (auto allAvailableZonesNodeSupportedEngineVersionsSupportedEngineVersion : allSupportedEngineVersionsNode)
+			if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["RegionId"].isNull())
+				availableZonesObject.regionId = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["RegionId"].asString();
+			if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["ZoneId"].isNull())
+				availableZonesObject.zoneId = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["ZoneId"].asString();
+			auto allSupportedEngineVersionsNode = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZone["SupportedEngineVersions"]["SupportedEngineVersion"];
+			for (auto valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersion : allSupportedEngineVersionsNode)
 			{
 				SupportedDBType::AvailableZone::SupportedEngineVersion supportedEngineVersionsObject;
-				if(!allAvailableZonesNodeSupportedEngineVersionsSupportedEngineVersion["Version"].isNull())
-					supportedEngineVersionsObject.version = allAvailableZonesNodeSupportedEngineVersionsSupportedEngineVersion["Version"].asString();
-				auto allSupportedEnginesNode = allSupportedEngineVersionsNode["SupportedEngines"]["SupportedEngine"];
-				for (auto allSupportedEngineVersionsNodeSupportedEnginesSupportedEngine : allSupportedEnginesNode)
+				if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersion["Version"].isNull())
+					supportedEngineVersionsObject.version = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersion["Version"].asString();
+				auto allSupportedEnginesNode = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersion["SupportedEngines"]["SupportedEngine"];
+				for (auto valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngine : allSupportedEnginesNode)
 				{
 					SupportedDBType::AvailableZone::SupportedEngineVersion::SupportedEngine supportedEnginesObject;
-					if(!allSupportedEngineVersionsNodeSupportedEnginesSupportedEngine["Engine"].isNull())
-						supportedEnginesObject.engine = allSupportedEngineVersionsNodeSupportedEnginesSupportedEngine["Engine"].asString();
-					auto allSupportedNodeTypesNode = allSupportedEnginesNode["SupportedNodeTypes"]["SupportedNodeType"];
-					for (auto allSupportedEnginesNodeSupportedNodeTypesSupportedNodeType : allSupportedNodeTypesNode)
+					if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngine["Engine"].isNull())
+						supportedEnginesObject.engine = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngine["Engine"].asString();
+					auto allSupportedNodeTypesNode = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngine["SupportedNodeTypes"]["SupportedNodeType"];
+					for (auto valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeType : allSupportedNodeTypesNode)
 					{
 						SupportedDBType::AvailableZone::SupportedEngineVersion::SupportedEngine::SupportedNodeType supportedNodeTypesObject;
-						if(!allSupportedEnginesNodeSupportedNodeTypesSupportedNodeType["NodeType"].isNull())
-							supportedNodeTypesObject.nodeType = allSupportedEnginesNodeSupportedNodeTypesSupportedNodeType["NodeType"].asString();
-						if(!allSupportedEnginesNodeSupportedNodeTypesSupportedNodeType["NetworkTypes"].isNull())
-							supportedNodeTypesObject.networkTypes = allSupportedEnginesNodeSupportedNodeTypesSupportedNodeType["NetworkTypes"].asString();
-						auto allAvailableResourcesNode = allSupportedNodeTypesNode["AvailableResources"]["AvailableResource"];
-						for (auto allSupportedNodeTypesNodeAvailableResourcesAvailableResource : allAvailableResourcesNode)
+						if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeType["NodeType"].isNull())
+							supportedNodeTypesObject.nodeType = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeType["NodeType"].asString();
+						if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeType["NetworkTypes"].isNull())
+							supportedNodeTypesObject.networkTypes = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeType["NetworkTypes"].asString();
+						auto allAvailableResourcesNode = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeType["AvailableResources"]["AvailableResource"];
+						for (auto valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource : allAvailableResourcesNode)
 						{
 							SupportedDBType::AvailableZone::SupportedEngineVersion::SupportedEngine::SupportedNodeType::AvailableResource availableResourcesObject;
-							if(!allSupportedNodeTypesNodeAvailableResourcesAvailableResource["InstanceClass"].isNull())
-								availableResourcesObject.instanceClass = allSupportedNodeTypesNodeAvailableResourcesAvailableResource["InstanceClass"].asString();
-							if(!allSupportedNodeTypesNodeAvailableResourcesAvailableResource["InstanceClassRemark"].isNull())
-								availableResourcesObject.instanceClassRemark = allSupportedNodeTypesNodeAvailableResourcesAvailableResource["InstanceClassRemark"].asString();
+							if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClass"].isNull())
+								availableResourcesObject.instanceClass = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClass"].asString();
+							if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClassRemark"].isNull())
+								availableResourcesObject.instanceClassRemark = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClassRemark"].asString();
 							supportedNodeTypesObject.availableResources.push_back(availableResourcesObject);
 						}
 						supportedEnginesObject.supportedNodeTypes.push_back(supportedNodeTypesObject);

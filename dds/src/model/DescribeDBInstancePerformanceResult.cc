@@ -49,14 +49,14 @@ void DescribeDBInstancePerformanceResult::parse(const std::string &payload)
 			performanceKeysObject.unit = valuePerformanceKeysPerformanceKey["Unit"].asString();
 		if(!valuePerformanceKeysPerformanceKey["ValueFormat"].isNull())
 			performanceKeysObject.valueFormat = valuePerformanceKeysPerformanceKey["ValueFormat"].asString();
-		auto allPerformanceValuesNode = allPerformanceKeysNode["PerformanceValues"]["PerformanceValue"];
-		for (auto allPerformanceKeysNodePerformanceValuesPerformanceValue : allPerformanceValuesNode)
+		auto allPerformanceValuesNode = valuePerformanceKeysPerformanceKey["PerformanceValues"]["PerformanceValue"];
+		for (auto valuePerformanceKeysPerformanceKeyPerformanceValuesPerformanceValue : allPerformanceValuesNode)
 		{
 			PerformanceKey::PerformanceValue performanceValuesObject;
-			if(!allPerformanceKeysNodePerformanceValuesPerformanceValue["Value"].isNull())
-				performanceValuesObject.value = allPerformanceKeysNodePerformanceValuesPerformanceValue["Value"].asString();
-			if(!allPerformanceKeysNodePerformanceValuesPerformanceValue["Date"].isNull())
-				performanceValuesObject.date = allPerformanceKeysNodePerformanceValuesPerformanceValue["Date"].asString();
+			if(!valuePerformanceKeysPerformanceKeyPerformanceValuesPerformanceValue["Value"].isNull())
+				performanceValuesObject.value = valuePerformanceKeysPerformanceKeyPerformanceValuesPerformanceValue["Value"].asString();
+			if(!valuePerformanceKeysPerformanceKeyPerformanceValuesPerformanceValue["Date"].isNull())
+				performanceValuesObject.date = valuePerformanceKeysPerformanceKeyPerformanceValuesPerformanceValue["Date"].asString();
 			performanceKeysObject.performanceValues.push_back(performanceValuesObject);
 		}
 		performanceKeys_.push_back(performanceKeysObject);

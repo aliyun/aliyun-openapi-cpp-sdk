@@ -52,7 +52,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string createTime;
 					std::string instanceClass;
-					int characterType;
+					std::string characterType;
 					std::string vswitchId;
 					std::string instanceName;
 					std::string connectionDomain;

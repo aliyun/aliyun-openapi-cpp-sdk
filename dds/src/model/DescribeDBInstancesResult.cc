@@ -85,40 +85,40 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.destroyTime = valueDBInstancesDBInstance["DestroyTime"].asString();
 		if(!valueDBInstancesDBInstance["VpcAuthMode"].isNull())
 			dBInstancesObject.vpcAuthMode = valueDBInstancesDBInstance["VpcAuthMode"].asString();
-		auto allMongosListNode = allDBInstancesNode["MongosList"]["MongosAttribute"];
-		for (auto allDBInstancesNodeMongosListMongosAttribute : allMongosListNode)
+		auto allMongosListNode = valueDBInstancesDBInstance["MongosList"]["MongosAttribute"];
+		for (auto valueDBInstancesDBInstanceMongosListMongosAttribute : allMongosListNode)
 		{
 			DBInstance::MongosAttribute mongosListObject;
-			if(!allDBInstancesNodeMongosListMongosAttribute["NodeId"].isNull())
-				mongosListObject.nodeId = allDBInstancesNodeMongosListMongosAttribute["NodeId"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["NodeDescription"].isNull())
-				mongosListObject.nodeDescription = allDBInstancesNodeMongosListMongosAttribute["NodeDescription"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["NodeClass"].isNull())
-				mongosListObject.nodeClass = allDBInstancesNodeMongosListMongosAttribute["NodeClass"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].isNull())
+				mongosListObject.nodeId = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeDescription"].isNull())
+				mongosListObject.nodeDescription = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeDescription"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeClass"].isNull())
+				mongosListObject.nodeClass = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeClass"].asString();
 			dBInstancesObject.mongosList.push_back(mongosListObject);
 		}
-		auto allShardListNode = allDBInstancesNode["ShardList"]["ShardAttribute"];
-		for (auto allDBInstancesNodeShardListShardAttribute : allShardListNode)
+		auto allShardListNode = valueDBInstancesDBInstance["ShardList"]["ShardAttribute"];
+		for (auto valueDBInstancesDBInstanceShardListShardAttribute : allShardListNode)
 		{
 			DBInstance::ShardAttribute shardListObject;
-			if(!allDBInstancesNodeShardListShardAttribute["NodeId"].isNull())
-				shardListObject.nodeId = allDBInstancesNodeShardListShardAttribute["NodeId"].asString();
-			if(!allDBInstancesNodeShardListShardAttribute["NodeDescription"].isNull())
-				shardListObject.nodeDescription = allDBInstancesNodeShardListShardAttribute["NodeDescription"].asString();
-			if(!allDBInstancesNodeShardListShardAttribute["NodeClass"].isNull())
-				shardListObject.nodeClass = allDBInstancesNodeShardListShardAttribute["NodeClass"].asString();
-			if(!allDBInstancesNodeShardListShardAttribute["NodeStorage"].isNull())
-				shardListObject.nodeStorage = std::stoi(allDBInstancesNodeShardListShardAttribute["NodeStorage"].asString());
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeId"].isNull())
+				shardListObject.nodeId = valueDBInstancesDBInstanceShardListShardAttribute["NodeId"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeDescription"].isNull())
+				shardListObject.nodeDescription = valueDBInstancesDBInstanceShardListShardAttribute["NodeDescription"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeClass"].isNull())
+				shardListObject.nodeClass = valueDBInstancesDBInstanceShardListShardAttribute["NodeClass"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeStorage"].isNull())
+				shardListObject.nodeStorage = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["NodeStorage"].asString());
 			dBInstancesObject.shardList.push_back(shardListObject);
 		}
-		auto allTagsNode = allDBInstancesNode["Tags"]["Tag"];
-		for (auto allDBInstancesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueDBInstancesDBInstance["Tags"]["Tag"];
+		for (auto valueDBInstancesDBInstanceTagsTag : allTagsNode)
 		{
 			DBInstance::Tag tagsObject;
-			if(!allDBInstancesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allDBInstancesNodeTagsTag["Key"].asString();
-			if(!allDBInstancesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allDBInstancesNodeTagsTag["Value"].asString();
+			if(!valueDBInstancesDBInstanceTagsTag["Key"].isNull())
+				tagsObject.key = valueDBInstancesDBInstanceTagsTag["Key"].asString();
+			if(!valueDBInstancesDBInstanceTagsTag["Value"].isNull())
+				tagsObject.value = valueDBInstancesDBInstanceTagsTag["Value"].asString();
 			dBInstancesObject.tags.push_back(tagsObject);
 		}
 		dBInstances_.push_back(dBInstancesObject);

@@ -71,14 +71,14 @@ void DescribeIndexRecommendationResult::parse(const std::string &payload)
 			analyzationsObject.lastExecutionTime = valueAnalyzationsAnalyzation["LastExecutionTime"].asString();
 		if(!valueAnalyzationsAnalyzation["ExecutionPlan"].isNull())
 			analyzationsObject.executionPlan = valueAnalyzationsAnalyzation["ExecutionPlan"].asString();
-		auto allIndexRecommendationsNode = allAnalyzationsNode["IndexRecommendations"]["Recommendation"];
-		for (auto allAnalyzationsNodeIndexRecommendationsRecommendation : allIndexRecommendationsNode)
+		auto allIndexRecommendationsNode = valueAnalyzationsAnalyzation["IndexRecommendations"]["Recommendation"];
+		for (auto valueAnalyzationsAnalyzationIndexRecommendationsRecommendation : allIndexRecommendationsNode)
 		{
 			Analyzation::Recommendation indexRecommendationsObject;
-			if(!allAnalyzationsNodeIndexRecommendationsRecommendation["RecmdType"].isNull())
-				indexRecommendationsObject.recmdType = allAnalyzationsNodeIndexRecommendationsRecommendation["RecmdType"].asString();
-			if(!allAnalyzationsNodeIndexRecommendationsRecommendation["Content"].isNull())
-				indexRecommendationsObject.content = allAnalyzationsNodeIndexRecommendationsRecommendation["Content"].asString();
+			if(!valueAnalyzationsAnalyzationIndexRecommendationsRecommendation["RecmdType"].isNull())
+				indexRecommendationsObject.recmdType = valueAnalyzationsAnalyzationIndexRecommendationsRecommendation["RecmdType"].asString();
+			if(!valueAnalyzationsAnalyzationIndexRecommendationsRecommendation["Content"].isNull())
+				indexRecommendationsObject.content = valueAnalyzationsAnalyzationIndexRecommendationsRecommendation["Content"].asString();
 			analyzationsObject.indexRecommendations.push_back(indexRecommendationsObject);
 		}
 		auto allIndexCombines = value["IndexCombines"]["IndexCombine"];

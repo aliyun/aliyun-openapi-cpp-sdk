@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				void setEngine(const std::string& engine);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				int getInstanceStatus()const;
-				void setInstanceStatus(int instanceStatus);
+				std::string getInstanceStatus()const;
+				void setInstanceStatus(const std::string& instanceStatus);
 				std::string getDedicatedHostName()const;
 				void setDedicatedHostName(const std::string& dedicatedHostName);
 				std::string getResourceOwnerAccount()const;
@@ -74,7 +74,7 @@ namespace AlibabaCloud
 				std::string securityToken_;
 				std::string engine_;
 				int pageSize_;
-				int instanceStatus_;
+				std::string instanceStatus_;
 				std::string dedicatedHostName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

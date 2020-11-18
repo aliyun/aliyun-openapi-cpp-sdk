@@ -111,104 +111,104 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.vpcAuthMode = valueDBInstancesDBInstance["VpcAuthMode"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceReleaseProtection"].isNull())
 			dBInstancesObject.dBInstanceReleaseProtection = valueDBInstancesDBInstance["DBInstanceReleaseProtection"].asString() == "true";
-		auto allMongosListNode = allDBInstancesNode["MongosList"]["MongosAttribute"];
-		for (auto allDBInstancesNodeMongosListMongosAttribute : allMongosListNode)
+		auto allMongosListNode = valueDBInstancesDBInstance["MongosList"]["MongosAttribute"];
+		for (auto valueDBInstancesDBInstanceMongosListMongosAttribute : allMongosListNode)
 		{
 			DBInstance::MongosAttribute mongosListObject;
-			if(!allDBInstancesNodeMongosListMongosAttribute["NodeId"].isNull())
-				mongosListObject.nodeId = allDBInstancesNodeMongosListMongosAttribute["NodeId"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["NodeDescription"].isNull())
-				mongosListObject.nodeDescription = allDBInstancesNodeMongosListMongosAttribute["NodeDescription"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["NodeClass"].isNull())
-				mongosListObject.nodeClass = allDBInstancesNodeMongosListMongosAttribute["NodeClass"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["ConnectSting"].isNull())
-				mongosListObject.connectSting = allDBInstancesNodeMongosListMongosAttribute["ConnectSting"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["MaxIOPS"].isNull())
-				mongosListObject.maxIOPS = std::stoi(allDBInstancesNodeMongosListMongosAttribute["MaxIOPS"].asString());
-			if(!allDBInstancesNodeMongosListMongosAttribute["MaxConnections"].isNull())
-				mongosListObject.maxConnections = std::stoi(allDBInstancesNodeMongosListMongosAttribute["MaxConnections"].asString());
-			if(!allDBInstancesNodeMongosListMongosAttribute["Port"].isNull())
-				mongosListObject.port = std::stoi(allDBInstancesNodeMongosListMongosAttribute["Port"].asString());
-			if(!allDBInstancesNodeMongosListMongosAttribute["VpcCloudInstanceId"].isNull())
-				mongosListObject.vpcCloudInstanceId = allDBInstancesNodeMongosListMongosAttribute["VpcCloudInstanceId"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["VPCId"].isNull())
-				mongosListObject.vPCId = allDBInstancesNodeMongosListMongosAttribute["VPCId"].asString();
-			if(!allDBInstancesNodeMongosListMongosAttribute["VSwitchId"].isNull())
-				mongosListObject.vSwitchId = allDBInstancesNodeMongosListMongosAttribute["VSwitchId"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].isNull())
+				mongosListObject.nodeId = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeDescription"].isNull())
+				mongosListObject.nodeDescription = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeDescription"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeClass"].isNull())
+				mongosListObject.nodeClass = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeClass"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["ConnectSting"].isNull())
+				mongosListObject.connectSting = valueDBInstancesDBInstanceMongosListMongosAttribute["ConnectSting"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["MaxIOPS"].isNull())
+				mongosListObject.maxIOPS = std::stoi(valueDBInstancesDBInstanceMongosListMongosAttribute["MaxIOPS"].asString());
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["MaxConnections"].isNull())
+				mongosListObject.maxConnections = std::stoi(valueDBInstancesDBInstanceMongosListMongosAttribute["MaxConnections"].asString());
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["Port"].isNull())
+				mongosListObject.port = std::stoi(valueDBInstancesDBInstanceMongosListMongosAttribute["Port"].asString());
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["VpcCloudInstanceId"].isNull())
+				mongosListObject.vpcCloudInstanceId = valueDBInstancesDBInstanceMongosListMongosAttribute["VpcCloudInstanceId"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["VPCId"].isNull())
+				mongosListObject.vPCId = valueDBInstancesDBInstanceMongosListMongosAttribute["VPCId"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["VSwitchId"].isNull())
+				mongosListObject.vSwitchId = valueDBInstancesDBInstanceMongosListMongosAttribute["VSwitchId"].asString();
 			dBInstancesObject.mongosList.push_back(mongosListObject);
 		}
-		auto allShardListNode = allDBInstancesNode["ShardList"]["ShardAttribute"];
-		for (auto allDBInstancesNodeShardListShardAttribute : allShardListNode)
+		auto allShardListNode = valueDBInstancesDBInstance["ShardList"]["ShardAttribute"];
+		for (auto valueDBInstancesDBInstanceShardListShardAttribute : allShardListNode)
 		{
 			DBInstance::ShardAttribute shardListObject;
-			if(!allDBInstancesNodeShardListShardAttribute["NodeId"].isNull())
-				shardListObject.nodeId = allDBInstancesNodeShardListShardAttribute["NodeId"].asString();
-			if(!allDBInstancesNodeShardListShardAttribute["NodeDescription"].isNull())
-				shardListObject.nodeDescription = allDBInstancesNodeShardListShardAttribute["NodeDescription"].asString();
-			if(!allDBInstancesNodeShardListShardAttribute["NodeClass"].isNull())
-				shardListObject.nodeClass = allDBInstancesNodeShardListShardAttribute["NodeClass"].asString();
-			if(!allDBInstancesNodeShardListShardAttribute["NodeStorage"].isNull())
-				shardListObject.nodeStorage = std::stoi(allDBInstancesNodeShardListShardAttribute["NodeStorage"].asString());
-			if(!allDBInstancesNodeShardListShardAttribute["MaxIOPS"].isNull())
-				shardListObject.maxIOPS = std::stoi(allDBInstancesNodeShardListShardAttribute["MaxIOPS"].asString());
-			if(!allDBInstancesNodeShardListShardAttribute["MaxConnections"].isNull())
-				shardListObject.maxConnections = std::stoi(allDBInstancesNodeShardListShardAttribute["MaxConnections"].asString());
-			if(!allDBInstancesNodeShardListShardAttribute["ConnectString"].isNull())
-				shardListObject.connectString = allDBInstancesNodeShardListShardAttribute["ConnectString"].asString();
-			if(!allDBInstancesNodeShardListShardAttribute["Port"].isNull())
-				shardListObject.port = std::stoi(allDBInstancesNodeShardListShardAttribute["Port"].asString());
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeId"].isNull())
+				shardListObject.nodeId = valueDBInstancesDBInstanceShardListShardAttribute["NodeId"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeDescription"].isNull())
+				shardListObject.nodeDescription = valueDBInstancesDBInstanceShardListShardAttribute["NodeDescription"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeClass"].isNull())
+				shardListObject.nodeClass = valueDBInstancesDBInstanceShardListShardAttribute["NodeClass"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeStorage"].isNull())
+				shardListObject.nodeStorage = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["NodeStorage"].asString());
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["MaxIOPS"].isNull())
+				shardListObject.maxIOPS = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["MaxIOPS"].asString());
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["MaxConnections"].isNull())
+				shardListObject.maxConnections = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["MaxConnections"].asString());
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["ConnectString"].isNull())
+				shardListObject.connectString = valueDBInstancesDBInstanceShardListShardAttribute["ConnectString"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["Port"].isNull())
+				shardListObject.port = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["Port"].asString());
 			dBInstancesObject.shardList.push_back(shardListObject);
 		}
-		auto allConfigserverListNode = allDBInstancesNode["ConfigserverList"]["ConfigserverAttribute"];
-		for (auto allDBInstancesNodeConfigserverListConfigserverAttribute : allConfigserverListNode)
+		auto allConfigserverListNode = valueDBInstancesDBInstance["ConfigserverList"]["ConfigserverAttribute"];
+		for (auto valueDBInstancesDBInstanceConfigserverListConfigserverAttribute : allConfigserverListNode)
 		{
 			DBInstance::ConfigserverAttribute configserverListObject;
-			if(!allDBInstancesNodeConfigserverListConfigserverAttribute["NodeId"].isNull())
-				configserverListObject.nodeId = allDBInstancesNodeConfigserverListConfigserverAttribute["NodeId"].asString();
-			if(!allDBInstancesNodeConfigserverListConfigserverAttribute["NodeDescription"].isNull())
-				configserverListObject.nodeDescription = allDBInstancesNodeConfigserverListConfigserverAttribute["NodeDescription"].asString();
-			if(!allDBInstancesNodeConfigserverListConfigserverAttribute["NodeClass"].isNull())
-				configserverListObject.nodeClass = allDBInstancesNodeConfigserverListConfigserverAttribute["NodeClass"].asString();
-			if(!allDBInstancesNodeConfigserverListConfigserverAttribute["NodeStorage"].isNull())
-				configserverListObject.nodeStorage = std::stoi(allDBInstancesNodeConfigserverListConfigserverAttribute["NodeStorage"].asString());
-			if(!allDBInstancesNodeConfigserverListConfigserverAttribute["MaxIOPS"].isNull())
-				configserverListObject.maxIOPS = std::stoi(allDBInstancesNodeConfigserverListConfigserverAttribute["MaxIOPS"].asString());
-			if(!allDBInstancesNodeConfigserverListConfigserverAttribute["MaxConnections"].isNull())
-				configserverListObject.maxConnections = std::stoi(allDBInstancesNodeConfigserverListConfigserverAttribute["MaxConnections"].asString());
-			if(!allDBInstancesNodeConfigserverListConfigserverAttribute["ConnectString"].isNull())
-				configserverListObject.connectString = allDBInstancesNodeConfigserverListConfigserverAttribute["ConnectString"].asString();
-			if(!allDBInstancesNodeConfigserverListConfigserverAttribute["Port"].isNull())
-				configserverListObject.port = std::stoi(allDBInstancesNodeConfigserverListConfigserverAttribute["Port"].asString());
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeId"].isNull())
+				configserverListObject.nodeId = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeId"].asString();
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeDescription"].isNull())
+				configserverListObject.nodeDescription = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeDescription"].asString();
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeClass"].isNull())
+				configserverListObject.nodeClass = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeClass"].asString();
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeStorage"].isNull())
+				configserverListObject.nodeStorage = std::stoi(valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["NodeStorage"].asString());
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["MaxIOPS"].isNull())
+				configserverListObject.maxIOPS = std::stoi(valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["MaxIOPS"].asString());
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["MaxConnections"].isNull())
+				configserverListObject.maxConnections = std::stoi(valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["MaxConnections"].asString());
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["ConnectString"].isNull())
+				configserverListObject.connectString = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["ConnectString"].asString();
+			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["Port"].isNull())
+				configserverListObject.port = std::stoi(valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["Port"].asString());
 			dBInstancesObject.configserverList.push_back(configserverListObject);
 		}
-		auto allReplicaSetsNode = allDBInstancesNode["ReplicaSets"]["ReplicaSet"];
-		for (auto allDBInstancesNodeReplicaSetsReplicaSet : allReplicaSetsNode)
+		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
+		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{
 			DBInstance::ReplicaSet replicaSetsObject;
-			if(!allDBInstancesNodeReplicaSetsReplicaSet["ReplicaSetRole"].isNull())
-				replicaSetsObject.replicaSetRole = allDBInstancesNodeReplicaSetsReplicaSet["ReplicaSetRole"].asString();
-			if(!allDBInstancesNodeReplicaSetsReplicaSet["ConnectionDomain"].isNull())
-				replicaSetsObject.connectionDomain = allDBInstancesNodeReplicaSetsReplicaSet["ConnectionDomain"].asString();
-			if(!allDBInstancesNodeReplicaSetsReplicaSet["ConnectionPort"].isNull())
-				replicaSetsObject.connectionPort = allDBInstancesNodeReplicaSetsReplicaSet["ConnectionPort"].asString();
-			if(!allDBInstancesNodeReplicaSetsReplicaSet["VPCCloudInstanceId"].isNull())
-				replicaSetsObject.vPCCloudInstanceId = allDBInstancesNodeReplicaSetsReplicaSet["VPCCloudInstanceId"].asString();
-			if(!allDBInstancesNodeReplicaSetsReplicaSet["VPCId"].isNull())
-				replicaSetsObject.vPCId = allDBInstancesNodeReplicaSetsReplicaSet["VPCId"].asString();
-			if(!allDBInstancesNodeReplicaSetsReplicaSet["VSwitchId"].isNull())
-				replicaSetsObject.vSwitchId = allDBInstancesNodeReplicaSetsReplicaSet["VSwitchId"].asString();
-			if(!allDBInstancesNodeReplicaSetsReplicaSet["NetworkType"].isNull())
-				replicaSetsObject.networkType = allDBInstancesNodeReplicaSetsReplicaSet["NetworkType"].asString();
+			if(!valueDBInstancesDBInstanceReplicaSetsReplicaSet["ReplicaSetRole"].isNull())
+				replicaSetsObject.replicaSetRole = valueDBInstancesDBInstanceReplicaSetsReplicaSet["ReplicaSetRole"].asString();
+			if(!valueDBInstancesDBInstanceReplicaSetsReplicaSet["ConnectionDomain"].isNull())
+				replicaSetsObject.connectionDomain = valueDBInstancesDBInstanceReplicaSetsReplicaSet["ConnectionDomain"].asString();
+			if(!valueDBInstancesDBInstanceReplicaSetsReplicaSet["ConnectionPort"].isNull())
+				replicaSetsObject.connectionPort = valueDBInstancesDBInstanceReplicaSetsReplicaSet["ConnectionPort"].asString();
+			if(!valueDBInstancesDBInstanceReplicaSetsReplicaSet["VPCCloudInstanceId"].isNull())
+				replicaSetsObject.vPCCloudInstanceId = valueDBInstancesDBInstanceReplicaSetsReplicaSet["VPCCloudInstanceId"].asString();
+			if(!valueDBInstancesDBInstanceReplicaSetsReplicaSet["VPCId"].isNull())
+				replicaSetsObject.vPCId = valueDBInstancesDBInstanceReplicaSetsReplicaSet["VPCId"].asString();
+			if(!valueDBInstancesDBInstanceReplicaSetsReplicaSet["VSwitchId"].isNull())
+				replicaSetsObject.vSwitchId = valueDBInstancesDBInstanceReplicaSetsReplicaSet["VSwitchId"].asString();
+			if(!valueDBInstancesDBInstanceReplicaSetsReplicaSet["NetworkType"].isNull())
+				replicaSetsObject.networkType = valueDBInstancesDBInstanceReplicaSetsReplicaSet["NetworkType"].asString();
 			dBInstancesObject.replicaSets.push_back(replicaSetsObject);
 		}
-		auto allTagsNode = allDBInstancesNode["Tags"]["Tag"];
-		for (auto allDBInstancesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueDBInstancesDBInstance["Tags"]["Tag"];
+		for (auto valueDBInstancesDBInstanceTagsTag : allTagsNode)
 		{
 			DBInstance::Tag tagsObject;
-			if(!allDBInstancesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allDBInstancesNodeTagsTag["Key"].asString();
-			if(!allDBInstancesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allDBInstancesNodeTagsTag["Value"].asString();
+			if(!valueDBInstancesDBInstanceTagsTag["Key"].isNull())
+				tagsObject.key = valueDBInstancesDBInstanceTagsTag["Key"].asString();
+			if(!valueDBInstancesDBInstanceTagsTag["Value"].isNull())
+				tagsObject.value = valueDBInstancesDBInstanceTagsTag["Value"].asString();
 			dBInstancesObject.tags.push_back(tagsObject);
 		}
 		dBInstances_.push_back(dBInstancesObject);

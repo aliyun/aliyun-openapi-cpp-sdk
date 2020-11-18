@@ -60,6 +60,17 @@ void DescribeRegionsRequest::setSecurityToken(const std::string& securityToken)
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeRegionsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeRegionsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -91,5 +102,16 @@ void DescribeRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeRegionsRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeRegionsRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 

@@ -58,7 +58,7 @@ void DescribeDedicatedClusterInstanceListResult::parse(const std::string &payloa
 		if(!valueInstancesdbInstance["EngineVersion"].isNull())
 			instancesObject.engineVersion = valueInstancesdbInstance["EngineVersion"].asString();
 		if(!valueInstancesdbInstance["CharacterType"].isNull())
-			instancesObject.characterType = std::stoi(valueInstancesdbInstance["CharacterType"].asString());
+			instancesObject.characterType = valueInstancesdbInstance["CharacterType"].asString();
 		if(!valueInstancesdbInstance["MaintainStartTime"].isNull())
 			instancesObject.maintainStartTime = valueInstancesdbInstance["MaintainStartTime"].asString();
 		if(!valueInstancesdbInstance["MaintainEndTime"].isNull())
@@ -83,26 +83,26 @@ void DescribeDedicatedClusterInstanceListResult::parse(const std::string &payloa
 			instancesObject.connectionDomain = valueInstancesdbInstance["ConnectionDomain"].asString();
 		if(!valueInstancesdbInstance["CreateTime"].isNull())
 			instancesObject.createTime = valueInstancesdbInstance["CreateTime"].asString();
-		auto allInstanceNodeListNode = allInstancesNode["InstanceNodeList"]["InstanceNodes"];
-		for (auto allInstancesNodeInstanceNodeListInstanceNodes : allInstanceNodeListNode)
+		auto allInstanceNodeListNode = valueInstancesdbInstance["InstanceNodeList"]["InstanceNodes"];
+		for (auto valueInstancesdbInstanceInstanceNodeListInstanceNodes : allInstanceNodeListNode)
 		{
 			DbInstance::InstanceNodes instanceNodeListObject;
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["InsName"].isNull())
-				instanceNodeListObject.insName = allInstancesNodeInstanceNodeListInstanceNodes["InsName"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["Role"].isNull())
-				instanceNodeListObject.role = allInstancesNodeInstanceNodeListInstanceNodes["Role"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["NodeId"].isNull())
-				instanceNodeListObject.nodeId = std::stoi(allInstancesNodeInstanceNodeListInstanceNodes["NodeId"].asString());
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["NodeType"].isNull())
-				instanceNodeListObject.nodeType = allInstancesNodeInstanceNodeListInstanceNodes["NodeType"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["NodeIp"].isNull())
-				instanceNodeListObject.nodeIp = allInstancesNodeInstanceNodeListInstanceNodes["NodeIp"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["Port"].isNull())
-				instanceNodeListObject.port = std::stoi(allInstancesNodeInstanceNodeListInstanceNodes["Port"].asString());
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["ZoneId"].isNull())
-				instanceNodeListObject.zoneId = allInstancesNodeInstanceNodeListInstanceNodes["ZoneId"].asString();
-			if(!allInstancesNodeInstanceNodeListInstanceNodes["DedicatedHostName"].isNull())
-				instanceNodeListObject.dedicatedHostName = allInstancesNodeInstanceNodeListInstanceNodes["DedicatedHostName"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["InsName"].isNull())
+				instanceNodeListObject.insName = valueInstancesdbInstanceInstanceNodeListInstanceNodes["InsName"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["Role"].isNull())
+				instanceNodeListObject.role = valueInstancesdbInstanceInstanceNodeListInstanceNodes["Role"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeId"].isNull())
+				instanceNodeListObject.nodeId = std::stoi(valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeId"].asString());
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeType"].isNull())
+				instanceNodeListObject.nodeType = valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeType"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeIp"].isNull())
+				instanceNodeListObject.nodeIp = valueInstancesdbInstanceInstanceNodeListInstanceNodes["NodeIp"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["Port"].isNull())
+				instanceNodeListObject.port = std::stoi(valueInstancesdbInstanceInstanceNodeListInstanceNodes["Port"].asString());
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["ZoneId"].isNull())
+				instanceNodeListObject.zoneId = valueInstancesdbInstanceInstanceNodeListInstanceNodes["ZoneId"].asString();
+			if(!valueInstancesdbInstanceInstanceNodeListInstanceNodes["DedicatedHostName"].isNull())
+				instanceNodeListObject.dedicatedHostName = valueInstancesdbInstanceInstanceNodeListInstanceNodes["DedicatedHostName"].asString();
 			instancesObject.instanceNodeList.push_back(instanceNodeListObject);
 		}
 		instances_.push_back(instancesObject);

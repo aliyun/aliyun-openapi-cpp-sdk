@@ -104,15 +104,15 @@ void DescribeDedicatedClusterInstanceListRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
-int DescribeDedicatedClusterInstanceListRequest::getInstanceStatus()const
+std::string DescribeDedicatedClusterInstanceListRequest::getInstanceStatus()const
 {
 	return instanceStatus_;
 }
 
-void DescribeDedicatedClusterInstanceListRequest::setInstanceStatus(int instanceStatus)
+void DescribeDedicatedClusterInstanceListRequest::setInstanceStatus(const std::string& instanceStatus)
 {
 	instanceStatus_ = instanceStatus;
-	setParameter("InstanceStatus", std::to_string(instanceStatus));
+	setParameter("InstanceStatus", instanceStatus);
 }
 
 std::string DescribeDedicatedClusterInstanceListRequest::getDedicatedHostName()const
