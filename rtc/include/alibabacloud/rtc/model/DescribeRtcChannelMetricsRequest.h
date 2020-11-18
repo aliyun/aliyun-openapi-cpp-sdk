@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_DELETEMAURULEREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_DELETEMAURULEREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELMETRICSREQUEST_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELMETRICSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT DeleteMAURuleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RTC_EXPORT DescribeRtcChannelMetricsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteMAURuleRequest();
-				~DeleteMAURuleRequest();
+				DescribeRtcChannelMetricsRequest();
+				~DescribeRtcChannelMetricsRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getSubUid()const;
+				void setSubUid(const std::string& subUid);
+				std::string getPubUid()const;
+				void setPubUid(const std::string& pubUid);
 				std::string getShowLog()const;
 				void setShowLog(const std::string& showLog);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
-				long getRuleId()const;
-				void setRuleId(long ruleId);
+				std::string getChannelId()const;
+				void setChannelId(const std::string& channelId);
 
             private:
+				std::string startTime_;
+				std::string subUid_;
+				std::string pubUid_;
 				std::string showLog_;
+				std::string endTime_;
 				long ownerId_;
 				std::string appId_;
-				long ruleId_;
+				std::string channelId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_DELETEMAURULEREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELMETRICSREQUEST_H_

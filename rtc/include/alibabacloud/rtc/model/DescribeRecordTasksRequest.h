@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_CREATEMAURULEREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_CREATEMAURULEREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBERECORDTASKSREQUEST_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBERECORDTASKSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT CreateMAURuleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RTC_EXPORT DescribeRecordTasksRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateMAURuleRequest();
-				~CreateMAURuleRequest();
+				DescribeRecordTasksRequest();
+				~DescribeRecordTasksRequest();
 
-				std::string getUseridPrefix()const;
-				void setUseridPrefix(const std::string& useridPrefix);
-				std::string getChannelPrefix()const;
-				void setChannelPrefix(const std::string& channelPrefix);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::vector<std::string> getTaskIds()const;
+				void setTaskIds(const std::vector<std::string>& taskIds);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getShowLog()const;
 				void setShowLog(const std::string& showLog);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				long getMauTemplateId()const;
-				void setMauTemplateId(long mauTemplateId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
-				std::string getCallBack()const;
-				void setCallBack(const std::string& callBack);
+				std::string getChannelId()const;
+				void setChannelId(const std::string& channelId);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
-				std::string useridPrefix_;
-				std::string channelPrefix_;
+				std::string startTime_;
+				std::vector<std::string> taskIds_;
+				int pageNum_;
+				int pageSize_;
 				std::string showLog_;
+				std::string endTime_;
 				long ownerId_;
-				long mauTemplateId_;
 				std::string appId_;
-				std::string callBack_;
+				std::string channelId_;
+				std::string status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_CREATEMAURULEREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBERECORDTASKSREQUEST_H_

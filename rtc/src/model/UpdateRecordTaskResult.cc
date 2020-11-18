@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rtc/model/DeleteMAURuleResult.h>
+#include <alibabacloud/rtc/model/UpdateRecordTaskResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rtc;
 using namespace AlibabaCloud::Rtc::Model;
 
-DeleteMAURuleResult::DeleteMAURuleResult() :
+UpdateRecordTaskResult::UpdateRecordTaskResult() :
 	ServiceResult()
 {}
 
-DeleteMAURuleResult::DeleteMAURuleResult(const std::string &payload) :
+UpdateRecordTaskResult::UpdateRecordTaskResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteMAURuleResult::~DeleteMAURuleResult()
+UpdateRecordTaskResult::~UpdateRecordTaskResult()
 {}
 
-void DeleteMAURuleResult::parse(const std::string &payload)
+void UpdateRecordTaskResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

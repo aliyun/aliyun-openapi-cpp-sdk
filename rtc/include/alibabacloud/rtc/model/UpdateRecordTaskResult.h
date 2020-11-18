@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_DELETEMAURULERESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_DELETEMAURULERESULT_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_UPDATERECORDTASKRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_UPDATERECORDTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT DeleteMAURuleResult : public ServiceResult
+			class ALIBABACLOUD_RTC_EXPORT UpdateRecordTaskResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteMAURuleResult();
-				explicit DeleteMAURuleResult(const std::string &payload);
-				~DeleteMAURuleResult();
+				UpdateRecordTaskResult();
+				explicit UpdateRecordTaskResult(const std::string &payload);
+				~UpdateRecordTaskResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_DELETEMAURULERESULT_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_UPDATERECORDTASKRESULT_H_

@@ -30,6 +30,28 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_RTC_EXPORT AddRecordTemplateRequest : public RpcServiceRequest
 			{
+			public:
+				struct Watermarks
+				{
+					std::string url;
+					float alpha;
+					int display;
+					float x;
+					float y;
+					float width;
+					float height;
+					int zOrder;
+				};
+				struct Backgrounds
+				{
+					std::string url;
+					int display;
+					float x;
+					float y;
+					float width;
+					float height;
+					int zOrder;
+				};
 
 			public:
 				AddRecordTemplateRequest();
@@ -49,14 +71,22 @@ namespace AlibabaCloud
 				void setShowLog(const std::string& showLog);
 				std::string getOssBucket()const;
 				void setOssBucket(const std::string& ossBucket);
-				std::string getMnsQueue()const;
-				void setMnsQueue(const std::string& mnsQueue);
+				int getDelayStopTime()const;
+				void setDelayStopTime(int delayStopTime);
 				int getFileSplitInterval()const;
 				void setFileSplitInterval(int fileSplitInterval);
+				std::string getMnsQueue()const;
+				void setMnsQueue(const std::string& mnsQueue);
+				std::string getHttpCallbackUrl()const;
+				void setHttpCallbackUrl(const std::string& httpCallbackUrl);
+				std::vector<Watermarks> getWatermarks()const;
+				void setWatermarks(const std::vector<Watermarks>& watermarks);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
+				std::vector<Backgrounds> getBackgrounds()const;
+				void setBackgrounds(const std::vector<Backgrounds>& backgrounds);
 				std::string getName()const;
 				void setName(const std::string& name);
 				int getMediaEncode()const;
@@ -70,10 +100,14 @@ namespace AlibabaCloud
 				std::vector<long> layoutIds_;
 				std::string showLog_;
 				std::string ossBucket_;
-				std::string mnsQueue_;
+				int delayStopTime_;
 				int fileSplitInterval_;
+				std::string mnsQueue_;
+				std::string httpCallbackUrl_;
+				std::vector<Watermarks> watermarks_;
 				long ownerId_;
 				std::string appId_;
+				std::vector<Backgrounds> backgrounds_;
 				std::string name_;
 				int mediaEncode_;
 

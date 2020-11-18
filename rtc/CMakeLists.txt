@@ -27,8 +27,6 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/CreateChannelResult.h
 	include/alibabacloud/rtc/model/CreateConferenceRequest.h
 	include/alibabacloud/rtc/model/CreateConferenceResult.h
-	include/alibabacloud/rtc/model/CreateMAURuleRequest.h
-	include/alibabacloud/rtc/model/CreateMAURuleResult.h
 	include/alibabacloud/rtc/model/CreateMPULayoutRequest.h
 	include/alibabacloud/rtc/model/CreateMPULayoutResult.h
 	include/alibabacloud/rtc/model/CreateMPURuleRequest.h
@@ -39,8 +37,6 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DeleteChannelResult.h
 	include/alibabacloud/rtc/model/DeleteConferenceRequest.h
 	include/alibabacloud/rtc/model/DeleteConferenceResult.h
-	include/alibabacloud/rtc/model/DeleteMAURuleRequest.h
-	include/alibabacloud/rtc/model/DeleteMAURuleResult.h
 	include/alibabacloud/rtc/model/DeleteMPULayoutRequest.h
 	include/alibabacloud/rtc/model/DeleteMPULayoutResult.h
 	include/alibabacloud/rtc/model/DeleteMPURuleRequest.h
@@ -55,8 +51,6 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeChannelUsersResult.h
 	include/alibabacloud/rtc/model/DescribeConferenceAuthInfoRequest.h
 	include/alibabacloud/rtc/model/DescribeConferenceAuthInfoResult.h
-	include/alibabacloud/rtc/model/DescribeMAURuleRequest.h
-	include/alibabacloud/rtc/model/DescribeMAURuleResult.h
 	include/alibabacloud/rtc/model/DescribeMPULayoutInfoRequest.h
 	include/alibabacloud/rtc/model/DescribeMPULayoutInfoResult.h
 	include/alibabacloud/rtc/model/DescribeMPULayoutInfoListRequest.h
@@ -67,16 +61,26 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeMPURuleResult.h
 	include/alibabacloud/rtc/model/DescribeRTCAppKeyRequest.h
 	include/alibabacloud/rtc/model/DescribeRTCAppKeyResult.h
+	include/alibabacloud/rtc/model/DescribeRecordFilesRequest.h
+	include/alibabacloud/rtc/model/DescribeRecordFilesResult.h
+	include/alibabacloud/rtc/model/DescribeRecordTasksRequest.h
+	include/alibabacloud/rtc/model/DescribeRecordTasksResult.h
 	include/alibabacloud/rtc/model/DescribeRecordTemplatesRequest.h
 	include/alibabacloud/rtc/model/DescribeRecordTemplatesResult.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelCntDataRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelCntDataResult.h
+	include/alibabacloud/rtc/model/DescribeRtcChannelDetailRequest.h
+	include/alibabacloud/rtc/model/DescribeRtcChannelDetailResult.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelListRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelListResult.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelMetricRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelMetricResult.h
+	include/alibabacloud/rtc/model/DescribeRtcChannelMetricsRequest.h
+	include/alibabacloud/rtc/model/DescribeRtcChannelMetricsResult.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelUserListRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelUserListResult.h
+	include/alibabacloud/rtc/model/DescribeRtcChannelsRequest.h
+	include/alibabacloud/rtc/model/DescribeRtcChannelsResult.h
 	include/alibabacloud/rtc/model/DescribeRtcDurationDataRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcDurationDataResult.h
 	include/alibabacloud/rtc/model/DescribeRtcPeakChannelCntDataRequest.h
@@ -87,16 +91,14 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeRtcQualityMetricResult.h
 	include/alibabacloud/rtc/model/DescribeRtcUserCntDataRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcUserCntDataResult.h
+	include/alibabacloud/rtc/model/DescribeRtcUserEventsRequest.h
+	include/alibabacloud/rtc/model/DescribeRtcUserEventsResult.h
 	include/alibabacloud/rtc/model/DescribeRtcUserListRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcUserListResult.h
 	include/alibabacloud/rtc/model/DescribeUserInfoInChannelRequest.h
 	include/alibabacloud/rtc/model/DescribeUserInfoInChannelResult.h
-	include/alibabacloud/rtc/model/DisableMAURuleRequest.h
-	include/alibabacloud/rtc/model/DisableMAURuleResult.h
 	include/alibabacloud/rtc/model/DisableMPURuleRequest.h
 	include/alibabacloud/rtc/model/DisableMPURuleResult.h
-	include/alibabacloud/rtc/model/EnableMAURuleRequest.h
-	include/alibabacloud/rtc/model/EnableMAURuleResult.h
 	include/alibabacloud/rtc/model/EnableMPURuleRequest.h
 	include/alibabacloud/rtc/model/EnableMPURuleResult.h
 	include/alibabacloud/rtc/model/GetMPUTaskStatusRequest.h
@@ -137,6 +139,8 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/UpdateChannelResult.h
 	include/alibabacloud/rtc/model/UpdateMPULayoutRequest.h
 	include/alibabacloud/rtc/model/UpdateMPULayoutResult.h
+	include/alibabacloud/rtc/model/UpdateRecordTaskRequest.h
+	include/alibabacloud/rtc/model/UpdateRecordTaskResult.h
 	include/alibabacloud/rtc/model/UpdateRecordTemplateRequest.h
 	include/alibabacloud/rtc/model/UpdateRecordTemplateResult.h )
 
@@ -148,8 +152,6 @@ set(rtc_src
 	src/model/CreateChannelResult.cc
 	src/model/CreateConferenceRequest.cc
 	src/model/CreateConferenceResult.cc
-	src/model/CreateMAURuleRequest.cc
-	src/model/CreateMAURuleResult.cc
 	src/model/CreateMPULayoutRequest.cc
 	src/model/CreateMPULayoutResult.cc
 	src/model/CreateMPURuleRequest.cc
@@ -160,8 +162,6 @@ set(rtc_src
 	src/model/DeleteChannelResult.cc
 	src/model/DeleteConferenceRequest.cc
 	src/model/DeleteConferenceResult.cc
-	src/model/DeleteMAURuleRequest.cc
-	src/model/DeleteMAURuleResult.cc
 	src/model/DeleteMPULayoutRequest.cc
 	src/model/DeleteMPULayoutResult.cc
 	src/model/DeleteMPURuleRequest.cc
@@ -176,8 +176,6 @@ set(rtc_src
 	src/model/DescribeChannelUsersResult.cc
 	src/model/DescribeConferenceAuthInfoRequest.cc
 	src/model/DescribeConferenceAuthInfoResult.cc
-	src/model/DescribeMAURuleRequest.cc
-	src/model/DescribeMAURuleResult.cc
 	src/model/DescribeMPULayoutInfoRequest.cc
 	src/model/DescribeMPULayoutInfoResult.cc
 	src/model/DescribeMPULayoutInfoListRequest.cc
@@ -188,16 +186,26 @@ set(rtc_src
 	src/model/DescribeMPURuleResult.cc
 	src/model/DescribeRTCAppKeyRequest.cc
 	src/model/DescribeRTCAppKeyResult.cc
+	src/model/DescribeRecordFilesRequest.cc
+	src/model/DescribeRecordFilesResult.cc
+	src/model/DescribeRecordTasksRequest.cc
+	src/model/DescribeRecordTasksResult.cc
 	src/model/DescribeRecordTemplatesRequest.cc
 	src/model/DescribeRecordTemplatesResult.cc
 	src/model/DescribeRtcChannelCntDataRequest.cc
 	src/model/DescribeRtcChannelCntDataResult.cc
+	src/model/DescribeRtcChannelDetailRequest.cc
+	src/model/DescribeRtcChannelDetailResult.cc
 	src/model/DescribeRtcChannelListRequest.cc
 	src/model/DescribeRtcChannelListResult.cc
 	src/model/DescribeRtcChannelMetricRequest.cc
 	src/model/DescribeRtcChannelMetricResult.cc
+	src/model/DescribeRtcChannelMetricsRequest.cc
+	src/model/DescribeRtcChannelMetricsResult.cc
 	src/model/DescribeRtcChannelUserListRequest.cc
 	src/model/DescribeRtcChannelUserListResult.cc
+	src/model/DescribeRtcChannelsRequest.cc
+	src/model/DescribeRtcChannelsResult.cc
 	src/model/DescribeRtcDurationDataRequest.cc
 	src/model/DescribeRtcDurationDataResult.cc
 	src/model/DescribeRtcPeakChannelCntDataRequest.cc
@@ -208,16 +216,14 @@ set(rtc_src
 	src/model/DescribeRtcQualityMetricResult.cc
 	src/model/DescribeRtcUserCntDataRequest.cc
 	src/model/DescribeRtcUserCntDataResult.cc
+	src/model/DescribeRtcUserEventsRequest.cc
+	src/model/DescribeRtcUserEventsResult.cc
 	src/model/DescribeRtcUserListRequest.cc
 	src/model/DescribeRtcUserListResult.cc
 	src/model/DescribeUserInfoInChannelRequest.cc
 	src/model/DescribeUserInfoInChannelResult.cc
-	src/model/DisableMAURuleRequest.cc
-	src/model/DisableMAURuleResult.cc
 	src/model/DisableMPURuleRequest.cc
 	src/model/DisableMPURuleResult.cc
-	src/model/EnableMAURuleRequest.cc
-	src/model/EnableMAURuleResult.cc
 	src/model/EnableMPURuleRequest.cc
 	src/model/EnableMPURuleResult.cc
 	src/model/GetMPUTaskStatusRequest.cc
@@ -258,6 +264,8 @@ set(rtc_src
 	src/model/UpdateChannelResult.cc
 	src/model/UpdateMPULayoutRequest.cc
 	src/model/UpdateMPULayoutResult.cc
+	src/model/UpdateRecordTaskRequest.cc
+	src/model/UpdateRecordTaskResult.cc
 	src/model/UpdateRecordTemplateRequest.cc
 	src/model/UpdateRecordTemplateResult.cc )
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_CREATEMAURULERESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_CREATEMAURULERESULT_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELSRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT CreateMAURuleResult : public ServiceResult
+			class ALIBABACLOUD_RTC_EXPORT DescribeRtcChannelsResult : public ServiceResult
 			{
 			public:
+				struct Channel
+				{
+					bool finished;
+					std::string endTime;
+					std::string startTime;
+					std::string channelId;
+				};
 
 
-				CreateMAURuleResult();
-				explicit CreateMAURuleResult(const std::string &payload);
-				~CreateMAURuleResult();
-				long getRuleId()const;
+				DescribeRtcChannelsResult();
+				explicit DescribeRtcChannelsResult(const std::string &payload);
+				~DescribeRtcChannelsResult();
+				long getPageSize()const;
+				long getTotalCnt()const;
+				long getPageNo()const;
+				std::vector<Channel> getChannels()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long ruleId_;
+				long pageSize_;
+				long totalCnt_;
+				long pageNo_;
+				std::vector<Channel> channels_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_CREATEMAURULERESULT_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELSRESULT_H_

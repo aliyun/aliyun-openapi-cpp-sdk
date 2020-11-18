@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rtc/model/StartRecordTaskRequest.h>
+#include <alibabacloud/rtc/model/UpdateRecordTaskRequest.h>
 
-using AlibabaCloud::Rtc::Model::StartRecordTaskRequest;
+using AlibabaCloud::Rtc::Model::UpdateRecordTaskRequest;
 
-StartRecordTaskRequest::StartRecordTaskRequest() :
-	RpcServiceRequest("rtc", "2018-01-11", "StartRecordTask")
+UpdateRecordTaskRequest::UpdateRecordTaskRequest() :
+	RpcServiceRequest("rtc", "2018-01-11", "UpdateRecordTask")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-StartRecordTaskRequest::~StartRecordTaskRequest()
+UpdateRecordTaskRequest::~UpdateRecordTaskRequest()
 {}
 
-std::vector<StartRecordTaskRequest::UserPanes> StartRecordTaskRequest::getUserPanes()const
+std::vector<UpdateRecordTaskRequest::UserPanes> UpdateRecordTaskRequest::getUserPanes()const
 {
 	return userPanes_;
 }
 
-void StartRecordTaskRequest::setUserPanes(const std::vector<UserPanes>& userPanes)
+void UpdateRecordTaskRequest::setUserPanes(const std::vector<UserPanes>& userPanes)
 {
 	userPanes_ = userPanes;
 	for(int dep1 = 0; dep1!= userPanes.size(); dep1++) {
@@ -66,56 +66,56 @@ void StartRecordTaskRequest::setUserPanes(const std::vector<UserPanes>& userPane
 	}
 }
 
-std::string StartRecordTaskRequest::getTaskId()const
+std::string UpdateRecordTaskRequest::getTaskId()const
 {
 	return taskId_;
 }
 
-void StartRecordTaskRequest::setTaskId(const std::string& taskId)
+void UpdateRecordTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setParameter("TaskId", taskId);
 }
 
-std::string StartRecordTaskRequest::getShowLog()const
+std::string UpdateRecordTaskRequest::getShowLog()const
 {
 	return showLog_;
 }
 
-void StartRecordTaskRequest::setShowLog(const std::string& showLog)
+void UpdateRecordTaskRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
 	setParameter("ShowLog", showLog);
 }
 
-long StartRecordTaskRequest::getOwnerId()const
+long UpdateRecordTaskRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void StartRecordTaskRequest::setOwnerId(long ownerId)
+void UpdateRecordTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string StartRecordTaskRequest::getTemplateId()const
+std::string UpdateRecordTaskRequest::getTemplateId()const
 {
 	return templateId_;
 }
 
-void StartRecordTaskRequest::setTemplateId(const std::string& templateId)
+void UpdateRecordTaskRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
 	setParameter("TemplateId", templateId);
 }
 
-std::vector<std::string> StartRecordTaskRequest::getSubSpecUsers()const
+std::vector<std::string> UpdateRecordTaskRequest::getSubSpecUsers()const
 {
 	return subSpecUsers_;
 }
 
-void StartRecordTaskRequest::setSubSpecUsers(const std::vector<std::string>& subSpecUsers)
+void UpdateRecordTaskRequest::setSubSpecUsers(const std::vector<std::string>& subSpecUsers)
 {
 	subSpecUsers_ = subSpecUsers;
 	for(int dep1 = 0; dep1!= subSpecUsers.size(); dep1++) {
@@ -123,23 +123,23 @@ void StartRecordTaskRequest::setSubSpecUsers(const std::vector<std::string>& sub
 	}
 }
 
-std::string StartRecordTaskRequest::getAppId()const
+std::string UpdateRecordTaskRequest::getAppId()const
 {
 	return appId_;
 }
 
-void StartRecordTaskRequest::setAppId(const std::string& appId)
+void UpdateRecordTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
 }
 
-std::string StartRecordTaskRequest::getChannelId()const
+std::string UpdateRecordTaskRequest::getChannelId()const
 {
 	return channelId_;
 }
 
-void StartRecordTaskRequest::setChannelId(const std::string& channelId)
+void UpdateRecordTaskRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
 	setParameter("ChannelId", channelId);

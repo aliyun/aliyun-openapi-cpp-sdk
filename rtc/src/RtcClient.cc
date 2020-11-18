@@ -159,42 +159,6 @@ RtcClient::CreateConferenceOutcomeCallable RtcClient::createConferenceCallable(c
 	return task->get_future();
 }
 
-RtcClient::CreateMAURuleOutcome RtcClient::createMAURule(const CreateMAURuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateMAURuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateMAURuleOutcome(CreateMAURuleResult(outcome.result()));
-	else
-		return CreateMAURuleOutcome(outcome.error());
-}
-
-void RtcClient::createMAURuleAsync(const CreateMAURuleRequest& request, const CreateMAURuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createMAURule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RtcClient::CreateMAURuleOutcomeCallable RtcClient::createMAURuleCallable(const CreateMAURuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateMAURuleOutcome()>>(
-			[this, request]()
-			{
-			return this->createMAURule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RtcClient::CreateMPULayoutOutcome RtcClient::createMPULayout(const CreateMPULayoutRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,42 +333,6 @@ RtcClient::DeleteConferenceOutcomeCallable RtcClient::deleteConferenceCallable(c
 			[this, request]()
 			{
 			return this->deleteConference(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RtcClient::DeleteMAURuleOutcome RtcClient::deleteMAURule(const DeleteMAURuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteMAURuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteMAURuleOutcome(DeleteMAURuleResult(outcome.result()));
-	else
-		return DeleteMAURuleOutcome(outcome.error());
-}
-
-void RtcClient::deleteMAURuleAsync(const DeleteMAURuleRequest& request, const DeleteMAURuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteMAURule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RtcClient::DeleteMAURuleOutcomeCallable RtcClient::deleteMAURuleCallable(const DeleteMAURuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteMAURuleOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteMAURule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,42 +591,6 @@ RtcClient::DescribeConferenceAuthInfoOutcomeCallable RtcClient::describeConferen
 	return task->get_future();
 }
 
-RtcClient::DescribeMAURuleOutcome RtcClient::describeMAURule(const DescribeMAURuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeMAURuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeMAURuleOutcome(DescribeMAURuleResult(outcome.result()));
-	else
-		return DescribeMAURuleOutcome(outcome.error());
-}
-
-void RtcClient::describeMAURuleAsync(const DescribeMAURuleRequest& request, const DescribeMAURuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeMAURule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RtcClient::DescribeMAURuleOutcomeCallable RtcClient::describeMAURuleCallable(const DescribeMAURuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeMAURuleOutcome()>>(
-			[this, request]()
-			{
-			return this->describeMAURule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RtcClient::DescribeMPULayoutInfoOutcome RtcClient::describeMPULayoutInfo(const DescribeMPULayoutInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -879,6 +771,78 @@ RtcClient::DescribeRTCAppKeyOutcomeCallable RtcClient::describeRTCAppKeyCallable
 	return task->get_future();
 }
 
+RtcClient::DescribeRecordFilesOutcome RtcClient::describeRecordFiles(const DescribeRecordFilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRecordFilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRecordFilesOutcome(DescribeRecordFilesResult(outcome.result()));
+	else
+		return DescribeRecordFilesOutcome(outcome.error());
+}
+
+void RtcClient::describeRecordFilesAsync(const DescribeRecordFilesRequest& request, const DescribeRecordFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRecordFiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRecordFilesOutcomeCallable RtcClient::describeRecordFilesCallable(const DescribeRecordFilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRecordFilesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRecordFiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RtcClient::DescribeRecordTasksOutcome RtcClient::describeRecordTasks(const DescribeRecordTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRecordTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRecordTasksOutcome(DescribeRecordTasksResult(outcome.result()));
+	else
+		return DescribeRecordTasksOutcome(outcome.error());
+}
+
+void RtcClient::describeRecordTasksAsync(const DescribeRecordTasksRequest& request, const DescribeRecordTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRecordTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRecordTasksOutcomeCallable RtcClient::describeRecordTasksCallable(const DescribeRecordTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRecordTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRecordTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RtcClient::DescribeRecordTemplatesOutcome RtcClient::describeRecordTemplates(const DescribeRecordTemplatesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +909,42 @@ RtcClient::DescribeRtcChannelCntDataOutcomeCallable RtcClient::describeRtcChanne
 			[this, request]()
 			{
 			return this->describeRtcChannelCntData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RtcClient::DescribeRtcChannelDetailOutcome RtcClient::describeRtcChannelDetail(const DescribeRtcChannelDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRtcChannelDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRtcChannelDetailOutcome(DescribeRtcChannelDetailResult(outcome.result()));
+	else
+		return DescribeRtcChannelDetailOutcome(outcome.error());
+}
+
+void RtcClient::describeRtcChannelDetailAsync(const DescribeRtcChannelDetailRequest& request, const DescribeRtcChannelDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRtcChannelDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRtcChannelDetailOutcomeCallable RtcClient::describeRtcChannelDetailCallable(const DescribeRtcChannelDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRtcChannelDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRtcChannelDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1023,42 @@ RtcClient::DescribeRtcChannelMetricOutcomeCallable RtcClient::describeRtcChannel
 	return task->get_future();
 }
 
+RtcClient::DescribeRtcChannelMetricsOutcome RtcClient::describeRtcChannelMetrics(const DescribeRtcChannelMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRtcChannelMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRtcChannelMetricsOutcome(DescribeRtcChannelMetricsResult(outcome.result()));
+	else
+		return DescribeRtcChannelMetricsOutcome(outcome.error());
+}
+
+void RtcClient::describeRtcChannelMetricsAsync(const DescribeRtcChannelMetricsRequest& request, const DescribeRtcChannelMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRtcChannelMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRtcChannelMetricsOutcomeCallable RtcClient::describeRtcChannelMetricsCallable(const DescribeRtcChannelMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRtcChannelMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRtcChannelMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RtcClient::DescribeRtcChannelUserListOutcome RtcClient::describeRtcChannelUserList(const DescribeRtcChannelUserListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1089,42 @@ RtcClient::DescribeRtcChannelUserListOutcomeCallable RtcClient::describeRtcChann
 			[this, request]()
 			{
 			return this->describeRtcChannelUserList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RtcClient::DescribeRtcChannelsOutcome RtcClient::describeRtcChannels(const DescribeRtcChannelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRtcChannelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRtcChannelsOutcome(DescribeRtcChannelsResult(outcome.result()));
+	else
+		return DescribeRtcChannelsOutcome(outcome.error());
+}
+
+void RtcClient::describeRtcChannelsAsync(const DescribeRtcChannelsRequest& request, const DescribeRtcChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRtcChannels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRtcChannelsOutcomeCallable RtcClient::describeRtcChannelsCallable(const DescribeRtcChannelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRtcChannelsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRtcChannels(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,6 +1311,42 @@ RtcClient::DescribeRtcUserCntDataOutcomeCallable RtcClient::describeRtcUserCntDa
 	return task->get_future();
 }
 
+RtcClient::DescribeRtcUserEventsOutcome RtcClient::describeRtcUserEvents(const DescribeRtcUserEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRtcUserEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRtcUserEventsOutcome(DescribeRtcUserEventsResult(outcome.result()));
+	else
+		return DescribeRtcUserEventsOutcome(outcome.error());
+}
+
+void RtcClient::describeRtcUserEventsAsync(const DescribeRtcUserEventsRequest& request, const DescribeRtcUserEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRtcUserEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRtcUserEventsOutcomeCallable RtcClient::describeRtcUserEventsCallable(const DescribeRtcUserEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRtcUserEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRtcUserEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RtcClient::DescribeRtcUserListOutcome RtcClient::describeRtcUserList(const DescribeRtcUserListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1311,42 +1419,6 @@ RtcClient::DescribeUserInfoInChannelOutcomeCallable RtcClient::describeUserInfoI
 	return task->get_future();
 }
 
-RtcClient::DisableMAURuleOutcome RtcClient::disableMAURule(const DisableMAURuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DisableMAURuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DisableMAURuleOutcome(DisableMAURuleResult(outcome.result()));
-	else
-		return DisableMAURuleOutcome(outcome.error());
-}
-
-void RtcClient::disableMAURuleAsync(const DisableMAURuleRequest& request, const DisableMAURuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, disableMAURule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RtcClient::DisableMAURuleOutcomeCallable RtcClient::disableMAURuleCallable(const DisableMAURuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DisableMAURuleOutcome()>>(
-			[this, request]()
-			{
-			return this->disableMAURule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RtcClient::DisableMPURuleOutcome RtcClient::disableMPURule(const DisableMPURuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,42 +1449,6 @@ RtcClient::DisableMPURuleOutcomeCallable RtcClient::disableMPURuleCallable(const
 			[this, request]()
 			{
 			return this->disableMPURule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RtcClient::EnableMAURuleOutcome RtcClient::enableMAURule(const EnableMAURuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EnableMAURuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EnableMAURuleOutcome(EnableMAURuleResult(outcome.result()));
-	else
-		return EnableMAURuleOutcome(outcome.error());
-}
-
-void RtcClient::enableMAURuleAsync(const EnableMAURuleRequest& request, const EnableMAURuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, enableMAURule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RtcClient::EnableMAURuleOutcomeCallable RtcClient::enableMAURuleCallable(const EnableMAURuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EnableMAURuleOutcome()>>(
-			[this, request]()
-			{
-			return this->enableMAURule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2133,6 +2169,42 @@ RtcClient::UpdateMPULayoutOutcomeCallable RtcClient::updateMPULayoutCallable(con
 			[this, request]()
 			{
 			return this->updateMPULayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RtcClient::UpdateRecordTaskOutcome RtcClient::updateRecordTask(const UpdateRecordTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRecordTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRecordTaskOutcome(UpdateRecordTaskResult(outcome.result()));
+	else
+		return UpdateRecordTaskOutcome(outcome.error());
+}
+
+void RtcClient::updateRecordTaskAsync(const UpdateRecordTaskRequest& request, const UpdateRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRecordTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::UpdateRecordTaskOutcomeCallable RtcClient::updateRecordTaskCallable(const UpdateRecordTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRecordTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRecordTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -49,24 +49,24 @@ void DescribeMPULayoutInfoListResult::parse(const std::string &payload)
 			layoutsObject.name = valueLayoutsLayout["Name"].asString();
 		if(!valueLayoutsLayout["AudioMixCount"].isNull())
 			layoutsObject.audioMixCount = std::stoi(valueLayoutsLayout["AudioMixCount"].asString());
-		auto allPanesNode = allLayoutsNode["Panes"]["PanesItem"];
-		for (auto allLayoutsNodePanesPanesItem : allPanesNode)
+		auto allPanesNode = valueLayoutsLayout["Panes"]["PanesItem"];
+		for (auto valueLayoutsLayoutPanesPanesItem : allPanesNode)
 		{
 			Layout::PanesItem panesObject;
-			if(!allLayoutsNodePanesPanesItem["PaneId"].isNull())
-				panesObject.paneId = std::stoi(allLayoutsNodePanesPanesItem["PaneId"].asString());
-			if(!allLayoutsNodePanesPanesItem["MajorPane"].isNull())
-				panesObject.majorPane = std::stoi(allLayoutsNodePanesPanesItem["MajorPane"].asString());
-			if(!allLayoutsNodePanesPanesItem["X"].isNull())
-				panesObject.x = std::stof(allLayoutsNodePanesPanesItem["X"].asString());
-			if(!allLayoutsNodePanesPanesItem["Y"].isNull())
-				panesObject.y = std::stof(allLayoutsNodePanesPanesItem["Y"].asString());
-			if(!allLayoutsNodePanesPanesItem["Width"].isNull())
-				panesObject.width = std::stof(allLayoutsNodePanesPanesItem["Width"].asString());
-			if(!allLayoutsNodePanesPanesItem["Height"].isNull())
-				panesObject.height = std::stof(allLayoutsNodePanesPanesItem["Height"].asString());
-			if(!allLayoutsNodePanesPanesItem["ZOrder"].isNull())
-				panesObject.zOrder = std::stoi(allLayoutsNodePanesPanesItem["ZOrder"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["PaneId"].isNull())
+				panesObject.paneId = std::stoi(valueLayoutsLayoutPanesPanesItem["PaneId"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["MajorPane"].isNull())
+				panesObject.majorPane = std::stoi(valueLayoutsLayoutPanesPanesItem["MajorPane"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["X"].isNull())
+				panesObject.x = std::stof(valueLayoutsLayoutPanesPanesItem["X"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["Y"].isNull())
+				panesObject.y = std::stof(valueLayoutsLayoutPanesPanesItem["Y"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["Width"].isNull())
+				panesObject.width = std::stof(valueLayoutsLayoutPanesPanesItem["Width"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["Height"].isNull())
+				panesObject.height = std::stof(valueLayoutsLayoutPanesPanesItem["Height"].asString());
+			if(!valueLayoutsLayoutPanesPanesItem["ZOrder"].isNull())
+				panesObject.zOrder = std::stoi(valueLayoutsLayoutPanesPanesItem["ZOrder"].asString());
 			layoutsObject.panes.push_back(panesObject);
 		}
 		layouts_.push_back(layoutsObject);

@@ -108,15 +108,15 @@ void AddRecordTemplateRequest::setOssBucket(const std::string& ossBucket)
 	setParameter("OssBucket", ossBucket);
 }
 
-std::string AddRecordTemplateRequest::getMnsQueue()const
+int AddRecordTemplateRequest::getDelayStopTime()const
 {
-	return mnsQueue_;
+	return delayStopTime_;
 }
 
-void AddRecordTemplateRequest::setMnsQueue(const std::string& mnsQueue)
+void AddRecordTemplateRequest::setDelayStopTime(int delayStopTime)
 {
-	mnsQueue_ = mnsQueue;
-	setParameter("MnsQueue", mnsQueue);
+	delayStopTime_ = delayStopTime;
+	setParameter("DelayStopTime", std::to_string(delayStopTime));
 }
 
 int AddRecordTemplateRequest::getFileSplitInterval()const
@@ -128,6 +128,50 @@ void AddRecordTemplateRequest::setFileSplitInterval(int fileSplitInterval)
 {
 	fileSplitInterval_ = fileSplitInterval;
 	setParameter("FileSplitInterval", std::to_string(fileSplitInterval));
+}
+
+std::string AddRecordTemplateRequest::getMnsQueue()const
+{
+	return mnsQueue_;
+}
+
+void AddRecordTemplateRequest::setMnsQueue(const std::string& mnsQueue)
+{
+	mnsQueue_ = mnsQueue;
+	setParameter("MnsQueue", mnsQueue);
+}
+
+std::string AddRecordTemplateRequest::getHttpCallbackUrl()const
+{
+	return httpCallbackUrl_;
+}
+
+void AddRecordTemplateRequest::setHttpCallbackUrl(const std::string& httpCallbackUrl)
+{
+	httpCallbackUrl_ = httpCallbackUrl;
+	setParameter("HttpCallbackUrl", httpCallbackUrl);
+}
+
+std::vector<AddRecordTemplateRequest::Watermarks> AddRecordTemplateRequest::getWatermarks()const
+{
+	return watermarks_;
+}
+
+void AddRecordTemplateRequest::setWatermarks(const std::vector<Watermarks>& watermarks)
+{
+	watermarks_ = watermarks;
+	for(int dep1 = 0; dep1!= watermarks.size(); dep1++) {
+		auto watermarksObj = watermarks.at(dep1);
+		std::string watermarksObjStr = "Watermarks." + std::to_string(dep1 + 1);
+		setParameter(watermarksObjStr + ".Url", watermarksObj.url);
+		setParameter(watermarksObjStr + ".Alpha", std::to_string(watermarksObj.alpha));
+		setParameter(watermarksObjStr + ".Display", std::to_string(watermarksObj.display));
+		setParameter(watermarksObjStr + ".X", std::to_string(watermarksObj.x));
+		setParameter(watermarksObjStr + ".Y", std::to_string(watermarksObj.y));
+		setParameter(watermarksObjStr + ".Width", std::to_string(watermarksObj.width));
+		setParameter(watermarksObjStr + ".Height", std::to_string(watermarksObj.height));
+		setParameter(watermarksObjStr + ".ZOrder", std::to_string(watermarksObj.zOrder));
+	}
 }
 
 long AddRecordTemplateRequest::getOwnerId()const
@@ -150,6 +194,27 @@ void AddRecordTemplateRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
+}
+
+std::vector<AddRecordTemplateRequest::Backgrounds> AddRecordTemplateRequest::getBackgrounds()const
+{
+	return backgrounds_;
+}
+
+void AddRecordTemplateRequest::setBackgrounds(const std::vector<Backgrounds>& backgrounds)
+{
+	backgrounds_ = backgrounds;
+	for(int dep1 = 0; dep1!= backgrounds.size(); dep1++) {
+		auto backgroundsObj = backgrounds.at(dep1);
+		std::string backgroundsObjStr = "Backgrounds." + std::to_string(dep1 + 1);
+		setParameter(backgroundsObjStr + ".Url", backgroundsObj.url);
+		setParameter(backgroundsObjStr + ".Display", std::to_string(backgroundsObj.display));
+		setParameter(backgroundsObjStr + ".X", std::to_string(backgroundsObj.x));
+		setParameter(backgroundsObjStr + ".Y", std::to_string(backgroundsObj.y));
+		setParameter(backgroundsObjStr + ".Width", std::to_string(backgroundsObj.width));
+		setParameter(backgroundsObjStr + ".Height", std::to_string(backgroundsObj.height));
+		setParameter(backgroundsObjStr + ".ZOrder", std::to_string(backgroundsObj.zOrder));
+	}
 }
 
 std::string AddRecordTemplateRequest::getName()const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBEMAURULERESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_DESCRIBEMAURULERESULT_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELDETAILRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT DescribeMAURuleResult : public ServiceResult
+			class ALIBABACLOUD_RTC_EXPORT DescribeRtcChannelDetailResult : public ServiceResult
 			{
 			public:
-				struct Rule
+				struct Detail
 				{
-					std::string channelPrefix;
-					int isEnable;
-					std::string callBack;
-					long ruleId;
-					std::string useridPrefix;
-					long templateId;
+					std::string uid;
+					std::string deviceType;
+					std::string leaveTime;
+					std::string platform;
+					std::string oS;
+					std::string sdkVersion;
+					std::string joinTime;
+					std::string sid;
 				};
 
 
-				DescribeMAURuleResult();
-				explicit DescribeMAURuleResult(const std::string &payload);
-				~DescribeMAURuleResult();
-				std::vector<Rule> getRules()const;
+				DescribeRtcChannelDetailResult();
+				explicit DescribeRtcChannelDetailResult(const std::string &payload);
+				~DescribeRtcChannelDetailResult();
+				long getPageSize()const;
+				long getTotalCnt()const;
+				std::vector<Detail> getChannelInfo()const;
+				long getPageNo()const;
+				std::string getChannelId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Rule> rules_;
+				long pageSize_;
+				long totalCnt_;
+				std::vector<Detail> channelInfo_;
+				long pageNo_;
+				std::string channelId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBEMAURULERESULT_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELDETAILRESULT_H_

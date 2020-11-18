@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_DISABLEMAURULEREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_DISABLEMAURULEREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBERTCUSEREVENTSREQUEST_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBERTCUSEREVENTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT DisableMAURuleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RTC_EXPORT DescribeRtcUserEventsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DisableMAURuleRequest();
-				~DisableMAURuleRequest();
+				DescribeRtcUserEventsRequest();
+				~DescribeRtcUserEventsRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getUid()const;
+				void setUid(const std::string& uid);
 				std::string getShowLog()const;
 				void setShowLog(const std::string& showLog);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
-				long getRuleId()const;
-				void setRuleId(long ruleId);
+				std::string getChannelId()const;
+				void setChannelId(const std::string& channelId);
 
             private:
+				std::string startTime_;
+				std::string uid_;
 				std::string showLog_;
+				std::string endTime_;
 				long ownerId_;
 				std::string appId_;
-				long ruleId_;
+				std::string channelId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_DISABLEMAURULEREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBERTCUSEREVENTSREQUEST_H_

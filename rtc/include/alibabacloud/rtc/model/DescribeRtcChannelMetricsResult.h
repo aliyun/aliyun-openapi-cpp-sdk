@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_DISABLEMAURULERESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_DISABLEMAURULERESULT_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELMETRICSRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELMETRICSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT DisableMAURuleResult : public ServiceResult
+			class ALIBABACLOUD_RTC_EXPORT DescribeRtcChannelMetricsResult : public ServiceResult
 			{
 			public:
+				struct Metric
+				{
+					std::string uid;
+					std::string mid;
+					std::vector<std::string> kVs;
+				};
 
 
-				DisableMAURuleResult();
-				explicit DisableMAURuleResult(const std::string &payload);
-				~DisableMAURuleResult();
+				DescribeRtcChannelMetricsResult();
+				explicit DescribeRtcChannelMetricsResult(const std::string &payload);
+				~DescribeRtcChannelMetricsResult();
+				std::vector<Metric> getMetrics()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<Metric> metrics_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_DISABLEMAURULERESULT_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBERTCCHANNELMETRICSRESULT_H_

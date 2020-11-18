@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_STARTRECORDTASKREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_STARTRECORDTASKREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_UPDATERECORDTASKREQUEST_H_
+#define ALIBABACLOUD_RTC_MODEL_UPDATERECORDTASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT StartRecordTaskRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RTC_EXPORT UpdateRecordTaskRequest : public RpcServiceRequest
 			{
 			public:
 				struct UserPanes
@@ -61,8 +61,8 @@ namespace AlibabaCloud
 				};
 
 			public:
-				StartRecordTaskRequest();
-				~StartRecordTaskRequest();
+				UpdateRecordTaskRequest();
+				~UpdateRecordTaskRequest();
 
 				std::vector<UserPanes> getUserPanes()const;
 				void setUserPanes(const std::vector<UserPanes>& userPanes);
@@ -95,4 +95,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_STARTRECORDTASKREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_UPDATERECORDTASKREQUEST_H_

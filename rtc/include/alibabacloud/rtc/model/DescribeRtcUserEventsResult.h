@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBEMAURULEREQUEST_H_
-#define ALIBABACLOUD_RTC_MODEL_DESCRIBEMAURULEREQUEST_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBERTCUSEREVENTSRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBERTCUSEREVENTSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/rtc/RtcExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT DescribeMAURuleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RTC_EXPORT DescribeRtcUserEventsResult : public ServiceResult
 			{
-
 			public:
-				DescribeMAURuleRequest();
-				~DescribeMAURuleRequest();
+				struct Event
+				{
+					std::string category;
+					long eventTime;
+					std::string eventId;
+				};
 
-				std::string getShowLog()const;
-				void setShowLog(const std::string& showLog);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getAppId()const;
-				void setAppId(const std::string& appId);
 
-            private:
-				std::string showLog_;
-				long ownerId_;
-				std::string appId_;
+				DescribeRtcUserEventsResult();
+				explicit DescribeRtcUserEventsResult(const std::string &payload);
+				~DescribeRtcUserEventsResult();
+				std::vector<Event> getEvents()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<Event> events_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBEMAURULEREQUEST_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBERTCUSEREVENTSRESULT_H_

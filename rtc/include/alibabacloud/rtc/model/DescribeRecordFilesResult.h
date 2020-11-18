@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RTC_MODEL_ENABLEMAURULERESULT_H_
-#define ALIBABACLOUD_RTC_MODEL_ENABLEMAURULERESULT_H_
+#ifndef ALIBABACLOUD_RTC_MODEL_DESCRIBERECORDFILESRESULT_H_
+#define ALIBABACLOUD_RTC_MODEL_DESCRIBERECORDFILESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RTC_EXPORT EnableMAURuleResult : public ServiceResult
+			class ALIBABACLOUD_RTC_EXPORT DescribeRecordFilesResult : public ServiceResult
 			{
 			public:
+				struct RecordFile
+				{
+					std::string taskId;
+					std::string appId;
+					std::string createTime;
+					std::string startTime;
+					float duration;
+					std::string channelId;
+					std::string url;
+					std::string stopTime;
+				};
 
 
-				EnableMAURuleResult();
-				explicit EnableMAURuleResult(const std::string &payload);
-				~EnableMAURuleResult();
+				DescribeRecordFilesResult();
+				explicit DescribeRecordFilesResult(const std::string &payload);
+				~DescribeRecordFilesResult();
+				long getTotalNum()const;
+				long getTotalPage()const;
+				std::vector<RecordFile> getRecordFiles()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long totalNum_;
+				long totalPage_;
+				std::vector<RecordFile> recordFiles_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RTC_MODEL_ENABLEMAURULERESULT_H_
+#endif // !ALIBABACLOUD_RTC_MODEL_DESCRIBERECORDFILESRESULT_H_

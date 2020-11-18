@@ -130,6 +130,39 @@ void UpdateRecordTemplateRequest::setFileSplitInterval(int fileSplitInterval)
 	setParameter("FileSplitInterval", std::to_string(fileSplitInterval));
 }
 
+std::string UpdateRecordTemplateRequest::getHttpCallbackUrl()const
+{
+	return httpCallbackUrl_;
+}
+
+void UpdateRecordTemplateRequest::setHttpCallbackUrl(const std::string& httpCallbackUrl)
+{
+	httpCallbackUrl_ = httpCallbackUrl;
+	setParameter("HttpCallbackUrl", httpCallbackUrl);
+}
+
+std::vector<UpdateRecordTemplateRequest::Watermarks> UpdateRecordTemplateRequest::getWatermarks()const
+{
+	return watermarks_;
+}
+
+void UpdateRecordTemplateRequest::setWatermarks(const std::vector<Watermarks>& watermarks)
+{
+	watermarks_ = watermarks;
+	for(int dep1 = 0; dep1!= watermarks.size(); dep1++) {
+		auto watermarksObj = watermarks.at(dep1);
+		std::string watermarksObjStr = "Watermarks." + std::to_string(dep1 + 1);
+		setParameter(watermarksObjStr + ".Url", watermarksObj.url);
+		setParameter(watermarksObjStr + ".Alpha", std::to_string(watermarksObj.alpha));
+		setParameter(watermarksObjStr + ".Display", std::to_string(watermarksObj.display));
+		setParameter(watermarksObjStr + ".X", std::to_string(watermarksObj.x));
+		setParameter(watermarksObjStr + ".Y", std::to_string(watermarksObj.y));
+		setParameter(watermarksObjStr + ".Width", std::to_string(watermarksObj.width));
+		setParameter(watermarksObjStr + ".Height", std::to_string(watermarksObj.height));
+		setParameter(watermarksObjStr + ".ZOrder", std::to_string(watermarksObj.zOrder));
+	}
+}
+
 long UpdateRecordTemplateRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -161,6 +194,27 @@ void UpdateRecordTemplateRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
+}
+
+std::vector<UpdateRecordTemplateRequest::Backgrounds> UpdateRecordTemplateRequest::getBackgrounds()const
+{
+	return backgrounds_;
+}
+
+void UpdateRecordTemplateRequest::setBackgrounds(const std::vector<Backgrounds>& backgrounds)
+{
+	backgrounds_ = backgrounds;
+	for(int dep1 = 0; dep1!= backgrounds.size(); dep1++) {
+		auto backgroundsObj = backgrounds.at(dep1);
+		std::string backgroundsObjStr = "Backgrounds." + std::to_string(dep1 + 1);
+		setParameter(backgroundsObjStr + ".Url", backgroundsObj.url);
+		setParameter(backgroundsObjStr + ".Display", std::to_string(backgroundsObj.display));
+		setParameter(backgroundsObjStr + ".X", std::to_string(backgroundsObj.x));
+		setParameter(backgroundsObjStr + ".Y", std::to_string(backgroundsObj.y));
+		setParameter(backgroundsObjStr + ".Width", std::to_string(backgroundsObj.width));
+		setParameter(backgroundsObjStr + ".Height", std::to_string(backgroundsObj.height));
+		setParameter(backgroundsObjStr + ".ZOrder", std::to_string(backgroundsObj.zOrder));
+	}
 }
 
 std::string UpdateRecordTemplateRequest::getName()const
