@@ -67,26 +67,26 @@ void DescribeViewContentResult::parse(const std::string &payload)
 			viewContentListObject.id = std::stol(valueViewContentListViewContent["Id"].asString());
 		if(!valueViewContentListViewContent["ScanResult"].isNull())
 			viewContentListObject.scanResult = valueViewContentListViewContent["ScanResult"].asString();
-		auto allResultsNode = allViewContentListNode["Results"]["Result"];
-		for (auto allViewContentListNodeResultsResult : allResultsNode)
+		auto allResultsNode = valueViewContentListViewContent["Results"]["Result"];
+		for (auto valueViewContentListViewContentResultsResult : allResultsNode)
 		{
 			ViewContent::Result resultsObject;
-			if(!allViewContentListNodeResultsResult["Suggestion"].isNull())
-				resultsObject.suggestion = allViewContentListNodeResultsResult["Suggestion"].asString();
-			if(!allViewContentListNodeResultsResult["Label"].isNull())
-				resultsObject.label = allViewContentListNodeResultsResult["Label"].asString();
-			if(!allViewContentListNodeResultsResult["Scene"].isNull())
-				resultsObject.scene = allViewContentListNodeResultsResult["Scene"].asString();
+			if(!valueViewContentListViewContentResultsResult["Suggestion"].isNull())
+				resultsObject.suggestion = valueViewContentListViewContentResultsResult["Suggestion"].asString();
+			if(!valueViewContentListViewContentResultsResult["Label"].isNull())
+				resultsObject.label = valueViewContentListViewContentResultsResult["Label"].asString();
+			if(!valueViewContentListViewContentResultsResult["Scene"].isNull())
+				resultsObject.scene = valueViewContentListViewContentResultsResult["Scene"].asString();
 			viewContentListObject.results.push_back(resultsObject);
 		}
-		auto allFrameResultsNode = allViewContentListNode["FrameResults"]["frameResult"];
-		for (auto allViewContentListNodeFrameResultsframeResult : allFrameResultsNode)
+		auto allFrameResultsNode = valueViewContentListViewContent["FrameResults"]["frameResult"];
+		for (auto valueViewContentListViewContentFrameResultsframeResult : allFrameResultsNode)
 		{
 			ViewContent::FrameResult frameResultsObject;
-			if(!allViewContentListNodeFrameResultsframeResult["Url"].isNull())
-				frameResultsObject.url = allViewContentListNodeFrameResultsframeResult["Url"].asString();
-			if(!allViewContentListNodeFrameResultsframeResult["Offset"].isNull())
-				frameResultsObject.offset = std::stoi(allViewContentListNodeFrameResultsframeResult["Offset"].asString());
+			if(!valueViewContentListViewContentFrameResultsframeResult["Url"].isNull())
+				frameResultsObject.url = valueViewContentListViewContentFrameResultsframeResult["Url"].asString();
+			if(!valueViewContentListViewContentFrameResultsframeResult["Offset"].isNull())
+				frameResultsObject.offset = std::stoi(valueViewContentListViewContentFrameResultsframeResult["Offset"].asString());
 			viewContentListObject.frameResults.push_back(frameResultsObject);
 		}
 		viewContentList_.push_back(viewContentListObject);

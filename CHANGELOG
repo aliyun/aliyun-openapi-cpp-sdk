@@ -1,3 +1,6 @@
+2020-11-18 Version: patch
+- Supported webpage scan.
+
 2020-11-17 Version: patch
 - Support event type in timeline of resource properties.
 - Support resourceOwnerId in evaluation result.

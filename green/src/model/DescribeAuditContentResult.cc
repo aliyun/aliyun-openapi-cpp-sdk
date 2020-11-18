@@ -69,28 +69,28 @@ void DescribeAuditContentResult::parse(const std::string &payload)
 			auditContentListObject.suggestion = valueAuditContentListAuditContent["Suggestion"].asString();
 		if(!valueAuditContentListAuditContent["Id"].isNull())
 			auditContentListObject.id = std::stol(valueAuditContentListAuditContent["Id"].asString());
-		auto allResultsNode = allAuditContentListNode["Results"]["Result"];
-		for (auto allAuditContentListNodeResultsResult : allResultsNode)
+		auto allResultsNode = valueAuditContentListAuditContent["Results"]["Result"];
+		for (auto valueAuditContentListAuditContentResultsResult : allResultsNode)
 		{
 			AuditContent::Result resultsObject;
-			if(!allAuditContentListNodeResultsResult["Suggestion"].isNull())
-				resultsObject.suggestion = allAuditContentListNodeResultsResult["Suggestion"].asString();
-			if(!allAuditContentListNodeResultsResult["Label"].isNull())
-				resultsObject.label = allAuditContentListNodeResultsResult["Label"].asString();
-			if(!allAuditContentListNodeResultsResult["Scene"].isNull())
-				resultsObject.scene = allAuditContentListNodeResultsResult["Scene"].asString();
+			if(!valueAuditContentListAuditContentResultsResult["Suggestion"].isNull())
+				resultsObject.suggestion = valueAuditContentListAuditContentResultsResult["Suggestion"].asString();
+			if(!valueAuditContentListAuditContentResultsResult["Label"].isNull())
+				resultsObject.label = valueAuditContentListAuditContentResultsResult["Label"].asString();
+			if(!valueAuditContentListAuditContentResultsResult["Scene"].isNull())
+				resultsObject.scene = valueAuditContentListAuditContentResultsResult["Scene"].asString();
 			auditContentListObject.results.push_back(resultsObject);
 		}
-		auto allFrameResultsNode = allAuditContentListNode["FrameResults"]["frameResult"];
-		for (auto allAuditContentListNodeFrameResultsframeResult : allFrameResultsNode)
+		auto allFrameResultsNode = valueAuditContentListAuditContent["FrameResults"]["frameResult"];
+		for (auto valueAuditContentListAuditContentFrameResultsframeResult : allFrameResultsNode)
 		{
 			AuditContent::FrameResult frameResultsObject;
-			if(!allAuditContentListNodeFrameResultsframeResult["Url"].isNull())
-				frameResultsObject.url = allAuditContentListNodeFrameResultsframeResult["Url"].asString();
-			if(!allAuditContentListNodeFrameResultsframeResult["Offset"].isNull())
-				frameResultsObject.offset = std::stoi(allAuditContentListNodeFrameResultsframeResult["Offset"].asString());
-			if(!allAuditContentListNodeFrameResultsframeResult["Label"].isNull())
-				frameResultsObject.label = allAuditContentListNodeFrameResultsframeResult["Label"].asString();
+			if(!valueAuditContentListAuditContentFrameResultsframeResult["Url"].isNull())
+				frameResultsObject.url = valueAuditContentListAuditContentFrameResultsframeResult["Url"].asString();
+			if(!valueAuditContentListAuditContentFrameResultsframeResult["Offset"].isNull())
+				frameResultsObject.offset = std::stoi(valueAuditContentListAuditContentFrameResultsframeResult["Offset"].asString());
+			if(!valueAuditContentListAuditContentFrameResultsframeResult["Label"].isNull())
+				frameResultsObject.label = valueAuditContentListAuditContentFrameResultsframeResult["Label"].asString();
 			auditContentListObject.frameResults.push_back(frameResultsObject);
 		}
 		auto allAuditIllegalReasons = value["AuditIllegalReasons"]["StringItem"];

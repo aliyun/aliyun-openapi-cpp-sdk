@@ -40,9 +40,17 @@ namespace AlibabaCloud
 						std::string url;
 						int offset;
 					};
+					struct VoiceSegmentAntispamResult
+					{
+						int endTime;
+						int startTime;
+						std::string label;
+						std::string text;
+					};
 					std::string taskId;
 					std::string createTime;
 					std::string requestTime;
+					std::vector<ScanResult::VoiceSegmentAntispamResult> voiceSegmentAntispamResults;
 					std::string thumbnail;
 					std::string newUrl;
 					std::string scanFinishedTime;
@@ -52,6 +60,7 @@ namespace AlibabaCloud
 					std::vector<ScanResult::FrameResult> frameResults;
 					std::string bucket;
 					int handleStatus;
+					std::string content;
 					int resourceStatus;
 					std::string object;
 					long id;

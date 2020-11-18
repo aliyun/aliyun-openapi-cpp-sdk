@@ -104,6 +104,17 @@ void DescribeViewContentRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeViewContentRequest::getKeyword()const
+{
+	return keyword_;
+}
+
+void DescribeViewContentRequest::setKeyword(const std::string& keyword)
+{
+	keyword_ = keyword;
+	setParameter("Keyword", keyword);
+}
+
 std::string DescribeViewContentRequest::getTaskId()const
 {
 	return taskId_;

@@ -71,17 +71,33 @@ void DescribeOssResultItemsResult::parse(const std::string &payload)
 			scanResultListObject.handleStatus = std::stoi(valueScanResultListScanResult["HandleStatus"].asString());
 		if(!valueScanResultListScanResult["ResourceStatus"].isNull())
 			scanResultListObject.resourceStatus = std::stoi(valueScanResultListScanResult["ResourceStatus"].asString());
-		auto allFrameResultsNode = allScanResultListNode["FrameResults"]["FrameResult"];
-		for (auto allScanResultListNodeFrameResultsFrameResult : allFrameResultsNode)
+		if(!valueScanResultListScanResult["Content"].isNull())
+			scanResultListObject.content = valueScanResultListScanResult["Content"].asString();
+		auto allFrameResultsNode = valueScanResultListScanResult["FrameResults"]["FrameResult"];
+		for (auto valueScanResultListScanResultFrameResultsFrameResult : allFrameResultsNode)
 		{
 			ScanResult::FrameResult frameResultsObject;
-			if(!allScanResultListNodeFrameResultsFrameResult["Thumbnail"].isNull())
-				frameResultsObject.thumbnail = allScanResultListNodeFrameResultsFrameResult["Thumbnail"].asString();
-			if(!allScanResultListNodeFrameResultsFrameResult["Offset"].isNull())
-				frameResultsObject.offset = std::stoi(allScanResultListNodeFrameResultsFrameResult["Offset"].asString());
-			if(!allScanResultListNodeFrameResultsFrameResult["Url"].isNull())
-				frameResultsObject.url = allScanResultListNodeFrameResultsFrameResult["Url"].asString();
+			if(!valueScanResultListScanResultFrameResultsFrameResult["Thumbnail"].isNull())
+				frameResultsObject.thumbnail = valueScanResultListScanResultFrameResultsFrameResult["Thumbnail"].asString();
+			if(!valueScanResultListScanResultFrameResultsFrameResult["Offset"].isNull())
+				frameResultsObject.offset = std::stoi(valueScanResultListScanResultFrameResultsFrameResult["Offset"].asString());
+			if(!valueScanResultListScanResultFrameResultsFrameResult["Url"].isNull())
+				frameResultsObject.url = valueScanResultListScanResultFrameResultsFrameResult["Url"].asString();
 			scanResultListObject.frameResults.push_back(frameResultsObject);
+		}
+		auto allVoiceSegmentAntispamResultsNode = valueScanResultListScanResult["VoiceSegmentAntispamResults"]["VoiceSegmentAntispamResult"];
+		for (auto valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult : allVoiceSegmentAntispamResultsNode)
+		{
+			ScanResult::VoiceSegmentAntispamResult voiceSegmentAntispamResultsObject;
+			if(!valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult["Text"].isNull())
+				voiceSegmentAntispamResultsObject.text = valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult["Text"].asString();
+			if(!valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult["EndTime"].isNull())
+				voiceSegmentAntispamResultsObject.endTime = std::stoi(valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult["EndTime"].asString());
+			if(!valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult["StartTime"].isNull())
+				voiceSegmentAntispamResultsObject.startTime = std::stoi(valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult["StartTime"].asString());
+			if(!valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult["Label"].isNull())
+				voiceSegmentAntispamResultsObject.label = valueScanResultListScanResultVoiceSegmentAntispamResultsVoiceSegmentAntispamResult["Label"].asString();
+			scanResultListObject.voiceSegmentAntispamResults.push_back(voiceSegmentAntispamResultsObject);
 		}
 		scanResultList_.push_back(scanResultListObject);
 	}

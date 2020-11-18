@@ -49,6 +49,17 @@ void DescribeOssResultItemsRequest::setMaxScore(float maxScore)
 	setParameter("MaxScore", std::to_string(maxScore));
 }
 
+long DescribeOssResultItemsRequest::getStockTaskId()const
+{
+	return stockTaskId_;
+}
+
+void DescribeOssResultItemsRequest::setStockTaskId(long stockTaskId)
+{
+	stockTaskId_ = stockTaskId;
+	setParameter("StockTaskId", std::to_string(stockTaskId));
+}
+
 std::string DescribeOssResultItemsRequest::getStartDate()const
 {
 	return startDate_;

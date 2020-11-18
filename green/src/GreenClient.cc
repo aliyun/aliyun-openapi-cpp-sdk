@@ -1671,6 +1671,42 @@ GreenClient::DescribeNotificationSettingOutcomeCallable GreenClient::describeNot
 	return task->get_future();
 }
 
+GreenClient::DescribeOpenApiRcpStatsOutcome GreenClient::describeOpenApiRcpStats(const DescribeOpenApiRcpStatsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeOpenApiRcpStatsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeOpenApiRcpStatsOutcome(DescribeOpenApiRcpStatsResult(outcome.result()));
+	else
+		return DescribeOpenApiRcpStatsOutcome(outcome.error());
+}
+
+void GreenClient::describeOpenApiRcpStatsAsync(const DescribeOpenApiRcpStatsRequest& request, const DescribeOpenApiRcpStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeOpenApiRcpStats(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DescribeOpenApiRcpStatsOutcomeCallable GreenClient::describeOpenApiRcpStatsCallable(const DescribeOpenApiRcpStatsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeOpenApiRcpStatsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeOpenApiRcpStats(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::DescribeOpenApiUsageOutcome GreenClient::describeOpenApiUsage(const DescribeOpenApiUsageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2535,6 +2571,42 @@ GreenClient::ExportKeywordsOutcomeCallable GreenClient::exportKeywordsCallable(c
 	return task->get_future();
 }
 
+GreenClient::ExportOpenApiRcpStatsOutcome GreenClient::exportOpenApiRcpStats(const ExportOpenApiRcpStatsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportOpenApiRcpStatsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportOpenApiRcpStatsOutcome(ExportOpenApiRcpStatsResult(outcome.result()));
+	else
+		return ExportOpenApiRcpStatsOutcome(outcome.error());
+}
+
+void GreenClient::exportOpenApiRcpStatsAsync(const ExportOpenApiRcpStatsRequest& request, const ExportOpenApiRcpStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportOpenApiRcpStats(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::ExportOpenApiRcpStatsOutcomeCallable GreenClient::exportOpenApiRcpStatsCallable(const ExportOpenApiRcpStatsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportOpenApiRcpStatsOutcome()>>(
+			[this, request]()
+			{
+			return this->exportOpenApiRcpStats(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::ExportOssResultOutcome GreenClient::exportOssResult(const ExportOssResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3249,6 +3321,114 @@ GreenClient::ListSimilarityLibrariesOutcomeCallable GreenClient::listSimilarityL
 			[this, request]()
 			{
 			return this->listSimilarityLibraries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::LiveStreamAsyncScanOutcome GreenClient::liveStreamAsyncScan(const LiveStreamAsyncScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LiveStreamAsyncScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LiveStreamAsyncScanOutcome(LiveStreamAsyncScanResult(outcome.result()));
+	else
+		return LiveStreamAsyncScanOutcome(outcome.error());
+}
+
+void GreenClient::liveStreamAsyncScanAsync(const LiveStreamAsyncScanRequest& request, const LiveStreamAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, liveStreamAsyncScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::LiveStreamAsyncScanOutcomeCallable GreenClient::liveStreamAsyncScanCallable(const LiveStreamAsyncScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LiveStreamAsyncScanOutcome()>>(
+			[this, request]()
+			{
+			return this->liveStreamAsyncScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::LiveStreamAsyncScanResultsOutcome GreenClient::liveStreamAsyncScanResults(const LiveStreamAsyncScanResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LiveStreamAsyncScanResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LiveStreamAsyncScanResultsOutcome(LiveStreamAsyncScanResultsResult(outcome.result()));
+	else
+		return LiveStreamAsyncScanResultsOutcome(outcome.error());
+}
+
+void GreenClient::liveStreamAsyncScanResultsAsync(const LiveStreamAsyncScanResultsRequest& request, const LiveStreamAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, liveStreamAsyncScanResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::LiveStreamAsyncScanResultsOutcomeCallable GreenClient::liveStreamAsyncScanResultsCallable(const LiveStreamAsyncScanResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LiveStreamAsyncScanResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->liveStreamAsyncScanResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::LiveStreamCancelScanOutcome GreenClient::liveStreamCancelScan(const LiveStreamCancelScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LiveStreamCancelScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LiveStreamCancelScanOutcome(LiveStreamCancelScanResult(outcome.result()));
+	else
+		return LiveStreamCancelScanOutcome(outcome.error());
+}
+
+void GreenClient::liveStreamCancelScanAsync(const LiveStreamCancelScanRequest& request, const LiveStreamCancelScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, liveStreamCancelScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::LiveStreamCancelScanOutcomeCallable GreenClient::liveStreamCancelScanCallable(const LiveStreamCancelScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LiveStreamCancelScanOutcome()>>(
+			[this, request]()
+			{
+			return this->liveStreamCancelScan(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4911,6 +5091,78 @@ GreenClient::VideoSyncScanOutcomeCallable GreenClient::videoSyncScanCallable(con
 	return task->get_future();
 }
 
+GreenClient::VodAsyncScanOutcome GreenClient::vodAsyncScan(const VodAsyncScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VodAsyncScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VodAsyncScanOutcome(VodAsyncScanResult(outcome.result()));
+	else
+		return VodAsyncScanOutcome(outcome.error());
+}
+
+void GreenClient::vodAsyncScanAsync(const VodAsyncScanRequest& request, const VodAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, vodAsyncScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VodAsyncScanOutcomeCallable GreenClient::vodAsyncScanCallable(const VodAsyncScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VodAsyncScanOutcome()>>(
+			[this, request]()
+			{
+			return this->vodAsyncScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VodAsyncScanResultsOutcome GreenClient::vodAsyncScanResults(const VodAsyncScanResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VodAsyncScanResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VodAsyncScanResultsOutcome(VodAsyncScanResultsResult(outcome.result()));
+	else
+		return VodAsyncScanResultsOutcome(outcome.error());
+}
+
+void GreenClient::vodAsyncScanResultsAsync(const VodAsyncScanResultsRequest& request, const VodAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, vodAsyncScanResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VodAsyncScanResultsOutcomeCallable GreenClient::vodAsyncScanResultsCallable(const VodAsyncScanResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VodAsyncScanResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->vodAsyncScanResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::VoiceAsyncScanOutcome GreenClient::voiceAsyncScan(const VoiceAsyncScanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5229,6 +5481,114 @@ GreenClient::VoiceSyncScanOutcomeCallable GreenClient::voiceSyncScanCallable(con
 			[this, request]()
 			{
 			return this->voiceSyncScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::WebpageAsyncScanOutcome GreenClient::webpageAsyncScan(const WebpageAsyncScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WebpageAsyncScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WebpageAsyncScanOutcome(WebpageAsyncScanResult(outcome.result()));
+	else
+		return WebpageAsyncScanOutcome(outcome.error());
+}
+
+void GreenClient::webpageAsyncScanAsync(const WebpageAsyncScanRequest& request, const WebpageAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, webpageAsyncScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::WebpageAsyncScanOutcomeCallable GreenClient::webpageAsyncScanCallable(const WebpageAsyncScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WebpageAsyncScanOutcome()>>(
+			[this, request]()
+			{
+			return this->webpageAsyncScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::WebpageAsyncScanResultsOutcome GreenClient::webpageAsyncScanResults(const WebpageAsyncScanResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WebpageAsyncScanResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WebpageAsyncScanResultsOutcome(WebpageAsyncScanResultsResult(outcome.result()));
+	else
+		return WebpageAsyncScanResultsOutcome(outcome.error());
+}
+
+void GreenClient::webpageAsyncScanResultsAsync(const WebpageAsyncScanResultsRequest& request, const WebpageAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, webpageAsyncScanResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::WebpageAsyncScanResultsOutcomeCallable GreenClient::webpageAsyncScanResultsCallable(const WebpageAsyncScanResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WebpageAsyncScanResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->webpageAsyncScanResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::WebpageSyncScanOutcome GreenClient::webpageSyncScan(const WebpageSyncScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WebpageSyncScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WebpageSyncScanOutcome(WebpageSyncScanResult(outcome.result()));
+	else
+		return WebpageSyncScanOutcome(outcome.error());
+}
+
+void GreenClient::webpageSyncScanAsync(const WebpageSyncScanRequest& request, const WebpageSyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, webpageSyncScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::WebpageSyncScanOutcomeCallable GreenClient::webpageSyncScanCallable(const WebpageSyncScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WebpageSyncScanOutcome()>>(
+			[this, request]()
+			{
+			return this->webpageSyncScan(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

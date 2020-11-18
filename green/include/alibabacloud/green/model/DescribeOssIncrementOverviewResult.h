@@ -39,18 +39,24 @@ namespace AlibabaCloud
 				~DescribeOssIncrementOverviewResult();
 				int getImageCount()const;
 				int getVideoCount()const;
+				int getVoiceAntispamUnhandleCount()const;
 				int getPornUnhandleCount()const;
+				int getLiveUnhandleCount()const;
 				int getVideoFrameCount()const;
 				int getTerrorismUnhandleCount()const;
+				int getAdUnhandleCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int imageCount_;
 				int videoCount_;
+				int voiceAntispamUnhandleCount_;
 				int pornUnhandleCount_;
+				int liveUnhandleCount_;
 				int videoFrameCount_;
 				int terrorismUnhandleCount_;
+				int adUnhandleCount_;
 
 			};
 		}

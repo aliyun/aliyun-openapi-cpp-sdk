@@ -51,36 +51,36 @@ void DescribeCustomOcrTemplateResult::parse(const std::string &payload)
 			ocrTemplateListObject.imgUrl = valueOcrTemplateListOcrTemplate["ImgUrl"].asString();
 		if(!valueOcrTemplateListOcrTemplate["Status"].isNull())
 			ocrTemplateListObject.status = std::stoi(valueOcrTemplateListOcrTemplate["Status"].asString());
-		auto allReferAreaNode = allOcrTemplateListNode["ReferArea"]["item"];
-		for (auto allOcrTemplateListNodeReferAreaitem : allReferAreaNode)
+		auto allReferAreaNode = valueOcrTemplateListOcrTemplate["ReferArea"]["item"];
+		for (auto valueOcrTemplateListOcrTemplateReferAreaitem : allReferAreaNode)
 		{
 			OcrTemplate::Item referAreaObject;
-			if(!allOcrTemplateListNodeReferAreaitem["Name"].isNull())
-				referAreaObject.name = allOcrTemplateListNodeReferAreaitem["Name"].asString();
-			if(!allOcrTemplateListNodeReferAreaitem["X"].isNull())
-				referAreaObject.x = std::stoi(allOcrTemplateListNodeReferAreaitem["X"].asString());
-			if(!allOcrTemplateListNodeReferAreaitem["Y"].isNull())
-				referAreaObject.y = std::stoi(allOcrTemplateListNodeReferAreaitem["Y"].asString());
-			if(!allOcrTemplateListNodeReferAreaitem["Width"].isNull())
-				referAreaObject.width = std::stoi(allOcrTemplateListNodeReferAreaitem["Width"].asString());
-			if(!allOcrTemplateListNodeReferAreaitem["Height"].isNull())
-				referAreaObject.height = std::stoi(allOcrTemplateListNodeReferAreaitem["Height"].asString());
+			if(!valueOcrTemplateListOcrTemplateReferAreaitem["Name"].isNull())
+				referAreaObject.name = valueOcrTemplateListOcrTemplateReferAreaitem["Name"].asString();
+			if(!valueOcrTemplateListOcrTemplateReferAreaitem["X"].isNull())
+				referAreaObject.x = std::stoi(valueOcrTemplateListOcrTemplateReferAreaitem["X"].asString());
+			if(!valueOcrTemplateListOcrTemplateReferAreaitem["Y"].isNull())
+				referAreaObject.y = std::stoi(valueOcrTemplateListOcrTemplateReferAreaitem["Y"].asString());
+			if(!valueOcrTemplateListOcrTemplateReferAreaitem["Width"].isNull())
+				referAreaObject.width = std::stoi(valueOcrTemplateListOcrTemplateReferAreaitem["Width"].asString());
+			if(!valueOcrTemplateListOcrTemplateReferAreaitem["Height"].isNull())
+				referAreaObject.height = std::stoi(valueOcrTemplateListOcrTemplateReferAreaitem["Height"].asString());
 			ocrTemplateListObject.referArea.push_back(referAreaObject);
 		}
-		auto allRecognizeAreaNode = allOcrTemplateListNode["RecognizeArea"]["item"];
-		for (auto allOcrTemplateListNodeRecognizeAreaitem : allRecognizeAreaNode)
+		auto allRecognizeAreaNode = valueOcrTemplateListOcrTemplate["RecognizeArea"]["item"];
+		for (auto valueOcrTemplateListOcrTemplateRecognizeAreaitem : allRecognizeAreaNode)
 		{
 			OcrTemplate::Item recognizeAreaObject;
-			if(!allOcrTemplateListNodeRecognizeAreaitem["Name"].isNull())
-				recognizeAreaObject.name = allOcrTemplateListNodeRecognizeAreaitem["Name"].asString();
-			if(!allOcrTemplateListNodeRecognizeAreaitem["X"].isNull())
-				recognizeAreaObject.x = std::stoi(allOcrTemplateListNodeRecognizeAreaitem["X"].asString());
-			if(!allOcrTemplateListNodeRecognizeAreaitem["Y"].isNull())
-				recognizeAreaObject.y = std::stoi(allOcrTemplateListNodeRecognizeAreaitem["Y"].asString());
-			if(!allOcrTemplateListNodeRecognizeAreaitem["Width"].isNull())
-				recognizeAreaObject.width = std::stoi(allOcrTemplateListNodeRecognizeAreaitem["Width"].asString());
-			if(!allOcrTemplateListNodeRecognizeAreaitem["Height"].isNull())
-				recognizeAreaObject.height = std::stoi(allOcrTemplateListNodeRecognizeAreaitem["Height"].asString());
+			if(!valueOcrTemplateListOcrTemplateRecognizeAreaitem["Name"].isNull())
+				recognizeAreaObject.name = valueOcrTemplateListOcrTemplateRecognizeAreaitem["Name"].asString();
+			if(!valueOcrTemplateListOcrTemplateRecognizeAreaitem["X"].isNull())
+				recognizeAreaObject.x = std::stoi(valueOcrTemplateListOcrTemplateRecognizeAreaitem["X"].asString());
+			if(!valueOcrTemplateListOcrTemplateRecognizeAreaitem["Y"].isNull())
+				recognizeAreaObject.y = std::stoi(valueOcrTemplateListOcrTemplateRecognizeAreaitem["Y"].asString());
+			if(!valueOcrTemplateListOcrTemplateRecognizeAreaitem["Width"].isNull())
+				recognizeAreaObject.width = std::stoi(valueOcrTemplateListOcrTemplateRecognizeAreaitem["Width"].asString());
+			if(!valueOcrTemplateListOcrTemplateRecognizeAreaitem["Height"].isNull())
+				recognizeAreaObject.height = std::stoi(valueOcrTemplateListOcrTemplateRecognizeAreaitem["Height"].asString());
 			ocrTemplateListObject.recognizeArea.push_back(recognizeAreaObject);
 		}
 		ocrTemplateList_.push_back(ocrTemplateListObject);

@@ -52,14 +52,16 @@ namespace AlibabaCloud
 				explicit DescribeOssIncrementCheckSettingResult(const std::string &payload);
 				~DescribeOssIncrementCheckSettingResult();
 				std::vector<std::string> getVideoAutoFreezeSceneList()const;
-				std::vector<std::string> getVideoSceneList()const;
-				bool getImageEnableLimit()const;
-				std::vector<std::string> getImageSceneList()const;
+				std::string getCallbackId()const;
 				long getImageScanLimit()const;
 				ImageAutoFreeze getImageAutoFreeze()const;
 				std::vector<BucketConfig> getBucketConfigList()const;
-				std::string getAutoFreezeType()const;
 				int getVideoFrameInterval()const;
+				std::vector<std::string> getVideoSceneList()const;
+				bool getImageEnableLimit()const;
+				std::vector<std::string> getImageSceneList()const;
+				std::string getCallbackName()const;
+				std::string getAutoFreezeType()const;
 				int getVideoMaxFrames()const;
 				int getVideoMaxSize()const;
 
@@ -67,14 +69,16 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<std::string> videoAutoFreezeSceneList_;
-				std::vector<std::string> videoSceneList_;
-				bool imageEnableLimit_;
-				std::vector<std::string> imageSceneList_;
+				std::string callbackId_;
 				long imageScanLimit_;
 				ImageAutoFreeze imageAutoFreeze_;
 				std::vector<BucketConfig> bucketConfigList_;
-				std::string autoFreezeType_;
 				int videoFrameInterval_;
+				std::vector<std::string> videoSceneList_;
+				bool imageEnableLimit_;
+				std::vector<std::string> imageSceneList_;
+				std::string callbackName_;
+				std::string autoFreezeType_;
 				int videoMaxFrames_;
 				int videoMaxSize_;
 

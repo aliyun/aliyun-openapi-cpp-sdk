@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setVideoFrameInterval(int videoFrameInterval);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getCallbackId()const;
+				void setCallbackId(const std::string& callbackId);
 				std::string getImageScanLimit()const;
 				void setImageScanLimit(const std::string& imageScanLimit);
 				std::string getVideoAutoFreezeSceneList()const;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 				std::string imageSceneList_;
 				int videoFrameInterval_;
 				std::string sourceIp_;
+				std::string callbackId_;
 				std::string imageScanLimit_;
 				std::string videoAutoFreezeSceneList_;
 				std::string lang_;

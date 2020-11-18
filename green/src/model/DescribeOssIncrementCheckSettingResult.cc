@@ -84,6 +84,10 @@ void DescribeOssIncrementCheckSettingResult::parse(const std::string &payload)
 		videoMaxSize_ = std::stoi(value["VideoMaxSize"].asString());
 	if(!value["AutoFreezeType"].isNull())
 		autoFreezeType_ = value["AutoFreezeType"].asString();
+	if(!value["CallbackId"].isNull())
+		callbackId_ = value["CallbackId"].asString();
+	if(!value["CallbackName"].isNull())
+		callbackName_ = value["CallbackName"].asString();
 
 }
 
@@ -92,19 +96,9 @@ std::vector<std::string> DescribeOssIncrementCheckSettingResult::getVideoAutoFre
 	return videoAutoFreezeSceneList_;
 }
 
-std::vector<std::string> DescribeOssIncrementCheckSettingResult::getVideoSceneList()const
+std::string DescribeOssIncrementCheckSettingResult::getCallbackId()const
 {
-	return videoSceneList_;
-}
-
-bool DescribeOssIncrementCheckSettingResult::getImageEnableLimit()const
-{
-	return imageEnableLimit_;
-}
-
-std::vector<std::string> DescribeOssIncrementCheckSettingResult::getImageSceneList()const
-{
-	return imageSceneList_;
+	return callbackId_;
 }
 
 long DescribeOssIncrementCheckSettingResult::getImageScanLimit()const
@@ -122,14 +116,34 @@ DescribeOssIncrementCheckSettingResult::ImageAutoFreeze DescribeOssIncrementChec
 	return imageAutoFreeze_;
 }
 
-std::string DescribeOssIncrementCheckSettingResult::getAutoFreezeType()const
-{
-	return autoFreezeType_;
-}
-
 int DescribeOssIncrementCheckSettingResult::getVideoFrameInterval()const
 {
 	return videoFrameInterval_;
+}
+
+std::vector<std::string> DescribeOssIncrementCheckSettingResult::getVideoSceneList()const
+{
+	return videoSceneList_;
+}
+
+bool DescribeOssIncrementCheckSettingResult::getImageEnableLimit()const
+{
+	return imageEnableLimit_;
+}
+
+std::vector<std::string> DescribeOssIncrementCheckSettingResult::getImageSceneList()const
+{
+	return imageSceneList_;
+}
+
+std::string DescribeOssIncrementCheckSettingResult::getCallbackName()const
+{
+	return callbackName_;
+}
+
+std::string DescribeOssIncrementCheckSettingResult::getAutoFreezeType()const
+{
+	return autoFreezeType_;
 }
 
 int DescribeOssIncrementCheckSettingResult::getVideoMaxFrames()const

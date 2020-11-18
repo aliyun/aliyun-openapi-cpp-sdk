@@ -71,6 +71,17 @@ void UpdateOssIncrementCheckSettingRequest::setSourceIp(const std::string& sourc
 	setParameter("SourceIp", sourceIp);
 }
 
+std::string UpdateOssIncrementCheckSettingRequest::getCallbackId()const
+{
+	return callbackId_;
+}
+
+void UpdateOssIncrementCheckSettingRequest::setCallbackId(const std::string& callbackId)
+{
+	callbackId_ = callbackId;
+	setParameter("CallbackId", callbackId);
+}
+
 std::string UpdateOssIncrementCheckSettingRequest::getImageScanLimit()const
 {
 	return imageScanLimit_;

@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setAuditResult(const std::string& auditResult);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getKeyword()const;
+				void setKeyword(const std::string& keyword);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
 				int getTotalCount()const;
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string libType_;
 				std::string auditResult_;
 				int pageSize_;
+				std::string keyword_;
 				std::string taskId_;
 				int totalCount_;
 				std::string keywordId_;

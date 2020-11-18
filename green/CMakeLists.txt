@@ -111,6 +111,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeKeywordLibResult.h
 	include/alibabacloud/green/model/DescribeNotificationSettingRequest.h
 	include/alibabacloud/green/model/DescribeNotificationSettingResult.h
+	include/alibabacloud/green/model/DescribeOpenApiRcpStatsRequest.h
+	include/alibabacloud/green/model/DescribeOpenApiRcpStatsResult.h
 	include/alibabacloud/green/model/DescribeOpenApiUsageRequest.h
 	include/alibabacloud/green/model/DescribeOpenApiUsageResult.h
 	include/alibabacloud/green/model/DescribeOssCallbackSettingRequest.h
@@ -159,6 +161,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DetectFaceResult.h
 	include/alibabacloud/green/model/ExportKeywordsRequest.h
 	include/alibabacloud/green/model/ExportKeywordsResult.h
+	include/alibabacloud/green/model/ExportOpenApiRcpStatsRequest.h
+	include/alibabacloud/green/model/ExportOpenApiRcpStatsResult.h
 	include/alibabacloud/green/model/ExportOssResultRequest.h
 	include/alibabacloud/green/model/ExportOssResultResult.h
 	include/alibabacloud/green/model/FileAsyncScanRequest.h
@@ -199,6 +203,12 @@ set(green_public_header_model
 	include/alibabacloud/green/model/ListSimilarityImagesResult.h
 	include/alibabacloud/green/model/ListSimilarityLibrariesRequest.h
 	include/alibabacloud/green/model/ListSimilarityLibrariesResult.h
+	include/alibabacloud/green/model/LiveStreamAsyncScanRequest.h
+	include/alibabacloud/green/model/LiveStreamAsyncScanResult.h
+	include/alibabacloud/green/model/LiveStreamAsyncScanResultsRequest.h
+	include/alibabacloud/green/model/LiveStreamAsyncScanResultsResult.h
+	include/alibabacloud/green/model/LiveStreamCancelScanRequest.h
+	include/alibabacloud/green/model/LiveStreamCancelScanResult.h
 	include/alibabacloud/green/model/MarkAuditContentRequest.h
 	include/alibabacloud/green/model/MarkAuditContentResult.h
 	include/alibabacloud/green/model/MarkAuditContentItemRequest.h
@@ -291,6 +301,10 @@ set(green_public_header_model
 	include/alibabacloud/green/model/VideoFeedbackResult.h
 	include/alibabacloud/green/model/VideoSyncScanRequest.h
 	include/alibabacloud/green/model/VideoSyncScanResult.h
+	include/alibabacloud/green/model/VodAsyncScanRequest.h
+	include/alibabacloud/green/model/VodAsyncScanResult.h
+	include/alibabacloud/green/model/VodAsyncScanResultsRequest.h
+	include/alibabacloud/green/model/VodAsyncScanResultsResult.h
 	include/alibabacloud/green/model/VoiceAsyncScanRequest.h
 	include/alibabacloud/green/model/VoiceAsyncScanResult.h
 	include/alibabacloud/green/model/VoiceAsyncScanResultsRequest.h
@@ -308,7 +322,13 @@ set(green_public_header_model
 	include/alibabacloud/green/model/VoiceIdentityUnregisterRequest.h
 	include/alibabacloud/green/model/VoiceIdentityUnregisterResult.h
 	include/alibabacloud/green/model/VoiceSyncScanRequest.h
-	include/alibabacloud/green/model/VoiceSyncScanResult.h )
+	include/alibabacloud/green/model/VoiceSyncScanResult.h
+	include/alibabacloud/green/model/WebpageAsyncScanRequest.h
+	include/alibabacloud/green/model/WebpageAsyncScanResult.h
+	include/alibabacloud/green/model/WebpageAsyncScanResultsRequest.h
+	include/alibabacloud/green/model/WebpageAsyncScanResultsResult.h
+	include/alibabacloud/green/model/WebpageSyncScanRequest.h
+	include/alibabacloud/green/model/WebpageSyncScanResult.h )
 
 set(green_src 
 	src/GreenClient.cc
@@ -402,6 +422,8 @@ set(green_src
 	src/model/DescribeKeywordLibResult.cc
 	src/model/DescribeNotificationSettingRequest.cc
 	src/model/DescribeNotificationSettingResult.cc
+	src/model/DescribeOpenApiRcpStatsRequest.cc
+	src/model/DescribeOpenApiRcpStatsResult.cc
 	src/model/DescribeOpenApiUsageRequest.cc
 	src/model/DescribeOpenApiUsageResult.cc
 	src/model/DescribeOssCallbackSettingRequest.cc
@@ -450,6 +472,8 @@ set(green_src
 	src/model/DetectFaceResult.cc
 	src/model/ExportKeywordsRequest.cc
 	src/model/ExportKeywordsResult.cc
+	src/model/ExportOpenApiRcpStatsRequest.cc
+	src/model/ExportOpenApiRcpStatsResult.cc
 	src/model/ExportOssResultRequest.cc
 	src/model/ExportOssResultResult.cc
 	src/model/FileAsyncScanRequest.cc
@@ -490,6 +514,12 @@ set(green_src
 	src/model/ListSimilarityImagesResult.cc
 	src/model/ListSimilarityLibrariesRequest.cc
 	src/model/ListSimilarityLibrariesResult.cc
+	src/model/LiveStreamAsyncScanRequest.cc
+	src/model/LiveStreamAsyncScanResult.cc
+	src/model/LiveStreamAsyncScanResultsRequest.cc
+	src/model/LiveStreamAsyncScanResultsResult.cc
+	src/model/LiveStreamCancelScanRequest.cc
+	src/model/LiveStreamCancelScanResult.cc
 	src/model/MarkAuditContentRequest.cc
 	src/model/MarkAuditContentResult.cc
 	src/model/MarkAuditContentItemRequest.cc
@@ -582,6 +612,10 @@ set(green_src
 	src/model/VideoFeedbackResult.cc
 	src/model/VideoSyncScanRequest.cc
 	src/model/VideoSyncScanResult.cc
+	src/model/VodAsyncScanRequest.cc
+	src/model/VodAsyncScanResult.cc
+	src/model/VodAsyncScanResultsRequest.cc
+	src/model/VodAsyncScanResultsResult.cc
 	src/model/VoiceAsyncScanRequest.cc
 	src/model/VoiceAsyncScanResult.cc
 	src/model/VoiceAsyncScanResultsRequest.cc
@@ -599,7 +633,13 @@ set(green_src
 	src/model/VoiceIdentityUnregisterRequest.cc
 	src/model/VoiceIdentityUnregisterResult.cc
 	src/model/VoiceSyncScanRequest.cc
-	src/model/VoiceSyncScanResult.cc )
+	src/model/VoiceSyncScanResult.cc
+	src/model/WebpageAsyncScanRequest.cc
+	src/model/WebpageAsyncScanResult.cc
+	src/model/WebpageAsyncScanResultsRequest.cc
+	src/model/WebpageAsyncScanResultsResult.cc
+	src/model/WebpageSyncScanRequest.cc
+	src/model/WebpageSyncScanResult.cc )
 
 add_library(green ${LIB_TYPE}
 	${green_public_header}

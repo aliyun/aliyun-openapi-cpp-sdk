@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setMinScore(float minScore);
 				float getMaxScore()const;
 				void setMaxScore(float maxScore);
+				long getStockTaskId()const;
+				void setStockTaskId(long stockTaskId);
 				std::string getStartDate()const;
 				void setStartDate(const std::string& startDate);
 				std::string getScene()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
             private:
 				float minScore_;
 				float maxScore_;
+				long stockTaskId_;
 				std::string startDate_;
 				std::string scene_;
 				std::string sourceIp_;
