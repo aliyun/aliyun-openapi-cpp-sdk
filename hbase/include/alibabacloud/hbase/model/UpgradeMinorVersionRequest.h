@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_ADDUSERHDFSINFOREQUEST_H_
-#define ALIBABACLOUD_HBASE_MODEL_ADDUSERHDFSINFOREQUEST_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_UPGRADEMINORVERSIONREQUEST_H_
+#define ALIBABACLOUD_HBASE_MODEL_UPGRADEMINORVERSIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT AddUserHdfsInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HBASE_EXPORT UpgradeMinorVersionRequest : public RpcServiceRequest
 			{
 
 			public:
-				AddUserHdfsInfoRequest();
-				~AddUserHdfsInfoRequest();
+				UpgradeMinorVersionRequest();
+				~UpgradeMinorVersionRequest();
 
-				std::string getExtInfo()const;
-				void setExtInfo(const std::string& extInfo);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
+				std::string getComponents()const;
+				void setComponents(const std::string& components);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 
             private:
-				std::string extInfo_;
-				std::string clientToken_;
+				std::string components_;
 				std::string clusterId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_ADDUSERHDFSINFOREQUEST_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_UPGRADEMINORVERSIONREQUEST_H_

@@ -131,6 +131,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		autoRenewal_ = value["AutoRenewal"].asString() == "true";
 	if(!value["Duration"].isNull())
 		duration_ = std::stoi(value["Duration"].asString());
+	if(!value["ColdStorageSize"].isNull())
+		coldStorageSize_ = std::stoi(value["ColdStorageSize"].asString());
 
 }
 
@@ -227,6 +229,11 @@ std::string DescribeInstanceResult::getCoreDiskCount()const
 std::string DescribeInstanceResult::getParentId()const
 {
 	return parentId_;
+}
+
+int DescribeInstanceResult::getColdStorageSize()const
+{
+	return coldStorageSize_;
 }
 
 int DescribeInstanceResult::getMasterDiskSize()const

@@ -49,12 +49,12 @@ void DescribeMultiZoneAvailableRegionsResult::parse(const std::string &payload)
 			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
 		if(!valueRegionsRegion["RegionId"].isNull())
 			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
-		auto allAvailableCombinesNode = allRegionsNode["AvailableCombines"]["AvailableCombine"];
-		for (auto allRegionsNodeAvailableCombinesAvailableCombine : allAvailableCombinesNode)
+		auto allAvailableCombinesNode = valueRegionsRegion["AvailableCombines"]["AvailableCombine"];
+		for (auto valueRegionsRegionAvailableCombinesAvailableCombine : allAvailableCombinesNode)
 		{
 			Region::AvailableCombine availableCombinesObject;
-			if(!allRegionsNodeAvailableCombinesAvailableCombine["Id"].isNull())
-				availableCombinesObject.id = allRegionsNodeAvailableCombinesAvailableCombine["Id"].asString();
+			if(!valueRegionsRegionAvailableCombinesAvailableCombine["Id"].isNull())
+				availableCombinesObject.id = valueRegionsRegionAvailableCombinesAvailableCombine["Id"].asString();
 			auto allZones = value["Zones"]["Zone"];
 			for (auto value : allZones)
 				availableCombinesObject.zones.push_back(value.asString());

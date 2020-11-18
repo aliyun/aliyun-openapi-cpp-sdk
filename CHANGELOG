@@ -1,4 +1,7 @@
 2020-11-18 Version: patch
+- DescribeInstance support coldStorageSize.
+
+2020-11-18 Version: patch
 - Update DescribeDedicatedClusterInstanceList InstanceStatus type.
 
 2020-11-18 Version: patch

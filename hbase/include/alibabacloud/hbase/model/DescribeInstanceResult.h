@@ -61,6 +61,7 @@ namespace AlibabaCloud
 				std::string getMajorVersion()const;
 				std::string getCoreDiskCount()const;
 				std::string getParentId()const;
+				int getColdStorageSize()const;
 				int getMasterDiskSize()const;
 				std::string getExpireTimeUTC()const;
 				std::string getZoneId()const;
@@ -107,6 +108,7 @@ namespace AlibabaCloud
 				std::string majorVersion_;
 				std::string coreDiskCount_;
 				std::string parentId_;
+				int coldStorageSize_;
 				int masterDiskSize_;
 				std::string expireTimeUTC_;
 				std::string zoneId_;

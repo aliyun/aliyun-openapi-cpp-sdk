@@ -51,16 +51,16 @@ void QueryHBaseHaDBResult::parse(const std::string &payload)
 			clusterListObject.activeName = valueClusterListCluster["ActiveName"].asString();
 		if(!valueClusterListCluster["StandbyName"].isNull())
 			clusterListObject.standbyName = valueClusterListCluster["StandbyName"].asString();
-		auto allHaSlbConnListNode = allClusterListNode["HaSlbConnList"]["HaSlbConn"];
-		for (auto allClusterListNodeHaSlbConnListHaSlbConn : allHaSlbConnListNode)
+		auto allHaSlbConnListNode = valueClusterListCluster["HaSlbConnList"]["HaSlbConn"];
+		for (auto valueClusterListClusterHaSlbConnListHaSlbConn : allHaSlbConnListNode)
 		{
 			Cluster::HaSlbConn haSlbConnListObject;
-			if(!allClusterListNodeHaSlbConnListHaSlbConn["SlbType"].isNull())
-				haSlbConnListObject.slbType = allClusterListNodeHaSlbConnListHaSlbConn["SlbType"].asString();
-			if(!allClusterListNodeHaSlbConnListHaSlbConn["SlbConnAddr"].isNull())
-				haSlbConnListObject.slbConnAddr = allClusterListNodeHaSlbConnListHaSlbConn["SlbConnAddr"].asString();
-			if(!allClusterListNodeHaSlbConnListHaSlbConn["HbaseType"].isNull())
-				haSlbConnListObject.hbaseType = allClusterListNodeHaSlbConnListHaSlbConn["HbaseType"].asString();
+			if(!valueClusterListClusterHaSlbConnListHaSlbConn["SlbType"].isNull())
+				haSlbConnListObject.slbType = valueClusterListClusterHaSlbConnListHaSlbConn["SlbType"].asString();
+			if(!valueClusterListClusterHaSlbConnListHaSlbConn["SlbConnAddr"].isNull())
+				haSlbConnListObject.slbConnAddr = valueClusterListClusterHaSlbConnListHaSlbConn["SlbConnAddr"].asString();
+			if(!valueClusterListClusterHaSlbConnListHaSlbConn["HbaseType"].isNull())
+				haSlbConnListObject.hbaseType = valueClusterListClusterHaSlbConnListHaSlbConn["HbaseType"].asString();
 			clusterListObject.haSlbConnList.push_back(haSlbConnListObject);
 		}
 		clusterList_.push_back(clusterListObject);

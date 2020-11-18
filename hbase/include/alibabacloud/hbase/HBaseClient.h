@@ -156,6 +156,8 @@
 #include "model/TagResourcesResult.h"
 #include "model/UnTagResourcesRequest.h"
 #include "model/UnTagResourcesResult.h"
+#include "model/UpgradeMinorVersionRequest.h"
+#include "model/UpgradeMinorVersionResult.h"
 #include "model/UpgradeMultiZoneClusterRequest.h"
 #include "model/UpgradeMultiZoneClusterResult.h"
 #include "model/XpackRelateDBRequest.h"
@@ -370,6 +372,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnTagResourcesResult> UnTagResourcesOutcome;
 			typedef std::future<UnTagResourcesOutcome> UnTagResourcesOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::UnTagResourcesRequest&, const UnTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpgradeMinorVersionResult> UpgradeMinorVersionOutcome;
+			typedef std::future<UpgradeMinorVersionOutcome> UpgradeMinorVersionOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::UpgradeMinorVersionRequest&, const UpgradeMinorVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeMinorVersionAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeMultiZoneClusterResult> UpgradeMultiZoneClusterOutcome;
 			typedef std::future<UpgradeMultiZoneClusterOutcome> UpgradeMultiZoneClusterOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::UpgradeMultiZoneClusterRequest&, const UpgradeMultiZoneClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeMultiZoneClusterAsyncHandler;
@@ -582,6 +587,9 @@ namespace AlibabaCloud
 			UnTagResourcesOutcome unTagResources(const Model::UnTagResourcesRequest &request)const;
 			void unTagResourcesAsync(const Model::UnTagResourcesRequest& request, const UnTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnTagResourcesOutcomeCallable unTagResourcesCallable(const Model::UnTagResourcesRequest& request) const;
+			UpgradeMinorVersionOutcome upgradeMinorVersion(const Model::UpgradeMinorVersionRequest &request)const;
+			void upgradeMinorVersionAsync(const Model::UpgradeMinorVersionRequest& request, const UpgradeMinorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpgradeMinorVersionOutcomeCallable upgradeMinorVersionCallable(const Model::UpgradeMinorVersionRequest& request) const;
 			UpgradeMultiZoneClusterOutcome upgradeMultiZoneCluster(const Model::UpgradeMultiZoneClusterRequest &request)const;
 			void upgradeMultiZoneClusterAsync(const Model::UpgradeMultiZoneClusterRequest& request, const UpgradeMultiZoneClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeMultiZoneClusterOutcomeCallable upgradeMultiZoneClusterCallable(const Model::UpgradeMultiZoneClusterRequest& request) const;

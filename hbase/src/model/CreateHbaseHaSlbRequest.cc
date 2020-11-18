@@ -27,6 +27,17 @@ CreateHbaseHaSlbRequest::CreateHbaseHaSlbRequest() :
 CreateHbaseHaSlbRequest::~CreateHbaseHaSlbRequest()
 {}
 
+std::string CreateHbaseHaSlbRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateHbaseHaSlbRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string CreateHbaseHaSlbRequest::getHaTypes()const
 {
 	return haTypes_;

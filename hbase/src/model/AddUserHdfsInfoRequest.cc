@@ -38,6 +38,17 @@ void AddUserHdfsInfoRequest::setExtInfo(const std::string& extInfo)
 	setParameter("ExtInfo", extInfo);
 }
 
+std::string AddUserHdfsInfoRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddUserHdfsInfoRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string AddUserHdfsInfoRequest::getClusterId()const
 {
 	return clusterId_;

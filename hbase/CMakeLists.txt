@@ -155,6 +155,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/TagResourcesResult.h
 	include/alibabacloud/hbase/model/UnTagResourcesRequest.h
 	include/alibabacloud/hbase/model/UnTagResourcesResult.h
+	include/alibabacloud/hbase/model/UpgradeMinorVersionRequest.h
+	include/alibabacloud/hbase/model/UpgradeMinorVersionResult.h
 	include/alibabacloud/hbase/model/UpgradeMultiZoneClusterRequest.h
 	include/alibabacloud/hbase/model/UpgradeMultiZoneClusterResult.h
 	include/alibabacloud/hbase/model/XpackRelateDBRequest.h
@@ -296,6 +298,8 @@ set(hbase_src
 	src/model/TagResourcesResult.cc
 	src/model/UnTagResourcesRequest.cc
 	src/model/UnTagResourcesResult.cc
+	src/model/UpgradeMinorVersionRequest.cc
+	src/model/UpgradeMinorVersionResult.cc
 	src/model/UpgradeMultiZoneClusterRequest.cc
 	src/model/UpgradeMultiZoneClusterResult.cc
 	src/model/XpackRelateDBRequest.cc

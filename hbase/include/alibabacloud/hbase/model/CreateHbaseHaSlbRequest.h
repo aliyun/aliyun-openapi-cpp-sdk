@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateHbaseHaSlbRequest();
 				~CreateHbaseHaSlbRequest();
 
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getHaTypes()const;
 				void setHaTypes(const std::string& haTypes);
 				std::string getHbaseType()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setHaId(const std::string& haId);
 
             private:
+				std::string clientToken_;
 				std::string haTypes_;
 				std::string hbaseType_;
 				std::string bdsId_;

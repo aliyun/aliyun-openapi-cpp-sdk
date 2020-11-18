@@ -2463,6 +2463,42 @@ HBaseClient::UnTagResourcesOutcomeCallable HBaseClient::unTagResourcesCallable(c
 	return task->get_future();
 }
 
+HBaseClient::UpgradeMinorVersionOutcome HBaseClient::upgradeMinorVersion(const UpgradeMinorVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeMinorVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeMinorVersionOutcome(UpgradeMinorVersionResult(outcome.result()));
+	else
+		return UpgradeMinorVersionOutcome(outcome.error());
+}
+
+void HBaseClient::upgradeMinorVersionAsync(const UpgradeMinorVersionRequest& request, const UpgradeMinorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeMinorVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::UpgradeMinorVersionOutcomeCallable HBaseClient::upgradeMinorVersionCallable(const UpgradeMinorVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeMinorVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeMinorVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::UpgradeMultiZoneClusterOutcome HBaseClient::upgradeMultiZoneCluster(const UpgradeMultiZoneClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

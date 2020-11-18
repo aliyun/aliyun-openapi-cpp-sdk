@@ -115,14 +115,14 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.autoRenewal = valueInstancesInstance["AutoRenewal"].asString() == "true";
 		if(!valueInstancesInstance["Duration"].isNull())
 			instancesObject.duration = std::stoi(valueInstancesInstance["Duration"].asString());
-		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
-		for (auto allInstancesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueInstancesInstance["Tags"]["Tag"];
+		for (auto valueInstancesInstanceTagsTag : allTagsNode)
 		{
 			Instance::Tag tagsObject;
-			if(!allInstancesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allInstancesNodeTagsTag["Key"].asString();
-			if(!allInstancesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allInstancesNodeTagsTag["Value"].asString();
+			if(!valueInstancesInstanceTagsTag["Key"].isNull())
+				tagsObject.key = valueInstancesInstanceTagsTag["Key"].asString();
+			if(!valueInstancesInstanceTagsTag["Value"].isNull())
+				tagsObject.value = valueInstancesInstanceTagsTag["Value"].asString();
 			instancesObject.tags.push_back(tagsObject);
 		}
 		instances_.push_back(instancesObject);
