@@ -27,6 +27,17 @@ GenerateHumanAnimeStyleRequest::GenerateHumanAnimeStyleRequest() :
 GenerateHumanAnimeStyleRequest::~GenerateHumanAnimeStyleRequest()
 {}
 
+std::string GenerateHumanAnimeStyleRequest::getAlgoType()const
+{
+	return algoType_;
+}
+
+void GenerateHumanAnimeStyleRequest::setAlgoType(const std::string& algoType)
+{
+	algoType_ = algoType;
+	setParameter("AlgoType", algoType);
+}
+
 std::string GenerateHumanAnimeStyleRequest::getImageURL()const
 {
 	return imageURL_;
@@ -35,6 +46,6 @@ std::string GenerateHumanAnimeStyleRequest::getImageURL()const
 void GenerateHumanAnimeStyleRequest::setImageURL(const std::string& imageURL)
 {
 	imageURL_ = imageURL;
-	setBodyParameter("ImageURL", imageURL);
+	setParameter("ImageURL", imageURL);
 }
 

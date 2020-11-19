@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				GenerateHumanAnimeStyleRequest();
 				~GenerateHumanAnimeStyleRequest();
 
+				std::string getAlgoType()const;
+				void setAlgoType(const std::string& algoType);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				std::string algoType_;
 				std::string imageURL_;
 
 			};
