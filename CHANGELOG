@@ -1,3 +1,6 @@
+2020-11-19 Version: patch
+- Supported backend interface for ICBU.
+
 2020-11-18 Version: patch
 - DescribeInstance support coldStorageSize.
 
