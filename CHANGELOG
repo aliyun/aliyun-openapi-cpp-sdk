@@ -1,4 +1,7 @@
 2020-11-19 Version: patch
+- Update DescribeDedicatedClusterInstanceList return data.
+
+2020-11-19 Version: patch
 - Update data API.
 
 2020-11-19 Version: patch

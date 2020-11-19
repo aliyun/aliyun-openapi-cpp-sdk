@@ -82,6 +82,17 @@ void DescribeDedicatedClusterInstanceListRequest::setSecurityToken(const std::st
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeDedicatedClusterInstanceListRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDedicatedClusterInstanceListRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeDedicatedClusterInstanceListRequest::getEngine()const
 {
 	return engine_;
@@ -190,5 +201,27 @@ void DescribeDedicatedClusterInstanceListRequest::setInstanceId(const std::strin
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string DescribeDedicatedClusterInstanceListRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeDedicatedClusterInstanceListRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
+}
+
+std::string DescribeDedicatedClusterInstanceListRequest::getRegion()const
+{
+	return region_;
+}
+
+void DescribeDedicatedClusterInstanceListRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setParameter("Region", region);
 }
 
