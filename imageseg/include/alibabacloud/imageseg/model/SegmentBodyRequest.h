@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				SegmentBodyRequest();
 				~SegmentBodyRequest();
 
+				std::string getReturnForm()const;
+				void setReturnForm(const std::string& returnForm);
 				bool getAsync()const;
 				void setAsync(bool async);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				std::string returnForm_;
 				bool async_;
 				std::string imageURL_;
 

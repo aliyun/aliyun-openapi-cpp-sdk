@@ -27,6 +27,17 @@ SegmentBodyRequest::SegmentBodyRequest() :
 SegmentBodyRequest::~SegmentBodyRequest()
 {}
 
+std::string SegmentBodyRequest::getReturnForm()const
+{
+	return returnForm_;
+}
+
+void SegmentBodyRequest::setReturnForm(const std::string& returnForm)
+{
+	returnForm_ = returnForm;
+	setParameter("ReturnForm", returnForm);
+}
+
 bool SegmentBodyRequest::getAsync()const
 {
 	return async_;
