@@ -59,12 +59,21 @@ void DescribeRefreshQuotaResult::parse(const std::string &payload)
 		regexQuota_ = value["RegexQuota"].asString();
 	if(!value["RegexRemain"].isNull())
 		regexRemain_ = value["RegexRemain"].asString();
+	if(!value["PreloadEdgeQuota"].isNull())
+		preloadEdgeQuota_ = value["PreloadEdgeQuota"].asString();
+	if(!value["PreloadEdgeRemain"].isNull())
+		preloadEdgeRemain_ = value["PreloadEdgeRemain"].asString();
 
 }
 
 std::string DescribeRefreshQuotaResult::getUrlRemain()const
 {
 	return urlRemain_;
+}
+
+std::string DescribeRefreshQuotaResult::getPreloadEdgeRemain()const
+{
+	return preloadEdgeRemain_;
 }
 
 std::string DescribeRefreshQuotaResult::getPreloadRemain()const
@@ -110,5 +119,10 @@ std::string DescribeRefreshQuotaResult::getDirQuota()const
 std::string DescribeRefreshQuotaResult::getPreloadQuota()const
 {
 	return preloadQuota_;
+}
+
+std::string DescribeRefreshQuotaResult::getPreloadEdgeQuota()const
+{
+	return preloadEdgeQuota_;
 }
 

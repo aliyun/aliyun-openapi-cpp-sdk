@@ -45,16 +45,16 @@ void DescribeDomainHttpCodeDataResult::parse(const std::string &payload)
 		UsageData httpCodeDataObject;
 		if(!valueHttpCodeDataUsageData["TimeStamp"].isNull())
 			httpCodeDataObject.timeStamp = valueHttpCodeDataUsageData["TimeStamp"].asString();
-		auto allValueNode = allHttpCodeDataNode["Value"]["CodeProportionData"];
-		for (auto allHttpCodeDataNodeValueCodeProportionData : allValueNode)
+		auto allValueNode = valueHttpCodeDataUsageData["Value"]["CodeProportionData"];
+		for (auto valueHttpCodeDataUsageDataValueCodeProportionData : allValueNode)
 		{
 			UsageData::CodeProportionData valueObject;
-			if(!allHttpCodeDataNodeValueCodeProportionData["Code"].isNull())
-				valueObject.code = allHttpCodeDataNodeValueCodeProportionData["Code"].asString();
-			if(!allHttpCodeDataNodeValueCodeProportionData["Proportion"].isNull())
-				valueObject.proportion = allHttpCodeDataNodeValueCodeProportionData["Proportion"].asString();
-			if(!allHttpCodeDataNodeValueCodeProportionData["Count"].isNull())
-				valueObject.count = allHttpCodeDataNodeValueCodeProportionData["Count"].asString();
+			if(!valueHttpCodeDataUsageDataValueCodeProportionData["Code"].isNull())
+				valueObject.code = valueHttpCodeDataUsageDataValueCodeProportionData["Code"].asString();
+			if(!valueHttpCodeDataUsageDataValueCodeProportionData["Proportion"].isNull())
+				valueObject.proportion = valueHttpCodeDataUsageDataValueCodeProportionData["Proportion"].asString();
+			if(!valueHttpCodeDataUsageDataValueCodeProportionData["Count"].isNull())
+				valueObject.count = valueHttpCodeDataUsageDataValueCodeProportionData["Count"].asString();
 			httpCodeDataObject.value.push_back(valueObject);
 		}
 		httpCodeData_.push_back(httpCodeDataObject);

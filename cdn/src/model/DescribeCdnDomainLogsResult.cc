@@ -47,32 +47,32 @@ void DescribeCdnDomainLogsResult::parse(const std::string &payload)
 			domainLogDetailsObject.domainName = valueDomainLogDetailsDomainLogDetail["DomainName"].asString();
 		if(!valueDomainLogDetailsDomainLogDetail["LogCount"].isNull())
 			domainLogDetailsObject.logCount = std::stol(valueDomainLogDetailsDomainLogDetail["LogCount"].asString());
-		auto allPageInfosNode = allDomainLogDetailsNode["PageInfos"]["PageInfoDetail"];
-		for (auto allDomainLogDetailsNodePageInfosPageInfoDetail : allPageInfosNode)
+		auto allPageInfosNode = valueDomainLogDetailsDomainLogDetail["PageInfos"]["PageInfoDetail"];
+		for (auto valueDomainLogDetailsDomainLogDetailPageInfosPageInfoDetail : allPageInfosNode)
 		{
 			DomainLogDetail::PageInfoDetail pageInfosObject;
-			if(!allDomainLogDetailsNodePageInfosPageInfoDetail["PageIndex"].isNull())
-				pageInfosObject.pageIndex = std::stol(allDomainLogDetailsNodePageInfosPageInfoDetail["PageIndex"].asString());
-			if(!allDomainLogDetailsNodePageInfosPageInfoDetail["PageSize"].isNull())
-				pageInfosObject.pageSize = std::stol(allDomainLogDetailsNodePageInfosPageInfoDetail["PageSize"].asString());
-			if(!allDomainLogDetailsNodePageInfosPageInfoDetail["Total"].isNull())
-				pageInfosObject.total = std::stol(allDomainLogDetailsNodePageInfosPageInfoDetail["Total"].asString());
+			if(!valueDomainLogDetailsDomainLogDetailPageInfosPageInfoDetail["PageIndex"].isNull())
+				pageInfosObject.pageIndex = std::stol(valueDomainLogDetailsDomainLogDetailPageInfosPageInfoDetail["PageIndex"].asString());
+			if(!valueDomainLogDetailsDomainLogDetailPageInfosPageInfoDetail["PageSize"].isNull())
+				pageInfosObject.pageSize = std::stol(valueDomainLogDetailsDomainLogDetailPageInfosPageInfoDetail["PageSize"].asString());
+			if(!valueDomainLogDetailsDomainLogDetailPageInfosPageInfoDetail["Total"].isNull())
+				pageInfosObject.total = std::stol(valueDomainLogDetailsDomainLogDetailPageInfosPageInfoDetail["Total"].asString());
 			domainLogDetailsObject.pageInfos.push_back(pageInfosObject);
 		}
-		auto allLogInfosNode = allDomainLogDetailsNode["LogInfos"]["LogInfoDetail"];
-		for (auto allDomainLogDetailsNodeLogInfosLogInfoDetail : allLogInfosNode)
+		auto allLogInfosNode = valueDomainLogDetailsDomainLogDetail["LogInfos"]["LogInfoDetail"];
+		for (auto valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail : allLogInfosNode)
 		{
 			DomainLogDetail::LogInfoDetail logInfosObject;
-			if(!allDomainLogDetailsNodeLogInfosLogInfoDetail["LogName"].isNull())
-				logInfosObject.logName = allDomainLogDetailsNodeLogInfosLogInfoDetail["LogName"].asString();
-			if(!allDomainLogDetailsNodeLogInfosLogInfoDetail["LogPath"].isNull())
-				logInfosObject.logPath = allDomainLogDetailsNodeLogInfosLogInfoDetail["LogPath"].asString();
-			if(!allDomainLogDetailsNodeLogInfosLogInfoDetail["LogSize"].isNull())
-				logInfosObject.logSize = std::stol(allDomainLogDetailsNodeLogInfosLogInfoDetail["LogSize"].asString());
-			if(!allDomainLogDetailsNodeLogInfosLogInfoDetail["StartTime"].isNull())
-				logInfosObject.startTime = allDomainLogDetailsNodeLogInfosLogInfoDetail["StartTime"].asString();
-			if(!allDomainLogDetailsNodeLogInfosLogInfoDetail["EndTime"].isNull())
-				logInfosObject.endTime = allDomainLogDetailsNodeLogInfosLogInfoDetail["EndTime"].asString();
+			if(!valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["LogName"].isNull())
+				logInfosObject.logName = valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["LogName"].asString();
+			if(!valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["LogPath"].isNull())
+				logInfosObject.logPath = valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["LogPath"].asString();
+			if(!valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["LogSize"].isNull())
+				logInfosObject.logSize = std::stol(valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["LogSize"].asString());
+			if(!valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["StartTime"].isNull())
+				logInfosObject.startTime = valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["StartTime"].asString();
+			if(!valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["EndTime"].isNull())
+				logInfosObject.endTime = valueDomainLogDetailsDomainLogDetailLogInfosLogInfoDetail["EndTime"].asString();
 			domainLogDetailsObject.logInfos.push_back(logInfosObject);
 		}
 		domainLogDetails_.push_back(domainLogDetailsObject);

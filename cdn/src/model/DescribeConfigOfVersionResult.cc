@@ -49,14 +49,14 @@ void DescribeConfigOfVersionResult::parse(const std::string &payload)
 			versionConfigsObject.configId = valueVersionConfigsVersionConfig["ConfigId"].asString();
 		if(!valueVersionConfigsVersionConfig["FunctionName"].isNull())
 			versionConfigsObject.functionName = valueVersionConfigsVersionConfig["FunctionName"].asString();
-		auto allFunctionArgsNode = allVersionConfigsNode["FunctionArgs"]["FunctionArg"];
-		for (auto allVersionConfigsNodeFunctionArgsFunctionArg : allFunctionArgsNode)
+		auto allFunctionArgsNode = valueVersionConfigsVersionConfig["FunctionArgs"]["FunctionArg"];
+		for (auto valueVersionConfigsVersionConfigFunctionArgsFunctionArg : allFunctionArgsNode)
 		{
 			VersionConfig::FunctionArg functionArgsObject;
-			if(!allVersionConfigsNodeFunctionArgsFunctionArg["ArgName"].isNull())
-				functionArgsObject.argName = allVersionConfigsNodeFunctionArgsFunctionArg["ArgName"].asString();
-			if(!allVersionConfigsNodeFunctionArgsFunctionArg["ArgValue"].isNull())
-				functionArgsObject.argValue = allVersionConfigsNodeFunctionArgsFunctionArg["ArgValue"].asString();
+			if(!valueVersionConfigsVersionConfigFunctionArgsFunctionArg["ArgName"].isNull())
+				functionArgsObject.argName = valueVersionConfigsVersionConfigFunctionArgsFunctionArg["ArgName"].asString();
+			if(!valueVersionConfigsVersionConfigFunctionArgsFunctionArg["ArgValue"].isNull())
+				functionArgsObject.argValue = valueVersionConfigsVersionConfigFunctionArgsFunctionArg["ArgValue"].asString();
 			versionConfigsObject.functionArgs.push_back(functionArgsObject);
 		}
 		versionConfigs_.push_back(versionConfigsObject);

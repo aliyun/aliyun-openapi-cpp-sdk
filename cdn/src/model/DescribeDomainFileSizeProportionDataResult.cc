@@ -45,14 +45,14 @@ void DescribeDomainFileSizeProportionDataResult::parse(const std::string &payloa
 		UsageData fileSizeProportionDataIntervalObject;
 		if(!valueFileSizeProportionDataIntervalUsageData["TimeStamp"].isNull())
 			fileSizeProportionDataIntervalObject.timeStamp = valueFileSizeProportionDataIntervalUsageData["TimeStamp"].asString();
-		auto allValueNode = allFileSizeProportionDataIntervalNode["Value"]["FileSizeProportionData"];
-		for (auto allFileSizeProportionDataIntervalNodeValueFileSizeProportionData : allValueNode)
+		auto allValueNode = valueFileSizeProportionDataIntervalUsageData["Value"]["FileSizeProportionData"];
+		for (auto valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData : allValueNode)
 		{
 			UsageData::FileSizeProportionData valueObject;
-			if(!allFileSizeProportionDataIntervalNodeValueFileSizeProportionData["FileSize"].isNull())
-				valueObject.fileSize = allFileSizeProportionDataIntervalNodeValueFileSizeProportionData["FileSize"].asString();
-			if(!allFileSizeProportionDataIntervalNodeValueFileSizeProportionData["Proportion"].isNull())
-				valueObject.proportion = allFileSizeProportionDataIntervalNodeValueFileSizeProportionData["Proportion"].asString();
+			if(!valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["FileSize"].isNull())
+				valueObject.fileSize = valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["FileSize"].asString();
+			if(!valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["Proportion"].isNull())
+				valueObject.proportion = valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["Proportion"].asString();
 			fileSizeProportionDataIntervalObject.value.push_back(valueObject);
 		}
 		fileSizeProportionDataInterval_.push_back(fileSizeProportionDataIntervalObject);
