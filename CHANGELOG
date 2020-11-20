@@ -1,4 +1,7 @@
 2020-11-20 Version: patch
+- Add a new interface for asynchronous image translation.
+
+2020-11-20 Version: patch
 - Generated 2019-09-10 for `waf-openapi`.
 
 2020-11-19 Version: patch

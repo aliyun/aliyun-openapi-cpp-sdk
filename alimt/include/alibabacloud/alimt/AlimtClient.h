@@ -42,6 +42,8 @@
 #include "model/GetTitleGenerateResult.h"
 #include "model/GetTitleIntelligenceRequest.h"
 #include "model/GetTitleIntelligenceResult.h"
+#include "model/OpenAlimtServiceRequest.h"
+#include "model/OpenAlimtServiceResult.h"
 #include "model/TranslateRequest.h"
 #include "model/TranslateResult.h"
 #include "model/TranslateCertificateRequest.h"
@@ -89,6 +91,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTitleIntelligenceResult> GetTitleIntelligenceOutcome;
 			typedef std::future<GetTitleIntelligenceOutcome> GetTitleIntelligenceOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::GetTitleIntelligenceRequest&, const GetTitleIntelligenceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTitleIntelligenceAsyncHandler;
+			typedef Outcome<Error, Model::OpenAlimtServiceResult> OpenAlimtServiceOutcome;
+			typedef std::future<OpenAlimtServiceOutcome> OpenAlimtServiceOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::OpenAlimtServiceRequest&, const OpenAlimtServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenAlimtServiceAsyncHandler;
 			typedef Outcome<Error, Model::TranslateResult> TranslateOutcome;
 			typedef std::future<TranslateOutcome> TranslateOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::TranslateRequest&, const TranslateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateAsyncHandler;
@@ -136,6 +141,9 @@ namespace AlibabaCloud
 			GetTitleIntelligenceOutcome getTitleIntelligence(const Model::GetTitleIntelligenceRequest &request)const;
 			void getTitleIntelligenceAsync(const Model::GetTitleIntelligenceRequest& request, const GetTitleIntelligenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTitleIntelligenceOutcomeCallable getTitleIntelligenceCallable(const Model::GetTitleIntelligenceRequest& request) const;
+			OpenAlimtServiceOutcome openAlimtService(const Model::OpenAlimtServiceRequest &request)const;
+			void openAlimtServiceAsync(const Model::OpenAlimtServiceRequest& request, const OpenAlimtServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenAlimtServiceOutcomeCallable openAlimtServiceCallable(const Model::OpenAlimtServiceRequest& request) const;
 			TranslateOutcome translate(const Model::TranslateRequest &request)const;
 			void translateAsync(const Model::TranslateRequest& request, const TranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TranslateOutcomeCallable translateCallable(const Model::TranslateRequest& request) const;

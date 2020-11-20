@@ -411,6 +411,42 @@ AlimtClient::GetTitleIntelligenceOutcomeCallable AlimtClient::getTitleIntelligen
 	return task->get_future();
 }
 
+AlimtClient::OpenAlimtServiceOutcome AlimtClient::openAlimtService(const OpenAlimtServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenAlimtServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenAlimtServiceOutcome(OpenAlimtServiceResult(outcome.result()));
+	else
+		return OpenAlimtServiceOutcome(outcome.error());
+}
+
+void AlimtClient::openAlimtServiceAsync(const OpenAlimtServiceRequest& request, const OpenAlimtServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openAlimtService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::OpenAlimtServiceOutcomeCallable AlimtClient::openAlimtServiceCallable(const OpenAlimtServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenAlimtServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openAlimtService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlimtClient::TranslateOutcome AlimtClient::translate(const TranslateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

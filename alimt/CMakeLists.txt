@@ -41,6 +41,8 @@ set(alimt_public_header_model
 	include/alibabacloud/alimt/model/GetTitleGenerateResult.h
 	include/alibabacloud/alimt/model/GetTitleIntelligenceRequest.h
 	include/alibabacloud/alimt/model/GetTitleIntelligenceResult.h
+	include/alibabacloud/alimt/model/OpenAlimtServiceRequest.h
+	include/alibabacloud/alimt/model/OpenAlimtServiceResult.h
 	include/alibabacloud/alimt/model/TranslateRequest.h
 	include/alibabacloud/alimt/model/TranslateResult.h
 	include/alibabacloud/alimt/model/TranslateCertificateRequest.h
@@ -72,6 +74,8 @@ set(alimt_src
 	src/model/GetTitleGenerateResult.cc
 	src/model/GetTitleIntelligenceRequest.cc
 	src/model/GetTitleIntelligenceResult.cc
+	src/model/OpenAlimtServiceRequest.cc
+	src/model/OpenAlimtServiceResult.cc
 	src/model/TranslateRequest.cc
 	src/model/TranslateResult.cc
 	src/model/TranslateCertificateRequest.cc
