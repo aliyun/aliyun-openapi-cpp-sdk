@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPERESULT_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPERESULT_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DELETEPROTECTIONMODULERULERESULT_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DELETEPROTECTIONMODULERULERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT ModifyDomainClusterTypeResult : public ServiceResult
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DeleteProtectionModuleRuleResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyDomainClusterTypeResult();
-				explicit ModifyDomainClusterTypeResult(const std::string &payload);
-				~ModifyDomainClusterTypeResult();
+				DeleteProtectionModuleRuleResult();
+				explicit DeleteProtectionModuleRuleResult(const std::string &payload);
+				~DeleteProtectionModuleRuleResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPERESULT_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DELETEPROTECTIONMODULERULERESULT_H_

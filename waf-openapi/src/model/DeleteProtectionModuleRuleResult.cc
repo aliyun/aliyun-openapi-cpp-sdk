@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/waf-openapi/model/ModifyDomainClusterTypeResult.h>
+#include <alibabacloud/waf-openapi/model/DeleteProtectionModuleRuleResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Waf_openapi;
 using namespace AlibabaCloud::Waf_openapi::Model;
 
-ModifyDomainClusterTypeResult::ModifyDomainClusterTypeResult() :
+DeleteProtectionModuleRuleResult::DeleteProtectionModuleRuleResult() :
 	ServiceResult()
 {}
 
-ModifyDomainClusterTypeResult::ModifyDomainClusterTypeResult(const std::string &payload) :
+DeleteProtectionModuleRuleResult::DeleteProtectionModuleRuleResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyDomainClusterTypeResult::~ModifyDomainClusterTypeResult()
+DeleteProtectionModuleRuleResult::~DeleteProtectionModuleRuleResult()
 {}
 
-void ModifyDomainClusterTypeResult::parse(const std::string &payload)
+void DeleteProtectionModuleRuleResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

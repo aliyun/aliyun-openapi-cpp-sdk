@@ -41,7 +41,14 @@ void DescribeProtectionModuleModeResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Mode"].isNull())
 		mode_ = std::stoi(value["Mode"].asString());
+	if(!value["LearnStatus"].isNull())
+		learnStatus_ = std::stoi(value["LearnStatus"].asString());
 
+}
+
+int DescribeProtectionModuleModeResult::getLearnStatus()const
+{
+	return learnStatus_;
 }
 
 int DescribeProtectionModuleModeResult::getMode()const

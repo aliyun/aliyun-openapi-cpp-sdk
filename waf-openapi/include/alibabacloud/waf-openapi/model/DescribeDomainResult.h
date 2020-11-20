@@ -39,12 +39,25 @@ namespace AlibabaCloud
 						std::string v;
 						std::string k;
 					};
+					struct CloudNativeInstancesItem
+					{
+						struct ProtocolPortConfigsItem
+						{
+							std::string ports;
+							std::string protocol;
+						};
+						std::vector<CloudNativeInstancesItem::ProtocolPortConfigsItem> protocolPortConfigs;
+						std::string instanceId;
+						std::string iPAddressList;
+						std::string cloudNativeProductName;
+					};
 					int httpToUserIp;
 					std::vector<std::string> httpPort;
 					int isAccessProduct;
 					std::string resourceGroupId;
 					int readTime;
 					std::vector<std::string> sourceIps;
+					int ipFollowStatus;
 					int clusterType;
 					int loadBalancing;
 					std::string cname;
@@ -54,6 +67,8 @@ namespace AlibabaCloud
 					long version;
 					int httpsRedirect;
 					int connectionTime;
+					std::vector<CloudNativeInstancesItem> cloudNativeInstances;
+					std::string accessType;
 					std::vector<std::string> httpsPort;
 				};
 

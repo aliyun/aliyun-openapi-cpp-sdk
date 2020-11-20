@@ -40,6 +40,8 @@ void DescribeDomainResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto domainNode = value["Domain"];
+	if(!domainNode["IpFollowStatus"].isNull())
+		domain_.ipFollowStatus = std::stoi(domainNode["IpFollowStatus"].asString());
 	if(!domainNode["HttpToUserIp"].isNull())
 		domain_.httpToUserIp = std::stoi(domainNode["HttpToUserIp"].asString());
 	if(!domainNode["HttpsRedirect"].isNull())
@@ -62,6 +64,8 @@ void DescribeDomainResult::parse(const std::string &payload)
 		domain_.writeTime = std::stoi(domainNode["WriteTime"].asString());
 	if(!domainNode["ResourceGroupId"].isNull())
 		domain_.resourceGroupId = domainNode["ResourceGroupId"].asString();
+	if(!domainNode["AccessType"].isNull())
+		domain_.accessType = domainNode["AccessType"].asString();
 	auto allLogHeadersNode = domainNode["LogHeaders"]["LogHeader"];
 	for (auto domainNodeLogHeadersLogHeader : allLogHeadersNode)
 	{
@@ -71,6 +75,28 @@ void DescribeDomainResult::parse(const std::string &payload)
 		if(!domainNodeLogHeadersLogHeader["k"].isNull())
 			logHeaderObject.k = domainNodeLogHeadersLogHeader["k"].asString();
 		domain_.logHeaders.push_back(logHeaderObject);
+	}
+	auto allCloudNativeInstancesNode = domainNode["CloudNativeInstances"]["CloudNativeInstancesItem"];
+	for (auto domainNodeCloudNativeInstancesCloudNativeInstancesItem : allCloudNativeInstancesNode)
+	{
+		Domain::CloudNativeInstancesItem cloudNativeInstancesItemObject;
+		if(!domainNodeCloudNativeInstancesCloudNativeInstancesItem["CloudNativeProductName"].isNull())
+			cloudNativeInstancesItemObject.cloudNativeProductName = domainNodeCloudNativeInstancesCloudNativeInstancesItem["CloudNativeProductName"].asString();
+		if(!domainNodeCloudNativeInstancesCloudNativeInstancesItem["InstanceId"].isNull())
+			cloudNativeInstancesItemObject.instanceId = domainNodeCloudNativeInstancesCloudNativeInstancesItem["InstanceId"].asString();
+		if(!domainNodeCloudNativeInstancesCloudNativeInstancesItem["IPAddressList"].isNull())
+			cloudNativeInstancesItemObject.iPAddressList = domainNodeCloudNativeInstancesCloudNativeInstancesItem["IPAddressList"].asString();
+		auto allProtocolPortConfigsNode = domainNodeCloudNativeInstancesCloudNativeInstancesItem["ProtocolPortConfigs"]["ProtocolPortConfigsItem"];
+		for (auto domainNodeCloudNativeInstancesCloudNativeInstancesItemProtocolPortConfigsProtocolPortConfigsItem : allProtocolPortConfigsNode)
+		{
+			Domain::CloudNativeInstancesItem::ProtocolPortConfigsItem protocolPortConfigsObject;
+			if(!domainNodeCloudNativeInstancesCloudNativeInstancesItemProtocolPortConfigsProtocolPortConfigsItem["Protocol"].isNull())
+				protocolPortConfigsObject.protocol = domainNodeCloudNativeInstancesCloudNativeInstancesItemProtocolPortConfigsProtocolPortConfigsItem["Protocol"].asString();
+			if(!domainNodeCloudNativeInstancesCloudNativeInstancesItemProtocolPortConfigsProtocolPortConfigsItem["Ports"].isNull())
+				protocolPortConfigsObject.ports = domainNodeCloudNativeInstancesCloudNativeInstancesItemProtocolPortConfigsProtocolPortConfigsItem["Ports"].asString();
+			cloudNativeInstancesItemObject.protocolPortConfigs.push_back(protocolPortConfigsObject);
+		}
+		domain_.cloudNativeInstances.push_back(cloudNativeInstancesItemObject);
 	}
 		auto allSourceIps = domainNode["SourceIps"]["SourceIp"];
 		for (auto value : allSourceIps)

@@ -58,6 +58,8 @@ void DescribeInstanceInfoResult::parse(const std::string &payload)
 		instanceInfo_.status = std::stoi(instanceInfoNode["Status"].asString());
 	if(!instanceInfoNode["SubscriptionType"].isNull())
 		instanceInfo_.subscriptionType = instanceInfoNode["SubscriptionType"].asString();
+	if(!instanceInfoNode["Version"].isNull())
+		instanceInfo_.version = instanceInfoNode["Version"].asString();
 
 }
 

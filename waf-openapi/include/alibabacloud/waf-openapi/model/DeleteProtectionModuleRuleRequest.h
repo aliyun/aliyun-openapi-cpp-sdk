@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPEREQUEST_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPEREQUEST_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DELETEPROTECTIONMODULERULEREQUEST_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DELETEPROTECTIONMODULERULEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT ModifyDomainClusterTypeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DeleteProtectionModuleRuleRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDomainClusterTypeRequest();
-				~ModifyDomainClusterTypeRequest();
+				DeleteProtectionModuleRuleRequest();
+				~DeleteProtectionModuleRuleRequest();
 
-				int getClusterType()const;
-				void setClusterType(int clusterType);
+				std::string getDefenseType()const;
+				void setDefenseType(const std::string& defenseType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
+				long getRuleId()const;
+				void setRuleId(long ruleId);
 
             private:
-				int clusterType_;
+				std::string defenseType_;
 				std::string instanceId_;
 				std::string sourceIp_;
 				std::string domain_;
+				std::string lang_;
+				long ruleId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPEREQUEST_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DELETEPROTECTIONMODULERULEREQUEST_H_

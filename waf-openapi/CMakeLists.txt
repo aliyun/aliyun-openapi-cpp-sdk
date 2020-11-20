@@ -33,6 +33,8 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DeleteDomainResult.h
 	include/alibabacloud/waf-openapi/model/DeleteInstanceRequest.h
 	include/alibabacloud/waf-openapi/model/DeleteInstanceResult.h
+	include/alibabacloud/waf-openapi/model/DeleteProtectionModuleRuleRequest.h
+	include/alibabacloud/waf-openapi/model/DeleteProtectionModuleRuleResult.h
 	include/alibabacloud/waf-openapi/model/DescribeCertMatchStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeCertMatchStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeCertificatesRequest.h
@@ -61,8 +63,6 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainResult.h
-	include/alibabacloud/waf-openapi/model/ModifyDomainClusterTypeRequest.h
-	include/alibabacloud/waf-openapi/model/ModifyDomainClusterTypeResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainIpv6StatusRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainIpv6StatusResult.h
 	include/alibabacloud/waf-openapi/model/ModifyLogRetrievalStatusRequest.h
@@ -96,6 +96,8 @@ set(waf-openapi_src
 	src/model/DeleteDomainResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/DeleteProtectionModuleRuleRequest.cc
+	src/model/DeleteProtectionModuleRuleResult.cc
 	src/model/DescribeCertMatchStatusRequest.cc
 	src/model/DescribeCertMatchStatusResult.cc
 	src/model/DescribeCertificatesRequest.cc
@@ -124,8 +126,6 @@ set(waf-openapi_src
 	src/model/DescribeProtectionModuleStatusResult.cc
 	src/model/ModifyDomainRequest.cc
 	src/model/ModifyDomainResult.cc
-	src/model/ModifyDomainClusterTypeRequest.cc
-	src/model/ModifyDomainClusterTypeResult.cc
 	src/model/ModifyDomainIpv6StatusRequest.cc
 	src/model/ModifyDomainIpv6StatusResult.cc
 	src/model/ModifyLogRetrievalStatusRequest.cc

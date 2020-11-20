@@ -61,6 +61,8 @@ void DescribeDomainBasicConfigsResult::parse(const std::string &payload)
 			domainConfigsObject.domain = valueDomainConfigsDomainConfig["Domain"].asString();
 		if(!valueDomainConfigsDomainConfig["Status"].isNull())
 			domainConfigsObject.status = std::stoi(valueDomainConfigsDomainConfig["Status"].asString());
+		if(!valueDomainConfigsDomainConfig["AccessType"].isNull())
+			domainConfigsObject.accessType = valueDomainConfigsDomainConfig["AccessType"].asString();
 		domainConfigs_.push_back(domainConfigsObject);
 	}
 	if(!value["TotalCount"].isNull())

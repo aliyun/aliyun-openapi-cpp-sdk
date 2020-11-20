@@ -27,6 +27,17 @@ CreateDomainRequest::CreateDomainRequest() :
 CreateDomainRequest::~CreateDomainRequest()
 {}
 
+int CreateDomainRequest::getIpFollowStatus()const
+{
+	return ipFollowStatus_;
+}
+
+void CreateDomainRequest::setIpFollowStatus(int ipFollowStatus)
+{
+	ipFollowStatus_ = ipFollowStatus;
+	setParameter("IpFollowStatus", std::to_string(ipFollowStatus));
+}
+
 std::string CreateDomainRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -93,6 +104,17 @@ void CreateDomainRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string CreateDomainRequest::getAccessType()const
+{
+	return accessType_;
+}
+
+void CreateDomainRequest::setAccessType(const std::string& accessType)
+{
+	accessType_ = accessType;
+	setParameter("AccessType", accessType);
+}
+
 std::string CreateDomainRequest::getLogHeaders()const
 {
 	return logHeaders_;
@@ -124,6 +146,17 @@ void CreateDomainRequest::setClusterType(int clusterType)
 {
 	clusterType_ = clusterType;
 	setParameter("ClusterType", std::to_string(clusterType));
+}
+
+std::string CreateDomainRequest::getCloudNativeInstances()const
+{
+	return cloudNativeInstances_;
+}
+
+void CreateDomainRequest::setCloudNativeInstances(const std::string& cloudNativeInstances)
+{
+	cloudNativeInstances_ = cloudNativeInstances;
+	setParameter("CloudNativeInstances", cloudNativeInstances);
 }
 
 int CreateDomainRequest::getHttpsRedirect()const

@@ -45,6 +45,10 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getAccessType()const;
+				void setAccessType(const std::string& accessType);
+				int getCloudNativeProductId()const;
+				void setCloudNativeProductId(int cloudNativeProductId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getDomainKey()const;
@@ -56,6 +60,8 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				int pageSize_;
 				std::string lang_;
+				std::string accessType_;
+				int cloudNativeProductId_;
 				std::string instanceId_;
 				std::string domainKey_;
 

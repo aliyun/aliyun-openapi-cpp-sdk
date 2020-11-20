@@ -49,8 +49,6 @@ namespace AlibabaCloud
 				void setDomain(const std::string& domain);
 				std::string getCertificateName()const;
 				void setCertificateName(const std::string& certificateName);
-				long getHttpsCertId()const;
-				void setHttpsCertId(long httpsCertId);
 
             private:
 				std::string certificate_;
@@ -60,7 +58,6 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string domain_;
 				std::string certificateName_;
-				long httpsCertId_;
 
 			};
 		}

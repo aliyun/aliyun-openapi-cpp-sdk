@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				DescribeProtectionModuleModeResult();
 				explicit DescribeProtectionModuleModeResult(const std::string &payload);
 				~DescribeProtectionModuleModeResult();
+				int getLearnStatus()const;
 				int getMode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int learnStatus_;
 				int mode_;
 
 			};

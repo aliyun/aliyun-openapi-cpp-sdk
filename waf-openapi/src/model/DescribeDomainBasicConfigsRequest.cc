@@ -82,6 +82,28 @@ void DescribeDomainBasicConfigsRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string DescribeDomainBasicConfigsRequest::getAccessType()const
+{
+	return accessType_;
+}
+
+void DescribeDomainBasicConfigsRequest::setAccessType(const std::string& accessType)
+{
+	accessType_ = accessType;
+	setParameter("AccessType", accessType);
+}
+
+int DescribeDomainBasicConfigsRequest::getCloudNativeProductId()const
+{
+	return cloudNativeProductId_;
+}
+
+void DescribeDomainBasicConfigsRequest::setCloudNativeProductId(int cloudNativeProductId)
+{
+	cloudNativeProductId_ = cloudNativeProductId;
+	setParameter("CloudNativeProductId", std::to_string(cloudNativeProductId));
+}
+
 std::string DescribeDomainBasicConfigsRequest::getInstanceId()const
 {
 	return instanceId_;

@@ -34,6 +34,8 @@
 #include "model/DeleteDomainResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
+#include "model/DeleteProtectionModuleRuleRequest.h"
+#include "model/DeleteProtectionModuleRuleResult.h"
 #include "model/DescribeCertMatchStatusRequest.h"
 #include "model/DescribeCertMatchStatusResult.h"
 #include "model/DescribeCertificatesRequest.h"
@@ -62,8 +64,6 @@
 #include "model/DescribeProtectionModuleStatusResult.h"
 #include "model/ModifyDomainRequest.h"
 #include "model/ModifyDomainResult.h"
-#include "model/ModifyDomainClusterTypeRequest.h"
-#include "model/ModifyDomainClusterTypeResult.h"
 #include "model/ModifyDomainIpv6StatusRequest.h"
 #include "model/ModifyDomainIpv6StatusResult.h"
 #include "model/ModifyLogRetrievalStatusRequest.h"
@@ -109,6 +109,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
 			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteProtectionModuleRuleResult> DeleteProtectionModuleRuleOutcome;
+			typedef std::future<DeleteProtectionModuleRuleOutcome> DeleteProtectionModuleRuleOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteProtectionModuleRuleRequest&, const DeleteProtectionModuleRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProtectionModuleRuleAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCertMatchStatusResult> DescribeCertMatchStatusOutcome;
 			typedef std::future<DescribeCertMatchStatusOutcome> DescribeCertMatchStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeCertMatchStatusRequest&, const DescribeCertMatchStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertMatchStatusAsyncHandler;
@@ -151,9 +154,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDomainResult> ModifyDomainOutcome;
 			typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainRequest&, const ModifyDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDomainClusterTypeResult> ModifyDomainClusterTypeOutcome;
-			typedef std::future<ModifyDomainClusterTypeOutcome> ModifyDomainClusterTypeOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainClusterTypeRequest&, const ModifyDomainClusterTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainClusterTypeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDomainIpv6StatusResult> ModifyDomainIpv6StatusOutcome;
 			typedef std::future<ModifyDomainIpv6StatusOutcome> ModifyDomainIpv6StatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainIpv6StatusRequest&, const ModifyDomainIpv6StatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainIpv6StatusAsyncHandler;
@@ -204,6 +204,9 @@ namespace AlibabaCloud
 			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
 			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
+			DeleteProtectionModuleRuleOutcome deleteProtectionModuleRule(const Model::DeleteProtectionModuleRuleRequest &request)const;
+			void deleteProtectionModuleRuleAsync(const Model::DeleteProtectionModuleRuleRequest& request, const DeleteProtectionModuleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteProtectionModuleRuleOutcomeCallable deleteProtectionModuleRuleCallable(const Model::DeleteProtectionModuleRuleRequest& request) const;
 			DescribeCertMatchStatusOutcome describeCertMatchStatus(const Model::DescribeCertMatchStatusRequest &request)const;
 			void describeCertMatchStatusAsync(const Model::DescribeCertMatchStatusRequest& request, const DescribeCertMatchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCertMatchStatusOutcomeCallable describeCertMatchStatusCallable(const Model::DescribeCertMatchStatusRequest& request) const;
@@ -246,9 +249,6 @@ namespace AlibabaCloud
 			ModifyDomainOutcome modifyDomain(const Model::ModifyDomainRequest &request)const;
 			void modifyDomainAsync(const Model::ModifyDomainRequest& request, const ModifyDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDomainOutcomeCallable modifyDomainCallable(const Model::ModifyDomainRequest& request) const;
-			ModifyDomainClusterTypeOutcome modifyDomainClusterType(const Model::ModifyDomainClusterTypeRequest &request)const;
-			void modifyDomainClusterTypeAsync(const Model::ModifyDomainClusterTypeRequest& request, const ModifyDomainClusterTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDomainClusterTypeOutcomeCallable modifyDomainClusterTypeCallable(const Model::ModifyDomainClusterTypeRequest& request) const;
 			ModifyDomainIpv6StatusOutcome modifyDomainIpv6Status(const Model::ModifyDomainIpv6StatusRequest &request)const;
 			void modifyDomainIpv6StatusAsync(const Model::ModifyDomainIpv6StatusRequest& request, const ModifyDomainIpv6StatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDomainIpv6StatusOutcomeCallable modifyDomainIpv6StatusCallable(const Model::ModifyDomainIpv6StatusRequest& request) const;

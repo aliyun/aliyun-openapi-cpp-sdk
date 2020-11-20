@@ -104,14 +104,3 @@ void CreateCertificateRequest::setCertificateName(const std::string& certificate
 	setParameter("CertificateName", certificateName);
 }
 
-long CreateCertificateRequest::getHttpsCertId()const
-{
-	return httpsCertId_;
-}
-
-void CreateCertificateRequest::setHttpsCertId(long httpsCertId)
-{
-	httpsCertId_ = httpsCertId;
-	setParameter("HttpsCertId", std::to_string(httpsCertId));
-}
-

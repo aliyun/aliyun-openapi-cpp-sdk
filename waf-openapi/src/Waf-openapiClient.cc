@@ -267,6 +267,42 @@ Waf_openapiClient::DeleteInstanceOutcomeCallable Waf_openapiClient::deleteInstan
 	return task->get_future();
 }
 
+Waf_openapiClient::DeleteProtectionModuleRuleOutcome Waf_openapiClient::deleteProtectionModuleRule(const DeleteProtectionModuleRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteProtectionModuleRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteProtectionModuleRuleOutcome(DeleteProtectionModuleRuleResult(outcome.result()));
+	else
+		return DeleteProtectionModuleRuleOutcome(outcome.error());
+}
+
+void Waf_openapiClient::deleteProtectionModuleRuleAsync(const DeleteProtectionModuleRuleRequest& request, const DeleteProtectionModuleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteProtectionModuleRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Waf_openapiClient::DeleteProtectionModuleRuleOutcomeCallable Waf_openapiClient::deleteProtectionModuleRuleCallable(const DeleteProtectionModuleRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteProtectionModuleRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteProtectionModuleRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Waf_openapiClient::DescribeCertMatchStatusOutcome Waf_openapiClient::describeCertMatchStatus(const DescribeCertMatchStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,42 +801,6 @@ Waf_openapiClient::ModifyDomainOutcomeCallable Waf_openapiClient::modifyDomainCa
 			[this, request]()
 			{
 			return this->modifyDomain(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::ModifyDomainClusterTypeOutcome Waf_openapiClient::modifyDomainClusterType(const ModifyDomainClusterTypeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDomainClusterTypeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDomainClusterTypeOutcome(ModifyDomainClusterTypeResult(outcome.result()));
-	else
-		return ModifyDomainClusterTypeOutcome(outcome.error());
-}
-
-void Waf_openapiClient::modifyDomainClusterTypeAsync(const ModifyDomainClusterTypeRequest& request, const ModifyDomainClusterTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDomainClusterType(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::ModifyDomainClusterTypeOutcomeCallable Waf_openapiClient::modifyDomainClusterTypeCallable(const ModifyDomainClusterTypeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDomainClusterTypeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDomainClusterType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

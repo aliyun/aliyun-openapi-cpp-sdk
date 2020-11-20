@@ -27,6 +27,17 @@ ModifyDomainRequest::ModifyDomainRequest() :
 ModifyDomainRequest::~ModifyDomainRequest()
 {}
 
+int ModifyDomainRequest::getIpFollowStatus()const
+{
+	return ipFollowStatus_;
+}
+
+void ModifyDomainRequest::setIpFollowStatus(int ipFollowStatus)
+{
+	ipFollowStatus_ = ipFollowStatus;
+	setParameter("IpFollowStatus", std::to_string(ipFollowStatus));
+}
+
 std::string ModifyDomainRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -104,6 +115,17 @@ void ModifyDomainRequest::setXffHeaders(const std::string& xffHeaders)
 	setParameter("XffHeaders", xffHeaders);
 }
 
+std::string ModifyDomainRequest::getAccessType()const
+{
+	return accessType_;
+}
+
+void ModifyDomainRequest::setAccessType(const std::string& accessType)
+{
+	accessType_ = accessType;
+	setParameter("AccessType", accessType);
+}
+
 int ModifyDomainRequest::getBindingIpv6()const
 {
 	return bindingIpv6_;
@@ -146,6 +168,17 @@ void ModifyDomainRequest::setClusterType(int clusterType)
 {
 	clusterType_ = clusterType;
 	setParameter("ClusterType", std::to_string(clusterType));
+}
+
+std::string ModifyDomainRequest::getCloudNativeInstances()const
+{
+	return cloudNativeInstances_;
+}
+
+void ModifyDomainRequest::setCloudNativeInstances(const std::string& cloudNativeInstances)
+{
+	cloudNativeInstances_ = cloudNativeInstances;
+	setParameter("CloudNativeInstances", cloudNativeInstances);
 }
 
 int ModifyDomainRequest::getHttpsRedirect()const
