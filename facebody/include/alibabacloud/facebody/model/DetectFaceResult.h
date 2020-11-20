@@ -34,10 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct Qualities
+					{
+						std::vector<std::string> noiseList;
+						std::vector<std::string> scoreList;
+						std::vector<std::string> blurList;
+						std::vector<std::string> maskList;
+						std::vector<std::string> glassList;
+						std::vector<std::string> fnfList;
+						std::vector<std::string> poseList1;
+						std::vector<std::string> illuList;
+					};
 					std::vector<std::string> faceProbabilityList;
 					int landmarkCount;
 					std::vector<std::string> faceRectangles;
 					std::vector<std::string> landmarks;
+					Qualities qualities;
 					int faceCount;
 					std::vector<std::string> poseList;
 					std::vector<std::string> pupils;

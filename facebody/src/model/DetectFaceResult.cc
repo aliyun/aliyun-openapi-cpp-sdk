@@ -40,22 +40,47 @@ void DetectFaceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["FaceCount"].isNull())
-		data_.faceCount = std::stoi(dataNode["FaceCount"].asString());
 	if(!dataNode["LandmarkCount"].isNull())
 		data_.landmarkCount = std::stoi(dataNode["LandmarkCount"].asString());
-		auto allFaceRectangles = dataNode["FaceRectangles"]["FaceRectangle"];
-		for (auto value : allFaceRectangles)
-			data_.faceRectangles.push_back(value.asString());
+	if(!dataNode["FaceCount"].isNull())
+		data_.faceCount = std::stoi(dataNode["FaceCount"].asString());
+	auto qualitiesNode = dataNode["Qualities"];
+		auto allNoiseList = qualitiesNode["NoiseList"]["Noise"];
+		for (auto value : allNoiseList)
+			data_.qualities.noiseList.push_back(value.asString());
+		auto allScoreList = qualitiesNode["ScoreList"]["Score"];
+		for (auto value : allScoreList)
+			data_.qualities.scoreList.push_back(value.asString());
+		auto allBlurList = qualitiesNode["BlurList"]["Blur"];
+		for (auto value : allBlurList)
+			data_.qualities.blurList.push_back(value.asString());
+		auto allMaskList = qualitiesNode["MaskList"]["Mask"];
+		for (auto value : allMaskList)
+			data_.qualities.maskList.push_back(value.asString());
+		auto allGlassList = qualitiesNode["GlassList"]["Glass"];
+		for (auto value : allGlassList)
+			data_.qualities.glassList.push_back(value.asString());
+		auto allFnfList = qualitiesNode["FnfList"]["Fnf"];
+		for (auto value : allFnfList)
+			data_.qualities.fnfList.push_back(value.asString());
+		auto allPoseList1 = qualitiesNode["PoseList"]["Pose"];
+		for (auto value : allPoseList1)
+			data_.qualities.poseList1.push_back(value.asString());
+		auto allIlluList = qualitiesNode["IlluList"]["Illu"];
+		for (auto value : allIlluList)
+			data_.qualities.illuList.push_back(value.asString());
 		auto allFaceProbabilityList = dataNode["FaceProbabilityList"]["FaceProbability"];
 		for (auto value : allFaceProbabilityList)
 			data_.faceProbabilityList.push_back(value.asString());
-		auto allPoseList = dataNode["PoseList"]["Pose"];
-		for (auto value : allPoseList)
-			data_.poseList.push_back(value.asString());
+		auto allFaceRectangles = dataNode["FaceRectangles"]["FaceRectangle"];
+		for (auto value : allFaceRectangles)
+			data_.faceRectangles.push_back(value.asString());
 		auto allLandmarks = dataNode["Landmarks"]["Landmark"];
 		for (auto value : allLandmarks)
 			data_.landmarks.push_back(value.asString());
+		auto allPoseList = dataNode["PoseList"]["Pose"];
+		for (auto value : allPoseList)
+			data_.poseList.push_back(value.asString());
 		auto allPupils = dataNode["Pupils"]["Pupil"];
 		for (auto value : allPupils)
 			data_.pupils.push_back(value.asString());
