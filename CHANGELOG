@@ -1,4 +1,7 @@
 2020-11-20 Version: patch
+- Support ListExecutions with filter functionality.
+
+2020-11-20 Version: patch
 - Public beta version.
 - Add Api Overseas.
 

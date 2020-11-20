@@ -27,6 +27,28 @@ ListExecutionsRequest::ListExecutionsRequest() :
 ListExecutionsRequest::~ListExecutionsRequest()
 {}
 
+std::string ListExecutionsRequest::getStartedTimeBegin()const
+{
+	return startedTimeBegin_;
+}
+
+void ListExecutionsRequest::setStartedTimeBegin(const std::string& startedTimeBegin)
+{
+	startedTimeBegin_ = startedTimeBegin;
+	setParameter("StartedTimeBegin", startedTimeBegin);
+}
+
+std::string ListExecutionsRequest::getExecutionNamePrefix()const
+{
+	return executionNamePrefix_;
+}
+
+void ListExecutionsRequest::setExecutionNamePrefix(const std::string& executionNamePrefix)
+{
+	executionNamePrefix_ = executionNamePrefix;
+	setParameter("ExecutionNamePrefix", executionNamePrefix);
+}
+
 std::string ListExecutionsRequest::getNextToken()const
 {
 	return nextToken_;
@@ -69,6 +91,17 @@ void ListExecutionsRequest::setFlowName(const std::string& flowName)
 {
 	flowName_ = flowName;
 	setParameter("FlowName", flowName);
+}
+
+std::string ListExecutionsRequest::getStartedTimeEnd()const
+{
+	return startedTimeEnd_;
+}
+
+void ListExecutionsRequest::setStartedTimeEnd(const std::string& startedTimeEnd)
+{
+	startedTimeEnd_ = startedTimeEnd;
+	setParameter("StartedTimeEnd", startedTimeEnd);
 }
 
 std::string ListExecutionsRequest::getStatus()const

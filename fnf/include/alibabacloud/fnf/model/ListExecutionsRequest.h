@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ListExecutionsRequest();
 				~ListExecutionsRequest();
 
+				std::string getStartedTimeBegin()const;
+				void setStartedTimeBegin(const std::string& startedTimeBegin);
+				std::string getExecutionNamePrefix()const;
+				void setExecutionNamePrefix(const std::string& executionNamePrefix);
 				std::string getNextToken()const;
 				void setNextToken(const std::string& nextToken);
 				std::string getRequestId()const;
@@ -43,14 +47,19 @@ namespace AlibabaCloud
 				void setLimit(int limit);
 				std::string getFlowName()const;
 				void setFlowName(const std::string& flowName);
+				std::string getStartedTimeEnd()const;
+				void setStartedTimeEnd(const std::string& startedTimeEnd);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
             private:
+				std::string startedTimeBegin_;
+				std::string executionNamePrefix_;
 				std::string nextToken_;
 				std::string requestId_;
 				int limit_;
 				std::string flowName_;
+				std::string startedTimeEnd_;
 				std::string status_;
 
 			};
