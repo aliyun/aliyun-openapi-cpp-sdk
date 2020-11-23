@@ -29,6 +29,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/ContrastFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyRequest.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyResult.h
+	include/alibabacloud/cloudauth/model/CreateFaceConfigRequest.h
+	include/alibabacloud/cloudauth/model/CreateFaceConfigResult.h
 	include/alibabacloud/cloudauth/model/CreateRPSDKRequest.h
 	include/alibabacloud/cloudauth/model/CreateRPSDKResult.h
 	include/alibabacloud/cloudauth/model/CreateVerifySDKRequest.h
@@ -39,6 +41,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeAppInfoResult.h
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoResult.h
+	include/alibabacloud/cloudauth/model/DescribeFaceConfigRequest.h
+	include/alibabacloud/cloudauth/model/DescribeFaceConfigResult.h
 	include/alibabacloud/cloudauth/model/DescribeFaceUsageRequest.h
 	include/alibabacloud/cloudauth/model/DescribeFaceUsageResult.h
 	include/alibabacloud/cloudauth/model/DescribeFaceVerifyRequest.h
@@ -71,6 +75,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeVerifyUsageResult.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
+	include/alibabacloud/cloudauth/model/ElementSmartVerifyRequest.h
+	include/alibabacloud/cloudauth/model/ElementSmartVerifyResult.h
 	include/alibabacloud/cloudauth/model/GetMaterialsRequest.h
 	include/alibabacloud/cloudauth/model/GetMaterialsResult.h
 	include/alibabacloud/cloudauth/model/GetStatusRequest.h
@@ -83,6 +89,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/InitSmartVerifyRequest.h
 	include/alibabacloud/cloudauth/model/InitSmartVerifyResult.h
+	include/alibabacloud/cloudauth/model/LivenessDetectRequest.h
+	include/alibabacloud/cloudauth/model/LivenessDetectResult.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
@@ -93,6 +101,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/SubmitVerificationResult.h
 	include/alibabacloud/cloudauth/model/UpdateAppPackageRequest.h
 	include/alibabacloud/cloudauth/model/UpdateAppPackageResult.h
+	include/alibabacloud/cloudauth/model/UpdateFaceConfigRequest.h
+	include/alibabacloud/cloudauth/model/UpdateFaceConfigResult.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingRequest.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingResult.h
 	include/alibabacloud/cloudauth/model/VerifyDeviceRequest.h
@@ -110,6 +120,8 @@ set(cloudauth_src
 	src/model/ContrastFaceVerifyResult.cc
 	src/model/CreateAuthKeyRequest.cc
 	src/model/CreateAuthKeyResult.cc
+	src/model/CreateFaceConfigRequest.cc
+	src/model/CreateFaceConfigResult.cc
 	src/model/CreateRPSDKRequest.cc
 	src/model/CreateRPSDKResult.cc
 	src/model/CreateVerifySDKRequest.cc
@@ -120,6 +132,8 @@ set(cloudauth_src
 	src/model/DescribeAppInfoResult.cc
 	src/model/DescribeDeviceInfoRequest.cc
 	src/model/DescribeDeviceInfoResult.cc
+	src/model/DescribeFaceConfigRequest.cc
+	src/model/DescribeFaceConfigResult.cc
 	src/model/DescribeFaceUsageRequest.cc
 	src/model/DescribeFaceUsageResult.cc
 	src/model/DescribeFaceVerifyRequest.cc
@@ -152,6 +166,8 @@ set(cloudauth_src
 	src/model/DescribeVerifyUsageResult.cc
 	src/model/DetectFaceAttributesRequest.cc
 	src/model/DetectFaceAttributesResult.cc
+	src/model/ElementSmartVerifyRequest.cc
+	src/model/ElementSmartVerifyResult.cc
 	src/model/GetMaterialsRequest.cc
 	src/model/GetMaterialsResult.cc
 	src/model/GetStatusRequest.cc
@@ -164,6 +180,8 @@ set(cloudauth_src
 	src/model/InitFaceVerifyResult.cc
 	src/model/InitSmartVerifyRequest.cc
 	src/model/InitSmartVerifyResult.cc
+	src/model/LivenessDetectRequest.cc
+	src/model/LivenessDetectResult.cc
 	src/model/LivenessFaceVerifyRequest.cc
 	src/model/LivenessFaceVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
@@ -174,6 +192,8 @@ set(cloudauth_src
 	src/model/SubmitVerificationResult.cc
 	src/model/UpdateAppPackageRequest.cc
 	src/model/UpdateAppPackageResult.cc
+	src/model/UpdateFaceConfigRequest.cc
+	src/model/UpdateFaceConfigResult.cc
 	src/model/UpdateVerifySettingRequest.cc
 	src/model/UpdateVerifySettingResult.cc
 	src/model/VerifyDeviceRequest.cc

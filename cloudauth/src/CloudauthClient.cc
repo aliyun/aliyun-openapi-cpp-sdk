@@ -195,6 +195,42 @@ CloudauthClient::CreateAuthKeyOutcomeCallable CloudauthClient::createAuthKeyCall
 	return task->get_future();
 }
 
+CloudauthClient::CreateFaceConfigOutcome CloudauthClient::createFaceConfig(const CreateFaceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFaceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFaceConfigOutcome(CreateFaceConfigResult(outcome.result()));
+	else
+		return CreateFaceConfigOutcome(outcome.error());
+}
+
+void CloudauthClient::createFaceConfigAsync(const CreateFaceConfigRequest& request, const CreateFaceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFaceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::CreateFaceConfigOutcomeCallable CloudauthClient::createFaceConfigCallable(const CreateFaceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFaceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->createFaceConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::CreateRPSDKOutcome CloudauthClient::createRPSDK(const CreateRPSDKRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +405,42 @@ CloudauthClient::DescribeDeviceInfoOutcomeCallable CloudauthClient::describeDevi
 			[this, request]()
 			{
 			return this->describeDeviceInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeFaceConfigOutcome CloudauthClient::describeFaceConfig(const DescribeFaceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFaceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFaceConfigOutcome(DescribeFaceConfigResult(outcome.result()));
+	else
+		return DescribeFaceConfigOutcome(outcome.error());
+}
+
+void CloudauthClient::describeFaceConfigAsync(const DescribeFaceConfigRequest& request, const DescribeFaceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFaceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeFaceConfigOutcomeCallable CloudauthClient::describeFaceConfigCallable(const DescribeFaceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFaceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFaceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,6 +1023,42 @@ CloudauthClient::DetectFaceAttributesOutcomeCallable CloudauthClient::detectFace
 	return task->get_future();
 }
 
+CloudauthClient::ElementSmartVerifyOutcome CloudauthClient::elementSmartVerify(const ElementSmartVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ElementSmartVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ElementSmartVerifyOutcome(ElementSmartVerifyResult(outcome.result()));
+	else
+		return ElementSmartVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::elementSmartVerifyAsync(const ElementSmartVerifyRequest& request, const ElementSmartVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, elementSmartVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::ElementSmartVerifyOutcomeCallable CloudauthClient::elementSmartVerifyCallable(const ElementSmartVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ElementSmartVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->elementSmartVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::GetMaterialsOutcome CloudauthClient::getMaterials(const GetMaterialsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1167,6 +1275,42 @@ CloudauthClient::InitSmartVerifyOutcomeCallable CloudauthClient::initSmartVerify
 	return task->get_future();
 }
 
+CloudauthClient::LivenessDetectOutcome CloudauthClient::livenessDetect(const LivenessDetectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LivenessDetectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LivenessDetectOutcome(LivenessDetectResult(outcome.result()));
+	else
+		return LivenessDetectOutcome(outcome.error());
+}
+
+void CloudauthClient::livenessDetectAsync(const LivenessDetectRequest& request, const LivenessDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, livenessDetect(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::LivenessDetectOutcomeCallable CloudauthClient::livenessDetectCallable(const LivenessDetectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LivenessDetectOutcome()>>(
+			[this, request]()
+			{
+			return this->livenessDetect(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::LivenessFaceVerifyOutcome CloudauthClient::livenessFaceVerify(const LivenessFaceVerifyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1485,42 @@ CloudauthClient::UpdateAppPackageOutcomeCallable CloudauthClient::updateAppPacka
 			[this, request]()
 			{
 			return this->updateAppPackage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::UpdateFaceConfigOutcome CloudauthClient::updateFaceConfig(const UpdateFaceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateFaceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateFaceConfigOutcome(UpdateFaceConfigResult(outcome.result()));
+	else
+		return UpdateFaceConfigOutcome(outcome.error());
+}
+
+void CloudauthClient::updateFaceConfigAsync(const UpdateFaceConfigRequest& request, const UpdateFaceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateFaceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::UpdateFaceConfigOutcomeCallable CloudauthClient::updateFaceConfigCallable(const UpdateFaceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateFaceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateFaceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

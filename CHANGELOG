@@ -1,3 +1,6 @@
+2020-11-23 Version: patch
+- Add LivenessDetect API.
+
 2020-11-22 Version: patch
 - DescribeClusterConnection.
 
