@@ -48,6 +48,7 @@ namespace AlibabaCloud
 							std::string faceId;
 							std::string entityId;
 							float score;
+							std::string dbName;
 							std::string extraData;
 						};
 						std::vector<MatchListItem::FaceItemsItem> faceItems;

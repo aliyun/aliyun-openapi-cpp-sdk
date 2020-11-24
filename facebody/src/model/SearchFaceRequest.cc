@@ -27,6 +27,17 @@ SearchFaceRequest::SearchFaceRequest() :
 SearchFaceRequest::~SearchFaceRequest()
 {}
 
+std::string SearchFaceRequest::getDbNames()const
+{
+	return dbNames_;
+}
+
+void SearchFaceRequest::setDbNames(const std::string& dbNames)
+{
+	dbNames_ = dbNames;
+	setParameter("DbNames", dbNames);
+}
+
 std::string SearchFaceRequest::getDbName()const
 {
 	return dbName_;
