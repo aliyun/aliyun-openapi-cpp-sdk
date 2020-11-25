@@ -45,16 +45,16 @@ void DescribeScdnDomainHttpCodeDataResult::parse(const std::string &payload)
 		DataModule dataPerIntervalObject;
 		if(!valueDataPerIntervalDataModule["TimeStamp"].isNull())
 			dataPerIntervalObject.timeStamp = valueDataPerIntervalDataModule["TimeStamp"].asString();
-		auto allHttpCodeDataPerIntervalNode = allDataPerIntervalNode["HttpCodeDataPerInterval"]["HttpCodeDataModule"];
-		for (auto allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule : allHttpCodeDataPerIntervalNode)
+		auto allHttpCodeDataPerIntervalNode = valueDataPerIntervalDataModule["HttpCodeDataPerInterval"]["HttpCodeDataModule"];
+		for (auto valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule : allHttpCodeDataPerIntervalNode)
 		{
 			DataModule::HttpCodeDataModule httpCodeDataPerIntervalObject;
-			if(!allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Code"].isNull())
-				httpCodeDataPerIntervalObject.code = allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Code"].asString();
-			if(!allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].isNull())
-				httpCodeDataPerIntervalObject.proportion = allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].asString();
-			if(!allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Count"].isNull())
-				httpCodeDataPerIntervalObject.count = allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Count"].asString();
+			if(!valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Code"].isNull())
+				httpCodeDataPerIntervalObject.code = valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Code"].asString();
+			if(!valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].isNull())
+				httpCodeDataPerIntervalObject.proportion = valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].asString();
+			if(!valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Count"].isNull())
+				httpCodeDataPerIntervalObject.count = valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Count"].asString();
 			dataPerIntervalObject.httpCodeDataPerInterval.push_back(httpCodeDataPerIntervalObject);
 		}
 		dataPerInterval_.push_back(dataPerIntervalObject);

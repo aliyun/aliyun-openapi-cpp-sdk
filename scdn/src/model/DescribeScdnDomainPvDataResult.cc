@@ -53,7 +53,16 @@ void DescribeScdnDomainPvDataResult::parse(const std::string &payload)
 		domainName_ = value["DomainName"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
+}
+
+std::string DescribeScdnDomainPvDataResult::getEndTime()const
+{
+	return endTime_;
 }
 
 std::string DescribeScdnDomainPvDataResult::getDomainName()const
@@ -64,6 +73,11 @@ std::string DescribeScdnDomainPvDataResult::getDomainName()const
 std::string DescribeScdnDomainPvDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeScdnDomainPvDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 
 std::vector<DescribeScdnDomainPvDataResult::UsageData> DescribeScdnDomainPvDataResult::getPvDataInterval()const

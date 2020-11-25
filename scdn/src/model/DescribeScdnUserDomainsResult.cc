@@ -61,18 +61,18 @@ void DescribeScdnUserDomainsResult::parse(const std::string &payload)
 			domainsObject.resourceGroupId = valueDomainsPageData["ResourceGroupId"].asString();
 		if(!valueDomainsPageData["Sandbox"].isNull())
 			domainsObject.sandbox = valueDomainsPageData["Sandbox"].asString();
-		auto allSourcesNode = allDomainsNode["Sources"]["Source"];
-		for (auto allDomainsNodeSourcesSource : allSourcesNode)
+		auto allSourcesNode = valueDomainsPageData["Sources"]["Source"];
+		for (auto valueDomainsPageDataSourcesSource : allSourcesNode)
 		{
 			PageData::Source sourcesObject;
-			if(!allDomainsNodeSourcesSource["Type"].isNull())
-				sourcesObject.type = allDomainsNodeSourcesSource["Type"].asString();
-			if(!allDomainsNodeSourcesSource["Content"].isNull())
-				sourcesObject.content = allDomainsNodeSourcesSource["Content"].asString();
-			if(!allDomainsNodeSourcesSource["Port"].isNull())
-				sourcesObject.port = std::stoi(allDomainsNodeSourcesSource["Port"].asString());
-			if(!allDomainsNodeSourcesSource["Priority"].isNull())
-				sourcesObject.priority = allDomainsNodeSourcesSource["Priority"].asString();
+			if(!valueDomainsPageDataSourcesSource["Type"].isNull())
+				sourcesObject.type = valueDomainsPageDataSourcesSource["Type"].asString();
+			if(!valueDomainsPageDataSourcesSource["Content"].isNull())
+				sourcesObject.content = valueDomainsPageDataSourcesSource["Content"].asString();
+			if(!valueDomainsPageDataSourcesSource["Port"].isNull())
+				sourcesObject.port = std::stoi(valueDomainsPageDataSourcesSource["Port"].asString());
+			if(!valueDomainsPageDataSourcesSource["Priority"].isNull())
+				sourcesObject.priority = valueDomainsPageDataSourcesSource["Priority"].asString();
 			domainsObject.sources.push_back(sourcesObject);
 		}
 		domains_.push_back(domainsObject);
