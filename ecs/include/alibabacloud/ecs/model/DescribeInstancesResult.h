@@ -79,9 +79,21 @@ namespace AlibabaCloud
 					};
 					struct NetworkInterface
 					{
+						struct PrivateIpSet
+						{
+							std::string privateIpAddress;
+							bool primary;
+						};
+						struct Ipv6Set
+						{
+							std::string ipv6Address;
+						};
+						std::string type;
+						std::vector<NetworkInterface::Ipv6Set> ipv6Sets;
 						std::string primaryIpAddress;
 						std::string networkInterfaceId;
 						std::string macAddress;
+						std::vector<NetworkInterface::PrivateIpSet> privateIpSets;
 					};
 					struct LockReason
 					{

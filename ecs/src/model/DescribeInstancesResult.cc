@@ -147,6 +147,26 @@ void DescribeInstancesResult::parse(const std::string &payload)
 				networkInterfacesObject.macAddress = valueInstancesInstanceNetworkInterfacesNetworkInterface["MacAddress"].asString();
 			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["PrimaryIpAddress"].isNull())
 				networkInterfacesObject.primaryIpAddress = valueInstancesInstanceNetworkInterfacesNetworkInterface["PrimaryIpAddress"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["Type"].isNull())
+				networkInterfacesObject.type = valueInstancesInstanceNetworkInterfacesNetworkInterface["Type"].asString();
+			auto allPrivateIpSetsNode = valueInstancesInstanceNetworkInterfacesNetworkInterface["PrivateIpSets"]["PrivateIpSet"];
+			for (auto valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
+			{
+				Instance::NetworkInterface::PrivateIpSet privateIpSetsObject;
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["PrivateIpAddress"].isNull())
+					privateIpSetsObject.privateIpAddress = valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["PrivateIpAddress"].asString();
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["Primary"].isNull())
+					privateIpSetsObject.primary = valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet["Primary"].asString() == "true";
+				networkInterfacesObject.privateIpSets.push_back(privateIpSetsObject);
+			}
+			auto allIpv6SetsNode = valueInstancesInstanceNetworkInterfacesNetworkInterface["Ipv6Sets"]["Ipv6Set"];
+			for (auto valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv6SetsIpv6Set : allIpv6SetsNode)
+			{
+				Instance::NetworkInterface::Ipv6Set ipv6SetsObject;
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv6SetsIpv6Set["Ipv6Address"].isNull())
+					ipv6SetsObject.ipv6Address = valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv6SetsIpv6Set["Ipv6Address"].asString();
+				networkInterfacesObject.ipv6Sets.push_back(ipv6SetsObject);
+			}
 			instancesObject.networkInterfaces.push_back(networkInterfacesObject);
 		}
 		auto allOperationLocksNode = valueInstancesInstance["OperationLocks"]["LockReason"];
