@@ -38,17 +38,6 @@ void DescribeDomainPvDataRequest::setStartTime(const std::string& startTime)
 	setParameter("StartTime", startTime);
 }
 
-std::string DescribeDomainPvDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainPvDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeDomainPvDataRequest::getDomainName()const
 {
 	return domainName_;

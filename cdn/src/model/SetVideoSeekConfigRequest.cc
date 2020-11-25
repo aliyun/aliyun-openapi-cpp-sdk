@@ -19,24 +19,13 @@
 using AlibabaCloud::Cdn::Model::SetVideoSeekConfigRequest;
 
 SetVideoSeekConfigRequest::SetVideoSeekConfigRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "SetVideoSeekConfig")
+	RpcServiceRequest("cdn", "2014-11-11", "SetVideoSeekConfig")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 SetVideoSeekConfigRequest::~SetVideoSeekConfigRequest()
 {}
-
-std::string SetVideoSeekConfigRequest::getEnable()const
-{
-	return enable_;
-}
-
-void SetVideoSeekConfigRequest::setEnable(const std::string& enable)
-{
-	enable_ = enable;
-	setParameter("Enable", enable);
-}
 
 std::string SetVideoSeekConfigRequest::getDomainName()const
 {
@@ -60,14 +49,25 @@ void SetVideoSeekConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-long SetVideoSeekConfigRequest::getConfigId()const
+std::string SetVideoSeekConfigRequest::getSecurityToken()const
 {
-	return configId_;
+	return securityToken_;
 }
 
-void SetVideoSeekConfigRequest::setConfigId(long configId)
+void SetVideoSeekConfigRequest::setSecurityToken(const std::string& securityToken)
 {
-	configId_ = configId;
-	setParameter("ConfigId", std::to_string(configId));
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string SetVideoSeekConfigRequest::getEnable()const
+{
+	return enable_;
+}
+
+void SetVideoSeekConfigRequest::setEnable(const std::string& enable)
+{
+	enable_ = enable;
+	setParameter("Enable", enable);
 }
 

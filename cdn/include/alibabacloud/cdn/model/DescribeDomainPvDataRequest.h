@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -48,7 +46,6 @@ namespace AlibabaCloud
 
             private:
 				std::string startTime_;
-				std::string securityToken_;
 				std::string domainName_;
 				std::string endTime_;
 				long ownerId_;

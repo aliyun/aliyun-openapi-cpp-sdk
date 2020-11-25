@@ -43,20 +43,20 @@ void DescribeDomainUvDataResult::parse(const std::string &payload)
 	for (auto valueUvDataIntervalUsageData : allUvDataIntervalNode)
 	{
 		UsageData uvDataIntervalObject;
-		if(!valueUvDataIntervalUsageData["TimeStamp"].isNull())
-			uvDataIntervalObject.timeStamp = valueUvDataIntervalUsageData["TimeStamp"].asString();
 		if(!valueUvDataIntervalUsageData["Value"].isNull())
 			uvDataIntervalObject.value = valueUvDataIntervalUsageData["Value"].asString();
+		if(!valueUvDataIntervalUsageData["TimeStamp"].isNull())
+			uvDataIntervalObject.timeStamp = valueUvDataIntervalUsageData["TimeStamp"].asString();
 		uvDataInterval_.push_back(uvDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
 }
 
@@ -75,13 +75,13 @@ std::string DescribeDomainUvDataResult::getDomainName()const
 	return domainName_;
 }
 
-std::string DescribeDomainUvDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
 std::string DescribeDomainUvDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDomainUvDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 

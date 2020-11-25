@@ -44,8 +44,8 @@ namespace AlibabaCloud
 				~DescribeDomainPvDataResult();
 				std::string getEndTime()const;
 				std::string getDomainName()const;
-				std::string getDataInterval()const;
 				std::string getStartTime()const;
+				std::string getDataInterval()const;
 				std::vector<UsageData> getPvDataInterval()const;
 
 			protected:
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 			private:
 				std::string endTime_;
 				std::string domainName_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 				std::vector<UsageData> pvDataInterval_;
 
 			};

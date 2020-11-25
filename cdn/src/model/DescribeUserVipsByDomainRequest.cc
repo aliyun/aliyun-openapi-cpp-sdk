@@ -21,22 +21,11 @@ using AlibabaCloud::Cdn::Model::DescribeUserVipsByDomainRequest;
 DescribeUserVipsByDomainRequest::DescribeUserVipsByDomainRequest() :
 	RpcServiceRequest("cdn", "2018-05-10", "DescribeUserVipsByDomain")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DescribeUserVipsByDomainRequest::~DescribeUserVipsByDomainRequest()
 {}
-
-std::string DescribeUserVipsByDomainRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeUserVipsByDomainRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
-}
 
 std::string DescribeUserVipsByDomainRequest::getAvailable()const
 {
@@ -49,6 +38,17 @@ void DescribeUserVipsByDomainRequest::setAvailable(const std::string& available)
 	setParameter("Available", available);
 }
 
+std::string DescribeUserVipsByDomainRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeUserVipsByDomainRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
 long DescribeUserVipsByDomainRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -58,16 +58,5 @@ void DescribeUserVipsByDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeUserVipsByDomainRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeUserVipsByDomainRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 

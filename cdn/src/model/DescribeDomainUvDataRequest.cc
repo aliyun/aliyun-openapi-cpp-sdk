@@ -27,6 +27,17 @@ DescribeDomainUvDataRequest::DescribeDomainUvDataRequest() :
 DescribeDomainUvDataRequest::~DescribeDomainUvDataRequest()
 {}
 
+std::string DescribeDomainUvDataRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeDomainUvDataRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", startTime);
+}
+
 std::string DescribeDomainUvDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -49,17 +60,6 @@ void DescribeDomainUvDataRequest::setEndTime(const std::string& endTime)
 	setParameter("EndTime", endTime);
 }
 
-std::string DescribeDomainUvDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeDomainUvDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
-}
-
 long DescribeDomainUvDataRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -69,16 +69,5 @@ void DescribeDomainUvDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDomainUvDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainUvDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 

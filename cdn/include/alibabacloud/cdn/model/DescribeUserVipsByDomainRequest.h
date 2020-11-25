@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				DescribeUserVipsByDomainRequest();
 				~DescribeUserVipsByDomainRequest();
 
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
 				std::string getAvailable()const;
 				void setAvailable(const std::string& available);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string domainName_;
 				std::string available_;
+				std::string domainName_;
 				long ownerId_;
-				std::string securityToken_;
 
 			};
 		}
