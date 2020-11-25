@@ -86,6 +86,8 @@
 #include "model/DescribeDBClusterSSLResult.h"
 #include "model/DescribeDBClusterTDERequest.h"
 #include "model/DescribeDBClusterTDEResult.h"
+#include "model/DescribeDBClusterVersionRequest.h"
+#include "model/DescribeDBClusterVersionResult.h"
 #include "model/DescribeDBClustersRequest.h"
 #include "model/DescribeDBClustersResult.h"
 #include "model/DescribeDBClustersWithBackupsRequest.h"
@@ -271,6 +273,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBClusterTDEResult> DescribeDBClusterTDEOutcome;
 			typedef std::future<DescribeDBClusterTDEOutcome> DescribeDBClusterTDEOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterTDERequest&, const DescribeDBClusterTDEOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterTDEAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBClusterVersionResult> DescribeDBClusterVersionOutcome;
+			typedef std::future<DescribeDBClusterVersionOutcome> DescribeDBClusterVersionOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterVersionRequest&, const DescribeDBClusterVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterVersionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClustersResult> DescribeDBClustersOutcome;
 			typedef std::future<DescribeDBClustersOutcome> DescribeDBClustersOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClustersRequest&, const DescribeDBClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClustersAsyncHandler;
@@ -492,6 +497,9 @@ namespace AlibabaCloud
 			DescribeDBClusterTDEOutcome describeDBClusterTDE(const Model::DescribeDBClusterTDERequest &request)const;
 			void describeDBClusterTDEAsync(const Model::DescribeDBClusterTDERequest& request, const DescribeDBClusterTDEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterTDEOutcomeCallable describeDBClusterTDECallable(const Model::DescribeDBClusterTDERequest& request) const;
+			DescribeDBClusterVersionOutcome describeDBClusterVersion(const Model::DescribeDBClusterVersionRequest &request)const;
+			void describeDBClusterVersionAsync(const Model::DescribeDBClusterVersionRequest& request, const DescribeDBClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBClusterVersionOutcomeCallable describeDBClusterVersionCallable(const Model::DescribeDBClusterVersionRequest& request) const;
 			DescribeDBClustersOutcome describeDBClusters(const Model::DescribeDBClustersRequest &request)const;
 			void describeDBClustersAsync(const Model::DescribeDBClustersRequest& request, const DescribeDBClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClustersOutcomeCallable describeDBClustersCallable(const Model::DescribeDBClustersRequest& request) const;
