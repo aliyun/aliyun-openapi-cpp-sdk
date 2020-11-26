@@ -591,6 +591,42 @@ CodeupClient::DeleteRepositoryMemberOutcomeCallable CodeupClient::deleteReposito
 	return task->get_future();
 }
 
+CodeupClient::DeleteRepositoryTagOutcome CodeupClient::deleteRepositoryTag(const DeleteRepositoryTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRepositoryTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRepositoryTagOutcome(DeleteRepositoryTagResult(outcome.result()));
+	else
+		return DeleteRepositoryTagOutcome(outcome.error());
+}
+
+void CodeupClient::deleteRepositoryTagAsync(const DeleteRepositoryTagRequest& request, const DeleteRepositoryTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRepositoryTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::DeleteRepositoryTagOutcomeCallable CodeupClient::deleteRepositoryTagCallable(const DeleteRepositoryTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRepositoryTagOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRepositoryTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::GetBranchInfoOutcome CodeupClient::getBranchInfo(const GetBranchInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -807,6 +843,42 @@ CodeupClient::GetRepositoryInfoOutcomeCallable CodeupClient::getRepositoryInfoCa
 	return task->get_future();
 }
 
+CodeupClient::GetRepositoryTagOutcome CodeupClient::getRepositoryTag(const GetRepositoryTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRepositoryTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRepositoryTagOutcome(GetRepositoryTagResult(outcome.result()));
+	else
+		return GetRepositoryTagOutcome(outcome.error());
+}
+
+void CodeupClient::getRepositoryTagAsync(const GetRepositoryTagRequest& request, const GetRepositoryTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRepositoryTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetRepositoryTagOutcomeCallable CodeupClient::getRepositoryTagCallable(const GetRepositoryTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRepositoryTagOutcome()>>(
+			[this, request]()
+			{
+			return this->getRepositoryTag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::ListGroupMemberOutcome CodeupClient::listGroupMember(const ListGroupMemberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1053,42 @@ CodeupClient::ListRepositoryMemberOutcomeCallable CodeupClient::listRepositoryMe
 			[this, request]()
 			{
 			return this->listRepositoryMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListRepositoryTagsOutcome CodeupClient::listRepositoryTags(const ListRepositoryTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRepositoryTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRepositoryTagsOutcome(ListRepositoryTagsResult(outcome.result()));
+	else
+		return ListRepositoryTagsOutcome(outcome.error());
+}
+
+void CodeupClient::listRepositoryTagsAsync(const ListRepositoryTagsRequest& request, const ListRepositoryTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRepositoryTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListRepositoryTagsOutcomeCallable CodeupClient::listRepositoryTagsCallable(const ListRepositoryTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRepositoryTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listRepositoryTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

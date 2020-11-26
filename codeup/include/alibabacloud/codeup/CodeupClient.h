@@ -52,6 +52,8 @@
 #include "model/DeleteRepositoryGroupResult.h"
 #include "model/DeleteRepositoryMemberRequest.h"
 #include "model/DeleteRepositoryMemberResult.h"
+#include "model/DeleteRepositoryTagRequest.h"
+#include "model/DeleteRepositoryTagResult.h"
 #include "model/GetBranchInfoRequest.h"
 #include "model/GetBranchInfoResult.h"
 #include "model/GetCodeupOrganizationRequest.h"
@@ -64,6 +66,8 @@
 #include "model/GetProjectMemberResult.h"
 #include "model/GetRepositoryInfoRequest.h"
 #include "model/GetRepositoryInfoResult.h"
+#include "model/GetRepositoryTagRequest.h"
+#include "model/GetRepositoryTagResult.h"
 #include "model/ListGroupMemberRequest.h"
 #include "model/ListGroupMemberResult.h"
 #include "model/ListGroupRepositoriesRequest.h"
@@ -74,6 +78,8 @@
 #include "model/ListRepositoryBranchesResult.h"
 #include "model/ListRepositoryMemberRequest.h"
 #include "model/ListRepositoryMemberResult.h"
+#include "model/ListRepositoryTagsRequest.h"
+#include "model/ListRepositoryTagsResult.h"
 #include "model/ListRepositoryTreeRequest.h"
 #include "model/ListRepositoryTreeResult.h"
 #include "model/MergeMergeRequestRequest.h"
@@ -138,6 +144,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRepositoryMemberResult> DeleteRepositoryMemberOutcome;
 			typedef std::future<DeleteRepositoryMemberOutcome> DeleteRepositoryMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryMemberRequest&, const DeleteRepositoryMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryMemberAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRepositoryTagResult> DeleteRepositoryTagOutcome;
+			typedef std::future<DeleteRepositoryTagOutcome> DeleteRepositoryTagOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryTagRequest&, const DeleteRepositoryTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryTagAsyncHandler;
 			typedef Outcome<Error, Model::GetBranchInfoResult> GetBranchInfoOutcome;
 			typedef std::future<GetBranchInfoOutcome> GetBranchInfoOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetBranchInfoRequest&, const GetBranchInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBranchInfoAsyncHandler;
@@ -156,6 +165,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRepositoryInfoResult> GetRepositoryInfoOutcome;
 			typedef std::future<GetRepositoryInfoOutcome> GetRepositoryInfoOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetRepositoryInfoRequest&, const GetRepositoryInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepositoryInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetRepositoryTagResult> GetRepositoryTagOutcome;
+			typedef std::future<GetRepositoryTagOutcome> GetRepositoryTagOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetRepositoryTagRequest&, const GetRepositoryTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepositoryTagAsyncHandler;
 			typedef Outcome<Error, Model::ListGroupMemberResult> ListGroupMemberOutcome;
 			typedef std::future<ListGroupMemberOutcome> ListGroupMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListGroupMemberRequest&, const ListGroupMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupMemberAsyncHandler;
@@ -171,6 +183,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRepositoryMemberResult> ListRepositoryMemberOutcome;
 			typedef std::future<ListRepositoryMemberOutcome> ListRepositoryMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryMemberRequest&, const ListRepositoryMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryMemberAsyncHandler;
+			typedef Outcome<Error, Model::ListRepositoryTagsResult> ListRepositoryTagsOutcome;
+			typedef std::future<ListRepositoryTagsOutcome> ListRepositoryTagsOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryTagsRequest&, const ListRepositoryTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryTagsAsyncHandler;
 			typedef Outcome<Error, Model::ListRepositoryTreeResult> ListRepositoryTreeOutcome;
 			typedef std::future<ListRepositoryTreeOutcome> ListRepositoryTreeOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryTreeRequest&, const ListRepositoryTreeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryTreeAsyncHandler;
@@ -236,6 +251,9 @@ namespace AlibabaCloud
 			DeleteRepositoryMemberOutcome deleteRepositoryMember(const Model::DeleteRepositoryMemberRequest &request)const;
 			void deleteRepositoryMemberAsync(const Model::DeleteRepositoryMemberRequest& request, const DeleteRepositoryMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRepositoryMemberOutcomeCallable deleteRepositoryMemberCallable(const Model::DeleteRepositoryMemberRequest& request) const;
+			DeleteRepositoryTagOutcome deleteRepositoryTag(const Model::DeleteRepositoryTagRequest &request)const;
+			void deleteRepositoryTagAsync(const Model::DeleteRepositoryTagRequest& request, const DeleteRepositoryTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRepositoryTagOutcomeCallable deleteRepositoryTagCallable(const Model::DeleteRepositoryTagRequest& request) const;
 			GetBranchInfoOutcome getBranchInfo(const Model::GetBranchInfoRequest &request)const;
 			void getBranchInfoAsync(const Model::GetBranchInfoRequest& request, const GetBranchInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBranchInfoOutcomeCallable getBranchInfoCallable(const Model::GetBranchInfoRequest& request) const;
@@ -254,6 +272,9 @@ namespace AlibabaCloud
 			GetRepositoryInfoOutcome getRepositoryInfo(const Model::GetRepositoryInfoRequest &request)const;
 			void getRepositoryInfoAsync(const Model::GetRepositoryInfoRequest& request, const GetRepositoryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRepositoryInfoOutcomeCallable getRepositoryInfoCallable(const Model::GetRepositoryInfoRequest& request) const;
+			GetRepositoryTagOutcome getRepositoryTag(const Model::GetRepositoryTagRequest &request)const;
+			void getRepositoryTagAsync(const Model::GetRepositoryTagRequest& request, const GetRepositoryTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRepositoryTagOutcomeCallable getRepositoryTagCallable(const Model::GetRepositoryTagRequest& request) const;
 			ListGroupMemberOutcome listGroupMember(const Model::ListGroupMemberRequest &request)const;
 			void listGroupMemberAsync(const Model::ListGroupMemberRequest& request, const ListGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGroupMemberOutcomeCallable listGroupMemberCallable(const Model::ListGroupMemberRequest& request) const;
@@ -269,6 +290,9 @@ namespace AlibabaCloud
 			ListRepositoryMemberOutcome listRepositoryMember(const Model::ListRepositoryMemberRequest &request)const;
 			void listRepositoryMemberAsync(const Model::ListRepositoryMemberRequest& request, const ListRepositoryMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryMemberOutcomeCallable listRepositoryMemberCallable(const Model::ListRepositoryMemberRequest& request) const;
+			ListRepositoryTagsOutcome listRepositoryTags(const Model::ListRepositoryTagsRequest &request)const;
+			void listRepositoryTagsAsync(const Model::ListRepositoryTagsRequest& request, const ListRepositoryTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRepositoryTagsOutcomeCallable listRepositoryTagsCallable(const Model::ListRepositoryTagsRequest& request) const;
 			ListRepositoryTreeOutcome listRepositoryTree(const Model::ListRepositoryTreeRequest &request)const;
 			void listRepositoryTreeAsync(const Model::ListRepositoryTreeRequest& request, const ListRepositoryTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryTreeOutcomeCallable listRepositoryTreeCallable(const Model::ListRepositoryTreeRequest& request) const;

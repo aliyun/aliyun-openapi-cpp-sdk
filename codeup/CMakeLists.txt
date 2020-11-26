@@ -51,6 +51,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/DeleteRepositoryGroupResult.h
 	include/alibabacloud/codeup/model/DeleteRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/DeleteRepositoryMemberResult.h
+	include/alibabacloud/codeup/model/DeleteRepositoryTagRequest.h
+	include/alibabacloud/codeup/model/DeleteRepositoryTagResult.h
 	include/alibabacloud/codeup/model/GetBranchInfoRequest.h
 	include/alibabacloud/codeup/model/GetBranchInfoResult.h
 	include/alibabacloud/codeup/model/GetCodeupOrganizationRequest.h
@@ -63,6 +65,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/GetProjectMemberResult.h
 	include/alibabacloud/codeup/model/GetRepositoryInfoRequest.h
 	include/alibabacloud/codeup/model/GetRepositoryInfoResult.h
+	include/alibabacloud/codeup/model/GetRepositoryTagRequest.h
+	include/alibabacloud/codeup/model/GetRepositoryTagResult.h
 	include/alibabacloud/codeup/model/ListGroupMemberRequest.h
 	include/alibabacloud/codeup/model/ListGroupMemberResult.h
 	include/alibabacloud/codeup/model/ListGroupRepositoriesRequest.h
@@ -73,6 +77,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/ListRepositoryBranchesResult.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberResult.h
+	include/alibabacloud/codeup/model/ListRepositoryTagsRequest.h
+	include/alibabacloud/codeup/model/ListRepositoryTagsResult.h
 	include/alibabacloud/codeup/model/ListRepositoryTreeRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryTreeResult.h
 	include/alibabacloud/codeup/model/MergeMergeRequestRequest.h
@@ -116,6 +122,8 @@ set(codeup_src
 	src/model/DeleteRepositoryGroupResult.cc
 	src/model/DeleteRepositoryMemberRequest.cc
 	src/model/DeleteRepositoryMemberResult.cc
+	src/model/DeleteRepositoryTagRequest.cc
+	src/model/DeleteRepositoryTagResult.cc
 	src/model/GetBranchInfoRequest.cc
 	src/model/GetBranchInfoResult.cc
 	src/model/GetCodeupOrganizationRequest.cc
@@ -128,6 +136,8 @@ set(codeup_src
 	src/model/GetProjectMemberResult.cc
 	src/model/GetRepositoryInfoRequest.cc
 	src/model/GetRepositoryInfoResult.cc
+	src/model/GetRepositoryTagRequest.cc
+	src/model/GetRepositoryTagResult.cc
 	src/model/ListGroupMemberRequest.cc
 	src/model/ListGroupMemberResult.cc
 	src/model/ListGroupRepositoriesRequest.cc
@@ -138,6 +148,8 @@ set(codeup_src
 	src/model/ListRepositoryBranchesResult.cc
 	src/model/ListRepositoryMemberRequest.cc
 	src/model/ListRepositoryMemberResult.cc
+	src/model/ListRepositoryTagsRequest.cc
+	src/model/ListRepositoryTagsResult.cc
 	src/model/ListRepositoryTreeRequest.cc
 	src/model/ListRepositoryTreeResult.cc
 	src/model/MergeMergeRequestRequest.cc
