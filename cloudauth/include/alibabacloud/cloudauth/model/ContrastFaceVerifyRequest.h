@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setIp(const std::string& ip);
 				std::string getMobile()const;
 				void setMobile(const std::string& mobile);
+				std::string getFaceContrastFile()const;
+				void setFaceContrastFile(const std::string& faceContrastFile);
 				long getSceneId()const;
 				void setSceneId(long sceneId);
 				std::string getOssBucketName()const;
@@ -83,6 +85,7 @@ namespace AlibabaCloud
 				std::string certName_;
 				std::string ip_;
 				std::string mobile_;
+				std::string faceContrastFile_;
 				long sceneId_;
 				std::string ossBucketName_;
 

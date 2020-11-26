@@ -181,6 +181,17 @@ void ContrastFaceVerifyRequest::setMobile(const std::string& mobile)
 	setBodyParameter("Mobile", mobile);
 }
 
+std::string ContrastFaceVerifyRequest::getFaceContrastFile()const
+{
+	return faceContrastFile_;
+}
+
+void ContrastFaceVerifyRequest::setFaceContrastFile(const std::string& faceContrastFile)
+{
+	faceContrastFile_ = faceContrastFile;
+	setBodyParameter("FaceContrastFile", faceContrastFile);
+}
+
 long ContrastFaceVerifyRequest::getSceneId()const
 {
 	return sceneId_;
