@@ -23,23 +23,55 @@ set(actiontrail_public_header
 set(actiontrail_public_header_model 
 	include/alibabacloud/actiontrail/model/CreateDeliveryHistoryJobRequest.h
 	include/alibabacloud/actiontrail/model/CreateDeliveryHistoryJobResult.h
+	include/alibabacloud/actiontrail/model/CreateTrailRequest.h
+	include/alibabacloud/actiontrail/model/CreateTrailResult.h
 	include/alibabacloud/actiontrail/model/DeleteDeliveryHistoryJobRequest.h
 	include/alibabacloud/actiontrail/model/DeleteDeliveryHistoryJobResult.h
+	include/alibabacloud/actiontrail/model/DeleteTrailRequest.h
+	include/alibabacloud/actiontrail/model/DeleteTrailResult.h
+	include/alibabacloud/actiontrail/model/DescribeRegionsRequest.h
+	include/alibabacloud/actiontrail/model/DescribeRegionsResult.h
+	include/alibabacloud/actiontrail/model/DescribeTrailsRequest.h
+	include/alibabacloud/actiontrail/model/DescribeTrailsResult.h
+	include/alibabacloud/actiontrail/model/GetTrailStatusRequest.h
+	include/alibabacloud/actiontrail/model/GetTrailStatusResult.h
 	include/alibabacloud/actiontrail/model/ListDeliveryHistoryJobsRequest.h
 	include/alibabacloud/actiontrail/model/ListDeliveryHistoryJobsResult.h
 	include/alibabacloud/actiontrail/model/LookupEventsRequest.h
-	include/alibabacloud/actiontrail/model/LookupEventsResult.h )
+	include/alibabacloud/actiontrail/model/LookupEventsResult.h
+	include/alibabacloud/actiontrail/model/StartLoggingRequest.h
+	include/alibabacloud/actiontrail/model/StartLoggingResult.h
+	include/alibabacloud/actiontrail/model/StopLoggingRequest.h
+	include/alibabacloud/actiontrail/model/StopLoggingResult.h
+	include/alibabacloud/actiontrail/model/UpdateTrailRequest.h
+	include/alibabacloud/actiontrail/model/UpdateTrailResult.h )
 
 set(actiontrail_src 
 	src/ActiontrailClient.cc
 	src/model/CreateDeliveryHistoryJobRequest.cc
 	src/model/CreateDeliveryHistoryJobResult.cc
+	src/model/CreateTrailRequest.cc
+	src/model/CreateTrailResult.cc
 	src/model/DeleteDeliveryHistoryJobRequest.cc
 	src/model/DeleteDeliveryHistoryJobResult.cc
+	src/model/DeleteTrailRequest.cc
+	src/model/DeleteTrailResult.cc
+	src/model/DescribeRegionsRequest.cc
+	src/model/DescribeRegionsResult.cc
+	src/model/DescribeTrailsRequest.cc
+	src/model/DescribeTrailsResult.cc
+	src/model/GetTrailStatusRequest.cc
+	src/model/GetTrailStatusResult.cc
 	src/model/ListDeliveryHistoryJobsRequest.cc
 	src/model/ListDeliveryHistoryJobsResult.cc
 	src/model/LookupEventsRequest.cc
-	src/model/LookupEventsResult.cc )
+	src/model/LookupEventsResult.cc
+	src/model/StartLoggingRequest.cc
+	src/model/StartLoggingResult.cc
+	src/model/StopLoggingRequest.cc
+	src/model/StopLoggingResult.cc
+	src/model/UpdateTrailRequest.cc
+	src/model/UpdateTrailResult.cc )
 
 add_library(actiontrail ${LIB_TYPE}
 	${actiontrail_public_header}

@@ -19,7 +19,7 @@
 using AlibabaCloud::Actiontrail::Model::LookupEventsRequest;
 
 LookupEventsRequest::LookupEventsRequest() :
-	RpcServiceRequest("actiontrail", "2020-07-06", "LookupEvents")
+	RpcServiceRequest("actiontrail", "2017-12-04", "LookupEvents")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,15 +27,15 @@ LookupEventsRequest::LookupEventsRequest() :
 LookupEventsRequest::~LookupEventsRequest()
 {}
 
-std::string LookupEventsRequest::getEndTime()const
+std::string LookupEventsRequest::getRequest()const
 {
-	return endTime_;
+	return request_;
 }
 
-void LookupEventsRequest::setEndTime(const std::string& endTime)
+void LookupEventsRequest::setRequest(const std::string& request)
 {
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	request_ = request;
+	setParameter("Request", request);
 }
 
 std::string LookupEventsRequest::getStartTime()const
@@ -49,6 +49,28 @@ void LookupEventsRequest::setStartTime(const std::string& startTime)
 	setParameter("StartTime", startTime);
 }
 
+std::string LookupEventsRequest::getEventName()const
+{
+	return eventName_;
+}
+
+void LookupEventsRequest::setEventName(const std::string& eventName)
+{
+	eventName_ = eventName;
+	setParameter("EventName", eventName);
+}
+
+std::string LookupEventsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void LookupEventsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::string LookupEventsRequest::getNextToken()const
 {
 	return nextToken_;
@@ -60,20 +82,70 @@ void LookupEventsRequest::setNextToken(const std::string& nextToken)
 	setParameter("NextToken", nextToken);
 }
 
-std::vector<LookupEventsRequest::LookupAttribute> LookupEventsRequest::getLookupAttribute()const
+std::string LookupEventsRequest::getServiceName()const
 {
-	return lookupAttribute_;
+	return serviceName_;
 }
 
-void LookupEventsRequest::setLookupAttribute(const std::vector<LookupAttribute>& lookupAttribute)
+void LookupEventsRequest::setServiceName(const std::string& serviceName)
 {
-	lookupAttribute_ = lookupAttribute;
-	for(int dep1 = 0; dep1!= lookupAttribute.size(); dep1++) {
-		auto lookupAttributeObj = lookupAttribute.at(dep1);
-		std::string lookupAttributeObjStr = "LookupAttribute." + std::to_string(dep1 + 1);
-		setParameter(lookupAttributeObjStr + ".Value", lookupAttributeObj.value);
-		setParameter(lookupAttributeObjStr + ".Key", lookupAttributeObj.key);
-	}
+	serviceName_ = serviceName;
+	setParameter("ServiceName", serviceName);
+}
+
+std::string LookupEventsRequest::getEvent()const
+{
+	return event_;
+}
+
+void LookupEventsRequest::setEvent(const std::string& event)
+{
+	event_ = event;
+	setParameter("Event", event);
+}
+
+std::string LookupEventsRequest::getEventAccessKeyId()const
+{
+	return eventAccessKeyId_;
+}
+
+void LookupEventsRequest::setEventAccessKeyId(const std::string& eventAccessKeyId)
+{
+	eventAccessKeyId_ = eventAccessKeyId;
+	setParameter("EventAccessKeyId", eventAccessKeyId);
+}
+
+std::string LookupEventsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void LookupEventsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", endTime);
+}
+
+std::string LookupEventsRequest::getEventRW()const
+{
+	return eventRW_;
+}
+
+void LookupEventsRequest::setEventRW(const std::string& eventRW)
+{
+	eventRW_ = eventRW;
+	setParameter("EventRW", eventRW);
+}
+
+std::string LookupEventsRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void LookupEventsRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setParameter("ResourceType", resourceType);
 }
 
 std::string LookupEventsRequest::getMaxResults()const
@@ -87,14 +159,36 @@ void LookupEventsRequest::setMaxResults(const std::string& maxResults)
 	setParameter("MaxResults", maxResults);
 }
 
-std::string LookupEventsRequest::getDirection()const
+std::string LookupEventsRequest::getEventType()const
 {
-	return direction_;
+	return eventType_;
 }
 
-void LookupEventsRequest::setDirection(const std::string& direction)
+void LookupEventsRequest::setEventType(const std::string& eventType)
 {
-	direction_ = direction;
-	setParameter("Direction", direction);
+	eventType_ = eventType;
+	setParameter("EventType", eventType);
+}
+
+std::string LookupEventsRequest::getResourceName()const
+{
+	return resourceName_;
+}
+
+void LookupEventsRequest::setResourceName(const std::string& resourceName)
+{
+	resourceName_ = resourceName;
+	setParameter("ResourceName", resourceName);
+}
+
+std::string LookupEventsRequest::getUser()const
+{
+	return user_;
+}
+
+void LookupEventsRequest::setUser(const std::string& user)
+{
+	user_ = user;
+	setParameter("User", user);
 }
 
