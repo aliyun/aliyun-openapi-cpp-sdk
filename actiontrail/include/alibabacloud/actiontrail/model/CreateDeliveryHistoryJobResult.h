@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_STOPLOGGINGRESULT_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_STOPLOGGINGRESULT_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_CREATEDELIVERYHISTORYJOBRESULT_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_CREATEDELIVERYHISTORYJOBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ACTIONTRAIL_EXPORT StopLoggingResult : public ServiceResult
+			class ALIBABACLOUD_ACTIONTRAIL_EXPORT CreateDeliveryHistoryJobResult : public ServiceResult
 			{
 			public:
 
 
-				StopLoggingResult();
-				explicit StopLoggingResult(const std::string &payload);
-				~StopLoggingResult();
+				CreateDeliveryHistoryJobResult();
+				explicit CreateDeliveryHistoryJobResult(const std::string &payload);
+				~CreateDeliveryHistoryJobResult();
+				int getJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int jobId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_STOPLOGGINGRESULT_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_CREATEDELIVERYHISTORYJOBRESULT_H_

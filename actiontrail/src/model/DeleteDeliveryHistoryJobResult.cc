@@ -14,45 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/actiontrail/model/StartLoggingResult.h>
+#include <alibabacloud/actiontrail/model/DeleteDeliveryHistoryJobResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Actiontrail;
 using namespace AlibabaCloud::Actiontrail::Model;
 
-StartLoggingResult::StartLoggingResult() :
+DeleteDeliveryHistoryJobResult::DeleteDeliveryHistoryJobResult() :
 	ServiceResult()
 {}
 
-StartLoggingResult::StartLoggingResult(const std::string &payload) :
+DeleteDeliveryHistoryJobResult::DeleteDeliveryHistoryJobResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StartLoggingResult::~StartLoggingResult()
+DeleteDeliveryHistoryJobResult::~DeleteDeliveryHistoryJobResult()
 {}
 
-void StartLoggingResult::parse(const std::string &payload)
+void DeleteDeliveryHistoryJobResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Param"].isNull())
-		param_ = value["Param"].asString();
-	if(!value["Result"].isNull())
-		result_ = value["Result"].asString();
 
-}
-
-std::string StartLoggingResult::getParam()const
-{
-	return param_;
-}
-
-std::string StartLoggingResult::getResult()const
-{
-	return result_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_STOPLOGGINGREQUEST_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_STOPLOGGINGREQUEST_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETEDELIVERYHISTORYJOBREQUEST_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETEDELIVERYHISTORYJOBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ACTIONTRAIL_EXPORT StopLoggingRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ACTIONTRAIL_EXPORT DeleteDeliveryHistoryJobRequest : public RpcServiceRequest
 			{
 
 			public:
-				StopLoggingRequest();
-				~StopLoggingRequest();
+				DeleteDeliveryHistoryJobRequest();
+				~DeleteDeliveryHistoryJobRequest();
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getName()const;
-				void setName(const std::string& name);
+				int getJobId()const;
+				void setJobId(int jobId);
 
             private:
-				std::string accessKeyId_;
-				std::string name_;
+				int jobId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_STOPLOGGINGREQUEST_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETEDELIVERYHISTORYJOBREQUEST_H_

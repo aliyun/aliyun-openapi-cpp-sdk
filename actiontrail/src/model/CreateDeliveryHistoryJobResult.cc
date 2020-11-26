@@ -14,45 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/actiontrail/model/DescribeRegionsResult.h>
+#include <alibabacloud/actiontrail/model/CreateDeliveryHistoryJobResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Actiontrail;
 using namespace AlibabaCloud::Actiontrail::Model;
 
-DescribeRegionsResult::DescribeRegionsResult() :
+CreateDeliveryHistoryJobResult::CreateDeliveryHistoryJobResult() :
 	ServiceResult()
 {}
 
-DescribeRegionsResult::DescribeRegionsResult(const std::string &payload) :
+CreateDeliveryHistoryJobResult::CreateDeliveryHistoryJobResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeRegionsResult::~DescribeRegionsResult()
+CreateDeliveryHistoryJobResult::~CreateDeliveryHistoryJobResult()
 {}
 
-void DescribeRegionsResult::parse(const std::string &payload)
+void CreateDeliveryHistoryJobResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto regionsNode = value["Regions"];
-	auto allRegionNode = regionsNode["Region"]["RegionItem"];
-	for (auto regionsNodeRegionRegionItem : allRegionNode)
-	{
-		Regions::RegionItem regionItemObject;
-		if(!regionsNodeRegionRegionItem["RegionId"].isNull())
-			regionItemObject.regionId = regionsNodeRegionRegionItem["RegionId"].asString();
-		regions_.region.push_back(regionItemObject);
-	}
+	if(!value["JobId"].isNull())
+		jobId_ = std::stoi(value["JobId"].asString());
 
 }
 
-DescribeRegionsResult::Regions DescribeRegionsResult::getRegions()const
+int CreateDeliveryHistoryJobResult::getJobId()const
 {
-	return regions_;
+	return jobId_;
 }
 

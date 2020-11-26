@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBETRAILSREQUEST_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBETRAILSREQUEST_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_CREATEDELIVERYHISTORYJOBREQUEST_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_CREATEDELIVERYHISTORYJOBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ACTIONTRAIL_EXPORT DescribeTrailsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ACTIONTRAIL_EXPORT CreateDeliveryHistoryJobRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeTrailsRequest();
-				~DescribeTrailsRequest();
+				CreateDeliveryHistoryJobRequest();
+				~CreateDeliveryHistoryJobRequest();
 
-				bool getIncludeShadowTrails()const;
-				void setIncludeShadowTrails(bool includeShadowTrails);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getNameList()const;
-				void setNameList(const std::string& nameList);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getTrailName()const;
+				void setTrailName(const std::string& trailName);
 
             private:
-				bool includeShadowTrails_;
-				std::string accessKeyId_;
-				std::string nameList_;
+				std::string clientToken_;
+				std::string trailName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBETRAILSREQUEST_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_CREATEDELIVERYHISTORYJOBREQUEST_H_

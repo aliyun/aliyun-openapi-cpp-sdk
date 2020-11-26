@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETETRAILREQUEST_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETETRAILREQUEST_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_LISTDELIVERYHISTORYJOBSREQUEST_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_LISTDELIVERYHISTORYJOBSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ACTIONTRAIL_EXPORT DeleteTrailRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ACTIONTRAIL_EXPORT ListDeliveryHistoryJobsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteTrailRequest();
-				~DeleteTrailRequest();
+				ListDeliveryHistoryJobsRequest();
+				~ListDeliveryHistoryJobsRequest();
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getName()const;
-				void setName(const std::string& name);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string accessKeyId_;
-				std::string name_;
+				int pageNumber_;
+				int pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETETRAILREQUEST_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_LISTDELIVERYHISTORYJOBSREQUEST_H_

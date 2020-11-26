@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBETRAILSRESULT_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBETRAILSRESULT_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_LISTDELIVERYHISTORYJOBSRESULT_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_LISTDELIVERYHISTORYJOBSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,40 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ACTIONTRAIL_EXPORT DescribeTrailsResult : public ServiceResult
+			class ALIBABACLOUD_ACTIONTRAIL_EXPORT ListDeliveryHistoryJobsResult : public ServiceResult
 			{
 			public:
-				struct TrailListItem
+				struct DeliveryHistoryJob
 				{
-					std::string status;
-					std::string mnsTopicArn;
+					int jobStatus;
+					std::string createdTime;
+					std::string endTime;
 					std::string homeRegion;
-					std::string createTime;
-					std::string startLoggingTime;
-					std::string stopLoggingTime;
-					std::string slsWriteRoleArn;
-					std::string trailRegion;
-					std::string name;
-					bool isOrganizationTrail;
-					std::string slsProjectArn;
-					std::string roleName;
-					std::string eventRW;
-					std::string ossKeyPrefix;
-					std::string updateTime;
-					std::string ossBucketName;
+					std::string startTime;
+					std::string trailName;
+					std::string updatedTime;
+					long jobId;
 				};
 
 
-				DescribeTrailsResult();
-				explicit DescribeTrailsResult(const std::string &payload);
-				~DescribeTrailsResult();
-				std::vector<TrailListItem> getTrailList()const;
+				ListDeliveryHistoryJobsResult();
+				explicit ListDeliveryHistoryJobsResult(const std::string &payload);
+				~ListDeliveryHistoryJobsResult();
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getPageNumber()const;
+				std::vector<DeliveryHistoryJob> getDeliveryHistoryJobs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<TrailListItem> trailList_;
+				int totalCount_;
+				int pageSize_;
+				int pageNumber_;
+				std::vector<DeliveryHistoryJob> deliveryHistoryJobs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBETRAILSRESULT_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_LISTDELIVERYHISTORYJOBSRESULT_H_

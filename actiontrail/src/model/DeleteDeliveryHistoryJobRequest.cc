@@ -14,31 +14,27 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/actiontrail/model/StopLoggingResult.h>
-#include <json/json.h>
+#include <alibabacloud/actiontrail/model/DeleteDeliveryHistoryJobRequest.h>
 
-using namespace AlibabaCloud::Actiontrail;
-using namespace AlibabaCloud::Actiontrail::Model;
+using AlibabaCloud::Actiontrail::Model::DeleteDeliveryHistoryJobRequest;
 
-StopLoggingResult::StopLoggingResult() :
-	ServiceResult()
-{}
-
-StopLoggingResult::StopLoggingResult(const std::string &payload) :
-	ServiceResult()
+DeleteDeliveryHistoryJobRequest::DeleteDeliveryHistoryJobRequest() :
+	RpcServiceRequest("actiontrail", "2020-07-06", "DeleteDeliveryHistoryJob")
 {
-	parse(payload);
+	setMethod(HttpRequest::Method::Post);
 }
 
-StopLoggingResult::~StopLoggingResult()
+DeleteDeliveryHistoryJobRequest::~DeleteDeliveryHistoryJobRequest()
 {}
 
-void StopLoggingResult::parse(const std::string &payload)
+int DeleteDeliveryHistoryJobRequest::getJobId()const
 {
-	Json::Reader reader;
-	Json::Value value;
-	reader.parse(payload, value);
-	setRequestId(value["RequestId"].asString());
+	return jobId_;
+}
 
+void DeleteDeliveryHistoryJobRequest::setJobId(int jobId)
+{
+	jobId_ = jobId;
+	setParameter("JobId", std::to_string(jobId));
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBEREGIONSRESULT_H_
-#define ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBEREGIONSRESULT_H_
+#ifndef ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETEDELIVERYHISTORYJOBRESULT_H_
+#define ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETEDELIVERYHISTORYJOBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ACTIONTRAIL_EXPORT DescribeRegionsResult : public ServiceResult
+			class ALIBABACLOUD_ACTIONTRAIL_EXPORT DeleteDeliveryHistoryJobResult : public ServiceResult
 			{
 			public:
-				struct Regions
-				{
-					struct RegionItem
-					{
-						std::string regionId;
-					};
-					std::vector<RegionItem> region;
-				};
 
 
-				DescribeRegionsResult();
-				explicit DescribeRegionsResult(const std::string &payload);
-				~DescribeRegionsResult();
-				Regions getRegions()const;
+				DeleteDeliveryHistoryJobResult();
+				explicit DeleteDeliveryHistoryJobResult(const std::string &payload);
+				~DeleteDeliveryHistoryJobResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Regions regions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_DESCRIBEREGIONSRESULT_H_
+#endif // !ALIBABACLOUD_ACTIONTRAIL_MODEL_DELETEDELIVERYHISTORYJOBRESULT_H_

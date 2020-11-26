@@ -1,4 +1,7 @@
 2020-11-26 Version: patch
+- Generated 2020-07-06 for `Actiontrail`.
+
+2020-11-26 Version: patch
 - Add tags api, include GetRepositoryTag, ListRepositoryTags, DeleteRepositoryTag.
 
 2020-11-25 Version: patch

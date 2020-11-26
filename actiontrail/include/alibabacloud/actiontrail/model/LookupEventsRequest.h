@@ -30,58 +30,37 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ACTIONTRAIL_EXPORT LookupEventsRequest : public RpcServiceRequest
 			{
+			public:
+				struct LookupAttribute
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				LookupEventsRequest();
 				~LookupEventsRequest();
 
-				std::string getRequest()const;
-				void setRequest(const std::string& request);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				std::string getEventName()const;
-				void setEventName(const std::string& eventName);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getNextToken()const;
-				void setNextToken(const std::string& nextToken);
-				std::string getServiceName()const;
-				void setServiceName(const std::string& serviceName);
-				std::string getEvent()const;
-				void setEvent(const std::string& event);
-				std::string getEventAccessKeyId()const;
-				void setEventAccessKeyId(const std::string& eventAccessKeyId);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
-				std::string getEventRW()const;
-				void setEventRW(const std::string& eventRW);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
+				std::vector<LookupAttribute> getLookupAttribute()const;
+				void setLookupAttribute(const std::vector<LookupAttribute>& lookupAttribute);
 				std::string getMaxResults()const;
 				void setMaxResults(const std::string& maxResults);
-				std::string getEventType()const;
-				void setEventType(const std::string& eventType);
-				std::string getResourceName()const;
-				void setResourceName(const std::string& resourceName);
-				std::string getUser()const;
-				void setUser(const std::string& user);
+				std::string getDirection()const;
+				void setDirection(const std::string& direction);
 
             private:
-				std::string request_;
-				std::string startTime_;
-				std::string eventName_;
-				std::string accessKeyId_;
-				std::string nextToken_;
-				std::string serviceName_;
-				std::string event_;
-				std::string eventAccessKeyId_;
 				std::string endTime_;
-				std::string eventRW_;
-				std::string resourceType_;
+				std::string startTime_;
+				std::string nextToken_;
+				std::vector<LookupAttribute> lookupAttribute_;
 				std::string maxResults_;
-				std::string eventType_;
-				std::string resourceName_;
-				std::string user_;
+				std::string direction_;
 
 			};
 		}

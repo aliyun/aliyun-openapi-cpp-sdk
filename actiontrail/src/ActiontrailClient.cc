@@ -51,180 +51,108 @@ ActiontrailClient::ActiontrailClient(const std::string & accessKeyId, const std:
 ActiontrailClient::~ActiontrailClient()
 {}
 
-ActiontrailClient::CreateTrailOutcome ActiontrailClient::createTrail(const CreateTrailRequest &request) const
+ActiontrailClient::CreateDeliveryHistoryJobOutcome ActiontrailClient::createDeliveryHistoryJob(const CreateDeliveryHistoryJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateTrailOutcome(endpointOutcome.error());
+		return CreateDeliveryHistoryJobOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateTrailOutcome(CreateTrailResult(outcome.result()));
+		return CreateDeliveryHistoryJobOutcome(CreateDeliveryHistoryJobResult(outcome.result()));
 	else
-		return CreateTrailOutcome(outcome.error());
+		return CreateDeliveryHistoryJobOutcome(outcome.error());
 }
 
-void ActiontrailClient::createTrailAsync(const CreateTrailRequest& request, const CreateTrailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void ActiontrailClient::createDeliveryHistoryJobAsync(const CreateDeliveryHistoryJobRequest& request, const CreateDeliveryHistoryJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createTrail(request), context);
+		handler(this, request, createDeliveryHistoryJob(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-ActiontrailClient::CreateTrailOutcomeCallable ActiontrailClient::createTrailCallable(const CreateTrailRequest &request) const
+ActiontrailClient::CreateDeliveryHistoryJobOutcomeCallable ActiontrailClient::createDeliveryHistoryJobCallable(const CreateDeliveryHistoryJobRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateTrailOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateDeliveryHistoryJobOutcome()>>(
 			[this, request]()
 			{
-			return this->createTrail(request);
+			return this->createDeliveryHistoryJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-ActiontrailClient::DeleteTrailOutcome ActiontrailClient::deleteTrail(const DeleteTrailRequest &request) const
+ActiontrailClient::DeleteDeliveryHistoryJobOutcome ActiontrailClient::deleteDeliveryHistoryJob(const DeleteDeliveryHistoryJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteTrailOutcome(endpointOutcome.error());
+		return DeleteDeliveryHistoryJobOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteTrailOutcome(DeleteTrailResult(outcome.result()));
+		return DeleteDeliveryHistoryJobOutcome(DeleteDeliveryHistoryJobResult(outcome.result()));
 	else
-		return DeleteTrailOutcome(outcome.error());
+		return DeleteDeliveryHistoryJobOutcome(outcome.error());
 }
 
-void ActiontrailClient::deleteTrailAsync(const DeleteTrailRequest& request, const DeleteTrailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void ActiontrailClient::deleteDeliveryHistoryJobAsync(const DeleteDeliveryHistoryJobRequest& request, const DeleteDeliveryHistoryJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteTrail(request), context);
+		handler(this, request, deleteDeliveryHistoryJob(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-ActiontrailClient::DeleteTrailOutcomeCallable ActiontrailClient::deleteTrailCallable(const DeleteTrailRequest &request) const
+ActiontrailClient::DeleteDeliveryHistoryJobOutcomeCallable ActiontrailClient::deleteDeliveryHistoryJobCallable(const DeleteDeliveryHistoryJobRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteTrailOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteDeliveryHistoryJobOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteTrail(request);
+			return this->deleteDeliveryHistoryJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-ActiontrailClient::DescribeRegionsOutcome ActiontrailClient::describeRegions(const DescribeRegionsRequest &request) const
+ActiontrailClient::ListDeliveryHistoryJobsOutcome ActiontrailClient::listDeliveryHistoryJobs(const ListDeliveryHistoryJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeRegionsOutcome(endpointOutcome.error());
+		return ListDeliveryHistoryJobsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
+		return ListDeliveryHistoryJobsOutcome(ListDeliveryHistoryJobsResult(outcome.result()));
 	else
-		return DescribeRegionsOutcome(outcome.error());
+		return ListDeliveryHistoryJobsOutcome(outcome.error());
 }
 
-void ActiontrailClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void ActiontrailClient::listDeliveryHistoryJobsAsync(const ListDeliveryHistoryJobsRequest& request, const ListDeliveryHistoryJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeRegions(request), context);
+		handler(this, request, listDeliveryHistoryJobs(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-ActiontrailClient::DescribeRegionsOutcomeCallable ActiontrailClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
+ActiontrailClient::ListDeliveryHistoryJobsOutcomeCallable ActiontrailClient::listDeliveryHistoryJobsCallable(const ListDeliveryHistoryJobsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListDeliveryHistoryJobsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeRegions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ActiontrailClient::DescribeTrailsOutcome ActiontrailClient::describeTrails(const DescribeTrailsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTrailsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTrailsOutcome(DescribeTrailsResult(outcome.result()));
-	else
-		return DescribeTrailsOutcome(outcome.error());
-}
-
-void ActiontrailClient::describeTrailsAsync(const DescribeTrailsRequest& request, const DescribeTrailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTrails(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ActiontrailClient::DescribeTrailsOutcomeCallable ActiontrailClient::describeTrailsCallable(const DescribeTrailsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTrailsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTrails(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ActiontrailClient::GetTrailStatusOutcome ActiontrailClient::getTrailStatus(const GetTrailStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetTrailStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetTrailStatusOutcome(GetTrailStatusResult(outcome.result()));
-	else
-		return GetTrailStatusOutcome(outcome.error());
-}
-
-void ActiontrailClient::getTrailStatusAsync(const GetTrailStatusRequest& request, const GetTrailStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getTrailStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ActiontrailClient::GetTrailStatusOutcomeCallable ActiontrailClient::getTrailStatusCallable(const GetTrailStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetTrailStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->getTrailStatus(request);
+			return this->listDeliveryHistoryJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -261,114 +189,6 @@ ActiontrailClient::LookupEventsOutcomeCallable ActiontrailClient::lookupEventsCa
 			[this, request]()
 			{
 			return this->lookupEvents(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ActiontrailClient::StartLoggingOutcome ActiontrailClient::startLogging(const StartLoggingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StartLoggingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StartLoggingOutcome(StartLoggingResult(outcome.result()));
-	else
-		return StartLoggingOutcome(outcome.error());
-}
-
-void ActiontrailClient::startLoggingAsync(const StartLoggingRequest& request, const StartLoggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, startLogging(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ActiontrailClient::StartLoggingOutcomeCallable ActiontrailClient::startLoggingCallable(const StartLoggingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StartLoggingOutcome()>>(
-			[this, request]()
-			{
-			return this->startLogging(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ActiontrailClient::StopLoggingOutcome ActiontrailClient::stopLogging(const StopLoggingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopLoggingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopLoggingOutcome(StopLoggingResult(outcome.result()));
-	else
-		return StopLoggingOutcome(outcome.error());
-}
-
-void ActiontrailClient::stopLoggingAsync(const StopLoggingRequest& request, const StopLoggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopLogging(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ActiontrailClient::StopLoggingOutcomeCallable ActiontrailClient::stopLoggingCallable(const StopLoggingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopLoggingOutcome()>>(
-			[this, request]()
-			{
-			return this->stopLogging(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ActiontrailClient::UpdateTrailOutcome ActiontrailClient::updateTrail(const UpdateTrailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateTrailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateTrailOutcome(UpdateTrailResult(outcome.result()));
-	else
-		return UpdateTrailOutcome(outcome.error());
-}
-
-void ActiontrailClient::updateTrailAsync(const UpdateTrailRequest& request, const UpdateTrailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateTrail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ActiontrailClient::UpdateTrailOutcomeCallable ActiontrailClient::updateTrailCallable(const UpdateTrailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateTrailOutcome()>>(
-			[this, request]()
-			{
-			return this->updateTrail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
