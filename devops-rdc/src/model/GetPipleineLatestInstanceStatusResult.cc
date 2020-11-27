@@ -50,24 +50,24 @@ void GetPipleineLatestInstanceStatusResult::parse(const std::string &payload)
 			groupObject.name = objectNodeGroupsgroup["Name"].asString();
 		if(!objectNodeGroupsgroup["Status"].isNull())
 			groupObject.status = objectNodeGroupsgroup["Status"].asString();
-		auto allStagesNode = allGroupsNode["Stages"]["stage"];
-		for (auto allGroupsNodeStagesstage : allStagesNode)
+		auto allStagesNode = objectNodeGroupsgroup["Stages"]["stage"];
+		for (auto objectNodeGroupsgroupStagesstage : allStagesNode)
 		{
 			Object::Group::Stage stagesObject;
-			if(!allGroupsNodeStagesstage["Status"].isNull())
-				stagesObject.status = allGroupsNodeStagesstage["Status"].asString();
-			if(!allGroupsNodeStagesstage["Sign"].isNull())
-				stagesObject.sign = allGroupsNodeStagesstage["Sign"].asString();
-			auto allComponentsNode = allStagesNode["Components"]["component"];
-			for (auto allStagesNodeComponentscomponent : allComponentsNode)
+			if(!objectNodeGroupsgroupStagesstage["Status"].isNull())
+				stagesObject.status = objectNodeGroupsgroupStagesstage["Status"].asString();
+			if(!objectNodeGroupsgroupStagesstage["Sign"].isNull())
+				stagesObject.sign = objectNodeGroupsgroupStagesstage["Sign"].asString();
+			auto allComponentsNode = objectNodeGroupsgroupStagesstage["Components"]["component"];
+			for (auto objectNodeGroupsgroupStagesstageComponentscomponent : allComponentsNode)
 			{
 				Object::Group::Stage::Component componentsObject;
-				if(!allStagesNodeComponentscomponent["Name"].isNull())
-					componentsObject.name = allStagesNodeComponentscomponent["Name"].asString();
-				if(!allStagesNodeComponentscomponent["Status"].isNull())
-					componentsObject.status = allStagesNodeComponentscomponent["Status"].asString();
-				if(!allStagesNodeComponentscomponent["JobId"].isNull())
-					componentsObject.jobId = std::stol(allStagesNodeComponentscomponent["JobId"].asString());
+				if(!objectNodeGroupsgroupStagesstageComponentscomponent["Name"].isNull())
+					componentsObject.name = objectNodeGroupsgroupStagesstageComponentscomponent["Name"].asString();
+				if(!objectNodeGroupsgroupStagesstageComponentscomponent["Status"].isNull())
+					componentsObject.status = objectNodeGroupsgroupStagesstageComponentscomponent["Status"].asString();
+				if(!objectNodeGroupsgroupStagesstageComponentscomponent["JobId"].isNull())
+					componentsObject.jobId = std::stol(objectNodeGroupsgroupStagesstageComponentscomponent["JobId"].asString());
 				stagesObject.components.push_back(componentsObject);
 			}
 			groupObject.stages.push_back(stagesObject);

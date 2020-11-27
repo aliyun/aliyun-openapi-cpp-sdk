@@ -94,6 +94,8 @@
 #include "model/ListDevopsProjectTaskFlowResult.h"
 #include "model/ListDevopsProjectTaskFlowStatusRequest.h"
 #include "model/ListDevopsProjectTaskFlowStatusResult.h"
+#include "model/ListDevopsProjectTaskListRequest.h"
+#include "model/ListDevopsProjectTaskListResult.h"
 #include "model/ListDevopsProjectTasksRequest.h"
 #include "model/ListDevopsProjectTasksResult.h"
 #include "model/ListDevopsScenarioFieldConfigRequest.h"
@@ -231,6 +233,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDevopsProjectTaskFlowStatusResult> ListDevopsProjectTaskFlowStatusOutcome;
 			typedef std::future<ListDevopsProjectTaskFlowStatusOutcome> ListDevopsProjectTaskFlowStatusOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListDevopsProjectTaskFlowStatusRequest&, const ListDevopsProjectTaskFlowStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevopsProjectTaskFlowStatusAsyncHandler;
+			typedef Outcome<Error, Model::ListDevopsProjectTaskListResult> ListDevopsProjectTaskListOutcome;
+			typedef std::future<ListDevopsProjectTaskListOutcome> ListDevopsProjectTaskListOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::ListDevopsProjectTaskListRequest&, const ListDevopsProjectTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevopsProjectTaskListAsyncHandler;
 			typedef Outcome<Error, Model::ListDevopsProjectTasksResult> ListDevopsProjectTasksOutcome;
 			typedef std::future<ListDevopsProjectTasksOutcome> ListDevopsProjectTasksOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListDevopsProjectTasksRequest&, const ListDevopsProjectTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevopsProjectTasksAsyncHandler;
@@ -374,6 +379,9 @@ namespace AlibabaCloud
 			ListDevopsProjectTaskFlowStatusOutcome listDevopsProjectTaskFlowStatus(const Model::ListDevopsProjectTaskFlowStatusRequest &request)const;
 			void listDevopsProjectTaskFlowStatusAsync(const Model::ListDevopsProjectTaskFlowStatusRequest& request, const ListDevopsProjectTaskFlowStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevopsProjectTaskFlowStatusOutcomeCallable listDevopsProjectTaskFlowStatusCallable(const Model::ListDevopsProjectTaskFlowStatusRequest& request) const;
+			ListDevopsProjectTaskListOutcome listDevopsProjectTaskList(const Model::ListDevopsProjectTaskListRequest &request)const;
+			void listDevopsProjectTaskListAsync(const Model::ListDevopsProjectTaskListRequest& request, const ListDevopsProjectTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDevopsProjectTaskListOutcomeCallable listDevopsProjectTaskListCallable(const Model::ListDevopsProjectTaskListRequest& request) const;
 			ListDevopsProjectTasksOutcome listDevopsProjectTasks(const Model::ListDevopsProjectTasksRequest &request)const;
 			void listDevopsProjectTasksAsync(const Model::ListDevopsProjectTasksRequest& request, const ListDevopsProjectTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevopsProjectTasksOutcomeCallable listDevopsProjectTasksCallable(const Model::ListDevopsProjectTasksRequest& request) const;

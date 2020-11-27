@@ -1347,6 +1347,42 @@ Devops_rdcClient::ListDevopsProjectTaskFlowStatusOutcomeCallable Devops_rdcClien
 	return task->get_future();
 }
 
+Devops_rdcClient::ListDevopsProjectTaskListOutcome Devops_rdcClient::listDevopsProjectTaskList(const ListDevopsProjectTaskListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDevopsProjectTaskListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDevopsProjectTaskListOutcome(ListDevopsProjectTaskListResult(outcome.result()));
+	else
+		return ListDevopsProjectTaskListOutcome(outcome.error());
+}
+
+void Devops_rdcClient::listDevopsProjectTaskListAsync(const ListDevopsProjectTaskListRequest& request, const ListDevopsProjectTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDevopsProjectTaskList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::ListDevopsProjectTaskListOutcomeCallable Devops_rdcClient::listDevopsProjectTaskListCallable(const ListDevopsProjectTaskListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDevopsProjectTaskListOutcome()>>(
+			[this, request]()
+			{
+			return this->listDevopsProjectTaskList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::ListDevopsProjectTasksOutcome Devops_rdcClient::listDevopsProjectTasks(const ListDevopsProjectTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

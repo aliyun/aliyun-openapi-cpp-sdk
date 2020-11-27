@@ -93,6 +93,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskFlowResult.h
 	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskFlowStatusRequest.h
 	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskFlowStatusResult.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskListRequest.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskListResult.h
 	include/alibabacloud/devops-rdc/model/ListDevopsProjectTasksRequest.h
 	include/alibabacloud/devops-rdc/model/ListDevopsProjectTasksResult.h
 	include/alibabacloud/devops-rdc/model/ListDevopsScenarioFieldConfigRequest.h
@@ -188,6 +190,8 @@ set(devops-rdc_src
 	src/model/ListDevopsProjectTaskFlowResult.cc
 	src/model/ListDevopsProjectTaskFlowStatusRequest.cc
 	src/model/ListDevopsProjectTaskFlowStatusResult.cc
+	src/model/ListDevopsProjectTaskListRequest.cc
+	src/model/ListDevopsProjectTaskListResult.cc
 	src/model/ListDevopsProjectTasksRequest.cc
 	src/model/ListDevopsProjectTasksResult.cc
 	src/model/ListDevopsScenarioFieldConfigRequest.cc

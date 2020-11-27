@@ -49,16 +49,16 @@ void GetPipelineLogResult::parse(const std::string &payload)
 			objectObject.actionName = valueObjectjob["ActionName"].asString();
 		if(!valueObjectjob["StartTime"].isNull())
 			objectObject.startTime = valueObjectjob["StartTime"].asString();
-		auto allBuildProcessNodesNode = allObjectNode["BuildProcessNodes"]["buildProcessNode"];
-		for (auto allObjectNodeBuildProcessNodesbuildProcessNode : allBuildProcessNodesNode)
+		auto allBuildProcessNodesNode = valueObjectjob["BuildProcessNodes"]["buildProcessNode"];
+		for (auto valueObjectjobBuildProcessNodesbuildProcessNode : allBuildProcessNodesNode)
 		{
 			Job::BuildProcessNode buildProcessNodesObject;
-			if(!allObjectNodeBuildProcessNodesbuildProcessNode["NodeName"].isNull())
-				buildProcessNodesObject.nodeName = allObjectNodeBuildProcessNodesbuildProcessNode["NodeName"].asString();
-			if(!allObjectNodeBuildProcessNodesbuildProcessNode["NodeIndex"].isNull())
-				buildProcessNodesObject.nodeIndex = std::stoi(allObjectNodeBuildProcessNodesbuildProcessNode["NodeIndex"].asString());
-			if(!allObjectNodeBuildProcessNodesbuildProcessNode["Status"].isNull())
-				buildProcessNodesObject.status = allObjectNodeBuildProcessNodesbuildProcessNode["Status"].asString();
+			if(!valueObjectjobBuildProcessNodesbuildProcessNode["NodeName"].isNull())
+				buildProcessNodesObject.nodeName = valueObjectjobBuildProcessNodesbuildProcessNode["NodeName"].asString();
+			if(!valueObjectjobBuildProcessNodesbuildProcessNode["NodeIndex"].isNull())
+				buildProcessNodesObject.nodeIndex = std::stoi(valueObjectjobBuildProcessNodesbuildProcessNode["NodeIndex"].asString());
+			if(!valueObjectjobBuildProcessNodesbuildProcessNode["Status"].isNull())
+				buildProcessNodesObject.status = valueObjectjobBuildProcessNodesbuildProcessNode["Status"].asString();
 			objectObject.buildProcessNodes.push_back(buildProcessNodesObject);
 		}
 		object_.push_back(objectObject);
