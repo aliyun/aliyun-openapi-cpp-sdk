@@ -27,6 +27,17 @@ UntagResourceRequest::UntagResourceRequest() :
 UntagResourceRequest::~UntagResourceRequest()
 {}
 
+std::string UntagResourceRequest::getCertificateId()const
+{
+	return certificateId_;
+}
+
+void UntagResourceRequest::setCertificateId(const std::string& certificateId)
+{
+	certificateId_ = certificateId;
+	setParameter("CertificateId", certificateId);
+}
+
 std::string UntagResourceRequest::getTagKeys()const
 {
 	return tagKeys_;

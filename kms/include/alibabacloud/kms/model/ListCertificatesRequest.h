@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCEREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCEREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_LISTCERTIFICATESREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_LISTCERTIFICATESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT UntagResourceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_KMS_EXPORT ListCertificatesRequest : public RpcServiceRequest
 			{
 
 			public:
-				UntagResourceRequest();
-				~UntagResourceRequest();
+				ListCertificatesRequest();
+				~ListCertificatesRequest();
 
-				std::string getCertificateId()const;
-				void setCertificateId(const std::string& certificateId);
-				std::string getTagKeys()const;
-				void setTagKeys(const std::string& tagKeys);
-				std::string getKeyId()const;
-				void setKeyId(const std::string& keyId);
-				std::string getSecretName()const;
-				void setSecretName(const std::string& secretName);
+				std::string getSubject()const;
+				void setSubject(const std::string& subject);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getIssuer()const;
+				void setIssuer(const std::string& issuer);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
-				std::string certificateId_;
-				std::string tagKeys_;
-				std::string keyId_;
-				std::string secretName_;
+				std::string subject_;
+				int pageSize_;
+				std::string issuer_;
+				int pageNumber_;
+				std::string status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCEREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_LISTCERTIFICATESREQUEST_H_

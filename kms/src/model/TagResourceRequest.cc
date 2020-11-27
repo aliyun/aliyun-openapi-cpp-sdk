@@ -27,6 +27,17 @@ TagResourceRequest::TagResourceRequest() :
 TagResourceRequest::~TagResourceRequest()
 {}
 
+std::string TagResourceRequest::getCertificateId()const
+{
+	return certificateId_;
+}
+
+void TagResourceRequest::setCertificateId(const std::string& certificateId)
+{
+	certificateId_ = certificateId;
+	setParameter("CertificateId", certificateId);
+}
+
 std::string TagResourceRequest::getKeyId()const
 {
 	return keyId_;

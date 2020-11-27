@@ -31,8 +31,18 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/AsymmetricVerifyResult.h
 	include/alibabacloud/kms/model/CancelKeyDeletionRequest.h
 	include/alibabacloud/kms/model/CancelKeyDeletionResult.h
+	include/alibabacloud/kms/model/CertificatePrivateKeyDecryptRequest.h
+	include/alibabacloud/kms/model/CertificatePrivateKeyDecryptResult.h
+	include/alibabacloud/kms/model/CertificatePrivateKeySignRequest.h
+	include/alibabacloud/kms/model/CertificatePrivateKeySignResult.h
+	include/alibabacloud/kms/model/CertificatePublicKeyEncryptRequest.h
+	include/alibabacloud/kms/model/CertificatePublicKeyEncryptResult.h
+	include/alibabacloud/kms/model/CertificatePublicKeyVerifyRequest.h
+	include/alibabacloud/kms/model/CertificatePublicKeyVerifyResult.h
 	include/alibabacloud/kms/model/CreateAliasRequest.h
 	include/alibabacloud/kms/model/CreateAliasResult.h
+	include/alibabacloud/kms/model/CreateCertificateRequest.h
+	include/alibabacloud/kms/model/CreateCertificateResult.h
 	include/alibabacloud/kms/model/CreateKeyRequest.h
 	include/alibabacloud/kms/model/CreateKeyResult.h
 	include/alibabacloud/kms/model/CreateKeyVersionRequest.h
@@ -43,12 +53,16 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/DecryptResult.h
 	include/alibabacloud/kms/model/DeleteAliasRequest.h
 	include/alibabacloud/kms/model/DeleteAliasResult.h
+	include/alibabacloud/kms/model/DeleteCertificateRequest.h
+	include/alibabacloud/kms/model/DeleteCertificateResult.h
 	include/alibabacloud/kms/model/DeleteKeyMaterialRequest.h
 	include/alibabacloud/kms/model/DeleteKeyMaterialResult.h
 	include/alibabacloud/kms/model/DeleteSecretRequest.h
 	include/alibabacloud/kms/model/DeleteSecretResult.h
 	include/alibabacloud/kms/model/DescribeAccountKmsStatusRequest.h
 	include/alibabacloud/kms/model/DescribeAccountKmsStatusResult.h
+	include/alibabacloud/kms/model/DescribeCertificateRequest.h
+	include/alibabacloud/kms/model/DescribeCertificateResult.h
 	include/alibabacloud/kms/model/DescribeKeyRequest.h
 	include/alibabacloud/kms/model/DescribeKeyResult.h
 	include/alibabacloud/kms/model/DescribeKeyVersionRequest.h
@@ -65,6 +79,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/EnableKeyResult.h
 	include/alibabacloud/kms/model/EncryptRequest.h
 	include/alibabacloud/kms/model/EncryptResult.h
+	include/alibabacloud/kms/model/ExportCertificateRequest.h
+	include/alibabacloud/kms/model/ExportCertificateResult.h
 	include/alibabacloud/kms/model/ExportDataKeyRequest.h
 	include/alibabacloud/kms/model/ExportDataKeyResult.h
 	include/alibabacloud/kms/model/GenerateAndExportDataKeyRequest.h
@@ -73,6 +89,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/GenerateDataKeyResult.h
 	include/alibabacloud/kms/model/GenerateDataKeyWithoutPlaintextRequest.h
 	include/alibabacloud/kms/model/GenerateDataKeyWithoutPlaintextResult.h
+	include/alibabacloud/kms/model/GetCertificateRequest.h
+	include/alibabacloud/kms/model/GetCertificateResult.h
 	include/alibabacloud/kms/model/GetParametersForImportRequest.h
 	include/alibabacloud/kms/model/GetParametersForImportResult.h
 	include/alibabacloud/kms/model/GetPublicKeyRequest.h
@@ -81,12 +99,18 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/GetRandomPasswordResult.h
 	include/alibabacloud/kms/model/GetSecretValueRequest.h
 	include/alibabacloud/kms/model/GetSecretValueResult.h
+	include/alibabacloud/kms/model/ImportCertificateRequest.h
+	include/alibabacloud/kms/model/ImportCertificateResult.h
+	include/alibabacloud/kms/model/ImportEncryptionCertificateRequest.h
+	include/alibabacloud/kms/model/ImportEncryptionCertificateResult.h
 	include/alibabacloud/kms/model/ImportKeyMaterialRequest.h
 	include/alibabacloud/kms/model/ImportKeyMaterialResult.h
 	include/alibabacloud/kms/model/ListAliasesRequest.h
 	include/alibabacloud/kms/model/ListAliasesResult.h
 	include/alibabacloud/kms/model/ListAliasesByKeyIdRequest.h
 	include/alibabacloud/kms/model/ListAliasesByKeyIdResult.h
+	include/alibabacloud/kms/model/ListCertificatesRequest.h
+	include/alibabacloud/kms/model/ListCertificatesResult.h
 	include/alibabacloud/kms/model/ListKeyVersionsRequest.h
 	include/alibabacloud/kms/model/ListKeyVersionsResult.h
 	include/alibabacloud/kms/model/ListKeysRequest.h
@@ -113,6 +137,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/UntagResourceResult.h
 	include/alibabacloud/kms/model/UpdateAliasRequest.h
 	include/alibabacloud/kms/model/UpdateAliasResult.h
+	include/alibabacloud/kms/model/UpdateCertificateStatusRequest.h
+	include/alibabacloud/kms/model/UpdateCertificateStatusResult.h
 	include/alibabacloud/kms/model/UpdateKeyDescriptionRequest.h
 	include/alibabacloud/kms/model/UpdateKeyDescriptionResult.h
 	include/alibabacloud/kms/model/UpdateRotationPolicyRequest.h
@@ -120,7 +146,9 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/UpdateSecretRequest.h
 	include/alibabacloud/kms/model/UpdateSecretResult.h
 	include/alibabacloud/kms/model/UpdateSecretVersionStageRequest.h
-	include/alibabacloud/kms/model/UpdateSecretVersionStageResult.h )
+	include/alibabacloud/kms/model/UpdateSecretVersionStageResult.h
+	include/alibabacloud/kms/model/UploadCertificateRequest.h
+	include/alibabacloud/kms/model/UploadCertificateResult.h )
 
 set(kms_src 
 	src/KmsClient.cc
@@ -134,8 +162,18 @@ set(kms_src
 	src/model/AsymmetricVerifyResult.cc
 	src/model/CancelKeyDeletionRequest.cc
 	src/model/CancelKeyDeletionResult.cc
+	src/model/CertificatePrivateKeyDecryptRequest.cc
+	src/model/CertificatePrivateKeyDecryptResult.cc
+	src/model/CertificatePrivateKeySignRequest.cc
+	src/model/CertificatePrivateKeySignResult.cc
+	src/model/CertificatePublicKeyEncryptRequest.cc
+	src/model/CertificatePublicKeyEncryptResult.cc
+	src/model/CertificatePublicKeyVerifyRequest.cc
+	src/model/CertificatePublicKeyVerifyResult.cc
 	src/model/CreateAliasRequest.cc
 	src/model/CreateAliasResult.cc
+	src/model/CreateCertificateRequest.cc
+	src/model/CreateCertificateResult.cc
 	src/model/CreateKeyRequest.cc
 	src/model/CreateKeyResult.cc
 	src/model/CreateKeyVersionRequest.cc
@@ -146,12 +184,16 @@ set(kms_src
 	src/model/DecryptResult.cc
 	src/model/DeleteAliasRequest.cc
 	src/model/DeleteAliasResult.cc
+	src/model/DeleteCertificateRequest.cc
+	src/model/DeleteCertificateResult.cc
 	src/model/DeleteKeyMaterialRequest.cc
 	src/model/DeleteKeyMaterialResult.cc
 	src/model/DeleteSecretRequest.cc
 	src/model/DeleteSecretResult.cc
 	src/model/DescribeAccountKmsStatusRequest.cc
 	src/model/DescribeAccountKmsStatusResult.cc
+	src/model/DescribeCertificateRequest.cc
+	src/model/DescribeCertificateResult.cc
 	src/model/DescribeKeyRequest.cc
 	src/model/DescribeKeyResult.cc
 	src/model/DescribeKeyVersionRequest.cc
@@ -168,6 +210,8 @@ set(kms_src
 	src/model/EnableKeyResult.cc
 	src/model/EncryptRequest.cc
 	src/model/EncryptResult.cc
+	src/model/ExportCertificateRequest.cc
+	src/model/ExportCertificateResult.cc
 	src/model/ExportDataKeyRequest.cc
 	src/model/ExportDataKeyResult.cc
 	src/model/GenerateAndExportDataKeyRequest.cc
@@ -176,6 +220,8 @@ set(kms_src
 	src/model/GenerateDataKeyResult.cc
 	src/model/GenerateDataKeyWithoutPlaintextRequest.cc
 	src/model/GenerateDataKeyWithoutPlaintextResult.cc
+	src/model/GetCertificateRequest.cc
+	src/model/GetCertificateResult.cc
 	src/model/GetParametersForImportRequest.cc
 	src/model/GetParametersForImportResult.cc
 	src/model/GetPublicKeyRequest.cc
@@ -184,12 +230,18 @@ set(kms_src
 	src/model/GetRandomPasswordResult.cc
 	src/model/GetSecretValueRequest.cc
 	src/model/GetSecretValueResult.cc
+	src/model/ImportCertificateRequest.cc
+	src/model/ImportCertificateResult.cc
+	src/model/ImportEncryptionCertificateRequest.cc
+	src/model/ImportEncryptionCertificateResult.cc
 	src/model/ImportKeyMaterialRequest.cc
 	src/model/ImportKeyMaterialResult.cc
 	src/model/ListAliasesRequest.cc
 	src/model/ListAliasesResult.cc
 	src/model/ListAliasesByKeyIdRequest.cc
 	src/model/ListAliasesByKeyIdResult.cc
+	src/model/ListCertificatesRequest.cc
+	src/model/ListCertificatesResult.cc
 	src/model/ListKeyVersionsRequest.cc
 	src/model/ListKeyVersionsResult.cc
 	src/model/ListKeysRequest.cc
@@ -216,6 +268,8 @@ set(kms_src
 	src/model/UntagResourceResult.cc
 	src/model/UpdateAliasRequest.cc
 	src/model/UpdateAliasResult.cc
+	src/model/UpdateCertificateStatusRequest.cc
+	src/model/UpdateCertificateStatusResult.cc
 	src/model/UpdateKeyDescriptionRequest.cc
 	src/model/UpdateKeyDescriptionResult.cc
 	src/model/UpdateRotationPolicyRequest.cc
@@ -223,7 +277,9 @@ set(kms_src
 	src/model/UpdateSecretRequest.cc
 	src/model/UpdateSecretResult.cc
 	src/model/UpdateSecretVersionStageRequest.cc
-	src/model/UpdateSecretVersionStageResult.cc )
+	src/model/UpdateSecretVersionStageResult.cc
+	src/model/UploadCertificateRequest.cc
+	src/model/UploadCertificateResult.cc )
 
 add_library(kms ${LIB_TYPE}
 	${kms_public_header}

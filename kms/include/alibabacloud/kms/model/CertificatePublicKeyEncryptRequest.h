@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCEREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCEREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_CERTIFICATEPUBLICKEYENCRYPTREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_CERTIFICATEPUBLICKEYENCRYPTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT UntagResourceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_KMS_EXPORT CertificatePublicKeyEncryptRequest : public RpcServiceRequest
 			{
 
 			public:
-				UntagResourceRequest();
-				~UntagResourceRequest();
+				CertificatePublicKeyEncryptRequest();
+				~CertificatePublicKeyEncryptRequest();
 
 				std::string getCertificateId()const;
 				void setCertificateId(const std::string& certificateId);
-				std::string getTagKeys()const;
-				void setTagKeys(const std::string& tagKeys);
-				std::string getKeyId()const;
-				void setKeyId(const std::string& keyId);
-				std::string getSecretName()const;
-				void setSecretName(const std::string& secretName);
+				std::string getPlaintext()const;
+				void setPlaintext(const std::string& plaintext);
+				std::string getAlgorithm()const;
+				void setAlgorithm(const std::string& algorithm);
 
             private:
 				std::string certificateId_;
-				std::string tagKeys_;
-				std::string keyId_;
-				std::string secretName_;
+				std::string plaintext_;
+				std::string algorithm_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCEREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_CERTIFICATEPUBLICKEYENCRYPTREQUEST_H_

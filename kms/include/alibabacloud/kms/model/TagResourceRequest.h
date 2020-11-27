@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				TagResourceRequest();
 				~TagResourceRequest();
 
+				std::string getCertificateId()const;
+				void setCertificateId(const std::string& certificateId);
 				std::string getKeyId()const;
 				void setKeyId(const std::string& keyId);
 				std::string getSecretName()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setTags(const std::string& tags);
 
             private:
+				std::string certificateId_;
 				std::string keyId_;
 				std::string secretName_;
 				std::string tags_;
