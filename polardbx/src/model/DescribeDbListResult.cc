@@ -51,14 +51,14 @@ void DescribeDbListResult::parse(const std::string &payload)
 			dataObject.dBInstanceName = valueDataDB["DBInstanceName"].asString();
 		if(!valueDataDB["CharacterSetName"].isNull())
 			dataObject.characterSetName = valueDataDB["CharacterSetName"].asString();
-		auto allAccountsNode = allDataNode["Accounts"]["Account"];
-		for (auto allDataNodeAccountsAccount : allAccountsNode)
+		auto allAccountsNode = valueDataDB["Accounts"]["Account"];
+		for (auto valueDataDBAccountsAccount : allAccountsNode)
 		{
 			DB::Account accountsObject;
-			if(!allDataNodeAccountsAccount["AccountName"].isNull())
-				accountsObject.accountName = allDataNodeAccountsAccount["AccountName"].asString();
-			if(!allDataNodeAccountsAccount["AccountPrivilege"].isNull())
-				accountsObject.accountPrivilege = allDataNodeAccountsAccount["AccountPrivilege"].asString();
+			if(!valueDataDBAccountsAccount["AccountName"].isNull())
+				accountsObject.accountName = valueDataDBAccountsAccount["AccountName"].asString();
+			if(!valueDataDBAccountsAccount["AccountPrivilege"].isNull())
+				accountsObject.accountPrivilege = valueDataDBAccountsAccount["AccountPrivilege"].asString();
 			dataObject.accounts.push_back(accountsObject);
 		}
 		data_.push_back(dataObject);

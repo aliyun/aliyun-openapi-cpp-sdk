@@ -48,14 +48,14 @@ void DescribeInstanceDbPerformanceResult::parse(const std::string &payload)
 			performanceItemObject.measurement = dataNodePerformanceItemsPerformanceItem["Measurement"].asString();
 		if(!dataNodePerformanceItemsPerformanceItem["MetricName"].isNull())
 			performanceItemObject.metricName = dataNodePerformanceItemsPerformanceItem["MetricName"].asString();
-		auto allPointsNode = allPerformanceItemsNode["Points"]["Point"];
-		for (auto allPerformanceItemsNodePointsPoint : allPointsNode)
+		auto allPointsNode = dataNodePerformanceItemsPerformanceItem["Points"]["Point"];
+		for (auto dataNodePerformanceItemsPerformanceItemPointsPoint : allPointsNode)
 		{
 			Data::PerformanceItem::Point pointsObject;
-			if(!allPerformanceItemsNodePointsPoint["Timestamp"].isNull())
-				pointsObject.timestamp = std::stol(allPerformanceItemsNodePointsPoint["Timestamp"].asString());
-			if(!allPerformanceItemsNodePointsPoint["Value"].isNull())
-				pointsObject.value = allPerformanceItemsNodePointsPoint["Value"].asString();
+			if(!dataNodePerformanceItemsPerformanceItemPointsPoint["Timestamp"].isNull())
+				pointsObject.timestamp = std::stol(dataNodePerformanceItemsPerformanceItemPointsPoint["Timestamp"].asString());
+			if(!dataNodePerformanceItemsPerformanceItemPointsPoint["Value"].isNull())
+				pointsObject.value = dataNodePerformanceItemsPerformanceItemPointsPoint["Value"].asString();
 			performanceItemObject.points.push_back(pointsObject);
 		}
 		data_.performanceItems.push_back(performanceItemObject);

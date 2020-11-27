@@ -85,6 +85,20 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.commodityCode = valueDBInstancesDBInstance["CommodityCode"].asString();
 		if(!valueDBInstancesDBInstance["Type"].isNull())
 			dBInstancesObject.type = valueDBInstancesDBInstance["Type"].asString();
+		auto allNodesNode = valueDBInstancesDBInstance["Nodes"]["PolarDBXNode"];
+		for (auto valueDBInstancesDBInstanceNodesPolarDBXNode : allNodesNode)
+		{
+			DBInstance::PolarDBXNode nodesObject;
+			if(!valueDBInstancesDBInstanceNodesPolarDBXNode["Id"].isNull())
+				nodesObject.id = valueDBInstancesDBInstanceNodesPolarDBXNode["Id"].asString();
+			if(!valueDBInstancesDBInstanceNodesPolarDBXNode["ClassCode"].isNull())
+				nodesObject.classCode = valueDBInstancesDBInstanceNodesPolarDBXNode["ClassCode"].asString();
+			if(!valueDBInstancesDBInstanceNodesPolarDBXNode["RegionId"].isNull())
+				nodesObject.regionId = valueDBInstancesDBInstanceNodesPolarDBXNode["RegionId"].asString();
+			if(!valueDBInstancesDBInstanceNodesPolarDBXNode["ZoneId"].isNull())
+				nodesObject.zoneId = valueDBInstancesDBInstanceNodesPolarDBXNode["ZoneId"].asString();
+			dBInstancesObject.nodes.push_back(nodesObject);
+		}
 		auto allReadDBInstances = value["ReadDBInstances"]["ReadDBInstance"];
 		for (auto value : allReadDBInstances)
 			dBInstancesObject.readDBInstances.push_back(value.asString());
@@ -94,6 +108,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalNumber"].isNull())
+		totalNumber_ = std::stoi(value["TotalNumber"].asString());
 
 }
 
@@ -105,6 +121,11 @@ int DescribeDBInstancesResult::getPageSize()const
 int DescribeDBInstancesResult::getPageNumber()const
 {
 	return pageNumber_;
+}
+
+int DescribeDBInstancesResult::getTotalNumber()const
+{
+	return totalNumber_;
 }
 
 std::vector<DescribeDBInstancesResult::DBInstance> DescribeDBInstancesResult::getDBInstances()const

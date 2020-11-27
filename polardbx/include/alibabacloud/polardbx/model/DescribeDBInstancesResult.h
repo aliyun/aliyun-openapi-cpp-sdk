@@ -34,6 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct DBInstance
 				{
+					struct PolarDBXNode
+					{
+						std::string classCode;
+						std::string zoneId;
+						std::string id;
+						std::string regionId;
+					};
 					std::string status;
 					std::string description;
 					std::string zoneId;
@@ -45,6 +52,7 @@ namespace AlibabaCloud
 					std::string payType;
 					std::string dBType;
 					std::string lockMode;
+					std::vector<DBInstance::PolarDBXNode> nodes;
 					int storageUsed;
 					std::string nodeClass;
 					std::string dBVersion;
@@ -64,6 +72,7 @@ namespace AlibabaCloud
 				~DescribeDBInstancesResult();
 				int getPageSize()const;
 				int getPageNumber()const;
+				int getTotalNumber()const;
 				std::vector<DBInstance> getDBInstances()const;
 
 			protected:
@@ -71,6 +80,7 @@ namespace AlibabaCloud
 			private:
 				int pageSize_;
 				int pageNumber_;
+				int totalNumber_;
 				std::vector<DBInstance> dBInstances_;
 
 			};
