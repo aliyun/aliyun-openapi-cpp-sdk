@@ -77,17 +77,6 @@ void StartMPUTaskRequest::setUserPanes(const std::vector<UserPanes>& userPanes)
 	}
 }
 
-int StartMPUTaskRequest::getRtpExtInfo()const
-{
-	return rtpExtInfo_;
-}
-
-void StartMPUTaskRequest::setRtpExtInfo(int rtpExtInfo)
-{
-	rtpExtInfo_ = rtpExtInfo;
-	setParameter("RtpExtInfo", std::to_string(rtpExtInfo));
-}
-
 int StartMPUTaskRequest::getBackgroundColor()const
 {
 	return backgroundColor_;
@@ -97,17 +86,6 @@ void StartMPUTaskRequest::setBackgroundColor(int backgroundColor)
 {
 	backgroundColor_ = backgroundColor;
 	setParameter("BackgroundColor", std::to_string(backgroundColor));
-}
-
-int StartMPUTaskRequest::getCropMode()const
-{
-	return cropMode_;
-}
-
-void StartMPUTaskRequest::setCropMode(int cropMode)
-{
-	cropMode_ = cropMode;
-	setParameter("CropMode", std::to_string(cropMode));
 }
 
 int StartMPUTaskRequest::getReportVad()const
@@ -121,28 +99,15 @@ void StartMPUTaskRequest::setReportVad(int reportVad)
 	setParameter("ReportVad", std::to_string(reportVad));
 }
 
-std::string StartMPUTaskRequest::getTaskProfile()const
+std::string StartMPUTaskRequest::getSourceType()const
 {
-	return taskProfile_;
+	return sourceType_;
 }
 
-void StartMPUTaskRequest::setTaskProfile(const std::string& taskProfile)
+void StartMPUTaskRequest::setSourceType(const std::string& sourceType)
 {
-	taskProfile_ = taskProfile;
-	setParameter("TaskProfile", taskProfile);
-}
-
-std::vector<long> StartMPUTaskRequest::getLayoutIds()const
-{
-	return layoutIds_;
-}
-
-void StartMPUTaskRequest::setLayoutIds(const std::vector<long>& layoutIds)
-{
-	layoutIds_ = layoutIds;
-	for(int dep1 = 0; dep1!= layoutIds.size(); dep1++) {
-		setParameter("LayoutIds."+ std::to_string(dep1), std::to_string(layoutIds.at(dep1)));
-	}
+	sourceType_ = sourceType;
+	setParameter("SourceType", sourceType);
 }
 
 std::string StartMPUTaskRequest::getTaskId()const
@@ -156,6 +121,26 @@ void StartMPUTaskRequest::setTaskId(const std::string& taskId)
 	setParameter("TaskId", taskId);
 }
 
+std::vector<StartMPUTaskRequest::ClockWidgets> StartMPUTaskRequest::getClockWidgets()const
+{
+	return clockWidgets_;
+}
+
+void StartMPUTaskRequest::setClockWidgets(const std::vector<ClockWidgets>& clockWidgets)
+{
+	clockWidgets_ = clockWidgets;
+	for(int dep1 = 0; dep1!= clockWidgets.size(); dep1++) {
+		auto clockWidgetsObj = clockWidgets.at(dep1);
+		std::string clockWidgetsObjStr = "ClockWidgets." + std::to_string(dep1 + 1);
+		setParameter(clockWidgetsObjStr + ".X", std::to_string(clockWidgetsObj.x));
+		setParameter(clockWidgetsObjStr + ".Y", std::to_string(clockWidgetsObj.y));
+		setParameter(clockWidgetsObjStr + ".FontType", std::to_string(clockWidgetsObj.fontType));
+		setParameter(clockWidgetsObjStr + ".FontSize", std::to_string(clockWidgetsObj.fontSize));
+		setParameter(clockWidgetsObjStr + ".FontColor", std::to_string(clockWidgetsObj.fontColor));
+		setParameter(clockWidgetsObjStr + ".ZOrder", std::to_string(clockWidgetsObj.zOrder));
+	}
+}
+
 std::string StartMPUTaskRequest::getShowLog()const
 {
 	return showLog_;
@@ -165,17 +150,6 @@ void StartMPUTaskRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
 	setParameter("ShowLog", showLog);
-}
-
-std::string StartMPUTaskRequest::getStreamURL()const
-{
-	return streamURL_;
-}
-
-void StartMPUTaskRequest::setStreamURL(const std::string& streamURL)
-{
-	streamURL_ = streamURL;
-	setParameter("StreamURL", streamURL);
 }
 
 long StartMPUTaskRequest::getVadInterval()const
@@ -220,6 +194,85 @@ void StartMPUTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+int StartMPUTaskRequest::getMediaEncode()const
+{
+	return mediaEncode_;
+}
+
+void StartMPUTaskRequest::setMediaEncode(int mediaEncode)
+{
+	mediaEncode_ = mediaEncode;
+	setParameter("MediaEncode", std::to_string(mediaEncode));
+}
+
+int StartMPUTaskRequest::getRtpExtInfo()const
+{
+	return rtpExtInfo_;
+}
+
+void StartMPUTaskRequest::setRtpExtInfo(int rtpExtInfo)
+{
+	rtpExtInfo_ = rtpExtInfo;
+	setParameter("RtpExtInfo", std::to_string(rtpExtInfo));
+}
+
+int StartMPUTaskRequest::getCropMode()const
+{
+	return cropMode_;
+}
+
+void StartMPUTaskRequest::setCropMode(int cropMode)
+{
+	cropMode_ = cropMode;
+	setParameter("CropMode", std::to_string(cropMode));
+}
+
+std::string StartMPUTaskRequest::getTaskProfile()const
+{
+	return taskProfile_;
+}
+
+void StartMPUTaskRequest::setTaskProfile(const std::string& taskProfile)
+{
+	taskProfile_ = taskProfile;
+	setParameter("TaskProfile", taskProfile);
+}
+
+std::vector<long> StartMPUTaskRequest::getLayoutIds()const
+{
+	return layoutIds_;
+}
+
+void StartMPUTaskRequest::setLayoutIds(const std::vector<long>& layoutIds)
+{
+	layoutIds_ = layoutIds;
+	for(int dep1 = 0; dep1!= layoutIds.size(); dep1++) {
+		setParameter("LayoutIds."+ std::to_string(dep1), std::to_string(layoutIds.at(dep1)));
+	}
+}
+
+std::string StartMPUTaskRequest::getStreamURL()const
+{
+	return streamURL_;
+}
+
+void StartMPUTaskRequest::setStreamURL(const std::string& streamURL)
+{
+	streamURL_ = streamURL;
+	setParameter("StreamURL", streamURL);
+}
+
+int StartMPUTaskRequest::getStreamType()const
+{
+	return streamType_;
+}
+
+void StartMPUTaskRequest::setStreamType(int streamType)
+{
+	streamType_ = streamType;
+	setParameter("StreamType", std::to_string(streamType));
 }
 
 std::vector<std::string> StartMPUTaskRequest::getSubSpecUsers()const
@@ -278,15 +331,15 @@ void StartMPUTaskRequest::setTimeStampRef(long timeStampRef)
 	setParameter("TimeStampRef", std::to_string(timeStampRef));
 }
 
-int StartMPUTaskRequest::getMediaEncode()const
+int StartMPUTaskRequest::getMixMode()const
 {
-	return mediaEncode_;
+	return mixMode_;
 }
 
-void StartMPUTaskRequest::setMediaEncode(int mediaEncode)
+void StartMPUTaskRequest::setMixMode(int mixMode)
 {
-	mediaEncode_ = mediaEncode;
-	setParameter("MediaEncode", std::to_string(mediaEncode));
+	mixMode_ = mixMode;
+	setParameter("MixMode", std::to_string(mixMode));
 }
 
 std::string StartMPUTaskRequest::getChannelId()const

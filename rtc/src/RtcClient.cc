@@ -1275,6 +1275,78 @@ RtcClient::DescribeRtcQualityMetricOutcomeCallable RtcClient::describeRtcQuality
 	return task->get_future();
 }
 
+RtcClient::DescribeRtcScaleOutcome RtcClient::describeRtcScale(const DescribeRtcScaleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRtcScaleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRtcScaleOutcome(DescribeRtcScaleResult(outcome.result()));
+	else
+		return DescribeRtcScaleOutcome(outcome.error());
+}
+
+void RtcClient::describeRtcScaleAsync(const DescribeRtcScaleRequest& request, const DescribeRtcScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRtcScale(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRtcScaleOutcomeCallable RtcClient::describeRtcScaleCallable(const DescribeRtcScaleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRtcScaleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRtcScale(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RtcClient::DescribeRtcScaleDetailOutcome RtcClient::describeRtcScaleDetail(const DescribeRtcScaleDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRtcScaleDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRtcScaleDetailOutcome(DescribeRtcScaleDetailResult(outcome.result()));
+	else
+		return DescribeRtcScaleDetailOutcome(outcome.error());
+}
+
+void RtcClient::describeRtcScaleDetailAsync(const DescribeRtcScaleDetailRequest& request, const DescribeRtcScaleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRtcScaleDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRtcScaleDetailOutcomeCallable RtcClient::describeRtcScaleDetailCallable(const DescribeRtcScaleDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRtcScaleDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRtcScaleDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RtcClient::DescribeRtcUserCntDataOutcome RtcClient::describeRtcUserCntData(const DescribeRtcUserCntDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

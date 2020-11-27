@@ -112,6 +112,26 @@ void UpdateMPULayoutRequest::setTaskId(const std::string& taskId)
 	setParameter("TaskId", taskId);
 }
 
+std::vector<UpdateMPULayoutRequest::ClockWidgets> UpdateMPULayoutRequest::getClockWidgets()const
+{
+	return clockWidgets_;
+}
+
+void UpdateMPULayoutRequest::setClockWidgets(const std::vector<ClockWidgets>& clockWidgets)
+{
+	clockWidgets_ = clockWidgets;
+	for(int dep1 = 0; dep1!= clockWidgets.size(); dep1++) {
+		auto clockWidgetsObj = clockWidgets.at(dep1);
+		std::string clockWidgetsObjStr = "ClockWidgets." + std::to_string(dep1 + 1);
+		setParameter(clockWidgetsObjStr + ".X", std::to_string(clockWidgetsObj.x));
+		setParameter(clockWidgetsObjStr + ".Y", std::to_string(clockWidgetsObj.y));
+		setParameter(clockWidgetsObjStr + ".FontType", std::to_string(clockWidgetsObj.fontType));
+		setParameter(clockWidgetsObjStr + ".FontSize", std::to_string(clockWidgetsObj.fontSize));
+		setParameter(clockWidgetsObjStr + ".FontColor", std::to_string(clockWidgetsObj.fontColor));
+		setParameter(clockWidgetsObjStr + ".ZOrder", std::to_string(clockWidgetsObj.zOrder));
+	}
+}
+
 std::string UpdateMPULayoutRequest::getShowLog()const
 {
 	return showLog_;

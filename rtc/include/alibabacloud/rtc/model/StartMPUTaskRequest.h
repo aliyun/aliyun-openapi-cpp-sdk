@@ -59,6 +59,15 @@ namespace AlibabaCloud
 					};
 					std::vector<Texts> texts;
 				};
+				struct ClockWidgets
+				{
+					float x;
+					float y;
+					int fontType;
+					int fontSize;
+					int fontColor;
+					int zOrder;
+				};
 				struct Watermarks
 				{
 					std::string url;
@@ -89,30 +98,38 @@ namespace AlibabaCloud
 				void setPayloadType(int payloadType);
 				std::vector<UserPanes> getUserPanes()const;
 				void setUserPanes(const std::vector<UserPanes>& userPanes);
-				int getRtpExtInfo()const;
-				void setRtpExtInfo(int rtpExtInfo);
 				int getBackgroundColor()const;
 				void setBackgroundColor(int backgroundColor);
-				int getCropMode()const;
-				void setCropMode(int cropMode);
 				int getReportVad()const;
 				void setReportVad(int reportVad);
-				std::string getTaskProfile()const;
-				void setTaskProfile(const std::string& taskProfile);
-				std::vector<long> getLayoutIds()const;
-				void setLayoutIds(const std::vector<long>& layoutIds);
+				std::string getSourceType()const;
+				void setSourceType(const std::string& sourceType);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				std::vector<ClockWidgets> getClockWidgets()const;
+				void setClockWidgets(const std::vector<ClockWidgets>& clockWidgets);
 				std::string getShowLog()const;
 				void setShowLog(const std::string& showLog);
-				std::string getStreamURL()const;
-				void setStreamURL(const std::string& streamURL);
 				long getVadInterval()const;
 				void setVadInterval(long vadInterval);
 				std::vector<Watermarks> getWatermarks()const;
 				void setWatermarks(const std::vector<Watermarks>& watermarks);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getMediaEncode()const;
+				void setMediaEncode(int mediaEncode);
+				int getRtpExtInfo()const;
+				void setRtpExtInfo(int rtpExtInfo);
+				int getCropMode()const;
+				void setCropMode(int cropMode);
+				std::string getTaskProfile()const;
+				void setTaskProfile(const std::string& taskProfile);
+				std::vector<long> getLayoutIds()const;
+				void setLayoutIds(const std::vector<long>& layoutIds);
+				std::string getStreamURL()const;
+				void setStreamURL(const std::string& streamURL);
+				int getStreamType()const;
+				void setStreamType(int streamType);
 				std::vector<std::string> getSubSpecUsers()const;
 				void setSubSpecUsers(const std::vector<std::string>& subSpecUsers);
 				std::string getAppId()const;
@@ -121,31 +138,35 @@ namespace AlibabaCloud
 				void setBackgrounds(const std::vector<Backgrounds>& backgrounds);
 				long getTimeStampRef()const;
 				void setTimeStampRef(long timeStampRef);
-				int getMediaEncode()const;
-				void setMediaEncode(int mediaEncode);
+				int getMixMode()const;
+				void setMixMode(int mixMode);
 				std::string getChannelId()const;
 				void setChannelId(const std::string& channelId);
 
             private:
 				int payloadType_;
 				std::vector<UserPanes> userPanes_;
-				int rtpExtInfo_;
 				int backgroundColor_;
-				int cropMode_;
 				int reportVad_;
-				std::string taskProfile_;
-				std::vector<long> layoutIds_;
+				std::string sourceType_;
 				std::string taskId_;
+				std::vector<ClockWidgets> clockWidgets_;
 				std::string showLog_;
-				std::string streamURL_;
 				long vadInterval_;
 				std::vector<Watermarks> watermarks_;
 				long ownerId_;
+				int mediaEncode_;
+				int rtpExtInfo_;
+				int cropMode_;
+				std::string taskProfile_;
+				std::vector<long> layoutIds_;
+				std::string streamURL_;
+				int streamType_;
 				std::vector<std::string> subSpecUsers_;
 				std::string appId_;
 				std::vector<Backgrounds> backgrounds_;
 				long timeStampRef_;
-				int mediaEncode_;
+				int mixMode_;
 				std::string channelId_;
 
 			};

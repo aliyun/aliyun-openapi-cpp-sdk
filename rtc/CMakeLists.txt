@@ -89,6 +89,10 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeRtcPeakUserCntDataResult.h
 	include/alibabacloud/rtc/model/DescribeRtcQualityMetricRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcQualityMetricResult.h
+	include/alibabacloud/rtc/model/DescribeRtcScaleRequest.h
+	include/alibabacloud/rtc/model/DescribeRtcScaleResult.h
+	include/alibabacloud/rtc/model/DescribeRtcScaleDetailRequest.h
+	include/alibabacloud/rtc/model/DescribeRtcScaleDetailResult.h
 	include/alibabacloud/rtc/model/DescribeRtcUserCntDataRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcUserCntDataResult.h
 	include/alibabacloud/rtc/model/DescribeRtcUserEventsRequest.h
@@ -214,6 +218,10 @@ set(rtc_src
 	src/model/DescribeRtcPeakUserCntDataResult.cc
 	src/model/DescribeRtcQualityMetricRequest.cc
 	src/model/DescribeRtcQualityMetricResult.cc
+	src/model/DescribeRtcScaleRequest.cc
+	src/model/DescribeRtcScaleResult.cc
+	src/model/DescribeRtcScaleDetailRequest.cc
+	src/model/DescribeRtcScaleDetailResult.cc
 	src/model/DescribeRtcUserCntDataRequest.cc
 	src/model/DescribeRtcUserCntDataResult.cc
 	src/model/DescribeRtcUserEventsRequest.cc

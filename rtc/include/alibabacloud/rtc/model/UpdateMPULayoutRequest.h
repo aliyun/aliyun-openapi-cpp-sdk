@@ -59,6 +59,15 @@ namespace AlibabaCloud
 					};
 					std::vector<Texts> texts;
 				};
+				struct ClockWidgets
+				{
+					float x;
+					float y;
+					int fontType;
+					int fontSize;
+					int fontColor;
+					int zOrder;
+				};
 				struct Watermarks
 				{
 					std::string url;
@@ -95,6 +104,8 @@ namespace AlibabaCloud
 				void setLayoutIds(const std::vector<long>& layoutIds);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				std::vector<ClockWidgets> getClockWidgets()const;
+				void setClockWidgets(const std::vector<ClockWidgets>& clockWidgets);
 				std::string getShowLog()const;
 				void setShowLog(const std::string& showLog);
 				std::vector<Watermarks> getWatermarks()const;
@@ -112,6 +123,7 @@ namespace AlibabaCloud
 				int cropMode_;
 				std::vector<long> layoutIds_;
 				std::string taskId_;
+				std::vector<ClockWidgets> clockWidgets_;
 				std::string showLog_;
 				std::vector<Watermarks> watermarks_;
 				long ownerId_;

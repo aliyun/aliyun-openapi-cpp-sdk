@@ -90,6 +90,10 @@
 #include "model/DescribeRtcPeakUserCntDataResult.h"
 #include "model/DescribeRtcQualityMetricRequest.h"
 #include "model/DescribeRtcQualityMetricResult.h"
+#include "model/DescribeRtcScaleRequest.h"
+#include "model/DescribeRtcScaleResult.h"
+#include "model/DescribeRtcScaleDetailRequest.h"
+#include "model/DescribeRtcScaleDetailResult.h"
 #include "model/DescribeRtcUserCntDataRequest.h"
 #include "model/DescribeRtcUserCntDataResult.h"
 #include "model/DescribeRtcUserEventsRequest.h"
@@ -255,6 +259,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRtcQualityMetricResult> DescribeRtcQualityMetricOutcome;
 			typedef std::future<DescribeRtcQualityMetricOutcome> DescribeRtcQualityMetricOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRtcQualityMetricRequest&, const DescribeRtcQualityMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRtcQualityMetricAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRtcScaleResult> DescribeRtcScaleOutcome;
+			typedef std::future<DescribeRtcScaleOutcome> DescribeRtcScaleOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DescribeRtcScaleRequest&, const DescribeRtcScaleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRtcScaleAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRtcScaleDetailResult> DescribeRtcScaleDetailOutcome;
+			typedef std::future<DescribeRtcScaleDetailOutcome> DescribeRtcScaleDetailOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DescribeRtcScaleDetailRequest&, const DescribeRtcScaleDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRtcScaleDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRtcUserCntDataResult> DescribeRtcUserCntDataOutcome;
 			typedef std::future<DescribeRtcUserCntDataOutcome> DescribeRtcUserCntDataOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRtcUserCntDataRequest&, const DescribeRtcUserCntDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRtcUserCntDataAsyncHandler;
@@ -443,6 +453,12 @@ namespace AlibabaCloud
 			DescribeRtcQualityMetricOutcome describeRtcQualityMetric(const Model::DescribeRtcQualityMetricRequest &request)const;
 			void describeRtcQualityMetricAsync(const Model::DescribeRtcQualityMetricRequest& request, const DescribeRtcQualityMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRtcQualityMetricOutcomeCallable describeRtcQualityMetricCallable(const Model::DescribeRtcQualityMetricRequest& request) const;
+			DescribeRtcScaleOutcome describeRtcScale(const Model::DescribeRtcScaleRequest &request)const;
+			void describeRtcScaleAsync(const Model::DescribeRtcScaleRequest& request, const DescribeRtcScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRtcScaleOutcomeCallable describeRtcScaleCallable(const Model::DescribeRtcScaleRequest& request) const;
+			DescribeRtcScaleDetailOutcome describeRtcScaleDetail(const Model::DescribeRtcScaleDetailRequest &request)const;
+			void describeRtcScaleDetailAsync(const Model::DescribeRtcScaleDetailRequest& request, const DescribeRtcScaleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRtcScaleDetailOutcomeCallable describeRtcScaleDetailCallable(const Model::DescribeRtcScaleDetailRequest& request) const;
 			DescribeRtcUserCntDataOutcome describeRtcUserCntData(const Model::DescribeRtcUserCntDataRequest &request)const;
 			void describeRtcUserCntDataAsync(const Model::DescribeRtcUserCntDataRequest& request, const DescribeRtcUserCntDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRtcUserCntDataOutcomeCallable describeRtcUserCntDataCallable(const Model::DescribeRtcUserCntDataRequest& request) const;
