@@ -180,6 +180,10 @@
 #include "model/DescribeUserDcdnStatusResult.h"
 #include "model/ModifyDCdnDomainSchdmByPropertyRequest.h"
 #include "model/ModifyDCdnDomainSchdmByPropertyResult.h"
+#include "model/ModifyDcdnServiceRequest.h"
+#include "model/ModifyDcdnServiceResult.h"
+#include "model/OpenDcdnServiceRequest.h"
+#include "model/OpenDcdnServiceResult.h"
 #include "model/PreloadDcdnObjectCachesRequest.h"
 #include "model/PreloadDcdnObjectCachesResult.h"
 #include "model/PublishDcdnStagingConfigToProductionRequest.h"
@@ -460,6 +464,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDCdnDomainSchdmByPropertyResult> ModifyDCdnDomainSchdmByPropertyOutcome;
 			typedef std::future<ModifyDCdnDomainSchdmByPropertyOutcome> ModifyDCdnDomainSchdmByPropertyOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::ModifyDCdnDomainSchdmByPropertyRequest&, const ModifyDCdnDomainSchdmByPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDCdnDomainSchdmByPropertyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDcdnServiceResult> ModifyDcdnServiceOutcome;
+			typedef std::future<ModifyDcdnServiceOutcome> ModifyDcdnServiceOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::ModifyDcdnServiceRequest&, const ModifyDcdnServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDcdnServiceAsyncHandler;
+			typedef Outcome<Error, Model::OpenDcdnServiceResult> OpenDcdnServiceOutcome;
+			typedef std::future<OpenDcdnServiceOutcome> OpenDcdnServiceOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::OpenDcdnServiceRequest&, const OpenDcdnServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenDcdnServiceAsyncHandler;
 			typedef Outcome<Error, Model::PreloadDcdnObjectCachesResult> PreloadDcdnObjectCachesOutcome;
 			typedef std::future<PreloadDcdnObjectCachesOutcome> PreloadDcdnObjectCachesOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::PreloadDcdnObjectCachesRequest&, const PreloadDcdnObjectCachesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreloadDcdnObjectCachesAsyncHandler;
@@ -753,6 +763,12 @@ namespace AlibabaCloud
 			ModifyDCdnDomainSchdmByPropertyOutcome modifyDCdnDomainSchdmByProperty(const Model::ModifyDCdnDomainSchdmByPropertyRequest &request)const;
 			void modifyDCdnDomainSchdmByPropertyAsync(const Model::ModifyDCdnDomainSchdmByPropertyRequest& request, const ModifyDCdnDomainSchdmByPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDCdnDomainSchdmByPropertyOutcomeCallable modifyDCdnDomainSchdmByPropertyCallable(const Model::ModifyDCdnDomainSchdmByPropertyRequest& request) const;
+			ModifyDcdnServiceOutcome modifyDcdnService(const Model::ModifyDcdnServiceRequest &request)const;
+			void modifyDcdnServiceAsync(const Model::ModifyDcdnServiceRequest& request, const ModifyDcdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDcdnServiceOutcomeCallable modifyDcdnServiceCallable(const Model::ModifyDcdnServiceRequest& request) const;
+			OpenDcdnServiceOutcome openDcdnService(const Model::OpenDcdnServiceRequest &request)const;
+			void openDcdnServiceAsync(const Model::OpenDcdnServiceRequest& request, const OpenDcdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenDcdnServiceOutcomeCallable openDcdnServiceCallable(const Model::OpenDcdnServiceRequest& request) const;
 			PreloadDcdnObjectCachesOutcome preloadDcdnObjectCaches(const Model::PreloadDcdnObjectCachesRequest &request)const;
 			void preloadDcdnObjectCachesAsync(const Model::PreloadDcdnObjectCachesRequest& request, const PreloadDcdnObjectCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PreloadDcdnObjectCachesOutcomeCallable preloadDcdnObjectCachesCallable(const Model::PreloadDcdnObjectCachesRequest& request) const;

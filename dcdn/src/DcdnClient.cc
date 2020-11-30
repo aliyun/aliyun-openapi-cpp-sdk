@@ -2895,6 +2895,78 @@ DcdnClient::ModifyDCdnDomainSchdmByPropertyOutcomeCallable DcdnClient::modifyDCd
 	return task->get_future();
 }
 
+DcdnClient::ModifyDcdnServiceOutcome DcdnClient::modifyDcdnService(const ModifyDcdnServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDcdnServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDcdnServiceOutcome(ModifyDcdnServiceResult(outcome.result()));
+	else
+		return ModifyDcdnServiceOutcome(outcome.error());
+}
+
+void DcdnClient::modifyDcdnServiceAsync(const ModifyDcdnServiceRequest& request, const ModifyDcdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDcdnService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::ModifyDcdnServiceOutcomeCallable DcdnClient::modifyDcdnServiceCallable(const ModifyDcdnServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDcdnServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDcdnService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::OpenDcdnServiceOutcome DcdnClient::openDcdnService(const OpenDcdnServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenDcdnServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenDcdnServiceOutcome(OpenDcdnServiceResult(outcome.result()));
+	else
+		return OpenDcdnServiceOutcome(outcome.error());
+}
+
+void DcdnClient::openDcdnServiceAsync(const OpenDcdnServiceRequest& request, const OpenDcdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openDcdnService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::OpenDcdnServiceOutcomeCallable DcdnClient::openDcdnServiceCallable(const OpenDcdnServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenDcdnServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openDcdnService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::PreloadDcdnObjectCachesOutcome DcdnClient::preloadDcdnObjectCaches(const PreloadDcdnObjectCachesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
