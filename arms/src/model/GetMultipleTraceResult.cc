@@ -45,54 +45,54 @@ void GetMultipleTraceResult::parse(const std::string &payload)
 		MultiCallChainInfo multiCallChainInfosObject;
 		if(!valueMultiCallChainInfosMultiCallChainInfo["TraceID"].isNull())
 			multiCallChainInfosObject.traceID = valueMultiCallChainInfosMultiCallChainInfo["TraceID"].asString();
-		auto allSpansNode = allMultiCallChainInfosNode["Spans"]["Span"];
-		for (auto allMultiCallChainInfosNodeSpansSpan : allSpansNode)
+		auto allSpansNode = valueMultiCallChainInfosMultiCallChainInfo["Spans"]["Span"];
+		for (auto valueMultiCallChainInfosMultiCallChainInfoSpansSpan : allSpansNode)
 		{
 			MultiCallChainInfo::Span spansObject;
-			if(!allMultiCallChainInfosNodeSpansSpan["TraceID"].isNull())
-				spansObject.traceID = allMultiCallChainInfosNodeSpansSpan["TraceID"].asString();
-			if(!allMultiCallChainInfosNodeSpansSpan["OperationName"].isNull())
-				spansObject.operationName = allMultiCallChainInfosNodeSpansSpan["OperationName"].asString();
-			if(!allMultiCallChainInfosNodeSpansSpan["Duration"].isNull())
-				spansObject.duration = std::stol(allMultiCallChainInfosNodeSpansSpan["Duration"].asString());
-			if(!allMultiCallChainInfosNodeSpansSpan["ServiceName"].isNull())
-				spansObject.serviceName = allMultiCallChainInfosNodeSpansSpan["ServiceName"].asString();
-			if(!allMultiCallChainInfosNodeSpansSpan["ServiceIp"].isNull())
-				spansObject.serviceIp = allMultiCallChainInfosNodeSpansSpan["ServiceIp"].asString();
-			if(!allMultiCallChainInfosNodeSpansSpan["Timestamp"].isNull())
-				spansObject.timestamp = std::stol(allMultiCallChainInfosNodeSpansSpan["Timestamp"].asString());
-			if(!allMultiCallChainInfosNodeSpansSpan["RpcId"].isNull())
-				spansObject.rpcId = allMultiCallChainInfosNodeSpansSpan["RpcId"].asString();
-			if(!allMultiCallChainInfosNodeSpansSpan["ResultCode"].isNull())
-				spansObject.resultCode = allMultiCallChainInfosNodeSpansSpan["ResultCode"].asString();
-			if(!allMultiCallChainInfosNodeSpansSpan["HaveStack"].isNull())
-				spansObject.haveStack = allMultiCallChainInfosNodeSpansSpan["HaveStack"].asString() == "true";
-			if(!allMultiCallChainInfosNodeSpansSpan["RpcType"].isNull())
-				spansObject.rpcType = std::stoi(allMultiCallChainInfosNodeSpansSpan["RpcType"].asString());
-			auto allTagEntryListNode = allSpansNode["TagEntryList"]["TagEntry"];
-			for (auto allSpansNodeTagEntryListTagEntry : allTagEntryListNode)
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TraceID"].isNull())
+				spansObject.traceID = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TraceID"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["OperationName"].isNull())
+				spansObject.operationName = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["OperationName"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Duration"].isNull())
+				spansObject.duration = std::stol(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Duration"].asString());
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceName"].isNull())
+				spansObject.serviceName = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceName"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceIp"].isNull())
+				spansObject.serviceIp = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceIp"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Timestamp"].isNull())
+				spansObject.timestamp = std::stol(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Timestamp"].asString());
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcId"].isNull())
+				spansObject.rpcId = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcId"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ResultCode"].isNull())
+				spansObject.resultCode = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ResultCode"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["HaveStack"].isNull())
+				spansObject.haveStack = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["HaveStack"].asString() == "true";
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcType"].isNull())
+				spansObject.rpcType = std::stoi(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcType"].asString());
+			auto allTagEntryListNode = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TagEntryList"]["TagEntry"];
+			for (auto valueMultiCallChainInfosMultiCallChainInfoSpansSpanTagEntryListTagEntry : allTagEntryListNode)
 			{
 				MultiCallChainInfo::Span::TagEntry tagEntryListObject;
-				if(!allSpansNodeTagEntryListTagEntry["Key"].isNull())
-					tagEntryListObject.key = allSpansNodeTagEntryListTagEntry["Key"].asString();
-				if(!allSpansNodeTagEntryListTagEntry["Value"].isNull())
-					tagEntryListObject.value = allSpansNodeTagEntryListTagEntry["Value"].asString();
+				if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpanTagEntryListTagEntry["Key"].isNull())
+					tagEntryListObject.key = valueMultiCallChainInfosMultiCallChainInfoSpansSpanTagEntryListTagEntry["Key"].asString();
+				if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpanTagEntryListTagEntry["Value"].isNull())
+					tagEntryListObject.value = valueMultiCallChainInfosMultiCallChainInfoSpansSpanTagEntryListTagEntry["Value"].asString();
 				spansObject.tagEntryList.push_back(tagEntryListObject);
 			}
-			auto allLogEventListNode = allSpansNode["LogEventList"]["LogEvent"];
-			for (auto allSpansNodeLogEventListLogEvent : allLogEventListNode)
+			auto allLogEventListNode = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["LogEventList"]["LogEvent"];
+			for (auto valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEvent : allLogEventListNode)
 			{
 				MultiCallChainInfo::Span::LogEvent logEventListObject;
-				if(!allSpansNodeLogEventListLogEvent["Timestamp"].isNull())
-					logEventListObject.timestamp = std::stol(allSpansNodeLogEventListLogEvent["Timestamp"].asString());
-				auto allTagEntryList1Node = allLogEventListNode["TagEntryList"]["TagEntry"];
-				for (auto allLogEventListNodeTagEntryListTagEntry : allTagEntryList1Node)
+				if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEvent["Timestamp"].isNull())
+					logEventListObject.timestamp = std::stol(valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEvent["Timestamp"].asString());
+				auto allTagEntryList1Node = valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEvent["TagEntryList"]["TagEntry"];
+				for (auto valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEventTagEntryListTagEntry : allTagEntryList1Node)
 				{
 					MultiCallChainInfo::Span::LogEvent::TagEntry2 tagEntryList1Object;
-					if(!allLogEventListNodeTagEntryListTagEntry["Key"].isNull())
-						tagEntryList1Object.key = allLogEventListNodeTagEntryListTagEntry["Key"].asString();
-					if(!allLogEventListNodeTagEntryListTagEntry["Value"].isNull())
-						tagEntryList1Object.value = allLogEventListNodeTagEntryListTagEntry["Value"].asString();
+					if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEventTagEntryListTagEntry["Key"].isNull())
+						tagEntryList1Object.key = valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEventTagEntryListTagEntry["Key"].asString();
+					if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEventTagEntryListTagEntry["Value"].isNull())
+						tagEntryList1Object.value = valueMultiCallChainInfosMultiCallChainInfoSpansSpanLogEventListLogEventTagEntryListTagEntry["Value"].asString();
 					logEventListObject.tagEntryList1.push_back(tagEntryList1Object);
 				}
 				spansObject.logEventList.push_back(logEventListObject);

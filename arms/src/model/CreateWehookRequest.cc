@@ -27,15 +27,15 @@ CreateWehookRequest::CreateWehookRequest() :
 CreateWehookRequest::~CreateWehookRequest()
 {}
 
-std::string CreateWehookRequest::getHeaders()const
+std::string CreateWehookRequest::getHttpHeaders()const
 {
-	return headers_;
+	return httpHeaders_;
 }
 
-void CreateWehookRequest::setHeaders(const std::string& headers)
+void CreateWehookRequest::setHttpHeaders(const std::string& httpHeaders)
 {
-	headers_ = headers;
-	setParameter("Headers", headers);
+	httpHeaders_ = httpHeaders;
+	setParameter("HttpHeaders", httpHeaders);
 }
 
 std::string CreateWehookRequest::getMethod()const
@@ -49,15 +49,15 @@ void CreateWehookRequest::setMethod(const std::string& method)
 	setParameter("Method", method);
 }
 
-std::string CreateWehookRequest::getParams()const
+std::string CreateWehookRequest::getHttpParams()const
 {
-	return params_;
+	return httpParams_;
 }
 
-void CreateWehookRequest::setParams(const std::string& params)
+void CreateWehookRequest::setHttpParams(const std::string& httpParams)
 {
-	params_ = params;
-	setParameter("Params", params);
+	httpParams_ = httpParams;
+	setParameter("HttpParams", httpParams);
 }
 
 std::string CreateWehookRequest::getProxyUserId()const

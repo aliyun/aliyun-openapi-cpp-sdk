@@ -27,15 +27,15 @@ UpdateWebhookRequest::UpdateWebhookRequest() :
 UpdateWebhookRequest::~UpdateWebhookRequest()
 {}
 
-std::string UpdateWebhookRequest::getHeaders()const
+std::string UpdateWebhookRequest::getHttpHeaders()const
 {
-	return headers_;
+	return httpHeaders_;
 }
 
-void UpdateWebhookRequest::setHeaders(const std::string& headers)
+void UpdateWebhookRequest::setHttpHeaders(const std::string& httpHeaders)
 {
-	headers_ = headers;
-	setParameter("Headers", headers);
+	httpHeaders_ = httpHeaders;
+	setParameter("HttpHeaders", httpHeaders);
 }
 
 std::string UpdateWebhookRequest::getMethod()const
@@ -60,15 +60,15 @@ void UpdateWebhookRequest::setContactId(long contactId)
 	setParameter("ContactId", std::to_string(contactId));
 }
 
-std::string UpdateWebhookRequest::getParams()const
+std::string UpdateWebhookRequest::getHttpParams()const
 {
-	return params_;
+	return httpParams_;
 }
 
-void UpdateWebhookRequest::setParams(const std::string& params)
+void UpdateWebhookRequest::setHttpParams(const std::string& httpParams)
 {
-	params_ = params;
-	setParameter("Params", params);
+	httpParams_ = httpParams;
+	setParameter("HttpParams", httpParams);
 }
 
 std::string UpdateWebhookRequest::getProxyUserId()const

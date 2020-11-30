@@ -63,30 +63,30 @@ void GetTraceResult::parse(const std::string &payload)
 			spansObject.haveStack = valueSpansSpan["HaveStack"].asString() == "true";
 		if(!valueSpansSpan["RpcType"].isNull())
 			spansObject.rpcType = std::stoi(valueSpansSpan["RpcType"].asString());
-		auto allTagEntryListNode = allSpansNode["TagEntryList"]["TagEntry"];
-		for (auto allSpansNodeTagEntryListTagEntry : allTagEntryListNode)
+		auto allTagEntryListNode = valueSpansSpan["TagEntryList"]["TagEntry"];
+		for (auto valueSpansSpanTagEntryListTagEntry : allTagEntryListNode)
 		{
 			Span::TagEntry tagEntryListObject;
-			if(!allSpansNodeTagEntryListTagEntry["Key"].isNull())
-				tagEntryListObject.key = allSpansNodeTagEntryListTagEntry["Key"].asString();
-			if(!allSpansNodeTagEntryListTagEntry["Value"].isNull())
-				tagEntryListObject.value = allSpansNodeTagEntryListTagEntry["Value"].asString();
+			if(!valueSpansSpanTagEntryListTagEntry["Key"].isNull())
+				tagEntryListObject.key = valueSpansSpanTagEntryListTagEntry["Key"].asString();
+			if(!valueSpansSpanTagEntryListTagEntry["Value"].isNull())
+				tagEntryListObject.value = valueSpansSpanTagEntryListTagEntry["Value"].asString();
 			spansObject.tagEntryList.push_back(tagEntryListObject);
 		}
-		auto allLogEventListNode = allSpansNode["LogEventList"]["LogEvent"];
-		for (auto allSpansNodeLogEventListLogEvent : allLogEventListNode)
+		auto allLogEventListNode = valueSpansSpan["LogEventList"]["LogEvent"];
+		for (auto valueSpansSpanLogEventListLogEvent : allLogEventListNode)
 		{
 			Span::LogEvent logEventListObject;
-			if(!allSpansNodeLogEventListLogEvent["Timestamp"].isNull())
-				logEventListObject.timestamp = std::stol(allSpansNodeLogEventListLogEvent["Timestamp"].asString());
-			auto allTagEntryList1Node = allLogEventListNode["TagEntryList"]["TagEntry"];
-			for (auto allLogEventListNodeTagEntryListTagEntry : allTagEntryList1Node)
+			if(!valueSpansSpanLogEventListLogEvent["Timestamp"].isNull())
+				logEventListObject.timestamp = std::stol(valueSpansSpanLogEventListLogEvent["Timestamp"].asString());
+			auto allTagEntryList1Node = valueSpansSpanLogEventListLogEvent["TagEntryList"]["TagEntry"];
+			for (auto valueSpansSpanLogEventListLogEventTagEntryListTagEntry : allTagEntryList1Node)
 			{
 				Span::LogEvent::TagEntry2 tagEntryList1Object;
-				if(!allLogEventListNodeTagEntryListTagEntry["Key"].isNull())
-					tagEntryList1Object.key = allLogEventListNodeTagEntryListTagEntry["Key"].asString();
-				if(!allLogEventListNodeTagEntryListTagEntry["Value"].isNull())
-					tagEntryList1Object.value = allLogEventListNodeTagEntryListTagEntry["Value"].asString();
+				if(!valueSpansSpanLogEventListLogEventTagEntryListTagEntry["Key"].isNull())
+					tagEntryList1Object.key = valueSpansSpanLogEventListLogEventTagEntryListTagEntry["Key"].asString();
+				if(!valueSpansSpanLogEventListLogEventTagEntryListTagEntry["Value"].isNull())
+					tagEntryList1Object.value = valueSpansSpanLogEventListLogEventTagEntryListTagEntry["Value"].asString();
 				logEventListObject.tagEntryList1.push_back(tagEntryList1Object);
 			}
 			spansObject.logEventList.push_back(logEventListObject);

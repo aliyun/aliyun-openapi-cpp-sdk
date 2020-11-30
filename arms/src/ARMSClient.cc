@@ -555,6 +555,42 @@ ARMSClient::DeleteTraceAppOutcomeCallable ARMSClient::deleteTraceAppCallable(con
 	return task->get_future();
 }
 
+ARMSClient::DescribeDispatchRuleOutcome ARMSClient::describeDispatchRule(const DescribeDispatchRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDispatchRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDispatchRuleOutcome(DescribeDispatchRuleResult(outcome.result()));
+	else
+		return DescribeDispatchRuleOutcome(outcome.error());
+}
+
+void ARMSClient::describeDispatchRuleAsync(const DescribeDispatchRuleRequest& request, const DescribeDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDispatchRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeDispatchRuleOutcomeCallable ARMSClient::describeDispatchRuleCallable(const DescribeDispatchRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDispatchRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDispatchRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DescribeTraceLicenseKeyOutcome ARMSClient::describeTraceLicenseKey(const DescribeTraceLicenseKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +663,42 @@ ARMSClient::DescribeTraceLocationOutcomeCallable ARMSClient::describeTraceLocati
 	return task->get_future();
 }
 
+ARMSClient::ExportPrometheusRulesOutcome ARMSClient::exportPrometheusRules(const ExportPrometheusRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportPrometheusRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportPrometheusRulesOutcome(ExportPrometheusRulesResult(outcome.result()));
+	else
+		return ExportPrometheusRulesOutcome(outcome.error());
+}
+
+void ARMSClient::exportPrometheusRulesAsync(const ExportPrometheusRulesRequest& request, const ExportPrometheusRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportPrometheusRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ExportPrometheusRulesOutcomeCallable ARMSClient::exportPrometheusRulesCallable(const ExportPrometheusRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportPrometheusRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->exportPrometheusRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetAppApiByPageOutcome ARMSClient::getAppApiByPage(const GetAppApiByPageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +765,42 @@ ARMSClient::GetConsistencySnapshotOutcomeCallable ARMSClient::getConsistencySnap
 			[this, request]()
 			{
 			return this->getConsistencySnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetIntegrationTokenOutcome ARMSClient::getIntegrationToken(const GetIntegrationTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetIntegrationTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetIntegrationTokenOutcome(GetIntegrationTokenResult(outcome.result()));
+	else
+		return GetIntegrationTokenOutcome(outcome.error());
+}
+
+void ARMSClient::getIntegrationTokenAsync(const GetIntegrationTokenRequest& request, const GetIntegrationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getIntegrationToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetIntegrationTokenOutcomeCallable ARMSClient::getIntegrationTokenCallable(const GetIntegrationTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetIntegrationTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->getIntegrationToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -981,6 +1089,42 @@ ARMSClient::ImportCustomAlertRulesOutcomeCallable ARMSClient::importCustomAlertR
 			[this, request]()
 			{
 			return this->importCustomAlertRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ImportPrometheusRulesOutcome ARMSClient::importPrometheusRules(const ImportPrometheusRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportPrometheusRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportPrometheusRulesOutcome(ImportPrometheusRulesResult(outcome.result()));
+	else
+		return ImportPrometheusRulesOutcome(outcome.error());
+}
+
+void ARMSClient::importPrometheusRulesAsync(const ImportPrometheusRulesRequest& request, const ImportPrometheusRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importPrometheusRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ImportPrometheusRulesOutcomeCallable ARMSClient::importPrometheusRulesCallable(const ImportPrometheusRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportPrometheusRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->importPrometheusRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1665,6 +1809,78 @@ ARMSClient::SearchTracesByPageOutcomeCallable ARMSClient::searchTracesByPageCall
 			[this, request]()
 			{
 			return this->searchTracesByPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::SendCustomIncidentsOutcome ARMSClient::sendCustomIncidents(const SendCustomIncidentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendCustomIncidentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendCustomIncidentsOutcome(SendCustomIncidentsResult(outcome.result()));
+	else
+		return SendCustomIncidentsOutcome(outcome.error());
+}
+
+void ARMSClient::sendCustomIncidentsAsync(const SendCustomIncidentsRequest& request, const SendCustomIncidentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendCustomIncidents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::SendCustomIncidentsOutcomeCallable ARMSClient::sendCustomIncidentsCallable(const SendCustomIncidentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendCustomIncidentsOutcome()>>(
+			[this, request]()
+			{
+			return this->sendCustomIncidents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::SendMseIncidentOutcome ARMSClient::sendMseIncident(const SendMseIncidentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendMseIncidentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendMseIncidentOutcome(SendMseIncidentResult(outcome.result()));
+	else
+		return SendMseIncidentOutcome(outcome.error());
+}
+
+void ARMSClient::sendMseIncidentAsync(const SendMseIncidentRequest& request, const SendMseIncidentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendMseIncident(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::SendMseIncidentOutcomeCallable ARMSClient::sendMseIncidentCallable(const SendMseIncidentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendMseIncidentOutcome()>>(
+			[this, request]()
+			{
+			return this->sendMseIncident(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

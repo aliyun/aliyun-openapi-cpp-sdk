@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				UpdateWebhookRequest();
 				~UpdateWebhookRequest();
 
-				std::string getHeaders()const;
-				void setHeaders(const std::string& headers);
+				std::string getHttpHeaders()const;
+				void setHttpHeaders(const std::string& httpHeaders);
 				std::string getMethod()const;
 				void setMethod(const std::string& method);
 				long getContactId()const;
 				void setContactId(long contactId);
-				std::string getParams()const;
-				void setParams(const std::string& params);
+				std::string getHttpParams()const;
+				void setHttpParams(const std::string& httpParams);
 				std::string getProxyUserId()const;
 				void setProxyUserId(const std::string& proxyUserId);
 				std::string getBody()const;
@@ -55,10 +55,10 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 
             private:
-				std::string headers_;
+				std::string httpHeaders_;
 				std::string method_;
 				long contactId_;
-				std::string params_;
+				std::string httpParams_;
 				std::string proxyUserId_;
 				std::string body_;
 				std::string url_;

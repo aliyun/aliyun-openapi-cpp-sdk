@@ -49,14 +49,20 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
 	include/alibabacloud/arms/model/DeleteTraceAppRequest.h
 	include/alibabacloud/arms/model/DeleteTraceAppResult.h
+	include/alibabacloud/arms/model/DescribeDispatchRuleRequest.h
+	include/alibabacloud/arms/model/DescribeDispatchRuleResult.h
 	include/alibabacloud/arms/model/DescribeTraceLicenseKeyRequest.h
 	include/alibabacloud/arms/model/DescribeTraceLicenseKeyResult.h
 	include/alibabacloud/arms/model/DescribeTraceLocationRequest.h
 	include/alibabacloud/arms/model/DescribeTraceLocationResult.h
+	include/alibabacloud/arms/model/ExportPrometheusRulesRequest.h
+	include/alibabacloud/arms/model/ExportPrometheusRulesResult.h
 	include/alibabacloud/arms/model/GetAppApiByPageRequest.h
 	include/alibabacloud/arms/model/GetAppApiByPageResult.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotRequest.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotResult.h
+	include/alibabacloud/arms/model/GetIntegrationTokenRequest.h
+	include/alibabacloud/arms/model/GetIntegrationTokenResult.h
 	include/alibabacloud/arms/model/GetMultipleTraceRequest.h
 	include/alibabacloud/arms/model/GetMultipleTraceResult.h
 	include/alibabacloud/arms/model/GetPrometheusApiTokenRequest.h
@@ -73,6 +79,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ImportAppAlertRulesResult.h
 	include/alibabacloud/arms/model/ImportCustomAlertRulesRequest.h
 	include/alibabacloud/arms/model/ImportCustomAlertRulesResult.h
+	include/alibabacloud/arms/model/ImportPrometheusRulesRequest.h
+	include/alibabacloud/arms/model/ImportPrometheusRulesResult.h
 	include/alibabacloud/arms/model/ListClusterFromGrafanaRequest.h
 	include/alibabacloud/arms/model/ListClusterFromGrafanaResult.h
 	include/alibabacloud/arms/model/ListDashboardsRequest.h
@@ -111,6 +119,10 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/SearchTracesResult.h
 	include/alibabacloud/arms/model/SearchTracesByPageRequest.h
 	include/alibabacloud/arms/model/SearchTracesByPageResult.h
+	include/alibabacloud/arms/model/SendCustomIncidentsRequest.h
+	include/alibabacloud/arms/model/SendCustomIncidentsResult.h
+	include/alibabacloud/arms/model/SendMseIncidentRequest.h
+	include/alibabacloud/arms/model/SendMseIncidentResult.h
 	include/alibabacloud/arms/model/SetRetcodeShareStatusRequest.h
 	include/alibabacloud/arms/model/SetRetcodeShareStatusResult.h
 	include/alibabacloud/arms/model/StartAlertRequest.h
@@ -156,14 +168,20 @@ set(arms_src
 	src/model/DeleteRetcodeAppResult.cc
 	src/model/DeleteTraceAppRequest.cc
 	src/model/DeleteTraceAppResult.cc
+	src/model/DescribeDispatchRuleRequest.cc
+	src/model/DescribeDispatchRuleResult.cc
 	src/model/DescribeTraceLicenseKeyRequest.cc
 	src/model/DescribeTraceLicenseKeyResult.cc
 	src/model/DescribeTraceLocationRequest.cc
 	src/model/DescribeTraceLocationResult.cc
+	src/model/ExportPrometheusRulesRequest.cc
+	src/model/ExportPrometheusRulesResult.cc
 	src/model/GetAppApiByPageRequest.cc
 	src/model/GetAppApiByPageResult.cc
 	src/model/GetConsistencySnapshotRequest.cc
 	src/model/GetConsistencySnapshotResult.cc
+	src/model/GetIntegrationTokenRequest.cc
+	src/model/GetIntegrationTokenResult.cc
 	src/model/GetMultipleTraceRequest.cc
 	src/model/GetMultipleTraceResult.cc
 	src/model/GetPrometheusApiTokenRequest.cc
@@ -180,6 +198,8 @@ set(arms_src
 	src/model/ImportAppAlertRulesResult.cc
 	src/model/ImportCustomAlertRulesRequest.cc
 	src/model/ImportCustomAlertRulesResult.cc
+	src/model/ImportPrometheusRulesRequest.cc
+	src/model/ImportPrometheusRulesResult.cc
 	src/model/ListClusterFromGrafanaRequest.cc
 	src/model/ListClusterFromGrafanaResult.cc
 	src/model/ListDashboardsRequest.cc
@@ -218,6 +238,10 @@ set(arms_src
 	src/model/SearchTracesResult.cc
 	src/model/SearchTracesByPageRequest.cc
 	src/model/SearchTracesByPageResult.cc
+	src/model/SendCustomIncidentsRequest.cc
+	src/model/SendCustomIncidentsResult.cc
+	src/model/SendMseIncidentRequest.cc
+	src/model/SendMseIncidentResult.cc
 	src/model/SetRetcodeShareStatusRequest.cc
 	src/model/SetRetcodeShareStatusResult.cc
 	src/model/StartAlertRequest.cc
