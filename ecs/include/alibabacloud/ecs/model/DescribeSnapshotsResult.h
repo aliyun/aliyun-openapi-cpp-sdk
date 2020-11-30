@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					std::string status;
+					bool instantAccess;
 					std::string progress;
 					std::string usage;
 					std::string description;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 					bool encrypted;
 					int retentionDays;
 					std::string snapshotName;
+					int instantAccessRetentionDays;
 					std::string sourceDiskId;
 					std::string sourceStorageType;
 					std::string snapshotId;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				~DescribeSnapshotsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
+				std::string getNextToken()const;
 				int getPageNumber()const;
 				std::vector<Snapshot> getSnapshots()const;
 
@@ -77,6 +80,7 @@ namespace AlibabaCloud
 			private:
 				int totalCount_;
 				int pageSize_;
+				std::string nextToken_;
 				int pageNumber_;
 				std::vector<Snapshot> snapshots_;
 

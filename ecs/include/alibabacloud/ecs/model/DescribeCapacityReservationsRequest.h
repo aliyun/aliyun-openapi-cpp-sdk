@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::string getPackageType()const;
 				void setPackageType(const std::string& packageType);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				int maxResults_;
 				std::string zoneId_;
 				std::string packageType_;
+				std::string status_;
 
 			};
 		}

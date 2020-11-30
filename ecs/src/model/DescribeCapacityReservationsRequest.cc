@@ -170,3 +170,14 @@ void DescribeCapacityReservationsRequest::setPackageType(const std::string& pack
 	setParameter("PackageType", packageType);
 }
 
+std::string DescribeCapacityReservationsRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeCapacityReservationsRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
+}
+

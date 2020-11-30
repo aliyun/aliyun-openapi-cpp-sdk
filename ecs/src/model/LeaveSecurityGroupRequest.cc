@@ -49,6 +49,17 @@ void LeaveSecurityGroupRequest::setSecurityGroupId(const std::string& securityGr
 	setParameter("SecurityGroupId", securityGroupId);
 }
 
+std::string LeaveSecurityGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void LeaveSecurityGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string LeaveSecurityGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -91,5 +102,16 @@ void LeaveSecurityGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string LeaveSecurityGroupRequest::getNetworkInterfaceId()const
+{
+	return networkInterfaceId_;
+}
+
+void LeaveSecurityGroupRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
+{
+	networkInterfaceId_ = networkInterfaceId;
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

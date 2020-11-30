@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				{
 					int size;
 					std::string category;
+					std::string performanceLevel;
 				};
 				struct SystemDiskConfig
 				{
@@ -70,6 +71,8 @@ namespace AlibabaCloud
 				void setLaunchConfigurationSystemDiskCategory(const std::string& launchConfigurationSystemDiskCategory);
 				std::string getAutoProvisioningGroupType()const;
 				void setAutoProvisioningGroupType(const std::string& autoProvisioningGroupType);
+				std::string getLaunchConfigurationSystemDiskPerformanceLevel()const;
+				void setLaunchConfigurationSystemDiskPerformanceLevel(const std::string& launchConfigurationSystemDiskPerformanceLevel);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getLaunchConfigurationImageId()const;
@@ -110,6 +113,8 @@ namespace AlibabaCloud
 				void setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration);
 				std::string getLaunchConfigurationUserData()const;
 				void setLaunchConfigurationUserData(const std::string& launchConfigurationUserData);
+				std::string getLaunchConfigurationCreditSpecification()const;
+				void setLaunchConfigurationCreditSpecification(const std::string& launchConfigurationCreditSpecification);
 				std::string getLaunchConfigurationInstanceName()const;
 				void setLaunchConfigurationInstanceName(const std::string& launchConfigurationInstanceName);
 				std::string getLaunchConfigurationInstanceDescription()const;
@@ -166,6 +171,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string launchConfigurationSystemDiskCategory_;
 				std::string autoProvisioningGroupType_;
+				std::string launchConfigurationSystemDiskPerformanceLevel_;
 				std::string resourceGroupId_;
 				std::string launchConfigurationImageId_;
 				std::string launchConfigurationResourceGroupId_;
@@ -186,6 +192,7 @@ namespace AlibabaCloud
 				std::string description_;
 				bool terminateInstancesWithExpiration_;
 				std::string launchConfigurationUserData_;
+				std::string launchConfigurationCreditSpecification_;
 				std::string launchConfigurationInstanceName_;
 				std::string launchConfigurationInstanceDescription_;
 				std::string spotAllocationStrategy_;

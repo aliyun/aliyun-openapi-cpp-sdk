@@ -49,6 +49,17 @@ void CreateSnapshotRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+bool CreateSnapshotRequest::getInstantAccess()const
+{
+	return instantAccess_;
+}
+
+void CreateSnapshotRequest::setInstantAccess(bool instantAccess)
+{
+	instantAccess_ = instantAccess;
+	setParameter("InstantAccess", instantAccess ? "true" : "false");
+}
+
 std::string CreateSnapshotRequest::getDescription()const
 {
 	return description_;
@@ -80,6 +91,17 @@ void CreateSnapshotRequest::setResourceGroupId(const std::string& resourceGroupI
 {
 	resourceGroupId_ = resourceGroupId;
 	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+int CreateSnapshotRequest::getInstantAccessRetentionDays()const
+{
+	return instantAccessRetentionDays_;
+}
+
+void CreateSnapshotRequest::setInstantAccessRetentionDays(int instantAccessRetentionDays)
+{
+	instantAccessRetentionDays_ = instantAccessRetentionDays;
+	setParameter("InstantAccessRetentionDays", std::to_string(instantAccessRetentionDays));
 }
 
 std::string CreateSnapshotRequest::getDiskId()const

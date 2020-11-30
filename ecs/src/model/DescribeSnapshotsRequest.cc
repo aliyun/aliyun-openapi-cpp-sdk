@@ -82,28 +82,6 @@ void DescribeSnapshotsRequest::setSnapshotLinkId(const std::string& snapshotLink
 	setParameter("SnapshotLinkId", snapshotLinkId);
 }
 
-std::string DescribeSnapshotsRequest::getSnapshotName()const
-{
-	return snapshotName_;
-}
-
-void DescribeSnapshotsRequest::setSnapshotName(const std::string& snapshotName)
-{
-	snapshotName_ = snapshotName;
-	setParameter("SnapshotName", snapshotName);
-}
-
-int DescribeSnapshotsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeSnapshotsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
 std::string DescribeSnapshotsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -124,39 +102,6 @@ void DescribeSnapshotsRequest::setFilter1Key(const std::string& filter1Key)
 {
 	filter1Key_ = filter1Key;
 	setParameter("Filter1Key", filter1Key);
-}
-
-std::string DescribeSnapshotsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeSnapshotsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-int DescribeSnapshotsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeSnapshotsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeSnapshotsRequest::getDiskId()const
-{
-	return diskId_;
-}
-
-void DescribeSnapshotsRequest::setDiskId(const std::string& diskId)
-{
-	diskId_ = diskId;
-	setParameter("DiskId", diskId);
 }
 
 std::vector<DescribeSnapshotsRequest::Tag> DescribeSnapshotsRequest::getTag()const
@@ -184,6 +129,127 @@ void DescribeSnapshotsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
 	setParameter("DryRun", dryRun ? "true" : "false");
+}
+
+std::string DescribeSnapshotsRequest::getFilter1Value()const
+{
+	return filter1Value_;
+}
+
+void DescribeSnapshotsRequest::setFilter1Value(const std::string& filter1Value)
+{
+	filter1Value_ = filter1Value;
+	setParameter("Filter1Value", filter1Value);
+}
+
+long DescribeSnapshotsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeSnapshotsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeSnapshotsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeSnapshotsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+int DescribeSnapshotsRequest::getMaxResults()const
+{
+	return maxResults_;
+}
+
+void DescribeSnapshotsRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
+}
+
+std::string DescribeSnapshotsRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeSnapshotsRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
+}
+
+std::string DescribeSnapshotsRequest::getSnapshotName()const
+{
+	return snapshotName_;
+}
+
+void DescribeSnapshotsRequest::setSnapshotName(const std::string& snapshotName)
+{
+	snapshotName_ = snapshotName;
+	setParameter("SnapshotName", snapshotName);
+}
+
+int DescribeSnapshotsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeSnapshotsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeSnapshotsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeSnapshotsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string DescribeSnapshotsRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void DescribeSnapshotsRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
+}
+
+int DescribeSnapshotsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeSnapshotsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeSnapshotsRequest::getDiskId()const
+{
+	return diskId_;
+}
+
+void DescribeSnapshotsRequest::setDiskId(const std::string& diskId)
+{
+	diskId_ = diskId;
+	setParameter("DiskId", diskId);
 }
 
 std::string DescribeSnapshotsRequest::getResourceOwnerAccount()const
@@ -219,17 +285,6 @@ void DescribeSnapshotsRequest::setSourceDiskType(const std::string& sourceDiskTy
 	setParameter("SourceDiskType", sourceDiskType);
 }
 
-std::string DescribeSnapshotsRequest::getFilter1Value()const
-{
-	return filter1Value_;
-}
-
-void DescribeSnapshotsRequest::setFilter1Value(const std::string& filter1Value)
-{
-	filter1Value_ = filter1Value;
-	setParameter("Filter1Value", filter1Value);
-}
-
 std::string DescribeSnapshotsRequest::getFilter2Key()const
 {
 	return filter2Key_;
@@ -239,28 +294,6 @@ void DescribeSnapshotsRequest::setFilter2Key(const std::string& filter2Key)
 {
 	filter2Key_ = filter2Key;
 	setParameter("Filter2Key", filter2Key);
-}
-
-long DescribeSnapshotsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeSnapshotsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeSnapshotsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeSnapshotsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
 }
 
 bool DescribeSnapshotsRequest::getEncrypted()const
@@ -305,16 +338,5 @@ void DescribeSnapshotsRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setParameter("Category", category);
-}
-
-std::string DescribeSnapshotsRequest::getStatus()const
-{
-	return status_;
-}
-
-void DescribeSnapshotsRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
 }
 

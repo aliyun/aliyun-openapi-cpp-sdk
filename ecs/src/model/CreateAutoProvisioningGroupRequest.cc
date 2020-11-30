@@ -40,6 +40,7 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDataDisk(const st
 		std::string launchConfigurationDataDiskObjStr = "LaunchConfiguration.DataDisk." + std::to_string(dep1 + 1);
 		setParameter(launchConfigurationDataDiskObjStr + ".Size", std::to_string(launchConfigurationDataDiskObj.size));
 		setParameter(launchConfigurationDataDiskObjStr + ".Category", launchConfigurationDataDiskObj.category);
+		setParameter(launchConfigurationDataDiskObjStr + ".PerformanceLevel", launchConfigurationDataDiskObj.performanceLevel);
 	}
 }
 
@@ -74,6 +75,17 @@ void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupType(const std:
 {
 	autoProvisioningGroupType_ = autoProvisioningGroupType;
 	setParameter("AutoProvisioningGroupType", autoProvisioningGroupType);
+}
+
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSystemDiskPerformanceLevel()const
+{
+	return launchConfigurationSystemDiskPerformanceLevel_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskPerformanceLevel(const std::string& launchConfigurationSystemDiskPerformanceLevel)
+{
+	launchConfigurationSystemDiskPerformanceLevel_ = launchConfigurationSystemDiskPerformanceLevel;
+	setParameter("LaunchConfigurationSystemDiskPerformanceLevel", launchConfigurationSystemDiskPerformanceLevel);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getResourceGroupId()const
@@ -302,6 +314,17 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationUserData(const st
 {
 	launchConfigurationUserData_ = launchConfigurationUserData;
 	setParameter("LaunchConfigurationUserData", launchConfigurationUserData);
+}
+
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationCreditSpecification()const
+{
+	return launchConfigurationCreditSpecification_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationCreditSpecification(const std::string& launchConfigurationCreditSpecification)
+{
+	launchConfigurationCreditSpecification_ = launchConfigurationCreditSpecification;
+	setParameter("LaunchConfigurationCreditSpecification", launchConfigurationCreditSpecification);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationInstanceName()const

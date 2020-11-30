@@ -104,3 +104,14 @@ void ModifySnapshotAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+bool ModifySnapshotAttributeRequest::getDisableInstantAccess()const
+{
+	return disableInstantAccess_;
+}
+
+void ModifySnapshotAttributeRequest::setDisableInstantAccess(bool disableInstantAccess)
+{
+	disableInstantAccess_ = disableInstantAccess;
+	setParameter("DisableInstantAccess", disableInstantAccess ? "true" : "false");
+}
+

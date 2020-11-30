@@ -49,6 +49,17 @@ void JoinSecurityGroupRequest::setSecurityGroupId(const std::string& securityGro
 	setParameter("SecurityGroupId", securityGroupId);
 }
 
+std::string JoinSecurityGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void JoinSecurityGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string JoinSecurityGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -91,5 +102,16 @@ void JoinSecurityGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string JoinSecurityGroupRequest::getNetworkInterfaceId()const
+{
+	return networkInterfaceId_;
+}
+
+void JoinSecurityGroupRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
+{
+	networkInterfaceId_ = networkInterfaceId;
+	setParameter("NetworkInterfaceId", networkInterfaceId);
 }
 

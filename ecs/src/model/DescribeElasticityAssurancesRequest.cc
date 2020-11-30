@@ -170,3 +170,14 @@ void DescribeElasticityAssurancesRequest::setPackageType(const std::string& pack
 	setParameter("PackageType", packageType);
 }
 
+std::string DescribeElasticityAssurancesRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeElasticityAssurancesRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
+}
+

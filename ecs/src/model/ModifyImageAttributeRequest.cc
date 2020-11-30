@@ -93,6 +93,17 @@ void ModifyImageAttributeRequest::setImageName(const std::string& imageName)
 	setParameter("ImageName", imageName);
 }
 
+std::string ModifyImageAttributeRequest::getLicenseType()const
+{
+	return licenseType_;
+}
+
+void ModifyImageAttributeRequest::setLicenseType(const std::string& licenseType)
+{
+	licenseType_ = licenseType;
+	setParameter("LicenseType", licenseType);
+}
+
 std::string ModifyImageAttributeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

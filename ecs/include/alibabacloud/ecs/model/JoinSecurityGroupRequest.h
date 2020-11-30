@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSecurityGroupId()const;
 				void setSecurityGroupId(const std::string& securityGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -47,14 +49,18 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getNetworkInterfaceId()const;
+				void setNetworkInterfaceId(const std::string& networkInterfaceId);
 
             private:
 				long resourceOwnerId_;
 				std::string securityGroupId_;
+				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string instanceId_;
+				std::string networkInterfaceId_;
 
 			};
 		}

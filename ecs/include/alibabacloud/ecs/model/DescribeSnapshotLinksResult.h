@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct SnapshotLink
 				{
 					std::string instanceName;
+					bool instantAccess;
 					int totalCount;
 					std::string category;
 					int sourceDiskSize;

@@ -85,6 +85,10 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.category = valueSnapshotsSnapshot["Category"].asString();
 		if(!valueSnapshotsSnapshot["SnapshotType"].isNull())
 			snapshotsObject.snapshotType = valueSnapshotsSnapshot["SnapshotType"].asString();
+		if(!valueSnapshotsSnapshot["InstantAccess"].isNull())
+			snapshotsObject.instantAccess = valueSnapshotsSnapshot["InstantAccess"].asString() == "true";
+		if(!valueSnapshotsSnapshot["InstantAccessRetentionDays"].isNull())
+			snapshotsObject.instantAccessRetentionDays = std::stoi(valueSnapshotsSnapshot["InstantAccessRetentionDays"].asString());
 		auto allTagsNode = valueSnapshotsSnapshot["Tags"]["Tag"];
 		for (auto valueSnapshotsSnapshotTagsTag : allTagsNode)
 		{
@@ -103,6 +107,8 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -114,6 +120,11 @@ int DescribeSnapshotsResult::getTotalCount()const
 int DescribeSnapshotsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeSnapshotsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 int DescribeSnapshotsResult::getPageNumber()const
