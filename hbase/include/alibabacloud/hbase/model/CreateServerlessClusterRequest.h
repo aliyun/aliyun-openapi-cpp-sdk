@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateServerlessClusterRequest();
 				~CreateServerlessClusterRequest();
 
+				std::string getClientType()const;
+				void setClientType(const std::string& clientType);
 				std::string getClusterName()const;
 				void setClusterName(const std::string& clusterName);
 				std::string getClientToken()const;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				void setServerlessSpec(const std::string& serverlessSpec);
 
             private:
+				std::string clientType_;
 				std::string clusterName_;
 				std::string clientToken_;
 				std::string engineVersion_;

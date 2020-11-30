@@ -27,6 +27,17 @@ CreateServerlessClusterRequest::CreateServerlessClusterRequest() :
 CreateServerlessClusterRequest::~CreateServerlessClusterRequest()
 {}
 
+std::string CreateServerlessClusterRequest::getClientType()const
+{
+	return clientType_;
+}
+
+void CreateServerlessClusterRequest::setClientType(const std::string& clientType)
+{
+	clientType_ = clientType;
+	setParameter("ClientType", clientType);
+}
+
 std::string CreateServerlessClusterRequest::getClusterName()const
 {
 	return clusterName_;
