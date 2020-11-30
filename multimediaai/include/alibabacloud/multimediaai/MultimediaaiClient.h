@@ -54,6 +54,20 @@
 #include "model/ListFacePersonsResult.h"
 #include "model/ListTemplatesRequest.h"
 #include "model/ListTemplatesResult.h"
+#include "model/ProcessFaceAlgorithmRequest.h"
+#include "model/ProcessFaceAlgorithmResult.h"
+#include "model/ProcessImageTagAlgorithmRequest.h"
+#include "model/ProcessImageTagAlgorithmResult.h"
+#include "model/ProcessLandmarkAlgorithmRequest.h"
+#include "model/ProcessLandmarkAlgorithmResult.h"
+#include "model/ProcessLogoAlgorithmRequest.h"
+#include "model/ProcessLogoAlgorithmResult.h"
+#include "model/ProcessNewsAlgorithmRequest.h"
+#include "model/ProcessNewsAlgorithmResult.h"
+#include "model/ProcessNlpAlgorithmRequest.h"
+#include "model/ProcessNlpAlgorithmResult.h"
+#include "model/ProcessOcrAlgorithmRequest.h"
+#include "model/ProcessOcrAlgorithmResult.h"
 #include "model/RegisterFaceImageRequest.h"
 #include "model/RegisterFaceImageResult.h"
 #include "model/UpdateTemplateRequest.h"
@@ -115,6 +129,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTemplatesResult> ListTemplatesOutcome;
 			typedef std::future<ListTemplatesOutcome> ListTemplatesOutcomeCallable;
 			typedef std::function<void(const MultimediaaiClient*, const Model::ListTemplatesRequest&, const ListTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTemplatesAsyncHandler;
+			typedef Outcome<Error, Model::ProcessFaceAlgorithmResult> ProcessFaceAlgorithmOutcome;
+			typedef std::future<ProcessFaceAlgorithmOutcome> ProcessFaceAlgorithmOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::ProcessFaceAlgorithmRequest&, const ProcessFaceAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProcessFaceAlgorithmAsyncHandler;
+			typedef Outcome<Error, Model::ProcessImageTagAlgorithmResult> ProcessImageTagAlgorithmOutcome;
+			typedef std::future<ProcessImageTagAlgorithmOutcome> ProcessImageTagAlgorithmOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::ProcessImageTagAlgorithmRequest&, const ProcessImageTagAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProcessImageTagAlgorithmAsyncHandler;
+			typedef Outcome<Error, Model::ProcessLandmarkAlgorithmResult> ProcessLandmarkAlgorithmOutcome;
+			typedef std::future<ProcessLandmarkAlgorithmOutcome> ProcessLandmarkAlgorithmOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::ProcessLandmarkAlgorithmRequest&, const ProcessLandmarkAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProcessLandmarkAlgorithmAsyncHandler;
+			typedef Outcome<Error, Model::ProcessLogoAlgorithmResult> ProcessLogoAlgorithmOutcome;
+			typedef std::future<ProcessLogoAlgorithmOutcome> ProcessLogoAlgorithmOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::ProcessLogoAlgorithmRequest&, const ProcessLogoAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProcessLogoAlgorithmAsyncHandler;
+			typedef Outcome<Error, Model::ProcessNewsAlgorithmResult> ProcessNewsAlgorithmOutcome;
+			typedef std::future<ProcessNewsAlgorithmOutcome> ProcessNewsAlgorithmOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::ProcessNewsAlgorithmRequest&, const ProcessNewsAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProcessNewsAlgorithmAsyncHandler;
+			typedef Outcome<Error, Model::ProcessNlpAlgorithmResult> ProcessNlpAlgorithmOutcome;
+			typedef std::future<ProcessNlpAlgorithmOutcome> ProcessNlpAlgorithmOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::ProcessNlpAlgorithmRequest&, const ProcessNlpAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProcessNlpAlgorithmAsyncHandler;
+			typedef Outcome<Error, Model::ProcessOcrAlgorithmResult> ProcessOcrAlgorithmOutcome;
+			typedef std::future<ProcessOcrAlgorithmOutcome> ProcessOcrAlgorithmOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::ProcessOcrAlgorithmRequest&, const ProcessOcrAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProcessOcrAlgorithmAsyncHandler;
 			typedef Outcome<Error, Model::RegisterFaceImageResult> RegisterFaceImageOutcome;
 			typedef std::future<RegisterFaceImageOutcome> RegisterFaceImageOutcomeCallable;
 			typedef std::function<void(const MultimediaaiClient*, const Model::RegisterFaceImageRequest&, const RegisterFaceImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterFaceImageAsyncHandler;
@@ -174,6 +209,27 @@ namespace AlibabaCloud
 			ListTemplatesOutcome listTemplates(const Model::ListTemplatesRequest &request)const;
 			void listTemplatesAsync(const Model::ListTemplatesRequest& request, const ListTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTemplatesOutcomeCallable listTemplatesCallable(const Model::ListTemplatesRequest& request) const;
+			ProcessFaceAlgorithmOutcome processFaceAlgorithm(const Model::ProcessFaceAlgorithmRequest &request)const;
+			void processFaceAlgorithmAsync(const Model::ProcessFaceAlgorithmRequest& request, const ProcessFaceAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProcessFaceAlgorithmOutcomeCallable processFaceAlgorithmCallable(const Model::ProcessFaceAlgorithmRequest& request) const;
+			ProcessImageTagAlgorithmOutcome processImageTagAlgorithm(const Model::ProcessImageTagAlgorithmRequest &request)const;
+			void processImageTagAlgorithmAsync(const Model::ProcessImageTagAlgorithmRequest& request, const ProcessImageTagAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProcessImageTagAlgorithmOutcomeCallable processImageTagAlgorithmCallable(const Model::ProcessImageTagAlgorithmRequest& request) const;
+			ProcessLandmarkAlgorithmOutcome processLandmarkAlgorithm(const Model::ProcessLandmarkAlgorithmRequest &request)const;
+			void processLandmarkAlgorithmAsync(const Model::ProcessLandmarkAlgorithmRequest& request, const ProcessLandmarkAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProcessLandmarkAlgorithmOutcomeCallable processLandmarkAlgorithmCallable(const Model::ProcessLandmarkAlgorithmRequest& request) const;
+			ProcessLogoAlgorithmOutcome processLogoAlgorithm(const Model::ProcessLogoAlgorithmRequest &request)const;
+			void processLogoAlgorithmAsync(const Model::ProcessLogoAlgorithmRequest& request, const ProcessLogoAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProcessLogoAlgorithmOutcomeCallable processLogoAlgorithmCallable(const Model::ProcessLogoAlgorithmRequest& request) const;
+			ProcessNewsAlgorithmOutcome processNewsAlgorithm(const Model::ProcessNewsAlgorithmRequest &request)const;
+			void processNewsAlgorithmAsync(const Model::ProcessNewsAlgorithmRequest& request, const ProcessNewsAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProcessNewsAlgorithmOutcomeCallable processNewsAlgorithmCallable(const Model::ProcessNewsAlgorithmRequest& request) const;
+			ProcessNlpAlgorithmOutcome processNlpAlgorithm(const Model::ProcessNlpAlgorithmRequest &request)const;
+			void processNlpAlgorithmAsync(const Model::ProcessNlpAlgorithmRequest& request, const ProcessNlpAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProcessNlpAlgorithmOutcomeCallable processNlpAlgorithmCallable(const Model::ProcessNlpAlgorithmRequest& request) const;
+			ProcessOcrAlgorithmOutcome processOcrAlgorithm(const Model::ProcessOcrAlgorithmRequest &request)const;
+			void processOcrAlgorithmAsync(const Model::ProcessOcrAlgorithmRequest& request, const ProcessOcrAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ProcessOcrAlgorithmOutcomeCallable processOcrAlgorithmCallable(const Model::ProcessOcrAlgorithmRequest& request) const;
 			RegisterFaceImageOutcome registerFaceImage(const Model::RegisterFaceImageRequest &request)const;
 			void registerFaceImageAsync(const Model::RegisterFaceImageRequest& request, const RegisterFaceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterFaceImageOutcomeCallable registerFaceImageCallable(const Model::RegisterFaceImageRequest& request) const;

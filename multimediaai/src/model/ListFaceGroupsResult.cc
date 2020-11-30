@@ -53,14 +53,14 @@ void ListFaceGroupsResult::parse(const std::string &payload)
 			faceGroupsObject.personCount = std::stol(valueFaceGroupsFaceGroup["PersonCount"].asString());
 		if(!valueFaceGroupsFaceGroup["ImageCount"].isNull())
 			faceGroupsObject.imageCount = std::stol(valueFaceGroupsFaceGroup["ImageCount"].asString());
-		auto allTemplatesNode = allFaceGroupsNode["Templates"]["TemplatesItem"];
-		for (auto allFaceGroupsNodeTemplatesTemplatesItem : allTemplatesNode)
+		auto allTemplatesNode = valueFaceGroupsFaceGroup["Templates"]["TemplatesItem"];
+		for (auto valueFaceGroupsFaceGroupTemplatesTemplatesItem : allTemplatesNode)
 		{
 			FaceGroup::TemplatesItem templatesObject;
-			if(!allFaceGroupsNodeTemplatesTemplatesItem["Id"].isNull())
-				templatesObject.id = allFaceGroupsNodeTemplatesTemplatesItem["Id"].asString();
-			if(!allFaceGroupsNodeTemplatesTemplatesItem["Name"].isNull())
-				templatesObject.name = allFaceGroupsNodeTemplatesTemplatesItem["Name"].asString();
+			if(!valueFaceGroupsFaceGroupTemplatesTemplatesItem["Id"].isNull())
+				templatesObject.id = valueFaceGroupsFaceGroupTemplatesTemplatesItem["Id"].asString();
+			if(!valueFaceGroupsFaceGroupTemplatesTemplatesItem["Name"].isNull())
+				templatesObject.name = valueFaceGroupsFaceGroupTemplatesTemplatesItem["Name"].asString();
 			faceGroupsObject.templates.push_back(templatesObject);
 		}
 		faceGroups_.push_back(faceGroupsObject);

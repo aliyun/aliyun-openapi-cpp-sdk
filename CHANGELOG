@@ -1,4 +1,7 @@
 2020-11-30 Version: patch
+- Video Content analytics template introduced to this SDK.
+
+2020-11-30 Version: patch
 - Supported all language sdk.
 - Fixed some bugs for polardbx.
 

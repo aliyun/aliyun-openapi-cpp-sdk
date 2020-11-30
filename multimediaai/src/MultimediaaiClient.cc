@@ -627,6 +627,258 @@ MultimediaaiClient::ListTemplatesOutcomeCallable MultimediaaiClient::listTemplat
 	return task->get_future();
 }
 
+MultimediaaiClient::ProcessFaceAlgorithmOutcome MultimediaaiClient::processFaceAlgorithm(const ProcessFaceAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ProcessFaceAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ProcessFaceAlgorithmOutcome(ProcessFaceAlgorithmResult(outcome.result()));
+	else
+		return ProcessFaceAlgorithmOutcome(outcome.error());
+}
+
+void MultimediaaiClient::processFaceAlgorithmAsync(const ProcessFaceAlgorithmRequest& request, const ProcessFaceAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, processFaceAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::ProcessFaceAlgorithmOutcomeCallable MultimediaaiClient::processFaceAlgorithmCallable(const ProcessFaceAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ProcessFaceAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->processFaceAlgorithm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MultimediaaiClient::ProcessImageTagAlgorithmOutcome MultimediaaiClient::processImageTagAlgorithm(const ProcessImageTagAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ProcessImageTagAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ProcessImageTagAlgorithmOutcome(ProcessImageTagAlgorithmResult(outcome.result()));
+	else
+		return ProcessImageTagAlgorithmOutcome(outcome.error());
+}
+
+void MultimediaaiClient::processImageTagAlgorithmAsync(const ProcessImageTagAlgorithmRequest& request, const ProcessImageTagAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, processImageTagAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::ProcessImageTagAlgorithmOutcomeCallable MultimediaaiClient::processImageTagAlgorithmCallable(const ProcessImageTagAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ProcessImageTagAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->processImageTagAlgorithm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MultimediaaiClient::ProcessLandmarkAlgorithmOutcome MultimediaaiClient::processLandmarkAlgorithm(const ProcessLandmarkAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ProcessLandmarkAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ProcessLandmarkAlgorithmOutcome(ProcessLandmarkAlgorithmResult(outcome.result()));
+	else
+		return ProcessLandmarkAlgorithmOutcome(outcome.error());
+}
+
+void MultimediaaiClient::processLandmarkAlgorithmAsync(const ProcessLandmarkAlgorithmRequest& request, const ProcessLandmarkAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, processLandmarkAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::ProcessLandmarkAlgorithmOutcomeCallable MultimediaaiClient::processLandmarkAlgorithmCallable(const ProcessLandmarkAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ProcessLandmarkAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->processLandmarkAlgorithm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MultimediaaiClient::ProcessLogoAlgorithmOutcome MultimediaaiClient::processLogoAlgorithm(const ProcessLogoAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ProcessLogoAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ProcessLogoAlgorithmOutcome(ProcessLogoAlgorithmResult(outcome.result()));
+	else
+		return ProcessLogoAlgorithmOutcome(outcome.error());
+}
+
+void MultimediaaiClient::processLogoAlgorithmAsync(const ProcessLogoAlgorithmRequest& request, const ProcessLogoAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, processLogoAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::ProcessLogoAlgorithmOutcomeCallable MultimediaaiClient::processLogoAlgorithmCallable(const ProcessLogoAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ProcessLogoAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->processLogoAlgorithm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MultimediaaiClient::ProcessNewsAlgorithmOutcome MultimediaaiClient::processNewsAlgorithm(const ProcessNewsAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ProcessNewsAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ProcessNewsAlgorithmOutcome(ProcessNewsAlgorithmResult(outcome.result()));
+	else
+		return ProcessNewsAlgorithmOutcome(outcome.error());
+}
+
+void MultimediaaiClient::processNewsAlgorithmAsync(const ProcessNewsAlgorithmRequest& request, const ProcessNewsAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, processNewsAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::ProcessNewsAlgorithmOutcomeCallable MultimediaaiClient::processNewsAlgorithmCallable(const ProcessNewsAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ProcessNewsAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->processNewsAlgorithm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MultimediaaiClient::ProcessNlpAlgorithmOutcome MultimediaaiClient::processNlpAlgorithm(const ProcessNlpAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ProcessNlpAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ProcessNlpAlgorithmOutcome(ProcessNlpAlgorithmResult(outcome.result()));
+	else
+		return ProcessNlpAlgorithmOutcome(outcome.error());
+}
+
+void MultimediaaiClient::processNlpAlgorithmAsync(const ProcessNlpAlgorithmRequest& request, const ProcessNlpAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, processNlpAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::ProcessNlpAlgorithmOutcomeCallable MultimediaaiClient::processNlpAlgorithmCallable(const ProcessNlpAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ProcessNlpAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->processNlpAlgorithm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MultimediaaiClient::ProcessOcrAlgorithmOutcome MultimediaaiClient::processOcrAlgorithm(const ProcessOcrAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ProcessOcrAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ProcessOcrAlgorithmOutcome(ProcessOcrAlgorithmResult(outcome.result()));
+	else
+		return ProcessOcrAlgorithmOutcome(outcome.error());
+}
+
+void MultimediaaiClient::processOcrAlgorithmAsync(const ProcessOcrAlgorithmRequest& request, const ProcessOcrAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, processOcrAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::ProcessOcrAlgorithmOutcomeCallable MultimediaaiClient::processOcrAlgorithmCallable(const ProcessOcrAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ProcessOcrAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->processOcrAlgorithm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MultimediaaiClient::RegisterFaceImageOutcome MultimediaaiClient::registerFaceImage(const RegisterFaceImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

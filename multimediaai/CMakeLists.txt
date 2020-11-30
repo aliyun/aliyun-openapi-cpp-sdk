@@ -53,6 +53,20 @@ set(multimediaai_public_header_model
 	include/alibabacloud/multimediaai/model/ListFacePersonsResult.h
 	include/alibabacloud/multimediaai/model/ListTemplatesRequest.h
 	include/alibabacloud/multimediaai/model/ListTemplatesResult.h
+	include/alibabacloud/multimediaai/model/ProcessFaceAlgorithmRequest.h
+	include/alibabacloud/multimediaai/model/ProcessFaceAlgorithmResult.h
+	include/alibabacloud/multimediaai/model/ProcessImageTagAlgorithmRequest.h
+	include/alibabacloud/multimediaai/model/ProcessImageTagAlgorithmResult.h
+	include/alibabacloud/multimediaai/model/ProcessLandmarkAlgorithmRequest.h
+	include/alibabacloud/multimediaai/model/ProcessLandmarkAlgorithmResult.h
+	include/alibabacloud/multimediaai/model/ProcessLogoAlgorithmRequest.h
+	include/alibabacloud/multimediaai/model/ProcessLogoAlgorithmResult.h
+	include/alibabacloud/multimediaai/model/ProcessNewsAlgorithmRequest.h
+	include/alibabacloud/multimediaai/model/ProcessNewsAlgorithmResult.h
+	include/alibabacloud/multimediaai/model/ProcessNlpAlgorithmRequest.h
+	include/alibabacloud/multimediaai/model/ProcessNlpAlgorithmResult.h
+	include/alibabacloud/multimediaai/model/ProcessOcrAlgorithmRequest.h
+	include/alibabacloud/multimediaai/model/ProcessOcrAlgorithmResult.h
 	include/alibabacloud/multimediaai/model/RegisterFaceImageRequest.h
 	include/alibabacloud/multimediaai/model/RegisterFaceImageResult.h
 	include/alibabacloud/multimediaai/model/UpdateTemplateRequest.h
@@ -92,6 +106,20 @@ set(multimediaai_src
 	src/model/ListFacePersonsResult.cc
 	src/model/ListTemplatesRequest.cc
 	src/model/ListTemplatesResult.cc
+	src/model/ProcessFaceAlgorithmRequest.cc
+	src/model/ProcessFaceAlgorithmResult.cc
+	src/model/ProcessImageTagAlgorithmRequest.cc
+	src/model/ProcessImageTagAlgorithmResult.cc
+	src/model/ProcessLandmarkAlgorithmRequest.cc
+	src/model/ProcessLandmarkAlgorithmResult.cc
+	src/model/ProcessLogoAlgorithmRequest.cc
+	src/model/ProcessLogoAlgorithmResult.cc
+	src/model/ProcessNewsAlgorithmRequest.cc
+	src/model/ProcessNewsAlgorithmResult.cc
+	src/model/ProcessNlpAlgorithmRequest.cc
+	src/model/ProcessNlpAlgorithmResult.cc
+	src/model/ProcessOcrAlgorithmRequest.cc
+	src/model/ProcessOcrAlgorithmResult.cc
 	src/model/RegisterFaceImageRequest.cc
 	src/model/RegisterFaceImageResult.cc
 	src/model/UpdateTemplateRequest.cc
