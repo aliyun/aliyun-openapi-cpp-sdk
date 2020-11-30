@@ -2751,6 +2751,42 @@ DcdnClient::DescribeDcdnVerifyContentOutcomeCallable DcdnClient::describeDcdnVer
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnWafDomainOutcome DcdnClient::describeDcdnWafDomain(const DescribeDcdnWafDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnWafDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnWafDomainOutcome(DescribeDcdnWafDomainResult(outcome.result()));
+	else
+		return DescribeDcdnWafDomainOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnWafDomainAsync(const DescribeDcdnWafDomainRequest& request, const DescribeDcdnWafDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnWafDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnWafDomainOutcomeCallable DcdnClient::describeDcdnWafDomainCallable(const DescribeDcdnWafDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnWafDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnWafDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeUserDcdnIpaStatusOutcome DcdnClient::describeUserDcdnIpaStatus(const DescribeUserDcdnIpaStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -49,14 +49,14 @@ void DescribeDcdnIpaDomainConfigsResult::parse(const std::string &payload)
 			domainConfigsObject.configId = valueDomainConfigsDomainConfig["ConfigId"].asString();
 		if(!valueDomainConfigsDomainConfig["Status"].isNull())
 			domainConfigsObject.status = valueDomainConfigsDomainConfig["Status"].asString();
-		auto allFunctionArgsNode = allDomainConfigsNode["FunctionArgs"]["FunctionArg"];
-		for (auto allDomainConfigsNodeFunctionArgsFunctionArg : allFunctionArgsNode)
+		auto allFunctionArgsNode = valueDomainConfigsDomainConfig["FunctionArgs"]["FunctionArg"];
+		for (auto valueDomainConfigsDomainConfigFunctionArgsFunctionArg : allFunctionArgsNode)
 		{
 			DomainConfig::FunctionArg functionArgsObject;
-			if(!allDomainConfigsNodeFunctionArgsFunctionArg["ArgName"].isNull())
-				functionArgsObject.argName = allDomainConfigsNodeFunctionArgsFunctionArg["ArgName"].asString();
-			if(!allDomainConfigsNodeFunctionArgsFunctionArg["ArgValue"].isNull())
-				functionArgsObject.argValue = allDomainConfigsNodeFunctionArgsFunctionArg["ArgValue"].asString();
+			if(!valueDomainConfigsDomainConfigFunctionArgsFunctionArg["ArgName"].isNull())
+				functionArgsObject.argName = valueDomainConfigsDomainConfigFunctionArgsFunctionArg["ArgName"].asString();
+			if(!valueDomainConfigsDomainConfigFunctionArgsFunctionArg["ArgValue"].isNull())
+				functionArgsObject.argValue = valueDomainConfigsDomainConfigFunctionArgsFunctionArg["ArgValue"].asString();
 			domainConfigsObject.functionArgs.push_back(functionArgsObject);
 		}
 		domainConfigs_.push_back(domainConfigsObject);

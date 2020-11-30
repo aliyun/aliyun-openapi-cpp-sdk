@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPVDATAREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPVDATAREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNWAFDOMAINREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNWAFDOMAINREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainPvDataRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnWafDomainRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDcdnDomainPvDataRequest();
-				~DescribeDcdnDomainPvDataRequest();
+				DescribeDcdnWafDomainRequest();
+				~DescribeDcdnWafDomainRequest();
 
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
             private:
-				std::string startTime_;
+				std::string regionId_;
 				std::string domainName_;
-				std::string endTime_;
 				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPVDATAREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNWAFDOMAINREQUEST_H_

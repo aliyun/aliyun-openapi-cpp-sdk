@@ -43,20 +43,20 @@ void DescribeDcdnDomainPvDataResult::parse(const std::string &payload)
 	for (auto valuePvDataIntervalUsageData : allPvDataIntervalNode)
 	{
 		UsageData pvDataIntervalObject;
-		if(!valuePvDataIntervalUsageData["TimeStamp"].isNull())
-			pvDataIntervalObject.timeStamp = valuePvDataIntervalUsageData["TimeStamp"].asString();
 		if(!valuePvDataIntervalUsageData["Value"].isNull())
 			pvDataIntervalObject.value = valuePvDataIntervalUsageData["Value"].asString();
+		if(!valuePvDataIntervalUsageData["TimeStamp"].isNull())
+			pvDataIntervalObject.timeStamp = valuePvDataIntervalUsageData["TimeStamp"].asString();
 		pvDataInterval_.push_back(pvDataIntervalObject);
 	}
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["DataInterval"].isNull())
-		dataInterval_ = value["DataInterval"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["DataInterval"].isNull())
+		dataInterval_ = value["DataInterval"].asString();
 
 }
 
@@ -70,14 +70,14 @@ std::string DescribeDcdnDomainPvDataResult::getDomainName()const
 	return domainName_;
 }
 
-std::string DescribeDcdnDomainPvDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
 std::string DescribeDcdnDomainPvDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDcdnDomainPvDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 
 std::vector<DescribeDcdnDomainPvDataResult::UsageData> DescribeDcdnDomainPvDataResult::getPvDataInterval()const

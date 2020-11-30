@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPVDATARESULT_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPVDATARESULT_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNWAFDOMAINRESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNWAFDOMAINRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainPvDataResult : public ServiceResult
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnWafDomainResult : public ServiceResult
 			{
 			public:
-				struct UsageData
+				struct OutPutDomain
 				{
-					std::string value;
-					std::string timeStamp;
+					int status;
+					int aclStatus;
+					int ccStatus;
+					std::string domain;
+					int wafStatus;
 				};
 
 
-				DescribeDcdnDomainPvDataResult();
-				explicit DescribeDcdnDomainPvDataResult(const std::string &payload);
-				~DescribeDcdnDomainPvDataResult();
-				std::string getEndTime()const;
-				std::string getDomainName()const;
-				std::string getStartTime()const;
-				std::string getDataInterval()const;
-				std::vector<UsageData> getPvDataInterval()const;
+				DescribeDcdnWafDomainResult();
+				explicit DescribeDcdnWafDomainResult(const std::string &payload);
+				~DescribeDcdnWafDomainResult();
+				int getTotalCount()const;
+				std::vector<OutPutDomain> getOutPutDomains()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string endTime_;
-				std::string domainName_;
-				std::string startTime_;
-				std::string dataInterval_;
-				std::vector<UsageData> pvDataInterval_;
+				int totalCount_;
+				std::vector<OutPutDomain> outPutDomains_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPVDATARESULT_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNWAFDOMAINRESULT_H_

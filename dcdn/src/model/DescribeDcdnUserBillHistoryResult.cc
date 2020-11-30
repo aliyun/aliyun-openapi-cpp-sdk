@@ -49,20 +49,20 @@ void DescribeDcdnUserBillHistoryResult::parse(const std::string &payload)
 			billHistoryDataObject.billType = valueBillHistoryDataBillHistoryDataItem["BillType"].asString();
 		if(!valueBillHistoryDataBillHistoryDataItem["BillTime"].isNull())
 			billHistoryDataObject.billTime = valueBillHistoryDataBillHistoryDataItem["BillTime"].asString();
-		auto allBillingDataNode = allBillHistoryDataNode["BillingData"]["BillingDataItem"];
-		for (auto allBillHistoryDataNodeBillingDataBillingDataItem : allBillingDataNode)
+		auto allBillingDataNode = valueBillHistoryDataBillHistoryDataItem["BillingData"]["BillingDataItem"];
+		for (auto valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem : allBillingDataNode)
 		{
 			BillHistoryDataItem::BillingDataItem billingDataObject;
-			if(!allBillHistoryDataNodeBillingDataBillingDataItem["ChargeType"].isNull())
-				billingDataObject.chargeType = allBillHistoryDataNodeBillingDataBillingDataItem["ChargeType"].asString();
-			if(!allBillHistoryDataNodeBillingDataBillingDataItem["CdnRegion"].isNull())
-				billingDataObject.cdnRegion = allBillHistoryDataNodeBillingDataBillingDataItem["CdnRegion"].asString();
-			if(!allBillHistoryDataNodeBillingDataBillingDataItem["Bandwidth"].isNull())
-				billingDataObject.bandwidth = std::stof(allBillHistoryDataNodeBillingDataBillingDataItem["Bandwidth"].asString());
-			if(!allBillHistoryDataNodeBillingDataBillingDataItem["Flow"].isNull())
-				billingDataObject.flow = std::stof(allBillHistoryDataNodeBillingDataBillingDataItem["Flow"].asString());
-			if(!allBillHistoryDataNodeBillingDataBillingDataItem["Count"].isNull())
-				billingDataObject.count = std::stof(allBillHistoryDataNodeBillingDataBillingDataItem["Count"].asString());
+			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["ChargeType"].isNull())
+				billingDataObject.chargeType = valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["ChargeType"].asString();
+			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["CdnRegion"].isNull())
+				billingDataObject.cdnRegion = valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["CdnRegion"].asString();
+			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Bandwidth"].isNull())
+				billingDataObject.bandwidth = std::stof(valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Bandwidth"].asString());
+			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Flow"].isNull())
+				billingDataObject.flow = std::stof(valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Flow"].asString());
+			if(!valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Count"].isNull())
+				billingDataObject.count = std::stof(valueBillHistoryDataBillHistoryDataItemBillingDataBillingDataItem["Count"].asString());
 			billHistoryDataObject.billingData.push_back(billingDataObject);
 		}
 		billHistoryData_.push_back(billHistoryDataObject);

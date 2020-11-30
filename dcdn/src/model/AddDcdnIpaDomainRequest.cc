@@ -49,6 +49,17 @@ void AddDcdnIpaDomainRequest::setResourceGroupId(const std::string& resourceGrou
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string AddDcdnIpaDomainRequest::getProtocol()const
+{
+	return protocol_;
+}
+
+void AddDcdnIpaDomainRequest::setProtocol(const std::string& protocol)
+{
+	protocol_ = protocol;
+	setParameter("Protocol", protocol);
+}
+
 std::string AddDcdnIpaDomainRequest::getSecurityToken()const
 {
 	return securityToken_;

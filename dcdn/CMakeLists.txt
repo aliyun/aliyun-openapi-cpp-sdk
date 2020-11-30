@@ -171,6 +171,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnUserTagsResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnVerifyContentRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnVerifyContentResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnWafDomainRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnWafDomainResult.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnIpaStatusRequest.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnIpaStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnStatusRequest.h
@@ -364,6 +366,8 @@ set(dcdn_src
 	src/model/DescribeDcdnUserTagsResult.cc
 	src/model/DescribeDcdnVerifyContentRequest.cc
 	src/model/DescribeDcdnVerifyContentResult.cc
+	src/model/DescribeDcdnWafDomainRequest.cc
+	src/model/DescribeDcdnWafDomainResult.cc
 	src/model/DescribeUserDcdnIpaStatusRequest.cc
 	src/model/DescribeUserDcdnIpaStatusResult.cc
 	src/model/DescribeUserDcdnStatusRequest.cc

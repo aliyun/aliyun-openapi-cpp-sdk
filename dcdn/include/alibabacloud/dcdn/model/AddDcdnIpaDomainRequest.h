@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setSources(const std::string& sources);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getProtocol()const;
+				void setProtocol(const std::string& protocol);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getScope()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
             private:
 				std::string sources_;
 				std::string resourceGroupId_;
+				std::string protocol_;
 				std::string securityToken_;
 				std::string scope_;
 				std::string topLevelDomain_;

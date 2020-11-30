@@ -45,16 +45,16 @@ void DescribeDcdnDomainHttpCodeDataResult::parse(const std::string &payload)
 		DataModule dataPerIntervalObject;
 		if(!valueDataPerIntervalDataModule["TimeStamp"].isNull())
 			dataPerIntervalObject.timeStamp = valueDataPerIntervalDataModule["TimeStamp"].asString();
-		auto allHttpCodeDataPerIntervalNode = allDataPerIntervalNode["HttpCodeDataPerInterval"]["HttpCodeDataModule"];
-		for (auto allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule : allHttpCodeDataPerIntervalNode)
+		auto allHttpCodeDataPerIntervalNode = valueDataPerIntervalDataModule["HttpCodeDataPerInterval"]["HttpCodeDataModule"];
+		for (auto valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule : allHttpCodeDataPerIntervalNode)
 		{
 			DataModule::HttpCodeDataModule httpCodeDataPerIntervalObject;
-			if(!allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Code"].isNull())
-				httpCodeDataPerIntervalObject.code = std::stoi(allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Code"].asString());
-			if(!allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].isNull())
-				httpCodeDataPerIntervalObject.proportion = std::stof(allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].asString());
-			if(!allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Count"].isNull())
-				httpCodeDataPerIntervalObject.count = std::stof(allDataPerIntervalNodeHttpCodeDataPerIntervalHttpCodeDataModule["Count"].asString());
+			if(!valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Code"].isNull())
+				httpCodeDataPerIntervalObject.code = std::stoi(valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Code"].asString());
+			if(!valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].isNull())
+				httpCodeDataPerIntervalObject.proportion = std::stof(valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Proportion"].asString());
+			if(!valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Count"].isNull())
+				httpCodeDataPerIntervalObject.count = std::stof(valueDataPerIntervalDataModuleHttpCodeDataPerIntervalHttpCodeDataModule["Count"].asString());
 			dataPerIntervalObject.httpCodeDataPerInterval.push_back(httpCodeDataPerIntervalObject);
 		}
 		dataPerInterval_.push_back(dataPerIntervalObject);
