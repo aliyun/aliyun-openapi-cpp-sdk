@@ -14,38 +14,59 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/openanalytics-open/model/SetTrafficLimitPolicyResult.h>
+#include <alibabacloud/openanalytics-open/model/UpgradeInstanceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Openanalytics_open;
 using namespace AlibabaCloud::Openanalytics_open::Model;
 
-SetTrafficLimitPolicyResult::SetTrafficLimitPolicyResult() :
+UpgradeInstanceResult::UpgradeInstanceResult() :
 	ServiceResult()
 {}
 
-SetTrafficLimitPolicyResult::SetTrafficLimitPolicyResult(const std::string &payload) :
+UpgradeInstanceResult::UpgradeInstanceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetTrafficLimitPolicyResult::~SetTrafficLimitPolicyResult()
+UpgradeInstanceResult::~UpgradeInstanceResult()
 {}
 
-void SetTrafficLimitPolicyResult::parse(const std::string &payload)
+void UpgradeInstanceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorInfo"].isNull())
+		errorInfo_ = value["ErrorInfo"].asString();
+	if(!value["Result"].isNull())
+		result_ = value["Result"].asString();
 
 }
 
-std::string SetTrafficLimitPolicyResult::getRegionId()const
+std::string UpgradeInstanceResult::getErrorInfo()const
 {
-	return regionId_;
+	return errorInfo_;
+}
+
+std::string UpgradeInstanceResult::getErrorCode()const
+{
+	return errorCode_;
+}
+
+bool UpgradeInstanceResult::getSuccess()const
+{
+	return success_;
+}
+
+std::string UpgradeInstanceResult::getResult()const
+{
+	return result_;
 }
 

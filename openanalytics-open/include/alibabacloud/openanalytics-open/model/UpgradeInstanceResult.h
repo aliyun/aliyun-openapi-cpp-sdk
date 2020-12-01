@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_DECODESTSTOKENRESULT_H_
-#define ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_DECODESTSTOKENRESULT_H_
+#ifndef ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_UPGRADEINSTANCERESULT_H_
+#define ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_UPGRADEINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OPENANALYTICS_OPEN_EXPORT DecodeStsTokenResult : public ServiceResult
+			class ALIBABACLOUD_OPENANALYTICS_OPEN_EXPORT UpgradeInstanceResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string policy;
-					bool mfaAuthenticated;
-					long expireDate;
-					long accountUid;
-					std::string akProxy;
-					std::string tokenPrincipalName;
-					long roleId;
-					std::string roleName;
-					std::string tokenType;
-					long grantorId;
-					std::string playerUid;
-					std::string tokenPrincipalId;
-					bool proxyTrustTransportInfo;
-					long accountBid;
-				};
 
 
-				DecodeStsTokenResult();
-				explicit DecodeStsTokenResult(const std::string &payload);
-				~DecodeStsTokenResult();
-				Data getData()const;
-				std::string getRegionId()const;
+				UpgradeInstanceResult();
+				explicit UpgradeInstanceResult(const std::string &payload);
+				~UpgradeInstanceResult();
+				std::string getErrorInfo()const;
+				std::string getErrorCode()const;
+				bool getSuccess()const;
+				std::string getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
-				std::string regionId_;
+				std::string errorInfo_;
+				std::string errorCode_;
+				bool success_;
+				std::string result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_DECODESTSTOKENRESULT_H_
+#endif // !ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_UPGRADEINSTANCERESULT_H_

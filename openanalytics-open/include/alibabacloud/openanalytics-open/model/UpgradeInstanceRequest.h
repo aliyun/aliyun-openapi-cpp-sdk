@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_SETRELATIONWITHBIZREQUEST_H_
-#define ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_SETRELATIONWITHBIZREQUEST_H_
+#ifndef ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_UPGRADEINSTANCEREQUEST_H_
+#define ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_UPGRADEINSTANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OPENANALYTICS_OPEN_EXPORT SetRelationWithBizRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OPENANALYTICS_OPEN_EXPORT UpgradeInstanceRequest : public RpcServiceRequest
 			{
 
 			public:
-				SetRelationWithBizRequest();
-				~SetRelationWithBizRequest();
+				UpgradeInstanceRequest();
+				~UpgradeInstanceRequest();
 
-				std::string getExternalUid()const;
-				void setExternalUid(const std::string& externalUid);
-				std::string getExternalAliyunUid()const;
-				void setExternalAliyunUid(const std::string& externalAliyunUid);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getExternalBizAliyunUid()const;
-				void setExternalBizAliyunUid(const std::string& externalBizAliyunUid);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getChargeType()const;
+				void setChargeType(const std::string& chargeType);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
+				std::string getComponent()const;
+				void setComponent(const std::string& component);
 
             private:
-				std::string externalUid_;
-				std::string externalAliyunUid_;
 				std::string regionId_;
-				std::string externalBizAliyunUid_;
+				std::string instanceId_;
+				std::string chargeType_;
+				std::string instanceType_;
+				std::string component_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_SETRELATIONWITHBIZREQUEST_H_
+#endif // !ALIBABACLOUD_OPENANALYTICS_OPEN_MODEL_UPGRADEINSTANCEREQUEST_H_
