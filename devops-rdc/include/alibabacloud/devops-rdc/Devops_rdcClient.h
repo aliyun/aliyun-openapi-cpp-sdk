@@ -28,6 +28,8 @@
 #include "model/CancelPipelineResult.h"
 #include "model/CheckAliyunAccountExistsRequest.h"
 #include "model/CheckAliyunAccountExistsResult.h"
+#include "model/CreateCommonGroupRequest.h"
+#include "model/CreateCommonGroupResult.h"
 #include "model/CreateCredentialRequest.h"
 #include "model/CreateCredentialResult.h"
 #include "model/CreateDevopsOrganizationRequest.h"
@@ -42,6 +44,8 @@
 #include "model/CreatePipelineResult.h"
 #include "model/CreateServiceConnectionRequest.h"
 #include "model/CreateServiceConnectionResult.h"
+#include "model/DeleteCommonGroupRequest.h"
+#include "model/DeleteCommonGroupResult.h"
 #include "model/DeleteDevopsOrganizationMembersRequest.h"
 #include "model/DeleteDevopsOrganizationMembersResult.h"
 #include "model/DeleteDevopsProjectRequest.h"
@@ -78,14 +82,26 @@
 #include "model/GetPipelineLogResult.h"
 #include "model/GetPipleineLatestInstanceStatusRequest.h"
 #include "model/GetPipleineLatestInstanceStatusResult.h"
+#include "model/GetProjectOptionRequest.h"
+#include "model/GetProjectOptionResult.h"
+#include "model/GetTaskDetailActivityRequest.h"
+#include "model/GetTaskDetailActivityResult.h"
+#include "model/GetTaskDetailBaseRequest.h"
+#include "model/GetTaskDetailBaseResult.h"
+#include "model/GetTaskListFilterRequest.h"
+#include "model/GetTaskListFilterResult.h"
 #include "model/GetUserByAliyunUidRequest.h"
 #include "model/GetUserByAliyunUidResult.h"
+#include "model/GetUserNameRequest.h"
+#include "model/GetUserNameResult.h"
 #include "model/InsertDevopsUserRequest.h"
 #include "model/InsertDevopsUserResult.h"
 #include "model/InsertPipelineMemberRequest.h"
 #include "model/InsertPipelineMemberResult.h"
 #include "model/InsertProjectMembersRequest.h"
 #include "model/InsertProjectMembersResult.h"
+#include "model/ListCommonGroupRequest.h"
+#include "model/ListCommonGroupResult.h"
 #include "model/ListCredentialsRequest.h"
 #include "model/ListCredentialsResult.h"
 #include "model/ListDevopsProjectSprintsRequest.h"
@@ -104,10 +120,14 @@
 #include "model/ListPipelinesResult.h"
 #include "model/ListServiceConnectionsRequest.h"
 #include "model/ListServiceConnectionsResult.h"
+#include "model/ListSmartGroupRequest.h"
+#include "model/ListSmartGroupResult.h"
 #include "model/ListUserOrganizationRequest.h"
 #include "model/ListUserOrganizationResult.h"
 #include "model/TransferPipelineOwnerRequest.h"
 #include "model/TransferPipelineOwnerResult.h"
+#include "model/UpdateCommonGroupRequest.h"
+#include "model/UpdateCommonGroupResult.h"
 #include "model/UpdateDevopsProjectRequest.h"
 #include "model/UpdateDevopsProjectResult.h"
 #include "model/UpdateDevopsProjectSprintRequest.h"
@@ -134,6 +154,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckAliyunAccountExistsResult> CheckAliyunAccountExistsOutcome;
 			typedef std::future<CheckAliyunAccountExistsOutcome> CheckAliyunAccountExistsOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::CheckAliyunAccountExistsRequest&, const CheckAliyunAccountExistsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAliyunAccountExistsAsyncHandler;
+			typedef Outcome<Error, Model::CreateCommonGroupResult> CreateCommonGroupOutcome;
+			typedef std::future<CreateCommonGroupOutcome> CreateCommonGroupOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::CreateCommonGroupRequest&, const CreateCommonGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommonGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateCredentialResult> CreateCredentialOutcome;
 			typedef std::future<CreateCredentialOutcome> CreateCredentialOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::CreateCredentialRequest&, const CreateCredentialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCredentialAsyncHandler;
@@ -155,6 +178,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateServiceConnectionResult> CreateServiceConnectionOutcome;
 			typedef std::future<CreateServiceConnectionOutcome> CreateServiceConnectionOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::CreateServiceConnectionRequest&, const CreateServiceConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceConnectionAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCommonGroupResult> DeleteCommonGroupOutcome;
+			typedef std::future<DeleteCommonGroupOutcome> DeleteCommonGroupOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::DeleteCommonGroupRequest&, const DeleteCommonGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCommonGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDevopsOrganizationMembersResult> DeleteDevopsOrganizationMembersOutcome;
 			typedef std::future<DeleteDevopsOrganizationMembersOutcome> DeleteDevopsOrganizationMembersOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::DeleteDevopsOrganizationMembersRequest&, const DeleteDevopsOrganizationMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevopsOrganizationMembersAsyncHandler;
@@ -209,9 +235,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPipleineLatestInstanceStatusResult> GetPipleineLatestInstanceStatusOutcome;
 			typedef std::future<GetPipleineLatestInstanceStatusOutcome> GetPipleineLatestInstanceStatusOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::GetPipleineLatestInstanceStatusRequest&, const GetPipleineLatestInstanceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPipleineLatestInstanceStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetProjectOptionResult> GetProjectOptionOutcome;
+			typedef std::future<GetProjectOptionOutcome> GetProjectOptionOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::GetProjectOptionRequest&, const GetProjectOptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectOptionAsyncHandler;
+			typedef Outcome<Error, Model::GetTaskDetailActivityResult> GetTaskDetailActivityOutcome;
+			typedef std::future<GetTaskDetailActivityOutcome> GetTaskDetailActivityOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::GetTaskDetailActivityRequest&, const GetTaskDetailActivityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskDetailActivityAsyncHandler;
+			typedef Outcome<Error, Model::GetTaskDetailBaseResult> GetTaskDetailBaseOutcome;
+			typedef std::future<GetTaskDetailBaseOutcome> GetTaskDetailBaseOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::GetTaskDetailBaseRequest&, const GetTaskDetailBaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskDetailBaseAsyncHandler;
+			typedef Outcome<Error, Model::GetTaskListFilterResult> GetTaskListFilterOutcome;
+			typedef std::future<GetTaskListFilterOutcome> GetTaskListFilterOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::GetTaskListFilterRequest&, const GetTaskListFilterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskListFilterAsyncHandler;
 			typedef Outcome<Error, Model::GetUserByAliyunUidResult> GetUserByAliyunUidOutcome;
 			typedef std::future<GetUserByAliyunUidOutcome> GetUserByAliyunUidOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::GetUserByAliyunUidRequest&, const GetUserByAliyunUidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserByAliyunUidAsyncHandler;
+			typedef Outcome<Error, Model::GetUserNameResult> GetUserNameOutcome;
+			typedef std::future<GetUserNameOutcome> GetUserNameOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::GetUserNameRequest&, const GetUserNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserNameAsyncHandler;
 			typedef Outcome<Error, Model::InsertDevopsUserResult> InsertDevopsUserOutcome;
 			typedef std::future<InsertDevopsUserOutcome> InsertDevopsUserOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::InsertDevopsUserRequest&, const InsertDevopsUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertDevopsUserAsyncHandler;
@@ -221,6 +262,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InsertProjectMembersResult> InsertProjectMembersOutcome;
 			typedef std::future<InsertProjectMembersOutcome> InsertProjectMembersOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::InsertProjectMembersRequest&, const InsertProjectMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertProjectMembersAsyncHandler;
+			typedef Outcome<Error, Model::ListCommonGroupResult> ListCommonGroupOutcome;
+			typedef std::future<ListCommonGroupOutcome> ListCommonGroupOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::ListCommonGroupRequest&, const ListCommonGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCommonGroupAsyncHandler;
 			typedef Outcome<Error, Model::ListCredentialsResult> ListCredentialsOutcome;
 			typedef std::future<ListCredentialsOutcome> ListCredentialsOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListCredentialsRequest&, const ListCredentialsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCredentialsAsyncHandler;
@@ -248,12 +292,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListServiceConnectionsResult> ListServiceConnectionsOutcome;
 			typedef std::future<ListServiceConnectionsOutcome> ListServiceConnectionsOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListServiceConnectionsRequest&, const ListServiceConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceConnectionsAsyncHandler;
+			typedef Outcome<Error, Model::ListSmartGroupResult> ListSmartGroupOutcome;
+			typedef std::future<ListSmartGroupOutcome> ListSmartGroupOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::ListSmartGroupRequest&, const ListSmartGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSmartGroupAsyncHandler;
 			typedef Outcome<Error, Model::ListUserOrganizationResult> ListUserOrganizationOutcome;
 			typedef std::future<ListUserOrganizationOutcome> ListUserOrganizationOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListUserOrganizationRequest&, const ListUserOrganizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserOrganizationAsyncHandler;
 			typedef Outcome<Error, Model::TransferPipelineOwnerResult> TransferPipelineOwnerOutcome;
 			typedef std::future<TransferPipelineOwnerOutcome> TransferPipelineOwnerOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::TransferPipelineOwnerRequest&, const TransferPipelineOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferPipelineOwnerAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCommonGroupResult> UpdateCommonGroupOutcome;
+			typedef std::future<UpdateCommonGroupOutcome> UpdateCommonGroupOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::UpdateCommonGroupRequest&, const UpdateCommonGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCommonGroupAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDevopsProjectResult> UpdateDevopsProjectOutcome;
 			typedef std::future<UpdateDevopsProjectOutcome> UpdateDevopsProjectOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::UpdateDevopsProjectRequest&, const UpdateDevopsProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevopsProjectAsyncHandler;
@@ -280,6 +330,9 @@ namespace AlibabaCloud
 			CheckAliyunAccountExistsOutcome checkAliyunAccountExists(const Model::CheckAliyunAccountExistsRequest &request)const;
 			void checkAliyunAccountExistsAsync(const Model::CheckAliyunAccountExistsRequest& request, const CheckAliyunAccountExistsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckAliyunAccountExistsOutcomeCallable checkAliyunAccountExistsCallable(const Model::CheckAliyunAccountExistsRequest& request) const;
+			CreateCommonGroupOutcome createCommonGroup(const Model::CreateCommonGroupRequest &request)const;
+			void createCommonGroupAsync(const Model::CreateCommonGroupRequest& request, const CreateCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCommonGroupOutcomeCallable createCommonGroupCallable(const Model::CreateCommonGroupRequest& request) const;
 			CreateCredentialOutcome createCredential(const Model::CreateCredentialRequest &request)const;
 			void createCredentialAsync(const Model::CreateCredentialRequest& request, const CreateCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCredentialOutcomeCallable createCredentialCallable(const Model::CreateCredentialRequest& request) const;
@@ -301,6 +354,9 @@ namespace AlibabaCloud
 			CreateServiceConnectionOutcome createServiceConnection(const Model::CreateServiceConnectionRequest &request)const;
 			void createServiceConnectionAsync(const Model::CreateServiceConnectionRequest& request, const CreateServiceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateServiceConnectionOutcomeCallable createServiceConnectionCallable(const Model::CreateServiceConnectionRequest& request) const;
+			DeleteCommonGroupOutcome deleteCommonGroup(const Model::DeleteCommonGroupRequest &request)const;
+			void deleteCommonGroupAsync(const Model::DeleteCommonGroupRequest& request, const DeleteCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCommonGroupOutcomeCallable deleteCommonGroupCallable(const Model::DeleteCommonGroupRequest& request) const;
 			DeleteDevopsOrganizationMembersOutcome deleteDevopsOrganizationMembers(const Model::DeleteDevopsOrganizationMembersRequest &request)const;
 			void deleteDevopsOrganizationMembersAsync(const Model::DeleteDevopsOrganizationMembersRequest& request, const DeleteDevopsOrganizationMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDevopsOrganizationMembersOutcomeCallable deleteDevopsOrganizationMembersCallable(const Model::DeleteDevopsOrganizationMembersRequest& request) const;
@@ -355,9 +411,24 @@ namespace AlibabaCloud
 			GetPipleineLatestInstanceStatusOutcome getPipleineLatestInstanceStatus(const Model::GetPipleineLatestInstanceStatusRequest &request)const;
 			void getPipleineLatestInstanceStatusAsync(const Model::GetPipleineLatestInstanceStatusRequest& request, const GetPipleineLatestInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPipleineLatestInstanceStatusOutcomeCallable getPipleineLatestInstanceStatusCallable(const Model::GetPipleineLatestInstanceStatusRequest& request) const;
+			GetProjectOptionOutcome getProjectOption(const Model::GetProjectOptionRequest &request)const;
+			void getProjectOptionAsync(const Model::GetProjectOptionRequest& request, const GetProjectOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetProjectOptionOutcomeCallable getProjectOptionCallable(const Model::GetProjectOptionRequest& request) const;
+			GetTaskDetailActivityOutcome getTaskDetailActivity(const Model::GetTaskDetailActivityRequest &request)const;
+			void getTaskDetailActivityAsync(const Model::GetTaskDetailActivityRequest& request, const GetTaskDetailActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTaskDetailActivityOutcomeCallable getTaskDetailActivityCallable(const Model::GetTaskDetailActivityRequest& request) const;
+			GetTaskDetailBaseOutcome getTaskDetailBase(const Model::GetTaskDetailBaseRequest &request)const;
+			void getTaskDetailBaseAsync(const Model::GetTaskDetailBaseRequest& request, const GetTaskDetailBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTaskDetailBaseOutcomeCallable getTaskDetailBaseCallable(const Model::GetTaskDetailBaseRequest& request) const;
+			GetTaskListFilterOutcome getTaskListFilter(const Model::GetTaskListFilterRequest &request)const;
+			void getTaskListFilterAsync(const Model::GetTaskListFilterRequest& request, const GetTaskListFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTaskListFilterOutcomeCallable getTaskListFilterCallable(const Model::GetTaskListFilterRequest& request) const;
 			GetUserByAliyunUidOutcome getUserByAliyunUid(const Model::GetUserByAliyunUidRequest &request)const;
 			void getUserByAliyunUidAsync(const Model::GetUserByAliyunUidRequest& request, const GetUserByAliyunUidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserByAliyunUidOutcomeCallable getUserByAliyunUidCallable(const Model::GetUserByAliyunUidRequest& request) const;
+			GetUserNameOutcome getUserName(const Model::GetUserNameRequest &request)const;
+			void getUserNameAsync(const Model::GetUserNameRequest& request, const GetUserNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserNameOutcomeCallable getUserNameCallable(const Model::GetUserNameRequest& request) const;
 			InsertDevopsUserOutcome insertDevopsUser(const Model::InsertDevopsUserRequest &request)const;
 			void insertDevopsUserAsync(const Model::InsertDevopsUserRequest& request, const InsertDevopsUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InsertDevopsUserOutcomeCallable insertDevopsUserCallable(const Model::InsertDevopsUserRequest& request) const;
@@ -367,6 +438,9 @@ namespace AlibabaCloud
 			InsertProjectMembersOutcome insertProjectMembers(const Model::InsertProjectMembersRequest &request)const;
 			void insertProjectMembersAsync(const Model::InsertProjectMembersRequest& request, const InsertProjectMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InsertProjectMembersOutcomeCallable insertProjectMembersCallable(const Model::InsertProjectMembersRequest& request) const;
+			ListCommonGroupOutcome listCommonGroup(const Model::ListCommonGroupRequest &request)const;
+			void listCommonGroupAsync(const Model::ListCommonGroupRequest& request, const ListCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCommonGroupOutcomeCallable listCommonGroupCallable(const Model::ListCommonGroupRequest& request) const;
 			ListCredentialsOutcome listCredentials(const Model::ListCredentialsRequest &request)const;
 			void listCredentialsAsync(const Model::ListCredentialsRequest& request, const ListCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCredentialsOutcomeCallable listCredentialsCallable(const Model::ListCredentialsRequest& request) const;
@@ -394,12 +468,18 @@ namespace AlibabaCloud
 			ListServiceConnectionsOutcome listServiceConnections(const Model::ListServiceConnectionsRequest &request)const;
 			void listServiceConnectionsAsync(const Model::ListServiceConnectionsRequest& request, const ListServiceConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListServiceConnectionsOutcomeCallable listServiceConnectionsCallable(const Model::ListServiceConnectionsRequest& request) const;
+			ListSmartGroupOutcome listSmartGroup(const Model::ListSmartGroupRequest &request)const;
+			void listSmartGroupAsync(const Model::ListSmartGroupRequest& request, const ListSmartGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSmartGroupOutcomeCallable listSmartGroupCallable(const Model::ListSmartGroupRequest& request) const;
 			ListUserOrganizationOutcome listUserOrganization(const Model::ListUserOrganizationRequest &request)const;
 			void listUserOrganizationAsync(const Model::ListUserOrganizationRequest& request, const ListUserOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserOrganizationOutcomeCallable listUserOrganizationCallable(const Model::ListUserOrganizationRequest& request) const;
 			TransferPipelineOwnerOutcome transferPipelineOwner(const Model::TransferPipelineOwnerRequest &request)const;
 			void transferPipelineOwnerAsync(const Model::TransferPipelineOwnerRequest& request, const TransferPipelineOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransferPipelineOwnerOutcomeCallable transferPipelineOwnerCallable(const Model::TransferPipelineOwnerRequest& request) const;
+			UpdateCommonGroupOutcome updateCommonGroup(const Model::UpdateCommonGroupRequest &request)const;
+			void updateCommonGroupAsync(const Model::UpdateCommonGroupRequest& request, const UpdateCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCommonGroupOutcomeCallable updateCommonGroupCallable(const Model::UpdateCommonGroupRequest& request) const;
 			UpdateDevopsProjectOutcome updateDevopsProject(const Model::UpdateDevopsProjectRequest &request)const;
 			void updateDevopsProjectAsync(const Model::UpdateDevopsProjectRequest& request, const UpdateDevopsProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDevopsProjectOutcomeCallable updateDevopsProjectCallable(const Model::UpdateDevopsProjectRequest& request) const;

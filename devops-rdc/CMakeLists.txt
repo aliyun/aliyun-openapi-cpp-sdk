@@ -27,6 +27,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/CancelPipelineResult.h
 	include/alibabacloud/devops-rdc/model/CheckAliyunAccountExistsRequest.h
 	include/alibabacloud/devops-rdc/model/CheckAliyunAccountExistsResult.h
+	include/alibabacloud/devops-rdc/model/CreateCommonGroupRequest.h
+	include/alibabacloud/devops-rdc/model/CreateCommonGroupResult.h
 	include/alibabacloud/devops-rdc/model/CreateCredentialRequest.h
 	include/alibabacloud/devops-rdc/model/CreateCredentialResult.h
 	include/alibabacloud/devops-rdc/model/CreateDevopsOrganizationRequest.h
@@ -41,6 +43,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/CreatePipelineResult.h
 	include/alibabacloud/devops-rdc/model/CreateServiceConnectionRequest.h
 	include/alibabacloud/devops-rdc/model/CreateServiceConnectionResult.h
+	include/alibabacloud/devops-rdc/model/DeleteCommonGroupRequest.h
+	include/alibabacloud/devops-rdc/model/DeleteCommonGroupResult.h
 	include/alibabacloud/devops-rdc/model/DeleteDevopsOrganizationMembersRequest.h
 	include/alibabacloud/devops-rdc/model/DeleteDevopsOrganizationMembersResult.h
 	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectRequest.h
@@ -77,14 +81,26 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/GetPipelineLogResult.h
 	include/alibabacloud/devops-rdc/model/GetPipleineLatestInstanceStatusRequest.h
 	include/alibabacloud/devops-rdc/model/GetPipleineLatestInstanceStatusResult.h
+	include/alibabacloud/devops-rdc/model/GetProjectOptionRequest.h
+	include/alibabacloud/devops-rdc/model/GetProjectOptionResult.h
+	include/alibabacloud/devops-rdc/model/GetTaskDetailActivityRequest.h
+	include/alibabacloud/devops-rdc/model/GetTaskDetailActivityResult.h
+	include/alibabacloud/devops-rdc/model/GetTaskDetailBaseRequest.h
+	include/alibabacloud/devops-rdc/model/GetTaskDetailBaseResult.h
+	include/alibabacloud/devops-rdc/model/GetTaskListFilterRequest.h
+	include/alibabacloud/devops-rdc/model/GetTaskListFilterResult.h
 	include/alibabacloud/devops-rdc/model/GetUserByAliyunUidRequest.h
 	include/alibabacloud/devops-rdc/model/GetUserByAliyunUidResult.h
+	include/alibabacloud/devops-rdc/model/GetUserNameRequest.h
+	include/alibabacloud/devops-rdc/model/GetUserNameResult.h
 	include/alibabacloud/devops-rdc/model/InsertDevopsUserRequest.h
 	include/alibabacloud/devops-rdc/model/InsertDevopsUserResult.h
 	include/alibabacloud/devops-rdc/model/InsertPipelineMemberRequest.h
 	include/alibabacloud/devops-rdc/model/InsertPipelineMemberResult.h
 	include/alibabacloud/devops-rdc/model/InsertProjectMembersRequest.h
 	include/alibabacloud/devops-rdc/model/InsertProjectMembersResult.h
+	include/alibabacloud/devops-rdc/model/ListCommonGroupRequest.h
+	include/alibabacloud/devops-rdc/model/ListCommonGroupResult.h
 	include/alibabacloud/devops-rdc/model/ListCredentialsRequest.h
 	include/alibabacloud/devops-rdc/model/ListCredentialsResult.h
 	include/alibabacloud/devops-rdc/model/ListDevopsProjectSprintsRequest.h
@@ -103,10 +119,14 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/ListPipelinesResult.h
 	include/alibabacloud/devops-rdc/model/ListServiceConnectionsRequest.h
 	include/alibabacloud/devops-rdc/model/ListServiceConnectionsResult.h
+	include/alibabacloud/devops-rdc/model/ListSmartGroupRequest.h
+	include/alibabacloud/devops-rdc/model/ListSmartGroupResult.h
 	include/alibabacloud/devops-rdc/model/ListUserOrganizationRequest.h
 	include/alibabacloud/devops-rdc/model/ListUserOrganizationResult.h
 	include/alibabacloud/devops-rdc/model/TransferPipelineOwnerRequest.h
 	include/alibabacloud/devops-rdc/model/TransferPipelineOwnerResult.h
+	include/alibabacloud/devops-rdc/model/UpdateCommonGroupRequest.h
+	include/alibabacloud/devops-rdc/model/UpdateCommonGroupResult.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectRequest.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectResult.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectSprintRequest.h
@@ -124,6 +144,8 @@ set(devops-rdc_src
 	src/model/CancelPipelineResult.cc
 	src/model/CheckAliyunAccountExistsRequest.cc
 	src/model/CheckAliyunAccountExistsResult.cc
+	src/model/CreateCommonGroupRequest.cc
+	src/model/CreateCommonGroupResult.cc
 	src/model/CreateCredentialRequest.cc
 	src/model/CreateCredentialResult.cc
 	src/model/CreateDevopsOrganizationRequest.cc
@@ -138,6 +160,8 @@ set(devops-rdc_src
 	src/model/CreatePipelineResult.cc
 	src/model/CreateServiceConnectionRequest.cc
 	src/model/CreateServiceConnectionResult.cc
+	src/model/DeleteCommonGroupRequest.cc
+	src/model/DeleteCommonGroupResult.cc
 	src/model/DeleteDevopsOrganizationMembersRequest.cc
 	src/model/DeleteDevopsOrganizationMembersResult.cc
 	src/model/DeleteDevopsProjectRequest.cc
@@ -174,14 +198,26 @@ set(devops-rdc_src
 	src/model/GetPipelineLogResult.cc
 	src/model/GetPipleineLatestInstanceStatusRequest.cc
 	src/model/GetPipleineLatestInstanceStatusResult.cc
+	src/model/GetProjectOptionRequest.cc
+	src/model/GetProjectOptionResult.cc
+	src/model/GetTaskDetailActivityRequest.cc
+	src/model/GetTaskDetailActivityResult.cc
+	src/model/GetTaskDetailBaseRequest.cc
+	src/model/GetTaskDetailBaseResult.cc
+	src/model/GetTaskListFilterRequest.cc
+	src/model/GetTaskListFilterResult.cc
 	src/model/GetUserByAliyunUidRequest.cc
 	src/model/GetUserByAliyunUidResult.cc
+	src/model/GetUserNameRequest.cc
+	src/model/GetUserNameResult.cc
 	src/model/InsertDevopsUserRequest.cc
 	src/model/InsertDevopsUserResult.cc
 	src/model/InsertPipelineMemberRequest.cc
 	src/model/InsertPipelineMemberResult.cc
 	src/model/InsertProjectMembersRequest.cc
 	src/model/InsertProjectMembersResult.cc
+	src/model/ListCommonGroupRequest.cc
+	src/model/ListCommonGroupResult.cc
 	src/model/ListCredentialsRequest.cc
 	src/model/ListCredentialsResult.cc
 	src/model/ListDevopsProjectSprintsRequest.cc
@@ -200,10 +236,14 @@ set(devops-rdc_src
 	src/model/ListPipelinesResult.cc
 	src/model/ListServiceConnectionsRequest.cc
 	src/model/ListServiceConnectionsResult.cc
+	src/model/ListSmartGroupRequest.cc
+	src/model/ListSmartGroupResult.cc
 	src/model/ListUserOrganizationRequest.cc
 	src/model/ListUserOrganizationResult.cc
 	src/model/TransferPipelineOwnerRequest.cc
 	src/model/TransferPipelineOwnerResult.cc
+	src/model/UpdateCommonGroupRequest.cc
+	src/model/UpdateCommonGroupResult.cc
 	src/model/UpdateDevopsProjectRequest.cc
 	src/model/UpdateDevopsProjectResult.cc
 	src/model/UpdateDevopsProjectSprintRequest.cc

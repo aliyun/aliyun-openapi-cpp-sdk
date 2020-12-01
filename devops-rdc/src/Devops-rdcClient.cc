@@ -159,6 +159,42 @@ Devops_rdcClient::CheckAliyunAccountExistsOutcomeCallable Devops_rdcClient::chec
 	return task->get_future();
 }
 
+Devops_rdcClient::CreateCommonGroupOutcome Devops_rdcClient::createCommonGroup(const CreateCommonGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCommonGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCommonGroupOutcome(CreateCommonGroupResult(outcome.result()));
+	else
+		return CreateCommonGroupOutcome(outcome.error());
+}
+
+void Devops_rdcClient::createCommonGroupAsync(const CreateCommonGroupRequest& request, const CreateCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCommonGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::CreateCommonGroupOutcomeCallable Devops_rdcClient::createCommonGroupCallable(const CreateCommonGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCommonGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createCommonGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::CreateCredentialOutcome Devops_rdcClient::createCredential(const CreateCredentialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ Devops_rdcClient::CreateServiceConnectionOutcomeCallable Devops_rdcClient::creat
 			[this, request]()
 			{
 			return this->createServiceConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::DeleteCommonGroupOutcome Devops_rdcClient::deleteCommonGroup(const DeleteCommonGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCommonGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCommonGroupOutcome(DeleteCommonGroupResult(outcome.result()));
+	else
+		return DeleteCommonGroupOutcome(outcome.error());
+}
+
+void Devops_rdcClient::deleteCommonGroupAsync(const DeleteCommonGroupRequest& request, const DeleteCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCommonGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::DeleteCommonGroupOutcomeCallable Devops_rdcClient::deleteCommonGroupCallable(const DeleteCommonGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCommonGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCommonGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1131,150 @@ Devops_rdcClient::GetPipleineLatestInstanceStatusOutcomeCallable Devops_rdcClien
 	return task->get_future();
 }
 
+Devops_rdcClient::GetProjectOptionOutcome Devops_rdcClient::getProjectOption(const GetProjectOptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetProjectOptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetProjectOptionOutcome(GetProjectOptionResult(outcome.result()));
+	else
+		return GetProjectOptionOutcome(outcome.error());
+}
+
+void Devops_rdcClient::getProjectOptionAsync(const GetProjectOptionRequest& request, const GetProjectOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getProjectOption(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::GetProjectOptionOutcomeCallable Devops_rdcClient::getProjectOptionCallable(const GetProjectOptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetProjectOptionOutcome()>>(
+			[this, request]()
+			{
+			return this->getProjectOption(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::GetTaskDetailActivityOutcome Devops_rdcClient::getTaskDetailActivity(const GetTaskDetailActivityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTaskDetailActivityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTaskDetailActivityOutcome(GetTaskDetailActivityResult(outcome.result()));
+	else
+		return GetTaskDetailActivityOutcome(outcome.error());
+}
+
+void Devops_rdcClient::getTaskDetailActivityAsync(const GetTaskDetailActivityRequest& request, const GetTaskDetailActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTaskDetailActivity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::GetTaskDetailActivityOutcomeCallable Devops_rdcClient::getTaskDetailActivityCallable(const GetTaskDetailActivityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTaskDetailActivityOutcome()>>(
+			[this, request]()
+			{
+			return this->getTaskDetailActivity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::GetTaskDetailBaseOutcome Devops_rdcClient::getTaskDetailBase(const GetTaskDetailBaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTaskDetailBaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTaskDetailBaseOutcome(GetTaskDetailBaseResult(outcome.result()));
+	else
+		return GetTaskDetailBaseOutcome(outcome.error());
+}
+
+void Devops_rdcClient::getTaskDetailBaseAsync(const GetTaskDetailBaseRequest& request, const GetTaskDetailBaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTaskDetailBase(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::GetTaskDetailBaseOutcomeCallable Devops_rdcClient::getTaskDetailBaseCallable(const GetTaskDetailBaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTaskDetailBaseOutcome()>>(
+			[this, request]()
+			{
+			return this->getTaskDetailBase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::GetTaskListFilterOutcome Devops_rdcClient::getTaskListFilter(const GetTaskListFilterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTaskListFilterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTaskListFilterOutcome(GetTaskListFilterResult(outcome.result()));
+	else
+		return GetTaskListFilterOutcome(outcome.error());
+}
+
+void Devops_rdcClient::getTaskListFilterAsync(const GetTaskListFilterRequest& request, const GetTaskListFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTaskListFilter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::GetTaskListFilterOutcomeCallable Devops_rdcClient::getTaskListFilterCallable(const GetTaskListFilterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTaskListFilterOutcome()>>(
+			[this, request]()
+			{
+			return this->getTaskListFilter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::GetUserByAliyunUidOutcome Devops_rdcClient::getUserByAliyunUid(const GetUserByAliyunUidRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1305,42 @@ Devops_rdcClient::GetUserByAliyunUidOutcomeCallable Devops_rdcClient::getUserByA
 			[this, request]()
 			{
 			return this->getUserByAliyunUid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::GetUserNameOutcome Devops_rdcClient::getUserName(const GetUserNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserNameOutcome(GetUserNameResult(outcome.result()));
+	else
+		return GetUserNameOutcome(outcome.error());
+}
+
+void Devops_rdcClient::getUserNameAsync(const GetUserNameRequest& request, const GetUserNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::GetUserNameOutcomeCallable Devops_rdcClient::getUserNameCallable(const GetUserNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserNameOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1197,6 +1449,42 @@ Devops_rdcClient::InsertProjectMembersOutcomeCallable Devops_rdcClient::insertPr
 			[this, request]()
 			{
 			return this->insertProjectMembers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::ListCommonGroupOutcome Devops_rdcClient::listCommonGroup(const ListCommonGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCommonGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCommonGroupOutcome(ListCommonGroupResult(outcome.result()));
+	else
+		return ListCommonGroupOutcome(outcome.error());
+}
+
+void Devops_rdcClient::listCommonGroupAsync(const ListCommonGroupRequest& request, const ListCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCommonGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::ListCommonGroupOutcomeCallable Devops_rdcClient::listCommonGroupCallable(const ListCommonGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCommonGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listCommonGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1527,6 +1815,42 @@ Devops_rdcClient::ListServiceConnectionsOutcomeCallable Devops_rdcClient::listSe
 	return task->get_future();
 }
 
+Devops_rdcClient::ListSmartGroupOutcome Devops_rdcClient::listSmartGroup(const ListSmartGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSmartGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSmartGroupOutcome(ListSmartGroupResult(outcome.result()));
+	else
+		return ListSmartGroupOutcome(outcome.error());
+}
+
+void Devops_rdcClient::listSmartGroupAsync(const ListSmartGroupRequest& request, const ListSmartGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSmartGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::ListSmartGroupOutcomeCallable Devops_rdcClient::listSmartGroupCallable(const ListSmartGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSmartGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listSmartGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::ListUserOrganizationOutcome Devops_rdcClient::listUserOrganization(const ListUserOrganizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,6 +1917,42 @@ Devops_rdcClient::TransferPipelineOwnerOutcomeCallable Devops_rdcClient::transfe
 			[this, request]()
 			{
 			return this->transferPipelineOwner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::UpdateCommonGroupOutcome Devops_rdcClient::updateCommonGroup(const UpdateCommonGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCommonGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCommonGroupOutcome(UpdateCommonGroupResult(outcome.result()));
+	else
+		return UpdateCommonGroupOutcome(outcome.error());
+}
+
+void Devops_rdcClient::updateCommonGroupAsync(const UpdateCommonGroupRequest& request, const UpdateCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCommonGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::UpdateCommonGroupOutcomeCallable Devops_rdcClient::updateCommonGroupCallable(const UpdateCommonGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCommonGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCommonGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
