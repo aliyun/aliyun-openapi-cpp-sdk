@@ -53,14 +53,14 @@ void ListAgentEventsResult::parse(const std::string &payload)
 			agentEventListObject.event = valueAgentEventListAgentEvent["Event"].asString();
 		if(!valueAgentEventListAgentEvent["EventTime"].isNull())
 			agentEventListObject.eventTime = std::stol(valueAgentEventListAgentEvent["EventTime"].asString());
-		auto allSkillGroupIdsNode = allAgentEventListNode["SkillGroupIds"]["SkillGroup"];
-		for (auto allAgentEventListNodeSkillGroupIdsSkillGroup : allSkillGroupIdsNode)
+		auto allSkillGroupIdsNode = valueAgentEventListAgentEvent["SkillGroupIds"]["SkillGroup"];
+		for (auto valueAgentEventListAgentEventSkillGroupIdsSkillGroup : allSkillGroupIdsNode)
 		{
 			AgentEvent::SkillGroup skillGroupIdsObject;
-			if(!allAgentEventListNodeSkillGroupIdsSkillGroup["SkillGroupId"].isNull())
-				skillGroupIdsObject.skillGroupId = allAgentEventListNodeSkillGroupIdsSkillGroup["SkillGroupId"].asString();
-			if(!allAgentEventListNodeSkillGroupIdsSkillGroup["SkillGroupName"].isNull())
-				skillGroupIdsObject.skillGroupName = allAgentEventListNodeSkillGroupIdsSkillGroup["SkillGroupName"].asString();
+			if(!valueAgentEventListAgentEventSkillGroupIdsSkillGroup["SkillGroupId"].isNull())
+				skillGroupIdsObject.skillGroupId = valueAgentEventListAgentEventSkillGroupIdsSkillGroup["SkillGroupId"].asString();
+			if(!valueAgentEventListAgentEventSkillGroupIdsSkillGroup["SkillGroupName"].isNull())
+				skillGroupIdsObject.skillGroupName = valueAgentEventListAgentEventSkillGroupIdsSkillGroup["SkillGroupName"].asString();
 			agentEventListObject.skillGroupIds.push_back(skillGroupIdsObject);
 		}
 		agentEventList_.push_back(agentEventListObject);

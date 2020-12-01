@@ -67,26 +67,26 @@ void GetTaskListResult::parse(const std::string &payload)
 			tasksObject.brief = valueTasksTask["Brief"].asString();
 		if(!valueTasksTask["Duration"].isNull())
 			tasksObject.duration = std::stoi(valueTasksTask["Duration"].asString());
-		auto allConversationNode = allTasksNode["Conversation"]["ConversationDetail"];
-		for (auto allTasksNodeConversationConversationDetail : allConversationNode)
+		auto allConversationNode = valueTasksTask["Conversation"]["ConversationDetail"];
+		for (auto valueTasksTaskConversationConversationDetail : allConversationNode)
 		{
 			Task::ConversationDetail conversationObject;
-			if(!allTasksNodeConversationConversationDetail["Timestamp"].isNull())
-				conversationObject.timestamp = std::stol(allTasksNodeConversationConversationDetail["Timestamp"].asString());
-			if(!allTasksNodeConversationConversationDetail["Speaker"].isNull())
-				conversationObject.speaker = allTasksNodeConversationConversationDetail["Speaker"].asString();
-			if(!allTasksNodeConversationConversationDetail["Script"].isNull())
-				conversationObject.script = allTasksNodeConversationConversationDetail["Script"].asString();
-			auto allSummaryNode = allConversationNode["Summary"]["SummaryItem"];
-			for (auto allConversationNodeSummarySummaryItem : allSummaryNode)
+			if(!valueTasksTaskConversationConversationDetail["Timestamp"].isNull())
+				conversationObject.timestamp = std::stol(valueTasksTaskConversationConversationDetail["Timestamp"].asString());
+			if(!valueTasksTaskConversationConversationDetail["Speaker"].isNull())
+				conversationObject.speaker = valueTasksTaskConversationConversationDetail["Speaker"].asString();
+			if(!valueTasksTaskConversationConversationDetail["Script"].isNull())
+				conversationObject.script = valueTasksTaskConversationConversationDetail["Script"].asString();
+			auto allSummaryNode = valueTasksTaskConversationConversationDetail["Summary"]["SummaryItem"];
+			for (auto valueTasksTaskConversationConversationDetailSummarySummaryItem : allSummaryNode)
 			{
 				Task::ConversationDetail::SummaryItem summaryObject;
-				if(!allConversationNodeSummarySummaryItem["Category"].isNull())
-					summaryObject.category = allConversationNodeSummarySummaryItem["Category"].asString();
-				if(!allConversationNodeSummarySummaryItem["SummaryName"].isNull())
-					summaryObject.summaryName = allConversationNodeSummarySummaryItem["SummaryName"].asString();
-				if(!allConversationNodeSummarySummaryItem["Content"].isNull())
-					summaryObject.content = allConversationNodeSummarySummaryItem["Content"].asString();
+				if(!valueTasksTaskConversationConversationDetailSummarySummaryItem["Category"].isNull())
+					summaryObject.category = valueTasksTaskConversationConversationDetailSummarySummaryItem["Category"].asString();
+				if(!valueTasksTaskConversationConversationDetailSummarySummaryItem["SummaryName"].isNull())
+					summaryObject.summaryName = valueTasksTaskConversationConversationDetailSummarySummaryItem["SummaryName"].asString();
+				if(!valueTasksTaskConversationConversationDetailSummarySummaryItem["Content"].isNull())
+					summaryObject.content = valueTasksTaskConversationConversationDetailSummarySummaryItem["Content"].asString();
 				conversationObject.summary.push_back(summaryObject);
 			}
 			tasksObject.conversation.push_back(conversationObject);

@@ -117,6 +117,17 @@ void AddPhoneTagsRequest::setServiceTag(const std::string& serviceTag)
 	setParameter("ServiceTag", serviceTag);
 }
 
+std::string AddPhoneTagsRequest::getSipTag()const
+{
+	return sipTag_;
+}
+
+void AddPhoneTagsRequest::setSipTag(const std::string& sipTag)
+{
+	sipTag_ = sipTag;
+	setParameter("SipTag", sipTag);
+}
+
 std::string AddPhoneTagsRequest::getRegionNameCity()const
 {
 	return regionNameCity_;

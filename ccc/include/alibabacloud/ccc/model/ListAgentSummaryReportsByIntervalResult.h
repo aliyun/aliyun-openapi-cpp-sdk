@@ -48,8 +48,10 @@ namespace AlibabaCloud
 								long oneTransferCalls;
 								float satisfactionIndex;
 								long satisfactionSurveysResponded;
+								std::string lastLogOutTime;
 								long totalTalkTime;
 								long averageReadyTime;
+								std::string firstLogInTime;
 								long totalLoggedInTime;
 								long maxTalkTime;
 								long maxReadyTime;

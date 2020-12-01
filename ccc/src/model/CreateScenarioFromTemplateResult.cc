@@ -66,14 +66,14 @@ void CreateScenarioFromTemplateResult::parse(const std::string &payload)
 			surveyObject.round = std::stoi(scenarioNodeSurveysSurvey["Round"].asString());
 		if(!scenarioNodeSurveysSurvey["BeebotId"].isNull())
 			surveyObject.beebotId = scenarioNodeSurveysSurvey["BeebotId"].asString();
-		auto allIntentsNode = allSurveysNode["Intents"]["IntentNode"];
-		for (auto allSurveysNodeIntentsIntentNode : allIntentsNode)
+		auto allIntentsNode = scenarioNodeSurveysSurvey["Intents"]["IntentNode"];
+		for (auto scenarioNodeSurveysSurveyIntentsIntentNode : allIntentsNode)
 		{
 			Scenario::Survey::IntentNode intentsObject;
-			if(!allSurveysNodeIntentsIntentNode["NodeId"].isNull())
-				intentsObject.nodeId = allSurveysNodeIntentsIntentNode["NodeId"].asString();
-			if(!allSurveysNodeIntentsIntentNode["IntentId"].isNull())
-				intentsObject.intentId = allSurveysNodeIntentsIntentNode["IntentId"].asString();
+			if(!scenarioNodeSurveysSurveyIntentsIntentNode["NodeId"].isNull())
+				intentsObject.nodeId = scenarioNodeSurveysSurveyIntentsIntentNode["NodeId"].asString();
+			if(!scenarioNodeSurveysSurveyIntentsIntentNode["IntentId"].isNull())
+				intentsObject.intentId = scenarioNodeSurveysSurveyIntentsIntentNode["IntentId"].asString();
 			surveyObject.intents.push_back(intentsObject);
 		}
 		scenario_.surveys.push_back(surveyObject);

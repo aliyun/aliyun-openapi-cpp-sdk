@@ -58,28 +58,28 @@ void FindUsersResult::parse(const std::string &payload)
 			userObject.instanceId = usersNodeListUser["InstanceId"].asString();
 		if(!usersNodeListUser["PrivateOutboundNumberId"].isNull())
 			userObject.privateOutboundNumberId = usersNodeListUser["PrivateOutboundNumberId"].asString();
-		auto allRolesNode = allListNode["Roles"]["Role"];
-		for (auto allListNodeRolesRole : allRolesNode)
+		auto allRolesNode = usersNodeListUser["Roles"]["Role"];
+		for (auto usersNodeListUserRolesRole : allRolesNode)
 		{
 			Users::User::Role rolesObject;
-			if(!allListNodeRolesRole["RoleId"].isNull())
-				rolesObject.roleId = allListNodeRolesRole["RoleId"].asString();
-			if(!allListNodeRolesRole["InstanceId"].isNull())
-				rolesObject.instanceId = allListNodeRolesRole["InstanceId"].asString();
-			if(!allListNodeRolesRole["RoleName"].isNull())
-				rolesObject.roleName = allListNodeRolesRole["RoleName"].asString();
-			if(!allListNodeRolesRole["RoleDescription"].isNull())
-				rolesObject.roleDescription = allListNodeRolesRole["RoleDescription"].asString();
+			if(!usersNodeListUserRolesRole["RoleId"].isNull())
+				rolesObject.roleId = usersNodeListUserRolesRole["RoleId"].asString();
+			if(!usersNodeListUserRolesRole["InstanceId"].isNull())
+				rolesObject.instanceId = usersNodeListUserRolesRole["InstanceId"].asString();
+			if(!usersNodeListUserRolesRole["RoleName"].isNull())
+				rolesObject.roleName = usersNodeListUserRolesRole["RoleName"].asString();
+			if(!usersNodeListUserRolesRole["RoleDescription"].isNull())
+				rolesObject.roleDescription = usersNodeListUserRolesRole["RoleDescription"].asString();
 			userObject.roles.push_back(rolesObject);
 		}
-		auto allSkillLevelsNode = allListNode["SkillLevels"]["SkillLevel"];
-		for (auto allListNodeSkillLevelsSkillLevel : allSkillLevelsNode)
+		auto allSkillLevelsNode = usersNodeListUser["SkillLevels"]["SkillLevel"];
+		for (auto usersNodeListUserSkillLevelsSkillLevel : allSkillLevelsNode)
 		{
 			Users::User::SkillLevel skillLevelsObject;
-			if(!allListNodeSkillLevelsSkillLevel["SkillLevelId"].isNull())
-				skillLevelsObject.skillLevelId = allListNodeSkillLevelsSkillLevel["SkillLevelId"].asString();
-			if(!allListNodeSkillLevelsSkillLevel["Level"].isNull())
-				skillLevelsObject.level = std::stoi(allListNodeSkillLevelsSkillLevel["Level"].asString());
+			if(!usersNodeListUserSkillLevelsSkillLevel["SkillLevelId"].isNull())
+				skillLevelsObject.skillLevelId = usersNodeListUserSkillLevelsSkillLevel["SkillLevelId"].asString();
+			if(!usersNodeListUserSkillLevelsSkillLevel["Level"].isNull())
+				skillLevelsObject.level = std::stoi(usersNodeListUserSkillLevelsSkillLevel["Level"].asString());
 			auto skillNode = value["Skill"];
 			if(!skillNode["SkillGroupId"].isNull())
 				skillLevelsObject.skill.skillGroupId = skillNode["SkillGroupId"].asString();

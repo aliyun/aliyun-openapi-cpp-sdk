@@ -61,14 +61,14 @@ void AddBulkPhoneNumbersResult::parse(const std::string &payload)
 			phoneNumbersObject.usage = valuePhoneNumbersPhoneNumber["Usage"].asString();
 		if(!valuePhoneNumbersPhoneNumber["Trunks"].isNull())
 			phoneNumbersObject.trunks = std::stoi(valuePhoneNumbersPhoneNumber["Trunks"].asString());
-		auto allSkillGroupsNode = allPhoneNumbersNode["SkillGroups"]["SkillGroup"];
-		for (auto allPhoneNumbersNodeSkillGroupsSkillGroup : allSkillGroupsNode)
+		auto allSkillGroupsNode = valuePhoneNumbersPhoneNumber["SkillGroups"]["SkillGroup"];
+		for (auto valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup : allSkillGroupsNode)
 		{
 			PhoneNumber::SkillGroup skillGroupsObject;
-			if(!allPhoneNumbersNodeSkillGroupsSkillGroup["SkillGroupId"].isNull())
-				skillGroupsObject.skillGroupId = allPhoneNumbersNodeSkillGroupsSkillGroup["SkillGroupId"].asString();
-			if(!allPhoneNumbersNodeSkillGroupsSkillGroup["SkillGroupName"].isNull())
-				skillGroupsObject.skillGroupName = allPhoneNumbersNodeSkillGroupsSkillGroup["SkillGroupName"].asString();
+			if(!valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].isNull())
+				skillGroupsObject.skillGroupId = valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].asString();
+			if(!valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup["SkillGroupName"].isNull())
+				skillGroupsObject.skillGroupName = valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup["SkillGroupName"].asString();
 			phoneNumbersObject.skillGroups.push_back(skillGroupsObject);
 		}
 		auto contactFlowNode = value["ContactFlow"];

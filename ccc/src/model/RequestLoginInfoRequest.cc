@@ -38,6 +38,17 @@ void RequestLoginInfoRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string RequestLoginInfoRequest::getUserId()const
+{
+	return userId_;
+}
+
+void RequestLoginInfoRequest::setUserId(const std::string& userId)
+{
+	userId_ = userId;
+	setParameter("UserId", userId);
+}
+
 std::string RequestLoginInfoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

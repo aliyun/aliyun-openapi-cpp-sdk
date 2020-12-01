@@ -78,40 +78,40 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 			callDetailRecordObject.instanceId = callDetailRecordsNodeListCallDetailRecord["InstanceId"].asString();
 		if(!callDetailRecordsNodeListCallDetailRecord["SkillGroupIdList"].isNull())
 			callDetailRecordObject.skillGroupIdList = callDetailRecordsNodeListCallDetailRecord["SkillGroupIdList"].asString();
-		auto allAgentsNode = allListNode["Agents"]["CallDetailAgent"];
-		for (auto allListNodeAgentsCallDetailAgent : allAgentsNode)
+		auto allAgentsNode = callDetailRecordsNodeListCallDetailRecord["Agents"]["CallDetailAgent"];
+		for (auto callDetailRecordsNodeListCallDetailRecordAgentsCallDetailAgent : allAgentsNode)
 		{
 			CallDetailRecords::CallDetailRecord::CallDetailAgent agentsObject;
-			if(!allListNodeAgentsCallDetailAgent["AgentId"].isNull())
-				agentsObject.agentId = allListNodeAgentsCallDetailAgent["AgentId"].asString();
-			if(!allListNodeAgentsCallDetailAgent["Satisfaction"].isNull())
-				agentsObject.satisfaction = allListNodeAgentsCallDetailAgent["Satisfaction"].asString();
-			if(!allListNodeAgentsCallDetailAgent["Feedback"].isNull())
-				agentsObject.feedback = allListNodeAgentsCallDetailAgent["Feedback"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordAgentsCallDetailAgent["AgentId"].isNull())
+				agentsObject.agentId = callDetailRecordsNodeListCallDetailRecordAgentsCallDetailAgent["AgentId"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordAgentsCallDetailAgent["Satisfaction"].isNull())
+				agentsObject.satisfaction = callDetailRecordsNodeListCallDetailRecordAgentsCallDetailAgent["Satisfaction"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordAgentsCallDetailAgent["Feedback"].isNull())
+				agentsObject.feedback = callDetailRecordsNodeListCallDetailRecordAgentsCallDetailAgent["Feedback"].asString();
 			callDetailRecordObject.agents.push_back(agentsObject);
 		}
-		auto allRecordingsNode = allListNode["Recordings"]["Recording"];
-		for (auto allListNodeRecordingsRecording : allRecordingsNode)
+		auto allRecordingsNode = callDetailRecordsNodeListCallDetailRecord["Recordings"]["Recording"];
+		for (auto callDetailRecordsNodeListCallDetailRecordRecordingsRecording : allRecordingsNode)
 		{
 			CallDetailRecords::CallDetailRecord::Recording recordingsObject;
-			if(!allListNodeRecordingsRecording["ContactId"].isNull())
-				recordingsObject.contactId = allListNodeRecordingsRecording["ContactId"].asString();
-			if(!allListNodeRecordingsRecording["AgentId"].isNull())
-				recordingsObject.agentId = allListNodeRecordingsRecording["AgentId"].asString();
-			if(!allListNodeRecordingsRecording["AgentName"].isNull())
-				recordingsObject.agentName = allListNodeRecordingsRecording["AgentName"].asString();
-			if(!allListNodeRecordingsRecording["StartTime"].isNull())
-				recordingsObject.startTime = std::stol(allListNodeRecordingsRecording["StartTime"].asString());
-			if(!allListNodeRecordingsRecording["Duration"].isNull())
-				recordingsObject.duration = std::stoi(allListNodeRecordingsRecording["Duration"].asString());
-			if(!allListNodeRecordingsRecording["FileName"].isNull())
-				recordingsObject.fileName = allListNodeRecordingsRecording["FileName"].asString();
-			if(!allListNodeRecordingsRecording["FileDescription"].isNull())
-				recordingsObject.fileDescription = allListNodeRecordingsRecording["FileDescription"].asString();
-			if(!allListNodeRecordingsRecording["QualityCheckTid"].isNull())
-				recordingsObject.qualityCheckTid = allListNodeRecordingsRecording["QualityCheckTid"].asString();
-			if(!allListNodeRecordingsRecording["QualityCheckTaskId"].isNull())
-				recordingsObject.qualityCheckTaskId = allListNodeRecordingsRecording["QualityCheckTaskId"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["ContactId"].isNull())
+				recordingsObject.contactId = callDetailRecordsNodeListCallDetailRecordRecordingsRecording["ContactId"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["AgentId"].isNull())
+				recordingsObject.agentId = callDetailRecordsNodeListCallDetailRecordRecordingsRecording["AgentId"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["AgentName"].isNull())
+				recordingsObject.agentName = callDetailRecordsNodeListCallDetailRecordRecordingsRecording["AgentName"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["StartTime"].isNull())
+				recordingsObject.startTime = std::stol(callDetailRecordsNodeListCallDetailRecordRecordingsRecording["StartTime"].asString());
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["Duration"].isNull())
+				recordingsObject.duration = std::stoi(callDetailRecordsNodeListCallDetailRecordRecordingsRecording["Duration"].asString());
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["FileName"].isNull())
+				recordingsObject.fileName = callDetailRecordsNodeListCallDetailRecordRecordingsRecording["FileName"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["FileDescription"].isNull())
+				recordingsObject.fileDescription = callDetailRecordsNodeListCallDetailRecordRecordingsRecording["FileDescription"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["QualityCheckTid"].isNull())
+				recordingsObject.qualityCheckTid = callDetailRecordsNodeListCallDetailRecordRecordingsRecording["QualityCheckTid"].asString();
+			if(!callDetailRecordsNodeListCallDetailRecordRecordingsRecording["QualityCheckTaskId"].isNull())
+				recordingsObject.qualityCheckTaskId = callDetailRecordsNodeListCallDetailRecordRecordingsRecording["QualityCheckTaskId"].asString();
 			callDetailRecordObject.recordings.push_back(recordingsObject);
 		}
 		callDetailRecords_.list.push_back(callDetailRecordObject);

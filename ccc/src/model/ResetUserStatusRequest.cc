@@ -38,6 +38,19 @@ void ResetUserStatusRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::vector<long> ResetUserStatusRequest::getRamIdList()const
+{
+	return ramIdList_;
+}
+
+void ResetUserStatusRequest::setRamIdList(const std::vector<long>& ramIdList)
+{
+	ramIdList_ = ramIdList;
+	for(int dep1 = 0; dep1!= ramIdList.size(); dep1++) {
+		setParameter("RamIdList."+ std::to_string(dep1), std::to_string(ramIdList.at(dep1)));
+	}
+}
+
 std::string ResetUserStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

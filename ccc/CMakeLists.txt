@@ -83,6 +83,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/DialExResult.h
 	include/alibabacloud/ccc/model/DialogueRequest.h
 	include/alibabacloud/ccc/model/DialogueResult.h
+	include/alibabacloud/ccc/model/DisableTrunkProvidersRequest.h
+	include/alibabacloud/ccc/model/DisableTrunkProvidersResult.h
 	include/alibabacloud/ccc/model/DownloadAllTypeRecordingRequest.h
 	include/alibabacloud/ccc/model/DownloadAllTypeRecordingResult.h
 	include/alibabacloud/ccc/model/DownloadCabRecordingRequest.h
@@ -151,6 +153,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/GetTaskListResult.h
 	include/alibabacloud/ccc/model/GetUserRequest.h
 	include/alibabacloud/ccc/model/GetUserResult.h
+	include/alibabacloud/ccc/model/GetUserByExtensionRequest.h
+	include/alibabacloud/ccc/model/GetUserByExtensionResult.h
 	include/alibabacloud/ccc/model/InflightTaskTimeoutRequest.h
 	include/alibabacloud/ccc/model/InflightTaskTimeoutResult.h
 	include/alibabacloud/ccc/model/LaunchAppraiseRequest.h
@@ -161,6 +165,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListAgentDevicesResult.h
 	include/alibabacloud/ccc/model/ListAgentEventsRequest.h
 	include/alibabacloud/ccc/model/ListAgentEventsResult.h
+	include/alibabacloud/ccc/model/ListAgentStateLogsRequest.h
+	include/alibabacloud/ccc/model/ListAgentStateLogsResult.h
 	include/alibabacloud/ccc/model/ListAgentStatesRequest.h
 	include/alibabacloud/ccc/model/ListAgentStatesResult.h
 	include/alibabacloud/ccc/model/ListAgentSummaryReportsRequest.h
@@ -229,6 +235,12 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListSkillGroupsOfUserResult.h
 	include/alibabacloud/ccc/model/ListSurveysRequest.h
 	include/alibabacloud/ccc/model/ListSurveysResult.h
+	include/alibabacloud/ccc/model/ListTransferableSkillGroupsRequest.h
+	include/alibabacloud/ccc/model/ListTransferableSkillGroupsResult.h
+	include/alibabacloud/ccc/model/ListTrunkProvidersRequest.h
+	include/alibabacloud/ccc/model/ListTrunkProvidersResult.h
+	include/alibabacloud/ccc/model/ListTrunksOfSkillGroupRequest.h
+	include/alibabacloud/ccc/model/ListTrunksOfSkillGroupResult.h
 	include/alibabacloud/ccc/model/ListUnreachableContactsRequest.h
 	include/alibabacloud/ccc/model/ListUnreachableContactsResult.h
 	include/alibabacloud/ccc/model/ListUsersRequest.h
@@ -245,6 +257,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ModifyPhoneNumberResult.h
 	include/alibabacloud/ccc/model/ModifyPhoneTagsRequest.h
 	include/alibabacloud/ccc/model/ModifyPhoneTagsResult.h
+	include/alibabacloud/ccc/model/ModifyPrimaryTrunksOfSkillGroupRequest.h
+	include/alibabacloud/ccc/model/ModifyPrimaryTrunksOfSkillGroupResult.h
 	include/alibabacloud/ccc/model/ModifyPrivacyNumberCallDetailRequest.h
 	include/alibabacloud/ccc/model/ModifyPrivacyNumberCallDetailResult.h
 	include/alibabacloud/ccc/model/ModifyScenarioRequest.h
@@ -366,6 +380,8 @@ set(ccc_src
 	src/model/DialExResult.cc
 	src/model/DialogueRequest.cc
 	src/model/DialogueResult.cc
+	src/model/DisableTrunkProvidersRequest.cc
+	src/model/DisableTrunkProvidersResult.cc
 	src/model/DownloadAllTypeRecordingRequest.cc
 	src/model/DownloadAllTypeRecordingResult.cc
 	src/model/DownloadCabRecordingRequest.cc
@@ -434,6 +450,8 @@ set(ccc_src
 	src/model/GetTaskListResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/GetUserByExtensionRequest.cc
+	src/model/GetUserByExtensionResult.cc
 	src/model/InflightTaskTimeoutRequest.cc
 	src/model/InflightTaskTimeoutResult.cc
 	src/model/LaunchAppraiseRequest.cc
@@ -444,6 +462,8 @@ set(ccc_src
 	src/model/ListAgentDevicesResult.cc
 	src/model/ListAgentEventsRequest.cc
 	src/model/ListAgentEventsResult.cc
+	src/model/ListAgentStateLogsRequest.cc
+	src/model/ListAgentStateLogsResult.cc
 	src/model/ListAgentStatesRequest.cc
 	src/model/ListAgentStatesResult.cc
 	src/model/ListAgentSummaryReportsRequest.cc
@@ -512,6 +532,12 @@ set(ccc_src
 	src/model/ListSkillGroupsOfUserResult.cc
 	src/model/ListSurveysRequest.cc
 	src/model/ListSurveysResult.cc
+	src/model/ListTransferableSkillGroupsRequest.cc
+	src/model/ListTransferableSkillGroupsResult.cc
+	src/model/ListTrunkProvidersRequest.cc
+	src/model/ListTrunkProvidersResult.cc
+	src/model/ListTrunksOfSkillGroupRequest.cc
+	src/model/ListTrunksOfSkillGroupResult.cc
 	src/model/ListUnreachableContactsRequest.cc
 	src/model/ListUnreachableContactsResult.cc
 	src/model/ListUsersRequest.cc
@@ -528,6 +554,8 @@ set(ccc_src
 	src/model/ModifyPhoneNumberResult.cc
 	src/model/ModifyPhoneTagsRequest.cc
 	src/model/ModifyPhoneTagsResult.cc
+	src/model/ModifyPrimaryTrunksOfSkillGroupRequest.cc
+	src/model/ModifyPrimaryTrunksOfSkillGroupResult.cc
 	src/model/ModifyPrivacyNumberCallDetailRequest.cc
 	src/model/ModifyPrivacyNumberCallDetailResult.cc
 	src/model/ModifyScenarioRequest.cc

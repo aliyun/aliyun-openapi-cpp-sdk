@@ -49,16 +49,16 @@ void GetConversationListResult::parse(const std::string &payload)
 			conversationsObject.speaker = valueConversationsConversationDetail["Speaker"].asString();
 		if(!valueConversationsConversationDetail["Script"].isNull())
 			conversationsObject.script = valueConversationsConversationDetail["Script"].asString();
-		auto allSummaryNode = allConversationsNode["Summary"]["SummaryItem"];
-		for (auto allConversationsNodeSummarySummaryItem : allSummaryNode)
+		auto allSummaryNode = valueConversationsConversationDetail["Summary"]["SummaryItem"];
+		for (auto valueConversationsConversationDetailSummarySummaryItem : allSummaryNode)
 		{
 			ConversationDetail::SummaryItem summaryObject;
-			if(!allConversationsNodeSummarySummaryItem["Category"].isNull())
-				summaryObject.category = allConversationsNodeSummarySummaryItem["Category"].asString();
-			if(!allConversationsNodeSummarySummaryItem["SummaryName"].isNull())
-				summaryObject.summaryName = allConversationsNodeSummarySummaryItem["SummaryName"].asString();
-			if(!allConversationsNodeSummarySummaryItem["Content"].isNull())
-				summaryObject.content = allConversationsNodeSummarySummaryItem["Content"].asString();
+			if(!valueConversationsConversationDetailSummarySummaryItem["Category"].isNull())
+				summaryObject.category = valueConversationsConversationDetailSummarySummaryItem["Category"].asString();
+			if(!valueConversationsConversationDetailSummarySummaryItem["SummaryName"].isNull())
+				summaryObject.summaryName = valueConversationsConversationDetailSummarySummaryItem["SummaryName"].asString();
+			if(!valueConversationsConversationDetailSummarySummaryItem["Content"].isNull())
+				summaryObject.content = valueConversationsConversationDetailSummarySummaryItem["Content"].asString();
 			conversationsObject.summary.push_back(summaryObject);
 		}
 		conversations_.push_back(conversationsObject);

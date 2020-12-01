@@ -52,24 +52,24 @@ void ListAgentSummaryReportsByIntervalResult::parse(const std::string &payload)
 		PagedAgentSummaryReport::AgentTimeIntervalReport agentTimeIntervalReportObject;
 		if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReport["AgentId"].isNull())
 			agentTimeIntervalReportObject.agentId = pagedAgentSummaryReportNodeListAgentTimeIntervalReport["AgentId"].asString();
-		auto allIntervalListNode = allListNode["IntervalList"]["AgentSummaryReport"];
-		for (auto allListNodeIntervalListAgentSummaryReport : allIntervalListNode)
+		auto allIntervalListNode = pagedAgentSummaryReportNodeListAgentTimeIntervalReport["IntervalList"]["AgentSummaryReport"];
+		for (auto pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport : allIntervalListNode)
 		{
 			PagedAgentSummaryReport::AgentTimeIntervalReport::AgentSummaryReport intervalListObject;
-			if(!allListNodeIntervalListAgentSummaryReport["Timestamp"].isNull())
-				intervalListObject.timestamp = allListNodeIntervalListAgentSummaryReport["Timestamp"].asString();
-			if(!allListNodeIntervalListAgentSummaryReport["InstanceId"].isNull())
-				intervalListObject.instanceId = allListNodeIntervalListAgentSummaryReport["InstanceId"].asString();
-			if(!allListNodeIntervalListAgentSummaryReport["AgentId"].isNull())
-				intervalListObject.agentId = allListNodeIntervalListAgentSummaryReport["AgentId"].asString();
-			if(!allListNodeIntervalListAgentSummaryReport["LoginName"].isNull())
-				intervalListObject.loginName = allListNodeIntervalListAgentSummaryReport["LoginName"].asString();
-			if(!allListNodeIntervalListAgentSummaryReport["AgentName"].isNull())
-				intervalListObject.agentName = allListNodeIntervalListAgentSummaryReport["AgentName"].asString();
-			if(!allListNodeIntervalListAgentSummaryReport["SkillGroupIds"].isNull())
-				intervalListObject.skillGroupIds = allListNodeIntervalListAgentSummaryReport["SkillGroupIds"].asString();
-			if(!allListNodeIntervalListAgentSummaryReport["SkillGroupNames"].isNull())
-				intervalListObject.skillGroupNames = allListNodeIntervalListAgentSummaryReport["SkillGroupNames"].asString();
+			if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["Timestamp"].isNull())
+				intervalListObject.timestamp = pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["Timestamp"].asString();
+			if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["InstanceId"].isNull())
+				intervalListObject.instanceId = pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["InstanceId"].asString();
+			if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["AgentId"].isNull())
+				intervalListObject.agentId = pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["AgentId"].asString();
+			if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["LoginName"].isNull())
+				intervalListObject.loginName = pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["LoginName"].asString();
+			if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["AgentName"].isNull())
+				intervalListObject.agentName = pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["AgentName"].asString();
+			if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["SkillGroupIds"].isNull())
+				intervalListObject.skillGroupIds = pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["SkillGroupIds"].asString();
+			if(!pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["SkillGroupNames"].isNull())
+				intervalListObject.skillGroupNames = pagedAgentSummaryReportNodeListAgentTimeIntervalReportIntervalListAgentSummaryReport["SkillGroupNames"].asString();
 			auto overallNode = value["Overall"];
 			if(!overallNode["TotalCalls"].isNull())
 				intervalListObject.overall.totalCalls = std::stol(overallNode["TotalCalls"].asString());
@@ -105,6 +105,10 @@ void ListAgentSummaryReportsByIntervalResult::parse(const std::string &payload)
 				intervalListObject.overall.satisfactionSurveysResponded = std::stol(overallNode["SatisfactionSurveysResponded"].asString());
 			if(!overallNode["OneTransferCalls"].isNull())
 				intervalListObject.overall.oneTransferCalls = std::stol(overallNode["OneTransferCalls"].asString());
+			if(!overallNode["FirstLogInTime"].isNull())
+				intervalListObject.overall.firstLogInTime = overallNode["FirstLogInTime"].asString();
+			if(!overallNode["LastLogOutTime"].isNull())
+				intervalListObject.overall.lastLogOutTime = overallNode["LastLogOutTime"].asString();
 			auto inboundNode = value["Inbound"];
 			if(!inboundNode["CallsOffered"].isNull())
 				intervalListObject.inbound.callsOffered = std::stol(inboundNode["CallsOffered"].asString());

@@ -97,6 +97,10 @@ void ListAgentSummaryReportsResult::parse(const std::string &payload)
 			agentSummaryReportObject.overall.satisfactionSurveysResponded = std::stol(overallNode["SatisfactionSurveysResponded"].asString());
 		if(!overallNode["OneTransferCalls"].isNull())
 			agentSummaryReportObject.overall.oneTransferCalls = std::stol(overallNode["OneTransferCalls"].asString());
+		if(!overallNode["FirstLogInTime"].isNull())
+			agentSummaryReportObject.overall.firstLogInTime = overallNode["FirstLogInTime"].asString();
+		if(!overallNode["LastLogOutTime"].isNull())
+			agentSummaryReportObject.overall.lastLogOutTime = overallNode["LastLogOutTime"].asString();
 		auto inboundNode = value["Inbound"];
 		if(!inboundNode["CallsOffered"].isNull())
 			agentSummaryReportObject.inbound.callsOffered = std::stol(inboundNode["CallsOffered"].asString());

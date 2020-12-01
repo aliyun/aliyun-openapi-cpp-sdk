@@ -52,18 +52,18 @@ void ListSkillGroupSummaryReportsByIntervalResult::parse(const std::string &payl
 		PagedSkillGroupSummaryReport::SkillGroupTimeIntervalReport skillGroupTimeIntervalReportObject;
 		if(!pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReport["SkillGroupId"].isNull())
 			skillGroupTimeIntervalReportObject.skillGroupId = pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReport["SkillGroupId"].asString();
-		auto allIntervalListNode = allListNode["IntervalList"]["SkillGroupSummaryReport"];
-		for (auto allListNodeIntervalListSkillGroupSummaryReport : allIntervalListNode)
+		auto allIntervalListNode = pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReport["IntervalList"]["SkillGroupSummaryReport"];
+		for (auto pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport : allIntervalListNode)
 		{
 			PagedSkillGroupSummaryReport::SkillGroupTimeIntervalReport::SkillGroupSummaryReport intervalListObject;
-			if(!allListNodeIntervalListSkillGroupSummaryReport["Timestamp"].isNull())
-				intervalListObject.timestamp = allListNodeIntervalListSkillGroupSummaryReport["Timestamp"].asString();
-			if(!allListNodeIntervalListSkillGroupSummaryReport["InstanceId"].isNull())
-				intervalListObject.instanceId = allListNodeIntervalListSkillGroupSummaryReport["InstanceId"].asString();
-			if(!allListNodeIntervalListSkillGroupSummaryReport["SkillGroupId"].isNull())
-				intervalListObject.skillGroupId = allListNodeIntervalListSkillGroupSummaryReport["SkillGroupId"].asString();
-			if(!allListNodeIntervalListSkillGroupSummaryReport["SkillGroupName"].isNull())
-				intervalListObject.skillGroupName = allListNodeIntervalListSkillGroupSummaryReport["SkillGroupName"].asString();
+			if(!pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport["Timestamp"].isNull())
+				intervalListObject.timestamp = pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport["Timestamp"].asString();
+			if(!pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport["InstanceId"].isNull())
+				intervalListObject.instanceId = pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport["InstanceId"].asString();
+			if(!pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport["SkillGroupId"].isNull())
+				intervalListObject.skillGroupId = pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport["SkillGroupId"].asString();
+			if(!pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport["SkillGroupName"].isNull())
+				intervalListObject.skillGroupName = pagedSkillGroupSummaryReportNodeListSkillGroupTimeIntervalReportIntervalListSkillGroupSummaryReport["SkillGroupName"].asString();
 			auto overallNode = value["Overall"];
 			if(!overallNode["TotalCalls"].isNull())
 				intervalListObject.overall.totalCalls = std::stol(overallNode["TotalCalls"].asString());

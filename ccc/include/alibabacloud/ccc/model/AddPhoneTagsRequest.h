@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setPhoneNumberList(const std::vector<std::string>& phoneNumberList);
 				std::string getServiceTag()const;
 				void setServiceTag(const std::string& serviceTag);
+				std::string getSipTag()const;
+				void setSipTag(const std::string& sipTag);
 				std::string getRegionNameCity()const;
 				void setRegionNameCity(const std::string& regionNameCity);
 
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string provider_;
 				std::vector<std::string> phoneNumberList_;
 				std::string serviceTag_;
+				std::string sipTag_;
 				std::string regionNameCity_;
 
 			};

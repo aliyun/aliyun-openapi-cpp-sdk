@@ -53,42 +53,42 @@ void ListScenariosResult::parse(const std::string &payload)
 			scenariosObject.type = valueScenariosScenario["Type"].asString();
 		if(!valueScenariosScenario["IsTemplate"].isNull())
 			scenariosObject.isTemplate = valueScenariosScenario["IsTemplate"].asString() == "true";
-		auto allSurveysNode = allScenariosNode["Surveys"]["Survey"];
-		for (auto allScenariosNodeSurveysSurvey : allSurveysNode)
+		auto allSurveysNode = valueScenariosScenario["Surveys"]["Survey"];
+		for (auto valueScenariosScenarioSurveysSurvey : allSurveysNode)
 		{
 			Scenario::Survey surveysObject;
-			if(!allScenariosNodeSurveysSurvey["Id"].isNull())
-				surveysObject.id = allScenariosNodeSurveysSurvey["Id"].asString();
-			if(!allScenariosNodeSurveysSurvey["Name"].isNull())
-				surveysObject.name = allScenariosNodeSurveysSurvey["Name"].asString();
-			if(!allScenariosNodeSurveysSurvey["Description"].isNull())
-				surveysObject.description = allScenariosNodeSurveysSurvey["Description"].asString();
-			if(!allScenariosNodeSurveysSurvey["Role"].isNull())
-				surveysObject.role = allScenariosNodeSurveysSurvey["Role"].asString();
-			if(!allScenariosNodeSurveysSurvey["Round"].isNull())
-				surveysObject.round = std::stoi(allScenariosNodeSurveysSurvey["Round"].asString());
-			if(!allScenariosNodeSurveysSurvey["BeebotId"].isNull())
-				surveysObject.beebotId = allScenariosNodeSurveysSurvey["BeebotId"].asString();
-			auto allIntentsNode = allSurveysNode["Intents"]["IntentNode"];
-			for (auto allSurveysNodeIntentsIntentNode : allIntentsNode)
+			if(!valueScenariosScenarioSurveysSurvey["Id"].isNull())
+				surveysObject.id = valueScenariosScenarioSurveysSurvey["Id"].asString();
+			if(!valueScenariosScenarioSurveysSurvey["Name"].isNull())
+				surveysObject.name = valueScenariosScenarioSurveysSurvey["Name"].asString();
+			if(!valueScenariosScenarioSurveysSurvey["Description"].isNull())
+				surveysObject.description = valueScenariosScenarioSurveysSurvey["Description"].asString();
+			if(!valueScenariosScenarioSurveysSurvey["Role"].isNull())
+				surveysObject.role = valueScenariosScenarioSurveysSurvey["Role"].asString();
+			if(!valueScenariosScenarioSurveysSurvey["Round"].isNull())
+				surveysObject.round = std::stoi(valueScenariosScenarioSurveysSurvey["Round"].asString());
+			if(!valueScenariosScenarioSurveysSurvey["BeebotId"].isNull())
+				surveysObject.beebotId = valueScenariosScenarioSurveysSurvey["BeebotId"].asString();
+			auto allIntentsNode = valueScenariosScenarioSurveysSurvey["Intents"]["IntentNode"];
+			for (auto valueScenariosScenarioSurveysSurveyIntentsIntentNode : allIntentsNode)
 			{
 				Scenario::Survey::IntentNode intentsObject;
-				if(!allSurveysNodeIntentsIntentNode["NodeId"].isNull())
-					intentsObject.nodeId = allSurveysNodeIntentsIntentNode["NodeId"].asString();
-				if(!allSurveysNodeIntentsIntentNode["IntentId"].isNull())
-					intentsObject.intentId = allSurveysNodeIntentsIntentNode["IntentId"].asString();
+				if(!valueScenariosScenarioSurveysSurveyIntentsIntentNode["NodeId"].isNull())
+					intentsObject.nodeId = valueScenariosScenarioSurveysSurveyIntentsIntentNode["NodeId"].asString();
+				if(!valueScenariosScenarioSurveysSurveyIntentsIntentNode["IntentId"].isNull())
+					intentsObject.intentId = valueScenariosScenarioSurveysSurveyIntentsIntentNode["IntentId"].asString();
 				surveysObject.intents.push_back(intentsObject);
 			}
 			scenariosObject.surveys.push_back(surveysObject);
 		}
-		auto allVariablesNode = allScenariosNode["Variables"]["KeyValuePair"];
-		for (auto allScenariosNodeVariablesKeyValuePair : allVariablesNode)
+		auto allVariablesNode = valueScenariosScenario["Variables"]["KeyValuePair"];
+		for (auto valueScenariosScenarioVariablesKeyValuePair : allVariablesNode)
 		{
 			Scenario::KeyValuePair variablesObject;
-			if(!allScenariosNodeVariablesKeyValuePair["Key"].isNull())
-				variablesObject.key = allScenariosNodeVariablesKeyValuePair["Key"].asString();
-			if(!allScenariosNodeVariablesKeyValuePair["Value"].isNull())
-				variablesObject.value = allScenariosNodeVariablesKeyValuePair["Value"].asString();
+			if(!valueScenariosScenarioVariablesKeyValuePair["Key"].isNull())
+				variablesObject.key = valueScenariosScenarioVariablesKeyValuePair["Key"].asString();
+			if(!valueScenariosScenarioVariablesKeyValuePair["Value"].isNull())
+				variablesObject.value = valueScenariosScenarioVariablesKeyValuePair["Value"].asString();
 			scenariosObject.variables.push_back(variablesObject);
 		}
 		auto strategyNode = value["Strategy"];

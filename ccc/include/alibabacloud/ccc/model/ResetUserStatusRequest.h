@@ -37,11 +37,14 @@ namespace AlibabaCloud
 
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::vector<long> getRamIdList()const;
+				void setRamIdList(const std::vector<long>& ramIdList);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string instanceId_;
+				std::vector<long> ramIdList_;
 				std::string accessKeyId_;
 
 			};

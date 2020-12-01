@@ -58,14 +58,14 @@ void ListBasicStatisticsReportSubItemsResult::parse(const std::string &payload)
 			basicStatisticsReportSubItemObject.count = std::stoi(subItemsNodeListBasicStatisticsReportSubItem["Count"].asString());
 		if(!subItemsNodeListBasicStatisticsReportSubItem["Percentage"].isNull())
 			basicStatisticsReportSubItemObject.percentage = std::stoi(subItemsNodeListBasicStatisticsReportSubItem["Percentage"].asString());
-		auto allRowNode = allListNode["Row"]["KeyValuePair"];
-		for (auto allListNodeRowKeyValuePair : allRowNode)
+		auto allRowNode = subItemsNodeListBasicStatisticsReportSubItem["Row"]["KeyValuePair"];
+		for (auto subItemsNodeListBasicStatisticsReportSubItemRowKeyValuePair : allRowNode)
 		{
 			SubItems::BasicStatisticsReportSubItem::KeyValuePair rowObject;
-			if(!allListNodeRowKeyValuePair["Key"].isNull())
-				rowObject.key = allListNodeRowKeyValuePair["Key"].asString();
-			if(!allListNodeRowKeyValuePair["Value"].isNull())
-				rowObject.value = allListNodeRowKeyValuePair["Value"].asString();
+			if(!subItemsNodeListBasicStatisticsReportSubItemRowKeyValuePair["Key"].isNull())
+				rowObject.key = subItemsNodeListBasicStatisticsReportSubItemRowKeyValuePair["Key"].asString();
+			if(!subItemsNodeListBasicStatisticsReportSubItemRowKeyValuePair["Value"].isNull())
+				rowObject.value = subItemsNodeListBasicStatisticsReportSubItemRowKeyValuePair["Value"].asString();
 			basicStatisticsReportSubItemObject.row.push_back(rowObject);
 		}
 		subItems_.list.push_back(basicStatisticsReportSubItemObject);
