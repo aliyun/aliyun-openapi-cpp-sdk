@@ -30,6 +30,8 @@
 #include "model/AdjustVideoColorResult.h"
 #include "model/ChangeVideoSizeRequest.h"
 #include "model/ChangeVideoSizeResult.h"
+#include "model/EnhanceVideoQualityRequest.h"
+#include "model/EnhanceVideoQualityResult.h"
 #include "model/EraseVideoLogoRequest.h"
 #include "model/EraseVideoLogoResult.h"
 #include "model/EraseVideoSubtitlesRequest.h"
@@ -38,6 +40,8 @@
 #include "model/GenerateVideoResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
+#include "model/MergeVideoFaceRequest.h"
+#include "model/MergeVideoFaceResult.h"
 #include "model/SuperResolveVideoRequest.h"
 #include "model/SuperResolveVideoResult.h"
 
@@ -61,6 +65,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChangeVideoSizeResult> ChangeVideoSizeOutcome;
 			typedef std::future<ChangeVideoSizeOutcome> ChangeVideoSizeOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::ChangeVideoSizeRequest&, const ChangeVideoSizeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeVideoSizeAsyncHandler;
+			typedef Outcome<Error, Model::EnhanceVideoQualityResult> EnhanceVideoQualityOutcome;
+			typedef std::future<EnhanceVideoQualityOutcome> EnhanceVideoQualityOutcomeCallable;
+			typedef std::function<void(const VideoenhanClient*, const Model::EnhanceVideoQualityRequest&, const EnhanceVideoQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceVideoQualityAsyncHandler;
 			typedef Outcome<Error, Model::EraseVideoLogoResult> EraseVideoLogoOutcome;
 			typedef std::future<EraseVideoLogoOutcome> EraseVideoLogoOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::EraseVideoLogoRequest&, const EraseVideoLogoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EraseVideoLogoAsyncHandler;
@@ -73,6 +80,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
+			typedef Outcome<Error, Model::MergeVideoFaceResult> MergeVideoFaceOutcome;
+			typedef std::future<MergeVideoFaceOutcome> MergeVideoFaceOutcomeCallable;
+			typedef std::function<void(const VideoenhanClient*, const Model::MergeVideoFaceRequest&, const MergeVideoFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MergeVideoFaceAsyncHandler;
 			typedef Outcome<Error, Model::SuperResolveVideoResult> SuperResolveVideoOutcome;
 			typedef std::future<SuperResolveVideoOutcome> SuperResolveVideoOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::SuperResolveVideoRequest&, const SuperResolveVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuperResolveVideoAsyncHandler;
@@ -93,6 +103,9 @@ namespace AlibabaCloud
 			ChangeVideoSizeOutcome changeVideoSize(const Model::ChangeVideoSizeRequest &request)const;
 			void changeVideoSizeAsync(const Model::ChangeVideoSizeRequest& request, const ChangeVideoSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeVideoSizeOutcomeCallable changeVideoSizeCallable(const Model::ChangeVideoSizeRequest& request) const;
+			EnhanceVideoQualityOutcome enhanceVideoQuality(const Model::EnhanceVideoQualityRequest &request)const;
+			void enhanceVideoQualityAsync(const Model::EnhanceVideoQualityRequest& request, const EnhanceVideoQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnhanceVideoQualityOutcomeCallable enhanceVideoQualityCallable(const Model::EnhanceVideoQualityRequest& request) const;
 			EraseVideoLogoOutcome eraseVideoLogo(const Model::EraseVideoLogoRequest &request)const;
 			void eraseVideoLogoAsync(const Model::EraseVideoLogoRequest& request, const EraseVideoLogoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EraseVideoLogoOutcomeCallable eraseVideoLogoCallable(const Model::EraseVideoLogoRequest& request) const;
@@ -105,6 +118,9 @@ namespace AlibabaCloud
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
+			MergeVideoFaceOutcome mergeVideoFace(const Model::MergeVideoFaceRequest &request)const;
+			void mergeVideoFaceAsync(const Model::MergeVideoFaceRequest& request, const MergeVideoFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MergeVideoFaceOutcomeCallable mergeVideoFaceCallable(const Model::MergeVideoFaceRequest& request) const;
 			SuperResolveVideoOutcome superResolveVideo(const Model::SuperResolveVideoRequest &request)const;
 			void superResolveVideoAsync(const Model::SuperResolveVideoRequest& request, const SuperResolveVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SuperResolveVideoOutcomeCallable superResolveVideoCallable(const Model::SuperResolveVideoRequest& request) const;

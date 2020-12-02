@@ -29,6 +29,8 @@ set(videoenhan_public_header_model
 	include/alibabacloud/videoenhan/model/AdjustVideoColorResult.h
 	include/alibabacloud/videoenhan/model/ChangeVideoSizeRequest.h
 	include/alibabacloud/videoenhan/model/ChangeVideoSizeResult.h
+	include/alibabacloud/videoenhan/model/EnhanceVideoQualityRequest.h
+	include/alibabacloud/videoenhan/model/EnhanceVideoQualityResult.h
 	include/alibabacloud/videoenhan/model/EraseVideoLogoRequest.h
 	include/alibabacloud/videoenhan/model/EraseVideoLogoResult.h
 	include/alibabacloud/videoenhan/model/EraseVideoSubtitlesRequest.h
@@ -37,6 +39,8 @@ set(videoenhan_public_header_model
 	include/alibabacloud/videoenhan/model/GenerateVideoResult.h
 	include/alibabacloud/videoenhan/model/GetAsyncJobResultRequest.h
 	include/alibabacloud/videoenhan/model/GetAsyncJobResultResult.h
+	include/alibabacloud/videoenhan/model/MergeVideoFaceRequest.h
+	include/alibabacloud/videoenhan/model/MergeVideoFaceResult.h
 	include/alibabacloud/videoenhan/model/SuperResolveVideoRequest.h
 	include/alibabacloud/videoenhan/model/SuperResolveVideoResult.h )
 
@@ -50,6 +54,8 @@ set(videoenhan_src
 	src/model/AdjustVideoColorResult.cc
 	src/model/ChangeVideoSizeRequest.cc
 	src/model/ChangeVideoSizeResult.cc
+	src/model/EnhanceVideoQualityRequest.cc
+	src/model/EnhanceVideoQualityResult.cc
 	src/model/EraseVideoLogoRequest.cc
 	src/model/EraseVideoLogoResult.cc
 	src/model/EraseVideoSubtitlesRequest.cc
@@ -58,6 +64,8 @@ set(videoenhan_src
 	src/model/GenerateVideoResult.cc
 	src/model/GetAsyncJobResultRequest.cc
 	src/model/GetAsyncJobResultResult.cc
+	src/model/MergeVideoFaceRequest.cc
+	src/model/MergeVideoFaceResult.cc
 	src/model/SuperResolveVideoRequest.cc
 	src/model/SuperResolveVideoResult.cc )
 

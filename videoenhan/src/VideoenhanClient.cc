@@ -195,6 +195,42 @@ VideoenhanClient::ChangeVideoSizeOutcomeCallable VideoenhanClient::changeVideoSi
 	return task->get_future();
 }
 
+VideoenhanClient::EnhanceVideoQualityOutcome VideoenhanClient::enhanceVideoQuality(const EnhanceVideoQualityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnhanceVideoQualityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnhanceVideoQualityOutcome(EnhanceVideoQualityResult(outcome.result()));
+	else
+		return EnhanceVideoQualityOutcome(outcome.error());
+}
+
+void VideoenhanClient::enhanceVideoQualityAsync(const EnhanceVideoQualityRequest& request, const EnhanceVideoQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enhanceVideoQuality(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::EnhanceVideoQualityOutcomeCallable VideoenhanClient::enhanceVideoQualityCallable(const EnhanceVideoQualityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnhanceVideoQualityOutcome()>>(
+			[this, request]()
+			{
+			return this->enhanceVideoQuality(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideoenhanClient::EraseVideoLogoOutcome VideoenhanClient::eraseVideoLogo(const EraseVideoLogoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ VideoenhanClient::GetAsyncJobResultOutcomeCallable VideoenhanClient::getAsyncJob
 			[this, request]()
 			{
 			return this->getAsyncJobResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VideoenhanClient::MergeVideoFaceOutcome VideoenhanClient::mergeVideoFace(const MergeVideoFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MergeVideoFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MergeVideoFaceOutcome(MergeVideoFaceResult(outcome.result()));
+	else
+		return MergeVideoFaceOutcome(outcome.error());
+}
+
+void VideoenhanClient::mergeVideoFaceAsync(const MergeVideoFaceRequest& request, const MergeVideoFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mergeVideoFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::MergeVideoFaceOutcomeCallable VideoenhanClient::mergeVideoFaceCallable(const MergeVideoFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MergeVideoFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->mergeVideoFace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
