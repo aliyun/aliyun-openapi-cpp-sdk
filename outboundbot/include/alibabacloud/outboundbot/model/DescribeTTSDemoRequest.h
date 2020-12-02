@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETJOBSTATUSBYCALLIDREQUEST_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETJOBSTATUSBYCALLIDREQUEST_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBETTSDEMOREQUEST_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBETTSDEMOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT GetJobStatusByCallIdRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT DescribeTTSDemoRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetJobStatusByCallIdRequest();
-				~GetJobStatusByCallIdRequest();
+				DescribeTTSDemoRequest();
+				~DescribeTTSDemoRequest();
 
-				std::string getCallId()const;
-				void setCallId(const std::string& callId);
+				std::string getVoice()const;
+				void setVoice(const std::string& voice);
+				int getVolume()const;
+				void setVolume(int volume);
+				std::string getScriptId()const;
+				void setScriptId(const std::string& scriptId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getText()const;
+				void setText(const std::string& text);
+				int getSpeechRate()const;
+				void setSpeechRate(int speechRate);
 
             private:
-				std::string callId_;
+				std::string voice_;
+				int volume_;
+				std::string scriptId_;
 				std::string instanceId_;
+				std::string text_;
+				int speechRate_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETJOBSTATUSBYCALLIDREQUEST_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBETTSDEMOREQUEST_H_

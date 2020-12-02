@@ -77,38 +77,20 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/DescribeScriptVoiceConfigResult.h
 	include/alibabacloud/outboundbot/model/DescribeTTSConfigRequest.h
 	include/alibabacloud/outboundbot/model/DescribeTTSConfigResult.h
+	include/alibabacloud/outboundbot/model/DescribeTTSDemoRequest.h
+	include/alibabacloud/outboundbot/model/DescribeTTSDemoResult.h
 	include/alibabacloud/outboundbot/model/DescribeTagHitsSummaryRequest.h
 	include/alibabacloud/outboundbot/model/DescribeTagHitsSummaryResult.h
 	include/alibabacloud/outboundbot/model/DialogueRequest.h
 	include/alibabacloud/outboundbot/model/DialogueResult.h
-	include/alibabacloud/outboundbot/model/DownloadBasicStatisticsReportRequest.h
-	include/alibabacloud/outboundbot/model/DownloadBasicStatisticsReportResult.h
-	include/alibabacloud/outboundbot/model/DownloadConversationDetailsRequest.h
-	include/alibabacloud/outboundbot/model/DownloadConversationDetailsResult.h
 	include/alibabacloud/outboundbot/model/DownloadRecordingRequest.h
 	include/alibabacloud/outboundbot/model/DownloadRecordingResult.h
-	include/alibabacloud/outboundbot/model/DownloadUnreachableContactsRequest.h
-	include/alibabacloud/outboundbot/model/DownloadUnreachableContactsResult.h
 	include/alibabacloud/outboundbot/model/DuplicateScriptRequest.h
 	include/alibabacloud/outboundbot/model/DuplicateScriptResult.h
 	include/alibabacloud/outboundbot/model/ExportScriptRequest.h
 	include/alibabacloud/outboundbot/model/ExportScriptResult.h
-	include/alibabacloud/outboundbot/model/GenerateBasicStatisticsReportRequest.h
-	include/alibabacloud/outboundbot/model/GenerateBasicStatisticsReportResult.h
-	include/alibabacloud/outboundbot/model/GenerateOverallStatisticsReportRequest.h
-	include/alibabacloud/outboundbot/model/GenerateOverallStatisticsReportResult.h
-	include/alibabacloud/outboundbot/model/GetJobByPhoneNumberRequest.h
-	include/alibabacloud/outboundbot/model/GetJobByPhoneNumberResult.h
-	include/alibabacloud/outboundbot/model/GetJobStatusByCallIdRequest.h
-	include/alibabacloud/outboundbot/model/GetJobStatusByCallIdResult.h
-	include/alibabacloud/outboundbot/model/GetTagHitsSummaryRequest.h
-	include/alibabacloud/outboundbot/model/GetTagHitsSummaryResult.h
 	include/alibabacloud/outboundbot/model/ImportScriptRequest.h
 	include/alibabacloud/outboundbot/model/ImportScriptResult.h
-	include/alibabacloud/outboundbot/model/ListBasicStatisticsReportSubItemsRequest.h
-	include/alibabacloud/outboundbot/model/ListBasicStatisticsReportSubItemsResult.h
-	include/alibabacloud/outboundbot/model/ListConversationsWithUnrecognizedIntentsRequest.h
-	include/alibabacloud/outboundbot/model/ListConversationsWithUnrecognizedIntentsResult.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsRequest.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsResult.h
 	include/alibabacloud/outboundbot/model/ListGlobalQuestionsRequest.h
@@ -119,16 +101,12 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/ListIntentsResult.h
 	include/alibabacloud/outboundbot/model/ListJobGroupsRequest.h
 	include/alibabacloud/outboundbot/model/ListJobGroupsResult.h
-	include/alibabacloud/outboundbot/model/ListJobGroupsWithScenarioRequest.h
-	include/alibabacloud/outboundbot/model/ListJobGroupsWithScenarioResult.h
 	include/alibabacloud/outboundbot/model/ListJobsRequest.h
 	include/alibabacloud/outboundbot/model/ListJobsResult.h
 	include/alibabacloud/outboundbot/model/ListJobsByGroupRequest.h
 	include/alibabacloud/outboundbot/model/ListJobsByGroupResult.h
 	include/alibabacloud/outboundbot/model/ListMediaRequest.h
 	include/alibabacloud/outboundbot/model/ListMediaResult.h
-	include/alibabacloud/outboundbot/model/ListMediasRequest.h
-	include/alibabacloud/outboundbot/model/ListMediasResult.h
 	include/alibabacloud/outboundbot/model/ListOutboundCallNumbersRequest.h
 	include/alibabacloud/outboundbot/model/ListOutboundCallNumbersResult.h
 	include/alibabacloud/outboundbot/model/ListScriptPublishHistoriesRequest.h
@@ -139,10 +117,6 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/ListScriptsResult.h
 	include/alibabacloud/outboundbot/model/ListTagsRequest.h
 	include/alibabacloud/outboundbot/model/ListTagsResult.h
-	include/alibabacloud/outboundbot/model/ListUnreachableContactsRequest.h
-	include/alibabacloud/outboundbot/model/ListUnreachableContactsResult.h
-	include/alibabacloud/outboundbot/model/ListUnrecognizedIntentsRequest.h
-	include/alibabacloud/outboundbot/model/ListUnrecognizedIntentsResult.h
 	include/alibabacloud/outboundbot/model/ModifyBatchJobsRequest.h
 	include/alibabacloud/outboundbot/model/ModifyBatchJobsResult.h
 	include/alibabacloud/outboundbot/model/ModifyDialogueFlowRequest.h
@@ -191,8 +165,6 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/SubmitScriptReviewResult.h
 	include/alibabacloud/outboundbot/model/SuspendJobsRequest.h
 	include/alibabacloud/outboundbot/model/SuspendJobsResult.h
-	include/alibabacloud/outboundbot/model/WithdrawScriptRequest.h
-	include/alibabacloud/outboundbot/model/WithdrawScriptResult.h
 	include/alibabacloud/outboundbot/model/WithdrawScriptReviewRequest.h
 	include/alibabacloud/outboundbot/model/WithdrawScriptReviewResult.h )
 
@@ -254,38 +226,20 @@ set(outboundbot_src
 	src/model/DescribeScriptVoiceConfigResult.cc
 	src/model/DescribeTTSConfigRequest.cc
 	src/model/DescribeTTSConfigResult.cc
+	src/model/DescribeTTSDemoRequest.cc
+	src/model/DescribeTTSDemoResult.cc
 	src/model/DescribeTagHitsSummaryRequest.cc
 	src/model/DescribeTagHitsSummaryResult.cc
 	src/model/DialogueRequest.cc
 	src/model/DialogueResult.cc
-	src/model/DownloadBasicStatisticsReportRequest.cc
-	src/model/DownloadBasicStatisticsReportResult.cc
-	src/model/DownloadConversationDetailsRequest.cc
-	src/model/DownloadConversationDetailsResult.cc
 	src/model/DownloadRecordingRequest.cc
 	src/model/DownloadRecordingResult.cc
-	src/model/DownloadUnreachableContactsRequest.cc
-	src/model/DownloadUnreachableContactsResult.cc
 	src/model/DuplicateScriptRequest.cc
 	src/model/DuplicateScriptResult.cc
 	src/model/ExportScriptRequest.cc
 	src/model/ExportScriptResult.cc
-	src/model/GenerateBasicStatisticsReportRequest.cc
-	src/model/GenerateBasicStatisticsReportResult.cc
-	src/model/GenerateOverallStatisticsReportRequest.cc
-	src/model/GenerateOverallStatisticsReportResult.cc
-	src/model/GetJobByPhoneNumberRequest.cc
-	src/model/GetJobByPhoneNumberResult.cc
-	src/model/GetJobStatusByCallIdRequest.cc
-	src/model/GetJobStatusByCallIdResult.cc
-	src/model/GetTagHitsSummaryRequest.cc
-	src/model/GetTagHitsSummaryResult.cc
 	src/model/ImportScriptRequest.cc
 	src/model/ImportScriptResult.cc
-	src/model/ListBasicStatisticsReportSubItemsRequest.cc
-	src/model/ListBasicStatisticsReportSubItemsResult.cc
-	src/model/ListConversationsWithUnrecognizedIntentsRequest.cc
-	src/model/ListConversationsWithUnrecognizedIntentsResult.cc
 	src/model/ListDialogueFlowsRequest.cc
 	src/model/ListDialogueFlowsResult.cc
 	src/model/ListGlobalQuestionsRequest.cc
@@ -296,16 +250,12 @@ set(outboundbot_src
 	src/model/ListIntentsResult.cc
 	src/model/ListJobGroupsRequest.cc
 	src/model/ListJobGroupsResult.cc
-	src/model/ListJobGroupsWithScenarioRequest.cc
-	src/model/ListJobGroupsWithScenarioResult.cc
 	src/model/ListJobsRequest.cc
 	src/model/ListJobsResult.cc
 	src/model/ListJobsByGroupRequest.cc
 	src/model/ListJobsByGroupResult.cc
 	src/model/ListMediaRequest.cc
 	src/model/ListMediaResult.cc
-	src/model/ListMediasRequest.cc
-	src/model/ListMediasResult.cc
 	src/model/ListOutboundCallNumbersRequest.cc
 	src/model/ListOutboundCallNumbersResult.cc
 	src/model/ListScriptPublishHistoriesRequest.cc
@@ -316,10 +266,6 @@ set(outboundbot_src
 	src/model/ListScriptsResult.cc
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
-	src/model/ListUnreachableContactsRequest.cc
-	src/model/ListUnreachableContactsResult.cc
-	src/model/ListUnrecognizedIntentsRequest.cc
-	src/model/ListUnrecognizedIntentsResult.cc
 	src/model/ModifyBatchJobsRequest.cc
 	src/model/ModifyBatchJobsResult.cc
 	src/model/ModifyDialogueFlowRequest.cc
@@ -368,8 +314,6 @@ set(outboundbot_src
 	src/model/SubmitScriptReviewResult.cc
 	src/model/SuspendJobsRequest.cc
 	src/model/SuspendJobsResult.cc
-	src/model/WithdrawScriptRequest.cc
-	src/model/WithdrawScriptResult.cc
 	src/model/WithdrawScriptReviewRequest.cc
 	src/model/WithdrawScriptReviewResult.cc )
 

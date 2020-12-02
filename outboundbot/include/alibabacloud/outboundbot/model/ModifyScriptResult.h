@@ -51,6 +51,7 @@ namespace AlibabaCloud
 				explicit ModifyScriptResult(const std::string &payload);
 				~ModifyScriptResult();
 				Script getScript()const;
+				std::string getChatbotId()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -60,6 +61,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				Script script_;
+				std::string chatbotId_;
 				std::string message_;
 				int httpStatusCode_;
 				std::string code_;

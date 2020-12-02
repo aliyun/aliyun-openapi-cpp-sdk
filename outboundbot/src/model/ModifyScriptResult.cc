@@ -68,12 +68,19 @@ void ModifyScriptResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ChatbotId"].isNull())
+		chatbotId_ = value["ChatbotId"].asString();
 
 }
 
 ModifyScriptResult::Script ModifyScriptResult::getScript()const
 {
 	return script_;
+}
+
+std::string ModifyScriptResult::getChatbotId()const
+{
+	return chatbotId_;
 }
 
 std::string ModifyScriptResult::getMessage()const

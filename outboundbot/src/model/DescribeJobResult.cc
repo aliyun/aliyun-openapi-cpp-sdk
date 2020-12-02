@@ -130,26 +130,26 @@ void DescribeJobResult::parse(const std::string &payload)
 			taskObject.status = jobNodeTasksTask["Status"].asString();
 		if(!jobNodeTasksTask["TaskId"].isNull())
 			taskObject.taskId = jobNodeTasksTask["TaskId"].asString();
-		auto allConversationNode = allTasksNode["Conversation"]["ConversationDetail"];
-		for (auto allTasksNodeConversationConversationDetail : allConversationNode)
+		auto allConversationNode = jobNodeTasksTask["Conversation"]["ConversationDetail"];
+		for (auto jobNodeTasksTaskConversationConversationDetail : allConversationNode)
 		{
 			Job::Task::ConversationDetail conversationObject;
-			if(!allTasksNodeConversationConversationDetail["Script"].isNull())
-				conversationObject.script = allTasksNodeConversationConversationDetail["Script"].asString();
-			if(!allTasksNodeConversationConversationDetail["Speaker"].isNull())
-				conversationObject.speaker = allTasksNodeConversationConversationDetail["Speaker"].asString();
-			if(!allTasksNodeConversationConversationDetail["Timestamp"].isNull())
-				conversationObject.timestamp = std::stol(allTasksNodeConversationConversationDetail["Timestamp"].asString());
-			auto allSummary1Node = allConversationNode["Summary"]["SummaryItem"];
-			for (auto allConversationNodeSummarySummaryItem : allSummary1Node)
+			if(!jobNodeTasksTaskConversationConversationDetail["Script"].isNull())
+				conversationObject.script = jobNodeTasksTaskConversationConversationDetail["Script"].asString();
+			if(!jobNodeTasksTaskConversationConversationDetail["Speaker"].isNull())
+				conversationObject.speaker = jobNodeTasksTaskConversationConversationDetail["Speaker"].asString();
+			if(!jobNodeTasksTaskConversationConversationDetail["Timestamp"].isNull())
+				conversationObject.timestamp = std::stol(jobNodeTasksTaskConversationConversationDetail["Timestamp"].asString());
+			auto allSummary1Node = jobNodeTasksTaskConversationConversationDetail["Summary"]["SummaryItem"];
+			for (auto jobNodeTasksTaskConversationConversationDetailSummarySummaryItem : allSummary1Node)
 			{
 				Job::Task::ConversationDetail::SummaryItem2 summary1Object;
-				if(!allConversationNodeSummarySummaryItem["Category"].isNull())
-					summary1Object.category = allConversationNodeSummarySummaryItem["Category"].asString();
-				if(!allConversationNodeSummarySummaryItem["Content"].isNull())
-					summary1Object.content = allConversationNodeSummarySummaryItem["Content"].asString();
-				if(!allConversationNodeSummarySummaryItem["SummaryName"].isNull())
-					summary1Object.summaryName = allConversationNodeSummarySummaryItem["SummaryName"].asString();
+				if(!jobNodeTasksTaskConversationConversationDetailSummarySummaryItem["Category"].isNull())
+					summary1Object.category = jobNodeTasksTaskConversationConversationDetailSummarySummaryItem["Category"].asString();
+				if(!jobNodeTasksTaskConversationConversationDetailSummarySummaryItem["Content"].isNull())
+					summary1Object.content = jobNodeTasksTaskConversationConversationDetailSummarySummaryItem["Content"].asString();
+				if(!jobNodeTasksTaskConversationConversationDetailSummarySummaryItem["SummaryName"].isNull())
+					summary1Object.summaryName = jobNodeTasksTaskConversationConversationDetailSummarySummaryItem["SummaryName"].asString();
 				conversationObject.summary1.push_back(summary1Object);
 			}
 			taskObject.conversation.push_back(conversationObject);

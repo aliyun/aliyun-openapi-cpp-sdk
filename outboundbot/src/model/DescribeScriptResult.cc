@@ -68,12 +68,28 @@ void DescribeScriptResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ChatbotId"].isNull())
+		chatbotId_ = value["ChatbotId"].asString();
+	if(!value["AsrConfig"].isNull())
+		asrConfig_ = value["AsrConfig"].asString();
+	if(!value["TtsConfig"].isNull())
+		ttsConfig_ = value["TtsConfig"].asString();
 
+}
+
+std::string DescribeScriptResult::getAsrConfig()const
+{
+	return asrConfig_;
 }
 
 DescribeScriptResult::Script DescribeScriptResult::getScript()const
 {
 	return script_;
+}
+
+std::string DescribeScriptResult::getChatbotId()const
+{
+	return chatbotId_;
 }
 
 std::string DescribeScriptResult::getMessage()const
@@ -84,6 +100,11 @@ std::string DescribeScriptResult::getMessage()const
 int DescribeScriptResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::string DescribeScriptResult::getTtsConfig()const
+{
+	return ttsConfig_;
 }
 
 std::string DescribeScriptResult::getCode()const

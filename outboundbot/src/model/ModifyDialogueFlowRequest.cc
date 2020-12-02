@@ -27,6 +27,17 @@ ModifyDialogueFlowRequest::ModifyDialogueFlowRequest() :
 ModifyDialogueFlowRequest::~ModifyDialogueFlowRequest()
 {}
 
+bool ModifyDialogueFlowRequest::getIsDrafted()const
+{
+	return isDrafted_;
+}
+
+void ModifyDialogueFlowRequest::setIsDrafted(bool isDrafted)
+{
+	isDrafted_ = isDrafted;
+	setParameter("IsDrafted", isDrafted ? "true" : "false");
+}
+
 std::string ModifyDialogueFlowRequest::getScriptId()const
 {
 	return scriptId_;

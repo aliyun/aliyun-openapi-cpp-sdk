@@ -27,6 +27,17 @@ ModifyScriptRequest::ModifyScriptRequest() :
 ModifyScriptRequest::~ModifyScriptRequest()
 {}
 
+std::string ModifyScriptRequest::getTtsConfig()const
+{
+	return ttsConfig_;
+}
+
+void ModifyScriptRequest::setTtsConfig(const std::string& ttsConfig)
+{
+	ttsConfig_ = ttsConfig;
+	setParameter("TtsConfig", ttsConfig);
+}
+
 std::string ModifyScriptRequest::getIndustry()const
 {
 	return industry_;
@@ -71,6 +82,17 @@ void ModifyScriptRequest::setScriptId(const std::string& scriptId)
 	setParameter("ScriptId", scriptId);
 }
 
+std::string ModifyScriptRequest::getChatbotId()const
+{
+	return chatbotId_;
+}
+
+void ModifyScriptRequest::setChatbotId(const std::string& chatbotId)
+{
+	chatbotId_ = chatbotId;
+	setParameter("ChatbotId", chatbotId);
+}
+
 std::string ModifyScriptRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -80,6 +102,17 @@ void ModifyScriptRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string ModifyScriptRequest::getAsrConfig()const
+{
+	return asrConfig_;
+}
+
+void ModifyScriptRequest::setAsrConfig(const std::string& asrConfig)
+{
+	asrConfig_ = asrConfig;
+	setParameter("AsrConfig", asrConfig);
 }
 
 std::string ModifyScriptRequest::getScriptDescription()const

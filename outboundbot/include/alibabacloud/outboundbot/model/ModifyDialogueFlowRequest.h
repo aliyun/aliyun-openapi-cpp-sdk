@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyDialogueFlowRequest();
 				~ModifyDialogueFlowRequest();
 
+				bool getIsDrafted()const;
+				void setIsDrafted(bool isDrafted);
 				std::string getScriptId()const;
 				void setScriptId(const std::string& scriptId);
 				std::string getInstanceId()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setDialogueFlowId(const std::string& dialogueFlowId);
 
             private:
+				bool isDrafted_;
 				std::string scriptId_;
 				std::string instanceId_;
 				std::string dialogueFlowDefinition_;

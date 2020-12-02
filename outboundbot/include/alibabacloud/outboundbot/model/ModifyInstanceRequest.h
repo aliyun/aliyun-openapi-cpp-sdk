@@ -37,21 +37,33 @@ namespace AlibabaCloud
 
 				int getMaxConcurrentConversation()const;
 				void setMaxConcurrentConversation(int maxConcurrentConversation);
+				std::string getSecretKey()const;
+				void setSecretKey(const std::string& secretKey);
+				std::string getEndpoint()const;
+				void setEndpoint(const std::string& endpoint);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				std::string getCallCenterInstanceId()const;
 				void setCallCenterInstanceId(const std::string& callCenterInstanceId);
+				std::string getAccessKey()const;
+				void setAccessKey(const std::string& accessKey);
 				std::string getInstanceDescription()const;
 				void setInstanceDescription(const std::string& instanceDescription);
+				std::string getNluServiceType()const;
+				void setNluServiceType(const std::string& nluServiceType);
 
             private:
 				int maxConcurrentConversation_;
+				std::string secretKey_;
+				std::string endpoint_;
 				std::string instanceId_;
 				std::string instanceName_;
 				std::string callCenterInstanceId_;
+				std::string accessKey_;
 				std::string instanceDescription_;
+				std::string nluServiceType_;
 
 			};
 		}

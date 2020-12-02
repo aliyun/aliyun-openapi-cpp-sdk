@@ -40,18 +40,18 @@ void DownloadRecordingResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto downloadParamsNode = value["DownloadParams"];
-	if(!downloadParamsNode["SignatureUrl"].isNull())
-		downloadParams_.signatureUrl = downloadParamsNode["SignatureUrl"].asString();
 	if(!downloadParamsNode["FileName"].isNull())
 		downloadParams_.fileName = downloadParamsNode["FileName"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!downloadParamsNode["SignatureUrl"].isNull())
+		downloadParams_.signatureUrl = downloadParamsNode["SignatureUrl"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -61,98 +61,98 @@ void ListJobsResult::parse(const std::string &payload)
 			jobsObject.strategyId = valueJobsJob["StrategyId"].asString();
 		if(!valueJobsJob["SystemPriority"].isNull())
 			jobsObject.systemPriority = std::stoi(valueJobsJob["SystemPriority"].asString());
-		auto allContactsNode = allJobsNode["Contacts"]["Contact"];
-		for (auto allJobsNodeContactsContact : allContactsNode)
+		auto allContactsNode = valueJobsJob["Contacts"]["Contact"];
+		for (auto valueJobsJobContactsContact : allContactsNode)
 		{
 			Job::Contact contactsObject;
-			if(!allJobsNodeContactsContact["ContactId"].isNull())
-				contactsObject.contactId = allJobsNodeContactsContact["ContactId"].asString();
-			if(!allJobsNodeContactsContact["ContactName"].isNull())
-				contactsObject.contactName = allJobsNodeContactsContact["ContactName"].asString();
-			if(!allJobsNodeContactsContact["Honorific"].isNull())
-				contactsObject.honorific = allJobsNodeContactsContact["Honorific"].asString();
-			if(!allJobsNodeContactsContact["JobId"].isNull())
-				contactsObject.jobId = allJobsNodeContactsContact["JobId"].asString();
-			if(!allJobsNodeContactsContact["PhoneNumber"].isNull())
-				contactsObject.phoneNumber = allJobsNodeContactsContact["PhoneNumber"].asString();
-			if(!allJobsNodeContactsContact["ReferenceId"].isNull())
-				contactsObject.referenceId = allJobsNodeContactsContact["ReferenceId"].asString();
-			if(!allJobsNodeContactsContact["Role"].isNull())
-				contactsObject.role = allJobsNodeContactsContact["Role"].asString();
-			if(!allJobsNodeContactsContact["State"].isNull())
-				contactsObject.state = allJobsNodeContactsContact["State"].asString();
+			if(!valueJobsJobContactsContact["ContactId"].isNull())
+				contactsObject.contactId = valueJobsJobContactsContact["ContactId"].asString();
+			if(!valueJobsJobContactsContact["ContactName"].isNull())
+				contactsObject.contactName = valueJobsJobContactsContact["ContactName"].asString();
+			if(!valueJobsJobContactsContact["Honorific"].isNull())
+				contactsObject.honorific = valueJobsJobContactsContact["Honorific"].asString();
+			if(!valueJobsJobContactsContact["JobId"].isNull())
+				contactsObject.jobId = valueJobsJobContactsContact["JobId"].asString();
+			if(!valueJobsJobContactsContact["PhoneNumber"].isNull())
+				contactsObject.phoneNumber = valueJobsJobContactsContact["PhoneNumber"].asString();
+			if(!valueJobsJobContactsContact["ReferenceId"].isNull())
+				contactsObject.referenceId = valueJobsJobContactsContact["ReferenceId"].asString();
+			if(!valueJobsJobContactsContact["Role"].isNull())
+				contactsObject.role = valueJobsJobContactsContact["Role"].asString();
+			if(!valueJobsJobContactsContact["State"].isNull())
+				contactsObject.state = valueJobsJobContactsContact["State"].asString();
 			jobsObject.contacts.push_back(contactsObject);
 		}
-		auto allExtrasNode = allJobsNode["Extras"]["KeyValuePair"];
-		for (auto allJobsNodeExtrasKeyValuePair : allExtrasNode)
+		auto allExtrasNode = valueJobsJob["Extras"]["KeyValuePair"];
+		for (auto valueJobsJobExtrasKeyValuePair : allExtrasNode)
 		{
 			Job::KeyValuePair extrasObject;
-			if(!allJobsNodeExtrasKeyValuePair["Key"].isNull())
-				extrasObject.key = allJobsNodeExtrasKeyValuePair["Key"].asString();
-			if(!allJobsNodeExtrasKeyValuePair["Value"].isNull())
-				extrasObject.value = allJobsNodeExtrasKeyValuePair["Value"].asString();
+			if(!valueJobsJobExtrasKeyValuePair["Key"].isNull())
+				extrasObject.key = valueJobsJobExtrasKeyValuePair["Key"].asString();
+			if(!valueJobsJobExtrasKeyValuePair["Value"].isNull())
+				extrasObject.value = valueJobsJobExtrasKeyValuePair["Value"].asString();
 			jobsObject.extras.push_back(extrasObject);
 		}
-		auto allSummaryNode = allJobsNode["Summary"]["SummaryItem"];
-		for (auto allJobsNodeSummarySummaryItem : allSummaryNode)
+		auto allSummaryNode = valueJobsJob["Summary"]["SummaryItem"];
+		for (auto valueJobsJobSummarySummaryItem : allSummaryNode)
 		{
 			Job::SummaryItem summaryObject;
-			if(!allJobsNodeSummarySummaryItem["Category"].isNull())
-				summaryObject.category = allJobsNodeSummarySummaryItem["Category"].asString();
-			if(!allJobsNodeSummarySummaryItem["Content"].isNull())
-				summaryObject.content = allJobsNodeSummarySummaryItem["Content"].asString();
-			if(!allJobsNodeSummarySummaryItem["SummaryName"].isNull())
-				summaryObject.summaryName = allJobsNodeSummarySummaryItem["SummaryName"].asString();
+			if(!valueJobsJobSummarySummaryItem["Category"].isNull())
+				summaryObject.category = valueJobsJobSummarySummaryItem["Category"].asString();
+			if(!valueJobsJobSummarySummaryItem["Content"].isNull())
+				summaryObject.content = valueJobsJobSummarySummaryItem["Content"].asString();
+			if(!valueJobsJobSummarySummaryItem["SummaryName"].isNull())
+				summaryObject.summaryName = valueJobsJobSummarySummaryItem["SummaryName"].asString();
 			jobsObject.summary.push_back(summaryObject);
 		}
-		auto allTasksNode = allJobsNode["Tasks"]["Task"];
-		for (auto allJobsNodeTasksTask : allTasksNode)
+		auto allTasksNode = valueJobsJob["Tasks"]["Task"];
+		for (auto valueJobsJobTasksTask : allTasksNode)
 		{
 			Job::Task tasksObject;
-			if(!allJobsNodeTasksTask["ActualTime"].isNull())
-				tasksObject.actualTime = std::stol(allJobsNodeTasksTask["ActualTime"].asString());
-			if(!allJobsNodeTasksTask["Brief"].isNull())
-				tasksObject.brief = allJobsNodeTasksTask["Brief"].asString();
-			if(!allJobsNodeTasksTask["CallId"].isNull())
-				tasksObject.callId = allJobsNodeTasksTask["CallId"].asString();
-			if(!allJobsNodeTasksTask["CalledNumber"].isNull())
-				tasksObject.calledNumber = allJobsNodeTasksTask["CalledNumber"].asString();
-			if(!allJobsNodeTasksTask["CallingNumber"].isNull())
-				tasksObject.callingNumber = allJobsNodeTasksTask["CallingNumber"].asString();
-			if(!allJobsNodeTasksTask["ChatbotId"].isNull())
-				tasksObject.chatbotId = allJobsNodeTasksTask["ChatbotId"].asString();
-			if(!allJobsNodeTasksTask["Duration"].isNull())
-				tasksObject.duration = std::stoi(allJobsNodeTasksTask["Duration"].asString());
-			if(!allJobsNodeTasksTask["JobId"].isNull())
-				tasksObject.jobId = allJobsNodeTasksTask["JobId"].asString();
-			if(!allJobsNodeTasksTask["PlanedTime"].isNull())
-				tasksObject.planedTime = std::stol(allJobsNodeTasksTask["PlanedTime"].asString());
-			if(!allJobsNodeTasksTask["ScenarioId"].isNull())
-				tasksObject.scenarioId = allJobsNodeTasksTask["ScenarioId"].asString();
-			if(!allJobsNodeTasksTask["Status"].isNull())
-				tasksObject.status = allJobsNodeTasksTask["Status"].asString();
-			if(!allJobsNodeTasksTask["TaskId"].isNull())
-				tasksObject.taskId = allJobsNodeTasksTask["TaskId"].asString();
-			auto allConversationNode = allTasksNode["Conversation"]["ConversationDetail"];
-			for (auto allTasksNodeConversationConversationDetail : allConversationNode)
+			if(!valueJobsJobTasksTask["ActualTime"].isNull())
+				tasksObject.actualTime = std::stol(valueJobsJobTasksTask["ActualTime"].asString());
+			if(!valueJobsJobTasksTask["Brief"].isNull())
+				tasksObject.brief = valueJobsJobTasksTask["Brief"].asString();
+			if(!valueJobsJobTasksTask["CallId"].isNull())
+				tasksObject.callId = valueJobsJobTasksTask["CallId"].asString();
+			if(!valueJobsJobTasksTask["CalledNumber"].isNull())
+				tasksObject.calledNumber = valueJobsJobTasksTask["CalledNumber"].asString();
+			if(!valueJobsJobTasksTask["CallingNumber"].isNull())
+				tasksObject.callingNumber = valueJobsJobTasksTask["CallingNumber"].asString();
+			if(!valueJobsJobTasksTask["ChatbotId"].isNull())
+				tasksObject.chatbotId = valueJobsJobTasksTask["ChatbotId"].asString();
+			if(!valueJobsJobTasksTask["Duration"].isNull())
+				tasksObject.duration = std::stoi(valueJobsJobTasksTask["Duration"].asString());
+			if(!valueJobsJobTasksTask["JobId"].isNull())
+				tasksObject.jobId = valueJobsJobTasksTask["JobId"].asString();
+			if(!valueJobsJobTasksTask["PlanedTime"].isNull())
+				tasksObject.planedTime = std::stol(valueJobsJobTasksTask["PlanedTime"].asString());
+			if(!valueJobsJobTasksTask["ScenarioId"].isNull())
+				tasksObject.scenarioId = valueJobsJobTasksTask["ScenarioId"].asString();
+			if(!valueJobsJobTasksTask["Status"].isNull())
+				tasksObject.status = valueJobsJobTasksTask["Status"].asString();
+			if(!valueJobsJobTasksTask["TaskId"].isNull())
+				tasksObject.taskId = valueJobsJobTasksTask["TaskId"].asString();
+			auto allConversationNode = valueJobsJobTasksTask["Conversation"]["ConversationDetail"];
+			for (auto valueJobsJobTasksTaskConversationConversationDetail : allConversationNode)
 			{
 				Job::Task::ConversationDetail conversationObject;
-				if(!allTasksNodeConversationConversationDetail["Script"].isNull())
-					conversationObject.script = allTasksNodeConversationConversationDetail["Script"].asString();
-				if(!allTasksNodeConversationConversationDetail["Speaker"].isNull())
-					conversationObject.speaker = allTasksNodeConversationConversationDetail["Speaker"].asString();
-				if(!allTasksNodeConversationConversationDetail["Timestamp"].isNull())
-					conversationObject.timestamp = std::stol(allTasksNodeConversationConversationDetail["Timestamp"].asString());
-				auto allSummary1Node = allConversationNode["Summary"]["SummaryItem"];
-				for (auto allConversationNodeSummarySummaryItem : allSummary1Node)
+				if(!valueJobsJobTasksTaskConversationConversationDetail["Script"].isNull())
+					conversationObject.script = valueJobsJobTasksTaskConversationConversationDetail["Script"].asString();
+				if(!valueJobsJobTasksTaskConversationConversationDetail["Speaker"].isNull())
+					conversationObject.speaker = valueJobsJobTasksTaskConversationConversationDetail["Speaker"].asString();
+				if(!valueJobsJobTasksTaskConversationConversationDetail["Timestamp"].isNull())
+					conversationObject.timestamp = std::stol(valueJobsJobTasksTaskConversationConversationDetail["Timestamp"].asString());
+				auto allSummary1Node = valueJobsJobTasksTaskConversationConversationDetail["Summary"]["SummaryItem"];
+				for (auto valueJobsJobTasksTaskConversationConversationDetailSummarySummaryItem : allSummary1Node)
 				{
 					Job::Task::ConversationDetail::SummaryItem2 summary1Object;
-					if(!allConversationNodeSummarySummaryItem["Category"].isNull())
-						summary1Object.category = allConversationNodeSummarySummaryItem["Category"].asString();
-					if(!allConversationNodeSummarySummaryItem["Content"].isNull())
-						summary1Object.content = allConversationNodeSummarySummaryItem["Content"].asString();
-					if(!allConversationNodeSummarySummaryItem["SummaryName"].isNull())
-						summary1Object.summaryName = allConversationNodeSummarySummaryItem["SummaryName"].asString();
+					if(!valueJobsJobTasksTaskConversationConversationDetailSummarySummaryItem["Category"].isNull())
+						summary1Object.category = valueJobsJobTasksTaskConversationConversationDetailSummarySummaryItem["Category"].asString();
+					if(!valueJobsJobTasksTaskConversationConversationDetailSummarySummaryItem["Content"].isNull())
+						summary1Object.content = valueJobsJobTasksTaskConversationConversationDetailSummarySummaryItem["Content"].asString();
+					if(!valueJobsJobTasksTaskConversationConversationDetailSummarySummaryItem["SummaryName"].isNull())
+						summary1Object.summaryName = valueJobsJobTasksTaskConversationConversationDetailSummarySummaryItem["SummaryName"].asString();
 					conversationObject.summary1.push_back(summary1Object);
 				}
 				tasksObject.conversation.push_back(conversationObject);

@@ -59,6 +59,15 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.maxConcurrentConversation = std::stoi(valueInstancesInstance["MaxConcurrentConversation"].asString());
 		if(!valueInstancesInstance["Owner"].isNull())
 			instancesObject.owner = valueInstancesInstance["Owner"].asString();
+		if(!valueInstancesInstance["NluServiceType"].isNull())
+			instancesObject.nluServiceType = valueInstancesInstance["NluServiceType"].asString();
+		auto nluProfileNode = value["NluProfile"];
+		if(!nluProfileNode["Endpoint"].isNull())
+			instancesObject.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
+		if(!nluProfileNode["AccessKey"].isNull())
+			instancesObject.nluProfile.accessKey = nluProfileNode["AccessKey"].asString();
+		if(!nluProfileNode["SecretKey"].isNull())
+			instancesObject.nluProfile.secretKey = nluProfileNode["SecretKey"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["Code"].isNull())

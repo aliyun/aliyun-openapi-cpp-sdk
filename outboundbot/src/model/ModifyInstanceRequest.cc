@@ -38,6 +38,28 @@ void ModifyInstanceRequest::setMaxConcurrentConversation(int maxConcurrentConver
 	setParameter("MaxConcurrentConversation", std::to_string(maxConcurrentConversation));
 }
 
+std::string ModifyInstanceRequest::getSecretKey()const
+{
+	return secretKey_;
+}
+
+void ModifyInstanceRequest::setSecretKey(const std::string& secretKey)
+{
+	secretKey_ = secretKey;
+	setParameter("SecretKey", secretKey);
+}
+
+std::string ModifyInstanceRequest::getEndpoint()const
+{
+	return endpoint_;
+}
+
+void ModifyInstanceRequest::setEndpoint(const std::string& endpoint)
+{
+	endpoint_ = endpoint;
+	setParameter("Endpoint", endpoint);
+}
+
 std::string ModifyInstanceRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -71,6 +93,17 @@ void ModifyInstanceRequest::setCallCenterInstanceId(const std::string& callCente
 	setParameter("CallCenterInstanceId", callCenterInstanceId);
 }
 
+std::string ModifyInstanceRequest::getAccessKey()const
+{
+	return accessKey_;
+}
+
+void ModifyInstanceRequest::setAccessKey(const std::string& accessKey)
+{
+	accessKey_ = accessKey;
+	setParameter("AccessKey", accessKey);
+}
+
 std::string ModifyInstanceRequest::getInstanceDescription()const
 {
 	return instanceDescription_;
@@ -80,5 +113,16 @@ void ModifyInstanceRequest::setInstanceDescription(const std::string& instanceDe
 {
 	instanceDescription_ = instanceDescription;
 	setParameter("InstanceDescription", instanceDescription);
+}
+
+std::string ModifyInstanceRequest::getNluServiceType()const
+{
+	return nluServiceType_;
+}
+
+void ModifyInstanceRequest::setNluServiceType(const std::string& nluServiceType)
+{
+	nluServiceType_ = nluServiceType;
+	setParameter("NluServiceType", nluServiceType);
 }
 

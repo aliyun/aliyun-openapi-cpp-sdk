@@ -27,6 +27,17 @@ CreateScriptRequest::CreateScriptRequest() :
 CreateScriptRequest::~CreateScriptRequest()
 {}
 
+std::string CreateScriptRequest::getTtsConfig()const
+{
+	return ttsConfig_;
+}
+
+void CreateScriptRequest::setTtsConfig(const std::string& ttsConfig)
+{
+	ttsConfig_ = ttsConfig;
+	setParameter("TtsConfig", ttsConfig);
+}
+
 std::string CreateScriptRequest::getIndustry()const
 {
 	return industry_;
@@ -60,6 +71,17 @@ void CreateScriptRequest::setScene(const std::string& scene)
 	setParameter("Scene", scene);
 }
 
+std::string CreateScriptRequest::getChatbotId()const
+{
+	return chatbotId_;
+}
+
+void CreateScriptRequest::setChatbotId(const std::string& chatbotId)
+{
+	chatbotId_ = chatbotId;
+	setParameter("ChatbotId", chatbotId);
+}
+
 std::string CreateScriptRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -69,6 +91,17 @@ void CreateScriptRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string CreateScriptRequest::getAsrConfig()const
+{
+	return asrConfig_;
+}
+
+void CreateScriptRequest::setAsrConfig(const std::string& asrConfig)
+{
+	asrConfig_ = asrConfig;
+	setParameter("AsrConfig", asrConfig);
 }
 
 std::string CreateScriptRequest::getScriptDescription()const

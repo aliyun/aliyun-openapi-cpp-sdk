@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyScriptRequest();
 				~ModifyScriptRequest();
 
+				std::string getTtsConfig()const;
+				void setTtsConfig(const std::string& ttsConfig);
 				std::string getIndustry()const;
 				void setIndustry(const std::string& industry);
 				std::string getScriptName()const;
@@ -43,17 +45,24 @@ namespace AlibabaCloud
 				void setScene(const std::string& scene);
 				std::string getScriptId()const;
 				void setScriptId(const std::string& scriptId);
+				std::string getChatbotId()const;
+				void setChatbotId(const std::string& chatbotId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getAsrConfig()const;
+				void setAsrConfig(const std::string& asrConfig);
 				std::string getScriptDescription()const;
 				void setScriptDescription(const std::string& scriptDescription);
 
             private:
+				std::string ttsConfig_;
 				std::string industry_;
 				std::string scriptName_;
 				std::string scene_;
 				std::string scriptId_;
+				std::string chatbotId_;
 				std::string instanceId_;
+				std::string asrConfig_;
 				std::string scriptDescription_;
 
 			};

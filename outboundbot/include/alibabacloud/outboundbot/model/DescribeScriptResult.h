@@ -50,18 +50,24 @@ namespace AlibabaCloud
 				DescribeScriptResult();
 				explicit DescribeScriptResult(const std::string &payload);
 				~DescribeScriptResult();
+				std::string getAsrConfig()const;
 				Script getScript()const;
+				std::string getChatbotId()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
+				std::string getTtsConfig()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string asrConfig_;
 				Script script_;
+				std::string chatbotId_;
 				std::string message_;
 				int httpStatusCode_;
+				std::string ttsConfig_;
 				std::string code_;
 				bool success_;
 

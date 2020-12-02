@@ -54,6 +54,15 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.maxConcurrentConversation = std::stoi(instanceNode["MaxConcurrentConversation"].asString());
 	if(!instanceNode["Owner"].isNull())
 		instance_.owner = instanceNode["Owner"].asString();
+	if(!instanceNode["NluServiceType"].isNull())
+		instance_.nluServiceType = instanceNode["NluServiceType"].asString();
+	auto nluProfileNode = instanceNode["NluProfile"];
+	if(!nluProfileNode["Endpoint"].isNull())
+		instance_.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
+	if(!nluProfileNode["AccessKey"].isNull())
+		instance_.nluProfile.accessKey = nluProfileNode["AccessKey"].asString();
+	if(!nluProfileNode["SecretKey"].isNull())
+		instance_.nluProfile.secretKey = nluProfileNode["SecretKey"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())

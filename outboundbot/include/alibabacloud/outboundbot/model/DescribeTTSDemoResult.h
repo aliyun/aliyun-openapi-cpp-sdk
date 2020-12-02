@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_GENERATEOVERALLSTATISTICSREPORTREQUEST_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_GENERATEOVERALLSTATISTICSREPORTREQUEST_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBETTSDEMORESULT_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBETTSDEMORESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/outboundbot/OutboundBotExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT GenerateOverallStatisticsReportRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT DescribeTTSDemoResult : public ServiceResult
 			{
-
 			public:
-				GenerateOverallStatisticsReportRequest();
-				~GenerateOverallStatisticsReportRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getJobGroupId()const;
-				void setJobGroupId(const std::string& jobGroupId);
 
-            private:
-				std::string instanceId_;
-				std::string jobGroupId_;
+				DescribeTTSDemoResult();
+				explicit DescribeTTSDemoResult(const std::string &payload);
+				~DescribeTTSDemoResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				std::string getAuditionUrl()const;
+				std::string getCode()const;
+				bool getSuccess()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				int httpStatusCode_;
+				std::string auditionUrl_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_GENERATEOVERALLSTATISTICSREPORTREQUEST_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_DESCRIBETTSDEMORESULT_H_

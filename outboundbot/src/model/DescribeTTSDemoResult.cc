@@ -14,34 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/DownloadConversationDetailsResult.h>
+#include <alibabacloud/outboundbot/model/DescribeTTSDemoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OutboundBot;
 using namespace AlibabaCloud::OutboundBot::Model;
 
-DownloadConversationDetailsResult::DownloadConversationDetailsResult() :
+DescribeTTSDemoResult::DescribeTTSDemoResult() :
 	ServiceResult()
 {}
 
-DownloadConversationDetailsResult::DownloadConversationDetailsResult(const std::string &payload) :
+DescribeTTSDemoResult::DescribeTTSDemoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DownloadConversationDetailsResult::~DownloadConversationDetailsResult()
+DescribeTTSDemoResult::~DescribeTTSDemoResult()
 {}
 
-void DownloadConversationDetailsResult::parse(const std::string &payload)
+void DescribeTTSDemoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto downloadParamsNode = value["DownloadParams"];
-	if(!downloadParamsNode["SignatureUrl"].isNull())
-		downloadParams_.signatureUrl = downloadParamsNode["SignatureUrl"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -50,30 +47,32 @@ void DownloadConversationDetailsResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["AuditionUrl"].isNull())
+		auditionUrl_ = value["AuditionUrl"].asString();
 
 }
 
-DownloadConversationDetailsResult::DownloadParams DownloadConversationDetailsResult::getDownloadParams()const
-{
-	return downloadParams_;
-}
-
-std::string DownloadConversationDetailsResult::getMessage()const
+std::string DescribeTTSDemoResult::getMessage()const
 {
 	return message_;
 }
 
-int DownloadConversationDetailsResult::getHttpStatusCode()const
+int DescribeTTSDemoResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string DownloadConversationDetailsResult::getCode()const
+std::string DescribeTTSDemoResult::getAuditionUrl()const
+{
+	return auditionUrl_;
+}
+
+std::string DescribeTTSDemoResult::getCode()const
 {
 	return code_;
 }
 
-bool DownloadConversationDetailsResult::getSuccess()const
+bool DescribeTTSDemoResult::getSuccess()const
 {
 	return success_;
 }

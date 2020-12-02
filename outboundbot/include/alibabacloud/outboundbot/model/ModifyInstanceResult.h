@@ -34,12 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct Instance
 				{
+					struct NluProfile
+					{
+						std::string secretKey;
+						std::string endpoint;
+						std::string accessKey;
+					};
 					std::string instanceName;
 					std::string owner;
 					int maxConcurrentConversation;
 					std::string instanceId;
 					long creationTime;
 					std::string instanceDescription;
+					std::string nluServiceType;
+					NluProfile nluProfile;
 					std::string callCenterInstanceId;
 				};
 
