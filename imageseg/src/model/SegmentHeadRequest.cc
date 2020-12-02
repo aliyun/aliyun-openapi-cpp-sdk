@@ -27,6 +27,17 @@ SegmentHeadRequest::SegmentHeadRequest() :
 SegmentHeadRequest::~SegmentHeadRequest()
 {}
 
+std::string SegmentHeadRequest::getReturnForm()const
+{
+	return returnForm_;
+}
+
+void SegmentHeadRequest::setReturnForm(const std::string& returnForm)
+{
+	returnForm_ = returnForm;
+	setParameter("ReturnForm", returnForm);
+}
+
 std::string SegmentHeadRequest::getImageURL()const
 {
 	return imageURL_;
