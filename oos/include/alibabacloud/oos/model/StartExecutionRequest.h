@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setSafetyCheck(const std::string& safetyCheck);
 				std::map<std::string, std::string> getTags()const;
 				void setTags(const std::map<std::string, std::string>& tags);
+				std::string getTemplateContent()const;
+				void setTemplateContent(const std::string& templateContent);
 				std::string getParentExecutionId()const;
 				void setParentExecutionId(const std::string& parentExecutionId);
 				std::string getParameters()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 				std::string loopMode_;
 				std::string safetyCheck_;
 				std::map<std::string, std::string> tags_;
+				std::string templateContent_;
 				std::string parentExecutionId_;
 				std::string parameters_;
 

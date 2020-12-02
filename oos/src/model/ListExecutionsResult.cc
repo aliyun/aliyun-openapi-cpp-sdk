@@ -101,16 +101,16 @@ void ListExecutionsResult::parse(const std::string &payload)
 			executionsObject.lastSuccessfulTriggerTime = valueExecutionsExecution["LastSuccessfulTriggerTime"].asString();
 		if(!valueExecutionsExecution["ResourceStatus"].isNull())
 			executionsObject.resourceStatus = valueExecutionsExecution["ResourceStatus"].asString();
-		auto allCurrentTasksNode = allExecutionsNode["CurrentTasks"]["CurrentTask"];
-		for (auto allExecutionsNodeCurrentTasksCurrentTask : allCurrentTasksNode)
+		auto allCurrentTasksNode = valueExecutionsExecution["CurrentTasks"]["CurrentTask"];
+		for (auto valueExecutionsExecutionCurrentTasksCurrentTask : allCurrentTasksNode)
 		{
 			Execution::CurrentTask currentTasksObject;
-			if(!allExecutionsNodeCurrentTasksCurrentTask["TaskExecutionId"].isNull())
-				currentTasksObject.taskExecutionId = allExecutionsNodeCurrentTasksCurrentTask["TaskExecutionId"].asString();
-			if(!allExecutionsNodeCurrentTasksCurrentTask["TaskName"].isNull())
-				currentTasksObject.taskName = allExecutionsNodeCurrentTasksCurrentTask["TaskName"].asString();
-			if(!allExecutionsNodeCurrentTasksCurrentTask["TaskAction"].isNull())
-				currentTasksObject.taskAction = allExecutionsNodeCurrentTasksCurrentTask["TaskAction"].asString();
+			if(!valueExecutionsExecutionCurrentTasksCurrentTask["TaskExecutionId"].isNull())
+				currentTasksObject.taskExecutionId = valueExecutionsExecutionCurrentTasksCurrentTask["TaskExecutionId"].asString();
+			if(!valueExecutionsExecutionCurrentTasksCurrentTask["TaskName"].isNull())
+				currentTasksObject.taskName = valueExecutionsExecutionCurrentTasksCurrentTask["TaskName"].asString();
+			if(!valueExecutionsExecutionCurrentTasksCurrentTask["TaskAction"].isNull())
+				currentTasksObject.taskAction = valueExecutionsExecutionCurrentTasksCurrentTask["TaskAction"].asString();
 			executionsObject.currentTasks.push_back(currentTasksObject);
 		}
 		executions_.push_back(executionsObject);

@@ -735,6 +735,42 @@ OosClient::GetSecretParametersByPathOutcomeCallable OosClient::getSecretParamete
 	return task->get_future();
 }
 
+OosClient::GetServiceSettingsOutcome OosClient::getServiceSettings(const GetServiceSettingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceSettingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceSettingsOutcome(GetServiceSettingsResult(outcome.result()));
+	else
+		return GetServiceSettingsOutcome(outcome.error());
+}
+
+void OosClient::getServiceSettingsAsync(const GetServiceSettingsRequest& request, const GetServiceSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceSettings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetServiceSettingsOutcomeCallable OosClient::getServiceSettingsCallable(const GetServiceSettingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceSettingsOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceSettings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::GetTemplateOutcome OosClient::getTemplate(const GetTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1449,42 @@ OosClient::SearchInventoryOutcomeCallable OosClient::searchInventoryCallable(con
 			[this, request]()
 			{
 			return this->searchInventory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::SetServiceSettingsOutcome OosClient::setServiceSettings(const SetServiceSettingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetServiceSettingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetServiceSettingsOutcome(SetServiceSettingsResult(outcome.result()));
+	else
+		return SetServiceSettingsOutcome(outcome.error());
+}
+
+void OosClient::setServiceSettingsAsync(const SetServiceSettingsRequest& request, const SetServiceSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setServiceSettings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::SetServiceSettingsOutcomeCallable OosClient::setServiceSettingsCallable(const SetServiceSettingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetServiceSettingsOutcome()>>(
+			[this, request]()
+			{
+			return this->setServiceSettings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

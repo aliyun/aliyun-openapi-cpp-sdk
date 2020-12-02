@@ -126,6 +126,17 @@ void StartExecutionRequest::setTags(const std::map<std::string, std::string>& ta
 	setJsonParameters("Tags", tags);
 }
 
+std::string StartExecutionRequest::getTemplateContent()const
+{
+	return templateContent_;
+}
+
+void StartExecutionRequest::setTemplateContent(const std::string& templateContent)
+{
+	templateContent_ = templateContent;
+	setParameter("TemplateContent", templateContent);
+}
+
 std::string StartExecutionRequest::getParentExecutionId()const
 {
 	return parentExecutionId_;

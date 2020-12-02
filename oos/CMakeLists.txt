@@ -59,6 +59,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/GetSecretParametersResult.h
 	include/alibabacloud/oos/model/GetSecretParametersByPathRequest.h
 	include/alibabacloud/oos/model/GetSecretParametersByPathResult.h
+	include/alibabacloud/oos/model/GetServiceSettingsRequest.h
+	include/alibabacloud/oos/model/GetServiceSettingsResult.h
 	include/alibabacloud/oos/model/GetTemplateRequest.h
 	include/alibabacloud/oos/model/GetTemplateResult.h
 	include/alibabacloud/oos/model/ListActionsRequest.h
@@ -97,6 +99,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/NotifyExecutionResult.h
 	include/alibabacloud/oos/model/SearchInventoryRequest.h
 	include/alibabacloud/oos/model/SearchInventoryResult.h
+	include/alibabacloud/oos/model/SetServiceSettingsRequest.h
+	include/alibabacloud/oos/model/SetServiceSettingsResult.h
 	include/alibabacloud/oos/model/StartExecutionRequest.h
 	include/alibabacloud/oos/model/StartExecutionResult.h
 	include/alibabacloud/oos/model/TagResourcesRequest.h
@@ -158,6 +162,8 @@ set(oos_src
 	src/model/GetSecretParametersResult.cc
 	src/model/GetSecretParametersByPathRequest.cc
 	src/model/GetSecretParametersByPathResult.cc
+	src/model/GetServiceSettingsRequest.cc
+	src/model/GetServiceSettingsResult.cc
 	src/model/GetTemplateRequest.cc
 	src/model/GetTemplateResult.cc
 	src/model/ListActionsRequest.cc
@@ -196,6 +202,8 @@ set(oos_src
 	src/model/NotifyExecutionResult.cc
 	src/model/SearchInventoryRequest.cc
 	src/model/SearchInventoryResult.cc
+	src/model/SetServiceSettingsRequest.cc
+	src/model/SetServiceSettingsResult.cc
 	src/model/StartExecutionRequest.cc
 	src/model/StartExecutionResult.cc
 	src/model/TagResourcesRequest.cc

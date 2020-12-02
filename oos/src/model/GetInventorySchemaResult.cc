@@ -47,14 +47,14 @@ void GetInventorySchemaResult::parse(const std::string &payload)
 			schemasObject.typeName = valueSchemasSchema["TypeName"].asString();
 		if(!valueSchemasSchema["Version"].isNull())
 			schemasObject.version = valueSchemasSchema["Version"].asString();
-		auto allAttributesNode = allSchemasNode["Attributes"]["Attribute"];
-		for (auto allSchemasNodeAttributesAttribute : allAttributesNode)
+		auto allAttributesNode = valueSchemasSchema["Attributes"]["Attribute"];
+		for (auto valueSchemasSchemaAttributesAttribute : allAttributesNode)
 		{
 			Schema::Attribute attributesObject;
-			if(!allSchemasNodeAttributesAttribute["Name"].isNull())
-				attributesObject.name = allSchemasNodeAttributesAttribute["Name"].asString();
-			if(!allSchemasNodeAttributesAttribute["DataType"].isNull())
-				attributesObject.dataType = allSchemasNodeAttributesAttribute["DataType"].asString();
+			if(!valueSchemasSchemaAttributesAttribute["Name"].isNull())
+				attributesObject.name = valueSchemasSchemaAttributesAttribute["Name"].asString();
+			if(!valueSchemasSchemaAttributesAttribute["DataType"].isNull())
+				attributesObject.dataType = valueSchemasSchemaAttributesAttribute["DataType"].asString();
 			schemasObject.attributes.push_back(attributesObject);
 		}
 		schemas_.push_back(schemasObject);
