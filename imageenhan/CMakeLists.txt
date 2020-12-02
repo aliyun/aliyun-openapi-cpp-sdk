@@ -29,6 +29,8 @@ set(imageenhan_public_header_model
 	include/alibabacloud/imageenhan/model/AssessSharpnessResult.h
 	include/alibabacloud/imageenhan/model/ChangeImageSizeRequest.h
 	include/alibabacloud/imageenhan/model/ChangeImageSizeResult.h
+	include/alibabacloud/imageenhan/model/ColorizeImageRequest.h
+	include/alibabacloud/imageenhan/model/ColorizeImageResult.h
 	include/alibabacloud/imageenhan/model/EnhanceImageColorRequest.h
 	include/alibabacloud/imageenhan/model/EnhanceImageColorResult.h
 	include/alibabacloud/imageenhan/model/ErasePersonRequest.h
@@ -68,6 +70,8 @@ set(imageenhan_src
 	src/model/AssessSharpnessResult.cc
 	src/model/ChangeImageSizeRequest.cc
 	src/model/ChangeImageSizeResult.cc
+	src/model/ColorizeImageRequest.cc
+	src/model/ColorizeImageResult.cc
 	src/model/EnhanceImageColorRequest.cc
 	src/model/EnhanceImageColorResult.cc
 	src/model/ErasePersonRequest.cc

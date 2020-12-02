@@ -30,6 +30,8 @@
 #include "model/AssessSharpnessResult.h"
 #include "model/ChangeImageSizeRequest.h"
 #include "model/ChangeImageSizeResult.h"
+#include "model/ColorizeImageRequest.h"
+#include "model/ColorizeImageResult.h"
 #include "model/EnhanceImageColorRequest.h"
 #include "model/EnhanceImageColorResult.h"
 #include "model/ErasePersonRequest.h"
@@ -79,6 +81,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChangeImageSizeResult> ChangeImageSizeOutcome;
 			typedef std::future<ChangeImageSizeOutcome> ChangeImageSizeOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::ChangeImageSizeRequest&, const ChangeImageSizeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeImageSizeAsyncHandler;
+			typedef Outcome<Error, Model::ColorizeImageResult> ColorizeImageOutcome;
+			typedef std::future<ColorizeImageOutcome> ColorizeImageOutcomeCallable;
+			typedef std::function<void(const ImageenhanClient*, const Model::ColorizeImageRequest&, const ColorizeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ColorizeImageAsyncHandler;
 			typedef Outcome<Error, Model::EnhanceImageColorResult> EnhanceImageColorOutcome;
 			typedef std::future<EnhanceImageColorOutcome> EnhanceImageColorOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::EnhanceImageColorRequest&, const EnhanceImageColorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceImageColorAsyncHandler;
@@ -138,6 +143,9 @@ namespace AlibabaCloud
 			ChangeImageSizeOutcome changeImageSize(const Model::ChangeImageSizeRequest &request)const;
 			void changeImageSizeAsync(const Model::ChangeImageSizeRequest& request, const ChangeImageSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeImageSizeOutcomeCallable changeImageSizeCallable(const Model::ChangeImageSizeRequest& request) const;
+			ColorizeImageOutcome colorizeImage(const Model::ColorizeImageRequest &request)const;
+			void colorizeImageAsync(const Model::ColorizeImageRequest& request, const ColorizeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ColorizeImageOutcomeCallable colorizeImageCallable(const Model::ColorizeImageRequest& request) const;
 			EnhanceImageColorOutcome enhanceImageColor(const Model::EnhanceImageColorRequest &request)const;
 			void enhanceImageColorAsync(const Model::EnhanceImageColorRequest& request, const EnhanceImageColorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnhanceImageColorOutcomeCallable enhanceImageColorCallable(const Model::EnhanceImageColorRequest& request) const;

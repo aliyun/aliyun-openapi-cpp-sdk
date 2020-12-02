@@ -195,6 +195,42 @@ ImageenhanClient::ChangeImageSizeOutcomeCallable ImageenhanClient::changeImageSi
 	return task->get_future();
 }
 
+ImageenhanClient::ColorizeImageOutcome ImageenhanClient::colorizeImage(const ColorizeImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ColorizeImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ColorizeImageOutcome(ColorizeImageResult(outcome.result()));
+	else
+		return ColorizeImageOutcome(outcome.error());
+}
+
+void ImageenhanClient::colorizeImageAsync(const ColorizeImageRequest& request, const ColorizeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, colorizeImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageenhanClient::ColorizeImageOutcomeCallable ImageenhanClient::colorizeImageCallable(const ColorizeImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ColorizeImageOutcome()>>(
+			[this, request]()
+			{
+			return this->colorizeImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageenhanClient::EnhanceImageColorOutcome ImageenhanClient::enhanceImageColor(const EnhanceImageColorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
