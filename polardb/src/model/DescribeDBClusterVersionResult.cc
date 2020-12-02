@@ -39,8 +39,8 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBInstanceName"].isNull())
-		dBInstanceName_ = value["DBInstanceName"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["DBVersion"].isNull())
 		dBVersion_ = value["DBVersion"].asString();
 	if(!value["DBMinorVersion"].isNull())
@@ -81,13 +81,13 @@ std::string DescribeDBClusterVersionResult::getDBVersionStatus()const
 	return dBVersionStatus_;
 }
 
+std::string DescribeDBClusterVersionResult::getDBClusterId()const
+{
+	return dBClusterId_;
+}
+
 std::string DescribeDBClusterVersionResult::getDBMinorVersion()const
 {
 	return dBMinorVersion_;
-}
-
-std::string DescribeDBClusterVersionResult::getDBInstanceName()const
-{
-	return dBInstanceName_;
 }
 

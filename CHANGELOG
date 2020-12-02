@@ -1,4 +1,9 @@
 2020-12-02 Version: patch
+- Support CreateDBLink for polardb oracle.
+- Support DeleteDBLink for polardb oracle.
+- Support DescribeDBLinks for polardb oracle.
+
+2020-12-02 Version: patch
 - Update version.
 
 2020-12-02 Version: patch

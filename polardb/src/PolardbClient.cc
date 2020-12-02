@@ -267,6 +267,42 @@ PolardbClient::CreateDBEndpointAddressOutcomeCallable PolardbClient::createDBEnd
 	return task->get_future();
 }
 
+PolardbClient::CreateDBLinkOutcome PolardbClient::createDBLink(const CreateDBLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDBLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDBLinkOutcome(CreateDBLinkResult(outcome.result()));
+	else
+		return CreateDBLinkOutcome(outcome.error());
+}
+
+void PolardbClient::createDBLinkAsync(const CreateDBLinkRequest& request, const CreateDBLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDBLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CreateDBLinkOutcomeCallable PolardbClient::createDBLinkCallable(const CreateDBLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDBLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->createDBLink(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::CreateDBNodesOutcome PolardbClient::createDBNodes(const CreateDBNodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +549,42 @@ PolardbClient::DeleteDBEndpointAddressOutcomeCallable PolardbClient::deleteDBEnd
 			[this, request]()
 			{
 			return this->deleteDBEndpointAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DeleteDBLinkOutcome PolardbClient::deleteDBLink(const DeleteDBLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDBLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDBLinkOutcome(DeleteDBLinkResult(outcome.result()));
+	else
+		return DeleteDBLinkOutcome(outcome.error());
+}
+
+void PolardbClient::deleteDBLinkAsync(const DeleteDBLinkRequest& request, const DeleteDBLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDBLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DeleteDBLinkOutcomeCallable PolardbClient::deleteDBLinkCallable(const DeleteDBLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDBLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDBLink(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,6 +1383,42 @@ PolardbClient::DescribeDBClustersWithBackupsOutcomeCallable PolardbClient::descr
 	return task->get_future();
 }
 
+PolardbClient::DescribeDBLinksOutcome PolardbClient::describeDBLinks(const DescribeDBLinksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBLinksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBLinksOutcome(DescribeDBLinksResult(outcome.result()));
+	else
+		return DescribeDBLinksOutcome(outcome.error());
+}
+
+void PolardbClient::describeDBLinksAsync(const DescribeDBLinksRequest& request, const DescribeDBLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBLinks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDBLinksOutcomeCallable PolardbClient::describeDBLinksCallable(const DescribeDBLinksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBLinksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBLinks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeDBNodePerformanceOutcome PolardbClient::describeDBNodePerformance(const DescribeDBNodePerformanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1455,6 +1563,42 @@ PolardbClient::DescribeGlobalDatabaseNetworksOutcomeCallable PolardbClient::desc
 	return task->get_future();
 }
 
+PolardbClient::DescribeLocalAvailableRecoveryTimeOutcome PolardbClient::describeLocalAvailableRecoveryTime(const DescribeLocalAvailableRecoveryTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLocalAvailableRecoveryTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLocalAvailableRecoveryTimeOutcome(DescribeLocalAvailableRecoveryTimeResult(outcome.result()));
+	else
+		return DescribeLocalAvailableRecoveryTimeOutcome(outcome.error());
+}
+
+void PolardbClient::describeLocalAvailableRecoveryTimeAsync(const DescribeLocalAvailableRecoveryTimeRequest& request, const DescribeLocalAvailableRecoveryTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLocalAvailableRecoveryTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeLocalAvailableRecoveryTimeOutcomeCallable PolardbClient::describeLocalAvailableRecoveryTimeCallable(const DescribeLocalAvailableRecoveryTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLocalAvailableRecoveryTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLocalAvailableRecoveryTime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeLogBackupPolicyOutcome PolardbClient::describeLogBackupPolicy(const DescribeLogBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1629,42 @@ PolardbClient::DescribeLogBackupPolicyOutcomeCallable PolardbClient::describeLog
 			[this, request]()
 			{
 			return this->describeLogBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeMetaListOutcome PolardbClient::describeMetaList(const DescribeMetaListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMetaListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMetaListOutcome(DescribeMetaListResult(outcome.result()));
+	else
+		return DescribeMetaListOutcome(outcome.error());
+}
+
+void PolardbClient::describeMetaListAsync(const DescribeMetaListRequest& request, const DescribeMetaListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMetaList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeMetaListOutcomeCallable PolardbClient::describeMetaListCallable(const DescribeMetaListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMetaListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMetaList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1665,6 +1845,42 @@ PolardbClient::DescribeSlowLogsOutcomeCallable PolardbClient::describeSlowLogsCa
 			[this, request]()
 			{
 			return this->describeSlowLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeTasksOutcome PolardbClient::describeTasks(const DescribeTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTasksOutcome(DescribeTasksResult(outcome.result()));
+	else
+		return DescribeTasksOutcome(outcome.error());
+}
+
+void PolardbClient::describeTasksAsync(const DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeTasksOutcomeCallable PolardbClient::describeTasksCallable(const DescribeTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2565,6 +2781,42 @@ PolardbClient::RestartDBNodeOutcomeCallable PolardbClient::restartDBNodeCallable
 			[this, request]()
 			{
 			return this->restartDBNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::RestoreTableOutcome PolardbClient::restoreTable(const RestoreTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestoreTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestoreTableOutcome(RestoreTableResult(outcome.result()));
+	else
+		return RestoreTableOutcome(outcome.error());
+}
+
+void PolardbClient::restoreTableAsync(const RestoreTableRequest& request, const RestoreTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restoreTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::RestoreTableOutcomeCallable PolardbClient::restoreTableCallable(const RestoreTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestoreTableOutcome()>>(
+			[this, request]()
+			{
+			return this->restoreTable(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

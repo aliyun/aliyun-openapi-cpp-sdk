@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERVERSIONRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERVERSIONRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMERESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterVersionResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeLocalAvailableRecoveryTimeResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeDBClusterVersionResult();
-				explicit DescribeDBClusterVersionResult(const std::string &payload);
-				~DescribeDBClusterVersionResult();
-				std::string getLatestRevisionVersion()const;
-				std::string getIsLatestVersion()const;
-				std::string getDBVersion()const;
-				std::string getDBRevisionVersion()const;
-				std::string getDBVersionStatus()const;
+				DescribeLocalAvailableRecoveryTimeResult();
+				explicit DescribeLocalAvailableRecoveryTimeResult(const std::string &payload);
+				~DescribeLocalAvailableRecoveryTimeResult();
+				std::string getRecoveryEndTime()const;
+				std::string getRecoveryBeginTime()const;
 				std::string getDBClusterId()const;
-				std::string getDBMinorVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string latestRevisionVersion_;
-				std::string isLatestVersion_;
-				std::string dBVersion_;
-				std::string dBRevisionVersion_;
-				std::string dBVersionStatus_;
+				std::string recoveryEndTime_;
+				std::string recoveryBeginTime_;
 				std::string dBClusterId_;
-				std::string dBMinorVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERVERSIONRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMERESULT_H_

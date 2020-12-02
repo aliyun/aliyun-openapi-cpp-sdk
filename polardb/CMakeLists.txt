@@ -33,6 +33,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CreateDBClusterEndpointResult.h
 	include/alibabacloud/polardb/model/CreateDBEndpointAddressRequest.h
 	include/alibabacloud/polardb/model/CreateDBEndpointAddressResult.h
+	include/alibabacloud/polardb/model/CreateDBLinkRequest.h
+	include/alibabacloud/polardb/model/CreateDBLinkResult.h
 	include/alibabacloud/polardb/model/CreateDBNodesRequest.h
 	include/alibabacloud/polardb/model/CreateDBNodesResult.h
 	include/alibabacloud/polardb/model/CreateDatabaseRequest.h
@@ -47,6 +49,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DeleteDBClusterEndpointResult.h
 	include/alibabacloud/polardb/model/DeleteDBEndpointAddressRequest.h
 	include/alibabacloud/polardb/model/DeleteDBEndpointAddressResult.h
+	include/alibabacloud/polardb/model/DeleteDBLinkRequest.h
+	include/alibabacloud/polardb/model/DeleteDBLinkResult.h
 	include/alibabacloud/polardb/model/DeleteDBNodesRequest.h
 	include/alibabacloud/polardb/model/DeleteDBNodesResult.h
 	include/alibabacloud/polardb/model/DeleteDatabaseRequest.h
@@ -91,6 +95,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBClustersResult.h
 	include/alibabacloud/polardb/model/DescribeDBClustersWithBackupsRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClustersWithBackupsResult.h
+	include/alibabacloud/polardb/model/DescribeDBLinksRequest.h
+	include/alibabacloud/polardb/model/DescribeDBLinksResult.h
 	include/alibabacloud/polardb/model/DescribeDBNodePerformanceRequest.h
 	include/alibabacloud/polardb/model/DescribeDBNodePerformanceResult.h
 	include/alibabacloud/polardb/model/DescribeDatabasesRequest.h
@@ -99,8 +105,12 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsResult.h
 	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksRequest.h
 	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksResult.h
+	include/alibabacloud/polardb/model/DescribeLocalAvailableRecoveryTimeRequest.h
+	include/alibabacloud/polardb/model/DescribeLocalAvailableRecoveryTimeResult.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyResult.h
+	include/alibabacloud/polardb/model/DescribeMetaListRequest.h
+	include/alibabacloud/polardb/model/DescribeMetaListResult.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionRequest.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionResult.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionsRequest.h
@@ -111,6 +121,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogsRequest.h
 	include/alibabacloud/polardb/model/DescribeSlowLogsResult.h
+	include/alibabacloud/polardb/model/DescribeTasksRequest.h
+	include/alibabacloud/polardb/model/DescribeTasksResult.h
 	include/alibabacloud/polardb/model/FailoverDBClusterRequest.h
 	include/alibabacloud/polardb/model/FailoverDBClusterResult.h
 	include/alibabacloud/polardb/model/GrantAccountPrivilegeRequest.h
@@ -161,6 +173,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ResetAccountResult.h
 	include/alibabacloud/polardb/model/RestartDBNodeRequest.h
 	include/alibabacloud/polardb/model/RestartDBNodeResult.h
+	include/alibabacloud/polardb/model/RestoreTableRequest.h
+	include/alibabacloud/polardb/model/RestoreTableResult.h
 	include/alibabacloud/polardb/model/RevokeAccountPrivilegeRequest.h
 	include/alibabacloud/polardb/model/RevokeAccountPrivilegeResult.h
 	include/alibabacloud/polardb/model/TagResourcesRequest.h
@@ -182,6 +196,8 @@ set(polardb_src
 	src/model/CreateDBClusterEndpointResult.cc
 	src/model/CreateDBEndpointAddressRequest.cc
 	src/model/CreateDBEndpointAddressResult.cc
+	src/model/CreateDBLinkRequest.cc
+	src/model/CreateDBLinkResult.cc
 	src/model/CreateDBNodesRequest.cc
 	src/model/CreateDBNodesResult.cc
 	src/model/CreateDatabaseRequest.cc
@@ -196,6 +212,8 @@ set(polardb_src
 	src/model/DeleteDBClusterEndpointResult.cc
 	src/model/DeleteDBEndpointAddressRequest.cc
 	src/model/DeleteDBEndpointAddressResult.cc
+	src/model/DeleteDBLinkRequest.cc
+	src/model/DeleteDBLinkResult.cc
 	src/model/DeleteDBNodesRequest.cc
 	src/model/DeleteDBNodesResult.cc
 	src/model/DeleteDatabaseRequest.cc
@@ -240,6 +258,8 @@ set(polardb_src
 	src/model/DescribeDBClustersResult.cc
 	src/model/DescribeDBClustersWithBackupsRequest.cc
 	src/model/DescribeDBClustersWithBackupsResult.cc
+	src/model/DescribeDBLinksRequest.cc
+	src/model/DescribeDBLinksResult.cc
 	src/model/DescribeDBNodePerformanceRequest.cc
 	src/model/DescribeDBNodePerformanceResult.cc
 	src/model/DescribeDatabasesRequest.cc
@@ -248,8 +268,12 @@ set(polardb_src
 	src/model/DescribeDetachedBackupsResult.cc
 	src/model/DescribeGlobalDatabaseNetworksRequest.cc
 	src/model/DescribeGlobalDatabaseNetworksResult.cc
+	src/model/DescribeLocalAvailableRecoveryTimeRequest.cc
+	src/model/DescribeLocalAvailableRecoveryTimeResult.cc
 	src/model/DescribeLogBackupPolicyRequest.cc
 	src/model/DescribeLogBackupPolicyResult.cc
+	src/model/DescribeMetaListRequest.cc
+	src/model/DescribeMetaListResult.cc
 	src/model/DescribePendingMaintenanceActionRequest.cc
 	src/model/DescribePendingMaintenanceActionResult.cc
 	src/model/DescribePendingMaintenanceActionsRequest.cc
@@ -260,6 +284,8 @@ set(polardb_src
 	src/model/DescribeSlowLogRecordsResult.cc
 	src/model/DescribeSlowLogsRequest.cc
 	src/model/DescribeSlowLogsResult.cc
+	src/model/DescribeTasksRequest.cc
+	src/model/DescribeTasksResult.cc
 	src/model/FailoverDBClusterRequest.cc
 	src/model/FailoverDBClusterResult.cc
 	src/model/GrantAccountPrivilegeRequest.cc
@@ -310,6 +336,8 @@ set(polardb_src
 	src/model/ResetAccountResult.cc
 	src/model/RestartDBNodeRequest.cc
 	src/model/RestartDBNodeResult.cc
+	src/model/RestoreTableRequest.cc
+	src/model/RestoreTableResult.cc
 	src/model/RevokeAccountPrivilegeRequest.cc
 	src/model/RevokeAccountPrivilegeResult.cc
 	src/model/TagResourcesRequest.cc
