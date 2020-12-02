@@ -25,40 +25,20 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/AssociateChatbotInstanceResult.h
 	include/alibabacloud/voicenavigator/model/AuditTTSVoiceRequest.h
 	include/alibabacloud/voicenavigator/model/AuditTTSVoiceResult.h
-	include/alibabacloud/voicenavigator/model/AuthorizedRequest.h
-	include/alibabacloud/voicenavigator/model/AuthorizedResult.h
-	include/alibabacloud/voicenavigator/model/BatchDeleteNavigationScriptsRequest.h
-	include/alibabacloud/voicenavigator/model/BatchDeleteNavigationScriptsResult.h
-	include/alibabacloud/voicenavigator/model/BatchMoveNavigationScriptsRequest.h
-	include/alibabacloud/voicenavigator/model/BatchMoveNavigationScriptsResult.h
 	include/alibabacloud/voicenavigator/model/BeginDialogueRequest.h
 	include/alibabacloud/voicenavigator/model/BeginDialogueResult.h
 	include/alibabacloud/voicenavigator/model/CollectedNumberRequest.h
 	include/alibabacloud/voicenavigator/model/CollectedNumberResult.h
-	include/alibabacloud/voicenavigator/model/CreateCategoryRequest.h
-	include/alibabacloud/voicenavigator/model/CreateCategoryResult.h
 	include/alibabacloud/voicenavigator/model/CreateInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/CreateInstanceResult.h
-	include/alibabacloud/voicenavigator/model/CreateKnowledgeRequest.h
-	include/alibabacloud/voicenavigator/model/CreateKnowledgeResult.h
-	include/alibabacloud/voicenavigator/model/CreateRedirectionRequest.h
-	include/alibabacloud/voicenavigator/model/CreateRedirectionResult.h
-	include/alibabacloud/voicenavigator/model/DebugAuthorizedRequest.h
-	include/alibabacloud/voicenavigator/model/DebugAuthorizedResult.h
 	include/alibabacloud/voicenavigator/model/DebugBeginDialogueRequest.h
 	include/alibabacloud/voicenavigator/model/DebugBeginDialogueResult.h
 	include/alibabacloud/voicenavigator/model/DebugCollectedNumberRequest.h
 	include/alibabacloud/voicenavigator/model/DebugCollectedNumberResult.h
 	include/alibabacloud/voicenavigator/model/DebugDialogueRequest.h
 	include/alibabacloud/voicenavigator/model/DebugDialogueResult.h
-	include/alibabacloud/voicenavigator/model/DeleteCategoryRequest.h
-	include/alibabacloud/voicenavigator/model/DeleteCategoryResult.h
 	include/alibabacloud/voicenavigator/model/DeleteInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/DeleteInstanceResult.h
-	include/alibabacloud/voicenavigator/model/DeleteNavigationScriptRequest.h
-	include/alibabacloud/voicenavigator/model/DeleteNavigationScriptResult.h
-	include/alibabacloud/voicenavigator/model/DescribeCategoryTreeRequest.h
-	include/alibabacloud/voicenavigator/model/DescribeCategoryTreeResult.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationResult.h
 	include/alibabacloud/voicenavigator/model/DescribeConversationContextRequest.h
@@ -67,14 +47,10 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/DescribeExportProgressResult.h
 	include/alibabacloud/voicenavigator/model/DescribeInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeInstanceResult.h
-	include/alibabacloud/voicenavigator/model/DescribeKnowledgeRequest.h
-	include/alibabacloud/voicenavigator/model/DescribeKnowledgeResult.h
 	include/alibabacloud/voicenavigator/model/DescribeNavigationConfigRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeNavigationConfigResult.h
 	include/alibabacloud/voicenavigator/model/DescribeRecordingRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeRecordingResult.h
-	include/alibabacloud/voicenavigator/model/DescribeRedirectionRequest.h
-	include/alibabacloud/voicenavigator/model/DescribeRedirectionResult.h
 	include/alibabacloud/voicenavigator/model/DescribeStatisticalDataRequest.h
 	include/alibabacloud/voicenavigator/model/DescribeStatisticalDataResult.h
 	include/alibabacloud/voicenavigator/model/DescribeTTSConfigRequest.h
@@ -83,8 +59,6 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/DialogueResult.h
 	include/alibabacloud/voicenavigator/model/DisableInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/DisableInstanceResult.h
-	include/alibabacloud/voicenavigator/model/DuplicateInstanceRequest.h
-	include/alibabacloud/voicenavigator/model/DuplicateInstanceResult.h
 	include/alibabacloud/voicenavigator/model/EnableInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/EnableInstanceResult.h
 	include/alibabacloud/voicenavigator/model/EndDialogueRequest.h
@@ -93,8 +67,6 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/ExportConversationDetailsResult.h
 	include/alibabacloud/voicenavigator/model/ExportStatisticalDataRequest.h
 	include/alibabacloud/voicenavigator/model/ExportStatisticalDataResult.h
-	include/alibabacloud/voicenavigator/model/ListCategoriesRequest.h
-	include/alibabacloud/voicenavigator/model/ListCategoriesResult.h
 	include/alibabacloud/voicenavigator/model/ListChatbotInstancesRequest.h
 	include/alibabacloud/voicenavigator/model/ListChatbotInstancesResult.h
 	include/alibabacloud/voicenavigator/model/ListConversationDetailsRequest.h
@@ -103,48 +75,18 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/ListConversationsResult.h
 	include/alibabacloud/voicenavigator/model/ListInstancesRequest.h
 	include/alibabacloud/voicenavigator/model/ListInstancesResult.h
-	include/alibabacloud/voicenavigator/model/ListNavigationScriptsRequest.h
-	include/alibabacloud/voicenavigator/model/ListNavigationScriptsResult.h
-	include/alibabacloud/voicenavigator/model/ListPublishHistoriesRequest.h
-	include/alibabacloud/voicenavigator/model/ListPublishHistoriesResult.h
-	include/alibabacloud/voicenavigator/model/ModifyAskingBackConfigRequest.h
-	include/alibabacloud/voicenavigator/model/ModifyAskingBackConfigResult.h
-	include/alibabacloud/voicenavigator/model/ModifyCategoryRequest.h
-	include/alibabacloud/voicenavigator/model/ModifyCategoryResult.h
-	include/alibabacloud/voicenavigator/model/ModifyComplainingConfigRequest.h
-	include/alibabacloud/voicenavigator/model/ModifyComplainingConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyGreetingConfigRequest.h
 	include/alibabacloud/voicenavigator/model/ModifyGreetingConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyInstanceRequest.h
 	include/alibabacloud/voicenavigator/model/ModifyInstanceResult.h
-	include/alibabacloud/voicenavigator/model/ModifyKnowledgeRequest.h
-	include/alibabacloud/voicenavigator/model/ModifyKnowledgeResult.h
-	include/alibabacloud/voicenavigator/model/ModifyRedirectionRequest.h
-	include/alibabacloud/voicenavigator/model/ModifyRedirectionResult.h
-	include/alibabacloud/voicenavigator/model/ModifyRepeatingConfigRequest.h
-	include/alibabacloud/voicenavigator/model/ModifyRepeatingConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifySilenceTimeoutConfigRequest.h
 	include/alibabacloud/voicenavigator/model/ModifySilenceTimeoutConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyTTSConfigRequest.h
 	include/alibabacloud/voicenavigator/model/ModifyTTSConfigResult.h
 	include/alibabacloud/voicenavigator/model/ModifyUnrecognizingConfigRequest.h
 	include/alibabacloud/voicenavigator/model/ModifyUnrecognizingConfigResult.h
-	include/alibabacloud/voicenavigator/model/MoveCategoryRequest.h
-	include/alibabacloud/voicenavigator/model/MoveCategoryResult.h
-	include/alibabacloud/voicenavigator/model/MoveNavigationScriptRequest.h
-	include/alibabacloud/voicenavigator/model/MoveNavigationScriptResult.h
-	include/alibabacloud/voicenavigator/model/PublishInstanceRequest.h
-	include/alibabacloud/voicenavigator/model/PublishInstanceResult.h
 	include/alibabacloud/voicenavigator/model/QueryConversationsRequest.h
 	include/alibabacloud/voicenavigator/model/QueryConversationsResult.h
-	include/alibabacloud/voicenavigator/model/QueryNavigationScriptsRequest.h
-	include/alibabacloud/voicenavigator/model/QueryNavigationScriptsResult.h
-	include/alibabacloud/voicenavigator/model/QueryPerformanceIndicatorsRequest.h
-	include/alibabacloud/voicenavigator/model/QueryPerformanceIndicatorsResult.h
-	include/alibabacloud/voicenavigator/model/QueryRecordingRequest.h
-	include/alibabacloud/voicenavigator/model/QueryRecordingResult.h
-	include/alibabacloud/voicenavigator/model/RollbackInstanceRequest.h
-	include/alibabacloud/voicenavigator/model/RollbackInstanceResult.h
 	include/alibabacloud/voicenavigator/model/SaveRecordingRequest.h
 	include/alibabacloud/voicenavigator/model/SaveRecordingResult.h
 	include/alibabacloud/voicenavigator/model/SilenceTimeoutRequest.h
@@ -156,40 +98,20 @@ set(voicenavigator_src
 	src/model/AssociateChatbotInstanceResult.cc
 	src/model/AuditTTSVoiceRequest.cc
 	src/model/AuditTTSVoiceResult.cc
-	src/model/AuthorizedRequest.cc
-	src/model/AuthorizedResult.cc
-	src/model/BatchDeleteNavigationScriptsRequest.cc
-	src/model/BatchDeleteNavigationScriptsResult.cc
-	src/model/BatchMoveNavigationScriptsRequest.cc
-	src/model/BatchMoveNavigationScriptsResult.cc
 	src/model/BeginDialogueRequest.cc
 	src/model/BeginDialogueResult.cc
 	src/model/CollectedNumberRequest.cc
 	src/model/CollectedNumberResult.cc
-	src/model/CreateCategoryRequest.cc
-	src/model/CreateCategoryResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
-	src/model/CreateKnowledgeRequest.cc
-	src/model/CreateKnowledgeResult.cc
-	src/model/CreateRedirectionRequest.cc
-	src/model/CreateRedirectionResult.cc
-	src/model/DebugAuthorizedRequest.cc
-	src/model/DebugAuthorizedResult.cc
 	src/model/DebugBeginDialogueRequest.cc
 	src/model/DebugBeginDialogueResult.cc
 	src/model/DebugCollectedNumberRequest.cc
 	src/model/DebugCollectedNumberResult.cc
 	src/model/DebugDialogueRequest.cc
 	src/model/DebugDialogueResult.cc
-	src/model/DeleteCategoryRequest.cc
-	src/model/DeleteCategoryResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
-	src/model/DeleteNavigationScriptRequest.cc
-	src/model/DeleteNavigationScriptResult.cc
-	src/model/DescribeCategoryTreeRequest.cc
-	src/model/DescribeCategoryTreeResult.cc
 	src/model/DescribeConversationRequest.cc
 	src/model/DescribeConversationResult.cc
 	src/model/DescribeConversationContextRequest.cc
@@ -198,14 +120,10 @@ set(voicenavigator_src
 	src/model/DescribeExportProgressResult.cc
 	src/model/DescribeInstanceRequest.cc
 	src/model/DescribeInstanceResult.cc
-	src/model/DescribeKnowledgeRequest.cc
-	src/model/DescribeKnowledgeResult.cc
 	src/model/DescribeNavigationConfigRequest.cc
 	src/model/DescribeNavigationConfigResult.cc
 	src/model/DescribeRecordingRequest.cc
 	src/model/DescribeRecordingResult.cc
-	src/model/DescribeRedirectionRequest.cc
-	src/model/DescribeRedirectionResult.cc
 	src/model/DescribeStatisticalDataRequest.cc
 	src/model/DescribeStatisticalDataResult.cc
 	src/model/DescribeTTSConfigRequest.cc
@@ -214,8 +132,6 @@ set(voicenavigator_src
 	src/model/DialogueResult.cc
 	src/model/DisableInstanceRequest.cc
 	src/model/DisableInstanceResult.cc
-	src/model/DuplicateInstanceRequest.cc
-	src/model/DuplicateInstanceResult.cc
 	src/model/EnableInstanceRequest.cc
 	src/model/EnableInstanceResult.cc
 	src/model/EndDialogueRequest.cc
@@ -224,8 +140,6 @@ set(voicenavigator_src
 	src/model/ExportConversationDetailsResult.cc
 	src/model/ExportStatisticalDataRequest.cc
 	src/model/ExportStatisticalDataResult.cc
-	src/model/ListCategoriesRequest.cc
-	src/model/ListCategoriesResult.cc
 	src/model/ListChatbotInstancesRequest.cc
 	src/model/ListChatbotInstancesResult.cc
 	src/model/ListConversationDetailsRequest.cc
@@ -234,48 +148,18 @@ set(voicenavigator_src
 	src/model/ListConversationsResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
-	src/model/ListNavigationScriptsRequest.cc
-	src/model/ListNavigationScriptsResult.cc
-	src/model/ListPublishHistoriesRequest.cc
-	src/model/ListPublishHistoriesResult.cc
-	src/model/ModifyAskingBackConfigRequest.cc
-	src/model/ModifyAskingBackConfigResult.cc
-	src/model/ModifyCategoryRequest.cc
-	src/model/ModifyCategoryResult.cc
-	src/model/ModifyComplainingConfigRequest.cc
-	src/model/ModifyComplainingConfigResult.cc
 	src/model/ModifyGreetingConfigRequest.cc
 	src/model/ModifyGreetingConfigResult.cc
 	src/model/ModifyInstanceRequest.cc
 	src/model/ModifyInstanceResult.cc
-	src/model/ModifyKnowledgeRequest.cc
-	src/model/ModifyKnowledgeResult.cc
-	src/model/ModifyRedirectionRequest.cc
-	src/model/ModifyRedirectionResult.cc
-	src/model/ModifyRepeatingConfigRequest.cc
-	src/model/ModifyRepeatingConfigResult.cc
 	src/model/ModifySilenceTimeoutConfigRequest.cc
 	src/model/ModifySilenceTimeoutConfigResult.cc
 	src/model/ModifyTTSConfigRequest.cc
 	src/model/ModifyTTSConfigResult.cc
 	src/model/ModifyUnrecognizingConfigRequest.cc
 	src/model/ModifyUnrecognizingConfigResult.cc
-	src/model/MoveCategoryRequest.cc
-	src/model/MoveCategoryResult.cc
-	src/model/MoveNavigationScriptRequest.cc
-	src/model/MoveNavigationScriptResult.cc
-	src/model/PublishInstanceRequest.cc
-	src/model/PublishInstanceResult.cc
 	src/model/QueryConversationsRequest.cc
 	src/model/QueryConversationsResult.cc
-	src/model/QueryNavigationScriptsRequest.cc
-	src/model/QueryNavigationScriptsResult.cc
-	src/model/QueryPerformanceIndicatorsRequest.cc
-	src/model/QueryPerformanceIndicatorsResult.cc
-	src/model/QueryRecordingRequest.cc
-	src/model/QueryRecordingResult.cc
-	src/model/RollbackInstanceRequest.cc
-	src/model/RollbackInstanceResult.cc
 	src/model/SaveRecordingRequest.cc
 	src/model/SaveRecordingResult.cc
 	src/model/SilenceTimeoutRequest.cc
