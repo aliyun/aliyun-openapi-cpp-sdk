@@ -92,6 +92,8 @@
 #include "model/DescribeDcdnDomainOriginBpsDataResult.h"
 #include "model/DescribeDcdnDomainOriginTrafficDataRequest.h"
 #include "model/DescribeDcdnDomainOriginTrafficDataResult.h"
+#include "model/DescribeDcdnDomainPropertyRequest.h"
+#include "model/DescribeDcdnDomainPropertyResult.h"
 #include "model/DescribeDcdnDomainPvDataRequest.h"
 #include "model/DescribeDcdnDomainPvDataResult.h"
 #include "model/DescribeDcdnDomainQpsDataRequest.h"
@@ -332,6 +334,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnDomainOriginTrafficDataResult> DescribeDcdnDomainOriginTrafficDataOutcome;
 			typedef std::future<DescribeDcdnDomainOriginTrafficDataOutcome> DescribeDcdnDomainOriginTrafficDataOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnDomainOriginTrafficDataRequest&, const DescribeDcdnDomainOriginTrafficDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnDomainOriginTrafficDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnDomainPropertyResult> DescribeDcdnDomainPropertyOutcome;
+			typedef std::future<DescribeDcdnDomainPropertyOutcome> DescribeDcdnDomainPropertyOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnDomainPropertyRequest&, const DescribeDcdnDomainPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnDomainPropertyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnDomainPvDataResult> DescribeDcdnDomainPvDataOutcome;
 			typedef std::future<DescribeDcdnDomainPvDataOutcome> DescribeDcdnDomainPvDataOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnDomainPvDataRequest&, const DescribeDcdnDomainPvDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnDomainPvDataAsyncHandler;
@@ -631,6 +636,9 @@ namespace AlibabaCloud
 			DescribeDcdnDomainOriginTrafficDataOutcome describeDcdnDomainOriginTrafficData(const Model::DescribeDcdnDomainOriginTrafficDataRequest &request)const;
 			void describeDcdnDomainOriginTrafficDataAsync(const Model::DescribeDcdnDomainOriginTrafficDataRequest& request, const DescribeDcdnDomainOriginTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnDomainOriginTrafficDataOutcomeCallable describeDcdnDomainOriginTrafficDataCallable(const Model::DescribeDcdnDomainOriginTrafficDataRequest& request) const;
+			DescribeDcdnDomainPropertyOutcome describeDcdnDomainProperty(const Model::DescribeDcdnDomainPropertyRequest &request)const;
+			void describeDcdnDomainPropertyAsync(const Model::DescribeDcdnDomainPropertyRequest& request, const DescribeDcdnDomainPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnDomainPropertyOutcomeCallable describeDcdnDomainPropertyCallable(const Model::DescribeDcdnDomainPropertyRequest& request) const;
 			DescribeDcdnDomainPvDataOutcome describeDcdnDomainPvData(const Model::DescribeDcdnDomainPvDataRequest &request)const;
 			void describeDcdnDomainPvDataAsync(const Model::DescribeDcdnDomainPvDataRequest& request, const DescribeDcdnDomainPvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnDomainPvDataOutcomeCallable describeDcdnDomainPvDataCallable(const Model::DescribeDcdnDomainPvDataRequest& request) const;

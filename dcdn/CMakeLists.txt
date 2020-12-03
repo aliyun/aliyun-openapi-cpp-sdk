@@ -91,6 +91,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainOriginBpsDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainOriginTrafficDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainOriginTrafficDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainPropertyRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainPropertyResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainPvDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainPvDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainQpsDataRequest.h
@@ -290,6 +292,8 @@ set(dcdn_src
 	src/model/DescribeDcdnDomainOriginBpsDataResult.cc
 	src/model/DescribeDcdnDomainOriginTrafficDataRequest.cc
 	src/model/DescribeDcdnDomainOriginTrafficDataResult.cc
+	src/model/DescribeDcdnDomainPropertyRequest.cc
+	src/model/DescribeDcdnDomainPropertyResult.cc
 	src/model/DescribeDcdnDomainPvDataRequest.cc
 	src/model/DescribeDcdnDomainPvDataResult.cc
 	src/model/DescribeDcdnDomainQpsDataRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINTOPURLVISITREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINTOPURLVISITREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPROPERTYREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPROPERTYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainTopUrlVisitRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnDomainPropertyRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDcdnDomainTopUrlVisitRequest();
-				~DescribeDcdnDomainTopUrlVisitRequest();
+				DescribeDcdnDomainPropertyRequest();
+				~DescribeDcdnDomainPropertyRequest();
 
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSortBy()const;
-				void setSortBy(const std::string& sortBy);
 
             private:
-				std::string startTime_;
 				std::string domainName_;
 				long ownerId_;
-				std::string sortBy_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINTOPURLVISITREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNDOMAINPROPERTYREQUEST_H_
