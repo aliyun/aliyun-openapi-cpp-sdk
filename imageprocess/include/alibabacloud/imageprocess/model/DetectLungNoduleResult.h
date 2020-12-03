@@ -43,8 +43,10 @@ namespace AlibabaCloud
 							std::string lobe;
 							float imageX;
 							std::string category;
-							float confidence;
 							std::string lung;
+							float meanValue;
+							float confidence;
+							float volume;
 							float x;
 							float y;
 							float z;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 							float diameter;
 						};
 						std::vector<std::string> origin;
+						std::string report;
 						std::vector<std::string> spacing;
 						std::vector<Serie::Element> elements;
 						std::string seriesInstanceUid;
