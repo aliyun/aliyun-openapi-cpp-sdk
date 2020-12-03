@@ -1,4 +1,7 @@
 2020-12-03 Version: patch
+- Add new api.
+
+2020-12-03 Version: patch
 - Supported all language sdk.
 - Fixed some bugs for polardbx.
 
