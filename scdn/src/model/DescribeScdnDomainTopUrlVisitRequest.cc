@@ -27,17 +27,6 @@ DescribeScdnDomainTopUrlVisitRequest::DescribeScdnDomainTopUrlVisitRequest() :
 DescribeScdnDomainTopUrlVisitRequest::~DescribeScdnDomainTopUrlVisitRequest()
 {}
 
-std::string DescribeScdnDomainTopUrlVisitRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DescribeScdnDomainTopUrlVisitRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
-}
-
 std::string DescribeScdnDomainTopUrlVisitRequest::getStartTime()const
 {
 	return startTime_;
@@ -49,6 +38,17 @@ void DescribeScdnDomainTopUrlVisitRequest::setStartTime(const std::string& start
 	setParameter("StartTime", startTime);
 }
 
+std::string DescribeScdnDomainTopUrlVisitRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeScdnDomainTopUrlVisitRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
 long DescribeScdnDomainTopUrlVisitRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -58,17 +58,6 @@ void DescribeScdnDomainTopUrlVisitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeScdnDomainTopUrlVisitRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeScdnDomainTopUrlVisitRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeScdnDomainTopUrlVisitRequest::getSortBy()const
