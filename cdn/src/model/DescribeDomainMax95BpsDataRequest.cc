@@ -38,6 +38,17 @@ void DescribeDomainMax95BpsDataRequest::setStartTime(const std::string& startTim
 	setParameter("StartTime", startTime);
 }
 
+std::string DescribeDomainMax95BpsDataRequest::getCycle()const
+{
+	return cycle_;
+}
+
+void DescribeDomainMax95BpsDataRequest::setCycle(const std::string& cycle)
+{
+	cycle_ = cycle;
+	setParameter("Cycle", cycle);
+}
+
 std::string DescribeDomainMax95BpsDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -69,5 +80,16 @@ void DescribeDomainMax95BpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeDomainMax95BpsDataRequest::getTimePoint()const
+{
+	return timePoint_;
+}
+
+void DescribeDomainMax95BpsDataRequest::setTimePoint(const std::string& timePoint)
+{
+	timePoint_ = timePoint;
+	setParameter("TimePoint", timePoint);
 }
 
