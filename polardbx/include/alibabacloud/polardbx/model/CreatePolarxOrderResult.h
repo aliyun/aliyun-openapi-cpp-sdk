@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
-#define ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_POLARDBX_MODEL_CREATEPOLARXORDERRESULT_H_
+#define ALIBABACLOUD_POLARDBX_MODEL_CREATEPOLARXORDERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDBX_EXPORT CreateDBInstanceResult : public ServiceResult
+			class ALIBABACLOUD_POLARDBX_EXPORT CreatePolarxOrderResult : public ServiceResult
 			{
 			public:
+				struct OrderResult
+				{
+					long orderId;
+					std::string dBInstanceName;
+				};
 
 
-				CreateDBInstanceResult();
-				explicit CreateDBInstanceResult(const std::string &payload);
-				~CreateDBInstanceResult();
-				std::string getOrderId()const;
-				std::string getDBInstanceName()const;
+				CreatePolarxOrderResult();
+				explicit CreatePolarxOrderResult(const std::string &payload);
+				~CreatePolarxOrderResult();
+				std::vector<OrderResult> getOrderResultList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string orderId_;
-				std::string dBInstanceName_;
+				std::vector<OrderResult> orderResultList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_POLARDBX_MODEL_CREATEPOLARXORDERRESULT_H_

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardbx/model/ModifyDBInstanceClassResult.h>
+#include <alibabacloud/polardbx/model/UpdatePolarDBXInstanceNodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardbx;
 using namespace AlibabaCloud::Polardbx::Model;
 
-ModifyDBInstanceClassResult::ModifyDBInstanceClassResult() :
+UpdatePolarDBXInstanceNodeResult::UpdatePolarDBXInstanceNodeResult() :
 	ServiceResult()
 {}
 
-ModifyDBInstanceClassResult::ModifyDBInstanceClassResult(const std::string &payload) :
+UpdatePolarDBXInstanceNodeResult::UpdatePolarDBXInstanceNodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyDBInstanceClassResult::~ModifyDBInstanceClassResult()
+UpdatePolarDBXInstanceNodeResult::~UpdatePolarDBXInstanceNodeResult()
 {}
 
-void ModifyDBInstanceClassResult::parse(const std::string &payload)
+void UpdatePolarDBXInstanceNodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -44,7 +44,7 @@ void ModifyDBInstanceClassResult::parse(const std::string &payload)
 
 }
 
-std::string ModifyDBInstanceClassResult::getOrderId()const
+std::string UpdatePolarDBXInstanceNodeResult::getOrderId()const
 {
 	return orderId_;
 }

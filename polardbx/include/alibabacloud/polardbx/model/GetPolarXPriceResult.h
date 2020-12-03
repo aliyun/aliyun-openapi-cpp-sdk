@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
-#define ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_POLARDBX_MODEL_GETPOLARXPRICERESULT_H_
+#define ALIBABACLOUD_POLARDBX_MODEL_GETPOLARXPRICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDBX_EXPORT CreateDBInstanceResult : public ServiceResult
+			class ALIBABACLOUD_POLARDBX_EXPORT GetPolarXPriceResult : public ServiceResult
 			{
 			public:
+				struct OrderPrice
+				{
+					struct Rule
+					{
+						long ruleDescId;
+						std::string title;
+						std::string name;
+					};
+					std::string totalCostAmount;
+					std::string tradeAmount;
+					std::string payType;
+					std::vector<OrderPrice::Rule> rules;
+					std::string originalAmount;
+					std::string discountAmount;
+					std::string dBInstanceName;
+				};
 
 
-				CreateDBInstanceResult();
-				explicit CreateDBInstanceResult(const std::string &payload);
-				~CreateDBInstanceResult();
-				std::string getOrderId()const;
-				std::string getDBInstanceName()const;
+				GetPolarXPriceResult();
+				explicit GetPolarXPriceResult(const std::string &payload);
+				~GetPolarXPriceResult();
+				std::vector<OrderPrice> getOrderPriceList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string orderId_;
-				std::string dBInstanceName_;
+				std::vector<OrderPrice> orderPriceList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_POLARDBX_MODEL_GETPOLARXPRICERESULT_H_

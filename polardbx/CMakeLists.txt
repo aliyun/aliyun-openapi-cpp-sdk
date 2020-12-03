@@ -23,6 +23,8 @@ set(polardbx_public_header
 set(polardbx_public_header_model 
 	include/alibabacloud/polardbx/model/AllocateInstancePublicConnectionRequest.h
 	include/alibabacloud/polardbx/model/AllocateInstancePublicConnectionResult.h
+	include/alibabacloud/polardbx/model/CancelPolarxOrderRequest.h
+	include/alibabacloud/polardbx/model/CancelPolarxOrderResult.h
 	include/alibabacloud/polardbx/model/CheckHealthRequest.h
 	include/alibabacloud/polardbx/model/CheckHealthResult.h
 	include/alibabacloud/polardbx/model/CreateAccountRequest.h
@@ -33,6 +35,8 @@ set(polardbx_public_header_model
 	include/alibabacloud/polardbx/model/CreateDBInstanceResult.h
 	include/alibabacloud/polardbx/model/CreatePolarxInstanceRequest.h
 	include/alibabacloud/polardbx/model/CreatePolarxInstanceResult.h
+	include/alibabacloud/polardbx/model/CreatePolarxOrderRequest.h
+	include/alibabacloud/polardbx/model/CreatePolarxOrderResult.h
 	include/alibabacloud/polardbx/model/CreateSuperAccountRequest.h
 	include/alibabacloud/polardbx/model/CreateSuperAccountResult.h
 	include/alibabacloud/polardbx/model/DeleteAccountRequest.h
@@ -85,6 +89,10 @@ set(polardbx_public_header_model
 	include/alibabacloud/polardbx/model/DisableSqlAuditResult.h
 	include/alibabacloud/polardbx/model/EnableSqlAuditRequest.h
 	include/alibabacloud/polardbx/model/EnableSqlAuditResult.h
+	include/alibabacloud/polardbx/model/GetPolarXPriceRequest.h
+	include/alibabacloud/polardbx/model/GetPolarXPriceResult.h
+	include/alibabacloud/polardbx/model/GetPolarxCommodityRequest.h
+	include/alibabacloud/polardbx/model/GetPolarxCommodityResult.h
 	include/alibabacloud/polardbx/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/polardbx/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/polardbx/model/ModifyAccountPrivilegeRequest.h
@@ -111,6 +119,10 @@ set(polardbx_public_header_model
 	include/alibabacloud/polardbx/model/ResetPolarxPgAccountPasswordResult.h
 	include/alibabacloud/polardbx/model/RestartDBInstanceRequest.h
 	include/alibabacloud/polardbx/model/RestartDBInstanceResult.h
+	include/alibabacloud/polardbx/model/RetryPolarxOrderRequest.h
+	include/alibabacloud/polardbx/model/RetryPolarxOrderResult.h
+	include/alibabacloud/polardbx/model/UpdatePolarDBXInstanceNodeRequest.h
+	include/alibabacloud/polardbx/model/UpdatePolarDBXInstanceNodeResult.h
 	include/alibabacloud/polardbx/model/UpgradeDBInstanceKernelVersionRequest.h
 	include/alibabacloud/polardbx/model/UpgradeDBInstanceKernelVersionResult.h )
 
@@ -118,6 +130,8 @@ set(polardbx_src
 	src/PolardbxClient.cc
 	src/model/AllocateInstancePublicConnectionRequest.cc
 	src/model/AllocateInstancePublicConnectionResult.cc
+	src/model/CancelPolarxOrderRequest.cc
+	src/model/CancelPolarxOrderResult.cc
 	src/model/CheckHealthRequest.cc
 	src/model/CheckHealthResult.cc
 	src/model/CreateAccountRequest.cc
@@ -128,6 +142,8 @@ set(polardbx_src
 	src/model/CreateDBInstanceResult.cc
 	src/model/CreatePolarxInstanceRequest.cc
 	src/model/CreatePolarxInstanceResult.cc
+	src/model/CreatePolarxOrderRequest.cc
+	src/model/CreatePolarxOrderResult.cc
 	src/model/CreateSuperAccountRequest.cc
 	src/model/CreateSuperAccountResult.cc
 	src/model/DeleteAccountRequest.cc
@@ -180,6 +196,10 @@ set(polardbx_src
 	src/model/DisableSqlAuditResult.cc
 	src/model/EnableSqlAuditRequest.cc
 	src/model/EnableSqlAuditResult.cc
+	src/model/GetPolarXPriceRequest.cc
+	src/model/GetPolarXPriceResult.cc
+	src/model/GetPolarxCommodityRequest.cc
+	src/model/GetPolarxCommodityResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPrivilegeRequest.cc
@@ -206,6 +226,10 @@ set(polardbx_src
 	src/model/ResetPolarxPgAccountPasswordResult.cc
 	src/model/RestartDBInstanceRequest.cc
 	src/model/RestartDBInstanceResult.cc
+	src/model/RetryPolarxOrderRequest.cc
+	src/model/RetryPolarxOrderResult.cc
+	src/model/UpdatePolarDBXInstanceNodeRequest.cc
+	src/model/UpdatePolarDBXInstanceNodeResult.cc
 	src/model/UpgradeDBInstanceKernelVersionRequest.cc
 	src/model/UpgradeDBInstanceKernelVersionResult.cc )
 

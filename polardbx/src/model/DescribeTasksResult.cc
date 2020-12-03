@@ -57,14 +57,16 @@ void DescribeTasksResult::parse(const std::string &payload)
 			itemsObject.taskId = valueItemsTaskProgressInfo["TaskId"].asString();
 		if(!valueItemsTaskProgressInfo["Progress"].isNull())
 			itemsObject.progress = valueItemsTaskProgressInfo["Progress"].asString();
-		if(!valueItemsTaskProgressInfo["ExpectedFinishTime"].isNull())
-			itemsObject.expectedFinishTime = valueItemsTaskProgressInfo["ExpectedFinishTime"].asString();
+		if(!valueItemsTaskProgressInfo["FinishTime"].isNull())
+			itemsObject.finishTime1 = valueItemsTaskProgressInfo["FinishTime"].asString();
 		if(!valueItemsTaskProgressInfo["Status"].isNull())
 			itemsObject.status = valueItemsTaskProgressInfo["Status"].asString();
 		if(!valueItemsTaskProgressInfo["TaskErrorCode"].isNull())
 			itemsObject.taskErrorCode = valueItemsTaskProgressInfo["TaskErrorCode"].asString();
 		if(!valueItemsTaskProgressInfo["TaskErrorMessage"].isNull())
 			itemsObject.taskErrorMessage = valueItemsTaskProgressInfo["TaskErrorMessage"].asString();
+		if(!valueItemsTaskProgressInfo["ScaleOutToken"].isNull())
+			itemsObject.scaleOutToken = valueItemsTaskProgressInfo["ScaleOutToken"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
-#define ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_POLARDBX_MODEL_GETPOLARXPRICEREQUEST_H_
+#define ALIBABACLOUD_POLARDBX_MODEL_GETPOLARXPRICEREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/polardbx/PolardbxExport.h>
 
 namespace AlibabaCloud
@@ -29,25 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDBX_EXPORT CreateDBInstanceResult : public ServiceResult
+			class ALIBABACLOUD_POLARDBX_EXPORT GetPolarXPriceRequest : public RpcServiceRequest
 			{
+
 			public:
+				GetPolarXPriceRequest();
+				~GetPolarXPriceRequest();
 
-
-				CreateDBInstanceResult();
-				explicit CreateDBInstanceResult(const std::string &payload);
-				~CreateDBInstanceResult();
-				std::string getOrderId()const;
 				std::string getDBInstanceName()const;
+				void setDBInstanceName(const std::string& dBInstanceName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getNodeCount()const;
+				void setNodeCount(const std::string& nodeCount);
 
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string orderId_;
+            private:
 				std::string dBInstanceName_;
+				std::string regionId_;
+				std::string nodeCount_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDBX_MODEL_CREATEDBINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_POLARDBX_MODEL_GETPOLARXPRICEREQUEST_H_

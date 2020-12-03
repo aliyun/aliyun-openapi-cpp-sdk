@@ -35,24 +35,26 @@ namespace AlibabaCloud
 				CreateDBInstanceRequest();
 				~CreateDBInstanceRequest();
 
+				std::string getNetworkType()const;
+				void setNetworkType(const std::string& networkType);
+				std::string getEngineVersion()const;
+				void setEngineVersion(const std::string& engineVersion);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getDBNodeClass()const;
 				void setDBNodeClass(const std::string& dBNodeClass);
-				std::string getDBInstanceDescription()const;
-				void setDBInstanceDescription(const std::string& dBInstanceDescription);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
-				std::string getSecurityIPList()const;
-				void setSecurityIPList(const std::string& securityIPList);
+				bool getIsReadDBInstance()const;
+				void setIsReadDBInstance(bool isReadDBInstance);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				bool getAutoRenew()const;
 				void setAutoRenew(bool autoRenew);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
-				std::string getInstanceNetworkType()const;
-				void setInstanceNetworkType(const std::string& instanceNetworkType);
+				std::string getPrimaryDBInstanceName()const;
+				void setPrimaryDBInstanceName(const std::string& primaryDBInstanceName);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getRegionId()const;
@@ -67,15 +69,16 @@ namespace AlibabaCloud
 				void setPayType(const std::string& payType);
 
             private:
+				std::string networkType_;
+				std::string engineVersion_;
 				std::string resourceGroupId_;
 				std::string dBNodeClass_;
-				std::string dBInstanceDescription_;
 				std::string period_;
-				std::string securityIPList_;
+				bool isReadDBInstance_;
 				std::string vSwitchId_;
 				bool autoRenew_;
 				std::string zoneId_;
-				std::string instanceNetworkType_;
+				std::string primaryDBInstanceName_;
 				std::string clientToken_;
 				std::string regionId_;
 				int dBNodeCount_;

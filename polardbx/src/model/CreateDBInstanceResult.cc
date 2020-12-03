@@ -43,26 +43,12 @@ void CreateDBInstanceResult::parse(const std::string &payload)
 		dBInstanceName_ = value["DBInstanceName"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
-	if(!value["ConnectionString"].isNull())
-		connectionString_ = value["ConnectionString"].asString();
-	if(!value["Port"].isNull())
-		port_ = std::stoi(value["Port"].asString());
 
-}
-
-int CreateDBInstanceResult::getPort()const
-{
-	return port_;
 }
 
 std::string CreateDBInstanceResult::getOrderId()const
 {
 	return orderId_;
-}
-
-std::string CreateDBInstanceResult::getConnectionString()const
-{
-	return connectionString_;
 }
 
 std::string CreateDBInstanceResult::getDBInstanceName()const

@@ -27,6 +27,28 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
 CreateDBInstanceRequest::~CreateDBInstanceRequest()
 {}
 
+std::string CreateDBInstanceRequest::getNetworkType()const
+{
+	return networkType_;
+}
+
+void CreateDBInstanceRequest::setNetworkType(const std::string& networkType)
+{
+	networkType_ = networkType;
+	setParameter("NetworkType", networkType);
+}
+
+std::string CreateDBInstanceRequest::getEngineVersion()const
+{
+	return engineVersion_;
+}
+
+void CreateDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
+{
+	engineVersion_ = engineVersion;
+	setParameter("EngineVersion", engineVersion);
+}
+
 std::string CreateDBInstanceRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -49,17 +71,6 @@ void CreateDBInstanceRequest::setDBNodeClass(const std::string& dBNodeClass)
 	setParameter("DBNodeClass", dBNodeClass);
 }
 
-std::string CreateDBInstanceRequest::getDBInstanceDescription()const
-{
-	return dBInstanceDescription_;
-}
-
-void CreateDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
-{
-	dBInstanceDescription_ = dBInstanceDescription;
-	setParameter("DBInstanceDescription", dBInstanceDescription);
-}
-
 std::string CreateDBInstanceRequest::getPeriod()const
 {
 	return period_;
@@ -71,15 +82,15 @@ void CreateDBInstanceRequest::setPeriod(const std::string& period)
 	setParameter("Period", period);
 }
 
-std::string CreateDBInstanceRequest::getSecurityIPList()const
+bool CreateDBInstanceRequest::getIsReadDBInstance()const
 {
-	return securityIPList_;
+	return isReadDBInstance_;
 }
 
-void CreateDBInstanceRequest::setSecurityIPList(const std::string& securityIPList)
+void CreateDBInstanceRequest::setIsReadDBInstance(bool isReadDBInstance)
 {
-	securityIPList_ = securityIPList;
-	setParameter("SecurityIPList", securityIPList);
+	isReadDBInstance_ = isReadDBInstance;
+	setParameter("IsReadDBInstance", isReadDBInstance ? "true" : "false");
 }
 
 std::string CreateDBInstanceRequest::getVSwitchId()const
@@ -115,15 +126,15 @@ void CreateDBInstanceRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
-std::string CreateDBInstanceRequest::getInstanceNetworkType()const
+std::string CreateDBInstanceRequest::getPrimaryDBInstanceName()const
 {
-	return instanceNetworkType_;
+	return primaryDBInstanceName_;
 }
 
-void CreateDBInstanceRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
+void CreateDBInstanceRequest::setPrimaryDBInstanceName(const std::string& primaryDBInstanceName)
 {
-	instanceNetworkType_ = instanceNetworkType;
-	setParameter("InstanceNetworkType", instanceNetworkType);
+	primaryDBInstanceName_ = primaryDBInstanceName;
+	setParameter("PrimaryDBInstanceName", primaryDBInstanceName);
 }
 
 std::string CreateDBInstanceRequest::getClientToken()const

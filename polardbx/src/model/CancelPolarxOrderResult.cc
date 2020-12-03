@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardbx/model/ModifyDBInstanceClassResult.h>
+#include <alibabacloud/polardbx/model/CancelPolarxOrderResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardbx;
 using namespace AlibabaCloud::Polardbx::Model;
 
-ModifyDBInstanceClassResult::ModifyDBInstanceClassResult() :
+CancelPolarxOrderResult::CancelPolarxOrderResult() :
 	ServiceResult()
 {}
 
-ModifyDBInstanceClassResult::ModifyDBInstanceClassResult(const std::string &payload) :
+CancelPolarxOrderResult::CancelPolarxOrderResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyDBInstanceClassResult::~ModifyDBInstanceClassResult()
+CancelPolarxOrderResult::~CancelPolarxOrderResult()
 {}
 
-void ModifyDBInstanceClassResult::parse(const std::string &payload)
+void CancelPolarxOrderResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
 
-}
-
-std::string ModifyDBInstanceClassResult::getOrderId()const
-{
-	return orderId_;
 }
 

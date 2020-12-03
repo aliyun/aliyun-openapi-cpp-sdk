@@ -24,6 +24,8 @@
 #include "PolardbxExport.h"
 #include "model/AllocateInstancePublicConnectionRequest.h"
 #include "model/AllocateInstancePublicConnectionResult.h"
+#include "model/CancelPolarxOrderRequest.h"
+#include "model/CancelPolarxOrderResult.h"
 #include "model/CheckHealthRequest.h"
 #include "model/CheckHealthResult.h"
 #include "model/CreateAccountRequest.h"
@@ -34,6 +36,8 @@
 #include "model/CreateDBInstanceResult.h"
 #include "model/CreatePolarxInstanceRequest.h"
 #include "model/CreatePolarxInstanceResult.h"
+#include "model/CreatePolarxOrderRequest.h"
+#include "model/CreatePolarxOrderResult.h"
 #include "model/CreateSuperAccountRequest.h"
 #include "model/CreateSuperAccountResult.h"
 #include "model/DeleteAccountRequest.h"
@@ -86,6 +90,10 @@
 #include "model/DisableSqlAuditResult.h"
 #include "model/EnableSqlAuditRequest.h"
 #include "model/EnableSqlAuditResult.h"
+#include "model/GetPolarXPriceRequest.h"
+#include "model/GetPolarXPriceResult.h"
+#include "model/GetPolarxCommodityRequest.h"
+#include "model/GetPolarxCommodityResult.h"
 #include "model/ModifyAccountDescriptionRequest.h"
 #include "model/ModifyAccountDescriptionResult.h"
 #include "model/ModifyAccountPrivilegeRequest.h"
@@ -112,6 +120,10 @@
 #include "model/ResetPolarxPgAccountPasswordResult.h"
 #include "model/RestartDBInstanceRequest.h"
 #include "model/RestartDBInstanceResult.h"
+#include "model/RetryPolarxOrderRequest.h"
+#include "model/RetryPolarxOrderResult.h"
+#include "model/UpdatePolarDBXInstanceNodeRequest.h"
+#include "model/UpdatePolarDBXInstanceNodeResult.h"
 #include "model/UpgradeDBInstanceKernelVersionRequest.h"
 #include "model/UpgradeDBInstanceKernelVersionResult.h"
 
@@ -126,6 +138,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocateInstancePublicConnectionResult> AllocateInstancePublicConnectionOutcome;
 			typedef std::future<AllocateInstancePublicConnectionOutcome> AllocateInstancePublicConnectionOutcomeCallable;
 			typedef std::function<void(const PolardbxClient*, const Model::AllocateInstancePublicConnectionRequest&, const AllocateInstancePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateInstancePublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::CancelPolarxOrderResult> CancelPolarxOrderOutcome;
+			typedef std::future<CancelPolarxOrderOutcome> CancelPolarxOrderOutcomeCallable;
+			typedef std::function<void(const PolardbxClient*, const Model::CancelPolarxOrderRequest&, const CancelPolarxOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPolarxOrderAsyncHandler;
 			typedef Outcome<Error, Model::CheckHealthResult> CheckHealthOutcome;
 			typedef std::future<CheckHealthOutcome> CheckHealthOutcomeCallable;
 			typedef std::function<void(const PolardbxClient*, const Model::CheckHealthRequest&, const CheckHealthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckHealthAsyncHandler;
@@ -141,6 +156,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePolarxInstanceResult> CreatePolarxInstanceOutcome;
 			typedef std::future<CreatePolarxInstanceOutcome> CreatePolarxInstanceOutcomeCallable;
 			typedef std::function<void(const PolardbxClient*, const Model::CreatePolarxInstanceRequest&, const CreatePolarxInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolarxInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreatePolarxOrderResult> CreatePolarxOrderOutcome;
+			typedef std::future<CreatePolarxOrderOutcome> CreatePolarxOrderOutcomeCallable;
+			typedef std::function<void(const PolardbxClient*, const Model::CreatePolarxOrderRequest&, const CreatePolarxOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolarxOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateSuperAccountResult> CreateSuperAccountOutcome;
 			typedef std::future<CreateSuperAccountOutcome> CreateSuperAccountOutcomeCallable;
 			typedef std::function<void(const PolardbxClient*, const Model::CreateSuperAccountRequest&, const CreateSuperAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSuperAccountAsyncHandler;
@@ -219,6 +237,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableSqlAuditResult> EnableSqlAuditOutcome;
 			typedef std::future<EnableSqlAuditOutcome> EnableSqlAuditOutcomeCallable;
 			typedef std::function<void(const PolardbxClient*, const Model::EnableSqlAuditRequest&, const EnableSqlAuditOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableSqlAuditAsyncHandler;
+			typedef Outcome<Error, Model::GetPolarXPriceResult> GetPolarXPriceOutcome;
+			typedef std::future<GetPolarXPriceOutcome> GetPolarXPriceOutcomeCallable;
+			typedef std::function<void(const PolardbxClient*, const Model::GetPolarXPriceRequest&, const GetPolarXPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPolarXPriceAsyncHandler;
+			typedef Outcome<Error, Model::GetPolarxCommodityResult> GetPolarxCommodityOutcome;
+			typedef std::future<GetPolarxCommodityOutcome> GetPolarxCommodityOutcomeCallable;
+			typedef std::function<void(const PolardbxClient*, const Model::GetPolarxCommodityRequest&, const GetPolarxCommodityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPolarxCommodityAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccountDescriptionResult> ModifyAccountDescriptionOutcome;
 			typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
 			typedef std::function<void(const PolardbxClient*, const Model::ModifyAccountDescriptionRequest&, const ModifyAccountDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
@@ -258,6 +282,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RestartDBInstanceResult> RestartDBInstanceOutcome;
 			typedef std::future<RestartDBInstanceOutcome> RestartDBInstanceOutcomeCallable;
 			typedef std::function<void(const PolardbxClient*, const Model::RestartDBInstanceRequest&, const RestartDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RetryPolarxOrderResult> RetryPolarxOrderOutcome;
+			typedef std::future<RetryPolarxOrderOutcome> RetryPolarxOrderOutcomeCallable;
+			typedef std::function<void(const PolardbxClient*, const Model::RetryPolarxOrderRequest&, const RetryPolarxOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetryPolarxOrderAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePolarDBXInstanceNodeResult> UpdatePolarDBXInstanceNodeOutcome;
+			typedef std::future<UpdatePolarDBXInstanceNodeOutcome> UpdatePolarDBXInstanceNodeOutcomeCallable;
+			typedef std::function<void(const PolardbxClient*, const Model::UpdatePolarDBXInstanceNodeRequest&, const UpdatePolarDBXInstanceNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolarDBXInstanceNodeAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeDBInstanceKernelVersionResult> UpgradeDBInstanceKernelVersionOutcome;
 			typedef std::future<UpgradeDBInstanceKernelVersionOutcome> UpgradeDBInstanceKernelVersionOutcomeCallable;
 			typedef std::function<void(const PolardbxClient*, const Model::UpgradeDBInstanceKernelVersionRequest&, const UpgradeDBInstanceKernelVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceKernelVersionAsyncHandler;
@@ -269,6 +299,9 @@ namespace AlibabaCloud
 			AllocateInstancePublicConnectionOutcome allocateInstancePublicConnection(const Model::AllocateInstancePublicConnectionRequest &request)const;
 			void allocateInstancePublicConnectionAsync(const Model::AllocateInstancePublicConnectionRequest& request, const AllocateInstancePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateInstancePublicConnectionOutcomeCallable allocateInstancePublicConnectionCallable(const Model::AllocateInstancePublicConnectionRequest& request) const;
+			CancelPolarxOrderOutcome cancelPolarxOrder(const Model::CancelPolarxOrderRequest &request)const;
+			void cancelPolarxOrderAsync(const Model::CancelPolarxOrderRequest& request, const CancelPolarxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelPolarxOrderOutcomeCallable cancelPolarxOrderCallable(const Model::CancelPolarxOrderRequest& request) const;
 			CheckHealthOutcome checkHealth(const Model::CheckHealthRequest &request)const;
 			void checkHealthAsync(const Model::CheckHealthRequest& request, const CheckHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckHealthOutcomeCallable checkHealthCallable(const Model::CheckHealthRequest& request) const;
@@ -284,6 +317,9 @@ namespace AlibabaCloud
 			CreatePolarxInstanceOutcome createPolarxInstance(const Model::CreatePolarxInstanceRequest &request)const;
 			void createPolarxInstanceAsync(const Model::CreatePolarxInstanceRequest& request, const CreatePolarxInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePolarxInstanceOutcomeCallable createPolarxInstanceCallable(const Model::CreatePolarxInstanceRequest& request) const;
+			CreatePolarxOrderOutcome createPolarxOrder(const Model::CreatePolarxOrderRequest &request)const;
+			void createPolarxOrderAsync(const Model::CreatePolarxOrderRequest& request, const CreatePolarxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePolarxOrderOutcomeCallable createPolarxOrderCallable(const Model::CreatePolarxOrderRequest& request) const;
 			CreateSuperAccountOutcome createSuperAccount(const Model::CreateSuperAccountRequest &request)const;
 			void createSuperAccountAsync(const Model::CreateSuperAccountRequest& request, const CreateSuperAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSuperAccountOutcomeCallable createSuperAccountCallable(const Model::CreateSuperAccountRequest& request) const;
@@ -362,6 +398,12 @@ namespace AlibabaCloud
 			EnableSqlAuditOutcome enableSqlAudit(const Model::EnableSqlAuditRequest &request)const;
 			void enableSqlAuditAsync(const Model::EnableSqlAuditRequest& request, const EnableSqlAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableSqlAuditOutcomeCallable enableSqlAuditCallable(const Model::EnableSqlAuditRequest& request) const;
+			GetPolarXPriceOutcome getPolarXPrice(const Model::GetPolarXPriceRequest &request)const;
+			void getPolarXPriceAsync(const Model::GetPolarXPriceRequest& request, const GetPolarXPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPolarXPriceOutcomeCallable getPolarXPriceCallable(const Model::GetPolarXPriceRequest& request) const;
+			GetPolarxCommodityOutcome getPolarxCommodity(const Model::GetPolarxCommodityRequest &request)const;
+			void getPolarxCommodityAsync(const Model::GetPolarxCommodityRequest& request, const GetPolarxCommodityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPolarxCommodityOutcomeCallable getPolarxCommodityCallable(const Model::GetPolarxCommodityRequest& request) const;
 			ModifyAccountDescriptionOutcome modifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request)const;
 			void modifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountDescriptionOutcomeCallable modifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request) const;
@@ -401,6 +443,12 @@ namespace AlibabaCloud
 			RestartDBInstanceOutcome restartDBInstance(const Model::RestartDBInstanceRequest &request)const;
 			void restartDBInstanceAsync(const Model::RestartDBInstanceRequest& request, const RestartDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartDBInstanceOutcomeCallable restartDBInstanceCallable(const Model::RestartDBInstanceRequest& request) const;
+			RetryPolarxOrderOutcome retryPolarxOrder(const Model::RetryPolarxOrderRequest &request)const;
+			void retryPolarxOrderAsync(const Model::RetryPolarxOrderRequest& request, const RetryPolarxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RetryPolarxOrderOutcomeCallable retryPolarxOrderCallable(const Model::RetryPolarxOrderRequest& request) const;
+			UpdatePolarDBXInstanceNodeOutcome updatePolarDBXInstanceNode(const Model::UpdatePolarDBXInstanceNodeRequest &request)const;
+			void updatePolarDBXInstanceNodeAsync(const Model::UpdatePolarDBXInstanceNodeRequest& request, const UpdatePolarDBXInstanceNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePolarDBXInstanceNodeOutcomeCallable updatePolarDBXInstanceNodeCallable(const Model::UpdatePolarDBXInstanceNodeRequest& request) const;
 			UpgradeDBInstanceKernelVersionOutcome upgradeDBInstanceKernelVersion(const Model::UpgradeDBInstanceKernelVersionRequest &request)const;
 			void upgradeDBInstanceKernelVersionAsync(const Model::UpgradeDBInstanceKernelVersionRequest& request, const UpgradeDBInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeDBInstanceKernelVersionOutcomeCallable upgradeDBInstanceKernelVersionCallable(const Model::UpgradeDBInstanceKernelVersionRequest& request) const;

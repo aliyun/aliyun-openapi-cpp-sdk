@@ -87,6 +87,42 @@ PolardbxClient::AllocateInstancePublicConnectionOutcomeCallable PolardbxClient::
 	return task->get_future();
 }
 
+PolardbxClient::CancelPolarxOrderOutcome PolardbxClient::cancelPolarxOrder(const CancelPolarxOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelPolarxOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelPolarxOrderOutcome(CancelPolarxOrderResult(outcome.result()));
+	else
+		return CancelPolarxOrderOutcome(outcome.error());
+}
+
+void PolardbxClient::cancelPolarxOrderAsync(const CancelPolarxOrderRequest& request, const CancelPolarxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelPolarxOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbxClient::CancelPolarxOrderOutcomeCallable PolardbxClient::cancelPolarxOrderCallable(const CancelPolarxOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelPolarxOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelPolarxOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbxClient::CheckHealthOutcome PolardbxClient::checkHealth(const CheckHealthRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ PolardbxClient::CreatePolarxInstanceOutcomeCallable PolardbxClient::createPolarx
 			[this, request]()
 			{
 			return this->createPolarxInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbxClient::CreatePolarxOrderOutcome PolardbxClient::createPolarxOrder(const CreatePolarxOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePolarxOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePolarxOrderOutcome(CreatePolarxOrderResult(outcome.result()));
+	else
+		return CreatePolarxOrderOutcome(outcome.error());
+}
+
+void PolardbxClient::createPolarxOrderAsync(const CreatePolarxOrderRequest& request, const CreatePolarxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPolarxOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbxClient::CreatePolarxOrderOutcomeCallable PolardbxClient::createPolarxOrderCallable(const CreatePolarxOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePolarxOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createPolarxOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,6 +1275,78 @@ PolardbxClient::EnableSqlAuditOutcomeCallable PolardbxClient::enableSqlAuditCall
 	return task->get_future();
 }
 
+PolardbxClient::GetPolarXPriceOutcome PolardbxClient::getPolarXPrice(const GetPolarXPriceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPolarXPriceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPolarXPriceOutcome(GetPolarXPriceResult(outcome.result()));
+	else
+		return GetPolarXPriceOutcome(outcome.error());
+}
+
+void PolardbxClient::getPolarXPriceAsync(const GetPolarXPriceRequest& request, const GetPolarXPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPolarXPrice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbxClient::GetPolarXPriceOutcomeCallable PolardbxClient::getPolarXPriceCallable(const GetPolarXPriceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPolarXPriceOutcome()>>(
+			[this, request]()
+			{
+			return this->getPolarXPrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbxClient::GetPolarxCommodityOutcome PolardbxClient::getPolarxCommodity(const GetPolarxCommodityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPolarxCommodityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPolarxCommodityOutcome(GetPolarxCommodityResult(outcome.result()));
+	else
+		return GetPolarxCommodityOutcome(outcome.error());
+}
+
+void PolardbxClient::getPolarxCommodityAsync(const GetPolarxCommodityRequest& request, const GetPolarxCommodityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPolarxCommodity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbxClient::GetPolarxCommodityOutcomeCallable PolardbxClient::getPolarxCommodityCallable(const GetPolarxCommodityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPolarxCommodityOutcome()>>(
+			[this, request]()
+			{
+			return this->getPolarxCommodity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbxClient::ModifyAccountDescriptionOutcome PolardbxClient::modifyAccountDescription(const ModifyAccountDescriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1809,78 @@ PolardbxClient::RestartDBInstanceOutcomeCallable PolardbxClient::restartDBInstan
 			[this, request]()
 			{
 			return this->restartDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbxClient::RetryPolarxOrderOutcome PolardbxClient::retryPolarxOrder(const RetryPolarxOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetryPolarxOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetryPolarxOrderOutcome(RetryPolarxOrderResult(outcome.result()));
+	else
+		return RetryPolarxOrderOutcome(outcome.error());
+}
+
+void PolardbxClient::retryPolarxOrderAsync(const RetryPolarxOrderRequest& request, const RetryPolarxOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retryPolarxOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbxClient::RetryPolarxOrderOutcomeCallable PolardbxClient::retryPolarxOrderCallable(const RetryPolarxOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetryPolarxOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->retryPolarxOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbxClient::UpdatePolarDBXInstanceNodeOutcome PolardbxClient::updatePolarDBXInstanceNode(const UpdatePolarDBXInstanceNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePolarDBXInstanceNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePolarDBXInstanceNodeOutcome(UpdatePolarDBXInstanceNodeResult(outcome.result()));
+	else
+		return UpdatePolarDBXInstanceNodeOutcome(outcome.error());
+}
+
+void PolardbxClient::updatePolarDBXInstanceNodeAsync(const UpdatePolarDBXInstanceNodeRequest& request, const UpdatePolarDBXInstanceNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePolarDBXInstanceNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbxClient::UpdatePolarDBXInstanceNodeOutcomeCallable PolardbxClient::updatePolarDBXInstanceNodeCallable(const UpdatePolarDBXInstanceNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePolarDBXInstanceNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePolarDBXInstanceNode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

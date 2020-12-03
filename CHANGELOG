@@ -1,4 +1,8 @@
 2020-12-03 Version: patch
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
+2020-12-03 Version: patch
 - Update DetectLungNodule.
 
 2020-12-02 Version: patch

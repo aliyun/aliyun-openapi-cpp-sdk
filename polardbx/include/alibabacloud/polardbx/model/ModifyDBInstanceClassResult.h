@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ModifyDBInstanceClassResult();
 				explicit ModifyDBInstanceClassResult(const std::string &payload);
 				~ModifyDBInstanceClassResult();
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string orderId_;
 
 			};
 		}
