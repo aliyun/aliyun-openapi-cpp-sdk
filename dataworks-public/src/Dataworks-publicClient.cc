@@ -555,6 +555,42 @@ Dataworks_publicClient::CreateFolderOutcomeCallable Dataworks_publicClient::crea
 	return task->get_future();
 }
 
+Dataworks_publicClient::CreateManualDagOutcome Dataworks_publicClient::createManualDag(const CreateManualDagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateManualDagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateManualDagOutcome(CreateManualDagResult(outcome.result()));
+	else
+		return CreateManualDagOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createManualDagAsync(const CreateManualDagRequest& request, const CreateManualDagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createManualDag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateManualDagOutcomeCallable Dataworks_publicClient::createManualDagCallable(const CreateManualDagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateManualDagOutcome()>>(
+			[this, request]()
+			{
+			return this->createManualDag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CreateMetaCategoryOutcome Dataworks_publicClient::createMetaCategory(const CreateMetaCategoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1815,6 +1851,42 @@ Dataworks_publicClient::GetDDLJobStatusOutcomeCallable Dataworks_publicClient::g
 	return task->get_future();
 }
 
+Dataworks_publicClient::GetDagOutcome Dataworks_publicClient::getDag(const GetDagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDagOutcome(GetDagResult(outcome.result()));
+	else
+		return GetDagOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getDagAsync(const GetDagRequest& request, const GetDagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetDagOutcomeCallable Dataworks_publicClient::getDagCallable(const GetDagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDagOutcome()>>(
+			[this, request]()
+			{
+			return this->getDag(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::GetDataServiceApiOutcome Dataworks_publicClient::getDataServiceApi(const GetDataServiceApiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2349,6 +2421,42 @@ Dataworks_publicClient::GetInstanceStatusCountOutcomeCallable Dataworks_publicCl
 			[this, request]()
 			{
 			return this->getInstanceStatusCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetManualDagInstancesOutcome Dataworks_publicClient::getManualDagInstances(const GetManualDagInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetManualDagInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetManualDagInstancesOutcome(GetManualDagInstancesResult(outcome.result()));
+	else
+		return GetManualDagInstancesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getManualDagInstancesAsync(const GetManualDagInstancesRequest& request, const GetManualDagInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getManualDagInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetManualDagInstancesOutcomeCallable Dataworks_publicClient::getManualDagInstancesCallable(const GetManualDagInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetManualDagInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->getManualDagInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4551,6 +4659,42 @@ Dataworks_publicClient::ResumeInstanceOutcomeCallable Dataworks_publicClient::re
 	return task->get_future();
 }
 
+Dataworks_publicClient::RunTriggerNodeOutcome Dataworks_publicClient::runTriggerNode(const RunTriggerNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunTriggerNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunTriggerNodeOutcome(RunTriggerNodeResult(outcome.result()));
+	else
+		return RunTriggerNodeOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::runTriggerNodeAsync(const RunTriggerNodeRequest& request, const RunTriggerNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runTriggerNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::RunTriggerNodeOutcomeCallable Dataworks_publicClient::runTriggerNodeCallable(const RunTriggerNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunTriggerNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->runTriggerNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::SearchMetaTablesOutcome Dataworks_publicClient::searchMetaTables(const SearchMetaTablesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4581,6 +4725,42 @@ Dataworks_publicClient::SearchMetaTablesOutcomeCallable Dataworks_publicClient::
 			[this, request]()
 			{
 			return this->searchMetaTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::SearchNodesByOutputOutcome Dataworks_publicClient::searchNodesByOutput(const SearchNodesByOutputRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchNodesByOutputOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchNodesByOutputOutcome(SearchNodesByOutputResult(outcome.result()));
+	else
+		return SearchNodesByOutputOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::searchNodesByOutputAsync(const SearchNodesByOutputRequest& request, const SearchNodesByOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchNodesByOutput(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::SearchNodesByOutputOutcomeCallable Dataworks_publicClient::searchNodesByOutputCallable(const SearchNodesByOutputRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchNodesByOutputOutcome()>>(
+			[this, request]()
+			{
+			return this->searchNodesByOutput(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -68,52 +68,52 @@ void ListAlertMessagesResult::parse(const std::string &payload)
 			alertMessagesItemObject.alertMessageStatus = dataNodeAlertMessagesAlertMessagesItem["AlertMessageStatus"].asString();
 		if(!dataNodeAlertMessagesAlertMessagesItem["Content"].isNull())
 			alertMessagesItemObject.content = dataNodeAlertMessagesAlertMessagesItem["Content"].asString();
-		auto allInstancesNode = allAlertMessagesNode["Instances"]["InstancesItem"];
-		for (auto allAlertMessagesNodeInstancesInstancesItem : allInstancesNode)
+		auto allInstancesNode = dataNodeAlertMessagesAlertMessagesItem["Instances"]["InstancesItem"];
+		for (auto dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem : allInstancesNode)
 		{
 			Data::AlertMessagesItem::InstancesItem instancesObject;
-			if(!allAlertMessagesNodeInstancesInstancesItem["NodeId"].isNull())
-				instancesObject.nodeId = std::stol(allAlertMessagesNodeInstancesInstancesItem["NodeId"].asString());
-			if(!allAlertMessagesNodeInstancesInstancesItem["NodeName"].isNull())
-				instancesObject.nodeName = allAlertMessagesNodeInstancesInstancesItem["NodeName"].asString();
-			if(!allAlertMessagesNodeInstancesInstancesItem["ProjectId"].isNull())
-				instancesObject.projectId = std::stol(allAlertMessagesNodeInstancesInstancesItem["ProjectId"].asString());
-			if(!allAlertMessagesNodeInstancesInstancesItem["Status"].isNull())
-				instancesObject.status = allAlertMessagesNodeInstancesInstancesItem["Status"].asString();
-			if(!allAlertMessagesNodeInstancesInstancesItem["InstanceId"].isNull())
-				instancesObject.instanceId = std::stol(allAlertMessagesNodeInstancesInstancesItem["InstanceId"].asString());
+			if(!dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["NodeId"].isNull())
+				instancesObject.nodeId = std::stol(dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["NodeId"].asString());
+			if(!dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["NodeName"].isNull())
+				instancesObject.nodeName = dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["NodeName"].asString();
+			if(!dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["ProjectId"].isNull())
+				instancesObject.projectId = std::stol(dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["ProjectId"].asString());
+			if(!dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["Status"].isNull())
+				instancesObject.status = dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["Status"].asString();
+			if(!dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["InstanceId"].isNull())
+				instancesObject.instanceId = std::stol(dataNodeAlertMessagesAlertMessagesItemInstancesInstancesItem["InstanceId"].asString());
 			alertMessagesItemObject.instances.push_back(instancesObject);
 		}
-		auto allTopicsNode = allAlertMessagesNode["Topics"]["TopicsItem"];
-		for (auto allAlertMessagesNodeTopicsTopicsItem : allTopicsNode)
+		auto allTopicsNode = dataNodeAlertMessagesAlertMessagesItem["Topics"]["TopicsItem"];
+		for (auto dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem : allTopicsNode)
 		{
 			Data::AlertMessagesItem::TopicsItem topicsObject;
-			if(!allAlertMessagesNodeTopicsTopicsItem["NodeId"].isNull())
-				topicsObject.nodeId = std::stol(allAlertMessagesNodeTopicsTopicsItem["NodeId"].asString());
-			if(!allAlertMessagesNodeTopicsTopicsItem["InstanceId"].isNull())
-				topicsObject.instanceId = std::stol(allAlertMessagesNodeTopicsTopicsItem["InstanceId"].asString());
-			if(!allAlertMessagesNodeTopicsTopicsItem["TopicId"].isNull())
-				topicsObject.topicId = std::stol(allAlertMessagesNodeTopicsTopicsItem["TopicId"].asString());
-			if(!allAlertMessagesNodeTopicsTopicsItem["TopicName"].isNull())
-				topicsObject.topicName = allAlertMessagesNodeTopicsTopicsItem["TopicName"].asString();
-			if(!allAlertMessagesNodeTopicsTopicsItem["TopicOwner"].isNull())
-				topicsObject.topicOwner = allAlertMessagesNodeTopicsTopicsItem["TopicOwner"].asString();
-			if(!allAlertMessagesNodeTopicsTopicsItem["TopicStatus"].isNull())
-				topicsObject.topicStatus = allAlertMessagesNodeTopicsTopicsItem["TopicStatus"].asString();
+			if(!dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["NodeId"].isNull())
+				topicsObject.nodeId = std::stol(dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["NodeId"].asString());
+			if(!dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["InstanceId"].isNull())
+				topicsObject.instanceId = std::stol(dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["InstanceId"].asString());
+			if(!dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["TopicId"].isNull())
+				topicsObject.topicId = std::stol(dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["TopicId"].asString());
+			if(!dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["TopicName"].isNull())
+				topicsObject.topicName = dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["TopicName"].asString();
+			if(!dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["TopicOwner"].isNull())
+				topicsObject.topicOwner = dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["TopicOwner"].asString();
+			if(!dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["TopicStatus"].isNull())
+				topicsObject.topicStatus = dataNodeAlertMessagesAlertMessagesItemTopicsTopicsItem["TopicStatus"].asString();
 			alertMessagesItemObject.topics.push_back(topicsObject);
 		}
-		auto allNodesNode = allAlertMessagesNode["Nodes"]["NodesItem"];
-		for (auto allAlertMessagesNodeNodesNodesItem : allNodesNode)
+		auto allNodesNode = dataNodeAlertMessagesAlertMessagesItem["Nodes"]["NodesItem"];
+		for (auto dataNodeAlertMessagesAlertMessagesItemNodesNodesItem : allNodesNode)
 		{
 			Data::AlertMessagesItem::NodesItem nodesObject;
-			if(!allAlertMessagesNodeNodesNodesItem["NodeId"].isNull())
-				nodesObject.nodeId = std::stol(allAlertMessagesNodeNodesNodesItem["NodeId"].asString());
-			if(!allAlertMessagesNodeNodesNodesItem["NodeName"].isNull())
-				nodesObject.nodeName = allAlertMessagesNodeNodesNodesItem["NodeName"].asString();
-			if(!allAlertMessagesNodeNodesNodesItem["Owner"].isNull())
-				nodesObject.owner = allAlertMessagesNodeNodesNodesItem["Owner"].asString();
-			if(!allAlertMessagesNodeNodesNodesItem["ProjectId"].isNull())
-				nodesObject.projectId = std::stol(allAlertMessagesNodeNodesNodesItem["ProjectId"].asString());
+			if(!dataNodeAlertMessagesAlertMessagesItemNodesNodesItem["NodeId"].isNull())
+				nodesObject.nodeId = std::stol(dataNodeAlertMessagesAlertMessagesItemNodesNodesItem["NodeId"].asString());
+			if(!dataNodeAlertMessagesAlertMessagesItemNodesNodesItem["NodeName"].isNull())
+				nodesObject.nodeName = dataNodeAlertMessagesAlertMessagesItemNodesNodesItem["NodeName"].asString();
+			if(!dataNodeAlertMessagesAlertMessagesItemNodesNodesItem["Owner"].isNull())
+				nodesObject.owner = dataNodeAlertMessagesAlertMessagesItemNodesNodesItem["Owner"].asString();
+			if(!dataNodeAlertMessagesAlertMessagesItemNodesNodesItem["ProjectId"].isNull())
+				nodesObject.projectId = std::stol(dataNodeAlertMessagesAlertMessagesItemNodesNodesItem["ProjectId"].asString());
 			alertMessagesItemObject.nodes.push_back(nodesObject);
 		}
 		auto slaAlertNode = value["SlaAlert"];

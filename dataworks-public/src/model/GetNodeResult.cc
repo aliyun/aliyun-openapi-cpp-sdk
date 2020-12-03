@@ -62,6 +62,20 @@ void GetNodeResult::parse(const std::string &payload)
 		data_.schedulerType = dataNode["SchedulerType"].asString();
 	if(!dataNode["ParamValues"].isNull())
 		data_.paramValues = dataNode["ParamValues"].asString();
+	if(!dataNode["Priority"].isNull())
+		data_.priority = std::stoi(dataNode["Priority"].asString());
+	if(!dataNode["BaselineId"].isNull())
+		data_.baselineId = std::stol(dataNode["BaselineId"].asString());
+	if(!dataNode["RepeatInterval"].isNull())
+		data_.repeatInterval = std::stol(dataNode["RepeatInterval"].asString());
+	if(!dataNode["Connection"].isNull())
+		data_.connection = dataNode["Connection"].asString();
+	if(!dataNode["DqcType"].isNull())
+		data_.dqcType = std::stoi(dataNode["DqcType"].asString());
+	if(!dataNode["DqcDescription"].isNull())
+		data_.dqcDescription = dataNode["DqcDescription"].asString();
+	if(!dataNode["RelatedFlowId"].isNull())
+		data_.relatedFlowId = std::stol(dataNode["RelatedFlowId"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())

@@ -72,6 +72,20 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesItemObject.description = dataNodeNodesNodesItem["Description"].asString();
 		if(!dataNodeNodesNodesItem["ResGroupName"].isNull())
 			nodesItemObject.resGroupName = dataNodeNodesNodesItem["ResGroupName"].asString();
+		if(!dataNodeNodesNodesItem["Priority"].isNull())
+			nodesItemObject.priority = std::stoi(dataNodeNodesNodesItem["Priority"].asString());
+		if(!dataNodeNodesNodesItem["BaselineId"].isNull())
+			nodesItemObject.baselineId = std::stol(dataNodeNodesNodesItem["BaselineId"].asString());
+		if(!dataNodeNodesNodesItem["RepeatInterval"].isNull())
+			nodesItemObject.repeatInterval = std::stol(dataNodeNodesNodesItem["RepeatInterval"].asString());
+		if(!dataNodeNodesNodesItem["Connection"].isNull())
+			nodesItemObject.connection = dataNodeNodesNodesItem["Connection"].asString();
+		if(!dataNodeNodesNodesItem["DqcType"].isNull())
+			nodesItemObject.dqcType = std::stoi(dataNodeNodesNodesItem["DqcType"].asString());
+		if(!dataNodeNodesNodesItem["DqcDescription"].isNull())
+			nodesItemObject.dqcDescription = dataNodeNodesNodesItem["DqcDescription"].asString();
+		if(!dataNodeNodesNodesItem["RelatedFlowId"].isNull())
+			nodesItemObject.relatedFlowId = std::stol(dataNodeNodesNodesItem["RelatedFlowId"].asString());
 		data_.nodes.push_back(nodesItemObject);
 	}
 	if(!value["Success"].isNull())

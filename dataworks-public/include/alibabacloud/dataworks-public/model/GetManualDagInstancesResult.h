@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETMANUALDAGINSTANCESRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETMANUALDAGINSTANCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,58 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetInstanceResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetManualDagInstancesResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct InstancesItem
 				{
 					std::string status;
-					long baselineId;
 					long modifyTime;
 					long instanceId;
 					std::string dagType;
 					std::string nodeName;
-					int priority;
-					int dqcType;
-					std::string paramValues;
 					long createTime;
-					std::string connection;
-					long relatedFlowId;
+					std::string paramValues;
 					long cycTime;
 					long beginWaitTimeTime;
 					long dagId;
-					long bizdate;
 					long beginRunningTime;
-					bool repeatability;
 					long finishTime;
-					std::string dqcDescription;
 					long nodeId;
 					long beginWaitResTime;
-					std::string errorMessage;
-					long repeatInterval;
+					long bizDate;
 				};
 
 
-				GetInstanceResult();
-				explicit GetInstanceResult(const std::string &payload);
-				~GetInstanceResult();
-				int getHttpStatusCode()const;
-				Data getData()const;
-				std::string getErrorCode()const;
-				std::string getErrorMessage()const;
-				bool getSuccess()const;
+				GetManualDagInstancesResult();
+				explicit GetManualDagInstancesResult(const std::string &payload);
+				~GetManualDagInstancesResult();
+				std::vector<InstancesItem> getInstances()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int httpStatusCode_;
-				Data data_;
-				std::string errorCode_;
-				std::string errorMessage_;
-				bool success_;
+				std::vector<InstancesItem> instances_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETMANUALDAGINSTANCESRESULT_H_

@@ -49,6 +49,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CreateFileResult.h
 	include/alibabacloud/dataworks-public/model/CreateFolderRequest.h
 	include/alibabacloud/dataworks-public/model/CreateFolderResult.h
+	include/alibabacloud/dataworks-public/model/CreateManualDagRequest.h
+	include/alibabacloud/dataworks-public/model/CreateManualDagResult.h
 	include/alibabacloud/dataworks-public/model/CreateMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/CreateMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/CreateProjectMemberRequest.h
@@ -119,6 +121,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetBusinessResult.h
 	include/alibabacloud/dataworks-public/model/GetDDLJobStatusRequest.h
 	include/alibabacloud/dataworks-public/model/GetDDLJobStatusResult.h
+	include/alibabacloud/dataworks-public/model/GetDagRequest.h
+	include/alibabacloud/dataworks-public/model/GetDagResult.h
 	include/alibabacloud/dataworks-public/model/GetDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/GetDataServiceApiResult.h
 	include/alibabacloud/dataworks-public/model/GetDataServiceApplicationRequest.h
@@ -149,6 +153,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetInstanceLogResult.h
 	include/alibabacloud/dataworks-public/model/GetInstanceStatusCountRequest.h
 	include/alibabacloud/dataworks-public/model/GetInstanceStatusCountResult.h
+	include/alibabacloud/dataworks-public/model/GetManualDagInstancesRequest.h
+	include/alibabacloud/dataworks-public/model/GetManualDagInstancesResult.h
 	include/alibabacloud/dataworks-public/model/GetMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/GetMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/GetMetaColumnLineageRequest.h
@@ -271,8 +277,12 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/RestartInstanceResult.h
 	include/alibabacloud/dataworks-public/model/ResumeInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/ResumeInstanceResult.h
+	include/alibabacloud/dataworks-public/model/RunTriggerNodeRequest.h
+	include/alibabacloud/dataworks-public/model/RunTriggerNodeResult.h
 	include/alibabacloud/dataworks-public/model/SearchMetaTablesRequest.h
 	include/alibabacloud/dataworks-public/model/SearchMetaTablesResult.h
+	include/alibabacloud/dataworks-public/model/SearchNodesByOutputRequest.h
+	include/alibabacloud/dataworks-public/model/SearchNodesByOutputResult.h
 	include/alibabacloud/dataworks-public/model/SetSuccessInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/SetSuccessInstanceResult.h
 	include/alibabacloud/dataworks-public/model/StopInstanceRequest.h
@@ -344,6 +354,8 @@ set(dataworks-public_src
 	src/model/CreateFileResult.cc
 	src/model/CreateFolderRequest.cc
 	src/model/CreateFolderResult.cc
+	src/model/CreateManualDagRequest.cc
+	src/model/CreateManualDagResult.cc
 	src/model/CreateMetaCategoryRequest.cc
 	src/model/CreateMetaCategoryResult.cc
 	src/model/CreateProjectMemberRequest.cc
@@ -414,6 +426,8 @@ set(dataworks-public_src
 	src/model/GetBusinessResult.cc
 	src/model/GetDDLJobStatusRequest.cc
 	src/model/GetDDLJobStatusResult.cc
+	src/model/GetDagRequest.cc
+	src/model/GetDagResult.cc
 	src/model/GetDataServiceApiRequest.cc
 	src/model/GetDataServiceApiResult.cc
 	src/model/GetDataServiceApplicationRequest.cc
@@ -444,6 +458,8 @@ set(dataworks-public_src
 	src/model/GetInstanceLogResult.cc
 	src/model/GetInstanceStatusCountRequest.cc
 	src/model/GetInstanceStatusCountResult.cc
+	src/model/GetManualDagInstancesRequest.cc
+	src/model/GetManualDagInstancesResult.cc
 	src/model/GetMetaCategoryRequest.cc
 	src/model/GetMetaCategoryResult.cc
 	src/model/GetMetaColumnLineageRequest.cc
@@ -566,8 +582,12 @@ set(dataworks-public_src
 	src/model/RestartInstanceResult.cc
 	src/model/ResumeInstanceRequest.cc
 	src/model/ResumeInstanceResult.cc
+	src/model/RunTriggerNodeRequest.cc
+	src/model/RunTriggerNodeResult.cc
 	src/model/SearchMetaTablesRequest.cc
 	src/model/SearchMetaTablesResult.cc
+	src/model/SearchNodesByOutputRequest.cc
+	src/model/SearchNodesByOutputResult.cc
 	src/model/SetSuccessInstanceRequest.cc
 	src/model/SetSuccessInstanceResult.cc
 	src/model/StopInstanceRequest.cc

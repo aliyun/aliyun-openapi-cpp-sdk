@@ -34,17 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string repeatability;
+					long baselineId;
 					std::string description;
 					std::string resGroupName;
-					std::string ownerId;
 					std::string nodeName;
+					int priority;
+					int dqcType;
 					std::string paramValues;
-					long nodeId;
 					long projectId;
-					std::string programType;
+					std::string connection;
 					std::string schedulerType;
+					long relatedFlowId;
 					std::string cronExpress;
+					std::string repeatability;
+					std::string ownerId;
+					std::string dqcDescription;
+					long nodeId;
+					std::string programType;
+					long repeatInterval;
 				};
 
 

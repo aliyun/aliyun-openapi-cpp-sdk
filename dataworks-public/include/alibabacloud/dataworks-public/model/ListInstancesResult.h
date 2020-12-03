@@ -37,20 +37,29 @@ namespace AlibabaCloud
 					struct Instance
 					{
 						std::string status;
+						long baselineId;
 						long modifyTime;
 						long instanceId;
 						std::string dagType;
 						std::string nodeName;
+						int priority;
+						int dqcType;
 						long createTime;
 						std::string paramValues;
+						std::string connection;
+						long relatedFlowId;
 						long cycTime;
 						long beginWaitTimeTime;
 						int dagId;
 						long bizdate;
 						long beginRunningTime;
+						bool repeatability;
 						long finishTime;
+						std::string dqcDescription;
 						int nodeId;
 						long beginWaitResTime;
+						std::string errorMessage;
+						long repeatInterval;
 					};
 					std::vector<Instance> instances;
 					int totalCount;

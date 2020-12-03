@@ -79,6 +79,8 @@ namespace AlibabaCloud
 				void setHasPart(int hasPart);
 				std::string getLocation()const;
 				void setLocation(const std::string& location);
+				std::string getComment()const;
+				void setComment(const std::string& comment);
 				std::string getTableName()const;
 				void setTableName(const std::string& tableName);
 				std::string getAppGuid()const;
@@ -102,6 +104,7 @@ namespace AlibabaCloud
 				int envType_;
 				int hasPart_;
 				std::string location_;
+				std::string comment_;
 				std::string tableName_;
 				std::string appGuid_;
 				long projectId_;

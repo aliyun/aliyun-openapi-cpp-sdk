@@ -80,6 +80,24 @@ void ListInstancesResult::parse(const std::string &payload)
 			instanceObject.paramValues = dataNodeInstancesInstance["ParamValues"].asString();
 		if(!dataNodeInstancesInstance["FinishTime"].isNull())
 			instanceObject.finishTime = std::stol(dataNodeInstancesInstance["FinishTime"].asString());
+		if(!dataNodeInstancesInstance["Priority"].isNull())
+			instanceObject.priority = std::stoi(dataNodeInstancesInstance["Priority"].asString());
+		if(!dataNodeInstancesInstance["BaselineId"].isNull())
+			instanceObject.baselineId = std::stol(dataNodeInstancesInstance["BaselineId"].asString());
+		if(!dataNodeInstancesInstance["Repeatability"].isNull())
+			instanceObject.repeatability = dataNodeInstancesInstance["Repeatability"].asString() == "true";
+		if(!dataNodeInstancesInstance["RepeatInterval"].isNull())
+			instanceObject.repeatInterval = std::stol(dataNodeInstancesInstance["RepeatInterval"].asString());
+		if(!dataNodeInstancesInstance["Connection"].isNull())
+			instanceObject.connection = dataNodeInstancesInstance["Connection"].asString();
+		if(!dataNodeInstancesInstance["DqcType"].isNull())
+			instanceObject.dqcType = std::stoi(dataNodeInstancesInstance["DqcType"].asString());
+		if(!dataNodeInstancesInstance["DqcDescription"].isNull())
+			instanceObject.dqcDescription = dataNodeInstancesInstance["DqcDescription"].asString();
+		if(!dataNodeInstancesInstance["ErrorMessage"].isNull())
+			instanceObject.errorMessage = dataNodeInstancesInstance["ErrorMessage"].asString();
+		if(!dataNodeInstancesInstance["RelatedFlowId"].isNull())
+			instanceObject.relatedFlowId = std::stol(dataNodeInstancesInstance["RelatedFlowId"].asString());
 		data_.instances.push_back(instanceObject);
 	}
 	if(!value["Success"].isNull())

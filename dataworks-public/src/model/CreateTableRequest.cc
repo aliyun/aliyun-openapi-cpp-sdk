@@ -187,6 +187,17 @@ void CreateTableRequest::setLocation(const std::string& location)
 	setParameter("Location", location);
 }
 
+std::string CreateTableRequest::getComment()const
+{
+	return comment_;
+}
+
+void CreateTableRequest::setComment(const std::string& comment)
+{
+	comment_ = comment;
+	setParameter("Comment", comment);
+}
+
 std::string CreateTableRequest::getTableName()const
 {
 	return tableName_;

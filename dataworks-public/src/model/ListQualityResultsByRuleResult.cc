@@ -128,32 +128,32 @@ void ListQualityResultsByRuleResult::parse(const std::string &payload)
 			ruleChecksItemObject.lowerValue = std::stof(qualityResultsNodeRuleChecksRuleChecksItem["LowerValue"].asString());
 		if(!qualityResultsNodeRuleChecksRuleChecksItem["CheckerName"].isNull())
 			ruleChecksItemObject.checkerName = qualityResultsNodeRuleChecksRuleChecksItem["CheckerName"].asString();
-		auto allReferenceValueNode = allRuleChecksNode["ReferenceValue"]["ReferenceValueItem"];
-		for (auto allRuleChecksNodeReferenceValueReferenceValueItem : allReferenceValueNode)
+		auto allReferenceValueNode = qualityResultsNodeRuleChecksRuleChecksItem["ReferenceValue"]["ReferenceValueItem"];
+		for (auto qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem : allReferenceValueNode)
 		{
 			QualityResults::RuleChecksItem::ReferenceValueItem referenceValueObject;
-			if(!allRuleChecksNodeReferenceValueReferenceValueItem["BizDate"].isNull())
-				referenceValueObject.bizDate = std::stol(allRuleChecksNodeReferenceValueReferenceValueItem["BizDate"].asString());
-			if(!allRuleChecksNodeReferenceValueReferenceValueItem["DiscreteProperty"].isNull())
-				referenceValueObject.discreteProperty = allRuleChecksNodeReferenceValueReferenceValueItem["DiscreteProperty"].asString();
-			if(!allRuleChecksNodeReferenceValueReferenceValueItem["Value"].isNull())
-				referenceValueObject.value = std::stof(allRuleChecksNodeReferenceValueReferenceValueItem["Value"].asString());
-			if(!allRuleChecksNodeReferenceValueReferenceValueItem["Threshold"].isNull())
-				referenceValueObject.threshold = std::stof(allRuleChecksNodeReferenceValueReferenceValueItem["Threshold"].asString());
-			if(!allRuleChecksNodeReferenceValueReferenceValueItem["SingleCheckResult"].isNull())
-				referenceValueObject.singleCheckResult = std::stoi(allRuleChecksNodeReferenceValueReferenceValueItem["SingleCheckResult"].asString());
+			if(!qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["BizDate"].isNull())
+				referenceValueObject.bizDate = std::stol(qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["BizDate"].asString());
+			if(!qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["DiscreteProperty"].isNull())
+				referenceValueObject.discreteProperty = qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["DiscreteProperty"].asString();
+			if(!qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["Value"].isNull())
+				referenceValueObject.value = std::stof(qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["Value"].asString());
+			if(!qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["Threshold"].isNull())
+				referenceValueObject.threshold = std::stof(qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["Threshold"].asString());
+			if(!qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["SingleCheckResult"].isNull())
+				referenceValueObject.singleCheckResult = std::stoi(qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["SingleCheckResult"].asString());
 			ruleChecksItemObject.referenceValue.push_back(referenceValueObject);
 		}
-		auto allSampleValueNode = allRuleChecksNode["SampleValue"]["SampleValueItem"];
-		for (auto allRuleChecksNodeSampleValueSampleValueItem : allSampleValueNode)
+		auto allSampleValueNode = qualityResultsNodeRuleChecksRuleChecksItem["SampleValue"]["SampleValueItem"];
+		for (auto qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem : allSampleValueNode)
 		{
 			QualityResults::RuleChecksItem::SampleValueItem sampleValueObject;
-			if(!allRuleChecksNodeSampleValueSampleValueItem["BizDate"].isNull())
-				sampleValueObject.bizDate = std::stol(allRuleChecksNodeSampleValueSampleValueItem["BizDate"].asString());
-			if(!allRuleChecksNodeSampleValueSampleValueItem["DiscreteProperty"].isNull())
-				sampleValueObject.discreteProperty = allRuleChecksNodeSampleValueSampleValueItem["DiscreteProperty"].asString();
-			if(!allRuleChecksNodeSampleValueSampleValueItem["Value"].isNull())
-				sampleValueObject.value = std::stof(allRuleChecksNodeSampleValueSampleValueItem["Value"].asString());
+			if(!qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["BizDate"].isNull())
+				sampleValueObject.bizDate = std::stol(qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["BizDate"].asString());
+			if(!qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["DiscreteProperty"].isNull())
+				sampleValueObject.discreteProperty = qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["DiscreteProperty"].asString();
+			if(!qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["Value"].isNull())
+				sampleValueObject.value = std::stof(qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["Value"].asString());
 			ruleChecksItemObject.sampleValue.push_back(sampleValueObject);
 		}
 		qualityResults_.ruleChecks.push_back(ruleChecksItemObject);

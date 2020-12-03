@@ -50,6 +50,8 @@
 #include "model/CreateFileResult.h"
 #include "model/CreateFolderRequest.h"
 #include "model/CreateFolderResult.h"
+#include "model/CreateManualDagRequest.h"
+#include "model/CreateManualDagResult.h"
 #include "model/CreateMetaCategoryRequest.h"
 #include "model/CreateMetaCategoryResult.h"
 #include "model/CreateProjectMemberRequest.h"
@@ -120,6 +122,8 @@
 #include "model/GetBusinessResult.h"
 #include "model/GetDDLJobStatusRequest.h"
 #include "model/GetDDLJobStatusResult.h"
+#include "model/GetDagRequest.h"
+#include "model/GetDagResult.h"
 #include "model/GetDataServiceApiRequest.h"
 #include "model/GetDataServiceApiResult.h"
 #include "model/GetDataServiceApplicationRequest.h"
@@ -150,6 +154,8 @@
 #include "model/GetInstanceLogResult.h"
 #include "model/GetInstanceStatusCountRequest.h"
 #include "model/GetInstanceStatusCountResult.h"
+#include "model/GetManualDagInstancesRequest.h"
+#include "model/GetManualDagInstancesResult.h"
 #include "model/GetMetaCategoryRequest.h"
 #include "model/GetMetaCategoryResult.h"
 #include "model/GetMetaColumnLineageRequest.h"
@@ -272,8 +278,12 @@
 #include "model/RestartInstanceResult.h"
 #include "model/ResumeInstanceRequest.h"
 #include "model/ResumeInstanceResult.h"
+#include "model/RunTriggerNodeRequest.h"
+#include "model/RunTriggerNodeResult.h"
 #include "model/SearchMetaTablesRequest.h"
 #include "model/SearchMetaTablesResult.h"
+#include "model/SearchNodesByOutputRequest.h"
+#include "model/SearchNodesByOutputResult.h"
 #include "model/SetSuccessInstanceRequest.h"
 #include "model/SetSuccessInstanceResult.h"
 #include "model/StopInstanceRequest.h"
@@ -365,6 +375,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateFolderResult> CreateFolderOutcome;
 			typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateFolderRequest&, const CreateFolderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFolderAsyncHandler;
+			typedef Outcome<Error, Model::CreateManualDagResult> CreateManualDagOutcome;
+			typedef std::future<CreateManualDagOutcome> CreateManualDagOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateManualDagRequest&, const CreateManualDagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateManualDagAsyncHandler;
 			typedef Outcome<Error, Model::CreateMetaCategoryResult> CreateMetaCategoryOutcome;
 			typedef std::future<CreateMetaCategoryOutcome> CreateMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateMetaCategoryRequest&, const CreateMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaCategoryAsyncHandler;
@@ -470,6 +483,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDDLJobStatusResult> GetDDLJobStatusOutcome;
 			typedef std::future<GetDDLJobStatusOutcome> GetDDLJobStatusOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDDLJobStatusRequest&, const GetDDLJobStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDDLJobStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetDagResult> GetDagOutcome;
+			typedef std::future<GetDagOutcome> GetDagOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDagRequest&, const GetDagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDagAsyncHandler;
 			typedef Outcome<Error, Model::GetDataServiceApiResult> GetDataServiceApiOutcome;
 			typedef std::future<GetDataServiceApiOutcome> GetDataServiceApiOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetDataServiceApiRequest&, const GetDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataServiceApiAsyncHandler;
@@ -515,6 +531,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceStatusCountResult> GetInstanceStatusCountOutcome;
 			typedef std::future<GetInstanceStatusCountOutcome> GetInstanceStatusCountOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetInstanceStatusCountRequest&, const GetInstanceStatusCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceStatusCountAsyncHandler;
+			typedef Outcome<Error, Model::GetManualDagInstancesResult> GetManualDagInstancesOutcome;
+			typedef std::future<GetManualDagInstancesOutcome> GetManualDagInstancesOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::GetManualDagInstancesRequest&, const GetManualDagInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetManualDagInstancesAsyncHandler;
 			typedef Outcome<Error, Model::GetMetaCategoryResult> GetMetaCategoryOutcome;
 			typedef std::future<GetMetaCategoryOutcome> GetMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::GetMetaCategoryRequest&, const GetMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaCategoryAsyncHandler;
@@ -698,9 +717,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResumeInstanceResult> ResumeInstanceOutcome;
 			typedef std::future<ResumeInstanceOutcome> ResumeInstanceOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ResumeInstanceRequest&, const ResumeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RunTriggerNodeResult> RunTriggerNodeOutcome;
+			typedef std::future<RunTriggerNodeOutcome> RunTriggerNodeOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::RunTriggerNodeRequest&, const RunTriggerNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunTriggerNodeAsyncHandler;
 			typedef Outcome<Error, Model::SearchMetaTablesResult> SearchMetaTablesOutcome;
 			typedef std::future<SearchMetaTablesOutcome> SearchMetaTablesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::SearchMetaTablesRequest&, const SearchMetaTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchMetaTablesAsyncHandler;
+			typedef Outcome<Error, Model::SearchNodesByOutputResult> SearchNodesByOutputOutcome;
+			typedef std::future<SearchNodesByOutputOutcome> SearchNodesByOutputOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::SearchNodesByOutputRequest&, const SearchNodesByOutputOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchNodesByOutputAsyncHandler;
 			typedef Outcome<Error, Model::SetSuccessInstanceResult> SetSuccessInstanceOutcome;
 			typedef std::future<SetSuccessInstanceOutcome> SetSuccessInstanceOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::SetSuccessInstanceRequest&, const SetSuccessInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSuccessInstanceAsyncHandler;
@@ -808,6 +833,9 @@ namespace AlibabaCloud
 			CreateFolderOutcome createFolder(const Model::CreateFolderRequest &request)const;
 			void createFolderAsync(const Model::CreateFolderRequest& request, const CreateFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFolderOutcomeCallable createFolderCallable(const Model::CreateFolderRequest& request) const;
+			CreateManualDagOutcome createManualDag(const Model::CreateManualDagRequest &request)const;
+			void createManualDagAsync(const Model::CreateManualDagRequest& request, const CreateManualDagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateManualDagOutcomeCallable createManualDagCallable(const Model::CreateManualDagRequest& request) const;
 			CreateMetaCategoryOutcome createMetaCategory(const Model::CreateMetaCategoryRequest &request)const;
 			void createMetaCategoryAsync(const Model::CreateMetaCategoryRequest& request, const CreateMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMetaCategoryOutcomeCallable createMetaCategoryCallable(const Model::CreateMetaCategoryRequest& request) const;
@@ -913,6 +941,9 @@ namespace AlibabaCloud
 			GetDDLJobStatusOutcome getDDLJobStatus(const Model::GetDDLJobStatusRequest &request)const;
 			void getDDLJobStatusAsync(const Model::GetDDLJobStatusRequest& request, const GetDDLJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDDLJobStatusOutcomeCallable getDDLJobStatusCallable(const Model::GetDDLJobStatusRequest& request) const;
+			GetDagOutcome getDag(const Model::GetDagRequest &request)const;
+			void getDagAsync(const Model::GetDagRequest& request, const GetDagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDagOutcomeCallable getDagCallable(const Model::GetDagRequest& request) const;
 			GetDataServiceApiOutcome getDataServiceApi(const Model::GetDataServiceApiRequest &request)const;
 			void getDataServiceApiAsync(const Model::GetDataServiceApiRequest& request, const GetDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataServiceApiOutcomeCallable getDataServiceApiCallable(const Model::GetDataServiceApiRequest& request) const;
@@ -958,6 +989,9 @@ namespace AlibabaCloud
 			GetInstanceStatusCountOutcome getInstanceStatusCount(const Model::GetInstanceStatusCountRequest &request)const;
 			void getInstanceStatusCountAsync(const Model::GetInstanceStatusCountRequest& request, const GetInstanceStatusCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceStatusCountOutcomeCallable getInstanceStatusCountCallable(const Model::GetInstanceStatusCountRequest& request) const;
+			GetManualDagInstancesOutcome getManualDagInstances(const Model::GetManualDagInstancesRequest &request)const;
+			void getManualDagInstancesAsync(const Model::GetManualDagInstancesRequest& request, const GetManualDagInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetManualDagInstancesOutcomeCallable getManualDagInstancesCallable(const Model::GetManualDagInstancesRequest& request) const;
 			GetMetaCategoryOutcome getMetaCategory(const Model::GetMetaCategoryRequest &request)const;
 			void getMetaCategoryAsync(const Model::GetMetaCategoryRequest& request, const GetMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMetaCategoryOutcomeCallable getMetaCategoryCallable(const Model::GetMetaCategoryRequest& request) const;
@@ -1141,9 +1175,15 @@ namespace AlibabaCloud
 			ResumeInstanceOutcome resumeInstance(const Model::ResumeInstanceRequest &request)const;
 			void resumeInstanceAsync(const Model::ResumeInstanceRequest& request, const ResumeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeInstanceOutcomeCallable resumeInstanceCallable(const Model::ResumeInstanceRequest& request) const;
+			RunTriggerNodeOutcome runTriggerNode(const Model::RunTriggerNodeRequest &request)const;
+			void runTriggerNodeAsync(const Model::RunTriggerNodeRequest& request, const RunTriggerNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunTriggerNodeOutcomeCallable runTriggerNodeCallable(const Model::RunTriggerNodeRequest& request) const;
 			SearchMetaTablesOutcome searchMetaTables(const Model::SearchMetaTablesRequest &request)const;
 			void searchMetaTablesAsync(const Model::SearchMetaTablesRequest& request, const SearchMetaTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchMetaTablesOutcomeCallable searchMetaTablesCallable(const Model::SearchMetaTablesRequest& request) const;
+			SearchNodesByOutputOutcome searchNodesByOutput(const Model::SearchNodesByOutputRequest &request)const;
+			void searchNodesByOutputAsync(const Model::SearchNodesByOutputRequest& request, const SearchNodesByOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchNodesByOutputOutcomeCallable searchNodesByOutputCallable(const Model::SearchNodesByOutputRequest& request) const;
 			SetSuccessInstanceOutcome setSuccessInstance(const Model::SetSuccessInstanceRequest &request)const;
 			void setSuccessInstanceAsync(const Model::SetSuccessInstanceRequest& request, const SetSuccessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetSuccessInstanceOutcomeCallable setSuccessInstanceCallable(const Model::SetSuccessInstanceRequest& request) const;

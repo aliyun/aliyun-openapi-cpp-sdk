@@ -14,75 +14,65 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dataworks-public/model/ListNodeIOResult.h>
+#include <alibabacloud/dataworks-public/model/SearchNodesByOutputResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dataworks_public;
 using namespace AlibabaCloud::Dataworks_public::Model;
 
-ListNodeIOResult::ListNodeIOResult() :
+SearchNodesByOutputResult::SearchNodesByOutputResult() :
 	ServiceResult()
 {}
 
-ListNodeIOResult::ListNodeIOResult(const std::string &payload) :
+SearchNodesByOutputResult::SearchNodesByOutputResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListNodeIOResult::~ListNodeIOResult()
+SearchNodesByOutputResult::~SearchNodesByOutputResult()
 {}
 
-void ListNodeIOResult::parse(const std::string &payload)
+void SearchNodesByOutputResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["DataItem"];
-	for (auto valueDataDataItem : allDataNode)
-	{
-		DataItem dataObject;
-		if(!valueDataDataItem["TableName"].isNull())
-			dataObject.tableName = valueDataDataItem["TableName"].asString();
-		if(!valueDataDataItem["Data"].isNull())
-			dataObject.data = valueDataDataItem["Data"].asString();
-		if(!valueDataDataItem["NodeId"].isNull())
-			dataObject.nodeId = std::stol(valueDataDataItem["NodeId"].asString());
-		data_.push_back(dataObject);
-	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
-int ListNodeIOResult::getHttpStatusCode()const
+int SearchNodesByOutputResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::vector<ListNodeIOResult::DataItem> ListNodeIOResult::getData()const
+std::string SearchNodesByOutputResult::getData()const
 {
 	return data_;
 }
 
-std::string ListNodeIOResult::getErrorCode()const
+std::string SearchNodesByOutputResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string ListNodeIOResult::getErrorMessage()const
+std::string SearchNodesByOutputResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-bool ListNodeIOResult::getSuccess()const
+bool SearchNodesByOutputResult::getSuccess()const
 {
 	return success_;
 }

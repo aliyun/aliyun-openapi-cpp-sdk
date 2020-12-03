@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTNODEIORESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTNODEIORESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListNodeIOResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateManualDagResult : public ServiceResult
 			{
 			public:
-				struct DataItem
-				{
-					std::string tableName;
-					long nodeId;
-					std::string data;
-				};
 
 
-				ListNodeIOResult();
-				explicit ListNodeIOResult(const std::string &payload);
-				~ListNodeIOResult();
-				int getHttpStatusCode()const;
-				std::vector<DataItem> getData()const;
-				std::string getErrorCode()const;
-				std::string getErrorMessage()const;
-				bool getSuccess()const;
+				CreateManualDagResult();
+				explicit CreateManualDagResult(const std::string &payload);
+				~CreateManualDagResult();
+				long getDagId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int httpStatusCode_;
-				std::vector<DataItem> data_;
-				std::string errorCode_;
-				std::string errorMessage_;
-				bool success_;
+				long dagId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTNODEIORESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_

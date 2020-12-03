@@ -60,6 +60,17 @@ void ListInstancesRequest::setBizName(const std::string& bizName)
 	setBodyParameter("BizName", bizName);
 }
 
+long ListInstancesRequest::getDagId()const
+{
+	return dagId_;
+}
+
+void ListInstancesRequest::setDagId(long dagId)
+{
+	dagId_ = dagId;
+	setBodyParameter("DagId", std::to_string(dagId));
+}
+
 int ListInstancesRequest::getPageNumber()const
 {
 	return pageNumber_;

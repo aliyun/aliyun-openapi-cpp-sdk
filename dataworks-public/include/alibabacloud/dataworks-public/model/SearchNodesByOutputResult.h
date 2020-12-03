@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_SEARCHNODESBYOUTPUTRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_SEARCHNODESBYOUTPUTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetInstanceResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT SearchNodesByOutputResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string status;
-					long baselineId;
-					long modifyTime;
-					long instanceId;
-					std::string dagType;
-					std::string nodeName;
-					int priority;
-					int dqcType;
-					std::string paramValues;
-					long createTime;
-					std::string connection;
-					long relatedFlowId;
-					long cycTime;
-					long beginWaitTimeTime;
-					long dagId;
-					long bizdate;
-					long beginRunningTime;
-					bool repeatability;
-					long finishTime;
-					std::string dqcDescription;
-					long nodeId;
-					long beginWaitResTime;
-					std::string errorMessage;
-					long repeatInterval;
-				};
 
 
-				GetInstanceResult();
-				explicit GetInstanceResult(const std::string &payload);
-				~GetInstanceResult();
+				SearchNodesByOutputResult();
+				explicit SearchNodesByOutputResult(const std::string &payload);
+				~SearchNodesByOutputResult();
 				int getHttpStatusCode()const;
-				Data getData()const;
+				std::string getData()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -74,7 +47,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int httpStatusCode_;
-				Data data_;
+				std::string data_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -83,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_SEARCHNODESBYOUTPUTRESULT_H_

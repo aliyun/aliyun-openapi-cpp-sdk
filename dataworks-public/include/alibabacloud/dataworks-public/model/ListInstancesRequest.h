@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setOwner(const std::string& owner);
 				std::string getBizName()const;
 				void setBizName(const std::string& bizName);
+				long getDagId()const;
+				void setDagId(long dagId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getNodeName()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string projectEnv_;
 				std::string owner_;
 				std::string bizName_;
+				long dagId_;
 				int pageNumber_;
 				std::string nodeName_;
 				std::string programType_;

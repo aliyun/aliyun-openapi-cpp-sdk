@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDAGRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDAGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetInstanceResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetDagResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
 					std::string status;
-					long baselineId;
+					long gmtdate;
 					long modifyTime;
-					long instanceId;
-					std::string dagType;
-					std::string nodeName;
-					int priority;
-					int dqcType;
-					std::string paramValues;
-					long createTime;
-					std::string connection;
-					long relatedFlowId;
-					long cycTime;
-					long beginWaitTimeTime;
-					long dagId;
-					long bizdate;
-					long beginRunningTime;
-					bool repeatability;
+					std::string type;
 					long finishTime;
-					std::string dqcDescription;
-					long nodeId;
-					long beginWaitResTime;
-					std::string errorMessage;
-					long repeatInterval;
+					long createTime;
+					long projectId;
+					long startTime;
+					std::string createUser;
+					long dagId;
+					std::string name;
+					long bizdate;
 				};
 
 
-				GetInstanceResult();
-				explicit GetInstanceResult(const std::string &payload);
-				~GetInstanceResult();
+				GetDagResult();
+				explicit GetDagResult(const std::string &payload);
+				~GetDagResult();
 				int getHttpStatusCode()const;
 				Data getData()const;
 				std::string getErrorCode()const;
@@ -83,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDAGRESULT_H_
