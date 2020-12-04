@@ -39,6 +39,13 @@ void AcceptDemandResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["BindUrl"].isNull())
+		bindUrl_ = value["BindUrl"].asString();
 
+}
+
+std::string AcceptDemandResult::getBindUrl()const
+{
+	return bindUrl_;
 }
 

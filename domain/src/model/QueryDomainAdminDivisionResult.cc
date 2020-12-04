@@ -45,12 +45,12 @@ void QueryDomainAdminDivisionResult::parse(const std::string &payload)
 		AdminDivision adminDivisionsObject;
 		if(!valueAdminDivisionsAdminDivision["DivisionName"].isNull())
 			adminDivisionsObject.divisionName = valueAdminDivisionsAdminDivision["DivisionName"].asString();
-		auto allChildrenNode = allAdminDivisionsNode["Children"]["ChildrenItem"];
-		for (auto allAdminDivisionsNodeChildrenChildrenItem : allChildrenNode)
+		auto allChildrenNode = valueAdminDivisionsAdminDivision["Children"]["ChildrenItem"];
+		for (auto valueAdminDivisionsAdminDivisionChildrenChildrenItem : allChildrenNode)
 		{
 			AdminDivision::ChildrenItem childrenObject;
-			if(!allAdminDivisionsNodeChildrenChildrenItem["ChildDivisionName"].isNull())
-				childrenObject.childDivisionName = allAdminDivisionsNodeChildrenChildrenItem["ChildDivisionName"].asString();
+			if(!valueAdminDivisionsAdminDivisionChildrenChildrenItem["ChildDivisionName"].isNull())
+				childrenObject.childDivisionName = valueAdminDivisionsAdminDivisionChildrenChildrenItem["ChildDivisionName"].asString();
 			adminDivisionsObject.children.push_back(childrenObject);
 		}
 		adminDivisions_.push_back(adminDivisionsObject);

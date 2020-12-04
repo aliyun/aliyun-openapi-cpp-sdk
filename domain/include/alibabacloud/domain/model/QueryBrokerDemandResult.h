@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					float bargainSellerPrice;
 					float servicePayPrice;
 					std::string payDomain;
+					int orderType;
 					int produceType;
 					std::string bargainSellerMobile;
 					long publishTime;

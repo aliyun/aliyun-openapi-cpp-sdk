@@ -47,12 +47,12 @@ void BatchFuzzyMatchDomainSensitiveWordResult::parse(const std::string &payload)
 			sensitiveWordMatchResultListObject.keyword = valueSensitiveWordMatchResultListSensitiveWordMatchResult["Keyword"].asString();
 		if(!valueSensitiveWordMatchResultListSensitiveWordMatchResult["Exist"].isNull())
 			sensitiveWordMatchResultListObject.exist = valueSensitiveWordMatchResultListSensitiveWordMatchResult["Exist"].asString() == "true";
-		auto allMatchedSentiveWordsNode = allSensitiveWordMatchResultListNode["MatchedSentiveWords"]["MatchedSensitiveWord"];
-		for (auto allSensitiveWordMatchResultListNodeMatchedSentiveWordsMatchedSensitiveWord : allMatchedSentiveWordsNode)
+		auto allMatchedSentiveWordsNode = valueSensitiveWordMatchResultListSensitiveWordMatchResult["MatchedSentiveWords"]["MatchedSensitiveWord"];
+		for (auto valueSensitiveWordMatchResultListSensitiveWordMatchResultMatchedSentiveWordsMatchedSensitiveWord : allMatchedSentiveWordsNode)
 		{
 			SensitiveWordMatchResult::MatchedSensitiveWord matchedSentiveWordsObject;
-			if(!allSensitiveWordMatchResultListNodeMatchedSentiveWordsMatchedSensitiveWord["Word"].isNull())
-				matchedSentiveWordsObject.word = allSensitiveWordMatchResultListNodeMatchedSentiveWordsMatchedSensitiveWord["Word"].asString();
+			if(!valueSensitiveWordMatchResultListSensitiveWordMatchResultMatchedSentiveWordsMatchedSensitiveWord["Word"].isNull())
+				matchedSentiveWordsObject.word = valueSensitiveWordMatchResultListSensitiveWordMatchResultMatchedSentiveWordsMatchedSensitiveWord["Word"].asString();
 			sensitiveWordMatchResultListObject.matchedSentiveWords.push_back(matchedSentiveWordsObject);
 		}
 		sensitiveWordMatchResultList_.push_back(sensitiveWordMatchResultListObject);

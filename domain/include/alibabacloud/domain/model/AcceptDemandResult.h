@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				AcceptDemandResult();
 				explicit AcceptDemandResult(const std::string &payload);
 				~AcceptDemandResult();
+				std::string getBindUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string bindUrl_;
 
 			};
 		}

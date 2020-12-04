@@ -71,6 +71,8 @@ void QueryBrokerDemandResult::parse(const std::string &payload)
 			dataObject.bargainSellerMobile = valueDataDemand["BargainSellerMobile"].asString();
 		if(!valueDataDemand["ServicePayPrice"].isNull())
 			dataObject.servicePayPrice = std::stof(valueDataDemand["ServicePayPrice"].asString());
+		if(!valueDataDemand["OrderType"].isNull())
+			dataObject.orderType = std::stoi(valueDataDemand["OrderType"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())
