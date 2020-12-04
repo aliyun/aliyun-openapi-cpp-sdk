@@ -71,6 +71,17 @@ void ReportInstancesStatusRequest::setStartTime(const std::string& startTime)
 	setParameter("StartTime", startTime);
 }
 
+std::string ReportInstancesStatusRequest::getIssueCategory()const
+{
+	return issueCategory_;
+}
+
+void ReportInstancesStatusRequest::setIssueCategory(const std::string& issueCategory)
+{
+	issueCategory_ = issueCategory;
+	setParameter("IssueCategory", issueCategory);
+}
+
 std::string ReportInstancesStatusRequest::getRegionId()const
 {
 	return regionId_;

@@ -51,17 +51,18 @@ namespace AlibabaCloud
 						std::string errorCode;
 						std::string stopTime;
 					};
-					std::string commandContent;
 					std::string invocationStatus;
-					std::string invokeStatus;
 					std::string parameters;
-					std::string commandType;
 					bool timed;
+					std::vector<Invocation::InvokeInstance> invokeInstances;
+					std::string commandContent;
+					std::string invokeStatus;
+					std::string commandType;
+					std::string username;
 					std::string creationTime;
 					std::string frequency;
 					std::string commandId;
 					std::string commandName;
-					std::vector<Invocation::InvokeInstance> invokeInstances;
 					std::string invokeId;
 				};
 

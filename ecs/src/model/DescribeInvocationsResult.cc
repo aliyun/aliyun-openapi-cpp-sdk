@@ -65,6 +65,8 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 			invocationsObject.invocationStatus = valueInvocationsInvocation["InvocationStatus"].asString();
 		if(!valueInvocationsInvocation["Parameters"].isNull())
 			invocationsObject.parameters = valueInvocationsInvocation["Parameters"].asString();
+		if(!valueInvocationsInvocation["Username"].isNull())
+			invocationsObject.username = valueInvocationsInvocation["Username"].asString();
 		auto allInvokeInstancesNode = valueInvocationsInvocation["InvokeInstances"]["InvokeInstance"];
 		for (auto valueInvocationsInvocationInvokeInstancesInvokeInstance : allInvokeInstancesNode)
 		{

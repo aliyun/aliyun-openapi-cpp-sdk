@@ -71,6 +71,8 @@ namespace AlibabaCloud
 				void setParameters(const std::map<std::string, std::string>& parameters);
 				bool getEnableParameter()const;
 				void setEnableParameter(bool enableParameter);
+				std::string getUsername()const;
+				void setUsername(const std::string& username);
 
             private:
 				long resourceOwnerId_;
@@ -91,6 +93,7 @@ namespace AlibabaCloud
 				std::string name_;
 				std::map<std::string, std::string> parameters_;
 				bool enableParameter_;
+				std::string username_;
 
 			};
 		}

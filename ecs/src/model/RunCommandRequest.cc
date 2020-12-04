@@ -227,3 +227,14 @@ void RunCommandRequest::setEnableParameter(bool enableParameter)
 	setParameter("EnableParameter", enableParameter ? "true" : "false");
 }
 
+std::string RunCommandRequest::getUsername()const
+{
+	return username_;
+}
+
+void RunCommandRequest::setUsername(const std::string& username)
+{
+	username_ = username;
+	setParameter("Username", username);
+}
+

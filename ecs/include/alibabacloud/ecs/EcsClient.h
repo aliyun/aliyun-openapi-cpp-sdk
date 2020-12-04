@@ -362,6 +362,8 @@
 #include "model/DescribeSnapshotsResult.h"
 #include "model/DescribeSnapshotsUsageRequest.h"
 #include "model/DescribeSnapshotsUsageResult.h"
+#include "model/DescribeSpotAdviceRequest.h"
+#include "model/DescribeSpotAdviceResult.h"
 #include "model/DescribeSpotPriceHistoryRequest.h"
 #include "model/DescribeSpotPriceHistoryResult.h"
 #include "model/DescribeStorageCapacityUnitsRequest.h"
@@ -1143,6 +1145,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSnapshotsUsageResult> DescribeSnapshotsUsageOutcome;
 			typedef std::future<DescribeSnapshotsUsageOutcome> DescribeSnapshotsUsageOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeSnapshotsUsageRequest&, const DescribeSnapshotsUsageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsUsageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSpotAdviceResult> DescribeSpotAdviceOutcome;
+			typedef std::future<DescribeSpotAdviceOutcome> DescribeSpotAdviceOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeSpotAdviceRequest&, const DescribeSpotAdviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpotAdviceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSpotPriceHistoryResult> DescribeSpotPriceHistoryOutcome;
 			typedef std::future<DescribeSpotPriceHistoryOutcome> DescribeSpotPriceHistoryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeSpotPriceHistoryRequest&, const DescribeSpotPriceHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpotPriceHistoryAsyncHandler;
@@ -2051,6 +2056,9 @@ namespace AlibabaCloud
 			DescribeSnapshotsUsageOutcome describeSnapshotsUsage(const Model::DescribeSnapshotsUsageRequest &request)const;
 			void describeSnapshotsUsageAsync(const Model::DescribeSnapshotsUsageRequest& request, const DescribeSnapshotsUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSnapshotsUsageOutcomeCallable describeSnapshotsUsageCallable(const Model::DescribeSnapshotsUsageRequest& request) const;
+			DescribeSpotAdviceOutcome describeSpotAdvice(const Model::DescribeSpotAdviceRequest &request)const;
+			void describeSpotAdviceAsync(const Model::DescribeSpotAdviceRequest& request, const DescribeSpotAdviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSpotAdviceOutcomeCallable describeSpotAdviceCallable(const Model::DescribeSpotAdviceRequest& request) const;
 			DescribeSpotPriceHistoryOutcome describeSpotPriceHistory(const Model::DescribeSpotPriceHistoryRequest &request)const;
 			void describeSpotPriceHistoryAsync(const Model::DescribeSpotPriceHistoryRequest& request, const DescribeSpotPriceHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSpotPriceHistoryOutcomeCallable describeSpotPriceHistoryCallable(const Model::DescribeSpotPriceHistoryRequest& request) const;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_REPORTINSTANCESSTATUSREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_REPORTINSTANCESSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBESPOTADVICEREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBESPOTADVICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,57 +28,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT ReportInstancesStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeSpotAdviceRequest : public RpcServiceRequest
 			{
 
 			public:
-				ReportInstancesStatusRequest();
-				~ReportInstancesStatusRequest();
+				DescribeSpotAdviceRequest();
+				~DescribeSpotAdviceRequest();
 
-				std::string getReason()const;
-				void setReason(const std::string& reason);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				std::string getIssueCategory()const;
-				void setIssueCategory(const std::string& issueCategory);
+				float getMemory()const;
+				void setMemory(float memory);
+				std::string getIoOptimized()const;
+				void setIoOptimized(const std::string& ioOptimized);
+				int getMinCores()const;
+				void setMinCores(int minCores);
+				std::string getNetworkType()const;
+				void setNetworkType(const std::string& networkType);
+				int getCores()const;
+				void setCores(int cores);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::vector<std::string> getDiskId()const;
-				void setDiskId(const std::vector<std::string>& diskId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
-				std::vector<std::string> getDevice()const;
-				void setDevice(const std::vector<std::string>& device);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
+				float getMinMemory()const;
+				void setMinMemory(float minMemory);
 
             private:
-				std::string reason_;
 				long resourceOwnerId_;
-				std::string description_;
-				std::string startTime_;
-				std::string issueCategory_;
+				float memory_;
+				std::string ioOptimized_;
+				int minCores_;
+				std::string networkType_;
+				int cores_;
 				std::string regionId_;
-				std::vector<std::string> diskId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string endTime_;
 				long ownerId_;
-				std::vector<std::string> instanceId_;
-				std::vector<std::string> device_;
+				std::string zoneId_;
+				float minMemory_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_REPORTINSTANCESSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBESPOTADVICEREQUEST_H_

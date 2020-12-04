@@ -78,6 +78,8 @@ void DescribeInvocationResultsResult::parse(const std::string &payload)
 			invocationResultObject.errorCode = invocationNodeInvocationResultsInvocationResult["ErrorCode"].asString();
 		if(!invocationNodeInvocationResultsInvocationResult["ErrorInfo"].isNull())
 			invocationResultObject.errorInfo = invocationNodeInvocationResultsInvocationResult["ErrorInfo"].asString();
+		if(!invocationNodeInvocationResultsInvocationResult["Username"].isNull())
+			invocationResultObject.username = invocationNodeInvocationResultsInvocationResult["Username"].asString();
 		invocation_.invocationResults.push_back(invocationResultObject);
 	}
 

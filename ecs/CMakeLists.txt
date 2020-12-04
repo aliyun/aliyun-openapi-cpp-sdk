@@ -361,6 +361,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeSnapshotsResult.h
 	include/alibabacloud/ecs/model/DescribeSnapshotsUsageRequest.h
 	include/alibabacloud/ecs/model/DescribeSnapshotsUsageResult.h
+	include/alibabacloud/ecs/model/DescribeSpotAdviceRequest.h
+	include/alibabacloud/ecs/model/DescribeSpotAdviceResult.h
 	include/alibabacloud/ecs/model/DescribeSpotPriceHistoryRequest.h
 	include/alibabacloud/ecs/model/DescribeSpotPriceHistoryResult.h
 	include/alibabacloud/ecs/model/DescribeStorageCapacityUnitsRequest.h
@@ -966,6 +968,8 @@ set(ecs_src
 	src/model/DescribeSnapshotsResult.cc
 	src/model/DescribeSnapshotsUsageRequest.cc
 	src/model/DescribeSnapshotsUsageResult.cc
+	src/model/DescribeSpotAdviceRequest.cc
+	src/model/DescribeSpotAdviceResult.cc
 	src/model/DescribeSpotPriceHistoryRequest.cc
 	src/model/DescribeSpotPriceHistoryResult.cc
 	src/model/DescribeStorageCapacityUnitsRequest.cc

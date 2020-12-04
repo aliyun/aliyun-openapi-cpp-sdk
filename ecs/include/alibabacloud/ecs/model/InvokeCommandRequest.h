@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::vector<std::string>& instanceId);
 				std::map<std::string, std::string> getParameters()const;
 				void setParameters(const std::map<std::string, std::string>& parameters);
+				std::string getUsername()const;
+				void setUsername(const std::string& username);
 
             private:
 				long resourceOwnerId_;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::vector<std::string> instanceId_;
 				std::map<std::string, std::string> parameters_;
+				std::string username_;
 
 			};
 		}

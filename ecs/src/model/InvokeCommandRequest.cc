@@ -139,3 +139,14 @@ void InvokeCommandRequest::setParameters(const std::map<std::string, std::string
 	setJsonParameters("Parameters", parameters);
 }
 
+std::string InvokeCommandRequest::getUsername()const
+{
+	return username_;
+}
+
+void InvokeCommandRequest::setUsername(const std::string& username)
+{
+	username_ = username;
+	setParameter("Username", username);
+}
+
