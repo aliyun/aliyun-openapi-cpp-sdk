@@ -82,6 +82,17 @@ void UpdateOssStockStatusRequest::setVideoAutoFreezeSceneList(const std::string&
 	setParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
 }
 
+int UpdateOssStockStatusRequest::getAudioMaxSize()const
+{
+	return audioMaxSize_;
+}
+
+void UpdateOssStockStatusRequest::setAudioMaxSize(int audioMaxSize)
+{
+	audioMaxSize_ = audioMaxSize;
+	setParameter("AudioMaxSize", std::to_string(audioMaxSize));
+}
+
 std::string UpdateOssStockStatusRequest::getLang()const
 {
 	return lang_;
@@ -102,6 +113,17 @@ void UpdateOssStockStatusRequest::setImageAutoFreeze(const std::string& imageAut
 {
 	imageAutoFreeze_ = imageAutoFreeze;
 	setParameter("ImageAutoFreeze", imageAutoFreeze);
+}
+
+std::string UpdateOssStockStatusRequest::getAudioAutoFreezeSceneList()const
+{
+	return audioAutoFreezeSceneList_;
+}
+
+void UpdateOssStockStatusRequest::setAudioAutoFreezeSceneList(const std::string& audioAutoFreezeSceneList)
+{
+	audioAutoFreezeSceneList_ = audioAutoFreezeSceneList;
+	setParameter("AudioAutoFreezeSceneList", audioAutoFreezeSceneList);
 }
 
 int UpdateOssStockStatusRequest::getVideoMaxSize()const

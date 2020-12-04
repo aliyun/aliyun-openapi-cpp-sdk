@@ -27,6 +27,17 @@ DescribeOssStockStatusRequest::DescribeOssStockStatusRequest() :
 DescribeOssStockStatusRequest::~DescribeOssStockStatusRequest()
 {}
 
+long DescribeOssStockStatusRequest::getStockTaskId()const
+{
+	return stockTaskId_;
+}
+
+void DescribeOssStockStatusRequest::setStockTaskId(long stockTaskId)
+{
+	stockTaskId_ = stockTaskId;
+	setParameter("StockTaskId", std::to_string(stockTaskId));
+}
+
 std::string DescribeOssStockStatusRequest::getSourceIp()const
 {
 	return sourceIp_;

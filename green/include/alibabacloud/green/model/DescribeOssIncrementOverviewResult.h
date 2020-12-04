@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				int getVoiceAntispamUnhandleCount()const;
 				int getPornUnhandleCount()const;
 				int getLiveUnhandleCount()const;
+				int getAudioCount()const;
 				int getVideoFrameCount()const;
 				int getTerrorismUnhandleCount()const;
 				int getAdUnhandleCount()const;
@@ -54,6 +55,7 @@ namespace AlibabaCloud
 				int voiceAntispamUnhandleCount_;
 				int pornUnhandleCount_;
 				int liveUnhandleCount_;
+				int audioCount_;
 				int videoFrameCount_;
 				int terrorismUnhandleCount_;
 				int adUnhandleCount_;

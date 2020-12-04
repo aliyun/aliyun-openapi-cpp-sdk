@@ -1,4 +1,7 @@
 2020-12-04 Version: patch
+- Support manual scan interface.
+
+2020-12-04 Version: patch
 - ReportInstancesStatus OpenAPI supports IssueCategory parameter.
 
 2020-12-03 Version: patch

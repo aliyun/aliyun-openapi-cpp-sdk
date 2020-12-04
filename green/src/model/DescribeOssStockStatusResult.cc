@@ -68,13 +68,32 @@ void DescribeOssStockStatusResult::parse(const std::string &payload)
 		imagePornCount_ = std::stoi(value["ImagePornCount"].asString());
 	if(!value["ImageTerrorismCount"].isNull())
 		imageTerrorismCount_ = std::stoi(value["ImageTerrorismCount"].asString());
+	if(!value["ImageAdCount"].isNull())
+		imageAdCount_ = std::stoi(value["ImageAdCount"].asString());
+	if(!value["ImageLiveCount"].isNull())
+		imageLiveCount_ = std::stoi(value["ImageLiveCount"].asString());
 	if(!value["VideoTotalCount"].isNull())
 		videoTotalCount_ = std::stoi(value["VideoTotalCount"].asString());
 	if(!value["VideoPornCount"].isNull())
 		videoPornCount_ = std::stoi(value["VideoPornCount"].asString());
 	if(!value["VideoTerrorismCount"].isNull())
 		videoTerrorismCount_ = std::stoi(value["VideoTerrorismCount"].asString());
+	if(!value["VideoAdCount"].isNull())
+		videoAdCount_ = std::stoi(value["VideoAdCount"].asString());
+	if(!value["VideoLiveCount"].isNull())
+		videoLiveCount_ = std::stoi(value["VideoLiveCount"].asString());
+	if(!value["VideoVoiceAntispamCount"].isNull())
+		videoVoiceAntispamCount_ = std::stoi(value["VideoVoiceAntispamCount"].asString());
+	if(!value["AudioTotalCount"].isNull())
+		audioTotalCount_ = std::stoi(value["AudioTotalCount"].asString());
+	if(!value["AudioAntispamCount"].isNull())
+		audioAntispamCount_ = std::stoi(value["AudioAntispamCount"].asString());
 
+}
+
+int DescribeOssStockStatusResult::getAudioTotalCount()const
+{
+	return audioTotalCount_;
 }
 
 int DescribeOssStockStatusResult::getImageTerrorismCount()const
@@ -87,14 +106,44 @@ int DescribeOssStockStatusResult::getVideoPornCount()const
 	return videoPornCount_;
 }
 
-int DescribeOssStockStatusResult::getStockStatus()const
-{
-	return stockStatus_;
-}
-
 int DescribeOssStockStatusResult::getImagePornCount()const
 {
 	return imagePornCount_;
+}
+
+int DescribeOssStockStatusResult::getAudioAntispamCount()const
+{
+	return audioAntispamCount_;
+}
+
+std::vector<std::string> DescribeOssStockStatusResult::getSceneList()const
+{
+	return sceneList_;
+}
+
+int DescribeOssStockStatusResult::getImageAdCount()const
+{
+	return imageAdCount_;
+}
+
+int DescribeOssStockStatusResult::getVideoLiveCount()const
+{
+	return videoLiveCount_;
+}
+
+std::vector<DescribeOssStockStatusResult::Bucket> DescribeOssStockStatusResult::getBucketList()const
+{
+	return bucketList_;
+}
+
+std::string DescribeOssStockStatusResult::getFinishedTime()const
+{
+	return finishedTime_;
+}
+
+int DescribeOssStockStatusResult::getStockStatus()const
+{
+	return stockStatus_;
 }
 
 int DescribeOssStockStatusResult::getVideoTotalCount()const
@@ -107,19 +156,19 @@ int DescribeOssStockStatusResult::getImageTotalCount()const
 	return imageTotalCount_;
 }
 
-std::vector<std::string> DescribeOssStockStatusResult::getSceneList()const
+int DescribeOssStockStatusResult::getImageLiveCount()const
 {
-	return sceneList_;
+	return imageLiveCount_;
 }
 
-std::vector<DescribeOssStockStatusResult::Bucket> DescribeOssStockStatusResult::getBucketList()const
+int DescribeOssStockStatusResult::getVideoAdCount()const
 {
-	return bucketList_;
+	return videoAdCount_;
 }
 
-std::string DescribeOssStockStatusResult::getFinishedTime()const
+int DescribeOssStockStatusResult::getVideoVoiceAntispamCount()const
 {
-	return finishedTime_;
+	return videoVoiceAntispamCount_;
 }
 
 std::vector<std::string> DescribeOssStockStatusResult::getResouceTypeList()const

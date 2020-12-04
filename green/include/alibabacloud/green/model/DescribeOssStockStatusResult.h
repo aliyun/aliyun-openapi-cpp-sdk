@@ -43,30 +43,44 @@ namespace AlibabaCloud
 				DescribeOssStockStatusResult();
 				explicit DescribeOssStockStatusResult(const std::string &payload);
 				~DescribeOssStockStatusResult();
+				int getAudioTotalCount()const;
 				int getImageTerrorismCount()const;
 				int getVideoPornCount()const;
-				int getStockStatus()const;
 				int getImagePornCount()const;
-				int getVideoTotalCount()const;
-				int getImageTotalCount()const;
+				int getAudioAntispamCount()const;
 				std::vector<std::string> getSceneList()const;
+				int getImageAdCount()const;
+				int getVideoLiveCount()const;
 				std::vector<Bucket> getBucketList()const;
 				std::string getFinishedTime()const;
+				int getStockStatus()const;
+				int getVideoTotalCount()const;
+				int getImageTotalCount()const;
+				int getImageLiveCount()const;
+				int getVideoAdCount()const;
+				int getVideoVoiceAntispamCount()const;
 				std::vector<std::string> getResouceTypeList()const;
 				int getVideoTerrorismCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int audioTotalCount_;
 				int imageTerrorismCount_;
 				int videoPornCount_;
-				int stockStatus_;
 				int imagePornCount_;
-				int videoTotalCount_;
-				int imageTotalCount_;
+				int audioAntispamCount_;
 				std::vector<std::string> sceneList_;
+				int imageAdCount_;
+				int videoLiveCount_;
 				std::vector<Bucket> bucketList_;
 				std::string finishedTime_;
+				int stockStatus_;
+				int videoTotalCount_;
+				int imageTotalCount_;
+				int imageLiveCount_;
+				int videoAdCount_;
+				int videoVoiceAntispamCount_;
 				std::vector<std::string> resouceTypeList_;
 				int videoTerrorismCount_;
 

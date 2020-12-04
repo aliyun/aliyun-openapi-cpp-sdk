@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
-#define ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_VIDEOASYNCMANUALSCANRESULTSRESULT_H_
+#define ALIBABACLOUD_GREEN_MODEL_VIDEOASYNCMANUALSCANRESULTSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/green/GreenExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT DescribeOssStockStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_GREEN_EXPORT VideoAsyncManualScanResultsResult : public ServiceResult
 			{
-
 			public:
-				DescribeOssStockStatusRequest();
-				~DescribeOssStockStatusRequest();
 
-				long getStockTaskId()const;
-				void setStockTaskId(long stockTaskId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
 
-            private:
-				long stockTaskId_;
-				std::string sourceIp_;
-				std::string lang_;
+				VideoAsyncManualScanResultsResult();
+				explicit VideoAsyncManualScanResultsResult(const std::string &payload);
+				~VideoAsyncManualScanResultsResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_VIDEOASYNCMANUALSCANRESULTSRESULT_H_

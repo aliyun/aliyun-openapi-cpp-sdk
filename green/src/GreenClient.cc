@@ -1419,6 +1419,42 @@ GreenClient::DescribeBizTypesOutcomeCallable GreenClient::describeBizTypesCallab
 	return task->get_future();
 }
 
+GreenClient::DescribeCloudMonitorServicesOutcome GreenClient::describeCloudMonitorServices(const DescribeCloudMonitorServicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCloudMonitorServicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCloudMonitorServicesOutcome(DescribeCloudMonitorServicesResult(outcome.result()));
+	else
+		return DescribeCloudMonitorServicesOutcome(outcome.error());
+}
+
+void GreenClient::describeCloudMonitorServicesAsync(const DescribeCloudMonitorServicesRequest& request, const DescribeCloudMonitorServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCloudMonitorServices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DescribeCloudMonitorServicesOutcomeCallable GreenClient::describeCloudMonitorServicesCallable(const DescribeCloudMonitorServicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCloudMonitorServicesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCloudMonitorServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::DescribeCustomOcrTemplateOutcome GreenClient::describeCustomOcrTemplate(const DescribeCustomOcrTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2967,6 +3003,78 @@ GreenClient::GetSimilarityLibraryOutcomeCallable GreenClient::getSimilarityLibra
 	return task->get_future();
 }
 
+GreenClient::ImageAsyncManualScanOutcome GreenClient::imageAsyncManualScan(const ImageAsyncManualScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImageAsyncManualScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImageAsyncManualScanOutcome(ImageAsyncManualScanResult(outcome.result()));
+	else
+		return ImageAsyncManualScanOutcome(outcome.error());
+}
+
+void GreenClient::imageAsyncManualScanAsync(const ImageAsyncManualScanRequest& request, const ImageAsyncManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, imageAsyncManualScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::ImageAsyncManualScanOutcomeCallable GreenClient::imageAsyncManualScanCallable(const ImageAsyncManualScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImageAsyncManualScanOutcome()>>(
+			[this, request]()
+			{
+			return this->imageAsyncManualScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::ImageAsyncManualScanResultsOutcome GreenClient::imageAsyncManualScanResults(const ImageAsyncManualScanResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImageAsyncManualScanResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImageAsyncManualScanResultsOutcome(ImageAsyncManualScanResultsResult(outcome.result()));
+	else
+		return ImageAsyncManualScanResultsOutcome(outcome.error());
+}
+
+void GreenClient::imageAsyncManualScanResultsAsync(const ImageAsyncManualScanResultsRequest& request, const ImageAsyncManualScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, imageAsyncManualScanResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::ImageAsyncManualScanResultsOutcomeCallable GreenClient::imageAsyncManualScanResultsCallable(const ImageAsyncManualScanResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImageAsyncManualScanResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->imageAsyncManualScanResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::ImageAsyncScanOutcome GreenClient::imageAsyncScan(const ImageAsyncScanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4041,78 @@ GreenClient::SetPersonOutcomeCallable GreenClient::setPersonCallable(const SetPe
 			[this, request]()
 			{
 			return this->setPerson(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::TextAsyncManualScanOutcome GreenClient::textAsyncManualScan(const TextAsyncManualScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TextAsyncManualScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TextAsyncManualScanOutcome(TextAsyncManualScanResult(outcome.result()));
+	else
+		return TextAsyncManualScanOutcome(outcome.error());
+}
+
+void GreenClient::textAsyncManualScanAsync(const TextAsyncManualScanRequest& request, const TextAsyncManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, textAsyncManualScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::TextAsyncManualScanOutcomeCallable GreenClient::textAsyncManualScanCallable(const TextAsyncManualScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TextAsyncManualScanOutcome()>>(
+			[this, request]()
+			{
+			return this->textAsyncManualScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::TextAsyncManualScanResultsOutcome GreenClient::textAsyncManualScanResults(const TextAsyncManualScanResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TextAsyncManualScanResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TextAsyncManualScanResultsOutcome(TextAsyncManualScanResultsResult(outcome.result()));
+	else
+		return TextAsyncManualScanResultsOutcome(outcome.error());
+}
+
+void GreenClient::textAsyncManualScanResultsAsync(const TextAsyncManualScanResultsRequest& request, const TextAsyncManualScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, textAsyncManualScanResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::TextAsyncManualScanResultsOutcomeCallable GreenClient::textAsyncManualScanResultsCallable(const TextAsyncManualScanResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TextAsyncManualScanResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->textAsyncManualScanResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4911,6 +5091,78 @@ GreenClient::VerifyWebsiteInstanceOutcomeCallable GreenClient::verifyWebsiteInst
 	return task->get_future();
 }
 
+GreenClient::VideoAsyncManualScanOutcome GreenClient::videoAsyncManualScan(const VideoAsyncManualScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VideoAsyncManualScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VideoAsyncManualScanOutcome(VideoAsyncManualScanResult(outcome.result()));
+	else
+		return VideoAsyncManualScanOutcome(outcome.error());
+}
+
+void GreenClient::videoAsyncManualScanAsync(const VideoAsyncManualScanRequest& request, const VideoAsyncManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, videoAsyncManualScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VideoAsyncManualScanOutcomeCallable GreenClient::videoAsyncManualScanCallable(const VideoAsyncManualScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VideoAsyncManualScanOutcome()>>(
+			[this, request]()
+			{
+			return this->videoAsyncManualScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VideoAsyncManualScanResultsOutcome GreenClient::videoAsyncManualScanResults(const VideoAsyncManualScanResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VideoAsyncManualScanResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VideoAsyncManualScanResultsOutcome(VideoAsyncManualScanResultsResult(outcome.result()));
+	else
+		return VideoAsyncManualScanResultsOutcome(outcome.error());
+}
+
+void GreenClient::videoAsyncManualScanResultsAsync(const VideoAsyncManualScanResultsRequest& request, const VideoAsyncManualScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, videoAsyncManualScanResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VideoAsyncManualScanResultsOutcomeCallable GreenClient::videoAsyncManualScanResultsCallable(const VideoAsyncManualScanResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VideoAsyncManualScanResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->videoAsyncManualScanResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::VideoAsyncScanOutcome GreenClient::videoAsyncScan(const VideoAsyncScanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5157,6 +5409,78 @@ GreenClient::VodAsyncScanResultsOutcomeCallable GreenClient::vodAsyncScanResults
 			[this, request]()
 			{
 			return this->vodAsyncScanResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VoiceAsyncManualScanOutcome GreenClient::voiceAsyncManualScan(const VoiceAsyncManualScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VoiceAsyncManualScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VoiceAsyncManualScanOutcome(VoiceAsyncManualScanResult(outcome.result()));
+	else
+		return VoiceAsyncManualScanOutcome(outcome.error());
+}
+
+void GreenClient::voiceAsyncManualScanAsync(const VoiceAsyncManualScanRequest& request, const VoiceAsyncManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, voiceAsyncManualScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VoiceAsyncManualScanOutcomeCallable GreenClient::voiceAsyncManualScanCallable(const VoiceAsyncManualScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VoiceAsyncManualScanOutcome()>>(
+			[this, request]()
+			{
+			return this->voiceAsyncManualScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::VoiceAsyncManualScanResultsOutcome GreenClient::voiceAsyncManualScanResults(const VoiceAsyncManualScanResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VoiceAsyncManualScanResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VoiceAsyncManualScanResultsOutcome(VoiceAsyncManualScanResultsResult(outcome.result()));
+	else
+		return VoiceAsyncManualScanResultsOutcome(outcome.error());
+}
+
+void GreenClient::voiceAsyncManualScanResultsAsync(const VoiceAsyncManualScanResultsRequest& request, const VoiceAsyncManualScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, voiceAsyncManualScanResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::VoiceAsyncManualScanResultsOutcomeCallable GreenClient::voiceAsyncManualScanResultsCallable(const VoiceAsyncManualScanResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VoiceAsyncManualScanResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->voiceAsyncManualScanResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

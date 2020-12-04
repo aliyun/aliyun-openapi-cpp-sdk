@@ -38,12 +38,12 @@ void CreateKeywordRequest::setKeywords(const std::string& keywords)
 	setParameter("Keywords", keywords);
 }
 
-int CreateKeywordRequest::getKeywordLibId()const
+long CreateKeywordRequest::getKeywordLibId()const
 {
 	return keywordLibId_;
 }
 
-void CreateKeywordRequest::setKeywordLibId(int keywordLibId)
+void CreateKeywordRequest::setKeywordLibId(long keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
 	setParameter("KeywordLibId", std::to_string(keywordLibId));

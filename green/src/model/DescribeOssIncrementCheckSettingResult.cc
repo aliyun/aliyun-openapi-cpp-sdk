@@ -63,6 +63,11 @@ void DescribeOssIncrementCheckSettingResult::parse(const std::string &payload)
 		imageAutoFreeze_.ad = imageAutoFreezeNode["Ad"].asString();
 	if(!imageAutoFreezeNode["Live"].isNull())
 		imageAutoFreeze_.live = imageAutoFreezeNode["Live"].asString();
+	auto audioAntispamFreezeConfigNode = value["AudioAntispamFreezeConfig"];
+	if(!audioAntispamFreezeConfigNode["Type"].isNull())
+		audioAntispamFreezeConfig_.type = audioAntispamFreezeConfigNode["Type"].asString();
+	if(!audioAntispamFreezeConfigNode["Value"].isNull())
+		audioAntispamFreezeConfig_.value = audioAntispamFreezeConfigNode["Value"].asString();
 	auto allImageSceneList = value["ImageSceneList"]["ImageScene"];
 	for (const auto &item : allImageSceneList)
 		imageSceneList_.push_back(item.asString());
@@ -72,6 +77,9 @@ void DescribeOssIncrementCheckSettingResult::parse(const std::string &payload)
 	auto allVideoAutoFreezeSceneList = value["VideoAutoFreezeSceneList"]["VideoAutoFreezeScene"];
 	for (const auto &item : allVideoAutoFreezeSceneList)
 		videoAutoFreezeSceneList_.push_back(item.asString());
+	auto allAudioSceneList = value["AudioSceneList"]["AudioScene"];
+	for (const auto &item : allAudioSceneList)
+		audioSceneList_.push_back(item.asString());
 	if(!value["ImageEnableLimit"].isNull())
 		imageEnableLimit_ = value["ImageEnableLimit"].asString() == "true";
 	if(!value["ImageScanLimit"].isNull())
@@ -88,12 +96,26 @@ void DescribeOssIncrementCheckSettingResult::parse(const std::string &payload)
 		callbackId_ = value["CallbackId"].asString();
 	if(!value["CallbackName"].isNull())
 		callbackName_ = value["CallbackName"].asString();
+	if(!value["AudioMaxSize"].isNull())
+		audioMaxSize_ = std::stoi(value["AudioMaxSize"].asString());
+	if(!value["AudioAutoFreezeOpened"].isNull())
+		audioAutoFreezeOpened_ = value["AudioAutoFreezeOpened"].asString() == "true";
 
+}
+
+int DescribeOssIncrementCheckSettingResult::getAudioMaxSize()const
+{
+	return audioMaxSize_;
 }
 
 std::vector<std::string> DescribeOssIncrementCheckSettingResult::getVideoAutoFreezeSceneList()const
 {
 	return videoAutoFreezeSceneList_;
+}
+
+DescribeOssIncrementCheckSettingResult::AudioAntispamFreezeConfig DescribeOssIncrementCheckSettingResult::getAudioAntispamFreezeConfig()const
+{
+	return audioAntispamFreezeConfig_;
 }
 
 std::string DescribeOssIncrementCheckSettingResult::getCallbackId()const
@@ -116,9 +138,19 @@ DescribeOssIncrementCheckSettingResult::ImageAutoFreeze DescribeOssIncrementChec
 	return imageAutoFreeze_;
 }
 
+std::vector<std::string> DescribeOssIncrementCheckSettingResult::getAudioSceneList()const
+{
+	return audioSceneList_;
+}
+
 int DescribeOssIncrementCheckSettingResult::getVideoFrameInterval()const
 {
 	return videoFrameInterval_;
+}
+
+bool DescribeOssIncrementCheckSettingResult::getAudioAutoFreezeOpened()const
+{
+	return audioAutoFreezeOpened_;
 }
 
 std::vector<std::string> DescribeOssIncrementCheckSettingResult::getVideoSceneList()const

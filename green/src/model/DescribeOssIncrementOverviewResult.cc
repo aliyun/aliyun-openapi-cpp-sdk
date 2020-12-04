@@ -55,6 +55,8 @@ void DescribeOssIncrementOverviewResult::parse(const std::string &payload)
 		liveUnhandleCount_ = std::stoi(value["LiveUnhandleCount"].asString());
 	if(!value["VoiceAntispamUnhandleCount"].isNull())
 		voiceAntispamUnhandleCount_ = std::stoi(value["VoiceAntispamUnhandleCount"].asString());
+	if(!value["AudioCount"].isNull())
+		audioCount_ = std::stoi(value["AudioCount"].asString());
 
 }
 
@@ -81,6 +83,11 @@ int DescribeOssIncrementOverviewResult::getPornUnhandleCount()const
 int DescribeOssIncrementOverviewResult::getLiveUnhandleCount()const
 {
 	return liveUnhandleCount_;
+}
+
+int DescribeOssIncrementOverviewResult::getAudioCount()const
+{
+	return audioCount_;
 }
 
 int DescribeOssIncrementOverviewResult::getVideoFrameCount()const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
-#define ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBECLOUDMONITORSERVICESREQUEST_H_
+#define ALIBABACLOUD_GREEN_MODEL_DESCRIBECLOUDMONITORSERVICESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT DescribeOssStockStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_GREEN_EXPORT DescribeCloudMonitorServicesRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeOssStockStatusRequest();
-				~DescribeOssStockStatusRequest();
+				DescribeCloudMonitorServicesRequest();
+				~DescribeCloudMonitorServicesRequest();
 
-				long getStockTaskId()const;
-				void setStockTaskId(long stockTaskId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
+				std::string getPage()const;
+				void setPage(const std::string& page);
 
             private:
-				long stockTaskId_;
 				std::string sourceIp_;
-				std::string lang_;
+				std::string pageSize_;
+				std::string page_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBECLOUDMONITORSERVICESREQUEST_H_

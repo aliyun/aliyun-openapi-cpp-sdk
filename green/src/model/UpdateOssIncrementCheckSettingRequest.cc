@@ -49,6 +49,17 @@ void UpdateOssIncrementCheckSettingRequest::setImageSceneList(const std::string&
 	setParameter("ImageSceneList", imageSceneList);
 }
 
+std::string UpdateOssIncrementCheckSettingRequest::getAudioSceneList()const
+{
+	return audioSceneList_;
+}
+
+void UpdateOssIncrementCheckSettingRequest::setAudioSceneList(const std::string& audioSceneList)
+{
+	audioSceneList_ = audioSceneList;
+	setParameter("AudioSceneList", audioSceneList);
+}
+
 int UpdateOssIncrementCheckSettingRequest::getVideoFrameInterval()const
 {
 	return videoFrameInterval_;
@@ -58,6 +69,17 @@ void UpdateOssIncrementCheckSettingRequest::setVideoFrameInterval(int videoFrame
 {
 	videoFrameInterval_ = videoFrameInterval;
 	setParameter("VideoFrameInterval", std::to_string(videoFrameInterval));
+}
+
+bool UpdateOssIncrementCheckSettingRequest::getAudioAutoFreezeOpened()const
+{
+	return audioAutoFreezeOpened_;
+}
+
+void UpdateOssIncrementCheckSettingRequest::setAudioAutoFreezeOpened(bool audioAutoFreezeOpened)
+{
+	audioAutoFreezeOpened_ = audioAutoFreezeOpened;
+	setParameter("AudioAutoFreezeOpened", audioAutoFreezeOpened ? "true" : "false");
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getSourceIp()const
@@ -104,6 +126,17 @@ void UpdateOssIncrementCheckSettingRequest::setVideoAutoFreezeSceneList(const st
 	setParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
 }
 
+int UpdateOssIncrementCheckSettingRequest::getAudioMaxSize()const
+{
+	return audioMaxSize_;
+}
+
+void UpdateOssIncrementCheckSettingRequest::setAudioMaxSize(int audioMaxSize)
+{
+	audioMaxSize_ = audioMaxSize;
+	setParameter("AudioMaxSize", std::to_string(audioMaxSize));
+}
+
 std::string UpdateOssIncrementCheckSettingRequest::getLang()const
 {
 	return lang_;
@@ -124,6 +157,17 @@ void UpdateOssIncrementCheckSettingRequest::setImageAutoFreeze(const std::string
 {
 	imageAutoFreeze_ = imageAutoFreeze;
 	setParameter("ImageAutoFreeze", imageAutoFreeze);
+}
+
+std::string UpdateOssIncrementCheckSettingRequest::getAudioAntispamFreezeConfig()const
+{
+	return audioAntispamFreezeConfig_;
+}
+
+void UpdateOssIncrementCheckSettingRequest::setAudioAntispamFreezeConfig(const std::string& audioAntispamFreezeConfig)
+{
+	audioAntispamFreezeConfig_ = audioAntispamFreezeConfig;
+	setParameter("AudioAntispamFreezeConfig", audioAntispamFreezeConfig);
 }
 
 int UpdateOssIncrementCheckSettingRequest::getVideoMaxSize()const

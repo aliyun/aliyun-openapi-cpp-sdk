@@ -98,6 +98,8 @@
 #include "model/DescribeBizTypeSettingResult.h"
 #include "model/DescribeBizTypesRequest.h"
 #include "model/DescribeBizTypesResult.h"
+#include "model/DescribeCloudMonitorServicesRequest.h"
+#include "model/DescribeCloudMonitorServicesResult.h"
 #include "model/DescribeCustomOcrTemplateRequest.h"
 #include "model/DescribeCustomOcrTemplateResult.h"
 #include "model/DescribeImageFromLibRequest.h"
@@ -184,6 +186,10 @@
 #include "model/GetSimilarityImageResult.h"
 #include "model/GetSimilarityLibraryRequest.h"
 #include "model/GetSimilarityLibraryResult.h"
+#include "model/ImageAsyncManualScanRequest.h"
+#include "model/ImageAsyncManualScanResult.h"
+#include "model/ImageAsyncManualScanResultsRequest.h"
+#include "model/ImageAsyncManualScanResultsResult.h"
 #include "model/ImageAsyncScanRequest.h"
 #include "model/ImageAsyncScanResult.h"
 #include "model/ImageAsyncScanResultsRequest.h"
@@ -238,6 +244,10 @@
 #include "model/SendWebsiteFeedbackResult.h"
 #include "model/SetPersonRequest.h"
 #include "model/SetPersonResult.h"
+#include "model/TextAsyncManualScanRequest.h"
+#include "model/TextAsyncManualScanResult.h"
+#include "model/TextAsyncManualScanResultsRequest.h"
+#include "model/TextAsyncManualScanResultsResult.h"
 #include "model/TextFeedbackRequest.h"
 #include "model/TextFeedbackResult.h"
 #include "model/TextKeywordFilterRequest.h"
@@ -292,6 +302,10 @@
 #include "model/VerifyPhoneResult.h"
 #include "model/VerifyWebsiteInstanceRequest.h"
 #include "model/VerifyWebsiteInstanceResult.h"
+#include "model/VideoAsyncManualScanRequest.h"
+#include "model/VideoAsyncManualScanResult.h"
+#include "model/VideoAsyncManualScanResultsRequest.h"
+#include "model/VideoAsyncManualScanResultsResult.h"
 #include "model/VideoAsyncScanRequest.h"
 #include "model/VideoAsyncScanResult.h"
 #include "model/VideoAsyncScanResultsRequest.h"
@@ -306,6 +320,10 @@
 #include "model/VodAsyncScanResult.h"
 #include "model/VodAsyncScanResultsRequest.h"
 #include "model/VodAsyncScanResultsResult.h"
+#include "model/VoiceAsyncManualScanRequest.h"
+#include "model/VoiceAsyncManualScanResult.h"
+#include "model/VoiceAsyncManualScanResultsRequest.h"
+#include "model/VoiceAsyncManualScanResultsResult.h"
 #include "model/VoiceAsyncScanRequest.h"
 #include "model/VoiceAsyncScanResult.h"
 #include "model/VoiceAsyncScanResultsRequest.h"
@@ -453,6 +471,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBizTypesResult> DescribeBizTypesOutcome;
 			typedef std::future<DescribeBizTypesOutcome> DescribeBizTypesOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypesRequest&, const DescribeBizTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCloudMonitorServicesResult> DescribeCloudMonitorServicesOutcome;
+			typedef std::future<DescribeCloudMonitorServicesOutcome> DescribeCloudMonitorServicesOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeCloudMonitorServicesRequest&, const DescribeCloudMonitorServicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudMonitorServicesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCustomOcrTemplateResult> DescribeCustomOcrTemplateOutcome;
 			typedef std::future<DescribeCustomOcrTemplateOutcome> DescribeCustomOcrTemplateOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeCustomOcrTemplateRequest&, const DescribeCustomOcrTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomOcrTemplateAsyncHandler;
@@ -582,6 +603,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetSimilarityLibraryResult> GetSimilarityLibraryOutcome;
 			typedef std::future<GetSimilarityLibraryOutcome> GetSimilarityLibraryOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::GetSimilarityLibraryRequest&, const GetSimilarityLibraryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSimilarityLibraryAsyncHandler;
+			typedef Outcome<Error, Model::ImageAsyncManualScanResult> ImageAsyncManualScanOutcome;
+			typedef std::future<ImageAsyncManualScanOutcome> ImageAsyncManualScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::ImageAsyncManualScanRequest&, const ImageAsyncManualScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImageAsyncManualScanAsyncHandler;
+			typedef Outcome<Error, Model::ImageAsyncManualScanResultsResult> ImageAsyncManualScanResultsOutcome;
+			typedef std::future<ImageAsyncManualScanResultsOutcome> ImageAsyncManualScanResultsOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::ImageAsyncManualScanResultsRequest&, const ImageAsyncManualScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImageAsyncManualScanResultsAsyncHandler;
 			typedef Outcome<Error, Model::ImageAsyncScanResult> ImageAsyncScanOutcome;
 			typedef std::future<ImageAsyncScanOutcome> ImageAsyncScanOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::ImageAsyncScanRequest&, const ImageAsyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImageAsyncScanAsyncHandler;
@@ -663,6 +690,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetPersonResult> SetPersonOutcome;
 			typedef std::future<SetPersonOutcome> SetPersonOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::SetPersonRequest&, const SetPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetPersonAsyncHandler;
+			typedef Outcome<Error, Model::TextAsyncManualScanResult> TextAsyncManualScanOutcome;
+			typedef std::future<TextAsyncManualScanOutcome> TextAsyncManualScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::TextAsyncManualScanRequest&, const TextAsyncManualScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TextAsyncManualScanAsyncHandler;
+			typedef Outcome<Error, Model::TextAsyncManualScanResultsResult> TextAsyncManualScanResultsOutcome;
+			typedef std::future<TextAsyncManualScanResultsOutcome> TextAsyncManualScanResultsOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::TextAsyncManualScanResultsRequest&, const TextAsyncManualScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TextAsyncManualScanResultsAsyncHandler;
 			typedef Outcome<Error, Model::TextFeedbackResult> TextFeedbackOutcome;
 			typedef std::future<TextFeedbackOutcome> TextFeedbackOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::TextFeedbackRequest&, const TextFeedbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TextFeedbackAsyncHandler;
@@ -744,6 +777,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::VerifyWebsiteInstanceResult> VerifyWebsiteInstanceOutcome;
 			typedef std::future<VerifyWebsiteInstanceOutcome> VerifyWebsiteInstanceOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VerifyWebsiteInstanceRequest&, const VerifyWebsiteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyWebsiteInstanceAsyncHandler;
+			typedef Outcome<Error, Model::VideoAsyncManualScanResult> VideoAsyncManualScanOutcome;
+			typedef std::future<VideoAsyncManualScanOutcome> VideoAsyncManualScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VideoAsyncManualScanRequest&, const VideoAsyncManualScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoAsyncManualScanAsyncHandler;
+			typedef Outcome<Error, Model::VideoAsyncManualScanResultsResult> VideoAsyncManualScanResultsOutcome;
+			typedef std::future<VideoAsyncManualScanResultsOutcome> VideoAsyncManualScanResultsOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VideoAsyncManualScanResultsRequest&, const VideoAsyncManualScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoAsyncManualScanResultsAsyncHandler;
 			typedef Outcome<Error, Model::VideoAsyncScanResult> VideoAsyncScanOutcome;
 			typedef std::future<VideoAsyncScanOutcome> VideoAsyncScanOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VideoAsyncScanRequest&, const VideoAsyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VideoAsyncScanAsyncHandler;
@@ -765,6 +804,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::VodAsyncScanResultsResult> VodAsyncScanResultsOutcome;
 			typedef std::future<VodAsyncScanResultsOutcome> VodAsyncScanResultsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VodAsyncScanResultsRequest&, const VodAsyncScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VodAsyncScanResultsAsyncHandler;
+			typedef Outcome<Error, Model::VoiceAsyncManualScanResult> VoiceAsyncManualScanOutcome;
+			typedef std::future<VoiceAsyncManualScanOutcome> VoiceAsyncManualScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VoiceAsyncManualScanRequest&, const VoiceAsyncManualScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VoiceAsyncManualScanAsyncHandler;
+			typedef Outcome<Error, Model::VoiceAsyncManualScanResultsResult> VoiceAsyncManualScanResultsOutcome;
+			typedef std::future<VoiceAsyncManualScanResultsOutcome> VoiceAsyncManualScanResultsOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VoiceAsyncManualScanResultsRequest&, const VoiceAsyncManualScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VoiceAsyncManualScanResultsAsyncHandler;
 			typedef Outcome<Error, Model::VoiceAsyncScanResult> VoiceAsyncScanOutcome;
 			typedef std::future<VoiceAsyncScanOutcome> VoiceAsyncScanOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VoiceAsyncScanRequest&, const VoiceAsyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VoiceAsyncScanAsyncHandler;
@@ -920,6 +965,9 @@ namespace AlibabaCloud
 			DescribeBizTypesOutcome describeBizTypes(const Model::DescribeBizTypesRequest &request)const;
 			void describeBizTypesAsync(const Model::DescribeBizTypesRequest& request, const DescribeBizTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizTypesOutcomeCallable describeBizTypesCallable(const Model::DescribeBizTypesRequest& request) const;
+			DescribeCloudMonitorServicesOutcome describeCloudMonitorServices(const Model::DescribeCloudMonitorServicesRequest &request)const;
+			void describeCloudMonitorServicesAsync(const Model::DescribeCloudMonitorServicesRequest& request, const DescribeCloudMonitorServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCloudMonitorServicesOutcomeCallable describeCloudMonitorServicesCallable(const Model::DescribeCloudMonitorServicesRequest& request) const;
 			DescribeCustomOcrTemplateOutcome describeCustomOcrTemplate(const Model::DescribeCustomOcrTemplateRequest &request)const;
 			void describeCustomOcrTemplateAsync(const Model::DescribeCustomOcrTemplateRequest& request, const DescribeCustomOcrTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCustomOcrTemplateOutcomeCallable describeCustomOcrTemplateCallable(const Model::DescribeCustomOcrTemplateRequest& request) const;
@@ -1049,6 +1097,12 @@ namespace AlibabaCloud
 			GetSimilarityLibraryOutcome getSimilarityLibrary(const Model::GetSimilarityLibraryRequest &request)const;
 			void getSimilarityLibraryAsync(const Model::GetSimilarityLibraryRequest& request, const GetSimilarityLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSimilarityLibraryOutcomeCallable getSimilarityLibraryCallable(const Model::GetSimilarityLibraryRequest& request) const;
+			ImageAsyncManualScanOutcome imageAsyncManualScan(const Model::ImageAsyncManualScanRequest &request)const;
+			void imageAsyncManualScanAsync(const Model::ImageAsyncManualScanRequest& request, const ImageAsyncManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ImageAsyncManualScanOutcomeCallable imageAsyncManualScanCallable(const Model::ImageAsyncManualScanRequest& request) const;
+			ImageAsyncManualScanResultsOutcome imageAsyncManualScanResults(const Model::ImageAsyncManualScanResultsRequest &request)const;
+			void imageAsyncManualScanResultsAsync(const Model::ImageAsyncManualScanResultsRequest& request, const ImageAsyncManualScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ImageAsyncManualScanResultsOutcomeCallable imageAsyncManualScanResultsCallable(const Model::ImageAsyncManualScanResultsRequest& request) const;
 			ImageAsyncScanOutcome imageAsyncScan(const Model::ImageAsyncScanRequest &request)const;
 			void imageAsyncScanAsync(const Model::ImageAsyncScanRequest& request, const ImageAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImageAsyncScanOutcomeCallable imageAsyncScanCallable(const Model::ImageAsyncScanRequest& request) const;
@@ -1130,6 +1184,12 @@ namespace AlibabaCloud
 			SetPersonOutcome setPerson(const Model::SetPersonRequest &request)const;
 			void setPersonAsync(const Model::SetPersonRequest& request, const SetPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetPersonOutcomeCallable setPersonCallable(const Model::SetPersonRequest& request) const;
+			TextAsyncManualScanOutcome textAsyncManualScan(const Model::TextAsyncManualScanRequest &request)const;
+			void textAsyncManualScanAsync(const Model::TextAsyncManualScanRequest& request, const TextAsyncManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TextAsyncManualScanOutcomeCallable textAsyncManualScanCallable(const Model::TextAsyncManualScanRequest& request) const;
+			TextAsyncManualScanResultsOutcome textAsyncManualScanResults(const Model::TextAsyncManualScanResultsRequest &request)const;
+			void textAsyncManualScanResultsAsync(const Model::TextAsyncManualScanResultsRequest& request, const TextAsyncManualScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TextAsyncManualScanResultsOutcomeCallable textAsyncManualScanResultsCallable(const Model::TextAsyncManualScanResultsRequest& request) const;
 			TextFeedbackOutcome textFeedback(const Model::TextFeedbackRequest &request)const;
 			void textFeedbackAsync(const Model::TextFeedbackRequest& request, const TextFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TextFeedbackOutcomeCallable textFeedbackCallable(const Model::TextFeedbackRequest& request) const;
@@ -1211,6 +1271,12 @@ namespace AlibabaCloud
 			VerifyWebsiteInstanceOutcome verifyWebsiteInstance(const Model::VerifyWebsiteInstanceRequest &request)const;
 			void verifyWebsiteInstanceAsync(const Model::VerifyWebsiteInstanceRequest& request, const VerifyWebsiteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyWebsiteInstanceOutcomeCallable verifyWebsiteInstanceCallable(const Model::VerifyWebsiteInstanceRequest& request) const;
+			VideoAsyncManualScanOutcome videoAsyncManualScan(const Model::VideoAsyncManualScanRequest &request)const;
+			void videoAsyncManualScanAsync(const Model::VideoAsyncManualScanRequest& request, const VideoAsyncManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VideoAsyncManualScanOutcomeCallable videoAsyncManualScanCallable(const Model::VideoAsyncManualScanRequest& request) const;
+			VideoAsyncManualScanResultsOutcome videoAsyncManualScanResults(const Model::VideoAsyncManualScanResultsRequest &request)const;
+			void videoAsyncManualScanResultsAsync(const Model::VideoAsyncManualScanResultsRequest& request, const VideoAsyncManualScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VideoAsyncManualScanResultsOutcomeCallable videoAsyncManualScanResultsCallable(const Model::VideoAsyncManualScanResultsRequest& request) const;
 			VideoAsyncScanOutcome videoAsyncScan(const Model::VideoAsyncScanRequest &request)const;
 			void videoAsyncScanAsync(const Model::VideoAsyncScanRequest& request, const VideoAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VideoAsyncScanOutcomeCallable videoAsyncScanCallable(const Model::VideoAsyncScanRequest& request) const;
@@ -1232,6 +1298,12 @@ namespace AlibabaCloud
 			VodAsyncScanResultsOutcome vodAsyncScanResults(const Model::VodAsyncScanResultsRequest &request)const;
 			void vodAsyncScanResultsAsync(const Model::VodAsyncScanResultsRequest& request, const VodAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VodAsyncScanResultsOutcomeCallable vodAsyncScanResultsCallable(const Model::VodAsyncScanResultsRequest& request) const;
+			VoiceAsyncManualScanOutcome voiceAsyncManualScan(const Model::VoiceAsyncManualScanRequest &request)const;
+			void voiceAsyncManualScanAsync(const Model::VoiceAsyncManualScanRequest& request, const VoiceAsyncManualScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VoiceAsyncManualScanOutcomeCallable voiceAsyncManualScanCallable(const Model::VoiceAsyncManualScanRequest& request) const;
+			VoiceAsyncManualScanResultsOutcome voiceAsyncManualScanResults(const Model::VoiceAsyncManualScanResultsRequest &request)const;
+			void voiceAsyncManualScanResultsAsync(const Model::VoiceAsyncManualScanResultsRequest& request, const VoiceAsyncManualScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VoiceAsyncManualScanResultsOutcomeCallable voiceAsyncManualScanResultsCallable(const Model::VoiceAsyncManualScanResultsRequest& request) const;
 			VoiceAsyncScanOutcome voiceAsyncScan(const Model::VoiceAsyncScanRequest &request)const;
 			void voiceAsyncScanAsync(const Model::VoiceAsyncScanRequest& request, const VoiceAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VoiceAsyncScanOutcomeCallable voiceAsyncScanCallable(const Model::VoiceAsyncScanRequest& request) const;

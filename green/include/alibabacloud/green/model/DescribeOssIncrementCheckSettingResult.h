@@ -40,6 +40,11 @@ namespace AlibabaCloud
 					bool enabled;
 					std::string porn;
 				};
+				struct AudioAntispamFreezeConfig
+				{
+					std::string type;
+					std::string value;
+				};
 				struct BucketConfig
 				{
 					std::string bucket;
@@ -51,12 +56,16 @@ namespace AlibabaCloud
 				DescribeOssIncrementCheckSettingResult();
 				explicit DescribeOssIncrementCheckSettingResult(const std::string &payload);
 				~DescribeOssIncrementCheckSettingResult();
+				int getAudioMaxSize()const;
 				std::vector<std::string> getVideoAutoFreezeSceneList()const;
+				AudioAntispamFreezeConfig getAudioAntispamFreezeConfig()const;
 				std::string getCallbackId()const;
 				long getImageScanLimit()const;
 				ImageAutoFreeze getImageAutoFreeze()const;
 				std::vector<BucketConfig> getBucketConfigList()const;
+				std::vector<std::string> getAudioSceneList()const;
 				int getVideoFrameInterval()const;
+				bool getAudioAutoFreezeOpened()const;
 				std::vector<std::string> getVideoSceneList()const;
 				bool getImageEnableLimit()const;
 				std::vector<std::string> getImageSceneList()const;
@@ -68,12 +77,16 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int audioMaxSize_;
 				std::vector<std::string> videoAutoFreezeSceneList_;
+				AudioAntispamFreezeConfig audioAntispamFreezeConfig_;
 				std::string callbackId_;
 				long imageScanLimit_;
 				ImageAutoFreeze imageAutoFreeze_;
 				std::vector<BucketConfig> bucketConfigList_;
+				std::vector<std::string> audioSceneList_;
 				int videoFrameInterval_;
+				bool audioAutoFreezeOpened_;
 				std::vector<std::string> videoSceneList_;
 				bool imageEnableLimit_;
 				std::vector<std::string> imageSceneList_;

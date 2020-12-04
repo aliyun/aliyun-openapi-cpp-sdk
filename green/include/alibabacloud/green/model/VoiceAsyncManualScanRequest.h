@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
-#define ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_VOICEASYNCMANUALSCANREQUEST_H_
+#define ALIBABACLOUD_GREEN_MODEL_VOICEASYNCMANUALSCANREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/green/GreenExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT DescribeOssStockStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_GREEN_EXPORT VoiceAsyncManualScanRequest : public RoaServiceRequest
 			{
 
 			public:
-				DescribeOssStockStatusRequest();
-				~DescribeOssStockStatusRequest();
+				VoiceAsyncManualScanRequest();
+				~VoiceAsyncManualScanRequest();
 
-				long getStockTaskId()const;
-				void setStockTaskId(long stockTaskId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				std::string getClientInfo()const;
+				void setClientInfo(const std::string& clientInfo);
 
             private:
-				long stockTaskId_;
-				std::string sourceIp_;
-				std::string lang_;
+				std::string clientInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEOSSSTOCKSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_VOICEASYNCMANUALSCANREQUEST_H_

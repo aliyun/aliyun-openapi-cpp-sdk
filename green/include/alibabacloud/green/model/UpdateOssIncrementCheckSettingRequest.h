@@ -39,8 +39,12 @@ namespace AlibabaCloud
 				void setVideoSceneList(const std::string& videoSceneList);
 				std::string getImageSceneList()const;
 				void setImageSceneList(const std::string& imageSceneList);
+				std::string getAudioSceneList()const;
+				void setAudioSceneList(const std::string& audioSceneList);
 				int getVideoFrameInterval()const;
 				void setVideoFrameInterval(int videoFrameInterval);
+				bool getAudioAutoFreezeOpened()const;
+				void setAudioAutoFreezeOpened(bool audioAutoFreezeOpened);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getCallbackId()const;
@@ -49,10 +53,14 @@ namespace AlibabaCloud
 				void setImageScanLimit(const std::string& imageScanLimit);
 				std::string getVideoAutoFreezeSceneList()const;
 				void setVideoAutoFreezeSceneList(const std::string& videoAutoFreezeSceneList);
+				int getAudioMaxSize()const;
+				void setAudioMaxSize(int audioMaxSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getImageAutoFreeze()const;
 				void setImageAutoFreeze(const std::string& imageAutoFreeze);
+				std::string getAudioAntispamFreezeConfig()const;
+				void setAudioAntispamFreezeConfig(const std::string& audioAntispamFreezeConfig);
 				int getVideoMaxSize()const;
 				void setVideoMaxSize(int videoMaxSize);
 				std::string getAutoFreezeType()const;
@@ -65,13 +73,17 @@ namespace AlibabaCloud
             private:
 				std::string videoSceneList_;
 				std::string imageSceneList_;
+				std::string audioSceneList_;
 				int videoFrameInterval_;
+				bool audioAutoFreezeOpened_;
 				std::string sourceIp_;
 				std::string callbackId_;
 				std::string imageScanLimit_;
 				std::string videoAutoFreezeSceneList_;
+				int audioMaxSize_;
 				std::string lang_;
 				std::string imageAutoFreeze_;
+				std::string audioAntispamFreezeConfig_;
 				int videoMaxSize_;
 				std::string autoFreezeType_;
 				std::string bucketConfigList_;

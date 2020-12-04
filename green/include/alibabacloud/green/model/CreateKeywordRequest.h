@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				std::string getKeywords()const;
 				void setKeywords(const std::string& keywords);
-				int getKeywordLibId()const;
-				void setKeywordLibId(int keywordLibId);
+				long getKeywordLibId()const;
+				void setKeywordLibId(long keywordLibId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
@@ -46,7 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string keywords_;
-				int keywordLibId_;
+				long keywordLibId_;
 				std::string sourceIp_;
 				std::string lang_;
 
