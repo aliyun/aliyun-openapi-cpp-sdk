@@ -1,3 +1,6 @@
+2020-12-07 Version: patch
+- Remove DescribeSubscriptionObjectModifyStatus.
+
 2020-12-04 Version: patch
 - Supported broker demand.
 

@@ -951,42 +951,6 @@ DtsClient::DescribeSubscriptionInstancesOutcomeCallable DtsClient::describeSubsc
 	return task->get_future();
 }
 
-DtsClient::DescribeSubscriptionObjectModifyStatusOutcome DtsClient::describeSubscriptionObjectModifyStatus(const DescribeSubscriptionObjectModifyStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSubscriptionObjectModifyStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSubscriptionObjectModifyStatusOutcome(DescribeSubscriptionObjectModifyStatusResult(outcome.result()));
-	else
-		return DescribeSubscriptionObjectModifyStatusOutcome(outcome.error());
-}
-
-void DtsClient::describeSubscriptionObjectModifyStatusAsync(const DescribeSubscriptionObjectModifyStatusRequest& request, const DescribeSubscriptionObjectModifyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSubscriptionObjectModifyStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DtsClient::DescribeSubscriptionObjectModifyStatusOutcomeCallable DtsClient::describeSubscriptionObjectModifyStatusCallable(const DescribeSubscriptionObjectModifyStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSubscriptionObjectModifyStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSubscriptionObjectModifyStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DtsClient::DescribeSynchronizationJobAlertOutcome DtsClient::describeSynchronizationJobAlert(const DescribeSynchronizationJobAlertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
