@@ -27,6 +27,17 @@ SegmentCommodityRequest::SegmentCommodityRequest() :
 SegmentCommodityRequest::~SegmentCommodityRequest()
 {}
 
+std::string SegmentCommodityRequest::getReturnForm()const
+{
+	return returnForm_;
+}
+
+void SegmentCommodityRequest::setReturnForm(const std::string& returnForm)
+{
+	returnForm_ = returnForm;
+	setParameter("ReturnForm", returnForm);
+}
+
 std::string SegmentCommodityRequest::getImageURL()const
 {
 	return imageURL_;
