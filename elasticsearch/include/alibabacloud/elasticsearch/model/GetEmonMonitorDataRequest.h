@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_MODIFYWHITEIPSREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_MODIFYWHITEIPSREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONMONITORDATAREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONMONITORDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ModifyWhiteIpsRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetEmonMonitorDataRequest : public RoaServiceRequest
 			{
 
 			public:
-				ModifyWhiteIpsRequest();
-				~ModifyWhiteIpsRequest();
+				GetEmonMonitorDataRequest();
+				~GetEmonMonitorDataRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getNodeType()const;
-				void setNodeType(const std::string& nodeType);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getNetworkType()const;
-				void setNetworkType(const std::string& networkType);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
 
             private:
-				std::string instanceId_;
-				std::string nodeType_;
-				std::string clientToken_;
-				std::string networkType_;
+				std::string projectId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_MODIFYWHITEIPSREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONMONITORDATAREQUEST_H_

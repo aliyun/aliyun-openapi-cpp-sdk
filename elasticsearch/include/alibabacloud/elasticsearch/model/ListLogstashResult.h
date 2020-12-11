@@ -32,11 +32,16 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListLogstashResult : public ServiceResult
 			{
 			public:
+				struct Headers
+				{
+					int xTotalCount;
+				};
 				struct Instance
 				{
 					struct NodeSpec
 					{
 						std::string diskType;
+						bool diskEncryption;
 						std::string spec;
 						int disk;
 					};
@@ -46,6 +51,11 @@ namespace AlibabaCloud
 						std::string vpcId;
 						std::string vswitchId;
 						std::string vsArea;
+					};
+					struct TagsItem
+					{
+						std::string tagKey;
+						std::string tagValue;
 					};
 					std::string status;
 					std::string description;
@@ -57,17 +67,20 @@ namespace AlibabaCloud
 					std::string paymentType;
 					int nodeAmount;
 					std::string updatedAt;
+					std::vector<Instance::TagsItem> tags;
 				};
 
 
 				ListLogstashResult();
 				explicit ListLogstashResult(const std::string &payload);
 				~ListLogstashResult();
+				Headers getHeaders()const;
 				std::vector<Instance> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Headers headers_;
 				std::vector<Instance> result_;
 
 			};

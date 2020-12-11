@@ -61,3 +61,25 @@ void UpgradeEngineVersionRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string UpgradeEngineVersionRequest::getType()const
+{
+	return type_;
+}
+
+void UpgradeEngineVersionRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setBodyParameter("Type", type);
+}
+
+std::string UpgradeEngineVersionRequest::getVersion()const
+{
+	return version_;
+}
+
+void UpgradeEngineVersionRequest::setVersion(const std::string& version)
+{
+	version_ = version;
+	setBodyParameter("Version", version);
+}
+

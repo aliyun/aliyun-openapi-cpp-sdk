@@ -102,6 +102,8 @@
 #include "model/GetClusterDataInformationResult.h"
 #include "model/GetElastictaskRequest.h"
 #include "model/GetElastictaskResult.h"
+#include "model/GetEmonMonitorDataRequest.h"
+#include "model/GetEmonMonitorDataResult.h"
 #include "model/GetRegionConfigurationRequest.h"
 #include "model/GetRegionConfigurationResult.h"
 #include "model/GetSuggestShrinkableNodesRequest.h"
@@ -427,6 +429,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetElastictaskResult> GetElastictaskOutcome;
 			typedef std::future<GetElastictaskOutcome> GetElastictaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetElastictaskRequest&, const GetElastictaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetElastictaskAsyncHandler;
+			typedef Outcome<Error, Model::GetEmonMonitorDataResult> GetEmonMonitorDataOutcome;
+			typedef std::future<GetEmonMonitorDataOutcome> GetEmonMonitorDataOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::GetEmonMonitorDataRequest&, const GetEmonMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEmonMonitorDataAsyncHandler;
 			typedef Outcome<Error, Model::GetRegionConfigurationResult> GetRegionConfigurationOutcome;
 			typedef std::future<GetRegionConfigurationOutcome> GetRegionConfigurationOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetRegionConfigurationRequest&, const GetRegionConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionConfigurationAsyncHandler;
@@ -846,6 +851,9 @@ namespace AlibabaCloud
 			GetElastictaskOutcome getElastictask(const Model::GetElastictaskRequest &request)const;
 			void getElastictaskAsync(const Model::GetElastictaskRequest& request, const GetElastictaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetElastictaskOutcomeCallable getElastictaskCallable(const Model::GetElastictaskRequest& request) const;
+			GetEmonMonitorDataOutcome getEmonMonitorData(const Model::GetEmonMonitorDataRequest &request)const;
+			void getEmonMonitorDataAsync(const Model::GetEmonMonitorDataRequest& request, const GetEmonMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetEmonMonitorDataOutcomeCallable getEmonMonitorDataCallable(const Model::GetEmonMonitorDataRequest& request) const;
 			GetRegionConfigurationOutcome getRegionConfiguration(const Model::GetRegionConfigurationRequest &request)const;
 			void getRegionConfigurationAsync(const Model::GetRegionConfigurationRequest& request, const GetRegionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRegionConfigurationOutcomeCallable getRegionConfigurationCallable(const Model::GetRegionConfigurationRequest& request) const;

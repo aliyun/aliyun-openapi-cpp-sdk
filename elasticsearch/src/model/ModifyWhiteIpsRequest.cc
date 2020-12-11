@@ -39,6 +39,17 @@ void ModifyWhiteIpsRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string ModifyWhiteIpsRequest::getNodeType()const
+{
+	return nodeType_;
+}
+
+void ModifyWhiteIpsRequest::setNodeType(const std::string& nodeType)
+{
+	nodeType_ = nodeType;
+	setBodyParameter("NodeType", nodeType);
+}
+
 std::string ModifyWhiteIpsRequest::getClientToken()const
 {
 	return clientToken_;
@@ -48,5 +59,16 @@ void ModifyWhiteIpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
+}
+
+std::string ModifyWhiteIpsRequest::getNetworkType()const
+{
+	return networkType_;
+}
+
+void ModifyWhiteIpsRequest::setNetworkType(const std::string& networkType)
+{
+	networkType_ = networkType;
+	setBodyParameter("NetworkType", networkType);
 }
 

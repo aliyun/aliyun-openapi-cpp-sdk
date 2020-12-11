@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct NodeSpec
 					{
 						std::string diskType;
+						bool diskEncryption;
 						std::string spec;
 						int disk;
 					};
@@ -49,15 +50,29 @@ namespace AlibabaCloud
 					};
 					struct Endpoint
 					{
+						std::string zoneId;
 						std::string port;
 						std::string host;
 					};
+					struct TagsItem
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
+					struct ZoneInfosItem
+					{
+						std::string status;
+						std::string zoneId;
+					};
 					std::string status;
+					std::vector<std::string> extendConfigs;
 					std::string description;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string config;
 					std::string createdAt;
 					NetworkConfig networkConfig;
+					std::vector<ZoneInfosItem> zoneInfos;
 					int nodeAmount;
 					std::string updatedAt;
 					std::string version;
@@ -65,6 +80,7 @@ namespace AlibabaCloud
 					std::string paymentType;
 					std::string vpcInstanceId;
 					std::vector<Endpoint> endpointList;
+					std::vector<TagsItem> tags;
 				};
 
 

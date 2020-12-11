@@ -60,6 +60,8 @@ void DescribeLogstashResult::parse(const std::string &payload)
 		result_.vpcInstanceId = resultNode["vpcInstanceId"].asString();
 	if(!resultNode["config"].isNull())
 		result_.config = resultNode["config"].asString();
+	if(!resultNode["ResourceGroupId"].isNull())
+		result_.resourceGroupId = resultNode["ResourceGroupId"].asString();
 	auto allendpointListNode = resultNode["endpointList"]["endpoint"];
 	for (auto resultNodeendpointListendpoint : allendpointListNode)
 	{
@@ -68,7 +70,29 @@ void DescribeLogstashResult::parse(const std::string &payload)
 			endpointObject.host = resultNodeendpointListendpoint["host"].asString();
 		if(!resultNodeendpointListendpoint["port"].isNull())
 			endpointObject.port = resultNodeendpointListendpoint["port"].asString();
+		if(!resultNodeendpointListendpoint["zoneId"].isNull())
+			endpointObject.zoneId = resultNodeendpointListendpoint["zoneId"].asString();
 		result_.endpointList.push_back(endpointObject);
+	}
+	auto allTagsNode = resultNode["Tags"]["tagsItem"];
+	for (auto resultNodeTagstagsItem : allTagsNode)
+	{
+		Result::TagsItem tagsItemObject;
+		if(!resultNodeTagstagsItem["tagKey"].isNull())
+			tagsItemObject.tagKey = resultNodeTagstagsItem["tagKey"].asString();
+		if(!resultNodeTagstagsItem["tagValue"].isNull())
+			tagsItemObject.tagValue = resultNodeTagstagsItem["tagValue"].asString();
+		result_.tags.push_back(tagsItemObject);
+	}
+	auto allZoneInfosNode = resultNode["ZoneInfos"]["zoneInfosItem"];
+	for (auto resultNodeZoneInfoszoneInfosItem : allZoneInfosNode)
+	{
+		Result::ZoneInfosItem zoneInfosItemObject;
+		if(!resultNodeZoneInfoszoneInfosItem["zoneId"].isNull())
+			zoneInfosItemObject.zoneId = resultNodeZoneInfoszoneInfosItem["zoneId"].asString();
+		if(!resultNodeZoneInfoszoneInfosItem["status"].isNull())
+			zoneInfosItemObject.status = resultNodeZoneInfoszoneInfosItem["status"].asString();
+		result_.zoneInfos.push_back(zoneInfosItemObject);
 	}
 	auto nodeSpecNode = resultNode["nodeSpec"];
 	if(!nodeSpecNode["spec"].isNull())
@@ -77,6 +101,8 @@ void DescribeLogstashResult::parse(const std::string &payload)
 		result_.nodeSpec.disk = std::stoi(nodeSpecNode["disk"].asString());
 	if(!nodeSpecNode["diskType"].isNull())
 		result_.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
+	if(!nodeSpecNode["diskEncryption"].isNull())
+		result_.nodeSpec.diskEncryption = nodeSpecNode["diskEncryption"].asString() == "true";
 	auto networkConfigNode = resultNode["networkConfig"];
 	if(!networkConfigNode["type"].isNull())
 		result_.networkConfig.type = networkConfigNode["type"].asString();
@@ -86,6 +112,9 @@ void DescribeLogstashResult::parse(const std::string &payload)
 		result_.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
 	if(!networkConfigNode["vsArea"].isNull())
 		result_.networkConfig.vsArea = networkConfigNode["vsArea"].asString();
+		auto allExtendConfigs = resultNode["ExtendConfigs"]["extendConfigs"];
+		for (auto value : allExtendConfigs)
+			result_.extendConfigs.push_back(value.asString());
 
 }
 

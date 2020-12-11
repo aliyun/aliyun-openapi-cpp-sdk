@@ -101,6 +101,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/GetClusterDataInformationResult.h
 	include/alibabacloud/elasticsearch/model/GetElastictaskRequest.h
 	include/alibabacloud/elasticsearch/model/GetElastictaskResult.h
+	include/alibabacloud/elasticsearch/model/GetEmonMonitorDataRequest.h
+	include/alibabacloud/elasticsearch/model/GetEmonMonitorDataResult.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationRequest.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationResult.h
 	include/alibabacloud/elasticsearch/model/GetSuggestShrinkableNodesRequest.h
@@ -380,6 +382,8 @@ set(elasticsearch_src
 	src/model/GetClusterDataInformationResult.cc
 	src/model/GetElastictaskRequest.cc
 	src/model/GetElastictaskResult.cc
+	src/model/GetEmonMonitorDataRequest.cc
+	src/model/GetEmonMonitorDataResult.cc
 	src/model/GetRegionConfigurationRequest.cc
 	src/model/GetRegionConfigurationResult.cc
 	src/model/GetSuggestShrinkableNodesRequest.cc

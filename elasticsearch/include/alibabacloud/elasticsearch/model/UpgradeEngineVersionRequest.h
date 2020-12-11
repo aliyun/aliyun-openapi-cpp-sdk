@@ -41,11 +41,17 @@ namespace AlibabaCloud
 				void setDryRun(bool dryRun);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getVersion()const;
+				void setVersion(const std::string& version);
 
             private:
 				std::string instanceId_;
 				bool dryRun_;
 				std::string clientToken_;
+				std::string type_;
+				std::string version_;
 
 			};
 		}

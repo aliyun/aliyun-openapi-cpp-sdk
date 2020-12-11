@@ -82,6 +82,8 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.nodeSpec.disk = std::stoi(nodeSpecNode["disk"].asString());
 		if(!nodeSpecNode["diskType"].isNull())
 			resultObject.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
+		if(!nodeSpecNode["diskEncryption"].isNull())
+			resultObject.nodeSpec.diskEncryption = nodeSpecNode["diskEncryption"].asString() == "true";
 		auto networkConfigNode = value["networkConfig"];
 		if(!networkConfigNode["type"].isNull())
 			resultObject.networkConfig.type = networkConfigNode["type"].asString();
@@ -129,6 +131,9 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.clientNodeConfiguration.diskType = clientNodeConfigurationNode["diskType"].asString();
 		if(!clientNodeConfigurationNode["disk"].isNull())
 			resultObject.clientNodeConfiguration.disk = std::stoi(clientNodeConfigurationNode["disk"].asString());
+		auto allExtendConfigs = value["extendConfigs"]["extendConfigs"];
+		for (auto value : allExtendConfigs)
+			resultObject.extendConfigs.push_back(value.asString());
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

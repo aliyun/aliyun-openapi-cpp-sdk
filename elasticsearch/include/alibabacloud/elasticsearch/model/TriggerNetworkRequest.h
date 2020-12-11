@@ -35,14 +35,23 @@ namespace AlibabaCloud
 				TriggerNetworkRequest();
 				~TriggerNetworkRequest();
 
+				std::string getActionType()const;
+				void setActionType(const std::string& actionType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getNodeType()const;
+				void setNodeType(const std::string& nodeType);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getNetworkType()const;
+				void setNetworkType(const std::string& networkType);
 
             private:
+				std::string actionType_;
 				std::string instanceId_;
+				std::string nodeType_;
 				std::string clientToken_;
+				std::string networkType_;
 
 			};
 		}

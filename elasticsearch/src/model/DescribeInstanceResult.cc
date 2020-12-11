@@ -240,6 +240,9 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		auto allKibanaPrivateIPWhitelist = resultNode["kibanaPrivateIPWhitelist"]["WhiteIP"];
 		for (auto value : allKibanaPrivateIPWhitelist)
 			result_.kibanaPrivateIPWhitelist.push_back(value.asString());
+		auto allExtendConfigs = resultNode["extendConfigs"]["extendConfigs"];
+		for (auto value : allExtendConfigs)
+			result_.extendConfigs.push_back(value.asString());
 
 }
 

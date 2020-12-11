@@ -1491,6 +1491,42 @@ ElasticsearchClient::GetElastictaskOutcomeCallable ElasticsearchClient::getElast
 	return task->get_future();
 }
 
+ElasticsearchClient::GetEmonMonitorDataOutcome ElasticsearchClient::getEmonMonitorData(const GetEmonMonitorDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetEmonMonitorDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetEmonMonitorDataOutcome(GetEmonMonitorDataResult(outcome.result()));
+	else
+		return GetEmonMonitorDataOutcome(outcome.error());
+}
+
+void ElasticsearchClient::getEmonMonitorDataAsync(const GetEmonMonitorDataRequest& request, const GetEmonMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getEmonMonitorData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::GetEmonMonitorDataOutcomeCallable ElasticsearchClient::getEmonMonitorDataCallable(const GetEmonMonitorDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetEmonMonitorDataOutcome()>>(
+			[this, request]()
+			{
+			return this->getEmonMonitorData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::GetRegionConfigurationOutcome ElasticsearchClient::getRegionConfiguration(const GetRegionConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

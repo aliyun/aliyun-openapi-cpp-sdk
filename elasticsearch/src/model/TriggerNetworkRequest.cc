@@ -28,6 +28,17 @@ TriggerNetworkRequest::TriggerNetworkRequest() :
 TriggerNetworkRequest::~TriggerNetworkRequest()
 {}
 
+std::string TriggerNetworkRequest::getActionType()const
+{
+	return actionType_;
+}
+
+void TriggerNetworkRequest::setActionType(const std::string& actionType)
+{
+	actionType_ = actionType;
+	setBodyParameter("ActionType", actionType);
+}
+
 std::string TriggerNetworkRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -39,6 +50,17 @@ void TriggerNetworkRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string TriggerNetworkRequest::getNodeType()const
+{
+	return nodeType_;
+}
+
+void TriggerNetworkRequest::setNodeType(const std::string& nodeType)
+{
+	nodeType_ = nodeType;
+	setBodyParameter("NodeType", nodeType);
+}
+
 std::string TriggerNetworkRequest::getClientToken()const
 {
 	return clientToken_;
@@ -48,5 +70,16 @@ void TriggerNetworkRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
+}
+
+std::string TriggerNetworkRequest::getNetworkType()const
+{
+	return networkType_;
+}
+
+void TriggerNetworkRequest::setNetworkType(const std::string& networkType)
+{
+	networkType_ = networkType;
+	setBodyParameter("NetworkType", networkType);
 }
 

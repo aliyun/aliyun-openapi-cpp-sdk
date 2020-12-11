@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					struct NodeSpec
 					{
 						std::string diskType;
+						bool diskEncryption;
 						std::string spec;
 						int disk;
 					};
@@ -87,6 +88,7 @@ namespace AlibabaCloud
 					};
 					MasterConfiguration masterConfiguration;
 					std::string status;
+					std::vector<std::string> extendConfigs;
 					std::string description;
 					std::string resourceGroupId;
 					ElasticDataNodeConfiguration elasticDataNodeConfiguration;

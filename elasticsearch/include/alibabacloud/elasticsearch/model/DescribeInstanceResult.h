@@ -135,6 +135,7 @@ namespace AlibabaCloud
 					std::string protocol;
 					bool haveKibana;
 					std::string status;
+					std::vector<std::string> extendConfigs;
 					std::vector<std::string> publicIpWhitelist;
 					std::vector<Dict> aliwsDicts;
 					std::string instanceId;
