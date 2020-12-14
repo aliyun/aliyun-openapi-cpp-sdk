@@ -128,6 +128,7 @@ namespace AlibabaCloud
 						std::string accomplished;
 						std::string taskId;
 						std::string parent;
+						std::string taskUniqueId;
 						std::string sourceId;
 						int rating;
 						std::string taskListId;

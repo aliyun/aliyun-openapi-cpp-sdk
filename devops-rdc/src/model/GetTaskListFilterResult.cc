@@ -132,6 +132,8 @@ void GetTaskListFilterResult::parse(const std::string &payload)
 			taskObject.sprint = objectNodeResultTask["Sprint"].asString();
 		if(!objectNodeResultTask["Parent"].isNull())
 			taskObject.parent = objectNodeResultTask["Parent"].asString();
+		if(!objectNodeResultTask["TaskUniqueId"].isNull())
+			taskObject.taskUniqueId = objectNodeResultTask["TaskUniqueId"].asString();
 		auto allCustomfieldsNode = objectNodeResultTask["Customfields"]["Customfield"];
 		for (auto objectNodeResultTaskCustomfieldsCustomfield : allCustomfieldsNode)
 		{

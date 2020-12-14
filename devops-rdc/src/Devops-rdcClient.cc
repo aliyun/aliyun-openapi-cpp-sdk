@@ -1779,6 +1779,42 @@ Devops_rdcClient::ListPipelinesOutcomeCallable Devops_rdcClient::listPipelinesCa
 	return task->get_future();
 }
 
+Devops_rdcClient::ListProjectCustomFieldsOutcome Devops_rdcClient::listProjectCustomFields(const ListProjectCustomFieldsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProjectCustomFieldsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProjectCustomFieldsOutcome(ListProjectCustomFieldsResult(outcome.result()));
+	else
+		return ListProjectCustomFieldsOutcome(outcome.error());
+}
+
+void Devops_rdcClient::listProjectCustomFieldsAsync(const ListProjectCustomFieldsRequest& request, const ListProjectCustomFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProjectCustomFields(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::ListProjectCustomFieldsOutcomeCallable Devops_rdcClient::listProjectCustomFieldsCallable(const ListProjectCustomFieldsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProjectCustomFieldsOutcome()>>(
+			[this, request]()
+			{
+			return this->listProjectCustomFields(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::ListServiceConnectionsOutcome Devops_rdcClient::listServiceConnections(const ListServiceConnectionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2097,6 +2133,42 @@ Devops_rdcClient::UpdatePipelineMemberOutcomeCallable Devops_rdcClient::updatePi
 			[this, request]()
 			{
 			return this->updatePipelineMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::UpdateTaskDetailOutcome Devops_rdcClient::updateTaskDetail(const UpdateTaskDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskDetailOutcome(UpdateTaskDetailResult(outcome.result()));
+	else
+		return UpdateTaskDetailOutcome(outcome.error());
+}
+
+void Devops_rdcClient::updateTaskDetailAsync(const UpdateTaskDetailRequest& request, const UpdateTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::UpdateTaskDetailOutcomeCallable Devops_rdcClient::updateTaskDetailCallable(const UpdateTaskDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

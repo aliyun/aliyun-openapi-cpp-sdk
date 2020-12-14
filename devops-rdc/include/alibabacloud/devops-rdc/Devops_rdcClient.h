@@ -118,6 +118,8 @@
 #include "model/ListDevopsScenarioFieldConfigResult.h"
 #include "model/ListPipelinesRequest.h"
 #include "model/ListPipelinesResult.h"
+#include "model/ListProjectCustomFieldsRequest.h"
+#include "model/ListProjectCustomFieldsResult.h"
 #include "model/ListServiceConnectionsRequest.h"
 #include "model/ListServiceConnectionsResult.h"
 #include "model/ListSmartGroupRequest.h"
@@ -136,6 +138,8 @@
 #include "model/UpdateDevopsProjectTaskResult.h"
 #include "model/UpdatePipelineMemberRequest.h"
 #include "model/UpdatePipelineMemberResult.h"
+#include "model/UpdateTaskDetailRequest.h"
+#include "model/UpdateTaskDetailResult.h"
 
 
 namespace AlibabaCloud
@@ -289,6 +293,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPipelinesResult> ListPipelinesOutcome;
 			typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListPipelinesRequest&, const ListPipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPipelinesAsyncHandler;
+			typedef Outcome<Error, Model::ListProjectCustomFieldsResult> ListProjectCustomFieldsOutcome;
+			typedef std::future<ListProjectCustomFieldsOutcome> ListProjectCustomFieldsOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::ListProjectCustomFieldsRequest&, const ListProjectCustomFieldsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectCustomFieldsAsyncHandler;
 			typedef Outcome<Error, Model::ListServiceConnectionsResult> ListServiceConnectionsOutcome;
 			typedef std::future<ListServiceConnectionsOutcome> ListServiceConnectionsOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListServiceConnectionsRequest&, const ListServiceConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceConnectionsAsyncHandler;
@@ -316,6 +323,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdatePipelineMemberResult> UpdatePipelineMemberOutcome;
 			typedef std::future<UpdatePipelineMemberOutcome> UpdatePipelineMemberOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::UpdatePipelineMemberRequest&, const UpdatePipelineMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePipelineMemberAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTaskDetailResult> UpdateTaskDetailOutcome;
+			typedef std::future<UpdateTaskDetailOutcome> UpdateTaskDetailOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::UpdateTaskDetailRequest&, const UpdateTaskDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTaskDetailAsyncHandler;
 
 			Devops_rdcClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Devops_rdcClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -465,6 +475,9 @@ namespace AlibabaCloud
 			ListPipelinesOutcome listPipelines(const Model::ListPipelinesRequest &request)const;
 			void listPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPipelinesOutcomeCallable listPipelinesCallable(const Model::ListPipelinesRequest& request) const;
+			ListProjectCustomFieldsOutcome listProjectCustomFields(const Model::ListProjectCustomFieldsRequest &request)const;
+			void listProjectCustomFieldsAsync(const Model::ListProjectCustomFieldsRequest& request, const ListProjectCustomFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProjectCustomFieldsOutcomeCallable listProjectCustomFieldsCallable(const Model::ListProjectCustomFieldsRequest& request) const;
 			ListServiceConnectionsOutcome listServiceConnections(const Model::ListServiceConnectionsRequest &request)const;
 			void listServiceConnectionsAsync(const Model::ListServiceConnectionsRequest& request, const ListServiceConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListServiceConnectionsOutcomeCallable listServiceConnectionsCallable(const Model::ListServiceConnectionsRequest& request) const;
@@ -492,6 +505,9 @@ namespace AlibabaCloud
 			UpdatePipelineMemberOutcome updatePipelineMember(const Model::UpdatePipelineMemberRequest &request)const;
 			void updatePipelineMemberAsync(const Model::UpdatePipelineMemberRequest& request, const UpdatePipelineMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePipelineMemberOutcomeCallable updatePipelineMemberCallable(const Model::UpdatePipelineMemberRequest& request) const;
+			UpdateTaskDetailOutcome updateTaskDetail(const Model::UpdateTaskDetailRequest &request)const;
+			void updateTaskDetailAsync(const Model::UpdateTaskDetailRequest& request, const UpdateTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTaskDetailOutcomeCallable updateTaskDetailCallable(const Model::UpdateTaskDetailRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

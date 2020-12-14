@@ -117,6 +117,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/ListDevopsScenarioFieldConfigResult.h
 	include/alibabacloud/devops-rdc/model/ListPipelinesRequest.h
 	include/alibabacloud/devops-rdc/model/ListPipelinesResult.h
+	include/alibabacloud/devops-rdc/model/ListProjectCustomFieldsRequest.h
+	include/alibabacloud/devops-rdc/model/ListProjectCustomFieldsResult.h
 	include/alibabacloud/devops-rdc/model/ListServiceConnectionsRequest.h
 	include/alibabacloud/devops-rdc/model/ListServiceConnectionsResult.h
 	include/alibabacloud/devops-rdc/model/ListSmartGroupRequest.h
@@ -134,7 +136,9 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskRequest.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskResult.h
 	include/alibabacloud/devops-rdc/model/UpdatePipelineMemberRequest.h
-	include/alibabacloud/devops-rdc/model/UpdatePipelineMemberResult.h )
+	include/alibabacloud/devops-rdc/model/UpdatePipelineMemberResult.h
+	include/alibabacloud/devops-rdc/model/UpdateTaskDetailRequest.h
+	include/alibabacloud/devops-rdc/model/UpdateTaskDetailResult.h )
 
 set(devops-rdc_src 
 	src/Devops-rdcClient.cc
@@ -234,6 +238,8 @@ set(devops-rdc_src
 	src/model/ListDevopsScenarioFieldConfigResult.cc
 	src/model/ListPipelinesRequest.cc
 	src/model/ListPipelinesResult.cc
+	src/model/ListProjectCustomFieldsRequest.cc
+	src/model/ListProjectCustomFieldsResult.cc
 	src/model/ListServiceConnectionsRequest.cc
 	src/model/ListServiceConnectionsResult.cc
 	src/model/ListSmartGroupRequest.cc
@@ -251,7 +257,9 @@ set(devops-rdc_src
 	src/model/UpdateDevopsProjectTaskRequest.cc
 	src/model/UpdateDevopsProjectTaskResult.cc
 	src/model/UpdatePipelineMemberRequest.cc
-	src/model/UpdatePipelineMemberResult.cc )
+	src/model/UpdatePipelineMemberResult.cc
+	src/model/UpdateTaskDetailRequest.cc
+	src/model/UpdateTaskDetailResult.cc )
 
 add_library(devops-rdc ${LIB_TYPE}
 	${devops-rdc_public_header}
