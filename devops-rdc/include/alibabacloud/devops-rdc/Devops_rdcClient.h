@@ -70,6 +70,8 @@
 #include "model/GetDevopsProjectSprintInfoResult.h"
 #include "model/GetDevopsProjectTaskInfoRequest.h"
 #include "model/GetDevopsProjectTaskInfoResult.h"
+#include "model/GetPipelineInstHistoryRequest.h"
+#include "model/GetPipelineInstHistoryResult.h"
 #include "model/GetPipelineInstanceBuildNumberStatusRequest.h"
 #include "model/GetPipelineInstanceBuildNumberStatusResult.h"
 #include "model/GetPipelineInstanceGroupStatusRequest.h"
@@ -80,6 +82,8 @@
 #include "model/GetPipelineInstanceStatusResult.h"
 #include "model/GetPipelineLogRequest.h"
 #include "model/GetPipelineLogResult.h"
+#include "model/GetPipelineStepLogRequest.h"
+#include "model/GetPipelineStepLogResult.h"
 #include "model/GetPipleineLatestInstanceStatusRequest.h"
 #include "model/GetPipleineLatestInstanceStatusResult.h"
 #include "model/GetProjectOptionRequest.h"
@@ -221,6 +225,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDevopsProjectTaskInfoResult> GetDevopsProjectTaskInfoOutcome;
 			typedef std::future<GetDevopsProjectTaskInfoOutcome> GetDevopsProjectTaskInfoOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::GetDevopsProjectTaskInfoRequest&, const GetDevopsProjectTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDevopsProjectTaskInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetPipelineInstHistoryResult> GetPipelineInstHistoryOutcome;
+			typedef std::future<GetPipelineInstHistoryOutcome> GetPipelineInstHistoryOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::GetPipelineInstHistoryRequest&, const GetPipelineInstHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPipelineInstHistoryAsyncHandler;
 			typedef Outcome<Error, Model::GetPipelineInstanceBuildNumberStatusResult> GetPipelineInstanceBuildNumberStatusOutcome;
 			typedef std::future<GetPipelineInstanceBuildNumberStatusOutcome> GetPipelineInstanceBuildNumberStatusOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::GetPipelineInstanceBuildNumberStatusRequest&, const GetPipelineInstanceBuildNumberStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPipelineInstanceBuildNumberStatusAsyncHandler;
@@ -236,6 +243,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPipelineLogResult> GetPipelineLogOutcome;
 			typedef std::future<GetPipelineLogOutcome> GetPipelineLogOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::GetPipelineLogRequest&, const GetPipelineLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPipelineLogAsyncHandler;
+			typedef Outcome<Error, Model::GetPipelineStepLogResult> GetPipelineStepLogOutcome;
+			typedef std::future<GetPipelineStepLogOutcome> GetPipelineStepLogOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::GetPipelineStepLogRequest&, const GetPipelineStepLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPipelineStepLogAsyncHandler;
 			typedef Outcome<Error, Model::GetPipleineLatestInstanceStatusResult> GetPipleineLatestInstanceStatusOutcome;
 			typedef std::future<GetPipleineLatestInstanceStatusOutcome> GetPipleineLatestInstanceStatusOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::GetPipleineLatestInstanceStatusRequest&, const GetPipleineLatestInstanceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPipleineLatestInstanceStatusAsyncHandler;
@@ -403,6 +413,9 @@ namespace AlibabaCloud
 			GetDevopsProjectTaskInfoOutcome getDevopsProjectTaskInfo(const Model::GetDevopsProjectTaskInfoRequest &request)const;
 			void getDevopsProjectTaskInfoAsync(const Model::GetDevopsProjectTaskInfoRequest& request, const GetDevopsProjectTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDevopsProjectTaskInfoOutcomeCallable getDevopsProjectTaskInfoCallable(const Model::GetDevopsProjectTaskInfoRequest& request) const;
+			GetPipelineInstHistoryOutcome getPipelineInstHistory(const Model::GetPipelineInstHistoryRequest &request)const;
+			void getPipelineInstHistoryAsync(const Model::GetPipelineInstHistoryRequest& request, const GetPipelineInstHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPipelineInstHistoryOutcomeCallable getPipelineInstHistoryCallable(const Model::GetPipelineInstHistoryRequest& request) const;
 			GetPipelineInstanceBuildNumberStatusOutcome getPipelineInstanceBuildNumberStatus(const Model::GetPipelineInstanceBuildNumberStatusRequest &request)const;
 			void getPipelineInstanceBuildNumberStatusAsync(const Model::GetPipelineInstanceBuildNumberStatusRequest& request, const GetPipelineInstanceBuildNumberStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPipelineInstanceBuildNumberStatusOutcomeCallable getPipelineInstanceBuildNumberStatusCallable(const Model::GetPipelineInstanceBuildNumberStatusRequest& request) const;
@@ -418,6 +431,9 @@ namespace AlibabaCloud
 			GetPipelineLogOutcome getPipelineLog(const Model::GetPipelineLogRequest &request)const;
 			void getPipelineLogAsync(const Model::GetPipelineLogRequest& request, const GetPipelineLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPipelineLogOutcomeCallable getPipelineLogCallable(const Model::GetPipelineLogRequest& request) const;
+			GetPipelineStepLogOutcome getPipelineStepLog(const Model::GetPipelineStepLogRequest &request)const;
+			void getPipelineStepLogAsync(const Model::GetPipelineStepLogRequest& request, const GetPipelineStepLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPipelineStepLogOutcomeCallable getPipelineStepLogCallable(const Model::GetPipelineStepLogRequest& request) const;
 			GetPipleineLatestInstanceStatusOutcome getPipleineLatestInstanceStatus(const Model::GetPipleineLatestInstanceStatusRequest &request)const;
 			void getPipleineLatestInstanceStatusAsync(const Model::GetPipleineLatestInstanceStatusRequest& request, const GetPipleineLatestInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPipleineLatestInstanceStatusOutcomeCallable getPipleineLatestInstanceStatusCallable(const Model::GetPipleineLatestInstanceStatusRequest& request) const;

@@ -69,6 +69,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/GetDevopsProjectSprintInfoResult.h
 	include/alibabacloud/devops-rdc/model/GetDevopsProjectTaskInfoRequest.h
 	include/alibabacloud/devops-rdc/model/GetDevopsProjectTaskInfoResult.h
+	include/alibabacloud/devops-rdc/model/GetPipelineInstHistoryRequest.h
+	include/alibabacloud/devops-rdc/model/GetPipelineInstHistoryResult.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstanceBuildNumberStatusRequest.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstanceBuildNumberStatusResult.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstanceGroupStatusRequest.h
@@ -79,6 +81,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/GetPipelineInstanceStatusResult.h
 	include/alibabacloud/devops-rdc/model/GetPipelineLogRequest.h
 	include/alibabacloud/devops-rdc/model/GetPipelineLogResult.h
+	include/alibabacloud/devops-rdc/model/GetPipelineStepLogRequest.h
+	include/alibabacloud/devops-rdc/model/GetPipelineStepLogResult.h
 	include/alibabacloud/devops-rdc/model/GetPipleineLatestInstanceStatusRequest.h
 	include/alibabacloud/devops-rdc/model/GetPipleineLatestInstanceStatusResult.h
 	include/alibabacloud/devops-rdc/model/GetProjectOptionRequest.h
@@ -190,6 +194,8 @@ set(devops-rdc_src
 	src/model/GetDevopsProjectSprintInfoResult.cc
 	src/model/GetDevopsProjectTaskInfoRequest.cc
 	src/model/GetDevopsProjectTaskInfoResult.cc
+	src/model/GetPipelineInstHistoryRequest.cc
+	src/model/GetPipelineInstHistoryResult.cc
 	src/model/GetPipelineInstanceBuildNumberStatusRequest.cc
 	src/model/GetPipelineInstanceBuildNumberStatusResult.cc
 	src/model/GetPipelineInstanceGroupStatusRequest.cc
@@ -200,6 +206,8 @@ set(devops-rdc_src
 	src/model/GetPipelineInstanceStatusResult.cc
 	src/model/GetPipelineLogRequest.cc
 	src/model/GetPipelineLogResult.cc
+	src/model/GetPipelineStepLogRequest.cc
+	src/model/GetPipelineStepLogResult.cc
 	src/model/GetPipleineLatestInstanceStatusRequest.cc
 	src/model/GetPipleineLatestInstanceStatusResult.cc
 	src/model/GetProjectOptionRequest.cc

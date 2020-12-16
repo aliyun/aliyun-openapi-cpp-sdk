@@ -915,6 +915,42 @@ Devops_rdcClient::GetDevopsProjectTaskInfoOutcomeCallable Devops_rdcClient::getD
 	return task->get_future();
 }
 
+Devops_rdcClient::GetPipelineInstHistoryOutcome Devops_rdcClient::getPipelineInstHistory(const GetPipelineInstHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPipelineInstHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPipelineInstHistoryOutcome(GetPipelineInstHistoryResult(outcome.result()));
+	else
+		return GetPipelineInstHistoryOutcome(outcome.error());
+}
+
+void Devops_rdcClient::getPipelineInstHistoryAsync(const GetPipelineInstHistoryRequest& request, const GetPipelineInstHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPipelineInstHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::GetPipelineInstHistoryOutcomeCallable Devops_rdcClient::getPipelineInstHistoryCallable(const GetPipelineInstHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPipelineInstHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->getPipelineInstHistory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::GetPipelineInstanceBuildNumberStatusOutcome Devops_rdcClient::getPipelineInstanceBuildNumberStatus(const GetPipelineInstanceBuildNumberStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1125,42 @@ Devops_rdcClient::GetPipelineLogOutcomeCallable Devops_rdcClient::getPipelineLog
 			[this, request]()
 			{
 			return this->getPipelineLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::GetPipelineStepLogOutcome Devops_rdcClient::getPipelineStepLog(const GetPipelineStepLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPipelineStepLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPipelineStepLogOutcome(GetPipelineStepLogResult(outcome.result()));
+	else
+		return GetPipelineStepLogOutcome(outcome.error());
+}
+
+void Devops_rdcClient::getPipelineStepLogAsync(const GetPipelineStepLogRequest& request, const GetPipelineStepLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPipelineStepLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::GetPipelineStepLogOutcomeCallable Devops_rdcClient::getPipelineStepLogCallable(const GetPipelineStepLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPipelineStepLogOutcome()>>(
+			[this, request]()
+			{
+			return this->getPipelineStepLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
