@@ -771,6 +771,42 @@ Waf_openapiClient::DescribeProtectionModuleStatusOutcomeCallable Waf_openapiClie
 	return task->get_future();
 }
 
+Waf_openapiClient::DescribeWafSourceIpSegmentOutcome Waf_openapiClient::describeWafSourceIpSegment(const DescribeWafSourceIpSegmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWafSourceIpSegmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWafSourceIpSegmentOutcome(DescribeWafSourceIpSegmentResult(outcome.result()));
+	else
+		return DescribeWafSourceIpSegmentOutcome(outcome.error());
+}
+
+void Waf_openapiClient::describeWafSourceIpSegmentAsync(const DescribeWafSourceIpSegmentRequest& request, const DescribeWafSourceIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWafSourceIpSegment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Waf_openapiClient::DescribeWafSourceIpSegmentOutcomeCallable Waf_openapiClient::describeWafSourceIpSegmentCallable(const DescribeWafSourceIpSegmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWafSourceIpSegmentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWafSourceIpSegment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Waf_openapiClient::ModifyDomainOutcome Waf_openapiClient::modifyDomain(const ModifyDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +837,42 @@ Waf_openapiClient::ModifyDomainOutcomeCallable Waf_openapiClient::modifyDomainCa
 			[this, request]()
 			{
 			return this->modifyDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Waf_openapiClient::ModifyDomainClusterTypeOutcome Waf_openapiClient::modifyDomainClusterType(const ModifyDomainClusterTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDomainClusterTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDomainClusterTypeOutcome(ModifyDomainClusterTypeResult(outcome.result()));
+	else
+		return ModifyDomainClusterTypeOutcome(outcome.error());
+}
+
+void Waf_openapiClient::modifyDomainClusterTypeAsync(const ModifyDomainClusterTypeRequest& request, const ModifyDomainClusterTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDomainClusterType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Waf_openapiClient::ModifyDomainClusterTypeOutcomeCallable Waf_openapiClient::modifyDomainClusterTypeCallable(const ModifyDomainClusterTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDomainClusterTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDomainClusterType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

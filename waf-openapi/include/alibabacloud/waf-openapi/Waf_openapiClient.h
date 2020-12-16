@@ -62,8 +62,12 @@
 #include "model/DescribeProtectionModuleRulesResult.h"
 #include "model/DescribeProtectionModuleStatusRequest.h"
 #include "model/DescribeProtectionModuleStatusResult.h"
+#include "model/DescribeWafSourceIpSegmentRequest.h"
+#include "model/DescribeWafSourceIpSegmentResult.h"
 #include "model/ModifyDomainRequest.h"
 #include "model/ModifyDomainResult.h"
+#include "model/ModifyDomainClusterTypeRequest.h"
+#include "model/ModifyDomainClusterTypeResult.h"
 #include "model/ModifyDomainIpv6StatusRequest.h"
 #include "model/ModifyDomainIpv6StatusResult.h"
 #include "model/ModifyLogRetrievalStatusRequest.h"
@@ -151,9 +155,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeProtectionModuleStatusResult> DescribeProtectionModuleStatusOutcome;
 			typedef std::future<DescribeProtectionModuleStatusOutcome> DescribeProtectionModuleStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleStatusRequest&, const DescribeProtectionModuleStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWafSourceIpSegmentResult> DescribeWafSourceIpSegmentOutcome;
+			typedef std::future<DescribeWafSourceIpSegmentOutcome> DescribeWafSourceIpSegmentOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeWafSourceIpSegmentRequest&, const DescribeWafSourceIpSegmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafSourceIpSegmentAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDomainResult> ModifyDomainOutcome;
 			typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainRequest&, const ModifyDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDomainClusterTypeResult> ModifyDomainClusterTypeOutcome;
+			typedef std::future<ModifyDomainClusterTypeOutcome> ModifyDomainClusterTypeOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainClusterTypeRequest&, const ModifyDomainClusterTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainClusterTypeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDomainIpv6StatusResult> ModifyDomainIpv6StatusOutcome;
 			typedef std::future<ModifyDomainIpv6StatusOutcome> ModifyDomainIpv6StatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainIpv6StatusRequest&, const ModifyDomainIpv6StatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainIpv6StatusAsyncHandler;
@@ -246,9 +256,15 @@ namespace AlibabaCloud
 			DescribeProtectionModuleStatusOutcome describeProtectionModuleStatus(const Model::DescribeProtectionModuleStatusRequest &request)const;
 			void describeProtectionModuleStatusAsync(const Model::DescribeProtectionModuleStatusRequest& request, const DescribeProtectionModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleStatusOutcomeCallable describeProtectionModuleStatusCallable(const Model::DescribeProtectionModuleStatusRequest& request) const;
+			DescribeWafSourceIpSegmentOutcome describeWafSourceIpSegment(const Model::DescribeWafSourceIpSegmentRequest &request)const;
+			void describeWafSourceIpSegmentAsync(const Model::DescribeWafSourceIpSegmentRequest& request, const DescribeWafSourceIpSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWafSourceIpSegmentOutcomeCallable describeWafSourceIpSegmentCallable(const Model::DescribeWafSourceIpSegmentRequest& request) const;
 			ModifyDomainOutcome modifyDomain(const Model::ModifyDomainRequest &request)const;
 			void modifyDomainAsync(const Model::ModifyDomainRequest& request, const ModifyDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDomainOutcomeCallable modifyDomainCallable(const Model::ModifyDomainRequest& request) const;
+			ModifyDomainClusterTypeOutcome modifyDomainClusterType(const Model::ModifyDomainClusterTypeRequest &request)const;
+			void modifyDomainClusterTypeAsync(const Model::ModifyDomainClusterTypeRequest& request, const ModifyDomainClusterTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDomainClusterTypeOutcomeCallable modifyDomainClusterTypeCallable(const Model::ModifyDomainClusterTypeRequest& request) const;
 			ModifyDomainIpv6StatusOutcome modifyDomainIpv6Status(const Model::ModifyDomainIpv6StatusRequest &request)const;
 			void modifyDomainIpv6StatusAsync(const Model::ModifyDomainIpv6StatusRequest& request, const ModifyDomainIpv6StatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDomainIpv6StatusOutcomeCallable modifyDomainIpv6StatusCallable(const Model::ModifyDomainIpv6StatusRequest& request) const;

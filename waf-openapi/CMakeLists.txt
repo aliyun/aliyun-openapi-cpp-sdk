@@ -61,8 +61,12 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusResult.h
+	include/alibabacloud/waf-openapi/model/DescribeWafSourceIpSegmentRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeWafSourceIpSegmentResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainResult.h
+	include/alibabacloud/waf-openapi/model/ModifyDomainClusterTypeRequest.h
+	include/alibabacloud/waf-openapi/model/ModifyDomainClusterTypeResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainIpv6StatusRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainIpv6StatusResult.h
 	include/alibabacloud/waf-openapi/model/ModifyLogRetrievalStatusRequest.h
@@ -124,8 +128,12 @@ set(waf-openapi_src
 	src/model/DescribeProtectionModuleRulesResult.cc
 	src/model/DescribeProtectionModuleStatusRequest.cc
 	src/model/DescribeProtectionModuleStatusResult.cc
+	src/model/DescribeWafSourceIpSegmentRequest.cc
+	src/model/DescribeWafSourceIpSegmentResult.cc
 	src/model/ModifyDomainRequest.cc
 	src/model/ModifyDomainResult.cc
+	src/model/ModifyDomainClusterTypeRequest.cc
+	src/model/ModifyDomainClusterTypeResult.cc
 	src/model/ModifyDomainIpv6StatusRequest.cc
 	src/model/ModifyDomainIpv6StatusResult.cc
 	src/model/ModifyLogRetrievalStatusRequest.cc

@@ -1,4 +1,7 @@
 2020-12-16 Version: patch
+- Generated 2019-09-10 for `waf-openapi`.
+
+2020-12-16 Version: patch
 - Support show pipeline history.
 - Support show log details.
 
