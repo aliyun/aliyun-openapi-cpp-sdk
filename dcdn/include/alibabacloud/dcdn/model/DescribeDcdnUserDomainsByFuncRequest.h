@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DELETEDCDNIPADOMAINREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DELETEDCDNIPADOMAINREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERDOMAINSBYFUNCREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERDOMAINSBYFUNCREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DeleteDcdnIpaDomainRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnUserDomainsByFuncRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteDcdnIpaDomainRequest();
-				~DeleteDcdnIpaDomainRequest();
+				DescribeDcdnUserDomainsByFuncRequest();
+				~DescribeDcdnUserDomainsByFuncRequest();
 
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
+				int getFuncId()const;
+				void setFuncId(int funcId);
 
             private:
-				std::string ownerAccount_;
-				std::string domainName_;
+				int pageNumber_;
+				std::string resourceGroupId_;
+				int pageSize_;
 				long ownerId_;
-				std::string securityToken_;
+				int funcId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DELETEDCDNIPADOMAINREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNUSERDOMAINSBYFUNCREQUEST_H_

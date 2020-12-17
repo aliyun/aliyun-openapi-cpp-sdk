@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_DELETEDCDNIPADOMAINREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_DELETEDCDNIPADOMAINREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_CREATEDCDNDOMAINOFFLINELOGDELIVERYREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_CREATEDCDNDOMAINOFFLINELOGDELIVERYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT DeleteDcdnIpaDomainRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT CreateDcdnDomainOfflineLogDeliveryRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteDcdnIpaDomainRequest();
-				~DeleteDcdnIpaDomainRequest();
+				CreateDcdnDomainOfflineLogDeliveryRequest();
+				~CreateDcdnDomainOfflineLogDeliveryRequest();
 
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
+				std::string getFieldId()const;
+				void setFieldId(const std::string& fieldId);
 
             private:
-				std::string ownerAccount_;
+				std::string regionId_;
 				std::string domainName_;
 				long ownerId_;
-				std::string securityToken_;
+				std::string fieldId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_DELETEDCDNIPADOMAINREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_CREATEDCDNDOMAINOFFLINELOGDELIVERYREQUEST_H_

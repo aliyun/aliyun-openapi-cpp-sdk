@@ -41,6 +41,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/BatchStopDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnCertificateSigningRequestRequest.h
 	include/alibabacloud/dcdn/model/CreateDcdnCertificateSigningRequestResult.h
+	include/alibabacloud/dcdn/model/CreateDcdnDomainOfflineLogDeliveryRequest.h
+	include/alibabacloud/dcdn/model/CreateDcdnDomainOfflineLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnIpaDomainRequest.h
@@ -147,6 +149,14 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaServiceResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaUserDomainsRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaUserDomainsResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryFieldRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryFieldResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryRegionsRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryRegionsResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryStatusRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTasksRequest.h
@@ -165,6 +175,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnUserBillTypeResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsByFuncRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserDomainsByFuncResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserQuotaRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserQuotaResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserResourcePackageRequest.h
@@ -179,6 +191,12 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeUserDcdnIpaStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnStatusRequest.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnStatusResult.h
+	include/alibabacloud/dcdn/model/DisableDcdnDomainOfflineLogDeliveryRequest.h
+	include/alibabacloud/dcdn/model/DisableDcdnDomainOfflineLogDeliveryResult.h
+	include/alibabacloud/dcdn/model/DisableDcdnOfflineLogDeliveryRequest.h
+	include/alibabacloud/dcdn/model/DisableDcdnOfflineLogDeliveryResult.h
+	include/alibabacloud/dcdn/model/EnableDcdnDomainOfflineLogDeliveryRequest.h
+	include/alibabacloud/dcdn/model/EnableDcdnDomainOfflineLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/ModifyDCdnDomainSchdmByPropertyRequest.h
 	include/alibabacloud/dcdn/model/ModifyDCdnDomainSchdmByPropertyResult.h
 	include/alibabacloud/dcdn/model/ModifyDcdnServiceRequest.h
@@ -242,6 +260,8 @@ set(dcdn_src
 	src/model/BatchStopDcdnDomainResult.cc
 	src/model/CreateDcdnCertificateSigningRequestRequest.cc
 	src/model/CreateDcdnCertificateSigningRequestResult.cc
+	src/model/CreateDcdnDomainOfflineLogDeliveryRequest.cc
+	src/model/CreateDcdnDomainOfflineLogDeliveryResult.cc
 	src/model/DeleteDcdnDomainRequest.cc
 	src/model/DeleteDcdnDomainResult.cc
 	src/model/DeleteDcdnIpaDomainRequest.cc
@@ -348,6 +368,14 @@ set(dcdn_src
 	src/model/DescribeDcdnIpaServiceResult.cc
 	src/model/DescribeDcdnIpaUserDomainsRequest.cc
 	src/model/DescribeDcdnIpaUserDomainsResult.cc
+	src/model/DescribeDcdnOfflineLogDeliveryRequest.cc
+	src/model/DescribeDcdnOfflineLogDeliveryResult.cc
+	src/model/DescribeDcdnOfflineLogDeliveryFieldRequest.cc
+	src/model/DescribeDcdnOfflineLogDeliveryFieldResult.cc
+	src/model/DescribeDcdnOfflineLogDeliveryRegionsRequest.cc
+	src/model/DescribeDcdnOfflineLogDeliveryRegionsResult.cc
+	src/model/DescribeDcdnOfflineLogDeliveryStatusRequest.cc
+	src/model/DescribeDcdnOfflineLogDeliveryStatusResult.cc
 	src/model/DescribeDcdnRefreshQuotaRequest.cc
 	src/model/DescribeDcdnRefreshQuotaResult.cc
 	src/model/DescribeDcdnRefreshTasksRequest.cc
@@ -366,6 +394,8 @@ set(dcdn_src
 	src/model/DescribeDcdnUserBillTypeResult.cc
 	src/model/DescribeDcdnUserDomainsRequest.cc
 	src/model/DescribeDcdnUserDomainsResult.cc
+	src/model/DescribeDcdnUserDomainsByFuncRequest.cc
+	src/model/DescribeDcdnUserDomainsByFuncResult.cc
 	src/model/DescribeDcdnUserQuotaRequest.cc
 	src/model/DescribeDcdnUserQuotaResult.cc
 	src/model/DescribeDcdnUserResourcePackageRequest.cc
@@ -380,6 +410,12 @@ set(dcdn_src
 	src/model/DescribeUserDcdnIpaStatusResult.cc
 	src/model/DescribeUserDcdnStatusRequest.cc
 	src/model/DescribeUserDcdnStatusResult.cc
+	src/model/DisableDcdnDomainOfflineLogDeliveryRequest.cc
+	src/model/DisableDcdnDomainOfflineLogDeliveryResult.cc
+	src/model/DisableDcdnOfflineLogDeliveryRequest.cc
+	src/model/DisableDcdnOfflineLogDeliveryResult.cc
+	src/model/EnableDcdnDomainOfflineLogDeliveryRequest.cc
+	src/model/EnableDcdnDomainOfflineLogDeliveryResult.cc
 	src/model/ModifyDCdnDomainSchdmByPropertyRequest.cc
 	src/model/ModifyDCdnDomainSchdmByPropertyResult.cc
 	src/model/ModifyDcdnServiceRequest.cc
