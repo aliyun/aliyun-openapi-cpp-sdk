@@ -60,17 +60,6 @@ void DeleteScdnDomainRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteScdnDomainRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void DeleteScdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string DeleteScdnDomainRequest::getSecurityToken()const
 {
 	return securityToken_;
