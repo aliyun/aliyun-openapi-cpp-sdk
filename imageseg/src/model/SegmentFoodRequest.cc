@@ -27,6 +27,17 @@ SegmentFoodRequest::SegmentFoodRequest() :
 SegmentFoodRequest::~SegmentFoodRequest()
 {}
 
+std::string SegmentFoodRequest::getReturnForm()const
+{
+	return returnForm_;
+}
+
+void SegmentFoodRequest::setReturnForm(const std::string& returnForm)
+{
+	returnForm_ = returnForm;
+	setParameter("ReturnForm", returnForm);
+}
+
 std::string SegmentFoodRequest::getImageURL()const
 {
 	return imageURL_;
