@@ -35,10 +35,14 @@ namespace AlibabaCloud
 				DescribeSpotAdviceRequest();
 				~DescribeSpotAdviceRequest();
 
+				std::string getGpuSpec()const;
+				void setGpuSpec(const std::string& gpuSpec);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				float getMemory()const;
 				void setMemory(float memory);
+				std::vector<std::string> getInstanceTypes()const;
+				void setInstanceTypes(const std::vector<std::string>& instanceTypes);
 				std::string getIoOptimized()const;
 				void setIoOptimized(const std::string& ioOptimized);
 				int getMinCores()const;
@@ -53,16 +57,24 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getInstanceTypeFamily()const;
+				void setInstanceTypeFamily(const std::string& instanceTypeFamily);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInstanceFamilyLevel()const;
+				void setInstanceFamilyLevel(const std::string& instanceFamilyLevel);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				int getGpuAmount()const;
+				void setGpuAmount(int gpuAmount);
 				float getMinMemory()const;
 				void setMinMemory(float minMemory);
 
             private:
+				std::string gpuSpec_;
 				long resourceOwnerId_;
 				float memory_;
+				std::vector<std::string> instanceTypes_;
 				std::string ioOptimized_;
 				int minCores_;
 				std::string networkType_;
@@ -70,8 +82,11 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string instanceTypeFamily_;
 				long ownerId_;
+				std::string instanceFamilyLevel_;
 				std::string zoneId_;
+				int gpuAmount_;
 				float minMemory_;
 
 			};
