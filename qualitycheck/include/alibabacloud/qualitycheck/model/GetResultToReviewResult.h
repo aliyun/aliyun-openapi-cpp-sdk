@@ -119,9 +119,9 @@ namespace AlibabaCloud
 						int scoreNum;
 						std::string ruleName;
 					};
-					struct HitRuleReviewInfo1
+					struct ManualScoreInfo
 					{
-						struct ComplainHistoriesItem
+						struct ComplainHistoriesItem2
 						{
 							std::string operatorName;
 							std::string comments;
@@ -131,7 +131,7 @@ namespace AlibabaCloud
 						};
 						std::string scoreSubName;
 						bool complainable;
-						std::vector<HitRuleReviewInfo1::ComplainHistoriesItem> complainHistories2;
+						std::vector<ManualScoreInfo::ComplainHistoriesItem2> complainHistories1;
 						long scoreSubId;
 						long scoreId;
 						int scoreNum;
@@ -149,7 +149,7 @@ namespace AlibabaCloud
 					std::vector<Dialogue> dialogues;
 					int reviewNumber;
 					std::string comments;
-					std::vector<HitRuleReviewInfo1> manualScoreInfoList;
+					std::vector<ManualScoreInfo> manualScoreInfoList;
 					int businessType;
 					std::string fileMergeName;
 					std::string audioScheme;

@@ -213,37 +213,37 @@ void GetResultToReviewResult::parse(const std::string &payload)
 			hitRuleReviewInfoObject.reviewInfo.reviewTime = reviewInfoNode["ReviewTime"].asString();
 		data_.hitRuleReviewInfoList.push_back(hitRuleReviewInfoObject);
 	}
-	auto allManualScoreInfoListNode = dataNode["ManualScoreInfoList"]["HitRuleReviewInfo"];
-	for (auto dataNodeManualScoreInfoListHitRuleReviewInfo : allManualScoreInfoListNode)
+	auto allManualScoreInfoListNode = dataNode["ManualScoreInfoList"]["ManualScoreInfo"];
+	for (auto dataNodeManualScoreInfoListManualScoreInfo : allManualScoreInfoListNode)
 	{
-		Data::HitRuleReviewInfo1 hitRuleReviewInfo1Object;
-		if(!dataNodeManualScoreInfoListHitRuleReviewInfo["ScoreId"].isNull())
-			hitRuleReviewInfo1Object.scoreId = std::stol(dataNodeManualScoreInfoListHitRuleReviewInfo["ScoreId"].asString());
-		if(!dataNodeManualScoreInfoListHitRuleReviewInfo["ScoreSubId"].isNull())
-			hitRuleReviewInfo1Object.scoreSubId = std::stol(dataNodeManualScoreInfoListHitRuleReviewInfo["ScoreSubId"].asString());
-		if(!dataNodeManualScoreInfoListHitRuleReviewInfo["ScoreSubName"].isNull())
-			hitRuleReviewInfo1Object.scoreSubName = dataNodeManualScoreInfoListHitRuleReviewInfo["ScoreSubName"].asString();
-		if(!dataNodeManualScoreInfoListHitRuleReviewInfo["ScoreNum"].isNull())
-			hitRuleReviewInfo1Object.scoreNum = std::stoi(dataNodeManualScoreInfoListHitRuleReviewInfo["ScoreNum"].asString());
-		if(!dataNodeManualScoreInfoListHitRuleReviewInfo["Complainable"].isNull())
-			hitRuleReviewInfo1Object.complainable = dataNodeManualScoreInfoListHitRuleReviewInfo["Complainable"].asString() == "true";
-		auto allComplainHistories2Node = dataNodeManualScoreInfoListHitRuleReviewInfo["ComplainHistories"]["ComplainHistoriesItem"];
-		for (auto dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem : allComplainHistories2Node)
+		Data::ManualScoreInfo manualScoreInfoObject;
+		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreId"].isNull())
+			manualScoreInfoObject.scoreId = std::stol(dataNodeManualScoreInfoListManualScoreInfo["ScoreId"].asString());
+		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreSubId"].isNull())
+			manualScoreInfoObject.scoreSubId = std::stol(dataNodeManualScoreInfoListManualScoreInfo["ScoreSubId"].asString());
+		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreSubName"].isNull())
+			manualScoreInfoObject.scoreSubName = dataNodeManualScoreInfoListManualScoreInfo["ScoreSubName"].asString();
+		if(!dataNodeManualScoreInfoListManualScoreInfo["ScoreNum"].isNull())
+			manualScoreInfoObject.scoreNum = std::stoi(dataNodeManualScoreInfoListManualScoreInfo["ScoreNum"].asString());
+		if(!dataNodeManualScoreInfoListManualScoreInfo["Complainable"].isNull())
+			manualScoreInfoObject.complainable = dataNodeManualScoreInfoListManualScoreInfo["Complainable"].asString() == "true";
+		auto allComplainHistories1Node = dataNodeManualScoreInfoListManualScoreInfo["ComplainHistories"]["ComplainHistoriesItem"];
+		for (auto dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem : allComplainHistories1Node)
 		{
-			Data::HitRuleReviewInfo1::ComplainHistoriesItem complainHistories2Object;
-			if(!dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["Comments"].isNull())
-				complainHistories2Object.comments = dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["Comments"].asString();
-			if(!dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperatorName"].isNull())
-				complainHistories2Object.operatorName = dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperatorName"].asString();
-			if(!dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["Operator"].isNull())
-				complainHistories2Object._operator = std::stol(dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["Operator"].asString());
-			if(!dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationType"].isNull())
-				complainHistories2Object.operationType = std::stoi(dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationType"].asString());
-			if(!dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationTime"].isNull())
-				complainHistories2Object.operationTime = dataNodeManualScoreInfoListHitRuleReviewInfoComplainHistoriesComplainHistoriesItem["OperationTime"].asString();
-			hitRuleReviewInfo1Object.complainHistories2.push_back(complainHistories2Object);
+			Data::ManualScoreInfo::ComplainHistoriesItem2 complainHistories1Object;
+			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["Comments"].isNull())
+				complainHistories1Object.comments = dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["Comments"].asString();
+			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperatorName"].isNull())
+				complainHistories1Object.operatorName = dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperatorName"].asString();
+			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["Operator"].isNull())
+				complainHistories1Object._operator = std::stol(dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["Operator"].asString());
+			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationType"].isNull())
+				complainHistories1Object.operationType = std::stoi(dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationType"].asString());
+			if(!dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationTime"].isNull())
+				complainHistories1Object.operationTime = dataNodeManualScoreInfoListManualScoreInfoComplainHistoriesComplainHistoriesItem["OperationTime"].asString();
+			manualScoreInfoObject.complainHistories1.push_back(complainHistories1Object);
 		}
-		data_.manualScoreInfoList.push_back(hitRuleReviewInfo1Object);
+		data_.manualScoreInfoList.push_back(manualScoreInfoObject);
 	}
 	auto allReviewHistoryListNode = dataNode["ReviewHistoryList"]["ReviewHistory"];
 	for (auto dataNodeReviewHistoryListReviewHistory : allReviewHistoryListNode)
