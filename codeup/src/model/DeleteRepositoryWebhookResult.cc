@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/codeup/model/AddWebhookResult.h>
+#include <alibabacloud/codeup/model/DeleteRepositoryWebhookResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Codeup;
 using namespace AlibabaCloud::Codeup::Model;
 
-AddWebhookResult::AddWebhookResult() :
+DeleteRepositoryWebhookResult::DeleteRepositoryWebhookResult() :
 	ServiceResult()
 {}
 
-AddWebhookResult::AddWebhookResult(const std::string &payload) :
+DeleteRepositoryWebhookResult::DeleteRepositoryWebhookResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AddWebhookResult::~AddWebhookResult()
+DeleteRepositoryWebhookResult::~DeleteRepositoryWebhookResult()
 {}
 
-void AddWebhookResult::parse(const std::string &payload)
+void DeleteRepositoryWebhookResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -50,14 +50,10 @@ void AddWebhookResult::parse(const std::string &payload)
 		result_.projectId = std::stol(resultNode["ProjectId"].asString());
 	if(!resultNode["PushEvents"].isNull())
 		result_.pushEvents = resultNode["PushEvents"].asString() == "true";
-	if(!resultNode["IssuesEvents"].isNull())
-		result_.issuesEvents = resultNode["IssuesEvents"].asString() == "true";
 	if(!resultNode["MergeRequestsEvents"].isNull())
 		result_.mergeRequestsEvents = resultNode["MergeRequestsEvents"].asString() == "true";
 	if(!resultNode["TagPushEvents"].isNull())
 		result_.tagPushEvents = resultNode["TagPushEvents"].asString() == "true";
-	if(!resultNode["BuildEvents"].isNull())
-		result_.buildEvents = resultNode["BuildEvents"].asString() == "true";
 	if(!resultNode["NoteEvents"].isNull())
 		result_.noteEvents = resultNode["NoteEvents"].asString() == "true";
 	if(!resultNode["EnableSslVerification"].isNull())
@@ -77,22 +73,22 @@ void AddWebhookResult::parse(const std::string &payload)
 
 }
 
-std::string AddWebhookResult::getErrorCode()const
+std::string DeleteRepositoryWebhookResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string AddWebhookResult::getErrorMessage()const
+std::string DeleteRepositoryWebhookResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-bool AddWebhookResult::getSuccess()const
+bool DeleteRepositoryWebhookResult::getSuccess()const
 {
 	return success_;
 }
 
-AddWebhookResult::Result AddWebhookResult::getResult()const
+DeleteRepositoryWebhookResult::Result DeleteRepositoryWebhookResult::getResult()const
 {
 	return result_;
 }

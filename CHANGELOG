@@ -1,4 +1,8 @@
 2020-12-18 Version: patch
+- Support ListRepositories, ListOrganizations, GetUserInfo, ListRepositoryWebhook, DeleteRepositoryWebhook api.
+- AddWebhook api support SecretToken.
+
+2020-12-18 Version: patch
 - Add GetAgentDownloadUrl api.
 
 2020-12-18 Version: patch

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYWEBHOOKRESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYWEBHOOKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,46 +29,46 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT AddWebhookResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT ListRepositoryWebhookResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct ResultItem
 				{
 					std::string description;
+					std::string lastTestResult;
 					bool pushEvents;
 					std::string createdAt;
 					long projectId;
-					bool issuesEvents;
 					bool tagPushEvents;
-					bool mergeRequestsEvents;
-					std::string url;
-					bool buildEvents;
-					std::string lastTestResult;
 					long id;
 					bool enableSslVerification;
 					bool noteEvents;
+					bool mergeRequestsEvents;
+					std::string url;
 					std::string secretToken;
 				};
 
 
-				AddWebhookResult();
-				explicit AddWebhookResult(const std::string &payload);
-				~AddWebhookResult();
+				ListRepositoryWebhookResult();
+				explicit ListRepositoryWebhookResult(const std::string &payload);
+				~ListRepositoryWebhookResult();
+				long getTotal()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
-				Result getResult()const;
+				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long total_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
-				Result result_;
+				std::vector<ResultItem> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYWEBHOOKRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_DELETEREPOSITORYWEBHOOKRESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_DELETEREPOSITORYWEBHOOKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT AddWebhookResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT DeleteRepositoryWebhookResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
 					std::string description;
+					std::string lastTestResult;
 					bool pushEvents;
 					std::string createdAt;
 					long projectId;
-					bool issuesEvents;
 					bool tagPushEvents;
-					bool mergeRequestsEvents;
-					std::string url;
-					bool buildEvents;
-					std::string lastTestResult;
 					long id;
 					bool enableSslVerification;
 					bool noteEvents;
+					bool mergeRequestsEvents;
+					std::string url;
 					std::string secretToken;
 				};
 
 
-				AddWebhookResult();
-				explicit AddWebhookResult(const std::string &payload);
-				~AddWebhookResult();
+				DeleteRepositoryWebhookResult();
+				explicit DeleteRepositoryWebhookResult(const std::string &payload);
+				~DeleteRepositoryWebhookResult();
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -71,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_DELETEREPOSITORYWEBHOOKRESULT_H_

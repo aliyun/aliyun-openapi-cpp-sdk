@@ -53,6 +53,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/DeleteRepositoryMemberResult.h
 	include/alibabacloud/codeup/model/DeleteRepositoryTagRequest.h
 	include/alibabacloud/codeup/model/DeleteRepositoryTagResult.h
+	include/alibabacloud/codeup/model/DeleteRepositoryWebhookRequest.h
+	include/alibabacloud/codeup/model/DeleteRepositoryWebhookResult.h
 	include/alibabacloud/codeup/model/GetBranchInfoRequest.h
 	include/alibabacloud/codeup/model/GetBranchInfoResult.h
 	include/alibabacloud/codeup/model/GetCodeupOrganizationRequest.h
@@ -67,12 +69,18 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/GetRepositoryInfoResult.h
 	include/alibabacloud/codeup/model/GetRepositoryTagRequest.h
 	include/alibabacloud/codeup/model/GetRepositoryTagResult.h
+	include/alibabacloud/codeup/model/GetUserInfoRequest.h
+	include/alibabacloud/codeup/model/GetUserInfoResult.h
 	include/alibabacloud/codeup/model/ListGroupMemberRequest.h
 	include/alibabacloud/codeup/model/ListGroupMemberResult.h
 	include/alibabacloud/codeup/model/ListGroupRepositoriesRequest.h
 	include/alibabacloud/codeup/model/ListGroupRepositoriesResult.h
 	include/alibabacloud/codeup/model/ListGroupsRequest.h
 	include/alibabacloud/codeup/model/ListGroupsResult.h
+	include/alibabacloud/codeup/model/ListOrganizationsRequest.h
+	include/alibabacloud/codeup/model/ListOrganizationsResult.h
+	include/alibabacloud/codeup/model/ListRepositoriesRequest.h
+	include/alibabacloud/codeup/model/ListRepositoriesResult.h
 	include/alibabacloud/codeup/model/ListRepositoryBranchesRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryBranchesResult.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberRequest.h
@@ -81,6 +89,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/ListRepositoryTagsResult.h
 	include/alibabacloud/codeup/model/ListRepositoryTreeRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryTreeResult.h
+	include/alibabacloud/codeup/model/ListRepositoryWebhookRequest.h
+	include/alibabacloud/codeup/model/ListRepositoryWebhookResult.h
 	include/alibabacloud/codeup/model/MergeMergeRequestRequest.h
 	include/alibabacloud/codeup/model/MergeMergeRequestResult.h
 	include/alibabacloud/codeup/model/UpdateFileRequest.h
@@ -124,6 +134,8 @@ set(codeup_src
 	src/model/DeleteRepositoryMemberResult.cc
 	src/model/DeleteRepositoryTagRequest.cc
 	src/model/DeleteRepositoryTagResult.cc
+	src/model/DeleteRepositoryWebhookRequest.cc
+	src/model/DeleteRepositoryWebhookResult.cc
 	src/model/GetBranchInfoRequest.cc
 	src/model/GetBranchInfoResult.cc
 	src/model/GetCodeupOrganizationRequest.cc
@@ -138,12 +150,18 @@ set(codeup_src
 	src/model/GetRepositoryInfoResult.cc
 	src/model/GetRepositoryTagRequest.cc
 	src/model/GetRepositoryTagResult.cc
+	src/model/GetUserInfoRequest.cc
+	src/model/GetUserInfoResult.cc
 	src/model/ListGroupMemberRequest.cc
 	src/model/ListGroupMemberResult.cc
 	src/model/ListGroupRepositoriesRequest.cc
 	src/model/ListGroupRepositoriesResult.cc
 	src/model/ListGroupsRequest.cc
 	src/model/ListGroupsResult.cc
+	src/model/ListOrganizationsRequest.cc
+	src/model/ListOrganizationsResult.cc
+	src/model/ListRepositoriesRequest.cc
+	src/model/ListRepositoriesResult.cc
 	src/model/ListRepositoryBranchesRequest.cc
 	src/model/ListRepositoryBranchesResult.cc
 	src/model/ListRepositoryMemberRequest.cc
@@ -152,6 +170,8 @@ set(codeup_src
 	src/model/ListRepositoryTagsResult.cc
 	src/model/ListRepositoryTreeRequest.cc
 	src/model/ListRepositoryTreeResult.cc
+	src/model/ListRepositoryWebhookRequest.cc
+	src/model/ListRepositoryWebhookResult.cc
 	src/model/MergeMergeRequestRequest.cc
 	src/model/MergeMergeRequestResult.cc
 	src/model/UpdateFileRequest.cc

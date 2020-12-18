@@ -627,6 +627,42 @@ CodeupClient::DeleteRepositoryTagOutcomeCallable CodeupClient::deleteRepositoryT
 	return task->get_future();
 }
 
+CodeupClient::DeleteRepositoryWebhookOutcome CodeupClient::deleteRepositoryWebhook(const DeleteRepositoryWebhookRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRepositoryWebhookOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRepositoryWebhookOutcome(DeleteRepositoryWebhookResult(outcome.result()));
+	else
+		return DeleteRepositoryWebhookOutcome(outcome.error());
+}
+
+void CodeupClient::deleteRepositoryWebhookAsync(const DeleteRepositoryWebhookRequest& request, const DeleteRepositoryWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRepositoryWebhook(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::DeleteRepositoryWebhookOutcomeCallable CodeupClient::deleteRepositoryWebhookCallable(const DeleteRepositoryWebhookRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRepositoryWebhookOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRepositoryWebhook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::GetBranchInfoOutcome CodeupClient::getBranchInfo(const GetBranchInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -879,6 +915,42 @@ CodeupClient::GetRepositoryTagOutcomeCallable CodeupClient::getRepositoryTagCall
 	return task->get_future();
 }
 
+CodeupClient::GetUserInfoOutcome CodeupClient::getUserInfo(const GetUserInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserInfoOutcome(GetUserInfoResult(outcome.result()));
+	else
+		return GetUserInfoOutcome(outcome.error());
+}
+
+void CodeupClient::getUserInfoAsync(const GetUserInfoRequest& request, const GetUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetUserInfoOutcomeCallable CodeupClient::getUserInfoCallable(const GetUserInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::ListGroupMemberOutcome CodeupClient::listGroupMember(const ListGroupMemberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1053,78 @@ CodeupClient::ListGroupsOutcomeCallable CodeupClient::listGroupsCallable(const L
 			[this, request]()
 			{
 			return this->listGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListOrganizationsOutcome CodeupClient::listOrganizations(const ListOrganizationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOrganizationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOrganizationsOutcome(ListOrganizationsResult(outcome.result()));
+	else
+		return ListOrganizationsOutcome(outcome.error());
+}
+
+void CodeupClient::listOrganizationsAsync(const ListOrganizationsRequest& request, const ListOrganizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOrganizations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListOrganizationsOutcomeCallable CodeupClient::listOrganizationsCallable(const ListOrganizationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOrganizationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listOrganizations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListRepositoriesOutcome CodeupClient::listRepositories(const ListRepositoriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRepositoriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRepositoriesOutcome(ListRepositoriesResult(outcome.result()));
+	else
+		return ListRepositoriesOutcome(outcome.error());
+}
+
+void CodeupClient::listRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRepositories(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListRepositoriesOutcomeCallable CodeupClient::listRepositoriesCallable(const ListRepositoriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRepositoriesOutcome()>>(
+			[this, request]()
+			{
+			return this->listRepositories(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,6 +1269,42 @@ CodeupClient::ListRepositoryTreeOutcomeCallable CodeupClient::listRepositoryTree
 			[this, request]()
 			{
 			return this->listRepositoryTree(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListRepositoryWebhookOutcome CodeupClient::listRepositoryWebhook(const ListRepositoryWebhookRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRepositoryWebhookOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRepositoryWebhookOutcome(ListRepositoryWebhookResult(outcome.result()));
+	else
+		return ListRepositoryWebhookOutcome(outcome.error());
+}
+
+void CodeupClient::listRepositoryWebhookAsync(const ListRepositoryWebhookRequest& request, const ListRepositoryWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRepositoryWebhook(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListRepositoryWebhookOutcomeCallable CodeupClient::listRepositoryWebhookCallable(const ListRepositoryWebhookRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRepositoryWebhookOutcome()>>(
+			[this, request]()
+			{
+			return this->listRepositoryWebhook(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

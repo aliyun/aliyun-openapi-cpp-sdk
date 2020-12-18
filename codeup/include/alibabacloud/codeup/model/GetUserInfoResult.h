@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_GETUSERINFORESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_GETUSERINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT AddWebhookResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT GetUserInfoResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					std::string description;
-					bool pushEvents;
-					std::string createdAt;
-					long projectId;
-					bool issuesEvents;
-					bool tagPushEvents;
-					bool mergeRequestsEvents;
-					std::string url;
-					bool buildEvents;
-					std::string lastTestResult;
+					std::string email;
+					std::string avatarUrl;
+					std::string username;
+					std::string externalUserId;
 					long id;
-					bool enableSslVerification;
-					bool noteEvents;
-					std::string secretToken;
+					std::string name;
 				};
 
 
-				AddWebhookResult();
-				explicit AddWebhookResult(const std::string &payload);
-				~AddWebhookResult();
+				GetUserInfoResult();
+				explicit GetUserInfoResult(const std::string &payload);
+				~GetUserInfoResult();
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -71,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_GETUSERINFORESULT_H_

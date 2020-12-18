@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORIESRESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORIESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,46 +29,53 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT AddWebhookResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT ListRepositoriesResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct ResultItem
 				{
+					std::string path;
+					std::string pathWithNamespace;
+					std::string lastActivityAt;
 					std::string description;
-					bool pushEvents;
+					bool archive;
 					std::string createdAt;
-					long projectId;
-					bool issuesEvents;
-					bool tagPushEvents;
-					bool mergeRequestsEvents;
-					std::string url;
-					bool buildEvents;
-					std::string lastTestResult;
+					std::string webUrl;
+					std::string nameWithNamespace;
+					std::string visibilityLevel;
+					std::string updatedAt;
+					int accessLevel;
+					std::string name;
+					std::string avatarUrl;
+					bool demoProjectStatus;
+					bool star;
+					std::string importStatus;
 					long id;
-					bool enableSslVerification;
-					bool noteEvents;
-					std::string secretToken;
+					long namespaceId;
+					long starCount;
 				};
 
 
-				AddWebhookResult();
-				explicit AddWebhookResult(const std::string &payload);
-				~AddWebhookResult();
-				std::string getErrorCode()const;
+				ListRepositoriesResult();
+				explicit ListRepositoriesResult(const std::string &payload);
+				~ListRepositoriesResult();
+				long getTotal()const;
+				int getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
-				Result getResult()const;
+				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string errorCode_;
+				long total_;
+				int errorCode_;
 				std::string errorMessage_;
 				bool success_;
-				Result result_;
+				std::vector<ResultItem> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_ADDWEBHOOKRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORIESRESULT_H_
