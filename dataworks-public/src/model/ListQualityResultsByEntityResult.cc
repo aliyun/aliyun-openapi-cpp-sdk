@@ -133,7 +133,7 @@ void ListQualityResultsByEntityResult::parse(const std::string &payload)
 		{
 			QualityResults::RuleChecksItem::ReferenceValueItem referenceValueObject;
 			if(!qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["BizDate"].isNull())
-				referenceValueObject.bizDate = std::stol(qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["BizDate"].asString());
+				referenceValueObject.bizDate = qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["BizDate"].asString();
 			if(!qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["DiscreteProperty"].isNull())
 				referenceValueObject.discreteProperty = qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["DiscreteProperty"].asString();
 			if(!qualityResultsNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem["Value"].isNull())
@@ -149,7 +149,7 @@ void ListQualityResultsByEntityResult::parse(const std::string &payload)
 		{
 			QualityResults::RuleChecksItem::SampleValueItem sampleValueObject;
 			if(!qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["BizDate"].isNull())
-				sampleValueObject.bizDate = std::stol(qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["BizDate"].asString());
+				sampleValueObject.bizDate = qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["BizDate"].asString();
 			if(!qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["DiscreteProperty"].isNull())
 				sampleValueObject.discreteProperty = qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["DiscreteProperty"].asString();
 			if(!qualityResultsNodeRuleChecksRuleChecksItemSampleValueSampleValueItem["Value"].isNull())

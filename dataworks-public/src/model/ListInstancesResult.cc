@@ -51,11 +51,11 @@ void ListInstancesResult::parse(const std::string &payload)
 	{
 		Data::Instance instanceObject;
 		if(!dataNodeInstancesInstance["NodeId"].isNull())
-			instanceObject.nodeId = std::stoi(dataNodeInstancesInstance["NodeId"].asString());
+			instanceObject.nodeId = std::stol(dataNodeInstancesInstance["NodeId"].asString());
 		if(!dataNodeInstancesInstance["InstanceId"].isNull())
 			instanceObject.instanceId = std::stol(dataNodeInstancesInstance["InstanceId"].asString());
 		if(!dataNodeInstancesInstance["DagId"].isNull())
-			instanceObject.dagId = std::stoi(dataNodeInstancesInstance["DagId"].asString());
+			instanceObject.dagId = std::stol(dataNodeInstancesInstance["DagId"].asString());
 		if(!dataNodeInstancesInstance["DagType"].isNull())
 			instanceObject.dagType = dataNodeInstancesInstance["DagType"].asString();
 		if(!dataNodeInstancesInstance["Status"].isNull())

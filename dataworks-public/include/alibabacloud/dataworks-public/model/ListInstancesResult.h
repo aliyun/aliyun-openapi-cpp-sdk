@@ -50,13 +50,13 @@ namespace AlibabaCloud
 						long relatedFlowId;
 						long cycTime;
 						long beginWaitTimeTime;
-						int dagId;
+						long dagId;
 						long bizdate;
 						long beginRunningTime;
 						bool repeatability;
 						long finishTime;
 						std::string dqcDescription;
-						int nodeId;
+						long nodeId;
 						long beginWaitResTime;
 						std::string errorMessage;
 						long repeatInterval;

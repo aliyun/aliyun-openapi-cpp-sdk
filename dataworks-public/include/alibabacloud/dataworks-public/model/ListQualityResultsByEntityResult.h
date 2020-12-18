@@ -40,14 +40,14 @@ namespace AlibabaCloud
 						{
 							int singleCheckResult;
 							float value;
-							long bizDate;
+							std::string bizDate;
 							std::string discreteProperty;
 							float threshold;
 						};
 						struct SampleValueItem
 						{
 							float value;
-							long bizDate;
+							std::string bizDate;
 							std::string discreteProperty;
 						};
 						std::string op;
