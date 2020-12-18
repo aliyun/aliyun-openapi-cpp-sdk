@@ -28,6 +28,8 @@
 #include "model/DetectFruitsResult.h"
 #include "model/DetectImageElementsRequest.h"
 #include "model/DetectImageElementsResult.h"
+#include "model/EvaluateCertificateQualityRequest.h"
+#include "model/EvaluateCertificateQualityResult.h"
 #include "model/RecognizeImageColorRequest.h"
 #include "model/RecognizeImageColorResult.h"
 #include "model/RecognizeImageStyleRequest.h"
@@ -58,6 +60,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectImageElementsResult> DetectImageElementsOutcome;
 			typedef std::future<DetectImageElementsOutcome> DetectImageElementsOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::DetectImageElementsRequest&, const DetectImageElementsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageElementsAsyncHandler;
+			typedef Outcome<Error, Model::EvaluateCertificateQualityResult> EvaluateCertificateQualityOutcome;
+			typedef std::future<EvaluateCertificateQualityOutcome> EvaluateCertificateQualityOutcomeCallable;
+			typedef std::function<void(const ImagerecogClient*, const Model::EvaluateCertificateQualityRequest&, const EvaluateCertificateQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EvaluateCertificateQualityAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeImageColorResult> RecognizeImageColorOutcome;
 			typedef std::future<RecognizeImageColorOutcome> RecognizeImageColorOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::RecognizeImageColorRequest&, const RecognizeImageColorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageColorAsyncHandler;
@@ -90,6 +95,9 @@ namespace AlibabaCloud
 			DetectImageElementsOutcome detectImageElements(const Model::DetectImageElementsRequest &request)const;
 			void detectImageElementsAsync(const Model::DetectImageElementsRequest& request, const DetectImageElementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectImageElementsOutcomeCallable detectImageElementsCallable(const Model::DetectImageElementsRequest& request) const;
+			EvaluateCertificateQualityOutcome evaluateCertificateQuality(const Model::EvaluateCertificateQualityRequest &request)const;
+			void evaluateCertificateQualityAsync(const Model::EvaluateCertificateQualityRequest& request, const EvaluateCertificateQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EvaluateCertificateQualityOutcomeCallable evaluateCertificateQualityCallable(const Model::EvaluateCertificateQualityRequest& request) const;
 			RecognizeImageColorOutcome recognizeImageColor(const Model::RecognizeImageColorRequest &request)const;
 			void recognizeImageColorAsync(const Model::RecognizeImageColorRequest& request, const RecognizeImageColorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageColorOutcomeCallable recognizeImageColorCallable(const Model::RecognizeImageColorRequest& request) const;

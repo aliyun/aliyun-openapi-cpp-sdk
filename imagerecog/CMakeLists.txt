@@ -27,6 +27,8 @@ set(imagerecog_public_header_model
 	include/alibabacloud/imagerecog/model/DetectFruitsResult.h
 	include/alibabacloud/imagerecog/model/DetectImageElementsRequest.h
 	include/alibabacloud/imagerecog/model/DetectImageElementsResult.h
+	include/alibabacloud/imagerecog/model/EvaluateCertificateQualityRequest.h
+	include/alibabacloud/imagerecog/model/EvaluateCertificateQualityResult.h
 	include/alibabacloud/imagerecog/model/RecognizeImageColorRequest.h
 	include/alibabacloud/imagerecog/model/RecognizeImageColorResult.h
 	include/alibabacloud/imagerecog/model/RecognizeImageStyleRequest.h
@@ -48,6 +50,8 @@ set(imagerecog_src
 	src/model/DetectFruitsResult.cc
 	src/model/DetectImageElementsRequest.cc
 	src/model/DetectImageElementsResult.cc
+	src/model/EvaluateCertificateQualityRequest.cc
+	src/model/EvaluateCertificateQualityResult.cc
 	src/model/RecognizeImageColorRequest.cc
 	src/model/RecognizeImageColorResult.cc
 	src/model/RecognizeImageStyleRequest.cc

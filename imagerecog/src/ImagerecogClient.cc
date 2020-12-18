@@ -159,6 +159,42 @@ ImagerecogClient::DetectImageElementsOutcomeCallable ImagerecogClient::detectIma
 	return task->get_future();
 }
 
+ImagerecogClient::EvaluateCertificateQualityOutcome ImagerecogClient::evaluateCertificateQuality(const EvaluateCertificateQualityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EvaluateCertificateQualityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EvaluateCertificateQualityOutcome(EvaluateCertificateQualityResult(outcome.result()));
+	else
+		return EvaluateCertificateQualityOutcome(outcome.error());
+}
+
+void ImagerecogClient::evaluateCertificateQualityAsync(const EvaluateCertificateQualityRequest& request, const EvaluateCertificateQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, evaluateCertificateQuality(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImagerecogClient::EvaluateCertificateQualityOutcomeCallable ImagerecogClient::evaluateCertificateQualityCallable(const EvaluateCertificateQualityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EvaluateCertificateQualityOutcome()>>(
+			[this, request]()
+			{
+			return this->evaluateCertificateQuality(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImagerecogClient::RecognizeImageColorOutcome ImagerecogClient::recognizeImageColor(const RecognizeImageColorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
