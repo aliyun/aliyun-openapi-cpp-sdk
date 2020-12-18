@@ -27,6 +27,17 @@ ListDashboardsRequest::ListDashboardsRequest() :
 ListDashboardsRequest::~ListDashboardsRequest()
 {}
 
+std::string ListDashboardsRequest::getClusterType()const
+{
+	return clusterType_;
+}
+
+void ListDashboardsRequest::setClusterType(const std::string& clusterType)
+{
+	clusterType_ = clusterType;
+	setParameter("ClusterType", clusterType);
+}
+
 std::string ListDashboardsRequest::getRegionId()const
 {
 	return regionId_;
@@ -47,5 +58,16 @@ void ListDashboardsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
 	setParameter("ClusterId", clusterId);
+}
+
+std::string ListDashboardsRequest::getTitle()const
+{
+	return title_;
+}
+
+void ListDashboardsRequest::setTitle(const std::string& title)
+{
+	title_ = title;
+	setParameter("Title", title);
 }
 

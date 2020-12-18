@@ -1,4 +1,7 @@
 2020-12-18 Version: patch
+- Add GetAgentDownloadUrl api.
+
+2020-12-18 Version: patch
 - Release EvaluateCertificateQuality.
 
 2020-12-18 Version: patch

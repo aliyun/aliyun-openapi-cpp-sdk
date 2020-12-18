@@ -25,6 +25,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/AddGrafanaResult.h
 	include/alibabacloud/arms/model/AddIntegrationRequest.h
 	include/alibabacloud/arms/model/AddIntegrationResult.h
+	include/alibabacloud/arms/model/ApplyScenarioRequest.h
+	include/alibabacloud/arms/model/ApplyScenarioResult.h
 	include/alibabacloud/arms/model/CheckDataConsistencyRequest.h
 	include/alibabacloud/arms/model/CheckDataConsistencyResult.h
 	include/alibabacloud/arms/model/CheckServiceLinkedRoleForDeletingRequest.h
@@ -47,6 +49,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteAlertRulesResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
+	include/alibabacloud/arms/model/DeleteScenarioRequest.h
+	include/alibabacloud/arms/model/DeleteScenarioResult.h
 	include/alibabacloud/arms/model/DeleteTraceAppRequest.h
 	include/alibabacloud/arms/model/DeleteTraceAppResult.h
 	include/alibabacloud/arms/model/DescribeDispatchRuleRequest.h
@@ -57,6 +61,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DescribeTraceLocationResult.h
 	include/alibabacloud/arms/model/ExportPrometheusRulesRequest.h
 	include/alibabacloud/arms/model/ExportPrometheusRulesResult.h
+	include/alibabacloud/arms/model/GetAgentDownloadUrlRequest.h
+	include/alibabacloud/arms/model/GetAgentDownloadUrlResult.h
 	include/alibabacloud/arms/model/GetAppApiByPageRequest.h
 	include/alibabacloud/arms/model/GetAppApiByPageResult.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotRequest.h
@@ -89,8 +95,12 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ListPromClustersResult.h
 	include/alibabacloud/arms/model/ListRetcodeAppsRequest.h
 	include/alibabacloud/arms/model/ListRetcodeAppsResult.h
+	include/alibabacloud/arms/model/ListScenarioRequest.h
+	include/alibabacloud/arms/model/ListScenarioResult.h
 	include/alibabacloud/arms/model/ListTraceAppsRequest.h
 	include/alibabacloud/arms/model/ListTraceAppsResult.h
+	include/alibabacloud/arms/model/OpenArmsServiceRequest.h
+	include/alibabacloud/arms/model/OpenArmsServiceResult.h
 	include/alibabacloud/arms/model/QueryDatasetRequest.h
 	include/alibabacloud/arms/model/QueryDatasetResult.h
 	include/alibabacloud/arms/model/QueryMetricRequest.h
@@ -144,6 +154,8 @@ set(arms_src
 	src/model/AddGrafanaResult.cc
 	src/model/AddIntegrationRequest.cc
 	src/model/AddIntegrationResult.cc
+	src/model/ApplyScenarioRequest.cc
+	src/model/ApplyScenarioResult.cc
 	src/model/CheckDataConsistencyRequest.cc
 	src/model/CheckDataConsistencyResult.cc
 	src/model/CheckServiceLinkedRoleForDeletingRequest.cc
@@ -166,6 +178,8 @@ set(arms_src
 	src/model/DeleteAlertRulesResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
 	src/model/DeleteRetcodeAppResult.cc
+	src/model/DeleteScenarioRequest.cc
+	src/model/DeleteScenarioResult.cc
 	src/model/DeleteTraceAppRequest.cc
 	src/model/DeleteTraceAppResult.cc
 	src/model/DescribeDispatchRuleRequest.cc
@@ -176,6 +190,8 @@ set(arms_src
 	src/model/DescribeTraceLocationResult.cc
 	src/model/ExportPrometheusRulesRequest.cc
 	src/model/ExportPrometheusRulesResult.cc
+	src/model/GetAgentDownloadUrlRequest.cc
+	src/model/GetAgentDownloadUrlResult.cc
 	src/model/GetAppApiByPageRequest.cc
 	src/model/GetAppApiByPageResult.cc
 	src/model/GetConsistencySnapshotRequest.cc
@@ -208,8 +224,12 @@ set(arms_src
 	src/model/ListPromClustersResult.cc
 	src/model/ListRetcodeAppsRequest.cc
 	src/model/ListRetcodeAppsResult.cc
+	src/model/ListScenarioRequest.cc
+	src/model/ListScenarioResult.cc
 	src/model/ListTraceAppsRequest.cc
 	src/model/ListTraceAppsResult.cc
+	src/model/OpenArmsServiceRequest.cc
+	src/model/OpenArmsServiceResult.cc
 	src/model/QueryDatasetRequest.cc
 	src/model/QueryDatasetResult.cc
 	src/model/QueryMetricRequest.cc

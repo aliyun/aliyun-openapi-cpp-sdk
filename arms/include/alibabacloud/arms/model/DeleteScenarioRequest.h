@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ListDashboardsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT DeleteScenarioRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListDashboardsRequest();
-				~ListDashboardsRequest();
+				DeleteScenarioRequest();
+				~DeleteScenarioRequest();
 
-				std::string getClusterType()const;
-				void setClusterType(const std::string& clusterType);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
+				long getScenarioId()const;
+				void setScenarioId(long scenarioId);
 
             private:
-				std::string clusterType_;
-				std::string regionId_;
-				std::string clusterId_;
-				std::string title_;
+				long scenarioId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_

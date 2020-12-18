@@ -123,6 +123,42 @@ ARMSClient::AddIntegrationOutcomeCallable ARMSClient::addIntegrationCallable(con
 	return task->get_future();
 }
 
+ARMSClient::ApplyScenarioOutcome ARMSClient::applyScenario(const ApplyScenarioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyScenarioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyScenarioOutcome(ApplyScenarioResult(outcome.result()));
+	else
+		return ApplyScenarioOutcome(outcome.error());
+}
+
+void ARMSClient::applyScenarioAsync(const ApplyScenarioRequest& request, const ApplyScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyScenario(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ApplyScenarioOutcomeCallable ARMSClient::applyScenarioCallable(const ApplyScenarioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyScenarioOutcome()>>(
+			[this, request]()
+			{
+			return this->applyScenario(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CheckDataConsistencyOutcome ARMSClient::checkDataConsistency(const CheckDataConsistencyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +555,42 @@ ARMSClient::DeleteRetcodeAppOutcomeCallable ARMSClient::deleteRetcodeAppCallable
 	return task->get_future();
 }
 
+ARMSClient::DeleteScenarioOutcome ARMSClient::deleteScenario(const DeleteScenarioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteScenarioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteScenarioOutcome(DeleteScenarioResult(outcome.result()));
+	else
+		return DeleteScenarioOutcome(outcome.error());
+}
+
+void ARMSClient::deleteScenarioAsync(const DeleteScenarioRequest& request, const DeleteScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteScenario(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteScenarioOutcomeCallable ARMSClient::deleteScenarioCallable(const DeleteScenarioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteScenarioOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteScenario(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DeleteTraceAppOutcome ARMSClient::deleteTraceApp(const DeleteTraceAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +765,42 @@ ARMSClient::ExportPrometheusRulesOutcomeCallable ARMSClient::exportPrometheusRul
 			[this, request]()
 			{
 			return this->exportPrometheusRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetAgentDownloadUrlOutcome ARMSClient::getAgentDownloadUrl(const GetAgentDownloadUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAgentDownloadUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAgentDownloadUrlOutcome(GetAgentDownloadUrlResult(outcome.result()));
+	else
+		return GetAgentDownloadUrlOutcome(outcome.error());
+}
+
+void ARMSClient::getAgentDownloadUrlAsync(const GetAgentDownloadUrlRequest& request, const GetAgentDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAgentDownloadUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetAgentDownloadUrlOutcomeCallable ARMSClient::getAgentDownloadUrlCallable(const GetAgentDownloadUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAgentDownloadUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getAgentDownloadUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1275,6 +1383,42 @@ ARMSClient::ListRetcodeAppsOutcomeCallable ARMSClient::listRetcodeAppsCallable(c
 	return task->get_future();
 }
 
+ARMSClient::ListScenarioOutcome ARMSClient::listScenario(const ListScenarioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListScenarioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListScenarioOutcome(ListScenarioResult(outcome.result()));
+	else
+		return ListScenarioOutcome(outcome.error());
+}
+
+void ARMSClient::listScenarioAsync(const ListScenarioRequest& request, const ListScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listScenario(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListScenarioOutcomeCallable ARMSClient::listScenarioCallable(const ListScenarioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListScenarioOutcome()>>(
+			[this, request]()
+			{
+			return this->listScenario(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ListTraceAppsOutcome ARMSClient::listTraceApps(const ListTraceAppsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1449,42 @@ ARMSClient::ListTraceAppsOutcomeCallable ARMSClient::listTraceAppsCallable(const
 			[this, request]()
 			{
 			return this->listTraceApps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::OpenArmsServiceOutcome ARMSClient::openArmsService(const OpenArmsServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenArmsServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenArmsServiceOutcome(OpenArmsServiceResult(outcome.result()));
+	else
+		return OpenArmsServiceOutcome(outcome.error());
+}
+
+void ARMSClient::openArmsServiceAsync(const OpenArmsServiceRequest& request, const OpenArmsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openArmsService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::OpenArmsServiceOutcomeCallable ARMSClient::openArmsServiceCallable(const OpenArmsServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenArmsServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openArmsService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_LISTSCENARIOREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_LISTSCENARIOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ListDashboardsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT ListScenarioRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListDashboardsRequest();
-				~ListDashboardsRequest();
+				ListScenarioRequest();
+				~ListScenarioRequest();
 
-				std::string getClusterType()const;
-				void setClusterType(const std::string& clusterType);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
+				std::string getScenario()const;
+				void setScenario(const std::string& scenario);
+				std::string getAppId()const;
+				void setAppId(const std::string& appId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getSign()const;
+				void setSign(const std::string& sign);
 
             private:
-				std::string clusterType_;
 				std::string regionId_;
-				std::string clusterId_;
-				std::string title_;
+				std::string scenario_;
+				std::string appId_;
+				std::string name_;
+				std::string sign_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_LISTSCENARIOREQUEST_H_

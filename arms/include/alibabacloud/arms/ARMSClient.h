@@ -26,6 +26,8 @@
 #include "model/AddGrafanaResult.h"
 #include "model/AddIntegrationRequest.h"
 #include "model/AddIntegrationResult.h"
+#include "model/ApplyScenarioRequest.h"
+#include "model/ApplyScenarioResult.h"
 #include "model/CheckDataConsistencyRequest.h"
 #include "model/CheckDataConsistencyResult.h"
 #include "model/CheckServiceLinkedRoleForDeletingRequest.h"
@@ -48,6 +50,8 @@
 #include "model/DeleteAlertRulesResult.h"
 #include "model/DeleteRetcodeAppRequest.h"
 #include "model/DeleteRetcodeAppResult.h"
+#include "model/DeleteScenarioRequest.h"
+#include "model/DeleteScenarioResult.h"
 #include "model/DeleteTraceAppRequest.h"
 #include "model/DeleteTraceAppResult.h"
 #include "model/DescribeDispatchRuleRequest.h"
@@ -58,6 +62,8 @@
 #include "model/DescribeTraceLocationResult.h"
 #include "model/ExportPrometheusRulesRequest.h"
 #include "model/ExportPrometheusRulesResult.h"
+#include "model/GetAgentDownloadUrlRequest.h"
+#include "model/GetAgentDownloadUrlResult.h"
 #include "model/GetAppApiByPageRequest.h"
 #include "model/GetAppApiByPageResult.h"
 #include "model/GetConsistencySnapshotRequest.h"
@@ -90,8 +96,12 @@
 #include "model/ListPromClustersResult.h"
 #include "model/ListRetcodeAppsRequest.h"
 #include "model/ListRetcodeAppsResult.h"
+#include "model/ListScenarioRequest.h"
+#include "model/ListScenarioResult.h"
 #include "model/ListTraceAppsRequest.h"
 #include "model/ListTraceAppsResult.h"
+#include "model/OpenArmsServiceRequest.h"
+#include "model/OpenArmsServiceResult.h"
 #include "model/QueryDatasetRequest.h"
 #include "model/QueryDatasetResult.h"
 #include "model/QueryMetricRequest.h"
@@ -153,6 +163,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddIntegrationResult> AddIntegrationOutcome;
 			typedef std::future<AddIntegrationOutcome> AddIntegrationOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::AddIntegrationRequest&, const AddIntegrationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddIntegrationAsyncHandler;
+			typedef Outcome<Error, Model::ApplyScenarioResult> ApplyScenarioOutcome;
+			typedef std::future<ApplyScenarioOutcome> ApplyScenarioOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::ApplyScenarioRequest&, const ApplyScenarioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyScenarioAsyncHandler;
 			typedef Outcome<Error, Model::CheckDataConsistencyResult> CheckDataConsistencyOutcome;
 			typedef std::future<CheckDataConsistencyOutcome> CheckDataConsistencyOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CheckDataConsistencyRequest&, const CheckDataConsistencyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDataConsistencyAsyncHandler;
@@ -186,6 +199,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRetcodeAppResult> DeleteRetcodeAppOutcome;
 			typedef std::future<DeleteRetcodeAppOutcome> DeleteRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteRetcodeAppRequest&, const DeleteRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRetcodeAppAsyncHandler;
+			typedef Outcome<Error, Model::DeleteScenarioResult> DeleteScenarioOutcome;
+			typedef std::future<DeleteScenarioOutcome> DeleteScenarioOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::DeleteScenarioRequest&, const DeleteScenarioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScenarioAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTraceAppResult> DeleteTraceAppOutcome;
 			typedef std::future<DeleteTraceAppOutcome> DeleteTraceAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteTraceAppRequest&, const DeleteTraceAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTraceAppAsyncHandler;
@@ -201,6 +217,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExportPrometheusRulesResult> ExportPrometheusRulesOutcome;
 			typedef std::future<ExportPrometheusRulesOutcome> ExportPrometheusRulesOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ExportPrometheusRulesRequest&, const ExportPrometheusRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportPrometheusRulesAsyncHandler;
+			typedef Outcome<Error, Model::GetAgentDownloadUrlResult> GetAgentDownloadUrlOutcome;
+			typedef std::future<GetAgentDownloadUrlOutcome> GetAgentDownloadUrlOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetAgentDownloadUrlRequest&, const GetAgentDownloadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAgentDownloadUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetAppApiByPageResult> GetAppApiByPageOutcome;
 			typedef std::future<GetAppApiByPageOutcome> GetAppApiByPageOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetAppApiByPageRequest&, const GetAppApiByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAppApiByPageAsyncHandler;
@@ -249,9 +268,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRetcodeAppsResult> ListRetcodeAppsOutcome;
 			typedef std::future<ListRetcodeAppsOutcome> ListRetcodeAppsOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListRetcodeAppsRequest&, const ListRetcodeAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRetcodeAppsAsyncHandler;
+			typedef Outcome<Error, Model::ListScenarioResult> ListScenarioOutcome;
+			typedef std::future<ListScenarioOutcome> ListScenarioOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::ListScenarioRequest&, const ListScenarioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScenarioAsyncHandler;
 			typedef Outcome<Error, Model::ListTraceAppsResult> ListTraceAppsOutcome;
 			typedef std::future<ListTraceAppsOutcome> ListTraceAppsOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListTraceAppsRequest&, const ListTraceAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTraceAppsAsyncHandler;
+			typedef Outcome<Error, Model::OpenArmsServiceResult> OpenArmsServiceOutcome;
+			typedef std::future<OpenArmsServiceOutcome> OpenArmsServiceOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::OpenArmsServiceRequest&, const OpenArmsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenArmsServiceAsyncHandler;
 			typedef Outcome<Error, Model::QueryDatasetResult> QueryDatasetOutcome;
 			typedef std::future<QueryDatasetOutcome> QueryDatasetOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::QueryDatasetRequest&, const QueryDatasetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDatasetAsyncHandler;
@@ -332,6 +357,9 @@ namespace AlibabaCloud
 			AddIntegrationOutcome addIntegration(const Model::AddIntegrationRequest &request)const;
 			void addIntegrationAsync(const Model::AddIntegrationRequest& request, const AddIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddIntegrationOutcomeCallable addIntegrationCallable(const Model::AddIntegrationRequest& request) const;
+			ApplyScenarioOutcome applyScenario(const Model::ApplyScenarioRequest &request)const;
+			void applyScenarioAsync(const Model::ApplyScenarioRequest& request, const ApplyScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ApplyScenarioOutcomeCallable applyScenarioCallable(const Model::ApplyScenarioRequest& request) const;
 			CheckDataConsistencyOutcome checkDataConsistency(const Model::CheckDataConsistencyRequest &request)const;
 			void checkDataConsistencyAsync(const Model::CheckDataConsistencyRequest& request, const CheckDataConsistencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDataConsistencyOutcomeCallable checkDataConsistencyCallable(const Model::CheckDataConsistencyRequest& request) const;
@@ -365,6 +393,9 @@ namespace AlibabaCloud
 			DeleteRetcodeAppOutcome deleteRetcodeApp(const Model::DeleteRetcodeAppRequest &request)const;
 			void deleteRetcodeAppAsync(const Model::DeleteRetcodeAppRequest& request, const DeleteRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRetcodeAppOutcomeCallable deleteRetcodeAppCallable(const Model::DeleteRetcodeAppRequest& request) const;
+			DeleteScenarioOutcome deleteScenario(const Model::DeleteScenarioRequest &request)const;
+			void deleteScenarioAsync(const Model::DeleteScenarioRequest& request, const DeleteScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteScenarioOutcomeCallable deleteScenarioCallable(const Model::DeleteScenarioRequest& request) const;
 			DeleteTraceAppOutcome deleteTraceApp(const Model::DeleteTraceAppRequest &request)const;
 			void deleteTraceAppAsync(const Model::DeleteTraceAppRequest& request, const DeleteTraceAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTraceAppOutcomeCallable deleteTraceAppCallable(const Model::DeleteTraceAppRequest& request) const;
@@ -380,6 +411,9 @@ namespace AlibabaCloud
 			ExportPrometheusRulesOutcome exportPrometheusRules(const Model::ExportPrometheusRulesRequest &request)const;
 			void exportPrometheusRulesAsync(const Model::ExportPrometheusRulesRequest& request, const ExportPrometheusRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportPrometheusRulesOutcomeCallable exportPrometheusRulesCallable(const Model::ExportPrometheusRulesRequest& request) const;
+			GetAgentDownloadUrlOutcome getAgentDownloadUrl(const Model::GetAgentDownloadUrlRequest &request)const;
+			void getAgentDownloadUrlAsync(const Model::GetAgentDownloadUrlRequest& request, const GetAgentDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAgentDownloadUrlOutcomeCallable getAgentDownloadUrlCallable(const Model::GetAgentDownloadUrlRequest& request) const;
 			GetAppApiByPageOutcome getAppApiByPage(const Model::GetAppApiByPageRequest &request)const;
 			void getAppApiByPageAsync(const Model::GetAppApiByPageRequest& request, const GetAppApiByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAppApiByPageOutcomeCallable getAppApiByPageCallable(const Model::GetAppApiByPageRequest& request) const;
@@ -428,9 +462,15 @@ namespace AlibabaCloud
 			ListRetcodeAppsOutcome listRetcodeApps(const Model::ListRetcodeAppsRequest &request)const;
 			void listRetcodeAppsAsync(const Model::ListRetcodeAppsRequest& request, const ListRetcodeAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRetcodeAppsOutcomeCallable listRetcodeAppsCallable(const Model::ListRetcodeAppsRequest& request) const;
+			ListScenarioOutcome listScenario(const Model::ListScenarioRequest &request)const;
+			void listScenarioAsync(const Model::ListScenarioRequest& request, const ListScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListScenarioOutcomeCallable listScenarioCallable(const Model::ListScenarioRequest& request) const;
 			ListTraceAppsOutcome listTraceApps(const Model::ListTraceAppsRequest &request)const;
 			void listTraceAppsAsync(const Model::ListTraceAppsRequest& request, const ListTraceAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTraceAppsOutcomeCallable listTraceAppsCallable(const Model::ListTraceAppsRequest& request) const;
+			OpenArmsServiceOutcome openArmsService(const Model::OpenArmsServiceRequest &request)const;
+			void openArmsServiceAsync(const Model::OpenArmsServiceRequest& request, const OpenArmsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenArmsServiceOutcomeCallable openArmsServiceCallable(const Model::OpenArmsServiceRequest& request) const;
 			QueryDatasetOutcome queryDataset(const Model::QueryDatasetRequest &request)const;
 			void queryDatasetAsync(const Model::QueryDatasetRequest& request, const QueryDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDatasetOutcomeCallable queryDatasetCallable(const Model::QueryDatasetRequest& request) const;
