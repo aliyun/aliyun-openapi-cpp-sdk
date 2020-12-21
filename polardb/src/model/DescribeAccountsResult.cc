@@ -69,7 +69,21 @@ void DescribeAccountsResult::parse(const std::string &payload)
 		}
 		accounts_.push_back(accountsObject);
 	}
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
+}
+
+int DescribeAccountsResult::getPageRecordCount()const
+{
+	return pageRecordCount_;
+}
+
+int DescribeAccountsResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::vector<DescribeAccountsResult::DBAccount> DescribeAccountsResult::getAccounts()const

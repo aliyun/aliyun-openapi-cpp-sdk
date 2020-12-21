@@ -43,8 +43,14 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTargetDBName()const;
 				void setTargetDBName(const std::string& targetDBName);
+				std::string getTargetIp()const;
+				void setTargetIp(const std::string& targetIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDBLinkName()const;
 				void setDBLinkName(const std::string& dBLinkName);
+				std::string getTargetPort()const;
+				void setTargetPort(const std::string& targetPort);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getTargetDBInstanceName()const;
@@ -59,13 +65,18 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getTargetDBAccount()const;
 				void setTargetDBAccount(const std::string& targetDBAccount);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 
             private:
 				long resourceOwnerId_;
 				std::string sourceDBName_;
 				std::string accessKeyId_;
 				std::string targetDBName_;
+				std::string targetIp_;
+				std::string regionId_;
 				std::string dBLinkName_;
+				std::string targetPort_;
 				std::string resourceOwnerAccount_;
 				std::string targetDBInstanceName_;
 				std::string dBClusterId_;
@@ -73,6 +84,7 @@ namespace AlibabaCloud
 				std::string targetDBPasswd_;
 				long ownerId_;
 				std::string targetDBAccount_;
+				std::string vpcId_;
 
 			};
 		}

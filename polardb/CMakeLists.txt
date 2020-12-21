@@ -105,8 +105,6 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsResult.h
 	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksRequest.h
 	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksResult.h
-	include/alibabacloud/polardb/model/DescribeLocalAvailableRecoveryTimeRequest.h
-	include/alibabacloud/polardb/model/DescribeLocalAvailableRecoveryTimeResult.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyResult.h
 	include/alibabacloud/polardb/model/DescribeMetaListRequest.h
@@ -119,8 +117,6 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
-	include/alibabacloud/polardb/model/DescribeSlowLogsRequest.h
-	include/alibabacloud/polardb/model/DescribeSlowLogsResult.h
 	include/alibabacloud/polardb/model/DescribeTasksRequest.h
 	include/alibabacloud/polardb/model/DescribeTasksResult.h
 	include/alibabacloud/polardb/model/FailoverDBClusterRequest.h
@@ -180,7 +176,9 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/TagResourcesRequest.h
 	include/alibabacloud/polardb/model/TagResourcesResult.h
 	include/alibabacloud/polardb/model/UntagResourcesRequest.h
-	include/alibabacloud/polardb/model/UntagResourcesResult.h )
+	include/alibabacloud/polardb/model/UntagResourcesResult.h
+	include/alibabacloud/polardb/model/UpgradeDBClusterMinorVersionRequest.h
+	include/alibabacloud/polardb/model/UpgradeDBClusterMinorVersionResult.h )
 
 set(polardb_src 
 	src/PolardbClient.cc
@@ -268,8 +266,6 @@ set(polardb_src
 	src/model/DescribeDetachedBackupsResult.cc
 	src/model/DescribeGlobalDatabaseNetworksRequest.cc
 	src/model/DescribeGlobalDatabaseNetworksResult.cc
-	src/model/DescribeLocalAvailableRecoveryTimeRequest.cc
-	src/model/DescribeLocalAvailableRecoveryTimeResult.cc
 	src/model/DescribeLogBackupPolicyRequest.cc
 	src/model/DescribeLogBackupPolicyResult.cc
 	src/model/DescribeMetaListRequest.cc
@@ -282,8 +278,6 @@ set(polardb_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
-	src/model/DescribeSlowLogsRequest.cc
-	src/model/DescribeSlowLogsResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
 	src/model/FailoverDBClusterRequest.cc
@@ -343,7 +337,9 @@ set(polardb_src
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/UntagResourcesRequest.cc
-	src/model/UntagResourcesResult.cc )
+	src/model/UntagResourcesResult.cc
+	src/model/UpgradeDBClusterMinorVersionRequest.cc
+	src/model/UpgradeDBClusterMinorVersionResult.cc )
 
 add_library(polardb ${LIB_TYPE}
 	${polardb_public_header}

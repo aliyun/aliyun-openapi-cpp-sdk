@@ -83,10 +83,8 @@ void DescribeTasksResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	if(!value["DBInstanceName"].isNull())
-		dBInstanceName_ = value["DBInstanceName"].asString();
-	if(!value["DBInstanceId"].isNull())
-		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
 }
 
@@ -115,18 +113,13 @@ int DescribeTasksResult::getPageNumber()const
 	return pageNumber_;
 }
 
-std::string DescribeTasksResult::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
 std::string DescribeTasksResult::getStartTime()const
 {
 	return startTime_;
 }
 
-std::string DescribeTasksResult::getDBInstanceName()const
+std::string DescribeTasksResult::getDBClusterId()const
 {
-	return dBInstanceName_;
+	return dBClusterId_;
 }
 

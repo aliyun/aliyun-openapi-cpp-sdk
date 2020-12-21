@@ -37,7 +37,6 @@ namespace AlibabaCloud
 				DescribeDBClusterVersionResult();
 				explicit DescribeDBClusterVersionResult(const std::string &payload);
 				~DescribeDBClusterVersionResult();
-				std::string getLatestRevisionVersion()const;
 				std::string getIsLatestVersion()const;
 				std::string getDBVersion()const;
 				std::string getDBRevisionVersion()const;
@@ -48,7 +47,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string latestRevisionVersion_;
 				std::string isLatestVersion_;
 				std::string dBVersion_;
 				std::string dBRevisionVersion_;

@@ -49,6 +49,17 @@ void CreateDBNodesRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string CreateDBNodesRequest::getEndpointBindList()const
+{
+	return endpointBindList_;
+}
+
+void CreateDBNodesRequest::setEndpointBindList(const std::string& endpointBindList)
+{
+	endpointBindList_ = endpointBindList;
+	setParameter("EndpointBindList", endpointBindList);
+}
+
 std::string CreateDBNodesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

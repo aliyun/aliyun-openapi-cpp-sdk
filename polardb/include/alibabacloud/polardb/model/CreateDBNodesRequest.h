@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getEndpointBindList()const;
+				void setEndpointBindList(const std::string& endpointBindList);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string clientToken_;
+				std::string endpointBindList_;
 				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;

@@ -54,11 +54,15 @@ namespace AlibabaCloud
 				explicit DescribeDatabasesResult(const std::string &payload);
 				~DescribeDatabasesResult();
 				std::vector<Database> getDatabases()const;
+				int getPageRecordCount()const;
+				int getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Database> databases_;
+				int pageRecordCount_;
+				int pageNumber_;
 
 			};
 		}

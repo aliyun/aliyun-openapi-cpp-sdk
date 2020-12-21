@@ -59,9 +59,8 @@ namespace AlibabaCloud
 				int getPageRecordCount()const;
 				std::string getEndTime()const;
 				int getPageNumber()const;
-				std::string getDBInstanceId()const;
 				std::string getStartTime()const;
-				std::string getDBInstanceName()const;
+				std::string getDBClusterId()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -71,9 +70,8 @@ namespace AlibabaCloud
 				int pageRecordCount_;
 				std::string endTime_;
 				int pageNumber_;
-				std::string dBInstanceId_;
 				std::string startTime_;
-				std::string dBInstanceName_;
+				std::string dBClusterId_;
 
 			};
 		}

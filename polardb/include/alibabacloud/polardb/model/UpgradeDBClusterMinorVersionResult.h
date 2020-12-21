@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMERESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMERESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeLocalAvailableRecoveryTimeResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT UpgradeDBClusterMinorVersionResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeLocalAvailableRecoveryTimeResult();
-				explicit DescribeLocalAvailableRecoveryTimeResult(const std::string &payload);
-				~DescribeLocalAvailableRecoveryTimeResult();
-				std::string getRecoveryEndTime()const;
-				std::string getRecoveryBeginTime()const;
-				std::string getDBClusterId()const;
+				UpgradeDBClusterMinorVersionResult();
+				explicit UpgradeDBClusterMinorVersionResult(const std::string &payload);
+				~UpgradeDBClusterMinorVersionResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string recoveryEndTime_;
-				std::string recoveryBeginTime_;
-				std::string dBClusterId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMERESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONRESULT_H_

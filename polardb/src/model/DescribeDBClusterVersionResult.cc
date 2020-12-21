@@ -45,20 +45,13 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 		dBVersion_ = value["DBVersion"].asString();
 	if(!value["DBMinorVersion"].isNull())
 		dBMinorVersion_ = value["DBMinorVersion"].asString();
-	if(!value["DBRevisionVersion"].isNull())
-		dBRevisionVersion_ = value["DBRevisionVersion"].asString();
 	if(!value["DBVersionStatus"].isNull())
 		dBVersionStatus_ = value["DBVersionStatus"].asString();
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString();
-	if(!value["LatestRevisionVersion"].isNull())
-		latestRevisionVersion_ = value["LatestRevisionVersion"].asString();
+	if(!value["DBRevisionVersion"].isNull())
+		dBRevisionVersion_ = value["DBRevisionVersion"].asString();
 
-}
-
-std::string DescribeDBClusterVersionResult::getLatestRevisionVersion()const
-{
-	return latestRevisionVersion_;
 }
 
 std::string DescribeDBClusterVersionResult::getIsLatestVersion()const

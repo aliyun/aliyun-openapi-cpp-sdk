@@ -69,11 +69,25 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 		}
 		databases_.push_back(databasesObject);
 	}
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 
 }
 
 std::vector<DescribeDatabasesResult::Database> DescribeDatabasesResult::getDatabases()const
 {
 	return databases_;
+}
+
+int DescribeDatabasesResult::getPageRecordCount()const
+{
+	return pageRecordCount_;
+}
+
+int DescribeDatabasesResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 

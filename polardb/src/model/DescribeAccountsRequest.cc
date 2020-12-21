@@ -38,6 +38,17 @@ void DescribeAccountsRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int DescribeAccountsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeAccountsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeAccountsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,6 +69,17 @@ void DescribeAccountsRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
 	setParameter("AccountName", accountName);
+}
+
+int DescribeAccountsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeAccountsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAccountsRequest::getResourceOwnerAccount()const

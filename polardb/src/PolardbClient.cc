@@ -1563,42 +1563,6 @@ PolardbClient::DescribeGlobalDatabaseNetworksOutcomeCallable PolardbClient::desc
 	return task->get_future();
 }
 
-PolardbClient::DescribeLocalAvailableRecoveryTimeOutcome PolardbClient::describeLocalAvailableRecoveryTime(const DescribeLocalAvailableRecoveryTimeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLocalAvailableRecoveryTimeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLocalAvailableRecoveryTimeOutcome(DescribeLocalAvailableRecoveryTimeResult(outcome.result()));
-	else
-		return DescribeLocalAvailableRecoveryTimeOutcome(outcome.error());
-}
-
-void PolardbClient::describeLocalAvailableRecoveryTimeAsync(const DescribeLocalAvailableRecoveryTimeRequest& request, const DescribeLocalAvailableRecoveryTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLocalAvailableRecoveryTime(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::DescribeLocalAvailableRecoveryTimeOutcomeCallable PolardbClient::describeLocalAvailableRecoveryTimeCallable(const DescribeLocalAvailableRecoveryTimeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLocalAvailableRecoveryTimeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLocalAvailableRecoveryTime(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PolardbClient::DescribeLogBackupPolicyOutcome PolardbClient::describeLogBackupPolicy(const DescribeLogBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,42 +1773,6 @@ PolardbClient::DescribeSlowLogRecordsOutcomeCallable PolardbClient::describeSlow
 			[this, request]()
 			{
 			return this->describeSlowLogRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::DescribeSlowLogsOutcome PolardbClient::describeSlowLogs(const DescribeSlowLogsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSlowLogsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSlowLogsOutcome(DescribeSlowLogsResult(outcome.result()));
-	else
-		return DescribeSlowLogsOutcome(outcome.error());
-}
-
-void PolardbClient::describeSlowLogsAsync(const DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSlowLogs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::DescribeSlowLogsOutcomeCallable PolardbClient::describeSlowLogsCallable(const DescribeSlowLogsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSlowLogsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSlowLogs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2925,6 +2853,42 @@ PolardbClient::UntagResourcesOutcomeCallable PolardbClient::untagResourcesCallab
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::UpgradeDBClusterMinorVersionOutcome PolardbClient::upgradeDBClusterMinorVersion(const UpgradeDBClusterMinorVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeDBClusterMinorVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeDBClusterMinorVersionOutcome(UpgradeDBClusterMinorVersionResult(outcome.result()));
+	else
+		return UpgradeDBClusterMinorVersionOutcome(outcome.error());
+}
+
+void PolardbClient::upgradeDBClusterMinorVersionAsync(const UpgradeDBClusterMinorVersionRequest& request, const UpgradeDBClusterMinorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeDBClusterMinorVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::UpgradeDBClusterMinorVersionOutcomeCallable PolardbClient::upgradeDBClusterMinorVersionCallable(const UpgradeDBClusterMinorVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeDBClusterMinorVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeDBClusterMinorVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

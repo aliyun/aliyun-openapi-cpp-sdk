@@ -1,3 +1,7 @@
+2020-12-21 Version: patch
+- Support DescribeDatabases for page query.
+- Support DescribeAccounts for page query.
+
 2020-12-18 Version: patch
 - Support ListRepositories, ListOrganizations, GetUserInfo, ListRepositoryWebhook, DeleteRepositoryWebhook api.
 - AddWebhook api support SecretToken.

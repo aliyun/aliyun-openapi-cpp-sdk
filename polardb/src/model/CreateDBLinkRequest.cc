@@ -71,6 +71,28 @@ void CreateDBLinkRequest::setTargetDBName(const std::string& targetDBName)
 	setParameter("TargetDBName", targetDBName);
 }
 
+std::string CreateDBLinkRequest::getTargetIp()const
+{
+	return targetIp_;
+}
+
+void CreateDBLinkRequest::setTargetIp(const std::string& targetIp)
+{
+	targetIp_ = targetIp;
+	setParameter("TargetIp", targetIp);
+}
+
+std::string CreateDBLinkRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateDBLinkRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string CreateDBLinkRequest::getDBLinkName()const
 {
 	return dBLinkName_;
@@ -80,6 +102,17 @@ void CreateDBLinkRequest::setDBLinkName(const std::string& dBLinkName)
 {
 	dBLinkName_ = dBLinkName;
 	setParameter("DBLinkName", dBLinkName);
+}
+
+std::string CreateDBLinkRequest::getTargetPort()const
+{
+	return targetPort_;
+}
+
+void CreateDBLinkRequest::setTargetPort(const std::string& targetPort)
+{
+	targetPort_ = targetPort;
+	setParameter("TargetPort", targetPort);
 }
 
 std::string CreateDBLinkRequest::getResourceOwnerAccount()const
@@ -157,5 +190,16 @@ void CreateDBLinkRequest::setTargetDBAccount(const std::string& targetDBAccount)
 {
 	targetDBAccount_ = targetDBAccount;
 	setParameter("TargetDBAccount", targetDBAccount);
+}
+
+std::string CreateDBLinkRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void CreateDBLinkRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
 }
 

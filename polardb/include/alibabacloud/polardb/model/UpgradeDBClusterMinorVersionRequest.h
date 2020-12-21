@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMEREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMEREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,19 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeLocalAvailableRecoveryTimeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT UpgradeDBClusterMinorVersionRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeLocalAvailableRecoveryTimeRequest();
-				~DescribeLocalAvailableRecoveryTimeRequest();
+				UpgradeDBClusterMinorVersionRequest();
+				~UpgradeDBClusterMinorVersionRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
+				std::string getSwitchTimeMode()const;
+				void setSwitchTimeMode(const std::string& switchTimeMode);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -53,7 +53,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
-				std::string securityToken_;
+				std::string switchTimeMode_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
@@ -63,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBELOCALAVAILABLERECOVERYTIMEREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERMINORVERSIONREQUEST_H_
