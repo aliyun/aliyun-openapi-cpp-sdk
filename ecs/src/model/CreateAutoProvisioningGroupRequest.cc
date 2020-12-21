@@ -41,6 +41,13 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDataDisk(const st
 		setParameter(launchConfigurationDataDiskObjStr + ".Size", std::to_string(launchConfigurationDataDiskObj.size));
 		setParameter(launchConfigurationDataDiskObjStr + ".Category", launchConfigurationDataDiskObj.category);
 		setParameter(launchConfigurationDataDiskObjStr + ".PerformanceLevel", launchConfigurationDataDiskObj.performanceLevel);
+		setParameter(launchConfigurationDataDiskObjStr + ".Device", launchConfigurationDataDiskObj.device);
+		setParameter(launchConfigurationDataDiskObjStr + ".SnapshotId", launchConfigurationDataDiskObj.snapshotId);
+		setParameter(launchConfigurationDataDiskObjStr + ".DeleteWithInstance", launchConfigurationDataDiskObj.deleteWithInstance ? "true" : "false");
+		setParameter(launchConfigurationDataDiskObjStr + ".Encrypted", launchConfigurationDataDiskObj.encrypted ? "true" : "false");
+		setParameter(launchConfigurationDataDiskObjStr + ".KmsKeyId", launchConfigurationDataDiskObj.kmsKeyId);
+		setParameter(launchConfigurationDataDiskObjStr + ".DiskName", launchConfigurationDataDiskObj.diskName);
+		setParameter(launchConfigurationDataDiskObjStr + ".Description", launchConfigurationDataDiskObj.description);
 	}
 }
 

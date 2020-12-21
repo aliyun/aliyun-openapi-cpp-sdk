@@ -36,6 +36,13 @@ namespace AlibabaCloud
 					int size;
 					std::string category;
 					std::string performanceLevel;
+					std::string device;
+					std::string snapshotId;
+					bool deleteWithInstance;
+					bool encrypted;
+					std::string kmsKeyId;
+					std::string diskName;
+					std::string description;
 				};
 				struct SystemDiskConfig
 				{
