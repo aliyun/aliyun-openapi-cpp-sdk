@@ -27,17 +27,6 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
 CreateLoadBalancerRequest::~CreateLoadBalancerRequest()
 {}
 
-std::string CreateLoadBalancerRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void CreateLoadBalancerRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
-}
-
 long CreateLoadBalancerRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -47,39 +36,6 @@ void CreateLoadBalancerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-bool CreateLoadBalancerRequest::getSupportPrivateLink()const
-{
-	return supportPrivateLink_;
-}
-
-void CreateLoadBalancerRequest::setSupportPrivateLink(bool supportPrivateLink)
-{
-	supportPrivateLink_ = supportPrivateLink;
-	setParameter("SupportPrivateLink", supportPrivateLink ? "true" : "false");
-}
-
-std::string CreateLoadBalancerRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void CreateLoadBalancerRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
-}
-
-std::string CreateLoadBalancerRequest::getCloudType()const
-{
-	return cloudType_;
-}
-
-void CreateLoadBalancerRequest::setCloudType(const std::string& cloudType)
-{
-	cloudType_ = cloudType;
-	setParameter("CloudType", cloudType);
 }
 
 std::string CreateLoadBalancerRequest::getAddressIPVersion()const
@@ -104,17 +60,6 @@ void CreateLoadBalancerRequest::setMasterZoneId(const std::string& masterZoneId)
 	setParameter("MasterZoneId", masterZoneId);
 }
 
-int CreateLoadBalancerRequest::getDuration()const
-{
-	return duration_;
-}
-
-void CreateLoadBalancerRequest::setDuration(int duration)
-{
-	duration_ = duration;
-	setParameter("Duration", std::to_string(duration));
-}
-
 std::string CreateLoadBalancerRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -137,28 +82,6 @@ void CreateLoadBalancerRequest::setLoadBalancerName(const std::string& loadBalan
 	setParameter("LoadBalancerName", loadBalancerName);
 }
 
-std::string CreateLoadBalancerRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateLoadBalancerRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string CreateLoadBalancerRequest::getAddressType()const
-{
-	return addressType_;
-}
-
-void CreateLoadBalancerRequest::setAddressType(const std::string& addressType)
-{
-	addressType_ = addressType;
-	setParameter("AddressType", addressType);
-}
-
 std::string CreateLoadBalancerRequest::getSlaveZoneId()const
 {
 	return slaveZoneId_;
@@ -170,17 +93,6 @@ void CreateLoadBalancerRequest::setSlaveZoneId(const std::string& slaveZoneId)
 	setParameter("SlaveZoneId", slaveZoneId);
 }
 
-std::string CreateLoadBalancerRequest::getDeleteProtection()const
-{
-	return deleteProtection_;
-}
-
-void CreateLoadBalancerRequest::setDeleteProtection(const std::string& deleteProtection)
-{
-	deleteProtection_ = deleteProtection;
-	setParameter("DeleteProtection", deleteProtection);
-}
-
 std::string CreateLoadBalancerRequest::getLoadBalancerSpec()const
 {
 	return loadBalancerSpec_;
@@ -190,61 +102,6 @@ void CreateLoadBalancerRequest::setLoadBalancerSpec(const std::string& loadBalan
 {
 	loadBalancerSpec_ = loadBalancerSpec;
 	setParameter("LoadBalancerSpec", loadBalancerSpec);
-}
-
-bool CreateLoadBalancerRequest::getAutoPay()const
-{
-	return autoPay_;
-}
-
-void CreateLoadBalancerRequest::setAutoPay(bool autoPay)
-{
-	autoPay_ = autoPay;
-	setParameter("AutoPay", autoPay ? "true" : "false");
-}
-
-std::string CreateLoadBalancerRequest::getAddress()const
-{
-	return address_;
-}
-
-void CreateLoadBalancerRequest::setAddress(const std::string& address)
-{
-	address_ = address;
-	setParameter("Address", address);
-}
-
-std::string CreateLoadBalancerRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateLoadBalancerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-int CreateLoadBalancerRequest::getBandwidth()const
-{
-	return bandwidth_;
-}
-
-void CreateLoadBalancerRequest::setBandwidth(int bandwidth)
-{
-	bandwidth_ = bandwidth;
-	setParameter("Bandwidth", std::to_string(bandwidth));
-}
-
-std::string CreateLoadBalancerRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void CreateLoadBalancerRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateLoadBalancerRequest::getOwnerId()const
@@ -302,6 +159,182 @@ void CreateLoadBalancerRequest::setInternetChargeType(const std::string& interne
 	setParameter("InternetChargeType", internetChargeType);
 }
 
+std::string CreateLoadBalancerRequest::getPricingCycle()const
+{
+	return pricingCycle_;
+}
+
+void CreateLoadBalancerRequest::setPricingCycle(const std::string& pricingCycle)
+{
+	pricingCycle_ = pricingCycle;
+	setParameter("PricingCycle", pricingCycle);
+}
+
+std::string CreateLoadBalancerRequest::getAccess_key_id()const
+{
+	return access_key_id_;
+}
+
+void CreateLoadBalancerRequest::setAccess_key_id(const std::string& access_key_id)
+{
+	access_key_id_ = access_key_id;
+	setParameter("Access_key_id", access_key_id);
+}
+
+std::string CreateLoadBalancerRequest::getModificationProtectionReason()const
+{
+	return modificationProtectionReason_;
+}
+
+void CreateLoadBalancerRequest::setModificationProtectionReason(const std::string& modificationProtectionReason)
+{
+	modificationProtectionReason_ = modificationProtectionReason;
+	setParameter("ModificationProtectionReason", modificationProtectionReason);
+}
+
+bool CreateLoadBalancerRequest::getSupportPrivateLink()const
+{
+	return supportPrivateLink_;
+}
+
+void CreateLoadBalancerRequest::setSupportPrivateLink(bool supportPrivateLink)
+{
+	supportPrivateLink_ = supportPrivateLink;
+	setParameter("SupportPrivateLink", supportPrivateLink ? "true" : "false");
+}
+
+std::string CreateLoadBalancerRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateLoadBalancerRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
+std::string CreateLoadBalancerRequest::getCloudType()const
+{
+	return cloudType_;
+}
+
+void CreateLoadBalancerRequest::setCloudType(const std::string& cloudType)
+{
+	cloudType_ = cloudType;
+	setParameter("CloudType", cloudType);
+}
+
+int CreateLoadBalancerRequest::getDuration()const
+{
+	return duration_;
+}
+
+void CreateLoadBalancerRequest::setDuration(int duration)
+{
+	duration_ = duration;
+	setParameter("Duration", std::to_string(duration));
+}
+
+std::string CreateLoadBalancerRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateLoadBalancerRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string CreateLoadBalancerRequest::getAddressType()const
+{
+	return addressType_;
+}
+
+void CreateLoadBalancerRequest::setAddressType(const std::string& addressType)
+{
+	addressType_ = addressType;
+	setParameter("AddressType", addressType);
+}
+
+std::string CreateLoadBalancerRequest::getDeleteProtection()const
+{
+	return deleteProtection_;
+}
+
+void CreateLoadBalancerRequest::setDeleteProtection(const std::string& deleteProtection)
+{
+	deleteProtection_ = deleteProtection;
+	setParameter("DeleteProtection", deleteProtection);
+}
+
+bool CreateLoadBalancerRequest::getAutoPay()const
+{
+	return autoPay_;
+}
+
+void CreateLoadBalancerRequest::setAutoPay(bool autoPay)
+{
+	autoPay_ = autoPay;
+	setParameter("AutoPay", autoPay ? "true" : "false");
+}
+
+std::string CreateLoadBalancerRequest::getAddress()const
+{
+	return address_;
+}
+
+void CreateLoadBalancerRequest::setAddress(const std::string& address)
+{
+	address_ = address;
+	setParameter("Address", address);
+}
+
+std::string CreateLoadBalancerRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateLoadBalancerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+int CreateLoadBalancerRequest::getBandwidth()const
+{
+	return bandwidth_;
+}
+
+void CreateLoadBalancerRequest::setBandwidth(int bandwidth)
+{
+	bandwidth_ = bandwidth;
+	setParameter("Bandwidth", std::to_string(bandwidth));
+}
+
+std::string CreateLoadBalancerRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void CreateLoadBalancerRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string CreateLoadBalancerRequest::getModificationProtectionStatus()const
+{
+	return modificationProtectionStatus_;
+}
+
+void CreateLoadBalancerRequest::setModificationProtectionStatus(const std::string& modificationProtectionStatus)
+{
+	modificationProtectionStatus_ = modificationProtectionStatus;
+	setParameter("ModificationProtectionStatus", modificationProtectionStatus);
+}
+
 std::string CreateLoadBalancerRequest::getVpcId()const
 {
 	return vpcId_;
@@ -322,17 +355,6 @@ void CreateLoadBalancerRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
 	setParameter("PayType", payType);
-}
-
-std::string CreateLoadBalancerRequest::getPricingCycle()const
-{
-	return pricingCycle_;
-}
-
-void CreateLoadBalancerRequest::setPricingCycle(const std::string& pricingCycle)
-{
-	pricingCycle_ = pricingCycle;
-	setParameter("PricingCycle", pricingCycle);
 }
 
 int CreateLoadBalancerRequest::getRatio()const

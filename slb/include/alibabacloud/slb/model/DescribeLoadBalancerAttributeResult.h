@@ -71,10 +71,13 @@ namespace AlibabaCloud
 				std::string getLoadBalancerId()const;
 				std::vector<BackendServer> getBackendServers()const;
 				std::string getHasReservedInfo()const;
+				std::string getBusinessStatus()const;
 				std::string getReservedInfoBandwidth()const;
+				std::string getModificationProtectionStatus()const;
 				std::string getLoadBalancerSpec()const;
 				std::string getNetworkType()const;
 				int getBandwidth()const;
+				std::string getModificationProtectionReason()const;
 				std::string getAssociatedCenId()const;
 				std::vector<std::string> getListenerPorts()const;
 				std::string getMasterZoneId()const;
@@ -120,10 +123,13 @@ namespace AlibabaCloud
 				std::string loadBalancerId_;
 				std::vector<BackendServer> backendServers_;
 				std::string hasReservedInfo_;
+				std::string businessStatus_;
 				std::string reservedInfoBandwidth_;
+				std::string modificationProtectionStatus_;
 				std::string loadBalancerSpec_;
 				std::string networkType_;
 				int bandwidth_;
+				std::string modificationProtectionReason_;
 				std::string associatedCenId_;
 				std::vector<std::string> listenerPorts_;
 				std::string masterZoneId_;

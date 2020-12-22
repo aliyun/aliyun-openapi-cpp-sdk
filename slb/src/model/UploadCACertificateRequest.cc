@@ -115,6 +115,17 @@ void UploadCACertificateRequest::setOwnerAccount(const std::string& ownerAccount
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string UploadCACertificateRequest::getStandardType()const
+{
+	return standardType_;
+}
+
+void UploadCACertificateRequest::setStandardType(const std::string& standardType)
+{
+	standardType_ = standardType;
+	setParameter("StandardType", standardType);
+}
+
 long UploadCACertificateRequest::getOwnerId()const
 {
 	return ownerId_;

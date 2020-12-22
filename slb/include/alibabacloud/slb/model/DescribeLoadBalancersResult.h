@@ -47,11 +47,14 @@ namespace AlibabaCloud
 					std::string loadBalancerId;
 					std::string payType;
 					std::string slaveZoneId;
+					std::string businessStatus;
+					std::string modificationProtectionStatus;
 					std::string internetChargeType;
 					std::string regionIdAlias;
 					std::string loadBalancerName;
 					std::string vpcId;
 					std::string networkType;
+					std::string modificationProtectionReason;
 					std::string regionId;
 					std::string addressType;
 					std::string loadBalancerStatus;

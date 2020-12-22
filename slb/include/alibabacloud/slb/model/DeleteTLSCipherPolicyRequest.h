@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_CREATEMASTERSLAVEVSERVERGROUPREQUEST_H_
-#define ALIBABACLOUD_SLB_MODEL_CREATEMASTERSLAVEVSERVERGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_DELETETLSCIPHERPOLICYREQUEST_H_
+#define ALIBABACLOUD_SLB_MODEL_DELETETLSCIPHERPOLICYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT CreateMasterSlaveVServerGroupRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SLB_EXPORT DeleteTLSCipherPolicyRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateMasterSlaveVServerGroupRequest();
-				~CreateMasterSlaveVServerGroupRequest();
+				DeleteTLSCipherPolicyRequest();
+				~DeleteTLSCipherPolicyRequest();
 
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
@@ -41,38 +41,29 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getMasterSlaveBackendServers()const;
-				void setMasterSlaveBackendServers(const std::string& masterSlaveBackendServers);
+				std::string getTLSCipherPolicyId()const;
+				void setTLSCipherPolicyId(const std::string& tLSCipherPolicyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getMasterSlaveVServerGroupName()const;
-				void setMasterSlaveVServerGroupName(const std::string& masterSlaveVServerGroupName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTags()const;
-				void setTags(const std::string& tags);
-				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
 				std::string accessKeyId_;
-				std::string masterSlaveBackendServers_;
+				std::string tLSCipherPolicyId_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string masterSlaveVServerGroupName_;
 				long ownerId_;
-				std::string tags_;
-				std::string loadBalancerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SLB_MODEL_CREATEMASTERSLAVEVSERVERGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_DELETETLSCIPHERPOLICYREQUEST_H_

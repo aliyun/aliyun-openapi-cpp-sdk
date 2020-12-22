@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERLISTENERSEXRESULT_H_
-#define ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERLISTENERSEXRESULT_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_SETTLSCIPHERPOLICYATTRIBUTERESULT_H_
+#define ALIBABACLOUD_SLB_MODEL_SETTLSCIPHERPOLICYATTRIBUTERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancerListenersExResult : public ServiceResult
+			class ALIBABACLOUD_SLB_EXPORT SetTLSCipherPolicyAttributeResult : public ServiceResult
 			{
 			public:
-				struct ListenerAttributeExResponseModel
-				{
-					int listenerPort;
-					std::string protocol;
-					std::string recordCustomizedHeaders;
-				};
 
 
-				DescribeLoadBalancerListenersExResult();
-				explicit DescribeLoadBalancerListenersExResult(const std::string &payload);
-				~DescribeLoadBalancerListenersExResult();
-				std::string getLoadBalancerId()const;
-				std::vector<ListenerAttributeExResponseModel> getListenerExtendedAttributes()const;
+				SetTLSCipherPolicyAttributeResult();
+				explicit SetTLSCipherPolicyAttributeResult(const std::string &payload);
+				~SetTLSCipherPolicyAttributeResult();
+				std::string getTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string loadBalancerId_;
-				std::vector<ListenerAttributeExResponseModel> listenerExtendedAttributes_;
+				std::string taskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SLB_MODEL_DESCRIBELOADBALANCERLISTENERSEXRESULT_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_SETTLSCIPHERPOLICYATTRIBUTERESULT_H_

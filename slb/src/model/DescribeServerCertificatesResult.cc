@@ -71,14 +71,20 @@ void DescribeServerCertificatesResult::parse(const std::string &payload)
 			serverCertificatesObject.expireTimeStamp = std::stol(valueServerCertificatesServerCertificate["ExpireTimeStamp"].asString());
 		if(!valueServerCertificatesServerCertificate["CommonName"].isNull())
 			serverCertificatesObject.commonName = valueServerCertificatesServerCertificate["CommonName"].asString();
-		auto allTagsNode = allServerCertificatesNode["Tags"]["Tag"];
-		for (auto allServerCertificatesNodeTagsTag : allTagsNode)
+		if(!valueServerCertificatesServerCertificate["EncryptionAlgorithm"].isNull())
+			serverCertificatesObject.encryptionAlgorithm = valueServerCertificatesServerCertificate["EncryptionAlgorithm"].asString();
+		if(!valueServerCertificatesServerCertificate["EncryptionKeyLength"].isNull())
+			serverCertificatesObject.encryptionKeyLength = std::stoi(valueServerCertificatesServerCertificate["EncryptionKeyLength"].asString());
+		if(!valueServerCertificatesServerCertificate["StandardType"].isNull())
+			serverCertificatesObject.standardType = valueServerCertificatesServerCertificate["StandardType"].asString();
+		auto allTagsNode = valueServerCertificatesServerCertificate["Tags"]["Tag"];
+		for (auto valueServerCertificatesServerCertificateTagsTag : allTagsNode)
 		{
 			ServerCertificate::Tag tagsObject;
-			if(!allServerCertificatesNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allServerCertificatesNodeTagsTag["TagKey"].asString();
-			if(!allServerCertificatesNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allServerCertificatesNodeTagsTag["TagValue"].asString();
+			if(!valueServerCertificatesServerCertificateTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueServerCertificatesServerCertificateTagsTag["TagKey"].asString();
+			if(!valueServerCertificatesServerCertificateTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueServerCertificatesServerCertificateTagsTag["TagValue"].asString();
 			serverCertificatesObject.tags.push_back(tagsObject);
 		}
 		auto allSubjectAlternativeNames = value["SubjectAlternativeNames"]["SubjectAlternativeName"];

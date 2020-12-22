@@ -49,6 +49,23 @@ void SetDomainExtensionAttributeRequest::setResourceOwnerId(long resourceOwnerId
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::vector<SetDomainExtensionAttributeRequest::ServerCertificate> SetDomainExtensionAttributeRequest::getServerCertificate()const
+{
+	return serverCertificate_;
+}
+
+void SetDomainExtensionAttributeRequest::setServerCertificate(const std::vector<ServerCertificate>& serverCertificate)
+{
+	serverCertificate_ = serverCertificate;
+	for(int dep1 = 0; dep1!= serverCertificate.size(); dep1++) {
+		auto serverCertificateObj = serverCertificate.at(dep1);
+		std::string serverCertificateObjStr = "ServerCertificate." + std::to_string(dep1 + 1);
+		setParameter(serverCertificateObjStr + ".BindingType", serverCertificateObj.bindingType);
+		setParameter(serverCertificateObjStr + ".CertificateId", serverCertificateObj.certificateId);
+		setParameter(serverCertificateObjStr + ".StandardType", serverCertificateObj.standardType);
+	}
+}
+
 std::string SetDomainExtensionAttributeRequest::getRegionId()const
 {
 	return regionId_;
@@ -91,6 +108,19 @@ void SetDomainExtensionAttributeRequest::setOwnerAccount(const std::string& owne
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::vector<std::string> SetDomainExtensionAttributeRequest::getCertificateId()const
+{
+	return certificateId_;
+}
+
+void SetDomainExtensionAttributeRequest::setCertificateId(const std::vector<std::string>& certificateId)
+{
+	certificateId_ = certificateId;
+	for(int dep1 = 0; dep1!= certificateId.size(); dep1++) {
+		setParameter("CertificateId."+ std::to_string(dep1), certificateId.at(dep1));
+	}
 }
 
 long SetDomainExtensionAttributeRequest::getOwnerId()const

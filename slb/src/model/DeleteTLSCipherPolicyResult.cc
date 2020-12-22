@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/slb/model/DeleteMasterSlaveVServerGroupResult.h>
+#include <alibabacloud/slb/model/DeleteTLSCipherPolicyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Slb;
 using namespace AlibabaCloud::Slb::Model;
 
-DeleteMasterSlaveVServerGroupResult::DeleteMasterSlaveVServerGroupResult() :
+DeleteTLSCipherPolicyResult::DeleteTLSCipherPolicyResult() :
 	ServiceResult()
 {}
 
-DeleteMasterSlaveVServerGroupResult::DeleteMasterSlaveVServerGroupResult(const std::string &payload) :
+DeleteTLSCipherPolicyResult::DeleteTLSCipherPolicyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteMasterSlaveVServerGroupResult::~DeleteMasterSlaveVServerGroupResult()
+DeleteTLSCipherPolicyResult::~DeleteTLSCipherPolicyResult()
 {}
 
-void DeleteMasterSlaveVServerGroupResult::parse(const std::string &payload)
+void DeleteTLSCipherPolicyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

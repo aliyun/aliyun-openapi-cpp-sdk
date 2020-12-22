@@ -30,6 +30,13 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SLB_EXPORT SetLoadBalancerHTTPSListenerAttributeRequest : public RpcServiceRequest
 			{
+			public:
+				struct ServerCertificate
+				{
+					std::string bindingType;
+					std::string certificateId;
+					std::string standardType;
+				};
 
 			public:
 				SetLoadBalancerHTTPSListenerAttributeRequest();
@@ -37,6 +44,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::vector<ServerCertificate> getServerCertificate()const;
+				void setServerCertificate(const std::vector<ServerCertificate>& serverCertificate);
 				int getHealthCheckTimeout()const;
 				void setHealthCheckTimeout(int healthCheckTimeout);
 				std::string getXForwardedFor()const;
@@ -150,6 +159,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::vector<ServerCertificate> serverCertificate_;
 				int healthCheckTimeout_;
 				std::string xForwardedFor_;
 				std::string healthCheckURI_;

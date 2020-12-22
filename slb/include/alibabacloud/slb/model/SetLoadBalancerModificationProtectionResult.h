@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_DESCRIBEMASTERSLAVEVSERVERGROUPSRESULT_H_
-#define ALIBABACLOUD_SLB_MODEL_DESCRIBEMASTERSLAVEVSERVERGROUPSRESULT_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERMODIFICATIONPROTECTIONRESULT_H_
+#define ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERMODIFICATIONPROTECTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT DescribeMasterSlaveVServerGroupsResult : public ServiceResult
+			class ALIBABACLOUD_SLB_EXPORT SetLoadBalancerModificationProtectionResult : public ServiceResult
 			{
 			public:
-				struct MasterSlaveVServerGroup
-				{
-					std::string masterSlaveVServerGroupId;
-					std::string masterSlaveVServerGroupName;
-				};
 
 
-				DescribeMasterSlaveVServerGroupsResult();
-				explicit DescribeMasterSlaveVServerGroupsResult(const std::string &payload);
-				~DescribeMasterSlaveVServerGroupsResult();
-				std::vector<MasterSlaveVServerGroup> getMasterSlaveVServerGroups()const;
+				SetLoadBalancerModificationProtectionResult();
+				explicit SetLoadBalancerModificationProtectionResult(const std::string &payload);
+				~SetLoadBalancerModificationProtectionResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<MasterSlaveVServerGroup> masterSlaveVServerGroups_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SLB_MODEL_DESCRIBEMASTERSLAVEVSERVERGROUPSRESULT_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERMODIFICATIONPROTECTIONRESULT_H_

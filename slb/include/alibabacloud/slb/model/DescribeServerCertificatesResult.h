@@ -45,11 +45,14 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::vector<std::string> subjectAlternativeNames;
 					std::string aliCloudCertificateId;
+					std::string standardType;
 					std::string regionIdAlias;
 					std::string aliCloudCertificateName;
 					int isAliCloudCertificate;
+					int encryptionKeyLength;
 					std::string serverCertificateId;
 					std::string serverCertificateName;
+					std::string encryptionAlgorithm;
 					std::string regionId;
 					std::string expireTime;
 					std::vector<ServerCertificate::Tag> tags;

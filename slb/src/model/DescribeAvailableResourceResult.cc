@@ -47,14 +47,14 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 			availableResourcesObject.masterZoneId = valueAvailableResourcesAvailableResource["MasterZoneId"].asString();
 		if(!valueAvailableResourcesAvailableResource["SlaveZoneId"].isNull())
 			availableResourcesObject.slaveZoneId = valueAvailableResourcesAvailableResource["SlaveZoneId"].asString();
-		auto allSupportResourcesNode = allAvailableResourcesNode["SupportResources"]["SupportResource"];
-		for (auto allAvailableResourcesNodeSupportResourcesSupportResource : allSupportResourcesNode)
+		auto allSupportResourcesNode = valueAvailableResourcesAvailableResource["SupportResources"]["SupportResource"];
+		for (auto valueAvailableResourcesAvailableResourceSupportResourcesSupportResource : allSupportResourcesNode)
 		{
 			AvailableResource::SupportResource supportResourcesObject;
-			if(!allAvailableResourcesNodeSupportResourcesSupportResource["AddressType"].isNull())
-				supportResourcesObject.addressType = allAvailableResourcesNodeSupportResourcesSupportResource["AddressType"].asString();
-			if(!allAvailableResourcesNodeSupportResourcesSupportResource["AddressIPVersion"].isNull())
-				supportResourcesObject.addressIPVersion = allAvailableResourcesNodeSupportResourcesSupportResource["AddressIPVersion"].asString();
+			if(!valueAvailableResourcesAvailableResourceSupportResourcesSupportResource["AddressType"].isNull())
+				supportResourcesObject.addressType = valueAvailableResourcesAvailableResourceSupportResourcesSupportResource["AddressType"].asString();
+			if(!valueAvailableResourcesAvailableResourceSupportResourcesSupportResource["AddressIPVersion"].isNull())
+				supportResourcesObject.addressIPVersion = valueAvailableResourcesAvailableResourceSupportResourcesSupportResource["AddressIPVersion"].asString();
 			availableResourcesObject.supportResources.push_back(supportResourcesObject);
 		}
 		availableResources_.push_back(availableResourcesObject);

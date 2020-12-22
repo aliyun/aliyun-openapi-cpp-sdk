@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERATTRIBUTEEXRESULT_H_
-#define ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERATTRIBUTEEXRESULT_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_CREATETLSCIPHERPOLICYRESULT_H_
+#define ALIBABACLOUD_SLB_MODEL_CREATETLSCIPHERPOLICYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT SetLoadBalancerListenerAttributeExResult : public ServiceResult
+			class ALIBABACLOUD_SLB_EXPORT CreateTLSCipherPolicyResult : public ServiceResult
 			{
 			public:
 
 
-				SetLoadBalancerListenerAttributeExResult();
-				explicit SetLoadBalancerListenerAttributeExResult(const std::string &payload);
-				~SetLoadBalancerListenerAttributeExResult();
+				CreateTLSCipherPolicyResult();
+				explicit CreateTLSCipherPolicyResult(const std::string &payload);
+				~CreateTLSCipherPolicyResult();
+				std::string getTLSCipherPolicyId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string tLSCipherPolicyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SLB_MODEL_SETLOADBALANCERLISTENERATTRIBUTEEXRESULT_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_CREATETLSCIPHERPOLICYRESULT_H_

@@ -47,10 +47,10 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/CreateLoadBalancerUDPListenerResult.h
 	include/alibabacloud/slb/model/CreateMasterSlaveServerGroupRequest.h
 	include/alibabacloud/slb/model/CreateMasterSlaveServerGroupResult.h
-	include/alibabacloud/slb/model/CreateMasterSlaveVServerGroupRequest.h
-	include/alibabacloud/slb/model/CreateMasterSlaveVServerGroupResult.h
 	include/alibabacloud/slb/model/CreateRulesRequest.h
 	include/alibabacloud/slb/model/CreateRulesResult.h
+	include/alibabacloud/slb/model/CreateTLSCipherPolicyRequest.h
+	include/alibabacloud/slb/model/CreateTLSCipherPolicyResult.h
 	include/alibabacloud/slb/model/CreateVServerGroupRequest.h
 	include/alibabacloud/slb/model/CreateVServerGroupResult.h
 	include/alibabacloud/slb/model/DeleteAccessControlListRequest.h
@@ -65,12 +65,12 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DeleteLoadBalancerListenerResult.h
 	include/alibabacloud/slb/model/DeleteMasterSlaveServerGroupRequest.h
 	include/alibabacloud/slb/model/DeleteMasterSlaveServerGroupResult.h
-	include/alibabacloud/slb/model/DeleteMasterSlaveVServerGroupRequest.h
-	include/alibabacloud/slb/model/DeleteMasterSlaveVServerGroupResult.h
 	include/alibabacloud/slb/model/DeleteRulesRequest.h
 	include/alibabacloud/slb/model/DeleteRulesResult.h
 	include/alibabacloud/slb/model/DeleteServerCertificateRequest.h
 	include/alibabacloud/slb/model/DeleteServerCertificateResult.h
+	include/alibabacloud/slb/model/DeleteTLSCipherPolicyRequest.h
+	include/alibabacloud/slb/model/DeleteTLSCipherPolicyResult.h
 	include/alibabacloud/slb/model/DeleteVServerGroupRequest.h
 	include/alibabacloud/slb/model/DeleteVServerGroupResult.h
 	include/alibabacloud/slb/model/DescribeAccessControlListAttributeRequest.h
@@ -95,8 +95,6 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeLoadBalancerHTTPListenerAttributeResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerHTTPSListenerAttributeResult.h
-	include/alibabacloud/slb/model/DescribeLoadBalancerListenersExRequest.h
-	include/alibabacloud/slb/model/DescribeLoadBalancerListenersExResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerTCPListenerAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerTCPListenerAttributeResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerUDPListenerAttributeRequest.h
@@ -107,10 +105,6 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeMasterSlaveServerGroupAttributeResult.h
 	include/alibabacloud/slb/model/DescribeMasterSlaveServerGroupsRequest.h
 	include/alibabacloud/slb/model/DescribeMasterSlaveServerGroupsResult.h
-	include/alibabacloud/slb/model/DescribeMasterSlaveVServerGroupAttributeRequest.h
-	include/alibabacloud/slb/model/DescribeMasterSlaveVServerGroupAttributeResult.h
-	include/alibabacloud/slb/model/DescribeMasterSlaveVServerGroupsRequest.h
-	include/alibabacloud/slb/model/DescribeMasterSlaveVServerGroupsResult.h
 	include/alibabacloud/slb/model/DescribeRegionsRequest.h
 	include/alibabacloud/slb/model/DescribeRegionsResult.h
 	include/alibabacloud/slb/model/DescribeRuleAttributeRequest.h
@@ -127,6 +121,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeVServerGroupsResult.h
 	include/alibabacloud/slb/model/DescribeZonesRequest.h
 	include/alibabacloud/slb/model/DescribeZonesResult.h
+	include/alibabacloud/slb/model/ListTLSCipherPoliciesRequest.h
+	include/alibabacloud/slb/model/ListTLSCipherPoliciesResult.h
 	include/alibabacloud/slb/model/ListTagResourcesRequest.h
 	include/alibabacloud/slb/model/ListTagResourcesResult.h
 	include/alibabacloud/slb/model/ModifyLoadBalancerInstanceSpecRequest.h
@@ -163,8 +159,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/SetLoadBalancerHTTPListenerAttributeResult.h
 	include/alibabacloud/slb/model/SetLoadBalancerHTTPSListenerAttributeRequest.h
 	include/alibabacloud/slb/model/SetLoadBalancerHTTPSListenerAttributeResult.h
-	include/alibabacloud/slb/model/SetLoadBalancerListenerAttributeExRequest.h
-	include/alibabacloud/slb/model/SetLoadBalancerListenerAttributeExResult.h
+	include/alibabacloud/slb/model/SetLoadBalancerModificationProtectionRequest.h
+	include/alibabacloud/slb/model/SetLoadBalancerModificationProtectionResult.h
 	include/alibabacloud/slb/model/SetLoadBalancerNameRequest.h
 	include/alibabacloud/slb/model/SetLoadBalancerNameResult.h
 	include/alibabacloud/slb/model/SetLoadBalancerStatusRequest.h
@@ -177,6 +173,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/SetRuleResult.h
 	include/alibabacloud/slb/model/SetServerCertificateNameRequest.h
 	include/alibabacloud/slb/model/SetServerCertificateNameResult.h
+	include/alibabacloud/slb/model/SetTLSCipherPolicyAttributeRequest.h
+	include/alibabacloud/slb/model/SetTLSCipherPolicyAttributeResult.h
 	include/alibabacloud/slb/model/SetVServerGroupAttributeRequest.h
 	include/alibabacloud/slb/model/SetVServerGroupAttributeResult.h
 	include/alibabacloud/slb/model/StartLoadBalancerListenerRequest.h
@@ -220,10 +218,10 @@ set(slb_src
 	src/model/CreateLoadBalancerUDPListenerResult.cc
 	src/model/CreateMasterSlaveServerGroupRequest.cc
 	src/model/CreateMasterSlaveServerGroupResult.cc
-	src/model/CreateMasterSlaveVServerGroupRequest.cc
-	src/model/CreateMasterSlaveVServerGroupResult.cc
 	src/model/CreateRulesRequest.cc
 	src/model/CreateRulesResult.cc
+	src/model/CreateTLSCipherPolicyRequest.cc
+	src/model/CreateTLSCipherPolicyResult.cc
 	src/model/CreateVServerGroupRequest.cc
 	src/model/CreateVServerGroupResult.cc
 	src/model/DeleteAccessControlListRequest.cc
@@ -238,12 +236,12 @@ set(slb_src
 	src/model/DeleteLoadBalancerListenerResult.cc
 	src/model/DeleteMasterSlaveServerGroupRequest.cc
 	src/model/DeleteMasterSlaveServerGroupResult.cc
-	src/model/DeleteMasterSlaveVServerGroupRequest.cc
-	src/model/DeleteMasterSlaveVServerGroupResult.cc
 	src/model/DeleteRulesRequest.cc
 	src/model/DeleteRulesResult.cc
 	src/model/DeleteServerCertificateRequest.cc
 	src/model/DeleteServerCertificateResult.cc
+	src/model/DeleteTLSCipherPolicyRequest.cc
+	src/model/DeleteTLSCipherPolicyResult.cc
 	src/model/DeleteVServerGroupRequest.cc
 	src/model/DeleteVServerGroupResult.cc
 	src/model/DescribeAccessControlListAttributeRequest.cc
@@ -268,8 +266,6 @@ set(slb_src
 	src/model/DescribeLoadBalancerHTTPListenerAttributeResult.cc
 	src/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerHTTPSListenerAttributeResult.cc
-	src/model/DescribeLoadBalancerListenersExRequest.cc
-	src/model/DescribeLoadBalancerListenersExResult.cc
 	src/model/DescribeLoadBalancerTCPListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerTCPListenerAttributeResult.cc
 	src/model/DescribeLoadBalancerUDPListenerAttributeRequest.cc
@@ -280,10 +276,6 @@ set(slb_src
 	src/model/DescribeMasterSlaveServerGroupAttributeResult.cc
 	src/model/DescribeMasterSlaveServerGroupsRequest.cc
 	src/model/DescribeMasterSlaveServerGroupsResult.cc
-	src/model/DescribeMasterSlaveVServerGroupAttributeRequest.cc
-	src/model/DescribeMasterSlaveVServerGroupAttributeResult.cc
-	src/model/DescribeMasterSlaveVServerGroupsRequest.cc
-	src/model/DescribeMasterSlaveVServerGroupsResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeRuleAttributeRequest.cc
@@ -300,6 +292,8 @@ set(slb_src
 	src/model/DescribeVServerGroupsResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
+	src/model/ListTLSCipherPoliciesRequest.cc
+	src/model/ListTLSCipherPoliciesResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyLoadBalancerInstanceSpecRequest.cc
@@ -336,8 +330,8 @@ set(slb_src
 	src/model/SetLoadBalancerHTTPListenerAttributeResult.cc
 	src/model/SetLoadBalancerHTTPSListenerAttributeRequest.cc
 	src/model/SetLoadBalancerHTTPSListenerAttributeResult.cc
-	src/model/SetLoadBalancerListenerAttributeExRequest.cc
-	src/model/SetLoadBalancerListenerAttributeExResult.cc
+	src/model/SetLoadBalancerModificationProtectionRequest.cc
+	src/model/SetLoadBalancerModificationProtectionResult.cc
 	src/model/SetLoadBalancerNameRequest.cc
 	src/model/SetLoadBalancerNameResult.cc
 	src/model/SetLoadBalancerStatusRequest.cc
@@ -350,6 +344,8 @@ set(slb_src
 	src/model/SetRuleResult.cc
 	src/model/SetServerCertificateNameRequest.cc
 	src/model/SetServerCertificateNameResult.cc
+	src/model/SetTLSCipherPolicyAttributeRequest.cc
+	src/model/SetTLSCipherPolicyAttributeResult.cc
 	src/model/SetVServerGroupAttributeRequest.cc
 	src/model/SetVServerGroupAttributeResult.cc
 	src/model/StartLoadBalancerListenerRequest.cc

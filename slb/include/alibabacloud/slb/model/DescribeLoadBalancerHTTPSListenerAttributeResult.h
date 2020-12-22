@@ -42,9 +42,30 @@ namespace AlibabaCloud
 				};
 				struct DomainExtension
 				{
+					struct Certificate
+					{
+						std::string certificateId;
+						std::string encryptionAlgorithm;
+					};
+					struct ServerCertificate
+					{
+						std::string certificateId;
+						std::string bindingType;
+						std::string encryptionAlgorithm;
+						std::string standardType;
+					};
 					std::string domainExtensionId;
+					std::vector<DomainExtension::ServerCertificate> serverCertificates1;
+					std::vector<DomainExtension::Certificate> certificates;
 					std::string serverCertificateId;
 					std::string domain;
+				};
+				struct ServerCertificate2
+				{
+					std::string certificateId;
+					std::string bindingType;
+					std::string encryptionAlgorithm;
+					std::string standardType;
 				};
 
 
@@ -66,6 +87,7 @@ namespace AlibabaCloud
 				int getHealthCheckInterval()const;
 				std::string getTLSCipherPolicy()const;
 				std::string getCACertificateId()const;
+				std::vector<ServerCertificate2> getServerCertificates()const;
 				std::string getXForwardedFor_ClientCertFingerprintAlias()const;
 				int getHealthCheckTimeout()const;
 				std::string getAclStatus()const;
@@ -124,6 +146,7 @@ namespace AlibabaCloud
 				int healthCheckInterval_;
 				std::string tLSCipherPolicy_;
 				std::string cACertificateId_;
+				std::vector<ServerCertificate2> serverCertificates_;
 				std::string xForwardedFor_ClientCertFingerprintAlias_;
 				int healthCheckTimeout_;
 				std::string aclStatus_;

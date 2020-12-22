@@ -169,6 +169,12 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 		cloudInstanceUid_ = std::stol(value["CloudInstanceUid"].asString());
 	if(!value["SupportPrivateLink"].isNull())
 		supportPrivateLink_ = value["SupportPrivateLink"].asString() == "true";
+	if(!value["BusinessStatus"].isNull())
+		businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["ModificationProtectionStatus"].isNull())
+		modificationProtectionStatus_ = value["ModificationProtectionStatus"].asString();
+	if(!value["ModificationProtectionReason"].isNull())
+		modificationProtectionReason_ = value["ModificationProtectionReason"].asString();
 
 }
 
@@ -232,9 +238,19 @@ std::string DescribeLoadBalancerAttributeResult::getHasReservedInfo()const
 	return hasReservedInfo_;
 }
 
+std::string DescribeLoadBalancerAttributeResult::getBusinessStatus()const
+{
+	return businessStatus_;
+}
+
 std::string DescribeLoadBalancerAttributeResult::getReservedInfoBandwidth()const
 {
 	return reservedInfoBandwidth_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getModificationProtectionStatus()const
+{
+	return modificationProtectionStatus_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getLoadBalancerSpec()const
@@ -250,6 +266,11 @@ std::string DescribeLoadBalancerAttributeResult::getNetworkType()const
 int DescribeLoadBalancerAttributeResult::getBandwidth()const
 {
 	return bandwidth_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getModificationProtectionReason()const
+{
+	return modificationProtectionReason_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getAssociatedCenId()const

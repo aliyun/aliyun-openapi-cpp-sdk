@@ -47,14 +47,14 @@ void DescribeZonesResult::parse(const std::string &payload)
 			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
 		if(!valueZonesZone["LocalName"].isNull())
 			zonesObject.localName = valueZonesZone["LocalName"].asString();
-		auto allSlaveZonesNode = allZonesNode["SlaveZones"]["SlaveZone"];
-		for (auto allZonesNodeSlaveZonesSlaveZone : allSlaveZonesNode)
+		auto allSlaveZonesNode = valueZonesZone["SlaveZones"]["SlaveZone"];
+		for (auto valueZonesZoneSlaveZonesSlaveZone : allSlaveZonesNode)
 		{
 			Zone::SlaveZone slaveZonesObject;
-			if(!allZonesNodeSlaveZonesSlaveZone["ZoneId"].isNull())
-				slaveZonesObject.zoneId = allZonesNodeSlaveZonesSlaveZone["ZoneId"].asString();
-			if(!allZonesNodeSlaveZonesSlaveZone["LocalName"].isNull())
-				slaveZonesObject.localName = allZonesNodeSlaveZonesSlaveZone["LocalName"].asString();
+			if(!valueZonesZoneSlaveZonesSlaveZone["ZoneId"].isNull())
+				slaveZonesObject.zoneId = valueZonesZoneSlaveZonesSlaveZone["ZoneId"].asString();
+			if(!valueZonesZoneSlaveZonesSlaveZone["LocalName"].isNull())
+				slaveZonesObject.localName = valueZonesZoneSlaveZonesSlaveZone["LocalName"].asString();
 			zonesObject.slaveZones.push_back(slaveZonesObject);
 		}
 		zones_.push_back(zonesObject);

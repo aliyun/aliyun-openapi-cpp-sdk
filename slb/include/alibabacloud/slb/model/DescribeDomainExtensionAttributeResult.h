@@ -32,6 +32,18 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SLB_EXPORT DescribeDomainExtensionAttributeResult : public ServiceResult
 			{
 			public:
+				struct Certificate
+				{
+					std::string certificateId;
+					std::string encryptionAlgorithm;
+				};
+				struct ServerCertificate
+				{
+					std::string certificateId;
+					std::string bindingType;
+					std::string encryptionAlgorithm;
+					std::string standardType;
+				};
 
 
 				DescribeDomainExtensionAttributeResult();
@@ -39,6 +51,8 @@ namespace AlibabaCloud
 				~DescribeDomainExtensionAttributeResult();
 				std::string getDomainExtensionId()const;
 				int getListenerPort()const;
+				std::vector<Certificate> getCertificates()const;
+				std::vector<ServerCertificate> getServerCertificates()const;
 				std::string getServerCertificateId()const;
 				std::string getLoadBalancerId()const;
 				std::string getDomain()const;
@@ -48,6 +62,8 @@ namespace AlibabaCloud
 			private:
 				std::string domainExtensionId_;
 				int listenerPort_;
+				std::vector<Certificate> certificates_;
+				std::vector<ServerCertificate> serverCertificates_;
 				std::string serverCertificateId_;
 				std::string loadBalancerId_;
 				std::string domain_;

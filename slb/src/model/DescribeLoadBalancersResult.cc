@@ -79,14 +79,20 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 			loadBalancersObject.resourceGroupId = valueLoadBalancersLoadBalancer["ResourceGroupId"].asString();
 		if(!valueLoadBalancersLoadBalancer["AddressIPVersion"].isNull())
 			loadBalancersObject.addressIPVersion = valueLoadBalancersLoadBalancer["AddressIPVersion"].asString();
-		auto allTagsNode = allLoadBalancersNode["Tags"]["Tag"];
-		for (auto allLoadBalancersNodeTagsTag : allTagsNode)
+		if(!valueLoadBalancersLoadBalancer["BusinessStatus"].isNull())
+			loadBalancersObject.businessStatus = valueLoadBalancersLoadBalancer["BusinessStatus"].asString();
+		if(!valueLoadBalancersLoadBalancer["ModificationProtectionStatus"].isNull())
+			loadBalancersObject.modificationProtectionStatus = valueLoadBalancersLoadBalancer["ModificationProtectionStatus"].asString();
+		if(!valueLoadBalancersLoadBalancer["ModificationProtectionReason"].isNull())
+			loadBalancersObject.modificationProtectionReason = valueLoadBalancersLoadBalancer["ModificationProtectionReason"].asString();
+		auto allTagsNode = valueLoadBalancersLoadBalancer["Tags"]["Tag"];
+		for (auto valueLoadBalancersLoadBalancerTagsTag : allTagsNode)
 		{
 			LoadBalancer::Tag tagsObject;
-			if(!allLoadBalancersNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allLoadBalancersNodeTagsTag["TagKey"].asString();
-			if(!allLoadBalancersNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allLoadBalancersNodeTagsTag["TagValue"].asString();
+			if(!valueLoadBalancersLoadBalancerTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueLoadBalancersLoadBalancerTagsTag["TagKey"].asString();
+			if(!valueLoadBalancersLoadBalancerTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueLoadBalancersLoadBalancerTagsTag["TagValue"].asString();
 			loadBalancersObject.tags.push_back(tagsObject);
 		}
 		loadBalancers_.push_back(loadBalancersObject);

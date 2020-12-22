@@ -63,14 +63,20 @@ void DescribeCACertificatesResult::parse(const std::string &payload)
 			cACertificatesObject.expireTimeStamp = std::stol(valueCACertificatesCACertificate["ExpireTimeStamp"].asString());
 		if(!valueCACertificatesCACertificate["CommonName"].isNull())
 			cACertificatesObject.commonName = valueCACertificatesCACertificate["CommonName"].asString();
-		auto allTagsNode = allCACertificatesNode["Tags"]["Tag"];
-		for (auto allCACertificatesNodeTagsTag : allTagsNode)
+		if(!valueCACertificatesCACertificate["EncryptionAlgorithm"].isNull())
+			cACertificatesObject.encryptionAlgorithm = valueCACertificatesCACertificate["EncryptionAlgorithm"].asString();
+		if(!valueCACertificatesCACertificate["EncryptionKeyLength"].isNull())
+			cACertificatesObject.encryptionKeyLength = std::stoi(valueCACertificatesCACertificate["EncryptionKeyLength"].asString());
+		if(!valueCACertificatesCACertificate["StandardType"].isNull())
+			cACertificatesObject.standardType = valueCACertificatesCACertificate["StandardType"].asString();
+		auto allTagsNode = valueCACertificatesCACertificate["Tags"]["Tag"];
+		for (auto valueCACertificatesCACertificateTagsTag : allTagsNode)
 		{
 			CACertificate::Tag tagsObject;
-			if(!allCACertificatesNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allCACertificatesNodeTagsTag["TagKey"].asString();
-			if(!allCACertificatesNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allCACertificatesNodeTagsTag["TagValue"].asString();
+			if(!valueCACertificatesCACertificateTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueCACertificatesCACertificateTagsTag["TagKey"].asString();
+			if(!valueCACertificatesCACertificateTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueCACertificatesCACertificateTagsTag["TagValue"].asString();
 			cACertificatesObject.tags.push_back(tagsObject);
 		}
 		cACertificates_.push_back(cACertificatesObject);

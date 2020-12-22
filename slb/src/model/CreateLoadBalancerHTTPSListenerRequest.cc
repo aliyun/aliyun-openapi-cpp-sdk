@@ -38,6 +38,23 @@ void CreateLoadBalancerHTTPSListenerRequest::setResourceOwnerId(long resourceOwn
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::vector<CreateLoadBalancerHTTPSListenerRequest::ServerCertificate> CreateLoadBalancerHTTPSListenerRequest::getServerCertificate()const
+{
+	return serverCertificate_;
+}
+
+void CreateLoadBalancerHTTPSListenerRequest::setServerCertificate(const std::vector<ServerCertificate>& serverCertificate)
+{
+	serverCertificate_ = serverCertificate;
+	for(int dep1 = 0; dep1!= serverCertificate.size(); dep1++) {
+		auto serverCertificateObj = serverCertificate.at(dep1);
+		std::string serverCertificateObjStr = "ServerCertificate." + std::to_string(dep1 + 1);
+		setParameter(serverCertificateObjStr + ".BindingType", serverCertificateObj.bindingType);
+		setParameter(serverCertificateObjStr + ".CertificateId", serverCertificateObj.certificateId);
+		setParameter(serverCertificateObjStr + ".StandardType", serverCertificateObj.standardType);
+	}
+}
+
 int CreateLoadBalancerHTTPSListenerRequest::getHealthCheckTimeout()const
 {
 	return healthCheckTimeout_;

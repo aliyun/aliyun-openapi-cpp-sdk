@@ -519,42 +519,6 @@ SlbClient::CreateMasterSlaveServerGroupOutcomeCallable SlbClient::createMasterSl
 	return task->get_future();
 }
 
-SlbClient::CreateMasterSlaveVServerGroupOutcome SlbClient::createMasterSlaveVServerGroup(const CreateMasterSlaveVServerGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateMasterSlaveVServerGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateMasterSlaveVServerGroupOutcome(CreateMasterSlaveVServerGroupResult(outcome.result()));
-	else
-		return CreateMasterSlaveVServerGroupOutcome(outcome.error());
-}
-
-void SlbClient::createMasterSlaveVServerGroupAsync(const CreateMasterSlaveVServerGroupRequest& request, const CreateMasterSlaveVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createMasterSlaveVServerGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::CreateMasterSlaveVServerGroupOutcomeCallable SlbClient::createMasterSlaveVServerGroupCallable(const CreateMasterSlaveVServerGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateMasterSlaveVServerGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->createMasterSlaveVServerGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SlbClient::CreateRulesOutcome SlbClient::createRules(const CreateRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +549,42 @@ SlbClient::CreateRulesOutcomeCallable SlbClient::createRulesCallable(const Creat
 			[this, request]()
 			{
 			return this->createRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::CreateTLSCipherPolicyOutcome SlbClient::createTLSCipherPolicy(const CreateTLSCipherPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTLSCipherPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTLSCipherPolicyOutcome(CreateTLSCipherPolicyResult(outcome.result()));
+	else
+		return CreateTLSCipherPolicyOutcome(outcome.error());
+}
+
+void SlbClient::createTLSCipherPolicyAsync(const CreateTLSCipherPolicyRequest& request, const CreateTLSCipherPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTLSCipherPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::CreateTLSCipherPolicyOutcomeCallable SlbClient::createTLSCipherPolicyCallable(const CreateTLSCipherPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTLSCipherPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createTLSCipherPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,42 +843,6 @@ SlbClient::DeleteMasterSlaveServerGroupOutcomeCallable SlbClient::deleteMasterSl
 	return task->get_future();
 }
 
-SlbClient::DeleteMasterSlaveVServerGroupOutcome SlbClient::deleteMasterSlaveVServerGroup(const DeleteMasterSlaveVServerGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteMasterSlaveVServerGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteMasterSlaveVServerGroupOutcome(DeleteMasterSlaveVServerGroupResult(outcome.result()));
-	else
-		return DeleteMasterSlaveVServerGroupOutcome(outcome.error());
-}
-
-void SlbClient::deleteMasterSlaveVServerGroupAsync(const DeleteMasterSlaveVServerGroupRequest& request, const DeleteMasterSlaveVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteMasterSlaveVServerGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DeleteMasterSlaveVServerGroupOutcomeCallable SlbClient::deleteMasterSlaveVServerGroupCallable(const DeleteMasterSlaveVServerGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteMasterSlaveVServerGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteMasterSlaveVServerGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SlbClient::DeleteRulesOutcome SlbClient::deleteRules(const DeleteRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +909,42 @@ SlbClient::DeleteServerCertificateOutcomeCallable SlbClient::deleteServerCertifi
 			[this, request]()
 			{
 			return this->deleteServerCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DeleteTLSCipherPolicyOutcome SlbClient::deleteTLSCipherPolicy(const DeleteTLSCipherPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTLSCipherPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTLSCipherPolicyOutcome(DeleteTLSCipherPolicyResult(outcome.result()));
+	else
+		return DeleteTLSCipherPolicyOutcome(outcome.error());
+}
+
+void SlbClient::deleteTLSCipherPolicyAsync(const DeleteTLSCipherPolicyRequest& request, const DeleteTLSCipherPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTLSCipherPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DeleteTLSCipherPolicyOutcomeCallable SlbClient::deleteTLSCipherPolicyCallable(const DeleteTLSCipherPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTLSCipherPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTLSCipherPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1383,42 +1383,6 @@ SlbClient::DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::
 	return task->get_future();
 }
 
-SlbClient::DescribeLoadBalancerListenersExOutcome SlbClient::describeLoadBalancerListenersEx(const DescribeLoadBalancerListenersExRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLoadBalancerListenersExOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLoadBalancerListenersExOutcome(DescribeLoadBalancerListenersExResult(outcome.result()));
-	else
-		return DescribeLoadBalancerListenersExOutcome(outcome.error());
-}
-
-void SlbClient::describeLoadBalancerListenersExAsync(const DescribeLoadBalancerListenersExRequest& request, const DescribeLoadBalancerListenersExAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLoadBalancerListenersEx(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeLoadBalancerListenersExOutcomeCallable SlbClient::describeLoadBalancerListenersExCallable(const DescribeLoadBalancerListenersExRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerListenersExOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLoadBalancerListenersEx(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SlbClient::DescribeLoadBalancerTCPListenerAttributeOutcome SlbClient::describeLoadBalancerTCPListenerAttribute(const DescribeLoadBalancerTCPListenerAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,78 +1557,6 @@ SlbClient::DescribeMasterSlaveServerGroupsOutcomeCallable SlbClient::describeMas
 			[this, request]()
 			{
 			return this->describeMasterSlaveServerGroups(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeMasterSlaveVServerGroupAttributeOutcome SlbClient::describeMasterSlaveVServerGroupAttribute(const DescribeMasterSlaveVServerGroupAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeMasterSlaveVServerGroupAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeMasterSlaveVServerGroupAttributeOutcome(DescribeMasterSlaveVServerGroupAttributeResult(outcome.result()));
-	else
-		return DescribeMasterSlaveVServerGroupAttributeOutcome(outcome.error());
-}
-
-void SlbClient::describeMasterSlaveVServerGroupAttributeAsync(const DescribeMasterSlaveVServerGroupAttributeRequest& request, const DescribeMasterSlaveVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeMasterSlaveVServerGroupAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeMasterSlaveVServerGroupAttributeOutcomeCallable SlbClient::describeMasterSlaveVServerGroupAttributeCallable(const DescribeMasterSlaveVServerGroupAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeMasterSlaveVServerGroupAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeMasterSlaveVServerGroupAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SlbClient::DescribeMasterSlaveVServerGroupsOutcome SlbClient::describeMasterSlaveVServerGroups(const DescribeMasterSlaveVServerGroupsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeMasterSlaveVServerGroupsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeMasterSlaveVServerGroupsOutcome(DescribeMasterSlaveVServerGroupsResult(outcome.result()));
-	else
-		return DescribeMasterSlaveVServerGroupsOutcome(outcome.error());
-}
-
-void SlbClient::describeMasterSlaveVServerGroupsAsync(const DescribeMasterSlaveVServerGroupsRequest& request, const DescribeMasterSlaveVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeMasterSlaveVServerGroups(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SlbClient::DescribeMasterSlaveVServerGroupsOutcomeCallable SlbClient::describeMasterSlaveVServerGroupsCallable(const DescribeMasterSlaveVServerGroupsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeMasterSlaveVServerGroupsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeMasterSlaveVServerGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1953,6 +1845,42 @@ SlbClient::DescribeZonesOutcomeCallable SlbClient::describeZonesCallable(const D
 			[this, request]()
 			{
 			return this->describeZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::ListTLSCipherPoliciesOutcome SlbClient::listTLSCipherPolicies(const ListTLSCipherPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTLSCipherPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTLSCipherPoliciesOutcome(ListTLSCipherPoliciesResult(outcome.result()));
+	else
+		return ListTLSCipherPoliciesOutcome(outcome.error());
+}
+
+void SlbClient::listTLSCipherPoliciesAsync(const ListTLSCipherPoliciesRequest& request, const ListTLSCipherPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTLSCipherPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::ListTLSCipherPoliciesOutcomeCallable SlbClient::listTLSCipherPoliciesCallable(const ListTLSCipherPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTLSCipherPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTLSCipherPolicies(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,36 +2535,36 @@ SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::setLo
 	return task->get_future();
 }
 
-SlbClient::SetLoadBalancerListenerAttributeExOutcome SlbClient::setLoadBalancerListenerAttributeEx(const SetLoadBalancerListenerAttributeExRequest &request) const
+SlbClient::SetLoadBalancerModificationProtectionOutcome SlbClient::setLoadBalancerModificationProtection(const SetLoadBalancerModificationProtectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SetLoadBalancerListenerAttributeExOutcome(endpointOutcome.error());
+		return SetLoadBalancerModificationProtectionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SetLoadBalancerListenerAttributeExOutcome(SetLoadBalancerListenerAttributeExResult(outcome.result()));
+		return SetLoadBalancerModificationProtectionOutcome(SetLoadBalancerModificationProtectionResult(outcome.result()));
 	else
-		return SetLoadBalancerListenerAttributeExOutcome(outcome.error());
+		return SetLoadBalancerModificationProtectionOutcome(outcome.error());
 }
 
-void SlbClient::setLoadBalancerListenerAttributeExAsync(const SetLoadBalancerListenerAttributeExRequest& request, const SetLoadBalancerListenerAttributeExAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void SlbClient::setLoadBalancerModificationProtectionAsync(const SetLoadBalancerModificationProtectionRequest& request, const SetLoadBalancerModificationProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, setLoadBalancerListenerAttributeEx(request), context);
+		handler(this, request, setLoadBalancerModificationProtection(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-SlbClient::SetLoadBalancerListenerAttributeExOutcomeCallable SlbClient::setLoadBalancerListenerAttributeExCallable(const SetLoadBalancerListenerAttributeExRequest &request) const
+SlbClient::SetLoadBalancerModificationProtectionOutcomeCallable SlbClient::setLoadBalancerModificationProtectionCallable(const SetLoadBalancerModificationProtectionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SetLoadBalancerListenerAttributeExOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SetLoadBalancerModificationProtectionOutcome()>>(
 			[this, request]()
 			{
-			return this->setLoadBalancerListenerAttributeEx(request);
+			return this->setLoadBalancerModificationProtection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2853,6 +2781,42 @@ SlbClient::SetServerCertificateNameOutcomeCallable SlbClient::setServerCertifica
 			[this, request]()
 			{
 			return this->setServerCertificateName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::SetTLSCipherPolicyAttributeOutcome SlbClient::setTLSCipherPolicyAttribute(const SetTLSCipherPolicyAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetTLSCipherPolicyAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetTLSCipherPolicyAttributeOutcome(SetTLSCipherPolicyAttributeResult(outcome.result()));
+	else
+		return SetTLSCipherPolicyAttributeOutcome(outcome.error());
+}
+
+void SlbClient::setTLSCipherPolicyAttributeAsync(const SetTLSCipherPolicyAttributeRequest& request, const SetTLSCipherPolicyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setTLSCipherPolicyAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetTLSCipherPolicyAttributeOutcomeCallable SlbClient::setTLSCipherPolicyAttributeCallable(const SetTLSCipherPolicyAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetTLSCipherPolicyAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setTLSCipherPolicyAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

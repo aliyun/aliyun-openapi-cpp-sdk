@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/slb/model/SetLoadBalancerListenerAttributeExResult.h>
+#include <alibabacloud/slb/model/SetLoadBalancerModificationProtectionResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Slb;
 using namespace AlibabaCloud::Slb::Model;
 
-SetLoadBalancerListenerAttributeExResult::SetLoadBalancerListenerAttributeExResult() :
+SetLoadBalancerModificationProtectionResult::SetLoadBalancerModificationProtectionResult() :
 	ServiceResult()
 {}
 
-SetLoadBalancerListenerAttributeExResult::SetLoadBalancerListenerAttributeExResult(const std::string &payload) :
+SetLoadBalancerModificationProtectionResult::SetLoadBalancerModificationProtectionResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetLoadBalancerListenerAttributeExResult::~SetLoadBalancerListenerAttributeExResult()
+SetLoadBalancerModificationProtectionResult::~SetLoadBalancerModificationProtectionResult()
 {}
 
-void SetLoadBalancerListenerAttributeExResult::parse(const std::string &payload)
+void SetLoadBalancerModificationProtectionResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

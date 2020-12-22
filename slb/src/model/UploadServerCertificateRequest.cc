@@ -137,6 +137,17 @@ void UploadServerCertificateRequest::setOwnerAccount(const std::string& ownerAcc
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string UploadServerCertificateRequest::getStandardType()const
+{
+	return standardType_;
+}
+
+void UploadServerCertificateRequest::setStandardType(const std::string& standardType)
+{
+	standardType_ = standardType;
+	setParameter("StandardType", standardType);
+}
+
 long UploadServerCertificateRequest::getOwnerId()const
 {
 	return ownerId_;

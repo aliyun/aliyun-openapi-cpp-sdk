@@ -30,6 +30,13 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SLB_EXPORT SetDomainExtensionAttributeRequest : public RpcServiceRequest
 			{
+			public:
+				struct ServerCertificate
+				{
+					std::string bindingType;
+					std::string certificateId;
+					std::string standardType;
+				};
 
 			public:
 				SetDomainExtensionAttributeRequest();
@@ -39,6 +46,8 @@ namespace AlibabaCloud
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::vector<ServerCertificate> getServerCertificate()const;
+				void setServerCertificate(const std::vector<ServerCertificate>& serverCertificate);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getDomainExtensionId()const;
@@ -47,6 +56,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::vector<std::string> getCertificateId()const;
+				void setCertificateId(const std::vector<std::string>& certificateId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getServerCertificateId()const;
@@ -57,10 +68,12 @@ namespace AlibabaCloud
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
+				std::vector<ServerCertificate> serverCertificate_;
 				std::string regionId_;
 				std::string domainExtensionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::vector<std::string> certificateId_;
 				long ownerId_;
 				std::string serverCertificateId_;
 				std::string tags_;

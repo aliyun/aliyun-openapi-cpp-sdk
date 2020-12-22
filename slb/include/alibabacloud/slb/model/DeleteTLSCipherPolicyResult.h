@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_DELETEMASTERSLAVEVSERVERGROUPRESULT_H_
-#define ALIBABACLOUD_SLB_MODEL_DELETEMASTERSLAVEVSERVERGROUPRESULT_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_DELETETLSCIPHERPOLICYRESULT_H_
+#define ALIBABACLOUD_SLB_MODEL_DELETETLSCIPHERPOLICYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT DeleteMasterSlaveVServerGroupResult : public ServiceResult
+			class ALIBABACLOUD_SLB_EXPORT DeleteTLSCipherPolicyResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteMasterSlaveVServerGroupResult();
-				explicit DeleteMasterSlaveVServerGroupResult(const std::string &payload);
-				~DeleteMasterSlaveVServerGroupResult();
+				DeleteTLSCipherPolicyResult();
+				explicit DeleteTLSCipherPolicyResult(const std::string &payload);
+				~DeleteTLSCipherPolicyResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SLB_MODEL_DELETEMASTERSLAVEVSERVERGROUPRESULT_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_DELETETLSCIPHERPOLICYRESULT_H_

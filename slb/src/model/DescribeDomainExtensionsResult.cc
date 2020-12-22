@@ -49,6 +49,30 @@ void DescribeDomainExtensionsResult::parse(const std::string &payload)
 			domainExtensionsObject.domain = valueDomainExtensionsDomainExtension["Domain"].asString();
 		if(!valueDomainExtensionsDomainExtension["ServerCertificateId"].isNull())
 			domainExtensionsObject.serverCertificateId = valueDomainExtensionsDomainExtension["ServerCertificateId"].asString();
+		auto allCertificatesNode = valueDomainExtensionsDomainExtension["Certificates"]["Certificate"];
+		for (auto valueDomainExtensionsDomainExtensionCertificatesCertificate : allCertificatesNode)
+		{
+			DomainExtension::Certificate certificatesObject;
+			if(!valueDomainExtensionsDomainExtensionCertificatesCertificate["CertificateId"].isNull())
+				certificatesObject.certificateId = valueDomainExtensionsDomainExtensionCertificatesCertificate["CertificateId"].asString();
+			if(!valueDomainExtensionsDomainExtensionCertificatesCertificate["EncryptionAlgorithm"].isNull())
+				certificatesObject.encryptionAlgorithm = valueDomainExtensionsDomainExtensionCertificatesCertificate["EncryptionAlgorithm"].asString();
+			domainExtensionsObject.certificates.push_back(certificatesObject);
+		}
+		auto allServerCertificatesNode = valueDomainExtensionsDomainExtension["ServerCertificates"]["ServerCertificate"];
+		for (auto valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate : allServerCertificatesNode)
+		{
+			DomainExtension::ServerCertificate serverCertificatesObject;
+			if(!valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["CertificateId"].isNull())
+				serverCertificatesObject.certificateId = valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["CertificateId"].asString();
+			if(!valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["EncryptionAlgorithm"].isNull())
+				serverCertificatesObject.encryptionAlgorithm = valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["EncryptionAlgorithm"].asString();
+			if(!valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["BindingType"].isNull())
+				serverCertificatesObject.bindingType = valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["BindingType"].asString();
+			if(!valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["StandardType"].isNull())
+				serverCertificatesObject.standardType = valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["StandardType"].asString();
+			domainExtensionsObject.serverCertificates.push_back(serverCertificatesObject);
+		}
 		domainExtensions_.push_back(domainExtensionsObject);
 	}
 

@@ -65,7 +65,45 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 			domainExtensionsObject.domain = valueDomainExtensionsDomainExtension["Domain"].asString();
 		if(!valueDomainExtensionsDomainExtension["ServerCertificateId"].isNull())
 			domainExtensionsObject.serverCertificateId = valueDomainExtensionsDomainExtension["ServerCertificateId"].asString();
+		auto allCertificatesNode = valueDomainExtensionsDomainExtension["Certificates"]["Certificate"];
+		for (auto valueDomainExtensionsDomainExtensionCertificatesCertificate : allCertificatesNode)
+		{
+			DomainExtension::Certificate certificatesObject;
+			if(!valueDomainExtensionsDomainExtensionCertificatesCertificate["CertificateId"].isNull())
+				certificatesObject.certificateId = valueDomainExtensionsDomainExtensionCertificatesCertificate["CertificateId"].asString();
+			if(!valueDomainExtensionsDomainExtensionCertificatesCertificate["EncryptionAlgorithm"].isNull())
+				certificatesObject.encryptionAlgorithm = valueDomainExtensionsDomainExtensionCertificatesCertificate["EncryptionAlgorithm"].asString();
+			domainExtensionsObject.certificates.push_back(certificatesObject);
+		}
+		auto allServerCertificates1Node = valueDomainExtensionsDomainExtension["ServerCertificates"]["ServerCertificate"];
+		for (auto valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate : allServerCertificates1Node)
+		{
+			DomainExtension::ServerCertificate serverCertificates1Object;
+			if(!valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["CertificateId"].isNull())
+				serverCertificates1Object.certificateId = valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["CertificateId"].asString();
+			if(!valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["EncryptionAlgorithm"].isNull())
+				serverCertificates1Object.encryptionAlgorithm = valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["EncryptionAlgorithm"].asString();
+			if(!valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["StandardType"].isNull())
+				serverCertificates1Object.standardType = valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["StandardType"].asString();
+			if(!valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["BindingType"].isNull())
+				serverCertificates1Object.bindingType = valueDomainExtensionsDomainExtensionServerCertificatesServerCertificate["BindingType"].asString();
+			domainExtensionsObject.serverCertificates1.push_back(serverCertificates1Object);
+		}
 		domainExtensions_.push_back(domainExtensionsObject);
+	}
+	auto allServerCertificatesNode = value["ServerCertificates"]["ServerCertificate"];
+	for (auto valueServerCertificatesServerCertificate : allServerCertificatesNode)
+	{
+		ServerCertificate2 serverCertificatesObject;
+		if(!valueServerCertificatesServerCertificate["CertificateId"].isNull())
+			serverCertificatesObject.certificateId = valueServerCertificatesServerCertificate["CertificateId"].asString();
+		if(!valueServerCertificatesServerCertificate["EncryptionAlgorithm"].isNull())
+			serverCertificatesObject.encryptionAlgorithm = valueServerCertificatesServerCertificate["EncryptionAlgorithm"].asString();
+		if(!valueServerCertificatesServerCertificate["StandardType"].isNull())
+			serverCertificatesObject.standardType = valueServerCertificatesServerCertificate["StandardType"].asString();
+		if(!valueServerCertificatesServerCertificate["BindingType"].isNull())
+			serverCertificatesObject.bindingType = valueServerCertificatesServerCertificate["BindingType"].asString();
+		serverCertificates_.push_back(serverCertificatesObject);
 	}
 	auto allAclIds = value["AclIds"]["AclId"];
 	for (const auto &item : allAclIds)
@@ -248,6 +286,11 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getTLSCipherPolicy
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCACertificateId()const
 {
 	return cACertificateId_;
+}
+
+std::vector<DescribeLoadBalancerHTTPSListenerAttributeResult::ServerCertificate2> DescribeLoadBalancerHTTPSListenerAttributeResult::getServerCertificates()const
+{
+	return serverCertificates_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertFingerprintAlias()const

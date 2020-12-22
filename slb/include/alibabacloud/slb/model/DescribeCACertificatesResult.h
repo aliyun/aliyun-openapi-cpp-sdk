@@ -44,7 +44,10 @@ namespace AlibabaCloud
 					long expireTimeStamp;
 					std::string cACertificateId;
 					std::string createTime;
+					std::string standardType;
 					std::string cACertificateName;
+					int encryptionKeyLength;
+					std::string encryptionAlgorithm;
 					std::string regionId;
 					std::string expireTime;
 					std::vector<CACertificate::Tag> tags;

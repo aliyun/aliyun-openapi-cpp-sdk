@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SLB_MODEL_CREATEDOMAINEXTENSIONREQUEST_H_
-#define ALIBABACLOUD_SLB_MODEL_CREATEDOMAINEXTENSIONREQUEST_H_
+#ifndef ALIBABACLOUD_SLB_MODEL_SETTLSCIPHERPOLICYATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_SLB_MODEL_SETTLSCIPHERPOLICYATTRIBUTEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,64 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SLB_EXPORT CreateDomainExtensionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SLB_EXPORT SetTLSCipherPolicyAttributeRequest : public RpcServiceRequest
 			{
-			public:
-				struct ServerCertificate
-				{
-					std::string bindingType;
-					std::string certificateId;
-					std::string standardType;
-				};
 
 			public:
-				CreateDomainExtensionRequest();
-				~CreateDomainExtensionRequest();
+				SetTLSCipherPolicyAttributeRequest();
+				~SetTLSCipherPolicyAttributeRequest();
 
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::vector<ServerCertificate> getServerCertificate()const;
-				void setServerCertificate(const std::vector<ServerCertificate>& serverCertificate);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTLSCipherPolicyId()const;
+				void setTLSCipherPolicyId(const std::string& tLSCipherPolicyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getListenerPort()const;
-				void setListenerPort(int listenerPort);
+				std::vector<std::string> getCiphers()const;
+				void setCiphers(const std::vector<std::string>& ciphers);
+				std::vector<std::string> getTLSVersions()const;
+				void setTLSVersions(const std::vector<std::string>& tLSVersions);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::vector<std::string> getCertificateId()const;
-				void setCertificateId(const std::vector<std::string>& certificateId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getServerCertificateId()const;
-				void setServerCertificateId(const std::string& serverCertificateId);
-				std::string getTags()const;
-				void setTags(const std::string& tags);
-				std::string getLoadBalancerId()const;
-				void setLoadBalancerId(const std::string& loadBalancerId);
-				std::string getDomain()const;
-				void setDomain(const std::string& domain);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string access_key_id_;
 				long resourceOwnerId_;
-				std::vector<ServerCertificate> serverCertificate_;
+				std::string accessKeyId_;
+				std::string tLSCipherPolicyId_;
 				std::string regionId_;
-				int listenerPort_;
+				std::vector<std::string> ciphers_;
+				std::vector<std::string> tLSVersions_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::vector<std::string> certificateId_;
 				long ownerId_;
-				std::string serverCertificateId_;
-				std::string tags_;
-				std::string loadBalancerId_;
-				std::string domain_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SLB_MODEL_CREATEDOMAINEXTENSIONREQUEST_H_
+#endif // !ALIBABACLOUD_SLB_MODEL_SETTLSCIPHERPOLICYATTRIBUTEREQUEST_H_

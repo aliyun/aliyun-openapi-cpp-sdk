@@ -34,7 +34,21 @@ namespace AlibabaCloud
 			public:
 				struct DomainExtension
 				{
+					struct Certificate
+					{
+						std::string certificateId;
+						std::string encryptionAlgorithm;
+					};
+					struct ServerCertificate
+					{
+						std::string certificateId;
+						std::string bindingType;
+						std::string encryptionAlgorithm;
+						std::string standardType;
+					};
 					std::string domainExtensionId;
+					std::vector<DomainExtension::Certificate> certificates;
+					std::vector<DomainExtension::ServerCertificate> serverCertificates;
 					std::string serverCertificateId;
 					std::string domain;
 				};

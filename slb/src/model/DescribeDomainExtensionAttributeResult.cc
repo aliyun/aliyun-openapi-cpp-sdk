@@ -39,6 +39,30 @@ void DescribeDomainExtensionAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allCertificatesNode = value["Certificates"]["Certificate"];
+	for (auto valueCertificatesCertificate : allCertificatesNode)
+	{
+		Certificate certificatesObject;
+		if(!valueCertificatesCertificate["CertificateId"].isNull())
+			certificatesObject.certificateId = valueCertificatesCertificate["CertificateId"].asString();
+		if(!valueCertificatesCertificate["EncryptionAlgorithm"].isNull())
+			certificatesObject.encryptionAlgorithm = valueCertificatesCertificate["EncryptionAlgorithm"].asString();
+		certificates_.push_back(certificatesObject);
+	}
+	auto allServerCertificatesNode = value["ServerCertificates"]["ServerCertificate"];
+	for (auto valueServerCertificatesServerCertificate : allServerCertificatesNode)
+	{
+		ServerCertificate serverCertificatesObject;
+		if(!valueServerCertificatesServerCertificate["CertificateId"].isNull())
+			serverCertificatesObject.certificateId = valueServerCertificatesServerCertificate["CertificateId"].asString();
+		if(!valueServerCertificatesServerCertificate["EncryptionAlgorithm"].isNull())
+			serverCertificatesObject.encryptionAlgorithm = valueServerCertificatesServerCertificate["EncryptionAlgorithm"].asString();
+		if(!valueServerCertificatesServerCertificate["StandardType"].isNull())
+			serverCertificatesObject.standardType = valueServerCertificatesServerCertificate["StandardType"].asString();
+		if(!valueServerCertificatesServerCertificate["BindingType"].isNull())
+			serverCertificatesObject.bindingType = valueServerCertificatesServerCertificate["BindingType"].asString();
+		serverCertificates_.push_back(serverCertificatesObject);
+	}
 	if(!value["DomainExtensionId"].isNull())
 		domainExtensionId_ = value["DomainExtensionId"].asString();
 	if(!value["Domain"].isNull())
@@ -60,6 +84,16 @@ std::string DescribeDomainExtensionAttributeResult::getDomainExtensionId()const
 int DescribeDomainExtensionAttributeResult::getListenerPort()const
 {
 	return listenerPort_;
+}
+
+std::vector<DescribeDomainExtensionAttributeResult::Certificate> DescribeDomainExtensionAttributeResult::getCertificates()const
+{
+	return certificates_;
+}
+
+std::vector<DescribeDomainExtensionAttributeResult::ServerCertificate> DescribeDomainExtensionAttributeResult::getServerCertificates()const
+{
+	return serverCertificates_;
 }
 
 std::string DescribeDomainExtensionAttributeResult::getServerCertificateId()const

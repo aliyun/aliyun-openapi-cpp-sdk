@@ -51,14 +51,14 @@ void DescribeAccessControlListsResult::parse(const std::string &payload)
 			aclsObject.addressIPVersion = valueAclsAcl["AddressIPVersion"].asString();
 		if(!valueAclsAcl["ResourceGroupId"].isNull())
 			aclsObject.resourceGroupId = valueAclsAcl["ResourceGroupId"].asString();
-		auto allTagsNode = allAclsNode["Tags"]["Tag"];
-		for (auto allAclsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueAclsAcl["Tags"]["Tag"];
+		for (auto valueAclsAclTagsTag : allTagsNode)
 		{
 			Acl::Tag tagsObject;
-			if(!allAclsNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allAclsNodeTagsTag["TagKey"].asString();
-			if(!allAclsNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allAclsNodeTagsTag["TagValue"].asString();
+			if(!valueAclsAclTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueAclsAclTagsTag["TagKey"].asString();
+			if(!valueAclsAclTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueAclsAclTagsTag["TagValue"].asString();
 			aclsObject.tags.push_back(tagsObject);
 		}
 		acls_.push_back(aclsObject);

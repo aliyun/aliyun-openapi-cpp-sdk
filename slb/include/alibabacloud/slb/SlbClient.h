@@ -48,10 +48,10 @@
 #include "model/CreateLoadBalancerUDPListenerResult.h"
 #include "model/CreateMasterSlaveServerGroupRequest.h"
 #include "model/CreateMasterSlaveServerGroupResult.h"
-#include "model/CreateMasterSlaveVServerGroupRequest.h"
-#include "model/CreateMasterSlaveVServerGroupResult.h"
 #include "model/CreateRulesRequest.h"
 #include "model/CreateRulesResult.h"
+#include "model/CreateTLSCipherPolicyRequest.h"
+#include "model/CreateTLSCipherPolicyResult.h"
 #include "model/CreateVServerGroupRequest.h"
 #include "model/CreateVServerGroupResult.h"
 #include "model/DeleteAccessControlListRequest.h"
@@ -66,12 +66,12 @@
 #include "model/DeleteLoadBalancerListenerResult.h"
 #include "model/DeleteMasterSlaveServerGroupRequest.h"
 #include "model/DeleteMasterSlaveServerGroupResult.h"
-#include "model/DeleteMasterSlaveVServerGroupRequest.h"
-#include "model/DeleteMasterSlaveVServerGroupResult.h"
 #include "model/DeleteRulesRequest.h"
 #include "model/DeleteRulesResult.h"
 #include "model/DeleteServerCertificateRequest.h"
 #include "model/DeleteServerCertificateResult.h"
+#include "model/DeleteTLSCipherPolicyRequest.h"
+#include "model/DeleteTLSCipherPolicyResult.h"
 #include "model/DeleteVServerGroupRequest.h"
 #include "model/DeleteVServerGroupResult.h"
 #include "model/DescribeAccessControlListAttributeRequest.h"
@@ -96,8 +96,6 @@
 #include "model/DescribeLoadBalancerHTTPListenerAttributeResult.h"
 #include "model/DescribeLoadBalancerHTTPSListenerAttributeRequest.h"
 #include "model/DescribeLoadBalancerHTTPSListenerAttributeResult.h"
-#include "model/DescribeLoadBalancerListenersExRequest.h"
-#include "model/DescribeLoadBalancerListenersExResult.h"
 #include "model/DescribeLoadBalancerTCPListenerAttributeRequest.h"
 #include "model/DescribeLoadBalancerTCPListenerAttributeResult.h"
 #include "model/DescribeLoadBalancerUDPListenerAttributeRequest.h"
@@ -108,10 +106,6 @@
 #include "model/DescribeMasterSlaveServerGroupAttributeResult.h"
 #include "model/DescribeMasterSlaveServerGroupsRequest.h"
 #include "model/DescribeMasterSlaveServerGroupsResult.h"
-#include "model/DescribeMasterSlaveVServerGroupAttributeRequest.h"
-#include "model/DescribeMasterSlaveVServerGroupAttributeResult.h"
-#include "model/DescribeMasterSlaveVServerGroupsRequest.h"
-#include "model/DescribeMasterSlaveVServerGroupsResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeRuleAttributeRequest.h"
@@ -128,6 +122,8 @@
 #include "model/DescribeVServerGroupsResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
+#include "model/ListTLSCipherPoliciesRequest.h"
+#include "model/ListTLSCipherPoliciesResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyLoadBalancerInstanceSpecRequest.h"
@@ -164,8 +160,8 @@
 #include "model/SetLoadBalancerHTTPListenerAttributeResult.h"
 #include "model/SetLoadBalancerHTTPSListenerAttributeRequest.h"
 #include "model/SetLoadBalancerHTTPSListenerAttributeResult.h"
-#include "model/SetLoadBalancerListenerAttributeExRequest.h"
-#include "model/SetLoadBalancerListenerAttributeExResult.h"
+#include "model/SetLoadBalancerModificationProtectionRequest.h"
+#include "model/SetLoadBalancerModificationProtectionResult.h"
 #include "model/SetLoadBalancerNameRequest.h"
 #include "model/SetLoadBalancerNameResult.h"
 #include "model/SetLoadBalancerStatusRequest.h"
@@ -178,6 +174,8 @@
 #include "model/SetRuleResult.h"
 #include "model/SetServerCertificateNameRequest.h"
 #include "model/SetServerCertificateNameResult.h"
+#include "model/SetTLSCipherPolicyAttributeRequest.h"
+#include "model/SetTLSCipherPolicyAttributeResult.h"
 #include "model/SetVServerGroupAttributeRequest.h"
 #include "model/SetVServerGroupAttributeResult.h"
 #include "model/StartLoadBalancerListenerRequest.h"
@@ -240,12 +238,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMasterSlaveServerGroupResult> CreateMasterSlaveServerGroupOutcome;
 			typedef std::future<CreateMasterSlaveServerGroupOutcome> CreateMasterSlaveServerGroupOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::CreateMasterSlaveServerGroupRequest&, const CreateMasterSlaveServerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMasterSlaveServerGroupAsyncHandler;
-			typedef Outcome<Error, Model::CreateMasterSlaveVServerGroupResult> CreateMasterSlaveVServerGroupOutcome;
-			typedef std::future<CreateMasterSlaveVServerGroupOutcome> CreateMasterSlaveVServerGroupOutcomeCallable;
-			typedef std::function<void(const SlbClient*, const Model::CreateMasterSlaveVServerGroupRequest&, const CreateMasterSlaveVServerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMasterSlaveVServerGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateRulesResult> CreateRulesOutcome;
 			typedef std::future<CreateRulesOutcome> CreateRulesOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::CreateRulesRequest&, const CreateRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRulesAsyncHandler;
+			typedef Outcome<Error, Model::CreateTLSCipherPolicyResult> CreateTLSCipherPolicyOutcome;
+			typedef std::future<CreateTLSCipherPolicyOutcome> CreateTLSCipherPolicyOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::CreateTLSCipherPolicyRequest&, const CreateTLSCipherPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTLSCipherPolicyAsyncHandler;
 			typedef Outcome<Error, Model::CreateVServerGroupResult> CreateVServerGroupOutcome;
 			typedef std::future<CreateVServerGroupOutcome> CreateVServerGroupOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::CreateVServerGroupRequest&, const CreateVServerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVServerGroupAsyncHandler;
@@ -267,15 +265,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteMasterSlaveServerGroupResult> DeleteMasterSlaveServerGroupOutcome;
 			typedef std::future<DeleteMasterSlaveServerGroupOutcome> DeleteMasterSlaveServerGroupOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DeleteMasterSlaveServerGroupRequest&, const DeleteMasterSlaveServerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMasterSlaveServerGroupAsyncHandler;
-			typedef Outcome<Error, Model::DeleteMasterSlaveVServerGroupResult> DeleteMasterSlaveVServerGroupOutcome;
-			typedef std::future<DeleteMasterSlaveVServerGroupOutcome> DeleteMasterSlaveVServerGroupOutcomeCallable;
-			typedef std::function<void(const SlbClient*, const Model::DeleteMasterSlaveVServerGroupRequest&, const DeleteMasterSlaveVServerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMasterSlaveVServerGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRulesResult> DeleteRulesOutcome;
 			typedef std::future<DeleteRulesOutcome> DeleteRulesOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DeleteRulesRequest&, const DeleteRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRulesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteServerCertificateResult> DeleteServerCertificateOutcome;
 			typedef std::future<DeleteServerCertificateOutcome> DeleteServerCertificateOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DeleteServerCertificateRequest&, const DeleteServerCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerCertificateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTLSCipherPolicyResult> DeleteTLSCipherPolicyOutcome;
+			typedef std::future<DeleteTLSCipherPolicyOutcome> DeleteTLSCipherPolicyOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DeleteTLSCipherPolicyRequest&, const DeleteTLSCipherPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTLSCipherPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteVServerGroupResult> DeleteVServerGroupOutcome;
 			typedef std::future<DeleteVServerGroupOutcome> DeleteVServerGroupOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DeleteVServerGroupRequest&, const DeleteVServerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVServerGroupAsyncHandler;
@@ -312,9 +310,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLoadBalancerHTTPSListenerAttributeResult> DescribeLoadBalancerHTTPSListenerAttributeOutcome;
 			typedef std::future<DescribeLoadBalancerHTTPSListenerAttributeOutcome> DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest&, const DescribeLoadBalancerHTTPSListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerHTTPSListenerAttributeAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLoadBalancerListenersExResult> DescribeLoadBalancerListenersExOutcome;
-			typedef std::future<DescribeLoadBalancerListenersExOutcome> DescribeLoadBalancerListenersExOutcomeCallable;
-			typedef std::function<void(const SlbClient*, const Model::DescribeLoadBalancerListenersExRequest&, const DescribeLoadBalancerListenersExOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerListenersExAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLoadBalancerTCPListenerAttributeResult> DescribeLoadBalancerTCPListenerAttributeOutcome;
 			typedef std::future<DescribeLoadBalancerTCPListenerAttributeOutcome> DescribeLoadBalancerTCPListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeLoadBalancerTCPListenerAttributeRequest&, const DescribeLoadBalancerTCPListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerTCPListenerAttributeAsyncHandler;
@@ -330,12 +325,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeMasterSlaveServerGroupsResult> DescribeMasterSlaveServerGroupsOutcome;
 			typedef std::future<DescribeMasterSlaveServerGroupsOutcome> DescribeMasterSlaveServerGroupsOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeMasterSlaveServerGroupsRequest&, const DescribeMasterSlaveServerGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMasterSlaveServerGroupsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeMasterSlaveVServerGroupAttributeResult> DescribeMasterSlaveVServerGroupAttributeOutcome;
-			typedef std::future<DescribeMasterSlaveVServerGroupAttributeOutcome> DescribeMasterSlaveVServerGroupAttributeOutcomeCallable;
-			typedef std::function<void(const SlbClient*, const Model::DescribeMasterSlaveVServerGroupAttributeRequest&, const DescribeMasterSlaveVServerGroupAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMasterSlaveVServerGroupAttributeAsyncHandler;
-			typedef Outcome<Error, Model::DescribeMasterSlaveVServerGroupsResult> DescribeMasterSlaveVServerGroupsOutcome;
-			typedef std::future<DescribeMasterSlaveVServerGroupsOutcome> DescribeMasterSlaveVServerGroupsOutcomeCallable;
-			typedef std::function<void(const SlbClient*, const Model::DescribeMasterSlaveVServerGroupsRequest&, const DescribeMasterSlaveVServerGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMasterSlaveVServerGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -360,6 +349,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+			typedef Outcome<Error, Model::ListTLSCipherPoliciesResult> ListTLSCipherPoliciesOutcome;
+			typedef std::future<ListTLSCipherPoliciesOutcome> ListTLSCipherPoliciesOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::ListTLSCipherPoliciesRequest&, const ListTLSCipherPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTLSCipherPoliciesAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -414,9 +406,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetLoadBalancerHTTPSListenerAttributeResult> SetLoadBalancerHTTPSListenerAttributeOutcome;
 			typedef std::future<SetLoadBalancerHTTPSListenerAttributeOutcome> SetLoadBalancerHTTPSListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetLoadBalancerHTTPSListenerAttributeRequest&, const SetLoadBalancerHTTPSListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerHTTPSListenerAttributeAsyncHandler;
-			typedef Outcome<Error, Model::SetLoadBalancerListenerAttributeExResult> SetLoadBalancerListenerAttributeExOutcome;
-			typedef std::future<SetLoadBalancerListenerAttributeExOutcome> SetLoadBalancerListenerAttributeExOutcomeCallable;
-			typedef std::function<void(const SlbClient*, const Model::SetLoadBalancerListenerAttributeExRequest&, const SetLoadBalancerListenerAttributeExOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerListenerAttributeExAsyncHandler;
+			typedef Outcome<Error, Model::SetLoadBalancerModificationProtectionResult> SetLoadBalancerModificationProtectionOutcome;
+			typedef std::future<SetLoadBalancerModificationProtectionOutcome> SetLoadBalancerModificationProtectionOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::SetLoadBalancerModificationProtectionRequest&, const SetLoadBalancerModificationProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerModificationProtectionAsyncHandler;
 			typedef Outcome<Error, Model::SetLoadBalancerNameResult> SetLoadBalancerNameOutcome;
 			typedef std::future<SetLoadBalancerNameOutcome> SetLoadBalancerNameOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetLoadBalancerNameRequest&, const SetLoadBalancerNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerNameAsyncHandler;
@@ -435,6 +427,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetServerCertificateNameResult> SetServerCertificateNameOutcome;
 			typedef std::future<SetServerCertificateNameOutcome> SetServerCertificateNameOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetServerCertificateNameRequest&, const SetServerCertificateNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetServerCertificateNameAsyncHandler;
+			typedef Outcome<Error, Model::SetTLSCipherPolicyAttributeResult> SetTLSCipherPolicyAttributeOutcome;
+			typedef std::future<SetTLSCipherPolicyAttributeOutcome> SetTLSCipherPolicyAttributeOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::SetTLSCipherPolicyAttributeRequest&, const SetTLSCipherPolicyAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetTLSCipherPolicyAttributeAsyncHandler;
 			typedef Outcome<Error, Model::SetVServerGroupAttributeResult> SetVServerGroupAttributeOutcome;
 			typedef std::future<SetVServerGroupAttributeOutcome> SetVServerGroupAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::SetVServerGroupAttributeRequest&, const SetVServerGroupAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetVServerGroupAttributeAsyncHandler;
@@ -500,12 +495,12 @@ namespace AlibabaCloud
 			CreateMasterSlaveServerGroupOutcome createMasterSlaveServerGroup(const Model::CreateMasterSlaveServerGroupRequest &request)const;
 			void createMasterSlaveServerGroupAsync(const Model::CreateMasterSlaveServerGroupRequest& request, const CreateMasterSlaveServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMasterSlaveServerGroupOutcomeCallable createMasterSlaveServerGroupCallable(const Model::CreateMasterSlaveServerGroupRequest& request) const;
-			CreateMasterSlaveVServerGroupOutcome createMasterSlaveVServerGroup(const Model::CreateMasterSlaveVServerGroupRequest &request)const;
-			void createMasterSlaveVServerGroupAsync(const Model::CreateMasterSlaveVServerGroupRequest& request, const CreateMasterSlaveVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateMasterSlaveVServerGroupOutcomeCallable createMasterSlaveVServerGroupCallable(const Model::CreateMasterSlaveVServerGroupRequest& request) const;
 			CreateRulesOutcome createRules(const Model::CreateRulesRequest &request)const;
 			void createRulesAsync(const Model::CreateRulesRequest& request, const CreateRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRulesOutcomeCallable createRulesCallable(const Model::CreateRulesRequest& request) const;
+			CreateTLSCipherPolicyOutcome createTLSCipherPolicy(const Model::CreateTLSCipherPolicyRequest &request)const;
+			void createTLSCipherPolicyAsync(const Model::CreateTLSCipherPolicyRequest& request, const CreateTLSCipherPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTLSCipherPolicyOutcomeCallable createTLSCipherPolicyCallable(const Model::CreateTLSCipherPolicyRequest& request) const;
 			CreateVServerGroupOutcome createVServerGroup(const Model::CreateVServerGroupRequest &request)const;
 			void createVServerGroupAsync(const Model::CreateVServerGroupRequest& request, const CreateVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVServerGroupOutcomeCallable createVServerGroupCallable(const Model::CreateVServerGroupRequest& request) const;
@@ -527,15 +522,15 @@ namespace AlibabaCloud
 			DeleteMasterSlaveServerGroupOutcome deleteMasterSlaveServerGroup(const Model::DeleteMasterSlaveServerGroupRequest &request)const;
 			void deleteMasterSlaveServerGroupAsync(const Model::DeleteMasterSlaveServerGroupRequest& request, const DeleteMasterSlaveServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMasterSlaveServerGroupOutcomeCallable deleteMasterSlaveServerGroupCallable(const Model::DeleteMasterSlaveServerGroupRequest& request) const;
-			DeleteMasterSlaveVServerGroupOutcome deleteMasterSlaveVServerGroup(const Model::DeleteMasterSlaveVServerGroupRequest &request)const;
-			void deleteMasterSlaveVServerGroupAsync(const Model::DeleteMasterSlaveVServerGroupRequest& request, const DeleteMasterSlaveVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteMasterSlaveVServerGroupOutcomeCallable deleteMasterSlaveVServerGroupCallable(const Model::DeleteMasterSlaveVServerGroupRequest& request) const;
 			DeleteRulesOutcome deleteRules(const Model::DeleteRulesRequest &request)const;
 			void deleteRulesAsync(const Model::DeleteRulesRequest& request, const DeleteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRulesOutcomeCallable deleteRulesCallable(const Model::DeleteRulesRequest& request) const;
 			DeleteServerCertificateOutcome deleteServerCertificate(const Model::DeleteServerCertificateRequest &request)const;
 			void deleteServerCertificateAsync(const Model::DeleteServerCertificateRequest& request, const DeleteServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteServerCertificateOutcomeCallable deleteServerCertificateCallable(const Model::DeleteServerCertificateRequest& request) const;
+			DeleteTLSCipherPolicyOutcome deleteTLSCipherPolicy(const Model::DeleteTLSCipherPolicyRequest &request)const;
+			void deleteTLSCipherPolicyAsync(const Model::DeleteTLSCipherPolicyRequest& request, const DeleteTLSCipherPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTLSCipherPolicyOutcomeCallable deleteTLSCipherPolicyCallable(const Model::DeleteTLSCipherPolicyRequest& request) const;
 			DeleteVServerGroupOutcome deleteVServerGroup(const Model::DeleteVServerGroupRequest &request)const;
 			void deleteVServerGroupAsync(const Model::DeleteVServerGroupRequest& request, const DeleteVServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVServerGroupOutcomeCallable deleteVServerGroupCallable(const Model::DeleteVServerGroupRequest& request) const;
@@ -572,9 +567,6 @@ namespace AlibabaCloud
 			DescribeLoadBalancerHTTPSListenerAttributeOutcome describeLoadBalancerHTTPSListenerAttribute(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest &request)const;
 			void describeLoadBalancerHTTPSListenerAttributeAsync(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest& request, const DescribeLoadBalancerHTTPSListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable describeLoadBalancerHTTPSListenerAttributeCallable(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest& request) const;
-			DescribeLoadBalancerListenersExOutcome describeLoadBalancerListenersEx(const Model::DescribeLoadBalancerListenersExRequest &request)const;
-			void describeLoadBalancerListenersExAsync(const Model::DescribeLoadBalancerListenersExRequest& request, const DescribeLoadBalancerListenersExAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLoadBalancerListenersExOutcomeCallable describeLoadBalancerListenersExCallable(const Model::DescribeLoadBalancerListenersExRequest& request) const;
 			DescribeLoadBalancerTCPListenerAttributeOutcome describeLoadBalancerTCPListenerAttribute(const Model::DescribeLoadBalancerTCPListenerAttributeRequest &request)const;
 			void describeLoadBalancerTCPListenerAttributeAsync(const Model::DescribeLoadBalancerTCPListenerAttributeRequest& request, const DescribeLoadBalancerTCPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLoadBalancerTCPListenerAttributeOutcomeCallable describeLoadBalancerTCPListenerAttributeCallable(const Model::DescribeLoadBalancerTCPListenerAttributeRequest& request) const;
@@ -590,12 +582,6 @@ namespace AlibabaCloud
 			DescribeMasterSlaveServerGroupsOutcome describeMasterSlaveServerGroups(const Model::DescribeMasterSlaveServerGroupsRequest &request)const;
 			void describeMasterSlaveServerGroupsAsync(const Model::DescribeMasterSlaveServerGroupsRequest& request, const DescribeMasterSlaveServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMasterSlaveServerGroupsOutcomeCallable describeMasterSlaveServerGroupsCallable(const Model::DescribeMasterSlaveServerGroupsRequest& request) const;
-			DescribeMasterSlaveVServerGroupAttributeOutcome describeMasterSlaveVServerGroupAttribute(const Model::DescribeMasterSlaveVServerGroupAttributeRequest &request)const;
-			void describeMasterSlaveVServerGroupAttributeAsync(const Model::DescribeMasterSlaveVServerGroupAttributeRequest& request, const DescribeMasterSlaveVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeMasterSlaveVServerGroupAttributeOutcomeCallable describeMasterSlaveVServerGroupAttributeCallable(const Model::DescribeMasterSlaveVServerGroupAttributeRequest& request) const;
-			DescribeMasterSlaveVServerGroupsOutcome describeMasterSlaveVServerGroups(const Model::DescribeMasterSlaveVServerGroupsRequest &request)const;
-			void describeMasterSlaveVServerGroupsAsync(const Model::DescribeMasterSlaveVServerGroupsRequest& request, const DescribeMasterSlaveVServerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeMasterSlaveVServerGroupsOutcomeCallable describeMasterSlaveVServerGroupsCallable(const Model::DescribeMasterSlaveVServerGroupsRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -620,6 +606,9 @@ namespace AlibabaCloud
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;
+			ListTLSCipherPoliciesOutcome listTLSCipherPolicies(const Model::ListTLSCipherPoliciesRequest &request)const;
+			void listTLSCipherPoliciesAsync(const Model::ListTLSCipherPoliciesRequest& request, const ListTLSCipherPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTLSCipherPoliciesOutcomeCallable listTLSCipherPoliciesCallable(const Model::ListTLSCipherPoliciesRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
@@ -674,9 +663,9 @@ namespace AlibabaCloud
 			SetLoadBalancerHTTPSListenerAttributeOutcome setLoadBalancerHTTPSListenerAttribute(const Model::SetLoadBalancerHTTPSListenerAttributeRequest &request)const;
 			void setLoadBalancerHTTPSListenerAttributeAsync(const Model::SetLoadBalancerHTTPSListenerAttributeRequest& request, const SetLoadBalancerHTTPSListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLoadBalancerHTTPSListenerAttributeOutcomeCallable setLoadBalancerHTTPSListenerAttributeCallable(const Model::SetLoadBalancerHTTPSListenerAttributeRequest& request) const;
-			SetLoadBalancerListenerAttributeExOutcome setLoadBalancerListenerAttributeEx(const Model::SetLoadBalancerListenerAttributeExRequest &request)const;
-			void setLoadBalancerListenerAttributeExAsync(const Model::SetLoadBalancerListenerAttributeExRequest& request, const SetLoadBalancerListenerAttributeExAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetLoadBalancerListenerAttributeExOutcomeCallable setLoadBalancerListenerAttributeExCallable(const Model::SetLoadBalancerListenerAttributeExRequest& request) const;
+			SetLoadBalancerModificationProtectionOutcome setLoadBalancerModificationProtection(const Model::SetLoadBalancerModificationProtectionRequest &request)const;
+			void setLoadBalancerModificationProtectionAsync(const Model::SetLoadBalancerModificationProtectionRequest& request, const SetLoadBalancerModificationProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetLoadBalancerModificationProtectionOutcomeCallable setLoadBalancerModificationProtectionCallable(const Model::SetLoadBalancerModificationProtectionRequest& request) const;
 			SetLoadBalancerNameOutcome setLoadBalancerName(const Model::SetLoadBalancerNameRequest &request)const;
 			void setLoadBalancerNameAsync(const Model::SetLoadBalancerNameRequest& request, const SetLoadBalancerNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLoadBalancerNameOutcomeCallable setLoadBalancerNameCallable(const Model::SetLoadBalancerNameRequest& request) const;
@@ -695,6 +684,9 @@ namespace AlibabaCloud
 			SetServerCertificateNameOutcome setServerCertificateName(const Model::SetServerCertificateNameRequest &request)const;
 			void setServerCertificateNameAsync(const Model::SetServerCertificateNameRequest& request, const SetServerCertificateNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetServerCertificateNameOutcomeCallable setServerCertificateNameCallable(const Model::SetServerCertificateNameRequest& request) const;
+			SetTLSCipherPolicyAttributeOutcome setTLSCipherPolicyAttribute(const Model::SetTLSCipherPolicyAttributeRequest &request)const;
+			void setTLSCipherPolicyAttributeAsync(const Model::SetTLSCipherPolicyAttributeRequest& request, const SetTLSCipherPolicyAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetTLSCipherPolicyAttributeOutcomeCallable setTLSCipherPolicyAttributeCallable(const Model::SetTLSCipherPolicyAttributeRequest& request) const;
 			SetVServerGroupAttributeOutcome setVServerGroupAttribute(const Model::SetVServerGroupAttributeRequest &request)const;
 			void setVServerGroupAttributeAsync(const Model::SetVServerGroupAttributeRequest& request, const SetVServerGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetVServerGroupAttributeOutcomeCallable setVServerGroupAttributeCallable(const Model::SetVServerGroupAttributeRequest& request) const;
