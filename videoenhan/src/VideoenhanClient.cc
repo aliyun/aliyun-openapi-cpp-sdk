@@ -195,6 +195,42 @@ VideoenhanClient::ChangeVideoSizeOutcomeCallable VideoenhanClient::changeVideoSi
 	return task->get_future();
 }
 
+VideoenhanClient::ConvertHdrVideoOutcome VideoenhanClient::convertHdrVideo(const ConvertHdrVideoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConvertHdrVideoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConvertHdrVideoOutcome(ConvertHdrVideoResult(outcome.result()));
+	else
+		return ConvertHdrVideoOutcome(outcome.error());
+}
+
+void VideoenhanClient::convertHdrVideoAsync(const ConvertHdrVideoRequest& request, const ConvertHdrVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, convertHdrVideo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::ConvertHdrVideoOutcomeCallable VideoenhanClient::convertHdrVideoCallable(const ConvertHdrVideoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConvertHdrVideoOutcome()>>(
+			[this, request]()
+			{
+			return this->convertHdrVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideoenhanClient::EnhanceVideoQualityOutcome VideoenhanClient::enhanceVideoQuality(const EnhanceVideoQualityRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -375,6 +411,42 @@ VideoenhanClient::GetAsyncJobResultOutcomeCallable VideoenhanClient::getAsyncJob
 	return task->get_future();
 }
 
+VideoenhanClient::InterpolateVideoFrameOutcome VideoenhanClient::interpolateVideoFrame(const InterpolateVideoFrameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InterpolateVideoFrameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InterpolateVideoFrameOutcome(InterpolateVideoFrameResult(outcome.result()));
+	else
+		return InterpolateVideoFrameOutcome(outcome.error());
+}
+
+void VideoenhanClient::interpolateVideoFrameAsync(const InterpolateVideoFrameRequest& request, const InterpolateVideoFrameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, interpolateVideoFrame(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::InterpolateVideoFrameOutcomeCallable VideoenhanClient::interpolateVideoFrameCallable(const InterpolateVideoFrameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InterpolateVideoFrameOutcome()>>(
+			[this, request]()
+			{
+			return this->interpolateVideoFrame(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideoenhanClient::MergeVideoFaceOutcome VideoenhanClient::mergeVideoFace(const MergeVideoFaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +513,42 @@ VideoenhanClient::SuperResolveVideoOutcomeCallable VideoenhanClient::superResolv
 			[this, request]()
 			{
 			return this->superResolveVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VideoenhanClient::ToneSdrVideoOutcome VideoenhanClient::toneSdrVideo(const ToneSdrVideoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ToneSdrVideoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ToneSdrVideoOutcome(ToneSdrVideoResult(outcome.result()));
+	else
+		return ToneSdrVideoOutcome(outcome.error());
+}
+
+void VideoenhanClient::toneSdrVideoAsync(const ToneSdrVideoRequest& request, const ToneSdrVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, toneSdrVideo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::ToneSdrVideoOutcomeCallable VideoenhanClient::toneSdrVideoCallable(const ToneSdrVideoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ToneSdrVideoOutcome()>>(
+			[this, request]()
+			{
+			return this->toneSdrVideo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

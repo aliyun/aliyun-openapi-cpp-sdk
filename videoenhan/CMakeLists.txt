@@ -29,6 +29,8 @@ set(videoenhan_public_header_model
 	include/alibabacloud/videoenhan/model/AdjustVideoColorResult.h
 	include/alibabacloud/videoenhan/model/ChangeVideoSizeRequest.h
 	include/alibabacloud/videoenhan/model/ChangeVideoSizeResult.h
+	include/alibabacloud/videoenhan/model/ConvertHdrVideoRequest.h
+	include/alibabacloud/videoenhan/model/ConvertHdrVideoResult.h
 	include/alibabacloud/videoenhan/model/EnhanceVideoQualityRequest.h
 	include/alibabacloud/videoenhan/model/EnhanceVideoQualityResult.h
 	include/alibabacloud/videoenhan/model/EraseVideoLogoRequest.h
@@ -39,10 +41,14 @@ set(videoenhan_public_header_model
 	include/alibabacloud/videoenhan/model/GenerateVideoResult.h
 	include/alibabacloud/videoenhan/model/GetAsyncJobResultRequest.h
 	include/alibabacloud/videoenhan/model/GetAsyncJobResultResult.h
+	include/alibabacloud/videoenhan/model/InterpolateVideoFrameRequest.h
+	include/alibabacloud/videoenhan/model/InterpolateVideoFrameResult.h
 	include/alibabacloud/videoenhan/model/MergeVideoFaceRequest.h
 	include/alibabacloud/videoenhan/model/MergeVideoFaceResult.h
 	include/alibabacloud/videoenhan/model/SuperResolveVideoRequest.h
-	include/alibabacloud/videoenhan/model/SuperResolveVideoResult.h )
+	include/alibabacloud/videoenhan/model/SuperResolveVideoResult.h
+	include/alibabacloud/videoenhan/model/ToneSdrVideoRequest.h
+	include/alibabacloud/videoenhan/model/ToneSdrVideoResult.h )
 
 set(videoenhan_src 
 	src/VideoenhanClient.cc
@@ -54,6 +60,8 @@ set(videoenhan_src
 	src/model/AdjustVideoColorResult.cc
 	src/model/ChangeVideoSizeRequest.cc
 	src/model/ChangeVideoSizeResult.cc
+	src/model/ConvertHdrVideoRequest.cc
+	src/model/ConvertHdrVideoResult.cc
 	src/model/EnhanceVideoQualityRequest.cc
 	src/model/EnhanceVideoQualityResult.cc
 	src/model/EraseVideoLogoRequest.cc
@@ -64,10 +72,14 @@ set(videoenhan_src
 	src/model/GenerateVideoResult.cc
 	src/model/GetAsyncJobResultRequest.cc
 	src/model/GetAsyncJobResultResult.cc
+	src/model/InterpolateVideoFrameRequest.cc
+	src/model/InterpolateVideoFrameResult.cc
 	src/model/MergeVideoFaceRequest.cc
 	src/model/MergeVideoFaceResult.cc
 	src/model/SuperResolveVideoRequest.cc
-	src/model/SuperResolveVideoResult.cc )
+	src/model/SuperResolveVideoResult.cc
+	src/model/ToneSdrVideoRequest.cc
+	src/model/ToneSdrVideoResult.cc )
 
 add_library(videoenhan ${LIB_TYPE}
 	${videoenhan_public_header}
