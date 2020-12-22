@@ -27,6 +27,17 @@ SegmentAnimalRequest::SegmentAnimalRequest() :
 SegmentAnimalRequest::~SegmentAnimalRequest()
 {}
 
+std::string SegmentAnimalRequest::getReturnForm()const
+{
+	return returnForm_;
+}
+
+void SegmentAnimalRequest::setReturnForm(const std::string& returnForm)
+{
+	returnForm_ = returnForm;
+	setParameter("ReturnForm", returnForm);
+}
+
 std::string SegmentAnimalRequest::getImageURL()const
 {
 	return imageURL_;

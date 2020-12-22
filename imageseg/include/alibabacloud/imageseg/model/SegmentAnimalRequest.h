@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				SegmentAnimalRequest();
 				~SegmentAnimalRequest();
 
+				std::string getReturnForm()const;
+				void setReturnForm(const std::string& returnForm);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				std::string returnForm_;
 				std::string imageURL_;
 
 			};

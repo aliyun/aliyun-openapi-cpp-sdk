@@ -27,6 +27,17 @@ SegmentCommonImageRequest::SegmentCommonImageRequest() :
 SegmentCommonImageRequest::~SegmentCommonImageRequest()
 {}
 
+std::string SegmentCommonImageRequest::getReturnForm()const
+{
+	return returnForm_;
+}
+
+void SegmentCommonImageRequest::setReturnForm(const std::string& returnForm)
+{
+	returnForm_ = returnForm;
+	setParameter("ReturnForm", returnForm);
+}
+
 std::string SegmentCommonImageRequest::getImageURL()const
 {
 	return imageURL_;
