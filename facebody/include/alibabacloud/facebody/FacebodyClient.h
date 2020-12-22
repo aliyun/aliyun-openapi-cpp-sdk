@@ -58,6 +58,8 @@
 #include "model/DetectMaskResult.h"
 #include "model/DetectPedestrianRequest.h"
 #include "model/DetectPedestrianResult.h"
+#include "model/DetectPedestrianIntrusionRequest.h"
+#include "model/DetectPedestrianIntrusionResult.h"
 #include "model/DetectVideoLivingFaceRequest.h"
 #include "model/DetectVideoLivingFaceResult.h"
 #include "model/EnhanceFaceRequest.h"
@@ -165,6 +167,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectPedestrianResult> DetectPedestrianOutcome;
 			typedef std::future<DetectPedestrianOutcome> DetectPedestrianOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectPedestrianRequest&, const DetectPedestrianOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectPedestrianAsyncHandler;
+			typedef Outcome<Error, Model::DetectPedestrianIntrusionResult> DetectPedestrianIntrusionOutcome;
+			typedef std::future<DetectPedestrianIntrusionOutcome> DetectPedestrianIntrusionOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::DetectPedestrianIntrusionRequest&, const DetectPedestrianIntrusionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectPedestrianIntrusionAsyncHandler;
 			typedef Outcome<Error, Model::DetectVideoLivingFaceResult> DetectVideoLivingFaceOutcome;
 			typedef std::future<DetectVideoLivingFaceOutcome> DetectVideoLivingFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectVideoLivingFaceRequest&, const DetectVideoLivingFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectVideoLivingFaceAsyncHandler;
@@ -290,6 +295,9 @@ namespace AlibabaCloud
 			DetectPedestrianOutcome detectPedestrian(const Model::DetectPedestrianRequest &request)const;
 			void detectPedestrianAsync(const Model::DetectPedestrianRequest& request, const DetectPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectPedestrianOutcomeCallable detectPedestrianCallable(const Model::DetectPedestrianRequest& request) const;
+			DetectPedestrianIntrusionOutcome detectPedestrianIntrusion(const Model::DetectPedestrianIntrusionRequest &request)const;
+			void detectPedestrianIntrusionAsync(const Model::DetectPedestrianIntrusionRequest& request, const DetectPedestrianIntrusionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectPedestrianIntrusionOutcomeCallable detectPedestrianIntrusionCallable(const Model::DetectPedestrianIntrusionRequest& request) const;
 			DetectVideoLivingFaceOutcome detectVideoLivingFace(const Model::DetectVideoLivingFaceRequest &request)const;
 			void detectVideoLivingFaceAsync(const Model::DetectVideoLivingFaceRequest& request, const DetectVideoLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectVideoLivingFaceOutcomeCallable detectVideoLivingFaceCallable(const Model::DetectVideoLivingFaceRequest& request) const;

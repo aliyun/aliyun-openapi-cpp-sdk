@@ -699,6 +699,42 @@ FacebodyClient::DetectPedestrianOutcomeCallable FacebodyClient::detectPedestrian
 	return task->get_future();
 }
 
+FacebodyClient::DetectPedestrianIntrusionOutcome FacebodyClient::detectPedestrianIntrusion(const DetectPedestrianIntrusionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectPedestrianIntrusionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectPedestrianIntrusionOutcome(DetectPedestrianIntrusionResult(outcome.result()));
+	else
+		return DetectPedestrianIntrusionOutcome(outcome.error());
+}
+
+void FacebodyClient::detectPedestrianIntrusionAsync(const DetectPedestrianIntrusionRequest& request, const DetectPedestrianIntrusionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectPedestrianIntrusion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::DetectPedestrianIntrusionOutcomeCallable FacebodyClient::detectPedestrianIntrusionCallable(const DetectPedestrianIntrusionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectPedestrianIntrusionOutcome()>>(
+			[this, request]()
+			{
+			return this->detectPedestrianIntrusion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::DetectVideoLivingFaceOutcome FacebodyClient::detectVideoLivingFace(const DetectVideoLivingFaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
