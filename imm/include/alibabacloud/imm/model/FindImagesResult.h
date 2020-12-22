@@ -100,8 +100,6 @@ namespace AlibabaCloud
 							std::string beard;
 							float beardConfidence;
 							HeadPose headPose;
-							float raceConfidence;
-							std::string race;
 							std::string glasses;
 							float maskConfidence;
 							std::string mask;
@@ -132,7 +130,7 @@ namespace AlibabaCloud
 						struct OCRBoundary
 						{
 							int left;
-							int left1;
+							int top;
 							int height;
 							int width;
 						};

@@ -53,8 +53,6 @@ namespace AlibabaCloud
 						std::string beard;
 						float beardConfidence;
 						HeadPose headPose;
-						std::string race;
-						float raceConfidence;
 						std::string glasses;
 						std::string mask;
 						float maskConfidence;

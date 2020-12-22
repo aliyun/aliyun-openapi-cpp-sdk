@@ -149,14 +149,10 @@ void ListVideoFramesResult::parse(const std::string &payload)
 				facesObject.faceAttributes.glassesConfidence = std::stof(faceAttributesNode["GlassesConfidence"].asString());
 			if(!faceAttributesNode["Glasses"].isNull())
 				facesObject.faceAttributes.glasses = faceAttributesNode["Glasses"].asString();
-			if(!faceAttributesNode["RaceConfidence"].isNull())
-				facesObject.faceAttributes.raceConfidence = std::stof(faceAttributesNode["RaceConfidence"].asString());
 			if(!faceAttributesNode["Beard"].isNull())
 				facesObject.faceAttributes.beard = faceAttributesNode["Beard"].asString();
 			if(!faceAttributesNode["MaskConfidence"].isNull())
 				facesObject.faceAttributes.maskConfidence = std::stof(faceAttributesNode["MaskConfidence"].asString());
-			if(!faceAttributesNode["Race"].isNull())
-				facesObject.faceAttributes.race = faceAttributesNode["Race"].asString();
 			if(!faceAttributesNode["BeardConfidence"].isNull())
 				facesObject.faceAttributes.beardConfidence = std::stof(faceAttributesNode["BeardConfidence"].asString());
 			if(!faceAttributesNode["Mask"].isNull())

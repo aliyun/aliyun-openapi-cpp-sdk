@@ -70,16 +70,12 @@ void DetectImageFacesResult::parse(const std::string &payload)
 			facesObject.faceAttributes.glasses = faceAttributesNode["Glasses"].asString();
 		if(!faceAttributesNode["Beard"].isNull())
 			facesObject.faceAttributes.beard = faceAttributesNode["Beard"].asString();
-		if(!faceAttributesNode["Race"].isNull())
-			facesObject.faceAttributes.race = faceAttributesNode["Race"].asString();
 		if(!faceAttributesNode["Mask"].isNull())
 			facesObject.faceAttributes.mask = faceAttributesNode["Mask"].asString();
 		if(!faceAttributesNode["GlassesConfidence"].isNull())
 			facesObject.faceAttributes.glassesConfidence = std::stof(faceAttributesNode["GlassesConfidence"].asString());
 		if(!faceAttributesNode["BeardConfidence"].isNull())
 			facesObject.faceAttributes.beardConfidence = std::stof(faceAttributesNode["BeardConfidence"].asString());
-		if(!faceAttributesNode["RaceConfidence"].isNull())
-			facesObject.faceAttributes.raceConfidence = std::stof(faceAttributesNode["RaceConfidence"].asString());
 		if(!faceAttributesNode["MaskConfidence"].isNull())
 			facesObject.faceAttributes.maskConfidence = std::stof(faceAttributesNode["MaskConfidence"].asString());
 		auto faceBoundaryNode = faceAttributesNode["FaceBoundary"];
