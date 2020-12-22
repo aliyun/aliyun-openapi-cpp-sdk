@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListQualityResultsByRuleResult : public ServiceResult
 			{
 			public:
-				struct QualityResults
+				struct Data
 				{
 					struct RuleChecksItem
 					{
@@ -102,12 +102,20 @@ namespace AlibabaCloud
 				ListQualityResultsByRuleResult();
 				explicit ListQualityResultsByRuleResult(const std::string &payload);
 				~ListQualityResultsByRuleResult();
-				QualityResults getQualityResults()const;
+				int getHttpStatusCode()const;
+				Data getData()const;
+				std::string getErrorCode()const;
+				std::string getErrorMessage()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				QualityResults qualityResults_;
+				int httpStatusCode_;
+				Data data_;
+				std::string errorCode_;
+				std::string errorMessage_;
+				bool success_;
 
 			};
 		}
