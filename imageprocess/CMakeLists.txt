@@ -35,6 +35,8 @@ set(imageprocess_public_header_model
 	include/alibabacloud/imageprocess/model/DetectKneeXRayResult.h
 	include/alibabacloud/imageprocess/model/DetectLungNoduleRequest.h
 	include/alibabacloud/imageprocess/model/DetectLungNoduleResult.h
+	include/alibabacloud/imageprocess/model/DetectRibFractureRequest.h
+	include/alibabacloud/imageprocess/model/DetectRibFractureResult.h
 	include/alibabacloud/imageprocess/model/DetectSkinDiseaseRequest.h
 	include/alibabacloud/imageprocess/model/DetectSkinDiseaseResult.h
 	include/alibabacloud/imageprocess/model/DetectSpineMRIRequest.h
@@ -45,6 +47,8 @@ set(imageprocess_public_header_model
 	include/alibabacloud/imageprocess/model/RunCTRegistrationResult.h
 	include/alibabacloud/imageprocess/model/RunMedQARequest.h
 	include/alibabacloud/imageprocess/model/RunMedQAResult.h
+	include/alibabacloud/imageprocess/model/ScreenChestCTRequest.h
+	include/alibabacloud/imageprocess/model/ScreenChestCTResult.h
 	include/alibabacloud/imageprocess/model/TranslateMedRequest.h
 	include/alibabacloud/imageprocess/model/TranslateMedResult.h )
 
@@ -64,6 +68,8 @@ set(imageprocess_src
 	src/model/DetectKneeXRayResult.cc
 	src/model/DetectLungNoduleRequest.cc
 	src/model/DetectLungNoduleResult.cc
+	src/model/DetectRibFractureRequest.cc
+	src/model/DetectRibFractureResult.cc
 	src/model/DetectSkinDiseaseRequest.cc
 	src/model/DetectSkinDiseaseResult.cc
 	src/model/DetectSpineMRIRequest.cc
@@ -74,6 +80,8 @@ set(imageprocess_src
 	src/model/RunCTRegistrationResult.cc
 	src/model/RunMedQARequest.cc
 	src/model/RunMedQAResult.cc
+	src/model/ScreenChestCTRequest.cc
+	src/model/ScreenChestCTResult.cc
 	src/model/TranslateMedRequest.cc
 	src/model/TranslateMedResult.cc )
 

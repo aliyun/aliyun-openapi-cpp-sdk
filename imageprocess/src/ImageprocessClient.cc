@@ -303,6 +303,42 @@ ImageprocessClient::DetectLungNoduleOutcomeCallable ImageprocessClient::detectLu
 	return task->get_future();
 }
 
+ImageprocessClient::DetectRibFractureOutcome ImageprocessClient::detectRibFracture(const DetectRibFractureRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectRibFractureOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectRibFractureOutcome(DetectRibFractureResult(outcome.result()));
+	else
+		return DetectRibFractureOutcome(outcome.error());
+}
+
+void ImageprocessClient::detectRibFractureAsync(const DetectRibFractureRequest& request, const DetectRibFractureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectRibFracture(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::DetectRibFractureOutcomeCallable ImageprocessClient::detectRibFractureCallable(const DetectRibFractureRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectRibFractureOutcome()>>(
+			[this, request]()
+			{
+			return this->detectRibFracture(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::DetectSkinDiseaseOutcome ImageprocessClient::detectSkinDisease(const DetectSkinDiseaseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,42 @@ ImageprocessClient::RunMedQAOutcomeCallable ImageprocessClient::runMedQACallable
 			[this, request]()
 			{
 			return this->runMedQA(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::ScreenChestCTOutcome ImageprocessClient::screenChestCT(const ScreenChestCTRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScreenChestCTOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScreenChestCTOutcome(ScreenChestCTResult(outcome.result()));
+	else
+		return ScreenChestCTOutcome(outcome.error());
+}
+
+void ImageprocessClient::screenChestCTAsync(const ScreenChestCTRequest& request, const ScreenChestCTAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, screenChestCT(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::ScreenChestCTOutcomeCallable ImageprocessClient::screenChestCTCallable(const ScreenChestCTRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScreenChestCTOutcome()>>(
+			[this, request]()
+			{
+			return this->screenChestCT(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
