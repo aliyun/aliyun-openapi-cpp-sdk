@@ -95,28 +95,13 @@ namespace AlibabaCloud
 						struct OCRBoundary
 						{
 							int left;
-							int left1;
+							int top;
 							int height;
 							int width;
 						};
 						OCRBoundary oCRBoundary;
 						float oCRConfidence;
 						std::string oCRContents;
-					};
-					struct CelebrityItem
-					{
-						struct CelebrityBoundary
-						{
-							int left;
-							int top;
-							int height;
-							int width;
-						};
-						std::string celebrityName;
-						CelebrityBoundary celebrityBoundary;
-						std::string celebrityGender;
-						std::string celebrityLibraryName;
-						float celebrityConfidence;
 					};
 					std::string modifyTime;
 					std::string sourceType;
@@ -131,7 +116,6 @@ namespace AlibabaCloud
 					std::string remarksC;
 					std::string remarksD;
 					int imageWidth;
-					std::vector<FramesItem::CelebrityItem> celebrity;
 					std::string sourcePosition;
 					std::vector<FramesItem::FacesItem> faces;
 					std::vector<FramesItem::TagsItem> tags;
@@ -144,12 +128,9 @@ namespace AlibabaCloud
 					std::string oCRStatus;
 					std::string oCRModifyTime;
 					std::string imageTime;
-					std::string celebrityModifyTime;
 					int imageHeight;
 					std::string tagsStatus;
 					std::string oCRFailReason;
-					std::string celebrityFailReason;
-					std::string celebrityStatus;
 					std::vector<FramesItem::OCRItem> oCR;
 					int fileSize;
 					std::string location;

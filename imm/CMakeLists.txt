@@ -75,8 +75,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/DescribeRegionsResult.h
 	include/alibabacloud/imm/model/DetectImageBodiesRequest.h
 	include/alibabacloud/imm/model/DetectImageBodiesResult.h
-	include/alibabacloud/imm/model/DetectImageCelebrityRequest.h
-	include/alibabacloud/imm/model/DetectImageCelebrityResult.h
 	include/alibabacloud/imm/model/DetectImageFacesRequest.h
 	include/alibabacloud/imm/model/DetectImageFacesResult.h
 	include/alibabacloud/imm/model/DetectImageLogosRequest.h
@@ -236,8 +234,6 @@ set(imm_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DetectImageBodiesRequest.cc
 	src/model/DetectImageBodiesResult.cc
-	src/model/DetectImageCelebrityRequest.cc
-	src/model/DetectImageCelebrityResult.cc
 	src/model/DetectImageFacesRequest.cc
 	src/model/DetectImageFacesResult.cc
 	src/model/DetectImageLogosRequest.cc

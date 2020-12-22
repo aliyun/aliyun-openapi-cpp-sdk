@@ -1023,42 +1023,6 @@ ImmClient::DetectImageBodiesOutcomeCallable ImmClient::detectImageBodiesCallable
 	return task->get_future();
 }
 
-ImmClient::DetectImageCelebrityOutcome ImmClient::detectImageCelebrity(const DetectImageCelebrityRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectImageCelebrityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectImageCelebrityOutcome(DetectImageCelebrityResult(outcome.result()));
-	else
-		return DetectImageCelebrityOutcome(outcome.error());
-}
-
-void ImmClient::detectImageCelebrityAsync(const DetectImageCelebrityRequest& request, const DetectImageCelebrityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectImageCelebrity(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::DetectImageCelebrityOutcomeCallable ImmClient::detectImageCelebrityCallable(const DetectImageCelebrityRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectImageCelebrityOutcome()>>(
-			[this, request]()
-			{
-			return this->detectImageCelebrity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::DetectImageFacesOutcome ImmClient::detectImageFaces(const DetectImageFacesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

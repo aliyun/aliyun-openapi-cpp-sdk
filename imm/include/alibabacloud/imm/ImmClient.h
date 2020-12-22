@@ -76,8 +76,6 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DetectImageBodiesRequest.h"
 #include "model/DetectImageBodiesResult.h"
-#include "model/DetectImageCelebrityRequest.h"
-#include "model/DetectImageCelebrityResult.h"
 #include "model/DetectImageFacesRequest.h"
 #include "model/DetectImageFacesResult.h"
 #include "model/DetectImageLogosRequest.h"
@@ -270,9 +268,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectImageBodiesResult> DetectImageBodiesOutcome;
 			typedef std::future<DetectImageBodiesOutcome> DetectImageBodiesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DetectImageBodiesRequest&, const DetectImageBodiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageBodiesAsyncHandler;
-			typedef Outcome<Error, Model::DetectImageCelebrityResult> DetectImageCelebrityOutcome;
-			typedef std::future<DetectImageCelebrityOutcome> DetectImageCelebrityOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::DetectImageCelebrityRequest&, const DetectImageCelebrityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageCelebrityAsyncHandler;
 			typedef Outcome<Error, Model::DetectImageFacesResult> DetectImageFacesOutcome;
 			typedef std::future<DetectImageFacesOutcome> DetectImageFacesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DetectImageFacesRequest&, const DetectImageFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageFacesAsyncHandler;
@@ -512,9 +507,6 @@ namespace AlibabaCloud
 			DetectImageBodiesOutcome detectImageBodies(const Model::DetectImageBodiesRequest &request)const;
 			void detectImageBodiesAsync(const Model::DetectImageBodiesRequest& request, const DetectImageBodiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectImageBodiesOutcomeCallable detectImageBodiesCallable(const Model::DetectImageBodiesRequest& request) const;
-			DetectImageCelebrityOutcome detectImageCelebrity(const Model::DetectImageCelebrityRequest &request)const;
-			void detectImageCelebrityAsync(const Model::DetectImageCelebrityRequest& request, const DetectImageCelebrityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectImageCelebrityOutcomeCallable detectImageCelebrityCallable(const Model::DetectImageCelebrityRequest& request) const;
 			DetectImageFacesOutcome detectImageFaces(const Model::DetectImageFacesRequest &request)const;
 			void detectImageFacesAsync(const Model::DetectImageFacesRequest& request, const DetectImageFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectImageFacesOutcomeCallable detectImageFacesCallable(const Model::DetectImageFacesRequest& request) const;

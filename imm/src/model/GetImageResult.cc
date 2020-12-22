@@ -161,29 +161,6 @@ void GetImageResult::parse(const std::string &payload)
 			tagsObject.parentTagName = valueTagsTagsItem["ParentTagName"].asString();
 		tags_.push_back(tagsObject);
 	}
-	auto allCelebrityNode = value["Celebrity"]["CelebrityItem"];
-	for (auto valueCelebrityCelebrityItem : allCelebrityNode)
-	{
-		CelebrityItem celebrityObject;
-		if(!valueCelebrityCelebrityItem["CelebrityName"].isNull())
-			celebrityObject.celebrityName = valueCelebrityCelebrityItem["CelebrityName"].asString();
-		if(!valueCelebrityCelebrityItem["CelebrityGender"].isNull())
-			celebrityObject.celebrityGender = valueCelebrityCelebrityItem["CelebrityGender"].asString();
-		if(!valueCelebrityCelebrityItem["CelebrityConfidence"].isNull())
-			celebrityObject.celebrityConfidence = std::stof(valueCelebrityCelebrityItem["CelebrityConfidence"].asString());
-		if(!valueCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
-			celebrityObject.celebrityLibraryName = valueCelebrityCelebrityItem["CelebrityLibraryName"].asString();
-		auto celebrityBoundaryNode = value["CelebrityBoundary"];
-		if(!celebrityBoundaryNode["Left"].isNull())
-			celebrityObject.celebrityBoundary.left = std::stoi(celebrityBoundaryNode["Left"].asString());
-		if(!celebrityBoundaryNode["Top"].isNull())
-			celebrityObject.celebrityBoundary.top = std::stoi(celebrityBoundaryNode["Top"].asString());
-		if(!celebrityBoundaryNode["Width"].isNull())
-			celebrityObject.celebrityBoundary.width = std::stoi(celebrityBoundaryNode["Width"].asString());
-		if(!celebrityBoundaryNode["Height"].isNull())
-			celebrityObject.celebrityBoundary.height = std::stoi(celebrityBoundaryNode["Height"].asString());
-		celebrity_.push_back(celebrityObject);
-	}
 	auto imageQualityNode = value["ImageQuality"];
 	if(!imageQualityNode["OverallScore"].isNull())
 		imageQuality_.overallScore = std::stof(imageQualityNode["OverallScore"].asString());
@@ -268,12 +245,6 @@ void GetImageResult::parse(const std::string &payload)
 		tagsFailReason_ = value["TagsFailReason"].asString();
 	if(!value["TagsModifyTime"].isNull())
 		tagsModifyTime_ = value["TagsModifyTime"].asString();
-	if(!value["CelebrityStatus"].isNull())
-		celebrityStatus_ = value["CelebrityStatus"].asString();
-	if(!value["CelebrityModifyTime"].isNull())
-		celebrityModifyTime_ = value["CelebrityModifyTime"].asString();
-	if(!value["CelebrityFailReason"].isNull())
-		celebrityFailReason_ = value["CelebrityFailReason"].asString();
 	if(!value["TagsStatus"].isNull())
 		tagsStatus_ = value["TagsStatus"].asString();
 	if(!value["RemarksC"].isNull())
@@ -312,6 +283,11 @@ GetImageResult::ImageQuality GetImageResult::getImageQuality()const
 	return imageQuality_;
 }
 
+std::string GetImageResult::getModifyTime()const
+{
+	return modifyTime_;
+}
+
 GetImageResult::Address GetImageResult::getAddress()const
 {
 	return address_;
@@ -332,9 +308,19 @@ std::string GetImageResult::getFacesFailReason()const
 	return facesFailReason_;
 }
 
+std::string GetImageResult::getCroppingSuggestionStatus()const
+{
+	return croppingSuggestionStatus_;
+}
+
 std::string GetImageResult::getCroppingSuggestionFailReason()const
 {
 	return croppingSuggestionFailReason_;
+}
+
+std::string GetImageResult::getRemarksA()const
+{
+	return remarksA_;
 }
 
 std::string GetImageResult::getAddressFailReason()const
@@ -342,9 +328,24 @@ std::string GetImageResult::getAddressFailReason()const
 	return addressFailReason_;
 }
 
+std::string GetImageResult::getRemarksB()const
+{
+	return remarksB_;
+}
+
+std::string GetImageResult::getAddressModifyTime()const
+{
+	return addressModifyTime_;
+}
+
 std::string GetImageResult::getImageFormat()const
 {
 	return imageFormat_;
+}
+
+std::string GetImageResult::getTagsFailReason()const
+{
+	return tagsFailReason_;
 }
 
 std::string GetImageResult::getRemarksArrayB()const
@@ -357,14 +358,24 @@ std::string GetImageResult::getExif()const
 	return exif_;
 }
 
+std::string GetImageResult::getFacesModifyTime()const
+{
+	return facesModifyTime_;
+}
+
+std::string GetImageResult::getRemarksC()const
+{
+	return remarksC_;
+}
+
+std::string GetImageResult::getRemarksD()const
+{
+	return remarksD_;
+}
+
 int GetImageResult::getImageWidth()const
 {
 	return imageWidth_;
-}
-
-std::vector<GetImageResult::CelebrityItem> GetImageResult::getCelebrity()const
-{
-	return celebrity_;
 }
 
 std::string GetImageResult::getSourcePosition()const
@@ -392,6 +403,11 @@ std::string GetImageResult::getAddressStatus()const
 	return addressStatus_;
 }
 
+std::string GetImageResult::getFacesStatus()const
+{
+	return facesStatus_;
+}
+
 std::string GetImageResult::getImageQualityModifyTime()const
 {
 	return imageQualityModifyTime_;
@@ -400,121 +416,6 @@ std::string GetImageResult::getImageQualityModifyTime()const
 std::vector<GetImageResult::CroppingSuggestionItem> GetImageResult::getCroppingSuggestion()const
 {
 	return croppingSuggestion_;
-}
-
-std::string GetImageResult::getImageQualityFailReason()const
-{
-	return imageQualityFailReason_;
-}
-
-std::string GetImageResult::getImageUri()const
-{
-	return imageUri_;
-}
-
-std::string GetImageResult::getOrientation()const
-{
-	return orientation_;
-}
-
-std::string GetImageResult::getImageTime()const
-{
-	return imageTime_;
-}
-
-std::string GetImageResult::getCroppingSuggestionModifyTime()const
-{
-	return croppingSuggestionModifyTime_;
-}
-
-std::string GetImageResult::getCelebrityModifyTime()const
-{
-	return celebrityModifyTime_;
-}
-
-int GetImageResult::getImageHeight()const
-{
-	return imageHeight_;
-}
-
-std::string GetImageResult::getTagsStatus()const
-{
-	return tagsStatus_;
-}
-
-std::string GetImageResult::getImageQualityStatus()const
-{
-	return imageQualityStatus_;
-}
-
-std::string GetImageResult::getCelebrityFailReason()const
-{
-	return celebrityFailReason_;
-}
-
-std::string GetImageResult::getSetId()const
-{
-	return setId_;
-}
-
-std::string GetImageResult::getCelebrityStatus()const
-{
-	return celebrityStatus_;
-}
-
-int GetImageResult::getFileSize()const
-{
-	return fileSize_;
-}
-
-std::string GetImageResult::getModifyTime()const
-{
-	return modifyTime_;
-}
-
-std::string GetImageResult::getCroppingSuggestionStatus()const
-{
-	return croppingSuggestionStatus_;
-}
-
-std::string GetImageResult::getRemarksA()const
-{
-	return remarksA_;
-}
-
-std::string GetImageResult::getRemarksB()const
-{
-	return remarksB_;
-}
-
-std::string GetImageResult::getAddressModifyTime()const
-{
-	return addressModifyTime_;
-}
-
-std::string GetImageResult::getTagsFailReason()const
-{
-	return tagsFailReason_;
-}
-
-std::string GetImageResult::getFacesModifyTime()const
-{
-	return facesModifyTime_;
-}
-
-std::string GetImageResult::getRemarksC()const
-{
-	return remarksC_;
-}
-
-std::string GetImageResult::getRemarksD()const
-{
-	return remarksD_;
-}
-
-std::string GetImageResult::getFacesStatus()const
-{
-	return facesStatus_;
 }
 
 std::string GetImageResult::getCreateTime()const
@@ -532,6 +433,21 @@ std::string GetImageResult::getExternalId()const
 	return externalId_;
 }
 
+std::string GetImageResult::getImageQualityFailReason()const
+{
+	return imageQualityFailReason_;
+}
+
+std::string GetImageResult::getImageUri()const
+{
+	return imageUri_;
+}
+
+std::string GetImageResult::getOrientation()const
+{
+	return orientation_;
+}
+
 std::string GetImageResult::getOCRStatus()const
 {
 	return oCRStatus_;
@@ -542,14 +458,49 @@ std::string GetImageResult::getOCRModifyTime()const
 	return oCRModifyTime_;
 }
 
+std::string GetImageResult::getImageTime()const
+{
+	return imageTime_;
+}
+
+std::string GetImageResult::getCroppingSuggestionModifyTime()const
+{
+	return croppingSuggestionModifyTime_;
+}
+
+int GetImageResult::getImageHeight()const
+{
+	return imageHeight_;
+}
+
+std::string GetImageResult::getTagsStatus()const
+{
+	return tagsStatus_;
+}
+
+std::string GetImageResult::getImageQualityStatus()const
+{
+	return imageQualityStatus_;
+}
+
 std::string GetImageResult::getOCRFailReason()const
 {
 	return oCRFailReason_;
 }
 
+std::string GetImageResult::getSetId()const
+{
+	return setId_;
+}
+
 std::vector<GetImageResult::OCRItem> GetImageResult::getOCR()const
 {
 	return oCR_;
+}
+
+int GetImageResult::getFileSize()const
+{
+	return fileSize_;
 }
 
 std::string GetImageResult::getLocation()const

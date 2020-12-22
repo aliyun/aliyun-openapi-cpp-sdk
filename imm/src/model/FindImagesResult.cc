@@ -91,12 +91,6 @@ void FindImagesResult::parse(const std::string &payload)
 			imagesObject.tagsFailReason = valueImagesImagesItem["TagsFailReason"].asString();
 		if(!valueImagesImagesItem["TagsModifyTime"].isNull())
 			imagesObject.tagsModifyTime = valueImagesImagesItem["TagsModifyTime"].asString();
-		if(!valueImagesImagesItem["CelebrityStatus"].isNull())
-			imagesObject.celebrityStatus = valueImagesImagesItem["CelebrityStatus"].asString();
-		if(!valueImagesImagesItem["CelebrityModifyTime"].isNull())
-			imagesObject.celebrityModifyTime = valueImagesImagesItem["CelebrityModifyTime"].asString();
-		if(!valueImagesImagesItem["CelebrityFailReason"].isNull())
-			imagesObject.celebrityFailReason = valueImagesImagesItem["CelebrityFailReason"].asString();
 		if(!valueImagesImagesItem["TagsStatus"].isNull())
 			imagesObject.tagsStatus = valueImagesImagesItem["TagsStatus"].asString();
 		if(!valueImagesImagesItem["RemarksC"].isNull())
@@ -248,29 +242,6 @@ void FindImagesResult::parse(const std::string &payload)
 			if(!oCRBoundaryNode["Height"].isNull())
 				oCRObject.oCRBoundary.height = std::stoi(oCRBoundaryNode["Height"].asString());
 			imagesObject.oCR.push_back(oCRObject);
-		}
-		auto allCelebrityNode = valueImagesImagesItem["Celebrity"]["CelebrityItem"];
-		for (auto valueImagesImagesItemCelebrityCelebrityItem : allCelebrityNode)
-		{
-			ImagesItem::CelebrityItem celebrityObject;
-			if(!valueImagesImagesItemCelebrityCelebrityItem["CelebrityName"].isNull())
-				celebrityObject.celebrityName = valueImagesImagesItemCelebrityCelebrityItem["CelebrityName"].asString();
-			if(!valueImagesImagesItemCelebrityCelebrityItem["CelebrityGender"].isNull())
-				celebrityObject.celebrityGender = valueImagesImagesItemCelebrityCelebrityItem["CelebrityGender"].asString();
-			if(!valueImagesImagesItemCelebrityCelebrityItem["CelebrityConfidence"].isNull())
-				celebrityObject.celebrityConfidence = std::stof(valueImagesImagesItemCelebrityCelebrityItem["CelebrityConfidence"].asString());
-			if(!valueImagesImagesItemCelebrityCelebrityItem["CelebrityLibraryName"].isNull())
-				celebrityObject.celebrityLibraryName = valueImagesImagesItemCelebrityCelebrityItem["CelebrityLibraryName"].asString();
-			auto celebrityBoundaryNode = value["CelebrityBoundary"];
-			if(!celebrityBoundaryNode["Left"].isNull())
-				celebrityObject.celebrityBoundary.left = std::stoi(celebrityBoundaryNode["Left"].asString());
-			if(!celebrityBoundaryNode["Top"].isNull())
-				celebrityObject.celebrityBoundary.top = std::stoi(celebrityBoundaryNode["Top"].asString());
-			if(!celebrityBoundaryNode["Width"].isNull())
-				celebrityObject.celebrityBoundary.width = std::stoi(celebrityBoundaryNode["Width"].asString());
-			if(!celebrityBoundaryNode["Height"].isNull())
-				celebrityObject.celebrityBoundary.height = std::stoi(celebrityBoundaryNode["Height"].asString());
-			imagesObject.celebrity.push_back(celebrityObject);
 		}
 		auto imageQualityNode = value["ImageQuality"];
 		if(!imageQualityNode["OverallScore"].isNull())
