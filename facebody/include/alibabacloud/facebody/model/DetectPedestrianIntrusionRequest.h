@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				DetectPedestrianIntrusionRequest();
 				~DetectPedestrianIntrusionRequest();
 
+				Array getDetectRegion()const;
+				void setDetectRegion(const Array& detectRegion);
 				std::string getRegionType()const;
 				void setRegionType(const std::string& regionType);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
-				Array getRegion()const;
-				void setRegion(const Array& region);
 
             private:
+				Array detectRegion_;
 				std::string regionType_;
 				std::string imageURL_;
-				Array region_;
 
 			};
 		}

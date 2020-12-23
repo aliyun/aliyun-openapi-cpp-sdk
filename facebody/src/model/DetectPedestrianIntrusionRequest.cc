@@ -27,6 +27,17 @@ DetectPedestrianIntrusionRequest::DetectPedestrianIntrusionRequest() :
 DetectPedestrianIntrusionRequest::~DetectPedestrianIntrusionRequest()
 {}
 
+Array DetectPedestrianIntrusionRequest::getDetectRegion()const
+{
+	return detectRegion_;
+}
+
+void DetectPedestrianIntrusionRequest::setDetectRegion(const Array& detectRegion)
+{
+	detectRegion_ = detectRegion;
+	setBodyParameter("DetectRegion", std::to_string(detectRegion));
+}
+
 std::string DetectPedestrianIntrusionRequest::getRegionType()const
 {
 	return regionType_;
@@ -47,16 +58,5 @@ void DetectPedestrianIntrusionRequest::setImageURL(const std::string& imageURL)
 {
 	imageURL_ = imageURL;
 	setBodyParameter("ImageURL", imageURL);
-}
-
-Array DetectPedestrianIntrusionRequest::getRegion()const
-{
-	return region_;
-}
-
-void DetectPedestrianIntrusionRequest::setRegion(const Array& region)
-{
-	region_ = region;
-	setBodyParameter("Region", std::to_string(region));
 }
 
