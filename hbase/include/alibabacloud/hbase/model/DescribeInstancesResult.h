@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string moduleStackVersion;
 					bool isHa;
 					std::string createdTime;
+					std::string resourceGroupId;
 					std::string masterInstanceType;
 					bool isDeletionProtection;
 					int moduleId;

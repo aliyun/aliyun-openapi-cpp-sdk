@@ -53,6 +53,7 @@ namespace AlibabaCloud
 				std::string getModuleStackVersion()const;
 				std::string getStandbyZoneId()const;
 				std::string getCreatedTime()const;
+				std::string getResourceGroupId()const;
 				std::string getMasterInstanceType()const;
 				std::string getPrimaryVSwitchIds()const;
 				bool getIsDeletionProtection()const;
@@ -103,6 +104,7 @@ namespace AlibabaCloud
 				std::string moduleStackVersion_;
 				std::string standbyZoneId_;
 				std::string createdTime_;
+				std::string resourceGroupId_;
 				std::string masterInstanceType_;
 				std::string primaryVSwitchIds_;
 				bool isDeletionProtection_;

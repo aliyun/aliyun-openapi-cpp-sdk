@@ -45,6 +45,7 @@ namespace AlibabaCloud
 				std::string getModuleStackVersion()const;
 				bool getIsHa()const;
 				std::string getCreatedTime()const;
+				std::string getResourceGroupId()const;
 				std::string getMasterInstanceType()const;
 				bool getIsDeletionProtection()const;
 				bool getIsLatestVersion()const;
@@ -92,6 +93,7 @@ namespace AlibabaCloud
 				std::string moduleStackVersion_;
 				bool isHa_;
 				std::string createdTime_;
+				std::string resourceGroupId_;
 				std::string masterInstanceType_;
 				bool isDeletionProtection_;
 				bool isLatestVersion_;

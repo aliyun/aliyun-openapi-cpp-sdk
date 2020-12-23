@@ -60,6 +60,17 @@ void CreateClusterRequest::setEngineVersion(const std::string& engineVersion)
 	setParameter("EngineVersion", engineVersion);
 }
 
+std::string CreateClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateClusterRequest::getRegionId()const
 {
 	return regionId_;

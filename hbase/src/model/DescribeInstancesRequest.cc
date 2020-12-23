@@ -49,6 +49,17 @@ void DescribeInstancesRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeInstancesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeInstancesRequest::getRegionId()const
 {
 	return regionId_;

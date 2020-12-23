@@ -133,6 +133,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		duration_ = std::stoi(value["Duration"].asString());
 	if(!value["ColdStorageSize"].isNull())
 		coldStorageSize_ = std::stoi(value["ColdStorageSize"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -149,6 +151,11 @@ bool DescribeInstanceResult::getIsHa()const
 std::string DescribeInstanceResult::getCreatedTime()const
 {
 	return createdTime_;
+}
+
+std::string DescribeInstanceResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string DescribeInstanceResult::getMasterInstanceType()const

@@ -71,6 +71,17 @@ void CreateServerlessClusterRequest::setEngineVersion(const std::string& engineV
 	setParameter("EngineVersion", engineVersion);
 }
 
+std::string CreateServerlessClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateServerlessClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateServerlessClusterRequest::getRegionId()const
 {
 	return regionId_;

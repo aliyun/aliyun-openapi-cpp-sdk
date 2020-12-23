@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getEngine()const;
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string clusterName_;
 				std::string clientToken_;
 				std::string engineVersion_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string engine_;
 				int autoRenewPeriod_;

@@ -23,12 +23,22 @@ set(hbase_public_header
 set(hbase_public_header_model 
 	include/alibabacloud/hbase/model/AddUserHdfsInfoRequest.h
 	include/alibabacloud/hbase/model/AddUserHdfsInfoResult.h
+	include/alibabacloud/hbase/model/AllocatePublicNetworkAddressRequest.h
+	include/alibabacloud/hbase/model/AllocatePublicNetworkAddressResult.h
+	include/alibabacloud/hbase/model/CheckComponentsVersionRequest.h
+	include/alibabacloud/hbase/model/CheckComponentsVersionResult.h
+	include/alibabacloud/hbase/model/CloseBackupRequest.h
+	include/alibabacloud/hbase/model/CloseBackupResult.h
 	include/alibabacloud/hbase/model/ConvertInstanceRequest.h
 	include/alibabacloud/hbase/model/ConvertInstanceResult.h
 	include/alibabacloud/hbase/model/CreateBackupPlanRequest.h
 	include/alibabacloud/hbase/model/CreateBackupPlanResult.h
 	include/alibabacloud/hbase/model/CreateClusterRequest.h
 	include/alibabacloud/hbase/model/CreateClusterResult.h
+	include/alibabacloud/hbase/model/CreateGlobalResourceRequest.h
+	include/alibabacloud/hbase/model/CreateGlobalResourceResult.h
+	include/alibabacloud/hbase/model/CreateHBaseSlbServerRequest.h
+	include/alibabacloud/hbase/model/CreateHBaseSlbServerResult.h
 	include/alibabacloud/hbase/model/CreateHbaseHaSlbRequest.h
 	include/alibabacloud/hbase/model/CreateHbaseHaSlbResult.h
 	include/alibabacloud/hbase/model/CreateMultiZoneClusterRequest.h
@@ -37,8 +47,12 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/CreateRestorePlanResult.h
 	include/alibabacloud/hbase/model/CreateServerlessClusterRequest.h
 	include/alibabacloud/hbase/model/CreateServerlessClusterResult.h
+	include/alibabacloud/hbase/model/DeleteGlobalResourceRequest.h
+	include/alibabacloud/hbase/model/DeleteGlobalResourceResult.h
 	include/alibabacloud/hbase/model/DeleteHBaseHaDBRequest.h
 	include/alibabacloud/hbase/model/DeleteHBaseHaDBResult.h
+	include/alibabacloud/hbase/model/DeleteHBaseSlbServerRequest.h
+	include/alibabacloud/hbase/model/DeleteHBaseSlbServerResult.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbRequest.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbResult.h
 	include/alibabacloud/hbase/model/DeleteInstanceRequest.h
@@ -53,14 +67,20 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeAvailableResourceResult.h
 	include/alibabacloud/hbase/model/DescribeBackupPlanConfigRequest.h
 	include/alibabacloud/hbase/model/DescribeBackupPlanConfigResult.h
+	include/alibabacloud/hbase/model/DescribeBackupPolicyRequest.h
+	include/alibabacloud/hbase/model/DescribeBackupPolicyResult.h
 	include/alibabacloud/hbase/model/DescribeBackupStatusRequest.h
 	include/alibabacloud/hbase/model/DescribeBackupStatusResult.h
 	include/alibabacloud/hbase/model/DescribeBackupSummaryRequest.h
 	include/alibabacloud/hbase/model/DescribeBackupSummaryResult.h
 	include/alibabacloud/hbase/model/DescribeBackupTablesRequest.h
 	include/alibabacloud/hbase/model/DescribeBackupTablesResult.h
+	include/alibabacloud/hbase/model/DescribeBackupsRequest.h
+	include/alibabacloud/hbase/model/DescribeBackupsResult.h
 	include/alibabacloud/hbase/model/DescribeClusterConnectionRequest.h
 	include/alibabacloud/hbase/model/DescribeClusterConnectionResult.h
+	include/alibabacloud/hbase/model/DescribeColdStorageRequest.h
+	include/alibabacloud/hbase/model/DescribeColdStorageResult.h
 	include/alibabacloud/hbase/model/DescribeDBInstanceUsageRequest.h
 	include/alibabacloud/hbase/model/DescribeDBInstanceUsageResult.h
 	include/alibabacloud/hbase/model/DescribeDeletedInstancesRequest.h
@@ -99,18 +119,30 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeRestoreTablesResult.h
 	include/alibabacloud/hbase/model/DescribeSecurityGroupsRequest.h
 	include/alibabacloud/hbase/model/DescribeSecurityGroupsResult.h
+	include/alibabacloud/hbase/model/DescribeSubDomainRequest.h
+	include/alibabacloud/hbase/model/DescribeSubDomainResult.h
 	include/alibabacloud/hbase/model/EnableHBaseueBackupRequest.h
 	include/alibabacloud/hbase/model/EnableHBaseueBackupResult.h
 	include/alibabacloud/hbase/model/EnableHBaseueModuleRequest.h
 	include/alibabacloud/hbase/model/EnableHBaseueModuleResult.h
 	include/alibabacloud/hbase/model/EvaluateMultiZoneResourceRequest.h
 	include/alibabacloud/hbase/model/EvaluateMultiZoneResourceResult.h
+	include/alibabacloud/hbase/model/GetMultimodeCmsUrlRequest.h
+	include/alibabacloud/hbase/model/GetMultimodeCmsUrlResult.h
+	include/alibabacloud/hbase/model/ListHBaseInstancesRequest.h
+	include/alibabacloud/hbase/model/ListHBaseInstancesResult.h
+	include/alibabacloud/hbase/model/ListInstanceServiceConfigHistoriesRequest.h
+	include/alibabacloud/hbase/model/ListInstanceServiceConfigHistoriesResult.h
+	include/alibabacloud/hbase/model/ListInstanceServiceConfigurationsRequest.h
+	include/alibabacloud/hbase/model/ListInstanceServiceConfigurationsResult.h
 	include/alibabacloud/hbase/model/ListTagResourcesRequest.h
 	include/alibabacloud/hbase/model/ListTagResourcesResult.h
 	include/alibabacloud/hbase/model/ListTagsRequest.h
 	include/alibabacloud/hbase/model/ListTagsResult.h
 	include/alibabacloud/hbase/model/ModifyBackupPlanConfigRequest.h
 	include/alibabacloud/hbase/model/ModifyBackupPlanConfigResult.h
+	include/alibabacloud/hbase/model/ModifyBackupPolicyRequest.h
+	include/alibabacloud/hbase/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/hbase/model/ModifyClusterDeletionProtectionRequest.h
 	include/alibabacloud/hbase/model/ModifyClusterDeletionProtectionResult.h
 	include/alibabacloud/hbase/model/ModifyDiskWarningLineRequest.h
@@ -119,6 +151,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/ModifyInstanceMaintainTimeResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceNameRequest.h
 	include/alibabacloud/hbase/model/ModifyInstanceNameResult.h
+	include/alibabacloud/hbase/model/ModifyInstanceServiceConfigRequest.h
+	include/alibabacloud/hbase/model/ModifyInstanceServiceConfigResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceTypeRequest.h
 	include/alibabacloud/hbase/model/ModifyInstanceTypeResult.h
 	include/alibabacloud/hbase/model/ModifyIpWhitelistRequest.h
@@ -129,12 +163,20 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/ModifySecurityGroupsResult.h
 	include/alibabacloud/hbase/model/ModifyUIAccountPasswordRequest.h
 	include/alibabacloud/hbase/model/ModifyUIAccountPasswordResult.h
+	include/alibabacloud/hbase/model/MoveResourceGroupRequest.h
+	include/alibabacloud/hbase/model/MoveResourceGroupResult.h
+	include/alibabacloud/hbase/model/OpenBackupRequest.h
+	include/alibabacloud/hbase/model/OpenBackupResult.h
 	include/alibabacloud/hbase/model/PurgeInstanceRequest.h
 	include/alibabacloud/hbase/model/PurgeInstanceResult.h
 	include/alibabacloud/hbase/model/QueryHBaseHaDBRequest.h
 	include/alibabacloud/hbase/model/QueryHBaseHaDBResult.h
 	include/alibabacloud/hbase/model/QueryXpackRelateDBRequest.h
 	include/alibabacloud/hbase/model/QueryXpackRelateDBResult.h
+	include/alibabacloud/hbase/model/RelateDbForHBaseHaRequest.h
+	include/alibabacloud/hbase/model/RelateDbForHBaseHaResult.h
+	include/alibabacloud/hbase/model/ReleasePublicNetworkAddressRequest.h
+	include/alibabacloud/hbase/model/ReleasePublicNetworkAddressResult.h
 	include/alibabacloud/hbase/model/RenewInstanceRequest.h
 	include/alibabacloud/hbase/model/RenewInstanceResult.h
 	include/alibabacloud/hbase/model/ResizeColdStorageSizeRequest.h
@@ -166,12 +208,22 @@ set(hbase_src
 	src/HBaseClient.cc
 	src/model/AddUserHdfsInfoRequest.cc
 	src/model/AddUserHdfsInfoResult.cc
+	src/model/AllocatePublicNetworkAddressRequest.cc
+	src/model/AllocatePublicNetworkAddressResult.cc
+	src/model/CheckComponentsVersionRequest.cc
+	src/model/CheckComponentsVersionResult.cc
+	src/model/CloseBackupRequest.cc
+	src/model/CloseBackupResult.cc
 	src/model/ConvertInstanceRequest.cc
 	src/model/ConvertInstanceResult.cc
 	src/model/CreateBackupPlanRequest.cc
 	src/model/CreateBackupPlanResult.cc
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
+	src/model/CreateGlobalResourceRequest.cc
+	src/model/CreateGlobalResourceResult.cc
+	src/model/CreateHBaseSlbServerRequest.cc
+	src/model/CreateHBaseSlbServerResult.cc
 	src/model/CreateHbaseHaSlbRequest.cc
 	src/model/CreateHbaseHaSlbResult.cc
 	src/model/CreateMultiZoneClusterRequest.cc
@@ -180,8 +232,12 @@ set(hbase_src
 	src/model/CreateRestorePlanResult.cc
 	src/model/CreateServerlessClusterRequest.cc
 	src/model/CreateServerlessClusterResult.cc
+	src/model/DeleteGlobalResourceRequest.cc
+	src/model/DeleteGlobalResourceResult.cc
 	src/model/DeleteHBaseHaDBRequest.cc
 	src/model/DeleteHBaseHaDBResult.cc
+	src/model/DeleteHBaseSlbServerRequest.cc
+	src/model/DeleteHBaseSlbServerResult.cc
 	src/model/DeleteHbaseHaSlbRequest.cc
 	src/model/DeleteHbaseHaSlbResult.cc
 	src/model/DeleteInstanceRequest.cc
@@ -196,14 +252,20 @@ set(hbase_src
 	src/model/DescribeAvailableResourceResult.cc
 	src/model/DescribeBackupPlanConfigRequest.cc
 	src/model/DescribeBackupPlanConfigResult.cc
+	src/model/DescribeBackupPolicyRequest.cc
+	src/model/DescribeBackupPolicyResult.cc
 	src/model/DescribeBackupStatusRequest.cc
 	src/model/DescribeBackupStatusResult.cc
 	src/model/DescribeBackupSummaryRequest.cc
 	src/model/DescribeBackupSummaryResult.cc
 	src/model/DescribeBackupTablesRequest.cc
 	src/model/DescribeBackupTablesResult.cc
+	src/model/DescribeBackupsRequest.cc
+	src/model/DescribeBackupsResult.cc
 	src/model/DescribeClusterConnectionRequest.cc
 	src/model/DescribeClusterConnectionResult.cc
+	src/model/DescribeColdStorageRequest.cc
+	src/model/DescribeColdStorageResult.cc
 	src/model/DescribeDBInstanceUsageRequest.cc
 	src/model/DescribeDBInstanceUsageResult.cc
 	src/model/DescribeDeletedInstancesRequest.cc
@@ -242,18 +304,30 @@ set(hbase_src
 	src/model/DescribeRestoreTablesResult.cc
 	src/model/DescribeSecurityGroupsRequest.cc
 	src/model/DescribeSecurityGroupsResult.cc
+	src/model/DescribeSubDomainRequest.cc
+	src/model/DescribeSubDomainResult.cc
 	src/model/EnableHBaseueBackupRequest.cc
 	src/model/EnableHBaseueBackupResult.cc
 	src/model/EnableHBaseueModuleRequest.cc
 	src/model/EnableHBaseueModuleResult.cc
 	src/model/EvaluateMultiZoneResourceRequest.cc
 	src/model/EvaluateMultiZoneResourceResult.cc
+	src/model/GetMultimodeCmsUrlRequest.cc
+	src/model/GetMultimodeCmsUrlResult.cc
+	src/model/ListHBaseInstancesRequest.cc
+	src/model/ListHBaseInstancesResult.cc
+	src/model/ListInstanceServiceConfigHistoriesRequest.cc
+	src/model/ListInstanceServiceConfigHistoriesResult.cc
+	src/model/ListInstanceServiceConfigurationsRequest.cc
+	src/model/ListInstanceServiceConfigurationsResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
 	src/model/ModifyBackupPlanConfigRequest.cc
 	src/model/ModifyBackupPlanConfigResult.cc
+	src/model/ModifyBackupPolicyRequest.cc
+	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyClusterDeletionProtectionRequest.cc
 	src/model/ModifyClusterDeletionProtectionResult.cc
 	src/model/ModifyDiskWarningLineRequest.cc
@@ -262,6 +336,8 @@ set(hbase_src
 	src/model/ModifyInstanceMaintainTimeResult.cc
 	src/model/ModifyInstanceNameRequest.cc
 	src/model/ModifyInstanceNameResult.cc
+	src/model/ModifyInstanceServiceConfigRequest.cc
+	src/model/ModifyInstanceServiceConfigResult.cc
 	src/model/ModifyInstanceTypeRequest.cc
 	src/model/ModifyInstanceTypeResult.cc
 	src/model/ModifyIpWhitelistRequest.cc
@@ -272,12 +348,20 @@ set(hbase_src
 	src/model/ModifySecurityGroupsResult.cc
 	src/model/ModifyUIAccountPasswordRequest.cc
 	src/model/ModifyUIAccountPasswordResult.cc
+	src/model/MoveResourceGroupRequest.cc
+	src/model/MoveResourceGroupResult.cc
+	src/model/OpenBackupRequest.cc
+	src/model/OpenBackupResult.cc
 	src/model/PurgeInstanceRequest.cc
 	src/model/PurgeInstanceResult.cc
 	src/model/QueryHBaseHaDBRequest.cc
 	src/model/QueryHBaseHaDBResult.cc
 	src/model/QueryXpackRelateDBRequest.cc
 	src/model/QueryXpackRelateDBResult.cc
+	src/model/RelateDbForHBaseHaRequest.cc
+	src/model/RelateDbForHBaseHaResult.cc
+	src/model/ReleasePublicNetworkAddressRequest.cc
+	src/model/ReleasePublicNetworkAddressResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
 	src/model/ResizeColdStorageSizeRequest.cc

@@ -71,6 +71,17 @@ void CreateMultiZoneClusterRequest::setLogDiskType(const std::string& logDiskTyp
 	setParameter("LogDiskType", logDiskType);
 }
 
+std::string CreateMultiZoneClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateMultiZoneClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateMultiZoneClusterRequest::getPrimaryVSwitchId()const
 {
 	return primaryVSwitchId_;

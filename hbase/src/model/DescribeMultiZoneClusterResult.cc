@@ -153,6 +153,8 @@ void DescribeMultiZoneClusterResult::parse(const std::string &payload)
 		arbiterVSwitchIds_ = value["ArbiterVSwitchIds"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -169,6 +171,11 @@ std::string DescribeMultiZoneClusterResult::getStandbyZoneId()const
 std::string DescribeMultiZoneClusterResult::getCreatedTime()const
 {
 	return createdTime_;
+}
+
+std::string DescribeMultiZoneClusterResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string DescribeMultiZoneClusterResult::getMasterInstanceType()const

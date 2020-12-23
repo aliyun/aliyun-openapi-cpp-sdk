@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getLogDiskType()const;
 				void setLogDiskType(const std::string& logDiskType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getPrimaryVSwitchId()const;
 				void setPrimaryVSwitchId(const std::string& primaryVSwitchId);
 				std::string getLogInstanceType()const;
@@ -97,6 +99,7 @@ namespace AlibabaCloud
 				std::string clusterName_;
 				std::string engineVersion_;
 				std::string logDiskType_;
+				std::string resourceGroupId_;
 				std::string primaryVSwitchId_;
 				std::string logInstanceType_;
 				int autoRenewPeriod_;

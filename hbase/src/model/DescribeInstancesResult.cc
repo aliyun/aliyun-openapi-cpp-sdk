@@ -115,6 +115,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.autoRenewal = valueInstancesInstance["AutoRenewal"].asString() == "true";
 		if(!valueInstancesInstance["Duration"].isNull())
 			instancesObject.duration = std::stoi(valueInstancesInstance["Duration"].asString());
+		if(!valueInstancesInstance["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
 		auto allTagsNode = valueInstancesInstance["Tags"]["Tag"];
 		for (auto valueInstancesInstanceTagsTag : allTagsNode)
 		{
