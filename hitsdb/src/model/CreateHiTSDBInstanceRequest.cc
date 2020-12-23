@@ -38,17 +38,6 @@ void CreateHiTSDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateHiTSDBInstanceRequest::getConnectionString()const
-{
-	return connectionString_;
-}
-
-void CreateHiTSDBInstanceRequest::setConnectionString(const std::string& connectionString)
-{
-	connectionString_ = connectionString;
-	setParameter("ConnectionString", connectionString);
-}
-
 std::string CreateHiTSDBInstanceRequest::getClientToken()const
 {
 	return clientToken_;

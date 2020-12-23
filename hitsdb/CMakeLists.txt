@@ -25,14 +25,8 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/CreateHiTSDBInstanceResult.h
 	include/alibabacloud/hitsdb/model/DeleteHiTSDBInstanceRequest.h
 	include/alibabacloud/hitsdb/model/DeleteHiTSDBInstanceResult.h
-	include/alibabacloud/hitsdb/model/DeleteHiTSDBInstanceDataRequest.h
-	include/alibabacloud/hitsdb/model/DeleteHiTSDBInstanceDataResult.h
-	include/alibabacloud/hitsdb/model/DeleteHiTSDBInstanceMetaRequest.h
-	include/alibabacloud/hitsdb/model/DeleteHiTSDBInstanceMetaResult.h
 	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceRequest.h
 	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceResult.h
-	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceDataTtlRequest.h
-	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceDataTtlResult.h
 	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceListRequest.h
 	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceListResult.h
 	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceSecurityIpListRequest.h
@@ -41,16 +35,6 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/DescribeRegionsResult.h
 	include/alibabacloud/hitsdb/model/DescribeZonesRequest.h
 	include/alibabacloud/hitsdb/model/DescribeZonesResult.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDataRequest.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDataResult.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDataMetricListRequest.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDataMetricListResult.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDataTagKeyListRequest.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDataTagKeyListResult.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDataTagValueListRequest.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDataTagValueListResult.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDeletionJobListRequest.h
-	include/alibabacloud/hitsdb/model/ExploreHiTSDBInstanceDeletionJobListResult.h
 	include/alibabacloud/hitsdb/model/ModifyHiTSDBInstanceClassRequest.h
 	include/alibabacloud/hitsdb/model/ModifyHiTSDBInstanceClassResult.h
 	include/alibabacloud/hitsdb/model/ModifyHiTSDBInstanceSecurityIpListRequest.h
@@ -62,9 +46,7 @@ set(hitsdb_public_header_model
 	include/alibabacloud/hitsdb/model/RestartHiTSDBInstanceRequest.h
 	include/alibabacloud/hitsdb/model/RestartHiTSDBInstanceResult.h
 	include/alibabacloud/hitsdb/model/SwitchHiTSDBInstancePublicNetRequest.h
-	include/alibabacloud/hitsdb/model/SwitchHiTSDBInstancePublicNetResult.h
-	include/alibabacloud/hitsdb/model/UpdateHiTSDBInstanceDataTtlRequest.h
-	include/alibabacloud/hitsdb/model/UpdateHiTSDBInstanceDataTtlResult.h )
+	include/alibabacloud/hitsdb/model/SwitchHiTSDBInstancePublicNetResult.h )
 
 set(hitsdb_src 
 	src/HitsdbClient.cc
@@ -72,14 +54,8 @@ set(hitsdb_src
 	src/model/CreateHiTSDBInstanceResult.cc
 	src/model/DeleteHiTSDBInstanceRequest.cc
 	src/model/DeleteHiTSDBInstanceResult.cc
-	src/model/DeleteHiTSDBInstanceDataRequest.cc
-	src/model/DeleteHiTSDBInstanceDataResult.cc
-	src/model/DeleteHiTSDBInstanceMetaRequest.cc
-	src/model/DeleteHiTSDBInstanceMetaResult.cc
 	src/model/DescribeHiTSDBInstanceRequest.cc
 	src/model/DescribeHiTSDBInstanceResult.cc
-	src/model/DescribeHiTSDBInstanceDataTtlRequest.cc
-	src/model/DescribeHiTSDBInstanceDataTtlResult.cc
 	src/model/DescribeHiTSDBInstanceListRequest.cc
 	src/model/DescribeHiTSDBInstanceListResult.cc
 	src/model/DescribeHiTSDBInstanceSecurityIpListRequest.cc
@@ -88,16 +64,6 @@ set(hitsdb_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
-	src/model/ExploreHiTSDBInstanceDataRequest.cc
-	src/model/ExploreHiTSDBInstanceDataResult.cc
-	src/model/ExploreHiTSDBInstanceDataMetricListRequest.cc
-	src/model/ExploreHiTSDBInstanceDataMetricListResult.cc
-	src/model/ExploreHiTSDBInstanceDataTagKeyListRequest.cc
-	src/model/ExploreHiTSDBInstanceDataTagKeyListResult.cc
-	src/model/ExploreHiTSDBInstanceDataTagValueListRequest.cc
-	src/model/ExploreHiTSDBInstanceDataTagValueListResult.cc
-	src/model/ExploreHiTSDBInstanceDeletionJobListRequest.cc
-	src/model/ExploreHiTSDBInstanceDeletionJobListResult.cc
 	src/model/ModifyHiTSDBInstanceClassRequest.cc
 	src/model/ModifyHiTSDBInstanceClassResult.cc
 	src/model/ModifyHiTSDBInstanceSecurityIpListRequest.cc
@@ -109,9 +75,7 @@ set(hitsdb_src
 	src/model/RestartHiTSDBInstanceRequest.cc
 	src/model/RestartHiTSDBInstanceResult.cc
 	src/model/SwitchHiTSDBInstancePublicNetRequest.cc
-	src/model/SwitchHiTSDBInstancePublicNetResult.cc
-	src/model/UpdateHiTSDBInstanceDataTtlRequest.cc
-	src/model/UpdateHiTSDBInstanceDataTtlResult.cc )
+	src/model/SwitchHiTSDBInstancePublicNetResult.cc )
 
 add_library(hitsdb ${LIB_TYPE}
 	${hitsdb_public_header}

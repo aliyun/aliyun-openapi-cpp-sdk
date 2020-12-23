@@ -101,6 +101,14 @@ void DescribeHiTSDBInstanceResult::parse(const std::string &payload)
 		rDSStatus_ = value["RDSStatus"].asString();
 	if(!value["DiskCategory"].isNull())
 		diskCategory_ = value["DiskCategory"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["PaymentType"].isNull())
+		paymentType_ = value["PaymentType"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["ExpiredTime"].isNull())
+		expiredTime_ = std::stol(value["ExpiredTime"].asString());
 
 }
 
@@ -144,6 +152,11 @@ std::string DescribeHiTSDBInstanceResult::getMemSize()const
 	return memSize_;
 }
 
+long DescribeHiTSDBInstanceResult::getExpiredTime()const
+{
+	return expiredTime_;
+}
+
 std::string DescribeHiTSDBInstanceResult::getMaxTimelineLimit()const
 {
 	return maxTimelineLimit_;
@@ -152,6 +165,11 @@ std::string DescribeHiTSDBInstanceResult::getMaxTimelineLimit()const
 std::string DescribeHiTSDBInstanceResult::getReverseVpcPort()const
 {
 	return reverseVpcPort_;
+}
+
+std::string DescribeHiTSDBInstanceResult::getPaymentType()const
+{
+	return paymentType_;
 }
 
 std::string DescribeHiTSDBInstanceResult::getPublicConnectionString()const
@@ -174,6 +192,11 @@ std::string DescribeHiTSDBInstanceResult::getRDSStatus()const
 	return rDSStatus_;
 }
 
+std::string DescribeHiTSDBInstanceResult::getStatus()const
+{
+	return status_;
+}
+
 std::string DescribeHiTSDBInstanceResult::getInstanceStorage()const
 {
 	return instanceStorage_;
@@ -187,6 +210,11 @@ std::string DescribeHiTSDBInstanceResult::getZoneId()const
 std::string DescribeHiTSDBInstanceResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+long DescribeHiTSDBInstanceResult::getCreateTime()const
+{
+	return createTime_;
 }
 
 std::string DescribeHiTSDBInstanceResult::getDiskCategory()const

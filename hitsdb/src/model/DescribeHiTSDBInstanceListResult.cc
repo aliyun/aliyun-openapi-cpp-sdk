@@ -85,6 +85,14 @@ void DescribeHiTSDBInstanceListResult::parse(const std::string &payload)
 			instanceListObject.vpcId = valueInstanceListInstance["VpcId"].asString();
 		if(!valueInstanceListInstance["VswitchId"].isNull())
 			instanceListObject.vswitchId = valueInstanceListInstance["VswitchId"].asString();
+		if(!valueInstanceListInstance["Status"].isNull())
+			instanceListObject.status = valueInstanceListInstance["Status"].asString();
+		if(!valueInstanceListInstance["PaymentType"].isNull())
+			instanceListObject.paymentType = valueInstanceListInstance["PaymentType"].asString();
+		if(!valueInstanceListInstance["CreateTime"].isNull())
+			instanceListObject.createTime = std::stol(valueInstanceListInstance["CreateTime"].asString());
+		if(!valueInstanceListInstance["ExpiredTime"].isNull())
+			instanceListObject.expiredTime = std::stol(valueInstanceListInstance["ExpiredTime"].asString());
 		instanceList_.push_back(instanceListObject);
 	}
 	if(!value["PageNumber"].isNull())

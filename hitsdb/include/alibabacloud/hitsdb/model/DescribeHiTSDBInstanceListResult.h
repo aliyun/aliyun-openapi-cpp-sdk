@@ -34,27 +34,31 @@ namespace AlibabaCloud
 			public:
 				struct Instance
 				{
+					std::string maxSeriesPerDatabase;
+					std::string gmtCreated;
+					std::string instanceAlias;
+					std::string instanceStatus;
+					std::string networkType;
+					std::string gmtExpire;
+					long expiredTime;
+					std::string paymentType;
+					std::string engineType;
+					std::string instanceTps;
+					std::string status;
 					std::string instanceStorage;
 					std::string zoneId;
 					std::string instanceId;
-					std::string maxSeriesPerDatabase;
+					long createTime;
 					std::string instanceClass;
 					std::string maxDatabaseLimit;
-					std::string gmtCreated;
 					std::string lockMode;
 					std::string vswitchId;
 					std::string instanceIdInVpc;
 					std::string vpcId;
-					std::string instanceAlias;
 					std::string userId;
-					std::string instanceStatus;
 					std::string chargeType;
-					std::string networkType;
-					std::string gmtExpire;
 					std::string instanceDescription;
-					std::string engineType;
 					std::string regionId;
-					std::string instanceTps;
 				};
 
 
