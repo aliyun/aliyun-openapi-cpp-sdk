@@ -21,6 +21,10 @@ set(cdrs_public_header
 	include/alibabacloud/cdrs/CDRSExport.h )
 
 set(cdrs_public_header_model 
+	include/alibabacloud/cdrs/model/BindDeviceRequest.h
+	include/alibabacloud/cdrs/model/BindDeviceResult.h
+	include/alibabacloud/cdrs/model/CreateProjectRequest.h
+	include/alibabacloud/cdrs/model/CreateProjectResult.h
 	include/alibabacloud/cdrs/model/ListCityMapAoisRequest.h
 	include/alibabacloud/cdrs/model/ListCityMapAoisResult.h
 	include/alibabacloud/cdrs/model/ListCityMapCameraResultsRequest.h
@@ -76,10 +80,18 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/RecognizeImageRequest.h
 	include/alibabacloud/cdrs/model/RecognizeImageResult.h
 	include/alibabacloud/cdrs/model/SearchObjectRequest.h
-	include/alibabacloud/cdrs/model/SearchObjectResult.h )
+	include/alibabacloud/cdrs/model/SearchObjectResult.h
+	include/alibabacloud/cdrs/model/UnbindDeviceRequest.h
+	include/alibabacloud/cdrs/model/UnbindDeviceResult.h
+	include/alibabacloud/cdrs/model/UpdateProjectRequest.h
+	include/alibabacloud/cdrs/model/UpdateProjectResult.h )
 
 set(cdrs_src 
 	src/CDRSClient.cc
+	src/model/BindDeviceRequest.cc
+	src/model/BindDeviceResult.cc
+	src/model/CreateProjectRequest.cc
+	src/model/CreateProjectResult.cc
 	src/model/ListCityMapAoisRequest.cc
 	src/model/ListCityMapAoisResult.cc
 	src/model/ListCityMapCameraResultsRequest.cc
@@ -135,7 +147,11 @@ set(cdrs_src
 	src/model/RecognizeImageRequest.cc
 	src/model/RecognizeImageResult.cc
 	src/model/SearchObjectRequest.cc
-	src/model/SearchObjectResult.cc )
+	src/model/SearchObjectResult.cc
+	src/model/UnbindDeviceRequest.cc
+	src/model/UnbindDeviceResult.cc
+	src/model/UpdateProjectRequest.cc
+	src/model/UpdateProjectResult.cc )
 
 add_library(cdrs ${LIB_TYPE}
 	${cdrs_public_header}

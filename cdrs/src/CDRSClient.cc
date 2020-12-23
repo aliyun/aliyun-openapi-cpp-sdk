@@ -51,6 +51,78 @@ CDRSClient::CDRSClient(const std::string & accessKeyId, const std::string & acce
 CDRSClient::~CDRSClient()
 {}
 
+CDRSClient::BindDeviceOutcome CDRSClient::bindDevice(const BindDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindDeviceOutcome(BindDeviceResult(outcome.result()));
+	else
+		return BindDeviceOutcome(outcome.error());
+}
+
+void CDRSClient::bindDeviceAsync(const BindDeviceRequest& request, const BindDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::BindDeviceOutcomeCallable CDRSClient::bindDeviceCallable(const BindDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->bindDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::CreateProjectOutcome CDRSClient::createProject(const CreateProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateProjectOutcome(CreateProjectResult(outcome.result()));
+	else
+		return CreateProjectOutcome(outcome.error());
+}
+
+void CDRSClient::createProjectAsync(const CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::CreateProjectOutcomeCallable CDRSClient::createProjectCallable(const CreateProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->createProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CDRSClient::ListCityMapAoisOutcome CDRSClient::listCityMapAois(const ListCityMapAoisRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1125,78 @@ CDRSClient::SearchObjectOutcomeCallable CDRSClient::searchObjectCallable(const S
 			[this, request]()
 			{
 			return this->searchObject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::UnbindDeviceOutcome CDRSClient::unbindDevice(const UnbindDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindDeviceOutcome(UnbindDeviceResult(outcome.result()));
+	else
+		return UnbindDeviceOutcome(outcome.error());
+}
+
+void CDRSClient::unbindDeviceAsync(const UnbindDeviceRequest& request, const UnbindDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::UnbindDeviceOutcomeCallable CDRSClient::unbindDeviceCallable(const UnbindDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::UpdateProjectOutcome CDRSClient::updateProject(const UpdateProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateProjectOutcome(UpdateProjectResult(outcome.result()));
+	else
+		return UpdateProjectOutcome(outcome.error());
+}
+
+void CDRSClient::updateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::UpdateProjectOutcomeCallable CDRSClient::updateProjectCallable(const UpdateProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->updateProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

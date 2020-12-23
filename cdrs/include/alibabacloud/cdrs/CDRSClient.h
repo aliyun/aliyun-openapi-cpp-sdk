@@ -22,6 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "CDRSExport.h"
+#include "model/BindDeviceRequest.h"
+#include "model/BindDeviceResult.h"
+#include "model/CreateProjectRequest.h"
+#include "model/CreateProjectResult.h"
 #include "model/ListCityMapAoisRequest.h"
 #include "model/ListCityMapAoisResult.h"
 #include "model/ListCityMapCameraResultsRequest.h"
@@ -78,6 +82,10 @@
 #include "model/RecognizeImageResult.h"
 #include "model/SearchObjectRequest.h"
 #include "model/SearchObjectResult.h"
+#include "model/UnbindDeviceRequest.h"
+#include "model/UnbindDeviceResult.h"
+#include "model/UpdateProjectRequest.h"
+#include "model/UpdateProjectResult.h"
 
 
 namespace AlibabaCloud
@@ -87,6 +95,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CDRS_EXPORT CDRSClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::BindDeviceResult> BindDeviceOutcome;
+			typedef std::future<BindDeviceOutcome> BindDeviceOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::BindDeviceRequest&, const BindDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceAsyncHandler;
+			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
+			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
 			typedef Outcome<Error, Model::ListCityMapAoisResult> ListCityMapAoisOutcome;
 			typedef std::future<ListCityMapAoisOutcome> ListCityMapAoisOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListCityMapAoisRequest&, const ListCityMapAoisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCityMapAoisAsyncHandler;
@@ -171,11 +185,23 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchObjectResult> SearchObjectOutcome;
 			typedef std::future<SearchObjectOutcome> SearchObjectOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::SearchObjectRequest&, const SearchObjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchObjectAsyncHandler;
+			typedef Outcome<Error, Model::UnbindDeviceResult> UnbindDeviceOutcome;
+			typedef std::future<UnbindDeviceOutcome> UnbindDeviceOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::UnbindDeviceRequest&, const UnbindDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDeviceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateProjectResult> UpdateProjectOutcome;
+			typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::UpdateProjectRequest&, const UpdateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
 
 			CDRSClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CDRSClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CDRSClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CDRSClient();
+			BindDeviceOutcome bindDevice(const Model::BindDeviceRequest &request)const;
+			void bindDeviceAsync(const Model::BindDeviceRequest& request, const BindDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindDeviceOutcomeCallable bindDeviceCallable(const Model::BindDeviceRequest& request) const;
+			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
+			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
 			ListCityMapAoisOutcome listCityMapAois(const Model::ListCityMapAoisRequest &request)const;
 			void listCityMapAoisAsync(const Model::ListCityMapAoisRequest& request, const ListCityMapAoisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCityMapAoisOutcomeCallable listCityMapAoisCallable(const Model::ListCityMapAoisRequest& request) const;
@@ -260,6 +286,12 @@ namespace AlibabaCloud
 			SearchObjectOutcome searchObject(const Model::SearchObjectRequest &request)const;
 			void searchObjectAsync(const Model::SearchObjectRequest& request, const SearchObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchObjectOutcomeCallable searchObjectCallable(const Model::SearchObjectRequest& request) const;
+			UnbindDeviceOutcome unbindDevice(const Model::UnbindDeviceRequest &request)const;
+			void unbindDeviceAsync(const Model::UnbindDeviceRequest& request, const UnbindDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindDeviceOutcomeCallable unbindDeviceCallable(const Model::UnbindDeviceRequest& request) const;
+			UpdateProjectOutcome updateProject(const Model::UpdateProjectRequest &request)const;
+			void updateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateProjectOutcomeCallable updateProjectCallable(const Model::UpdateProjectRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
