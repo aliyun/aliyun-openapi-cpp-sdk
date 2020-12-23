@@ -14,45 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/hitsdb/model/CreateHiTSDBInstanceResult.h>
+#include <alibabacloud/hitsdb/model/UpdateInstanceIpWhiteListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Hitsdb;
 using namespace AlibabaCloud::Hitsdb::Model;
 
-CreateHiTSDBInstanceResult::CreateHiTSDBInstanceResult() :
+UpdateInstanceIpWhiteListResult::UpdateInstanceIpWhiteListResult() :
 	ServiceResult()
 {}
 
-CreateHiTSDBInstanceResult::CreateHiTSDBInstanceResult(const std::string &payload) :
+UpdateInstanceIpWhiteListResult::UpdateInstanceIpWhiteListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateHiTSDBInstanceResult::~CreateHiTSDBInstanceResult()
+UpdateInstanceIpWhiteListResult::~UpdateInstanceIpWhiteListResult()
 {}
 
-void CreateHiTSDBInstanceResult::parse(const std::string &payload)
+void UpdateInstanceIpWhiteListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
 
-}
-
-std::string CreateHiTSDBInstanceResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
-long CreateHiTSDBInstanceResult::getOrderId()const
-{
-	return orderId_;
 }
 

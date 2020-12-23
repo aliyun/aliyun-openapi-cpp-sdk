@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_DESCRIBEREGIONSRESULT_H_
-#define ALIBABACLOUD_HITSDB_MODEL_DESCRIBEREGIONSRESULT_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTRESULT_H_
+#define ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT DescribeRegionsResult : public ServiceResult
+			class ALIBABACLOUD_HITSDB_EXPORT UpdateInstanceIpWhiteListResult : public ServiceResult
 			{
 			public:
-				struct Region
-				{
-					std::string regionId;
-					std::string regionEndpoint;
-					std::string localName;
-				};
 
 
-				DescribeRegionsResult();
-				explicit DescribeRegionsResult(const std::string &payload);
-				~DescribeRegionsResult();
-				std::vector<Region> getRegions()const;
+				UpdateInstanceIpWhiteListResult();
+				explicit UpdateInstanceIpWhiteListResult(const std::string &payload);
+				~UpdateInstanceIpWhiteListResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Region> regions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_DESCRIBEREGIONSRESULT_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTRESULT_H_

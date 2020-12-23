@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT RenameHiTSDBInstanceAliasRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceListRequest : public RpcServiceRequest
 			{
 
 			public:
-				RenameHiTSDBInstanceAliasRequest();
-				~RenameHiTSDBInstanceAliasRequest();
+				GetLindormInstanceListRequest();
+				~GetLindormInstanceListRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getSupportEngine()const;
+				void setSupportEngine(int supportEngine);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getQueryStr()const;
+				void setQueryStr(const std::string& queryStr);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getInstanceAlias()const;
-				void setInstanceAlias(const std::string& instanceAlias);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getServiceType()const;
+				void setServiceType(const std::string& serviceType);
 
             private:
 				long resourceOwnerId_;
+				int supportEngine_;
+				int pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;
+				int pageSize_;
+				std::string queryStr_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string instanceAlias_;
 				long ownerId_;
-				std::string instanceId_;
+				std::string serviceType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTREQUEST_H_
