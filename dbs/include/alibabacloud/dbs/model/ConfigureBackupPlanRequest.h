@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setBackupStorageType(const std::string& backupStorageType);
 				int getDuplicationArchivePeriod()const;
 				void setDuplicationArchivePeriod(int duplicationArchivePeriod);
+				int getBackupLogIntervalSeconds()const;
+				void setBackupLogIntervalSeconds(int backupLogIntervalSeconds);
 				std::string getCrossAliyunId()const;
 				void setCrossAliyunId(const std::string& crossAliyunId);
 				bool getAutoStartBackup()const;
@@ -71,6 +73,8 @@ namespace AlibabaCloud
 				void setSourceEndpointPassword(const std::string& sourceEndpointPassword);
 				std::string getBackupObjects()const;
 				void setBackupObjects(const std::string& backupObjects);
+				long getBackupRateLimit()const;
+				void setBackupRateLimit(long backupRateLimit);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
 				int getSourceEndpointPort()const;
@@ -107,10 +111,12 @@ namespace AlibabaCloud
 				bool enableBackupLog_;
 				std::string backupStorageType_;
 				int duplicationArchivePeriod_;
+				int backupLogIntervalSeconds_;
 				std::string crossAliyunId_;
 				bool autoStartBackup_;
 				std::string sourceEndpointPassword_;
 				std::string backupObjects_;
+				long backupRateLimit_;
 				std::string ownerId_;
 				int sourceEndpointPort_;
 				int backupRetentionPeriod_;

@@ -53,16 +53,16 @@ void DescribeRestoreRangeInfoResult::parse(const std::string &payload)
 			itemsObject.endTimestampForRestore = std::stol(valueItemsDBSRecoverRange["EndTimestampForRestore"].asString());
 		if(!valueItemsDBSRecoverRange["RangeType"].isNull())
 			itemsObject.rangeType = valueItemsDBSRecoverRange["RangeType"].asString();
-		auto allFullBackupListNode = allItemsNode["FullBackupList"]["FullBackupDetail"];
-		for (auto allItemsNodeFullBackupListFullBackupDetail : allFullBackupListNode)
+		auto allFullBackupListNode = valueItemsDBSRecoverRange["FullBackupList"]["FullBackupDetail"];
+		for (auto valueItemsDBSRecoverRangeFullBackupListFullBackupDetail : allFullBackupListNode)
 		{
 			DBSRecoverRange::FullBackupDetail fullBackupListObject;
-			if(!allItemsNodeFullBackupListFullBackupDetail["BackupSetId"].isNull())
-				fullBackupListObject.backupSetId = allItemsNodeFullBackupListFullBackupDetail["BackupSetId"].asString();
-			if(!allItemsNodeFullBackupListFullBackupDetail["StartTime"].isNull())
-				fullBackupListObject.startTime = std::stol(allItemsNodeFullBackupListFullBackupDetail["StartTime"].asString());
-			if(!allItemsNodeFullBackupListFullBackupDetail["EndTime"].isNull())
-				fullBackupListObject.endTime = std::stol(allItemsNodeFullBackupListFullBackupDetail["EndTime"].asString());
+			if(!valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["BackupSetId"].isNull())
+				fullBackupListObject.backupSetId = valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["BackupSetId"].asString();
+			if(!valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["StartTime"].isNull())
+				fullBackupListObject.startTime = std::stol(valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["StartTime"].asString());
+			if(!valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["EndTime"].isNull())
+				fullBackupListObject.endTime = std::stol(valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["EndTime"].asString());
 			itemsObject.fullBackupList.push_back(fullBackupListObject);
 		}
 		items_.push_back(itemsObject);

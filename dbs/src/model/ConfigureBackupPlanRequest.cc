@@ -181,6 +181,17 @@ void ConfigureBackupPlanRequest::setDuplicationArchivePeriod(int duplicationArch
 	setParameter("DuplicationArchivePeriod", std::to_string(duplicationArchivePeriod));
 }
 
+int ConfigureBackupPlanRequest::getBackupLogIntervalSeconds()const
+{
+	return backupLogIntervalSeconds_;
+}
+
+void ConfigureBackupPlanRequest::setBackupLogIntervalSeconds(int backupLogIntervalSeconds)
+{
+	backupLogIntervalSeconds_ = backupLogIntervalSeconds;
+	setParameter("BackupLogIntervalSeconds", std::to_string(backupLogIntervalSeconds));
+}
+
 std::string ConfigureBackupPlanRequest::getCrossAliyunId()const
 {
 	return crossAliyunId_;
@@ -223,6 +234,17 @@ void ConfigureBackupPlanRequest::setBackupObjects(const std::string& backupObjec
 {
 	backupObjects_ = backupObjects;
 	setParameter("BackupObjects", backupObjects);
+}
+
+long ConfigureBackupPlanRequest::getBackupRateLimit()const
+{
+	return backupRateLimit_;
+}
+
+void ConfigureBackupPlanRequest::setBackupRateLimit(long backupRateLimit)
+{
+	backupRateLimit_ = backupRateLimit;
+	setParameter("BackupRateLimit", std::to_string(backupRateLimit));
 }
 
 std::string ConfigureBackupPlanRequest::getOwnerId()const
