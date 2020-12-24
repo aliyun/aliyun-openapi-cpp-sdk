@@ -187,8 +187,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDBInstancesByPerformanceResult.h
 	include/alibabacloud/rds/model/DescribeDBInstancesForCloneRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstancesForCloneResult.h
-	include/alibabacloud/rds/model/DescribeDBInstancesOverviewRequest.h
-	include/alibabacloud/rds/model/DescribeDBInstancesOverviewResult.h
 	include/alibabacloud/rds/model/DescribeDBProxyRequest.h
 	include/alibabacloud/rds/model/DescribeDBProxyResult.h
 	include/alibabacloud/rds/model/DescribeDBProxyEndpointRequest.h
@@ -642,8 +640,6 @@ set(rds_src
 	src/model/DescribeDBInstancesByPerformanceResult.cc
 	src/model/DescribeDBInstancesForCloneRequest.cc
 	src/model/DescribeDBInstancesForCloneResult.cc
-	src/model/DescribeDBInstancesOverviewRequest.cc
-	src/model/DescribeDBInstancesOverviewResult.cc
 	src/model/DescribeDBProxyRequest.cc
 	src/model/DescribeDBProxyResult.cc
 	src/model/DescribeDBProxyEndpointRequest.cc
