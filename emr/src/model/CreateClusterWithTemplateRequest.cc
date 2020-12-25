@@ -71,6 +71,17 @@ void CreateClusterWithTemplateRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateClusterWithTemplateRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateClusterWithTemplateRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
 {
 	return templateBizId_;

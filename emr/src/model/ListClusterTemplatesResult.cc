@@ -109,66 +109,66 @@ void ListClusterTemplatesResult::parse(const std::string &payload)
 			templateInfoListObject.metaStoreType = valueTemplateInfoListTemplateInfo["MetaStoreType"].asString();
 		if(!valueTemplateInfoListTemplateInfo["MetaStoreConf"].isNull())
 			templateInfoListObject.metaStoreConf = valueTemplateInfoListTemplateInfo["MetaStoreConf"].asString();
-		auto allBootstrapActionListNode = allTemplateInfoListNode["BootstrapActionList"]["BootstrapAction"];
-		for (auto allTemplateInfoListNodeBootstrapActionListBootstrapAction : allBootstrapActionListNode)
+		auto allBootstrapActionListNode = valueTemplateInfoListTemplateInfo["BootstrapActionList"]["BootstrapAction"];
+		for (auto valueTemplateInfoListTemplateInfoBootstrapActionListBootstrapAction : allBootstrapActionListNode)
 		{
 			TemplateInfo::BootstrapAction bootstrapActionListObject;
-			if(!allTemplateInfoListNodeBootstrapActionListBootstrapAction["Name"].isNull())
-				bootstrapActionListObject.name = allTemplateInfoListNodeBootstrapActionListBootstrapAction["Name"].asString();
-			if(!allTemplateInfoListNodeBootstrapActionListBootstrapAction["Path"].isNull())
-				bootstrapActionListObject.path = allTemplateInfoListNodeBootstrapActionListBootstrapAction["Path"].asString();
-			if(!allTemplateInfoListNodeBootstrapActionListBootstrapAction["Arg"].isNull())
-				bootstrapActionListObject.arg = allTemplateInfoListNodeBootstrapActionListBootstrapAction["Arg"].asString();
+			if(!valueTemplateInfoListTemplateInfoBootstrapActionListBootstrapAction["Name"].isNull())
+				bootstrapActionListObject.name = valueTemplateInfoListTemplateInfoBootstrapActionListBootstrapAction["Name"].asString();
+			if(!valueTemplateInfoListTemplateInfoBootstrapActionListBootstrapAction["Path"].isNull())
+				bootstrapActionListObject.path = valueTemplateInfoListTemplateInfoBootstrapActionListBootstrapAction["Path"].asString();
+			if(!valueTemplateInfoListTemplateInfoBootstrapActionListBootstrapAction["Arg"].isNull())
+				bootstrapActionListObject.arg = valueTemplateInfoListTemplateInfoBootstrapActionListBootstrapAction["Arg"].asString();
 			templateInfoListObject.bootstrapActionList.push_back(bootstrapActionListObject);
 		}
-		auto allHostGroupListNode = allTemplateInfoListNode["HostGroupList"]["HostGroup"];
-		for (auto allTemplateInfoListNodeHostGroupListHostGroup : allHostGroupListNode)
+		auto allHostGroupListNode = valueTemplateInfoListTemplateInfo["HostGroupList"]["HostGroup"];
+		for (auto valueTemplateInfoListTemplateInfoHostGroupListHostGroup : allHostGroupListNode)
 		{
 			TemplateInfo::HostGroup hostGroupListObject;
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["HostGroupId"].isNull())
-				hostGroupListObject.hostGroupId = allTemplateInfoListNodeHostGroupListHostGroup["HostGroupId"].asString();
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["HostGroupName"].isNull())
-				hostGroupListObject.hostGroupName = allTemplateInfoListNodeHostGroupListHostGroup["HostGroupName"].asString();
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["HostGroupType"].isNull())
-				hostGroupListObject.hostGroupType = allTemplateInfoListNodeHostGroupListHostGroup["HostGroupType"].asString();
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["ChargeType"].isNull())
-				hostGroupListObject.chargeType = allTemplateInfoListNodeHostGroupListHostGroup["ChargeType"].asString();
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["Period"].isNull())
-				hostGroupListObject.period = allTemplateInfoListNodeHostGroupListHostGroup["Period"].asString();
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["NodeCount"].isNull())
-				hostGroupListObject.nodeCount = std::stoi(allTemplateInfoListNodeHostGroupListHostGroup["NodeCount"].asString());
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["InstanceType"].isNull())
-				hostGroupListObject.instanceType = allTemplateInfoListNodeHostGroupListHostGroup["InstanceType"].asString();
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["DiskType"].isNull())
-				hostGroupListObject.diskType = allTemplateInfoListNodeHostGroupListHostGroup["DiskType"].asString();
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["DiskCapacity"].isNull())
-				hostGroupListObject.diskCapacity = std::stoi(allTemplateInfoListNodeHostGroupListHostGroup["DiskCapacity"].asString());
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["DiskCount"].isNull())
-				hostGroupListObject.diskCount = std::stoi(allTemplateInfoListNodeHostGroupListHostGroup["DiskCount"].asString());
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["SysDiskType"].isNull())
-				hostGroupListObject.sysDiskType = allTemplateInfoListNodeHostGroupListHostGroup["SysDiskType"].asString();
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["SysDiskCapacity"].isNull())
-				hostGroupListObject.sysDiskCapacity = std::stoi(allTemplateInfoListNodeHostGroupListHostGroup["SysDiskCapacity"].asString());
-			if(!allTemplateInfoListNodeHostGroupListHostGroup["MultiInstanceTypes"].isNull())
-				hostGroupListObject.multiInstanceTypes = allTemplateInfoListNodeHostGroupListHostGroup["MultiInstanceTypes"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["HostGroupId"].isNull())
+				hostGroupListObject.hostGroupId = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["HostGroupId"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["HostGroupName"].isNull())
+				hostGroupListObject.hostGroupName = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["HostGroupName"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["HostGroupType"].isNull())
+				hostGroupListObject.hostGroupType = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["HostGroupType"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["ChargeType"].isNull())
+				hostGroupListObject.chargeType = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["ChargeType"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["Period"].isNull())
+				hostGroupListObject.period = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["Period"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["NodeCount"].isNull())
+				hostGroupListObject.nodeCount = std::stoi(valueTemplateInfoListTemplateInfoHostGroupListHostGroup["NodeCount"].asString());
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["InstanceType"].isNull())
+				hostGroupListObject.instanceType = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["InstanceType"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["DiskType"].isNull())
+				hostGroupListObject.diskType = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["DiskType"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["DiskCapacity"].isNull())
+				hostGroupListObject.diskCapacity = std::stoi(valueTemplateInfoListTemplateInfoHostGroupListHostGroup["DiskCapacity"].asString());
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["DiskCount"].isNull())
+				hostGroupListObject.diskCount = std::stoi(valueTemplateInfoListTemplateInfoHostGroupListHostGroup["DiskCount"].asString());
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["SysDiskType"].isNull())
+				hostGroupListObject.sysDiskType = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["SysDiskType"].asString();
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["SysDiskCapacity"].isNull())
+				hostGroupListObject.sysDiskCapacity = std::stoi(valueTemplateInfoListTemplateInfoHostGroupListHostGroup["SysDiskCapacity"].asString());
+			if(!valueTemplateInfoListTemplateInfoHostGroupListHostGroup["MultiInstanceTypes"].isNull())
+				hostGroupListObject.multiInstanceTypes = valueTemplateInfoListTemplateInfoHostGroupListHostGroup["MultiInstanceTypes"].asString();
 			templateInfoListObject.hostGroupList.push_back(hostGroupListObject);
 		}
-		auto allConfigListNode = allTemplateInfoListNode["ConfigList"]["Config"];
-		for (auto allTemplateInfoListNodeConfigListConfig : allConfigListNode)
+		auto allConfigListNode = valueTemplateInfoListTemplateInfo["ConfigList"]["Config"];
+		for (auto valueTemplateInfoListTemplateInfoConfigListConfig : allConfigListNode)
 		{
 			TemplateInfo::Config configListObject;
-			if(!allTemplateInfoListNodeConfigListConfig["ServiceName"].isNull())
-				configListObject.serviceName = allTemplateInfoListNodeConfigListConfig["ServiceName"].asString();
-			if(!allTemplateInfoListNodeConfigListConfig["FileName"].isNull())
-				configListObject.fileName = allTemplateInfoListNodeConfigListConfig["FileName"].asString();
-			if(!allTemplateInfoListNodeConfigListConfig["ConfigKey"].isNull())
-				configListObject.configKey = allTemplateInfoListNodeConfigListConfig["ConfigKey"].asString();
-			if(!allTemplateInfoListNodeConfigListConfig["ConfigValue"].isNull())
-				configListObject.configValue = allTemplateInfoListNodeConfigListConfig["ConfigValue"].asString();
-			if(!allTemplateInfoListNodeConfigListConfig["Encrypt"].isNull())
-				configListObject.encrypt = allTemplateInfoListNodeConfigListConfig["Encrypt"].asString();
-			if(!allTemplateInfoListNodeConfigListConfig["Replace"].isNull())
-				configListObject.replace = allTemplateInfoListNodeConfigListConfig["Replace"].asString();
+			if(!valueTemplateInfoListTemplateInfoConfigListConfig["ServiceName"].isNull())
+				configListObject.serviceName = valueTemplateInfoListTemplateInfoConfigListConfig["ServiceName"].asString();
+			if(!valueTemplateInfoListTemplateInfoConfigListConfig["FileName"].isNull())
+				configListObject.fileName = valueTemplateInfoListTemplateInfoConfigListConfig["FileName"].asString();
+			if(!valueTemplateInfoListTemplateInfoConfigListConfig["ConfigKey"].isNull())
+				configListObject.configKey = valueTemplateInfoListTemplateInfoConfigListConfig["ConfigKey"].asString();
+			if(!valueTemplateInfoListTemplateInfoConfigListConfig["ConfigValue"].isNull())
+				configListObject.configValue = valueTemplateInfoListTemplateInfoConfigListConfig["ConfigValue"].asString();
+			if(!valueTemplateInfoListTemplateInfoConfigListConfig["Encrypt"].isNull())
+				configListObject.encrypt = valueTemplateInfoListTemplateInfoConfigListConfig["Encrypt"].asString();
+			if(!valueTemplateInfoListTemplateInfoConfigListConfig["Replace"].isNull())
+				configListObject.replace = valueTemplateInfoListTemplateInfoConfigListConfig["Replace"].asString();
 			templateInfoListObject.configList.push_back(configListObject);
 		}
 		auto allSoftwareInfoList = value["SoftwareInfoList"]["SoftwareInfo"];

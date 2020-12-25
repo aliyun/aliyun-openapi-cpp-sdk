@@ -34,8 +34,16 @@ namespace AlibabaCloud
 				struct BootstrapAction
 				{
 					std::string path;
+					std::string executionTarget;
+					std::string executionMoment;
 					std::string arg;
 					std::string name;
+					std::string executionFailStrategy;
+				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
 				};
 				struct HostGroup
 				{
@@ -90,12 +98,16 @@ namespace AlibabaCloud
 				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getMachineType()const;
 				void setMachineType(const std::string& machineType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::vector<BootstrapAction> getBootstrapAction()const;
 				void setBootstrapAction(const std::vector<BootstrapAction>& bootstrapAction);
 				std::string getMetaStoreConf()const;
 				void setMetaStoreConf(const std::string& metaStoreConf);
 				std::string getEmrVer()const;
 				void setEmrVer(const std::string& emrVer);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				bool getIsOpenPublicIp()const;
 				void setIsOpenPublicIp(bool isOpenPublicIp);
 				int getPeriod()const;
@@ -159,9 +171,11 @@ namespace AlibabaCloud
 				std::string metaStoreType_;
 				std::string securityGroupName_;
 				std::string machineType_;
+				std::string resourceGroupId_;
 				std::vector<BootstrapAction> bootstrapAction_;
 				std::string metaStoreConf_;
 				std::string emrVer_;
+				std::vector<Tag> tag_;
 				bool isOpenPublicIp_;
 				int period_;
 				std::string instanceGeneration_;

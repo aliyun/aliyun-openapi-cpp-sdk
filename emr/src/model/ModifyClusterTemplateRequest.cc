@@ -126,6 +126,17 @@ void ModifyClusterTemplateRequest::setMachineType(const std::string& machineType
 	setParameter("MachineType", machineType);
 }
 
+std::string ModifyClusterTemplateRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ModifyClusterTemplateRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::vector<ModifyClusterTemplateRequest::BootstrapAction> ModifyClusterTemplateRequest::getBootstrapAction()const
 {
 	return bootstrapAction_;
@@ -138,8 +149,11 @@ void ModifyClusterTemplateRequest::setBootstrapAction(const std::vector<Bootstra
 		auto bootstrapActionObj = bootstrapAction.at(dep1);
 		std::string bootstrapActionObjStr = "BootstrapAction." + std::to_string(dep1 + 1);
 		setParameter(bootstrapActionObjStr + ".Path", bootstrapActionObj.path);
+		setParameter(bootstrapActionObjStr + ".ExecutionTarget", bootstrapActionObj.executionTarget);
+		setParameter(bootstrapActionObjStr + ".ExecutionMoment", bootstrapActionObj.executionMoment);
 		setParameter(bootstrapActionObjStr + ".Arg", bootstrapActionObj.arg);
 		setParameter(bootstrapActionObjStr + ".Name", bootstrapActionObj.name);
+		setParameter(bootstrapActionObjStr + ".ExecutionFailStrategy", bootstrapActionObj.executionFailStrategy);
 	}
 }
 
@@ -163,6 +177,22 @@ void ModifyClusterTemplateRequest::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
 	setParameter("EmrVer", emrVer);
+}
+
+std::vector<ModifyClusterTemplateRequest::Tag> ModifyClusterTemplateRequest::getTag()const
+{
+	return tag_;
+}
+
+void ModifyClusterTemplateRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 
 bool ModifyClusterTemplateRequest::getIsOpenPublicIp()const

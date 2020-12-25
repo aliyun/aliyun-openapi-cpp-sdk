@@ -57,31 +57,35 @@ namespace AlibabaCloud
 				explicit DescribeScalingRuleResult(const std::string &payload);
 				~DescribeScalingRuleResult();
 				std::string getStatus()const;
-				std::string getGmtCreate()const;
-				int getAdjustmentValue()const;
-				SchedulerTrigger getSchedulerTrigger()const;
+				long getTimeoutWithGrace()const;
 				CloudWatchTrigger getCloudWatchTrigger()const;
 				int getCooldown()const;
 				std::string getGmtModified()const;
+				std::string getAdjustmentType()const;
+				std::string getGmtCreate()const;
+				int getAdjustmentValue()const;
+				SchedulerTrigger getSchedulerTrigger()const;
+				bool getWithGrace()const;
 				std::string getId()const;
 				std::string getRuleName()const;
 				std::string getRuleCategory()const;
-				std::string getAdjustmentType()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
-				std::string gmtCreate_;
-				int adjustmentValue_;
-				SchedulerTrigger schedulerTrigger_;
+				long timeoutWithGrace_;
 				CloudWatchTrigger cloudWatchTrigger_;
 				int cooldown_;
 				std::string gmtModified_;
+				std::string adjustmentType_;
+				std::string gmtCreate_;
+				int adjustmentValue_;
+				SchedulerTrigger schedulerTrigger_;
+				bool withGrace_;
 				std::string id_;
 				std::string ruleName_;
 				std::string ruleCategory_;
-				std::string adjustmentType_;
 
 			};
 		}

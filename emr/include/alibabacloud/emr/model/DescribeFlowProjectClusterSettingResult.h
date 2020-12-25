@@ -45,6 +45,7 @@ namespace AlibabaCloud
 				std::string getProjectId()const;
 				std::vector<std::string> getHostList()const;
 				std::vector<std::string> getUserList()const;
+				std::string getK8sClusterId()const;
 				std::vector<std::string> getQueueList()const;
 
 			protected:
@@ -58,6 +59,7 @@ namespace AlibabaCloud
 				std::string projectId_;
 				std::vector<std::string> hostList_;
 				std::vector<std::string> userList_;
+				std::string k8sClusterId_;
 				std::vector<std::string> queueList_;
 
 			};

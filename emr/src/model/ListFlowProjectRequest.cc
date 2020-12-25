@@ -38,6 +38,28 @@ void ListFlowProjectRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string ListFlowProjectRequest::getProductType()const
+{
+	return productType_;
+}
+
+void ListFlowProjectRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setParameter("ProductType", productType);
+}
+
+std::string ListFlowProjectRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListFlowProjectRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListFlowProjectRequest::getRegionId()const
 {
 	return regionId_;

@@ -85,6 +85,10 @@ void DescribeScalingRuleResult::parse(const std::string &payload)
 		cooldown_ = std::stoi(value["Cooldown"].asString());
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["WithGrace"].isNull())
+		withGrace_ = value["WithGrace"].asString() == "true";
+	if(!value["TimeoutWithGrace"].isNull())
+		timeoutWithGrace_ = std::stol(value["TimeoutWithGrace"].asString());
 
 }
 
@@ -93,19 +97,9 @@ std::string DescribeScalingRuleResult::getStatus()const
 	return status_;
 }
 
-std::string DescribeScalingRuleResult::getGmtCreate()const
+long DescribeScalingRuleResult::getTimeoutWithGrace()const
 {
-	return gmtCreate_;
-}
-
-int DescribeScalingRuleResult::getAdjustmentValue()const
-{
-	return adjustmentValue_;
-}
-
-DescribeScalingRuleResult::SchedulerTrigger DescribeScalingRuleResult::getSchedulerTrigger()const
-{
-	return schedulerTrigger_;
+	return timeoutWithGrace_;
 }
 
 DescribeScalingRuleResult::CloudWatchTrigger DescribeScalingRuleResult::getCloudWatchTrigger()const
@@ -123,6 +117,31 @@ std::string DescribeScalingRuleResult::getGmtModified()const
 	return gmtModified_;
 }
 
+std::string DescribeScalingRuleResult::getAdjustmentType()const
+{
+	return adjustmentType_;
+}
+
+std::string DescribeScalingRuleResult::getGmtCreate()const
+{
+	return gmtCreate_;
+}
+
+int DescribeScalingRuleResult::getAdjustmentValue()const
+{
+	return adjustmentValue_;
+}
+
+DescribeScalingRuleResult::SchedulerTrigger DescribeScalingRuleResult::getSchedulerTrigger()const
+{
+	return schedulerTrigger_;
+}
+
+bool DescribeScalingRuleResult::getWithGrace()const
+{
+	return withGrace_;
+}
+
 std::string DescribeScalingRuleResult::getId()const
 {
 	return id_;
@@ -136,10 +155,5 @@ std::string DescribeScalingRuleResult::getRuleName()const
 std::string DescribeScalingRuleResult::getRuleCategory()const
 {
 	return ruleCategory_;
-}
-
-std::string DescribeScalingRuleResult::getAdjustmentType()const
-{
-	return adjustmentType_;
 }
 

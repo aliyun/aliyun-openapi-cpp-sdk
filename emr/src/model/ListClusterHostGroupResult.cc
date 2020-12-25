@@ -95,6 +95,20 @@ void ListClusterHostGroupResult::parse(const std::string &payload)
 			hostGroupListObject.hostGroupChangeType = valueHostGroupListHostGroup["HostGroupChangeType"].asString();
 		if(!valueHostGroupListHostGroup["HostGroupChangeStatus"].isNull())
 			hostGroupListObject.hostGroupChangeStatus = valueHostGroupListHostGroup["HostGroupChangeStatus"].asString();
+		if(!valueHostGroupListHostGroup["ScalingGroupBizId"].isNull())
+			hostGroupListObject.scalingGroupBizId = valueHostGroupListHostGroup["ScalingGroupBizId"].asString();
+		if(!valueHostGroupListHostGroup["ScalingGroupActiveStatus"].isNull())
+			hostGroupListObject.scalingGroupActiveStatus = valueHostGroupListHostGroup["ScalingGroupActiveStatus"].asString();
+		if(!valueHostGroupListHostGroup["ScalingInMode"].isNull())
+			hostGroupListObject.scalingInMode = valueHostGroupListHostGroup["ScalingInMode"].asString();
+		if(!valueHostGroupListHostGroup["ScalingGroupMinNode"].isNull())
+			hostGroupListObject.scalingGroupMinNode = std::stoi(valueHostGroupListHostGroup["ScalingGroupMinNode"].asString());
+		if(!valueHostGroupListHostGroup["ScalingGroupMaxNode"].isNull())
+			hostGroupListObject.scalingGroupMaxNode = std::stoi(valueHostGroupListHostGroup["ScalingGroupMaxNode"].asString());
+		if(!valueHostGroupListHostGroup["ScalingGroupConfigState"].isNull())
+			hostGroupListObject.scalingGroupConfigState = valueHostGroupListHostGroup["ScalingGroupConfigState"].asString();
+		if(!valueHostGroupListHostGroup["CostSavingPercent"].isNull())
+			hostGroupListObject.costSavingPercent = std::stof(valueHostGroupListHostGroup["CostSavingPercent"].asString());
 		hostGroupList_.push_back(hostGroupListObject);
 	}
 	if(!value["PageNumber"].isNull())

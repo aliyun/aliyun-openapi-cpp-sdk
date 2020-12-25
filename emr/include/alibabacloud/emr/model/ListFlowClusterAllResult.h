@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					long createTime;
 					int period;
 					FailReason failReason;
+					std::string k8sClusterId;
 					std::string name;
 					std::string type;
 					std::string chargeType;

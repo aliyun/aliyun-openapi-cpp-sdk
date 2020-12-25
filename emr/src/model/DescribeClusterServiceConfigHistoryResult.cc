@@ -58,18 +58,18 @@ void DescribeClusterServiceConfigHistoryResult::parse(const std::string &payload
 		Config::ConfigValue configValueObject;
 		if(!configNodeConfigValueListConfigValue["ConfigName"].isNull())
 			configValueObject.configName = configNodeConfigValueListConfigValue["ConfigName"].asString();
-		auto allConfigItemValueListNode = allConfigValueListNode["ConfigItemValueList"]["ConfigItemValue"];
-		for (auto allConfigValueListNodeConfigItemValueListConfigItemValue : allConfigItemValueListNode)
+		auto allConfigItemValueListNode = configNodeConfigValueListConfigValue["ConfigItemValueList"]["ConfigItemValue"];
+		for (auto configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue : allConfigItemValueListNode)
 		{
 			Config::ConfigValue::ConfigItemValue configItemValueListObject;
-			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["ItemName"].isNull())
-				configItemValueListObject.itemName = allConfigValueListNodeConfigItemValueListConfigItemValue["ItemName"].asString();
-			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["Value"].isNull())
-				configItemValueListObject.value = allConfigValueListNodeConfigItemValueListConfigItemValue["Value"].asString();
-			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["OldValue"].isNull())
-				configItemValueListObject.oldValue = allConfigValueListNodeConfigItemValueListConfigItemValue["OldValue"].asString();
-			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["ChangeType"].isNull())
-				configItemValueListObject.changeType = allConfigValueListNodeConfigItemValueListConfigItemValue["ChangeType"].asString();
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["ItemName"].isNull())
+				configItemValueListObject.itemName = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["ItemName"].asString();
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["Value"].isNull())
+				configItemValueListObject.value = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["Value"].asString();
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["OldValue"].isNull())
+				configItemValueListObject.oldValue = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["OldValue"].asString();
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["ChangeType"].isNull())
+				configItemValueListObject.changeType = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["ChangeType"].asString();
 			configValueObject.configItemValueList.push_back(configItemValueListObject);
 		}
 		config_.configValueList.push_back(configValueObject);

@@ -55,6 +55,8 @@ void ListUsersResult::parse(const std::string &payload)
 			userListObject.linuxStatus = valueUserListUser["LinuxStatus"].asString();
 		if(!valueUserListUser["KerberosStatus"].isNull())
 			userListObject.kerberosStatus = valueUserListUser["KerberosStatus"].asString();
+		if(!valueUserListUser["K8sStatus"].isNull())
+			userListObject.k8sStatus = valueUserListUser["K8sStatus"].asString();
 		userList_.push_back(userListObject);
 	}
 

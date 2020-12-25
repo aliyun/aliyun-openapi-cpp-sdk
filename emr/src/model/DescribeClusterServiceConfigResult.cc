@@ -60,18 +60,22 @@ void DescribeClusterServiceConfigResult::parse(const std::string &payload)
 			configValueObject.configName = configNodeConfigValueListConfigValue["ConfigName"].asString();
 		if(!configNodeConfigValueListConfigValue["AllowCustom"].isNull())
 			configValueObject.allowCustom = configNodeConfigValueListConfigValue["AllowCustom"].asString() == "true";
-		auto allConfigItemValueListNode = allConfigValueListNode["ConfigItemValueList"]["ConfigItemValue"];
-		for (auto allConfigValueListNodeConfigItemValueListConfigItemValue : allConfigItemValueListNode)
+		if(!configNodeConfigValueListConfigValue["Scope"].isNull())
+			configValueObject.scope = configNodeConfigValueListConfigValue["Scope"].asString();
+		if(!configNodeConfigValueListConfigValue["ScopeId"].isNull())
+			configValueObject.scopeId = std::stol(configNodeConfigValueListConfigValue["ScopeId"].asString());
+		auto allConfigItemValueListNode = configNodeConfigValueListConfigValue["ConfigItemValueList"]["ConfigItemValue"];
+		for (auto configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue : allConfigItemValueListNode)
 		{
 			Config::ConfigValue::ConfigItemValue configItemValueListObject;
-			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["ItemName"].isNull())
-				configItemValueListObject.itemName = allConfigValueListNodeConfigItemValueListConfigItemValue["ItemName"].asString();
-			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["Value"].isNull())
-				configItemValueListObject.value = allConfigValueListNodeConfigItemValueListConfigItemValue["Value"].asString();
-			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["IsCustom"].isNull())
-				configItemValueListObject.isCustom = allConfigValueListNodeConfigItemValueListConfigItemValue["IsCustom"].asString() == "true";
-			if(!allConfigValueListNodeConfigItemValueListConfigItemValue["Description"].isNull())
-				configItemValueListObject.description = allConfigValueListNodeConfigItemValueListConfigItemValue["Description"].asString();
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["ItemName"].isNull())
+				configItemValueListObject.itemName = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["ItemName"].asString();
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["Value"].isNull())
+				configItemValueListObject.value = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["Value"].asString();
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["IsCustom"].isNull())
+				configItemValueListObject.isCustom = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["IsCustom"].asString() == "true";
+			if(!configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["Description"].isNull())
+				configItemValueListObject.description = configNodeConfigValueListConfigValueConfigItemValueListConfigItemValue["Description"].asString();
 			configValueObject.configItemValueList.push_back(configItemValueListObject);
 		}
 		config_.configValueList.push_back(configValueObject);

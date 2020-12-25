@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setRunParameter(const std::string& runParameter);
 				int getRetryInterval()const;
 				void setRetryInterval(int retryInterval);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string failAct_;
 				std::string runParameter_;
 				int retryInterval_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string name_;
 				int maxRetry_;

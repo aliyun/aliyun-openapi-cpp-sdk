@@ -71,6 +71,7 @@ namespace AlibabaCloud
 				std::string getId()const;
 				std::string getRetryInterval()const;
 				std::string getRunConf()const;
+				std::string getRetryPolicy()const;
 				bool getPending()const;
 
 			protected:
@@ -110,6 +111,7 @@ namespace AlibabaCloud
 				std::string id_;
 				std::string retryInterval_;
 				std::string runConf_;
+				std::string retryPolicy_;
 				bool pending_;
 
 			};

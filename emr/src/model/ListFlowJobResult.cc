@@ -83,14 +83,14 @@ void ListFlowJobResult::parse(const std::string &payload)
 			jobListObject.alertConf = valueJobListJob["AlertConf"].asString();
 		if(!valueJobListJob["LastInstanceDetail"].isNull())
 			jobListObject.lastInstanceDetail = valueJobListJob["LastInstanceDetail"].asString();
-		auto allResourceListNode = allJobListNode["ResourceList"]["Resource"];
-		for (auto allJobListNodeResourceListResource : allResourceListNode)
+		auto allResourceListNode = valueJobListJob["ResourceList"]["Resource"];
+		for (auto valueJobListJobResourceListResource : allResourceListNode)
 		{
 			Job::Resource resourceListObject;
-			if(!allJobListNodeResourceListResource["Path"].isNull())
-				resourceListObject.path = allJobListNodeResourceListResource["Path"].asString();
-			if(!allJobListNodeResourceListResource["Alias"].isNull())
-				resourceListObject.alias = allJobListNodeResourceListResource["Alias"].asString();
+			if(!valueJobListJobResourceListResource["Path"].isNull())
+				resourceListObject.path = valueJobListJobResourceListResource["Path"].asString();
+			if(!valueJobListJobResourceListResource["Alias"].isNull())
+				resourceListObject.alias = valueJobListJobResourceListResource["Alias"].asString();
 			jobListObject.resourceList.push_back(resourceListObject);
 		}
 		jobList_.push_back(jobListObject);

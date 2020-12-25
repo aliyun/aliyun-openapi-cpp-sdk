@@ -71,6 +71,17 @@ void ListEmrAvailableResourceRequest::setSystemDiskType(const std::string& syste
 	setParameter("SystemDiskType", systemDiskType);
 }
 
+std::string ListEmrAvailableResourceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListEmrAvailableResourceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListEmrAvailableResourceRequest::getRegionId()const
 {
 	return regionId_;

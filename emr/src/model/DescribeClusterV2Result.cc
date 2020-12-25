@@ -52,6 +52,8 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.zoneId = clusterInfoNode["ZoneId"].asString();
 	if(!clusterInfoNode["Name"].isNull())
 		clusterInfo_.name = clusterInfoNode["Name"].asString();
+	if(!clusterInfoNode["ExtraInfo"].isNull())
+		clusterInfo_.extraInfo = clusterInfoNode["ExtraInfo"].asString();
 	if(!clusterInfoNode["RelateClusterId"].isNull())
 		clusterInfo_.relateClusterId = clusterInfoNode["RelateClusterId"].asString();
 	if(!clusterInfoNode["GatewayClusterIds"].isNull())
@@ -122,6 +124,8 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.configurations = clusterInfoNode["Configurations"].asString();
 	if(!clusterInfoNode["EasEnable"].isNull())
 		clusterInfo_.easEnable = clusterInfoNode["EasEnable"].asString() == "true";
+	if(!clusterInfoNode["AutoScalingVersion"].isNull())
+		clusterInfo_.autoScalingVersion = clusterInfoNode["AutoScalingVersion"].asString();
 	if(!clusterInfoNode["AutoScalingEnable"].isNull())
 		clusterInfo_.autoScalingEnable = clusterInfoNode["AutoScalingEnable"].asString() == "true";
 	if(!clusterInfoNode["AutoScalingAllowed"].isNull())
@@ -130,10 +134,14 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 		clusterInfo_.autoScalingSpotWithLimitAllowed = clusterInfoNode["AutoScalingSpotWithLimitAllowed"].asString() == "true";
 	if(!clusterInfoNode["AutoScalingByLoadAllowed"].isNull())
 		clusterInfo_.autoScalingByLoadAllowed = clusterInfoNode["AutoScalingByLoadAllowed"].asString() == "true";
+	if(!clusterInfoNode["AutoScalingWithGraceAllowed"].isNull())
+		clusterInfo_.autoScalingWithGraceAllowed = clusterInfoNode["AutoScalingWithGraceAllowed"].asString() == "true";
 	if(!clusterInfoNode["ResizeDiskEnable"].isNull())
 		clusterInfo_.resizeDiskEnable = clusterInfoNode["ResizeDiskEnable"].asString() == "true";
 	if(!clusterInfoNode["MetaStoreType"].isNull())
 		clusterInfo_.metaStoreType = clusterInfoNode["MetaStoreType"].asString();
+	if(!clusterInfoNode["K8sClusterId"].isNull())
+		clusterInfo_.k8sClusterId = clusterInfoNode["K8sClusterId"].asString();
 	auto allGatewayClusterInfoListNode = clusterInfoNode["GatewayClusterInfoList"]["GatewayClusterInfo"];
 	for (auto clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo : allGatewayClusterInfoListNode)
 	{
@@ -186,50 +194,50 @@ void DescribeClusterV2Result::parse(const std::string &payload)
 			hostGroupObject.lockType = clusterInfoNodeHostGroupListHostGroup["LockType"].asString();
 		if(!clusterInfoNodeHostGroupListHostGroup["LockReason"].isNull())
 			hostGroupObject.lockReason = clusterInfoNodeHostGroupListHostGroup["LockReason"].asString();
-		auto allNodesNode = allHostGroupListNode["Nodes"]["Node"];
-		for (auto allHostGroupListNodeNodesNode : allNodesNode)
+		auto allNodesNode = clusterInfoNodeHostGroupListHostGroup["Nodes"]["Node"];
+		for (auto clusterInfoNodeHostGroupListHostGroupNodesNode : allNodesNode)
 		{
 			ClusterInfo::HostGroup::Node nodesObject;
-			if(!allHostGroupListNodeNodesNode["ZoneId"].isNull())
-				nodesObject.zoneId = allHostGroupListNodeNodesNode["ZoneId"].asString();
-			if(!allHostGroupListNodeNodesNode["InstanceId"].isNull())
-				nodesObject.instanceId = allHostGroupListNodeNodesNode["InstanceId"].asString();
-			if(!allHostGroupListNodeNodesNode["Status"].isNull())
-				nodesObject.status = allHostGroupListNodeNodesNode["Status"].asString();
-			if(!allHostGroupListNodeNodesNode["PubIp"].isNull())
-				nodesObject.pubIp = allHostGroupListNodeNodesNode["PubIp"].asString();
-			if(!allHostGroupListNodeNodesNode["InnerIp"].isNull())
-				nodesObject.innerIp = allHostGroupListNodeNodesNode["InnerIp"].asString();
-			if(!allHostGroupListNodeNodesNode["ExpiredTime"].isNull())
-				nodesObject.expiredTime = allHostGroupListNodeNodesNode["ExpiredTime"].asString();
-			if(!allHostGroupListNodeNodesNode["CreateTime"].isNull())
-				nodesObject.createTime = allHostGroupListNodeNodesNode["CreateTime"].asString();
-			if(!allHostGroupListNodeNodesNode["EmrExpiredTime"].isNull())
-				nodesObject.emrExpiredTime = allHostGroupListNodeNodesNode["EmrExpiredTime"].asString();
-			if(!allHostGroupListNodeNodesNode["SupportIpV6"].isNull())
-				nodesObject.supportIpV6 = allHostGroupListNodeNodesNode["SupportIpV6"].asString() == "true";
-			auto allDaemonInfosNode = allNodesNode["DaemonInfos"]["DaemonInfo"];
-			for (auto allNodesNodeDaemonInfosDaemonInfo : allDaemonInfosNode)
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["ZoneId"].isNull())
+				nodesObject.zoneId = clusterInfoNodeHostGroupListHostGroupNodesNode["ZoneId"].asString();
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["InstanceId"].isNull())
+				nodesObject.instanceId = clusterInfoNodeHostGroupListHostGroupNodesNode["InstanceId"].asString();
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["Status"].isNull())
+				nodesObject.status = clusterInfoNodeHostGroupListHostGroupNodesNode["Status"].asString();
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["PubIp"].isNull())
+				nodesObject.pubIp = clusterInfoNodeHostGroupListHostGroupNodesNode["PubIp"].asString();
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["InnerIp"].isNull())
+				nodesObject.innerIp = clusterInfoNodeHostGroupListHostGroupNodesNode["InnerIp"].asString();
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["ExpiredTime"].isNull())
+				nodesObject.expiredTime = clusterInfoNodeHostGroupListHostGroupNodesNode["ExpiredTime"].asString();
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["CreateTime"].isNull())
+				nodesObject.createTime = clusterInfoNodeHostGroupListHostGroupNodesNode["CreateTime"].asString();
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["EmrExpiredTime"].isNull())
+				nodesObject.emrExpiredTime = clusterInfoNodeHostGroupListHostGroupNodesNode["EmrExpiredTime"].asString();
+			if(!clusterInfoNodeHostGroupListHostGroupNodesNode["SupportIpV6"].isNull())
+				nodesObject.supportIpV6 = clusterInfoNodeHostGroupListHostGroupNodesNode["SupportIpV6"].asString() == "true";
+			auto allDaemonInfosNode = clusterInfoNodeHostGroupListHostGroupNodesNode["DaemonInfos"]["DaemonInfo"];
+			for (auto clusterInfoNodeHostGroupListHostGroupNodesNodeDaemonInfosDaemonInfo : allDaemonInfosNode)
 			{
 				ClusterInfo::HostGroup::Node::DaemonInfo daemonInfosObject;
-				if(!allNodesNodeDaemonInfosDaemonInfo["Name"].isNull())
-					daemonInfosObject.name = allNodesNodeDaemonInfosDaemonInfo["Name"].asString();
+				if(!clusterInfoNodeHostGroupListHostGroupNodesNodeDaemonInfosDaemonInfo["Name"].isNull())
+					daemonInfosObject.name = clusterInfoNodeHostGroupListHostGroupNodesNodeDaemonInfosDaemonInfo["Name"].asString();
 				nodesObject.daemonInfos.push_back(daemonInfosObject);
 			}
-			auto allDiskInfosNode = allNodesNode["DiskInfos"]["DiskInfo"];
-			for (auto allNodesNodeDiskInfosDiskInfo : allDiskInfosNode)
+			auto allDiskInfosNode = clusterInfoNodeHostGroupListHostGroupNodesNode["DiskInfos"]["DiskInfo"];
+			for (auto clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo : allDiskInfosNode)
 			{
 				ClusterInfo::HostGroup::Node::DiskInfo diskInfosObject;
-				if(!allNodesNodeDiskInfosDiskInfo["Device"].isNull())
-					diskInfosObject.device = allNodesNodeDiskInfosDiskInfo["Device"].asString();
-				if(!allNodesNodeDiskInfosDiskInfo["DiskName"].isNull())
-					diskInfosObject.diskName = allNodesNodeDiskInfosDiskInfo["DiskName"].asString();
-				if(!allNodesNodeDiskInfosDiskInfo["DiskId"].isNull())
-					diskInfosObject.diskId = allNodesNodeDiskInfosDiskInfo["DiskId"].asString();
-				if(!allNodesNodeDiskInfosDiskInfo["Type"].isNull())
-					diskInfosObject.type = allNodesNodeDiskInfosDiskInfo["Type"].asString();
-				if(!allNodesNodeDiskInfosDiskInfo["Size"].isNull())
-					diskInfosObject.size = std::stoi(allNodesNodeDiskInfosDiskInfo["Size"].asString());
+				if(!clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["Device"].isNull())
+					diskInfosObject.device = clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["Device"].asString();
+				if(!clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["DiskName"].isNull())
+					diskInfosObject.diskName = clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["DiskName"].asString();
+				if(!clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["DiskId"].isNull())
+					diskInfosObject.diskId = clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["DiskId"].asString();
+				if(!clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["Type"].isNull())
+					diskInfosObject.type = clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["Type"].asString();
+				if(!clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["Size"].isNull())
+					diskInfosObject.size = std::stoi(clusterInfoNodeHostGroupListHostGroupNodesNodeDiskInfosDiskInfo["Size"].asString());
 				nodesObject.diskInfos.push_back(diskInfosObject);
 			}
 			hostGroupObject.nodes.push_back(nodesObject);

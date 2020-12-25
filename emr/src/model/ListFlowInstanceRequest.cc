@@ -40,6 +40,17 @@ void ListFlowInstanceRequest::setStatusList(const std::vector<std::string>& stat
 	}
 }
 
+std::string ListFlowInstanceRequest::getNodeInstanceId()const
+{
+	return nodeInstanceId_;
+}
+
+void ListFlowInstanceRequest::setNodeInstanceId(const std::string& nodeInstanceId)
+{
+	nodeInstanceId_ = nodeInstanceId;
+	setParameter("NodeInstanceId", nodeInstanceId);
+}
+
 int ListFlowInstanceRequest::getPageNumber()const
 {
 	return pageNumber_;

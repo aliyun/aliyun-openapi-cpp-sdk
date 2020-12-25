@@ -27,6 +27,28 @@ ListFlowClusterAllRequest::ListFlowClusterAllRequest() :
 ListFlowClusterAllRequest::~ListFlowClusterAllRequest()
 {}
 
+std::string ListFlowClusterAllRequest::getProductType()const
+{
+	return productType_;
+}
+
+void ListFlowClusterAllRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setParameter("ProductType", productType);
+}
+
+std::string ListFlowClusterAllRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListFlowClusterAllRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListFlowClusterAllRequest::getRegionId()const
 {
 	return regionId_;

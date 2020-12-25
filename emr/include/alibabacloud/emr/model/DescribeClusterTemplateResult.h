@@ -65,6 +65,11 @@ namespace AlibabaCloud
 						std::string fileName;
 						std::string encrypt;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string securityGroupName;
 					std::vector<BootstrapAction> bootstrapActionList;
 					std::string createSource;
@@ -79,6 +84,7 @@ namespace AlibabaCloud
 					bool allowNotebook;
 					std::string userDefinedEmrEcsRole;
 					std::string netType;
+					std::vector<Tag> tags;
 					bool initCustomHiveMetaDb;
 					std::vector<std::string> softwareInfoList;
 					bool useLocalMetaDb;

@@ -63,12 +63,16 @@ namespace AlibabaCloud
 				void setCloudWatchTrigger(const std::vector<CloudWatchTrigger>& cloudWatchTrigger);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				long getTimeoutWithGrace()const;
+				void setTimeoutWithGrace(long timeoutWithGrace);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getCooldown()const;
 				void setCooldown(int cooldown);
 				std::string getLaunchTime()const;
 				void setLaunchTime(const std::string& launchTime);
+				bool getWithGrace()const;
+				void setWithGrace(bool withGrace);
 				std::string getRuleCategory()const;
 				void setRuleCategory(const std::string& ruleCategory);
 				int getAdjustmentValue()const;
@@ -94,9 +98,11 @@ namespace AlibabaCloud
 				std::string recurrenceEndTime_;
 				std::vector<CloudWatchTrigger> cloudWatchTrigger_;
 				std::string accessKeyId_;
+				long timeoutWithGrace_;
 				std::string regionId_;
 				int cooldown_;
 				std::string launchTime_;
+				bool withGrace_;
 				std::string ruleCategory_;
 				int adjustmentValue_;
 				std::string adjustmentType_;

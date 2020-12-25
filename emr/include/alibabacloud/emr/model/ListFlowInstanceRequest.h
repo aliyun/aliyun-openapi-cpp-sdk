@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getStatusList()const;
 				void setStatusList(const std::vector<std::string>& statusList);
+				std::string getNodeInstanceId()const;
+				void setNodeInstanceId(const std::string& nodeInstanceId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 
             private:
 				std::vector<std::string> statusList_;
+				std::string nodeInstanceId_;
 				int pageNumber_;
 				std::string regionId_;
 				int pageSize_;

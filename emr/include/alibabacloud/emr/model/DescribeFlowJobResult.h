@@ -63,6 +63,7 @@ namespace AlibabaCloud
 				std::string getId()const;
 				long getRetryInterval()const;
 				std::string getRunConf()const;
+				std::string getRetryPolicy()const;
 				std::string getCustomVariables()const;
 				std::string getAlertConf()const;
 
@@ -90,6 +91,7 @@ namespace AlibabaCloud
 				std::string id_;
 				long retryInterval_;
 				std::string runConf_;
+				std::string retryPolicy_;
 				std::string customVariables_;
 				std::string alertConf_;
 

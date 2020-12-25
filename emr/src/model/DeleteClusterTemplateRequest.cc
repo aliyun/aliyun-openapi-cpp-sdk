@@ -49,6 +49,17 @@ void DeleteClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DeleteClusterTemplateRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DeleteClusterTemplateRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DeleteClusterTemplateRequest::getRegionId()const
 {
 	return regionId_;

@@ -43,14 +43,20 @@ namespace AlibabaCloud
 					std::string gmtModified;
 					int cpu;
 					int dataDiskCount;
+					int scalingGroupMinNode;
 					std::string lockType;
 					std::string systemDiskType;
+					std::string scalingGroupActiveStatus;
+					int scalingGroupMaxNode;
 					std::string instanceType;
 					std::string lockReason;
+					std::string scalingGroupConfigState;
 					std::string status;
 					int systemDiskCount;
 					std::string comment;
 					int nodeCount;
+					float costSavingPercent;
+					std::string scalingInMode;
 					std::string securityGroupId;
 					std::string payType;
 					std::string hostGroupName;
@@ -59,6 +65,7 @@ namespace AlibabaCloud
 					std::string hostGroupId;
 					std::string dataDiskType;
 					std::string chargeType;
+					std::string scalingGroupBizId;
 					int dataDiskSize;
 				};
 

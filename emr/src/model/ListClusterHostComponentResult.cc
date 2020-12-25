@@ -77,6 +77,8 @@ void ListClusterHostComponentResult::parse(const std::string &payload)
 			componentListObject.hostInstanceId = valueComponentListComponent["HostInstanceId"].asString();
 		if(!valueComponentListComponent["SerialNumber"].isNull())
 			componentListObject.serialNumber = valueComponentListComponent["SerialNumber"].asString();
+		if(!valueComponentListComponent["CommissionStatus"].isNull())
+			componentListObject.commissionStatus = valueComponentListComponent["CommissionStatus"].asString();
 		componentList_.push_back(componentListObject);
 	}
 	if(!value["PageNumber"].isNull())

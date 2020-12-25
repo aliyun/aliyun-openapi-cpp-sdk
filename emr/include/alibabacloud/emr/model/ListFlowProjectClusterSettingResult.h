@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string clusterName;
 					std::vector<std::string> hostList;
 					std::vector<std::string> userList;
+					std::string k8sClusterId;
 					std::vector<std::string> queueList;
 				};
 

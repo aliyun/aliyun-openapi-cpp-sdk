@@ -49,6 +49,17 @@ void ListNotesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ListNotesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListNotesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListNotesRequest::getRegionId()const
 {
 	return regionId_;

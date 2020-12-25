@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				ModifyFlowJobRequest();
 				~ModifyFlowJobRequest();
 
+				std::string getRetryPolicy()const;
+				void setRetryPolicy(const std::string& retryPolicy);
 				std::string getRunConf()const;
 				void setRunConf(const std::string& runConf);
 				std::string getDescription()const;
@@ -81,6 +83,7 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 
             private:
+				std::string retryPolicy_;
 				std::string runConf_;
 				std::string description_;
 				std::string paramConf_;

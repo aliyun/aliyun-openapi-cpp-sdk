@@ -34,8 +34,11 @@ namespace AlibabaCloud
 				struct BootstrapAction
 				{
 					std::string path;
+					std::string executionTarget;
+					std::string executionMoment;
 					std::string arg;
 					std::string name;
+					std::string executionFailStrategy;
 				};
 				struct EcsOrder
 				{

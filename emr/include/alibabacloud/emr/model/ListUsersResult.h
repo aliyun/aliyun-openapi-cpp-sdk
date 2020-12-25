@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string linuxStatus;
 					std::string userName;
 					std::string kerberosStatus;
+					std::string k8sStatus;
 					std::string userId;
 				};
 

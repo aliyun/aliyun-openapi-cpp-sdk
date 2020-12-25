@@ -106,6 +106,17 @@ void ListClustersRequest::setMachineType(const std::string& machineType)
 	setParameter("MachineType", machineType);
 }
 
+std::string ListClustersRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListClustersRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListClustersRequest::getRegionId()const
 {
 	return regionId_;
@@ -153,6 +164,19 @@ void ListClustersRequest::setCreateType(const std::string& createType)
 {
 	createType_ = createType;
 	setParameter("CreateType", createType);
+}
+
+std::vector<std::string> ListClustersRequest::getExpiredTagList()const
+{
+	return expiredTagList_;
+}
+
+void ListClustersRequest::setExpiredTagList(const std::vector<std::string>& expiredTagList)
+{
+	expiredTagList_ = expiredTagList;
+	for(int dep1 = 0; dep1!= expiredTagList.size(); dep1++) {
+		setParameter("ExpiredTagList."+ std::to_string(dep1), expiredTagList.at(dep1));
+	}
 }
 
 bool ListClustersRequest::getDefaultStatus()const

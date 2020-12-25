@@ -56,6 +56,8 @@ void DescribeFlowProjectClusterSettingResult::parse(const std::string &payload)
 		projectId_ = value["ProjectId"].asString();
 	if(!value["ClusterId"].isNull())
 		clusterId_ = value["ClusterId"].asString();
+	if(!value["K8sClusterId"].isNull())
+		k8sClusterId_ = value["K8sClusterId"].asString();
 	if(!value["DefaultUser"].isNull())
 		defaultUser_ = value["DefaultUser"].asString();
 	if(!value["DefaultQueue"].isNull())
@@ -101,6 +103,11 @@ std::vector<std::string> DescribeFlowProjectClusterSettingResult::getHostList()c
 std::vector<std::string> DescribeFlowProjectClusterSettingResult::getUserList()const
 {
 	return userList_;
+}
+
+std::string DescribeFlowProjectClusterSettingResult::getK8sClusterId()const
+{
+	return k8sClusterId_;
 }
 
 std::vector<std::string> DescribeFlowProjectClusterSettingResult::getQueueList()const

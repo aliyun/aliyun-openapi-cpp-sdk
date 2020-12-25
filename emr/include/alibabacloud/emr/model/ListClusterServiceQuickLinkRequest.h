@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getDirectType()const;
+				void setDirectType(bool directType);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				bool directType_;
 				std::string clusterId_;
 				std::string accessKeyId_;
 				std::string regionId_;

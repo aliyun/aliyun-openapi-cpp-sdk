@@ -40,8 +40,11 @@ namespace AlibabaCloud
 				struct BootstrapAction
 				{
 					std::string path;
+					std::string executionTarget;
+					std::string executionMoment;
 					std::string arg;
 					std::string name;
+					std::string executionFailStrategy;
 				};
 				struct Tag
 				{
@@ -53,6 +56,12 @@ namespace AlibabaCloud
 					std::string password;
 					std::string userId;
 					std::string userName;
+				};
+				struct PromotionInfo
+				{
+					std::string promotionOptionCode;
+					std::string productCode;
+					std::string promotionOptionNo;
 				};
 				struct HostGroup
 				{
@@ -114,6 +123,8 @@ namespace AlibabaCloud
 				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getMachineType()const;
 				void setMachineType(const std::string& machineType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::vector<HostComponentInfo> getHostComponentInfo()const;
 				void setHostComponentInfo(const std::vector<HostComponentInfo>& hostComponentInfo);
 				std::string getClickHouseConf()const;
@@ -138,6 +149,8 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getClusterType()const;
 				void setClusterType(const std::string& clusterType);
+				std::string getExtraAttributes()const;
+				void setExtraAttributes(const std::string& extraAttributes);
 				bool getAutoRenew()const;
 				void setAutoRenew(bool autoRenew);
 				std::vector<std::string> getOptionSoftWareList()const;
@@ -176,6 +189,8 @@ namespace AlibabaCloud
 				void setRelatedClusterId(const std::string& relatedClusterId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
+				std::vector<PromotionInfo> getPromotionInfo()const;
+				void setPromotionInfo(const std::vector<PromotionInfo>& promotionInfo);
 				std::vector<HostGroup> getHostGroup()const;
 				void setHostGroup(const std::vector<HostGroup>& hostGroup);
 				std::string getChargeType()const;
@@ -198,6 +213,7 @@ namespace AlibabaCloud
 				std::string metaStoreType_;
 				std::string securityGroupName_;
 				std::string machineType_;
+				std::string resourceGroupId_;
 				std::vector<HostComponentInfo> hostComponentInfo_;
 				std::string clickHouseConf_;
 				std::vector<BootstrapAction> bootstrapAction_;
@@ -210,6 +226,7 @@ namespace AlibabaCloud
 				std::string instanceGeneration_;
 				std::string vSwitchId_;
 				std::string clusterType_;
+				std::string extraAttributes_;
 				bool autoRenew_;
 				std::vector<std::string> optionSoftWareList_;
 				std::string netType_;
@@ -229,6 +246,7 @@ namespace AlibabaCloud
 				std::string whiteListType_;
 				std::string relatedClusterId_;
 				std::string vpcId_;
+				std::vector<PromotionInfo> promotionInfo_;
 				std::vector<HostGroup> hostGroup_;
 				std::string chargeType_;
 				std::vector<ServiceInfo> serviceInfo_;

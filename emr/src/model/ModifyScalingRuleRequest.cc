@@ -102,6 +102,17 @@ void ModifyScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+long ModifyScalingRuleRequest::getTimeoutWithGrace()const
+{
+	return timeoutWithGrace_;
+}
+
+void ModifyScalingRuleRequest::setTimeoutWithGrace(long timeoutWithGrace)
+{
+	timeoutWithGrace_ = timeoutWithGrace;
+	setParameter("TimeoutWithGrace", std::to_string(timeoutWithGrace));
+}
+
 std::string ModifyScalingRuleRequest::getRegionId()const
 {
 	return regionId_;
@@ -133,6 +144,17 @@ void ModifyScalingRuleRequest::setLaunchTime(const std::string& launchTime)
 {
 	launchTime_ = launchTime;
 	setParameter("LaunchTime", launchTime);
+}
+
+bool ModifyScalingRuleRequest::getWithGrace()const
+{
+	return withGrace_;
+}
+
+void ModifyScalingRuleRequest::setWithGrace(bool withGrace)
+{
+	withGrace_ = withGrace;
+	setParameter("WithGrace", withGrace ? "true" : "false");
 }
 
 int ModifyScalingRuleRequest::getAdjustmentValue()const

@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSystemDiskType()const;
 				void setSystemDiskType(const std::string& systemDiskType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getInstanceType()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				std::string depositType_;
 				std::string accessKeyId_;
 				std::string systemDiskType_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string instanceType_;
 				std::string instanceChargeType_;

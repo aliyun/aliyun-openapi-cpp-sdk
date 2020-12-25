@@ -51,6 +51,8 @@ void ListFlowProjectClusterSettingResult::parse(const std::string &payload)
 			clusterSettingsObject.projectId = valueClusterSettingsClusterSetting["ProjectId"].asString();
 		if(!valueClusterSettingsClusterSetting["ClusterId"].isNull())
 			clusterSettingsObject.clusterId = valueClusterSettingsClusterSetting["ClusterId"].asString();
+		if(!valueClusterSettingsClusterSetting["K8sClusterId"].isNull())
+			clusterSettingsObject.k8sClusterId = valueClusterSettingsClusterSetting["K8sClusterId"].asString();
 		if(!valueClusterSettingsClusterSetting["ClusterName"].isNull())
 			clusterSettingsObject.clusterName = valueClusterSettingsClusterSetting["ClusterName"].asString();
 		if(!valueClusterSettingsClusterSetting["DefaultUser"].isNull())

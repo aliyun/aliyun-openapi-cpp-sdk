@@ -45,6 +45,10 @@ namespace AlibabaCloud
 				void setHostName(const std::string& hostName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string get_Namespace()const;
+				void set_Namespace(const std::string& _namespace);
+				std::string getJobInstanceId()const;
+				void setJobInstanceId(const std::string& jobInstanceId);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 
@@ -54,6 +58,8 @@ namespace AlibabaCloud
 				std::string jobId_;
 				std::string hostName_;
 				std::string regionId_;
+				std::string _namespace_;
+				std::string jobInstanceId_;
 				std::string projectId_;
 
 			};

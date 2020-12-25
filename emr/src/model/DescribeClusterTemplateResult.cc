@@ -172,6 +172,16 @@ void DescribeClusterTemplateResult::parse(const std::string &payload)
 			configObject.replace = templateInfoNodeConfigListConfig["Replace"].asString();
 		templateInfo_.configList.push_back(configObject);
 	}
+	auto allTagsNode = templateInfoNode["Tags"]["Tag"];
+	for (auto templateInfoNodeTagsTag : allTagsNode)
+	{
+		TemplateInfo::Tag tagObject;
+		if(!templateInfoNodeTagsTag["TagKey"].isNull())
+			tagObject.tagKey = templateInfoNodeTagsTag["TagKey"].asString();
+		if(!templateInfoNodeTagsTag["TagValue"].isNull())
+			tagObject.tagValue = templateInfoNodeTagsTag["TagValue"].asString();
+		templateInfo_.tags.push_back(tagObject);
+	}
 		auto allSoftwareInfoList = templateInfoNode["SoftwareInfoList"]["SoftwareInfo"];
 		for (auto value : allSoftwareInfoList)
 			templateInfo_.softwareInfoList.push_back(value.asString());

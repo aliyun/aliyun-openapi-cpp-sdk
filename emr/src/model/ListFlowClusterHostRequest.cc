@@ -38,6 +38,17 @@ void ListFlowClusterHostRequest::setClusterId(const std::string& clusterId)
 	setParameter("ClusterId", clusterId);
 }
 
+std::string ListFlowClusterHostRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListFlowClusterHostRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListFlowClusterHostRequest::getRegionId()const
 {
 	return regionId_;

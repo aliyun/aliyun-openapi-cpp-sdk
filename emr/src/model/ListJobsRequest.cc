@@ -82,6 +82,17 @@ void ListJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ListJobsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListJobsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListJobsRequest::getRegionId()const
 {
 	return regionId_;

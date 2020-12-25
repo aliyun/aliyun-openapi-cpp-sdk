@@ -71,6 +71,17 @@ void ListDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ListDataSourceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListDataSourceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListDataSourceRequest::getRegionId()const
 {
 	return regionId_;

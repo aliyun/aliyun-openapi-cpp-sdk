@@ -71,6 +71,17 @@ void ModifyFlowRequest::setAlertUserGroupBizId(const std::string& alertUserGroup
 	setParameter("AlertUserGroupBizId", alertUserGroupBizId);
 }
 
+std::string ModifyFlowRequest::getLifecycle()const
+{
+	return lifecycle_;
+}
+
+void ModifyFlowRequest::setLifecycle(const std::string& lifecycle)
+{
+	lifecycle_ = lifecycle;
+	setParameter("Lifecycle", lifecycle);
+}
+
 std::string ModifyFlowRequest::getHostName()const
 {
 	return hostName_;
@@ -159,6 +170,17 @@ void ModifyFlowRequest::setParentFlowList(const std::string& parentFlowList)
 	setParameter("ParentFlowList", parentFlowList);
 }
 
+std::string ModifyFlowRequest::getLogArchiveLocation()const
+{
+	return logArchiveLocation_;
+}
+
+void ModifyFlowRequest::setLogArchiveLocation(const std::string& logArchiveLocation)
+{
+	logArchiveLocation_ = logArchiveLocation;
+	setParameter("LogArchiveLocation", logArchiveLocation);
+}
+
 std::string ModifyFlowRequest::getAlertDingDingGroupBizId()const
 {
 	return alertDingDingGroupBizId_;
@@ -212,6 +234,17 @@ void ModifyFlowRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+std::string ModifyFlowRequest::get_Namespace()const
+{
+	return _namespace_;
+}
+
+void ModifyFlowRequest::set_Namespace(const std::string& _namespace)
+{
+	_namespace_ = _namespace;
+	setParameter("_Namespace", _namespace);
 }
 
 std::string ModifyFlowRequest::getStatus()const

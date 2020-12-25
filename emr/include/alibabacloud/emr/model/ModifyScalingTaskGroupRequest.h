@@ -37,33 +37,39 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getWithGrace()const;
+				void setWithGrace(bool withGrace);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				int getMinSize()const;
+				void setMinSize(int minSize);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				long getTimeoutWithGrace()const;
+				void setTimeoutWithGrace(long timeoutWithGrace);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getHostGroupId()const;
 				void setHostGroupId(const std::string& hostGroupId);
 				std::string getActiveRuleCategory()const;
 				void setActiveRuleCategory(const std::string& activeRuleCategory);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				int getMinSize()const;
-				void setMinSize(int minSize);
 				int getMaxSize()const;
 				void setMaxSize(int maxSize);
 				int getDefaultCooldown()const;
 				void setDefaultCooldown(int defaultCooldown);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				long resourceOwnerId_;
+				bool withGrace_;
+				std::string clusterId_;
+				int minSize_;
+				std::string accessKeyId_;
+				long timeoutWithGrace_;
 				std::string regionId_;
 				std::string hostGroupId_;
 				std::string activeRuleCategory_;
-				std::string clusterId_;
-				int minSize_;
 				int maxSize_;
 				int defaultCooldown_;
-				std::string accessKeyId_;
 
 			};
 		}

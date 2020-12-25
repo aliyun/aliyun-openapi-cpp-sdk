@@ -37,6 +37,10 @@ namespace AlibabaCloud
 
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getProductType()const;
+				void setProductType(const std::string& productType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
@@ -44,6 +48,8 @@ namespace AlibabaCloud
 
             private:
 				std::string description_;
+				std::string productType_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string name_;
 

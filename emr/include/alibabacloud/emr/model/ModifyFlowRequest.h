@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getAlertUserGroupBizId()const;
 				void setAlertUserGroupBizId(const std::string& alertUserGroupBizId);
+				std::string getLifecycle()const;
+				void setLifecycle(const std::string& lifecycle);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				std::string getRegionId()const;
@@ -59,6 +61,8 @@ namespace AlibabaCloud
 				void setProjectId(const std::string& projectId);
 				std::string getParentFlowList()const;
 				void setParentFlowList(const std::string& parentFlowList);
+				std::string getLogArchiveLocation()const;
+				void setLogArchiveLocation(const std::string& logArchiveLocation);
 				std::string getAlertDingDingGroupBizId()const;
 				void setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId);
 				long getStartSchedule()const;
@@ -69,6 +73,8 @@ namespace AlibabaCloud
 				void setApplication(const std::string& application);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string get_Namespace()const;
+				void set_Namespace(const std::string& _namespace);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 				std::string getParentCategory()const;
@@ -79,6 +85,7 @@ namespace AlibabaCloud
 				bool periodic_;
 				std::string description_;
 				std::string alertUserGroupBizId_;
+				std::string lifecycle_;
 				std::string hostName_;
 				std::string regionId_;
 				bool createCluster_;
@@ -87,11 +94,13 @@ namespace AlibabaCloud
 				std::string alertConf_;
 				std::string projectId_;
 				std::string parentFlowList_;
+				std::string logArchiveLocation_;
 				std::string alertDingDingGroupBizId_;
 				long startSchedule_;
 				std::string clusterId_;
 				std::string application_;
 				std::string name_;
+				std::string _namespace_;
 				std::string status_;
 				std::string parentCategory_;
 

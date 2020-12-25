@@ -82,6 +82,28 @@ void SubmitFlowJobRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string SubmitFlowJobRequest::get_Namespace()const
+{
+	return _namespace_;
+}
+
+void SubmitFlowJobRequest::set_Namespace(const std::string& _namespace)
+{
+	_namespace_ = _namespace;
+	setParameter("_Namespace", _namespace);
+}
+
+std::string SubmitFlowJobRequest::getJobInstanceId()const
+{
+	return jobInstanceId_;
+}
+
+void SubmitFlowJobRequest::setJobInstanceId(const std::string& jobInstanceId)
+{
+	jobInstanceId_ = jobInstanceId;
+	setParameter("JobInstanceId", jobInstanceId);
+}
+
 std::string SubmitFlowJobRequest::getProjectId()const
 {
 	return projectId_;

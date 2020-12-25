@@ -60,6 +60,17 @@ void DescribeSecurityGroupAttributeRequest::setAccessKeyId(const std::string& ac
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeSecurityGroupAttributeRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSecurityGroupAttributeRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSecurityGroupAttributeRequest::getRegionId()const
 {
 	return regionId_;

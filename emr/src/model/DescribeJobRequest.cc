@@ -49,6 +49,17 @@ void DescribeJobRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeJobRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeJobRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeJobRequest::getRegionId()const
 {
 	return regionId_;

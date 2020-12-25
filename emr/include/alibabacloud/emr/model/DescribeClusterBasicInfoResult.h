@@ -93,8 +93,10 @@ namespace AlibabaCloud
 					std::vector<BootstrapAction> bootstrapActionList;
 					bool resizeDiskEnable;
 					FailReason failReason;
+					std::string k8sClusterId;
 					std::string name;
 					bool highAvailabilityEnable;
+					std::string autoScalingVersion;
 					long expiredTime;
 					std::string createType;
 					std::string imageId;
@@ -120,6 +122,7 @@ namespace AlibabaCloud
 					RelateClusterInfo relateClusterInfo;
 					std::string relateClusterId;
 					bool autoScalingByLoadAllowed;
+					bool autoScalingWithGraceAllowed;
 					int coreNodeTotal;
 					std::string configurations;
 					std::string netType;
@@ -128,10 +131,12 @@ namespace AlibabaCloud
 					bool ioOptimized;
 					std::string zoneId;
 					std::string clusterId;
+					std::string operationId;
 					std::string securityGroupId;
 					std::string machineType;
 					int taskNodeTotal;
 					AccessInfo accessInfo;
+					std::string extraInfo;
 					int masterNodeTotal;
 					std::string userId;
 					std::string chargeType;

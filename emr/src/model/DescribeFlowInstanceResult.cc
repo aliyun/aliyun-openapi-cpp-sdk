@@ -129,6 +129,12 @@ void DescribeFlowInstanceResult::parse(const std::string &payload)
 		status_ = value["Status"].asString();
 	if(!value["ClusterId"].isNull())
 		clusterId_ = value["ClusterId"].asString();
+	if(!value["Namespace"].isNull())
+		_namespace_ = value["Namespace"].asString();
+	if(!value["LogArchiveLocation"].isNull())
+		logArchiveLocation_ = value["LogArchiveLocation"].asString();
+	if(!value["Lifecycle"].isNull())
+		lifecycle_ = value["Lifecycle"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = std::stol(value["StartTime"].asString());
 	if(!value["EndTime"].isNull())
@@ -166,6 +172,11 @@ std::string DescribeFlowInstanceResult::getClusterId()const
 	return clusterId_;
 }
 
+std::string DescribeFlowInstanceResult::getLifecycle()const
+{
+	return lifecycle_;
+}
+
 long DescribeFlowInstanceResult::getGmtModified()const
 {
 	return gmtModified_;
@@ -179,6 +190,11 @@ std::string DescribeFlowInstanceResult::getProjectId()const
 long DescribeFlowInstanceResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeFlowInstanceResult::get_Namespace()const
+{
+	return _namespace_;
 }
 
 long DescribeFlowInstanceResult::getDuration()const
@@ -214,6 +230,11 @@ std::string DescribeFlowInstanceResult::getFlowName()const
 std::string DescribeFlowInstanceResult::getId()const
 {
 	return id_;
+}
+
+std::string DescribeFlowInstanceResult::getLogArchiveLocation()const
+{
+	return logArchiveLocation_;
 }
 
 std::string DescribeFlowInstanceResult::getCronExpression()const

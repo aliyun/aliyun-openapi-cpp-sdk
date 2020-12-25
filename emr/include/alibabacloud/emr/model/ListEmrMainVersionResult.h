@@ -48,13 +48,20 @@ namespace AlibabaCloud
 						std::vector<ClusterTypeInfo::ServiceInfo> serviceInfoList;
 						std::string clusterType;
 					};
+					struct ClusterTypeWhiteUser
+					{
+						std::string userId;
+						std::string clusterType;
+					};
 					std::vector<EmrMainVersion::ClusterTypeInfo> clusterTypeInfoList;
 					std::string imageId;
+					std::vector<EmrMainVersion::ClusterTypeWhiteUser> clusterTypeWhiteUserList;
 					bool ecmVersion;
 					std::vector<std::string> whiteUserList;
 					std::string regionId;
 					std::string emrVersion;
 					std::string stackName;
+					std::string publishType;
 					bool display;
 					std::string stackVersion;
 				};

@@ -145,3 +145,20 @@ void ResizeClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 	}
 }
 
+std::vector<ResizeClusterV2Request::PromotionInfo> ResizeClusterV2Request::getPromotionInfo()const
+{
+	return promotionInfo_;
+}
+
+void ResizeClusterV2Request::setPromotionInfo(const std::vector<PromotionInfo>& promotionInfo)
+{
+	promotionInfo_ = promotionInfo;
+	for(int dep1 = 0; dep1!= promotionInfo.size(); dep1++) {
+		auto promotionInfoObj = promotionInfo.at(dep1);
+		std::string promotionInfoObjStr = "PromotionInfo." + std::to_string(dep1 + 1);
+		setParameter(promotionInfoObjStr + ".PromotionOptionCode", promotionInfoObj.promotionOptionCode);
+		setParameter(promotionInfoObjStr + ".ProductCode", promotionInfoObj.productCode);
+		setParameter(promotionInfoObjStr + ".PromotionOptionNo", promotionInfoObj.promotionOptionNo);
+	}
+}
+

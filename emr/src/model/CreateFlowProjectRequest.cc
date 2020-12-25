@@ -38,6 +38,28 @@ void CreateFlowProjectRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
+std::string CreateFlowProjectRequest::getProductType()const
+{
+	return productType_;
+}
+
+void CreateFlowProjectRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setParameter("ProductType", productType);
+}
+
+std::string CreateFlowProjectRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateFlowProjectRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateFlowProjectRequest::getRegionId()const
 {
 	return regionId_;

@@ -44,7 +44,9 @@ namespace AlibabaCloud
 							std::string itemName;
 						};
 						std::string configName;
+						std::string scope;
 						bool allowCustom;
+						long scopeId;
 						std::vector<ConfigValue::ConfigItemValue> configItemValueList;
 					};
 					struct PropertyInfo

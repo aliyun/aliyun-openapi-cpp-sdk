@@ -48,9 +48,12 @@ namespace AlibabaCloud
 					};
 					std::vector<EmrMainVersion::ClusterTypeInfo> clusterTypeInfoList;
 					bool ecmVersion;
+					std::string extraInfo;
 					std::string regionId;
+					bool onCloudNative;
 					std::string mainVersionName;
 					std::string stackName;
+					std::string publishType;
 					std::string stackVersion;
 				};
 				struct SecurityGroup

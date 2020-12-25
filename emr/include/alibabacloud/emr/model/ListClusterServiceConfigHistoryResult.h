@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string oldValue;
 					std::string configVersion;
 					long createTime;
+					std::string hostGroupName;
 					std::string hostInstanceId;
 					bool applied;
 					std::string configFileName;

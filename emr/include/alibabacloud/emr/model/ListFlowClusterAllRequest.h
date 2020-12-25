@@ -35,10 +35,16 @@ namespace AlibabaCloud
 				ListFlowClusterAllRequest();
 				~ListFlowClusterAllRequest();
 
+				std::string getProductType()const;
+				void setProductType(const std::string& productType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 
             private:
+				std::string productType_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 
 			};

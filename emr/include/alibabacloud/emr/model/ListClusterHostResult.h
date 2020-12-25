@@ -39,7 +39,10 @@ namespace AlibabaCloud
 						std::string diskType;
 						std::string type;
 						std::string device;
+						std::string diskMountPoint;
+						std::string blockMountPoint;
 						int diskSize;
+						std::string event;
 						std::string diskId;
 					};
 					std::string status;

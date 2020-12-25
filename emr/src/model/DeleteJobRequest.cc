@@ -49,6 +49,17 @@ void DeleteJobRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DeleteJobRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DeleteJobRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DeleteJobRequest::getRegionId()const
 {
 	return regionId_;

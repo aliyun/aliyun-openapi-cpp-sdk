@@ -59,6 +59,12 @@ namespace AlibabaCloud
 					std::string hostPassword;
 					std::string hostGroupType;
 				};
+				struct PromotionInfo
+				{
+					std::string promotionOptionCode;
+					std::string productCode;
+					std::string promotionOptionNo;
+				};
 
 			public:
 				ResizeClusterV2Request();
@@ -80,6 +86,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::vector<HostGroup> getHostGroup()const;
 				void setHostGroup(const std::vector<HostGroup>& hostGroup);
+				std::vector<PromotionInfo> getPromotionInfo()const;
+				void setPromotionInfo(const std::vector<PromotionInfo>& promotionInfo);
 
             private:
 				bool isOpenPublicIp_;
@@ -90,6 +98,7 @@ namespace AlibabaCloud
 				std::vector<HostComponentInfo> hostComponentInfo_;
 				std::string regionId_;
 				std::vector<HostGroup> hostGroup_;
+				std::vector<PromotionInfo> promotionInfo_;
 
 			};
 		}

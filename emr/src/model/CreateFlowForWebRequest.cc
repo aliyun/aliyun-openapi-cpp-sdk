@@ -60,6 +60,17 @@ void CreateFlowForWebRequest::setAlertUserGroupBizId(const std::string& alertUse
 	setParameter("AlertUserGroupBizId", alertUserGroupBizId);
 }
 
+std::string CreateFlowForWebRequest::getLifecycle()const
+{
+	return lifecycle_;
+}
+
+void CreateFlowForWebRequest::setLifecycle(const std::string& lifecycle)
+{
+	lifecycle_ = lifecycle;
+	setParameter("Lifecycle", lifecycle);
+}
+
 std::string CreateFlowForWebRequest::getHostName()const
 {
 	return hostName_;
@@ -137,6 +148,17 @@ void CreateFlowForWebRequest::setParentFlowList(const std::string& parentFlowLis
 	setParameter("ParentFlowList", parentFlowList);
 }
 
+std::string CreateFlowForWebRequest::getLogArchiveLocation()const
+{
+	return logArchiveLocation_;
+}
+
+void CreateFlowForWebRequest::setLogArchiveLocation(const std::string& logArchiveLocation)
+{
+	logArchiveLocation_ = logArchiveLocation;
+	setParameter("LogArchiveLocation", logArchiveLocation);
+}
+
 std::string CreateFlowForWebRequest::getAlertDingDingGroupBizId()const
 {
 	return alertDingDingGroupBizId_;
@@ -190,6 +212,17 @@ void CreateFlowForWebRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+std::string CreateFlowForWebRequest::get_Namespace()const
+{
+	return _namespace_;
+}
+
+void CreateFlowForWebRequest::set_Namespace(const std::string& _namespace)
+{
+	_namespace_ = _namespace;
+	setParameter("_Namespace", _namespace);
 }
 
 std::string CreateFlowForWebRequest::getParentCategory()const

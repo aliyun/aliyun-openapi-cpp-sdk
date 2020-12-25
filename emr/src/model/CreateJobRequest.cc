@@ -93,6 +93,17 @@ void CreateJobRequest::setRetryInterval(int retryInterval)
 	setParameter("RetryInterval", std::to_string(retryInterval));
 }
 
+std::string CreateJobRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateJobRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateJobRequest::getRegionId()const
 {
 	return regionId_;

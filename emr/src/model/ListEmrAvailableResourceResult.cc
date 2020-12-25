@@ -45,24 +45,24 @@ void ListEmrAvailableResourceResult::parse(const std::string &payload)
 		EmrZoneInfo emrZoneInfoListObject;
 		if(!valueEmrZoneInfoListEmrZoneInfo["ZoneId"].isNull())
 			emrZoneInfoListObject.zoneId = valueEmrZoneInfoListEmrZoneInfo["ZoneId"].asString();
-		auto allEmrResourceInfoListNode = allEmrZoneInfoListNode["EmrResourceInfoList"]["EmrResourceInfo"];
-		for (auto allEmrZoneInfoListNodeEmrResourceInfoListEmrResourceInfo : allEmrResourceInfoListNode)
+		auto allEmrResourceInfoListNode = valueEmrZoneInfoListEmrZoneInfo["EmrResourceInfoList"]["EmrResourceInfo"];
+		for (auto valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfo : allEmrResourceInfoListNode)
 		{
 			EmrZoneInfo::EmrResourceInfo emrResourceInfoListObject;
-			if(!allEmrZoneInfoListNodeEmrResourceInfoListEmrResourceInfo["Type"].isNull())
-				emrResourceInfoListObject.type = allEmrZoneInfoListNodeEmrResourceInfoListEmrResourceInfo["Type"].asString();
-			auto allSupportedResourceListNode = allEmrResourceInfoListNode["SupportedResourceList"]["SupportedResource"];
-			for (auto allEmrResourceInfoListNodeSupportedResourceListSupportedResource : allSupportedResourceListNode)
+			if(!valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfo["Type"].isNull())
+				emrResourceInfoListObject.type = valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfo["Type"].asString();
+			auto allSupportedResourceListNode = valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfo["SupportedResourceList"]["SupportedResource"];
+			for (auto valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource : allSupportedResourceListNode)
 			{
 				EmrZoneInfo::EmrResourceInfo::SupportedResource supportedResourceListObject;
-				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Value"].isNull())
-					supportedResourceListObject.value = allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Value"].asString();
-				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Min"].isNull())
-					supportedResourceListObject.min = std::stoi(allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Min"].asString());
-				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Max"].isNull())
-					supportedResourceListObject.max = std::stoi(allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Max"].asString());
-				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Unit"].isNull())
-					supportedResourceListObject.unit = allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Unit"].asString();
+				if(!valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource["Value"].isNull())
+					supportedResourceListObject.value = valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource["Value"].asString();
+				if(!valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource["Min"].isNull())
+					supportedResourceListObject.min = std::stoi(valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource["Min"].asString());
+				if(!valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource["Max"].isNull())
+					supportedResourceListObject.max = std::stoi(valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource["Max"].asString());
+				if(!valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource["Unit"].isNull())
+					supportedResourceListObject.unit = valueEmrZoneInfoListEmrZoneInfoEmrResourceInfoListEmrResourceInfoSupportedResourceListSupportedResource["Unit"].asString();
 				auto emrInstanceTypeNode = value["EmrInstanceType"];
 				if(!emrInstanceTypeNode["InstanceType"].isNull())
 					supportedResourceListObject.emrInstanceType.instanceType = emrInstanceTypeNode["InstanceType"].asString();

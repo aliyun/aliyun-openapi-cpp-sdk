@@ -116,8 +116,11 @@ void ModifyExecutionPlanRequest::setBootstrapAction(const std::vector<BootstrapA
 		auto bootstrapActionObj = bootstrapAction.at(dep1);
 		std::string bootstrapActionObjStr = "BootstrapAction." + std::to_string(dep1 + 1);
 		setParameter(bootstrapActionObjStr + ".Path", bootstrapActionObj.path);
+		setParameter(bootstrapActionObjStr + ".ExecutionTarget", bootstrapActionObj.executionTarget);
+		setParameter(bootstrapActionObjStr + ".ExecutionMoment", bootstrapActionObj.executionMoment);
 		setParameter(bootstrapActionObjStr + ".Arg", bootstrapActionObj.arg);
 		setParameter(bootstrapActionObjStr + ".Name", bootstrapActionObj.name);
+		setParameter(bootstrapActionObjStr + ".ExecutionFailStrategy", bootstrapActionObj.executionFailStrategy);
 	}
 }
 

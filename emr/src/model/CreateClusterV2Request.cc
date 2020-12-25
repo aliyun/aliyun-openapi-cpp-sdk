@@ -137,6 +137,17 @@ void CreateClusterV2Request::setMachineType(const std::string& machineType)
 	setParameter("MachineType", machineType);
 }
 
+std::string CreateClusterV2Request::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateClusterV2Request::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::vector<CreateClusterV2Request::HostComponentInfo> CreateClusterV2Request::getHostComponentInfo()const
 {
 	return hostComponentInfo_;
@@ -179,8 +190,11 @@ void CreateClusterV2Request::setBootstrapAction(const std::vector<BootstrapActio
 		auto bootstrapActionObj = bootstrapAction.at(dep1);
 		std::string bootstrapActionObjStr = "BootstrapAction." + std::to_string(dep1 + 1);
 		setParameter(bootstrapActionObjStr + ".Path", bootstrapActionObj.path);
+		setParameter(bootstrapActionObjStr + ".ExecutionTarget", bootstrapActionObj.executionTarget);
+		setParameter(bootstrapActionObjStr + ".ExecutionMoment", bootstrapActionObj.executionMoment);
 		setParameter(bootstrapActionObjStr + ".Arg", bootstrapActionObj.arg);
 		setParameter(bootstrapActionObjStr + ".Name", bootstrapActionObj.name);
+		setParameter(bootstrapActionObjStr + ".ExecutionFailStrategy", bootstrapActionObj.executionFailStrategy);
 	}
 }
 
@@ -286,6 +300,17 @@ void CreateClusterV2Request::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
 	setParameter("ClusterType", clusterType);
+}
+
+std::string CreateClusterV2Request::getExtraAttributes()const
+{
+	return extraAttributes_;
+}
+
+void CreateClusterV2Request::setExtraAttributes(const std::string& extraAttributes)
+{
+	extraAttributes_ = extraAttributes;
+	setParameter("ExtraAttributes", extraAttributes);
 }
 
 bool CreateClusterV2Request::getAutoRenew()const
@@ -503,6 +528,23 @@ void CreateClusterV2Request::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
 	setParameter("VpcId", vpcId);
+}
+
+std::vector<CreateClusterV2Request::PromotionInfo> CreateClusterV2Request::getPromotionInfo()const
+{
+	return promotionInfo_;
+}
+
+void CreateClusterV2Request::setPromotionInfo(const std::vector<PromotionInfo>& promotionInfo)
+{
+	promotionInfo_ = promotionInfo;
+	for(int dep1 = 0; dep1!= promotionInfo.size(); dep1++) {
+		auto promotionInfoObj = promotionInfo.at(dep1);
+		std::string promotionInfoObjStr = "PromotionInfo." + std::to_string(dep1 + 1);
+		setParameter(promotionInfoObjStr + ".PromotionOptionCode", promotionInfoObj.promotionOptionCode);
+		setParameter(promotionInfoObjStr + ".ProductCode", promotionInfoObj.productCode);
+		setParameter(promotionInfoObjStr + ".PromotionOptionNo", promotionInfoObj.promotionOptionNo);
+	}
 }
 
 std::vector<CreateClusterV2Request::HostGroup> CreateClusterV2Request::getHostGroup()const

@@ -67,6 +67,8 @@ void ListFlowClusterResult::parse(const std::string &payload)
 			clustersObject.orderList = valueClustersClusterInfo["OrderList"].asString();
 		if(!valueClustersClusterInfo["CreateResource"].isNull())
 			clustersObject.createResource = valueClustersClusterInfo["CreateResource"].asString();
+		if(!valueClustersClusterInfo["K8sClusterId"].isNull())
+			clustersObject.k8sClusterId = valueClustersClusterInfo["K8sClusterId"].asString();
 		auto orderTaskInfoNode = value["OrderTaskInfo"];
 		if(!orderTaskInfoNode["TargetCount"].isNull())
 			clustersObject.orderTaskInfo.targetCount = std::stoi(orderTaskInfoNode["TargetCount"].asString());

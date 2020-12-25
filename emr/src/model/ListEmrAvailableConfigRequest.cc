@@ -49,6 +49,17 @@ void ListEmrAvailableConfigRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ListEmrAvailableConfigRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListEmrAvailableConfigRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListEmrAvailableConfigRequest::getRegionId()const
 {
 	return regionId_;

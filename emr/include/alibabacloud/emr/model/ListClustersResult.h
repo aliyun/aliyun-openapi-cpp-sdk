@@ -46,14 +46,21 @@ namespace AlibabaCloud
 						std::string errorMsg;
 						std::string errorCode;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					std::string createResource;
+					long operationId;
 					long createTime;
 					std::string machineType;
 					std::string depositType;
 					int period;
 					std::string metaStoreType;
 					FailReason failReason;
+					std::string k8sClusterId;
 					std::string name;
 					std::string type;
 					std::string chargeType;
@@ -63,6 +70,7 @@ namespace AlibabaCloud
 					std::string orderList;
 					bool hasUncompletedOrder;
 					int runningTime;
+					std::vector<ClusterInfo::Tag> tags;
 				};
 
 

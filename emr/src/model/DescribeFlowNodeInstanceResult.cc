@@ -63,6 +63,8 @@ void DescribeFlowNodeInstanceResult::parse(const std::string &payload)
 		maxRetry_ = value["MaxRetry"].asString();
 	if(!value["RetryInterval"].isNull())
 		retryInterval_ = value["RetryInterval"].asString();
+	if(!value["RetryPolicy"].isNull())
+		retryPolicy_ = value["RetryPolicy"].asString();
 	if(!value["NodeName"].isNull())
 		nodeName_ = value["NodeName"].asString();
 	if(!value["FlowId"].isNull())
@@ -280,6 +282,11 @@ std::string DescribeFlowNodeInstanceResult::getRetryInterval()const
 std::string DescribeFlowNodeInstanceResult::getRunConf()const
 {
 	return runConf_;
+}
+
+std::string DescribeFlowNodeInstanceResult::getRetryPolicy()const
+{
+	return retryPolicy_;
 }
 
 bool DescribeFlowNodeInstanceResult::getPending()const

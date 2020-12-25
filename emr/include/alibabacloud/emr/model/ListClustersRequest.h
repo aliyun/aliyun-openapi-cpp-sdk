@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getMachineType()const;
 				void setMachineType(const std::string& machineType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 				std::string getCreateType()const;
 				void setCreateType(const std::string& createType);
+				std::vector<std::string> getExpiredTagList()const;
+				void setExpiredTagList(const std::vector<std::string>& expiredTagList);
 				bool getDefaultStatus()const;
 				void setDefaultStatus(bool defaultStatus);
 				std::string getName()const;
@@ -78,10 +82,12 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string machineType_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
 				std::string createType_;
+				std::vector<std::string> expiredTagList_;
 				bool defaultStatus_;
 				std::string name_;
 				std::vector<std::string> clusterTypeList_;

@@ -49,6 +49,17 @@ void DescribeScalingCommonConfigRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeScalingCommonConfigRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeScalingCommonConfigRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeScalingCommonConfigRequest::getRegionId()const
 {
 	return regionId_;

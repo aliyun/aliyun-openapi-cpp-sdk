@@ -49,6 +49,17 @@ void DescribeMetaTablePreviewTaskRequest::setAccessKeyId(const std::string& acce
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeMetaTablePreviewTaskRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeMetaTablePreviewTaskRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeMetaTablePreviewTaskRequest::getRegionId()const
 {
 	return regionId_;

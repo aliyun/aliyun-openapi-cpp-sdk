@@ -81,20 +81,26 @@ void ListClusterHostResult::parse(const std::string &payload)
 			hostListObject.emrExpiredTime = valueHostListHost["EmrExpiredTime"].asString();
 		if(!valueHostListHost["SupportIpV6"].isNull())
 			hostListObject.supportIpV6 = valueHostListHost["SupportIpV6"].asString() == "true";
-		auto allDiskListNode = allHostListNode["DiskList"]["Disk"];
-		for (auto allHostListNodeDiskListDisk : allDiskListNode)
+		auto allDiskListNode = valueHostListHost["DiskList"]["Disk"];
+		for (auto valueHostListHostDiskListDisk : allDiskListNode)
 		{
 			Host::Disk diskListObject;
-			if(!allHostListNodeDiskListDisk["DiskId"].isNull())
-				diskListObject.diskId = allHostListNodeDiskListDisk["DiskId"].asString();
-			if(!allHostListNodeDiskListDisk["Type"].isNull())
-				diskListObject.type = allHostListNodeDiskListDisk["Type"].asString();
-			if(!allHostListNodeDiskListDisk["Device"].isNull())
-				diskListObject.device = allHostListNodeDiskListDisk["Device"].asString();
-			if(!allHostListNodeDiskListDisk["DiskType"].isNull())
-				diskListObject.diskType = allHostListNodeDiskListDisk["DiskType"].asString();
-			if(!allHostListNodeDiskListDisk["DiskSize"].isNull())
-				diskListObject.diskSize = std::stoi(allHostListNodeDiskListDisk["DiskSize"].asString());
+			if(!valueHostListHostDiskListDisk["DiskId"].isNull())
+				diskListObject.diskId = valueHostListHostDiskListDisk["DiskId"].asString();
+			if(!valueHostListHostDiskListDisk["Type"].isNull())
+				diskListObject.type = valueHostListHostDiskListDisk["Type"].asString();
+			if(!valueHostListHostDiskListDisk["Device"].isNull())
+				diskListObject.device = valueHostListHostDiskListDisk["Device"].asString();
+			if(!valueHostListHostDiskListDisk["DiskType"].isNull())
+				diskListObject.diskType = valueHostListHostDiskListDisk["DiskType"].asString();
+			if(!valueHostListHostDiskListDisk["DiskSize"].isNull())
+				diskListObject.diskSize = std::stoi(valueHostListHostDiskListDisk["DiskSize"].asString());
+			if(!valueHostListHostDiskListDisk["BlockMountPoint"].isNull())
+				diskListObject.blockMountPoint = valueHostListHostDiskListDisk["BlockMountPoint"].asString();
+			if(!valueHostListHostDiskListDisk["DiskMountPoint"].isNull())
+				diskListObject.diskMountPoint = valueHostListHostDiskListDisk["DiskMountPoint"].asString();
+			if(!valueHostListHostDiskListDisk["Event"].isNull())
+				diskListObject.event = valueHostListHostDiskListDisk["Event"].asString();
 			hostListObject.diskList.push_back(diskListObject);
 		}
 		hostList_.push_back(hostListObject);

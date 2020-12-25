@@ -67,6 +67,8 @@ void DescribeFlowJobResult::parse(const std::string &payload)
 		maxRetry_ = std::stoi(value["MaxRetry"].asString());
 	if(!value["RetryInterval"].isNull())
 		retryInterval_ = std::stol(value["RetryInterval"].asString());
+	if(!value["RetryPolicy"].isNull())
+		retryPolicy_ = value["RetryPolicy"].asString();
 	if(!value["Params"].isNull())
 		params_ = value["Params"].asString();
 	if(!value["ParamConf"].isNull())
@@ -199,6 +201,11 @@ long DescribeFlowJobResult::getRetryInterval()const
 std::string DescribeFlowJobResult::getRunConf()const
 {
 	return runConf_;
+}
+
+std::string DescribeFlowJobResult::getRetryPolicy()const
+{
+	return retryPolicy_;
 }
 
 std::string DescribeFlowJobResult::getCustomVariables()const

@@ -81,6 +81,12 @@ void DescribeFlowResult::parse(const std::string &payload)
 		clusterId_ = value["ClusterId"].asString();
 	if(!value["HostName"].isNull())
 		hostName_ = value["HostName"].asString();
+	if(!value["Namespace"].isNull())
+		_namespace_ = value["Namespace"].asString();
+	if(!value["LogArchiveLocation"].isNull())
+		logArchiveLocation_ = value["LogArchiveLocation"].asString();
+	if(!value["Lifecycle"].isNull())
+		lifecycle_ = value["Lifecycle"].asString();
 	if(!value["Graph"].isNull())
 		graph_ = value["Graph"].asString();
 	if(!value["CategoryId"].isNull())
@@ -98,16 +104,6 @@ void DescribeFlowResult::parse(const std::string &payload)
 
 }
 
-std::string DescribeFlowResult::getStatus()const
-{
-	return status_;
-}
-
-long DescribeFlowResult::getStartSchedule()const
-{
-	return startSchedule_;
-}
-
 std::string DescribeFlowResult::getCategoryId()const
 {
 	return categoryId_;
@@ -116,11 +112,6 @@ std::string DescribeFlowResult::getCategoryId()const
 std::string DescribeFlowResult::getDescription()const
 {
 	return description_;
-}
-
-std::string DescribeFlowResult::getClusterId()const
-{
-	return clusterId_;
 }
 
 long DescribeFlowResult::getGmtModified()const
@@ -138,11 +129,6 @@ std::string DescribeFlowResult::getCronExpr()const
 	return cronExpr_;
 }
 
-std::string DescribeFlowResult::getEditLockDetail()const
-{
-	return editLockDetail_;
-}
-
 std::string DescribeFlowResult::getName()const
 {
 	return name_;
@@ -156,6 +142,51 @@ std::string DescribeFlowResult::getAlertDingDingGroupBizId()const
 std::string DescribeFlowResult::getAlertUserGroupBizId()const
 {
 	return alertUserGroupBizId_;
+}
+
+std::string DescribeFlowResult::getLogArchiveLocation()const
+{
+	return logArchiveLocation_;
+}
+
+long DescribeFlowResult::getEndSchedule()const
+{
+	return endSchedule_;
+}
+
+std::string DescribeFlowResult::getHostName()const
+{
+	return hostName_;
+}
+
+std::string DescribeFlowResult::getStatus()const
+{
+	return status_;
+}
+
+long DescribeFlowResult::getStartSchedule()const
+{
+	return startSchedule_;
+}
+
+std::string DescribeFlowResult::getClusterId()const
+{
+	return clusterId_;
+}
+
+std::string DescribeFlowResult::getLifecycle()const
+{
+	return lifecycle_;
+}
+
+std::string DescribeFlowResult::get_Namespace()const
+{
+	return _namespace_;
+}
+
+std::string DescribeFlowResult::getEditLockDetail()const
+{
+	return editLockDetail_;
 }
 
 long DescribeFlowResult::getGmtCreate()const
@@ -178,19 +209,9 @@ std::string DescribeFlowResult::getId()const
 	return id_;
 }
 
-long DescribeFlowResult::getEndSchedule()const
-{
-	return endSchedule_;
-}
-
 std::string DescribeFlowResult::getApplication()const
 {
 	return application_;
-}
-
-std::string DescribeFlowResult::getHostName()const
-{
-	return hostName_;
 }
 
 std::vector<DescribeFlowResult::ParentFlow> DescribeFlowResult::getParentFlowList()const

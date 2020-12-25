@@ -59,12 +59,14 @@ void ListClusterServiceComponentHealthInfoResult::parse(const std::string &paylo
 			healthInfoListObject.totalNum = std::stoi(valueHealthInfoListHealthInfo["TotalNum"].asString());
 		if(!valueHealthInfoListHealthInfo["AgentHeartBeatLostNum"].isNull())
 			healthInfoListObject.agentHeartBeatLostNum = std::stoi(valueHealthInfoListHealthInfo["AgentHeartBeatLostNum"].asString());
-		auto allHealthDetailListNode = allHealthInfoListNode["HealthDetailList"]["HealthDetail"];
-		for (auto allHealthInfoListNodeHealthDetailListHealthDetail : allHealthDetailListNode)
+		if(!valueHealthInfoListHealthInfo["CreatedTime"].isNull())
+			healthInfoListObject.createdTime = std::stol(valueHealthInfoListHealthInfo["CreatedTime"].asString());
+		auto allHealthDetailListNode = valueHealthInfoListHealthInfo["HealthDetailList"]["HealthDetail"];
+		for (auto valueHealthInfoListHealthInfoHealthDetailListHealthDetail : allHealthDetailListNode)
 		{
 			HealthInfo::HealthDetail healthDetailListObject;
-			if(!allHealthInfoListNodeHealthDetailListHealthDetail["code"].isNull())
-				healthDetailListObject.code = allHealthInfoListNodeHealthDetailListHealthDetail["code"].asString();
+			if(!valueHealthInfoListHealthInfoHealthDetailListHealthDetail["code"].isNull())
+				healthDetailListObject.code = valueHealthInfoListHealthInfoHealthDetailListHealthDetail["code"].asString();
 			auto healthRuleParamNode = value["HealthRuleParam"];
 			if(!healthRuleParamNode["Service"].isNull())
 				healthDetailListObject.healthRuleParam.service = healthRuleParamNode["Service"].asString();

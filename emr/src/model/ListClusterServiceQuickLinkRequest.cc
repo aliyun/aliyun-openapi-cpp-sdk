@@ -38,6 +38,17 @@ void ListClusterServiceQuickLinkRequest::setResourceOwnerId(long resourceOwnerId
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool ListClusterServiceQuickLinkRequest::getDirectType()const
+{
+	return directType_;
+}
+
+void ListClusterServiceQuickLinkRequest::setDirectType(bool directType)
+{
+	directType_ = directType;
+	setParameter("DirectType", directType ? "true" : "false");
+}
+
 std::string ListClusterServiceQuickLinkRequest::getClusterId()const
 {
 	return clusterId_;

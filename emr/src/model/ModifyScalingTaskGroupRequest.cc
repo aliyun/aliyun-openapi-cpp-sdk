@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyScalingTaskGroupRequest;
 
 ModifyScalingTaskGroupRequest::ModifyScalingTaskGroupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyScalingTaskGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyScalingTaskGroupRequest::~ModifyScalingTaskGroupRequest()
 {}
@@ -33,40 +35,18 @@ long ModifyScalingTaskGroupRequest::getResourceOwnerId()const
 void ModifyScalingTaskGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyScalingTaskGroupRequest::getRegionId()const
+bool ModifyScalingTaskGroupRequest::getWithGrace()const
 {
-	return regionId_;
+	return withGrace_;
 }
 
-void ModifyScalingTaskGroupRequest::setRegionId(const std::string& regionId)
+void ModifyScalingTaskGroupRequest::setWithGrace(bool withGrace)
 {
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyScalingTaskGroupRequest::getHostGroupId()const
-{
-	return hostGroupId_;
-}
-
-void ModifyScalingTaskGroupRequest::setHostGroupId(const std::string& hostGroupId)
-{
-	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
-}
-
-std::string ModifyScalingTaskGroupRequest::getActiveRuleCategory()const
-{
-	return activeRuleCategory_;
-}
-
-void ModifyScalingTaskGroupRequest::setActiveRuleCategory(const std::string& activeRuleCategory)
-{
-	activeRuleCategory_ = activeRuleCategory;
-	setCoreParameter("ActiveRuleCategory", activeRuleCategory);
+	withGrace_ = withGrace;
+	setParameter("WithGrace", withGrace ? "true" : "false");
 }
 
 std::string ModifyScalingTaskGroupRequest::getClusterId()const
@@ -77,7 +57,7 @@ std::string ModifyScalingTaskGroupRequest::getClusterId()const
 void ModifyScalingTaskGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int ModifyScalingTaskGroupRequest::getMinSize()const
@@ -88,29 +68,7 @@ int ModifyScalingTaskGroupRequest::getMinSize()const
 void ModifyScalingTaskGroupRequest::setMinSize(int minSize)
 {
 	minSize_ = minSize;
-	setCoreParameter("MinSize", std::to_string(minSize));
-}
-
-int ModifyScalingTaskGroupRequest::getMaxSize()const
-{
-	return maxSize_;
-}
-
-void ModifyScalingTaskGroupRequest::setMaxSize(int maxSize)
-{
-	maxSize_ = maxSize;
-	setCoreParameter("MaxSize", std::to_string(maxSize));
-}
-
-int ModifyScalingTaskGroupRequest::getDefaultCooldown()const
-{
-	return defaultCooldown_;
-}
-
-void ModifyScalingTaskGroupRequest::setDefaultCooldown(int defaultCooldown)
-{
-	defaultCooldown_ = defaultCooldown;
-	setCoreParameter("DefaultCooldown", std::to_string(defaultCooldown));
+	setParameter("MinSize", std::to_string(minSize));
 }
 
 std::string ModifyScalingTaskGroupRequest::getAccessKeyId()const
@@ -121,6 +79,72 @@ std::string ModifyScalingTaskGroupRequest::getAccessKeyId()const
 void ModifyScalingTaskGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+long ModifyScalingTaskGroupRequest::getTimeoutWithGrace()const
+{
+	return timeoutWithGrace_;
+}
+
+void ModifyScalingTaskGroupRequest::setTimeoutWithGrace(long timeoutWithGrace)
+{
+	timeoutWithGrace_ = timeoutWithGrace;
+	setParameter("TimeoutWithGrace", std::to_string(timeoutWithGrace));
+}
+
+std::string ModifyScalingTaskGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyScalingTaskGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string ModifyScalingTaskGroupRequest::getHostGroupId()const
+{
+	return hostGroupId_;
+}
+
+void ModifyScalingTaskGroupRequest::setHostGroupId(const std::string& hostGroupId)
+{
+	hostGroupId_ = hostGroupId;
+	setParameter("HostGroupId", hostGroupId);
+}
+
+std::string ModifyScalingTaskGroupRequest::getActiveRuleCategory()const
+{
+	return activeRuleCategory_;
+}
+
+void ModifyScalingTaskGroupRequest::setActiveRuleCategory(const std::string& activeRuleCategory)
+{
+	activeRuleCategory_ = activeRuleCategory;
+	setParameter("ActiveRuleCategory", activeRuleCategory);
+}
+
+int ModifyScalingTaskGroupRequest::getMaxSize()const
+{
+	return maxSize_;
+}
+
+void ModifyScalingTaskGroupRequest::setMaxSize(int maxSize)
+{
+	maxSize_ = maxSize;
+	setParameter("MaxSize", std::to_string(maxSize));
+}
+
+int ModifyScalingTaskGroupRequest::getDefaultCooldown()const
+{
+	return defaultCooldown_;
+}
+
+void ModifyScalingTaskGroupRequest::setDefaultCooldown(int defaultCooldown)
+{
+	defaultCooldown_ = defaultCooldown;
+	setParameter("DefaultCooldown", std::to_string(defaultCooldown));
 }
 

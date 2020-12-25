@@ -53,24 +53,30 @@ void ListEmrAvailableConfigResult::parse(const std::string &payload)
 			emrMainVersionListObject.stackName = valueEmrMainVersionListEmrMainVersion["StackName"].asString();
 		if(!valueEmrMainVersionListEmrMainVersion["StackVersion"].isNull())
 			emrMainVersionListObject.stackVersion = valueEmrMainVersionListEmrMainVersion["StackVersion"].asString();
-		auto allClusterTypeInfoListNode = allEmrMainVersionListNode["ClusterTypeInfoList"]["ClusterTypeInfo"];
-		for (auto allEmrMainVersionListNodeClusterTypeInfoListClusterTypeInfo : allClusterTypeInfoListNode)
+		if(!valueEmrMainVersionListEmrMainVersion["ExtraInfo"].isNull())
+			emrMainVersionListObject.extraInfo = valueEmrMainVersionListEmrMainVersion["ExtraInfo"].asString();
+		if(!valueEmrMainVersionListEmrMainVersion["OnCloudNative"].isNull())
+			emrMainVersionListObject.onCloudNative = valueEmrMainVersionListEmrMainVersion["OnCloudNative"].asString() == "true";
+		if(!valueEmrMainVersionListEmrMainVersion["PublishType"].isNull())
+			emrMainVersionListObject.publishType = valueEmrMainVersionListEmrMainVersion["PublishType"].asString();
+		auto allClusterTypeInfoListNode = valueEmrMainVersionListEmrMainVersion["ClusterTypeInfoList"]["ClusterTypeInfo"];
+		for (auto valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfo : allClusterTypeInfoListNode)
 		{
 			EmrMainVersion::ClusterTypeInfo clusterTypeInfoListObject;
-			if(!allEmrMainVersionListNodeClusterTypeInfoListClusterTypeInfo["ClusterType"].isNull())
-				clusterTypeInfoListObject.clusterType = allEmrMainVersionListNodeClusterTypeInfoListClusterTypeInfo["ClusterType"].asString();
-			auto allClusterServiceInfoListNode = allClusterTypeInfoListNode["ClusterServiceInfoList"]["ClusterServiceInfo"];
-			for (auto allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo : allClusterServiceInfoListNode)
+			if(!valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfo["ClusterType"].isNull())
+				clusterTypeInfoListObject.clusterType = valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfo["ClusterType"].asString();
+			auto allClusterServiceInfoListNode = valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfo["ClusterServiceInfoList"]["ClusterServiceInfo"];
+			for (auto valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo : allClusterServiceInfoListNode)
 			{
 				EmrMainVersion::ClusterTypeInfo::ClusterServiceInfo clusterServiceInfoListObject;
-				if(!allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo["ServiceName"].isNull())
-					clusterServiceInfoListObject.serviceName = allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo["ServiceName"].asString();
-				if(!allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo["ServiceDisplayName"].isNull())
-					clusterServiceInfoListObject.serviceDisplayName = allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo["ServiceDisplayName"].asString();
-				if(!allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo["ServiceVersion"].isNull())
-					clusterServiceInfoListObject.serviceVersion = allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo["ServiceVersion"].asString();
-				if(!allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo["Mandatory"].isNull())
-					clusterServiceInfoListObject.mandatory = allClusterTypeInfoListNodeClusterServiceInfoListClusterServiceInfo["Mandatory"].asString() == "true";
+				if(!valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo["ServiceName"].isNull())
+					clusterServiceInfoListObject.serviceName = valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo["ServiceName"].asString();
+				if(!valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo["ServiceDisplayName"].isNull())
+					clusterServiceInfoListObject.serviceDisplayName = valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo["ServiceDisplayName"].asString();
+				if(!valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo["ServiceVersion"].isNull())
+					clusterServiceInfoListObject.serviceVersion = valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo["ServiceVersion"].asString();
+				if(!valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo["Mandatory"].isNull())
+					clusterServiceInfoListObject.mandatory = valueEmrMainVersionListEmrMainVersionClusterTypeInfoListClusterTypeInfoClusterServiceInfoListClusterServiceInfo["Mandatory"].asString() == "true";
 				clusterTypeInfoListObject.clusterServiceInfoList.push_back(clusterServiceInfoListObject);
 			}
 			emrMainVersionListObject.clusterTypeInfoList.push_back(clusterTypeInfoListObject);
@@ -115,26 +121,26 @@ void ListEmrAvailableConfigResult::parse(const std::string &payload)
 			vpcInfoListObject.vRouterId = valueVpcInfoListVpcInfo["VRouterId"].asString();
 		if(!valueVpcInfoListVpcInfo["Description"].isNull())
 			vpcInfoListObject.description = valueVpcInfoListVpcInfo["Description"].asString();
-		auto allVswitchInfoListNode = allVpcInfoListNode["VswitchInfoList"]["VswitchInfo"];
-		for (auto allVpcInfoListNodeVswitchInfoListVswitchInfo : allVswitchInfoListNode)
+		auto allVswitchInfoListNode = valueVpcInfoListVpcInfo["VswitchInfoList"]["VswitchInfo"];
+		for (auto valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo : allVswitchInfoListNode)
 		{
 			VpcInfo::VswitchInfo vswitchInfoListObject;
-			if(!allVpcInfoListNodeVswitchInfoListVswitchInfo["VpcId"].isNull())
-				vswitchInfoListObject.vpcId = allVpcInfoListNodeVswitchInfoListVswitchInfo["VpcId"].asString();
-			if(!allVpcInfoListNodeVswitchInfoListVswitchInfo["VswitchId"].isNull())
-				vswitchInfoListObject.vswitchId = allVpcInfoListNodeVswitchInfoListVswitchInfo["VswitchId"].asString();
-			if(!allVpcInfoListNodeVswitchInfoListVswitchInfo["VswitchName"].isNull())
-				vswitchInfoListObject.vswitchName = allVpcInfoListNodeVswitchInfoListVswitchInfo["VswitchName"].asString();
-			if(!allVpcInfoListNodeVswitchInfoListVswitchInfo["ZoneId"].isNull())
-				vswitchInfoListObject.zoneId = allVpcInfoListNodeVswitchInfoListVswitchInfo["ZoneId"].asString();
-			if(!allVpcInfoListNodeVswitchInfoListVswitchInfo["CidrBlock"].isNull())
-				vswitchInfoListObject.cidrBlock = allVpcInfoListNodeVswitchInfoListVswitchInfo["CidrBlock"].asString();
-			if(!allVpcInfoListNodeVswitchInfoListVswitchInfo["AvailableIpAddressCount"].isNull())
-				vswitchInfoListObject.availableIpAddressCount = std::stol(allVpcInfoListNodeVswitchInfoListVswitchInfo["AvailableIpAddressCount"].asString());
-			if(!allVpcInfoListNodeVswitchInfoListVswitchInfo["Description"].isNull())
-				vswitchInfoListObject.description = allVpcInfoListNodeVswitchInfoListVswitchInfo["Description"].asString();
-			if(!allVpcInfoListNodeVswitchInfoListVswitchInfo["CreationTime"].isNull())
-				vswitchInfoListObject.creationTime = allVpcInfoListNodeVswitchInfoListVswitchInfo["CreationTime"].asString();
+			if(!valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["VpcId"].isNull())
+				vswitchInfoListObject.vpcId = valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["VpcId"].asString();
+			if(!valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["VswitchId"].isNull())
+				vswitchInfoListObject.vswitchId = valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["VswitchId"].asString();
+			if(!valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["VswitchName"].isNull())
+				vswitchInfoListObject.vswitchName = valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["VswitchName"].asString();
+			if(!valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["ZoneId"].isNull())
+				vswitchInfoListObject.zoneId = valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["ZoneId"].asString();
+			if(!valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["CidrBlock"].isNull())
+				vswitchInfoListObject.cidrBlock = valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["CidrBlock"].asString();
+			if(!valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["AvailableIpAddressCount"].isNull())
+				vswitchInfoListObject.availableIpAddressCount = std::stol(valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["AvailableIpAddressCount"].asString());
+			if(!valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["Description"].isNull())
+				vswitchInfoListObject.description = valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["Description"].asString();
+			if(!valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["CreationTime"].isNull())
+				vswitchInfoListObject.creationTime = valueVpcInfoListVpcInfoVswitchInfoListVswitchInfo["CreationTime"].asString();
 			vpcInfoListObject.vswitchInfoList.push_back(vswitchInfoListObject);
 		}
 		vpcInfoList_.push_back(vpcInfoListObject);

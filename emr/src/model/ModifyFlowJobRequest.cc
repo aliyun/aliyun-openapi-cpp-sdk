@@ -27,6 +27,17 @@ ModifyFlowJobRequest::ModifyFlowJobRequest() :
 ModifyFlowJobRequest::~ModifyFlowJobRequest()
 {}
 
+std::string ModifyFlowJobRequest::getRetryPolicy()const
+{
+	return retryPolicy_;
+}
+
+void ModifyFlowJobRequest::setRetryPolicy(const std::string& retryPolicy)
+{
+	retryPolicy_ = retryPolicy;
+	setParameter("RetryPolicy", retryPolicy);
+}
+
 std::string ModifyFlowJobRequest::getRunConf()const
 {
 	return runConf_;

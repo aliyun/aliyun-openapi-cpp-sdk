@@ -49,6 +49,17 @@ void DeleteNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DeleteNoteRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DeleteNoteRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DeleteNoteRequest::getRegionId()const
 {
 	return regionId_;

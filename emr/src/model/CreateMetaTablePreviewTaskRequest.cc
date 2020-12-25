@@ -60,6 +60,17 @@ void CreateMetaTablePreviewTaskRequest::setAccessKeyId(const std::string& access
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateMetaTablePreviewTaskRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateMetaTablePreviewTaskRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateMetaTablePreviewTaskRequest::getPassword()const
 {
 	return password_;

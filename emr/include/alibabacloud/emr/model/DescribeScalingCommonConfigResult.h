@@ -37,12 +37,30 @@ namespace AlibabaCloud
 				DescribeScalingCommonConfigResult();
 				explicit DescribeScalingCommonConfigResult(const std::string &payload);
 				~DescribeScalingCommonConfigResult();
+				int getAutoScalingHookHeartbeatDefaultTime()const;
+				int getAutoScalingRuleAlarmDelayLimit()const;
+				int getAutoScalingGroupMaxSizeLimit()const;
+				long getAutoScalingMNSScalingThreadSleepTime()const;
+				int getAutoScalingCoolDownTime()const;
 				int getAutoScalingRuleMinDelayLimit()const;
+				long getAutoScalingConfigDecommissionQueryInterval()const;
+				int getAutoScalingRuleAlarmSilentTime()const;
+				int getAutoScalingGroupMinSizeLimit()const;
+				int getAutoScalingConfigSystemDiskSize()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int autoScalingHookHeartbeatDefaultTime_;
+				int autoScalingRuleAlarmDelayLimit_;
+				int autoScalingGroupMaxSizeLimit_;
+				long autoScalingMNSScalingThreadSleepTime_;
+				int autoScalingCoolDownTime_;
 				int autoScalingRuleMinDelayLimit_;
+				long autoScalingConfigDecommissionQueryInterval_;
+				int autoScalingRuleAlarmSilentTime_;
+				int autoScalingGroupMinSizeLimit_;
+				int autoScalingConfigSystemDiskSize_;
 
 			};
 		}

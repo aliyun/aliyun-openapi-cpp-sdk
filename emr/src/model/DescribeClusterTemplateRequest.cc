@@ -49,6 +49,17 @@ void DescribeClusterTemplateRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeClusterTemplateRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeClusterTemplateRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeClusterTemplateRequest::getBizId()const
 {
 	return bizId_;

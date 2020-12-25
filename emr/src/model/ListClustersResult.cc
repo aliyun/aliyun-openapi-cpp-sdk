@@ -73,6 +73,20 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.depositType = valueClustersClusterInfo["DepositType"].asString();
 		if(!valueClustersClusterInfo["MetaStoreType"].isNull())
 			clustersObject.metaStoreType = valueClustersClusterInfo["MetaStoreType"].asString();
+		if(!valueClustersClusterInfo["K8sClusterId"].isNull())
+			clustersObject.k8sClusterId = valueClustersClusterInfo["K8sClusterId"].asString();
+		if(!valueClustersClusterInfo["OperationId"].isNull())
+			clustersObject.operationId = std::stol(valueClustersClusterInfo["OperationId"].asString());
+		auto allTagsNode = valueClustersClusterInfo["Tags"]["Tag"];
+		for (auto valueClustersClusterInfoTagsTag : allTagsNode)
+		{
+			ClusterInfo::Tag tagsObject;
+			if(!valueClustersClusterInfoTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueClustersClusterInfoTagsTag["TagKey"].asString();
+			if(!valueClustersClusterInfoTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueClustersClusterInfoTagsTag["TagValue"].asString();
+			clustersObject.tags.push_back(tagsObject);
+		}
 		auto orderTaskInfoNode = value["OrderTaskInfo"];
 		if(!orderTaskInfoNode["TargetCount"].isNull())
 			clustersObject.orderTaskInfo.targetCount = std::stoi(orderTaskInfoNode["TargetCount"].asString());

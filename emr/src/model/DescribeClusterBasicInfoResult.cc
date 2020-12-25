@@ -52,6 +52,8 @@ void DescribeClusterBasicInfoResult::parse(const std::string &payload)
 		clusterInfo_.zoneId = clusterInfoNode["ZoneId"].asString();
 	if(!clusterInfoNode["Name"].isNull())
 		clusterInfo_.name = clusterInfoNode["Name"].asString();
+	if(!clusterInfoNode["ExtraInfo"].isNull())
+		clusterInfo_.extraInfo = clusterInfoNode["ExtraInfo"].asString();
 	if(!clusterInfoNode["RelateClusterId"].isNull())
 		clusterInfo_.relateClusterId = clusterInfoNode["RelateClusterId"].asString();
 	if(!clusterInfoNode["GatewayClusterIds"].isNull())
@@ -122,6 +124,8 @@ void DescribeClusterBasicInfoResult::parse(const std::string &payload)
 		clusterInfo_.configurations = clusterInfoNode["Configurations"].asString();
 	if(!clusterInfoNode["EasEnable"].isNull())
 		clusterInfo_.easEnable = clusterInfoNode["EasEnable"].asString() == "true";
+	if(!clusterInfoNode["AutoScalingVersion"].isNull())
+		clusterInfo_.autoScalingVersion = clusterInfoNode["AutoScalingVersion"].asString();
 	if(!clusterInfoNode["AutoScalingEnable"].isNull())
 		clusterInfo_.autoScalingEnable = clusterInfoNode["AutoScalingEnable"].asString() == "true";
 	if(!clusterInfoNode["AutoScalingAllowed"].isNull())
@@ -130,10 +134,16 @@ void DescribeClusterBasicInfoResult::parse(const std::string &payload)
 		clusterInfo_.autoScalingSpotWithLimitAllowed = clusterInfoNode["AutoScalingSpotWithLimitAllowed"].asString() == "true";
 	if(!clusterInfoNode["AutoScalingByLoadAllowed"].isNull())
 		clusterInfo_.autoScalingByLoadAllowed = clusterInfoNode["AutoScalingByLoadAllowed"].asString() == "true";
+	if(!clusterInfoNode["AutoScalingWithGraceAllowed"].isNull())
+		clusterInfo_.autoScalingWithGraceAllowed = clusterInfoNode["AutoScalingWithGraceAllowed"].asString() == "true";
 	if(!clusterInfoNode["ResizeDiskEnable"].isNull())
 		clusterInfo_.resizeDiskEnable = clusterInfoNode["ResizeDiskEnable"].asString() == "true";
 	if(!clusterInfoNode["MetaStoreType"].isNull())
 		clusterInfo_.metaStoreType = clusterInfoNode["MetaStoreType"].asString();
+	if(!clusterInfoNode["K8sClusterId"].isNull())
+		clusterInfo_.k8sClusterId = clusterInfoNode["K8sClusterId"].asString();
+	if(!clusterInfoNode["OperationId"].isNull())
+		clusterInfo_.operationId = clusterInfoNode["OperationId"].asString();
 	auto allGatewayClusterInfoListNode = clusterInfoNode["GatewayClusterInfoList"]["GatewayClusterInfo"];
 	for (auto clusterInfoNodeGatewayClusterInfoListGatewayClusterInfo : allGatewayClusterInfoListNode)
 	{

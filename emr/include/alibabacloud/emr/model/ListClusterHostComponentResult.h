@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					int cpu;
 					std::string hostId;
 					std::string hostInstanceId;
+					std::string commissionStatus;
 					std::string serviceDisplayName;
 					std::string role;
 					std::string serialNumber;

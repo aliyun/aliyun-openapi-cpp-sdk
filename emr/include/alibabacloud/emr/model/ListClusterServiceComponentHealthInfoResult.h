@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					std::vector<HealthInfo::HealthDetail> healthDetailList;
 					int normalNum;
 					int totalNum;
+					long createdTime;
 					std::string serviceName;
 					int manualStoppedNum;
 					std::string componentName;

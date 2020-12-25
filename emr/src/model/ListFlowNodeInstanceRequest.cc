@@ -73,6 +73,17 @@ void ListFlowNodeInstanceRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string ListFlowNodeInstanceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListFlowNodeInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListFlowNodeInstanceRequest::getRegionId()const
 {
 	return regionId_;

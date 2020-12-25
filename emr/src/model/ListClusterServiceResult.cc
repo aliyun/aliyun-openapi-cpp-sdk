@@ -67,20 +67,20 @@ void ListClusterServiceResult::parse(const std::string &payload)
 			clusterServiceListObject.stoppedNum = std::stoi(valueClusterServiceListClusterService["StoppedNum"].asString());
 		if(!valueClusterServiceListClusterService["NeedRestartNum"].isNull())
 			clusterServiceListObject.needRestartNum = std::stoi(valueClusterServiceListClusterService["NeedRestartNum"].asString());
-		auto allServiceActionListNode = allClusterServiceListNode["ServiceActionList"]["ServiceAction"];
-		for (auto allClusterServiceListNodeServiceActionListServiceAction : allServiceActionListNode)
+		auto allServiceActionListNode = valueClusterServiceListClusterService["ServiceActionList"]["ServiceAction"];
+		for (auto valueClusterServiceListClusterServiceServiceActionListServiceAction : allServiceActionListNode)
 		{
 			ClusterService::ServiceAction serviceActionListObject;
-			if(!allClusterServiceListNodeServiceActionListServiceAction["ServiceName"].isNull())
-				serviceActionListObject.serviceName = allClusterServiceListNodeServiceActionListServiceAction["ServiceName"].asString();
-			if(!allClusterServiceListNodeServiceActionListServiceAction["ComponentName"].isNull())
-				serviceActionListObject.componentName = allClusterServiceListNodeServiceActionListServiceAction["ComponentName"].asString();
-			if(!allClusterServiceListNodeServiceActionListServiceAction["ActionName"].isNull())
-				serviceActionListObject.actionName = allClusterServiceListNodeServiceActionListServiceAction["ActionName"].asString();
-			if(!allClusterServiceListNodeServiceActionListServiceAction["Command"].isNull())
-				serviceActionListObject.command = allClusterServiceListNodeServiceActionListServiceAction["Command"].asString();
-			if(!allClusterServiceListNodeServiceActionListServiceAction["DisplayName"].isNull())
-				serviceActionListObject.displayName = allClusterServiceListNodeServiceActionListServiceAction["DisplayName"].asString();
+			if(!valueClusterServiceListClusterServiceServiceActionListServiceAction["ServiceName"].isNull())
+				serviceActionListObject.serviceName = valueClusterServiceListClusterServiceServiceActionListServiceAction["ServiceName"].asString();
+			if(!valueClusterServiceListClusterServiceServiceActionListServiceAction["ComponentName"].isNull())
+				serviceActionListObject.componentName = valueClusterServiceListClusterServiceServiceActionListServiceAction["ComponentName"].asString();
+			if(!valueClusterServiceListClusterServiceServiceActionListServiceAction["ActionName"].isNull())
+				serviceActionListObject.actionName = valueClusterServiceListClusterServiceServiceActionListServiceAction["ActionName"].asString();
+			if(!valueClusterServiceListClusterServiceServiceActionListServiceAction["Command"].isNull())
+				serviceActionListObject.command = valueClusterServiceListClusterServiceServiceActionListServiceAction["Command"].asString();
+			if(!valueClusterServiceListClusterServiceServiceActionListServiceAction["DisplayName"].isNull())
+				serviceActionListObject.displayName = valueClusterServiceListClusterServiceServiceActionListServiceAction["DisplayName"].asString();
 			clusterServiceListObject.serviceActionList.push_back(serviceActionListObject);
 		}
 		clusterServiceList_.push_back(clusterServiceListObject);

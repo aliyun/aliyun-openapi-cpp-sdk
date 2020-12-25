@@ -38,6 +38,17 @@ void ListFlowClusterRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string ListFlowClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListFlowClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListFlowClusterRequest::getRegionId()const
 {
 	return regionId_;

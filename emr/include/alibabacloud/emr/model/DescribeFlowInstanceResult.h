@@ -78,9 +78,11 @@ namespace AlibabaCloud
 				bool getHasNodeFailed()const;
 				long getEndTime()const;
 				std::string getClusterId()const;
+				std::string getLifecycle()const;
 				long getGmtModified()const;
 				std::string getProjectId()const;
 				long getStartTime()const;
+				std::string get_Namespace()const;
 				long getDuration()const;
 				std::string getFlowId()const;
 				long getGmtCreate()const;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 				long getScheduleTime()const;
 				std::string getFlowName()const;
 				std::string getId()const;
+				std::string getLogArchiveLocation()const;
 				std::string getCronExpression()const;
 				std::vector<ParentFlow> getDependencyFlowList()const;
 				std::vector<NodeInstanceItem> getNodeInstance()const;
@@ -99,9 +102,11 @@ namespace AlibabaCloud
 				bool hasNodeFailed_;
 				long endTime_;
 				std::string clusterId_;
+				std::string lifecycle_;
 				long gmtModified_;
 				std::string projectId_;
 				long startTime_;
+				std::string _namespace_;
 				long duration_;
 				std::string flowId_;
 				long gmtCreate_;
@@ -109,6 +114,7 @@ namespace AlibabaCloud
 				long scheduleTime_;
 				std::string flowName_;
 				std::string id_;
+				std::string logArchiveLocation_;
 				std::string cronExpression_;
 				std::vector<ParentFlow> dependencyFlowList_;
 				std::vector<NodeInstanceItem> nodeInstance_;

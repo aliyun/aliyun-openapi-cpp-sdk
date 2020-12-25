@@ -41,6 +41,10 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getProductType()const;
+				void setProductType(const std::string& productType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getBizId()const;
@@ -52,6 +56,8 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string productType_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string bizId_;
 				int pageSize_;

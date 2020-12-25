@@ -71,6 +71,17 @@ void CreateNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateNoteRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateNoteRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateNoteRequest::getRegionId()const
 {
 	return regionId_;

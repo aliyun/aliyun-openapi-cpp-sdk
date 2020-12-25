@@ -60,6 +60,28 @@ void ListClusterTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ListClusterTemplatesRequest::getProductType()const
+{
+	return productType_;
+}
+
+void ListClusterTemplatesRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setParameter("ProductType", productType);
+}
+
+std::string ListClusterTemplatesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListClusterTemplatesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ListClusterTemplatesRequest::getRegionId()const
 {
 	return regionId_;

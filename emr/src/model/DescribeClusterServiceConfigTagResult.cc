@@ -47,14 +47,14 @@ void DescribeClusterServiceConfigTagResult::parse(const std::string &payload)
 			configTagListObject.tag = valueConfigTagListConfigTag["Tag"].asString();
 		if(!valueConfigTagListConfigTag["TagDesc"].isNull())
 			configTagListObject.tagDesc = valueConfigTagListConfigTag["TagDesc"].asString();
-		auto allValueListNode = allConfigTagListNode["ValueList"]["Value"];
-		for (auto allConfigTagListNodeValueListValue : allValueListNode)
+		auto allValueListNode = valueConfigTagListConfigTag["ValueList"]["Value"];
+		for (auto valueConfigTagListConfigTagValueListValue : allValueListNode)
 		{
 			ConfigTag::Value valueListObject;
-			if(!allConfigTagListNodeValueListValue["Value"].isNull())
-				valueListObject.value = allConfigTagListNodeValueListValue["Value"].asString();
-			if(!allConfigTagListNodeValueListValue["ValueDesc"].isNull())
-				valueListObject.valueDesc = allConfigTagListNodeValueListValue["ValueDesc"].asString();
+			if(!valueConfigTagListConfigTagValueListValue["Value"].isNull())
+				valueListObject.value = valueConfigTagListConfigTagValueListValue["Value"].asString();
+			if(!valueConfigTagListConfigTagValueListValue["ValueDesc"].isNull())
+				valueListObject.valueDesc = valueConfigTagListConfigTagValueListValue["ValueDesc"].asString();
 			configTagListObject.valueList.push_back(valueListObject);
 		}
 		configTagList_.push_back(configTagListObject);
