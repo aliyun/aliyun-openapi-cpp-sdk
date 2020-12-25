@@ -125,6 +125,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/GetVideoResult.h
 	include/alibabacloud/imm/model/GetVideoTaskRequest.h
 	include/alibabacloud/imm/model/GetVideoTaskResult.h
+	include/alibabacloud/imm/model/GetWebofficeURLRequest.h
+	include/alibabacloud/imm/model/GetWebofficeURLResult.h
 	include/alibabacloud/imm/model/IndexImageRequest.h
 	include/alibabacloud/imm/model/IndexImageResult.h
 	include/alibabacloud/imm/model/IndexVideoRequest.h
@@ -161,6 +163,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/RefreshOfficeEditTokenResult.h
 	include/alibabacloud/imm/model/RefreshOfficePreviewTokenRequest.h
 	include/alibabacloud/imm/model/RefreshOfficePreviewTokenResult.h
+	include/alibabacloud/imm/model/RefreshWebofficeTokenRequest.h
+	include/alibabacloud/imm/model/RefreshWebofficeTokenResult.h
 	include/alibabacloud/imm/model/SearchDocIndexRequest.h
 	include/alibabacloud/imm/model/SearchDocIndexResult.h
 	include/alibabacloud/imm/model/StopStreamAnalyseTaskRequest.h
@@ -284,6 +288,8 @@ set(imm_src
 	src/model/GetVideoResult.cc
 	src/model/GetVideoTaskRequest.cc
 	src/model/GetVideoTaskResult.cc
+	src/model/GetWebofficeURLRequest.cc
+	src/model/GetWebofficeURLResult.cc
 	src/model/IndexImageRequest.cc
 	src/model/IndexImageResult.cc
 	src/model/IndexVideoRequest.cc
@@ -320,6 +326,8 @@ set(imm_src
 	src/model/RefreshOfficeEditTokenResult.cc
 	src/model/RefreshOfficePreviewTokenRequest.cc
 	src/model/RefreshOfficePreviewTokenResult.cc
+	src/model/RefreshWebofficeTokenRequest.cc
+	src/model/RefreshWebofficeTokenResult.cc
 	src/model/SearchDocIndexRequest.cc
 	src/model/SearchDocIndexResult.cc
 	src/model/StopStreamAnalyseTaskRequest.cc

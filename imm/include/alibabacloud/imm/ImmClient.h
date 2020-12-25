@@ -126,6 +126,8 @@
 #include "model/GetVideoResult.h"
 #include "model/GetVideoTaskRequest.h"
 #include "model/GetVideoTaskResult.h"
+#include "model/GetWebofficeURLRequest.h"
+#include "model/GetWebofficeURLResult.h"
 #include "model/IndexImageRequest.h"
 #include "model/IndexImageResult.h"
 #include "model/IndexVideoRequest.h"
@@ -162,6 +164,8 @@
 #include "model/RefreshOfficeEditTokenResult.h"
 #include "model/RefreshOfficePreviewTokenRequest.h"
 #include "model/RefreshOfficePreviewTokenResult.h"
+#include "model/RefreshWebofficeTokenRequest.h"
+#include "model/RefreshWebofficeTokenResult.h"
 #include "model/SearchDocIndexRequest.h"
 #include "model/SearchDocIndexResult.h"
 #include "model/StopStreamAnalyseTaskRequest.h"
@@ -343,6 +347,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetVideoTaskResult> GetVideoTaskOutcome;
 			typedef std::future<GetVideoTaskOutcome> GetVideoTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetVideoTaskRequest&, const GetVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVideoTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetWebofficeURLResult> GetWebofficeURLOutcome;
+			typedef std::future<GetWebofficeURLOutcome> GetWebofficeURLOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::GetWebofficeURLRequest&, const GetWebofficeURLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWebofficeURLAsyncHandler;
 			typedef Outcome<Error, Model::IndexImageResult> IndexImageOutcome;
 			typedef std::future<IndexImageOutcome> IndexImageOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::IndexImageRequest&, const IndexImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IndexImageAsyncHandler;
@@ -397,6 +404,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RefreshOfficePreviewTokenResult> RefreshOfficePreviewTokenOutcome;
 			typedef std::future<RefreshOfficePreviewTokenOutcome> RefreshOfficePreviewTokenOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::RefreshOfficePreviewTokenRequest&, const RefreshOfficePreviewTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshOfficePreviewTokenAsyncHandler;
+			typedef Outcome<Error, Model::RefreshWebofficeTokenResult> RefreshWebofficeTokenOutcome;
+			typedef std::future<RefreshWebofficeTokenOutcome> RefreshWebofficeTokenOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::RefreshWebofficeTokenRequest&, const RefreshWebofficeTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshWebofficeTokenAsyncHandler;
 			typedef Outcome<Error, Model::SearchDocIndexResult> SearchDocIndexOutcome;
 			typedef std::future<SearchDocIndexOutcome> SearchDocIndexOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::SearchDocIndexRequest&, const SearchDocIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchDocIndexAsyncHandler;
@@ -582,6 +592,9 @@ namespace AlibabaCloud
 			GetVideoTaskOutcome getVideoTask(const Model::GetVideoTaskRequest &request)const;
 			void getVideoTaskAsync(const Model::GetVideoTaskRequest& request, const GetVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVideoTaskOutcomeCallable getVideoTaskCallable(const Model::GetVideoTaskRequest& request) const;
+			GetWebofficeURLOutcome getWebofficeURL(const Model::GetWebofficeURLRequest &request)const;
+			void getWebofficeURLAsync(const Model::GetWebofficeURLRequest& request, const GetWebofficeURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWebofficeURLOutcomeCallable getWebofficeURLCallable(const Model::GetWebofficeURLRequest& request) const;
 			IndexImageOutcome indexImage(const Model::IndexImageRequest &request)const;
 			void indexImageAsync(const Model::IndexImageRequest& request, const IndexImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			IndexImageOutcomeCallable indexImageCallable(const Model::IndexImageRequest& request) const;
@@ -636,6 +649,9 @@ namespace AlibabaCloud
 			RefreshOfficePreviewTokenOutcome refreshOfficePreviewToken(const Model::RefreshOfficePreviewTokenRequest &request)const;
 			void refreshOfficePreviewTokenAsync(const Model::RefreshOfficePreviewTokenRequest& request, const RefreshOfficePreviewTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefreshOfficePreviewTokenOutcomeCallable refreshOfficePreviewTokenCallable(const Model::RefreshOfficePreviewTokenRequest& request) const;
+			RefreshWebofficeTokenOutcome refreshWebofficeToken(const Model::RefreshWebofficeTokenRequest &request)const;
+			void refreshWebofficeTokenAsync(const Model::RefreshWebofficeTokenRequest& request, const RefreshWebofficeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshWebofficeTokenOutcomeCallable refreshWebofficeTokenCallable(const Model::RefreshWebofficeTokenRequest& request) const;
 			SearchDocIndexOutcome searchDocIndex(const Model::SearchDocIndexRequest &request)const;
 			void searchDocIndexAsync(const Model::SearchDocIndexRequest& request, const SearchDocIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchDocIndexOutcomeCallable searchDocIndexCallable(const Model::SearchDocIndexRequest& request) const;

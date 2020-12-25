@@ -31,21 +31,21 @@ ImmClient::ImmClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ImmClient::ImmClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ImmClient::ImmClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ImmClient::~ImmClient()
@@ -1923,6 +1923,42 @@ ImmClient::GetVideoTaskOutcomeCallable ImmClient::getVideoTaskCallable(const Get
 	return task->get_future();
 }
 
+ImmClient::GetWebofficeURLOutcome ImmClient::getWebofficeURL(const GetWebofficeURLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetWebofficeURLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetWebofficeURLOutcome(GetWebofficeURLResult(outcome.result()));
+	else
+		return GetWebofficeURLOutcome(outcome.error());
+}
+
+void ImmClient::getWebofficeURLAsync(const GetWebofficeURLRequest& request, const GetWebofficeURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getWebofficeURL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::GetWebofficeURLOutcomeCallable ImmClient::getWebofficeURLCallable(const GetWebofficeURLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetWebofficeURLOutcome()>>(
+			[this, request]()
+			{
+			return this->getWebofficeURL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::IndexImageOutcome ImmClient::indexImage(const IndexImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2565,6 +2601,42 @@ ImmClient::RefreshOfficePreviewTokenOutcomeCallable ImmClient::refreshOfficePrev
 			[this, request]()
 			{
 			return this->refreshOfficePreviewToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::RefreshWebofficeTokenOutcome ImmClient::refreshWebofficeToken(const RefreshWebofficeTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshWebofficeTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshWebofficeTokenOutcome(RefreshWebofficeTokenResult(outcome.result()));
+	else
+		return RefreshWebofficeTokenOutcome(outcome.error());
+}
+
+void ImmClient::refreshWebofficeTokenAsync(const RefreshWebofficeTokenRequest& request, const RefreshWebofficeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshWebofficeToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::RefreshWebofficeTokenOutcomeCallable ImmClient::refreshWebofficeTokenCallable(const RefreshWebofficeTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshWebofficeTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshWebofficeToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
