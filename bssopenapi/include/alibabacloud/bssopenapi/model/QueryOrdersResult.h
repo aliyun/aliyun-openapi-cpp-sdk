@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						std::string orderType;
 						std::string pretaxAmount;
 						std::string currency;
+						std::string commodityCode;
 						std::string paymentStatus;
 						std::string pretaxAmountLocal;
 					};

@@ -69,6 +69,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryAccountBalanceResult.h
 	include/alibabacloud/bssopenapi/model/QueryAccountBillRequest.h
 	include/alibabacloud/bssopenapi/model/QueryAccountBillResult.h
+	include/alibabacloud/bssopenapi/model/QueryAccountTransactionDetailsRequest.h
+	include/alibabacloud/bssopenapi/model/QueryAccountTransactionDetailsResult.h
 	include/alibabacloud/bssopenapi/model/QueryAccountTransactionsRequest.h
 	include/alibabacloud/bssopenapi/model/QueryAccountTransactionsResult.h
 	include/alibabacloud/bssopenapi/model/QueryAvailableInstancesRequest.h
@@ -190,6 +192,8 @@ set(bssopenapi_src
 	src/model/QueryAccountBalanceResult.cc
 	src/model/QueryAccountBillRequest.cc
 	src/model/QueryAccountBillResult.cc
+	src/model/QueryAccountTransactionDetailsRequest.cc
+	src/model/QueryAccountTransactionDetailsResult.cc
 	src/model/QueryAccountTransactionsRequest.cc
 	src/model/QueryAccountTransactionsResult.cc
 	src/model/QueryAvailableInstancesRequest.cc

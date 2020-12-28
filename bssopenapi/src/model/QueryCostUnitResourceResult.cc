@@ -40,74 +40,74 @@ void QueryCostUnitResourceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PageNum"].isNull())
-		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["PageNum"].isNull())
+		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
 	auto allResourceInstanceDtoListNode = dataNode["ResourceInstanceDtoList"]["ResourceInstanceList"];
 	for (auto dataNodeResourceInstanceDtoListResourceInstanceList : allResourceInstanceDtoListNode)
 	{
 		Data::ResourceInstanceList resourceInstanceListObject;
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserId"].isNull())
 			resourceInstanceListObject.resourceUserId = std::stol(dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserId"].asString());
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceTag"].isNull())
+			resourceInstanceListObject.resourceTag = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceTag"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["RelatedResources"].isNull())
+			resourceInstanceListObject.relatedResources = dataNodeResourceInstanceDtoListResourceInstanceList["RelatedResources"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ApportionName"].isNull())
+			resourceInstanceListObject.apportionName = dataNodeResourceInstanceDtoListResourceInstanceList["ApportionName"].asString();
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceId"].isNull())
 			resourceInstanceListObject.resourceId = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceId"].asString();
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["CommodityCode"].isNull())
 			resourceInstanceListObject.commodityCode = dataNodeResourceInstanceDtoListResourceInstanceList["CommodityCode"].asString();
-		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserName"].isNull())
-			resourceInstanceListObject.resourceUserName = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserName"].asString();
-		if(!dataNodeResourceInstanceDtoListResourceInstanceList["CommodityName"].isNull())
-			resourceInstanceListObject.commodityName = dataNodeResourceInstanceDtoListResourceInstanceList["CommodityName"].asString();
-		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceGroup"].isNull())
-			resourceInstanceListObject.resourceGroup = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceGroup"].asString();
-		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceTag"].isNull())
-			resourceInstanceListObject.resourceTag = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceTag"].asString();
-		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceNick"].isNull())
-			resourceInstanceListObject.resourceNick = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceNick"].asString();
-		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceType"].isNull())
-			resourceInstanceListObject.resourceType = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceType"].asString();
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceStatus"].isNull())
 			resourceInstanceListObject.resourceStatus = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceStatus"].asString();
-		if(!dataNodeResourceInstanceDtoListResourceInstanceList["RelatedResources"].isNull())
-			resourceInstanceListObject.relatedResources = dataNodeResourceInstanceDtoListResourceInstanceList["RelatedResources"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceType"].isNull())
+			resourceInstanceListObject.resourceType = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceType"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserName"].isNull())
+			resourceInstanceListObject.resourceUserName = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceUserName"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceNick"].isNull())
+			resourceInstanceListObject.resourceNick = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceNick"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ResourceGroup"].isNull())
+			resourceInstanceListObject.resourceGroup = dataNodeResourceInstanceDtoListResourceInstanceList["ResourceGroup"].asString();
+		if(!dataNodeResourceInstanceDtoListResourceInstanceList["CommodityName"].isNull())
+			resourceInstanceListObject.commodityName = dataNodeResourceInstanceDtoListResourceInstanceList["CommodityName"].asString();
 		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ApportionCode"].isNull())
 			resourceInstanceListObject.apportionCode = dataNodeResourceInstanceDtoListResourceInstanceList["ApportionCode"].asString();
-		if(!dataNodeResourceInstanceDtoListResourceInstanceList["ApportionName"].isNull())
-			resourceInstanceListObject.apportionName = dataNodeResourceInstanceDtoListResourceInstanceList["ApportionName"].asString();
 		data_.resourceInstanceDtoList.push_back(resourceInstanceListObject);
 	}
 	auto costUnitNode = dataNode["CostUnit"];
-	if(!costUnitNode["OwnerUid"].isNull())
-		data_.costUnit.ownerUid = std::stol(costUnitNode["OwnerUid"].asString());
-	if(!costUnitNode["ParentUnitId"].isNull())
-		data_.costUnit.parentUnitId = std::stol(costUnitNode["ParentUnitId"].asString());
 	if(!costUnitNode["UnitId"].isNull())
 		data_.costUnit.unitId = std::stol(costUnitNode["UnitId"].asString());
+	if(!costUnitNode["ParentUnitId"].isNull())
+		data_.costUnit.parentUnitId = std::stol(costUnitNode["ParentUnitId"].asString());
+	if(!costUnitNode["OwnerUid"].isNull())
+		data_.costUnit.ownerUid = std::stol(costUnitNode["OwnerUid"].asString());
 	if(!costUnitNode["UnitName"].isNull())
 		data_.costUnit.unitName = costUnitNode["UnitName"].asString();
 	auto costUnitStatisInfoNode = dataNode["CostUnitStatisInfo"];
-	if(!costUnitStatisInfoNode["ResourceCount"].isNull())
-		data_.costUnitStatisInfo.resourceCount = std::stol(costUnitStatisInfoNode["ResourceCount"].asString());
-	if(!costUnitStatisInfoNode["ResourceGroupCount"].isNull())
-		data_.costUnitStatisInfo.resourceGroupCount = std::stol(costUnitStatisInfoNode["ResourceGroupCount"].asString());
 	if(!costUnitStatisInfoNode["SubUnitCount"].isNull())
 		data_.costUnitStatisInfo.subUnitCount = std::stol(costUnitStatisInfoNode["SubUnitCount"].asString());
-	if(!costUnitStatisInfoNode["UserCount"].isNull())
-		data_.costUnitStatisInfo.userCount = std::stol(costUnitStatisInfoNode["UserCount"].asString());
-	if(!costUnitStatisInfoNode["TotalResourceCount"].isNull())
-		data_.costUnitStatisInfo.totalResourceCount = std::stol(costUnitStatisInfoNode["TotalResourceCount"].asString());
-	if(!costUnitStatisInfoNode["TotalUserCount"].isNull())
-		data_.costUnitStatisInfo.totalUserCount = std::stol(costUnitStatisInfoNode["TotalUserCount"].asString());
 	if(!costUnitStatisInfoNode["TotalResourceGroupCount"].isNull())
 		data_.costUnitStatisInfo.totalResourceGroupCount = std::stol(costUnitStatisInfoNode["TotalResourceGroupCount"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!costUnitStatisInfoNode["TotalResourceCount"].isNull())
+		data_.costUnitStatisInfo.totalResourceCount = std::stol(costUnitStatisInfoNode["TotalResourceCount"].asString());
+	if(!costUnitStatisInfoNode["UserCount"].isNull())
+		data_.costUnitStatisInfo.userCount = std::stol(costUnitStatisInfoNode["UserCount"].asString());
+	if(!costUnitStatisInfoNode["ResourceCount"].isNull())
+		data_.costUnitStatisInfo.resourceCount = std::stol(costUnitStatisInfoNode["ResourceCount"].asString());
+	if(!costUnitStatisInfoNode["TotalUserCount"].isNull())
+		data_.costUnitStatisInfo.totalUserCount = std::stol(costUnitStatisInfoNode["TotalUserCount"].asString());
+	if(!costUnitStatisInfoNode["ResourceGroupCount"].isNull())
+		data_.costUnitStatisInfo.resourceGroupCount = std::stol(costUnitStatisInfoNode["ResourceGroupCount"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

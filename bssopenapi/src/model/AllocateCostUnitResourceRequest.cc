@@ -40,8 +40,8 @@ void AllocateCostUnitResourceRequest::setResourceInstanceList(const std::vector<
 		std::string resourceInstanceListObjStr = "ResourceInstanceList." + std::to_string(dep1 + 1);
 		setParameter(resourceInstanceListObjStr + ".ResourceId", resourceInstanceListObj.resourceId);
 		setParameter(resourceInstanceListObjStr + ".CommodityCode", resourceInstanceListObj.commodityCode);
-		setParameter(resourceInstanceListObjStr + ".ResourceUserId", std::to_string(resourceInstanceListObj.resourceUserId));
 		setParameter(resourceInstanceListObjStr + ".ApportionCode", resourceInstanceListObj.apportionCode);
+		setParameter(resourceInstanceListObjStr + ".ResourceUserId", std::to_string(resourceInstanceListObj.resourceUserId));
 	}
 }
 

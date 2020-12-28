@@ -84,6 +84,8 @@ void QueryOrdersResult::parse(const std::string &payload)
 			orderObject.paymentCurrency = dataNodeOrderListOrder["PaymentCurrency"].asString();
 		if(!dataNodeOrderListOrder["RelatedOrderId"].isNull())
 			orderObject.relatedOrderId = dataNodeOrderListOrder["RelatedOrderId"].asString();
+		if(!dataNodeOrderListOrder["CommodityCode"].isNull())
+			orderObject.commodityCode = dataNodeOrderListOrder["CommodityCode"].asString();
 		data_.orderList.push_back(orderObject);
 	}
 	if(!value["Success"].isNull())

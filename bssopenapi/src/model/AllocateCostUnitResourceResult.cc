@@ -40,18 +40,18 @@ void AllocateCostUnitResourceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["IsSuccess"].isNull())
+		data_.isSuccess = dataNode["IsSuccess"].asString() == "true";
 	if(!dataNode["ToUnitUserId"].isNull())
 		data_.toUnitUserId = std::stol(dataNode["ToUnitUserId"].asString());
 	if(!dataNode["ToUnitId"].isNull())
 		data_.toUnitId = std::stol(dataNode["ToUnitId"].asString());
-	if(!dataNode["IsSuccess"].isNull())
-		data_.isSuccess = dataNode["IsSuccess"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

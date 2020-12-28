@@ -50,42 +50,42 @@ void DescribeResourcePackageProductResult::parse(const std::string &payload)
 			resourcePackageObject.productType = dataNodeResourcePackagesResourcePackage["ProductType"].asString();
 		if(!dataNodeResourcePackagesResourcePackage["Name"].isNull())
 			resourcePackageObject.name = dataNodeResourcePackagesResourcePackage["Name"].asString();
-		auto allPackageTypesNode = allResourcePackagesNode["PackageTypes"]["PackageType"];
-		for (auto allResourcePackagesNodePackageTypesPackageType : allPackageTypesNode)
+		auto allPackageTypesNode = dataNodeResourcePackagesResourcePackage["PackageTypes"]["PackageType"];
+		for (auto dataNodeResourcePackagesResourcePackagePackageTypesPackageType : allPackageTypesNode)
 		{
 			Data::ResourcePackage::PackageType packageTypesObject;
-			if(!allResourcePackagesNodePackageTypesPackageType["Name"].isNull())
-				packageTypesObject.name = allResourcePackagesNodePackageTypesPackageType["Name"].asString();
-			if(!allResourcePackagesNodePackageTypesPackageType["Code"].isNull())
-				packageTypesObject.code = allResourcePackagesNodePackageTypesPackageType["Code"].asString();
-			auto allPropertiesNode = allPackageTypesNode["Properties"]["Property"];
-			for (auto allPackageTypesNodePropertiesProperty : allPropertiesNode)
+			if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Name"].isNull())
+				packageTypesObject.name = dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Name"].asString();
+			if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Code"].isNull())
+				packageTypesObject.code = dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Code"].asString();
+			auto allPropertiesNode = dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Properties"]["Property"];
+			for (auto dataNodeResourcePackagesResourcePackagePackageTypesPackageTypePropertiesProperty : allPropertiesNode)
 			{
 				Data::ResourcePackage::PackageType::Property propertiesObject;
-				if(!allPackageTypesNodePropertiesProperty["Name"].isNull())
-					propertiesObject.name = allPackageTypesNodePropertiesProperty["Name"].asString();
-				if(!allPackageTypesNodePropertiesProperty["Value"].isNull())
-					propertiesObject.value = allPackageTypesNodePropertiesProperty["Value"].asString();
+				if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypePropertiesProperty["Name"].isNull())
+					propertiesObject.name = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypePropertiesProperty["Name"].asString();
+				if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypePropertiesProperty["Value"].isNull())
+					propertiesObject.value = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypePropertiesProperty["Value"].asString();
 				packageTypesObject.properties.push_back(propertiesObject);
 			}
-			auto allSpecificationsNode = allPackageTypesNode["Specifications"]["Specification"];
-			for (auto allPackageTypesNodeSpecificationsSpecification : allSpecificationsNode)
+			auto allSpecificationsNode = dataNodeResourcePackagesResourcePackagePackageTypesPackageType["Specifications"]["Specification"];
+			for (auto dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecification : allSpecificationsNode)
 			{
 				Data::ResourcePackage::PackageType::Specification specificationsObject;
-				if(!allPackageTypesNodeSpecificationsSpecification["Name"].isNull())
-					specificationsObject.name = allPackageTypesNodeSpecificationsSpecification["Name"].asString();
-				if(!allPackageTypesNodeSpecificationsSpecification["Value"].isNull())
-					specificationsObject.value = allPackageTypesNodeSpecificationsSpecification["Value"].asString();
-				auto allAvailableDurationsNode = allSpecificationsNode["AvailableDurations"]["AvailableDuration"];
-				for (auto allSpecificationsNodeAvailableDurationsAvailableDuration : allAvailableDurationsNode)
+				if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecification["Name"].isNull())
+					specificationsObject.name = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecification["Name"].asString();
+				if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecification["Value"].isNull())
+					specificationsObject.value = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecification["Value"].asString();
+				auto allAvailableDurationsNode = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecification["AvailableDurations"]["AvailableDuration"];
+				for (auto dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration : allAvailableDurationsNode)
 				{
 					Data::ResourcePackage::PackageType::Specification::AvailableDuration availableDurationsObject;
-					if(!allSpecificationsNodeAvailableDurationsAvailableDuration["Name"].isNull())
-						availableDurationsObject.name = allSpecificationsNodeAvailableDurationsAvailableDuration["Name"].asString();
-					if(!allSpecificationsNodeAvailableDurationsAvailableDuration["Value"].isNull())
-						availableDurationsObject.value = std::stoi(allSpecificationsNodeAvailableDurationsAvailableDuration["Value"].asString());
-					if(!allSpecificationsNodeAvailableDurationsAvailableDuration["Unit"].isNull())
-						availableDurationsObject.unit = allSpecificationsNodeAvailableDurationsAvailableDuration["Unit"].asString();
+					if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Name"].isNull())
+						availableDurationsObject.name = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Name"].asString();
+					if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Value"].isNull())
+						availableDurationsObject.value = std::stoi(dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Value"].asString());
+					if(!dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Unit"].isNull())
+						availableDurationsObject.unit = dataNodeResourcePackagesResourcePackagePackageTypesPackageTypeSpecificationsSpecificationAvailableDurationsAvailableDuration["Unit"].asString();
 					specificationsObject.availableDurations.push_back(availableDurationsObject);
 				}
 				packageTypesObject.specifications.push_back(specificationsObject);

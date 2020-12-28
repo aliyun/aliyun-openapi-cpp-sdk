@@ -43,20 +43,20 @@ void ModifyCostUnitResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["OwnerUid"].isNull())
-			dataObject.ownerUid = std::stol(valueDataDataItem["OwnerUid"].asString());
-		if(!valueDataDataItem["UnitId"].isNull())
-			dataObject.unitId = std::stol(valueDataDataItem["UnitId"].asString());
 		if(!valueDataDataItem["IsSuccess"].isNull())
 			dataObject.isSuccess = valueDataDataItem["IsSuccess"].asString() == "true";
+		if(!valueDataDataItem["UnitId"].isNull())
+			dataObject.unitId = std::stol(valueDataDataItem["UnitId"].asString());
+		if(!valueDataDataItem["OwnerUid"].isNull())
+			dataObject.ownerUid = std::stol(valueDataDataItem["OwnerUid"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

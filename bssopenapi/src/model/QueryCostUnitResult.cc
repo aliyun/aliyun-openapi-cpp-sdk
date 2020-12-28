@@ -40,32 +40,32 @@ void QueryCostUnitResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["PageNum"].isNull())
-		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["PageNum"].isNull())
+		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
 	auto allCostUnitDtoListNode = dataNode["CostUnitDtoList"]["CostUnitDtoListItem"];
 	for (auto dataNodeCostUnitDtoListCostUnitDtoListItem : allCostUnitDtoListNode)
 	{
 		Data::CostUnitDtoListItem costUnitDtoListItemObject;
-		if(!dataNodeCostUnitDtoListCostUnitDtoListItem["OwnerUid"].isNull())
-			costUnitDtoListItemObject.ownerUid = std::stol(dataNodeCostUnitDtoListCostUnitDtoListItem["OwnerUid"].asString());
-		if(!dataNodeCostUnitDtoListCostUnitDtoListItem["ParentUnitId"].isNull())
-			costUnitDtoListItemObject.parentUnitId = std::stol(dataNodeCostUnitDtoListCostUnitDtoListItem["ParentUnitId"].asString());
 		if(!dataNodeCostUnitDtoListCostUnitDtoListItem["UnitId"].isNull())
 			costUnitDtoListItemObject.unitId = std::stol(dataNodeCostUnitDtoListCostUnitDtoListItem["UnitId"].asString());
+		if(!dataNodeCostUnitDtoListCostUnitDtoListItem["ParentUnitId"].isNull())
+			costUnitDtoListItemObject.parentUnitId = std::stol(dataNodeCostUnitDtoListCostUnitDtoListItem["ParentUnitId"].asString());
+		if(!dataNodeCostUnitDtoListCostUnitDtoListItem["OwnerUid"].isNull())
+			costUnitDtoListItemObject.ownerUid = std::stol(dataNodeCostUnitDtoListCostUnitDtoListItem["OwnerUid"].asString());
 		if(!dataNodeCostUnitDtoListCostUnitDtoListItem["UnitName"].isNull())
 			costUnitDtoListItemObject.unitName = dataNodeCostUnitDtoListCostUnitDtoListItem["UnitName"].asString();
 		data_.costUnitDtoList.push_back(costUnitDtoListItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

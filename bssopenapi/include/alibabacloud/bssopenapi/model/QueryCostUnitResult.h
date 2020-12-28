@@ -37,13 +37,13 @@ namespace AlibabaCloud
 					struct CostUnitDtoListItem
 					{
 						long unitId;
-						long ownerUid;
 						long parentUnitId;
+						long ownerUid;
 						std::string unitName;
 					};
 					int totalCount;
-					int pageNum;
 					int pageSize;
+					int pageNum;
 					std::vector<CostUnitDtoListItem> costUnitDtoList;
 				};
 

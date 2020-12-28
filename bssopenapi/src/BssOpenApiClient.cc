@@ -915,6 +915,42 @@ BssOpenApiClient::QueryAccountBillOutcomeCallable BssOpenApiClient::queryAccount
 	return task->get_future();
 }
 
+BssOpenApiClient::QueryAccountTransactionDetailsOutcome BssOpenApiClient::queryAccountTransactionDetails(const QueryAccountTransactionDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAccountTransactionDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAccountTransactionDetailsOutcome(QueryAccountTransactionDetailsResult(outcome.result()));
+	else
+		return QueryAccountTransactionDetailsOutcome(outcome.error());
+}
+
+void BssOpenApiClient::queryAccountTransactionDetailsAsync(const QueryAccountTransactionDetailsRequest& request, const QueryAccountTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAccountTransactionDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QueryAccountTransactionDetailsOutcomeCallable BssOpenApiClient::queryAccountTransactionDetailsCallable(const QueryAccountTransactionDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAccountTransactionDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAccountTransactionDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::QueryAccountTransactionsOutcome BssOpenApiClient::queryAccountTransactions(const QueryAccountTransactionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -67,18 +67,18 @@ void DescribePricingModuleResult::parse(const std::string &payload)
 			attributeObject.name = dataNodeAttributeListAttribute["Name"].asString();
 		if(!dataNodeAttributeListAttribute["Unit"].isNull())
 			attributeObject.unit = dataNodeAttributeListAttribute["Unit"].asString();
-		auto allValuesNode = allAttributeListNode["Values"]["AttributeValue"];
-		for (auto allAttributeListNodeValuesAttributeValue : allValuesNode)
+		auto allValuesNode = dataNodeAttributeListAttribute["Values"]["AttributeValue"];
+		for (auto dataNodeAttributeListAttributeValuesAttributeValue : allValuesNode)
 		{
 			Data::Attribute::AttributeValue valuesObject;
-			if(!allAttributeListNodeValuesAttributeValue["Type"].isNull())
-				valuesObject.type = allAttributeListNodeValuesAttributeValue["Type"].asString();
-			if(!allAttributeListNodeValuesAttributeValue["Name"].isNull())
-				valuesObject.name = allAttributeListNodeValuesAttributeValue["Name"].asString();
-			if(!allAttributeListNodeValuesAttributeValue["Value"].isNull())
-				valuesObject.value = allAttributeListNodeValuesAttributeValue["Value"].asString();
-			if(!allAttributeListNodeValuesAttributeValue["Remark"].isNull())
-				valuesObject.remark = allAttributeListNodeValuesAttributeValue["Remark"].asString();
+			if(!dataNodeAttributeListAttributeValuesAttributeValue["Type"].isNull())
+				valuesObject.type = dataNodeAttributeListAttributeValuesAttributeValue["Type"].asString();
+			if(!dataNodeAttributeListAttributeValuesAttributeValue["Name"].isNull())
+				valuesObject.name = dataNodeAttributeListAttributeValuesAttributeValue["Name"].asString();
+			if(!dataNodeAttributeListAttributeValuesAttributeValue["Value"].isNull())
+				valuesObject.value = dataNodeAttributeListAttributeValuesAttributeValue["Value"].asString();
+			if(!dataNodeAttributeListAttributeValuesAttributeValue["Remark"].isNull())
+				valuesObject.remark = dataNodeAttributeListAttributeValuesAttributeValue["Remark"].asString();
 			attributeObject.values.push_back(valuesObject);
 		}
 		data_.attributeList.push_back(attributeObject);

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_CREATECOSTUNITRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_CREATECOSTUNITRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTTRANSACTIONDETAILSRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTTRANSACTIONDETAILSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT CreateCostUnitResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAccountTransactionDetailsResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct CostUnitDtoListItem
+					struct AccountTransactionsListItem
 					{
-						long unitId;
-						long parentUnitId;
-						long ownerUid;
-						std::string unitName;
+						std::string transactionType;
+						std::string billingCycle;
+						std::string transactionNumber;
+						std::string amount;
+						std::string transactionAccount;
+						std::string transactionTime;
+						std::string transactionChannelSN;
+						std::string remarks;
+						std::string fundType;
+						std::string transactionFlow;
+						std::string recordID;
+						std::string balance;
+						std::string transactionChannel;
 					};
-					std::vector<CostUnitDtoListItem> costUnitDtoList;
+					int totalCount;
+					std::string nextToken;
+					int maxResults;
+					std::vector<AccountTransactionsListItem> accountTransactionsList;
+					std::string accountName;
 				};
 
 
-				CreateCostUnitResult();
-				explicit CreateCostUnitResult(const std::string &payload);
-				~CreateCostUnitResult();
+				QueryAccountTransactionDetailsResult();
+				explicit QueryAccountTransactionDetailsResult(const std::string &payload);
+				~QueryAccountTransactionDetailsResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -65,4 +78,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_CREATECOSTUNITRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTTRANSACTIONDETAILSRESULT_H_
