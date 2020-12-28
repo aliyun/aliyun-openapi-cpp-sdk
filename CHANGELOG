@@ -1,4 +1,7 @@
 2020-12-28 Version: patch
+- Release GenRealPersonVerificationToken GetRealPersonVerificationResult.
+
+2020-12-28 Version: patch
 - Add CommodityCode For QueryOrderAPI.
 
 2020-12-28 Version: patch
