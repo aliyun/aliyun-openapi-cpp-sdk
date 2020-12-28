@@ -38,6 +38,28 @@ void ListMetaDBRequest::setDataSourceType(const std::string& dataSourceType)
 	setParameter("DataSourceType", dataSourceType);
 }
 
+int ListMetaDBRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListMetaDBRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int ListMetaDBRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void ListMetaDBRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setParameter("PageNum", std::to_string(pageNum));
+}
+
 long ListMetaDBRequest::getProjectId()const
 {
 	return projectId_;

@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string columnGuid;
 						std::string columnType;
 						bool isPartitionColumn;
+						int position;
 						bool isForeignKey;
 						std::string caption;
 						bool isPrimaryKey;

@@ -66,6 +66,8 @@ void GetMetaTableColumnResult::parse(const std::string &payload)
 			columnListItemObject.isForeignKey = dataNodeColumnListColumnListItem["IsForeignKey"].asString() == "true";
 		if(!dataNodeColumnListColumnListItem["Caption"].isNull())
 			columnListItemObject.caption = dataNodeColumnListColumnListItem["Caption"].asString();
+		if(!dataNodeColumnListColumnListItem["Position"].isNull())
+			columnListItemObject.position = std::stoi(dataNodeColumnListColumnListItem["Position"].asString());
 		data_.columnList.push_back(columnListItemObject);
 	}
 	if(!value["ErrorCode"].isNull())
