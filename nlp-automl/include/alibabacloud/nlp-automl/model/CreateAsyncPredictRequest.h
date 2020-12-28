@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setContent(const std::string& content);
 				std::string getFileContent()const;
 				void setFileContent(const std::string& fileContent);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				int getModelId()const;
 				void setModelId(int modelId);
 				std::string getFileUrl()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string fetchContent_;
 				std::string content_;
 				std::string fileContent_;
+				std::string product_;
 				int modelId_;
 				std::string fileUrl_;
 				std::string modelVersion_;

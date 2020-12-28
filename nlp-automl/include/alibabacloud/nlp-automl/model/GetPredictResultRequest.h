@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				int getTopK()const;
 				void setTopK(int topK);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				int getModelId()const;
 				void setModelId(int modelId);
 				std::string getDetailTag()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				int topK_;
+				std::string product_;
 				int modelId_;
 				std::string detailTag_;
 				std::string content_;

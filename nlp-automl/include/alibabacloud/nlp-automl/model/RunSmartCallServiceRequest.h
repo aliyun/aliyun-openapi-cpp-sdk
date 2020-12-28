@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				RunSmartCallServiceRequest();
 				~RunSmartCallServiceRequest();
 
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getSessionId()const;
 				void setSessionId(const std::string& sessionId);
 				long getRobotId()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setServiceName(const std::string& serviceName);
 
             private:
+				std::string product_;
 				std::string sessionId_;
 				long robotId_;
 				std::string paramContent_;

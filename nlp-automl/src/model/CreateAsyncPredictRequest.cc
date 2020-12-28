@@ -93,6 +93,17 @@ void CreateAsyncPredictRequest::setFileContent(const std::string& fileContent)
 	setBodyParameter("FileContent", fileContent);
 }
 
+std::string CreateAsyncPredictRequest::getProduct()const
+{
+	return product_;
+}
+
+void CreateAsyncPredictRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setBodyParameter("Product", product);
+}
+
 int CreateAsyncPredictRequest::getModelId()const
 {
 	return modelId_;

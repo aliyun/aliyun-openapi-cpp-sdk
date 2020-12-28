@@ -27,6 +27,17 @@ GetAsyncPredictRequest::GetAsyncPredictRequest() :
 GetAsyncPredictRequest::~GetAsyncPredictRequest()
 {}
 
+std::string GetAsyncPredictRequest::getProduct()const
+{
+	return product_;
+}
+
+void GetAsyncPredictRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
 int GetAsyncPredictRequest::getAsyncPredictId()const
 {
 	return asyncPredictId_;

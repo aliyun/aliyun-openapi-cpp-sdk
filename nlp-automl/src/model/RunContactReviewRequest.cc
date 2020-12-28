@@ -27,6 +27,17 @@ RunContactReviewRequest::RunContactReviewRequest() :
 RunContactReviewRequest::~RunContactReviewRequest()
 {}
 
+std::string RunContactReviewRequest::getProduct()const
+{
+	return product_;
+}
+
+void RunContactReviewRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setBodyParameter("Product", product);
+}
+
 std::string RunContactReviewRequest::getContactScene()const
 {
 	return contactScene_;

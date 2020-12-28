@@ -27,6 +27,17 @@ RunSmartCallServiceRequest::RunSmartCallServiceRequest() :
 RunSmartCallServiceRequest::~RunSmartCallServiceRequest()
 {}
 
+std::string RunSmartCallServiceRequest::getProduct()const
+{
+	return product_;
+}
+
+void RunSmartCallServiceRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setBodyParameter("Product", product);
+}
+
 std::string RunSmartCallServiceRequest::getSessionId()const
 {
 	return sessionId_;

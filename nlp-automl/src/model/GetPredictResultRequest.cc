@@ -38,6 +38,17 @@ void GetPredictResultRequest::setTopK(int topK)
 	setBodyParameter("TopK", std::to_string(topK));
 }
 
+std::string GetPredictResultRequest::getProduct()const
+{
+	return product_;
+}
+
+void GetPredictResultRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setBodyParameter("Product", product);
+}
+
 int GetPredictResultRequest::getModelId()const
 {
 	return modelId_;

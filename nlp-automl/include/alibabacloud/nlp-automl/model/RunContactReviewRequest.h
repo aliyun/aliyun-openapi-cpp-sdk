@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				RunContactReviewRequest();
 				~RunContactReviewRequest();
 
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getContactScene()const;
 				void setContactScene(const std::string& contactScene);
 				std::string getContactPath()const;
 				void setContactPath(const std::string& contactPath);
 
             private:
+				std::string product_;
 				std::string contactScene_;
 				std::string contactPath_;
 

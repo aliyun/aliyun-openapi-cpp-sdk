@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				GetAsyncPredictRequest();
 				~GetAsyncPredictRequest();
 
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				int getAsyncPredictId()const;
 				void setAsyncPredictId(int asyncPredictId);
 
             private:
+				std::string product_;
 				int asyncPredictId_;
 
 			};

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				RunPreTrainServiceRequest();
 				~RunPreTrainServiceRequest();
 
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getPredictContent()const;
 				void setPredictContent(const std::string& predictContent);
 				std::string getServiceVersion()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setServiceName(const std::string& serviceName);
 
             private:
+				std::string product_;
 				std::string predictContent_;
 				std::string serviceVersion_;
 				std::string serviceName_;

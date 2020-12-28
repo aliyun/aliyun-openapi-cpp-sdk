@@ -27,6 +27,17 @@ RunPreTrainServiceRequest::RunPreTrainServiceRequest() :
 RunPreTrainServiceRequest::~RunPreTrainServiceRequest()
 {}
 
+std::string RunPreTrainServiceRequest::getProduct()const
+{
+	return product_;
+}
+
+void RunPreTrainServiceRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setBodyParameter("Product", product);
+}
+
 std::string RunPreTrainServiceRequest::getPredictContent()const
 {
 	return predictContent_;
