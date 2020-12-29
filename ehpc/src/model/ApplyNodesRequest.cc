@@ -49,6 +49,17 @@ void ApplyNodesRequest::setMemory(int memory)
 	setParameter("Memory", std::to_string(memory));
 }
 
+std::string ApplyNodesRequest::getSystemDiskLevel()const
+{
+	return systemDiskLevel_;
+}
+
+void ApplyNodesRequest::setSystemDiskLevel(const std::string& systemDiskLevel)
+{
+	systemDiskLevel_ = systemDiskLevel;
+	setParameter("SystemDiskLevel", systemDiskLevel);
+}
+
 bool ApplyNodesRequest::getAllocatePublicAddress()const
 {
 	return allocatePublicAddress_;

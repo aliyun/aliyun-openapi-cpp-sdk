@@ -61,16 +61,16 @@ void DescribeGWSInstancesResult::parse(const std::string &payload)
 			instancesObject.name = valueInstancesInstanceInfo["Name"].asString();
 		if(!valueInstancesInstanceInfo["UserName"].isNull())
 			instancesObject.userName = valueInstancesInstanceInfo["UserName"].asString();
-		auto allAppListNode = allInstancesNode["AppList"]["AppInfo"];
-		for (auto allInstancesNodeAppListAppInfo : allAppListNode)
+		auto allAppListNode = valueInstancesInstanceInfo["AppList"]["AppInfo"];
+		for (auto valueInstancesInstanceInfoAppListAppInfo : allAppListNode)
 		{
 			InstanceInfo::AppInfo appListObject;
-			if(!allInstancesNodeAppListAppInfo["AppName"].isNull())
-				appListObject.appName = allInstancesNodeAppListAppInfo["AppName"].asString();
-			if(!allInstancesNodeAppListAppInfo["AppPath"].isNull())
-				appListObject.appPath = allInstancesNodeAppListAppInfo["AppPath"].asString();
-			if(!allInstancesNodeAppListAppInfo["AppArgs"].isNull())
-				appListObject.appArgs = allInstancesNodeAppListAppInfo["AppArgs"].asString();
+			if(!valueInstancesInstanceInfoAppListAppInfo["AppName"].isNull())
+				appListObject.appName = valueInstancesInstanceInfoAppListAppInfo["AppName"].asString();
+			if(!valueInstancesInstanceInfoAppListAppInfo["AppPath"].isNull())
+				appListObject.appPath = valueInstancesInstanceInfoAppListAppInfo["AppPath"].asString();
+			if(!valueInstancesInstanceInfoAppListAppInfo["AppArgs"].isNull())
+				appListObject.appArgs = valueInstancesInstanceInfoAppListAppInfo["AppArgs"].asString();
 			instancesObject.appList.push_back(appListObject);
 		}
 		instances_.push_back(instancesObject);

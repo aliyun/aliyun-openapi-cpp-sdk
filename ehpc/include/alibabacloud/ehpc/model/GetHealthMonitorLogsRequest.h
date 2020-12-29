@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTNODESREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTNODESREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_GETHEALTHMONITORLOGSREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_GETHEALTHMONITORLOGSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListNodesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT GetHealthMonitorLogsRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListNodesRequest();
-				~ListNodesRequest();
+				GetHealthMonitorLogsRequest();
+				~GetHealthMonitorLogsRequest();
 
-				std::string getRole()const;
-				void setRole(const std::string& role);
+				int getEndTime()const;
+				void setEndTime(int endTime);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				int getStartTime()const;
+				void setStartTime(int startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				bool getEnableReverse()const;
+				void setEnableReverse(bool enableReverse);
 				std::string getFilter()const;
 				void setFilter(const std::string& filter);
-				std::string getPrivateIpAddress()const;
-				void setPrivateIpAddress(const std::string& privateIpAddress);
-				std::string getSequence()const;
-				void setSequence(const std::string& sequence);
-				std::string getHostName()const;
-				void setHostName(const std::string& hostName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getSortBy()const;
-				void setSortBy(const std::string& sortBy);
 
             private:
-				std::string role_;
+				int endTime_;
 				std::string clusterId_;
-				int pageNumber_;
+				int startTime_;
 				std::string accessKeyId_;
+				bool enableReverse_;
 				std::string filter_;
-				std::string privateIpAddress_;
-				std::string sequence_;
-				std::string hostName_;
-				int pageSize_;
-				std::string sortBy_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTNODESREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_GETHEALTHMONITORLOGSREQUEST_H_

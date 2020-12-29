@@ -55,18 +55,18 @@ void ListSoftwaresResult::parse(const std::string &payload)
 			softwaresObject.accountType = valueSoftwaresSoftwareInfo["AccountType"].asString();
 		if(!valueSoftwaresSoftwareInfo["AccountVersion"].isNull())
 			softwaresObject.accountVersion = valueSoftwaresSoftwareInfo["AccountVersion"].asString();
-		auto allApplicationsNode = allSoftwaresNode["Applications"]["ApplicationInfo"];
-		for (auto allSoftwaresNodeApplicationsApplicationInfo : allApplicationsNode)
+		auto allApplicationsNode = valueSoftwaresSoftwareInfo["Applications"]["ApplicationInfo"];
+		for (auto valueSoftwaresSoftwareInfoApplicationsApplicationInfo : allApplicationsNode)
 		{
 			SoftwareInfo::ApplicationInfo applicationsObject;
-			if(!allSoftwaresNodeApplicationsApplicationInfo["Tag"].isNull())
-				applicationsObject.tag = allSoftwaresNodeApplicationsApplicationInfo["Tag"].asString();
-			if(!allSoftwaresNodeApplicationsApplicationInfo["Name"].isNull())
-				applicationsObject.name = allSoftwaresNodeApplicationsApplicationInfo["Name"].asString();
-			if(!allSoftwaresNodeApplicationsApplicationInfo["Version"].isNull())
-				applicationsObject.version = allSoftwaresNodeApplicationsApplicationInfo["Version"].asString();
-			if(!allSoftwaresNodeApplicationsApplicationInfo["Required"].isNull())
-				applicationsObject.required = allSoftwaresNodeApplicationsApplicationInfo["Required"].asString() == "true";
+			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Tag"].isNull())
+				applicationsObject.tag = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Tag"].asString();
+			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Name"].isNull())
+				applicationsObject.name = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Name"].asString();
+			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Version"].isNull())
+				applicationsObject.version = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Version"].asString();
+			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Required"].isNull())
+				applicationsObject.required = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Required"].asString() == "true";
 			softwaresObject.applications.push_back(applicationsObject);
 		}
 		softwares_.push_back(softwaresObject);

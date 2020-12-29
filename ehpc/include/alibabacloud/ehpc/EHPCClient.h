@@ -114,6 +114,8 @@
 #include "model/GetClusterVolumesResult.h"
 #include "model/GetGWSConnectTicketRequest.h"
 #include "model/GetGWSConnectTicketResult.h"
+#include "model/GetHealthMonitorLogsRequest.h"
+#include "model/GetHealthMonitorLogsResult.h"
 #include "model/GetHybridClusterConfigRequest.h"
 #include "model/GetHybridClusterConfigResult.h"
 #include "model/GetIfEcsTypeSupportHtConfigRequest.h"
@@ -122,6 +124,8 @@
 #include "model/GetVisualServiceStatusResult.h"
 #include "model/GetWorkbenchTokenRequest.h"
 #include "model/GetWorkbenchTokenResult.h"
+#include "model/InitializeEHPCRequest.h"
+#include "model/InitializeEHPCResult.h"
 #include "model/InstallSoftwareRequest.h"
 #include "model/InstallSoftwareResult.h"
 #include "model/InvokeShellCommandRequest.h"
@@ -403,6 +407,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetGWSConnectTicketResult> GetGWSConnectTicketOutcome;
 			typedef std::future<GetGWSConnectTicketOutcome> GetGWSConnectTicketOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetGWSConnectTicketRequest&, const GetGWSConnectTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetGWSConnectTicketAsyncHandler;
+			typedef Outcome<Error, Model::GetHealthMonitorLogsResult> GetHealthMonitorLogsOutcome;
+			typedef std::future<GetHealthMonitorLogsOutcome> GetHealthMonitorLogsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetHealthMonitorLogsRequest&, const GetHealthMonitorLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHealthMonitorLogsAsyncHandler;
 			typedef Outcome<Error, Model::GetHybridClusterConfigResult> GetHybridClusterConfigOutcome;
 			typedef std::future<GetHybridClusterConfigOutcome> GetHybridClusterConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetHybridClusterConfigRequest&, const GetHybridClusterConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHybridClusterConfigAsyncHandler;
@@ -415,6 +422,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetWorkbenchTokenResult> GetWorkbenchTokenOutcome;
 			typedef std::future<GetWorkbenchTokenOutcome> GetWorkbenchTokenOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetWorkbenchTokenRequest&, const GetWorkbenchTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkbenchTokenAsyncHandler;
+			typedef Outcome<Error, Model::InitializeEHPCResult> InitializeEHPCOutcome;
+			typedef std::future<InitializeEHPCOutcome> InitializeEHPCOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::InitializeEHPCRequest&, const InitializeEHPCOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitializeEHPCAsyncHandler;
 			typedef Outcome<Error, Model::InstallSoftwareResult> InstallSoftwareOutcome;
 			typedef std::future<InstallSoftwareOutcome> InstallSoftwareOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::InstallSoftwareRequest&, const InstallSoftwareOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallSoftwareAsyncHandler;
@@ -759,6 +769,9 @@ namespace AlibabaCloud
 			GetGWSConnectTicketOutcome getGWSConnectTicket(const Model::GetGWSConnectTicketRequest &request)const;
 			void getGWSConnectTicketAsync(const Model::GetGWSConnectTicketRequest& request, const GetGWSConnectTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetGWSConnectTicketOutcomeCallable getGWSConnectTicketCallable(const Model::GetGWSConnectTicketRequest& request) const;
+			GetHealthMonitorLogsOutcome getHealthMonitorLogs(const Model::GetHealthMonitorLogsRequest &request)const;
+			void getHealthMonitorLogsAsync(const Model::GetHealthMonitorLogsRequest& request, const GetHealthMonitorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetHealthMonitorLogsOutcomeCallable getHealthMonitorLogsCallable(const Model::GetHealthMonitorLogsRequest& request) const;
 			GetHybridClusterConfigOutcome getHybridClusterConfig(const Model::GetHybridClusterConfigRequest &request)const;
 			void getHybridClusterConfigAsync(const Model::GetHybridClusterConfigRequest& request, const GetHybridClusterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetHybridClusterConfigOutcomeCallable getHybridClusterConfigCallable(const Model::GetHybridClusterConfigRequest& request) const;
@@ -771,6 +784,9 @@ namespace AlibabaCloud
 			GetWorkbenchTokenOutcome getWorkbenchToken(const Model::GetWorkbenchTokenRequest &request)const;
 			void getWorkbenchTokenAsync(const Model::GetWorkbenchTokenRequest& request, const GetWorkbenchTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorkbenchTokenOutcomeCallable getWorkbenchTokenCallable(const Model::GetWorkbenchTokenRequest& request) const;
+			InitializeEHPCOutcome initializeEHPC(const Model::InitializeEHPCRequest &request)const;
+			void initializeEHPCAsync(const Model::InitializeEHPCRequest& request, const InitializeEHPCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InitializeEHPCOutcomeCallable initializeEHPCCallable(const Model::InitializeEHPCRequest& request) const;
 			InstallSoftwareOutcome installSoftware(const Model::InstallSoftwareRequest &request)const;
 			void installSoftwareAsync(const Model::InstallSoftwareRequest& request, const InstallSoftwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallSoftwareOutcomeCallable installSoftwareCallable(const Model::InstallSoftwareRequest& request) const;

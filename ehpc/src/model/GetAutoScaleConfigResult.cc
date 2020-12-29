@@ -63,22 +63,22 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 			queuesObject.minNodesInQueue = std::stoi(valueQueuesQueueInfo["MinNodesInQueue"].asString());
 		if(!valueQueuesQueueInfo["QueueImageId"].isNull())
 			queuesObject.queueImageId = valueQueuesQueueInfo["QueueImageId"].asString();
-		auto allInstanceTypesNode = allQueuesNode["InstanceTypes"]["InstanceTypeInfo"];
-		for (auto allQueuesNodeInstanceTypesInstanceTypeInfo : allInstanceTypesNode)
+		auto allInstanceTypesNode = valueQueuesQueueInfo["InstanceTypes"]["InstanceTypeInfo"];
+		for (auto valueQueuesQueueInfoInstanceTypesInstanceTypeInfo : allInstanceTypesNode)
 		{
 			QueueInfo::InstanceTypeInfo instanceTypesObject;
-			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["InstanceType"].isNull())
-				instanceTypesObject.instanceType = allQueuesNodeInstanceTypesInstanceTypeInfo["InstanceType"].asString();
-			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["SpotStrategy"].isNull())
-				instanceTypesObject.spotStrategy = allQueuesNodeInstanceTypesInstanceTypeInfo["SpotStrategy"].asString();
-			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["SpotPriceLimit"].isNull())
-				instanceTypesObject.spotPriceLimit = std::stof(allQueuesNodeInstanceTypesInstanceTypeInfo["SpotPriceLimit"].asString());
-			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["ZoneId"].isNull())
-				instanceTypesObject.zoneId = allQueuesNodeInstanceTypesInstanceTypeInfo["ZoneId"].asString();
-			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["VSwitchId"].isNull())
-				instanceTypesObject.vSwitchId = allQueuesNodeInstanceTypesInstanceTypeInfo["VSwitchId"].asString();
-			if(!allQueuesNodeInstanceTypesInstanceTypeInfo["HostNamePrefix"].isNull())
-				instanceTypesObject.hostNamePrefix = allQueuesNodeInstanceTypesInstanceTypeInfo["HostNamePrefix"].asString();
+			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["InstanceType"].isNull())
+				instanceTypesObject.instanceType = valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["InstanceType"].asString();
+			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotStrategy"].isNull())
+				instanceTypesObject.spotStrategy = valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotStrategy"].asString();
+			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotPriceLimit"].isNull())
+				instanceTypesObject.spotPriceLimit = std::stof(valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotPriceLimit"].asString());
+			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["ZoneId"].isNull())
+				instanceTypesObject.zoneId = valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["ZoneId"].asString();
+			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["VSwitchId"].isNull())
+				instanceTypesObject.vSwitchId = valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["VSwitchId"].asString();
+			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["HostNamePrefix"].isNull())
+				instanceTypesObject.hostNamePrefix = valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["HostNamePrefix"].asString();
 			queuesObject.instanceTypes.push_back(instanceTypesObject);
 		}
 		queues_.push_back(queuesObject);

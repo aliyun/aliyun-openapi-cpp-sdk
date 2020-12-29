@@ -85,6 +85,8 @@ void ListNodesResult::parse(const std::string &payload)
 			nodesObject.htEnabled = valueNodesNodeInfo["HtEnabled"].asString() == "true";
 		if(!valueNodesNodeInfo["PublicIpAddress"].isNull())
 			nodesObject.publicIpAddress = valueNodesNodeInfo["PublicIpAddress"].asString();
+		if(!valueNodesNodeInfo["InstanceType"].isNull())
+			nodesObject.instanceType = valueNodesNodeInfo["InstanceType"].asString();
 		auto totalResourcesNode = value["TotalResources"];
 		if(!totalResourcesNode["Cpu"].isNull())
 			nodesObject.totalResources.cpu = std::stoi(totalResourcesNode["Cpu"].asString());

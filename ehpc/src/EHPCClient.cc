@@ -1707,6 +1707,42 @@ EHPCClient::GetGWSConnectTicketOutcomeCallable EHPCClient::getGWSConnectTicketCa
 	return task->get_future();
 }
 
+EHPCClient::GetHealthMonitorLogsOutcome EHPCClient::getHealthMonitorLogs(const GetHealthMonitorLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetHealthMonitorLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetHealthMonitorLogsOutcome(GetHealthMonitorLogsResult(outcome.result()));
+	else
+		return GetHealthMonitorLogsOutcome(outcome.error());
+}
+
+void EHPCClient::getHealthMonitorLogsAsync(const GetHealthMonitorLogsRequest& request, const GetHealthMonitorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getHealthMonitorLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::GetHealthMonitorLogsOutcomeCallable EHPCClient::getHealthMonitorLogsCallable(const GetHealthMonitorLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetHealthMonitorLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->getHealthMonitorLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::GetHybridClusterConfigOutcome EHPCClient::getHybridClusterConfig(const GetHybridClusterConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,6 +1881,42 @@ EHPCClient::GetWorkbenchTokenOutcomeCallable EHPCClient::getWorkbenchTokenCallab
 			[this, request]()
 			{
 			return this->getWorkbenchToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::InitializeEHPCOutcome EHPCClient::initializeEHPC(const InitializeEHPCRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitializeEHPCOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitializeEHPCOutcome(InitializeEHPCResult(outcome.result()));
+	else
+		return InitializeEHPCOutcome(outcome.error());
+}
+
+void EHPCClient::initializeEHPCAsync(const InitializeEHPCRequest& request, const InitializeEHPCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initializeEHPC(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::InitializeEHPCOutcomeCallable EHPCClient::initializeEHPCCallable(const InitializeEHPCRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitializeEHPCOutcome()>>(
+			[this, request]()
+			{
+			return this->initializeEHPC(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

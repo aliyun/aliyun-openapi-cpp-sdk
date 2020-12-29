@@ -57,20 +57,20 @@ void ListCpfsFileSystemsResult::parse(const std::string &payload)
 			fileSystemListObject.protocolType = valueFileSystemListFileSystems["ProtocolType"].asString();
 		if(!valueFileSystemListFileSystems["Capacity"].isNull())
 			fileSystemListObject.capacity = valueFileSystemListFileSystems["Capacity"].asString();
-		auto allMountTargetListNode = allFileSystemListNode["MountTargetList"]["MountTargets"];
-		for (auto allFileSystemListNodeMountTargetListMountTargets : allMountTargetListNode)
+		auto allMountTargetListNode = valueFileSystemListFileSystems["MountTargetList"]["MountTargets"];
+		for (auto valueFileSystemListFileSystemsMountTargetListMountTargets : allMountTargetListNode)
 		{
 			FileSystems::MountTargets mountTargetListObject;
-			if(!allFileSystemListNodeMountTargetListMountTargets["MountTargetDomain"].isNull())
-				mountTargetListObject.mountTargetDomain = allFileSystemListNodeMountTargetListMountTargets["MountTargetDomain"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["Status"].isNull())
-				mountTargetListObject.status = allFileSystemListNodeMountTargetListMountTargets["Status"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["NetworkType"].isNull())
-				mountTargetListObject.networkType = allFileSystemListNodeMountTargetListMountTargets["NetworkType"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["VswId"].isNull())
-				mountTargetListObject.vswId = allFileSystemListNodeMountTargetListMountTargets["VswId"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["VpcId"].isNull())
-				mountTargetListObject.vpcId = allFileSystemListNodeMountTargetListMountTargets["VpcId"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["MountTargetDomain"].isNull())
+				mountTargetListObject.mountTargetDomain = valueFileSystemListFileSystemsMountTargetListMountTargets["MountTargetDomain"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["Status"].isNull())
+				mountTargetListObject.status = valueFileSystemListFileSystemsMountTargetListMountTargets["Status"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["NetworkType"].isNull())
+				mountTargetListObject.networkType = valueFileSystemListFileSystemsMountTargetListMountTargets["NetworkType"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["VswId"].isNull())
+				mountTargetListObject.vswId = valueFileSystemListFileSystemsMountTargetListMountTargets["VswId"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["VpcId"].isNull())
+				mountTargetListObject.vpcId = valueFileSystemListFileSystemsMountTargetListMountTargets["VpcId"].asString();
 			fileSystemListObject.mountTargetList.push_back(mountTargetListObject);
 		}
 		fileSystemList_.push_back(fileSystemListObject);

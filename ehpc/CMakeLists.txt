@@ -113,6 +113,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/GetClusterVolumesResult.h
 	include/alibabacloud/ehpc/model/GetGWSConnectTicketRequest.h
 	include/alibabacloud/ehpc/model/GetGWSConnectTicketResult.h
+	include/alibabacloud/ehpc/model/GetHealthMonitorLogsRequest.h
+	include/alibabacloud/ehpc/model/GetHealthMonitorLogsResult.h
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigRequest.h
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigResult.h
 	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigRequest.h
@@ -121,6 +123,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/GetVisualServiceStatusResult.h
 	include/alibabacloud/ehpc/model/GetWorkbenchTokenRequest.h
 	include/alibabacloud/ehpc/model/GetWorkbenchTokenResult.h
+	include/alibabacloud/ehpc/model/InitializeEHPCRequest.h
+	include/alibabacloud/ehpc/model/InitializeEHPCResult.h
 	include/alibabacloud/ehpc/model/InstallSoftwareRequest.h
 	include/alibabacloud/ehpc/model/InstallSoftwareResult.h
 	include/alibabacloud/ehpc/model/InvokeShellCommandRequest.h
@@ -350,6 +354,8 @@ set(ehpc_src
 	src/model/GetClusterVolumesResult.cc
 	src/model/GetGWSConnectTicketRequest.cc
 	src/model/GetGWSConnectTicketResult.cc
+	src/model/GetHealthMonitorLogsRequest.cc
+	src/model/GetHealthMonitorLogsResult.cc
 	src/model/GetHybridClusterConfigRequest.cc
 	src/model/GetHybridClusterConfigResult.cc
 	src/model/GetIfEcsTypeSupportHtConfigRequest.cc
@@ -358,6 +364,8 @@ set(ehpc_src
 	src/model/GetVisualServiceStatusResult.cc
 	src/model/GetWorkbenchTokenRequest.cc
 	src/model/GetWorkbenchTokenResult.cc
+	src/model/InitializeEHPCRequest.cc
+	src/model/InitializeEHPCResult.cc
 	src/model/InstallSoftwareRequest.cc
 	src/model/InstallSoftwareResult.cc
 	src/model/InvokeShellCommandRequest.cc

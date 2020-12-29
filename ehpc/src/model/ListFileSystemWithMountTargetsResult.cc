@@ -67,30 +67,30 @@ void ListFileSystemWithMountTargetsResult::parse(const std::string &payload)
 			fileSystemListObject.bandWidth = std::stoi(valueFileSystemListFileSystems["BandWidth"].asString());
 		if(!valueFileSystemListFileSystems["Status"].isNull())
 			fileSystemListObject.status = valueFileSystemListFileSystems["Status"].asString();
-		auto allPackageListNode = allFileSystemListNode["PackageList"]["Packages"];
-		for (auto allFileSystemListNodePackageListPackages : allPackageListNode)
+		auto allPackageListNode = valueFileSystemListFileSystems["PackageList"]["Packages"];
+		for (auto valueFileSystemListFileSystemsPackageListPackages : allPackageListNode)
 		{
 			FileSystems::Packages packageListObject;
-			if(!allFileSystemListNodePackageListPackages["PackageId"].isNull())
-				packageListObject.packageId = allFileSystemListNodePackageListPackages["PackageId"].asString();
+			if(!valueFileSystemListFileSystemsPackageListPackages["PackageId"].isNull())
+				packageListObject.packageId = valueFileSystemListFileSystemsPackageListPackages["PackageId"].asString();
 			fileSystemListObject.packageList.push_back(packageListObject);
 		}
-		auto allMountTargetListNode = allFileSystemListNode["MountTargetList"]["MountTargets"];
-		for (auto allFileSystemListNodeMountTargetListMountTargets : allMountTargetListNode)
+		auto allMountTargetListNode = valueFileSystemListFileSystems["MountTargetList"]["MountTargets"];
+		for (auto valueFileSystemListFileSystemsMountTargetListMountTargets : allMountTargetListNode)
 		{
 			FileSystems::MountTargets mountTargetListObject;
-			if(!allFileSystemListNodeMountTargetListMountTargets["MountTargetDomain"].isNull())
-				mountTargetListObject.mountTargetDomain = allFileSystemListNodeMountTargetListMountTargets["MountTargetDomain"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["Status"].isNull())
-				mountTargetListObject.status = allFileSystemListNodeMountTargetListMountTargets["Status"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["NetworkType"].isNull())
-				mountTargetListObject.networkType = allFileSystemListNodeMountTargetListMountTargets["NetworkType"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["VswId"].isNull())
-				mountTargetListObject.vswId = allFileSystemListNodeMountTargetListMountTargets["VswId"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["VpcId"].isNull())
-				mountTargetListObject.vpcId = allFileSystemListNodeMountTargetListMountTargets["VpcId"].asString();
-			if(!allFileSystemListNodeMountTargetListMountTargets["AccessGroup"].isNull())
-				mountTargetListObject.accessGroup = allFileSystemListNodeMountTargetListMountTargets["AccessGroup"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["MountTargetDomain"].isNull())
+				mountTargetListObject.mountTargetDomain = valueFileSystemListFileSystemsMountTargetListMountTargets["MountTargetDomain"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["Status"].isNull())
+				mountTargetListObject.status = valueFileSystemListFileSystemsMountTargetListMountTargets["Status"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["NetworkType"].isNull())
+				mountTargetListObject.networkType = valueFileSystemListFileSystemsMountTargetListMountTargets["NetworkType"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["VswId"].isNull())
+				mountTargetListObject.vswId = valueFileSystemListFileSystemsMountTargetListMountTargets["VswId"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["VpcId"].isNull())
+				mountTargetListObject.vpcId = valueFileSystemListFileSystemsMountTargetListMountTargets["VpcId"].asString();
+			if(!valueFileSystemListFileSystemsMountTargetListMountTargets["AccessGroup"].isNull())
+				mountTargetListObject.accessGroup = valueFileSystemListFileSystemsMountTargetListMountTargets["AccessGroup"].asString();
 			fileSystemListObject.mountTargetList.push_back(mountTargetListObject);
 		}
 		fileSystemList_.push_back(fileSystemListObject);

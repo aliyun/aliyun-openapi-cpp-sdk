@@ -367,6 +367,17 @@ void CreateClusterRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
+std::string CreateClusterRequest::getSystemDiskLevel()const
+{
+	return systemDiskLevel_;
+}
+
+void CreateClusterRequest::setSystemDiskLevel(const std::string& systemDiskLevel)
+{
+	systemDiskLevel_ = systemDiskLevel;
+	setParameter("SystemDiskLevel", systemDiskLevel);
+}
+
 std::string CreateClusterRequest::getClientToken()const
 {
 	return clientToken_;

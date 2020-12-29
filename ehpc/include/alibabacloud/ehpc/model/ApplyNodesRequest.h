@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setImageId(const std::string& imageId);
 				int getMemory()const;
 				void setMemory(int memory);
+				std::string getSystemDiskLevel()const;
+				void setSystemDiskLevel(const std::string& systemDiskLevel);
 				bool getAllocatePublicAddress()const;
 				void setAllocatePublicAddress(bool allocatePublicAddress);
 				int getInternetMaxBandWidthOut()const;
@@ -95,6 +97,7 @@ namespace AlibabaCloud
             private:
 				std::string imageId_;
 				int memory_;
+				std::string systemDiskLevel_;
 				bool allocatePublicAddress_;
 				int internetMaxBandWidthOut_;
 				std::string resourceAmountType_;

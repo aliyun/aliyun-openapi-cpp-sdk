@@ -119,6 +119,8 @@ namespace AlibabaCloud
 				void setSccClusterId(const std::string& sccClusterId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				std::string getSystemDiskLevel()const;
+				void setSystemDiskLevel(const std::string& systemDiskLevel);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getEhpcVersion()const;
@@ -192,6 +194,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				std::string sccClusterId_;
 				std::string imageId_;
+				std::string systemDiskLevel_;
 				std::string clientToken_;
 				std::string ehpcVersion_;
 				std::string accountType_;

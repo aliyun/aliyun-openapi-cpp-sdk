@@ -36,7 +36,13 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string description;
+					std::string vpcId;
+					std::string deployMode;
+					std::string osTag;
 					std::string id;
+					std::string schedulerType;
+					std::string clientVersion;
+					std::string accountType;
 					std::string name;
 					std::string location;
 				};

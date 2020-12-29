@@ -69,6 +69,7 @@ namespace AlibabaCloud
 					float computeSpotPriceLimit;
 					std::string nodeSuffix;
 					int count;
+					std::string clientVersion;
 					std::string name;
 					std::string deployMode;
 					TotalResources totalResources;

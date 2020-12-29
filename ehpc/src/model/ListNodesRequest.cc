@@ -71,6 +71,28 @@ void ListNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ListNodesRequest::getFilter()const
+{
+	return filter_;
+}
+
+void ListNodesRequest::setFilter(const std::string& filter)
+{
+	filter_ = filter;
+	setParameter("Filter", filter);
+}
+
+std::string ListNodesRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void ListNodesRequest::setPrivateIpAddress(const std::string& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
 std::string ListNodesRequest::getSequence()const
 {
 	return sequence_;
@@ -102,5 +124,16 @@ void ListNodesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListNodesRequest::getSortBy()const
+{
+	return sortBy_;
+}
+
+void ListNodesRequest::setSortBy(const std::string& sortBy)
+{
+	sortBy_ = sortBy;
+	setParameter("SortBy", sortBy);
 }
 

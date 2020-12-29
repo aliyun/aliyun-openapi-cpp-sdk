@@ -49,6 +49,17 @@ void SubmitJobRequest::setRunasUserPassword(const std::string& runasUserPassword
 	setParameter("RunasUserPassword", runasUserPassword);
 }
 
+std::string SubmitJobRequest::getClockTime()const
+{
+	return clockTime_;
+}
+
+void SubmitJobRequest::setClockTime(const std::string& clockTime)
+{
+	clockTime_ = clockTime;
+	setParameter("ClockTime", clockTime);
+}
+
 std::string SubmitJobRequest::getCommandLine()const
 {
 	return commandLine_;
@@ -113,6 +124,17 @@ void SubmitJobRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
 	setParameter("PackagePath", packagePath);
+}
+
+std::string SubmitJobRequest::getMem()const
+{
+	return mem_;
+}
+
+void SubmitJobRequest::setMem(const std::string& mem)
+{
+	mem_ = mem;
+	setParameter("Mem", mem);
 }
 
 std::string SubmitJobRequest::getStdoutRedirectPath()const
@@ -181,6 +203,17 @@ void SubmitJobRequest::setReRunable(bool reRunable)
 	setParameter("ReRunable", reRunable ? "true" : "false");
 }
 
+int SubmitJobRequest::getThread()const
+{
+	return thread_;
+}
+
+void SubmitJobRequest::setThread(int thread)
+{
+	thread_ = thread;
+	setParameter("Thread", std::to_string(thread));
+}
+
 int SubmitJobRequest::getPriority()const
 {
 	return priority_;
@@ -190,6 +223,39 @@ void SubmitJobRequest::setPriority(int priority)
 {
 	priority_ = priority;
 	setParameter("Priority", std::to_string(priority));
+}
+
+int SubmitJobRequest::getGpu()const
+{
+	return gpu_;
+}
+
+void SubmitJobRequest::setGpu(int gpu)
+{
+	gpu_ = gpu;
+	setParameter("Gpu", std::to_string(gpu));
+}
+
+int SubmitJobRequest::getNode()const
+{
+	return node_;
+}
+
+void SubmitJobRequest::setNode(int node)
+{
+	node_ = node;
+	setParameter("Node", std::to_string(node));
+}
+
+int SubmitJobRequest::getTask()const
+{
+	return task_;
+}
+
+void SubmitJobRequest::setTask(int task)
+{
+	task_ = task;
+	setParameter("Task", std::to_string(task));
 }
 
 std::string SubmitJobRequest::getInputFileUrl()const

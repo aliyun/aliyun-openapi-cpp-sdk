@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				std::string getSystemDiskLevel()const;
+				void setSystemDiskLevel(const std::string& systemDiskLevel);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				bool getAllocatePublicAddress()const;
@@ -92,6 +94,7 @@ namespace AlibabaCloud
 
             private:
 				std::string imageId_;
+				std::string systemDiskLevel_;
 				std::string clientToken_;
 				bool allocatePublicAddress_;
 				int internetMaxBandWidthOut_;

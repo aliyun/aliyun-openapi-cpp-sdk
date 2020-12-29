@@ -38,6 +38,17 @@ void AddNodesRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
+std::string AddNodesRequest::getSystemDiskLevel()const
+{
+	return systemDiskLevel_;
+}
+
+void AddNodesRequest::setSystemDiskLevel(const std::string& systemDiskLevel)
+{
+	systemDiskLevel_ = systemDiskLevel;
+	setParameter("SystemDiskLevel", systemDiskLevel);
+}
+
 std::string AddNodesRequest::getClientToken()const
 {
 	return clientToken_;

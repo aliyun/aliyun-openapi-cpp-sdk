@@ -53,6 +53,18 @@ void ListClustersMetaResult::parse(const std::string &payload)
 			clustersObject.status = valueClustersClusterInfoSimple["Status"].asString();
 		if(!valueClustersClusterInfoSimple["Location"].isNull())
 			clustersObject.location = valueClustersClusterInfoSimple["Location"].asString();
+		if(!valueClustersClusterInfoSimple["OsTag"].isNull())
+			clustersObject.osTag = valueClustersClusterInfoSimple["OsTag"].asString();
+		if(!valueClustersClusterInfoSimple["ClientVersion"].isNull())
+			clustersObject.clientVersion = valueClustersClusterInfoSimple["ClientVersion"].asString();
+		if(!valueClustersClusterInfoSimple["AccountType"].isNull())
+			clustersObject.accountType = valueClustersClusterInfoSimple["AccountType"].asString();
+		if(!valueClustersClusterInfoSimple["SchedulerType"].isNull())
+			clustersObject.schedulerType = valueClustersClusterInfoSimple["SchedulerType"].asString();
+		if(!valueClustersClusterInfoSimple["VpcId"].isNull())
+			clustersObject.vpcId = valueClustersClusterInfoSimple["VpcId"].asString();
+		if(!valueClustersClusterInfoSimple["DeployMode"].isNull())
+			clustersObject.deployMode = valueClustersClusterInfoSimple["DeployMode"].asString();
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["TotalCount"].isNull())

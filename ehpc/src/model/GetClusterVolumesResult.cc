@@ -61,12 +61,12 @@ void GetClusterVolumesResult::parse(const std::string &payload)
 			volumesObject.jobQueue = valueVolumesVolumeInfo["JobQueue"].asString();
 		if(!valueVolumesVolumeInfo["MustKeep"].isNull())
 			volumesObject.mustKeep = valueVolumesVolumeInfo["MustKeep"].asString() == "true";
-		auto allRolesNode = allVolumesNode["Roles"]["RoleInfo"];
-		for (auto allVolumesNodeRolesRoleInfo : allRolesNode)
+		auto allRolesNode = valueVolumesVolumeInfo["Roles"]["RoleInfo"];
+		for (auto valueVolumesVolumeInfoRolesRoleInfo : allRolesNode)
 		{
 			VolumeInfo::RoleInfo rolesObject;
-			if(!allVolumesNodeRolesRoleInfo["Name"].isNull())
-				rolesObject.name = allVolumesNodeRolesRoleInfo["Name"].asString();
+			if(!valueVolumesVolumeInfoRolesRoleInfo["Name"].isNull())
+				rolesObject.name = valueVolumesVolumeInfoRolesRoleInfo["Name"].asString();
 			volumesObject.roles.push_back(rolesObject);
 		}
 		volumes_.push_back(volumesObject);
