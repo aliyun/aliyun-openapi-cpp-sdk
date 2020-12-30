@@ -14,52 +14,37 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/AddShardingNodeResult.h>
+#include <alibabacloud/r-kvstore/model/ModifyNodeSpecResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::R_kvstore;
 using namespace AlibabaCloud::R_kvstore::Model;
 
-AddShardingNodeResult::AddShardingNodeResult() :
+ModifyNodeSpecResult::ModifyNodeSpecResult() :
 	ServiceResult()
 {}
 
-AddShardingNodeResult::AddShardingNodeResult(const std::string &payload) :
+ModifyNodeSpecResult::ModifyNodeSpecResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AddShardingNodeResult::~AddShardingNodeResult()
+ModifyNodeSpecResult::~ModifyNodeSpecResult()
 {}
 
-void AddShardingNodeResult::parse(const std::string &payload)
+void ModifyNodeSpecResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNodeIds = value["NodeIds"]["NodeId"];
-	for (const auto &item : allNodeIds)
-		nodeIds_.push_back(item.asString());
 	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
-	if(!value["NodeId"].isNull())
-		nodeId_ = value["NodeId"].asString();
+		orderId_ = value["OrderId"].asString();
 
 }
 
-std::vector<std::string> AddShardingNodeResult::getNodeIds()const
-{
-	return nodeIds_;
-}
-
-std::string AddShardingNodeResult::getNodeId()const
-{
-	return nodeId_;
-}
-
-long AddShardingNodeResult::getOrderId()const
+std::string ModifyNodeSpecResult::getOrderId()const
 {
 	return orderId_;
 }

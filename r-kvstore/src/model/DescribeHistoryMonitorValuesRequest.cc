@@ -60,6 +60,17 @@ void DescribeHistoryMonitorValuesRequest::setAccessKeyId(const std::string& acce
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeHistoryMonitorValuesRequest::getReplicatorJobId()const
+{
+	return replicatorJobId_;
+}
+
+void DescribeHistoryMonitorValuesRequest::setReplicatorJobId(const std::string& replicatorJobId)
+{
+	replicatorJobId_ = replicatorJobId;
+	setParameter("ReplicatorJobId", replicatorJobId);
+}
+
 std::string DescribeHistoryMonitorValuesRequest::getSecurityToken()const
 {
 	return securityToken_;

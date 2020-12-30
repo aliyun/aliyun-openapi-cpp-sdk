@@ -115,6 +115,17 @@ void DescribeGlobalDistributeCacheRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeGlobalDistributeCacheRequest::getSubInstanceId()const
+{
+	return subInstanceId_;
+}
+
+void DescribeGlobalDistributeCacheRequest::setSubInstanceId(const std::string& subInstanceId)
+{
+	subInstanceId_ = subInstanceId;
+	setParameter("SubInstanceId", subInstanceId);
+}
+
 std::string DescribeGlobalDistributeCacheRequest::getGlobalInstanceId()const
 {
 	return globalInstanceId_;

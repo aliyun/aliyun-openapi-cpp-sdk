@@ -38,6 +38,17 @@ void DescribeClusterMemberInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int DescribeClusterMemberInfoRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeClusterMemberInfoRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeClusterMemberInfoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -49,6 +60,17 @@ void DescribeClusterMemberInfoRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeClusterMemberInfoRequest::getNeedReplica()const
+{
+	return needReplica_;
+}
+
+void DescribeClusterMemberInfoRequest::setNeedReplica(const std::string& needReplica)
+{
+	needReplica_ = needReplica;
+	setParameter("NeedReplica", needReplica);
+}
+
 std::string DescribeClusterMemberInfoRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -58,6 +80,28 @@ void DescribeClusterMemberInfoRequest::setSecurityToken(const std::string& secur
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
+}
+
+int DescribeClusterMemberInfoRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeClusterMemberInfoRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeClusterMemberInfoRequest::getFilterService()const
+{
+	return filterService_;
+}
+
+void DescribeClusterMemberInfoRequest::setFilterService(const std::string& filterService)
+{
+	filterService_ = filterService;
+	setParameter("FilterService", filterService);
 }
 
 std::string DescribeClusterMemberInfoRequest::getResourceOwnerAccount()const

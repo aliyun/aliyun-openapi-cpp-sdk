@@ -34,23 +34,31 @@ namespace AlibabaCloud
 			public:
 				struct Children
 				{
+					struct Item
+					{
+						std::string role;
+						std::string status;
+						std::string zoneId;
+						std::string ip;
+						std::vector<std::string> ports;
+						int id;
+						std::string hostName;
+					};
 					long connections;
 					std::string primaryInsName;
 					std::string health;
 					std::string service;
 					std::string bizType;
-					std::string connType;
 					int diskSizeMB;
 					int creator;
-					std::string lockMode;
 					std::string name;
-					std::string insType;
 					int binlogRetentionDays;
 					long bandWidth;
 					std::string classCode;
 					long capacity;
 					std::string userId;
 					std::string serviceVersion;
+					std::vector<Children::Item> items;
 					long id;
 					std::string lockReason;
 					int modifier;
@@ -63,11 +71,17 @@ namespace AlibabaCloud
 				DescribeClusterMemberInfoResult();
 				explicit DescribeClusterMemberInfoResult(const std::string &payload);
 				~DescribeClusterMemberInfoResult();
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				std::vector<Children> getClusterChildren()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
+				int pageSize_;
+				int pageNumber_;
 				std::vector<Children> clusterChildren_;
 
 			};

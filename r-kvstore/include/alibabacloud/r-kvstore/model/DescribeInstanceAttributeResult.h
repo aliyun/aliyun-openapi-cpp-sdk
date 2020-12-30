@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::string config;
 					long port;
+					std::string globalInstanceId;
 					std::string hasRenewChangeOrder;
 					int shardCount;
 					std::string connectionDomain;
@@ -64,6 +65,7 @@ namespace AlibabaCloud
 					std::string maintainStartTime;
 					std::string architectureType;
 					std::string engineVersion;
+					std::string storageType;
 					std::string zoneId;
 					std::string instanceId;
 					std::string vSwitchId;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 					std::string replicationMode;
 					std::string replicaId;
 					std::string instanceName;
+					std::string storage;
 					std::string vpcId;
 					std::string chargeType;
 					std::string vpcAuthMode;

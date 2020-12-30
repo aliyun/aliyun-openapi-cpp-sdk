@@ -123,6 +123,12 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.resourceGroupId = valueInstancesDBInstanceAttribute["ResourceGroupId"].asString();
 		if(!valueInstancesDBInstanceAttribute["ShardCount"].isNull())
 			instancesObject.shardCount = std::stoi(valueInstancesDBInstanceAttribute["ShardCount"].asString());
+		if(!valueInstancesDBInstanceAttribute["Storage"].isNull())
+			instancesObject.storage = valueInstancesDBInstanceAttribute["Storage"].asString();
+		if(!valueInstancesDBInstanceAttribute["StorageType"].isNull())
+			instancesObject.storageType = valueInstancesDBInstanceAttribute["StorageType"].asString();
+		if(!valueInstancesDBInstanceAttribute["GlobalInstanceId"].isNull())
+			instancesObject.globalInstanceId = valueInstancesDBInstanceAttribute["GlobalInstanceId"].asString();
 		auto allTagsNode = valueInstancesDBInstanceAttribute["Tags"]["Tag"];
 		for (auto valueInstancesDBInstanceAttributeTagsTag : allTagsNode)
 		{

@@ -61,6 +61,8 @@ void DescribeGlobalDistributeCacheResult::parse(const std::string &payload)
 				subInstancesObject.regionId = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["RegionId"].asString();
 			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceStatus"].isNull())
 				subInstancesObject.instanceStatus = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceStatus"].asString();
+			if(!valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceClass"].isNull())
+				subInstancesObject.instanceClass = valueGlobalDistributeCachesGlobalDistributeCacheSubInstancesSubInstance["InstanceClass"].asString();
 			globalDistributeCachesObject.subInstances.push_back(subInstancesObject);
 		}
 		globalDistributeCaches_.push_back(globalDistributeCachesObject);

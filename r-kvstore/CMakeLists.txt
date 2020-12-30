@@ -57,6 +57,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DeleteUserClusterHostResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAccountsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeAccountsResult.h
+	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAuditRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeAuditRecordsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAvailableResourceRequest.h
@@ -141,6 +143,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/r-kvstore/model/ModifyAccountPasswordRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyAccountPasswordResult.h
+	include/alibabacloud/r-kvstore/model/ModifyActiveOperationTaskRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyActiveOperationTaskResult.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringRequest.h
@@ -171,6 +175,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyInstanceVpcAuthModeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeResult.h
+	include/alibabacloud/r-kvstore/model/ModifyNodeSpecRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyNodeSpecResult.h
 	include/alibabacloud/r-kvstore/model/ModifyResourceGroupRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyResourceGroupResult.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityGroupConfigurationRequest.h
@@ -242,6 +248,8 @@ set(r-kvstore_src
 	src/model/DeleteUserClusterHostResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
+	src/model/DescribeActiveOperationTaskRequest.cc
+	src/model/DescribeActiveOperationTaskResult.cc
 	src/model/DescribeAuditRecordsRequest.cc
 	src/model/DescribeAuditRecordsResult.cc
 	src/model/DescribeAvailableResourceRequest.cc
@@ -326,6 +334,8 @@ set(r-kvstore_src
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPasswordRequest.cc
 	src/model/ModifyAccountPasswordResult.cc
+	src/model/ModifyActiveOperationTaskRequest.cc
+	src/model/ModifyActiveOperationTaskResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
 	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
@@ -356,6 +366,8 @@ set(r-kvstore_src
 	src/model/ModifyInstanceVpcAuthModeResult.cc
 	src/model/ModifyIntranetAttributeRequest.cc
 	src/model/ModifyIntranetAttributeResult.cc
+	src/model/ModifyNodeSpecRequest.cc
+	src/model/ModifyNodeSpecResult.cc
 	src/model/ModifyResourceGroupRequest.cc
 	src/model/ModifyResourceGroupResult.cc
 	src/model/ModifySecurityGroupConfigurationRequest.cc

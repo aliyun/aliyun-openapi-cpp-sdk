@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALDISTRIBUTECACHERESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALDISTRIBUTECACHERESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,46 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeGlobalDistributeCacheResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeActiveOperationTaskResult : public ServiceResult
 			{
 			public:
-				struct GlobalDistributeCache
+				struct ItemsItem
 				{
-					struct SubInstance
-					{
-						std::string instanceID;
-						std::string instanceStatus;
-						std::string globalInstanceId;
-						std::string instanceClass;
-						std::string regionId;
-					};
-					std::string status;
-					std::vector<GlobalDistributeCache::SubInstance> subInstances;
-					std::string globalInstanceId;
-					std::string globalInstanceName;
+					int status;
+					std::string createdTime;
+					std::string deadline;
+					std::string startTime;
+					std::string insName;
+					std::string dbType;
+					std::string taskParams;
+					std::string modifiedTime;
+					std::string taskType;
+					std::string prepareInterval;
+					std::string region;
+					int id;
+					std::string resultInfo;
+					std::string switchTime;
 				};
 
 
-				DescribeGlobalDistributeCacheResult();
-				explicit DescribeGlobalDistributeCacheResult(const std::string &payload);
-				~DescribeGlobalDistributeCacheResult();
+				DescribeActiveOperationTaskResult();
+				explicit DescribeActiveOperationTaskResult(const std::string &payload);
+				~DescribeActiveOperationTaskResult();
 				int getTotalRecordCount()const;
-				std::vector<GlobalDistributeCache> getGlobalDistributeCaches()const;
 				int getPageSize()const;
 				int getPageNumber()const;
+				std::vector<ItemsItem> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalRecordCount_;
-				std::vector<GlobalDistributeCache> globalDistributeCaches_;
 				int pageSize_;
 				int pageNumber_;
+				std::vector<ItemsItem> items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALDISTRIBUTECACHERESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEACTIVEOPERATIONTASKRESULT_H_

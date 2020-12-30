@@ -58,6 +58,8 @@
 #include "model/DeleteUserClusterHostResult.h"
 #include "model/DescribeAccountsRequest.h"
 #include "model/DescribeAccountsResult.h"
+#include "model/DescribeActiveOperationTaskRequest.h"
+#include "model/DescribeActiveOperationTaskResult.h"
 #include "model/DescribeAuditRecordsRequest.h"
 #include "model/DescribeAuditRecordsResult.h"
 #include "model/DescribeAvailableResourceRequest.h"
@@ -142,6 +144,8 @@
 #include "model/ModifyAccountDescriptionResult.h"
 #include "model/ModifyAccountPasswordRequest.h"
 #include "model/ModifyAccountPasswordResult.h"
+#include "model/ModifyActiveOperationTaskRequest.h"
+#include "model/ModifyActiveOperationTaskResult.h"
 #include "model/ModifyBackupPolicyRequest.h"
 #include "model/ModifyBackupPolicyResult.h"
 #include "model/ModifyDBInstanceConnectionStringRequest.h"
@@ -172,6 +176,8 @@
 #include "model/ModifyInstanceVpcAuthModeResult.h"
 #include "model/ModifyIntranetAttributeRequest.h"
 #include "model/ModifyIntranetAttributeResult.h"
+#include "model/ModifyNodeSpecRequest.h"
+#include "model/ModifyNodeSpecResult.h"
 #include "model/ModifyResourceGroupRequest.h"
 #include "model/ModifyResourceGroupResult.h"
 #include "model/ModifySecurityGroupConfigurationRequest.h"
@@ -267,6 +273,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAccountsResult> DescribeAccountsOutcome;
 			typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeAccountsRequest&, const DescribeAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeActiveOperationTaskResult> DescribeActiveOperationTaskOutcome;
+			typedef std::future<DescribeActiveOperationTaskOutcome> DescribeActiveOperationTaskOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeActiveOperationTaskRequest&, const DescribeActiveOperationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditRecordsResult> DescribeAuditRecordsOutcome;
 			typedef std::future<DescribeAuditRecordsOutcome> DescribeAuditRecordsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeAuditRecordsRequest&, const DescribeAuditRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditRecordsAsyncHandler;
@@ -393,6 +402,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAccountPasswordResult> ModifyAccountPasswordOutcome;
 			typedef std::future<ModifyAccountPasswordOutcome> ModifyAccountPasswordOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyAccountPasswordRequest&, const ModifyAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountPasswordAsyncHandler;
+			typedef Outcome<Error, Model::ModifyActiveOperationTaskResult> ModifyActiveOperationTaskOutcome;
+			typedef std::future<ModifyActiveOperationTaskOutcome> ModifyActiveOperationTaskOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyActiveOperationTaskRequest&, const ModifyActiveOperationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyActiveOperationTaskAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBackupPolicyResult> ModifyBackupPolicyOutcome;
 			typedef std::future<ModifyBackupPolicyOutcome> ModifyBackupPolicyOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyBackupPolicyRequest&, const ModifyBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupPolicyAsyncHandler;
@@ -438,6 +450,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyIntranetAttributeResult> ModifyIntranetAttributeOutcome;
 			typedef std::future<ModifyIntranetAttributeOutcome> ModifyIntranetAttributeOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyIntranetAttributeRequest&, const ModifyIntranetAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntranetAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyNodeSpecResult> ModifyNodeSpecOutcome;
+			typedef std::future<ModifyNodeSpecOutcome> ModifyNodeSpecOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyNodeSpecRequest&, const ModifyNodeSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodeSpecAsyncHandler;
 			typedef Outcome<Error, Model::ModifyResourceGroupResult> ModifyResourceGroupOutcome;
 			typedef std::future<ModifyResourceGroupOutcome> ModifyResourceGroupOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyResourceGroupRequest&, const ModifyResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceGroupAsyncHandler;
@@ -545,6 +560,9 @@ namespace AlibabaCloud
 			DescribeAccountsOutcome describeAccounts(const Model::DescribeAccountsRequest &request)const;
 			void describeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountsOutcomeCallable describeAccountsCallable(const Model::DescribeAccountsRequest& request) const;
+			DescribeActiveOperationTaskOutcome describeActiveOperationTask(const Model::DescribeActiveOperationTaskRequest &request)const;
+			void describeActiveOperationTaskAsync(const Model::DescribeActiveOperationTaskRequest& request, const DescribeActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeActiveOperationTaskOutcomeCallable describeActiveOperationTaskCallable(const Model::DescribeActiveOperationTaskRequest& request) const;
 			DescribeAuditRecordsOutcome describeAuditRecords(const Model::DescribeAuditRecordsRequest &request)const;
 			void describeAuditRecordsAsync(const Model::DescribeAuditRecordsRequest& request, const DescribeAuditRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditRecordsOutcomeCallable describeAuditRecordsCallable(const Model::DescribeAuditRecordsRequest& request) const;
@@ -671,6 +689,9 @@ namespace AlibabaCloud
 			ModifyAccountPasswordOutcome modifyAccountPassword(const Model::ModifyAccountPasswordRequest &request)const;
 			void modifyAccountPasswordAsync(const Model::ModifyAccountPasswordRequest& request, const ModifyAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountPasswordOutcomeCallable modifyAccountPasswordCallable(const Model::ModifyAccountPasswordRequest& request) const;
+			ModifyActiveOperationTaskOutcome modifyActiveOperationTask(const Model::ModifyActiveOperationTaskRequest &request)const;
+			void modifyActiveOperationTaskAsync(const Model::ModifyActiveOperationTaskRequest& request, const ModifyActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyActiveOperationTaskOutcomeCallable modifyActiveOperationTaskCallable(const Model::ModifyActiveOperationTaskRequest& request) const;
 			ModifyBackupPolicyOutcome modifyBackupPolicy(const Model::ModifyBackupPolicyRequest &request)const;
 			void modifyBackupPolicyAsync(const Model::ModifyBackupPolicyRequest& request, const ModifyBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupPolicyOutcomeCallable modifyBackupPolicyCallable(const Model::ModifyBackupPolicyRequest& request) const;
@@ -716,6 +737,9 @@ namespace AlibabaCloud
 			ModifyIntranetAttributeOutcome modifyIntranetAttribute(const Model::ModifyIntranetAttributeRequest &request)const;
 			void modifyIntranetAttributeAsync(const Model::ModifyIntranetAttributeRequest& request, const ModifyIntranetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyIntranetAttributeOutcomeCallable modifyIntranetAttributeCallable(const Model::ModifyIntranetAttributeRequest& request) const;
+			ModifyNodeSpecOutcome modifyNodeSpec(const Model::ModifyNodeSpecRequest &request)const;
+			void modifyNodeSpecAsync(const Model::ModifyNodeSpecRequest& request, const ModifyNodeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyNodeSpecOutcomeCallable modifyNodeSpecCallable(const Model::ModifyNodeSpecRequest& request) const;
 			ModifyResourceGroupOutcome modifyResourceGroup(const Model::ModifyResourceGroupRequest &request)const;
 			void modifyResourceGroupAsync(const Model::ModifyResourceGroupRequest& request, const ModifyResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyResourceGroupOutcomeCallable modifyResourceGroupCallable(const Model::ModifyResourceGroupRequest& request) const;

@@ -55,12 +55,8 @@ void DescribeClusterMemberInfoResult::parse(const std::string &payload)
 			clusterChildrenObject.modifier = std::stoi(valueClusterChildrenChildren["Modifier"].asString());
 		if(!valueClusterChildrenChildren["ServiceVersion"].isNull())
 			clusterChildrenObject.serviceVersion = valueClusterChildrenChildren["ServiceVersion"].asString();
-		if(!valueClusterChildrenChildren["ConnType"].isNull())
-			clusterChildrenObject.connType = valueClusterChildrenChildren["ConnType"].asString();
 		if(!valueClusterChildrenChildren["DiskSizeMB"].isNull())
 			clusterChildrenObject.diskSizeMB = std::stoi(valueClusterChildrenChildren["DiskSizeMB"].asString());
-		if(!valueClusterChildrenChildren["InsType"].isNull())
-			clusterChildrenObject.insType = valueClusterChildrenChildren["InsType"].asString();
 		if(!valueClusterChildrenChildren["Nickname"].isNull())
 			clusterChildrenObject.nickname = valueClusterChildrenChildren["Nickname"].asString();
 		if(!valueClusterChildrenChildren["PrimaryInsName"].isNull())
@@ -71,8 +67,6 @@ void DescribeClusterMemberInfoResult::parse(const std::string &payload)
 			clusterChildrenObject.creator = std::stoi(valueClusterChildrenChildren["Creator"].asString());
 		if(!valueClusterChildrenChildren["ResourceGroupName"].isNull())
 			clusterChildrenObject.resourceGroupName = valueClusterChildrenChildren["ResourceGroupName"].asString();
-		if(!valueClusterChildrenChildren["LockMode"].isNull())
-			clusterChildrenObject.lockMode = valueClusterChildrenChildren["LockMode"].asString();
 		if(!valueClusterChildrenChildren["Health"].isNull())
 			clusterChildrenObject.health = valueClusterChildrenChildren["Health"].asString();
 		if(!valueClusterChildrenChildren["BinlogRetentionDays"].isNull())
@@ -89,9 +83,51 @@ void DescribeClusterMemberInfoResult::parse(const std::string &payload)
 			clusterChildrenObject.bandWidth = std::stol(valueClusterChildrenChildren["BandWidth"].asString());
 		if(!valueClusterChildrenChildren["Connections"].isNull())
 			clusterChildrenObject.connections = std::stol(valueClusterChildrenChildren["Connections"].asString());
+		auto allItemsNode = valueClusterChildrenChildren["Items"]["Item"];
+		for (auto valueClusterChildrenChildrenItemsItem : allItemsNode)
+		{
+			Children::Item itemsObject;
+			if(!valueClusterChildrenChildrenItemsItem["Id"].isNull())
+				itemsObject.id = std::stoi(valueClusterChildrenChildrenItemsItem["Id"].asString());
+			if(!valueClusterChildrenChildrenItemsItem["HostName"].isNull())
+				itemsObject.hostName = valueClusterChildrenChildrenItemsItem["HostName"].asString();
+			if(!valueClusterChildrenChildrenItemsItem["Role"].isNull())
+				itemsObject.role = valueClusterChildrenChildrenItemsItem["Role"].asString();
+			if(!valueClusterChildrenChildrenItemsItem["Status"].isNull())
+				itemsObject.status = valueClusterChildrenChildrenItemsItem["Status"].asString();
+			if(!valueClusterChildrenChildrenItemsItem["ZoneId"].isNull())
+				itemsObject.zoneId = valueClusterChildrenChildrenItemsItem["ZoneId"].asString();
+			if(!valueClusterChildrenChildrenItemsItem["Ip"].isNull())
+				itemsObject.ip = valueClusterChildrenChildrenItemsItem["Ip"].asString();
+			auto allPorts = value["Ports"]["Port"];
+			for (auto value : allPorts)
+				itemsObject.ports.push_back(value.asString());
+			clusterChildrenObject.items.push_back(itemsObject);
+		}
 		clusterChildren_.push_back(clusterChildrenObject);
 	}
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
+}
+
+int DescribeClusterMemberInfoResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+int DescribeClusterMemberInfoResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribeClusterMemberInfoResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::vector<DescribeClusterMemberInfoResult::Children> DescribeClusterMemberInfoResult::getClusterChildren()const

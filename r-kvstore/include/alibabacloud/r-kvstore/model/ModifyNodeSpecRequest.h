@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEHISTORYMONITORVALUESREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEHISTORYMONITORVALUESREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,66 +28,60 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeHistoryMonitorValuesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyNodeSpecRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeHistoryMonitorValuesRequest();
-				~DescribeHistoryMonitorValuesRequest();
+				ModifyNodeSpecRequest();
+				~ModifyNodeSpecRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
+				std::string getInstanceClass()const;
+				void setInstanceClass(const std::string& instanceClass);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getReplicatorJobId()const;
-				void setReplicatorJobId(const std::string& replicatorJobId);
+				std::string getSwitchTimeMode()const;
+				void setSwitchTimeMode(const std::string& switchTimeMode);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getIntervalForHistory()const;
-				void setIntervalForHistory(const std::string& intervalForHistory);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
-				std::string getAccessType()const;
-				void setAccessType(const std::string& accessType);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
+				std::string getBusinessInfo()const;
+				void setBusinessInfo(const std::string& businessInfo);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
-				std::string getMonitorKeys()const;
-				void setMonitorKeys(const std::string& monitorKeys);
+				std::string getOrderType()const;
+				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
-				std::string startTime_;
+				std::string couponNo_;
+				std::string instanceClass_;
 				std::string accessKeyId_;
-				std::string replicatorJobId_;
+				std::string switchTimeMode_;
 				std::string securityToken_;
-				std::string intervalForHistory_;
 				std::string nodeId_;
-				std::string accessType_;
-				std::string product_;
+				std::string businessInfo_;
+				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string endTime_;
 				long ownerId_;
 				std::string instanceId_;
-				std::string category_;
-				std::string monitorKeys_;
+				std::string orderType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEHISTORYMONITORVALUESREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECREQUEST_H_

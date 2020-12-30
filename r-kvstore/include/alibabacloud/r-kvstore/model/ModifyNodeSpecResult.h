@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_ADDSHARDINGNODERESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_ADDSHARDINGNODERESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT AddShardingNodeResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyNodeSpecResult : public ServiceResult
 			{
 			public:
 
 
-				AddShardingNodeResult();
-				explicit AddShardingNodeResult(const std::string &payload);
-				~AddShardingNodeResult();
-				std::vector<std::string> getNodeIds()const;
-				std::string getNodeId()const;
-				long getOrderId()const;
+				ModifyNodeSpecResult();
+				explicit ModifyNodeSpecResult(const std::string &payload);
+				~ModifyNodeSpecResult();
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> nodeIds_;
-				std::string nodeId_;
-				long orderId_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_ADDSHARDINGNODERESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYNODESPECRESULT_H_

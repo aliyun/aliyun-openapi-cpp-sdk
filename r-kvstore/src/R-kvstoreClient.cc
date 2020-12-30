@@ -699,6 +699,42 @@ R_kvstoreClient::DescribeAccountsOutcomeCallable R_kvstoreClient::describeAccoun
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeActiveOperationTaskOutcome R_kvstoreClient::describeActiveOperationTask(const DescribeActiveOperationTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActiveOperationTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActiveOperationTaskOutcome(DescribeActiveOperationTaskResult(outcome.result()));
+	else
+		return DescribeActiveOperationTaskOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeActiveOperationTaskAsync(const DescribeActiveOperationTaskRequest& request, const DescribeActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActiveOperationTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeActiveOperationTaskOutcomeCallable R_kvstoreClient::describeActiveOperationTaskCallable(const DescribeActiveOperationTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActiveOperationTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeAuditRecordsOutcome R_kvstoreClient::describeAuditRecords(const DescribeAuditRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2211,6 +2247,42 @@ R_kvstoreClient::ModifyAccountPasswordOutcomeCallable R_kvstoreClient::modifyAcc
 	return task->get_future();
 }
 
+R_kvstoreClient::ModifyActiveOperationTaskOutcome R_kvstoreClient::modifyActiveOperationTask(const ModifyActiveOperationTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyActiveOperationTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyActiveOperationTaskOutcome(ModifyActiveOperationTaskResult(outcome.result()));
+	else
+		return ModifyActiveOperationTaskOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyActiveOperationTaskAsync(const ModifyActiveOperationTaskRequest& request, const ModifyActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyActiveOperationTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyActiveOperationTaskOutcomeCallable R_kvstoreClient::modifyActiveOperationTaskCallable(const ModifyActiveOperationTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyActiveOperationTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyActiveOperationTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ModifyBackupPolicyOutcome R_kvstoreClient::modifyBackupPolicy(const ModifyBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2745,6 +2817,42 @@ R_kvstoreClient::ModifyIntranetAttributeOutcomeCallable R_kvstoreClient::modifyI
 			[this, request]()
 			{
 			return this->modifyIntranetAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ModifyNodeSpecOutcome R_kvstoreClient::modifyNodeSpec(const ModifyNodeSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyNodeSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyNodeSpecOutcome(ModifyNodeSpecResult(outcome.result()));
+	else
+		return ModifyNodeSpecOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyNodeSpecAsync(const ModifyNodeSpecRequest& request, const ModifyNodeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyNodeSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyNodeSpecOutcomeCallable R_kvstoreClient::modifyNodeSpecCallable(const ModifyNodeSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyNodeSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyNodeSpec(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
