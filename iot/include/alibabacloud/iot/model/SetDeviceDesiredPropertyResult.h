@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				SetDeviceDesiredPropertyResult();
 				explicit SetDeviceDesiredPropertyResult(const std::string &payload);
 				~SetDeviceDesiredPropertyResult();
+				std::string getMessageArguments()const;
 				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string messageArguments_;
 				Data data_;
 				std::string errorMessage_;
 				std::string code_;

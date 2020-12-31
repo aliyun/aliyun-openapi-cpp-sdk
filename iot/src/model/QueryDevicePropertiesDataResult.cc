@@ -45,14 +45,14 @@ void QueryDevicePropertiesDataResult::parse(const std::string &payload)
 		PropertyDataInfo propertyDataInfosObject;
 		if(!valuePropertyDataInfosPropertyDataInfo["Identifier"].isNull())
 			propertyDataInfosObject.identifier = valuePropertyDataInfosPropertyDataInfo["Identifier"].asString();
-		auto allListNode = allPropertyDataInfosNode["List"]["PropertyInfo"];
-		for (auto allPropertyDataInfosNodeListPropertyInfo : allListNode)
+		auto allListNode = valuePropertyDataInfosPropertyDataInfo["List"]["PropertyInfo"];
+		for (auto valuePropertyDataInfosPropertyDataInfoListPropertyInfo : allListNode)
 		{
 			PropertyDataInfo::PropertyInfo listObject;
-			if(!allPropertyDataInfosNodeListPropertyInfo["Time"].isNull())
-				listObject.time = std::stol(allPropertyDataInfosNodeListPropertyInfo["Time"].asString());
-			if(!allPropertyDataInfosNodeListPropertyInfo["Value"].isNull())
-				listObject.value = allPropertyDataInfosNodeListPropertyInfo["Value"].asString();
+			if(!valuePropertyDataInfosPropertyDataInfoListPropertyInfo["Time"].isNull())
+				listObject.time = std::stol(valuePropertyDataInfosPropertyDataInfoListPropertyInfo["Time"].asString());
+			if(!valuePropertyDataInfosPropertyDataInfoListPropertyInfo["Value"].isNull())
+				listObject.value = valuePropertyDataInfosPropertyDataInfoListPropertyInfo["Value"].asString();
 			propertyDataInfosObject.list.push_back(listObject);
 		}
 		propertyDataInfos_.push_back(propertyDataInfosObject);

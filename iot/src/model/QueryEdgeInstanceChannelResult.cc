@@ -62,18 +62,18 @@ void QueryEdgeInstanceChannelResult::parse(const std::string &payload)
 			channelObject.gmtCreateTimestamp = std::stol(dataNodeChannelListChannel["GmtCreateTimestamp"].asString());
 		if(!dataNodeChannelListChannel["GmtModifiedTimestamp"].isNull())
 			channelObject.gmtModifiedTimestamp = std::stol(dataNodeChannelListChannel["GmtModifiedTimestamp"].asString());
-		auto allConfigListNode = allChannelListNode["ConfigList"]["Config"];
-		for (auto allChannelListNodeConfigListConfig : allConfigListNode)
+		auto allConfigListNode = dataNodeChannelListChannel["ConfigList"]["Config"];
+		for (auto dataNodeChannelListChannelConfigListConfig : allConfigListNode)
 		{
 			Data::Channel::Config configListObject;
-			if(!allChannelListNodeConfigListConfig["ConfigId"].isNull())
-				configListObject.configId = allChannelListNodeConfigListConfig["ConfigId"].asString();
-			if(!allChannelListNodeConfigListConfig["Format"].isNull())
-				configListObject.format = allChannelListNodeConfigListConfig["Format"].asString();
-			if(!allChannelListNodeConfigListConfig["Content"].isNull())
-				configListObject.content = allChannelListNodeConfigListConfig["Content"].asString();
-			if(!allChannelListNodeConfigListConfig["Key"].isNull())
-				configListObject.key = allChannelListNodeConfigListConfig["Key"].asString();
+			if(!dataNodeChannelListChannelConfigListConfig["ConfigId"].isNull())
+				configListObject.configId = dataNodeChannelListChannelConfigListConfig["ConfigId"].asString();
+			if(!dataNodeChannelListChannelConfigListConfig["Format"].isNull())
+				configListObject.format = dataNodeChannelListChannelConfigListConfig["Format"].asString();
+			if(!dataNodeChannelListChannelConfigListConfig["Content"].isNull())
+				configListObject.content = dataNodeChannelListChannelConfigListConfig["Content"].asString();
+			if(!dataNodeChannelListChannelConfigListConfig["Key"].isNull())
+				configListObject.key = dataNodeChannelListChannelConfigListConfig["Key"].asString();
 			channelObject.configList.push_back(configListObject);
 		}
 		data_.channelList.push_back(channelObject);

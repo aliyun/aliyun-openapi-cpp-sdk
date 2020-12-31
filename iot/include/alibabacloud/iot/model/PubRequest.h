@@ -30,19 +30,31 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT PubRequest : public RpcServiceRequest
 			{
+			public:
+				struct UserProp
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				PubRequest();
 				~PubRequest();
 
+				std::vector<UserProp> getUserProp()const;
+				void setUserProp(const std::vector<UserProp>& userProp);
 				std::string getMessageContent()const;
 				void setMessageContent(const std::string& messageContent);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getQos()const;
 				void setQos(int qos);
+				std::string getCorrelationData()const;
+				void setCorrelationData(const std::string& correlationData);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getResponseTopic()const;
+				void setResponseTopic(const std::string& responseTopic);
 				std::string getTopicFullName()const;
 				void setTopicFullName(const std::string& topicFullName);
 				std::string getProductKey()const;
@@ -53,10 +65,13 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 
             private:
+				std::vector<UserProp> userProp_;
 				std::string messageContent_;
 				std::string accessKeyId_;
 				int qos_;
+				std::string correlationData_;
 				std::string iotInstanceId_;
+				std::string responseTopic_;
 				std::string topicFullName_;
 				std::string productKey_;
 				std::string apiProduct_;

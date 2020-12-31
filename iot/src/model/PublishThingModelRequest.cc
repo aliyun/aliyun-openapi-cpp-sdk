@@ -27,6 +27,17 @@ PublishThingModelRequest::PublishThingModelRequest() :
 PublishThingModelRequest::~PublishThingModelRequest()
 {}
 
+std::string PublishThingModelRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void PublishThingModelRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string PublishThingModelRequest::getDescription()const
 {
 	return description_;
@@ -47,6 +58,17 @@ void PublishThingModelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string PublishThingModelRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void PublishThingModelRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string PublishThingModelRequest::getResourceGroupId()const

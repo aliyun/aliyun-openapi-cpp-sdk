@@ -84,38 +84,38 @@ void GetEdgeInstanceDeploymentResult::parse(const std::string &payload)
 			taskObject.gmtModifiedTimestamp = std::stol(dataNodeTaskListTask["GmtModifiedTimestamp"].asString());
 		if(!dataNodeTaskListTask["GmtCompletedTimestamp"].isNull())
 			taskObject.gmtCompletedTimestamp = std::stol(dataNodeTaskListTask["GmtCompletedTimestamp"].asString());
-		auto allResourceSnapshotListNode = allTaskListNode["ResourceSnapshotList"]["ResourceSnapshot"];
-		for (auto allTaskListNodeResourceSnapshotListResourceSnapshot : allResourceSnapshotListNode)
+		auto allResourceSnapshotListNode = dataNodeTaskListTask["ResourceSnapshotList"]["ResourceSnapshot"];
+		for (auto dataNodeTaskListTaskResourceSnapshotListResourceSnapshot : allResourceSnapshotListNode)
 		{
 			Data::Task::ResourceSnapshot resourceSnapshotListObject;
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCreate"].isNull())
-				resourceSnapshotListObject.gmtCreate = allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCreate"].asString();
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtModified"].isNull())
-				resourceSnapshotListObject.gmtModified = allTaskListNodeResourceSnapshotListResourceSnapshot["GmtModified"].asString();
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCompleted"].isNull())
-				resourceSnapshotListObject.gmtCompleted = allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCompleted"].asString();
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["SnapshotId"].isNull())
-				resourceSnapshotListObject.snapshotId = allTaskListNodeResourceSnapshotListResourceSnapshot["SnapshotId"].asString();
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceType"].isNull())
-				resourceSnapshotListObject.resourceType = allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceType"].asString();
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceId"].isNull())
-				resourceSnapshotListObject.resourceId = allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceId"].asString();
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceName"].isNull())
-				resourceSnapshotListObject.resourceName = allTaskListNodeResourceSnapshotListResourceSnapshot["ResourceName"].asString();
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["OperateType"].isNull())
-				resourceSnapshotListObject.operateType = std::stoi(allTaskListNodeResourceSnapshotListResourceSnapshot["OperateType"].asString());
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["Stage"].isNull())
-				resourceSnapshotListObject.stage = std::stoi(allTaskListNodeResourceSnapshotListResourceSnapshot["Stage"].asString());
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["Status"].isNull())
-				resourceSnapshotListObject.status = std::stoi(allTaskListNodeResourceSnapshotListResourceSnapshot["Status"].asString());
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["Log"].isNull())
-				resourceSnapshotListObject.log = allTaskListNodeResourceSnapshotListResourceSnapshot["Log"].asString();
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCreateTimestamp"].isNull())
-				resourceSnapshotListObject.gmtCreateTimestamp = std::stol(allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCreateTimestamp"].asString());
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtModifiedTimestamp"].isNull())
-				resourceSnapshotListObject.gmtModifiedTimestamp = std::stol(allTaskListNodeResourceSnapshotListResourceSnapshot["GmtModifiedTimestamp"].asString());
-			if(!allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCompletedTimestamp"].isNull())
-				resourceSnapshotListObject.gmtCompletedTimestamp = std::stol(allTaskListNodeResourceSnapshotListResourceSnapshot["GmtCompletedTimestamp"].asString());
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtCreate"].isNull())
+				resourceSnapshotListObject.gmtCreate = dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtCreate"].asString();
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtModified"].isNull())
+				resourceSnapshotListObject.gmtModified = dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtModified"].asString();
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtCompleted"].isNull())
+				resourceSnapshotListObject.gmtCompleted = dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtCompleted"].asString();
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["SnapshotId"].isNull())
+				resourceSnapshotListObject.snapshotId = dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["SnapshotId"].asString();
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["ResourceType"].isNull())
+				resourceSnapshotListObject.resourceType = dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["ResourceType"].asString();
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["ResourceId"].isNull())
+				resourceSnapshotListObject.resourceId = dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["ResourceId"].asString();
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["ResourceName"].isNull())
+				resourceSnapshotListObject.resourceName = dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["ResourceName"].asString();
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["OperateType"].isNull())
+				resourceSnapshotListObject.operateType = std::stoi(dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["OperateType"].asString());
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["Stage"].isNull())
+				resourceSnapshotListObject.stage = std::stoi(dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["Stage"].asString());
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["Status"].isNull())
+				resourceSnapshotListObject.status = std::stoi(dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["Status"].asString());
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["Log"].isNull())
+				resourceSnapshotListObject.log = dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["Log"].asString();
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtCreateTimestamp"].isNull())
+				resourceSnapshotListObject.gmtCreateTimestamp = std::stol(dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtCreateTimestamp"].asString());
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtModifiedTimestamp"].isNull())
+				resourceSnapshotListObject.gmtModifiedTimestamp = std::stol(dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtModifiedTimestamp"].asString());
+			if(!dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtCompletedTimestamp"].isNull())
+				resourceSnapshotListObject.gmtCompletedTimestamp = std::stol(dataNodeTaskListTaskResourceSnapshotListResourceSnapshot["GmtCompletedTimestamp"].asString());
 			taskObject.resourceSnapshotList.push_back(resourceSnapshotListObject);
 		}
 		data_.taskList.push_back(taskObject);

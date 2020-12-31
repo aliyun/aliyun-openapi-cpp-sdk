@@ -50,7 +50,7 @@ void RRpcResult::parse(const std::string &payload)
 	if(!value["PayloadBase64Byte"].isNull())
 		payloadBase64Byte_ = value["PayloadBase64Byte"].asString();
 	if(!value["MessageId"].isNull())
-		messageId_ = std::stoull(value["MessageId"].asString());
+		messageId_ = std::stol(value["MessageId"].asString());
 
 }
 

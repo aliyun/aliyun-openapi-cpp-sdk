@@ -34,26 +34,35 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string utcStartTime;
+					struct OtaTagDTO
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string utcEndTime;
-					std::vector<std::string> srcVersions;
+					int overwriteMode;
 					std::string firmwareId;
 					std::string name;
 					std::string jobStatus;
+					int retryCount;
+					std::string selectionType;
+					int dynamicMode;
+					std::string destVersion;
+					std::string targetSelection;
+					std::vector<OtaTagDTO> tags;
+					std::string jobId;
+					std::string productKey;
+					std::string utcStartTime;
+					std::string utcScheduleFinishTime;
+					std::vector<std::string> srcVersions;
 					std::string jobDesc;
 					std::string jobType;
 					std::string utcCreate;
-					int retryCount;
 					int maximumPerMinute;
-					std::string selectionType;
 					std::string utcModified;
 					int retryInterval;
-					std::string destVersion;
-					std::string targetSelection;
 					std::string utcScheduleTime;
 					std::string grayPercent;
-					std::string jobId;
-					std::string productKey;
 					int timeoutInMinutes;
 				};
 

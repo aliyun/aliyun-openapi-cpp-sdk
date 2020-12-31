@@ -36,8 +36,10 @@ namespace AlibabaCloud
 				{
 					std::string policy;
 					std::string oSSAccessKeyId;
+					std::string utcCreate;
 					std::string signature;
 					std::string firmwareUrl;
+					std::string objectStorage;
 					std::string host;
 					std::string key;
 				};

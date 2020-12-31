@@ -117,3 +117,14 @@ void QueryDeviceDesiredPropertyRequest::setDeviceName(const std::string& deviceN
 	setParameter("DeviceName", deviceName);
 }
 
+std::string QueryDeviceDesiredPropertyRequest::getFunctionBlockId()const
+{
+	return functionBlockId_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setFunctionBlockId(const std::string& functionBlockId)
+{
+	functionBlockId_ = functionBlockId;
+	setParameter("FunctionBlockId", functionBlockId);
+}
+

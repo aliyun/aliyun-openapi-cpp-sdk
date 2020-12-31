@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				GenerateOTAUploadURLRequest();
 				~GenerateOTAUploadURLRequest();
 
+				std::string getFileSuffix()const;
+				void setFileSuffix(const std::string& fileSuffix);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 
             private:
+				std::string fileSuffix_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
 				std::string apiProduct_;

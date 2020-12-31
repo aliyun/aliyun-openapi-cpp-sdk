@@ -27,6 +27,17 @@ QueryThingModelRequest::QueryThingModelRequest() :
 QueryThingModelRequest::~QueryThingModelRequest()
 {}
 
+std::string QueryThingModelRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryThingModelRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryThingModelRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QueryThingModelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryThingModelRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryThingModelRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryThingModelRequest::getResourceGroupId()const
@@ -102,5 +124,16 @@ void QueryThingModelRequest::setModelVersion(const std::string& modelVersion)
 {
 	modelVersion_ = modelVersion;
 	setParameter("ModelVersion", modelVersion);
+}
+
+std::string QueryThingModelRequest::getFunctionBlockId()const
+{
+	return functionBlockId_;
+}
+
+void QueryThingModelRequest::setFunctionBlockId(const std::string& functionBlockId)
+{
+	functionBlockId_ = functionBlockId;
+	setParameter("FunctionBlockId", functionBlockId);
 }
 

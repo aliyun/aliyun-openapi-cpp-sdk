@@ -38,6 +38,17 @@ void CreateProductRequest::setNodeType(int nodeType)
 	setParameter("NodeType", std::to_string(nodeType));
 }
 
+std::string CreateProductRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void CreateProductRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string CreateProductRequest::getDescription()const
 {
 	return description_;
@@ -93,6 +104,17 @@ void CreateProductRequest::setAuthType(const std::string& authType)
 	setParameter("AuthType", authType);
 }
 
+std::string CreateProductRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void CreateProductRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string CreateProductRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -102,6 +124,17 @@ void CreateProductRequest::setResourceGroupId(const std::string& resourceGroupId
 {
 	resourceGroupId_ = resourceGroupId;
 	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+int CreateProductRequest::getValidateType()const
+{
+	return validateType_;
+}
+
+void CreateProductRequest::setValidateType(int validateType)
+{
+	validateType_ = validateType;
+	setParameter("ValidateType", std::to_string(validateType));
 }
 
 std::string CreateProductRequest::getIotInstanceId()const

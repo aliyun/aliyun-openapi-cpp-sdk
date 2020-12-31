@@ -71,6 +71,19 @@ void ListOTATaskByJobRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::vector<std::string> ListOTATaskByJobRequest::getDeviceNames()const
+{
+	return deviceNames_;
+}
+
+void ListOTATaskByJobRequest::setDeviceNames(const std::vector<std::string>& deviceNames)
+{
+	deviceNames_ = deviceNames;
+	for(int dep1 = 0; dep1!= deviceNames.size(); dep1++) {
+		setParameter("DeviceNames."+ std::to_string(dep1), deviceNames.at(dep1));
+	}
+}
+
 int ListOTATaskByJobRequest::getCurrentPage()const
 {
 	return currentPage_;

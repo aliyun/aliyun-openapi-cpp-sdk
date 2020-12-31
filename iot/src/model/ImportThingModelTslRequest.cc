@@ -27,6 +27,17 @@ ImportThingModelTslRequest::ImportThingModelTslRequest() :
 ImportThingModelTslRequest::~ImportThingModelTslRequest()
 {}
 
+std::string ImportThingModelTslRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ImportThingModelTslRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string ImportThingModelTslRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void ImportThingModelTslRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ImportThingModelTslRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ImportThingModelTslRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string ImportThingModelTslRequest::getResourceGroupId()const
@@ -58,6 +80,17 @@ void ImportThingModelTslRequest::setIotInstanceId(const std::string& iotInstance
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string ImportThingModelTslRequest::getFunctionBlockName()const
+{
+	return functionBlockName_;
+}
+
+void ImportThingModelTslRequest::setFunctionBlockName(const std::string& functionBlockName)
+{
+	functionBlockName_ = functionBlockName;
+	setParameter("FunctionBlockName", functionBlockName);
 }
 
 std::string ImportThingModelTslRequest::getProductKey()const
@@ -113,5 +146,16 @@ void ImportThingModelTslRequest::setTslStr(const std::string& tslStr)
 {
 	tslStr_ = tslStr;
 	setParameter("TslStr", tslStr);
+}
+
+std::string ImportThingModelTslRequest::getFunctionBlockId()const
+{
+	return functionBlockId_;
+}
+
+void ImportThingModelTslRequest::setFunctionBlockId(const std::string& functionBlockId)
+{
+	functionBlockId_ = functionBlockId;
+	setParameter("FunctionBlockId", functionBlockId);
 }
 

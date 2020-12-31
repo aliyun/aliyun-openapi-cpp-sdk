@@ -80,6 +80,22 @@ void QueryOTAJobResult::parse(const std::string &payload)
 		data_.maximumPerMinute = std::stoi(dataNode["MaximumPerMinute"].asString());
 	if(!dataNode["DestVersion"].isNull())
 		data_.destVersion = dataNode["DestVersion"].asString();
+	if(!dataNode["UtcScheduleFinishTime"].isNull())
+		data_.utcScheduleFinishTime = dataNode["UtcScheduleFinishTime"].asString();
+	if(!dataNode["OverwriteMode"].isNull())
+		data_.overwriteMode = std::stoi(dataNode["OverwriteMode"].asString());
+	if(!dataNode["DynamicMode"].isNull())
+		data_.dynamicMode = std::stoi(dataNode["DynamicMode"].asString());
+	auto allTagsNode = dataNode["Tags"]["OtaTagDTO"];
+	for (auto dataNodeTagsOtaTagDTO : allTagsNode)
+	{
+		Data::OtaTagDTO otaTagDTOObject;
+		if(!dataNodeTagsOtaTagDTO["Key"].isNull())
+			otaTagDTOObject.key = dataNodeTagsOtaTagDTO["Key"].asString();
+		if(!dataNodeTagsOtaTagDTO["Value"].isNull())
+			otaTagDTOObject.value = dataNodeTagsOtaTagDTO["Value"].asString();
+		data_.tags.push_back(otaTagDTOObject);
+	}
 		auto allSrcVersions = dataNode["SrcVersions"]["SrcVersion"];
 		for (auto value : allSrcVersions)
 			data_.srcVersions.push_back(value.asString());

@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
+				std::string getFunctionBlockId()const;
+				void setFunctionBlockId(const std::string& functionBlockId);
 
             private:
 				std::string accessKeyId_;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string deviceName_;
+				std::string functionBlockId_;
 
 			};
 		}

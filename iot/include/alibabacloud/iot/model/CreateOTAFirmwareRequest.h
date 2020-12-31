@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getSignMethod()const;
 				void setSignMethod(const std::string& signMethod);
+				bool getNeedToVerify()const;
+				void setNeedToVerify(bool needToVerify);
 				int getType()const;
 				void setType(int type);
 				std::string getFirmwareUrl()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 
             private:
 				std::string signMethod_;
+				bool needToVerify_;
 				int type_;
 				std::string firmwareUrl_;
 				std::string accessKeyId_;

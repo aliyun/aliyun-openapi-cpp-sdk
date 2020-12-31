@@ -52,6 +52,10 @@ void GenerateOTAUploadURLResult::parse(const std::string &payload)
 		data_.signature = dataNode["Signature"].asString();
 	if(!dataNode["FirmwareUrl"].isNull())
 		data_.firmwareUrl = dataNode["FirmwareUrl"].asString();
+	if(!dataNode["UtcCreate"].isNull())
+		data_.utcCreate = dataNode["UtcCreate"].asString();
+	if(!dataNode["ObjectStorage"].isNull())
+		data_.objectStorage = dataNode["ObjectStorage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

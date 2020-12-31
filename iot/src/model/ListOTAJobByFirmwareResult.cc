@@ -65,6 +65,16 @@ void ListOTAJobByFirmwareResult::parse(const std::string &payload)
 			dataObject.targetSelection = valueDataSimpleOTAJobInfo["TargetSelection"].asString();
 		if(!valueDataSimpleOTAJobInfo["SelectionType"].isNull())
 			dataObject.selectionType = valueDataSimpleOTAJobInfo["SelectionType"].asString();
+		auto allTagsNode = valueDataSimpleOTAJobInfo["Tags"]["OtaTagDTO"];
+		for (auto valueDataSimpleOTAJobInfoTagsOtaTagDTO : allTagsNode)
+		{
+			SimpleOTAJobInfo::OtaTagDTO tagsObject;
+			if(!valueDataSimpleOTAJobInfoTagsOtaTagDTO["Key"].isNull())
+				tagsObject.key = valueDataSimpleOTAJobInfoTagsOtaTagDTO["Key"].asString();
+			if(!valueDataSimpleOTAJobInfoTagsOtaTagDTO["Value"].isNull())
+				tagsObject.value = valueDataSimpleOTAJobInfoTagsOtaTagDTO["Value"].asString();
+			dataObject.tags.push_back(tagsObject);
+		}
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

@@ -27,6 +27,17 @@ GenerateOTAUploadURLRequest::GenerateOTAUploadURLRequest() :
 GenerateOTAUploadURLRequest::~GenerateOTAUploadURLRequest()
 {}
 
+std::string GenerateOTAUploadURLRequest::getFileSuffix()const
+{
+	return fileSuffix_;
+}
+
+void GenerateOTAUploadURLRequest::setFileSuffix(const std::string& fileSuffix)
+{
+	fileSuffix_ = fileSuffix;
+	setParameter("FileSuffix", fileSuffix);
+}
+
 std::string GenerateOTAUploadURLRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

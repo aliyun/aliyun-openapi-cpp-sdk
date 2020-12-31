@@ -38,6 +38,17 @@ void RegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string RegisterDeviceRequest::getLoraNodeType()const
+{
+	return loraNodeType_;
+}
+
+void RegisterDeviceRequest::setLoraNodeType(const std::string& loraNodeType)
+{
+	loraNodeType_ = loraNodeType;
+	setParameter("LoraNodeType", loraNodeType);
+}
+
 std::string RegisterDeviceRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -93,6 +104,17 @@ void RegisterDeviceRequest::setDevEui(const std::string& devEui)
 	setParameter("DevEui", devEui);
 }
 
+std::string RegisterDeviceRequest::getJoinEui()const
+{
+	return joinEui_;
+}
+
+void RegisterDeviceRequest::setJoinEui(const std::string& joinEui)
+{
+	joinEui_ = joinEui;
+	setParameter("JoinEui", joinEui);
+}
+
 std::string RegisterDeviceRequest::getApiProduct()const
 {
 	return apiProduct_;
@@ -124,5 +146,16 @@ void RegisterDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
 	setParameter("DeviceName", deviceName);
+}
+
+std::string RegisterDeviceRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void RegisterDeviceRequest::setAppKey(const std::string& appKey)
+{
+	appKey_ = appKey;
+	setParameter("AppKey", appKey);
 }
 

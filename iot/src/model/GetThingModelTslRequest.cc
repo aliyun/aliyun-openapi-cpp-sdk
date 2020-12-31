@@ -27,6 +27,17 @@ GetThingModelTslRequest::GetThingModelTslRequest() :
 GetThingModelTslRequest::~GetThingModelTslRequest()
 {}
 
+std::string GetThingModelTslRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void GetThingModelTslRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 bool GetThingModelTslRequest::getSimple()const
 {
 	return simple_;
@@ -47,6 +58,17 @@ void GetThingModelTslRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetThingModelTslRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void GetThingModelTslRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string GetThingModelTslRequest::getResourceGroupId()const
@@ -113,5 +135,16 @@ void GetThingModelTslRequest::setModelVersion(const std::string& modelVersion)
 {
 	modelVersion_ = modelVersion;
 	setParameter("ModelVersion", modelVersion);
+}
+
+std::string GetThingModelTslRequest::getFunctionBlockId()const
+{
+	return functionBlockId_;
+}
+
+void GetThingModelTslRequest::setFunctionBlockId(const std::string& functionBlockId)
+{
+	functionBlockId_ = functionBlockId;
+	setParameter("FunctionBlockId", functionBlockId);
 }
 

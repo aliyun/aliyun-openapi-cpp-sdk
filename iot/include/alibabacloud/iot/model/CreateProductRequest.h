@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				int getNodeType()const;
 				void setNodeType(int nodeType);
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getCategoryKey()const;
@@ -47,8 +49,12 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getAuthType()const;
 				void setAuthType(const std::string& authType);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				int getValidateType()const;
+				void setValidateType(int validateType);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductName()const;
@@ -74,12 +80,15 @@ namespace AlibabaCloud
 
             private:
 				int nodeType_;
+				std::string realTenantId_;
 				std::string description_;
 				std::string categoryKey_;
 				std::string joinPermissionId_;
 				std::string accessKeyId_;
 				std::string authType_;
+				std::string realTripartiteKey_;
 				std::string resourceGroupId_;
+				int validateType_;
 				std::string iotInstanceId_;
 				std::string productName_;
 				std::string aliyunCommodityCode_;

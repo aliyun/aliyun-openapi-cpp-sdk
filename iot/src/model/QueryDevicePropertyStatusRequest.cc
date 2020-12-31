@@ -27,6 +27,17 @@ QueryDevicePropertyStatusRequest::QueryDevicePropertyStatusRequest() :
 QueryDevicePropertyStatusRequest::~QueryDevicePropertyStatusRequest()
 {}
 
+std::string QueryDevicePropertyStatusRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryDevicePropertyStatusRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryDevicePropertyStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QueryDevicePropertyStatusRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryDevicePropertyStatusRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryDevicePropertyStatusRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryDevicePropertyStatusRequest::getIotId()const
@@ -102,5 +124,16 @@ void QueryDevicePropertyStatusRequest::setDeviceName(const std::string& deviceNa
 {
 	deviceName_ = deviceName;
 	setParameter("DeviceName", deviceName);
+}
+
+std::string QueryDevicePropertyStatusRequest::getFunctionBlockId()const
+{
+	return functionBlockId_;
+}
+
+void QueryDevicePropertyStatusRequest::setFunctionBlockId(const std::string& functionBlockId)
+{
+	functionBlockId_ = functionBlockId;
+	setParameter("FunctionBlockId", functionBlockId);
 }
 

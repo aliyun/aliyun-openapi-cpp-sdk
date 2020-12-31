@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT CreateOTAStaticUpgradeJobRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				CreateOTAStaticUpgradeJobRequest();
@@ -45,8 +51,14 @@ namespace AlibabaCloud
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getTargetSelection()const;
 				void setTargetSelection(const std::string& targetSelection);
+				long getScheduleFinishTime()const;
+				void setScheduleFinishTime(long scheduleFinishTime);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getGrayPercent()const;
 				void setGrayPercent(const std::string& grayPercent);
+				std::string getDnListFileUrl()const;
+				void setDnListFileUrl(const std::string& dnListFileUrl);
 				std::string getFirmwareId()const;
 				void setFirmwareId(const std::string& firmwareId);
 				std::string getProductKey()const;
@@ -57,6 +69,8 @@ namespace AlibabaCloud
 				void setSrcVersion(const std::vector<std::string>& srcVersion);
 				long getScheduleTime()const;
 				void setScheduleTime(long scheduleTime);
+				int getOverwriteMode()const;
+				void setOverwriteMode(int overwriteMode);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
@@ -72,12 +86,16 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
 				std::string targetSelection_;
+				long scheduleFinishTime_;
+				std::vector<Tag> tag_;
 				std::string grayPercent_;
+				std::string dnListFileUrl_;
 				std::string firmwareId_;
 				std::string productKey_;
 				int retryInterval_;
 				std::vector<std::string> srcVersion_;
 				long scheduleTime_;
+				int overwriteMode_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				int maximumPerMinute_;

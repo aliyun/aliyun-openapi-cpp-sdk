@@ -38,6 +38,17 @@ void CreateOTAFirmwareRequest::setSignMethod(const std::string& signMethod)
 	setParameter("SignMethod", signMethod);
 }
 
+bool CreateOTAFirmwareRequest::getNeedToVerify()const
+{
+	return needToVerify_;
+}
+
+void CreateOTAFirmwareRequest::setNeedToVerify(bool needToVerify)
+{
+	needToVerify_ = needToVerify;
+	setParameter("NeedToVerify", needToVerify ? "true" : "false");
+}
+
 int CreateOTAFirmwareRequest::getType()const
 {
 	return type_;

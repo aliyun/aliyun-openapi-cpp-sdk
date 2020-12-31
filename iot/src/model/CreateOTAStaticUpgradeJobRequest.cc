@@ -82,6 +82,33 @@ void CreateOTAStaticUpgradeJobRequest::setTargetSelection(const std::string& tar
 	setParameter("TargetSelection", targetSelection);
 }
 
+long CreateOTAStaticUpgradeJobRequest::getScheduleFinishTime()const
+{
+	return scheduleFinishTime_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setScheduleFinishTime(long scheduleFinishTime)
+{
+	scheduleFinishTime_ = scheduleFinishTime;
+	setParameter("ScheduleFinishTime", std::to_string(scheduleFinishTime));
+}
+
+std::vector<CreateOTAStaticUpgradeJobRequest::Tag> CreateOTAStaticUpgradeJobRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
 std::string CreateOTAStaticUpgradeJobRequest::getGrayPercent()const
 {
 	return grayPercent_;
@@ -91,6 +118,17 @@ void CreateOTAStaticUpgradeJobRequest::setGrayPercent(const std::string& grayPer
 {
 	grayPercent_ = grayPercent;
 	setParameter("GrayPercent", grayPercent);
+}
+
+std::string CreateOTAStaticUpgradeJobRequest::getDnListFileUrl()const
+{
+	return dnListFileUrl_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setDnListFileUrl(const std::string& dnListFileUrl)
+{
+	dnListFileUrl_ = dnListFileUrl;
+	setParameter("DnListFileUrl", dnListFileUrl);
 }
 
 std::string CreateOTAStaticUpgradeJobRequest::getFirmwareId()const
@@ -148,6 +186,17 @@ void CreateOTAStaticUpgradeJobRequest::setScheduleTime(long scheduleTime)
 {
 	scheduleTime_ = scheduleTime;
 	setParameter("ScheduleTime", std::to_string(scheduleTime));
+}
+
+int CreateOTAStaticUpgradeJobRequest::getOverwriteMode()const
+{
+	return overwriteMode_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setOverwriteMode(int overwriteMode)
+{
+	overwriteMode_ = overwriteMode;
+	setParameter("OverwriteMode", std::to_string(overwriteMode));
 }
 
 std::string CreateOTAStaticUpgradeJobRequest::getApiProduct()const

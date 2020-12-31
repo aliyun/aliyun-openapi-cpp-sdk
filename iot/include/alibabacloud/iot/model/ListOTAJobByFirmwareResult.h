@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct SimpleOTAJobInfo
 				{
+					struct OtaTagDTO
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string utcStartTime;
 					std::string jobStatus;
 					std::string utcEndTime;
@@ -43,6 +48,7 @@ namespace AlibabaCloud
 					std::string firmwareId;
 					std::string utcModified;
 					std::string targetSelection;
+					std::vector<SimpleOTAJobInfo::OtaTagDTO> tags;
 					std::string jobId;
 					std::string productKey;
 				};

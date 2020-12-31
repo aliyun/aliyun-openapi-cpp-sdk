@@ -27,6 +27,28 @@ DeleteThingModelRequest::DeleteThingModelRequest() :
 DeleteThingModelRequest::~DeleteThingModelRequest()
 {}
 
+std::string DeleteThingModelRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void DeleteThingModelRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+bool DeleteThingModelRequest::getIsClearAllFunction()const
+{
+	return isClearAllFunction_;
+}
+
+void DeleteThingModelRequest::setIsClearAllFunction(bool isClearAllFunction)
+{
+	isClearAllFunction_ = isClearAllFunction;
+	setParameter("IsClearAllFunction", isClearAllFunction ? "true" : "false");
+}
+
 std::string DeleteThingModelRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +58,17 @@ void DeleteThingModelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteThingModelRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void DeleteThingModelRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string DeleteThingModelRequest::getResourceGroupId()const
@@ -130,5 +163,16 @@ void DeleteThingModelRequest::setEventIdentifier(const std::vector<std::string>&
 	for(int dep1 = 0; dep1!= eventIdentifier.size(); dep1++) {
 		setParameter("EventIdentifier."+ std::to_string(dep1), eventIdentifier.at(dep1));
 	}
+}
+
+std::string DeleteThingModelRequest::getFunctionBlockId()const
+{
+	return functionBlockId_;
+}
+
+void DeleteThingModelRequest::setFunctionBlockId(const std::string& functionBlockId)
+{
+	functionBlockId_ = functionBlockId;
+	setParameter("FunctionBlockId", functionBlockId);
 }
 

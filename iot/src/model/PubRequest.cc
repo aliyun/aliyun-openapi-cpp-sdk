@@ -27,6 +27,22 @@ PubRequest::PubRequest() :
 PubRequest::~PubRequest()
 {}
 
+std::vector<PubRequest::UserProp> PubRequest::getUserProp()const
+{
+	return userProp_;
+}
+
+void PubRequest::setUserProp(const std::vector<UserProp>& userProp)
+{
+	userProp_ = userProp;
+	for(int dep1 = 0; dep1!= userProp.size(); dep1++) {
+		auto userPropObj = userProp.at(dep1);
+		std::string userPropObjStr = "UserProp." + std::to_string(dep1 + 1);
+		setParameter(userPropObjStr + ".Value", userPropObj.value);
+		setParameter(userPropObjStr + ".Key", userPropObj.key);
+	}
+}
+
 std::string PubRequest::getMessageContent()const
 {
 	return messageContent_;
@@ -60,6 +76,17 @@ void PubRequest::setQos(int qos)
 	setParameter("Qos", std::to_string(qos));
 }
 
+std::string PubRequest::getCorrelationData()const
+{
+	return correlationData_;
+}
+
+void PubRequest::setCorrelationData(const std::string& correlationData)
+{
+	correlationData_ = correlationData;
+	setParameter("CorrelationData", correlationData);
+}
+
 std::string PubRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -69,6 +96,17 @@ void PubRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string PubRequest::getResponseTopic()const
+{
+	return responseTopic_;
+}
+
+void PubRequest::setResponseTopic(const std::string& responseTopic)
+{
+	responseTopic_ = responseTopic;
+	setParameter("ResponseTopic", responseTopic);
 }
 
 std::string PubRequest::getTopicFullName()const

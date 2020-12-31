@@ -47,6 +47,10 @@ namespace AlibabaCloud
 				void setIotInstanceId(const std::string& iotInstanceId);
 				bool getDeviceStatusChangeFlag()const;
 				void setDeviceStatusChangeFlag(bool deviceStatusChangeFlag);
+				bool getOtaVersionFlag()const;
+				void setOtaVersionFlag(bool otaVersionFlag);
+				bool getDeviceTagFlag()const;
+				void setDeviceTagFlag(bool deviceTagFlag);
 				std::vector<std::string> getConsumerGroupIds()const;
 				void setConsumerGroupIds(const std::vector<std::string>& consumerGroupIds);
 				std::string getProductKey()const;
@@ -55,6 +59,8 @@ namespace AlibabaCloud
 				void setThingHistoryFlag(bool thingHistoryFlag);
 				bool getFoundDeviceListFlag()const;
 				void setFoundDeviceListFlag(bool foundDeviceListFlag);
+				bool getOtaJobFlag()const;
+				void setOtaJobFlag(bool otaJobFlag);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				bool getDeviceDataFlag()const;
@@ -71,10 +77,13 @@ namespace AlibabaCloud
 				bool deviceLifeCycleFlag_;
 				std::string iotInstanceId_;
 				bool deviceStatusChangeFlag_;
+				bool otaVersionFlag_;
+				bool deviceTagFlag_;
 				std::vector<std::string> consumerGroupIds_;
 				std::string productKey_;
 				bool thingHistoryFlag_;
 				bool foundDeviceListFlag_;
+				bool otaJobFlag_;
 				std::string apiProduct_;
 				bool deviceDataFlag_;
 				std::string apiRevision_;

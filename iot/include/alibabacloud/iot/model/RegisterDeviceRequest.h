@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getLoraNodeType()const;
+				void setLoraNodeType(const std::string& loraNodeType);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getNickname()const;
@@ -47,23 +49,30 @@ namespace AlibabaCloud
 				void setProductKey(const std::string& productKey);
 				std::string getDevEui()const;
 				void setDevEui(const std::string& devEui);
+				std::string getJoinEui()const;
+				void setJoinEui(const std::string& joinEui);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
+				std::string getAppKey()const;
+				void setAppKey(const std::string& appKey);
 
             private:
 				std::string accessKeyId_;
+				std::string loraNodeType_;
 				std::string iotInstanceId_;
 				std::string nickname_;
 				std::string pinCode_;
 				std::string productKey_;
 				std::string devEui_;
+				std::string joinEui_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string deviceName_;
+				std::string appKey_;
 
 			};
 		}

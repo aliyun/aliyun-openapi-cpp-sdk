@@ -27,6 +27,28 @@ CreateThingModelRequest::CreateThingModelRequest() :
 CreateThingModelRequest::~CreateThingModelRequest()
 {}
 
+std::string CreateThingModelRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void CreateThingModelRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string CreateThingModelRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void CreateThingModelRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string CreateThingModelRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -36,6 +58,17 @@ void CreateThingModelRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CreateThingModelRequest::getFunctionBlockName()const
+{
+	return functionBlockName_;
+}
+
+void CreateThingModelRequest::setFunctionBlockName(const std::string& functionBlockName)
+{
+	functionBlockName_ = functionBlockName;
+	setParameter("FunctionBlockName", functionBlockName);
 }
 
 std::string CreateThingModelRequest::getProductKey()const
@@ -80,5 +113,16 @@ void CreateThingModelRequest::setApiRevision(const std::string& apiRevision)
 {
 	apiRevision_ = apiRevision;
 	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string CreateThingModelRequest::getFunctionBlockId()const
+{
+	return functionBlockId_;
+}
+
+void CreateThingModelRequest::setFunctionBlockId(const std::string& functionBlockId)
+{
+	functionBlockId_ = functionBlockId;
+	setParameter("FunctionBlockId", functionBlockId);
 }
 

@@ -71,6 +71,17 @@ void UpdateDeviceShadowRequest::setProductKey(const std::string& productKey)
 	setParameter("ProductKey", productKey);
 }
 
+bool UpdateDeviceShadowRequest::getDeltaUpdate()const
+{
+	return deltaUpdate_;
+}
+
+void UpdateDeviceShadowRequest::setDeltaUpdate(bool deltaUpdate)
+{
+	deltaUpdate_ = deltaUpdate;
+	setParameter("DeltaUpdate", deltaUpdate ? "true" : "false");
+}
+
 std::string UpdateDeviceShadowRequest::getApiProduct()const
 {
 	return apiProduct_;

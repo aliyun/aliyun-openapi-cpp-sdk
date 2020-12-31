@@ -47,18 +47,18 @@ void BatchGetEdgeInstanceChannelResult::parse(const std::string &payload)
 			dataObject.channelId = valueDataChannel["ChannelId"].asString();
 		if(!valueDataChannel["ChannelName"].isNull())
 			dataObject.channelName = valueDataChannel["ChannelName"].asString();
-		auto allConfigListNode = allDataNode["ConfigList"]["Config"];
-		for (auto allDataNodeConfigListConfig : allConfigListNode)
+		auto allConfigListNode = valueDataChannel["ConfigList"]["Config"];
+		for (auto valueDataChannelConfigListConfig : allConfigListNode)
 		{
 			Channel::Config configListObject;
-			if(!allDataNodeConfigListConfig["ConfigId"].isNull())
-				configListObject.configId = allDataNodeConfigListConfig["ConfigId"].asString();
-			if(!allDataNodeConfigListConfig["Format"].isNull())
-				configListObject.format = allDataNodeConfigListConfig["Format"].asString();
-			if(!allDataNodeConfigListConfig["Content"].isNull())
-				configListObject.content = allDataNodeConfigListConfig["Content"].asString();
-			if(!allDataNodeConfigListConfig["Key"].isNull())
-				configListObject.key = allDataNodeConfigListConfig["Key"].asString();
+			if(!valueDataChannelConfigListConfig["ConfigId"].isNull())
+				configListObject.configId = valueDataChannelConfigListConfig["ConfigId"].asString();
+			if(!valueDataChannelConfigListConfig["Format"].isNull())
+				configListObject.format = valueDataChannelConfigListConfig["Format"].asString();
+			if(!valueDataChannelConfigListConfig["Content"].isNull())
+				configListObject.content = valueDataChannelConfigListConfig["Content"].asString();
+			if(!valueDataChannelConfigListConfig["Key"].isNull())
+				configListObject.key = valueDataChannelConfigListConfig["Key"].asString();
 			dataObject.configList.push_back(configListObject);
 		}
 		data_.push_back(dataObject);

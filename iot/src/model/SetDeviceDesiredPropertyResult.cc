@@ -50,7 +50,14 @@ void SetDeviceDesiredPropertyResult::parse(const std::string &payload)
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["MessageArguments"].isNull())
+		messageArguments_ = value["MessageArguments"].asString();
 
+}
+
+std::string SetDeviceDesiredPropertyResult::getMessageArguments()const
+{
+	return messageArguments_;
 }
 
 SetDeviceDesiredPropertyResult::Data SetDeviceDesiredPropertyResult::getData()const

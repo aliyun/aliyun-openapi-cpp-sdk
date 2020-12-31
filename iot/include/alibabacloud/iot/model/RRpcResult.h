@@ -52,7 +52,7 @@ namespace AlibabaCloud
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
-				unsigned long long messageId_;
+				long messageId_;
 
 			};
 		}

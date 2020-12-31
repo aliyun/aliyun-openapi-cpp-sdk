@@ -93,6 +93,28 @@ void UpdateSubscribeRelationRequest::setDeviceStatusChangeFlag(bool deviceStatus
 	setParameter("DeviceStatusChangeFlag", deviceStatusChangeFlag ? "true" : "false");
 }
 
+bool UpdateSubscribeRelationRequest::getOtaVersionFlag()const
+{
+	return otaVersionFlag_;
+}
+
+void UpdateSubscribeRelationRequest::setOtaVersionFlag(bool otaVersionFlag)
+{
+	otaVersionFlag_ = otaVersionFlag;
+	setParameter("OtaVersionFlag", otaVersionFlag ? "true" : "false");
+}
+
+bool UpdateSubscribeRelationRequest::getDeviceTagFlag()const
+{
+	return deviceTagFlag_;
+}
+
+void UpdateSubscribeRelationRequest::setDeviceTagFlag(bool deviceTagFlag)
+{
+	deviceTagFlag_ = deviceTagFlag;
+	setParameter("DeviceTagFlag", deviceTagFlag ? "true" : "false");
+}
+
 std::vector<std::string> UpdateSubscribeRelationRequest::getConsumerGroupIds()const
 {
 	return consumerGroupIds_;
@@ -137,6 +159,17 @@ void UpdateSubscribeRelationRequest::setFoundDeviceListFlag(bool foundDeviceList
 {
 	foundDeviceListFlag_ = foundDeviceListFlag;
 	setParameter("FoundDeviceListFlag", foundDeviceListFlag ? "true" : "false");
+}
+
+bool UpdateSubscribeRelationRequest::getOtaJobFlag()const
+{
+	return otaJobFlag_;
+}
+
+void UpdateSubscribeRelationRequest::setOtaJobFlag(bool otaJobFlag)
+{
+	otaJobFlag_ = otaJobFlag;
+	setParameter("OtaJobFlag", otaJobFlag ? "true" : "false");
 }
 
 std::string UpdateSubscribeRelationRequest::getApiProduct()const

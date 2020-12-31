@@ -45,6 +45,9 @@ void BatchCheckDeviceNamesResult::parse(const std::string &payload)
 		auto allInvalidDeviceNameList = dataNode["InvalidDeviceNameList"]["InvalidDeviceName"];
 		for (auto value : allInvalidDeviceNameList)
 			data_.invalidDeviceNameList.push_back(value.asString());
+		auto allInvalidDeviceNicknameList = dataNode["InvalidDeviceNicknameList"]["InvalidDeviceNickname"];
+		for (auto value : allInvalidDeviceNicknameList)
+			data_.invalidDeviceNicknameList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

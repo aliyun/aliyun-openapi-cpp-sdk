@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::vector<std::string> invalidDeviceNameList;
 					long applyId;
+					std::vector<std::string> invalidDeviceNicknameList;
 				};
 
 

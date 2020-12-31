@@ -27,6 +27,17 @@ CreateOTADynamicUpgradeJobRequest::CreateOTADynamicUpgradeJobRequest() :
 CreateOTADynamicUpgradeJobRequest::~CreateOTADynamicUpgradeJobRequest()
 {}
 
+int CreateOTADynamicUpgradeJobRequest::getDynamicMode()const
+{
+	return dynamicMode_;
+}
+
+void CreateOTADynamicUpgradeJobRequest::setDynamicMode(int dynamicMode)
+{
+	dynamicMode_ = dynamicMode;
+	setParameter("DynamicMode", std::to_string(dynamicMode));
+}
+
 int CreateOTADynamicUpgradeJobRequest::getRetryCount()const
 {
 	return retryCount_;
@@ -69,6 +80,22 @@ void CreateOTADynamicUpgradeJobRequest::setIotInstanceId(const std::string& iotI
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::vector<CreateOTADynamicUpgradeJobRequest::Tag> CreateOTADynamicUpgradeJobRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateOTADynamicUpgradeJobRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 
 std::string CreateOTADynamicUpgradeJobRequest::getFirmwareId()const
@@ -115,6 +142,17 @@ void CreateOTADynamicUpgradeJobRequest::setSrcVersion(const std::vector<std::str
 	for(int dep1 = 0; dep1!= srcVersion.size(); dep1++) {
 		setParameter("SrcVersion."+ std::to_string(dep1), srcVersion.at(dep1));
 	}
+}
+
+int CreateOTADynamicUpgradeJobRequest::getOverwriteMode()const
+{
+	return overwriteMode_;
+}
+
+void CreateOTADynamicUpgradeJobRequest::setOverwriteMode(int overwriteMode)
+{
+	overwriteMode_ = overwriteMode;
+	setParameter("OverwriteMode", std::to_string(overwriteMode));
 }
 
 std::string CreateOTADynamicUpgradeJobRequest::getApiProduct()const

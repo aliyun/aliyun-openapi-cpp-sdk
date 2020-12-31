@@ -1,4 +1,7 @@
 2020-12-31 Version: patch
+- Add support for thing model function block features, including thing model APIs like CreateThingModel,UpdateThingModel,SetDeviceProperty,InvokeThingService etc.
+
+2020-12-31 Version: patch
 - Update Open API.
 
 2020-12-30 Version: patch

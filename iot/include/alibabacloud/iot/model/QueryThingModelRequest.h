@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				QueryThingModelRequest();
 				~QueryThingModelRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getIotInstanceId()const;
@@ -49,15 +53,20 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 				std::string getModelVersion()const;
 				void setModelVersion(const std::string& modelVersion);
+				std::string getFunctionBlockId()const;
+				void setFunctionBlockId(const std::string& functionBlockId);
 
             private:
+				std::string realTenantId_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string resourceGroupId_;
 				std::string iotInstanceId_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string modelVersion_;
+				std::string functionBlockId_;
 
 			};
 		}

@@ -68,6 +68,12 @@ void QuerySubscribeRelationResult::parse(const std::string &payload)
 		thingHistoryFlag_ = value["ThingHistoryFlag"].asString() == "true";
 	if(!value["MnsConfiguration"].isNull())
 		mnsConfiguration_ = value["MnsConfiguration"].asString();
+	if(!value["DeviceTagFlag"].isNull())
+		deviceTagFlag_ = value["DeviceTagFlag"].asString() == "true";
+	if(!value["OtaVersionFlag"].isNull())
+		otaVersionFlag_ = value["OtaVersionFlag"].asString() == "true";
+	if(!value["OtaJobFlag"].isNull())
+		otaJobFlag_ = value["OtaJobFlag"].asString() == "true";
 
 }
 
@@ -89,6 +95,11 @@ bool QuerySubscribeRelationResult::getDeviceTopoLifeCycleFlag()const
 bool QuerySubscribeRelationResult::getDeviceStatusChangeFlag()const
 {
 	return deviceStatusChangeFlag_;
+}
+
+bool QuerySubscribeRelationResult::getDeviceTagFlag()const
+{
+	return deviceTagFlag_;
 }
 
 std::vector<std::string> QuerySubscribeRelationResult::getConsumerGroupIds()const
@@ -121,6 +132,11 @@ bool QuerySubscribeRelationResult::getFoundDeviceListFlag()const
 	return foundDeviceListFlag_;
 }
 
+bool QuerySubscribeRelationResult::getOtaJobFlag()const
+{
+	return otaJobFlag_;
+}
+
 bool QuerySubscribeRelationResult::getOtaEventFlag()const
 {
 	return otaEventFlag_;
@@ -129,6 +145,11 @@ bool QuerySubscribeRelationResult::getOtaEventFlag()const
 std::string QuerySubscribeRelationResult::getErrorMessage()const
 {
 	return errorMessage_;
+}
+
+bool QuerySubscribeRelationResult::getOtaVersionFlag()const
+{
+	return otaVersionFlag_;
 }
 
 std::string QuerySubscribeRelationResult::getProductKey()const

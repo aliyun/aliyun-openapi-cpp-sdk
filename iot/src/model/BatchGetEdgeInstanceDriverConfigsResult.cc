@@ -45,18 +45,18 @@ void BatchGetEdgeInstanceDriverConfigsResult::parse(const std::string &payload)
 		DriverConfig driverConfigListObject;
 		if(!valueDriverConfigListDriverConfig["DriverId"].isNull())
 			driverConfigListObject.driverId = valueDriverConfigListDriverConfig["DriverId"].asString();
-		auto allConfigListNode = allDriverConfigListNode["ConfigList"]["Config"];
-		for (auto allDriverConfigListNodeConfigListConfig : allConfigListNode)
+		auto allConfigListNode = valueDriverConfigListDriverConfig["ConfigList"]["Config"];
+		for (auto valueDriverConfigListDriverConfigConfigListConfig : allConfigListNode)
 		{
 			DriverConfig::Config configListObject;
-			if(!allDriverConfigListNodeConfigListConfig["ConfigId"].isNull())
-				configListObject.configId = allDriverConfigListNodeConfigListConfig["ConfigId"].asString();
-			if(!allDriverConfigListNodeConfigListConfig["Format"].isNull())
-				configListObject.format = allDriverConfigListNodeConfigListConfig["Format"].asString();
-			if(!allDriverConfigListNodeConfigListConfig["Content"].isNull())
-				configListObject.content = allDriverConfigListNodeConfigListConfig["Content"].asString();
-			if(!allDriverConfigListNodeConfigListConfig["Key"].isNull())
-				configListObject.key = allDriverConfigListNodeConfigListConfig["Key"].asString();
+			if(!valueDriverConfigListDriverConfigConfigListConfig["ConfigId"].isNull())
+				configListObject.configId = valueDriverConfigListDriverConfigConfigListConfig["ConfigId"].asString();
+			if(!valueDriverConfigListDriverConfigConfigListConfig["Format"].isNull())
+				configListObject.format = valueDriverConfigListDriverConfigConfigListConfig["Format"].asString();
+			if(!valueDriverConfigListDriverConfigConfigListConfig["Content"].isNull())
+				configListObject.content = valueDriverConfigListDriverConfigConfigListConfig["Content"].asString();
+			if(!valueDriverConfigListDriverConfigConfigListConfig["Key"].isNull())
+				configListObject.key = valueDriverConfigListDriverConfigConfigListConfig["Key"].asString();
 			driverConfigListObject.configList.push_back(configListObject);
 		}
 		driverConfigList_.push_back(driverConfigListObject);

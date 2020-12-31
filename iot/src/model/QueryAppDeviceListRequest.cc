@@ -27,17 +27,6 @@ QueryAppDeviceListRequest::QueryAppDeviceListRequest() :
 QueryAppDeviceListRequest::~QueryAppDeviceListRequest()
 {}
 
-int QueryAppDeviceListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryAppDeviceListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::vector<QueryAppDeviceListRequest::TagList> QueryAppDeviceListRequest::getTagList()const
 {
 	return tagList_;
@@ -67,19 +56,6 @@ void QueryAppDeviceListRequest::setProductKeyList(const std::vector<std::string>
 	}
 }
 
-std::vector<std::string> QueryAppDeviceListRequest::getCategoryKeyList()const
-{
-	return categoryKeyList_;
-}
-
-void QueryAppDeviceListRequest::setCategoryKeyList(const std::vector<std::string>& categoryKeyList)
-{
-	categoryKeyList_ = categoryKeyList;
-	for(int dep1 = 0; dep1!= categoryKeyList.size(); dep1++) {
-		setParameter("CategoryKeyList."+ std::to_string(dep1), categoryKeyList.at(dep1));
-	}
-}
-
 std::string QueryAppDeviceListRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -100,6 +76,52 @@ void QueryAppDeviceListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryAppDeviceListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryAppDeviceListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::vector<std::string> QueryAppDeviceListRequest::getCategoryKeyList()const
+{
+	return categoryKeyList_;
+}
+
+void QueryAppDeviceListRequest::setCategoryKeyList(const std::vector<std::string>& categoryKeyList)
+{
+	categoryKeyList_ = categoryKeyList;
+	for(int dep1 = 0; dep1!= categoryKeyList.size(); dep1++) {
+		setParameter("CategoryKeyList."+ std::to_string(dep1), categoryKeyList.at(dep1));
+	}
+}
+
+std::string QueryAppDeviceListRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryAppDeviceListRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryAppDeviceListRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryAppDeviceListRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string QueryAppDeviceListRequest::getAppKey()const

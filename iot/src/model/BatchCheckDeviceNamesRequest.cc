@@ -38,6 +38,22 @@ void BatchCheckDeviceNamesRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::vector<BatchCheckDeviceNamesRequest::DeviceNameList> BatchCheckDeviceNamesRequest::getDeviceNameList()const
+{
+	return deviceNameList_;
+}
+
+void BatchCheckDeviceNamesRequest::setDeviceNameList(const std::vector<DeviceNameList>& deviceNameList)
+{
+	deviceNameList_ = deviceNameList;
+	for(int dep1 = 0; dep1!= deviceNameList.size(); dep1++) {
+		auto deviceNameListObj = deviceNameList.at(dep1);
+		std::string deviceNameListObjStr = "DeviceNameList." + std::to_string(dep1 + 1);
+		setParameter(deviceNameListObjStr + ".DeviceNickname", deviceNameListObj.deviceNickname);
+		setParameter(deviceNameListObjStr + ".DeviceName", deviceNameListObj.deviceName);
+	}
+}
+
 std::string BatchCheckDeviceNamesRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

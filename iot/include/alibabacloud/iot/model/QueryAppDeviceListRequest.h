@@ -41,28 +41,34 @@ namespace AlibabaCloud
 				QueryAppDeviceListRequest();
 				~QueryAppDeviceListRequest();
 
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::vector<TagList> getTagList()const;
 				void setTagList(const std::vector<TagList>& tagList);
 				std::vector<std::string> getProductKeyList()const;
 				void setProductKeyList(const std::vector<std::string>& productKeyList);
-				std::vector<std::string> getCategoryKeyList()const;
-				void setCategoryKeyList(const std::vector<std::string>& categoryKeyList);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::vector<std::string> getCategoryKeyList()const;
+				void setCategoryKeyList(const std::vector<std::string>& categoryKeyList);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::string getAppKey()const;
 				void setAppKey(const std::string& appKey);
 
             private:
-				int currentPage_;
 				std::vector<TagList> tagList_;
 				std::vector<std::string> productKeyList_;
-				std::vector<std::string> categoryKeyList_;
 				std::string iotInstanceId_;
 				int pageSize_;
+				int currentPage_;
+				std::vector<std::string> categoryKeyList_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::string appKey_;
 
 			};

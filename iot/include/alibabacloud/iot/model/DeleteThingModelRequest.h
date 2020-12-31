@@ -35,8 +35,14 @@ namespace AlibabaCloud
 				DeleteThingModelRequest();
 				~DeleteThingModelRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
+				bool getIsClearAllFunction()const;
+				void setIsClearAllFunction(bool isClearAllFunction);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::vector<std::string> getPropertyIdentifier()const;
@@ -53,9 +59,14 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 				std::vector<std::string> getEventIdentifier()const;
 				void setEventIdentifier(const std::vector<std::string>& eventIdentifier);
+				std::string getFunctionBlockId()const;
+				void setFunctionBlockId(const std::string& functionBlockId);
 
             private:
+				std::string realTenantId_;
+				bool isClearAllFunction_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string resourceGroupId_;
 				std::vector<std::string> propertyIdentifier_;
 				std::string iotInstanceId_;
@@ -64,6 +75,7 @@ namespace AlibabaCloud
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::vector<std::string> eventIdentifier_;
+				std::string functionBlockId_;
 
 			};
 		}

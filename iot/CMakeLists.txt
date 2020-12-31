@@ -51,6 +51,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/BatchGetEdgeInstanceDeviceDriverResult.h
 	include/alibabacloud/iot/model/BatchGetEdgeInstanceDriverConfigsRequest.h
 	include/alibabacloud/iot/model/BatchGetEdgeInstanceDriverConfigsResult.h
+	include/alibabacloud/iot/model/BatchPubRequest.h
+	include/alibabacloud/iot/model/BatchPubResult.h
 	include/alibabacloud/iot/model/BatchQueryDeviceDetailRequest.h
 	include/alibabacloud/iot/model/BatchQueryDeviceDetailResult.h
 	include/alibabacloud/iot/model/BatchRegisterDeviceRequest.h
@@ -71,6 +73,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/BindDriverToEdgeInstanceResult.h
 	include/alibabacloud/iot/model/BindGatewayToEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/BindGatewayToEdgeInstanceResult.h
+	include/alibabacloud/iot/model/BindRoleToEdgeInstanceRequest.h
+	include/alibabacloud/iot/model/BindRoleToEdgeInstanceResult.h
 	include/alibabacloud/iot/model/BindSceneRuleToEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/BindSceneRuleToEdgeInstanceResult.h
 	include/alibabacloud/iot/model/CancelOTAStrategyByJobRequest.h
@@ -111,6 +115,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateOTADynamicUpgradeJobResult.h
 	include/alibabacloud/iot/model/CreateOTAFirmwareRequest.h
 	include/alibabacloud/iot/model/CreateOTAFirmwareResult.h
+	include/alibabacloud/iot/model/CreateOTAModuleRequest.h
+	include/alibabacloud/iot/model/CreateOTAModuleResult.h
 	include/alibabacloud/iot/model/CreateOTAStaticUpgradeJobRequest.h
 	include/alibabacloud/iot/model/CreateOTAStaticUpgradeJobResult.h
 	include/alibabacloud/iot/model/CreateOTAVerifyJobRequest.h
@@ -131,8 +137,12 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateSubscribeRelationResult.h
 	include/alibabacloud/iot/model/CreateThingModelRequest.h
 	include/alibabacloud/iot/model/CreateThingModelResult.h
+	include/alibabacloud/iot/model/CreateThingScriptRequest.h
+	include/alibabacloud/iot/model/CreateThingScriptResult.h
 	include/alibabacloud/iot/model/CreateTopicRouteTableRequest.h
 	include/alibabacloud/iot/model/CreateTopicRouteTableResult.h
+	include/alibabacloud/iot/model/DeleteClientIdsRequest.h
+	include/alibabacloud/iot/model/DeleteClientIdsResult.h
 	include/alibabacloud/iot/model/DeleteConsumerGroupRequest.h
 	include/alibabacloud/iot/model/DeleteConsumerGroupResult.h
 	include/alibabacloud/iot/model/DeleteConsumerGroupSubscribeRelationRequest.h
@@ -153,6 +163,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteEdgeInstanceResult.h
 	include/alibabacloud/iot/model/DeleteOTAFirmwareRequest.h
 	include/alibabacloud/iot/model/DeleteOTAFirmwareResult.h
+	include/alibabacloud/iot/model/DeleteOTAModuleRequest.h
+	include/alibabacloud/iot/model/DeleteOTAModuleResult.h
 	include/alibabacloud/iot/model/DeleteProductRequest.h
 	include/alibabacloud/iot/model/DeleteProductResult.h
 	include/alibabacloud/iot/model/DeleteProductTagsRequest.h
@@ -179,6 +191,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/EnableSceneRuleResult.h
 	include/alibabacloud/iot/model/EnableThingRequest.h
 	include/alibabacloud/iot/model/EnableThingResult.h
+	include/alibabacloud/iot/model/GenerateDeviceNameListURLRequest.h
+	include/alibabacloud/iot/model/GenerateDeviceNameListURLResult.h
 	include/alibabacloud/iot/model/GenerateOTAUploadURLRequest.h
 	include/alibabacloud/iot/model/GenerateOTAUploadURLResult.h
 	include/alibabacloud/iot/model/GetDataAPIServiceDetailRequest.h
@@ -207,6 +221,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetSceneRuleResult.h
 	include/alibabacloud/iot/model/GetThingModelTslRequest.h
 	include/alibabacloud/iot/model/GetThingModelTslResult.h
+	include/alibabacloud/iot/model/GetThingModelTslPublishedRequest.h
+	include/alibabacloud/iot/model/GetThingModelTslPublishedResult.h
+	include/alibabacloud/iot/model/GetThingScriptRequest.h
+	include/alibabacloud/iot/model/GetThingScriptResult.h
 	include/alibabacloud/iot/model/GetThingTemplateRequest.h
 	include/alibabacloud/iot/model/GetThingTemplateResult.h
 	include/alibabacloud/iot/model/GetThingTopoRequest.h
@@ -225,6 +243,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ListOTAJobByDeviceResult.h
 	include/alibabacloud/iot/model/ListOTAJobByFirmwareRequest.h
 	include/alibabacloud/iot/model/ListOTAJobByFirmwareResult.h
+	include/alibabacloud/iot/model/ListOTAModuleByProductRequest.h
+	include/alibabacloud/iot/model/ListOTAModuleByProductResult.h
+	include/alibabacloud/iot/model/ListOTAModuleVersionsByDeviceRequest.h
+	include/alibabacloud/iot/model/ListOTAModuleVersionsByDeviceResult.h
 	include/alibabacloud/iot/model/ListOTATaskByJobRequest.h
 	include/alibabacloud/iot/model/ListOTATaskByJobResult.h
 	include/alibabacloud/iot/model/ListProductByTagsRequest.h
@@ -253,6 +275,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryBatchRegisterDeviceStatusResult.h
 	include/alibabacloud/iot/model/QueryCertUrlByApplyIdRequest.h
 	include/alibabacloud/iot/model/QueryCertUrlByApplyIdResult.h
+	include/alibabacloud/iot/model/QueryClientIdsRequest.h
+	include/alibabacloud/iot/model/QueryClientIdsResult.h
 	include/alibabacloud/iot/model/QueryConsumerGroupByGroupIdRequest.h
 	include/alibabacloud/iot/model/QueryConsumerGroupByGroupIdResult.h
 	include/alibabacloud/iot/model/QueryConsumerGroupListRequest.h
@@ -263,6 +287,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDetailSceneRuleLogResult.h
 	include/alibabacloud/iot/model/QueryDeviceRequest.h
 	include/alibabacloud/iot/model/QueryDeviceResult.h
+	include/alibabacloud/iot/model/QueryDeviceBySQLRequest.h
+	include/alibabacloud/iot/model/QueryDeviceBySQLResult.h
 	include/alibabacloud/iot/model/QueryDeviceByStatusRequest.h
 	include/alibabacloud/iot/model/QueryDeviceByStatusResult.h
 	include/alibabacloud/iot/model/QueryDeviceByTagsRequest.h
@@ -291,6 +317,14 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDeviceGroupTagListResult.h
 	include/alibabacloud/iot/model/QueryDeviceListByDeviceGroupRequest.h
 	include/alibabacloud/iot/model/QueryDeviceListByDeviceGroupResult.h
+	include/alibabacloud/iot/model/QueryDeviceOriginalEventDataRequest.h
+	include/alibabacloud/iot/model/QueryDeviceOriginalEventDataResult.h
+	include/alibabacloud/iot/model/QueryDeviceOriginalPropertyDataRequest.h
+	include/alibabacloud/iot/model/QueryDeviceOriginalPropertyDataResult.h
+	include/alibabacloud/iot/model/QueryDeviceOriginalPropertyStatusRequest.h
+	include/alibabacloud/iot/model/QueryDeviceOriginalPropertyStatusResult.h
+	include/alibabacloud/iot/model/QueryDeviceOriginalServiceDataRequest.h
+	include/alibabacloud/iot/model/QueryDeviceOriginalServiceDataResult.h
 	include/alibabacloud/iot/model/QueryDevicePropRequest.h
 	include/alibabacloud/iot/model/QueryDevicePropResult.h
 	include/alibabacloud/iot/model/QueryDevicePropertiesDataRequest.h
@@ -349,6 +383,12 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QuerySuperDeviceGroupResult.h
 	include/alibabacloud/iot/model/QueryThingModelRequest.h
 	include/alibabacloud/iot/model/QueryThingModelResult.h
+	include/alibabacloud/iot/model/QueryThingModelExtendConfigRequest.h
+	include/alibabacloud/iot/model/QueryThingModelExtendConfigResult.h
+	include/alibabacloud/iot/model/QueryThingModelExtendConfigPublishedRequest.h
+	include/alibabacloud/iot/model/QueryThingModelExtendConfigPublishedResult.h
+	include/alibabacloud/iot/model/QueryThingModelPublishedRequest.h
+	include/alibabacloud/iot/model/QueryThingModelPublishedResult.h
 	include/alibabacloud/iot/model/QueryTopicReverseRouteTableRequest.h
 	include/alibabacloud/iot/model/QueryTopicReverseRouteTableResult.h
 	include/alibabacloud/iot/model/QueryTopicRouteTableRequest.h
@@ -381,16 +421,22 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/SetEdgeInstanceDriverConfigsResult.h
 	include/alibabacloud/iot/model/SetProductCertInfoRequest.h
 	include/alibabacloud/iot/model/SetProductCertInfoResult.h
+	include/alibabacloud/iot/model/SpeechByCombinationRequest.h
+	include/alibabacloud/iot/model/SpeechByCombinationResult.h
 	include/alibabacloud/iot/model/StartRuleRequest.h
 	include/alibabacloud/iot/model/StartRuleResult.h
 	include/alibabacloud/iot/model/StopRuleRequest.h
 	include/alibabacloud/iot/model/StopRuleResult.h
+	include/alibabacloud/iot/model/TransformClientIdRequest.h
+	include/alibabacloud/iot/model/TransformClientIdResult.h
 	include/alibabacloud/iot/model/TriggerSceneRuleRequest.h
 	include/alibabacloud/iot/model/TriggerSceneRuleResult.h
 	include/alibabacloud/iot/model/UnbindApplicationFromEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/UnbindApplicationFromEdgeInstanceResult.h
 	include/alibabacloud/iot/model/UnbindDriverFromEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/UnbindDriverFromEdgeInstanceResult.h
+	include/alibabacloud/iot/model/UnbindRoleFromEdgeInstanceRequest.h
+	include/alibabacloud/iot/model/UnbindRoleFromEdgeInstanceResult.h
 	include/alibabacloud/iot/model/UnbindSceneRuleFromEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/UnbindSceneRuleFromEdgeInstanceResult.h
 	include/alibabacloud/iot/model/UpdateConsumerGroupRequest.h
@@ -405,6 +451,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UpdateEdgeInstanceResult.h
 	include/alibabacloud/iot/model/UpdateEdgeInstanceChannelRequest.h
 	include/alibabacloud/iot/model/UpdateEdgeInstanceChannelResult.h
+	include/alibabacloud/iot/model/UpdateOTAModuleRequest.h
+	include/alibabacloud/iot/model/UpdateOTAModuleResult.h
 	include/alibabacloud/iot/model/UpdateProductRequest.h
 	include/alibabacloud/iot/model/UpdateProductResult.h
 	include/alibabacloud/iot/model/UpdateProductFilterConfigRequest.h
@@ -422,7 +470,11 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UpdateSubscribeRelationRequest.h
 	include/alibabacloud/iot/model/UpdateSubscribeRelationResult.h
 	include/alibabacloud/iot/model/UpdateThingModelRequest.h
-	include/alibabacloud/iot/model/UpdateThingModelResult.h )
+	include/alibabacloud/iot/model/UpdateThingModelResult.h
+	include/alibabacloud/iot/model/UpdateThingModelValidationConfigRequest.h
+	include/alibabacloud/iot/model/UpdateThingModelValidationConfigResult.h
+	include/alibabacloud/iot/model/UpdateThingScriptRequest.h
+	include/alibabacloud/iot/model/UpdateThingScriptResult.h )
 
 set(iot_src 
 	src/IotClient.cc
@@ -456,6 +508,8 @@ set(iot_src
 	src/model/BatchGetEdgeInstanceDeviceDriverResult.cc
 	src/model/BatchGetEdgeInstanceDriverConfigsRequest.cc
 	src/model/BatchGetEdgeInstanceDriverConfigsResult.cc
+	src/model/BatchPubRequest.cc
+	src/model/BatchPubResult.cc
 	src/model/BatchQueryDeviceDetailRequest.cc
 	src/model/BatchQueryDeviceDetailResult.cc
 	src/model/BatchRegisterDeviceRequest.cc
@@ -476,6 +530,8 @@ set(iot_src
 	src/model/BindDriverToEdgeInstanceResult.cc
 	src/model/BindGatewayToEdgeInstanceRequest.cc
 	src/model/BindGatewayToEdgeInstanceResult.cc
+	src/model/BindRoleToEdgeInstanceRequest.cc
+	src/model/BindRoleToEdgeInstanceResult.cc
 	src/model/BindSceneRuleToEdgeInstanceRequest.cc
 	src/model/BindSceneRuleToEdgeInstanceResult.cc
 	src/model/CancelOTAStrategyByJobRequest.cc
@@ -516,6 +572,8 @@ set(iot_src
 	src/model/CreateOTADynamicUpgradeJobResult.cc
 	src/model/CreateOTAFirmwareRequest.cc
 	src/model/CreateOTAFirmwareResult.cc
+	src/model/CreateOTAModuleRequest.cc
+	src/model/CreateOTAModuleResult.cc
 	src/model/CreateOTAStaticUpgradeJobRequest.cc
 	src/model/CreateOTAStaticUpgradeJobResult.cc
 	src/model/CreateOTAVerifyJobRequest.cc
@@ -536,8 +594,12 @@ set(iot_src
 	src/model/CreateSubscribeRelationResult.cc
 	src/model/CreateThingModelRequest.cc
 	src/model/CreateThingModelResult.cc
+	src/model/CreateThingScriptRequest.cc
+	src/model/CreateThingScriptResult.cc
 	src/model/CreateTopicRouteTableRequest.cc
 	src/model/CreateTopicRouteTableResult.cc
+	src/model/DeleteClientIdsRequest.cc
+	src/model/DeleteClientIdsResult.cc
 	src/model/DeleteConsumerGroupRequest.cc
 	src/model/DeleteConsumerGroupResult.cc
 	src/model/DeleteConsumerGroupSubscribeRelationRequest.cc
@@ -558,6 +620,8 @@ set(iot_src
 	src/model/DeleteEdgeInstanceResult.cc
 	src/model/DeleteOTAFirmwareRequest.cc
 	src/model/DeleteOTAFirmwareResult.cc
+	src/model/DeleteOTAModuleRequest.cc
+	src/model/DeleteOTAModuleResult.cc
 	src/model/DeleteProductRequest.cc
 	src/model/DeleteProductResult.cc
 	src/model/DeleteProductTagsRequest.cc
@@ -584,6 +648,8 @@ set(iot_src
 	src/model/EnableSceneRuleResult.cc
 	src/model/EnableThingRequest.cc
 	src/model/EnableThingResult.cc
+	src/model/GenerateDeviceNameListURLRequest.cc
+	src/model/GenerateDeviceNameListURLResult.cc
 	src/model/GenerateOTAUploadURLRequest.cc
 	src/model/GenerateOTAUploadURLResult.cc
 	src/model/GetDataAPIServiceDetailRequest.cc
@@ -612,6 +678,10 @@ set(iot_src
 	src/model/GetSceneRuleResult.cc
 	src/model/GetThingModelTslRequest.cc
 	src/model/GetThingModelTslResult.cc
+	src/model/GetThingModelTslPublishedRequest.cc
+	src/model/GetThingModelTslPublishedResult.cc
+	src/model/GetThingScriptRequest.cc
+	src/model/GetThingScriptResult.cc
 	src/model/GetThingTemplateRequest.cc
 	src/model/GetThingTemplateResult.cc
 	src/model/GetThingTopoRequest.cc
@@ -630,6 +700,10 @@ set(iot_src
 	src/model/ListOTAJobByDeviceResult.cc
 	src/model/ListOTAJobByFirmwareRequest.cc
 	src/model/ListOTAJobByFirmwareResult.cc
+	src/model/ListOTAModuleByProductRequest.cc
+	src/model/ListOTAModuleByProductResult.cc
+	src/model/ListOTAModuleVersionsByDeviceRequest.cc
+	src/model/ListOTAModuleVersionsByDeviceResult.cc
 	src/model/ListOTATaskByJobRequest.cc
 	src/model/ListOTATaskByJobResult.cc
 	src/model/ListProductByTagsRequest.cc
@@ -658,6 +732,8 @@ set(iot_src
 	src/model/QueryBatchRegisterDeviceStatusResult.cc
 	src/model/QueryCertUrlByApplyIdRequest.cc
 	src/model/QueryCertUrlByApplyIdResult.cc
+	src/model/QueryClientIdsRequest.cc
+	src/model/QueryClientIdsResult.cc
 	src/model/QueryConsumerGroupByGroupIdRequest.cc
 	src/model/QueryConsumerGroupByGroupIdResult.cc
 	src/model/QueryConsumerGroupListRequest.cc
@@ -668,6 +744,8 @@ set(iot_src
 	src/model/QueryDetailSceneRuleLogResult.cc
 	src/model/QueryDeviceRequest.cc
 	src/model/QueryDeviceResult.cc
+	src/model/QueryDeviceBySQLRequest.cc
+	src/model/QueryDeviceBySQLResult.cc
 	src/model/QueryDeviceByStatusRequest.cc
 	src/model/QueryDeviceByStatusResult.cc
 	src/model/QueryDeviceByTagsRequest.cc
@@ -696,6 +774,14 @@ set(iot_src
 	src/model/QueryDeviceGroupTagListResult.cc
 	src/model/QueryDeviceListByDeviceGroupRequest.cc
 	src/model/QueryDeviceListByDeviceGroupResult.cc
+	src/model/QueryDeviceOriginalEventDataRequest.cc
+	src/model/QueryDeviceOriginalEventDataResult.cc
+	src/model/QueryDeviceOriginalPropertyDataRequest.cc
+	src/model/QueryDeviceOriginalPropertyDataResult.cc
+	src/model/QueryDeviceOriginalPropertyStatusRequest.cc
+	src/model/QueryDeviceOriginalPropertyStatusResult.cc
+	src/model/QueryDeviceOriginalServiceDataRequest.cc
+	src/model/QueryDeviceOriginalServiceDataResult.cc
 	src/model/QueryDevicePropRequest.cc
 	src/model/QueryDevicePropResult.cc
 	src/model/QueryDevicePropertiesDataRequest.cc
@@ -754,6 +840,12 @@ set(iot_src
 	src/model/QuerySuperDeviceGroupResult.cc
 	src/model/QueryThingModelRequest.cc
 	src/model/QueryThingModelResult.cc
+	src/model/QueryThingModelExtendConfigRequest.cc
+	src/model/QueryThingModelExtendConfigResult.cc
+	src/model/QueryThingModelExtendConfigPublishedRequest.cc
+	src/model/QueryThingModelExtendConfigPublishedResult.cc
+	src/model/QueryThingModelPublishedRequest.cc
+	src/model/QueryThingModelPublishedResult.cc
 	src/model/QueryTopicReverseRouteTableRequest.cc
 	src/model/QueryTopicReverseRouteTableResult.cc
 	src/model/QueryTopicRouteTableRequest.cc
@@ -786,16 +878,22 @@ set(iot_src
 	src/model/SetEdgeInstanceDriverConfigsResult.cc
 	src/model/SetProductCertInfoRequest.cc
 	src/model/SetProductCertInfoResult.cc
+	src/model/SpeechByCombinationRequest.cc
+	src/model/SpeechByCombinationResult.cc
 	src/model/StartRuleRequest.cc
 	src/model/StartRuleResult.cc
 	src/model/StopRuleRequest.cc
 	src/model/StopRuleResult.cc
+	src/model/TransformClientIdRequest.cc
+	src/model/TransformClientIdResult.cc
 	src/model/TriggerSceneRuleRequest.cc
 	src/model/TriggerSceneRuleResult.cc
 	src/model/UnbindApplicationFromEdgeInstanceRequest.cc
 	src/model/UnbindApplicationFromEdgeInstanceResult.cc
 	src/model/UnbindDriverFromEdgeInstanceRequest.cc
 	src/model/UnbindDriverFromEdgeInstanceResult.cc
+	src/model/UnbindRoleFromEdgeInstanceRequest.cc
+	src/model/UnbindRoleFromEdgeInstanceResult.cc
 	src/model/UnbindSceneRuleFromEdgeInstanceRequest.cc
 	src/model/UnbindSceneRuleFromEdgeInstanceResult.cc
 	src/model/UpdateConsumerGroupRequest.cc
@@ -810,6 +908,8 @@ set(iot_src
 	src/model/UpdateEdgeInstanceResult.cc
 	src/model/UpdateEdgeInstanceChannelRequest.cc
 	src/model/UpdateEdgeInstanceChannelResult.cc
+	src/model/UpdateOTAModuleRequest.cc
+	src/model/UpdateOTAModuleResult.cc
 	src/model/UpdateProductRequest.cc
 	src/model/UpdateProductResult.cc
 	src/model/UpdateProductFilterConfigRequest.cc
@@ -827,7 +927,11 @@ set(iot_src
 	src/model/UpdateSubscribeRelationRequest.cc
 	src/model/UpdateSubscribeRelationResult.cc
 	src/model/UpdateThingModelRequest.cc
-	src/model/UpdateThingModelResult.cc )
+	src/model/UpdateThingModelResult.cc
+	src/model/UpdateThingModelValidationConfigRequest.cc
+	src/model/UpdateThingModelValidationConfigResult.cc
+	src/model/UpdateThingScriptRequest.cc
+	src/model/UpdateThingScriptResult.cc )
 
 add_library(iot ${LIB_TYPE}
 	${iot_public_header}
