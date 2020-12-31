@@ -46,10 +46,10 @@ void GetDBInstanceTopologyResult::parse(const std::string &payload)
 	for (auto dataNodeConnectionsConnection : allConnectionsNode)
 	{
 		Data::Connection connectionObject;
-		if(!dataNodeConnectionsConnection["NetType"].isNull())
-			connectionObject.netType = dataNodeConnectionsConnection["NetType"].asString();
 		if(!dataNodeConnectionsConnection["ConnectionString"].isNull())
 			connectionObject.connectionString = dataNodeConnectionsConnection["ConnectionString"].asString();
+		if(!dataNodeConnectionsConnection["NetType"].isNull())
+			connectionObject.netType = dataNodeConnectionsConnection["NetType"].asString();
 		if(!dataNodeConnectionsConnection["ZoneId"].isNull())
 			connectionObject.zoneId = dataNodeConnectionsConnection["ZoneId"].asString();
 		data_.connections.push_back(connectionObject);
@@ -58,14 +58,14 @@ void GetDBInstanceTopologyResult::parse(const std::string &payload)
 	for (auto dataNodeNodesNode : allNodesNode)
 	{
 		Data::Node nodeObject;
-		if(!dataNodeNodesNode["Role"].isNull())
-			nodeObject.role = dataNodeNodesNode["Role"].asString();
-		if(!dataNodeNodesNode["DedicatedHostId"].isNull())
-			nodeObject.dedicatedHostId = dataNodeNodesNode["DedicatedHostId"].asString();
-		if(!dataNodeNodesNode["ZoneId"].isNull())
-			nodeObject.zoneId = dataNodeNodesNode["ZoneId"].asString();
 		if(!dataNodeNodesNode["DedicatedHostGroupId"].isNull())
 			nodeObject.dedicatedHostGroupId = dataNodeNodesNode["DedicatedHostGroupId"].asString();
+		if(!dataNodeNodesNode["DedicatedHostId"].isNull())
+			nodeObject.dedicatedHostId = dataNodeNodesNode["DedicatedHostId"].asString();
+		if(!dataNodeNodesNode["Role"].isNull())
+			nodeObject.role = dataNodeNodesNode["Role"].asString();
+		if(!dataNodeNodesNode["ZoneId"].isNull())
+			nodeObject.zoneId = dataNodeNodesNode["ZoneId"].asString();
 		data_.nodes.push_back(nodeObject);
 	}
 	if(!value["Code"].isNull())

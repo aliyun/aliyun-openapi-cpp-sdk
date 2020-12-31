@@ -411,78 +411,6 @@ RdsClient::CheckInstanceExistOutcomeCallable RdsClient::checkInstanceExistCallab
 	return task->get_future();
 }
 
-RdsClient::CheckRecoveryConditionsOutcome RdsClient::checkRecoveryConditions(const CheckRecoveryConditionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckRecoveryConditionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckRecoveryConditionsOutcome(CheckRecoveryConditionsResult(outcome.result()));
-	else
-		return CheckRecoveryConditionsOutcome(outcome.error());
-}
-
-void RdsClient::checkRecoveryConditionsAsync(const CheckRecoveryConditionsRequest& request, const CheckRecoveryConditionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkRecoveryConditions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::CheckRecoveryConditionsOutcomeCallable RdsClient::checkRecoveryConditionsCallable(const CheckRecoveryConditionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckRecoveryConditionsOutcome()>>(
-			[this, request]()
-			{
-			return this->checkRecoveryConditions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::CheckRegionSupportBackupEncryptionOutcome RdsClient::checkRegionSupportBackupEncryption(const CheckRegionSupportBackupEncryptionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckRegionSupportBackupEncryptionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckRegionSupportBackupEncryptionOutcome(CheckRegionSupportBackupEncryptionResult(outcome.result()));
-	else
-		return CheckRegionSupportBackupEncryptionOutcome(outcome.error());
-}
-
-void RdsClient::checkRegionSupportBackupEncryptionAsync(const CheckRegionSupportBackupEncryptionRequest& request, const CheckRegionSupportBackupEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkRegionSupportBackupEncryption(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::CheckRegionSupportBackupEncryptionOutcomeCallable RdsClient::checkRegionSupportBackupEncryptionCallable(const CheckRegionSupportBackupEncryptionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckRegionSupportBackupEncryptionOutcome()>>(
-			[this, request]()
-			{
-			return this->checkRegionSupportBackupEncryption(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::ClearDedicatedHostOutcome RdsClient::clearDedicatedHost(const ClearDedicatedHostRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2463,42 +2391,6 @@ RdsClient::DescribeDBInstanceAttributeOutcomeCallable RdsClient::describeDBInsta
 	return task->get_future();
 }
 
-RdsClient::DescribeDBInstanceByTagsOutcome RdsClient::describeDBInstanceByTags(const DescribeDBInstanceByTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBInstanceByTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBInstanceByTagsOutcome(DescribeDBInstanceByTagsResult(outcome.result()));
-	else
-		return DescribeDBInstanceByTagsOutcome(outcome.error());
-}
-
-void RdsClient::describeDBInstanceByTagsAsync(const DescribeDBInstanceByTagsRequest& request, const DescribeDBInstanceByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBInstanceByTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeDBInstanceByTagsOutcomeCallable RdsClient::describeDBInstanceByTagsCallable(const DescribeDBInstanceByTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceByTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBInstanceByTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeDBInstanceDetailOutcome RdsClient::describeDBInstanceDetail(const DescribeDBInstanceDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3177,42 +3069,6 @@ RdsClient::DescribeDTCSecurityIpHostsForSQLServerOutcomeCallable RdsClient::desc
 			[this, request]()
 			{
 			return this->describeDTCSecurityIpHostsForSQLServer(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::DescribeDasInstanceConfigOutcome RdsClient::describeDasInstanceConfig(const DescribeDasInstanceConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDasInstanceConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDasInstanceConfigOutcome(DescribeDasInstanceConfigResult(outcome.result()));
-	else
-		return DescribeDasInstanceConfigOutcome(outcome.error());
-}
-
-void RdsClient::describeDasInstanceConfigAsync(const DescribeDasInstanceConfigRequest& request, const DescribeDasInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDasInstanceConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeDasInstanceConfigOutcomeCallable RdsClient::describeDasInstanceConfigCallable(const DescribeDasInstanceConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDasInstanceConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDasInstanceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

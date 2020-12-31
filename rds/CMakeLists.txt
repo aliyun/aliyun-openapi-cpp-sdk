@@ -41,10 +41,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CheckDBNameAvailableResult.h
 	include/alibabacloud/rds/model/CheckInstanceExistRequest.h
 	include/alibabacloud/rds/model/CheckInstanceExistResult.h
-	include/alibabacloud/rds/model/CheckRecoveryConditionsRequest.h
-	include/alibabacloud/rds/model/CheckRecoveryConditionsResult.h
-	include/alibabacloud/rds/model/CheckRegionSupportBackupEncryptionRequest.h
-	include/alibabacloud/rds/model/CheckRegionSupportBackupEncryptionResult.h
 	include/alibabacloud/rds/model/ClearDedicatedHostRequest.h
 	include/alibabacloud/rds/model/ClearDedicatedHostResult.h
 	include/alibabacloud/rds/model/CloneDBInstanceRequest.h
@@ -155,8 +151,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeCrossRegionLogBackupFilesResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceAttributeRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstanceAttributeResult.h
-	include/alibabacloud/rds/model/DescribeDBInstanceByTagsRequest.h
-	include/alibabacloud/rds/model/DescribeDBInstanceByTagsResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceDetailRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstanceDetailResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceHAConfigRequest.h
@@ -195,8 +189,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDBProxyPerformanceResult.h
 	include/alibabacloud/rds/model/DescribeDTCSecurityIpHostsForSQLServerRequest.h
 	include/alibabacloud/rds/model/DescribeDTCSecurityIpHostsForSQLServerResult.h
-	include/alibabacloud/rds/model/DescribeDasInstanceConfigRequest.h
-	include/alibabacloud/rds/model/DescribeDasInstanceConfigResult.h
 	include/alibabacloud/rds/model/DescribeDatabasesRequest.h
 	include/alibabacloud/rds/model/DescribeDatabasesResult.h
 	include/alibabacloud/rds/model/DescribeDedicatedHostAttributeRequest.h
@@ -494,10 +486,6 @@ set(rds_src
 	src/model/CheckDBNameAvailableResult.cc
 	src/model/CheckInstanceExistRequest.cc
 	src/model/CheckInstanceExistResult.cc
-	src/model/CheckRecoveryConditionsRequest.cc
-	src/model/CheckRecoveryConditionsResult.cc
-	src/model/CheckRegionSupportBackupEncryptionRequest.cc
-	src/model/CheckRegionSupportBackupEncryptionResult.cc
 	src/model/ClearDedicatedHostRequest.cc
 	src/model/ClearDedicatedHostResult.cc
 	src/model/CloneDBInstanceRequest.cc
@@ -608,8 +596,6 @@ set(rds_src
 	src/model/DescribeCrossRegionLogBackupFilesResult.cc
 	src/model/DescribeDBInstanceAttributeRequest.cc
 	src/model/DescribeDBInstanceAttributeResult.cc
-	src/model/DescribeDBInstanceByTagsRequest.cc
-	src/model/DescribeDBInstanceByTagsResult.cc
 	src/model/DescribeDBInstanceDetailRequest.cc
 	src/model/DescribeDBInstanceDetailResult.cc
 	src/model/DescribeDBInstanceHAConfigRequest.cc
@@ -648,8 +634,6 @@ set(rds_src
 	src/model/DescribeDBProxyPerformanceResult.cc
 	src/model/DescribeDTCSecurityIpHostsForSQLServerRequest.cc
 	src/model/DescribeDTCSecurityIpHostsForSQLServerResult.cc
-	src/model/DescribeDasInstanceConfigRequest.cc
-	src/model/DescribeDasInstanceConfigResult.cc
 	src/model/DescribeDatabasesRequest.cc
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDedicatedHostAttributeRequest.cc

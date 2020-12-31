@@ -38,6 +38,17 @@ void DescribeDBInstancePerformanceRequest::setResourceOwnerId(long resourceOwner
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDBInstancePerformanceRequest::getRoleId()const
+{
+	return roleId_;
+}
+
+void DescribeDBInstancePerformanceRequest::setRoleId(const std::string& roleId)
+{
+	roleId_ = roleId;
+	setParameter("RoleId", roleId);
+}
+
 std::string DescribeDBInstancePerformanceRequest::getStartTime()const
 {
 	return startTime_;

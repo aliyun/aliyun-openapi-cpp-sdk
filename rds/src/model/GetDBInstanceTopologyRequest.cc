@@ -27,6 +27,17 @@ GetDBInstanceTopologyRequest::GetDBInstanceTopologyRequest() :
 GetDBInstanceTopologyRequest::~GetDBInstanceTopologyRequest()
 {}
 
+std::string GetDBInstanceTopologyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetDBInstanceTopologyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GetDBInstanceTopologyRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;
