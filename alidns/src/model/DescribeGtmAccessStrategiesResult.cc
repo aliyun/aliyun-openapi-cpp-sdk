@@ -75,18 +75,18 @@ void DescribeGtmAccessStrategiesResult::parse(const std::string &payload)
 			strategiesObject.defaultAddrPoolMonitorStatus = valueStrategiesStrategy["DefaultAddrPoolMonitorStatus"].asString();
 		if(!valueStrategiesStrategy["FailoverAddrPoolMonitorStatus"].isNull())
 			strategiesObject.failoverAddrPoolMonitorStatus = valueStrategiesStrategy["FailoverAddrPoolMonitorStatus"].asString();
-		auto allLinesNode = allStrategiesNode["Lines"]["Line"];
-		for (auto allStrategiesNodeLinesLine : allLinesNode)
+		auto allLinesNode = valueStrategiesStrategy["Lines"]["Line"];
+		for (auto valueStrategiesStrategyLinesLine : allLinesNode)
 		{
 			Strategy::Line linesObject;
-			if(!allStrategiesNodeLinesLine["LineCode"].isNull())
-				linesObject.lineCode = allStrategiesNodeLinesLine["LineCode"].asString();
-			if(!allStrategiesNodeLinesLine["LineName"].isNull())
-				linesObject.lineName = allStrategiesNodeLinesLine["LineName"].asString();
-			if(!allStrategiesNodeLinesLine["GroupCode"].isNull())
-				linesObject.groupCode = allStrategiesNodeLinesLine["GroupCode"].asString();
-			if(!allStrategiesNodeLinesLine["GroupName"].isNull())
-				linesObject.groupName = allStrategiesNodeLinesLine["GroupName"].asString();
+			if(!valueStrategiesStrategyLinesLine["LineCode"].isNull())
+				linesObject.lineCode = valueStrategiesStrategyLinesLine["LineCode"].asString();
+			if(!valueStrategiesStrategyLinesLine["LineName"].isNull())
+				linesObject.lineName = valueStrategiesStrategyLinesLine["LineName"].asString();
+			if(!valueStrategiesStrategyLinesLine["GroupCode"].isNull())
+				linesObject.groupCode = valueStrategiesStrategyLinesLine["GroupCode"].asString();
+			if(!valueStrategiesStrategyLinesLine["GroupName"].isNull())
+				linesObject.groupName = valueStrategiesStrategyLinesLine["GroupName"].asString();
 			strategiesObject.lines.push_back(linesObject);
 		}
 		strategies_.push_back(strategiesObject);

@@ -95,6 +95,8 @@ void DescribeDomainInfoResult::parse(const std::string &payload)
 		slaveDns_ = value["SlaveDns"].asString() == "true";
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
 
 }
 
@@ -141,6 +143,11 @@ std::string DescribeDomainInfoResult::getDomainName()const
 std::string DescribeDomainInfoResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+std::string DescribeDomainInfoResult::getCreateTime()const
+{
+	return createTime_;
 }
 
 std::string DescribeDomainInfoResult::getPunyCode()const

@@ -49,14 +49,14 @@ void PreviewGtmRecoveryPlanResult::parse(const std::string &payload)
 			previewsObject.name = valuePreviewsPreview["Name"].asString();
 		if(!valuePreviewsPreview["UserDomainName"].isNull())
 			previewsObject.userDomainName = valuePreviewsPreview["UserDomainName"].asString();
-		auto allSwitchInfosNode = allPreviewsNode["SwitchInfos"]["SwitchInfo"];
-		for (auto allPreviewsNodeSwitchInfosSwitchInfo : allSwitchInfosNode)
+		auto allSwitchInfosNode = valuePreviewsPreview["SwitchInfos"]["SwitchInfo"];
+		for (auto valuePreviewsPreviewSwitchInfosSwitchInfo : allSwitchInfosNode)
 		{
 			Preview::SwitchInfo switchInfosObject;
-			if(!allPreviewsNodeSwitchInfosSwitchInfo["StrategyName"].isNull())
-				switchInfosObject.strategyName = allPreviewsNodeSwitchInfosSwitchInfo["StrategyName"].asString();
-			if(!allPreviewsNodeSwitchInfosSwitchInfo["Content"].isNull())
-				switchInfosObject.content = allPreviewsNodeSwitchInfosSwitchInfo["Content"].asString();
+			if(!valuePreviewsPreviewSwitchInfosSwitchInfo["StrategyName"].isNull())
+				switchInfosObject.strategyName = valuePreviewsPreviewSwitchInfosSwitchInfo["StrategyName"].asString();
+			if(!valuePreviewsPreviewSwitchInfosSwitchInfo["Content"].isNull())
+				switchInfosObject.content = valuePreviewsPreviewSwitchInfosSwitchInfo["Content"].asString();
 			previewsObject.switchInfos.push_back(switchInfosObject);
 		}
 		previews_.push_back(previewsObject);

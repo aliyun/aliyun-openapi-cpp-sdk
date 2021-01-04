@@ -23,6 +23,12 @@ set(alidns_public_header
 set(alidns_public_header_model 
 	include/alibabacloud/alidns/model/AddCustomLineRequest.h
 	include/alibabacloud/alidns/model/AddCustomLineResult.h
+	include/alibabacloud/alidns/model/AddDnsGtmAccessStrategyRequest.h
+	include/alibabacloud/alidns/model/AddDnsGtmAccessStrategyResult.h
+	include/alibabacloud/alidns/model/AddDnsGtmAddressPoolRequest.h
+	include/alibabacloud/alidns/model/AddDnsGtmAddressPoolResult.h
+	include/alibabacloud/alidns/model/AddDnsGtmMonitorRequest.h
+	include/alibabacloud/alidns/model/AddDnsGtmMonitorResult.h
 	include/alibabacloud/alidns/model/AddDomainRequest.h
 	include/alibabacloud/alidns/model/AddDomainResult.h
 	include/alibabacloud/alidns/model/AddDomainBackupRequest.h
@@ -49,6 +55,10 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/CopyGtmConfigResult.h
 	include/alibabacloud/alidns/model/DeleteCustomLinesRequest.h
 	include/alibabacloud/alidns/model/DeleteCustomLinesResult.h
+	include/alibabacloud/alidns/model/DeleteDnsGtmAccessStrategyRequest.h
+	include/alibabacloud/alidns/model/DeleteDnsGtmAccessStrategyResult.h
+	include/alibabacloud/alidns/model/DeleteDnsGtmAddressPoolRequest.h
+	include/alibabacloud/alidns/model/DeleteDnsGtmAddressPoolResult.h
 	include/alibabacloud/alidns/model/DeleteDomainRequest.h
 	include/alibabacloud/alidns/model/DeleteDomainResult.h
 	include/alibabacloud/alidns/model/DeleteDomainGroupRequest.h
@@ -73,6 +83,36 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribeCustomLinesResult.h
 	include/alibabacloud/alidns/model/DescribeDNSSLBSubDomainsRequest.h
 	include/alibabacloud/alidns/model/DescribeDNSSLBSubDomainsResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAccessStrategiesRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAccessStrategiesResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAccessStrategyRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAccessStrategyResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAccessStrategyAvailableConfigRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAccessStrategyAvailableConfigResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAddrAttributeInfoRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAddrAttributeInfoResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAddressPoolAvailableConfigRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAddressPoolAvailableConfigResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAvailableAlertGroupRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmAvailableAlertGroupResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceAddressPoolRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceAddressPoolResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceAddressPoolsRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceAddressPoolsResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceStatusRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceStatusResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceSystemCnameRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstanceSystemCnameResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstancesRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmInstancesResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmLogsRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmLogsResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmMonitorAvailableConfigRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmMonitorAvailableConfigResult.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmMonitorConfigRequest.h
+	include/alibabacloud/alidns/model/DescribeDnsGtmMonitorConfigResult.h
 	include/alibabacloud/alidns/model/DescribeDnsProductInstanceRequest.h
 	include/alibabacloud/alidns/model/DescribeDnsProductInstanceResult.h
 	include/alibabacloud/alidns/model/DescribeDnsProductInstancesRequest.h
@@ -167,6 +207,10 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/ListTagResourcesResult.h
 	include/alibabacloud/alidns/model/ModifyHichinaDomainDNSRequest.h
 	include/alibabacloud/alidns/model/ModifyHichinaDomainDNSResult.h
+	include/alibabacloud/alidns/model/MoveDomainResourceGroupRequest.h
+	include/alibabacloud/alidns/model/MoveDomainResourceGroupResult.h
+	include/alibabacloud/alidns/model/MoveGtmResourceGroupRequest.h
+	include/alibabacloud/alidns/model/MoveGtmResourceGroupResult.h
 	include/alibabacloud/alidns/model/OperateBatchDomainRequest.h
 	include/alibabacloud/alidns/model/OperateBatchDomainResult.h
 	include/alibabacloud/alidns/model/PreviewGtmRecoveryPlanRequest.h
@@ -177,6 +221,10 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/RollbackGtmRecoveryPlanResult.h
 	include/alibabacloud/alidns/model/SetDNSSLBStatusRequest.h
 	include/alibabacloud/alidns/model/SetDNSSLBStatusResult.h
+	include/alibabacloud/alidns/model/SetDnsGtmAccessModeRequest.h
+	include/alibabacloud/alidns/model/SetDnsGtmAccessModeResult.h
+	include/alibabacloud/alidns/model/SetDnsGtmMonitorStatusRequest.h
+	include/alibabacloud/alidns/model/SetDnsGtmMonitorStatusResult.h
 	include/alibabacloud/alidns/model/SetDomainDnssecStatusRequest.h
 	include/alibabacloud/alidns/model/SetDomainDnssecStatusResult.h
 	include/alibabacloud/alidns/model/SetDomainRecordStatusRequest.h
@@ -185,6 +233,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/SetGtmAccessModeResult.h
 	include/alibabacloud/alidns/model/SetGtmMonitorStatusRequest.h
 	include/alibabacloud/alidns/model/SetGtmMonitorStatusResult.h
+	include/alibabacloud/alidns/model/SwitchDnsGtmInstanceStrategyModeRequest.h
+	include/alibabacloud/alidns/model/SwitchDnsGtmInstanceStrategyModeResult.h
 	include/alibabacloud/alidns/model/TagResourcesRequest.h
 	include/alibabacloud/alidns/model/TagResourcesResult.h
 	include/alibabacloud/alidns/model/TransferDomainRequest.h
@@ -197,6 +247,14 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/UpdateCustomLineResult.h
 	include/alibabacloud/alidns/model/UpdateDNSSLBWeightRequest.h
 	include/alibabacloud/alidns/model/UpdateDNSSLBWeightResult.h
+	include/alibabacloud/alidns/model/UpdateDnsGtmAccessStrategyRequest.h
+	include/alibabacloud/alidns/model/UpdateDnsGtmAccessStrategyResult.h
+	include/alibabacloud/alidns/model/UpdateDnsGtmAddressPoolRequest.h
+	include/alibabacloud/alidns/model/UpdateDnsGtmAddressPoolResult.h
+	include/alibabacloud/alidns/model/UpdateDnsGtmInstanceGlobalConfigRequest.h
+	include/alibabacloud/alidns/model/UpdateDnsGtmInstanceGlobalConfigResult.h
+	include/alibabacloud/alidns/model/UpdateDnsGtmMonitorRequest.h
+	include/alibabacloud/alidns/model/UpdateDnsGtmMonitorResult.h
 	include/alibabacloud/alidns/model/UpdateDomainGroupRequest.h
 	include/alibabacloud/alidns/model/UpdateDomainGroupResult.h
 	include/alibabacloud/alidns/model/UpdateDomainRecordRequest.h
@@ -220,6 +278,12 @@ set(alidns_src
 	src/AlidnsClient.cc
 	src/model/AddCustomLineRequest.cc
 	src/model/AddCustomLineResult.cc
+	src/model/AddDnsGtmAccessStrategyRequest.cc
+	src/model/AddDnsGtmAccessStrategyResult.cc
+	src/model/AddDnsGtmAddressPoolRequest.cc
+	src/model/AddDnsGtmAddressPoolResult.cc
+	src/model/AddDnsGtmMonitorRequest.cc
+	src/model/AddDnsGtmMonitorResult.cc
 	src/model/AddDomainRequest.cc
 	src/model/AddDomainResult.cc
 	src/model/AddDomainBackupRequest.cc
@@ -246,6 +310,10 @@ set(alidns_src
 	src/model/CopyGtmConfigResult.cc
 	src/model/DeleteCustomLinesRequest.cc
 	src/model/DeleteCustomLinesResult.cc
+	src/model/DeleteDnsGtmAccessStrategyRequest.cc
+	src/model/DeleteDnsGtmAccessStrategyResult.cc
+	src/model/DeleteDnsGtmAddressPoolRequest.cc
+	src/model/DeleteDnsGtmAddressPoolResult.cc
 	src/model/DeleteDomainRequest.cc
 	src/model/DeleteDomainResult.cc
 	src/model/DeleteDomainGroupRequest.cc
@@ -270,6 +338,36 @@ set(alidns_src
 	src/model/DescribeCustomLinesResult.cc
 	src/model/DescribeDNSSLBSubDomainsRequest.cc
 	src/model/DescribeDNSSLBSubDomainsResult.cc
+	src/model/DescribeDnsGtmAccessStrategiesRequest.cc
+	src/model/DescribeDnsGtmAccessStrategiesResult.cc
+	src/model/DescribeDnsGtmAccessStrategyRequest.cc
+	src/model/DescribeDnsGtmAccessStrategyResult.cc
+	src/model/DescribeDnsGtmAccessStrategyAvailableConfigRequest.cc
+	src/model/DescribeDnsGtmAccessStrategyAvailableConfigResult.cc
+	src/model/DescribeDnsGtmAddrAttributeInfoRequest.cc
+	src/model/DescribeDnsGtmAddrAttributeInfoResult.cc
+	src/model/DescribeDnsGtmAddressPoolAvailableConfigRequest.cc
+	src/model/DescribeDnsGtmAddressPoolAvailableConfigResult.cc
+	src/model/DescribeDnsGtmAvailableAlertGroupRequest.cc
+	src/model/DescribeDnsGtmAvailableAlertGroupResult.cc
+	src/model/DescribeDnsGtmInstanceRequest.cc
+	src/model/DescribeDnsGtmInstanceResult.cc
+	src/model/DescribeDnsGtmInstanceAddressPoolRequest.cc
+	src/model/DescribeDnsGtmInstanceAddressPoolResult.cc
+	src/model/DescribeDnsGtmInstanceAddressPoolsRequest.cc
+	src/model/DescribeDnsGtmInstanceAddressPoolsResult.cc
+	src/model/DescribeDnsGtmInstanceStatusRequest.cc
+	src/model/DescribeDnsGtmInstanceStatusResult.cc
+	src/model/DescribeDnsGtmInstanceSystemCnameRequest.cc
+	src/model/DescribeDnsGtmInstanceSystemCnameResult.cc
+	src/model/DescribeDnsGtmInstancesRequest.cc
+	src/model/DescribeDnsGtmInstancesResult.cc
+	src/model/DescribeDnsGtmLogsRequest.cc
+	src/model/DescribeDnsGtmLogsResult.cc
+	src/model/DescribeDnsGtmMonitorAvailableConfigRequest.cc
+	src/model/DescribeDnsGtmMonitorAvailableConfigResult.cc
+	src/model/DescribeDnsGtmMonitorConfigRequest.cc
+	src/model/DescribeDnsGtmMonitorConfigResult.cc
 	src/model/DescribeDnsProductInstanceRequest.cc
 	src/model/DescribeDnsProductInstanceResult.cc
 	src/model/DescribeDnsProductInstancesRequest.cc
@@ -364,6 +462,10 @@ set(alidns_src
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyHichinaDomainDNSRequest.cc
 	src/model/ModifyHichinaDomainDNSResult.cc
+	src/model/MoveDomainResourceGroupRequest.cc
+	src/model/MoveDomainResourceGroupResult.cc
+	src/model/MoveGtmResourceGroupRequest.cc
+	src/model/MoveGtmResourceGroupResult.cc
 	src/model/OperateBatchDomainRequest.cc
 	src/model/OperateBatchDomainResult.cc
 	src/model/PreviewGtmRecoveryPlanRequest.cc
@@ -374,6 +476,10 @@ set(alidns_src
 	src/model/RollbackGtmRecoveryPlanResult.cc
 	src/model/SetDNSSLBStatusRequest.cc
 	src/model/SetDNSSLBStatusResult.cc
+	src/model/SetDnsGtmAccessModeRequest.cc
+	src/model/SetDnsGtmAccessModeResult.cc
+	src/model/SetDnsGtmMonitorStatusRequest.cc
+	src/model/SetDnsGtmMonitorStatusResult.cc
 	src/model/SetDomainDnssecStatusRequest.cc
 	src/model/SetDomainDnssecStatusResult.cc
 	src/model/SetDomainRecordStatusRequest.cc
@@ -382,6 +488,8 @@ set(alidns_src
 	src/model/SetGtmAccessModeResult.cc
 	src/model/SetGtmMonitorStatusRequest.cc
 	src/model/SetGtmMonitorStatusResult.cc
+	src/model/SwitchDnsGtmInstanceStrategyModeRequest.cc
+	src/model/SwitchDnsGtmInstanceStrategyModeResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/TransferDomainRequest.cc
@@ -394,6 +502,14 @@ set(alidns_src
 	src/model/UpdateCustomLineResult.cc
 	src/model/UpdateDNSSLBWeightRequest.cc
 	src/model/UpdateDNSSLBWeightResult.cc
+	src/model/UpdateDnsGtmAccessStrategyRequest.cc
+	src/model/UpdateDnsGtmAccessStrategyResult.cc
+	src/model/UpdateDnsGtmAddressPoolRequest.cc
+	src/model/UpdateDnsGtmAddressPoolResult.cc
+	src/model/UpdateDnsGtmInstanceGlobalConfigRequest.cc
+	src/model/UpdateDnsGtmInstanceGlobalConfigResult.cc
+	src/model/UpdateDnsGtmMonitorRequest.cc
+	src/model/UpdateDnsGtmMonitorResult.cc
 	src/model/UpdateDomainGroupRequest.cc
 	src/model/UpdateDomainGroupResult.cc
 	src/model/UpdateDomainRecordRequest.cc

@@ -47,6 +47,8 @@ void DescribeDomainStatisticsSummaryResult::parse(const std::string &payload)
 			statisticsObject.domainName = valueStatisticsStatistic["DomainName"].asString();
 		if(!valueStatisticsStatistic["Count"].isNull())
 			statisticsObject.count = std::stol(valueStatisticsStatistic["Count"].asString());
+		if(!valueStatisticsStatistic["DomainType"].isNull())
+			statisticsObject.domainType = valueStatisticsStatistic["DomainType"].asString();
 		statistics_.push_back(statisticsObject);
 	}
 	if(!value["TotalItems"].isNull())

@@ -87,6 +87,114 @@ AlidnsClient::AddCustomLineOutcomeCallable AlidnsClient::addCustomLineCallable(c
 	return task->get_future();
 }
 
+AlidnsClient::AddDnsGtmAccessStrategyOutcome AlidnsClient::addDnsGtmAccessStrategy(const AddDnsGtmAccessStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDnsGtmAccessStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDnsGtmAccessStrategyOutcome(AddDnsGtmAccessStrategyResult(outcome.result()));
+	else
+		return AddDnsGtmAccessStrategyOutcome(outcome.error());
+}
+
+void AlidnsClient::addDnsGtmAccessStrategyAsync(const AddDnsGtmAccessStrategyRequest& request, const AddDnsGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDnsGtmAccessStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::AddDnsGtmAccessStrategyOutcomeCallable AlidnsClient::addDnsGtmAccessStrategyCallable(const AddDnsGtmAccessStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDnsGtmAccessStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->addDnsGtmAccessStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::AddDnsGtmAddressPoolOutcome AlidnsClient::addDnsGtmAddressPool(const AddDnsGtmAddressPoolRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDnsGtmAddressPoolOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDnsGtmAddressPoolOutcome(AddDnsGtmAddressPoolResult(outcome.result()));
+	else
+		return AddDnsGtmAddressPoolOutcome(outcome.error());
+}
+
+void AlidnsClient::addDnsGtmAddressPoolAsync(const AddDnsGtmAddressPoolRequest& request, const AddDnsGtmAddressPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDnsGtmAddressPool(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::AddDnsGtmAddressPoolOutcomeCallable AlidnsClient::addDnsGtmAddressPoolCallable(const AddDnsGtmAddressPoolRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDnsGtmAddressPoolOutcome()>>(
+			[this, request]()
+			{
+			return this->addDnsGtmAddressPool(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::AddDnsGtmMonitorOutcome AlidnsClient::addDnsGtmMonitor(const AddDnsGtmMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDnsGtmMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDnsGtmMonitorOutcome(AddDnsGtmMonitorResult(outcome.result()));
+	else
+		return AddDnsGtmMonitorOutcome(outcome.error());
+}
+
+void AlidnsClient::addDnsGtmMonitorAsync(const AddDnsGtmMonitorRequest& request, const AddDnsGtmMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDnsGtmMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::AddDnsGtmMonitorOutcomeCallable AlidnsClient::addDnsGtmMonitorCallable(const AddDnsGtmMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDnsGtmMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->addDnsGtmMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::AddDomainOutcome AlidnsClient::addDomain(const AddDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,6 +663,78 @@ AlidnsClient::DeleteCustomLinesOutcomeCallable AlidnsClient::deleteCustomLinesCa
 	return task->get_future();
 }
 
+AlidnsClient::DeleteDnsGtmAccessStrategyOutcome AlidnsClient::deleteDnsGtmAccessStrategy(const DeleteDnsGtmAccessStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDnsGtmAccessStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDnsGtmAccessStrategyOutcome(DeleteDnsGtmAccessStrategyResult(outcome.result()));
+	else
+		return DeleteDnsGtmAccessStrategyOutcome(outcome.error());
+}
+
+void AlidnsClient::deleteDnsGtmAccessStrategyAsync(const DeleteDnsGtmAccessStrategyRequest& request, const DeleteDnsGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDnsGtmAccessStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DeleteDnsGtmAccessStrategyOutcomeCallable AlidnsClient::deleteDnsGtmAccessStrategyCallable(const DeleteDnsGtmAccessStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDnsGtmAccessStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDnsGtmAccessStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DeleteDnsGtmAddressPoolOutcome AlidnsClient::deleteDnsGtmAddressPool(const DeleteDnsGtmAddressPoolRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDnsGtmAddressPoolOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDnsGtmAddressPoolOutcome(DeleteDnsGtmAddressPoolResult(outcome.result()));
+	else
+		return DeleteDnsGtmAddressPoolOutcome(outcome.error());
+}
+
+void AlidnsClient::deleteDnsGtmAddressPoolAsync(const DeleteDnsGtmAddressPoolRequest& request, const DeleteDnsGtmAddressPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDnsGtmAddressPool(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DeleteDnsGtmAddressPoolOutcomeCallable AlidnsClient::deleteDnsGtmAddressPoolCallable(const DeleteDnsGtmAddressPoolRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDnsGtmAddressPoolOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDnsGtmAddressPool(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DeleteDomainOutcome AlidnsClient::deleteDomain(const DeleteDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1161,546 @@ AlidnsClient::DescribeDNSSLBSubDomainsOutcomeCallable AlidnsClient::describeDNSS
 			[this, request]()
 			{
 			return this->describeDNSSLBSubDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmAccessStrategiesOutcome AlidnsClient::describeDnsGtmAccessStrategies(const DescribeDnsGtmAccessStrategiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmAccessStrategiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmAccessStrategiesOutcome(DescribeDnsGtmAccessStrategiesResult(outcome.result()));
+	else
+		return DescribeDnsGtmAccessStrategiesOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmAccessStrategiesAsync(const DescribeDnsGtmAccessStrategiesRequest& request, const DescribeDnsGtmAccessStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmAccessStrategies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmAccessStrategiesOutcomeCallable AlidnsClient::describeDnsGtmAccessStrategiesCallable(const DescribeDnsGtmAccessStrategiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmAccessStrategiesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmAccessStrategies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmAccessStrategyOutcome AlidnsClient::describeDnsGtmAccessStrategy(const DescribeDnsGtmAccessStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmAccessStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmAccessStrategyOutcome(DescribeDnsGtmAccessStrategyResult(outcome.result()));
+	else
+		return DescribeDnsGtmAccessStrategyOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmAccessStrategyAsync(const DescribeDnsGtmAccessStrategyRequest& request, const DescribeDnsGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmAccessStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmAccessStrategyOutcomeCallable AlidnsClient::describeDnsGtmAccessStrategyCallable(const DescribeDnsGtmAccessStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmAccessStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmAccessStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmAccessStrategyAvailableConfigOutcome AlidnsClient::describeDnsGtmAccessStrategyAvailableConfig(const DescribeDnsGtmAccessStrategyAvailableConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmAccessStrategyAvailableConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmAccessStrategyAvailableConfigOutcome(DescribeDnsGtmAccessStrategyAvailableConfigResult(outcome.result()));
+	else
+		return DescribeDnsGtmAccessStrategyAvailableConfigOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmAccessStrategyAvailableConfigAsync(const DescribeDnsGtmAccessStrategyAvailableConfigRequest& request, const DescribeDnsGtmAccessStrategyAvailableConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmAccessStrategyAvailableConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmAccessStrategyAvailableConfigOutcomeCallable AlidnsClient::describeDnsGtmAccessStrategyAvailableConfigCallable(const DescribeDnsGtmAccessStrategyAvailableConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmAccessStrategyAvailableConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmAccessStrategyAvailableConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmAddrAttributeInfoOutcome AlidnsClient::describeDnsGtmAddrAttributeInfo(const DescribeDnsGtmAddrAttributeInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmAddrAttributeInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmAddrAttributeInfoOutcome(DescribeDnsGtmAddrAttributeInfoResult(outcome.result()));
+	else
+		return DescribeDnsGtmAddrAttributeInfoOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmAddrAttributeInfoAsync(const DescribeDnsGtmAddrAttributeInfoRequest& request, const DescribeDnsGtmAddrAttributeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmAddrAttributeInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmAddrAttributeInfoOutcomeCallable AlidnsClient::describeDnsGtmAddrAttributeInfoCallable(const DescribeDnsGtmAddrAttributeInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmAddrAttributeInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmAddrAttributeInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmAddressPoolAvailableConfigOutcome AlidnsClient::describeDnsGtmAddressPoolAvailableConfig(const DescribeDnsGtmAddressPoolAvailableConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmAddressPoolAvailableConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmAddressPoolAvailableConfigOutcome(DescribeDnsGtmAddressPoolAvailableConfigResult(outcome.result()));
+	else
+		return DescribeDnsGtmAddressPoolAvailableConfigOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmAddressPoolAvailableConfigAsync(const DescribeDnsGtmAddressPoolAvailableConfigRequest& request, const DescribeDnsGtmAddressPoolAvailableConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmAddressPoolAvailableConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmAddressPoolAvailableConfigOutcomeCallable AlidnsClient::describeDnsGtmAddressPoolAvailableConfigCallable(const DescribeDnsGtmAddressPoolAvailableConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmAddressPoolAvailableConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmAddressPoolAvailableConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmAvailableAlertGroupOutcome AlidnsClient::describeDnsGtmAvailableAlertGroup(const DescribeDnsGtmAvailableAlertGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmAvailableAlertGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmAvailableAlertGroupOutcome(DescribeDnsGtmAvailableAlertGroupResult(outcome.result()));
+	else
+		return DescribeDnsGtmAvailableAlertGroupOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmAvailableAlertGroupAsync(const DescribeDnsGtmAvailableAlertGroupRequest& request, const DescribeDnsGtmAvailableAlertGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmAvailableAlertGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmAvailableAlertGroupOutcomeCallable AlidnsClient::describeDnsGtmAvailableAlertGroupCallable(const DescribeDnsGtmAvailableAlertGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmAvailableAlertGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmAvailableAlertGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmInstanceOutcome AlidnsClient::describeDnsGtmInstance(const DescribeDnsGtmInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmInstanceOutcome(DescribeDnsGtmInstanceResult(outcome.result()));
+	else
+		return DescribeDnsGtmInstanceOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmInstanceAsync(const DescribeDnsGtmInstanceRequest& request, const DescribeDnsGtmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmInstanceOutcomeCallable AlidnsClient::describeDnsGtmInstanceCallable(const DescribeDnsGtmInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmInstanceAddressPoolOutcome AlidnsClient::describeDnsGtmInstanceAddressPool(const DescribeDnsGtmInstanceAddressPoolRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmInstanceAddressPoolOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmInstanceAddressPoolOutcome(DescribeDnsGtmInstanceAddressPoolResult(outcome.result()));
+	else
+		return DescribeDnsGtmInstanceAddressPoolOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmInstanceAddressPoolAsync(const DescribeDnsGtmInstanceAddressPoolRequest& request, const DescribeDnsGtmInstanceAddressPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmInstanceAddressPool(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmInstanceAddressPoolOutcomeCallable AlidnsClient::describeDnsGtmInstanceAddressPoolCallable(const DescribeDnsGtmInstanceAddressPoolRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmInstanceAddressPoolOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmInstanceAddressPool(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmInstanceAddressPoolsOutcome AlidnsClient::describeDnsGtmInstanceAddressPools(const DescribeDnsGtmInstanceAddressPoolsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmInstanceAddressPoolsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmInstanceAddressPoolsOutcome(DescribeDnsGtmInstanceAddressPoolsResult(outcome.result()));
+	else
+		return DescribeDnsGtmInstanceAddressPoolsOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmInstanceAddressPoolsAsync(const DescribeDnsGtmInstanceAddressPoolsRequest& request, const DescribeDnsGtmInstanceAddressPoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmInstanceAddressPools(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmInstanceAddressPoolsOutcomeCallable AlidnsClient::describeDnsGtmInstanceAddressPoolsCallable(const DescribeDnsGtmInstanceAddressPoolsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmInstanceAddressPoolsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmInstanceAddressPools(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmInstanceStatusOutcome AlidnsClient::describeDnsGtmInstanceStatus(const DescribeDnsGtmInstanceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmInstanceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmInstanceStatusOutcome(DescribeDnsGtmInstanceStatusResult(outcome.result()));
+	else
+		return DescribeDnsGtmInstanceStatusOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmInstanceStatusAsync(const DescribeDnsGtmInstanceStatusRequest& request, const DescribeDnsGtmInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmInstanceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmInstanceStatusOutcomeCallable AlidnsClient::describeDnsGtmInstanceStatusCallable(const DescribeDnsGtmInstanceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmInstanceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmInstanceStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmInstanceSystemCnameOutcome AlidnsClient::describeDnsGtmInstanceSystemCname(const DescribeDnsGtmInstanceSystemCnameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmInstanceSystemCnameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmInstanceSystemCnameOutcome(DescribeDnsGtmInstanceSystemCnameResult(outcome.result()));
+	else
+		return DescribeDnsGtmInstanceSystemCnameOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmInstanceSystemCnameAsync(const DescribeDnsGtmInstanceSystemCnameRequest& request, const DescribeDnsGtmInstanceSystemCnameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmInstanceSystemCname(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmInstanceSystemCnameOutcomeCallable AlidnsClient::describeDnsGtmInstanceSystemCnameCallable(const DescribeDnsGtmInstanceSystemCnameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmInstanceSystemCnameOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmInstanceSystemCname(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmInstancesOutcome AlidnsClient::describeDnsGtmInstances(const DescribeDnsGtmInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmInstancesOutcome(DescribeDnsGtmInstancesResult(outcome.result()));
+	else
+		return DescribeDnsGtmInstancesOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmInstancesAsync(const DescribeDnsGtmInstancesRequest& request, const DescribeDnsGtmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmInstancesOutcomeCallable AlidnsClient::describeDnsGtmInstancesCallable(const DescribeDnsGtmInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmLogsOutcome AlidnsClient::describeDnsGtmLogs(const DescribeDnsGtmLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmLogsOutcome(DescribeDnsGtmLogsResult(outcome.result()));
+	else
+		return DescribeDnsGtmLogsOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmLogsAsync(const DescribeDnsGtmLogsRequest& request, const DescribeDnsGtmLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmLogsOutcomeCallable AlidnsClient::describeDnsGtmLogsCallable(const DescribeDnsGtmLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmMonitorAvailableConfigOutcome AlidnsClient::describeDnsGtmMonitorAvailableConfig(const DescribeDnsGtmMonitorAvailableConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmMonitorAvailableConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmMonitorAvailableConfigOutcome(DescribeDnsGtmMonitorAvailableConfigResult(outcome.result()));
+	else
+		return DescribeDnsGtmMonitorAvailableConfigOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmMonitorAvailableConfigAsync(const DescribeDnsGtmMonitorAvailableConfigRequest& request, const DescribeDnsGtmMonitorAvailableConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmMonitorAvailableConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmMonitorAvailableConfigOutcomeCallable AlidnsClient::describeDnsGtmMonitorAvailableConfigCallable(const DescribeDnsGtmMonitorAvailableConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmMonitorAvailableConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmMonitorAvailableConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsGtmMonitorConfigOutcome AlidnsClient::describeDnsGtmMonitorConfig(const DescribeDnsGtmMonitorConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsGtmMonitorConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsGtmMonitorConfigOutcome(DescribeDnsGtmMonitorConfigResult(outcome.result()));
+	else
+		return DescribeDnsGtmMonitorConfigOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsGtmMonitorConfigAsync(const DescribeDnsGtmMonitorConfigRequest& request, const DescribeDnsGtmMonitorConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsGtmMonitorConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsGtmMonitorConfigOutcomeCallable AlidnsClient::describeDnsGtmMonitorConfigCallable(const DescribeDnsGtmMonitorConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsGtmMonitorConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsGtmMonitorConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2679,6 +3399,78 @@ AlidnsClient::ModifyHichinaDomainDNSOutcomeCallable AlidnsClient::modifyHichinaD
 	return task->get_future();
 }
 
+AlidnsClient::MoveDomainResourceGroupOutcome AlidnsClient::moveDomainResourceGroup(const MoveDomainResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoveDomainResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoveDomainResourceGroupOutcome(MoveDomainResourceGroupResult(outcome.result()));
+	else
+		return MoveDomainResourceGroupOutcome(outcome.error());
+}
+
+void AlidnsClient::moveDomainResourceGroupAsync(const MoveDomainResourceGroupRequest& request, const MoveDomainResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moveDomainResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::MoveDomainResourceGroupOutcomeCallable AlidnsClient::moveDomainResourceGroupCallable(const MoveDomainResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoveDomainResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->moveDomainResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::MoveGtmResourceGroupOutcome AlidnsClient::moveGtmResourceGroup(const MoveGtmResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoveGtmResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoveGtmResourceGroupOutcome(MoveGtmResourceGroupResult(outcome.result()));
+	else
+		return MoveGtmResourceGroupOutcome(outcome.error());
+}
+
+void AlidnsClient::moveGtmResourceGroupAsync(const MoveGtmResourceGroupRequest& request, const MoveGtmResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moveGtmResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::MoveGtmResourceGroupOutcomeCallable AlidnsClient::moveGtmResourceGroupCallable(const MoveGtmResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoveGtmResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->moveGtmResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::OperateBatchDomainOutcome AlidnsClient::operateBatchDomain(const OperateBatchDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2859,6 +3651,78 @@ AlidnsClient::SetDNSSLBStatusOutcomeCallable AlidnsClient::setDNSSLBStatusCallab
 	return task->get_future();
 }
 
+AlidnsClient::SetDnsGtmAccessModeOutcome AlidnsClient::setDnsGtmAccessMode(const SetDnsGtmAccessModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDnsGtmAccessModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDnsGtmAccessModeOutcome(SetDnsGtmAccessModeResult(outcome.result()));
+	else
+		return SetDnsGtmAccessModeOutcome(outcome.error());
+}
+
+void AlidnsClient::setDnsGtmAccessModeAsync(const SetDnsGtmAccessModeRequest& request, const SetDnsGtmAccessModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDnsGtmAccessMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::SetDnsGtmAccessModeOutcomeCallable AlidnsClient::setDnsGtmAccessModeCallable(const SetDnsGtmAccessModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDnsGtmAccessModeOutcome()>>(
+			[this, request]()
+			{
+			return this->setDnsGtmAccessMode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::SetDnsGtmMonitorStatusOutcome AlidnsClient::setDnsGtmMonitorStatus(const SetDnsGtmMonitorStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDnsGtmMonitorStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDnsGtmMonitorStatusOutcome(SetDnsGtmMonitorStatusResult(outcome.result()));
+	else
+		return SetDnsGtmMonitorStatusOutcome(outcome.error());
+}
+
+void AlidnsClient::setDnsGtmMonitorStatusAsync(const SetDnsGtmMonitorStatusRequest& request, const SetDnsGtmMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDnsGtmMonitorStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::SetDnsGtmMonitorStatusOutcomeCallable AlidnsClient::setDnsGtmMonitorStatusCallable(const SetDnsGtmMonitorStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDnsGtmMonitorStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setDnsGtmMonitorStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::SetDomainDnssecStatusOutcome AlidnsClient::setDomainDnssecStatus(const SetDomainDnssecStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2997,6 +3861,42 @@ AlidnsClient::SetGtmMonitorStatusOutcomeCallable AlidnsClient::setGtmMonitorStat
 			[this, request]()
 			{
 			return this->setGtmMonitorStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::SwitchDnsGtmInstanceStrategyModeOutcome AlidnsClient::switchDnsGtmInstanceStrategyMode(const SwitchDnsGtmInstanceStrategyModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchDnsGtmInstanceStrategyModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchDnsGtmInstanceStrategyModeOutcome(SwitchDnsGtmInstanceStrategyModeResult(outcome.result()));
+	else
+		return SwitchDnsGtmInstanceStrategyModeOutcome(outcome.error());
+}
+
+void AlidnsClient::switchDnsGtmInstanceStrategyModeAsync(const SwitchDnsGtmInstanceStrategyModeRequest& request, const SwitchDnsGtmInstanceStrategyModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchDnsGtmInstanceStrategyMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::SwitchDnsGtmInstanceStrategyModeOutcomeCallable AlidnsClient::switchDnsGtmInstanceStrategyModeCallable(const SwitchDnsGtmInstanceStrategyModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchDnsGtmInstanceStrategyModeOutcome()>>(
+			[this, request]()
+			{
+			return this->switchDnsGtmInstanceStrategyMode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3213,6 +4113,150 @@ AlidnsClient::UpdateDNSSLBWeightOutcomeCallable AlidnsClient::updateDNSSLBWeight
 			[this, request]()
 			{
 			return this->updateDNSSLBWeight(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateDnsGtmAccessStrategyOutcome AlidnsClient::updateDnsGtmAccessStrategy(const UpdateDnsGtmAccessStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDnsGtmAccessStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDnsGtmAccessStrategyOutcome(UpdateDnsGtmAccessStrategyResult(outcome.result()));
+	else
+		return UpdateDnsGtmAccessStrategyOutcome(outcome.error());
+}
+
+void AlidnsClient::updateDnsGtmAccessStrategyAsync(const UpdateDnsGtmAccessStrategyRequest& request, const UpdateDnsGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDnsGtmAccessStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateDnsGtmAccessStrategyOutcomeCallable AlidnsClient::updateDnsGtmAccessStrategyCallable(const UpdateDnsGtmAccessStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDnsGtmAccessStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDnsGtmAccessStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateDnsGtmAddressPoolOutcome AlidnsClient::updateDnsGtmAddressPool(const UpdateDnsGtmAddressPoolRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDnsGtmAddressPoolOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDnsGtmAddressPoolOutcome(UpdateDnsGtmAddressPoolResult(outcome.result()));
+	else
+		return UpdateDnsGtmAddressPoolOutcome(outcome.error());
+}
+
+void AlidnsClient::updateDnsGtmAddressPoolAsync(const UpdateDnsGtmAddressPoolRequest& request, const UpdateDnsGtmAddressPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDnsGtmAddressPool(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateDnsGtmAddressPoolOutcomeCallable AlidnsClient::updateDnsGtmAddressPoolCallable(const UpdateDnsGtmAddressPoolRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDnsGtmAddressPoolOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDnsGtmAddressPool(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateDnsGtmInstanceGlobalConfigOutcome AlidnsClient::updateDnsGtmInstanceGlobalConfig(const UpdateDnsGtmInstanceGlobalConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDnsGtmInstanceGlobalConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDnsGtmInstanceGlobalConfigOutcome(UpdateDnsGtmInstanceGlobalConfigResult(outcome.result()));
+	else
+		return UpdateDnsGtmInstanceGlobalConfigOutcome(outcome.error());
+}
+
+void AlidnsClient::updateDnsGtmInstanceGlobalConfigAsync(const UpdateDnsGtmInstanceGlobalConfigRequest& request, const UpdateDnsGtmInstanceGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDnsGtmInstanceGlobalConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateDnsGtmInstanceGlobalConfigOutcomeCallable AlidnsClient::updateDnsGtmInstanceGlobalConfigCallable(const UpdateDnsGtmInstanceGlobalConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDnsGtmInstanceGlobalConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDnsGtmInstanceGlobalConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateDnsGtmMonitorOutcome AlidnsClient::updateDnsGtmMonitor(const UpdateDnsGtmMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDnsGtmMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDnsGtmMonitorOutcome(UpdateDnsGtmMonitorResult(outcome.result()));
+	else
+		return UpdateDnsGtmMonitorOutcome(outcome.error());
+}
+
+void AlidnsClient::updateDnsGtmMonitorAsync(const UpdateDnsGtmMonitorRequest& request, const UpdateDnsGtmMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDnsGtmMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateDnsGtmMonitorOutcomeCallable AlidnsClient::updateDnsGtmMonitorCallable(const UpdateDnsGtmMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDnsGtmMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDnsGtmMonitor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

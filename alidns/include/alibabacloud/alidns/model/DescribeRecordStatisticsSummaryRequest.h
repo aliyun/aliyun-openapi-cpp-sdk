@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setStartDate(const std::string& startDate);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
+				std::string getDomainType()const;
+				void setDomainType(const std::string& domainType);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
 				std::string getLang()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				long threshold_;
 				std::string startDate_;
 				long pageNumber_;
+				std::string domainType_;
 				long pageSize_;
 				std::string lang_;
 				std::string keyword_;

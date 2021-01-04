@@ -55,16 +55,16 @@ void DescribeCustomLinesResult::parse(const std::string &payload)
 			customLinesObject.ipSegments = valueCustomLinesCustomLine["IpSegments"].asString();
 		if(!valueCustomLinesCustomLine["Code"].isNull())
 			customLinesObject.code = valueCustomLinesCustomLine["Code"].asString();
-		auto allIpSegmentListNode = allCustomLinesNode["IpSegmentList"]["IpSegment"];
-		for (auto allCustomLinesNodeIpSegmentListIpSegment : allIpSegmentListNode)
+		auto allIpSegmentListNode = valueCustomLinesCustomLine["IpSegmentList"]["IpSegment"];
+		for (auto valueCustomLinesCustomLineIpSegmentListIpSegment : allIpSegmentListNode)
 		{
 			CustomLine::IpSegment ipSegmentListObject;
-			if(!allCustomLinesNodeIpSegmentListIpSegment["Name"].isNull())
-				ipSegmentListObject.name = allCustomLinesNodeIpSegmentListIpSegment["Name"].asString();
-			if(!allCustomLinesNodeIpSegmentListIpSegment["StartIp"].isNull())
-				ipSegmentListObject.startIp = allCustomLinesNodeIpSegmentListIpSegment["StartIp"].asString();
-			if(!allCustomLinesNodeIpSegmentListIpSegment["EndIp"].isNull())
-				ipSegmentListObject.endIp = allCustomLinesNodeIpSegmentListIpSegment["EndIp"].asString();
+			if(!valueCustomLinesCustomLineIpSegmentListIpSegment["Name"].isNull())
+				ipSegmentListObject.name = valueCustomLinesCustomLineIpSegmentListIpSegment["Name"].asString();
+			if(!valueCustomLinesCustomLineIpSegmentListIpSegment["StartIp"].isNull())
+				ipSegmentListObject.startIp = valueCustomLinesCustomLineIpSegmentListIpSegment["StartIp"].asString();
+			if(!valueCustomLinesCustomLineIpSegmentListIpSegment["EndIp"].isNull())
+				ipSegmentListObject.endIp = valueCustomLinesCustomLineIpSegmentListIpSegment["EndIp"].asString();
 			customLinesObject.ipSegmentList.push_back(ipSegmentListObject);
 		}
 		customLines_.push_back(customLinesObject);

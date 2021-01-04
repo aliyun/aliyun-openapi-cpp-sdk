@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setPageNumber(long pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDomainType()const;
+				void setDomainType(const std::string& domainType);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				long getPageSize()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				long pageNumber_;
 				std::string accessKeyId_;
+				std::string domainType_;
 				std::string userClientIp_;
 				long pageSize_;
 				std::string lang_;

@@ -47,14 +47,14 @@ void DescribeGtmRecoveryPlanAvailableConfigResult::parse(const std::string &payl
 			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
 		if(!valueInstancesInstance["InstanceName"].isNull())
 			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
-		auto allAddrPoolsNode = allInstancesNode["AddrPools"]["AddrPool"];
-		for (auto allInstancesNodeAddrPoolsAddrPool : allAddrPoolsNode)
+		auto allAddrPoolsNode = valueInstancesInstance["AddrPools"]["AddrPool"];
+		for (auto valueInstancesInstanceAddrPoolsAddrPool : allAddrPoolsNode)
 		{
 			Instance::AddrPool addrPoolsObject;
-			if(!allInstancesNodeAddrPoolsAddrPool["AddrPoolId"].isNull())
-				addrPoolsObject.addrPoolId = allInstancesNodeAddrPoolsAddrPool["AddrPoolId"].asString();
-			if(!allInstancesNodeAddrPoolsAddrPool["Name"].isNull())
-				addrPoolsObject.name = allInstancesNodeAddrPoolsAddrPool["Name"].asString();
+			if(!valueInstancesInstanceAddrPoolsAddrPool["AddrPoolId"].isNull())
+				addrPoolsObject.addrPoolId = valueInstancesInstanceAddrPoolsAddrPool["AddrPoolId"].asString();
+			if(!valueInstancesInstanceAddrPoolsAddrPool["Name"].isNull())
+				addrPoolsObject.name = valueInstancesInstanceAddrPoolsAddrPool["Name"].asString();
 			instancesObject.addrPools.push_back(addrPoolsObject);
 		}
 		instances_.push_back(instancesObject);

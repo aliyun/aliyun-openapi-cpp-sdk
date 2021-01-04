@@ -49,6 +49,17 @@ void DescribeDnsProductInstancesRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDnsProductInstancesRequest::getDomainType()const
+{
+	return domainType_;
+}
+
+void DescribeDnsProductInstancesRequest::setDomainType(const std::string& domainType)
+{
+	domainType_ = domainType;
+	setParameter("DomainType", domainType);
+}
+
 std::string DescribeDnsProductInstancesRequest::getUserClientIp()const
 {
 	return userClientIp_;

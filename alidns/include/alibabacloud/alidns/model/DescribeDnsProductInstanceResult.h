@@ -49,6 +49,7 @@ namespace AlibabaCloud
 				long getEndTimestamp()const;
 				long getDDosDefendQuery()const;
 				std::string getDnsSecurity()const;
+				std::string getDomainType()const;
 				long getURLForwardCount()const;
 				long getTTLMinValue()const;
 				std::string getPaymentType()const;
@@ -86,6 +87,7 @@ namespace AlibabaCloud
 				long endTimestamp_;
 				long dDosDefendQuery_;
 				std::string dnsSecurity_;
+				std::string domainType_;
 				long uRLForwardCount_;
 				long tTLMinValue_;
 				std::string paymentType_;

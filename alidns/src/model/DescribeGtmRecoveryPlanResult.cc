@@ -49,16 +49,16 @@ void DescribeGtmRecoveryPlanResult::parse(const std::string &payload)
 			faultAddrPoolsObject.addrPoolName = valueFaultAddrPoolsFaultAddrPool["AddrPoolName"].asString();
 		if(!valueFaultAddrPoolsFaultAddrPool["InstanceId"].isNull())
 			faultAddrPoolsObject.instanceId = valueFaultAddrPoolsFaultAddrPool["InstanceId"].asString();
-		auto allAddrsNode = allFaultAddrPoolsNode["Addrs"]["Addr"];
-		for (auto allFaultAddrPoolsNodeAddrsAddr : allAddrsNode)
+		auto allAddrsNode = valueFaultAddrPoolsFaultAddrPool["Addrs"]["Addr"];
+		for (auto valueFaultAddrPoolsFaultAddrPoolAddrsAddr : allAddrsNode)
 		{
 			FaultAddrPool::Addr addrsObject;
-			if(!allFaultAddrPoolsNodeAddrsAddr["Id"].isNull())
-				addrsObject.id = std::stol(allFaultAddrPoolsNodeAddrsAddr["Id"].asString());
-			if(!allFaultAddrPoolsNodeAddrsAddr["Mode"].isNull())
-				addrsObject.mode = allFaultAddrPoolsNodeAddrsAddr["Mode"].asString();
-			if(!allFaultAddrPoolsNodeAddrsAddr["Value"].isNull())
-				addrsObject.value = allFaultAddrPoolsNodeAddrsAddr["Value"].asString();
+			if(!valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Id"].isNull())
+				addrsObject.id = std::stol(valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Id"].asString());
+			if(!valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Mode"].isNull())
+				addrsObject.mode = valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Mode"].asString();
+			if(!valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Value"].isNull())
+				addrsObject.value = valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Value"].asString();
 			faultAddrPoolsObject.addrs.push_back(addrsObject);
 		}
 		faultAddrPools_.push_back(faultAddrPoolsObject);

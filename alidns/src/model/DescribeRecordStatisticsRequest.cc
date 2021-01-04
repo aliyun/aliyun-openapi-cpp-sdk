@@ -71,6 +71,17 @@ void DescribeRecordStatisticsRequest::setEndDate(const std::string& endDate)
 	setParameter("EndDate", endDate);
 }
 
+std::string DescribeRecordStatisticsRequest::getDomainType()const
+{
+	return domainType_;
+}
+
+void DescribeRecordStatisticsRequest::setDomainType(const std::string& domainType)
+{
+	domainType_ = domainType;
+	setParameter("DomainType", domainType);
+}
+
 std::string DescribeRecordStatisticsRequest::getUserClientIp()const
 {
 	return userClientIp_;

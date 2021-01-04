@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setDomainName(const std::string& domainName);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDomainType()const;
+				void setDomainType(const std::string& domainType);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string domainName_;
 				std::string accessKeyId_;
+				std::string domainType_;
 				std::string userClientIp_;
 				std::string lang_;
 

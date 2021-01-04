@@ -53,6 +53,7 @@ namespace AlibabaCloud
 				std::string getResourceGroupId()const;
 				std::string getDomainName()const;
 				std::string getInstanceId()const;
+				std::string getCreateTime()const;
 				std::string getPunyCode()const;
 				std::vector<std::string> getDnsServers()const;
 				std::string getRemark()const;
@@ -78,6 +79,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string domainName_;
 				std::string instanceId_;
+				std::string createTime_;
 				std::string punyCode_;
 				std::vector<std::string> dnsServers_;
 				std::string remark_;

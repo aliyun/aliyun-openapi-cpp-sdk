@@ -115,12 +115,19 @@ void DescribeDnsProductInstancesResult::parse(const std::string &payload)
 		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["DomainType"].isNull())
+		domainType_ = value["DomainType"].asString();
 
 }
 
 long DescribeDnsProductInstancesResult::getTotalCount()const
 {
 	return totalCount_;
+}
+
+std::string DescribeDnsProductInstancesResult::getDomainType()const
+{
+	return domainType_;
 }
 
 long DescribeDnsProductInstancesResult::getPageSize()const

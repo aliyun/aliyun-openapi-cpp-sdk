@@ -79,14 +79,14 @@ void DescribeDomainsResult::parse(const std::string &payload)
 			domainsObject.createTimestamp = std::stol(valueDomainsDomain["CreateTimestamp"].asString());
 		if(!valueDomainsDomain["ResourceGroupId"].isNull())
 			domainsObject.resourceGroupId = valueDomainsDomain["ResourceGroupId"].asString();
-		auto allTagsNode = allDomainsNode["Tags"]["Tag"];
-		for (auto allDomainsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueDomainsDomain["Tags"]["Tag"];
+		for (auto valueDomainsDomainTagsTag : allTagsNode)
 		{
 			Domain::Tag tagsObject;
-			if(!allDomainsNodeTagsTag["Key"].isNull())
-				tagsObject.key = allDomainsNodeTagsTag["Key"].asString();
-			if(!allDomainsNodeTagsTag["Value"].isNull())
-				tagsObject.value = allDomainsNodeTagsTag["Value"].asString();
+			if(!valueDomainsDomainTagsTag["Key"].isNull())
+				tagsObject.key = valueDomainsDomainTagsTag["Key"].asString();
+			if(!valueDomainsDomainTagsTag["Value"].isNull())
+				tagsObject.value = valueDomainsDomainTagsTag["Value"].asString();
 			domainsObject.tags.push_back(tagsObject);
 		}
 		auto allDnsServers = value["DnsServers"]["DnsServer"];

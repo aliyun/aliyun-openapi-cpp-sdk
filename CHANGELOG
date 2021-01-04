@@ -1,3 +1,6 @@
+2021-01-04 Version: patch
+- Supported API for GTM.
+
 2020-12-31 Version: patch
 - Add support for thing model function block features, including thing model APIs like CreateThingModel,UpdateThingModel,SetDeviceProperty,InvokeThingService etc.
 

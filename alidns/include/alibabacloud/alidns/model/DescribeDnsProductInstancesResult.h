@@ -73,6 +73,7 @@ namespace AlibabaCloud
 				explicit DescribeDnsProductInstancesResult(const std::string &payload);
 				~DescribeDnsProductInstancesResult();
 				long getTotalCount()const;
+				std::string getDomainType()const;
 				long getPageSize()const;
 				long getPageNumber()const;
 				std::vector<DnsProduct> getDnsProducts()const;
@@ -81,6 +82,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				long totalCount_;
+				std::string domainType_;
 				long pageSize_;
 				long pageNumber_;
 				std::vector<DnsProduct> dnsProducts_;

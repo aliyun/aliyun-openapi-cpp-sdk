@@ -60,6 +60,17 @@ void DescribeRecordStatisticsSummaryRequest::setPageNumber(long pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeRecordStatisticsSummaryRequest::getDomainType()const
+{
+	return domainType_;
+}
+
+void DescribeRecordStatisticsSummaryRequest::setDomainType(const std::string& domainType)
+{
+	domainType_ = domainType;
+	setParameter("DomainType", domainType);
+}
+
 long DescribeRecordStatisticsSummaryRequest::getPageSize()const
 {
 	return pageSize_;

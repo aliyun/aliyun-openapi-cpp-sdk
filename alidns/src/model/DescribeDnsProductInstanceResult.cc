@@ -106,6 +106,8 @@ void DescribeDnsProductInstanceResult::parse(const std::string &payload)
 		dnsSecurity_ = value["DnsSecurity"].asString();
 	if(!value["PaymentType"].isNull())
 		paymentType_ = value["PaymentType"].asString();
+	if(!value["DomainType"].isNull())
+		domainType_ = value["DomainType"].asString();
 
 }
 
@@ -167,6 +169,11 @@ long DescribeDnsProductInstanceResult::getDDosDefendQuery()const
 std::string DescribeDnsProductInstanceResult::getDnsSecurity()const
 {
 	return dnsSecurity_;
+}
+
+std::string DescribeDnsProductInstanceResult::getDomainType()const
+{
+	return domainType_;
 }
 
 long DescribeDnsProductInstanceResult::getURLForwardCount()const
