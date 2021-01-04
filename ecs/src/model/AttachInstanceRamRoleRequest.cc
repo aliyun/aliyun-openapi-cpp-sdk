@@ -49,6 +49,17 @@ void AttachInstanceRamRoleRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string AttachInstanceRamRoleRequest::getPolicy()const
+{
+	return policy_;
+}
+
+void AttachInstanceRamRoleRequest::setPolicy(const std::string& policy)
+{
+	policy_ = policy;
+	setParameter("Policy", policy);
+}
+
 std::string AttachInstanceRamRoleRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

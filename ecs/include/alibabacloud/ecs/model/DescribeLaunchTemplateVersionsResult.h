@@ -44,12 +44,14 @@ namespace AlibabaCloud
 							int size;
 							std::string encrypted;
 							std::string device;
+							std::string performanceLevel;
 							bool deleteWithInstance;
 							std::string diskName;
 						};
 						struct NetworkInterface
 						{
 							std::string description;
+							std::vector<std::string> securityGroupIds1;
 							std::string vSwitchId;
 							std::string securityGroupId;
 							std::string networkInterfaceName;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 						};
 						std::string imageOwnerAlias;
 						std::string description;
+						std::string privateIpAddress;
 						std::vector<DataDisk> dataDisks;
 						std::string resourceGroupId;
 						int systemDiskSize;
@@ -70,6 +73,7 @@ namespace AlibabaCloud
 						std::string instanceChargeType;
 						int spotDuration;
 						std::string ramRoleName;
+						std::string systemDiskPerformanceLevel;
 						std::string networkType;
 						std::vector<NetworkInterface> networkInterfaces;
 						std::string imageId;
@@ -86,9 +90,11 @@ namespace AlibabaCloud
 						std::string securityGroupId;
 						std::string vSwitchId;
 						int period;
+						std::vector<std::string> securityGroupIds;
 						std::string systemDiskCategory;
 						std::string internetChargeType;
 						std::string instanceName;
+						bool systemDiskDeleteWithInstance;
 						int internetMaxBandwidthOut;
 						bool enableVmOsConfig;
 						std::string vpcId;

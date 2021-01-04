@@ -14,52 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ecs/model/CreateInstanceResult.h>
+#include <alibabacloud/ecs/model/ModifyCapacityReservationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ecs;
 using namespace AlibabaCloud::Ecs::Model;
 
-CreateInstanceResult::CreateInstanceResult() :
+ModifyCapacityReservationResult::ModifyCapacityReservationResult() :
 	ServiceResult()
 {}
 
-CreateInstanceResult::CreateInstanceResult(const std::string &payload) :
+ModifyCapacityReservationResult::ModifyCapacityReservationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateInstanceResult::~CreateInstanceResult()
+ModifyCapacityReservationResult::~ModifyCapacityReservationResult()
 {}
 
-void CreateInstanceResult::parse(const std::string &payload)
+void ModifyCapacityReservationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["TradePrice"].isNull())
-		tradePrice_ = std::stof(value["TradePrice"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
 
-}
-
-std::string CreateInstanceResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
-float CreateInstanceResult::getTradePrice()const
-{
-	return tradePrice_;
-}
-
-std::string CreateInstanceResult::getOrderId()const
-{
-	return orderId_;
 }
 

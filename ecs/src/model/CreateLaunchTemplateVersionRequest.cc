@@ -208,6 +208,17 @@ void CreateLaunchTemplateVersionRequest::setSpotStrategy(const std::string& spot
 	setParameter("SpotStrategy", spotStrategy);
 }
 
+std::string CreateLaunchTemplateVersionRequest::getPrivateIpAddress()const
+{
+	return privateIpAddress_;
+}
+
+void CreateLaunchTemplateVersionRequest::setPrivateIpAddress(const std::string& privateIpAddress)
+{
+	privateIpAddress_ = privateIpAddress;
+	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
 std::string CreateLaunchTemplateVersionRequest::getInstanceName()const
 {
 	return instanceName_;
@@ -261,6 +272,17 @@ void CreateLaunchTemplateVersionRequest::setVersionDescription(const std::string
 {
 	versionDescription_ = versionDescription;
 	setParameter("VersionDescription", versionDescription);
+}
+
+bool CreateLaunchTemplateVersionRequest::getSystemDiskDeleteWithInstance()const
+{
+	return systemDiskDeleteWithInstance_;
+}
+
+void CreateLaunchTemplateVersionRequest::setSystemDiskDeleteWithInstance(bool systemDiskDeleteWithInstance)
+{
+	systemDiskDeleteWithInstance_ = systemDiskDeleteWithInstance;
+	setParameter("SystemDiskDeleteWithInstance", systemDiskDeleteWithInstance ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getImageId()const
@@ -327,6 +349,17 @@ void CreateLaunchTemplateVersionRequest::setSystemDiskCategory(const std::string
 {
 	systemDiskCategory_ = systemDiskCategory;
 	setParameter("SystemDiskCategory", systemDiskCategory);
+}
+
+std::string CreateLaunchTemplateVersionRequest::getSystemDiskPerformanceLevel()const
+{
+	return systemDiskPerformanceLevel_;
+}
+
+void CreateLaunchTemplateVersionRequest::setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel)
+{
+	systemDiskPerformanceLevel_ = systemDiskPerformanceLevel;
+	setParameter("SystemDiskPerformanceLevel", systemDiskPerformanceLevel);
 }
 
 std::string CreateLaunchTemplateVersionRequest::getUserData()const
@@ -411,6 +444,9 @@ void CreateLaunchTemplateVersionRequest::setNetworkInterface(const std::vector<N
 		setParameter(networkInterfaceObjStr + ".SecurityGroupId", networkInterfaceObj.securityGroupId);
 		setParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
 		setParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
+		for(int dep2 = 0; dep2!= networkInterfaceObj.securityGroupIds.size(); dep2++) {
+			setParameter(networkInterfaceObjStr + ".SecurityGroupIds."+ std::to_string(dep2), networkInterfaceObj.securityGroupIds.at(dep2));
+		}
 	}
 }
 
@@ -480,6 +516,19 @@ void CreateLaunchTemplateVersionRequest::setSpotDuration(int spotDuration)
 	setParameter("SpotDuration", std::to_string(spotDuration));
 }
 
+std::vector<std::string> CreateLaunchTemplateVersionRequest::getSecurityGroupIds()const
+{
+	return securityGroupIds_;
+}
+
+void CreateLaunchTemplateVersionRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
+{
+	securityGroupIds_ = securityGroupIds;
+	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
+		setParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
+	}
+}
+
 std::vector<CreateLaunchTemplateVersionRequest::DataDisk> CreateLaunchTemplateVersionRequest::getDataDisk()const
 {
 	return dataDisk_;
@@ -499,6 +548,7 @@ void CreateLaunchTemplateVersionRequest::setDataDisk(const std::vector<DataDisk>
 		setParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
 		setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
 		setParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
+		setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
 	}
 }
 

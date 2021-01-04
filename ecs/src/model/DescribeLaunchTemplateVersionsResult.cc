@@ -96,6 +96,10 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.systemDiskDescription = launchTemplateDataNode["SystemDisk.Description"].asString();
 		if(!launchTemplateDataNode["SystemDisk.Iops"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.systemDiskIops = std::stoi(launchTemplateDataNode["SystemDisk.Iops"].asString());
+		if(!launchTemplateDataNode["SystemDisk.PerformanceLevel"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.systemDiskPerformanceLevel = launchTemplateDataNode["SystemDisk.PerformanceLevel"].asString();
+		if(!launchTemplateDataNode["SystemDisk.DeleteWithInstance"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.systemDiskDeleteWithInstance = launchTemplateDataNode["SystemDisk.DeleteWithInstance"].asString() == "true";
 		if(!launchTemplateDataNode["IoOptimized"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.ioOptimized = launchTemplateDataNode["IoOptimized"].asString();
 		if(!launchTemplateDataNode["InstanceChargeType"].isNull())
@@ -126,6 +130,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.resourceGroupId = launchTemplateDataNode["ResourceGroupId"].asString();
 		if(!launchTemplateDataNode["SecurityEnhancementStrategy"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.securityEnhancementStrategy = launchTemplateDataNode["SecurityEnhancementStrategy"].asString();
+		if(!launchTemplateDataNode["PrivateIpAddress"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.privateIpAddress = launchTemplateDataNode["PrivateIpAddress"].asString();
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{
@@ -146,6 +152,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 				dataDiskObject.deleteWithInstance = launchTemplateDataNodeDataDisksDataDisk["DeleteWithInstance"].asString() == "true";
 			if(!launchTemplateDataNodeDataDisksDataDisk["Device"].isNull())
 				dataDiskObject.device = launchTemplateDataNodeDataDisksDataDisk["Device"].asString();
+			if(!launchTemplateDataNodeDataDisksDataDisk["PerformanceLevel"].isNull())
+				dataDiskObject.performanceLevel = launchTemplateDataNodeDataDisksDataDisk["PerformanceLevel"].asString();
 			launchTemplateVersionSetsObject.launchTemplateData.dataDisks.push_back(dataDiskObject);
 		}
 		auto allNetworkInterfacesNode = launchTemplateDataNode["NetworkInterfaces"]["NetworkInterface"];
@@ -162,6 +170,9 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 				networkInterfaceObject.networkInterfaceName = launchTemplateDataNodeNetworkInterfacesNetworkInterface["NetworkInterfaceName"].asString();
 			if(!launchTemplateDataNodeNetworkInterfacesNetworkInterface["Description"].isNull())
 				networkInterfaceObject.description = launchTemplateDataNodeNetworkInterfacesNetworkInterface["Description"].asString();
+			auto allSecurityGroupIds1 = value["SecurityGroupIds"]["SecurityGroupId"];
+			for (auto value : allSecurityGroupIds1)
+				networkInterfaceObject.securityGroupIds1.push_back(value.asString());
 			launchTemplateVersionSetsObject.launchTemplateData.networkInterfaces.push_back(networkInterfaceObject);
 		}
 		auto allTagsNode = launchTemplateDataNode["Tags"]["InstanceTag"];
@@ -174,6 +185,9 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 				instanceTagObject.value = launchTemplateDataNodeTagsInstanceTag["Value"].asString();
 			launchTemplateVersionSetsObject.launchTemplateData.tags.push_back(instanceTagObject);
 		}
+			auto allSecurityGroupIds = launchTemplateDataNode["SecurityGroupIds"]["SecurityGroupId"];
+			for (auto value : allSecurityGroupIds)
+				launchTemplateVersionSetsObject.launchTemplateData.securityGroupIds.push_back(value.asString());
 		launchTemplateVersionSets_.push_back(launchTemplateVersionSetsObject);
 	}
 	if(!value["TotalCount"].isNull())

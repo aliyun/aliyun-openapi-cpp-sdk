@@ -445,6 +445,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyAutoSnapshotPolicyExResult.h
 	include/alibabacloud/ecs/model/ModifyBandwidthPackageSpecRequest.h
 	include/alibabacloud/ecs/model/ModifyBandwidthPackageSpecResult.h
+	include/alibabacloud/ecs/model/ModifyCapacityReservationRequest.h
+	include/alibabacloud/ecs/model/ModifyCapacityReservationResult.h
 	include/alibabacloud/ecs/model/ModifyCommandRequest.h
 	include/alibabacloud/ecs/model/ModifyCommandResult.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAttributeRequest.h
@@ -469,6 +471,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDiskSpecResult.h
 	include/alibabacloud/ecs/model/ModifyEipAddressAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyEipAddressAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyElasticityAssuranceRequest.h
+	include/alibabacloud/ecs/model/ModifyElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/ModifyForwardEntryRequest.h
 	include/alibabacloud/ecs/model/ModifyForwardEntryResult.h
 	include/alibabacloud/ecs/model/ModifyHaVipAttributeRequest.h
@@ -1052,6 +1056,8 @@ set(ecs_src
 	src/model/ModifyAutoSnapshotPolicyExResult.cc
 	src/model/ModifyBandwidthPackageSpecRequest.cc
 	src/model/ModifyBandwidthPackageSpecResult.cc
+	src/model/ModifyCapacityReservationRequest.cc
+	src/model/ModifyCapacityReservationResult.cc
 	src/model/ModifyCommandRequest.cc
 	src/model/ModifyCommandResult.cc
 	src/model/ModifyDedicatedHostAttributeRequest.cc
@@ -1076,6 +1082,8 @@ set(ecs_src
 	src/model/ModifyDiskSpecResult.cc
 	src/model/ModifyEipAddressAttributeRequest.cc
 	src/model/ModifyEipAddressAttributeResult.cc
+	src/model/ModifyElasticityAssuranceRequest.cc
+	src/model/ModifyElasticityAssuranceResult.cc
 	src/model/ModifyForwardEntryRequest.cc
 	src/model/ModifyForwardEntryResult.cc
 	src/model/ModifyHaVipAttributeRequest.cc

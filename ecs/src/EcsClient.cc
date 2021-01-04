@@ -7683,6 +7683,42 @@ EcsClient::ModifyBandwidthPackageSpecOutcomeCallable EcsClient::modifyBandwidthP
 	return task->get_future();
 }
 
+EcsClient::ModifyCapacityReservationOutcome EcsClient::modifyCapacityReservation(const ModifyCapacityReservationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCapacityReservationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCapacityReservationOutcome(ModifyCapacityReservationResult(outcome.result()));
+	else
+		return ModifyCapacityReservationOutcome(outcome.error());
+}
+
+void EcsClient::modifyCapacityReservationAsync(const ModifyCapacityReservationRequest& request, const ModifyCapacityReservationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCapacityReservation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyCapacityReservationOutcomeCallable EcsClient::modifyCapacityReservationCallable(const ModifyCapacityReservationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCapacityReservationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCapacityReservation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyCommandOutcome EcsClient::modifyCommand(const ModifyCommandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8109,6 +8145,42 @@ EcsClient::ModifyEipAddressAttributeOutcomeCallable EcsClient::modifyEipAddressA
 			[this, request]()
 			{
 			return this->modifyEipAddressAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyElasticityAssuranceOutcome EcsClient::modifyElasticityAssurance(const ModifyElasticityAssuranceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyElasticityAssuranceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyElasticityAssuranceOutcome(ModifyElasticityAssuranceResult(outcome.result()));
+	else
+		return ModifyElasticityAssuranceOutcome(outcome.error());
+}
+
+void EcsClient::modifyElasticityAssuranceAsync(const ModifyElasticityAssuranceRequest& request, const ModifyElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyElasticityAssurance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyElasticityAssuranceOutcomeCallable EcsClient::modifyElasticityAssuranceCallable(const ModifyElasticityAssuranceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyElasticityAssuranceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyElasticityAssurance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

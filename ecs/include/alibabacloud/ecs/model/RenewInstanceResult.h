@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				RenewInstanceResult();
 				explicit RenewInstanceResult(const std::string &payload);
 				~RenewInstanceResult();
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string orderId_;
 
 			};
 		}

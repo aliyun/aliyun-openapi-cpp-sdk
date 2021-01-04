@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEINSTANCERESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYCAPACITYRESERVATIONRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYCAPACITYRESERVATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT CreateInstanceResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT ModifyCapacityReservationResult : public ServiceResult
 			{
 			public:
 
 
-				CreateInstanceResult();
-				explicit CreateInstanceResult(const std::string &payload);
-				~CreateInstanceResult();
-				std::string getInstanceId()const;
-				float getTradePrice()const;
-				std::string getOrderId()const;
+				ModifyCapacityReservationResult();
+				explicit ModifyCapacityReservationResult(const std::string &payload);
+				~ModifyCapacityReservationResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string instanceId_;
-				float tradePrice_;
-				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYCAPACITYRESERVATIONRESULT_H_

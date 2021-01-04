@@ -446,6 +446,8 @@
 #include "model/ModifyAutoSnapshotPolicyExResult.h"
 #include "model/ModifyBandwidthPackageSpecRequest.h"
 #include "model/ModifyBandwidthPackageSpecResult.h"
+#include "model/ModifyCapacityReservationRequest.h"
+#include "model/ModifyCapacityReservationResult.h"
 #include "model/ModifyCommandRequest.h"
 #include "model/ModifyCommandResult.h"
 #include "model/ModifyDedicatedHostAttributeRequest.h"
@@ -470,6 +472,8 @@
 #include "model/ModifyDiskSpecResult.h"
 #include "model/ModifyEipAddressAttributeRequest.h"
 #include "model/ModifyEipAddressAttributeResult.h"
+#include "model/ModifyElasticityAssuranceRequest.h"
+#include "model/ModifyElasticityAssuranceResult.h"
 #include "model/ModifyForwardEntryRequest.h"
 #include "model/ModifyForwardEntryResult.h"
 #include "model/ModifyHaVipAttributeRequest.h"
@@ -1271,6 +1275,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyBandwidthPackageSpecResult> ModifyBandwidthPackageSpecOutcome;
 			typedef std::future<ModifyBandwidthPackageSpecOutcome> ModifyBandwidthPackageSpecOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyBandwidthPackageSpecRequest&, const ModifyBandwidthPackageSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBandwidthPackageSpecAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCapacityReservationResult> ModifyCapacityReservationOutcome;
+			typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyCapacityReservationRequest&, const ModifyCapacityReservationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCapacityReservationAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCommandResult> ModifyCommandOutcome;
 			typedef std::future<ModifyCommandOutcome> ModifyCommandOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyCommandRequest&, const ModifyCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCommandAsyncHandler;
@@ -1307,6 +1314,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyEipAddressAttributeResult> ModifyEipAddressAttributeOutcome;
 			typedef std::future<ModifyEipAddressAttributeOutcome> ModifyEipAddressAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyEipAddressAttributeRequest&, const ModifyEipAddressAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEipAddressAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyElasticityAssuranceResult> ModifyElasticityAssuranceOutcome;
+			typedef std::future<ModifyElasticityAssuranceOutcome> ModifyElasticityAssuranceOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyElasticityAssuranceRequest&, const ModifyElasticityAssuranceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElasticityAssuranceAsyncHandler;
 			typedef Outcome<Error, Model::ModifyForwardEntryResult> ModifyForwardEntryOutcome;
 			typedef std::future<ModifyForwardEntryOutcome> ModifyForwardEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyForwardEntryRequest&, const ModifyForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyForwardEntryAsyncHandler;
@@ -2182,6 +2192,9 @@ namespace AlibabaCloud
 			ModifyBandwidthPackageSpecOutcome modifyBandwidthPackageSpec(const Model::ModifyBandwidthPackageSpecRequest &request)const;
 			void modifyBandwidthPackageSpecAsync(const Model::ModifyBandwidthPackageSpecRequest& request, const ModifyBandwidthPackageSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBandwidthPackageSpecOutcomeCallable modifyBandwidthPackageSpecCallable(const Model::ModifyBandwidthPackageSpecRequest& request) const;
+			ModifyCapacityReservationOutcome modifyCapacityReservation(const Model::ModifyCapacityReservationRequest &request)const;
+			void modifyCapacityReservationAsync(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCapacityReservationOutcomeCallable modifyCapacityReservationCallable(const Model::ModifyCapacityReservationRequest& request) const;
 			ModifyCommandOutcome modifyCommand(const Model::ModifyCommandRequest &request)const;
 			void modifyCommandAsync(const Model::ModifyCommandRequest& request, const ModifyCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCommandOutcomeCallable modifyCommandCallable(const Model::ModifyCommandRequest& request) const;
@@ -2218,6 +2231,9 @@ namespace AlibabaCloud
 			ModifyEipAddressAttributeOutcome modifyEipAddressAttribute(const Model::ModifyEipAddressAttributeRequest &request)const;
 			void modifyEipAddressAttributeAsync(const Model::ModifyEipAddressAttributeRequest& request, const ModifyEipAddressAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyEipAddressAttributeOutcomeCallable modifyEipAddressAttributeCallable(const Model::ModifyEipAddressAttributeRequest& request) const;
+			ModifyElasticityAssuranceOutcome modifyElasticityAssurance(const Model::ModifyElasticityAssuranceRequest &request)const;
+			void modifyElasticityAssuranceAsync(const Model::ModifyElasticityAssuranceRequest& request, const ModifyElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyElasticityAssuranceOutcomeCallable modifyElasticityAssuranceCallable(const Model::ModifyElasticityAssuranceRequest& request) const;
 			ModifyForwardEntryOutcome modifyForwardEntry(const Model::ModifyForwardEntryRequest &request)const;
 			void modifyForwardEntryAsync(const Model::ModifyForwardEntryRequest& request, const ModifyForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyForwardEntryOutcomeCallable modifyForwardEntryCallable(const Model::ModifyForwardEntryRequest& request) const;

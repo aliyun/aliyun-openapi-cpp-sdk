@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::string securityGroupId;
 					std::string networkInterfaceName;
 					std::string description;
+					std::vector<std::string> securityGroupIds;
 				};
 				struct DataDisk
 				{
@@ -59,6 +60,7 @@ namespace AlibabaCloud
 					std::string description;
 					bool deleteWithInstance;
 					std::string device;
+					std::string performanceLevel;
 				};
 
 			public:
@@ -99,6 +101,8 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getSpotStrategy()const;
 				void setSpotStrategy(const std::string& spotStrategy);
+				std::string getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::string& privateIpAddress);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				std::string getInternetChargeType()const;
@@ -109,6 +113,8 @@ namespace AlibabaCloud
 				void setInternetMaxBandwidthIn(int internetMaxBandwidthIn);
 				std::string getVersionDescription()const;
 				void setVersionDescription(const std::string& versionDescription);
+				bool getSystemDiskDeleteWithInstance()const;
+				void setSystemDiskDeleteWithInstance(bool systemDiskDeleteWithInstance);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
 				std::string getIoOptimized()const;
@@ -121,6 +127,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getSystemDiskPerformanceLevel()const;
+				void setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
 				bool getPasswordInherit()const;
@@ -147,6 +155,8 @@ namespace AlibabaCloud
 				void setAutoReleaseTime(const std::string& autoReleaseTime);
 				int getSpotDuration()const;
 				void setSpotDuration(int spotDuration);
+				std::vector<std::string> getSecurityGroupIds()const;
+				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				int getSystemDiskSize()const;
@@ -174,17 +184,20 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string vSwitchId_;
 				std::string spotStrategy_;
+				std::string privateIpAddress_;
 				std::string instanceName_;
 				std::string internetChargeType_;
 				std::string zoneId_;
 				int internetMaxBandwidthIn_;
 				std::string versionDescription_;
+				bool systemDiskDeleteWithInstance_;
 				std::string imageId_;
 				std::string ioOptimized_;
 				std::string securityGroupId_;
 				int internetMaxBandwidthOut_;
 				std::string description_;
 				std::string systemDiskCategory_;
+				std::string systemDiskPerformanceLevel_;
 				std::string userData_;
 				bool passwordInherit_;
 				std::string regionId_;
@@ -198,6 +211,7 @@ namespace AlibabaCloud
 				std::string ramRoleName_;
 				std::string autoReleaseTime_;
 				int spotDuration_;
+				std::vector<std::string> securityGroupIds_;
 				std::vector<DataDisk> dataDisk_;
 				int systemDiskSize_;
 				std::string vpcId_;
