@@ -31,21 +31,21 @@ ImmClient::ImmClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
 }
 
 ImmClient::ImmClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
 }
 
 ImmClient::ImmClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
 }
 
 ImmClient::~ImmClient()
@@ -117,78 +117,6 @@ ImmClient::ConvertOfficeFormatOutcomeCallable ImmClient::convertOfficeFormatCall
 			[this, request]()
 			{
 			return this->convertOfficeFormat(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::CreateCADConversionTaskOutcome ImmClient::createCADConversionTask(const CreateCADConversionTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateCADConversionTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateCADConversionTaskOutcome(CreateCADConversionTaskResult(outcome.result()));
-	else
-		return CreateCADConversionTaskOutcome(outcome.error());
-}
-
-void ImmClient::createCADConversionTaskAsync(const CreateCADConversionTaskRequest& request, const CreateCADConversionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createCADConversionTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::CreateCADConversionTaskOutcomeCallable ImmClient::createCADConversionTaskCallable(const CreateCADConversionTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateCADConversionTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->createCADConversionTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::CreateDocIndexTaskOutcome ImmClient::createDocIndexTask(const CreateDocIndexTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDocIndexTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDocIndexTaskOutcome(CreateDocIndexTaskResult(outcome.result()));
-	else
-		return CreateDocIndexTaskOutcome(outcome.error());
-}
-
-void ImmClient::createDocIndexTaskAsync(const CreateDocIndexTaskRequest& request, const CreateDocIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDocIndexTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::CreateDocIndexTaskOutcomeCallable ImmClient::createDocIndexTaskCallable(const CreateDocIndexTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDocIndexTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->createDocIndexTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,42 +591,6 @@ ImmClient::DecodeBlindWatermarkOutcomeCallable ImmClient::decodeBlindWatermarkCa
 	return task->get_future();
 }
 
-ImmClient::DeleteDocIndexOutcome ImmClient::deleteDocIndex(const DeleteDocIndexRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteDocIndexOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteDocIndexOutcome(DeleteDocIndexResult(outcome.result()));
-	else
-		return DeleteDocIndexOutcome(outcome.error());
-}
-
-void ImmClient::deleteDocIndexAsync(const DeleteDocIndexRequest& request, const DeleteDocIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteDocIndex(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::DeleteDocIndexOutcomeCallable ImmClient::deleteDocIndexCallable(const DeleteDocIndexRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteDocIndexOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteDocIndex(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::DeleteImageOutcome ImmClient::deleteImage(const DeleteImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1167,42 +1059,6 @@ ImmClient::DetectImageTagsOutcomeCallable ImmClient::detectImageTagsCallable(con
 	return task->get_future();
 }
 
-ImmClient::DetectImageTextsOutcome ImmClient::detectImageTexts(const DetectImageTextsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectImageTextsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectImageTextsOutcome(DetectImageTextsResult(outcome.result()));
-	else
-		return DetectImageTextsOutcome(outcome.error());
-}
-
-void ImmClient::detectImageTextsAsync(const DetectImageTextsRequest& request, const DetectImageTextsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectImageTexts(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::DetectImageTextsOutcomeCallable ImmClient::detectImageTextsCallable(const DetectImageTextsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectImageTextsOutcome()>>(
-			[this, request]()
-			{
-			return this->detectImageTexts(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::DetectQRCodesOutcome ImmClient::detectQRCodes(const DetectQRCodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1419,78 +1275,6 @@ ImmClient::GetDRMLicenseOutcomeCallable ImmClient::getDRMLicenseCallable(const G
 	return task->get_future();
 }
 
-ImmClient::GetDocIndexOutcome ImmClient::getDocIndex(const GetDocIndexRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDocIndexOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDocIndexOutcome(GetDocIndexResult(outcome.result()));
-	else
-		return GetDocIndexOutcome(outcome.error());
-}
-
-void ImmClient::getDocIndexAsync(const GetDocIndexRequest& request, const GetDocIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDocIndex(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::GetDocIndexOutcomeCallable ImmClient::getDocIndexCallable(const GetDocIndexRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDocIndexOutcome()>>(
-			[this, request]()
-			{
-			return this->getDocIndex(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::GetDocIndexTaskOutcome ImmClient::getDocIndexTask(const GetDocIndexTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDocIndexTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDocIndexTaskOutcome(GetDocIndexTaskResult(outcome.result()));
-	else
-		return GetDocIndexTaskOutcome(outcome.error());
-}
-
-void ImmClient::getDocIndexTaskAsync(const GetDocIndexTaskRequest& request, const GetDocIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDocIndexTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::GetDocIndexTaskOutcomeCallable ImmClient::getDocIndexTaskCallable(const GetDocIndexTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDocIndexTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->getDocIndexTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::GetImageOutcome ImmClient::getImage(const GetImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,42 +1341,6 @@ ImmClient::GetImageCroppingSuggestionsOutcomeCallable ImmClient::getImageCroppin
 			[this, request]()
 			{
 			return this->getImageCroppingSuggestions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::GetImageJobOutcome ImmClient::getImageJob(const GetImageJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetImageJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetImageJobOutcome(GetImageJobResult(outcome.result()));
-	else
-		return GetImageJobOutcome(outcome.error());
-}
-
-void ImmClient::getImageJobAsync(const GetImageJobRequest& request, const GetImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getImageJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::GetImageJobOutcomeCallable ImmClient::getImageJobCallable(const GetImageJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetImageJobOutcome()>>(
-			[this, request]()
-			{
-			return this->getImageJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2061,42 +1809,6 @@ ImmClient::ListFaceGroupsOutcomeCallable ImmClient::listFaceGroupsCallable(const
 			[this, request]()
 			{
 			return this->listFaceGroups(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::ListImageJobsOutcome ImmClient::listImageJobs(const ListImageJobsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListImageJobsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListImageJobsOutcome(ListImageJobsResult(outcome.result()));
-	else
-		return ListImageJobsOutcome(outcome.error());
-}
-
-void ImmClient::listImageJobsAsync(const ListImageJobsRequest& request, const ListImageJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listImageJobs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::ListImageJobsOutcomeCallable ImmClient::listImageJobsCallable(const ListImageJobsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListImageJobsOutcome()>>(
-			[this, request]()
-			{
-			return this->listImageJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2643,114 +2355,6 @@ ImmClient::RefreshWebofficeTokenOutcomeCallable ImmClient::refreshWebofficeToken
 	return task->get_future();
 }
 
-ImmClient::SearchDocIndexOutcome ImmClient::searchDocIndex(const SearchDocIndexRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchDocIndexOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchDocIndexOutcome(SearchDocIndexResult(outcome.result()));
-	else
-		return SearchDocIndexOutcome(outcome.error());
-}
-
-void ImmClient::searchDocIndexAsync(const SearchDocIndexRequest& request, const SearchDocIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, searchDocIndex(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::SearchDocIndexOutcomeCallable ImmClient::searchDocIndexCallable(const SearchDocIndexRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchDocIndexOutcome()>>(
-			[this, request]()
-			{
-			return this->searchDocIndex(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::StopStreamAnalyseTaskOutcome ImmClient::stopStreamAnalyseTask(const StopStreamAnalyseTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopStreamAnalyseTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopStreamAnalyseTaskOutcome(StopStreamAnalyseTaskResult(outcome.result()));
-	else
-		return StopStreamAnalyseTaskOutcome(outcome.error());
-}
-
-void ImmClient::stopStreamAnalyseTaskAsync(const StopStreamAnalyseTaskRequest& request, const StopStreamAnalyseTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopStreamAnalyseTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::StopStreamAnalyseTaskOutcomeCallable ImmClient::stopStreamAnalyseTaskCallable(const StopStreamAnalyseTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopStreamAnalyseTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->stopStreamAnalyseTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::UpdateDocIndexMetaOutcome ImmClient::updateDocIndexMeta(const UpdateDocIndexMetaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateDocIndexMetaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateDocIndexMetaOutcome(UpdateDocIndexMetaResult(outcome.result()));
-	else
-		return UpdateDocIndexMetaOutcome(outcome.error());
-}
-
-void ImmClient::updateDocIndexMetaAsync(const UpdateDocIndexMetaRequest& request, const UpdateDocIndexMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateDocIndexMeta(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::UpdateDocIndexMetaOutcomeCallable ImmClient::updateDocIndexMetaCallable(const UpdateDocIndexMetaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateDocIndexMetaOutcome()>>(
-			[this, request]()
-			{
-			return this->updateDocIndexMeta(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::UpdateFaceGroupOutcome ImmClient::updateFaceGroup(const UpdateFaceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2889,42 +2493,6 @@ ImmClient::UpdateSetOutcomeCallable ImmClient::updateSetCallable(const UpdateSet
 			[this, request]()
 			{
 			return this->updateSet(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::VideoAnalyseFeedbackOutcome ImmClient::videoAnalyseFeedback(const VideoAnalyseFeedbackRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return VideoAnalyseFeedbackOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return VideoAnalyseFeedbackOutcome(VideoAnalyseFeedbackResult(outcome.result()));
-	else
-		return VideoAnalyseFeedbackOutcome(outcome.error());
-}
-
-void ImmClient::videoAnalyseFeedbackAsync(const VideoAnalyseFeedbackRequest& request, const VideoAnalyseFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, videoAnalyseFeedback(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::VideoAnalyseFeedbackOutcomeCallable ImmClient::videoAnalyseFeedbackCallable(const VideoAnalyseFeedbackRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<VideoAnalyseFeedbackOutcome()>>(
-			[this, request]()
-			{
-			return this->videoAnalyseFeedback(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

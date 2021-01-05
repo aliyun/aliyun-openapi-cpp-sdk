@@ -1,4 +1,7 @@
 2021-01-05 Version: patch
+- Remove legacy APIs.
+
+2021-01-05 Version: patch
 - Add DescribeBackupTasks API.
 
 2021-01-04 Version: patch

@@ -25,10 +25,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/CompareImageFacesResult.h
 	include/alibabacloud/imm/model/ConvertOfficeFormatRequest.h
 	include/alibabacloud/imm/model/ConvertOfficeFormatResult.h
-	include/alibabacloud/imm/model/CreateCADConversionTaskRequest.h
-	include/alibabacloud/imm/model/CreateCADConversionTaskResult.h
-	include/alibabacloud/imm/model/CreateDocIndexTaskRequest.h
-	include/alibabacloud/imm/model/CreateDocIndexTaskResult.h
 	include/alibabacloud/imm/model/CreateGrabFrameTaskRequest.h
 	include/alibabacloud/imm/model/CreateGrabFrameTaskResult.h
 	include/alibabacloud/imm/model/CreateGroupFacesJobRequest.h
@@ -55,8 +51,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/CreateVideoProduceTaskResult.h
 	include/alibabacloud/imm/model/DecodeBlindWatermarkRequest.h
 	include/alibabacloud/imm/model/DecodeBlindWatermarkResult.h
-	include/alibabacloud/imm/model/DeleteDocIndexRequest.h
-	include/alibabacloud/imm/model/DeleteDocIndexResult.h
 	include/alibabacloud/imm/model/DeleteImageRequest.h
 	include/alibabacloud/imm/model/DeleteImageResult.h
 	include/alibabacloud/imm/model/DeleteImageJobRequest.h
@@ -83,8 +77,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/DetectImageQRCodesResult.h
 	include/alibabacloud/imm/model/DetectImageTagsRequest.h
 	include/alibabacloud/imm/model/DetectImageTagsResult.h
-	include/alibabacloud/imm/model/DetectImageTextsRequest.h
-	include/alibabacloud/imm/model/DetectImageTextsResult.h
 	include/alibabacloud/imm/model/DetectQRCodesRequest.h
 	include/alibabacloud/imm/model/DetectQRCodesResult.h
 	include/alibabacloud/imm/model/EncodeBlindWatermarkRequest.h
@@ -97,16 +89,10 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/GetContentKeyResult.h
 	include/alibabacloud/imm/model/GetDRMLicenseRequest.h
 	include/alibabacloud/imm/model/GetDRMLicenseResult.h
-	include/alibabacloud/imm/model/GetDocIndexRequest.h
-	include/alibabacloud/imm/model/GetDocIndexResult.h
-	include/alibabacloud/imm/model/GetDocIndexTaskRequest.h
-	include/alibabacloud/imm/model/GetDocIndexTaskResult.h
 	include/alibabacloud/imm/model/GetImageRequest.h
 	include/alibabacloud/imm/model/GetImageResult.h
 	include/alibabacloud/imm/model/GetImageCroppingSuggestionsRequest.h
 	include/alibabacloud/imm/model/GetImageCroppingSuggestionsResult.h
-	include/alibabacloud/imm/model/GetImageJobRequest.h
-	include/alibabacloud/imm/model/GetImageJobResult.h
 	include/alibabacloud/imm/model/GetImageQualityRequest.h
 	include/alibabacloud/imm/model/GetImageQualityResult.h
 	include/alibabacloud/imm/model/GetMediaMetaRequest.h
@@ -133,8 +119,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/IndexVideoResult.h
 	include/alibabacloud/imm/model/ListFaceGroupsRequest.h
 	include/alibabacloud/imm/model/ListFaceGroupsResult.h
-	include/alibabacloud/imm/model/ListImageJobsRequest.h
-	include/alibabacloud/imm/model/ListImageJobsResult.h
 	include/alibabacloud/imm/model/ListImagesRequest.h
 	include/alibabacloud/imm/model/ListImagesResult.h
 	include/alibabacloud/imm/model/ListOfficeConversionTaskRequest.h
@@ -165,12 +149,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/RefreshOfficePreviewTokenResult.h
 	include/alibabacloud/imm/model/RefreshWebofficeTokenRequest.h
 	include/alibabacloud/imm/model/RefreshWebofficeTokenResult.h
-	include/alibabacloud/imm/model/SearchDocIndexRequest.h
-	include/alibabacloud/imm/model/SearchDocIndexResult.h
-	include/alibabacloud/imm/model/StopStreamAnalyseTaskRequest.h
-	include/alibabacloud/imm/model/StopStreamAnalyseTaskResult.h
-	include/alibabacloud/imm/model/UpdateDocIndexMetaRequest.h
-	include/alibabacloud/imm/model/UpdateDocIndexMetaResult.h
 	include/alibabacloud/imm/model/UpdateFaceGroupRequest.h
 	include/alibabacloud/imm/model/UpdateFaceGroupResult.h
 	include/alibabacloud/imm/model/UpdateImageRequest.h
@@ -178,9 +156,7 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/UpdateProjectRequest.h
 	include/alibabacloud/imm/model/UpdateProjectResult.h
 	include/alibabacloud/imm/model/UpdateSetRequest.h
-	include/alibabacloud/imm/model/UpdateSetResult.h
-	include/alibabacloud/imm/model/VideoAnalyseFeedbackRequest.h
-	include/alibabacloud/imm/model/VideoAnalyseFeedbackResult.h )
+	include/alibabacloud/imm/model/UpdateSetResult.h )
 
 set(imm_src 
 	src/ImmClient.cc
@@ -188,10 +164,6 @@ set(imm_src
 	src/model/CompareImageFacesResult.cc
 	src/model/ConvertOfficeFormatRequest.cc
 	src/model/ConvertOfficeFormatResult.cc
-	src/model/CreateCADConversionTaskRequest.cc
-	src/model/CreateCADConversionTaskResult.cc
-	src/model/CreateDocIndexTaskRequest.cc
-	src/model/CreateDocIndexTaskResult.cc
 	src/model/CreateGrabFrameTaskRequest.cc
 	src/model/CreateGrabFrameTaskResult.cc
 	src/model/CreateGroupFacesJobRequest.cc
@@ -218,8 +190,6 @@ set(imm_src
 	src/model/CreateVideoProduceTaskResult.cc
 	src/model/DecodeBlindWatermarkRequest.cc
 	src/model/DecodeBlindWatermarkResult.cc
-	src/model/DeleteDocIndexRequest.cc
-	src/model/DeleteDocIndexResult.cc
 	src/model/DeleteImageRequest.cc
 	src/model/DeleteImageResult.cc
 	src/model/DeleteImageJobRequest.cc
@@ -246,8 +216,6 @@ set(imm_src
 	src/model/DetectImageQRCodesResult.cc
 	src/model/DetectImageTagsRequest.cc
 	src/model/DetectImageTagsResult.cc
-	src/model/DetectImageTextsRequest.cc
-	src/model/DetectImageTextsResult.cc
 	src/model/DetectQRCodesRequest.cc
 	src/model/DetectQRCodesResult.cc
 	src/model/EncodeBlindWatermarkRequest.cc
@@ -260,16 +228,10 @@ set(imm_src
 	src/model/GetContentKeyResult.cc
 	src/model/GetDRMLicenseRequest.cc
 	src/model/GetDRMLicenseResult.cc
-	src/model/GetDocIndexRequest.cc
-	src/model/GetDocIndexResult.cc
-	src/model/GetDocIndexTaskRequest.cc
-	src/model/GetDocIndexTaskResult.cc
 	src/model/GetImageRequest.cc
 	src/model/GetImageResult.cc
 	src/model/GetImageCroppingSuggestionsRequest.cc
 	src/model/GetImageCroppingSuggestionsResult.cc
-	src/model/GetImageJobRequest.cc
-	src/model/GetImageJobResult.cc
 	src/model/GetImageQualityRequest.cc
 	src/model/GetImageQualityResult.cc
 	src/model/GetMediaMetaRequest.cc
@@ -296,8 +258,6 @@ set(imm_src
 	src/model/IndexVideoResult.cc
 	src/model/ListFaceGroupsRequest.cc
 	src/model/ListFaceGroupsResult.cc
-	src/model/ListImageJobsRequest.cc
-	src/model/ListImageJobsResult.cc
 	src/model/ListImagesRequest.cc
 	src/model/ListImagesResult.cc
 	src/model/ListOfficeConversionTaskRequest.cc
@@ -328,12 +288,6 @@ set(imm_src
 	src/model/RefreshOfficePreviewTokenResult.cc
 	src/model/RefreshWebofficeTokenRequest.cc
 	src/model/RefreshWebofficeTokenResult.cc
-	src/model/SearchDocIndexRequest.cc
-	src/model/SearchDocIndexResult.cc
-	src/model/StopStreamAnalyseTaskRequest.cc
-	src/model/StopStreamAnalyseTaskResult.cc
-	src/model/UpdateDocIndexMetaRequest.cc
-	src/model/UpdateDocIndexMetaResult.cc
 	src/model/UpdateFaceGroupRequest.cc
 	src/model/UpdateFaceGroupResult.cc
 	src/model/UpdateImageRequest.cc
@@ -341,9 +295,7 @@ set(imm_src
 	src/model/UpdateProjectRequest.cc
 	src/model/UpdateProjectResult.cc
 	src/model/UpdateSetRequest.cc
-	src/model/UpdateSetResult.cc
-	src/model/VideoAnalyseFeedbackRequest.cc
-	src/model/VideoAnalyseFeedbackResult.cc )
+	src/model/UpdateSetResult.cc )
 
 add_library(imm ${LIB_TYPE}
 	${imm_public_header}
