@@ -1,3 +1,6 @@
+2021-01-05 Version: patch
+- Add DescribeBackupTasks API.
+
 2021-01-04 Version: patch
 - Generated 2014-05-26 for `Ecs`.
 

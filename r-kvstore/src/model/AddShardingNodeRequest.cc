@@ -38,6 +38,17 @@ void AddShardingNodeRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AddShardingNodeRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddShardingNodeRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string AddShardingNodeRequest::getCouponNo()const
 {
 	return couponNo_;

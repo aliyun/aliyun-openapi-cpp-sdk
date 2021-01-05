@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDUSERCLUSTERREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDUSERCLUSTERREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeDedicatedUserClusterRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeBackupTasksRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDedicatedUserClusterRequest();
-				~DescribeDedicatedUserClusterRequest();
+				DescribeBackupTasksRequest();
+				~DescribeBackupTasksRequest();
 
+				std::string getBackupJobId()const;
+				void setBackupJobId(const std::string& backupJobId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getJobMode()const;
+				void setJobMode(const std::string& jobMode);
 
             private:
+				std::string backupJobId_;
 				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string zoneId_;
+				std::string instanceId_;
+				std::string jobMode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDUSERCLUSTERREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSREQUEST_H_

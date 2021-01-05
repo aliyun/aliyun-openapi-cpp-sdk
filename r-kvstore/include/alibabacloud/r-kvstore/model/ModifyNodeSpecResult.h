@@ -37,12 +37,12 @@ namespace AlibabaCloud
 				ModifyNodeSpecResult();
 				explicit ModifyNodeSpecResult(const std::string &payload);
 				~ModifyNodeSpecResult();
-				std::string getOrderId()const;
+				long getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string orderId_;
+				long orderId_;
 
 			};
 		}

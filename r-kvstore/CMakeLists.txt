@@ -33,10 +33,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateBackupResult.h
 	include/alibabacloud/r-kvstore/model/CreateCacheAnalysisTaskRequest.h
 	include/alibabacloud/r-kvstore/model/CreateCacheAnalysisTaskResult.h
-	include/alibabacloud/r-kvstore/model/CreateDedicatedInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/CreateDedicatedInstanceResult.h
-	include/alibabacloud/r-kvstore/model/CreateDedicatedUserClusterRequest.h
-	include/alibabacloud/r-kvstore/model/CreateDedicatedUserClusterResult.h
 	include/alibabacloud/r-kvstore/model/CreateGlobalDistributeCacheRequest.h
 	include/alibabacloud/r-kvstore/model/CreateGlobalDistributeCacheResult.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceRequest.h
@@ -45,10 +41,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateUserClusterHostResult.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteAccountResult.h
-	include/alibabacloud/r-kvstore/model/DeleteDedicatedInstanceRequest.h
-	include/alibabacloud/r-kvstore/model/DeleteDedicatedInstanceResult.h
-	include/alibabacloud/r-kvstore/model/DeleteDedicatedUserClusterRequest.h
-	include/alibabacloud/r-kvstore/model/DeleteDedicatedUserClusterResult.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/DeleteInstanceResult.h
 	include/alibabacloud/r-kvstore/model/DeleteShardingNodeRequest.h
@@ -65,6 +57,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeAvailableResourceResult.h
 	include/alibabacloud/r-kvstore/model/DescribeBackupPolicyRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeBackupPolicyResult.h
+	include/alibabacloud/r-kvstore/model/DescribeBackupTasksRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeBackupTasksResult.h
 	include/alibabacloud/r-kvstore/model/DescribeBackupsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeBackupsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportRequest.h
@@ -77,8 +71,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListResult.h
-	include/alibabacloud/r-kvstore/model/DescribeDedicatedUserClusterRequest.h
-	include/alibabacloud/r-kvstore/model/DescribeDedicatedUserClusterResult.h
 	include/alibabacloud/r-kvstore/model/DescribeEngineVersionRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeEngineVersionResult.h
 	include/alibabacloud/r-kvstore/model/DescribeGlobalDistributeCacheRequest.h
@@ -149,10 +141,6 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringResult.h
-	include/alibabacloud/r-kvstore/model/ModifyDedicatedInstanceSpecRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyDedicatedInstanceSpecResult.h
-	include/alibabacloud/r-kvstore/model/ModifyDedicatedUserClusterRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyDedicatedUserClusterResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAttributeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyInstanceAutoRenewalAttributeRequest.h
@@ -224,10 +212,6 @@ set(r-kvstore_src
 	src/model/CreateBackupResult.cc
 	src/model/CreateCacheAnalysisTaskRequest.cc
 	src/model/CreateCacheAnalysisTaskResult.cc
-	src/model/CreateDedicatedInstanceRequest.cc
-	src/model/CreateDedicatedInstanceResult.cc
-	src/model/CreateDedicatedUserClusterRequest.cc
-	src/model/CreateDedicatedUserClusterResult.cc
 	src/model/CreateGlobalDistributeCacheRequest.cc
 	src/model/CreateGlobalDistributeCacheResult.cc
 	src/model/CreateInstanceRequest.cc
@@ -236,10 +220,6 @@ set(r-kvstore_src
 	src/model/CreateUserClusterHostResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
-	src/model/DeleteDedicatedInstanceRequest.cc
-	src/model/DeleteDedicatedInstanceResult.cc
-	src/model/DeleteDedicatedUserClusterRequest.cc
-	src/model/DeleteDedicatedUserClusterResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteShardingNodeRequest.cc
@@ -256,6 +236,8 @@ set(r-kvstore_src
 	src/model/DescribeAvailableResourceResult.cc
 	src/model/DescribeBackupPolicyRequest.cc
 	src/model/DescribeBackupPolicyResult.cc
+	src/model/DescribeBackupTasksRequest.cc
+	src/model/DescribeBackupTasksResult.cc
 	src/model/DescribeBackupsRequest.cc
 	src/model/DescribeBackupsResult.cc
 	src/model/DescribeCacheAnalysisReportRequest.cc
@@ -268,8 +250,6 @@ set(r-kvstore_src
 	src/model/DescribeDBInstanceNetInfoResult.cc
 	src/model/DescribeDedicatedClusterInstanceListRequest.cc
 	src/model/DescribeDedicatedClusterInstanceListResult.cc
-	src/model/DescribeDedicatedUserClusterRequest.cc
-	src/model/DescribeDedicatedUserClusterResult.cc
 	src/model/DescribeEngineVersionRequest.cc
 	src/model/DescribeEngineVersionResult.cc
 	src/model/DescribeGlobalDistributeCacheRequest.cc
@@ -340,10 +320,6 @@ set(r-kvstore_src
 	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
 	src/model/ModifyDBInstanceConnectionStringResult.cc
-	src/model/ModifyDedicatedInstanceSpecRequest.cc
-	src/model/ModifyDedicatedInstanceSpecResult.cc
-	src/model/ModifyDedicatedUserClusterRequest.cc
-	src/model/ModifyDedicatedUserClusterResult.cc
 	src/model/ModifyInstanceAttributeRequest.cc
 	src/model/ModifyInstanceAttributeResult.cc
 	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc

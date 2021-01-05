@@ -40,11 +40,11 @@ void ModifyNodeSpecResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
+		orderId_ = std::stol(value["OrderId"].asString());
 
 }
 
-std::string ModifyNodeSpecResult::getOrderId()const
+long ModifyNodeSpecResult::getOrderId()const
 {
 	return orderId_;
 }

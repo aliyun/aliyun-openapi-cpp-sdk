@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_CREATEDEDICATEDUSERCLUSTERRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_CREATEDEDICATEDUSERCLUSTERRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT CreateDedicatedUserClusterResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeBackupTasksResult : public ServiceResult
 			{
 			public:
+				struct BackupJob
+				{
+					std::string jobMode;
+					std::string taskAction;
+					std::string startTime;
+					std::string backupProgressStatus;
+					std::string process;
+					int backupJobID;
+				};
 
 
-				CreateDedicatedUserClusterResult();
-				explicit CreateDedicatedUserClusterResult(const std::string &payload);
-				~CreateDedicatedUserClusterResult();
-				std::string getClusterId()const;
+				DescribeBackupTasksResult();
+				explicit DescribeBackupTasksResult(const std::string &payload);
+				~DescribeBackupTasksResult();
+				std::string getInstanceId()const;
+				std::vector<BackupJob> getBackupJobs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string clusterId_;
+				std::string instanceId_;
+				std::vector<BackupJob> backupJobs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_CREATEDEDICATEDUSERCLUSTERRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSRESULT_H_

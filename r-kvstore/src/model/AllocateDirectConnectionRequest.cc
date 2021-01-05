@@ -49,6 +49,17 @@ void AllocateDirectConnectionRequest::setConnectionString(const std::string& con
 	setParameter("ConnectionString", connectionString);
 }
 
+std::string AllocateDirectConnectionRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AllocateDirectConnectionRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string AllocateDirectConnectionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

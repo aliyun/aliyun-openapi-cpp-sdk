@@ -49,6 +49,17 @@ void AllocateInstancePublicConnectionRequest::setConnectionStringPrefix(const st
 	setParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
+std::string AllocateInstancePublicConnectionRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AllocateInstancePublicConnectionRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string AllocateInstancePublicConnectionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
