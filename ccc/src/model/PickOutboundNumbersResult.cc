@@ -39,34 +39,32 @@ void PickOutboundNumbersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDialNumberPairsNode = value["DialNumberPairs"]["DialNumberPair"];
-	for (auto valueDialNumberPairsDialNumberPair : allDialNumberPairsNode)
+	auto allDataNode = value["Data"]["NumberPair"];
+	for (auto valueDataNumberPair : allDataNode)
 	{
-		DialNumberPair dialNumberPairsObject;
+		NumberPair dataObject;
 		auto calleeNode = value["Callee"];
-		if(!calleeNode["Number"].isNull())
-			dialNumberPairsObject.callee.number = calleeNode["Number"].asString();
-		if(!calleeNode["Province"].isNull())
-			dialNumberPairsObject.callee.province = calleeNode["Province"].asString();
 		if(!calleeNode["City"].isNull())
-			dialNumberPairsObject.callee.city = calleeNode["City"].asString();
+			dataObject.callee.city = calleeNode["City"].asString();
+		if(!calleeNode["Number"].isNull())
+			dataObject.callee.number = calleeNode["Number"].asString();
+		if(!calleeNode["Province"].isNull())
+			dataObject.callee.province = calleeNode["Province"].asString();
 		auto callerNode = value["Caller"];
-		if(!callerNode["Number"].isNull())
-			dialNumberPairsObject.caller.number = callerNode["Number"].asString();
-		if(!callerNode["Province"].isNull())
-			dialNumberPairsObject.caller.province = callerNode["Province"].asString();
 		if(!callerNode["City"].isNull())
-			dialNumberPairsObject.caller.city = callerNode["City"].asString();
-		dialNumberPairs_.push_back(dialNumberPairsObject);
+			dataObject.caller.city = callerNode["City"].asString();
+		if(!callerNode["Number"].isNull())
+			dataObject.caller.number = callerNode["Number"].asString();
+		if(!callerNode["Province"].isNull())
+			dataObject.caller.province = callerNode["Province"].asString();
+		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
@@ -80,18 +78,13 @@ int PickOutboundNumbersResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
+std::vector<PickOutboundNumbersResult::NumberPair> PickOutboundNumbersResult::getData()const
+{
+	return data_;
+}
+
 std::string PickOutboundNumbersResult::getCode()const
 {
 	return code_;
-}
-
-bool PickOutboundNumbersResult::getSuccess()const
-{
-	return success_;
-}
-
-std::vector<PickOutboundNumbersResult::DialNumberPair> PickOutboundNumbersResult::getDialNumberPairs()const
-{
-	return dialNumberPairs_;
 }
 
