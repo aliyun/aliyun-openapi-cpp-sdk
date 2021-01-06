@@ -27,6 +27,17 @@ DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
 DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
 {}
 
+std::string DescribeAvailableResourceRequest::getEngineVersion()const
+{
+	return engineVersion_;
+}
+
+void DescribeAvailableResourceRequest::setEngineVersion(const std::string& engineVersion)
+{
+	engineVersion_ = engineVersion;
+	setParameter("EngineVersion", engineVersion);
+}
+
 std::string DescribeAvailableResourceRequest::getRegionId()const
 {
 	return regionId_;
@@ -36,6 +47,39 @@ void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string DescribeAvailableResourceRequest::getEngine()const
+{
+	return engine_;
+}
+
+void DescribeAvailableResourceRequest::setEngine(const std::string& engine)
+{
+	engine_ = engine;
+	setParameter("Engine", engine);
+}
+
+std::string DescribeAvailableResourceRequest::getDiskType()const
+{
+	return diskType_;
+}
+
+void DescribeAvailableResourceRequest::setDiskType(const std::string& diskType)
+{
+	diskType_ = diskType;
+	setParameter("DiskType", diskType);
+}
+
+std::string DescribeAvailableResourceRequest::getCoreInstanceType()const
+{
+	return coreInstanceType_;
+}
+
+void DescribeAvailableResourceRequest::setCoreInstanceType(const std::string& coreInstanceType)
+{
+	coreInstanceType_ = coreInstanceType;
+	setParameter("CoreInstanceType", coreInstanceType);
 }
 
 std::string DescribeAvailableResourceRequest::getZoneId()const

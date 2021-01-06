@@ -35,15 +35,27 @@ namespace AlibabaCloud
 				DescribeAvailableResourceRequest();
 				~DescribeAvailableResourceRequest();
 
+				std::string getEngineVersion()const;
+				void setEngineVersion(const std::string& engineVersion);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getEngine()const;
+				void setEngine(const std::string& engine);
+				std::string getDiskType()const;
+				void setDiskType(const std::string& diskType);
+				std::string getCoreInstanceType()const;
+				void setCoreInstanceType(const std::string& coreInstanceType);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
 
             private:
+				std::string engineVersion_;
 				std::string regionId_;
+				std::string engine_;
+				std::string diskType_;
+				std::string coreInstanceType_;
 				std::string zoneId_;
 				std::string chargeType_;
 

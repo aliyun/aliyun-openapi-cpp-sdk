@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				DescribeRegionsRequest();
 				~DescribeRegionsRequest();
 
+				std::string getEngine()const;
+				void setEngine(const std::string& engine);
 				std::string getAcceptLanguage()const;
 				void setAcceptLanguage(const std::string& acceptLanguage);
 
             private:
+				std::string engine_;
 				std::string acceptLanguage_;
 
 			};

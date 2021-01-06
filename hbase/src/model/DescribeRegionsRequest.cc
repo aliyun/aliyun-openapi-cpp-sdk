@@ -27,6 +27,17 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
 
+std::string DescribeRegionsRequest::getEngine()const
+{
+	return engine_;
+}
+
+void DescribeRegionsRequest::setEngine(const std::string& engine)
+{
+	engine_ = engine;
+	setParameter("Engine", engine);
+}
+
 std::string DescribeRegionsRequest::getAcceptLanguage()const
 {
 	return acceptLanguage_;
