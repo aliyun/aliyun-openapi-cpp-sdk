@@ -38,6 +38,17 @@ void DetectLungNoduleRequest::setDataFormat(const std::string& dataFormat)
 	setBodyParameter("DataFormat", dataFormat);
 }
 
+float DetectLungNoduleRequest::getThreshold()const
+{
+	return threshold_;
+}
+
+void DetectLungNoduleRequest::setThreshold(float threshold)
+{
+	threshold_ = threshold;
+	setBodyParameter("Threshold", std::to_string(threshold));
+}
+
 std::vector<DetectLungNoduleRequest::URLList> DetectLungNoduleRequest::getURLList()const
 {
 	return uRLList_;

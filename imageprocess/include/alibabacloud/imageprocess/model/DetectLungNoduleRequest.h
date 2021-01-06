@@ -42,6 +42,8 @@ namespace AlibabaCloud
 
 				std::string getDataFormat()const;
 				void setDataFormat(const std::string& dataFormat);
+				float getThreshold()const;
+				void setThreshold(float threshold);
 				std::vector<URLList> getURLList()const;
 				void setURLList(const std::vector<URLList>& uRLList);
 				std::string getOrgId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 
             private:
 				std::string dataFormat_;
+				float threshold_;
 				std::vector<URLList> uRLList_;
 				std::string orgId_;
 				bool async_;

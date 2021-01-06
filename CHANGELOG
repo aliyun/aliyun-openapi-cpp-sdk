@@ -1,4 +1,7 @@
 2021-01-06 Version: patch
+- Update DetectLungNodule.
+
+2021-01-06 Version: patch
 - Support input parameter ClientToken for CreateAutoProvisioningGroup.
 
 2021-01-06 Version: patch

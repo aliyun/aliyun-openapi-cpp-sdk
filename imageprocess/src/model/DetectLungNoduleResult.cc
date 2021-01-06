@@ -44,42 +44,42 @@ void DetectLungNoduleResult::parse(const std::string &payload)
 	for (auto dataNodeSeriesSerie : allSeriesNode)
 	{
 		Data::Serie serieObject;
-		if(!dataNodeSeriesSerie["SeriesInstanceUid"].isNull())
-			serieObject.seriesInstanceUid = dataNodeSeriesSerie["SeriesInstanceUid"].asString();
 		if(!dataNodeSeriesSerie["Report"].isNull())
 			serieObject.report = dataNodeSeriesSerie["Report"].asString();
+		if(!dataNodeSeriesSerie["SeriesInstanceUid"].isNull())
+			serieObject.seriesInstanceUid = dataNodeSeriesSerie["SeriesInstanceUid"].asString();
 		auto allElementsNode = dataNodeSeriesSerie["Elements"]["Element"];
 		for (auto dataNodeSeriesSerieElementsElement : allElementsNode)
 		{
 			Data::Serie::Element elementsObject;
-			if(!dataNodeSeriesSerieElementsElement["Category"].isNull())
-				elementsObject.category = dataNodeSeriesSerieElementsElement["Category"].asString();
-			if(!dataNodeSeriesSerieElementsElement["Confidence"].isNull())
-				elementsObject.confidence = std::stof(dataNodeSeriesSerieElementsElement["Confidence"].asString());
-			if(!dataNodeSeriesSerieElementsElement["Diameter"].isNull())
-				elementsObject.diameter = std::stof(dataNodeSeriesSerieElementsElement["Diameter"].asString());
-			if(!dataNodeSeriesSerieElementsElement["Lobe"].isNull())
-				elementsObject.lobe = dataNodeSeriesSerieElementsElement["Lobe"].asString();
-			if(!dataNodeSeriesSerieElementsElement["Lung"].isNull())
-				elementsObject.lung = dataNodeSeriesSerieElementsElement["Lung"].asString();
-			if(!dataNodeSeriesSerieElementsElement["X"].isNull())
-				elementsObject.x = std::stof(dataNodeSeriesSerieElementsElement["X"].asString());
-			if(!dataNodeSeriesSerieElementsElement["Z"].isNull())
-				elementsObject.z = std::stof(dataNodeSeriesSerieElementsElement["Z"].asString());
-			if(!dataNodeSeriesSerieElementsElement["Y"].isNull())
-				elementsObject.y = std::stof(dataNodeSeriesSerieElementsElement["Y"].asString());
-			if(!dataNodeSeriesSerieElementsElement["ImageX"].isNull())
-				elementsObject.imageX = std::stof(dataNodeSeriesSerieElementsElement["ImageX"].asString());
-			if(!dataNodeSeriesSerieElementsElement["ImageY"].isNull())
-				elementsObject.imageY = std::stof(dataNodeSeriesSerieElementsElement["ImageY"].asString());
 			if(!dataNodeSeriesSerieElementsElement["ImageZ"].isNull())
 				elementsObject.imageZ = std::stof(dataNodeSeriesSerieElementsElement["ImageZ"].asString());
-			if(!dataNodeSeriesSerieElementsElement["SOPInstanceUID"].isNull())
-				elementsObject.sOPInstanceUID = dataNodeSeriesSerieElementsElement["SOPInstanceUID"].asString();
-			if(!dataNodeSeriesSerieElementsElement["Volume"].isNull())
-				elementsObject.volume = std::stof(dataNodeSeriesSerieElementsElement["Volume"].asString());
+			if(!dataNodeSeriesSerieElementsElement["ImageY"].isNull())
+				elementsObject.imageY = std::stof(dataNodeSeriesSerieElementsElement["ImageY"].asString());
+			if(!dataNodeSeriesSerieElementsElement["ImageX"].isNull())
+				elementsObject.imageX = std::stof(dataNodeSeriesSerieElementsElement["ImageX"].asString());
+			if(!dataNodeSeriesSerieElementsElement["Lobe"].isNull())
+				elementsObject.lobe = dataNodeSeriesSerieElementsElement["Lobe"].asString();
+			if(!dataNodeSeriesSerieElementsElement["Category"].isNull())
+				elementsObject.category = dataNodeSeriesSerieElementsElement["Category"].asString();
+			if(!dataNodeSeriesSerieElementsElement["Lung"].isNull())
+				elementsObject.lung = dataNodeSeriesSerieElementsElement["Lung"].asString();
 			if(!dataNodeSeriesSerieElementsElement["MeanValue"].isNull())
 				elementsObject.meanValue = std::stof(dataNodeSeriesSerieElementsElement["MeanValue"].asString());
+			if(!dataNodeSeriesSerieElementsElement["Volume"].isNull())
+				elementsObject.volume = std::stof(dataNodeSeriesSerieElementsElement["Volume"].asString());
+			if(!dataNodeSeriesSerieElementsElement["Confidence"].isNull())
+				elementsObject.confidence = std::stof(dataNodeSeriesSerieElementsElement["Confidence"].asString());
+			if(!dataNodeSeriesSerieElementsElement["X"].isNull())
+				elementsObject.x = std::stof(dataNodeSeriesSerieElementsElement["X"].asString());
+			if(!dataNodeSeriesSerieElementsElement["Y"].isNull())
+				elementsObject.y = std::stof(dataNodeSeriesSerieElementsElement["Y"].asString());
+			if(!dataNodeSeriesSerieElementsElement["Z"].isNull())
+				elementsObject.z = std::stof(dataNodeSeriesSerieElementsElement["Z"].asString());
+			if(!dataNodeSeriesSerieElementsElement["SOPInstanceUID"].isNull())
+				elementsObject.sOPInstanceUID = dataNodeSeriesSerieElementsElement["SOPInstanceUID"].asString();
+			if(!dataNodeSeriesSerieElementsElement["Diameter"].isNull())
+				elementsObject.diameter = std::stof(dataNodeSeriesSerieElementsElement["Diameter"].asString());
 			serieObject.elements.push_back(elementsObject);
 		}
 		auto allOrigin = value["Origin"]["Origin"];
