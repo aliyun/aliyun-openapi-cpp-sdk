@@ -112,6 +112,8 @@ namespace AlibabaCloud
 				void setMaxSpotPrice(float maxSpotPrice);
 				bool getLaunchConfigurationPasswordInherit()const;
 				void setLaunchConfigurationPasswordInherit(bool launchConfigurationPasswordInherit);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getLaunchConfigurationSecurityGroupId()const;
 				void setLaunchConfigurationSecurityGroupId(const std::string& launchConfigurationSecurityGroupId);
 				std::string getDescription()const;
@@ -195,6 +197,7 @@ namespace AlibabaCloud
 				std::string launchConfigurationHostName_;
 				float maxSpotPrice_;
 				bool launchConfigurationPasswordInherit_;
+				std::string clientToken_;
 				std::string launchConfigurationSecurityGroupId_;
 				std::string description_;
 				bool terminateInstancesWithExpiration_;

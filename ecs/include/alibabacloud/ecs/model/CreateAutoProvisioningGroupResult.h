@@ -32,17 +32,28 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ECS_EXPORT CreateAutoProvisioningGroupResult : public ServiceResult
 			{
 			public:
+				struct LaunchResult
+				{
+					std::string zoneId;
+					std::string errorMsg;
+					std::string errorCode;
+					std::string instanceType;
+					std::vector<std::string> instanceIds;
+					std::string spotStrategy;
+				};
 
 
 				CreateAutoProvisioningGroupResult();
 				explicit CreateAutoProvisioningGroupResult(const std::string &payload);
 				~CreateAutoProvisioningGroupResult();
 				std::string getAutoProvisioningGroupId()const;
+				std::vector<LaunchResult> getLaunchResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string autoProvisioningGroupId_;
+				std::vector<LaunchResult> launchResults_;
 
 			};
 		}

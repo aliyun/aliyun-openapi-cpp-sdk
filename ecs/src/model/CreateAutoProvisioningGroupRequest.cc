@@ -279,6 +279,17 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationPasswordInherit(b
 	setParameter("LaunchConfigurationPasswordInherit", launchConfigurationPasswordInherit ? "true" : "false");
 }
 
+std::string CreateAutoProvisioningGroupRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateAutoProvisioningGroupRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationSecurityGroupId()const
 {
 	return launchConfigurationSecurityGroupId_;
