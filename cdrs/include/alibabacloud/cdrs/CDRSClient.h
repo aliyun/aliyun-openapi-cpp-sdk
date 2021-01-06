@@ -22,10 +22,16 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "CDRSExport.h"
+#include "model/AddCdrsMonitorRequest.h"
+#include "model/AddCdrsMonitorResult.h"
 #include "model/BindDeviceRequest.h"
 #include "model/BindDeviceResult.h"
 #include "model/CreateProjectRequest.h"
 #include "model/CreateProjectResult.h"
+#include "model/GetCdrsMonitorListRequest.h"
+#include "model/GetCdrsMonitorListResult.h"
+#include "model/GetCdrsMonitorResultRequest.h"
+#include "model/GetCdrsMonitorResultResult.h"
 #include "model/ListCityMapAoisRequest.h"
 #include "model/ListCityMapAoisResult.h"
 #include "model/ListCityMapCameraResultsRequest.h"
@@ -38,6 +44,8 @@
 #include "model/ListCityMapPersonFlowResult.h"
 #include "model/ListCityMapRangeStatisticRequest.h"
 #include "model/ListCityMapRangeStatisticResult.h"
+#include "model/ListCorpMetricsRequest.h"
+#include "model/ListCorpMetricsResult.h"
 #include "model/ListDataStatisticsRequest.h"
 #include "model/ListDataStatisticsResult.h"
 #include "model/ListDataStatisticsByDayRequest.h"
@@ -52,6 +60,8 @@
 #include "model/ListDevicePersonStatisticsResult.h"
 #include "model/ListMapRouteDetailsRequest.h"
 #include "model/ListMapRouteDetailsResult.h"
+#include "model/ListMetricsRequest.h"
+#include "model/ListMetricsResult.h"
 #include "model/ListPersonDetailsRequest.h"
 #include "model/ListPersonDetailsResult.h"
 #include "model/ListPersonResultRequest.h"
@@ -60,6 +70,8 @@
 #include "model/ListPersonTagResult.h"
 #include "model/ListPersonTopRequest.h"
 #include "model/ListPersonTopResult.h"
+#include "model/ListPersonTraceRequest.h"
+#include "model/ListPersonTraceResult.h"
 #include "model/ListPersonTrackRequest.h"
 #include "model/ListPersonTrackResult.h"
 #include "model/ListRangeDeviceRequest.h"
@@ -82,8 +94,12 @@
 #include "model/RecognizeImageResult.h"
 #include "model/SearchObjectRequest.h"
 #include "model/SearchObjectResult.h"
+#include "model/StopCdrsMonitorRequest.h"
+#include "model/StopCdrsMonitorResult.h"
 #include "model/UnbindDeviceRequest.h"
 #include "model/UnbindDeviceResult.h"
+#include "model/UpdateCdrsMonitorRequest.h"
+#include "model/UpdateCdrsMonitorResult.h"
 #include "model/UpdateProjectRequest.h"
 #include "model/UpdateProjectResult.h"
 
@@ -95,12 +111,21 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CDRS_EXPORT CDRSClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddCdrsMonitorResult> AddCdrsMonitorOutcome;
+			typedef std::future<AddCdrsMonitorOutcome> AddCdrsMonitorOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::AddCdrsMonitorRequest&, const AddCdrsMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCdrsMonitorAsyncHandler;
 			typedef Outcome<Error, Model::BindDeviceResult> BindDeviceOutcome;
 			typedef std::future<BindDeviceOutcome> BindDeviceOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::BindDeviceRequest&, const BindDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceAsyncHandler;
 			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
 			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
+			typedef Outcome<Error, Model::GetCdrsMonitorListResult> GetCdrsMonitorListOutcome;
+			typedef std::future<GetCdrsMonitorListOutcome> GetCdrsMonitorListOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::GetCdrsMonitorListRequest&, const GetCdrsMonitorListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCdrsMonitorListAsyncHandler;
+			typedef Outcome<Error, Model::GetCdrsMonitorResultResult> GetCdrsMonitorResultOutcome;
+			typedef std::future<GetCdrsMonitorResultOutcome> GetCdrsMonitorResultOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::GetCdrsMonitorResultRequest&, const GetCdrsMonitorResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCdrsMonitorResultAsyncHandler;
 			typedef Outcome<Error, Model::ListCityMapAoisResult> ListCityMapAoisOutcome;
 			typedef std::future<ListCityMapAoisOutcome> ListCityMapAoisOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListCityMapAoisRequest&, const ListCityMapAoisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCityMapAoisAsyncHandler;
@@ -119,6 +144,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListCityMapRangeStatisticResult> ListCityMapRangeStatisticOutcome;
 			typedef std::future<ListCityMapRangeStatisticOutcome> ListCityMapRangeStatisticOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListCityMapRangeStatisticRequest&, const ListCityMapRangeStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCityMapRangeStatisticAsyncHandler;
+			typedef Outcome<Error, Model::ListCorpMetricsResult> ListCorpMetricsOutcome;
+			typedef std::future<ListCorpMetricsOutcome> ListCorpMetricsOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::ListCorpMetricsRequest&, const ListCorpMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpMetricsAsyncHandler;
 			typedef Outcome<Error, Model::ListDataStatisticsResult> ListDataStatisticsOutcome;
 			typedef std::future<ListDataStatisticsOutcome> ListDataStatisticsOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListDataStatisticsRequest&, const ListDataStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataStatisticsAsyncHandler;
@@ -140,6 +168,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListMapRouteDetailsResult> ListMapRouteDetailsOutcome;
 			typedef std::future<ListMapRouteDetailsOutcome> ListMapRouteDetailsOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListMapRouteDetailsRequest&, const ListMapRouteDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMapRouteDetailsAsyncHandler;
+			typedef Outcome<Error, Model::ListMetricsResult> ListMetricsOutcome;
+			typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::ListMetricsRequest&, const ListMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMetricsAsyncHandler;
 			typedef Outcome<Error, Model::ListPersonDetailsResult> ListPersonDetailsOutcome;
 			typedef std::future<ListPersonDetailsOutcome> ListPersonDetailsOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListPersonDetailsRequest&, const ListPersonDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonDetailsAsyncHandler;
@@ -152,6 +183,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPersonTopResult> ListPersonTopOutcome;
 			typedef std::future<ListPersonTopOutcome> ListPersonTopOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListPersonTopRequest&, const ListPersonTopOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonTopAsyncHandler;
+			typedef Outcome<Error, Model::ListPersonTraceResult> ListPersonTraceOutcome;
+			typedef std::future<ListPersonTraceOutcome> ListPersonTraceOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::ListPersonTraceRequest&, const ListPersonTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonTraceAsyncHandler;
 			typedef Outcome<Error, Model::ListPersonTrackResult> ListPersonTrackOutcome;
 			typedef std::future<ListPersonTrackOutcome> ListPersonTrackOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListPersonTrackRequest&, const ListPersonTrackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonTrackAsyncHandler;
@@ -185,9 +219,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchObjectResult> SearchObjectOutcome;
 			typedef std::future<SearchObjectOutcome> SearchObjectOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::SearchObjectRequest&, const SearchObjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchObjectAsyncHandler;
+			typedef Outcome<Error, Model::StopCdrsMonitorResult> StopCdrsMonitorOutcome;
+			typedef std::future<StopCdrsMonitorOutcome> StopCdrsMonitorOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::StopCdrsMonitorRequest&, const StopCdrsMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopCdrsMonitorAsyncHandler;
 			typedef Outcome<Error, Model::UnbindDeviceResult> UnbindDeviceOutcome;
 			typedef std::future<UnbindDeviceOutcome> UnbindDeviceOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::UnbindDeviceRequest&, const UnbindDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDeviceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateCdrsMonitorResult> UpdateCdrsMonitorOutcome;
+			typedef std::future<UpdateCdrsMonitorOutcome> UpdateCdrsMonitorOutcomeCallable;
+			typedef std::function<void(const CDRSClient*, const Model::UpdateCdrsMonitorRequest&, const UpdateCdrsMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCdrsMonitorAsyncHandler;
 			typedef Outcome<Error, Model::UpdateProjectResult> UpdateProjectOutcome;
 			typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::UpdateProjectRequest&, const UpdateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
@@ -196,12 +236,21 @@ namespace AlibabaCloud
 			CDRSClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CDRSClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CDRSClient();
+			AddCdrsMonitorOutcome addCdrsMonitor(const Model::AddCdrsMonitorRequest &request)const;
+			void addCdrsMonitorAsync(const Model::AddCdrsMonitorRequest& request, const AddCdrsMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCdrsMonitorOutcomeCallable addCdrsMonitorCallable(const Model::AddCdrsMonitorRequest& request) const;
 			BindDeviceOutcome bindDevice(const Model::BindDeviceRequest &request)const;
 			void bindDeviceAsync(const Model::BindDeviceRequest& request, const BindDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindDeviceOutcomeCallable bindDeviceCallable(const Model::BindDeviceRequest& request) const;
 			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
 			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
+			GetCdrsMonitorListOutcome getCdrsMonitorList(const Model::GetCdrsMonitorListRequest &request)const;
+			void getCdrsMonitorListAsync(const Model::GetCdrsMonitorListRequest& request, const GetCdrsMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCdrsMonitorListOutcomeCallable getCdrsMonitorListCallable(const Model::GetCdrsMonitorListRequest& request) const;
+			GetCdrsMonitorResultOutcome getCdrsMonitorResult(const Model::GetCdrsMonitorResultRequest &request)const;
+			void getCdrsMonitorResultAsync(const Model::GetCdrsMonitorResultRequest& request, const GetCdrsMonitorResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCdrsMonitorResultOutcomeCallable getCdrsMonitorResultCallable(const Model::GetCdrsMonitorResultRequest& request) const;
 			ListCityMapAoisOutcome listCityMapAois(const Model::ListCityMapAoisRequest &request)const;
 			void listCityMapAoisAsync(const Model::ListCityMapAoisRequest& request, const ListCityMapAoisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCityMapAoisOutcomeCallable listCityMapAoisCallable(const Model::ListCityMapAoisRequest& request) const;
@@ -220,6 +269,9 @@ namespace AlibabaCloud
 			ListCityMapRangeStatisticOutcome listCityMapRangeStatistic(const Model::ListCityMapRangeStatisticRequest &request)const;
 			void listCityMapRangeStatisticAsync(const Model::ListCityMapRangeStatisticRequest& request, const ListCityMapRangeStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCityMapRangeStatisticOutcomeCallable listCityMapRangeStatisticCallable(const Model::ListCityMapRangeStatisticRequest& request) const;
+			ListCorpMetricsOutcome listCorpMetrics(const Model::ListCorpMetricsRequest &request)const;
+			void listCorpMetricsAsync(const Model::ListCorpMetricsRequest& request, const ListCorpMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCorpMetricsOutcomeCallable listCorpMetricsCallable(const Model::ListCorpMetricsRequest& request) const;
 			ListDataStatisticsOutcome listDataStatistics(const Model::ListDataStatisticsRequest &request)const;
 			void listDataStatisticsAsync(const Model::ListDataStatisticsRequest& request, const ListDataStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataStatisticsOutcomeCallable listDataStatisticsCallable(const Model::ListDataStatisticsRequest& request) const;
@@ -241,6 +293,9 @@ namespace AlibabaCloud
 			ListMapRouteDetailsOutcome listMapRouteDetails(const Model::ListMapRouteDetailsRequest &request)const;
 			void listMapRouteDetailsAsync(const Model::ListMapRouteDetailsRequest& request, const ListMapRouteDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMapRouteDetailsOutcomeCallable listMapRouteDetailsCallable(const Model::ListMapRouteDetailsRequest& request) const;
+			ListMetricsOutcome listMetrics(const Model::ListMetricsRequest &request)const;
+			void listMetricsAsync(const Model::ListMetricsRequest& request, const ListMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMetricsOutcomeCallable listMetricsCallable(const Model::ListMetricsRequest& request) const;
 			ListPersonDetailsOutcome listPersonDetails(const Model::ListPersonDetailsRequest &request)const;
 			void listPersonDetailsAsync(const Model::ListPersonDetailsRequest& request, const ListPersonDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonDetailsOutcomeCallable listPersonDetailsCallable(const Model::ListPersonDetailsRequest& request) const;
@@ -253,6 +308,9 @@ namespace AlibabaCloud
 			ListPersonTopOutcome listPersonTop(const Model::ListPersonTopRequest &request)const;
 			void listPersonTopAsync(const Model::ListPersonTopRequest& request, const ListPersonTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonTopOutcomeCallable listPersonTopCallable(const Model::ListPersonTopRequest& request) const;
+			ListPersonTraceOutcome listPersonTrace(const Model::ListPersonTraceRequest &request)const;
+			void listPersonTraceAsync(const Model::ListPersonTraceRequest& request, const ListPersonTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPersonTraceOutcomeCallable listPersonTraceCallable(const Model::ListPersonTraceRequest& request) const;
 			ListPersonTrackOutcome listPersonTrack(const Model::ListPersonTrackRequest &request)const;
 			void listPersonTrackAsync(const Model::ListPersonTrackRequest& request, const ListPersonTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonTrackOutcomeCallable listPersonTrackCallable(const Model::ListPersonTrackRequest& request) const;
@@ -286,9 +344,15 @@ namespace AlibabaCloud
 			SearchObjectOutcome searchObject(const Model::SearchObjectRequest &request)const;
 			void searchObjectAsync(const Model::SearchObjectRequest& request, const SearchObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchObjectOutcomeCallable searchObjectCallable(const Model::SearchObjectRequest& request) const;
+			StopCdrsMonitorOutcome stopCdrsMonitor(const Model::StopCdrsMonitorRequest &request)const;
+			void stopCdrsMonitorAsync(const Model::StopCdrsMonitorRequest& request, const StopCdrsMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopCdrsMonitorOutcomeCallable stopCdrsMonitorCallable(const Model::StopCdrsMonitorRequest& request) const;
 			UnbindDeviceOutcome unbindDevice(const Model::UnbindDeviceRequest &request)const;
 			void unbindDeviceAsync(const Model::UnbindDeviceRequest& request, const UnbindDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindDeviceOutcomeCallable unbindDeviceCallable(const Model::UnbindDeviceRequest& request) const;
+			UpdateCdrsMonitorOutcome updateCdrsMonitor(const Model::UpdateCdrsMonitorRequest &request)const;
+			void updateCdrsMonitorAsync(const Model::UpdateCdrsMonitorRequest& request, const UpdateCdrsMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateCdrsMonitorOutcomeCallable updateCdrsMonitorCallable(const Model::UpdateCdrsMonitorRequest& request) const;
 			UpdateProjectOutcome updateProject(const Model::UpdateProjectRequest &request)const;
 			void updateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateProjectOutcomeCallable updateProjectCallable(const Model::UpdateProjectRequest& request) const;

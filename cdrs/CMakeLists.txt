@@ -21,10 +21,16 @@ set(cdrs_public_header
 	include/alibabacloud/cdrs/CDRSExport.h )
 
 set(cdrs_public_header_model 
+	include/alibabacloud/cdrs/model/AddCdrsMonitorRequest.h
+	include/alibabacloud/cdrs/model/AddCdrsMonitorResult.h
 	include/alibabacloud/cdrs/model/BindDeviceRequest.h
 	include/alibabacloud/cdrs/model/BindDeviceResult.h
 	include/alibabacloud/cdrs/model/CreateProjectRequest.h
 	include/alibabacloud/cdrs/model/CreateProjectResult.h
+	include/alibabacloud/cdrs/model/GetCdrsMonitorListRequest.h
+	include/alibabacloud/cdrs/model/GetCdrsMonitorListResult.h
+	include/alibabacloud/cdrs/model/GetCdrsMonitorResultRequest.h
+	include/alibabacloud/cdrs/model/GetCdrsMonitorResultResult.h
 	include/alibabacloud/cdrs/model/ListCityMapAoisRequest.h
 	include/alibabacloud/cdrs/model/ListCityMapAoisResult.h
 	include/alibabacloud/cdrs/model/ListCityMapCameraResultsRequest.h
@@ -37,6 +43,8 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/ListCityMapPersonFlowResult.h
 	include/alibabacloud/cdrs/model/ListCityMapRangeStatisticRequest.h
 	include/alibabacloud/cdrs/model/ListCityMapRangeStatisticResult.h
+	include/alibabacloud/cdrs/model/ListCorpMetricsRequest.h
+	include/alibabacloud/cdrs/model/ListCorpMetricsResult.h
 	include/alibabacloud/cdrs/model/ListDataStatisticsRequest.h
 	include/alibabacloud/cdrs/model/ListDataStatisticsResult.h
 	include/alibabacloud/cdrs/model/ListDataStatisticsByDayRequest.h
@@ -51,6 +59,8 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/ListDevicePersonStatisticsResult.h
 	include/alibabacloud/cdrs/model/ListMapRouteDetailsRequest.h
 	include/alibabacloud/cdrs/model/ListMapRouteDetailsResult.h
+	include/alibabacloud/cdrs/model/ListMetricsRequest.h
+	include/alibabacloud/cdrs/model/ListMetricsResult.h
 	include/alibabacloud/cdrs/model/ListPersonDetailsRequest.h
 	include/alibabacloud/cdrs/model/ListPersonDetailsResult.h
 	include/alibabacloud/cdrs/model/ListPersonResultRequest.h
@@ -59,6 +69,8 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/ListPersonTagResult.h
 	include/alibabacloud/cdrs/model/ListPersonTopRequest.h
 	include/alibabacloud/cdrs/model/ListPersonTopResult.h
+	include/alibabacloud/cdrs/model/ListPersonTraceRequest.h
+	include/alibabacloud/cdrs/model/ListPersonTraceResult.h
 	include/alibabacloud/cdrs/model/ListPersonTrackRequest.h
 	include/alibabacloud/cdrs/model/ListPersonTrackResult.h
 	include/alibabacloud/cdrs/model/ListRangeDeviceRequest.h
@@ -81,17 +93,27 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/RecognizeImageResult.h
 	include/alibabacloud/cdrs/model/SearchObjectRequest.h
 	include/alibabacloud/cdrs/model/SearchObjectResult.h
+	include/alibabacloud/cdrs/model/StopCdrsMonitorRequest.h
+	include/alibabacloud/cdrs/model/StopCdrsMonitorResult.h
 	include/alibabacloud/cdrs/model/UnbindDeviceRequest.h
 	include/alibabacloud/cdrs/model/UnbindDeviceResult.h
+	include/alibabacloud/cdrs/model/UpdateCdrsMonitorRequest.h
+	include/alibabacloud/cdrs/model/UpdateCdrsMonitorResult.h
 	include/alibabacloud/cdrs/model/UpdateProjectRequest.h
 	include/alibabacloud/cdrs/model/UpdateProjectResult.h )
 
 set(cdrs_src 
 	src/CDRSClient.cc
+	src/model/AddCdrsMonitorRequest.cc
+	src/model/AddCdrsMonitorResult.cc
 	src/model/BindDeviceRequest.cc
 	src/model/BindDeviceResult.cc
 	src/model/CreateProjectRequest.cc
 	src/model/CreateProjectResult.cc
+	src/model/GetCdrsMonitorListRequest.cc
+	src/model/GetCdrsMonitorListResult.cc
+	src/model/GetCdrsMonitorResultRequest.cc
+	src/model/GetCdrsMonitorResultResult.cc
 	src/model/ListCityMapAoisRequest.cc
 	src/model/ListCityMapAoisResult.cc
 	src/model/ListCityMapCameraResultsRequest.cc
@@ -104,6 +126,8 @@ set(cdrs_src
 	src/model/ListCityMapPersonFlowResult.cc
 	src/model/ListCityMapRangeStatisticRequest.cc
 	src/model/ListCityMapRangeStatisticResult.cc
+	src/model/ListCorpMetricsRequest.cc
+	src/model/ListCorpMetricsResult.cc
 	src/model/ListDataStatisticsRequest.cc
 	src/model/ListDataStatisticsResult.cc
 	src/model/ListDataStatisticsByDayRequest.cc
@@ -118,6 +142,8 @@ set(cdrs_src
 	src/model/ListDevicePersonStatisticsResult.cc
 	src/model/ListMapRouteDetailsRequest.cc
 	src/model/ListMapRouteDetailsResult.cc
+	src/model/ListMetricsRequest.cc
+	src/model/ListMetricsResult.cc
 	src/model/ListPersonDetailsRequest.cc
 	src/model/ListPersonDetailsResult.cc
 	src/model/ListPersonResultRequest.cc
@@ -126,6 +152,8 @@ set(cdrs_src
 	src/model/ListPersonTagResult.cc
 	src/model/ListPersonTopRequest.cc
 	src/model/ListPersonTopResult.cc
+	src/model/ListPersonTraceRequest.cc
+	src/model/ListPersonTraceResult.cc
 	src/model/ListPersonTrackRequest.cc
 	src/model/ListPersonTrackResult.cc
 	src/model/ListRangeDeviceRequest.cc
@@ -148,8 +176,12 @@ set(cdrs_src
 	src/model/RecognizeImageResult.cc
 	src/model/SearchObjectRequest.cc
 	src/model/SearchObjectResult.cc
+	src/model/StopCdrsMonitorRequest.cc
+	src/model/StopCdrsMonitorResult.cc
 	src/model/UnbindDeviceRequest.cc
 	src/model/UnbindDeviceResult.cc
+	src/model/UpdateCdrsMonitorRequest.cc
+	src/model/UpdateCdrsMonitorResult.cc
 	src/model/UpdateProjectRequest.cc
 	src/model/UpdateProjectResult.cc )
 

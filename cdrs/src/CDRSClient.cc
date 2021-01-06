@@ -51,6 +51,42 @@ CDRSClient::CDRSClient(const std::string & accessKeyId, const std::string & acce
 CDRSClient::~CDRSClient()
 {}
 
+CDRSClient::AddCdrsMonitorOutcome CDRSClient::addCdrsMonitor(const AddCdrsMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddCdrsMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddCdrsMonitorOutcome(AddCdrsMonitorResult(outcome.result()));
+	else
+		return AddCdrsMonitorOutcome(outcome.error());
+}
+
+void CDRSClient::addCdrsMonitorAsync(const AddCdrsMonitorRequest& request, const AddCdrsMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addCdrsMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::AddCdrsMonitorOutcomeCallable CDRSClient::addCdrsMonitorCallable(const AddCdrsMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddCdrsMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->addCdrsMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CDRSClient::BindDeviceOutcome CDRSClient::bindDevice(const BindDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +153,78 @@ CDRSClient::CreateProjectOutcomeCallable CDRSClient::createProjectCallable(const
 			[this, request]()
 			{
 			return this->createProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::GetCdrsMonitorListOutcome CDRSClient::getCdrsMonitorList(const GetCdrsMonitorListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCdrsMonitorListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCdrsMonitorListOutcome(GetCdrsMonitorListResult(outcome.result()));
+	else
+		return GetCdrsMonitorListOutcome(outcome.error());
+}
+
+void CDRSClient::getCdrsMonitorListAsync(const GetCdrsMonitorListRequest& request, const GetCdrsMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCdrsMonitorList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::GetCdrsMonitorListOutcomeCallable CDRSClient::getCdrsMonitorListCallable(const GetCdrsMonitorListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCdrsMonitorListOutcome()>>(
+			[this, request]()
+			{
+			return this->getCdrsMonitorList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::GetCdrsMonitorResultOutcome CDRSClient::getCdrsMonitorResult(const GetCdrsMonitorResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCdrsMonitorResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCdrsMonitorResultOutcome(GetCdrsMonitorResultResult(outcome.result()));
+	else
+		return GetCdrsMonitorResultOutcome(outcome.error());
+}
+
+void CDRSClient::getCdrsMonitorResultAsync(const GetCdrsMonitorResultRequest& request, const GetCdrsMonitorResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCdrsMonitorResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::GetCdrsMonitorResultOutcomeCallable CDRSClient::getCdrsMonitorResultCallable(const GetCdrsMonitorResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCdrsMonitorResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getCdrsMonitorResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -333,6 +441,42 @@ CDRSClient::ListCityMapRangeStatisticOutcomeCallable CDRSClient::listCityMapRang
 			[this, request]()
 			{
 			return this->listCityMapRangeStatistic(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::ListCorpMetricsOutcome CDRSClient::listCorpMetrics(const ListCorpMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCorpMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCorpMetricsOutcome(ListCorpMetricsResult(outcome.result()));
+	else
+		return ListCorpMetricsOutcome(outcome.error());
+}
+
+void CDRSClient::listCorpMetricsAsync(const ListCorpMetricsRequest& request, const ListCorpMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCorpMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::ListCorpMetricsOutcomeCallable CDRSClient::listCorpMetricsCallable(const ListCorpMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCorpMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->listCorpMetrics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,6 +735,42 @@ CDRSClient::ListMapRouteDetailsOutcomeCallable CDRSClient::listMapRouteDetailsCa
 	return task->get_future();
 }
 
+CDRSClient::ListMetricsOutcome CDRSClient::listMetrics(const ListMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMetricsOutcome(ListMetricsResult(outcome.result()));
+	else
+		return ListMetricsOutcome(outcome.error());
+}
+
+void CDRSClient::listMetricsAsync(const ListMetricsRequest& request, const ListMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::ListMetricsOutcomeCallable CDRSClient::listMetricsCallable(const ListMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CDRSClient::ListPersonDetailsOutcome CDRSClient::listPersonDetails(const ListPersonDetailsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +909,42 @@ CDRSClient::ListPersonTopOutcomeCallable CDRSClient::listPersonTopCallable(const
 			[this, request]()
 			{
 			return this->listPersonTop(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::ListPersonTraceOutcome CDRSClient::listPersonTrace(const ListPersonTraceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPersonTraceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPersonTraceOutcome(ListPersonTraceResult(outcome.result()));
+	else
+		return ListPersonTraceOutcome(outcome.error());
+}
+
+void CDRSClient::listPersonTraceAsync(const ListPersonTraceRequest& request, const ListPersonTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPersonTrace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::ListPersonTraceOutcomeCallable CDRSClient::listPersonTraceCallable(const ListPersonTraceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPersonTraceOutcome()>>(
+			[this, request]()
+			{
+			return this->listPersonTrace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1131,6 +1347,42 @@ CDRSClient::SearchObjectOutcomeCallable CDRSClient::searchObjectCallable(const S
 	return task->get_future();
 }
 
+CDRSClient::StopCdrsMonitorOutcome CDRSClient::stopCdrsMonitor(const StopCdrsMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopCdrsMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopCdrsMonitorOutcome(StopCdrsMonitorResult(outcome.result()));
+	else
+		return StopCdrsMonitorOutcome(outcome.error());
+}
+
+void CDRSClient::stopCdrsMonitorAsync(const StopCdrsMonitorRequest& request, const StopCdrsMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopCdrsMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::StopCdrsMonitorOutcomeCallable CDRSClient::stopCdrsMonitorCallable(const StopCdrsMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopCdrsMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->stopCdrsMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CDRSClient::UnbindDeviceOutcome CDRSClient::unbindDevice(const UnbindDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1413,42 @@ CDRSClient::UnbindDeviceOutcomeCallable CDRSClient::unbindDeviceCallable(const U
 			[this, request]()
 			{
 			return this->unbindDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::UpdateCdrsMonitorOutcome CDRSClient::updateCdrsMonitor(const UpdateCdrsMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCdrsMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCdrsMonitorOutcome(UpdateCdrsMonitorResult(outcome.result()));
+	else
+		return UpdateCdrsMonitorOutcome(outcome.error());
+}
+
+void CDRSClient::updateCdrsMonitorAsync(const UpdateCdrsMonitorRequest& request, const UpdateCdrsMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCdrsMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::UpdateCdrsMonitorOutcomeCallable CDRSClient::updateCdrsMonitorCallable(const UpdateCdrsMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCdrsMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCdrsMonitor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
