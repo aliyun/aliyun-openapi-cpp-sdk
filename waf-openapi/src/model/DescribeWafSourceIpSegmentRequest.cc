@@ -71,14 +71,3 @@ void DescribeWafSourceIpSegmentRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
-std::string DescribeWafSourceIpSegmentRequest::getRegion()const
-{
-	return region_;
-}
-
-void DescribeWafSourceIpSegmentRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
-}
-
