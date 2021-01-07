@@ -1,4 +1,7 @@
 2021-01-07 Version: patch
+- Add new API for configuration and report.
+
+2021-01-07 Version: patch
 - Add CreateAndStartBackupPlan.
 - Add DescribeDLAService.
 - Add CreateDLAService.
