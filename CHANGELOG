@@ -1,4 +1,10 @@
 2021-01-07 Version: patch
+- Add CreateAndStartBackupPlan.
+- Add DescribeDLAService.
+- Add CreateDLAService.
+- Add CloseDLAService.
+
+2021-01-07 Version: patch
 - Generated 2019-09-10 for `waf-openapi`.
 
 2021-01-06 Version: patch

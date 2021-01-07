@@ -22,10 +22,16 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "DbsExport.h"
+#include "model/CloseDLAServiceRequest.h"
+#include "model/CloseDLAServiceResult.h"
 #include "model/ConfigureBackupPlanRequest.h"
 #include "model/ConfigureBackupPlanResult.h"
+#include "model/CreateAndStartBackupPlanRequest.h"
+#include "model/CreateAndStartBackupPlanResult.h"
 #include "model/CreateBackupPlanRequest.h"
 #include "model/CreateBackupPlanResult.h"
+#include "model/CreateDLAServiceRequest.h"
+#include "model/CreateDLAServiceResult.h"
 #include "model/CreateFullBackupSetDownloadRequest.h"
 #include "model/CreateFullBackupSetDownloadResult.h"
 #include "model/CreateGetDBListFromAgentTaskRequest.h"
@@ -42,6 +48,8 @@
 #include "model/DescribeBackupPlanListResult.h"
 #include "model/DescribeBackupSetDownloadTaskListRequest.h"
 #include "model/DescribeBackupSetDownloadTaskListResult.h"
+#include "model/DescribeDLAServiceRequest.h"
+#include "model/DescribeDLAServiceResult.h"
 #include "model/DescribeFullBackupListRequest.h"
 #include "model/DescribeFullBackupListResult.h"
 #include "model/DescribeIncrementBackupListRequest.h"
@@ -84,8 +92,6 @@
 #include "model/StartBackupPlanResult.h"
 #include "model/StartRestoreTaskRequest.h"
 #include "model/StartRestoreTaskResult.h"
-#include "model/StartTaskRequest.h"
-#include "model/StartTaskResult.h"
 #include "model/StopBackupPlanRequest.h"
 #include "model/StopBackupPlanResult.h"
 #include "model/UpgradeBackupPlanRequest.h"
@@ -99,12 +105,21 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_DBS_EXPORT DbsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CloseDLAServiceResult> CloseDLAServiceOutcome;
+			typedef std::future<CloseDLAServiceOutcome> CloseDLAServiceOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::CloseDLAServiceRequest&, const CloseDLAServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseDLAServiceAsyncHandler;
 			typedef Outcome<Error, Model::ConfigureBackupPlanResult> ConfigureBackupPlanOutcome;
 			typedef std::future<ConfigureBackupPlanOutcome> ConfigureBackupPlanOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::ConfigureBackupPlanRequest&, const ConfigureBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigureBackupPlanAsyncHandler;
+			typedef Outcome<Error, Model::CreateAndStartBackupPlanResult> CreateAndStartBackupPlanOutcome;
+			typedef std::future<CreateAndStartBackupPlanOutcome> CreateAndStartBackupPlanOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::CreateAndStartBackupPlanRequest&, const CreateAndStartBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndStartBackupPlanAsyncHandler;
 			typedef Outcome<Error, Model::CreateBackupPlanResult> CreateBackupPlanOutcome;
 			typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::CreateBackupPlanRequest&, const CreateBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupPlanAsyncHandler;
+			typedef Outcome<Error, Model::CreateDLAServiceResult> CreateDLAServiceOutcome;
+			typedef std::future<CreateDLAServiceOutcome> CreateDLAServiceOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::CreateDLAServiceRequest&, const CreateDLAServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDLAServiceAsyncHandler;
 			typedef Outcome<Error, Model::CreateFullBackupSetDownloadResult> CreateFullBackupSetDownloadOutcome;
 			typedef std::future<CreateFullBackupSetDownloadOutcome> CreateFullBackupSetDownloadOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::CreateFullBackupSetDownloadRequest&, const CreateFullBackupSetDownloadOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFullBackupSetDownloadAsyncHandler;
@@ -129,6 +144,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBackupSetDownloadTaskListResult> DescribeBackupSetDownloadTaskListOutcome;
 			typedef std::future<DescribeBackupSetDownloadTaskListOutcome> DescribeBackupSetDownloadTaskListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeBackupSetDownloadTaskListRequest&, const DescribeBackupSetDownloadTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupSetDownloadTaskListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDLAServiceResult> DescribeDLAServiceOutcome;
+			typedef std::future<DescribeDLAServiceOutcome> DescribeDLAServiceOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DescribeDLAServiceRequest&, const DescribeDLAServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDLAServiceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeFullBackupListResult> DescribeFullBackupListOutcome;
 			typedef std::future<DescribeFullBackupListOutcome> DescribeFullBackupListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeFullBackupListRequest&, const DescribeFullBackupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFullBackupListAsyncHandler;
@@ -192,9 +210,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartRestoreTaskResult> StartRestoreTaskOutcome;
 			typedef std::future<StartRestoreTaskOutcome> StartRestoreTaskOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::StartRestoreTaskRequest&, const StartRestoreTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRestoreTaskAsyncHandler;
-			typedef Outcome<Error, Model::StartTaskResult> StartTaskOutcome;
-			typedef std::future<StartTaskOutcome> StartTaskOutcomeCallable;
-			typedef std::function<void(const DbsClient*, const Model::StartTaskRequest&, const StartTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartTaskAsyncHandler;
 			typedef Outcome<Error, Model::StopBackupPlanResult> StopBackupPlanOutcome;
 			typedef std::future<StopBackupPlanOutcome> StopBackupPlanOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::StopBackupPlanRequest&, const StopBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopBackupPlanAsyncHandler;
@@ -206,12 +221,21 @@ namespace AlibabaCloud
 			DbsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			DbsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~DbsClient();
+			CloseDLAServiceOutcome closeDLAService(const Model::CloseDLAServiceRequest &request)const;
+			void closeDLAServiceAsync(const Model::CloseDLAServiceRequest& request, const CloseDLAServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CloseDLAServiceOutcomeCallable closeDLAServiceCallable(const Model::CloseDLAServiceRequest& request) const;
 			ConfigureBackupPlanOutcome configureBackupPlan(const Model::ConfigureBackupPlanRequest &request)const;
 			void configureBackupPlanAsync(const Model::ConfigureBackupPlanRequest& request, const ConfigureBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigureBackupPlanOutcomeCallable configureBackupPlanCallable(const Model::ConfigureBackupPlanRequest& request) const;
+			CreateAndStartBackupPlanOutcome createAndStartBackupPlan(const Model::CreateAndStartBackupPlanRequest &request)const;
+			void createAndStartBackupPlanAsync(const Model::CreateAndStartBackupPlanRequest& request, const CreateAndStartBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAndStartBackupPlanOutcomeCallable createAndStartBackupPlanCallable(const Model::CreateAndStartBackupPlanRequest& request) const;
 			CreateBackupPlanOutcome createBackupPlan(const Model::CreateBackupPlanRequest &request)const;
 			void createBackupPlanAsync(const Model::CreateBackupPlanRequest& request, const CreateBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBackupPlanOutcomeCallable createBackupPlanCallable(const Model::CreateBackupPlanRequest& request) const;
+			CreateDLAServiceOutcome createDLAService(const Model::CreateDLAServiceRequest &request)const;
+			void createDLAServiceAsync(const Model::CreateDLAServiceRequest& request, const CreateDLAServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDLAServiceOutcomeCallable createDLAServiceCallable(const Model::CreateDLAServiceRequest& request) const;
 			CreateFullBackupSetDownloadOutcome createFullBackupSetDownload(const Model::CreateFullBackupSetDownloadRequest &request)const;
 			void createFullBackupSetDownloadAsync(const Model::CreateFullBackupSetDownloadRequest& request, const CreateFullBackupSetDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFullBackupSetDownloadOutcomeCallable createFullBackupSetDownloadCallable(const Model::CreateFullBackupSetDownloadRequest& request) const;
@@ -236,6 +260,9 @@ namespace AlibabaCloud
 			DescribeBackupSetDownloadTaskListOutcome describeBackupSetDownloadTaskList(const Model::DescribeBackupSetDownloadTaskListRequest &request)const;
 			void describeBackupSetDownloadTaskListAsync(const Model::DescribeBackupSetDownloadTaskListRequest& request, const DescribeBackupSetDownloadTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupSetDownloadTaskListOutcomeCallable describeBackupSetDownloadTaskListCallable(const Model::DescribeBackupSetDownloadTaskListRequest& request) const;
+			DescribeDLAServiceOutcome describeDLAService(const Model::DescribeDLAServiceRequest &request)const;
+			void describeDLAServiceAsync(const Model::DescribeDLAServiceRequest& request, const DescribeDLAServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDLAServiceOutcomeCallable describeDLAServiceCallable(const Model::DescribeDLAServiceRequest& request) const;
 			DescribeFullBackupListOutcome describeFullBackupList(const Model::DescribeFullBackupListRequest &request)const;
 			void describeFullBackupListAsync(const Model::DescribeFullBackupListRequest& request, const DescribeFullBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFullBackupListOutcomeCallable describeFullBackupListCallable(const Model::DescribeFullBackupListRequest& request) const;
@@ -299,9 +326,6 @@ namespace AlibabaCloud
 			StartRestoreTaskOutcome startRestoreTask(const Model::StartRestoreTaskRequest &request)const;
 			void startRestoreTaskAsync(const Model::StartRestoreTaskRequest& request, const StartRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRestoreTaskOutcomeCallable startRestoreTaskCallable(const Model::StartRestoreTaskRequest& request) const;
-			StartTaskOutcome startTask(const Model::StartTaskRequest &request)const;
-			void startTaskAsync(const Model::StartTaskRequest& request, const StartTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StartTaskOutcomeCallable startTaskCallable(const Model::StartTaskRequest& request) const;
 			StopBackupPlanOutcome stopBackupPlan(const Model::StopBackupPlanRequest &request)const;
 			void stopBackupPlanAsync(const Model::StopBackupPlanRequest& request, const StopBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopBackupPlanOutcomeCallable stopBackupPlanCallable(const Model::StopBackupPlanRequest& request) const;

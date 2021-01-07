@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dbs/model/StartTaskResult.h>
+#include <alibabacloud/dbs/model/CreateAndStartBackupPlanResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dbs;
 using namespace AlibabaCloud::Dbs::Model;
 
-StartTaskResult::StartTaskResult() :
+CreateAndStartBackupPlanResult::CreateAndStartBackupPlanResult() :
 	ServiceResult()
 {}
 
-StartTaskResult::StartTaskResult(const std::string &payload) :
+CreateAndStartBackupPlanResult::CreateAndStartBackupPlanResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StartTaskResult::~StartTaskResult()
+CreateAndStartBackupPlanResult::~CreateAndStartBackupPlanResult()
 {}
 
-void StartTaskResult::parse(const std::string &payload)
+void CreateAndStartBackupPlanResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -47,40 +47,40 @@ void StartTaskResult::parse(const std::string &payload)
 		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["JobTypeName"].isNull())
-		jobTypeName_ = value["JobTypeName"].asString();
+	if(!value["BackupPlanId"].isNull())
+		backupPlanId_ = value["BackupPlanId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
-std::string StartTaskResult::getTaskId()const
-{
-	return taskId_;
-}
-
-int StartTaskResult::getHttpStatusCode()const
+int CreateAndStartBackupPlanResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string StartTaskResult::getErrMessage()const
+std::string CreateAndStartBackupPlanResult::getBackupPlanId()const
+{
+	return backupPlanId_;
+}
+
+std::string CreateAndStartBackupPlanResult::getErrMessage()const
 {
 	return errMessage_;
 }
 
-bool StartTaskResult::getSuccess()const
+std::string CreateAndStartBackupPlanResult::getOrderId()const
+{
+	return orderId_;
+}
+
+bool CreateAndStartBackupPlanResult::getSuccess()const
 {
 	return success_;
 }
 
-std::string StartTaskResult::getErrCode()const
+std::string CreateAndStartBackupPlanResult::getErrCode()const
 {
 	return errCode_;
-}
-
-std::string StartTaskResult::getJobTypeName()const
-{
-	return jobTypeName_;
 }
 

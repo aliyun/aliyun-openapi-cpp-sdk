@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_STARTTASKREQUEST_H_
-#define ALIBABACLOUD_DBS_MODEL_STARTTASKREQUEST_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICERESULT_H_
+#define ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICERESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/dbs/DbsExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT StartTaskRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DBS_EXPORT CreateDLAServiceResult : public ServiceResult
 			{
-
 			public:
-				StartTaskRequest();
-				~StartTaskRequest();
 
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 
-            private:
-				std::string clientToken_;
-				std::string ownerId_;
-				std::string taskId_;
+				CreateDLAServiceResult();
+				explicit CreateDLAServiceResult(const std::string &payload);
+				~CreateDLAServiceResult();
+				int getHttpStatusCode()const;
+				std::string getErrMessage()const;
+				bool getSuccess()const;
+				std::string getErrCode()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				int httpStatusCode_;
+				std::string errMessage_;
+				bool success_;
+				std::string errCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_STARTTASKREQUEST_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICERESULT_H_
