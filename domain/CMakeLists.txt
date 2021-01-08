@@ -185,6 +185,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveBatchTaskForDomainNameProxyServiceResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForModifyingDomainDnsRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForModifyingDomainDnsResult.h
+	include/alibabacloud/domain/model/SaveBatchTaskForReserveDropListDomainRequest.h
+	include/alibabacloud/domain/model/SaveBatchTaskForReserveDropListDomainResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForTransferProhibitionLockRequest.h
 	include/alibabacloud/domain/model/SaveBatchTaskForTransferProhibitionLockResult.h
 	include/alibabacloud/domain/model/SaveBatchTaskForUpdateProhibitionLockRequest.h
@@ -442,6 +444,8 @@ set(domain_src
 	src/model/SaveBatchTaskForDomainNameProxyServiceResult.cc
 	src/model/SaveBatchTaskForModifyingDomainDnsRequest.cc
 	src/model/SaveBatchTaskForModifyingDomainDnsResult.cc
+	src/model/SaveBatchTaskForReserveDropListDomainRequest.cc
+	src/model/SaveBatchTaskForReserveDropListDomainResult.cc
 	src/model/SaveBatchTaskForTransferProhibitionLockRequest.cc
 	src/model/SaveBatchTaskForTransferProhibitionLockResult.cc
 	src/model/SaveBatchTaskForUpdateProhibitionLockRequest.cc

@@ -1,4 +1,7 @@
 2021-01-08 Version: patch
+- Added batch drop list domain.
+
+2021-01-08 Version: patch
 - Add new API for configuration and report, generate SDK again.
 
 2021-01-07 Version: patch

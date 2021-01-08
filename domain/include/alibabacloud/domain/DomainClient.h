@@ -186,6 +186,8 @@
 #include "model/SaveBatchTaskForDomainNameProxyServiceResult.h"
 #include "model/SaveBatchTaskForModifyingDomainDnsRequest.h"
 #include "model/SaveBatchTaskForModifyingDomainDnsResult.h"
+#include "model/SaveBatchTaskForReserveDropListDomainRequest.h"
+#include "model/SaveBatchTaskForReserveDropListDomainResult.h"
 #include "model/SaveBatchTaskForTransferProhibitionLockRequest.h"
 #include "model/SaveBatchTaskForTransferProhibitionLockResult.h"
 #include "model/SaveBatchTaskForUpdateProhibitionLockRequest.h"
@@ -531,6 +533,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveBatchTaskForModifyingDomainDnsResult> SaveBatchTaskForModifyingDomainDnsOutcome;
 			typedef std::future<SaveBatchTaskForModifyingDomainDnsOutcome> SaveBatchTaskForModifyingDomainDnsOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveBatchTaskForModifyingDomainDnsRequest&, const SaveBatchTaskForModifyingDomainDnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBatchTaskForModifyingDomainDnsAsyncHandler;
+			typedef Outcome<Error, Model::SaveBatchTaskForReserveDropListDomainResult> SaveBatchTaskForReserveDropListDomainOutcome;
+			typedef std::future<SaveBatchTaskForReserveDropListDomainOutcome> SaveBatchTaskForReserveDropListDomainOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::SaveBatchTaskForReserveDropListDomainRequest&, const SaveBatchTaskForReserveDropListDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBatchTaskForReserveDropListDomainAsyncHandler;
 			typedef Outcome<Error, Model::SaveBatchTaskForTransferProhibitionLockResult> SaveBatchTaskForTransferProhibitionLockOutcome;
 			typedef std::future<SaveBatchTaskForTransferProhibitionLockOutcome> SaveBatchTaskForTransferProhibitionLockOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveBatchTaskForTransferProhibitionLockRequest&, const SaveBatchTaskForTransferProhibitionLockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveBatchTaskForTransferProhibitionLockAsyncHandler;
@@ -917,6 +922,9 @@ namespace AlibabaCloud
 			SaveBatchTaskForModifyingDomainDnsOutcome saveBatchTaskForModifyingDomainDns(const Model::SaveBatchTaskForModifyingDomainDnsRequest &request)const;
 			void saveBatchTaskForModifyingDomainDnsAsync(const Model::SaveBatchTaskForModifyingDomainDnsRequest& request, const SaveBatchTaskForModifyingDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveBatchTaskForModifyingDomainDnsOutcomeCallable saveBatchTaskForModifyingDomainDnsCallable(const Model::SaveBatchTaskForModifyingDomainDnsRequest& request) const;
+			SaveBatchTaskForReserveDropListDomainOutcome saveBatchTaskForReserveDropListDomain(const Model::SaveBatchTaskForReserveDropListDomainRequest &request)const;
+			void saveBatchTaskForReserveDropListDomainAsync(const Model::SaveBatchTaskForReserveDropListDomainRequest& request, const SaveBatchTaskForReserveDropListDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveBatchTaskForReserveDropListDomainOutcomeCallable saveBatchTaskForReserveDropListDomainCallable(const Model::SaveBatchTaskForReserveDropListDomainRequest& request) const;
 			SaveBatchTaskForTransferProhibitionLockOutcome saveBatchTaskForTransferProhibitionLock(const Model::SaveBatchTaskForTransferProhibitionLockRequest &request)const;
 			void saveBatchTaskForTransferProhibitionLockAsync(const Model::SaveBatchTaskForTransferProhibitionLockRequest& request, const SaveBatchTaskForTransferProhibitionLockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveBatchTaskForTransferProhibitionLockOutcomeCallable saveBatchTaskForTransferProhibitionLockCallable(const Model::SaveBatchTaskForTransferProhibitionLockRequest& request) const;

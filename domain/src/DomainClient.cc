@@ -3003,6 +3003,42 @@ DomainClient::SaveBatchTaskForModifyingDomainDnsOutcomeCallable DomainClient::sa
 	return task->get_future();
 }
 
+DomainClient::SaveBatchTaskForReserveDropListDomainOutcome DomainClient::saveBatchTaskForReserveDropListDomain(const SaveBatchTaskForReserveDropListDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveBatchTaskForReserveDropListDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveBatchTaskForReserveDropListDomainOutcome(SaveBatchTaskForReserveDropListDomainResult(outcome.result()));
+	else
+		return SaveBatchTaskForReserveDropListDomainOutcome(outcome.error());
+}
+
+void DomainClient::saveBatchTaskForReserveDropListDomainAsync(const SaveBatchTaskForReserveDropListDomainRequest& request, const SaveBatchTaskForReserveDropListDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveBatchTaskForReserveDropListDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveBatchTaskForReserveDropListDomainOutcomeCallable DomainClient::saveBatchTaskForReserveDropListDomainCallable(const SaveBatchTaskForReserveDropListDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveBatchTaskForReserveDropListDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->saveBatchTaskForReserveDropListDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::SaveBatchTaskForTransferProhibitionLockOutcome DomainClient::saveBatchTaskForTransferProhibitionLock(const SaveBatchTaskForTransferProhibitionLockRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
