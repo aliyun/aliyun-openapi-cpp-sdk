@@ -53,14 +53,22 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/LaunchSurveyResult.h
 	include/alibabacloud/ccc/model/ListBriefSkillGroupsRequest.h
 	include/alibabacloud/ccc/model/ListBriefSkillGroupsResult.h
+	include/alibabacloud/ccc/model/ListCallDetailRecordsRequest.h
+	include/alibabacloud/ccc/model/ListCallDetailRecordsResult.h
 	include/alibabacloud/ccc/model/ListConfigItemsRequest.h
 	include/alibabacloud/ccc/model/ListConfigItemsResult.h
 	include/alibabacloud/ccc/model/ListDevicesRequest.h
 	include/alibabacloud/ccc/model/ListDevicesResult.h
+	include/alibabacloud/ccc/model/ListHistoricalAgentReportRequest.h
+	include/alibabacloud/ccc/model/ListHistoricalAgentReportResult.h
 	include/alibabacloud/ccc/model/ListOutboundNumbersOfUserRequest.h
 	include/alibabacloud/ccc/model/ListOutboundNumbersOfUserResult.h
 	include/alibabacloud/ccc/model/ListPrivilegesOfUserRequest.h
 	include/alibabacloud/ccc/model/ListPrivilegesOfUserResult.h
+	include/alibabacloud/ccc/model/ListRealtimeAgentStatesRequest.h
+	include/alibabacloud/ccc/model/ListRealtimeAgentStatesResult.h
+	include/alibabacloud/ccc/model/ListRecentCallDetailRecordsRequest.h
+	include/alibabacloud/ccc/model/ListRecentCallDetailRecordsResult.h
 	include/alibabacloud/ccc/model/ListSkillLevelsOfUserRequest.h
 	include/alibabacloud/ccc/model/ListSkillLevelsOfUserResult.h
 	include/alibabacloud/ccc/model/MakeCallRequest.h
@@ -87,6 +95,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/SendDtmfSignalingResult.h
 	include/alibabacloud/ccc/model/SignInGroupRequest.h
 	include/alibabacloud/ccc/model/SignInGroupResult.h
+	include/alibabacloud/ccc/model/SignOutGroupRequest.h
+	include/alibabacloud/ccc/model/SignOutGroupResult.h
 	include/alibabacloud/ccc/model/TakeBreakRequest.h
 	include/alibabacloud/ccc/model/TakeBreakResult.h
 	include/alibabacloud/ccc/model/UnmuteCallRequest.h
@@ -126,14 +136,22 @@ set(ccc_src
 	src/model/LaunchSurveyResult.cc
 	src/model/ListBriefSkillGroupsRequest.cc
 	src/model/ListBriefSkillGroupsResult.cc
+	src/model/ListCallDetailRecordsRequest.cc
+	src/model/ListCallDetailRecordsResult.cc
 	src/model/ListConfigItemsRequest.cc
 	src/model/ListConfigItemsResult.cc
 	src/model/ListDevicesRequest.cc
 	src/model/ListDevicesResult.cc
+	src/model/ListHistoricalAgentReportRequest.cc
+	src/model/ListHistoricalAgentReportResult.cc
 	src/model/ListOutboundNumbersOfUserRequest.cc
 	src/model/ListOutboundNumbersOfUserResult.cc
 	src/model/ListPrivilegesOfUserRequest.cc
 	src/model/ListPrivilegesOfUserResult.cc
+	src/model/ListRealtimeAgentStatesRequest.cc
+	src/model/ListRealtimeAgentStatesResult.cc
+	src/model/ListRecentCallDetailRecordsRequest.cc
+	src/model/ListRecentCallDetailRecordsResult.cc
 	src/model/ListSkillLevelsOfUserRequest.cc
 	src/model/ListSkillLevelsOfUserResult.cc
 	src/model/MakeCallRequest.cc
@@ -160,6 +178,8 @@ set(ccc_src
 	src/model/SendDtmfSignalingResult.cc
 	src/model/SignInGroupRequest.cc
 	src/model/SignInGroupResult.cc
+	src/model/SignOutGroupRequest.cc
+	src/model/SignOutGroupResult.cc
 	src/model/TakeBreakRequest.cc
 	src/model/TakeBreakResult.cc
 	src/model/UnmuteCallRequest.cc
