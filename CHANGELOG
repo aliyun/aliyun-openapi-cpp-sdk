@@ -1,4 +1,7 @@
 2021-01-11 Version: patch
+- Add result value spanId for GetTrace api.
+
+2021-01-11 Version: patch
 - Support DescribeScheduleTasks.
 - Support CancelScheduleTasks.
 - Upgrade UpgradeDBClusterMinorVersion.

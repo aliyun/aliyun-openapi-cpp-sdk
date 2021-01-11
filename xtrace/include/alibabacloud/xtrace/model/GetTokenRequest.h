@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setAppType(const std::string& appType);
 				std::string getProxyUserId()const;
 				void setProxyUserId(const std::string& proxyUserId);
+				bool getIsForce()const;
+				void setIsForce(bool isForce);
 
             private:
 				std::string regionId_;
 				std::string appType_;
 				std::string proxyUserId_;
+				bool isForce_;
 
 			};
 		}

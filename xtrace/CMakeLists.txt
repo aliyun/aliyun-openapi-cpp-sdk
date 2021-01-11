@@ -21,10 +21,6 @@ set(xtrace_public_header
 	include/alibabacloud/xtrace/XtraceExport.h )
 
 set(xtrace_public_header_model 
-	include/alibabacloud/xtrace/model/CheckServiceLinkedRoleForDeletingRequest.h
-	include/alibabacloud/xtrace/model/CheckServiceLinkedRoleForDeletingResult.h
-	include/alibabacloud/xtrace/model/GetSamplingRequest.h
-	include/alibabacloud/xtrace/model/GetSamplingResult.h
 	include/alibabacloud/xtrace/model/GetTagKeyRequest.h
 	include/alibabacloud/xtrace/model/GetTagKeyResult.h
 	include/alibabacloud/xtrace/model/GetTagValRequest.h
@@ -44,16 +40,10 @@ set(xtrace_public_header_model
 	include/alibabacloud/xtrace/model/QueryMetricRequest.h
 	include/alibabacloud/xtrace/model/QueryMetricResult.h
 	include/alibabacloud/xtrace/model/SearchTracesRequest.h
-	include/alibabacloud/xtrace/model/SearchTracesResult.h
-	include/alibabacloud/xtrace/model/UpdateSamplingRequest.h
-	include/alibabacloud/xtrace/model/UpdateSamplingResult.h )
+	include/alibabacloud/xtrace/model/SearchTracesResult.h )
 
 set(xtrace_src 
 	src/XtraceClient.cc
-	src/model/CheckServiceLinkedRoleForDeletingRequest.cc
-	src/model/CheckServiceLinkedRoleForDeletingResult.cc
-	src/model/GetSamplingRequest.cc
-	src/model/GetSamplingResult.cc
 	src/model/GetTagKeyRequest.cc
 	src/model/GetTagKeyResult.cc
 	src/model/GetTagValRequest.cc
@@ -73,9 +63,7 @@ set(xtrace_src
 	src/model/QueryMetricRequest.cc
 	src/model/QueryMetricResult.cc
 	src/model/SearchTracesRequest.cc
-	src/model/SearchTracesResult.cc
-	src/model/UpdateSamplingRequest.cc
-	src/model/UpdateSamplingResult.cc )
+	src/model/SearchTracesResult.cc )
 
 add_library(xtrace ${LIB_TYPE}
 	${xtrace_public_header}

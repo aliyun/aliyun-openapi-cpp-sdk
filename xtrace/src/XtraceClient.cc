@@ -51,78 +51,6 @@ XtraceClient::XtraceClient(const std::string & accessKeyId, const std::string & 
 XtraceClient::~XtraceClient()
 {}
 
-XtraceClient::CheckServiceLinkedRoleForDeletingOutcome XtraceClient::checkServiceLinkedRoleForDeleting(const CheckServiceLinkedRoleForDeletingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckServiceLinkedRoleForDeletingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckServiceLinkedRoleForDeletingOutcome(CheckServiceLinkedRoleForDeletingResult(outcome.result()));
-	else
-		return CheckServiceLinkedRoleForDeletingOutcome(outcome.error());
-}
-
-void XtraceClient::checkServiceLinkedRoleForDeletingAsync(const CheckServiceLinkedRoleForDeletingRequest& request, const CheckServiceLinkedRoleForDeletingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkServiceLinkedRoleForDeleting(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-XtraceClient::CheckServiceLinkedRoleForDeletingOutcomeCallable XtraceClient::checkServiceLinkedRoleForDeletingCallable(const CheckServiceLinkedRoleForDeletingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckServiceLinkedRoleForDeletingOutcome()>>(
-			[this, request]()
-			{
-			return this->checkServiceLinkedRoleForDeleting(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-XtraceClient::GetSamplingOutcome XtraceClient::getSampling(const GetSamplingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSamplingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSamplingOutcome(GetSamplingResult(outcome.result()));
-	else
-		return GetSamplingOutcome(outcome.error());
-}
-
-void XtraceClient::getSamplingAsync(const GetSamplingRequest& request, const GetSamplingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSampling(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-XtraceClient::GetSamplingOutcomeCallable XtraceClient::getSamplingCallable(const GetSamplingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSamplingOutcome()>>(
-			[this, request]()
-			{
-			return this->getSampling(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 XtraceClient::GetTagKeyOutcome XtraceClient::getTagKey(const GetTagKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,42 +405,6 @@ XtraceClient::SearchTracesOutcomeCallable XtraceClient::searchTracesCallable(con
 			[this, request]()
 			{
 			return this->searchTraces(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-XtraceClient::UpdateSamplingOutcome XtraceClient::updateSampling(const UpdateSamplingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateSamplingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateSamplingOutcome(UpdateSamplingResult(outcome.result()));
-	else
-		return UpdateSamplingOutcome(outcome.error());
-}
-
-void XtraceClient::updateSamplingAsync(const UpdateSamplingRequest& request, const UpdateSamplingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateSampling(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-XtraceClient::UpdateSamplingOutcomeCallable XtraceClient::updateSamplingCallable(const UpdateSamplingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateSamplingOutcome()>>(
-			[this, request]()
-			{
-			return this->updateSampling(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

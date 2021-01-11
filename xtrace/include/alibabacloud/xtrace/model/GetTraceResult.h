@@ -49,17 +49,19 @@ namespace AlibabaCloud
 						std::vector<LogEvent::TagEntry2> tagEntryList1;
 						long timestamp;
 					};
-					bool haveStack;
+					std::string parentSpanId;
 					std::string serviceIp;
-					std::vector<Span::LogEvent> logEventList;
 					std::string operationName;
-					std::string serviceName;
-					std::string rpcId;
-					std::string traceID;
 					long duration;
 					std::vector<Span::TagEntry> tagEntryList;
 					long timestamp;
+					bool haveStack;
+					std::vector<Span::LogEvent> logEventList;
+					std::string serviceName;
+					std::string rpcId;
+					std::string traceID;
 					std::string resultCode;
+					std::string spanId;
 				};
 
 

@@ -60,3 +60,14 @@ void GetTokenRequest::setProxyUserId(const std::string& proxyUserId)
 	setParameter("ProxyUserId", proxyUserId);
 }
 
+bool GetTokenRequest::getIsForce()const
+{
+	return isForce_;
+}
+
+void GetTokenRequest::setIsForce(bool isForce)
+{
+	isForce_ = isForce;
+	setParameter("IsForce", isForce ? "true" : "false");
+}
+
