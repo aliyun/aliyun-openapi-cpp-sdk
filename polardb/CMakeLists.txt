@@ -21,6 +21,12 @@ set(polardb_public_header
 	include/alibabacloud/polardb/PolardbExport.h )
 
 set(polardb_public_header_model 
+	include/alibabacloud/polardb/model/CancelScheduleTasksRequest.h
+	include/alibabacloud/polardb/model/CancelScheduleTasksResult.h
+	include/alibabacloud/polardb/model/CheckAccountNameRequest.h
+	include/alibabacloud/polardb/model/CheckAccountNameResult.h
+	include/alibabacloud/polardb/model/CheckDBNameRequest.h
+	include/alibabacloud/polardb/model/CheckDBNameResult.h
 	include/alibabacloud/polardb/model/CloseDBClusterMigrationRequest.h
 	include/alibabacloud/polardb/model/CloseDBClusterMigrationResult.h
 	include/alibabacloud/polardb/model/CreateAccountRequest.h
@@ -67,6 +73,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeBackupTasksResult.h
 	include/alibabacloud/polardb/model/DescribeBackupsRequest.h
 	include/alibabacloud/polardb/model/DescribeBackupsResult.h
+	include/alibabacloud/polardb/model/DescribeCharacterSetNameRequest.h
+	include/alibabacloud/polardb/model/DescribeCharacterSetNameResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAccessWhitelistRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAccessWhitelistResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAttributeRequest.h
@@ -95,6 +103,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBClustersResult.h
 	include/alibabacloud/polardb/model/DescribeDBClustersWithBackupsRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClustersWithBackupsResult.h
+	include/alibabacloud/polardb/model/DescribeDBInitializeVariableRequest.h
+	include/alibabacloud/polardb/model/DescribeDBInitializeVariableResult.h
 	include/alibabacloud/polardb/model/DescribeDBLinksRequest.h
 	include/alibabacloud/polardb/model/DescribeDBLinksResult.h
 	include/alibabacloud/polardb/model/DescribeDBNodePerformanceRequest.h
@@ -115,6 +125,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionsResult.h
 	include/alibabacloud/polardb/model/DescribeRegionsRequest.h
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
+	include/alibabacloud/polardb/model/DescribeScheduleTasksRequest.h
+	include/alibabacloud/polardb/model/DescribeScheduleTasksResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
 	include/alibabacloud/polardb/model/DescribeTasksRequest.h
@@ -182,6 +194,12 @@ set(polardb_public_header_model
 
 set(polardb_src 
 	src/PolardbClient.cc
+	src/model/CancelScheduleTasksRequest.cc
+	src/model/CancelScheduleTasksResult.cc
+	src/model/CheckAccountNameRequest.cc
+	src/model/CheckAccountNameResult.cc
+	src/model/CheckDBNameRequest.cc
+	src/model/CheckDBNameResult.cc
 	src/model/CloseDBClusterMigrationRequest.cc
 	src/model/CloseDBClusterMigrationResult.cc
 	src/model/CreateAccountRequest.cc
@@ -228,6 +246,8 @@ set(polardb_src
 	src/model/DescribeBackupTasksResult.cc
 	src/model/DescribeBackupsRequest.cc
 	src/model/DescribeBackupsResult.cc
+	src/model/DescribeCharacterSetNameRequest.cc
+	src/model/DescribeCharacterSetNameResult.cc
 	src/model/DescribeDBClusterAccessWhitelistRequest.cc
 	src/model/DescribeDBClusterAccessWhitelistResult.cc
 	src/model/DescribeDBClusterAttributeRequest.cc
@@ -256,6 +276,8 @@ set(polardb_src
 	src/model/DescribeDBClustersResult.cc
 	src/model/DescribeDBClustersWithBackupsRequest.cc
 	src/model/DescribeDBClustersWithBackupsResult.cc
+	src/model/DescribeDBInitializeVariableRequest.cc
+	src/model/DescribeDBInitializeVariableResult.cc
 	src/model/DescribeDBLinksRequest.cc
 	src/model/DescribeDBLinksResult.cc
 	src/model/DescribeDBNodePerformanceRequest.cc
@@ -276,6 +298,8 @@ set(polardb_src
 	src/model/DescribePendingMaintenanceActionsResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeScheduleTasksRequest.cc
+	src/model/DescribeScheduleTasksResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
 	src/model/DescribeTasksRequest.cc

@@ -60,6 +60,17 @@ void CreateDBNodesRequest::setEndpointBindList(const std::string& endpointBindLi
 	setParameter("EndpointBindList", endpointBindList);
 }
 
+std::string CreateDBNodesRequest::getPlannedEndTime()const
+{
+	return plannedEndTime_;
+}
+
+void CreateDBNodesRequest::setPlannedEndTime(const std::string& plannedEndTime)
+{
+	plannedEndTime_ = plannedEndTime;
+	setParameter("PlannedEndTime", plannedEndTime);
+}
+
 std::string CreateDBNodesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -113,6 +124,17 @@ void CreateDBNodesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateDBNodesRequest::getPlannedStartTime()const
+{
+	return plannedStartTime_;
+}
+
+void CreateDBNodesRequest::setPlannedStartTime(const std::string& plannedStartTime)
+{
+	plannedStartTime_ = plannedStartTime;
+	setParameter("PlannedStartTime", plannedStartTime);
 }
 
 std::vector<CreateDBNodesRequest::DBNode> CreateDBNodesRequest::getDBNode()const

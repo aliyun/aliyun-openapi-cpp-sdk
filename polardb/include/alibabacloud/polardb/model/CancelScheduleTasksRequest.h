@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATEBACKUPREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_CREATEBACKUPREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_CANCELSCHEDULETASKSREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_CANCELSCHEDULETASKSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,19 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT CreateBackupRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT CancelScheduleTasksRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateBackupRequest();
-				~CreateBackupRequest();
+				CancelScheduleTasksRequest();
+				~CancelScheduleTasksRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
 				std::string accessKeyId_;
+				std::string taskId_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
@@ -63,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATEBACKUPREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_CANCELSCHEDULETASKSREQUEST_H_

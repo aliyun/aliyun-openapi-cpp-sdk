@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getAccountType()const;
 				void setAccountType(const std::string& accountType);
 				std::string getAccountDescription()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
 				std::string accountType_;
 				std::string accountDescription_;
 				std::string accessKeyId_;

@@ -49,6 +49,17 @@ void ModifyDBNodeClassRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string ModifyDBNodeClassRequest::getPlannedEndTime()const
+{
+	return plannedEndTime_;
+}
+
+void ModifyDBNodeClassRequest::setPlannedEndTime(const std::string& plannedEndTime)
+{
+	plannedEndTime_ = plannedEndTime;
+	setParameter("PlannedEndTime", plannedEndTime);
+}
+
 std::string ModifyDBNodeClassRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -113,6 +124,17 @@ void ModifyDBNodeClassRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyDBNodeClassRequest::getPlannedStartTime()const
+{
+	return plannedStartTime_;
+}
+
+void ModifyDBNodeClassRequest::setPlannedStartTime(const std::string& plannedStartTime)
+{
+	plannedStartTime_ = plannedStartTime;
+	setParameter("PlannedStartTime", plannedStartTime);
 }
 
 std::string ModifyDBNodeClassRequest::getModifyType()const

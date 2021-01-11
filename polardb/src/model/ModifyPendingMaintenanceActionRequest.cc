@@ -60,6 +60,17 @@ void ModifyPendingMaintenanceActionRequest::setSecurityToken(const std::string& 
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyPendingMaintenanceActionRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyPendingMaintenanceActionRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyPendingMaintenanceActionRequest::getSwitchTime()const
 {
 	return switchTime_;

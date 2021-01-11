@@ -22,6 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "PolardbExport.h"
+#include "model/CancelScheduleTasksRequest.h"
+#include "model/CancelScheduleTasksResult.h"
+#include "model/CheckAccountNameRequest.h"
+#include "model/CheckAccountNameResult.h"
+#include "model/CheckDBNameRequest.h"
+#include "model/CheckDBNameResult.h"
 #include "model/CloseDBClusterMigrationRequest.h"
 #include "model/CloseDBClusterMigrationResult.h"
 #include "model/CreateAccountRequest.h"
@@ -68,6 +74,8 @@
 #include "model/DescribeBackupTasksResult.h"
 #include "model/DescribeBackupsRequest.h"
 #include "model/DescribeBackupsResult.h"
+#include "model/DescribeCharacterSetNameRequest.h"
+#include "model/DescribeCharacterSetNameResult.h"
 #include "model/DescribeDBClusterAccessWhitelistRequest.h"
 #include "model/DescribeDBClusterAccessWhitelistResult.h"
 #include "model/DescribeDBClusterAttributeRequest.h"
@@ -96,6 +104,8 @@
 #include "model/DescribeDBClustersResult.h"
 #include "model/DescribeDBClustersWithBackupsRequest.h"
 #include "model/DescribeDBClustersWithBackupsResult.h"
+#include "model/DescribeDBInitializeVariableRequest.h"
+#include "model/DescribeDBInitializeVariableResult.h"
 #include "model/DescribeDBLinksRequest.h"
 #include "model/DescribeDBLinksResult.h"
 #include "model/DescribeDBNodePerformanceRequest.h"
@@ -116,6 +126,8 @@
 #include "model/DescribePendingMaintenanceActionsResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeScheduleTasksRequest.h"
+#include "model/DescribeScheduleTasksResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
 #include "model/DescribeSlowLogRecordsResult.h"
 #include "model/DescribeTasksRequest.h"
@@ -189,6 +201,15 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_POLARDB_EXPORT PolardbClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CancelScheduleTasksResult> CancelScheduleTasksOutcome;
+			typedef std::future<CancelScheduleTasksOutcome> CancelScheduleTasksOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CancelScheduleTasksRequest&, const CancelScheduleTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelScheduleTasksAsyncHandler;
+			typedef Outcome<Error, Model::CheckAccountNameResult> CheckAccountNameOutcome;
+			typedef std::future<CheckAccountNameOutcome> CheckAccountNameOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CheckAccountNameRequest&, const CheckAccountNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountNameAsyncHandler;
+			typedef Outcome<Error, Model::CheckDBNameResult> CheckDBNameOutcome;
+			typedef std::future<CheckDBNameOutcome> CheckDBNameOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CheckDBNameRequest&, const CheckDBNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDBNameAsyncHandler;
 			typedef Outcome<Error, Model::CloseDBClusterMigrationResult> CloseDBClusterMigrationOutcome;
 			typedef std::future<CloseDBClusterMigrationOutcome> CloseDBClusterMigrationOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CloseDBClusterMigrationRequest&, const CloseDBClusterMigrationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseDBClusterMigrationAsyncHandler;
@@ -258,6 +279,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBackupsResult> DescribeBackupsOutcome;
 			typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeBackupsRequest&, const DescribeBackupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCharacterSetNameResult> DescribeCharacterSetNameOutcome;
+			typedef std::future<DescribeCharacterSetNameOutcome> DescribeCharacterSetNameOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeCharacterSetNameRequest&, const DescribeCharacterSetNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCharacterSetNameAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterAccessWhitelistResult> DescribeDBClusterAccessWhitelistOutcome;
 			typedef std::future<DescribeDBClusterAccessWhitelistOutcome> DescribeDBClusterAccessWhitelistOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterAccessWhitelistRequest&, const DescribeDBClusterAccessWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAccessWhitelistAsyncHandler;
@@ -300,6 +324,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBClustersWithBackupsResult> DescribeDBClustersWithBackupsOutcome;
 			typedef std::future<DescribeDBClustersWithBackupsOutcome> DescribeDBClustersWithBackupsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClustersWithBackupsRequest&, const DescribeDBClustersWithBackupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClustersWithBackupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBInitializeVariableResult> DescribeDBInitializeVariableOutcome;
+			typedef std::future<DescribeDBInitializeVariableOutcome> DescribeDBInitializeVariableOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeDBInitializeVariableRequest&, const DescribeDBInitializeVariableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInitializeVariableAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBLinksResult> DescribeDBLinksOutcome;
 			typedef std::future<DescribeDBLinksOutcome> DescribeDBLinksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBLinksRequest&, const DescribeDBLinksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBLinksAsyncHandler;
@@ -330,6 +357,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScheduleTasksResult> DescribeScheduleTasksOutcome;
+			typedef std::future<DescribeScheduleTasksOutcome> DescribeScheduleTasksOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeScheduleTasksRequest&, const DescribeScheduleTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduleTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSlowLogRecordsResult> DescribeSlowLogRecordsOutcome;
 			typedef std::future<DescribeSlowLogRecordsOutcome> DescribeSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeSlowLogRecordsRequest&, const DescribeSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogRecordsAsyncHandler;
@@ -431,6 +461,15 @@ namespace AlibabaCloud
 			PolardbClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			PolardbClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~PolardbClient();
+			CancelScheduleTasksOutcome cancelScheduleTasks(const Model::CancelScheduleTasksRequest &request)const;
+			void cancelScheduleTasksAsync(const Model::CancelScheduleTasksRequest& request, const CancelScheduleTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelScheduleTasksOutcomeCallable cancelScheduleTasksCallable(const Model::CancelScheduleTasksRequest& request) const;
+			CheckAccountNameOutcome checkAccountName(const Model::CheckAccountNameRequest &request)const;
+			void checkAccountNameAsync(const Model::CheckAccountNameRequest& request, const CheckAccountNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckAccountNameOutcomeCallable checkAccountNameCallable(const Model::CheckAccountNameRequest& request) const;
+			CheckDBNameOutcome checkDBName(const Model::CheckDBNameRequest &request)const;
+			void checkDBNameAsync(const Model::CheckDBNameRequest& request, const CheckDBNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckDBNameOutcomeCallable checkDBNameCallable(const Model::CheckDBNameRequest& request) const;
 			CloseDBClusterMigrationOutcome closeDBClusterMigration(const Model::CloseDBClusterMigrationRequest &request)const;
 			void closeDBClusterMigrationAsync(const Model::CloseDBClusterMigrationRequest& request, const CloseDBClusterMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseDBClusterMigrationOutcomeCallable closeDBClusterMigrationCallable(const Model::CloseDBClusterMigrationRequest& request) const;
@@ -500,6 +539,9 @@ namespace AlibabaCloud
 			DescribeBackupsOutcome describeBackups(const Model::DescribeBackupsRequest &request)const;
 			void describeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupsOutcomeCallable describeBackupsCallable(const Model::DescribeBackupsRequest& request) const;
+			DescribeCharacterSetNameOutcome describeCharacterSetName(const Model::DescribeCharacterSetNameRequest &request)const;
+			void describeCharacterSetNameAsync(const Model::DescribeCharacterSetNameRequest& request, const DescribeCharacterSetNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCharacterSetNameOutcomeCallable describeCharacterSetNameCallable(const Model::DescribeCharacterSetNameRequest& request) const;
 			DescribeDBClusterAccessWhitelistOutcome describeDBClusterAccessWhitelist(const Model::DescribeDBClusterAccessWhitelistRequest &request)const;
 			void describeDBClusterAccessWhitelistAsync(const Model::DescribeDBClusterAccessWhitelistRequest& request, const DescribeDBClusterAccessWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterAccessWhitelistOutcomeCallable describeDBClusterAccessWhitelistCallable(const Model::DescribeDBClusterAccessWhitelistRequest& request) const;
@@ -542,6 +584,9 @@ namespace AlibabaCloud
 			DescribeDBClustersWithBackupsOutcome describeDBClustersWithBackups(const Model::DescribeDBClustersWithBackupsRequest &request)const;
 			void describeDBClustersWithBackupsAsync(const Model::DescribeDBClustersWithBackupsRequest& request, const DescribeDBClustersWithBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClustersWithBackupsOutcomeCallable describeDBClustersWithBackupsCallable(const Model::DescribeDBClustersWithBackupsRequest& request) const;
+			DescribeDBInitializeVariableOutcome describeDBInitializeVariable(const Model::DescribeDBInitializeVariableRequest &request)const;
+			void describeDBInitializeVariableAsync(const Model::DescribeDBInitializeVariableRequest& request, const DescribeDBInitializeVariableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBInitializeVariableOutcomeCallable describeDBInitializeVariableCallable(const Model::DescribeDBInitializeVariableRequest& request) const;
 			DescribeDBLinksOutcome describeDBLinks(const Model::DescribeDBLinksRequest &request)const;
 			void describeDBLinksAsync(const Model::DescribeDBLinksRequest& request, const DescribeDBLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBLinksOutcomeCallable describeDBLinksCallable(const Model::DescribeDBLinksRequest& request) const;
@@ -572,6 +617,9 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DescribeScheduleTasksOutcome describeScheduleTasks(const Model::DescribeScheduleTasksRequest &request)const;
+			void describeScheduleTasksAsync(const Model::DescribeScheduleTasksRequest& request, const DescribeScheduleTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScheduleTasksOutcomeCallable describeScheduleTasksCallable(const Model::DescribeScheduleTasksRequest& request) const;
 			DescribeSlowLogRecordsOutcome describeSlowLogRecords(const Model::DescribeSlowLogRecordsRequest &request)const;
 			void describeSlowLogRecordsAsync(const Model::DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowLogRecordsOutcomeCallable describeSlowLogRecordsCallable(const Model::DescribeSlowLogRecordsRequest& request) const;

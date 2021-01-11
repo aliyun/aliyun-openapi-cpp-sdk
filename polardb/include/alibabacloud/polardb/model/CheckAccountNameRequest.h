@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATEBACKUPREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_CREATEBACKUPREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_CHECKACCOUNTNAMEREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_CHECKACCOUNTNAMEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,19 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT CreateBackupRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT CheckAccountNameRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateBackupRequest();
-				~CreateBackupRequest();
+				CheckAccountNameRequest();
+				~CheckAccountNameRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAccountName()const;
+				void setAccountName(const std::string& accountName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
 				std::string accessKeyId_;
+				std::string accountName_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
@@ -63,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATEBACKUPREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_CHECKACCOUNTNAMEREQUEST_H_

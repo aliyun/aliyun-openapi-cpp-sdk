@@ -38,6 +38,17 @@ void UpgradeDBClusterMinorVersionRequest::setResourceOwnerId(long resourceOwnerI
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpgradeDBClusterMinorVersionRequest::getPlannedEndTime()const
+{
+	return plannedEndTime_;
+}
+
+void UpgradeDBClusterMinorVersionRequest::setPlannedEndTime(const std::string& plannedEndTime)
+{
+	plannedEndTime_ = plannedEndTime;
+	setParameter("PlannedEndTime", plannedEndTime);
+}
+
 std::string UpgradeDBClusterMinorVersionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -102,5 +113,27 @@ void UpgradeDBClusterMinorVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string UpgradeDBClusterMinorVersionRequest::getPlannedStartTime()const
+{
+	return plannedStartTime_;
+}
+
+void UpgradeDBClusterMinorVersionRequest::setPlannedStartTime(const std::string& plannedStartTime)
+{
+	plannedStartTime_ = plannedStartTime;
+	setParameter("PlannedStartTime", plannedStartTime);
+}
+
+bool UpgradeDBClusterMinorVersionRequest::getFromTimeService()const
+{
+	return fromTimeService_;
+}
+
+void UpgradeDBClusterMinorVersionRequest::setFromTimeService(bool fromTimeService)
+{
+	fromTimeService_ = fromTimeService;
+	setParameter("FromTimeService", fromTimeService ? "true" : "false");
 }
 

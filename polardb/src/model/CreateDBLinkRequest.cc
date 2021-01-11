@@ -49,6 +49,17 @@ void CreateDBLinkRequest::setSourceDBName(const std::string& sourceDBName)
 	setParameter("SourceDBName", sourceDBName);
 }
 
+std::string CreateDBLinkRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateDBLinkRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string CreateDBLinkRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

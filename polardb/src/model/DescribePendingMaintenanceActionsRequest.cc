@@ -71,6 +71,17 @@ void DescribePendingMaintenanceActionsRequest::setSecurityToken(const std::strin
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribePendingMaintenanceActionsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribePendingMaintenanceActionsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribePendingMaintenanceActionsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

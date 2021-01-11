@@ -14,91 +14,80 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/CreateBackupRequest.h>
+#include <alibabacloud/polardb/model/DescribeDBInitializeVariableRequest.h>
 
-using AlibabaCloud::Polardb::Model::CreateBackupRequest;
+using AlibabaCloud::Polardb::Model::DescribeDBInitializeVariableRequest;
 
-CreateBackupRequest::CreateBackupRequest() :
-	RpcServiceRequest("polardb", "2017-08-01", "CreateBackup")
+DescribeDBInitializeVariableRequest::DescribeDBInitializeVariableRequest() :
+	RpcServiceRequest("polardb", "2017-08-01", "DescribeDBInitializeVariable")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-CreateBackupRequest::~CreateBackupRequest()
+DescribeDBInitializeVariableRequest::~DescribeDBInitializeVariableRequest()
 {}
 
-long CreateBackupRequest::getResourceOwnerId()const
+long DescribeDBInitializeVariableRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void CreateBackupRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeDBInitializeVariableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateBackupRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void CreateBackupRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
-}
-
-std::string CreateBackupRequest::getAccessKeyId()const
+std::string DescribeDBInitializeVariableRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeDBInitializeVariableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateBackupRequest::getResourceOwnerAccount()const
+std::string DescribeDBInitializeVariableRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void CreateBackupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeDBInitializeVariableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateBackupRequest::getDBClusterId()const
+std::string DescribeDBInitializeVariableRequest::getDBClusterId()const
 {
 	return dBClusterId_;
 }
 
-void CreateBackupRequest::setDBClusterId(const std::string& dBClusterId)
+void DescribeDBInitializeVariableRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
 	setParameter("DBClusterId", dBClusterId);
 }
 
-std::string CreateBackupRequest::getOwnerAccount()const
+std::string DescribeDBInitializeVariableRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void CreateBackupRequest::setOwnerAccount(const std::string& ownerAccount)
+void DescribeDBInitializeVariableRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-long CreateBackupRequest::getOwnerId()const
+long DescribeDBInitializeVariableRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void CreateBackupRequest::setOwnerId(long ownerId)
+void DescribeDBInitializeVariableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));

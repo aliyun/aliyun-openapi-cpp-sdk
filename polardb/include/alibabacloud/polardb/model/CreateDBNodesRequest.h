@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getEndpointBindList()const;
 				void setEndpointBindList(const std::string& endpointBindList);
+				std::string getPlannedEndTime()const;
+				void setPlannedEndTime(const std::string& plannedEndTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceOwnerAccount()const;
@@ -57,6 +59,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPlannedStartTime()const;
+				void setPlannedStartTime(const std::string& plannedStartTime);
 				std::vector<DBNode> getDBNode()const;
 				void setDBNode(const std::vector<DBNode>& dBNode);
 
@@ -64,11 +68,13 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string endpointBindList_;
+				std::string plannedEndTime_;
 				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string plannedStartTime_;
 				std::vector<DBNode> dBNode_;
 
 			};
