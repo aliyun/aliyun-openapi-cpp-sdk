@@ -36,6 +36,10 @@
 #include "model/CompleteAttendedTransferResult.h"
 #include "model/GetLoginDetailsRequest.h"
 #include "model/GetLoginDetailsResult.h"
+#include "model/GetMonoRecordingRequest.h"
+#include "model/GetMonoRecordingResult.h"
+#include "model/GetMultiChannelRecordingRequest.h"
+#include "model/GetMultiChannelRecordingResult.h"
 #include "model/GetNumberLocationRequest.h"
 #include "model/GetNumberLocationResult.h"
 #include "model/GetTurnCredentialsRequest.h"
@@ -132,6 +136,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetLoginDetailsResult> GetLoginDetailsOutcome;
 			typedef std::future<GetLoginDetailsOutcome> GetLoginDetailsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetLoginDetailsRequest&, const GetLoginDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLoginDetailsAsyncHandler;
+			typedef Outcome<Error, Model::GetMonoRecordingResult> GetMonoRecordingOutcome;
+			typedef std::future<GetMonoRecordingOutcome> GetMonoRecordingOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::GetMonoRecordingRequest&, const GetMonoRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMonoRecordingAsyncHandler;
+			typedef Outcome<Error, Model::GetMultiChannelRecordingResult> GetMultiChannelRecordingOutcome;
+			typedef std::future<GetMultiChannelRecordingOutcome> GetMultiChannelRecordingOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::GetMultiChannelRecordingRequest&, const GetMultiChannelRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiChannelRecordingAsyncHandler;
 			typedef Outcome<Error, Model::GetNumberLocationResult> GetNumberLocationOutcome;
 			typedef std::future<GetNumberLocationOutcome> GetNumberLocationOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetNumberLocationRequest&, const GetNumberLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNumberLocationAsyncHandler;
@@ -257,6 +267,12 @@ namespace AlibabaCloud
 			GetLoginDetailsOutcome getLoginDetails(const Model::GetLoginDetailsRequest &request)const;
 			void getLoginDetailsAsync(const Model::GetLoginDetailsRequest& request, const GetLoginDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLoginDetailsOutcomeCallable getLoginDetailsCallable(const Model::GetLoginDetailsRequest& request) const;
+			GetMonoRecordingOutcome getMonoRecording(const Model::GetMonoRecordingRequest &request)const;
+			void getMonoRecordingAsync(const Model::GetMonoRecordingRequest& request, const GetMonoRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMonoRecordingOutcomeCallable getMonoRecordingCallable(const Model::GetMonoRecordingRequest& request) const;
+			GetMultiChannelRecordingOutcome getMultiChannelRecording(const Model::GetMultiChannelRecordingRequest &request)const;
+			void getMultiChannelRecordingAsync(const Model::GetMultiChannelRecordingRequest& request, const GetMultiChannelRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMultiChannelRecordingOutcomeCallable getMultiChannelRecordingCallable(const Model::GetMultiChannelRecordingRequest& request) const;
 			GetNumberLocationOutcome getNumberLocation(const Model::GetNumberLocationRequest &request)const;
 			void getNumberLocationAsync(const Model::GetNumberLocationRequest& request, const GetNumberLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetNumberLocationOutcomeCallable getNumberLocationCallable(const Model::GetNumberLocationRequest& request) const;

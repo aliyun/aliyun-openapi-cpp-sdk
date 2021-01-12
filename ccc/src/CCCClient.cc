@@ -303,6 +303,78 @@ CCCClient::GetLoginDetailsOutcomeCallable CCCClient::getLoginDetailsCallable(con
 	return task->get_future();
 }
 
+CCCClient::GetMonoRecordingOutcome CCCClient::getMonoRecording(const GetMonoRecordingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMonoRecordingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMonoRecordingOutcome(GetMonoRecordingResult(outcome.result()));
+	else
+		return GetMonoRecordingOutcome(outcome.error());
+}
+
+void CCCClient::getMonoRecordingAsync(const GetMonoRecordingRequest& request, const GetMonoRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMonoRecording(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::GetMonoRecordingOutcomeCallable CCCClient::getMonoRecordingCallable(const GetMonoRecordingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMonoRecordingOutcome()>>(
+			[this, request]()
+			{
+			return this->getMonoRecording(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::GetMultiChannelRecordingOutcome CCCClient::getMultiChannelRecording(const GetMultiChannelRecordingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMultiChannelRecordingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMultiChannelRecordingOutcome(GetMultiChannelRecordingResult(outcome.result()));
+	else
+		return GetMultiChannelRecordingOutcome(outcome.error());
+}
+
+void CCCClient::getMultiChannelRecordingAsync(const GetMultiChannelRecordingRequest& request, const GetMultiChannelRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMultiChannelRecording(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::GetMultiChannelRecordingOutcomeCallable CCCClient::getMultiChannelRecordingCallable(const GetMultiChannelRecordingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMultiChannelRecordingOutcome()>>(
+			[this, request]()
+			{
+			return this->getMultiChannelRecording(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::GetNumberLocationOutcome CCCClient::getNumberLocation(const GetNumberLocationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

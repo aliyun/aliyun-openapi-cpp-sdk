@@ -35,6 +35,10 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/CompleteAttendedTransferResult.h
 	include/alibabacloud/ccc/model/GetLoginDetailsRequest.h
 	include/alibabacloud/ccc/model/GetLoginDetailsResult.h
+	include/alibabacloud/ccc/model/GetMonoRecordingRequest.h
+	include/alibabacloud/ccc/model/GetMonoRecordingResult.h
+	include/alibabacloud/ccc/model/GetMultiChannelRecordingRequest.h
+	include/alibabacloud/ccc/model/GetMultiChannelRecordingResult.h
 	include/alibabacloud/ccc/model/GetNumberLocationRequest.h
 	include/alibabacloud/ccc/model/GetNumberLocationResult.h
 	include/alibabacloud/ccc/model/GetTurnCredentialsRequest.h
@@ -118,6 +122,10 @@ set(ccc_src
 	src/model/CompleteAttendedTransferResult.cc
 	src/model/GetLoginDetailsRequest.cc
 	src/model/GetLoginDetailsResult.cc
+	src/model/GetMonoRecordingRequest.cc
+	src/model/GetMonoRecordingResult.cc
+	src/model/GetMultiChannelRecordingRequest.cc
+	src/model/GetMultiChannelRecordingResult.cc
 	src/model/GetNumberLocationRequest.cc
 	src/model/GetNumberLocationResult.cc
 	src/model/GetTurnCredentialsRequest.cc
