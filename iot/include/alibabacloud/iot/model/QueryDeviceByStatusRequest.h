@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				QueryDeviceByStatusRequest();
 				~QueryDeviceByStatusRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getIotInstanceId()const;
@@ -57,7 +61,9 @@ namespace AlibabaCloud
 				void setStatus(int status);
 
             private:
+				std::string realTenantId_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string resourceGroupId_;
 				std::string iotInstanceId_;
 				int pageSize_;

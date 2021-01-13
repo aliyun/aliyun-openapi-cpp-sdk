@@ -27,6 +27,17 @@ DeleteProductTagsRequest::DeleteProductTagsRequest() :
 DeleteProductTagsRequest::~DeleteProductTagsRequest()
 {}
 
+std::string DeleteProductTagsRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void DeleteProductTagsRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string DeleteProductTagsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void DeleteProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteProductTagsRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void DeleteProductTagsRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string DeleteProductTagsRequest::getIotInstanceId()const

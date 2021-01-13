@@ -35,10 +35,14 @@ namespace AlibabaCloud
 				CreateDeviceGroupRequest();
 				~CreateDeviceGroupRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getSuperGroupId()const;
 				void setSuperGroupId(const std::string& superGroupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getGroupName()const;
@@ -51,8 +55,10 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 
             private:
+				std::string realTenantId_;
 				std::string superGroupId_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				std::string groupName_;
 				std::string groupDesc_;

@@ -1,4 +1,7 @@
 2021-01-13 Version: patch
+- Add support for IoT jobs, including job management and query APIs like CreateJob, UpdateJob, QueryJob, CancelJob, ListTask, QueryTask, QueryJobStatistics etc.
+
+2021-01-13 Version: patch
 - Generated 2016-11-01 for `live`.
 
 2021-01-12 Version: patch

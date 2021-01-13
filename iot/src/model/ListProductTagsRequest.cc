@@ -27,6 +27,17 @@ ListProductTagsRequest::ListProductTagsRequest() :
 ListProductTagsRequest::~ListProductTagsRequest()
 {}
 
+std::string ListProductTagsRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ListProductTagsRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string ListProductTagsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void ListProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListProductTagsRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ListProductTagsRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string ListProductTagsRequest::getIotInstanceId()const

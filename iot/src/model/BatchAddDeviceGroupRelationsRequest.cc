@@ -27,6 +27,17 @@ BatchAddDeviceGroupRelationsRequest::BatchAddDeviceGroupRelationsRequest() :
 BatchAddDeviceGroupRelationsRequest::~BatchAddDeviceGroupRelationsRequest()
 {}
 
+std::string BatchAddDeviceGroupRelationsRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void BatchAddDeviceGroupRelationsRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string BatchAddDeviceGroupRelationsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void BatchAddDeviceGroupRelationsRequest::setAccessKeyId(const std::string& acce
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BatchAddDeviceGroupRelationsRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void BatchAddDeviceGroupRelationsRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string BatchAddDeviceGroupRelationsRequest::getIotInstanceId()const

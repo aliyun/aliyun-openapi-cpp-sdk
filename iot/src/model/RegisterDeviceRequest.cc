@@ -27,6 +27,17 @@ RegisterDeviceRequest::RegisterDeviceRequest() :
 RegisterDeviceRequest::~RegisterDeviceRequest()
 {}
 
+std::string RegisterDeviceRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void RegisterDeviceRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string RegisterDeviceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void RegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RegisterDeviceRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void RegisterDeviceRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string RegisterDeviceRequest::getLoraNodeType()const

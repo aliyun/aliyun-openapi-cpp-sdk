@@ -27,6 +27,17 @@ BatchUpdateDeviceNicknameRequest::BatchUpdateDeviceNicknameRequest() :
 BatchUpdateDeviceNicknameRequest::~BatchUpdateDeviceNicknameRequest()
 {}
 
+std::string BatchUpdateDeviceNicknameRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void BatchUpdateDeviceNicknameRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string BatchUpdateDeviceNicknameRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void BatchUpdateDeviceNicknameRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BatchUpdateDeviceNicknameRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void BatchUpdateDeviceNicknameRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string BatchUpdateDeviceNicknameRequest::getIotInstanceId()const

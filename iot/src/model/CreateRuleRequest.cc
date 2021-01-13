@@ -159,6 +159,17 @@ void CreateRuleRequest::setName(const std::string& name)
 	setParameter("Name", name);
 }
 
+std::string CreateRuleRequest::getTopic()const
+{
+	return topic_;
+}
+
+void CreateRuleRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setParameter("Topic", topic);
+}
+
 std::string CreateRuleRequest::getApiRevision()const
 {
 	return apiRevision_;

@@ -27,6 +27,17 @@ InvokeThingServiceRequest::InvokeThingServiceRequest() :
 InvokeThingServiceRequest::~InvokeThingServiceRequest()
 {}
 
+std::string InvokeThingServiceRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void InvokeThingServiceRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string InvokeThingServiceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void InvokeThingServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string InvokeThingServiceRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void InvokeThingServiceRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string InvokeThingServiceRequest::getIotId()const

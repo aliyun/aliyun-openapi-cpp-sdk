@@ -27,6 +27,17 @@ QueryDeviceStatisticsRequest::QueryDeviceStatisticsRequest() :
 QueryDeviceStatisticsRequest::~QueryDeviceStatisticsRequest()
 {}
 
+std::string QueryDeviceStatisticsRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryDeviceStatisticsRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryDeviceStatisticsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -38,6 +49,17 @@ void QueryDeviceStatisticsRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string QueryDeviceStatisticsRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryDeviceStatisticsRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string QueryDeviceStatisticsRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -47,6 +69,17 @@ void QueryDeviceStatisticsRequest::setIotInstanceId(const std::string& iotInstan
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryDeviceStatisticsRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void QueryDeviceStatisticsRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
 }
 
 std::string QueryDeviceStatisticsRequest::getProductKey()const

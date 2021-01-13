@@ -27,6 +27,17 @@ QueryDevicePropertiesDataRequest::QueryDevicePropertiesDataRequest() :
 QueryDevicePropertiesDataRequest::~QueryDevicePropertiesDataRequest()
 {}
 
+std::string QueryDevicePropertiesDataRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryDevicePropertiesDataRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 long QueryDevicePropertiesDataRequest::getStartTime()const
 {
 	return startTime_;
@@ -47,6 +58,17 @@ void QueryDevicePropertiesDataRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryDevicePropertiesDataRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryDevicePropertiesDataRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryDevicePropertiesDataRequest::getIotId()const

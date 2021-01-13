@@ -27,6 +27,17 @@ CreateDeviceGroupRequest::CreateDeviceGroupRequest() :
 CreateDeviceGroupRequest::~CreateDeviceGroupRequest()
 {}
 
+std::string CreateDeviceGroupRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void CreateDeviceGroupRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string CreateDeviceGroupRequest::getSuperGroupId()const
 {
 	return superGroupId_;
@@ -47,6 +58,17 @@ void CreateDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateDeviceGroupRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void CreateDeviceGroupRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string CreateDeviceGroupRequest::getIotInstanceId()const

@@ -27,6 +27,17 @@ QueryDeviceByStatusRequest::QueryDeviceByStatusRequest() :
 QueryDeviceByStatusRequest::~QueryDeviceByStatusRequest()
 {}
 
+std::string QueryDeviceByStatusRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryDeviceByStatusRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryDeviceByStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QueryDeviceByStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryDeviceByStatusRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryDeviceByStatusRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryDeviceByStatusRequest::getResourceGroupId()const

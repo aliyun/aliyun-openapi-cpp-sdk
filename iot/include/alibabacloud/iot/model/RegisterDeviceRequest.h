@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				RegisterDeviceRequest();
 				~RegisterDeviceRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getLoraNodeType()const;
 				void setLoraNodeType(const std::string& loraNodeType);
 				std::string getIotInstanceId()const;
@@ -61,7 +65,9 @@ namespace AlibabaCloud
 				void setAppKey(const std::string& appKey);
 
             private:
+				std::string realTenantId_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string loraNodeType_;
 				std::string iotInstanceId_;
 				std::string nickname_;

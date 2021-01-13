@@ -27,6 +27,17 @@ DeleteDeviceGroupRequest::DeleteDeviceGroupRequest() :
 DeleteDeviceGroupRequest::~DeleteDeviceGroupRequest()
 {}
 
+std::string DeleteDeviceGroupRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void DeleteDeviceGroupRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string DeleteDeviceGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void DeleteDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteDeviceGroupRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void DeleteDeviceGroupRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string DeleteDeviceGroupRequest::getIotInstanceId()const

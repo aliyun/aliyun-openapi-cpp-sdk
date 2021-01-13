@@ -137,6 +137,17 @@ void UpdateRuleRequest::setName(const std::string& name)
 	setParameter("Name", name);
 }
 
+std::string UpdateRuleRequest::getTopic()const
+{
+	return topic_;
+}
+
+void UpdateRuleRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setParameter("Topic", topic);
+}
+
 std::string UpdateRuleRequest::getApiRevision()const
 {
 	return apiRevision_;

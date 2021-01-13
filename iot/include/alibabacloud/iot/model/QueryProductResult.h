@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string aliyunCommodityCode;
 					std::string productStatus;
 					std::string productSecret;
+					int validateType;
 					long gmtCreate;
 					std::string categoryKey;
 					bool id2;

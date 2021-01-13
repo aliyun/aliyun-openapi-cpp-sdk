@@ -1059,6 +1059,42 @@ IotClient::BindSceneRuleToEdgeInstanceOutcomeCallable IotClient::bindSceneRuleTo
 	return task->get_future();
 }
 
+IotClient::CancelJobOutcome IotClient::cancelJob(const CancelJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelJobOutcome(CancelJobResult(outcome.result()));
+	else
+		return CancelJobOutcome(outcome.error());
+}
+
+void IotClient::cancelJobAsync(const CancelJobRequest& request, const CancelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CancelJobOutcomeCallable IotClient::cancelJobCallable(const CancelJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelJobOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CancelOTAStrategyByJobOutcome IotClient::cancelOTAStrategyByJob(const CancelOTAStrategyByJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +1665,42 @@ IotClient::CreateEdgeOssPreSignedAddressOutcomeCallable IotClient::createEdgeOss
 			[this, request]()
 			{
 			return this->createEdgeOssPreSignedAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateJobOutcome IotClient::createJob(const CreateJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateJobOutcome(CreateJobResult(outcome.result()));
+	else
+		return CreateJobOutcome(outcome.error());
+}
+
+void IotClient::createJobAsync(const CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateJobOutcomeCallable IotClient::createJobCallable(const CreateJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2571,6 +2643,42 @@ IotClient::DeleteEdgeInstanceOutcomeCallable IotClient::deleteEdgeInstanceCallab
 	return task->get_future();
 }
 
+IotClient::DeleteJobOutcome IotClient::deleteJob(const DeleteJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteJobOutcome(DeleteJobResult(outcome.result()));
+	else
+		return DeleteJobOutcome(outcome.error());
+}
+
+void IotClient::deleteJobAsync(const DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteJobOutcomeCallable IotClient::deleteJobCallable(const DeleteJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DeleteOTAFirmwareOutcome IotClient::deleteOTAFirmware(const DeleteOTAFirmwareRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,6 +3249,42 @@ IotClient::GenerateDeviceNameListURLOutcomeCallable IotClient::generateDeviceNam
 			[this, request]()
 			{
 			return this->generateDeviceNameListURL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GenerateFileUploadURLOutcome IotClient::generateFileUploadURL(const GenerateFileUploadURLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateFileUploadURLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateFileUploadURLOutcome(GenerateFileUploadURLResult(outcome.result()));
+	else
+		return GenerateFileUploadURLOutcome(outcome.error());
+}
+
+void IotClient::generateFileUploadURLAsync(const GenerateFileUploadURLRequest& request, const GenerateFileUploadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateFileUploadURL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GenerateFileUploadURLOutcomeCallable IotClient::generateFileUploadURLCallable(const GenerateFileUploadURLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateFileUploadURLOutcome()>>(
+			[this, request]()
+			{
+			return this->generateFileUploadURL(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3939,6 +4083,42 @@ IotClient::InvokeThingsServiceOutcomeCallable IotClient::invokeThingsServiceCall
 	return task->get_future();
 }
 
+IotClient::ListJobOutcome IotClient::listJob(const ListJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListJobOutcome(ListJobResult(outcome.result()));
+	else
+		return ListJobOutcome(outcome.error());
+}
+
+void IotClient::listJobAsync(const ListJobRequest& request, const ListJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListJobOutcomeCallable IotClient::listJobCallable(const ListJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListJobOutcome()>>(
+			[this, request]()
+			{
+			return this->listJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ListOTAFirmwareOutcome IotClient::listOTAFirmware(const ListOTAFirmwareRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4293,6 +4473,78 @@ IotClient::ListRuleActionsOutcomeCallable IotClient::listRuleActionsCallable(con
 			[this, request]()
 			{
 			return this->listRuleActions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ListTaskOutcome IotClient::listTask(const ListTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTaskOutcome(ListTaskResult(outcome.result()));
+	else
+		return ListTaskOutcome(outcome.error());
+}
+
+void IotClient::listTaskAsync(const ListTaskRequest& request, const ListTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListTaskOutcomeCallable IotClient::listTaskCallable(const ListTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->listTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ListTaskByPageOutcome IotClient::listTaskByPage(const ListTaskByPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTaskByPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTaskByPageOutcome(ListTaskByPageResult(outcome.result()));
+	else
+		return ListTaskByPageOutcome(outcome.error());
+}
+
+void IotClient::listTaskByPageAsync(const ListTaskByPageRequest& request, const ListTaskByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTaskByPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListTaskByPageOutcomeCallable IotClient::listTaskByPageCallable(const ListTaskByPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTaskByPageOutcome()>>(
+			[this, request]()
+			{
+			return this->listTaskByPage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6099,6 +6351,78 @@ IotClient::QueryEdgeInstanceSceneRuleOutcomeCallable IotClient::queryEdgeInstanc
 	return task->get_future();
 }
 
+IotClient::QueryJobOutcome IotClient::queryJob(const QueryJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryJobOutcome(QueryJobResult(outcome.result()));
+	else
+		return QueryJobOutcome(outcome.error());
+}
+
+void IotClient::queryJobAsync(const QueryJobRequest& request, const QueryJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryJobOutcomeCallable IotClient::queryJobCallable(const QueryJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryJobOutcome()>>(
+			[this, request]()
+			{
+			return this->queryJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryJobStatisticsOutcome IotClient::queryJobStatistics(const QueryJobStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryJobStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryJobStatisticsOutcome(QueryJobStatisticsResult(outcome.result()));
+	else
+		return QueryJobStatisticsOutcome(outcome.error());
+}
+
+void IotClient::queryJobStatisticsAsync(const QueryJobStatisticsRequest& request, const QueryJobStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryJobStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryJobStatisticsOutcomeCallable IotClient::queryJobStatisticsCallable(const QueryJobStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryJobStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryJobStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QueryLoRaJoinPermissionsOutcome IotClient::queryLoRaJoinPermissions(const QueryLoRaJoinPermissionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6525,6 +6849,42 @@ IotClient::QuerySuperDeviceGroupOutcomeCallable IotClient::querySuperDeviceGroup
 			[this, request]()
 			{
 			return this->querySuperDeviceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryTaskOutcome IotClient::queryTask(const QueryTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTaskOutcome(QueryTaskResult(outcome.result()));
+	else
+		return QueryTaskOutcome(outcome.error());
+}
+
+void IotClient::queryTaskAsync(const QueryTaskRequest& request, const QueryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryTaskOutcomeCallable IotClient::queryTaskCallable(const QueryTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7785,6 +8145,42 @@ IotClient::UpdateEdgeInstanceChannelOutcomeCallable IotClient::updateEdgeInstanc
 			[this, request]()
 			{
 			return this->updateEdgeInstanceChannel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateJobOutcome IotClient::updateJob(const UpdateJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateJobOutcome(UpdateJobResult(outcome.result()));
+	else
+		return UpdateJobOutcome(outcome.error());
+}
+
+void IotClient::updateJobAsync(const UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateJobOutcomeCallable IotClient::updateJobCallable(const UpdateJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateJobOutcome()>>(
+			[this, request]()
+			{
+			return this->updateJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

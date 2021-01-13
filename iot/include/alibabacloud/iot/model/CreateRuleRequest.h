@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setApiProduct(const std::string& apiProduct);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getTopic()const;
+				void setTopic(const std::string& topic);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 
@@ -75,6 +77,7 @@ namespace AlibabaCloud
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string name_;
+				std::string topic_;
 				std::string apiRevision_;
 
 			};

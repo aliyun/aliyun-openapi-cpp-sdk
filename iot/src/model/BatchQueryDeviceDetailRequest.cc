@@ -27,6 +27,28 @@ BatchQueryDeviceDetailRequest::BatchQueryDeviceDetailRequest() :
 BatchQueryDeviceDetailRequest::~BatchQueryDeviceDetailRequest()
 {}
 
+std::string BatchQueryDeviceDetailRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void BatchQueryDeviceDetailRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string BatchQueryDeviceDetailRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void BatchQueryDeviceDetailRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string BatchQueryDeviceDetailRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
