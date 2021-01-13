@@ -188,6 +188,8 @@
 #include "model/RestartInstanceResult.h"
 #include "model/RestoreInstanceRequest.h"
 #include "model/RestoreInstanceResult.h"
+#include "model/SwitchInstanceHARequest.h"
+#include "model/SwitchInstanceHAResult.h"
 #include "model/SwitchNetworkRequest.h"
 #include "model/SwitchNetworkResult.h"
 #include "model/SyncDtsStatusRequest.h"
@@ -456,6 +458,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RestoreInstanceResult> RestoreInstanceOutcome;
 			typedef std::future<RestoreInstanceOutcome> RestoreInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::RestoreInstanceRequest&, const RestoreInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestoreInstanceAsyncHandler;
+			typedef Outcome<Error, Model::SwitchInstanceHAResult> SwitchInstanceHAOutcome;
+			typedef std::future<SwitchInstanceHAOutcome> SwitchInstanceHAOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchInstanceHARequest&, const SwitchInstanceHAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceHAAsyncHandler;
 			typedef Outcome<Error, Model::SwitchNetworkResult> SwitchNetworkOutcome;
 			typedef std::future<SwitchNetworkOutcome> SwitchNetworkOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchNetworkRequest&, const SwitchNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchNetworkAsyncHandler;
@@ -725,6 +730,9 @@ namespace AlibabaCloud
 			RestoreInstanceOutcome restoreInstance(const Model::RestoreInstanceRequest &request)const;
 			void restoreInstanceAsync(const Model::RestoreInstanceRequest& request, const RestoreInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestoreInstanceOutcomeCallable restoreInstanceCallable(const Model::RestoreInstanceRequest& request) const;
+			SwitchInstanceHAOutcome switchInstanceHA(const Model::SwitchInstanceHARequest &request)const;
+			void switchInstanceHAAsync(const Model::SwitchInstanceHARequest& request, const SwitchInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SwitchInstanceHAOutcomeCallable switchInstanceHACallable(const Model::SwitchInstanceHARequest& request) const;
 			SwitchNetworkOutcome switchNetwork(const Model::SwitchNetworkRequest &request)const;
 			void switchNetworkAsync(const Model::SwitchNetworkRequest& request, const SwitchNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchNetworkOutcomeCallable switchNetworkCallable(const Model::SwitchNetworkRequest& request) const;

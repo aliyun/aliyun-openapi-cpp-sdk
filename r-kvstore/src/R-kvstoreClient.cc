@@ -3039,6 +3039,42 @@ R_kvstoreClient::RestoreInstanceOutcomeCallable R_kvstoreClient::restoreInstance
 	return task->get_future();
 }
 
+R_kvstoreClient::SwitchInstanceHAOutcome R_kvstoreClient::switchInstanceHA(const SwitchInstanceHARequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchInstanceHAOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchInstanceHAOutcome(SwitchInstanceHAResult(outcome.result()));
+	else
+		return SwitchInstanceHAOutcome(outcome.error());
+}
+
+void R_kvstoreClient::switchInstanceHAAsync(const SwitchInstanceHARequest& request, const SwitchInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchInstanceHA(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::SwitchInstanceHAOutcomeCallable R_kvstoreClient::switchInstanceHACallable(const SwitchInstanceHARequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchInstanceHAOutcome()>>(
+			[this, request]()
+			{
+			return this->switchInstanceHA(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::SwitchNetworkOutcome R_kvstoreClient::switchNetwork(const SwitchNetworkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

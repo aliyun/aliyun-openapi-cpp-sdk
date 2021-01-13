@@ -187,6 +187,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/RestartInstanceResult.h
 	include/alibabacloud/r-kvstore/model/RestoreInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/RestoreInstanceResult.h
+	include/alibabacloud/r-kvstore/model/SwitchInstanceHARequest.h
+	include/alibabacloud/r-kvstore/model/SwitchInstanceHAResult.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkRequest.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkResult.h
 	include/alibabacloud/r-kvstore/model/SyncDtsStatusRequest.h
@@ -366,6 +368,8 @@ set(r-kvstore_src
 	src/model/RestartInstanceResult.cc
 	src/model/RestoreInstanceRequest.cc
 	src/model/RestoreInstanceResult.cc
+	src/model/SwitchInstanceHARequest.cc
+	src/model/SwitchInstanceHAResult.cc
 	src/model/SwitchNetworkRequest.cc
 	src/model/SwitchNetworkResult.cc
 	src/model/SyncDtsStatusRequest.cc

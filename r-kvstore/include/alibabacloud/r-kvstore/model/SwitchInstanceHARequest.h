@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYINSTANCESPECREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYINSTANCESPECREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_SWITCHINSTANCEHAREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_SWITCHINSTANCEHAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,37 +28,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyInstanceSpecRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT SwitchInstanceHARequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyInstanceSpecRequest();
-				~ModifyInstanceSpecRequest();
+				SwitchInstanceHARequest();
+				~SwitchInstanceHARequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getCouponNo()const;
-				void setCouponNo(const std::string& couponNo);
-				std::string getInstanceClass()const;
-				void setInstanceClass(const std::string& instanceClass);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getSwitchMode()const;
+				void setSwitchMode(int switchMode);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
-				std::string getSourceBiz()const;
-				void setSourceBiz(const std::string& sourceBiz);
-				std::string getBusinessInfo()const;
-				void setBusinessInfo(const std::string& businessInfo);
-				bool getAutoPay()const;
-				void setAutoPay(bool autoPay);
-				std::string getFromApp()const;
-				void setFromApp(const std::string& fromApp);
-				std::string getMajorVersion()const;
-				void setMajorVersion(const std::string& majorVersion);
+				std::string getNodeId()const;
+				void setNodeId(const std::string& nodeId);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -67,33 +55,27 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				bool getForceUpgrade()const;
-				void setForceUpgrade(bool forceUpgrade);
-				std::string getOrderType()const;
-				void setOrderType(const std::string& orderType);
+				std::string getSwitchType()const;
+				void setSwitchType(const std::string& switchType);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
-				std::string couponNo_;
-				std::string instanceClass_;
 				std::string accessKeyId_;
+				int switchMode_;
 				std::string securityToken_;
-				std::string effectiveTime_;
-				std::string sourceBiz_;
-				std::string businessInfo_;
-				bool autoPay_;
-				std::string fromApp_;
-				std::string majorVersion_;
+				std::string nodeId_;
+				std::string product_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string instanceId_;
-				bool forceUpgrade_;
-				std::string orderType_;
+				std::string switchType_;
+				std::string category_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYINSTANCESPECREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_SWITCHINSTANCEHAREQUEST_H_

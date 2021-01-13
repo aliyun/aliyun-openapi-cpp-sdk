@@ -104,6 +104,17 @@ void ModifyInstanceSpecRequest::setEffectiveTime(const std::string& effectiveTim
 	setParameter("EffectiveTime", effectiveTime);
 }
 
+std::string ModifyInstanceSpecRequest::getSourceBiz()const
+{
+	return sourceBiz_;
+}
+
+void ModifyInstanceSpecRequest::setSourceBiz(const std::string& sourceBiz)
+{
+	sourceBiz_ = sourceBiz;
+	setParameter("SourceBiz", sourceBiz);
+}
+
 std::string ModifyInstanceSpecRequest::getBusinessInfo()const
 {
 	return businessInfo_;
