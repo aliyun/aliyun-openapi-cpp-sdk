@@ -55,16 +55,16 @@ void DescribeCasterScenesResult::parse(const std::string &payload)
 			sceneListObject.streamUrl = valueSceneListScene["StreamUrl"].asString();
 		if(!valueSceneListScene["Status"].isNull())
 			sceneListObject.status = std::stoi(valueSceneListScene["Status"].asString());
-		auto allStreamInfosNode = allSceneListNode["StreamInfos"]["StreamInfo"];
-		for (auto allSceneListNodeStreamInfosStreamInfo : allStreamInfosNode)
+		auto allStreamInfosNode = valueSceneListScene["StreamInfos"]["StreamInfo"];
+		for (auto valueSceneListSceneStreamInfosStreamInfo : allStreamInfosNode)
 		{
 			Scene::StreamInfo streamInfosObject;
-			if(!allSceneListNodeStreamInfosStreamInfo["TranscodeConfig"].isNull())
-				streamInfosObject.transcodeConfig = allSceneListNodeStreamInfosStreamInfo["TranscodeConfig"].asString();
-			if(!allSceneListNodeStreamInfosStreamInfo["VideoFormat"].isNull())
-				streamInfosObject.videoFormat = allSceneListNodeStreamInfosStreamInfo["VideoFormat"].asString();
-			if(!allSceneListNodeStreamInfosStreamInfo["OutputStreamUrl"].isNull())
-				streamInfosObject.outputStreamUrl = allSceneListNodeStreamInfosStreamInfo["OutputStreamUrl"].asString();
+			if(!valueSceneListSceneStreamInfosStreamInfo["TranscodeConfig"].isNull())
+				streamInfosObject.transcodeConfig = valueSceneListSceneStreamInfosStreamInfo["TranscodeConfig"].asString();
+			if(!valueSceneListSceneStreamInfosStreamInfo["VideoFormat"].isNull())
+				streamInfosObject.videoFormat = valueSceneListSceneStreamInfosStreamInfo["VideoFormat"].asString();
+			if(!valueSceneListSceneStreamInfosStreamInfo["OutputStreamUrl"].isNull())
+				streamInfosObject.outputStreamUrl = valueSceneListSceneStreamInfosStreamInfo["OutputStreamUrl"].asString();
 			sceneListObject.streamInfos.push_back(streamInfosObject);
 		}
 		auto allComponentIds = value["ComponentIds"]["componentId"];

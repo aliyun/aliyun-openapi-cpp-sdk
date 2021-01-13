@@ -49,17 +49,6 @@ void DescribeLiveStreamsControlHistoryRequest::setAppName(const std::string& app
 	setParameter("AppName", appName);
 }
 
-std::string DescribeLiveStreamsControlHistoryRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeLiveStreamsControlHistoryRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-
 std::string DescribeLiveStreamsControlHistoryRequest::getDomainName()const
 {
 	return domainName_;
@@ -91,5 +80,27 @@ void DescribeLiveStreamsControlHistoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+int DescribeLiveStreamsControlHistoryRequest::getRows()const
+{
+	return rows_;
+}
+
+void DescribeLiveStreamsControlHistoryRequest::setRows(int rows)
+{
+	rows_ = rows;
+	setParameter("Rows", std::to_string(rows));
+}
+
+int DescribeLiveStreamsControlHistoryRequest::getPage()const
+{
+	return page_;
+}
+
+void DescribeLiveStreamsControlHistoryRequest::setPage(int page)
+{
+	page_ = page;
+	setParameter("Page", std::to_string(page));
 }
 

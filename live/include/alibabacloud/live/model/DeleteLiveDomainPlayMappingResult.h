@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMSFRAMERATEANDBITRATEDATARESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMSFRAMERATEANDBITRATEDATARESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETELIVEDOMAINPLAYMAPPINGRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETELIVEDOMAINPLAYMAPPINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamsFrameRateAndBitRateDataResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DeleteLiveDomainPlayMappingResult : public ServiceResult
 			{
 			public:
-				struct FrameRateAndBitRateInfo
-				{
-					float videoFrameRate;
-					std::string time;
-					float audioFrameRate;
-					float bitRate;
-					std::string streamUrl;
-				};
 
 
-				DescribeLiveStreamsFrameRateAndBitRateDataResult();
-				explicit DescribeLiveStreamsFrameRateAndBitRateDataResult(const std::string &payload);
-				~DescribeLiveStreamsFrameRateAndBitRateDataResult();
-				std::vector<FrameRateAndBitRateInfo> getFrameRateAndBitRateInfos()const;
+				DeleteLiveDomainPlayMappingResult();
+				explicit DeleteLiveDomainPlayMappingResult(const std::string &payload);
+				~DeleteLiveDomainPlayMappingResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<FrameRateAndBitRateInfo> frameRateAndBitRateInfos_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMSFRAMERATEANDBITRATEDATARESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETELIVEDOMAINPLAYMAPPINGRESULT_H_

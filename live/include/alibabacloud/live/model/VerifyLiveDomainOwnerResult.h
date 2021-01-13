@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMONLINEUSERNUMRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMONLINEUSERNUMRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_VERIFYLIVEDOMAINOWNERRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_VERIFYLIVEDOMAINOWNERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamOnlineUserNumResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT VerifyLiveDomainOwnerResult : public ServiceResult
 			{
 			public:
-				struct LiveStreamOnlineUserNumInfo
-				{
-					std::string time;
-					std::string streamUrl;
-					long userNumber;
-				};
 
 
-				DescribeLiveStreamOnlineUserNumResult();
-				explicit DescribeLiveStreamOnlineUserNumResult(const std::string &payload);
-				~DescribeLiveStreamOnlineUserNumResult();
-				std::vector<LiveStreamOnlineUserNumInfo> getOnlineUserInfo()const;
-				long getTotalUserNumber()const;
+				VerifyLiveDomainOwnerResult();
+				explicit VerifyLiveDomainOwnerResult(const std::string &payload);
+				~VerifyLiveDomainOwnerResult();
+				std::string getContent()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveStreamOnlineUserNumInfo> onlineUserInfo_;
-				long totalUserNumber_;
+				std::string content_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMONLINEUSERNUMRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_VERIFYLIVEDOMAINOWNERRESULT_H_

@@ -57,20 +57,20 @@ void DescribeBoardSnapshotResult::parse(const std::string &payload)
 		Snapshot::Board::Page pageObject;
 		if(!boardNodePagesPage["PageIndex"].isNull())
 			pageObject.pageIndex = std::stoi(boardNodePagesPage["PageIndex"].asString());
-		auto allElementsNode = allPagesNode["Elements"]["Element"];
-		for (auto allPagesNodeElementsElement : allElementsNode)
+		auto allElementsNode = boardNodePagesPage["Elements"]["Element"];
+		for (auto boardNodePagesPageElementsElement : allElementsNode)
 		{
 			Snapshot::Board::Page::Element elementsObject;
-			if(!allPagesNodeElementsElement["ElementIndex"].isNull())
-				elementsObject.elementIndex = allPagesNodeElementsElement["ElementIndex"].asString();
-			if(!allPagesNodeElementsElement["OwnerId"].isNull())
-				elementsObject.ownerId = allPagesNodeElementsElement["OwnerId"].asString();
-			if(!allPagesNodeElementsElement["ElementType"].isNull())
-				elementsObject.elementType = std::stoi(allPagesNodeElementsElement["ElementType"].asString());
-			if(!allPagesNodeElementsElement["UpdateTimestamp"].isNull())
-				elementsObject.updateTimestamp = std::stol(allPagesNodeElementsElement["UpdateTimestamp"].asString());
-			if(!allPagesNodeElementsElement["Data"].isNull())
-				elementsObject.data = allPagesNodeElementsElement["Data"].asString();
+			if(!boardNodePagesPageElementsElement["ElementIndex"].isNull())
+				elementsObject.elementIndex = boardNodePagesPageElementsElement["ElementIndex"].asString();
+			if(!boardNodePagesPageElementsElement["OwnerId"].isNull())
+				elementsObject.ownerId = boardNodePagesPageElementsElement["OwnerId"].asString();
+			if(!boardNodePagesPageElementsElement["ElementType"].isNull())
+				elementsObject.elementType = std::stoi(boardNodePagesPageElementsElement["ElementType"].asString());
+			if(!boardNodePagesPageElementsElement["UpdateTimestamp"].isNull())
+				elementsObject.updateTimestamp = std::stol(boardNodePagesPageElementsElement["UpdateTimestamp"].asString());
+			if(!boardNodePagesPageElementsElement["Data"].isNull())
+				elementsObject.data = boardNodePagesPageElementsElement["Data"].asString();
 			pageObject.elements.push_back(elementsObject);
 		}
 		snapshot_.board.pages.push_back(pageObject);

@@ -39,22 +39,25 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getRows()const;
+				void setRows(int rows);
+				int getPage()const;
+				void setPage(int page);
 
             private:
 				std::string startTime_;
 				std::string appName_;
-				std::string securityToken_;
 				std::string domainName_;
 				std::string endTime_;
 				long ownerId_;
+				int rows_;
+				int page_;
 
 			};
 		}

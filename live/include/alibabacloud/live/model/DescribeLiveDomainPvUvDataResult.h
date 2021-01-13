@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINPVUVDATARESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINPVUVDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveCertificateDetailResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainPvUvDataResult : public ServiceResult
 			{
 			public:
+				struct PvUvDataInfo
+				{
+					std::string uV;
+					std::string pV;
+					std::string timeStamp;
+				};
 
 
-				DescribeLiveCertificateDetailResult();
-				explicit DescribeLiveCertificateDetailResult(const std::string &payload);
-				~DescribeLiveCertificateDetailResult();
-				long getCertId()const;
-				std::string getCert()const;
-				std::string getCertName()const;
+				DescribeLiveDomainPvUvDataResult();
+				explicit DescribeLiveDomainPvUvDataResult(const std::string &payload);
+				~DescribeLiveDomainPvUvDataResult();
+				std::string getEndTime()const;
+				std::string getDomainName()const;
+				std::string getStartTime()const;
+				std::string getDataInterval()const;
+				std::vector<PvUvDataInfo> getPvUvDataInfos()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long certId_;
-				std::string cert_;
-				std::string certName_;
+				std::string endTime_;
+				std::string domainName_;
+				std::string startTime_;
+				std::string dataInterval_;
+				std::vector<PvUvDataInfo> pvUvDataInfos_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINPVUVDATARESULT_H_

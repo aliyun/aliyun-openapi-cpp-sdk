@@ -78,6 +78,13 @@ void DescribeLiveStreamTranscodeInfoResult::parse(const std::string &payload)
 			domainTranscodeListObject.customTranscodeParameters.audioRate = std::stoi(customTranscodeParametersNode["AudioRate"].asString());
 		if(!customTranscodeParametersNode["AudioChannelNum"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.audioChannelNum = std::stoi(customTranscodeParametersNode["AudioChannelNum"].asString());
+		auto encryptParametersNode = value["EncryptParameters"];
+		if(!encryptParametersNode["EncryptType"].isNull())
+			domainTranscodeListObject.encryptParameters.encryptType = encryptParametersNode["EncryptType"].asString();
+		if(!encryptParametersNode["KmsKeyExpireInterval"].isNull())
+			domainTranscodeListObject.encryptParameters.kmsKeyExpireInterval = encryptParametersNode["KmsKeyExpireInterval"].asString();
+		if(!encryptParametersNode["KmsKeyID"].isNull())
+			domainTranscodeListObject.encryptParameters.kmsKeyID = encryptParametersNode["KmsKeyID"].asString();
 		domainTranscodeList_.push_back(domainTranscodeListObject);
 	}
 

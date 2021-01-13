@@ -51,16 +51,16 @@ void DescribeCasterStreamUrlResult::parse(const std::string &payload)
 			casterStreamsObject.rtmpUrl = valueCasterStreamsCasterStream["RtmpUrl"].asString();
 		if(!valueCasterStreamsCasterStream["OutputType"].isNull())
 			casterStreamsObject.outputType = std::stoi(valueCasterStreamsCasterStream["OutputType"].asString());
-		auto allStreamInfosNode = allCasterStreamsNode["StreamInfos"]["StreamInfo"];
-		for (auto allCasterStreamsNodeStreamInfosStreamInfo : allStreamInfosNode)
+		auto allStreamInfosNode = valueCasterStreamsCasterStream["StreamInfos"]["StreamInfo"];
+		for (auto valueCasterStreamsCasterStreamStreamInfosStreamInfo : allStreamInfosNode)
 		{
 			CasterStream::StreamInfo streamInfosObject;
-			if(!allCasterStreamsNodeStreamInfosStreamInfo["TranscodeConfig"].isNull())
-				streamInfosObject.transcodeConfig = allCasterStreamsNodeStreamInfosStreamInfo["TranscodeConfig"].asString();
-			if(!allCasterStreamsNodeStreamInfosStreamInfo["VideoFormat"].isNull())
-				streamInfosObject.videoFormat = allCasterStreamsNodeStreamInfosStreamInfo["VideoFormat"].asString();
-			if(!allCasterStreamsNodeStreamInfosStreamInfo["OutputStreamUrl"].isNull())
-				streamInfosObject.outputStreamUrl = allCasterStreamsNodeStreamInfosStreamInfo["OutputStreamUrl"].asString();
+			if(!valueCasterStreamsCasterStreamStreamInfosStreamInfo["TranscodeConfig"].isNull())
+				streamInfosObject.transcodeConfig = valueCasterStreamsCasterStreamStreamInfosStreamInfo["TranscodeConfig"].asString();
+			if(!valueCasterStreamsCasterStreamStreamInfosStreamInfo["VideoFormat"].isNull())
+				streamInfosObject.videoFormat = valueCasterStreamsCasterStreamStreamInfosStreamInfo["VideoFormat"].asString();
+			if(!valueCasterStreamsCasterStreamStreamInfosStreamInfo["OutputStreamUrl"].isNull())
+				streamInfosObject.outputStreamUrl = valueCasterStreamsCasterStreamStreamInfosStreamInfo["OutputStreamUrl"].asString();
 			casterStreamsObject.streamInfos.push_back(streamInfosObject);
 		}
 		casterStreams_.push_back(casterStreamsObject);

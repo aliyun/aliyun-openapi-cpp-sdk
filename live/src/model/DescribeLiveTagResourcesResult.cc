@@ -45,14 +45,14 @@ void DescribeLiveTagResourcesResult::parse(const std::string &payload)
 		TagResource tagResourcesObject;
 		if(!valueTagResourcesTagResource["ResourceId"].isNull())
 			tagResourcesObject.resourceId = valueTagResourcesTagResource["ResourceId"].asString();
-		auto allTagNode = allTagResourcesNode["Tag"]["TagItem"];
-		for (auto allTagResourcesNodeTagTagItem : allTagNode)
+		auto allTagNode = valueTagResourcesTagResource["Tag"]["TagItem"];
+		for (auto valueTagResourcesTagResourceTagTagItem : allTagNode)
 		{
 			TagResource::TagItem tagObject;
-			if(!allTagResourcesNodeTagTagItem["Key"].isNull())
-				tagObject.key = allTagResourcesNodeTagTagItem["Key"].asString();
-			if(!allTagResourcesNodeTagTagItem["Value"].isNull())
-				tagObject.value = allTagResourcesNodeTagTagItem["Value"].asString();
+			if(!valueTagResourcesTagResourceTagTagItem["Key"].isNull())
+				tagObject.key = valueTagResourcesTagResourceTagTagItem["Key"].asString();
+			if(!valueTagResourcesTagResourceTagTagItem["Value"].isNull())
+				tagObject.value = valueTagResourcesTagResourceTagTagItem["Value"].asString();
 			tagResourcesObject.tag.push_back(tagObject);
 		}
 		tagResources_.push_back(tagResourcesObject);

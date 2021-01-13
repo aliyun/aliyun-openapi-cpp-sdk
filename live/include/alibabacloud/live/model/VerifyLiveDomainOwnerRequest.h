@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_VERIFYLIVEDOMAINOWNERREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_VERIFYLIVEDOMAINOWNERREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/live/LiveExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveCertificateDetailResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT VerifyLiveDomainOwnerRequest : public RpcServiceRequest
 			{
+
 			public:
+				VerifyLiveDomainOwnerRequest();
+				~VerifyLiveDomainOwnerRequest();
 
+				std::string getVerifyType()const;
+				void setVerifyType(const std::string& verifyType);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
-				DescribeLiveCertificateDetailResult();
-				explicit DescribeLiveCertificateDetailResult(const std::string &payload);
-				~DescribeLiveCertificateDetailResult();
-				long getCertId()const;
-				std::string getCert()const;
-				std::string getCertName()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				long certId_;
-				std::string cert_;
-				std::string certName_;
+            private:
+				std::string verifyType_;
+				std::string domainName_;
+				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_VERIFYLIVEDOMAINOWNERREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEVERIFYCONTENTRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEVERIFYCONTENTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveCertificateDetailResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveVerifyContentResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeLiveCertificateDetailResult();
-				explicit DescribeLiveCertificateDetailResult(const std::string &payload);
-				~DescribeLiveCertificateDetailResult();
-				long getCertId()const;
-				std::string getCert()const;
-				std::string getCertName()const;
+				DescribeLiveVerifyContentResult();
+				explicit DescribeLiveVerifyContentResult(const std::string &payload);
+				~DescribeLiveVerifyContentResult();
+				std::string getContent()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long certId_;
-				std::string cert_;
-				std::string certName_;
+				std::string content_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVECERTIFICATEDETAILRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEVERIFYCONTENTRESULT_H_

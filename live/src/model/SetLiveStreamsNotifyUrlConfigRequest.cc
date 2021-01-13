@@ -60,6 +60,17 @@ void SetLiveStreamsNotifyUrlConfigRequest::setNotifyUrl(const std::string& notif
 	setParameter("NotifyUrl", notifyUrl);
 }
 
+std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyType()const
+{
+	return notifyType_;
+}
+
+void SetLiveStreamsNotifyUrlConfigRequest::setNotifyType(const std::string& notifyType)
+{
+	notifyType_ = notifyType;
+	setParameter("NotifyType", notifyType);
+}
+
 std::string SetLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 {
 	return domainName_;

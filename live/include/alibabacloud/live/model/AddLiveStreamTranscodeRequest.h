@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setMix(const std::string& mix);
 				std::string getApp()const;
 				void setApp(const std::string& app);
+				std::string getEncryptParameters()const;
+				void setEncryptParameters(const std::string& encryptParameters);
 				std::string getWatermark()const;
 				void setWatermark(const std::string& watermark);
 				long getOwnerId()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				std::string lazy_;
 				std::string mix_;
 				std::string app_;
+				std::string encryptParameters_;
 				std::string watermark_;
 				long ownerId_;
 				std::string domain_;

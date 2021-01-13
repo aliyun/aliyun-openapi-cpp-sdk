@@ -57,15 +57,18 @@ namespace AlibabaCloud
 					};
 					struct CaptionLayerContent
 					{
-						int ptsOffset;
 						float borderWidthNormalized;
-						float sizeNormalized;
 						std::string color;
 						std::string locationId;
-						std::string fontName;
+						std::string sourceLan;
+						bool showSourceLan;
 						std::string borderColor;
 						int wordCountPerLine;
+						int ptsOffset;
+						float sizeNormalized;
+						std::string fontName;
 						float wordSpaceNormalized;
+						std::string targetLan;
 						int wordsCount;
 						float lineSpaceNormalized;
 					};

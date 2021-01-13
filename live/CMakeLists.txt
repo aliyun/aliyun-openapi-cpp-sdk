@@ -137,6 +137,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveDomainResult.h
 	include/alibabacloud/live/model/DeleteLiveDomainMappingRequest.h
 	include/alibabacloud/live/model/DeleteLiveDomainMappingResult.h
+	include/alibabacloud/live/model/DeleteLiveDomainPlayMappingRequest.h
+	include/alibabacloud/live/model/DeleteLiveDomainPlayMappingResult.h
 	include/alibabacloud/live/model/DeleteLiveLazyPullStreamInfoConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveLazyPullStreamInfoConfigResult.h
 	include/alibabacloud/live/model/DeleteLivePullStreamInfoConfigRequest.h
@@ -189,6 +191,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeCasterVideoResourcesResult.h
 	include/alibabacloud/live/model/DescribeCastersRequest.h
 	include/alibabacloud/live/model/DescribeCastersResult.h
+	include/alibabacloud/live/model/DescribeDomainUsageDataRequest.h
+	include/alibabacloud/live/model/DescribeDomainUsageDataResult.h
 	include/alibabacloud/live/model/DescribeForbidPushStreamRoomListRequest.h
 	include/alibabacloud/live/model/DescribeForbidPushStreamRoomListResult.h
 	include/alibabacloud/live/model/DescribeHlsLiveStreamRealTimeBpsDataRequest.h
@@ -231,6 +235,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainPushBpsDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainPushTrafficDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainPushTrafficDataResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainPvUvDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainPvUvDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainRealTimeBpsDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainRealTimeBpsDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainRealTimeHttpCodeDataRequest.h
@@ -275,8 +281,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamDelayConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumResult.h
-	include/alibabacloud/live/model/DescribeLiveStreamOnlineUserNumRequest.h
-	include/alibabacloud/live/model/DescribeLiveStreamOnlineUserNumResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamOptimizedFeatureConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamOptimizedFeatureConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamRecordContentRequest.h
@@ -295,8 +299,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamsBlockListResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsControlHistoryRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamsControlHistoryResult.h
-	include/alibabacloud/live/model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.h
-	include/alibabacloud/live/model/DescribeLiveStreamsFrameRateAndBitRateDataResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsNotifyUrlConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamsNotifyUrlConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsOnlineListRequest.h
@@ -311,6 +313,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsResult.h
+	include/alibabacloud/live/model/DescribeLiveVerifyContentRequest.h
+	include/alibabacloud/live/model/DescribeLiveVerifyContentResult.h
 	include/alibabacloud/live/model/DescribeMixStreamListRequest.h
 	include/alibabacloud/live/model/DescribeMixStreamListResult.h
 	include/alibabacloud/live/model/DescribeRecordRequest.h
@@ -442,7 +446,9 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveTopLevelDomainRequest.h
 	include/alibabacloud/live/model/UpdateLiveTopLevelDomainResult.h
 	include/alibabacloud/live/model/UpdateMixStreamRequest.h
-	include/alibabacloud/live/model/UpdateMixStreamResult.h )
+	include/alibabacloud/live/model/UpdateMixStreamResult.h
+	include/alibabacloud/live/model/VerifyLiveDomainOwnerRequest.h
+	include/alibabacloud/live/model/VerifyLiveDomainOwnerResult.h )
 
 set(live_src 
 	src/LiveClient.cc
@@ -562,6 +568,8 @@ set(live_src
 	src/model/DeleteLiveDomainResult.cc
 	src/model/DeleteLiveDomainMappingRequest.cc
 	src/model/DeleteLiveDomainMappingResult.cc
+	src/model/DeleteLiveDomainPlayMappingRequest.cc
+	src/model/DeleteLiveDomainPlayMappingResult.cc
 	src/model/DeleteLiveLazyPullStreamInfoConfigRequest.cc
 	src/model/DeleteLiveLazyPullStreamInfoConfigResult.cc
 	src/model/DeleteLivePullStreamInfoConfigRequest.cc
@@ -614,6 +622,8 @@ set(live_src
 	src/model/DescribeCasterVideoResourcesResult.cc
 	src/model/DescribeCastersRequest.cc
 	src/model/DescribeCastersResult.cc
+	src/model/DescribeDomainUsageDataRequest.cc
+	src/model/DescribeDomainUsageDataResult.cc
 	src/model/DescribeForbidPushStreamRoomListRequest.cc
 	src/model/DescribeForbidPushStreamRoomListResult.cc
 	src/model/DescribeHlsLiveStreamRealTimeBpsDataRequest.cc
@@ -656,6 +666,8 @@ set(live_src
 	src/model/DescribeLiveDomainPushBpsDataResult.cc
 	src/model/DescribeLiveDomainPushTrafficDataRequest.cc
 	src/model/DescribeLiveDomainPushTrafficDataResult.cc
+	src/model/DescribeLiveDomainPvUvDataRequest.cc
+	src/model/DescribeLiveDomainPvUvDataResult.cc
 	src/model/DescribeLiveDomainRealTimeBpsDataRequest.cc
 	src/model/DescribeLiveDomainRealTimeBpsDataResult.cc
 	src/model/DescribeLiveDomainRealTimeHttpCodeDataRequest.cc
@@ -700,8 +712,6 @@ set(live_src
 	src/model/DescribeLiveStreamDelayConfigResult.cc
 	src/model/DescribeLiveStreamHistoryUserNumRequest.cc
 	src/model/DescribeLiveStreamHistoryUserNumResult.cc
-	src/model/DescribeLiveStreamOnlineUserNumRequest.cc
-	src/model/DescribeLiveStreamOnlineUserNumResult.cc
 	src/model/DescribeLiveStreamOptimizedFeatureConfigRequest.cc
 	src/model/DescribeLiveStreamOptimizedFeatureConfigResult.cc
 	src/model/DescribeLiveStreamRecordContentRequest.cc
@@ -720,8 +730,6 @@ set(live_src
 	src/model/DescribeLiveStreamsBlockListResult.cc
 	src/model/DescribeLiveStreamsControlHistoryRequest.cc
 	src/model/DescribeLiveStreamsControlHistoryResult.cc
-	src/model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.cc
-	src/model/DescribeLiveStreamsFrameRateAndBitRateDataResult.cc
 	src/model/DescribeLiveStreamsNotifyUrlConfigRequest.cc
 	src/model/DescribeLiveStreamsNotifyUrlConfigResult.cc
 	src/model/DescribeLiveStreamsOnlineListRequest.cc
@@ -736,6 +744,8 @@ set(live_src
 	src/model/DescribeLiveUserDomainsResult.cc
 	src/model/DescribeLiveUserTagsRequest.cc
 	src/model/DescribeLiveUserTagsResult.cc
+	src/model/DescribeLiveVerifyContentRequest.cc
+	src/model/DescribeLiveVerifyContentResult.cc
 	src/model/DescribeMixStreamListRequest.cc
 	src/model/DescribeMixStreamListResult.cc
 	src/model/DescribeRecordRequest.cc
@@ -867,7 +877,9 @@ set(live_src
 	src/model/UpdateLiveTopLevelDomainRequest.cc
 	src/model/UpdateLiveTopLevelDomainResult.cc
 	src/model/UpdateMixStreamRequest.cc
-	src/model/UpdateMixStreamResult.cc )
+	src/model/UpdateMixStreamResult.cc
+	src/model/VerifyLiveDomainOwnerRequest.cc
+	src/model/VerifyLiveDomainOwnerResult.cc )
 
 add_library(live ${LIB_TYPE}
 	${live_public_header}

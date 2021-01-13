@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMSFRAMERATEANDBITRATEDATAREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMSFRAMERATEANDBITRATEDATAREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINPVUVDATAREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINPVUVDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStreamsFrameRateAndBitRateDataRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainPvUvDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeLiveStreamsFrameRateAndBitRateDataRequest();
-				~DescribeLiveStreamsFrameRateAndBitRateDataRequest();
+				DescribeLiveDomainPvUvDataRequest();
+				~DescribeLiveDomainPvUvDataRequest();
 
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getStreamName()const;
-				void setStreamName(const std::string& streamName);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -52,9 +46,6 @@ namespace AlibabaCloud
 
             private:
 				std::string startTime_;
-				std::string appName_;
-				std::string securityToken_;
-				std::string streamName_;
 				std::string domainName_;
 				std::string endTime_;
 				long ownerId_;
@@ -63,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTREAMSFRAMERATEANDBITRATEDATAREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINPVUVDATAREQUEST_H_

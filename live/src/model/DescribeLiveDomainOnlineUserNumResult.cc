@@ -45,14 +45,14 @@ void DescribeLiveDomainOnlineUserNumResult::parse(const std::string &payload)
 		LiveStreamOnlineUserNumInfo onlineUserInfoObject;
 		if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfo["StreamName"].isNull())
 			onlineUserInfoObject.streamName = valueOnlineUserInfoLiveStreamOnlineUserNumInfo["StreamName"].asString();
-		auto allInfosNode = allOnlineUserInfoNode["Infos"]["Info"];
-		for (auto allOnlineUserInfoNodeInfosInfo : allInfosNode)
+		auto allInfosNode = valueOnlineUserInfoLiveStreamOnlineUserNumInfo["Infos"]["Info"];
+		for (auto valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo : allInfosNode)
 		{
 			LiveStreamOnlineUserNumInfo::Info infosObject;
-			if(!allOnlineUserInfoNodeInfosInfo["TranscodeTemplate"].isNull())
-				infosObject.transcodeTemplate = allOnlineUserInfoNodeInfosInfo["TranscodeTemplate"].asString();
-			if(!allOnlineUserInfoNodeInfosInfo["UserNumber"].isNull())
-				infosObject.userNumber = std::stol(allOnlineUserInfoNodeInfosInfo["UserNumber"].asString());
+			if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["TranscodeTemplate"].isNull())
+				infosObject.transcodeTemplate = valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["TranscodeTemplate"].asString();
+			if(!valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["UserNumber"].isNull())
+				infosObject.userNumber = std::stol(valueOnlineUserInfoLiveStreamOnlineUserNumInfoInfosInfo["UserNumber"].asString());
 			onlineUserInfoObject.infos.push_back(infosObject);
 		}
 		onlineUserInfo_.push_back(onlineUserInfoObject);

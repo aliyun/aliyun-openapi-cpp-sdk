@@ -45,16 +45,16 @@ void DescribeLiveDomainRealTimeHttpCodeDataResult::parse(const std::string &payl
 		UsageData realTimeHttpCodeDataObject;
 		if(!valueRealTimeHttpCodeDataUsageData["TimeStamp"].isNull())
 			realTimeHttpCodeDataObject.timeStamp = valueRealTimeHttpCodeDataUsageData["TimeStamp"].asString();
-		auto allValueNode = allRealTimeHttpCodeDataNode["Value"]["RealTimeCodeProportionData"];
-		for (auto allRealTimeHttpCodeDataNodeValueRealTimeCodeProportionData : allValueNode)
+		auto allValueNode = valueRealTimeHttpCodeDataUsageData["Value"]["RealTimeCodeProportionData"];
+		for (auto valueRealTimeHttpCodeDataUsageDataValueRealTimeCodeProportionData : allValueNode)
 		{
 			UsageData::RealTimeCodeProportionData valueObject;
-			if(!allRealTimeHttpCodeDataNodeValueRealTimeCodeProportionData["Code"].isNull())
-				valueObject.code = allRealTimeHttpCodeDataNodeValueRealTimeCodeProportionData["Code"].asString();
-			if(!allRealTimeHttpCodeDataNodeValueRealTimeCodeProportionData["Proportion"].isNull())
-				valueObject.proportion = allRealTimeHttpCodeDataNodeValueRealTimeCodeProportionData["Proportion"].asString();
-			if(!allRealTimeHttpCodeDataNodeValueRealTimeCodeProportionData["Count"].isNull())
-				valueObject.count = allRealTimeHttpCodeDataNodeValueRealTimeCodeProportionData["Count"].asString();
+			if(!valueRealTimeHttpCodeDataUsageDataValueRealTimeCodeProportionData["Code"].isNull())
+				valueObject.code = valueRealTimeHttpCodeDataUsageDataValueRealTimeCodeProportionData["Code"].asString();
+			if(!valueRealTimeHttpCodeDataUsageDataValueRealTimeCodeProportionData["Proportion"].isNull())
+				valueObject.proportion = valueRealTimeHttpCodeDataUsageDataValueRealTimeCodeProportionData["Proportion"].asString();
+			if(!valueRealTimeHttpCodeDataUsageDataValueRealTimeCodeProportionData["Count"].isNull())
+				valueObject.count = valueRealTimeHttpCodeDataUsageDataValueRealTimeCodeProportionData["Count"].asString();
 			realTimeHttpCodeDataObject.value.push_back(valueObject);
 		}
 		realTimeHttpCodeData_.push_back(realTimeHttpCodeDataObject);

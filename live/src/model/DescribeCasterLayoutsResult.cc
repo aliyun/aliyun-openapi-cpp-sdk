@@ -45,35 +45,35 @@ void DescribeCasterLayoutsResult::parse(const std::string &payload)
 		Layout layoutsObject;
 		if(!valueLayoutsLayout["LayoutId"].isNull())
 			layoutsObject.layoutId = valueLayoutsLayout["LayoutId"].asString();
-		auto allVideoLayersNode = allLayoutsNode["VideoLayers"]["VideoLayer"];
-		for (auto allLayoutsNodeVideoLayersVideoLayer : allVideoLayersNode)
+		auto allVideoLayersNode = valueLayoutsLayout["VideoLayers"]["VideoLayer"];
+		for (auto valueLayoutsLayoutVideoLayersVideoLayer : allVideoLayersNode)
 		{
 			Layout::VideoLayer videoLayersObject;
-			if(!allLayoutsNodeVideoLayersVideoLayer["FillMode"].isNull())
-				videoLayersObject.fillMode = allLayoutsNodeVideoLayersVideoLayer["FillMode"].asString();
-			if(!allLayoutsNodeVideoLayersVideoLayer["HeightNormalized"].isNull())
-				videoLayersObject.heightNormalized = std::stof(allLayoutsNodeVideoLayersVideoLayer["HeightNormalized"].asString());
-			if(!allLayoutsNodeVideoLayersVideoLayer["WidthNormalized"].isNull())
-				videoLayersObject.widthNormalized = std::stof(allLayoutsNodeVideoLayersVideoLayer["WidthNormalized"].asString());
-			if(!allLayoutsNodeVideoLayersVideoLayer["PositionRefer"].isNull())
-				videoLayersObject.positionRefer = allLayoutsNodeVideoLayersVideoLayer["PositionRefer"].asString();
-			if(!allLayoutsNodeVideoLayersVideoLayer["FixedDelayDuration"].isNull())
-				videoLayersObject.fixedDelayDuration = std::stoi(allLayoutsNodeVideoLayersVideoLayer["FixedDelayDuration"].asString());
+			if(!valueLayoutsLayoutVideoLayersVideoLayer["FillMode"].isNull())
+				videoLayersObject.fillMode = valueLayoutsLayoutVideoLayersVideoLayer["FillMode"].asString();
+			if(!valueLayoutsLayoutVideoLayersVideoLayer["HeightNormalized"].isNull())
+				videoLayersObject.heightNormalized = std::stof(valueLayoutsLayoutVideoLayersVideoLayer["HeightNormalized"].asString());
+			if(!valueLayoutsLayoutVideoLayersVideoLayer["WidthNormalized"].isNull())
+				videoLayersObject.widthNormalized = std::stof(valueLayoutsLayoutVideoLayersVideoLayer["WidthNormalized"].asString());
+			if(!valueLayoutsLayoutVideoLayersVideoLayer["PositionRefer"].isNull())
+				videoLayersObject.positionRefer = valueLayoutsLayoutVideoLayersVideoLayer["PositionRefer"].asString();
+			if(!valueLayoutsLayoutVideoLayersVideoLayer["FixedDelayDuration"].isNull())
+				videoLayersObject.fixedDelayDuration = std::stoi(valueLayoutsLayoutVideoLayersVideoLayer["FixedDelayDuration"].asString());
 			auto allPositionNormalizeds = value["PositionNormalizeds"]["Position"];
 			for (auto value : allPositionNormalizeds)
 				videoLayersObject.positionNormalizeds.push_back(value.asString());
 			layoutsObject.videoLayers.push_back(videoLayersObject);
 		}
-		auto allAudioLayersNode = allLayoutsNode["AudioLayers"]["AudioLayer"];
-		for (auto allLayoutsNodeAudioLayersAudioLayer : allAudioLayersNode)
+		auto allAudioLayersNode = valueLayoutsLayout["AudioLayers"]["AudioLayer"];
+		for (auto valueLayoutsLayoutAudioLayersAudioLayer : allAudioLayersNode)
 		{
 			Layout::AudioLayer audioLayersObject;
-			if(!allLayoutsNodeAudioLayersAudioLayer["VolumeRate"].isNull())
-				audioLayersObject.volumeRate = std::stof(allLayoutsNodeAudioLayersAudioLayer["VolumeRate"].asString());
-			if(!allLayoutsNodeAudioLayersAudioLayer["ValidChannel"].isNull())
-				audioLayersObject.validChannel = allLayoutsNodeAudioLayersAudioLayer["ValidChannel"].asString();
-			if(!allLayoutsNodeAudioLayersAudioLayer["FixedDelayDuration"].isNull())
-				audioLayersObject.fixedDelayDuration = std::stoi(allLayoutsNodeAudioLayersAudioLayer["FixedDelayDuration"].asString());
+			if(!valueLayoutsLayoutAudioLayersAudioLayer["VolumeRate"].isNull())
+				audioLayersObject.volumeRate = std::stof(valueLayoutsLayoutAudioLayersAudioLayer["VolumeRate"].asString());
+			if(!valueLayoutsLayoutAudioLayersAudioLayer["ValidChannel"].isNull())
+				audioLayersObject.validChannel = valueLayoutsLayoutAudioLayersAudioLayer["ValidChannel"].asString();
+			if(!valueLayoutsLayoutAudioLayersAudioLayer["FixedDelayDuration"].isNull())
+				audioLayersObject.fixedDelayDuration = std::stoi(valueLayoutsLayoutAudioLayersAudioLayer["FixedDelayDuration"].asString());
 			layoutsObject.audioLayers.push_back(audioLayersObject);
 		}
 		auto allBlendList = value["BlendList"]["LocationId"];

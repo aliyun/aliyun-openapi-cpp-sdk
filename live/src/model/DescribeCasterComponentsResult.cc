@@ -92,6 +92,12 @@ void DescribeCasterComponentsResult::parse(const std::string &payload)
 			componentsObject.captionLayerContent.color = captionLayerContentNode["Color"].asString();
 		if(!captionLayerContentNode["FontName"].isNull())
 			componentsObject.captionLayerContent.fontName = captionLayerContentNode["FontName"].asString();
+		if(!captionLayerContentNode["SourceLan"].isNull())
+			componentsObject.captionLayerContent.sourceLan = captionLayerContentNode["SourceLan"].asString();
+		if(!captionLayerContentNode["TargetLan"].isNull())
+			componentsObject.captionLayerContent.targetLan = captionLayerContentNode["TargetLan"].asString();
+		if(!captionLayerContentNode["ShowSourceLan"].isNull())
+			componentsObject.captionLayerContent.showSourceLan = captionLayerContentNode["ShowSourceLan"].asString() == "true";
 		if(!captionLayerContentNode["SizeNormalized"].isNull())
 			componentsObject.captionLayerContent.sizeNormalized = std::stof(captionLayerContentNode["SizeNormalized"].asString());
 		if(!captionLayerContentNode["BorderWidthNormalized"].isNull())

@@ -51,8 +51,15 @@ namespace AlibabaCloud
 						int audioRate;
 						int videoBitrate;
 					};
+					struct EncryptParameters
+					{
+						std::string encryptType;
+						std::string kmsKeyID;
+						std::string kmsKeyExpireInterval;
+					};
 					std::string transcodeTemplate;
 					CustomTranscodeParameters customTranscodeParameters;
+					EncryptParameters encryptParameters;
 					std::string transcodeApp;
 					std::string transcodeName;
 				};

@@ -14,52 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/DescribeLiveCertificateDetailResult.h>
+#include <alibabacloud/live/model/DescribeLiveVerifyContentResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-DescribeLiveCertificateDetailResult::DescribeLiveCertificateDetailResult() :
+DescribeLiveVerifyContentResult::DescribeLiveVerifyContentResult() :
 	ServiceResult()
 {}
 
-DescribeLiveCertificateDetailResult::DescribeLiveCertificateDetailResult(const std::string &payload) :
+DescribeLiveVerifyContentResult::DescribeLiveVerifyContentResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeLiveCertificateDetailResult::~DescribeLiveCertificateDetailResult()
+DescribeLiveVerifyContentResult::~DescribeLiveVerifyContentResult()
 {}
 
-void DescribeLiveCertificateDetailResult::parse(const std::string &payload)
+void DescribeLiveVerifyContentResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Cert"].isNull())
-		cert_ = value["Cert"].asString();
-	if(!value["CertId"].isNull())
-		certId_ = std::stol(value["CertId"].asString());
-	if(!value["CertName"].isNull())
-		certName_ = value["CertName"].asString();
+	if(!value["Content"].isNull())
+		content_ = value["Content"].asString();
 
 }
 
-long DescribeLiveCertificateDetailResult::getCertId()const
+std::string DescribeLiveVerifyContentResult::getContent()const
 {
-	return certId_;
-}
-
-std::string DescribeLiveCertificateDetailResult::getCert()const
-{
-	return cert_;
-}
-
-std::string DescribeLiveCertificateDetailResult::getCertName()const
-{
-	return certName_;
+	return content_;
 }
 

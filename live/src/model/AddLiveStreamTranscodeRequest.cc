@@ -71,6 +71,17 @@ void AddLiveStreamTranscodeRequest::setApp(const std::string& app)
 	setParameter("App", app);
 }
 
+std::string AddLiveStreamTranscodeRequest::getEncryptParameters()const
+{
+	return encryptParameters_;
+}
+
+void AddLiveStreamTranscodeRequest::setEncryptParameters(const std::string& encryptParameters)
+{
+	encryptParameters_ = encryptParameters;
+	setParameter("EncryptParameters", encryptParameters);
+}
+
 std::string AddLiveStreamTranscodeRequest::getWatermark()const
 {
 	return watermark_;
