@@ -38,7 +38,7 @@ namespace AlibabaCloud
 					std::string nickName;
 					std::string mobile;
 					long maxExecuteCount;
-					long uid;
+					std::string uid;
 					std::string lastLoginTime;
 					long curResultCount;
 					std::vector<std::string> roleIdList;

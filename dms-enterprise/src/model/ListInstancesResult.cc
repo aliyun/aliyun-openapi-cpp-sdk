@@ -87,6 +87,12 @@ void ListInstancesResult::parse(const std::string &payload)
 			instanceListObject.databasePassword = valueInstanceListInstance["DatabasePassword"].asString();
 		if(!valueInstanceListInstance["InstanceSource"].isNull())
 			instanceListObject.instanceSource = valueInstanceListInstance["InstanceSource"].asString();
+		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
+		for (auto value : allOwnerIdList)
+			instanceListObject.ownerIdList.push_back(value.asString());
+		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
+		for (auto value : allOwnerNameList)
+			instanceListObject.ownerNameList.push_back(value.asString());
 		instanceList_.push_back(instanceListObject);
 	}
 	if(!value["Success"].isNull())

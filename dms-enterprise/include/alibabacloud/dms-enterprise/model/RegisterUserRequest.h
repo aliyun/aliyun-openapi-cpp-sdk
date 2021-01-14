@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getRoleNames()const;
 				void setRoleNames(const std::string& roleNames);
-				long getUid()const;
-				void setUid(long uid);
 				std::string getUserNick()const;
 				void setUserNick(const std::string& userNick);
 				std::string getMobile()const;
 				void setMobile(const std::string& mobile);
 				long getTid()const;
 				void setTid(long tid);
+				std::string getUid()const;
+				void setUid(const std::string& uid);
 
             private:
 				std::string roleNames_;
-				long uid_;
 				std::string userNick_;
 				std::string mobile_;
 				long tid_;
+				std::string uid_;
 
 			};
 		}

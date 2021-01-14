@@ -27,15 +27,15 @@ DeleteUserRequest::DeleteUserRequest() :
 DeleteUserRequest::~DeleteUserRequest()
 {}
 
-long DeleteUserRequest::getUid()const
+std::string DeleteUserRequest::getUid()const
 {
 	return uid_;
 }
 
-void DeleteUserRequest::setUid(long uid)
+void DeleteUserRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setParameter("Uid", std::to_string(uid));
+	setParameter("Uid", uid);
 }
 
 long DeleteUserRequest::getTid()const

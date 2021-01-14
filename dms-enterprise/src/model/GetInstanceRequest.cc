@@ -27,28 +27,6 @@ GetInstanceRequest::GetInstanceRequest() :
 GetInstanceRequest::~GetInstanceRequest()
 {}
 
-int GetInstanceRequest::getPort()const
-{
-	return port_;
-}
-
-void GetInstanceRequest::setPort(int port)
-{
-	port_ = port;
-	setParameter("Port", std::to_string(port));
-}
-
-std::string GetInstanceRequest::getHost()const
-{
-	return host_;
-}
-
-void GetInstanceRequest::setHost(const std::string& host)
-{
-	host_ = host;
-	setParameter("Host", host);
-}
-
 long GetInstanceRequest::getTid()const
 {
 	return tid_;
@@ -69,5 +47,27 @@ void GetInstanceRequest::setSid(const std::string& sid)
 {
 	sid_ = sid;
 	setParameter("Sid", sid);
+}
+
+int GetInstanceRequest::getPort()const
+{
+	return port_;
+}
+
+void GetInstanceRequest::setPort(int port)
+{
+	port_ = port;
+	setParameter("Port", std::to_string(port));
+}
+
+std::string GetInstanceRequest::getHost()const
+{
+	return host_;
+}
+
+void GetInstanceRequest::setHost(const std::string& host)
+{
+	host_ = host;
+	setParameter("Host", host);
 }
 

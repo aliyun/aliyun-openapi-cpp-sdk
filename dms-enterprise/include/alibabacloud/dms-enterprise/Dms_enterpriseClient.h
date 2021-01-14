@@ -24,8 +24,6 @@
 #include "Dms_enterpriseExport.h"
 #include "model/ApproveOrderRequest.h"
 #include "model/ApproveOrderResult.h"
-#include "model/CheckFinishMissionRequest.h"
-#include "model/CheckFinishMissionResult.h"
 #include "model/CloseOrderRequest.h"
 #include "model/CloseOrderResult.h"
 #include "model/CreateOrderRequest.h"
@@ -144,9 +142,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ApproveOrderResult> ApproveOrderOutcome;
 			typedef std::future<ApproveOrderOutcome> ApproveOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ApproveOrderRequest&, const ApproveOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApproveOrderAsyncHandler;
-			typedef Outcome<Error, Model::CheckFinishMissionResult> CheckFinishMissionOutcome;
-			typedef std::future<CheckFinishMissionOutcome> CheckFinishMissionOutcomeCallable;
-			typedef std::function<void(const Dms_enterpriseClient*, const Model::CheckFinishMissionRequest&, const CheckFinishMissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckFinishMissionAsyncHandler;
 			typedef Outcome<Error, Model::CloseOrderResult> CloseOrderOutcome;
 			typedef std::future<CloseOrderOutcome> CloseOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CloseOrderRequest&, const CloseOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseOrderAsyncHandler;
@@ -314,9 +309,6 @@ namespace AlibabaCloud
 			ApproveOrderOutcome approveOrder(const Model::ApproveOrderRequest &request)const;
 			void approveOrderAsync(const Model::ApproveOrderRequest& request, const ApproveOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApproveOrderOutcomeCallable approveOrderCallable(const Model::ApproveOrderRequest& request) const;
-			CheckFinishMissionOutcome checkFinishMission(const Model::CheckFinishMissionRequest &request)const;
-			void checkFinishMissionAsync(const Model::CheckFinishMissionRequest& request, const CheckFinishMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CheckFinishMissionOutcomeCallable checkFinishMissionCallable(const Model::CheckFinishMissionRequest& request) const;
 			CloseOrderOutcome closeOrder(const Model::CloseOrderRequest &request)const;
 			void closeOrderAsync(const Model::CloseOrderRequest& request, const CloseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseOrderOutcomeCallable closeOrderCallable(const Model::CloseOrderRequest& request) const;

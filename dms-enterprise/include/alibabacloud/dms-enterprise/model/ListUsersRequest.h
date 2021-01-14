@@ -35,26 +35,26 @@ namespace AlibabaCloud
 				ListUsersRequest();
 				~ListUsersRequest();
 
-				std::string getUserState()const;
-				void setUserState(const std::string& userState);
 				std::string getRole()const;
 				void setRole(const std::string& role);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getSearchKey()const;
 				void setSearchKey(const std::string& searchKey);
 				long getTid()const;
 				void setTid(long tid);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getUserState()const;
+				void setUserState(const std::string& userState);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string userState_;
 				std::string role_;
-				int pageSize_;
 				std::string searchKey_;
 				long tid_;
 				int pageNumber_;
+				std::string userState_;
+				int pageSize_;
 
 			};
 		}

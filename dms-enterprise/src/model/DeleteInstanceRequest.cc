@@ -27,28 +27,6 @@ DeleteInstanceRequest::DeleteInstanceRequest() :
 DeleteInstanceRequest::~DeleteInstanceRequest()
 {}
 
-int DeleteInstanceRequest::getPort()const
-{
-	return port_;
-}
-
-void DeleteInstanceRequest::setPort(int port)
-{
-	port_ = port;
-	setParameter("Port", std::to_string(port));
-}
-
-std::string DeleteInstanceRequest::getHost()const
-{
-	return host_;
-}
-
-void DeleteInstanceRequest::setHost(const std::string& host)
-{
-	host_ = host;
-	setParameter("Host", host);
-}
-
 long DeleteInstanceRequest::getTid()const
 {
 	return tid_;
@@ -69,5 +47,27 @@ void DeleteInstanceRequest::setSid(const std::string& sid)
 {
 	sid_ = sid;
 	setParameter("Sid", sid);
+}
+
+int DeleteInstanceRequest::getPort()const
+{
+	return port_;
+}
+
+void DeleteInstanceRequest::setPort(int port)
+{
+	port_ = port;
+	setParameter("Port", std::to_string(port));
+}
+
+std::string DeleteInstanceRequest::getHost()const
+{
+	return host_;
+}
+
+void DeleteInstanceRequest::setHost(const std::string& host)
+{
+	host_ = host;
+	setParameter("Host", host);
 }
 

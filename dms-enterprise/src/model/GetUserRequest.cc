@@ -27,17 +27,6 @@ GetUserRequest::GetUserRequest() :
 GetUserRequest::~GetUserRequest()
 {}
 
-long GetUserRequest::getUid()const
-{
-	return uid_;
-}
-
-void GetUserRequest::setUid(long uid)
-{
-	uid_ = uid;
-	setParameter("Uid", std::to_string(uid));
-}
-
 std::string GetUserRequest::getUserId()const
 {
 	return userId_;
@@ -58,5 +47,16 @@ void GetUserRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+std::string GetUserRequest::getUid()const
+{
+	return uid_;
+}
+
+void GetUserRequest::setUid(const std::string& uid)
+{
+	uid_ = uid;
+	setParameter("Uid", uid);
 }
 

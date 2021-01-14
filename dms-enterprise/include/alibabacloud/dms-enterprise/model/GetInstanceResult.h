@@ -51,10 +51,12 @@ namespace AlibabaCloud
 					std::string state;
 					std::string ecsRegion;
 					std::string databaseUser;
+					std::vector<std::string> ownerNameList;
 					std::string instanceType;
 					std::string dbaNickName;
 					std::string dataLinkName;
 					int queryTimeout;
+					std::vector<std::string> ownerIdList;
 					std::string safeRuleId;
 				};
 

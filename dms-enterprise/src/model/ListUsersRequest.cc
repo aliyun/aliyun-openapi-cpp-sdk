@@ -27,17 +27,6 @@ ListUsersRequest::ListUsersRequest() :
 ListUsersRequest::~ListUsersRequest()
 {}
 
-std::string ListUsersRequest::getUserState()const
-{
-	return userState_;
-}
-
-void ListUsersRequest::setUserState(const std::string& userState)
-{
-	userState_ = userState;
-	setParameter("UserState", userState);
-}
-
 std::string ListUsersRequest::getRole()const
 {
 	return role_;
@@ -47,17 +36,6 @@ void ListUsersRequest::setRole(const std::string& role)
 {
 	role_ = role;
 	setParameter("Role", role);
-}
-
-int ListUsersRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListUsersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListUsersRequest::getSearchKey()const
@@ -91,5 +69,27 @@ void ListUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListUsersRequest::getUserState()const
+{
+	return userState_;
+}
+
+void ListUsersRequest::setUserState(const std::string& userState)
+{
+	userState_ = userState;
+	setParameter("UserState", userState);
+}
+
+int ListUsersRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListUsersRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

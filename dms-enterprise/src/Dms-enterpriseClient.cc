@@ -87,42 +87,6 @@ Dms_enterpriseClient::ApproveOrderOutcomeCallable Dms_enterpriseClient::approveO
 	return task->get_future();
 }
 
-Dms_enterpriseClient::CheckFinishMissionOutcome Dms_enterpriseClient::checkFinishMission(const CheckFinishMissionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CheckFinishMissionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CheckFinishMissionOutcome(CheckFinishMissionResult(outcome.result()));
-	else
-		return CheckFinishMissionOutcome(outcome.error());
-}
-
-void Dms_enterpriseClient::checkFinishMissionAsync(const CheckFinishMissionRequest& request, const CheckFinishMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, checkFinishMission(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dms_enterpriseClient::CheckFinishMissionOutcomeCallable Dms_enterpriseClient::checkFinishMissionCallable(const CheckFinishMissionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CheckFinishMissionOutcome()>>(
-			[this, request]()
-			{
-			return this->checkFinishMission(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Dms_enterpriseClient::CloseOrderOutcome Dms_enterpriseClient::closeOrder(const CloseOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

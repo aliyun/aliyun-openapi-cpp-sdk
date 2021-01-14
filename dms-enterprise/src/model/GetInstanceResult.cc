@@ -84,6 +84,12 @@ void GetInstanceResult::parse(const std::string &payload)
 		instance_.databasePassword = instanceNode["DatabasePassword"].asString();
 	if(!instanceNode["InstanceSource"].isNull())
 		instance_.instanceSource = instanceNode["InstanceSource"].asString();
+		auto allOwnerIdList = instanceNode["OwnerIdList"]["OwnerIds"];
+		for (auto value : allOwnerIdList)
+			instance_.ownerIdList.push_back(value.asString());
+		auto allOwnerNameList = instanceNode["OwnerNameList"]["OwnerNames"];
+		for (auto value : allOwnerNameList)
+			instance_.ownerNameList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorMessage"].isNull())

@@ -27,15 +27,15 @@ DisableUserRequest::DisableUserRequest() :
 DisableUserRequest::~DisableUserRequest()
 {}
 
-long DisableUserRequest::getUid()const
+std::string DisableUserRequest::getUid()const
 {
 	return uid_;
 }
 
-void DisableUserRequest::setUid(long uid)
+void DisableUserRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setParameter("Uid", std::to_string(uid));
+	setParameter("Uid", uid);
 }
 
 long DisableUserRequest::getTid()const

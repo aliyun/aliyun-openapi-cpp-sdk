@@ -46,13 +46,13 @@ void ListUsersResult::parse(const std::string &payload)
 		if(!valueUserListUser["UserId"].isNull())
 			userListObject.userId = valueUserListUser["UserId"].asString();
 		if(!valueUserListUser["Uid"].isNull())
-			userListObject.uid = std::stol(valueUserListUser["Uid"].asString());
+			userListObject.uid = valueUserListUser["Uid"].asString();
 		if(!valueUserListUser["NickName"].isNull())
 			userListObject.nickName = valueUserListUser["NickName"].asString();
 		if(!valueUserListUser["Mobile"].isNull())
 			userListObject.mobile = valueUserListUser["Mobile"].asString();
 		if(!valueUserListUser["ParentUid"].isNull())
-			userListObject.parentUid = std::stol(valueUserListUser["ParentUid"].asString());
+			userListObject.parentUid = valueUserListUser["ParentUid"].asString();
 		if(!valueUserListUser["State"].isNull())
 			userListObject.state = valueUserListUser["State"].asString();
 		if(!valueUserListUser["LastLoginTime"].isNull())

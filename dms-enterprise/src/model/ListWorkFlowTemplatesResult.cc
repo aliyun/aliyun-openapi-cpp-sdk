@@ -55,24 +55,24 @@ void ListWorkFlowTemplatesResult::parse(const std::string &payload)
 			workFlowTemplatesObject.enabled = valueWorkFlowTemplatesWorkFlowTemplate["Enabled"].asString();
 		if(!valueWorkFlowTemplatesWorkFlowTemplate["CreateUserId"].isNull())
 			workFlowTemplatesObject.createUserId = std::stol(valueWorkFlowTemplatesWorkFlowTemplate["CreateUserId"].asString());
-		auto allWorkflowNodesNode = allWorkFlowTemplatesNode["WorkflowNodes"]["WorkflowNode"];
-		for (auto allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode : allWorkflowNodesNode)
+		auto allWorkflowNodesNode = valueWorkFlowTemplatesWorkFlowTemplate["WorkflowNodes"]["WorkflowNode"];
+		for (auto valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode : allWorkflowNodesNode)
 		{
 			WorkFlowTemplate::WorkflowNode workflowNodesObject;
-			if(!allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["NodeId"].isNull())
-				workflowNodesObject.nodeId = std::stol(allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["NodeId"].asString());
-			if(!allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["TemplateId"].isNull())
-				workflowNodesObject.templateId = std::stol(allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["TemplateId"].asString());
-			if(!allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["NodeName"].isNull())
-				workflowNodesObject.nodeName = allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["NodeName"].asString();
-			if(!allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["NodeType"].isNull())
-				workflowNodesObject.nodeType = allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["NodeType"].asString();
-			if(!allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["Comment"].isNull())
-				workflowNodesObject.comment = allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["Comment"].asString();
-			if(!allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["Position"].isNull())
-				workflowNodesObject.position = std::stoi(allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["Position"].asString());
-			if(!allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["CreateUserId"].isNull())
-				workflowNodesObject.createUserId = std::stol(allWorkFlowTemplatesNodeWorkflowNodesWorkflowNode["CreateUserId"].asString());
+			if(!valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["NodeId"].isNull())
+				workflowNodesObject.nodeId = std::stol(valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["NodeId"].asString());
+			if(!valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["TemplateId"].isNull())
+				workflowNodesObject.templateId = std::stol(valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["TemplateId"].asString());
+			if(!valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["NodeName"].isNull())
+				workflowNodesObject.nodeName = valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["NodeName"].asString();
+			if(!valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["NodeType"].isNull())
+				workflowNodesObject.nodeType = valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["NodeType"].asString();
+			if(!valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["Comment"].isNull())
+				workflowNodesObject.comment = valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["Comment"].asString();
+			if(!valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["Position"].isNull())
+				workflowNodesObject.position = std::stoi(valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["Position"].asString());
+			if(!valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["CreateUserId"].isNull())
+				workflowNodesObject.createUserId = std::stol(valueWorkFlowTemplatesWorkFlowTemplateWorkflowNodesWorkflowNode["CreateUserId"].asString());
 			workFlowTemplatesObject.workflowNodes.push_back(workflowNodesObject);
 		}
 		workFlowTemplates_.push_back(workFlowTemplatesObject);

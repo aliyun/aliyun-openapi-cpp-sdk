@@ -55,16 +55,16 @@ void ListWorkFlowNodesResult::parse(const std::string &payload)
 			workflowNodesObject.createUserId = std::stol(valueWorkflowNodesWorkflowNode["CreateUserId"].asString());
 		if(!valueWorkflowNodesWorkflowNode["CreateUserNickName"].isNull())
 			workflowNodesObject.createUserNickName = valueWorkflowNodesWorkflowNode["CreateUserNickName"].asString();
-		auto allAuditUsersNode = allWorkflowNodesNode["AuditUsers"]["AuditUser"];
-		for (auto allWorkflowNodesNodeAuditUsersAuditUser : allAuditUsersNode)
+		auto allAuditUsersNode = valueWorkflowNodesWorkflowNode["AuditUsers"]["AuditUser"];
+		for (auto valueWorkflowNodesWorkflowNodeAuditUsersAuditUser : allAuditUsersNode)
 		{
 			WorkflowNode::AuditUser auditUsersObject;
-			if(!allWorkflowNodesNodeAuditUsersAuditUser["UserId"].isNull())
-				auditUsersObject.userId = std::stol(allWorkflowNodesNodeAuditUsersAuditUser["UserId"].asString());
-			if(!allWorkflowNodesNodeAuditUsersAuditUser["NickName"].isNull())
-				auditUsersObject.nickName = allWorkflowNodesNodeAuditUsersAuditUser["NickName"].asString();
-			if(!allWorkflowNodesNodeAuditUsersAuditUser["RealName"].isNull())
-				auditUsersObject.realName = allWorkflowNodesNodeAuditUsersAuditUser["RealName"].asString();
+			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["UserId"].isNull())
+				auditUsersObject.userId = std::stol(valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["UserId"].asString());
+			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["NickName"].isNull())
+				auditUsersObject.nickName = valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["NickName"].asString();
+			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["RealName"].isNull())
+				auditUsersObject.realName = valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["RealName"].asString();
 			workflowNodesObject.auditUsers.push_back(auditUsersObject);
 		}
 		workflowNodes_.push_back(workflowNodesObject);

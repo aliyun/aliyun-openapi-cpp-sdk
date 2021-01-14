@@ -43,7 +43,7 @@ void GetUserResult::parse(const std::string &payload)
 	if(!userNode["UserId"].isNull())
 		user_.userId = userNode["UserId"].asString();
 	if(!userNode["Uid"].isNull())
-		user_.uid = std::stol(userNode["Uid"].asString());
+		user_.uid = userNode["Uid"].asString();
 	if(!userNode["NickName"].isNull())
 		user_.nickName = userNode["NickName"].asString();
 	if(!userNode["Mobile"].isNull())

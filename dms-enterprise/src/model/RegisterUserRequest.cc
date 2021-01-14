@@ -38,17 +38,6 @@ void RegisterUserRequest::setRoleNames(const std::string& roleNames)
 	setParameter("RoleNames", roleNames);
 }
 
-long RegisterUserRequest::getUid()const
-{
-	return uid_;
-}
-
-void RegisterUserRequest::setUid(long uid)
-{
-	uid_ = uid;
-	setParameter("Uid", std::to_string(uid));
-}
-
 std::string RegisterUserRequest::getUserNick()const
 {
 	return userNick_;
@@ -80,5 +69,16 @@ void RegisterUserRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+std::string RegisterUserRequest::getUid()const
+{
+	return uid_;
+}
+
+void RegisterUserRequest::setUid(const std::string& uid)
+{
+	uid_ = uid;
+	setParameter("Uid", uid);
 }
 

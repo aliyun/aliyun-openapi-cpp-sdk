@@ -35,13 +35,13 @@ namespace AlibabaCloud
 				DeleteUserRequest();
 				~DeleteUserRequest();
 
-				long getUid()const;
-				void setUid(long uid);
+				std::string getUid()const;
+				void setUid(const std::string& uid);
 				long getTid()const;
 				void setTid(long tid);
 
             private:
-				long uid_;
+				std::string uid_;
 				long tid_;
 
 			};

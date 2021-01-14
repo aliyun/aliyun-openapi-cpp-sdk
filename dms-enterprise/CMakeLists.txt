@@ -23,8 +23,6 @@ set(dms-enterprise_public_header
 set(dms-enterprise_public_header_model 
 	include/alibabacloud/dms-enterprise/model/ApproveOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/ApproveOrderResult.h
-	include/alibabacloud/dms-enterprise/model/CheckFinishMissionRequest.h
-	include/alibabacloud/dms-enterprise/model/CheckFinishMissionResult.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderRequest.h
@@ -136,8 +134,6 @@ set(dms-enterprise_src
 	src/Dms-enterpriseClient.cc
 	src/model/ApproveOrderRequest.cc
 	src/model/ApproveOrderResult.cc
-	src/model/CheckFinishMissionRequest.cc
-	src/model/CheckFinishMissionResult.cc
 	src/model/CloseOrderRequest.cc
 	src/model/CloseOrderResult.cc
 	src/model/CreateOrderRequest.cc

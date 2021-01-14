@@ -71,22 +71,22 @@ void ListUserPermissionsResult::parse(const std::string &payload)
 			userPermissionsObject.tableId = valueUserPermissionsUserPermission["TableId"].asString();
 		if(!valueUserPermissionsUserPermission["ColumnName"].isNull())
 			userPermissionsObject.columnName = valueUserPermissionsUserPermission["ColumnName"].asString();
-		auto allPermDetailsNode = allUserPermissionsNode["PermDetails"]["PermDetail"];
-		for (auto allUserPermissionsNodePermDetailsPermDetail : allPermDetailsNode)
+		auto allPermDetailsNode = valueUserPermissionsUserPermission["PermDetails"]["PermDetail"];
+		for (auto valueUserPermissionsUserPermissionPermDetailsPermDetail : allPermDetailsNode)
 		{
 			UserPermission::PermDetail permDetailsObject;
-			if(!allUserPermissionsNodePermDetailsPermDetail["PermType"].isNull())
-				permDetailsObject.permType = allUserPermissionsNodePermDetailsPermDetail["PermType"].asString();
-			if(!allUserPermissionsNodePermDetailsPermDetail["ExpireDate"].isNull())
-				permDetailsObject.expireDate = allUserPermissionsNodePermDetailsPermDetail["ExpireDate"].asString();
-			if(!allUserPermissionsNodePermDetailsPermDetail["CreateDate"].isNull())
-				permDetailsObject.createDate = allUserPermissionsNodePermDetailsPermDetail["CreateDate"].asString();
-			if(!allUserPermissionsNodePermDetailsPermDetail["OriginFrom"].isNull())
-				permDetailsObject.originFrom = allUserPermissionsNodePermDetailsPermDetail["OriginFrom"].asString();
-			if(!allUserPermissionsNodePermDetailsPermDetail["UserAccessId"].isNull())
-				permDetailsObject.userAccessId = allUserPermissionsNodePermDetailsPermDetail["UserAccessId"].asString();
-			if(!allUserPermissionsNodePermDetailsPermDetail["ExtraData"].isNull())
-				permDetailsObject.extraData = allUserPermissionsNodePermDetailsPermDetail["ExtraData"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["PermType"].isNull())
+				permDetailsObject.permType = valueUserPermissionsUserPermissionPermDetailsPermDetail["PermType"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["ExpireDate"].isNull())
+				permDetailsObject.expireDate = valueUserPermissionsUserPermissionPermDetailsPermDetail["ExpireDate"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["CreateDate"].isNull())
+				permDetailsObject.createDate = valueUserPermissionsUserPermissionPermDetailsPermDetail["CreateDate"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["OriginFrom"].isNull())
+				permDetailsObject.originFrom = valueUserPermissionsUserPermissionPermDetailsPermDetail["OriginFrom"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["UserAccessId"].isNull())
+				permDetailsObject.userAccessId = valueUserPermissionsUserPermissionPermDetailsPermDetail["UserAccessId"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["ExtraData"].isNull())
+				permDetailsObject.extraData = valueUserPermissionsUserPermissionPermDetailsPermDetail["ExtraData"].asString();
 			userPermissionsObject.permDetails.push_back(permDetailsObject);
 		}
 		userPermissions_.push_back(userPermissionsObject);
