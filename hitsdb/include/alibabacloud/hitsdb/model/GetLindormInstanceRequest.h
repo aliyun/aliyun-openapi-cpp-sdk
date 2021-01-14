@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceEngineListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetLindormInstanceEngineListRequest();
-				~GetLindormInstanceEngineListRequest();
+				GetLindormInstanceRequest();
+				~GetLindormInstanceRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
@@ -66,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEREQUEST_H_

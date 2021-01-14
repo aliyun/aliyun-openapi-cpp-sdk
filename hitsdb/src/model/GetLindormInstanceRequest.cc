@@ -14,102 +14,102 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/hitsdb/model/GetLindormInstanceEngineListRequest.h>
+#include <alibabacloud/hitsdb/model/GetLindormInstanceRequest.h>
 
-using AlibabaCloud::Hitsdb::Model::GetLindormInstanceEngineListRequest;
+using AlibabaCloud::Hitsdb::Model::GetLindormInstanceRequest;
 
-GetLindormInstanceEngineListRequest::GetLindormInstanceEngineListRequest() :
-	RpcServiceRequest("hitsdb", "2020-06-15", "GetLindormInstanceEngineList")
+GetLindormInstanceRequest::GetLindormInstanceRequest() :
+	RpcServiceRequest("hitsdb", "2020-06-15", "GetLindormInstance")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetLindormInstanceEngineListRequest::~GetLindormInstanceEngineListRequest()
+GetLindormInstanceRequest::~GetLindormInstanceRequest()
 {}
 
-long GetLindormInstanceEngineListRequest::getResourceOwnerId()const
+long GetLindormInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void GetLindormInstanceEngineListRequest::setResourceOwnerId(long resourceOwnerId)
+void GetLindormInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string GetLindormInstanceEngineListRequest::getAccessKeyId()const
+std::string GetLindormInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void GetLindormInstanceEngineListRequest::setAccessKeyId(const std::string& accessKeyId)
+void GetLindormInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string GetLindormInstanceEngineListRequest::getSecurityToken()const
+std::string GetLindormInstanceRequest::getSecurityToken()const
 {
 	return securityToken_;
 }
 
-void GetLindormInstanceEngineListRequest::setSecurityToken(const std::string& securityToken)
+void GetLindormInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
 }
 
-std::string GetLindormInstanceEngineListRequest::getRegionId()const
+std::string GetLindormInstanceRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void GetLindormInstanceEngineListRequest::setRegionId(const std::string& regionId)
+void GetLindormInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
 }
 
-std::string GetLindormInstanceEngineListRequest::getResourceOwnerAccount()const
+std::string GetLindormInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void GetLindormInstanceEngineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void GetLindormInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string GetLindormInstanceEngineListRequest::getOwnerAccount()const
+std::string GetLindormInstanceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void GetLindormInstanceEngineListRequest::setOwnerAccount(const std::string& ownerAccount)
+void GetLindormInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-long GetLindormInstanceEngineListRequest::getOwnerId()const
+long GetLindormInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void GetLindormInstanceEngineListRequest::setOwnerId(long ownerId)
+void GetLindormInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string GetLindormInstanceEngineListRequest::getInstanceId()const
+std::string GetLindormInstanceRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void GetLindormInstanceEngineListRequest::setInstanceId(const std::string& instanceId)
+void GetLindormInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);

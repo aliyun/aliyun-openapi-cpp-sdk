@@ -1,3 +1,6 @@
+2021-01-14 Version: patch
+- Create Lindorm Open api.
+
 2021-01-13 Version: patch
 - Add SwitchInstanceHA API.
 - ModifyInstanceSpec add SourceBiz param.

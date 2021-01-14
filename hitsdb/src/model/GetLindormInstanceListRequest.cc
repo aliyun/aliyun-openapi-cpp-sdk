@@ -82,6 +82,17 @@ void GetLindormInstanceListRequest::setSecurityToken(const std::string& security
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string GetLindormInstanceListRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetLindormInstanceListRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int GetLindormInstanceListRequest::getPageSize()const
 {
 	return pageSize_;

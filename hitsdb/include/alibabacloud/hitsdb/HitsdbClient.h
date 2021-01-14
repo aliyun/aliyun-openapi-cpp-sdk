@@ -22,8 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "HitsdbExport.h"
+#include "model/DescribeRegionsRequest.h"
+#include "model/DescribeRegionsResult.h"
 #include "model/GetInstanceIpWhiteListRequest.h"
 #include "model/GetInstanceIpWhiteListResult.h"
+#include "model/GetLindormInstanceRequest.h"
+#include "model/GetLindormInstanceResult.h"
 #include "model/GetLindormInstanceEngineListRequest.h"
 #include "model/GetLindormInstanceEngineListResult.h"
 #include "model/GetLindormInstanceListRequest.h"
@@ -39,9 +43,15 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_HITSDB_EXPORT HitsdbClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
+			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceIpWhiteListResult> GetInstanceIpWhiteListOutcome;
 			typedef std::future<GetInstanceIpWhiteListOutcome> GetInstanceIpWhiteListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetInstanceIpWhiteListRequest&, const GetInstanceIpWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceIpWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::GetLindormInstanceResult> GetLindormInstanceOutcome;
+			typedef std::future<GetLindormInstanceOutcome> GetLindormInstanceOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::GetLindormInstanceRequest&, const GetLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLindormInstanceAsyncHandler;
 			typedef Outcome<Error, Model::GetLindormInstanceEngineListResult> GetLindormInstanceEngineListOutcome;
 			typedef std::future<GetLindormInstanceEngineListOutcome> GetLindormInstanceEngineListOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::GetLindormInstanceEngineListRequest&, const GetLindormInstanceEngineListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLindormInstanceEngineListAsyncHandler;
@@ -56,9 +66,15 @@ namespace AlibabaCloud
 			HitsdbClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			HitsdbClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~HitsdbClient();
+			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
+			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
 			GetInstanceIpWhiteListOutcome getInstanceIpWhiteList(const Model::GetInstanceIpWhiteListRequest &request)const;
 			void getInstanceIpWhiteListAsync(const Model::GetInstanceIpWhiteListRequest& request, const GetInstanceIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceIpWhiteListOutcomeCallable getInstanceIpWhiteListCallable(const Model::GetInstanceIpWhiteListRequest& request) const;
+			GetLindormInstanceOutcome getLindormInstance(const Model::GetLindormInstanceRequest &request)const;
+			void getLindormInstanceAsync(const Model::GetLindormInstanceRequest& request, const GetLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLindormInstanceOutcomeCallable getLindormInstanceCallable(const Model::GetLindormInstanceRequest& request) const;
 			GetLindormInstanceEngineListOutcome getLindormInstanceEngineList(const Model::GetLindormInstanceEngineListRequest &request)const;
 			void getLindormInstanceEngineListAsync(const Model::GetLindormInstanceEngineListRequest& request, const GetLindormInstanceEngineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLindormInstanceEngineListOutcomeCallable getLindormInstanceEngineListCallable(const Model::GetLindormInstanceEngineListRequest& request) const;

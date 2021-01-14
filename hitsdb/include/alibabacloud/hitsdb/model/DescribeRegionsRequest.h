@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_DESCRIBEREGIONSREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_DESCRIBEREGIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceEngineListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HITSDB_EXPORT DescribeRegionsRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetLindormInstanceEngineListRequest();
-				~GetLindormInstanceEngineListRequest();
+				DescribeRegionsRequest();
+				~DescribeRegionsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
@@ -41,29 +41,26 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getAcceptLanguage()const;
+				void setAcceptLanguage(const std::string& acceptLanguage);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string instanceId_;
+				std::string acceptLanguage_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_DESCRIBEREGIONSREQUEST_H_
