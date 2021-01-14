@@ -116,6 +116,10 @@
 #include "model/QueryResellerAvailableQuotaResult.h"
 #include "model/QueryResourcePackageInstancesRequest.h"
 #include "model/QueryResourcePackageInstancesResult.h"
+#include "model/QuerySavingsPlansDeductLogRequest.h"
+#include "model/QuerySavingsPlansDeductLogResult.h"
+#include "model/QuerySavingsPlansInstanceRequest.h"
+#include "model/QuerySavingsPlansInstanceResult.h"
 #include "model/QuerySettleBillRequest.h"
 #include "model/QuerySettleBillResult.h"
 #include "model/QuerySettlementBillRequest.h"
@@ -128,6 +132,10 @@
 #include "model/RenewInstanceResult.h"
 #include "model/RenewResourcePackageRequest.h"
 #include "model/RenewResourcePackageResult.h"
+#include "model/SaveUserCreditRequest.h"
+#include "model/SaveUserCreditResult.h"
+#include "model/SetCreditLabelActionRequest.h"
+#include "model/SetCreditLabelActionResult.h"
 #include "model/SetRenewalRequest.h"
 #include "model/SetRenewalResult.h"
 #include "model/SetResellerUserAlarmThresholdRequest.h"
@@ -292,6 +300,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryResourcePackageInstancesResult> QueryResourcePackageInstancesOutcome;
 			typedef std::future<QueryResourcePackageInstancesOutcome> QueryResourcePackageInstancesOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryResourcePackageInstancesRequest&, const QueryResourcePackageInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourcePackageInstancesAsyncHandler;
+			typedef Outcome<Error, Model::QuerySavingsPlansDeductLogResult> QuerySavingsPlansDeductLogOutcome;
+			typedef std::future<QuerySavingsPlansDeductLogOutcome> QuerySavingsPlansDeductLogOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QuerySavingsPlansDeductLogRequest&, const QuerySavingsPlansDeductLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySavingsPlansDeductLogAsyncHandler;
+			typedef Outcome<Error, Model::QuerySavingsPlansInstanceResult> QuerySavingsPlansInstanceOutcome;
+			typedef std::future<QuerySavingsPlansInstanceOutcome> QuerySavingsPlansInstanceOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QuerySavingsPlansInstanceRequest&, const QuerySavingsPlansInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySavingsPlansInstanceAsyncHandler;
 			typedef Outcome<Error, Model::QuerySettleBillResult> QuerySettleBillOutcome;
 			typedef std::future<QuerySettleBillOutcome> QuerySettleBillOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QuerySettleBillRequest&, const QuerySettleBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySettleBillAsyncHandler;
@@ -310,6 +324,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewResourcePackageResult> RenewResourcePackageOutcome;
 			typedef std::future<RenewResourcePackageOutcome> RenewResourcePackageOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::RenewResourcePackageRequest&, const RenewResourcePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewResourcePackageAsyncHandler;
+			typedef Outcome<Error, Model::SaveUserCreditResult> SaveUserCreditOutcome;
+			typedef std::future<SaveUserCreditOutcome> SaveUserCreditOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::SaveUserCreditRequest&, const SaveUserCreditOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveUserCreditAsyncHandler;
+			typedef Outcome<Error, Model::SetCreditLabelActionResult> SetCreditLabelActionOutcome;
+			typedef std::future<SetCreditLabelActionOutcome> SetCreditLabelActionOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::SetCreditLabelActionRequest&, const SetCreditLabelActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCreditLabelActionAsyncHandler;
 			typedef Outcome<Error, Model::SetRenewalResult> SetRenewalOutcome;
 			typedef std::future<SetRenewalOutcome> SetRenewalOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::SetRenewalRequest&, const SetRenewalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewalAsyncHandler;
@@ -477,6 +497,12 @@ namespace AlibabaCloud
 			QueryResourcePackageInstancesOutcome queryResourcePackageInstances(const Model::QueryResourcePackageInstancesRequest &request)const;
 			void queryResourcePackageInstancesAsync(const Model::QueryResourcePackageInstancesRequest& request, const QueryResourcePackageInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryResourcePackageInstancesOutcomeCallable queryResourcePackageInstancesCallable(const Model::QueryResourcePackageInstancesRequest& request) const;
+			QuerySavingsPlansDeductLogOutcome querySavingsPlansDeductLog(const Model::QuerySavingsPlansDeductLogRequest &request)const;
+			void querySavingsPlansDeductLogAsync(const Model::QuerySavingsPlansDeductLogRequest& request, const QuerySavingsPlansDeductLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySavingsPlansDeductLogOutcomeCallable querySavingsPlansDeductLogCallable(const Model::QuerySavingsPlansDeductLogRequest& request) const;
+			QuerySavingsPlansInstanceOutcome querySavingsPlansInstance(const Model::QuerySavingsPlansInstanceRequest &request)const;
+			void querySavingsPlansInstanceAsync(const Model::QuerySavingsPlansInstanceRequest& request, const QuerySavingsPlansInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySavingsPlansInstanceOutcomeCallable querySavingsPlansInstanceCallable(const Model::QuerySavingsPlansInstanceRequest& request) const;
 			QuerySettleBillOutcome querySettleBill(const Model::QuerySettleBillRequest &request)const;
 			void querySettleBillAsync(const Model::QuerySettleBillRequest& request, const QuerySettleBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySettleBillOutcomeCallable querySettleBillCallable(const Model::QuerySettleBillRequest& request) const;
@@ -495,6 +521,12 @@ namespace AlibabaCloud
 			RenewResourcePackageOutcome renewResourcePackage(const Model::RenewResourcePackageRequest &request)const;
 			void renewResourcePackageAsync(const Model::RenewResourcePackageRequest& request, const RenewResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewResourcePackageOutcomeCallable renewResourcePackageCallable(const Model::RenewResourcePackageRequest& request) const;
+			SaveUserCreditOutcome saveUserCredit(const Model::SaveUserCreditRequest &request)const;
+			void saveUserCreditAsync(const Model::SaveUserCreditRequest& request, const SaveUserCreditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveUserCreditOutcomeCallable saveUserCreditCallable(const Model::SaveUserCreditRequest& request) const;
+			SetCreditLabelActionOutcome setCreditLabelAction(const Model::SetCreditLabelActionRequest &request)const;
+			void setCreditLabelActionAsync(const Model::SetCreditLabelActionRequest& request, const SetCreditLabelActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetCreditLabelActionOutcomeCallable setCreditLabelActionCallable(const Model::SetCreditLabelActionRequest& request) const;
 			SetRenewalOutcome setRenewal(const Model::SetRenewalRequest &request)const;
 			void setRenewalAsync(const Model::SetRenewalRequest& request, const SetRenewalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetRenewalOutcomeCallable setRenewalCallable(const Model::SetRenewalRequest& request) const;

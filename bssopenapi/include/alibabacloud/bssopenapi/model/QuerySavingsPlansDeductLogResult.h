@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBILLRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBILLRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSDEDUCTLOGRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSDEDUCTLOGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryAccountBillResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySavingsPlansDeductLogResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Item
+					struct SavingsPlansDeductDetailResponse
 					{
-						float deductedByCoupons;
-						std::string ownerName;
-						std::string productName;
-						std::string productCode;
-						float deductedByCashCoupons;
-						float outstandingAmount;
-						std::string billingDate;
-						float paymentAmount;
-						float deductedByPrepaidCard;
-						std::string pipCode;
-						float invoiceDiscount;
-						std::string subscriptionType;
-						float pretaxGrossAmount;
-						std::string ownerID;
-						float pretaxAmount;
-						std::string currency;
-						std::string costUnit;
+						std::string deductFee;
+						std::string billModule;
+						std::string endTime;
+						std::string deductCommodity;
+						std::string instanceId;
+						long userId;
+						std::string startTime;
+						std::string deductRate;
+						std::string deductInstanceId;
+						std::string discountRate;
+						std::string savingsType;
 					};
-					std::string billingCycle;
 					int totalCount;
-					std::string accountID;
 					int pageNum;
 					int pageSize;
-					std::vector<Item> items;
-					std::string accountName;
+					std::vector<SavingsPlansDeductDetailResponse> items;
 				};
 
 
-				QueryAccountBillResult();
-				explicit QueryAccountBillResult(const std::string &payload);
-				~QueryAccountBillResult();
+				QuerySavingsPlansDeductLogResult();
+				explicit QuerySavingsPlansDeductLogResult(const std::string &payload);
+				~QuerySavingsPlansDeductLogResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -84,4 +75,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYACCOUNTBILLRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSDEDUCTLOGRESULT_H_

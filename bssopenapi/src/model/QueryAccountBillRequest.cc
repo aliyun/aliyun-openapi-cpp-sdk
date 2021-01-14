@@ -82,6 +82,17 @@ void QueryAccountBillRequest::setBillOwnerId(long billOwnerId)
 	setParameter("BillOwnerId", std::to_string(billOwnerId));
 }
 
+std::string QueryAccountBillRequest::getBillingDate()const
+{
+	return billingDate_;
+}
+
+void QueryAccountBillRequest::setBillingDate(const std::string& billingDate)
+{
+	billingDate_ = billingDate;
+	setParameter("BillingDate", billingDate);
+}
+
 bool QueryAccountBillRequest::getIsGroupByProduct()const
 {
 	return isGroupByProduct_;
@@ -91,6 +102,17 @@ void QueryAccountBillRequest::setIsGroupByProduct(bool isGroupByProduct)
 {
 	isGroupByProduct_ = isGroupByProduct;
 	setParameter("IsGroupByProduct", isGroupByProduct ? "true" : "false");
+}
+
+std::string QueryAccountBillRequest::getGranularity()const
+{
+	return granularity_;
+}
+
+void QueryAccountBillRequest::setGranularity(const std::string& granularity)
+{
+	granularity_ = granularity;
+	setParameter("Granularity", granularity);
 }
 
 int QueryAccountBillRequest::getPageSize()const

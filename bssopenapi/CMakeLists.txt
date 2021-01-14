@@ -115,6 +115,10 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryResellerAvailableQuotaResult.h
 	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesRequest.h
 	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesResult.h
+	include/alibabacloud/bssopenapi/model/QuerySavingsPlansDeductLogRequest.h
+	include/alibabacloud/bssopenapi/model/QuerySavingsPlansDeductLogResult.h
+	include/alibabacloud/bssopenapi/model/QuerySavingsPlansInstanceRequest.h
+	include/alibabacloud/bssopenapi/model/QuerySavingsPlansInstanceResult.h
 	include/alibabacloud/bssopenapi/model/QuerySettleBillRequest.h
 	include/alibabacloud/bssopenapi/model/QuerySettleBillResult.h
 	include/alibabacloud/bssopenapi/model/QuerySettlementBillRequest.h
@@ -127,6 +131,10 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/RenewInstanceResult.h
 	include/alibabacloud/bssopenapi/model/RenewResourcePackageRequest.h
 	include/alibabacloud/bssopenapi/model/RenewResourcePackageResult.h
+	include/alibabacloud/bssopenapi/model/SaveUserCreditRequest.h
+	include/alibabacloud/bssopenapi/model/SaveUserCreditResult.h
+	include/alibabacloud/bssopenapi/model/SetCreditLabelActionRequest.h
+	include/alibabacloud/bssopenapi/model/SetCreditLabelActionResult.h
 	include/alibabacloud/bssopenapi/model/SetRenewalRequest.h
 	include/alibabacloud/bssopenapi/model/SetRenewalResult.h
 	include/alibabacloud/bssopenapi/model/SetResellerUserAlarmThresholdRequest.h
@@ -238,6 +246,10 @@ set(bssopenapi_src
 	src/model/QueryResellerAvailableQuotaResult.cc
 	src/model/QueryResourcePackageInstancesRequest.cc
 	src/model/QueryResourcePackageInstancesResult.cc
+	src/model/QuerySavingsPlansDeductLogRequest.cc
+	src/model/QuerySavingsPlansDeductLogResult.cc
+	src/model/QuerySavingsPlansInstanceRequest.cc
+	src/model/QuerySavingsPlansInstanceResult.cc
 	src/model/QuerySettleBillRequest.cc
 	src/model/QuerySettleBillResult.cc
 	src/model/QuerySettlementBillRequest.cc
@@ -250,6 +262,10 @@ set(bssopenapi_src
 	src/model/RenewInstanceResult.cc
 	src/model/RenewResourcePackageRequest.cc
 	src/model/RenewResourcePackageResult.cc
+	src/model/SaveUserCreditRequest.cc
+	src/model/SaveUserCreditResult.cc
+	src/model/SetCreditLabelActionRequest.cc
+	src/model/SetCreditLabelActionResult.cc
 	src/model/SetRenewalRequest.cc
 	src/model/SetRenewalResult.cc
 	src/model/SetResellerUserAlarmThresholdRequest.cc

@@ -136,6 +136,18 @@ void QuerySplitItemBillResult::parse(const std::string &payload)
 			itemObject.pipCode = dataNodeItemsItem["PipCode"].asString();
 		if(!dataNodeItemsItem["CommodityCode"].isNull())
 			itemObject.commodityCode = dataNodeItemsItem["CommodityCode"].asString();
+		if(!dataNodeItemsItem["ServicePeriodUnit"].isNull())
+			itemObject.servicePeriodUnit = dataNodeItemsItem["ServicePeriodUnit"].asString();
+		if(!dataNodeItemsItem["SplitCommodityCode"].isNull())
+			itemObject.splitCommodityCode = dataNodeItemsItem["SplitCommodityCode"].asString();
+		if(!dataNodeItemsItem["SplitProductDetail"].isNull())
+			itemObject.splitProductDetail = dataNodeItemsItem["SplitProductDetail"].asString();
+		if(!dataNodeItemsItem["SplitAccountID"].isNull())
+			itemObject.splitAccountID = dataNodeItemsItem["SplitAccountID"].asString();
+		if(!dataNodeItemsItem["SplitAccountName"].isNull())
+			itemObject.splitAccountName = dataNodeItemsItem["SplitAccountName"].asString();
+		if(!dataNodeItemsItem["SplitBillingCycle"].isNull())
+			itemObject.splitBillingCycle = dataNodeItemsItem["SplitBillingCycle"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

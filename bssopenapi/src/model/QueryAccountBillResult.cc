@@ -88,6 +88,8 @@ void QueryAccountBillResult::parse(const std::string &payload)
 			itemObject.subscriptionType = dataNodeItemsItem["SubscriptionType"].asString();
 		if(!dataNodeItemsItem["PipCode"].isNull())
 			itemObject.pipCode = dataNodeItemsItem["PipCode"].asString();
+		if(!dataNodeItemsItem["BillingDate"].isNull())
+			itemObject.billingDate = dataNodeItemsItem["BillingDate"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

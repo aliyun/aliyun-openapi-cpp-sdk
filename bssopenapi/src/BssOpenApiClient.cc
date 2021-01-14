@@ -1743,6 +1743,78 @@ BssOpenApiClient::QueryResourcePackageInstancesOutcomeCallable BssOpenApiClient:
 	return task->get_future();
 }
 
+BssOpenApiClient::QuerySavingsPlansDeductLogOutcome BssOpenApiClient::querySavingsPlansDeductLog(const QuerySavingsPlansDeductLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySavingsPlansDeductLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySavingsPlansDeductLogOutcome(QuerySavingsPlansDeductLogResult(outcome.result()));
+	else
+		return QuerySavingsPlansDeductLogOutcome(outcome.error());
+}
+
+void BssOpenApiClient::querySavingsPlansDeductLogAsync(const QuerySavingsPlansDeductLogRequest& request, const QuerySavingsPlansDeductLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySavingsPlansDeductLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QuerySavingsPlansDeductLogOutcomeCallable BssOpenApiClient::querySavingsPlansDeductLogCallable(const QuerySavingsPlansDeductLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySavingsPlansDeductLogOutcome()>>(
+			[this, request]()
+			{
+			return this->querySavingsPlansDeductLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::QuerySavingsPlansInstanceOutcome BssOpenApiClient::querySavingsPlansInstance(const QuerySavingsPlansInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySavingsPlansInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySavingsPlansInstanceOutcome(QuerySavingsPlansInstanceResult(outcome.result()));
+	else
+		return QuerySavingsPlansInstanceOutcome(outcome.error());
+}
+
+void BssOpenApiClient::querySavingsPlansInstanceAsync(const QuerySavingsPlansInstanceRequest& request, const QuerySavingsPlansInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySavingsPlansInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QuerySavingsPlansInstanceOutcomeCallable BssOpenApiClient::querySavingsPlansInstanceCallable(const QuerySavingsPlansInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySavingsPlansInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->querySavingsPlansInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::QuerySettleBillOutcome BssOpenApiClient::querySettleBill(const QuerySettleBillRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,6 +2025,78 @@ BssOpenApiClient::RenewResourcePackageOutcomeCallable BssOpenApiClient::renewRes
 			[this, request]()
 			{
 			return this->renewResourcePackage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::SaveUserCreditOutcome BssOpenApiClient::saveUserCredit(const SaveUserCreditRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveUserCreditOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveUserCreditOutcome(SaveUserCreditResult(outcome.result()));
+	else
+		return SaveUserCreditOutcome(outcome.error());
+}
+
+void BssOpenApiClient::saveUserCreditAsync(const SaveUserCreditRequest& request, const SaveUserCreditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveUserCredit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::SaveUserCreditOutcomeCallable BssOpenApiClient::saveUserCreditCallable(const SaveUserCreditRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveUserCreditOutcome()>>(
+			[this, request]()
+			{
+			return this->saveUserCredit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::SetCreditLabelActionOutcome BssOpenApiClient::setCreditLabelAction(const SetCreditLabelActionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetCreditLabelActionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetCreditLabelActionOutcome(SetCreditLabelActionResult(outcome.result()));
+	else
+		return SetCreditLabelActionOutcome(outcome.error());
+}
+
+void BssOpenApiClient::setCreditLabelActionAsync(const SetCreditLabelActionRequest& request, const SetCreditLabelActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setCreditLabelAction(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::SetCreditLabelActionOutcomeCallable BssOpenApiClient::setCreditLabelActionCallable(const SetCreditLabelActionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetCreditLabelActionOutcome()>>(
+			[this, request]()
+			{
+			return this->setCreditLabelAction(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

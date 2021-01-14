@@ -1,4 +1,8 @@
 2021-01-14 Version: patch
+- Add BillingDate support in QueryAccontBill.
+- Add SplitAccountId, SplitAccountName, SplitBillingCycle, SplitProductDetail, SplitCommodityCode, ServicePeriodUnit support in QuerySplitItemBill.
+
+2021-01-14 Version: patch
 - Update Open API.
 
 2021-01-14 Version: patch
