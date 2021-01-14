@@ -39,6 +39,20 @@ void ModifyDBInstanceSpecResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
 
+}
+
+std::string ModifyDBInstanceSpecResult::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+long ModifyDBInstanceSpecResult::getOrderId()const
+{
+	return orderId_;
 }
 

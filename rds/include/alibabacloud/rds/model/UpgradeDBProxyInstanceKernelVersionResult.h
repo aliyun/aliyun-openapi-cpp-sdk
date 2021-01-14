@@ -38,14 +38,12 @@ namespace AlibabaCloud
 				explicit UpgradeDBProxyInstanceKernelVersionResult(const std::string &payload);
 				~UpgradeDBProxyInstanceKernelVersionResult();
 				std::string getTaskId()const;
-				std::string getTargetMinorVersion()const;
 				std::string getDBInstanceName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string taskId_;
-				std::string targetMinorVersion_;
 				std::string dBInstanceName_;
 
 			};

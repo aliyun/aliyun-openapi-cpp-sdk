@@ -43,19 +43,12 @@ void UpgradeDBProxyInstanceKernelVersionResult::parse(const std::string &payload
 		dBInstanceName_ = value["DBInstanceName"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
-	if(!value["TargetMinorVersion"].isNull())
-		targetMinorVersion_ = value["TargetMinorVersion"].asString();
 
 }
 
 std::string UpgradeDBProxyInstanceKernelVersionResult::getTaskId()const
 {
 	return taskId_;
-}
-
-std::string UpgradeDBProxyInstanceKernelVersionResult::getTargetMinorVersion()const
-{
-	return targetMinorVersion_;
 }
 
 std::string UpgradeDBProxyInstanceKernelVersionResult::getDBInstanceName()const
