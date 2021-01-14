@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_PAGINATEPROJECTRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_PAGINATEPROJECTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,47 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT ListMetricsResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT PaginateProjectResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct Data
 				{
-					std::string corpId;
-					std::string tagMetric;
-					std::string tagCode;
-					std::string tagValue;
-					std::string dateTime;
+					struct RecordsItem
+					{
+						std::string type;
+						std::string aggregateSceneCode;
+						std::string corpId;
+						std::string createdTime;
+						std::string description;
+						std::string modifiedTime;
+						std::string userId;
+						std::string icon;
+						std::string name;
+					};
+					int totalCount;
+					int pageSize;
+					int totalPage;
+					int pageNumber;
+					std::vector<RecordsItem> records;
 				};
 
 
-				ListMetricsResult();
-				explicit ListMetricsResult(const std::string &payload);
-				~ListMetricsResult();
-				std::string getTotalCount()const;
+				PaginateProjectResult();
+				explicit PaginateProjectResult(const std::string &payload);
+				~PaginateProjectResult();
 				std::string getMessage()const;
-				std::string getPageSize()const;
-				std::string getPageNumber()const;
-				std::vector<DataItem> getData()const;
+				Data getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string totalCount_;
 				std::string message_;
-				std::string pageSize_;
-				std::string pageNumber_;
-				std::vector<DataItem> data_;
+				Data data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_PAGINATEPROJECTRESULT_H_

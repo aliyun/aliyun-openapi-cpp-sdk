@@ -31,6 +31,8 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/GetCdrsMonitorListResult.h
 	include/alibabacloud/cdrs/model/GetCdrsMonitorResultRequest.h
 	include/alibabacloud/cdrs/model/GetCdrsMonitorResultResult.h
+	include/alibabacloud/cdrs/model/ListAreaHotSpotMetricsRequest.h
+	include/alibabacloud/cdrs/model/ListAreaHotSpotMetricsResult.h
 	include/alibabacloud/cdrs/model/ListCityMapAoisRequest.h
 	include/alibabacloud/cdrs/model/ListCityMapAoisResult.h
 	include/alibabacloud/cdrs/model/ListCityMapCameraResultsRequest.h
@@ -45,6 +47,10 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/ListCityMapRangeStatisticResult.h
 	include/alibabacloud/cdrs/model/ListCorpMetricsRequest.h
 	include/alibabacloud/cdrs/model/ListCorpMetricsResult.h
+	include/alibabacloud/cdrs/model/ListCorpMetricsStatisticRequest.h
+	include/alibabacloud/cdrs/model/ListCorpMetricsStatisticResult.h
+	include/alibabacloud/cdrs/model/ListCorpTrackDetailRequest.h
+	include/alibabacloud/cdrs/model/ListCorpTrackDetailResult.h
 	include/alibabacloud/cdrs/model/ListDataStatisticsRequest.h
 	include/alibabacloud/cdrs/model/ListDataStatisticsResult.h
 	include/alibabacloud/cdrs/model/ListDataStatisticsByDayRequest.h
@@ -57,6 +63,8 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/ListDevicePersonResult.h
 	include/alibabacloud/cdrs/model/ListDevicePersonStatisticsRequest.h
 	include/alibabacloud/cdrs/model/ListDevicePersonStatisticsResult.h
+	include/alibabacloud/cdrs/model/ListDeviceRelationRequest.h
+	include/alibabacloud/cdrs/model/ListDeviceRelationResult.h
 	include/alibabacloud/cdrs/model/ListMapRouteDetailsRequest.h
 	include/alibabacloud/cdrs/model/ListMapRouteDetailsResult.h
 	include/alibabacloud/cdrs/model/ListMetricsRequest.h
@@ -79,6 +87,8 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/ListStorageStatisticsResult.h
 	include/alibabacloud/cdrs/model/ListStructureStatisticsRequest.h
 	include/alibabacloud/cdrs/model/ListStructureStatisticsResult.h
+	include/alibabacloud/cdrs/model/ListTagMetricsRequest.h
+	include/alibabacloud/cdrs/model/ListTagMetricsResult.h
 	include/alibabacloud/cdrs/model/ListVehicleDetailsRequest.h
 	include/alibabacloud/cdrs/model/ListVehicleDetailsResult.h
 	include/alibabacloud/cdrs/model/ListVehicleResultsRequest.h
@@ -89,6 +99,10 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/ListVehicleTopResult.h
 	include/alibabacloud/cdrs/model/ListVehicleTrackRequest.h
 	include/alibabacloud/cdrs/model/ListVehicleTrackResult.h
+	include/alibabacloud/cdrs/model/PaginateDeviceRequest.h
+	include/alibabacloud/cdrs/model/PaginateDeviceResult.h
+	include/alibabacloud/cdrs/model/PaginateProjectRequest.h
+	include/alibabacloud/cdrs/model/PaginateProjectResult.h
 	include/alibabacloud/cdrs/model/RecognizeImageRequest.h
 	include/alibabacloud/cdrs/model/RecognizeImageResult.h
 	include/alibabacloud/cdrs/model/SearchObjectRequest.h
@@ -114,6 +128,8 @@ set(cdrs_src
 	src/model/GetCdrsMonitorListResult.cc
 	src/model/GetCdrsMonitorResultRequest.cc
 	src/model/GetCdrsMonitorResultResult.cc
+	src/model/ListAreaHotSpotMetricsRequest.cc
+	src/model/ListAreaHotSpotMetricsResult.cc
 	src/model/ListCityMapAoisRequest.cc
 	src/model/ListCityMapAoisResult.cc
 	src/model/ListCityMapCameraResultsRequest.cc
@@ -128,6 +144,10 @@ set(cdrs_src
 	src/model/ListCityMapRangeStatisticResult.cc
 	src/model/ListCorpMetricsRequest.cc
 	src/model/ListCorpMetricsResult.cc
+	src/model/ListCorpMetricsStatisticRequest.cc
+	src/model/ListCorpMetricsStatisticResult.cc
+	src/model/ListCorpTrackDetailRequest.cc
+	src/model/ListCorpTrackDetailResult.cc
 	src/model/ListDataStatisticsRequest.cc
 	src/model/ListDataStatisticsResult.cc
 	src/model/ListDataStatisticsByDayRequest.cc
@@ -140,6 +160,8 @@ set(cdrs_src
 	src/model/ListDevicePersonResult.cc
 	src/model/ListDevicePersonStatisticsRequest.cc
 	src/model/ListDevicePersonStatisticsResult.cc
+	src/model/ListDeviceRelationRequest.cc
+	src/model/ListDeviceRelationResult.cc
 	src/model/ListMapRouteDetailsRequest.cc
 	src/model/ListMapRouteDetailsResult.cc
 	src/model/ListMetricsRequest.cc
@@ -162,6 +184,8 @@ set(cdrs_src
 	src/model/ListStorageStatisticsResult.cc
 	src/model/ListStructureStatisticsRequest.cc
 	src/model/ListStructureStatisticsResult.cc
+	src/model/ListTagMetricsRequest.cc
+	src/model/ListTagMetricsResult.cc
 	src/model/ListVehicleDetailsRequest.cc
 	src/model/ListVehicleDetailsResult.cc
 	src/model/ListVehicleResultsRequest.cc
@@ -172,6 +196,10 @@ set(cdrs_src
 	src/model/ListVehicleTopResult.cc
 	src/model/ListVehicleTrackRequest.cc
 	src/model/ListVehicleTrackResult.cc
+	src/model/PaginateDeviceRequest.cc
+	src/model/PaginateDeviceResult.cc
+	src/model/PaginateProjectRequest.cc
+	src/model/PaginateProjectResult.cc
 	src/model/RecognizeImageRequest.cc
 	src/model/RecognizeImageResult.cc
 	src/model/SearchObjectRequest.cc

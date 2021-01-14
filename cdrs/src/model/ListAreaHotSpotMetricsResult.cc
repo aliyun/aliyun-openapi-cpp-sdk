@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/ListMetricsResult.h>
+#include <alibabacloud/cdrs/model/ListAreaHotSpotMetricsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CDRS;
 using namespace AlibabaCloud::CDRS::Model;
 
-ListMetricsResult::ListMetricsResult() :
+ListAreaHotSpotMetricsResult::ListAreaHotSpotMetricsResult() :
 	ServiceResult()
 {}
 
-ListMetricsResult::ListMetricsResult(const std::string &payload) :
+ListAreaHotSpotMetricsResult::ListAreaHotSpotMetricsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListMetricsResult::~ListMetricsResult()
+ListAreaHotSpotMetricsResult::~ListAreaHotSpotMetricsResult()
 {}
 
-void ListMetricsResult::parse(const std::string &payload)
+void ListAreaHotSpotMetricsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -43,16 +43,16 @@ void ListMetricsResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["DateTime"].isNull())
-			dataObject.dateTime = valueDataDataItem["DateTime"].asString();
-		if(!valueDataDataItem["TagCode"].isNull())
-			dataObject.tagCode = valueDataDataItem["TagCode"].asString();
-		if(!valueDataDataItem["TagValue"].isNull())
-			dataObject.tagValue = valueDataDataItem["TagValue"].asString();
-		if(!valueDataDataItem["TagMetric"].isNull())
-			dataObject.tagMetric = valueDataDataItem["TagMetric"].asString();
-		if(!valueDataDataItem["CorpId"].isNull())
-			dataObject.corpId = valueDataDataItem["CorpId"].asString();
+		if(!valueDataDataItem["Times"].isNull())
+			dataObject.times = valueDataDataItem["Times"].asString();
+		if(!valueDataDataItem["Coordinates"].isNull())
+			dataObject.coordinates = valueDataDataItem["Coordinates"].asString();
+		if(!valueDataDataItem["DeviceId"].isNull())
+			dataObject.deviceId = valueDataDataItem["DeviceId"].asString();
+		if(!valueDataDataItem["PersonId"].isNull())
+			dataObject.personId = valueDataDataItem["PersonId"].asString();
+		if(!valueDataDataItem["IntervalTime"].isNull())
+			dataObject.intervalTime = valueDataDataItem["IntervalTime"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
@@ -68,32 +68,32 @@ void ListMetricsResult::parse(const std::string &payload)
 
 }
 
-std::string ListMetricsResult::getTotalCount()const
+std::string ListAreaHotSpotMetricsResult::getTotalCount()const
 {
 	return totalCount_;
 }
 
-std::string ListMetricsResult::getMessage()const
+std::string ListAreaHotSpotMetricsResult::getMessage()const
 {
 	return message_;
 }
 
-std::string ListMetricsResult::getPageSize()const
+std::string ListAreaHotSpotMetricsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-std::string ListMetricsResult::getPageNumber()const
+std::string ListAreaHotSpotMetricsResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-std::vector<ListMetricsResult::DataItem> ListMetricsResult::getData()const
+std::vector<ListAreaHotSpotMetricsResult::DataItem> ListAreaHotSpotMetricsResult::getData()const
 {
 	return data_;
 }
 
-std::string ListMetricsResult::getCode()const
+std::string ListAreaHotSpotMetricsResult::getCode()const
 {
 	return code_;
 }

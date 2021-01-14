@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_UPDATEPROJECTREQUEST_H_
-#define ALIBABACLOUD_CDRS_MODEL_UPDATEPROJECTREQUEST_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_PAGINATEDEVICEREQUEST_H_
+#define ALIBABACLOUD_CDRS_MODEL_PAGINATEDEVICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT UpdateProjectRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDRS_EXPORT PaginateDeviceRequest : public RpcServiceRequest
 			{
 
 			public:
-				UpdateProjectRequest();
-				~UpdateProjectRequest();
+				PaginateDeviceRequest();
+				~PaginateDeviceRequest();
 
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
-				std::string getIcon()const;
-				void setIcon(const std::string& icon);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
+				bool getCountTotalNum()const;
+				void setCountTotalNum(bool countTotalNum);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string get_NameSpace()const;
 				void set_NameSpace(const std::string& _nameSpace);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getAggregateSceneCode()const;
-				void setAggregateSceneCode(const std::string& aggregateSceneCode);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
 
             private:
 				std::string corpId_;
-				std::string icon_;
-				std::string description_;
+				long pageNumber_;
+				bool countTotalNum_;
 				std::string appName_;
 				std::string _nameSpace_;
-				std::string name_;
-				std::string aggregateSceneCode_;
+				long pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_UPDATEPROJECTREQUEST_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_PAGINATEDEVICEREQUEST_H_

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/ListMetricsResult.h>
+#include <alibabacloud/cdrs/model/ListDeviceRelationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CDRS;
 using namespace AlibabaCloud::CDRS::Model;
 
-ListMetricsResult::ListMetricsResult() :
+ListDeviceRelationResult::ListDeviceRelationResult() :
 	ServiceResult()
 {}
 
-ListMetricsResult::ListMetricsResult(const std::string &payload) :
+ListDeviceRelationResult::ListDeviceRelationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListMetricsResult::~ListMetricsResult()
+ListDeviceRelationResult::~ListDeviceRelationResult()
 {}
 
-void ListMetricsResult::parse(const std::string &payload)
+void ListDeviceRelationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -43,14 +43,6 @@ void ListMetricsResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["DateTime"].isNull())
-			dataObject.dateTime = valueDataDataItem["DateTime"].asString();
-		if(!valueDataDataItem["TagCode"].isNull())
-			dataObject.tagCode = valueDataDataItem["TagCode"].asString();
-		if(!valueDataDataItem["TagValue"].isNull())
-			dataObject.tagValue = valueDataDataItem["TagValue"].asString();
-		if(!valueDataDataItem["TagMetric"].isNull())
-			dataObject.tagMetric = valueDataDataItem["TagMetric"].asString();
 		if(!valueDataDataItem["CorpId"].isNull())
 			dataObject.corpId = valueDataDataItem["CorpId"].asString();
 		data_.push_back(dataObject);
@@ -59,41 +51,20 @@ void ListMetricsResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
-	if(!value["PageSize"].isNull())
-		pageSize_ = value["PageSize"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = value["TotalCount"].asString();
 
 }
 
-std::string ListMetricsResult::getTotalCount()const
-{
-	return totalCount_;
-}
-
-std::string ListMetricsResult::getMessage()const
+std::string ListDeviceRelationResult::getMessage()const
 {
 	return message_;
 }
 
-std::string ListMetricsResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-std::string ListMetricsResult::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-std::vector<ListMetricsResult::DataItem> ListMetricsResult::getData()const
+std::vector<ListDeviceRelationResult::DataItem> ListDeviceRelationResult::getData()const
 {
 	return data_;
 }
 
-std::string ListMetricsResult::getCode()const
+std::string ListDeviceRelationResult::getCode()const
 {
 	return code_;
 }

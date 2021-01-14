@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_LISTPERSONRESULTREQUEST_H_
-#define ALIBABACLOUD_CDRS_MODEL_LISTPERSONRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_LISTTAGMETRICSREQUEST_H_
+#define ALIBABACLOUD_CDRS_MODEL_LISTTAGMETRICSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT ListPersonResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDRS_EXPORT ListTagMetricsRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListPersonResultRequest();
-				~ListPersonResultRequest();
+				ListTagMetricsRequest();
+				~ListTagMetricsRequest();
 
-				std::string getProfession()const;
-				void setProfession(const std::string& profession);
 				std::string getSchema()const;
 				void setSchema(const std::string& schema);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
-				std::string getGender()const;
-				void setGender(const std::string& gender);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
-				std::string getAge()const;
-				void setAge(const std::string& age);
+				std::string getPageNumber()const;
+				void setPageNumber(const std::string& pageNumber);
+				std::string getTagCode()const;
+				void setTagCode(const std::string& tagCode);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
+				std::string getAggregateType()const;
+				void setAggregateType(const std::string& aggregateType);
 
             private:
-				std::string profession_;
 				std::string schema_;
 				std::string corpId_;
-				std::string gender_;
 				std::string endTime_;
 				std::string startTime_;
-				long pageNumber_;
-				long pageSize_;
-				std::string age_;
+				std::string pageNumber_;
+				std::string tagCode_;
+				std::string pageSize_;
+				std::string aggregateType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_LISTPERSONRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_LISTTAGMETRICSREQUEST_H_

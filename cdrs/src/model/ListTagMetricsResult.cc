@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/ListMetricsResult.h>
+#include <alibabacloud/cdrs/model/ListTagMetricsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CDRS;
 using namespace AlibabaCloud::CDRS::Model;
 
-ListMetricsResult::ListMetricsResult() :
+ListTagMetricsResult::ListTagMetricsResult() :
 	ServiceResult()
 {}
 
-ListMetricsResult::ListMetricsResult(const std::string &payload) :
+ListTagMetricsResult::ListTagMetricsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListMetricsResult::~ListMetricsResult()
+ListTagMetricsResult::~ListTagMetricsResult()
 {}
 
-void ListMetricsResult::parse(const std::string &payload)
+void ListTagMetricsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -68,32 +68,32 @@ void ListMetricsResult::parse(const std::string &payload)
 
 }
 
-std::string ListMetricsResult::getTotalCount()const
+std::string ListTagMetricsResult::getTotalCount()const
 {
 	return totalCount_;
 }
 
-std::string ListMetricsResult::getMessage()const
+std::string ListTagMetricsResult::getMessage()const
 {
 	return message_;
 }
 
-std::string ListMetricsResult::getPageSize()const
+std::string ListTagMetricsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-std::string ListMetricsResult::getPageNumber()const
+std::string ListTagMetricsResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-std::vector<ListMetricsResult::DataItem> ListMetricsResult::getData()const
+std::vector<ListTagMetricsResult::DataItem> ListTagMetricsResult::getData()const
 {
 	return data_;
 }
 
-std::string ListMetricsResult::getCode()const
+std::string ListTagMetricsResult::getCode()const
 {
 	return code_;
 }

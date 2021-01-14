@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_LISTAREAHOTSPOTMETRICSRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_LISTAREAHOTSPOTMETRICSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,22 +29,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT ListMetricsResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT ListAreaHotSpotMetricsResult : public ServiceResult
 			{
 			public:
 				struct DataItem
 				{
-					std::string corpId;
-					std::string tagMetric;
-					std::string tagCode;
-					std::string tagValue;
-					std::string dateTime;
+					std::string personId;
+					std::string deviceId;
+					std::string times;
+					std::string coordinates;
+					std::string intervalTime;
 				};
 
 
-				ListMetricsResult();
-				explicit ListMetricsResult(const std::string &payload);
-				~ListMetricsResult();
+				ListAreaHotSpotMetricsResult();
+				explicit ListAreaHotSpotMetricsResult(const std::string &payload);
+				~ListAreaHotSpotMetricsResult();
 				std::string getTotalCount()const;
 				std::string getMessage()const;
 				std::string getPageSize()const;
@@ -66,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_LISTAREAHOTSPOTMETRICSRESULT_H_

@@ -51,8 +51,6 @@ namespace AlibabaCloud
 				void setNotifierType(const std::string& notifierType);
 				int getBatchIndicator()const;
 				void setBatchIndicator(int batchIndicator);
-				std::string getBizId()const;
-				void setBizId(const std::string& bizId);
 				int getNotifierTimeOut()const;
 				void setNotifierTimeOut(int notifierTimeOut);
 				std::string getAlgorithmVendor()const;
@@ -67,7 +65,6 @@ namespace AlibabaCloud
 				std::string notifierUrl_;
 				std::string notifierType_;
 				int batchIndicator_;
-				std::string bizId_;
 				int notifierTimeOut_;
 				std::string algorithmVendor_;
 

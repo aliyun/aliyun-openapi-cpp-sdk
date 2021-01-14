@@ -115,17 +115,6 @@ void AddCdrsMonitorRequest::setBatchIndicator(int batchIndicator)
 	setBodyParameter("BatchIndicator", std::to_string(batchIndicator));
 }
 
-std::string AddCdrsMonitorRequest::getBizId()const
-{
-	return bizId_;
-}
-
-void AddCdrsMonitorRequest::setBizId(const std::string& bizId)
-{
-	bizId_ = bizId;
-	setBodyParameter("BizId", bizId);
-}
-
 int AddCdrsMonitorRequest::getNotifierTimeOut()const
 {
 	return notifierTimeOut_;

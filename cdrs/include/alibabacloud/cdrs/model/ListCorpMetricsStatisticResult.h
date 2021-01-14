@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_LISTCORPMETRICSSTATISTICRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_LISTCORPMETRICSSTATISTICRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,47 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT ListMetricsResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT ListCorpMetricsStatisticResult : public ServiceResult
 			{
 			public:
 				struct DataItem
 				{
 					std::string corpId;
-					std::string tagMetric;
+					std::string personId;
+					std::string deviceGroupId;
+					std::string deviceId;
+					std::string userGroupId;
+					std::string tagMetrics;
 					std::string tagCode;
 					std::string tagValue;
-					std::string dateTime;
+					std::string dateId;
 				};
 
 
-				ListMetricsResult();
-				explicit ListMetricsResult(const std::string &payload);
-				~ListMetricsResult();
-				std::string getTotalCount()const;
+				ListCorpMetricsStatisticResult();
+				explicit ListCorpMetricsStatisticResult(const std::string &payload);
+				~ListCorpMetricsStatisticResult();
+				int getTotalCount()const;
+				int getPageSize()const;
 				std::string getMessage()const;
-				std::string getPageSize()const;
-				std::string getPageNumber()const;
+				int getPageNumber()const;
 				std::vector<DataItem> getData()const;
 				std::string getCode()const;
+				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string totalCount_;
+				int totalCount_;
+				int pageSize_;
 				std::string message_;
-				std::string pageSize_;
-				std::string pageNumber_;
+				int pageNumber_;
 				std::vector<DataItem> data_;
 				std::string code_;
+				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_LISTCORPMETRICSSTATISTICRESULT_H_

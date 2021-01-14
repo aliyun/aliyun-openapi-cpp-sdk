@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_LISTCORPTRACKDETAILRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_LISTCORPTRACKDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,49 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT ListMetricsResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT ListCorpTrackDetailResult : public ServiceResult
 			{
 			public:
 				struct DataItem
 				{
+					std::string startTargetImage;
+					std::string startSourceImage;
 					std::string corpId;
-					std::string tagMetric;
-					std::string tagCode;
-					std::string tagValue;
-					std::string dateTime;
+					std::string personId;
+					std::string deviceId;
+					std::string endTargetImage;
+					std::string startTime;
+					std::string endSourceImage;
+					std::string date;
+					std::string lastTime;
+					std::string groupId;
 				};
 
 
-				ListMetricsResult();
-				explicit ListMetricsResult(const std::string &payload);
-				~ListMetricsResult();
-				std::string getTotalCount()const;
+				ListCorpTrackDetailResult();
+				explicit ListCorpTrackDetailResult(const std::string &payload);
+				~ListCorpTrackDetailResult();
+				int getTotalCount()const;
 				std::string getMessage()const;
-				std::string getPageSize()const;
-				std::string getPageNumber()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				std::vector<DataItem> getData()const;
 				std::string getCode()const;
+				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string totalCount_;
+				int totalCount_;
 				std::string message_;
-				std::string pageSize_;
-				std::string pageNumber_;
+				int pageSize_;
+				int pageNumber_;
 				std::vector<DataItem> data_;
 				std::string code_;
+				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_LISTCORPTRACKDETAILRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_LISTTAGMETRICSRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_LISTTAGMETRICSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT ListMetricsResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT ListTagMetricsResult : public ServiceResult
 			{
 			public:
 				struct DataItem
@@ -42,9 +42,9 @@ namespace AlibabaCloud
 				};
 
 
-				ListMetricsResult();
-				explicit ListMetricsResult(const std::string &payload);
-				~ListMetricsResult();
+				ListTagMetricsResult();
+				explicit ListTagMetricsResult(const std::string &payload);
+				~ListTagMetricsResult();
 				std::string getTotalCount()const;
 				std::string getMessage()const;
 				std::string getPageSize()const;
@@ -66,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_LISTMETRICSRESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_LISTTAGMETRICSRESULT_H_

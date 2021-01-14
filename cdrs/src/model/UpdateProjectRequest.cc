@@ -93,3 +93,14 @@ void UpdateProjectRequest::setName(const std::string& name)
 	setBodyParameter("Name", name);
 }
 
+std::string UpdateProjectRequest::getAggregateSceneCode()const
+{
+	return aggregateSceneCode_;
+}
+
+void UpdateProjectRequest::setAggregateSceneCode(const std::string& aggregateSceneCode)
+{
+	aggregateSceneCode_ = aggregateSceneCode;
+	setBodyParameter("AggregateSceneCode", aggregateSceneCode);
+}
+

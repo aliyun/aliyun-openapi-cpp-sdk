@@ -38,6 +38,17 @@ void ListPersonResultRequest::setProfession(const std::string& profession)
 	setBodyParameter("Profession", profession);
 }
 
+std::string ListPersonResultRequest::getSchema()const
+{
+	return schema_;
+}
+
+void ListPersonResultRequest::setSchema(const std::string& schema)
+{
+	schema_ = schema;
+	setBodyParameter("Schema", schema);
+}
+
 std::string ListPersonResultRequest::getCorpId()const
 {
 	return corpId_;

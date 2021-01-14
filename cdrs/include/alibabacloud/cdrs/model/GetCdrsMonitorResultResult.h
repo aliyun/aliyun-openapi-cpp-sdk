@@ -36,9 +36,14 @@ namespace AlibabaCloud
 				{
 					struct RecordsItem
 					{
+						struct ExtendInfo
+						{
+							std::string plateNo;
+						};
 						std::string leftUpX;
 						std::string leftUpY;
 						std::string score;
+						std::string taskId;
 						std::string targetPicUrl;
 						std::string rightBottomX;
 						std::string rightBottomY;
@@ -46,6 +51,7 @@ namespace AlibabaCloud
 						std::string monitorPicUrl;
 						std::string shotTime;
 						std::string picUrl;
+						ExtendInfo extendInfo;
 					};
 					std::string maxId;
 					std::vector<RecordsItem> records;

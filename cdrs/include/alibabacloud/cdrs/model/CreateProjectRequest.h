@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void set_NameSpace(const std::string& _nameSpace);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getAggregateSceneCode()const;
+				void setAggregateSceneCode(const std::string& aggregateSceneCode);
 
             private:
 				std::string clientToken_;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				std::string appName_;
 				std::string _nameSpace_;
 				std::string name_;
+				std::string aggregateSceneCode_;
 
 			};
 		}

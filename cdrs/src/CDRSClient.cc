@@ -231,6 +231,42 @@ CDRSClient::GetCdrsMonitorResultOutcomeCallable CDRSClient::getCdrsMonitorResult
 	return task->get_future();
 }
 
+CDRSClient::ListAreaHotSpotMetricsOutcome CDRSClient::listAreaHotSpotMetrics(const ListAreaHotSpotMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAreaHotSpotMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAreaHotSpotMetricsOutcome(ListAreaHotSpotMetricsResult(outcome.result()));
+	else
+		return ListAreaHotSpotMetricsOutcome(outcome.error());
+}
+
+void CDRSClient::listAreaHotSpotMetricsAsync(const ListAreaHotSpotMetricsRequest& request, const ListAreaHotSpotMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAreaHotSpotMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::ListAreaHotSpotMetricsOutcomeCallable CDRSClient::listAreaHotSpotMetricsCallable(const ListAreaHotSpotMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAreaHotSpotMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAreaHotSpotMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CDRSClient::ListCityMapAoisOutcome CDRSClient::listCityMapAois(const ListCityMapAoisRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +519,78 @@ CDRSClient::ListCorpMetricsOutcomeCallable CDRSClient::listCorpMetricsCallable(c
 	return task->get_future();
 }
 
+CDRSClient::ListCorpMetricsStatisticOutcome CDRSClient::listCorpMetricsStatistic(const ListCorpMetricsStatisticRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCorpMetricsStatisticOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCorpMetricsStatisticOutcome(ListCorpMetricsStatisticResult(outcome.result()));
+	else
+		return ListCorpMetricsStatisticOutcome(outcome.error());
+}
+
+void CDRSClient::listCorpMetricsStatisticAsync(const ListCorpMetricsStatisticRequest& request, const ListCorpMetricsStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCorpMetricsStatistic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::ListCorpMetricsStatisticOutcomeCallable CDRSClient::listCorpMetricsStatisticCallable(const ListCorpMetricsStatisticRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCorpMetricsStatisticOutcome()>>(
+			[this, request]()
+			{
+			return this->listCorpMetricsStatistic(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::ListCorpTrackDetailOutcome CDRSClient::listCorpTrackDetail(const ListCorpTrackDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCorpTrackDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCorpTrackDetailOutcome(ListCorpTrackDetailResult(outcome.result()));
+	else
+		return ListCorpTrackDetailOutcome(outcome.error());
+}
+
+void CDRSClient::listCorpTrackDetailAsync(const ListCorpTrackDetailRequest& request, const ListCorpTrackDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCorpTrackDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::ListCorpTrackDetailOutcomeCallable CDRSClient::listCorpTrackDetailCallable(const ListCorpTrackDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCorpTrackDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->listCorpTrackDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CDRSClient::ListDataStatisticsOutcome CDRSClient::listDataStatistics(const ListDataStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +801,42 @@ CDRSClient::ListDevicePersonStatisticsOutcomeCallable CDRSClient::listDevicePers
 			[this, request]()
 			{
 			return this->listDevicePersonStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::ListDeviceRelationOutcome CDRSClient::listDeviceRelation(const ListDeviceRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDeviceRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDeviceRelationOutcome(ListDeviceRelationResult(outcome.result()));
+	else
+		return ListDeviceRelationOutcome(outcome.error());
+}
+
+void CDRSClient::listDeviceRelationAsync(const ListDeviceRelationRequest& request, const ListDeviceRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDeviceRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::ListDeviceRelationOutcomeCallable CDRSClient::listDeviceRelationCallable(const ListDeviceRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDeviceRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->listDeviceRelation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1239,42 @@ CDRSClient::ListStructureStatisticsOutcomeCallable CDRSClient::listStructureStat
 	return task->get_future();
 }
 
+CDRSClient::ListTagMetricsOutcome CDRSClient::listTagMetrics(const ListTagMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagMetricsOutcome(ListTagMetricsResult(outcome.result()));
+	else
+		return ListTagMetricsOutcome(outcome.error());
+}
+
+void CDRSClient::listTagMetricsAsync(const ListTagMetricsRequest& request, const ListTagMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::ListTagMetricsOutcomeCallable CDRSClient::listTagMetricsCallable(const ListTagMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CDRSClient::ListVehicleDetailsOutcome CDRSClient::listVehicleDetails(const ListVehicleDetailsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1449,78 @@ CDRSClient::ListVehicleTrackOutcomeCallable CDRSClient::listVehicleTrackCallable
 			[this, request]()
 			{
 			return this->listVehicleTrack(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::PaginateDeviceOutcome CDRSClient::paginateDevice(const PaginateDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PaginateDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PaginateDeviceOutcome(PaginateDeviceResult(outcome.result()));
+	else
+		return PaginateDeviceOutcome(outcome.error());
+}
+
+void CDRSClient::paginateDeviceAsync(const PaginateDeviceRequest& request, const PaginateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, paginateDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::PaginateDeviceOutcomeCallable CDRSClient::paginateDeviceCallable(const PaginateDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PaginateDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->paginateDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CDRSClient::PaginateProjectOutcome CDRSClient::paginateProject(const PaginateProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PaginateProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PaginateProjectOutcome(PaginateProjectResult(outcome.result()));
+	else
+		return PaginateProjectOutcome(outcome.error());
+}
+
+void CDRSClient::paginateProjectAsync(const PaginateProjectRequest& request, const PaginateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, paginateProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CDRSClient::PaginateProjectOutcomeCallable CDRSClient::paginateProjectCallable(const PaginateProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PaginateProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->paginateProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
