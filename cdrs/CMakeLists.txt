@@ -27,10 +27,14 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/BindDeviceResult.h
 	include/alibabacloud/cdrs/model/CreateProjectRequest.h
 	include/alibabacloud/cdrs/model/CreateProjectResult.h
+	include/alibabacloud/cdrs/model/DetectTrajectoryRegularPatternRequest.h
+	include/alibabacloud/cdrs/model/DetectTrajectoryRegularPatternResult.h
 	include/alibabacloud/cdrs/model/GetCdrsMonitorListRequest.h
 	include/alibabacloud/cdrs/model/GetCdrsMonitorListResult.h
 	include/alibabacloud/cdrs/model/GetCdrsMonitorResultRequest.h
 	include/alibabacloud/cdrs/model/GetCdrsMonitorResultResult.h
+	include/alibabacloud/cdrs/model/IntersectTrajectoryRequest.h
+	include/alibabacloud/cdrs/model/IntersectTrajectoryResult.h
 	include/alibabacloud/cdrs/model/ListAreaHotSpotMetricsRequest.h
 	include/alibabacloud/cdrs/model/ListAreaHotSpotMetricsResult.h
 	include/alibabacloud/cdrs/model/ListCityMapAoisRequest.h
@@ -103,6 +107,14 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/PaginateDeviceResult.h
 	include/alibabacloud/cdrs/model/PaginateProjectRequest.h
 	include/alibabacloud/cdrs/model/PaginateProjectResult.h
+	include/alibabacloud/cdrs/model/PredictTrajectoryDestinationRequest.h
+	include/alibabacloud/cdrs/model/PredictTrajectoryDestinationResult.h
+	include/alibabacloud/cdrs/model/QueryTrajectoryByIdRequest.h
+	include/alibabacloud/cdrs/model/QueryTrajectoryByIdResult.h
+	include/alibabacloud/cdrs/model/RecallTrajectoryByCoordinateRequest.h
+	include/alibabacloud/cdrs/model/RecallTrajectoryByCoordinateResult.h
+	include/alibabacloud/cdrs/model/RecallTrajectoryByIdRequest.h
+	include/alibabacloud/cdrs/model/RecallTrajectoryByIdResult.h
 	include/alibabacloud/cdrs/model/RecognizeImageRequest.h
 	include/alibabacloud/cdrs/model/RecognizeImageResult.h
 	include/alibabacloud/cdrs/model/SearchObjectRequest.h
@@ -114,7 +126,9 @@ set(cdrs_public_header_model
 	include/alibabacloud/cdrs/model/UpdateCdrsMonitorRequest.h
 	include/alibabacloud/cdrs/model/UpdateCdrsMonitorResult.h
 	include/alibabacloud/cdrs/model/UpdateProjectRequest.h
-	include/alibabacloud/cdrs/model/UpdateProjectResult.h )
+	include/alibabacloud/cdrs/model/UpdateProjectResult.h
+	include/alibabacloud/cdrs/model/ValidateTrajectoryRequest.h
+	include/alibabacloud/cdrs/model/ValidateTrajectoryResult.h )
 
 set(cdrs_src 
 	src/CDRSClient.cc
@@ -124,10 +138,14 @@ set(cdrs_src
 	src/model/BindDeviceResult.cc
 	src/model/CreateProjectRequest.cc
 	src/model/CreateProjectResult.cc
+	src/model/DetectTrajectoryRegularPatternRequest.cc
+	src/model/DetectTrajectoryRegularPatternResult.cc
 	src/model/GetCdrsMonitorListRequest.cc
 	src/model/GetCdrsMonitorListResult.cc
 	src/model/GetCdrsMonitorResultRequest.cc
 	src/model/GetCdrsMonitorResultResult.cc
+	src/model/IntersectTrajectoryRequest.cc
+	src/model/IntersectTrajectoryResult.cc
 	src/model/ListAreaHotSpotMetricsRequest.cc
 	src/model/ListAreaHotSpotMetricsResult.cc
 	src/model/ListCityMapAoisRequest.cc
@@ -200,6 +218,14 @@ set(cdrs_src
 	src/model/PaginateDeviceResult.cc
 	src/model/PaginateProjectRequest.cc
 	src/model/PaginateProjectResult.cc
+	src/model/PredictTrajectoryDestinationRequest.cc
+	src/model/PredictTrajectoryDestinationResult.cc
+	src/model/QueryTrajectoryByIdRequest.cc
+	src/model/QueryTrajectoryByIdResult.cc
+	src/model/RecallTrajectoryByCoordinateRequest.cc
+	src/model/RecallTrajectoryByCoordinateResult.cc
+	src/model/RecallTrajectoryByIdRequest.cc
+	src/model/RecallTrajectoryByIdResult.cc
 	src/model/RecognizeImageRequest.cc
 	src/model/RecognizeImageResult.cc
 	src/model/SearchObjectRequest.cc
@@ -211,7 +237,9 @@ set(cdrs_src
 	src/model/UpdateCdrsMonitorRequest.cc
 	src/model/UpdateCdrsMonitorResult.cc
 	src/model/UpdateProjectRequest.cc
-	src/model/UpdateProjectResult.cc )
+	src/model/UpdateProjectResult.cc
+	src/model/ValidateTrajectoryRequest.cc
+	src/model/ValidateTrajectoryResult.cc )
 
 add_library(cdrs ${LIB_TYPE}
 	${cdrs_public_header}
