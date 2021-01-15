@@ -51,8 +51,12 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DeleteSubscriptionInstanceResult.h
 	include/alibabacloud/dts/model/DeleteSynchronizationJobRequest.h
 	include/alibabacloud/dts/model/DeleteSynchronizationJobResult.h
+	include/alibabacloud/dts/model/DescribeConnectionStatusRequest.h
+	include/alibabacloud/dts/model/DescribeConnectionStatusResult.h
 	include/alibabacloud/dts/model/DescribeConsumerGroupRequest.h
 	include/alibabacloud/dts/model/DescribeConsumerGroupResult.h
+	include/alibabacloud/dts/model/DescribeDTSIPRequest.h
+	include/alibabacloud/dts/model/DescribeDTSIPResult.h
 	include/alibabacloud/dts/model/DescribeEndpointSwitchStatusRequest.h
 	include/alibabacloud/dts/model/DescribeEndpointSwitchStatusResult.h
 	include/alibabacloud/dts/model/DescribeInitializationStatusRequest.h
@@ -150,8 +154,12 @@ set(dts_src
 	src/model/DeleteSubscriptionInstanceResult.cc
 	src/model/DeleteSynchronizationJobRequest.cc
 	src/model/DeleteSynchronizationJobResult.cc
+	src/model/DescribeConnectionStatusRequest.cc
+	src/model/DescribeConnectionStatusResult.cc
 	src/model/DescribeConsumerGroupRequest.cc
 	src/model/DescribeConsumerGroupResult.cc
+	src/model/DescribeDTSIPRequest.cc
+	src/model/DescribeDTSIPResult.cc
 	src/model/DescribeEndpointSwitchStatusRequest.cc
 	src/model/DescribeEndpointSwitchStatusResult.cc
 	src/model/DescribeInitializationStatusRequest.cc

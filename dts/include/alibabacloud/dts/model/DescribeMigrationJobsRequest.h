@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DTS_EXPORT DescribeMigrationJobsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeMigrationJobsRequest();
@@ -47,6 +53,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getMigrationJobName()const;
 				void setMigrationJobName(const std::string& migrationJobName);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
 				int pageNum_;
@@ -55,6 +63,7 @@ namespace AlibabaCloud
 				std::string accountId_;
 				int pageSize_;
 				std::string migrationJobName_;
+				std::vector<Tag> tag_;
 
 			};
 		}

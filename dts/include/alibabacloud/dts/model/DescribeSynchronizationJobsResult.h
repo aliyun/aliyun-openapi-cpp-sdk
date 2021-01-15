@@ -91,6 +91,11 @@ namespace AlibabaCloud
 						std::string percent;
 						std::string errorMessage;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					struct SynchronizationObject
 					{
 						struct TableExclude
@@ -123,6 +128,7 @@ namespace AlibabaCloud
 					std::string errorMessage;
 					std::string expireTime;
 					std::string synchronizationJobClass;
+					std::vector<SynchronizationInstance::Tag> tags;
 					std::string synchronizationDirection;
 					DataSynchronizationStatus dataSynchronizationStatus;
 					StructureInitializationStatus structureInitializationStatus;

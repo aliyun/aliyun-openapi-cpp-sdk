@@ -591,6 +591,42 @@ DtsClient::DeleteSynchronizationJobOutcomeCallable DtsClient::deleteSynchronizat
 	return task->get_future();
 }
 
+DtsClient::DescribeConnectionStatusOutcome DtsClient::describeConnectionStatus(const DescribeConnectionStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeConnectionStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeConnectionStatusOutcome(DescribeConnectionStatusResult(outcome.result()));
+	else
+		return DescribeConnectionStatusOutcome(outcome.error());
+}
+
+void DtsClient::describeConnectionStatusAsync(const DescribeConnectionStatusRequest& request, const DescribeConnectionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeConnectionStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DescribeConnectionStatusOutcomeCallable DtsClient::describeConnectionStatusCallable(const DescribeConnectionStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeConnectionStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeConnectionStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::DescribeConsumerGroupOutcome DtsClient::describeConsumerGroup(const DescribeConsumerGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +657,42 @@ DtsClient::DescribeConsumerGroupOutcomeCallable DtsClient::describeConsumerGroup
 			[this, request]()
 			{
 			return this->describeConsumerGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::DescribeDTSIPOutcome DtsClient::describeDTSIP(const DescribeDTSIPRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDTSIPOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDTSIPOutcome(DescribeDTSIPResult(outcome.result()));
+	else
+		return DescribeDTSIPOutcome(outcome.error());
+}
+
+void DtsClient::describeDTSIPAsync(const DescribeDTSIPRequest& request, const DescribeDTSIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDTSIP(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DescribeDTSIPOutcomeCallable DtsClient::describeDTSIPCallable(const DescribeDTSIPRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDTSIPOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDTSIP(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

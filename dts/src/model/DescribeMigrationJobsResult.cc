@@ -66,6 +66,16 @@ void DescribeMigrationJobsResult::parse(const std::string &payload)
 				migrationObjectObject.tableList.push_back(value.asString());
 			migrationJobsObject.migrationObject.push_back(migrationObjectObject);
 		}
+		auto allTagsNode = valueMigrationJobsMigrationJob["Tags"]["Tag"];
+		for (auto valueMigrationJobsMigrationJobTagsTag : allTagsNode)
+		{
+			MigrationJob::Tag tagsObject;
+			if(!valueMigrationJobsMigrationJobTagsTag["Key"].isNull())
+				tagsObject.key = valueMigrationJobsMigrationJobTagsTag["Key"].asString();
+			if(!valueMigrationJobsMigrationJobTagsTag["Value"].isNull())
+				tagsObject.value = valueMigrationJobsMigrationJobTagsTag["Value"].asString();
+			migrationJobsObject.tags.push_back(tagsObject);
+		}
 		auto dataInitializationNode = value["DataInitialization"];
 		if(!dataInitializationNode["ErrorMessage"].isNull())
 			migrationJobsObject.dataInitialization.errorMessage = dataInitializationNode["ErrorMessage"].asString();
@@ -141,18 +151,18 @@ void DescribeMigrationJobsResult::parse(const std::string &payload)
 			migrationJobsObject.structureInitialization.status = structureInitializationNode["status"].asString();
 		migrationJobs_.push_back(migrationJobsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageRecordCount"].isNull())
-		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
 	if(!value["ErrMessage"].isNull())
 		errMessage_ = value["ErrMessage"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
 
 }
 

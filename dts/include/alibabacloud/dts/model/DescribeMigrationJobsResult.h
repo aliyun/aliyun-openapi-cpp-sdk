@@ -94,6 +94,11 @@ namespace AlibabaCloud
 						std::string wholeDatabase;
 						std::vector<std::string> tableList;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					DataSynchronization dataSynchronization;
 					Precheck precheck;
 					std::string migrationJobName;
@@ -107,6 +112,7 @@ namespace AlibabaCloud
 					SourceEndpoint sourceEndpoint;
 					std::string migrationJobClass;
 					StructureInitialization structureInitialization;
+					std::vector<MigrationJob::Tag> tags;
 				};
 
 

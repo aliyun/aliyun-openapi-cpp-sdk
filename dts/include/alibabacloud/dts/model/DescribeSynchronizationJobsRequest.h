@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DTS_EXPORT DescribeSynchronizationJobsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeSynchronizationJobsRequest();
@@ -49,6 +55,8 @@ namespace AlibabaCloud
 				void setAccountId(const std::string& accountId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
 				std::string clientToken_;
@@ -58,6 +66,7 @@ namespace AlibabaCloud
 				std::string synchronizationJobName_;
 				std::string accountId_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 
 			};
 		}

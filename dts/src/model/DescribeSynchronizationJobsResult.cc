@@ -67,6 +67,16 @@ void DescribeSynchronizationJobsResult::parse(const std::string &payload)
 			synchronizationInstancesObject.synchronizationJobId = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobId"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobName"].isNull())
 			synchronizationInstancesObject.synchronizationJobName = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobName"].asString();
+		auto allTagsNode = valueSynchronizationInstancesSynchronizationInstance["Tags"]["Tag"];
+		for (auto valueSynchronizationInstancesSynchronizationInstanceTagsTag : allTagsNode)
+		{
+			SynchronizationInstance::Tag tagsObject;
+			if(!valueSynchronizationInstancesSynchronizationInstanceTagsTag["Key"].isNull())
+				tagsObject.key = valueSynchronizationInstancesSynchronizationInstanceTagsTag["Key"].asString();
+			if(!valueSynchronizationInstancesSynchronizationInstanceTagsTag["Value"].isNull())
+				tagsObject.value = valueSynchronizationInstancesSynchronizationInstanceTagsTag["Value"].asString();
+			synchronizationInstancesObject.tags.push_back(tagsObject);
+		}
 		auto allSynchronizationObjectsNode = valueSynchronizationInstancesSynchronizationInstance["SynchronizationObjects"]["SynchronizationObject"];
 		for (auto valueSynchronizationInstancesSynchronizationInstanceSynchronizationObjectsSynchronizationObject : allSynchronizationObjectsNode)
 		{

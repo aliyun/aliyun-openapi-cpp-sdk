@@ -52,8 +52,12 @@
 #include "model/DeleteSubscriptionInstanceResult.h"
 #include "model/DeleteSynchronizationJobRequest.h"
 #include "model/DeleteSynchronizationJobResult.h"
+#include "model/DescribeConnectionStatusRequest.h"
+#include "model/DescribeConnectionStatusResult.h"
 #include "model/DescribeConsumerGroupRequest.h"
 #include "model/DescribeConsumerGroupResult.h"
+#include "model/DescribeDTSIPRequest.h"
+#include "model/DescribeDTSIPResult.h"
 #include "model/DescribeEndpointSwitchStatusRequest.h"
 #include "model/DescribeEndpointSwitchStatusResult.h"
 #include "model/DescribeInitializationStatusRequest.h"
@@ -172,9 +176,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSynchronizationJobResult> DeleteSynchronizationJobOutcome;
 			typedef std::future<DeleteSynchronizationJobOutcome> DeleteSynchronizationJobOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DeleteSynchronizationJobRequest&, const DeleteSynchronizationJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSynchronizationJobAsyncHandler;
+			typedef Outcome<Error, Model::DescribeConnectionStatusResult> DescribeConnectionStatusOutcome;
+			typedef std::future<DescribeConnectionStatusOutcome> DescribeConnectionStatusOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::DescribeConnectionStatusRequest&, const DescribeConnectionStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectionStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConsumerGroupResult> DescribeConsumerGroupOutcome;
 			typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeConsumerGroupRequest&, const DescribeConsumerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDTSIPResult> DescribeDTSIPOutcome;
+			typedef std::future<DescribeDTSIPOutcome> DescribeDTSIPOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::DescribeDTSIPRequest&, const DescribeDTSIPOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDTSIPAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEndpointSwitchStatusResult> DescribeEndpointSwitchStatusOutcome;
 			typedef std::future<DescribeEndpointSwitchStatusOutcome> DescribeEndpointSwitchStatusOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeEndpointSwitchStatusRequest&, const DescribeEndpointSwitchStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndpointSwitchStatusAsyncHandler;
@@ -321,9 +331,15 @@ namespace AlibabaCloud
 			DeleteSynchronizationJobOutcome deleteSynchronizationJob(const Model::DeleteSynchronizationJobRequest &request)const;
 			void deleteSynchronizationJobAsync(const Model::DeleteSynchronizationJobRequest& request, const DeleteSynchronizationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSynchronizationJobOutcomeCallable deleteSynchronizationJobCallable(const Model::DeleteSynchronizationJobRequest& request) const;
+			DescribeConnectionStatusOutcome describeConnectionStatus(const Model::DescribeConnectionStatusRequest &request)const;
+			void describeConnectionStatusAsync(const Model::DescribeConnectionStatusRequest& request, const DescribeConnectionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeConnectionStatusOutcomeCallable describeConnectionStatusCallable(const Model::DescribeConnectionStatusRequest& request) const;
 			DescribeConsumerGroupOutcome describeConsumerGroup(const Model::DescribeConsumerGroupRequest &request)const;
 			void describeConsumerGroupAsync(const Model::DescribeConsumerGroupRequest& request, const DescribeConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConsumerGroupOutcomeCallable describeConsumerGroupCallable(const Model::DescribeConsumerGroupRequest& request) const;
+			DescribeDTSIPOutcome describeDTSIP(const Model::DescribeDTSIPRequest &request)const;
+			void describeDTSIPAsync(const Model::DescribeDTSIPRequest& request, const DescribeDTSIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDTSIPOutcomeCallable describeDTSIPCallable(const Model::DescribeDTSIPRequest& request) const;
 			DescribeEndpointSwitchStatusOutcome describeEndpointSwitchStatus(const Model::DescribeEndpointSwitchStatusRequest &request)const;
 			void describeEndpointSwitchStatusAsync(const Model::DescribeEndpointSwitchStatusRequest& request, const DescribeEndpointSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEndpointSwitchStatusOutcomeCallable describeEndpointSwitchStatusCallable(const Model::DescribeEndpointSwitchStatusRequest& request) const;

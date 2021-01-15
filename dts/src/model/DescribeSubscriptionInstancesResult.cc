@@ -76,6 +76,16 @@ void DescribeSubscriptionInstancesResult::parse(const std::string &payload)
 				subscriptionObjectObject.tableList.push_back(value.asString());
 			subscriptionInstancesObject.subscriptionObject.push_back(subscriptionObjectObject);
 		}
+		auto allTagsNode = valueSubscriptionInstancesSubscriptionInstance["Tags"]["Tag"];
+		for (auto valueSubscriptionInstancesSubscriptionInstanceTagsTag : allTagsNode)
+		{
+			SubscriptionInstance::Tag tagsObject;
+			if(!valueSubscriptionInstancesSubscriptionInstanceTagsTag["Key"].isNull())
+				tagsObject.key = valueSubscriptionInstancesSubscriptionInstanceTagsTag["Key"].asString();
+			if(!valueSubscriptionInstancesSubscriptionInstanceTagsTag["Value"].isNull())
+				tagsObject.value = valueSubscriptionInstancesSubscriptionInstanceTagsTag["Value"].asString();
+			subscriptionInstancesObject.tags.push_back(tagsObject);
+		}
 		auto sourceEndpointNode = value["SourceEndpoint"];
 		if(!sourceEndpointNode["InstanceID"].isNull())
 			subscriptionInstancesObject.sourceEndpoint.instanceID = sourceEndpointNode["InstanceID"].asString();
@@ -95,18 +105,18 @@ void DescribeSubscriptionInstancesResult::parse(const std::string &payload)
 			subscriptionInstancesObject.subscriptionHost.vPCHost = subscriptionHostNode["VPCHost"].asString();
 		subscriptionInstances_.push_back(subscriptionInstancesObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageRecordCount"].isNull())
-		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	if(!value["TotalRecordCount"].isNull())
-		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
 	if(!value["ErrMessage"].isNull())
 		errMessage_ = value["ErrMessage"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
 
 }
 

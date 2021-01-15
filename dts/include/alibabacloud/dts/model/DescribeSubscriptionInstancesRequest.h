@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DTS_EXPORT DescribeSubscriptionInstancesRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeSubscriptionInstancesRequest();
@@ -49,6 +55,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getSubscriptionInstanceName()const;
 				void setSubscriptionInstanceName(const std::string& subscriptionInstanceName);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
 				std::string clientToken_;
@@ -58,6 +66,7 @@ namespace AlibabaCloud
 				std::string accountId_;
 				int pageSize_;
 				std::string subscriptionInstanceName_;
+				std::vector<Tag> tag_;
 
 			};
 		}
