@@ -39,22 +39,22 @@ void ListPersonTopResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["Datas"];
-	for (auto valueDataDatas : allDataNode)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
-		Datas dataObject;
-		if(!valueDataDatas["CorpId"].isNull())
-			dataObject.corpId = valueDataDatas["CorpId"].asString();
-		if(!valueDataDatas["PersonId"].isNull())
-			dataObject.personId = valueDataDatas["PersonId"].asString();
-		if(!valueDataDatas["PoiId"].isNull())
-			dataObject.poiId = valueDataDatas["PoiId"].asString();
-		if(!valueDataDatas["PoiName"].isNull())
-			dataObject.poiName = valueDataDatas["PoiName"].asString();
-		if(!valueDataDatas["PassHour"].isNull())
-			dataObject.passHour = valueDataDatas["PassHour"].asString();
-		if(!valueDataDatas["Frequency"].isNull())
-			dataObject.frequency = valueDataDatas["Frequency"].asString();
+		DataItem dataObject;
+		if(!valueDataDataItem["CorpId"].isNull())
+			dataObject.corpId = valueDataDataItem["CorpId"].asString();
+		if(!valueDataDataItem["PersonId"].isNull())
+			dataObject.personId = valueDataDataItem["PersonId"].asString();
+		if(!valueDataDataItem["PoiId"].isNull())
+			dataObject.poiId = valueDataDataItem["PoiId"].asString();
+		if(!valueDataDataItem["PoiName"].isNull())
+			dataObject.poiName = valueDataDataItem["PoiName"].asString();
+		if(!valueDataDataItem["PassHour"].isNull())
+			dataObject.passHour = valueDataDataItem["PassHour"].asString();
+		if(!valueDataDataItem["Frequency"].isNull())
+			dataObject.frequency = valueDataDataItem["Frequency"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
@@ -90,7 +90,7 @@ long ListPersonTopResult::getPageNumber()const
 	return pageNumber_;
 }
 
-std::vector<ListPersonTopResult::Datas> ListPersonTopResult::getData()const
+std::vector<ListPersonTopResult::DataItem> ListPersonTopResult::getData()const
 {
 	return data_;
 }

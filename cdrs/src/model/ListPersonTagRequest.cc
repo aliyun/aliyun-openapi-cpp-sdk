@@ -27,6 +27,17 @@ ListPersonTagRequest::ListPersonTagRequest() :
 ListPersonTagRequest::~ListPersonTagRequest()
 {}
 
+std::string ListPersonTagRequest::getSchema()const
+{
+	return schema_;
+}
+
+void ListPersonTagRequest::setSchema(const std::string& schema)
+{
+	schema_ = schema;
+	setBodyParameter("Schema", schema);
+}
+
 std::string ListPersonTagRequest::getCorpId()const
 {
 	return corpId_;

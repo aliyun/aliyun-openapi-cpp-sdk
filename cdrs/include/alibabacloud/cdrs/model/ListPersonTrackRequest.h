@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ListPersonTrackRequest();
 				~ListPersonTrackRequest();
 
+				std::string getSchema()const;
+				void setSchema(const std::string& schema);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
 				std::string getEndTime()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				void setPersonId(const std::string& personId);
 
             private:
+				std::string schema_;
 				std::string corpId_;
 				std::string endTime_;
 				std::string startTime_;

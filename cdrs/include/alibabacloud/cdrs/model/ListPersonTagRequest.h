@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ListPersonTagRequest();
 				~ListPersonTagRequest();
 
+				std::string getSchema()const;
+				void setSchema(const std::string& schema);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
 				long getPageNumber()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setPageSize(long pageSize);
 
             private:
+				std::string schema_;
 				std::string corpId_;
 				long pageNumber_;
 				std::string tagCode_;

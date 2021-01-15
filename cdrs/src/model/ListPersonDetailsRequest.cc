@@ -27,6 +27,17 @@ ListPersonDetailsRequest::ListPersonDetailsRequest() :
 ListPersonDetailsRequest::~ListPersonDetailsRequest()
 {}
 
+std::string ListPersonDetailsRequest::getSchema()const
+{
+	return schema_;
+}
+
+void ListPersonDetailsRequest::setSchema(const std::string& schema)
+{
+	schema_ = schema;
+	setBodyParameter("Schema", schema);
+}
+
 std::string ListPersonDetailsRequest::getCorpId()const
 {
 	return corpId_;

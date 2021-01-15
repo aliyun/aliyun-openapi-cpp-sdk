@@ -71,6 +71,10 @@ void ListPersonTrackResult::parse(const std::string &payload)
 			dataObject.longitude = valueDataDatas["Longitude"].asString();
 		if(!valueDataDatas["Latitude"].isNull())
 			dataObject.latitude = valueDataDatas["Latitude"].asString();
+		if(!valueDataDatas["SourceUrl"].isNull())
+			dataObject.sourceUrl = valueDataDatas["SourceUrl"].asString();
+		if(!valueDataDatas["TargetUrl"].isNull())
+			dataObject.targetUrl = valueDataDatas["TargetUrl"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

@@ -27,6 +27,17 @@ ListPersonTopRequest::ListPersonTopRequest() :
 ListPersonTopRequest::~ListPersonTopRequest()
 {}
 
+std::string ListPersonTopRequest::getSchema()const
+{
+	return schema_;
+}
+
+void ListPersonTopRequest::setSchema(const std::string& schema)
+{
+	schema_ = schema;
+	setBodyParameter("Schema", schema);
+}
+
 std::string ListPersonTopRequest::getCorpId()const
 {
 	return corpId_;
@@ -58,6 +69,28 @@ void ListPersonTopRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setBodyParameter("StartTime", startTime);
+}
+
+std::string ListPersonTopRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListPersonTopRequest::setPageNumber(const std::string& pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setBodyParameter("PageNumber", pageNumber);
+}
+
+std::string ListPersonTopRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListPersonTopRequest::setPageSize(const std::string& pageSize)
+{
+	pageSize_ = pageSize;
+	setBodyParameter("PageSize", pageSize);
 }
 
 std::string ListPersonTopRequest::getPersonId()const

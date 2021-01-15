@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CDRS_EXPORT ListPersonTopResult : public ServiceResult
 			{
 			public:
-				struct Datas
+				struct DataItem
 				{
 					std::string corpId;
 					std::string personId;
@@ -50,7 +50,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				long getPageSize()const;
 				long getPageNumber()const;
-				std::vector<Datas> getData()const;
+				std::vector<DataItem> getData()const;
 				std::string getCode()const;
 
 			protected:
@@ -60,7 +60,7 @@ namespace AlibabaCloud
 				std::string message_;
 				long pageSize_;
 				long pageNumber_;
-				std::vector<Datas> data_;
+				std::vector<DataItem> data_;
 				std::string code_;
 
 			};

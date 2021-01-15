@@ -27,6 +27,17 @@ ListPersonTrackRequest::ListPersonTrackRequest() :
 ListPersonTrackRequest::~ListPersonTrackRequest()
 {}
 
+std::string ListPersonTrackRequest::getSchema()const
+{
+	return schema_;
+}
+
+void ListPersonTrackRequest::setSchema(const std::string& schema)
+{
+	schema_ = schema;
+	setBodyParameter("Schema", schema);
+}
+
 std::string ListPersonTrackRequest::getCorpId()const
 {
 	return corpId_;

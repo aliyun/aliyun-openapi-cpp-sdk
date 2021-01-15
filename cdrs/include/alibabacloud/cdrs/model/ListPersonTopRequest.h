@@ -35,19 +35,28 @@ namespace AlibabaCloud
 				ListPersonTopRequest();
 				~ListPersonTopRequest();
 
+				std::string getSchema()const;
+				void setSchema(const std::string& schema);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getPageNumber()const;
+				void setPageNumber(const std::string& pageNumber);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
 				std::string getPersonId()const;
 				void setPersonId(const std::string& personId);
 
             private:
+				std::string schema_;
 				std::string corpId_;
 				std::string endTime_;
 				std::string startTime_;
+				std::string pageNumber_;
+				std::string pageSize_;
 				std::string personId_;
 
 			};
