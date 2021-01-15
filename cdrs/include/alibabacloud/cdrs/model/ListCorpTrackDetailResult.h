@@ -35,16 +35,18 @@ namespace AlibabaCloud
 				struct DataItem
 				{
 					std::string startTargetImage;
+					std::string sourceUrl;
 					std::string startSourceImage;
 					std::string corpId;
-					std::string personId;
 					std::string deviceId;
 					std::string endTargetImage;
 					std::string startTime;
-					std::string endSourceImage;
+					std::string targetUrl;
 					std::string date;
-					std::string lastTime;
 					std::string groupId;
+					std::string personId;
+					std::string endSourceImage;
+					std::string lastTime;
 				};
 
 

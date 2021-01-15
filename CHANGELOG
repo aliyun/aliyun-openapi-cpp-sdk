@@ -2,6 +2,9 @@
 - Update Function.
 
 2021-01-15 Version: patch
+- Update Function.
+
+2021-01-15 Version: patch
 - Add API CreateSortScriptValidation.
 - Add parameter resourceGroupId to API ListAppGroups.
 

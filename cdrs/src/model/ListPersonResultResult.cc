@@ -61,6 +61,10 @@ void ListPersonResultResult::parse(const std::string &payload)
 			dataObject.hotSpotAddress = valueDataDatas["HotSpotAddress"].asString();
 		if(!valueDataDatas["UpdateTime"].isNull())
 			dataObject.updateTime = valueDataDatas["UpdateTime"].asString();
+		if(!valueDataDatas["TargetUrl"].isNull())
+			dataObject.targetUrl = valueDataDatas["TargetUrl"].asString();
+		if(!valueDataDatas["SourceUrl"].isNull())
+			dataObject.sourceUrl = valueDataDatas["SourceUrl"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

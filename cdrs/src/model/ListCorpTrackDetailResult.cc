@@ -65,6 +65,10 @@ void ListCorpTrackDetailResult::parse(const std::string &payload)
 			dataObject.corpId = valueDataDataItem["CorpId"].asString();
 		if(!valueDataDataItem["EndTargetImage"].isNull())
 			dataObject.endTargetImage = valueDataDataItem["EndTargetImage"].asString();
+		if(!valueDataDataItem["SourceUrl"].isNull())
+			dataObject.sourceUrl = valueDataDataItem["SourceUrl"].asString();
+		if(!valueDataDataItem["TargetUrl"].isNull())
+			dataObject.targetUrl = valueDataDataItem["TargetUrl"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

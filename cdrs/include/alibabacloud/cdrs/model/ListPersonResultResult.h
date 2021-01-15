@@ -35,12 +35,14 @@ namespace AlibabaCloud
 				struct Datas
 				{
 					std::string profession;
+					std::string sourceUrl;
 					std::string personId;
 					std::string address;
 					std::string transportation;
 					std::string updateTime;
 					std::string personType;
 					std::string gender;
+					std::string targetUrl;
 					std::string age;
 					std::string hotSpotAddress;
 				};
