@@ -1,0 +1,522 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(opensearch_public_header 
+	include/alibabacloud/opensearch/OpenSearchClient.h
+	include/alibabacloud/opensearch/OpenSearchExport.h )
+
+set(opensearch_public_header_model 
+	include/alibabacloud/opensearch/model/CompileSortScriptRequest.h
+	include/alibabacloud/opensearch/model/CompileSortScriptResult.h
+	include/alibabacloud/opensearch/model/CreateABTestExperimentRequest.h
+	include/alibabacloud/opensearch/model/CreateABTestExperimentResult.h
+	include/alibabacloud/opensearch/model/CreateABTestGroupRequest.h
+	include/alibabacloud/opensearch/model/CreateABTestGroupResult.h
+	include/alibabacloud/opensearch/model/CreateABTestSceneRequest.h
+	include/alibabacloud/opensearch/model/CreateABTestSceneResult.h
+	include/alibabacloud/opensearch/model/CreateAppRequest.h
+	include/alibabacloud/opensearch/model/CreateAppResult.h
+	include/alibabacloud/opensearch/model/CreateAppGroupRequest.h
+	include/alibabacloud/opensearch/model/CreateAppGroupResult.h
+	include/alibabacloud/opensearch/model/CreateDataCollectionRequest.h
+	include/alibabacloud/opensearch/model/CreateDataCollectionResult.h
+	include/alibabacloud/opensearch/model/CreateFirstRankRequest.h
+	include/alibabacloud/opensearch/model/CreateFirstRankResult.h
+	include/alibabacloud/opensearch/model/CreateInterventionDictionaryRequest.h
+	include/alibabacloud/opensearch/model/CreateInterventionDictionaryResult.h
+	include/alibabacloud/opensearch/model/CreateModelRequest.h
+	include/alibabacloud/opensearch/model/CreateModelResult.h
+	include/alibabacloud/opensearch/model/CreateQueryProcessorRequest.h
+	include/alibabacloud/opensearch/model/CreateQueryProcessorResult.h
+	include/alibabacloud/opensearch/model/CreateScheduledTaskRequest.h
+	include/alibabacloud/opensearch/model/CreateScheduledTaskResult.h
+	include/alibabacloud/opensearch/model/CreateSecondRankRequest.h
+	include/alibabacloud/opensearch/model/CreateSecondRankResult.h
+	include/alibabacloud/opensearch/model/CreateSortScriptRequest.h
+	include/alibabacloud/opensearch/model/CreateSortScriptResult.h
+	include/alibabacloud/opensearch/model/CreateUserAnalyzerRequest.h
+	include/alibabacloud/opensearch/model/CreateUserAnalyzerResult.h
+	include/alibabacloud/opensearch/model/DeleteABTestExperimentRequest.h
+	include/alibabacloud/opensearch/model/DeleteABTestExperimentResult.h
+	include/alibabacloud/opensearch/model/DeleteABTestGroupRequest.h
+	include/alibabacloud/opensearch/model/DeleteABTestGroupResult.h
+	include/alibabacloud/opensearch/model/DeleteABTestSceneRequest.h
+	include/alibabacloud/opensearch/model/DeleteABTestSceneResult.h
+	include/alibabacloud/opensearch/model/DeleteModelRequest.h
+	include/alibabacloud/opensearch/model/DeleteModelResult.h
+	include/alibabacloud/opensearch/model/DeleteSortScriptRequest.h
+	include/alibabacloud/opensearch/model/DeleteSortScriptResult.h
+	include/alibabacloud/opensearch/model/DeleteSortScriptFileRequest.h
+	include/alibabacloud/opensearch/model/DeleteSortScriptFileResult.h
+	include/alibabacloud/opensearch/model/DescribeABTestExperimentRequest.h
+	include/alibabacloud/opensearch/model/DescribeABTestExperimentResult.h
+	include/alibabacloud/opensearch/model/DescribeABTestGroupRequest.h
+	include/alibabacloud/opensearch/model/DescribeABTestGroupResult.h
+	include/alibabacloud/opensearch/model/DescribeABTestSceneRequest.h
+	include/alibabacloud/opensearch/model/DescribeABTestSceneResult.h
+	include/alibabacloud/opensearch/model/DescribeAppRequest.h
+	include/alibabacloud/opensearch/model/DescribeAppResult.h
+	include/alibabacloud/opensearch/model/DescribeAppGroupRequest.h
+	include/alibabacloud/opensearch/model/DescribeAppGroupResult.h
+	include/alibabacloud/opensearch/model/DescribeAppGroupDataReportRequest.h
+	include/alibabacloud/opensearch/model/DescribeAppGroupDataReportResult.h
+	include/alibabacloud/opensearch/model/DescribeAppStatisticsRequest.h
+	include/alibabacloud/opensearch/model/DescribeAppStatisticsResult.h
+	include/alibabacloud/opensearch/model/DescribeAppsRequest.h
+	include/alibabacloud/opensearch/model/DescribeAppsResult.h
+	include/alibabacloud/opensearch/model/DescribeDataCollctionRequest.h
+	include/alibabacloud/opensearch/model/DescribeDataCollctionResult.h
+	include/alibabacloud/opensearch/model/DescribeFirstRankRequest.h
+	include/alibabacloud/opensearch/model/DescribeFirstRankResult.h
+	include/alibabacloud/opensearch/model/DescribeInterventionDictionaryRequest.h
+	include/alibabacloud/opensearch/model/DescribeInterventionDictionaryResult.h
+	include/alibabacloud/opensearch/model/DescribeModelRequest.h
+	include/alibabacloud/opensearch/model/DescribeModelResult.h
+	include/alibabacloud/opensearch/model/DescribeQueryProcessorRequest.h
+	include/alibabacloud/opensearch/model/DescribeQueryProcessorResult.h
+	include/alibabacloud/opensearch/model/DescribeRegionRequest.h
+	include/alibabacloud/opensearch/model/DescribeRegionResult.h
+	include/alibabacloud/opensearch/model/DescribeRegionsRequest.h
+	include/alibabacloud/opensearch/model/DescribeRegionsResult.h
+	include/alibabacloud/opensearch/model/DescribeScheduledTaskRequest.h
+	include/alibabacloud/opensearch/model/DescribeScheduledTaskResult.h
+	include/alibabacloud/opensearch/model/DescribeSecondRankRequest.h
+	include/alibabacloud/opensearch/model/DescribeSecondRankResult.h
+	include/alibabacloud/opensearch/model/DescribeSlowQueryStatusRequest.h
+	include/alibabacloud/opensearch/model/DescribeSlowQueryStatusResult.h
+	include/alibabacloud/opensearch/model/DescribeUserAnalyzerRequest.h
+	include/alibabacloud/opensearch/model/DescribeUserAnalyzerResult.h
+	include/alibabacloud/opensearch/model/DisableSlowQueryRequest.h
+	include/alibabacloud/opensearch/model/DisableSlowQueryResult.h
+	include/alibabacloud/opensearch/model/EnableSlowQueryRequest.h
+	include/alibabacloud/opensearch/model/EnableSlowQueryResult.h
+	include/alibabacloud/opensearch/model/GetModelProgressRequest.h
+	include/alibabacloud/opensearch/model/GetModelProgressResult.h
+	include/alibabacloud/opensearch/model/GetModelReportRequest.h
+	include/alibabacloud/opensearch/model/GetModelReportResult.h
+	include/alibabacloud/opensearch/model/GetScriptFileNamesRequest.h
+	include/alibabacloud/opensearch/model/GetScriptFileNamesResult.h
+	include/alibabacloud/opensearch/model/GetSortScriptRequest.h
+	include/alibabacloud/opensearch/model/GetSortScriptResult.h
+	include/alibabacloud/opensearch/model/GetSortScriptFileRequest.h
+	include/alibabacloud/opensearch/model/GetSortScriptFileResult.h
+	include/alibabacloud/opensearch/model/GetValidationErrorRequest.h
+	include/alibabacloud/opensearch/model/GetValidationErrorResult.h
+	include/alibabacloud/opensearch/model/GetValidationReportRequest.h
+	include/alibabacloud/opensearch/model/GetValidationReportResult.h
+	include/alibabacloud/opensearch/model/ListABTestExperimentsRequest.h
+	include/alibabacloud/opensearch/model/ListABTestExperimentsResult.h
+	include/alibabacloud/opensearch/model/ListABTestFixedFlowDividersRequest.h
+	include/alibabacloud/opensearch/model/ListABTestFixedFlowDividersResult.h
+	include/alibabacloud/opensearch/model/ListABTestGroupsRequest.h
+	include/alibabacloud/opensearch/model/ListABTestGroupsResult.h
+	include/alibabacloud/opensearch/model/ListABTestMetricsRequest.h
+	include/alibabacloud/opensearch/model/ListABTestMetricsResult.h
+	include/alibabacloud/opensearch/model/ListABTestScenesRequest.h
+	include/alibabacloud/opensearch/model/ListABTestScenesResult.h
+	include/alibabacloud/opensearch/model/ListAppGroupErrorsRequest.h
+	include/alibabacloud/opensearch/model/ListAppGroupErrorsResult.h
+	include/alibabacloud/opensearch/model/ListAppGroupMetricsRequest.h
+	include/alibabacloud/opensearch/model/ListAppGroupMetricsResult.h
+	include/alibabacloud/opensearch/model/ListAppGroupsRequest.h
+	include/alibabacloud/opensearch/model/ListAppGroupsResult.h
+	include/alibabacloud/opensearch/model/ListAppsRequest.h
+	include/alibabacloud/opensearch/model/ListAppsResult.h
+	include/alibabacloud/opensearch/model/ListDataCollectionsRequest.h
+	include/alibabacloud/opensearch/model/ListDataCollectionsResult.h
+	include/alibabacloud/opensearch/model/ListDeployedAlgorithmModelsRequest.h
+	include/alibabacloud/opensearch/model/ListDeployedAlgorithmModelsResult.h
+	include/alibabacloud/opensearch/model/ListFirstRanksRequest.h
+	include/alibabacloud/opensearch/model/ListFirstRanksResult.h
+	include/alibabacloud/opensearch/model/ListInterventionDictionariesRequest.h
+	include/alibabacloud/opensearch/model/ListInterventionDictionariesResult.h
+	include/alibabacloud/opensearch/model/ListInterventionDictionaryEntriesRequest.h
+	include/alibabacloud/opensearch/model/ListInterventionDictionaryEntriesResult.h
+	include/alibabacloud/opensearch/model/ListInterventionDictionaryNerResultsRequest.h
+	include/alibabacloud/opensearch/model/ListInterventionDictionaryNerResultsResult.h
+	include/alibabacloud/opensearch/model/ListInterventionDictionaryRelatedEntitiesRequest.h
+	include/alibabacloud/opensearch/model/ListInterventionDictionaryRelatedEntitiesResult.h
+	include/alibabacloud/opensearch/model/ListModelsRequest.h
+	include/alibabacloud/opensearch/model/ListModelsResult.h
+	include/alibabacloud/opensearch/model/ListQueryProcessorNersRequest.h
+	include/alibabacloud/opensearch/model/ListQueryProcessorNersResult.h
+	include/alibabacloud/opensearch/model/ListQueryProcessorsRequest.h
+	include/alibabacloud/opensearch/model/ListQueryProcessorsResult.h
+	include/alibabacloud/opensearch/model/ListScheduledTasksRequest.h
+	include/alibabacloud/opensearch/model/ListScheduledTasksResult.h
+	include/alibabacloud/opensearch/model/ListSecondRanksRequest.h
+	include/alibabacloud/opensearch/model/ListSecondRanksResult.h
+	include/alibabacloud/opensearch/model/ListSlowQueryCategoriesRequest.h
+	include/alibabacloud/opensearch/model/ListSlowQueryCategoriesResult.h
+	include/alibabacloud/opensearch/model/ListSlowQueryQueriesRequest.h
+	include/alibabacloud/opensearch/model/ListSlowQueryQueriesResult.h
+	include/alibabacloud/opensearch/model/ListSortExpressionsRequest.h
+	include/alibabacloud/opensearch/model/ListSortExpressionsResult.h
+	include/alibabacloud/opensearch/model/ListSortScriptsRequest.h
+	include/alibabacloud/opensearch/model/ListSortScriptsResult.h
+	include/alibabacloud/opensearch/model/ListStatisticLogsRequest.h
+	include/alibabacloud/opensearch/model/ListStatisticLogsResult.h
+	include/alibabacloud/opensearch/model/ListStatisticReportRequest.h
+	include/alibabacloud/opensearch/model/ListStatisticReportResult.h
+	include/alibabacloud/opensearch/model/ListUserAnalyzerEntriesRequest.h
+	include/alibabacloud/opensearch/model/ListUserAnalyzerEntriesResult.h
+	include/alibabacloud/opensearch/model/ListUserAnalyzersRequest.h
+	include/alibabacloud/opensearch/model/ListUserAnalyzersResult.h
+	include/alibabacloud/opensearch/model/ModifyAppGroupRequest.h
+	include/alibabacloud/opensearch/model/ModifyAppGroupResult.h
+	include/alibabacloud/opensearch/model/ModifyAppGroupQuotaRequest.h
+	include/alibabacloud/opensearch/model/ModifyAppGroupQuotaResult.h
+	include/alibabacloud/opensearch/model/ModifyFirstRankRequest.h
+	include/alibabacloud/opensearch/model/ModifyFirstRankResult.h
+	include/alibabacloud/opensearch/model/ModifyModelRequest.h
+	include/alibabacloud/opensearch/model/ModifyModelResult.h
+	include/alibabacloud/opensearch/model/ModifyQueryProcessorRequest.h
+	include/alibabacloud/opensearch/model/ModifyQueryProcessorResult.h
+	include/alibabacloud/opensearch/model/ModifyScheduledTaskRequest.h
+	include/alibabacloud/opensearch/model/ModifyScheduledTaskResult.h
+	include/alibabacloud/opensearch/model/ModifySecondRankRequest.h
+	include/alibabacloud/opensearch/model/ModifySecondRankResult.h
+	include/alibabacloud/opensearch/model/PreviewModelRequest.h
+	include/alibabacloud/opensearch/model/PreviewModelResult.h
+	include/alibabacloud/opensearch/model/PushInterventionDictionaryEntriesRequest.h
+	include/alibabacloud/opensearch/model/PushInterventionDictionaryEntriesResult.h
+	include/alibabacloud/opensearch/model/PushUserAnalyzerEntriesRequest.h
+	include/alibabacloud/opensearch/model/PushUserAnalyzerEntriesResult.h
+	include/alibabacloud/opensearch/model/RankPreviewQueryRequest.h
+	include/alibabacloud/opensearch/model/RankPreviewQueryResult.h
+	include/alibabacloud/opensearch/model/ReleaseSortScriptRequest.h
+	include/alibabacloud/opensearch/model/ReleaseSortScriptResult.h
+	include/alibabacloud/opensearch/model/RemoveAppRequest.h
+	include/alibabacloud/opensearch/model/RemoveAppResult.h
+	include/alibabacloud/opensearch/model/RemoveAppGroupRequest.h
+	include/alibabacloud/opensearch/model/RemoveAppGroupResult.h
+	include/alibabacloud/opensearch/model/RemoveDataCollectionRequest.h
+	include/alibabacloud/opensearch/model/RemoveDataCollectionResult.h
+	include/alibabacloud/opensearch/model/RemoveFirstRankRequest.h
+	include/alibabacloud/opensearch/model/RemoveFirstRankResult.h
+	include/alibabacloud/opensearch/model/RemoveInterventionDictionaryRequest.h
+	include/alibabacloud/opensearch/model/RemoveInterventionDictionaryResult.h
+	include/alibabacloud/opensearch/model/RemoveQueryProcessorRequest.h
+	include/alibabacloud/opensearch/model/RemoveQueryProcessorResult.h
+	include/alibabacloud/opensearch/model/RemoveScheduledTaskRequest.h
+	include/alibabacloud/opensearch/model/RemoveScheduledTaskResult.h
+	include/alibabacloud/opensearch/model/RemoveSecondRankRequest.h
+	include/alibabacloud/opensearch/model/RemoveSecondRankResult.h
+	include/alibabacloud/opensearch/model/RemoveUserAnalyzerRequest.h
+	include/alibabacloud/opensearch/model/RemoveUserAnalyzerResult.h
+	include/alibabacloud/opensearch/model/RenewAppGroupRequest.h
+	include/alibabacloud/opensearch/model/RenewAppGroupResult.h
+	include/alibabacloud/opensearch/model/ReplaceAppGroupCommodityCodeRequest.h
+	include/alibabacloud/opensearch/model/ReplaceAppGroupCommodityCodeResult.h
+	include/alibabacloud/opensearch/model/SaveSortScriptFileRequest.h
+	include/alibabacloud/opensearch/model/SaveSortScriptFileResult.h
+	include/alibabacloud/opensearch/model/StartSlowQueryAnalyzerRequest.h
+	include/alibabacloud/opensearch/model/StartSlowQueryAnalyzerResult.h
+	include/alibabacloud/opensearch/model/TrainModelRequest.h
+	include/alibabacloud/opensearch/model/TrainModelResult.h
+	include/alibabacloud/opensearch/model/UpdateABTestExperimentRequest.h
+	include/alibabacloud/opensearch/model/UpdateABTestExperimentResult.h
+	include/alibabacloud/opensearch/model/UpdateABTestFixedFlowDividersRequest.h
+	include/alibabacloud/opensearch/model/UpdateABTestFixedFlowDividersResult.h
+	include/alibabacloud/opensearch/model/UpdateABTestGroupRequest.h
+	include/alibabacloud/opensearch/model/UpdateABTestGroupResult.h
+	include/alibabacloud/opensearch/model/UpdateABTestSceneRequest.h
+	include/alibabacloud/opensearch/model/UpdateABTestSceneResult.h
+	include/alibabacloud/opensearch/model/UpdateFetchFieldsRequest.h
+	include/alibabacloud/opensearch/model/UpdateFetchFieldsResult.h
+	include/alibabacloud/opensearch/model/UpdateSummariesRequest.h
+	include/alibabacloud/opensearch/model/UpdateSummariesResult.h )
+
+set(opensearch_src 
+	src/OpenSearchClient.cc
+	src/model/CompileSortScriptRequest.cc
+	src/model/CompileSortScriptResult.cc
+	src/model/CreateABTestExperimentRequest.cc
+	src/model/CreateABTestExperimentResult.cc
+	src/model/CreateABTestGroupRequest.cc
+	src/model/CreateABTestGroupResult.cc
+	src/model/CreateABTestSceneRequest.cc
+	src/model/CreateABTestSceneResult.cc
+	src/model/CreateAppRequest.cc
+	src/model/CreateAppResult.cc
+	src/model/CreateAppGroupRequest.cc
+	src/model/CreateAppGroupResult.cc
+	src/model/CreateDataCollectionRequest.cc
+	src/model/CreateDataCollectionResult.cc
+	src/model/CreateFirstRankRequest.cc
+	src/model/CreateFirstRankResult.cc
+	src/model/CreateInterventionDictionaryRequest.cc
+	src/model/CreateInterventionDictionaryResult.cc
+	src/model/CreateModelRequest.cc
+	src/model/CreateModelResult.cc
+	src/model/CreateQueryProcessorRequest.cc
+	src/model/CreateQueryProcessorResult.cc
+	src/model/CreateScheduledTaskRequest.cc
+	src/model/CreateScheduledTaskResult.cc
+	src/model/CreateSecondRankRequest.cc
+	src/model/CreateSecondRankResult.cc
+	src/model/CreateSortScriptRequest.cc
+	src/model/CreateSortScriptResult.cc
+	src/model/CreateUserAnalyzerRequest.cc
+	src/model/CreateUserAnalyzerResult.cc
+	src/model/DeleteABTestExperimentRequest.cc
+	src/model/DeleteABTestExperimentResult.cc
+	src/model/DeleteABTestGroupRequest.cc
+	src/model/DeleteABTestGroupResult.cc
+	src/model/DeleteABTestSceneRequest.cc
+	src/model/DeleteABTestSceneResult.cc
+	src/model/DeleteModelRequest.cc
+	src/model/DeleteModelResult.cc
+	src/model/DeleteSortScriptRequest.cc
+	src/model/DeleteSortScriptResult.cc
+	src/model/DeleteSortScriptFileRequest.cc
+	src/model/DeleteSortScriptFileResult.cc
+	src/model/DescribeABTestExperimentRequest.cc
+	src/model/DescribeABTestExperimentResult.cc
+	src/model/DescribeABTestGroupRequest.cc
+	src/model/DescribeABTestGroupResult.cc
+	src/model/DescribeABTestSceneRequest.cc
+	src/model/DescribeABTestSceneResult.cc
+	src/model/DescribeAppRequest.cc
+	src/model/DescribeAppResult.cc
+	src/model/DescribeAppGroupRequest.cc
+	src/model/DescribeAppGroupResult.cc
+	src/model/DescribeAppGroupDataReportRequest.cc
+	src/model/DescribeAppGroupDataReportResult.cc
+	src/model/DescribeAppStatisticsRequest.cc
+	src/model/DescribeAppStatisticsResult.cc
+	src/model/DescribeAppsRequest.cc
+	src/model/DescribeAppsResult.cc
+	src/model/DescribeDataCollctionRequest.cc
+	src/model/DescribeDataCollctionResult.cc
+	src/model/DescribeFirstRankRequest.cc
+	src/model/DescribeFirstRankResult.cc
+	src/model/DescribeInterventionDictionaryRequest.cc
+	src/model/DescribeInterventionDictionaryResult.cc
+	src/model/DescribeModelRequest.cc
+	src/model/DescribeModelResult.cc
+	src/model/DescribeQueryProcessorRequest.cc
+	src/model/DescribeQueryProcessorResult.cc
+	src/model/DescribeRegionRequest.cc
+	src/model/DescribeRegionResult.cc
+	src/model/DescribeRegionsRequest.cc
+	src/model/DescribeRegionsResult.cc
+	src/model/DescribeScheduledTaskRequest.cc
+	src/model/DescribeScheduledTaskResult.cc
+	src/model/DescribeSecondRankRequest.cc
+	src/model/DescribeSecondRankResult.cc
+	src/model/DescribeSlowQueryStatusRequest.cc
+	src/model/DescribeSlowQueryStatusResult.cc
+	src/model/DescribeUserAnalyzerRequest.cc
+	src/model/DescribeUserAnalyzerResult.cc
+	src/model/DisableSlowQueryRequest.cc
+	src/model/DisableSlowQueryResult.cc
+	src/model/EnableSlowQueryRequest.cc
+	src/model/EnableSlowQueryResult.cc
+	src/model/GetModelProgressRequest.cc
+	src/model/GetModelProgressResult.cc
+	src/model/GetModelReportRequest.cc
+	src/model/GetModelReportResult.cc
+	src/model/GetScriptFileNamesRequest.cc
+	src/model/GetScriptFileNamesResult.cc
+	src/model/GetSortScriptRequest.cc
+	src/model/GetSortScriptResult.cc
+	src/model/GetSortScriptFileRequest.cc
+	src/model/GetSortScriptFileResult.cc
+	src/model/GetValidationErrorRequest.cc
+	src/model/GetValidationErrorResult.cc
+	src/model/GetValidationReportRequest.cc
+	src/model/GetValidationReportResult.cc
+	src/model/ListABTestExperimentsRequest.cc
+	src/model/ListABTestExperimentsResult.cc
+	src/model/ListABTestFixedFlowDividersRequest.cc
+	src/model/ListABTestFixedFlowDividersResult.cc
+	src/model/ListABTestGroupsRequest.cc
+	src/model/ListABTestGroupsResult.cc
+	src/model/ListABTestMetricsRequest.cc
+	src/model/ListABTestMetricsResult.cc
+	src/model/ListABTestScenesRequest.cc
+	src/model/ListABTestScenesResult.cc
+	src/model/ListAppGroupErrorsRequest.cc
+	src/model/ListAppGroupErrorsResult.cc
+	src/model/ListAppGroupMetricsRequest.cc
+	src/model/ListAppGroupMetricsResult.cc
+	src/model/ListAppGroupsRequest.cc
+	src/model/ListAppGroupsResult.cc
+	src/model/ListAppsRequest.cc
+	src/model/ListAppsResult.cc
+	src/model/ListDataCollectionsRequest.cc
+	src/model/ListDataCollectionsResult.cc
+	src/model/ListDeployedAlgorithmModelsRequest.cc
+	src/model/ListDeployedAlgorithmModelsResult.cc
+	src/model/ListFirstRanksRequest.cc
+	src/model/ListFirstRanksResult.cc
+	src/model/ListInterventionDictionariesRequest.cc
+	src/model/ListInterventionDictionariesResult.cc
+	src/model/ListInterventionDictionaryEntriesRequest.cc
+	src/model/ListInterventionDictionaryEntriesResult.cc
+	src/model/ListInterventionDictionaryNerResultsRequest.cc
+	src/model/ListInterventionDictionaryNerResultsResult.cc
+	src/model/ListInterventionDictionaryRelatedEntitiesRequest.cc
+	src/model/ListInterventionDictionaryRelatedEntitiesResult.cc
+	src/model/ListModelsRequest.cc
+	src/model/ListModelsResult.cc
+	src/model/ListQueryProcessorNersRequest.cc
+	src/model/ListQueryProcessorNersResult.cc
+	src/model/ListQueryProcessorsRequest.cc
+	src/model/ListQueryProcessorsResult.cc
+	src/model/ListScheduledTasksRequest.cc
+	src/model/ListScheduledTasksResult.cc
+	src/model/ListSecondRanksRequest.cc
+	src/model/ListSecondRanksResult.cc
+	src/model/ListSlowQueryCategoriesRequest.cc
+	src/model/ListSlowQueryCategoriesResult.cc
+	src/model/ListSlowQueryQueriesRequest.cc
+	src/model/ListSlowQueryQueriesResult.cc
+	src/model/ListSortExpressionsRequest.cc
+	src/model/ListSortExpressionsResult.cc
+	src/model/ListSortScriptsRequest.cc
+	src/model/ListSortScriptsResult.cc
+	src/model/ListStatisticLogsRequest.cc
+	src/model/ListStatisticLogsResult.cc
+	src/model/ListStatisticReportRequest.cc
+	src/model/ListStatisticReportResult.cc
+	src/model/ListUserAnalyzerEntriesRequest.cc
+	src/model/ListUserAnalyzerEntriesResult.cc
+	src/model/ListUserAnalyzersRequest.cc
+	src/model/ListUserAnalyzersResult.cc
+	src/model/ModifyAppGroupRequest.cc
+	src/model/ModifyAppGroupResult.cc
+	src/model/ModifyAppGroupQuotaRequest.cc
+	src/model/ModifyAppGroupQuotaResult.cc
+	src/model/ModifyFirstRankRequest.cc
+	src/model/ModifyFirstRankResult.cc
+	src/model/ModifyModelRequest.cc
+	src/model/ModifyModelResult.cc
+	src/model/ModifyQueryProcessorRequest.cc
+	src/model/ModifyQueryProcessorResult.cc
+	src/model/ModifyScheduledTaskRequest.cc
+	src/model/ModifyScheduledTaskResult.cc
+	src/model/ModifySecondRankRequest.cc
+	src/model/ModifySecondRankResult.cc
+	src/model/PreviewModelRequest.cc
+	src/model/PreviewModelResult.cc
+	src/model/PushInterventionDictionaryEntriesRequest.cc
+	src/model/PushInterventionDictionaryEntriesResult.cc
+	src/model/PushUserAnalyzerEntriesRequest.cc
+	src/model/PushUserAnalyzerEntriesResult.cc
+	src/model/RankPreviewQueryRequest.cc
+	src/model/RankPreviewQueryResult.cc
+	src/model/ReleaseSortScriptRequest.cc
+	src/model/ReleaseSortScriptResult.cc
+	src/model/RemoveAppRequest.cc
+	src/model/RemoveAppResult.cc
+	src/model/RemoveAppGroupRequest.cc
+	src/model/RemoveAppGroupResult.cc
+	src/model/RemoveDataCollectionRequest.cc
+	src/model/RemoveDataCollectionResult.cc
+	src/model/RemoveFirstRankRequest.cc
+	src/model/RemoveFirstRankResult.cc
+	src/model/RemoveInterventionDictionaryRequest.cc
+	src/model/RemoveInterventionDictionaryResult.cc
+	src/model/RemoveQueryProcessorRequest.cc
+	src/model/RemoveQueryProcessorResult.cc
+	src/model/RemoveScheduledTaskRequest.cc
+	src/model/RemoveScheduledTaskResult.cc
+	src/model/RemoveSecondRankRequest.cc
+	src/model/RemoveSecondRankResult.cc
+	src/model/RemoveUserAnalyzerRequest.cc
+	src/model/RemoveUserAnalyzerResult.cc
+	src/model/RenewAppGroupRequest.cc
+	src/model/RenewAppGroupResult.cc
+	src/model/ReplaceAppGroupCommodityCodeRequest.cc
+	src/model/ReplaceAppGroupCommodityCodeResult.cc
+	src/model/SaveSortScriptFileRequest.cc
+	src/model/SaveSortScriptFileResult.cc
+	src/model/StartSlowQueryAnalyzerRequest.cc
+	src/model/StartSlowQueryAnalyzerResult.cc
+	src/model/TrainModelRequest.cc
+	src/model/TrainModelResult.cc
+	src/model/UpdateABTestExperimentRequest.cc
+	src/model/UpdateABTestExperimentResult.cc
+	src/model/UpdateABTestFixedFlowDividersRequest.cc
+	src/model/UpdateABTestFixedFlowDividersResult.cc
+	src/model/UpdateABTestGroupRequest.cc
+	src/model/UpdateABTestGroupResult.cc
+	src/model/UpdateABTestSceneRequest.cc
+	src/model/UpdateABTestSceneResult.cc
+	src/model/UpdateFetchFieldsRequest.cc
+	src/model/UpdateFetchFieldsResult.cc
+	src/model/UpdateSummariesRequest.cc
+	src/model/UpdateSummariesResult.cc )
+
+add_library(opensearch ${LIB_TYPE}
+	${opensearch_public_header}
+	${opensearch_public_header_model}
+	${opensearch_src})
+
+set_target_properties(opensearch
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}opensearch
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(opensearch
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_OPENSEARCH_LIBRARY)
+endif()
+
+target_include_directories(opensearch
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(opensearch
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(opensearch
+		jsoncpp)
+	target_include_directories(opensearch
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(opensearch
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(opensearch
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(opensearch
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(opensearch
+		jsoncpp)
+endif()
+
+install(FILES ${opensearch_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/opensearch)
+install(FILES ${opensearch_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/opensearch/model)
+install(TARGETS opensearch
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
