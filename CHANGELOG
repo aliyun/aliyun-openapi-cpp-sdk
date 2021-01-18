@@ -1,4 +1,7 @@
 2021-01-18 Version: patch
+- Add a set of api to support device distribution management, including CreateProductDistributeJob, CreateDeviceDistributeJob, QueryDeviceDistributeJob, ListDeviceDistributeJob, QueryDeviceDistributeDetail, DeleteDeviceDistributeJob, ListDistributedDevice, ListDistributedProduct etc.
+
+2021-01-18 Version: patch
 - Add ListMergeRequests api.
 - Add protected branch api, CreateRepositoryProtectedBranch and DeleteRepositoryProtectedBranch.
 - Add repository deploy key api, EnableRepositoryDeployKey and CreateRepositoryDeployKey.

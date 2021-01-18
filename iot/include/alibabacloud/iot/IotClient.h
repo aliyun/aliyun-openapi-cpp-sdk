@@ -98,6 +98,8 @@
 #include "model/CreateConsumerGroupSubscribeRelationResult.h"
 #include "model/CreateDataAPIServiceRequest.h"
 #include "model/CreateDataAPIServiceResult.h"
+#include "model/CreateDeviceDistributeJobRequest.h"
+#include "model/CreateDeviceDistributeJobResult.h"
 #include "model/CreateDeviceGroupRequest.h"
 #include "model/CreateDeviceGroupResult.h"
 #include "model/CreateEdgeDriverRequest.h"
@@ -128,6 +130,8 @@
 #include "model/CreateOTAVerifyJobResult.h"
 #include "model/CreateProductRequest.h"
 #include "model/CreateProductResult.h"
+#include "model/CreateProductDistributeJobRequest.h"
+#include "model/CreateProductDistributeJobResult.h"
 #include "model/CreateProductTagsRequest.h"
 #include "model/CreateProductTagsResult.h"
 #include "model/CreateProductTopicRequest.h"
@@ -154,6 +158,8 @@
 #include "model/DeleteConsumerGroupSubscribeRelationResult.h"
 #include "model/DeleteDeviceRequest.h"
 #include "model/DeleteDeviceResult.h"
+#include "model/DeleteDeviceDistributeJobRequest.h"
+#include "model/DeleteDeviceDistributeJobResult.h"
 #include "model/DeleteDeviceFileRequest.h"
 #include "model/DeleteDeviceFileResult.h"
 #include "model/DeleteDeviceGroupRequest.h"
@@ -246,6 +252,12 @@
 #include "model/InvokeThingServiceResult.h"
 #include "model/InvokeThingsServiceRequest.h"
 #include "model/InvokeThingsServiceResult.h"
+#include "model/ListDeviceDistributeJobRequest.h"
+#include "model/ListDeviceDistributeJobResult.h"
+#include "model/ListDistributedDeviceRequest.h"
+#include "model/ListDistributedDeviceResult.h"
+#include "model/ListDistributedProductRequest.h"
+#include "model/ListDistributedProductResult.h"
 #include "model/ListJobRequest.h"
 #include "model/ListJobResult.h"
 #include "model/ListOTAFirmwareRequest.h"
@@ -314,6 +326,10 @@
 #include "model/QueryDeviceDesiredPropertyResult.h"
 #include "model/QueryDeviceDetailRequest.h"
 #include "model/QueryDeviceDetailResult.h"
+#include "model/QueryDeviceDistributeDetailRequest.h"
+#include "model/QueryDeviceDistributeDetailResult.h"
+#include "model/QueryDeviceDistributeJobRequest.h"
+#include "model/QueryDeviceDistributeJobResult.h"
 #include "model/QueryDeviceEventDataRequest.h"
 #include "model/QueryDeviceEventDataResult.h"
 #include "model/QueryDeviceFileRequest.h"
@@ -621,6 +637,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDataAPIServiceResult> CreateDataAPIServiceOutcome;
 			typedef std::future<CreateDataAPIServiceOutcome> CreateDataAPIServiceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateDataAPIServiceRequest&, const CreateDataAPIServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataAPIServiceAsyncHandler;
+			typedef Outcome<Error, Model::CreateDeviceDistributeJobResult> CreateDeviceDistributeJobOutcome;
+			typedef std::future<CreateDeviceDistributeJobOutcome> CreateDeviceDistributeJobOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateDeviceDistributeJobRequest&, const CreateDeviceDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceDistributeJobAsyncHandler;
 			typedef Outcome<Error, Model::CreateDeviceGroupResult> CreateDeviceGroupOutcome;
 			typedef std::future<CreateDeviceGroupOutcome> CreateDeviceGroupOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateDeviceGroupRequest&, const CreateDeviceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceGroupAsyncHandler;
@@ -666,6 +685,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateProductResult> CreateProductOutcome;
 			typedef std::future<CreateProductOutcome> CreateProductOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateProductRequest&, const CreateProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductAsyncHandler;
+			typedef Outcome<Error, Model::CreateProductDistributeJobResult> CreateProductDistributeJobOutcome;
+			typedef std::future<CreateProductDistributeJobOutcome> CreateProductDistributeJobOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateProductDistributeJobRequest&, const CreateProductDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductDistributeJobAsyncHandler;
 			typedef Outcome<Error, Model::CreateProductTagsResult> CreateProductTagsOutcome;
 			typedef std::future<CreateProductTagsOutcome> CreateProductTagsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateProductTagsRequest&, const CreateProductTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductTagsAsyncHandler;
@@ -705,6 +727,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDeviceResult> DeleteDeviceOutcome;
 			typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteDeviceRequest&, const DeleteDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDeviceDistributeJobResult> DeleteDeviceDistributeJobOutcome;
+			typedef std::future<DeleteDeviceDistributeJobOutcome> DeleteDeviceDistributeJobOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteDeviceDistributeJobRequest&, const DeleteDeviceDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceDistributeJobAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDeviceFileResult> DeleteDeviceFileOutcome;
 			typedef std::future<DeleteDeviceFileOutcome> DeleteDeviceFileOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteDeviceFileRequest&, const DeleteDeviceFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceFileAsyncHandler;
@@ -843,6 +868,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InvokeThingsServiceResult> InvokeThingsServiceOutcome;
 			typedef std::future<InvokeThingsServiceOutcome> InvokeThingsServiceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::InvokeThingsServiceRequest&, const InvokeThingsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeThingsServiceAsyncHandler;
+			typedef Outcome<Error, Model::ListDeviceDistributeJobResult> ListDeviceDistributeJobOutcome;
+			typedef std::future<ListDeviceDistributeJobOutcome> ListDeviceDistributeJobOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListDeviceDistributeJobRequest&, const ListDeviceDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceDistributeJobAsyncHandler;
+			typedef Outcome<Error, Model::ListDistributedDeviceResult> ListDistributedDeviceOutcome;
+			typedef std::future<ListDistributedDeviceOutcome> ListDistributedDeviceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListDistributedDeviceRequest&, const ListDistributedDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDistributedDeviceAsyncHandler;
+			typedef Outcome<Error, Model::ListDistributedProductResult> ListDistributedProductOutcome;
+			typedef std::future<ListDistributedProductOutcome> ListDistributedProductOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListDistributedProductRequest&, const ListDistributedProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDistributedProductAsyncHandler;
 			typedef Outcome<Error, Model::ListJobResult> ListJobOutcome;
 			typedef std::future<ListJobOutcome> ListJobOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListJobRequest&, const ListJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobAsyncHandler;
@@ -945,6 +979,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDeviceDetailResult> QueryDeviceDetailOutcome;
 			typedef std::future<QueryDeviceDetailOutcome> QueryDeviceDetailOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceDetailRequest&, const QueryDeviceDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceDetailAsyncHandler;
+			typedef Outcome<Error, Model::QueryDeviceDistributeDetailResult> QueryDeviceDistributeDetailOutcome;
+			typedef std::future<QueryDeviceDistributeDetailOutcome> QueryDeviceDistributeDetailOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDeviceDistributeDetailRequest&, const QueryDeviceDistributeDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceDistributeDetailAsyncHandler;
+			typedef Outcome<Error, Model::QueryDeviceDistributeJobResult> QueryDeviceDistributeJobOutcome;
+			typedef std::future<QueryDeviceDistributeJobOutcome> QueryDeviceDistributeJobOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDeviceDistributeJobRequest&, const QueryDeviceDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceDistributeJobAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceEventDataResult> QueryDeviceEventDataOutcome;
 			typedef std::future<QueryDeviceEventDataOutcome> QueryDeviceEventDataOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceEventDataRequest&, const QueryDeviceEventDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceEventDataAsyncHandler;
@@ -1340,6 +1380,9 @@ namespace AlibabaCloud
 			CreateDataAPIServiceOutcome createDataAPIService(const Model::CreateDataAPIServiceRequest &request)const;
 			void createDataAPIServiceAsync(const Model::CreateDataAPIServiceRequest& request, const CreateDataAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataAPIServiceOutcomeCallable createDataAPIServiceCallable(const Model::CreateDataAPIServiceRequest& request) const;
+			CreateDeviceDistributeJobOutcome createDeviceDistributeJob(const Model::CreateDeviceDistributeJobRequest &request)const;
+			void createDeviceDistributeJobAsync(const Model::CreateDeviceDistributeJobRequest& request, const CreateDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDeviceDistributeJobOutcomeCallable createDeviceDistributeJobCallable(const Model::CreateDeviceDistributeJobRequest& request) const;
 			CreateDeviceGroupOutcome createDeviceGroup(const Model::CreateDeviceGroupRequest &request)const;
 			void createDeviceGroupAsync(const Model::CreateDeviceGroupRequest& request, const CreateDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeviceGroupOutcomeCallable createDeviceGroupCallable(const Model::CreateDeviceGroupRequest& request) const;
@@ -1385,6 +1428,9 @@ namespace AlibabaCloud
 			CreateProductOutcome createProduct(const Model::CreateProductRequest &request)const;
 			void createProductAsync(const Model::CreateProductRequest& request, const CreateProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProductOutcomeCallable createProductCallable(const Model::CreateProductRequest& request) const;
+			CreateProductDistributeJobOutcome createProductDistributeJob(const Model::CreateProductDistributeJobRequest &request)const;
+			void createProductDistributeJobAsync(const Model::CreateProductDistributeJobRequest& request, const CreateProductDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProductDistributeJobOutcomeCallable createProductDistributeJobCallable(const Model::CreateProductDistributeJobRequest& request) const;
 			CreateProductTagsOutcome createProductTags(const Model::CreateProductTagsRequest &request)const;
 			void createProductTagsAsync(const Model::CreateProductTagsRequest& request, const CreateProductTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProductTagsOutcomeCallable createProductTagsCallable(const Model::CreateProductTagsRequest& request) const;
@@ -1424,6 +1470,9 @@ namespace AlibabaCloud
 			DeleteDeviceOutcome deleteDevice(const Model::DeleteDeviceRequest &request)const;
 			void deleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeviceOutcomeCallable deleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;
+			DeleteDeviceDistributeJobOutcome deleteDeviceDistributeJob(const Model::DeleteDeviceDistributeJobRequest &request)const;
+			void deleteDeviceDistributeJobAsync(const Model::DeleteDeviceDistributeJobRequest& request, const DeleteDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDeviceDistributeJobOutcomeCallable deleteDeviceDistributeJobCallable(const Model::DeleteDeviceDistributeJobRequest& request) const;
 			DeleteDeviceFileOutcome deleteDeviceFile(const Model::DeleteDeviceFileRequest &request)const;
 			void deleteDeviceFileAsync(const Model::DeleteDeviceFileRequest& request, const DeleteDeviceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeviceFileOutcomeCallable deleteDeviceFileCallable(const Model::DeleteDeviceFileRequest& request) const;
@@ -1562,6 +1611,15 @@ namespace AlibabaCloud
 			InvokeThingsServiceOutcome invokeThingsService(const Model::InvokeThingsServiceRequest &request)const;
 			void invokeThingsServiceAsync(const Model::InvokeThingsServiceRequest& request, const InvokeThingsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InvokeThingsServiceOutcomeCallable invokeThingsServiceCallable(const Model::InvokeThingsServiceRequest& request) const;
+			ListDeviceDistributeJobOutcome listDeviceDistributeJob(const Model::ListDeviceDistributeJobRequest &request)const;
+			void listDeviceDistributeJobAsync(const Model::ListDeviceDistributeJobRequest& request, const ListDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDeviceDistributeJobOutcomeCallable listDeviceDistributeJobCallable(const Model::ListDeviceDistributeJobRequest& request) const;
+			ListDistributedDeviceOutcome listDistributedDevice(const Model::ListDistributedDeviceRequest &request)const;
+			void listDistributedDeviceAsync(const Model::ListDistributedDeviceRequest& request, const ListDistributedDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDistributedDeviceOutcomeCallable listDistributedDeviceCallable(const Model::ListDistributedDeviceRequest& request) const;
+			ListDistributedProductOutcome listDistributedProduct(const Model::ListDistributedProductRequest &request)const;
+			void listDistributedProductAsync(const Model::ListDistributedProductRequest& request, const ListDistributedProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDistributedProductOutcomeCallable listDistributedProductCallable(const Model::ListDistributedProductRequest& request) const;
 			ListJobOutcome listJob(const Model::ListJobRequest &request)const;
 			void listJobAsync(const Model::ListJobRequest& request, const ListJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListJobOutcomeCallable listJobCallable(const Model::ListJobRequest& request) const;
@@ -1664,6 +1722,12 @@ namespace AlibabaCloud
 			QueryDeviceDetailOutcome queryDeviceDetail(const Model::QueryDeviceDetailRequest &request)const;
 			void queryDeviceDetailAsync(const Model::QueryDeviceDetailRequest& request, const QueryDeviceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceDetailOutcomeCallable queryDeviceDetailCallable(const Model::QueryDeviceDetailRequest& request) const;
+			QueryDeviceDistributeDetailOutcome queryDeviceDistributeDetail(const Model::QueryDeviceDistributeDetailRequest &request)const;
+			void queryDeviceDistributeDetailAsync(const Model::QueryDeviceDistributeDetailRequest& request, const QueryDeviceDistributeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDeviceDistributeDetailOutcomeCallable queryDeviceDistributeDetailCallable(const Model::QueryDeviceDistributeDetailRequest& request) const;
+			QueryDeviceDistributeJobOutcome queryDeviceDistributeJob(const Model::QueryDeviceDistributeJobRequest &request)const;
+			void queryDeviceDistributeJobAsync(const Model::QueryDeviceDistributeJobRequest& request, const QueryDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDeviceDistributeJobOutcomeCallable queryDeviceDistributeJobCallable(const Model::QueryDeviceDistributeJobRequest& request) const;
 			QueryDeviceEventDataOutcome queryDeviceEventData(const Model::QueryDeviceEventDataRequest &request)const;
 			void queryDeviceEventDataAsync(const Model::QueryDeviceEventDataRequest& request, const QueryDeviceEventDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceEventDataOutcomeCallable queryDeviceEventDataCallable(const Model::QueryDeviceEventDataRequest& request) const;

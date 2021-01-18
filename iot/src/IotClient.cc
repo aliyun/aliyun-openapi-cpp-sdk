@@ -1419,6 +1419,42 @@ IotClient::CreateDataAPIServiceOutcomeCallable IotClient::createDataAPIServiceCa
 	return task->get_future();
 }
 
+IotClient::CreateDeviceDistributeJobOutcome IotClient::createDeviceDistributeJob(const CreateDeviceDistributeJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDeviceDistributeJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDeviceDistributeJobOutcome(CreateDeviceDistributeJobResult(outcome.result()));
+	else
+		return CreateDeviceDistributeJobOutcome(outcome.error());
+}
+
+void IotClient::createDeviceDistributeJobAsync(const CreateDeviceDistributeJobRequest& request, const CreateDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDeviceDistributeJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateDeviceDistributeJobOutcomeCallable IotClient::createDeviceDistributeJobCallable(const CreateDeviceDistributeJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDeviceDistributeJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createDeviceDistributeJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateDeviceGroupOutcome IotClient::createDeviceGroup(const CreateDeviceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1959,6 +1995,42 @@ IotClient::CreateProductOutcomeCallable IotClient::createProductCallable(const C
 	return task->get_future();
 }
 
+IotClient::CreateProductDistributeJobOutcome IotClient::createProductDistributeJob(const CreateProductDistributeJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateProductDistributeJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateProductDistributeJobOutcome(CreateProductDistributeJobResult(outcome.result()));
+	else
+		return CreateProductDistributeJobOutcome(outcome.error());
+}
+
+void IotClient::createProductDistributeJobAsync(const CreateProductDistributeJobRequest& request, const CreateProductDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createProductDistributeJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateProductDistributeJobOutcomeCallable IotClient::createProductDistributeJobCallable(const CreateProductDistributeJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateProductDistributeJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createProductDistributeJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateProductTagsOutcome IotClient::createProductTags(const CreateProductTagsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2421,6 +2493,42 @@ IotClient::DeleteDeviceOutcomeCallable IotClient::deleteDeviceCallable(const Del
 			[this, request]()
 			{
 			return this->deleteDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DeleteDeviceDistributeJobOutcome IotClient::deleteDeviceDistributeJob(const DeleteDeviceDistributeJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDeviceDistributeJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDeviceDistributeJobOutcome(DeleteDeviceDistributeJobResult(outcome.result()));
+	else
+		return DeleteDeviceDistributeJobOutcome(outcome.error());
+}
+
+void IotClient::deleteDeviceDistributeJobAsync(const DeleteDeviceDistributeJobRequest& request, const DeleteDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDeviceDistributeJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteDeviceDistributeJobOutcomeCallable IotClient::deleteDeviceDistributeJobCallable(const DeleteDeviceDistributeJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDeviceDistributeJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDeviceDistributeJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4083,6 +4191,114 @@ IotClient::InvokeThingsServiceOutcomeCallable IotClient::invokeThingsServiceCall
 	return task->get_future();
 }
 
+IotClient::ListDeviceDistributeJobOutcome IotClient::listDeviceDistributeJob(const ListDeviceDistributeJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDeviceDistributeJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDeviceDistributeJobOutcome(ListDeviceDistributeJobResult(outcome.result()));
+	else
+		return ListDeviceDistributeJobOutcome(outcome.error());
+}
+
+void IotClient::listDeviceDistributeJobAsync(const ListDeviceDistributeJobRequest& request, const ListDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDeviceDistributeJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListDeviceDistributeJobOutcomeCallable IotClient::listDeviceDistributeJobCallable(const ListDeviceDistributeJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDeviceDistributeJobOutcome()>>(
+			[this, request]()
+			{
+			return this->listDeviceDistributeJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ListDistributedDeviceOutcome IotClient::listDistributedDevice(const ListDistributedDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDistributedDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDistributedDeviceOutcome(ListDistributedDeviceResult(outcome.result()));
+	else
+		return ListDistributedDeviceOutcome(outcome.error());
+}
+
+void IotClient::listDistributedDeviceAsync(const ListDistributedDeviceRequest& request, const ListDistributedDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDistributedDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListDistributedDeviceOutcomeCallable IotClient::listDistributedDeviceCallable(const ListDistributedDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDistributedDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->listDistributedDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ListDistributedProductOutcome IotClient::listDistributedProduct(const ListDistributedProductRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDistributedProductOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDistributedProductOutcome(ListDistributedProductResult(outcome.result()));
+	else
+		return ListDistributedProductOutcome(outcome.error());
+}
+
+void IotClient::listDistributedProductAsync(const ListDistributedProductRequest& request, const ListDistributedProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDistributedProduct(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListDistributedProductOutcomeCallable IotClient::listDistributedProductCallable(const ListDistributedProductRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDistributedProductOutcome()>>(
+			[this, request]()
+			{
+			return this->listDistributedProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ListJobOutcome IotClient::listJob(const ListJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5301,6 +5517,78 @@ IotClient::QueryDeviceDetailOutcomeCallable IotClient::queryDeviceDetailCallable
 			[this, request]()
 			{
 			return this->queryDeviceDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryDeviceDistributeDetailOutcome IotClient::queryDeviceDistributeDetail(const QueryDeviceDistributeDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDeviceDistributeDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDeviceDistributeDetailOutcome(QueryDeviceDistributeDetailResult(outcome.result()));
+	else
+		return QueryDeviceDistributeDetailOutcome(outcome.error());
+}
+
+void IotClient::queryDeviceDistributeDetailAsync(const QueryDeviceDistributeDetailRequest& request, const QueryDeviceDistributeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDeviceDistributeDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryDeviceDistributeDetailOutcomeCallable IotClient::queryDeviceDistributeDetailCallable(const QueryDeviceDistributeDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDeviceDistributeDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDeviceDistributeDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryDeviceDistributeJobOutcome IotClient::queryDeviceDistributeJob(const QueryDeviceDistributeJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDeviceDistributeJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDeviceDistributeJobOutcome(QueryDeviceDistributeJobResult(outcome.result()));
+	else
+		return QueryDeviceDistributeJobOutcome(outcome.error());
+}
+
+void IotClient::queryDeviceDistributeJobAsync(const QueryDeviceDistributeJobRequest& request, const QueryDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDeviceDistributeJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryDeviceDistributeJobOutcomeCallable IotClient::queryDeviceDistributeJobCallable(const QueryDeviceDistributeJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDeviceDistributeJobOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDeviceDistributeJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

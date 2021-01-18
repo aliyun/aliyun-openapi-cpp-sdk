@@ -97,6 +97,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateConsumerGroupSubscribeRelationResult.h
 	include/alibabacloud/iot/model/CreateDataAPIServiceRequest.h
 	include/alibabacloud/iot/model/CreateDataAPIServiceResult.h
+	include/alibabacloud/iot/model/CreateDeviceDistributeJobRequest.h
+	include/alibabacloud/iot/model/CreateDeviceDistributeJobResult.h
 	include/alibabacloud/iot/model/CreateDeviceGroupRequest.h
 	include/alibabacloud/iot/model/CreateDeviceGroupResult.h
 	include/alibabacloud/iot/model/CreateEdgeDriverRequest.h
@@ -127,6 +129,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateOTAVerifyJobResult.h
 	include/alibabacloud/iot/model/CreateProductRequest.h
 	include/alibabacloud/iot/model/CreateProductResult.h
+	include/alibabacloud/iot/model/CreateProductDistributeJobRequest.h
+	include/alibabacloud/iot/model/CreateProductDistributeJobResult.h
 	include/alibabacloud/iot/model/CreateProductTagsRequest.h
 	include/alibabacloud/iot/model/CreateProductTagsResult.h
 	include/alibabacloud/iot/model/CreateProductTopicRequest.h
@@ -153,6 +157,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteConsumerGroupSubscribeRelationResult.h
 	include/alibabacloud/iot/model/DeleteDeviceRequest.h
 	include/alibabacloud/iot/model/DeleteDeviceResult.h
+	include/alibabacloud/iot/model/DeleteDeviceDistributeJobRequest.h
+	include/alibabacloud/iot/model/DeleteDeviceDistributeJobResult.h
 	include/alibabacloud/iot/model/DeleteDeviceFileRequest.h
 	include/alibabacloud/iot/model/DeleteDeviceFileResult.h
 	include/alibabacloud/iot/model/DeleteDeviceGroupRequest.h
@@ -245,6 +251,12 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/InvokeThingServiceResult.h
 	include/alibabacloud/iot/model/InvokeThingsServiceRequest.h
 	include/alibabacloud/iot/model/InvokeThingsServiceResult.h
+	include/alibabacloud/iot/model/ListDeviceDistributeJobRequest.h
+	include/alibabacloud/iot/model/ListDeviceDistributeJobResult.h
+	include/alibabacloud/iot/model/ListDistributedDeviceRequest.h
+	include/alibabacloud/iot/model/ListDistributedDeviceResult.h
+	include/alibabacloud/iot/model/ListDistributedProductRequest.h
+	include/alibabacloud/iot/model/ListDistributedProductResult.h
 	include/alibabacloud/iot/model/ListJobRequest.h
 	include/alibabacloud/iot/model/ListJobResult.h
 	include/alibabacloud/iot/model/ListOTAFirmwareRequest.h
@@ -313,6 +325,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDeviceDesiredPropertyResult.h
 	include/alibabacloud/iot/model/QueryDeviceDetailRequest.h
 	include/alibabacloud/iot/model/QueryDeviceDetailResult.h
+	include/alibabacloud/iot/model/QueryDeviceDistributeDetailRequest.h
+	include/alibabacloud/iot/model/QueryDeviceDistributeDetailResult.h
+	include/alibabacloud/iot/model/QueryDeviceDistributeJobRequest.h
+	include/alibabacloud/iot/model/QueryDeviceDistributeJobResult.h
 	include/alibabacloud/iot/model/QueryDeviceEventDataRequest.h
 	include/alibabacloud/iot/model/QueryDeviceEventDataResult.h
 	include/alibabacloud/iot/model/QueryDeviceFileRequest.h
@@ -576,6 +592,8 @@ set(iot_src
 	src/model/CreateConsumerGroupSubscribeRelationResult.cc
 	src/model/CreateDataAPIServiceRequest.cc
 	src/model/CreateDataAPIServiceResult.cc
+	src/model/CreateDeviceDistributeJobRequest.cc
+	src/model/CreateDeviceDistributeJobResult.cc
 	src/model/CreateDeviceGroupRequest.cc
 	src/model/CreateDeviceGroupResult.cc
 	src/model/CreateEdgeDriverRequest.cc
@@ -606,6 +624,8 @@ set(iot_src
 	src/model/CreateOTAVerifyJobResult.cc
 	src/model/CreateProductRequest.cc
 	src/model/CreateProductResult.cc
+	src/model/CreateProductDistributeJobRequest.cc
+	src/model/CreateProductDistributeJobResult.cc
 	src/model/CreateProductTagsRequest.cc
 	src/model/CreateProductTagsResult.cc
 	src/model/CreateProductTopicRequest.cc
@@ -632,6 +652,8 @@ set(iot_src
 	src/model/DeleteConsumerGroupSubscribeRelationResult.cc
 	src/model/DeleteDeviceRequest.cc
 	src/model/DeleteDeviceResult.cc
+	src/model/DeleteDeviceDistributeJobRequest.cc
+	src/model/DeleteDeviceDistributeJobResult.cc
 	src/model/DeleteDeviceFileRequest.cc
 	src/model/DeleteDeviceFileResult.cc
 	src/model/DeleteDeviceGroupRequest.cc
@@ -724,6 +746,12 @@ set(iot_src
 	src/model/InvokeThingServiceResult.cc
 	src/model/InvokeThingsServiceRequest.cc
 	src/model/InvokeThingsServiceResult.cc
+	src/model/ListDeviceDistributeJobRequest.cc
+	src/model/ListDeviceDistributeJobResult.cc
+	src/model/ListDistributedDeviceRequest.cc
+	src/model/ListDistributedDeviceResult.cc
+	src/model/ListDistributedProductRequest.cc
+	src/model/ListDistributedProductResult.cc
 	src/model/ListJobRequest.cc
 	src/model/ListJobResult.cc
 	src/model/ListOTAFirmwareRequest.cc
@@ -792,6 +820,10 @@ set(iot_src
 	src/model/QueryDeviceDesiredPropertyResult.cc
 	src/model/QueryDeviceDetailRequest.cc
 	src/model/QueryDeviceDetailResult.cc
+	src/model/QueryDeviceDistributeDetailRequest.cc
+	src/model/QueryDeviceDistributeDetailResult.cc
+	src/model/QueryDeviceDistributeJobRequest.cc
+	src/model/QueryDeviceDistributeJobResult.cc
 	src/model/QueryDeviceEventDataRequest.cc
 	src/model/QueryDeviceEventDataResult.cc
 	src/model/QueryDeviceFileRequest.cc
