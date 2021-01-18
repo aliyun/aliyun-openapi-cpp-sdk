@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_GETUSERINFOREQUEST_H_
-#define ALIBABACLOUD_CODEUP_MODEL_GETUSERINFOREQUEST_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_ENABLEREPOSITORYDEPLOYKEYREQUEST_H_
+#define ALIBABACLOUD_CODEUP_MODEL_ENABLEREPOSITORYDEPLOYKEYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT GetUserInfoRequest : public RoaServiceRequest
+			class ALIBABACLOUD_CODEUP_EXPORT EnableRepositoryDeployKeyRequest : public RoaServiceRequest
 			{
 
 			public:
-				GetUserInfoRequest();
-				~GetUserInfoRequest();
+				EnableRepositoryDeployKeyRequest();
+				~EnableRepositoryDeployKeyRequest();
 
 				std::string getOrganizationId()const;
 				void setOrganizationId(const std::string& organizationId);
+				std::string getSubUserId()const;
+				void setSubUserId(const std::string& subUserId);
 				std::string getAccessToken()const;
 				void setAccessToken(const std::string& accessToken);
+				long getKeyId()const;
+				void setKeyId(long keyId);
+				long getProjectId()const;
+				void setProjectId(long projectId);
 
             private:
 				std::string organizationId_;
+				std::string subUserId_;
 				std::string accessToken_;
+				long keyId_;
+				long projectId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_GETUSERINFOREQUEST_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_ENABLEREPOSITORYDEPLOYKEYREQUEST_H_

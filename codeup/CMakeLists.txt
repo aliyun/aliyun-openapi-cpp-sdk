@@ -35,8 +35,12 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/CreateMergeRequestResult.h
 	include/alibabacloud/codeup/model/CreateRepositoryRequest.h
 	include/alibabacloud/codeup/model/CreateRepositoryResult.h
+	include/alibabacloud/codeup/model/CreateRepositoryDeployKeyRequest.h
+	include/alibabacloud/codeup/model/CreateRepositoryDeployKeyResult.h
 	include/alibabacloud/codeup/model/CreateRepositoryGroupRequest.h
 	include/alibabacloud/codeup/model/CreateRepositoryGroupResult.h
+	include/alibabacloud/codeup/model/CreateRepositoryProtectedBranchRequest.h
+	include/alibabacloud/codeup/model/CreateRepositoryProtectedBranchResult.h
 	include/alibabacloud/codeup/model/CreateTagRequest.h
 	include/alibabacloud/codeup/model/CreateTagResult.h
 	include/alibabacloud/codeup/model/DeleteBranchRequest.h
@@ -51,10 +55,14 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/DeleteRepositoryGroupResult.h
 	include/alibabacloud/codeup/model/DeleteRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/DeleteRepositoryMemberResult.h
+	include/alibabacloud/codeup/model/DeleteRepositoryProtectedBranchRequest.h
+	include/alibabacloud/codeup/model/DeleteRepositoryProtectedBranchResult.h
 	include/alibabacloud/codeup/model/DeleteRepositoryTagRequest.h
 	include/alibabacloud/codeup/model/DeleteRepositoryTagResult.h
 	include/alibabacloud/codeup/model/DeleteRepositoryWebhookRequest.h
 	include/alibabacloud/codeup/model/DeleteRepositoryWebhookResult.h
+	include/alibabacloud/codeup/model/EnableRepositoryDeployKeyRequest.h
+	include/alibabacloud/codeup/model/EnableRepositoryDeployKeyResult.h
 	include/alibabacloud/codeup/model/GetBranchInfoRequest.h
 	include/alibabacloud/codeup/model/GetBranchInfoResult.h
 	include/alibabacloud/codeup/model/GetCodeupOrganizationRequest.h
@@ -77,6 +85,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/ListGroupRepositoriesResult.h
 	include/alibabacloud/codeup/model/ListGroupsRequest.h
 	include/alibabacloud/codeup/model/ListGroupsResult.h
+	include/alibabacloud/codeup/model/ListMergeRequestsRequest.h
+	include/alibabacloud/codeup/model/ListMergeRequestsResult.h
 	include/alibabacloud/codeup/model/ListOrganizationsRequest.h
 	include/alibabacloud/codeup/model/ListOrganizationsResult.h
 	include/alibabacloud/codeup/model/ListRepositoriesRequest.h
@@ -97,6 +107,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/UpdateFileResult.h
 	include/alibabacloud/codeup/model/UpdateGroupMemberRequest.h
 	include/alibabacloud/codeup/model/UpdateGroupMemberResult.h
+	include/alibabacloud/codeup/model/UpdateRepositoryRequest.h
+	include/alibabacloud/codeup/model/UpdateRepositoryResult.h
 	include/alibabacloud/codeup/model/UpdateRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/UpdateRepositoryMemberResult.h )
 
@@ -116,8 +128,12 @@ set(codeup_src
 	src/model/CreateMergeRequestResult.cc
 	src/model/CreateRepositoryRequest.cc
 	src/model/CreateRepositoryResult.cc
+	src/model/CreateRepositoryDeployKeyRequest.cc
+	src/model/CreateRepositoryDeployKeyResult.cc
 	src/model/CreateRepositoryGroupRequest.cc
 	src/model/CreateRepositoryGroupResult.cc
+	src/model/CreateRepositoryProtectedBranchRequest.cc
+	src/model/CreateRepositoryProtectedBranchResult.cc
 	src/model/CreateTagRequest.cc
 	src/model/CreateTagResult.cc
 	src/model/DeleteBranchRequest.cc
@@ -132,10 +148,14 @@ set(codeup_src
 	src/model/DeleteRepositoryGroupResult.cc
 	src/model/DeleteRepositoryMemberRequest.cc
 	src/model/DeleteRepositoryMemberResult.cc
+	src/model/DeleteRepositoryProtectedBranchRequest.cc
+	src/model/DeleteRepositoryProtectedBranchResult.cc
 	src/model/DeleteRepositoryTagRequest.cc
 	src/model/DeleteRepositoryTagResult.cc
 	src/model/DeleteRepositoryWebhookRequest.cc
 	src/model/DeleteRepositoryWebhookResult.cc
+	src/model/EnableRepositoryDeployKeyRequest.cc
+	src/model/EnableRepositoryDeployKeyResult.cc
 	src/model/GetBranchInfoRequest.cc
 	src/model/GetBranchInfoResult.cc
 	src/model/GetCodeupOrganizationRequest.cc
@@ -158,6 +178,8 @@ set(codeup_src
 	src/model/ListGroupRepositoriesResult.cc
 	src/model/ListGroupsRequest.cc
 	src/model/ListGroupsResult.cc
+	src/model/ListMergeRequestsRequest.cc
+	src/model/ListMergeRequestsResult.cc
 	src/model/ListOrganizationsRequest.cc
 	src/model/ListOrganizationsResult.cc
 	src/model/ListRepositoriesRequest.cc
@@ -178,6 +200,8 @@ set(codeup_src
 	src/model/UpdateFileResult.cc
 	src/model/UpdateGroupMemberRequest.cc
 	src/model/UpdateGroupMemberResult.cc
+	src/model/UpdateRepositoryRequest.cc
+	src/model/UpdateRepositoryResult.cc
 	src/model/UpdateRepositoryMemberRequest.cc
 	src/model/UpdateRepositoryMemberResult.cc )
 

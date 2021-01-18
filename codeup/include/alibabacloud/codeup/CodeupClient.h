@@ -36,8 +36,12 @@
 #include "model/CreateMergeRequestResult.h"
 #include "model/CreateRepositoryRequest.h"
 #include "model/CreateRepositoryResult.h"
+#include "model/CreateRepositoryDeployKeyRequest.h"
+#include "model/CreateRepositoryDeployKeyResult.h"
 #include "model/CreateRepositoryGroupRequest.h"
 #include "model/CreateRepositoryGroupResult.h"
+#include "model/CreateRepositoryProtectedBranchRequest.h"
+#include "model/CreateRepositoryProtectedBranchResult.h"
 #include "model/CreateTagRequest.h"
 #include "model/CreateTagResult.h"
 #include "model/DeleteBranchRequest.h"
@@ -52,10 +56,14 @@
 #include "model/DeleteRepositoryGroupResult.h"
 #include "model/DeleteRepositoryMemberRequest.h"
 #include "model/DeleteRepositoryMemberResult.h"
+#include "model/DeleteRepositoryProtectedBranchRequest.h"
+#include "model/DeleteRepositoryProtectedBranchResult.h"
 #include "model/DeleteRepositoryTagRequest.h"
 #include "model/DeleteRepositoryTagResult.h"
 #include "model/DeleteRepositoryWebhookRequest.h"
 #include "model/DeleteRepositoryWebhookResult.h"
+#include "model/EnableRepositoryDeployKeyRequest.h"
+#include "model/EnableRepositoryDeployKeyResult.h"
 #include "model/GetBranchInfoRequest.h"
 #include "model/GetBranchInfoResult.h"
 #include "model/GetCodeupOrganizationRequest.h"
@@ -78,6 +86,8 @@
 #include "model/ListGroupRepositoriesResult.h"
 #include "model/ListGroupsRequest.h"
 #include "model/ListGroupsResult.h"
+#include "model/ListMergeRequestsRequest.h"
+#include "model/ListMergeRequestsResult.h"
 #include "model/ListOrganizationsRequest.h"
 #include "model/ListOrganizationsResult.h"
 #include "model/ListRepositoriesRequest.h"
@@ -98,6 +108,8 @@
 #include "model/UpdateFileResult.h"
 #include "model/UpdateGroupMemberRequest.h"
 #include "model/UpdateGroupMemberResult.h"
+#include "model/UpdateRepositoryRequest.h"
+#include "model/UpdateRepositoryResult.h"
 #include "model/UpdateRepositoryMemberRequest.h"
 #include "model/UpdateRepositoryMemberResult.h"
 
@@ -130,9 +142,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRepositoryResult> CreateRepositoryOutcome;
 			typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::CreateRepositoryRequest&, const CreateRepositoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryAsyncHandler;
+			typedef Outcome<Error, Model::CreateRepositoryDeployKeyResult> CreateRepositoryDeployKeyOutcome;
+			typedef std::future<CreateRepositoryDeployKeyOutcome> CreateRepositoryDeployKeyOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::CreateRepositoryDeployKeyRequest&, const CreateRepositoryDeployKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryDeployKeyAsyncHandler;
 			typedef Outcome<Error, Model::CreateRepositoryGroupResult> CreateRepositoryGroupOutcome;
 			typedef std::future<CreateRepositoryGroupOutcome> CreateRepositoryGroupOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::CreateRepositoryGroupRequest&, const CreateRepositoryGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateRepositoryProtectedBranchResult> CreateRepositoryProtectedBranchOutcome;
+			typedef std::future<CreateRepositoryProtectedBranchOutcome> CreateRepositoryProtectedBranchOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::CreateRepositoryProtectedBranchRequest&, const CreateRepositoryProtectedBranchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryProtectedBranchAsyncHandler;
 			typedef Outcome<Error, Model::CreateTagResult> CreateTagOutcome;
 			typedef std::future<CreateTagOutcome> CreateTagOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::CreateTagRequest&, const CreateTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagAsyncHandler;
@@ -154,12 +172,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRepositoryMemberResult> DeleteRepositoryMemberOutcome;
 			typedef std::future<DeleteRepositoryMemberOutcome> DeleteRepositoryMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryMemberRequest&, const DeleteRepositoryMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryMemberAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRepositoryProtectedBranchResult> DeleteRepositoryProtectedBranchOutcome;
+			typedef std::future<DeleteRepositoryProtectedBranchOutcome> DeleteRepositoryProtectedBranchOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryProtectedBranchRequest&, const DeleteRepositoryProtectedBranchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryProtectedBranchAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRepositoryTagResult> DeleteRepositoryTagOutcome;
 			typedef std::future<DeleteRepositoryTagOutcome> DeleteRepositoryTagOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryTagRequest&, const DeleteRepositoryTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryTagAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRepositoryWebhookResult> DeleteRepositoryWebhookOutcome;
 			typedef std::future<DeleteRepositoryWebhookOutcome> DeleteRepositoryWebhookOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryWebhookRequest&, const DeleteRepositoryWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryWebhookAsyncHandler;
+			typedef Outcome<Error, Model::EnableRepositoryDeployKeyResult> EnableRepositoryDeployKeyOutcome;
+			typedef std::future<EnableRepositoryDeployKeyOutcome> EnableRepositoryDeployKeyOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::EnableRepositoryDeployKeyRequest&, const EnableRepositoryDeployKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableRepositoryDeployKeyAsyncHandler;
 			typedef Outcome<Error, Model::GetBranchInfoResult> GetBranchInfoOutcome;
 			typedef std::future<GetBranchInfoOutcome> GetBranchInfoOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetBranchInfoRequest&, const GetBranchInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBranchInfoAsyncHandler;
@@ -193,6 +217,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListGroupsResult> ListGroupsOutcome;
 			typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListGroupsRequest&, const ListGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListMergeRequestsResult> ListMergeRequestsOutcome;
+			typedef std::future<ListMergeRequestsOutcome> ListMergeRequestsOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::ListMergeRequestsRequest&, const ListMergeRequestsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMergeRequestsAsyncHandler;
 			typedef Outcome<Error, Model::ListOrganizationsResult> ListOrganizationsOutcome;
 			typedef std::future<ListOrganizationsOutcome> ListOrganizationsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListOrganizationsRequest&, const ListOrganizationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationsAsyncHandler;
@@ -223,6 +250,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateGroupMemberResult> UpdateGroupMemberOutcome;
 			typedef std::future<UpdateGroupMemberOutcome> UpdateGroupMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::UpdateGroupMemberRequest&, const UpdateGroupMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGroupMemberAsyncHandler;
+			typedef Outcome<Error, Model::UpdateRepositoryResult> UpdateRepositoryOutcome;
+			typedef std::future<UpdateRepositoryOutcome> UpdateRepositoryOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::UpdateRepositoryRequest&, const UpdateRepositoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepositoryAsyncHandler;
 			typedef Outcome<Error, Model::UpdateRepositoryMemberResult> UpdateRepositoryMemberOutcome;
 			typedef std::future<UpdateRepositoryMemberOutcome> UpdateRepositoryMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::UpdateRepositoryMemberRequest&, const UpdateRepositoryMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepositoryMemberAsyncHandler;
@@ -252,9 +282,15 @@ namespace AlibabaCloud
 			CreateRepositoryOutcome createRepository(const Model::CreateRepositoryRequest &request)const;
 			void createRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRepositoryOutcomeCallable createRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
+			CreateRepositoryDeployKeyOutcome createRepositoryDeployKey(const Model::CreateRepositoryDeployKeyRequest &request)const;
+			void createRepositoryDeployKeyAsync(const Model::CreateRepositoryDeployKeyRequest& request, const CreateRepositoryDeployKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRepositoryDeployKeyOutcomeCallable createRepositoryDeployKeyCallable(const Model::CreateRepositoryDeployKeyRequest& request) const;
 			CreateRepositoryGroupOutcome createRepositoryGroup(const Model::CreateRepositoryGroupRequest &request)const;
 			void createRepositoryGroupAsync(const Model::CreateRepositoryGroupRequest& request, const CreateRepositoryGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRepositoryGroupOutcomeCallable createRepositoryGroupCallable(const Model::CreateRepositoryGroupRequest& request) const;
+			CreateRepositoryProtectedBranchOutcome createRepositoryProtectedBranch(const Model::CreateRepositoryProtectedBranchRequest &request)const;
+			void createRepositoryProtectedBranchAsync(const Model::CreateRepositoryProtectedBranchRequest& request, const CreateRepositoryProtectedBranchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRepositoryProtectedBranchOutcomeCallable createRepositoryProtectedBranchCallable(const Model::CreateRepositoryProtectedBranchRequest& request) const;
 			CreateTagOutcome createTag(const Model::CreateTagRequest &request)const;
 			void createTagAsync(const Model::CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTagOutcomeCallable createTagCallable(const Model::CreateTagRequest& request) const;
@@ -276,12 +312,18 @@ namespace AlibabaCloud
 			DeleteRepositoryMemberOutcome deleteRepositoryMember(const Model::DeleteRepositoryMemberRequest &request)const;
 			void deleteRepositoryMemberAsync(const Model::DeleteRepositoryMemberRequest& request, const DeleteRepositoryMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRepositoryMemberOutcomeCallable deleteRepositoryMemberCallable(const Model::DeleteRepositoryMemberRequest& request) const;
+			DeleteRepositoryProtectedBranchOutcome deleteRepositoryProtectedBranch(const Model::DeleteRepositoryProtectedBranchRequest &request)const;
+			void deleteRepositoryProtectedBranchAsync(const Model::DeleteRepositoryProtectedBranchRequest& request, const DeleteRepositoryProtectedBranchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRepositoryProtectedBranchOutcomeCallable deleteRepositoryProtectedBranchCallable(const Model::DeleteRepositoryProtectedBranchRequest& request) const;
 			DeleteRepositoryTagOutcome deleteRepositoryTag(const Model::DeleteRepositoryTagRequest &request)const;
 			void deleteRepositoryTagAsync(const Model::DeleteRepositoryTagRequest& request, const DeleteRepositoryTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRepositoryTagOutcomeCallable deleteRepositoryTagCallable(const Model::DeleteRepositoryTagRequest& request) const;
 			DeleteRepositoryWebhookOutcome deleteRepositoryWebhook(const Model::DeleteRepositoryWebhookRequest &request)const;
 			void deleteRepositoryWebhookAsync(const Model::DeleteRepositoryWebhookRequest& request, const DeleteRepositoryWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRepositoryWebhookOutcomeCallable deleteRepositoryWebhookCallable(const Model::DeleteRepositoryWebhookRequest& request) const;
+			EnableRepositoryDeployKeyOutcome enableRepositoryDeployKey(const Model::EnableRepositoryDeployKeyRequest &request)const;
+			void enableRepositoryDeployKeyAsync(const Model::EnableRepositoryDeployKeyRequest& request, const EnableRepositoryDeployKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableRepositoryDeployKeyOutcomeCallable enableRepositoryDeployKeyCallable(const Model::EnableRepositoryDeployKeyRequest& request) const;
 			GetBranchInfoOutcome getBranchInfo(const Model::GetBranchInfoRequest &request)const;
 			void getBranchInfoAsync(const Model::GetBranchInfoRequest& request, const GetBranchInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBranchInfoOutcomeCallable getBranchInfoCallable(const Model::GetBranchInfoRequest& request) const;
@@ -315,6 +357,9 @@ namespace AlibabaCloud
 			ListGroupsOutcome listGroups(const Model::ListGroupsRequest &request)const;
 			void listGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGroupsOutcomeCallable listGroupsCallable(const Model::ListGroupsRequest& request) const;
+			ListMergeRequestsOutcome listMergeRequests(const Model::ListMergeRequestsRequest &request)const;
+			void listMergeRequestsAsync(const Model::ListMergeRequestsRequest& request, const ListMergeRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMergeRequestsOutcomeCallable listMergeRequestsCallable(const Model::ListMergeRequestsRequest& request) const;
 			ListOrganizationsOutcome listOrganizations(const Model::ListOrganizationsRequest &request)const;
 			void listOrganizationsAsync(const Model::ListOrganizationsRequest& request, const ListOrganizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOrganizationsOutcomeCallable listOrganizationsCallable(const Model::ListOrganizationsRequest& request) const;
@@ -345,6 +390,9 @@ namespace AlibabaCloud
 			UpdateGroupMemberOutcome updateGroupMember(const Model::UpdateGroupMemberRequest &request)const;
 			void updateGroupMemberAsync(const Model::UpdateGroupMemberRequest& request, const UpdateGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGroupMemberOutcomeCallable updateGroupMemberCallable(const Model::UpdateGroupMemberRequest& request) const;
+			UpdateRepositoryOutcome updateRepository(const Model::UpdateRepositoryRequest &request)const;
+			void updateRepositoryAsync(const Model::UpdateRepositoryRequest& request, const UpdateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateRepositoryOutcomeCallable updateRepositoryCallable(const Model::UpdateRepositoryRequest& request) const;
 			UpdateRepositoryMemberOutcome updateRepositoryMember(const Model::UpdateRepositoryMemberRequest &request)const;
 			void updateRepositoryMemberAsync(const Model::UpdateRepositoryMemberRequest& request, const UpdateRepositoryMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRepositoryMemberOutcomeCallable updateRepositoryMemberCallable(const Model::UpdateRepositoryMemberRequest& request) const;

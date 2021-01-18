@@ -14,39 +14,50 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/codeup/model/GetUserInfoRequest.h>
+#include <alibabacloud/codeup/model/UpdateRepositoryRequest.h>
 
-using AlibabaCloud::Codeup::Model::GetUserInfoRequest;
+using AlibabaCloud::Codeup::Model::UpdateRepositoryRequest;
 
-GetUserInfoRequest::GetUserInfoRequest() :
+UpdateRepositoryRequest::UpdateRepositoryRequest() :
 	RoaServiceRequest("codeup", "2020-04-14")
 {
-	setResourcePath("/api/v3/user/current");
-	setMethod(HttpRequest::Method::Get);
+	setResourcePath("/api/v3/projects/[ProjectId]");
+	setMethod(HttpRequest::Method::Put);
 }
 
-GetUserInfoRequest::~GetUserInfoRequest()
+UpdateRepositoryRequest::~UpdateRepositoryRequest()
 {}
 
-std::string GetUserInfoRequest::getOrganizationId()const
+std::string UpdateRepositoryRequest::getOrganizationId()const
 {
 	return organizationId_;
 }
 
-void GetUserInfoRequest::setOrganizationId(const std::string& organizationId)
+void UpdateRepositoryRequest::setOrganizationId(const std::string& organizationId)
 {
 	organizationId_ = organizationId;
 	setParameter("OrganizationId", organizationId);
 }
 
-std::string GetUserInfoRequest::getAccessToken()const
+std::string UpdateRepositoryRequest::getAccessToken()const
 {
 	return accessToken_;
 }
 
-void GetUserInfoRequest::setAccessToken(const std::string& accessToken)
+void UpdateRepositoryRequest::setAccessToken(const std::string& accessToken)
 {
 	accessToken_ = accessToken;
 	setParameter("AccessToken", accessToken);
+}
+
+long UpdateRepositoryRequest::getProjectId()const
+{
+	return projectId_;
+}
+
+void UpdateRepositoryRequest::setProjectId(long projectId)
+{
+	projectId_ = projectId;
+	setParameter("ProjectId", std::to_string(projectId));
 }
 

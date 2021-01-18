@@ -303,6 +303,42 @@ CodeupClient::CreateRepositoryOutcomeCallable CodeupClient::createRepositoryCall
 	return task->get_future();
 }
 
+CodeupClient::CreateRepositoryDeployKeyOutcome CodeupClient::createRepositoryDeployKey(const CreateRepositoryDeployKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRepositoryDeployKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRepositoryDeployKeyOutcome(CreateRepositoryDeployKeyResult(outcome.result()));
+	else
+		return CreateRepositoryDeployKeyOutcome(outcome.error());
+}
+
+void CodeupClient::createRepositoryDeployKeyAsync(const CreateRepositoryDeployKeyRequest& request, const CreateRepositoryDeployKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRepositoryDeployKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::CreateRepositoryDeployKeyOutcomeCallable CodeupClient::createRepositoryDeployKeyCallable(const CreateRepositoryDeployKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRepositoryDeployKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->createRepositoryDeployKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::CreateRepositoryGroupOutcome CodeupClient::createRepositoryGroup(const CreateRepositoryGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ CodeupClient::CreateRepositoryGroupOutcomeCallable CodeupClient::createRepositor
 			[this, request]()
 			{
 			return this->createRepositoryGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::CreateRepositoryProtectedBranchOutcome CodeupClient::createRepositoryProtectedBranch(const CreateRepositoryProtectedBranchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRepositoryProtectedBranchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRepositoryProtectedBranchOutcome(CreateRepositoryProtectedBranchResult(outcome.result()));
+	else
+		return CreateRepositoryProtectedBranchOutcome(outcome.error());
+}
+
+void CodeupClient::createRepositoryProtectedBranchAsync(const CreateRepositoryProtectedBranchRequest& request, const CreateRepositoryProtectedBranchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRepositoryProtectedBranch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::CreateRepositoryProtectedBranchOutcomeCallable CodeupClient::createRepositoryProtectedBranchCallable(const CreateRepositoryProtectedBranchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRepositoryProtectedBranchOutcome()>>(
+			[this, request]()
+			{
+			return this->createRepositoryProtectedBranch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,6 +663,42 @@ CodeupClient::DeleteRepositoryMemberOutcomeCallable CodeupClient::deleteReposito
 	return task->get_future();
 }
 
+CodeupClient::DeleteRepositoryProtectedBranchOutcome CodeupClient::deleteRepositoryProtectedBranch(const DeleteRepositoryProtectedBranchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRepositoryProtectedBranchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRepositoryProtectedBranchOutcome(DeleteRepositoryProtectedBranchResult(outcome.result()));
+	else
+		return DeleteRepositoryProtectedBranchOutcome(outcome.error());
+}
+
+void CodeupClient::deleteRepositoryProtectedBranchAsync(const DeleteRepositoryProtectedBranchRequest& request, const DeleteRepositoryProtectedBranchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRepositoryProtectedBranch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::DeleteRepositoryProtectedBranchOutcomeCallable CodeupClient::deleteRepositoryProtectedBranchCallable(const DeleteRepositoryProtectedBranchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRepositoryProtectedBranchOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRepositoryProtectedBranch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::DeleteRepositoryTagOutcome CodeupClient::deleteRepositoryTag(const DeleteRepositoryTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +765,42 @@ CodeupClient::DeleteRepositoryWebhookOutcomeCallable CodeupClient::deleteReposit
 			[this, request]()
 			{
 			return this->deleteRepositoryWebhook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::EnableRepositoryDeployKeyOutcome CodeupClient::enableRepositoryDeployKey(const EnableRepositoryDeployKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableRepositoryDeployKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableRepositoryDeployKeyOutcome(EnableRepositoryDeployKeyResult(outcome.result()));
+	else
+		return EnableRepositoryDeployKeyOutcome(outcome.error());
+}
+
+void CodeupClient::enableRepositoryDeployKeyAsync(const EnableRepositoryDeployKeyRequest& request, const EnableRepositoryDeployKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableRepositoryDeployKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::EnableRepositoryDeployKeyOutcomeCallable CodeupClient::enableRepositoryDeployKeyCallable(const EnableRepositoryDeployKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableRepositoryDeployKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->enableRepositoryDeployKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1203,42 @@ CodeupClient::ListGroupsOutcomeCallable CodeupClient::listGroupsCallable(const L
 	return task->get_future();
 }
 
+CodeupClient::ListMergeRequestsOutcome CodeupClient::listMergeRequests(const ListMergeRequestsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMergeRequestsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMergeRequestsOutcome(ListMergeRequestsResult(outcome.result()));
+	else
+		return ListMergeRequestsOutcome(outcome.error());
+}
+
+void CodeupClient::listMergeRequestsAsync(const ListMergeRequestsRequest& request, const ListMergeRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMergeRequests(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListMergeRequestsOutcomeCallable CodeupClient::listMergeRequestsCallable(const ListMergeRequestsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMergeRequestsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMergeRequests(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::ListOrganizationsOutcome CodeupClient::listOrganizations(const ListOrganizationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1593,42 @@ CodeupClient::UpdateGroupMemberOutcomeCallable CodeupClient::updateGroupMemberCa
 			[this, request]()
 			{
 			return this->updateGroupMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::UpdateRepositoryOutcome CodeupClient::updateRepository(const UpdateRepositoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateRepositoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateRepositoryOutcome(UpdateRepositoryResult(outcome.result()));
+	else
+		return UpdateRepositoryOutcome(outcome.error());
+}
+
+void CodeupClient::updateRepositoryAsync(const UpdateRepositoryRequest& request, const UpdateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateRepository(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::UpdateRepositoryOutcomeCallable CodeupClient::updateRepositoryCallable(const UpdateRepositoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateRepositoryOutcome()>>(
+			[this, request]()
+			{
+			return this->updateRepository(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
