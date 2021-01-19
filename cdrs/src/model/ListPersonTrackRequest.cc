@@ -49,6 +49,28 @@ void ListPersonTrackRequest::setCorpId(const std::string& corpId)
 	setBodyParameter("CorpId", corpId);
 }
 
+std::string ListPersonTrackRequest::getAggregateDimension()const
+{
+	return aggregateDimension_;
+}
+
+void ListPersonTrackRequest::setAggregateDimension(const std::string& aggregateDimension)
+{
+	aggregateDimension_ = aggregateDimension;
+	setBodyParameter("AggregateDimension", aggregateDimension);
+}
+
+std::string ListPersonTrackRequest::getImageSourceType()const
+{
+	return imageSourceType_;
+}
+
+void ListPersonTrackRequest::setImageSourceType(const std::string& imageSourceType)
+{
+	imageSourceType_ = imageSourceType;
+	setBodyParameter("ImageSourceType", imageSourceType);
+}
+
 std::string ListPersonTrackRequest::getEndTime()const
 {
 	return endTime_;

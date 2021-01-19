@@ -28,14 +28,10 @@
 #include "model/BindDeviceResult.h"
 #include "model/CreateProjectRequest.h"
 #include "model/CreateProjectResult.h"
-#include "model/DetectTrajectoryRegularPatternRequest.h"
-#include "model/DetectTrajectoryRegularPatternResult.h"
 #include "model/GetCdrsMonitorListRequest.h"
 #include "model/GetCdrsMonitorListResult.h"
 #include "model/GetCdrsMonitorResultRequest.h"
 #include "model/GetCdrsMonitorResultResult.h"
-#include "model/IntersectTrajectoryRequest.h"
-#include "model/IntersectTrajectoryResult.h"
 #include "model/ListAreaHotSpotMetricsRequest.h"
 #include "model/ListAreaHotSpotMetricsResult.h"
 #include "model/ListCityMapAoisRequest.h"
@@ -108,14 +104,6 @@
 #include "model/PaginateDeviceResult.h"
 #include "model/PaginateProjectRequest.h"
 #include "model/PaginateProjectResult.h"
-#include "model/PredictTrajectoryDestinationRequest.h"
-#include "model/PredictTrajectoryDestinationResult.h"
-#include "model/QueryTrajectoryByIdRequest.h"
-#include "model/QueryTrajectoryByIdResult.h"
-#include "model/RecallTrajectoryByCoordinateRequest.h"
-#include "model/RecallTrajectoryByCoordinateResult.h"
-#include "model/RecallTrajectoryByIdRequest.h"
-#include "model/RecallTrajectoryByIdResult.h"
 #include "model/RecognizeImageRequest.h"
 #include "model/RecognizeImageResult.h"
 #include "model/SearchObjectRequest.h"
@@ -128,8 +116,6 @@
 #include "model/UpdateCdrsMonitorResult.h"
 #include "model/UpdateProjectRequest.h"
 #include "model/UpdateProjectResult.h"
-#include "model/ValidateTrajectoryRequest.h"
-#include "model/ValidateTrajectoryResult.h"
 
 
 namespace AlibabaCloud
@@ -148,18 +134,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
 			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
-			typedef Outcome<Error, Model::DetectTrajectoryRegularPatternResult> DetectTrajectoryRegularPatternOutcome;
-			typedef std::future<DetectTrajectoryRegularPatternOutcome> DetectTrajectoryRegularPatternOutcomeCallable;
-			typedef std::function<void(const CDRSClient*, const Model::DetectTrajectoryRegularPatternRequest&, const DetectTrajectoryRegularPatternOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectTrajectoryRegularPatternAsyncHandler;
 			typedef Outcome<Error, Model::GetCdrsMonitorListResult> GetCdrsMonitorListOutcome;
 			typedef std::future<GetCdrsMonitorListOutcome> GetCdrsMonitorListOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::GetCdrsMonitorListRequest&, const GetCdrsMonitorListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCdrsMonitorListAsyncHandler;
 			typedef Outcome<Error, Model::GetCdrsMonitorResultResult> GetCdrsMonitorResultOutcome;
 			typedef std::future<GetCdrsMonitorResultOutcome> GetCdrsMonitorResultOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::GetCdrsMonitorResultRequest&, const GetCdrsMonitorResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCdrsMonitorResultAsyncHandler;
-			typedef Outcome<Error, Model::IntersectTrajectoryResult> IntersectTrajectoryOutcome;
-			typedef std::future<IntersectTrajectoryOutcome> IntersectTrajectoryOutcomeCallable;
-			typedef std::function<void(const CDRSClient*, const Model::IntersectTrajectoryRequest&, const IntersectTrajectoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IntersectTrajectoryAsyncHandler;
 			typedef Outcome<Error, Model::ListAreaHotSpotMetricsResult> ListAreaHotSpotMetricsOutcome;
 			typedef std::future<ListAreaHotSpotMetricsOutcome> ListAreaHotSpotMetricsOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::ListAreaHotSpotMetricsRequest&, const ListAreaHotSpotMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAreaHotSpotMetricsAsyncHandler;
@@ -268,18 +248,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PaginateProjectResult> PaginateProjectOutcome;
 			typedef std::future<PaginateProjectOutcome> PaginateProjectOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::PaginateProjectRequest&, const PaginateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PaginateProjectAsyncHandler;
-			typedef Outcome<Error, Model::PredictTrajectoryDestinationResult> PredictTrajectoryDestinationOutcome;
-			typedef std::future<PredictTrajectoryDestinationOutcome> PredictTrajectoryDestinationOutcomeCallable;
-			typedef std::function<void(const CDRSClient*, const Model::PredictTrajectoryDestinationRequest&, const PredictTrajectoryDestinationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PredictTrajectoryDestinationAsyncHandler;
-			typedef Outcome<Error, Model::QueryTrajectoryByIdResult> QueryTrajectoryByIdOutcome;
-			typedef std::future<QueryTrajectoryByIdOutcome> QueryTrajectoryByIdOutcomeCallable;
-			typedef std::function<void(const CDRSClient*, const Model::QueryTrajectoryByIdRequest&, const QueryTrajectoryByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTrajectoryByIdAsyncHandler;
-			typedef Outcome<Error, Model::RecallTrajectoryByCoordinateResult> RecallTrajectoryByCoordinateOutcome;
-			typedef std::future<RecallTrajectoryByCoordinateOutcome> RecallTrajectoryByCoordinateOutcomeCallable;
-			typedef std::function<void(const CDRSClient*, const Model::RecallTrajectoryByCoordinateRequest&, const RecallTrajectoryByCoordinateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecallTrajectoryByCoordinateAsyncHandler;
-			typedef Outcome<Error, Model::RecallTrajectoryByIdResult> RecallTrajectoryByIdOutcome;
-			typedef std::future<RecallTrajectoryByIdOutcome> RecallTrajectoryByIdOutcomeCallable;
-			typedef std::function<void(const CDRSClient*, const Model::RecallTrajectoryByIdRequest&, const RecallTrajectoryByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecallTrajectoryByIdAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeImageResult> RecognizeImageOutcome;
 			typedef std::future<RecognizeImageOutcome> RecognizeImageOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::RecognizeImageRequest&, const RecognizeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageAsyncHandler;
@@ -298,9 +266,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateProjectResult> UpdateProjectOutcome;
 			typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 			typedef std::function<void(const CDRSClient*, const Model::UpdateProjectRequest&, const UpdateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
-			typedef Outcome<Error, Model::ValidateTrajectoryResult> ValidateTrajectoryOutcome;
-			typedef std::future<ValidateTrajectoryOutcome> ValidateTrajectoryOutcomeCallable;
-			typedef std::function<void(const CDRSClient*, const Model::ValidateTrajectoryRequest&, const ValidateTrajectoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateTrajectoryAsyncHandler;
 
 			CDRSClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CDRSClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -315,18 +280,12 @@ namespace AlibabaCloud
 			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
 			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
-			DetectTrajectoryRegularPatternOutcome detectTrajectoryRegularPattern(const Model::DetectTrajectoryRegularPatternRequest &request)const;
-			void detectTrajectoryRegularPatternAsync(const Model::DetectTrajectoryRegularPatternRequest& request, const DetectTrajectoryRegularPatternAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectTrajectoryRegularPatternOutcomeCallable detectTrajectoryRegularPatternCallable(const Model::DetectTrajectoryRegularPatternRequest& request) const;
 			GetCdrsMonitorListOutcome getCdrsMonitorList(const Model::GetCdrsMonitorListRequest &request)const;
 			void getCdrsMonitorListAsync(const Model::GetCdrsMonitorListRequest& request, const GetCdrsMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCdrsMonitorListOutcomeCallable getCdrsMonitorListCallable(const Model::GetCdrsMonitorListRequest& request) const;
 			GetCdrsMonitorResultOutcome getCdrsMonitorResult(const Model::GetCdrsMonitorResultRequest &request)const;
 			void getCdrsMonitorResultAsync(const Model::GetCdrsMonitorResultRequest& request, const GetCdrsMonitorResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCdrsMonitorResultOutcomeCallable getCdrsMonitorResultCallable(const Model::GetCdrsMonitorResultRequest& request) const;
-			IntersectTrajectoryOutcome intersectTrajectory(const Model::IntersectTrajectoryRequest &request)const;
-			void intersectTrajectoryAsync(const Model::IntersectTrajectoryRequest& request, const IntersectTrajectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			IntersectTrajectoryOutcomeCallable intersectTrajectoryCallable(const Model::IntersectTrajectoryRequest& request) const;
 			ListAreaHotSpotMetricsOutcome listAreaHotSpotMetrics(const Model::ListAreaHotSpotMetricsRequest &request)const;
 			void listAreaHotSpotMetricsAsync(const Model::ListAreaHotSpotMetricsRequest& request, const ListAreaHotSpotMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAreaHotSpotMetricsOutcomeCallable listAreaHotSpotMetricsCallable(const Model::ListAreaHotSpotMetricsRequest& request) const;
@@ -435,18 +394,6 @@ namespace AlibabaCloud
 			PaginateProjectOutcome paginateProject(const Model::PaginateProjectRequest &request)const;
 			void paginateProjectAsync(const Model::PaginateProjectRequest& request, const PaginateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PaginateProjectOutcomeCallable paginateProjectCallable(const Model::PaginateProjectRequest& request) const;
-			PredictTrajectoryDestinationOutcome predictTrajectoryDestination(const Model::PredictTrajectoryDestinationRequest &request)const;
-			void predictTrajectoryDestinationAsync(const Model::PredictTrajectoryDestinationRequest& request, const PredictTrajectoryDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PredictTrajectoryDestinationOutcomeCallable predictTrajectoryDestinationCallable(const Model::PredictTrajectoryDestinationRequest& request) const;
-			QueryTrajectoryByIdOutcome queryTrajectoryById(const Model::QueryTrajectoryByIdRequest &request)const;
-			void queryTrajectoryByIdAsync(const Model::QueryTrajectoryByIdRequest& request, const QueryTrajectoryByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryTrajectoryByIdOutcomeCallable queryTrajectoryByIdCallable(const Model::QueryTrajectoryByIdRequest& request) const;
-			RecallTrajectoryByCoordinateOutcome recallTrajectoryByCoordinate(const Model::RecallTrajectoryByCoordinateRequest &request)const;
-			void recallTrajectoryByCoordinateAsync(const Model::RecallTrajectoryByCoordinateRequest& request, const RecallTrajectoryByCoordinateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RecallTrajectoryByCoordinateOutcomeCallable recallTrajectoryByCoordinateCallable(const Model::RecallTrajectoryByCoordinateRequest& request) const;
-			RecallTrajectoryByIdOutcome recallTrajectoryById(const Model::RecallTrajectoryByIdRequest &request)const;
-			void recallTrajectoryByIdAsync(const Model::RecallTrajectoryByIdRequest& request, const RecallTrajectoryByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RecallTrajectoryByIdOutcomeCallable recallTrajectoryByIdCallable(const Model::RecallTrajectoryByIdRequest& request) const;
 			RecognizeImageOutcome recognizeImage(const Model::RecognizeImageRequest &request)const;
 			void recognizeImageAsync(const Model::RecognizeImageRequest& request, const RecognizeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageOutcomeCallable recognizeImageCallable(const Model::RecognizeImageRequest& request) const;
@@ -465,9 +412,6 @@ namespace AlibabaCloud
 			UpdateProjectOutcome updateProject(const Model::UpdateProjectRequest &request)const;
 			void updateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateProjectOutcomeCallable updateProjectCallable(const Model::UpdateProjectRequest& request) const;
-			ValidateTrajectoryOutcome validateTrajectory(const Model::ValidateTrajectoryRequest &request)const;
-			void validateTrajectoryAsync(const Model::ValidateTrajectoryRequest& request, const ValidateTrajectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ValidateTrajectoryOutcomeCallable validateTrajectoryCallable(const Model::ValidateTrajectoryRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

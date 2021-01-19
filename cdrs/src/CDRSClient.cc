@@ -159,42 +159,6 @@ CDRSClient::CreateProjectOutcomeCallable CDRSClient::createProjectCallable(const
 	return task->get_future();
 }
 
-CDRSClient::DetectTrajectoryRegularPatternOutcome CDRSClient::detectTrajectoryRegularPattern(const DetectTrajectoryRegularPatternRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectTrajectoryRegularPatternOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectTrajectoryRegularPatternOutcome(DetectTrajectoryRegularPatternResult(outcome.result()));
-	else
-		return DetectTrajectoryRegularPatternOutcome(outcome.error());
-}
-
-void CDRSClient::detectTrajectoryRegularPatternAsync(const DetectTrajectoryRegularPatternRequest& request, const DetectTrajectoryRegularPatternAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectTrajectoryRegularPattern(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CDRSClient::DetectTrajectoryRegularPatternOutcomeCallable CDRSClient::detectTrajectoryRegularPatternCallable(const DetectTrajectoryRegularPatternRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectTrajectoryRegularPatternOutcome()>>(
-			[this, request]()
-			{
-			return this->detectTrajectoryRegularPattern(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CDRSClient::GetCdrsMonitorListOutcome CDRSClient::getCdrsMonitorList(const GetCdrsMonitorListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,42 +225,6 @@ CDRSClient::GetCdrsMonitorResultOutcomeCallable CDRSClient::getCdrsMonitorResult
 			[this, request]()
 			{
 			return this->getCdrsMonitorResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CDRSClient::IntersectTrajectoryOutcome CDRSClient::intersectTrajectory(const IntersectTrajectoryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return IntersectTrajectoryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return IntersectTrajectoryOutcome(IntersectTrajectoryResult(outcome.result()));
-	else
-		return IntersectTrajectoryOutcome(outcome.error());
-}
-
-void CDRSClient::intersectTrajectoryAsync(const IntersectTrajectoryRequest& request, const IntersectTrajectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, intersectTrajectory(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CDRSClient::IntersectTrajectoryOutcomeCallable CDRSClient::intersectTrajectoryCallable(const IntersectTrajectoryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<IntersectTrajectoryOutcome()>>(
-			[this, request]()
-			{
-			return this->intersectTrajectory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1599,150 +1527,6 @@ CDRSClient::PaginateProjectOutcomeCallable CDRSClient::paginateProjectCallable(c
 	return task->get_future();
 }
 
-CDRSClient::PredictTrajectoryDestinationOutcome CDRSClient::predictTrajectoryDestination(const PredictTrajectoryDestinationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PredictTrajectoryDestinationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PredictTrajectoryDestinationOutcome(PredictTrajectoryDestinationResult(outcome.result()));
-	else
-		return PredictTrajectoryDestinationOutcome(outcome.error());
-}
-
-void CDRSClient::predictTrajectoryDestinationAsync(const PredictTrajectoryDestinationRequest& request, const PredictTrajectoryDestinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, predictTrajectoryDestination(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CDRSClient::PredictTrajectoryDestinationOutcomeCallable CDRSClient::predictTrajectoryDestinationCallable(const PredictTrajectoryDestinationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PredictTrajectoryDestinationOutcome()>>(
-			[this, request]()
-			{
-			return this->predictTrajectoryDestination(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CDRSClient::QueryTrajectoryByIdOutcome CDRSClient::queryTrajectoryById(const QueryTrajectoryByIdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryTrajectoryByIdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryTrajectoryByIdOutcome(QueryTrajectoryByIdResult(outcome.result()));
-	else
-		return QueryTrajectoryByIdOutcome(outcome.error());
-}
-
-void CDRSClient::queryTrajectoryByIdAsync(const QueryTrajectoryByIdRequest& request, const QueryTrajectoryByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryTrajectoryById(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CDRSClient::QueryTrajectoryByIdOutcomeCallable CDRSClient::queryTrajectoryByIdCallable(const QueryTrajectoryByIdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryTrajectoryByIdOutcome()>>(
-			[this, request]()
-			{
-			return this->queryTrajectoryById(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CDRSClient::RecallTrajectoryByCoordinateOutcome CDRSClient::recallTrajectoryByCoordinate(const RecallTrajectoryByCoordinateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecallTrajectoryByCoordinateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecallTrajectoryByCoordinateOutcome(RecallTrajectoryByCoordinateResult(outcome.result()));
-	else
-		return RecallTrajectoryByCoordinateOutcome(outcome.error());
-}
-
-void CDRSClient::recallTrajectoryByCoordinateAsync(const RecallTrajectoryByCoordinateRequest& request, const RecallTrajectoryByCoordinateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recallTrajectoryByCoordinate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CDRSClient::RecallTrajectoryByCoordinateOutcomeCallable CDRSClient::recallTrajectoryByCoordinateCallable(const RecallTrajectoryByCoordinateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecallTrajectoryByCoordinateOutcome()>>(
-			[this, request]()
-			{
-			return this->recallTrajectoryByCoordinate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CDRSClient::RecallTrajectoryByIdOutcome CDRSClient::recallTrajectoryById(const RecallTrajectoryByIdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecallTrajectoryByIdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecallTrajectoryByIdOutcome(RecallTrajectoryByIdResult(outcome.result()));
-	else
-		return RecallTrajectoryByIdOutcome(outcome.error());
-}
-
-void CDRSClient::recallTrajectoryByIdAsync(const RecallTrajectoryByIdRequest& request, const RecallTrajectoryByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recallTrajectoryById(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CDRSClient::RecallTrajectoryByIdOutcomeCallable CDRSClient::recallTrajectoryByIdCallable(const RecallTrajectoryByIdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecallTrajectoryByIdOutcome()>>(
-			[this, request]()
-			{
-			return this->recallTrajectoryById(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CDRSClient::RecognizeImageOutcome CDRSClient::recognizeImage(const RecognizeImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,42 +1737,6 @@ CDRSClient::UpdateProjectOutcomeCallable CDRSClient::updateProjectCallable(const
 			[this, request]()
 			{
 			return this->updateProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CDRSClient::ValidateTrajectoryOutcome CDRSClient::validateTrajectory(const ValidateTrajectoryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ValidateTrajectoryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ValidateTrajectoryOutcome(ValidateTrajectoryResult(outcome.result()));
-	else
-		return ValidateTrajectoryOutcome(outcome.error());
-}
-
-void CDRSClient::validateTrajectoryAsync(const ValidateTrajectoryRequest& request, const ValidateTrajectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, validateTrajectory(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CDRSClient::ValidateTrajectoryOutcomeCallable CDRSClient::validateTrajectoryCallable(const ValidateTrajectoryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ValidateTrajectoryOutcome()>>(
-			[this, request]()
-			{
-			return this->validateTrajectory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

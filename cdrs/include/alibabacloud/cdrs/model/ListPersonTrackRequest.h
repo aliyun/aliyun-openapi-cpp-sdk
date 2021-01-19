@@ -39,6 +39,10 @@ namespace AlibabaCloud
 				void setSchema(const std::string& schema);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
+				std::string getAggregateDimension()const;
+				void setAggregateDimension(const std::string& aggregateDimension);
+				std::string getImageSourceType()const;
+				void setImageSourceType(const std::string& imageSourceType);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
@@ -53,6 +57,8 @@ namespace AlibabaCloud
             private:
 				std::string schema_;
 				std::string corpId_;
+				std::string aggregateDimension_;
+				std::string imageSourceType_;
 				std::string endTime_;
 				std::string startTime_;
 				long pageNumber_;
