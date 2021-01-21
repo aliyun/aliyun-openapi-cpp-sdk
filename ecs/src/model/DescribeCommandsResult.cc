@@ -49,6 +49,14 @@ void DescribeCommandsResult::parse(const std::string &payload)
 			commandsObject.name = valueCommandsCommand["Name"].asString();
 		if(!valueCommandsCommand["Type"].isNull())
 			commandsObject.type = valueCommandsCommand["Type"].asString();
+		if(!valueCommandsCommand["Version"].isNull())
+			commandsObject.version = std::stoi(valueCommandsCommand["Version"].asString());
+		if(!valueCommandsCommand["Latest"].isNull())
+			commandsObject.latest = valueCommandsCommand["Latest"].asString() == "true";
+		if(!valueCommandsCommand["Provider"].isNull())
+			commandsObject.provider = valueCommandsCommand["Provider"].asString();
+		if(!valueCommandsCommand["Category"].isNull())
+			commandsObject.category = valueCommandsCommand["Category"].asString();
 		if(!valueCommandsCommand["Description"].isNull())
 			commandsObject.description = valueCommandsCommand["Description"].asString();
 		if(!valueCommandsCommand["CommandContent"].isNull())

@@ -87,6 +87,8 @@ namespace AlibabaCloud
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
 				std::string getStatus()const;
@@ -105,6 +107,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
 				std::string getRdmaIpAddresses()const;
 				void setRdmaIpAddresses(const std::string& rdmaIpAddresses);
 				std::string getHttpEndpoint()const;
@@ -158,6 +162,7 @@ namespace AlibabaCloud
 				std::string instanceIds_;
 				std::string internetChargeType_;
 				std::string zoneId_;
+				int maxResults_;
 				std::string instanceNetworkType_;
 				std::string status_;
 				std::string imageId_;
@@ -167,6 +172,7 @@ namespace AlibabaCloud
 				std::string filter4Key_;
 				int pageNumber_;
 				std::string regionId_;
+				std::string nextToken_;
 				std::string rdmaIpAddresses_;
 				std::string httpEndpoint_;
 				int pageSize_;

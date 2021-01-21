@@ -93,6 +93,17 @@ void DescribeCommandsRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string DescribeCommandsRequest::getProvider()const
+{
+	return provider_;
+}
+
+void DescribeCommandsRequest::setProvider(const std::string& provider)
+{
+	provider_ = provider;
+	setParameter("Provider", provider);
+}
+
 std::string DescribeCommandsRequest::getContentEncoding()const
 {
 	return contentEncoding_;

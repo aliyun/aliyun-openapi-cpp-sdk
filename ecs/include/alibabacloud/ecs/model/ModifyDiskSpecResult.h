@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit ModifyDiskSpecResult(const std::string &payload);
 				~ModifyDiskSpecResult();
 				std::string getTaskId()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string taskId_;
+				std::string orderId_;
 
 			};
 		}

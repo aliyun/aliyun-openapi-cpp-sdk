@@ -175,6 +175,7 @@ namespace AlibabaCloud
 				std::vector<Instance> getInstances()const;
 				int getTotalCount()const;
 				int getPageSize()const;
+				std::string getNextToken()const;
 				int getPageNumber()const;
 
 			protected:
@@ -183,6 +184,7 @@ namespace AlibabaCloud
 				std::vector<Instance> instances_;
 				int totalCount_;
 				int pageSize_;
+				std::string nextToken_;
 				int pageNumber_;
 
 			};

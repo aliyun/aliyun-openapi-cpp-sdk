@@ -140,6 +140,8 @@ namespace AlibabaCloud
 				void setSchedulerOptions(const std::string& schedulerOptions);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getSchedulerOptionsDedicatedHostClusterId()const;
+				void setSchedulerOptionsDedicatedHostClusterId(const std::string& schedulerOptionsDedicatedHostClusterId);
 				std::string getSystemDiskDiskName()const;
 				void setSystemDiskDiskName(const std::string& systemDiskDiskName);
 				std::string getDedicatedHostId()const;
@@ -272,6 +274,7 @@ namespace AlibabaCloud
 				std::vector<Arn> arn_;
 				std::string schedulerOptions_;
 				std::string resourceOwnerAccount_;
+				std::string schedulerOptionsDedicatedHostClusterId_;
 				std::string systemDiskDiskName_;
 				std::string dedicatedHostId_;
 				std::vector<std::string> securityGroupIds_;

@@ -407,6 +407,17 @@ void RunInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwn
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string RunInstancesRequest::getSchedulerOptionsDedicatedHostClusterId()const
+{
+	return schedulerOptionsDedicatedHostClusterId_;
+}
+
+void RunInstancesRequest::setSchedulerOptionsDedicatedHostClusterId(const std::string& schedulerOptionsDedicatedHostClusterId)
+{
+	schedulerOptionsDedicatedHostClusterId_ = schedulerOptionsDedicatedHostClusterId;
+	setParameter("SchedulerOptionsDedicatedHostClusterId", schedulerOptionsDedicatedHostClusterId);
+}
+
 std::string RunInstancesRequest::getSystemDiskDiskName()const
 {
 	return systemDiskDiskName_;

@@ -287,6 +287,17 @@ void DescribeInstancesRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
+int DescribeInstancesRequest::getMaxResults()const
+{
+	return maxResults_;
+}
+
+void DescribeInstancesRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
+}
+
 std::string DescribeInstancesRequest::getInstanceNetworkType()const
 {
 	return instanceNetworkType_;
@@ -384,6 +395,17 @@ void DescribeInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string DescribeInstancesRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void DescribeInstancesRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
 }
 
 std::string DescribeInstancesRequest::getRdmaIpAddresses()const

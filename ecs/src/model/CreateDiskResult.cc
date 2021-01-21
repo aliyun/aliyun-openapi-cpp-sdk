@@ -41,7 +41,14 @@ void CreateDiskResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["DiskId"].isNull())
 		diskId_ = value["DiskId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
+}
+
+std::string CreateDiskResult::getOrderId()const
+{
+	return orderId_;
 }
 
 std::string CreateDiskResult::getDiskId()const

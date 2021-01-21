@@ -261,6 +261,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -277,6 +279,11 @@ int DescribeInstancesResult::getTotalCount()const
 int DescribeInstancesResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeInstancesResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 int DescribeInstancesResult::getPageNumber()const

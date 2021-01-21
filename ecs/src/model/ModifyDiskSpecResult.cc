@@ -41,11 +41,18 @@ void ModifyDiskSpecResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
 std::string ModifyDiskSpecResult::getTaskId()const
 {
 	return taskId_;
+}
+
+std::string ModifyDiskSpecResult::getOrderId()const
+{
+	return orderId_;
 }
 
