@@ -69,6 +69,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/GetDevopsProjectSprintInfoResult.h
 	include/alibabacloud/devops-rdc/model/GetDevopsProjectTaskInfoRequest.h
 	include/alibabacloud/devops-rdc/model/GetDevopsProjectTaskInfoResult.h
+	include/alibabacloud/devops-rdc/model/GetLastWorkspaceRequest.h
+	include/alibabacloud/devops-rdc/model/GetLastWorkspaceResult.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstHistoryRequest.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstHistoryResult.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstanceBuildNumberStatusRequest.h
@@ -194,6 +196,8 @@ set(devops-rdc_src
 	src/model/GetDevopsProjectSprintInfoResult.cc
 	src/model/GetDevopsProjectTaskInfoRequest.cc
 	src/model/GetDevopsProjectTaskInfoResult.cc
+	src/model/GetLastWorkspaceRequest.cc
+	src/model/GetLastWorkspaceResult.cc
 	src/model/GetPipelineInstHistoryRequest.cc
 	src/model/GetPipelineInstHistoryResult.cc
 	src/model/GetPipelineInstanceBuildNumberStatusRequest.cc

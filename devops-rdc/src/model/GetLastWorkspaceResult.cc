@@ -14,66 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/devops-rdc/model/ListUserOrganizationResult.h>
+#include <alibabacloud/devops-rdc/model/GetLastWorkspaceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Devops_rdc;
 using namespace AlibabaCloud::Devops_rdc::Model;
 
-ListUserOrganizationResult::ListUserOrganizationResult() :
+GetLastWorkspaceResult::GetLastWorkspaceResult() :
 	ServiceResult()
 {}
 
-ListUserOrganizationResult::ListUserOrganizationResult(const std::string &payload) :
+GetLastWorkspaceResult::GetLastWorkspaceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListUserOrganizationResult::~ListUserOrganizationResult()
+GetLastWorkspaceResult::~GetLastWorkspaceResult()
 {}
 
-void ListUserOrganizationResult::parse(const std::string &payload)
+void GetLastWorkspaceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allObjectNode = value["Object"]["Organization"];
-	for (auto valueObjectOrganization : allObjectNode)
-	{
-		Organization objectObject;
-		if(!valueObjectOrganization["Name"].isNull())
-			objectObject.name = valueObjectOrganization["Name"].asString();
-		if(!valueObjectOrganization["Id"].isNull())
-			objectObject.id = valueObjectOrganization["Id"].asString();
-		object_.push_back(objectObject);
-	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["Object"].isNull())
+		object_ = value["Object"].asString();
 
 }
 
-std::vector<ListUserOrganizationResult::Organization> ListUserOrganizationResult::getObject()const
+std::string GetLastWorkspaceResult::getObject()const
 {
 	return object_;
 }
 
-std::string ListUserOrganizationResult::getErrorCode()const
+std::string GetLastWorkspaceResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string ListUserOrganizationResult::getErrorMessage()const
+std::string GetLastWorkspaceResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-bool ListUserOrganizationResult::getSuccess()const
+bool GetLastWorkspaceResult::getSuccess()const
 {
 	return success_;
 }

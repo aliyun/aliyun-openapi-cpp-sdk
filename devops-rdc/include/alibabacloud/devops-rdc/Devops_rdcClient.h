@@ -70,6 +70,8 @@
 #include "model/GetDevopsProjectSprintInfoResult.h"
 #include "model/GetDevopsProjectTaskInfoRequest.h"
 #include "model/GetDevopsProjectTaskInfoResult.h"
+#include "model/GetLastWorkspaceRequest.h"
+#include "model/GetLastWorkspaceResult.h"
 #include "model/GetPipelineInstHistoryRequest.h"
 #include "model/GetPipelineInstHistoryResult.h"
 #include "model/GetPipelineInstanceBuildNumberStatusRequest.h"
@@ -225,6 +227,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDevopsProjectTaskInfoResult> GetDevopsProjectTaskInfoOutcome;
 			typedef std::future<GetDevopsProjectTaskInfoOutcome> GetDevopsProjectTaskInfoOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::GetDevopsProjectTaskInfoRequest&, const GetDevopsProjectTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDevopsProjectTaskInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetLastWorkspaceResult> GetLastWorkspaceOutcome;
+			typedef std::future<GetLastWorkspaceOutcome> GetLastWorkspaceOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::GetLastWorkspaceRequest&, const GetLastWorkspaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLastWorkspaceAsyncHandler;
 			typedef Outcome<Error, Model::GetPipelineInstHistoryResult> GetPipelineInstHistoryOutcome;
 			typedef std::future<GetPipelineInstHistoryOutcome> GetPipelineInstHistoryOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::GetPipelineInstHistoryRequest&, const GetPipelineInstHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPipelineInstHistoryAsyncHandler;
@@ -413,6 +418,9 @@ namespace AlibabaCloud
 			GetDevopsProjectTaskInfoOutcome getDevopsProjectTaskInfo(const Model::GetDevopsProjectTaskInfoRequest &request)const;
 			void getDevopsProjectTaskInfoAsync(const Model::GetDevopsProjectTaskInfoRequest& request, const GetDevopsProjectTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDevopsProjectTaskInfoOutcomeCallable getDevopsProjectTaskInfoCallable(const Model::GetDevopsProjectTaskInfoRequest& request) const;
+			GetLastWorkspaceOutcome getLastWorkspace(const Model::GetLastWorkspaceRequest &request)const;
+			void getLastWorkspaceAsync(const Model::GetLastWorkspaceRequest& request, const GetLastWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLastWorkspaceOutcomeCallable getLastWorkspaceCallable(const Model::GetLastWorkspaceRequest& request) const;
 			GetPipelineInstHistoryOutcome getPipelineInstHistory(const Model::GetPipelineInstHistoryRequest &request)const;
 			void getPipelineInstHistoryAsync(const Model::GetPipelineInstHistoryRequest& request, const GetPipelineInstHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPipelineInstHistoryOutcomeCallable getPipelineInstHistoryCallable(const Model::GetPipelineInstHistoryRequest& request) const;

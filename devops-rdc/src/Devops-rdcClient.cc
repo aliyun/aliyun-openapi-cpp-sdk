@@ -915,6 +915,42 @@ Devops_rdcClient::GetDevopsProjectTaskInfoOutcomeCallable Devops_rdcClient::getD
 	return task->get_future();
 }
 
+Devops_rdcClient::GetLastWorkspaceOutcome Devops_rdcClient::getLastWorkspace(const GetLastWorkspaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLastWorkspaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLastWorkspaceOutcome(GetLastWorkspaceResult(outcome.result()));
+	else
+		return GetLastWorkspaceOutcome(outcome.error());
+}
+
+void Devops_rdcClient::getLastWorkspaceAsync(const GetLastWorkspaceRequest& request, const GetLastWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLastWorkspace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::GetLastWorkspaceOutcomeCallable Devops_rdcClient::getLastWorkspaceCallable(const GetLastWorkspaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLastWorkspaceOutcome()>>(
+			[this, request]()
+			{
+			return this->getLastWorkspace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::GetPipelineInstHistoryOutcome Devops_rdcClient::getPipelineInstHistory(const GetPipelineInstHistoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

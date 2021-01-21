@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DEVOPS_RDC_MODEL_LISTUSERORGANIZATIONRESULT_H_
-#define ALIBABACLOUD_DEVOPS_RDC_MODEL_LISTUSERORGANIZATIONRESULT_H_
+#ifndef ALIBABACLOUD_DEVOPS_RDC_MODEL_GETLASTWORKSPACERESULT_H_
+#define ALIBABACLOUD_DEVOPS_RDC_MODEL_GETLASTWORKSPACERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,20 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DEVOPS_RDC_EXPORT ListUserOrganizationResult : public ServiceResult
+			class ALIBABACLOUD_DEVOPS_RDC_EXPORT GetLastWorkspaceResult : public ServiceResult
 			{
 			public:
-				struct Organization
-				{
-					std::string id;
-					std::string name;
-				};
 
 
-				ListUserOrganizationResult();
-				explicit ListUserOrganizationResult(const std::string &payload);
-				~ListUserOrganizationResult();
-				std::vector<Organization> getObject()const;
+				GetLastWorkspaceResult();
+				explicit GetLastWorkspaceResult(const std::string &payload);
+				~GetLastWorkspaceResult();
+				std::string getObject()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -50,7 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Organization> object_;
+				std::string object_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -59,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DEVOPS_RDC_MODEL_LISTUSERORGANIZATIONRESULT_H_
+#endif // !ALIBABACLOUD_DEVOPS_RDC_MODEL_GETLASTWORKSPACERESULT_H_
