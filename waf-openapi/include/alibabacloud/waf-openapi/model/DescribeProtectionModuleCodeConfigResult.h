@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPERESULT_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPERESULT_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULECODECONFIGRESULT_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULECODECONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT ModifyDomainClusterTypeResult : public ServiceResult
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeProtectionModuleCodeConfigResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyDomainClusterTypeResult();
-				explicit ModifyDomainClusterTypeResult(const std::string &payload);
-				~ModifyDomainClusterTypeResult();
+				DescribeProtectionModuleCodeConfigResult();
+				explicit DescribeProtectionModuleCodeConfigResult(const std::string &payload);
+				~DescribeProtectionModuleCodeConfigResult();
+				std::string getCodeConfigs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string codeConfigs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPERESULT_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULECODECONFIGRESULT_H_

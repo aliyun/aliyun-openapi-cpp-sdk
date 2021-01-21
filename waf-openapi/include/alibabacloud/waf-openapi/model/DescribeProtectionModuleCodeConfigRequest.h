@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPEREQUEST_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPEREQUEST_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULECODECONFIGREQUEST_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULECODECONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT ModifyDomainClusterTypeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeProtectionModuleCodeConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDomainClusterTypeRequest();
-				~ModifyDomainClusterTypeRequest();
+				DescribeProtectionModuleCodeConfigRequest();
+				~DescribeProtectionModuleCodeConfigRequest();
 
-				int getClusterType()const;
-				void setClusterType(int clusterType);
+				int getCodeValue()const;
+				void setCodeValue(int codeValue);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getDomain()const;
-				void setDomain(const std::string& domain);
+				int getCodeType()const;
+				void setCodeType(int codeType);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				int clusterType_;
+				int codeValue_;
+				std::string resourceGroupId_;
 				std::string instanceId_;
 				std::string sourceIp_;
-				std::string domain_;
+				int codeType_;
+				std::string lang_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_MODIFYDOMAINCLUSTERTYPEREQUEST_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULECODECONFIGREQUEST_H_

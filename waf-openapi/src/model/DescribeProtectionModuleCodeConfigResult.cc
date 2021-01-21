@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/waf-openapi/model/ModifyDomainClusterTypeResult.h>
+#include <alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Waf_openapi;
 using namespace AlibabaCloud::Waf_openapi::Model;
 
-ModifyDomainClusterTypeResult::ModifyDomainClusterTypeResult() :
+DescribeProtectionModuleCodeConfigResult::DescribeProtectionModuleCodeConfigResult() :
 	ServiceResult()
 {}
 
-ModifyDomainClusterTypeResult::ModifyDomainClusterTypeResult(const std::string &payload) :
+DescribeProtectionModuleCodeConfigResult::DescribeProtectionModuleCodeConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyDomainClusterTypeResult::~ModifyDomainClusterTypeResult()
+DescribeProtectionModuleCodeConfigResult::~DescribeProtectionModuleCodeConfigResult()
 {}
 
-void ModifyDomainClusterTypeResult::parse(const std::string &payload)
+void DescribeProtectionModuleCodeConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["CodeConfigs"].isNull())
+		codeConfigs_ = value["CodeConfigs"].asString();
 
+}
+
+std::string DescribeProtectionModuleCodeConfigResult::getCodeConfigs()const
+{
+	return codeConfigs_;
 }
 

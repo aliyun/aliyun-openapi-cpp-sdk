@@ -55,6 +55,8 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeInstanceInfosResult.h
 	include/alibabacloud/waf-openapi/model/DescribeInstanceSpecInfoRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeInstanceSpecInfoResult.h
+	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesRequest.h
@@ -65,8 +67,6 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeWafSourceIpSegmentResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainResult.h
-	include/alibabacloud/waf-openapi/model/ModifyDomainClusterTypeRequest.h
-	include/alibabacloud/waf-openapi/model/ModifyDomainClusterTypeResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainIpv6StatusRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainIpv6StatusResult.h
 	include/alibabacloud/waf-openapi/model/ModifyLogRetrievalStatusRequest.h
@@ -122,6 +122,8 @@ set(waf-openapi_src
 	src/model/DescribeInstanceInfosResult.cc
 	src/model/DescribeInstanceSpecInfoRequest.cc
 	src/model/DescribeInstanceSpecInfoResult.cc
+	src/model/DescribeProtectionModuleCodeConfigRequest.cc
+	src/model/DescribeProtectionModuleCodeConfigResult.cc
 	src/model/DescribeProtectionModuleModeRequest.cc
 	src/model/DescribeProtectionModuleModeResult.cc
 	src/model/DescribeProtectionModuleRulesRequest.cc
@@ -132,8 +134,6 @@ set(waf-openapi_src
 	src/model/DescribeWafSourceIpSegmentResult.cc
 	src/model/ModifyDomainRequest.cc
 	src/model/ModifyDomainResult.cc
-	src/model/ModifyDomainClusterTypeRequest.cc
-	src/model/ModifyDomainClusterTypeResult.cc
 	src/model/ModifyDomainIpv6StatusRequest.cc
 	src/model/ModifyDomainIpv6StatusResult.cc
 	src/model/ModifyLogRetrievalStatusRequest.cc
