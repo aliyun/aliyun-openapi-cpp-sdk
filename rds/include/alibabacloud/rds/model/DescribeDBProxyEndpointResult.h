@@ -32,30 +32,42 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RDS_EXPORT DescribeDBProxyEndpointResult : public ServiceResult
 			{
 			public:
+				struct EndpointConnectItemsItem
+				{
+					std::string dbProxyEndpointNetType;
+					std::string dbProxyEndpointPort;
+					std::string dbProxyEndpointConnectString;
+				};
 
 
 				DescribeDBProxyEndpointResult();
 				explicit DescribeDBProxyEndpointResult(const std::string &payload);
 				~DescribeDBProxyEndpointResult();
 				std::string getReadOnlyInstanceDistributionType()const;
+				std::string getDbProxyEndpointReadWriteMode()const;
 				std::string getDBProxyConnectString()const;
 				std::string getDBProxyEndpointId()const;
+				std::string getDbProxyEndpointAliases()const;
 				std::string getDBProxyFeatures()const;
 				std::string getReadOnlyInstanceWeight()const;
 				std::string getReadOnlyInstanceMaxDelayTime()const;
 				std::string getDBProxyConnectStringNetType()const;
+				std::vector<EndpointConnectItemsItem> getEndpointConnectItems()const;
 				std::string getDBProxyConnectStringPort()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string readOnlyInstanceDistributionType_;
+				std::string dbProxyEndpointReadWriteMode_;
 				std::string dBProxyConnectString_;
 				std::string dBProxyEndpointId_;
+				std::string dbProxyEndpointAliases_;
 				std::string dBProxyFeatures_;
 				std::string readOnlyInstanceWeight_;
 				std::string readOnlyInstanceMaxDelayTime_;
 				std::string dBProxyConnectStringNetType_;
+				std::vector<EndpointConnectItemsItem> endpointConnectItems_;
 				std::string dBProxyConnectStringPort_;
 
 			};

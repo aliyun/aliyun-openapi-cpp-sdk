@@ -115,6 +115,39 @@ void ModifyDBProxyEndpointRequest::setResourceOwnerAccount(const std::string& re
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string ModifyDBProxyEndpointRequest::getDbEndpointAliases()const
+{
+	return dbEndpointAliases_;
+}
+
+void ModifyDBProxyEndpointRequest::setDbEndpointAliases(const std::string& dbEndpointAliases)
+{
+	dbEndpointAliases_ = dbEndpointAliases;
+	setParameter("DbEndpointAliases", dbEndpointAliases);
+}
+
+std::string ModifyDBProxyEndpointRequest::getDbEndpointOperator()const
+{
+	return dbEndpointOperator_;
+}
+
+void ModifyDBProxyEndpointRequest::setDbEndpointOperator(const std::string& dbEndpointOperator)
+{
+	dbEndpointOperator_ = dbEndpointOperator;
+	setParameter("DbEndpointOperator", dbEndpointOperator);
+}
+
+std::string ModifyDBProxyEndpointRequest::getDbEndpointType()const
+{
+	return dbEndpointType_;
+}
+
+void ModifyDBProxyEndpointRequest::setDbEndpointType(const std::string& dbEndpointType)
+{
+	dbEndpointType_ = dbEndpointType;
+	setParameter("DbEndpointType", dbEndpointType);
+}
+
 long ModifyDBProxyEndpointRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,6 +157,17 @@ void ModifyDBProxyEndpointRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyDBProxyEndpointRequest::getDbEndpointReadWriteMode()const
+{
+	return dbEndpointReadWriteMode_;
+}
+
+void ModifyDBProxyEndpointRequest::setDbEndpointReadWriteMode(const std::string& dbEndpointReadWriteMode)
+{
+	dbEndpointReadWriteMode_ = dbEndpointReadWriteMode;
+	setParameter("DbEndpointReadWriteMode", dbEndpointReadWriteMode);
 }
 
 std::string ModifyDBProxyEndpointRequest::getDBProxyEndpointId()const

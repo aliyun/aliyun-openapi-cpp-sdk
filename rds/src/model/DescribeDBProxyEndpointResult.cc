@@ -39,6 +39,18 @@ void DescribeDBProxyEndpointResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allEndpointConnectItemsNode = value["EndpointConnectItems"]["EndpointConnectItemsItem"];
+	for (auto valueEndpointConnectItemsEndpointConnectItemsItem : allEndpointConnectItemsNode)
+	{
+		EndpointConnectItemsItem endpointConnectItemsObject;
+		if(!valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointConnectString"].isNull())
+			endpointConnectItemsObject.dbProxyEndpointConnectString = valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointConnectString"].asString();
+		if(!valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointPort"].isNull())
+			endpointConnectItemsObject.dbProxyEndpointPort = valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointPort"].asString();
+		if(!valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointNetType"].isNull())
+			endpointConnectItemsObject.dbProxyEndpointNetType = valueEndpointConnectItemsEndpointConnectItemsItem["DbProxyEndpointNetType"].asString();
+		endpointConnectItems_.push_back(endpointConnectItemsObject);
+	}
 	if(!value["DBProxyEndpointId"].isNull())
 		dBProxyEndpointId_ = value["DBProxyEndpointId"].asString();
 	if(!value["DBProxyConnectString"].isNull())
@@ -55,12 +67,21 @@ void DescribeDBProxyEndpointResult::parse(const std::string &payload)
 		readOnlyInstanceDistributionType_ = value["ReadOnlyInstanceDistributionType"].asString();
 	if(!value["ReadOnlyInstanceWeight"].isNull())
 		readOnlyInstanceWeight_ = value["ReadOnlyInstanceWeight"].asString();
+	if(!value["DbProxyEndpointAliases"].isNull())
+		dbProxyEndpointAliases_ = value["DbProxyEndpointAliases"].asString();
+	if(!value["DbProxyEndpointReadWriteMode"].isNull())
+		dbProxyEndpointReadWriteMode_ = value["DbProxyEndpointReadWriteMode"].asString();
 
 }
 
 std::string DescribeDBProxyEndpointResult::getReadOnlyInstanceDistributionType()const
 {
 	return readOnlyInstanceDistributionType_;
+}
+
+std::string DescribeDBProxyEndpointResult::getDbProxyEndpointReadWriteMode()const
+{
+	return dbProxyEndpointReadWriteMode_;
 }
 
 std::string DescribeDBProxyEndpointResult::getDBProxyConnectString()const
@@ -71,6 +92,11 @@ std::string DescribeDBProxyEndpointResult::getDBProxyConnectString()const
 std::string DescribeDBProxyEndpointResult::getDBProxyEndpointId()const
 {
 	return dBProxyEndpointId_;
+}
+
+std::string DescribeDBProxyEndpointResult::getDbProxyEndpointAliases()const
+{
+	return dbProxyEndpointAliases_;
 }
 
 std::string DescribeDBProxyEndpointResult::getDBProxyFeatures()const
@@ -91,6 +117,11 @@ std::string DescribeDBProxyEndpointResult::getReadOnlyInstanceMaxDelayTime()cons
 std::string DescribeDBProxyEndpointResult::getDBProxyConnectStringNetType()const
 {
 	return dBProxyConnectStringNetType_;
+}
+
+std::vector<DescribeDBProxyEndpointResult::EndpointConnectItemsItem> DescribeDBProxyEndpointResult::getEndpointConnectItems()const
+{
+	return endpointConnectItems_;
 }
 
 std::string DescribeDBProxyEndpointResult::getDBProxyConnectStringPort()const

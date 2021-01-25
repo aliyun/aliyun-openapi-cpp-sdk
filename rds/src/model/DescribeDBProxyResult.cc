@@ -59,6 +59,20 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 			dBProxyConnectStringItemsObject.dBProxyConnectStringNetWorkType = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringNetWorkType"].asString();
 		dBProxyConnectStringItems_.push_back(dBProxyConnectStringItemsObject);
 	}
+	auto allDbProxyEndpointItemsNode = value["DbProxyEndpointItems"]["DbProxyEndpointItemsItem"];
+	for (auto valueDbProxyEndpointItemsDbProxyEndpointItemsItem : allDbProxyEndpointItemsNode)
+	{
+		DbProxyEndpointItemsItem dbProxyEndpointItemsObject;
+		if(!valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyEndpointName"].isNull())
+			dbProxyEndpointItemsObject.dbProxyEndpointName = valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyEndpointName"].asString();
+		if(!valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyEndpointType"].isNull())
+			dbProxyEndpointItemsObject.dbProxyEndpointType = valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyEndpointType"].asString();
+		if(!valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyReadWriteMode"].isNull())
+			dbProxyEndpointItemsObject.dbProxyReadWriteMode = valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyReadWriteMode"].asString();
+		if(!valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyEndpointAliases"].isNull())
+			dbProxyEndpointItemsObject.dbProxyEndpointAliases = valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyEndpointAliases"].asString();
+		dbProxyEndpointItems_.push_back(dbProxyEndpointItemsObject);
+	}
 	if(!value["DBProxyServiceStatus"].isNull())
 		dBProxyServiceStatus_ = value["DBProxyServiceStatus"].asString();
 	if(!value["DBProxyInstanceType"].isNull())
@@ -99,6 +113,11 @@ int DescribeDBProxyResult::getDBProxyInstanceNum()const
 std::string DescribeDBProxyResult::getDBProxyInstanceLatestMinorVersion()const
 {
 	return dBProxyInstanceLatestMinorVersion_;
+}
+
+std::vector<DescribeDBProxyResult::DbProxyEndpointItemsItem> DescribeDBProxyResult::getDbProxyEndpointItems()const
+{
+	return dbProxyEndpointItems_;
 }
 
 std::vector<DescribeDBProxyResult::DBProxyConnectStringItemsItem> DescribeDBProxyResult::getDBProxyConnectStringItems()const

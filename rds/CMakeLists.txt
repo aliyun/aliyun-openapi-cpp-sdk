@@ -65,12 +65,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateDdrInstanceResult.h
 	include/alibabacloud/rds/model/CreateDedicatedHostRequest.h
 	include/alibabacloud/rds/model/CreateDedicatedHostResult.h
-	include/alibabacloud/rds/model/CreateDedicatedHostAccountRequest.h
-	include/alibabacloud/rds/model/CreateDedicatedHostAccountResult.h
-	include/alibabacloud/rds/model/CreateDedicatedHostGroupRequest.h
-	include/alibabacloud/rds/model/CreateDedicatedHostGroupResult.h
-	include/alibabacloud/rds/model/CreateDedicatedHostUserRequest.h
-	include/alibabacloud/rds/model/CreateDedicatedHostUserResult.h
 	include/alibabacloud/rds/model/CreateDiagnosticReportRequest.h
 	include/alibabacloud/rds/model/CreateDiagnosticReportResult.h
 	include/alibabacloud/rds/model/CreateHostAccountRequest.h
@@ -99,10 +93,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteDBProxyEndpointAddressResult.h
 	include/alibabacloud/rds/model/DeleteDatabaseRequest.h
 	include/alibabacloud/rds/model/DeleteDatabaseResult.h
-	include/alibabacloud/rds/model/DeleteDedicatedHostAccountRequest.h
-	include/alibabacloud/rds/model/DeleteDedicatedHostAccountResult.h
-	include/alibabacloud/rds/model/DeleteDedicatedHostGroupRequest.h
-	include/alibabacloud/rds/model/DeleteDedicatedHostGroupResult.h
 	include/alibabacloud/rds/model/DeleteHostAccountRequest.h
 	include/alibabacloud/rds/model/DeleteHostAccountResult.h
 	include/alibabacloud/rds/model/DeleteParameterGroupRequest.h
@@ -119,8 +109,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeAvailableCrossRegionResult.h
 	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostClassesRequest.h
 	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostClassesResult.h
-	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostZonesRequest.h
-	include/alibabacloud/rds/model/DescribeAvailableDedicatedHostZonesResult.h
 	include/alibabacloud/rds/model/DescribeAvailableRecoveryTimeRequest.h
 	include/alibabacloud/rds/model/DescribeAvailableRecoveryTimeResult.h
 	include/alibabacloud/rds/model/DescribeAvailableResourceRequest.h
@@ -283,10 +271,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeTasksResult.h
 	include/alibabacloud/rds/model/DestroyDBInstanceRequest.h
 	include/alibabacloud/rds/model/DestroyDBInstanceResult.h
-	include/alibabacloud/rds/model/DropDedicatedHostUserRequest.h
-	include/alibabacloud/rds/model/DropDedicatedHostUserResult.h
-	include/alibabacloud/rds/model/EvaluateDedicatedHostInstanceResourceRequest.h
-	include/alibabacloud/rds/model/EvaluateDedicatedHostInstanceResourceResult.h
 	include/alibabacloud/rds/model/GetDBInstanceTopologyRequest.h
 	include/alibabacloud/rds/model/GetDBInstanceTopologyResult.h
 	include/alibabacloud/rds/model/GetDbProxyInstanceSslRequest.h
@@ -369,8 +353,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDedicatedHostAttributeResult.h
 	include/alibabacloud/rds/model/ModifyDedicatedHostGroupAttributeRequest.h
 	include/alibabacloud/rds/model/ModifyDedicatedHostGroupAttributeResult.h
-	include/alibabacloud/rds/model/ModifyDedicatedHostUserRequest.h
-	include/alibabacloud/rds/model/ModifyDedicatedHostUserResult.h
 	include/alibabacloud/rds/model/ModifyHASwitchConfigRequest.h
 	include/alibabacloud/rds/model/ModifyHASwitchConfigResult.h
 	include/alibabacloud/rds/model/ModifyInstanceAutoRenewalAttributeRequest.h
@@ -510,12 +492,6 @@ set(rds_src
 	src/model/CreateDdrInstanceResult.cc
 	src/model/CreateDedicatedHostRequest.cc
 	src/model/CreateDedicatedHostResult.cc
-	src/model/CreateDedicatedHostAccountRequest.cc
-	src/model/CreateDedicatedHostAccountResult.cc
-	src/model/CreateDedicatedHostGroupRequest.cc
-	src/model/CreateDedicatedHostGroupResult.cc
-	src/model/CreateDedicatedHostUserRequest.cc
-	src/model/CreateDedicatedHostUserResult.cc
 	src/model/CreateDiagnosticReportRequest.cc
 	src/model/CreateDiagnosticReportResult.cc
 	src/model/CreateHostAccountRequest.cc
@@ -544,10 +520,6 @@ set(rds_src
 	src/model/DeleteDBProxyEndpointAddressResult.cc
 	src/model/DeleteDatabaseRequest.cc
 	src/model/DeleteDatabaseResult.cc
-	src/model/DeleteDedicatedHostAccountRequest.cc
-	src/model/DeleteDedicatedHostAccountResult.cc
-	src/model/DeleteDedicatedHostGroupRequest.cc
-	src/model/DeleteDedicatedHostGroupResult.cc
 	src/model/DeleteHostAccountRequest.cc
 	src/model/DeleteHostAccountResult.cc
 	src/model/DeleteParameterGroupRequest.cc
@@ -564,8 +536,6 @@ set(rds_src
 	src/model/DescribeAvailableCrossRegionResult.cc
 	src/model/DescribeAvailableDedicatedHostClassesRequest.cc
 	src/model/DescribeAvailableDedicatedHostClassesResult.cc
-	src/model/DescribeAvailableDedicatedHostZonesRequest.cc
-	src/model/DescribeAvailableDedicatedHostZonesResult.cc
 	src/model/DescribeAvailableRecoveryTimeRequest.cc
 	src/model/DescribeAvailableRecoveryTimeResult.cc
 	src/model/DescribeAvailableResourceRequest.cc
@@ -728,10 +698,6 @@ set(rds_src
 	src/model/DescribeTasksResult.cc
 	src/model/DestroyDBInstanceRequest.cc
 	src/model/DestroyDBInstanceResult.cc
-	src/model/DropDedicatedHostUserRequest.cc
-	src/model/DropDedicatedHostUserResult.cc
-	src/model/EvaluateDedicatedHostInstanceResourceRequest.cc
-	src/model/EvaluateDedicatedHostInstanceResourceResult.cc
 	src/model/GetDBInstanceTopologyRequest.cc
 	src/model/GetDBInstanceTopologyResult.cc
 	src/model/GetDbProxyInstanceSslRequest.cc
@@ -814,8 +780,6 @@ set(rds_src
 	src/model/ModifyDedicatedHostAttributeResult.cc
 	src/model/ModifyDedicatedHostGroupAttributeRequest.cc
 	src/model/ModifyDedicatedHostGroupAttributeResult.cc
-	src/model/ModifyDedicatedHostUserRequest.cc
-	src/model/ModifyDedicatedHostUserResult.cc
 	src/model/ModifyHASwitchConfigRequest.cc
 	src/model/ModifyHASwitchConfigResult.cc
 	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc

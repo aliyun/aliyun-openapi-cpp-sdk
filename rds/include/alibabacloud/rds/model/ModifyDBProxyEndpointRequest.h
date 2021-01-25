@@ -51,8 +51,16 @@ namespace AlibabaCloud
 				void setReadOnlyInstanceMaxDelayTime(const std::string& readOnlyInstanceMaxDelayTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDbEndpointAliases()const;
+				void setDbEndpointAliases(const std::string& dbEndpointAliases);
+				std::string getDbEndpointOperator()const;
+				void setDbEndpointOperator(const std::string& dbEndpointOperator);
+				std::string getDbEndpointType()const;
+				void setDbEndpointType(const std::string& dbEndpointType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getDbEndpointReadWriteMode()const;
+				void setDbEndpointReadWriteMode(const std::string& dbEndpointReadWriteMode);
 				std::string getDBProxyEndpointId()const;
 				void setDBProxyEndpointId(const std::string& dBProxyEndpointId);
 				std::string getReadOnlyInstanceDistributionType()const;
@@ -67,7 +75,11 @@ namespace AlibabaCloud
 				std::string readOnlyInstanceWeight_;
 				std::string readOnlyInstanceMaxDelayTime_;
 				std::string resourceOwnerAccount_;
+				std::string dbEndpointAliases_;
+				std::string dbEndpointOperator_;
+				std::string dbEndpointType_;
 				long ownerId_;
+				std::string dbEndpointReadWriteMode_;
 				std::string dBProxyEndpointId_;
 				std::string readOnlyInstanceDistributionType_;
 
