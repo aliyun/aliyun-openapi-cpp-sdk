@@ -466,6 +466,17 @@ void CreateLaunchTemplateRequest::setNetworkInterface(const std::vector<NetworkI
 	}
 }
 
+std::string CreateLaunchTemplateRequest::getDeploymentSetId()const
+{
+	return deploymentSetId_;
+}
+
+void CreateLaunchTemplateRequest::setDeploymentSetId(const std::string& deploymentSetId)
+{
+	deploymentSetId_ = deploymentSetId;
+	setParameter("DeploymentSetId", deploymentSetId);
+}
+
 std::string CreateLaunchTemplateRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

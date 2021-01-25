@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setDedicatedHostType(const std::string& dedicatedHostType);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getNeedHostDetail()const;
+				void setNeedHostDetail(const std::string& needHostDetail);
 				std::string getDedicatedHostName()const;
 				void setDedicatedHostName(const std::string& dedicatedHostName);
 				std::string getResourceOwnerAccount()const;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string dedicatedHostType_;
 				std::vector<Tag> tag_;
+				std::string needHostDetail_;
 				std::string dedicatedHostName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

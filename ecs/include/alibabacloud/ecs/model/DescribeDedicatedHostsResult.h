@@ -51,6 +51,10 @@ namespace AlibabaCloud
 						int udpTimeout;
 						int slbUdpTimeout;
 					};
+					struct HostDetailInfo
+					{
+						std::string serialNumber;
+					};
 					struct Instance
 					{
 						std::string instanceId;
@@ -79,6 +83,7 @@ namespace AlibabaCloud
 					float cpuOverCommitRatio;
 					std::string saleCycle;
 					std::vector<DedicatedHost::Tag> tags;
+					HostDetailInfo hostDetailInfo;
 					std::string status;
 					std::string zoneId;
 					std::string autoPlacement;

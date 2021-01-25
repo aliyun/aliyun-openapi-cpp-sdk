@@ -131,6 +131,17 @@ void DescribeDedicatedHostsRequest::setTag(const std::vector<Tag>& tag)
 	}
 }
 
+std::string DescribeDedicatedHostsRequest::getNeedHostDetail()const
+{
+	return needHostDetail_;
+}
+
+void DescribeDedicatedHostsRequest::setNeedHostDetail(const std::string& needHostDetail)
+{
+	needHostDetail_ = needHostDetail;
+	setParameter("NeedHostDetail", needHostDetail);
+}
+
 std::string DescribeDedicatedHostsRequest::getDedicatedHostName()const
 {
 	return dedicatedHostName_;

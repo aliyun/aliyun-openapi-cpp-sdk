@@ -86,6 +86,16 @@ void DescribeDedicatedHostClustersResult::parse(const std::string &payload)
 				localStorageCapacityObject.dataDiskCategory = dedicatedHostClusterCapacityNodeLocalStorageCapacitiesLocalStorageCapacity["DataDiskCategory"].asString();
 			dedicatedHostClustersObject.dedicatedHostClusterCapacity.localStorageCapacities.push_back(localStorageCapacityObject);
 		}
+		auto allAvailableInstanceTypesNode = dedicatedHostClusterCapacityNode["AvailableInstanceTypes"]["AvailableInstanceType"];
+		for (auto dedicatedHostClusterCapacityNodeAvailableInstanceTypesAvailableInstanceType : allAvailableInstanceTypesNode)
+		{
+			DedicatedHostCluster::DedicatedHostClusterCapacity::AvailableInstanceType availableInstanceTypeObject;
+			if(!dedicatedHostClusterCapacityNodeAvailableInstanceTypesAvailableInstanceType["InstanceType"].isNull())
+				availableInstanceTypeObject.instanceType = dedicatedHostClusterCapacityNodeAvailableInstanceTypesAvailableInstanceType["InstanceType"].asString();
+			if(!dedicatedHostClusterCapacityNodeAvailableInstanceTypesAvailableInstanceType["AvailableInstanceCapacity"].isNull())
+				availableInstanceTypeObject.availableInstanceCapacity = std::stoi(dedicatedHostClusterCapacityNodeAvailableInstanceTypesAvailableInstanceType["AvailableInstanceCapacity"].asString());
+			dedicatedHostClustersObject.dedicatedHostClusterCapacity.availableInstanceTypes.push_back(availableInstanceTypeObject);
+		}
 		auto allDedicatedHostIds = value["DedicatedHostIds"]["DedicatedHostId"];
 		for (auto value : allDedicatedHostIds)
 			dedicatedHostClustersObject.dedicatedHostIds.push_back(value.asString());

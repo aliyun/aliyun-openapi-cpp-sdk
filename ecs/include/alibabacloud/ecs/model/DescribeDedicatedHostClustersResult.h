@@ -42,6 +42,12 @@ namespace AlibabaCloud
 							int availableDisk;
 							std::string dataDiskCategory;
 						};
+						struct AvailableInstanceType
+						{
+							int availableInstanceCapacity;
+							std::string instanceType;
+						};
+						std::vector<AvailableInstanceType> availableInstanceTypes;
 						int totalMemory;
 						int availableMemory;
 						int availableVcpus;

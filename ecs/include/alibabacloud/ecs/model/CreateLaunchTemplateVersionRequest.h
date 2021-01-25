@@ -136,6 +136,8 @@ namespace AlibabaCloud
 				void setEnableVmOsConfig(bool enableVmOsConfig);
 				std::vector<NetworkInterface> getNetworkInterface()const;
 				void setNetworkInterface(const std::vector<NetworkInterface>& networkInterface);
+				std::string getDeploymentSetId()const;
+				void setDeploymentSetId(const std::string& deploymentSetId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -197,6 +199,7 @@ namespace AlibabaCloud
 				std::string instanceChargeType_;
 				bool enableVmOsConfig_;
 				std::vector<NetworkInterface> networkInterface_;
+				std::string deploymentSetId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string systemDiskDiskName_;

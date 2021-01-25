@@ -132,6 +132,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.securityEnhancementStrategy = launchTemplateDataNode["SecurityEnhancementStrategy"].asString();
 		if(!launchTemplateDataNode["PrivateIpAddress"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.privateIpAddress = launchTemplateDataNode["PrivateIpAddress"].asString();
+		if(!launchTemplateDataNode["DeploymentSetId"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.deploymentSetId = launchTemplateDataNode["DeploymentSetId"].asString();
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{

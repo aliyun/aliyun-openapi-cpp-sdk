@@ -82,6 +82,25 @@ void ModifyAutoProvisioningGroupRequest::setExcessCapacityTerminationPolicy(cons
 	setParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
 }
 
+std::vector<ModifyAutoProvisioningGroupRequest::LaunchTemplateConfig> ModifyAutoProvisioningGroupRequest::getLaunchTemplateConfig()const
+{
+	return launchTemplateConfig_;
+}
+
+void ModifyAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vector<LaunchTemplateConfig>& launchTemplateConfig)
+{
+	launchTemplateConfig_ = launchTemplateConfig;
+	for(int dep1 = 0; dep1!= launchTemplateConfig.size(); dep1++) {
+		auto launchTemplateConfigObj = launchTemplateConfig.at(dep1);
+		std::string launchTemplateConfigObjStr = "LaunchTemplateConfig." + std::to_string(dep1 + 1);
+		setParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
+		setParameter(launchTemplateConfigObjStr + ".MaxPrice", std::to_string(launchTemplateConfigObj.maxPrice));
+		setParameter(launchTemplateConfigObjStr + ".VSwitchId", launchTemplateConfigObj.vSwitchId);
+		setParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
+		setParameter(launchTemplateConfigObjStr + ".Priority", std::to_string(launchTemplateConfigObj.priority));
+	}
+}
+
 std::string ModifyAutoProvisioningGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

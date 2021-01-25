@@ -94,6 +94,7 @@ namespace AlibabaCloud
 						std::string systemDiskCategory;
 						std::string internetChargeType;
 						std::string instanceName;
+						std::string deploymentSetId;
 						bool systemDiskDeleteWithInstance;
 						int internetMaxBandwidthOut;
 						bool enableVmOsConfig;

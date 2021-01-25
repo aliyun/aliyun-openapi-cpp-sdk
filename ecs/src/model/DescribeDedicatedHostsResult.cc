@@ -139,6 +139,9 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.networkAttributes.slbUdpTimeout = std::stoi(networkAttributesNode["SlbUdpTimeout"].asString());
 		if(!networkAttributesNode["UdpTimeout"].isNull())
 			dedicatedHostsObject.networkAttributes.udpTimeout = std::stoi(networkAttributesNode["UdpTimeout"].asString());
+		auto hostDetailInfoNode = value["HostDetailInfo"];
+		if(!hostDetailInfoNode["SerialNumber"].isNull())
+			dedicatedHostsObject.hostDetailInfo.serialNumber = hostDetailInfoNode["SerialNumber"].asString();
 		auto allSupportedInstanceTypeFamilies = value["SupportedInstanceTypeFamilies"]["SupportedInstanceTypeFamily"];
 		for (auto value : allSupportedInstanceTypeFamilies)
 			dedicatedHostsObject.supportedInstanceTypeFamilies.push_back(value.asString());

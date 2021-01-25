@@ -30,6 +30,15 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT ModifyAutoProvisioningGroupRequest : public RpcServiceRequest
 			{
+			public:
+				struct LaunchTemplateConfig
+				{
+					std::string instanceType;
+					double maxPrice;
+					std::string vSwitchId;
+					double weightedCapacity;
+					int priority;
+				};
 
 			public:
 				ModifyAutoProvisioningGroupRequest();
@@ -45,6 +54,8 @@ namespace AlibabaCloud
 				void setDefaultTargetCapacityType(const std::string& defaultTargetCapacityType);
 				std::string getExcessCapacityTerminationPolicy()const;
 				void setExcessCapacityTerminationPolicy(const std::string& excessCapacityTerminationPolicy);
+				std::vector<LaunchTemplateConfig> getLaunchTemplateConfig()const;
+				void setLaunchTemplateConfig(const std::vector<LaunchTemplateConfig>& launchTemplateConfig);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -70,6 +81,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string defaultTargetCapacityType_;
 				std::string excessCapacityTerminationPolicy_;
+				std::vector<LaunchTemplateConfig> launchTemplateConfig_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
