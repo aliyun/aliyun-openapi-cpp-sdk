@@ -38,6 +38,17 @@ void ModifyDBClusterPrimaryZoneRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBClusterPrimaryZoneRequest::getPlannedEndTime()const
+{
+	return plannedEndTime_;
+}
+
+void ModifyDBClusterPrimaryZoneRequest::setPlannedEndTime(const std::string& plannedEndTime)
+{
+	plannedEndTime_ = plannedEndTime;
+	setParameter("PlannedEndTime", plannedEndTime);
+}
+
 std::string ModifyDBClusterPrimaryZoneRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -104,6 +115,17 @@ void ModifyDBClusterPrimaryZoneRequest::setVSwitchId(const std::string& vSwitchI
 	setParameter("VSwitchId", vSwitchId);
 }
 
+std::string ModifyDBClusterPrimaryZoneRequest::getPlannedStartTime()const
+{
+	return plannedStartTime_;
+}
+
+void ModifyDBClusterPrimaryZoneRequest::setPlannedStartTime(const std::string& plannedStartTime)
+{
+	plannedStartTime_ = plannedStartTime;
+	setParameter("PlannedStartTime", plannedStartTime);
+}
+
 std::string ModifyDBClusterPrimaryZoneRequest::getZoneId()const
 {
 	return zoneId_;
@@ -113,5 +135,16 @@ void ModifyDBClusterPrimaryZoneRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setParameter("ZoneId", zoneId);
+}
+
+bool ModifyDBClusterPrimaryZoneRequest::getFromTimeService()const
+{
+	return fromTimeService_;
+}
+
+void ModifyDBClusterPrimaryZoneRequest::setFromTimeService(bool fromTimeService)
+{
+	fromTimeService_ = fromTimeService;
+	setParameter("FromTimeService", fromTimeService ? "true" : "false");
 }
 

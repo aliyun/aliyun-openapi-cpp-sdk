@@ -159,6 +159,17 @@ void CreateDBClusterRequest::setSecurityIPList(const std::string& securityIPList
 	setParameter("SecurityIPList", securityIPList);
 }
 
+std::string CreateDBClusterRequest::getDBMinorVersion()const
+{
+	return dBMinorVersion_;
+}
+
+void CreateDBClusterRequest::setDBMinorVersion(const std::string& dBMinorVersion)
+{
+	dBMinorVersion_ = dBMinorVersion;
+	setParameter("DBMinorVersion", dBMinorVersion);
+}
+
 bool CreateDBClusterRequest::getAutoRenew()const
 {
 	return autoRenew_;

@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setPlannedEndTime(const std::string& plannedEndTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSwitchTimeMode()const;
-				void setSwitchTimeMode(const std::string& switchTimeMode);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -60,7 +58,6 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string plannedEndTime_;
 				std::string accessKeyId_;
-				std::string switchTimeMode_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;

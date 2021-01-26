@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBESCHEDULETASKSREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBESCHEDULETASKSREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERVERSIONREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERVERSIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,23 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeScheduleTasksRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT UpgradeDBClusterVersionRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeScheduleTasksRequest();
-				~DescribeScheduleTasksRequest();
+				UpgradeDBClusterVersionRequest();
+				~UpgradeDBClusterVersionRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getPlannedEndTime()const;
+				void setPlannedEndTime(const std::string& plannedEndTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -53,26 +49,24 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTaskAction()const;
-				void setTaskAction(const std::string& taskAction);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getPlannedStartTime()const;
+				void setPlannedStartTime(const std::string& plannedStartTime);
+				bool getFromTimeService()const;
+				void setFromTimeService(bool fromTimeService);
 
             private:
 				long resourceOwnerId_;
-				int pageNumber_;
+				std::string plannedEndTime_;
 				std::string accessKeyId_;
-				std::string regionId_;
-				int pageSize_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string taskAction_;
-				std::string status_;
+				std::string plannedStartTime_;
+				bool fromTimeService_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBESCHEDULETASKSREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_UPGRADEDBCLUSTERVERSIONREQUEST_H_

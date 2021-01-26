@@ -123,6 +123,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		dataLevel1BackupChainSize_ = std::stol(value["DataLevel1BackupChainSize"].asString());
 	if(!value["Category"].isNull())
 		category_ = value["Category"].asString();
+	if(!value["DBVersionStatus"].isNull())
+		dBVersionStatus_ = value["DBVersionStatus"].asString();
 
 }
 
@@ -239,6 +241,11 @@ std::string DescribeDBClusterAttributeResult::getLockMode()const
 long DescribeDBClusterAttributeResult::getStorageUsed()const
 {
 	return storageUsed_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDBVersionStatus()const
+{
+	return dBVersionStatus_;
 }
 
 std::string DescribeDBClusterAttributeResult::getCreationTime()const

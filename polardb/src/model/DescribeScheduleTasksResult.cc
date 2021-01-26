@@ -39,54 +39,47 @@ void DescribeScheduleTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["items"];
-	for (auto valueDataitems : allDataNode)
+	auto dataNode = value["Data"];
+	if(!dataNode["TotalRecordCount"].isNull())
+		data_.totalRecordCount = std::stoi(dataNode["TotalRecordCount"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["PageNumber"].isNull())
+		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
+	auto allTimerInfosNode = dataNode["TimerInfos"]["timerInfosItem"];
+	for (auto dataNodeTimerInfostimerInfosItem : allTimerInfosNode)
 	{
-		Items dataObject;
-		if(!valueDataitems["Action"].isNull())
-			dataObject.action = valueDataitems["Action"].asString();
-		if(!valueDataitems["Args"].isNull())
-			dataObject.args = valueDataitems["Args"].asString();
-		if(!valueDataitems["GmtCreate"].isNull())
-			dataObject.gmtCreate = std::stol(valueDataitems["GmtCreate"].asString());
-		if(!valueDataitems["GmtModified"].isNull())
-			dataObject.gmtModified = std::stol(valueDataitems["GmtModified"].asString());
-		if(!valueDataitems["DBClusterId"].isNull())
-			dataObject.dBClusterId = valueDataitems["DBClusterId"].asString();
-		if(!valueDataitems["MaxRetryTime"].isNull())
-			dataObject.maxRetryTime = std::stoi(valueDataitems["MaxRetryTime"].asString());
-		if(!valueDataitems["Mutex"].isNull())
-			dataObject.mutex = valueDataitems["Mutex"].asString();
-		if(!valueDataitems["OrderId"].isNull())
-			dataObject.orderId = valueDataitems["OrderId"].asString();
-		if(!valueDataitems["PlannedEndTime"].isNull())
-			dataObject.plannedEndTime = std::stol(valueDataitems["PlannedEndTime"].asString());
-		if(!valueDataitems["PlannedStartTime"].isNull())
-			dataObject.plannedStartTime = std::stol(valueDataitems["PlannedStartTime"].asString());
-		if(!valueDataitems["PlannedTime"].isNull())
-			dataObject.plannedTime = std::stol(valueDataitems["PlannedTime"].asString());
-		if(!valueDataitems["ProductCode"].isNull())
-			dataObject.productCode = valueDataitems["ProductCode"].asString();
-		if(!valueDataitems["Region"].isNull())
-			dataObject.region = valueDataitems["Region"].asString();
-		if(!valueDataitems["Response"].isNull())
-			dataObject.response = valueDataitems["Response"].asString();
-		if(!valueDataitems["RetryTime"].isNull())
-			dataObject.retryTime = std::stoi(valueDataitems["RetryTime"].asString());
-		if(!valueDataitems["Status"].isNull())
-			dataObject.status = valueDataitems["Status"].asString();
-		if(!valueDataitems["TaskId"].isNull())
-			dataObject.taskId = valueDataitems["TaskId"].asString();
-		if(!valueDataitems["Type"].isNull())
-			dataObject.type = std::stoi(valueDataitems["Type"].asString());
-		data_.push_back(dataObject);
+		Data::TimerInfosItem timerInfosItemObject;
+		if(!dataNodeTimerInfostimerInfosItem["Status"].isNull())
+			timerInfosItemObject.status = dataNodeTimerInfostimerInfosItem["Status"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["GmtCreate"].isNull())
+			timerInfosItemObject.gmtCreate = std::stol(dataNodeTimerInfostimerInfosItem["GmtCreate"].asString());
+		if(!dataNodeTimerInfostimerInfosItem["Action"].isNull())
+			timerInfosItemObject.action = dataNodeTimerInfostimerInfosItem["Action"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["TaskId"].isNull())
+			timerInfosItemObject.taskId = dataNodeTimerInfostimerInfosItem["TaskId"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["PlannedTime"].isNull())
+			timerInfosItemObject.plannedTime = dataNodeTimerInfostimerInfosItem["PlannedTime"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["PlannedStartTime"].isNull())
+			timerInfosItemObject.plannedStartTime = dataNodeTimerInfostimerInfosItem["PlannedStartTime"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["DBClusterId"].isNull())
+			timerInfosItemObject.dBClusterId = dataNodeTimerInfostimerInfosItem["DBClusterId"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["GmtModified"].isNull())
+			timerInfosItemObject.gmtModified = std::stol(dataNodeTimerInfostimerInfosItem["GmtModified"].asString());
+		if(!dataNodeTimerInfostimerInfosItem["Region"].isNull())
+			timerInfosItemObject.region = dataNodeTimerInfostimerInfosItem["Region"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["OrderId"].isNull())
+			timerInfosItemObject.orderId = dataNodeTimerInfostimerInfosItem["OrderId"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["PlannedEndTime"].isNull())
+			timerInfosItemObject.plannedEndTime = dataNodeTimerInfostimerInfosItem["PlannedEndTime"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["AliUid"].isNull())
+			timerInfosItemObject.aliUid = std::stoi(dataNodeTimerInfostimerInfosItem["AliUid"].asString());
+		data_.timerInfos.push_back(timerInfosItemObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
@@ -97,12 +90,7 @@ std::string DescribeScheduleTasksResult::getMessage()const
 	return message_;
 }
 
-int DescribeScheduleTasksResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
-std::vector<DescribeScheduleTasksResult::Items> DescribeScheduleTasksResult::getData()const
+DescribeScheduleTasksResult::Data DescribeScheduleTasksResult::getData()const
 {
 	return data_;
 }

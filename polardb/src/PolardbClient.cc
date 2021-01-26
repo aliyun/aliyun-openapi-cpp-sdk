@@ -1923,6 +1923,114 @@ PolardbClient::DescribeRegionsOutcomeCallable PolardbClient::describeRegionsCall
 	return task->get_future();
 }
 
+PolardbClient::DescribeSQLExplorerPolicyOutcome PolardbClient::describeSQLExplorerPolicy(const DescribeSQLExplorerPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSQLExplorerPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSQLExplorerPolicyOutcome(DescribeSQLExplorerPolicyResult(outcome.result()));
+	else
+		return DescribeSQLExplorerPolicyOutcome(outcome.error());
+}
+
+void PolardbClient::describeSQLExplorerPolicyAsync(const DescribeSQLExplorerPolicyRequest& request, const DescribeSQLExplorerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSQLExplorerPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeSQLExplorerPolicyOutcomeCallable PolardbClient::describeSQLExplorerPolicyCallable(const DescribeSQLExplorerPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSQLExplorerPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSQLExplorerPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeSQLExplorerRetentionOutcome PolardbClient::describeSQLExplorerRetention(const DescribeSQLExplorerRetentionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSQLExplorerRetentionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSQLExplorerRetentionOutcome(DescribeSQLExplorerRetentionResult(outcome.result()));
+	else
+		return DescribeSQLExplorerRetentionOutcome(outcome.error());
+}
+
+void PolardbClient::describeSQLExplorerRetentionAsync(const DescribeSQLExplorerRetentionRequest& request, const DescribeSQLExplorerRetentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSQLExplorerRetention(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeSQLExplorerRetentionOutcomeCallable PolardbClient::describeSQLExplorerRetentionCallable(const DescribeSQLExplorerRetentionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSQLExplorerRetentionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSQLExplorerRetention(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeSQLExplorerVersionOutcome PolardbClient::describeSQLExplorerVersion(const DescribeSQLExplorerVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSQLExplorerVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSQLExplorerVersionOutcome(DescribeSQLExplorerVersionResult(outcome.result()));
+	else
+		return DescribeSQLExplorerVersionOutcome(outcome.error());
+}
+
+void PolardbClient::describeSQLExplorerVersionAsync(const DescribeSQLExplorerVersionRequest& request, const DescribeSQLExplorerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSQLExplorerVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeSQLExplorerVersionOutcomeCallable PolardbClient::describeSQLExplorerVersionCallable(const DescribeSQLExplorerVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSQLExplorerVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSQLExplorerVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeScheduleTasksOutcome PolardbClient::describeScheduleTasks(const DescribeScheduleTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2097,42 @@ PolardbClient::DescribeSlowLogRecordsOutcomeCallable PolardbClient::describeSlow
 			[this, request]()
 			{
 			return this->describeSlowLogRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeSqlLogTrialStatusOutcome PolardbClient::describeSqlLogTrialStatus(const DescribeSqlLogTrialStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSqlLogTrialStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSqlLogTrialStatusOutcome(DescribeSqlLogTrialStatusResult(outcome.result()));
+	else
+		return DescribeSqlLogTrialStatusOutcome(outcome.error());
+}
+
+void PolardbClient::describeSqlLogTrialStatusAsync(const DescribeSqlLogTrialStatusRequest& request, const DescribeSqlLogTrialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSqlLogTrialStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeSqlLogTrialStatusOutcomeCallable PolardbClient::describeSqlLogTrialStatusCallable(const DescribeSqlLogTrialStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSqlLogTrialStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSqlLogTrialStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3105,6 +3249,42 @@ PolardbClient::UpgradeDBClusterMinorVersionOutcomeCallable PolardbClient::upgrad
 			[this, request]()
 			{
 			return this->upgradeDBClusterMinorVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::UpgradeDBClusterVersionOutcome PolardbClient::upgradeDBClusterVersion(const UpgradeDBClusterVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeDBClusterVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeDBClusterVersionOutcome(UpgradeDBClusterVersionResult(outcome.result()));
+	else
+		return UpgradeDBClusterVersionOutcome(outcome.error());
+}
+
+void PolardbClient::upgradeDBClusterVersionAsync(const UpgradeDBClusterVersionRequest& request, const UpgradeDBClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeDBClusterVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::UpgradeDBClusterVersionOutcomeCallable PolardbClient::upgradeDBClusterVersionCallable(const UpgradeDBClusterVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeDBClusterVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeDBClusterVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

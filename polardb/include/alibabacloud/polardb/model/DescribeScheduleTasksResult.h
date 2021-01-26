@@ -32,26 +32,27 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeScheduleTasksResult : public ServiceResult
 			{
 			public:
-				struct Items
+				struct Data
 				{
-					int maxRetryTime;
-					std::string status;
-					std::string action;
-					std::string args;
-					long plannedTime;
-					std::string taskId;
-					std::string productCode;
-					long gmtModified;
-					std::string dBClusterId;
-					long plannedStartTime;
-					std::string mutex;
-					std::string orderId;
-					std::string response;
-					long gmtCreate;
-					int type;
-					std::string region;
-					int retryTime;
-					long plannedEndTime;
+					struct TimerInfosItem
+					{
+						std::string status;
+						long gmtCreate;
+						std::string action;
+						std::string taskId;
+						std::string plannedTime;
+						std::string plannedStartTime;
+						std::string dBClusterId;
+						long gmtModified;
+						std::string region;
+						std::string orderId;
+						std::string plannedEndTime;
+						int aliUid;
+					};
+					std::vector<TimerInfosItem> timerInfos;
+					int totalRecordCount;
+					int pageSize;
+					int pageNumber;
 				};
 
 
@@ -59,8 +60,7 @@ namespace AlibabaCloud
 				explicit DescribeScheduleTasksResult(const std::string &payload);
 				~DescribeScheduleTasksResult();
 				std::string getMessage()const;
-				int getHttpStatusCode()const;
-				std::vector<Items> getData()const;
+				Data getData()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -68,8 +68,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int httpStatusCode_;
-				std::vector<Items> data_;
+				Data data_;
 				std::string code_;
 				bool success_;
 

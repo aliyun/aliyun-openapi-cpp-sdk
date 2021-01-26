@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getSecurityIPList()const;
 				void setSecurityIPList(const std::string& securityIPList);
+				std::string getDBMinorVersion()const;
+				void setDBMinorVersion(const std::string& dBMinorVersion);
 				bool getAutoRenew()const;
 				void setAutoRenew(bool autoRenew);
 				std::string getZoneId()const;
@@ -109,6 +111,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string vSwitchId_;
 				std::string securityIPList_;
+				std::string dBMinorVersion_;
 				bool autoRenew_;
 				std::string zoneId_;
 				bool tDEStatus_;

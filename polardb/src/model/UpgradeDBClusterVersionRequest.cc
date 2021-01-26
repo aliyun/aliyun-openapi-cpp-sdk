@@ -14,113 +14,113 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/UpgradeDBClusterMinorVersionRequest.h>
+#include <alibabacloud/polardb/model/UpgradeDBClusterVersionRequest.h>
 
-using AlibabaCloud::Polardb::Model::UpgradeDBClusterMinorVersionRequest;
+using AlibabaCloud::Polardb::Model::UpgradeDBClusterVersionRequest;
 
-UpgradeDBClusterMinorVersionRequest::UpgradeDBClusterMinorVersionRequest() :
-	RpcServiceRequest("polardb", "2017-08-01", "UpgradeDBClusterMinorVersion")
+UpgradeDBClusterVersionRequest::UpgradeDBClusterVersionRequest() :
+	RpcServiceRequest("polardb", "2017-08-01", "UpgradeDBClusterVersion")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-UpgradeDBClusterMinorVersionRequest::~UpgradeDBClusterMinorVersionRequest()
+UpgradeDBClusterVersionRequest::~UpgradeDBClusterVersionRequest()
 {}
 
-long UpgradeDBClusterMinorVersionRequest::getResourceOwnerId()const
+long UpgradeDBClusterVersionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setResourceOwnerId(long resourceOwnerId)
+void UpgradeDBClusterVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string UpgradeDBClusterMinorVersionRequest::getPlannedEndTime()const
+std::string UpgradeDBClusterVersionRequest::getPlannedEndTime()const
 {
 	return plannedEndTime_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setPlannedEndTime(const std::string& plannedEndTime)
+void UpgradeDBClusterVersionRequest::setPlannedEndTime(const std::string& plannedEndTime)
 {
 	plannedEndTime_ = plannedEndTime;
 	setParameter("PlannedEndTime", plannedEndTime);
 }
 
-std::string UpgradeDBClusterMinorVersionRequest::getAccessKeyId()const
+std::string UpgradeDBClusterVersionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setAccessKeyId(const std::string& accessKeyId)
+void UpgradeDBClusterVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string UpgradeDBClusterMinorVersionRequest::getResourceOwnerAccount()const
+std::string UpgradeDBClusterVersionRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void UpgradeDBClusterVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string UpgradeDBClusterMinorVersionRequest::getDBClusterId()const
+std::string UpgradeDBClusterVersionRequest::getDBClusterId()const
 {
 	return dBClusterId_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setDBClusterId(const std::string& dBClusterId)
+void UpgradeDBClusterVersionRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
 	setParameter("DBClusterId", dBClusterId);
 }
 
-std::string UpgradeDBClusterMinorVersionRequest::getOwnerAccount()const
+std::string UpgradeDBClusterVersionRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setOwnerAccount(const std::string& ownerAccount)
+void UpgradeDBClusterVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-long UpgradeDBClusterMinorVersionRequest::getOwnerId()const
+long UpgradeDBClusterVersionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setOwnerId(long ownerId)
+void UpgradeDBClusterVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string UpgradeDBClusterMinorVersionRequest::getPlannedStartTime()const
+std::string UpgradeDBClusterVersionRequest::getPlannedStartTime()const
 {
 	return plannedStartTime_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setPlannedStartTime(const std::string& plannedStartTime)
+void UpgradeDBClusterVersionRequest::setPlannedStartTime(const std::string& plannedStartTime)
 {
 	plannedStartTime_ = plannedStartTime;
 	setParameter("PlannedStartTime", plannedStartTime);
 }
 
-bool UpgradeDBClusterMinorVersionRequest::getFromTimeService()const
+bool UpgradeDBClusterVersionRequest::getFromTimeService()const
 {
 	return fromTimeService_;
 }
 
-void UpgradeDBClusterMinorVersionRequest::setFromTimeService(bool fromTimeService)
+void UpgradeDBClusterVersionRequest::setFromTimeService(bool fromTimeService)
 {
 	fromTimeService_ = fromTimeService;
 	setParameter("FromTimeService", fromTimeService ? "true" : "false");

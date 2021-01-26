@@ -126,10 +126,18 @@
 #include "model/DescribePendingMaintenanceActionsResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeSQLExplorerPolicyRequest.h"
+#include "model/DescribeSQLExplorerPolicyResult.h"
+#include "model/DescribeSQLExplorerRetentionRequest.h"
+#include "model/DescribeSQLExplorerRetentionResult.h"
+#include "model/DescribeSQLExplorerVersionRequest.h"
+#include "model/DescribeSQLExplorerVersionResult.h"
 #include "model/DescribeScheduleTasksRequest.h"
 #include "model/DescribeScheduleTasksResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
 #include "model/DescribeSlowLogRecordsResult.h"
+#include "model/DescribeSqlLogTrialStatusRequest.h"
+#include "model/DescribeSqlLogTrialStatusResult.h"
 #include "model/DescribeTasksRequest.h"
 #include "model/DescribeTasksResult.h"
 #include "model/FailoverDBClusterRequest.h"
@@ -192,6 +200,8 @@
 #include "model/UntagResourcesResult.h"
 #include "model/UpgradeDBClusterMinorVersionRequest.h"
 #include "model/UpgradeDBClusterMinorVersionResult.h"
+#include "model/UpgradeDBClusterVersionRequest.h"
+#include "model/UpgradeDBClusterVersionResult.h"
 
 
 namespace AlibabaCloud
@@ -357,12 +367,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSQLExplorerPolicyResult> DescribeSQLExplorerPolicyOutcome;
+			typedef std::future<DescribeSQLExplorerPolicyOutcome> DescribeSQLExplorerPolicyOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLExplorerPolicyRequest&, const DescribeSQLExplorerPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLExplorerPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSQLExplorerRetentionResult> DescribeSQLExplorerRetentionOutcome;
+			typedef std::future<DescribeSQLExplorerRetentionOutcome> DescribeSQLExplorerRetentionOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLExplorerRetentionRequest&, const DescribeSQLExplorerRetentionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLExplorerRetentionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSQLExplorerVersionResult> DescribeSQLExplorerVersionOutcome;
+			typedef std::future<DescribeSQLExplorerVersionOutcome> DescribeSQLExplorerVersionOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLExplorerVersionRequest&, const DescribeSQLExplorerVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLExplorerVersionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScheduleTasksResult> DescribeScheduleTasksOutcome;
 			typedef std::future<DescribeScheduleTasksOutcome> DescribeScheduleTasksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeScheduleTasksRequest&, const DescribeScheduleTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduleTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSlowLogRecordsResult> DescribeSlowLogRecordsOutcome;
 			typedef std::future<DescribeSlowLogRecordsOutcome> DescribeSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeSlowLogRecordsRequest&, const DescribeSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSqlLogTrialStatusResult> DescribeSqlLogTrialStatusOutcome;
+			typedef std::future<DescribeSqlLogTrialStatusOutcome> DescribeSqlLogTrialStatusOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeSqlLogTrialStatusRequest&, const DescribeSqlLogTrialStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlLogTrialStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
 			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
@@ -456,6 +478,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpgradeDBClusterMinorVersionResult> UpgradeDBClusterMinorVersionOutcome;
 			typedef std::future<UpgradeDBClusterMinorVersionOutcome> UpgradeDBClusterMinorVersionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::UpgradeDBClusterMinorVersionRequest&, const UpgradeDBClusterMinorVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBClusterMinorVersionAsyncHandler;
+			typedef Outcome<Error, Model::UpgradeDBClusterVersionResult> UpgradeDBClusterVersionOutcome;
+			typedef std::future<UpgradeDBClusterVersionOutcome> UpgradeDBClusterVersionOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::UpgradeDBClusterVersionRequest&, const UpgradeDBClusterVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBClusterVersionAsyncHandler;
 
 			PolardbClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			PolardbClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -617,12 +642,24 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DescribeSQLExplorerPolicyOutcome describeSQLExplorerPolicy(const Model::DescribeSQLExplorerPolicyRequest &request)const;
+			void describeSQLExplorerPolicyAsync(const Model::DescribeSQLExplorerPolicyRequest& request, const DescribeSQLExplorerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSQLExplorerPolicyOutcomeCallable describeSQLExplorerPolicyCallable(const Model::DescribeSQLExplorerPolicyRequest& request) const;
+			DescribeSQLExplorerRetentionOutcome describeSQLExplorerRetention(const Model::DescribeSQLExplorerRetentionRequest &request)const;
+			void describeSQLExplorerRetentionAsync(const Model::DescribeSQLExplorerRetentionRequest& request, const DescribeSQLExplorerRetentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSQLExplorerRetentionOutcomeCallable describeSQLExplorerRetentionCallable(const Model::DescribeSQLExplorerRetentionRequest& request) const;
+			DescribeSQLExplorerVersionOutcome describeSQLExplorerVersion(const Model::DescribeSQLExplorerVersionRequest &request)const;
+			void describeSQLExplorerVersionAsync(const Model::DescribeSQLExplorerVersionRequest& request, const DescribeSQLExplorerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSQLExplorerVersionOutcomeCallable describeSQLExplorerVersionCallable(const Model::DescribeSQLExplorerVersionRequest& request) const;
 			DescribeScheduleTasksOutcome describeScheduleTasks(const Model::DescribeScheduleTasksRequest &request)const;
 			void describeScheduleTasksAsync(const Model::DescribeScheduleTasksRequest& request, const DescribeScheduleTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScheduleTasksOutcomeCallable describeScheduleTasksCallable(const Model::DescribeScheduleTasksRequest& request) const;
 			DescribeSlowLogRecordsOutcome describeSlowLogRecords(const Model::DescribeSlowLogRecordsRequest &request)const;
 			void describeSlowLogRecordsAsync(const Model::DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowLogRecordsOutcomeCallable describeSlowLogRecordsCallable(const Model::DescribeSlowLogRecordsRequest& request) const;
+			DescribeSqlLogTrialStatusOutcome describeSqlLogTrialStatus(const Model::DescribeSqlLogTrialStatusRequest &request)const;
+			void describeSqlLogTrialStatusAsync(const Model::DescribeSqlLogTrialStatusRequest& request, const DescribeSqlLogTrialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSqlLogTrialStatusOutcomeCallable describeSqlLogTrialStatusCallable(const Model::DescribeSqlLogTrialStatusRequest& request) const;
 			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
 			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;
@@ -716,6 +753,9 @@ namespace AlibabaCloud
 			UpgradeDBClusterMinorVersionOutcome upgradeDBClusterMinorVersion(const Model::UpgradeDBClusterMinorVersionRequest &request)const;
 			void upgradeDBClusterMinorVersionAsync(const Model::UpgradeDBClusterMinorVersionRequest& request, const UpgradeDBClusterMinorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeDBClusterMinorVersionOutcomeCallable upgradeDBClusterMinorVersionCallable(const Model::UpgradeDBClusterMinorVersionRequest& request) const;
+			UpgradeDBClusterVersionOutcome upgradeDBClusterVersion(const Model::UpgradeDBClusterVersionRequest &request)const;
+			void upgradeDBClusterVersionAsync(const Model::UpgradeDBClusterVersionRequest& request, const UpgradeDBClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpgradeDBClusterVersionOutcomeCallable upgradeDBClusterVersionCallable(const Model::UpgradeDBClusterVersionRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

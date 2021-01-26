@@ -71,6 +71,17 @@ void DescribeGlobalDatabaseNetworksRequest::setResourceOwnerAccount(const std::s
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DescribeGlobalDatabaseNetworksRequest::getDBClusterId()const
+{
+	return dBClusterId_;
+}
+
+void DescribeGlobalDatabaseNetworksRequest::setDBClusterId(const std::string& dBClusterId)
+{
+	dBClusterId_ = dBClusterId;
+	setParameter("DBClusterId", dBClusterId);
+}
+
 std::string DescribeGlobalDatabaseNetworksRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

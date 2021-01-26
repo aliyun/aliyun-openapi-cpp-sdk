@@ -125,10 +125,18 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionsResult.h
 	include/alibabacloud/polardb/model/DescribeRegionsRequest.h
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
+	include/alibabacloud/polardb/model/DescribeSQLExplorerPolicyRequest.h
+	include/alibabacloud/polardb/model/DescribeSQLExplorerPolicyResult.h
+	include/alibabacloud/polardb/model/DescribeSQLExplorerRetentionRequest.h
+	include/alibabacloud/polardb/model/DescribeSQLExplorerRetentionResult.h
+	include/alibabacloud/polardb/model/DescribeSQLExplorerVersionRequest.h
+	include/alibabacloud/polardb/model/DescribeSQLExplorerVersionResult.h
 	include/alibabacloud/polardb/model/DescribeScheduleTasksRequest.h
 	include/alibabacloud/polardb/model/DescribeScheduleTasksResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
+	include/alibabacloud/polardb/model/DescribeSqlLogTrialStatusRequest.h
+	include/alibabacloud/polardb/model/DescribeSqlLogTrialStatusResult.h
 	include/alibabacloud/polardb/model/DescribeTasksRequest.h
 	include/alibabacloud/polardb/model/DescribeTasksResult.h
 	include/alibabacloud/polardb/model/FailoverDBClusterRequest.h
@@ -190,7 +198,9 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/UntagResourcesRequest.h
 	include/alibabacloud/polardb/model/UntagResourcesResult.h
 	include/alibabacloud/polardb/model/UpgradeDBClusterMinorVersionRequest.h
-	include/alibabacloud/polardb/model/UpgradeDBClusterMinorVersionResult.h )
+	include/alibabacloud/polardb/model/UpgradeDBClusterMinorVersionResult.h
+	include/alibabacloud/polardb/model/UpgradeDBClusterVersionRequest.h
+	include/alibabacloud/polardb/model/UpgradeDBClusterVersionResult.h )
 
 set(polardb_src 
 	src/PolardbClient.cc
@@ -298,10 +308,18 @@ set(polardb_src
 	src/model/DescribePendingMaintenanceActionsResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSQLExplorerPolicyRequest.cc
+	src/model/DescribeSQLExplorerPolicyResult.cc
+	src/model/DescribeSQLExplorerRetentionRequest.cc
+	src/model/DescribeSQLExplorerRetentionResult.cc
+	src/model/DescribeSQLExplorerVersionRequest.cc
+	src/model/DescribeSQLExplorerVersionResult.cc
 	src/model/DescribeScheduleTasksRequest.cc
 	src/model/DescribeScheduleTasksResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
+	src/model/DescribeSqlLogTrialStatusRequest.cc
+	src/model/DescribeSqlLogTrialStatusResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
 	src/model/FailoverDBClusterRequest.cc
@@ -363,7 +381,9 @@ set(polardb_src
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
 	src/model/UpgradeDBClusterMinorVersionRequest.cc
-	src/model/UpgradeDBClusterMinorVersionResult.cc )
+	src/model/UpgradeDBClusterMinorVersionResult.cc
+	src/model/UpgradeDBClusterVersionRequest.cc
+	src/model/UpgradeDBClusterVersionResult.cc )
 
 add_library(polardb ${LIB_TYPE}
 	${polardb_public_header}

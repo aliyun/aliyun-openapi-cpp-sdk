@@ -38,6 +38,17 @@ void DescribeScheduleTasksRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int DescribeScheduleTasksRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeScheduleTasksRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeScheduleTasksRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,6 +69,17 @@ void DescribeScheduleTasksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+int DescribeScheduleTasksRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeScheduleTasksRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeScheduleTasksRequest::getResourceOwnerAccount()const
@@ -102,6 +124,17 @@ void DescribeScheduleTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeScheduleTasksRequest::getTaskAction()const
+{
+	return taskAction_;
+}
+
+void DescribeScheduleTasksRequest::setTaskAction(const std::string& taskAction)
+{
+	taskAction_ = taskAction;
+	setParameter("TaskAction", taskAction);
 }
 
 std::string DescribeScheduleTasksRequest::getStatus()const

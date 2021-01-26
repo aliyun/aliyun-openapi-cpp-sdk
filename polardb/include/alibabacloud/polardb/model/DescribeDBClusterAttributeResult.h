@@ -77,6 +77,7 @@ namespace AlibabaCloud
 				std::string getPayType()const;
 				std::string getLockMode()const;
 				long getStorageUsed()const;
+				std::string getDBVersionStatus()const;
 				std::string getCreationTime()const;
 				std::string getRegionId()const;
 				long getSQLSize()const;
@@ -108,6 +109,7 @@ namespace AlibabaCloud
 				std::string payType_;
 				std::string lockMode_;
 				long storageUsed_;
+				std::string dBVersionStatus_;
 				std::string creationTime_;
 				std::string regionId_;
 				long sQLSize_;
