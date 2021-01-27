@@ -123,6 +123,42 @@ AlimtClient::CreateImageTranslateTaskOutcomeCallable AlimtClient::createImageTra
 	return task->get_future();
 }
 
+AlimtClient::GetBatchTranslateOutcome AlimtClient::getBatchTranslate(const GetBatchTranslateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBatchTranslateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBatchTranslateOutcome(GetBatchTranslateResult(outcome.result()));
+	else
+		return GetBatchTranslateOutcome(outcome.error());
+}
+
+void AlimtClient::getBatchTranslateAsync(const GetBatchTranslateRequest& request, const GetBatchTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBatchTranslate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetBatchTranslateOutcomeCallable AlimtClient::getBatchTranslateCallable(const GetBatchTranslateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBatchTranslateOutcome()>>(
+			[this, request]()
+			{
+			return this->getBatchTranslate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlimtClient::GetDetectLanguageOutcome AlimtClient::getDetectLanguage(const GetDetectLanguageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

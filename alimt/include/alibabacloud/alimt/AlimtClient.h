@@ -26,6 +26,8 @@
 #include "model/CreateDocTranslateTaskResult.h"
 #include "model/CreateImageTranslateTaskRequest.h"
 #include "model/CreateImageTranslateTaskResult.h"
+#include "model/GetBatchTranslateRequest.h"
+#include "model/GetBatchTranslateResult.h"
 #include "model/GetDetectLanguageRequest.h"
 #include "model/GetDetectLanguageResult.h"
 #include "model/GetDocTranslateTaskRequest.h"
@@ -67,6 +69,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateImageTranslateTaskResult> CreateImageTranslateTaskOutcome;
 			typedef std::future<CreateImageTranslateTaskOutcome> CreateImageTranslateTaskOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::CreateImageTranslateTaskRequest&, const CreateImageTranslateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageTranslateTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetBatchTranslateResult> GetBatchTranslateOutcome;
+			typedef std::future<GetBatchTranslateOutcome> GetBatchTranslateOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::GetBatchTranslateRequest&, const GetBatchTranslateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBatchTranslateAsyncHandler;
 			typedef Outcome<Error, Model::GetDetectLanguageResult> GetDetectLanguageOutcome;
 			typedef std::future<GetDetectLanguageOutcome> GetDetectLanguageOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::GetDetectLanguageRequest&, const GetDetectLanguageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDetectLanguageAsyncHandler;
@@ -117,6 +122,9 @@ namespace AlibabaCloud
 			CreateImageTranslateTaskOutcome createImageTranslateTask(const Model::CreateImageTranslateTaskRequest &request)const;
 			void createImageTranslateTaskAsync(const Model::CreateImageTranslateTaskRequest& request, const CreateImageTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateImageTranslateTaskOutcomeCallable createImageTranslateTaskCallable(const Model::CreateImageTranslateTaskRequest& request) const;
+			GetBatchTranslateOutcome getBatchTranslate(const Model::GetBatchTranslateRequest &request)const;
+			void getBatchTranslateAsync(const Model::GetBatchTranslateRequest& request, const GetBatchTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetBatchTranslateOutcomeCallable getBatchTranslateCallable(const Model::GetBatchTranslateRequest& request) const;
 			GetDetectLanguageOutcome getDetectLanguage(const Model::GetDetectLanguageRequest &request)const;
 			void getDetectLanguageAsync(const Model::GetDetectLanguageRequest& request, const GetDetectLanguageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDetectLanguageOutcomeCallable getDetectLanguageCallable(const Model::GetDetectLanguageRequest& request) const;
