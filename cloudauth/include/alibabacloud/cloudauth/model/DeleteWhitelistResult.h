@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cloudauth/CloudauthExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeSmartVerifyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DeleteWhitelistResult : public ServiceResult
 			{
-
 			public:
-				DescribeSmartVerifyRequest();
-				~DescribeSmartVerifyRequest();
 
-				std::string getCertifyId()const;
-				void setCertifyId(const std::string& certifyId);
-				std::string getPictureReturnType()const;
-				void setPictureReturnType(const std::string& pictureReturnType);
-				long getSceneId()const;
-				void setSceneId(long sceneId);
 
-            private:
-				std::string certifyId_;
-				std::string pictureReturnType_;
-				long sceneId_;
+				DeleteWhitelistResult();
+				explicit DeleteWhitelistResult(const std::string &payload);
+				~DeleteWhitelistResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DELETEWHITELISTRESULT_H_

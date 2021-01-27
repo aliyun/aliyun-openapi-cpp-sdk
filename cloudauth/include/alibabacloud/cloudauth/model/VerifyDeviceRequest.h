@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setCertifyData(const std::string& certifyData);
 				std::string getAppVersion()const;
 				void setAppVersion(const std::string& appVersion);
+				std::string getDeviceToken()const;
+				void setDeviceToken(const std::string& deviceToken);
 				std::string getCertifyId()const;
 				void setCertifyId(const std::string& certifyId);
 
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 				std::string extInfo_;
 				std::string certifyData_;
 				std::string appVersion_;
+				std::string deviceToken_;
 				std::string certifyId_;
 
 			};

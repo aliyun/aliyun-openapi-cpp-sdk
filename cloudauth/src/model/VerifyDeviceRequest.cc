@@ -60,6 +60,17 @@ void VerifyDeviceRequest::setAppVersion(const std::string& appVersion)
 	setParameter("AppVersion", appVersion);
 }
 
+std::string VerifyDeviceRequest::getDeviceToken()const
+{
+	return deviceToken_;
+}
+
+void VerifyDeviceRequest::setDeviceToken(const std::string& deviceToken)
+{
+	deviceToken_ = deviceToken;
+	setBodyParameter("DeviceToken", deviceToken);
+}
+
 std::string VerifyDeviceRequest::getCertifyId()const
 {
 	return certifyId_;

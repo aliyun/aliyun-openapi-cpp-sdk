@@ -27,6 +27,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/CompareFacesResult.h
 	include/alibabacloud/cloudauth/model/ContrastFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/ContrastFaceVerifyResult.h
+	include/alibabacloud/cloudauth/model/ContrastSmartVerifyRequest.h
+	include/alibabacloud/cloudauth/model/ContrastSmartVerifyResult.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyRequest.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyResult.h
 	include/alibabacloud/cloudauth/model/CreateFaceConfigRequest.h
@@ -37,6 +39,10 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/CreateVerifySDKResult.h
 	include/alibabacloud/cloudauth/model/CreateVerifySettingRequest.h
 	include/alibabacloud/cloudauth/model/CreateVerifySettingResult.h
+	include/alibabacloud/cloudauth/model/CreateWhitelistRequest.h
+	include/alibabacloud/cloudauth/model/CreateWhitelistResult.h
+	include/alibabacloud/cloudauth/model/DeleteWhitelistRequest.h
+	include/alibabacloud/cloudauth/model/DeleteWhitelistResult.h
 	include/alibabacloud/cloudauth/model/DescribeAppInfoRequest.h
 	include/alibabacloud/cloudauth/model/DescribeAppInfoResult.h
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoRequest.h
@@ -73,6 +79,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeVerifyTokenResult.h
 	include/alibabacloud/cloudauth/model/DescribeVerifyUsageRequest.h
 	include/alibabacloud/cloudauth/model/DescribeVerifyUsageResult.h
+	include/alibabacloud/cloudauth/model/DescribeWhitelistRequest.h
+	include/alibabacloud/cloudauth/model/DescribeWhitelistResult.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
 	include/alibabacloud/cloudauth/model/ElementSmartVerifyRequest.h
@@ -118,6 +126,8 @@ set(cloudauth_src
 	src/model/CompareFacesResult.cc
 	src/model/ContrastFaceVerifyRequest.cc
 	src/model/ContrastFaceVerifyResult.cc
+	src/model/ContrastSmartVerifyRequest.cc
+	src/model/ContrastSmartVerifyResult.cc
 	src/model/CreateAuthKeyRequest.cc
 	src/model/CreateAuthKeyResult.cc
 	src/model/CreateFaceConfigRequest.cc
@@ -128,6 +138,10 @@ set(cloudauth_src
 	src/model/CreateVerifySDKResult.cc
 	src/model/CreateVerifySettingRequest.cc
 	src/model/CreateVerifySettingResult.cc
+	src/model/CreateWhitelistRequest.cc
+	src/model/CreateWhitelistResult.cc
+	src/model/DeleteWhitelistRequest.cc
+	src/model/DeleteWhitelistResult.cc
 	src/model/DescribeAppInfoRequest.cc
 	src/model/DescribeAppInfoResult.cc
 	src/model/DescribeDeviceInfoRequest.cc
@@ -164,6 +178,8 @@ set(cloudauth_src
 	src/model/DescribeVerifyTokenResult.cc
 	src/model/DescribeVerifyUsageRequest.cc
 	src/model/DescribeVerifyUsageResult.cc
+	src/model/DescribeWhitelistRequest.cc
+	src/model/DescribeWhitelistResult.cc
 	src/model/DetectFaceAttributesRequest.cc
 	src/model/DetectFaceAttributesResult.cc
 	src/model/ElementSmartVerifyRequest.cc

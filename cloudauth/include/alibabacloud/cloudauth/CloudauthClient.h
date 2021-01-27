@@ -28,6 +28,8 @@
 #include "model/CompareFacesResult.h"
 #include "model/ContrastFaceVerifyRequest.h"
 #include "model/ContrastFaceVerifyResult.h"
+#include "model/ContrastSmartVerifyRequest.h"
+#include "model/ContrastSmartVerifyResult.h"
 #include "model/CreateAuthKeyRequest.h"
 #include "model/CreateAuthKeyResult.h"
 #include "model/CreateFaceConfigRequest.h"
@@ -38,6 +40,10 @@
 #include "model/CreateVerifySDKResult.h"
 #include "model/CreateVerifySettingRequest.h"
 #include "model/CreateVerifySettingResult.h"
+#include "model/CreateWhitelistRequest.h"
+#include "model/CreateWhitelistResult.h"
+#include "model/DeleteWhitelistRequest.h"
+#include "model/DeleteWhitelistResult.h"
 #include "model/DescribeAppInfoRequest.h"
 #include "model/DescribeAppInfoResult.h"
 #include "model/DescribeDeviceInfoRequest.h"
@@ -74,6 +80,8 @@
 #include "model/DescribeVerifyTokenResult.h"
 #include "model/DescribeVerifyUsageRequest.h"
 #include "model/DescribeVerifyUsageResult.h"
+#include "model/DescribeWhitelistRequest.h"
+#include "model/DescribeWhitelistResult.h"
 #include "model/DetectFaceAttributesRequest.h"
 #include "model/DetectFaceAttributesResult.h"
 #include "model/ElementSmartVerifyRequest.h"
@@ -128,6 +136,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ContrastFaceVerifyResult> ContrastFaceVerifyOutcome;
 			typedef std::future<ContrastFaceVerifyOutcome> ContrastFaceVerifyOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::ContrastFaceVerifyRequest&, const ContrastFaceVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ContrastFaceVerifyAsyncHandler;
+			typedef Outcome<Error, Model::ContrastSmartVerifyResult> ContrastSmartVerifyOutcome;
+			typedef std::future<ContrastSmartVerifyOutcome> ContrastSmartVerifyOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::ContrastSmartVerifyRequest&, const ContrastSmartVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ContrastSmartVerifyAsyncHandler;
 			typedef Outcome<Error, Model::CreateAuthKeyResult> CreateAuthKeyOutcome;
 			typedef std::future<CreateAuthKeyOutcome> CreateAuthKeyOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::CreateAuthKeyRequest&, const CreateAuthKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthKeyAsyncHandler;
@@ -143,6 +154,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateVerifySettingResult> CreateVerifySettingOutcome;
 			typedef std::future<CreateVerifySettingOutcome> CreateVerifySettingOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::CreateVerifySettingRequest&, const CreateVerifySettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVerifySettingAsyncHandler;
+			typedef Outcome<Error, Model::CreateWhitelistResult> CreateWhitelistOutcome;
+			typedef std::future<CreateWhitelistOutcome> CreateWhitelistOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::CreateWhitelistRequest&, const CreateWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWhitelistAsyncHandler;
+			typedef Outcome<Error, Model::DeleteWhitelistResult> DeleteWhitelistOutcome;
+			typedef std::future<DeleteWhitelistOutcome> DeleteWhitelistOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::DeleteWhitelistRequest&, const DeleteWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAppInfoResult> DescribeAppInfoOutcome;
 			typedef std::future<DescribeAppInfoOutcome> DescribeAppInfoOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DescribeAppInfoRequest&, const DescribeAppInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppInfoAsyncHandler;
@@ -197,6 +214,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVerifyUsageResult> DescribeVerifyUsageOutcome;
 			typedef std::future<DescribeVerifyUsageOutcome> DescribeVerifyUsageOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DescribeVerifyUsageRequest&, const DescribeVerifyUsageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVerifyUsageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWhitelistResult> DescribeWhitelistOutcome;
+			typedef std::future<DescribeWhitelistOutcome> DescribeWhitelistOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::DescribeWhitelistRequest&, const DescribeWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::DetectFaceAttributesResult> DetectFaceAttributesOutcome;
 			typedef std::future<DetectFaceAttributesOutcome> DetectFaceAttributesOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DetectFaceAttributesRequest&, const DetectFaceAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAttributesAsyncHandler;
@@ -265,6 +285,9 @@ namespace AlibabaCloud
 			ContrastFaceVerifyOutcome contrastFaceVerify(const Model::ContrastFaceVerifyRequest &request)const;
 			void contrastFaceVerifyAsync(const Model::ContrastFaceVerifyRequest& request, const ContrastFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ContrastFaceVerifyOutcomeCallable contrastFaceVerifyCallable(const Model::ContrastFaceVerifyRequest& request) const;
+			ContrastSmartVerifyOutcome contrastSmartVerify(const Model::ContrastSmartVerifyRequest &request)const;
+			void contrastSmartVerifyAsync(const Model::ContrastSmartVerifyRequest& request, const ContrastSmartVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ContrastSmartVerifyOutcomeCallable contrastSmartVerifyCallable(const Model::ContrastSmartVerifyRequest& request) const;
 			CreateAuthKeyOutcome createAuthKey(const Model::CreateAuthKeyRequest &request)const;
 			void createAuthKeyAsync(const Model::CreateAuthKeyRequest& request, const CreateAuthKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAuthKeyOutcomeCallable createAuthKeyCallable(const Model::CreateAuthKeyRequest& request) const;
@@ -280,6 +303,12 @@ namespace AlibabaCloud
 			CreateVerifySettingOutcome createVerifySetting(const Model::CreateVerifySettingRequest &request)const;
 			void createVerifySettingAsync(const Model::CreateVerifySettingRequest& request, const CreateVerifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVerifySettingOutcomeCallable createVerifySettingCallable(const Model::CreateVerifySettingRequest& request) const;
+			CreateWhitelistOutcome createWhitelist(const Model::CreateWhitelistRequest &request)const;
+			void createWhitelistAsync(const Model::CreateWhitelistRequest& request, const CreateWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateWhitelistOutcomeCallable createWhitelistCallable(const Model::CreateWhitelistRequest& request) const;
+			DeleteWhitelistOutcome deleteWhitelist(const Model::DeleteWhitelistRequest &request)const;
+			void deleteWhitelistAsync(const Model::DeleteWhitelistRequest& request, const DeleteWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteWhitelistOutcomeCallable deleteWhitelistCallable(const Model::DeleteWhitelistRequest& request) const;
 			DescribeAppInfoOutcome describeAppInfo(const Model::DescribeAppInfoRequest &request)const;
 			void describeAppInfoAsync(const Model::DescribeAppInfoRequest& request, const DescribeAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppInfoOutcomeCallable describeAppInfoCallable(const Model::DescribeAppInfoRequest& request) const;
@@ -334,6 +363,9 @@ namespace AlibabaCloud
 			DescribeVerifyUsageOutcome describeVerifyUsage(const Model::DescribeVerifyUsageRequest &request)const;
 			void describeVerifyUsageAsync(const Model::DescribeVerifyUsageRequest& request, const DescribeVerifyUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVerifyUsageOutcomeCallable describeVerifyUsageCallable(const Model::DescribeVerifyUsageRequest& request) const;
+			DescribeWhitelistOutcome describeWhitelist(const Model::DescribeWhitelistRequest &request)const;
+			void describeWhitelistAsync(const Model::DescribeWhitelistRequest& request, const DescribeWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWhitelistOutcomeCallable describeWhitelistCallable(const Model::DescribeWhitelistRequest& request) const;
 			DetectFaceAttributesOutcome detectFaceAttributes(const Model::DetectFaceAttributesRequest &request)const;
 			void detectFaceAttributesAsync(const Model::DetectFaceAttributesRequest& request, const DetectFaceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectFaceAttributesOutcomeCallable detectFaceAttributesCallable(const Model::DetectFaceAttributesRequest& request) const;

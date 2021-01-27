@@ -35,14 +35,17 @@ namespace AlibabaCloud
 				DescribeFaceVerifyRequest();
 				~DescribeFaceVerifyRequest();
 
-				long getSceneId()const;
-				void setSceneId(long sceneId);
 				std::string getCertifyId()const;
 				void setCertifyId(const std::string& certifyId);
+				std::string getPictureReturnType()const;
+				void setPictureReturnType(const std::string& pictureReturnType);
+				long getSceneId()const;
+				void setSceneId(long sceneId);
 
             private:
-				long sceneId_;
 				std::string certifyId_;
+				std::string pictureReturnType_;
+				long sceneId_;
 
 			};
 		}

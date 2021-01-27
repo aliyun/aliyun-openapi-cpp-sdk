@@ -159,6 +159,42 @@ CloudauthClient::ContrastFaceVerifyOutcomeCallable CloudauthClient::contrastFace
 	return task->get_future();
 }
 
+CloudauthClient::ContrastSmartVerifyOutcome CloudauthClient::contrastSmartVerify(const ContrastSmartVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ContrastSmartVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ContrastSmartVerifyOutcome(ContrastSmartVerifyResult(outcome.result()));
+	else
+		return ContrastSmartVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::contrastSmartVerifyAsync(const ContrastSmartVerifyRequest& request, const ContrastSmartVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, contrastSmartVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::ContrastSmartVerifyOutcomeCallable CloudauthClient::contrastSmartVerifyCallable(const ContrastSmartVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ContrastSmartVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->contrastSmartVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::CreateAuthKeyOutcome CloudauthClient::createAuthKey(const CreateAuthKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,78 @@ CloudauthClient::CreateVerifySettingOutcomeCallable CloudauthClient::createVerif
 			[this, request]()
 			{
 			return this->createVerifySetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::CreateWhitelistOutcome CloudauthClient::createWhitelist(const CreateWhitelistRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateWhitelistOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateWhitelistOutcome(CreateWhitelistResult(outcome.result()));
+	else
+		return CreateWhitelistOutcome(outcome.error());
+}
+
+void CloudauthClient::createWhitelistAsync(const CreateWhitelistRequest& request, const CreateWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createWhitelist(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::CreateWhitelistOutcomeCallable CloudauthClient::createWhitelistCallable(const CreateWhitelistRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateWhitelistOutcome()>>(
+			[this, request]()
+			{
+			return this->createWhitelist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DeleteWhitelistOutcome CloudauthClient::deleteWhitelist(const DeleteWhitelistRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteWhitelistOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteWhitelistOutcome(DeleteWhitelistResult(outcome.result()));
+	else
+		return DeleteWhitelistOutcome(outcome.error());
+}
+
+void CloudauthClient::deleteWhitelistAsync(const DeleteWhitelistRequest& request, const DeleteWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteWhitelist(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DeleteWhitelistOutcomeCallable CloudauthClient::deleteWhitelistCallable(const DeleteWhitelistRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteWhitelistOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteWhitelist(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -981,6 +1089,42 @@ CloudauthClient::DescribeVerifyUsageOutcomeCallable CloudauthClient::describeVer
 			[this, request]()
 			{
 			return this->describeVerifyUsage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeWhitelistOutcome CloudauthClient::describeWhitelist(const DescribeWhitelistRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWhitelistOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWhitelistOutcome(DescribeWhitelistResult(outcome.result()));
+	else
+		return DescribeWhitelistOutcome(outcome.error());
+}
+
+void CloudauthClient::describeWhitelistAsync(const DescribeWhitelistRequest& request, const DescribeWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWhitelist(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeWhitelistOutcomeCallable CloudauthClient::describeWhitelistCallable(const DescribeWhitelistRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWhitelistOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWhitelist(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

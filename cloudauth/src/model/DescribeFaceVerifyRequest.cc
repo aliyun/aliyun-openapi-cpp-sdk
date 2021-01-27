@@ -27,17 +27,6 @@ DescribeFaceVerifyRequest::DescribeFaceVerifyRequest() :
 DescribeFaceVerifyRequest::~DescribeFaceVerifyRequest()
 {}
 
-long DescribeFaceVerifyRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void DescribeFaceVerifyRequest::setSceneId(long sceneId)
-{
-	sceneId_ = sceneId;
-	setParameter("SceneId", std::to_string(sceneId));
-}
-
 std::string DescribeFaceVerifyRequest::getCertifyId()const
 {
 	return certifyId_;
@@ -47,5 +36,27 @@ void DescribeFaceVerifyRequest::setCertifyId(const std::string& certifyId)
 {
 	certifyId_ = certifyId;
 	setParameter("CertifyId", certifyId);
+}
+
+std::string DescribeFaceVerifyRequest::getPictureReturnType()const
+{
+	return pictureReturnType_;
+}
+
+void DescribeFaceVerifyRequest::setPictureReturnType(const std::string& pictureReturnType)
+{
+	pictureReturnType_ = pictureReturnType;
+	setParameter("PictureReturnType", pictureReturnType);
+}
+
+long DescribeFaceVerifyRequest::getSceneId()const
+{
+	return sceneId_;
+}
+
+void DescribeFaceVerifyRequest::setSceneId(long sceneId)
+{
+	sceneId_ = sceneId;
+	setParameter("SceneId", std::to_string(sceneId));
 }
 

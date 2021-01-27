@@ -27,17 +27,6 @@ DescribeSmartVerifyRequest::DescribeSmartVerifyRequest() :
 DescribeSmartVerifyRequest::~DescribeSmartVerifyRequest()
 {}
 
-long DescribeSmartVerifyRequest::getSceneId()const
-{
-	return sceneId_;
-}
-
-void DescribeSmartVerifyRequest::setSceneId(long sceneId)
-{
-	sceneId_ = sceneId;
-	setBodyParameter("SceneId", std::to_string(sceneId));
-}
-
 std::string DescribeSmartVerifyRequest::getCertifyId()const
 {
 	return certifyId_;
@@ -47,5 +36,27 @@ void DescribeSmartVerifyRequest::setCertifyId(const std::string& certifyId)
 {
 	certifyId_ = certifyId;
 	setBodyParameter("CertifyId", certifyId);
+}
+
+std::string DescribeSmartVerifyRequest::getPictureReturnType()const
+{
+	return pictureReturnType_;
+}
+
+void DescribeSmartVerifyRequest::setPictureReturnType(const std::string& pictureReturnType)
+{
+	pictureReturnType_ = pictureReturnType;
+	setBodyParameter("PictureReturnType", pictureReturnType);
+}
+
+long DescribeSmartVerifyRequest::getSceneId()const
+{
+	return sceneId_;
+}
+
+void DescribeSmartVerifyRequest::setSceneId(long sceneId)
+{
+	sceneId_ = sceneId;
+	setBodyParameter("SceneId", std::to_string(sceneId));
 }
 
