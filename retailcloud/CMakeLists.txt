@@ -23,6 +23,8 @@ set(retailcloud_public_header
 set(retailcloud_public_header_model 
 	include/alibabacloud/retailcloud/model/AddClusterNodeRequest.h
 	include/alibabacloud/retailcloud/model/AddClusterNodeResult.h
+	include/alibabacloud/retailcloud/model/AllocatePodConfigRequest.h
+	include/alibabacloud/retailcloud/model/AllocatePodConfigResult.h
 	include/alibabacloud/retailcloud/model/BatchAddServersRequest.h
 	include/alibabacloud/retailcloud/model/BatchAddServersResult.h
 	include/alibabacloud/retailcloud/model/BindNodeLabelRequest.h
@@ -85,6 +87,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/DescribeAppEnvironmentDetailResult.h
 	include/alibabacloud/retailcloud/model/DescribeAppResourceAllocRequest.h
 	include/alibabacloud/retailcloud/model/DescribeAppResourceAllocResult.h
+	include/alibabacloud/retailcloud/model/DescribeClusterDetailRequest.h
+	include/alibabacloud/retailcloud/model/DescribeClusterDetailResult.h
 	include/alibabacloud/retailcloud/model/DescribeDatabasesRequest.h
 	include/alibabacloud/retailcloud/model/DescribeDatabasesResult.h
 	include/alibabacloud/retailcloud/model/DescribeDeployOrderDetailRequest.h
@@ -165,6 +169,10 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/ScaleAppResult.h
 	include/alibabacloud/retailcloud/model/SetDeployPauseTypeRequest.h
 	include/alibabacloud/retailcloud/model/SetDeployPauseTypeResult.h
+	include/alibabacloud/retailcloud/model/SubmitInfoRequest.h
+	include/alibabacloud/retailcloud/model/SubmitInfoResult.h
+	include/alibabacloud/retailcloud/model/SyncPodInfoRequest.h
+	include/alibabacloud/retailcloud/model/SyncPodInfoResult.h
 	include/alibabacloud/retailcloud/model/UnbindNodeLabelRequest.h
 	include/alibabacloud/retailcloud/model/UnbindNodeLabelResult.h
 	include/alibabacloud/retailcloud/model/UpdateAppRequest.h
@@ -178,6 +186,8 @@ set(retailcloud_src
 	src/RetailcloudClient.cc
 	src/model/AddClusterNodeRequest.cc
 	src/model/AddClusterNodeResult.cc
+	src/model/AllocatePodConfigRequest.cc
+	src/model/AllocatePodConfigResult.cc
 	src/model/BatchAddServersRequest.cc
 	src/model/BatchAddServersResult.cc
 	src/model/BindNodeLabelRequest.cc
@@ -240,6 +250,8 @@ set(retailcloud_src
 	src/model/DescribeAppEnvironmentDetailResult.cc
 	src/model/DescribeAppResourceAllocRequest.cc
 	src/model/DescribeAppResourceAllocResult.cc
+	src/model/DescribeClusterDetailRequest.cc
+	src/model/DescribeClusterDetailResult.cc
 	src/model/DescribeDatabasesRequest.cc
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDeployOrderDetailRequest.cc
@@ -320,6 +332,10 @@ set(retailcloud_src
 	src/model/ScaleAppResult.cc
 	src/model/SetDeployPauseTypeRequest.cc
 	src/model/SetDeployPauseTypeResult.cc
+	src/model/SubmitInfoRequest.cc
+	src/model/SubmitInfoResult.cc
+	src/model/SyncPodInfoRequest.cc
+	src/model/SyncPodInfoResult.cc
 	src/model/UnbindNodeLabelRequest.cc
 	src/model/UnbindNodeLabelResult.cc
 	src/model/UpdateAppRequest.cc

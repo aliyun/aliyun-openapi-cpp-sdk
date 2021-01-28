@@ -27,17 +27,6 @@ DeployAppRequest::DeployAppRequest() :
 DeployAppRequest::~DeployAppRequest()
 {}
 
-long DeployAppRequest::getDeployPacketId()const
-{
-	return deployPacketId_;
-}
-
-void DeployAppRequest::setDeployPacketId(long deployPacketId)
-{
-	deployPacketId_ = deployPacketId;
-	setParameter("DeployPacketId", std::to_string(deployPacketId));
-}
-
 std::string DeployAppRequest::getDeployPacketUrl()const
 {
 	return deployPacketUrl_;
@@ -58,17 +47,6 @@ void DeployAppRequest::setTotalPartitions(int totalPartitions)
 {
 	totalPartitions_ = totalPartitions;
 	setParameter("TotalPartitions", std::to_string(totalPartitions));
-}
-
-std::string DeployAppRequest::getName()const
-{
-	return name_;
-}
-
-void DeployAppRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
 }
 
 std::string DeployAppRequest::getDescription()const
@@ -93,6 +71,17 @@ void DeployAppRequest::setEnvId(long envId)
 	setParameter("EnvId", std::to_string(envId));
 }
 
+std::string DeployAppRequest::getUpdateStrategyType()const
+{
+	return updateStrategyType_;
+}
+
+void DeployAppRequest::setUpdateStrategyType(const std::string& updateStrategyType)
+{
+	updateStrategyType_ = updateStrategyType;
+	setParameter("UpdateStrategyType", updateStrategyType);
+}
+
 std::string DeployAppRequest::getPauseType()const
 {
 	return pauseType_;
@@ -102,6 +91,54 @@ void DeployAppRequest::setPauseType(const std::string& pauseType)
 {
 	pauseType_ = pauseType;
 	setParameter("PauseType", pauseType);
+}
+
+long DeployAppRequest::getDeployPacketId()const
+{
+	return deployPacketId_;
+}
+
+void DeployAppRequest::setDeployPacketId(long deployPacketId)
+{
+	deployPacketId_ = deployPacketId;
+	setParameter("DeployPacketId", std::to_string(deployPacketId));
+}
+
+std::vector<std::string> DeployAppRequest::getContainerImageList()const
+{
+	return containerImageList_;
+}
+
+void DeployAppRequest::setContainerImageList(const std::vector<std::string>& containerImageList)
+{
+	containerImageList_ = containerImageList;
+	for(int dep1 = 0; dep1!= containerImageList.size(); dep1++) {
+		setParameter("ContainerImageList."+ std::to_string(dep1), containerImageList.at(dep1));
+	}
+}
+
+std::string DeployAppRequest::getName()const
+{
+	return name_;
+}
+
+void DeployAppRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
+std::vector<std::string> DeployAppRequest::getInitContainerImageList()const
+{
+	return initContainerImageList_;
+}
+
+void DeployAppRequest::setInitContainerImageList(const std::vector<std::string>& initContainerImageList)
+{
+	initContainerImageList_ = initContainerImageList;
+	for(int dep1 = 0; dep1!= initContainerImageList.size(); dep1++) {
+		setParameter("InitContainerImageList."+ std::to_string(dep1), initContainerImageList.at(dep1));
+	}
 }
 
 bool DeployAppRequest::getArmsFlag()const

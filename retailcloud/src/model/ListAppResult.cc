@@ -63,16 +63,16 @@ void ListAppResult::parse(const std::string &payload)
 			dataObject.bizTitle = valueDataAppDetail["BizTitle"].asString();
 		if(!valueDataAppDetail["AppStateType"].isNull())
 			dataObject.appStateType = valueDataAppDetail["AppStateType"].asString();
-		auto allMiddleWareListNode = allDataNode["MiddleWareList"]["MiddleWareInfo"];
-		for (auto allDataNodeMiddleWareListMiddleWareInfo : allMiddleWareListNode)
+		auto allMiddleWareListNode = valueDataAppDetail["MiddleWareList"]["MiddleWareInfo"];
+		for (auto valueDataAppDetailMiddleWareListMiddleWareInfo : allMiddleWareListNode)
 		{
 			AppDetail::MiddleWareInfo middleWareListObject;
-			if(!allDataNodeMiddleWareListMiddleWareInfo["AppId"].isNull())
-				middleWareListObject.appId = std::stol(allDataNodeMiddleWareListMiddleWareInfo["AppId"].asString());
-			if(!allDataNodeMiddleWareListMiddleWareInfo["Code"].isNull())
-				middleWareListObject.code = std::stoi(allDataNodeMiddleWareListMiddleWareInfo["Code"].asString());
-			if(!allDataNodeMiddleWareListMiddleWareInfo["Name"].isNull())
-				middleWareListObject.name = allDataNodeMiddleWareListMiddleWareInfo["Name"].asString();
+			if(!valueDataAppDetailMiddleWareListMiddleWareInfo["AppId"].isNull())
+				middleWareListObject.appId = std::stol(valueDataAppDetailMiddleWareListMiddleWareInfo["AppId"].asString());
+			if(!valueDataAppDetailMiddleWareListMiddleWareInfo["Code"].isNull())
+				middleWareListObject.code = std::stoi(valueDataAppDetailMiddleWareListMiddleWareInfo["Code"].asString());
+			if(!valueDataAppDetailMiddleWareListMiddleWareInfo["Name"].isNull())
+				middleWareListObject.name = valueDataAppDetailMiddleWareListMiddleWareInfo["Name"].asString();
 			dataObject.middleWareList.push_back(middleWareListObject);
 		}
 		data_.push_back(dataObject);

@@ -24,6 +24,8 @@
 #include "RetailcloudExport.h"
 #include "model/AddClusterNodeRequest.h"
 #include "model/AddClusterNodeResult.h"
+#include "model/AllocatePodConfigRequest.h"
+#include "model/AllocatePodConfigResult.h"
 #include "model/BatchAddServersRequest.h"
 #include "model/BatchAddServersResult.h"
 #include "model/BindNodeLabelRequest.h"
@@ -86,6 +88,8 @@
 #include "model/DescribeAppEnvironmentDetailResult.h"
 #include "model/DescribeAppResourceAllocRequest.h"
 #include "model/DescribeAppResourceAllocResult.h"
+#include "model/DescribeClusterDetailRequest.h"
+#include "model/DescribeClusterDetailResult.h"
 #include "model/DescribeDatabasesRequest.h"
 #include "model/DescribeDatabasesResult.h"
 #include "model/DescribeDeployOrderDetailRequest.h"
@@ -166,6 +170,10 @@
 #include "model/ScaleAppResult.h"
 #include "model/SetDeployPauseTypeRequest.h"
 #include "model/SetDeployPauseTypeResult.h"
+#include "model/SubmitInfoRequest.h"
+#include "model/SubmitInfoResult.h"
+#include "model/SyncPodInfoRequest.h"
+#include "model/SyncPodInfoResult.h"
 #include "model/UnbindNodeLabelRequest.h"
 #include "model/UnbindNodeLabelResult.h"
 #include "model/UpdateAppRequest.h"
@@ -186,6 +194,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddClusterNodeResult> AddClusterNodeOutcome;
 			typedef std::future<AddClusterNodeOutcome> AddClusterNodeOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::AddClusterNodeRequest&, const AddClusterNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddClusterNodeAsyncHandler;
+			typedef Outcome<Error, Model::AllocatePodConfigResult> AllocatePodConfigOutcome;
+			typedef std::future<AllocatePodConfigOutcome> AllocatePodConfigOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::AllocatePodConfigRequest&, const AllocatePodConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocatePodConfigAsyncHandler;
 			typedef Outcome<Error, Model::BatchAddServersResult> BatchAddServersOutcome;
 			typedef std::future<BatchAddServersOutcome> BatchAddServersOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::BatchAddServersRequest&, const BatchAddServersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddServersAsyncHandler;
@@ -279,6 +290,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAppResourceAllocResult> DescribeAppResourceAllocOutcome;
 			typedef std::future<DescribeAppResourceAllocOutcome> DescribeAppResourceAllocOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribeAppResourceAllocRequest&, const DescribeAppResourceAllocOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppResourceAllocAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterDetailResult> DescribeClusterDetailOutcome;
+			typedef std::future<DescribeClusterDetailOutcome> DescribeClusterDetailOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::DescribeClusterDetailRequest&, const DescribeClusterDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDatabasesResult> DescribeDatabasesOutcome;
 			typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribeDatabasesRequest&, const DescribeDatabasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -399,6 +413,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDeployPauseTypeResult> SetDeployPauseTypeOutcome;
 			typedef std::future<SetDeployPauseTypeOutcome> SetDeployPauseTypeOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::SetDeployPauseTypeRequest&, const SetDeployPauseTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDeployPauseTypeAsyncHandler;
+			typedef Outcome<Error, Model::SubmitInfoResult> SubmitInfoOutcome;
+			typedef std::future<SubmitInfoOutcome> SubmitInfoOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::SubmitInfoRequest&, const SubmitInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitInfoAsyncHandler;
+			typedef Outcome<Error, Model::SyncPodInfoResult> SyncPodInfoOutcome;
+			typedef std::future<SyncPodInfoOutcome> SyncPodInfoOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::SyncPodInfoRequest&, const SyncPodInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncPodInfoAsyncHandler;
 			typedef Outcome<Error, Model::UnbindNodeLabelResult> UnbindNodeLabelOutcome;
 			typedef std::future<UnbindNodeLabelOutcome> UnbindNodeLabelOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::UnbindNodeLabelRequest&, const UnbindNodeLabelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindNodeLabelAsyncHandler;
@@ -419,6 +439,9 @@ namespace AlibabaCloud
 			AddClusterNodeOutcome addClusterNode(const Model::AddClusterNodeRequest &request)const;
 			void addClusterNodeAsync(const Model::AddClusterNodeRequest& request, const AddClusterNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddClusterNodeOutcomeCallable addClusterNodeCallable(const Model::AddClusterNodeRequest& request) const;
+			AllocatePodConfigOutcome allocatePodConfig(const Model::AllocatePodConfigRequest &request)const;
+			void allocatePodConfigAsync(const Model::AllocatePodConfigRequest& request, const AllocatePodConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AllocatePodConfigOutcomeCallable allocatePodConfigCallable(const Model::AllocatePodConfigRequest& request) const;
 			BatchAddServersOutcome batchAddServers(const Model::BatchAddServersRequest &request)const;
 			void batchAddServersAsync(const Model::BatchAddServersRequest& request, const BatchAddServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchAddServersOutcomeCallable batchAddServersCallable(const Model::BatchAddServersRequest& request) const;
@@ -512,6 +535,9 @@ namespace AlibabaCloud
 			DescribeAppResourceAllocOutcome describeAppResourceAlloc(const Model::DescribeAppResourceAllocRequest &request)const;
 			void describeAppResourceAllocAsync(const Model::DescribeAppResourceAllocRequest& request, const DescribeAppResourceAllocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppResourceAllocOutcomeCallable describeAppResourceAllocCallable(const Model::DescribeAppResourceAllocRequest& request) const;
+			DescribeClusterDetailOutcome describeClusterDetail(const Model::DescribeClusterDetailRequest &request)const;
+			void describeClusterDetailAsync(const Model::DescribeClusterDetailRequest& request, const DescribeClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterDetailOutcomeCallable describeClusterDetailCallable(const Model::DescribeClusterDetailRequest& request) const;
 			DescribeDatabasesOutcome describeDatabases(const Model::DescribeDatabasesRequest &request)const;
 			void describeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDatabasesOutcomeCallable describeDatabasesCallable(const Model::DescribeDatabasesRequest& request) const;
@@ -632,6 +658,12 @@ namespace AlibabaCloud
 			SetDeployPauseTypeOutcome setDeployPauseType(const Model::SetDeployPauseTypeRequest &request)const;
 			void setDeployPauseTypeAsync(const Model::SetDeployPauseTypeRequest& request, const SetDeployPauseTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDeployPauseTypeOutcomeCallable setDeployPauseTypeCallable(const Model::SetDeployPauseTypeRequest& request) const;
+			SubmitInfoOutcome submitInfo(const Model::SubmitInfoRequest &request)const;
+			void submitInfoAsync(const Model::SubmitInfoRequest& request, const SubmitInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitInfoOutcomeCallable submitInfoCallable(const Model::SubmitInfoRequest& request) const;
+			SyncPodInfoOutcome syncPodInfo(const Model::SyncPodInfoRequest &request)const;
+			void syncPodInfoAsync(const Model::SyncPodInfoRequest& request, const SyncPodInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SyncPodInfoOutcomeCallable syncPodInfoCallable(const Model::SyncPodInfoRequest& request) const;
 			UnbindNodeLabelOutcome unbindNodeLabel(const Model::UnbindNodeLabelRequest &request)const;
 			void unbindNodeLabelAsync(const Model::UnbindNodeLabelRequest& request, const UnbindNodeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindNodeLabelOutcomeCallable unbindNodeLabelCallable(const Model::UnbindNodeLabelRequest& request) const;

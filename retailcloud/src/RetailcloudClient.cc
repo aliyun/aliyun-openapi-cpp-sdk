@@ -87,6 +87,42 @@ RetailcloudClient::AddClusterNodeOutcomeCallable RetailcloudClient::addClusterNo
 	return task->get_future();
 }
 
+RetailcloudClient::AllocatePodConfigOutcome RetailcloudClient::allocatePodConfig(const AllocatePodConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AllocatePodConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AllocatePodConfigOutcome(AllocatePodConfigResult(outcome.result()));
+	else
+		return AllocatePodConfigOutcome(outcome.error());
+}
+
+void RetailcloudClient::allocatePodConfigAsync(const AllocatePodConfigRequest& request, const AllocatePodConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, allocatePodConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::AllocatePodConfigOutcomeCallable RetailcloudClient::allocatePodConfigCallable(const AllocatePodConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AllocatePodConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->allocatePodConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RetailcloudClient::BatchAddServersOutcome RetailcloudClient::batchAddServers(const BatchAddServersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,6 +1233,42 @@ RetailcloudClient::DescribeAppResourceAllocOutcomeCallable RetailcloudClient::de
 			[this, request]()
 			{
 			return this->describeAppResourceAlloc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::DescribeClusterDetailOutcome RetailcloudClient::describeClusterDetail(const DescribeClusterDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterDetailOutcome(DescribeClusterDetailResult(outcome.result()));
+	else
+		return DescribeClusterDetailOutcome(outcome.error());
+}
+
+void RetailcloudClient::describeClusterDetailAsync(const DescribeClusterDetailRequest& request, const DescribeClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::DescribeClusterDetailOutcomeCallable RetailcloudClient::describeClusterDetailCallable(const DescribeClusterDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2637,6 +2709,78 @@ RetailcloudClient::SetDeployPauseTypeOutcomeCallable RetailcloudClient::setDeplo
 			[this, request]()
 			{
 			return this->setDeployPauseType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::SubmitInfoOutcome RetailcloudClient::submitInfo(const SubmitInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitInfoOutcome(SubmitInfoResult(outcome.result()));
+	else
+		return SubmitInfoOutcome(outcome.error());
+}
+
+void RetailcloudClient::submitInfoAsync(const SubmitInfoRequest& request, const SubmitInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::SubmitInfoOutcomeCallable RetailcloudClient::submitInfoCallable(const SubmitInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->submitInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::SyncPodInfoOutcome RetailcloudClient::syncPodInfo(const SyncPodInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SyncPodInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SyncPodInfoOutcome(SyncPodInfoResult(outcome.result()));
+	else
+		return SyncPodInfoOutcome(outcome.error());
+}
+
+void RetailcloudClient::syncPodInfoAsync(const SyncPodInfoRequest& request, const SyncPodInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, syncPodInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::SyncPodInfoOutcomeCallable RetailcloudClient::syncPodInfoCallable(const SyncPodInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SyncPodInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->syncPodInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

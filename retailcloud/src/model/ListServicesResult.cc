@@ -59,20 +59,20 @@ void ListServicesResult::parse(const std::string &payload)
 			dataObject.serviceType = valueDataServiceInstance["ServiceType"].asString();
 		if(!valueDataServiceInstance["ClusterIP"].isNull())
 			dataObject.clusterIP = valueDataServiceInstance["ClusterIP"].asString();
-		auto allPortMappingsNode = allDataNode["PortMappings"]["ServicePortMapping"];
-		for (auto allDataNodePortMappingsServicePortMapping : allPortMappingsNode)
+		auto allPortMappingsNode = valueDataServiceInstance["PortMappings"]["ServicePortMapping"];
+		for (auto valueDataServiceInstancePortMappingsServicePortMapping : allPortMappingsNode)
 		{
 			ServiceInstance::ServicePortMapping portMappingsObject;
-			if(!allDataNodePortMappingsServicePortMapping["Name"].isNull())
-				portMappingsObject.name = allDataNodePortMappingsServicePortMapping["Name"].asString();
-			if(!allDataNodePortMappingsServicePortMapping["NodePort"].isNull())
-				portMappingsObject.nodePort = std::stoi(allDataNodePortMappingsServicePortMapping["NodePort"].asString());
-			if(!allDataNodePortMappingsServicePortMapping["Port"].isNull())
-				portMappingsObject.port = std::stoi(allDataNodePortMappingsServicePortMapping["Port"].asString());
-			if(!allDataNodePortMappingsServicePortMapping["Protocol"].isNull())
-				portMappingsObject.protocol = allDataNodePortMappingsServicePortMapping["Protocol"].asString();
-			if(!allDataNodePortMappingsServicePortMapping["TargetPort"].isNull())
-				portMappingsObject.targetPort = allDataNodePortMappingsServicePortMapping["TargetPort"].asString();
+			if(!valueDataServiceInstancePortMappingsServicePortMapping["Name"].isNull())
+				portMappingsObject.name = valueDataServiceInstancePortMappingsServicePortMapping["Name"].asString();
+			if(!valueDataServiceInstancePortMappingsServicePortMapping["NodePort"].isNull())
+				portMappingsObject.nodePort = std::stoi(valueDataServiceInstancePortMappingsServicePortMapping["NodePort"].asString());
+			if(!valueDataServiceInstancePortMappingsServicePortMapping["Port"].isNull())
+				portMappingsObject.port = std::stoi(valueDataServiceInstancePortMappingsServicePortMapping["Port"].asString());
+			if(!valueDataServiceInstancePortMappingsServicePortMapping["Protocol"].isNull())
+				portMappingsObject.protocol = valueDataServiceInstancePortMappingsServicePortMapping["Protocol"].asString();
+			if(!valueDataServiceInstancePortMappingsServicePortMapping["TargetPort"].isNull())
+				portMappingsObject.targetPort = valueDataServiceInstancePortMappingsServicePortMapping["TargetPort"].asString();
 			dataObject.portMappings.push_back(portMappingsObject);
 		}
 		data_.push_back(dataObject);

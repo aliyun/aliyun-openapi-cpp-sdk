@@ -71,16 +71,16 @@ void ListPodsResult::parse(const std::string &payload)
 			dataObject.statusName = valueDataPodDetail["StatusName"].asString();
 		if(!valueDataPodDetail["UpdateTime"].isNull())
 			dataObject.updateTime = valueDataPodDetail["UpdateTime"].asString();
-		auto allDeployStepsNode = allDataNode["DeploySteps"]["DeployStep"];
-		for (auto allDataNodeDeployStepsDeployStep : allDeployStepsNode)
+		auto allDeployStepsNode = valueDataPodDetail["DeploySteps"]["DeployStep"];
+		for (auto valueDataPodDetailDeployStepsDeployStep : allDeployStepsNode)
 		{
 			PodDetail::DeployStep deployStepsObject;
-			if(!allDataNodeDeployStepsDeployStep["Status"].isNull())
-				deployStepsObject.status = allDataNodeDeployStepsDeployStep["Status"].asString();
-			if(!allDataNodeDeployStepsDeployStep["StepCode"].isNull())
-				deployStepsObject.stepCode = allDataNodeDeployStepsDeployStep["StepCode"].asString();
-			if(!allDataNodeDeployStepsDeployStep["StepName"].isNull())
-				deployStepsObject.stepName = allDataNodeDeployStepsDeployStep["StepName"].asString();
+			if(!valueDataPodDetailDeployStepsDeployStep["Status"].isNull())
+				deployStepsObject.status = valueDataPodDetailDeployStepsDeployStep["Status"].asString();
+			if(!valueDataPodDetailDeployStepsDeployStep["StepCode"].isNull())
+				deployStepsObject.stepCode = valueDataPodDetailDeployStepsDeployStep["StepCode"].asString();
+			if(!valueDataPodDetailDeployStepsDeployStep["StepName"].isNull())
+				deployStepsObject.stepName = valueDataPodDetailDeployStepsDeployStep["StepName"].asString();
 			dataObject.deploySteps.push_back(deployStepsObject);
 		}
 		data_.push_back(dataObject);

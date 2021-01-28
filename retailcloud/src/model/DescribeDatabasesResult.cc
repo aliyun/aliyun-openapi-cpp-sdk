@@ -56,16 +56,16 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 			databasesItemObject.characterSetName = resultNodeDatabasesDatabasesItem["CharacterSetName"].asString();
 		if(!resultNodeDatabasesDatabasesItem["DBInstanceId"].isNull())
 			databasesItemObject.dBInstanceId = resultNodeDatabasesDatabasesItem["DBInstanceId"].asString();
-		auto allAccountsNode = allDatabasesNode["Accounts"]["AccountsItem"];
-		for (auto allDatabasesNodeAccountsAccountsItem : allAccountsNode)
+		auto allAccountsNode = resultNodeDatabasesDatabasesItem["Accounts"]["AccountsItem"];
+		for (auto resultNodeDatabasesDatabasesItemAccountsAccountsItem : allAccountsNode)
 		{
 			Result::DatabasesItem::AccountsItem accountsObject;
-			if(!allDatabasesNodeAccountsAccountsItem["AccountPrivilegeDetail"].isNull())
-				accountsObject.accountPrivilegeDetail = allDatabasesNodeAccountsAccountsItem["AccountPrivilegeDetail"].asString();
-			if(!allDatabasesNodeAccountsAccountsItem["AccountPrivilege"].isNull())
-				accountsObject.accountPrivilege = allDatabasesNodeAccountsAccountsItem["AccountPrivilege"].asString();
-			if(!allDatabasesNodeAccountsAccountsItem["Account"].isNull())
-				accountsObject.account = allDatabasesNodeAccountsAccountsItem["Account"].asString();
+			if(!resultNodeDatabasesDatabasesItemAccountsAccountsItem["AccountPrivilegeDetail"].isNull())
+				accountsObject.accountPrivilegeDetail = resultNodeDatabasesDatabasesItemAccountsAccountsItem["AccountPrivilegeDetail"].asString();
+			if(!resultNodeDatabasesDatabasesItemAccountsAccountsItem["AccountPrivilege"].isNull())
+				accountsObject.accountPrivilege = resultNodeDatabasesDatabasesItemAccountsAccountsItem["AccountPrivilege"].asString();
+			if(!resultNodeDatabasesDatabasesItemAccountsAccountsItem["Account"].isNull())
+				accountsObject.account = resultNodeDatabasesDatabasesItemAccountsAccountsItem["Account"].asString();
 			databasesItemObject.accounts.push_back(accountsObject);
 		}
 		result_.databases.push_back(databasesItemObject);

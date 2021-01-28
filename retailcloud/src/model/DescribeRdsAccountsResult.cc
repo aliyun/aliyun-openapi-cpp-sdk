@@ -56,16 +56,16 @@ void DescribeRdsAccountsResult::parse(const std::string &payload)
 			accountsItemObject.privExceeded = resultNodeAccountsAccountsItem["PrivExceeded"].asString();
 		if(!resultNodeAccountsAccountsItem["DBInstanceId"].isNull())
 			accountsItemObject.dBInstanceId = resultNodeAccountsAccountsItem["DBInstanceId"].asString();
-		auto allDatabasePrivilegesNode = allAccountsNode["DatabasePrivileges"]["DatabasePrivilegesItem"];
-		for (auto allAccountsNodeDatabasePrivilegesDatabasePrivilegesItem : allDatabasePrivilegesNode)
+		auto allDatabasePrivilegesNode = resultNodeAccountsAccountsItem["DatabasePrivileges"]["DatabasePrivilegesItem"];
+		for (auto resultNodeAccountsAccountsItemDatabasePrivilegesDatabasePrivilegesItem : allDatabasePrivilegesNode)
 		{
 			Result::AccountsItem::DatabasePrivilegesItem databasePrivilegesObject;
-			if(!allAccountsNodeDatabasePrivilegesDatabasePrivilegesItem["DBName"].isNull())
-				databasePrivilegesObject.dBName = allAccountsNodeDatabasePrivilegesDatabasePrivilegesItem["DBName"].asString();
-			if(!allAccountsNodeDatabasePrivilegesDatabasePrivilegesItem["AccountPrivilege"].isNull())
-				databasePrivilegesObject.accountPrivilege = allAccountsNodeDatabasePrivilegesDatabasePrivilegesItem["AccountPrivilege"].asString();
-			if(!allAccountsNodeDatabasePrivilegesDatabasePrivilegesItem["AccountPrivilegeDetail"].isNull())
-				databasePrivilegesObject.accountPrivilegeDetail = allAccountsNodeDatabasePrivilegesDatabasePrivilegesItem["AccountPrivilegeDetail"].asString();
+			if(!resultNodeAccountsAccountsItemDatabasePrivilegesDatabasePrivilegesItem["DBName"].isNull())
+				databasePrivilegesObject.dBName = resultNodeAccountsAccountsItemDatabasePrivilegesDatabasePrivilegesItem["DBName"].asString();
+			if(!resultNodeAccountsAccountsItemDatabasePrivilegesDatabasePrivilegesItem["AccountPrivilege"].isNull())
+				databasePrivilegesObject.accountPrivilege = resultNodeAccountsAccountsItemDatabasePrivilegesDatabasePrivilegesItem["AccountPrivilege"].asString();
+			if(!resultNodeAccountsAccountsItemDatabasePrivilegesDatabasePrivilegesItem["AccountPrivilegeDetail"].isNull())
+				databasePrivilegesObject.accountPrivilegeDetail = resultNodeAccountsAccountsItemDatabasePrivilegesDatabasePrivilegesItem["AccountPrivilegeDetail"].asString();
 			accountsItemObject.databasePrivileges.push_back(databasePrivilegesObject);
 		}
 		result_.accounts.push_back(accountsItemObject);
