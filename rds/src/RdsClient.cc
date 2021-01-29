@@ -411,42 +411,6 @@ RdsClient::CheckInstanceExistOutcomeCallable RdsClient::checkInstanceExistCallab
 	return task->get_future();
 }
 
-RdsClient::ClearDedicatedHostOutcome RdsClient::clearDedicatedHost(const ClearDedicatedHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ClearDedicatedHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ClearDedicatedHostOutcome(ClearDedicatedHostResult(outcome.result()));
-	else
-		return ClearDedicatedHostOutcome(outcome.error());
-}
-
-void RdsClient::clearDedicatedHostAsync(const ClearDedicatedHostRequest& request, const ClearDedicatedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, clearDedicatedHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ClearDedicatedHostOutcomeCallable RdsClient::clearDedicatedHostCallable(const ClearDedicatedHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ClearDedicatedHostOutcome()>>(
-			[this, request]()
-			{
-			return this->clearDedicatedHost(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::CloneDBInstanceOutcome RdsClient::cloneDBInstance(const CloneDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -807,42 +771,6 @@ RdsClient::CreateDdrInstanceOutcomeCallable RdsClient::createDdrInstanceCallable
 	return task->get_future();
 }
 
-RdsClient::CreateDedicatedHostOutcome RdsClient::createDedicatedHost(const CreateDedicatedHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDedicatedHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDedicatedHostOutcome(CreateDedicatedHostResult(outcome.result()));
-	else
-		return CreateDedicatedHostOutcome(outcome.error());
-}
-
-void RdsClient::createDedicatedHostAsync(const CreateDedicatedHostRequest& request, const CreateDedicatedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDedicatedHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::CreateDedicatedHostOutcomeCallable RdsClient::createDedicatedHostCallable(const CreateDedicatedHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDedicatedHostOutcome()>>(
-			[this, request]()
-			{
-			return this->createDedicatedHost(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::CreateDiagnosticReportOutcome RdsClient::createDiagnosticReport(const CreateDiagnosticReportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,42 +801,6 @@ RdsClient::CreateDiagnosticReportOutcomeCallable RdsClient::createDiagnosticRepo
 			[this, request]()
 			{
 			return this->createDiagnosticReport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::CreateHostAccountOutcome RdsClient::createHostAccount(const CreateHostAccountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateHostAccountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateHostAccountOutcome(CreateHostAccountResult(outcome.result()));
-	else
-		return CreateHostAccountOutcome(outcome.error());
-}
-
-void RdsClient::createHostAccountAsync(const CreateHostAccountRequest& request, const CreateHostAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createHostAccount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::CreateHostAccountOutcomeCallable RdsClient::createHostAccountCallable(const CreateHostAccountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateHostAccountOutcome()>>(
-			[this, request]()
-			{
-			return this->createHostAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2895,42 +2787,6 @@ RdsClient::DescribeDatabasesOutcomeCallable RdsClient::describeDatabasesCallable
 	return task->get_future();
 }
 
-RdsClient::DescribeDedicatedHostAttributeOutcome RdsClient::describeDedicatedHostAttribute(const DescribeDedicatedHostAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDedicatedHostAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDedicatedHostAttributeOutcome(DescribeDedicatedHostAttributeResult(outcome.result()));
-	else
-		return DescribeDedicatedHostAttributeOutcome(outcome.error());
-}
-
-void RdsClient::describeDedicatedHostAttributeAsync(const DescribeDedicatedHostAttributeRequest& request, const DescribeDedicatedHostAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDedicatedHostAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeDedicatedHostAttributeOutcomeCallable RdsClient::describeDedicatedHostAttributeCallable(const DescribeDedicatedHostAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDedicatedHostAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDedicatedHostAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeDedicatedHostGroupsOutcome RdsClient::describeDedicatedHostGroups(const DescribeDedicatedHostGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2961,42 +2817,6 @@ RdsClient::DescribeDedicatedHostGroupsOutcomeCallable RdsClient::describeDedicat
 			[this, request]()
 			{
 			return this->describeDedicatedHostGroups(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::DescribeDedicatedHostImageCategoriesOutcome RdsClient::describeDedicatedHostImageCategories(const DescribeDedicatedHostImageCategoriesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDedicatedHostImageCategoriesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDedicatedHostImageCategoriesOutcome(DescribeDedicatedHostImageCategoriesResult(outcome.result()));
-	else
-		return DescribeDedicatedHostImageCategoriesOutcome(outcome.error());
-}
-
-void RdsClient::describeDedicatedHostImageCategoriesAsync(const DescribeDedicatedHostImageCategoriesRequest& request, const DescribeDedicatedHostImageCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDedicatedHostImageCategories(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeDedicatedHostImageCategoriesOutcomeCallable RdsClient::describeDedicatedHostImageCategoriesCallable(const DescribeDedicatedHostImageCategoriesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDedicatedHostImageCategoriesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDedicatedHostImageCategories(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3213,42 +3033,6 @@ RdsClient::DescribeHASwitchConfigOutcomeCallable RdsClient::describeHASwitchConf
 			[this, request]()
 			{
 			return this->describeHASwitchConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::DescribeHostAccountsOutcome RdsClient::describeHostAccounts(const DescribeHostAccountsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeHostAccountsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeHostAccountsOutcome(DescribeHostAccountsResult(outcome.result()));
-	else
-		return DescribeHostAccountsOutcome(outcome.error());
-}
-
-void RdsClient::describeHostAccountsAsync(const DescribeHostAccountsRequest& request, const DescribeHostAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeHostAccounts(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeHostAccountsOutcomeCallable RdsClient::describeHostAccountsCallable(const DescribeHostAccountsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeHostAccountsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeHostAccounts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3573,42 +3357,6 @@ RdsClient::DescribeModifyParameterLogOutcomeCallable RdsClient::describeModifyPa
 			[this, request]()
 			{
 			return this->describeModifyParameterLog(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::DescribeNextEventForSignOutcome RdsClient::describeNextEventForSign(const DescribeNextEventForSignRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeNextEventForSignOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeNextEventForSignOutcome(DescribeNextEventForSignResult(outcome.result()));
-	else
-		return DescribeNextEventForSignOutcome(outcome.error());
-}
-
-void RdsClient::describeNextEventForSignAsync(const DescribeNextEventForSignRequest& request, const DescribeNextEventForSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeNextEventForSign(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeNextEventForSignOutcomeCallable RdsClient::describeNextEventForSignCallable(const DescribeNextEventForSignRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeNextEventForSignOutcome()>>(
-			[this, request]()
-			{
-			return this->describeNextEventForSign(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4335,42 +4083,6 @@ RdsClient::DescribeSecurityGroupConfigurationOutcomeCallable RdsClient::describe
 	return task->get_future();
 }
 
-RdsClient::DescribeSignedEventActionsOutcome RdsClient::describeSignedEventActions(const DescribeSignedEventActionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSignedEventActionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSignedEventActionsOutcome(DescribeSignedEventActionsResult(outcome.result()));
-	else
-		return DescribeSignedEventActionsOutcome(outcome.error());
-}
-
-void RdsClient::describeSignedEventActionsAsync(const DescribeSignedEventActionsRequest& request, const DescribeSignedEventActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSignedEventActions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeSignedEventActionsOutcomeCallable RdsClient::describeSignedEventActionsCallable(const DescribeSignedEventActionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSignedEventActionsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSignedEventActions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeSlowLogRecordsOutcome RdsClient::describeSlowLogRecords(const DescribeSlowLogRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4545,42 +4257,6 @@ RdsClient::DestroyDBInstanceOutcomeCallable RdsClient::destroyDBInstanceCallable
 			[this, request]()
 			{
 			return this->destroyDBInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::GetDBInstanceTopologyOutcome RdsClient::getDBInstanceTopology(const GetDBInstanceTopologyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDBInstanceTopologyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDBInstanceTopologyOutcome(GetDBInstanceTopologyResult(outcome.result()));
-	else
-		return GetDBInstanceTopologyOutcome(outcome.error());
-}
-
-void RdsClient::getDBInstanceTopologyAsync(const GetDBInstanceTopologyRequest& request, const GetDBInstanceTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDBInstanceTopology(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::GetDBInstanceTopologyOutcomeCallable RdsClient::getDBInstanceTopologyCallable(const GetDBInstanceTopologyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDBInstanceTopologyOutcome()>>(
-			[this, request]()
-			{
-			return this->getDBInstanceTopology(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5013,42 +4689,6 @@ RdsClient::ModifyActionEventPolicyOutcomeCallable RdsClient::modifyActionEventPo
 			[this, request]()
 			{
 			return this->modifyActionEventPolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::ModifyActionEventVerifyPolicyOutcome RdsClient::modifyActionEventVerifyPolicy(const ModifyActionEventVerifyPolicyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyActionEventVerifyPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyActionEventVerifyPolicyOutcome(ModifyActionEventVerifyPolicyResult(outcome.result()));
-	else
-		return ModifyActionEventVerifyPolicyOutcome(outcome.error());
-}
-
-void RdsClient::modifyActionEventVerifyPolicyAsync(const ModifyActionEventVerifyPolicyRequest& request, const ModifyActionEventVerifyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyActionEventVerifyPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyActionEventVerifyPolicyOutcomeCallable RdsClient::modifyActionEventVerifyPolicyCallable(const ModifyActionEventVerifyPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyActionEventVerifyPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyActionEventVerifyPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5919,114 +5559,6 @@ RdsClient::ModifyDbProxyInstanceSslOutcomeCallable RdsClient::modifyDbProxyInsta
 	return task->get_future();
 }
 
-RdsClient::ModifyDedicatedHostAccountOutcome RdsClient::modifyDedicatedHostAccount(const ModifyDedicatedHostAccountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDedicatedHostAccountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDedicatedHostAccountOutcome(ModifyDedicatedHostAccountResult(outcome.result()));
-	else
-		return ModifyDedicatedHostAccountOutcome(outcome.error());
-}
-
-void RdsClient::modifyDedicatedHostAccountAsync(const ModifyDedicatedHostAccountRequest& request, const ModifyDedicatedHostAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDedicatedHostAccount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyDedicatedHostAccountOutcomeCallable RdsClient::modifyDedicatedHostAccountCallable(const ModifyDedicatedHostAccountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDedicatedHostAccountOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDedicatedHostAccount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::ModifyDedicatedHostAttributeOutcome RdsClient::modifyDedicatedHostAttribute(const ModifyDedicatedHostAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDedicatedHostAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDedicatedHostAttributeOutcome(ModifyDedicatedHostAttributeResult(outcome.result()));
-	else
-		return ModifyDedicatedHostAttributeOutcome(outcome.error());
-}
-
-void RdsClient::modifyDedicatedHostAttributeAsync(const ModifyDedicatedHostAttributeRequest& request, const ModifyDedicatedHostAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDedicatedHostAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyDedicatedHostAttributeOutcomeCallable RdsClient::modifyDedicatedHostAttributeCallable(const ModifyDedicatedHostAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDedicatedHostAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDedicatedHostAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::ModifyDedicatedHostGroupAttributeOutcome RdsClient::modifyDedicatedHostGroupAttribute(const ModifyDedicatedHostGroupAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDedicatedHostGroupAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDedicatedHostGroupAttributeOutcome(ModifyDedicatedHostGroupAttributeResult(outcome.result()));
-	else
-		return ModifyDedicatedHostGroupAttributeOutcome(outcome.error());
-}
-
-void RdsClient::modifyDedicatedHostGroupAttributeAsync(const ModifyDedicatedHostGroupAttributeRequest& request, const ModifyDedicatedHostGroupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDedicatedHostGroupAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyDedicatedHostGroupAttributeOutcomeCallable RdsClient::modifyDedicatedHostGroupAttributeCallable(const ModifyDedicatedHostGroupAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDedicatedHostGroupAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDedicatedHostGroupAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::ModifyHASwitchConfigOutcome RdsClient::modifyHASwitchConfig(const ModifyHASwitchConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6129,42 +5661,6 @@ RdsClient::ModifyInstanceCrossBackupPolicyOutcomeCallable RdsClient::modifyInsta
 			[this, request]()
 			{
 			return this->modifyInstanceCrossBackupPolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::ModifyLicenseInfoOutcome RdsClient::modifyLicenseInfo(const ModifyLicenseInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyLicenseInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyLicenseInfoOutcome(ModifyLicenseInfoResult(outcome.result()));
-	else
-		return ModifyLicenseInfoOutcome(outcome.error());
-}
-
-void RdsClient::modifyLicenseInfoAsync(const ModifyLicenseInfoRequest& request, const ModifyLicenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyLicenseInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ModifyLicenseInfoOutcomeCallable RdsClient::modifyLicenseInfoCallable(const ModifyLicenseInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyLicenseInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyLicenseInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6783,42 +6279,6 @@ RdsClient::RenewInstanceOutcomeCallable RdsClient::renewInstanceCallable(const R
 	return task->get_future();
 }
 
-RdsClient::ReplaceDedicatedHostOutcome RdsClient::replaceDedicatedHost(const ReplaceDedicatedHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReplaceDedicatedHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReplaceDedicatedHostOutcome(ReplaceDedicatedHostResult(outcome.result()));
-	else
-		return ReplaceDedicatedHostOutcome(outcome.error());
-}
-
-void RdsClient::replaceDedicatedHostAsync(const ReplaceDedicatedHostRequest& request, const ReplaceDedicatedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, replaceDedicatedHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ReplaceDedicatedHostOutcomeCallable RdsClient::replaceDedicatedHostCallable(const ReplaceDedicatedHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReplaceDedicatedHostOutcome()>>(
-			[this, request]()
-			{
-			return this->replaceDedicatedHost(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::ResetAccountOutcome RdsClient::resetAccount(const ResetAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6927,42 +6387,6 @@ RdsClient::ResetAccountPasswordOutcomeCallable RdsClient::resetAccountPasswordCa
 	return task->get_future();
 }
 
-RdsClient::ResetHostAccountPasswordOutcome RdsClient::resetHostAccountPassword(const ResetHostAccountPasswordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ResetHostAccountPasswordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ResetHostAccountPasswordOutcome(ResetHostAccountPasswordResult(outcome.result()));
-	else
-		return ResetHostAccountPasswordOutcome(outcome.error());
-}
-
-void RdsClient::resetHostAccountPasswordAsync(const ResetHostAccountPasswordRequest& request, const ResetHostAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, resetHostAccountPassword(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ResetHostAccountPasswordOutcomeCallable RdsClient::resetHostAccountPasswordCallable(const ResetHostAccountPasswordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ResetHostAccountPasswordOutcome()>>(
-			[this, request]()
-			{
-			return this->resetHostAccountPassword(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::RestartDBInstanceOutcome RdsClient::restartDBInstance(const RestartDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6993,42 +6417,6 @@ RdsClient::RestartDBInstanceOutcomeCallable RdsClient::restartDBInstanceCallable
 			[this, request]()
 			{
 			return this->restartDBInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::RestartDedicatedHostOutcome RdsClient::restartDedicatedHost(const RestartDedicatedHostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RestartDedicatedHostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RestartDedicatedHostOutcome(RestartDedicatedHostResult(outcome.result()));
-	else
-		return RestartDedicatedHostOutcome(outcome.error());
-}
-
-void RdsClient::restartDedicatedHostAsync(const RestartDedicatedHostRequest& request, const RestartDedicatedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, restartDedicatedHost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::RestartDedicatedHostOutcomeCallable RdsClient::restartDedicatedHostCallable(const RestartDedicatedHostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RestartDedicatedHostOutcome()>>(
-			[this, request]()
-			{
-			return this->restartDedicatedHost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7173,42 +6561,6 @@ RdsClient::RevokeOperatorPermissionOutcomeCallable RdsClient::revokeOperatorPerm
 			[this, request]()
 			{
 			return this->revokeOperatorPermission(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::SignEventActionOutcome RdsClient::signEventAction(const SignEventActionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SignEventActionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SignEventActionOutcome(SignEventActionResult(outcome.result()));
-	else
-		return SignEventActionOutcome(outcome.error());
-}
-
-void RdsClient::signEventActionAsync(const SignEventActionRequest& request, const SignEventActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, signEventAction(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::SignEventActionOutcomeCallable RdsClient::signEventActionCallable(const SignEventActionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SignEventActionOutcome()>>(
-			[this, request]()
-			{
-			return this->signEventAction(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
