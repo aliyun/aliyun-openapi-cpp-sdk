@@ -21,7 +21,7 @@ using AlibabaCloud::Dataworks_public::Model::RunTriggerNodeRequest;
 RunTriggerNodeRequest::RunTriggerNodeRequest() :
 	RpcServiceRequest("dataworks-public", "2020-05-18", "RunTriggerNode")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 RunTriggerNodeRequest::~RunTriggerNodeRequest()
