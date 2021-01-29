@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
-#define ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_STOPMONITORRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_STOPMONITORRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cdrs/CDRSExport.h>
 
 namespace AlibabaCloud
@@ -28,30 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT GetCdrsMonitorListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDRS_EXPORT StopMonitorResult : public ServiceResult
 			{
-
 			public:
-				GetCdrsMonitorListRequest();
-				~GetCdrsMonitorListRequest();
 
-				std::string getCorpId()const;
-				void setCorpId(const std::string& corpId);
-				int getPageNo()const;
-				void setPageNo(int pageNo);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getBizId()const;
-				void setBizId(const std::string& bizId);
 
-            private:
-				std::string corpId_;
-				int pageNo_;
-				int pageSize_;
-				std::string bizId_;
+				StopMonitorResult();
+				explicit StopMonitorResult(const std::string &payload);
+				~StopMonitorResult();
+				std::string getMessage()const;
+				std::string getData()const;
+				std::string getCode()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				std::string data_;
+				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_STOPMONITORRESULT_H_

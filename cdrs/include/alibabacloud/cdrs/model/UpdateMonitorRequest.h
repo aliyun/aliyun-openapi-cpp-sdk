@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_UPDATECDRSMONITORREQUEST_H_
-#define ALIBABACLOUD_CDRS_MODEL_UPDATECDRSMONITORREQUEST_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_UPDATEMONITORREQUEST_H_
+#define ALIBABACLOUD_CDRS_MODEL_UPDATEMONITORREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT UpdateCdrsMonitorRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDRS_EXPORT UpdateMonitorRequest : public RpcServiceRequest
 			{
 
 			public:
-				UpdateCdrsMonitorRequest();
-				~UpdateCdrsMonitorRequest();
+				UpdateMonitorRequest();
+				~UpdateMonitorRequest();
 
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
@@ -99,4 +99,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_UPDATECDRSMONITORREQUEST_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_UPDATEMONITORREQUEST_H_

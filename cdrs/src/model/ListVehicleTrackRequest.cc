@@ -71,3 +71,25 @@ void ListVehicleTrackRequest::setStartTime(const std::string& startTime)
 	setBodyParameter("StartTime", startTime);
 }
 
+long ListVehicleTrackRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListVehicleTrackRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setBodyParameter("PageNumber", std::to_string(pageNumber));
+}
+
+long ListVehicleTrackRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListVehicleTrackRequest::setPageSize(long pageSize)
+{
+	pageSize_ = pageSize;
+	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+

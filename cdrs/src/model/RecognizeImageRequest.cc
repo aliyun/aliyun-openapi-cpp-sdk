@@ -27,6 +27,17 @@ RecognizeImageRequest::RecognizeImageRequest() :
 RecognizeImageRequest::~RecognizeImageRequest()
 {}
 
+bool RecognizeImageRequest::getRequireCropImage()const
+{
+	return requireCropImage_;
+}
+
+void RecognizeImageRequest::setRequireCropImage(bool requireCropImage)
+{
+	requireCropImage_ = requireCropImage;
+	setBodyParameter("RequireCropImage", requireCropImage ? "true" : "false");
+}
+
 std::string RecognizeImageRequest::getCorpId()const
 {
 	return corpId_;
@@ -36,6 +47,17 @@ void RecognizeImageRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
+}
+
+std::string RecognizeImageRequest::getRecognizeType()const
+{
+	return recognizeType_;
+}
+
+void RecognizeImageRequest::setRecognizeType(const std::string& recognizeType)
+{
+	recognizeType_ = recognizeType;
+	setBodyParameter("RecognizeType", recognizeType);
 }
 
 std::string RecognizeImageRequest::getVendor()const

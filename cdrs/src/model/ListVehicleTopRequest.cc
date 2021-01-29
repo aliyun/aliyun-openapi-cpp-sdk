@@ -71,3 +71,25 @@ void ListVehicleTopRequest::setStartTime(const std::string& startTime)
 	setBodyParameter("StartTime", startTime);
 }
 
+std::string ListVehicleTopRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void ListVehicleTopRequest::setPageNum(const std::string& pageNum)
+{
+	pageNum_ = pageNum;
+	setBodyParameter("PageNum", pageNum);
+}
+
+std::string ListVehicleTopRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListVehicleTopRequest::setPageSize(const std::string& pageSize)
+{
+	pageSize_ = pageSize;
+	setBodyParameter("PageSize", pageSize);
+}
+

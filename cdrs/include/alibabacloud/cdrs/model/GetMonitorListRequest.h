@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
-#define ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_GETMONITORLISTREQUEST_H_
+#define ALIBABACLOUD_CDRS_MODEL_GETMONITORLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT GetCdrsMonitorListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDRS_EXPORT GetMonitorListRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetCdrsMonitorListRequest();
-				~GetCdrsMonitorListRequest();
+				GetMonitorListRequest();
+				~GetMonitorListRequest();
 
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
-				int getPageNo()const;
-				void setPageNo(int pageNo);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getBizId()const;
@@ -46,7 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string corpId_;
-				int pageNo_;
+				int pageNumber_;
 				int pageSize_;
 				std::string bizId_;
 
@@ -54,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_GETMONITORLISTREQUEST_H_

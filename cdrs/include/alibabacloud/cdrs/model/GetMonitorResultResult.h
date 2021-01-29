@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_RECOGNIZEIMAGERESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_RECOGNIZEIMAGERESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_GETMONITORRESULTRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_GETMONITORRESULTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT RecognizeImageResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT GetMonitorResultResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct BodyListItem
+					struct RecordsItem
 					{
-						int rightBottomX;
-						int rightBottomY;
-						std::string cropAlgorithmCode;
-						int leftTopY;
-						int leftTopX;
-						std::string feature;
-						std::string targetImageContent;
+						struct ExtendInfo
+						{
+							std::string plateNo;
+						};
+						std::string leftUpX;
+						std::string leftUpY;
+						std::string score;
+						std::string taskId;
+						std::string targetPicUrl;
+						std::string rightBottomX;
+						std::string rightBottomY;
+						std::string gbId;
+						std::string monitorPicUrl;
+						std::string shotTime;
+						std::string picUrl;
+						ExtendInfo extendInfo;
 					};
-					struct FaceListItem
-					{
-						float faceQuality;
-						int rightBottomX;
-						int rightBottomY;
-						float faceKeyPointQuality;
-						std::string cropAlgorithmCode;
-						int leftTopY;
-						int leftTopX;
-						std::string feature;
-						std::string targetImageContent;
-					};
-					std::vector<BodyListItem> bodyList;
-					std::vector<FaceListItem> faceList;
+					std::string maxId;
+					std::vector<RecordsItem> records;
 				};
 
 
-				RecognizeImageResult();
-				explicit RecognizeImageResult(const std::string &payload);
-				~RecognizeImageResult();
+				GetMonitorResultResult();
+				explicit GetMonitorResultResult(const std::string &payload);
+				~GetMonitorResultResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
-				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -75,10 +71,9 @@ namespace AlibabaCloud
 				std::string message_;
 				Data data_;
 				std::string code_;
-				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_RECOGNIZEIMAGERESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_GETMONITORRESULTRESULT_H_

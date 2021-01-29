@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				RecognizeImageRequest();
 				~RecognizeImageRequest();
 
+				bool getRequireCropImage()const;
+				void setRequireCropImage(bool requireCropImage);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
+				std::string getRecognizeType()const;
+				void setRecognizeType(const std::string& recognizeType);
 				std::string getVendor()const;
 				void setVendor(const std::string& vendor);
 				std::string getImageUrl()const;
@@ -45,7 +49,9 @@ namespace AlibabaCloud
 				void setImageContent(const std::string& imageContent);
 
             private:
+				bool requireCropImage_;
 				std::string corpId_;
+				std::string recognizeType_;
 				std::string vendor_;
 				std::string imageUrl_;
 				std::string imageContent_;

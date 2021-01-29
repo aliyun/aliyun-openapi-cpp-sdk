@@ -54,6 +54,10 @@ void RecognizeImageResult::parse(const std::string &payload)
 			bodyListItemObject.rightBottomY = std::stoi(dataNodeBodyListBodyListItem["RightBottomY"].asString());
 		if(!dataNodeBodyListBodyListItem["Feature"].isNull())
 			bodyListItemObject.feature = dataNodeBodyListBodyListItem["Feature"].asString();
+		if(!dataNodeBodyListBodyListItem["TargetImageContent"].isNull())
+			bodyListItemObject.targetImageContent = dataNodeBodyListBodyListItem["TargetImageContent"].asString();
+		if(!dataNodeBodyListBodyListItem["CropAlgorithmCode"].isNull())
+			bodyListItemObject.cropAlgorithmCode = dataNodeBodyListBodyListItem["CropAlgorithmCode"].asString();
 		data_.bodyList.push_back(bodyListItemObject);
 	}
 	auto allFaceListNode = dataNode["FaceList"]["FaceListItem"];
@@ -74,6 +78,10 @@ void RecognizeImageResult::parse(const std::string &payload)
 			faceListItemObject.faceKeyPointQuality = std::stof(dataNodeFaceListFaceListItem["FaceKeyPointQuality"].asString());
 		if(!dataNodeFaceListFaceListItem["Feature"].isNull())
 			faceListItemObject.feature = dataNodeFaceListFaceListItem["Feature"].asString();
+		if(!dataNodeFaceListFaceListItem["TargetImageContent"].isNull())
+			faceListItemObject.targetImageContent = dataNodeFaceListFaceListItem["TargetImageContent"].asString();
+		if(!dataNodeFaceListFaceListItem["CropAlgorithmCode"].isNull())
+			faceListItemObject.cropAlgorithmCode = dataNodeFaceListFaceListItem["CropAlgorithmCode"].asString();
 		data_.faceList.push_back(faceListItemObject);
 	}
 	if(!value["Code"].isNull())

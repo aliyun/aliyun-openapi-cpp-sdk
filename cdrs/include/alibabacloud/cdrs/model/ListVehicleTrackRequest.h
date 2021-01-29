@@ -43,12 +43,18 @@ namespace AlibabaCloud
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
 
             private:
 				std::string plateId_;
 				std::string corpId_;
 				std::string endTime_;
 				std::string startTime_;
+				long pageNumber_;
+				long pageSize_;
 
 			};
 		}

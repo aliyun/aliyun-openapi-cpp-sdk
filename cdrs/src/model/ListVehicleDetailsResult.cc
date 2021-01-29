@@ -69,6 +69,10 @@ void ListVehicleDetailsResult::parse(const std::string &payload)
 			dataObject.personId = valueDataDatas["PersonId"].asString();
 		if(!valueDataDatas["PlateId"].isNull())
 			dataObject.plateId = valueDataDatas["PlateId"].asString();
+		if(!valueDataDatas["SourceUrl"].isNull())
+			dataObject.sourceUrl = valueDataDatas["SourceUrl"].asString();
+		if(!valueDataDatas["TargetUrl"].isNull())
+			dataObject.targetUrl = valueDataDatas["TargetUrl"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

@@ -14,223 +14,223 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/UpdateCdrsMonitorRequest.h>
+#include <alibabacloud/cdrs/model/UpdateMonitorRequest.h>
 
-using AlibabaCloud::CDRS::Model::UpdateCdrsMonitorRequest;
+using AlibabaCloud::CDRS::Model::UpdateMonitorRequest;
 
-UpdateCdrsMonitorRequest::UpdateCdrsMonitorRequest() :
-	RpcServiceRequest("cdrs", "2020-11-01", "UpdateCdrsMonitor")
+UpdateMonitorRequest::UpdateMonitorRequest() :
+	RpcServiceRequest("cdrs", "2020-11-01", "UpdateMonitor")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-UpdateCdrsMonitorRequest::~UpdateCdrsMonitorRequest()
+UpdateMonitorRequest::~UpdateMonitorRequest()
 {}
 
-std::string UpdateCdrsMonitorRequest::getCorpId()const
+std::string UpdateMonitorRequest::getCorpId()const
 {
 	return corpId_;
 }
 
-void UpdateCdrsMonitorRequest::setCorpId(const std::string& corpId)
+void UpdateMonitorRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
 }
 
-std::string UpdateCdrsMonitorRequest::getDescription()const
+std::string UpdateMonitorRequest::getDescription()const
 {
 	return description_;
 }
 
-void UpdateCdrsMonitorRequest::setDescription(const std::string& description)
+void UpdateMonitorRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setBodyParameter("Description", description);
 }
 
-std::string UpdateCdrsMonitorRequest::getRuleName()const
+std::string UpdateMonitorRequest::getRuleName()const
 {
 	return ruleName_;
 }
 
-void UpdateCdrsMonitorRequest::setRuleName(const std::string& ruleName)
+void UpdateMonitorRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
 	setBodyParameter("RuleName", ruleName);
 }
 
-std::string UpdateCdrsMonitorRequest::getPicOperateType()const
+std::string UpdateMonitorRequest::getPicOperateType()const
 {
 	return picOperateType_;
 }
 
-void UpdateCdrsMonitorRequest::setPicOperateType(const std::string& picOperateType)
+void UpdateMonitorRequest::setPicOperateType(const std::string& picOperateType)
 {
 	picOperateType_ = picOperateType;
 	setBodyParameter("PicOperateType", picOperateType);
 }
 
-std::string UpdateCdrsMonitorRequest::getAttributeName()const
+std::string UpdateMonitorRequest::getAttributeName()const
 {
 	return attributeName_;
 }
 
-void UpdateCdrsMonitorRequest::setAttributeName(const std::string& attributeName)
+void UpdateMonitorRequest::setAttributeName(const std::string& attributeName)
 {
 	attributeName_ = attributeName;
 	setBodyParameter("AttributeName", attributeName);
 }
 
-std::string UpdateCdrsMonitorRequest::getAttributeOperateType()const
+std::string UpdateMonitorRequest::getAttributeOperateType()const
 {
 	return attributeOperateType_;
 }
 
-void UpdateCdrsMonitorRequest::setAttributeOperateType(const std::string& attributeOperateType)
+void UpdateMonitorRequest::setAttributeOperateType(const std::string& attributeOperateType)
 {
 	attributeOperateType_ = attributeOperateType;
 	setBodyParameter("AttributeOperateType", attributeOperateType);
 }
 
-std::string UpdateCdrsMonitorRequest::getRuleExpression()const
+std::string UpdateMonitorRequest::getRuleExpression()const
 {
 	return ruleExpression_;
 }
 
-void UpdateCdrsMonitorRequest::setRuleExpression(const std::string& ruleExpression)
+void UpdateMonitorRequest::setRuleExpression(const std::string& ruleExpression)
 {
 	ruleExpression_ = ruleExpression;
 	setBodyParameter("RuleExpression", ruleExpression);
 }
 
-int UpdateCdrsMonitorRequest::getNotifierTimeOut()const
+int UpdateMonitorRequest::getNotifierTimeOut()const
 {
 	return notifierTimeOut_;
 }
 
-void UpdateCdrsMonitorRequest::setNotifierTimeOut(int notifierTimeOut)
+void UpdateMonitorRequest::setNotifierTimeOut(int notifierTimeOut)
 {
 	notifierTimeOut_ = notifierTimeOut;
 	setBodyParameter("NotifierTimeOut", std::to_string(notifierTimeOut));
 }
 
-std::string UpdateCdrsMonitorRequest::getTaskId()const
+std::string UpdateMonitorRequest::getTaskId()const
 {
 	return taskId_;
 }
 
-void UpdateCdrsMonitorRequest::setTaskId(const std::string& taskId)
+void UpdateMonitorRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setBodyParameter("TaskId", taskId);
 }
 
-std::string UpdateCdrsMonitorRequest::getDeviceOperateType()const
+std::string UpdateMonitorRequest::getDeviceOperateType()const
 {
 	return deviceOperateType_;
 }
 
-void UpdateCdrsMonitorRequest::setDeviceOperateType(const std::string& deviceOperateType)
+void UpdateMonitorRequest::setDeviceOperateType(const std::string& deviceOperateType)
 {
 	deviceOperateType_ = deviceOperateType;
 	setBodyParameter("DeviceOperateType", deviceOperateType);
 }
 
-std::string UpdateCdrsMonitorRequest::getPicList()const
+std::string UpdateMonitorRequest::getPicList()const
 {
 	return picList_;
 }
 
-void UpdateCdrsMonitorRequest::setPicList(const std::string& picList)
+void UpdateMonitorRequest::setPicList(const std::string& picList)
 {
 	picList_ = picList;
 	setBodyParameter("PicList", picList);
 }
 
-std::string UpdateCdrsMonitorRequest::getAttributeValueList()const
+std::string UpdateMonitorRequest::getAttributeValueList()const
 {
 	return attributeValueList_;
 }
 
-void UpdateCdrsMonitorRequest::setAttributeValueList(const std::string& attributeValueList)
+void UpdateMonitorRequest::setAttributeValueList(const std::string& attributeValueList)
 {
 	attributeValueList_ = attributeValueList;
 	setBodyParameter("AttributeValueList", attributeValueList);
 }
 
-std::string UpdateCdrsMonitorRequest::getNotifierAppSecret()const
+std::string UpdateMonitorRequest::getNotifierAppSecret()const
 {
 	return notifierAppSecret_;
 }
 
-void UpdateCdrsMonitorRequest::setNotifierAppSecret(const std::string& notifierAppSecret)
+void UpdateMonitorRequest::setNotifierAppSecret(const std::string& notifierAppSecret)
 {
 	notifierAppSecret_ = notifierAppSecret;
 	setBodyParameter("NotifierAppSecret", notifierAppSecret);
 }
 
-std::string UpdateCdrsMonitorRequest::getNotifierExtendValues()const
+std::string UpdateMonitorRequest::getNotifierExtendValues()const
 {
 	return notifierExtendValues_;
 }
 
-void UpdateCdrsMonitorRequest::setNotifierExtendValues(const std::string& notifierExtendValues)
+void UpdateMonitorRequest::setNotifierExtendValues(const std::string& notifierExtendValues)
 {
 	notifierExtendValues_ = notifierExtendValues;
 	setBodyParameter("NotifierExtendValues", notifierExtendValues);
 }
 
-std::string UpdateCdrsMonitorRequest::getDeviceList()const
+std::string UpdateMonitorRequest::getDeviceList()const
 {
 	return deviceList_;
 }
 
-void UpdateCdrsMonitorRequest::setDeviceList(const std::string& deviceList)
+void UpdateMonitorRequest::setDeviceList(const std::string& deviceList)
 {
 	deviceList_ = deviceList;
 	setBodyParameter("DeviceList", deviceList);
 }
 
-std::string UpdateCdrsMonitorRequest::getNotifierUrl()const
+std::string UpdateMonitorRequest::getNotifierUrl()const
 {
 	return notifierUrl_;
 }
 
-void UpdateCdrsMonitorRequest::setNotifierUrl(const std::string& notifierUrl)
+void UpdateMonitorRequest::setNotifierUrl(const std::string& notifierUrl)
 {
 	notifierUrl_ = notifierUrl;
 	setBodyParameter("NotifierUrl", notifierUrl);
 }
 
-std::string UpdateCdrsMonitorRequest::getNotifierType()const
+std::string UpdateMonitorRequest::getNotifierType()const
 {
 	return notifierType_;
 }
 
-void UpdateCdrsMonitorRequest::setNotifierType(const std::string& notifierType)
+void UpdateMonitorRequest::setNotifierType(const std::string& notifierType)
 {
 	notifierType_ = notifierType;
 	setBodyParameter("NotifierType", notifierType);
 }
 
-std::string UpdateCdrsMonitorRequest::getBizId()const
+std::string UpdateMonitorRequest::getBizId()const
 {
 	return bizId_;
 }
 
-void UpdateCdrsMonitorRequest::setBizId(const std::string& bizId)
+void UpdateMonitorRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
 	setBodyParameter("BizId", bizId);
 }
 
-std::string UpdateCdrsMonitorRequest::getAlgorithmVendor()const
+std::string UpdateMonitorRequest::getAlgorithmVendor()const
 {
 	return algorithmVendor_;
 }
 
-void UpdateCdrsMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
+void UpdateMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
 {
 	algorithmVendor_ = algorithmVendor;
 	setBodyParameter("AlgorithmVendor", algorithmVendor);

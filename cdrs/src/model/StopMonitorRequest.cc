@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/StopCdrsMonitorRequest.h>
+#include <alibabacloud/cdrs/model/StopMonitorRequest.h>
 
-using AlibabaCloud::CDRS::Model::StopCdrsMonitorRequest;
+using AlibabaCloud::CDRS::Model::StopMonitorRequest;
 
-StopCdrsMonitorRequest::StopCdrsMonitorRequest() :
-	RpcServiceRequest("cdrs", "2020-11-01", "StopCdrsMonitor")
+StopMonitorRequest::StopMonitorRequest() :
+	RpcServiceRequest("cdrs", "2020-11-01", "StopMonitor")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-StopCdrsMonitorRequest::~StopCdrsMonitorRequest()
+StopMonitorRequest::~StopMonitorRequest()
 {}
 
-std::string StopCdrsMonitorRequest::getCorpId()const
+std::string StopMonitorRequest::getCorpId()const
 {
 	return corpId_;
 }
 
-void StopCdrsMonitorRequest::setCorpId(const std::string& corpId)
+void StopMonitorRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
 }
 
-std::string StopCdrsMonitorRequest::getBizId()const
+std::string StopMonitorRequest::getBizId()const
 {
 	return bizId_;
 }
 
-void StopCdrsMonitorRequest::setBizId(const std::string& bizId)
+void StopMonitorRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
 	setBodyParameter("BizId", bizId);
 }
 
-std::string StopCdrsMonitorRequest::getAlgorithmVendor()const
+std::string StopMonitorRequest::getAlgorithmVendor()const
 {
 	return algorithmVendor_;
 }
 
-void StopCdrsMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
+void StopMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
 {
 	algorithmVendor_ = algorithmVendor;
 	setBodyParameter("AlgorithmVendor", algorithmVendor);
 }
 
-std::string StopCdrsMonitorRequest::getTaskId()const
+std::string StopMonitorRequest::getTaskId()const
 {
 	return taskId_;
 }
 
-void StopCdrsMonitorRequest::setTaskId(const std::string& taskId)
+void StopMonitorRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setBodyParameter("TaskId", taskId);

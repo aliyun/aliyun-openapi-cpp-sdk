@@ -71,6 +71,10 @@ void ListVehicleTrackResult::parse(const std::string &payload)
 			dataObject.latitude = valueDataDatas["Latitude"].asString();
 		if(!valueDataDatas["Longitude"].isNull())
 			dataObject.longitude = valueDataDatas["Longitude"].asString();
+		if(!valueDataDatas["SourceUrl"].isNull())
+			dataObject.sourceUrl = valueDataDatas["SourceUrl"].asString();
+		if(!valueDataDatas["TargetUrl"].isNull())
+			dataObject.targetUrl = valueDataDatas["TargetUrl"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_LISTPERSONTRACERESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_LISTPERSONTRACERESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_GETMONITORLISTRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_GETMONITORLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,49 +29,53 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT ListPersonTraceResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT GetMonitorListResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct Data
 				{
-					std::string startTargetImage;
-					std::string startSourceImage;
-					std::string corpId;
-					std::string personId;
-					std::string deviceId;
-					std::string endTargetImage;
-					std::string startTime;
-					std::string endSourceImage;
-					std::string date;
-					std::string lastTime;
-					std::string groupId;
+					struct Record
+					{
+						std::string status;
+						std::string taskId;
+						std::string description;
+						std::string monitorType;
+						std::string imageMatch;
+						std::string attributes;
+						std::string deviceList;
+						std::string modifiedDate;
+						std::string createDate;
+						std::string notifierType;
+						std::string ruleExpression;
+						std::string algorithmVendor;
+						std::string expression;
+						std::string ruleName;
+						std::string notifierExtra;
+					};
+					int totalCount;
+					int pageSize;
+					int totalPage;
+					int pageNumber;
+					std::vector<Record> records;
 				};
 
 
-				ListPersonTraceResult();
-				explicit ListPersonTraceResult(const std::string &payload);
-				~ListPersonTraceResult();
-				int getTotalCount()const;
+				GetMonitorListResult();
+				explicit GetMonitorListResult(const std::string &payload);
+				~GetMonitorListResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<DataItem> getData()const;
+				Data getData()const;
 				std::string getCode()const;
-				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<DataItem> data_;
+				Data data_;
 				std::string code_;
-				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_LISTPERSONTRACERESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_GETMONITORLISTRESULT_H_

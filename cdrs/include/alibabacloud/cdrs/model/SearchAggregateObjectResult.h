@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_SEARCHOBJECTRESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_SEARCHOBJECTRESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_SEARCHAGGREGATEOBJECTRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_SEARCHAGGREGATEOBJECTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,62 +29,78 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT SearchObjectResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT SearchAggregateObjectResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
 					struct BodyListItem
 					{
-						std::string objectType;
 						std::string targetImageUrl;
-						float score;
 						int rightBottomX;
 						std::string deviceID;
 						int rightBottomY;
-						std::string shotTime;
 						std::string sourceImageUrl;
 						int leftTopY;
 						int leftTopX;
+						float deviceLongitude;
+						std::string objectType;
+						float score;
+						std::string personId;
+						float deviceLatitude;
+						std::string shotTime;
+						std::string deviceName;
 					};
 					struct FaceListItem
 					{
-						std::string objectType;
 						std::string targetImageUrl;
-						float score;
 						int rightBottomX;
 						std::string deviceID;
 						int rightBottomY;
-						std::string shotTime;
 						std::string sourceImageUrl;
 						int leftTopY;
 						int leftTopX;
+						float deviceLongitude;
+						std::string objectType;
+						float score;
+						std::string personId;
+						float deviceLatitude;
+						std::string shotTime;
+						std::string deviceName;
 					};
 					struct MotorListItem
 					{
-						std::string objectType;
 						std::string targetImageUrl;
-						float score;
 						int rightBottomX;
 						std::string deviceID;
 						int rightBottomY;
-						std::string shotTime;
 						std::string sourceImageUrl;
 						int leftTopY;
 						int leftTopX;
+						float deviceLongitude;
+						std::string objectType;
+						float score;
+						std::string personId;
+						float deviceLatitude;
+						std::string shotTime;
+						std::string deviceName;
 					};
 					struct NonMotorListItem
 					{
-						std::string objectType;
 						std::string targetImageUrl;
-						float score;
 						int rightBottomX;
 						std::string deviceID;
 						int rightBottomY;
-						std::string shotTime;
 						std::string sourceImageUrl;
 						int leftTopY;
 						int leftTopX;
+						float deviceLongitude;
+						std::string objectType;
+						float score;
+						std::string personId;
+						float deviceLatitude;
+						std::string shotTime;
+						std::string deviceName;
 					};
 					std::vector<NonMotorListItem> nonMotorList;
 					std::vector<BodyListItem> bodyList;
@@ -93,9 +109,9 @@ namespace AlibabaCloud
 				};
 
 
-				SearchObjectResult();
-				explicit SearchObjectResult(const std::string &payload);
-				~SearchObjectResult();
+				SearchAggregateObjectResult();
+				explicit SearchAggregateObjectResult(const std::string &payload);
+				~SearchAggregateObjectResult();
 				std::string getMessage()const;
 				long getPageSize()const;
 				int getTotal()const;
@@ -117,4 +133,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_SEARCHOBJECTRESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_SEARCHAGGREGATEOBJECTRESULT_H_

@@ -14,135 +14,135 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/AddCdrsMonitorRequest.h>
+#include <alibabacloud/cdrs/model/AddMonitorRequest.h>
 
-using AlibabaCloud::CDRS::Model::AddCdrsMonitorRequest;
+using AlibabaCloud::CDRS::Model::AddMonitorRequest;
 
-AddCdrsMonitorRequest::AddCdrsMonitorRequest() :
-	RpcServiceRequest("cdrs", "2020-11-01", "AddCdrsMonitor")
+AddMonitorRequest::AddMonitorRequest() :
+	RpcServiceRequest("cdrs", "2020-11-01", "AddMonitor")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-AddCdrsMonitorRequest::~AddCdrsMonitorRequest()
+AddMonitorRequest::~AddMonitorRequest()
 {}
 
-std::string AddCdrsMonitorRequest::getMonitorType()const
+std::string AddMonitorRequest::getMonitorType()const
 {
 	return monitorType_;
 }
 
-void AddCdrsMonitorRequest::setMonitorType(const std::string& monitorType)
+void AddMonitorRequest::setMonitorType(const std::string& monitorType)
 {
 	monitorType_ = monitorType;
 	setBodyParameter("MonitorType", monitorType);
 }
 
-std::string AddCdrsMonitorRequest::getCorpId()const
+std::string AddMonitorRequest::getCorpId()const
 {
 	return corpId_;
 }
 
-void AddCdrsMonitorRequest::setCorpId(const std::string& corpId)
+void AddMonitorRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
 }
 
-std::string AddCdrsMonitorRequest::getDescription()const
+std::string AddMonitorRequest::getDescription()const
 {
 	return description_;
 }
 
-void AddCdrsMonitorRequest::setDescription(const std::string& description)
+void AddMonitorRequest::setDescription(const std::string& description)
 {
 	description_ = description;
 	setBodyParameter("Description", description);
 }
 
-std::string AddCdrsMonitorRequest::getNotifierAppSecret()const
+std::string AddMonitorRequest::getNotifierAppSecret()const
 {
 	return notifierAppSecret_;
 }
 
-void AddCdrsMonitorRequest::setNotifierAppSecret(const std::string& notifierAppSecret)
+void AddMonitorRequest::setNotifierAppSecret(const std::string& notifierAppSecret)
 {
 	notifierAppSecret_ = notifierAppSecret;
 	setBodyParameter("NotifierAppSecret", notifierAppSecret);
 }
 
-std::string AddCdrsMonitorRequest::getNotifierExtendValues()const
+std::string AddMonitorRequest::getNotifierExtendValues()const
 {
 	return notifierExtendValues_;
 }
 
-void AddCdrsMonitorRequest::setNotifierExtendValues(const std::string& notifierExtendValues)
+void AddMonitorRequest::setNotifierExtendValues(const std::string& notifierExtendValues)
 {
 	notifierExtendValues_ = notifierExtendValues;
 	setBodyParameter("NotifierExtendValues", notifierExtendValues);
 }
 
-std::string AddCdrsMonitorRequest::getNotifierUrl()const
+std::string AddMonitorRequest::getNotifierUrl()const
 {
 	return notifierUrl_;
 }
 
-void AddCdrsMonitorRequest::setNotifierUrl(const std::string& notifierUrl)
+void AddMonitorRequest::setNotifierUrl(const std::string& notifierUrl)
 {
 	notifierUrl_ = notifierUrl;
 	setBodyParameter("NotifierUrl", notifierUrl);
 }
 
-std::string AddCdrsMonitorRequest::getNotifierType()const
+std::string AddMonitorRequest::getNotifierType()const
 {
 	return notifierType_;
 }
 
-void AddCdrsMonitorRequest::setNotifierType(const std::string& notifierType)
+void AddMonitorRequest::setNotifierType(const std::string& notifierType)
 {
 	notifierType_ = notifierType;
 	setBodyParameter("NotifierType", notifierType);
 }
 
-int AddCdrsMonitorRequest::getBatchIndicator()const
+int AddMonitorRequest::getBatchIndicator()const
 {
 	return batchIndicator_;
 }
 
-void AddCdrsMonitorRequest::setBatchIndicator(int batchIndicator)
+void AddMonitorRequest::setBatchIndicator(int batchIndicator)
 {
 	batchIndicator_ = batchIndicator;
 	setBodyParameter("BatchIndicator", std::to_string(batchIndicator));
 }
 
-std::string AddCdrsMonitorRequest::getBizId()const
+std::string AddMonitorRequest::getBizId()const
 {
 	return bizId_;
 }
 
-void AddCdrsMonitorRequest::setBizId(const std::string& bizId)
+void AddMonitorRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
 	setBodyParameter("BizId", bizId);
 }
 
-int AddCdrsMonitorRequest::getNotifierTimeOut()const
+int AddMonitorRequest::getNotifierTimeOut()const
 {
 	return notifierTimeOut_;
 }
 
-void AddCdrsMonitorRequest::setNotifierTimeOut(int notifierTimeOut)
+void AddMonitorRequest::setNotifierTimeOut(int notifierTimeOut)
 {
 	notifierTimeOut_ = notifierTimeOut;
 	setBodyParameter("NotifierTimeOut", std::to_string(notifierTimeOut));
 }
 
-std::string AddCdrsMonitorRequest::getAlgorithmVendor()const
+std::string AddMonitorRequest::getAlgorithmVendor()const
 {
 	return algorithmVendor_;
 }
 
-void AddCdrsMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
+void AddMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
 {
 	algorithmVendor_ = algorithmVendor;
 	setBodyParameter("AlgorithmVendor", algorithmVendor);

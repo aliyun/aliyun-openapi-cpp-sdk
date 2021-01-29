@@ -36,12 +36,14 @@ namespace AlibabaCloud
 				{
 					std::string order;
 					std::string picUrlPath;
+					std::string sourceUrl;
 					std::string corpId;
 					std::string rightBottomX;
 					std::string targetPicUrlPath;
 					std::string rightBottomY;
 					std::string passTime;
 					std::string latitude;
+					std::string targetUrl;
 					std::string leftTopY;
 					std::string leftTopX;
 					std::string longitude;

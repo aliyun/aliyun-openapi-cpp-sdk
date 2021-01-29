@@ -14,91 +14,91 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/GetCdrsMonitorResultRequest.h>
+#include <alibabacloud/cdrs/model/GetMonitorResultRequest.h>
 
-using AlibabaCloud::CDRS::Model::GetCdrsMonitorResultRequest;
+using AlibabaCloud::CDRS::Model::GetMonitorResultRequest;
 
-GetCdrsMonitorResultRequest::GetCdrsMonitorResultRequest() :
-	RpcServiceRequest("cdrs", "2020-11-01", "GetCdrsMonitorResult")
+GetMonitorResultRequest::GetMonitorResultRequest() :
+	RpcServiceRequest("cdrs", "2020-11-01", "GetMonitorResult")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetCdrsMonitorResultRequest::~GetCdrsMonitorResultRequest()
+GetMonitorResultRequest::~GetMonitorResultRequest()
 {}
 
-std::string GetCdrsMonitorResultRequest::getCorpId()const
+std::string GetMonitorResultRequest::getCorpId()const
 {
 	return corpId_;
 }
 
-void GetCdrsMonitorResultRequest::setCorpId(const std::string& corpId)
+void GetMonitorResultRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
 }
 
-long GetCdrsMonitorResultRequest::getEndTime()const
+long GetMonitorResultRequest::getEndTime()const
 {
 	return endTime_;
 }
 
-void GetCdrsMonitorResultRequest::setEndTime(long endTime)
+void GetMonitorResultRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
 	setBodyParameter("EndTime", std::to_string(endTime));
 }
 
-long GetCdrsMonitorResultRequest::getStartTime()const
+long GetMonitorResultRequest::getStartTime()const
 {
 	return startTime_;
 }
 
-void GetCdrsMonitorResultRequest::setStartTime(long startTime)
+void GetMonitorResultRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
 	setBodyParameter("StartTime", std::to_string(startTime));
 }
 
-std::string GetCdrsMonitorResultRequest::getBizId()const
+std::string GetMonitorResultRequest::getBizId()const
 {
 	return bizId_;
 }
 
-void GetCdrsMonitorResultRequest::setBizId(const std::string& bizId)
+void GetMonitorResultRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
 	setBodyParameter("BizId", bizId);
 }
 
-std::string GetCdrsMonitorResultRequest::getAlgorithmVendor()const
+std::string GetMonitorResultRequest::getAlgorithmVendor()const
 {
 	return algorithmVendor_;
 }
 
-void GetCdrsMonitorResultRequest::setAlgorithmVendor(const std::string& algorithmVendor)
+void GetMonitorResultRequest::setAlgorithmVendor(const std::string& algorithmVendor)
 {
 	algorithmVendor_ = algorithmVendor;
 	setBodyParameter("AlgorithmVendor", algorithmVendor);
 }
 
-std::string GetCdrsMonitorResultRequest::getMinRecordId()const
+std::string GetMonitorResultRequest::getMinRecordId()const
 {
 	return minRecordId_;
 }
 
-void GetCdrsMonitorResultRequest::setMinRecordId(const std::string& minRecordId)
+void GetMonitorResultRequest::setMinRecordId(const std::string& minRecordId)
 {
 	minRecordId_ = minRecordId;
 	setBodyParameter("MinRecordId", minRecordId);
 }
 
-std::string GetCdrsMonitorResultRequest::getTaskId()const
+std::string GetMonitorResultRequest::getTaskId()const
 {
 	return taskId_;
 }
 
-void GetCdrsMonitorResultRequest::setTaskId(const std::string& taskId)
+void GetMonitorResultRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
 	setBodyParameter("TaskId", taskId);

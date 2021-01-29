@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/GetCdrsMonitorListRequest.h>
+#include <alibabacloud/cdrs/model/GetMonitorListRequest.h>
 
-using AlibabaCloud::CDRS::Model::GetCdrsMonitorListRequest;
+using AlibabaCloud::CDRS::Model::GetMonitorListRequest;
 
-GetCdrsMonitorListRequest::GetCdrsMonitorListRequest() :
-	RpcServiceRequest("cdrs", "2020-11-01", "GetCdrsMonitorList")
+GetMonitorListRequest::GetMonitorListRequest() :
+	RpcServiceRequest("cdrs", "2020-11-01", "GetMonitorList")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetCdrsMonitorListRequest::~GetCdrsMonitorListRequest()
+GetMonitorListRequest::~GetMonitorListRequest()
 {}
 
-std::string GetCdrsMonitorListRequest::getCorpId()const
+std::string GetMonitorListRequest::getCorpId()const
 {
 	return corpId_;
 }
 
-void GetCdrsMonitorListRequest::setCorpId(const std::string& corpId)
+void GetMonitorListRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
 }
 
-int GetCdrsMonitorListRequest::getPageNo()const
+int GetMonitorListRequest::getPageNumber()const
 {
-	return pageNo_;
+	return pageNumber_;
 }
 
-void GetCdrsMonitorListRequest::setPageNo(int pageNo)
+void GetMonitorListRequest::setPageNumber(int pageNumber)
 {
-	pageNo_ = pageNo;
-	setBodyParameter("PageNo", std::to_string(pageNo));
+	pageNumber_ = pageNumber;
+	setBodyParameter("PageNumber", std::to_string(pageNumber));
 }
 
-int GetCdrsMonitorListRequest::getPageSize()const
+int GetMonitorListRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void GetCdrsMonitorListRequest::setPageSize(int pageSize)
+void GetMonitorListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string GetCdrsMonitorListRequest::getBizId()const
+std::string GetMonitorListRequest::getBizId()const
 {
 	return bizId_;
 }
 
-void GetCdrsMonitorListRequest::setBizId(const std::string& bizId)
+void GetMonitorListRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
 	setBodyParameter("BizId", bizId);

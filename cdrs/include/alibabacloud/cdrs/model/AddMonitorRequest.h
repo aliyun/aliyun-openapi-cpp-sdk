@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_UPDATECDRSMONITORREQUEST_H_
-#define ALIBABACLOUD_CDRS_MODEL_UPDATECDRSMONITORREQUEST_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_ADDMONITORREQUEST_H_
+#define ALIBABACLOUD_CDRS_MODEL_ADDMONITORREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,75 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT UpdateCdrsMonitorRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDRS_EXPORT AddMonitorRequest : public RpcServiceRequest
 			{
 
 			public:
-				UpdateCdrsMonitorRequest();
-				~UpdateCdrsMonitorRequest();
+				AddMonitorRequest();
+				~AddMonitorRequest();
 
+				std::string getMonitorType()const;
+				void setMonitorType(const std::string& monitorType);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getRuleName()const;
-				void setRuleName(const std::string& ruleName);
-				std::string getPicOperateType()const;
-				void setPicOperateType(const std::string& picOperateType);
-				std::string getAttributeName()const;
-				void setAttributeName(const std::string& attributeName);
-				std::string getAttributeOperateType()const;
-				void setAttributeOperateType(const std::string& attributeOperateType);
-				std::string getRuleExpression()const;
-				void setRuleExpression(const std::string& ruleExpression);
-				int getNotifierTimeOut()const;
-				void setNotifierTimeOut(int notifierTimeOut);
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
-				std::string getDeviceOperateType()const;
-				void setDeviceOperateType(const std::string& deviceOperateType);
-				std::string getPicList()const;
-				void setPicList(const std::string& picList);
-				std::string getAttributeValueList()const;
-				void setAttributeValueList(const std::string& attributeValueList);
 				std::string getNotifierAppSecret()const;
 				void setNotifierAppSecret(const std::string& notifierAppSecret);
 				std::string getNotifierExtendValues()const;
 				void setNotifierExtendValues(const std::string& notifierExtendValues);
-				std::string getDeviceList()const;
-				void setDeviceList(const std::string& deviceList);
 				std::string getNotifierUrl()const;
 				void setNotifierUrl(const std::string& notifierUrl);
 				std::string getNotifierType()const;
 				void setNotifierType(const std::string& notifierType);
+				int getBatchIndicator()const;
+				void setBatchIndicator(int batchIndicator);
 				std::string getBizId()const;
 				void setBizId(const std::string& bizId);
+				int getNotifierTimeOut()const;
+				void setNotifierTimeOut(int notifierTimeOut);
 				std::string getAlgorithmVendor()const;
 				void setAlgorithmVendor(const std::string& algorithmVendor);
 
             private:
+				std::string monitorType_;
 				std::string corpId_;
 				std::string description_;
-				std::string ruleName_;
-				std::string picOperateType_;
-				std::string attributeName_;
-				std::string attributeOperateType_;
-				std::string ruleExpression_;
-				int notifierTimeOut_;
-				std::string taskId_;
-				std::string deviceOperateType_;
-				std::string picList_;
-				std::string attributeValueList_;
 				std::string notifierAppSecret_;
 				std::string notifierExtendValues_;
-				std::string deviceList_;
 				std::string notifierUrl_;
 				std::string notifierType_;
+				int batchIndicator_;
 				std::string bizId_;
+				int notifierTimeOut_;
 				std::string algorithmVendor_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_UPDATECDRSMONITORREQUEST_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_ADDMONITORREQUEST_H_

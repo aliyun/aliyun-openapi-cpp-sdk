@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
-#define ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_STOPMONITORREQUEST_H_
+#define ALIBABACLOUD_CDRS_MODEL_STOPMONITORREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT GetCdrsMonitorListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDRS_EXPORT StopMonitorRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetCdrsMonitorListRequest();
-				~GetCdrsMonitorListRequest();
+				StopMonitorRequest();
+				~StopMonitorRequest();
 
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
-				int getPageNo()const;
-				void setPageNo(int pageNo);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getBizId()const;
 				void setBizId(const std::string& bizId);
+				std::string getAlgorithmVendor()const;
+				void setAlgorithmVendor(const std::string& algorithmVendor);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
 
             private:
 				std::string corpId_;
-				int pageNo_;
-				int pageSize_;
 				std::string bizId_;
+				std::string algorithmVendor_;
+				std::string taskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_GETCDRSMONITORLISTREQUEST_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_STOPMONITORREQUEST_H_

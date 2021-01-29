@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDRS_MODEL_LISTCORPMETRICSRESULT_H_
-#define ALIBABACLOUD_CDRS_MODEL_LISTCORPMETRICSRESULT_H_
+#ifndef ALIBABACLOUD_CDRS_MODEL_ADDMONITORRESULT_H_
+#define ALIBABACLOUD_CDRS_MODEL_ADDMONITORRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,47 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDRS_EXPORT ListCorpMetricsResult : public ServiceResult
+			class ALIBABACLOUD_CDRS_EXPORT AddMonitorResult : public ServiceResult
 			{
 			public:
-				struct DataItem
+				struct Data
 				{
-					std::string corpId;
-					std::string personId;
-					std::string deviceGroupId;
-					std::string deviceId;
-					std::string userGroupId;
-					std::string tagMetrics;
-					std::string tagCode;
-					std::string tagValue;
-					std::string dateId;
+					std::string taskId;
 				};
 
 
-				ListCorpMetricsResult();
-				explicit ListCorpMetricsResult(const std::string &payload);
-				~ListCorpMetricsResult();
-				int getTotalCount()const;
-				int getPageSize()const;
+				AddMonitorResult();
+				explicit AddMonitorResult(const std::string &payload);
+				~AddMonitorResult();
 				std::string getMessage()const;
-				int getPageNumber()const;
-				std::vector<DataItem> getData()const;
+				Data getData()const;
 				std::string getCode()const;
-				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
 				std::string message_;
-				int pageNumber_;
-				std::vector<DataItem> data_;
+				Data data_;
 				std::string code_;
-				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDRS_MODEL_LISTCORPMETRICSRESULT_H_
+#endif // !ALIBABACLOUD_CDRS_MODEL_ADDMONITORRESULT_H_

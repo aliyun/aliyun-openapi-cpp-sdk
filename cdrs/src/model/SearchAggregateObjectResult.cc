@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdrs/model/SearchObjectResult.h>
+#include <alibabacloud/cdrs/model/SearchAggregateObjectResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CDRS;
 using namespace AlibabaCloud::CDRS::Model;
 
-SearchObjectResult::SearchObjectResult() :
+SearchAggregateObjectResult::SearchAggregateObjectResult() :
 	ServiceResult()
 {}
 
-SearchObjectResult::SearchObjectResult(const std::string &payload) :
+SearchAggregateObjectResult::SearchAggregateObjectResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SearchObjectResult::~SearchObjectResult()
+SearchAggregateObjectResult::~SearchAggregateObjectResult()
 {}
 
-void SearchObjectResult::parse(const std::string &payload)
+void SearchAggregateObjectResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -64,6 +64,14 @@ void SearchObjectResult::parse(const std::string &payload)
 			bodyListItemObject.sourceImageUrl = dataNodeBodyListBodyListItem["SourceImageUrl"].asString();
 		if(!dataNodeBodyListBodyListItem["TargetImageUrl"].isNull())
 			bodyListItemObject.targetImageUrl = dataNodeBodyListBodyListItem["TargetImageUrl"].asString();
+		if(!dataNodeBodyListBodyListItem["DeviceName"].isNull())
+			bodyListItemObject.deviceName = dataNodeBodyListBodyListItem["DeviceName"].asString();
+		if(!dataNodeBodyListBodyListItem["DeviceLatitude"].isNull())
+			bodyListItemObject.deviceLatitude = std::stof(dataNodeBodyListBodyListItem["DeviceLatitude"].asString());
+		if(!dataNodeBodyListBodyListItem["DeviceLongitude"].isNull())
+			bodyListItemObject.deviceLongitude = std::stof(dataNodeBodyListBodyListItem["DeviceLongitude"].asString());
+		if(!dataNodeBodyListBodyListItem["PersonId"].isNull())
+			bodyListItemObject.personId = dataNodeBodyListBodyListItem["PersonId"].asString();
 		data_.bodyList.push_back(bodyListItemObject);
 	}
 	auto allFaceListNode = dataNode["FaceList"]["FaceListItem"];
@@ -90,6 +98,14 @@ void SearchObjectResult::parse(const std::string &payload)
 			faceListItemObject.sourceImageUrl = dataNodeFaceListFaceListItem["SourceImageUrl"].asString();
 		if(!dataNodeFaceListFaceListItem["TargetImageUrl"].isNull())
 			faceListItemObject.targetImageUrl = dataNodeFaceListFaceListItem["TargetImageUrl"].asString();
+		if(!dataNodeFaceListFaceListItem["DeviceName"].isNull())
+			faceListItemObject.deviceName = dataNodeFaceListFaceListItem["DeviceName"].asString();
+		if(!dataNodeFaceListFaceListItem["DeviceLatitude"].isNull())
+			faceListItemObject.deviceLatitude = std::stof(dataNodeFaceListFaceListItem["DeviceLatitude"].asString());
+		if(!dataNodeFaceListFaceListItem["DeviceLongitude"].isNull())
+			faceListItemObject.deviceLongitude = std::stof(dataNodeFaceListFaceListItem["DeviceLongitude"].asString());
+		if(!dataNodeFaceListFaceListItem["PersonId"].isNull())
+			faceListItemObject.personId = dataNodeFaceListFaceListItem["PersonId"].asString();
 		data_.faceList.push_back(faceListItemObject);
 	}
 	auto allMotorListNode = dataNode["MotorList"]["MotorListItem"];
@@ -116,6 +132,14 @@ void SearchObjectResult::parse(const std::string &payload)
 			motorListItemObject.sourceImageUrl = dataNodeMotorListMotorListItem["SourceImageUrl"].asString();
 		if(!dataNodeMotorListMotorListItem["TargetImageUrl"].isNull())
 			motorListItemObject.targetImageUrl = dataNodeMotorListMotorListItem["TargetImageUrl"].asString();
+		if(!dataNodeMotorListMotorListItem["DeviceName"].isNull())
+			motorListItemObject.deviceName = dataNodeMotorListMotorListItem["DeviceName"].asString();
+		if(!dataNodeMotorListMotorListItem["DeviceLatitude"].isNull())
+			motorListItemObject.deviceLatitude = std::stof(dataNodeMotorListMotorListItem["DeviceLatitude"].asString());
+		if(!dataNodeMotorListMotorListItem["DeviceLongitude"].isNull())
+			motorListItemObject.deviceLongitude = std::stof(dataNodeMotorListMotorListItem["DeviceLongitude"].asString());
+		if(!dataNodeMotorListMotorListItem["PersonId"].isNull())
+			motorListItemObject.personId = dataNodeMotorListMotorListItem["PersonId"].asString();
 		data_.motorList.push_back(motorListItemObject);
 	}
 	auto allNonMotorListNode = dataNode["NonMotorList"]["NonMotorListItem"];
@@ -142,6 +166,14 @@ void SearchObjectResult::parse(const std::string &payload)
 			nonMotorListItemObject.sourceImageUrl = dataNodeNonMotorListNonMotorListItem["SourceImageUrl"].asString();
 		if(!dataNodeNonMotorListNonMotorListItem["TargetImageUrl"].isNull())
 			nonMotorListItemObject.targetImageUrl = dataNodeNonMotorListNonMotorListItem["TargetImageUrl"].asString();
+		if(!dataNodeNonMotorListNonMotorListItem["DeviceName"].isNull())
+			nonMotorListItemObject.deviceName = dataNodeNonMotorListNonMotorListItem["DeviceName"].asString();
+		if(!dataNodeNonMotorListNonMotorListItem["DeviceLatitude"].isNull())
+			nonMotorListItemObject.deviceLatitude = std::stof(dataNodeNonMotorListNonMotorListItem["DeviceLatitude"].asString());
+		if(!dataNodeNonMotorListNonMotorListItem["DeviceLongitude"].isNull())
+			nonMotorListItemObject.deviceLongitude = std::stof(dataNodeNonMotorListNonMotorListItem["DeviceLongitude"].asString());
+		if(!dataNodeNonMotorListNonMotorListItem["PersonId"].isNull())
+			nonMotorListItemObject.personId = dataNodeNonMotorListNonMotorListItem["PersonId"].asString();
 		data_.nonMotorList.push_back(nonMotorListItemObject);
 	}
 	if(!value["Code"].isNull())
@@ -157,32 +189,32 @@ void SearchObjectResult::parse(const std::string &payload)
 
 }
 
-std::string SearchObjectResult::getMessage()const
+std::string SearchAggregateObjectResult::getMessage()const
 {
 	return message_;
 }
 
-long SearchObjectResult::getPageSize()const
+long SearchAggregateObjectResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-int SearchObjectResult::getTotal()const
+int SearchAggregateObjectResult::getTotal()const
 {
 	return total_;
 }
 
-SearchObjectResult::Data SearchObjectResult::getData()const
+SearchAggregateObjectResult::Data SearchAggregateObjectResult::getData()const
 {
 	return data_;
 }
 
-std::string SearchObjectResult::getCode()const
+std::string SearchAggregateObjectResult::getCode()const
 {
 	return code_;
 }
 
-bool SearchObjectResult::getSuccess()const
+bool SearchAggregateObjectResult::getSuccess()const
 {
 	return success_;
 }

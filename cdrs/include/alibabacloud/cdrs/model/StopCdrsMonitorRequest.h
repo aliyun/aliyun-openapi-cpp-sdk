@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
+				std::string getBizId()const;
+				void setBizId(const std::string& bizId);
 				std::string getAlgorithmVendor()const;
 				void setAlgorithmVendor(const std::string& algorithmVendor);
 				std::string getTaskId()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string corpId_;
+				std::string bizId_;
 				std::string algorithmVendor_;
 				std::string taskId_;
 
