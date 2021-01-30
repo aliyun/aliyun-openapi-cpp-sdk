@@ -94,8 +94,6 @@
 #include "model/ModifyConsumerGroupPasswordResult.h"
 #include "model/ModifyConsumptionTimestampRequest.h"
 #include "model/ModifyConsumptionTimestampResult.h"
-#include "model/ModifyMigrationObjectRequest.h"
-#include "model/ModifyMigrationObjectResult.h"
 #include "model/ModifySubscriptionObjectRequest.h"
 #include "model/ModifySubscriptionObjectResult.h"
 #include "model/ModifySynchronizationObjectRequest.h"
@@ -239,9 +237,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyConsumptionTimestampResult> ModifyConsumptionTimestampOutcome;
 			typedef std::future<ModifyConsumptionTimestampOutcome> ModifyConsumptionTimestampOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::ModifyConsumptionTimestampRequest&, const ModifyConsumptionTimestampOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsumptionTimestampAsyncHandler;
-			typedef Outcome<Error, Model::ModifyMigrationObjectResult> ModifyMigrationObjectOutcome;
-			typedef std::future<ModifyMigrationObjectOutcome> ModifyMigrationObjectOutcomeCallable;
-			typedef std::function<void(const DtsClient*, const Model::ModifyMigrationObjectRequest&, const ModifyMigrationObjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrationObjectAsyncHandler;
 			typedef Outcome<Error, Model::ModifySubscriptionObjectResult> ModifySubscriptionObjectOutcome;
 			typedef std::future<ModifySubscriptionObjectOutcome> ModifySubscriptionObjectOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::ModifySubscriptionObjectRequest&, const ModifySubscriptionObjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubscriptionObjectAsyncHandler;
@@ -394,9 +389,6 @@ namespace AlibabaCloud
 			ModifyConsumptionTimestampOutcome modifyConsumptionTimestamp(const Model::ModifyConsumptionTimestampRequest &request)const;
 			void modifyConsumptionTimestampAsync(const Model::ModifyConsumptionTimestampRequest& request, const ModifyConsumptionTimestampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyConsumptionTimestampOutcomeCallable modifyConsumptionTimestampCallable(const Model::ModifyConsumptionTimestampRequest& request) const;
-			ModifyMigrationObjectOutcome modifyMigrationObject(const Model::ModifyMigrationObjectRequest &request)const;
-			void modifyMigrationObjectAsync(const Model::ModifyMigrationObjectRequest& request, const ModifyMigrationObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyMigrationObjectOutcomeCallable modifyMigrationObjectCallable(const Model::ModifyMigrationObjectRequest& request) const;
 			ModifySubscriptionObjectOutcome modifySubscriptionObject(const Model::ModifySubscriptionObjectRequest &request)const;
 			void modifySubscriptionObjectAsync(const Model::ModifySubscriptionObjectRequest& request, const ModifySubscriptionObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySubscriptionObjectOutcomeCallable modifySubscriptionObjectCallable(const Model::ModifySubscriptionObjectRequest& request) const;

@@ -1347,42 +1347,6 @@ DtsClient::ModifyConsumptionTimestampOutcomeCallable DtsClient::modifyConsumptio
 	return task->get_future();
 }
 
-DtsClient::ModifyMigrationObjectOutcome DtsClient::modifyMigrationObject(const ModifyMigrationObjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyMigrationObjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyMigrationObjectOutcome(ModifyMigrationObjectResult(outcome.result()));
-	else
-		return ModifyMigrationObjectOutcome(outcome.error());
-}
-
-void DtsClient::modifyMigrationObjectAsync(const ModifyMigrationObjectRequest& request, const ModifyMigrationObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyMigrationObject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DtsClient::ModifyMigrationObjectOutcomeCallable DtsClient::modifyMigrationObjectCallable(const ModifyMigrationObjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyMigrationObjectOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyMigrationObject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DtsClient::ModifySubscriptionObjectOutcome DtsClient::modifySubscriptionObject(const ModifySubscriptionObjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

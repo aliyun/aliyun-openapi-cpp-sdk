@@ -93,8 +93,6 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/ModifyConsumerGroupPasswordResult.h
 	include/alibabacloud/dts/model/ModifyConsumptionTimestampRequest.h
 	include/alibabacloud/dts/model/ModifyConsumptionTimestampResult.h
-	include/alibabacloud/dts/model/ModifyMigrationObjectRequest.h
-	include/alibabacloud/dts/model/ModifyMigrationObjectResult.h
 	include/alibabacloud/dts/model/ModifySubscriptionObjectRequest.h
 	include/alibabacloud/dts/model/ModifySubscriptionObjectResult.h
 	include/alibabacloud/dts/model/ModifySynchronizationObjectRequest.h
@@ -196,8 +194,6 @@ set(dts_src
 	src/model/ModifyConsumerGroupPasswordResult.cc
 	src/model/ModifyConsumptionTimestampRequest.cc
 	src/model/ModifyConsumptionTimestampResult.cc
-	src/model/ModifyMigrationObjectRequest.cc
-	src/model/ModifyMigrationObjectResult.cc
 	src/model/ModifySubscriptionObjectRequest.cc
 	src/model/ModifySubscriptionObjectResult.cc
 	src/model/ModifySynchronizationObjectRequest.cc
