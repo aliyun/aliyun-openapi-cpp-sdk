@@ -119,6 +119,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeRestoreTablesResult.h
 	include/alibabacloud/hbase/model/DescribeSecurityGroupsRequest.h
 	include/alibabacloud/hbase/model/DescribeSecurityGroupsResult.h
+	include/alibabacloud/hbase/model/DescribeServerlessClusterRequest.h
+	include/alibabacloud/hbase/model/DescribeServerlessClusterResult.h
 	include/alibabacloud/hbase/model/DescribeSubDomainRequest.h
 	include/alibabacloud/hbase/model/DescribeSubDomainResult.h
 	include/alibabacloud/hbase/model/EnableHBaseueBackupRequest.h
@@ -304,6 +306,8 @@ set(hbase_src
 	src/model/DescribeRestoreTablesResult.cc
 	src/model/DescribeSecurityGroupsRequest.cc
 	src/model/DescribeSecurityGroupsResult.cc
+	src/model/DescribeServerlessClusterRequest.cc
+	src/model/DescribeServerlessClusterResult.cc
 	src/model/DescribeSubDomainRequest.cc
 	src/model/DescribeSubDomainResult.cc
 	src/model/EnableHBaseueBackupRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_CONVERTINSTANCEREQUEST_H_
-#define ALIBABACLOUD_HBASE_MODEL_CONVERTINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBESERVERLESSCLUSTERREQUEST_H_
+#define ALIBABACLOUD_HBASE_MODEL_DESCRIBESERVERLESSCLUSTERREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT ConvertInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HBASE_EXPORT DescribeServerlessClusterRequest : public RpcServiceRequest
 			{
 
 			public:
-				ConvertInstanceRequest();
-				~ConvertInstanceRequest();
+				DescribeServerlessClusterRequest();
+				~DescribeServerlessClusterRequest();
 
-				int getDuration()const;
-				void setDuration(int duration);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getPricingCycle()const;
-				void setPricingCycle(const std::string& pricingCycle);
-				std::string getPayType()const;
-				void setPayType(const std::string& payType);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 
             private:
-				int duration_;
 				std::string clusterId_;
-				std::string pricingCycle_;
-				std::string payType_;
+				std::string zoneId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_CONVERTINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBESERVERLESSCLUSTERREQUEST_H_

@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setAutoRenewPeriod(int autoRenewPeriod);
 				int getPeriod()const;
 				void setPeriod(int period);
+				std::string getDiskType()const;
+				void setDiskType(const std::string& diskType);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPeriodUnit()const;
@@ -80,6 +82,7 @@ namespace AlibabaCloud
 				std::string engine_;
 				int autoRenewPeriod_;
 				int period_;
+				std::string diskType_;
 				std::string vSwitchId_;
 				std::string periodUnit_;
 				int serverlessCapability_;

@@ -126,6 +126,17 @@ void CreateServerlessClusterRequest::setPeriod(int period)
 	setParameter("Period", std::to_string(period));
 }
 
+std::string CreateServerlessClusterRequest::getDiskType()const
+{
+	return diskType_;
+}
+
+void CreateServerlessClusterRequest::setDiskType(const std::string& diskType)
+{
+	diskType_ = diskType;
+	setParameter("DiskType", diskType);
+}
+
 std::string CreateServerlessClusterRequest::getVSwitchId()const
 {
 	return vSwitchId_;

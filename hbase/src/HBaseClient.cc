@@ -1815,6 +1815,42 @@ HBaseClient::DescribeSecurityGroupsOutcomeCallable HBaseClient::describeSecurity
 	return task->get_future();
 }
 
+HBaseClient::DescribeServerlessClusterOutcome HBaseClient::describeServerlessCluster(const DescribeServerlessClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeServerlessClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeServerlessClusterOutcome(DescribeServerlessClusterResult(outcome.result()));
+	else
+		return DescribeServerlessClusterOutcome(outcome.error());
+}
+
+void HBaseClient::describeServerlessClusterAsync(const DescribeServerlessClusterRequest& request, const DescribeServerlessClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeServerlessCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeServerlessClusterOutcomeCallable HBaseClient::describeServerlessClusterCallable(const DescribeServerlessClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeServerlessClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->describeServerlessCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DescribeSubDomainOutcome HBaseClient::describeSubDomain(const DescribeSubDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

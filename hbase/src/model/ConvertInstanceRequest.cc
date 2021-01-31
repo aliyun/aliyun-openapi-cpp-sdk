@@ -27,17 +27,6 @@ ConvertInstanceRequest::ConvertInstanceRequest() :
 ConvertInstanceRequest::~ConvertInstanceRequest()
 {}
 
-std::string ConvertInstanceRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ConvertInstanceRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
-}
-
 int ConvertInstanceRequest::getDuration()const
 {
 	return duration_;
@@ -49,6 +38,17 @@ void ConvertInstanceRequest::setDuration(int duration)
 	setParameter("Duration", std::to_string(duration));
 }
 
+std::string ConvertInstanceRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ConvertInstanceRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 std::string ConvertInstanceRequest::getPricingCycle()const
 {
 	return pricingCycle_;
@@ -58,5 +58,16 @@ void ConvertInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
 	setParameter("PricingCycle", pricingCycle);
+}
+
+std::string ConvertInstanceRequest::getPayType()const
+{
+	return payType_;
+}
+
+void ConvertInstanceRequest::setPayType(const std::string& payType)
+{
+	payType_ = payType;
+	setParameter("PayType", payType);
 }
 

@@ -120,6 +120,8 @@
 #include "model/DescribeRestoreTablesResult.h"
 #include "model/DescribeSecurityGroupsRequest.h"
 #include "model/DescribeSecurityGroupsResult.h"
+#include "model/DescribeServerlessClusterRequest.h"
+#include "model/DescribeServerlessClusterResult.h"
 #include "model/DescribeSubDomainRequest.h"
 #include "model/DescribeSubDomainResult.h"
 #include "model/EnableHBaseueBackupRequest.h"
@@ -360,6 +362,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSecurityGroupsResult> DescribeSecurityGroupsOutcome;
 			typedef std::future<DescribeSecurityGroupsOutcome> DescribeSecurityGroupsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeSecurityGroupsRequest&, const DescribeSecurityGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeServerlessClusterResult> DescribeServerlessClusterOutcome;
+			typedef std::future<DescribeServerlessClusterOutcome> DescribeServerlessClusterOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeServerlessClusterRequest&, const DescribeServerlessClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessClusterAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSubDomainResult> DescribeSubDomainOutcome;
 			typedef std::future<DescribeSubDomainOutcome> DescribeSubDomainOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeSubDomainRequest&, const DescribeSubDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubDomainAsyncHandler;
@@ -638,6 +643,9 @@ namespace AlibabaCloud
 			DescribeSecurityGroupsOutcome describeSecurityGroups(const Model::DescribeSecurityGroupsRequest &request)const;
 			void describeSecurityGroupsAsync(const Model::DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityGroupsOutcomeCallable describeSecurityGroupsCallable(const Model::DescribeSecurityGroupsRequest& request) const;
+			DescribeServerlessClusterOutcome describeServerlessCluster(const Model::DescribeServerlessClusterRequest &request)const;
+			void describeServerlessClusterAsync(const Model::DescribeServerlessClusterRequest& request, const DescribeServerlessClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeServerlessClusterOutcomeCallable describeServerlessClusterCallable(const Model::DescribeServerlessClusterRequest& request) const;
 			DescribeSubDomainOutcome describeSubDomain(const Model::DescribeSubDomainRequest &request)const;
 			void describeSubDomainAsync(const Model::DescribeSubDomainRequest& request, const DescribeSubDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSubDomainOutcomeCallable describeSubDomainCallable(const Model::DescribeSubDomainRequest& request) const;
