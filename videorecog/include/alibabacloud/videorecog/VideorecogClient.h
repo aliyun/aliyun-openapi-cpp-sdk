@@ -28,6 +28,8 @@
 #include "model/GenerateVideoCoverResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
+#include "model/UnderstandVideoContentRequest.h"
+#include "model/UnderstandVideoContentResult.h"
 
 
 namespace AlibabaCloud
@@ -46,6 +48,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const VideorecogClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
+			typedef Outcome<Error, Model::UnderstandVideoContentResult> UnderstandVideoContentOutcome;
+			typedef std::future<UnderstandVideoContentOutcome> UnderstandVideoContentOutcomeCallable;
+			typedef std::function<void(const VideorecogClient*, const Model::UnderstandVideoContentRequest&, const UnderstandVideoContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnderstandVideoContentAsyncHandler;
 
 			VideorecogClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			VideorecogClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -60,6 +65,9 @@ namespace AlibabaCloud
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
+			UnderstandVideoContentOutcome understandVideoContent(const Model::UnderstandVideoContentRequest &request)const;
+			void understandVideoContentAsync(const Model::UnderstandVideoContentRequest& request, const UnderstandVideoContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnderstandVideoContentOutcomeCallable understandVideoContentCallable(const Model::UnderstandVideoContentRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

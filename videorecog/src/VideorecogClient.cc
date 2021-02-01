@@ -159,3 +159,39 @@ VideorecogClient::GetAsyncJobResultOutcomeCallable VideorecogClient::getAsyncJob
 	return task->get_future();
 }
 
+VideorecogClient::UnderstandVideoContentOutcome VideorecogClient::understandVideoContent(const UnderstandVideoContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnderstandVideoContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnderstandVideoContentOutcome(UnderstandVideoContentResult(outcome.result()));
+	else
+		return UnderstandVideoContentOutcome(outcome.error());
+}
+
+void VideorecogClient::understandVideoContentAsync(const UnderstandVideoContentRequest& request, const UnderstandVideoContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, understandVideoContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideorecogClient::UnderstandVideoContentOutcomeCallable VideorecogClient::understandVideoContentCallable(const UnderstandVideoContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnderstandVideoContentOutcome()>>(
+			[this, request]()
+			{
+			return this->understandVideoContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

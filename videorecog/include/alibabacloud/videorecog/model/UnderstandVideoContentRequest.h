@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
-#define ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTREQUEST_H_
+#define ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VIDEORECOG_EXPORT GetAsyncJobResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VIDEORECOG_EXPORT UnderstandVideoContentRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetAsyncJobResultRequest();
-				~GetAsyncJobResultRequest();
+				UnderstandVideoContentRequest();
+				~UnderstandVideoContentRequest();
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
 				bool getAsync()const;
 				void setAsync(bool async);
+				std::string getVideoURL()const;
+				void setVideoURL(const std::string& videoURL);
 
             private:
-				std::string jobId_;
 				bool async_;
+				std::string videoURL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_VIDEORECOG_MODEL_UNDERSTANDVIDEOCONTENTREQUEST_H_

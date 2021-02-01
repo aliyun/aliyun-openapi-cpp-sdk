@@ -26,7 +26,9 @@ set(videorecog_public_header_model
 	include/alibabacloud/videorecog/model/GenerateVideoCoverRequest.h
 	include/alibabacloud/videorecog/model/GenerateVideoCoverResult.h
 	include/alibabacloud/videorecog/model/GetAsyncJobResultRequest.h
-	include/alibabacloud/videorecog/model/GetAsyncJobResultResult.h )
+	include/alibabacloud/videorecog/model/GetAsyncJobResultResult.h
+	include/alibabacloud/videorecog/model/UnderstandVideoContentRequest.h
+	include/alibabacloud/videorecog/model/UnderstandVideoContentResult.h )
 
 set(videorecog_src 
 	src/VideorecogClient.cc
@@ -35,7 +37,9 @@ set(videorecog_src
 	src/model/GenerateVideoCoverRequest.cc
 	src/model/GenerateVideoCoverResult.cc
 	src/model/GetAsyncJobResultRequest.cc
-	src/model/GetAsyncJobResultResult.cc )
+	src/model/GetAsyncJobResultResult.cc
+	src/model/UnderstandVideoContentRequest.cc
+	src/model/UnderstandVideoContentResult.cc )
 
 add_library(videorecog ${LIB_TYPE}
 	${videorecog_public_header}
