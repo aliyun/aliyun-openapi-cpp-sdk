@@ -30,6 +30,8 @@
 #include "model/DetectImageElementsResult.h"
 #include "model/EvaluateCertificateQualityRequest.h"
 #include "model/EvaluateCertificateQualityResult.h"
+#include "model/RecognizeFoodRequest.h"
+#include "model/RecognizeFoodResult.h"
 #include "model/RecognizeImageColorRequest.h"
 #include "model/RecognizeImageColorResult.h"
 #include "model/RecognizeImageStyleRequest.h"
@@ -63,6 +65,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EvaluateCertificateQualityResult> EvaluateCertificateQualityOutcome;
 			typedef std::future<EvaluateCertificateQualityOutcome> EvaluateCertificateQualityOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::EvaluateCertificateQualityRequest&, const EvaluateCertificateQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EvaluateCertificateQualityAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeFoodResult> RecognizeFoodOutcome;
+			typedef std::future<RecognizeFoodOutcome> RecognizeFoodOutcomeCallable;
+			typedef std::function<void(const ImagerecogClient*, const Model::RecognizeFoodRequest&, const RecognizeFoodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeFoodAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeImageColorResult> RecognizeImageColorOutcome;
 			typedef std::future<RecognizeImageColorOutcome> RecognizeImageColorOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::RecognizeImageColorRequest&, const RecognizeImageColorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageColorAsyncHandler;
@@ -98,6 +103,9 @@ namespace AlibabaCloud
 			EvaluateCertificateQualityOutcome evaluateCertificateQuality(const Model::EvaluateCertificateQualityRequest &request)const;
 			void evaluateCertificateQualityAsync(const Model::EvaluateCertificateQualityRequest& request, const EvaluateCertificateQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EvaluateCertificateQualityOutcomeCallable evaluateCertificateQualityCallable(const Model::EvaluateCertificateQualityRequest& request) const;
+			RecognizeFoodOutcome recognizeFood(const Model::RecognizeFoodRequest &request)const;
+			void recognizeFoodAsync(const Model::RecognizeFoodRequest& request, const RecognizeFoodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeFoodOutcomeCallable recognizeFoodCallable(const Model::RecognizeFoodRequest& request) const;
 			RecognizeImageColorOutcome recognizeImageColor(const Model::RecognizeImageColorRequest &request)const;
 			void recognizeImageColorAsync(const Model::RecognizeImageColorRequest& request, const RecognizeImageColorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageColorOutcomeCallable recognizeImageColorCallable(const Model::RecognizeImageColorRequest& request) const;
