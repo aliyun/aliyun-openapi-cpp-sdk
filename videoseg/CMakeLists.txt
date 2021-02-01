@@ -23,6 +23,8 @@ set(videoseg_public_header
 set(videoseg_public_header_model 
 	include/alibabacloud/videoseg/model/GetAsyncJobResultRequest.h
 	include/alibabacloud/videoseg/model/GetAsyncJobResultResult.h
+	include/alibabacloud/videoseg/model/SegmentGreenScreenVideoRequest.h
+	include/alibabacloud/videoseg/model/SegmentGreenScreenVideoResult.h
 	include/alibabacloud/videoseg/model/SegmentHalfBodyRequest.h
 	include/alibabacloud/videoseg/model/SegmentHalfBodyResult.h
 	include/alibabacloud/videoseg/model/SegmentVideoBodyRequest.h
@@ -32,6 +34,8 @@ set(videoseg_src
 	src/VideosegClient.cc
 	src/model/GetAsyncJobResultRequest.cc
 	src/model/GetAsyncJobResultResult.cc
+	src/model/SegmentGreenScreenVideoRequest.cc
+	src/model/SegmentGreenScreenVideoResult.cc
 	src/model/SegmentHalfBodyRequest.cc
 	src/model/SegmentHalfBodyResult.cc
 	src/model/SegmentVideoBodyRequest.cc

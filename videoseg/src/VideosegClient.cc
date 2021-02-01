@@ -87,6 +87,42 @@ VideosegClient::GetAsyncJobResultOutcomeCallable VideosegClient::getAsyncJobResu
 	return task->get_future();
 }
 
+VideosegClient::SegmentGreenScreenVideoOutcome VideosegClient::segmentGreenScreenVideo(const SegmentGreenScreenVideoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SegmentGreenScreenVideoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SegmentGreenScreenVideoOutcome(SegmentGreenScreenVideoResult(outcome.result()));
+	else
+		return SegmentGreenScreenVideoOutcome(outcome.error());
+}
+
+void VideosegClient::segmentGreenScreenVideoAsync(const SegmentGreenScreenVideoRequest& request, const SegmentGreenScreenVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, segmentGreenScreenVideo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideosegClient::SegmentGreenScreenVideoOutcomeCallable VideosegClient::segmentGreenScreenVideoCallable(const SegmentGreenScreenVideoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SegmentGreenScreenVideoOutcome()>>(
+			[this, request]()
+			{
+			return this->segmentGreenScreenVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideosegClient::SegmentHalfBodyOutcome VideosegClient::segmentHalfBody(const SegmentHalfBodyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

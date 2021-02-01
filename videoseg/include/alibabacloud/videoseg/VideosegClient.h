@@ -24,6 +24,8 @@
 #include "VideosegExport.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
+#include "model/SegmentGreenScreenVideoRequest.h"
+#include "model/SegmentGreenScreenVideoResult.h"
 #include "model/SegmentHalfBodyRequest.h"
 #include "model/SegmentHalfBodyResult.h"
 #include "model/SegmentVideoBodyRequest.h"
@@ -40,6 +42,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const VideosegClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
+			typedef Outcome<Error, Model::SegmentGreenScreenVideoResult> SegmentGreenScreenVideoOutcome;
+			typedef std::future<SegmentGreenScreenVideoOutcome> SegmentGreenScreenVideoOutcomeCallable;
+			typedef std::function<void(const VideosegClient*, const Model::SegmentGreenScreenVideoRequest&, const SegmentGreenScreenVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentGreenScreenVideoAsyncHandler;
 			typedef Outcome<Error, Model::SegmentHalfBodyResult> SegmentHalfBodyOutcome;
 			typedef std::future<SegmentHalfBodyOutcome> SegmentHalfBodyOutcomeCallable;
 			typedef std::function<void(const VideosegClient*, const Model::SegmentHalfBodyRequest&, const SegmentHalfBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentHalfBodyAsyncHandler;
@@ -54,6 +59,9 @@ namespace AlibabaCloud
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
+			SegmentGreenScreenVideoOutcome segmentGreenScreenVideo(const Model::SegmentGreenScreenVideoRequest &request)const;
+			void segmentGreenScreenVideoAsync(const Model::SegmentGreenScreenVideoRequest& request, const SegmentGreenScreenVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SegmentGreenScreenVideoOutcomeCallable segmentGreenScreenVideoCallable(const Model::SegmentGreenScreenVideoRequest& request) const;
 			SegmentHalfBodyOutcome segmentHalfBody(const Model::SegmentHalfBodyRequest &request)const;
 			void segmentHalfBodyAsync(const Model::SegmentHalfBodyRequest& request, const SegmentHalfBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentHalfBodyOutcomeCallable segmentHalfBodyCallable(const Model::SegmentHalfBodyRequest& request) const;
