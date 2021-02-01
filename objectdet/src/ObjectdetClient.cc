@@ -87,6 +87,42 @@ ObjectdetClient::ClassifyVehicleInsuranceOutcomeCallable ObjectdetClient::classi
 	return task->get_future();
 }
 
+ObjectdetClient::DetectIPCObjectOutcome ObjectdetClient::detectIPCObject(const DetectIPCObjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectIPCObjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectIPCObjectOutcome(DetectIPCObjectResult(outcome.result()));
+	else
+		return DetectIPCObjectOutcome(outcome.error());
+}
+
+void ObjectdetClient::detectIPCObjectAsync(const DetectIPCObjectRequest& request, const DetectIPCObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectIPCObject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ObjectdetClient::DetectIPCObjectOutcomeCallable ObjectdetClient::detectIPCObjectCallable(const DetectIPCObjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectIPCObjectOutcome()>>(
+			[this, request]()
+			{
+			return this->detectIPCObject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ObjectdetClient::DetectMainBodyOutcome ObjectdetClient::detectMainBody(const DetectMainBodyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +261,78 @@ ObjectdetClient::DetectVehicleOutcomeCallable ObjectdetClient::detectVehicleCall
 			[this, request]()
 			{
 			return this->detectVehicle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ObjectdetClient::DetectVehicleICongestionOutcome ObjectdetClient::detectVehicleICongestion(const DetectVehicleICongestionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectVehicleICongestionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectVehicleICongestionOutcome(DetectVehicleICongestionResult(outcome.result()));
+	else
+		return DetectVehicleICongestionOutcome(outcome.error());
+}
+
+void ObjectdetClient::detectVehicleICongestionAsync(const DetectVehicleICongestionRequest& request, const DetectVehicleICongestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectVehicleICongestion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ObjectdetClient::DetectVehicleICongestionOutcomeCallable ObjectdetClient::detectVehicleICongestionCallable(const DetectVehicleICongestionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectVehicleICongestionOutcome()>>(
+			[this, request]()
+			{
+			return this->detectVehicleICongestion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ObjectdetClient::DetectVehicleIllegalParkingOutcome ObjectdetClient::detectVehicleIllegalParking(const DetectVehicleIllegalParkingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectVehicleIllegalParkingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectVehicleIllegalParkingOutcome(DetectVehicleIllegalParkingResult(outcome.result()));
+	else
+		return DetectVehicleIllegalParkingOutcome(outcome.error());
+}
+
+void ObjectdetClient::detectVehicleIllegalParkingAsync(const DetectVehicleIllegalParkingRequest& request, const DetectVehicleIllegalParkingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectVehicleIllegalParking(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ObjectdetClient::DetectVehicleIllegalParkingOutcomeCallable ObjectdetClient::detectVehicleIllegalParkingCallable(const DetectVehicleIllegalParkingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectVehicleIllegalParkingOutcome()>>(
+			[this, request]()
+			{
+			return this->detectVehicleIllegalParking(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

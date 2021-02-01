@@ -23,6 +23,8 @@ set(objectdet_public_header
 set(objectdet_public_header_model 
 	include/alibabacloud/objectdet/model/ClassifyVehicleInsuranceRequest.h
 	include/alibabacloud/objectdet/model/ClassifyVehicleInsuranceResult.h
+	include/alibabacloud/objectdet/model/DetectIPCObjectRequest.h
+	include/alibabacloud/objectdet/model/DetectIPCObjectResult.h
 	include/alibabacloud/objectdet/model/DetectMainBodyRequest.h
 	include/alibabacloud/objectdet/model/DetectMainBodyResult.h
 	include/alibabacloud/objectdet/model/DetectObjectRequest.h
@@ -31,6 +33,10 @@ set(objectdet_public_header_model
 	include/alibabacloud/objectdet/model/DetectTransparentImageResult.h
 	include/alibabacloud/objectdet/model/DetectVehicleRequest.h
 	include/alibabacloud/objectdet/model/DetectVehicleResult.h
+	include/alibabacloud/objectdet/model/DetectVehicleICongestionRequest.h
+	include/alibabacloud/objectdet/model/DetectVehicleICongestionResult.h
+	include/alibabacloud/objectdet/model/DetectVehicleIllegalParkingRequest.h
+	include/alibabacloud/objectdet/model/DetectVehicleIllegalParkingResult.h
 	include/alibabacloud/objectdet/model/DetectWhiteBaseImageRequest.h
 	include/alibabacloud/objectdet/model/DetectWhiteBaseImageResult.h
 	include/alibabacloud/objectdet/model/GenerateVehicleRepairPlanRequest.h
@@ -48,6 +54,8 @@ set(objectdet_src
 	src/ObjectdetClient.cc
 	src/model/ClassifyVehicleInsuranceRequest.cc
 	src/model/ClassifyVehicleInsuranceResult.cc
+	src/model/DetectIPCObjectRequest.cc
+	src/model/DetectIPCObjectResult.cc
 	src/model/DetectMainBodyRequest.cc
 	src/model/DetectMainBodyResult.cc
 	src/model/DetectObjectRequest.cc
@@ -56,6 +64,10 @@ set(objectdet_src
 	src/model/DetectTransparentImageResult.cc
 	src/model/DetectVehicleRequest.cc
 	src/model/DetectVehicleResult.cc
+	src/model/DetectVehicleICongestionRequest.cc
+	src/model/DetectVehicleICongestionResult.cc
+	src/model/DetectVehicleIllegalParkingRequest.cc
+	src/model/DetectVehicleIllegalParkingResult.cc
 	src/model/DetectWhiteBaseImageRequest.cc
 	src/model/DetectWhiteBaseImageResult.cc
 	src/model/GenerateVehicleRepairPlanRequest.cc
