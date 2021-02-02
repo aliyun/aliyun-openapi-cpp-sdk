@@ -39,56 +39,56 @@ void DescribePriceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allSubOrdersNode = value["SubOrders"]["SubOrder"];
+	for (auto valueSubOrdersSubOrder : allSubOrdersNode)
+	{
+		SubOrder subOrdersObject;
+		if(!valueSubOrdersSubOrder["InstanceId"].isNull())
+			subOrdersObject.instanceId = valueSubOrdersSubOrder["InstanceId"].asString();
+		if(!valueSubOrdersSubOrder["TradeAmount"].isNull())
+			subOrdersObject.tradeAmount = valueSubOrdersSubOrder["TradeAmount"].asString();
+		if(!valueSubOrdersSubOrder["OriginalAmount"].isNull())
+			subOrdersObject.originalAmount = valueSubOrdersSubOrder["OriginalAmount"].asString();
+		if(!valueSubOrdersSubOrder["DiscountAmount"].isNull())
+			subOrdersObject.discountAmount = valueSubOrdersSubOrder["DiscountAmount"].asString();
+		auto allRuleIds = value["RuleIds"]["RuleId"];
+		for (auto value : allRuleIds)
+			subOrdersObject.ruleIds.push_back(value.asString());
+		subOrders_.push_back(subOrdersObject);
+	}
 	auto allRulesNode = value["Rules"]["Rule"];
 	for (auto valueRulesRule : allRulesNode)
 	{
 		Rule rulesObject;
 		if(!valueRulesRule["RuleDescId"].isNull())
 			rulesObject.ruleDescId = std::stol(valueRulesRule["RuleDescId"].asString());
-		if(!valueRulesRule["Name"].isNull())
-			rulesObject.name = valueRulesRule["Name"].asString();
 		if(!valueRulesRule["Title"].isNull())
 			rulesObject.title = valueRulesRule["Title"].asString();
+		if(!valueRulesRule["Name"].isNull())
+			rulesObject.name = valueRulesRule["Name"].asString();
 		rules_.push_back(rulesObject);
 	}
-	auto allSubOrdersNode = value["SubOrders"]["SubOrder"];
-	for (auto valueSubOrdersSubOrder : allSubOrdersNode)
-	{
-		SubOrder subOrdersObject;
-		if(!valueSubOrdersSubOrder["OriginalAmount"].isNull())
-			subOrdersObject.originalAmount = valueSubOrdersSubOrder["OriginalAmount"].asString();
-		if(!valueSubOrdersSubOrder["TradeAmount"].isNull())
-			subOrdersObject.tradeAmount = valueSubOrdersSubOrder["TradeAmount"].asString();
-		if(!valueSubOrdersSubOrder["DiscountAmount"].isNull())
-			subOrdersObject.discountAmount = valueSubOrdersSubOrder["DiscountAmount"].asString();
-		if(!valueSubOrdersSubOrder["InstanceId"].isNull())
-			subOrdersObject.instanceId = valueSubOrdersSubOrder["InstanceId"].asString();
-		auto allRuleIds = value["RuleIds"]["RuleId"];
-		for (auto value : allRuleIds)
-			subOrdersObject.ruleIds.push_back(value.asString());
-		subOrders_.push_back(subOrdersObject);
-	}
 	auto orderNode = value["Order"];
-	if(!orderNode["OriginalAmount"].isNull())
-		order_.originalAmount = orderNode["OriginalAmount"].asString();
-	if(!orderNode["TradeAmount"].isNull())
-		order_.tradeAmount = orderNode["TradeAmount"].asString();
-	if(!orderNode["DiscountAmount"].isNull())
-		order_.discountAmount = orderNode["DiscountAmount"].asString();
 	if(!orderNode["Currency"].isNull())
 		order_.currency = orderNode["Currency"].asString();
+	if(!orderNode["TradeAmount"].isNull())
+		order_.tradeAmount = orderNode["TradeAmount"].asString();
+	if(!orderNode["OriginalAmount"].isNull())
+		order_.originalAmount = orderNode["OriginalAmount"].asString();
+	if(!orderNode["DiscountAmount"].isNull())
+		order_.discountAmount = orderNode["DiscountAmount"].asString();
 	auto allCouponsNode = orderNode["Coupons"]["Coupon"];
 	for (auto orderNodeCouponsCoupon : allCouponsNode)
 	{
 		Order::Coupon couponObject;
 		if(!orderNodeCouponsCoupon["CouponNo"].isNull())
 			couponObject.couponNo = orderNodeCouponsCoupon["CouponNo"].asString();
-		if(!orderNodeCouponsCoupon["Name"].isNull())
-			couponObject.name = orderNodeCouponsCoupon["Name"].asString();
 		if(!orderNodeCouponsCoupon["Description"].isNull())
 			couponObject.description = orderNodeCouponsCoupon["Description"].asString();
 		if(!orderNodeCouponsCoupon["IsSelected"].isNull())
 			couponObject.isSelected = orderNodeCouponsCoupon["IsSelected"].asString();
+		if(!orderNodeCouponsCoupon["Name"].isNull())
+			couponObject.name = orderNodeCouponsCoupon["Name"].asString();
 		order_.coupons.push_back(couponObject);
 	}
 		auto allRuleIds1 = orderNode["RuleIds"]["RuleId"];

@@ -49,6 +49,17 @@ void ModifyNodeSpecRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+int ModifyNodeSpecRequest::getReadonlyReplicas()const
+{
+	return readonlyReplicas_;
+}
+
+void ModifyNodeSpecRequest::setReadonlyReplicas(int readonlyReplicas)
+{
+	readonlyReplicas_ = readonlyReplicas;
+	setParameter("ReadonlyReplicas", std::to_string(readonlyReplicas));
+}
+
 std::string ModifyNodeSpecRequest::getNodeClass()const
 {
 	return nodeClass_;

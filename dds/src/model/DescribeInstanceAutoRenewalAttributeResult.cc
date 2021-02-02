@@ -43,24 +43,24 @@ void DescribeInstanceAutoRenewalAttributeResult::parse(const std::string &payloa
 	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!valueItemsItem["DbInstanceId"].isNull())
-			itemsObject.dbInstanceId = valueItemsItem["DbInstanceId"].asString();
-		if(!valueItemsItem["RegionId"].isNull())
-			itemsObject.regionId = valueItemsItem["RegionId"].asString();
-		if(!valueItemsItem["Duration"].isNull())
-			itemsObject.duration = valueItemsItem["Duration"].asString();
 		if(!valueItemsItem["AutoRenew"].isNull())
 			itemsObject.autoRenew = valueItemsItem["AutoRenew"].asString();
 		if(!valueItemsItem["DBInstanceType"].isNull())
 			itemsObject.dBInstanceType = valueItemsItem["DBInstanceType"].asString();
+		if(!valueItemsItem["Duration"].isNull())
+			itemsObject.duration = valueItemsItem["Duration"].asString();
+		if(!valueItemsItem["RegionId"].isNull())
+			itemsObject.regionId = valueItemsItem["RegionId"].asString();
+		if(!valueItemsItem["DbInstanceId"].isNull())
+			itemsObject.dbInstanceId = valueItemsItem["DbInstanceId"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageRecordCount"].isNull())
-		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["ItemsNumbers"].isNull())
 		itemsNumbers_ = std::stoi(value["ItemsNumbers"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

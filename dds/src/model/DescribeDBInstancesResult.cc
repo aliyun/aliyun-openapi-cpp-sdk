@@ -43,70 +43,72 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 	for (auto valueDBInstancesDBInstance : allDBInstancesNode)
 	{
 		DBInstance dBInstancesObject;
-		if(!valueDBInstancesDBInstance["ResourceGroupId"].isNull())
-			dBInstancesObject.resourceGroupId = valueDBInstancesDBInstance["ResourceGroupId"].asString();
-		if(!valueDBInstancesDBInstance["DBInstanceId"].isNull())
-			dBInstancesObject.dBInstanceId = valueDBInstancesDBInstance["DBInstanceId"].asString();
-		if(!valueDBInstancesDBInstance["DBInstanceDescription"].isNull())
-			dBInstancesObject.dBInstanceDescription = valueDBInstancesDBInstance["DBInstanceDescription"].asString();
-		if(!valueDBInstancesDBInstance["RegionId"].isNull())
-			dBInstancesObject.regionId = valueDBInstancesDBInstance["RegionId"].asString();
-		if(!valueDBInstancesDBInstance["ZoneId"].isNull())
-			dBInstancesObject.zoneId = valueDBInstancesDBInstance["ZoneId"].asString();
-		if(!valueDBInstancesDBInstance["Engine"].isNull())
-			dBInstancesObject.engine = valueDBInstancesDBInstance["Engine"].asString();
 		if(!valueDBInstancesDBInstance["EngineVersion"].isNull())
 			dBInstancesObject.engineVersion = valueDBInstancesDBInstance["EngineVersion"].asString();
-		if(!valueDBInstancesDBInstance["DBInstanceClass"].isNull())
-			dBInstancesObject.dBInstanceClass = valueDBInstancesDBInstance["DBInstanceClass"].asString();
-		if(!valueDBInstancesDBInstance["DBInstanceStorage"].isNull())
-			dBInstancesObject.dBInstanceStorage = std::stoi(valueDBInstancesDBInstance["DBInstanceStorage"].asString());
-		if(!valueDBInstancesDBInstance["KindCode"].isNull())
-			dBInstancesObject.kindCode = valueDBInstancesDBInstance["KindCode"].asString();
-		if(!valueDBInstancesDBInstance["DBInstanceStatus"].isNull())
-			dBInstancesObject.dBInstanceStatus = valueDBInstancesDBInstance["DBInstanceStatus"].asString();
-		if(!valueDBInstancesDBInstance["LockMode"].isNull())
-			dBInstancesObject.lockMode = valueDBInstancesDBInstance["LockMode"].asString();
-		if(!valueDBInstancesDBInstance["ChargeType"].isNull())
-			dBInstancesObject.chargeType = valueDBInstancesDBInstance["ChargeType"].asString();
-		if(!valueDBInstancesDBInstance["NetworkType"].isNull())
-			dBInstancesObject.networkType = valueDBInstancesDBInstance["NetworkType"].asString();
-		if(!valueDBInstancesDBInstance["CreationTime"].isNull())
-			dBInstancesObject.creationTime = valueDBInstancesDBInstance["CreationTime"].asString();
-		if(!valueDBInstancesDBInstance["ExpireTime"].isNull())
-			dBInstancesObject.expireTime = valueDBInstancesDBInstance["ExpireTime"].asString();
-		if(!valueDBInstancesDBInstance["DBInstanceType"].isNull())
-			dBInstancesObject.dBInstanceType = valueDBInstancesDBInstance["DBInstanceType"].asString();
-		if(!valueDBInstancesDBInstance["LastDowngradeTime"].isNull())
-			dBInstancesObject.lastDowngradeTime = valueDBInstancesDBInstance["LastDowngradeTime"].asString();
 		if(!valueDBInstancesDBInstance["ReplicationFactor"].isNull())
 			dBInstancesObject.replicationFactor = valueDBInstancesDBInstance["ReplicationFactor"].asString();
+		if(!valueDBInstancesDBInstance["ZoneId"].isNull())
+			dBInstancesObject.zoneId = valueDBInstancesDBInstance["ZoneId"].asString();
+		if(!valueDBInstancesDBInstance["ResourceGroupId"].isNull())
+			dBInstancesObject.resourceGroupId = valueDBInstancesDBInstance["ResourceGroupId"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceStatus"].isNull())
+			dBInstancesObject.dBInstanceStatus = valueDBInstancesDBInstance["DBInstanceStatus"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceClass"].isNull())
+			dBInstancesObject.dBInstanceClass = valueDBInstancesDBInstance["DBInstanceClass"].asString();
 		if(!valueDBInstancesDBInstance["DestroyTime"].isNull())
 			dBInstancesObject.destroyTime = valueDBInstancesDBInstance["DestroyTime"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceType"].isNull())
+			dBInstancesObject.dBInstanceType = valueDBInstancesDBInstance["DBInstanceType"].asString();
+		if(!valueDBInstancesDBInstance["LockMode"].isNull())
+			dBInstancesObject.lockMode = valueDBInstancesDBInstance["LockMode"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceId"].isNull())
+			dBInstancesObject.dBInstanceId = valueDBInstancesDBInstance["DBInstanceId"].asString();
+		if(!valueDBInstancesDBInstance["NetworkType"].isNull())
+			dBInstancesObject.networkType = valueDBInstancesDBInstance["NetworkType"].asString();
 		if(!valueDBInstancesDBInstance["VpcAuthMode"].isNull())
 			dBInstancesObject.vpcAuthMode = valueDBInstancesDBInstance["VpcAuthMode"].asString();
+		if(!valueDBInstancesDBInstance["ChargeType"].isNull())
+			dBInstancesObject.chargeType = valueDBInstancesDBInstance["ChargeType"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceStorage"].isNull())
+			dBInstancesObject.dBInstanceStorage = std::stoi(valueDBInstancesDBInstance["DBInstanceStorage"].asString());
+		if(!valueDBInstancesDBInstance["LastDowngradeTime"].isNull())
+			dBInstancesObject.lastDowngradeTime = valueDBInstancesDBInstance["LastDowngradeTime"].asString();
+		if(!valueDBInstancesDBInstance["CreationTime"].isNull())
+			dBInstancesObject.creationTime = valueDBInstancesDBInstance["CreationTime"].asString();
+		if(!valueDBInstancesDBInstance["RegionId"].isNull())
+			dBInstancesObject.regionId = valueDBInstancesDBInstance["RegionId"].asString();
+		if(!valueDBInstancesDBInstance["ExpireTime"].isNull())
+			dBInstancesObject.expireTime = valueDBInstancesDBInstance["ExpireTime"].asString();
+		if(!valueDBInstancesDBInstance["KindCode"].isNull())
+			dBInstancesObject.kindCode = valueDBInstancesDBInstance["KindCode"].asString();
+		if(!valueDBInstancesDBInstance["Engine"].isNull())
+			dBInstancesObject.engine = valueDBInstancesDBInstance["Engine"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceDescription"].isNull())
+			dBInstancesObject.dBInstanceDescription = valueDBInstancesDBInstance["DBInstanceDescription"].asString();
 		auto allMongosListNode = valueDBInstancesDBInstance["MongosList"]["MongosAttribute"];
 		for (auto valueDBInstancesDBInstanceMongosListMongosAttribute : allMongosListNode)
 		{
 			DBInstance::MongosAttribute mongosListObject;
-			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].isNull())
-				mongosListObject.nodeId = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].asString();
-			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeDescription"].isNull())
-				mongosListObject.nodeDescription = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeDescription"].asString();
 			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeClass"].isNull())
 				mongosListObject.nodeClass = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeClass"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeDescription"].isNull())
+				mongosListObject.nodeDescription = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeDescription"].asString();
+			if(!valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].isNull())
+				mongosListObject.nodeId = valueDBInstancesDBInstanceMongosListMongosAttribute["NodeId"].asString();
 			dBInstancesObject.mongosList.push_back(mongosListObject);
 		}
 		auto allShardListNode = valueDBInstancesDBInstance["ShardList"]["ShardAttribute"];
 		for (auto valueDBInstancesDBInstanceShardListShardAttribute : allShardListNode)
 		{
 			DBInstance::ShardAttribute shardListObject;
-			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeId"].isNull())
-				shardListObject.nodeId = valueDBInstancesDBInstanceShardListShardAttribute["NodeId"].asString();
-			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeDescription"].isNull())
-				shardListObject.nodeDescription = valueDBInstancesDBInstanceShardListShardAttribute["NodeDescription"].asString();
 			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeClass"].isNull())
 				shardListObject.nodeClass = valueDBInstancesDBInstanceShardListShardAttribute["NodeClass"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeDescription"].isNull())
+				shardListObject.nodeDescription = valueDBInstancesDBInstanceShardListShardAttribute["NodeDescription"].asString();
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["ReadonlyReplicas"].isNull())
+				shardListObject.readonlyReplicas = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["ReadonlyReplicas"].asString());
+			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeId"].isNull())
+				shardListObject.nodeId = valueDBInstancesDBInstanceShardListShardAttribute["NodeId"].asString();
 			if(!valueDBInstancesDBInstanceShardListShardAttribute["NodeStorage"].isNull())
 				shardListObject.nodeStorage = std::stoi(valueDBInstancesDBInstanceShardListShardAttribute["NodeStorage"].asString());
 			dBInstancesObject.shardList.push_back(shardListObject);
@@ -115,20 +117,20 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 		for (auto valueDBInstancesDBInstanceTagsTag : allTagsNode)
 		{
 			DBInstance::Tag tagsObject;
-			if(!valueDBInstancesDBInstanceTagsTag["Key"].isNull())
-				tagsObject.key = valueDBInstancesDBInstanceTagsTag["Key"].asString();
 			if(!valueDBInstancesDBInstanceTagsTag["Value"].isNull())
 				tagsObject.value = valueDBInstancesDBInstanceTagsTag["Value"].asString();
+			if(!valueDBInstancesDBInstanceTagsTag["Key"].isNull())
+				tagsObject.key = valueDBInstancesDBInstanceTagsTag["Key"].asString();
 			dBInstancesObject.tags.push_back(tagsObject);
 		}
 		dBInstances_.push_back(dBInstancesObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

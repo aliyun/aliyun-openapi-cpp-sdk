@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setNodeType(const std::string& nodeType);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				int getReadonlyReplicas()const;
+				void setReadonlyReplicas(int readonlyReplicas);
 				std::string getNodeClass()const;
 				void setNodeClass(const std::string& nodeClass);
 				std::string getAccessKeyId()const;
@@ -66,6 +68,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string nodeType_;
 				std::string clientToken_;
+				int readonlyReplicas_;
 				std::string nodeClass_;
 				std::string accessKeyId_;
 				std::string securityToken_;

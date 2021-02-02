@@ -40,10 +40,10 @@ namespace AlibabaCloud
 					long returnRowCounts;
 					std::string dBName;
 					long keysExamined;
-					std::string hostAddress;
 					long docsExamined;
-					std::string sQLText;
+					std::string hostAddress;
 					std::string accountName;
+					std::string sQLText;
 				};
 
 

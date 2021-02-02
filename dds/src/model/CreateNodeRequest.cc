@@ -60,6 +60,17 @@ void CreateNodeRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+int CreateNodeRequest::getReadonlyReplicas()const
+{
+	return readonlyReplicas_;
+}
+
+void CreateNodeRequest::setReadonlyReplicas(int readonlyReplicas)
+{
+	readonlyReplicas_ = readonlyReplicas;
+	setParameter("ReadonlyReplicas", std::to_string(readonlyReplicas));
+}
+
 std::string CreateNodeRequest::getNodeClass()const
 {
 	return nodeClass_;

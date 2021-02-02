@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					{
 						std::string nodeClass;
 						std::string nodeDescription;
+						int readonlyReplicas;
 						std::string nodeId;
 						int nodeStorage;
 					};
@@ -53,10 +54,10 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					std::string engineVersion;
-					std::string resourceGroupId;
-					std::string zoneId;
-					std::string dBInstanceStatus;
 					std::string replicationFactor;
+					std::string zoneId;
+					std::string resourceGroupId;
+					std::string dBInstanceStatus;
 					std::string dBInstanceClass;
 					std::string destroyTime;
 					std::vector<DBInstance::ShardAttribute> shardList;
@@ -64,9 +65,9 @@ namespace AlibabaCloud
 					std::string lockMode;
 					std::vector<DBInstance::MongosAttribute> mongosList;
 					std::string dBInstanceId;
-					std::string chargeType;
 					std::string networkType;
 					std::string vpcAuthMode;
+					std::string chargeType;
 					int dBInstanceStorage;
 					std::string lastDowngradeTime;
 					std::string creationTime;
@@ -74,8 +75,8 @@ namespace AlibabaCloud
 					std::string expireTime;
 					std::string kindCode;
 					std::vector<DBInstance::Tag> tags;
-					std::string dBInstanceDescription;
 					std::string engine;
+					std::string dBInstanceDescription;
 				};
 
 

@@ -48,12 +48,6 @@ namespace AlibabaCloud
 					std::string originalAmount;
 					std::string discountAmount;
 				};
-				struct Rule
-				{
-					long ruleDescId;
-					std::string title;
-					std::string name;
-				};
 				struct SubOrder
 				{
 					std::string instanceId;
@@ -61,6 +55,12 @@ namespace AlibabaCloud
 					std::string tradeAmount;
 					std::string originalAmount;
 					std::string discountAmount;
+				};
+				struct Rule
+				{
+					long ruleDescId;
+					std::string title;
+					std::string name;
 				};
 
 

@@ -33,6 +33,7 @@ namespace AlibabaCloud
 			public:
 				struct ReplicaSet
 				{
+					int readonlyReplicas;
 					int storage;
 					std::string _class;
 				};
@@ -84,12 +85,12 @@ namespace AlibabaCloud
 				void setConfigServer(const std::vector<ConfigServer>& configServer);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<Mongos> getMongos()const;
-				void setMongos(const std::vector<Mongos>& mongos);
 				std::string getSecurityIPList()const;
 				void setSecurityIPList(const std::string& securityIPList);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				std::vector<Mongos> getMongos()const;
+				void setMongos(const std::vector<Mongos>& mongos);
 				std::string getAccountPassword()const;
 				void setAccountPassword(const std::string& accountPassword);
 				std::string getAutoRenew()const;
@@ -121,9 +122,9 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::vector<ConfigServer> configServer_;
 				long ownerId_;
-				std::vector<Mongos> mongos_;
 				std::string securityIPList_;
 				std::string vSwitchId_;
+				std::vector<Mongos> mongos_;
 				std::string accountPassword_;
 				std::string autoRenew_;
 				std::string vpcId_;

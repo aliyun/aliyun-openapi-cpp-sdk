@@ -51,10 +51,11 @@ namespace AlibabaCloud
 					{
 						std::string nodeClass;
 						std::string nodeDescription;
+						int readonlyReplicas;
 						int maxConnections;
 						int port;
-						std::string nodeId;
 						int nodeStorage;
+						std::string nodeId;
 						std::string connectString;
 						int maxIOPS;
 					};
@@ -64,25 +65,25 @@ namespace AlibabaCloud
 						std::string nodeDescription;
 						int maxConnections;
 						int port;
-						std::string nodeId;
 						int nodeStorage;
+						std::string nodeId;
 						std::string connectString;
 						int maxIOPS;
-					};
-					struct ReplicaSet
-					{
-						std::string replicaSetRole;
-						std::string connectionDomain;
-						std::string vPCCloudInstanceId;
-						std::string connectionPort;
-						std::string vPCId;
-						std::string networkType;
-						std::string vSwitchId;
 					};
 					struct Tag
 					{
 						std::string value;
 						std::string key;
+					};
+					struct ReplicaSet
+					{
+						std::string connectionDomain;
+						std::string replicaSetRole;
+						std::string vPCCloudInstanceId;
+						std::string vPCId;
+						std::string connectionPort;
+						std::string networkType;
+						std::string vSwitchId;
 					};
 					std::string vPCCloudInstanceIds;
 					std::string resourceGroupId;
@@ -97,27 +98,27 @@ namespace AlibabaCloud
 					int dBInstanceStorage;
 					std::string lastDowngradeTime;
 					std::vector<DBInstance::Tag> tags;
-					std::string dBInstanceDescription;
 					std::string engine;
 					std::string maintainStartTime;
+					std::string dBInstanceDescription;
 					std::string replacateId;
 					bool dBInstanceReleaseProtection;
 					std::string engineVersion;
-					std::string zoneId;
-					std::string dBInstanceStatus;
 					std::string replicationFactor;
 					std::string readonlyReplicas;
 					int maxConnections;
+					std::string zoneId;
+					std::string dBInstanceStatus;
 					std::string dBInstanceClass;
 					std::string vPCId;
 					std::string vSwitchId;
 					std::vector<DBInstance::ShardAttribute> shardList;
 					std::string lockMode;
 					int maxIOPS;
-					std::string chargeType;
 					std::string currentKernelVersion;
 					std::string protocolType;
 					std::string vpcAuthMode;
+					std::string chargeType;
 					std::string creationTime;
 					std::vector<DBInstance::ConfigserverAttribute> configserverList;
 					std::string regionId;

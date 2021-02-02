@@ -43,26 +43,26 @@ void DescribeRunningLogRecordsResult::parse(const std::string &payload)
 	for (auto valueItemsLogRecords : allItemsNode)
 	{
 		LogRecords itemsObject;
-		if(!valueItemsLogRecords["Id"].isNull())
-			itemsObject.id = std::stoi(valueItemsLogRecords["Id"].asString());
-		if(!valueItemsLogRecords["CreateTime"].isNull())
-			itemsObject.createTime = valueItemsLogRecords["CreateTime"].asString();
-		if(!valueItemsLogRecords["Category"].isNull())
-			itemsObject.category = valueItemsLogRecords["Category"].asString();
 		if(!valueItemsLogRecords["ConnInfo"].isNull())
 			itemsObject.connInfo = valueItemsLogRecords["ConnInfo"].asString();
+		if(!valueItemsLogRecords["Category"].isNull())
+			itemsObject.category = valueItemsLogRecords["Category"].asString();
 		if(!valueItemsLogRecords["Content"].isNull())
 			itemsObject.content = valueItemsLogRecords["Content"].asString();
+		if(!valueItemsLogRecords["CreateTime"].isNull())
+			itemsObject.createTime = valueItemsLogRecords["CreateTime"].asString();
+		if(!valueItemsLogRecords["Id"].isNull())
+			itemsObject.id = std::stoi(valueItemsLogRecords["Id"].asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
 
 }
 

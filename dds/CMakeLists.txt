@@ -89,8 +89,6 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeDedicatedClusterInstanceListResult.h
 	include/alibabacloud/dds/model/DescribeErrorLogRecordsRequest.h
 	include/alibabacloud/dds/model/DescribeErrorLogRecordsResult.h
-	include/alibabacloud/dds/model/DescribeIndexRecommendationRequest.h
-	include/alibabacloud/dds/model/DescribeIndexRecommendationResult.h
 	include/alibabacloud/dds/model/DescribeInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/dds/model/DescribeInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/dds/model/DescribeKernelReleaseNotesRequest.h
@@ -270,8 +268,6 @@ set(dds_src
 	src/model/DescribeDedicatedClusterInstanceListResult.cc
 	src/model/DescribeErrorLogRecordsRequest.cc
 	src/model/DescribeErrorLogRecordsResult.cc
-	src/model/DescribeIndexRecommendationRequest.cc
-	src/model/DescribeIndexRecommendationResult.cc
 	src/model/DescribeInstanceAutoRenewalAttributeRequest.cc
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
 	src/model/DescribeKernelReleaseNotesRequest.cc

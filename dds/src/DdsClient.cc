@@ -1275,42 +1275,6 @@ DdsClient::DescribeErrorLogRecordsOutcomeCallable DdsClient::describeErrorLogRec
 	return task->get_future();
 }
 
-DdsClient::DescribeIndexRecommendationOutcome DdsClient::describeIndexRecommendation(const DescribeIndexRecommendationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeIndexRecommendationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeIndexRecommendationOutcome(DescribeIndexRecommendationResult(outcome.result()));
-	else
-		return DescribeIndexRecommendationOutcome(outcome.error());
-}
-
-void DdsClient::describeIndexRecommendationAsync(const DescribeIndexRecommendationRequest& request, const DescribeIndexRecommendationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeIndexRecommendation(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeIndexRecommendationOutcomeCallable DdsClient::describeIndexRecommendationCallable(const DescribeIndexRecommendationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeIndexRecommendationOutcome()>>(
-			[this, request]()
-			{
-			return this->describeIndexRecommendation(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::DescribeInstanceAutoRenewalAttributeOutcome DdsClient::describeInstanceAutoRenewalAttribute(const DescribeInstanceAutoRenewalAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

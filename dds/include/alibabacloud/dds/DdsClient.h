@@ -90,8 +90,6 @@
 #include "model/DescribeDedicatedClusterInstanceListResult.h"
 #include "model/DescribeErrorLogRecordsRequest.h"
 #include "model/DescribeErrorLogRecordsResult.h"
-#include "model/DescribeIndexRecommendationRequest.h"
-#include "model/DescribeIndexRecommendationResult.h"
 #include "model/DescribeInstanceAutoRenewalAttributeRequest.h"
 #include "model/DescribeInstanceAutoRenewalAttributeResult.h"
 #include "model/DescribeKernelReleaseNotesRequest.h"
@@ -311,9 +309,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeErrorLogRecordsResult> DescribeErrorLogRecordsOutcome;
 			typedef std::future<DescribeErrorLogRecordsOutcome> DescribeErrorLogRecordsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeErrorLogRecordsRequest&, const DescribeErrorLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorLogRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeIndexRecommendationResult> DescribeIndexRecommendationOutcome;
-			typedef std::future<DescribeIndexRecommendationOutcome> DescribeIndexRecommendationOutcomeCallable;
-			typedef std::function<void(const DdsClient*, const Model::DescribeIndexRecommendationRequest&, const DescribeIndexRecommendationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexRecommendationAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceAutoRenewalAttributeResult> DescribeInstanceAutoRenewalAttributeOutcome;
 			typedef std::future<DescribeInstanceAutoRenewalAttributeOutcome> DescribeInstanceAutoRenewalAttributeOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeInstanceAutoRenewalAttributeRequest&, const DescribeInstanceAutoRenewalAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAutoRenewalAttributeAsyncHandler;
@@ -583,9 +578,6 @@ namespace AlibabaCloud
 			DescribeErrorLogRecordsOutcome describeErrorLogRecords(const Model::DescribeErrorLogRecordsRequest &request)const;
 			void describeErrorLogRecordsAsync(const Model::DescribeErrorLogRecordsRequest& request, const DescribeErrorLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeErrorLogRecordsOutcomeCallable describeErrorLogRecordsCallable(const Model::DescribeErrorLogRecordsRequest& request) const;
-			DescribeIndexRecommendationOutcome describeIndexRecommendation(const Model::DescribeIndexRecommendationRequest &request)const;
-			void describeIndexRecommendationAsync(const Model::DescribeIndexRecommendationRequest& request, const DescribeIndexRecommendationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeIndexRecommendationOutcomeCallable describeIndexRecommendationCallable(const Model::DescribeIndexRecommendationRequest& request) const;
 			DescribeInstanceAutoRenewalAttributeOutcome describeInstanceAutoRenewalAttribute(const Model::DescribeInstanceAutoRenewalAttributeRequest &request)const;
 			void describeInstanceAutoRenewalAttributeAsync(const Model::DescribeInstanceAutoRenewalAttributeRequest& request, const DescribeInstanceAutoRenewalAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceAutoRenewalAttributeOutcomeCallable describeInstanceAutoRenewalAttributeCallable(const Model::DescribeInstanceAutoRenewalAttributeRequest& request) const;

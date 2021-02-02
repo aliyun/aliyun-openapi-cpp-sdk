@@ -1,3 +1,6 @@
+2021-02-02 Version: patch
+- CreateShardingDBInstance add ReadOnlyReplicas in ReplicaSet.
+
 2021-02-01 Version: patch
 - Support device credential for mqtt.
 

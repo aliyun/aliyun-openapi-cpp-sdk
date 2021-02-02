@@ -82,6 +82,7 @@ void CreateShardingDBInstanceRequest::setReplicaSet(const std::vector<ReplicaSet
 	for(int dep1 = 0; dep1!= replicaSet.size(); dep1++) {
 		auto replicaSetObj = replicaSet.at(dep1);
 		std::string replicaSetObjStr = "ReplicaSet." + std::to_string(dep1 + 1);
+		setParameter(replicaSetObjStr + ".ReadonlyReplicas", std::to_string(replicaSetObj.readonlyReplicas));
 		setParameter(replicaSetObjStr + ".Storage", std::to_string(replicaSetObj.storage));
 		setParameter(replicaSetObjStr + "._Class", replicaSetObj._class);
 	}
@@ -224,21 +225,6 @@ void CreateShardingDBInstanceRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::vector<CreateShardingDBInstanceRequest::Mongos> CreateShardingDBInstanceRequest::getMongos()const
-{
-	return mongos_;
-}
-
-void CreateShardingDBInstanceRequest::setMongos(const std::vector<Mongos>& mongos)
-{
-	mongos_ = mongos;
-	for(int dep1 = 0; dep1!= mongos.size(); dep1++) {
-		auto mongosObj = mongos.at(dep1);
-		std::string mongosObjStr = "Mongos." + std::to_string(dep1 + 1);
-		setParameter(mongosObjStr + "._Class", mongosObj._class);
-	}
-}
-
 std::string CreateShardingDBInstanceRequest::getSecurityIPList()const
 {
 	return securityIPList_;
@@ -259,6 +245,21 @@ void CreateShardingDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
 	setParameter("VSwitchId", vSwitchId);
+}
+
+std::vector<CreateShardingDBInstanceRequest::Mongos> CreateShardingDBInstanceRequest::getMongos()const
+{
+	return mongos_;
+}
+
+void CreateShardingDBInstanceRequest::setMongos(const std::vector<Mongos>& mongos)
+{
+	mongos_ = mongos;
+	for(int dep1 = 0; dep1!= mongos.size(); dep1++) {
+		auto mongosObj = mongos.at(dep1);
+		std::string mongosObjStr = "Mongos." + std::to_string(dep1 + 1);
+		setParameter(mongosObjStr + "._Class", mongosObj._class);
+	}
 }
 
 std::string CreateShardingDBInstanceRequest::getAccountPassword()const

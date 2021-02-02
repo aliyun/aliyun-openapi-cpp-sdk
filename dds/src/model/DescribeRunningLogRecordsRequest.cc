@@ -38,6 +38,17 @@ void DescribeRunningLogRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeRunningLogRecordsRequest::getRoleId()const
+{
+	return roleId_;
+}
+
+void DescribeRunningLogRecordsRequest::setRoleId(const std::string& roleId)
+{
+	roleId_ = roleId;
+	setParameter("RoleId", roleId);
+}
+
 std::string DescribeRunningLogRecordsRequest::getStartTime()const
 {
 	return startTime_;
