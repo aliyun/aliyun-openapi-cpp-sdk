@@ -36,7 +36,9 @@ set(eais_public_header_model
 	include/alibabacloud/eais/model/DescribeRegionsRequest.h
 	include/alibabacloud/eais/model/DescribeRegionsResult.h
 	include/alibabacloud/eais/model/DetachEaiRequest.h
-	include/alibabacloud/eais/model/DetachEaiResult.h )
+	include/alibabacloud/eais/model/DetachEaiResult.h
+	include/alibabacloud/eais/model/GetPrivateIpRequest.h
+	include/alibabacloud/eais/model/GetPrivateIpResult.h )
 
 set(eais_src 
 	src/EaisClient.cc
@@ -55,7 +57,9 @@ set(eais_src
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DetachEaiRequest.cc
-	src/model/DetachEaiResult.cc )
+	src/model/DetachEaiResult.cc
+	src/model/GetPrivateIpRequest.cc
+	src/model/GetPrivateIpResult.cc )
 
 add_library(eais ${LIB_TYPE}
 	${eais_public_header}

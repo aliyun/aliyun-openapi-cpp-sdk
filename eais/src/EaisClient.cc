@@ -339,3 +339,39 @@ EaisClient::DetachEaiOutcomeCallable EaisClient::detachEaiCallable(const DetachE
 	return task->get_future();
 }
 
+EaisClient::GetPrivateIpOutcome EaisClient::getPrivateIp(const GetPrivateIpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPrivateIpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPrivateIpOutcome(GetPrivateIpResult(outcome.result()));
+	else
+		return GetPrivateIpOutcome(outcome.error());
+}
+
+void EaisClient::getPrivateIpAsync(const GetPrivateIpRequest& request, const GetPrivateIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPrivateIp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::GetPrivateIpOutcomeCallable EaisClient::getPrivateIpCallable(const GetPrivateIpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPrivateIpOutcome()>>(
+			[this, request]()
+			{
+			return this->getPrivateIp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

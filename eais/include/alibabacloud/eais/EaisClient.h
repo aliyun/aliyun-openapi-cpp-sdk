@@ -38,6 +38,8 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DetachEaiRequest.h"
 #include "model/DetachEaiResult.h"
+#include "model/GetPrivateIpRequest.h"
+#include "model/GetPrivateIpResult.h"
 
 
 namespace AlibabaCloud
@@ -71,6 +73,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachEaiResult> DetachEaiOutcome;
 			typedef std::future<DetachEaiOutcome> DetachEaiOutcomeCallable;
 			typedef std::function<void(const EaisClient*, const Model::DetachEaiRequest&, const DetachEaiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachEaiAsyncHandler;
+			typedef Outcome<Error, Model::GetPrivateIpResult> GetPrivateIpOutcome;
+			typedef std::future<GetPrivateIpOutcome> GetPrivateIpOutcomeCallable;
+			typedef std::function<void(const EaisClient*, const Model::GetPrivateIpRequest&, const GetPrivateIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPrivateIpAsyncHandler;
 
 			EaisClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			EaisClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -100,6 +105,9 @@ namespace AlibabaCloud
 			DetachEaiOutcome detachEai(const Model::DetachEaiRequest &request)const;
 			void detachEaiAsync(const Model::DetachEaiRequest& request, const DetachEaiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachEaiOutcomeCallable detachEaiCallable(const Model::DetachEaiRequest& request) const;
+			GetPrivateIpOutcome getPrivateIp(const Model::GetPrivateIpRequest &request)const;
+			void getPrivateIpAsync(const Model::GetPrivateIpRequest& request, const GetPrivateIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPrivateIpOutcomeCallable getPrivateIpCallable(const Model::GetPrivateIpRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

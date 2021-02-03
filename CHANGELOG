@@ -1,4 +1,7 @@
 2021-02-03 Version: patch
+- After normalizing the API group name, regenerate the SDK.
+
+2021-02-03 Version: patch
 - Add ModifyAuditLogConfig API.
 
 2021-02-02 Version: patch
