@@ -60,6 +60,17 @@ void DescribeParameterTemplatesRequest::setAccessKeyId(const std::string& access
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeParameterTemplatesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeParameterTemplatesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeParameterTemplatesRequest::getSecurityToken()const
 {
 	return securityToken_;

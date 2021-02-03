@@ -137,6 +137,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyAccountPasswordResult.h
 	include/alibabacloud/r-kvstore/model/ModifyActiveOperationTaskRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyActiveOperationTaskResult.h
+	include/alibabacloud/r-kvstore/model/ModifyAuditLogConfigRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyAuditLogConfigResult.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringRequest.h
@@ -318,6 +320,8 @@ set(r-kvstore_src
 	src/model/ModifyAccountPasswordResult.cc
 	src/model/ModifyActiveOperationTaskRequest.cc
 	src/model/ModifyActiveOperationTaskResult.cc
+	src/model/ModifyAuditLogConfigRequest.cc
+	src/model/ModifyAuditLogConfigResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
 	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
