@@ -40,7 +40,9 @@ namespace AlibabaCloud
 						std::string type;
 						std::vector<std::string> box;
 					};
+					long height;
 					std::vector<Element> elements;
+					long width;
 				};
 
 

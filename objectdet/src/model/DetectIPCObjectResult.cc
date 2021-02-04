@@ -40,6 +40,10 @@ void DetectIPCObjectResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["Height"].isNull())
+		data_.height = std::stol(dataNode["Height"].asString());
+	if(!dataNode["Width"].isNull())
+		data_.width = std::stol(dataNode["Width"].asString());
 	auto allElementsNode = dataNode["Elements"]["Element"];
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
