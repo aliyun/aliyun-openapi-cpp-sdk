@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMAGERECOG_MODEL_TAGGINGIMAGEREQUEST_H_
-#define ALIBABACLOUD_IMAGERECOG_MODEL_TAGGINGIMAGEREQUEST_H_
+#ifndef ALIBABACLOUD_IMAGERECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#define ALIBABACLOUD_IMAGERECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMAGERECOG_EXPORT TaggingImageRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IMAGERECOG_EXPORT GetAsyncJobResultRequest : public RpcServiceRequest
 			{
 
 			public:
-				TaggingImageRequest();
-				~TaggingImageRequest();
+				GetAsyncJobResultRequest();
+				~GetAsyncJobResultRequest();
 
-				int getImageType()const;
-				void setImageType(int imageType);
-				bool getAsync()const;
-				void setAsync(bool async);
-				std::string getImageURL()const;
-				void setImageURL(const std::string& imageURL);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
+				std::string getAsync()const;
+				void setAsync(const std::string& async);
 
             private:
-				int imageType_;
-				bool async_;
-				std::string imageURL_;
+				std::string jobId_;
+				std::string async_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMAGERECOG_MODEL_TAGGINGIMAGEREQUEST_H_
+#endif // !ALIBABACLOUD_IMAGERECOG_MODEL_GETASYNCJOBRESULTREQUEST_H_

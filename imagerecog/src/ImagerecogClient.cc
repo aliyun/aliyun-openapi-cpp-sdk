@@ -195,6 +195,42 @@ ImagerecogClient::EvaluateCertificateQualityOutcomeCallable ImagerecogClient::ev
 	return task->get_future();
 }
 
+ImagerecogClient::GetAsyncJobResultOutcome ImagerecogClient::getAsyncJobResult(const GetAsyncJobResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAsyncJobResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAsyncJobResultOutcome(GetAsyncJobResultResult(outcome.result()));
+	else
+		return GetAsyncJobResultOutcome(outcome.error());
+}
+
+void ImagerecogClient::getAsyncJobResultAsync(const GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAsyncJobResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImagerecogClient::GetAsyncJobResultOutcomeCallable ImagerecogClient::getAsyncJobResultCallable(const GetAsyncJobResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAsyncJobResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getAsyncJobResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImagerecogClient::RecognizeFoodOutcome ImagerecogClient::recognizeFood(const RecognizeFoodRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

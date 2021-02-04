@@ -38,6 +38,17 @@ void TaggingImageRequest::setImageType(int imageType)
 	setBodyParameter("ImageType", std::to_string(imageType));
 }
 
+bool TaggingImageRequest::getAsync()const
+{
+	return async_;
+}
+
+void TaggingImageRequest::setAsync(bool async)
+{
+	async_ = async;
+	setBodyParameter("Async", async ? "true" : "false");
+}
+
 std::string TaggingImageRequest::getImageURL()const
 {
 	return imageURL_;

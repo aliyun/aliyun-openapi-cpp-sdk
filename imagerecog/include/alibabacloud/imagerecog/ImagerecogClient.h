@@ -30,6 +30,8 @@
 #include "model/DetectImageElementsResult.h"
 #include "model/EvaluateCertificateQualityRequest.h"
 #include "model/EvaluateCertificateQualityResult.h"
+#include "model/GetAsyncJobResultRequest.h"
+#include "model/GetAsyncJobResultResult.h"
 #include "model/RecognizeFoodRequest.h"
 #include "model/RecognizeFoodResult.h"
 #include "model/RecognizeImageColorRequest.h"
@@ -65,6 +67,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EvaluateCertificateQualityResult> EvaluateCertificateQualityOutcome;
 			typedef std::future<EvaluateCertificateQualityOutcome> EvaluateCertificateQualityOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::EvaluateCertificateQualityRequest&, const EvaluateCertificateQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EvaluateCertificateQualityAsyncHandler;
+			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
+			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
+			typedef std::function<void(const ImagerecogClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeFoodResult> RecognizeFoodOutcome;
 			typedef std::future<RecognizeFoodOutcome> RecognizeFoodOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::RecognizeFoodRequest&, const RecognizeFoodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeFoodAsyncHandler;
@@ -103,6 +108,9 @@ namespace AlibabaCloud
 			EvaluateCertificateQualityOutcome evaluateCertificateQuality(const Model::EvaluateCertificateQualityRequest &request)const;
 			void evaluateCertificateQualityAsync(const Model::EvaluateCertificateQualityRequest& request, const EvaluateCertificateQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EvaluateCertificateQualityOutcomeCallable evaluateCertificateQualityCallable(const Model::EvaluateCertificateQualityRequest& request) const;
+			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
+			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
 			RecognizeFoodOutcome recognizeFood(const Model::RecognizeFoodRequest &request)const;
 			void recognizeFoodAsync(const Model::RecognizeFoodRequest& request, const RecognizeFoodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeFoodOutcomeCallable recognizeFoodCallable(const Model::RecognizeFoodRequest& request) const;

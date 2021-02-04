@@ -1,3 +1,6 @@
+2021-02-04 Version: patch
+- Update TaggingImage.
+
 2021-02-03 Version: patch
 - After normalizing the API group name, regenerate the SDK.
 
