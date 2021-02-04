@@ -1311,6 +1311,42 @@ OutboundBotClient::ImportScriptOutcomeCallable OutboundBotClient::importScriptCa
 	return task->get_future();
 }
 
+OutboundBotClient::InflightTaskTimeoutOutcome OutboundBotClient::inflightTaskTimeout(const InflightTaskTimeoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InflightTaskTimeoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InflightTaskTimeoutOutcome(InflightTaskTimeoutResult(outcome.result()));
+	else
+		return InflightTaskTimeoutOutcome(outcome.error());
+}
+
+void OutboundBotClient::inflightTaskTimeoutAsync(const InflightTaskTimeoutRequest& request, const InflightTaskTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, inflightTaskTimeout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::InflightTaskTimeoutOutcomeCallable OutboundBotClient::inflightTaskTimeoutCallable(const InflightTaskTimeoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InflightTaskTimeoutOutcome()>>(
+			[this, request]()
+			{
+			return this->inflightTaskTimeout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::ListDialogueFlowsOutcome OutboundBotClient::listDialogueFlows(const ListDialogueFlowsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +1665,42 @@ OutboundBotClient::ListOutboundCallNumbersOutcomeCallable OutboundBotClient::lis
 			[this, request]()
 			{
 			return this->listOutboundCallNumbers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListSchedulerInstancesOutcome OutboundBotClient::listSchedulerInstances(const ListSchedulerInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSchedulerInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSchedulerInstancesOutcome(ListSchedulerInstancesResult(outcome.result()));
+	else
+		return ListSchedulerInstancesOutcome(outcome.error());
+}
+
+void OutboundBotClient::listSchedulerInstancesAsync(const ListSchedulerInstancesRequest& request, const ListSchedulerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSchedulerInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListSchedulerInstancesOutcomeCallable OutboundBotClient::listSchedulerInstancesCallable(const ListSchedulerInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSchedulerInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listSchedulerInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2637,6 +2709,42 @@ OutboundBotClient::SuspendJobsOutcomeCallable OutboundBotClient::suspendJobsCall
 			[this, request]()
 			{
 			return this->suspendJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::TaskPreparingOutcome OutboundBotClient::taskPreparing(const TaskPreparingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TaskPreparingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TaskPreparingOutcome(TaskPreparingResult(outcome.result()));
+	else
+		return TaskPreparingOutcome(outcome.error());
+}
+
+void OutboundBotClient::taskPreparingAsync(const TaskPreparingRequest& request, const TaskPreparingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, taskPreparing(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::TaskPreparingOutcomeCallable OutboundBotClient::taskPreparingCallable(const TaskPreparingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TaskPreparingOutcome()>>(
+			[this, request]()
+			{
+			return this->taskPreparing(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

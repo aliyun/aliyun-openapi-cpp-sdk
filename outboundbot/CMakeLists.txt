@@ -91,6 +91,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/ExportScriptResult.h
 	include/alibabacloud/outboundbot/model/ImportScriptRequest.h
 	include/alibabacloud/outboundbot/model/ImportScriptResult.h
+	include/alibabacloud/outboundbot/model/InflightTaskTimeoutRequest.h
+	include/alibabacloud/outboundbot/model/InflightTaskTimeoutResult.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsRequest.h
 	include/alibabacloud/outboundbot/model/ListDialogueFlowsResult.h
 	include/alibabacloud/outboundbot/model/ListGlobalQuestionsRequest.h
@@ -109,6 +111,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/ListMediaResult.h
 	include/alibabacloud/outboundbot/model/ListOutboundCallNumbersRequest.h
 	include/alibabacloud/outboundbot/model/ListOutboundCallNumbersResult.h
+	include/alibabacloud/outboundbot/model/ListSchedulerInstancesRequest.h
+	include/alibabacloud/outboundbot/model/ListSchedulerInstancesResult.h
 	include/alibabacloud/outboundbot/model/ListScriptPublishHistoriesRequest.h
 	include/alibabacloud/outboundbot/model/ListScriptPublishHistoriesResult.h
 	include/alibabacloud/outboundbot/model/ListScriptVoiceConfigsRequest.h
@@ -165,6 +169,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/SubmitScriptReviewResult.h
 	include/alibabacloud/outboundbot/model/SuspendJobsRequest.h
 	include/alibabacloud/outboundbot/model/SuspendJobsResult.h
+	include/alibabacloud/outboundbot/model/TaskPreparingRequest.h
+	include/alibabacloud/outboundbot/model/TaskPreparingResult.h
 	include/alibabacloud/outboundbot/model/WithdrawScriptReviewRequest.h
 	include/alibabacloud/outboundbot/model/WithdrawScriptReviewResult.h )
 
@@ -240,6 +246,8 @@ set(outboundbot_src
 	src/model/ExportScriptResult.cc
 	src/model/ImportScriptRequest.cc
 	src/model/ImportScriptResult.cc
+	src/model/InflightTaskTimeoutRequest.cc
+	src/model/InflightTaskTimeoutResult.cc
 	src/model/ListDialogueFlowsRequest.cc
 	src/model/ListDialogueFlowsResult.cc
 	src/model/ListGlobalQuestionsRequest.cc
@@ -258,6 +266,8 @@ set(outboundbot_src
 	src/model/ListMediaResult.cc
 	src/model/ListOutboundCallNumbersRequest.cc
 	src/model/ListOutboundCallNumbersResult.cc
+	src/model/ListSchedulerInstancesRequest.cc
+	src/model/ListSchedulerInstancesResult.cc
 	src/model/ListScriptPublishHistoriesRequest.cc
 	src/model/ListScriptPublishHistoriesResult.cc
 	src/model/ListScriptVoiceConfigsRequest.cc
@@ -314,6 +324,8 @@ set(outboundbot_src
 	src/model/SubmitScriptReviewResult.cc
 	src/model/SuspendJobsRequest.cc
 	src/model/SuspendJobsResult.cc
+	src/model/TaskPreparingRequest.cc
+	src/model/TaskPreparingResult.cc
 	src/model/WithdrawScriptReviewRequest.cc
 	src/model/WithdrawScriptReviewResult.cc )
 

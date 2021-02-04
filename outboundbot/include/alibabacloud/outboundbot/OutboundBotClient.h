@@ -92,6 +92,8 @@
 #include "model/ExportScriptResult.h"
 #include "model/ImportScriptRequest.h"
 #include "model/ImportScriptResult.h"
+#include "model/InflightTaskTimeoutRequest.h"
+#include "model/InflightTaskTimeoutResult.h"
 #include "model/ListDialogueFlowsRequest.h"
 #include "model/ListDialogueFlowsResult.h"
 #include "model/ListGlobalQuestionsRequest.h"
@@ -110,6 +112,8 @@
 #include "model/ListMediaResult.h"
 #include "model/ListOutboundCallNumbersRequest.h"
 #include "model/ListOutboundCallNumbersResult.h"
+#include "model/ListSchedulerInstancesRequest.h"
+#include "model/ListSchedulerInstancesResult.h"
 #include "model/ListScriptPublishHistoriesRequest.h"
 #include "model/ListScriptPublishHistoriesResult.h"
 #include "model/ListScriptVoiceConfigsRequest.h"
@@ -166,6 +170,8 @@
 #include "model/SubmitScriptReviewResult.h"
 #include "model/SuspendJobsRequest.h"
 #include "model/SuspendJobsResult.h"
+#include "model/TaskPreparingRequest.h"
+#include "model/TaskPreparingResult.h"
 #include "model/WithdrawScriptReviewRequest.h"
 #include "model/WithdrawScriptReviewResult.h"
 
@@ -282,6 +288,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ImportScriptResult> ImportScriptOutcome;
 			typedef std::future<ImportScriptOutcome> ImportScriptOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ImportScriptRequest&, const ImportScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportScriptAsyncHandler;
+			typedef Outcome<Error, Model::InflightTaskTimeoutResult> InflightTaskTimeoutOutcome;
+			typedef std::future<InflightTaskTimeoutOutcome> InflightTaskTimeoutOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::InflightTaskTimeoutRequest&, const InflightTaskTimeoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InflightTaskTimeoutAsyncHandler;
 			typedef Outcome<Error, Model::ListDialogueFlowsResult> ListDialogueFlowsOutcome;
 			typedef std::future<ListDialogueFlowsOutcome> ListDialogueFlowsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListDialogueFlowsRequest&, const ListDialogueFlowsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDialogueFlowsAsyncHandler;
@@ -309,6 +318,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListOutboundCallNumbersResult> ListOutboundCallNumbersOutcome;
 			typedef std::future<ListOutboundCallNumbersOutcome> ListOutboundCallNumbersOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListOutboundCallNumbersRequest&, const ListOutboundCallNumbersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOutboundCallNumbersAsyncHandler;
+			typedef Outcome<Error, Model::ListSchedulerInstancesResult> ListSchedulerInstancesOutcome;
+			typedef std::future<ListSchedulerInstancesOutcome> ListSchedulerInstancesOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListSchedulerInstancesRequest&, const ListSchedulerInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSchedulerInstancesAsyncHandler;
 			typedef Outcome<Error, Model::ListScriptPublishHistoriesResult> ListScriptPublishHistoriesOutcome;
 			typedef std::future<ListScriptPublishHistoriesOutcome> ListScriptPublishHistoriesOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListScriptPublishHistoriesRequest&, const ListScriptPublishHistoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScriptPublishHistoriesAsyncHandler;
@@ -393,6 +405,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SuspendJobsResult> SuspendJobsOutcome;
 			typedef std::future<SuspendJobsOutcome> SuspendJobsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::SuspendJobsRequest&, const SuspendJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuspendJobsAsyncHandler;
+			typedef Outcome<Error, Model::TaskPreparingResult> TaskPreparingOutcome;
+			typedef std::future<TaskPreparingOutcome> TaskPreparingOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::TaskPreparingRequest&, const TaskPreparingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskPreparingAsyncHandler;
 			typedef Outcome<Error, Model::WithdrawScriptReviewResult> WithdrawScriptReviewOutcome;
 			typedef std::future<WithdrawScriptReviewOutcome> WithdrawScriptReviewOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::WithdrawScriptReviewRequest&, const WithdrawScriptReviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawScriptReviewAsyncHandler;
@@ -506,6 +521,9 @@ namespace AlibabaCloud
 			ImportScriptOutcome importScript(const Model::ImportScriptRequest &request)const;
 			void importScriptAsync(const Model::ImportScriptRequest& request, const ImportScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportScriptOutcomeCallable importScriptCallable(const Model::ImportScriptRequest& request) const;
+			InflightTaskTimeoutOutcome inflightTaskTimeout(const Model::InflightTaskTimeoutRequest &request)const;
+			void inflightTaskTimeoutAsync(const Model::InflightTaskTimeoutRequest& request, const InflightTaskTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InflightTaskTimeoutOutcomeCallable inflightTaskTimeoutCallable(const Model::InflightTaskTimeoutRequest& request) const;
 			ListDialogueFlowsOutcome listDialogueFlows(const Model::ListDialogueFlowsRequest &request)const;
 			void listDialogueFlowsAsync(const Model::ListDialogueFlowsRequest& request, const ListDialogueFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDialogueFlowsOutcomeCallable listDialogueFlowsCallable(const Model::ListDialogueFlowsRequest& request) const;
@@ -533,6 +551,9 @@ namespace AlibabaCloud
 			ListOutboundCallNumbersOutcome listOutboundCallNumbers(const Model::ListOutboundCallNumbersRequest &request)const;
 			void listOutboundCallNumbersAsync(const Model::ListOutboundCallNumbersRequest& request, const ListOutboundCallNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOutboundCallNumbersOutcomeCallable listOutboundCallNumbersCallable(const Model::ListOutboundCallNumbersRequest& request) const;
+			ListSchedulerInstancesOutcome listSchedulerInstances(const Model::ListSchedulerInstancesRequest &request)const;
+			void listSchedulerInstancesAsync(const Model::ListSchedulerInstancesRequest& request, const ListSchedulerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSchedulerInstancesOutcomeCallable listSchedulerInstancesCallable(const Model::ListSchedulerInstancesRequest& request) const;
 			ListScriptPublishHistoriesOutcome listScriptPublishHistories(const Model::ListScriptPublishHistoriesRequest &request)const;
 			void listScriptPublishHistoriesAsync(const Model::ListScriptPublishHistoriesRequest& request, const ListScriptPublishHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListScriptPublishHistoriesOutcomeCallable listScriptPublishHistoriesCallable(const Model::ListScriptPublishHistoriesRequest& request) const;
@@ -617,6 +638,9 @@ namespace AlibabaCloud
 			SuspendJobsOutcome suspendJobs(const Model::SuspendJobsRequest &request)const;
 			void suspendJobsAsync(const Model::SuspendJobsRequest& request, const SuspendJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SuspendJobsOutcomeCallable suspendJobsCallable(const Model::SuspendJobsRequest& request) const;
+			TaskPreparingOutcome taskPreparing(const Model::TaskPreparingRequest &request)const;
+			void taskPreparingAsync(const Model::TaskPreparingRequest& request, const TaskPreparingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TaskPreparingOutcomeCallable taskPreparingCallable(const Model::TaskPreparingRequest& request) const;
 			WithdrawScriptReviewOutcome withdrawScriptReview(const Model::WithdrawScriptReviewRequest &request)const;
 			void withdrawScriptReviewAsync(const Model::WithdrawScriptReviewRequest& request, const WithdrawScriptReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			WithdrawScriptReviewOutcomeCallable withdrawScriptReviewCallable(const Model::WithdrawScriptReviewRequest& request) const;
