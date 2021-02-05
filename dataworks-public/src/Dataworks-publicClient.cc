@@ -231,6 +231,42 @@ Dataworks_publicClient::CheckMetaTableOutcomeCallable Dataworks_publicClient::ch
 	return task->get_future();
 }
 
+Dataworks_publicClient::CreateBusinessOutcome Dataworks_publicClient::createBusiness(const CreateBusinessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBusinessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBusinessOutcome(CreateBusinessResult(outcome.result()));
+	else
+		return CreateBusinessOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createBusinessAsync(const CreateBusinessRequest& request, const CreateBusinessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBusiness(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateBusinessOutcomeCallable Dataworks_publicClient::createBusinessCallable(const CreateBusinessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBusinessOutcome()>>(
+			[this, request]()
+			{
+			return this->createBusiness(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CreateConnectionOutcome Dataworks_publicClient::createConnection(const CreateConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

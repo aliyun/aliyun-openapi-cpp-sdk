@@ -32,6 +32,8 @@
 #include "model/CheckMetaPartitionResult.h"
 #include "model/CheckMetaTableRequest.h"
 #include "model/CheckMetaTableResult.h"
+#include "model/CreateBusinessRequest.h"
+#include "model/CreateBusinessResult.h"
 #include "model/CreateConnectionRequest.h"
 #include "model/CreateConnectionResult.h"
 #include "model/CreateDagComplementRequest.h"
@@ -348,6 +350,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckMetaTableResult> CheckMetaTableOutcome;
 			typedef std::future<CheckMetaTableOutcome> CheckMetaTableOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CheckMetaTableRequest&, const CheckMetaTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckMetaTableAsyncHandler;
+			typedef Outcome<Error, Model::CreateBusinessResult> CreateBusinessOutcome;
+			typedef std::future<CreateBusinessOutcome> CreateBusinessOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateBusinessRequest&, const CreateBusinessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBusinessAsyncHandler;
 			typedef Outcome<Error, Model::CreateConnectionResult> CreateConnectionOutcome;
 			typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateConnectionRequest&, const CreateConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConnectionAsyncHandler;
@@ -806,6 +811,9 @@ namespace AlibabaCloud
 			CheckMetaTableOutcome checkMetaTable(const Model::CheckMetaTableRequest &request)const;
 			void checkMetaTableAsync(const Model::CheckMetaTableRequest& request, const CheckMetaTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckMetaTableOutcomeCallable checkMetaTableCallable(const Model::CheckMetaTableRequest& request) const;
+			CreateBusinessOutcome createBusiness(const Model::CreateBusinessRequest &request)const;
+			void createBusinessAsync(const Model::CreateBusinessRequest& request, const CreateBusinessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateBusinessOutcomeCallable createBusinessCallable(const Model::CreateBusinessRequest& request) const;
 			CreateConnectionOutcome createConnection(const Model::CreateConnectionRequest &request)const;
 			void createConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConnectionOutcomeCallable createConnectionCallable(const Model::CreateConnectionRequest& request) const;

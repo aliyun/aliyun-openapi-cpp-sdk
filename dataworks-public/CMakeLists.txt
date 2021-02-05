@@ -31,6 +31,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CheckMetaPartitionResult.h
 	include/alibabacloud/dataworks-public/model/CheckMetaTableRequest.h
 	include/alibabacloud/dataworks-public/model/CheckMetaTableResult.h
+	include/alibabacloud/dataworks-public/model/CreateBusinessRequest.h
+	include/alibabacloud/dataworks-public/model/CreateBusinessResult.h
 	include/alibabacloud/dataworks-public/model/CreateConnectionRequest.h
 	include/alibabacloud/dataworks-public/model/CreateConnectionResult.h
 	include/alibabacloud/dataworks-public/model/CreateDagComplementRequest.h
@@ -336,6 +338,8 @@ set(dataworks-public_src
 	src/model/CheckMetaPartitionResult.cc
 	src/model/CheckMetaTableRequest.cc
 	src/model/CheckMetaTableResult.cc
+	src/model/CreateBusinessRequest.cc
+	src/model/CreateBusinessResult.cc
 	src/model/CreateConnectionRequest.cc
 	src/model/CreateConnectionResult.cc
 	src/model/CreateDagComplementRequest.cc
