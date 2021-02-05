@@ -370,8 +370,6 @@
 #include "model/RenewInstanceResult.h"
 #include "model/ResetAccountRequest.h"
 #include "model/ResetAccountResult.h"
-#include "model/ResetAccountForPGRequest.h"
-#include "model/ResetAccountForPGResult.h"
 #include "model/ResetAccountPasswordRequest.h"
 #include "model/ResetAccountPasswordResult.h"
 #include "model/RestartDBInstanceRequest.h"
@@ -941,9 +939,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResetAccountResult> ResetAccountOutcome;
 			typedef std::future<ResetAccountOutcome> ResetAccountOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ResetAccountRequest&, const ResetAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountAsyncHandler;
-			typedef Outcome<Error, Model::ResetAccountForPGResult> ResetAccountForPGOutcome;
-			typedef std::future<ResetAccountForPGOutcome> ResetAccountForPGOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::ResetAccountForPGRequest&, const ResetAccountForPGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountForPGAsyncHandler;
 			typedef Outcome<Error, Model::ResetAccountPasswordResult> ResetAccountPasswordOutcome;
 			typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ResetAccountPasswordRequest&, const ResetAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
@@ -1528,9 +1523,6 @@ namespace AlibabaCloud
 			ResetAccountOutcome resetAccount(const Model::ResetAccountRequest &request)const;
 			void resetAccountAsync(const Model::ResetAccountRequest& request, const ResetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountOutcomeCallable resetAccountCallable(const Model::ResetAccountRequest& request) const;
-			ResetAccountForPGOutcome resetAccountForPG(const Model::ResetAccountForPGRequest &request)const;
-			void resetAccountForPGAsync(const Model::ResetAccountForPGRequest& request, const ResetAccountForPGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ResetAccountForPGOutcomeCallable resetAccountForPGCallable(const Model::ResetAccountForPGRequest& request) const;
 			ResetAccountPasswordOutcome resetAccountPassword(const Model::ResetAccountPasswordRequest &request)const;
 			void resetAccountPasswordAsync(const Model::ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountPasswordOutcomeCallable resetAccountPasswordCallable(const Model::ResetAccountPasswordRequest& request) const;

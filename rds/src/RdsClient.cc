@@ -6315,42 +6315,6 @@ RdsClient::ResetAccountOutcomeCallable RdsClient::resetAccountCallable(const Res
 	return task->get_future();
 }
 
-RdsClient::ResetAccountForPGOutcome RdsClient::resetAccountForPG(const ResetAccountForPGRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ResetAccountForPGOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ResetAccountForPGOutcome(ResetAccountForPGResult(outcome.result()));
-	else
-		return ResetAccountForPGOutcome(outcome.error());
-}
-
-void RdsClient::resetAccountForPGAsync(const ResetAccountForPGRequest& request, const ResetAccountForPGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, resetAccountForPG(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::ResetAccountForPGOutcomeCallable RdsClient::resetAccountForPGCallable(const ResetAccountForPGRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ResetAccountForPGOutcome()>>(
-			[this, request]()
-			{
-			return this->resetAccountForPG(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::ResetAccountPasswordOutcome RdsClient::resetAccountPassword(const ResetAccountPasswordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -369,8 +369,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/RenewInstanceResult.h
 	include/alibabacloud/rds/model/ResetAccountRequest.h
 	include/alibabacloud/rds/model/ResetAccountResult.h
-	include/alibabacloud/rds/model/ResetAccountForPGRequest.h
-	include/alibabacloud/rds/model/ResetAccountForPGResult.h
 	include/alibabacloud/rds/model/ResetAccountPasswordRequest.h
 	include/alibabacloud/rds/model/ResetAccountPasswordResult.h
 	include/alibabacloud/rds/model/RestartDBInstanceRequest.h
@@ -760,8 +758,6 @@ set(rds_src
 	src/model/RenewInstanceResult.cc
 	src/model/ResetAccountRequest.cc
 	src/model/ResetAccountResult.cc
-	src/model/ResetAccountForPGRequest.cc
-	src/model/ResetAccountForPGResult.cc
 	src/model/ResetAccountPasswordRequest.cc
 	src/model/ResetAccountPasswordResult.cc
 	src/model/RestartDBInstanceRequest.cc
