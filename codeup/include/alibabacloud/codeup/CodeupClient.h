@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include "CodeupExport.h"
+#include "model/AcceptMergeRequestRequest.h"
+#include "model/AcceptMergeRequestResult.h"
 #include "model/AddGroupMemberRequest.h"
 #include "model/AddGroupMemberResult.h"
 #include "model/AddRepositoryMemberRequest.h"
@@ -34,6 +36,8 @@
 #include "model/CreateFileResult.h"
 #include "model/CreateMergeRequestRequest.h"
 #include "model/CreateMergeRequestResult.h"
+#include "model/CreateMergeRequestCommentRequest.h"
+#include "model/CreateMergeRequestCommentResult.h"
 #include "model/CreateRepositoryRequest.h"
 #include "model/CreateRepositoryResult.h"
 #include "model/CreateRepositoryDeployKeyRequest.h"
@@ -72,6 +76,12 @@
 #include "model/GetFileBlobsResult.h"
 #include "model/GetGroupDetailRequest.h"
 #include "model/GetGroupDetailResult.h"
+#include "model/GetMergeRequestApproveStatusRequest.h"
+#include "model/GetMergeRequestApproveStatusResult.h"
+#include "model/GetMergeRequestDetailRequest.h"
+#include "model/GetMergeRequestDetailResult.h"
+#include "model/GetMergeRequestSettingRequest.h"
+#include "model/GetMergeRequestSettingResult.h"
 #include "model/GetProjectMemberRequest.h"
 #include "model/GetProjectMemberResult.h"
 #include "model/GetRepositoryInfoRequest.h"
@@ -86,6 +96,8 @@
 #include "model/ListGroupRepositoriesResult.h"
 #include "model/ListGroupsRequest.h"
 #include "model/ListGroupsResult.h"
+#include "model/ListMergeRequestCommentsRequest.h"
+#include "model/ListMergeRequestCommentsResult.h"
 #include "model/ListMergeRequestsRequest.h"
 #include "model/ListMergeRequestsResult.h"
 #include "model/ListOrganizationsRequest.h"
@@ -94,6 +106,8 @@
 #include "model/ListRepositoriesResult.h"
 #include "model/ListRepositoryBranchesRequest.h"
 #include "model/ListRepositoryBranchesResult.h"
+#include "model/ListRepositoryCommitsRequest.h"
+#include "model/ListRepositoryCommitsResult.h"
 #include "model/ListRepositoryMemberRequest.h"
 #include "model/ListRepositoryMemberResult.h"
 #include "model/ListRepositoryTagsRequest.h"
@@ -108,6 +122,12 @@
 #include "model/UpdateFileResult.h"
 #include "model/UpdateGroupMemberRequest.h"
 #include "model/UpdateGroupMemberResult.h"
+#include "model/UpdateMergeRequestRequest.h"
+#include "model/UpdateMergeRequestResult.h"
+#include "model/UpdateMergeRequestCommentRequest.h"
+#include "model/UpdateMergeRequestCommentResult.h"
+#include "model/UpdateMergeRequestSettingRequest.h"
+#include "model/UpdateMergeRequestSettingResult.h"
 #include "model/UpdateRepositoryRequest.h"
 #include "model/UpdateRepositoryResult.h"
 #include "model/UpdateRepositoryMemberRequest.h"
@@ -121,6 +141,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CODEUP_EXPORT CodeupClient : public RoaServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AcceptMergeRequestResult> AcceptMergeRequestOutcome;
+			typedef std::future<AcceptMergeRequestOutcome> AcceptMergeRequestOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::AcceptMergeRequestRequest&, const AcceptMergeRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AcceptMergeRequestAsyncHandler;
 			typedef Outcome<Error, Model::AddGroupMemberResult> AddGroupMemberOutcome;
 			typedef std::future<AddGroupMemberOutcome> AddGroupMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::AddGroupMemberRequest&, const AddGroupMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddGroupMemberAsyncHandler;
@@ -139,6 +162,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMergeRequestResult> CreateMergeRequestOutcome;
 			typedef std::future<CreateMergeRequestOutcome> CreateMergeRequestOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::CreateMergeRequestRequest&, const CreateMergeRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMergeRequestAsyncHandler;
+			typedef Outcome<Error, Model::CreateMergeRequestCommentResult> CreateMergeRequestCommentOutcome;
+			typedef std::future<CreateMergeRequestCommentOutcome> CreateMergeRequestCommentOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::CreateMergeRequestCommentRequest&, const CreateMergeRequestCommentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMergeRequestCommentAsyncHandler;
 			typedef Outcome<Error, Model::CreateRepositoryResult> CreateRepositoryOutcome;
 			typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::CreateRepositoryRequest&, const CreateRepositoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryAsyncHandler;
@@ -196,6 +222,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetGroupDetailResult> GetGroupDetailOutcome;
 			typedef std::future<GetGroupDetailOutcome> GetGroupDetailOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetGroupDetailRequest&, const GetGroupDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetMergeRequestApproveStatusResult> GetMergeRequestApproveStatusOutcome;
+			typedef std::future<GetMergeRequestApproveStatusOutcome> GetMergeRequestApproveStatusOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetMergeRequestApproveStatusRequest&, const GetMergeRequestApproveStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMergeRequestApproveStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetMergeRequestDetailResult> GetMergeRequestDetailOutcome;
+			typedef std::future<GetMergeRequestDetailOutcome> GetMergeRequestDetailOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetMergeRequestDetailRequest&, const GetMergeRequestDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMergeRequestDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetMergeRequestSettingResult> GetMergeRequestSettingOutcome;
+			typedef std::future<GetMergeRequestSettingOutcome> GetMergeRequestSettingOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetMergeRequestSettingRequest&, const GetMergeRequestSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMergeRequestSettingAsyncHandler;
 			typedef Outcome<Error, Model::GetProjectMemberResult> GetProjectMemberOutcome;
 			typedef std::future<GetProjectMemberOutcome> GetProjectMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetProjectMemberRequest&, const GetProjectMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectMemberAsyncHandler;
@@ -217,6 +252,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListGroupsResult> ListGroupsOutcome;
 			typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListGroupsRequest&, const ListGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListMergeRequestCommentsResult> ListMergeRequestCommentsOutcome;
+			typedef std::future<ListMergeRequestCommentsOutcome> ListMergeRequestCommentsOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::ListMergeRequestCommentsRequest&, const ListMergeRequestCommentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMergeRequestCommentsAsyncHandler;
 			typedef Outcome<Error, Model::ListMergeRequestsResult> ListMergeRequestsOutcome;
 			typedef std::future<ListMergeRequestsOutcome> ListMergeRequestsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListMergeRequestsRequest&, const ListMergeRequestsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMergeRequestsAsyncHandler;
@@ -229,6 +267,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRepositoryBranchesResult> ListRepositoryBranchesOutcome;
 			typedef std::future<ListRepositoryBranchesOutcome> ListRepositoryBranchesOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryBranchesRequest&, const ListRepositoryBranchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryBranchesAsyncHandler;
+			typedef Outcome<Error, Model::ListRepositoryCommitsResult> ListRepositoryCommitsOutcome;
+			typedef std::future<ListRepositoryCommitsOutcome> ListRepositoryCommitsOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryCommitsRequest&, const ListRepositoryCommitsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryCommitsAsyncHandler;
 			typedef Outcome<Error, Model::ListRepositoryMemberResult> ListRepositoryMemberOutcome;
 			typedef std::future<ListRepositoryMemberOutcome> ListRepositoryMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryMemberRequest&, const ListRepositoryMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryMemberAsyncHandler;
@@ -250,6 +291,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateGroupMemberResult> UpdateGroupMemberOutcome;
 			typedef std::future<UpdateGroupMemberOutcome> UpdateGroupMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::UpdateGroupMemberRequest&, const UpdateGroupMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGroupMemberAsyncHandler;
+			typedef Outcome<Error, Model::UpdateMergeRequestResult> UpdateMergeRequestOutcome;
+			typedef std::future<UpdateMergeRequestOutcome> UpdateMergeRequestOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::UpdateMergeRequestRequest&, const UpdateMergeRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMergeRequestAsyncHandler;
+			typedef Outcome<Error, Model::UpdateMergeRequestCommentResult> UpdateMergeRequestCommentOutcome;
+			typedef std::future<UpdateMergeRequestCommentOutcome> UpdateMergeRequestCommentOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::UpdateMergeRequestCommentRequest&, const UpdateMergeRequestCommentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMergeRequestCommentAsyncHandler;
+			typedef Outcome<Error, Model::UpdateMergeRequestSettingResult> UpdateMergeRequestSettingOutcome;
+			typedef std::future<UpdateMergeRequestSettingOutcome> UpdateMergeRequestSettingOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::UpdateMergeRequestSettingRequest&, const UpdateMergeRequestSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMergeRequestSettingAsyncHandler;
 			typedef Outcome<Error, Model::UpdateRepositoryResult> UpdateRepositoryOutcome;
 			typedef std::future<UpdateRepositoryOutcome> UpdateRepositoryOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::UpdateRepositoryRequest&, const UpdateRepositoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepositoryAsyncHandler;
@@ -261,6 +311,9 @@ namespace AlibabaCloud
 			CodeupClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CodeupClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CodeupClient();
+			AcceptMergeRequestOutcome acceptMergeRequest(const Model::AcceptMergeRequestRequest &request)const;
+			void acceptMergeRequestAsync(const Model::AcceptMergeRequestRequest& request, const AcceptMergeRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AcceptMergeRequestOutcomeCallable acceptMergeRequestCallable(const Model::AcceptMergeRequestRequest& request) const;
 			AddGroupMemberOutcome addGroupMember(const Model::AddGroupMemberRequest &request)const;
 			void addGroupMemberAsync(const Model::AddGroupMemberRequest& request, const AddGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddGroupMemberOutcomeCallable addGroupMemberCallable(const Model::AddGroupMemberRequest& request) const;
@@ -279,6 +332,9 @@ namespace AlibabaCloud
 			CreateMergeRequestOutcome createMergeRequest(const Model::CreateMergeRequestRequest &request)const;
 			void createMergeRequestAsync(const Model::CreateMergeRequestRequest& request, const CreateMergeRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMergeRequestOutcomeCallable createMergeRequestCallable(const Model::CreateMergeRequestRequest& request) const;
+			CreateMergeRequestCommentOutcome createMergeRequestComment(const Model::CreateMergeRequestCommentRequest &request)const;
+			void createMergeRequestCommentAsync(const Model::CreateMergeRequestCommentRequest& request, const CreateMergeRequestCommentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateMergeRequestCommentOutcomeCallable createMergeRequestCommentCallable(const Model::CreateMergeRequestCommentRequest& request) const;
 			CreateRepositoryOutcome createRepository(const Model::CreateRepositoryRequest &request)const;
 			void createRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRepositoryOutcomeCallable createRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
@@ -336,6 +392,15 @@ namespace AlibabaCloud
 			GetGroupDetailOutcome getGroupDetail(const Model::GetGroupDetailRequest &request)const;
 			void getGroupDetailAsync(const Model::GetGroupDetailRequest& request, const GetGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetGroupDetailOutcomeCallable getGroupDetailCallable(const Model::GetGroupDetailRequest& request) const;
+			GetMergeRequestApproveStatusOutcome getMergeRequestApproveStatus(const Model::GetMergeRequestApproveStatusRequest &request)const;
+			void getMergeRequestApproveStatusAsync(const Model::GetMergeRequestApproveStatusRequest& request, const GetMergeRequestApproveStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMergeRequestApproveStatusOutcomeCallable getMergeRequestApproveStatusCallable(const Model::GetMergeRequestApproveStatusRequest& request) const;
+			GetMergeRequestDetailOutcome getMergeRequestDetail(const Model::GetMergeRequestDetailRequest &request)const;
+			void getMergeRequestDetailAsync(const Model::GetMergeRequestDetailRequest& request, const GetMergeRequestDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMergeRequestDetailOutcomeCallable getMergeRequestDetailCallable(const Model::GetMergeRequestDetailRequest& request) const;
+			GetMergeRequestSettingOutcome getMergeRequestSetting(const Model::GetMergeRequestSettingRequest &request)const;
+			void getMergeRequestSettingAsync(const Model::GetMergeRequestSettingRequest& request, const GetMergeRequestSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMergeRequestSettingOutcomeCallable getMergeRequestSettingCallable(const Model::GetMergeRequestSettingRequest& request) const;
 			GetProjectMemberOutcome getProjectMember(const Model::GetProjectMemberRequest &request)const;
 			void getProjectMemberAsync(const Model::GetProjectMemberRequest& request, const GetProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProjectMemberOutcomeCallable getProjectMemberCallable(const Model::GetProjectMemberRequest& request) const;
@@ -357,6 +422,9 @@ namespace AlibabaCloud
 			ListGroupsOutcome listGroups(const Model::ListGroupsRequest &request)const;
 			void listGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGroupsOutcomeCallable listGroupsCallable(const Model::ListGroupsRequest& request) const;
+			ListMergeRequestCommentsOutcome listMergeRequestComments(const Model::ListMergeRequestCommentsRequest &request)const;
+			void listMergeRequestCommentsAsync(const Model::ListMergeRequestCommentsRequest& request, const ListMergeRequestCommentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMergeRequestCommentsOutcomeCallable listMergeRequestCommentsCallable(const Model::ListMergeRequestCommentsRequest& request) const;
 			ListMergeRequestsOutcome listMergeRequests(const Model::ListMergeRequestsRequest &request)const;
 			void listMergeRequestsAsync(const Model::ListMergeRequestsRequest& request, const ListMergeRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMergeRequestsOutcomeCallable listMergeRequestsCallable(const Model::ListMergeRequestsRequest& request) const;
@@ -369,6 +437,9 @@ namespace AlibabaCloud
 			ListRepositoryBranchesOutcome listRepositoryBranches(const Model::ListRepositoryBranchesRequest &request)const;
 			void listRepositoryBranchesAsync(const Model::ListRepositoryBranchesRequest& request, const ListRepositoryBranchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryBranchesOutcomeCallable listRepositoryBranchesCallable(const Model::ListRepositoryBranchesRequest& request) const;
+			ListRepositoryCommitsOutcome listRepositoryCommits(const Model::ListRepositoryCommitsRequest &request)const;
+			void listRepositoryCommitsAsync(const Model::ListRepositoryCommitsRequest& request, const ListRepositoryCommitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRepositoryCommitsOutcomeCallable listRepositoryCommitsCallable(const Model::ListRepositoryCommitsRequest& request) const;
 			ListRepositoryMemberOutcome listRepositoryMember(const Model::ListRepositoryMemberRequest &request)const;
 			void listRepositoryMemberAsync(const Model::ListRepositoryMemberRequest& request, const ListRepositoryMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryMemberOutcomeCallable listRepositoryMemberCallable(const Model::ListRepositoryMemberRequest& request) const;
@@ -390,6 +461,15 @@ namespace AlibabaCloud
 			UpdateGroupMemberOutcome updateGroupMember(const Model::UpdateGroupMemberRequest &request)const;
 			void updateGroupMemberAsync(const Model::UpdateGroupMemberRequest& request, const UpdateGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGroupMemberOutcomeCallable updateGroupMemberCallable(const Model::UpdateGroupMemberRequest& request) const;
+			UpdateMergeRequestOutcome updateMergeRequest(const Model::UpdateMergeRequestRequest &request)const;
+			void updateMergeRequestAsync(const Model::UpdateMergeRequestRequest& request, const UpdateMergeRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateMergeRequestOutcomeCallable updateMergeRequestCallable(const Model::UpdateMergeRequestRequest& request) const;
+			UpdateMergeRequestCommentOutcome updateMergeRequestComment(const Model::UpdateMergeRequestCommentRequest &request)const;
+			void updateMergeRequestCommentAsync(const Model::UpdateMergeRequestCommentRequest& request, const UpdateMergeRequestCommentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateMergeRequestCommentOutcomeCallable updateMergeRequestCommentCallable(const Model::UpdateMergeRequestCommentRequest& request) const;
+			UpdateMergeRequestSettingOutcome updateMergeRequestSetting(const Model::UpdateMergeRequestSettingRequest &request)const;
+			void updateMergeRequestSettingAsync(const Model::UpdateMergeRequestSettingRequest& request, const UpdateMergeRequestSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateMergeRequestSettingOutcomeCallable updateMergeRequestSettingCallable(const Model::UpdateMergeRequestSettingRequest& request) const;
 			UpdateRepositoryOutcome updateRepository(const Model::UpdateRepositoryRequest &request)const;
 			void updateRepositoryAsync(const Model::UpdateRepositoryRequest& request, const UpdateRepositoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRepositoryOutcomeCallable updateRepositoryCallable(const Model::UpdateRepositoryRequest& request) const;

@@ -55,6 +55,10 @@ void ListRepositoryMemberResult::parse(const std::string &payload)
 			resultObject.avatarUrl = valueResultResultItem["AvatarUrl"].asString();
 		if(!valueResultResultItem["Email"].isNull())
 			resultObject.email = valueResultResultItem["Email"].asString();
+		if(!valueResultResultItem["Name"].isNull())
+			resultObject.name = valueResultResultItem["Name"].asString();
+		if(!valueResultResultItem["Username"].isNull())
+			resultObject.username = valueResultResultItem["Username"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["ErrorCode"].isNull())

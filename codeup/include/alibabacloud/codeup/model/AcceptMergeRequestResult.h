@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTMERGEREQUESTSRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_LISTMERGEREQUESTSRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_ACCEPTMERGEREQUESTRESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_ACCEPTMERGEREQUESTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,10 +29,10 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT ListMergeRequestsResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT AcceptMergeRequestResult : public ServiceResult
 			{
 			public:
-				struct ResultItem
+				struct Result
 				{
 					struct ApproveCheckResult
 					{
@@ -81,16 +81,13 @@ namespace AlibabaCloud
 					};
 					struct AssigneeListItem
 					{
-						std::string status;
 						std::string avatarUrl;
-						std::string email;
 						std::string externUserId;
 						std::string id;
 						std::string name;
 					};
 					ApproveCheckResult approveCheckResult;
 					int behindCommitCount;
-					bool isSupportMerge;
 					std::string description;
 					int aheadCommitCount;
 					std::string createdAt;
@@ -103,7 +100,7 @@ namespace AlibabaCloud
 					std::string updatedAt;
 					std::string acceptedRevision;
 					std::string state;
-					std::vector<ResultItem::AssigneeListItem> assigneeList;
+					std::vector<AssigneeListItem> assigneeList;
 					std::string mergeStatus;
 					std::string sourceBranch;
 					Author author;
@@ -113,26 +110,24 @@ namespace AlibabaCloud
 				};
 
 
-				ListMergeRequestsResult();
-				explicit ListMergeRequestsResult(const std::string &payload);
-				~ListMergeRequestsResult();
-				long getTotal()const;
+				AcceptMergeRequestResult();
+				explicit AcceptMergeRequestResult(const std::string &payload);
+				~AcceptMergeRequestResult();
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
-				std::vector<ResultItem> getResult()const;
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long total_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
-				std::vector<ResultItem> result_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTMERGEREQUESTSRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_ACCEPTMERGEREQUESTRESULT_H_

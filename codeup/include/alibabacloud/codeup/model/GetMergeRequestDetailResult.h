@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTMERGEREQUESTSRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_LISTMERGEREQUESTSRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_GETMERGEREQUESTDETAILRESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_GETMERGEREQUESTDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,10 +29,10 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT ListMergeRequestsResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT GetMergeRequestDetailResult : public ServiceResult
 			{
 			public:
-				struct ResultItem
+				struct Result
 				{
 					struct ApproveCheckResult
 					{
@@ -103,7 +103,7 @@ namespace AlibabaCloud
 					std::string updatedAt;
 					std::string acceptedRevision;
 					std::string state;
-					std::vector<ResultItem::AssigneeListItem> assigneeList;
+					std::vector<AssigneeListItem> assigneeList;
 					std::string mergeStatus;
 					std::string sourceBranch;
 					Author author;
@@ -113,26 +113,24 @@ namespace AlibabaCloud
 				};
 
 
-				ListMergeRequestsResult();
-				explicit ListMergeRequestsResult(const std::string &payload);
-				~ListMergeRequestsResult();
-				long getTotal()const;
+				GetMergeRequestDetailResult();
+				explicit GetMergeRequestDetailResult(const std::string &payload);
+				~GetMergeRequestDetailResult();
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
-				std::vector<ResultItem> getResult()const;
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long total_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
-				std::vector<ResultItem> result_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTMERGEREQUESTSRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_GETMERGEREQUESTDETAILRESULT_H_

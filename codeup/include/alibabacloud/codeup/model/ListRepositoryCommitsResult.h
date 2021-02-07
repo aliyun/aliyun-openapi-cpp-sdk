@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYMEMBERRESULT_H_
-#define ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYMEMBERRESULT_H_
+#ifndef ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYCOMMITSRESULT_H_
+#define ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYCOMMITSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CODEUP_EXPORT ListRepositoryMemberResult : public ServiceResult
+			class ALIBABACLOUD_CODEUP_EXPORT ListRepositoryCommitsResult : public ServiceResult
 			{
 			public:
 				struct ResultItem
 				{
-					std::string avatarUrl;
-					std::string email;
-					std::string username;
-					std::string state;
-					std::string externUserId;
-					long id;
-					int accessLevel;
-					std::string name;
+					struct Signature
+					{
+						std::string verificationStatus;
+						std::string gpgKeyId;
+					};
+					std::string authorName;
+					std::string message;
+					std::string createdAt;
+					std::string title;
+					std::string authorEmail;
+					std::string authorDate;
+					std::string committedDate;
+					std::string committerEmail;
+					std::vector<std::string> parentIds;
+					Signature signature;
+					std::string shortId;
+					std::string id;
+					std::string committerName;
 				};
 
 
-				ListRepositoryMemberResult();
-				explicit ListRepositoryMemberResult(const std::string &payload);
-				~ListRepositoryMemberResult();
+				ListRepositoryCommitsResult();
+				explicit ListRepositoryCommitsResult(const std::string &payload);
+				~ListRepositoryCommitsResult();
 				long getTotal()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
@@ -67,4 +77,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYMEMBERRESULT_H_
+#endif // !ALIBABACLOUD_CODEUP_MODEL_LISTREPOSITORYCOMMITSRESULT_H_

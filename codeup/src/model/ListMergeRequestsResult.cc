@@ -79,6 +79,8 @@ void ListMergeRequestsResult::parse(const std::string &payload)
 			resultObject.updatedAt = valueResultResultItem["UpdatedAt"].asString();
 		if(!valueResultResultItem["WebUrl"].isNull())
 			resultObject.webUrl = valueResultResultItem["WebUrl"].asString();
+		if(!valueResultResultItem["IsSupportMerge"].isNull())
+			resultObject.isSupportMerge = valueResultResultItem["IsSupportMerge"].asString() == "true";
 		auto allAssigneeListNode = valueResultResultItem["AssigneeList"]["AssigneeListItem"];
 		for (auto valueResultResultItemAssigneeListAssigneeListItem : allAssigneeListNode)
 		{
@@ -91,6 +93,10 @@ void ListMergeRequestsResult::parse(const std::string &payload)
 				assigneeListObject.id = valueResultResultItemAssigneeListAssigneeListItem["Id"].asString();
 			if(!valueResultResultItemAssigneeListAssigneeListItem["Name"].isNull())
 				assigneeListObject.name = valueResultResultItemAssigneeListAssigneeListItem["Name"].asString();
+			if(!valueResultResultItemAssigneeListAssigneeListItem["Status"].isNull())
+				assigneeListObject.status = valueResultResultItemAssigneeListAssigneeListItem["Status"].asString();
+			if(!valueResultResultItemAssigneeListAssigneeListItem["Email"].isNull())
+				assigneeListObject.email = valueResultResultItemAssigneeListAssigneeListItem["Email"].asString();
 			resultObject.assigneeList.push_back(assigneeListObject);
 		}
 		auto approveCheckResultNode = value["ApproveCheckResult"];

@@ -21,6 +21,8 @@ set(codeup_public_header
 	include/alibabacloud/codeup/CodeupExport.h )
 
 set(codeup_public_header_model 
+	include/alibabacloud/codeup/model/AcceptMergeRequestRequest.h
+	include/alibabacloud/codeup/model/AcceptMergeRequestResult.h
 	include/alibabacloud/codeup/model/AddGroupMemberRequest.h
 	include/alibabacloud/codeup/model/AddGroupMemberResult.h
 	include/alibabacloud/codeup/model/AddRepositoryMemberRequest.h
@@ -33,6 +35,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/CreateFileResult.h
 	include/alibabacloud/codeup/model/CreateMergeRequestRequest.h
 	include/alibabacloud/codeup/model/CreateMergeRequestResult.h
+	include/alibabacloud/codeup/model/CreateMergeRequestCommentRequest.h
+	include/alibabacloud/codeup/model/CreateMergeRequestCommentResult.h
 	include/alibabacloud/codeup/model/CreateRepositoryRequest.h
 	include/alibabacloud/codeup/model/CreateRepositoryResult.h
 	include/alibabacloud/codeup/model/CreateRepositoryDeployKeyRequest.h
@@ -71,6 +75,12 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/GetFileBlobsResult.h
 	include/alibabacloud/codeup/model/GetGroupDetailRequest.h
 	include/alibabacloud/codeup/model/GetGroupDetailResult.h
+	include/alibabacloud/codeup/model/GetMergeRequestApproveStatusRequest.h
+	include/alibabacloud/codeup/model/GetMergeRequestApproveStatusResult.h
+	include/alibabacloud/codeup/model/GetMergeRequestDetailRequest.h
+	include/alibabacloud/codeup/model/GetMergeRequestDetailResult.h
+	include/alibabacloud/codeup/model/GetMergeRequestSettingRequest.h
+	include/alibabacloud/codeup/model/GetMergeRequestSettingResult.h
 	include/alibabacloud/codeup/model/GetProjectMemberRequest.h
 	include/alibabacloud/codeup/model/GetProjectMemberResult.h
 	include/alibabacloud/codeup/model/GetRepositoryInfoRequest.h
@@ -85,6 +95,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/ListGroupRepositoriesResult.h
 	include/alibabacloud/codeup/model/ListGroupsRequest.h
 	include/alibabacloud/codeup/model/ListGroupsResult.h
+	include/alibabacloud/codeup/model/ListMergeRequestCommentsRequest.h
+	include/alibabacloud/codeup/model/ListMergeRequestCommentsResult.h
 	include/alibabacloud/codeup/model/ListMergeRequestsRequest.h
 	include/alibabacloud/codeup/model/ListMergeRequestsResult.h
 	include/alibabacloud/codeup/model/ListOrganizationsRequest.h
@@ -93,6 +105,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/ListRepositoriesResult.h
 	include/alibabacloud/codeup/model/ListRepositoryBranchesRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryBranchesResult.h
+	include/alibabacloud/codeup/model/ListRepositoryCommitsRequest.h
+	include/alibabacloud/codeup/model/ListRepositoryCommitsResult.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberResult.h
 	include/alibabacloud/codeup/model/ListRepositoryTagsRequest.h
@@ -107,6 +121,12 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/UpdateFileResult.h
 	include/alibabacloud/codeup/model/UpdateGroupMemberRequest.h
 	include/alibabacloud/codeup/model/UpdateGroupMemberResult.h
+	include/alibabacloud/codeup/model/UpdateMergeRequestRequest.h
+	include/alibabacloud/codeup/model/UpdateMergeRequestResult.h
+	include/alibabacloud/codeup/model/UpdateMergeRequestCommentRequest.h
+	include/alibabacloud/codeup/model/UpdateMergeRequestCommentResult.h
+	include/alibabacloud/codeup/model/UpdateMergeRequestSettingRequest.h
+	include/alibabacloud/codeup/model/UpdateMergeRequestSettingResult.h
 	include/alibabacloud/codeup/model/UpdateRepositoryRequest.h
 	include/alibabacloud/codeup/model/UpdateRepositoryResult.h
 	include/alibabacloud/codeup/model/UpdateRepositoryMemberRequest.h
@@ -114,6 +134,8 @@ set(codeup_public_header_model
 
 set(codeup_src 
 	src/CodeupClient.cc
+	src/model/AcceptMergeRequestRequest.cc
+	src/model/AcceptMergeRequestResult.cc
 	src/model/AddGroupMemberRequest.cc
 	src/model/AddGroupMemberResult.cc
 	src/model/AddRepositoryMemberRequest.cc
@@ -126,6 +148,8 @@ set(codeup_src
 	src/model/CreateFileResult.cc
 	src/model/CreateMergeRequestRequest.cc
 	src/model/CreateMergeRequestResult.cc
+	src/model/CreateMergeRequestCommentRequest.cc
+	src/model/CreateMergeRequestCommentResult.cc
 	src/model/CreateRepositoryRequest.cc
 	src/model/CreateRepositoryResult.cc
 	src/model/CreateRepositoryDeployKeyRequest.cc
@@ -164,6 +188,12 @@ set(codeup_src
 	src/model/GetFileBlobsResult.cc
 	src/model/GetGroupDetailRequest.cc
 	src/model/GetGroupDetailResult.cc
+	src/model/GetMergeRequestApproveStatusRequest.cc
+	src/model/GetMergeRequestApproveStatusResult.cc
+	src/model/GetMergeRequestDetailRequest.cc
+	src/model/GetMergeRequestDetailResult.cc
+	src/model/GetMergeRequestSettingRequest.cc
+	src/model/GetMergeRequestSettingResult.cc
 	src/model/GetProjectMemberRequest.cc
 	src/model/GetProjectMemberResult.cc
 	src/model/GetRepositoryInfoRequest.cc
@@ -178,6 +208,8 @@ set(codeup_src
 	src/model/ListGroupRepositoriesResult.cc
 	src/model/ListGroupsRequest.cc
 	src/model/ListGroupsResult.cc
+	src/model/ListMergeRequestCommentsRequest.cc
+	src/model/ListMergeRequestCommentsResult.cc
 	src/model/ListMergeRequestsRequest.cc
 	src/model/ListMergeRequestsResult.cc
 	src/model/ListOrganizationsRequest.cc
@@ -186,6 +218,8 @@ set(codeup_src
 	src/model/ListRepositoriesResult.cc
 	src/model/ListRepositoryBranchesRequest.cc
 	src/model/ListRepositoryBranchesResult.cc
+	src/model/ListRepositoryCommitsRequest.cc
+	src/model/ListRepositoryCommitsResult.cc
 	src/model/ListRepositoryMemberRequest.cc
 	src/model/ListRepositoryMemberResult.cc
 	src/model/ListRepositoryTagsRequest.cc
@@ -200,6 +234,12 @@ set(codeup_src
 	src/model/UpdateFileResult.cc
 	src/model/UpdateGroupMemberRequest.cc
 	src/model/UpdateGroupMemberResult.cc
+	src/model/UpdateMergeRequestRequest.cc
+	src/model/UpdateMergeRequestResult.cc
+	src/model/UpdateMergeRequestCommentRequest.cc
+	src/model/UpdateMergeRequestCommentResult.cc
+	src/model/UpdateMergeRequestSettingRequest.cc
+	src/model/UpdateMergeRequestSettingResult.cc
 	src/model/UpdateRepositoryRequest.cc
 	src/model/UpdateRepositoryResult.cc
 	src/model/UpdateRepositoryMemberRequest.cc

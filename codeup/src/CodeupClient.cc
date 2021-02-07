@@ -51,6 +51,42 @@ CodeupClient::CodeupClient(const std::string & accessKeyId, const std::string & 
 CodeupClient::~CodeupClient()
 {}
 
+CodeupClient::AcceptMergeRequestOutcome CodeupClient::acceptMergeRequest(const AcceptMergeRequestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AcceptMergeRequestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AcceptMergeRequestOutcome(AcceptMergeRequestResult(outcome.result()));
+	else
+		return AcceptMergeRequestOutcome(outcome.error());
+}
+
+void CodeupClient::acceptMergeRequestAsync(const AcceptMergeRequestRequest& request, const AcceptMergeRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, acceptMergeRequest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::AcceptMergeRequestOutcomeCallable CodeupClient::acceptMergeRequestCallable(const AcceptMergeRequestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AcceptMergeRequestOutcome()>>(
+			[this, request]()
+			{
+			return this->acceptMergeRequest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::AddGroupMemberOutcome CodeupClient::addGroupMember(const AddGroupMemberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ CodeupClient::CreateMergeRequestOutcomeCallable CodeupClient::createMergeRequest
 			[this, request]()
 			{
 			return this->createMergeRequest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::CreateMergeRequestCommentOutcome CodeupClient::createMergeRequestComment(const CreateMergeRequestCommentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMergeRequestCommentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMergeRequestCommentOutcome(CreateMergeRequestCommentResult(outcome.result()));
+	else
+		return CreateMergeRequestCommentOutcome(outcome.error());
+}
+
+void CodeupClient::createMergeRequestCommentAsync(const CreateMergeRequestCommentRequest& request, const CreateMergeRequestCommentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMergeRequestComment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::CreateMergeRequestCommentOutcomeCallable CodeupClient::createMergeRequestCommentCallable(const CreateMergeRequestCommentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMergeRequestCommentOutcome()>>(
+			[this, request]()
+			{
+			return this->createMergeRequestComment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,6 +1023,114 @@ CodeupClient::GetGroupDetailOutcomeCallable CodeupClient::getGroupDetailCallable
 	return task->get_future();
 }
 
+CodeupClient::GetMergeRequestApproveStatusOutcome CodeupClient::getMergeRequestApproveStatus(const GetMergeRequestApproveStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMergeRequestApproveStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMergeRequestApproveStatusOutcome(GetMergeRequestApproveStatusResult(outcome.result()));
+	else
+		return GetMergeRequestApproveStatusOutcome(outcome.error());
+}
+
+void CodeupClient::getMergeRequestApproveStatusAsync(const GetMergeRequestApproveStatusRequest& request, const GetMergeRequestApproveStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMergeRequestApproveStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetMergeRequestApproveStatusOutcomeCallable CodeupClient::getMergeRequestApproveStatusCallable(const GetMergeRequestApproveStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMergeRequestApproveStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getMergeRequestApproveStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::GetMergeRequestDetailOutcome CodeupClient::getMergeRequestDetail(const GetMergeRequestDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMergeRequestDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMergeRequestDetailOutcome(GetMergeRequestDetailResult(outcome.result()));
+	else
+		return GetMergeRequestDetailOutcome(outcome.error());
+}
+
+void CodeupClient::getMergeRequestDetailAsync(const GetMergeRequestDetailRequest& request, const GetMergeRequestDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMergeRequestDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetMergeRequestDetailOutcomeCallable CodeupClient::getMergeRequestDetailCallable(const GetMergeRequestDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMergeRequestDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getMergeRequestDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::GetMergeRequestSettingOutcome CodeupClient::getMergeRequestSetting(const GetMergeRequestSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMergeRequestSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMergeRequestSettingOutcome(GetMergeRequestSettingResult(outcome.result()));
+	else
+		return GetMergeRequestSettingOutcome(outcome.error());
+}
+
+void CodeupClient::getMergeRequestSettingAsync(const GetMergeRequestSettingRequest& request, const GetMergeRequestSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMergeRequestSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetMergeRequestSettingOutcomeCallable CodeupClient::getMergeRequestSettingCallable(const GetMergeRequestSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMergeRequestSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->getMergeRequestSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::GetProjectMemberOutcome CodeupClient::getProjectMember(const GetProjectMemberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1203,6 +1383,42 @@ CodeupClient::ListGroupsOutcomeCallable CodeupClient::listGroupsCallable(const L
 	return task->get_future();
 }
 
+CodeupClient::ListMergeRequestCommentsOutcome CodeupClient::listMergeRequestComments(const ListMergeRequestCommentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMergeRequestCommentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMergeRequestCommentsOutcome(ListMergeRequestCommentsResult(outcome.result()));
+	else
+		return ListMergeRequestCommentsOutcome(outcome.error());
+}
+
+void CodeupClient::listMergeRequestCommentsAsync(const ListMergeRequestCommentsRequest& request, const ListMergeRequestCommentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMergeRequestComments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListMergeRequestCommentsOutcomeCallable CodeupClient::listMergeRequestCommentsCallable(const ListMergeRequestCommentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMergeRequestCommentsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMergeRequestComments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::ListMergeRequestsOutcome CodeupClient::listMergeRequests(const ListMergeRequestsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1557,42 @@ CodeupClient::ListRepositoryBranchesOutcomeCallable CodeupClient::listRepository
 			[this, request]()
 			{
 			return this->listRepositoryBranches(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListRepositoryCommitsOutcome CodeupClient::listRepositoryCommits(const ListRepositoryCommitsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRepositoryCommitsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRepositoryCommitsOutcome(ListRepositoryCommitsResult(outcome.result()));
+	else
+		return ListRepositoryCommitsOutcome(outcome.error());
+}
+
+void CodeupClient::listRepositoryCommitsAsync(const ListRepositoryCommitsRequest& request, const ListRepositoryCommitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRepositoryCommits(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListRepositoryCommitsOutcomeCallable CodeupClient::listRepositoryCommitsCallable(const ListRepositoryCommitsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRepositoryCommitsOutcome()>>(
+			[this, request]()
+			{
+			return this->listRepositoryCommits(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1593,6 +1845,114 @@ CodeupClient::UpdateGroupMemberOutcomeCallable CodeupClient::updateGroupMemberCa
 			[this, request]()
 			{
 			return this->updateGroupMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::UpdateMergeRequestOutcome CodeupClient::updateMergeRequest(const UpdateMergeRequestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMergeRequestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMergeRequestOutcome(UpdateMergeRequestResult(outcome.result()));
+	else
+		return UpdateMergeRequestOutcome(outcome.error());
+}
+
+void CodeupClient::updateMergeRequestAsync(const UpdateMergeRequestRequest& request, const UpdateMergeRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMergeRequest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::UpdateMergeRequestOutcomeCallable CodeupClient::updateMergeRequestCallable(const UpdateMergeRequestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMergeRequestOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMergeRequest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::UpdateMergeRequestCommentOutcome CodeupClient::updateMergeRequestComment(const UpdateMergeRequestCommentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMergeRequestCommentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMergeRequestCommentOutcome(UpdateMergeRequestCommentResult(outcome.result()));
+	else
+		return UpdateMergeRequestCommentOutcome(outcome.error());
+}
+
+void CodeupClient::updateMergeRequestCommentAsync(const UpdateMergeRequestCommentRequest& request, const UpdateMergeRequestCommentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMergeRequestComment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::UpdateMergeRequestCommentOutcomeCallable CodeupClient::updateMergeRequestCommentCallable(const UpdateMergeRequestCommentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMergeRequestCommentOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMergeRequestComment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::UpdateMergeRequestSettingOutcome CodeupClient::updateMergeRequestSetting(const UpdateMergeRequestSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMergeRequestSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMergeRequestSettingOutcome(UpdateMergeRequestSettingResult(outcome.result()));
+	else
+		return UpdateMergeRequestSettingOutcome(outcome.error());
+}
+
+void CodeupClient::updateMergeRequestSettingAsync(const UpdateMergeRequestSettingRequest& request, const UpdateMergeRequestSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMergeRequestSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::UpdateMergeRequestSettingOutcomeCallable CodeupClient::updateMergeRequestSettingCallable(const UpdateMergeRequestSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMergeRequestSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMergeRequestSetting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
