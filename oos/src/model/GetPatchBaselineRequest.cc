@@ -14,27 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/oos/model/GetServiceSettingsRequest.h>
+#include <alibabacloud/oos/model/GetPatchBaselineRequest.h>
 
-using AlibabaCloud::Oos::Model::GetServiceSettingsRequest;
+using AlibabaCloud::Oos::Model::GetPatchBaselineRequest;
 
-GetServiceSettingsRequest::GetServiceSettingsRequest() :
-	RpcServiceRequest("oos", "2019-06-01", "GetServiceSettings")
+GetPatchBaselineRequest::GetPatchBaselineRequest() :
+	RpcServiceRequest("oos", "2019-06-01", "GetPatchBaseline")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetServiceSettingsRequest::~GetServiceSettingsRequest()
+GetPatchBaselineRequest::~GetPatchBaselineRequest()
 {}
 
-std::string GetServiceSettingsRequest::getRegionId()const
+std::string GetPatchBaselineRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void GetServiceSettingsRequest::setRegionId(const std::string& regionId)
+void GetPatchBaselineRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string GetPatchBaselineRequest::getName()const
+{
+	return name_;
+}
+
+void GetPatchBaselineRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 

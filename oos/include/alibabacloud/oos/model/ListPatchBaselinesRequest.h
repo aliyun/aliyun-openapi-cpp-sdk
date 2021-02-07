@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_LISTPATCHBASELINESREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_LISTPATCHBASELINESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT GetServiceSettingsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OOS_EXPORT ListPatchBaselinesRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetServiceSettingsRequest();
-				~GetServiceSettingsRequest();
+				ListPatchBaselinesRequest();
+				~ListPatchBaselinesRequest();
 
+				std::string getOperationSystem()const;
+				void setOperationSystem(const std::string& operationSystem);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
+				std::string getName()const;
+				void setName(const std::string& name);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
+				std::string getShareType()const;
+				void setShareType(const std::string& shareType);
 
             private:
+				std::string operationSystem_;
 				std::string regionId_;
+				std::string nextToken_;
+				std::string name_;
+				int maxResults_;
+				std::string shareType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_LISTPATCHBASELINESREQUEST_H_

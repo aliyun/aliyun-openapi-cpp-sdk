@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_DELETESTATECONFIGURATIONSREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_DELETESTATECONFIGURATIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT GetServiceSettingsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OOS_EXPORT DeleteStateConfigurationsRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetServiceSettingsRequest();
-				~GetServiceSettingsRequest();
+				DeleteStateConfigurationsRequest();
+				~DeleteStateConfigurationsRequest();
 
+				std::string getStateConfigurationIds()const;
+				void setStateConfigurationIds(const std::string& stateConfigurationIds);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 
             private:
+				std::string stateConfigurationIds_;
+				std::string clientToken_;
 				std::string regionId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_DELETESTATECONFIGURATIONSREQUEST_H_

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setDeliveryOssKeyPrefix(const std::string& deliveryOssKeyPrefix);
 				bool getDeliveryOssEnabled()const;
 				void setDeliveryOssEnabled(bool deliveryOssEnabled);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDeliverySlsProjectName()const;
 				void setDeliverySlsProjectName(const std::string& deliverySlsProjectName);
 				std::string getDeliveryOssBucketName()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 				bool deliverySlsEnabled_;
 				std::string deliveryOssKeyPrefix_;
 				bool deliveryOssEnabled_;
+				std::string regionId_;
 				std::string deliverySlsProjectName_;
 				std::string deliveryOssBucketName_;
 

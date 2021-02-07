@@ -25,16 +25,24 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/CancelExecutionResult.h
 	include/alibabacloud/oos/model/CreateParameterRequest.h
 	include/alibabacloud/oos/model/CreateParameterResult.h
+	include/alibabacloud/oos/model/CreatePatchBaselineRequest.h
+	include/alibabacloud/oos/model/CreatePatchBaselineResult.h
 	include/alibabacloud/oos/model/CreateSecretParameterRequest.h
 	include/alibabacloud/oos/model/CreateSecretParameterResult.h
+	include/alibabacloud/oos/model/CreateStateConfigurationRequest.h
+	include/alibabacloud/oos/model/CreateStateConfigurationResult.h
 	include/alibabacloud/oos/model/CreateTemplateRequest.h
 	include/alibabacloud/oos/model/CreateTemplateResult.h
 	include/alibabacloud/oos/model/DeleteExecutionsRequest.h
 	include/alibabacloud/oos/model/DeleteExecutionsResult.h
 	include/alibabacloud/oos/model/DeleteParameterRequest.h
 	include/alibabacloud/oos/model/DeleteParameterResult.h
+	include/alibabacloud/oos/model/DeletePatchBaselineRequest.h
+	include/alibabacloud/oos/model/DeletePatchBaselineResult.h
 	include/alibabacloud/oos/model/DeleteSecretParameterRequest.h
 	include/alibabacloud/oos/model/DeleteSecretParameterResult.h
+	include/alibabacloud/oos/model/DeleteStateConfigurationsRequest.h
+	include/alibabacloud/oos/model/DeleteStateConfigurationsResult.h
 	include/alibabacloud/oos/model/DeleteTemplateRequest.h
 	include/alibabacloud/oos/model/DeleteTemplateResult.h
 	include/alibabacloud/oos/model/DeleteTemplatesRequest.h
@@ -53,6 +61,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/GetParametersResult.h
 	include/alibabacloud/oos/model/GetParametersByPathRequest.h
 	include/alibabacloud/oos/model/GetParametersByPathResult.h
+	include/alibabacloud/oos/model/GetPatchBaselineRequest.h
+	include/alibabacloud/oos/model/GetPatchBaselineResult.h
 	include/alibabacloud/oos/model/GetSecretParameterRequest.h
 	include/alibabacloud/oos/model/GetSecretParameterResult.h
 	include/alibabacloud/oos/model/GetSecretParametersRequest.h
@@ -71,18 +81,28 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListExecutionRiskyTasksResult.h
 	include/alibabacloud/oos/model/ListExecutionsRequest.h
 	include/alibabacloud/oos/model/ListExecutionsResult.h
+	include/alibabacloud/oos/model/ListInstancePatchStatesRequest.h
+	include/alibabacloud/oos/model/ListInstancePatchStatesResult.h
+	include/alibabacloud/oos/model/ListInstancePatchesRequest.h
+	include/alibabacloud/oos/model/ListInstancePatchesResult.h
+	include/alibabacloud/oos/model/ListInstanceStateReportsRequest.h
+	include/alibabacloud/oos/model/ListInstanceStateReportsResult.h
 	include/alibabacloud/oos/model/ListInventoryEntriesRequest.h
 	include/alibabacloud/oos/model/ListInventoryEntriesResult.h
 	include/alibabacloud/oos/model/ListParameterVersionsRequest.h
 	include/alibabacloud/oos/model/ListParameterVersionsResult.h
 	include/alibabacloud/oos/model/ListParametersRequest.h
 	include/alibabacloud/oos/model/ListParametersResult.h
+	include/alibabacloud/oos/model/ListPatchBaselinesRequest.h
+	include/alibabacloud/oos/model/ListPatchBaselinesResult.h
 	include/alibabacloud/oos/model/ListResourceExecutionStatusRequest.h
 	include/alibabacloud/oos/model/ListResourceExecutionStatusResult.h
 	include/alibabacloud/oos/model/ListSecretParameterVersionsRequest.h
 	include/alibabacloud/oos/model/ListSecretParameterVersionsResult.h
 	include/alibabacloud/oos/model/ListSecretParametersRequest.h
 	include/alibabacloud/oos/model/ListSecretParametersResult.h
+	include/alibabacloud/oos/model/ListStateConfigurationsRequest.h
+	include/alibabacloud/oos/model/ListStateConfigurationsResult.h
 	include/alibabacloud/oos/model/ListTagKeysRequest.h
 	include/alibabacloud/oos/model/ListTagKeysResult.h
 	include/alibabacloud/oos/model/ListTagResourcesRequest.h
@@ -97,6 +117,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListTemplatesResult.h
 	include/alibabacloud/oos/model/NotifyExecutionRequest.h
 	include/alibabacloud/oos/model/NotifyExecutionResult.h
+	include/alibabacloud/oos/model/RegisterDefaultPatchBaselineRequest.h
+	include/alibabacloud/oos/model/RegisterDefaultPatchBaselineResult.h
 	include/alibabacloud/oos/model/SearchInventoryRequest.h
 	include/alibabacloud/oos/model/SearchInventoryResult.h
 	include/alibabacloud/oos/model/SetServiceSettingsRequest.h
@@ -115,8 +137,12 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/UpdateInstanceInformationResult.h
 	include/alibabacloud/oos/model/UpdateParameterRequest.h
 	include/alibabacloud/oos/model/UpdateParameterResult.h
+	include/alibabacloud/oos/model/UpdatePatchBaselineRequest.h
+	include/alibabacloud/oos/model/UpdatePatchBaselineResult.h
 	include/alibabacloud/oos/model/UpdateSecretParameterRequest.h
 	include/alibabacloud/oos/model/UpdateSecretParameterResult.h
+	include/alibabacloud/oos/model/UpdateStateConfigurationRequest.h
+	include/alibabacloud/oos/model/UpdateStateConfigurationResult.h
 	include/alibabacloud/oos/model/UpdateTemplateRequest.h
 	include/alibabacloud/oos/model/UpdateTemplateResult.h
 	include/alibabacloud/oos/model/ValidateTemplateContentRequest.h
@@ -128,16 +154,24 @@ set(oos_src
 	src/model/CancelExecutionResult.cc
 	src/model/CreateParameterRequest.cc
 	src/model/CreateParameterResult.cc
+	src/model/CreatePatchBaselineRequest.cc
+	src/model/CreatePatchBaselineResult.cc
 	src/model/CreateSecretParameterRequest.cc
 	src/model/CreateSecretParameterResult.cc
+	src/model/CreateStateConfigurationRequest.cc
+	src/model/CreateStateConfigurationResult.cc
 	src/model/CreateTemplateRequest.cc
 	src/model/CreateTemplateResult.cc
 	src/model/DeleteExecutionsRequest.cc
 	src/model/DeleteExecutionsResult.cc
 	src/model/DeleteParameterRequest.cc
 	src/model/DeleteParameterResult.cc
+	src/model/DeletePatchBaselineRequest.cc
+	src/model/DeletePatchBaselineResult.cc
 	src/model/DeleteSecretParameterRequest.cc
 	src/model/DeleteSecretParameterResult.cc
+	src/model/DeleteStateConfigurationsRequest.cc
+	src/model/DeleteStateConfigurationsResult.cc
 	src/model/DeleteTemplateRequest.cc
 	src/model/DeleteTemplateResult.cc
 	src/model/DeleteTemplatesRequest.cc
@@ -156,6 +190,8 @@ set(oos_src
 	src/model/GetParametersResult.cc
 	src/model/GetParametersByPathRequest.cc
 	src/model/GetParametersByPathResult.cc
+	src/model/GetPatchBaselineRequest.cc
+	src/model/GetPatchBaselineResult.cc
 	src/model/GetSecretParameterRequest.cc
 	src/model/GetSecretParameterResult.cc
 	src/model/GetSecretParametersRequest.cc
@@ -174,18 +210,28 @@ set(oos_src
 	src/model/ListExecutionRiskyTasksResult.cc
 	src/model/ListExecutionsRequest.cc
 	src/model/ListExecutionsResult.cc
+	src/model/ListInstancePatchStatesRequest.cc
+	src/model/ListInstancePatchStatesResult.cc
+	src/model/ListInstancePatchesRequest.cc
+	src/model/ListInstancePatchesResult.cc
+	src/model/ListInstanceStateReportsRequest.cc
+	src/model/ListInstanceStateReportsResult.cc
 	src/model/ListInventoryEntriesRequest.cc
 	src/model/ListInventoryEntriesResult.cc
 	src/model/ListParameterVersionsRequest.cc
 	src/model/ListParameterVersionsResult.cc
 	src/model/ListParametersRequest.cc
 	src/model/ListParametersResult.cc
+	src/model/ListPatchBaselinesRequest.cc
+	src/model/ListPatchBaselinesResult.cc
 	src/model/ListResourceExecutionStatusRequest.cc
 	src/model/ListResourceExecutionStatusResult.cc
 	src/model/ListSecretParameterVersionsRequest.cc
 	src/model/ListSecretParameterVersionsResult.cc
 	src/model/ListSecretParametersRequest.cc
 	src/model/ListSecretParametersResult.cc
+	src/model/ListStateConfigurationsRequest.cc
+	src/model/ListStateConfigurationsResult.cc
 	src/model/ListTagKeysRequest.cc
 	src/model/ListTagKeysResult.cc
 	src/model/ListTagResourcesRequest.cc
@@ -200,6 +246,8 @@ set(oos_src
 	src/model/ListTemplatesResult.cc
 	src/model/NotifyExecutionRequest.cc
 	src/model/NotifyExecutionResult.cc
+	src/model/RegisterDefaultPatchBaselineRequest.cc
+	src/model/RegisterDefaultPatchBaselineResult.cc
 	src/model/SearchInventoryRequest.cc
 	src/model/SearchInventoryResult.cc
 	src/model/SetServiceSettingsRequest.cc
@@ -218,8 +266,12 @@ set(oos_src
 	src/model/UpdateInstanceInformationResult.cc
 	src/model/UpdateParameterRequest.cc
 	src/model/UpdateParameterResult.cc
+	src/model/UpdatePatchBaselineRequest.cc
+	src/model/UpdatePatchBaselineResult.cc
 	src/model/UpdateSecretParameterRequest.cc
 	src/model/UpdateSecretParameterResult.cc
+	src/model/UpdateStateConfigurationRequest.cc
+	src/model/UpdateStateConfigurationResult.cc
 	src/model/UpdateTemplateRequest.cc
 	src/model/UpdateTemplateResult.cc
 	src/model/ValidateTemplateContentRequest.cc

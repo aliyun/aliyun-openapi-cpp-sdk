@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_CREATEPATCHBASELINEREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_CREATEPATCHBASELINEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT GetServiceSettingsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OOS_EXPORT CreatePatchBaselineRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetServiceSettingsRequest();
-				~GetServiceSettingsRequest();
+				CreatePatchBaselineRequest();
+				~CreatePatchBaselineRequest();
 
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getApprovalRules()const;
+				void setApprovalRules(const std::string& approvalRules);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getOperationSystem()const;
+				void setOperationSystem(const std::string& operationSystem);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
+				std::string clientToken_;
+				std::string approvalRules_;
+				std::string description_;
+				std::string operationSystem_;
 				std::string regionId_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_CREATEPATCHBASELINEREQUEST_H_

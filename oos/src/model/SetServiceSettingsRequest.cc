@@ -60,6 +60,17 @@ void SetServiceSettingsRequest::setDeliveryOssEnabled(bool deliveryOssEnabled)
 	setParameter("DeliveryOssEnabled", deliveryOssEnabled ? "true" : "false");
 }
 
+std::string SetServiceSettingsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void SetServiceSettingsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string SetServiceSettingsRequest::getDeliverySlsProjectName()const
 {
 	return deliverySlsProjectName_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_LISTINSTANCEPATCHSTATESREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_LISTINSTANCEPATCHSTATESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT GetServiceSettingsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OOS_EXPORT ListInstancePatchStatesRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetServiceSettingsRequest();
-				~GetServiceSettingsRequest();
+				ListInstancePatchStatesRequest();
+				~ListInstancePatchStatesRequest();
 
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
+				std::string getInstanceIds()const;
+				void setInstanceIds(const std::string& instanceIds);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 
             private:
 				std::string regionId_;
+				std::string nextToken_;
+				std::string instanceIds_;
+				int maxResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_LISTINSTANCEPATCHSTATESREQUEST_H_

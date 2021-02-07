@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_DELETESTATECONFIGURATIONSRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_DELETESTATECONFIGURATIONSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/oos/OosExport.h>
 
 namespace AlibabaCloud
@@ -28,21 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT GetServiceSettingsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OOS_EXPORT DeleteStateConfigurationsResult : public ServiceResult
 			{
-
 			public:
-				GetServiceSettingsRequest();
-				~GetServiceSettingsRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
-            private:
-				std::string regionId_;
+				DeleteStateConfigurationsResult();
+				explicit DeleteStateConfigurationsResult(const std::string &payload);
+				~DeleteStateConfigurationsResult();
+
+			protected:
+				void parse(const std::string &payload);
+			private:
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_GETSERVICESETTINGSREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_DELETESTATECONFIGURATIONSRESULT_H_

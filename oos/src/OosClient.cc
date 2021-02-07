@@ -123,6 +123,42 @@ OosClient::CreateParameterOutcomeCallable OosClient::createParameterCallable(con
 	return task->get_future();
 }
 
+OosClient::CreatePatchBaselineOutcome OosClient::createPatchBaseline(const CreatePatchBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePatchBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePatchBaselineOutcome(CreatePatchBaselineResult(outcome.result()));
+	else
+		return CreatePatchBaselineOutcome(outcome.error());
+}
+
+void OosClient::createPatchBaselineAsync(const CreatePatchBaselineRequest& request, const CreatePatchBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPatchBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::CreatePatchBaselineOutcomeCallable OosClient::createPatchBaselineCallable(const CreatePatchBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePatchBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->createPatchBaseline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::CreateSecretParameterOutcome OosClient::createSecretParameter(const CreateSecretParameterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,42 @@ OosClient::CreateSecretParameterOutcomeCallable OosClient::createSecretParameter
 			[this, request]()
 			{
 			return this->createSecretParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::CreateStateConfigurationOutcome OosClient::createStateConfiguration(const CreateStateConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStateConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStateConfigurationOutcome(CreateStateConfigurationResult(outcome.result()));
+	else
+		return CreateStateConfigurationOutcome(outcome.error());
+}
+
+void OosClient::createStateConfigurationAsync(const CreateStateConfigurationRequest& request, const CreateStateConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStateConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::CreateStateConfigurationOutcomeCallable OosClient::createStateConfigurationCallable(const CreateStateConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStateConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->createStateConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,6 +339,42 @@ OosClient::DeleteParameterOutcomeCallable OosClient::deleteParameterCallable(con
 	return task->get_future();
 }
 
+OosClient::DeletePatchBaselineOutcome OosClient::deletePatchBaseline(const DeletePatchBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePatchBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePatchBaselineOutcome(DeletePatchBaselineResult(outcome.result()));
+	else
+		return DeletePatchBaselineOutcome(outcome.error());
+}
+
+void OosClient::deletePatchBaselineAsync(const DeletePatchBaselineRequest& request, const DeletePatchBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePatchBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::DeletePatchBaselineOutcomeCallable OosClient::deletePatchBaselineCallable(const DeletePatchBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePatchBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePatchBaseline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::DeleteSecretParameterOutcome OosClient::deleteSecretParameter(const DeleteSecretParameterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +405,42 @@ OosClient::DeleteSecretParameterOutcomeCallable OosClient::deleteSecretParameter
 			[this, request]()
 			{
 			return this->deleteSecretParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::DeleteStateConfigurationsOutcome OosClient::deleteStateConfigurations(const DeleteStateConfigurationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStateConfigurationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStateConfigurationsOutcome(DeleteStateConfigurationsResult(outcome.result()));
+	else
+		return DeleteStateConfigurationsOutcome(outcome.error());
+}
+
+void OosClient::deleteStateConfigurationsAsync(const DeleteStateConfigurationsRequest& request, const DeleteStateConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStateConfigurations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::DeleteStateConfigurationsOutcomeCallable OosClient::deleteStateConfigurationsCallable(const DeleteStateConfigurationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStateConfigurationsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStateConfigurations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,6 +771,42 @@ OosClient::GetParametersByPathOutcomeCallable OosClient::getParametersByPathCall
 	return task->get_future();
 }
 
+OosClient::GetPatchBaselineOutcome OosClient::getPatchBaseline(const GetPatchBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPatchBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPatchBaselineOutcome(GetPatchBaselineResult(outcome.result()));
+	else
+		return GetPatchBaselineOutcome(outcome.error());
+}
+
+void OosClient::getPatchBaselineAsync(const GetPatchBaselineRequest& request, const GetPatchBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPatchBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetPatchBaselineOutcomeCallable OosClient::getPatchBaselineCallable(const GetPatchBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPatchBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->getPatchBaseline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::GetSecretParameterOutcome OosClient::getSecretParameter(const GetSecretParameterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,6 +1131,114 @@ OosClient::ListExecutionsOutcomeCallable OosClient::listExecutionsCallable(const
 	return task->get_future();
 }
 
+OosClient::ListInstancePatchStatesOutcome OosClient::listInstancePatchStates(const ListInstancePatchStatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstancePatchStatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstancePatchStatesOutcome(ListInstancePatchStatesResult(outcome.result()));
+	else
+		return ListInstancePatchStatesOutcome(outcome.error());
+}
+
+void OosClient::listInstancePatchStatesAsync(const ListInstancePatchStatesRequest& request, const ListInstancePatchStatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstancePatchStates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListInstancePatchStatesOutcomeCallable OosClient::listInstancePatchStatesCallable(const ListInstancePatchStatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstancePatchStatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstancePatchStates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListInstancePatchesOutcome OosClient::listInstancePatches(const ListInstancePatchesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstancePatchesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstancePatchesOutcome(ListInstancePatchesResult(outcome.result()));
+	else
+		return ListInstancePatchesOutcome(outcome.error());
+}
+
+void OosClient::listInstancePatchesAsync(const ListInstancePatchesRequest& request, const ListInstancePatchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstancePatches(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListInstancePatchesOutcomeCallable OosClient::listInstancePatchesCallable(const ListInstancePatchesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstancePatchesOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstancePatches(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListInstanceStateReportsOutcome OosClient::listInstanceStateReports(const ListInstanceStateReportsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstanceStateReportsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstanceStateReportsOutcome(ListInstanceStateReportsResult(outcome.result()));
+	else
+		return ListInstanceStateReportsOutcome(outcome.error());
+}
+
+void OosClient::listInstanceStateReportsAsync(const ListInstanceStateReportsRequest& request, const ListInstanceStateReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstanceStateReports(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListInstanceStateReportsOutcomeCallable OosClient::listInstanceStateReportsCallable(const ListInstanceStateReportsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstanceStateReportsOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstanceStateReports(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::ListInventoryEntriesOutcome OosClient::listInventoryEntries(const ListInventoryEntriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1347,42 @@ OosClient::ListParametersOutcomeCallable OosClient::listParametersCallable(const
 	return task->get_future();
 }
 
+OosClient::ListPatchBaselinesOutcome OosClient::listPatchBaselines(const ListPatchBaselinesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPatchBaselinesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPatchBaselinesOutcome(ListPatchBaselinesResult(outcome.result()));
+	else
+		return ListPatchBaselinesOutcome(outcome.error());
+}
+
+void OosClient::listPatchBaselinesAsync(const ListPatchBaselinesRequest& request, const ListPatchBaselinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPatchBaselines(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListPatchBaselinesOutcomeCallable OosClient::listPatchBaselinesCallable(const ListPatchBaselinesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPatchBaselinesOutcome()>>(
+			[this, request]()
+			{
+			return this->listPatchBaselines(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::ListResourceExecutionStatusOutcome OosClient::listResourceExecutionStatus(const ListResourceExecutionStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1485,42 @@ OosClient::ListSecretParametersOutcomeCallable OosClient::listSecretParametersCa
 			[this, request]()
 			{
 			return this->listSecretParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListStateConfigurationsOutcome OosClient::listStateConfigurations(const ListStateConfigurationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListStateConfigurationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListStateConfigurationsOutcome(ListStateConfigurationsResult(outcome.result()));
+	else
+		return ListStateConfigurationsOutcome(outcome.error());
+}
+
+void OosClient::listStateConfigurationsAsync(const ListStateConfigurationsRequest& request, const ListStateConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listStateConfigurations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListStateConfigurationsOutcomeCallable OosClient::listStateConfigurationsCallable(const ListStateConfigurationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListStateConfigurationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listStateConfigurations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1413,6 +1773,42 @@ OosClient::NotifyExecutionOutcomeCallable OosClient::notifyExecutionCallable(con
 			[this, request]()
 			{
 			return this->notifyExecution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::RegisterDefaultPatchBaselineOutcome OosClient::registerDefaultPatchBaseline(const RegisterDefaultPatchBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterDefaultPatchBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterDefaultPatchBaselineOutcome(RegisterDefaultPatchBaselineResult(outcome.result()));
+	else
+		return RegisterDefaultPatchBaselineOutcome(outcome.error());
+}
+
+void OosClient::registerDefaultPatchBaselineAsync(const RegisterDefaultPatchBaselineRequest& request, const RegisterDefaultPatchBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerDefaultPatchBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::RegisterDefaultPatchBaselineOutcomeCallable OosClient::registerDefaultPatchBaselineCallable(const RegisterDefaultPatchBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterDefaultPatchBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->registerDefaultPatchBaseline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1743,6 +2139,42 @@ OosClient::UpdateParameterOutcomeCallable OosClient::updateParameterCallable(con
 	return task->get_future();
 }
 
+OosClient::UpdatePatchBaselineOutcome OosClient::updatePatchBaseline(const UpdatePatchBaselineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePatchBaselineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePatchBaselineOutcome(UpdatePatchBaselineResult(outcome.result()));
+	else
+		return UpdatePatchBaselineOutcome(outcome.error());
+}
+
+void OosClient::updatePatchBaselineAsync(const UpdatePatchBaselineRequest& request, const UpdatePatchBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePatchBaseline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdatePatchBaselineOutcomeCallable OosClient::updatePatchBaselineCallable(const UpdatePatchBaselineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePatchBaselineOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePatchBaseline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::UpdateSecretParameterOutcome OosClient::updateSecretParameter(const UpdateSecretParameterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1773,6 +2205,42 @@ OosClient::UpdateSecretParameterOutcomeCallable OosClient::updateSecretParameter
 			[this, request]()
 			{
 			return this->updateSecretParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::UpdateStateConfigurationOutcome OosClient::updateStateConfiguration(const UpdateStateConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateStateConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateStateConfigurationOutcome(UpdateStateConfigurationResult(outcome.result()));
+	else
+		return UpdateStateConfigurationOutcome(outcome.error());
+}
+
+void OosClient::updateStateConfigurationAsync(const UpdateStateConfigurationRequest& request, const UpdateStateConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateStateConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdateStateConfigurationOutcomeCallable OosClient::updateStateConfigurationCallable(const UpdateStateConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateStateConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->updateStateConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
