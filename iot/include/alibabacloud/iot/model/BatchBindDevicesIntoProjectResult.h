@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYCLIENTIDSRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYCLIENTIDSRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BATCHBINDDEVICESINTOPROJECTRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_BATCHBINDDEVICESINTOPROJECTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryClientIdsResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT BatchBindDevicesIntoProjectResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct DynamicRegClientId
-					{
-						long createTime;
-						std::string clientId;
-					};
-					std::vector<DynamicRegClientId> dynamicRegClientIds;
-					std::string iotId;
-				};
 
 
-				QueryClientIdsResult();
-				explicit QueryClientIdsResult(const std::string &payload);
-				~QueryClientIdsResult();
-				Data getData()const;
+				BatchBindDevicesIntoProjectResult();
+				explicit BatchBindDevicesIntoProjectResult(const std::string &payload);
+				~BatchBindDevicesIntoProjectResult();
+				std::string getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -55,7 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				std::string data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -64,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYCLIENTIDSRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BATCHBINDDEVICESINTOPROJECTRESULT_H_

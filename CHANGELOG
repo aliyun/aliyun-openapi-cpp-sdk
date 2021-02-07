@@ -1,4 +1,10 @@
 2021-02-07 Version: patch
+- Add IoT Studio BatchBindDevicesIntoProject API.
+- Add IoT Studio BatchBindProductsIntoProject API.
+- Add IoT Studio BatchUnbindProjectDevices API.
+- Add IoT Studio BatchUnbindProjectProducts API.
+
+2021-02-07 Version: patch
 - Support patch manager apis.
 
 2021-02-07 Version: patch

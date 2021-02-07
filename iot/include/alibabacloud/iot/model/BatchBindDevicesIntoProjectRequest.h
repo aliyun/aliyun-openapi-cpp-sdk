@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_DELETECLIENTIDSREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_DELETECLIENTIDSREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BATCHBINDDEVICESINTOPROJECTREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_BATCHBINDDEVICESINTOPROJECTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,28 +28,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT DeleteClientIdsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT BatchBindDevicesIntoProjectRequest : public RpcServiceRequest
 			{
+			public:
+				struct Devices
+				{
+					std::string deviceName;
+					std::string productKey;
+				};
 
 			public:
-				DeleteClientIdsRequest();
-				~DeleteClientIdsRequest();
+				BatchBindDevicesIntoProjectRequest();
+				~BatchBindDevicesIntoProjectRequest();
 
-				std::string getAuthConfig()const;
-				void setAuthConfig(const std::string& authConfig);
-				std::string getIotId()const;
-				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
+				std::vector<Devices> getDevices()const;
+				void setDevices(const std::vector<Devices>& devices);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string authConfig_;
-				std::string iotId_;
 				std::string iotInstanceId_;
+				std::string projectId_;
+				std::vector<Devices> devices_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 
@@ -57,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_DELETECLIENTIDSREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BATCHBINDDEVICESINTOPROJECTREQUEST_H_

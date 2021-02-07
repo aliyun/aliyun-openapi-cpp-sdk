@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYCLIENTIDSREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYCLIENTIDSREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,28 +28,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryClientIdsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT CreateRulengDistributeJobRequest : public RpcServiceRequest
 			{
 
 			public:
-				QueryClientIdsRequest();
-				~QueryClientIdsRequest();
+				CreateRulengDistributeJobRequest();
+				~CreateRulengDistributeJobRequest();
 
-				std::string getAuthConfig()const;
-				void setAuthConfig(const std::string& authConfig);
-				std::string getIotId()const;
-				void setIotId(const std::string& iotId);
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getSourceInstanceId()const;
+				void setSourceInstanceId(const std::string& sourceInstanceId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getTargetInstanceId()const;
+				void setTargetInstanceId(const std::string& targetInstanceId);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string authConfig_;
-				std::string iotId_;
-				std::string iotInstanceId_;
+				std::string sourceInstanceId_;
+				std::string productKey_;
+				std::string targetInstanceId_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 
@@ -57,4 +57,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYCLIENTIDSREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBREQUEST_H_

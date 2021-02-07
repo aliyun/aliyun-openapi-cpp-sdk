@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_DELETECLIENTIDSRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_DELETECLIENTIDSRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT DeleteClientIdsResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT CreateRulengDistributeJobResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteClientIdsResult();
-				explicit DeleteClientIdsResult(const std::string &payload);
-				~DeleteClientIdsResult();
+				CreateRulengDistributeJobResult();
+				explicit CreateRulengDistributeJobResult(const std::string &payload);
+				~CreateRulengDistributeJobResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -52,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_DELETECLIENTIDSRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_CREATERULENGDISTRIBUTEJOBRESULT_H_

@@ -27,6 +27,17 @@ BatchCheckDeviceNamesRequest::BatchCheckDeviceNamesRequest() :
 BatchCheckDeviceNamesRequest::~BatchCheckDeviceNamesRequest()
 {}
 
+std::string BatchCheckDeviceNamesRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void BatchCheckDeviceNamesRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string BatchCheckDeviceNamesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void BatchCheckDeviceNamesRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BatchCheckDeviceNamesRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void BatchCheckDeviceNamesRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::vector<BatchCheckDeviceNamesRequest::DeviceNameList> BatchCheckDeviceNamesRequest::getDeviceNameList()const

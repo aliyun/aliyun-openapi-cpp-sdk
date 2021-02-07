@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				DisableThingRequest();
 				~DisableThingRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
@@ -51,7 +55,9 @@ namespace AlibabaCloud
 				void setDeviceName(const std::string& deviceName);
 
             private:
+				std::string realTenantId_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string iotId_;
 				std::string iotInstanceId_;
 				std::string productKey_;

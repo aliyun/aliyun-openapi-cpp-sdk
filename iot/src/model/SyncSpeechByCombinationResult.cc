@@ -14,44 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/QueryClientIdsResult.h>
+#include <alibabacloud/iot/model/SyncSpeechByCombinationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-QueryClientIdsResult::QueryClientIdsResult() :
+SyncSpeechByCombinationResult::SyncSpeechByCombinationResult() :
 	ServiceResult()
 {}
 
-QueryClientIdsResult::QueryClientIdsResult(const std::string &payload) :
+SyncSpeechByCombinationResult::SyncSpeechByCombinationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryClientIdsResult::~QueryClientIdsResult()
+SyncSpeechByCombinationResult::~SyncSpeechByCombinationResult()
 {}
 
-void QueryClientIdsResult::parse(const std::string &payload)
+void SyncSpeechByCombinationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["IotId"].isNull())
-		data_.iotId = dataNode["IotId"].asString();
-	auto allDynamicRegClientIdsNode = dataNode["DynamicRegClientIds"]["DynamicRegClientId"];
-	for (auto dataNodeDynamicRegClientIdsDynamicRegClientId : allDynamicRegClientIdsNode)
-	{
-		Data::DynamicRegClientId dynamicRegClientIdObject;
-		if(!dataNodeDynamicRegClientIdsDynamicRegClientId["ClientId"].isNull())
-			dynamicRegClientIdObject.clientId = dataNodeDynamicRegClientIdsDynamicRegClientId["ClientId"].asString();
-		if(!dataNodeDynamicRegClientIdsDynamicRegClientId["CreateTime"].isNull())
-			dynamicRegClientIdObject.createTime = std::stol(dataNodeDynamicRegClientIdsDynamicRegClientId["CreateTime"].asString());
-		data_.dynamicRegClientIds.push_back(dynamicRegClientIdObject);
-	}
+	if(!dataNode["Id"].isNull())
+		data_.id = dataNode["Id"].asString();
+	if(!dataNode["RetryCount"].isNull())
+		data_.retryCount = std::stoi(dataNode["RetryCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -61,22 +53,22 @@ void QueryClientIdsResult::parse(const std::string &payload)
 
 }
 
-QueryClientIdsResult::Data QueryClientIdsResult::getData()const
+SyncSpeechByCombinationResult::Data SyncSpeechByCombinationResult::getData()const
 {
 	return data_;
 }
 
-std::string QueryClientIdsResult::getErrorMessage()const
+std::string SyncSpeechByCombinationResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string QueryClientIdsResult::getCode()const
+std::string SyncSpeechByCombinationResult::getCode()const
 {
 	return code_;
 }
 
-bool QueryClientIdsResult::getSuccess()const
+bool SyncSpeechByCombinationResult::getSuccess()const
 {
 	return success_;
 }

@@ -27,6 +27,17 @@ EnableThingRequest::EnableThingRequest() :
 EnableThingRequest::~EnableThingRequest()
 {}
 
+std::string EnableThingRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void EnableThingRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string EnableThingRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void EnableThingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string EnableThingRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void EnableThingRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string EnableThingRequest::getIotId()const

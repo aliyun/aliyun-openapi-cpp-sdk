@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/TransformClientIdResult.h>
+#include <alibabacloud/iot/model/BatchUnbindProjectDevicesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-TransformClientIdResult::TransformClientIdResult() :
+BatchUnbindProjectDevicesResult::BatchUnbindProjectDevicesResult() :
 	ServiceResult()
 {}
 
-TransformClientIdResult::TransformClientIdResult(const std::string &payload) :
+BatchUnbindProjectDevicesResult::BatchUnbindProjectDevicesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-TransformClientIdResult::~TransformClientIdResult()
+BatchUnbindProjectDevicesResult::~BatchUnbindProjectDevicesResult()
 {}
 
-void TransformClientIdResult::parse(const std::string &payload)
+void BatchUnbindProjectDevicesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,20 +45,27 @@ void TransformClientIdResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
-std::string TransformClientIdResult::getErrorMessage()const
+std::string BatchUnbindProjectDevicesResult::getData()const
+{
+	return data_;
+}
+
+std::string BatchUnbindProjectDevicesResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string TransformClientIdResult::getCode()const
+std::string BatchUnbindProjectDevicesResult::getCode()const
 {
 	return code_;
 }
 
-bool TransformClientIdResult::getSuccess()const
+bool BatchUnbindProjectDevicesResult::getSuccess()const
 {
 	return success_;
 }

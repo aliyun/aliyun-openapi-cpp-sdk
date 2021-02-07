@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_TRANSFORMCLIENTIDREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_TRANSFORMCLIENTIDREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT TransformClientIdRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT SyncSpeechByCombinationRequest : public RpcServiceRequest
 			{
 
 			public:
-				TransformClientIdRequest();
-				~TransformClientIdRequest();
+				SyncSpeechByCombinationRequest();
+				~SyncSpeechByCombinationRequest();
 
-				std::string getAuthConfig()const;
-				void setAuthConfig(const std::string& authConfig);
-				std::string getClientId()const;
-				void setClientId(const std::string& clientId);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
+				std::vector<std::string> getCombinationList()const;
+				void setCombinationList(const std::vector<std::string>& combinationList);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string authConfig_;
-				std::string clientId_;
 				std::string iotId_;
+				std::vector<std::string> combinationList_;
 				std::string iotInstanceId_;
+				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_TRANSFORMCLIENTIDREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_

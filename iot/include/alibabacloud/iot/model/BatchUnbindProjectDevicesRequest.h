@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_BATCHREGISTERDEVICEREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_BATCHREGISTERDEVICEREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BATCHUNBINDPROJECTDEVICESREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_BATCHUNBINDPROJECTDEVICESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,37 +28,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT BatchRegisterDeviceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT BatchUnbindProjectDevicesRequest : public RpcServiceRequest
 			{
+			public:
+				struct Devices
+				{
+					std::string deviceName;
+					std::string productKey;
+				};
 
 			public:
-				BatchRegisterDeviceRequest();
-				~BatchRegisterDeviceRequest();
+				BatchUnbindProjectDevicesRequest();
+				~BatchUnbindProjectDevicesRequest();
 
-				std::string getRealTenantId()const;
-				void setRealTenantId(const std::string& realTenantId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRealTripartiteKey()const;
-				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				int getCount()const;
-				void setCount(int count);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
+				std::vector<Devices> getDevices()const;
+				void setDevices(const std::vector<Devices>& devices);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string realTenantId_;
-				std::string accessKeyId_;
-				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
-				int count_;
-				std::string productKey_;
+				std::string projectId_;
+				std::vector<Devices> devices_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 
@@ -66,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_BATCHREGISTERDEVICEREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BATCHUNBINDPROJECTDEVICESREQUEST_H_

@@ -27,6 +27,17 @@ UpdateProductRequest::UpdateProductRequest() :
 UpdateProductRequest::~UpdateProductRequest()
 {}
 
+std::string UpdateProductRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void UpdateProductRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string UpdateProductRequest::getDescription()const
 {
 	return description_;
@@ -47,6 +58,17 @@ void UpdateProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateProductRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void UpdateProductRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string UpdateProductRequest::getIotInstanceId()const

@@ -27,6 +27,17 @@ QueryPageByApplyIdRequest::QueryPageByApplyIdRequest() :
 QueryPageByApplyIdRequest::~QueryPageByApplyIdRequest()
 {}
 
+std::string QueryPageByApplyIdRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryPageByApplyIdRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryPageByApplyIdRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QueryPageByApplyIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryPageByApplyIdRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryPageByApplyIdRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryPageByApplyIdRequest::getIotInstanceId()const

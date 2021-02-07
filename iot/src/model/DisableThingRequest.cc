@@ -27,6 +27,17 @@ DisableThingRequest::DisableThingRequest() :
 DisableThingRequest::~DisableThingRequest()
 {}
 
+std::string DisableThingRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void DisableThingRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string DisableThingRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void DisableThingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DisableThingRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void DisableThingRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string DisableThingRequest::getIotId()const

@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/SpeechByCombinationRequest.h>
+#include <alibabacloud/iot/model/SyncSpeechByCombinationRequest.h>
 
-using AlibabaCloud::Iot::Model::SpeechByCombinationRequest;
+using AlibabaCloud::Iot::Model::SyncSpeechByCombinationRequest;
 
-SpeechByCombinationRequest::SpeechByCombinationRequest() :
-	RpcServiceRequest("iot", "2018-01-20", "SpeechByCombination")
+SyncSpeechByCombinationRequest::SyncSpeechByCombinationRequest() :
+	RpcServiceRequest("iot", "2018-01-20", "SyncSpeechByCombination")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-SpeechByCombinationRequest::~SpeechByCombinationRequest()
+SyncSpeechByCombinationRequest::~SyncSpeechByCombinationRequest()
 {}
 
-std::string SpeechByCombinationRequest::getIotId()const
+std::string SyncSpeechByCombinationRequest::getIotId()const
 {
 	return iotId_;
 }
 
-void SpeechByCombinationRequest::setIotId(const std::string& iotId)
+void SyncSpeechByCombinationRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
 	setBodyParameter("IotId", iotId);
 }
 
-std::vector<std::string> SpeechByCombinationRequest::getCombinationList()const
+std::vector<std::string> SyncSpeechByCombinationRequest::getCombinationList()const
 {
 	return combinationList_;
 }
 
-void SpeechByCombinationRequest::setCombinationList(const std::vector<std::string>& combinationList)
+void SyncSpeechByCombinationRequest::setCombinationList(const std::vector<std::string>& combinationList)
 {
 	combinationList_ = combinationList;
 	for(int dep1 = 0; dep1!= combinationList.size(); dep1++) {
@@ -51,56 +51,56 @@ void SpeechByCombinationRequest::setCombinationList(const std::vector<std::strin
 	}
 }
 
-std::string SpeechByCombinationRequest::getIotInstanceId()const
+std::string SyncSpeechByCombinationRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
 }
 
-void SpeechByCombinationRequest::setIotInstanceId(const std::string& iotInstanceId)
+void SyncSpeechByCombinationRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setBodyParameter("IotInstanceId", iotInstanceId);
 }
 
-std::string SpeechByCombinationRequest::getProductKey()const
+std::string SyncSpeechByCombinationRequest::getProductKey()const
 {
 	return productKey_;
 }
 
-void SpeechByCombinationRequest::setProductKey(const std::string& productKey)
+void SyncSpeechByCombinationRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
 	setBodyParameter("ProductKey", productKey);
 }
 
-std::string SpeechByCombinationRequest::getApiProduct()const
+std::string SyncSpeechByCombinationRequest::getApiProduct()const
 {
 	return apiProduct_;
 }
 
-void SpeechByCombinationRequest::setApiProduct(const std::string& apiProduct)
+void SyncSpeechByCombinationRequest::setApiProduct(const std::string& apiProduct)
 {
 	apiProduct_ = apiProduct;
 	setBodyParameter("ApiProduct", apiProduct);
 }
 
-std::string SpeechByCombinationRequest::getApiRevision()const
+std::string SyncSpeechByCombinationRequest::getApiRevision()const
 {
 	return apiRevision_;
 }
 
-void SpeechByCombinationRequest::setApiRevision(const std::string& apiRevision)
+void SyncSpeechByCombinationRequest::setApiRevision(const std::string& apiRevision)
 {
 	apiRevision_ = apiRevision;
 	setBodyParameter("ApiRevision", apiRevision);
 }
 
-std::string SpeechByCombinationRequest::getDeviceName()const
+std::string SyncSpeechByCombinationRequest::getDeviceName()const
 {
 	return deviceName_;
 }
 
-void SpeechByCombinationRequest::setDeviceName(const std::string& deviceName)
+void SyncSpeechByCombinationRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
 	setBodyParameter("DeviceName", deviceName);

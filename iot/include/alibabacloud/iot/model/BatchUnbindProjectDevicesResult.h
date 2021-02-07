@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_TRANSFORMCLIENTIDRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_TRANSFORMCLIENTIDRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BATCHUNBINDPROJECTDEVICESRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_BATCHUNBINDPROJECTDEVICESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT TransformClientIdResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT BatchUnbindProjectDevicesResult : public ServiceResult
 			{
 			public:
 
 
-				TransformClientIdResult();
-				explicit TransformClientIdResult(const std::string &payload);
-				~TransformClientIdResult();
+				BatchUnbindProjectDevicesResult();
+				explicit BatchUnbindProjectDevicesResult(const std::string &payload);
+				~BatchUnbindProjectDevicesResult();
+				std::string getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -52,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_TRANSFORMCLIENTIDRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BATCHUNBINDPROJECTDEVICESRESULT_H_

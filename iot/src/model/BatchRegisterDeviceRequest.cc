@@ -27,6 +27,17 @@ BatchRegisterDeviceRequest::BatchRegisterDeviceRequest() :
 BatchRegisterDeviceRequest::~BatchRegisterDeviceRequest()
 {}
 
+std::string BatchRegisterDeviceRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void BatchRegisterDeviceRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string BatchRegisterDeviceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void BatchRegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BatchRegisterDeviceRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void BatchRegisterDeviceRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string BatchRegisterDeviceRequest::getIotInstanceId()const

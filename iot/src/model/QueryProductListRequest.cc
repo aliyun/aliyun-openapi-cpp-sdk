@@ -27,6 +27,17 @@ QueryProductListRequest::QueryProductListRequest() :
 QueryProductListRequest::~QueryProductListRequest()
 {}
 
+std::string QueryProductListRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryProductListRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryProductListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QueryProductListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryProductListRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryProductListRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryProductListRequest::getResourceGroupId()const
