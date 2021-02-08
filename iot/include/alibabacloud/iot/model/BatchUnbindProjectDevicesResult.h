@@ -37,7 +37,7 @@ namespace AlibabaCloud
 				BatchUnbindProjectDevicesResult();
 				explicit BatchUnbindProjectDevicesResult(const std::string &payload);
 				~BatchUnbindProjectDevicesResult();
-				std::string getData()const;
+				bool getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -45,7 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string data_;
+				bool data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;

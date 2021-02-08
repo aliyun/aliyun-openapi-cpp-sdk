@@ -27,6 +27,28 @@ CreateConsumerGroupRequest::CreateConsumerGroupRequest() :
 CreateConsumerGroupRequest::~CreateConsumerGroupRequest()
 {}
 
+std::string CreateConsumerGroupRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void CreateConsumerGroupRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string CreateConsumerGroupRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void CreateConsumerGroupRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string CreateConsumerGroupRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

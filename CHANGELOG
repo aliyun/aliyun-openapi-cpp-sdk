@@ -1,4 +1,10 @@
 2021-02-08 Version: patch
+- Fix IoT Studio BatchBindDevicesIntoProject API return datatype.
+- Fix IoT Studio BatchBindProductsIntoProject API return datatype.
+- Fix IoT Studio BatchUnbindProjectDevices API return datatype.
+- Fix IoT Studio BatchUnbindProjectProducts API return datatype.
+
+2021-02-08 Version: patch
 - Add username for RunCommand and InvokeCommand.
 
 2021-02-08 Version: patch

@@ -46,11 +46,11 @@ void BatchBindDevicesIntoProjectResult::parse(const std::string &payload)
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
+		data_ = value["Data"].asString() == "true";
 
 }
 
-std::string BatchBindDevicesIntoProjectResult::getData()const
+bool BatchBindDevicesIntoProjectResult::getData()const
 {
 	return data_;
 }

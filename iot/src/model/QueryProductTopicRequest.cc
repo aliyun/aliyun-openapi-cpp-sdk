@@ -27,6 +27,17 @@ QueryProductTopicRequest::QueryProductTopicRequest() :
 QueryProductTopicRequest::~QueryProductTopicRequest()
 {}
 
+std::string QueryProductTopicRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryProductTopicRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryProductTopicRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void QueryProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryProductTopicRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryProductTopicRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryProductTopicRequest::getIotInstanceId()const
