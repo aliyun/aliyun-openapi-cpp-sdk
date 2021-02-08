@@ -122,3 +122,14 @@ void ModifyInstanceMaintenanceAttributesRequest::setInstanceId(const std::vector
 	}
 }
 
+bool ModifyInstanceMaintenanceAttributesRequest::getNotifyOnMaintenance()const
+{
+	return notifyOnMaintenance_;
+}
+
+void ModifyInstanceMaintenanceAttributesRequest::setNotifyOnMaintenance(bool notifyOnMaintenance)
+{
+	notifyOnMaintenance_ = notifyOnMaintenance;
+	setParameter("NotifyOnMaintenance", notifyOnMaintenance ? "true" : "false");
+}
+

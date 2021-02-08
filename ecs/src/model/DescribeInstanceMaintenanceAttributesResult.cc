@@ -45,6 +45,8 @@ void DescribeInstanceMaintenanceAttributesResult::parse(const std::string &paylo
 		MaintenanceAttribute maintenanceAttributesObject;
 		if(!valueMaintenanceAttributesMaintenanceAttribute["InstanceId"].isNull())
 			maintenanceAttributesObject.instanceId = valueMaintenanceAttributesMaintenanceAttribute["InstanceId"].asString();
+		if(!valueMaintenanceAttributesMaintenanceAttribute["NotifyOnMaintenance"].isNull())
+			maintenanceAttributesObject.notifyOnMaintenance = valueMaintenanceAttributesMaintenanceAttribute["NotifyOnMaintenance"].asString() == "true";
 		auto allMaintenanceWindowsNode = valueMaintenanceAttributesMaintenanceAttribute["MaintenanceWindows"]["MaintenanceWindow"];
 		for (auto valueMaintenanceAttributesMaintenanceAttributeMaintenanceWindowsMaintenanceWindow : allMaintenanceWindowsNode)
 		{

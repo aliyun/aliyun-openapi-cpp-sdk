@@ -38,17 +38,6 @@ void DescribeRecommendInstanceTypeRequest::setResourceOwnerId(long resourceOwner
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int DescribeRecommendInstanceTypeRequest::getInstancePpsRx()const
-{
-	return instancePpsRx_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setInstancePpsRx(int instancePpsRx)
-{
-	instancePpsRx_ = instancePpsRx;
-	setParameter("InstancePpsRx", std::to_string(instancePpsRx));
-}
-
 float DescribeRecommendInstanceTypeRequest::getMemory()const
 {
 	return memory_;
@@ -58,17 +47,6 @@ void DescribeRecommendInstanceTypeRequest::setMemory(float memory)
 {
 	memory_ = memory;
 	setParameter("Memory", std::to_string(memory));
-}
-
-int DescribeRecommendInstanceTypeRequest::getInstancePpsTx()const
-{
-	return instancePpsTx_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setInstancePpsTx(int instancePpsTx)
-{
-	instancePpsTx_ = instancePpsTx;
-	setParameter("InstancePpsTx", std::to_string(instancePpsTx));
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getIoOptimized()const
@@ -104,17 +82,6 @@ void DescribeRecommendInstanceTypeRequest::setScene(const std::string& scene)
 	setParameter("Scene", scene);
 }
 
-int DescribeRecommendInstanceTypeRequest::getInstanceBandwidthTx()const
-{
-	return instanceBandwidthTx_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setInstanceBandwidthTx(int instanceBandwidthTx)
-{
-	instanceBandwidthTx_ = instanceBandwidthTx;
-	setParameter("InstanceBandwidthTx", std::to_string(instanceBandwidthTx));
-}
-
 int DescribeRecommendInstanceTypeRequest::getCores()const
 {
 	return cores_;
@@ -124,17 +91,6 @@ void DescribeRecommendInstanceTypeRequest::setCores(int cores)
 {
 	cores_ = cores;
 	setParameter("Cores", std::to_string(cores));
-}
-
-int DescribeRecommendInstanceTypeRequest::getInstanceBandwidthRx()const
-{
-	return instanceBandwidthRx_;
-}
-
-void DescribeRecommendInstanceTypeRequest::setInstanceBandwidthRx(int instanceBandwidthRx)
-{
-	instanceBandwidthRx_ = instanceBandwidthRx;
-	setParameter("InstanceBandwidthRx", std::to_string(instanceBandwidthRx));
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getRegionId()const
@@ -201,6 +157,17 @@ void DescribeRecommendInstanceTypeRequest::setResourceOwnerAccount(const std::st
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeRecommendInstanceTypeRequest::getZoneMatchMode()const
+{
+	return zoneMatchMode_;
+}
+
+void DescribeRecommendInstanceTypeRequest::setZoneMatchMode(const std::string& zoneMatchMode)
+{
+	zoneMatchMode_ = zoneMatchMode;
+	setParameter("ZoneMatchMode", zoneMatchMode);
 }
 
 std::string DescribeRecommendInstanceTypeRequest::getOwnerAccount()const

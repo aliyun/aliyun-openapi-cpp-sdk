@@ -37,24 +37,16 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getInstancePpsRx()const;
-				void setInstancePpsRx(int instancePpsRx);
 				float getMemory()const;
 				void setMemory(float memory);
-				int getInstancePpsTx()const;
-				void setInstancePpsTx(int instancePpsTx);
 				std::string getIoOptimized()const;
 				void setIoOptimized(const std::string& ioOptimized);
 				std::string getNetworkType()const;
 				void setNetworkType(const std::string& networkType);
 				std::string getScene()const;
 				void setScene(const std::string& scene);
-				int getInstanceBandwidthTx()const;
-				void setInstanceBandwidthTx(int instanceBandwidthTx);
 				int getCores()const;
 				void setCores(int cores);
-				int getInstanceBandwidthRx()const;
-				void setInstanceBandwidthRx(int instanceBandwidthRx);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getSystemDiskCategory()const;
@@ -67,6 +59,8 @@ namespace AlibabaCloud
 				void setMaxPrice(float maxPrice);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getZoneMatchMode()const;
+				void setZoneMatchMode(const std::string& zoneMatchMode);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::vector<std::string> getInstanceTypeFamily()const;
@@ -84,21 +78,18 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				int instancePpsRx_;
 				float memory_;
-				int instancePpsTx_;
 				std::string ioOptimized_;
 				std::string networkType_;
 				std::string scene_;
-				int instanceBandwidthTx_;
 				int cores_;
-				int instanceBandwidthRx_;
 				std::string regionId_;
 				std::string systemDiskCategory_;
 				std::string instanceType_;
 				std::string instanceChargeType_;
 				float maxPrice_;
 				std::string resourceOwnerAccount_;
+				std::string zoneMatchMode_;
 				std::string ownerAccount_;
 				std::vector<std::string> instanceTypeFamily_;
 				long ownerId_;

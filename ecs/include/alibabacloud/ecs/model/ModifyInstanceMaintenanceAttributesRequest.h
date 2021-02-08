@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::vector<std::string> getInstanceId()const;
 				void setInstanceId(const std::vector<std::string>& instanceId);
+				bool getNotifyOnMaintenance()const;
+				void setNotifyOnMaintenance(bool notifyOnMaintenance);
 
             private:
 				long resourceOwnerId_;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::vector<std::string> instanceId_;
+				bool notifyOnMaintenance_;
 
 			};
 		}

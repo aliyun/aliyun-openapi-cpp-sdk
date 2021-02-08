@@ -69,6 +69,8 @@ void DescribeSnapshotGroupsResult::parse(const std::string &payload)
 				snapshotsObject.sourceDiskType = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["SourceDiskType"].asString();
 			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccess"].isNull())
 				snapshotsObject.instantAccess = valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccess"].asString() == "true";
+			if(!valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccessRetentionDays"].isNull())
+				snapshotsObject.instantAccessRetentionDays = std::stoi(valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot["InstantAccessRetentionDays"].asString());
 			snapshotGroupsObject.snapshots.push_back(snapshotsObject);
 		}
 		snapshotGroups_.push_back(snapshotGroupsObject);

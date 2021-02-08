@@ -126,6 +126,17 @@ void RunCommandRequest::setContentEncoding(const std::string& contentEncoding)
 	setParameter("ContentEncoding", contentEncoding);
 }
 
+std::string RunCommandRequest::getWindowsPasswordName()const
+{
+	return windowsPasswordName_;
+}
+
+void RunCommandRequest::setWindowsPasswordName(const std::string& windowsPasswordName)
+{
+	windowsPasswordName_ = windowsPasswordName;
+	setParameter("WindowsPasswordName", windowsPasswordName);
+}
+
 bool RunCommandRequest::getKeepCommand()const
 {
 	return keepCommand_;

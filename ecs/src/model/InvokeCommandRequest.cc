@@ -71,6 +71,17 @@ void InvokeCommandRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string InvokeCommandRequest::getWindowsPasswordName()const
+{
+	return windowsPasswordName_;
+}
+
+void InvokeCommandRequest::setWindowsPasswordName(const std::string& windowsPasswordName)
+{
+	windowsPasswordName_ = windowsPasswordName;
+	setParameter("WindowsPasswordName", windowsPasswordName);
+}
+
 bool InvokeCommandRequest::getTimed()const
 {
 	return timed_;

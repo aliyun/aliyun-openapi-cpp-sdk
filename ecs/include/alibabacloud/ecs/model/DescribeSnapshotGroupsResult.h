@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						bool instantAccess;
 						std::string progress;
 						std::string sourceDiskType;
+						int instantAccessRetentionDays;
 						std::string sourceDiskId;
 					};
 					std::string status;

@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					ActionOnMaintenance actionOnMaintenance;
 					std::vector<MaintenanceAttribute::MaintenanceWindow> maintenanceWindows;
+					bool notifyOnMaintenance;
 				};
 
 

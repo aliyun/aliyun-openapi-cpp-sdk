@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setFrequency(const std::string& frequency);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getWindowsPasswordName()const;
+				void setWindowsPasswordName(const std::string& windowsPasswordName);
 				bool getTimed()const;
 				void setTimed(bool timed);
 				std::string getResourceOwnerAccount()const;
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string commandId_;
 				std::string frequency_;
 				std::string regionId_;
+				std::string windowsPasswordName_;
 				bool timed_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
