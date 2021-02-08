@@ -119,6 +119,8 @@ namespace AlibabaCloud
 					};
 					int personNumber;
 					std::vector<AttributesItem> attributes;
+					long height;
+					long width;
 					std::vector<BoxesItem> boxes;
 				};
 

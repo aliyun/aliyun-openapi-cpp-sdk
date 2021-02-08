@@ -42,6 +42,10 @@ void PedestrianDetectAttributeResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["PersonNumber"].isNull())
 		data_.personNumber = std::stoi(dataNode["PersonNumber"].asString());
+	if(!dataNode["Height"].isNull())
+		data_.height = std::stol(dataNode["Height"].asString());
+	if(!dataNode["Width"].isNull())
+		data_.width = std::stol(dataNode["Width"].asString());
 	auto allAttributesNode = dataNode["Attributes"]["AttributesItem"];
 	for (auto dataNodeAttributesAttributesItem : allAttributesNode)
 	{
