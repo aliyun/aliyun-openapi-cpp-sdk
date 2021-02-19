@@ -34,8 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct SlbSubDomain
 				{
+					struct LineAlgorithm
+					{
+						std::string line;
+						bool open;
+					};
 					std::string subDomain;
 					std::string type;
+					std::vector<SlbSubDomain::LineAlgorithm> lineAlgorithms;
 					long recordCount;
 					bool open;
 				};

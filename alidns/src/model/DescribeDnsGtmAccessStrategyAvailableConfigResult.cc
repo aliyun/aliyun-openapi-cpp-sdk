@@ -91,6 +91,15 @@ void DescribeDnsGtmAccessStrategyAvailableConfigResult::parse(const std::string 
 			domainAddrPoolsObject.addrCount = std::stoi(valueDomainAddrPoolsDomainAddrPool["AddrCount"].asString());
 		domainAddrPools_.push_back(domainAddrPoolsObject);
 	}
+	auto allSelectedIpv4Lines = value["SelectedIpv4Lines"]["SelectedIpv4Line"];
+	for (const auto &item : allSelectedIpv4Lines)
+		selectedIpv4Lines_.push_back(item.asString());
+	auto allSelectedIpv6Lines = value["SelectedIpv6Lines"]["SelectedIpv6Line"];
+	for (const auto &item : allSelectedIpv6Lines)
+		selectedIpv6Lines_.push_back(item.asString());
+	auto allSelectedDomainLines = value["SelectedDomainLines"]["SelectedDomainLine"];
+	for (const auto &item : allSelectedDomainLines)
+		selectedDomainLines_.push_back(item.asString());
 	if(!value["SuggestSetDefaultLine"].isNull())
 		suggestSetDefaultLine_ = value["SuggestSetDefaultLine"].asString() == "true";
 
@@ -106,6 +115,16 @@ std::vector<DescribeDnsGtmAccessStrategyAvailableConfigResult::DomainAddrPool> D
 	return domainAddrPools_;
 }
 
+std::vector<std::string> DescribeDnsGtmAccessStrategyAvailableConfigResult::getSelectedDomainLines()const
+{
+	return selectedDomainLines_;
+}
+
+std::vector<std::string> DescribeDnsGtmAccessStrategyAvailableConfigResult::getSelectedIpv4Lines()const
+{
+	return selectedIpv4Lines_;
+}
+
 std::vector<DescribeDnsGtmAccessStrategyAvailableConfigResult::Ipv6AddrPool> DescribeDnsGtmAccessStrategyAvailableConfigResult::getIpv6AddrPools()const
 {
 	return ipv6AddrPools_;
@@ -114,6 +133,11 @@ std::vector<DescribeDnsGtmAccessStrategyAvailableConfigResult::Ipv6AddrPool> Des
 std::vector<DescribeDnsGtmAccessStrategyAvailableConfigResult::Line> DescribeDnsGtmAccessStrategyAvailableConfigResult::getLines()const
 {
 	return lines_;
+}
+
+std::vector<std::string> DescribeDnsGtmAccessStrategyAvailableConfigResult::getSelectedIpv6Lines()const
+{
+	return selectedIpv6Lines_;
 }
 
 bool DescribeDnsGtmAccessStrategyAvailableConfigResult::getSuggestSetDefaultLine()const

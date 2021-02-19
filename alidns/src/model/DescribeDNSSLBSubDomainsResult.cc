@@ -51,6 +51,16 @@ void DescribeDNSSLBSubDomainsResult::parse(const std::string &payload)
 			slbSubDomainsObject.open = valueSlbSubDomainsSlbSubDomain["Open"].asString() == "true";
 		if(!valueSlbSubDomainsSlbSubDomain["Type"].isNull())
 			slbSubDomainsObject.type = valueSlbSubDomainsSlbSubDomain["Type"].asString();
+		auto allLineAlgorithmsNode = valueSlbSubDomainsSlbSubDomain["LineAlgorithms"]["LineAlgorithm"];
+		for (auto valueSlbSubDomainsSlbSubDomainLineAlgorithmsLineAlgorithm : allLineAlgorithmsNode)
+		{
+			SlbSubDomain::LineAlgorithm lineAlgorithmsObject;
+			if(!valueSlbSubDomainsSlbSubDomainLineAlgorithmsLineAlgorithm["Line"].isNull())
+				lineAlgorithmsObject.line = valueSlbSubDomainsSlbSubDomainLineAlgorithmsLineAlgorithm["Line"].asString();
+			if(!valueSlbSubDomainsSlbSubDomainLineAlgorithmsLineAlgorithm["Open"].isNull())
+				lineAlgorithmsObject.open = valueSlbSubDomainsSlbSubDomainLineAlgorithmsLineAlgorithm["Open"].asString() == "true";
+			slbSubDomainsObject.lineAlgorithms.push_back(lineAlgorithmsObject);
+		}
 		slbSubDomains_.push_back(slbSubDomainsObject);
 	}
 	if(!value["TotalCount"].isNull())

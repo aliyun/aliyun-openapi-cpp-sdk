@@ -65,8 +65,11 @@ namespace AlibabaCloud
 				~DescribeDnsGtmAccessStrategyAvailableConfigResult();
 				std::vector<Ipv4AddrPool> getIpv4AddrPools()const;
 				std::vector<DomainAddrPool> getDomainAddrPools()const;
+				std::vector<std::string> getSelectedDomainLines()const;
+				std::vector<std::string> getSelectedIpv4Lines()const;
 				std::vector<Ipv6AddrPool> getIpv6AddrPools()const;
 				std::vector<Line> getLines()const;
+				std::vector<std::string> getSelectedIpv6Lines()const;
 				bool getSuggestSetDefaultLine()const;
 
 			protected:
@@ -74,8 +77,11 @@ namespace AlibabaCloud
 			private:
 				std::vector<Ipv4AddrPool> ipv4AddrPools_;
 				std::vector<DomainAddrPool> domainAddrPools_;
+				std::vector<std::string> selectedDomainLines_;
+				std::vector<std::string> selectedIpv4Lines_;
 				std::vector<Ipv6AddrPool> ipv6AddrPools_;
 				std::vector<Line> lines_;
+				std::vector<std::string> selectedIpv6Lines_;
 				bool suggestSetDefaultLine_;
 
 			};

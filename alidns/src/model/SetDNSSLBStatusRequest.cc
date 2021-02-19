@@ -27,6 +27,17 @@ SetDNSSLBStatusRequest::SetDNSSLBStatusRequest() :
 SetDNSSLBStatusRequest::~SetDNSSLBStatusRequest()
 {}
 
+std::string SetDNSSLBStatusRequest::getLine()const
+{
+	return line_;
+}
+
+void SetDNSSLBStatusRequest::setLine(const std::string& line)
+{
+	line_ = line;
+	setParameter("Line", line);
+}
+
 std::string SetDNSSLBStatusRequest::getDomainName()const
 {
 	return domainName_;

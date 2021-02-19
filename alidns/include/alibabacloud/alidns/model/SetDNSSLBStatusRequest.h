@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				SetDNSSLBStatusRequest();
 				~SetDNSSLBStatusRequest();
 
+				std::string getLine()const;
+				void setLine(const std::string& line);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getType()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setOpen(bool open);
 
             private:
+				std::string line_;
 				std::string domainName_;
 				std::string type_;
 				std::string accessKeyId_;

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeDNSSLBSubDomainsRequest();
 				~DescribeDNSSLBSubDomainsRequest();
 
+				std::string getRr()const;
+				void setRr(const std::string& rr);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getPageNumber()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 
             private:
+				std::string rr_;
 				std::string domainName_;
 				long pageNumber_;
 				std::string accessKeyId_;

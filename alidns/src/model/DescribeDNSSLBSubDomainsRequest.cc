@@ -27,6 +27,17 @@ DescribeDNSSLBSubDomainsRequest::DescribeDNSSLBSubDomainsRequest() :
 DescribeDNSSLBSubDomainsRequest::~DescribeDNSSLBSubDomainsRequest()
 {}
 
+std::string DescribeDNSSLBSubDomainsRequest::getRr()const
+{
+	return rr_;
+}
+
+void DescribeDNSSLBSubDomainsRequest::setRr(const std::string& rr)
+{
+	rr_ = rr;
+	setParameter("Rr", rr);
+}
+
 std::string DescribeDNSSLBSubDomainsRequest::getDomainName()const
 {
 	return domainName_;
