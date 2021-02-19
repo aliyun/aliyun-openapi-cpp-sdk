@@ -14,93 +14,93 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/hitsdb/model/DescribeRegionsRequest.h>
+#include <alibabacloud/hitsdb/model/RestartHiTSDBInstanceRequest.h>
 
-using AlibabaCloud::Hitsdb::Model::DescribeRegionsRequest;
+using AlibabaCloud::Hitsdb::Model::RestartHiTSDBInstanceRequest;
 
-DescribeRegionsRequest::DescribeRegionsRequest() :
-	RpcServiceRequest("hitsdb", "2017-06-01", "DescribeRegions")
+RestartHiTSDBInstanceRequest::RestartHiTSDBInstanceRequest() :
+	RpcServiceRequest("hitsdb", "2017-06-01", "RestartHiTSDBInstance")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeRegionsRequest::~DescribeRegionsRequest()
+RestartHiTSDBInstanceRequest::~RestartHiTSDBInstanceRequest()
 {}
 
-long DescribeRegionsRequest::getResourceOwnerId()const
+long RestartHiTSDBInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
+void RestartHiTSDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRegionsRequest::getAccessKeyId()const
+std::string RestartHiTSDBInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
+void RestartHiTSDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeRegionsRequest::getSecurityToken()const
+std::string RestartHiTSDBInstanceRequest::getSecurityToken()const
 {
 	return securityToken_;
 }
 
-void DescribeRegionsRequest::setSecurityToken(const std::string& securityToken)
+void RestartHiTSDBInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeRegionsRequest::getResourceOwnerAccount()const
+std::string RestartHiTSDBInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void RestartHiTSDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeRegionsRequest::getOwnerAccount()const
+std::string RestartHiTSDBInstanceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
+void RestartHiTSDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeRegionsRequest::getOwnerId()const
+long RestartHiTSDBInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRegionsRequest::setOwnerId(long ownerId)
+void RestartHiTSDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRegionsRequest::getAcceptLanguage()const
+std::string RestartHiTSDBInstanceRequest::getInstanceId()const
 {
-	return acceptLanguage_;
+	return instanceId_;
 }
 
-void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
+void RestartHiTSDBInstanceRequest::setInstanceId(const std::string& instanceId)
 {
-	acceptLanguage_ = acceptLanguage;
-	setParameter("AcceptLanguage", acceptLanguage);
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 

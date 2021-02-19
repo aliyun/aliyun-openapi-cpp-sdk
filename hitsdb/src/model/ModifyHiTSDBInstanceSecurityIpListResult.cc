@@ -14,46 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/hitsdb/model/GetInstanceIpWhiteListResult.h>
+#include <alibabacloud/hitsdb/model/ModifyHiTSDBInstanceSecurityIpListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Hitsdb;
 using namespace AlibabaCloud::Hitsdb::Model;
 
-GetInstanceIpWhiteListResult::GetInstanceIpWhiteListResult() :
+ModifyHiTSDBInstanceSecurityIpListResult::ModifyHiTSDBInstanceSecurityIpListResult() :
 	ServiceResult()
 {}
 
-GetInstanceIpWhiteListResult::GetInstanceIpWhiteListResult(const std::string &payload) :
+ModifyHiTSDBInstanceSecurityIpListResult::ModifyHiTSDBInstanceSecurityIpListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetInstanceIpWhiteListResult::~GetInstanceIpWhiteListResult()
+ModifyHiTSDBInstanceSecurityIpListResult::~ModifyHiTSDBInstanceSecurityIpListResult()
 {}
 
-void GetInstanceIpWhiteListResult::parse(const std::string &payload)
+void ModifyHiTSDBInstanceSecurityIpListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allIpList = value["IpList"]["IpList"];
-	for (const auto &item : allIpList)
-		ipList_.push_back(item.asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
 
-}
-
-std::vector<std::string> GetInstanceIpWhiteListResult::getIpList()const
-{
-	return ipList_;
-}
-
-std::string GetInstanceIpWhiteListResult::getInstanceId()const
-{
-	return instanceId_;
 }
 

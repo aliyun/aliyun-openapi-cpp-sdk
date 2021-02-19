@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_SWITCHHITSDBINSTANCEPUBLICNETREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_SWITCHHITSDBINSTANCEPUBLICNETREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceEngineListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HITSDB_EXPORT SwitchHiTSDBInstancePublicNetRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetLindormInstanceEngineListRequest();
-				~GetLindormInstanceEngineListRequest();
+				SwitchHiTSDBInstancePublicNetRequest();
+				~SwitchHiTSDBInstancePublicNetRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				long getSwitchAction()const;
+				void setSwitchAction(long switchAction);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -56,7 +56,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string regionId_;
+				long switchAction_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
@@ -66,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_SWITCHHITSDBINSTANCEPUBLICNETREQUEST_H_
