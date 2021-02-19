@@ -1,3 +1,6 @@
+2021-02-19 Version: patch
+- Support some MergeRequest API.
+
 2021-02-08 Version: patch
 - Fix IoT Studio BatchBindDevicesIntoProject API return datatype.
 - Fix IoT Studio BatchBindProductsIntoProject API return datatype.
