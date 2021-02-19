@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
-#define ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
+#ifndef ALIBABACLOUD_SERVICEMESH_MODEL_SETSERVICEREGISTRYSOURCEREQUEST_H_
+#define ALIBABACLOUD_SERVICEMESH_MODEL_SETSERVICEREGISTRYSOURCEREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/servicemesh/ServicemeshExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SERVICEMESH_EXPORT GetDiagnosisResult : public ServiceResult
+			class ALIBABACLOUD_SERVICEMESH_EXPORT SetServiceRegistrySourceRequest : public RpcServiceRequest
 			{
+
 			public:
+				SetServiceRegistrySourceRequest();
+				~SetServiceRegistrySourceRequest();
 
+				std::string getServiceMeshId()const;
+				void setServiceMeshId(const std::string& serviceMeshId);
+				std::string getConfig()const;
+				void setConfig(const std::string& config);
 
-				GetDiagnosisResult();
-				explicit GetDiagnosisResult(const std::string &payload);
-				~GetDiagnosisResult();
-				std::string getStatus()const;
-				std::string getRunAt()const;
-				std::string getResult()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string status_;
-				std::string runAt_;
-				std::string result_;
+            private:
+				std::string serviceMeshId_;
+				std::string config_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
+#endif // !ALIBABACLOUD_SERVICEMESH_MODEL_SETSERVICEREGISTRYSOURCEREQUEST_H_

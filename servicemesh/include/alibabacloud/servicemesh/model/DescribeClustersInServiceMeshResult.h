@@ -34,18 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct Cluster
 				{
-					std::string vpcId;
+					struct AccessLogDashboardInfo
+					{
+						std::string title;
+						std::string url;
+					};
 					std::string clusterId;
-					std::string version;
-					std::string state;
 					std::string clusterDomain;
-					std::string creationTime;
-					std::string updateTime;
 					std::string sgId;
 					std::string clusterType;
+					std::vector<Cluster::AccessLogDashboardInfo> accessLogDashboards;
+					std::string name;
+					std::string vpcId;
+					std::string version;
+					std::string state;
+					std::string creationTime;
+					std::string updateTime;
 					std::string regionId;
 					std::string errorMessage;
-					std::string name;
 				};
 
 

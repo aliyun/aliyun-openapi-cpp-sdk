@@ -14,52 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/servicemesh/model/GetDiagnosisResult.h>
+#include <alibabacloud/servicemesh/model/GetAutoInjectionLabelSyncStatusResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Servicemesh;
 using namespace AlibabaCloud::Servicemesh::Model;
 
-GetDiagnosisResult::GetDiagnosisResult() :
+GetAutoInjectionLabelSyncStatusResult::GetAutoInjectionLabelSyncStatusResult() :
 	ServiceResult()
 {}
 
-GetDiagnosisResult::GetDiagnosisResult(const std::string &payload) :
+GetAutoInjectionLabelSyncStatusResult::GetAutoInjectionLabelSyncStatusResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetDiagnosisResult::~GetDiagnosisResult()
+GetAutoInjectionLabelSyncStatusResult::~GetAutoInjectionLabelSyncStatusResult()
 {}
 
-void GetDiagnosisResult::parse(const std::string &payload)
+void GetAutoInjectionLabelSyncStatusResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Result"].isNull())
-		result_ = value["Result"].asString();
-	if(!value["RunAt"].isNull())
-		runAt_ = value["RunAt"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 
 }
 
-std::string GetDiagnosisResult::getStatus()const
+std::string GetAutoInjectionLabelSyncStatusResult::getStatus()const
 {
 	return status_;
-}
-
-std::string GetDiagnosisResult::getRunAt()const
-{
-	return runAt_;
-}
-
-std::string GetDiagnosisResult::getResult()const
-{
-	return result_;
 }
 

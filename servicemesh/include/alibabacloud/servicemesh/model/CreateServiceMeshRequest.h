@@ -45,8 +45,12 @@ namespace AlibabaCloud
 				void setOpaEnabled(bool opaEnabled);
 				std::string getProxyLimitMemory()const;
 				void setProxyLimitMemory(const std::string& proxyLimitMemory);
+				bool getCustomizedPrometheus()const;
+				void setCustomizedPrometheus(bool customizedPrometheus);
 				bool getStrictMTLS()const;
 				void setStrictMTLS(bool strictMTLS);
+				bool getAccessLogEnabled()const;
+				void setAccessLogEnabled(bool accessLogEnabled);
 				std::string getOPALogLevel()const;
 				void setOPALogLevel(const std::string& oPALogLevel);
 				std::string getExcludeIPRanges()const;
@@ -61,6 +65,8 @@ namespace AlibabaCloud
 				void setExcludeInboundPorts(const std::string& excludeInboundPorts);
 				std::string getOPALimitMemory()const;
 				void setOPALimitMemory(const std::string& oPALimitMemory);
+				std::string getPrometheusUrl()const;
+				void setPrometheusUrl(const std::string& prometheusUrl);
 				std::string getVSwitches()const;
 				void setVSwitches(const std::string& vSwitches);
 				bool getCADisableSecretAutoGeneration()const;
@@ -93,6 +99,8 @@ namespace AlibabaCloud
 				void setTraceSampling(float traceSampling);
 				std::string getAppNamespaces()const;
 				void setAppNamespaces(const std::string& appNamespaces);
+				bool getKialiEnabled()const;
+				void setKialiEnabled(bool kialiEnabled);
 				bool getPilotPublicEip()const;
 				void setPilotPublicEip(bool pilotPublicEip);
 				std::string getAuditProject()const;
@@ -110,7 +118,9 @@ namespace AlibabaCloud
 				bool openAgentPolicy_;
 				bool opaEnabled_;
 				std::string proxyLimitMemory_;
+				bool customizedPrometheus_;
 				bool strictMTLS_;
+				bool accessLogEnabled_;
 				std::string oPALogLevel_;
 				std::string excludeIPRanges_;
 				std::string istioVersion_;
@@ -118,6 +128,7 @@ namespace AlibabaCloud
 				std::string includeIPRanges_;
 				std::string excludeInboundPorts_;
 				std::string oPALimitMemory_;
+				std::string prometheusUrl_;
 				std::string vSwitches_;
 				bool cADisableSecretAutoGeneration_;
 				std::string cAListenedNamespaces_;
@@ -134,6 +145,7 @@ namespace AlibabaCloud
 				bool apiServerPublicEip_;
 				float traceSampling_;
 				std::string appNamespaces_;
+				bool kialiEnabled_;
 				bool pilotPublicEip_;
 				std::string auditProject_;
 				std::string outboundTrafficPolicy_;

@@ -49,6 +49,8 @@ set(servicemesh_public_header_model
 	include/alibabacloud/servicemesh/model/DescribeServiceMeshesResult.h
 	include/alibabacloud/servicemesh/model/DescribeUpgradeVersionRequest.h
 	include/alibabacloud/servicemesh/model/DescribeUpgradeVersionResult.h
+	include/alibabacloud/servicemesh/model/GetAutoInjectionLabelSyncStatusRequest.h
+	include/alibabacloud/servicemesh/model/GetAutoInjectionLabelSyncStatusResult.h
 	include/alibabacloud/servicemesh/model/GetDiagnosisRequest.h
 	include/alibabacloud/servicemesh/model/GetDiagnosisResult.h
 	include/alibabacloud/servicemesh/model/GetRegisteredServiceEndpointsRequest.h
@@ -59,6 +61,8 @@ set(servicemesh_public_header_model
 	include/alibabacloud/servicemesh/model/GetRegisteredServicesResult.h
 	include/alibabacloud/servicemesh/model/GetServiceMeshSlbRequest.h
 	include/alibabacloud/servicemesh/model/GetServiceMeshSlbResult.h
+	include/alibabacloud/servicemesh/model/GetServiceRegistrySourceRequest.h
+	include/alibabacloud/servicemesh/model/GetServiceRegistrySourceResult.h
 	include/alibabacloud/servicemesh/model/GetVmAppMeshInfoRequest.h
 	include/alibabacloud/servicemesh/model/GetVmAppMeshInfoResult.h
 	include/alibabacloud/servicemesh/model/GetVmMetaRequest.h
@@ -69,6 +73,8 @@ set(servicemesh_public_header_model
 	include/alibabacloud/servicemesh/model/RemoveVmAppFromMeshResult.h
 	include/alibabacloud/servicemesh/model/RunDiagnosisRequest.h
 	include/alibabacloud/servicemesh/model/RunDiagnosisResult.h
+	include/alibabacloud/servicemesh/model/SetServiceRegistrySourceRequest.h
+	include/alibabacloud/servicemesh/model/SetServiceRegistrySourceResult.h
 	include/alibabacloud/servicemesh/model/UpdateIstioInjectionConfigRequest.h
 	include/alibabacloud/servicemesh/model/UpdateIstioInjectionConfigResult.h
 	include/alibabacloud/servicemesh/model/UpdateMeshFeatureRequest.h
@@ -106,6 +112,8 @@ set(servicemesh_src
 	src/model/DescribeServiceMeshesResult.cc
 	src/model/DescribeUpgradeVersionRequest.cc
 	src/model/DescribeUpgradeVersionResult.cc
+	src/model/GetAutoInjectionLabelSyncStatusRequest.cc
+	src/model/GetAutoInjectionLabelSyncStatusResult.cc
 	src/model/GetDiagnosisRequest.cc
 	src/model/GetDiagnosisResult.cc
 	src/model/GetRegisteredServiceEndpointsRequest.cc
@@ -116,6 +124,8 @@ set(servicemesh_src
 	src/model/GetRegisteredServicesResult.cc
 	src/model/GetServiceMeshSlbRequest.cc
 	src/model/GetServiceMeshSlbResult.cc
+	src/model/GetServiceRegistrySourceRequest.cc
+	src/model/GetServiceRegistrySourceResult.cc
 	src/model/GetVmAppMeshInfoRequest.cc
 	src/model/GetVmAppMeshInfoResult.cc
 	src/model/GetVmMetaRequest.cc
@@ -126,6 +136,8 @@ set(servicemesh_src
 	src/model/RemoveVmAppFromMeshResult.cc
 	src/model/RunDiagnosisRequest.cc
 	src/model/RunDiagnosisResult.cc
+	src/model/SetServiceRegistrySourceRequest.cc
+	src/model/SetServiceRegistrySourceResult.cc
 	src/model/UpdateIstioInjectionConfigRequest.cc
 	src/model/UpdateIstioInjectionConfigResult.cc
 	src/model/UpdateMeshFeatureRequest.cc

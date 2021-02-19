@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/servicemesh/model/GetDiagnosisResult.h>
+#include <alibabacloud/servicemesh/model/SetServiceRegistrySourceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Servicemesh;
 using namespace AlibabaCloud::Servicemesh::Model;
 
-GetDiagnosisResult::GetDiagnosisResult() :
+SetServiceRegistrySourceResult::SetServiceRegistrySourceResult() :
 	ServiceResult()
 {}
 
-GetDiagnosisResult::GetDiagnosisResult(const std::string &payload) :
+SetServiceRegistrySourceResult::SetServiceRegistrySourceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetDiagnosisResult::~GetDiagnosisResult()
+SetServiceRegistrySourceResult::~SetServiceRegistrySourceResult()
 {}
 
-void GetDiagnosisResult::parse(const std::string &payload)
+void SetServiceRegistrySourceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -41,24 +41,10 @@ void GetDiagnosisResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Result"].isNull())
 		result_ = value["Result"].asString();
-	if(!value["RunAt"].isNull())
-		runAt_ = value["RunAt"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
 
 }
 
-std::string GetDiagnosisResult::getStatus()const
-{
-	return status_;
-}
-
-std::string GetDiagnosisResult::getRunAt()const
-{
-	return runAt_;
-}
-
-std::string GetDiagnosisResult::getResult()const
+std::string SetServiceRegistrySourceResult::getResult()const
 {
 	return result_;
 }

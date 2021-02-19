@@ -106,16 +106,34 @@ namespace AlibabaCloud
 								std::string requestCPU;
 								std::string sidecarInjectorWebhookAsYaml;
 							};
+							struct Kiali
+							{
+								bool enabled;
+								std::string url;
+							};
+							struct Prometheus
+							{
+								bool useExternal;
+								std::string externalUrl;
+							};
+							struct AccessLog
+							{
+								bool enabled;
+							};
 							Pilot pilot;
-							SidecarInjector sidecarInjector;
+							AccessLog accessLog;
 							OPA oPA;
+							Prometheus prometheus;
+							bool telemetry;
+							std::string outboundTrafficPolicy;
+							std::string edition;
+							SidecarInjector sidecarInjector;
 							Audit audit;
 							Proxy proxy;
+							Kiali kiali;
 							std::string includeIPRanges;
 							bool enableLocalityLB;
 							bool tracing;
-							bool telemetry;
-							std::string outboundTrafficPolicy;
 							bool customizedZipkin;
 						};
 						struct Network

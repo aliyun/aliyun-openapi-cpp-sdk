@@ -555,6 +555,42 @@ ServicemeshClient::DescribeUpgradeVersionOutcomeCallable ServicemeshClient::desc
 	return task->get_future();
 }
 
+ServicemeshClient::GetAutoInjectionLabelSyncStatusOutcome ServicemeshClient::getAutoInjectionLabelSyncStatus(const GetAutoInjectionLabelSyncStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAutoInjectionLabelSyncStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAutoInjectionLabelSyncStatusOutcome(GetAutoInjectionLabelSyncStatusResult(outcome.result()));
+	else
+		return GetAutoInjectionLabelSyncStatusOutcome(outcome.error());
+}
+
+void ServicemeshClient::getAutoInjectionLabelSyncStatusAsync(const GetAutoInjectionLabelSyncStatusRequest& request, const GetAutoInjectionLabelSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAutoInjectionLabelSyncStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ServicemeshClient::GetAutoInjectionLabelSyncStatusOutcomeCallable ServicemeshClient::getAutoInjectionLabelSyncStatusCallable(const GetAutoInjectionLabelSyncStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAutoInjectionLabelSyncStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getAutoInjectionLabelSyncStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ServicemeshClient::GetDiagnosisOutcome ServicemeshClient::getDiagnosis(const GetDiagnosisRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -735,6 +771,42 @@ ServicemeshClient::GetServiceMeshSlbOutcomeCallable ServicemeshClient::getServic
 	return task->get_future();
 }
 
+ServicemeshClient::GetServiceRegistrySourceOutcome ServicemeshClient::getServiceRegistrySource(const GetServiceRegistrySourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceRegistrySourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceRegistrySourceOutcome(GetServiceRegistrySourceResult(outcome.result()));
+	else
+		return GetServiceRegistrySourceOutcome(outcome.error());
+}
+
+void ServicemeshClient::getServiceRegistrySourceAsync(const GetServiceRegistrySourceRequest& request, const GetServiceRegistrySourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceRegistrySource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ServicemeshClient::GetServiceRegistrySourceOutcomeCallable ServicemeshClient::getServiceRegistrySourceCallable(const GetServiceRegistrySourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceRegistrySourceOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceRegistrySource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ServicemeshClient::GetVmAppMeshInfoOutcome ServicemeshClient::getVmAppMeshInfo(const GetVmAppMeshInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +981,42 @@ ServicemeshClient::RunDiagnosisOutcomeCallable ServicemeshClient::runDiagnosisCa
 			[this, request]()
 			{
 			return this->runDiagnosis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ServicemeshClient::SetServiceRegistrySourceOutcome ServicemeshClient::setServiceRegistrySource(const SetServiceRegistrySourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetServiceRegistrySourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetServiceRegistrySourceOutcome(SetServiceRegistrySourceResult(outcome.result()));
+	else
+		return SetServiceRegistrySourceOutcome(outcome.error());
+}
+
+void ServicemeshClient::setServiceRegistrySourceAsync(const SetServiceRegistrySourceRequest& request, const SetServiceRegistrySourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setServiceRegistrySource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ServicemeshClient::SetServiceRegistrySourceOutcomeCallable ServicemeshClient::setServiceRegistrySourceCallable(const SetServiceRegistrySourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetServiceRegistrySourceOutcome()>>(
+			[this, request]()
+			{
+			return this->setServiceRegistrySource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

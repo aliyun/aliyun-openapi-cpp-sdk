@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
-#define ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
+#ifndef ALIBABACLOUD_SERVICEMESH_MODEL_SETSERVICEREGISTRYSOURCERESULT_H_
+#define ALIBABACLOUD_SERVICEMESH_MODEL_SETSERVICEREGISTRYSOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SERVICEMESH_EXPORT GetDiagnosisResult : public ServiceResult
+			class ALIBABACLOUD_SERVICEMESH_EXPORT SetServiceRegistrySourceResult : public ServiceResult
 			{
 			public:
 
 
-				GetDiagnosisResult();
-				explicit GetDiagnosisResult(const std::string &payload);
-				~GetDiagnosisResult();
-				std::string getStatus()const;
-				std::string getRunAt()const;
+				SetServiceRegistrySourceResult();
+				explicit SetServiceRegistrySourceResult(const std::string &payload);
+				~SetServiceRegistrySourceResult();
 				std::string getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
-				std::string runAt_;
 				std::string result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
+#endif // !ALIBABACLOUD_SERVICEMESH_MODEL_SETSERVICEREGISTRYSOURCERESULT_H_

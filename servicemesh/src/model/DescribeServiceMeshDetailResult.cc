@@ -89,6 +89,8 @@ void DescribeServiceMeshDetailResult::parse(const std::string &payload)
 		serviceMesh_.spec.meshConfig.outboundTrafficPolicy = meshConfigNode["OutboundTrafficPolicy"].asString();
 	if(!meshConfigNode["IncludeIPRanges"].isNull())
 		serviceMesh_.spec.meshConfig.includeIPRanges = meshConfigNode["IncludeIPRanges"].asString();
+	if(!meshConfigNode["Edition"].isNull())
+		serviceMesh_.spec.meshConfig.edition = meshConfigNode["Edition"].asString();
 	auto pilotNode = meshConfigNode["Pilot"];
 	if(!pilotNode["TraceSampling"].isNull())
 		serviceMesh_.spec.meshConfig.pilot.traceSampling = std::stof(pilotNode["TraceSampling"].asString());
@@ -143,6 +145,19 @@ void DescribeServiceMeshDetailResult::parse(const std::string &payload)
 		serviceMesh_.spec.meshConfig.sidecarInjector.initCNIConfiguration.enabled = initCNIConfigurationNode["Enabled"].asString() == "true";
 	if(!initCNIConfigurationNode["ExcludeNamespaces"].isNull())
 		serviceMesh_.spec.meshConfig.sidecarInjector.initCNIConfiguration.excludeNamespaces = initCNIConfigurationNode["ExcludeNamespaces"].asString();
+	auto kialiNode = meshConfigNode["Kiali"];
+	if(!kialiNode["Enabled"].isNull())
+		serviceMesh_.spec.meshConfig.kiali.enabled = kialiNode["Enabled"].asString() == "true";
+	if(!kialiNode["Url"].isNull())
+		serviceMesh_.spec.meshConfig.kiali.url = kialiNode["Url"].asString();
+	auto prometheusNode = meshConfigNode["Prometheus"];
+	if(!prometheusNode["UseExternal"].isNull())
+		serviceMesh_.spec.meshConfig.prometheus.useExternal = prometheusNode["UseExternal"].asString() == "true";
+	if(!prometheusNode["ExternalUrl"].isNull())
+		serviceMesh_.spec.meshConfig.prometheus.externalUrl = prometheusNode["ExternalUrl"].asString();
+	auto accessLogNode = meshConfigNode["AccessLog"];
+	if(!accessLogNode["Enabled"].isNull())
+		serviceMesh_.spec.meshConfig.accessLog.enabled = accessLogNode["Enabled"].asString() == "true";
 	auto networkNode = specNode["Network"];
 	if(!networkNode["SecurityGroupId"].isNull())
 		serviceMesh_.spec.network.securityGroupId = networkNode["SecurityGroupId"].asString();

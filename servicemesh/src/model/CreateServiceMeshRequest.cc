@@ -82,6 +82,17 @@ void CreateServiceMeshRequest::setProxyLimitMemory(const std::string& proxyLimit
 	setBodyParameter("ProxyLimitMemory", proxyLimitMemory);
 }
 
+bool CreateServiceMeshRequest::getCustomizedPrometheus()const
+{
+	return customizedPrometheus_;
+}
+
+void CreateServiceMeshRequest::setCustomizedPrometheus(bool customizedPrometheus)
+{
+	customizedPrometheus_ = customizedPrometheus;
+	setBodyParameter("CustomizedPrometheus", customizedPrometheus ? "true" : "false");
+}
+
 bool CreateServiceMeshRequest::getStrictMTLS()const
 {
 	return strictMTLS_;
@@ -91,6 +102,17 @@ void CreateServiceMeshRequest::setStrictMTLS(bool strictMTLS)
 {
 	strictMTLS_ = strictMTLS;
 	setBodyParameter("StrictMTLS", strictMTLS ? "true" : "false");
+}
+
+bool CreateServiceMeshRequest::getAccessLogEnabled()const
+{
+	return accessLogEnabled_;
+}
+
+void CreateServiceMeshRequest::setAccessLogEnabled(bool accessLogEnabled)
+{
+	accessLogEnabled_ = accessLogEnabled;
+	setBodyParameter("AccessLogEnabled", accessLogEnabled ? "true" : "false");
 }
 
 std::string CreateServiceMeshRequest::getOPALogLevel()const
@@ -168,6 +190,17 @@ void CreateServiceMeshRequest::setOPALimitMemory(const std::string& oPALimitMemo
 {
 	oPALimitMemory_ = oPALimitMemory;
 	setBodyParameter("OPALimitMemory", oPALimitMemory);
+}
+
+std::string CreateServiceMeshRequest::getPrometheusUrl()const
+{
+	return prometheusUrl_;
+}
+
+void CreateServiceMeshRequest::setPrometheusUrl(const std::string& prometheusUrl)
+{
+	prometheusUrl_ = prometheusUrl;
+	setBodyParameter("PrometheusUrl", prometheusUrl);
 }
 
 std::string CreateServiceMeshRequest::getVSwitches()const
@@ -344,6 +377,17 @@ void CreateServiceMeshRequest::setAppNamespaces(const std::string& appNamespaces
 {
 	appNamespaces_ = appNamespaces;
 	setBodyParameter("AppNamespaces", appNamespaces);
+}
+
+bool CreateServiceMeshRequest::getKialiEnabled()const
+{
+	return kialiEnabled_;
+}
+
+void CreateServiceMeshRequest::setKialiEnabled(bool kialiEnabled)
+{
+	kialiEnabled_ = kialiEnabled;
+	setBodyParameter("KialiEnabled", kialiEnabled ? "true" : "false");
 }
 
 bool CreateServiceMeshRequest::getPilotPublicEip()const

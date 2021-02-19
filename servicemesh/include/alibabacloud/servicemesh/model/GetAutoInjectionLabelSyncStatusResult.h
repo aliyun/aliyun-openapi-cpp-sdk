@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
-#define ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
+#ifndef ALIBABACLOUD_SERVICEMESH_MODEL_GETAUTOINJECTIONLABELSYNCSTATUSRESULT_H_
+#define ALIBABACLOUD_SERVICEMESH_MODEL_GETAUTOINJECTIONLABELSYNCSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SERVICEMESH_EXPORT GetDiagnosisResult : public ServiceResult
+			class ALIBABACLOUD_SERVICEMESH_EXPORT GetAutoInjectionLabelSyncStatusResult : public ServiceResult
 			{
 			public:
 
 
-				GetDiagnosisResult();
-				explicit GetDiagnosisResult(const std::string &payload);
-				~GetDiagnosisResult();
+				GetAutoInjectionLabelSyncStatusResult();
+				explicit GetAutoInjectionLabelSyncStatusResult(const std::string &payload);
+				~GetAutoInjectionLabelSyncStatusResult();
 				std::string getStatus()const;
-				std::string getRunAt()const;
-				std::string getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
-				std::string runAt_;
-				std::string result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SERVICEMESH_MODEL_GETDIAGNOSISRESULT_H_
+#endif // !ALIBABACLOUD_SERVICEMESH_MODEL_GETAUTOINJECTIONLABELSYNCSTATUSRESULT_H_

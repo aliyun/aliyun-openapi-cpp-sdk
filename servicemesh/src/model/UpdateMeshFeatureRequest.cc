@@ -82,6 +82,17 @@ void UpdateMeshFeatureRequest::setProxyLimitMemory(const std::string& proxyLimit
 	setBodyParameter("ProxyLimitMemory", proxyLimitMemory);
 }
 
+bool UpdateMeshFeatureRequest::getCustomizedPrometheus()const
+{
+	return customizedPrometheus_;
+}
+
+void UpdateMeshFeatureRequest::setCustomizedPrometheus(bool customizedPrometheus)
+{
+	customizedPrometheus_ = customizedPrometheus;
+	setBodyParameter("CustomizedPrometheus", customizedPrometheus ? "true" : "false");
+}
+
 std::string UpdateMeshFeatureRequest::getCniExcludeNamespaces()const
 {
 	return cniExcludeNamespaces_;
@@ -91,6 +102,17 @@ void UpdateMeshFeatureRequest::setCniExcludeNamespaces(const std::string& cniExc
 {
 	cniExcludeNamespaces_ = cniExcludeNamespaces;
 	setBodyParameter("CniExcludeNamespaces", cniExcludeNamespaces);
+}
+
+bool UpdateMeshFeatureRequest::getAccessLogEnabled()const
+{
+	return accessLogEnabled_;
+}
+
+void UpdateMeshFeatureRequest::setAccessLogEnabled(bool accessLogEnabled)
+{
+	accessLogEnabled_ = accessLogEnabled;
+	setBodyParameter("AccessLogEnabled", accessLogEnabled ? "true" : "false");
 }
 
 std::string UpdateMeshFeatureRequest::getOPALogLevel()const
@@ -168,6 +190,17 @@ void UpdateMeshFeatureRequest::setOPALimitMemory(const std::string& oPALimitMemo
 {
 	oPALimitMemory_ = oPALimitMemory;
 	setBodyParameter("OPALimitMemory", oPALimitMemory);
+}
+
+std::string UpdateMeshFeatureRequest::getPrometheusUrl()const
+{
+	return prometheusUrl_;
+}
+
+void UpdateMeshFeatureRequest::setPrometheusUrl(const std::string& prometheusUrl)
+{
+	prometheusUrl_ = prometheusUrl;
+	setBodyParameter("PrometheusUrl", prometheusUrl);
 }
 
 bool UpdateMeshFeatureRequest::getCADisableSecretAutoGeneration()const
@@ -377,6 +410,17 @@ void UpdateMeshFeatureRequest::setAppNamespaces(const std::string& appNamespaces
 {
 	appNamespaces_ = appNamespaces;
 	setBodyParameter("AppNamespaces", appNamespaces);
+}
+
+bool UpdateMeshFeatureRequest::getKialiEnabled()const
+{
+	return kialiEnabled_;
+}
+
+void UpdateMeshFeatureRequest::setKialiEnabled(bool kialiEnabled)
+{
+	kialiEnabled_ = kialiEnabled;
+	setBodyParameter("KialiEnabled", kialiEnabled ? "true" : "false");
 }
 
 bool UpdateMeshFeatureRequest::getPilotPublicEip()const

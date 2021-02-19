@@ -67,6 +67,16 @@ void DescribeClustersInServiceMeshResult::parse(const std::string &payload)
 			clustersObject.sgId = valueClustersCluster["SgId"].asString();
 		if(!valueClustersCluster["ClusterDomain"].isNull())
 			clustersObject.clusterDomain = valueClustersCluster["ClusterDomain"].asString();
+		auto allAccessLogDashboardsNode = valueClustersCluster["AccessLogDashboards"]["AccessLogDashboardInfo"];
+		for (auto valueClustersClusterAccessLogDashboardsAccessLogDashboardInfo : allAccessLogDashboardsNode)
+		{
+			Cluster::AccessLogDashboardInfo accessLogDashboardsObject;
+			if(!valueClustersClusterAccessLogDashboardsAccessLogDashboardInfo["Title"].isNull())
+				accessLogDashboardsObject.title = valueClustersClusterAccessLogDashboardsAccessLogDashboardInfo["Title"].asString();
+			if(!valueClustersClusterAccessLogDashboardsAccessLogDashboardInfo["Url"].isNull())
+				accessLogDashboardsObject.url = valueClustersClusterAccessLogDashboardsAccessLogDashboardInfo["Url"].asString();
+			clustersObject.accessLogDashboards.push_back(accessLogDashboardsObject);
+		}
 		clusters_.push_back(clustersObject);
 	}
 

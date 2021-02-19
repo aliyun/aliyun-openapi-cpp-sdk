@@ -50,6 +50,8 @@
 #include "model/DescribeServiceMeshesResult.h"
 #include "model/DescribeUpgradeVersionRequest.h"
 #include "model/DescribeUpgradeVersionResult.h"
+#include "model/GetAutoInjectionLabelSyncStatusRequest.h"
+#include "model/GetAutoInjectionLabelSyncStatusResult.h"
 #include "model/GetDiagnosisRequest.h"
 #include "model/GetDiagnosisResult.h"
 #include "model/GetRegisteredServiceEndpointsRequest.h"
@@ -60,6 +62,8 @@
 #include "model/GetRegisteredServicesResult.h"
 #include "model/GetServiceMeshSlbRequest.h"
 #include "model/GetServiceMeshSlbResult.h"
+#include "model/GetServiceRegistrySourceRequest.h"
+#include "model/GetServiceRegistrySourceResult.h"
 #include "model/GetVmAppMeshInfoRequest.h"
 #include "model/GetVmAppMeshInfoResult.h"
 #include "model/GetVmMetaRequest.h"
@@ -70,6 +74,8 @@
 #include "model/RemoveVmAppFromMeshResult.h"
 #include "model/RunDiagnosisRequest.h"
 #include "model/RunDiagnosisResult.h"
+#include "model/SetServiceRegistrySourceRequest.h"
+#include "model/SetServiceRegistrySourceResult.h"
 #include "model/UpdateIstioInjectionConfigRequest.h"
 #include "model/UpdateIstioInjectionConfigResult.h"
 #include "model/UpdateMeshFeatureRequest.h"
@@ -127,6 +133,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUpgradeVersionResult> DescribeUpgradeVersionOutcome;
 			typedef std::future<DescribeUpgradeVersionOutcome> DescribeUpgradeVersionOutcomeCallable;
 			typedef std::function<void(const ServicemeshClient*, const Model::DescribeUpgradeVersionRequest&, const DescribeUpgradeVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradeVersionAsyncHandler;
+			typedef Outcome<Error, Model::GetAutoInjectionLabelSyncStatusResult> GetAutoInjectionLabelSyncStatusOutcome;
+			typedef std::future<GetAutoInjectionLabelSyncStatusOutcome> GetAutoInjectionLabelSyncStatusOutcomeCallable;
+			typedef std::function<void(const ServicemeshClient*, const Model::GetAutoInjectionLabelSyncStatusRequest&, const GetAutoInjectionLabelSyncStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAutoInjectionLabelSyncStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetDiagnosisResult> GetDiagnosisOutcome;
 			typedef std::future<GetDiagnosisOutcome> GetDiagnosisOutcomeCallable;
 			typedef std::function<void(const ServicemeshClient*, const Model::GetDiagnosisRequest&, const GetDiagnosisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDiagnosisAsyncHandler;
@@ -142,6 +151,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetServiceMeshSlbResult> GetServiceMeshSlbOutcome;
 			typedef std::future<GetServiceMeshSlbOutcome> GetServiceMeshSlbOutcomeCallable;
 			typedef std::function<void(const ServicemeshClient*, const Model::GetServiceMeshSlbRequest&, const GetServiceMeshSlbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceMeshSlbAsyncHandler;
+			typedef Outcome<Error, Model::GetServiceRegistrySourceResult> GetServiceRegistrySourceOutcome;
+			typedef std::future<GetServiceRegistrySourceOutcome> GetServiceRegistrySourceOutcomeCallable;
+			typedef std::function<void(const ServicemeshClient*, const Model::GetServiceRegistrySourceRequest&, const GetServiceRegistrySourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceRegistrySourceAsyncHandler;
 			typedef Outcome<Error, Model::GetVmAppMeshInfoResult> GetVmAppMeshInfoOutcome;
 			typedef std::future<GetVmAppMeshInfoOutcome> GetVmAppMeshInfoOutcomeCallable;
 			typedef std::function<void(const ServicemeshClient*, const Model::GetVmAppMeshInfoRequest&, const GetVmAppMeshInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVmAppMeshInfoAsyncHandler;
@@ -157,6 +169,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RunDiagnosisResult> RunDiagnosisOutcome;
 			typedef std::future<RunDiagnosisOutcome> RunDiagnosisOutcomeCallable;
 			typedef std::function<void(const ServicemeshClient*, const Model::RunDiagnosisRequest&, const RunDiagnosisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunDiagnosisAsyncHandler;
+			typedef Outcome<Error, Model::SetServiceRegistrySourceResult> SetServiceRegistrySourceOutcome;
+			typedef std::future<SetServiceRegistrySourceOutcome> SetServiceRegistrySourceOutcomeCallable;
+			typedef std::function<void(const ServicemeshClient*, const Model::SetServiceRegistrySourceRequest&, const SetServiceRegistrySourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetServiceRegistrySourceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateIstioInjectionConfigResult> UpdateIstioInjectionConfigOutcome;
 			typedef std::future<UpdateIstioInjectionConfigOutcome> UpdateIstioInjectionConfigOutcomeCallable;
 			typedef std::function<void(const ServicemeshClient*, const Model::UpdateIstioInjectionConfigRequest&, const UpdateIstioInjectionConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIstioInjectionConfigAsyncHandler;
@@ -213,6 +228,9 @@ namespace AlibabaCloud
 			DescribeUpgradeVersionOutcome describeUpgradeVersion(const Model::DescribeUpgradeVersionRequest &request)const;
 			void describeUpgradeVersionAsync(const Model::DescribeUpgradeVersionRequest& request, const DescribeUpgradeVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUpgradeVersionOutcomeCallable describeUpgradeVersionCallable(const Model::DescribeUpgradeVersionRequest& request) const;
+			GetAutoInjectionLabelSyncStatusOutcome getAutoInjectionLabelSyncStatus(const Model::GetAutoInjectionLabelSyncStatusRequest &request)const;
+			void getAutoInjectionLabelSyncStatusAsync(const Model::GetAutoInjectionLabelSyncStatusRequest& request, const GetAutoInjectionLabelSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAutoInjectionLabelSyncStatusOutcomeCallable getAutoInjectionLabelSyncStatusCallable(const Model::GetAutoInjectionLabelSyncStatusRequest& request) const;
 			GetDiagnosisOutcome getDiagnosis(const Model::GetDiagnosisRequest &request)const;
 			void getDiagnosisAsync(const Model::GetDiagnosisRequest& request, const GetDiagnosisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDiagnosisOutcomeCallable getDiagnosisCallable(const Model::GetDiagnosisRequest& request) const;
@@ -228,6 +246,9 @@ namespace AlibabaCloud
 			GetServiceMeshSlbOutcome getServiceMeshSlb(const Model::GetServiceMeshSlbRequest &request)const;
 			void getServiceMeshSlbAsync(const Model::GetServiceMeshSlbRequest& request, const GetServiceMeshSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceMeshSlbOutcomeCallable getServiceMeshSlbCallable(const Model::GetServiceMeshSlbRequest& request) const;
+			GetServiceRegistrySourceOutcome getServiceRegistrySource(const Model::GetServiceRegistrySourceRequest &request)const;
+			void getServiceRegistrySourceAsync(const Model::GetServiceRegistrySourceRequest& request, const GetServiceRegistrySourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetServiceRegistrySourceOutcomeCallable getServiceRegistrySourceCallable(const Model::GetServiceRegistrySourceRequest& request) const;
 			GetVmAppMeshInfoOutcome getVmAppMeshInfo(const Model::GetVmAppMeshInfoRequest &request)const;
 			void getVmAppMeshInfoAsync(const Model::GetVmAppMeshInfoRequest& request, const GetVmAppMeshInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVmAppMeshInfoOutcomeCallable getVmAppMeshInfoCallable(const Model::GetVmAppMeshInfoRequest& request) const;
@@ -243,6 +264,9 @@ namespace AlibabaCloud
 			RunDiagnosisOutcome runDiagnosis(const Model::RunDiagnosisRequest &request)const;
 			void runDiagnosisAsync(const Model::RunDiagnosisRequest& request, const RunDiagnosisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunDiagnosisOutcomeCallable runDiagnosisCallable(const Model::RunDiagnosisRequest& request) const;
+			SetServiceRegistrySourceOutcome setServiceRegistrySource(const Model::SetServiceRegistrySourceRequest &request)const;
+			void setServiceRegistrySourceAsync(const Model::SetServiceRegistrySourceRequest& request, const SetServiceRegistrySourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetServiceRegistrySourceOutcomeCallable setServiceRegistrySourceCallable(const Model::SetServiceRegistrySourceRequest& request) const;
 			UpdateIstioInjectionConfigOutcome updateIstioInjectionConfig(const Model::UpdateIstioInjectionConfigRequest &request)const;
 			void updateIstioInjectionConfigAsync(const Model::UpdateIstioInjectionConfigRequest& request, const UpdateIstioInjectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateIstioInjectionConfigOutcomeCallable updateIstioInjectionConfigCallable(const Model::UpdateIstioInjectionConfigRequest& request) const;
