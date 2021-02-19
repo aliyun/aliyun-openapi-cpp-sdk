@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_QUERYREALTIMEPROCESSSTATUSRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_QUERYREALTIMEPROCESSSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateManualDagResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT QueryRealTimeProcessStatusResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string status;
+					std::string taskUrl;
+					std::string taskId;
+				};
 
 
-				CreateManualDagResult();
-				explicit CreateManualDagResult(const std::string &payload);
-				~CreateManualDagResult();
-				std::string getReturnErrorSolution()const;
-				std::string getReturnCode()const;
-				std::string getReturnMessage()const;
-				long getReturnValue()const;
+				QueryRealTimeProcessStatusResult();
+				explicit QueryRealTimeProcessStatusResult(const std::string &payload);
+				~QueryRealTimeProcessStatusResult();
+				std::string getMessage()const;
+				Data getData()const;
+				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string returnErrorSolution_;
-				std::string returnCode_;
-				std::string returnMessage_;
-				long returnValue_;
+				std::string message_;
+				Data data_;
+				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_QUERYREALTIMEPROCESSSTATUSRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateManualDagResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListTagResourcesResult : public ServiceResult
 			{
 			public:
+				struct TagResourcesItem
+				{
+					std::string resourceId;
+					std::string tagKey;
+					std::string resourceType;
+					std::string tagValue;
+				};
 
 
-				CreateManualDagResult();
-				explicit CreateManualDagResult(const std::string &payload);
-				~CreateManualDagResult();
-				std::string getReturnErrorSolution()const;
-				std::string getReturnCode()const;
-				std::string getReturnMessage()const;
-				long getReturnValue()const;
+				ListTagResourcesResult();
+				explicit ListTagResourcesResult(const std::string &payload);
+				~ListTagResourcesResult();
+				std::string getNextToken()const;
+				std::vector<TagResourcesItem> getTagResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string returnErrorSolution_;
-				std::string returnCode_;
-				std::string returnMessage_;
-				long returnValue_;
+				std::string nextToken_;
+				std::vector<TagResourcesItem> tagResources_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTTAGRESOURCESRESULT_H_

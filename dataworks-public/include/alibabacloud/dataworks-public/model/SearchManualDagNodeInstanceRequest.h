@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_SEARCHMANUALDAGNODEINSTANCEREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_SEARCHMANUALDAGNODEINSTANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateManualDagRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT SearchManualDagNodeInstanceRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateManualDagRequest();
-				~CreateManualDagRequest();
+				SearchManualDagNodeInstanceRequest();
+				~SearchManualDagNodeInstanceRequest();
 
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
-				std::string getBizdate()const;
-				void setBizdate(const std::string& bizdate);
-				std::string getFlowName()const;
-				void setFlowName(const std::string& flowName);
-				std::string getDagPara()const;
-				void setDagPara(const std::string& dagPara);
-				std::string getNodePara()const;
-				void setNodePara(const std::string& nodePara);
+				long getDagId()const;
+				void setDagId(long dagId);
 
             private:
 				std::string projectName_;
-				std::string bizdate_;
-				std::string flowName_;
-				std::string dagPara_;
-				std::string nodePara_;
+				long dagId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_SEARCHMANUALDAGNODEINSTANCEREQUEST_H_

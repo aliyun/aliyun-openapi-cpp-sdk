@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dataworks-public/model/CreateManualDagResult.h>
+#include <alibabacloud/dataworks-public/model/CheckCallbackResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dataworks_public;
 using namespace AlibabaCloud::Dataworks_public::Model;
 
-CreateManualDagResult::CreateManualDagResult() :
+CheckCallbackResult::CheckCallbackResult() :
 	ServiceResult()
 {}
 
-CreateManualDagResult::CreateManualDagResult(const std::string &payload) :
+CheckCallbackResult::CheckCallbackResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateManualDagResult::~CreateManualDagResult()
+CheckCallbackResult::~CheckCallbackResult()
 {}
 
-void CreateManualDagResult::parse(const std::string &payload)
+void CheckCallbackResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -41,31 +41,17 @@ void CreateManualDagResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["ReturnCode"].isNull())
 		returnCode_ = value["ReturnCode"].asString();
-	if(!value["ReturnErrorSolution"].isNull())
-		returnErrorSolution_ = value["ReturnErrorSolution"].asString();
-	if(!value["ReturnMessage"].isNull())
-		returnMessage_ = value["ReturnMessage"].asString();
 	if(!value["ReturnValue"].isNull())
-		returnValue_ = std::stol(value["ReturnValue"].asString());
+		returnValue_ = value["ReturnValue"].asString() == "true";
 
 }
 
-std::string CreateManualDagResult::getReturnErrorSolution()const
-{
-	return returnErrorSolution_;
-}
-
-std::string CreateManualDagResult::getReturnCode()const
+std::string CheckCallbackResult::getReturnCode()const
 {
 	return returnCode_;
 }
 
-std::string CreateManualDagResult::getReturnMessage()const
-{
-	return returnMessage_;
-}
-
-long CreateManualDagResult::getReturnValue()const
+bool CheckCallbackResult::getReturnValue()const
 {
 	return returnValue_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CHECKCALLBACKRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CHECKCALLBACKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateManualDagResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CheckCallbackResult : public ServiceResult
 			{
 			public:
 
 
-				CreateManualDagResult();
-				explicit CreateManualDagResult(const std::string &payload);
-				~CreateManualDagResult();
-				std::string getReturnErrorSolution()const;
+				CheckCallbackResult();
+				explicit CheckCallbackResult(const std::string &payload);
+				~CheckCallbackResult();
 				std::string getReturnCode()const;
-				std::string getReturnMessage()const;
-				long getReturnValue()const;
+				bool getReturnValue()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string returnErrorSolution_;
 				std::string returnCode_;
-				std::string returnMessage_;
-				long returnValue_;
+				bool returnValue_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEMANUALDAGRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CHECKCALLBACKRESULT_H_
