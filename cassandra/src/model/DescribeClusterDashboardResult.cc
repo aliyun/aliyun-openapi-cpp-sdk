@@ -48,16 +48,16 @@ void DescribeClusterDashboardResult::parse(const std::string &payload)
 		Dashboard::DataCenter dataCenterObject;
 		if(!dashboardNodeDataCentersDataCenter["DataCenterId"].isNull())
 			dataCenterObject.dataCenterId = dashboardNodeDataCentersDataCenter["DataCenterId"].asString();
-		auto allNodesNode = allDataCentersNode["Nodes"]["Node"];
-		for (auto allDataCentersNodeNodesNode : allNodesNode)
+		auto allNodesNode = dashboardNodeDataCentersDataCenter["Nodes"]["Node"];
+		for (auto dashboardNodeDataCentersDataCenterNodesNode : allNodesNode)
 		{
 			Dashboard::DataCenter::Node nodesObject;
-			if(!allDataCentersNodeNodesNode["Address"].isNull())
-				nodesObject.address = allDataCentersNodeNodesNode["Address"].asString();
-			if(!allDataCentersNodeNodesNode["Status"].isNull())
-				nodesObject.status = allDataCentersNodeNodesNode["Status"].asString();
-			if(!allDataCentersNodeNodesNode["Load"].isNull())
-				nodesObject.load = allDataCentersNodeNodesNode["Load"].asString();
+			if(!dashboardNodeDataCentersDataCenterNodesNode["Address"].isNull())
+				nodesObject.address = dashboardNodeDataCentersDataCenterNodesNode["Address"].asString();
+			if(!dashboardNodeDataCentersDataCenterNodesNode["Status"].isNull())
+				nodesObject.status = dashboardNodeDataCentersDataCenterNodesNode["Status"].asString();
+			if(!dashboardNodeDataCentersDataCenterNodesNode["Load"].isNull())
+				nodesObject.load = dashboardNodeDataCentersDataCenterNodesNode["Load"].asString();
 			dataCenterObject.nodes.push_back(nodesObject);
 		}
 		dashboard_.dataCenters.push_back(dataCenterObject);

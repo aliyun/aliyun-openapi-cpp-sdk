@@ -49,12 +49,12 @@ void DescribeRegionsResult::parse(const std::string &payload)
 			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
 		if(!valueRegionsRegion["RegionEndpoint"].isNull())
 			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
-		auto allZonesNode = allRegionsNode["Zones"]["Zone"];
-		for (auto allRegionsNodeZonesZone : allZonesNode)
+		auto allZonesNode = valueRegionsRegion["Zones"]["Zone"];
+		for (auto valueRegionsRegionZonesZone : allZonesNode)
 		{
 			Region::Zone zonesObject;
-			if(!allRegionsNodeZonesZone["Id"].isNull())
-				zonesObject.id = allRegionsNodeZonesZone["Id"].asString();
+			if(!valueRegionsRegionZonesZone["Id"].isNull())
+				zonesObject.id = valueRegionsRegionZonesZone["Id"].asString();
 			regionsObject.zones.push_back(zonesObject);
 		}
 		regions_.push_back(regionsObject);
