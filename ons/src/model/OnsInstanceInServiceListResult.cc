@@ -55,14 +55,14 @@ void OnsInstanceInServiceListResult::parse(const std::string &payload)
 			dataObject.instanceName = valueDataInstanceVO["InstanceName"].asString();
 		if(!valueDataInstanceVO["IndependentNaming"].isNull())
 			dataObject.independentNaming = valueDataInstanceVO["IndependentNaming"].asString() == "true";
-		auto allTagsNode = allDataNode["Tags"]["Tag"];
-		for (auto allDataNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueDataInstanceVO["Tags"]["Tag"];
+		for (auto valueDataInstanceVOTagsTag : allTagsNode)
 		{
 			InstanceVO::Tag tagsObject;
-			if(!allDataNodeTagsTag["Key"].isNull())
-				tagsObject.key = allDataNodeTagsTag["Key"].asString();
-			if(!allDataNodeTagsTag["Value"].isNull())
-				tagsObject.value = allDataNodeTagsTag["Value"].asString();
+			if(!valueDataInstanceVOTagsTag["Key"].isNull())
+				tagsObject.key = valueDataInstanceVOTagsTag["Key"].asString();
+			if(!valueDataInstanceVOTagsTag["Value"].isNull())
+				tagsObject.value = valueDataInstanceVOTagsTag["Value"].asString();
 			dataObject.tags.push_back(tagsObject);
 		}
 		data_.push_back(dataObject);

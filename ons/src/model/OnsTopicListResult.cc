@@ -61,14 +61,14 @@ void OnsTopicListResult::parse(const std::string &payload)
 			dataObject.instanceId = valueDataPublishInfoDo["InstanceId"].asString();
 		if(!valueDataPublishInfoDo["IndependentNaming"].isNull())
 			dataObject.independentNaming = valueDataPublishInfoDo["IndependentNaming"].asString() == "true";
-		auto allTagsNode = allDataNode["Tags"]["Tag"];
-		for (auto allDataNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueDataPublishInfoDo["Tags"]["Tag"];
+		for (auto valueDataPublishInfoDoTagsTag : allTagsNode)
 		{
 			PublishInfoDo::Tag tagsObject;
-			if(!allDataNodeTagsTag["Key"].isNull())
-				tagsObject.key = allDataNodeTagsTag["Key"].asString();
-			if(!allDataNodeTagsTag["Value"].isNull())
-				tagsObject.value = allDataNodeTagsTag["Value"].asString();
+			if(!valueDataPublishInfoDoTagsTag["Key"].isNull())
+				tagsObject.key = valueDataPublishInfoDoTagsTag["Key"].asString();
+			if(!valueDataPublishInfoDoTagsTag["Value"].isNull())
+				tagsObject.value = valueDataPublishInfoDoTagsTag["Value"].asString();
 			dataObject.tags.push_back(tagsObject);
 		}
 		data_.push_back(dataObject);

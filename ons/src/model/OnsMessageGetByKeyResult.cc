@@ -69,14 +69,14 @@ void OnsMessageGetByKeyResult::parse(const std::string &payload)
 			dataObject.reconsumeTimes = std::stoi(valueDataOnsRestMessageDo["ReconsumeTimes"].asString());
 		if(!valueDataOnsRestMessageDo["InstanceId"].isNull())
 			dataObject.instanceId = valueDataOnsRestMessageDo["InstanceId"].asString();
-		auto allPropertyListNode = allDataNode["PropertyList"]["MessageProperty"];
-		for (auto allDataNodePropertyListMessageProperty : allPropertyListNode)
+		auto allPropertyListNode = valueDataOnsRestMessageDo["PropertyList"]["MessageProperty"];
+		for (auto valueDataOnsRestMessageDoPropertyListMessageProperty : allPropertyListNode)
 		{
 			OnsRestMessageDo::MessageProperty propertyListObject;
-			if(!allDataNodePropertyListMessageProperty["Name"].isNull())
-				propertyListObject.name = allDataNodePropertyListMessageProperty["Name"].asString();
-			if(!allDataNodePropertyListMessageProperty["Value"].isNull())
-				propertyListObject.value = allDataNodePropertyListMessageProperty["Value"].asString();
+			if(!valueDataOnsRestMessageDoPropertyListMessageProperty["Name"].isNull())
+				propertyListObject.name = valueDataOnsRestMessageDoPropertyListMessageProperty["Name"].asString();
+			if(!valueDataOnsRestMessageDoPropertyListMessageProperty["Value"].isNull())
+				propertyListObject.value = valueDataOnsRestMessageDoPropertyListMessageProperty["Value"].asString();
 			dataObject.propertyList.push_back(propertyListObject);
 		}
 		data_.push_back(dataObject);

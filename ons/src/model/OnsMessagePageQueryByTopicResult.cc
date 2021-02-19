@@ -76,14 +76,14 @@ void OnsMessagePageQueryByTopicResult::parse(const std::string &payload)
 			onsRestMessageDoObject.reconsumeTimes = std::stoi(msgFoundDoNodeMsgFoundListOnsRestMessageDo["ReconsumeTimes"].asString());
 		if(!msgFoundDoNodeMsgFoundListOnsRestMessageDo["InstanceId"].isNull())
 			onsRestMessageDoObject.instanceId = msgFoundDoNodeMsgFoundListOnsRestMessageDo["InstanceId"].asString();
-		auto allPropertyListNode = allMsgFoundListNode["PropertyList"]["MessageProperty"];
-		for (auto allMsgFoundListNodePropertyListMessageProperty : allPropertyListNode)
+		auto allPropertyListNode = msgFoundDoNodeMsgFoundListOnsRestMessageDo["PropertyList"]["MessageProperty"];
+		for (auto msgFoundDoNodeMsgFoundListOnsRestMessageDoPropertyListMessageProperty : allPropertyListNode)
 		{
 			MsgFoundDo::OnsRestMessageDo::MessageProperty propertyListObject;
-			if(!allMsgFoundListNodePropertyListMessageProperty["Name"].isNull())
-				propertyListObject.name = allMsgFoundListNodePropertyListMessageProperty["Name"].asString();
-			if(!allMsgFoundListNodePropertyListMessageProperty["Value"].isNull())
-				propertyListObject.value = allMsgFoundListNodePropertyListMessageProperty["Value"].asString();
+			if(!msgFoundDoNodeMsgFoundListOnsRestMessageDoPropertyListMessageProperty["Name"].isNull())
+				propertyListObject.name = msgFoundDoNodeMsgFoundListOnsRestMessageDoPropertyListMessageProperty["Name"].asString();
+			if(!msgFoundDoNodeMsgFoundListOnsRestMessageDoPropertyListMessageProperty["Value"].isNull())
+				propertyListObject.value = msgFoundDoNodeMsgFoundListOnsRestMessageDoPropertyListMessageProperty["Value"].asString();
 			onsRestMessageDoObject.propertyList.push_back(propertyListObject);
 		}
 		msgFoundDo_.msgFoundList.push_back(onsRestMessageDoObject);

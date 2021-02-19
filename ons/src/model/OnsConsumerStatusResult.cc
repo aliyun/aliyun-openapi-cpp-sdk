@@ -110,45 +110,45 @@ void OnsConsumerStatusResult::parse(const std::string &payload)
 			consumerConnectionInfoDoObject.startTimeStamp = std::stol(dataNodeConsumerConnectionInfoListConsumerConnectionInfoDo["StartTimeStamp"].asString());
 		if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDo["LastTimeStamp"].isNull())
 			consumerConnectionInfoDoObject.lastTimeStamp = std::stol(dataNodeConsumerConnectionInfoListConsumerConnectionInfoDo["LastTimeStamp"].asString());
-		auto allSubscriptionSetNode = allConsumerConnectionInfoListNode["SubscriptionSet"]["SubscriptionData"];
-		for (auto allConsumerConnectionInfoListNodeSubscriptionSetSubscriptionData : allSubscriptionSetNode)
+		auto allSubscriptionSetNode = dataNodeConsumerConnectionInfoListConsumerConnectionInfoDo["SubscriptionSet"]["SubscriptionData"];
+		for (auto dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoSubscriptionSetSubscriptionData : allSubscriptionSetNode)
 		{
 			Data::ConsumerConnectionInfoDo::SubscriptionData subscriptionSetObject;
-			if(!allConsumerConnectionInfoListNodeSubscriptionSetSubscriptionData["Topic"].isNull())
-				subscriptionSetObject.topic = allConsumerConnectionInfoListNodeSubscriptionSetSubscriptionData["Topic"].asString();
-			if(!allConsumerConnectionInfoListNodeSubscriptionSetSubscriptionData["SubString"].isNull())
-				subscriptionSetObject.subString = allConsumerConnectionInfoListNodeSubscriptionSetSubscriptionData["SubString"].asString();
-			if(!allConsumerConnectionInfoListNodeSubscriptionSetSubscriptionData["SubVersion"].isNull())
-				subscriptionSetObject.subVersion = std::stol(allConsumerConnectionInfoListNodeSubscriptionSetSubscriptionData["SubVersion"].asString());
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoSubscriptionSetSubscriptionData["Topic"].isNull())
+				subscriptionSetObject.topic = dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoSubscriptionSetSubscriptionData["Topic"].asString();
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoSubscriptionSetSubscriptionData["SubString"].isNull())
+				subscriptionSetObject.subString = dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoSubscriptionSetSubscriptionData["SubString"].asString();
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoSubscriptionSetSubscriptionData["SubVersion"].isNull())
+				subscriptionSetObject.subVersion = std::stol(dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoSubscriptionSetSubscriptionData["SubVersion"].asString());
 			auto allTagsSet = value["TagsSet"]["Tag"];
 			for (auto value : allTagsSet)
 				subscriptionSetObject.tagsSet.push_back(value.asString());
 			consumerConnectionInfoDoObject.subscriptionSet.push_back(subscriptionSetObject);
 		}
-		auto allRunningDataListNode = allConsumerConnectionInfoListNode["RunningDataList"]["ConsumerRunningDataDo"];
-		for (auto allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo : allRunningDataListNode)
+		auto allRunningDataListNode = dataNodeConsumerConnectionInfoListConsumerConnectionInfoDo["RunningDataList"]["ConsumerRunningDataDo"];
+		for (auto dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo : allRunningDataListNode)
 		{
 			Data::ConsumerConnectionInfoDo::ConsumerRunningDataDo runningDataListObject;
-			if(!allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["GroupId"].isNull())
-				runningDataListObject.groupId = allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["GroupId"].asString();
-			if(!allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["Topic"].isNull())
-				runningDataListObject.topic = allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["Topic"].asString();
-			if(!allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["Rt"].isNull())
-				runningDataListObject.rt = std::stof(allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["Rt"].asString());
-			if(!allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["OkTps"].isNull())
-				runningDataListObject.okTps = std::stof(allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["OkTps"].asString());
-			if(!allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["FailedTps"].isNull())
-				runningDataListObject.failedTps = std::stof(allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["FailedTps"].asString());
-			if(!allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["FailedCountPerHour"].isNull())
-				runningDataListObject.failedCountPerHour = std::stol(allConsumerConnectionInfoListNodeRunningDataListConsumerRunningDataDo["FailedCountPerHour"].asString());
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["GroupId"].isNull())
+				runningDataListObject.groupId = dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["GroupId"].asString();
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["Topic"].isNull())
+				runningDataListObject.topic = dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["Topic"].asString();
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["Rt"].isNull())
+				runningDataListObject.rt = std::stof(dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["Rt"].asString());
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["OkTps"].isNull())
+				runningDataListObject.okTps = std::stof(dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["OkTps"].asString());
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["FailedTps"].isNull())
+				runningDataListObject.failedTps = std::stof(dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["FailedTps"].asString());
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["FailedCountPerHour"].isNull())
+				runningDataListObject.failedCountPerHour = std::stol(dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoRunningDataListConsumerRunningDataDo["FailedCountPerHour"].asString());
 			consumerConnectionInfoDoObject.runningDataList.push_back(runningDataListObject);
 		}
-		auto allJstackNode = allConsumerConnectionInfoListNode["Jstack"]["ThreadTrackDo"];
-		for (auto allConsumerConnectionInfoListNodeJstackThreadTrackDo : allJstackNode)
+		auto allJstackNode = dataNodeConsumerConnectionInfoListConsumerConnectionInfoDo["Jstack"]["ThreadTrackDo"];
+		for (auto dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoJstackThreadTrackDo : allJstackNode)
 		{
 			Data::ConsumerConnectionInfoDo::ThreadTrackDo jstackObject;
-			if(!allConsumerConnectionInfoListNodeJstackThreadTrackDo["Thread"].isNull())
-				jstackObject.thread = allConsumerConnectionInfoListNodeJstackThreadTrackDo["Thread"].asString();
+			if(!dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoJstackThreadTrackDo["Thread"].isNull())
+				jstackObject.thread = dataNodeConsumerConnectionInfoListConsumerConnectionInfoDoJstackThreadTrackDo["Thread"].asString();
 			auto allTrackList = value["TrackList"]["Track"];
 			for (auto value : allTrackList)
 				jstackObject.trackList.push_back(value.asString());
