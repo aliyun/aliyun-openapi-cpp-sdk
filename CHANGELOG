@@ -1,3 +1,6 @@
+2021-02-22 Version: patch
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
 2021-02-19 Version: patch
 - Generated 2020-01-11 for `servicemesh`.
 
