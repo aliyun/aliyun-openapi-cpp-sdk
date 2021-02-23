@@ -60,6 +60,17 @@ void StopInstanceRequest::setInstanceId(long instanceId)
 	setParameter("InstanceId", std::to_string(instanceId));
 }
 
+std::string StopInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void StopInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string StopInstanceRequest::getGroupId()const
 {
 	return groupId_;

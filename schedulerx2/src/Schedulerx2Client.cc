@@ -51,6 +51,114 @@ Schedulerx2Client::Schedulerx2Client(const std::string & accessKeyId, const std:
 Schedulerx2Client::~Schedulerx2Client()
 {}
 
+Schedulerx2Client::BatchDeleteJobsOutcome Schedulerx2Client::batchDeleteJobs(const BatchDeleteJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDeleteJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDeleteJobsOutcome(BatchDeleteJobsResult(outcome.result()));
+	else
+		return BatchDeleteJobsOutcome(outcome.error());
+}
+
+void Schedulerx2Client::batchDeleteJobsAsync(const BatchDeleteJobsRequest& request, const BatchDeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDeleteJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::BatchDeleteJobsOutcomeCallable Schedulerx2Client::batchDeleteJobsCallable(const BatchDeleteJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDeleteJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDeleteJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::BatchDisableJobsOutcome Schedulerx2Client::batchDisableJobs(const BatchDisableJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDisableJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDisableJobsOutcome(BatchDisableJobsResult(outcome.result()));
+	else
+		return BatchDisableJobsOutcome(outcome.error());
+}
+
+void Schedulerx2Client::batchDisableJobsAsync(const BatchDisableJobsRequest& request, const BatchDisableJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDisableJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::BatchDisableJobsOutcomeCallable Schedulerx2Client::batchDisableJobsCallable(const BatchDisableJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDisableJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDisableJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::BatchEnableJobsOutcome Schedulerx2Client::batchEnableJobs(const BatchEnableJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchEnableJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchEnableJobsOutcome(BatchEnableJobsResult(outcome.result()));
+	else
+		return BatchEnableJobsOutcome(outcome.error());
+}
+
+void Schedulerx2Client::batchEnableJobsAsync(const BatchEnableJobsRequest& request, const BatchEnableJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchEnableJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::BatchEnableJobsOutcomeCallable Schedulerx2Client::batchEnableJobsCallable(const BatchEnableJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchEnableJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->batchEnableJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::CreateAppGroupOutcome Schedulerx2Client::createAppGroup(const CreateAppGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +693,114 @@ Schedulerx2Client::GrantPermissionOutcomeCallable Schedulerx2Client::grantPermis
 			[this, request]()
 			{
 			return this->grantPermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::ListGroupsOutcome Schedulerx2Client::listGroups(const ListGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGroupsOutcome(ListGroupsResult(outcome.result()));
+	else
+		return ListGroupsOutcome(outcome.error());
+}
+
+void Schedulerx2Client::listGroupsAsync(const ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::ListGroupsOutcomeCallable Schedulerx2Client::listGroupsCallable(const ListGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::ListJobsOutcome Schedulerx2Client::listJobs(const ListJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListJobsOutcome(ListJobsResult(outcome.result()));
+	else
+		return ListJobsOutcome(outcome.error());
+}
+
+void Schedulerx2Client::listJobsAsync(const ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::ListJobsOutcomeCallable Schedulerx2Client::listJobsCallable(const ListJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->listJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::ListNamespacesOutcome Schedulerx2Client::listNamespaces(const ListNamespacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNamespacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNamespacesOutcome(ListNamespacesResult(outcome.result()));
+	else
+		return ListNamespacesOutcome(outcome.error());
+}
+
+void Schedulerx2Client::listNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNamespaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::ListNamespacesOutcomeCallable Schedulerx2Client::listNamespacesCallable(const ListNamespacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNamespacesOutcome()>>(
+			[this, request]()
+			{
+			return this->listNamespaces(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

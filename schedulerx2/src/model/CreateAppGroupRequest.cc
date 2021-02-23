@@ -104,6 +104,17 @@ void CreateAppGroupRequest::setAppName(const std::string& appName)
 	setParameter("AppName", appName);
 }
 
+std::string CreateAppGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateAppGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string CreateAppGroupRequest::get_Namespace()const
 {
 	return _namespace_;

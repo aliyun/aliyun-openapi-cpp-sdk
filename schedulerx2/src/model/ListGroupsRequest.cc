@@ -14,69 +14,47 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/schedulerx2/model/EnableJobRequest.h>
+#include <alibabacloud/schedulerx2/model/ListGroupsRequest.h>
 
-using AlibabaCloud::Schedulerx2::Model::EnableJobRequest;
+using AlibabaCloud::Schedulerx2::Model::ListGroupsRequest;
 
-EnableJobRequest::EnableJobRequest() :
-	RpcServiceRequest("schedulerx2", "2019-04-30", "EnableJob")
+ListGroupsRequest::ListGroupsRequest() :
+	RpcServiceRequest("schedulerx2", "2019-04-30", "ListGroups")
 {
 	setMethod(HttpRequest::Method::Get);
 }
 
-EnableJobRequest::~EnableJobRequest()
+ListGroupsRequest::~ListGroupsRequest()
 {}
 
-long EnableJobRequest::getJobId()const
-{
-	return jobId_;
-}
-
-void EnableJobRequest::setJobId(long jobId)
-{
-	jobId_ = jobId;
-	setParameter("JobId", std::to_string(jobId));
-}
-
-std::string EnableJobRequest::getNamespaceSource()const
+std::string ListGroupsRequest::getNamespaceSource()const
 {
 	return namespaceSource_;
 }
 
-void EnableJobRequest::setNamespaceSource(const std::string& namespaceSource)
+void ListGroupsRequest::setNamespaceSource(const std::string& namespaceSource)
 {
 	namespaceSource_ = namespaceSource;
 	setParameter("NamespaceSource", namespaceSource);
 }
 
-std::string EnableJobRequest::getRegionId()const
+std::string ListGroupsRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void EnableJobRequest::setRegionId(const std::string& regionId)
+void ListGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
 }
 
-std::string EnableJobRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void EnableJobRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
-std::string EnableJobRequest::get_Namespace()const
+std::string ListGroupsRequest::get_Namespace()const
 {
 	return _namespace_;
 }
 
-void EnableJobRequest::set_Namespace(const std::string& _namespace)
+void ListGroupsRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
 	setParameter("_Namespace", _namespace);

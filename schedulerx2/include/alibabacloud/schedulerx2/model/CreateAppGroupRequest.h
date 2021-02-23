@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string get_Namespace()const;
 				void set_Namespace(const std::string& _namespace);
 				std::string getAlarmJson()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				std::string groupId_;
 				std::string description_;
 				std::string appName_;
+				std::string regionId_;
 				std::string _namespace_;
 				std::string alarmJson_;
 

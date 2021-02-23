@@ -14,71 +14,82 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/schedulerx2/model/DeleteWorkflowRequest.h>
+#include <alibabacloud/schedulerx2/model/ListJobsRequest.h>
 
-using AlibabaCloud::Schedulerx2::Model::DeleteWorkflowRequest;
+using AlibabaCloud::Schedulerx2::Model::ListJobsRequest;
 
-DeleteWorkflowRequest::DeleteWorkflowRequest() :
-	RpcServiceRequest("schedulerx2", "2019-04-30", "DeleteWorkflow")
+ListJobsRequest::ListJobsRequest() :
+	RpcServiceRequest("schedulerx2", "2019-04-30", "ListJobs")
 {
 	setMethod(HttpRequest::Method::Get);
 }
 
-DeleteWorkflowRequest::~DeleteWorkflowRequest()
+ListJobsRequest::~ListJobsRequest()
 {}
 
-std::string DeleteWorkflowRequest::getNamespaceSource()const
+std::string ListJobsRequest::getNamespaceSource()const
 {
 	return namespaceSource_;
 }
 
-void DeleteWorkflowRequest::setNamespaceSource(const std::string& namespaceSource)
+void ListJobsRequest::setNamespaceSource(const std::string& namespaceSource)
 {
 	namespaceSource_ = namespaceSource;
 	setParameter("NamespaceSource", namespaceSource);
 }
 
-std::string DeleteWorkflowRequest::getRegionId()const
+std::string ListJobsRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void DeleteWorkflowRequest::setRegionId(const std::string& regionId)
+void ListJobsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
 }
 
-std::string DeleteWorkflowRequest::getGroupId()const
+std::string ListJobsRequest::getGroupId()const
 {
 	return groupId_;
 }
 
-void DeleteWorkflowRequest::setGroupId(const std::string& groupId)
+void ListJobsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setParameter("GroupId", groupId);
 }
 
-std::string DeleteWorkflowRequest::get_Namespace()const
+std::string ListJobsRequest::get_Namespace()const
 {
 	return _namespace_;
 }
 
-void DeleteWorkflowRequest::set_Namespace(const std::string& _namespace)
+void ListJobsRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
 	setParameter("_Namespace", _namespace);
 }
 
-long DeleteWorkflowRequest::getWorkflowId()const
+std::string ListJobsRequest::getJobName()const
 {
-	return workflowId_;
+	return jobName_;
 }
 
-void DeleteWorkflowRequest::setWorkflowId(long workflowId)
+void ListJobsRequest::setJobName(const std::string& jobName)
 {
-	workflowId_ = workflowId;
-	setParameter("WorkflowId", std::to_string(workflowId));
+	jobName_ = jobName;
+	setParameter("JobName", jobName);
+}
+
+std::string ListJobsRequest::getStatus()const
+{
+	return status_;
+}
+
+void ListJobsRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
 }
 

@@ -22,6 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "Schedulerx2Export.h"
+#include "model/BatchDeleteJobsRequest.h"
+#include "model/BatchDeleteJobsResult.h"
+#include "model/BatchDisableJobsRequest.h"
+#include "model/BatchDisableJobsResult.h"
+#include "model/BatchEnableJobsRequest.h"
+#include "model/BatchEnableJobsResult.h"
 #include "model/CreateAppGroupRequest.h"
 #include "model/CreateAppGroupResult.h"
 #include "model/CreateJobRequest.h"
@@ -52,6 +58,12 @@
 #include "model/GetJobInstanceListResult.h"
 #include "model/GrantPermissionRequest.h"
 #include "model/GrantPermissionResult.h"
+#include "model/ListGroupsRequest.h"
+#include "model/ListGroupsResult.h"
+#include "model/ListJobsRequest.h"
+#include "model/ListJobsResult.h"
+#include "model/ListNamespacesRequest.h"
+#include "model/ListNamespacesResult.h"
 #include "model/RevokePermissionRequest.h"
 #include "model/RevokePermissionResult.h"
 #include "model/StopInstanceRequest.h"
@@ -67,6 +79,15 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_SCHEDULERX2_EXPORT Schedulerx2Client : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::BatchDeleteJobsResult> BatchDeleteJobsOutcome;
+			typedef std::future<BatchDeleteJobsOutcome> BatchDeleteJobsOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::BatchDeleteJobsRequest&, const BatchDeleteJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteJobsAsyncHandler;
+			typedef Outcome<Error, Model::BatchDisableJobsResult> BatchDisableJobsOutcome;
+			typedef std::future<BatchDisableJobsOutcome> BatchDisableJobsOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::BatchDisableJobsRequest&, const BatchDisableJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDisableJobsAsyncHandler;
+			typedef Outcome<Error, Model::BatchEnableJobsResult> BatchEnableJobsOutcome;
+			typedef std::future<BatchEnableJobsOutcome> BatchEnableJobsOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::BatchEnableJobsRequest&, const BatchEnableJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchEnableJobsAsyncHandler;
 			typedef Outcome<Error, Model::CreateAppGroupResult> CreateAppGroupOutcome;
 			typedef std::future<CreateAppGroupOutcome> CreateAppGroupOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::CreateAppGroupRequest&, const CreateAppGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppGroupAsyncHandler;
@@ -112,6 +133,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GrantPermissionResult> GrantPermissionOutcome;
 			typedef std::future<GrantPermissionOutcome> GrantPermissionOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GrantPermissionRequest&, const GrantPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantPermissionAsyncHandler;
+			typedef Outcome<Error, Model::ListGroupsResult> ListGroupsOutcome;
+			typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::ListGroupsRequest&, const ListGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListJobsResult> ListJobsOutcome;
+			typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::ListJobsRequest&, const ListJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobsAsyncHandler;
+			typedef Outcome<Error, Model::ListNamespacesResult> ListNamespacesOutcome;
+			typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::ListNamespacesRequest&, const ListNamespacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNamespacesAsyncHandler;
 			typedef Outcome<Error, Model::RevokePermissionResult> RevokePermissionOutcome;
 			typedef std::future<RevokePermissionOutcome> RevokePermissionOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::RevokePermissionRequest&, const RevokePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokePermissionAsyncHandler;
@@ -126,6 +156,15 @@ namespace AlibabaCloud
 			Schedulerx2Client(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			Schedulerx2Client(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~Schedulerx2Client();
+			BatchDeleteJobsOutcome batchDeleteJobs(const Model::BatchDeleteJobsRequest &request)const;
+			void batchDeleteJobsAsync(const Model::BatchDeleteJobsRequest& request, const BatchDeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchDeleteJobsOutcomeCallable batchDeleteJobsCallable(const Model::BatchDeleteJobsRequest& request) const;
+			BatchDisableJobsOutcome batchDisableJobs(const Model::BatchDisableJobsRequest &request)const;
+			void batchDisableJobsAsync(const Model::BatchDisableJobsRequest& request, const BatchDisableJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchDisableJobsOutcomeCallable batchDisableJobsCallable(const Model::BatchDisableJobsRequest& request) const;
+			BatchEnableJobsOutcome batchEnableJobs(const Model::BatchEnableJobsRequest &request)const;
+			void batchEnableJobsAsync(const Model::BatchEnableJobsRequest& request, const BatchEnableJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchEnableJobsOutcomeCallable batchEnableJobsCallable(const Model::BatchEnableJobsRequest& request) const;
 			CreateAppGroupOutcome createAppGroup(const Model::CreateAppGroupRequest &request)const;
 			void createAppGroupAsync(const Model::CreateAppGroupRequest& request, const CreateAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAppGroupOutcomeCallable createAppGroupCallable(const Model::CreateAppGroupRequest& request) const;
@@ -171,6 +210,15 @@ namespace AlibabaCloud
 			GrantPermissionOutcome grantPermission(const Model::GrantPermissionRequest &request)const;
 			void grantPermissionAsync(const Model::GrantPermissionRequest& request, const GrantPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GrantPermissionOutcomeCallable grantPermissionCallable(const Model::GrantPermissionRequest& request) const;
+			ListGroupsOutcome listGroups(const Model::ListGroupsRequest &request)const;
+			void listGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListGroupsOutcomeCallable listGroupsCallable(const Model::ListGroupsRequest& request) const;
+			ListJobsOutcome listJobs(const Model::ListJobsRequest &request)const;
+			void listJobsAsync(const Model::ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListJobsOutcomeCallable listJobsCallable(const Model::ListJobsRequest& request) const;
+			ListNamespacesOutcome listNamespaces(const Model::ListNamespacesRequest &request)const;
+			void listNamespacesAsync(const Model::ListNamespacesRequest& request, const ListNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListNamespacesOutcomeCallable listNamespacesCallable(const Model::ListNamespacesRequest& request) const;
 			RevokePermissionOutcome revokePermission(const Model::RevokePermissionRequest &request)const;
 			void revokePermissionAsync(const Model::RevokePermissionRequest& request, const RevokePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevokePermissionOutcomeCallable revokePermissionCallable(const Model::RevokePermissionRequest& request) const;

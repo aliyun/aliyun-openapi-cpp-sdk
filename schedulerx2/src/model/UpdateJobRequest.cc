@@ -104,6 +104,17 @@ void UpdateJobRequest::setJobId(long jobId)
 	setBodyParameter("JobId", std::to_string(jobId));
 }
 
+std::string UpdateJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void UpdateJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int UpdateJobRequest::getPageSize()const
 {
 	return pageSize_;

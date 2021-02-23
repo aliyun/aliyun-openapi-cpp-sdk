@@ -21,6 +21,12 @@ set(schedulerx2_public_header
 	include/alibabacloud/schedulerx2/Schedulerx2Export.h )
 
 set(schedulerx2_public_header_model 
+	include/alibabacloud/schedulerx2/model/BatchDeleteJobsRequest.h
+	include/alibabacloud/schedulerx2/model/BatchDeleteJobsResult.h
+	include/alibabacloud/schedulerx2/model/BatchDisableJobsRequest.h
+	include/alibabacloud/schedulerx2/model/BatchDisableJobsResult.h
+	include/alibabacloud/schedulerx2/model/BatchEnableJobsRequest.h
+	include/alibabacloud/schedulerx2/model/BatchEnableJobsResult.h
 	include/alibabacloud/schedulerx2/model/CreateAppGroupRequest.h
 	include/alibabacloud/schedulerx2/model/CreateAppGroupResult.h
 	include/alibabacloud/schedulerx2/model/CreateJobRequest.h
@@ -51,6 +57,12 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/GetJobInstanceListResult.h
 	include/alibabacloud/schedulerx2/model/GrantPermissionRequest.h
 	include/alibabacloud/schedulerx2/model/GrantPermissionResult.h
+	include/alibabacloud/schedulerx2/model/ListGroupsRequest.h
+	include/alibabacloud/schedulerx2/model/ListGroupsResult.h
+	include/alibabacloud/schedulerx2/model/ListJobsRequest.h
+	include/alibabacloud/schedulerx2/model/ListJobsResult.h
+	include/alibabacloud/schedulerx2/model/ListNamespacesRequest.h
+	include/alibabacloud/schedulerx2/model/ListNamespacesResult.h
 	include/alibabacloud/schedulerx2/model/RevokePermissionRequest.h
 	include/alibabacloud/schedulerx2/model/RevokePermissionResult.h
 	include/alibabacloud/schedulerx2/model/StopInstanceRequest.h
@@ -60,6 +72,12 @@ set(schedulerx2_public_header_model
 
 set(schedulerx2_src 
 	src/Schedulerx2Client.cc
+	src/model/BatchDeleteJobsRequest.cc
+	src/model/BatchDeleteJobsResult.cc
+	src/model/BatchDisableJobsRequest.cc
+	src/model/BatchDisableJobsResult.cc
+	src/model/BatchEnableJobsRequest.cc
+	src/model/BatchEnableJobsResult.cc
 	src/model/CreateAppGroupRequest.cc
 	src/model/CreateAppGroupResult.cc
 	src/model/CreateJobRequest.cc
@@ -90,6 +108,12 @@ set(schedulerx2_src
 	src/model/GetJobInstanceListResult.cc
 	src/model/GrantPermissionRequest.cc
 	src/model/GrantPermissionResult.cc
+	src/model/ListGroupsRequest.cc
+	src/model/ListGroupsResult.cc
+	src/model/ListJobsRequest.cc
+	src/model/ListJobsResult.cc
+	src/model/ListNamespacesRequest.cc
+	src/model/ListNamespacesResult.cc
 	src/model/RevokePermissionRequest.cc
 	src/model/RevokePermissionResult.cc
 	src/model/StopInstanceRequest.cc

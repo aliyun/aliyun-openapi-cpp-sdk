@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setUserId(const std::string& userId);
 				bool getGrantOption()const;
 				void setGrantOption(bool grantOption);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string get_Namespace()const;
 				void set_Namespace(const std::string& _namespace);
 				std::string getUserName()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string groupId_;
 				std::string userId_;
 				bool grantOption_;
+				std::string regionId_;
 				std::string _namespace_;
 				std::string userName_;
 

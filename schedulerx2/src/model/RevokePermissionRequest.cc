@@ -38,6 +38,17 @@ void RevokePermissionRequest::setNamespaceSource(const std::string& namespaceSou
 	setParameter("NamespaceSource", namespaceSource);
 }
 
+std::string RevokePermissionRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void RevokePermissionRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string RevokePermissionRequest::getGroupId()const
 {
 	return groupId_;

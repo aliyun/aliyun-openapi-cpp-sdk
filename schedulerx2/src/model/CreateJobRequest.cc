@@ -93,6 +93,17 @@ void CreateJobRequest::setTimeoutKillEnable(bool timeoutKillEnable)
 	setBodyParameter("TimeoutKillEnable", timeoutKillEnable ? "true" : "false");
 }
 
+std::string CreateJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int CreateJobRequest::getPageSize()const
 {
 	return pageSize_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_ENABLEWORKFLOWREQUEST_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_ENABLEWORKFLOWREQUEST_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_LISTNAMESPACESREQUEST_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_LISTNAMESPACESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCHEDULERX2_EXPORT EnableWorkflowRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCHEDULERX2_EXPORT ListNamespacesRequest : public RpcServiceRequest
 			{
 
 			public:
-				EnableWorkflowRequest();
-				~EnableWorkflowRequest();
+				ListNamespacesRequest();
+				~ListNamespacesRequest();
 
-				std::string getNamespaceSource()const;
-				void setNamespaceSource(const std::string& namespaceSource);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
-				std::string get_Namespace()const;
-				void set_Namespace(const std::string& _namespace);
-				long getWorkflowId()const;
-				void setWorkflowId(long workflowId);
 
             private:
-				std::string namespaceSource_;
 				std::string regionId_;
-				std::string groupId_;
-				std::string _namespace_;
-				long workflowId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_ENABLEWORKFLOWREQUEST_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_LISTNAMESPACESREQUEST_H_

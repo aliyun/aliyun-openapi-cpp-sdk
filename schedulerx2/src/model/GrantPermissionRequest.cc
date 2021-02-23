@@ -71,6 +71,17 @@ void GrantPermissionRequest::setGrantOption(bool grantOption)
 	setParameter("GrantOption", grantOption ? "true" : "false");
 }
 
+std::string GrantPermissionRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GrantPermissionRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string GrantPermissionRequest::get_Namespace()const
 {
 	return _namespace_;

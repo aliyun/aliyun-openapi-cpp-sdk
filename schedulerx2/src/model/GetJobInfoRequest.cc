@@ -49,6 +49,17 @@ void GetJobInfoRequest::setNamespaceSource(const std::string& namespaceSource)
 	setParameter("NamespaceSource", namespaceSource);
 }
 
+std::string GetJobInfoRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetJobInfoRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string GetJobInfoRequest::getGroupId()const
 {
 	return groupId_;

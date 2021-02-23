@@ -49,6 +49,17 @@ void ExecuteJobRequest::setNamespaceSource(const std::string& namespaceSource)
 	setParameter("NamespaceSource", namespaceSource);
 }
 
+std::string ExecuteJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ExecuteJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ExecuteJobRequest::getGroupId()const
 {
 	return groupId_;

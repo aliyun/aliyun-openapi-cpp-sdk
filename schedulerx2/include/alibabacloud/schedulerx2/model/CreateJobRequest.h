@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setTimeout(long timeout);
 				bool getTimeoutKillEnable()const;
 				void setTimeoutKillEnable(bool timeoutKillEnable);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getConsumerSize()const;
@@ -109,6 +111,7 @@ namespace AlibabaCloud
 				std::string content_;
 				long timeout_;
 				bool timeoutKillEnable_;
+				std::string regionId_;
 				int pageSize_;
 				int consumerSize_;
 				std::string jarUrl_;

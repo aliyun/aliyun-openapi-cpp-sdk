@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setJobId(long jobId);
 				std::string getNamespaceSource()const;
 				void setNamespaceSource(const std::string& namespaceSource);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string get_Namespace()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				long jobId_;
 				std::string namespaceSource_;
+				std::string regionId_;
 				std::string groupId_;
 				std::string _namespace_;
 				std::string instanceParameters_;

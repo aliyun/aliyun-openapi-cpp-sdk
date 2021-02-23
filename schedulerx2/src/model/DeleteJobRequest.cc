@@ -60,6 +60,17 @@ void DeleteJobRequest::setJobId(long jobId)
 	setParameter("JobId", std::to_string(jobId));
 }
 
+std::string DeleteJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DeleteJobRequest::get_Namespace()const
 {
 	return _namespace_;
