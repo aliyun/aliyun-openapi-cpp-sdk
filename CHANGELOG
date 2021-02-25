@@ -1,4 +1,8 @@
 2021-02-25 Version: patch
+- Support SLR by InitializeDbsServiceLinkedRole action.
+- Change DescribeIncrementBackupList and DescribeFullBackupList to Support Range filter.
+
+2021-02-25 Version: patch
 - Generated 2020-05-18 for `dataworks-public`.
 
 2021-02-24 Version: patch

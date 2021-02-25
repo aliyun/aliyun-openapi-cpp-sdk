@@ -71,6 +71,28 @@ void DescribeIncrementBackupListRequest::setOwnerId(const std::string& ownerId)
 	setParameter("OwnerId", ownerId);
 }
 
+long DescribeIncrementBackupListRequest::getStartTimestamp()const
+{
+	return startTimestamp_;
+}
+
+void DescribeIncrementBackupListRequest::setStartTimestamp(long startTimestamp)
+{
+	startTimestamp_ = startTimestamp;
+	setParameter("StartTimestamp", std::to_string(startTimestamp));
+}
+
+long DescribeIncrementBackupListRequest::getEndTimestamp()const
+{
+	return endTimestamp_;
+}
+
+void DescribeIncrementBackupListRequest::setEndTimestamp(long endTimestamp)
+{
+	endTimestamp_ = endTimestamp;
+	setParameter("EndTimestamp", std::to_string(endTimestamp));
+}
+
 bool DescribeIncrementBackupListRequest::getShowStorageType()const
 {
 	return showStorageType_;

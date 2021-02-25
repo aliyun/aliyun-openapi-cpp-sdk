@@ -82,6 +82,28 @@ void DescribeFullBackupListRequest::setOwnerId(const std::string& ownerId)
 	setParameter("OwnerId", ownerId);
 }
 
+long DescribeFullBackupListRequest::getStartTimestamp()const
+{
+	return startTimestamp_;
+}
+
+void DescribeFullBackupListRequest::setStartTimestamp(long startTimestamp)
+{
+	startTimestamp_ = startTimestamp;
+	setParameter("StartTimestamp", std::to_string(startTimestamp));
+}
+
+long DescribeFullBackupListRequest::getEndTimestamp()const
+{
+	return endTimestamp_;
+}
+
+void DescribeFullBackupListRequest::setEndTimestamp(long endTimestamp)
+{
+	endTimestamp_ = endTimestamp;
+	setParameter("EndTimestamp", std::to_string(endTimestamp));
+}
+
 bool DescribeFullBackupListRequest::getShowStorageType()const
 {
 	return showStorageType_;

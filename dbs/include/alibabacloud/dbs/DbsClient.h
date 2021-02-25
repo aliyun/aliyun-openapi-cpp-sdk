@@ -66,12 +66,16 @@
 #include "model/DescribeRestoreRangeInfoResult.h"
 #include "model/DescribeRestoreTaskListRequest.h"
 #include "model/DescribeRestoreTaskListResult.h"
+#include "model/DescribeSandboxFromRDSRequest.h"
+#include "model/DescribeSandboxFromRDSResult.h"
 #include "model/DisableBackupLogRequest.h"
 #include "model/DisableBackupLogResult.h"
 #include "model/EnableBackupLogRequest.h"
 #include "model/EnableBackupLogResult.h"
 #include "model/GetDBListFromAgentRequest.h"
 #include "model/GetDBListFromAgentResult.h"
+#include "model/InitializeDbsServiceLinkedRoleRequest.h"
+#include "model/InitializeDbsServiceLinkedRoleResult.h"
 #include "model/ModifyBackupObjectsRequest.h"
 #include "model/ModifyBackupObjectsResult.h"
 #include "model/ModifyBackupPlanNameRequest.h"
@@ -171,6 +175,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRestoreTaskListResult> DescribeRestoreTaskListOutcome;
 			typedef std::future<DescribeRestoreTaskListOutcome> DescribeRestoreTaskListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeRestoreTaskListRequest&, const DescribeRestoreTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTaskListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSandboxFromRDSResult> DescribeSandboxFromRDSOutcome;
+			typedef std::future<DescribeSandboxFromRDSOutcome> DescribeSandboxFromRDSOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DescribeSandboxFromRDSRequest&, const DescribeSandboxFromRDSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxFromRDSAsyncHandler;
 			typedef Outcome<Error, Model::DisableBackupLogResult> DisableBackupLogOutcome;
 			typedef std::future<DisableBackupLogOutcome> DisableBackupLogOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DisableBackupLogRequest&, const DisableBackupLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableBackupLogAsyncHandler;
@@ -180,6 +187,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDBListFromAgentResult> GetDBListFromAgentOutcome;
 			typedef std::future<GetDBListFromAgentOutcome> GetDBListFromAgentOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::GetDBListFromAgentRequest&, const GetDBListFromAgentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDBListFromAgentAsyncHandler;
+			typedef Outcome<Error, Model::InitializeDbsServiceLinkedRoleResult> InitializeDbsServiceLinkedRoleOutcome;
+			typedef std::future<InitializeDbsServiceLinkedRoleOutcome> InitializeDbsServiceLinkedRoleOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::InitializeDbsServiceLinkedRoleRequest&, const InitializeDbsServiceLinkedRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitializeDbsServiceLinkedRoleAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBackupObjectsResult> ModifyBackupObjectsOutcome;
 			typedef std::future<ModifyBackupObjectsOutcome> ModifyBackupObjectsOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::ModifyBackupObjectsRequest&, const ModifyBackupObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupObjectsAsyncHandler;
@@ -287,6 +297,9 @@ namespace AlibabaCloud
 			DescribeRestoreTaskListOutcome describeRestoreTaskList(const Model::DescribeRestoreTaskListRequest &request)const;
 			void describeRestoreTaskListAsync(const Model::DescribeRestoreTaskListRequest& request, const DescribeRestoreTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRestoreTaskListOutcomeCallable describeRestoreTaskListCallable(const Model::DescribeRestoreTaskListRequest& request) const;
+			DescribeSandboxFromRDSOutcome describeSandboxFromRDS(const Model::DescribeSandboxFromRDSRequest &request)const;
+			void describeSandboxFromRDSAsync(const Model::DescribeSandboxFromRDSRequest& request, const DescribeSandboxFromRDSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSandboxFromRDSOutcomeCallable describeSandboxFromRDSCallable(const Model::DescribeSandboxFromRDSRequest& request) const;
 			DisableBackupLogOutcome disableBackupLog(const Model::DisableBackupLogRequest &request)const;
 			void disableBackupLogAsync(const Model::DisableBackupLogRequest& request, const DisableBackupLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableBackupLogOutcomeCallable disableBackupLogCallable(const Model::DisableBackupLogRequest& request) const;
@@ -296,6 +309,9 @@ namespace AlibabaCloud
 			GetDBListFromAgentOutcome getDBListFromAgent(const Model::GetDBListFromAgentRequest &request)const;
 			void getDBListFromAgentAsync(const Model::GetDBListFromAgentRequest& request, const GetDBListFromAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDBListFromAgentOutcomeCallable getDBListFromAgentCallable(const Model::GetDBListFromAgentRequest& request) const;
+			InitializeDbsServiceLinkedRoleOutcome initializeDbsServiceLinkedRole(const Model::InitializeDbsServiceLinkedRoleRequest &request)const;
+			void initializeDbsServiceLinkedRoleAsync(const Model::InitializeDbsServiceLinkedRoleRequest& request, const InitializeDbsServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InitializeDbsServiceLinkedRoleOutcomeCallable initializeDbsServiceLinkedRoleCallable(const Model::InitializeDbsServiceLinkedRoleRequest& request) const;
 			ModifyBackupObjectsOutcome modifyBackupObjects(const Model::ModifyBackupObjectsRequest &request)const;
 			void modifyBackupObjectsAsync(const Model::ModifyBackupObjectsRequest& request, const ModifyBackupObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupObjectsOutcomeCallable modifyBackupObjectsCallable(const Model::ModifyBackupObjectsRequest& request) const;

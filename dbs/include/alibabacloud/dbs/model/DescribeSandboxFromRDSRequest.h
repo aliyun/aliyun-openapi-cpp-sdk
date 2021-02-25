@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBEINCREMENTBACKUPLISTREQUEST_H_
-#define ALIBABACLOUD_DBS_MODEL_DESCRIBEINCREMENTBACKUPLISTREQUEST_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBESANDBOXFROMRDSREQUEST_H_
+#define ALIBABACLOUD_DBS_MODEL_DESCRIBESANDBOXFROMRDSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT DescribeIncrementBackupListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DBS_EXPORT DescribeSandboxFromRDSRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeIncrementBackupListRequest();
-				~DescribeIncrementBackupListRequest();
+				DescribeSandboxFromRDSRequest();
+				~DescribeSandboxFromRDSRequest();
 
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getBackupPlanId()const;
-				void setBackupPlanId(const std::string& backupPlanId);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
+				std::string getRdsInstanceID()const;
+				void setRdsInstanceID(const std::string& rdsInstanceID);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				long getStartTimestamp()const;
-				void setStartTimestamp(long startTimestamp);
-				long getEndTimestamp()const;
-				void setEndTimestamp(long endTimestamp);
-				bool getShowStorageType()const;
-				void setShowStorageType(bool showStorageType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 
             private:
 				std::string clientToken_;
-				std::string backupPlanId_;
-				int pageNum_;
+				std::string rdsInstanceID_;
 				std::string ownerId_;
-				long startTimestamp_;
-				long endTimestamp_;
-				bool showStorageType_;
-				int pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBEINCREMENTBACKUPLISTREQUEST_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBESANDBOXFROMRDSREQUEST_H_
