@@ -84,6 +84,8 @@ void GetQualityRuleResult::parse(const std::string &payload)
 		data_.checker = std::stoi(dataNode["Checker"].asString());
 	if(!dataNode["FixCheck"].isNull())
 		data_.fixCheck = dataNode["FixCheck"].asString() == "true";
+	if(!dataNode["OnDutyAccountName"].isNull())
+		data_.onDutyAccountName = dataNode["OnDutyAccountName"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())

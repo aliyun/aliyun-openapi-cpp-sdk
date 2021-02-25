@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					int methodId;
 					bool fixCheck;
 					int blockType;
+					std::string onDutyAccountName;
 					std::string templateName;
 					int predictType;
 					long id;

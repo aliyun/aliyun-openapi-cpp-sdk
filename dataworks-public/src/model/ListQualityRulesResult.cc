@@ -98,6 +98,8 @@ void ListQualityRulesResult::parse(const std::string &payload)
 			rulesItemObject.comment = dataNodeRulesRulesItem["Comment"].asString();
 		if(!dataNodeRulesRulesItem["ExpectValue"].isNull())
 			rulesItemObject.expectValue = dataNodeRulesRulesItem["ExpectValue"].asString();
+		if(!dataNodeRulesRulesItem["OnDutyAccountName"].isNull())
+			rulesItemObject.onDutyAccountName = dataNodeRulesRulesItem["OnDutyAccountName"].asString();
 		data_.rules.push_back(rulesItemObject);
 	}
 	if(!value["ErrorCode"].isNull())

@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string entityId;
 					std::string tableName;
+					std::string followerAccountName;
 					std::string projectName;
 					std::string follower;
 					long id;

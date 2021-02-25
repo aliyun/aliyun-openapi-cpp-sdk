@@ -73,6 +73,8 @@ void GetQualityEntityResult::parse(const std::string &payload)
 			dataObject.hasRelativeNode = valueDataEntityDto["HasRelativeNode"].asString() == "true";
 		if(!valueDataEntityDto["RelativeNode"].isNull())
 			dataObject.relativeNode = valueDataEntityDto["RelativeNode"].asString();
+		if(!valueDataEntityDto["OnDutyAccountName"].isNull())
+			dataObject.onDutyAccountName = valueDataEntityDto["OnDutyAccountName"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

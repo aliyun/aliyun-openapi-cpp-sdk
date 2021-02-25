@@ -55,6 +55,8 @@ void GetQualityFollowerResult::parse(const std::string &payload)
 			dataObject.follower = valueDataFollower["Follower"].asString();
 		if(!valueDataFollower["AlarmMode"].isNull())
 			dataObject.alarmMode = std::stoi(valueDataFollower["AlarmMode"].asString());
+		if(!valueDataFollower["FollowerAccountName"].isNull())
+			dataObject.followerAccountName = valueDataFollower["FollowerAccountName"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["ErrorCode"].isNull())

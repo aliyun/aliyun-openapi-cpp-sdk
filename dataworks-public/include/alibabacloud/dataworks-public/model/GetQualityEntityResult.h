@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string envType;
 					int sql;
 					std::string tableName;
+					std::string onDutyAccountName;
 					long id;
 					std::string relativeNode;
 					int entityLevel;
