@@ -43,6 +43,10 @@ namespace AlibabaCloud
 				void setPageNum(int pageNum);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
+				long getStartTimestamp()const;
+				void setStartTimestamp(long startTimestamp);
+				long getEndTimestamp()const;
+				void setEndTimestamp(long endTimestamp);
 				std::string getRestoreTaskId()const;
 				void setRestoreTaskId(const std::string& restoreTaskId);
 				int getPageSize()const;
@@ -53,6 +57,8 @@ namespace AlibabaCloud
 				std::string backupPlanId_;
 				int pageNum_;
 				std::string ownerId_;
+				long startTimestamp_;
+				long endTimestamp_;
 				std::string restoreTaskId_;
 				int pageSize_;
 

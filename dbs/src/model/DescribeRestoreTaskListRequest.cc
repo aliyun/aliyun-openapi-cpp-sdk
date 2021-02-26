@@ -71,6 +71,28 @@ void DescribeRestoreTaskListRequest::setOwnerId(const std::string& ownerId)
 	setParameter("OwnerId", ownerId);
 }
 
+long DescribeRestoreTaskListRequest::getStartTimestamp()const
+{
+	return startTimestamp_;
+}
+
+void DescribeRestoreTaskListRequest::setStartTimestamp(long startTimestamp)
+{
+	startTimestamp_ = startTimestamp;
+	setParameter("StartTimestamp", std::to_string(startTimestamp));
+}
+
+long DescribeRestoreTaskListRequest::getEndTimestamp()const
+{
+	return endTimestamp_;
+}
+
+void DescribeRestoreTaskListRequest::setEndTimestamp(long endTimestamp)
+{
+	endTimestamp_ = endTimestamp;
+	setParameter("EndTimestamp", std::to_string(endTimestamp));
+}
+
 std::string DescribeRestoreTaskListRequest::getRestoreTaskId()const
 {
 	return restoreTaskId_;
