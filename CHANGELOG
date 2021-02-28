@@ -1,3 +1,6 @@
+2021-02-28 Version: patch
+- AMP Version Change.
+
 2021-02-26 Version: patch
 - Add TaskId for DescribeMigrationJobStatus, DescribeSubscriptionInstanceStatus, DescribeSynchronizationJobStatus.
 - Add API CreateDtsInstance, ConfigureDtsJob, StartDtsJob.

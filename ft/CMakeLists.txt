@@ -29,6 +29,8 @@ set(ft_public_header_model
 	include/alibabacloud/ft/model/FtDynamicAddressDubboResult.h
 	include/alibabacloud/ft/model/FtDynamicAddressHsfRequest.h
 	include/alibabacloud/ft/model/FtDynamicAddressHsfResult.h
+	include/alibabacloud/ft/model/FtDynamicAddressHttpVpcRequest.h
+	include/alibabacloud/ft/model/FtDynamicAddressHttpVpcResult.h
 	include/alibabacloud/ft/model/FtEagleEyeRequest.h
 	include/alibabacloud/ft/model/FtEagleEyeResult.h
 	include/alibabacloud/ft/model/FtFlowSpecialRequest.h
@@ -39,6 +41,8 @@ set(ft_public_header_model
 	include/alibabacloud/ft/model/FtIpFlowControlResult.h
 	include/alibabacloud/ft/model/FtParamListRequest.h
 	include/alibabacloud/ft/model/FtParamListResult.h
+	include/alibabacloud/ft/model/TestFlowStrategy01Request.h
+	include/alibabacloud/ft/model/TestFlowStrategy01Result.h
 	include/alibabacloud/ft/model/TestHttpApiRequest.h
 	include/alibabacloud/ft/model/TestHttpApiResult.h )
 
@@ -52,6 +56,8 @@ set(ft_src
 	src/model/FtDynamicAddressDubboResult.cc
 	src/model/FtDynamicAddressHsfRequest.cc
 	src/model/FtDynamicAddressHsfResult.cc
+	src/model/FtDynamicAddressHttpVpcRequest.cc
+	src/model/FtDynamicAddressHttpVpcResult.cc
 	src/model/FtEagleEyeRequest.cc
 	src/model/FtEagleEyeResult.cc
 	src/model/FtFlowSpecialRequest.cc
@@ -62,6 +68,8 @@ set(ft_src
 	src/model/FtIpFlowControlResult.cc
 	src/model/FtParamListRequest.cc
 	src/model/FtParamListResult.cc
+	src/model/TestFlowStrategy01Request.cc
+	src/model/TestFlowStrategy01Result.cc
 	src/model/TestHttpApiRequest.cc
 	src/model/TestHttpApiResult.cc )
 

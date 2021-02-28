@@ -30,6 +30,8 @@
 #include "model/FtDynamicAddressDubboResult.h"
 #include "model/FtDynamicAddressHsfRequest.h"
 #include "model/FtDynamicAddressHsfResult.h"
+#include "model/FtDynamicAddressHttpVpcRequest.h"
+#include "model/FtDynamicAddressHttpVpcResult.h"
 #include "model/FtEagleEyeRequest.h"
 #include "model/FtEagleEyeResult.h"
 #include "model/FtFlowSpecialRequest.h"
@@ -40,6 +42,8 @@
 #include "model/FtIpFlowControlResult.h"
 #include "model/FtParamListRequest.h"
 #include "model/FtParamListResult.h"
+#include "model/TestFlowStrategy01Request.h"
+#include "model/TestFlowStrategy01Result.h"
 #include "model/TestHttpApiRequest.h"
 #include "model/TestHttpApiResult.h"
 
@@ -63,6 +67,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FtDynamicAddressHsfResult> FtDynamicAddressHsfOutcome;
 			typedef std::future<FtDynamicAddressHsfOutcome> FtDynamicAddressHsfOutcomeCallable;
 			typedef std::function<void(const FtClient*, const Model::FtDynamicAddressHsfRequest&, const FtDynamicAddressHsfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FtDynamicAddressHsfAsyncHandler;
+			typedef Outcome<Error, Model::FtDynamicAddressHttpVpcResult> FtDynamicAddressHttpVpcOutcome;
+			typedef std::future<FtDynamicAddressHttpVpcOutcome> FtDynamicAddressHttpVpcOutcomeCallable;
+			typedef std::function<void(const FtClient*, const Model::FtDynamicAddressHttpVpcRequest&, const FtDynamicAddressHttpVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FtDynamicAddressHttpVpcAsyncHandler;
 			typedef Outcome<Error, Model::FtEagleEyeResult> FtEagleEyeOutcome;
 			typedef std::future<FtEagleEyeOutcome> FtEagleEyeOutcomeCallable;
 			typedef std::function<void(const FtClient*, const Model::FtEagleEyeRequest&, const FtEagleEyeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FtEagleEyeAsyncHandler;
@@ -78,6 +85,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FtParamListResult> FtParamListOutcome;
 			typedef std::future<FtParamListOutcome> FtParamListOutcomeCallable;
 			typedef std::function<void(const FtClient*, const Model::FtParamListRequest&, const FtParamListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FtParamListAsyncHandler;
+			typedef Outcome<Error, Model::TestFlowStrategy01Result> TestFlowStrategy01Outcome;
+			typedef std::future<TestFlowStrategy01Outcome> TestFlowStrategy01OutcomeCallable;
+			typedef std::function<void(const FtClient*, const Model::TestFlowStrategy01Request&, const TestFlowStrategy01Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> TestFlowStrategy01AsyncHandler;
 			typedef Outcome<Error, Model::TestHttpApiResult> TestHttpApiOutcome;
 			typedef std::future<TestHttpApiOutcome> TestHttpApiOutcomeCallable;
 			typedef std::function<void(const FtClient*, const Model::TestHttpApiRequest&, const TestHttpApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TestHttpApiAsyncHandler;
@@ -98,6 +108,9 @@ namespace AlibabaCloud
 			FtDynamicAddressHsfOutcome ftDynamicAddressHsf(const Model::FtDynamicAddressHsfRequest &request)const;
 			void ftDynamicAddressHsfAsync(const Model::FtDynamicAddressHsfRequest& request, const FtDynamicAddressHsfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FtDynamicAddressHsfOutcomeCallable ftDynamicAddressHsfCallable(const Model::FtDynamicAddressHsfRequest& request) const;
+			FtDynamicAddressHttpVpcOutcome ftDynamicAddressHttpVpc(const Model::FtDynamicAddressHttpVpcRequest &request)const;
+			void ftDynamicAddressHttpVpcAsync(const Model::FtDynamicAddressHttpVpcRequest& request, const FtDynamicAddressHttpVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FtDynamicAddressHttpVpcOutcomeCallable ftDynamicAddressHttpVpcCallable(const Model::FtDynamicAddressHttpVpcRequest& request) const;
 			FtEagleEyeOutcome ftEagleEye(const Model::FtEagleEyeRequest &request)const;
 			void ftEagleEyeAsync(const Model::FtEagleEyeRequest& request, const FtEagleEyeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FtEagleEyeOutcomeCallable ftEagleEyeCallable(const Model::FtEagleEyeRequest& request) const;
@@ -113,6 +126,9 @@ namespace AlibabaCloud
 			FtParamListOutcome ftParamList(const Model::FtParamListRequest &request)const;
 			void ftParamListAsync(const Model::FtParamListRequest& request, const FtParamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FtParamListOutcomeCallable ftParamListCallable(const Model::FtParamListRequest& request) const;
+			TestFlowStrategy01Outcome testFlowStrategy01(const Model::TestFlowStrategy01Request &request)const;
+			void testFlowStrategy01Async(const Model::TestFlowStrategy01Request& request, const TestFlowStrategy01AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TestFlowStrategy01OutcomeCallable testFlowStrategy01Callable(const Model::TestFlowStrategy01Request& request) const;
 			TestHttpApiOutcome testHttpApi(const Model::TestHttpApiRequest &request)const;
 			void testHttpApiAsync(const Model::TestHttpApiRequest& request, const TestHttpApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TestHttpApiOutcomeCallable testHttpApiCallable(const Model::TestHttpApiRequest& request) const;
