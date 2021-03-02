@@ -1,4 +1,7 @@
 2021-03-02 Version: patch
+- Update default endpoints.
+
+2021-03-02 Version: patch
 - Supported API for dnsCache.
 - Supported API for GTM.
 
