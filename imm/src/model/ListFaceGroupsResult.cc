@@ -82,6 +82,8 @@ void ListFaceGroupsResult::parse(const std::string &payload)
 			faceGroupsObject.groupCoverFace.faceId = groupCoverFaceNode["FaceId"].asString();
 		if(!groupCoverFaceNode["ImageUri"].isNull())
 			faceGroupsObject.groupCoverFace.imageUri = groupCoverFaceNode["ImageUri"].asString();
+		if(!groupCoverFaceNode["ExternalId"].isNull())
+			faceGroupsObject.groupCoverFace.externalId = groupCoverFaceNode["ExternalId"].asString();
 		auto faceBoundaryNode = groupCoverFaceNode["FaceBoundary"];
 		if(!faceBoundaryNode["Left"].isNull())
 			faceGroupsObject.groupCoverFace.faceBoundary.left = std::stoi(faceBoundaryNode["Left"].asString());

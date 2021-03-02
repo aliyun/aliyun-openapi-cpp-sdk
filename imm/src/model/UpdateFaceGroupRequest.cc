@@ -104,6 +104,17 @@ void UpdateFaceGroupRequest::setGroupName(const std::string& groupName)
 	setParameter("GroupName", groupName);
 }
 
+std::string UpdateFaceGroupRequest::getResetItems()const
+{
+	return resetItems_;
+}
+
+void UpdateFaceGroupRequest::setResetItems(const std::string& resetItems)
+{
+	resetItems_ = resetItems;
+	setParameter("ResetItems", resetItems);
+}
+
 std::string UpdateFaceGroupRequest::getRemarksArrayA()const
 {
 	return remarksArrayA_;

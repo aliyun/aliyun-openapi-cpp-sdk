@@ -1,3 +1,7 @@
+2021-03-02 Version: patch
+- Support GroupCoverFace ExternalId for ListFaceGroups.
+- Support ResetItems for UpdateFaceGroup.
+
 2021-03-01 Version: patch
 - AMP Version Change.
 

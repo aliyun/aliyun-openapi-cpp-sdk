@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setRemarksA(const std::string& remarksA);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
+				std::string getResetItems()const;
+				void setResetItems(const std::string& resetItems);
 				std::string getRemarksArrayA()const;
 				void setRemarksArrayA(const std::string& remarksArrayA);
 				std::string getRemarksArrayB()const;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string remarksB_;
 				std::string remarksA_;
 				std::string groupName_;
+				std::string resetItems_;
 				std::string remarksArrayA_;
 				std::string remarksArrayB_;
 				std::string remarksD_;

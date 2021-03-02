@@ -45,6 +45,7 @@ namespace AlibabaCloud
 						};
 						std::string faceId;
 						FaceBoundary faceBoundary;
+						std::string externalId;
 						std::string imageUri;
 					};
 					GroupCoverFace groupCoverFace;
