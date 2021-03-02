@@ -24,6 +24,8 @@
 #include "AlidnsExport.h"
 #include "model/AddCustomLineRequest.h"
 #include "model/AddCustomLineResult.h"
+#include "model/AddDnsCacheDomainRequest.h"
+#include "model/AddDnsCacheDomainResult.h"
 #include "model/AddDnsGtmAccessStrategyRequest.h"
 #include "model/AddDnsGtmAccessStrategyResult.h"
 #include "model/AddDnsGtmAddressPoolRequest.h"
@@ -56,6 +58,8 @@
 #include "model/CopyGtmConfigResult.h"
 #include "model/DeleteCustomLinesRequest.h"
 #include "model/DeleteCustomLinesResult.h"
+#include "model/DeleteDnsCacheDomainRequest.h"
+#include "model/DeleteDnsCacheDomainResult.h"
 #include "model/DeleteDnsGtmAccessStrategyRequest.h"
 #include "model/DeleteDnsGtmAccessStrategyResult.h"
 #include "model/DeleteDnsGtmAddressPoolRequest.h"
@@ -84,6 +88,8 @@
 #include "model/DescribeCustomLinesResult.h"
 #include "model/DescribeDNSSLBSubDomainsRequest.h"
 #include "model/DescribeDNSSLBSubDomainsResult.h"
+#include "model/DescribeDnsCacheDomainsRequest.h"
+#include "model/DescribeDnsCacheDomainsResult.h"
 #include "model/DescribeDnsGtmAccessStrategiesRequest.h"
 #include "model/DescribeDnsGtmAccessStrategiesResult.h"
 #include "model/DescribeDnsGtmAccessStrategyRequest.h"
@@ -248,6 +254,10 @@
 #include "model/UpdateCustomLineResult.h"
 #include "model/UpdateDNSSLBWeightRequest.h"
 #include "model/UpdateDNSSLBWeightResult.h"
+#include "model/UpdateDnsCacheDomainRequest.h"
+#include "model/UpdateDnsCacheDomainResult.h"
+#include "model/UpdateDnsCacheDomainRemarkRequest.h"
+#include "model/UpdateDnsCacheDomainRemarkResult.h"
 #include "model/UpdateDnsGtmAccessStrategyRequest.h"
 #include "model/UpdateDnsGtmAccessStrategyResult.h"
 #include "model/UpdateDnsGtmAddressPoolRequest.h"
@@ -286,6 +296,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddCustomLineResult> AddCustomLineOutcome;
 			typedef std::future<AddCustomLineOutcome> AddCustomLineOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::AddCustomLineRequest&, const AddCustomLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomLineAsyncHandler;
+			typedef Outcome<Error, Model::AddDnsCacheDomainResult> AddDnsCacheDomainOutcome;
+			typedef std::future<AddDnsCacheDomainOutcome> AddDnsCacheDomainOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::AddDnsCacheDomainRequest&, const AddDnsCacheDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDnsCacheDomainAsyncHandler;
 			typedef Outcome<Error, Model::AddDnsGtmAccessStrategyResult> AddDnsGtmAccessStrategyOutcome;
 			typedef std::future<AddDnsGtmAccessStrategyOutcome> AddDnsGtmAccessStrategyOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::AddDnsGtmAccessStrategyRequest&, const AddDnsGtmAccessStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDnsGtmAccessStrategyAsyncHandler;
@@ -334,6 +347,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCustomLinesResult> DeleteCustomLinesOutcome;
 			typedef std::future<DeleteCustomLinesOutcome> DeleteCustomLinesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DeleteCustomLinesRequest&, const DeleteCustomLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomLinesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDnsCacheDomainResult> DeleteDnsCacheDomainOutcome;
+			typedef std::future<DeleteDnsCacheDomainOutcome> DeleteDnsCacheDomainOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DeleteDnsCacheDomainRequest&, const DeleteDnsCacheDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDnsCacheDomainAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDnsGtmAccessStrategyResult> DeleteDnsGtmAccessStrategyOutcome;
 			typedef std::future<DeleteDnsGtmAccessStrategyOutcome> DeleteDnsGtmAccessStrategyOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DeleteDnsGtmAccessStrategyRequest&, const DeleteDnsGtmAccessStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDnsGtmAccessStrategyAsyncHandler;
@@ -376,6 +392,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDNSSLBSubDomainsResult> DescribeDNSSLBSubDomainsOutcome;
 			typedef std::future<DescribeDNSSLBSubDomainsOutcome> DescribeDNSSLBSubDomainsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDNSSLBSubDomainsRequest&, const DescribeDNSSLBSubDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDNSSLBSubDomainsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDnsCacheDomainsResult> DescribeDnsCacheDomainsOutcome;
+			typedef std::future<DescribeDnsCacheDomainsOutcome> DescribeDnsCacheDomainsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDnsCacheDomainsRequest&, const DescribeDnsCacheDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsCacheDomainsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDnsGtmAccessStrategiesResult> DescribeDnsGtmAccessStrategiesOutcome;
 			typedef std::future<DescribeDnsGtmAccessStrategiesOutcome> DescribeDnsGtmAccessStrategiesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDnsGtmAccessStrategiesRequest&, const DescribeDnsGtmAccessStrategiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsGtmAccessStrategiesAsyncHandler;
@@ -622,6 +641,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDNSSLBWeightResult> UpdateDNSSLBWeightOutcome;
 			typedef std::future<UpdateDNSSLBWeightOutcome> UpdateDNSSLBWeightOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateDNSSLBWeightRequest&, const UpdateDNSSLBWeightOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDNSSLBWeightAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDnsCacheDomainResult> UpdateDnsCacheDomainOutcome;
+			typedef std::future<UpdateDnsCacheDomainOutcome> UpdateDnsCacheDomainOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UpdateDnsCacheDomainRequest&, const UpdateDnsCacheDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDnsCacheDomainAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDnsCacheDomainRemarkResult> UpdateDnsCacheDomainRemarkOutcome;
+			typedef std::future<UpdateDnsCacheDomainRemarkOutcome> UpdateDnsCacheDomainRemarkOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UpdateDnsCacheDomainRemarkRequest&, const UpdateDnsCacheDomainRemarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDnsCacheDomainRemarkAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDnsGtmAccessStrategyResult> UpdateDnsGtmAccessStrategyOutcome;
 			typedef std::future<UpdateDnsGtmAccessStrategyOutcome> UpdateDnsGtmAccessStrategyOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateDnsGtmAccessStrategyRequest&, const UpdateDnsGtmAccessStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDnsGtmAccessStrategyAsyncHandler;
@@ -669,6 +694,9 @@ namespace AlibabaCloud
 			AddCustomLineOutcome addCustomLine(const Model::AddCustomLineRequest &request)const;
 			void addCustomLineAsync(const Model::AddCustomLineRequest& request, const AddCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddCustomLineOutcomeCallable addCustomLineCallable(const Model::AddCustomLineRequest& request) const;
+			AddDnsCacheDomainOutcome addDnsCacheDomain(const Model::AddDnsCacheDomainRequest &request)const;
+			void addDnsCacheDomainAsync(const Model::AddDnsCacheDomainRequest& request, const AddDnsCacheDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDnsCacheDomainOutcomeCallable addDnsCacheDomainCallable(const Model::AddDnsCacheDomainRequest& request) const;
 			AddDnsGtmAccessStrategyOutcome addDnsGtmAccessStrategy(const Model::AddDnsGtmAccessStrategyRequest &request)const;
 			void addDnsGtmAccessStrategyAsync(const Model::AddDnsGtmAccessStrategyRequest& request, const AddDnsGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDnsGtmAccessStrategyOutcomeCallable addDnsGtmAccessStrategyCallable(const Model::AddDnsGtmAccessStrategyRequest& request) const;
@@ -717,6 +745,9 @@ namespace AlibabaCloud
 			DeleteCustomLinesOutcome deleteCustomLines(const Model::DeleteCustomLinesRequest &request)const;
 			void deleteCustomLinesAsync(const Model::DeleteCustomLinesRequest& request, const DeleteCustomLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomLinesOutcomeCallable deleteCustomLinesCallable(const Model::DeleteCustomLinesRequest& request) const;
+			DeleteDnsCacheDomainOutcome deleteDnsCacheDomain(const Model::DeleteDnsCacheDomainRequest &request)const;
+			void deleteDnsCacheDomainAsync(const Model::DeleteDnsCacheDomainRequest& request, const DeleteDnsCacheDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDnsCacheDomainOutcomeCallable deleteDnsCacheDomainCallable(const Model::DeleteDnsCacheDomainRequest& request) const;
 			DeleteDnsGtmAccessStrategyOutcome deleteDnsGtmAccessStrategy(const Model::DeleteDnsGtmAccessStrategyRequest &request)const;
 			void deleteDnsGtmAccessStrategyAsync(const Model::DeleteDnsGtmAccessStrategyRequest& request, const DeleteDnsGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDnsGtmAccessStrategyOutcomeCallable deleteDnsGtmAccessStrategyCallable(const Model::DeleteDnsGtmAccessStrategyRequest& request) const;
@@ -759,6 +790,9 @@ namespace AlibabaCloud
 			DescribeDNSSLBSubDomainsOutcome describeDNSSLBSubDomains(const Model::DescribeDNSSLBSubDomainsRequest &request)const;
 			void describeDNSSLBSubDomainsAsync(const Model::DescribeDNSSLBSubDomainsRequest& request, const DescribeDNSSLBSubDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDNSSLBSubDomainsOutcomeCallable describeDNSSLBSubDomainsCallable(const Model::DescribeDNSSLBSubDomainsRequest& request) const;
+			DescribeDnsCacheDomainsOutcome describeDnsCacheDomains(const Model::DescribeDnsCacheDomainsRequest &request)const;
+			void describeDnsCacheDomainsAsync(const Model::DescribeDnsCacheDomainsRequest& request, const DescribeDnsCacheDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDnsCacheDomainsOutcomeCallable describeDnsCacheDomainsCallable(const Model::DescribeDnsCacheDomainsRequest& request) const;
 			DescribeDnsGtmAccessStrategiesOutcome describeDnsGtmAccessStrategies(const Model::DescribeDnsGtmAccessStrategiesRequest &request)const;
 			void describeDnsGtmAccessStrategiesAsync(const Model::DescribeDnsGtmAccessStrategiesRequest& request, const DescribeDnsGtmAccessStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDnsGtmAccessStrategiesOutcomeCallable describeDnsGtmAccessStrategiesCallable(const Model::DescribeDnsGtmAccessStrategiesRequest& request) const;
@@ -1005,6 +1039,12 @@ namespace AlibabaCloud
 			UpdateDNSSLBWeightOutcome updateDNSSLBWeight(const Model::UpdateDNSSLBWeightRequest &request)const;
 			void updateDNSSLBWeightAsync(const Model::UpdateDNSSLBWeightRequest& request, const UpdateDNSSLBWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDNSSLBWeightOutcomeCallable updateDNSSLBWeightCallable(const Model::UpdateDNSSLBWeightRequest& request) const;
+			UpdateDnsCacheDomainOutcome updateDnsCacheDomain(const Model::UpdateDnsCacheDomainRequest &request)const;
+			void updateDnsCacheDomainAsync(const Model::UpdateDnsCacheDomainRequest& request, const UpdateDnsCacheDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDnsCacheDomainOutcomeCallable updateDnsCacheDomainCallable(const Model::UpdateDnsCacheDomainRequest& request) const;
+			UpdateDnsCacheDomainRemarkOutcome updateDnsCacheDomainRemark(const Model::UpdateDnsCacheDomainRemarkRequest &request)const;
+			void updateDnsCacheDomainRemarkAsync(const Model::UpdateDnsCacheDomainRemarkRequest& request, const UpdateDnsCacheDomainRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDnsCacheDomainRemarkOutcomeCallable updateDnsCacheDomainRemarkCallable(const Model::UpdateDnsCacheDomainRemarkRequest& request) const;
 			UpdateDnsGtmAccessStrategyOutcome updateDnsGtmAccessStrategy(const Model::UpdateDnsGtmAccessStrategyRequest &request)const;
 			void updateDnsGtmAccessStrategyAsync(const Model::UpdateDnsGtmAccessStrategyRequest& request, const UpdateDnsGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDnsGtmAccessStrategyOutcomeCallable updateDnsGtmAccessStrategyCallable(const Model::UpdateDnsGtmAccessStrategyRequest& request) const;

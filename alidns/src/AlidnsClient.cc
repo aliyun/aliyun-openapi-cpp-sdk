@@ -87,6 +87,42 @@ AlidnsClient::AddCustomLineOutcomeCallable AlidnsClient::addCustomLineCallable(c
 	return task->get_future();
 }
 
+AlidnsClient::AddDnsCacheDomainOutcome AlidnsClient::addDnsCacheDomain(const AddDnsCacheDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDnsCacheDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDnsCacheDomainOutcome(AddDnsCacheDomainResult(outcome.result()));
+	else
+		return AddDnsCacheDomainOutcome(outcome.error());
+}
+
+void AlidnsClient::addDnsCacheDomainAsync(const AddDnsCacheDomainRequest& request, const AddDnsCacheDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDnsCacheDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::AddDnsCacheDomainOutcomeCallable AlidnsClient::addDnsCacheDomainCallable(const AddDnsCacheDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDnsCacheDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->addDnsCacheDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::AddDnsGtmAccessStrategyOutcome AlidnsClient::addDnsGtmAccessStrategy(const AddDnsGtmAccessStrategyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -663,6 +699,42 @@ AlidnsClient::DeleteCustomLinesOutcomeCallable AlidnsClient::deleteCustomLinesCa
 	return task->get_future();
 }
 
+AlidnsClient::DeleteDnsCacheDomainOutcome AlidnsClient::deleteDnsCacheDomain(const DeleteDnsCacheDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDnsCacheDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDnsCacheDomainOutcome(DeleteDnsCacheDomainResult(outcome.result()));
+	else
+		return DeleteDnsCacheDomainOutcome(outcome.error());
+}
+
+void AlidnsClient::deleteDnsCacheDomainAsync(const DeleteDnsCacheDomainRequest& request, const DeleteDnsCacheDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDnsCacheDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DeleteDnsCacheDomainOutcomeCallable AlidnsClient::deleteDnsCacheDomainCallable(const DeleteDnsCacheDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDnsCacheDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDnsCacheDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DeleteDnsGtmAccessStrategyOutcome AlidnsClient::deleteDnsGtmAccessStrategy(const DeleteDnsGtmAccessStrategyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1233,42 @@ AlidnsClient::DescribeDNSSLBSubDomainsOutcomeCallable AlidnsClient::describeDNSS
 			[this, request]()
 			{
 			return this->describeDNSSLBSubDomains(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeDnsCacheDomainsOutcome AlidnsClient::describeDnsCacheDomains(const DescribeDnsCacheDomainsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDnsCacheDomainsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDnsCacheDomainsOutcome(DescribeDnsCacheDomainsResult(outcome.result()));
+	else
+		return DescribeDnsCacheDomainsOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDnsCacheDomainsAsync(const DescribeDnsCacheDomainsRequest& request, const DescribeDnsCacheDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDnsCacheDomains(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDnsCacheDomainsOutcomeCallable AlidnsClient::describeDnsCacheDomainsCallable(const DescribeDnsCacheDomainsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDnsCacheDomainsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDnsCacheDomains(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4113,6 +4221,78 @@ AlidnsClient::UpdateDNSSLBWeightOutcomeCallable AlidnsClient::updateDNSSLBWeight
 			[this, request]()
 			{
 			return this->updateDNSSLBWeight(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateDnsCacheDomainOutcome AlidnsClient::updateDnsCacheDomain(const UpdateDnsCacheDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDnsCacheDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDnsCacheDomainOutcome(UpdateDnsCacheDomainResult(outcome.result()));
+	else
+		return UpdateDnsCacheDomainOutcome(outcome.error());
+}
+
+void AlidnsClient::updateDnsCacheDomainAsync(const UpdateDnsCacheDomainRequest& request, const UpdateDnsCacheDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDnsCacheDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateDnsCacheDomainOutcomeCallable AlidnsClient::updateDnsCacheDomainCallable(const UpdateDnsCacheDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDnsCacheDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDnsCacheDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateDnsCacheDomainRemarkOutcome AlidnsClient::updateDnsCacheDomainRemark(const UpdateDnsCacheDomainRemarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDnsCacheDomainRemarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDnsCacheDomainRemarkOutcome(UpdateDnsCacheDomainRemarkResult(outcome.result()));
+	else
+		return UpdateDnsCacheDomainRemarkOutcome(outcome.error());
+}
+
+void AlidnsClient::updateDnsCacheDomainRemarkAsync(const UpdateDnsCacheDomainRemarkRequest& request, const UpdateDnsCacheDomainRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDnsCacheDomainRemark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateDnsCacheDomainRemarkOutcomeCallable AlidnsClient::updateDnsCacheDomainRemarkCallable(const UpdateDnsCacheDomainRemarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDnsCacheDomainRemarkOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDnsCacheDomainRemark(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
