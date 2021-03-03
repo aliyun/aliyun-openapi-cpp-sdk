@@ -19,7 +19,7 @@
 using AlibabaCloud::Dataworks_public::Model::DeleteFileRequest;
 
 DeleteFileRequest::DeleteFileRequest() :
-	RpcServiceRequest("dataworks-public", "2020-05-18", "DeleteFile")
+	RpcServiceRequest("dataworks-public", "2018-06-01", "DeleteFile")
 {
 	setMethod(HttpRequest::Method::Post);
 }

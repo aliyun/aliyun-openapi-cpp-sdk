@@ -39,13 +39,34 @@ void CreateManualDagResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DagId"].isNull())
-		dagId_ = std::stol(value["DagId"].asString());
+	if(!value["ReturnCode"].isNull())
+		returnCode_ = value["ReturnCode"].asString();
+	if(!value["ReturnErrorSolution"].isNull())
+		returnErrorSolution_ = value["ReturnErrorSolution"].asString();
+	if(!value["ReturnMessage"].isNull())
+		returnMessage_ = value["ReturnMessage"].asString();
+	if(!value["ReturnValue"].isNull())
+		returnValue_ = std::stol(value["ReturnValue"].asString());
 
 }
 
-long CreateManualDagResult::getDagId()const
+std::string CreateManualDagResult::getReturnErrorSolution()const
 {
-	return dagId_;
+	return returnErrorSolution_;
+}
+
+std::string CreateManualDagResult::getReturnCode()const
+{
+	return returnCode_;
+}
+
+std::string CreateManualDagResult::getReturnMessage()const
+{
+	return returnMessage_;
+}
+
+long CreateManualDagResult::getReturnValue()const
+{
+	return returnValue_;
 }
 
