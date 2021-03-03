@@ -27,6 +27,17 @@ ScreenChestCTRequest::ScreenChestCTRequest() :
 ScreenChestCTRequest::~ScreenChestCTRequest()
 {}
 
+std::string ScreenChestCTRequest::getOrgName()const
+{
+	return orgName_;
+}
+
+void ScreenChestCTRequest::setOrgName(const std::string& orgName)
+{
+	orgName_ = orgName;
+	setBodyParameter("OrgName", orgName);
+}
+
 std::string ScreenChestCTRequest::getDataFormat()const
 {
 	return dataFormat_;
@@ -73,16 +84,5 @@ void ScreenChestCTRequest::setAsync(bool async)
 {
 	async_ = async;
 	setBodyParameter("Async", async ? "true" : "false");
-}
-
-std::string ScreenChestCTRequest::getOrgName()const
-{
-	return orgName_;
-}
-
-void ScreenChestCTRequest::setOrgName(const std::string& orgName)
-{
-	orgName_ = orgName;
-	setBodyParameter("OrgName", orgName);
 }
 

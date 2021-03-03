@@ -34,6 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct Covid
+					{
+						std::string newProbability;
+						std::string otherProbability;
+						std::string normalProbability;
+						std::string mask;
+						std::string lesionRatio;
+					};
+					struct CACS
+					{
+						std::string score;
+						std::string resultUrl;
+					};
 					struct LungNodule
 					{
 						struct Serie
@@ -42,13 +55,13 @@ namespace AlibabaCloud
 							{
 								float imageZ;
 								float imageY;
-								std::string lobe;
 								float imageX;
+								std::string lobe;
 								std::string category;
 								std::string lung;
 								float meanValue;
-								float confidence;
 								float volume;
+								float confidence;
 								float x;
 								float y;
 								float z;
@@ -63,34 +76,41 @@ namespace AlibabaCloud
 						};
 						std::vector<Serie> series;
 					};
-					struct CACS
+					struct DetectRibFracture
 					{
-						std::string score;
-						std::string resultUrl;
+						struct DetectionsItem
+						{
+							long fractureCategory;
+							float fractureConfidence;
+							std::vector<std::string> coordinateImage;
+							std::vector<std::string> coordinates;
+							long fractureId;
+						};
+						std::vector<std::string> origin1;
+						std::vector<std::string> spacing2;
+						std::vector<DetectionsItem> detections;
+						std::string resultURL;
 					};
-					struct Covid
-					{
-						std::string newProbability;
-						std::string otherProbability;
-						std::string normalProbability;
-						std::string mask;
-						std::string lesionRatio;
-					};
-					LungNodule lungNodule;
-					CACS cACS;
 					Covid covid;
+					CACS cACS;
+					LungNodule lungNodule;
+					DetectRibFracture detectRibFracture;
 				};
 
 
 				ScreenChestCTResult();
 				explicit ScreenChestCTResult(const std::string &payload);
 				~ScreenChestCTResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}
