@@ -43,12 +43,12 @@ void ExecuteScriptResult::parse(const std::string &payload)
 	for (auto valueResultsResult : allResultsNode)
 	{
 		Result resultsObject;
+		if(!valueResultsResult["Message"].isNull())
+			resultsObject.message = valueResultsResult["Message"].asString();
 		if(!valueResultsResult["RowCount"].isNull())
 			resultsObject.rowCount = std::stol(valueResultsResult["RowCount"].asString());
 		if(!valueResultsResult["Success"].isNull())
 			resultsObject.success = valueResultsResult["Success"].asString() == "true";
-		if(!valueResultsResult["Message"].isNull())
-			resultsObject.message = valueResultsResult["Message"].asString();
 		auto allColumnNames = value["ColumnNames"]["ColumnNames"];
 		for (auto value : allColumnNames)
 			resultsObject.columnNames.push_back(value.asString());
@@ -57,12 +57,12 @@ void ExecuteScriptResult::parse(const std::string &payload)
 			resultsObject.rows.push_back(value.asString());
 		results_.push_back(resultsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

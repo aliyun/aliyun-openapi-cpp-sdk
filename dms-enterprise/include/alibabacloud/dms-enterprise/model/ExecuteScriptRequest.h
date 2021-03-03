@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ExecuteScriptRequest();
 				~ExecuteScriptRequest();
 
-				int getDbId()const;
-				void setDbId(int dbId);
-				bool getLogic()const;
-				void setLogic(bool logic);
 				std::string getScript()const;
 				void setScript(const std::string& script);
 				long getTid()const;
 				void setTid(long tid);
+				int getDbId()const;
+				void setDbId(int dbId);
+				bool getLogic()const;
+				void setLogic(bool logic);
 
             private:
-				int dbId_;
-				bool logic_;
 				std::string script_;
 				long tid_;
+				int dbId_;
+				bool logic_;
 
 			};
 		}

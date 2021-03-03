@@ -27,28 +27,6 @@ ApproveOrderRequest::ApproveOrderRequest() :
 ApproveOrderRequest::~ApproveOrderRequest()
 {}
 
-std::string ApproveOrderRequest::getApprovalType()const
-{
-	return approvalType_;
-}
-
-void ApproveOrderRequest::setApprovalType(const std::string& approvalType)
-{
-	approvalType_ = approvalType;
-	setParameter("ApprovalType", approvalType);
-}
-
-std::string ApproveOrderRequest::getComment()const
-{
-	return comment_;
-}
-
-void ApproveOrderRequest::setComment(const std::string& comment)
-{
-	comment_ = comment;
-	setParameter("Comment", comment);
-}
-
 long ApproveOrderRequest::getTid()const
 {
 	return tid_;
@@ -69,5 +47,27 @@ void ApproveOrderRequest::setWorkflowInstanceId(long workflowInstanceId)
 {
 	workflowInstanceId_ = workflowInstanceId;
 	setParameter("WorkflowInstanceId", std::to_string(workflowInstanceId));
+}
+
+std::string ApproveOrderRequest::getApprovalType()const
+{
+	return approvalType_;
+}
+
+void ApproveOrderRequest::setApprovalType(const std::string& approvalType)
+{
+	approvalType_ = approvalType;
+	setParameter("ApprovalType", approvalType);
+}
+
+std::string ApproveOrderRequest::getComment()const
+{
+	return comment_;
+}
+
+void ApproveOrderRequest::setComment(const std::string& comment)
+{
+	comment_ = comment;
+	setParameter("Comment", comment);
 }
 

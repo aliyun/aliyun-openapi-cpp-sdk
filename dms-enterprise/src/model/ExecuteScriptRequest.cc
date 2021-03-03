@@ -27,28 +27,6 @@ ExecuteScriptRequest::ExecuteScriptRequest() :
 ExecuteScriptRequest::~ExecuteScriptRequest()
 {}
 
-int ExecuteScriptRequest::getDbId()const
-{
-	return dbId_;
-}
-
-void ExecuteScriptRequest::setDbId(int dbId)
-{
-	dbId_ = dbId;
-	setParameter("DbId", std::to_string(dbId));
-}
-
-bool ExecuteScriptRequest::getLogic()const
-{
-	return logic_;
-}
-
-void ExecuteScriptRequest::setLogic(bool logic)
-{
-	logic_ = logic;
-	setParameter("Logic", logic ? "true" : "false");
-}
-
 std::string ExecuteScriptRequest::getScript()const
 {
 	return script_;
@@ -69,5 +47,27 @@ void ExecuteScriptRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+int ExecuteScriptRequest::getDbId()const
+{
+	return dbId_;
+}
+
+void ExecuteScriptRequest::setDbId(int dbId)
+{
+	dbId_ = dbId;
+	setParameter("DbId", std::to_string(dbId));
+}
+
+bool ExecuteScriptRequest::getLogic()const
+{
+	return logic_;
+}
+
+void ExecuteScriptRequest::setLogic(bool logic)
+{
+	logic_ = logic;
+	setParameter("Logic", logic ? "true" : "false");
 }
 

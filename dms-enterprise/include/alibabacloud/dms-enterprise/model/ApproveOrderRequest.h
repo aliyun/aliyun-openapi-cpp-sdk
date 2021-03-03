@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ApproveOrderRequest();
 				~ApproveOrderRequest();
 
-				std::string getApprovalType()const;
-				void setApprovalType(const std::string& approvalType);
-				std::string getComment()const;
-				void setComment(const std::string& comment);
 				long getTid()const;
 				void setTid(long tid);
 				long getWorkflowInstanceId()const;
 				void setWorkflowInstanceId(long workflowInstanceId);
+				std::string getApprovalType()const;
+				void setApprovalType(const std::string& approvalType);
+				std::string getComment()const;
+				void setComment(const std::string& comment);
 
             private:
-				std::string approvalType_;
-				std::string comment_;
 				long tid_;
 				long workflowInstanceId_;
+				std::string approvalType_;
+				std::string comment_;
 
 			};
 		}

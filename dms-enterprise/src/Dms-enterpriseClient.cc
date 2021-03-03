@@ -195,6 +195,114 @@ Dms_enterpriseClient::CreatePublishGroupTaskOutcomeCallable Dms_enterpriseClient
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateStructSyncOrderOutcome Dms_enterpriseClient::createStructSyncOrder(const CreateStructSyncOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStructSyncOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStructSyncOrderOutcome(CreateStructSyncOrderResult(outcome.result()));
+	else
+		return CreateStructSyncOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createStructSyncOrderAsync(const CreateStructSyncOrderRequest& request, const CreateStructSyncOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStructSyncOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateStructSyncOrderOutcomeCallable Dms_enterpriseClient::createStructSyncOrderCallable(const CreateStructSyncOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStructSyncOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createStructSyncOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateUploadFileJobOutcome Dms_enterpriseClient::createUploadFileJob(const CreateUploadFileJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUploadFileJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUploadFileJobOutcome(CreateUploadFileJobResult(outcome.result()));
+	else
+		return CreateUploadFileJobOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createUploadFileJobAsync(const CreateUploadFileJobRequest& request, const CreateUploadFileJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUploadFileJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateUploadFileJobOutcomeCallable Dms_enterpriseClient::createUploadFileJobCallable(const CreateUploadFileJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUploadFileJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createUploadFileJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateUploadOSSFileJobOutcome Dms_enterpriseClient::createUploadOSSFileJob(const CreateUploadOSSFileJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUploadOSSFileJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUploadOSSFileJobOutcome(CreateUploadOSSFileJobResult(outcome.result()));
+	else
+		return CreateUploadOSSFileJobOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createUploadOSSFileJobAsync(const CreateUploadOSSFileJobRequest& request, const CreateUploadOSSFileJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUploadOSSFileJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateUploadOSSFileJobOutcomeCallable Dms_enterpriseClient::createUploadOSSFileJobCallable(const CreateUploadOSSFileJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUploadOSSFileJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createUploadOSSFileJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::DeleteInstanceOutcome Dms_enterpriseClient::deleteInstance(const DeleteInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,6 +555,42 @@ Dms_enterpriseClient::ExecuteScriptOutcomeCallable Dms_enterpriseClient::execute
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ExecuteStructSyncOutcome Dms_enterpriseClient::executeStructSync(const ExecuteStructSyncRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteStructSyncOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteStructSyncOutcome(ExecuteStructSyncResult(outcome.result()));
+	else
+		return ExecuteStructSyncOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::executeStructSyncAsync(const ExecuteStructSyncRequest& request, const ExecuteStructSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeStructSync(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ExecuteStructSyncOutcomeCallable Dms_enterpriseClient::executeStructSyncCallable(const ExecuteStructSyncRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteStructSyncOutcome()>>(
+			[this, request]()
+			{
+			return this->executeStructSync(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetApprovalDetailOutcome Dms_enterpriseClient::getApprovalDetail(const GetApprovalDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +693,42 @@ Dms_enterpriseClient::GetDataCorrectOrderDetailOutcomeCallable Dms_enterpriseCli
 			[this, request]()
 			{
 			return this->getDataCorrectOrderDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataCorrectSQLFileOutcome Dms_enterpriseClient::getDataCorrectSQLFile(const GetDataCorrectSQLFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataCorrectSQLFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataCorrectSQLFileOutcome(GetDataCorrectSQLFileResult(outcome.result()));
+	else
+		return GetDataCorrectSQLFileOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataCorrectSQLFileAsync(const GetDataCorrectSQLFileRequest& request, const GetDataCorrectSQLFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataCorrectSQLFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataCorrectSQLFileOutcomeCallable Dms_enterpriseClient::getDataCorrectSQLFileCallable(const GetDataCorrectSQLFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataCorrectSQLFileOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataCorrectSQLFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -879,6 +1059,222 @@ Dms_enterpriseClient::GetOrderBaseInfoOutcomeCallable Dms_enterpriseClient::getO
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetOwnerApplyOrderDetailOutcome Dms_enterpriseClient::getOwnerApplyOrderDetail(const GetOwnerApplyOrderDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOwnerApplyOrderDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOwnerApplyOrderDetailOutcome(GetOwnerApplyOrderDetailResult(outcome.result()));
+	else
+		return GetOwnerApplyOrderDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getOwnerApplyOrderDetailAsync(const GetOwnerApplyOrderDetailRequest& request, const GetOwnerApplyOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOwnerApplyOrderDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetOwnerApplyOrderDetailOutcomeCallable Dms_enterpriseClient::getOwnerApplyOrderDetailCallable(const GetOwnerApplyOrderDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOwnerApplyOrderDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getOwnerApplyOrderDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetPermApplyOrderDetailOutcome Dms_enterpriseClient::getPermApplyOrderDetail(const GetPermApplyOrderDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPermApplyOrderDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPermApplyOrderDetailOutcome(GetPermApplyOrderDetailResult(outcome.result()));
+	else
+		return GetPermApplyOrderDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getPermApplyOrderDetailAsync(const GetPermApplyOrderDetailRequest& request, const GetPermApplyOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPermApplyOrderDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetPermApplyOrderDetailOutcomeCallable Dms_enterpriseClient::getPermApplyOrderDetailCallable(const GetPermApplyOrderDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPermApplyOrderDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getPermApplyOrderDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetStructSyncExecSqlDetailOutcome Dms_enterpriseClient::getStructSyncExecSqlDetail(const GetStructSyncExecSqlDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetStructSyncExecSqlDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetStructSyncExecSqlDetailOutcome(GetStructSyncExecSqlDetailResult(outcome.result()));
+	else
+		return GetStructSyncExecSqlDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getStructSyncExecSqlDetailAsync(const GetStructSyncExecSqlDetailRequest& request, const GetStructSyncExecSqlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getStructSyncExecSqlDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetStructSyncExecSqlDetailOutcomeCallable Dms_enterpriseClient::getStructSyncExecSqlDetailCallable(const GetStructSyncExecSqlDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetStructSyncExecSqlDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getStructSyncExecSqlDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetStructSyncJobAnalyzeResultOutcome Dms_enterpriseClient::getStructSyncJobAnalyzeResult(const GetStructSyncJobAnalyzeResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetStructSyncJobAnalyzeResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetStructSyncJobAnalyzeResultOutcome(GetStructSyncJobAnalyzeResultResult(outcome.result()));
+	else
+		return GetStructSyncJobAnalyzeResultOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getStructSyncJobAnalyzeResultAsync(const GetStructSyncJobAnalyzeResultRequest& request, const GetStructSyncJobAnalyzeResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getStructSyncJobAnalyzeResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetStructSyncJobAnalyzeResultOutcomeCallable Dms_enterpriseClient::getStructSyncJobAnalyzeResultCallable(const GetStructSyncJobAnalyzeResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetStructSyncJobAnalyzeResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getStructSyncJobAnalyzeResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetStructSyncJobDetailOutcome Dms_enterpriseClient::getStructSyncJobDetail(const GetStructSyncJobDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetStructSyncJobDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetStructSyncJobDetailOutcome(GetStructSyncJobDetailResult(outcome.result()));
+	else
+		return GetStructSyncJobDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getStructSyncJobDetailAsync(const GetStructSyncJobDetailRequest& request, const GetStructSyncJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getStructSyncJobDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetStructSyncJobDetailOutcomeCallable Dms_enterpriseClient::getStructSyncJobDetailCallable(const GetStructSyncJobDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetStructSyncJobDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getStructSyncJobDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetStructSyncOrderDetailOutcome Dms_enterpriseClient::getStructSyncOrderDetail(const GetStructSyncOrderDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetStructSyncOrderDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetStructSyncOrderDetailOutcome(GetStructSyncOrderDetailResult(outcome.result()));
+	else
+		return GetStructSyncOrderDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getStructSyncOrderDetailAsync(const GetStructSyncOrderDetailRequest& request, const GetStructSyncOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getStructSyncOrderDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetStructSyncOrderDetailOutcomeCallable Dms_enterpriseClient::getStructSyncOrderDetailCallable(const GetStructSyncOrderDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetStructSyncOrderDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getStructSyncOrderDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetTableDBTopologyOutcome Dms_enterpriseClient::getTableDBTopology(const GetTableDBTopologyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +1305,42 @@ Dms_enterpriseClient::GetTableDBTopologyOutcomeCallable Dms_enterpriseClient::ge
 			[this, request]()
 			{
 			return this->getTableDBTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetTableTopologyOutcome Dms_enterpriseClient::getTableTopology(const GetTableTopologyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTableTopologyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTableTopologyOutcome(GetTableTopologyResult(outcome.result()));
+	else
+		return GetTableTopologyOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getTableTopologyAsync(const GetTableTopologyRequest& request, const GetTableTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTableTopology(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetTableTopologyOutcomeCallable Dms_enterpriseClient::getTableTopologyCallable(const GetTableTopologyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTableTopologyOutcome()>>(
+			[this, request]()
+			{
+			return this->getTableTopology(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +1419,42 @@ Dms_enterpriseClient::GetUserActiveTenantOutcomeCallable Dms_enterpriseClient::g
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetUserUploadFileJobOutcome Dms_enterpriseClient::getUserUploadFileJob(const GetUserUploadFileJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserUploadFileJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserUploadFileJobOutcome(GetUserUploadFileJobResult(outcome.result()));
+	else
+		return GetUserUploadFileJobOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getUserUploadFileJobAsync(const GetUserUploadFileJobRequest& request, const GetUserUploadFileJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserUploadFileJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetUserUploadFileJobOutcomeCallable Dms_enterpriseClient::getUserUploadFileJobCallable(const GetUserUploadFileJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserUploadFileJobOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserUploadFileJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GrantUserPermissionOutcome Dms_enterpriseClient::grantUserPermission(const GrantUserPermissionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1521,78 @@ Dms_enterpriseClient::ListColumnsOutcomeCallable Dms_enterpriseClient::listColum
 			[this, request]()
 			{
 			return this->listColumns(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListDBTaskSQLJobOutcome Dms_enterpriseClient::listDBTaskSQLJob(const ListDBTaskSQLJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDBTaskSQLJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDBTaskSQLJobOutcome(ListDBTaskSQLJobResult(outcome.result()));
+	else
+		return ListDBTaskSQLJobOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDBTaskSQLJobAsync(const ListDBTaskSQLJobRequest& request, const ListDBTaskSQLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDBTaskSQLJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDBTaskSQLJobOutcomeCallable Dms_enterpriseClient::listDBTaskSQLJobCallable(const ListDBTaskSQLJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDBTaskSQLJobOutcome()>>(
+			[this, request]()
+			{
+			return this->listDBTaskSQLJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListDBTaskSQLJobDetailOutcome Dms_enterpriseClient::listDBTaskSQLJobDetail(const ListDBTaskSQLJobDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDBTaskSQLJobDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDBTaskSQLJobDetailOutcome(ListDBTaskSQLJobDetailResult(outcome.result()));
+	else
+		return ListDBTaskSQLJobDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDBTaskSQLJobDetailAsync(const ListDBTaskSQLJobDetailRequest& request, const ListDBTaskSQLJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDBTaskSQLJobDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDBTaskSQLJobDetailOutcomeCallable Dms_enterpriseClient::listDBTaskSQLJobDetailCallable(const ListDBTaskSQLJobDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDBTaskSQLJobDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->listDBTaskSQLJobDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1845,6 +2385,42 @@ Dms_enterpriseClient::SubmitOrderApprovalOutcomeCallable Dms_enterpriseClient::s
 			[this, request]()
 			{
 			return this->submitOrderApproval(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::SubmitStructSyncOrderApprovalOutcome Dms_enterpriseClient::submitStructSyncOrderApproval(const SubmitStructSyncOrderApprovalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitStructSyncOrderApprovalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitStructSyncOrderApprovalOutcome(SubmitStructSyncOrderApprovalResult(outcome.result()));
+	else
+		return SubmitStructSyncOrderApprovalOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::submitStructSyncOrderApprovalAsync(const SubmitStructSyncOrderApprovalRequest& request, const SubmitStructSyncOrderApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitStructSyncOrderApproval(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::SubmitStructSyncOrderApprovalOutcomeCallable Dms_enterpriseClient::submitStructSyncOrderApprovalCallable(const SubmitStructSyncOrderApprovalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitStructSyncOrderApprovalOutcome()>>(
+			[this, request]()
+			{
+			return this->submitStructSyncOrderApproval(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
