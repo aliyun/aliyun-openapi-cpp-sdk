@@ -27,10 +27,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/AddFCTriggerResult.h
 	include/alibabacloud/cdn/model/AddLiveAppRecordConfigRequest.h
 	include/alibabacloud/cdn/model/AddLiveAppRecordConfigResult.h
-	include/alibabacloud/cdn/model/AddLiveAppSnapshotConfigRequest.h
-	include/alibabacloud/cdn/model/AddLiveAppSnapshotConfigResult.h
-	include/alibabacloud/cdn/model/AddLiveDomainMappingRequest.h
-	include/alibabacloud/cdn/model/AddLiveDomainMappingResult.h
 	include/alibabacloud/cdn/model/AddLiveStreamTranscodeRequest.h
 	include/alibabacloud/cdn/model/AddLiveStreamTranscodeResult.h
 	include/alibabacloud/cdn/model/BatchAddCdnDomainRequest.h
@@ -319,14 +315,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/ModifyCdnDomainResult.h
 	include/alibabacloud/cdn/model/ModifyCdnDomainSchdmByPropertyRequest.h
 	include/alibabacloud/cdn/model/ModifyCdnDomainSchdmByPropertyResult.h
-	include/alibabacloud/cdn/model/ModifyCdnServiceRequest.h
-	include/alibabacloud/cdn/model/ModifyCdnServiceResult.h
 	include/alibabacloud/cdn/model/ModifyDomainCustomLogConfigRequest.h
 	include/alibabacloud/cdn/model/ModifyDomainCustomLogConfigResult.h
-	include/alibabacloud/cdn/model/ModifyFileCacheExpiredConfigRequest.h
-	include/alibabacloud/cdn/model/ModifyFileCacheExpiredConfigResult.h
-	include/alibabacloud/cdn/model/ModifyHttpHeaderConfigRequest.h
-	include/alibabacloud/cdn/model/ModifyHttpHeaderConfigResult.h
 	include/alibabacloud/cdn/model/ModifyPathCacheExpiredConfigRequest.h
 	include/alibabacloud/cdn/model/ModifyPathCacheExpiredConfigResult.h
 	include/alibabacloud/cdn/model/ModifyRealtimeLogDeliveryRequest.h
@@ -357,8 +347,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetDomainGreenManagerConfigResult.h
 	include/alibabacloud/cdn/model/SetDomainServerCertificateRequest.h
 	include/alibabacloud/cdn/model/SetDomainServerCertificateResult.h
-	include/alibabacloud/cdn/model/SetDynamicConfigRequest.h
-	include/alibabacloud/cdn/model/SetDynamicConfigResult.h
 	include/alibabacloud/cdn/model/SetErrorPageConfigRequest.h
 	include/alibabacloud/cdn/model/SetErrorPageConfigResult.h
 	include/alibabacloud/cdn/model/SetFileCacheExpiredConfigRequest.h
@@ -379,10 +367,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetIpAllowListConfigResult.h
 	include/alibabacloud/cdn/model/SetIpBlackListConfigRequest.h
 	include/alibabacloud/cdn/model/SetIpBlackListConfigResult.h
-	include/alibabacloud/cdn/model/SetL2OssKeyConfigRequest.h
-	include/alibabacloud/cdn/model/SetL2OssKeyConfigResult.h
-	include/alibabacloud/cdn/model/SetLiveStreamsNotifyUrlConfigRequest.h
-	include/alibabacloud/cdn/model/SetLiveStreamsNotifyUrlConfigResult.h
 	include/alibabacloud/cdn/model/SetOptimizeConfigRequest.h
 	include/alibabacloud/cdn/model/SetOptimizeConfigResult.h
 	include/alibabacloud/cdn/model/SetPageCompressConfigRequest.h
@@ -415,8 +399,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/UntagResourcesResult.h
 	include/alibabacloud/cdn/model/UpdateFCTriggerRequest.h
 	include/alibabacloud/cdn/model/UpdateFCTriggerResult.h
-	include/alibabacloud/cdn/model/UpdateLiveAppSnapshotConfigRequest.h
-	include/alibabacloud/cdn/model/UpdateLiveAppSnapshotConfigResult.h
 	include/alibabacloud/cdn/model/VerifyDomainOwnerRequest.h
 	include/alibabacloud/cdn/model/VerifyDomainOwnerResult.h )
 
@@ -428,10 +410,6 @@ set(cdn_src
 	src/model/AddFCTriggerResult.cc
 	src/model/AddLiveAppRecordConfigRequest.cc
 	src/model/AddLiveAppRecordConfigResult.cc
-	src/model/AddLiveAppSnapshotConfigRequest.cc
-	src/model/AddLiveAppSnapshotConfigResult.cc
-	src/model/AddLiveDomainMappingRequest.cc
-	src/model/AddLiveDomainMappingResult.cc
 	src/model/AddLiveStreamTranscodeRequest.cc
 	src/model/AddLiveStreamTranscodeResult.cc
 	src/model/BatchAddCdnDomainRequest.cc
@@ -720,14 +698,8 @@ set(cdn_src
 	src/model/ModifyCdnDomainResult.cc
 	src/model/ModifyCdnDomainSchdmByPropertyRequest.cc
 	src/model/ModifyCdnDomainSchdmByPropertyResult.cc
-	src/model/ModifyCdnServiceRequest.cc
-	src/model/ModifyCdnServiceResult.cc
 	src/model/ModifyDomainCustomLogConfigRequest.cc
 	src/model/ModifyDomainCustomLogConfigResult.cc
-	src/model/ModifyFileCacheExpiredConfigRequest.cc
-	src/model/ModifyFileCacheExpiredConfigResult.cc
-	src/model/ModifyHttpHeaderConfigRequest.cc
-	src/model/ModifyHttpHeaderConfigResult.cc
 	src/model/ModifyPathCacheExpiredConfigRequest.cc
 	src/model/ModifyPathCacheExpiredConfigResult.cc
 	src/model/ModifyRealtimeLogDeliveryRequest.cc
@@ -758,8 +730,6 @@ set(cdn_src
 	src/model/SetDomainGreenManagerConfigResult.cc
 	src/model/SetDomainServerCertificateRequest.cc
 	src/model/SetDomainServerCertificateResult.cc
-	src/model/SetDynamicConfigRequest.cc
-	src/model/SetDynamicConfigResult.cc
 	src/model/SetErrorPageConfigRequest.cc
 	src/model/SetErrorPageConfigResult.cc
 	src/model/SetFileCacheExpiredConfigRequest.cc
@@ -780,10 +750,6 @@ set(cdn_src
 	src/model/SetIpAllowListConfigResult.cc
 	src/model/SetIpBlackListConfigRequest.cc
 	src/model/SetIpBlackListConfigResult.cc
-	src/model/SetL2OssKeyConfigRequest.cc
-	src/model/SetL2OssKeyConfigResult.cc
-	src/model/SetLiveStreamsNotifyUrlConfigRequest.cc
-	src/model/SetLiveStreamsNotifyUrlConfigResult.cc
 	src/model/SetOptimizeConfigRequest.cc
 	src/model/SetOptimizeConfigResult.cc
 	src/model/SetPageCompressConfigRequest.cc
@@ -816,8 +782,6 @@ set(cdn_src
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateFCTriggerRequest.cc
 	src/model/UpdateFCTriggerResult.cc
-	src/model/UpdateLiveAppSnapshotConfigRequest.cc
-	src/model/UpdateLiveAppSnapshotConfigResult.cc
 	src/model/VerifyDomainOwnerRequest.cc
 	src/model/VerifyDomainOwnerResult.cc )
 

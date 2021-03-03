@@ -159,78 +159,6 @@ CdnClient::AddLiveAppRecordConfigOutcomeCallable CdnClient::addLiveAppRecordConf
 	return task->get_future();
 }
 
-CdnClient::AddLiveAppSnapshotConfigOutcome CdnClient::addLiveAppSnapshotConfig(const AddLiveAppSnapshotConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddLiveAppSnapshotConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddLiveAppSnapshotConfigOutcome(AddLiveAppSnapshotConfigResult(outcome.result()));
-	else
-		return AddLiveAppSnapshotConfigOutcome(outcome.error());
-}
-
-void CdnClient::addLiveAppSnapshotConfigAsync(const AddLiveAppSnapshotConfigRequest& request, const AddLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addLiveAppSnapshotConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::AddLiveAppSnapshotConfigOutcomeCallable CdnClient::addLiveAppSnapshotConfigCallable(const AddLiveAppSnapshotConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddLiveAppSnapshotConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->addLiveAppSnapshotConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::AddLiveDomainMappingOutcome CdnClient::addLiveDomainMapping(const AddLiveDomainMappingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddLiveDomainMappingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddLiveDomainMappingOutcome(AddLiveDomainMappingResult(outcome.result()));
-	else
-		return AddLiveDomainMappingOutcome(outcome.error());
-}
-
-void CdnClient::addLiveDomainMappingAsync(const AddLiveDomainMappingRequest& request, const AddLiveDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addLiveDomainMapping(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::AddLiveDomainMappingOutcomeCallable CdnClient::addLiveDomainMappingCallable(const AddLiveDomainMappingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddLiveDomainMappingOutcome()>>(
-			[this, request]()
-			{
-			return this->addLiveDomainMapping(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::AddLiveStreamTranscodeOutcome CdnClient::addLiveStreamTranscode(const AddLiveStreamTranscodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5415,42 +5343,6 @@ CdnClient::ModifyCdnDomainSchdmByPropertyOutcomeCallable CdnClient::modifyCdnDom
 	return task->get_future();
 }
 
-CdnClient::ModifyCdnServiceOutcome CdnClient::modifyCdnService(const ModifyCdnServiceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyCdnServiceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyCdnServiceOutcome(ModifyCdnServiceResult(outcome.result()));
-	else
-		return ModifyCdnServiceOutcome(outcome.error());
-}
-
-void CdnClient::modifyCdnServiceAsync(const ModifyCdnServiceRequest& request, const ModifyCdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyCdnService(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::ModifyCdnServiceOutcomeCallable CdnClient::modifyCdnServiceCallable(const ModifyCdnServiceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyCdnServiceOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyCdnService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::ModifyDomainCustomLogConfigOutcome CdnClient::modifyDomainCustomLogConfig(const ModifyDomainCustomLogConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5481,78 +5373,6 @@ CdnClient::ModifyDomainCustomLogConfigOutcomeCallable CdnClient::modifyDomainCus
 			[this, request]()
 			{
 			return this->modifyDomainCustomLogConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::ModifyFileCacheExpiredConfigOutcome CdnClient::modifyFileCacheExpiredConfig(const ModifyFileCacheExpiredConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyFileCacheExpiredConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyFileCacheExpiredConfigOutcome(ModifyFileCacheExpiredConfigResult(outcome.result()));
-	else
-		return ModifyFileCacheExpiredConfigOutcome(outcome.error());
-}
-
-void CdnClient::modifyFileCacheExpiredConfigAsync(const ModifyFileCacheExpiredConfigRequest& request, const ModifyFileCacheExpiredConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyFileCacheExpiredConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::ModifyFileCacheExpiredConfigOutcomeCallable CdnClient::modifyFileCacheExpiredConfigCallable(const ModifyFileCacheExpiredConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyFileCacheExpiredConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyFileCacheExpiredConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::ModifyHttpHeaderConfigOutcome CdnClient::modifyHttpHeaderConfig(const ModifyHttpHeaderConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyHttpHeaderConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyHttpHeaderConfigOutcome(ModifyHttpHeaderConfigResult(outcome.result()));
-	else
-		return ModifyHttpHeaderConfigOutcome(outcome.error());
-}
-
-void CdnClient::modifyHttpHeaderConfigAsync(const ModifyHttpHeaderConfigRequest& request, const ModifyHttpHeaderConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyHttpHeaderConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::ModifyHttpHeaderConfigOutcomeCallable CdnClient::modifyHttpHeaderConfigCallable(const ModifyHttpHeaderConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyHttpHeaderConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyHttpHeaderConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6099,42 +5919,6 @@ CdnClient::SetDomainServerCertificateOutcomeCallable CdnClient::setDomainServerC
 	return task->get_future();
 }
 
-CdnClient::SetDynamicConfigOutcome CdnClient::setDynamicConfig(const SetDynamicConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetDynamicConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetDynamicConfigOutcome(SetDynamicConfigResult(outcome.result()));
-	else
-		return SetDynamicConfigOutcome(outcome.error());
-}
-
-void CdnClient::setDynamicConfigAsync(const SetDynamicConfigRequest& request, const SetDynamicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setDynamicConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetDynamicConfigOutcomeCallable CdnClient::setDynamicConfigCallable(const SetDynamicConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetDynamicConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setDynamicConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::SetErrorPageConfigOutcome CdnClient::setErrorPageConfig(const SetErrorPageConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6489,78 +6273,6 @@ CdnClient::SetIpBlackListConfigOutcomeCallable CdnClient::setIpBlackListConfigCa
 			[this, request]()
 			{
 			return this->setIpBlackListConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::SetL2OssKeyConfigOutcome CdnClient::setL2OssKeyConfig(const SetL2OssKeyConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetL2OssKeyConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetL2OssKeyConfigOutcome(SetL2OssKeyConfigResult(outcome.result()));
-	else
-		return SetL2OssKeyConfigOutcome(outcome.error());
-}
-
-void CdnClient::setL2OssKeyConfigAsync(const SetL2OssKeyConfigRequest& request, const SetL2OssKeyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setL2OssKeyConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetL2OssKeyConfigOutcomeCallable CdnClient::setL2OssKeyConfigCallable(const SetL2OssKeyConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetL2OssKeyConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setL2OssKeyConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::SetLiveStreamsNotifyUrlConfigOutcome CdnClient::setLiveStreamsNotifyUrlConfig(const SetLiveStreamsNotifyUrlConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetLiveStreamsNotifyUrlConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetLiveStreamsNotifyUrlConfigOutcome(SetLiveStreamsNotifyUrlConfigResult(outcome.result()));
-	else
-		return SetLiveStreamsNotifyUrlConfigOutcome(outcome.error());
-}
-
-void CdnClient::setLiveStreamsNotifyUrlConfigAsync(const SetLiveStreamsNotifyUrlConfigRequest& request, const SetLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setLiveStreamsNotifyUrlConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetLiveStreamsNotifyUrlConfigOutcomeCallable CdnClient::setLiveStreamsNotifyUrlConfigCallable(const SetLiveStreamsNotifyUrlConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetLiveStreamsNotifyUrlConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setLiveStreamsNotifyUrlConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7137,42 +6849,6 @@ CdnClient::UpdateFCTriggerOutcomeCallable CdnClient::updateFCTriggerCallable(con
 			[this, request]()
 			{
 			return this->updateFCTrigger(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::UpdateLiveAppSnapshotConfigOutcome CdnClient::updateLiveAppSnapshotConfig(const UpdateLiveAppSnapshotConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateLiveAppSnapshotConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateLiveAppSnapshotConfigOutcome(UpdateLiveAppSnapshotConfigResult(outcome.result()));
-	else
-		return UpdateLiveAppSnapshotConfigOutcome(outcome.error());
-}
-
-void CdnClient::updateLiveAppSnapshotConfigAsync(const UpdateLiveAppSnapshotConfigRequest& request, const UpdateLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateLiveAppSnapshotConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::UpdateLiveAppSnapshotConfigOutcomeCallable CdnClient::updateLiveAppSnapshotConfigCallable(const UpdateLiveAppSnapshotConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateLiveAppSnapshotConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->updateLiveAppSnapshotConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

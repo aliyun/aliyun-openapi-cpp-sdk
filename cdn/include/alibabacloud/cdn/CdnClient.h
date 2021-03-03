@@ -28,10 +28,6 @@
 #include "model/AddFCTriggerResult.h"
 #include "model/AddLiveAppRecordConfigRequest.h"
 #include "model/AddLiveAppRecordConfigResult.h"
-#include "model/AddLiveAppSnapshotConfigRequest.h"
-#include "model/AddLiveAppSnapshotConfigResult.h"
-#include "model/AddLiveDomainMappingRequest.h"
-#include "model/AddLiveDomainMappingResult.h"
 #include "model/AddLiveStreamTranscodeRequest.h"
 #include "model/AddLiveStreamTranscodeResult.h"
 #include "model/BatchAddCdnDomainRequest.h"
@@ -320,14 +316,8 @@
 #include "model/ModifyCdnDomainResult.h"
 #include "model/ModifyCdnDomainSchdmByPropertyRequest.h"
 #include "model/ModifyCdnDomainSchdmByPropertyResult.h"
-#include "model/ModifyCdnServiceRequest.h"
-#include "model/ModifyCdnServiceResult.h"
 #include "model/ModifyDomainCustomLogConfigRequest.h"
 #include "model/ModifyDomainCustomLogConfigResult.h"
-#include "model/ModifyFileCacheExpiredConfigRequest.h"
-#include "model/ModifyFileCacheExpiredConfigResult.h"
-#include "model/ModifyHttpHeaderConfigRequest.h"
-#include "model/ModifyHttpHeaderConfigResult.h"
 #include "model/ModifyPathCacheExpiredConfigRequest.h"
 #include "model/ModifyPathCacheExpiredConfigResult.h"
 #include "model/ModifyRealtimeLogDeliveryRequest.h"
@@ -358,8 +348,6 @@
 #include "model/SetDomainGreenManagerConfigResult.h"
 #include "model/SetDomainServerCertificateRequest.h"
 #include "model/SetDomainServerCertificateResult.h"
-#include "model/SetDynamicConfigRequest.h"
-#include "model/SetDynamicConfigResult.h"
 #include "model/SetErrorPageConfigRequest.h"
 #include "model/SetErrorPageConfigResult.h"
 #include "model/SetFileCacheExpiredConfigRequest.h"
@@ -380,10 +368,6 @@
 #include "model/SetIpAllowListConfigResult.h"
 #include "model/SetIpBlackListConfigRequest.h"
 #include "model/SetIpBlackListConfigResult.h"
-#include "model/SetL2OssKeyConfigRequest.h"
-#include "model/SetL2OssKeyConfigResult.h"
-#include "model/SetLiveStreamsNotifyUrlConfigRequest.h"
-#include "model/SetLiveStreamsNotifyUrlConfigResult.h"
 #include "model/SetOptimizeConfigRequest.h"
 #include "model/SetOptimizeConfigResult.h"
 #include "model/SetPageCompressConfigRequest.h"
@@ -416,8 +400,6 @@
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateFCTriggerRequest.h"
 #include "model/UpdateFCTriggerResult.h"
-#include "model/UpdateLiveAppSnapshotConfigRequest.h"
-#include "model/UpdateLiveAppSnapshotConfigResult.h"
 #include "model/VerifyDomainOwnerRequest.h"
 #include "model/VerifyDomainOwnerResult.h"
 
@@ -438,12 +420,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddLiveAppRecordConfigResult> AddLiveAppRecordConfigOutcome;
 			typedef std::future<AddLiveAppRecordConfigOutcome> AddLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::AddLiveAppRecordConfigRequest&, const AddLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAppRecordConfigAsyncHandler;
-			typedef Outcome<Error, Model::AddLiveAppSnapshotConfigResult> AddLiveAppSnapshotConfigOutcome;
-			typedef std::future<AddLiveAppSnapshotConfigOutcome> AddLiveAppSnapshotConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::AddLiveAppSnapshotConfigRequest&, const AddLiveAppSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAppSnapshotConfigAsyncHandler;
-			typedef Outcome<Error, Model::AddLiveDomainMappingResult> AddLiveDomainMappingOutcome;
-			typedef std::future<AddLiveDomainMappingOutcome> AddLiveDomainMappingOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::AddLiveDomainMappingRequest&, const AddLiveDomainMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveDomainMappingAsyncHandler;
 			typedef Outcome<Error, Model::AddLiveStreamTranscodeResult> AddLiveStreamTranscodeOutcome;
 			typedef std::future<AddLiveStreamTranscodeOutcome> AddLiveStreamTranscodeOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::AddLiveStreamTranscodeRequest&, const AddLiveStreamTranscodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveStreamTranscodeAsyncHandler;
@@ -876,18 +852,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyCdnDomainSchdmByPropertyResult> ModifyCdnDomainSchdmByPropertyOutcome;
 			typedef std::future<ModifyCdnDomainSchdmByPropertyOutcome> ModifyCdnDomainSchdmByPropertyOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::ModifyCdnDomainSchdmByPropertyRequest&, const ModifyCdnDomainSchdmByPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCdnDomainSchdmByPropertyAsyncHandler;
-			typedef Outcome<Error, Model::ModifyCdnServiceResult> ModifyCdnServiceOutcome;
-			typedef std::future<ModifyCdnServiceOutcome> ModifyCdnServiceOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::ModifyCdnServiceRequest&, const ModifyCdnServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCdnServiceAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDomainCustomLogConfigResult> ModifyDomainCustomLogConfigOutcome;
 			typedef std::future<ModifyDomainCustomLogConfigOutcome> ModifyDomainCustomLogConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::ModifyDomainCustomLogConfigRequest&, const ModifyDomainCustomLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainCustomLogConfigAsyncHandler;
-			typedef Outcome<Error, Model::ModifyFileCacheExpiredConfigResult> ModifyFileCacheExpiredConfigOutcome;
-			typedef std::future<ModifyFileCacheExpiredConfigOutcome> ModifyFileCacheExpiredConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::ModifyFileCacheExpiredConfigRequest&, const ModifyFileCacheExpiredConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFileCacheExpiredConfigAsyncHandler;
-			typedef Outcome<Error, Model::ModifyHttpHeaderConfigResult> ModifyHttpHeaderConfigOutcome;
-			typedef std::future<ModifyHttpHeaderConfigOutcome> ModifyHttpHeaderConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::ModifyHttpHeaderConfigRequest&, const ModifyHttpHeaderConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHttpHeaderConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPathCacheExpiredConfigResult> ModifyPathCacheExpiredConfigOutcome;
 			typedef std::future<ModifyPathCacheExpiredConfigOutcome> ModifyPathCacheExpiredConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::ModifyPathCacheExpiredConfigRequest&, const ModifyPathCacheExpiredConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPathCacheExpiredConfigAsyncHandler;
@@ -933,9 +900,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDomainServerCertificateResult> SetDomainServerCertificateOutcome;
 			typedef std::future<SetDomainServerCertificateOutcome> SetDomainServerCertificateOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetDomainServerCertificateRequest&, const SetDomainServerCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainServerCertificateAsyncHandler;
-			typedef Outcome<Error, Model::SetDynamicConfigResult> SetDynamicConfigOutcome;
-			typedef std::future<SetDynamicConfigOutcome> SetDynamicConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetDynamicConfigRequest&, const SetDynamicConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDynamicConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetErrorPageConfigResult> SetErrorPageConfigOutcome;
 			typedef std::future<SetErrorPageConfigOutcome> SetErrorPageConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetErrorPageConfigRequest&, const SetErrorPageConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetErrorPageConfigAsyncHandler;
@@ -966,12 +930,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetIpBlackListConfigResult> SetIpBlackListConfigOutcome;
 			typedef std::future<SetIpBlackListConfigOutcome> SetIpBlackListConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetIpBlackListConfigRequest&, const SetIpBlackListConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetIpBlackListConfigAsyncHandler;
-			typedef Outcome<Error, Model::SetL2OssKeyConfigResult> SetL2OssKeyConfigOutcome;
-			typedef std::future<SetL2OssKeyConfigOutcome> SetL2OssKeyConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetL2OssKeyConfigRequest&, const SetL2OssKeyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetL2OssKeyConfigAsyncHandler;
-			typedef Outcome<Error, Model::SetLiveStreamsNotifyUrlConfigResult> SetLiveStreamsNotifyUrlConfigOutcome;
-			typedef std::future<SetLiveStreamsNotifyUrlConfigOutcome> SetLiveStreamsNotifyUrlConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetLiveStreamsNotifyUrlConfigRequest&, const SetLiveStreamsNotifyUrlConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveStreamsNotifyUrlConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetOptimizeConfigResult> SetOptimizeConfigOutcome;
 			typedef std::future<SetOptimizeConfigOutcome> SetOptimizeConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetOptimizeConfigRequest&, const SetOptimizeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetOptimizeConfigAsyncHandler;
@@ -1020,9 +978,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateFCTriggerResult> UpdateFCTriggerOutcome;
 			typedef std::future<UpdateFCTriggerOutcome> UpdateFCTriggerOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::UpdateFCTriggerRequest&, const UpdateFCTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFCTriggerAsyncHandler;
-			typedef Outcome<Error, Model::UpdateLiveAppSnapshotConfigResult> UpdateLiveAppSnapshotConfigOutcome;
-			typedef std::future<UpdateLiveAppSnapshotConfigOutcome> UpdateLiveAppSnapshotConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::UpdateLiveAppSnapshotConfigRequest&, const UpdateLiveAppSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveAppSnapshotConfigAsyncHandler;
 			typedef Outcome<Error, Model::VerifyDomainOwnerResult> VerifyDomainOwnerOutcome;
 			typedef std::future<VerifyDomainOwnerOutcome> VerifyDomainOwnerOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::VerifyDomainOwnerRequest&, const VerifyDomainOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainOwnerAsyncHandler;
@@ -1040,12 +995,6 @@ namespace AlibabaCloud
 			AddLiveAppRecordConfigOutcome addLiveAppRecordConfig(const Model::AddLiveAppRecordConfigRequest &request)const;
 			void addLiveAppRecordConfigAsync(const Model::AddLiveAppRecordConfigRequest& request, const AddLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveAppRecordConfigOutcomeCallable addLiveAppRecordConfigCallable(const Model::AddLiveAppRecordConfigRequest& request) const;
-			AddLiveAppSnapshotConfigOutcome addLiveAppSnapshotConfig(const Model::AddLiveAppSnapshotConfigRequest &request)const;
-			void addLiveAppSnapshotConfigAsync(const Model::AddLiveAppSnapshotConfigRequest& request, const AddLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddLiveAppSnapshotConfigOutcomeCallable addLiveAppSnapshotConfigCallable(const Model::AddLiveAppSnapshotConfigRequest& request) const;
-			AddLiveDomainMappingOutcome addLiveDomainMapping(const Model::AddLiveDomainMappingRequest &request)const;
-			void addLiveDomainMappingAsync(const Model::AddLiveDomainMappingRequest& request, const AddLiveDomainMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddLiveDomainMappingOutcomeCallable addLiveDomainMappingCallable(const Model::AddLiveDomainMappingRequest& request) const;
 			AddLiveStreamTranscodeOutcome addLiveStreamTranscode(const Model::AddLiveStreamTranscodeRequest &request)const;
 			void addLiveStreamTranscodeAsync(const Model::AddLiveStreamTranscodeRequest& request, const AddLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveStreamTranscodeOutcomeCallable addLiveStreamTranscodeCallable(const Model::AddLiveStreamTranscodeRequest& request) const;
@@ -1478,18 +1427,9 @@ namespace AlibabaCloud
 			ModifyCdnDomainSchdmByPropertyOutcome modifyCdnDomainSchdmByProperty(const Model::ModifyCdnDomainSchdmByPropertyRequest &request)const;
 			void modifyCdnDomainSchdmByPropertyAsync(const Model::ModifyCdnDomainSchdmByPropertyRequest& request, const ModifyCdnDomainSchdmByPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCdnDomainSchdmByPropertyOutcomeCallable modifyCdnDomainSchdmByPropertyCallable(const Model::ModifyCdnDomainSchdmByPropertyRequest& request) const;
-			ModifyCdnServiceOutcome modifyCdnService(const Model::ModifyCdnServiceRequest &request)const;
-			void modifyCdnServiceAsync(const Model::ModifyCdnServiceRequest& request, const ModifyCdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyCdnServiceOutcomeCallable modifyCdnServiceCallable(const Model::ModifyCdnServiceRequest& request) const;
 			ModifyDomainCustomLogConfigOutcome modifyDomainCustomLogConfig(const Model::ModifyDomainCustomLogConfigRequest &request)const;
 			void modifyDomainCustomLogConfigAsync(const Model::ModifyDomainCustomLogConfigRequest& request, const ModifyDomainCustomLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDomainCustomLogConfigOutcomeCallable modifyDomainCustomLogConfigCallable(const Model::ModifyDomainCustomLogConfigRequest& request) const;
-			ModifyFileCacheExpiredConfigOutcome modifyFileCacheExpiredConfig(const Model::ModifyFileCacheExpiredConfigRequest &request)const;
-			void modifyFileCacheExpiredConfigAsync(const Model::ModifyFileCacheExpiredConfigRequest& request, const ModifyFileCacheExpiredConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyFileCacheExpiredConfigOutcomeCallable modifyFileCacheExpiredConfigCallable(const Model::ModifyFileCacheExpiredConfigRequest& request) const;
-			ModifyHttpHeaderConfigOutcome modifyHttpHeaderConfig(const Model::ModifyHttpHeaderConfigRequest &request)const;
-			void modifyHttpHeaderConfigAsync(const Model::ModifyHttpHeaderConfigRequest& request, const ModifyHttpHeaderConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyHttpHeaderConfigOutcomeCallable modifyHttpHeaderConfigCallable(const Model::ModifyHttpHeaderConfigRequest& request) const;
 			ModifyPathCacheExpiredConfigOutcome modifyPathCacheExpiredConfig(const Model::ModifyPathCacheExpiredConfigRequest &request)const;
 			void modifyPathCacheExpiredConfigAsync(const Model::ModifyPathCacheExpiredConfigRequest& request, const ModifyPathCacheExpiredConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPathCacheExpiredConfigOutcomeCallable modifyPathCacheExpiredConfigCallable(const Model::ModifyPathCacheExpiredConfigRequest& request) const;
@@ -1535,9 +1475,6 @@ namespace AlibabaCloud
 			SetDomainServerCertificateOutcome setDomainServerCertificate(const Model::SetDomainServerCertificateRequest &request)const;
 			void setDomainServerCertificateAsync(const Model::SetDomainServerCertificateRequest& request, const SetDomainServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDomainServerCertificateOutcomeCallable setDomainServerCertificateCallable(const Model::SetDomainServerCertificateRequest& request) const;
-			SetDynamicConfigOutcome setDynamicConfig(const Model::SetDynamicConfigRequest &request)const;
-			void setDynamicConfigAsync(const Model::SetDynamicConfigRequest& request, const SetDynamicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetDynamicConfigOutcomeCallable setDynamicConfigCallable(const Model::SetDynamicConfigRequest& request) const;
 			SetErrorPageConfigOutcome setErrorPageConfig(const Model::SetErrorPageConfigRequest &request)const;
 			void setErrorPageConfigAsync(const Model::SetErrorPageConfigRequest& request, const SetErrorPageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetErrorPageConfigOutcomeCallable setErrorPageConfigCallable(const Model::SetErrorPageConfigRequest& request) const;
@@ -1568,12 +1505,6 @@ namespace AlibabaCloud
 			SetIpBlackListConfigOutcome setIpBlackListConfig(const Model::SetIpBlackListConfigRequest &request)const;
 			void setIpBlackListConfigAsync(const Model::SetIpBlackListConfigRequest& request, const SetIpBlackListConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetIpBlackListConfigOutcomeCallable setIpBlackListConfigCallable(const Model::SetIpBlackListConfigRequest& request) const;
-			SetL2OssKeyConfigOutcome setL2OssKeyConfig(const Model::SetL2OssKeyConfigRequest &request)const;
-			void setL2OssKeyConfigAsync(const Model::SetL2OssKeyConfigRequest& request, const SetL2OssKeyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetL2OssKeyConfigOutcomeCallable setL2OssKeyConfigCallable(const Model::SetL2OssKeyConfigRequest& request) const;
-			SetLiveStreamsNotifyUrlConfigOutcome setLiveStreamsNotifyUrlConfig(const Model::SetLiveStreamsNotifyUrlConfigRequest &request)const;
-			void setLiveStreamsNotifyUrlConfigAsync(const Model::SetLiveStreamsNotifyUrlConfigRequest& request, const SetLiveStreamsNotifyUrlConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetLiveStreamsNotifyUrlConfigOutcomeCallable setLiveStreamsNotifyUrlConfigCallable(const Model::SetLiveStreamsNotifyUrlConfigRequest& request) const;
 			SetOptimizeConfigOutcome setOptimizeConfig(const Model::SetOptimizeConfigRequest &request)const;
 			void setOptimizeConfigAsync(const Model::SetOptimizeConfigRequest& request, const SetOptimizeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetOptimizeConfigOutcomeCallable setOptimizeConfigCallable(const Model::SetOptimizeConfigRequest& request) const;
@@ -1622,9 +1553,6 @@ namespace AlibabaCloud
 			UpdateFCTriggerOutcome updateFCTrigger(const Model::UpdateFCTriggerRequest &request)const;
 			void updateFCTriggerAsync(const Model::UpdateFCTriggerRequest& request, const UpdateFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateFCTriggerOutcomeCallable updateFCTriggerCallable(const Model::UpdateFCTriggerRequest& request) const;
-			UpdateLiveAppSnapshotConfigOutcome updateLiveAppSnapshotConfig(const Model::UpdateLiveAppSnapshotConfigRequest &request)const;
-			void updateLiveAppSnapshotConfigAsync(const Model::UpdateLiveAppSnapshotConfigRequest& request, const UpdateLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateLiveAppSnapshotConfigOutcomeCallable updateLiveAppSnapshotConfigCallable(const Model::UpdateLiveAppSnapshotConfigRequest& request) const;
 			VerifyDomainOwnerOutcome verifyDomainOwner(const Model::VerifyDomainOwnerRequest &request)const;
 			void verifyDomainOwnerAsync(const Model::VerifyDomainOwnerRequest& request, const VerifyDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyDomainOwnerOutcomeCallable verifyDomainOwnerCallable(const Model::VerifyDomainOwnerRequest& request) const;
