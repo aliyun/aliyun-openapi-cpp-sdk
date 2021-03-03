@@ -41,8 +41,14 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/BatchStopDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnCertificateSigningRequestRequest.h
 	include/alibabacloud/dcdn/model/CreateDcdnCertificateSigningRequestResult.h
+	include/alibabacloud/dcdn/model/CreateDcdnDeliverTaskRequest.h
+	include/alibabacloud/dcdn/model/CreateDcdnDeliverTaskResult.h
 	include/alibabacloud/dcdn/model/CreateDcdnDomainOfflineLogDeliveryRequest.h
 	include/alibabacloud/dcdn/model/CreateDcdnDomainOfflineLogDeliveryResult.h
+	include/alibabacloud/dcdn/model/CreateDcdnSubTaskRequest.h
+	include/alibabacloud/dcdn/model/CreateDcdnSubTaskResult.h
+	include/alibabacloud/dcdn/model/DeleteDcdnDeliverTaskRequest.h
+	include/alibabacloud/dcdn/model/DeleteDcdnDeliverTaskResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnIpaDomainRequest.h
@@ -53,6 +59,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DeleteDcdnSpecificConfigResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnSpecificStagingConfigRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnSpecificStagingConfigResult.h
+	include/alibabacloud/dcdn/model/DeleteDcdnSubTaskRequest.h
+	include/alibabacloud/dcdn/model/DeleteDcdnSubTaskResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpBpsDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpBpsDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpTrafficDataRequest.h
@@ -63,6 +71,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnConfigOfVersionRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnConfigOfVersionResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDeliverListRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDeliverListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainBpsDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainBpsDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainByCertificateRequest.h
@@ -161,10 +171,18 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTasksRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTasksResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnRegionAndIspRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnRegionAndIspResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnReportRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnReportResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnReportListRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnReportListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnServiceRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnServiceResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnStagingIpRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnStagingIpResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSubListRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSubListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnTagResourcesRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnTagResourcesResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnTopDomainsByFlowRequest.h
@@ -181,6 +199,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnUserQuotaResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserResourcePackageRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserResourcePackageResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserSecDropRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserSecDropResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserTagsRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserTagsResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnVerifyContentRequest.h
@@ -199,8 +219,6 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/EnableDcdnDomainOfflineLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/ModifyDCdnDomainSchdmByPropertyRequest.h
 	include/alibabacloud/dcdn/model/ModifyDCdnDomainSchdmByPropertyResult.h
-	include/alibabacloud/dcdn/model/ModifyDcdnServiceRequest.h
-	include/alibabacloud/dcdn/model/ModifyDcdnServiceResult.h
 	include/alibabacloud/dcdn/model/OpenDcdnServiceRequest.h
 	include/alibabacloud/dcdn/model/OpenDcdnServiceResult.h
 	include/alibabacloud/dcdn/model/PreloadDcdnObjectCachesRequest.h
@@ -231,10 +249,14 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/TagDcdnResourcesResult.h
 	include/alibabacloud/dcdn/model/UntagDcdnResourcesRequest.h
 	include/alibabacloud/dcdn/model/UntagDcdnResourcesResult.h
+	include/alibabacloud/dcdn/model/UpdateDcdnDeliverTaskRequest.h
+	include/alibabacloud/dcdn/model/UpdateDcdnDeliverTaskResult.h
 	include/alibabacloud/dcdn/model/UpdateDcdnDomainRequest.h
 	include/alibabacloud/dcdn/model/UpdateDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/UpdateDcdnIpaDomainRequest.h
 	include/alibabacloud/dcdn/model/UpdateDcdnIpaDomainResult.h
+	include/alibabacloud/dcdn/model/UpdateDcdnSubTaskRequest.h
+	include/alibabacloud/dcdn/model/UpdateDcdnSubTaskResult.h
 	include/alibabacloud/dcdn/model/VerifyDcdnDomainOwnerRequest.h
 	include/alibabacloud/dcdn/model/VerifyDcdnDomainOwnerResult.h )
 
@@ -260,8 +282,14 @@ set(dcdn_src
 	src/model/BatchStopDcdnDomainResult.cc
 	src/model/CreateDcdnCertificateSigningRequestRequest.cc
 	src/model/CreateDcdnCertificateSigningRequestResult.cc
+	src/model/CreateDcdnDeliverTaskRequest.cc
+	src/model/CreateDcdnDeliverTaskResult.cc
 	src/model/CreateDcdnDomainOfflineLogDeliveryRequest.cc
 	src/model/CreateDcdnDomainOfflineLogDeliveryResult.cc
+	src/model/CreateDcdnSubTaskRequest.cc
+	src/model/CreateDcdnSubTaskResult.cc
+	src/model/DeleteDcdnDeliverTaskRequest.cc
+	src/model/DeleteDcdnDeliverTaskResult.cc
 	src/model/DeleteDcdnDomainRequest.cc
 	src/model/DeleteDcdnDomainResult.cc
 	src/model/DeleteDcdnIpaDomainRequest.cc
@@ -272,6 +300,8 @@ set(dcdn_src
 	src/model/DeleteDcdnSpecificConfigResult.cc
 	src/model/DeleteDcdnSpecificStagingConfigRequest.cc
 	src/model/DeleteDcdnSpecificStagingConfigResult.cc
+	src/model/DeleteDcdnSubTaskRequest.cc
+	src/model/DeleteDcdnSubTaskResult.cc
 	src/model/DescribeDcdnBgpBpsDataRequest.cc
 	src/model/DescribeDcdnBgpBpsDataResult.cc
 	src/model/DescribeDcdnBgpTrafficDataRequest.cc
@@ -282,6 +312,8 @@ set(dcdn_src
 	src/model/DescribeDcdnCertificateListResult.cc
 	src/model/DescribeDcdnConfigOfVersionRequest.cc
 	src/model/DescribeDcdnConfigOfVersionResult.cc
+	src/model/DescribeDcdnDeliverListRequest.cc
+	src/model/DescribeDcdnDeliverListResult.cc
 	src/model/DescribeDcdnDomainBpsDataRequest.cc
 	src/model/DescribeDcdnDomainBpsDataResult.cc
 	src/model/DescribeDcdnDomainByCertificateRequest.cc
@@ -380,10 +412,18 @@ set(dcdn_src
 	src/model/DescribeDcdnRefreshQuotaResult.cc
 	src/model/DescribeDcdnRefreshTasksRequest.cc
 	src/model/DescribeDcdnRefreshTasksResult.cc
+	src/model/DescribeDcdnRegionAndIspRequest.cc
+	src/model/DescribeDcdnRegionAndIspResult.cc
+	src/model/DescribeDcdnReportRequest.cc
+	src/model/DescribeDcdnReportResult.cc
+	src/model/DescribeDcdnReportListRequest.cc
+	src/model/DescribeDcdnReportListResult.cc
 	src/model/DescribeDcdnServiceRequest.cc
 	src/model/DescribeDcdnServiceResult.cc
 	src/model/DescribeDcdnStagingIpRequest.cc
 	src/model/DescribeDcdnStagingIpResult.cc
+	src/model/DescribeDcdnSubListRequest.cc
+	src/model/DescribeDcdnSubListResult.cc
 	src/model/DescribeDcdnTagResourcesRequest.cc
 	src/model/DescribeDcdnTagResourcesResult.cc
 	src/model/DescribeDcdnTopDomainsByFlowRequest.cc
@@ -400,6 +440,8 @@ set(dcdn_src
 	src/model/DescribeDcdnUserQuotaResult.cc
 	src/model/DescribeDcdnUserResourcePackageRequest.cc
 	src/model/DescribeDcdnUserResourcePackageResult.cc
+	src/model/DescribeDcdnUserSecDropRequest.cc
+	src/model/DescribeDcdnUserSecDropResult.cc
 	src/model/DescribeDcdnUserTagsRequest.cc
 	src/model/DescribeDcdnUserTagsResult.cc
 	src/model/DescribeDcdnVerifyContentRequest.cc
@@ -418,8 +460,6 @@ set(dcdn_src
 	src/model/EnableDcdnDomainOfflineLogDeliveryResult.cc
 	src/model/ModifyDCdnDomainSchdmByPropertyRequest.cc
 	src/model/ModifyDCdnDomainSchdmByPropertyResult.cc
-	src/model/ModifyDcdnServiceRequest.cc
-	src/model/ModifyDcdnServiceResult.cc
 	src/model/OpenDcdnServiceRequest.cc
 	src/model/OpenDcdnServiceResult.cc
 	src/model/PreloadDcdnObjectCachesRequest.cc
@@ -450,10 +490,14 @@ set(dcdn_src
 	src/model/TagDcdnResourcesResult.cc
 	src/model/UntagDcdnResourcesRequest.cc
 	src/model/UntagDcdnResourcesResult.cc
+	src/model/UpdateDcdnDeliverTaskRequest.cc
+	src/model/UpdateDcdnDeliverTaskResult.cc
 	src/model/UpdateDcdnDomainRequest.cc
 	src/model/UpdateDcdnDomainResult.cc
 	src/model/UpdateDcdnIpaDomainRequest.cc
 	src/model/UpdateDcdnIpaDomainResult.cc
+	src/model/UpdateDcdnSubTaskRequest.cc
+	src/model/UpdateDcdnSubTaskResult.cc
 	src/model/VerifyDcdnDomainOwnerRequest.cc
 	src/model/VerifyDcdnDomainOwnerResult.cc )
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_MODIFYDCDNSERVICERESULT_H_
-#define ALIBABACLOUD_DCDN_MODEL_MODIFYDCDNSERVICERESULT_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_CREATEDCDNSUBTASKRESULT_H_
+#define ALIBABACLOUD_DCDN_MODEL_CREATEDCDNSUBTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT ModifyDcdnServiceResult : public ServiceResult
+			class ALIBABACLOUD_DCDN_EXPORT CreateDcdnSubTaskResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyDcdnServiceResult();
-				explicit ModifyDcdnServiceResult(const std::string &payload);
-				~ModifyDcdnServiceResult();
+				CreateDcdnSubTaskResult();
+				explicit CreateDcdnSubTaskResult(const std::string &payload);
+				~CreateDcdnSubTaskResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_MODIFYDCDNSERVICERESULT_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_CREATEDCDNSUBTASKRESULT_H_

@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dcdn/model/ModifyDcdnServiceResult.h>
+#include <alibabacloud/dcdn/model/DescribeDcdnReportListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dcdn;
 using namespace AlibabaCloud::Dcdn::Model;
 
-ModifyDcdnServiceResult::ModifyDcdnServiceResult() :
+DescribeDcdnReportListResult::DescribeDcdnReportListResult() :
 	ServiceResult()
 {}
 
-ModifyDcdnServiceResult::ModifyDcdnServiceResult(const std::string &payload) :
+DescribeDcdnReportListResult::DescribeDcdnReportListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyDcdnServiceResult::~ModifyDcdnServiceResult()
+DescribeDcdnReportListResult::~DescribeDcdnReportListResult()
 {}
 
-void ModifyDcdnServiceResult::parse(const std::string &payload)
+void DescribeDcdnReportListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Content"].isNull())
+		content_ = value["Content"].asString();
 
+}
+
+std::string DescribeDcdnReportListResult::getContent()const
+{
+	return content_;
 }
 

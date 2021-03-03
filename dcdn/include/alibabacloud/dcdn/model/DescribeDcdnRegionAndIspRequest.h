@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DCDN_MODEL_MODIFYDCDNSERVICEREQUEST_H_
-#define ALIBABACLOUD_DCDN_MODEL_MODIFYDCDNSERVICEREQUEST_H_
+#ifndef ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNREGIONANDISPREQUEST_H_
+#define ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNREGIONANDISPREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DCDN_EXPORT ModifyDcdnServiceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DCDN_EXPORT DescribeDcdnRegionAndIspRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDcdnServiceRequest();
-				~ModifyDcdnServiceRequest();
+				DescribeDcdnRegionAndIspRequest();
+				~DescribeDcdnRegionAndIspRequest();
 
-				std::string getWebsocketBillType()const;
-				void setWebsocketBillType(const std::string& websocketBillType);
-				std::string getBillType()const;
-				void setBillType(const std::string& billType);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string websocketBillType_;
-				std::string billType_;
-				std::string securityToken_;
 				long ownerId_;
+				std::string securityToken_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DCDN_MODEL_MODIFYDCDNSERVICEREQUEST_H_
+#endif // !ALIBABACLOUD_DCDN_MODEL_DESCRIBEDCDNREGIONANDISPREQUEST_H_
