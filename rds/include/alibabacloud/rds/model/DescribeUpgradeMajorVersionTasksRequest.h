@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DELETEHOSTACCOUNTREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DELETEHOSTACCOUNTREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEUPGRADEMAJORVERSIONTASKSREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEUPGRADEMAJORVERSIONTASKSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DeleteHostAccountRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DescribeUpgradeMajorVersionTasksRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteHostAccountRequest();
-				~DeleteHostAccountRequest();
+				DescribeUpgradeMajorVersionTasksRequest();
+				~DescribeUpgradeMajorVersionTasksRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getAccountName()const;
-				void setAccountName(const std::string& accountName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
+				int getTaskId()const;
+				void setTaskId(int taskId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getTargetMajorVersion()const;
+				void setTargetMajorVersion(const std::string& targetMajorVersion);
 
             private:
 				long resourceOwnerId_;
-				std::string resourceOwnerAccount_;
-				std::string clientToken_;
-				long ownerId_;
+				int pageNumber_;
 				std::string accessKeyId_;
-				std::string accountName_;
+				int pageSize_;
 				std::string dBInstanceId_;
+				int taskId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string targetMajorVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DELETEHOSTACCOUNTREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEUPGRADEMAJORVERSIONTASKSREQUEST_H_

@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ModifyParameterGroupResult();
 				explicit ModifyParameterGroupResult(const std::string &payload);
 				~ModifyParameterGroupResult();
+				std::string getParameterGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string parameterGroupId_;
 
 			};
 		}

@@ -43,12 +43,12 @@ void DescribeAvailableZonesResult::parse(const std::string &payload)
 	for (auto valueAvailableZonesAvailableZone : allAvailableZonesNode)
 	{
 		AvailableZone availableZonesObject;
+		if(!valueAvailableZonesAvailableZone["NetworkTypes"].isNull())
+			availableZonesObject.networkTypes = valueAvailableZonesAvailableZone["NetworkTypes"].asString();
 		if(!valueAvailableZonesAvailableZone["RegionId"].isNull())
 			availableZonesObject.regionId = valueAvailableZonesAvailableZone["RegionId"].asString();
 		if(!valueAvailableZonesAvailableZone["ZoneId"].isNull())
 			availableZonesObject.zoneId = valueAvailableZonesAvailableZone["ZoneId"].asString();
-		if(!valueAvailableZonesAvailableZone["NetworkTypes"].isNull())
-			availableZonesObject.networkTypes = valueAvailableZonesAvailableZone["NetworkTypes"].asString();
 		auto allSupportedEnginesNode = valueAvailableZonesAvailableZone["SupportedEngines"]["SupportedEngine"];
 		for (auto valueAvailableZonesAvailableZoneSupportedEnginesSupportedEngine : allSupportedEnginesNode)
 		{

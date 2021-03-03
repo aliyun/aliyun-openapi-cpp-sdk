@@ -87,8 +87,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteDBProxyEndpointAddressResult.h
 	include/alibabacloud/rds/model/DeleteDatabaseRequest.h
 	include/alibabacloud/rds/model/DeleteDatabaseResult.h
-	include/alibabacloud/rds/model/DeleteHostAccountRequest.h
-	include/alibabacloud/rds/model/DeleteHostAccountResult.h
 	include/alibabacloud/rds/model/DeleteParameterGroupRequest.h
 	include/alibabacloud/rds/model/DeleteParameterGroupResult.h
 	include/alibabacloud/rds/model/DescibeImportsFromDatabaseRequest.h
@@ -253,6 +251,10 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeTagsResult.h
 	include/alibabacloud/rds/model/DescribeTasksRequest.h
 	include/alibabacloud/rds/model/DescribeTasksResult.h
+	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionPrecheckTaskRequest.h
+	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionPrecheckTaskResult.h
+	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionTasksRequest.h
+	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionTasksResult.h
 	include/alibabacloud/rds/model/DestroyDBInstanceRequest.h
 	include/alibabacloud/rds/model/DestroyDBInstanceResult.h
 	include/alibabacloud/rds/model/GetDbProxyInstanceSslRequest.h
@@ -405,6 +407,10 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/UpgradeDBInstanceEngineVersionResult.h
 	include/alibabacloud/rds/model/UpgradeDBInstanceKernelVersionRequest.h
 	include/alibabacloud/rds/model/UpgradeDBInstanceKernelVersionResult.h
+	include/alibabacloud/rds/model/UpgradeDBInstanceMajorVersionRequest.h
+	include/alibabacloud/rds/model/UpgradeDBInstanceMajorVersionResult.h
+	include/alibabacloud/rds/model/UpgradeDBInstanceMajorVersionPrecheckRequest.h
+	include/alibabacloud/rds/model/UpgradeDBInstanceMajorVersionPrecheckResult.h
 	include/alibabacloud/rds/model/UpgradeDBProxyInstanceKernelVersionRequest.h
 	include/alibabacloud/rds/model/UpgradeDBProxyInstanceKernelVersionResult.h )
 
@@ -476,8 +482,6 @@ set(rds_src
 	src/model/DeleteDBProxyEndpointAddressResult.cc
 	src/model/DeleteDatabaseRequest.cc
 	src/model/DeleteDatabaseResult.cc
-	src/model/DeleteHostAccountRequest.cc
-	src/model/DeleteHostAccountResult.cc
 	src/model/DeleteParameterGroupRequest.cc
 	src/model/DeleteParameterGroupResult.cc
 	src/model/DescibeImportsFromDatabaseRequest.cc
@@ -642,6 +646,10 @@ set(rds_src
 	src/model/DescribeTagsResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
+	src/model/DescribeUpgradeMajorVersionPrecheckTaskRequest.cc
+	src/model/DescribeUpgradeMajorVersionPrecheckTaskResult.cc
+	src/model/DescribeUpgradeMajorVersionTasksRequest.cc
+	src/model/DescribeUpgradeMajorVersionTasksResult.cc
 	src/model/DestroyDBInstanceRequest.cc
 	src/model/DestroyDBInstanceResult.cc
 	src/model/GetDbProxyInstanceSslRequest.cc
@@ -794,6 +802,10 @@ set(rds_src
 	src/model/UpgradeDBInstanceEngineVersionResult.cc
 	src/model/UpgradeDBInstanceKernelVersionRequest.cc
 	src/model/UpgradeDBInstanceKernelVersionResult.cc
+	src/model/UpgradeDBInstanceMajorVersionRequest.cc
+	src/model/UpgradeDBInstanceMajorVersionResult.cc
+	src/model/UpgradeDBInstanceMajorVersionPrecheckRequest.cc
+	src/model/UpgradeDBInstanceMajorVersionPrecheckResult.cc
 	src/model/UpgradeDBProxyInstanceKernelVersionRequest.cc
 	src/model/UpgradeDBProxyInstanceKernelVersionResult.cc )
 

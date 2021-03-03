@@ -39,6 +39,13 @@ void DeleteParameterGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ParameterGroupId"].isNull())
+		parameterGroupId_ = value["ParameterGroupId"].asString();
 
+}
+
+std::string DeleteParameterGroupResult::getParameterGroupId()const
+{
+	return parameterGroupId_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DELETEPARAMETERGROUPRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DELETEPARAMETERGROUPRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONPRECHECKRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONPRECHECKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DeleteParameterGroupResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT UpgradeDBInstanceMajorVersionPrecheckResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteParameterGroupResult();
-				explicit DeleteParameterGroupResult(const std::string &payload);
-				~DeleteParameterGroupResult();
-				std::string getParameterGroupId()const;
+				UpgradeDBInstanceMajorVersionPrecheckResult();
+				explicit UpgradeDBInstanceMajorVersionPrecheckResult(const std::string &payload);
+				~UpgradeDBInstanceMajorVersionPrecheckResult();
+				std::string getTaskId()const;
+				std::string getTargetMajorVersion()const;
+				std::string getDBInstanceName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string parameterGroupId_;
+				std::string taskId_;
+				std::string targetMajorVersion_;
+				std::string dBInstanceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DELETEPARAMETERGROUPRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONPRECHECKRESULT_H_

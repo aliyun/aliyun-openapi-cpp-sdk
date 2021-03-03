@@ -88,8 +88,6 @@
 #include "model/DeleteDBProxyEndpointAddressResult.h"
 #include "model/DeleteDatabaseRequest.h"
 #include "model/DeleteDatabaseResult.h"
-#include "model/DeleteHostAccountRequest.h"
-#include "model/DeleteHostAccountResult.h"
 #include "model/DeleteParameterGroupRequest.h"
 #include "model/DeleteParameterGroupResult.h"
 #include "model/DescibeImportsFromDatabaseRequest.h"
@@ -254,6 +252,10 @@
 #include "model/DescribeTagsResult.h"
 #include "model/DescribeTasksRequest.h"
 #include "model/DescribeTasksResult.h"
+#include "model/DescribeUpgradeMajorVersionPrecheckTaskRequest.h"
+#include "model/DescribeUpgradeMajorVersionPrecheckTaskResult.h"
+#include "model/DescribeUpgradeMajorVersionTasksRequest.h"
+#include "model/DescribeUpgradeMajorVersionTasksResult.h"
 #include "model/DestroyDBInstanceRequest.h"
 #include "model/DestroyDBInstanceResult.h"
 #include "model/GetDbProxyInstanceSslRequest.h"
@@ -406,6 +408,10 @@
 #include "model/UpgradeDBInstanceEngineVersionResult.h"
 #include "model/UpgradeDBInstanceKernelVersionRequest.h"
 #include "model/UpgradeDBInstanceKernelVersionResult.h"
+#include "model/UpgradeDBInstanceMajorVersionRequest.h"
+#include "model/UpgradeDBInstanceMajorVersionResult.h"
+#include "model/UpgradeDBInstanceMajorVersionPrecheckRequest.h"
+#include "model/UpgradeDBInstanceMajorVersionPrecheckResult.h"
 #include "model/UpgradeDBProxyInstanceKernelVersionRequest.h"
 #include "model/UpgradeDBProxyInstanceKernelVersionResult.h"
 
@@ -516,9 +522,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDatabaseResult> DeleteDatabaseOutcome;
 			typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteDatabaseRequest&, const DeleteDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatabaseAsyncHandler;
-			typedef Outcome<Error, Model::DeleteHostAccountResult> DeleteHostAccountOutcome;
-			typedef std::future<DeleteHostAccountOutcome> DeleteHostAccountOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::DeleteHostAccountRequest&, const DeleteHostAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHostAccountAsyncHandler;
 			typedef Outcome<Error, Model::DeleteParameterGroupResult> DeleteParameterGroupOutcome;
 			typedef std::future<DeleteParameterGroupOutcome> DeleteParameterGroupOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteParameterGroupRequest&, const DeleteParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParameterGroupAsyncHandler;
@@ -765,6 +768,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
 			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUpgradeMajorVersionPrecheckTaskResult> DescribeUpgradeMajorVersionPrecheckTaskOutcome;
+			typedef std::future<DescribeUpgradeMajorVersionPrecheckTaskOutcome> DescribeUpgradeMajorVersionPrecheckTaskOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeUpgradeMajorVersionPrecheckTaskRequest&, const DescribeUpgradeMajorVersionPrecheckTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradeMajorVersionPrecheckTaskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUpgradeMajorVersionTasksResult> DescribeUpgradeMajorVersionTasksOutcome;
+			typedef std::future<DescribeUpgradeMajorVersionTasksOutcome> DescribeUpgradeMajorVersionTasksOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeUpgradeMajorVersionTasksRequest&, const DescribeUpgradeMajorVersionTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradeMajorVersionTasksAsyncHandler;
 			typedef Outcome<Error, Model::DestroyDBInstanceResult> DestroyDBInstanceOutcome;
 			typedef std::future<DestroyDBInstanceOutcome> DestroyDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DestroyDBInstanceRequest&, const DestroyDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBInstanceAsyncHandler;
@@ -993,6 +1002,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpgradeDBInstanceKernelVersionResult> UpgradeDBInstanceKernelVersionOutcome;
 			typedef std::future<UpgradeDBInstanceKernelVersionOutcome> UpgradeDBInstanceKernelVersionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::UpgradeDBInstanceKernelVersionRequest&, const UpgradeDBInstanceKernelVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceKernelVersionAsyncHandler;
+			typedef Outcome<Error, Model::UpgradeDBInstanceMajorVersionResult> UpgradeDBInstanceMajorVersionOutcome;
+			typedef std::future<UpgradeDBInstanceMajorVersionOutcome> UpgradeDBInstanceMajorVersionOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::UpgradeDBInstanceMajorVersionRequest&, const UpgradeDBInstanceMajorVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceMajorVersionAsyncHandler;
+			typedef Outcome<Error, Model::UpgradeDBInstanceMajorVersionPrecheckResult> UpgradeDBInstanceMajorVersionPrecheckOutcome;
+			typedef std::future<UpgradeDBInstanceMajorVersionPrecheckOutcome> UpgradeDBInstanceMajorVersionPrecheckOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::UpgradeDBInstanceMajorVersionPrecheckRequest&, const UpgradeDBInstanceMajorVersionPrecheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceMajorVersionPrecheckAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeDBProxyInstanceKernelVersionResult> UpgradeDBProxyInstanceKernelVersionOutcome;
 			typedef std::future<UpgradeDBProxyInstanceKernelVersionOutcome> UpgradeDBProxyInstanceKernelVersionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::UpgradeDBProxyInstanceKernelVersionRequest&, const UpgradeDBProxyInstanceKernelVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBProxyInstanceKernelVersionAsyncHandler;
@@ -1100,9 +1115,6 @@ namespace AlibabaCloud
 			DeleteDatabaseOutcome deleteDatabase(const Model::DeleteDatabaseRequest &request)const;
 			void deleteDatabaseAsync(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDatabaseOutcomeCallable deleteDatabaseCallable(const Model::DeleteDatabaseRequest& request) const;
-			DeleteHostAccountOutcome deleteHostAccount(const Model::DeleteHostAccountRequest &request)const;
-			void deleteHostAccountAsync(const Model::DeleteHostAccountRequest& request, const DeleteHostAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteHostAccountOutcomeCallable deleteHostAccountCallable(const Model::DeleteHostAccountRequest& request) const;
 			DeleteParameterGroupOutcome deleteParameterGroup(const Model::DeleteParameterGroupRequest &request)const;
 			void deleteParameterGroupAsync(const Model::DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteParameterGroupOutcomeCallable deleteParameterGroupCallable(const Model::DeleteParameterGroupRequest& request) const;
@@ -1349,6 +1361,12 @@ namespace AlibabaCloud
 			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
 			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;
+			DescribeUpgradeMajorVersionPrecheckTaskOutcome describeUpgradeMajorVersionPrecheckTask(const Model::DescribeUpgradeMajorVersionPrecheckTaskRequest &request)const;
+			void describeUpgradeMajorVersionPrecheckTaskAsync(const Model::DescribeUpgradeMajorVersionPrecheckTaskRequest& request, const DescribeUpgradeMajorVersionPrecheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUpgradeMajorVersionPrecheckTaskOutcomeCallable describeUpgradeMajorVersionPrecheckTaskCallable(const Model::DescribeUpgradeMajorVersionPrecheckTaskRequest& request) const;
+			DescribeUpgradeMajorVersionTasksOutcome describeUpgradeMajorVersionTasks(const Model::DescribeUpgradeMajorVersionTasksRequest &request)const;
+			void describeUpgradeMajorVersionTasksAsync(const Model::DescribeUpgradeMajorVersionTasksRequest& request, const DescribeUpgradeMajorVersionTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUpgradeMajorVersionTasksOutcomeCallable describeUpgradeMajorVersionTasksCallable(const Model::DescribeUpgradeMajorVersionTasksRequest& request) const;
 			DestroyDBInstanceOutcome destroyDBInstance(const Model::DestroyDBInstanceRequest &request)const;
 			void destroyDBInstanceAsync(const Model::DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DestroyDBInstanceOutcomeCallable destroyDBInstanceCallable(const Model::DestroyDBInstanceRequest& request) const;
@@ -1577,6 +1595,12 @@ namespace AlibabaCloud
 			UpgradeDBInstanceKernelVersionOutcome upgradeDBInstanceKernelVersion(const Model::UpgradeDBInstanceKernelVersionRequest &request)const;
 			void upgradeDBInstanceKernelVersionAsync(const Model::UpgradeDBInstanceKernelVersionRequest& request, const UpgradeDBInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeDBInstanceKernelVersionOutcomeCallable upgradeDBInstanceKernelVersionCallable(const Model::UpgradeDBInstanceKernelVersionRequest& request) const;
+			UpgradeDBInstanceMajorVersionOutcome upgradeDBInstanceMajorVersion(const Model::UpgradeDBInstanceMajorVersionRequest &request)const;
+			void upgradeDBInstanceMajorVersionAsync(const Model::UpgradeDBInstanceMajorVersionRequest& request, const UpgradeDBInstanceMajorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpgradeDBInstanceMajorVersionOutcomeCallable upgradeDBInstanceMajorVersionCallable(const Model::UpgradeDBInstanceMajorVersionRequest& request) const;
+			UpgradeDBInstanceMajorVersionPrecheckOutcome upgradeDBInstanceMajorVersionPrecheck(const Model::UpgradeDBInstanceMajorVersionPrecheckRequest &request)const;
+			void upgradeDBInstanceMajorVersionPrecheckAsync(const Model::UpgradeDBInstanceMajorVersionPrecheckRequest& request, const UpgradeDBInstanceMajorVersionPrecheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpgradeDBInstanceMajorVersionPrecheckOutcomeCallable upgradeDBInstanceMajorVersionPrecheckCallable(const Model::UpgradeDBInstanceMajorVersionPrecheckRequest& request) const;
 			UpgradeDBProxyInstanceKernelVersionOutcome upgradeDBProxyInstanceKernelVersion(const Model::UpgradeDBProxyInstanceKernelVersionRequest &request)const;
 			void upgradeDBProxyInstanceKernelVersionAsync(const Model::UpgradeDBProxyInstanceKernelVersionRequest& request, const UpgradeDBProxyInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeDBProxyInstanceKernelVersionOutcomeCallable upgradeDBProxyInstanceKernelVersionCallable(const Model::UpgradeDBProxyInstanceKernelVersionRequest& request) const;
