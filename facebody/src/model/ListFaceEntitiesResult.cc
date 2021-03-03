@@ -40,26 +40,26 @@ void ListFaceEntitiesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Token"].isNull())
-		data_.token = dataNode["Token"].asString();
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	if(!dataNode["Token"].isNull())
+		data_.token = dataNode["Token"].asString();
 	auto allEntitiesNode = dataNode["Entities"]["Entity"];
 	for (auto dataNodeEntitiesEntity : allEntitiesNode)
 	{
 		Data::Entity entityObject;
-		if(!dataNodeEntitiesEntity["DbName"].isNull())
-			entityObject.dbName = dataNodeEntitiesEntity["DbName"].asString();
 		if(!dataNodeEntitiesEntity["EntityId"].isNull())
 			entityObject.entityId = dataNodeEntitiesEntity["EntityId"].asString();
-		if(!dataNodeEntitiesEntity["FaceCount"].isNull())
-			entityObject.faceCount = std::stoi(dataNodeEntitiesEntity["FaceCount"].asString());
-		if(!dataNodeEntitiesEntity["Labels"].isNull())
-			entityObject.labels = dataNodeEntitiesEntity["Labels"].asString();
 		if(!dataNodeEntitiesEntity["CreatedAt"].isNull())
 			entityObject.createdAt = std::stol(dataNodeEntitiesEntity["CreatedAt"].asString());
+		if(!dataNodeEntitiesEntity["Labels"].isNull())
+			entityObject.labels = dataNodeEntitiesEntity["Labels"].asString();
+		if(!dataNodeEntitiesEntity["DbName"].isNull())
+			entityObject.dbName = dataNodeEntitiesEntity["DbName"].asString();
 		if(!dataNodeEntitiesEntity["UpdatedAt"].isNull())
 			entityObject.updatedAt = std::stol(dataNodeEntitiesEntity["UpdatedAt"].asString());
+		if(!dataNodeEntitiesEntity["FaceCount"].isNull())
+			entityObject.faceCount = std::stoi(dataNodeEntitiesEntity["FaceCount"].asString());
 		data_.entities.push_back(entityObject);
 	}
 

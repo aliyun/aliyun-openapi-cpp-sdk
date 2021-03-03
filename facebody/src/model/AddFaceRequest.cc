@@ -38,6 +38,17 @@ void AddFaceRequest::setEntityId(const std::string& entityId)
 	setBodyParameter("EntityId", entityId);
 }
 
+std::string AddFaceRequest::getExtraData()const
+{
+	return extraData_;
+}
+
+void AddFaceRequest::setExtraData(const std::string& extraData)
+{
+	extraData_ = extraData;
+	setBodyParameter("ExtraData", extraData);
+}
+
 std::string AddFaceRequest::getDbName()const
 {
 	return dbName_;
@@ -58,16 +69,5 @@ void AddFaceRequest::setImageUrl(const std::string& imageUrl)
 {
 	imageUrl_ = imageUrl;
 	setBodyParameter("ImageUrl", imageUrl);
-}
-
-std::string AddFaceRequest::getExtraData()const
-{
-	return extraData_;
-}
-
-void AddFaceRequest::setExtraData(const std::string& extraData)
-{
-	extraData_ = extraData;
-	setBodyParameter("ExtraData", extraData);
 }
 

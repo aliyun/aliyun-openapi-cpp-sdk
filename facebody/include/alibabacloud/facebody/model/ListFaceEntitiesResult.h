@@ -38,10 +38,10 @@ namespace AlibabaCloud
 					{
 						std::string entityId;
 						long createdAt;
-						std::string dbName;
 						std::string labels;
-						int faceCount;
+						std::string dbName;
 						long updatedAt;
+						int faceCount;
 					};
 					int totalCount;
 					std::string token;

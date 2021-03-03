@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CompareFaceRequest();
 				~CompareFaceRequest();
 
+				float getQualityScoreThreshold()const;
+				void setQualityScoreThreshold(float qualityScoreThreshold);
 				std::string getImageURLB()const;
 				void setImageURLB(const std::string& imageURLB);
 				std::string getImageURLA()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setImageType(int imageType);
 
             private:
+				float qualityScoreThreshold_;
 				std::string imageURLB_;
 				std::string imageURLA_;
 				int imageType_;

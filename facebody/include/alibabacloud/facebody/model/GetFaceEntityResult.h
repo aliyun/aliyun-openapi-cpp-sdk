@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						std::string faceId;
 					};
 					std::string entityId;
-					std::string dbName;
 					std::string labels;
+					std::string dbName;
 					std::vector<Face> faces;
 				};
 

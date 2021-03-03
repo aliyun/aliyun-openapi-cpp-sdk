@@ -34,6 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					std::string messageTips;
+					float qualityScoreA;
+					float qualityScoreB;
 					std::vector<std::string> thresholds;
 					float confidence;
 					std::vector<std::string> rectAList;
@@ -45,11 +48,13 @@ namespace AlibabaCloud
 				explicit CompareFaceResult(const std::string &payload);
 				~CompareFaceResult();
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				Data data_;
+				std::string code_;
 
 			};
 		}

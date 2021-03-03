@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				SearchFaceRequest();
 				~SearchFaceRequest();
 
+				int getLimit()const;
+				void setLimit(int limit);
 				std::string getDbNames()const;
 				void setDbNames(const std::string& dbNames);
 				std::string getDbName()const;
 				void setDbName(const std::string& dbName);
 				std::string getImageUrl()const;
 				void setImageUrl(const std::string& imageUrl);
-				int getLimit()const;
-				void setLimit(int limit);
 
             private:
+				int limit_;
 				std::string dbNames_;
 				std::string dbName_;
 				std::string imageUrl_;
-				int limit_;
 
 			};
 		}

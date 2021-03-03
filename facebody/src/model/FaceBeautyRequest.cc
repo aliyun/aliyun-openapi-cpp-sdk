@@ -27,17 +27,6 @@ FaceBeautyRequest::FaceBeautyRequest() :
 FaceBeautyRequest::~FaceBeautyRequest()
 {}
 
-float FaceBeautyRequest::getSharp()const
-{
-	return sharp_;
-}
-
-void FaceBeautyRequest::setSharp(float sharp)
-{
-	sharp_ = sharp;
-	setBodyParameter("Sharp", std::to_string(sharp));
-}
-
 float FaceBeautyRequest::getWhite()const
 {
 	return white_;
@@ -49,17 +38,6 @@ void FaceBeautyRequest::setWhite(float white)
 	setBodyParameter("White", std::to_string(white));
 }
 
-std::string FaceBeautyRequest::getImageURL()const
-{
-	return imageURL_;
-}
-
-void FaceBeautyRequest::setImageURL(const std::string& imageURL)
-{
-	imageURL_ = imageURL;
-	setBodyParameter("ImageURL", imageURL);
-}
-
 float FaceBeautyRequest::getSmooth()const
 {
 	return smooth_;
@@ -69,5 +47,27 @@ void FaceBeautyRequest::setSmooth(float smooth)
 {
 	smooth_ = smooth;
 	setBodyParameter("Smooth", std::to_string(smooth));
+}
+
+float FaceBeautyRequest::getSharp()const
+{
+	return sharp_;
+}
+
+void FaceBeautyRequest::setSharp(float sharp)
+{
+	sharp_ = sharp;
+	setBodyParameter("Sharp", std::to_string(sharp));
+}
+
+std::string FaceBeautyRequest::getImageURL()const
+{
+	return imageURL_;
+}
+
+void FaceBeautyRequest::setImageURL(const std::string& imageURL)
+{
+	imageURL_ = imageURL;
+	setBodyParameter("ImageURL", imageURL);
 }
 

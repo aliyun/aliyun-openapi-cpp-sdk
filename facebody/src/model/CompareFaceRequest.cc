@@ -27,6 +27,17 @@ CompareFaceRequest::CompareFaceRequest() :
 CompareFaceRequest::~CompareFaceRequest()
 {}
 
+float CompareFaceRequest::getQualityScoreThreshold()const
+{
+	return qualityScoreThreshold_;
+}
+
+void CompareFaceRequest::setQualityScoreThreshold(float qualityScoreThreshold)
+{
+	qualityScoreThreshold_ = qualityScoreThreshold;
+	setBodyParameter("QualityScoreThreshold", std::to_string(qualityScoreThreshold));
+}
+
 std::string CompareFaceRequest::getImageURLB()const
 {
 	return imageURLB_;

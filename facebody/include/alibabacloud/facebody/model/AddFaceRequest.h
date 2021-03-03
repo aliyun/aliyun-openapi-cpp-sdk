@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getEntityId()const;
 				void setEntityId(const std::string& entityId);
+				std::string getExtraData()const;
+				void setExtraData(const std::string& extraData);
 				std::string getDbName()const;
 				void setDbName(const std::string& dbName);
 				std::string getImageUrl()const;
 				void setImageUrl(const std::string& imageUrl);
-				std::string getExtraData()const;
-				void setExtraData(const std::string& extraData);
 
             private:
 				std::string entityId_;
+				std::string extraData_;
 				std::string dbName_;
 				std::string imageUrl_;
-				std::string extraData_;
 
 			};
 		}

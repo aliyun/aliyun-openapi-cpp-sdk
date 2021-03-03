@@ -27,6 +27,17 @@ SearchFaceRequest::SearchFaceRequest() :
 SearchFaceRequest::~SearchFaceRequest()
 {}
 
+int SearchFaceRequest::getLimit()const
+{
+	return limit_;
+}
+
+void SearchFaceRequest::setLimit(int limit)
+{
+	limit_ = limit;
+	setBodyParameter("Limit", std::to_string(limit));
+}
+
 std::string SearchFaceRequest::getDbNames()const
 {
 	return dbNames_;
@@ -58,16 +69,5 @@ void SearchFaceRequest::setImageUrl(const std::string& imageUrl)
 {
 	imageUrl_ = imageUrl;
 	setBodyParameter("ImageUrl", imageUrl);
-}
-
-int SearchFaceRequest::getLimit()const
-{
-	return limit_;
-}
-
-void SearchFaceRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setBodyParameter("Limit", std::to_string(limit));
 }
 

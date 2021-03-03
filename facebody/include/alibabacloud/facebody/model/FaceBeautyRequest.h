@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				FaceBeautyRequest();
 				~FaceBeautyRequest();
 
-				float getSharp()const;
-				void setSharp(float sharp);
 				float getWhite()const;
 				void setWhite(float white);
-				std::string getImageURL()const;
-				void setImageURL(const std::string& imageURL);
 				float getSmooth()const;
 				void setSmooth(float smooth);
+				float getSharp()const;
+				void setSharp(float sharp);
+				std::string getImageURL()const;
+				void setImageURL(const std::string& imageURL);
 
             private:
-				float sharp_;
 				float white_;
-				std::string imageURL_;
 				float smooth_;
+				float sharp_;
+				std::string imageURL_;
 
 			};
 		}
