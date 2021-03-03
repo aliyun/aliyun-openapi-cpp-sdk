@@ -64,6 +64,8 @@
 #include "model/DeleteRepositoryProtectedBranchResult.h"
 #include "model/DeleteRepositoryTagRequest.h"
 #include "model/DeleteRepositoryTagResult.h"
+#include "model/DeleteRepositoryTagV2Request.h"
+#include "model/DeleteRepositoryTagV2Result.h"
 #include "model/DeleteRepositoryWebhookRequest.h"
 #include "model/DeleteRepositoryWebhookResult.h"
 #include "model/EnableRepositoryDeployKeyRequest.h"
@@ -88,6 +90,8 @@
 #include "model/GetRepositoryInfoResult.h"
 #include "model/GetRepositoryTagRequest.h"
 #include "model/GetRepositoryTagResult.h"
+#include "model/GetRepositoryTagV2Request.h"
+#include "model/GetRepositoryTagV2Result.h"
 #include "model/GetUserInfoRequest.h"
 #include "model/GetUserInfoResult.h"
 #include "model/ListGroupMemberRequest.h"
@@ -204,6 +208,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRepositoryTagResult> DeleteRepositoryTagOutcome;
 			typedef std::future<DeleteRepositoryTagOutcome> DeleteRepositoryTagOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryTagRequest&, const DeleteRepositoryTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryTagAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRepositoryTagV2Result> DeleteRepositoryTagV2Outcome;
+			typedef std::future<DeleteRepositoryTagV2Outcome> DeleteRepositoryTagV2OutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryTagV2Request&, const DeleteRepositoryTagV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryTagV2AsyncHandler;
 			typedef Outcome<Error, Model::DeleteRepositoryWebhookResult> DeleteRepositoryWebhookOutcome;
 			typedef std::future<DeleteRepositoryWebhookOutcome> DeleteRepositoryWebhookOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::DeleteRepositoryWebhookRequest&, const DeleteRepositoryWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryWebhookAsyncHandler;
@@ -240,6 +247,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRepositoryTagResult> GetRepositoryTagOutcome;
 			typedef std::future<GetRepositoryTagOutcome> GetRepositoryTagOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetRepositoryTagRequest&, const GetRepositoryTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepositoryTagAsyncHandler;
+			typedef Outcome<Error, Model::GetRepositoryTagV2Result> GetRepositoryTagV2Outcome;
+			typedef std::future<GetRepositoryTagV2Outcome> GetRepositoryTagV2OutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetRepositoryTagV2Request&, const GetRepositoryTagV2Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepositoryTagV2AsyncHandler;
 			typedef Outcome<Error, Model::GetUserInfoResult> GetUserInfoOutcome;
 			typedef std::future<GetUserInfoOutcome> GetUserInfoOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetUserInfoRequest&, const GetUserInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserInfoAsyncHandler;
@@ -374,6 +384,9 @@ namespace AlibabaCloud
 			DeleteRepositoryTagOutcome deleteRepositoryTag(const Model::DeleteRepositoryTagRequest &request)const;
 			void deleteRepositoryTagAsync(const Model::DeleteRepositoryTagRequest& request, const DeleteRepositoryTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRepositoryTagOutcomeCallable deleteRepositoryTagCallable(const Model::DeleteRepositoryTagRequest& request) const;
+			DeleteRepositoryTagV2Outcome deleteRepositoryTagV2(const Model::DeleteRepositoryTagV2Request &request)const;
+			void deleteRepositoryTagV2Async(const Model::DeleteRepositoryTagV2Request& request, const DeleteRepositoryTagV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRepositoryTagV2OutcomeCallable deleteRepositoryTagV2Callable(const Model::DeleteRepositoryTagV2Request& request) const;
 			DeleteRepositoryWebhookOutcome deleteRepositoryWebhook(const Model::DeleteRepositoryWebhookRequest &request)const;
 			void deleteRepositoryWebhookAsync(const Model::DeleteRepositoryWebhookRequest& request, const DeleteRepositoryWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRepositoryWebhookOutcomeCallable deleteRepositoryWebhookCallable(const Model::DeleteRepositoryWebhookRequest& request) const;
@@ -410,6 +423,9 @@ namespace AlibabaCloud
 			GetRepositoryTagOutcome getRepositoryTag(const Model::GetRepositoryTagRequest &request)const;
 			void getRepositoryTagAsync(const Model::GetRepositoryTagRequest& request, const GetRepositoryTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRepositoryTagOutcomeCallable getRepositoryTagCallable(const Model::GetRepositoryTagRequest& request) const;
+			GetRepositoryTagV2Outcome getRepositoryTagV2(const Model::GetRepositoryTagV2Request &request)const;
+			void getRepositoryTagV2Async(const Model::GetRepositoryTagV2Request& request, const GetRepositoryTagV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRepositoryTagV2OutcomeCallable getRepositoryTagV2Callable(const Model::GetRepositoryTagV2Request& request) const;
 			GetUserInfoOutcome getUserInfo(const Model::GetUserInfoRequest &request)const;
 			void getUserInfoAsync(const Model::GetUserInfoRequest& request, const GetUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserInfoOutcomeCallable getUserInfoCallable(const Model::GetUserInfoRequest& request) const;

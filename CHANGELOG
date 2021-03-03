@@ -1,4 +1,7 @@
 2021-03-03 Version: patch
+- Add GetRepositoryTagV2 and DeleteRepositoryTagV2 API.
+
+2021-03-03 Version: patch
 - Update Compareface.
 
 2021-03-03 Version: patch

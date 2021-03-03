@@ -63,6 +63,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/DeleteRepositoryProtectedBranchResult.h
 	include/alibabacloud/codeup/model/DeleteRepositoryTagRequest.h
 	include/alibabacloud/codeup/model/DeleteRepositoryTagResult.h
+	include/alibabacloud/codeup/model/DeleteRepositoryTagV2Request.h
+	include/alibabacloud/codeup/model/DeleteRepositoryTagV2Result.h
 	include/alibabacloud/codeup/model/DeleteRepositoryWebhookRequest.h
 	include/alibabacloud/codeup/model/DeleteRepositoryWebhookResult.h
 	include/alibabacloud/codeup/model/EnableRepositoryDeployKeyRequest.h
@@ -87,6 +89,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/GetRepositoryInfoResult.h
 	include/alibabacloud/codeup/model/GetRepositoryTagRequest.h
 	include/alibabacloud/codeup/model/GetRepositoryTagResult.h
+	include/alibabacloud/codeup/model/GetRepositoryTagV2Request.h
+	include/alibabacloud/codeup/model/GetRepositoryTagV2Result.h
 	include/alibabacloud/codeup/model/GetUserInfoRequest.h
 	include/alibabacloud/codeup/model/GetUserInfoResult.h
 	include/alibabacloud/codeup/model/ListGroupMemberRequest.h
@@ -176,6 +180,8 @@ set(codeup_src
 	src/model/DeleteRepositoryProtectedBranchResult.cc
 	src/model/DeleteRepositoryTagRequest.cc
 	src/model/DeleteRepositoryTagResult.cc
+	src/model/DeleteRepositoryTagV2Request.cc
+	src/model/DeleteRepositoryTagV2Result.cc
 	src/model/DeleteRepositoryWebhookRequest.cc
 	src/model/DeleteRepositoryWebhookResult.cc
 	src/model/EnableRepositoryDeployKeyRequest.cc
@@ -200,6 +206,8 @@ set(codeup_src
 	src/model/GetRepositoryInfoResult.cc
 	src/model/GetRepositoryTagRequest.cc
 	src/model/GetRepositoryTagResult.cc
+	src/model/GetRepositoryTagV2Request.cc
+	src/model/GetRepositoryTagV2Result.cc
 	src/model/GetUserInfoRequest.cc
 	src/model/GetUserInfoResult.cc
 	src/model/ListGroupMemberRequest.cc
