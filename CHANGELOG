@@ -1,3 +1,6 @@
+2021-03-04 Version: patch
+- Update Ocr.
+
 2021-03-03 Version: patch
 - Add GetRepositoryTagV2 and DeleteRepositoryTagV2 API.
 
