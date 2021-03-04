@@ -123,6 +123,8 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/RecognizeExpressionResult.h
 	include/alibabacloud/facebody/model/RecognizeFaceRequest.h
 	include/alibabacloud/facebody/model/RecognizeFaceResult.h
+	include/alibabacloud/facebody/model/RecognizeHandGestureRequest.h
+	include/alibabacloud/facebody/model/RecognizeHandGestureResult.h
 	include/alibabacloud/facebody/model/RecognizePublicFaceRequest.h
 	include/alibabacloud/facebody/model/RecognizePublicFaceResult.h
 	include/alibabacloud/facebody/model/SearchBodyTraceRequest.h
@@ -240,6 +242,8 @@ set(facebody_src
 	src/model/RecognizeExpressionResult.cc
 	src/model/RecognizeFaceRequest.cc
 	src/model/RecognizeFaceResult.cc
+	src/model/RecognizeHandGestureRequest.cc
+	src/model/RecognizeHandGestureResult.cc
 	src/model/RecognizePublicFaceRequest.cc
 	src/model/RecognizePublicFaceResult.cc
 	src/model/SearchBodyTraceRequest.cc

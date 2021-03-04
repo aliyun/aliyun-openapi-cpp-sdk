@@ -124,6 +124,8 @@
 #include "model/RecognizeExpressionResult.h"
 #include "model/RecognizeFaceRequest.h"
 #include "model/RecognizeFaceResult.h"
+#include "model/RecognizeHandGestureRequest.h"
+#include "model/RecognizeHandGestureResult.h"
 #include "model/RecognizePublicFaceRequest.h"
 #include "model/RecognizePublicFaceResult.h"
 #include "model/SearchBodyTraceRequest.h"
@@ -298,6 +300,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeFaceResult> RecognizeFaceOutcome;
 			typedef std::future<RecognizeFaceOutcome> RecognizeFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::RecognizeFaceRequest&, const RecognizeFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeFaceAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeHandGestureResult> RecognizeHandGestureOutcome;
+			typedef std::future<RecognizeHandGestureOutcome> RecognizeHandGestureOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::RecognizeHandGestureRequest&, const RecognizeHandGestureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHandGestureAsyncHandler;
 			typedef Outcome<Error, Model::RecognizePublicFaceResult> RecognizePublicFaceOutcome;
 			typedef std::future<RecognizePublicFaceOutcome> RecognizePublicFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::RecognizePublicFaceRequest&, const RecognizePublicFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePublicFaceAsyncHandler;
@@ -474,6 +479,9 @@ namespace AlibabaCloud
 			RecognizeFaceOutcome recognizeFace(const Model::RecognizeFaceRequest &request)const;
 			void recognizeFaceAsync(const Model::RecognizeFaceRequest& request, const RecognizeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeFaceOutcomeCallable recognizeFaceCallable(const Model::RecognizeFaceRequest& request) const;
+			RecognizeHandGestureOutcome recognizeHandGesture(const Model::RecognizeHandGestureRequest &request)const;
+			void recognizeHandGestureAsync(const Model::RecognizeHandGestureRequest& request, const RecognizeHandGestureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeHandGestureOutcomeCallable recognizeHandGestureCallable(const Model::RecognizeHandGestureRequest& request) const;
 			RecognizePublicFaceOutcome recognizePublicFace(const Model::RecognizePublicFaceRequest &request)const;
 			void recognizePublicFaceAsync(const Model::RecognizePublicFaceRequest& request, const RecognizePublicFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizePublicFaceOutcomeCallable recognizePublicFaceCallable(const Model::RecognizePublicFaceRequest& request) const;
