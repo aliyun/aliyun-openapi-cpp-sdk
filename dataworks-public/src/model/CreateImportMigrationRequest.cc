@@ -1,0 +1,128 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/dataworks-public/model/CreateImportMigrationRequest.h>
+
+using AlibabaCloud::Dataworks_public::Model::CreateImportMigrationRequest;
+
+CreateImportMigrationRequest::CreateImportMigrationRequest() :
+	RpcServiceRequest("dataworks-public", "2020-05-18", "CreateImportMigration")
+{
+	setMethod(HttpRequest::Method::Post);
+}
+
+CreateImportMigrationRequest::~CreateImportMigrationRequest()
+{}
+
+std::string CreateImportMigrationRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateImportMigrationRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setBodyParameter("Description", description);
+}
+
+std::string CreateImportMigrationRequest::getCommitRule()const
+{
+	return commitRule_;
+}
+
+void CreateImportMigrationRequest::setCommitRule(const std::string& commitRule)
+{
+	commitRule_ = commitRule;
+	setBodyParameter("CommitRule", commitRule);
+}
+
+std::string CreateImportMigrationRequest::getWorkspaceMap()const
+{
+	return workspaceMap_;
+}
+
+void CreateImportMigrationRequest::setWorkspaceMap(const std::string& workspaceMap)
+{
+	workspaceMap_ = workspaceMap;
+	setBodyParameter("WorkspaceMap", workspaceMap);
+}
+
+std::string CreateImportMigrationRequest::getCalculateEngineMap()const
+{
+	return calculateEngineMap_;
+}
+
+void CreateImportMigrationRequest::setCalculateEngineMap(const std::string& calculateEngineMap)
+{
+	calculateEngineMap_ = calculateEngineMap;
+	setBodyParameter("CalculateEngineMap", calculateEngineMap);
+}
+
+std::string CreateImportMigrationRequest::getName()const
+{
+	return name_;
+}
+
+void CreateImportMigrationRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setBodyParameter("Name", name);
+}
+
+std::string CreateImportMigrationRequest::getPackageType()const
+{
+	return packageType_;
+}
+
+void CreateImportMigrationRequest::setPackageType(const std::string& packageType)
+{
+	packageType_ = packageType;
+	setBodyParameter("PackageType", packageType);
+}
+
+long CreateImportMigrationRequest::getProjectId()const
+{
+	return projectId_;
+}
+
+void CreateImportMigrationRequest::setProjectId(long projectId)
+{
+	projectId_ = projectId;
+	setBodyParameter("ProjectId", std::to_string(projectId));
+}
+
+std::string CreateImportMigrationRequest::getPackageOssDownloadLink()const
+{
+	return packageOssDownloadLink_;
+}
+
+void CreateImportMigrationRequest::setPackageOssDownloadLink(const std::string& packageOssDownloadLink)
+{
+	packageOssDownloadLink_ = packageOssDownloadLink;
+	setBodyParameter("PackageOssDownloadLink", packageOssDownloadLink);
+}
+
+std::string CreateImportMigrationRequest::getResourceGroupMap()const
+{
+	return resourceGroupMap_;
+}
+
+void CreateImportMigrationRequest::setResourceGroupMap(const std::string& resourceGroupMap)
+{
+	resourceGroupMap_ = resourceGroupMap;
+	setBodyParameter("ResourceGroupMap", resourceGroupMap);
+}
+

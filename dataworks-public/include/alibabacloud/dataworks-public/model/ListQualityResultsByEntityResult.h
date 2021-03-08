@@ -1,0 +1,124 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTQUALITYRESULTSBYENTITYRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTQUALITYRESULTSBYENTITYRESULT_H_
+
+#include <string>
+#include <vector>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
+
+namespace AlibabaCloud
+{
+	namespace Dataworks_public
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListQualityResultsByEntityResult : public ServiceResult
+			{
+			public:
+				struct Data
+				{
+					struct RuleChecksItem
+					{
+						struct ReferenceValueItem
+						{
+							int singleCheckResult;
+							float value;
+							std::string bizDate;
+							std::string discreteProperty;
+							float threshold;
+						};
+						struct SampleValueItem
+						{
+							float value;
+							std::string bizDate;
+							std::string discreteProperty;
+						};
+						std::string op;
+						std::vector<RuleChecksItem::SampleValueItem> sampleValue;
+						std::string taskId;
+						long endTime;
+						bool discreteCheck;
+						std::string checkerName;
+						float expectValue;
+						std::string projectName;
+						std::vector<RuleChecksItem::ReferenceValueItem> referenceValue;
+						int ruleId;
+						float warningThreshold;
+						std::string whereCondition;
+						long beginTime;
+						int checkResultStatus;
+						std::string matchExpression;
+						float upperValue;
+						bool isPrediction;
+						int checkResult;
+						std::string templateName;
+						std::string timeCost;
+						bool fixedCheck;
+						std::string methodName;
+						std::string resultString;
+						std::string property;
+						std::string dateType;
+						long bizDate;
+						int templateId;
+						std::string ruleName;
+						std::string comment;
+						float criticalThreshold;
+						std::string externalId;
+						std::string trend;
+						int checkerType;
+						std::string externalType;
+						int checkerId;
+						int entityId;
+						std::string tableName;
+						int blockType;
+						int id;
+						std::string actualExpression;
+						float lowerValue;
+					};
+					long totalCount;
+					int pageSize;
+					int pageNumber;
+					std::vector<RuleChecksItem> ruleChecks;
+				};
+
+
+				ListQualityResultsByEntityResult();
+				explicit ListQualityResultsByEntityResult(const std::string &payload);
+				~ListQualityResultsByEntityResult();
+				int getHttpStatusCode()const;
+				Data getData()const;
+				std::string getErrorCode()const;
+				std::string getErrorMessage()const;
+				bool getSuccess()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				int httpStatusCode_;
+				Data data_;
+				std::string errorCode_;
+				std::string errorMessage_;
+				bool success_;
+
+			};
+		}
+	}
+}
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTQUALITYRESULTSBYENTITYRESULT_H_

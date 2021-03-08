@@ -37,18 +37,12 @@ namespace AlibabaCloud
 				CreateManualDagResult();
 				explicit CreateManualDagResult(const std::string &payload);
 				~CreateManualDagResult();
-				std::string getReturnErrorSolution()const;
-				std::string getReturnCode()const;
-				std::string getReturnMessage()const;
-				long getReturnValue()const;
+				long getDagId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string returnErrorSolution_;
-				std::string returnCode_;
-				std::string returnMessage_;
-				long returnValue_;
+				long dagId_;
 
 			};
 		}

@@ -19,13 +19,24 @@
 using AlibabaCloud::Dataworks_public::Model::CreateManualDagRequest;
 
 CreateManualDagRequest::CreateManualDagRequest() :
-	RpcServiceRequest("dataworks-public", "2018-06-01", "CreateManualDag")
+	RpcServiceRequest("dataworks-public", "2020-05-18", "CreateManualDag")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 CreateManualDagRequest::~CreateManualDagRequest()
 {}
+
+std::string CreateManualDagRequest::getProjectEnv()const
+{
+	return projectEnv_;
+}
+
+void CreateManualDagRequest::setProjectEnv(const std::string& projectEnv)
+{
+	projectEnv_ = projectEnv;
+	setBodyParameter("ProjectEnv", projectEnv);
+}
 
 std::string CreateManualDagRequest::getProjectName()const
 {
@@ -35,18 +46,18 @@ std::string CreateManualDagRequest::getProjectName()const
 void CreateManualDagRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setParameter("ProjectName", projectName);
+	setBodyParameter("ProjectName", projectName);
 }
 
-std::string CreateManualDagRequest::getBizdate()const
+std::string CreateManualDagRequest::getBizDate()const
 {
-	return bizdate_;
+	return bizDate_;
 }
 
-void CreateManualDagRequest::setBizdate(const std::string& bizdate)
+void CreateManualDagRequest::setBizDate(const std::string& bizDate)
 {
-	bizdate_ = bizdate;
-	setParameter("Bizdate", bizdate);
+	bizDate_ = bizDate;
+	setBodyParameter("BizDate", bizDate);
 }
 
 std::string CreateManualDagRequest::getFlowName()const
@@ -57,28 +68,28 @@ std::string CreateManualDagRequest::getFlowName()const
 void CreateManualDagRequest::setFlowName(const std::string& flowName)
 {
 	flowName_ = flowName;
-	setParameter("FlowName", flowName);
+	setBodyParameter("FlowName", flowName);
 }
 
-std::string CreateManualDagRequest::getDagPara()const
+std::string CreateManualDagRequest::getDagParameters()const
 {
-	return dagPara_;
+	return dagParameters_;
 }
 
-void CreateManualDagRequest::setDagPara(const std::string& dagPara)
+void CreateManualDagRequest::setDagParameters(const std::string& dagParameters)
 {
-	dagPara_ = dagPara;
-	setParameter("DagPara", dagPara);
+	dagParameters_ = dagParameters;
+	setBodyParameter("DagParameters", dagParameters);
 }
 
-std::string CreateManualDagRequest::getNodePara()const
+std::string CreateManualDagRequest::getNodeParameters()const
 {
-	return nodePara_;
+	return nodeParameters_;
 }
 
-void CreateManualDagRequest::setNodePara(const std::string& nodePara)
+void CreateManualDagRequest::setNodeParameters(const std::string& nodeParameters)
 {
-	nodePara_ = nodePara;
-	setParameter("NodePara", nodePara);
+	nodeParameters_ = nodeParameters;
+	setBodyParameter("NodeParameters", nodeParameters);
 }
 
