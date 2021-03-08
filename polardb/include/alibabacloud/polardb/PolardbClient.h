@@ -46,6 +46,8 @@
 #include "model/CreateDBNodesResult.h"
 #include "model/CreateDatabaseRequest.h"
 #include "model/CreateDatabaseResult.h"
+#include "model/CreateParameterGroupRequest.h"
+#include "model/CreateParameterGroupResult.h"
 #include "model/DeleteAccountRequest.h"
 #include "model/DeleteAccountResult.h"
 #include "model/DeleteBackupRequest.h"
@@ -62,6 +64,8 @@
 #include "model/DeleteDBNodesResult.h"
 #include "model/DeleteDatabaseRequest.h"
 #include "model/DeleteDatabaseResult.h"
+#include "model/DeleteParameterGroupRequest.h"
+#include "model/DeleteParameterGroupResult.h"
 #include "model/DescribeAccountsRequest.h"
 #include "model/DescribeAccountsResult.h"
 #include "model/DescribeAutoRenewAttributeRequest.h"
@@ -120,6 +124,10 @@
 #include "model/DescribeLogBackupPolicyResult.h"
 #include "model/DescribeMetaListRequest.h"
 #include "model/DescribeMetaListResult.h"
+#include "model/DescribeParameterGroupRequest.h"
+#include "model/DescribeParameterGroupResult.h"
+#include "model/DescribeParameterGroupsRequest.h"
+#include "model/DescribeParameterGroupsResult.h"
 #include "model/DescribePendingMaintenanceActionRequest.h"
 #include "model/DescribePendingMaintenanceActionResult.h"
 #include "model/DescribePendingMaintenanceActionsRequest.h"
@@ -130,14 +138,14 @@
 #include "model/DescribeSQLExplorerPolicyResult.h"
 #include "model/DescribeSQLExplorerRetentionRequest.h"
 #include "model/DescribeSQLExplorerRetentionResult.h"
-#include "model/DescribeSQLExplorerVersionRequest.h"
-#include "model/DescribeSQLExplorerVersionResult.h"
+#include "model/DescribeSQLLogRecordsRequest.h"
+#include "model/DescribeSQLLogRecordsResult.h"
+#include "model/DescribeSQLLogTemplatesRequest.h"
+#include "model/DescribeSQLLogTemplatesResult.h"
 #include "model/DescribeScheduleTasksRequest.h"
 #include "model/DescribeScheduleTasksResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
 #include "model/DescribeSlowLogRecordsResult.h"
-#include "model/DescribeSqlLogTrialStatusRequest.h"
-#include "model/DescribeSqlLogTrialStatusResult.h"
 #include "model/DescribeTasksRequest.h"
 #include "model/DescribeTasksResult.h"
 #include "model/FailoverDBClusterRequest.h"
@@ -247,6 +255,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDatabaseResult> CreateDatabaseOutcome;
 			typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CreateDatabaseRequest&, const CreateDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
+			typedef Outcome<Error, Model::CreateParameterGroupResult> CreateParameterGroupOutcome;
+			typedef std::future<CreateParameterGroupOutcome> CreateParameterGroupOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CreateParameterGroupRequest&, const CreateParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParameterGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
 			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
@@ -271,6 +282,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDatabaseResult> DeleteDatabaseOutcome;
 			typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DeleteDatabaseRequest&, const DeleteDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatabaseAsyncHandler;
+			typedef Outcome<Error, Model::DeleteParameterGroupResult> DeleteParameterGroupOutcome;
+			typedef std::future<DeleteParameterGroupOutcome> DeleteParameterGroupOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DeleteParameterGroupRequest&, const DeleteParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParameterGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccountsResult> DescribeAccountsOutcome;
 			typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeAccountsRequest&, const DescribeAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
@@ -358,6 +372,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeMetaListResult> DescribeMetaListOutcome;
 			typedef std::future<DescribeMetaListOutcome> DescribeMetaListOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeMetaListRequest&, const DescribeMetaListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetaListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeParameterGroupResult> DescribeParameterGroupOutcome;
+			typedef std::future<DescribeParameterGroupOutcome> DescribeParameterGroupOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeParameterGroupRequest&, const DescribeParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeParameterGroupsResult> DescribeParameterGroupsOutcome;
+			typedef std::future<DescribeParameterGroupsOutcome> DescribeParameterGroupsOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeParameterGroupsRequest&, const DescribeParameterGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DescribePendingMaintenanceActionResult> DescribePendingMaintenanceActionOutcome;
 			typedef std::future<DescribePendingMaintenanceActionOutcome> DescribePendingMaintenanceActionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribePendingMaintenanceActionRequest&, const DescribePendingMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePendingMaintenanceActionAsyncHandler;
@@ -373,18 +393,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSQLExplorerRetentionResult> DescribeSQLExplorerRetentionOutcome;
 			typedef std::future<DescribeSQLExplorerRetentionOutcome> DescribeSQLExplorerRetentionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLExplorerRetentionRequest&, const DescribeSQLExplorerRetentionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLExplorerRetentionAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLExplorerVersionResult> DescribeSQLExplorerVersionOutcome;
-			typedef std::future<DescribeSQLExplorerVersionOutcome> DescribeSQLExplorerVersionOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLExplorerVersionRequest&, const DescribeSQLExplorerVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLExplorerVersionAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSQLLogRecordsResult> DescribeSQLLogRecordsOutcome;
+			typedef std::future<DescribeSQLLogRecordsOutcome> DescribeSQLLogRecordsOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLLogRecordsRequest&, const DescribeSQLLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLLogRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSQLLogTemplatesResult> DescribeSQLLogTemplatesOutcome;
+			typedef std::future<DescribeSQLLogTemplatesOutcome> DescribeSQLLogTemplatesOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLLogTemplatesRequest&, const DescribeSQLLogTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLLogTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScheduleTasksResult> DescribeScheduleTasksOutcome;
 			typedef std::future<DescribeScheduleTasksOutcome> DescribeScheduleTasksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeScheduleTasksRequest&, const DescribeScheduleTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduleTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSlowLogRecordsResult> DescribeSlowLogRecordsOutcome;
 			typedef std::future<DescribeSlowLogRecordsOutcome> DescribeSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeSlowLogRecordsRequest&, const DescribeSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSqlLogTrialStatusResult> DescribeSqlLogTrialStatusOutcome;
-			typedef std::future<DescribeSqlLogTrialStatusOutcome> DescribeSqlLogTrialStatusOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeSqlLogTrialStatusRequest&, const DescribeSqlLogTrialStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlLogTrialStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
 			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
@@ -522,6 +542,9 @@ namespace AlibabaCloud
 			CreateDatabaseOutcome createDatabase(const Model::CreateDatabaseRequest &request)const;
 			void createDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDatabaseOutcomeCallable createDatabaseCallable(const Model::CreateDatabaseRequest& request) const;
+			CreateParameterGroupOutcome createParameterGroup(const Model::CreateParameterGroupRequest &request)const;
+			void createParameterGroupAsync(const Model::CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateParameterGroupOutcomeCallable createParameterGroupCallable(const Model::CreateParameterGroupRequest& request) const;
 			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
 			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
@@ -546,6 +569,9 @@ namespace AlibabaCloud
 			DeleteDatabaseOutcome deleteDatabase(const Model::DeleteDatabaseRequest &request)const;
 			void deleteDatabaseAsync(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDatabaseOutcomeCallable deleteDatabaseCallable(const Model::DeleteDatabaseRequest& request) const;
+			DeleteParameterGroupOutcome deleteParameterGroup(const Model::DeleteParameterGroupRequest &request)const;
+			void deleteParameterGroupAsync(const Model::DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteParameterGroupOutcomeCallable deleteParameterGroupCallable(const Model::DeleteParameterGroupRequest& request) const;
 			DescribeAccountsOutcome describeAccounts(const Model::DescribeAccountsRequest &request)const;
 			void describeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountsOutcomeCallable describeAccountsCallable(const Model::DescribeAccountsRequest& request) const;
@@ -633,6 +659,12 @@ namespace AlibabaCloud
 			DescribeMetaListOutcome describeMetaList(const Model::DescribeMetaListRequest &request)const;
 			void describeMetaListAsync(const Model::DescribeMetaListRequest& request, const DescribeMetaListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMetaListOutcomeCallable describeMetaListCallable(const Model::DescribeMetaListRequest& request) const;
+			DescribeParameterGroupOutcome describeParameterGroup(const Model::DescribeParameterGroupRequest &request)const;
+			void describeParameterGroupAsync(const Model::DescribeParameterGroupRequest& request, const DescribeParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeParameterGroupOutcomeCallable describeParameterGroupCallable(const Model::DescribeParameterGroupRequest& request) const;
+			DescribeParameterGroupsOutcome describeParameterGroups(const Model::DescribeParameterGroupsRequest &request)const;
+			void describeParameterGroupsAsync(const Model::DescribeParameterGroupsRequest& request, const DescribeParameterGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeParameterGroupsOutcomeCallable describeParameterGroupsCallable(const Model::DescribeParameterGroupsRequest& request) const;
 			DescribePendingMaintenanceActionOutcome describePendingMaintenanceAction(const Model::DescribePendingMaintenanceActionRequest &request)const;
 			void describePendingMaintenanceActionAsync(const Model::DescribePendingMaintenanceActionRequest& request, const DescribePendingMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePendingMaintenanceActionOutcomeCallable describePendingMaintenanceActionCallable(const Model::DescribePendingMaintenanceActionRequest& request) const;
@@ -648,18 +680,18 @@ namespace AlibabaCloud
 			DescribeSQLExplorerRetentionOutcome describeSQLExplorerRetention(const Model::DescribeSQLExplorerRetentionRequest &request)const;
 			void describeSQLExplorerRetentionAsync(const Model::DescribeSQLExplorerRetentionRequest& request, const DescribeSQLExplorerRetentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSQLExplorerRetentionOutcomeCallable describeSQLExplorerRetentionCallable(const Model::DescribeSQLExplorerRetentionRequest& request) const;
-			DescribeSQLExplorerVersionOutcome describeSQLExplorerVersion(const Model::DescribeSQLExplorerVersionRequest &request)const;
-			void describeSQLExplorerVersionAsync(const Model::DescribeSQLExplorerVersionRequest& request, const DescribeSQLExplorerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLExplorerVersionOutcomeCallable describeSQLExplorerVersionCallable(const Model::DescribeSQLExplorerVersionRequest& request) const;
+			DescribeSQLLogRecordsOutcome describeSQLLogRecords(const Model::DescribeSQLLogRecordsRequest &request)const;
+			void describeSQLLogRecordsAsync(const Model::DescribeSQLLogRecordsRequest& request, const DescribeSQLLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSQLLogRecordsOutcomeCallable describeSQLLogRecordsCallable(const Model::DescribeSQLLogRecordsRequest& request) const;
+			DescribeSQLLogTemplatesOutcome describeSQLLogTemplates(const Model::DescribeSQLLogTemplatesRequest &request)const;
+			void describeSQLLogTemplatesAsync(const Model::DescribeSQLLogTemplatesRequest& request, const DescribeSQLLogTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSQLLogTemplatesOutcomeCallable describeSQLLogTemplatesCallable(const Model::DescribeSQLLogTemplatesRequest& request) const;
 			DescribeScheduleTasksOutcome describeScheduleTasks(const Model::DescribeScheduleTasksRequest &request)const;
 			void describeScheduleTasksAsync(const Model::DescribeScheduleTasksRequest& request, const DescribeScheduleTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScheduleTasksOutcomeCallable describeScheduleTasksCallable(const Model::DescribeScheduleTasksRequest& request) const;
 			DescribeSlowLogRecordsOutcome describeSlowLogRecords(const Model::DescribeSlowLogRecordsRequest &request)const;
 			void describeSlowLogRecordsAsync(const Model::DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowLogRecordsOutcomeCallable describeSlowLogRecordsCallable(const Model::DescribeSlowLogRecordsRequest& request) const;
-			DescribeSqlLogTrialStatusOutcome describeSqlLogTrialStatus(const Model::DescribeSqlLogTrialStatusRequest &request)const;
-			void describeSqlLogTrialStatusAsync(const Model::DescribeSqlLogTrialStatusRequest& request, const DescribeSqlLogTrialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSqlLogTrialStatusOutcomeCallable describeSqlLogTrialStatusCallable(const Model::DescribeSqlLogTrialStatusRequest& request) const;
 			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
 			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;

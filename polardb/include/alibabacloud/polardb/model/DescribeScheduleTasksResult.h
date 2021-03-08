@@ -37,17 +37,16 @@ namespace AlibabaCloud
 					struct TimerInfosItem
 					{
 						std::string status;
-						long gmtCreate;
 						std::string action;
 						std::string taskId;
 						std::string plannedTime;
+						std::string dbClusterDescription;
 						std::string plannedStartTime;
 						std::string dBClusterId;
-						long gmtModified;
 						std::string region;
 						std::string orderId;
 						std::string plannedEndTime;
-						int aliUid;
+						std::string dbClusterStatus;
 					};
 					std::vector<TimerInfosItem> timerInfos;
 					int totalRecordCount;

@@ -483,6 +483,42 @@ PolardbClient::CreateDatabaseOutcomeCallable PolardbClient::createDatabaseCallab
 	return task->get_future();
 }
 
+PolardbClient::CreateParameterGroupOutcome PolardbClient::createParameterGroup(const CreateParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateParameterGroupOutcome(CreateParameterGroupResult(outcome.result()));
+	else
+		return CreateParameterGroupOutcome(outcome.error());
+}
+
+void PolardbClient::createParameterGroupAsync(const CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CreateParameterGroupOutcomeCallable PolardbClient::createParameterGroupCallable(const CreateParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DeleteAccountOutcome PolardbClient::deleteAccount(const DeleteAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +801,42 @@ PolardbClient::DeleteDatabaseOutcomeCallable PolardbClient::deleteDatabaseCallab
 			[this, request]()
 			{
 			return this->deleteDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DeleteParameterGroupOutcome PolardbClient::deleteParameterGroup(const DeleteParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteParameterGroupOutcome(DeleteParameterGroupResult(outcome.result()));
+	else
+		return DeleteParameterGroupOutcome(outcome.error());
+}
+
+void PolardbClient::deleteParameterGroupAsync(const DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DeleteParameterGroupOutcomeCallable PolardbClient::deleteParameterGroupCallable(const DeleteParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteParameterGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1815,6 +1887,78 @@ PolardbClient::DescribeMetaListOutcomeCallable PolardbClient::describeMetaListCa
 	return task->get_future();
 }
 
+PolardbClient::DescribeParameterGroupOutcome PolardbClient::describeParameterGroup(const DescribeParameterGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterGroupOutcome(DescribeParameterGroupResult(outcome.result()));
+	else
+		return DescribeParameterGroupOutcome(outcome.error());
+}
+
+void PolardbClient::describeParameterGroupAsync(const DescribeParameterGroupRequest& request, const DescribeParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeParameterGroupOutcomeCallable PolardbClient::describeParameterGroupCallable(const DescribeParameterGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeParameterGroupsOutcome PolardbClient::describeParameterGroups(const DescribeParameterGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterGroupsOutcome(DescribeParameterGroupsResult(outcome.result()));
+	else
+		return DescribeParameterGroupsOutcome(outcome.error());
+}
+
+void PolardbClient::describeParameterGroupsAsync(const DescribeParameterGroupsRequest& request, const DescribeParameterGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeParameterGroupsOutcomeCallable PolardbClient::describeParameterGroupsCallable(const DescribeParameterGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribePendingMaintenanceActionOutcome PolardbClient::describePendingMaintenanceAction(const DescribePendingMaintenanceActionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1995,36 +2139,72 @@ PolardbClient::DescribeSQLExplorerRetentionOutcomeCallable PolardbClient::descri
 	return task->get_future();
 }
 
-PolardbClient::DescribeSQLExplorerVersionOutcome PolardbClient::describeSQLExplorerVersion(const DescribeSQLExplorerVersionRequest &request) const
+PolardbClient::DescribeSQLLogRecordsOutcome PolardbClient::describeSQLLogRecords(const DescribeSQLLogRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSQLExplorerVersionOutcome(endpointOutcome.error());
+		return DescribeSQLLogRecordsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSQLExplorerVersionOutcome(DescribeSQLExplorerVersionResult(outcome.result()));
+		return DescribeSQLLogRecordsOutcome(DescribeSQLLogRecordsResult(outcome.result()));
 	else
-		return DescribeSQLExplorerVersionOutcome(outcome.error());
+		return DescribeSQLLogRecordsOutcome(outcome.error());
 }
 
-void PolardbClient::describeSQLExplorerVersionAsync(const DescribeSQLExplorerVersionRequest& request, const DescribeSQLExplorerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void PolardbClient::describeSQLLogRecordsAsync(const DescribeSQLLogRecordsRequest& request, const DescribeSQLLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSQLExplorerVersion(request), context);
+		handler(this, request, describeSQLLogRecords(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-PolardbClient::DescribeSQLExplorerVersionOutcomeCallable PolardbClient::describeSQLExplorerVersionCallable(const DescribeSQLExplorerVersionRequest &request) const
+PolardbClient::DescribeSQLLogRecordsOutcomeCallable PolardbClient::describeSQLLogRecordsCallable(const DescribeSQLLogRecordsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSQLExplorerVersionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeSQLLogRecordsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSQLExplorerVersion(request);
+			return this->describeSQLLogRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeSQLLogTemplatesOutcome PolardbClient::describeSQLLogTemplates(const DescribeSQLLogTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSQLLogTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSQLLogTemplatesOutcome(DescribeSQLLogTemplatesResult(outcome.result()));
+	else
+		return DescribeSQLLogTemplatesOutcome(outcome.error());
+}
+
+void PolardbClient::describeSQLLogTemplatesAsync(const DescribeSQLLogTemplatesRequest& request, const DescribeSQLLogTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSQLLogTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeSQLLogTemplatesOutcomeCallable PolardbClient::describeSQLLogTemplatesCallable(const DescribeSQLLogTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSQLLogTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSQLLogTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2097,42 +2277,6 @@ PolardbClient::DescribeSlowLogRecordsOutcomeCallable PolardbClient::describeSlow
 			[this, request]()
 			{
 			return this->describeSlowLogRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::DescribeSqlLogTrialStatusOutcome PolardbClient::describeSqlLogTrialStatus(const DescribeSqlLogTrialStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSqlLogTrialStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSqlLogTrialStatusOutcome(DescribeSqlLogTrialStatusResult(outcome.result()));
-	else
-		return DescribeSqlLogTrialStatusOutcome(outcome.error());
-}
-
-void PolardbClient::describeSqlLogTrialStatusAsync(const DescribeSqlLogTrialStatusRequest& request, const DescribeSqlLogTrialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSqlLogTrialStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::DescribeSqlLogTrialStatusOutcomeCallable PolardbClient::describeSqlLogTrialStatusCallable(const DescribeSqlLogTrialStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSqlLogTrialStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSqlLogTrialStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

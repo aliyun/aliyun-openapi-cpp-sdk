@@ -49,6 +49,17 @@ void ModifyDBClusterParametersRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDBClusterParametersRequest::getParameterGroupId()const
+{
+	return parameterGroupId_;
+}
+
+void ModifyDBClusterParametersRequest::setParameterGroupId(const std::string& parameterGroupId)
+{
+	parameterGroupId_ = parameterGroupId;
+	setParameter("ParameterGroupId", parameterGroupId);
+}
+
 std::string ModifyDBClusterParametersRequest::getEffectiveTime()const
 {
 	return effectiveTime_;

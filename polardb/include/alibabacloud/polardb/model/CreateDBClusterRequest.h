@@ -77,6 +77,10 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getClusterNetworkType()const;
 				void setClusterNetworkType(const std::string& clusterNetworkType);
+				std::string getParameterGroupId()const;
+				void setParameterGroupId(const std::string& parameterGroupId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getEngine()const;
 				void setEngine(const std::string& engine);
 				std::string getGDNId()const;
@@ -120,6 +124,8 @@ namespace AlibabaCloud
 				std::string defaultTimeZone_;
 				std::string accessKeyId_;
 				std::string clusterNetworkType_;
+				std::string parameterGroupId_;
+				std::string regionId_;
 				std::string engine_;
 				std::string gDNId_;
 				std::string resourceOwnerAccount_;

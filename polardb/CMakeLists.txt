@@ -45,6 +45,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CreateDBNodesResult.h
 	include/alibabacloud/polardb/model/CreateDatabaseRequest.h
 	include/alibabacloud/polardb/model/CreateDatabaseResult.h
+	include/alibabacloud/polardb/model/CreateParameterGroupRequest.h
+	include/alibabacloud/polardb/model/CreateParameterGroupResult.h
 	include/alibabacloud/polardb/model/DeleteAccountRequest.h
 	include/alibabacloud/polardb/model/DeleteAccountResult.h
 	include/alibabacloud/polardb/model/DeleteBackupRequest.h
@@ -61,6 +63,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DeleteDBNodesResult.h
 	include/alibabacloud/polardb/model/DeleteDatabaseRequest.h
 	include/alibabacloud/polardb/model/DeleteDatabaseResult.h
+	include/alibabacloud/polardb/model/DeleteParameterGroupRequest.h
+	include/alibabacloud/polardb/model/DeleteParameterGroupResult.h
 	include/alibabacloud/polardb/model/DescribeAccountsRequest.h
 	include/alibabacloud/polardb/model/DescribeAccountsResult.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeRequest.h
@@ -119,6 +123,10 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyResult.h
 	include/alibabacloud/polardb/model/DescribeMetaListRequest.h
 	include/alibabacloud/polardb/model/DescribeMetaListResult.h
+	include/alibabacloud/polardb/model/DescribeParameterGroupRequest.h
+	include/alibabacloud/polardb/model/DescribeParameterGroupResult.h
+	include/alibabacloud/polardb/model/DescribeParameterGroupsRequest.h
+	include/alibabacloud/polardb/model/DescribeParameterGroupsResult.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionRequest.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionResult.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionsRequest.h
@@ -129,14 +137,14 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeSQLExplorerPolicyResult.h
 	include/alibabacloud/polardb/model/DescribeSQLExplorerRetentionRequest.h
 	include/alibabacloud/polardb/model/DescribeSQLExplorerRetentionResult.h
-	include/alibabacloud/polardb/model/DescribeSQLExplorerVersionRequest.h
-	include/alibabacloud/polardb/model/DescribeSQLExplorerVersionResult.h
+	include/alibabacloud/polardb/model/DescribeSQLLogRecordsRequest.h
+	include/alibabacloud/polardb/model/DescribeSQLLogRecordsResult.h
+	include/alibabacloud/polardb/model/DescribeSQLLogTemplatesRequest.h
+	include/alibabacloud/polardb/model/DescribeSQLLogTemplatesResult.h
 	include/alibabacloud/polardb/model/DescribeScheduleTasksRequest.h
 	include/alibabacloud/polardb/model/DescribeScheduleTasksResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
-	include/alibabacloud/polardb/model/DescribeSqlLogTrialStatusRequest.h
-	include/alibabacloud/polardb/model/DescribeSqlLogTrialStatusResult.h
 	include/alibabacloud/polardb/model/DescribeTasksRequest.h
 	include/alibabacloud/polardb/model/DescribeTasksResult.h
 	include/alibabacloud/polardb/model/FailoverDBClusterRequest.h
@@ -228,6 +236,8 @@ set(polardb_src
 	src/model/CreateDBNodesResult.cc
 	src/model/CreateDatabaseRequest.cc
 	src/model/CreateDatabaseResult.cc
+	src/model/CreateParameterGroupRequest.cc
+	src/model/CreateParameterGroupResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
 	src/model/DeleteBackupRequest.cc
@@ -244,6 +254,8 @@ set(polardb_src
 	src/model/DeleteDBNodesResult.cc
 	src/model/DeleteDatabaseRequest.cc
 	src/model/DeleteDatabaseResult.cc
+	src/model/DeleteParameterGroupRequest.cc
+	src/model/DeleteParameterGroupResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
@@ -302,6 +314,10 @@ set(polardb_src
 	src/model/DescribeLogBackupPolicyResult.cc
 	src/model/DescribeMetaListRequest.cc
 	src/model/DescribeMetaListResult.cc
+	src/model/DescribeParameterGroupRequest.cc
+	src/model/DescribeParameterGroupResult.cc
+	src/model/DescribeParameterGroupsRequest.cc
+	src/model/DescribeParameterGroupsResult.cc
 	src/model/DescribePendingMaintenanceActionRequest.cc
 	src/model/DescribePendingMaintenanceActionResult.cc
 	src/model/DescribePendingMaintenanceActionsRequest.cc
@@ -312,14 +328,14 @@ set(polardb_src
 	src/model/DescribeSQLExplorerPolicyResult.cc
 	src/model/DescribeSQLExplorerRetentionRequest.cc
 	src/model/DescribeSQLExplorerRetentionResult.cc
-	src/model/DescribeSQLExplorerVersionRequest.cc
-	src/model/DescribeSQLExplorerVersionResult.cc
+	src/model/DescribeSQLLogRecordsRequest.cc
+	src/model/DescribeSQLLogRecordsResult.cc
+	src/model/DescribeSQLLogTemplatesRequest.cc
+	src/model/DescribeSQLLogTemplatesResult.cc
 	src/model/DescribeScheduleTasksRequest.cc
 	src/model/DescribeScheduleTasksResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
 	src/model/DescribeSlowLogRecordsResult.cc
-	src/model/DescribeSqlLogTrialStatusRequest.cc
-	src/model/DescribeSqlLogTrialStatusResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
 	src/model/FailoverDBClusterRequest.cc

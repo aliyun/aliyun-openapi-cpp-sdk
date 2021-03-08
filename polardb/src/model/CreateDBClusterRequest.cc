@@ -258,6 +258,28 @@ void CreateDBClusterRequest::setClusterNetworkType(const std::string& clusterNet
 	setParameter("ClusterNetworkType", clusterNetworkType);
 }
 
+std::string CreateDBClusterRequest::getParameterGroupId()const
+{
+	return parameterGroupId_;
+}
+
+void CreateDBClusterRequest::setParameterGroupId(const std::string& parameterGroupId)
+{
+	parameterGroupId_ = parameterGroupId;
+	setParameter("ParameterGroupId", parameterGroupId);
+}
+
+std::string CreateDBClusterRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateDBClusterRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string CreateDBClusterRequest::getEngine()const
 {
 	return engine_;

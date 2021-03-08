@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getUpgradeType()const;
+				void setUpgradeType(const std::string& upgradeType);
 				std::string getPlannedEndTime()const;
 				void setPlannedEndTime(const std::string& plannedEndTime);
 				std::string getAccessKeyId()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string upgradeType_;
 				std::string plannedEndTime_;
 				std::string accessKeyId_;
 				std::string resourceOwnerAccount_;

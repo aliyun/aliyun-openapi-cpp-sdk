@@ -38,6 +38,17 @@ void UpgradeDBClusterVersionRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string UpgradeDBClusterVersionRequest::getUpgradeType()const
+{
+	return upgradeType_;
+}
+
+void UpgradeDBClusterVersionRequest::setUpgradeType(const std::string& upgradeType)
+{
+	upgradeType_ = upgradeType;
+	setParameter("UpgradeType", upgradeType);
+}
+
 std::string UpgradeDBClusterVersionRequest::getPlannedEndTime()const
 {
 	return plannedEndTime_;

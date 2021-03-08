@@ -39,10 +39,11 @@ namespace AlibabaCloud
 				~DescribeBackupPolicyResult();
 				std::string getPreferredBackupPeriod()const;
 				std::string getDataLevel1BackupRetentionPeriod()const;
-				std::string getPreferredBackupTime()const;
 				std::string getBackupRetentionPolicyOnClusterDeletion()const;
-				int getBackupRetentionPeriod()const;
+				std::string getPreferredBackupTime()const;
+				std::string getBackupFrequency()const;
 				std::string getPreferredNextBackupTime()const;
+				int getBackupRetentionPeriod()const;
 				std::string getDataLevel2BackupRetentionPeriod()const;
 
 			protected:
@@ -50,10 +51,11 @@ namespace AlibabaCloud
 			private:
 				std::string preferredBackupPeriod_;
 				std::string dataLevel1BackupRetentionPeriod_;
-				std::string preferredBackupTime_;
 				std::string backupRetentionPolicyOnClusterDeletion_;
-				int backupRetentionPeriod_;
+				std::string preferredBackupTime_;
+				std::string backupFrequency_;
 				std::string preferredNextBackupTime_;
+				int backupRetentionPeriod_;
 				std::string dataLevel2BackupRetentionPeriod_;
 
 			};

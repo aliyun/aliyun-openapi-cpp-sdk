@@ -1,4 +1,7 @@
 2021-03-08 Version: patch
+- Support Mysql Parameter Group API.
+
+2021-03-08 Version: patch
 - Update CreateAndStartBackupPlan Response with createBackupSet.
 
 2021-03-08 Version: patch

@@ -159,3 +159,14 @@ void ModifyBackupPolicyRequest::setBackupRetentionPeriod(const std::string& back
 	setParameter("BackupRetentionPeriod", backupRetentionPeriod);
 }
 
+std::string ModifyBackupPolicyRequest::getBackupFrequency()const
+{
+	return backupFrequency_;
+}
+
+void ModifyBackupPolicyRequest::setBackupFrequency(const std::string& backupFrequency)
+{
+	backupFrequency_ = backupFrequency;
+	setParameter("BackupFrequency", backupFrequency);
+}
+

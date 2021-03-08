@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setPreferredBackupTime(const std::string& preferredBackupTime);
 				std::string getBackupRetentionPeriod()const;
 				void setBackupRetentionPeriod(const std::string& backupRetentionPeriod);
+				std::string getBackupFrequency()const;
+				void setBackupFrequency(const std::string& backupFrequency);
 
             private:
 				long resourceOwnerId_;
@@ -73,6 +75,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string preferredBackupTime_;
 				std::string backupRetentionPeriod_;
+				std::string backupFrequency_;
 
 			};
 		}

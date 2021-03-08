@@ -52,28 +52,26 @@ void DescribeScheduleTasksResult::parse(const std::string &payload)
 		Data::TimerInfosItem timerInfosItemObject;
 		if(!dataNodeTimerInfostimerInfosItem["Status"].isNull())
 			timerInfosItemObject.status = dataNodeTimerInfostimerInfosItem["Status"].asString();
-		if(!dataNodeTimerInfostimerInfosItem["GmtCreate"].isNull())
-			timerInfosItemObject.gmtCreate = std::stol(dataNodeTimerInfostimerInfosItem["GmtCreate"].asString());
 		if(!dataNodeTimerInfostimerInfosItem["Action"].isNull())
 			timerInfosItemObject.action = dataNodeTimerInfostimerInfosItem["Action"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["TaskId"].isNull())
 			timerInfosItemObject.taskId = dataNodeTimerInfostimerInfosItem["TaskId"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["PlannedTime"].isNull())
 			timerInfosItemObject.plannedTime = dataNodeTimerInfostimerInfosItem["PlannedTime"].asString();
+		if(!dataNodeTimerInfostimerInfosItem["DbClusterDescription"].isNull())
+			timerInfosItemObject.dbClusterDescription = dataNodeTimerInfostimerInfosItem["DbClusterDescription"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["PlannedStartTime"].isNull())
 			timerInfosItemObject.plannedStartTime = dataNodeTimerInfostimerInfosItem["PlannedStartTime"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["DBClusterId"].isNull())
 			timerInfosItemObject.dBClusterId = dataNodeTimerInfostimerInfosItem["DBClusterId"].asString();
-		if(!dataNodeTimerInfostimerInfosItem["GmtModified"].isNull())
-			timerInfosItemObject.gmtModified = std::stol(dataNodeTimerInfostimerInfosItem["GmtModified"].asString());
 		if(!dataNodeTimerInfostimerInfosItem["Region"].isNull())
 			timerInfosItemObject.region = dataNodeTimerInfostimerInfosItem["Region"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["OrderId"].isNull())
 			timerInfosItemObject.orderId = dataNodeTimerInfostimerInfosItem["OrderId"].asString();
 		if(!dataNodeTimerInfostimerInfosItem["PlannedEndTime"].isNull())
 			timerInfosItemObject.plannedEndTime = dataNodeTimerInfostimerInfosItem["PlannedEndTime"].asString();
-		if(!dataNodeTimerInfostimerInfosItem["AliUid"].isNull())
-			timerInfosItemObject.aliUid = std::stoi(dataNodeTimerInfostimerInfosItem["AliUid"].asString());
+		if(!dataNodeTimerInfostimerInfosItem["DbClusterStatus"].isNull())
+			timerInfosItemObject.dbClusterStatus = dataNodeTimerInfostimerInfosItem["DbClusterStatus"].asString();
 		data_.timerInfos.push_back(timerInfosItemObject);
 	}
 	if(!value["Message"].isNull())
