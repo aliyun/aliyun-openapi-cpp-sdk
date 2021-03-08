@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				CreateAndStartBackupPlanResult();
 				explicit CreateAndStartBackupPlanResult(const std::string &payload);
 				~CreateAndStartBackupPlanResult();
+				bool getCreateBackupSet()const;
 				int getHttpStatusCode()const;
 				std::string getBackupPlanId()const;
 				std::string getErrMessage()const;
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool createBackupSet_;
 				int httpStatusCode_;
 				std::string backupPlanId_;
 				std::string errMessage_;

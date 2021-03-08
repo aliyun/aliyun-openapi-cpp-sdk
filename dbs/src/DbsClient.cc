@@ -843,42 +843,6 @@ DbsClient::DescribeRestoreTaskListOutcomeCallable DbsClient::describeRestoreTask
 	return task->get_future();
 }
 
-DbsClient::DescribeSandboxFromRDSOutcome DbsClient::describeSandboxFromRDS(const DescribeSandboxFromRDSRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSandboxFromRDSOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSandboxFromRDSOutcome(DescribeSandboxFromRDSResult(outcome.result()));
-	else
-		return DescribeSandboxFromRDSOutcome(outcome.error());
-}
-
-void DbsClient::describeSandboxFromRDSAsync(const DescribeSandboxFromRDSRequest& request, const DescribeSandboxFromRDSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSandboxFromRDS(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DbsClient::DescribeSandboxFromRDSOutcomeCallable DbsClient::describeSandboxFromRDSCallable(const DescribeSandboxFromRDSRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSandboxFromRDSOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSandboxFromRDS(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DbsClient::DisableBackupLogOutcome DbsClient::disableBackupLog(const DisableBackupLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

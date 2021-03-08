@@ -49,9 +49,16 @@ void CreateAndStartBackupPlanResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["BackupPlanId"].isNull())
 		backupPlanId_ = value["BackupPlanId"].asString();
+	if(!value["CreateBackupSet"].isNull())
+		createBackupSet_ = value["CreateBackupSet"].asString() == "true";
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
 
+}
+
+bool CreateAndStartBackupPlanResult::getCreateBackupSet()const
+{
+	return createBackupSet_;
 }
 
 int CreateAndStartBackupPlanResult::getHttpStatusCode()const

@@ -65,8 +65,6 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/DescribeRestoreRangeInfoResult.h
 	include/alibabacloud/dbs/model/DescribeRestoreTaskListRequest.h
 	include/alibabacloud/dbs/model/DescribeRestoreTaskListResult.h
-	include/alibabacloud/dbs/model/DescribeSandboxFromRDSRequest.h
-	include/alibabacloud/dbs/model/DescribeSandboxFromRDSResult.h
 	include/alibabacloud/dbs/model/DisableBackupLogRequest.h
 	include/alibabacloud/dbs/model/DisableBackupLogResult.h
 	include/alibabacloud/dbs/model/EnableBackupLogRequest.h
@@ -146,8 +144,6 @@ set(dbs_src
 	src/model/DescribeRestoreRangeInfoResult.cc
 	src/model/DescribeRestoreTaskListRequest.cc
 	src/model/DescribeRestoreTaskListResult.cc
-	src/model/DescribeSandboxFromRDSRequest.cc
-	src/model/DescribeSandboxFromRDSResult.cc
 	src/model/DisableBackupLogRequest.cc
 	src/model/DisableBackupLogResult.cc
 	src/model/EnableBackupLogRequest.cc

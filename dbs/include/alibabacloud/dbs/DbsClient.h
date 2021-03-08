@@ -66,8 +66,6 @@
 #include "model/DescribeRestoreRangeInfoResult.h"
 #include "model/DescribeRestoreTaskListRequest.h"
 #include "model/DescribeRestoreTaskListResult.h"
-#include "model/DescribeSandboxFromRDSRequest.h"
-#include "model/DescribeSandboxFromRDSResult.h"
 #include "model/DisableBackupLogRequest.h"
 #include "model/DisableBackupLogResult.h"
 #include "model/EnableBackupLogRequest.h"
@@ -175,9 +173,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRestoreTaskListResult> DescribeRestoreTaskListOutcome;
 			typedef std::future<DescribeRestoreTaskListOutcome> DescribeRestoreTaskListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeRestoreTaskListRequest&, const DescribeRestoreTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTaskListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSandboxFromRDSResult> DescribeSandboxFromRDSOutcome;
-			typedef std::future<DescribeSandboxFromRDSOutcome> DescribeSandboxFromRDSOutcomeCallable;
-			typedef std::function<void(const DbsClient*, const Model::DescribeSandboxFromRDSRequest&, const DescribeSandboxFromRDSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxFromRDSAsyncHandler;
 			typedef Outcome<Error, Model::DisableBackupLogResult> DisableBackupLogOutcome;
 			typedef std::future<DisableBackupLogOutcome> DisableBackupLogOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DisableBackupLogRequest&, const DisableBackupLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableBackupLogAsyncHandler;
@@ -297,9 +292,6 @@ namespace AlibabaCloud
 			DescribeRestoreTaskListOutcome describeRestoreTaskList(const Model::DescribeRestoreTaskListRequest &request)const;
 			void describeRestoreTaskListAsync(const Model::DescribeRestoreTaskListRequest& request, const DescribeRestoreTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRestoreTaskListOutcomeCallable describeRestoreTaskListCallable(const Model::DescribeRestoreTaskListRequest& request) const;
-			DescribeSandboxFromRDSOutcome describeSandboxFromRDS(const Model::DescribeSandboxFromRDSRequest &request)const;
-			void describeSandboxFromRDSAsync(const Model::DescribeSandboxFromRDSRequest& request, const DescribeSandboxFromRDSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSandboxFromRDSOutcomeCallable describeSandboxFromRDSCallable(const Model::DescribeSandboxFromRDSRequest& request) const;
 			DisableBackupLogOutcome disableBackupLog(const Model::DisableBackupLogRequest &request)const;
 			void disableBackupLogAsync(const Model::DisableBackupLogRequest& request, const DisableBackupLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableBackupLogOutcomeCallable disableBackupLogCallable(const Model::DisableBackupLogRequest& request) const;
