@@ -1,3 +1,6 @@
+2021-03-09 Version: patch
+- Export new API for predictive dialer.
+
 2021-03-08 Version: patch
 - Support Mysql Parameter Group API.
 

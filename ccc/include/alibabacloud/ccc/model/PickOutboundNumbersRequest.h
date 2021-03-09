@@ -37,18 +37,21 @@ namespace AlibabaCloud
 
 				int getCount()const;
 				void setCount(int count);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getSkillGroupIdList()const;
-				void setSkillGroupIdList(const std::string& skillGroupIdList);
-				std::string getCalledNumber()const;
-				void setCalledNumber(const std::string& calledNumber);
+				std::vector<std::string> getCandidateNumber()const;
+				void setCandidateNumber(const std::vector<std::string>& candidateNumber);
+				std::string getCalleeNumber()const;
+				void setCalleeNumber(const std::string& calleeNumber);
 
             private:
 				int count_;
+				std::string accessKeyId_;
 				std::string instanceId_;
-				std::string skillGroupIdList_;
-				std::string calledNumber_;
+				std::vector<std::string> candidateNumber_;
+				std::string calleeNumber_;
 
 			};
 		}
