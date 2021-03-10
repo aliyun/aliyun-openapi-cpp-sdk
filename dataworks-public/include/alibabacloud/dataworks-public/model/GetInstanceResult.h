@@ -34,26 +34,27 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string status;
 					long baselineId;
 					long modifyTime;
-					long instanceId;
 					std::string dagType;
 					std::string nodeName;
+					std::string paramValues;
+					long dagId;
+					long bizdate;
+					long beginRunningTime;
+					long finishTime;
+					std::string dqcDescription;
+					std::string taskType;
+					std::string status;
+					long instanceId;
 					int priority;
 					int dqcType;
-					std::string paramValues;
 					long createTime;
 					std::string connection;
 					long relatedFlowId;
 					long cycTime;
 					long beginWaitTimeTime;
-					long dagId;
-					long bizdate;
-					long beginRunningTime;
 					bool repeatability;
-					long finishTime;
-					std::string dqcDescription;
 					long nodeId;
 					long beginWaitResTime;
 					std::string errorMessage;

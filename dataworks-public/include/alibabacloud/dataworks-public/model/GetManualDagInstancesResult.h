@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					long dagId;
 					long beginRunningTime;
 					long finishTime;
+					std::string taskType;
 					long nodeId;
 					long beginWaitResTime;
 					long bizDate;

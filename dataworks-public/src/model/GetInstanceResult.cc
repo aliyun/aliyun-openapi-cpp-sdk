@@ -88,6 +88,8 @@ void GetInstanceResult::parse(const std::string &payload)
 		data_.errorMessage = dataNode["ErrorMessage"].asString();
 	if(!dataNode["RelatedFlowId"].isNull())
 		data_.relatedFlowId = std::stol(dataNode["RelatedFlowId"].asString());
+	if(!dataNode["TaskType"].isNull())
+		data_.taskType = dataNode["TaskType"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())

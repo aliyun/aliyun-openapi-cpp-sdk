@@ -73,6 +73,8 @@ void GetManualDagInstancesResult::parse(const std::string &payload)
 			instancesObject.paramValues = valueInstancesInstancesItem["ParamValues"].asString();
 		if(!valueInstancesInstancesItem["FinishTime"].isNull())
 			instancesObject.finishTime = std::stol(valueInstancesInstancesItem["FinishTime"].asString());
+		if(!valueInstancesInstancesItem["TaskType"].isNull())
+			instancesObject.taskType = valueInstancesInstancesItem["TaskType"].asString();
 		instances_.push_back(instancesObject);
 	}
 

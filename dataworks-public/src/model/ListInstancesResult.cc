@@ -98,6 +98,8 @@ void ListInstancesResult::parse(const std::string &payload)
 			instanceObject.errorMessage = dataNodeInstancesInstance["ErrorMessage"].asString();
 		if(!dataNodeInstancesInstance["RelatedFlowId"].isNull())
 			instanceObject.relatedFlowId = std::stol(dataNodeInstancesInstance["RelatedFlowId"].asString());
+		if(!dataNodeInstancesInstance["TaskType"].isNull())
+			instanceObject.taskType = dataNodeInstancesInstance["TaskType"].asString();
 		data_.instances.push_back(instanceObject);
 	}
 	if(!value["Success"].isNull())
