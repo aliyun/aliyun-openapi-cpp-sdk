@@ -27,6 +27,28 @@ CompareFaceRequest::CompareFaceRequest() :
 CompareFaceRequest::~CompareFaceRequest()
 {}
 
+std::string CompareFaceRequest::getImageDataA()const
+{
+	return imageDataA_;
+}
+
+void CompareFaceRequest::setImageDataA(const std::string& imageDataA)
+{
+	imageDataA_ = imageDataA;
+	setBodyParameter("ImageDataA", imageDataA);
+}
+
+std::string CompareFaceRequest::getImageDataB()const
+{
+	return imageDataB_;
+}
+
+void CompareFaceRequest::setImageDataB(const std::string& imageDataB)
+{
+	imageDataB_ = imageDataB;
+	setBodyParameter("ImageDataB", imageDataB);
+}
+
 float CompareFaceRequest::getQualityScoreThreshold()const
 {
 	return qualityScoreThreshold_;

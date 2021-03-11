@@ -27,6 +27,28 @@ RecognizeActionRequest::RecognizeActionRequest() :
 RecognizeActionRequest::~RecognizeActionRequest()
 {}
 
+int RecognizeActionRequest::getType()const
+{
+	return type_;
+}
+
+void RecognizeActionRequest::setType(int type)
+{
+	type_ = type;
+	setBodyParameter("Type", std::to_string(type));
+}
+
+std::string RecognizeActionRequest::getVideoData()const
+{
+	return videoData_;
+}
+
+void RecognizeActionRequest::setVideoData(const std::string& videoData)
+{
+	videoData_ = videoData;
+	setBodyParameter("VideoData", videoData);
+}
+
 std::vector<RecognizeActionRequest::URLList> RecognizeActionRequest::getURLList()const
 {
 	return uRLList_;
@@ -38,19 +60,9 @@ void RecognizeActionRequest::setURLList(const std::vector<URLList>& uRLList)
 	for(int dep1 = 0; dep1!= uRLList.size(); dep1++) {
 		auto uRLListObj = uRLList.at(dep1);
 		std::string uRLListObjStr = "URLList." + std::to_string(dep1 + 1);
+		setParameter(uRLListObjStr + ".ImageData", uRLListObj.imageData);
 		setParameter(uRLListObjStr + ".URL", uRLListObj.uRL);
 	}
-}
-
-int RecognizeActionRequest::getType()const
-{
-	return type_;
-}
-
-void RecognizeActionRequest::setType(int type)
-{
-	type_ = type;
-	setBodyParameter("Type", std::to_string(type));
 }
 
 std::string RecognizeActionRequest::getVideoUrl()const

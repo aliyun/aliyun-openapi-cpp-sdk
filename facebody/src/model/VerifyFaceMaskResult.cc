@@ -46,15 +46,15 @@ void VerifyFaceMaskResult::parse(const std::string &payload)
 		data_.mask = std::stoi(dataNode["Mask"].asString());
 	if(!dataNode["MaskRef"].isNull())
 		data_.maskRef = std::stoi(dataNode["MaskRef"].asString());
+		auto allThresholds = dataNode["Thresholds"]["Thresholds"];
+		for (auto value : allThresholds)
+			data_.thresholds.push_back(value.asString());
 		auto allRectangle = dataNode["Rectangle"]["Rectangle"];
 		for (auto value : allRectangle)
 			data_.rectangle.push_back(value.asString());
 		auto allRectangleRef = dataNode["RectangleRef"]["RectangleRef"];
 		for (auto value : allRectangleRef)
 			data_.rectangleRef.push_back(value.asString());
-		auto allThresholds = dataNode["Thresholds"]["Thresholds"];
-		for (auto value : allThresholds)
-			data_.thresholds.push_back(value.asString());
 
 }
 

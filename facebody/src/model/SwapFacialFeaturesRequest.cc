@@ -38,6 +38,17 @@ void SwapFacialFeaturesRequest::setTargetImageURL(const std::string& targetImage
 	setBodyParameter("TargetImageURL", targetImageURL);
 }
 
+std::string SwapFacialFeaturesRequest::getSourceImageData()const
+{
+	return sourceImageData_;
+}
+
+void SwapFacialFeaturesRequest::setSourceImageData(const std::string& sourceImageData)
+{
+	sourceImageData_ = sourceImageData;
+	setBodyParameter("SourceImageData", sourceImageData);
+}
+
 std::string SwapFacialFeaturesRequest::getSourceImageURL()const
 {
 	return sourceImageURL_;
@@ -47,6 +58,17 @@ void SwapFacialFeaturesRequest::setSourceImageURL(const std::string& sourceImage
 {
 	sourceImageURL_ = sourceImageURL;
 	setBodyParameter("SourceImageURL", sourceImageURL);
+}
+
+std::string SwapFacialFeaturesRequest::getTargetImageData()const
+{
+	return targetImageData_;
+}
+
+void SwapFacialFeaturesRequest::setTargetImageData(const std::string& targetImageData)
+{
+	targetImageData_ = targetImageData;
+	setBodyParameter("TargetImageData", targetImageData);
 }
 
 std::string SwapFacialFeaturesRequest::getEditPart()const

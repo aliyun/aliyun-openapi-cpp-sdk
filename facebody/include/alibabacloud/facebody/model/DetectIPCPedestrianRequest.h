@@ -30,34 +30,31 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_FACEBODY_EXPORT DetectIPCPedestrianRequest : public RpcServiceRequest
 			{
-			public:
-				struct URLList
-				{
-					std::string dataId;
-					std::string imageURL;
-				};
 
 			public:
 				DetectIPCPedestrianRequest();
 				~DetectIPCPedestrianRequest();
 
-				std::string getImageData()const;
-				void setImageData(const std::string& imageData);
-				std::vector<URLList> getURLList()const;
-				void setURLList(const std::vector<URLList>& uRLList);
 				bool getContinueOnError()const;
 				void setContinueOnError(bool continueOnError);
-				int getWidth()const;
-				void setWidth(int width);
 				int getHeight()const;
 				void setHeight(int height);
+				std::string getImageData()const;
+				void setImageData(const std::string& imageData);
+				std::string getDataId()const;
+				void setDataId(const std::string& dataId);
+				std::string getImageURL()const;
+				void setImageURL(const std::string& imageURL);
+				int getWidth()const;
+				void setWidth(int width);
 
             private:
-				std::string imageData_;
-				std::vector<URLList> uRLList_;
 				bool continueOnError_;
-				int width_;
 				int height_;
+				std::string imageData_;
+				std::string dataId_;
+				std::string imageURL_;
+				int width_;
 
 			};
 		}

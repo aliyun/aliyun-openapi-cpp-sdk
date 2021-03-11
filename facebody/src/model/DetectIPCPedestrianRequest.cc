@@ -27,33 +27,6 @@ DetectIPCPedestrianRequest::DetectIPCPedestrianRequest() :
 DetectIPCPedestrianRequest::~DetectIPCPedestrianRequest()
 {}
 
-std::string DetectIPCPedestrianRequest::getImageData()const
-{
-	return imageData_;
-}
-
-void DetectIPCPedestrianRequest::setImageData(const std::string& imageData)
-{
-	imageData_ = imageData;
-	setBodyParameter("ImageData", imageData);
-}
-
-std::vector<DetectIPCPedestrianRequest::URLList> DetectIPCPedestrianRequest::getURLList()const
-{
-	return uRLList_;
-}
-
-void DetectIPCPedestrianRequest::setURLList(const std::vector<URLList>& uRLList)
-{
-	uRLList_ = uRLList;
-	for(int dep1 = 0; dep1!= uRLList.size(); dep1++) {
-		auto uRLListObj = uRLList.at(dep1);
-		std::string uRLListObjStr = "URLList." + std::to_string(dep1 + 1);
-		setParameter(uRLListObjStr + ".DataId", uRLListObj.dataId);
-		setParameter(uRLListObjStr + ".ImageURL", uRLListObj.imageURL);
-	}
-}
-
 bool DetectIPCPedestrianRequest::getContinueOnError()const
 {
 	return continueOnError_;
@@ -65,17 +38,6 @@ void DetectIPCPedestrianRequest::setContinueOnError(bool continueOnError)
 	setBodyParameter("ContinueOnError", continueOnError ? "true" : "false");
 }
 
-int DetectIPCPedestrianRequest::getWidth()const
-{
-	return width_;
-}
-
-void DetectIPCPedestrianRequest::setWidth(int width)
-{
-	width_ = width;
-	setBodyParameter("Width", std::to_string(width));
-}
-
 int DetectIPCPedestrianRequest::getHeight()const
 {
 	return height_;
@@ -85,5 +47,49 @@ void DetectIPCPedestrianRequest::setHeight(int height)
 {
 	height_ = height;
 	setBodyParameter("Height", std::to_string(height));
+}
+
+std::string DetectIPCPedestrianRequest::getImageData()const
+{
+	return imageData_;
+}
+
+void DetectIPCPedestrianRequest::setImageData(const std::string& imageData)
+{
+	imageData_ = imageData;
+	setBodyParameter("ImageData", imageData);
+}
+
+std::string DetectIPCPedestrianRequest::getDataId()const
+{
+	return dataId_;
+}
+
+void DetectIPCPedestrianRequest::setDataId(const std::string& dataId)
+{
+	dataId_ = dataId;
+	setBodyParameter("DataId", dataId);
+}
+
+std::string DetectIPCPedestrianRequest::getImageURL()const
+{
+	return imageURL_;
+}
+
+void DetectIPCPedestrianRequest::setImageURL(const std::string& imageURL)
+{
+	imageURL_ = imageURL;
+	setBodyParameter("ImageURL", imageURL);
+}
+
+int DetectIPCPedestrianRequest::getWidth()const
+{
+	return width_;
+}
+
+void DetectIPCPedestrianRequest::setWidth(int width)
+{
+	width_ = width;
+	setBodyParameter("Width", std::to_string(width));
 }
 

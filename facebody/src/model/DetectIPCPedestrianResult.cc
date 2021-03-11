@@ -44,12 +44,12 @@ void DetectIPCPedestrianResult::parse(const std::string &payload)
 	for (auto dataNodeImageInfoListImageInfoListItem : allImageInfoListNode)
 	{
 		Data::ImageInfoListItem imageInfoListItemObject;
+		if(!dataNodeImageInfoListImageInfoListItem["DataId"].isNull())
+			imageInfoListItemObject.dataId = dataNodeImageInfoListImageInfoListItem["DataId"].asString();
 		if(!dataNodeImageInfoListImageInfoListItem["ErrorCode"].isNull())
 			imageInfoListItemObject.errorCode = dataNodeImageInfoListImageInfoListItem["ErrorCode"].asString();
 		if(!dataNodeImageInfoListImageInfoListItem["ErrorMessage"].isNull())
 			imageInfoListItemObject.errorMessage = dataNodeImageInfoListImageInfoListItem["ErrorMessage"].asString();
-		if(!dataNodeImageInfoListImageInfoListItem["DataId"].isNull())
-			imageInfoListItemObject.dataId = dataNodeImageInfoListImageInfoListItem["DataId"].asString();
 		auto allElementsNode = dataNodeImageInfoListImageInfoListItem["Elements"]["Element"];
 		for (auto dataNodeImageInfoListImageInfoListItemElementsElement : allElementsNode)
 		{

@@ -35,12 +35,18 @@ namespace AlibabaCloud
 				VerifyFaceMaskRequest();
 				~VerifyFaceMaskRequest();
 
+				std::string getRefData()const;
+				void setRefData(const std::string& refData);
+				std::string getImageData()const;
+				void setImageData(const std::string& imageData);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 				std::string getRefUrl()const;
 				void setRefUrl(const std::string& refUrl);
 
             private:
+				std::string refData_;
+				std::string imageData_;
 				std::string imageURL_;
 				std::string refUrl_;
 

@@ -33,6 +33,7 @@ namespace AlibabaCloud
 			public:
 				struct URLList
 				{
+					std::string imageData;
 					std::string uRL;
 				};
 
@@ -40,16 +41,19 @@ namespace AlibabaCloud
 				RecognizeActionRequest();
 				~RecognizeActionRequest();
 
-				std::vector<URLList> getURLList()const;
-				void setURLList(const std::vector<URLList>& uRLList);
 				int getType()const;
 				void setType(int type);
+				std::string getVideoData()const;
+				void setVideoData(const std::string& videoData);
+				std::vector<URLList> getURLList()const;
+				void setURLList(const std::vector<URLList>& uRLList);
 				std::string getVideoUrl()const;
 				void setVideoUrl(const std::string& videoUrl);
 
             private:
-				std::vector<URLList> uRLList_;
 				int type_;
+				std::string videoData_;
+				std::vector<URLList> uRLList_;
 				std::string videoUrl_;
 
 			};

@@ -37,14 +37,20 @@ namespace AlibabaCloud
 
 				std::string getTargetImageURL()const;
 				void setTargetImageURL(const std::string& targetImageURL);
+				std::string getSourceImageData()const;
+				void setSourceImageData(const std::string& sourceImageData);
 				std::string getSourceImageURL()const;
 				void setSourceImageURL(const std::string& sourceImageURL);
+				std::string getTargetImageData()const;
+				void setTargetImageData(const std::string& targetImageData);
 				std::string getEditPart()const;
 				void setEditPart(const std::string& editPart);
 
             private:
 				std::string targetImageURL_;
+				std::string sourceImageData_;
 				std::string sourceImageURL_;
+				std::string targetImageData_;
 				std::string editPart_;
 
 			};

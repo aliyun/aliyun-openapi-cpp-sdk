@@ -27,6 +27,28 @@ VerifyFaceMaskRequest::VerifyFaceMaskRequest() :
 VerifyFaceMaskRequest::~VerifyFaceMaskRequest()
 {}
 
+std::string VerifyFaceMaskRequest::getRefData()const
+{
+	return refData_;
+}
+
+void VerifyFaceMaskRequest::setRefData(const std::string& refData)
+{
+	refData_ = refData;
+	setBodyParameter("RefData", refData);
+}
+
+std::string VerifyFaceMaskRequest::getImageData()const
+{
+	return imageData_;
+}
+
+void VerifyFaceMaskRequest::setImageData(const std::string& imageData)
+{
+	imageData_ = imageData;
+	setBodyParameter("ImageData", imageData);
+}
+
 std::string VerifyFaceMaskRequest::getImageURL()const
 {
 	return imageURL_;
