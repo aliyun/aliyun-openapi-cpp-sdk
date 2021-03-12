@@ -31,21 +31,21 @@ DomainClient::DomainClient(const Credentials &credentials, const ClientConfigura
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::DomainClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::DomainClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "domain");
 }
 
 DomainClient::~DomainClient()
@@ -585,6 +585,42 @@ DomainClient::ConfirmTransferInEmailOutcomeCallable DomainClient::confirmTransfe
 			[this, request]()
 			{
 			return this->confirmTransferInEmail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::DeleteContactTemplatesOutcome DomainClient::deleteContactTemplates(const DeleteContactTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteContactTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteContactTemplatesOutcome(DeleteContactTemplatesResult(outcome.result()));
+	else
+		return DeleteContactTemplatesOutcome(outcome.error());
+}
+
+void DomainClient::deleteContactTemplatesAsync(const DeleteContactTemplatesRequest& request, const DeleteContactTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteContactTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::DeleteContactTemplatesOutcomeCallable DomainClient::deleteContactTemplatesCallable(const DeleteContactTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteContactTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteContactTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3255,6 +3291,42 @@ DomainClient::SaveRegistrantProfileOutcomeCallable DomainClient::saveRegistrantP
 	return task->get_future();
 }
 
+DomainClient::SaveRegistrantProfileRealNameVerificationOutcome DomainClient::saveRegistrantProfileRealNameVerification(const SaveRegistrantProfileRealNameVerificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveRegistrantProfileRealNameVerificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveRegistrantProfileRealNameVerificationOutcome(SaveRegistrantProfileRealNameVerificationResult(outcome.result()));
+	else
+		return SaveRegistrantProfileRealNameVerificationOutcome(outcome.error());
+}
+
+void DomainClient::saveRegistrantProfileRealNameVerificationAsync(const SaveRegistrantProfileRealNameVerificationRequest& request, const SaveRegistrantProfileRealNameVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveRegistrantProfileRealNameVerification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SaveRegistrantProfileRealNameVerificationOutcomeCallable DomainClient::saveRegistrantProfileRealNameVerificationCallable(const SaveRegistrantProfileRealNameVerificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveRegistrantProfileRealNameVerificationOutcome()>>(
+			[this, request]()
+			{
+			return this->saveRegistrantProfileRealNameVerification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::SaveSingleTaskForAddingDSRecordOutcome DomainClient::saveSingleTaskForAddingDSRecord(const SaveSingleTaskForAddingDSRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4293,6 +4365,42 @@ DomainClient::ScrollDomainListOutcomeCallable DomainClient::scrollDomainListCall
 			[this, request]()
 			{
 			return this->scrollDomainList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SetDefaultRegistrantProfileOutcome DomainClient::setDefaultRegistrantProfile(const SetDefaultRegistrantProfileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDefaultRegistrantProfileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDefaultRegistrantProfileOutcome(SetDefaultRegistrantProfileResult(outcome.result()));
+	else
+		return SetDefaultRegistrantProfileOutcome(outcome.error());
+}
+
+void DomainClient::setDefaultRegistrantProfileAsync(const SetDefaultRegistrantProfileRequest& request, const SetDefaultRegistrantProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDefaultRegistrantProfile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SetDefaultRegistrantProfileOutcomeCallable DomainClient::setDefaultRegistrantProfileCallable(const SetDefaultRegistrantProfileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDefaultRegistrantProfileOutcome()>>(
+			[this, request]()
+			{
+			return this->setDefaultRegistrantProfile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -51,6 +51,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/CheckTransferInFeasibilityResult.h
 	include/alibabacloud/domain/model/ConfirmTransferInEmailRequest.h
 	include/alibabacloud/domain/model/ConfirmTransferInEmailResult.h
+	include/alibabacloud/domain/model/DeleteContactTemplatesRequest.h
+	include/alibabacloud/domain/model/DeleteContactTemplatesResult.h
 	include/alibabacloud/domain/model/DeleteDomainGroupRequest.h
 	include/alibabacloud/domain/model/DeleteDomainGroupResult.h
 	include/alibabacloud/domain/model/DeleteEmailVerificationRequest.h
@@ -199,6 +201,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveDomainGroupResult.h
 	include/alibabacloud/domain/model/SaveRegistrantProfileRequest.h
 	include/alibabacloud/domain/model/SaveRegistrantProfileResult.h
+	include/alibabacloud/domain/model/SaveRegistrantProfileRealNameVerificationRequest.h
+	include/alibabacloud/domain/model/SaveRegistrantProfileRealNameVerificationResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForAddingDSRecordRequest.h
 	include/alibabacloud/domain/model/SaveSingleTaskForAddingDSRecordResult.h
 	include/alibabacloud/domain/model/SaveSingleTaskForApprovingTransferOutRequest.h
@@ -257,6 +261,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResult.h
 	include/alibabacloud/domain/model/ScrollDomainListRequest.h
 	include/alibabacloud/domain/model/ScrollDomainListResult.h
+	include/alibabacloud/domain/model/SetDefaultRegistrantProfileRequest.h
+	include/alibabacloud/domain/model/SetDefaultRegistrantProfileResult.h
 	include/alibabacloud/domain/model/SubmitEmailVerificationRequest.h
 	include/alibabacloud/domain/model/SubmitEmailVerificationResult.h
 	include/alibabacloud/domain/model/SubmitOperationAuditInfoRequest.h
@@ -310,6 +316,8 @@ set(domain_src
 	src/model/CheckTransferInFeasibilityResult.cc
 	src/model/ConfirmTransferInEmailRequest.cc
 	src/model/ConfirmTransferInEmailResult.cc
+	src/model/DeleteContactTemplatesRequest.cc
+	src/model/DeleteContactTemplatesResult.cc
 	src/model/DeleteDomainGroupRequest.cc
 	src/model/DeleteDomainGroupResult.cc
 	src/model/DeleteEmailVerificationRequest.cc
@@ -458,6 +466,8 @@ set(domain_src
 	src/model/SaveDomainGroupResult.cc
 	src/model/SaveRegistrantProfileRequest.cc
 	src/model/SaveRegistrantProfileResult.cc
+	src/model/SaveRegistrantProfileRealNameVerificationRequest.cc
+	src/model/SaveRegistrantProfileRealNameVerificationResult.cc
 	src/model/SaveSingleTaskForAddingDSRecordRequest.cc
 	src/model/SaveSingleTaskForAddingDSRecordResult.cc
 	src/model/SaveSingleTaskForApprovingTransferOutRequest.cc
@@ -516,6 +526,8 @@ set(domain_src
 	src/model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResult.cc
 	src/model/ScrollDomainListRequest.cc
 	src/model/ScrollDomainListResult.cc
+	src/model/SetDefaultRegistrantProfileRequest.cc
+	src/model/SetDefaultRegistrantProfileResult.cc
 	src/model/SubmitEmailVerificationRequest.cc
 	src/model/SubmitEmailVerificationResult.cc
 	src/model/SubmitOperationAuditInfoRequest.cc

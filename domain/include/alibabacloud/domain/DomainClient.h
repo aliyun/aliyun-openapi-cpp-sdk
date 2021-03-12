@@ -52,6 +52,8 @@
 #include "model/CheckTransferInFeasibilityResult.h"
 #include "model/ConfirmTransferInEmailRequest.h"
 #include "model/ConfirmTransferInEmailResult.h"
+#include "model/DeleteContactTemplatesRequest.h"
+#include "model/DeleteContactTemplatesResult.h"
 #include "model/DeleteDomainGroupRequest.h"
 #include "model/DeleteDomainGroupResult.h"
 #include "model/DeleteEmailVerificationRequest.h"
@@ -200,6 +202,8 @@
 #include "model/SaveDomainGroupResult.h"
 #include "model/SaveRegistrantProfileRequest.h"
 #include "model/SaveRegistrantProfileResult.h"
+#include "model/SaveRegistrantProfileRealNameVerificationRequest.h"
+#include "model/SaveRegistrantProfileRealNameVerificationResult.h"
 #include "model/SaveSingleTaskForAddingDSRecordRequest.h"
 #include "model/SaveSingleTaskForAddingDSRecordResult.h"
 #include "model/SaveSingleTaskForApprovingTransferOutRequest.h"
@@ -258,6 +262,8 @@
 #include "model/SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResult.h"
 #include "model/ScrollDomainListRequest.h"
 #include "model/ScrollDomainListResult.h"
+#include "model/SetDefaultRegistrantProfileRequest.h"
+#include "model/SetDefaultRegistrantProfileResult.h"
 #include "model/SubmitEmailVerificationRequest.h"
 #include "model/SubmitEmailVerificationResult.h"
 #include "model/SubmitOperationAuditInfoRequest.h"
@@ -332,6 +338,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConfirmTransferInEmailResult> ConfirmTransferInEmailOutcome;
 			typedef std::future<ConfirmTransferInEmailOutcome> ConfirmTransferInEmailOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::ConfirmTransferInEmailRequest&, const ConfirmTransferInEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmTransferInEmailAsyncHandler;
+			typedef Outcome<Error, Model::DeleteContactTemplatesResult> DeleteContactTemplatesOutcome;
+			typedef std::future<DeleteContactTemplatesOutcome> DeleteContactTemplatesOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::DeleteContactTemplatesRequest&, const DeleteContactTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContactTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDomainGroupResult> DeleteDomainGroupOutcome;
 			typedef std::future<DeleteDomainGroupOutcome> DeleteDomainGroupOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::DeleteDomainGroupRequest&, const DeleteDomainGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainGroupAsyncHandler;
@@ -554,6 +563,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SaveRegistrantProfileResult> SaveRegistrantProfileOutcome;
 			typedef std::future<SaveRegistrantProfileOutcome> SaveRegistrantProfileOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveRegistrantProfileRequest&, const SaveRegistrantProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveRegistrantProfileAsyncHandler;
+			typedef Outcome<Error, Model::SaveRegistrantProfileRealNameVerificationResult> SaveRegistrantProfileRealNameVerificationOutcome;
+			typedef std::future<SaveRegistrantProfileRealNameVerificationOutcome> SaveRegistrantProfileRealNameVerificationOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::SaveRegistrantProfileRealNameVerificationRequest&, const SaveRegistrantProfileRealNameVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveRegistrantProfileRealNameVerificationAsyncHandler;
 			typedef Outcome<Error, Model::SaveSingleTaskForAddingDSRecordResult> SaveSingleTaskForAddingDSRecordOutcome;
 			typedef std::future<SaveSingleTaskForAddingDSRecordOutcome> SaveSingleTaskForAddingDSRecordOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SaveSingleTaskForAddingDSRecordRequest&, const SaveSingleTaskForAddingDSRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveSingleTaskForAddingDSRecordAsyncHandler;
@@ -641,6 +653,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ScrollDomainListResult> ScrollDomainListOutcome;
 			typedef std::future<ScrollDomainListOutcome> ScrollDomainListOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::ScrollDomainListRequest&, const ScrollDomainListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScrollDomainListAsyncHandler;
+			typedef Outcome<Error, Model::SetDefaultRegistrantProfileResult> SetDefaultRegistrantProfileOutcome;
+			typedef std::future<SetDefaultRegistrantProfileOutcome> SetDefaultRegistrantProfileOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::SetDefaultRegistrantProfileRequest&, const SetDefaultRegistrantProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultRegistrantProfileAsyncHandler;
 			typedef Outcome<Error, Model::SubmitEmailVerificationResult> SubmitEmailVerificationOutcome;
 			typedef std::future<SubmitEmailVerificationOutcome> SubmitEmailVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SubmitEmailVerificationRequest&, const SubmitEmailVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitEmailVerificationAsyncHandler;
@@ -721,6 +736,9 @@ namespace AlibabaCloud
 			ConfirmTransferInEmailOutcome confirmTransferInEmail(const Model::ConfirmTransferInEmailRequest &request)const;
 			void confirmTransferInEmailAsync(const Model::ConfirmTransferInEmailRequest& request, const ConfirmTransferInEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfirmTransferInEmailOutcomeCallable confirmTransferInEmailCallable(const Model::ConfirmTransferInEmailRequest& request) const;
+			DeleteContactTemplatesOutcome deleteContactTemplates(const Model::DeleteContactTemplatesRequest &request)const;
+			void deleteContactTemplatesAsync(const Model::DeleteContactTemplatesRequest& request, const DeleteContactTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteContactTemplatesOutcomeCallable deleteContactTemplatesCallable(const Model::DeleteContactTemplatesRequest& request) const;
 			DeleteDomainGroupOutcome deleteDomainGroup(const Model::DeleteDomainGroupRequest &request)const;
 			void deleteDomainGroupAsync(const Model::DeleteDomainGroupRequest& request, const DeleteDomainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDomainGroupOutcomeCallable deleteDomainGroupCallable(const Model::DeleteDomainGroupRequest& request) const;
@@ -943,6 +961,9 @@ namespace AlibabaCloud
 			SaveRegistrantProfileOutcome saveRegistrantProfile(const Model::SaveRegistrantProfileRequest &request)const;
 			void saveRegistrantProfileAsync(const Model::SaveRegistrantProfileRequest& request, const SaveRegistrantProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveRegistrantProfileOutcomeCallable saveRegistrantProfileCallable(const Model::SaveRegistrantProfileRequest& request) const;
+			SaveRegistrantProfileRealNameVerificationOutcome saveRegistrantProfileRealNameVerification(const Model::SaveRegistrantProfileRealNameVerificationRequest &request)const;
+			void saveRegistrantProfileRealNameVerificationAsync(const Model::SaveRegistrantProfileRealNameVerificationRequest& request, const SaveRegistrantProfileRealNameVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveRegistrantProfileRealNameVerificationOutcomeCallable saveRegistrantProfileRealNameVerificationCallable(const Model::SaveRegistrantProfileRealNameVerificationRequest& request) const;
 			SaveSingleTaskForAddingDSRecordOutcome saveSingleTaskForAddingDSRecord(const Model::SaveSingleTaskForAddingDSRecordRequest &request)const;
 			void saveSingleTaskForAddingDSRecordAsync(const Model::SaveSingleTaskForAddingDSRecordRequest& request, const SaveSingleTaskForAddingDSRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveSingleTaskForAddingDSRecordOutcomeCallable saveSingleTaskForAddingDSRecordCallable(const Model::SaveSingleTaskForAddingDSRecordRequest& request) const;
@@ -1030,6 +1051,9 @@ namespace AlibabaCloud
 			ScrollDomainListOutcome scrollDomainList(const Model::ScrollDomainListRequest &request)const;
 			void scrollDomainListAsync(const Model::ScrollDomainListRequest& request, const ScrollDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ScrollDomainListOutcomeCallable scrollDomainListCallable(const Model::ScrollDomainListRequest& request) const;
+			SetDefaultRegistrantProfileOutcome setDefaultRegistrantProfile(const Model::SetDefaultRegistrantProfileRequest &request)const;
+			void setDefaultRegistrantProfileAsync(const Model::SetDefaultRegistrantProfileRequest& request, const SetDefaultRegistrantProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDefaultRegistrantProfileOutcomeCallable setDefaultRegistrantProfileCallable(const Model::SetDefaultRegistrantProfileRequest& request) const;
 			SubmitEmailVerificationOutcome submitEmailVerification(const Model::SubmitEmailVerificationRequest &request)const;
 			void submitEmailVerificationAsync(const Model::SubmitEmailVerificationRequest& request, const SubmitEmailVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitEmailVerificationOutcomeCallable submitEmailVerificationCallable(const Model::SubmitEmailVerificationRequest& request) const;
