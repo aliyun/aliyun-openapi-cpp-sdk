@@ -115,6 +115,17 @@ void DescribePriceRequest::setSecurityToken(const std::string& securityToken)
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribePriceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribePriceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribePriceRequest::getBusinessInfo()const
 {
 	return businessInfo_;

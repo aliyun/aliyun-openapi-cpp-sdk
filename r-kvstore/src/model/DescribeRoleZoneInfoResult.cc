@@ -71,6 +71,12 @@ void DescribeRoleZoneInfoResult::parse(const std::string &payload)
 			nodeObject.isLatestVersion = std::stoi(valueNodeNodeInfo["IsLatestVersion"].asString());
 		if(!valueNodeNodeInfo["CurrentMinorVersion"].isNull())
 			nodeObject.currentMinorVersion = valueNodeNodeInfo["CurrentMinorVersion"].asString();
+		if(!valueNodeNodeInfo["CurrentBandWidth"].isNull())
+			nodeObject.currentBandWidth = std::stol(valueNodeNodeInfo["CurrentBandWidth"].asString());
+		if(!valueNodeNodeInfo["DefaultBandWidth"].isNull())
+			nodeObject.defaultBandWidth = std::stol(valueNodeNodeInfo["DefaultBandWidth"].asString());
+		if(!valueNodeNodeInfo["IsOpenBandWidthService"].isNull())
+			nodeObject.isOpenBandWidthService = valueNodeNodeInfo["IsOpenBandWidthService"].asString() == "true";
 		node_.push_back(nodeObject);
 	}
 	if(!value["PageNumber"].isNull())

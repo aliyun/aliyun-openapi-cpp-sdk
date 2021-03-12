@@ -83,6 +83,10 @@ void DescribeDedicatedClusterInstanceListResult::parse(const std::string &payloa
 			instancesObject.createTime = valueInstancesInstancesItem["CreateTime"].asString();
 		if(!valueInstancesInstancesItem["ShardCount"].isNull())
 			instancesObject.shardCount = std::stoi(valueInstancesInstancesItem["ShardCount"].asString());
+		if(!valueInstancesInstancesItem["CurrentBandWidth"].isNull())
+			instancesObject.currentBandWidth = std::stol(valueInstancesInstancesItem["CurrentBandWidth"].asString());
+		if(!valueInstancesInstancesItem["BandWidth"].isNull())
+			instancesObject.bandWidth = std::stol(valueInstancesInstancesItem["BandWidth"].asString());
 		auto allInstanceNodeListNode = valueInstancesInstancesItem["InstanceNodeList"]["InstanceNodes"];
 		for (auto valueInstancesInstancesItemInstanceNodeListInstanceNodes : allInstanceNodeListNode)
 		{

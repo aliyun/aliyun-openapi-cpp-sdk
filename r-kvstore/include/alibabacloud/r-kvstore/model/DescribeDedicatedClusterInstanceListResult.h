@@ -55,8 +55,10 @@ namespace AlibabaCloud
 					int characterType;
 					std::string vswitchId;
 					int shardCount;
+					long currentBandWidth;
 					std::string instanceName;
 					std::string connectionDomain;
+					long bandWidth;
 					std::string maintainEndTime;
 					std::string vpcId;
 					std::string instanceStatus;

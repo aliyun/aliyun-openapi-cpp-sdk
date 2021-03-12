@@ -52,6 +52,7 @@ namespace AlibabaCloud
 					int diskSizeMB;
 					int creator;
 					std::string name;
+					long currentBandWidth;
 					int binlogRetentionDays;
 					long bandWidth;
 					std::string classCode;

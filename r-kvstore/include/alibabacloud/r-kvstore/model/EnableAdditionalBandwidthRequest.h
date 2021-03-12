@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEAVAILABLERESOURCEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEAVAILABLERESOURCEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_ENABLEADDITIONALBANDWIDTHREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_ENABLEADDITIONALBANDWIDTHREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,63 +28,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeAvailableResourceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT EnableAdditionalBandwidthRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeAvailableResourceRequest();
-				~DescribeAvailableResourceRequest();
+				EnableAdditionalBandwidthRequest();
+				~EnableAdditionalBandwidthRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getEngine()const;
-				void setEngine(const std::string& engine);
-				std::string getInstanceChargeType()const;
-				void setInstanceChargeType(const std::string& instanceChargeType);
+				std::string getNodeId()const;
+				void setNodeId(const std::string& nodeId);
+				std::string getOrderTimeLength()const;
+				void setOrderTimeLength(const std::string& orderTimeLength);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getLevel()const;
-				void setLevel(const std::string& level);
+				std::string getBandwidth()const;
+				void setBandwidth(const std::string& bandwidth);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getAcceptLanguage()const;
-				void setAcceptLanguage(const std::string& acceptLanguage);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
-				std::string getOrderType()const;
-				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
+				std::string couponNo_;
 				std::string accessKeyId_;
-				std::string resourceGroupId_;
 				std::string securityToken_;
-				std::string regionId_;
-				std::string engine_;
-				std::string instanceChargeType_;
+				std::string nodeId_;
+				std::string orderTimeLength_;
+				bool autoPay_;
 				std::string resourceOwnerAccount_;
-				std::string level_;
+				std::string bandwidth_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string instanceId_;
-				std::string acceptLanguage_;
-				std::string zoneId_;
-				std::string orderType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEAVAILABLERESOURCEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_ENABLEADDITIONALBANDWIDTHREQUEST_H_

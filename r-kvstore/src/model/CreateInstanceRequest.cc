@@ -38,6 +38,17 @@ void CreateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateInstanceRequest::getSecondaryZoneId()const
+{
+	return secondaryZoneId_;
+}
+
+void CreateInstanceRequest::setSecondaryZoneId(const std::string& secondaryZoneId)
+{
+	secondaryZoneId_ = secondaryZoneId;
+	setParameter("SecondaryZoneId", secondaryZoneId);
+}
+
 std::string CreateInstanceRequest::getCouponNo()const
 {
 	return couponNo_;
@@ -278,6 +289,17 @@ void CreateInstanceRequest::setCapacity(long capacity)
 {
 	capacity_ = capacity;
 	setParameter("Capacity", std::to_string(capacity));
+}
+
+std::string CreateInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateInstanceRequest::getInstanceType()const

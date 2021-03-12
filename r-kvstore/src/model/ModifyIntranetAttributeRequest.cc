@@ -60,6 +60,17 @@ void ModifyIntranetAttributeRequest::setSecurityToken(const std::string& securit
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyIntranetAttributeRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void ModifyIntranetAttributeRequest::setNodeId(const std::string& nodeId)
+{
+	nodeId_ = nodeId;
+	setParameter("NodeId", nodeId);
+}
+
 std::string ModifyIntranetAttributeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -69,6 +80,17 @@ void ModifyIntranetAttributeRequest::setResourceOwnerAccount(const std::string& 
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long ModifyIntranetAttributeRequest::getBandWidth()const
+{
+	return bandWidth_;
+}
+
+void ModifyIntranetAttributeRequest::setBandWidth(long bandWidth)
+{
+	bandWidth_ = bandWidth;
+	setParameter("BandWidth", std::to_string(bandWidth));
 }
 
 std::string ModifyIntranetAttributeRequest::getOwnerAccount()const

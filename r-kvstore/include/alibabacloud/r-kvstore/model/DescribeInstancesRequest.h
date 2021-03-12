@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setExpired(const std::string& expired);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getInstanceType()const;
@@ -105,6 +107,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string expired_;
 				std::string securityToken_;
+				std::string regionId_;
 				int pageSize_;
 				std::string instanceType_;
 				std::string editionType_;

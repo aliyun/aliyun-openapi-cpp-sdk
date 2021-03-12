@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_CREATEINSTANCEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_CREATEINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_CREATETAIRINSTANCEREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_CREATETAIRINSTANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,25 +28,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT CreateInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT CreateTairInstanceRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateInstanceRequest();
-				~CreateInstanceRequest();
+				CreateTairInstanceRequest();
+				~CreateTairInstanceRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSecondaryZoneId()const;
-				void setSecondaryZoneId(const std::string& secondaryZoneId);
 				std::string getCouponNo()const;
 				void setCouponNo(const std::string& couponNo);
-				std::string getNetworkType()const;
-				void setNetworkType(const std::string& networkType);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getStorageType()const;
+				void setStorageType(const std::string& storageType);
+				int getResourceGroupId()const;
+				void setResourceGroupId(int resourceGroupId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				std::string getSecurityToken()const;
@@ -57,12 +55,14 @@ namespace AlibabaCloud
 				void setShardCount(int shardCount);
 				std::string getAutoRenewPeriod()const;
 				void setAutoRenewPeriod(const std::string& autoRenewPeriod);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
+				int getPeriod()const;
+				void setPeriod(int period);
 				std::string getBackupId()const;
 				void setBackupId(const std::string& backupId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getShardType()const;
+				void setShardType(const std::string& shardType);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
@@ -73,84 +73,69 @@ namespace AlibabaCloud
 				void setAutoRenew(const std::string& autoRenew);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
-				std::string getNodeType()const;
-				void setNodeType(const std::string& nodeType);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getAutoUseCoupon()const;
 				void setAutoUseCoupon(const std::string& autoUseCoupon);
+				int getStorage()const;
+				void setStorage(int storage);
 				std::string getInstanceClass()const;
 				void setInstanceClass(const std::string& instanceClass);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				long getCapacity()const;
-				void setCapacity(long capacity);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
-				std::string getDedicatedHostGroupId()const;
-				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
-				std::string getRestoreTime()const;
-				void setRestoreTime(const std::string& restoreTime);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getSrcDBInstanceId()const;
 				void setSrcDBInstanceId(const std::string& srcDBInstanceId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				bool getGlobalInstance()const;
-				void setGlobalInstance(bool globalInstance);
-				std::string getToken()const;
-				void setToken(const std::string& token);
-				std::string getGlobalInstanceId()const;
-				void setGlobalInstanceId(const std::string& globalInstanceId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
-				std::string getConfig()const;
-				void setConfig(const std::string& config);
 
             private:
 				long resourceOwnerId_;
-				std::string secondaryZoneId_;
 				std::string couponNo_;
-				std::string networkType_;
 				std::string engineVersion_;
-				std::string resourceGroupId_;
+				std::string storageType_;
+				int resourceGroupId_;
 				std::string password_;
 				std::string securityToken_;
 				std::string businessInfo_;
 				int shardCount_;
 				std::string autoRenewPeriod_;
-				std::string period_;
+				int period_;
 				std::string backupId_;
 				long ownerId_;
+				std::string shardType_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
 				std::string instanceName_;
 				std::string autoRenew_;
 				std::string zoneId_;
-				std::string nodeType_;
+				std::string clientToken_;
 				std::string autoUseCoupon_;
+				int storage_;
 				std::string instanceClass_;
 				std::string accessKeyId_;
-				long capacity_;
 				std::string regionId_;
 				std::string instanceType_;
-				std::string dedicatedHostGroupId_;
-				std::string restoreTime_;
+				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string srcDBInstanceId_;
 				std::string ownerAccount_;
-				bool globalInstance_;
-				std::string token_;
-				std::string globalInstanceId_;
 				std::string vpcId_;
 				std::string chargeType_;
-				std::string config_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_CREATEINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_CREATETAIRINSTANCEREQUEST_H_

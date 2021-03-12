@@ -339,6 +339,42 @@ R_kvstoreClient::CreateInstanceOutcomeCallable R_kvstoreClient::createInstanceCa
 	return task->get_future();
 }
 
+R_kvstoreClient::CreateTairInstanceOutcome R_kvstoreClient::createTairInstance(const CreateTairInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTairInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTairInstanceOutcome(CreateTairInstanceResult(outcome.result()));
+	else
+		return CreateTairInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createTairInstanceAsync(const CreateTairInstanceRequest& request, const CreateTairInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTairInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateTairInstanceOutcomeCallable R_kvstoreClient::createTairInstanceCallable(const CreateTairInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTairInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createTairInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::CreateUserClusterHostOutcome R_kvstoreClient::createUserClusterHost(const CreateUserClusterHostRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,6 +1845,42 @@ R_kvstoreClient::DescribeZonesOutcomeCallable R_kvstoreClient::describeZonesCall
 			[this, request]()
 			{
 			return this->describeZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::EnableAdditionalBandwidthOutcome R_kvstoreClient::enableAdditionalBandwidth(const EnableAdditionalBandwidthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableAdditionalBandwidthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableAdditionalBandwidthOutcome(EnableAdditionalBandwidthResult(outcome.result()));
+	else
+		return EnableAdditionalBandwidthOutcome(outcome.error());
+}
+
+void R_kvstoreClient::enableAdditionalBandwidthAsync(const EnableAdditionalBandwidthRequest& request, const EnableAdditionalBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableAdditionalBandwidth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::EnableAdditionalBandwidthOutcomeCallable R_kvstoreClient::enableAdditionalBandwidthCallable(const EnableAdditionalBandwidthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableAdditionalBandwidthOutcome()>>(
+			[this, request]()
+			{
+			return this->enableAdditionalBandwidth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

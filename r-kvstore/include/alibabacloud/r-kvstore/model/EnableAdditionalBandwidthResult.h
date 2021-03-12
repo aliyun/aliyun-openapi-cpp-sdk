@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINTRANETATTRIBUTERESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINTRANETATTRIBUTERESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_ENABLEADDITIONALBANDWIDTHRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_ENABLEADDITIONALBANDWIDTHRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeIntranetAttributeResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT EnableAdditionalBandwidthResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeIntranetAttributeResult();
-				explicit DescribeIntranetAttributeResult(const std::string &payload);
-				~DescribeIntranetAttributeResult();
-				int getIntranetBandwidth()const;
-				std::string getBandwidthExpireTime()const;
-				std::string getExpireTime()const;
+				EnableAdditionalBandwidthResult();
+				explicit EnableAdditionalBandwidthResult(const std::string &payload);
+				~EnableAdditionalBandwidthResult();
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int intranetBandwidth_;
-				std::string bandwidthExpireTime_;
-				std::string expireTime_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEINTRANETATTRIBUTERESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_ENABLEADDITIONALBANDWIDTHRESULT_H_

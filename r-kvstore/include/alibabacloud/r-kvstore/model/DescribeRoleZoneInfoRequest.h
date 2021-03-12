@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRole()const;
+				void setRole(const std::string& role);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string role_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;

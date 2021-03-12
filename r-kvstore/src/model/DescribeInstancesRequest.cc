@@ -137,6 +137,17 @@ void DescribeInstancesRequest::setSecurityToken(const std::string& securityToken
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int DescribeInstancesRequest::getPageSize()const
 {
 	return pageSize_;

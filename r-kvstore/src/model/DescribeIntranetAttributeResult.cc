@@ -43,12 +43,19 @@ void DescribeIntranetAttributeResult::parse(const std::string &payload)
 		intranetBandwidth_ = std::stoi(value["IntranetBandwidth"].asString());
 	if(!value["ExpireTime"].isNull())
 		expireTime_ = value["ExpireTime"].asString();
+	if(!value["BandwidthExpireTime"].isNull())
+		bandwidthExpireTime_ = value["BandwidthExpireTime"].asString();
 
 }
 
 int DescribeIntranetAttributeResult::getIntranetBandwidth()const
 {
 	return intranetBandwidth_;
+}
+
+std::string DescribeIntranetAttributeResult::getBandwidthExpireTime()const
+{
+	return bandwidthExpireTime_;
 }
 
 std::string DescribeIntranetAttributeResult::getExpireTime()const

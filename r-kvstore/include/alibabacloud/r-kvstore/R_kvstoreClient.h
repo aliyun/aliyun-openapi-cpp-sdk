@@ -38,6 +38,8 @@
 #include "model/CreateGlobalDistributeCacheResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
+#include "model/CreateTairInstanceRequest.h"
+#include "model/CreateTairInstanceResult.h"
 #include "model/CreateUserClusterHostRequest.h"
 #include "model/CreateUserClusterHostResult.h"
 #include "model/DeleteAccountRequest.h"
@@ -120,6 +122,8 @@
 #include "model/DescribeUserClusterHostInstanceResult.h"
 #include "model/DescribeZonesRequest.h"
 #include "model/DescribeZonesResult.h"
+#include "model/EnableAdditionalBandwidthRequest.h"
+#include "model/EnableAdditionalBandwidthResult.h"
 #include "model/FlushExpireKeysRequest.h"
 #include "model/FlushExpireKeysResult.h"
 #include "model/FlushInstanceRequest.h"
@@ -235,6 +239,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateTairInstanceResult> CreateTairInstanceOutcome;
+			typedef std::future<CreateTairInstanceOutcome> CreateTairInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::CreateTairInstanceRequest&, const CreateTairInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTairInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CreateUserClusterHostResult> CreateUserClusterHostOutcome;
 			typedef std::future<CreateUserClusterHostOutcome> CreateUserClusterHostOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateUserClusterHostRequest&, const CreateUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserClusterHostAsyncHandler;
@@ -358,6 +365,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeZonesResult> DescribeZonesOutcome;
 			typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeZonesRequest&, const DescribeZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+			typedef Outcome<Error, Model::EnableAdditionalBandwidthResult> EnableAdditionalBandwidthOutcome;
+			typedef std::future<EnableAdditionalBandwidthOutcome> EnableAdditionalBandwidthOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::EnableAdditionalBandwidthRequest&, const EnableAdditionalBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAdditionalBandwidthAsyncHandler;
 			typedef Outcome<Error, Model::FlushExpireKeysResult> FlushExpireKeysOutcome;
 			typedef std::future<FlushExpireKeysOutcome> FlushExpireKeysOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::FlushExpireKeysRequest&, const FlushExpireKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FlushExpireKeysAsyncHandler;
@@ -510,6 +520,9 @@ namespace AlibabaCloud
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
+			CreateTairInstanceOutcome createTairInstance(const Model::CreateTairInstanceRequest &request)const;
+			void createTairInstanceAsync(const Model::CreateTairInstanceRequest& request, const CreateTairInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTairInstanceOutcomeCallable createTairInstanceCallable(const Model::CreateTairInstanceRequest& request) const;
 			CreateUserClusterHostOutcome createUserClusterHost(const Model::CreateUserClusterHostRequest &request)const;
 			void createUserClusterHostAsync(const Model::CreateUserClusterHostRequest& request, const CreateUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserClusterHostOutcomeCallable createUserClusterHostCallable(const Model::CreateUserClusterHostRequest& request) const;
@@ -633,6 +646,9 @@ namespace AlibabaCloud
 			DescribeZonesOutcome describeZones(const Model::DescribeZonesRequest &request)const;
 			void describeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeZonesOutcomeCallable describeZonesCallable(const Model::DescribeZonesRequest& request) const;
+			EnableAdditionalBandwidthOutcome enableAdditionalBandwidth(const Model::EnableAdditionalBandwidthRequest &request)const;
+			void enableAdditionalBandwidthAsync(const Model::EnableAdditionalBandwidthRequest& request, const EnableAdditionalBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableAdditionalBandwidthOutcomeCallable enableAdditionalBandwidthCallable(const Model::EnableAdditionalBandwidthRequest& request) const;
 			FlushExpireKeysOutcome flushExpireKeys(const Model::FlushExpireKeysRequest &request)const;
 			void flushExpireKeysAsync(const Model::FlushExpireKeysRequest& request, const FlushExpireKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FlushExpireKeysOutcomeCallable flushExpireKeysCallable(const Model::FlushExpireKeysRequest& request) const;

@@ -71,6 +71,17 @@ void DescribeAvailableResourceRequest::setSecurityToken(const std::string& secur
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeAvailableResourceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeAvailableResourceRequest::getEngine()const
 {
 	return engine_;

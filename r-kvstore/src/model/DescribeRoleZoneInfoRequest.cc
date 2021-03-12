@@ -38,6 +38,17 @@ void DescribeRoleZoneInfoRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeRoleZoneInfoRequest::getRole()const
+{
+	return role_;
+}
+
+void DescribeRoleZoneInfoRequest::setRole(const std::string& role)
+{
+	role_ = role;
+	setParameter("Role", role);
+}
+
 int DescribeRoleZoneInfoRequest::getPageNumber()const
 {
 	return pageNumber_;

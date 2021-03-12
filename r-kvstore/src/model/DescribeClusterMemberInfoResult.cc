@@ -83,6 +83,8 @@ void DescribeClusterMemberInfoResult::parse(const std::string &payload)
 			clusterChildrenObject.bandWidth = std::stol(valueClusterChildrenChildren["BandWidth"].asString());
 		if(!valueClusterChildrenChildren["Connections"].isNull())
 			clusterChildrenObject.connections = std::stol(valueClusterChildrenChildren["Connections"].asString());
+		if(!valueClusterChildrenChildren["CurrentBandWidth"].isNull())
+			clusterChildrenObject.currentBandWidth = std::stol(valueClusterChildrenChildren["CurrentBandWidth"].asString());
 		auto allItemsNode = valueClusterChildrenChildren["Items"]["Item"];
 		for (auto valueClusterChildrenChildrenItemsItem : allItemsNode)
 		{

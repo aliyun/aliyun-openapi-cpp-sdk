@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setCapacity(long capacity);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getBusinessInfo()const;
 				void setBusinessInfo(const std::string& businessInfo);
 				long getPeriod()const;
@@ -85,6 +87,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				long capacity_;
 				std::string securityToken_;
+				std::string regionId_;
 				std::string businessInfo_;
 				long period_;
 				long quantity_;
