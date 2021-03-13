@@ -49,16 +49,16 @@ void DescribeRegionsResult::parse(const std::string &payload)
 			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
 		if(!valueRegionsRegion["RegionEndpoint"].isNull())
 			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
-		auto allZonesNode = allRegionsNode["Zones"]["Zone"];
-		for (auto allRegionsNodeZonesZone : allZonesNode)
+		auto allZonesNode = valueRegionsRegion["Zones"]["Zone"];
+		for (auto valueRegionsRegionZonesZone : allZonesNode)
 		{
 			Region::Zone zonesObject;
-			if(!allRegionsNodeZonesZone["ZoneId"].isNull())
-				zonesObject.zoneId = allRegionsNodeZonesZone["ZoneId"].asString();
-			if(!allRegionsNodeZonesZone["VpcEnabled"].isNull())
-				zonesObject.vpcEnabled = allRegionsNodeZonesZone["VpcEnabled"].asString() == "true";
-			if(!allRegionsNodeZonesZone["LocalName"].isNull())
-				zonesObject.localName = allRegionsNodeZonesZone["LocalName"].asString();
+			if(!valueRegionsRegionZonesZone["ZoneId"].isNull())
+				zonesObject.zoneId = valueRegionsRegionZonesZone["ZoneId"].asString();
+			if(!valueRegionsRegionZonesZone["VpcEnabled"].isNull())
+				zonesObject.vpcEnabled = valueRegionsRegionZonesZone["VpcEnabled"].asString() == "true";
+			if(!valueRegionsRegionZonesZone["LocalName"].isNull())
+				zonesObject.localName = valueRegionsRegionZonesZone["LocalName"].asString();
 			regionsObject.zones.push_back(zonesObject);
 		}
 		regions_.push_back(regionsObject);

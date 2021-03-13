@@ -109,14 +109,16 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.mode = valueItemsDBCluster["Mode"].asString();
 		if(!valueItemsDBCluster["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
-		auto allTagsNode = allItemsNode["Tags"]["Tag"];
-		for (auto allItemsNodeTagsTag : allTagsNode)
+		if(!valueItemsDBCluster["ElasticIOResource"].isNull())
+			itemsObject.elasticIOResource = std::stoi(valueItemsDBCluster["ElasticIOResource"].asString());
+		auto allTagsNode = valueItemsDBCluster["Tags"]["Tag"];
+		for (auto valueItemsDBClusterTagsTag : allTagsNode)
 		{
 			DBCluster::Tag tagsObject;
-			if(!allItemsNodeTagsTag["Key"].isNull())
-				tagsObject.key = allItemsNodeTagsTag["Key"].asString();
-			if(!allItemsNodeTagsTag["Value"].isNull())
-				tagsObject.value = allItemsNodeTagsTag["Value"].asString();
+			if(!valueItemsDBClusterTagsTag["Key"].isNull())
+				tagsObject.key = valueItemsDBClusterTagsTag["Key"].asString();
+			if(!valueItemsDBClusterTagsTag["Value"].isNull())
+				tagsObject.value = valueItemsDBClusterTagsTag["Value"].asString();
 			itemsObject.tags.push_back(tagsObject);
 		}
 		items_.push_back(itemsObject);

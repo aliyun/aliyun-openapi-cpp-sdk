@@ -43,28 +43,28 @@ void DescribeTablePartitionDiagnoseResult::parse(const std::string &payload)
 	for (auto valueItemsTablePartitionDiagnose : allItemsNode)
 	{
 		TablePartitionDiagnose itemsObject;
-		if(!valueItemsTablePartitionDiagnose["SchemaName"].isNull())
-			itemsObject.schemaName = valueItemsTablePartitionDiagnose["SchemaName"].asString();
 		if(!valueItemsTablePartitionDiagnose["TableName"].isNull())
 			itemsObject.tableName = valueItemsTablePartitionDiagnose["TableName"].asString();
 		if(!valueItemsTablePartitionDiagnose["PartitionNumber"].isNull())
 			itemsObject.partitionNumber = std::stoi(valueItemsTablePartitionDiagnose["PartitionNumber"].asString());
 		if(!valueItemsTablePartitionDiagnose["PartitionDetail"].isNull())
 			itemsObject.partitionDetail = valueItemsTablePartitionDiagnose["PartitionDetail"].asString();
+		if(!valueItemsTablePartitionDiagnose["SchemaName"].isNull())
+			itemsObject.schemaName = valueItemsTablePartitionDiagnose["SchemaName"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = std::stoi(value["DBClusterId"].asString());
-	if(!value["SuggestMinRecordsPerPartition"].isNull())
-		suggestMinRecordsPerPartition_ = std::stol(value["SuggestMinRecordsPerPartition"].asString());
+		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["SuggestMaxRecordsPerPartition"].isNull())
 		suggestMaxRecordsPerPartition_ = std::stol(value["SuggestMaxRecordsPerPartition"].asString());
+	if(!value["SuggestMinRecordsPerPartition"].isNull())
+		suggestMinRecordsPerPartition_ = std::stol(value["SuggestMinRecordsPerPartition"].asString());
 
 }
 
@@ -83,7 +83,7 @@ int DescribeTablePartitionDiagnoseResult::getPageNumber()const
 	return pageNumber_;
 }
 
-int DescribeTablePartitionDiagnoseResult::getDBClusterId()const
+std::string DescribeTablePartitionDiagnoseResult::getDBClusterId()const
 {
 	return dBClusterId_;
 }

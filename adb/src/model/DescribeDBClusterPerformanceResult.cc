@@ -47,12 +47,12 @@ void DescribeDBClusterPerformanceResult::parse(const std::string &payload)
 			performancesObject.key = valuePerformancesPerformanceItem["Key"].asString();
 		if(!valuePerformancesPerformanceItem["Unit"].isNull())
 			performancesObject.unit = valuePerformancesPerformanceItem["Unit"].asString();
-		auto allSeriesNode = allPerformancesNode["Series"]["SeriesItem"];
-		for (auto allPerformancesNodeSeriesSeriesItem : allSeriesNode)
+		auto allSeriesNode = valuePerformancesPerformanceItem["Series"]["SeriesItem"];
+		for (auto valuePerformancesPerformanceItemSeriesSeriesItem : allSeriesNode)
 		{
 			PerformanceItem::SeriesItem seriesObject;
-			if(!allPerformancesNodeSeriesSeriesItem["Name"].isNull())
-				seriesObject.name = allPerformancesNodeSeriesSeriesItem["Name"].asString();
+			if(!valuePerformancesPerformanceItemSeriesSeriesItem["Name"].isNull())
+				seriesObject.name = valuePerformancesPerformanceItemSeriesSeriesItem["Name"].asString();
 			auto allValues = value["Values"]["Values"];
 			for (auto value : allValues)
 				seriesObject.values.push_back(value.asString());

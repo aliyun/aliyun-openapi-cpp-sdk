@@ -47,7 +47,7 @@ namespace AlibabaCloud
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				int getDBClusterId()const;
+				std::string getDBClusterId()const;
 				long getSuggestMaxRecordsPerPartition()const;
 				std::vector<TablePartitionDiagnose> getItems()const;
 				long getSuggestMinRecordsPerPartition()const;
@@ -58,7 +58,7 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				int dBClusterId_;
+				std::string dBClusterId_;
 				long suggestMaxRecordsPerPartition_;
 				std::vector<TablePartitionDiagnose> items_;
 				long suggestMinRecordsPerPartition_;

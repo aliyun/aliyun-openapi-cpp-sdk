@@ -49,6 +49,17 @@ void ModifyBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyBackupPolicyRequest::getEnableBackupLog()const
+{
+	return enableBackupLog_;
+}
+
+void ModifyBackupPolicyRequest::setEnableBackupLog(const std::string& enableBackupLog)
+{
+	enableBackupLog_ = enableBackupLog;
+	setParameter("EnableBackupLog", enableBackupLog);
+}
+
 std::string ModifyBackupPolicyRequest::getPreferredBackupPeriod()const
 {
 	return preferredBackupPeriod_;
@@ -124,5 +135,16 @@ void ModifyBackupPolicyRequest::setBackupRetentionPeriod(const std::string& back
 {
 	backupRetentionPeriod_ = backupRetentionPeriod;
 	setParameter("BackupRetentionPeriod", backupRetentionPeriod);
+}
+
+int ModifyBackupPolicyRequest::getLogBackupRetentionPeriod()const
+{
+	return logBackupRetentionPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setLogBackupRetentionPeriod(int logBackupRetentionPeriod)
+{
+	logBackupRetentionPeriod_ = logBackupRetentionPeriod;
+	setParameter("LogBackupRetentionPeriod", std::to_string(logBackupRetentionPeriod));
 }
 

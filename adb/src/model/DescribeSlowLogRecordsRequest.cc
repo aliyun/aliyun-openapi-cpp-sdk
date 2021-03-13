@@ -38,6 +38,17 @@ void DescribeSlowLogRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeSlowLogRecordsRequest::getRange()const
+{
+	return range_;
+}
+
+void DescribeSlowLogRecordsRequest::setRange(const std::string& range)
+{
+	range_ = range;
+	setParameter("Range", range);
+}
+
 std::string DescribeSlowLogRecordsRequest::getStartTime()const
 {
 	return startTime_;
@@ -80,6 +91,28 @@ void DescribeSlowLogRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeSlowLogRecordsRequest::getState()const
+{
+	return state_;
+}
+
+void DescribeSlowLogRecordsRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setParameter("State", state);
+}
+
+std::string DescribeSlowLogRecordsRequest::getOrder()const
+{
+	return order_;
+}
+
+void DescribeSlowLogRecordsRequest::setOrder(const std::string& order)
+{
+	order_ = order;
+	setParameter("Order", order);
 }
 
 std::string DescribeSlowLogRecordsRequest::getResourceOwnerAccount()const
@@ -146,5 +179,16 @@ void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
 	setParameter("DBName", dBName);
+}
+
+std::string DescribeSlowLogRecordsRequest::getProcessID()const
+{
+	return processID_;
+}
+
+void DescribeSlowLogRecordsRequest::setProcessID(const std::string& processID)
+{
+	processID_ = processID;
+	setParameter("ProcessID", processID);
 }
 

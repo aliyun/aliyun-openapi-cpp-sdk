@@ -45,24 +45,31 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 		AvailableZone availableZoneListObject;
 		if(!valueAvailableZoneListAvailableZone["ZoneId"].isNull())
 			availableZoneListObject.zoneId = valueAvailableZoneListAvailableZone["ZoneId"].asString();
-		auto allSupportedModeNode = allAvailableZoneListNode["SupportedMode"]["SupportedModeItem"];
-		for (auto allAvailableZoneListNodeSupportedModeSupportedModeItem : allSupportedModeNode)
+		auto allSupportedModeNode = valueAvailableZoneListAvailableZone["SupportedMode"]["SupportedModeItem"];
+		for (auto valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItem : allSupportedModeNode)
 		{
 			AvailableZone::SupportedModeItem supportedModeObject;
-			if(!allAvailableZoneListNodeSupportedModeSupportedModeItem["Mode"].isNull())
-				supportedModeObject.mode = allAvailableZoneListNodeSupportedModeSupportedModeItem["Mode"].asString();
-			auto allSupportedSerialListNode = allSupportedModeNode["SupportedSerialList"]["SupportedSerialListItem"];
-			for (auto allSupportedModeNodeSupportedSerialListSupportedSerialListItem : allSupportedSerialListNode)
+			if(!valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItem["Mode"].isNull())
+				supportedModeObject.mode = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItem["Mode"].asString();
+			auto allSupportedSerialListNode = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItem["SupportedSerialList"]["SupportedSerialListItem"];
+			for (auto valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItem : allSupportedSerialListNode)
 			{
 				AvailableZone::SupportedModeItem::SupportedSerialListItem supportedSerialListObject;
-				if(!allSupportedModeNodeSupportedSerialListSupportedSerialListItem["Serial"].isNull())
-					supportedSerialListObject.serial = allSupportedModeNodeSupportedSerialListSupportedSerialListItem["Serial"].asString();
-				auto allSupportedFlexibleResourceNode = allSupportedSerialListNode["SupportedFlexibleResource"]["SupportedFlexibleResourceItem"];
-				for (auto allSupportedSerialListNodeSupportedFlexibleResourceSupportedFlexibleResourceItem : allSupportedFlexibleResourceNode)
+				if(!valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItem["Serial"].isNull())
+					supportedSerialListObject.serial = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItem["Serial"].asString();
+				auto allSupportedFlexibleResourceNode = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItem["SupportedFlexibleResource"]["SupportedFlexibleResourceItem"];
+				for (auto valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedFlexibleResourceSupportedFlexibleResourceItem : allSupportedFlexibleResourceNode)
 				{
 					AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedFlexibleResourceItem supportedFlexibleResourceObject;
-					if(!allSupportedSerialListNodeSupportedFlexibleResourceSupportedFlexibleResourceItem["StorageType"].isNull())
-						supportedFlexibleResourceObject.storageType = allSupportedSerialListNodeSupportedFlexibleResourceSupportedFlexibleResourceItem["StorageType"].asString();
+					if(!valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedFlexibleResourceSupportedFlexibleResourceItem["StorageType"].isNull())
+						supportedFlexibleResourceObject.storageType = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedFlexibleResourceSupportedFlexibleResourceItem["StorageType"].asString();
+					auto supportedElasticIOResourceNode = value["SupportedElasticIOResource"];
+					if(!supportedElasticIOResourceNode["MinCount"].isNull())
+						supportedFlexibleResourceObject.supportedElasticIOResource.minCount = supportedElasticIOResourceNode["MinCount"].asString();
+					if(!supportedElasticIOResourceNode["MaxCount"].isNull())
+						supportedFlexibleResourceObject.supportedElasticIOResource.maxCount = supportedElasticIOResourceNode["MaxCount"].asString();
+					if(!supportedElasticIOResourceNode["Step"].isNull())
+						supportedFlexibleResourceObject.supportedElasticIOResource.step = supportedElasticIOResourceNode["Step"].asString();
 					auto allSupportedStorageResource = value["SupportedStorageResource"]["SupportedStorageResource"];
 					for (auto value : allSupportedStorageResource)
 						supportedFlexibleResourceObject.supportedStorageResource.push_back(value.asString());
@@ -71,16 +78,16 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 						supportedFlexibleResourceObject.supportedComputeResource.push_back(value.asString());
 					supportedSerialListObject.supportedFlexibleResource.push_back(supportedFlexibleResourceObject);
 				}
-				auto allSupportedInstanceClassListNode = allSupportedSerialListNode["SupportedInstanceClassList"]["SupportedInstanceClass"];
-				for (auto allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass : allSupportedInstanceClassListNode)
+				auto allSupportedInstanceClassListNode = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItem["SupportedInstanceClassList"]["SupportedInstanceClass"];
+				for (auto valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClass : allSupportedInstanceClassListNode)
 				{
 					AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedInstanceClass supportedInstanceClassListObject;
-					if(!allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["InstanceClass"].isNull())
-						supportedInstanceClassListObject.instanceClass = allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["InstanceClass"].asString();
-					if(!allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["Tips"].isNull())
-						supportedInstanceClassListObject.tips = allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["Tips"].asString();
-					auto allSupportedNodeCountListNode = allSupportedInstanceClassListNode["SupportedNodeCountList"]["SupportedNodeCount"];
-					for (auto allSupportedInstanceClassListNodeSupportedNodeCountListSupportedNodeCount : allSupportedNodeCountListNode)
+					if(!valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClass["InstanceClass"].isNull())
+						supportedInstanceClassListObject.instanceClass = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClass["InstanceClass"].asString();
+					if(!valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClass["Tips"].isNull())
+						supportedInstanceClassListObject.tips = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClass["Tips"].asString();
+					auto allSupportedNodeCountListNode = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClass["SupportedNodeCountList"]["SupportedNodeCount"];
+					for (auto valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClassSupportedNodeCountListSupportedNodeCount : allSupportedNodeCountListNode)
 					{
 						AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedInstanceClass::SupportedNodeCount supportedNodeCountListObject;
 						auto nodeCountNode = value["NodeCount"];
@@ -95,8 +102,8 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 							supportedNodeCountListObject.storageSize.push_back(value.asString());
 						supportedInstanceClassListObject.supportedNodeCountList.push_back(supportedNodeCountListObject);
 					}
-					auto allSupportedExecutorListNode = allSupportedInstanceClassListNode["SupportedExecutorList"]["SupportedExecutor"];
-					for (auto allSupportedInstanceClassListNodeSupportedExecutorListSupportedExecutor : allSupportedExecutorListNode)
+					auto allSupportedExecutorListNode = valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClass["SupportedExecutorList"]["SupportedExecutor"];
+					for (auto valueAvailableZoneListAvailableZoneSupportedModeSupportedModeItemSupportedSerialListSupportedSerialListItemSupportedInstanceClassListSupportedInstanceClassSupportedExecutorListSupportedExecutor : allSupportedExecutorListNode)
 					{
 						AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedInstanceClass::SupportedExecutor supportedExecutorListObject;
 						auto nodeCount1Node = value["NodeCount"];

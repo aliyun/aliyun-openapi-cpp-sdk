@@ -34,15 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct SlowLogRecord
 				{
+					std::string outputSize;
 					std::string userName;
 					std::string peakMemoryUsage;
 					std::string executionStartTime;
-					long queryTime;
 					long parseRowCounts;
+					long queryTime;
+					long scanTime;
 					std::string hostAddress;
 					std::string sQLText;
+					long wallTime;
+					long scanRows;
 					std::string state;
 					long returnRowCounts;
+					long planningTime;
 					std::string dBName;
 					long queueTime;
 					std::string processID;

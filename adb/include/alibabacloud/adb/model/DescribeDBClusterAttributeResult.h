@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string dBClusterNetworkType;
 					std::string dBClusterType;
 					std::string diskType;
+					int elasticIOResource;
 					std::string dBVersion;
 					std::string dtsJobId;
 					long dBNodeCount;
@@ -57,6 +58,8 @@ namespace AlibabaCloud
 					std::vector<DBCluster::Tag> tags;
 					std::string engine;
 					long dBNodeStorage;
+					std::string engineVersion;
+					bool userENIStatus;
 					std::string zoneId;
 					std::string vPCId;
 					std::string dBClusterStatus;
@@ -67,7 +70,9 @@ namespace AlibabaCloud
 					std::string expired;
 					std::string lockMode;
 					std::string payType;
+					bool enableAirflow;
 					std::string dBNodeClass;
+					bool enableSpark;
 					std::string vPCCloudInstanceId;
 					std::string creationTime;
 					std::string regionId;

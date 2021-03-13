@@ -1,3 +1,6 @@
+2021-03-13 Version: patch
+- Supportd DescribeTableStatisticsRequest.
+
 2021-03-12 Version: patch
 - Add EnableAdditionalBandwidth API.
 - Add CreateTairInstance API.

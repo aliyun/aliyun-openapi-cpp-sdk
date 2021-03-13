@@ -40,7 +40,14 @@ namespace AlibabaCloud
 						{
 							struct SupportedFlexibleResourceItem
 							{
+								struct SupportedElasticIOResource
+								{
+									std::string maxCount;
+									std::string step;
+									std::string minCount;
+								};
 								std::string storageType;
+								SupportedElasticIOResource supportedElasticIOResource;
 								std::vector<std::string> supportedStorageResource;
 								std::vector<std::string> supportedComputeResource;
 							};

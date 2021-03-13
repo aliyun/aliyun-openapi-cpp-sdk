@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getRange()const;
+				void setRange(const std::string& range);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				int getPageNumber()const;
@@ -45,6 +47,10 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getState()const;
+				void setState(const std::string& state);
+				std::string getOrder()const;
+				void setOrder(const std::string& order);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -57,19 +63,25 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getDBName()const;
 				void setDBName(const std::string& dBName);
+				std::string getProcessID()const;
+				void setProcessID(const std::string& processID);
 
             private:
 				long resourceOwnerId_;
+				std::string range_;
 				std::string startTime_;
 				int pageNumber_;
 				std::string accessKeyId_;
 				int pageSize_;
+				std::string state_;
+				std::string order_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				std::string endTime_;
 				long ownerId_;
 				std::string dBName_;
+				std::string processID_;
 
 			};
 		}

@@ -49,6 +49,17 @@ void ModifyDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDBClusterRequest::getMode()const
+{
+	return mode_;
+}
+
+void ModifyDBClusterRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setParameter("Mode", mode);
+}
+
 std::string ModifyDBClusterRequest::getStorageResource()const
 {
 	return storageResource_;
@@ -80,6 +91,17 @@ void ModifyDBClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string ModifyDBClusterRequest::getDBClusterCategory()const
+{
+	return dBClusterCategory_;
+}
+
+void ModifyDBClusterRequest::setDBClusterCategory(const std::string& dBClusterCategory)
+{
+	dBClusterCategory_ = dBClusterCategory;
+	setParameter("DBClusterCategory", dBClusterCategory);
 }
 
 std::string ModifyDBClusterRequest::getResourceOwnerAccount()const
@@ -179,5 +201,16 @@ void ModifyDBClusterRequest::setComputeResource(const std::string& computeResour
 {
 	computeResource_ = computeResource;
 	setParameter("ComputeResource", computeResource);
+}
+
+int ModifyDBClusterRequest::getElasticIOResource()const
+{
+	return elasticIOResource_;
+}
+
+void ModifyDBClusterRequest::setElasticIOResource(int elasticIOResource)
+{
+	elasticIOResource_ = elasticIOResource;
+	setParameter("ElasticIOResource", std::to_string(elasticIOResource));
 }
 

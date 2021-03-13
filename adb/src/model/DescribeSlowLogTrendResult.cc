@@ -47,14 +47,14 @@ void DescribeSlowLogTrendResult::parse(const std::string &payload)
 			itemsObject.key = valueItemsSlowLogTrendItem["Key"].asString();
 		if(!valueItemsSlowLogTrendItem["Unit"].isNull())
 			itemsObject.unit = valueItemsSlowLogTrendItem["Unit"].asString();
-		auto allSeriesNode = allItemsNode["Series"]["SeriesItem"];
-		for (auto allItemsNodeSeriesSeriesItem : allSeriesNode)
+		auto allSeriesNode = valueItemsSlowLogTrendItem["Series"]["SeriesItem"];
+		for (auto valueItemsSlowLogTrendItemSeriesSeriesItem : allSeriesNode)
 		{
 			SlowLogTrendItem::SeriesItem seriesObject;
-			if(!allItemsNodeSeriesSeriesItem["Name"].isNull())
-				seriesObject.name = allItemsNodeSeriesSeriesItem["Name"].asString();
-			if(!allItemsNodeSeriesSeriesItem["Values"].isNull())
-				seriesObject.values = allItemsNodeSeriesSeriesItem["Values"].asString();
+			if(!valueItemsSlowLogTrendItemSeriesSeriesItem["Name"].isNull())
+				seriesObject.name = valueItemsSlowLogTrendItemSeriesSeriesItem["Name"].asString();
+			if(!valueItemsSlowLogTrendItemSeriesSeriesItem["Values"].isNull())
+				seriesObject.values = valueItemsSlowLogTrendItemSeriesSeriesItem["Values"].asString();
 			itemsObject.series.push_back(seriesObject);
 		}
 		items_.push_back(itemsObject);

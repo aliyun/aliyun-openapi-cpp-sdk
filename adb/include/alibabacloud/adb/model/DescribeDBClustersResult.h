@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string dBClusterNetworkType;
 					std::string dBClusterType;
 					std::string diskType;
+					int elasticIOResource;
 					std::string dBVersion;
 					std::string dtsJobId;
 					long dBNodeCount;

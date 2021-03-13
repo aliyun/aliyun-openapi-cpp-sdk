@@ -24,16 +24,28 @@
 #include "AdbExport.h"
 #include "model/AllocateClusterPublicConnectionRequest.h"
 #include "model/AllocateClusterPublicConnectionResult.h"
+#include "model/BindDBResourcePoolWithUserRequest.h"
+#include "model/BindDBResourcePoolWithUserResult.h"
 #include "model/CreateAccountRequest.h"
 #include "model/CreateAccountResult.h"
 #include "model/CreateDBClusterRequest.h"
 #include "model/CreateDBClusterResult.h"
+#include "model/CreateDBResourcePoolRequest.h"
+#include "model/CreateDBResourcePoolResult.h"
+#include "model/CreateElasticPlanRequest.h"
+#include "model/CreateElasticPlanResult.h"
 #include "model/DeleteAccountRequest.h"
 #include "model/DeleteAccountResult.h"
 #include "model/DeleteDBClusterRequest.h"
 #include "model/DeleteDBClusterResult.h"
+#include "model/DeleteDBResourcePoolRequest.h"
+#include "model/DeleteDBResourcePoolResult.h"
+#include "model/DeleteElasticPlanRequest.h"
+#include "model/DeleteElasticPlanResult.h"
 #include "model/DescribeAccountsRequest.h"
 #include "model/DescribeAccountsResult.h"
+#include "model/DescribeAllAccountsRequest.h"
+#include "model/DescribeAllAccountsResult.h"
 #include "model/DescribeAllDataSourceRequest.h"
 #include "model/DescribeAllDataSourceResult.h"
 #include "model/DescribeAuditLogConfigRequest.h"
@@ -50,6 +62,8 @@
 #include "model/DescribeBackupsResult.h"
 #include "model/DescribeColumnsRequest.h"
 #include "model/DescribeColumnsResult.h"
+#include "model/DescribeConnectionCountRecordsRequest.h"
+#include "model/DescribeConnectionCountRecordsResult.h"
 #include "model/DescribeDBClusterAccessWhiteListRequest.h"
 #include "model/DescribeDBClusterAccessWhiteListResult.h"
 #include "model/DescribeDBClusterAttributeRequest.h"
@@ -58,16 +72,30 @@
 #include "model/DescribeDBClusterNetInfoResult.h"
 #include "model/DescribeDBClusterPerformanceRequest.h"
 #include "model/DescribeDBClusterPerformanceResult.h"
+#include "model/DescribeDBClusterResourcePoolPerformanceRequest.h"
+#include "model/DescribeDBClusterResourcePoolPerformanceResult.h"
 #include "model/DescribeDBClustersRequest.h"
 #include "model/DescribeDBClustersResult.h"
+#include "model/DescribeDBResourcePoolRequest.h"
+#include "model/DescribeDBResourcePoolResult.h"
+#include "model/DescribeElasticDailyPlanRequest.h"
+#include "model/DescribeElasticDailyPlanResult.h"
+#include "model/DescribeElasticPlanRequest.h"
+#include "model/DescribeElasticPlanResult.h"
 #include "model/DescribeInclinedTablesRequest.h"
 #include "model/DescribeInclinedTablesResult.h"
+#include "model/DescribeLoadTasksRecordsRequest.h"
+#include "model/DescribeLoadTasksRecordsResult.h"
 #include "model/DescribeOperatorPermissionRequest.h"
 #include "model/DescribeOperatorPermissionResult.h"
 #include "model/DescribeProcessListRequest.h"
 #include "model/DescribeProcessListResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeSQLPlanRequest.h"
+#include "model/DescribeSQLPlanResult.h"
+#include "model/DescribeSQLPlanTaskRequest.h"
+#include "model/DescribeSQLPlanTaskResult.h"
 #include "model/DescribeSchemasRequest.h"
 #include "model/DescribeSchemasResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
@@ -78,6 +106,8 @@
 #include "model/DescribeTableDetailResult.h"
 #include "model/DescribeTablePartitionDiagnoseRequest.h"
 #include "model/DescribeTablePartitionDiagnoseResult.h"
+#include "model/DescribeTableStatisticsRequest.h"
+#include "model/DescribeTableStatisticsResult.h"
 #include "model/DescribeTablesRequest.h"
 #include "model/DescribeTablesResult.h"
 #include "model/DescribeTaskInfoRequest.h"
@@ -106,6 +136,12 @@
 #include "model/ModifyDBClusterDescriptionResult.h"
 #include "model/ModifyDBClusterMaintainTimeRequest.h"
 #include "model/ModifyDBClusterMaintainTimeResult.h"
+#include "model/ModifyDBClusterResourceGroupRequest.h"
+#include "model/ModifyDBClusterResourceGroupResult.h"
+#include "model/ModifyDBResourcePoolRequest.h"
+#include "model/ModifyDBResourcePoolResult.h"
+#include "model/ModifyElasticPlanRequest.h"
+#include "model/ModifyElasticPlanResult.h"
 #include "model/ModifyLogBackupPolicyRequest.h"
 #include "model/ModifyLogBackupPolicyResult.h"
 #include "model/ReleaseClusterPublicConnectionRequest.h"
@@ -116,6 +152,8 @@
 #include "model/RevokeOperatorPermissionResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
+#include "model/UnbindDBResourcePoolWithUserRequest.h"
+#include "model/UnbindDBResourcePoolWithUserResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
 
@@ -130,21 +168,39 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocateClusterPublicConnectionResult> AllocateClusterPublicConnectionOutcome;
 			typedef std::future<AllocateClusterPublicConnectionOutcome> AllocateClusterPublicConnectionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::AllocateClusterPublicConnectionRequest&, const AllocateClusterPublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateClusterPublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::BindDBResourcePoolWithUserResult> BindDBResourcePoolWithUserOutcome;
+			typedef std::future<BindDBResourcePoolWithUserOutcome> BindDBResourcePoolWithUserOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::BindDBResourcePoolWithUserRequest&, const BindDBResourcePoolWithUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindDBResourcePoolWithUserAsyncHandler;
 			typedef Outcome<Error, Model::CreateAccountResult> CreateAccountOutcome;
 			typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::CreateAccountRequest&, const CreateAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
 			typedef Outcome<Error, Model::CreateDBClusterResult> CreateDBClusterOutcome;
 			typedef std::future<CreateDBClusterOutcome> CreateDBClusterOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::CreateDBClusterRequest&, const CreateDBClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBClusterAsyncHandler;
+			typedef Outcome<Error, Model::CreateDBResourcePoolResult> CreateDBResourcePoolOutcome;
+			typedef std::future<CreateDBResourcePoolOutcome> CreateDBResourcePoolOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::CreateDBResourcePoolRequest&, const CreateDBResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::CreateElasticPlanResult> CreateElasticPlanOutcome;
+			typedef std::future<CreateElasticPlanOutcome> CreateElasticPlanOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::CreateElasticPlanRequest&, const CreateElasticPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateElasticPlanAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
 			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDBClusterResult> DeleteDBClusterOutcome;
 			typedef std::future<DeleteDBClusterOutcome> DeleteDBClusterOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DeleteDBClusterRequest&, const DeleteDBClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBClusterAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDBResourcePoolResult> DeleteDBResourcePoolOutcome;
+			typedef std::future<DeleteDBResourcePoolOutcome> DeleteDBResourcePoolOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DeleteDBResourcePoolRequest&, const DeleteDBResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::DeleteElasticPlanResult> DeleteElasticPlanOutcome;
+			typedef std::future<DeleteElasticPlanOutcome> DeleteElasticPlanOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DeleteElasticPlanRequest&, const DeleteElasticPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteElasticPlanAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccountsResult> DescribeAccountsOutcome;
 			typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeAccountsRequest&, const DescribeAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAllAccountsResult> DescribeAllAccountsOutcome;
+			typedef std::future<DescribeAllAccountsOutcome> DescribeAllAccountsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeAllAccountsRequest&, const DescribeAllAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllAccountsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAllDataSourceResult> DescribeAllDataSourceOutcome;
 			typedef std::future<DescribeAllDataSourceOutcome> DescribeAllDataSourceOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeAllDataSourceRequest&, const DescribeAllDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllDataSourceAsyncHandler;
@@ -169,6 +225,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeColumnsResult> DescribeColumnsOutcome;
 			typedef std::future<DescribeColumnsOutcome> DescribeColumnsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeColumnsRequest&, const DescribeColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeConnectionCountRecordsResult> DescribeConnectionCountRecordsOutcome;
+			typedef std::future<DescribeConnectionCountRecordsOutcome> DescribeConnectionCountRecordsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeConnectionCountRecordsRequest&, const DescribeConnectionCountRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectionCountRecordsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterAccessWhiteListResult> DescribeDBClusterAccessWhiteListOutcome;
 			typedef std::future<DescribeDBClusterAccessWhiteListOutcome> DescribeDBClusterAccessWhiteListOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterAccessWhiteListRequest&, const DescribeDBClusterAccessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAccessWhiteListAsyncHandler;
@@ -181,12 +240,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBClusterPerformanceResult> DescribeDBClusterPerformanceOutcome;
 			typedef std::future<DescribeDBClusterPerformanceOutcome> DescribeDBClusterPerformanceOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterPerformanceRequest&, const DescribeDBClusterPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterPerformanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBClusterResourcePoolPerformanceResult> DescribeDBClusterResourcePoolPerformanceOutcome;
+			typedef std::future<DescribeDBClusterResourcePoolPerformanceOutcome> DescribeDBClusterResourcePoolPerformanceOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterResourcePoolPerformanceRequest&, const DescribeDBClusterResourcePoolPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterResourcePoolPerformanceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClustersResult> DescribeDBClustersOutcome;
 			typedef std::future<DescribeDBClustersOutcome> DescribeDBClustersOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDBClustersRequest&, const DescribeDBClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClustersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBResourcePoolResult> DescribeDBResourcePoolOutcome;
+			typedef std::future<DescribeDBResourcePoolOutcome> DescribeDBResourcePoolOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeDBResourcePoolRequest&, const DescribeDBResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::DescribeElasticDailyPlanResult> DescribeElasticDailyPlanOutcome;
+			typedef std::future<DescribeElasticDailyPlanOutcome> DescribeElasticDailyPlanOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeElasticDailyPlanRequest&, const DescribeElasticDailyPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticDailyPlanAsyncHandler;
+			typedef Outcome<Error, Model::DescribeElasticPlanResult> DescribeElasticPlanOutcome;
+			typedef std::future<DescribeElasticPlanOutcome> DescribeElasticPlanOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeElasticPlanRequest&, const DescribeElasticPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticPlanAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInclinedTablesResult> DescribeInclinedTablesOutcome;
 			typedef std::future<DescribeInclinedTablesOutcome> DescribeInclinedTablesOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeInclinedTablesRequest&, const DescribeInclinedTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInclinedTablesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLoadTasksRecordsResult> DescribeLoadTasksRecordsOutcome;
+			typedef std::future<DescribeLoadTasksRecordsOutcome> DescribeLoadTasksRecordsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeLoadTasksRecordsRequest&, const DescribeLoadTasksRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadTasksRecordsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOperatorPermissionResult> DescribeOperatorPermissionOutcome;
 			typedef std::future<DescribeOperatorPermissionOutcome> DescribeOperatorPermissionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeOperatorPermissionRequest&, const DescribeOperatorPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOperatorPermissionAsyncHandler;
@@ -196,6 +270,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSQLPlanResult> DescribeSQLPlanOutcome;
+			typedef std::future<DescribeSQLPlanOutcome> DescribeSQLPlanOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeSQLPlanRequest&, const DescribeSQLPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLPlanAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSQLPlanTaskResult> DescribeSQLPlanTaskOutcome;
+			typedef std::future<DescribeSQLPlanTaskOutcome> DescribeSQLPlanTaskOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeSQLPlanTaskRequest&, const DescribeSQLPlanTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLPlanTaskAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSchemasResult> DescribeSchemasOutcome;
 			typedef std::future<DescribeSchemasOutcome> DescribeSchemasOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeSchemasRequest&, const DescribeSchemasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSchemasAsyncHandler;
@@ -211,6 +291,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTablePartitionDiagnoseResult> DescribeTablePartitionDiagnoseOutcome;
 			typedef std::future<DescribeTablePartitionDiagnoseOutcome> DescribeTablePartitionDiagnoseOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeTablePartitionDiagnoseRequest&, const DescribeTablePartitionDiagnoseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablePartitionDiagnoseAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTableStatisticsResult> DescribeTableStatisticsOutcome;
+			typedef std::future<DescribeTableStatisticsOutcome> DescribeTableStatisticsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeTableStatisticsRequest&, const DescribeTableStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTablesResult> DescribeTablesOutcome;
 			typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeTablesRequest&, const DescribeTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
@@ -253,6 +336,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBClusterMaintainTimeResult> ModifyDBClusterMaintainTimeOutcome;
 			typedef std::future<ModifyDBClusterMaintainTimeOutcome> ModifyDBClusterMaintainTimeOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterMaintainTimeRequest&, const ModifyDBClusterMaintainTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterMaintainTimeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBClusterResourceGroupResult> ModifyDBClusterResourceGroupOutcome;
+			typedef std::future<ModifyDBClusterResourceGroupOutcome> ModifyDBClusterResourceGroupOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterResourceGroupRequest&, const ModifyDBClusterResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterResourceGroupAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBResourcePoolResult> ModifyDBResourcePoolOutcome;
+			typedef std::future<ModifyDBResourcePoolOutcome> ModifyDBResourcePoolOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ModifyDBResourcePoolRequest&, const ModifyDBResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBResourcePoolAsyncHandler;
+			typedef Outcome<Error, Model::ModifyElasticPlanResult> ModifyElasticPlanOutcome;
+			typedef std::future<ModifyElasticPlanOutcome> ModifyElasticPlanOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ModifyElasticPlanRequest&, const ModifyElasticPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElasticPlanAsyncHandler;
 			typedef Outcome<Error, Model::ModifyLogBackupPolicyResult> ModifyLogBackupPolicyOutcome;
 			typedef std::future<ModifyLogBackupPolicyOutcome> ModifyLogBackupPolicyOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyLogBackupPolicyRequest&, const ModifyLogBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogBackupPolicyAsyncHandler;
@@ -268,6 +360,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UnbindDBResourcePoolWithUserResult> UnbindDBResourcePoolWithUserOutcome;
+			typedef std::future<UnbindDBResourcePoolWithUserOutcome> UnbindDBResourcePoolWithUserOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::UnbindDBResourcePoolWithUserRequest&, const UnbindDBResourcePoolWithUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDBResourcePoolWithUserAsyncHandler;
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
@@ -279,21 +374,39 @@ namespace AlibabaCloud
 			AllocateClusterPublicConnectionOutcome allocateClusterPublicConnection(const Model::AllocateClusterPublicConnectionRequest &request)const;
 			void allocateClusterPublicConnectionAsync(const Model::AllocateClusterPublicConnectionRequest& request, const AllocateClusterPublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateClusterPublicConnectionOutcomeCallable allocateClusterPublicConnectionCallable(const Model::AllocateClusterPublicConnectionRequest& request) const;
+			BindDBResourcePoolWithUserOutcome bindDBResourcePoolWithUser(const Model::BindDBResourcePoolWithUserRequest &request)const;
+			void bindDBResourcePoolWithUserAsync(const Model::BindDBResourcePoolWithUserRequest& request, const BindDBResourcePoolWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindDBResourcePoolWithUserOutcomeCallable bindDBResourcePoolWithUserCallable(const Model::BindDBResourcePoolWithUserRequest& request) const;
 			CreateAccountOutcome createAccount(const Model::CreateAccountRequest &request)const;
 			void createAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAccountOutcomeCallable createAccountCallable(const Model::CreateAccountRequest& request) const;
 			CreateDBClusterOutcome createDBCluster(const Model::CreateDBClusterRequest &request)const;
 			void createDBClusterAsync(const Model::CreateDBClusterRequest& request, const CreateDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDBClusterOutcomeCallable createDBClusterCallable(const Model::CreateDBClusterRequest& request) const;
+			CreateDBResourcePoolOutcome createDBResourcePool(const Model::CreateDBResourcePoolRequest &request)const;
+			void createDBResourcePoolAsync(const Model::CreateDBResourcePoolRequest& request, const CreateDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDBResourcePoolOutcomeCallable createDBResourcePoolCallable(const Model::CreateDBResourcePoolRequest& request) const;
+			CreateElasticPlanOutcome createElasticPlan(const Model::CreateElasticPlanRequest &request)const;
+			void createElasticPlanAsync(const Model::CreateElasticPlanRequest& request, const CreateElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateElasticPlanOutcomeCallable createElasticPlanCallable(const Model::CreateElasticPlanRequest& request) const;
 			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
 			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
 			DeleteDBClusterOutcome deleteDBCluster(const Model::DeleteDBClusterRequest &request)const;
 			void deleteDBClusterAsync(const Model::DeleteDBClusterRequest& request, const DeleteDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDBClusterOutcomeCallable deleteDBClusterCallable(const Model::DeleteDBClusterRequest& request) const;
+			DeleteDBResourcePoolOutcome deleteDBResourcePool(const Model::DeleteDBResourcePoolRequest &request)const;
+			void deleteDBResourcePoolAsync(const Model::DeleteDBResourcePoolRequest& request, const DeleteDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDBResourcePoolOutcomeCallable deleteDBResourcePoolCallable(const Model::DeleteDBResourcePoolRequest& request) const;
+			DeleteElasticPlanOutcome deleteElasticPlan(const Model::DeleteElasticPlanRequest &request)const;
+			void deleteElasticPlanAsync(const Model::DeleteElasticPlanRequest& request, const DeleteElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteElasticPlanOutcomeCallable deleteElasticPlanCallable(const Model::DeleteElasticPlanRequest& request) const;
 			DescribeAccountsOutcome describeAccounts(const Model::DescribeAccountsRequest &request)const;
 			void describeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountsOutcomeCallable describeAccountsCallable(const Model::DescribeAccountsRequest& request) const;
+			DescribeAllAccountsOutcome describeAllAccounts(const Model::DescribeAllAccountsRequest &request)const;
+			void describeAllAccountsAsync(const Model::DescribeAllAccountsRequest& request, const DescribeAllAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAllAccountsOutcomeCallable describeAllAccountsCallable(const Model::DescribeAllAccountsRequest& request) const;
 			DescribeAllDataSourceOutcome describeAllDataSource(const Model::DescribeAllDataSourceRequest &request)const;
 			void describeAllDataSourceAsync(const Model::DescribeAllDataSourceRequest& request, const DescribeAllDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAllDataSourceOutcomeCallable describeAllDataSourceCallable(const Model::DescribeAllDataSourceRequest& request) const;
@@ -318,6 +431,9 @@ namespace AlibabaCloud
 			DescribeColumnsOutcome describeColumns(const Model::DescribeColumnsRequest &request)const;
 			void describeColumnsAsync(const Model::DescribeColumnsRequest& request, const DescribeColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeColumnsOutcomeCallable describeColumnsCallable(const Model::DescribeColumnsRequest& request) const;
+			DescribeConnectionCountRecordsOutcome describeConnectionCountRecords(const Model::DescribeConnectionCountRecordsRequest &request)const;
+			void describeConnectionCountRecordsAsync(const Model::DescribeConnectionCountRecordsRequest& request, const DescribeConnectionCountRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeConnectionCountRecordsOutcomeCallable describeConnectionCountRecordsCallable(const Model::DescribeConnectionCountRecordsRequest& request) const;
 			DescribeDBClusterAccessWhiteListOutcome describeDBClusterAccessWhiteList(const Model::DescribeDBClusterAccessWhiteListRequest &request)const;
 			void describeDBClusterAccessWhiteListAsync(const Model::DescribeDBClusterAccessWhiteListRequest& request, const DescribeDBClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterAccessWhiteListOutcomeCallable describeDBClusterAccessWhiteListCallable(const Model::DescribeDBClusterAccessWhiteListRequest& request) const;
@@ -330,12 +446,27 @@ namespace AlibabaCloud
 			DescribeDBClusterPerformanceOutcome describeDBClusterPerformance(const Model::DescribeDBClusterPerformanceRequest &request)const;
 			void describeDBClusterPerformanceAsync(const Model::DescribeDBClusterPerformanceRequest& request, const DescribeDBClusterPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterPerformanceOutcomeCallable describeDBClusterPerformanceCallable(const Model::DescribeDBClusterPerformanceRequest& request) const;
+			DescribeDBClusterResourcePoolPerformanceOutcome describeDBClusterResourcePoolPerformance(const Model::DescribeDBClusterResourcePoolPerformanceRequest &request)const;
+			void describeDBClusterResourcePoolPerformanceAsync(const Model::DescribeDBClusterResourcePoolPerformanceRequest& request, const DescribeDBClusterResourcePoolPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBClusterResourcePoolPerformanceOutcomeCallable describeDBClusterResourcePoolPerformanceCallable(const Model::DescribeDBClusterResourcePoolPerformanceRequest& request) const;
 			DescribeDBClustersOutcome describeDBClusters(const Model::DescribeDBClustersRequest &request)const;
 			void describeDBClustersAsync(const Model::DescribeDBClustersRequest& request, const DescribeDBClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClustersOutcomeCallable describeDBClustersCallable(const Model::DescribeDBClustersRequest& request) const;
+			DescribeDBResourcePoolOutcome describeDBResourcePool(const Model::DescribeDBResourcePoolRequest &request)const;
+			void describeDBResourcePoolAsync(const Model::DescribeDBResourcePoolRequest& request, const DescribeDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBResourcePoolOutcomeCallable describeDBResourcePoolCallable(const Model::DescribeDBResourcePoolRequest& request) const;
+			DescribeElasticDailyPlanOutcome describeElasticDailyPlan(const Model::DescribeElasticDailyPlanRequest &request)const;
+			void describeElasticDailyPlanAsync(const Model::DescribeElasticDailyPlanRequest& request, const DescribeElasticDailyPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeElasticDailyPlanOutcomeCallable describeElasticDailyPlanCallable(const Model::DescribeElasticDailyPlanRequest& request) const;
+			DescribeElasticPlanOutcome describeElasticPlan(const Model::DescribeElasticPlanRequest &request)const;
+			void describeElasticPlanAsync(const Model::DescribeElasticPlanRequest& request, const DescribeElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeElasticPlanOutcomeCallable describeElasticPlanCallable(const Model::DescribeElasticPlanRequest& request) const;
 			DescribeInclinedTablesOutcome describeInclinedTables(const Model::DescribeInclinedTablesRequest &request)const;
 			void describeInclinedTablesAsync(const Model::DescribeInclinedTablesRequest& request, const DescribeInclinedTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInclinedTablesOutcomeCallable describeInclinedTablesCallable(const Model::DescribeInclinedTablesRequest& request) const;
+			DescribeLoadTasksRecordsOutcome describeLoadTasksRecords(const Model::DescribeLoadTasksRecordsRequest &request)const;
+			void describeLoadTasksRecordsAsync(const Model::DescribeLoadTasksRecordsRequest& request, const DescribeLoadTasksRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLoadTasksRecordsOutcomeCallable describeLoadTasksRecordsCallable(const Model::DescribeLoadTasksRecordsRequest& request) const;
 			DescribeOperatorPermissionOutcome describeOperatorPermission(const Model::DescribeOperatorPermissionRequest &request)const;
 			void describeOperatorPermissionAsync(const Model::DescribeOperatorPermissionRequest& request, const DescribeOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOperatorPermissionOutcomeCallable describeOperatorPermissionCallable(const Model::DescribeOperatorPermissionRequest& request) const;
@@ -345,6 +476,12 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DescribeSQLPlanOutcome describeSQLPlan(const Model::DescribeSQLPlanRequest &request)const;
+			void describeSQLPlanAsync(const Model::DescribeSQLPlanRequest& request, const DescribeSQLPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSQLPlanOutcomeCallable describeSQLPlanCallable(const Model::DescribeSQLPlanRequest& request) const;
+			DescribeSQLPlanTaskOutcome describeSQLPlanTask(const Model::DescribeSQLPlanTaskRequest &request)const;
+			void describeSQLPlanTaskAsync(const Model::DescribeSQLPlanTaskRequest& request, const DescribeSQLPlanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSQLPlanTaskOutcomeCallable describeSQLPlanTaskCallable(const Model::DescribeSQLPlanTaskRequest& request) const;
 			DescribeSchemasOutcome describeSchemas(const Model::DescribeSchemasRequest &request)const;
 			void describeSchemasAsync(const Model::DescribeSchemasRequest& request, const DescribeSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSchemasOutcomeCallable describeSchemasCallable(const Model::DescribeSchemasRequest& request) const;
@@ -360,6 +497,9 @@ namespace AlibabaCloud
 			DescribeTablePartitionDiagnoseOutcome describeTablePartitionDiagnose(const Model::DescribeTablePartitionDiagnoseRequest &request)const;
 			void describeTablePartitionDiagnoseAsync(const Model::DescribeTablePartitionDiagnoseRequest& request, const DescribeTablePartitionDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTablePartitionDiagnoseOutcomeCallable describeTablePartitionDiagnoseCallable(const Model::DescribeTablePartitionDiagnoseRequest& request) const;
+			DescribeTableStatisticsOutcome describeTableStatistics(const Model::DescribeTableStatisticsRequest &request)const;
+			void describeTableStatisticsAsync(const Model::DescribeTableStatisticsRequest& request, const DescribeTableStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTableStatisticsOutcomeCallable describeTableStatisticsCallable(const Model::DescribeTableStatisticsRequest& request) const;
 			DescribeTablesOutcome describeTables(const Model::DescribeTablesRequest &request)const;
 			void describeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTablesOutcomeCallable describeTablesCallable(const Model::DescribeTablesRequest& request) const;
@@ -402,6 +542,15 @@ namespace AlibabaCloud
 			ModifyDBClusterMaintainTimeOutcome modifyDBClusterMaintainTime(const Model::ModifyDBClusterMaintainTimeRequest &request)const;
 			void modifyDBClusterMaintainTimeAsync(const Model::ModifyDBClusterMaintainTimeRequest& request, const ModifyDBClusterMaintainTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterMaintainTimeOutcomeCallable modifyDBClusterMaintainTimeCallable(const Model::ModifyDBClusterMaintainTimeRequest& request) const;
+			ModifyDBClusterResourceGroupOutcome modifyDBClusterResourceGroup(const Model::ModifyDBClusterResourceGroupRequest &request)const;
+			void modifyDBClusterResourceGroupAsync(const Model::ModifyDBClusterResourceGroupRequest& request, const ModifyDBClusterResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBClusterResourceGroupOutcomeCallable modifyDBClusterResourceGroupCallable(const Model::ModifyDBClusterResourceGroupRequest& request) const;
+			ModifyDBResourcePoolOutcome modifyDBResourcePool(const Model::ModifyDBResourcePoolRequest &request)const;
+			void modifyDBResourcePoolAsync(const Model::ModifyDBResourcePoolRequest& request, const ModifyDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBResourcePoolOutcomeCallable modifyDBResourcePoolCallable(const Model::ModifyDBResourcePoolRequest& request) const;
+			ModifyElasticPlanOutcome modifyElasticPlan(const Model::ModifyElasticPlanRequest &request)const;
+			void modifyElasticPlanAsync(const Model::ModifyElasticPlanRequest& request, const ModifyElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyElasticPlanOutcomeCallable modifyElasticPlanCallable(const Model::ModifyElasticPlanRequest& request) const;
 			ModifyLogBackupPolicyOutcome modifyLogBackupPolicy(const Model::ModifyLogBackupPolicyRequest &request)const;
 			void modifyLogBackupPolicyAsync(const Model::ModifyLogBackupPolicyRequest& request, const ModifyLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLogBackupPolicyOutcomeCallable modifyLogBackupPolicyCallable(const Model::ModifyLogBackupPolicyRequest& request) const;
@@ -417,6 +566,9 @@ namespace AlibabaCloud
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			UnbindDBResourcePoolWithUserOutcome unbindDBResourcePoolWithUser(const Model::UnbindDBResourcePoolWithUserRequest &request)const;
+			void unbindDBResourcePoolWithUserAsync(const Model::UnbindDBResourcePoolWithUserRequest& request, const UnbindDBResourcePoolWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindDBResourcePoolWithUserOutcomeCallable unbindDBResourcePoolWithUserCallable(const Model::UnbindDBResourcePoolWithUserRequest& request) const;
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;

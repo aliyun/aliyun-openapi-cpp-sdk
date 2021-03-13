@@ -23,16 +23,28 @@ set(adb_public_header
 set(adb_public_header_model 
 	include/alibabacloud/adb/model/AllocateClusterPublicConnectionRequest.h
 	include/alibabacloud/adb/model/AllocateClusterPublicConnectionResult.h
+	include/alibabacloud/adb/model/BindDBResourcePoolWithUserRequest.h
+	include/alibabacloud/adb/model/BindDBResourcePoolWithUserResult.h
 	include/alibabacloud/adb/model/CreateAccountRequest.h
 	include/alibabacloud/adb/model/CreateAccountResult.h
 	include/alibabacloud/adb/model/CreateDBClusterRequest.h
 	include/alibabacloud/adb/model/CreateDBClusterResult.h
+	include/alibabacloud/adb/model/CreateDBResourcePoolRequest.h
+	include/alibabacloud/adb/model/CreateDBResourcePoolResult.h
+	include/alibabacloud/adb/model/CreateElasticPlanRequest.h
+	include/alibabacloud/adb/model/CreateElasticPlanResult.h
 	include/alibabacloud/adb/model/DeleteAccountRequest.h
 	include/alibabacloud/adb/model/DeleteAccountResult.h
 	include/alibabacloud/adb/model/DeleteDBClusterRequest.h
 	include/alibabacloud/adb/model/DeleteDBClusterResult.h
+	include/alibabacloud/adb/model/DeleteDBResourcePoolRequest.h
+	include/alibabacloud/adb/model/DeleteDBResourcePoolResult.h
+	include/alibabacloud/adb/model/DeleteElasticPlanRequest.h
+	include/alibabacloud/adb/model/DeleteElasticPlanResult.h
 	include/alibabacloud/adb/model/DescribeAccountsRequest.h
 	include/alibabacloud/adb/model/DescribeAccountsResult.h
+	include/alibabacloud/adb/model/DescribeAllAccountsRequest.h
+	include/alibabacloud/adb/model/DescribeAllAccountsResult.h
 	include/alibabacloud/adb/model/DescribeAllDataSourceRequest.h
 	include/alibabacloud/adb/model/DescribeAllDataSourceResult.h
 	include/alibabacloud/adb/model/DescribeAuditLogConfigRequest.h
@@ -49,6 +61,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeBackupsResult.h
 	include/alibabacloud/adb/model/DescribeColumnsRequest.h
 	include/alibabacloud/adb/model/DescribeColumnsResult.h
+	include/alibabacloud/adb/model/DescribeConnectionCountRecordsRequest.h
+	include/alibabacloud/adb/model/DescribeConnectionCountRecordsResult.h
 	include/alibabacloud/adb/model/DescribeDBClusterAccessWhiteListRequest.h
 	include/alibabacloud/adb/model/DescribeDBClusterAccessWhiteListResult.h
 	include/alibabacloud/adb/model/DescribeDBClusterAttributeRequest.h
@@ -57,16 +71,30 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeDBClusterNetInfoResult.h
 	include/alibabacloud/adb/model/DescribeDBClusterPerformanceRequest.h
 	include/alibabacloud/adb/model/DescribeDBClusterPerformanceResult.h
+	include/alibabacloud/adb/model/DescribeDBClusterResourcePoolPerformanceRequest.h
+	include/alibabacloud/adb/model/DescribeDBClusterResourcePoolPerformanceResult.h
 	include/alibabacloud/adb/model/DescribeDBClustersRequest.h
 	include/alibabacloud/adb/model/DescribeDBClustersResult.h
+	include/alibabacloud/adb/model/DescribeDBResourcePoolRequest.h
+	include/alibabacloud/adb/model/DescribeDBResourcePoolResult.h
+	include/alibabacloud/adb/model/DescribeElasticDailyPlanRequest.h
+	include/alibabacloud/adb/model/DescribeElasticDailyPlanResult.h
+	include/alibabacloud/adb/model/DescribeElasticPlanRequest.h
+	include/alibabacloud/adb/model/DescribeElasticPlanResult.h
 	include/alibabacloud/adb/model/DescribeInclinedTablesRequest.h
 	include/alibabacloud/adb/model/DescribeInclinedTablesResult.h
+	include/alibabacloud/adb/model/DescribeLoadTasksRecordsRequest.h
+	include/alibabacloud/adb/model/DescribeLoadTasksRecordsResult.h
 	include/alibabacloud/adb/model/DescribeOperatorPermissionRequest.h
 	include/alibabacloud/adb/model/DescribeOperatorPermissionResult.h
 	include/alibabacloud/adb/model/DescribeProcessListRequest.h
 	include/alibabacloud/adb/model/DescribeProcessListResult.h
 	include/alibabacloud/adb/model/DescribeRegionsRequest.h
 	include/alibabacloud/adb/model/DescribeRegionsResult.h
+	include/alibabacloud/adb/model/DescribeSQLPlanRequest.h
+	include/alibabacloud/adb/model/DescribeSQLPlanResult.h
+	include/alibabacloud/adb/model/DescribeSQLPlanTaskRequest.h
+	include/alibabacloud/adb/model/DescribeSQLPlanTaskResult.h
 	include/alibabacloud/adb/model/DescribeSchemasRequest.h
 	include/alibabacloud/adb/model/DescribeSchemasResult.h
 	include/alibabacloud/adb/model/DescribeSlowLogRecordsRequest.h
@@ -77,6 +105,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeTableDetailResult.h
 	include/alibabacloud/adb/model/DescribeTablePartitionDiagnoseRequest.h
 	include/alibabacloud/adb/model/DescribeTablePartitionDiagnoseResult.h
+	include/alibabacloud/adb/model/DescribeTableStatisticsRequest.h
+	include/alibabacloud/adb/model/DescribeTableStatisticsResult.h
 	include/alibabacloud/adb/model/DescribeTablesRequest.h
 	include/alibabacloud/adb/model/DescribeTablesResult.h
 	include/alibabacloud/adb/model/DescribeTaskInfoRequest.h
@@ -105,6 +135,12 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/ModifyDBClusterDescriptionResult.h
 	include/alibabacloud/adb/model/ModifyDBClusterMaintainTimeRequest.h
 	include/alibabacloud/adb/model/ModifyDBClusterMaintainTimeResult.h
+	include/alibabacloud/adb/model/ModifyDBClusterResourceGroupRequest.h
+	include/alibabacloud/adb/model/ModifyDBClusterResourceGroupResult.h
+	include/alibabacloud/adb/model/ModifyDBResourcePoolRequest.h
+	include/alibabacloud/adb/model/ModifyDBResourcePoolResult.h
+	include/alibabacloud/adb/model/ModifyElasticPlanRequest.h
+	include/alibabacloud/adb/model/ModifyElasticPlanResult.h
 	include/alibabacloud/adb/model/ModifyLogBackupPolicyRequest.h
 	include/alibabacloud/adb/model/ModifyLogBackupPolicyResult.h
 	include/alibabacloud/adb/model/ReleaseClusterPublicConnectionRequest.h
@@ -115,6 +151,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/RevokeOperatorPermissionResult.h
 	include/alibabacloud/adb/model/TagResourcesRequest.h
 	include/alibabacloud/adb/model/TagResourcesResult.h
+	include/alibabacloud/adb/model/UnbindDBResourcePoolWithUserRequest.h
+	include/alibabacloud/adb/model/UnbindDBResourcePoolWithUserResult.h
 	include/alibabacloud/adb/model/UntagResourcesRequest.h
 	include/alibabacloud/adb/model/UntagResourcesResult.h )
 
@@ -122,16 +160,28 @@ set(adb_src
 	src/AdbClient.cc
 	src/model/AllocateClusterPublicConnectionRequest.cc
 	src/model/AllocateClusterPublicConnectionResult.cc
+	src/model/BindDBResourcePoolWithUserRequest.cc
+	src/model/BindDBResourcePoolWithUserResult.cc
 	src/model/CreateAccountRequest.cc
 	src/model/CreateAccountResult.cc
 	src/model/CreateDBClusterRequest.cc
 	src/model/CreateDBClusterResult.cc
+	src/model/CreateDBResourcePoolRequest.cc
+	src/model/CreateDBResourcePoolResult.cc
+	src/model/CreateElasticPlanRequest.cc
+	src/model/CreateElasticPlanResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
 	src/model/DeleteDBClusterRequest.cc
 	src/model/DeleteDBClusterResult.cc
+	src/model/DeleteDBResourcePoolRequest.cc
+	src/model/DeleteDBResourcePoolResult.cc
+	src/model/DeleteElasticPlanRequest.cc
+	src/model/DeleteElasticPlanResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
+	src/model/DescribeAllAccountsRequest.cc
+	src/model/DescribeAllAccountsResult.cc
 	src/model/DescribeAllDataSourceRequest.cc
 	src/model/DescribeAllDataSourceResult.cc
 	src/model/DescribeAuditLogConfigRequest.cc
@@ -148,6 +198,8 @@ set(adb_src
 	src/model/DescribeBackupsResult.cc
 	src/model/DescribeColumnsRequest.cc
 	src/model/DescribeColumnsResult.cc
+	src/model/DescribeConnectionCountRecordsRequest.cc
+	src/model/DescribeConnectionCountRecordsResult.cc
 	src/model/DescribeDBClusterAccessWhiteListRequest.cc
 	src/model/DescribeDBClusterAccessWhiteListResult.cc
 	src/model/DescribeDBClusterAttributeRequest.cc
@@ -156,16 +208,30 @@ set(adb_src
 	src/model/DescribeDBClusterNetInfoResult.cc
 	src/model/DescribeDBClusterPerformanceRequest.cc
 	src/model/DescribeDBClusterPerformanceResult.cc
+	src/model/DescribeDBClusterResourcePoolPerformanceRequest.cc
+	src/model/DescribeDBClusterResourcePoolPerformanceResult.cc
 	src/model/DescribeDBClustersRequest.cc
 	src/model/DescribeDBClustersResult.cc
+	src/model/DescribeDBResourcePoolRequest.cc
+	src/model/DescribeDBResourcePoolResult.cc
+	src/model/DescribeElasticDailyPlanRequest.cc
+	src/model/DescribeElasticDailyPlanResult.cc
+	src/model/DescribeElasticPlanRequest.cc
+	src/model/DescribeElasticPlanResult.cc
 	src/model/DescribeInclinedTablesRequest.cc
 	src/model/DescribeInclinedTablesResult.cc
+	src/model/DescribeLoadTasksRecordsRequest.cc
+	src/model/DescribeLoadTasksRecordsResult.cc
 	src/model/DescribeOperatorPermissionRequest.cc
 	src/model/DescribeOperatorPermissionResult.cc
 	src/model/DescribeProcessListRequest.cc
 	src/model/DescribeProcessListResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSQLPlanRequest.cc
+	src/model/DescribeSQLPlanResult.cc
+	src/model/DescribeSQLPlanTaskRequest.cc
+	src/model/DescribeSQLPlanTaskResult.cc
 	src/model/DescribeSchemasRequest.cc
 	src/model/DescribeSchemasResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
@@ -176,6 +242,8 @@ set(adb_src
 	src/model/DescribeTableDetailResult.cc
 	src/model/DescribeTablePartitionDiagnoseRequest.cc
 	src/model/DescribeTablePartitionDiagnoseResult.cc
+	src/model/DescribeTableStatisticsRequest.cc
+	src/model/DescribeTableStatisticsResult.cc
 	src/model/DescribeTablesRequest.cc
 	src/model/DescribeTablesResult.cc
 	src/model/DescribeTaskInfoRequest.cc
@@ -204,6 +272,12 @@ set(adb_src
 	src/model/ModifyDBClusterDescriptionResult.cc
 	src/model/ModifyDBClusterMaintainTimeRequest.cc
 	src/model/ModifyDBClusterMaintainTimeResult.cc
+	src/model/ModifyDBClusterResourceGroupRequest.cc
+	src/model/ModifyDBClusterResourceGroupResult.cc
+	src/model/ModifyDBResourcePoolRequest.cc
+	src/model/ModifyDBResourcePoolResult.cc
+	src/model/ModifyElasticPlanRequest.cc
+	src/model/ModifyElasticPlanResult.cc
 	src/model/ModifyLogBackupPolicyRequest.cc
 	src/model/ModifyLogBackupPolicyResult.cc
 	src/model/ReleaseClusterPublicConnectionRequest.cc
@@ -214,6 +288,8 @@ set(adb_src
 	src/model/RevokeOperatorPermissionResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/UnbindDBResourcePoolWithUserRequest.cc
+	src/model/UnbindDBResourcePoolWithUserResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc )
 
