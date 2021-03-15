@@ -39,6 +39,16 @@ void CreateSiteMonitorResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allCreateResultListNode = value["CreateResultList"]["CreateResultListItem"];
+	for (auto valueCreateResultListCreateResultListItem : allCreateResultListNode)
+	{
+		CreateResultListItem createResultListObject;
+		if(!valueCreateResultListCreateResultListItem["TaskName"].isNull())
+			createResultListObject.taskName = valueCreateResultListCreateResultListItem["TaskName"].asString();
+		if(!valueCreateResultListCreateResultListItem["TaskId"].isNull())
+			createResultListObject.taskId = valueCreateResultListCreateResultListItem["TaskId"].asString();
+		createResultList_.push_back(createResultListObject);
+	}
 	auto dataNode = value["Data"];
 	auto allAttachAlertResultNode = dataNode["AttachAlertResult"]["Contact"];
 	for (auto dataNodeAttachAlertResultContact : allAttachAlertResultNode)
@@ -62,8 +72,6 @@ void CreateSiteMonitorResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
-	if(!value["AlertRule"].isNull())
-		alertRule_ = value["AlertRule"].asString();
 
 }
 
@@ -77,6 +85,11 @@ CreateSiteMonitorResult::Data CreateSiteMonitorResult::getData()const
 	return data_;
 }
 
+std::vector<CreateSiteMonitorResult::CreateResultListItem> CreateSiteMonitorResult::getCreateResultList()const
+{
+	return createResultList_;
+}
+
 std::string CreateSiteMonitorResult::getCode()const
 {
 	return code_;
@@ -85,10 +98,5 @@ std::string CreateSiteMonitorResult::getCode()const
 std::string CreateSiteMonitorResult::getSuccess()const
 {
 	return success_;
-}
-
-std::string CreateSiteMonitorResult::getAlertRule()const
-{
-	return alertRule_;
 }
 

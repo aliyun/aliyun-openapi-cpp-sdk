@@ -82,6 +82,17 @@ void PutContactRequest::setDescribe(const std::string& describe)
 	setParameter("Describe", describe);
 }
 
+std::string PutContactRequest::getLang()const
+{
+	return lang_;
+}
+
+void PutContactRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
+}
+
 std::string PutContactRequest::getChannelsSMS()const
 {
 	return channelsSMS_;

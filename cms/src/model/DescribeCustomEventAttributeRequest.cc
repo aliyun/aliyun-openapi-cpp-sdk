@@ -82,17 +82,6 @@ void DescribeCustomEventAttributeRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DescribeCustomEventAttributeRequest::getLevel()const
-{
-	return level_;
-}
-
-void DescribeCustomEventAttributeRequest::setLevel(const std::string& level)
-{
-	level_ = level;
-	setParameter("Level", level);
-}
-
 std::string DescribeCustomEventAttributeRequest::getGroupId()const
 {
 	return groupId_;

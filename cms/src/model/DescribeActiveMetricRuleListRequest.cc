@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::DescribeActiveMetricRuleListRequest;
 DescribeActiveMetricRuleListRequest::DescribeActiveMetricRuleListRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "DescribeActiveMetricRuleList")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DescribeActiveMetricRuleListRequest::~DescribeActiveMetricRuleListRequest()

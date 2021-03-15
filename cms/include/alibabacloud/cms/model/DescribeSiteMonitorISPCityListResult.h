@@ -34,16 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct IspCity
 				{
+					std::string iPV4ProbeCount;
+					std::string isp;
+					std::string regionzh_CN;
+					std::string regionen;
+					std::string city;
+					std::string iPV6ProbeCount;
+					std::string countryen;
 					std::string ispNamezh_CN;
 					std::string ispNameen;
 					std::string cityNamezh_CN;
-					std::string isp;
-					std::string regionzh_CN;
-					std::string countryzh_CN;
+					std::string aPIProbeCount;
 					std::string cityNameen;
-					std::string regionen;
-					std::string city;
-					std::string countryen;
+					std::string countryzh_CN;
+					std::string region;
+					std::string country;
+					std::vector<std::string> iPPool;
 				};
 
 

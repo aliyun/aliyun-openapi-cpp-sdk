@@ -49,6 +49,8 @@ void DescribeSystemEventMetaListResult::parse(const std::string &payload)
 			dataObject.name = valueDataResource["Name"].asString();
 		if(!valueDataResource["NameDesc"].isNull())
 			dataObject.nameDesc = valueDataResource["NameDesc"].asString();
+		if(!valueDataResource["NameDesc.En"].isNull())
+			dataObject.nameDescEn = valueDataResource["NameDesc.En"].asString();
 		if(!valueDataResource["Level"].isNull())
 			dataObject.level = valueDataResource["Level"].asString();
 		if(!valueDataResource["Status"].isNull())

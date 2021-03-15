@@ -43,7 +43,6 @@ namespace AlibabaCloud
 					std::vector<ResourceItem::Filter> filters;
 					std::string filterRelation;
 					std::string category;
-					long groupId;
 				};
 
 
@@ -51,9 +50,6 @@ namespace AlibabaCloud
 				explicit DescribeMonitorGroupDynamicRulesResult(const std::string &payload);
 				~DescribeMonitorGroupDynamicRulesResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				int getTotal()const;
 				std::vector<ResourceItem> getResource()const;
 				int getCode()const;
 				bool getSuccess()const;
@@ -62,9 +58,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
-				int total_;
 				std::vector<ResourceItem> resource_;
 				int code_;
 				bool success_;

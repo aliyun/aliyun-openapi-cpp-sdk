@@ -47,22 +47,35 @@ void DescribeSiteMonitorISPCityListResult::parse(const std::string &payload)
 			ispCityListObject.isp = valueIspCityListIspCity["Isp"].asString();
 		if(!valueIspCityListIspCity["City"].isNull())
 			ispCityListObject.city = valueIspCityListIspCity["City"].asString();
-		if(!valueIspCityListIspCity["IspName.zh_CN"].isNull())
-			ispCityListObject.ispNamezh_CN = valueIspCityListIspCity["IspName.zh_CN"].asString();
-		if(!valueIspCityListIspCity["CityName.zh_CN"].isNull())
-			ispCityListObject.cityNamezh_CN = valueIspCityListIspCity["CityName.zh_CN"].asString();
-		if(!valueIspCityListIspCity["Region.zh_CN"].isNull())
-			ispCityListObject.regionzh_CN = valueIspCityListIspCity["Region.zh_CN"].asString();
-		if(!valueIspCityListIspCity["Country.zh_CN"].isNull())
-			ispCityListObject.countryzh_CN = valueIspCityListIspCity["Country.zh_CN"].asString();
+		if(!valueIspCityListIspCity["Region"].isNull())
+			ispCityListObject.region = valueIspCityListIspCity["Region"].asString();
+		if(!valueIspCityListIspCity["Country"].isNull())
+			ispCityListObject.country = valueIspCityListIspCity["Country"].asString();
 		if(!valueIspCityListIspCity["IspName.en"].isNull())
 			ispCityListObject.ispNameen = valueIspCityListIspCity["IspName.en"].asString();
+		if(!valueIspCityListIspCity["IspName.zh_CN"].isNull())
+			ispCityListObject.ispNamezh_CN = valueIspCityListIspCity["IspName.zh_CN"].asString();
 		if(!valueIspCityListIspCity["CityName.en"].isNull())
 			ispCityListObject.cityNameen = valueIspCityListIspCity["CityName.en"].asString();
+		if(!valueIspCityListIspCity["CityName.zh_CN"].isNull())
+			ispCityListObject.cityNamezh_CN = valueIspCityListIspCity["CityName.zh_CN"].asString();
 		if(!valueIspCityListIspCity["Region.en"].isNull())
 			ispCityListObject.regionen = valueIspCityListIspCity["Region.en"].asString();
+		if(!valueIspCityListIspCity["Region.zh_CN"].isNull())
+			ispCityListObject.regionzh_CN = valueIspCityListIspCity["Region.zh_CN"].asString();
 		if(!valueIspCityListIspCity["Country.en"].isNull())
 			ispCityListObject.countryen = valueIspCityListIspCity["Country.en"].asString();
+		if(!valueIspCityListIspCity["Country.zh_CN"].isNull())
+			ispCityListObject.countryzh_CN = valueIspCityListIspCity["Country.zh_CN"].asString();
+		if(!valueIspCityListIspCity["IPV4ProbeCount"].isNull())
+			ispCityListObject.iPV4ProbeCount = valueIspCityListIspCity["IPV4ProbeCount"].asString();
+		if(!valueIspCityListIspCity["IPV6ProbeCount"].isNull())
+			ispCityListObject.iPV6ProbeCount = valueIspCityListIspCity["IPV6ProbeCount"].asString();
+		if(!valueIspCityListIspCity["APIProbeCount"].isNull())
+			ispCityListObject.aPIProbeCount = valueIspCityListIspCity["APIProbeCount"].asString();
+		auto allIPPool = value["IPPool"]["IPPool"];
+		for (auto value : allIPPool)
+			ispCityListObject.iPPool.push_back(value.asString());
 		ispCityList_.push_back(ispCityListObject);
 	}
 	if(!value["Code"].isNull())

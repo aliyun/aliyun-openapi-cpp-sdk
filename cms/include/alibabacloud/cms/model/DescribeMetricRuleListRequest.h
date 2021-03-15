@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				void setEnableState(bool enableState);
 				std::string getRuleName()const;
 				void setRuleName(const std::string& ruleName);
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getMetricName()const;
 				void setMetricName(const std::string& metricName);
 				std::string getGroupId()const;
@@ -51,21 +51,21 @@ namespace AlibabaCloud
 				void set_Namespace(const std::string& _namespace);
 				std::string getAlertState()const;
 				void setAlertState(const std::string& alertState);
-				std::string getPage()const;
-				void setPage(const std::string& page);
+				int getPage()const;
+				void setPage(int page);
 				std::string getDimensions()const;
 				void setDimensions(const std::string& dimensions);
 
             private:
 				bool enableState_;
 				std::string ruleName_;
-				std::string pageSize_;
+				int pageSize_;
 				std::string metricName_;
 				std::string groupId_;
 				std::string ruleIds_;
 				std::string _namespace_;
 				std::string alertState_;
-				std::string page_;
+				int page_;
 				std::string dimensions_;
 
 			};

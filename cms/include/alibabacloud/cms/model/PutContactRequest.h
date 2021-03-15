@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setChannelsAliIM(const std::string& channelsAliIM);
 				std::string getDescribe()const;
 				void setDescribe(const std::string& describe);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				std::string getChannelsSMS()const;
 				void setChannelsSMS(const std::string& channelsSMS);
 
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string channelsMail_;
 				std::string channelsAliIM_;
 				std::string describe_;
+				std::string lang_;
 				std::string channelsSMS_;
 
 			};

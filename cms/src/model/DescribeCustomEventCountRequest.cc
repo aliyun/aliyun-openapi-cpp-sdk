@@ -38,17 +38,6 @@ void DescribeCustomEventCountRequest::setEventId(const std::string& eventId)
 	setParameter("EventId", eventId);
 }
 
-std::string DescribeCustomEventCountRequest::getLevel()const
-{
-	return level_;
-}
-
-void DescribeCustomEventCountRequest::setLevel(const std::string& level)
-{
-	level_ = level;
-	setParameter("Level", level);
-}
-
 std::string DescribeCustomEventCountRequest::getGroupId()const
 {
 	return groupId_;

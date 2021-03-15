@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CMS_MODEL_DESCRIBEFOLDERLISTRESULT_H_
-#define ALIBABACLOUD_CMS_MODEL_DESCRIBEFOLDERLISTRESULT_H_
+#ifndef ALIBABACLOUD_CMS_MODEL_PUTLOGMONITORRESULT_H_
+#define ALIBABACLOUD_CMS_MODEL_PUTLOGMONITORRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CMS_EXPORT DescribeFolderListResult : public ServiceResult
+			class ALIBABACLOUD_CMS_EXPORT PutLogMonitorResult : public ServiceResult
 			{
 			public:
-				struct Resource
-				{
-					std::string name;
-					long serviceId;
-				};
 
 
-				DescribeFolderListResult();
-				explicit DescribeFolderListResult(const std::string &payload);
-				~DescribeFolderListResult();
+				PutLogMonitorResult();
+				explicit PutLogMonitorResult(const std::string &payload);
+				~PutLogMonitorResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				int getTotal()const;
-				Resource getResource()const;
-				int getCode()const;
+				std::string getCode()const;
+				std::string getLogId()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
-				int total_;
-				Resource resource_;
-				int code_;
+				std::string code_;
+				std::string logId_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CMS_MODEL_DESCRIBEFOLDERLISTRESULT_H_
+#endif // !ALIBABACLOUD_CMS_MODEL_PUTLOGMONITORRESULT_H_

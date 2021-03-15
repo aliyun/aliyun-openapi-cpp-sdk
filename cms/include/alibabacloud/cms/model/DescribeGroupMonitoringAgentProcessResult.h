@@ -65,6 +65,9 @@ namespace AlibabaCloud
 				explicit DescribeGroupMonitoringAgentProcessResult(const std::string &payload);
 				~DescribeGroupMonitoringAgentProcessResult();
 				std::string getMessage()const;
+				std::string getPageSize()const;
+				std::string getPageNumber()const;
+				std::string getTotal()const;
 				std::vector<Process> getProcesses()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -73,6 +76,9 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string pageSize_;
+				std::string pageNumber_;
+				std::string total_;
 				std::vector<Process> processes_;
 				std::string code_;
 				bool success_;

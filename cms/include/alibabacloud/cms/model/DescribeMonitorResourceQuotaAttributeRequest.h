@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CMS_MODEL_DESCRIBEFOLDERLISTREQUEST_H_
-#define ALIBABACLOUD_CMS_MODEL_DESCRIBEFOLDERLISTREQUEST_H_
+#ifndef ALIBABACLOUD_CMS_MODEL_DESCRIBEMONITORRESOURCEQUOTAATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_CMS_MODEL_DESCRIBEMONITORRESOURCEQUOTAATTRIBUTEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CMS_EXPORT DescribeFolderListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CMS_EXPORT DescribeMonitorResourceQuotaAttributeRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeFolderListRequest();
-				~DescribeFolderListRequest();
+				DescribeMonitorResourceQuotaAttributeRequest();
+				~DescribeMonitorResourceQuotaAttributeRequest();
 
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
+				bool getShowUsed()const;
+				void setShowUsed(bool showUsed);
 
             private:
-				std::string appName_;
+				bool showUsed_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CMS_MODEL_DESCRIBEFOLDERLISTREQUEST_H_
+#endif // !ALIBABACLOUD_CMS_MODEL_DESCRIBEMONITORRESOURCEQUOTAATTRIBUTEREQUEST_H_

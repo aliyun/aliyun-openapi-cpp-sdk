@@ -39,10 +39,19 @@ namespace AlibabaCloud
 				void setCity(const std::string& city);
 				std::string getIsp()const;
 				void setIsp(const std::string& isp);
+				bool getAPIProbe()const;
+				void setAPIProbe(bool aPIProbe);
+				bool getIPV4()const;
+				void setIPV4(bool iPV4);
+				bool getIPV6()const;
+				void setIPV6(bool iPV6);
 
             private:
 				std::string city_;
 				std::string isp_;
+				bool aPIProbe_;
+				bool iPV4_;
+				bool iPV6_;
 
 			};
 		}

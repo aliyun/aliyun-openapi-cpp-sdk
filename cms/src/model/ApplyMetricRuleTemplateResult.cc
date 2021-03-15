@@ -46,8 +46,6 @@ void ApplyMetricRuleTemplateResult::parse(const std::string &payload)
 	for (auto resourceNodeAlertResultsResult : allAlertResultsNode)
 	{
 		Resource::Result resultObject;
-		if(!resourceNodeAlertResultsResult["GroupId"].isNull())
-			resultObject.groupId = std::stol(resourceNodeAlertResultsResult["GroupId"].asString());
 		if(!resourceNodeAlertResultsResult["RuleId"].isNull())
 			resultObject.ruleId = resourceNodeAlertResultsResult["RuleId"].asString();
 		if(!resourceNodeAlertResultsResult["Message"].isNull())

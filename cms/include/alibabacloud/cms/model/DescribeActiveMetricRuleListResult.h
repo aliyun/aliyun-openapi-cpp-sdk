@@ -51,12 +51,59 @@ namespace AlibabaCloud
 					std::string ruleName;
 					std::string threshold;
 				};
+				struct Alert
+				{
+					struct Escalations
+					{
+						struct Info
+						{
+							std::string comparisonOperator;
+							std::string times;
+							std::string statistics;
+							std::string threshold;
+						};
+						struct Warn
+						{
+							std::string comparisonOperator;
+							std::string times;
+							std::string statistics;
+							std::string threshold;
+						};
+						struct Critical
+						{
+							std::string comparisonOperator;
+							std::string times;
+							std::string statistics;
+							std::string threshold;
+						};
+						Critical critical;
+						Info info;
+						Warn warn;
+					};
+					std::string noEffectiveInterval;
+					std::string silenceTime;
+					std::string contactGroups;
+					std::string mailSubject;
+					std::string ruleId;
+					std::string period;
+					std::string dimensions;
+					std::string _namespace;
+					std::string effectiveInterval;
+					std::string alertState;
+					std::string metricName;
+					Escalations escalations;
+					bool enableState;
+					std::string webhook;
+					std::string resources;
+					std::string ruleName;
+				};
 
 
 				DescribeActiveMetricRuleListResult();
 				explicit DescribeActiveMetricRuleListResult(const std::string &payload);
 				~DescribeActiveMetricRuleListResult();
 				std::string getMessage()const;
+				std::vector<Alert> getAlertList()const;
 				std::vector<Alarm> getDatapoints()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -65,6 +112,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::vector<Alert> alertList_;
 				std::vector<Alarm> datapoints_;
 				std::string code_;
 				bool success_;

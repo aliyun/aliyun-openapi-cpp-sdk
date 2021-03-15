@@ -41,9 +41,19 @@ namespace AlibabaCloud
 						std::string dingWebHook;
 						std::string sMS;
 					};
+					struct ChannelsState
+					{
+						std::string mail;
+						std::string aliIM;
+						std::string dingWebHook;
+						std::string sMS;
+					};
+					ChannelsState channelsState;
 					std::string desc;
+					std::vector<std::string> contactGroups;
 					long createTime;
 					long updateTime;
+					std::string lang;
 					Channels channels;
 					std::string name;
 				};

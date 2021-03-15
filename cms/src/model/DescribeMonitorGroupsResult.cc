@@ -63,22 +63,22 @@ void DescribeMonitorGroupsResult::parse(const std::string &payload)
 			resourcesObject.groupFounderTagKey = valueResourcesResource["GroupFounderTagKey"].asString();
 		if(!valueResourcesResource["GroupFounderTagValue"].isNull())
 			resourcesObject.groupFounderTagValue = valueResourcesResource["GroupFounderTagValue"].asString();
-		auto allContactGroupsNode = allResourcesNode["ContactGroups"]["ContactGroup"];
-		for (auto allResourcesNodeContactGroupsContactGroup : allContactGroupsNode)
+		auto allContactGroupsNode = valueResourcesResource["ContactGroups"]["ContactGroup"];
+		for (auto valueResourcesResourceContactGroupsContactGroup : allContactGroupsNode)
 		{
 			Resource::ContactGroup contactGroupsObject;
-			if(!allResourcesNodeContactGroupsContactGroup["Name"].isNull())
-				contactGroupsObject.name = allResourcesNodeContactGroupsContactGroup["Name"].asString();
+			if(!valueResourcesResourceContactGroupsContactGroup["Name"].isNull())
+				contactGroupsObject.name = valueResourcesResourceContactGroupsContactGroup["Name"].asString();
 			resourcesObject.contactGroups.push_back(contactGroupsObject);
 		}
-		auto allTagsNode = allResourcesNode["Tags"]["Tag"];
-		for (auto allResourcesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueResourcesResource["Tags"]["Tag"];
+		for (auto valueResourcesResourceTagsTag : allTagsNode)
 		{
 			Resource::Tag tagsObject;
-			if(!allResourcesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allResourcesNodeTagsTag["Key"].asString();
-			if(!allResourcesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allResourcesNodeTagsTag["Value"].asString();
+			if(!valueResourcesResourceTagsTag["Key"].isNull())
+				tagsObject.key = valueResourcesResourceTagsTag["Key"].asString();
+			if(!valueResourcesResourceTagsTag["Value"].isNull())
+				tagsObject.value = valueResourcesResourceTagsTag["Value"].asString();
 			resourcesObject.tags.push_back(tagsObject);
 		}
 		auto allTemplateIds = value["TemplateIds"]["TemplateId"];

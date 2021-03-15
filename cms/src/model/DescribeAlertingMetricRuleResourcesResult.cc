@@ -51,20 +51,52 @@ void DescribeAlertingMetricRuleResourcesResult::parse(const std::string &payload
 			resourcesObject.groupId = valueResourcesResource["GroupId"].asString();
 		if(!valueResourcesResource["Resource"].isNull())
 			resourcesObject.resource = valueResourcesResource["Resource"].asString();
+		if(!valueResourcesResource["MetricName"].isNull())
+			resourcesObject.metricName = valueResourcesResource["MetricName"].asString();
+		if(!valueResourcesResource["Namespace"].isNull())
+			resourcesObject._namespace = valueResourcesResource["Namespace"].asString();
 		if(!valueResourcesResource["Enable"].isNull())
 			resourcesObject.enable = valueResourcesResource["Enable"].asString();
 		if(!valueResourcesResource["LastAlertTime"].isNull())
 			resourcesObject.lastAlertTime = valueResourcesResource["LastAlertTime"].asString();
 		if(!valueResourcesResource["LastModifyTime"].isNull())
 			resourcesObject.lastModifyTime = valueResourcesResource["LastModifyTime"].asString();
+		if(!valueResourcesResource["Dimensions"].isNull())
+			resourcesObject.dimensions = valueResourcesResource["Dimensions"].asString();
 		if(!valueResourcesResource["StartTime"].isNull())
 			resourcesObject.startTime = valueResourcesResource["StartTime"].asString();
 		if(!valueResourcesResource["MetricValues"].isNull())
 			resourcesObject.metricValues = valueResourcesResource["MetricValues"].asString();
 		if(!valueResourcesResource["RetryTimes"].isNull())
 			resourcesObject.retryTimes = valueResourcesResource["RetryTimes"].asString();
+		if(!valueResourcesResource["Statistics"].isNull())
+			resourcesObject.statistics = valueResourcesResource["Statistics"].asString();
 		if(!valueResourcesResource["Threshold"].isNull())
 			resourcesObject.threshold = valueResourcesResource["Threshold"].asString();
+		if(!valueResourcesResource["ProductCategory"].isNull())
+			resourcesObject.productCategory = valueResourcesResource["ProductCategory"].asString();
+		if(!valueResourcesResource["Level"].isNull())
+			resourcesObject.level = std::stoi(valueResourcesResource["Level"].asString());
+		auto allEscalationNode = valueResourcesResource["Escalation"]["Resource"];
+		for (auto valueResourcesResourceEscalationResource : allEscalationNode)
+		{
+			Resource::Resource1 escalationObject;
+			if(!valueResourcesResourceEscalationResource["Expression"].isNull())
+				escalationObject.expression = valueResourcesResourceEscalationResource["Expression"].asString();
+			if(!valueResourcesResourceEscalationResource["PreCondition"].isNull())
+				escalationObject.preCondition = valueResourcesResourceEscalationResource["PreCondition"].asString();
+			if(!valueResourcesResourceEscalationResource["Level"].isNull())
+				escalationObject.level = std::stoi(valueResourcesResourceEscalationResource["Level"].asString());
+			if(!valueResourcesResourceEscalationResource["Times"].isNull())
+				escalationObject.times = std::stoi(valueResourcesResourceEscalationResource["Times"].asString());
+			if(!valueResourcesResourceEscalationResource["ComparisonOperator"].isNull())
+				escalationObject.comparisonOperator = valueResourcesResourceEscalationResource["ComparisonOperator"].asString();
+			if(!valueResourcesResourceEscalationResource["Tag"].isNull())
+				escalationObject.tag = valueResourcesResourceEscalationResource["Tag"].asString();
+			if(!valueResourcesResourceEscalationResource["Threshold"].isNull())
+				escalationObject.threshold = valueResourcesResourceEscalationResource["Threshold"].asString();
+			resourcesObject.escalation.push_back(escalationObject);
+		}
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["Success"].isNull())

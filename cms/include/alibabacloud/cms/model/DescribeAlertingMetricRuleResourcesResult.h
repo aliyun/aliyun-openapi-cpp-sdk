@@ -34,16 +34,33 @@ namespace AlibabaCloud
 			public:
 				struct Resource
 				{
-					std::string lastAlertTime;
+					struct Resource1
+					{
+						std::string comparisonOperator;
+						std::string expression;
+						int times;
+						std::string preCondition;
+						int level;
+						std::string tag;
+						std::string threshold;
+					};
+					std::vector<Resource::Resource1> escalation;
 					std::string ruleId;
 					std::string resource;
 					std::string startTime;
-					std::string enable;
+					std::string dimensions;
+					std::string _namespace;
 					std::string metricValues;
 					std::string lastModifyTime;
+					std::string statistics;
+					std::string groupId;
+					std::string metricName;
+					std::string lastAlertTime;
+					std::string productCategory;
+					std::string enable;
+					int level;
 					std::string ruleName;
 					std::string retryTimes;
-					std::string groupId;
 					std::string threshold;
 				};
 

@@ -45,12 +45,12 @@ namespace AlibabaCloud
 
 				std::vector<Instances> getInstances()const;
 				void setInstances(const std::vector<Instances>& instances);
-				long getGroupId()const;
-				void setGroupId(long groupId);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 
             private:
 				std::vector<Instances> instances_;
-				long groupId_;
+				std::string groupId_;
 
 			};
 		}

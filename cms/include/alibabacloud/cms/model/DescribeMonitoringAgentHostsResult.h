@@ -56,6 +56,8 @@ namespace AlibabaCloud
 				~DescribeMonitoringAgentHostsResult();
 				std::vector<Host> getHosts()const;
 				std::string getMessage()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				int getPageTotal()const;
 				int getTotal()const;
 				std::string getCode()const;
@@ -66,6 +68,8 @@ namespace AlibabaCloud
 			private:
 				std::vector<Host> hosts_;
 				std::string message_;
+				int pageSize_;
+				int pageNumber_;
 				int pageTotal_;
 				int total_;
 				std::string code_;

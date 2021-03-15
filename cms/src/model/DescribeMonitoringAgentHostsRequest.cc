@@ -60,17 +60,6 @@ void DescribeMonitoringAgentHostsRequest::setHostName(const std::string& hostNam
 	setParameter("HostName", hostName);
 }
 
-std::string DescribeMonitoringAgentHostsRequest::getInstanceIds()const
-{
-	return instanceIds_;
-}
-
-void DescribeMonitoringAgentHostsRequest::setInstanceIds(const std::string& instanceIds)
-{
-	instanceIds_ = instanceIds;
-	setParameter("InstanceIds", instanceIds);
-}
-
 std::string DescribeMonitoringAgentHostsRequest::getInstanceRegionId()const
 {
 	return instanceRegionId_;
@@ -93,6 +82,17 @@ void DescribeMonitoringAgentHostsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+bool DescribeMonitoringAgentHostsRequest::getAliyunHost()const
+{
+	return aliyunHost_;
+}
+
+void DescribeMonitoringAgentHostsRequest::setAliyunHost(bool aliyunHost)
+{
+	aliyunHost_ = aliyunHost;
+	setParameter("AliyunHost", aliyunHost ? "true" : "false");
+}
+
 std::string DescribeMonitoringAgentHostsRequest::getKeyWord()const
 {
 	return keyWord_;
@@ -102,5 +102,27 @@ void DescribeMonitoringAgentHostsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
 	setParameter("KeyWord", keyWord);
+}
+
+std::string DescribeMonitoringAgentHostsRequest::getInstanceIds()const
+{
+	return instanceIds_;
+}
+
+void DescribeMonitoringAgentHostsRequest::setInstanceIds(const std::string& instanceIds)
+{
+	instanceIds_ = instanceIds;
+	setParameter("InstanceIds", instanceIds);
+}
+
+std::string DescribeMonitoringAgentHostsRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeMonitoringAgentHostsRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
 }
 

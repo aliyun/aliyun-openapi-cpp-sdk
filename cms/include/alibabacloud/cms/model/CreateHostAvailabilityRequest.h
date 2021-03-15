@@ -46,6 +46,8 @@ namespace AlibabaCloud
 
 				std::string getTaskOptionHttpMethod()const;
 				void setTaskOptionHttpMethod(const std::string& taskOptionHttpMethod);
+				std::string getTaskOptionHttpHeader()const;
+				void setTaskOptionHttpHeader(const std::string& taskOptionHttpHeader);
 				std::vector<AlertConfigEscalationList> getAlertConfigEscalationList()const;
 				void setAlertConfigEscalationList(const std::vector<AlertConfigEscalationList>& alertConfigEscalationList);
 				std::string getTaskName()const;
@@ -74,6 +76,8 @@ namespace AlibabaCloud
 				void setTaskOptionHttpURI(const std::string& taskOptionHttpURI);
 				std::string getTaskScope()const;
 				void setTaskScope(const std::string& taskScope);
+				std::string getTaskOptionHttpPostContent()const;
+				void setTaskOptionHttpPostContent(const std::string& taskOptionHttpPostContent);
 				int getAlertConfigStartTime()const;
 				void setAlertConfigStartTime(int alertConfigStartTime);
 				std::string getAlertConfigWebHook()const;
@@ -81,6 +85,7 @@ namespace AlibabaCloud
 
             private:
 				std::string taskOptionHttpMethod_;
+				std::string taskOptionHttpHeader_;
 				std::vector<AlertConfigEscalationList> alertConfigEscalationList_;
 				std::string taskName_;
 				int alertConfigSilenceTime_;
@@ -95,6 +100,7 @@ namespace AlibabaCloud
 				int alertConfigEndTime_;
 				std::string taskOptionHttpURI_;
 				std::string taskScope_;
+				std::string taskOptionHttpPostContent_;
 				int alertConfigStartTime_;
 				std::string alertConfigWebHook_;
 

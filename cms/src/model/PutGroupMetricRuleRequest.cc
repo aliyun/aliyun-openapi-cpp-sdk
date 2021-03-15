@@ -170,6 +170,17 @@ void PutGroupMetricRuleRequest::setEscalationsWarnThreshold(const std::string& e
 	setParameter("EscalationsWarnThreshold", escalationsWarnThreshold);
 }
 
+std::string PutGroupMetricRuleRequest::getContactGroups()const
+{
+	return contactGroups_;
+}
+
+void PutGroupMetricRuleRequest::setContactGroups(const std::string& contactGroups)
+{
+	contactGroups_ = contactGroups;
+	setParameter("ContactGroups", contactGroups);
+}
+
 std::string PutGroupMetricRuleRequest::getEscalationsCriticalStatistics()const
 {
 	return escalationsCriticalStatistics_;

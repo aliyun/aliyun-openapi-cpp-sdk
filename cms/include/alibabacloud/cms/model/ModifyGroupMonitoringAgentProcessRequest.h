@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				{
 					std::string times;
 					std::string noEffectiveInterval;
+					std::string webhook;
 					std::string silenceTime;
 					std::string threshold;
 					std::string effectiveInterval;

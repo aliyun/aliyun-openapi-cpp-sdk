@@ -25,6 +25,12 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/AddTagsResult.h
 	include/alibabacloud/cms/model/ApplyMetricRuleTemplateRequest.h
 	include/alibabacloud/cms/model/ApplyMetricRuleTemplateResult.h
+	include/alibabacloud/cms/model/CreateCmsCallNumOrderRequest.h
+	include/alibabacloud/cms/model/CreateCmsCallNumOrderResult.h
+	include/alibabacloud/cms/model/CreateCmsOrderRequest.h
+	include/alibabacloud/cms/model/CreateCmsOrderResult.h
+	include/alibabacloud/cms/model/CreateCmsSmspackageOrderRequest.h
+	include/alibabacloud/cms/model/CreateCmsSmspackageOrderResult.h
 	include/alibabacloud/cms/model/CreateDynamicTagGroupRequest.h
 	include/alibabacloud/cms/model/CreateDynamicTagGroupResult.h
 	include/alibabacloud/cms/model/CreateGroupMetricRulesRequest.h
@@ -41,6 +47,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/CreateMonitorAgentProcessResult.h
 	include/alibabacloud/cms/model/CreateMonitorGroupRequest.h
 	include/alibabacloud/cms/model/CreateMonitorGroupResult.h
+	include/alibabacloud/cms/model/CreateMonitorGroupByResourceGroupIdRequest.h
+	include/alibabacloud/cms/model/CreateMonitorGroupByResourceGroupIdResult.h
 	include/alibabacloud/cms/model/CreateMonitorGroupInstancesRequest.h
 	include/alibabacloud/cms/model/CreateMonitorGroupInstancesResult.h
 	include/alibabacloud/cms/model/CreateMonitorGroupNotifyPolicyRequest.h
@@ -69,6 +77,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DeleteGroupMonitoringAgentProcessResult.h
 	include/alibabacloud/cms/model/DeleteHostAvailabilityRequest.h
 	include/alibabacloud/cms/model/DeleteHostAvailabilityResult.h
+	include/alibabacloud/cms/model/DeleteLogMonitorRequest.h
+	include/alibabacloud/cms/model/DeleteLogMonitorResult.h
 	include/alibabacloud/cms/model/DeleteMetricRuleResourcesRequest.h
 	include/alibabacloud/cms/model/DeleteMetricRuleResourcesResult.h
 	include/alibabacloud/cms/model/DeleteMetricRuleTargetsRequest.h
@@ -93,6 +103,12 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DescribeActiveMetricRuleListResult.h
 	include/alibabacloud/cms/model/DescribeAlertHistoryListRequest.h
 	include/alibabacloud/cms/model/DescribeAlertHistoryListResult.h
+	include/alibabacloud/cms/model/DescribeAlertLogCountRequest.h
+	include/alibabacloud/cms/model/DescribeAlertLogCountResult.h
+	include/alibabacloud/cms/model/DescribeAlertLogHistogramRequest.h
+	include/alibabacloud/cms/model/DescribeAlertLogHistogramResult.h
+	include/alibabacloud/cms/model/DescribeAlertLogListRequest.h
+	include/alibabacloud/cms/model/DescribeAlertLogListResult.h
 	include/alibabacloud/cms/model/DescribeAlertingMetricRuleResourcesRequest.h
 	include/alibabacloud/cms/model/DescribeAlertingMetricRuleResourcesResult.h
 	include/alibabacloud/cms/model/DescribeContactGroupListRequest.h
@@ -121,12 +137,14 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DescribeExporterOutputListResult.h
 	include/alibabacloud/cms/model/DescribeExporterRuleListRequest.h
 	include/alibabacloud/cms/model/DescribeExporterRuleListResult.h
-	include/alibabacloud/cms/model/DescribeFolderListRequest.h
-	include/alibabacloud/cms/model/DescribeFolderListResult.h
 	include/alibabacloud/cms/model/DescribeGroupMonitoringAgentProcessRequest.h
 	include/alibabacloud/cms/model/DescribeGroupMonitoringAgentProcessResult.h
 	include/alibabacloud/cms/model/DescribeHostAvailabilityListRequest.h
 	include/alibabacloud/cms/model/DescribeHostAvailabilityListResult.h
+	include/alibabacloud/cms/model/DescribeLogMonitorAttributeRequest.h
+	include/alibabacloud/cms/model/DescribeLogMonitorAttributeResult.h
+	include/alibabacloud/cms/model/DescribeLogMonitorListRequest.h
+	include/alibabacloud/cms/model/DescribeLogMonitorListResult.h
 	include/alibabacloud/cms/model/DescribeMetricDataRequest.h
 	include/alibabacloud/cms/model/DescribeMetricDataResult.h
 	include/alibabacloud/cms/model/DescribeMetricLastRequest.h
@@ -159,6 +177,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DescribeMonitorGroupNotifyPolicyListResult.h
 	include/alibabacloud/cms/model/DescribeMonitorGroupsRequest.h
 	include/alibabacloud/cms/model/DescribeMonitorGroupsResult.h
+	include/alibabacloud/cms/model/DescribeMonitorResourceQuotaAttributeRequest.h
+	include/alibabacloud/cms/model/DescribeMonitorResourceQuotaAttributeResult.h
 	include/alibabacloud/cms/model/DescribeMonitoringAgentAccessKeyRequest.h
 	include/alibabacloud/cms/model/DescribeMonitoringAgentAccessKeyResult.h
 	include/alibabacloud/cms/model/DescribeMonitoringAgentConfigRequest.h
@@ -229,6 +249,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/ModifyGroupMonitoringAgentProcessResult.h
 	include/alibabacloud/cms/model/ModifyHostAvailabilityRequest.h
 	include/alibabacloud/cms/model/ModifyHostAvailabilityResult.h
+	include/alibabacloud/cms/model/ModifyHostInfoRequest.h
+	include/alibabacloud/cms/model/ModifyHostInfoResult.h
 	include/alibabacloud/cms/model/ModifyMetricRuleTemplateRequest.h
 	include/alibabacloud/cms/model/ModifyMetricRuleTemplateResult.h
 	include/alibabacloud/cms/model/ModifyMonitorGroupRequest.h
@@ -237,14 +259,20 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/ModifyMonitorGroupInstancesResult.h
 	include/alibabacloud/cms/model/ModifySiteMonitorRequest.h
 	include/alibabacloud/cms/model/ModifySiteMonitorResult.h
+	include/alibabacloud/cms/model/OpenCmsServiceRequest.h
+	include/alibabacloud/cms/model/OpenCmsServiceResult.h
 	include/alibabacloud/cms/model/PutContactRequest.h
 	include/alibabacloud/cms/model/PutContactResult.h
 	include/alibabacloud/cms/model/PutContactGroupRequest.h
 	include/alibabacloud/cms/model/PutContactGroupResult.h
 	include/alibabacloud/cms/model/PutCustomEventRequest.h
 	include/alibabacloud/cms/model/PutCustomEventResult.h
+	include/alibabacloud/cms/model/PutCustomEventRuleRequest.h
+	include/alibabacloud/cms/model/PutCustomEventRuleResult.h
 	include/alibabacloud/cms/model/PutCustomMetricRequest.h
 	include/alibabacloud/cms/model/PutCustomMetricResult.h
+	include/alibabacloud/cms/model/PutCustomMetricRuleRequest.h
+	include/alibabacloud/cms/model/PutCustomMetricRuleResult.h
 	include/alibabacloud/cms/model/PutEventRuleRequest.h
 	include/alibabacloud/cms/model/PutEventRuleResult.h
 	include/alibabacloud/cms/model/PutEventRuleTargetsRequest.h
@@ -255,6 +283,8 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/PutExporterRuleResult.h
 	include/alibabacloud/cms/model/PutGroupMetricRuleRequest.h
 	include/alibabacloud/cms/model/PutGroupMetricRuleResult.h
+	include/alibabacloud/cms/model/PutLogMonitorRequest.h
+	include/alibabacloud/cms/model/PutLogMonitorResult.h
 	include/alibabacloud/cms/model/PutMetricRuleTargetsRequest.h
 	include/alibabacloud/cms/model/PutMetricRuleTargetsResult.h
 	include/alibabacloud/cms/model/PutMonitorGroupDynamicRuleRequest.h
@@ -278,6 +308,12 @@ set(cms_src
 	src/model/AddTagsResult.cc
 	src/model/ApplyMetricRuleTemplateRequest.cc
 	src/model/ApplyMetricRuleTemplateResult.cc
+	src/model/CreateCmsCallNumOrderRequest.cc
+	src/model/CreateCmsCallNumOrderResult.cc
+	src/model/CreateCmsOrderRequest.cc
+	src/model/CreateCmsOrderResult.cc
+	src/model/CreateCmsSmspackageOrderRequest.cc
+	src/model/CreateCmsSmspackageOrderResult.cc
 	src/model/CreateDynamicTagGroupRequest.cc
 	src/model/CreateDynamicTagGroupResult.cc
 	src/model/CreateGroupMetricRulesRequest.cc
@@ -294,6 +330,8 @@ set(cms_src
 	src/model/CreateMonitorAgentProcessResult.cc
 	src/model/CreateMonitorGroupRequest.cc
 	src/model/CreateMonitorGroupResult.cc
+	src/model/CreateMonitorGroupByResourceGroupIdRequest.cc
+	src/model/CreateMonitorGroupByResourceGroupIdResult.cc
 	src/model/CreateMonitorGroupInstancesRequest.cc
 	src/model/CreateMonitorGroupInstancesResult.cc
 	src/model/CreateMonitorGroupNotifyPolicyRequest.cc
@@ -322,6 +360,8 @@ set(cms_src
 	src/model/DeleteGroupMonitoringAgentProcessResult.cc
 	src/model/DeleteHostAvailabilityRequest.cc
 	src/model/DeleteHostAvailabilityResult.cc
+	src/model/DeleteLogMonitorRequest.cc
+	src/model/DeleteLogMonitorResult.cc
 	src/model/DeleteMetricRuleResourcesRequest.cc
 	src/model/DeleteMetricRuleResourcesResult.cc
 	src/model/DeleteMetricRuleTargetsRequest.cc
@@ -346,6 +386,12 @@ set(cms_src
 	src/model/DescribeActiveMetricRuleListResult.cc
 	src/model/DescribeAlertHistoryListRequest.cc
 	src/model/DescribeAlertHistoryListResult.cc
+	src/model/DescribeAlertLogCountRequest.cc
+	src/model/DescribeAlertLogCountResult.cc
+	src/model/DescribeAlertLogHistogramRequest.cc
+	src/model/DescribeAlertLogHistogramResult.cc
+	src/model/DescribeAlertLogListRequest.cc
+	src/model/DescribeAlertLogListResult.cc
 	src/model/DescribeAlertingMetricRuleResourcesRequest.cc
 	src/model/DescribeAlertingMetricRuleResourcesResult.cc
 	src/model/DescribeContactGroupListRequest.cc
@@ -374,12 +420,14 @@ set(cms_src
 	src/model/DescribeExporterOutputListResult.cc
 	src/model/DescribeExporterRuleListRequest.cc
 	src/model/DescribeExporterRuleListResult.cc
-	src/model/DescribeFolderListRequest.cc
-	src/model/DescribeFolderListResult.cc
 	src/model/DescribeGroupMonitoringAgentProcessRequest.cc
 	src/model/DescribeGroupMonitoringAgentProcessResult.cc
 	src/model/DescribeHostAvailabilityListRequest.cc
 	src/model/DescribeHostAvailabilityListResult.cc
+	src/model/DescribeLogMonitorAttributeRequest.cc
+	src/model/DescribeLogMonitorAttributeResult.cc
+	src/model/DescribeLogMonitorListRequest.cc
+	src/model/DescribeLogMonitorListResult.cc
 	src/model/DescribeMetricDataRequest.cc
 	src/model/DescribeMetricDataResult.cc
 	src/model/DescribeMetricLastRequest.cc
@@ -412,6 +460,8 @@ set(cms_src
 	src/model/DescribeMonitorGroupNotifyPolicyListResult.cc
 	src/model/DescribeMonitorGroupsRequest.cc
 	src/model/DescribeMonitorGroupsResult.cc
+	src/model/DescribeMonitorResourceQuotaAttributeRequest.cc
+	src/model/DescribeMonitorResourceQuotaAttributeResult.cc
 	src/model/DescribeMonitoringAgentAccessKeyRequest.cc
 	src/model/DescribeMonitoringAgentAccessKeyResult.cc
 	src/model/DescribeMonitoringAgentConfigRequest.cc
@@ -482,6 +532,8 @@ set(cms_src
 	src/model/ModifyGroupMonitoringAgentProcessResult.cc
 	src/model/ModifyHostAvailabilityRequest.cc
 	src/model/ModifyHostAvailabilityResult.cc
+	src/model/ModifyHostInfoRequest.cc
+	src/model/ModifyHostInfoResult.cc
 	src/model/ModifyMetricRuleTemplateRequest.cc
 	src/model/ModifyMetricRuleTemplateResult.cc
 	src/model/ModifyMonitorGroupRequest.cc
@@ -490,14 +542,20 @@ set(cms_src
 	src/model/ModifyMonitorGroupInstancesResult.cc
 	src/model/ModifySiteMonitorRequest.cc
 	src/model/ModifySiteMonitorResult.cc
+	src/model/OpenCmsServiceRequest.cc
+	src/model/OpenCmsServiceResult.cc
 	src/model/PutContactRequest.cc
 	src/model/PutContactResult.cc
 	src/model/PutContactGroupRequest.cc
 	src/model/PutContactGroupResult.cc
 	src/model/PutCustomEventRequest.cc
 	src/model/PutCustomEventResult.cc
+	src/model/PutCustomEventRuleRequest.cc
+	src/model/PutCustomEventRuleResult.cc
 	src/model/PutCustomMetricRequest.cc
 	src/model/PutCustomMetricResult.cc
+	src/model/PutCustomMetricRuleRequest.cc
+	src/model/PutCustomMetricRuleResult.cc
 	src/model/PutEventRuleRequest.cc
 	src/model/PutEventRuleResult.cc
 	src/model/PutEventRuleTargetsRequest.cc
@@ -508,6 +566,8 @@ set(cms_src
 	src/model/PutExporterRuleResult.cc
 	src/model/PutGroupMetricRuleRequest.cc
 	src/model/PutGroupMetricRuleResult.cc
+	src/model/PutLogMonitorRequest.cc
+	src/model/PutLogMonitorResult.cc
 	src/model/PutMetricRuleTargetsRequest.cc
 	src/model/PutMetricRuleTargetsResult.cc
 	src/model/PutMonitorGroupDynamicRuleRequest.cc

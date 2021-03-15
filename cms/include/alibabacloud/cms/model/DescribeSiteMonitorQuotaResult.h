@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string siteMonitorVersion;
 					int siteMonitorQuotaTaskUsed;
+					bool secondMonitor;
 					int siteMonitorOperatorQuotaQuota;
 					int siteMonitorTaskQuota;
 					int siteMonitorIdcQuota;

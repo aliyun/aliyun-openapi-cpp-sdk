@@ -27,6 +27,17 @@ PutContactGroupRequest::PutContactGroupRequest() :
 PutContactGroupRequest::~PutContactGroupRequest()
 {}
 
+bool PutContactGroupRequest::getEnableSubscribed()const
+{
+	return enableSubscribed_;
+}
+
+void PutContactGroupRequest::setEnableSubscribed(bool enableSubscribed)
+{
+	enableSubscribed_ = enableSubscribed;
+	setParameter("EnableSubscribed", enableSubscribed ? "true" : "false");
+}
+
 std::string PutContactGroupRequest::getContactGroupName()const
 {
 	return contactGroupName_;

@@ -44,6 +44,11 @@ namespace AlibabaCloud
 					};
 					std::vector<Contact> attachAlertResult;
 				};
+				struct CreateResultListItem
+				{
+					std::string taskId;
+					std::string taskName;
+				};
 
 
 				CreateSiteMonitorResult();
@@ -51,18 +56,18 @@ namespace AlibabaCloud
 				~CreateSiteMonitorResult();
 				std::string getMessage()const;
 				Data getData()const;
+				std::vector<CreateResultListItem> getCreateResultList()const;
 				std::string getCode()const;
 				std::string getSuccess()const;
-				std::string getAlertRule()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				Data data_;
+				std::vector<CreateResultListItem> createResultList_;
 				std::string code_;
 				std::string success_;
-				std::string alertRule_;
 
 			};
 		}

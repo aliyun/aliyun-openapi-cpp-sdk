@@ -32,11 +32,22 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CMS_EXPORT DescribeContactGroupListResult : public ServiceResult
 			{
 			public:
+				struct ContactGroup
+				{
+					std::string describe;
+					std::vector<std::string> contacts;
+					long createTime;
+					long updateTime;
+					bool enabledWeeklyReport;
+					bool enableSubscribed;
+					std::string name;
+				};
 
 
 				DescribeContactGroupListResult();
 				explicit DescribeContactGroupListResult(const std::string &payload);
 				~DescribeContactGroupListResult();
+				std::vector<ContactGroup> getContactGroupList()const;
 				std::vector<std::string> getContactGroups()const;
 				std::string getMessage()const;
 				int getTotal()const;
@@ -46,6 +57,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<ContactGroup> contactGroupList_;
 				std::vector<std::string> contactGroups_;
 				std::string message_;
 				int total_;

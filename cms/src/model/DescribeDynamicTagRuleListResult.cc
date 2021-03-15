@@ -53,14 +53,14 @@ void DescribeDynamicTagRuleListResult::parse(const std::string &payload)
 			tagGroupListObject.matchExpressFilterRelation = valueTagGroupListTagGroup["MatchExpressFilterRelation"].asString();
 		if(!valueTagGroupListTagGroup["Status"].isNull())
 			tagGroupListObject.status = valueTagGroupListTagGroup["Status"].asString();
-		auto allMatchExpressNode = allTagGroupListNode["MatchExpress"]["MatchExpressItem"];
-		for (auto allTagGroupListNodeMatchExpressMatchExpressItem : allMatchExpressNode)
+		auto allMatchExpressNode = valueTagGroupListTagGroup["MatchExpress"]["MatchExpressItem"];
+		for (auto valueTagGroupListTagGroupMatchExpressMatchExpressItem : allMatchExpressNode)
 		{
 			TagGroup::MatchExpressItem matchExpressObject;
-			if(!allTagGroupListNodeMatchExpressMatchExpressItem["TagValueMatchFunction"].isNull())
-				matchExpressObject.tagValueMatchFunction = allTagGroupListNodeMatchExpressMatchExpressItem["TagValueMatchFunction"].asString();
-			if(!allTagGroupListNodeMatchExpressMatchExpressItem["TagValue"].isNull())
-				matchExpressObject.tagValue = allTagGroupListNodeMatchExpressMatchExpressItem["TagValue"].asString();
+			if(!valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValueMatchFunction"].isNull())
+				matchExpressObject.tagValueMatchFunction = valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValueMatchFunction"].asString();
+			if(!valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValue"].isNull())
+				matchExpressObject.tagValue = valueTagGroupListTagGroupMatchExpressMatchExpressItem["TagValue"].asString();
 			tagGroupListObject.matchExpress.push_back(matchExpressObject);
 		}
 		auto allTemplateIdList = value["TemplateIdList"]["TemplateIdList"];

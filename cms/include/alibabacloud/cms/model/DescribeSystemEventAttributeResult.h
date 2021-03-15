@@ -38,7 +38,6 @@ namespace AlibabaCloud
 					std::string instanceName;
 					std::string resourceId;
 					std::string content;
-					long num;
 					std::string product;
 					std::string level;
 					long time;

@@ -47,6 +47,8 @@ void DescribeContactListResult::parse(const std::string &payload)
 			contactsObject.name = valueContactsContact["Name"].asString();
 		if(!valueContactsContact["Desc"].isNull())
 			contactsObject.desc = valueContactsContact["Desc"].asString();
+		if(!valueContactsContact["Lang"].isNull())
+			contactsObject.lang = valueContactsContact["Lang"].asString();
 		if(!valueContactsContact["CreateTime"].isNull())
 			contactsObject.createTime = std::stol(valueContactsContact["CreateTime"].asString());
 		if(!valueContactsContact["UpdateTime"].isNull())
@@ -60,6 +62,18 @@ void DescribeContactListResult::parse(const std::string &payload)
 			contactsObject.channels.aliIM = channelsNode["AliIM"].asString();
 		if(!channelsNode["DingWebHook"].isNull())
 			contactsObject.channels.dingWebHook = channelsNode["DingWebHook"].asString();
+		auto channelsStateNode = value["ChannelsState"];
+		if(!channelsStateNode["SMS"].isNull())
+			contactsObject.channelsState.sMS = channelsStateNode["SMS"].asString();
+		if(!channelsStateNode["Mail"].isNull())
+			contactsObject.channelsState.mail = channelsStateNode["Mail"].asString();
+		if(!channelsStateNode["AliIM"].isNull())
+			contactsObject.channelsState.aliIM = channelsStateNode["AliIM"].asString();
+		if(!channelsStateNode["DingWebHook"].isNull())
+			contactsObject.channelsState.dingWebHook = channelsStateNode["DingWebHook"].asString();
+		auto allContactGroups = value["ContactGroups"]["ContactGroup"];
+		for (auto value : allContactGroups)
+			contactsObject.contactGroups.push_back(value.asString());
 		contacts_.push_back(contactsObject);
 	}
 	if(!value["Success"].isNull())

@@ -35,17 +35,23 @@ namespace AlibabaCloud
 				DescribeContactListRequest();
 				~DescribeContactListRequest();
 
+				std::string getChanelType()const;
+				void setChanelType(const std::string& chanelType);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getContactName()const;
 				void setContactName(const std::string& contactName);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getChanelValue()const;
+				void setChanelValue(const std::string& chanelValue);
 
             private:
+				std::string chanelType_;
 				int pageNumber_;
 				std::string contactName_;
 				int pageSize_;
+				std::string chanelValue_;
 
 			};
 		}

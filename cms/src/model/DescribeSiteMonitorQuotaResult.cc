@@ -50,6 +50,8 @@ void DescribeSiteMonitorQuotaResult::parse(const std::string &payload)
 		data_.siteMonitorQuotaTaskUsed = std::stoi(dataNode["SiteMonitorQuotaTaskUsed"].asString());
 	if(!dataNode["SiteMonitorVersion"].isNull())
 		data_.siteMonitorVersion = dataNode["SiteMonitorVersion"].asString();
+	if(!dataNode["SecondMonitor"].isNull())
+		data_.secondMonitor = dataNode["SecondMonitor"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

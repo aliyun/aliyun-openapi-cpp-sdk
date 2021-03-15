@@ -49,28 +49,6 @@ void DescribeSystemEventHistogramRequest::setSearchKeywords(const std::string& s
 	setParameter("SearchKeywords", searchKeywords);
 }
 
-int DescribeSystemEventHistogramRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeSystemEventHistogramRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
-int DescribeSystemEventHistogramRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeSystemEventHistogramRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string DescribeSystemEventHistogramRequest::getProduct()const
 {
 	return product_;

@@ -41,7 +41,6 @@ namespace AlibabaCloud
 						std::string code;
 						std::string ruleName;
 						bool success;
-						long groupId;
 					};
 					std::vector<Result> alertResults;
 					long groupId;

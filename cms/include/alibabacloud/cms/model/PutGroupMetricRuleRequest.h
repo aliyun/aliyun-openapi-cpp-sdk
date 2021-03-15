@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setPeriod(const std::string& period);
 				std::string getEscalationsWarnThreshold()const;
 				void setEscalationsWarnThreshold(const std::string& escalationsWarnThreshold);
+				std::string getContactGroups()const;
+				void setContactGroups(const std::string& contactGroups);
 				std::string getEscalationsCriticalStatistics()const;
 				void setEscalationsCriticalStatistics(const std::string& escalationsCriticalStatistics);
 				std::string getGroupId()const;
@@ -102,6 +104,7 @@ namespace AlibabaCloud
 				int escalationsWarnTimes_;
 				std::string period_;
 				std::string escalationsWarnThreshold_;
+				std::string contactGroups_;
 				std::string escalationsCriticalStatistics_;
 				std::string groupId_;
 				int escalationsInfoTimes_;

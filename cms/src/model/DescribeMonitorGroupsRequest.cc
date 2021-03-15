@@ -82,6 +82,17 @@ void DescribeMonitorGroupsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeMonitorGroupsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeMonitorGroupsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 int DescribeMonitorGroupsRequest::getPageSize()const
 {
 	return pageSize_;

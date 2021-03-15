@@ -51,8 +51,6 @@ void DescribeSystemEventAttributeResult::parse(const std::string &payload)
 			systemEventsObject.name = valueSystemEventsSystemEvent["Name"].asString();
 		if(!valueSystemEventsSystemEvent["GroupId"].isNull())
 			systemEventsObject.groupId = valueSystemEventsSystemEvent["GroupId"].asString();
-		if(!valueSystemEventsSystemEvent["Num"].isNull())
-			systemEventsObject.num = std::stol(valueSystemEventsSystemEvent["Num"].asString());
 		if(!valueSystemEventsSystemEvent["Level"].isNull())
 			systemEventsObject.level = valueSystemEventsSystemEvent["Level"].asString();
 		if(!valueSystemEventsSystemEvent["Status"].isNull())

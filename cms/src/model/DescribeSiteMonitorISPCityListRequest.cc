@@ -49,3 +49,36 @@ void DescribeSiteMonitorISPCityListRequest::setIsp(const std::string& isp)
 	setParameter("Isp", isp);
 }
 
+bool DescribeSiteMonitorISPCityListRequest::getAPIProbe()const
+{
+	return aPIProbe_;
+}
+
+void DescribeSiteMonitorISPCityListRequest::setAPIProbe(bool aPIProbe)
+{
+	aPIProbe_ = aPIProbe;
+	setParameter("APIProbe", aPIProbe ? "true" : "false");
+}
+
+bool DescribeSiteMonitorISPCityListRequest::getIPV4()const
+{
+	return iPV4_;
+}
+
+void DescribeSiteMonitorISPCityListRequest::setIPV4(bool iPV4)
+{
+	iPV4_ = iPV4;
+	setParameter("IPV4", iPV4 ? "true" : "false");
+}
+
+bool DescribeSiteMonitorISPCityListRequest::getIPV6()const
+{
+	return iPV6_;
+}
+
+void DescribeSiteMonitorISPCityListRequest::setIPV6(bool iPV6)
+{
+	iPV6_ = iPV6;
+	setParameter("IPV6", iPV6 ? "true" : "false");
+}
+

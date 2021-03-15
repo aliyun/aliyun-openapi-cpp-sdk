@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getEventId()const;
 				void setEventId(const std::string& eventId);
-				std::string getLevel()const;
-				void setLevel(const std::string& level);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getEndTime()const;
@@ -52,7 +50,6 @@ namespace AlibabaCloud
 
             private:
 				std::string eventId_;
-				std::string level_;
 				std::string groupId_;
 				std::string endTime_;
 				std::string startTime_;

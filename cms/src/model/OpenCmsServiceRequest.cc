@@ -14,27 +14,16 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cms/model/DescribeFolderListRequest.h>
+#include <alibabacloud/cms/model/OpenCmsServiceRequest.h>
 
-using AlibabaCloud::Cms::Model::DescribeFolderListRequest;
+using AlibabaCloud::Cms::Model::OpenCmsServiceRequest;
 
-DescribeFolderListRequest::DescribeFolderListRequest() :
-	RpcServiceRequest("cms", "2019-01-01", "DescribeFolderList")
+OpenCmsServiceRequest::OpenCmsServiceRequest() :
+	RpcServiceRequest("cms", "2019-01-01", "OpenCmsService")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeFolderListRequest::~DescribeFolderListRequest()
+OpenCmsServiceRequest::~OpenCmsServiceRequest()
 {}
-
-std::string DescribeFolderListRequest::getAppName()const
-{
-	return appName_;
-}
-
-void DescribeFolderListRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setParameter("AppName", appName);
-}
 

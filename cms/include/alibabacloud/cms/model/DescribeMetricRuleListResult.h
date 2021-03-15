@@ -39,21 +39,24 @@ namespace AlibabaCloud
 						struct Info
 						{
 							std::string comparisonOperator;
-							std::string times;
+							int times;
+							std::string preCondition;
 							std::string statistics;
 							std::string threshold;
 						};
 						struct Warn
 						{
 							std::string comparisonOperator;
-							std::string times;
+							int times;
+							std::string preCondition;
 							std::string statistics;
 							std::string threshold;
 						};
 						struct Critical
 						{
 							std::string comparisonOperator;
-							std::string times;
+							int times;
+							std::string preCondition;
 							std::string statistics;
 							std::string threshold;
 						};
@@ -63,7 +66,7 @@ namespace AlibabaCloud
 					};
 					std::string groupName;
 					std::string noEffectiveInterval;
-					std::string silenceTime;
+					int silenceTime;
 					std::string contactGroups;
 					std::string mailSubject;
 					std::string ruleId;

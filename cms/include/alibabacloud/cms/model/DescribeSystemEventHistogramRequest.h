@@ -39,10 +39,6 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getSearchKeywords()const;
 				void setSearchKeywords(const std::string& searchKeywords);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getProduct()const;
 				void setProduct(const std::string& product);
 				std::string getLevel()const;
@@ -61,8 +57,6 @@ namespace AlibabaCloud
             private:
 				std::string startTime_;
 				std::string searchKeywords_;
-				int pageNumber_;
-				int pageSize_;
 				std::string product_;
 				std::string level_;
 				std::string groupId_;

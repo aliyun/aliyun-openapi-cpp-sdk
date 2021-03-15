@@ -38,6 +38,17 @@ void ModifyHostAvailabilityRequest::setTaskOptionHttpMethod(const std::string& t
 	setParameter("TaskOptionHttpMethod", taskOptionHttpMethod);
 }
 
+std::string ModifyHostAvailabilityRequest::getTaskOptionHttpHeader()const
+{
+	return taskOptionHttpHeader_;
+}
+
+void ModifyHostAvailabilityRequest::setTaskOptionHttpHeader(const std::string& taskOptionHttpHeader)
+{
+	taskOptionHttpHeader_ = taskOptionHttpHeader;
+	setParameter("TaskOptionHttpHeader", taskOptionHttpHeader);
+}
+
 std::vector<ModifyHostAvailabilityRequest::AlertConfigEscalationList> ModifyHostAvailabilityRequest::getAlertConfigEscalationList()const
 {
 	return alertConfigEscalationList_;
@@ -200,6 +211,17 @@ void ModifyHostAvailabilityRequest::setTaskScope(const std::string& taskScope)
 {
 	taskScope_ = taskScope;
 	setParameter("TaskScope", taskScope);
+}
+
+std::string ModifyHostAvailabilityRequest::getTaskOptionHttpPostContent()const
+{
+	return taskOptionHttpPostContent_;
+}
+
+void ModifyHostAvailabilityRequest::setTaskOptionHttpPostContent(const std::string& taskOptionHttpPostContent)
+{
+	taskOptionHttpPostContent_ = taskOptionHttpPostContent;
+	setParameter("TaskOptionHttpPostContent", taskOptionHttpPostContent);
 }
 
 int ModifyHostAvailabilityRequest::getAlertConfigStartTime()const

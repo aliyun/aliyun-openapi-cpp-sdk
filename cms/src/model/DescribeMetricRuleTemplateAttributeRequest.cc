@@ -27,17 +27,6 @@ DescribeMetricRuleTemplateAttributeRequest::DescribeMetricRuleTemplateAttributeR
 DescribeMetricRuleTemplateAttributeRequest::~DescribeMetricRuleTemplateAttributeRequest()
 {}
 
-std::string DescribeMetricRuleTemplateAttributeRequest::getName()const
-{
-	return name_;
-}
-
-void DescribeMetricRuleTemplateAttributeRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
-}
-
 std::string DescribeMetricRuleTemplateAttributeRequest::getTemplateId()const
 {
 	return templateId_;
@@ -47,5 +36,16 @@ void DescribeMetricRuleTemplateAttributeRequest::setTemplateId(const std::string
 {
 	templateId_ = templateId;
 	setParameter("TemplateId", templateId);
+}
+
+std::string DescribeMetricRuleTemplateAttributeRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeMetricRuleTemplateAttributeRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 

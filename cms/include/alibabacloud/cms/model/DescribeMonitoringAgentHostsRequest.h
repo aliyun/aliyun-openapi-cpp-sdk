@@ -41,23 +41,29 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
-				std::string getInstanceIds()const;
-				void setInstanceIds(const std::string& instanceIds);
 				std::string getInstanceRegionId()const;
 				void setInstanceRegionId(const std::string& instanceRegionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				bool getAliyunHost()const;
+				void setAliyunHost(bool aliyunHost);
 				std::string getKeyWord()const;
 				void setKeyWord(const std::string& keyWord);
+				std::string getInstanceIds()const;
+				void setInstanceIds(const std::string& instanceIds);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				std::string serialNumbers_;
 				int pageNumber_;
 				std::string hostName_;
-				std::string instanceIds_;
 				std::string instanceRegionId_;
 				int pageSize_;
+				bool aliyunHost_;
 				std::string keyWord_;
+				std::string instanceIds_;
+				std::string status_;
 
 			};
 		}

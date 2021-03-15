@@ -83,6 +83,10 @@ void DescribeMonitoringAgentHostsResult::parse(const std::string &payload)
 		pageTotal_ = std::stoi(value["PageTotal"].asString());
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 
@@ -94,6 +98,16 @@ std::vector<DescribeMonitoringAgentHostsResult::Host> DescribeMonitoringAgentHos
 std::string DescribeMonitoringAgentHostsResult::getMessage()const
 {
 	return message_;
+}
+
+int DescribeMonitoringAgentHostsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribeMonitoringAgentHostsResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 int DescribeMonitoringAgentHostsResult::getPageTotal()const

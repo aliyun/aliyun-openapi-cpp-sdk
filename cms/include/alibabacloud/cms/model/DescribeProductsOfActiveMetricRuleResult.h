@@ -32,12 +32,27 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CMS_EXPORT DescribeProductsOfActiveMetricRuleResult : public ServiceResult
 			{
 			public:
+				struct AllProductInitMetricRule
+				{
+					struct AlertInitConfig
+					{
+						std::string metricName;
+						std::string evaluationCount;
+						std::string period;
+						std::string _namespace;
+						std::string statistics;
+						std::string threshold;
+					};
+					std::vector<AllProductInitMetricRule::AlertInitConfig> alertInitConfigList;
+					std::string product;
+				};
 
 
 				DescribeProductsOfActiveMetricRuleResult();
 				explicit DescribeProductsOfActiveMetricRuleResult(const std::string &payload);
 				~DescribeProductsOfActiveMetricRuleResult();
 				std::string getMessage()const;
+				std::vector<AllProductInitMetricRule> getAllProductInitMetricRuleList()const;
 				std::string getDatapoints()const;
 				int getCode()const;
 				bool getSuccess()const;
@@ -46,6 +61,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::vector<AllProductInitMetricRule> allProductInitMetricRuleList_;
 				std::string datapoints_;
 				int code_;
 				bool success_;

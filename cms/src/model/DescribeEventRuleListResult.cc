@@ -53,12 +53,12 @@ void DescribeEventRuleListResult::parse(const std::string &payload)
 			eventRulesObject.state = valueEventRulesEventRule["State"].asString();
 		if(!valueEventRulesEventRule["Description"].isNull())
 			eventRulesObject.description = valueEventRulesEventRule["Description"].asString();
-		auto allEventPatternNode = allEventRulesNode["EventPattern"]["EventPatternItem"];
-		for (auto allEventRulesNodeEventPatternEventPatternItem : allEventPatternNode)
+		auto allEventPatternNode = valueEventRulesEventRule["EventPattern"]["EventPatternItem"];
+		for (auto valueEventRulesEventRuleEventPatternEventPatternItem : allEventPatternNode)
 		{
 			EventRule::EventPatternItem eventPatternObject;
-			if(!allEventRulesNodeEventPatternEventPatternItem["Product"].isNull())
-				eventPatternObject.product = allEventRulesNodeEventPatternEventPatternItem["Product"].asString();
+			if(!valueEventRulesEventRuleEventPatternEventPatternItem["Product"].isNull())
+				eventPatternObject.product = valueEventRulesEventRuleEventPatternEventPatternItem["Product"].asString();
 			auto allNameList = value["NameList"]["NameList"];
 			for (auto value : allNameList)
 				eventPatternObject.nameList.push_back(value.asString());

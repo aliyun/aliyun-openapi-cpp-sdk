@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string statusDesc;
 					std::string nameDesc;
 					std::string eventType;
+					std::string nameDescEn;
 					std::string product;
 					std::string level;
 					std::string name;

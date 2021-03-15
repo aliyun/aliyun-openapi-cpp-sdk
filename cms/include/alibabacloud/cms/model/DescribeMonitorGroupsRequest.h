@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setType(const std::string& type);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
@@ -72,6 +74,7 @@ namespace AlibabaCloud
 				std::string dynamicTagRuleId_;
 				std::string type_;
 				int pageNumber_;
+				std::string resourceGroupId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
 				std::string keyword_;

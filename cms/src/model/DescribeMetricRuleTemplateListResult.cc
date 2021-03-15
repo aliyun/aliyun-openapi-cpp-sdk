@@ -55,16 +55,16 @@ void DescribeMetricRuleTemplateListResult::parse(const std::string &payload)
 			templatesObject.gmtCreate = std::stol(valueTemplatesTemplate["GmtCreate"].asString());
 		if(!valueTemplatesTemplate["GmtModified"].isNull())
 			templatesObject.gmtModified = std::stol(valueTemplatesTemplate["GmtModified"].asString());
-		auto allApplyHistoriesNode = allTemplatesNode["ApplyHistories"]["ApplyHistory"];
-		for (auto allTemplatesNodeApplyHistoriesApplyHistory : allApplyHistoriesNode)
+		auto allApplyHistoriesNode = valueTemplatesTemplate["ApplyHistories"]["ApplyHistory"];
+		for (auto valueTemplatesTemplateApplyHistoriesApplyHistory : allApplyHistoriesNode)
 		{
 			_Template::ApplyHistory applyHistoriesObject;
-			if(!allTemplatesNodeApplyHistoriesApplyHistory["GroupId"].isNull())
-				applyHistoriesObject.groupId = std::stol(allTemplatesNodeApplyHistoriesApplyHistory["GroupId"].asString());
-			if(!allTemplatesNodeApplyHistoriesApplyHistory["GroupName"].isNull())
-				applyHistoriesObject.groupName = allTemplatesNodeApplyHistoriesApplyHistory["GroupName"].asString();
-			if(!allTemplatesNodeApplyHistoriesApplyHistory["ApplyTime"].isNull())
-				applyHistoriesObject.applyTime = std::stol(allTemplatesNodeApplyHistoriesApplyHistory["ApplyTime"].asString());
+			if(!valueTemplatesTemplateApplyHistoriesApplyHistory["GroupId"].isNull())
+				applyHistoriesObject.groupId = std::stol(valueTemplatesTemplateApplyHistoriesApplyHistory["GroupId"].asString());
+			if(!valueTemplatesTemplateApplyHistoriesApplyHistory["GroupName"].isNull())
+				applyHistoriesObject.groupName = valueTemplatesTemplateApplyHistoriesApplyHistory["GroupName"].asString();
+			if(!valueTemplatesTemplateApplyHistoriesApplyHistory["ApplyTime"].isNull())
+				applyHistoriesObject.applyTime = std::stol(valueTemplatesTemplateApplyHistoriesApplyHistory["ApplyTime"].asString());
 			templatesObject.applyHistories.push_back(applyHistoriesObject);
 		}
 		templates_.push_back(templatesObject);

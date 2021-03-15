@@ -49,6 +49,17 @@ void DescribeAlertingMetricRuleResourcesRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeAlertingMetricRuleResourcesRequest::get_Namespace()const
+{
+	return _namespace_;
+}
+
+void DescribeAlertingMetricRuleResourcesRequest::set_Namespace(const std::string& _namespace)
+{
+	_namespace_ = _namespace;
+	setParameter("_Namespace", _namespace);
+}
+
 int DescribeAlertingMetricRuleResourcesRequest::getPage()const
 {
 	return page_;

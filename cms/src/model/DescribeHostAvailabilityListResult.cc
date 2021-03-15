@@ -64,6 +64,8 @@ void DescribeHostAvailabilityListResult::parse(const std::string &payload)
 			taskListObject.taskOption.telnetOrPingHost = taskOptionNode["TelnetOrPingHost"].asString();
 		if(!taskOptionNode["HttpResponseCharset"].isNull())
 			taskListObject.taskOption.httpResponseCharset = taskOptionNode["HttpResponseCharset"].asString();
+		if(!taskOptionNode["HttpPostContent"].isNull())
+			taskListObject.taskOption.httpPostContent = taskOptionNode["HttpPostContent"].asString();
 		if(!taskOptionNode["HttpKeyword"].isNull())
 			taskListObject.taskOption.httpKeyword = taskOptionNode["HttpKeyword"].asString();
 		if(!taskOptionNode["HttpMethod"].isNull())

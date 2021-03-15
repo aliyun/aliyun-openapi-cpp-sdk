@@ -49,15 +49,15 @@ void DescribeMetricRuleListRequest::setRuleName(const std::string& ruleName)
 	setParameter("RuleName", ruleName);
 }
 
-std::string DescribeMetricRuleListRequest::getPageSize()const
+int DescribeMetricRuleListRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeMetricRuleListRequest::setPageSize(const std::string& pageSize)
+void DescribeMetricRuleListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", pageSize);
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeMetricRuleListRequest::getMetricName()const
@@ -115,15 +115,15 @@ void DescribeMetricRuleListRequest::setAlertState(const std::string& alertState)
 	setParameter("AlertState", alertState);
 }
 
-std::string DescribeMetricRuleListRequest::getPage()const
+int DescribeMetricRuleListRequest::getPage()const
 {
 	return page_;
 }
 
-void DescribeMetricRuleListRequest::setPage(const std::string& page)
+void DescribeMetricRuleListRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", page);
+	setParameter("Page", std::to_string(page));
 }
 
 std::string DescribeMetricRuleListRequest::getDimensions()const

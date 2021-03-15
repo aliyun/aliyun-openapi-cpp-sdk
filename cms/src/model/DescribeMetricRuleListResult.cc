@@ -56,7 +56,7 @@ void DescribeMetricRuleListResult::parse(const std::string &payload)
 		if(!valueAlarmsAlarm["NoEffectiveInterval"].isNull())
 			alarmsObject.noEffectiveInterval = valueAlarmsAlarm["NoEffectiveInterval"].asString();
 		if(!valueAlarmsAlarm["SilenceTime"].isNull())
-			alarmsObject.silenceTime = valueAlarmsAlarm["SilenceTime"].asString();
+			alarmsObject.silenceTime = std::stoi(valueAlarmsAlarm["SilenceTime"].asString());
 		if(!valueAlarmsAlarm["EnableState"].isNull())
 			alarmsObject.enableState = valueAlarmsAlarm["EnableState"].asString() == "true";
 		if(!valueAlarmsAlarm["AlertState"].isNull())
@@ -88,7 +88,9 @@ void DescribeMetricRuleListResult::parse(const std::string &payload)
 		if(!infoNode["Threshold"].isNull())
 			alarmsObject.escalations.info.threshold = infoNode["Threshold"].asString();
 		if(!infoNode["Times"].isNull())
-			alarmsObject.escalations.info.times = infoNode["Times"].asString();
+			alarmsObject.escalations.info.times = std::stoi(infoNode["Times"].asString());
+		if(!infoNode["PreCondition"].isNull())
+			alarmsObject.escalations.info.preCondition = infoNode["PreCondition"].asString();
 		auto warnNode = escalationsNode["Warn"];
 		if(!warnNode["ComparisonOperator"].isNull())
 			alarmsObject.escalations.warn.comparisonOperator = warnNode["ComparisonOperator"].asString();
@@ -97,7 +99,9 @@ void DescribeMetricRuleListResult::parse(const std::string &payload)
 		if(!warnNode["Threshold"].isNull())
 			alarmsObject.escalations.warn.threshold = warnNode["Threshold"].asString();
 		if(!warnNode["Times"].isNull())
-			alarmsObject.escalations.warn.times = warnNode["Times"].asString();
+			alarmsObject.escalations.warn.times = std::stoi(warnNode["Times"].asString());
+		if(!warnNode["PreCondition"].isNull())
+			alarmsObject.escalations.warn.preCondition = warnNode["PreCondition"].asString();
 		auto criticalNode = escalationsNode["Critical"];
 		if(!criticalNode["ComparisonOperator"].isNull())
 			alarmsObject.escalations.critical.comparisonOperator = criticalNode["ComparisonOperator"].asString();
@@ -106,7 +110,9 @@ void DescribeMetricRuleListResult::parse(const std::string &payload)
 		if(!criticalNode["Threshold"].isNull())
 			alarmsObject.escalations.critical.threshold = criticalNode["Threshold"].asString();
 		if(!criticalNode["Times"].isNull())
-			alarmsObject.escalations.critical.times = criticalNode["Times"].asString();
+			alarmsObject.escalations.critical.times = std::stoi(criticalNode["Times"].asString());
+		if(!criticalNode["PreCondition"].isNull())
+			alarmsObject.escalations.critical.preCondition = criticalNode["PreCondition"].asString();
 		alarms_.push_back(alarmsObject);
 	}
 	if(!value["Success"].isNull())

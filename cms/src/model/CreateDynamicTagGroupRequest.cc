@@ -60,17 +60,6 @@ void CreateDynamicTagGroupRequest::setEnableInstallAgent(bool enableInstallAgent
 	setParameter("EnableInstallAgent", enableInstallAgent ? "true" : "false");
 }
 
-std::string CreateDynamicTagGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateDynamicTagGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::vector<CreateDynamicTagGroupRequest::MatchExpress> CreateDynamicTagGroupRequest::getMatchExpress()const
 {
 	return matchExpress_;

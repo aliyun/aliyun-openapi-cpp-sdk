@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				PutContactGroupRequest();
 				~PutContactGroupRequest();
 
+				bool getEnableSubscribed()const;
+				void setEnableSubscribed(bool enableSubscribed);
 				std::string getContactGroupName()const;
 				void setContactGroupName(const std::string& contactGroupName);
 				std::string getDescribe()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setContactNames(const std::vector<std::string>& contactNames);
 
             private:
+				bool enableSubscribed_;
 				std::string contactGroupName_;
 				std::string describe_;
 				std::vector<std::string> contactNames_;

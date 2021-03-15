@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct TaskOption
 					{
+						std::string httpPostContent;
 						std::string telnetOrPingHost;
 						std::string httpResponseCharset;
 						std::string httpKeyword;

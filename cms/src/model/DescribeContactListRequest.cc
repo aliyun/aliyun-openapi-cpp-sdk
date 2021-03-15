@@ -27,6 +27,17 @@ DescribeContactListRequest::DescribeContactListRequest() :
 DescribeContactListRequest::~DescribeContactListRequest()
 {}
 
+std::string DescribeContactListRequest::getChanelType()const
+{
+	return chanelType_;
+}
+
+void DescribeContactListRequest::setChanelType(const std::string& chanelType)
+{
+	chanelType_ = chanelType;
+	setParameter("ChanelType", chanelType);
+}
+
 int DescribeContactListRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -58,5 +69,16 @@ void DescribeContactListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeContactListRequest::getChanelValue()const
+{
+	return chanelValue_;
+}
+
+void DescribeContactListRequest::setChanelValue(const std::string& chanelValue)
+{
+	chanelValue_ = chanelValue;
+	setParameter("ChanelValue", chanelValue);
 }
 

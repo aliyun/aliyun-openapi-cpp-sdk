@@ -47,8 +47,6 @@ namespace AlibabaCloud
 				void setMatchExpressFilterRelation(const std::string& matchExpressFilterRelation);
 				bool getEnableInstallAgent()const;
 				void setEnableInstallAgent(bool enableInstallAgent);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::vector<MatchExpress> getMatchExpress()const;
 				void setMatchExpress(const std::vector<MatchExpress>& matchExpress);
 				std::vector<std::string> getContactGroupList()const;
@@ -62,7 +60,6 @@ namespace AlibabaCloud
 				bool enableSubscribeEvent_;
 				std::string matchExpressFilterRelation_;
 				bool enableInstallAgent_;
-				std::string regionId_;
 				std::vector<MatchExpress> matchExpress_;
 				std::vector<std::string> contactGroupList_;
 				std::vector<std::string> templateIdList_;

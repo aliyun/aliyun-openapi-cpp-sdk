@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				DescribeMetricRuleTemplateAttributeRequest();
 				~DescribeMetricRuleTemplateAttributeRequest();
 
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getTemplateId()const;
 				void setTemplateId(const std::string& templateId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				std::string name_;
 				std::string templateId_;
+				std::string name_;
 
 			};
 		}

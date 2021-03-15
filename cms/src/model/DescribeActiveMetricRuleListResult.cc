@@ -77,6 +77,70 @@ void DescribeActiveMetricRuleListResult::parse(const std::string &payload)
 			datapointsObject.ruleName = valueDatapointsAlarm["RuleName"].asString();
 		datapoints_.push_back(datapointsObject);
 	}
+	auto allAlertListNode = value["AlertList"]["Alert"];
+	for (auto valueAlertListAlert : allAlertListNode)
+	{
+		Alert alertListObject;
+		if(!valueAlertListAlert["RuleId"].isNull())
+			alertListObject.ruleId = valueAlertListAlert["RuleId"].asString();
+		if(!valueAlertListAlert["Namespace"].isNull())
+			alertListObject._namespace = valueAlertListAlert["Namespace"].asString();
+		if(!valueAlertListAlert["MetricName"].isNull())
+			alertListObject.metricName = valueAlertListAlert["MetricName"].asString();
+		if(!valueAlertListAlert["Period"].isNull())
+			alertListObject.period = valueAlertListAlert["Period"].asString();
+		if(!valueAlertListAlert["EffectiveInterval"].isNull())
+			alertListObject.effectiveInterval = valueAlertListAlert["EffectiveInterval"].asString();
+		if(!valueAlertListAlert["NoEffectiveInterval"].isNull())
+			alertListObject.noEffectiveInterval = valueAlertListAlert["NoEffectiveInterval"].asString();
+		if(!valueAlertListAlert["SilenceTime"].isNull())
+			alertListObject.silenceTime = valueAlertListAlert["SilenceTime"].asString();
+		if(!valueAlertListAlert["EnableState"].isNull())
+			alertListObject.enableState = valueAlertListAlert["EnableState"].asString() == "true";
+		if(!valueAlertListAlert["AlertState"].isNull())
+			alertListObject.alertState = valueAlertListAlert["AlertState"].asString();
+		if(!valueAlertListAlert["ContactGroups"].isNull())
+			alertListObject.contactGroups = valueAlertListAlert["ContactGroups"].asString();
+		if(!valueAlertListAlert["Webhook"].isNull())
+			alertListObject.webhook = valueAlertListAlert["Webhook"].asString();
+		if(!valueAlertListAlert["MailSubject"].isNull())
+			alertListObject.mailSubject = valueAlertListAlert["MailSubject"].asString();
+		if(!valueAlertListAlert["RuleName"].isNull())
+			alertListObject.ruleName = valueAlertListAlert["RuleName"].asString();
+		if(!valueAlertListAlert["Resources"].isNull())
+			alertListObject.resources = valueAlertListAlert["Resources"].asString();
+		if(!valueAlertListAlert["Dimensions"].isNull())
+			alertListObject.dimensions = valueAlertListAlert["Dimensions"].asString();
+		auto escalationsNode = value["Escalations"];
+		auto infoNode = escalationsNode["Info"];
+		if(!infoNode["ComparisonOperator"].isNull())
+			alertListObject.escalations.info.comparisonOperator = infoNode["ComparisonOperator"].asString();
+		if(!infoNode["Statistics"].isNull())
+			alertListObject.escalations.info.statistics = infoNode["Statistics"].asString();
+		if(!infoNode["Threshold"].isNull())
+			alertListObject.escalations.info.threshold = infoNode["Threshold"].asString();
+		if(!infoNode["Times"].isNull())
+			alertListObject.escalations.info.times = infoNode["Times"].asString();
+		auto warnNode = escalationsNode["Warn"];
+		if(!warnNode["ComparisonOperator"].isNull())
+			alertListObject.escalations.warn.comparisonOperator = warnNode["ComparisonOperator"].asString();
+		if(!warnNode["Statistics"].isNull())
+			alertListObject.escalations.warn.statistics = warnNode["Statistics"].asString();
+		if(!warnNode["Threshold"].isNull())
+			alertListObject.escalations.warn.threshold = warnNode["Threshold"].asString();
+		if(!warnNode["Times"].isNull())
+			alertListObject.escalations.warn.times = warnNode["Times"].asString();
+		auto criticalNode = escalationsNode["Critical"];
+		if(!criticalNode["ComparisonOperator"].isNull())
+			alertListObject.escalations.critical.comparisonOperator = criticalNode["ComparisonOperator"].asString();
+		if(!criticalNode["Statistics"].isNull())
+			alertListObject.escalations.critical.statistics = criticalNode["Statistics"].asString();
+		if(!criticalNode["Threshold"].isNull())
+			alertListObject.escalations.critical.threshold = criticalNode["Threshold"].asString();
+		if(!criticalNode["Times"].isNull())
+			alertListObject.escalations.critical.times = criticalNode["Times"].asString();
+		alertList_.push_back(alertListObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -89,6 +153,11 @@ void DescribeActiveMetricRuleListResult::parse(const std::string &payload)
 std::string DescribeActiveMetricRuleListResult::getMessage()const
 {
 	return message_;
+}
+
+std::vector<DescribeActiveMetricRuleListResult::Alert> DescribeActiveMetricRuleListResult::getAlertList()const
+{
+	return alertList_;
 }
 
 std::vector<DescribeActiveMetricRuleListResult::Alarm> DescribeActiveMetricRuleListResult::getDatapoints()const

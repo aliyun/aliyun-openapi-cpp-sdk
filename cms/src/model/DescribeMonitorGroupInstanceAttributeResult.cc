@@ -55,14 +55,14 @@ void DescribeMonitorGroupInstanceAttributeResult::parse(const std::string &paylo
 			resourcesObject.category = valueResourcesResource["Category"].asString();
 		if(!valueResourcesResource["Dimension"].isNull())
 			resourcesObject.dimension = valueResourcesResource["Dimension"].asString();
-		auto allTagsNode = allResourcesNode["Tags"]["Tag"];
-		for (auto allResourcesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueResourcesResource["Tags"]["Tag"];
+		for (auto valueResourcesResourceTagsTag : allTagsNode)
 		{
 			Resource::Tag tagsObject;
-			if(!allResourcesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allResourcesNodeTagsTag["Key"].asString();
-			if(!allResourcesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allResourcesNodeTagsTag["Value"].asString();
+			if(!valueResourcesResourceTagsTag["Key"].isNull())
+				tagsObject.key = valueResourcesResourceTagsTag["Key"].asString();
+			if(!valueResourcesResourceTagsTag["Value"].isNull())
+				tagsObject.value = valueResourcesResourceTagsTag["Value"].asString();
 			resourcesObject.tags.push_back(tagsObject);
 		}
 		auto regionNode = value["Region"];

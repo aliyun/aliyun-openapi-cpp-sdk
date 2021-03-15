@@ -39,6 +39,32 @@ void DescribeProductsOfActiveMetricRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allAllProductInitMetricRuleListNode = value["AllProductInitMetricRuleList"]["AllProductInitMetricRule"];
+	for (auto valueAllProductInitMetricRuleListAllProductInitMetricRule : allAllProductInitMetricRuleListNode)
+	{
+		AllProductInitMetricRule allProductInitMetricRuleListObject;
+		if(!valueAllProductInitMetricRuleListAllProductInitMetricRule["Product"].isNull())
+			allProductInitMetricRuleListObject.product = valueAllProductInitMetricRuleListAllProductInitMetricRule["Product"].asString();
+		auto allAlertInitConfigListNode = valueAllProductInitMetricRuleListAllProductInitMetricRule["AlertInitConfigList"]["AlertInitConfig"];
+		for (auto valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig : allAlertInitConfigListNode)
+		{
+			AllProductInitMetricRule::AlertInitConfig alertInitConfigListObject;
+			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Namespace"].isNull())
+				alertInitConfigListObject._namespace = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Namespace"].asString();
+			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["MetricName"].isNull())
+				alertInitConfigListObject.metricName = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["MetricName"].asString();
+			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Statistics"].isNull())
+				alertInitConfigListObject.statistics = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Statistics"].asString();
+			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["EvaluationCount"].isNull())
+				alertInitConfigListObject.evaluationCount = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["EvaluationCount"].asString();
+			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Threshold"].isNull())
+				alertInitConfigListObject.threshold = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Threshold"].asString();
+			if(!valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Period"].isNull())
+				alertInitConfigListObject.period = valueAllProductInitMetricRuleListAllProductInitMetricRuleAlertInitConfigListAlertInitConfig["Period"].asString();
+			allProductInitMetricRuleListObject.alertInitConfigList.push_back(alertInitConfigListObject);
+		}
+		allProductInitMetricRuleList_.push_back(allProductInitMetricRuleListObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -53,6 +79,11 @@ void DescribeProductsOfActiveMetricRuleResult::parse(const std::string &payload)
 std::string DescribeProductsOfActiveMetricRuleResult::getMessage()const
 {
 	return message_;
+}
+
+std::vector<DescribeProductsOfActiveMetricRuleResult::AllProductInitMetricRule> DescribeProductsOfActiveMetricRuleResult::getAllProductInitMetricRuleList()const
+{
+	return allProductInitMetricRuleList_;
 }
 
 std::string DescribeProductsOfActiveMetricRuleResult::getDatapoints()const

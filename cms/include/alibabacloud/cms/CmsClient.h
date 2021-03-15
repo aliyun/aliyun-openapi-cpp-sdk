@@ -26,6 +26,12 @@
 #include "model/AddTagsResult.h"
 #include "model/ApplyMetricRuleTemplateRequest.h"
 #include "model/ApplyMetricRuleTemplateResult.h"
+#include "model/CreateCmsCallNumOrderRequest.h"
+#include "model/CreateCmsCallNumOrderResult.h"
+#include "model/CreateCmsOrderRequest.h"
+#include "model/CreateCmsOrderResult.h"
+#include "model/CreateCmsSmspackageOrderRequest.h"
+#include "model/CreateCmsSmspackageOrderResult.h"
 #include "model/CreateDynamicTagGroupRequest.h"
 #include "model/CreateDynamicTagGroupResult.h"
 #include "model/CreateGroupMetricRulesRequest.h"
@@ -42,6 +48,8 @@
 #include "model/CreateMonitorAgentProcessResult.h"
 #include "model/CreateMonitorGroupRequest.h"
 #include "model/CreateMonitorGroupResult.h"
+#include "model/CreateMonitorGroupByResourceGroupIdRequest.h"
+#include "model/CreateMonitorGroupByResourceGroupIdResult.h"
 #include "model/CreateMonitorGroupInstancesRequest.h"
 #include "model/CreateMonitorGroupInstancesResult.h"
 #include "model/CreateMonitorGroupNotifyPolicyRequest.h"
@@ -70,6 +78,8 @@
 #include "model/DeleteGroupMonitoringAgentProcessResult.h"
 #include "model/DeleteHostAvailabilityRequest.h"
 #include "model/DeleteHostAvailabilityResult.h"
+#include "model/DeleteLogMonitorRequest.h"
+#include "model/DeleteLogMonitorResult.h"
 #include "model/DeleteMetricRuleResourcesRequest.h"
 #include "model/DeleteMetricRuleResourcesResult.h"
 #include "model/DeleteMetricRuleTargetsRequest.h"
@@ -94,6 +104,12 @@
 #include "model/DescribeActiveMetricRuleListResult.h"
 #include "model/DescribeAlertHistoryListRequest.h"
 #include "model/DescribeAlertHistoryListResult.h"
+#include "model/DescribeAlertLogCountRequest.h"
+#include "model/DescribeAlertLogCountResult.h"
+#include "model/DescribeAlertLogHistogramRequest.h"
+#include "model/DescribeAlertLogHistogramResult.h"
+#include "model/DescribeAlertLogListRequest.h"
+#include "model/DescribeAlertLogListResult.h"
 #include "model/DescribeAlertingMetricRuleResourcesRequest.h"
 #include "model/DescribeAlertingMetricRuleResourcesResult.h"
 #include "model/DescribeContactGroupListRequest.h"
@@ -122,12 +138,14 @@
 #include "model/DescribeExporterOutputListResult.h"
 #include "model/DescribeExporterRuleListRequest.h"
 #include "model/DescribeExporterRuleListResult.h"
-#include "model/DescribeFolderListRequest.h"
-#include "model/DescribeFolderListResult.h"
 #include "model/DescribeGroupMonitoringAgentProcessRequest.h"
 #include "model/DescribeGroupMonitoringAgentProcessResult.h"
 #include "model/DescribeHostAvailabilityListRequest.h"
 #include "model/DescribeHostAvailabilityListResult.h"
+#include "model/DescribeLogMonitorAttributeRequest.h"
+#include "model/DescribeLogMonitorAttributeResult.h"
+#include "model/DescribeLogMonitorListRequest.h"
+#include "model/DescribeLogMonitorListResult.h"
 #include "model/DescribeMetricDataRequest.h"
 #include "model/DescribeMetricDataResult.h"
 #include "model/DescribeMetricLastRequest.h"
@@ -160,6 +178,8 @@
 #include "model/DescribeMonitorGroupNotifyPolicyListResult.h"
 #include "model/DescribeMonitorGroupsRequest.h"
 #include "model/DescribeMonitorGroupsResult.h"
+#include "model/DescribeMonitorResourceQuotaAttributeRequest.h"
+#include "model/DescribeMonitorResourceQuotaAttributeResult.h"
 #include "model/DescribeMonitoringAgentAccessKeyRequest.h"
 #include "model/DescribeMonitoringAgentAccessKeyResult.h"
 #include "model/DescribeMonitoringAgentConfigRequest.h"
@@ -230,6 +250,8 @@
 #include "model/ModifyGroupMonitoringAgentProcessResult.h"
 #include "model/ModifyHostAvailabilityRequest.h"
 #include "model/ModifyHostAvailabilityResult.h"
+#include "model/ModifyHostInfoRequest.h"
+#include "model/ModifyHostInfoResult.h"
 #include "model/ModifyMetricRuleTemplateRequest.h"
 #include "model/ModifyMetricRuleTemplateResult.h"
 #include "model/ModifyMonitorGroupRequest.h"
@@ -238,14 +260,20 @@
 #include "model/ModifyMonitorGroupInstancesResult.h"
 #include "model/ModifySiteMonitorRequest.h"
 #include "model/ModifySiteMonitorResult.h"
+#include "model/OpenCmsServiceRequest.h"
+#include "model/OpenCmsServiceResult.h"
 #include "model/PutContactRequest.h"
 #include "model/PutContactResult.h"
 #include "model/PutContactGroupRequest.h"
 #include "model/PutContactGroupResult.h"
 #include "model/PutCustomEventRequest.h"
 #include "model/PutCustomEventResult.h"
+#include "model/PutCustomEventRuleRequest.h"
+#include "model/PutCustomEventRuleResult.h"
 #include "model/PutCustomMetricRequest.h"
 #include "model/PutCustomMetricResult.h"
+#include "model/PutCustomMetricRuleRequest.h"
+#include "model/PutCustomMetricRuleResult.h"
 #include "model/PutEventRuleRequest.h"
 #include "model/PutEventRuleResult.h"
 #include "model/PutEventRuleTargetsRequest.h"
@@ -256,6 +284,8 @@
 #include "model/PutExporterRuleResult.h"
 #include "model/PutGroupMetricRuleRequest.h"
 #include "model/PutGroupMetricRuleResult.h"
+#include "model/PutLogMonitorRequest.h"
+#include "model/PutLogMonitorResult.h"
 #include "model/PutMetricRuleTargetsRequest.h"
 #include "model/PutMetricRuleTargetsResult.h"
 #include "model/PutMonitorGroupDynamicRuleRequest.h"
@@ -287,6 +317,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ApplyMetricRuleTemplateResult> ApplyMetricRuleTemplateOutcome;
 			typedef std::future<ApplyMetricRuleTemplateOutcome> ApplyMetricRuleTemplateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ApplyMetricRuleTemplateRequest&, const ApplyMetricRuleTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyMetricRuleTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateCmsCallNumOrderResult> CreateCmsCallNumOrderOutcome;
+			typedef std::future<CreateCmsCallNumOrderOutcome> CreateCmsCallNumOrderOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::CreateCmsCallNumOrderRequest&, const CreateCmsCallNumOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmsCallNumOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateCmsOrderResult> CreateCmsOrderOutcome;
+			typedef std::future<CreateCmsOrderOutcome> CreateCmsOrderOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::CreateCmsOrderRequest&, const CreateCmsOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmsOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateCmsSmspackageOrderResult> CreateCmsSmspackageOrderOutcome;
+			typedef std::future<CreateCmsSmspackageOrderOutcome> CreateCmsSmspackageOrderOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::CreateCmsSmspackageOrderRequest&, const CreateCmsSmspackageOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmsSmspackageOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateDynamicTagGroupResult> CreateDynamicTagGroupOutcome;
 			typedef std::future<CreateDynamicTagGroupOutcome> CreateDynamicTagGroupOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateDynamicTagGroupRequest&, const CreateDynamicTagGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDynamicTagGroupAsyncHandler;
@@ -311,6 +350,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMonitorGroupResult> CreateMonitorGroupOutcome;
 			typedef std::future<CreateMonitorGroupOutcome> CreateMonitorGroupOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateMonitorGroupRequest&, const CreateMonitorGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMonitorGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateMonitorGroupByResourceGroupIdResult> CreateMonitorGroupByResourceGroupIdOutcome;
+			typedef std::future<CreateMonitorGroupByResourceGroupIdOutcome> CreateMonitorGroupByResourceGroupIdOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::CreateMonitorGroupByResourceGroupIdRequest&, const CreateMonitorGroupByResourceGroupIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMonitorGroupByResourceGroupIdAsyncHandler;
 			typedef Outcome<Error, Model::CreateMonitorGroupInstancesResult> CreateMonitorGroupInstancesOutcome;
 			typedef std::future<CreateMonitorGroupInstancesOutcome> CreateMonitorGroupInstancesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateMonitorGroupInstancesRequest&, const CreateMonitorGroupInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMonitorGroupInstancesAsyncHandler;
@@ -353,6 +395,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteHostAvailabilityResult> DeleteHostAvailabilityOutcome;
 			typedef std::future<DeleteHostAvailabilityOutcome> DeleteHostAvailabilityOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteHostAvailabilityRequest&, const DeleteHostAvailabilityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHostAvailabilityAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLogMonitorResult> DeleteLogMonitorOutcome;
+			typedef std::future<DeleteLogMonitorOutcome> DeleteLogMonitorOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DeleteLogMonitorRequest&, const DeleteLogMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogMonitorAsyncHandler;
 			typedef Outcome<Error, Model::DeleteMetricRuleResourcesResult> DeleteMetricRuleResourcesOutcome;
 			typedef std::future<DeleteMetricRuleResourcesOutcome> DeleteMetricRuleResourcesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteMetricRuleResourcesRequest&, const DeleteMetricRuleResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMetricRuleResourcesAsyncHandler;
@@ -389,6 +434,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAlertHistoryListResult> DescribeAlertHistoryListOutcome;
 			typedef std::future<DescribeAlertHistoryListOutcome> DescribeAlertHistoryListOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeAlertHistoryListRequest&, const DescribeAlertHistoryListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertHistoryListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAlertLogCountResult> DescribeAlertLogCountOutcome;
+			typedef std::future<DescribeAlertLogCountOutcome> DescribeAlertLogCountOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeAlertLogCountRequest&, const DescribeAlertLogCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertLogCountAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAlertLogHistogramResult> DescribeAlertLogHistogramOutcome;
+			typedef std::future<DescribeAlertLogHistogramOutcome> DescribeAlertLogHistogramOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeAlertLogHistogramRequest&, const DescribeAlertLogHistogramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertLogHistogramAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAlertLogListResult> DescribeAlertLogListOutcome;
+			typedef std::future<DescribeAlertLogListOutcome> DescribeAlertLogListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeAlertLogListRequest&, const DescribeAlertLogListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertLogListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAlertingMetricRuleResourcesResult> DescribeAlertingMetricRuleResourcesOutcome;
 			typedef std::future<DescribeAlertingMetricRuleResourcesOutcome> DescribeAlertingMetricRuleResourcesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeAlertingMetricRuleResourcesRequest&, const DescribeAlertingMetricRuleResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertingMetricRuleResourcesAsyncHandler;
@@ -431,15 +485,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeExporterRuleListResult> DescribeExporterRuleListOutcome;
 			typedef std::future<DescribeExporterRuleListOutcome> DescribeExporterRuleListOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeExporterRuleListRequest&, const DescribeExporterRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExporterRuleListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeFolderListResult> DescribeFolderListOutcome;
-			typedef std::future<DescribeFolderListOutcome> DescribeFolderListOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::DescribeFolderListRequest&, const DescribeFolderListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFolderListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGroupMonitoringAgentProcessResult> DescribeGroupMonitoringAgentProcessOutcome;
 			typedef std::future<DescribeGroupMonitoringAgentProcessOutcome> DescribeGroupMonitoringAgentProcessOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeGroupMonitoringAgentProcessRequest&, const DescribeGroupMonitoringAgentProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupMonitoringAgentProcessAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHostAvailabilityListResult> DescribeHostAvailabilityListOutcome;
 			typedef std::future<DescribeHostAvailabilityListOutcome> DescribeHostAvailabilityListOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeHostAvailabilityListRequest&, const DescribeHostAvailabilityListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostAvailabilityListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLogMonitorAttributeResult> DescribeLogMonitorAttributeOutcome;
+			typedef std::future<DescribeLogMonitorAttributeOutcome> DescribeLogMonitorAttributeOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeLogMonitorAttributeRequest&, const DescribeLogMonitorAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogMonitorAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLogMonitorListResult> DescribeLogMonitorListOutcome;
+			typedef std::future<DescribeLogMonitorListOutcome> DescribeLogMonitorListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeLogMonitorListRequest&, const DescribeLogMonitorListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogMonitorListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMetricDataResult> DescribeMetricDataOutcome;
 			typedef std::future<DescribeMetricDataOutcome> DescribeMetricDataOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeMetricDataRequest&, const DescribeMetricDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricDataAsyncHandler;
@@ -488,6 +545,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeMonitorGroupsResult> DescribeMonitorGroupsOutcome;
 			typedef std::future<DescribeMonitorGroupsOutcome> DescribeMonitorGroupsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeMonitorGroupsRequest&, const DescribeMonitorGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorGroupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMonitorResourceQuotaAttributeResult> DescribeMonitorResourceQuotaAttributeOutcome;
+			typedef std::future<DescribeMonitorResourceQuotaAttributeOutcome> DescribeMonitorResourceQuotaAttributeOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeMonitorResourceQuotaAttributeRequest&, const DescribeMonitorResourceQuotaAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorResourceQuotaAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMonitoringAgentAccessKeyResult> DescribeMonitoringAgentAccessKeyOutcome;
 			typedef std::future<DescribeMonitoringAgentAccessKeyOutcome> DescribeMonitoringAgentAccessKeyOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeMonitoringAgentAccessKeyRequest&, const DescribeMonitoringAgentAccessKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitoringAgentAccessKeyAsyncHandler;
@@ -593,6 +653,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyHostAvailabilityResult> ModifyHostAvailabilityOutcome;
 			typedef std::future<ModifyHostAvailabilityOutcome> ModifyHostAvailabilityOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ModifyHostAvailabilityRequest&, const ModifyHostAvailabilityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHostAvailabilityAsyncHandler;
+			typedef Outcome<Error, Model::ModifyHostInfoResult> ModifyHostInfoOutcome;
+			typedef std::future<ModifyHostInfoOutcome> ModifyHostInfoOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::ModifyHostInfoRequest&, const ModifyHostInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHostInfoAsyncHandler;
 			typedef Outcome<Error, Model::ModifyMetricRuleTemplateResult> ModifyMetricRuleTemplateOutcome;
 			typedef std::future<ModifyMetricRuleTemplateOutcome> ModifyMetricRuleTemplateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ModifyMetricRuleTemplateRequest&, const ModifyMetricRuleTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMetricRuleTemplateAsyncHandler;
@@ -605,6 +668,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySiteMonitorResult> ModifySiteMonitorOutcome;
 			typedef std::future<ModifySiteMonitorOutcome> ModifySiteMonitorOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ModifySiteMonitorRequest&, const ModifySiteMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySiteMonitorAsyncHandler;
+			typedef Outcome<Error, Model::OpenCmsServiceResult> OpenCmsServiceOutcome;
+			typedef std::future<OpenCmsServiceOutcome> OpenCmsServiceOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::OpenCmsServiceRequest&, const OpenCmsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenCmsServiceAsyncHandler;
 			typedef Outcome<Error, Model::PutContactResult> PutContactOutcome;
 			typedef std::future<PutContactOutcome> PutContactOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutContactRequest&, const PutContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutContactAsyncHandler;
@@ -614,9 +680,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutCustomEventResult> PutCustomEventOutcome;
 			typedef std::future<PutCustomEventOutcome> PutCustomEventOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutCustomEventRequest&, const PutCustomEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutCustomEventAsyncHandler;
+			typedef Outcome<Error, Model::PutCustomEventRuleResult> PutCustomEventRuleOutcome;
+			typedef std::future<PutCustomEventRuleOutcome> PutCustomEventRuleOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutCustomEventRuleRequest&, const PutCustomEventRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutCustomEventRuleAsyncHandler;
 			typedef Outcome<Error, Model::PutCustomMetricResult> PutCustomMetricOutcome;
 			typedef std::future<PutCustomMetricOutcome> PutCustomMetricOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutCustomMetricRequest&, const PutCustomMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutCustomMetricAsyncHandler;
+			typedef Outcome<Error, Model::PutCustomMetricRuleResult> PutCustomMetricRuleOutcome;
+			typedef std::future<PutCustomMetricRuleOutcome> PutCustomMetricRuleOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutCustomMetricRuleRequest&, const PutCustomMetricRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutCustomMetricRuleAsyncHandler;
 			typedef Outcome<Error, Model::PutEventRuleResult> PutEventRuleOutcome;
 			typedef std::future<PutEventRuleOutcome> PutEventRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutEventRuleRequest&, const PutEventRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutEventRuleAsyncHandler;
@@ -632,6 +704,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutGroupMetricRuleResult> PutGroupMetricRuleOutcome;
 			typedef std::future<PutGroupMetricRuleOutcome> PutGroupMetricRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutGroupMetricRuleRequest&, const PutGroupMetricRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutGroupMetricRuleAsyncHandler;
+			typedef Outcome<Error, Model::PutLogMonitorResult> PutLogMonitorOutcome;
+			typedef std::future<PutLogMonitorOutcome> PutLogMonitorOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutLogMonitorRequest&, const PutLogMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutLogMonitorAsyncHandler;
 			typedef Outcome<Error, Model::PutMetricRuleTargetsResult> PutMetricRuleTargetsOutcome;
 			typedef std::future<PutMetricRuleTargetsOutcome> PutMetricRuleTargetsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutMetricRuleTargetsRequest&, const PutMetricRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutMetricRuleTargetsAsyncHandler;
@@ -667,6 +742,15 @@ namespace AlibabaCloud
 			ApplyMetricRuleTemplateOutcome applyMetricRuleTemplate(const Model::ApplyMetricRuleTemplateRequest &request)const;
 			void applyMetricRuleTemplateAsync(const Model::ApplyMetricRuleTemplateRequest& request, const ApplyMetricRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApplyMetricRuleTemplateOutcomeCallable applyMetricRuleTemplateCallable(const Model::ApplyMetricRuleTemplateRequest& request) const;
+			CreateCmsCallNumOrderOutcome createCmsCallNumOrder(const Model::CreateCmsCallNumOrderRequest &request)const;
+			void createCmsCallNumOrderAsync(const Model::CreateCmsCallNumOrderRequest& request, const CreateCmsCallNumOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCmsCallNumOrderOutcomeCallable createCmsCallNumOrderCallable(const Model::CreateCmsCallNumOrderRequest& request) const;
+			CreateCmsOrderOutcome createCmsOrder(const Model::CreateCmsOrderRequest &request)const;
+			void createCmsOrderAsync(const Model::CreateCmsOrderRequest& request, const CreateCmsOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCmsOrderOutcomeCallable createCmsOrderCallable(const Model::CreateCmsOrderRequest& request) const;
+			CreateCmsSmspackageOrderOutcome createCmsSmspackageOrder(const Model::CreateCmsSmspackageOrderRequest &request)const;
+			void createCmsSmspackageOrderAsync(const Model::CreateCmsSmspackageOrderRequest& request, const CreateCmsSmspackageOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCmsSmspackageOrderOutcomeCallable createCmsSmspackageOrderCallable(const Model::CreateCmsSmspackageOrderRequest& request) const;
 			CreateDynamicTagGroupOutcome createDynamicTagGroup(const Model::CreateDynamicTagGroupRequest &request)const;
 			void createDynamicTagGroupAsync(const Model::CreateDynamicTagGroupRequest& request, const CreateDynamicTagGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDynamicTagGroupOutcomeCallable createDynamicTagGroupCallable(const Model::CreateDynamicTagGroupRequest& request) const;
@@ -691,6 +775,9 @@ namespace AlibabaCloud
 			CreateMonitorGroupOutcome createMonitorGroup(const Model::CreateMonitorGroupRequest &request)const;
 			void createMonitorGroupAsync(const Model::CreateMonitorGroupRequest& request, const CreateMonitorGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMonitorGroupOutcomeCallable createMonitorGroupCallable(const Model::CreateMonitorGroupRequest& request) const;
+			CreateMonitorGroupByResourceGroupIdOutcome createMonitorGroupByResourceGroupId(const Model::CreateMonitorGroupByResourceGroupIdRequest &request)const;
+			void createMonitorGroupByResourceGroupIdAsync(const Model::CreateMonitorGroupByResourceGroupIdRequest& request, const CreateMonitorGroupByResourceGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateMonitorGroupByResourceGroupIdOutcomeCallable createMonitorGroupByResourceGroupIdCallable(const Model::CreateMonitorGroupByResourceGroupIdRequest& request) const;
 			CreateMonitorGroupInstancesOutcome createMonitorGroupInstances(const Model::CreateMonitorGroupInstancesRequest &request)const;
 			void createMonitorGroupInstancesAsync(const Model::CreateMonitorGroupInstancesRequest& request, const CreateMonitorGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMonitorGroupInstancesOutcomeCallable createMonitorGroupInstancesCallable(const Model::CreateMonitorGroupInstancesRequest& request) const;
@@ -733,6 +820,9 @@ namespace AlibabaCloud
 			DeleteHostAvailabilityOutcome deleteHostAvailability(const Model::DeleteHostAvailabilityRequest &request)const;
 			void deleteHostAvailabilityAsync(const Model::DeleteHostAvailabilityRequest& request, const DeleteHostAvailabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteHostAvailabilityOutcomeCallable deleteHostAvailabilityCallable(const Model::DeleteHostAvailabilityRequest& request) const;
+			DeleteLogMonitorOutcome deleteLogMonitor(const Model::DeleteLogMonitorRequest &request)const;
+			void deleteLogMonitorAsync(const Model::DeleteLogMonitorRequest& request, const DeleteLogMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLogMonitorOutcomeCallable deleteLogMonitorCallable(const Model::DeleteLogMonitorRequest& request) const;
 			DeleteMetricRuleResourcesOutcome deleteMetricRuleResources(const Model::DeleteMetricRuleResourcesRequest &request)const;
 			void deleteMetricRuleResourcesAsync(const Model::DeleteMetricRuleResourcesRequest& request, const DeleteMetricRuleResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMetricRuleResourcesOutcomeCallable deleteMetricRuleResourcesCallable(const Model::DeleteMetricRuleResourcesRequest& request) const;
@@ -769,6 +859,15 @@ namespace AlibabaCloud
 			DescribeAlertHistoryListOutcome describeAlertHistoryList(const Model::DescribeAlertHistoryListRequest &request)const;
 			void describeAlertHistoryListAsync(const Model::DescribeAlertHistoryListRequest& request, const DescribeAlertHistoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAlertHistoryListOutcomeCallable describeAlertHistoryListCallable(const Model::DescribeAlertHistoryListRequest& request) const;
+			DescribeAlertLogCountOutcome describeAlertLogCount(const Model::DescribeAlertLogCountRequest &request)const;
+			void describeAlertLogCountAsync(const Model::DescribeAlertLogCountRequest& request, const DescribeAlertLogCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAlertLogCountOutcomeCallable describeAlertLogCountCallable(const Model::DescribeAlertLogCountRequest& request) const;
+			DescribeAlertLogHistogramOutcome describeAlertLogHistogram(const Model::DescribeAlertLogHistogramRequest &request)const;
+			void describeAlertLogHistogramAsync(const Model::DescribeAlertLogHistogramRequest& request, const DescribeAlertLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAlertLogHistogramOutcomeCallable describeAlertLogHistogramCallable(const Model::DescribeAlertLogHistogramRequest& request) const;
+			DescribeAlertLogListOutcome describeAlertLogList(const Model::DescribeAlertLogListRequest &request)const;
+			void describeAlertLogListAsync(const Model::DescribeAlertLogListRequest& request, const DescribeAlertLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAlertLogListOutcomeCallable describeAlertLogListCallable(const Model::DescribeAlertLogListRequest& request) const;
 			DescribeAlertingMetricRuleResourcesOutcome describeAlertingMetricRuleResources(const Model::DescribeAlertingMetricRuleResourcesRequest &request)const;
 			void describeAlertingMetricRuleResourcesAsync(const Model::DescribeAlertingMetricRuleResourcesRequest& request, const DescribeAlertingMetricRuleResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAlertingMetricRuleResourcesOutcomeCallable describeAlertingMetricRuleResourcesCallable(const Model::DescribeAlertingMetricRuleResourcesRequest& request) const;
@@ -811,15 +910,18 @@ namespace AlibabaCloud
 			DescribeExporterRuleListOutcome describeExporterRuleList(const Model::DescribeExporterRuleListRequest &request)const;
 			void describeExporterRuleListAsync(const Model::DescribeExporterRuleListRequest& request, const DescribeExporterRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeExporterRuleListOutcomeCallable describeExporterRuleListCallable(const Model::DescribeExporterRuleListRequest& request) const;
-			DescribeFolderListOutcome describeFolderList(const Model::DescribeFolderListRequest &request)const;
-			void describeFolderListAsync(const Model::DescribeFolderListRequest& request, const DescribeFolderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeFolderListOutcomeCallable describeFolderListCallable(const Model::DescribeFolderListRequest& request) const;
 			DescribeGroupMonitoringAgentProcessOutcome describeGroupMonitoringAgentProcess(const Model::DescribeGroupMonitoringAgentProcessRequest &request)const;
 			void describeGroupMonitoringAgentProcessAsync(const Model::DescribeGroupMonitoringAgentProcessRequest& request, const DescribeGroupMonitoringAgentProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGroupMonitoringAgentProcessOutcomeCallable describeGroupMonitoringAgentProcessCallable(const Model::DescribeGroupMonitoringAgentProcessRequest& request) const;
 			DescribeHostAvailabilityListOutcome describeHostAvailabilityList(const Model::DescribeHostAvailabilityListRequest &request)const;
 			void describeHostAvailabilityListAsync(const Model::DescribeHostAvailabilityListRequest& request, const DescribeHostAvailabilityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHostAvailabilityListOutcomeCallable describeHostAvailabilityListCallable(const Model::DescribeHostAvailabilityListRequest& request) const;
+			DescribeLogMonitorAttributeOutcome describeLogMonitorAttribute(const Model::DescribeLogMonitorAttributeRequest &request)const;
+			void describeLogMonitorAttributeAsync(const Model::DescribeLogMonitorAttributeRequest& request, const DescribeLogMonitorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLogMonitorAttributeOutcomeCallable describeLogMonitorAttributeCallable(const Model::DescribeLogMonitorAttributeRequest& request) const;
+			DescribeLogMonitorListOutcome describeLogMonitorList(const Model::DescribeLogMonitorListRequest &request)const;
+			void describeLogMonitorListAsync(const Model::DescribeLogMonitorListRequest& request, const DescribeLogMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLogMonitorListOutcomeCallable describeLogMonitorListCallable(const Model::DescribeLogMonitorListRequest& request) const;
 			DescribeMetricDataOutcome describeMetricData(const Model::DescribeMetricDataRequest &request)const;
 			void describeMetricDataAsync(const Model::DescribeMetricDataRequest& request, const DescribeMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMetricDataOutcomeCallable describeMetricDataCallable(const Model::DescribeMetricDataRequest& request) const;
@@ -868,6 +970,9 @@ namespace AlibabaCloud
 			DescribeMonitorGroupsOutcome describeMonitorGroups(const Model::DescribeMonitorGroupsRequest &request)const;
 			void describeMonitorGroupsAsync(const Model::DescribeMonitorGroupsRequest& request, const DescribeMonitorGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMonitorGroupsOutcomeCallable describeMonitorGroupsCallable(const Model::DescribeMonitorGroupsRequest& request) const;
+			DescribeMonitorResourceQuotaAttributeOutcome describeMonitorResourceQuotaAttribute(const Model::DescribeMonitorResourceQuotaAttributeRequest &request)const;
+			void describeMonitorResourceQuotaAttributeAsync(const Model::DescribeMonitorResourceQuotaAttributeRequest& request, const DescribeMonitorResourceQuotaAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMonitorResourceQuotaAttributeOutcomeCallable describeMonitorResourceQuotaAttributeCallable(const Model::DescribeMonitorResourceQuotaAttributeRequest& request) const;
 			DescribeMonitoringAgentAccessKeyOutcome describeMonitoringAgentAccessKey(const Model::DescribeMonitoringAgentAccessKeyRequest &request)const;
 			void describeMonitoringAgentAccessKeyAsync(const Model::DescribeMonitoringAgentAccessKeyRequest& request, const DescribeMonitoringAgentAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMonitoringAgentAccessKeyOutcomeCallable describeMonitoringAgentAccessKeyCallable(const Model::DescribeMonitoringAgentAccessKeyRequest& request) const;
@@ -973,6 +1078,9 @@ namespace AlibabaCloud
 			ModifyHostAvailabilityOutcome modifyHostAvailability(const Model::ModifyHostAvailabilityRequest &request)const;
 			void modifyHostAvailabilityAsync(const Model::ModifyHostAvailabilityRequest& request, const ModifyHostAvailabilityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyHostAvailabilityOutcomeCallable modifyHostAvailabilityCallable(const Model::ModifyHostAvailabilityRequest& request) const;
+			ModifyHostInfoOutcome modifyHostInfo(const Model::ModifyHostInfoRequest &request)const;
+			void modifyHostInfoAsync(const Model::ModifyHostInfoRequest& request, const ModifyHostInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyHostInfoOutcomeCallable modifyHostInfoCallable(const Model::ModifyHostInfoRequest& request) const;
 			ModifyMetricRuleTemplateOutcome modifyMetricRuleTemplate(const Model::ModifyMetricRuleTemplateRequest &request)const;
 			void modifyMetricRuleTemplateAsync(const Model::ModifyMetricRuleTemplateRequest& request, const ModifyMetricRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyMetricRuleTemplateOutcomeCallable modifyMetricRuleTemplateCallable(const Model::ModifyMetricRuleTemplateRequest& request) const;
@@ -985,6 +1093,9 @@ namespace AlibabaCloud
 			ModifySiteMonitorOutcome modifySiteMonitor(const Model::ModifySiteMonitorRequest &request)const;
 			void modifySiteMonitorAsync(const Model::ModifySiteMonitorRequest& request, const ModifySiteMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySiteMonitorOutcomeCallable modifySiteMonitorCallable(const Model::ModifySiteMonitorRequest& request) const;
+			OpenCmsServiceOutcome openCmsService(const Model::OpenCmsServiceRequest &request)const;
+			void openCmsServiceAsync(const Model::OpenCmsServiceRequest& request, const OpenCmsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenCmsServiceOutcomeCallable openCmsServiceCallable(const Model::OpenCmsServiceRequest& request) const;
 			PutContactOutcome putContact(const Model::PutContactRequest &request)const;
 			void putContactAsync(const Model::PutContactRequest& request, const PutContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutContactOutcomeCallable putContactCallable(const Model::PutContactRequest& request) const;
@@ -994,9 +1105,15 @@ namespace AlibabaCloud
 			PutCustomEventOutcome putCustomEvent(const Model::PutCustomEventRequest &request)const;
 			void putCustomEventAsync(const Model::PutCustomEventRequest& request, const PutCustomEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutCustomEventOutcomeCallable putCustomEventCallable(const Model::PutCustomEventRequest& request) const;
+			PutCustomEventRuleOutcome putCustomEventRule(const Model::PutCustomEventRuleRequest &request)const;
+			void putCustomEventRuleAsync(const Model::PutCustomEventRuleRequest& request, const PutCustomEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutCustomEventRuleOutcomeCallable putCustomEventRuleCallable(const Model::PutCustomEventRuleRequest& request) const;
 			PutCustomMetricOutcome putCustomMetric(const Model::PutCustomMetricRequest &request)const;
 			void putCustomMetricAsync(const Model::PutCustomMetricRequest& request, const PutCustomMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutCustomMetricOutcomeCallable putCustomMetricCallable(const Model::PutCustomMetricRequest& request) const;
+			PutCustomMetricRuleOutcome putCustomMetricRule(const Model::PutCustomMetricRuleRequest &request)const;
+			void putCustomMetricRuleAsync(const Model::PutCustomMetricRuleRequest& request, const PutCustomMetricRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutCustomMetricRuleOutcomeCallable putCustomMetricRuleCallable(const Model::PutCustomMetricRuleRequest& request) const;
 			PutEventRuleOutcome putEventRule(const Model::PutEventRuleRequest &request)const;
 			void putEventRuleAsync(const Model::PutEventRuleRequest& request, const PutEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutEventRuleOutcomeCallable putEventRuleCallable(const Model::PutEventRuleRequest& request) const;
@@ -1012,6 +1129,9 @@ namespace AlibabaCloud
 			PutGroupMetricRuleOutcome putGroupMetricRule(const Model::PutGroupMetricRuleRequest &request)const;
 			void putGroupMetricRuleAsync(const Model::PutGroupMetricRuleRequest& request, const PutGroupMetricRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutGroupMetricRuleOutcomeCallable putGroupMetricRuleCallable(const Model::PutGroupMetricRuleRequest& request) const;
+			PutLogMonitorOutcome putLogMonitor(const Model::PutLogMonitorRequest &request)const;
+			void putLogMonitorAsync(const Model::PutLogMonitorRequest& request, const PutLogMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutLogMonitorOutcomeCallable putLogMonitorCallable(const Model::PutLogMonitorRequest& request) const;
 			PutMetricRuleTargetsOutcome putMetricRuleTargets(const Model::PutMetricRuleTargetsRequest &request)const;
 			void putMetricRuleTargetsAsync(const Model::PutMetricRuleTargetsRequest& request, const PutMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutMetricRuleTargetsOutcomeCallable putMetricRuleTargetsCallable(const Model::PutMetricRuleTargetsRequest& request) const;

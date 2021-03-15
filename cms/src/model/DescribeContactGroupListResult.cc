@@ -39,6 +39,27 @@ void DescribeContactGroupListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allContactGroupListNode = value["ContactGroupList"]["ContactGroup"];
+	for (auto valueContactGroupListContactGroup : allContactGroupListNode)
+	{
+		ContactGroup contactGroupListObject;
+		if(!valueContactGroupListContactGroup["Name"].isNull())
+			contactGroupListObject.name = valueContactGroupListContactGroup["Name"].asString();
+		if(!valueContactGroupListContactGroup["Describe"].isNull())
+			contactGroupListObject.describe = valueContactGroupListContactGroup["Describe"].asString();
+		if(!valueContactGroupListContactGroup["CreateTime"].isNull())
+			contactGroupListObject.createTime = std::stol(valueContactGroupListContactGroup["CreateTime"].asString());
+		if(!valueContactGroupListContactGroup["UpdateTime"].isNull())
+			contactGroupListObject.updateTime = std::stol(valueContactGroupListContactGroup["UpdateTime"].asString());
+		if(!valueContactGroupListContactGroup["EnabledWeeklyReport"].isNull())
+			contactGroupListObject.enabledWeeklyReport = valueContactGroupListContactGroup["EnabledWeeklyReport"].asString() == "true";
+		if(!valueContactGroupListContactGroup["EnableSubscribed"].isNull())
+			contactGroupListObject.enableSubscribed = valueContactGroupListContactGroup["EnableSubscribed"].asString() == "true";
+		auto allContacts = value["Contacts"]["Contact"];
+		for (auto value : allContacts)
+			contactGroupListObject.contacts.push_back(value.asString());
+		contactGroupList_.push_back(contactGroupListObject);
+	}
 	auto allContactGroups = value["ContactGroups"]["ContactGroup"];
 	for (const auto &item : allContactGroups)
 		contactGroups_.push_back(item.asString());
@@ -51,6 +72,11 @@ void DescribeContactGroupListResult::parse(const std::string &payload)
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
 
+}
+
+std::vector<DescribeContactGroupListResult::ContactGroup> DescribeContactGroupListResult::getContactGroupList()const
+{
+	return contactGroupList_;
 }
 
 std::vector<std::string> DescribeContactGroupListResult::getContactGroups()const

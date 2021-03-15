@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string get_Namespace()const;
+				void set_Namespace(const std::string& _namespace);
 				int getPage()const;
 				void setPage(int page);
 				std::string getRuleId()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string groupId_;
 				int pageSize_;
+				std::string _namespace_;
 				int page_;
 				std::string ruleId_;
 

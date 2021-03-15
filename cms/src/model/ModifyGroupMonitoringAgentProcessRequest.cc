@@ -40,6 +40,7 @@ void ModifyGroupMonitoringAgentProcessRequest::setAlertConfig(const std::vector<
 		std::string alertConfigObjStr = "AlertConfig." + std::to_string(dep1 + 1);
 		setParameter(alertConfigObjStr + ".Times", alertConfigObj.times);
 		setParameter(alertConfigObjStr + ".NoEffectiveInterval", alertConfigObj.noEffectiveInterval);
+		setParameter(alertConfigObjStr + ".Webhook", alertConfigObj.webhook);
 		setParameter(alertConfigObjStr + ".SilenceTime", alertConfigObj.silenceTime);
 		setParameter(alertConfigObjStr + ".Threshold", alertConfigObj.threshold);
 		setParameter(alertConfigObjStr + ".EffectiveInterval", alertConfigObj.effectiveInterval);

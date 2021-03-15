@@ -45,14 +45,14 @@ void CreateMonitorGroupInstancesRequest::setInstances(const std::vector<Instance
 	}
 }
 
-long CreateMonitorGroupInstancesRequest::getGroupId()const
+std::string CreateMonitorGroupInstancesRequest::getGroupId()const
 {
 	return groupId_;
 }
 
-void CreateMonitorGroupInstancesRequest::setGroupId(long groupId)
+void CreateMonitorGroupInstancesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", groupId);
 }
 
