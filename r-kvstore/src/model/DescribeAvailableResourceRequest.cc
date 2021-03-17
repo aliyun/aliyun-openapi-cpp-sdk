@@ -49,6 +49,17 @@ void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeAvailableResourceRequest::getProductType()const
+{
+	return productType_;
+}
+
+void DescribeAvailableResourceRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setParameter("ProductType", productType);
+}
+
 std::string DescribeAvailableResourceRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

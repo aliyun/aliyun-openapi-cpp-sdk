@@ -71,6 +71,17 @@ void EnableAdditionalBandwidthRequest::setSecurityToken(const std::string& secur
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string EnableAdditionalBandwidthRequest::getSourceBiz()const
+{
+	return sourceBiz_;
+}
+
+void EnableAdditionalBandwidthRequest::setSourceBiz(const std::string& sourceBiz)
+{
+	sourceBiz_ = sourceBiz;
+	setParameter("SourceBiz", sourceBiz);
+}
+
 std::string EnableAdditionalBandwidthRequest::getNodeId()const
 {
 	return nodeId_;
@@ -91,6 +102,17 @@ void EnableAdditionalBandwidthRequest::setOrderTimeLength(const std::string& ord
 {
 	orderTimeLength_ = orderTimeLength;
 	setParameter("OrderTimeLength", orderTimeLength);
+}
+
+std::string EnableAdditionalBandwidthRequest::getProduct()const
+{
+	return product_;
+}
+
+void EnableAdditionalBandwidthRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
 }
 
 bool EnableAdditionalBandwidthRequest::getAutoPay()const
@@ -157,5 +179,16 @@ void EnableAdditionalBandwidthRequest::setInstanceId(const std::string& instance
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string EnableAdditionalBandwidthRequest::getCategory()const
+{
+	return category_;
+}
+
+void EnableAdditionalBandwidthRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 

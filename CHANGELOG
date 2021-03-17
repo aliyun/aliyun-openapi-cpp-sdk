@@ -1,3 +1,7 @@
+2021-03-17 Version: 1.36.639
+- EnableAdditionalBandwidth API add SourceBiz.
+- DescribeAvailableResource add ProductType to support buy OnECS instance.
+
 2021-03-17 Version: 1.36.638
 - Add group alarm rule resource extension parameter.
 

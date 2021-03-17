@@ -71,6 +71,17 @@ void DescribeZonesRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+bool DescribeZonesRequest::getAll()const
+{
+	return all_;
+}
+
+void DescribeZonesRequest::setAll(bool all)
+{
+	all_ = all;
+	setParameter("All", all ? "true" : "false");
+}
+
 std::string DescribeZonesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

@@ -43,10 +43,14 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getSourceBiz()const;
+				void setSourceBiz(const std::string& sourceBiz);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
 				std::string getOrderTimeLength()const;
 				void setOrderTimeLength(const std::string& orderTimeLength);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
@@ -59,20 +63,25 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
 				long resourceOwnerId_;
 				std::string couponNo_;
 				std::string accessKeyId_;
 				std::string securityToken_;
+				std::string sourceBiz_;
 				std::string nodeId_;
 				std::string orderTimeLength_;
+				std::string product_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string bandwidth_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string instanceId_;
+				std::string category_;
 
 			};
 		}
