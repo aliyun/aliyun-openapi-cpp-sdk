@@ -83,6 +83,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/GetMergeRequestDetailResult.h
 	include/alibabacloud/codeup/model/GetMergeRequestSettingRequest.h
 	include/alibabacloud/codeup/model/GetMergeRequestSettingResult.h
+	include/alibabacloud/codeup/model/GetOrganizationSecurityCenterStatusRequest.h
+	include/alibabacloud/codeup/model/GetOrganizationSecurityCenterStatusResult.h
 	include/alibabacloud/codeup/model/GetProjectMemberRequest.h
 	include/alibabacloud/codeup/model/GetProjectMemberResult.h
 	include/alibabacloud/codeup/model/GetRepositoryInfoRequest.h
@@ -103,6 +105,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/ListMergeRequestCommentsResult.h
 	include/alibabacloud/codeup/model/ListMergeRequestsRequest.h
 	include/alibabacloud/codeup/model/ListMergeRequestsResult.h
+	include/alibabacloud/codeup/model/ListOrganizationSecurityScoresRequest.h
+	include/alibabacloud/codeup/model/ListOrganizationSecurityScoresResult.h
 	include/alibabacloud/codeup/model/ListOrganizationsRequest.h
 	include/alibabacloud/codeup/model/ListOrganizationsResult.h
 	include/alibabacloud/codeup/model/ListRepositoriesRequest.h
@@ -200,6 +204,8 @@ set(codeup_src
 	src/model/GetMergeRequestDetailResult.cc
 	src/model/GetMergeRequestSettingRequest.cc
 	src/model/GetMergeRequestSettingResult.cc
+	src/model/GetOrganizationSecurityCenterStatusRequest.cc
+	src/model/GetOrganizationSecurityCenterStatusResult.cc
 	src/model/GetProjectMemberRequest.cc
 	src/model/GetProjectMemberResult.cc
 	src/model/GetRepositoryInfoRequest.cc
@@ -220,6 +226,8 @@ set(codeup_src
 	src/model/ListMergeRequestCommentsResult.cc
 	src/model/ListMergeRequestsRequest.cc
 	src/model/ListMergeRequestsResult.cc
+	src/model/ListOrganizationSecurityScoresRequest.cc
+	src/model/ListOrganizationSecurityScoresResult.cc
 	src/model/ListOrganizationsRequest.cc
 	src/model/ListOrganizationsResult.cc
 	src/model/ListRepositoriesRequest.cc

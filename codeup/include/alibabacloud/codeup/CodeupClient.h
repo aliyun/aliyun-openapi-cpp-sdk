@@ -84,6 +84,8 @@
 #include "model/GetMergeRequestDetailResult.h"
 #include "model/GetMergeRequestSettingRequest.h"
 #include "model/GetMergeRequestSettingResult.h"
+#include "model/GetOrganizationSecurityCenterStatusRequest.h"
+#include "model/GetOrganizationSecurityCenterStatusResult.h"
 #include "model/GetProjectMemberRequest.h"
 #include "model/GetProjectMemberResult.h"
 #include "model/GetRepositoryInfoRequest.h"
@@ -104,6 +106,8 @@
 #include "model/ListMergeRequestCommentsResult.h"
 #include "model/ListMergeRequestsRequest.h"
 #include "model/ListMergeRequestsResult.h"
+#include "model/ListOrganizationSecurityScoresRequest.h"
+#include "model/ListOrganizationSecurityScoresResult.h"
 #include "model/ListOrganizationsRequest.h"
 #include "model/ListOrganizationsResult.h"
 #include "model/ListRepositoriesRequest.h"
@@ -238,6 +242,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMergeRequestSettingResult> GetMergeRequestSettingOutcome;
 			typedef std::future<GetMergeRequestSettingOutcome> GetMergeRequestSettingOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetMergeRequestSettingRequest&, const GetMergeRequestSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMergeRequestSettingAsyncHandler;
+			typedef Outcome<Error, Model::GetOrganizationSecurityCenterStatusResult> GetOrganizationSecurityCenterStatusOutcome;
+			typedef std::future<GetOrganizationSecurityCenterStatusOutcome> GetOrganizationSecurityCenterStatusOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetOrganizationSecurityCenterStatusRequest&, const GetOrganizationSecurityCenterStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOrganizationSecurityCenterStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetProjectMemberResult> GetProjectMemberOutcome;
 			typedef std::future<GetProjectMemberOutcome> GetProjectMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetProjectMemberRequest&, const GetProjectMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectMemberAsyncHandler;
@@ -268,6 +275,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListMergeRequestsResult> ListMergeRequestsOutcome;
 			typedef std::future<ListMergeRequestsOutcome> ListMergeRequestsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListMergeRequestsRequest&, const ListMergeRequestsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMergeRequestsAsyncHandler;
+			typedef Outcome<Error, Model::ListOrganizationSecurityScoresResult> ListOrganizationSecurityScoresOutcome;
+			typedef std::future<ListOrganizationSecurityScoresOutcome> ListOrganizationSecurityScoresOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::ListOrganizationSecurityScoresRequest&, const ListOrganizationSecurityScoresOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationSecurityScoresAsyncHandler;
 			typedef Outcome<Error, Model::ListOrganizationsResult> ListOrganizationsOutcome;
 			typedef std::future<ListOrganizationsOutcome> ListOrganizationsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListOrganizationsRequest&, const ListOrganizationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationsAsyncHandler;
@@ -414,6 +424,9 @@ namespace AlibabaCloud
 			GetMergeRequestSettingOutcome getMergeRequestSetting(const Model::GetMergeRequestSettingRequest &request)const;
 			void getMergeRequestSettingAsync(const Model::GetMergeRequestSettingRequest& request, const GetMergeRequestSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMergeRequestSettingOutcomeCallable getMergeRequestSettingCallable(const Model::GetMergeRequestSettingRequest& request) const;
+			GetOrganizationSecurityCenterStatusOutcome getOrganizationSecurityCenterStatus(const Model::GetOrganizationSecurityCenterStatusRequest &request)const;
+			void getOrganizationSecurityCenterStatusAsync(const Model::GetOrganizationSecurityCenterStatusRequest& request, const GetOrganizationSecurityCenterStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOrganizationSecurityCenterStatusOutcomeCallable getOrganizationSecurityCenterStatusCallable(const Model::GetOrganizationSecurityCenterStatusRequest& request) const;
 			GetProjectMemberOutcome getProjectMember(const Model::GetProjectMemberRequest &request)const;
 			void getProjectMemberAsync(const Model::GetProjectMemberRequest& request, const GetProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProjectMemberOutcomeCallable getProjectMemberCallable(const Model::GetProjectMemberRequest& request) const;
@@ -444,6 +457,9 @@ namespace AlibabaCloud
 			ListMergeRequestsOutcome listMergeRequests(const Model::ListMergeRequestsRequest &request)const;
 			void listMergeRequestsAsync(const Model::ListMergeRequestsRequest& request, const ListMergeRequestsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMergeRequestsOutcomeCallable listMergeRequestsCallable(const Model::ListMergeRequestsRequest& request) const;
+			ListOrganizationSecurityScoresOutcome listOrganizationSecurityScores(const Model::ListOrganizationSecurityScoresRequest &request)const;
+			void listOrganizationSecurityScoresAsync(const Model::ListOrganizationSecurityScoresRequest& request, const ListOrganizationSecurityScoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListOrganizationSecurityScoresOutcomeCallable listOrganizationSecurityScoresCallable(const Model::ListOrganizationSecurityScoresRequest& request) const;
 			ListOrganizationsOutcome listOrganizations(const Model::ListOrganizationsRequest &request)const;
 			void listOrganizationsAsync(const Model::ListOrganizationsRequest& request, const ListOrganizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOrganizationsOutcomeCallable listOrganizationsCallable(const Model::ListOrganizationsRequest& request) const;

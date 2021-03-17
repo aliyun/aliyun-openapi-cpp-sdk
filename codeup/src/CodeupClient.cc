@@ -1167,6 +1167,42 @@ CodeupClient::GetMergeRequestSettingOutcomeCallable CodeupClient::getMergeReques
 	return task->get_future();
 }
 
+CodeupClient::GetOrganizationSecurityCenterStatusOutcome CodeupClient::getOrganizationSecurityCenterStatus(const GetOrganizationSecurityCenterStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOrganizationSecurityCenterStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOrganizationSecurityCenterStatusOutcome(GetOrganizationSecurityCenterStatusResult(outcome.result()));
+	else
+		return GetOrganizationSecurityCenterStatusOutcome(outcome.error());
+}
+
+void CodeupClient::getOrganizationSecurityCenterStatusAsync(const GetOrganizationSecurityCenterStatusRequest& request, const GetOrganizationSecurityCenterStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOrganizationSecurityCenterStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetOrganizationSecurityCenterStatusOutcomeCallable CodeupClient::getOrganizationSecurityCenterStatusCallable(const GetOrganizationSecurityCenterStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOrganizationSecurityCenterStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getOrganizationSecurityCenterStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::GetProjectMemberOutcome CodeupClient::getProjectMember(const GetProjectMemberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1521,6 +1557,42 @@ CodeupClient::ListMergeRequestsOutcomeCallable CodeupClient::listMergeRequestsCa
 			[this, request]()
 			{
 			return this->listMergeRequests(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListOrganizationSecurityScoresOutcome CodeupClient::listOrganizationSecurityScores(const ListOrganizationSecurityScoresRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOrganizationSecurityScoresOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOrganizationSecurityScoresOutcome(ListOrganizationSecurityScoresResult(outcome.result()));
+	else
+		return ListOrganizationSecurityScoresOutcome(outcome.error());
+}
+
+void CodeupClient::listOrganizationSecurityScoresAsync(const ListOrganizationSecurityScoresRequest& request, const ListOrganizationSecurityScoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOrganizationSecurityScores(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListOrganizationSecurityScoresOutcomeCallable CodeupClient::listOrganizationSecurityScoresCallable(const ListOrganizationSecurityScoresRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOrganizationSecurityScoresOutcome()>>(
+			[this, request]()
+			{
+			return this->listOrganizationSecurityScores(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
