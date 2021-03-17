@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 				int getEscalationsInfoTimes()const;
 				void setEscalationsInfoTimes(int escalationsInfoTimes);
+				std::string getExtraDimensionJson()const;
+				void setExtraDimensionJson(const std::string& extraDimensionJson);
 				int getEscalationsCriticalTimes()const;
 				void setEscalationsCriticalTimes(int escalationsCriticalTimes);
 				std::string getEscalationsWarnStatistics()const;
@@ -108,6 +110,7 @@ namespace AlibabaCloud
 				std::string escalationsCriticalStatistics_;
 				std::string groupId_;
 				int escalationsInfoTimes_;
+				std::string extraDimensionJson_;
 				int escalationsCriticalTimes_;
 				std::string escalationsWarnStatistics_;
 				std::string escalationsInfoThreshold_;

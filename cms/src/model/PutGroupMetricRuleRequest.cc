@@ -214,6 +214,17 @@ void PutGroupMetricRuleRequest::setEscalationsInfoTimes(int escalationsInfoTimes
 	setParameter("EscalationsInfoTimes", std::to_string(escalationsInfoTimes));
 }
 
+std::string PutGroupMetricRuleRequest::getExtraDimensionJson()const
+{
+	return extraDimensionJson_;
+}
+
+void PutGroupMetricRuleRequest::setExtraDimensionJson(const std::string& extraDimensionJson)
+{
+	extraDimensionJson_ = extraDimensionJson;
+	setParameter("ExtraDimensionJson", extraDimensionJson);
+}
+
 int PutGroupMetricRuleRequest::getEscalationsCriticalTimes()const
 {
 	return escalationsCriticalTimes_;
