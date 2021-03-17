@@ -27,6 +27,28 @@ MakeSuperResolutionImageRequest::MakeSuperResolutionImageRequest() :
 MakeSuperResolutionImageRequest::~MakeSuperResolutionImageRequest()
 {}
 
+long MakeSuperResolutionImageRequest::getUpscaleFactor()const
+{
+	return upscaleFactor_;
+}
+
+void MakeSuperResolutionImageRequest::setUpscaleFactor(long upscaleFactor)
+{
+	upscaleFactor_ = upscaleFactor;
+	setBodyParameter("UpscaleFactor", std::to_string(upscaleFactor));
+}
+
+std::string MakeSuperResolutionImageRequest::getMode()const
+{
+	return mode_;
+}
+
+void MakeSuperResolutionImageRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setBodyParameter("Mode", mode);
+}
+
 std::string MakeSuperResolutionImageRequest::getUrl()const
 {
 	return url_;

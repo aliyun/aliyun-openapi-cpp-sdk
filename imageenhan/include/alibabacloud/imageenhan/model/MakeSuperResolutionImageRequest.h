@@ -35,10 +35,16 @@ namespace AlibabaCloud
 				MakeSuperResolutionImageRequest();
 				~MakeSuperResolutionImageRequest();
 
+				long getUpscaleFactor()const;
+				void setUpscaleFactor(long upscaleFactor);
+				std::string getMode()const;
+				void setMode(const std::string& mode);
 				std::string getUrl()const;
 				void setUrl(const std::string& url);
 
             private:
+				long upscaleFactor_;
+				std::string mode_;
 				std::string url_;
 
 			};
