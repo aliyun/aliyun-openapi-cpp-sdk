@@ -31,12 +31,16 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CheckDataConsistencyResult.h
 	include/alibabacloud/arms/model/CheckServiceLinkedRoleForDeletingRequest.h
 	include/alibabacloud/arms/model/CheckServiceLinkedRoleForDeletingResult.h
+	include/alibabacloud/arms/model/CheckServiceStatusRequest.h
+	include/alibabacloud/arms/model/CheckServiceStatusResult.h
 	include/alibabacloud/arms/model/ConfigAppRequest.h
 	include/alibabacloud/arms/model/ConfigAppResult.h
 	include/alibabacloud/arms/model/CreateAlertContactRequest.h
 	include/alibabacloud/arms/model/CreateAlertContactResult.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupRequest.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupResult.h
+	include/alibabacloud/arms/model/CreateDispatchRuleRequest.h
+	include/alibabacloud/arms/model/CreateDispatchRuleResult.h
 	include/alibabacloud/arms/model/CreateRetcodeAppRequest.h
 	include/alibabacloud/arms/model/CreateRetcodeAppResult.h
 	include/alibabacloud/arms/model/CreateWehookRequest.h
@@ -47,6 +51,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteAlertContactGroupResult.h
 	include/alibabacloud/arms/model/DeleteAlertRulesRequest.h
 	include/alibabacloud/arms/model/DeleteAlertRulesResult.h
+	include/alibabacloud/arms/model/DeleteDispatchRuleRequest.h
+	include/alibabacloud/arms/model/DeleteDispatchRuleResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
 	include/alibabacloud/arms/model/DeleteScenarioRequest.h
@@ -91,16 +97,22 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ListClusterFromGrafanaResult.h
 	include/alibabacloud/arms/model/ListDashboardsRequest.h
 	include/alibabacloud/arms/model/ListDashboardsResult.h
+	include/alibabacloud/arms/model/ListDispatchRuleRequest.h
+	include/alibabacloud/arms/model/ListDispatchRuleResult.h
 	include/alibabacloud/arms/model/ListPromClustersRequest.h
 	include/alibabacloud/arms/model/ListPromClustersResult.h
 	include/alibabacloud/arms/model/ListRetcodeAppsRequest.h
 	include/alibabacloud/arms/model/ListRetcodeAppsResult.h
 	include/alibabacloud/arms/model/ListScenarioRequest.h
 	include/alibabacloud/arms/model/ListScenarioResult.h
+	include/alibabacloud/arms/model/ListServerlessTopNAppsRequest.h
+	include/alibabacloud/arms/model/ListServerlessTopNAppsResult.h
 	include/alibabacloud/arms/model/ListTraceAppsRequest.h
 	include/alibabacloud/arms/model/ListTraceAppsResult.h
 	include/alibabacloud/arms/model/OpenArmsServiceRequest.h
 	include/alibabacloud/arms/model/OpenArmsServiceResult.h
+	include/alibabacloud/arms/model/OpenVClusterRequest.h
+	include/alibabacloud/arms/model/OpenVClusterResult.h
 	include/alibabacloud/arms/model/QueryDatasetRequest.h
 	include/alibabacloud/arms/model/QueryDatasetResult.h
 	include/alibabacloud/arms/model/QueryMetricRequest.h
@@ -145,6 +157,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/UpdateAlertContactGroupResult.h
 	include/alibabacloud/arms/model/UpdateAlertRuleRequest.h
 	include/alibabacloud/arms/model/UpdateAlertRuleResult.h
+	include/alibabacloud/arms/model/UpdateDispatchRuleRequest.h
+	include/alibabacloud/arms/model/UpdateDispatchRuleResult.h
 	include/alibabacloud/arms/model/UpdateWebhookRequest.h
 	include/alibabacloud/arms/model/UpdateWebhookResult.h )
 
@@ -160,12 +174,16 @@ set(arms_src
 	src/model/CheckDataConsistencyResult.cc
 	src/model/CheckServiceLinkedRoleForDeletingRequest.cc
 	src/model/CheckServiceLinkedRoleForDeletingResult.cc
+	src/model/CheckServiceStatusRequest.cc
+	src/model/CheckServiceStatusResult.cc
 	src/model/ConfigAppRequest.cc
 	src/model/ConfigAppResult.cc
 	src/model/CreateAlertContactRequest.cc
 	src/model/CreateAlertContactResult.cc
 	src/model/CreateAlertContactGroupRequest.cc
 	src/model/CreateAlertContactGroupResult.cc
+	src/model/CreateDispatchRuleRequest.cc
+	src/model/CreateDispatchRuleResult.cc
 	src/model/CreateRetcodeAppRequest.cc
 	src/model/CreateRetcodeAppResult.cc
 	src/model/CreateWehookRequest.cc
@@ -176,6 +194,8 @@ set(arms_src
 	src/model/DeleteAlertContactGroupResult.cc
 	src/model/DeleteAlertRulesRequest.cc
 	src/model/DeleteAlertRulesResult.cc
+	src/model/DeleteDispatchRuleRequest.cc
+	src/model/DeleteDispatchRuleResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
 	src/model/DeleteRetcodeAppResult.cc
 	src/model/DeleteScenarioRequest.cc
@@ -220,16 +240,22 @@ set(arms_src
 	src/model/ListClusterFromGrafanaResult.cc
 	src/model/ListDashboardsRequest.cc
 	src/model/ListDashboardsResult.cc
+	src/model/ListDispatchRuleRequest.cc
+	src/model/ListDispatchRuleResult.cc
 	src/model/ListPromClustersRequest.cc
 	src/model/ListPromClustersResult.cc
 	src/model/ListRetcodeAppsRequest.cc
 	src/model/ListRetcodeAppsResult.cc
 	src/model/ListScenarioRequest.cc
 	src/model/ListScenarioResult.cc
+	src/model/ListServerlessTopNAppsRequest.cc
+	src/model/ListServerlessTopNAppsResult.cc
 	src/model/ListTraceAppsRequest.cc
 	src/model/ListTraceAppsResult.cc
 	src/model/OpenArmsServiceRequest.cc
 	src/model/OpenArmsServiceResult.cc
+	src/model/OpenVClusterRequest.cc
+	src/model/OpenVClusterResult.cc
 	src/model/QueryDatasetRequest.cc
 	src/model/QueryDatasetResult.cc
 	src/model/QueryMetricRequest.cc
@@ -274,6 +300,8 @@ set(arms_src
 	src/model/UpdateAlertContactGroupResult.cc
 	src/model/UpdateAlertRuleRequest.cc
 	src/model/UpdateAlertRuleResult.cc
+	src/model/UpdateDispatchRuleRequest.cc
+	src/model/UpdateDispatchRuleResult.cc
 	src/model/UpdateWebhookRequest.cc
 	src/model/UpdateWebhookResult.cc )
 

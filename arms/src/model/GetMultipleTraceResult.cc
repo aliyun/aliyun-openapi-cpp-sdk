@@ -69,6 +69,10 @@ void GetMultipleTraceResult::parse(const std::string &payload)
 				spansObject.haveStack = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["HaveStack"].asString() == "true";
 			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcType"].isNull())
 				spansObject.rpcType = std::stoi(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcType"].asString());
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["SpanId"].isNull())
+				spansObject.spanId = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["SpanId"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ParentSpanId"].isNull())
+				spansObject.parentSpanId = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ParentSpanId"].asString();
 			auto allTagEntryListNode = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TagEntryList"]["TagEntry"];
 			for (auto valueMultiCallChainInfosMultiCallChainInfoSpansSpanTagEntryListTagEntry : allTagEntryListNode)
 			{

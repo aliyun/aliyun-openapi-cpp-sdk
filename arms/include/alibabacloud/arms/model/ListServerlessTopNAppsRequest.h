@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_LISTSERVERLESSTOPNAPPSREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_LISTSERVERLESSTOPNAPPSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT DeleteScenarioRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT ListServerlessTopNAppsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteScenarioRequest();
-				~DeleteScenarioRequest();
+				ListServerlessTopNAppsRequest();
+				~ListServerlessTopNAppsRequest();
 
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				long getScenarioId()const;
-				void setScenarioId(long scenarioId);
+				int getLimit()const;
+				void setLimit(int limit);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
+				long getEndTime()const;
+				void setEndTime(long endTime);
+				long getStartTime()const;
+				void setStartTime(long startTime);
 
             private:
 				std::string regionId_;
-				long scenarioId_;
+				int limit_;
+				std::string orderBy_;
+				long endTime_;
+				long startTime_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_LISTSERVERLESSTOPNAPPSREQUEST_H_

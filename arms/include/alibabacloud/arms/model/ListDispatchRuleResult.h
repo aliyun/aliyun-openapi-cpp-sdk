@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_LISTDISPATCHRULERESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_LISTDISPATCHRULERESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/arms/ARMSExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT DeleteScenarioRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT ListDispatchRuleResult : public ServiceResult
 			{
-
 			public:
-				DeleteScenarioRequest();
-				~DeleteScenarioRequest();
+				struct DispatchRule
+				{
+					std::string state;
+					long ruleId;
+					std::string name;
+				};
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				long getScenarioId()const;
-				void setScenarioId(long scenarioId);
 
-            private:
-				std::string regionId_;
-				long scenarioId_;
+				ListDispatchRuleResult();
+				explicit ListDispatchRuleResult(const std::string &payload);
+				~ListDispatchRuleResult();
+				std::vector<DispatchRule> getDispatchRules()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<DispatchRule> dispatchRules_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_LISTDISPATCHRULERESULT_H_

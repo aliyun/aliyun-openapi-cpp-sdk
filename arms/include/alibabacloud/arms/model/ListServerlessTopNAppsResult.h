@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_LISTSERVERLESSTOPNAPPSRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_LISTSERVERLESSTOPNAPPSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/arms/ARMSExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT DeleteScenarioRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT ListServerlessTopNAppsResult : public ServiceResult
 			{
-
 			public:
-				DeleteScenarioRequest();
-				~DeleteScenarioRequest();
+				struct DataItem
+				{
+					float rt;
+					std::string region;
+					int error;
+					std::string pid;
+					int count;
+					std::string name;
+				};
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				long getScenarioId()const;
-				void setScenarioId(long scenarioId);
 
-            private:
-				std::string regionId_;
-				long scenarioId_;
+				ListServerlessTopNAppsResult();
+				explicit ListServerlessTopNAppsResult(const std::string &payload);
+				~ListServerlessTopNAppsResult();
+				std::vector<DataItem> getData()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<DataItem> data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_LISTSERVERLESSTOPNAPPSRESULT_H_

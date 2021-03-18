@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/arms/model/DeleteScenarioRequest.h>
+#include <alibabacloud/arms/model/CheckServiceStatusRequest.h>
 
-using AlibabaCloud::ARMS::Model::DeleteScenarioRequest;
+using AlibabaCloud::ARMS::Model::CheckServiceStatusRequest;
 
-DeleteScenarioRequest::DeleteScenarioRequest() :
-	RpcServiceRequest("arms", "2019-08-08", "DeleteScenario")
+CheckServiceStatusRequest::CheckServiceStatusRequest() :
+	RpcServiceRequest("arms", "2019-08-08", "CheckServiceStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteScenarioRequest::~DeleteScenarioRequest()
+CheckServiceStatusRequest::~CheckServiceStatusRequest()
 {}
 
-std::string DeleteScenarioRequest::getRegionId()const
+std::string CheckServiceStatusRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void DeleteScenarioRequest::setRegionId(const std::string& regionId)
+void CheckServiceStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
 }
 
-long DeleteScenarioRequest::getScenarioId()const
+std::string CheckServiceStatusRequest::getSvcCode()const
 {
-	return scenarioId_;
+	return svcCode_;
 }
 
-void DeleteScenarioRequest::setScenarioId(long scenarioId)
+void CheckServiceStatusRequest::setSvcCode(const std::string& svcCode)
 {
-	scenarioId_ = scenarioId;
-	setParameter("ScenarioId", std::to_string(scenarioId));
+	svcCode_ = svcCode;
+	setParameter("SvcCode", svcCode);
 }
 

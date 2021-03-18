@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT DeleteScenarioRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT OpenVClusterRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteScenarioRequest();
-				~DeleteScenarioRequest();
+				OpenVClusterRequest();
+				~OpenVClusterRequest();
 
+				std::string getClusterType()const;
+				void setClusterType(const std::string& clusterType);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				long getScenarioId()const;
-				void setScenarioId(long scenarioId);
+				int getLength()const;
+				void setLength(int length);
 
             private:
+				std::string clusterType_;
 				std::string regionId_;
-				long scenarioId_;
+				int length_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_

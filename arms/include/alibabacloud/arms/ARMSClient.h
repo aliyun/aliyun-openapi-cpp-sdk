@@ -32,12 +32,16 @@
 #include "model/CheckDataConsistencyResult.h"
 #include "model/CheckServiceLinkedRoleForDeletingRequest.h"
 #include "model/CheckServiceLinkedRoleForDeletingResult.h"
+#include "model/CheckServiceStatusRequest.h"
+#include "model/CheckServiceStatusResult.h"
 #include "model/ConfigAppRequest.h"
 #include "model/ConfigAppResult.h"
 #include "model/CreateAlertContactRequest.h"
 #include "model/CreateAlertContactResult.h"
 #include "model/CreateAlertContactGroupRequest.h"
 #include "model/CreateAlertContactGroupResult.h"
+#include "model/CreateDispatchRuleRequest.h"
+#include "model/CreateDispatchRuleResult.h"
 #include "model/CreateRetcodeAppRequest.h"
 #include "model/CreateRetcodeAppResult.h"
 #include "model/CreateWehookRequest.h"
@@ -48,6 +52,8 @@
 #include "model/DeleteAlertContactGroupResult.h"
 #include "model/DeleteAlertRulesRequest.h"
 #include "model/DeleteAlertRulesResult.h"
+#include "model/DeleteDispatchRuleRequest.h"
+#include "model/DeleteDispatchRuleResult.h"
 #include "model/DeleteRetcodeAppRequest.h"
 #include "model/DeleteRetcodeAppResult.h"
 #include "model/DeleteScenarioRequest.h"
@@ -92,16 +98,22 @@
 #include "model/ListClusterFromGrafanaResult.h"
 #include "model/ListDashboardsRequest.h"
 #include "model/ListDashboardsResult.h"
+#include "model/ListDispatchRuleRequest.h"
+#include "model/ListDispatchRuleResult.h"
 #include "model/ListPromClustersRequest.h"
 #include "model/ListPromClustersResult.h"
 #include "model/ListRetcodeAppsRequest.h"
 #include "model/ListRetcodeAppsResult.h"
 #include "model/ListScenarioRequest.h"
 #include "model/ListScenarioResult.h"
+#include "model/ListServerlessTopNAppsRequest.h"
+#include "model/ListServerlessTopNAppsResult.h"
 #include "model/ListTraceAppsRequest.h"
 #include "model/ListTraceAppsResult.h"
 #include "model/OpenArmsServiceRequest.h"
 #include "model/OpenArmsServiceResult.h"
+#include "model/OpenVClusterRequest.h"
+#include "model/OpenVClusterResult.h"
 #include "model/QueryDatasetRequest.h"
 #include "model/QueryDatasetResult.h"
 #include "model/QueryMetricRequest.h"
@@ -146,6 +158,8 @@
 #include "model/UpdateAlertContactGroupResult.h"
 #include "model/UpdateAlertRuleRequest.h"
 #include "model/UpdateAlertRuleResult.h"
+#include "model/UpdateDispatchRuleRequest.h"
+#include "model/UpdateDispatchRuleResult.h"
 #include "model/UpdateWebhookRequest.h"
 #include "model/UpdateWebhookResult.h"
 
@@ -172,6 +186,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckServiceLinkedRoleForDeletingResult> CheckServiceLinkedRoleForDeletingOutcome;
 			typedef std::future<CheckServiceLinkedRoleForDeletingOutcome> CheckServiceLinkedRoleForDeletingOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CheckServiceLinkedRoleForDeletingRequest&, const CheckServiceLinkedRoleForDeletingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceLinkedRoleForDeletingAsyncHandler;
+			typedef Outcome<Error, Model::CheckServiceStatusResult> CheckServiceStatusOutcome;
+			typedef std::future<CheckServiceStatusOutcome> CheckServiceStatusOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::CheckServiceStatusRequest&, const CheckServiceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceStatusAsyncHandler;
 			typedef Outcome<Error, Model::ConfigAppResult> ConfigAppOutcome;
 			typedef std::future<ConfigAppOutcome> ConfigAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ConfigAppRequest&, const ConfigAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigAppAsyncHandler;
@@ -181,6 +198,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAlertContactGroupResult> CreateAlertContactGroupOutcome;
 			typedef std::future<CreateAlertContactGroupOutcome> CreateAlertContactGroupOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CreateAlertContactGroupRequest&, const CreateAlertContactGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertContactGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateDispatchRuleResult> CreateDispatchRuleOutcome;
+			typedef std::future<CreateDispatchRuleOutcome> CreateDispatchRuleOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::CreateDispatchRuleRequest&, const CreateDispatchRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDispatchRuleAsyncHandler;
 			typedef Outcome<Error, Model::CreateRetcodeAppResult> CreateRetcodeAppOutcome;
 			typedef std::future<CreateRetcodeAppOutcome> CreateRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CreateRetcodeAppRequest&, const CreateRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRetcodeAppAsyncHandler;
@@ -196,6 +216,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAlertRulesResult> DeleteAlertRulesOutcome;
 			typedef std::future<DeleteAlertRulesOutcome> DeleteAlertRulesOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteAlertRulesRequest&, const DeleteAlertRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlertRulesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDispatchRuleResult> DeleteDispatchRuleOutcome;
+			typedef std::future<DeleteDispatchRuleOutcome> DeleteDispatchRuleOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::DeleteDispatchRuleRequest&, const DeleteDispatchRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDispatchRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRetcodeAppResult> DeleteRetcodeAppOutcome;
 			typedef std::future<DeleteRetcodeAppOutcome> DeleteRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteRetcodeAppRequest&, const DeleteRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRetcodeAppAsyncHandler;
@@ -262,6 +285,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDashboardsResult> ListDashboardsOutcome;
 			typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListDashboardsRequest&, const ListDashboardsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDashboardsAsyncHandler;
+			typedef Outcome<Error, Model::ListDispatchRuleResult> ListDispatchRuleOutcome;
+			typedef std::future<ListDispatchRuleOutcome> ListDispatchRuleOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::ListDispatchRuleRequest&, const ListDispatchRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDispatchRuleAsyncHandler;
 			typedef Outcome<Error, Model::ListPromClustersResult> ListPromClustersOutcome;
 			typedef std::future<ListPromClustersOutcome> ListPromClustersOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListPromClustersRequest&, const ListPromClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPromClustersAsyncHandler;
@@ -271,12 +297,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListScenarioResult> ListScenarioOutcome;
 			typedef std::future<ListScenarioOutcome> ListScenarioOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListScenarioRequest&, const ListScenarioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScenarioAsyncHandler;
+			typedef Outcome<Error, Model::ListServerlessTopNAppsResult> ListServerlessTopNAppsOutcome;
+			typedef std::future<ListServerlessTopNAppsOutcome> ListServerlessTopNAppsOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::ListServerlessTopNAppsRequest&, const ListServerlessTopNAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServerlessTopNAppsAsyncHandler;
 			typedef Outcome<Error, Model::ListTraceAppsResult> ListTraceAppsOutcome;
 			typedef std::future<ListTraceAppsOutcome> ListTraceAppsOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListTraceAppsRequest&, const ListTraceAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTraceAppsAsyncHandler;
 			typedef Outcome<Error, Model::OpenArmsServiceResult> OpenArmsServiceOutcome;
 			typedef std::future<OpenArmsServiceOutcome> OpenArmsServiceOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::OpenArmsServiceRequest&, const OpenArmsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenArmsServiceAsyncHandler;
+			typedef Outcome<Error, Model::OpenVClusterResult> OpenVClusterOutcome;
+			typedef std::future<OpenVClusterOutcome> OpenVClusterOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::OpenVClusterRequest&, const OpenVClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenVClusterAsyncHandler;
 			typedef Outcome<Error, Model::QueryDatasetResult> QueryDatasetOutcome;
 			typedef std::future<QueryDatasetOutcome> QueryDatasetOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::QueryDatasetRequest&, const QueryDatasetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDatasetAsyncHandler;
@@ -343,6 +375,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAlertRuleResult> UpdateAlertRuleOutcome;
 			typedef std::future<UpdateAlertRuleOutcome> UpdateAlertRuleOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::UpdateAlertRuleRequest&, const UpdateAlertRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlertRuleAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDispatchRuleResult> UpdateDispatchRuleOutcome;
+			typedef std::future<UpdateDispatchRuleOutcome> UpdateDispatchRuleOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::UpdateDispatchRuleRequest&, const UpdateDispatchRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDispatchRuleAsyncHandler;
 			typedef Outcome<Error, Model::UpdateWebhookResult> UpdateWebhookOutcome;
 			typedef std::future<UpdateWebhookOutcome> UpdateWebhookOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::UpdateWebhookRequest&, const UpdateWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWebhookAsyncHandler;
@@ -366,6 +401,9 @@ namespace AlibabaCloud
 			CheckServiceLinkedRoleForDeletingOutcome checkServiceLinkedRoleForDeleting(const Model::CheckServiceLinkedRoleForDeletingRequest &request)const;
 			void checkServiceLinkedRoleForDeletingAsync(const Model::CheckServiceLinkedRoleForDeletingRequest& request, const CheckServiceLinkedRoleForDeletingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckServiceLinkedRoleForDeletingOutcomeCallable checkServiceLinkedRoleForDeletingCallable(const Model::CheckServiceLinkedRoleForDeletingRequest& request) const;
+			CheckServiceStatusOutcome checkServiceStatus(const Model::CheckServiceStatusRequest &request)const;
+			void checkServiceStatusAsync(const Model::CheckServiceStatusRequest& request, const CheckServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckServiceStatusOutcomeCallable checkServiceStatusCallable(const Model::CheckServiceStatusRequest& request) const;
 			ConfigAppOutcome configApp(const Model::ConfigAppRequest &request)const;
 			void configAppAsync(const Model::ConfigAppRequest& request, const ConfigAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigAppOutcomeCallable configAppCallable(const Model::ConfigAppRequest& request) const;
@@ -375,6 +413,9 @@ namespace AlibabaCloud
 			CreateAlertContactGroupOutcome createAlertContactGroup(const Model::CreateAlertContactGroupRequest &request)const;
 			void createAlertContactGroupAsync(const Model::CreateAlertContactGroupRequest& request, const CreateAlertContactGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAlertContactGroupOutcomeCallable createAlertContactGroupCallable(const Model::CreateAlertContactGroupRequest& request) const;
+			CreateDispatchRuleOutcome createDispatchRule(const Model::CreateDispatchRuleRequest &request)const;
+			void createDispatchRuleAsync(const Model::CreateDispatchRuleRequest& request, const CreateDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDispatchRuleOutcomeCallable createDispatchRuleCallable(const Model::CreateDispatchRuleRequest& request) const;
 			CreateRetcodeAppOutcome createRetcodeApp(const Model::CreateRetcodeAppRequest &request)const;
 			void createRetcodeAppAsync(const Model::CreateRetcodeAppRequest& request, const CreateRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRetcodeAppOutcomeCallable createRetcodeAppCallable(const Model::CreateRetcodeAppRequest& request) const;
@@ -390,6 +431,9 @@ namespace AlibabaCloud
 			DeleteAlertRulesOutcome deleteAlertRules(const Model::DeleteAlertRulesRequest &request)const;
 			void deleteAlertRulesAsync(const Model::DeleteAlertRulesRequest& request, const DeleteAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAlertRulesOutcomeCallable deleteAlertRulesCallable(const Model::DeleteAlertRulesRequest& request) const;
+			DeleteDispatchRuleOutcome deleteDispatchRule(const Model::DeleteDispatchRuleRequest &request)const;
+			void deleteDispatchRuleAsync(const Model::DeleteDispatchRuleRequest& request, const DeleteDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDispatchRuleOutcomeCallable deleteDispatchRuleCallable(const Model::DeleteDispatchRuleRequest& request) const;
 			DeleteRetcodeAppOutcome deleteRetcodeApp(const Model::DeleteRetcodeAppRequest &request)const;
 			void deleteRetcodeAppAsync(const Model::DeleteRetcodeAppRequest& request, const DeleteRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRetcodeAppOutcomeCallable deleteRetcodeAppCallable(const Model::DeleteRetcodeAppRequest& request) const;
@@ -456,6 +500,9 @@ namespace AlibabaCloud
 			ListDashboardsOutcome listDashboards(const Model::ListDashboardsRequest &request)const;
 			void listDashboardsAsync(const Model::ListDashboardsRequest& request, const ListDashboardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDashboardsOutcomeCallable listDashboardsCallable(const Model::ListDashboardsRequest& request) const;
+			ListDispatchRuleOutcome listDispatchRule(const Model::ListDispatchRuleRequest &request)const;
+			void listDispatchRuleAsync(const Model::ListDispatchRuleRequest& request, const ListDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDispatchRuleOutcomeCallable listDispatchRuleCallable(const Model::ListDispatchRuleRequest& request) const;
 			ListPromClustersOutcome listPromClusters(const Model::ListPromClustersRequest &request)const;
 			void listPromClustersAsync(const Model::ListPromClustersRequest& request, const ListPromClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPromClustersOutcomeCallable listPromClustersCallable(const Model::ListPromClustersRequest& request) const;
@@ -465,12 +512,18 @@ namespace AlibabaCloud
 			ListScenarioOutcome listScenario(const Model::ListScenarioRequest &request)const;
 			void listScenarioAsync(const Model::ListScenarioRequest& request, const ListScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListScenarioOutcomeCallable listScenarioCallable(const Model::ListScenarioRequest& request) const;
+			ListServerlessTopNAppsOutcome listServerlessTopNApps(const Model::ListServerlessTopNAppsRequest &request)const;
+			void listServerlessTopNAppsAsync(const Model::ListServerlessTopNAppsRequest& request, const ListServerlessTopNAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListServerlessTopNAppsOutcomeCallable listServerlessTopNAppsCallable(const Model::ListServerlessTopNAppsRequest& request) const;
 			ListTraceAppsOutcome listTraceApps(const Model::ListTraceAppsRequest &request)const;
 			void listTraceAppsAsync(const Model::ListTraceAppsRequest& request, const ListTraceAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTraceAppsOutcomeCallable listTraceAppsCallable(const Model::ListTraceAppsRequest& request) const;
 			OpenArmsServiceOutcome openArmsService(const Model::OpenArmsServiceRequest &request)const;
 			void openArmsServiceAsync(const Model::OpenArmsServiceRequest& request, const OpenArmsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenArmsServiceOutcomeCallable openArmsServiceCallable(const Model::OpenArmsServiceRequest& request) const;
+			OpenVClusterOutcome openVCluster(const Model::OpenVClusterRequest &request)const;
+			void openVClusterAsync(const Model::OpenVClusterRequest& request, const OpenVClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenVClusterOutcomeCallable openVClusterCallable(const Model::OpenVClusterRequest& request) const;
 			QueryDatasetOutcome queryDataset(const Model::QueryDatasetRequest &request)const;
 			void queryDatasetAsync(const Model::QueryDatasetRequest& request, const QueryDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDatasetOutcomeCallable queryDatasetCallable(const Model::QueryDatasetRequest& request) const;
@@ -537,6 +590,9 @@ namespace AlibabaCloud
 			UpdateAlertRuleOutcome updateAlertRule(const Model::UpdateAlertRuleRequest &request)const;
 			void updateAlertRuleAsync(const Model::UpdateAlertRuleRequest& request, const UpdateAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAlertRuleOutcomeCallable updateAlertRuleCallable(const Model::UpdateAlertRuleRequest& request) const;
+			UpdateDispatchRuleOutcome updateDispatchRule(const Model::UpdateDispatchRuleRequest &request)const;
+			void updateDispatchRuleAsync(const Model::UpdateDispatchRuleRequest& request, const UpdateDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDispatchRuleOutcomeCallable updateDispatchRuleCallable(const Model::UpdateDispatchRuleRequest& request) const;
 			UpdateWebhookOutcome updateWebhook(const Model::UpdateWebhookRequest &request)const;
 			void updateWebhookAsync(const Model::UpdateWebhookRequest& request, const UpdateWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateWebhookOutcomeCallable updateWebhookCallable(const Model::UpdateWebhookRequest& request) const;

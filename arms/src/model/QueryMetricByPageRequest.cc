@@ -155,6 +155,19 @@ void QueryMetricByPageRequest::setMetric(const std::string& metric)
 	setParameter("Metric", metric);
 }
 
+std::vector<std::string> QueryMetricByPageRequest::getCustomFilters()const
+{
+	return customFilters_;
+}
+
+void QueryMetricByPageRequest::setCustomFilters(const std::vector<std::string>& customFilters)
+{
+	customFilters_ = customFilters;
+	for(int dep1 = 0; dep1!= customFilters.size(); dep1++) {
+		setParameter("CustomFilters."+ std::to_string(dep1), customFilters.at(dep1));
+	}
+}
+
 int QueryMetricByPageRequest::getPageSize()const
 {
 	return pageSize_;

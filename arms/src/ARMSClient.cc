@@ -231,6 +231,42 @@ ARMSClient::CheckServiceLinkedRoleForDeletingOutcomeCallable ARMSClient::checkSe
 	return task->get_future();
 }
 
+ARMSClient::CheckServiceStatusOutcome ARMSClient::checkServiceStatus(const CheckServiceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckServiceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckServiceStatusOutcome(CheckServiceStatusResult(outcome.result()));
+	else
+		return CheckServiceStatusOutcome(outcome.error());
+}
+
+void ARMSClient::checkServiceStatusAsync(const CheckServiceStatusRequest& request, const CheckServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkServiceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CheckServiceStatusOutcomeCallable ARMSClient::checkServiceStatusCallable(const CheckServiceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckServiceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->checkServiceStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ConfigAppOutcome ARMSClient::configApp(const ConfigAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ ARMSClient::CreateAlertContactGroupOutcomeCallable ARMSClient::createAlertContac
 			[this, request]()
 			{
 			return this->createAlertContactGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateDispatchRuleOutcome ARMSClient::createDispatchRule(const CreateDispatchRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDispatchRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDispatchRuleOutcome(CreateDispatchRuleResult(outcome.result()));
+	else
+		return CreateDispatchRuleOutcome(outcome.error());
+}
+
+void ARMSClient::createDispatchRuleAsync(const CreateDispatchRuleRequest& request, const CreateDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDispatchRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateDispatchRuleOutcomeCallable ARMSClient::createDispatchRuleCallable(const CreateDispatchRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDispatchRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createDispatchRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -513,6 +585,42 @@ ARMSClient::DeleteAlertRulesOutcomeCallable ARMSClient::deleteAlertRulesCallable
 			[this, request]()
 			{
 			return this->deleteAlertRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteDispatchRuleOutcome ARMSClient::deleteDispatchRule(const DeleteDispatchRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDispatchRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDispatchRuleOutcome(DeleteDispatchRuleResult(outcome.result()));
+	else
+		return DeleteDispatchRuleOutcome(outcome.error());
+}
+
+void ARMSClient::deleteDispatchRuleAsync(const DeleteDispatchRuleRequest& request, const DeleteDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDispatchRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteDispatchRuleOutcomeCallable ARMSClient::deleteDispatchRuleCallable(const DeleteDispatchRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDispatchRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDispatchRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,6 +1419,42 @@ ARMSClient::ListDashboardsOutcomeCallable ARMSClient::listDashboardsCallable(con
 	return task->get_future();
 }
 
+ARMSClient::ListDispatchRuleOutcome ARMSClient::listDispatchRule(const ListDispatchRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDispatchRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDispatchRuleOutcome(ListDispatchRuleResult(outcome.result()));
+	else
+		return ListDispatchRuleOutcome(outcome.error());
+}
+
+void ARMSClient::listDispatchRuleAsync(const ListDispatchRuleRequest& request, const ListDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDispatchRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListDispatchRuleOutcomeCallable ARMSClient::listDispatchRuleCallable(const ListDispatchRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDispatchRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->listDispatchRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ListPromClustersOutcome ARMSClient::listPromClusters(const ListPromClustersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1419,6 +1563,42 @@ ARMSClient::ListScenarioOutcomeCallable ARMSClient::listScenarioCallable(const L
 	return task->get_future();
 }
 
+ARMSClient::ListServerlessTopNAppsOutcome ARMSClient::listServerlessTopNApps(const ListServerlessTopNAppsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListServerlessTopNAppsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListServerlessTopNAppsOutcome(ListServerlessTopNAppsResult(outcome.result()));
+	else
+		return ListServerlessTopNAppsOutcome(outcome.error());
+}
+
+void ARMSClient::listServerlessTopNAppsAsync(const ListServerlessTopNAppsRequest& request, const ListServerlessTopNAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listServerlessTopNApps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListServerlessTopNAppsOutcomeCallable ARMSClient::listServerlessTopNAppsCallable(const ListServerlessTopNAppsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListServerlessTopNAppsOutcome()>>(
+			[this, request]()
+			{
+			return this->listServerlessTopNApps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ListTraceAppsOutcome ARMSClient::listTraceApps(const ListTraceAppsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1665,42 @@ ARMSClient::OpenArmsServiceOutcomeCallable ARMSClient::openArmsServiceCallable(c
 			[this, request]()
 			{
 			return this->openArmsService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::OpenVClusterOutcome ARMSClient::openVCluster(const OpenVClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenVClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenVClusterOutcome(OpenVClusterResult(outcome.result()));
+	else
+		return OpenVClusterOutcome(outcome.error());
+}
+
+void ARMSClient::openVClusterAsync(const OpenVClusterRequest& request, const OpenVClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openVCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::OpenVClusterOutcomeCallable ARMSClient::openVClusterCallable(const OpenVClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenVClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->openVCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2277,6 +2493,42 @@ ARMSClient::UpdateAlertRuleOutcomeCallable ARMSClient::updateAlertRuleCallable(c
 			[this, request]()
 			{
 			return this->updateAlertRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateDispatchRuleOutcome ARMSClient::updateDispatchRule(const UpdateDispatchRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDispatchRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDispatchRuleOutcome(UpdateDispatchRuleResult(outcome.result()));
+	else
+		return UpdateDispatchRuleOutcome(outcome.error());
+}
+
+void ARMSClient::updateDispatchRuleAsync(const UpdateDispatchRuleRequest& request, const UpdateDispatchRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDispatchRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateDispatchRuleOutcomeCallable ARMSClient::updateDispatchRuleCallable(const UpdateDispatchRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDispatchRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDispatchRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

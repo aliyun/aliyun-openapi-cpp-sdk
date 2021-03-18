@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setIntervalInSec(int intervalInSec);
 				std::string getMetric()const;
 				void setMetric(const std::string& metric);
+				std::vector<std::string> getCustomFilters()const;
+				void setCustomFilters(const std::vector<std::string>& customFilters);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<std::string> getDimensions()const;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 				std::vector<std::string> measures_;
 				int intervalInSec_;
 				std::string metric_;
+				std::vector<std::string> customFilters_;
 				int pageSize_;
 				std::vector<std::string> dimensions_;
 				std::string order_;

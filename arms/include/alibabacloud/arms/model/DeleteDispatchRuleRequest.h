@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_DELETEDISPATCHRULEREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_DELETEDISPATCHRULEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT DeleteScenarioRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT DeleteDispatchRuleRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteScenarioRequest();
-				~DeleteScenarioRequest();
+				DeleteDispatchRuleRequest();
+				~DeleteDispatchRuleRequest();
 
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				long getScenarioId()const;
-				void setScenarioId(long scenarioId);
+				std::string getId()const;
+				void setId(const std::string& id);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 
             private:
 				std::string regionId_;
-				long scenarioId_;
+				std::string id_;
+				std::string proxyUserId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_DELETESCENARIOREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_DELETEDISPATCHRULEREQUEST_H_
