@@ -61,12 +61,10 @@ void UpdateTableRequest::setColumns(const std::vector<Columns>& columns)
 		auto columnsObj = columns.at(dep1);
 		std::string columnsObjStr = "Columns." + std::to_string(dep1 + 1);
 		setParameter(columnsObjStr + ".SeqNumber", std::to_string(columnsObj.seqNumber));
-		setParameter(columnsObjStr + ".IsPartitionCol", std::to_string(columnsObj.isPartitionCol));
+		setParameter(columnsObjStr + ".IsPartitionCol", columnsObj.isPartitionCol ? "true" : "false");
 		setParameter(columnsObjStr + ".ColumnNameCn", columnsObj.columnNameCn);
 		setParameter(columnsObjStr + ".Length", std::to_string(columnsObj.length));
-		setParameter(columnsObjStr + ".IsNullable", std::to_string(columnsObj.isNullable));
 		setParameter(columnsObjStr + ".Comment", columnsObj.comment);
-		setParameter(columnsObjStr + ".IsPrimaryKey", std::to_string(columnsObj.isPrimaryKey));
 		setParameter(columnsObjStr + ".ColumnName", columnsObj.columnName);
 		setParameter(columnsObjStr + ".ColumnType", columnsObj.columnType);
 	}
@@ -165,17 +163,6 @@ void UpdateTableRequest::setEnvType(int envType)
 	setBodyParameter("EnvType", std::to_string(envType));
 }
 
-int UpdateTableRequest::getHasPart()const
-{
-	return hasPart_;
-}
-
-void UpdateTableRequest::setHasPart(int hasPart)
-{
-	hasPart_ = hasPart;
-	setParameter("HasPart", std::to_string(hasPart));
-}
-
 std::string UpdateTableRequest::getLocation()const
 {
 	return location_;
@@ -185,6 +172,17 @@ void UpdateTableRequest::setLocation(const std::string& location)
 {
 	location_ = location;
 	setParameter("Location", location);
+}
+
+int UpdateTableRequest::getHasPart()const
+{
+	return hasPart_;
+}
+
+void UpdateTableRequest::setHasPart(int hasPart)
+{
+	hasPart_ = hasPart;
+	setParameter("HasPart", std::to_string(hasPart));
 }
 
 std::string UpdateTableRequest::getTableName()const

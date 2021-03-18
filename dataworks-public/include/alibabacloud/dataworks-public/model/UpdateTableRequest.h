@@ -34,12 +34,10 @@ namespace AlibabaCloud
 				struct Columns
 				{
 					int seqNumber;
-					int isPartitionCol;
+					bool isPartitionCol;
 					std::string columnNameCn;
 					int length;
-					int isNullable;
 					std::string comment;
-					int isPrimaryKey;
 					std::string columnName;
 					std::string columnType;
 				};
@@ -75,10 +73,10 @@ namespace AlibabaCloud
 				void setExternalTableType(const std::string& externalTableType);
 				int getEnvType()const;
 				void setEnvType(int envType);
-				int getHasPart()const;
-				void setHasPart(int hasPart);
 				std::string getLocation()const;
 				void setLocation(const std::string& location);
+				int getHasPart()const;
+				void setHasPart(int hasPart);
 				std::string getTableName()const;
 				void setTableName(const std::string& tableName);
 				std::string getAppGuid()const;
@@ -102,8 +100,8 @@ namespace AlibabaCloud
 				int isView_;
 				std::string externalTableType_;
 				int envType_;
-				int hasPart_;
 				std::string location_;
+				int hasPart_;
 				std::string tableName_;
 				std::string appGuid_;
 				long projectId_;

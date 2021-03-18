@@ -27,26 +27,15 @@ CreateTableRequest::CreateTableRequest() :
 CreateTableRequest::~CreateTableRequest()
 {}
 
-int CreateTableRequest::getVisibility()const
+std::string CreateTableRequest::getClientToken()const
 {
-	return visibility_;
+	return clientToken_;
 }
 
-void CreateTableRequest::setVisibility(int visibility)
+void CreateTableRequest::setClientToken(const std::string& clientToken)
 {
-	visibility_ = visibility;
-	setParameter("Visibility", std::to_string(visibility));
-}
-
-long CreateTableRequest::getPhysicsLevelId()const
-{
-	return physicsLevelId_;
-}
-
-void CreateTableRequest::setPhysicsLevelId(long physicsLevelId)
-{
-	physicsLevelId_ = physicsLevelId;
-	setParameter("PhysicsLevelId", std::to_string(physicsLevelId));
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
 }
 
 std::vector<CreateTableRequest::Columns> CreateTableRequest::getColumns()const
@@ -61,26 +50,13 @@ void CreateTableRequest::setColumns(const std::vector<Columns>& columns)
 		auto columnsObj = columns.at(dep1);
 		std::string columnsObjStr = "Columns." + std::to_string(dep1 + 1);
 		setParameter(columnsObjStr + ".SeqNumber", std::to_string(columnsObj.seqNumber));
-		setParameter(columnsObjStr + ".IsPartitionCol", std::to_string(columnsObj.isPartitionCol));
+		setParameter(columnsObjStr + ".IsPartitionCol", columnsObj.isPartitionCol ? "true" : "false");
 		setParameter(columnsObjStr + ".ColumnNameCn", columnsObj.columnNameCn);
 		setParameter(columnsObjStr + ".Length", std::to_string(columnsObj.length));
-		setParameter(columnsObjStr + ".IsNullable", std::to_string(columnsObj.isNullable));
 		setParameter(columnsObjStr + ".Comment", columnsObj.comment);
-		setParameter(columnsObjStr + ".IsPrimaryKey", std::to_string(columnsObj.isPrimaryKey));
 		setParameter(columnsObjStr + ".ColumnName", columnsObj.columnName);
 		setParameter(columnsObjStr + ".ColumnType", columnsObj.columnType);
 	}
-}
-
-std::string CreateTableRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateTableRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
 }
 
 int CreateTableRequest::getLifeCycle()const
@@ -132,28 +108,6 @@ void CreateTableRequest::setEndpoint(const std::string& endpoint)
 	setBodyParameter("Endpoint", endpoint);
 }
 
-int CreateTableRequest::getIsView()const
-{
-	return isView_;
-}
-
-void CreateTableRequest::setIsView(int isView)
-{
-	isView_ = isView;
-	setParameter("IsView", std::to_string(isView));
-}
-
-std::string CreateTableRequest::getExternalTableType()const
-{
-	return externalTableType_;
-}
-
-void CreateTableRequest::setExternalTableType(const std::string& externalTableType)
-{
-	externalTableType_ = externalTableType;
-	setParameter("ExternalTableType", externalTableType);
-}
-
 int CreateTableRequest::getEnvType()const
 {
 	return envType_;
@@ -174,28 +128,6 @@ void CreateTableRequest::setHasPart(int hasPart)
 {
 	hasPart_ = hasPart;
 	setParameter("HasPart", std::to_string(hasPart));
-}
-
-std::string CreateTableRequest::getLocation()const
-{
-	return location_;
-}
-
-void CreateTableRequest::setLocation(const std::string& location)
-{
-	location_ = location;
-	setParameter("Location", location);
-}
-
-std::string CreateTableRequest::getComment()const
-{
-	return comment_;
-}
-
-void CreateTableRequest::setComment(const std::string& comment)
-{
-	comment_ = comment;
-	setParameter("Comment", comment);
 }
 
 std::string CreateTableRequest::getTableName()const
@@ -240,5 +172,82 @@ void CreateTableRequest::setCategoryId(long categoryId)
 {
 	categoryId_ = categoryId;
 	setParameter("CategoryId", std::to_string(categoryId));
+}
+
+int CreateTableRequest::getVisibility()const
+{
+	return visibility_;
+}
+
+void CreateTableRequest::setVisibility(int visibility)
+{
+	visibility_ = visibility;
+	setParameter("Visibility", std::to_string(visibility));
+}
+
+long CreateTableRequest::getPhysicsLevelId()const
+{
+	return physicsLevelId_;
+}
+
+void CreateTableRequest::setPhysicsLevelId(long physicsLevelId)
+{
+	physicsLevelId_ = physicsLevelId;
+	setParameter("PhysicsLevelId", std::to_string(physicsLevelId));
+}
+
+std::string CreateTableRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateTableRequest::setOwnerId(const std::string& ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", ownerId);
+}
+
+int CreateTableRequest::getIsView()const
+{
+	return isView_;
+}
+
+void CreateTableRequest::setIsView(int isView)
+{
+	isView_ = isView;
+	setParameter("IsView", std::to_string(isView));
+}
+
+std::string CreateTableRequest::getExternalTableType()const
+{
+	return externalTableType_;
+}
+
+void CreateTableRequest::setExternalTableType(const std::string& externalTableType)
+{
+	externalTableType_ = externalTableType;
+	setParameter("ExternalTableType", externalTableType);
+}
+
+std::string CreateTableRequest::getLocation()const
+{
+	return location_;
+}
+
+void CreateTableRequest::setLocation(const std::string& location)
+{
+	location_ = location;
+	setParameter("Location", location);
+}
+
+std::string CreateTableRequest::getComment()const
+{
+	return comment_;
+}
+
+void CreateTableRequest::setComment(const std::string& comment)
+{
+	comment_ = comment;
+	setParameter("Comment", comment);
 }
 

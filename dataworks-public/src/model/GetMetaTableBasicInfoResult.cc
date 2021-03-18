@@ -80,6 +80,14 @@ void GetMetaTableBasicInfoResult::parse(const std::string &payload)
 		data_.clusterId = dataNode["ClusterId"].asString();
 	if(!dataNode["Caption"].isNull())
 		data_.caption = dataNode["Caption"].asString();
+	if(!dataNode["IsPartitionTable"].isNull())
+		data_.isPartitionTable = dataNode["IsPartitionTable"].asString() == "true";
+	if(!dataNode["ReadCount"].isNull())
+		data_.readCount = std::stol(dataNode["ReadCount"].asString());
+	if(!dataNode["ViewCount"].isNull())
+		data_.viewCount = std::stol(dataNode["ViewCount"].asString());
+	if(!dataNode["FavoriteCount"].isNull())
+		data_.favoriteCount = std::stol(dataNode["FavoriteCount"].asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())

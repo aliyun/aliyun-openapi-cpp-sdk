@@ -36,12 +36,14 @@ namespace AlibabaCloud
 				{
 					int lifeCycle;
 					std::string comment;
+					bool isPartitionTable;
 					std::string projectName;
 					std::string clusterId;
 					long lastDdlTime;
 					long createTime;
 					long projectId;
 					std::string databaseName;
+					long viewCount;
 					long lastModifyTime;
 					long lastAccessTime;
 					int envType;
@@ -51,8 +53,10 @@ namespace AlibabaCloud
 					long tenantId;
 					std::string ownerId;
 					long dataSize;
+					long favoriteCount;
 					std::string partitionKeys;
 					int isVisible;
+					long readCount;
 					std::string location;
 				};
 

@@ -34,12 +34,10 @@ namespace AlibabaCloud
 				struct Columns
 				{
 					int seqNumber;
-					int isPartitionCol;
+					bool isPartitionCol;
 					std::string columnNameCn;
 					int length;
-					int isNullable;
 					std::string comment;
-					int isPrimaryKey;
 					std::string columnName;
 					std::string columnType;
 				};
@@ -53,14 +51,10 @@ namespace AlibabaCloud
 				CreateTableRequest();
 				~CreateTableRequest();
 
-				int getVisibility()const;
-				void setVisibility(int visibility);
-				long getPhysicsLevelId()const;
-				void setPhysicsLevelId(long physicsLevelId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::vector<Columns> getColumns()const;
 				void setColumns(const std::vector<Columns>& columns);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				int getLifeCycle()const;
 				void setLifeCycle(int lifeCycle);
 				std::vector<Themes> getThemes()const;
@@ -69,18 +63,10 @@ namespace AlibabaCloud
 				void setLogicalLevelId(long logicalLevelId);
 				std::string getEndpoint()const;
 				void setEndpoint(const std::string& endpoint);
-				int getIsView()const;
-				void setIsView(int isView);
-				std::string getExternalTableType()const;
-				void setExternalTableType(const std::string& externalTableType);
 				int getEnvType()const;
 				void setEnvType(int envType);
 				int getHasPart()const;
 				void setHasPart(int hasPart);
-				std::string getLocation()const;
-				void setLocation(const std::string& location);
-				std::string getComment()const;
-				void setComment(const std::string& comment);
 				std::string getTableName()const;
 				void setTableName(const std::string& tableName);
 				std::string getAppGuid()const;
@@ -89,26 +75,41 @@ namespace AlibabaCloud
 				void setProjectId(long projectId);
 				long getCategoryId()const;
 				void setCategoryId(long categoryId);
+				int getVisibility()const;
+				void setVisibility(int visibility);
+				long getPhysicsLevelId()const;
+				void setPhysicsLevelId(long physicsLevelId);
+				std::string getOwnerId()const;
+				void setOwnerId(const std::string& ownerId);
+				int getIsView()const;
+				void setIsView(int isView);
+				std::string getExternalTableType()const;
+				void setExternalTableType(const std::string& externalTableType);
+				std::string getLocation()const;
+				void setLocation(const std::string& location);
+				std::string getComment()const;
+				void setComment(const std::string& comment);
 
             private:
-				int visibility_;
-				long physicsLevelId_;
+				std::string clientToken_;
 				std::vector<Columns> columns_;
-				std::string ownerId_;
 				int lifeCycle_;
 				std::vector<Themes> themes_;
 				long logicalLevelId_;
 				std::string endpoint_;
-				int isView_;
-				std::string externalTableType_;
 				int envType_;
 				int hasPart_;
-				std::string location_;
-				std::string comment_;
 				std::string tableName_;
 				std::string appGuid_;
 				long projectId_;
 				long categoryId_;
+				int visibility_;
+				long physicsLevelId_;
+				std::string ownerId_;
+				int isView_;
+				std::string externalTableType_;
+				std::string location_;
+				std::string comment_;
 
 			};
 		}

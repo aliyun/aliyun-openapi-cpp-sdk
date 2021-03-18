@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getDataSourceType()const;
 				void setDataSourceType(const std::string& dataSourceType);
+				bool getExtension()const;
+				void setExtension(bool extension);
 				std::string getTableGuid()const;
 				void setTableGuid(const std::string& tableGuid);
 				std::string getDatabaseName()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				std::string dataSourceType_;
+				bool extension_;
 				std::string tableGuid_;
 				std::string databaseName_;
 				std::string clusterId_;

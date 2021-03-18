@@ -38,6 +38,17 @@ void GetMetaTableBasicInfoRequest::setDataSourceType(const std::string& dataSour
 	setParameter("DataSourceType", dataSourceType);
 }
 
+bool GetMetaTableBasicInfoRequest::getExtension()const
+{
+	return extension_;
+}
+
+void GetMetaTableBasicInfoRequest::setExtension(bool extension)
+{
+	extension_ = extension;
+	setParameter("Extension", extension ? "true" : "false");
+}
+
 std::string GetMetaTableBasicInfoRequest::getTableGuid()const
 {
 	return tableGuid_;

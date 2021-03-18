@@ -37,11 +37,17 @@ namespace AlibabaCloud
 
 				int getLevelType()const;
 				void setLevelType(int levelType);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				long getProjectId()const;
 				void setProjectId(long projectId);
 
             private:
 				int levelType_;
+				int pageSize_;
+				int pageNum_;
 				long projectId_;
 
 			};
