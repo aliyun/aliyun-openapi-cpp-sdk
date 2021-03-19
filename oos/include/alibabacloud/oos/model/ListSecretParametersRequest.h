@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				bool getRecursive()const;
 				void setRecursive(bool recursive);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
 				std::string getPath()const;
 				void setPath(const std::string& path);
 				std::string getRegionId()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 
             private:
 				bool recursive_;
+				std::string tags_;
 				std::string path_;
 				std::string regionId_;
 				std::string nextToken_;

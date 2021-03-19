@@ -34,17 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct _Parameter
 				{
-					std::string updatedBy;
-					std::string type;
 					std::string createdBy;
 					std::string description;
-					std::string constraints;
 					std::string updatedDate;
+					std::string name;
+					std::string updatedBy;
+					std::string type;
+					std::string constraints;
 					int parameterVersion;
 					std::string createdDate;
 					std::string value;
 					std::string id;
-					std::string name;
+					std::string tags;
 					std::string shareType;
 				};
 

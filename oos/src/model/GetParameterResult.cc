@@ -64,6 +64,8 @@ void GetParameterResult::parse(const std::string &payload)
 		_parameter_.value = _parameterNode["Value"].asString();
 	if(!_parameterNode["Constraints"].isNull())
 		_parameter_.constraints = _parameterNode["Constraints"].asString();
+	if(!_parameterNode["Tags"].isNull())
+		_parameter_.tags = _parameterNode["Tags"].asString();
 
 }
 

@@ -71,6 +71,17 @@ void CreateParameterRequest::setConstraints(const std::string& constraints)
 	setParameter("Constraints", constraints);
 }
 
+std::string CreateParameterRequest::getTags()const
+{
+	return tags_;
+}
+
+void CreateParameterRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
 std::string CreateParameterRequest::getRegionId()const
 {
 	return regionId_;

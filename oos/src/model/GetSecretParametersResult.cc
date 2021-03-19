@@ -69,6 +69,8 @@ void GetSecretParametersResult::parse(const std::string &payload)
 			parametersObject.constraints = valueParametersParameter["Constraints"].asString();
 		if(!valueParametersParameter["KeyId"].isNull())
 			parametersObject.keyId = valueParametersParameter["KeyId"].asString();
+		if(!valueParametersParameter["Tags"].isNull())
+			parametersObject.tags = valueParametersParameter["Tags"].asString();
 		parameters_.push_back(parametersObject);
 	}
 	auto allInvalidParameters = value["InvalidParameters"]["InvalidParameter"];

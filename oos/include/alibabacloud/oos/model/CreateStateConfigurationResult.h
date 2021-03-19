@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_OOS_EXPORT CreateStateConfigurationResult : public ServiceResult
 			{
 			public:
-				struct StateConfigurationItem
+				struct StateConfiguration
 				{
 					std::string configureMode;
 					std::string scheduleType;
@@ -52,12 +52,12 @@ namespace AlibabaCloud
 				CreateStateConfigurationResult();
 				explicit CreateStateConfigurationResult(const std::string &payload);
 				~CreateStateConfigurationResult();
-				std::vector<StateConfigurationItem> getStateConfiguration()const;
+				StateConfiguration getStateConfiguration()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<StateConfigurationItem> stateConfiguration_;
+				StateConfiguration stateConfiguration_;
 
 			};
 		}

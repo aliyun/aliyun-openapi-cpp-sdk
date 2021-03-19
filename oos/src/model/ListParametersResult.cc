@@ -63,6 +63,8 @@ void ListParametersResult::parse(const std::string &payload)
 			parametersObject.parameterVersion = valueParametersParameter["ParameterVersion"].asString();
 		if(!valueParametersParameter["Type"].isNull())
 			parametersObject.type = valueParametersParameter["Type"].asString();
+		if(!valueParametersParameter["Tags"].isNull())
+			parametersObject.tags = valueParametersParameter["Tags"].asString();
 		parameters_.push_back(parametersObject);
 	}
 	if(!value["MaxResults"].isNull())

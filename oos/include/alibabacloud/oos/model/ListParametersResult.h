@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string parameterVersion;
 					std::string createdDate;
 					std::string id;
+					std::string tags;
 					std::string name;
 					std::string shareType;
 				};

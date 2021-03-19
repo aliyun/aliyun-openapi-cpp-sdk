@@ -65,6 +65,8 @@ void ListSecretParametersResult::parse(const std::string &payload)
 			parametersObject.type = valueParametersParameter["Type"].asString();
 		if(!valueParametersParameter["KeyId"].isNull())
 			parametersObject.keyId = valueParametersParameter["KeyId"].asString();
+		if(!valueParametersParameter["Tags"].isNull())
+			parametersObject.tags = valueParametersParameter["Tags"].asString();
 		parameters_.push_back(parametersObject);
 	}
 	if(!value["MaxResults"].isNull())

@@ -38,6 +38,17 @@ void ListSecretParametersRequest::setRecursive(bool recursive)
 	setParameter("Recursive", recursive ? "true" : "false");
 }
 
+std::string ListSecretParametersRequest::getTags()const
+{
+	return tags_;
+}
+
+void ListSecretParametersRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
 std::string ListSecretParametersRequest::getPath()const
 {
 	return path_;

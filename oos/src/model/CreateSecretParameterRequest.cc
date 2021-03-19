@@ -49,17 +49,6 @@ void CreateSecretParameterRequest::setDescription(const std::string& description
 	setParameter("Description", description);
 }
 
-std::string CreateSecretParameterRequest::getKeyId()const
-{
-	return keyId_;
-}
-
-void CreateSecretParameterRequest::setKeyId(const std::string& keyId)
-{
-	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
 std::string CreateSecretParameterRequest::getType()const
 {
 	return type_;
@@ -93,17 +82,6 @@ void CreateSecretParameterRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
-std::string CreateSecretParameterRequest::getName()const
-{
-	return name_;
-}
-
-void CreateSecretParameterRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
-}
-
 std::string CreateSecretParameterRequest::getValue()const
 {
 	return value_;
@@ -113,5 +91,38 @@ void CreateSecretParameterRequest::setValue(const std::string& value)
 {
 	value_ = value;
 	setParameter("Value", value);
+}
+
+std::string CreateSecretParameterRequest::getKeyId()const
+{
+	return keyId_;
+}
+
+void CreateSecretParameterRequest::setKeyId(const std::string& keyId)
+{
+	keyId_ = keyId;
+	setParameter("KeyId", keyId);
+}
+
+std::string CreateSecretParameterRequest::getTags()const
+{
+	return tags_;
+}
+
+void CreateSecretParameterRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
+std::string CreateSecretParameterRequest::getName()const
+{
+	return name_;
+}
+
+void CreateSecretParameterRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 

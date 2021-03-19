@@ -45,12 +45,14 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getNextToken()const;
 				void setNextToken(const std::string& nextToken);
+				std::string getSortOrder()const;
+				void setSortOrder(const std::string& sortOrder);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
 				std::string getName()const;
 				void setName(const std::string& name);
 				int getMaxResults()const;
 				void setMaxResults(int maxResults);
-				std::string getSortOrder()const;
-				void setSortOrder(const std::string& sortOrder);
 				std::string getSortField()const;
 				void setSortField(const std::string& sortField);
 
@@ -60,9 +62,10 @@ namespace AlibabaCloud
 				std::string path_;
 				std::string regionId_;
 				std::string nextToken_;
+				std::string sortOrder_;
+				std::string tags_;
 				std::string name_;
 				int maxResults_;
-				std::string sortOrder_;
 				std::string sortField_;
 
 			};

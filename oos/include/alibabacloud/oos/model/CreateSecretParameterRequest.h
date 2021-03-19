@@ -39,28 +39,31 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getKeyId()const;
-				void setKeyId(const std::string& keyId);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getConstraints()const;
 				void setConstraints(const std::string& constraints);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getValue()const;
 				void setValue(const std::string& value);
+				std::string getKeyId()const;
+				void setKeyId(const std::string& keyId);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string clientToken_;
 				std::string description_;
-				std::string keyId_;
 				std::string type_;
 				std::string constraints_;
 				std::string regionId_;
-				std::string name_;
 				std::string value_;
+				std::string keyId_;
+				std::string tags_;
+				std::string name_;
 
 			};
 		}

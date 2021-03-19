@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getName()const;
@@ -46,6 +48,7 @@ namespace AlibabaCloud
 
             private:
 				std::string description_;
+				std::string tags_;
 				std::string regionId_;
 				std::string name_;
 				std::string value_;

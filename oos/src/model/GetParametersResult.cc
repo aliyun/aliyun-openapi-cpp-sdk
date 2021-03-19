@@ -67,6 +67,8 @@ void GetParametersResult::parse(const std::string &payload)
 			parametersObject.value = valueParametersParameter["Value"].asString();
 		if(!valueParametersParameter["Constraints"].isNull())
 			parametersObject.constraints = valueParametersParameter["Constraints"].asString();
+		if(!valueParametersParameter["Tags"].isNull())
+			parametersObject.tags = valueParametersParameter["Tags"].asString();
 		parameters_.push_back(parametersObject);
 	}
 	auto allInvalidParameters = value["InvalidParameters"]["InvalidParameter"];

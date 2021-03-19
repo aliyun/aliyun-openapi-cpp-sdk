@@ -64,6 +64,8 @@ void CreateSecretParameterResult::parse(const std::string &payload)
 		_parameter_.constraints = _parameterNode["Constraints"].asString();
 	if(!_parameterNode["KeyId"].isNull())
 		_parameter_.keyId = _parameterNode["KeyId"].asString();
+	if(!_parameterNode["Tags"].isNull())
+		_parameter_.tags = _parameterNode["Tags"].asString();
 
 }
 

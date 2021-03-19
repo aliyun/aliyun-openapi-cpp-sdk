@@ -82,6 +82,28 @@ void ListParametersRequest::setNextToken(const std::string& nextToken)
 	setParameter("NextToken", nextToken);
 }
 
+std::string ListParametersRequest::getSortOrder()const
+{
+	return sortOrder_;
+}
+
+void ListParametersRequest::setSortOrder(const std::string& sortOrder)
+{
+	sortOrder_ = sortOrder;
+	setParameter("SortOrder", sortOrder);
+}
+
+std::string ListParametersRequest::getTags()const
+{
+	return tags_;
+}
+
+void ListParametersRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
 std::string ListParametersRequest::getName()const
 {
 	return name_;
@@ -102,17 +124,6 @@ void ListParametersRequest::setMaxResults(int maxResults)
 {
 	maxResults_ = maxResults;
 	setParameter("MaxResults", std::to_string(maxResults));
-}
-
-std::string ListParametersRequest::getSortOrder()const
-{
-	return sortOrder_;
-}
-
-void ListParametersRequest::setSortOrder(const std::string& sortOrder)
-{
-	sortOrder_ = sortOrder;
-	setParameter("SortOrder", sortOrder);
 }
 
 std::string ListParametersRequest::getSortField()const

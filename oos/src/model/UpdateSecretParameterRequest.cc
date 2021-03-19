@@ -38,6 +38,17 @@ void UpdateSecretParameterRequest::setDescription(const std::string& description
 	setParameter("Description", description);
 }
 
+std::string UpdateSecretParameterRequest::getTags()const
+{
+	return tags_;
+}
+
+void UpdateSecretParameterRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
 std::string UpdateSecretParameterRequest::getRegionId()const
 {
 	return regionId_;
