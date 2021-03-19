@@ -159,6 +159,42 @@ CCCClient::AddBulkPhoneNumbersOutcomeCallable CCCClient::addBulkPhoneNumbersCall
 	return task->get_future();
 }
 
+CCCClient::AddJobsToPredictiveJobGroupOutcome CCCClient::addJobsToPredictiveJobGroup(const AddJobsToPredictiveJobGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddJobsToPredictiveJobGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddJobsToPredictiveJobGroupOutcome(AddJobsToPredictiveJobGroupResult(outcome.result()));
+	else
+		return AddJobsToPredictiveJobGroupOutcome(outcome.error());
+}
+
+void CCCClient::addJobsToPredictiveJobGroupAsync(const AddJobsToPredictiveJobGroupRequest& request, const AddJobsToPredictiveJobGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addJobsToPredictiveJobGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::AddJobsToPredictiveJobGroupOutcomeCallable CCCClient::addJobsToPredictiveJobGroupCallable(const AddJobsToPredictiveJobGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddJobsToPredictiveJobGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->addJobsToPredictiveJobGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::AddPhoneNumberOutcome CCCClient::addPhoneNumber(const AddPhoneNumberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

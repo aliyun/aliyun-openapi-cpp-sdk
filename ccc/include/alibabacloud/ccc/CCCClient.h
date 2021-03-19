@@ -28,6 +28,8 @@
 #include "model/AddAgentDeviceResult.h"
 #include "model/AddBulkPhoneNumbersRequest.h"
 #include "model/AddBulkPhoneNumbersResult.h"
+#include "model/AddJobsToPredictiveJobGroupRequest.h"
+#include "model/AddJobsToPredictiveJobGroupResult.h"
 #include "model/AddPhoneNumberRequest.h"
 #include "model/AddPhoneNumberResult.h"
 #include "model/AddPhoneTagsRequest.h"
@@ -344,6 +346,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddBulkPhoneNumbersResult> AddBulkPhoneNumbersOutcome;
 			typedef std::future<AddBulkPhoneNumbersOutcome> AddBulkPhoneNumbersOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::AddBulkPhoneNumbersRequest&, const AddBulkPhoneNumbersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddBulkPhoneNumbersAsyncHandler;
+			typedef Outcome<Error, Model::AddJobsToPredictiveJobGroupResult> AddJobsToPredictiveJobGroupOutcome;
+			typedef std::future<AddJobsToPredictiveJobGroupOutcome> AddJobsToPredictiveJobGroupOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::AddJobsToPredictiveJobGroupRequest&, const AddJobsToPredictiveJobGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddJobsToPredictiveJobGroupAsyncHandler;
 			typedef Outcome<Error, Model::AddPhoneNumberResult> AddPhoneNumberOutcome;
 			typedef std::future<AddPhoneNumberOutcome> AddPhoneNumberOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::AddPhoneNumberRequest&, const AddPhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddPhoneNumberAsyncHandler;
@@ -805,6 +810,9 @@ namespace AlibabaCloud
 			AddBulkPhoneNumbersOutcome addBulkPhoneNumbers(const Model::AddBulkPhoneNumbersRequest &request)const;
 			void addBulkPhoneNumbersAsync(const Model::AddBulkPhoneNumbersRequest& request, const AddBulkPhoneNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddBulkPhoneNumbersOutcomeCallable addBulkPhoneNumbersCallable(const Model::AddBulkPhoneNumbersRequest& request) const;
+			AddJobsToPredictiveJobGroupOutcome addJobsToPredictiveJobGroup(const Model::AddJobsToPredictiveJobGroupRequest &request)const;
+			void addJobsToPredictiveJobGroupAsync(const Model::AddJobsToPredictiveJobGroupRequest& request, const AddJobsToPredictiveJobGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddJobsToPredictiveJobGroupOutcomeCallable addJobsToPredictiveJobGroupCallable(const Model::AddJobsToPredictiveJobGroupRequest& request) const;
 			AddPhoneNumberOutcome addPhoneNumber(const Model::AddPhoneNumberRequest &request)const;
 			void addPhoneNumberAsync(const Model::AddPhoneNumberRequest& request, const AddPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddPhoneNumberOutcomeCallable addPhoneNumberCallable(const Model::AddPhoneNumberRequest& request) const;

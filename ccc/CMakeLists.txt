@@ -27,6 +27,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/AddAgentDeviceResult.h
 	include/alibabacloud/ccc/model/AddBulkPhoneNumbersRequest.h
 	include/alibabacloud/ccc/model/AddBulkPhoneNumbersResult.h
+	include/alibabacloud/ccc/model/AddJobsToPredictiveJobGroupRequest.h
+	include/alibabacloud/ccc/model/AddJobsToPredictiveJobGroupResult.h
 	include/alibabacloud/ccc/model/AddPhoneNumberRequest.h
 	include/alibabacloud/ccc/model/AddPhoneNumberResult.h
 	include/alibabacloud/ccc/model/AddPhoneTagsRequest.h
@@ -334,6 +336,8 @@ set(ccc_src
 	src/model/AddAgentDeviceResult.cc
 	src/model/AddBulkPhoneNumbersRequest.cc
 	src/model/AddBulkPhoneNumbersResult.cc
+	src/model/AddJobsToPredictiveJobGroupRequest.cc
+	src/model/AddJobsToPredictiveJobGroupResult.cc
 	src/model/AddPhoneNumberRequest.cc
 	src/model/AddPhoneNumberResult.cc
 	src/model/AddPhoneTagsRequest.cc
