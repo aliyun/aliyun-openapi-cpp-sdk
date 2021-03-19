@@ -19,24 +19,13 @@
 using AlibabaCloud::CCC::Model::ListCallDetailRecordsRequest;
 
 ListCallDetailRecordsRequest::ListCallDetailRecordsRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "ListCallDetailRecords")
+	RpcServiceRequest("ccc", "2020-07-01", "ListCallDetailRecords")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ListCallDetailRecordsRequest::~ListCallDetailRecordsRequest()
 {}
-
-std::string ListCallDetailRecordsRequest::getContactType()const
-{
-	return contactType_;
-}
-
-void ListCallDetailRecordsRequest::setContactType(const std::string& contactType)
-{
-	contactType_ = contactType;
-	setParameter("ContactType", contactType);
-}
 
 std::string ListCallDetailRecordsRequest::getContactId()const
 {
@@ -49,37 +38,15 @@ void ListCallDetailRecordsRequest::setContactId(const std::string& contactId)
 	setParameter("ContactId", contactId);
 }
 
-std::string ListCallDetailRecordsRequest::getCriteria()const
+std::string ListCallDetailRecordsRequest::getOrderByField()const
 {
-	return criteria_;
+	return orderByField_;
 }
 
-void ListCallDetailRecordsRequest::setCriteria(const std::string& criteria)
+void ListCallDetailRecordsRequest::setOrderByField(const std::string& orderByField)
 {
-	criteria_ = criteria;
-	setParameter("Criteria", criteria);
-}
-
-std::string ListCallDetailRecordsRequest::getPhoneNumber()const
-{
-	return phoneNumber_;
-}
-
-void ListCallDetailRecordsRequest::setPhoneNumber(const std::string& phoneNumber)
-{
-	phoneNumber_ = phoneNumber;
-	setParameter("PhoneNumber", phoneNumber);
-}
-
-std::string ListCallDetailRecordsRequest::getOrderBy()const
-{
-	return orderBy_;
-}
-
-void ListCallDetailRecordsRequest::setOrderBy(const std::string& orderBy)
-{
-	orderBy_ = orderBy;
-	setParameter("OrderBy", orderBy);
+	orderByField_ = orderByField;
+	setParameter("OrderByField", orderByField);
 }
 
 long ListCallDetailRecordsRequest::getStartTime()const
@@ -93,17 +60,6 @@ void ListCallDetailRecordsRequest::setStartTime(long startTime)
 	setParameter("StartTime", std::to_string(startTime));
 }
 
-long ListCallDetailRecordsRequest::getStopTime()const
-{
-	return stopTime_;
-}
-
-void ListCallDetailRecordsRequest::setStopTime(long stopTime)
-{
-	stopTime_ = stopTime;
-	setParameter("StopTime", std::to_string(stopTime));
-}
-
 int ListCallDetailRecordsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -115,37 +71,15 @@ void ListCallDetailRecordsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string ListCallDetailRecordsRequest::getAccessKeyId()const
+std::string ListCallDetailRecordsRequest::getCalledNumber()const
 {
-	return accessKeyId_;
+	return calledNumber_;
 }
 
-void ListCallDetailRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListCallDetailRecordsRequest::setCalledNumber(const std::string& calledNumber)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string ListCallDetailRecordsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListCallDetailRecordsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
-std::string ListCallDetailRecordsRequest::getContactDisposition()const
-{
-	return contactDisposition_;
-}
-
-void ListCallDetailRecordsRequest::setContactDisposition(const std::string& contactDisposition)
-{
-	contactDisposition_ = contactDisposition;
-	setParameter("ContactDisposition", contactDisposition);
+	calledNumber_ = calledNumber;
+	setParameter("CalledNumber", calledNumber);
 }
 
 int ListCallDetailRecordsRequest::getPageSize()const
@@ -159,6 +93,17 @@ void ListCallDetailRecordsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListCallDetailRecordsRequest::getSortOrder()const
+{
+	return sortOrder_;
+}
+
+void ListCallDetailRecordsRequest::setSortOrder(const std::string& sortOrder)
+{
+	sortOrder_ = sortOrder;
+	setParameter("SortOrder", sortOrder);
+}
+
 bool ListCallDetailRecordsRequest::getWithRecording()const
 {
 	return withRecording_;
@@ -168,5 +113,82 @@ void ListCallDetailRecordsRequest::setWithRecording(bool withRecording)
 {
 	withRecording_ = withRecording;
 	setParameter("WithRecording", withRecording ? "true" : "false");
+}
+
+std::string ListCallDetailRecordsRequest::getAgentId()const
+{
+	return agentId_;
+}
+
+void ListCallDetailRecordsRequest::setAgentId(const std::string& agentId)
+{
+	agentId_ = agentId;
+	setParameter("AgentId", agentId);
+}
+
+std::string ListCallDetailRecordsRequest::getContactType()const
+{
+	return contactType_;
+}
+
+void ListCallDetailRecordsRequest::setContactType(const std::string& contactType)
+{
+	contactType_ = contactType;
+	setParameter("ContactType", contactType);
+}
+
+long ListCallDetailRecordsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void ListCallDetailRecordsRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
+}
+
+std::string ListCallDetailRecordsRequest::getCallingNumber()const
+{
+	return callingNumber_;
+}
+
+void ListCallDetailRecordsRequest::setCallingNumber(const std::string& callingNumber)
+{
+	callingNumber_ = callingNumber;
+	setParameter("CallingNumber", callingNumber);
+}
+
+std::string ListCallDetailRecordsRequest::getContactDisposition()const
+{
+	return contactDisposition_;
+}
+
+void ListCallDetailRecordsRequest::setContactDisposition(const std::string& contactDisposition)
+{
+	contactDisposition_ = contactDisposition;
+	setParameter("ContactDisposition", contactDisposition);
+}
+
+std::string ListCallDetailRecordsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListCallDetailRecordsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string ListCallDetailRecordsRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void ListCallDetailRecordsRequest::setSkillGroupId(const std::string& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	setParameter("SkillGroupId", skillGroupId);
 }
 
