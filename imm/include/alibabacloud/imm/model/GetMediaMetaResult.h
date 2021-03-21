@@ -52,13 +52,13 @@ namespace AlibabaCloud
 							std::string performer;
 							std::string language;
 							std::string creationTime;
-							std::string album;
 							std::string title;
+							std::string album;
 							std::string albumArtist;
 						};
 						Address address;
-						int numberStreams;
 						std::string size;
+						int numberStreams;
 						std::string formatLongName;
 						std::string startTime;
 						std::string creationTime;
@@ -66,8 +66,8 @@ namespace AlibabaCloud
 						std::string duration;
 						Tag tag;
 						std::string bitrate;
-						int numberPrograms;
 						std::string location;
+						int numberPrograms;
 					};
 					struct MediaStreams
 					{
@@ -79,23 +79,28 @@ namespace AlibabaCloud
 							std::string rotate;
 							std::string sampleAspectRatio;
 							std::string startTime;
-							int index;
 							std::string duration;
+							int index;
 							std::string codecName;
 							std::string bitrate;
 							std::string profile;
 							std::string displayAspectRatio;
-							std::string codecTagString;
 							int hasBFrames;
+							std::string codecTagString;
 							std::string averageFrameRate;
 							std::string language;
 							std::string codecLongName;
-							int height;
 							std::string pixelFormat;
 							int level;
+							int height;
 							std::string frameRrate;
 							int width;
 							std::string timeBase;
+						};
+						struct SubtitleStream
+						{
+							std::string language;
+							int index;
 						};
 						struct AudioStream
 						{
@@ -104,8 +109,8 @@ namespace AlibabaCloud
 							std::string codecTimeBase;
 							std::string channelLayout;
 							std::string startTime;
-							int index;
 							std::string duration;
+							int index;
 							std::string codecName;
 							std::string bitrate;
 							std::string sampleFormat;
@@ -115,11 +120,6 @@ namespace AlibabaCloud
 							std::string language;
 							std::string codecLongName;
 							std::string timeBase;
-						};
-						struct SubtitleStream
-						{
-							std::string language;
-							int index;
 						};
 						std::vector<VideoStream> videoStreams;
 						std::vector<SubtitleStream> subtitleStreams;

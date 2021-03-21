@@ -39,36 +39,36 @@ void IndexVideoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SetId"].isNull())
-		setId_ = value["SetId"].asString();
-	if(!value["VideoUri"].isNull())
-		videoUri_ = value["VideoUri"].asString();
-	if(!value["RemarksA"].isNull())
-		remarksA_ = value["RemarksA"].asString();
-	if(!value["RemarksB"].isNull())
-		remarksB_ = value["RemarksB"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["ModifyTime"].isNull())
 		modifyTime_ = value["ModifyTime"].asString();
-	if(!value["Interval"].isNull())
-		interval_ = std::stof(value["Interval"].asString());
-	if(!value["GrabType"].isNull())
-		grabType_ = value["GrabType"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
 	if(!value["SaveType"].isNull())
 		saveType_ = value["SaveType"].asString() == "true";
-	if(!value["TgtUri"].isNull())
-		tgtUri_ = value["TgtUri"].asString();
-	if(!value["RemarksC"].isNull())
-		remarksC_ = value["RemarksC"].asString();
-	if(!value["RemarksD"].isNull())
-		remarksD_ = value["RemarksD"].asString();
 	if(!value["ExternalId"].isNull())
 		externalId_ = value["ExternalId"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["VideoUri"].isNull())
+		videoUri_ = value["VideoUri"].asString();
+	if(!value["GrabType"].isNull())
+		grabType_ = value["GrabType"].asString();
+	if(!value["RemarksA"].isNull())
+		remarksA_ = value["RemarksA"].asString();
+	if(!value["RemarksB"].isNull())
+		remarksB_ = value["RemarksB"].asString();
+	if(!value["RemarksC"].isNull())
+		remarksC_ = value["RemarksC"].asString();
+	if(!value["TgtUri"].isNull())
+		tgtUri_ = value["TgtUri"].asString();
+	if(!value["RemarksD"].isNull())
+		remarksD_ = value["RemarksD"].asString();
+	if(!value["SetId"].isNull())
+		setId_ = value["SetId"].asString();
+	if(!value["Interval"].isNull())
+		interval_ = std::stof(value["Interval"].asString());
 
 }
 
@@ -87,14 +87,14 @@ bool IndexVideoResult::getSaveType()const
 	return saveType_;
 }
 
-std::string IndexVideoResult::getCreateTime()const
-{
-	return createTime_;
-}
-
 std::string IndexVideoResult::getExternalId()const
 {
 	return externalId_;
+}
+
+std::string IndexVideoResult::getCreateTime()const
+{
+	return createTime_;
 }
 
 std::string IndexVideoResult::getStartTime()const

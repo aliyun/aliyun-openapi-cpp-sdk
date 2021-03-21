@@ -43,10 +43,14 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getFile()const;
 				void setFile(const std::string& file);
+				bool getHidecmb()const;
+				void setHidecmb(bool hidecmb);
 				std::string getNotifyEndpoint()const;
 				void setNotifyEndpoint(const std::string& notifyEndpoint);
 				std::string getFileID()const;
 				void setFileID(const std::string& fileID);
+				std::string getWatermark()const;
+				void setWatermark(const std::string& watermark);
 				std::string getNotifyTopicName()const;
 				void setNotifyTopicName(const std::string& notifyTopicName);
 				std::string getPermission()const;
@@ -59,8 +63,10 @@ namespace AlibabaCloud
 				std::string project_;
 				std::string accessKeyId_;
 				std::string file_;
+				bool hidecmb_;
 				std::string notifyEndpoint_;
 				std::string fileID_;
+				std::string watermark_;
 				std::string notifyTopicName_;
 				std::string permission_;
 				std::string user_;

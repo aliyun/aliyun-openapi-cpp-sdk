@@ -375,42 +375,6 @@ ImmClient::CreateSetOutcomeCallable ImmClient::createSetCallable(const CreateSet
 	return task->get_future();
 }
 
-ImmClient::CreateStreamAnalyseTaskOutcome ImmClient::createStreamAnalyseTask(const CreateStreamAnalyseTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateStreamAnalyseTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateStreamAnalyseTaskOutcome(CreateStreamAnalyseTaskResult(outcome.result()));
-	else
-		return CreateStreamAnalyseTaskOutcome(outcome.error());
-}
-
-void ImmClient::createStreamAnalyseTaskAsync(const CreateStreamAnalyseTaskRequest& request, const CreateStreamAnalyseTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createStreamAnalyseTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::CreateStreamAnalyseTaskOutcomeCallable ImmClient::createStreamAnalyseTaskCallable(const CreateStreamAnalyseTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateStreamAnalyseTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->createStreamAnalyseTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::CreateVideoAbstractTaskOutcome ImmClient::createVideoAbstractTask(const CreateVideoAbstractTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

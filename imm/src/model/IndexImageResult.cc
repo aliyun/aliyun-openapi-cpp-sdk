@@ -39,6 +39,20 @@ void IndexImageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["RemarksArrayB"].isNull())
+		remarksArrayB_ = value["RemarksArrayB"].asString();
+	if(!value["ModifyTime"].isNull())
+		modifyTime_ = value["ModifyTime"].asString();
+	if(!value["RemarksC"].isNull())
+		remarksC_ = value["RemarksC"].asString();
+	if(!value["RemarksD"].isNull())
+		remarksD_ = value["RemarksD"].asString();
+	if(!value["RemarksArrayA"].isNull())
+		remarksArrayA_ = value["RemarksArrayA"].asString();
+	if(!value["ExternalId"].isNull())
+		externalId_ = value["ExternalId"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
 	if(!value["SetId"].isNull())
 		setId_ = value["SetId"].asString();
 	if(!value["ImageUri"].isNull())
@@ -47,20 +61,6 @@ void IndexImageResult::parse(const std::string &payload)
 		remarksA_ = value["RemarksA"].asString();
 	if(!value["RemarksB"].isNull())
 		remarksB_ = value["RemarksB"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
-	if(!value["ModifyTime"].isNull())
-		modifyTime_ = value["ModifyTime"].asString();
-	if(!value["RemarksC"].isNull())
-		remarksC_ = value["RemarksC"].asString();
-	if(!value["RemarksD"].isNull())
-		remarksD_ = value["RemarksD"].asString();
-	if(!value["ExternalId"].isNull())
-		externalId_ = value["ExternalId"].asString();
-	if(!value["RemarksArrayA"].isNull())
-		remarksArrayA_ = value["RemarksArrayA"].asString();
-	if(!value["RemarksArrayB"].isNull())
-		remarksArrayB_ = value["RemarksArrayB"].asString();
 
 }
 
@@ -84,9 +84,9 @@ std::string IndexImageResult::getRemarksD()const
 	return remarksD_;
 }
 
-std::string IndexImageResult::getCreateTime()const
+std::string IndexImageResult::getRemarksArrayA()const
 {
-	return createTime_;
+	return remarksArrayA_;
 }
 
 std::string IndexImageResult::getExternalId()const
@@ -94,9 +94,9 @@ std::string IndexImageResult::getExternalId()const
 	return externalId_;
 }
 
-std::string IndexImageResult::getRemarksArrayA()const
+std::string IndexImageResult::getCreateTime()const
 {
-	return remarksArrayA_;
+	return createTime_;
 }
 
 std::string IndexImageResult::getSetId()const

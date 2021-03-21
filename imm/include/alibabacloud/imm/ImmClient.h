@@ -40,8 +40,6 @@
 #include "model/CreateOfficeConversionTaskResult.h"
 #include "model/CreateSetRequest.h"
 #include "model/CreateSetResult.h"
-#include "model/CreateStreamAnalyseTaskRequest.h"
-#include "model/CreateStreamAnalyseTaskResult.h"
 #include "model/CreateVideoAbstractTaskRequest.h"
 #include "model/CreateVideoAbstractTaskResult.h"
 #include "model/CreateVideoAnalyseTaskRequest.h"
@@ -194,9 +192,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSetResult> CreateSetOutcome;
 			typedef std::future<CreateSetOutcome> CreateSetOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateSetRequest&, const CreateSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSetAsyncHandler;
-			typedef Outcome<Error, Model::CreateStreamAnalyseTaskResult> CreateStreamAnalyseTaskOutcome;
-			typedef std::future<CreateStreamAnalyseTaskOutcome> CreateStreamAnalyseTaskOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::CreateStreamAnalyseTaskRequest&, const CreateStreamAnalyseTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamAnalyseTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateVideoAbstractTaskResult> CreateVideoAbstractTaskOutcome;
 			typedef std::future<CreateVideoAbstractTaskOutcome> CreateVideoAbstractTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateVideoAbstractTaskRequest&, const CreateVideoAbstractTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoAbstractTaskAsyncHandler;
@@ -403,9 +398,6 @@ namespace AlibabaCloud
 			CreateSetOutcome createSet(const Model::CreateSetRequest &request)const;
 			void createSetAsync(const Model::CreateSetRequest& request, const CreateSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSetOutcomeCallable createSetCallable(const Model::CreateSetRequest& request) const;
-			CreateStreamAnalyseTaskOutcome createStreamAnalyseTask(const Model::CreateStreamAnalyseTaskRequest &request)const;
-			void createStreamAnalyseTaskAsync(const Model::CreateStreamAnalyseTaskRequest& request, const CreateStreamAnalyseTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateStreamAnalyseTaskOutcomeCallable createStreamAnalyseTaskCallable(const Model::CreateStreamAnalyseTaskRequest& request) const;
 			CreateVideoAbstractTaskOutcome createVideoAbstractTask(const Model::CreateVideoAbstractTaskRequest &request)const;
 			void createVideoAbstractTaskAsync(const Model::CreateVideoAbstractTaskRequest& request, const CreateVideoAbstractTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVideoAbstractTaskOutcomeCallable createVideoAbstractTaskCallable(const Model::CreateVideoAbstractTaskRequest& request) const;

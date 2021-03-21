@@ -39,8 +39,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/CreateOfficeConversionTaskResult.h
 	include/alibabacloud/imm/model/CreateSetRequest.h
 	include/alibabacloud/imm/model/CreateSetResult.h
-	include/alibabacloud/imm/model/CreateStreamAnalyseTaskRequest.h
-	include/alibabacloud/imm/model/CreateStreamAnalyseTaskResult.h
 	include/alibabacloud/imm/model/CreateVideoAbstractTaskRequest.h
 	include/alibabacloud/imm/model/CreateVideoAbstractTaskResult.h
 	include/alibabacloud/imm/model/CreateVideoAnalyseTaskRequest.h
@@ -178,8 +176,6 @@ set(imm_src
 	src/model/CreateOfficeConversionTaskResult.cc
 	src/model/CreateSetRequest.cc
 	src/model/CreateSetResult.cc
-	src/model/CreateStreamAnalyseTaskRequest.cc
-	src/model/CreateStreamAnalyseTaskResult.cc
 	src/model/CreateVideoAbstractTaskRequest.cc
 	src/model/CreateVideoAbstractTaskResult.cc
 	src/model/CreateVideoAnalyseTaskRequest.cc

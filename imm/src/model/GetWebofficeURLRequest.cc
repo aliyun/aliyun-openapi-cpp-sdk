@@ -71,6 +71,17 @@ void GetWebofficeURLRequest::setFile(const std::string& file)
 	setParameter("File", file);
 }
 
+bool GetWebofficeURLRequest::getHidecmb()const
+{
+	return hidecmb_;
+}
+
+void GetWebofficeURLRequest::setHidecmb(bool hidecmb)
+{
+	hidecmb_ = hidecmb;
+	setParameter("Hidecmb", hidecmb ? "true" : "false");
+}
+
 std::string GetWebofficeURLRequest::getNotifyEndpoint()const
 {
 	return notifyEndpoint_;
@@ -91,6 +102,17 @@ void GetWebofficeURLRequest::setFileID(const std::string& fileID)
 {
 	fileID_ = fileID;
 	setParameter("FileID", fileID);
+}
+
+std::string GetWebofficeURLRequest::getWatermark()const
+{
+	return watermark_;
+}
+
+void GetWebofficeURLRequest::setWatermark(const std::string& watermark)
+{
+	watermark_ = watermark;
+	setParameter("Watermark", watermark);
 }
 
 std::string GetWebofficeURLRequest::getNotifyTopicName()const
