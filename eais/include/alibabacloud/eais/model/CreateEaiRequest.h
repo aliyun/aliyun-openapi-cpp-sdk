@@ -37,6 +37,10 @@ namespace AlibabaCloud
 
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getSecurityGroupId()const;
+				void setSecurityGroupId(const std::string& securityGroupId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				std::string getRegionId()const;
@@ -46,6 +50,8 @@ namespace AlibabaCloud
 
             private:
 				std::string clientToken_;
+				std::string securityGroupId_;
+				std::string vSwitchId_;
 				std::string instanceName_;
 				std::string regionId_;
 				std::string instanceType_;

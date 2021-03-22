@@ -38,6 +38,28 @@ void CreateEaiRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string CreateEaiRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void CreateEaiRequest::setSecurityGroupId(const std::string& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	setParameter("SecurityGroupId", securityGroupId);
+}
+
+std::string CreateEaiRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void CreateEaiRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
+}
+
 std::string CreateEaiRequest::getInstanceName()const
 {
 	return instanceName_;
