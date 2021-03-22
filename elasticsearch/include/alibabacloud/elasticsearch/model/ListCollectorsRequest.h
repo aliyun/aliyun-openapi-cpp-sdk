@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setSize(int size);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getSourceType()const;
+				void setSourceType(const std::string& sourceType);
 				int getPage()const;
 				void setPage(int page);
 				std::string getResId()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				int size_;
 				std::string name_;
+				std::string sourceType_;
 				int page_;
 				std::string resId_;
 

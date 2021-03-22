@@ -90,6 +90,14 @@ void UpdateCollectorResult::parse(const std::string &payload)
 			extendConfigsItemObject.type = resultNodeextendConfigsextendConfigsItem["type"].asString();
 		if(!resultNodeextendConfigsextendConfigsItem["groupId"].isNull())
 			extendConfigsItemObject.groupId = resultNodeextendConfigsextendConfigsItem["groupId"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["host"].isNull())
+			extendConfigsItemObject.host = resultNodeextendConfigsextendConfigsItem["host"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["kibanaHost"].isNull())
+			extendConfigsItemObject.kibanaHost = resultNodeextendConfigsextendConfigsItem["kibanaHost"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["totalPodsCount"].isNull())
+			extendConfigsItemObject.totalPodsCount = resultNodeextendConfigsextendConfigsItem["totalPodsCount"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["successPodsCount"].isNull())
+			extendConfigsItemObject.successPodsCount = resultNodeextendConfigsextendConfigsItem["successPodsCount"].asString();
 		auto allmachinesNode = resultNodeextendConfigsextendConfigsItem["machines"]["machinesItem"];
 		for (auto resultNodeextendConfigsextendConfigsItemmachinesmachinesItem : allmachinesNode)
 		{

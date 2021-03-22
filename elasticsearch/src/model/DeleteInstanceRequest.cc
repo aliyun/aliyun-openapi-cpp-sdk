@@ -50,3 +50,14 @@ void DeleteInstanceRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string DeleteInstanceRequest::getDeleteType()const
+{
+	return deleteType_;
+}
+
+void DeleteInstanceRequest::setDeleteType(const std::string& deleteType)
+{
+	deleteType_ = deleteType;
+	setParameter("DeleteType", deleteType);
+}
+

@@ -159,6 +159,78 @@ ElasticsearchClient::AddSnapshotRepoOutcomeCallable ElasticsearchClient::addSnap
 	return task->get_future();
 }
 
+ElasticsearchClient::CancelDeletionOutcome ElasticsearchClient::cancelDeletion(const CancelDeletionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelDeletionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelDeletionOutcome(CancelDeletionResult(outcome.result()));
+	else
+		return CancelDeletionOutcome(outcome.error());
+}
+
+void ElasticsearchClient::cancelDeletionAsync(const CancelDeletionRequest& request, const CancelDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelDeletion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CancelDeletionOutcomeCallable ElasticsearchClient::cancelDeletionCallable(const CancelDeletionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelDeletionOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelDeletion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::CancelLogstashDeletionOutcome ElasticsearchClient::cancelLogstashDeletion(const CancelLogstashDeletionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelLogstashDeletionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelLogstashDeletionOutcome(CancelLogstashDeletionResult(outcome.result()));
+	else
+		return CancelLogstashDeletionOutcome(outcome.error());
+}
+
+void ElasticsearchClient::cancelLogstashDeletionAsync(const CancelLogstashDeletionRequest& request, const CancelLogstashDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelLogstashDeletion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CancelLogstashDeletionOutcomeCallable ElasticsearchClient::cancelLogstashDeletionCallable(const CancelLogstashDeletionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelLogstashDeletionOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelLogstashDeletion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::CancelTaskOutcome ElasticsearchClient::cancelTask(const CancelTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +333,42 @@ ElasticsearchClient::CloseHttpsOutcomeCallable ElasticsearchClient::closeHttpsCa
 			[this, request]()
 			{
 			return this->closeHttps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::CreateCollectorOutcome ElasticsearchClient::createCollector(const CreateCollectorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCollectorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCollectorOutcome(CreateCollectorResult(outcome.result()));
+	else
+		return CreateCollectorOutcome(outcome.error());
+}
+
+void ElasticsearchClient::createCollectorAsync(const CreateCollectorRequest& request, const CreateCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCollector(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CreateCollectorOutcomeCallable ElasticsearchClient::createCollectorCallable(const CreateCollectorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCollectorOutcome()>>(
+			[this, request]()
+			{
+			return this->createCollector(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -801,6 +909,42 @@ ElasticsearchClient::DeleteSnapshotRepoOutcomeCallable ElasticsearchClient::dele
 			[this, request]()
 			{
 			return this->deleteSnapshotRepo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DescribeAckOperatorOutcome ElasticsearchClient::describeAckOperator(const DescribeAckOperatorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAckOperatorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAckOperatorOutcome(DescribeAckOperatorResult(outcome.result()));
+	else
+		return DescribeAckOperatorOutcome(outcome.error());
+}
+
+void ElasticsearchClient::describeAckOperatorAsync(const DescribeAckOperatorRequest& request, const DescribeAckOperatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAckOperator(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DescribeAckOperatorOutcomeCallable ElasticsearchClient::describeAckOperatorCallable(const DescribeAckOperatorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAckOperatorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAckOperator(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,6 +1779,78 @@ ElasticsearchClient::GetTransferableNodesOutcomeCallable ElasticsearchClient::ge
 	return task->get_future();
 }
 
+ElasticsearchClient::InitializeOperationRoleOutcome ElasticsearchClient::initializeOperationRole(const InitializeOperationRoleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitializeOperationRoleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitializeOperationRoleOutcome(InitializeOperationRoleResult(outcome.result()));
+	else
+		return InitializeOperationRoleOutcome(outcome.error());
+}
+
+void ElasticsearchClient::initializeOperationRoleAsync(const InitializeOperationRoleRequest& request, const InitializeOperationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initializeOperationRole(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::InitializeOperationRoleOutcomeCallable ElasticsearchClient::initializeOperationRoleCallable(const InitializeOperationRoleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitializeOperationRoleOutcome()>>(
+			[this, request]()
+			{
+			return this->initializeOperationRole(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::InstallAckOperatorOutcome ElasticsearchClient::installAckOperator(const InstallAckOperatorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InstallAckOperatorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InstallAckOperatorOutcome(InstallAckOperatorResult(outcome.result()));
+	else
+		return InstallAckOperatorOutcome(outcome.error());
+}
+
+void ElasticsearchClient::installAckOperatorAsync(const InstallAckOperatorRequest& request, const InstallAckOperatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, installAckOperator(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::InstallAckOperatorOutcomeCallable ElasticsearchClient::installAckOperatorCallable(const InstallAckOperatorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InstallAckOperatorOutcome()>>(
+			[this, request]()
+			{
+			return this->installAckOperator(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::InstallKibanaSystemPluginOutcome ElasticsearchClient::installKibanaSystemPlugin(const InstallKibanaSystemPluginRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1851,6 +2067,78 @@ ElasticsearchClient::InterruptLogstashTaskOutcomeCallable ElasticsearchClient::i
 	return task->get_future();
 }
 
+ElasticsearchClient::ListAckClustersOutcome ElasticsearchClient::listAckClusters(const ListAckClustersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAckClustersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAckClustersOutcome(ListAckClustersResult(outcome.result()));
+	else
+		return ListAckClustersOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listAckClustersAsync(const ListAckClustersRequest& request, const ListAckClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAckClusters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListAckClustersOutcomeCallable ElasticsearchClient::listAckClustersCallable(const ListAckClustersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAckClustersOutcome()>>(
+			[this, request]()
+			{
+			return this->listAckClusters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListAckNamespacesOutcome ElasticsearchClient::listAckNamespaces(const ListAckNamespacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAckNamespacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAckNamespacesOutcome(ListAckNamespacesResult(outcome.result()));
+	else
+		return ListAckNamespacesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listAckNamespacesAsync(const ListAckNamespacesRequest& request, const ListAckNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAckNamespaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListAckNamespacesOutcomeCallable ElasticsearchClient::listAckNamespacesCallable(const ListAckNamespacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAckNamespacesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAckNamespaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ListAllNodeOutcome ElasticsearchClient::listAllNode(const ListAllNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2061,6 +2349,78 @@ ElasticsearchClient::ListDataTasksOutcomeCallable ElasticsearchClient::listDataT
 			[this, request]()
 			{
 			return this->listDataTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListDefaultCollectorConfigurationsOutcome ElasticsearchClient::listDefaultCollectorConfigurations(const ListDefaultCollectorConfigurationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDefaultCollectorConfigurationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDefaultCollectorConfigurationsOutcome(ListDefaultCollectorConfigurationsResult(outcome.result()));
+	else
+		return ListDefaultCollectorConfigurationsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listDefaultCollectorConfigurationsAsync(const ListDefaultCollectorConfigurationsRequest& request, const ListDefaultCollectorConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDefaultCollectorConfigurations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListDefaultCollectorConfigurationsOutcomeCallable ElasticsearchClient::listDefaultCollectorConfigurationsCallable(const ListDefaultCollectorConfigurationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDefaultCollectorConfigurationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDefaultCollectorConfigurations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListDiagnoseIndicesOutcome ElasticsearchClient::listDiagnoseIndices(const ListDiagnoseIndicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDiagnoseIndicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDiagnoseIndicesOutcome(ListDiagnoseIndicesResult(outcome.result()));
+	else
+		return ListDiagnoseIndicesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listDiagnoseIndicesAsync(const ListDiagnoseIndicesRequest& request, const ListDiagnoseIndicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDiagnoseIndices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListDiagnoseIndicesOutcomeCallable ElasticsearchClient::listDiagnoseIndicesCallable(const ListDiagnoseIndicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDiagnoseIndicesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDiagnoseIndices(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3039,6 +3399,42 @@ ElasticsearchClient::OpenHttpsOutcomeCallable ElasticsearchClient::openHttpsCall
 	return task->get_future();
 }
 
+ElasticsearchClient::RecommendTemplatesOutcome ElasticsearchClient::recommendTemplates(const RecommendTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecommendTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecommendTemplatesOutcome(RecommendTemplatesResult(outcome.result()));
+	else
+		return RecommendTemplatesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::recommendTemplatesAsync(const RecommendTemplatesRequest& request, const RecommendTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recommendTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::RecommendTemplatesOutcomeCallable ElasticsearchClient::recommendTemplatesCallable(const RecommendTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecommendTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->recommendTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ReinstallCollectorOutcome ElasticsearchClient::reinstallCollector(const ReinstallCollectorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,6 +3537,42 @@ ElasticsearchClient::RenewLogstashOutcomeCallable ElasticsearchClient::renewLogs
 			[this, request]()
 			{
 			return this->renewLogstash(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::RestartCollectorOutcome ElasticsearchClient::restartCollector(const RestartCollectorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartCollectorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartCollectorOutcome(RestartCollectorResult(outcome.result()));
+	else
+		return RestartCollectorOutcome(outcome.error());
+}
+
+void ElasticsearchClient::restartCollectorAsync(const RestartCollectorRequest& request, const RestartCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartCollector(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::RestartCollectorOutcomeCallable ElasticsearchClient::restartCollectorCallable(const RestartCollectorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartCollectorOutcome()>>(
+			[this, request]()
+			{
+			return this->restartCollector(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5013,6 +5445,42 @@ ElasticsearchClient::ValidateShrinkNodesOutcomeCallable ElasticsearchClient::val
 			[this, request]()
 			{
 			return this->validateShrinkNodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ValidateSlrPermissionOutcome ElasticsearchClient::validateSlrPermission(const ValidateSlrPermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ValidateSlrPermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ValidateSlrPermissionOutcome(ValidateSlrPermissionResult(outcome.result()));
+	else
+		return ValidateSlrPermissionOutcome(outcome.error());
+}
+
+void ElasticsearchClient::validateSlrPermissionAsync(const ValidateSlrPermissionRequest& request, const ValidateSlrPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, validateSlrPermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ValidateSlrPermissionOutcomeCallable ElasticsearchClient::validateSlrPermissionCallable(const ValidateSlrPermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ValidateSlrPermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->validateSlrPermission(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

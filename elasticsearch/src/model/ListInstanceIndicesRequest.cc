@@ -21,7 +21,7 @@ using AlibabaCloud::Elasticsearch::Model::ListInstanceIndicesRequest;
 ListInstanceIndicesRequest::ListInstanceIndicesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/diagnosis/instances/[InstanceId]/indices");
+	setResourcePath("/openapi/instances/[InstanceId]/indices");
 	setMethod(HttpRequest::Method::Get);
 }
 

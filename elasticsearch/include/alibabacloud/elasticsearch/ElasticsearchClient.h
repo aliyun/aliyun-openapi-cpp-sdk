@@ -28,12 +28,18 @@
 #include "model/AddConnectableClusterResult.h"
 #include "model/AddSnapshotRepoRequest.h"
 #include "model/AddSnapshotRepoResult.h"
+#include "model/CancelDeletionRequest.h"
+#include "model/CancelDeletionResult.h"
+#include "model/CancelLogstashDeletionRequest.h"
+#include "model/CancelLogstashDeletionResult.h"
 #include "model/CancelTaskRequest.h"
 #include "model/CancelTaskResult.h"
 #include "model/CloseDiagnosisRequest.h"
 #include "model/CloseDiagnosisResult.h"
 #include "model/CloseHttpsRequest.h"
 #include "model/CloseHttpsResult.h"
+#include "model/CreateCollectorRequest.h"
+#include "model/CreateCollectorResult.h"
 #include "model/CreateDataTasksRequest.h"
 #include "model/CreateDataTasksResult.h"
 #include "model/CreateInstanceRequest.h"
@@ -64,6 +70,8 @@
 #include "model/DeleteProjectResult.h"
 #include "model/DeleteSnapshotRepoRequest.h"
 #include "model/DeleteSnapshotRepoResult.h"
+#include "model/DescribeAckOperatorRequest.h"
+#include "model/DescribeAckOperatorResult.h"
 #include "model/DescribeCollectorRequest.h"
 #include "model/DescribeCollectorResult.h"
 #include "model/DescribeConnectableClustersRequest.h"
@@ -110,6 +118,10 @@
 #include "model/GetSuggestShrinkableNodesResult.h"
 #include "model/GetTransferableNodesRequest.h"
 #include "model/GetTransferableNodesResult.h"
+#include "model/InitializeOperationRoleRequest.h"
+#include "model/InitializeOperationRoleResult.h"
+#include "model/InstallAckOperatorRequest.h"
+#include "model/InstallAckOperatorResult.h"
 #include "model/InstallKibanaSystemPluginRequest.h"
 #include "model/InstallKibanaSystemPluginResult.h"
 #include "model/InstallLogstashSystemPluginRequest.h"
@@ -122,6 +134,10 @@
 #include "model/InterruptElasticsearchTaskResult.h"
 #include "model/InterruptLogstashTaskRequest.h"
 #include "model/InterruptLogstashTaskResult.h"
+#include "model/ListAckClustersRequest.h"
+#include "model/ListAckClustersResult.h"
+#include "model/ListAckNamespacesRequest.h"
+#include "model/ListAckNamespacesResult.h"
 #include "model/ListAllNodeRequest.h"
 #include "model/ListAllNodeResult.h"
 #include "model/ListAlternativeSnapshotReposRequest.h"
@@ -134,6 +150,10 @@
 #include "model/ListConnectedClustersResult.h"
 #include "model/ListDataTasksRequest.h"
 #include "model/ListDataTasksResult.h"
+#include "model/ListDefaultCollectorConfigurationsRequest.h"
+#include "model/ListDefaultCollectorConfigurationsResult.h"
+#include "model/ListDiagnoseIndicesRequest.h"
+#include "model/ListDiagnoseIndicesResult.h"
 #include "model/ListDiagnoseReportRequest.h"
 #include "model/ListDiagnoseReportResult.h"
 #include "model/ListDiagnoseReportIdsRequest.h"
@@ -188,12 +208,16 @@
 #include "model/OpenDiagnosisResult.h"
 #include "model/OpenHttpsRequest.h"
 #include "model/OpenHttpsResult.h"
+#include "model/RecommendTemplatesRequest.h"
+#include "model/RecommendTemplatesResult.h"
 #include "model/ReinstallCollectorRequest.h"
 #include "model/ReinstallCollectorResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
 #include "model/RenewLogstashRequest.h"
 #include "model/RenewLogstashResult.h"
+#include "model/RestartCollectorRequest.h"
+#include "model/RestartCollectorResult.h"
 #include "model/RestartInstanceRequest.h"
 #include "model/RestartInstanceResult.h"
 #include "model/RestartLogstashRequest.h"
@@ -298,6 +322,8 @@
 #include "model/ValidateConnectionResult.h"
 #include "model/ValidateShrinkNodesRequest.h"
 #include "model/ValidateShrinkNodesResult.h"
+#include "model/ValidateSlrPermissionRequest.h"
+#include "model/ValidateSlrPermissionResult.h"
 #include "model/ValidateTransferableNodesRequest.h"
 #include "model/ValidateTransferableNodesResult.h"
 
@@ -318,6 +344,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddSnapshotRepoResult> AddSnapshotRepoOutcome;
 			typedef std::future<AddSnapshotRepoOutcome> AddSnapshotRepoOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::AddSnapshotRepoRequest&, const AddSnapshotRepoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSnapshotRepoAsyncHandler;
+			typedef Outcome<Error, Model::CancelDeletionResult> CancelDeletionOutcome;
+			typedef std::future<CancelDeletionOutcome> CancelDeletionOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CancelDeletionRequest&, const CancelDeletionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelDeletionAsyncHandler;
+			typedef Outcome<Error, Model::CancelLogstashDeletionResult> CancelLogstashDeletionOutcome;
+			typedef std::future<CancelLogstashDeletionOutcome> CancelLogstashDeletionOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CancelLogstashDeletionRequest&, const CancelLogstashDeletionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelLogstashDeletionAsyncHandler;
 			typedef Outcome<Error, Model::CancelTaskResult> CancelTaskOutcome;
 			typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CancelTaskRequest&, const CancelTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
@@ -327,6 +359,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CloseHttpsResult> CloseHttpsOutcome;
 			typedef std::future<CloseHttpsOutcome> CloseHttpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CloseHttpsRequest&, const CloseHttpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseHttpsAsyncHandler;
+			typedef Outcome<Error, Model::CreateCollectorResult> CreateCollectorOutcome;
+			typedef std::future<CreateCollectorOutcome> CreateCollectorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CreateCollectorRequest&, const CreateCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCollectorAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataTasksResult> CreateDataTasksOutcome;
 			typedef std::future<CreateDataTasksOutcome> CreateDataTasksOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateDataTasksRequest&, const CreateDataTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataTasksAsyncHandler;
@@ -372,6 +407,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSnapshotRepoResult> DeleteSnapshotRepoOutcome;
 			typedef std::future<DeleteSnapshotRepoOutcome> DeleteSnapshotRepoOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteSnapshotRepoRequest&, const DeleteSnapshotRepoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotRepoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAckOperatorResult> DescribeAckOperatorOutcome;
+			typedef std::future<DescribeAckOperatorOutcome> DescribeAckOperatorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeAckOperatorRequest&, const DescribeAckOperatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAckOperatorAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCollectorResult> DescribeCollectorOutcome;
 			typedef std::future<DescribeCollectorOutcome> DescribeCollectorOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeCollectorRequest&, const DescribeCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCollectorAsyncHandler;
@@ -441,6 +479,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTransferableNodesResult> GetTransferableNodesOutcome;
 			typedef std::future<GetTransferableNodesOutcome> GetTransferableNodesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetTransferableNodesRequest&, const GetTransferableNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTransferableNodesAsyncHandler;
+			typedef Outcome<Error, Model::InitializeOperationRoleResult> InitializeOperationRoleOutcome;
+			typedef std::future<InitializeOperationRoleOutcome> InitializeOperationRoleOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::InitializeOperationRoleRequest&, const InitializeOperationRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitializeOperationRoleAsyncHandler;
+			typedef Outcome<Error, Model::InstallAckOperatorResult> InstallAckOperatorOutcome;
+			typedef std::future<InstallAckOperatorOutcome> InstallAckOperatorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::InstallAckOperatorRequest&, const InstallAckOperatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallAckOperatorAsyncHandler;
 			typedef Outcome<Error, Model::InstallKibanaSystemPluginResult> InstallKibanaSystemPluginOutcome;
 			typedef std::future<InstallKibanaSystemPluginOutcome> InstallKibanaSystemPluginOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::InstallKibanaSystemPluginRequest&, const InstallKibanaSystemPluginOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallKibanaSystemPluginAsyncHandler;
@@ -459,6 +503,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InterruptLogstashTaskResult> InterruptLogstashTaskOutcome;
 			typedef std::future<InterruptLogstashTaskOutcome> InterruptLogstashTaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::InterruptLogstashTaskRequest&, const InterruptLogstashTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InterruptLogstashTaskAsyncHandler;
+			typedef Outcome<Error, Model::ListAckClustersResult> ListAckClustersOutcome;
+			typedef std::future<ListAckClustersOutcome> ListAckClustersOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListAckClustersRequest&, const ListAckClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAckClustersAsyncHandler;
+			typedef Outcome<Error, Model::ListAckNamespacesResult> ListAckNamespacesOutcome;
+			typedef std::future<ListAckNamespacesOutcome> ListAckNamespacesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListAckNamespacesRequest&, const ListAckNamespacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAckNamespacesAsyncHandler;
 			typedef Outcome<Error, Model::ListAllNodeResult> ListAllNodeOutcome;
 			typedef std::future<ListAllNodeOutcome> ListAllNodeOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListAllNodeRequest&, const ListAllNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAllNodeAsyncHandler;
@@ -477,6 +527,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDataTasksResult> ListDataTasksOutcome;
 			typedef std::future<ListDataTasksOutcome> ListDataTasksOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListDataTasksRequest&, const ListDataTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataTasksAsyncHandler;
+			typedef Outcome<Error, Model::ListDefaultCollectorConfigurationsResult> ListDefaultCollectorConfigurationsOutcome;
+			typedef std::future<ListDefaultCollectorConfigurationsOutcome> ListDefaultCollectorConfigurationsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDefaultCollectorConfigurationsRequest&, const ListDefaultCollectorConfigurationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDefaultCollectorConfigurationsAsyncHandler;
+			typedef Outcome<Error, Model::ListDiagnoseIndicesResult> ListDiagnoseIndicesOutcome;
+			typedef std::future<ListDiagnoseIndicesOutcome> ListDiagnoseIndicesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDiagnoseIndicesRequest&, const ListDiagnoseIndicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseIndicesAsyncHandler;
 			typedef Outcome<Error, Model::ListDiagnoseReportResult> ListDiagnoseReportOutcome;
 			typedef std::future<ListDiagnoseReportOutcome> ListDiagnoseReportOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListDiagnoseReportRequest&, const ListDiagnoseReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseReportAsyncHandler;
@@ -558,6 +614,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OpenHttpsResult> OpenHttpsOutcome;
 			typedef std::future<OpenHttpsOutcome> OpenHttpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::OpenHttpsRequest&, const OpenHttpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenHttpsAsyncHandler;
+			typedef Outcome<Error, Model::RecommendTemplatesResult> RecommendTemplatesOutcome;
+			typedef std::future<RecommendTemplatesOutcome> RecommendTemplatesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::RecommendTemplatesRequest&, const RecommendTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecommendTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::ReinstallCollectorResult> ReinstallCollectorOutcome;
 			typedef std::future<ReinstallCollectorOutcome> ReinstallCollectorOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ReinstallCollectorRequest&, const ReinstallCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReinstallCollectorAsyncHandler;
@@ -567,6 +626,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewLogstashResult> RenewLogstashOutcome;
 			typedef std::future<RenewLogstashOutcome> RenewLogstashOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::RenewLogstashRequest&, const RenewLogstashOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewLogstashAsyncHandler;
+			typedef Outcome<Error, Model::RestartCollectorResult> RestartCollectorOutcome;
+			typedef std::future<RestartCollectorOutcome> RestartCollectorOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::RestartCollectorRequest&, const RestartCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartCollectorAsyncHandler;
 			typedef Outcome<Error, Model::RestartInstanceResult> RestartInstanceOutcome;
 			typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::RestartInstanceRequest&, const RestartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
@@ -723,6 +785,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ValidateShrinkNodesResult> ValidateShrinkNodesOutcome;
 			typedef std::future<ValidateShrinkNodesOutcome> ValidateShrinkNodesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ValidateShrinkNodesRequest&, const ValidateShrinkNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateShrinkNodesAsyncHandler;
+			typedef Outcome<Error, Model::ValidateSlrPermissionResult> ValidateSlrPermissionOutcome;
+			typedef std::future<ValidateSlrPermissionOutcome> ValidateSlrPermissionOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ValidateSlrPermissionRequest&, const ValidateSlrPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateSlrPermissionAsyncHandler;
 			typedef Outcome<Error, Model::ValidateTransferableNodesResult> ValidateTransferableNodesOutcome;
 			typedef std::future<ValidateTransferableNodesOutcome> ValidateTransferableNodesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ValidateTransferableNodesRequest&, const ValidateTransferableNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateTransferableNodesAsyncHandler;
@@ -740,6 +805,12 @@ namespace AlibabaCloud
 			AddSnapshotRepoOutcome addSnapshotRepo(const Model::AddSnapshotRepoRequest &request)const;
 			void addSnapshotRepoAsync(const Model::AddSnapshotRepoRequest& request, const AddSnapshotRepoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddSnapshotRepoOutcomeCallable addSnapshotRepoCallable(const Model::AddSnapshotRepoRequest& request) const;
+			CancelDeletionOutcome cancelDeletion(const Model::CancelDeletionRequest &request)const;
+			void cancelDeletionAsync(const Model::CancelDeletionRequest& request, const CancelDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelDeletionOutcomeCallable cancelDeletionCallable(const Model::CancelDeletionRequest& request) const;
+			CancelLogstashDeletionOutcome cancelLogstashDeletion(const Model::CancelLogstashDeletionRequest &request)const;
+			void cancelLogstashDeletionAsync(const Model::CancelLogstashDeletionRequest& request, const CancelLogstashDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelLogstashDeletionOutcomeCallable cancelLogstashDeletionCallable(const Model::CancelLogstashDeletionRequest& request) const;
 			CancelTaskOutcome cancelTask(const Model::CancelTaskRequest &request)const;
 			void cancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelTaskOutcomeCallable cancelTaskCallable(const Model::CancelTaskRequest& request) const;
@@ -749,6 +820,9 @@ namespace AlibabaCloud
 			CloseHttpsOutcome closeHttps(const Model::CloseHttpsRequest &request)const;
 			void closeHttpsAsync(const Model::CloseHttpsRequest& request, const CloseHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseHttpsOutcomeCallable closeHttpsCallable(const Model::CloseHttpsRequest& request) const;
+			CreateCollectorOutcome createCollector(const Model::CreateCollectorRequest &request)const;
+			void createCollectorAsync(const Model::CreateCollectorRequest& request, const CreateCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCollectorOutcomeCallable createCollectorCallable(const Model::CreateCollectorRequest& request) const;
 			CreateDataTasksOutcome createDataTasks(const Model::CreateDataTasksRequest &request)const;
 			void createDataTasksAsync(const Model::CreateDataTasksRequest& request, const CreateDataTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataTasksOutcomeCallable createDataTasksCallable(const Model::CreateDataTasksRequest& request) const;
@@ -794,6 +868,9 @@ namespace AlibabaCloud
 			DeleteSnapshotRepoOutcome deleteSnapshotRepo(const Model::DeleteSnapshotRepoRequest &request)const;
 			void deleteSnapshotRepoAsync(const Model::DeleteSnapshotRepoRequest& request, const DeleteSnapshotRepoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotRepoOutcomeCallable deleteSnapshotRepoCallable(const Model::DeleteSnapshotRepoRequest& request) const;
+			DescribeAckOperatorOutcome describeAckOperator(const Model::DescribeAckOperatorRequest &request)const;
+			void describeAckOperatorAsync(const Model::DescribeAckOperatorRequest& request, const DescribeAckOperatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAckOperatorOutcomeCallable describeAckOperatorCallable(const Model::DescribeAckOperatorRequest& request) const;
 			DescribeCollectorOutcome describeCollector(const Model::DescribeCollectorRequest &request)const;
 			void describeCollectorAsync(const Model::DescribeCollectorRequest& request, const DescribeCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCollectorOutcomeCallable describeCollectorCallable(const Model::DescribeCollectorRequest& request) const;
@@ -863,6 +940,12 @@ namespace AlibabaCloud
 			GetTransferableNodesOutcome getTransferableNodes(const Model::GetTransferableNodesRequest &request)const;
 			void getTransferableNodesAsync(const Model::GetTransferableNodesRequest& request, const GetTransferableNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTransferableNodesOutcomeCallable getTransferableNodesCallable(const Model::GetTransferableNodesRequest& request) const;
+			InitializeOperationRoleOutcome initializeOperationRole(const Model::InitializeOperationRoleRequest &request)const;
+			void initializeOperationRoleAsync(const Model::InitializeOperationRoleRequest& request, const InitializeOperationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InitializeOperationRoleOutcomeCallable initializeOperationRoleCallable(const Model::InitializeOperationRoleRequest& request) const;
+			InstallAckOperatorOutcome installAckOperator(const Model::InstallAckOperatorRequest &request)const;
+			void installAckOperatorAsync(const Model::InstallAckOperatorRequest& request, const InstallAckOperatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InstallAckOperatorOutcomeCallable installAckOperatorCallable(const Model::InstallAckOperatorRequest& request) const;
 			InstallKibanaSystemPluginOutcome installKibanaSystemPlugin(const Model::InstallKibanaSystemPluginRequest &request)const;
 			void installKibanaSystemPluginAsync(const Model::InstallKibanaSystemPluginRequest& request, const InstallKibanaSystemPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallKibanaSystemPluginOutcomeCallable installKibanaSystemPluginCallable(const Model::InstallKibanaSystemPluginRequest& request) const;
@@ -881,6 +964,12 @@ namespace AlibabaCloud
 			InterruptLogstashTaskOutcome interruptLogstashTask(const Model::InterruptLogstashTaskRequest &request)const;
 			void interruptLogstashTaskAsync(const Model::InterruptLogstashTaskRequest& request, const InterruptLogstashTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InterruptLogstashTaskOutcomeCallable interruptLogstashTaskCallable(const Model::InterruptLogstashTaskRequest& request) const;
+			ListAckClustersOutcome listAckClusters(const Model::ListAckClustersRequest &request)const;
+			void listAckClustersAsync(const Model::ListAckClustersRequest& request, const ListAckClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAckClustersOutcomeCallable listAckClustersCallable(const Model::ListAckClustersRequest& request) const;
+			ListAckNamespacesOutcome listAckNamespaces(const Model::ListAckNamespacesRequest &request)const;
+			void listAckNamespacesAsync(const Model::ListAckNamespacesRequest& request, const ListAckNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAckNamespacesOutcomeCallable listAckNamespacesCallable(const Model::ListAckNamespacesRequest& request) const;
 			ListAllNodeOutcome listAllNode(const Model::ListAllNodeRequest &request)const;
 			void listAllNodeAsync(const Model::ListAllNodeRequest& request, const ListAllNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAllNodeOutcomeCallable listAllNodeCallable(const Model::ListAllNodeRequest& request) const;
@@ -899,6 +988,12 @@ namespace AlibabaCloud
 			ListDataTasksOutcome listDataTasks(const Model::ListDataTasksRequest &request)const;
 			void listDataTasksAsync(const Model::ListDataTasksRequest& request, const ListDataTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataTasksOutcomeCallable listDataTasksCallable(const Model::ListDataTasksRequest& request) const;
+			ListDefaultCollectorConfigurationsOutcome listDefaultCollectorConfigurations(const Model::ListDefaultCollectorConfigurationsRequest &request)const;
+			void listDefaultCollectorConfigurationsAsync(const Model::ListDefaultCollectorConfigurationsRequest& request, const ListDefaultCollectorConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDefaultCollectorConfigurationsOutcomeCallable listDefaultCollectorConfigurationsCallable(const Model::ListDefaultCollectorConfigurationsRequest& request) const;
+			ListDiagnoseIndicesOutcome listDiagnoseIndices(const Model::ListDiagnoseIndicesRequest &request)const;
+			void listDiagnoseIndicesAsync(const Model::ListDiagnoseIndicesRequest& request, const ListDiagnoseIndicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDiagnoseIndicesOutcomeCallable listDiagnoseIndicesCallable(const Model::ListDiagnoseIndicesRequest& request) const;
 			ListDiagnoseReportOutcome listDiagnoseReport(const Model::ListDiagnoseReportRequest &request)const;
 			void listDiagnoseReportAsync(const Model::ListDiagnoseReportRequest& request, const ListDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDiagnoseReportOutcomeCallable listDiagnoseReportCallable(const Model::ListDiagnoseReportRequest& request) const;
@@ -980,6 +1075,9 @@ namespace AlibabaCloud
 			OpenHttpsOutcome openHttps(const Model::OpenHttpsRequest &request)const;
 			void openHttpsAsync(const Model::OpenHttpsRequest& request, const OpenHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenHttpsOutcomeCallable openHttpsCallable(const Model::OpenHttpsRequest& request) const;
+			RecommendTemplatesOutcome recommendTemplates(const Model::RecommendTemplatesRequest &request)const;
+			void recommendTemplatesAsync(const Model::RecommendTemplatesRequest& request, const RecommendTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecommendTemplatesOutcomeCallable recommendTemplatesCallable(const Model::RecommendTemplatesRequest& request) const;
 			ReinstallCollectorOutcome reinstallCollector(const Model::ReinstallCollectorRequest &request)const;
 			void reinstallCollectorAsync(const Model::ReinstallCollectorRequest& request, const ReinstallCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReinstallCollectorOutcomeCallable reinstallCollectorCallable(const Model::ReinstallCollectorRequest& request) const;
@@ -989,6 +1087,9 @@ namespace AlibabaCloud
 			RenewLogstashOutcome renewLogstash(const Model::RenewLogstashRequest &request)const;
 			void renewLogstashAsync(const Model::RenewLogstashRequest& request, const RenewLogstashAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewLogstashOutcomeCallable renewLogstashCallable(const Model::RenewLogstashRequest& request) const;
+			RestartCollectorOutcome restartCollector(const Model::RestartCollectorRequest &request)const;
+			void restartCollectorAsync(const Model::RestartCollectorRequest& request, const RestartCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestartCollectorOutcomeCallable restartCollectorCallable(const Model::RestartCollectorRequest& request) const;
 			RestartInstanceOutcome restartInstance(const Model::RestartInstanceRequest &request)const;
 			void restartInstanceAsync(const Model::RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartInstanceOutcomeCallable restartInstanceCallable(const Model::RestartInstanceRequest& request) const;
@@ -1145,6 +1246,9 @@ namespace AlibabaCloud
 			ValidateShrinkNodesOutcome validateShrinkNodes(const Model::ValidateShrinkNodesRequest &request)const;
 			void validateShrinkNodesAsync(const Model::ValidateShrinkNodesRequest& request, const ValidateShrinkNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateShrinkNodesOutcomeCallable validateShrinkNodesCallable(const Model::ValidateShrinkNodesRequest& request) const;
+			ValidateSlrPermissionOutcome validateSlrPermission(const Model::ValidateSlrPermissionRequest &request)const;
+			void validateSlrPermissionAsync(const Model::ValidateSlrPermissionRequest& request, const ValidateSlrPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ValidateSlrPermissionOutcomeCallable validateSlrPermissionCallable(const Model::ValidateSlrPermissionRequest& request) const;
 			ValidateTransferableNodesOutcome validateTransferableNodes(const Model::ValidateTransferableNodesRequest &request)const;
 			void validateTransferableNodesAsync(const Model::ValidateTransferableNodesRequest& request, const ValidateTransferableNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateTransferableNodesOutcomeCallable validateTransferableNodesCallable(const Model::ValidateTransferableNodesRequest& request) const;

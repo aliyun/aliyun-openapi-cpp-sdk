@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getDeleteType()const;
+				void setDeleteType(const std::string& deleteType);
 
             private:
 				std::string instanceId_;
 				std::string clientToken_;
+				std::string deleteType_;
 
 			};
 		}

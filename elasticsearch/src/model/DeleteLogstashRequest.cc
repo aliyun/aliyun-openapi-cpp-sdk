@@ -50,3 +50,14 @@ void DeleteLogstashRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string DeleteLogstashRequest::getDeleteType()const
+{
+	return deleteType_;
+}
+
+void DeleteLogstashRequest::setDeleteType(const std::string& deleteType)
+{
+	deleteType_ = deleteType;
+	setParameter("DeleteType", deleteType);
+}
+

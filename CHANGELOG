@@ -1,3 +1,8 @@
+2021-03-22 Version: 1.36.648
+- Add OneConsole support.
+- Add ACK support.
+- Edit ListSearchLog etc.
+
 2021-03-21 Version: 1.36.647
 - Support watermark.
 - Support pdf preview.

@@ -93,6 +93,14 @@ void ListCollectorsResult::parse(const std::string &payload)
 				extendConfigsObject.type = valueResultResultItemextendConfigsextendConfigsItem["type"].asString();
 			if(!valueResultResultItemextendConfigsextendConfigsItem["groupId"].isNull())
 				extendConfigsObject.groupId = valueResultResultItemextendConfigsextendConfigsItem["groupId"].asString();
+			if(!valueResultResultItemextendConfigsextendConfigsItem["host"].isNull())
+				extendConfigsObject.host = valueResultResultItemextendConfigsextendConfigsItem["host"].asString();
+			if(!valueResultResultItemextendConfigsextendConfigsItem["kibanaHost"].isNull())
+				extendConfigsObject.kibanaHost = valueResultResultItemextendConfigsextendConfigsItem["kibanaHost"].asString();
+			if(!valueResultResultItemextendConfigsextendConfigsItem["totalPodsCount"].isNull())
+				extendConfigsObject.totalPodsCount = valueResultResultItemextendConfigsextendConfigsItem["totalPodsCount"].asString();
+			if(!valueResultResultItemextendConfigsextendConfigsItem["successPodsCount"].isNull())
+				extendConfigsObject.successPodsCount = valueResultResultItemextendConfigsextendConfigsItem["successPodsCount"].asString();
 			auto allmachinesNode = valueResultResultItemextendConfigsextendConfigsItem["machines"]["machinesItem"];
 			for (auto valueResultResultItemextendConfigsextendConfigsItemmachinesmachinesItem : allmachinesNode)
 			{

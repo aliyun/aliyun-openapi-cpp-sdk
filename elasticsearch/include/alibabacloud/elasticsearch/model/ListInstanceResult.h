@@ -38,28 +38,7 @@ namespace AlibabaCloud
 				};
 				struct Instance
 				{
-					struct NodeSpec
-					{
-						std::string diskType;
-						bool diskEncryption;
-						std::string spec;
-						int disk;
-					};
-					struct NetworkConfig
-					{
-						std::string type;
-						std::string vpcId;
-						std::string vswitchId;
-						std::string vsArea;
-					};
-					struct MasterConfiguration
-					{
-						std::string diskType;
-						int amount;
-						std::string spec;
-						int disk;
-					};
-					struct KibanaConfiguration
+					struct ClientNodeConfiguration
 					{
 						std::string diskType;
 						int amount;
@@ -74,10 +53,31 @@ namespace AlibabaCloud
 						std::string spec;
 						int disk;
 					};
-					struct ClientNodeConfiguration
+					struct KibanaConfiguration
 					{
 						std::string diskType;
 						int amount;
+						std::string spec;
+						int disk;
+					};
+					struct MasterConfiguration
+					{
+						std::string diskType;
+						int amount;
+						std::string spec;
+						int disk;
+					};
+					struct NetworkConfig
+					{
+						std::string type;
+						std::string vpcId;
+						std::string vswitchId;
+						std::string vsArea;
+					};
+					struct NodeSpec
+					{
+						std::string diskType;
+						bool diskEncryption;
 						std::string spec;
 						int disk;
 					};
@@ -96,8 +96,8 @@ namespace AlibabaCloud
 					bool dedicateMaster;
 					std::string createdAt;
 					NetworkConfig networkConfig;
-					int nodeAmount;
 					std::string esVersion;
+					int nodeAmount;
 					std::string updatedAt;
 					std::vector<Instance::Tag> tags;
 					KibanaConfiguration kibanaConfiguration;

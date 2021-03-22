@@ -94,6 +94,10 @@ void UpdateCollectorNameResult::parse(const std::string &payload)
 			extendConfigsItemObject.host = resultNodeextendConfigsextendConfigsItem["host"].asString();
 		if(!resultNodeextendConfigsextendConfigsItem["kibanaHost"].isNull())
 			extendConfigsItemObject.kibanaHost = resultNodeextendConfigsextendConfigsItem["kibanaHost"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["totalPodsCount"].isNull())
+			extendConfigsItemObject.totalPodsCount = resultNodeextendConfigsextendConfigsItem["totalPodsCount"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["successPodsCount"].isNull())
+			extendConfigsItemObject.successPodsCount = resultNodeextendConfigsextendConfigsItem["successPodsCount"].asString();
 		auto allmachinesNode = resultNodeextendConfigsextendConfigsItem["machines"]["machinesItem"];
 		for (auto resultNodeextendConfigsextendConfigsItemmachinesmachinesItem : allmachinesNode)
 		{

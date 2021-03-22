@@ -61,3 +61,14 @@ void UpdateInstanceRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string UpdateInstanceRequest::getOrderActionType()const
+{
+	return orderActionType_;
+}
+
+void UpdateInstanceRequest::setOrderActionType(const std::string& orderActionType)
+{
+	orderActionType_ = orderActionType;
+	setParameter("OrderActionType", orderActionType);
+}
+

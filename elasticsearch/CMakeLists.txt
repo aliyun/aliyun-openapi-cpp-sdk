@@ -27,12 +27,18 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/AddConnectableClusterResult.h
 	include/alibabacloud/elasticsearch/model/AddSnapshotRepoRequest.h
 	include/alibabacloud/elasticsearch/model/AddSnapshotRepoResult.h
+	include/alibabacloud/elasticsearch/model/CancelDeletionRequest.h
+	include/alibabacloud/elasticsearch/model/CancelDeletionResult.h
+	include/alibabacloud/elasticsearch/model/CancelLogstashDeletionRequest.h
+	include/alibabacloud/elasticsearch/model/CancelLogstashDeletionResult.h
 	include/alibabacloud/elasticsearch/model/CancelTaskRequest.h
 	include/alibabacloud/elasticsearch/model/CancelTaskResult.h
 	include/alibabacloud/elasticsearch/model/CloseDiagnosisRequest.h
 	include/alibabacloud/elasticsearch/model/CloseDiagnosisResult.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsRequest.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsResult.h
+	include/alibabacloud/elasticsearch/model/CreateCollectorRequest.h
+	include/alibabacloud/elasticsearch/model/CreateCollectorResult.h
 	include/alibabacloud/elasticsearch/model/CreateDataTasksRequest.h
 	include/alibabacloud/elasticsearch/model/CreateDataTasksResult.h
 	include/alibabacloud/elasticsearch/model/CreateInstanceRequest.h
@@ -63,6 +69,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DeleteProjectResult.h
 	include/alibabacloud/elasticsearch/model/DeleteSnapshotRepoRequest.h
 	include/alibabacloud/elasticsearch/model/DeleteSnapshotRepoResult.h
+	include/alibabacloud/elasticsearch/model/DescribeAckOperatorRequest.h
+	include/alibabacloud/elasticsearch/model/DescribeAckOperatorResult.h
 	include/alibabacloud/elasticsearch/model/DescribeCollectorRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeCollectorResult.h
 	include/alibabacloud/elasticsearch/model/DescribeConnectableClustersRequest.h
@@ -109,6 +117,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/GetSuggestShrinkableNodesResult.h
 	include/alibabacloud/elasticsearch/model/GetTransferableNodesRequest.h
 	include/alibabacloud/elasticsearch/model/GetTransferableNodesResult.h
+	include/alibabacloud/elasticsearch/model/InitializeOperationRoleRequest.h
+	include/alibabacloud/elasticsearch/model/InitializeOperationRoleResult.h
+	include/alibabacloud/elasticsearch/model/InstallAckOperatorRequest.h
+	include/alibabacloud/elasticsearch/model/InstallAckOperatorResult.h
 	include/alibabacloud/elasticsearch/model/InstallKibanaSystemPluginRequest.h
 	include/alibabacloud/elasticsearch/model/InstallKibanaSystemPluginResult.h
 	include/alibabacloud/elasticsearch/model/InstallLogstashSystemPluginRequest.h
@@ -121,6 +133,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/InterruptElasticsearchTaskResult.h
 	include/alibabacloud/elasticsearch/model/InterruptLogstashTaskRequest.h
 	include/alibabacloud/elasticsearch/model/InterruptLogstashTaskResult.h
+	include/alibabacloud/elasticsearch/model/ListAckClustersRequest.h
+	include/alibabacloud/elasticsearch/model/ListAckClustersResult.h
+	include/alibabacloud/elasticsearch/model/ListAckNamespacesRequest.h
+	include/alibabacloud/elasticsearch/model/ListAckNamespacesResult.h
 	include/alibabacloud/elasticsearch/model/ListAllNodeRequest.h
 	include/alibabacloud/elasticsearch/model/ListAllNodeResult.h
 	include/alibabacloud/elasticsearch/model/ListAlternativeSnapshotReposRequest.h
@@ -133,6 +149,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListConnectedClustersResult.h
 	include/alibabacloud/elasticsearch/model/ListDataTasksRequest.h
 	include/alibabacloud/elasticsearch/model/ListDataTasksResult.h
+	include/alibabacloud/elasticsearch/model/ListDefaultCollectorConfigurationsRequest.h
+	include/alibabacloud/elasticsearch/model/ListDefaultCollectorConfigurationsResult.h
+	include/alibabacloud/elasticsearch/model/ListDiagnoseIndicesRequest.h
+	include/alibabacloud/elasticsearch/model/ListDiagnoseIndicesResult.h
 	include/alibabacloud/elasticsearch/model/ListDiagnoseReportRequest.h
 	include/alibabacloud/elasticsearch/model/ListDiagnoseReportResult.h
 	include/alibabacloud/elasticsearch/model/ListDiagnoseReportIdsRequest.h
@@ -187,12 +207,16 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/OpenDiagnosisResult.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsRequest.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsResult.h
+	include/alibabacloud/elasticsearch/model/RecommendTemplatesRequest.h
+	include/alibabacloud/elasticsearch/model/RecommendTemplatesResult.h
 	include/alibabacloud/elasticsearch/model/ReinstallCollectorRequest.h
 	include/alibabacloud/elasticsearch/model/ReinstallCollectorResult.h
 	include/alibabacloud/elasticsearch/model/RenewInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/RenewInstanceResult.h
 	include/alibabacloud/elasticsearch/model/RenewLogstashRequest.h
 	include/alibabacloud/elasticsearch/model/RenewLogstashResult.h
+	include/alibabacloud/elasticsearch/model/RestartCollectorRequest.h
+	include/alibabacloud/elasticsearch/model/RestartCollectorResult.h
 	include/alibabacloud/elasticsearch/model/RestartInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/RestartInstanceResult.h
 	include/alibabacloud/elasticsearch/model/RestartLogstashRequest.h
@@ -297,6 +321,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ValidateConnectionResult.h
 	include/alibabacloud/elasticsearch/model/ValidateShrinkNodesRequest.h
 	include/alibabacloud/elasticsearch/model/ValidateShrinkNodesResult.h
+	include/alibabacloud/elasticsearch/model/ValidateSlrPermissionRequest.h
+	include/alibabacloud/elasticsearch/model/ValidateSlrPermissionResult.h
 	include/alibabacloud/elasticsearch/model/ValidateTransferableNodesRequest.h
 	include/alibabacloud/elasticsearch/model/ValidateTransferableNodesResult.h )
 
@@ -308,12 +334,18 @@ set(elasticsearch_src
 	src/model/AddConnectableClusterResult.cc
 	src/model/AddSnapshotRepoRequest.cc
 	src/model/AddSnapshotRepoResult.cc
+	src/model/CancelDeletionRequest.cc
+	src/model/CancelDeletionResult.cc
+	src/model/CancelLogstashDeletionRequest.cc
+	src/model/CancelLogstashDeletionResult.cc
 	src/model/CancelTaskRequest.cc
 	src/model/CancelTaskResult.cc
 	src/model/CloseDiagnosisRequest.cc
 	src/model/CloseDiagnosisResult.cc
 	src/model/CloseHttpsRequest.cc
 	src/model/CloseHttpsResult.cc
+	src/model/CreateCollectorRequest.cc
+	src/model/CreateCollectorResult.cc
 	src/model/CreateDataTasksRequest.cc
 	src/model/CreateDataTasksResult.cc
 	src/model/CreateInstanceRequest.cc
@@ -344,6 +376,8 @@ set(elasticsearch_src
 	src/model/DeleteProjectResult.cc
 	src/model/DeleteSnapshotRepoRequest.cc
 	src/model/DeleteSnapshotRepoResult.cc
+	src/model/DescribeAckOperatorRequest.cc
+	src/model/DescribeAckOperatorResult.cc
 	src/model/DescribeCollectorRequest.cc
 	src/model/DescribeCollectorResult.cc
 	src/model/DescribeConnectableClustersRequest.cc
@@ -390,6 +424,10 @@ set(elasticsearch_src
 	src/model/GetSuggestShrinkableNodesResult.cc
 	src/model/GetTransferableNodesRequest.cc
 	src/model/GetTransferableNodesResult.cc
+	src/model/InitializeOperationRoleRequest.cc
+	src/model/InitializeOperationRoleResult.cc
+	src/model/InstallAckOperatorRequest.cc
+	src/model/InstallAckOperatorResult.cc
 	src/model/InstallKibanaSystemPluginRequest.cc
 	src/model/InstallKibanaSystemPluginResult.cc
 	src/model/InstallLogstashSystemPluginRequest.cc
@@ -402,6 +440,10 @@ set(elasticsearch_src
 	src/model/InterruptElasticsearchTaskResult.cc
 	src/model/InterruptLogstashTaskRequest.cc
 	src/model/InterruptLogstashTaskResult.cc
+	src/model/ListAckClustersRequest.cc
+	src/model/ListAckClustersResult.cc
+	src/model/ListAckNamespacesRequest.cc
+	src/model/ListAckNamespacesResult.cc
 	src/model/ListAllNodeRequest.cc
 	src/model/ListAllNodeResult.cc
 	src/model/ListAlternativeSnapshotReposRequest.cc
@@ -414,6 +456,10 @@ set(elasticsearch_src
 	src/model/ListConnectedClustersResult.cc
 	src/model/ListDataTasksRequest.cc
 	src/model/ListDataTasksResult.cc
+	src/model/ListDefaultCollectorConfigurationsRequest.cc
+	src/model/ListDefaultCollectorConfigurationsResult.cc
+	src/model/ListDiagnoseIndicesRequest.cc
+	src/model/ListDiagnoseIndicesResult.cc
 	src/model/ListDiagnoseReportRequest.cc
 	src/model/ListDiagnoseReportResult.cc
 	src/model/ListDiagnoseReportIdsRequest.cc
@@ -468,12 +514,16 @@ set(elasticsearch_src
 	src/model/OpenDiagnosisResult.cc
 	src/model/OpenHttpsRequest.cc
 	src/model/OpenHttpsResult.cc
+	src/model/RecommendTemplatesRequest.cc
+	src/model/RecommendTemplatesResult.cc
 	src/model/ReinstallCollectorRequest.cc
 	src/model/ReinstallCollectorResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
 	src/model/RenewLogstashRequest.cc
 	src/model/RenewLogstashResult.cc
+	src/model/RestartCollectorRequest.cc
+	src/model/RestartCollectorResult.cc
 	src/model/RestartInstanceRequest.cc
 	src/model/RestartInstanceResult.cc
 	src/model/RestartLogstashRequest.cc
@@ -578,6 +628,8 @@ set(elasticsearch_src
 	src/model/ValidateConnectionResult.cc
 	src/model/ValidateShrinkNodesRequest.cc
 	src/model/ValidateShrinkNodesResult.cc
+	src/model/ValidateSlrPermissionRequest.cc
+	src/model/ValidateSlrPermissionResult.cc
 	src/model/ValidateTransferableNodesRequest.cc
 	src/model/ValidateTransferableNodesResult.cc )
 

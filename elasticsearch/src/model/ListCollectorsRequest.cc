@@ -61,6 +61,17 @@ void ListCollectorsRequest::setName(const std::string& name)
 	setParameter("Name", name);
 }
 
+std::string ListCollectorsRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void ListCollectorsRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setParameter("SourceType", sourceType);
+}
+
 int ListCollectorsRequest::getPage()const
 {
 	return page_;

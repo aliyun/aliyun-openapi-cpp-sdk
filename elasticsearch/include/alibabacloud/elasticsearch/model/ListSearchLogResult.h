@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string host;
 					std::string level;
 					long timestamp;
+					std::string contentCollection;
 				};
 
 

@@ -47,12 +47,14 @@ void ListSearchLogResult::parse(const std::string &payload)
 			resultObject.timestamp = std::stol(valueResultResultItem["timestamp"].asString());
 		if(!valueResultResultItem["host"].isNull())
 			resultObject.host = valueResultResultItem["host"].asString();
+		if(!valueResultResultItem["instanceId"].isNull())
+			resultObject.instanceId = valueResultResultItem["instanceId"].asString();
+		if(!valueResultResultItem["contentCollection"].isNull())
+			resultObject.contentCollection = valueResultResultItem["contentCollection"].asString();
 		if(!valueResultResultItem["level"].isNull())
 			resultObject.level = valueResultResultItem["level"].asString();
 		if(!valueResultResultItem["content"].isNull())
 			resultObject.content = valueResultResultItem["content"].asString();
-		if(!valueResultResultItem["instanceId"].isNull())
-			resultObject.instanceId = valueResultResultItem["instanceId"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];
