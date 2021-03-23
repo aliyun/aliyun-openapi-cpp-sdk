@@ -2967,6 +2967,42 @@ RdsClient::DescribeEventsOutcomeCallable RdsClient::describeEventsCallable(const
 	return task->get_future();
 }
 
+RdsClient::DescribeHADiagnoseConfigOutcome RdsClient::describeHADiagnoseConfig(const DescribeHADiagnoseConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHADiagnoseConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHADiagnoseConfigOutcome(DescribeHADiagnoseConfigResult(outcome.result()));
+	else
+		return DescribeHADiagnoseConfigOutcome(outcome.error());
+}
+
+void RdsClient::describeHADiagnoseConfigAsync(const DescribeHADiagnoseConfigRequest& request, const DescribeHADiagnoseConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHADiagnoseConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeHADiagnoseConfigOutcomeCallable RdsClient::describeHADiagnoseConfigCallable(const DescribeHADiagnoseConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHADiagnoseConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHADiagnoseConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeHASwitchConfigOutcome RdsClient::describeHASwitchConfig(const DescribeHASwitchConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3975,42 +4011,6 @@ RdsClient::DescribeSQLLogReportsOutcomeCallable RdsClient::describeSQLLogReports
 	return task->get_future();
 }
 
-RdsClient::DescribeSQLReportsOutcome RdsClient::describeSQLReports(const DescribeSQLReportsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLReportsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLReportsOutcome(DescribeSQLReportsResult(outcome.result()));
-	else
-		return DescribeSQLReportsOutcome(outcome.error());
-}
-
-void RdsClient::describeSQLReportsAsync(const DescribeSQLReportsRequest& request, const DescribeSQLReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLReports(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeSQLReportsOutcomeCallable RdsClient::describeSQLReportsCallable(const DescribeSQLReportsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLReportsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLReports(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 RdsClient::DescribeSecurityGroupConfigurationOutcome RdsClient::describeSecurityGroupConfiguration(const DescribeSecurityGroupConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4185,78 +4185,6 @@ RdsClient::DescribeTasksOutcomeCallable RdsClient::describeTasksCallable(const D
 			[this, request]()
 			{
 			return this->describeTasks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::DescribeUpgradeMajorVersionPrecheckTaskOutcome RdsClient::describeUpgradeMajorVersionPrecheckTask(const DescribeUpgradeMajorVersionPrecheckTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUpgradeMajorVersionPrecheckTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUpgradeMajorVersionPrecheckTaskOutcome(DescribeUpgradeMajorVersionPrecheckTaskResult(outcome.result()));
-	else
-		return DescribeUpgradeMajorVersionPrecheckTaskOutcome(outcome.error());
-}
-
-void RdsClient::describeUpgradeMajorVersionPrecheckTaskAsync(const DescribeUpgradeMajorVersionPrecheckTaskRequest& request, const DescribeUpgradeMajorVersionPrecheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUpgradeMajorVersionPrecheckTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeUpgradeMajorVersionPrecheckTaskOutcomeCallable RdsClient::describeUpgradeMajorVersionPrecheckTaskCallable(const DescribeUpgradeMajorVersionPrecheckTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUpgradeMajorVersionPrecheckTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUpgradeMajorVersionPrecheckTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::DescribeUpgradeMajorVersionTasksOutcome RdsClient::describeUpgradeMajorVersionTasks(const DescribeUpgradeMajorVersionTasksRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUpgradeMajorVersionTasksOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUpgradeMajorVersionTasksOutcome(DescribeUpgradeMajorVersionTasksResult(outcome.result()));
-	else
-		return DescribeUpgradeMajorVersionTasksOutcome(outcome.error());
-}
-
-void RdsClient::describeUpgradeMajorVersionTasksAsync(const DescribeUpgradeMajorVersionTasksRequest& request, const DescribeUpgradeMajorVersionTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUpgradeMajorVersionTasks(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::DescribeUpgradeMajorVersionTasksOutcomeCallable RdsClient::describeUpgradeMajorVersionTasksCallable(const DescribeUpgradeMajorVersionTasksRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUpgradeMajorVersionTasksOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUpgradeMajorVersionTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5589,6 +5517,42 @@ RdsClient::ModifyDbProxyInstanceSslOutcomeCallable RdsClient::modifyDbProxyInsta
 			[this, request]()
 			{
 			return this->modifyDbProxyInstanceSsl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyHADiagnoseConfigOutcome RdsClient::modifyHADiagnoseConfig(const ModifyHADiagnoseConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyHADiagnoseConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyHADiagnoseConfigOutcome(ModifyHADiagnoseConfigResult(outcome.result()));
+	else
+		return ModifyHADiagnoseConfigOutcome(outcome.error());
+}
+
+void RdsClient::modifyHADiagnoseConfigAsync(const ModifyHADiagnoseConfigRequest& request, const ModifyHADiagnoseConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyHADiagnoseConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyHADiagnoseConfigOutcomeCallable RdsClient::modifyHADiagnoseConfigCallable(const ModifyHADiagnoseConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyHADiagnoseConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyHADiagnoseConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6993,78 +6957,6 @@ RdsClient::UpgradeDBInstanceKernelVersionOutcomeCallable RdsClient::upgradeDBIns
 			[this, request]()
 			{
 			return this->upgradeDBInstanceKernelVersion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::UpgradeDBInstanceMajorVersionOutcome RdsClient::upgradeDBInstanceMajorVersion(const UpgradeDBInstanceMajorVersionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpgradeDBInstanceMajorVersionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpgradeDBInstanceMajorVersionOutcome(UpgradeDBInstanceMajorVersionResult(outcome.result()));
-	else
-		return UpgradeDBInstanceMajorVersionOutcome(outcome.error());
-}
-
-void RdsClient::upgradeDBInstanceMajorVersionAsync(const UpgradeDBInstanceMajorVersionRequest& request, const UpgradeDBInstanceMajorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, upgradeDBInstanceMajorVersion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::UpgradeDBInstanceMajorVersionOutcomeCallable RdsClient::upgradeDBInstanceMajorVersionCallable(const UpgradeDBInstanceMajorVersionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceMajorVersionOutcome()>>(
-			[this, request]()
-			{
-			return this->upgradeDBInstanceMajorVersion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::UpgradeDBInstanceMajorVersionPrecheckOutcome RdsClient::upgradeDBInstanceMajorVersionPrecheck(const UpgradeDBInstanceMajorVersionPrecheckRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpgradeDBInstanceMajorVersionPrecheckOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpgradeDBInstanceMajorVersionPrecheckOutcome(UpgradeDBInstanceMajorVersionPrecheckResult(outcome.result()));
-	else
-		return UpgradeDBInstanceMajorVersionPrecheckOutcome(outcome.error());
-}
-
-void RdsClient::upgradeDBInstanceMajorVersionPrecheckAsync(const UpgradeDBInstanceMajorVersionPrecheckRequest& request, const UpgradeDBInstanceMajorVersionPrecheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, upgradeDBInstanceMajorVersionPrecheck(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::UpgradeDBInstanceMajorVersionPrecheckOutcomeCallable RdsClient::upgradeDBInstanceMajorVersionPrecheckCallable(const UpgradeDBInstanceMajorVersionPrecheckRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceMajorVersionPrecheckOutcome()>>(
-			[this, request]()
-			{
-			return this->upgradeDBInstanceMajorVersionPrecheck(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

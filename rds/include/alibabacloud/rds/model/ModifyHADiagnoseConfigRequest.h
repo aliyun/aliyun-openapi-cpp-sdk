@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONPRECHECKREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONPRECHECKREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYHADIAGNOSECONFIGREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYHADIAGNOSECONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT UpgradeDBInstanceMajorVersionPrecheckRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT ModifyHADiagnoseConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				UpgradeDBInstanceMajorVersionPrecheckRequest();
-				~UpgradeDBInstanceMajorVersionPrecheckRequest();
+				ModifyHADiagnoseConfigRequest();
+				~ModifyHADiagnoseConfigRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getTargetMajorVersion()const;
-				void setTargetMajorVersion(const std::string& targetMajorVersion);
+				std::string getTcpConnectionType()const;
+				void setTcpConnectionType(const std::string& tcpConnectionType);
 
             private:
 				long resourceOwnerId_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				long ownerId_;
 				std::string accessKeyId_;
+				std::string regionId_;
 				std::string dBInstanceId_;
-				std::string targetMajorVersion_;
+				std::string tcpConnectionType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONPRECHECKREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYHADIAGNOSECONFIGREQUEST_H_

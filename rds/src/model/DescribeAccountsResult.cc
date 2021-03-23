@@ -73,7 +73,21 @@ void DescribeAccountsResult::parse(const std::string &payload)
 		systemAdminAccountStatus_ = value["SystemAdminAccountStatus"].asString();
 	if(!value["SystemAdminAccountFirstActivationTime"].isNull())
 		systemAdminAccountFirstActivationTime_ = value["SystemAdminAccountFirstActivationTime"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 
+}
+
+int DescribeAccountsResult::getTotalRecordCount()const
+{
+	return totalRecordCount_;
+}
+
+int DescribeAccountsResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::string DescribeAccountsResult::getSystemAdminAccountStatus()const

@@ -184,6 +184,8 @@
 #include "model/DescribeErrorLogsResult.h"
 #include "model/DescribeEventsRequest.h"
 #include "model/DescribeEventsResult.h"
+#include "model/DescribeHADiagnoseConfigRequest.h"
+#include "model/DescribeHADiagnoseConfigResult.h"
 #include "model/DescribeHASwitchConfigRequest.h"
 #include "model/DescribeHASwitchConfigResult.h"
 #include "model/DescribeInstanceAutoRenewalAttributeRequest.h"
@@ -240,8 +242,6 @@
 #include "model/DescribeSQLLogReportListResult.h"
 #include "model/DescribeSQLLogReportsRequest.h"
 #include "model/DescribeSQLLogReportsResult.h"
-#include "model/DescribeSQLReportsRequest.h"
-#include "model/DescribeSQLReportsResult.h"
 #include "model/DescribeSecurityGroupConfigurationRequest.h"
 #include "model/DescribeSecurityGroupConfigurationResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
@@ -252,10 +252,6 @@
 #include "model/DescribeTagsResult.h"
 #include "model/DescribeTasksRequest.h"
 #include "model/DescribeTasksResult.h"
-#include "model/DescribeUpgradeMajorVersionPrecheckTaskRequest.h"
-#include "model/DescribeUpgradeMajorVersionPrecheckTaskResult.h"
-#include "model/DescribeUpgradeMajorVersionTasksRequest.h"
-#include "model/DescribeUpgradeMajorVersionTasksResult.h"
 #include "model/DestroyDBInstanceRequest.h"
 #include "model/DestroyDBInstanceResult.h"
 #include "model/GetDbProxyInstanceSslRequest.h"
@@ -330,6 +326,8 @@
 #include "model/ModifyDasInstanceConfigResult.h"
 #include "model/ModifyDbProxyInstanceSslRequest.h"
 #include "model/ModifyDbProxyInstanceSslResult.h"
+#include "model/ModifyHADiagnoseConfigRequest.h"
+#include "model/ModifyHADiagnoseConfigResult.h"
 #include "model/ModifyHASwitchConfigRequest.h"
 #include "model/ModifyHASwitchConfigResult.h"
 #include "model/ModifyInstanceAutoRenewalAttributeRequest.h"
@@ -408,10 +406,6 @@
 #include "model/UpgradeDBInstanceEngineVersionResult.h"
 #include "model/UpgradeDBInstanceKernelVersionRequest.h"
 #include "model/UpgradeDBInstanceKernelVersionResult.h"
-#include "model/UpgradeDBInstanceMajorVersionRequest.h"
-#include "model/UpgradeDBInstanceMajorVersionResult.h"
-#include "model/UpgradeDBInstanceMajorVersionPrecheckRequest.h"
-#include "model/UpgradeDBInstanceMajorVersionPrecheckResult.h"
 #include "model/UpgradeDBProxyInstanceKernelVersionRequest.h"
 #include "model/UpgradeDBProxyInstanceKernelVersionResult.h"
 
@@ -666,6 +660,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEventsResult> DescribeEventsOutcome;
 			typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeEventsRequest&, const DescribeEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeHADiagnoseConfigResult> DescribeHADiagnoseConfigOutcome;
+			typedef std::future<DescribeHADiagnoseConfigOutcome> DescribeHADiagnoseConfigOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeHADiagnoseConfigRequest&, const DescribeHADiagnoseConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHADiagnoseConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHASwitchConfigResult> DescribeHASwitchConfigOutcome;
 			typedef std::future<DescribeHASwitchConfigOutcome> DescribeHASwitchConfigOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeHASwitchConfigRequest&, const DescribeHASwitchConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHASwitchConfigAsyncHandler;
@@ -750,9 +747,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSQLLogReportsResult> DescribeSQLLogReportsOutcome;
 			typedef std::future<DescribeSQLLogReportsOutcome> DescribeSQLLogReportsOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeSQLLogReportsRequest&, const DescribeSQLLogReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLLogReportsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLReportsResult> DescribeSQLReportsOutcome;
-			typedef std::future<DescribeSQLReportsOutcome> DescribeSQLReportsOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::DescribeSQLReportsRequest&, const DescribeSQLReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLReportsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSecurityGroupConfigurationResult> DescribeSecurityGroupConfigurationOutcome;
 			typedef std::future<DescribeSecurityGroupConfigurationOutcome> DescribeSecurityGroupConfigurationOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeSecurityGroupConfigurationRequest&, const DescribeSecurityGroupConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupConfigurationAsyncHandler;
@@ -768,12 +762,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
 			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
-			typedef Outcome<Error, Model::DescribeUpgradeMajorVersionPrecheckTaskResult> DescribeUpgradeMajorVersionPrecheckTaskOutcome;
-			typedef std::future<DescribeUpgradeMajorVersionPrecheckTaskOutcome> DescribeUpgradeMajorVersionPrecheckTaskOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::DescribeUpgradeMajorVersionPrecheckTaskRequest&, const DescribeUpgradeMajorVersionPrecheckTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradeMajorVersionPrecheckTaskAsyncHandler;
-			typedef Outcome<Error, Model::DescribeUpgradeMajorVersionTasksResult> DescribeUpgradeMajorVersionTasksOutcome;
-			typedef std::future<DescribeUpgradeMajorVersionTasksOutcome> DescribeUpgradeMajorVersionTasksOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::DescribeUpgradeMajorVersionTasksRequest&, const DescribeUpgradeMajorVersionTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradeMajorVersionTasksAsyncHandler;
 			typedef Outcome<Error, Model::DestroyDBInstanceResult> DestroyDBInstanceOutcome;
 			typedef std::future<DestroyDBInstanceOutcome> DestroyDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DestroyDBInstanceRequest&, const DestroyDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBInstanceAsyncHandler;
@@ -885,6 +873,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDbProxyInstanceSslResult> ModifyDbProxyInstanceSslOutcome;
 			typedef std::future<ModifyDbProxyInstanceSslOutcome> ModifyDbProxyInstanceSslOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDbProxyInstanceSslRequest&, const ModifyDbProxyInstanceSslOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDbProxyInstanceSslAsyncHandler;
+			typedef Outcome<Error, Model::ModifyHADiagnoseConfigResult> ModifyHADiagnoseConfigOutcome;
+			typedef std::future<ModifyHADiagnoseConfigOutcome> ModifyHADiagnoseConfigOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyHADiagnoseConfigRequest&, const ModifyHADiagnoseConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHADiagnoseConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyHASwitchConfigResult> ModifyHASwitchConfigOutcome;
 			typedef std::future<ModifyHASwitchConfigOutcome> ModifyHASwitchConfigOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyHASwitchConfigRequest&, const ModifyHASwitchConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHASwitchConfigAsyncHandler;
@@ -1002,12 +993,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpgradeDBInstanceKernelVersionResult> UpgradeDBInstanceKernelVersionOutcome;
 			typedef std::future<UpgradeDBInstanceKernelVersionOutcome> UpgradeDBInstanceKernelVersionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::UpgradeDBInstanceKernelVersionRequest&, const UpgradeDBInstanceKernelVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceKernelVersionAsyncHandler;
-			typedef Outcome<Error, Model::UpgradeDBInstanceMajorVersionResult> UpgradeDBInstanceMajorVersionOutcome;
-			typedef std::future<UpgradeDBInstanceMajorVersionOutcome> UpgradeDBInstanceMajorVersionOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::UpgradeDBInstanceMajorVersionRequest&, const UpgradeDBInstanceMajorVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceMajorVersionAsyncHandler;
-			typedef Outcome<Error, Model::UpgradeDBInstanceMajorVersionPrecheckResult> UpgradeDBInstanceMajorVersionPrecheckOutcome;
-			typedef std::future<UpgradeDBInstanceMajorVersionPrecheckOutcome> UpgradeDBInstanceMajorVersionPrecheckOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::UpgradeDBInstanceMajorVersionPrecheckRequest&, const UpgradeDBInstanceMajorVersionPrecheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceMajorVersionPrecheckAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeDBProxyInstanceKernelVersionResult> UpgradeDBProxyInstanceKernelVersionOutcome;
 			typedef std::future<UpgradeDBProxyInstanceKernelVersionOutcome> UpgradeDBProxyInstanceKernelVersionOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::UpgradeDBProxyInstanceKernelVersionRequest&, const UpgradeDBProxyInstanceKernelVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBProxyInstanceKernelVersionAsyncHandler;
@@ -1259,6 +1244,9 @@ namespace AlibabaCloud
 			DescribeEventsOutcome describeEvents(const Model::DescribeEventsRequest &request)const;
 			void describeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEventsOutcomeCallable describeEventsCallable(const Model::DescribeEventsRequest& request) const;
+			DescribeHADiagnoseConfigOutcome describeHADiagnoseConfig(const Model::DescribeHADiagnoseConfigRequest &request)const;
+			void describeHADiagnoseConfigAsync(const Model::DescribeHADiagnoseConfigRequest& request, const DescribeHADiagnoseConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeHADiagnoseConfigOutcomeCallable describeHADiagnoseConfigCallable(const Model::DescribeHADiagnoseConfigRequest& request) const;
 			DescribeHASwitchConfigOutcome describeHASwitchConfig(const Model::DescribeHASwitchConfigRequest &request)const;
 			void describeHASwitchConfigAsync(const Model::DescribeHASwitchConfigRequest& request, const DescribeHASwitchConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHASwitchConfigOutcomeCallable describeHASwitchConfigCallable(const Model::DescribeHASwitchConfigRequest& request) const;
@@ -1343,9 +1331,6 @@ namespace AlibabaCloud
 			DescribeSQLLogReportsOutcome describeSQLLogReports(const Model::DescribeSQLLogReportsRequest &request)const;
 			void describeSQLLogReportsAsync(const Model::DescribeSQLLogReportsRequest& request, const DescribeSQLLogReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSQLLogReportsOutcomeCallable describeSQLLogReportsCallable(const Model::DescribeSQLLogReportsRequest& request) const;
-			DescribeSQLReportsOutcome describeSQLReports(const Model::DescribeSQLReportsRequest &request)const;
-			void describeSQLReportsAsync(const Model::DescribeSQLReportsRequest& request, const DescribeSQLReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLReportsOutcomeCallable describeSQLReportsCallable(const Model::DescribeSQLReportsRequest& request) const;
 			DescribeSecurityGroupConfigurationOutcome describeSecurityGroupConfiguration(const Model::DescribeSecurityGroupConfigurationRequest &request)const;
 			void describeSecurityGroupConfigurationAsync(const Model::DescribeSecurityGroupConfigurationRequest& request, const DescribeSecurityGroupConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityGroupConfigurationOutcomeCallable describeSecurityGroupConfigurationCallable(const Model::DescribeSecurityGroupConfigurationRequest& request) const;
@@ -1361,12 +1346,6 @@ namespace AlibabaCloud
 			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
 			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;
-			DescribeUpgradeMajorVersionPrecheckTaskOutcome describeUpgradeMajorVersionPrecheckTask(const Model::DescribeUpgradeMajorVersionPrecheckTaskRequest &request)const;
-			void describeUpgradeMajorVersionPrecheckTaskAsync(const Model::DescribeUpgradeMajorVersionPrecheckTaskRequest& request, const DescribeUpgradeMajorVersionPrecheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeUpgradeMajorVersionPrecheckTaskOutcomeCallable describeUpgradeMajorVersionPrecheckTaskCallable(const Model::DescribeUpgradeMajorVersionPrecheckTaskRequest& request) const;
-			DescribeUpgradeMajorVersionTasksOutcome describeUpgradeMajorVersionTasks(const Model::DescribeUpgradeMajorVersionTasksRequest &request)const;
-			void describeUpgradeMajorVersionTasksAsync(const Model::DescribeUpgradeMajorVersionTasksRequest& request, const DescribeUpgradeMajorVersionTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeUpgradeMajorVersionTasksOutcomeCallable describeUpgradeMajorVersionTasksCallable(const Model::DescribeUpgradeMajorVersionTasksRequest& request) const;
 			DestroyDBInstanceOutcome destroyDBInstance(const Model::DestroyDBInstanceRequest &request)const;
 			void destroyDBInstanceAsync(const Model::DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DestroyDBInstanceOutcomeCallable destroyDBInstanceCallable(const Model::DestroyDBInstanceRequest& request) const;
@@ -1478,6 +1457,9 @@ namespace AlibabaCloud
 			ModifyDbProxyInstanceSslOutcome modifyDbProxyInstanceSsl(const Model::ModifyDbProxyInstanceSslRequest &request)const;
 			void modifyDbProxyInstanceSslAsync(const Model::ModifyDbProxyInstanceSslRequest& request, const ModifyDbProxyInstanceSslAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDbProxyInstanceSslOutcomeCallable modifyDbProxyInstanceSslCallable(const Model::ModifyDbProxyInstanceSslRequest& request) const;
+			ModifyHADiagnoseConfigOutcome modifyHADiagnoseConfig(const Model::ModifyHADiagnoseConfigRequest &request)const;
+			void modifyHADiagnoseConfigAsync(const Model::ModifyHADiagnoseConfigRequest& request, const ModifyHADiagnoseConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyHADiagnoseConfigOutcomeCallable modifyHADiagnoseConfigCallable(const Model::ModifyHADiagnoseConfigRequest& request) const;
 			ModifyHASwitchConfigOutcome modifyHASwitchConfig(const Model::ModifyHASwitchConfigRequest &request)const;
 			void modifyHASwitchConfigAsync(const Model::ModifyHASwitchConfigRequest& request, const ModifyHASwitchConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyHASwitchConfigOutcomeCallable modifyHASwitchConfigCallable(const Model::ModifyHASwitchConfigRequest& request) const;
@@ -1595,12 +1577,6 @@ namespace AlibabaCloud
 			UpgradeDBInstanceKernelVersionOutcome upgradeDBInstanceKernelVersion(const Model::UpgradeDBInstanceKernelVersionRequest &request)const;
 			void upgradeDBInstanceKernelVersionAsync(const Model::UpgradeDBInstanceKernelVersionRequest& request, const UpgradeDBInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeDBInstanceKernelVersionOutcomeCallable upgradeDBInstanceKernelVersionCallable(const Model::UpgradeDBInstanceKernelVersionRequest& request) const;
-			UpgradeDBInstanceMajorVersionOutcome upgradeDBInstanceMajorVersion(const Model::UpgradeDBInstanceMajorVersionRequest &request)const;
-			void upgradeDBInstanceMajorVersionAsync(const Model::UpgradeDBInstanceMajorVersionRequest& request, const UpgradeDBInstanceMajorVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpgradeDBInstanceMajorVersionOutcomeCallable upgradeDBInstanceMajorVersionCallable(const Model::UpgradeDBInstanceMajorVersionRequest& request) const;
-			UpgradeDBInstanceMajorVersionPrecheckOutcome upgradeDBInstanceMajorVersionPrecheck(const Model::UpgradeDBInstanceMajorVersionPrecheckRequest &request)const;
-			void upgradeDBInstanceMajorVersionPrecheckAsync(const Model::UpgradeDBInstanceMajorVersionPrecheckRequest& request, const UpgradeDBInstanceMajorVersionPrecheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpgradeDBInstanceMajorVersionPrecheckOutcomeCallable upgradeDBInstanceMajorVersionPrecheckCallable(const Model::UpgradeDBInstanceMajorVersionPrecheckRequest& request) const;
 			UpgradeDBProxyInstanceKernelVersionOutcome upgradeDBProxyInstanceKernelVersion(const Model::UpgradeDBProxyInstanceKernelVersionRequest &request)const;
 			void upgradeDBProxyInstanceKernelVersionAsync(const Model::UpgradeDBProxyInstanceKernelVersionRequest& request, const UpgradeDBProxyInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeDBProxyInstanceKernelVersionOutcomeCallable upgradeDBProxyInstanceKernelVersionCallable(const Model::UpgradeDBProxyInstanceKernelVersionRequest& request) const;

@@ -41,11 +41,18 @@ void ModifyDBInstanceNetworkTypeResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
+	if(!value["ConnectionString"].isNull())
+		connectionString_ = value["ConnectionString"].asString();
 
 }
 
 std::string ModifyDBInstanceNetworkTypeResult::getTaskId()const
 {
 	return taskId_;
+}
+
+std::string ModifyDBInstanceNetworkTypeResult::getConnectionString()const
+{
+	return connectionString_;
 }
 

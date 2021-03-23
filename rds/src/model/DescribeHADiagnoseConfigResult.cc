@@ -14,45 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/SwitchDBInstanceNetTypeResult.h>
+#include <alibabacloud/rds/model/DescribeHADiagnoseConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-SwitchDBInstanceNetTypeResult::SwitchDBInstanceNetTypeResult() :
+DescribeHADiagnoseConfigResult::DescribeHADiagnoseConfigResult() :
 	ServiceResult()
 {}
 
-SwitchDBInstanceNetTypeResult::SwitchDBInstanceNetTypeResult(const std::string &payload) :
+DescribeHADiagnoseConfigResult::DescribeHADiagnoseConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SwitchDBInstanceNetTypeResult::~SwitchDBInstanceNetTypeResult()
+DescribeHADiagnoseConfigResult::~DescribeHADiagnoseConfigResult()
 {}
 
-void SwitchDBInstanceNetTypeResult::parse(const std::string &payload)
+void DescribeHADiagnoseConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["OldConnectionString"].isNull())
-		oldConnectionString_ = value["OldConnectionString"].asString();
-	if(!value["NewConnectionString"].isNull())
-		newConnectionString_ = value["NewConnectionString"].asString();
+	if(!value["TcpConnectionType"].isNull())
+		tcpConnectionType_ = value["TcpConnectionType"].asString();
 
 }
 
-std::string SwitchDBInstanceNetTypeResult::getOldConnectionString()const
+std::string DescribeHADiagnoseConfigResult::getTcpConnectionType()const
 {
-	return oldConnectionString_;
-}
-
-std::string SwitchDBInstanceNetTypeResult::getNewConnectionString()const
-{
-	return newConnectionString_;
+	return tcpConnectionType_;
 }
 

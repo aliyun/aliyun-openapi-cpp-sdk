@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				void setLocalLogRetentionHours(const std::string& localLogRetentionHours);
 				std::string getLogBackupFrequency()const;
 				void setLogBackupFrequency(const std::string& logBackupFrequency);
-				std::string getArchiveBackupKeepCount()const;
-				void setArchiveBackupKeepCount(const std::string& archiveBackupKeepCount);
+				int getArchiveBackupKeepCount()const;
+				void setArchiveBackupKeepCount(int archiveBackupKeepCount);
 				std::string getBackupLog()const;
 				void setBackupLog(const std::string& backupLog);
 				std::string getAccessKeyId()const;
@@ -83,6 +83,8 @@ namespace AlibabaCloud
 				void setPreferredBackupTime(const std::string& preferredBackupTime);
 				std::string getBackupRetentionPeriod()const;
 				void setBackupRetentionPeriod(const std::string& backupRetentionPeriod);
+				std::string getBackupMethod()const;
+				void setBackupMethod(const std::string& backupMethod);
 				std::string getDuplicationLocation()const;
 				void setDuplicationLocation(const std::string& duplicationLocation);
 				std::string getArchiveBackupRetentionPeriod()const;
@@ -96,7 +98,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string localLogRetentionHours_;
 				std::string logBackupFrequency_;
-				std::string archiveBackupKeepCount_;
+				int archiveBackupKeepCount_;
 				std::string backupLog_;
 				std::string accessKeyId_;
 				std::string backupInterval_;
@@ -117,6 +119,7 @@ namespace AlibabaCloud
 				std::string duplication_;
 				std::string preferredBackupTime_;
 				std::string backupRetentionPeriod_;
+				std::string backupMethod_;
 				std::string duplicationLocation_;
 				std::string archiveBackupRetentionPeriod_;
 				std::string category_;

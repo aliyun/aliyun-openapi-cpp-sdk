@@ -60,15 +60,15 @@ void ModifyBackupPolicyRequest::setLogBackupFrequency(const std::string& logBack
 	setParameter("LogBackupFrequency", logBackupFrequency);
 }
 
-std::string ModifyBackupPolicyRequest::getArchiveBackupKeepCount()const
+int ModifyBackupPolicyRequest::getArchiveBackupKeepCount()const
 {
 	return archiveBackupKeepCount_;
 }
 
-void ModifyBackupPolicyRequest::setArchiveBackupKeepCount(const std::string& archiveBackupKeepCount)
+void ModifyBackupPolicyRequest::setArchiveBackupKeepCount(int archiveBackupKeepCount)
 {
 	archiveBackupKeepCount_ = archiveBackupKeepCount;
-	setParameter("ArchiveBackupKeepCount", archiveBackupKeepCount);
+	setParameter("ArchiveBackupKeepCount", std::to_string(archiveBackupKeepCount));
 }
 
 std::string ModifyBackupPolicyRequest::getBackupLog()const
@@ -289,6 +289,17 @@ void ModifyBackupPolicyRequest::setBackupRetentionPeriod(const std::string& back
 {
 	backupRetentionPeriod_ = backupRetentionPeriod;
 	setParameter("BackupRetentionPeriod", backupRetentionPeriod);
+}
+
+std::string ModifyBackupPolicyRequest::getBackupMethod()const
+{
+	return backupMethod_;
+}
+
+void ModifyBackupPolicyRequest::setBackupMethod(const std::string& backupMethod)
+{
+	backupMethod_ = backupMethod;
+	setParameter("BackupMethod", backupMethod);
 }
 
 std::string ModifyBackupPolicyRequest::getDuplicationLocation()const

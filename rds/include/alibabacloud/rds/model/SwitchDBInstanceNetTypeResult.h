@@ -37,10 +37,14 @@ namespace AlibabaCloud
 				SwitchDBInstanceNetTypeResult();
 				explicit SwitchDBInstanceNetTypeResult(const std::string &payload);
 				~SwitchDBInstanceNetTypeResult();
+				std::string getOldConnectionString()const;
+				std::string getNewConnectionString()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string oldConnectionString_;
+				std::string newConnectionString_;
 
 			};
 		}

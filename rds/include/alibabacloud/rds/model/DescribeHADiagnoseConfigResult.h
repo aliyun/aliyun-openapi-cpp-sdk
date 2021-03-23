@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEHADIAGNOSECONFIGRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEHADIAGNOSECONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT UpgradeDBInstanceMajorVersionResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT DescribeHADiagnoseConfigResult : public ServiceResult
 			{
 			public:
 
 
-				UpgradeDBInstanceMajorVersionResult();
-				explicit UpgradeDBInstanceMajorVersionResult(const std::string &payload);
-				~UpgradeDBInstanceMajorVersionResult();
-				std::string getDBInstanceId()const;
-				std::string getPort()const;
-				std::string getOrderId()const;
-				std::string getConnectionString()const;
+				DescribeHADiagnoseConfigResult();
+				explicit DescribeHADiagnoseConfigResult(const std::string &payload);
+				~DescribeHADiagnoseConfigResult();
+				std::string getTcpConnectionType()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dBInstanceId_;
-				std::string port_;
-				std::string orderId_;
-				std::string connectionString_;
+				std::string tcpConnectionType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_UPGRADEDBINSTANCEMAJORVERSIONRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEHADIAGNOSECONFIGRESULT_H_

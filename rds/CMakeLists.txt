@@ -183,6 +183,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeErrorLogsResult.h
 	include/alibabacloud/rds/model/DescribeEventsRequest.h
 	include/alibabacloud/rds/model/DescribeEventsResult.h
+	include/alibabacloud/rds/model/DescribeHADiagnoseConfigRequest.h
+	include/alibabacloud/rds/model/DescribeHADiagnoseConfigResult.h
 	include/alibabacloud/rds/model/DescribeHASwitchConfigRequest.h
 	include/alibabacloud/rds/model/DescribeHASwitchConfigResult.h
 	include/alibabacloud/rds/model/DescribeInstanceAutoRenewalAttributeRequest.h
@@ -239,8 +241,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeSQLLogReportListResult.h
 	include/alibabacloud/rds/model/DescribeSQLLogReportsRequest.h
 	include/alibabacloud/rds/model/DescribeSQLLogReportsResult.h
-	include/alibabacloud/rds/model/DescribeSQLReportsRequest.h
-	include/alibabacloud/rds/model/DescribeSQLReportsResult.h
 	include/alibabacloud/rds/model/DescribeSecurityGroupConfigurationRequest.h
 	include/alibabacloud/rds/model/DescribeSecurityGroupConfigurationResult.h
 	include/alibabacloud/rds/model/DescribeSlowLogRecordsRequest.h
@@ -251,10 +251,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeTagsResult.h
 	include/alibabacloud/rds/model/DescribeTasksRequest.h
 	include/alibabacloud/rds/model/DescribeTasksResult.h
-	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionPrecheckTaskRequest.h
-	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionPrecheckTaskResult.h
-	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionTasksRequest.h
-	include/alibabacloud/rds/model/DescribeUpgradeMajorVersionTasksResult.h
 	include/alibabacloud/rds/model/DestroyDBInstanceRequest.h
 	include/alibabacloud/rds/model/DestroyDBInstanceResult.h
 	include/alibabacloud/rds/model/GetDbProxyInstanceSslRequest.h
@@ -329,6 +325,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDasInstanceConfigResult.h
 	include/alibabacloud/rds/model/ModifyDbProxyInstanceSslRequest.h
 	include/alibabacloud/rds/model/ModifyDbProxyInstanceSslResult.h
+	include/alibabacloud/rds/model/ModifyHADiagnoseConfigRequest.h
+	include/alibabacloud/rds/model/ModifyHADiagnoseConfigResult.h
 	include/alibabacloud/rds/model/ModifyHASwitchConfigRequest.h
 	include/alibabacloud/rds/model/ModifyHASwitchConfigResult.h
 	include/alibabacloud/rds/model/ModifyInstanceAutoRenewalAttributeRequest.h
@@ -407,10 +405,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/UpgradeDBInstanceEngineVersionResult.h
 	include/alibabacloud/rds/model/UpgradeDBInstanceKernelVersionRequest.h
 	include/alibabacloud/rds/model/UpgradeDBInstanceKernelVersionResult.h
-	include/alibabacloud/rds/model/UpgradeDBInstanceMajorVersionRequest.h
-	include/alibabacloud/rds/model/UpgradeDBInstanceMajorVersionResult.h
-	include/alibabacloud/rds/model/UpgradeDBInstanceMajorVersionPrecheckRequest.h
-	include/alibabacloud/rds/model/UpgradeDBInstanceMajorVersionPrecheckResult.h
 	include/alibabacloud/rds/model/UpgradeDBProxyInstanceKernelVersionRequest.h
 	include/alibabacloud/rds/model/UpgradeDBProxyInstanceKernelVersionResult.h )
 
@@ -578,6 +572,8 @@ set(rds_src
 	src/model/DescribeErrorLogsResult.cc
 	src/model/DescribeEventsRequest.cc
 	src/model/DescribeEventsResult.cc
+	src/model/DescribeHADiagnoseConfigRequest.cc
+	src/model/DescribeHADiagnoseConfigResult.cc
 	src/model/DescribeHASwitchConfigRequest.cc
 	src/model/DescribeHASwitchConfigResult.cc
 	src/model/DescribeInstanceAutoRenewalAttributeRequest.cc
@@ -634,8 +630,6 @@ set(rds_src
 	src/model/DescribeSQLLogReportListResult.cc
 	src/model/DescribeSQLLogReportsRequest.cc
 	src/model/DescribeSQLLogReportsResult.cc
-	src/model/DescribeSQLReportsRequest.cc
-	src/model/DescribeSQLReportsResult.cc
 	src/model/DescribeSecurityGroupConfigurationRequest.cc
 	src/model/DescribeSecurityGroupConfigurationResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
@@ -646,10 +640,6 @@ set(rds_src
 	src/model/DescribeTagsResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
-	src/model/DescribeUpgradeMajorVersionPrecheckTaskRequest.cc
-	src/model/DescribeUpgradeMajorVersionPrecheckTaskResult.cc
-	src/model/DescribeUpgradeMajorVersionTasksRequest.cc
-	src/model/DescribeUpgradeMajorVersionTasksResult.cc
 	src/model/DestroyDBInstanceRequest.cc
 	src/model/DestroyDBInstanceResult.cc
 	src/model/GetDbProxyInstanceSslRequest.cc
@@ -724,6 +714,8 @@ set(rds_src
 	src/model/ModifyDasInstanceConfigResult.cc
 	src/model/ModifyDbProxyInstanceSslRequest.cc
 	src/model/ModifyDbProxyInstanceSslResult.cc
+	src/model/ModifyHADiagnoseConfigRequest.cc
+	src/model/ModifyHADiagnoseConfigResult.cc
 	src/model/ModifyHASwitchConfigRequest.cc
 	src/model/ModifyHASwitchConfigResult.cc
 	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc
@@ -802,10 +794,6 @@ set(rds_src
 	src/model/UpgradeDBInstanceEngineVersionResult.cc
 	src/model/UpgradeDBInstanceKernelVersionRequest.cc
 	src/model/UpgradeDBInstanceKernelVersionResult.cc
-	src/model/UpgradeDBInstanceMajorVersionRequest.cc
-	src/model/UpgradeDBInstanceMajorVersionResult.cc
-	src/model/UpgradeDBInstanceMajorVersionPrecheckRequest.cc
-	src/model/UpgradeDBInstanceMajorVersionPrecheckResult.cc
 	src/model/UpgradeDBProxyInstanceKernelVersionRequest.cc
 	src/model/UpgradeDBProxyInstanceKernelVersionResult.cc )
 

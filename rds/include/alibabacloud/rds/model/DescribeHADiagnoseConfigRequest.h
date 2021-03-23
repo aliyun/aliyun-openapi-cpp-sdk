@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEUPGRADEMAJORVERSIONTASKSREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEUPGRADEMAJORVERSIONTASKSREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEHADIAGNOSECONFIGREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEHADIAGNOSECONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeUpgradeMajorVersionTasksRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DescribeHADiagnoseConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeUpgradeMajorVersionTasksRequest();
-				~DescribeUpgradeMajorVersionTasksRequest();
+				DescribeHADiagnoseConfigRequest();
+				~DescribeHADiagnoseConfigRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				int getTaskId()const;
-				void setTaskId(int taskId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTargetMajorVersion()const;
-				void setTargetMajorVersion(const std::string& targetMajorVersion);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
 				long resourceOwnerId_;
-				int pageNumber_;
-				std::string accessKeyId_;
-				int pageSize_;
-				std::string dBInstanceId_;
-				int taskId_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				long ownerId_;
-				std::string targetMajorVersion_;
+				std::string accessKeyId_;
+				std::string regionId_;
+				std::string dBInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEUPGRADEMAJORVERSIONTASKSREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEHADIAGNOSECONFIGREQUEST_H_

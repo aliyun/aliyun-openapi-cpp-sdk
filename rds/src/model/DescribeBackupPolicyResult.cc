@@ -91,6 +91,10 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		supportReleasedKeep_ = std::stoi(value["SupportReleasedKeep"].asString());
 	if(!value["BackupInterval"].isNull())
 		backupInterval_ = value["BackupInterval"].asString();
+	if(!value["SupportVolumeShadowCopy"].isNull())
+		supportVolumeShadowCopy_ = std::stoi(value["SupportVolumeShadowCopy"].asString());
+	if(!value["BackupMethod"].isNull())
+		backupMethod_ = value["BackupMethod"].asString();
 
 }
 
@@ -99,34 +103,14 @@ std::string DescribeBackupPolicyResult::getCategory()const
 	return category_;
 }
 
-std::string DescribeBackupPolicyResult::getDuplication()const
-{
-	return duplication_;
-}
-
 std::string DescribeBackupPolicyResult::getArchiveBackupRetentionPeriod()const
 {
 	return archiveBackupRetentionPeriod_;
 }
 
-std::string DescribeBackupPolicyResult::getArchiveBackupKeepPolicy()const
-{
-	return archiveBackupKeepPolicy_;
-}
-
 std::string DescribeBackupPolicyResult::getReleasedKeepPolicy()const
 {
 	return releasedKeepPolicy_;
-}
-
-std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
-{
-	return preferredBackupTime_;
-}
-
-int DescribeBackupPolicyResult::getLocalLogRetentionHours()const
-{
-	return localLogRetentionHours_;
 }
 
 DescribeBackupPolicyResult::DuplicationLocation DescribeBackupPolicyResult::getDuplicationLocation()const
@@ -137,21 +121,6 @@ DescribeBackupPolicyResult::DuplicationLocation DescribeBackupPolicyResult::getD
 std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
 {
 	return preferredNextBackupTime_;
-}
-
-std::string DescribeBackupPolicyResult::getHighSpaceUsageProtection()const
-{
-	return highSpaceUsageProtection_;
-}
-
-std::string DescribeBackupPolicyResult::getCompressType()const
-{
-	return compressType_;
-}
-
-std::string DescribeBackupPolicyResult::getLogBackupFrequency()const
-{
-	return logBackupFrequency_;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
@@ -174,6 +143,61 @@ int DescribeBackupPolicyResult::getLogBackupLocalRetentionNumber()const
 	return logBackupLocalRetentionNumber_;
 }
 
+int DescribeBackupPolicyResult::getSupportReleasedKeep()const
+{
+	return supportReleasedKeep_;
+}
+
+int DescribeBackupPolicyResult::getSupportVolumeShadowCopy()const
+{
+	return supportVolumeShadowCopy_;
+}
+
+std::string DescribeBackupPolicyResult::getDuplicationContent()const
+{
+	return duplicationContent_;
+}
+
+std::string DescribeBackupPolicyResult::getBackupMethod()const
+{
+	return backupMethod_;
+}
+
+std::string DescribeBackupPolicyResult::getDuplication()const
+{
+	return duplication_;
+}
+
+std::string DescribeBackupPolicyResult::getArchiveBackupKeepPolicy()const
+{
+	return archiveBackupKeepPolicy_;
+}
+
+std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
+{
+	return preferredBackupTime_;
+}
+
+int DescribeBackupPolicyResult::getLocalLogRetentionHours()const
+{
+	return localLogRetentionHours_;
+}
+
+std::string DescribeBackupPolicyResult::getHighSpaceUsageProtection()const
+{
+	return highSpaceUsageProtection_;
+}
+
+std::string DescribeBackupPolicyResult::getCompressType()const
+{
+	return compressType_;
+}
+
+std::string DescribeBackupPolicyResult::getLogBackupFrequency()const
+{
+	return logBackupFrequency_;
+}
+
 std::string DescribeBackupPolicyResult::getBackupLog()const
 {
 	return backupLog_;
@@ -189,19 +213,9 @@ std::string DescribeBackupPolicyResult::getLocalLogRetentionSpace()const
 	return localLogRetentionSpace_;
 }
 
-int DescribeBackupPolicyResult::getSupportReleasedKeep()const
-{
-	return supportReleasedKeep_;
-}
-
 int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
 {
 	return backupRetentionPeriod_;
-}
-
-std::string DescribeBackupPolicyResult::getDuplicationContent()const
-{
-	return duplicationContent_;
 }
 
 std::string DescribeBackupPolicyResult::getBackupInterval()const

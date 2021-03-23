@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit ModifyDBInstanceNetworkTypeResult(const std::string &payload);
 				~ModifyDBInstanceNetworkTypeResult();
 				std::string getTaskId()const;
+				std::string getConnectionString()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string taskId_;
+				std::string connectionString_;
 
 			};
 		}

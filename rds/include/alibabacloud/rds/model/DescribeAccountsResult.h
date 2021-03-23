@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				DescribeAccountsResult();
 				explicit DescribeAccountsResult(const std::string &payload);
 				~DescribeAccountsResult();
+				int getTotalRecordCount()const;
+				int getPageNumber()const;
 				std::string getSystemAdminAccountStatus()const;
 				std::vector<DBInstanceAccount> getAccounts()const;
 				std::string getSystemAdminAccountFirstActivationTime()const;
@@ -60,6 +62,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalRecordCount_;
+				int pageNumber_;
 				std::string systemAdminAccountStatus_;
 				std::vector<DBInstanceAccount> accounts_;
 				std::string systemAdminAccountFirstActivationTime_;

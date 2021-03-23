@@ -1,3 +1,6 @@
+2021-03-23 Version: 1.36.650
+- Update Open API.
+
 2021-03-22 Version: 1.36.649
 - CreateEai api adds SecurityGroupId, VSwitchId parameters.
 
