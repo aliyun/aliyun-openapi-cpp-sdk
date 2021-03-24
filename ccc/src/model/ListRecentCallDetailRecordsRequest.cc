@@ -27,6 +27,17 @@ ListRecentCallDetailRecordsRequest::ListRecentCallDetailRecordsRequest() :
 ListRecentCallDetailRecordsRequest::~ListRecentCallDetailRecordsRequest()
 {}
 
+std::string ListRecentCallDetailRecordsRequest::getCriteria()const
+{
+	return criteria_;
+}
+
+void ListRecentCallDetailRecordsRequest::setCriteria(const std::string& criteria)
+{
+	criteria_ = criteria;
+	setParameter("Criteria", criteria);
+}
+
 long ListRecentCallDetailRecordsRequest::getEndTime()const
 {
 	return endTime_;

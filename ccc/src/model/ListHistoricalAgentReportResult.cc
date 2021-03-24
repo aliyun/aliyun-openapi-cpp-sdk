@@ -86,7 +86,7 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 		if(!inboundNode["SatisfactionSurveysResponded"].isNull())
 			itemsObject.inbound.satisfactionSurveysResponded = std::stol(inboundNode["SatisfactionSurveysResponded"].asString());
 		if(!inboundNode["ServiceLevel20"].isNull())
-			itemsObject.inbound.serviceLevel20 = std::stol(inboundNode["ServiceLevel20"].asString());
+			itemsObject.inbound.serviceLevel20 = std::stof(inboundNode["ServiceLevel20"].asString());
 		if(!inboundNode["TotalHoldTime"].isNull())
 			itemsObject.inbound.totalHoldTime = std::stol(inboundNode["TotalHoldTime"].asString());
 		if(!inboundNode["TotalRingTime"].isNull())

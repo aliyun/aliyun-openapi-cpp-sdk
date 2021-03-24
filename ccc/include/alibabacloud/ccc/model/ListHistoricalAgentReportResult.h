@@ -39,7 +39,7 @@ namespace AlibabaCloud
 						struct Inbound
 						{
 							long callsConsulted;
-							long serviceLevel20;
+							float serviceLevel20;
 							long totalWorkTime;
 							long totalHoldTime;
 							long satisfactionSurveysOffered;

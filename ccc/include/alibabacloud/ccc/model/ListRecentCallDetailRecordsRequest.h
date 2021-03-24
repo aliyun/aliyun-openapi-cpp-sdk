@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ListRecentCallDetailRecordsRequest();
 				~ListRecentCallDetailRecordsRequest();
 
+				std::string getCriteria()const;
+				void setCriteria(const std::string& criteria);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 
             private:
+				std::string criteria_;
 				long endTime_;
 				long startTime_;
 				int pageNumber_;
