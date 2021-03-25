@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCEREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYRELATIONLISTREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYRELATIONLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySavingsPlansInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryRelationListRequest : public RpcServiceRequest
 			{
 
 			public:
-				QuerySavingsPlansInstanceRequest();
-				~QuerySavingsPlansInstanceRequest();
+				QueryRelationListRequest();
+				~QueryRelationListRequest();
 
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				std::string getLocale()const;
-				void setLocale(const std::string& locale);
+				std::vector<std::string> getStatusList()const;
+				void setStatusList(const std::vector<std::string>& statusList);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				long getUserId()const;
+				void setUserId(long userId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 
             private:
-				std::string endTime_;
-				std::string startTime_;
-				std::string locale_;
+				std::vector<std::string> statusList_;
 				int pageNum_;
-				std::string instanceId_;
+				long userId_;
 				int pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYRELATIONLISTREQUEST_H_

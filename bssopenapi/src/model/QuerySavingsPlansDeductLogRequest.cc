@@ -82,17 +82,6 @@ void QuerySavingsPlansDeductLogRequest::setInstanceId(const std::string& instanc
 	setParameter("InstanceId", instanceId);
 }
 
-std::string QuerySavingsPlansDeductLogRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void QuerySavingsPlansDeductLogRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
-}
-
 int QuerySavingsPlansDeductLogRequest::getPageSize()const
 {
 	return pageSize_;

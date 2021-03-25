@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
+				std::string getLogistics()const;
+				void setLogistics(const std::string& logistics);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getProductType()const;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 				int period_;
 				std::string clientToken_;
 				std::string subscriptionType_;
+				std::string logistics_;
 				long ownerId_;
 				std::string productType_;
 				int renewPeriod_;

@@ -71,6 +71,17 @@ void CreateInstanceRequest::setSubscriptionType(const std::string& subscriptionT
 	setParameter("SubscriptionType", subscriptionType);
 }
 
+std::string CreateInstanceRequest::getLogistics()const
+{
+	return logistics_;
+}
+
+void CreateInstanceRequest::setLogistics(const std::string& logistics)
+{
+	logistics_ = logistics;
+	setParameter("Logistics", logistics);
+}
+
 long CreateInstanceRequest::getOwnerId()const
 {
 	return ownerId_;

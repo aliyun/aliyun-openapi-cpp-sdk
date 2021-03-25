@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_DESCRIBESPLITITEMBILLREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_DESCRIBESPLITITEMBILLREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,49 +28,52 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySettleBillRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT DescribeSplitItemBillRequest : public RpcServiceRequest
 			{
+			public:
+				struct TagFilter
+				{
+					std::vector<std::string> tagValues;
+					std::string tagKey;
+				};
 
 			public:
-				QuerySettleBillRequest();
-				~QuerySettleBillRequest();
+				DescribeSplitItemBillRequest();
+				~DescribeSplitItemBillRequest();
 
+				std::string getSplitItemID()const;
+				void setSplitItemID(const std::string& splitItemID);
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				bool getIsHideZeroCharge()const;
-				void setIsHideZeroCharge(bool isHideZeroCharge);
-				bool getIsDisplayLocalCurrency()const;
-				void setIsDisplayLocalCurrency(bool isDisplayLocalCurrency);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
 				std::string getBillingCycle()const;
 				void setBillingCycle(const std::string& billingCycle);
-				std::string getType()const;
-				void setType(const std::string& type);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				long getBillOwnerId()const;
 				void setBillOwnerId(long billOwnerId);
+				std::vector<TagFilter> getTagFilter()const;
+				void setTagFilter(const std::vector<TagFilter>& tagFilter);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
-				std::string getRecordID()const;
-				void setRecordID(const std::string& recordID);
+				std::string getInstanceID()const;
+				void setInstanceID(const std::string& instanceID);
 				std::string getNextToken()const;
 				void setNextToken(const std::string& nextToken);
 				int getMaxResults()const;
 				void setMaxResults(int maxResults);
 
             private:
+				std::string splitItemID_;
 				std::string productCode_;
-				bool isHideZeroCharge_;
-				bool isDisplayLocalCurrency_;
 				std::string subscriptionType_;
 				std::string billingCycle_;
-				std::string type_;
 				long ownerId_;
 				long billOwnerId_;
+				std::vector<TagFilter> tagFilter_;
 				std::string productType_;
-				std::string recordID_;
+				std::string instanceID_;
 				std::string nextToken_;
 				int maxResults_;
 
@@ -78,4 +81,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_DESCRIBESPLITITEMBILLREQUEST_H_

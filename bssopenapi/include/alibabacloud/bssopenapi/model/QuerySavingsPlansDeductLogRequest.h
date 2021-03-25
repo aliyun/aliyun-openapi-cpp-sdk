@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setPageNum(int pageNum);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getInstanceType()const;
@@ -58,7 +56,6 @@ namespace AlibabaCloud
 				std::string locale_;
 				int pageNum_;
 				std::string instanceId_;
-				std::string requestId_;
 				int pageSize_;
 				std::string instanceType_;
 

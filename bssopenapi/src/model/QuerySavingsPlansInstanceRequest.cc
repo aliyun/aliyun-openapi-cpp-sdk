@@ -82,17 +82,6 @@ void QuerySavingsPlansInstanceRequest::setInstanceId(const std::string& instance
 	setParameter("InstanceId", instanceId);
 }
 
-std::string QuerySavingsPlansInstanceRequest::getRequestId()const
-{
-	return requestId_;
-}
-
-void QuerySavingsPlansInstanceRequest::setRequestId(const std::string& requestId)
-{
-	requestId_ = requestId;
-	setParameter("RequestId", requestId);
-}
-
 int QuerySavingsPlansInstanceRequest::getPageSize()const
 {
 	return pageSize_;

@@ -126,6 +126,17 @@ void QuerySettleBillRequest::setProductType(const std::string& productType)
 	setParameter("ProductType", productType);
 }
 
+std::string QuerySettleBillRequest::getRecordID()const
+{
+	return recordID_;
+}
+
+void QuerySettleBillRequest::setRecordID(const std::string& recordID)
+{
+	recordID_ = recordID;
+	setParameter("RecordID", recordID);
+}
+
 std::string QuerySettleBillRequest::getNextToken()const
 {
 	return nextToken_;
