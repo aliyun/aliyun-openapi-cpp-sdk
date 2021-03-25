@@ -103,7 +103,7 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 		if(!outboundNode["AverageTalkTime"].isNull())
 			itemsObject.outbound.averageTalkTime = std::stof(outboundNode["AverageTalkTime"].asString());
 		if(!outboundNode["AverageWorkTime"].isNull())
-			itemsObject.outbound.averageWorkTime = std::stol(outboundNode["AverageWorkTime"].asString());
+			itemsObject.outbound.averageWorkTime = std::stof(outboundNode["AverageWorkTime"].asString());
 		if(!outboundNode["CallsAnswered"].isNull())
 			itemsObject.outbound.callsAnswered = std::stol(outboundNode["CallsAnswered"].asString());
 		if(!outboundNode["CallsDialed"].isNull())

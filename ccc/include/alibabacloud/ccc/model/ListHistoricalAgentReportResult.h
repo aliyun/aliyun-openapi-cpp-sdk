@@ -73,7 +73,7 @@ namespace AlibabaCloud
 							long totalTalkTime;
 							long maxDialingTime;
 							long maxTalkTime;
-							long averageWorkTime;
+							float averageWorkTime;
 							long maxWorkTime;
 							float answerRate;
 							float averageTalkTime;
