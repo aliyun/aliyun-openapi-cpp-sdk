@@ -43,12 +43,13 @@ namespace AlibabaCloud
 						};
 						int instances;
 						bool scaleRuleEnabled;
+						std::string appDescription;
 						std::string appId;
 						int runningInstances;
 						std::string regionId;
 						std::string namespaceId;
-						bool appDeletingStatus;
 						std::string scaleRuleType;
+						bool appDeletingStatus;
 						std::vector<Application::TagsItem> tags;
 						std::string appName;
 					};

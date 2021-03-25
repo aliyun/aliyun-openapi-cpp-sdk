@@ -43,16 +43,16 @@ void ListConsumedServicesResult::parse(const std::string &payload)
 	for (auto valueDataListConsumedServices : allDataNode)
 	{
 		ListConsumedServices dataObject;
-		if(!valueDataListConsumedServices["AppId"].isNull())
-			dataObject.appId = valueDataListConsumedServices["AppId"].asString();
 		if(!valueDataListConsumedServices["Group2Ip"].isNull())
 			dataObject.group2Ip = valueDataListConsumedServices["Group2Ip"].asString();
-		if(!valueDataListConsumedServices["Name"].isNull())
-			dataObject.name = valueDataListConsumedServices["Name"].asString();
 		if(!valueDataListConsumedServices["Type"].isNull())
 			dataObject.type = valueDataListConsumedServices["Type"].asString();
+		if(!valueDataListConsumedServices["AppId"].isNull())
+			dataObject.appId = valueDataListConsumedServices["AppId"].asString();
 		if(!valueDataListConsumedServices["Version"].isNull())
 			dataObject.version = valueDataListConsumedServices["Version"].asString();
+		if(!valueDataListConsumedServices["Name"].isNull())
+			dataObject.name = valueDataListConsumedServices["Name"].asString();
 		auto allGroups = value["Groups"]["Group"];
 		for (auto value : allGroups)
 			dataObject.groups.push_back(value.asString());
@@ -61,16 +61,16 @@ void ListConsumedServicesResult::parse(const std::string &payload)
 			dataObject.ips.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

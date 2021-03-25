@@ -43,16 +43,16 @@ void ListPublishedServicesResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["AppId"].isNull())
-			dataObject.appId = valueDataDataItem["AppId"].asString();
 		if(!valueDataDataItem["Group2Ip"].isNull())
 			dataObject.group2Ip = valueDataDataItem["Group2Ip"].asString();
-		if(!valueDataDataItem["Name"].isNull())
-			dataObject.name = valueDataDataItem["Name"].asString();
 		if(!valueDataDataItem["Type"].isNull())
 			dataObject.type = valueDataDataItem["Type"].asString();
+		if(!valueDataDataItem["AppId"].isNull())
+			dataObject.appId = valueDataDataItem["AppId"].asString();
 		if(!valueDataDataItem["Version"].isNull())
 			dataObject.version = valueDataDataItem["Version"].asString();
+		if(!valueDataDataItem["Name"].isNull())
+			dataObject.name = valueDataDataItem["Name"].asString();
 		auto allGroups = value["Groups"]["Group"];
 		for (auto value : allGroups)
 			dataObject.groups.push_back(value.asString());
@@ -61,16 +61,16 @@ void ListPublishedServicesResult::parse(const std::string &payload)
 			dataObject.ips.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

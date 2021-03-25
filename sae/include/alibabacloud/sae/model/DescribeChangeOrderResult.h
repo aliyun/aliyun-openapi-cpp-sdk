@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						int status;
 						std::string pipelineName;
 						int parallelCount;
-						long startTime;
 						long updateTime;
+						long startTime;
 						std::string pipelineId;
 						int batchType;
 					};

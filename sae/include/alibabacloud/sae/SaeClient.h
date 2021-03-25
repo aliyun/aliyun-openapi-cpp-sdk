@@ -36,6 +36,8 @@
 #include "model/ConfirmPipelineBatchResult.h"
 #include "model/CreateApplicationRequest.h"
 #include "model/CreateApplicationResult.h"
+#include "model/CreateApplicationScalingRuleRequest.h"
+#include "model/CreateApplicationScalingRuleResult.h"
 #include "model/CreateConfigMapRequest.h"
 #include "model/CreateConfigMapResult.h"
 #include "model/CreateIngressRequest.h"
@@ -44,6 +46,8 @@
 #include "model/CreateNamespaceResult.h"
 #include "model/DeleteApplicationRequest.h"
 #include "model/DeleteApplicationResult.h"
+#include "model/DeleteApplicationScalingRuleRequest.h"
+#include "model/DeleteApplicationScalingRuleResult.h"
 #include "model/DeleteConfigMapRequest.h"
 #include "model/DeleteConfigMapResult.h"
 #include "model/DeleteIngressRequest.h"
@@ -60,6 +64,8 @@
 #include "model/DescribeApplicationImageResult.h"
 #include "model/DescribeApplicationInstancesRequest.h"
 #include "model/DescribeApplicationInstancesResult.h"
+#include "model/DescribeApplicationScalingRulesRequest.h"
+#include "model/DescribeApplicationScalingRulesResult.h"
 #include "model/DescribeApplicationSlbsRequest.h"
 #include "model/DescribeApplicationSlbsResult.h"
 #include "model/DescribeApplicationStatusRequest.h"
@@ -86,8 +92,14 @@
 #include "model/DescribeNamespaceResourcesResult.h"
 #include "model/DescribeNamespacesRequest.h"
 #include "model/DescribeNamespacesResult.h"
+#include "model/DescribePipelineRequest.h"
+#include "model/DescribePipelineResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DisableApplicationScalingRuleRequest.h"
+#include "model/DisableApplicationScalingRuleResult.h"
+#include "model/EnableApplicationScalingRuleRequest.h"
+#include "model/EnableApplicationScalingRuleResult.h"
 #include "model/ListAppEventsRequest.h"
 #include "model/ListAppEventsResult.h"
 #include "model/ListAppVersionsRequest.h"
@@ -110,6 +122,8 @@
 #include "model/ListPublishedServicesResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
+#include "model/OpenSaeServiceRequest.h"
+#include "model/OpenSaeServiceResult.h"
 #include "model/QueryResourceStaticsRequest.h"
 #include "model/QueryResourceStaticsResult.h"
 #include "model/RescaleApplicationRequest.h"
@@ -118,6 +132,8 @@
 #include "model/RescaleApplicationVerticallyResult.h"
 #include "model/RestartApplicationRequest.h"
 #include "model/RestartApplicationResult.h"
+#include "model/RestartInstancesRequest.h"
+#include "model/RestartInstancesResult.h"
 #include "model/RollbackApplicationRequest.h"
 #include "model/RollbackApplicationResult.h"
 #include "model/StartApplicationRequest.h"
@@ -132,6 +148,8 @@
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateAppSecurityGroupRequest.h"
 #include "model/UpdateAppSecurityGroupResult.h"
+#include "model/UpdateApplicationScalingRuleRequest.h"
+#include "model/UpdateApplicationScalingRuleResult.h"
 #include "model/UpdateConfigMapRequest.h"
 #include "model/UpdateConfigMapResult.h"
 #include "model/UpdateIngressRequest.h"
@@ -170,6 +188,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateApplicationResult> CreateApplicationOutcome;
 			typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::CreateApplicationRequest&, const CreateApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
+			typedef Outcome<Error, Model::CreateApplicationScalingRuleResult> CreateApplicationScalingRuleOutcome;
+			typedef std::future<CreateApplicationScalingRuleOutcome> CreateApplicationScalingRuleOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::CreateApplicationScalingRuleRequest&, const CreateApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationScalingRuleAsyncHandler;
 			typedef Outcome<Error, Model::CreateConfigMapResult> CreateConfigMapOutcome;
 			typedef std::future<CreateConfigMapOutcome> CreateConfigMapOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::CreateConfigMapRequest&, const CreateConfigMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigMapAsyncHandler;
@@ -182,6 +203,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteApplicationResult> DeleteApplicationOutcome;
 			typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeleteApplicationRequest&, const DeleteApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
+			typedef Outcome<Error, Model::DeleteApplicationScalingRuleResult> DeleteApplicationScalingRuleOutcome;
+			typedef std::future<DeleteApplicationScalingRuleOutcome> DeleteApplicationScalingRuleOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DeleteApplicationScalingRuleRequest&, const DeleteApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationScalingRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteConfigMapResult> DeleteConfigMapOutcome;
 			typedef std::future<DeleteConfigMapOutcome> DeleteConfigMapOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeleteConfigMapRequest&, const DeleteConfigMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigMapAsyncHandler;
@@ -206,6 +230,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeApplicationInstancesResult> DescribeApplicationInstancesOutcome;
 			typedef std::future<DescribeApplicationInstancesOutcome> DescribeApplicationInstancesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeApplicationInstancesRequest&, const DescribeApplicationInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeApplicationScalingRulesResult> DescribeApplicationScalingRulesOutcome;
+			typedef std::future<DescribeApplicationScalingRulesOutcome> DescribeApplicationScalingRulesOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeApplicationScalingRulesRequest&, const DescribeApplicationScalingRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationScalingRulesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApplicationSlbsResult> DescribeApplicationSlbsOutcome;
 			typedef std::future<DescribeApplicationSlbsOutcome> DescribeApplicationSlbsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeApplicationSlbsRequest&, const DescribeApplicationSlbsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationSlbsAsyncHandler;
@@ -245,9 +272,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNamespacesResult> DescribeNamespacesOutcome;
 			typedef std::future<DescribeNamespacesOutcome> DescribeNamespacesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeNamespacesRequest&, const DescribeNamespacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespacesAsyncHandler;
+			typedef Outcome<Error, Model::DescribePipelineResult> DescribePipelineOutcome;
+			typedef std::future<DescribePipelineOutcome> DescribePipelineOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribePipelineRequest&, const DescribePipelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePipelineAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DisableApplicationScalingRuleResult> DisableApplicationScalingRuleOutcome;
+			typedef std::future<DisableApplicationScalingRuleOutcome> DisableApplicationScalingRuleOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DisableApplicationScalingRuleRequest&, const DisableApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableApplicationScalingRuleAsyncHandler;
+			typedef Outcome<Error, Model::EnableApplicationScalingRuleResult> EnableApplicationScalingRuleOutcome;
+			typedef std::future<EnableApplicationScalingRuleOutcome> EnableApplicationScalingRuleOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::EnableApplicationScalingRuleRequest&, const EnableApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableApplicationScalingRuleAsyncHandler;
 			typedef Outcome<Error, Model::ListAppEventsResult> ListAppEventsOutcome;
 			typedef std::future<ListAppEventsOutcome> ListAppEventsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListAppEventsRequest&, const ListAppEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppEventsAsyncHandler;
@@ -281,6 +317,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::OpenSaeServiceResult> OpenSaeServiceOutcome;
+			typedef std::future<OpenSaeServiceOutcome> OpenSaeServiceOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::OpenSaeServiceRequest&, const OpenSaeServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenSaeServiceAsyncHandler;
 			typedef Outcome<Error, Model::QueryResourceStaticsResult> QueryResourceStaticsOutcome;
 			typedef std::future<QueryResourceStaticsOutcome> QueryResourceStaticsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::QueryResourceStaticsRequest&, const QueryResourceStaticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourceStaticsAsyncHandler;
@@ -293,6 +332,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RestartApplicationResult> RestartApplicationOutcome;
 			typedef std::future<RestartApplicationOutcome> RestartApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::RestartApplicationRequest&, const RestartApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartApplicationAsyncHandler;
+			typedef Outcome<Error, Model::RestartInstancesResult> RestartInstancesOutcome;
+			typedef std::future<RestartInstancesOutcome> RestartInstancesOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::RestartInstancesRequest&, const RestartInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstancesAsyncHandler;
 			typedef Outcome<Error, Model::RollbackApplicationResult> RollbackApplicationOutcome;
 			typedef std::future<RollbackApplicationOutcome> RollbackApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::RollbackApplicationRequest&, const RollbackApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackApplicationAsyncHandler;
@@ -314,6 +356,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAppSecurityGroupResult> UpdateAppSecurityGroupOutcome;
 			typedef std::future<UpdateAppSecurityGroupOutcome> UpdateAppSecurityGroupOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::UpdateAppSecurityGroupRequest&, const UpdateAppSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAppSecurityGroupAsyncHandler;
+			typedef Outcome<Error, Model::UpdateApplicationScalingRuleResult> UpdateApplicationScalingRuleOutcome;
+			typedef std::future<UpdateApplicationScalingRuleOutcome> UpdateApplicationScalingRuleOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::UpdateApplicationScalingRuleRequest&, const UpdateApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationScalingRuleAsyncHandler;
 			typedef Outcome<Error, Model::UpdateConfigMapResult> UpdateConfigMapOutcome;
 			typedef std::future<UpdateConfigMapOutcome> UpdateConfigMapOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::UpdateConfigMapRequest&, const UpdateConfigMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConfigMapAsyncHandler;
@@ -352,6 +397,9 @@ namespace AlibabaCloud
 			CreateApplicationOutcome createApplication(const Model::CreateApplicationRequest &request)const;
 			void createApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateApplicationOutcomeCallable createApplicationCallable(const Model::CreateApplicationRequest& request) const;
+			CreateApplicationScalingRuleOutcome createApplicationScalingRule(const Model::CreateApplicationScalingRuleRequest &request)const;
+			void createApplicationScalingRuleAsync(const Model::CreateApplicationScalingRuleRequest& request, const CreateApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateApplicationScalingRuleOutcomeCallable createApplicationScalingRuleCallable(const Model::CreateApplicationScalingRuleRequest& request) const;
 			CreateConfigMapOutcome createConfigMap(const Model::CreateConfigMapRequest &request)const;
 			void createConfigMapAsync(const Model::CreateConfigMapRequest& request, const CreateConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConfigMapOutcomeCallable createConfigMapCallable(const Model::CreateConfigMapRequest& request) const;
@@ -364,6 +412,9 @@ namespace AlibabaCloud
 			DeleteApplicationOutcome deleteApplication(const Model::DeleteApplicationRequest &request)const;
 			void deleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteApplicationOutcomeCallable deleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
+			DeleteApplicationScalingRuleOutcome deleteApplicationScalingRule(const Model::DeleteApplicationScalingRuleRequest &request)const;
+			void deleteApplicationScalingRuleAsync(const Model::DeleteApplicationScalingRuleRequest& request, const DeleteApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteApplicationScalingRuleOutcomeCallable deleteApplicationScalingRuleCallable(const Model::DeleteApplicationScalingRuleRequest& request) const;
 			DeleteConfigMapOutcome deleteConfigMap(const Model::DeleteConfigMapRequest &request)const;
 			void deleteConfigMapAsync(const Model::DeleteConfigMapRequest& request, const DeleteConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteConfigMapOutcomeCallable deleteConfigMapCallable(const Model::DeleteConfigMapRequest& request) const;
@@ -388,6 +439,9 @@ namespace AlibabaCloud
 			DescribeApplicationInstancesOutcome describeApplicationInstances(const Model::DescribeApplicationInstancesRequest &request)const;
 			void describeApplicationInstancesAsync(const Model::DescribeApplicationInstancesRequest& request, const DescribeApplicationInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApplicationInstancesOutcomeCallable describeApplicationInstancesCallable(const Model::DescribeApplicationInstancesRequest& request) const;
+			DescribeApplicationScalingRulesOutcome describeApplicationScalingRules(const Model::DescribeApplicationScalingRulesRequest &request)const;
+			void describeApplicationScalingRulesAsync(const Model::DescribeApplicationScalingRulesRequest& request, const DescribeApplicationScalingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeApplicationScalingRulesOutcomeCallable describeApplicationScalingRulesCallable(const Model::DescribeApplicationScalingRulesRequest& request) const;
 			DescribeApplicationSlbsOutcome describeApplicationSlbs(const Model::DescribeApplicationSlbsRequest &request)const;
 			void describeApplicationSlbsAsync(const Model::DescribeApplicationSlbsRequest& request, const DescribeApplicationSlbsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApplicationSlbsOutcomeCallable describeApplicationSlbsCallable(const Model::DescribeApplicationSlbsRequest& request) const;
@@ -427,9 +481,18 @@ namespace AlibabaCloud
 			DescribeNamespacesOutcome describeNamespaces(const Model::DescribeNamespacesRequest &request)const;
 			void describeNamespacesAsync(const Model::DescribeNamespacesRequest& request, const DescribeNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNamespacesOutcomeCallable describeNamespacesCallable(const Model::DescribeNamespacesRequest& request) const;
+			DescribePipelineOutcome describePipeline(const Model::DescribePipelineRequest &request)const;
+			void describePipelineAsync(const Model::DescribePipelineRequest& request, const DescribePipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePipelineOutcomeCallable describePipelineCallable(const Model::DescribePipelineRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DisableApplicationScalingRuleOutcome disableApplicationScalingRule(const Model::DisableApplicationScalingRuleRequest &request)const;
+			void disableApplicationScalingRuleAsync(const Model::DisableApplicationScalingRuleRequest& request, const DisableApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableApplicationScalingRuleOutcomeCallable disableApplicationScalingRuleCallable(const Model::DisableApplicationScalingRuleRequest& request) const;
+			EnableApplicationScalingRuleOutcome enableApplicationScalingRule(const Model::EnableApplicationScalingRuleRequest &request)const;
+			void enableApplicationScalingRuleAsync(const Model::EnableApplicationScalingRuleRequest& request, const EnableApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableApplicationScalingRuleOutcomeCallable enableApplicationScalingRuleCallable(const Model::EnableApplicationScalingRuleRequest& request) const;
 			ListAppEventsOutcome listAppEvents(const Model::ListAppEventsRequest &request)const;
 			void listAppEventsAsync(const Model::ListAppEventsRequest& request, const ListAppEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAppEventsOutcomeCallable listAppEventsCallable(const Model::ListAppEventsRequest& request) const;
@@ -463,6 +526,9 @@ namespace AlibabaCloud
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			OpenSaeServiceOutcome openSaeService(const Model::OpenSaeServiceRequest &request)const;
+			void openSaeServiceAsync(const Model::OpenSaeServiceRequest& request, const OpenSaeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenSaeServiceOutcomeCallable openSaeServiceCallable(const Model::OpenSaeServiceRequest& request) const;
 			QueryResourceStaticsOutcome queryResourceStatics(const Model::QueryResourceStaticsRequest &request)const;
 			void queryResourceStaticsAsync(const Model::QueryResourceStaticsRequest& request, const QueryResourceStaticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryResourceStaticsOutcomeCallable queryResourceStaticsCallable(const Model::QueryResourceStaticsRequest& request) const;
@@ -475,6 +541,9 @@ namespace AlibabaCloud
 			RestartApplicationOutcome restartApplication(const Model::RestartApplicationRequest &request)const;
 			void restartApplicationAsync(const Model::RestartApplicationRequest& request, const RestartApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartApplicationOutcomeCallable restartApplicationCallable(const Model::RestartApplicationRequest& request) const;
+			RestartInstancesOutcome restartInstances(const Model::RestartInstancesRequest &request)const;
+			void restartInstancesAsync(const Model::RestartInstancesRequest& request, const RestartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestartInstancesOutcomeCallable restartInstancesCallable(const Model::RestartInstancesRequest& request) const;
 			RollbackApplicationOutcome rollbackApplication(const Model::RollbackApplicationRequest &request)const;
 			void rollbackApplicationAsync(const Model::RollbackApplicationRequest& request, const RollbackApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RollbackApplicationOutcomeCallable rollbackApplicationCallable(const Model::RollbackApplicationRequest& request) const;
@@ -496,6 +565,9 @@ namespace AlibabaCloud
 			UpdateAppSecurityGroupOutcome updateAppSecurityGroup(const Model::UpdateAppSecurityGroupRequest &request)const;
 			void updateAppSecurityGroupAsync(const Model::UpdateAppSecurityGroupRequest& request, const UpdateAppSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAppSecurityGroupOutcomeCallable updateAppSecurityGroupCallable(const Model::UpdateAppSecurityGroupRequest& request) const;
+			UpdateApplicationScalingRuleOutcome updateApplicationScalingRule(const Model::UpdateApplicationScalingRuleRequest &request)const;
+			void updateApplicationScalingRuleAsync(const Model::UpdateApplicationScalingRuleRequest& request, const UpdateApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateApplicationScalingRuleOutcomeCallable updateApplicationScalingRuleCallable(const Model::UpdateApplicationScalingRuleRequest& request) const;
 			UpdateConfigMapOutcome updateConfigMap(const Model::UpdateConfigMapRequest &request)const;
 			void updateConfigMapAsync(const Model::UpdateConfigMapRequest& request, const UpdateConfigMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateConfigMapOutcomeCallable updateConfigMapCallable(const Model::UpdateConfigMapRequest& request) const;

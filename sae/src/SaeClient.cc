@@ -303,6 +303,42 @@ SaeClient::CreateApplicationOutcomeCallable SaeClient::createApplicationCallable
 	return task->get_future();
 }
 
+SaeClient::CreateApplicationScalingRuleOutcome SaeClient::createApplicationScalingRule(const CreateApplicationScalingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApplicationScalingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApplicationScalingRuleOutcome(CreateApplicationScalingRuleResult(outcome.result()));
+	else
+		return CreateApplicationScalingRuleOutcome(outcome.error());
+}
+
+void SaeClient::createApplicationScalingRuleAsync(const CreateApplicationScalingRuleRequest& request, const CreateApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApplicationScalingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::CreateApplicationScalingRuleOutcomeCallable SaeClient::createApplicationScalingRuleCallable(const CreateApplicationScalingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApplicationScalingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createApplicationScalingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::CreateConfigMapOutcome SaeClient::createConfigMap(const CreateConfigMapRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +477,42 @@ SaeClient::DeleteApplicationOutcomeCallable SaeClient::deleteApplicationCallable
 			[this, request]()
 			{
 			return this->deleteApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DeleteApplicationScalingRuleOutcome SaeClient::deleteApplicationScalingRule(const DeleteApplicationScalingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteApplicationScalingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteApplicationScalingRuleOutcome(DeleteApplicationScalingRuleResult(outcome.result()));
+	else
+		return DeleteApplicationScalingRuleOutcome(outcome.error());
+}
+
+void SaeClient::deleteApplicationScalingRuleAsync(const DeleteApplicationScalingRuleRequest& request, const DeleteApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteApplicationScalingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteApplicationScalingRuleOutcomeCallable SaeClient::deleteApplicationScalingRuleCallable(const DeleteApplicationScalingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteApplicationScalingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteApplicationScalingRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +801,42 @@ SaeClient::DescribeApplicationInstancesOutcomeCallable SaeClient::describeApplic
 			[this, request]()
 			{
 			return this->describeApplicationInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeApplicationScalingRulesOutcome SaeClient::describeApplicationScalingRules(const DescribeApplicationScalingRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApplicationScalingRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApplicationScalingRulesOutcome(DescribeApplicationScalingRulesResult(outcome.result()));
+	else
+		return DescribeApplicationScalingRulesOutcome(outcome.error());
+}
+
+void SaeClient::describeApplicationScalingRulesAsync(const DescribeApplicationScalingRulesRequest& request, const DescribeApplicationScalingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApplicationScalingRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeApplicationScalingRulesOutcomeCallable SaeClient::describeApplicationScalingRulesCallable(const DescribeApplicationScalingRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApplicationScalingRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApplicationScalingRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,6 +1311,42 @@ SaeClient::DescribeNamespacesOutcomeCallable SaeClient::describeNamespacesCallab
 	return task->get_future();
 }
 
+SaeClient::DescribePipelineOutcome SaeClient::describePipeline(const DescribePipelineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePipelineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePipelineOutcome(DescribePipelineResult(outcome.result()));
+	else
+		return DescribePipelineOutcome(outcome.error());
+}
+
+void SaeClient::describePipelineAsync(const DescribePipelineRequest& request, const DescribePipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePipeline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribePipelineOutcomeCallable SaeClient::describePipelineCallable(const DescribePipelineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePipelineOutcome()>>(
+			[this, request]()
+			{
+			return this->describePipeline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DescribeRegionsOutcome SaeClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1377,78 @@ SaeClient::DescribeRegionsOutcomeCallable SaeClient::describeRegionsCallable(con
 			[this, request]()
 			{
 			return this->describeRegions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DisableApplicationScalingRuleOutcome SaeClient::disableApplicationScalingRule(const DisableApplicationScalingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableApplicationScalingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableApplicationScalingRuleOutcome(DisableApplicationScalingRuleResult(outcome.result()));
+	else
+		return DisableApplicationScalingRuleOutcome(outcome.error());
+}
+
+void SaeClient::disableApplicationScalingRuleAsync(const DisableApplicationScalingRuleRequest& request, const DisableApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableApplicationScalingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DisableApplicationScalingRuleOutcomeCallable SaeClient::disableApplicationScalingRuleCallable(const DisableApplicationScalingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableApplicationScalingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->disableApplicationScalingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::EnableApplicationScalingRuleOutcome SaeClient::enableApplicationScalingRule(const EnableApplicationScalingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableApplicationScalingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableApplicationScalingRuleOutcome(EnableApplicationScalingRuleResult(outcome.result()));
+	else
+		return EnableApplicationScalingRuleOutcome(outcome.error());
+}
+
+void SaeClient::enableApplicationScalingRuleAsync(const EnableApplicationScalingRuleRequest& request, const EnableApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableApplicationScalingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::EnableApplicationScalingRuleOutcomeCallable SaeClient::enableApplicationScalingRuleCallable(const EnableApplicationScalingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableApplicationScalingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->enableApplicationScalingRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,6 +1851,42 @@ SaeClient::ListTagResourcesOutcomeCallable SaeClient::listTagResourcesCallable(c
 	return task->get_future();
 }
 
+SaeClient::OpenSaeServiceOutcome SaeClient::openSaeService(const OpenSaeServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenSaeServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenSaeServiceOutcome(OpenSaeServiceResult(outcome.result()));
+	else
+		return OpenSaeServiceOutcome(outcome.error());
+}
+
+void SaeClient::openSaeServiceAsync(const OpenSaeServiceRequest& request, const OpenSaeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openSaeService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::OpenSaeServiceOutcomeCallable SaeClient::openSaeServiceCallable(const OpenSaeServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenSaeServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openSaeService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::QueryResourceStaticsOutcome SaeClient::queryResourceStatics(const QueryResourceStaticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1773,6 +2025,42 @@ SaeClient::RestartApplicationOutcomeCallable SaeClient::restartApplicationCallab
 			[this, request]()
 			{
 			return this->restartApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::RestartInstancesOutcome SaeClient::restartInstances(const RestartInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestartInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestartInstancesOutcome(RestartInstancesResult(outcome.result()));
+	else
+		return RestartInstancesOutcome(outcome.error());
+}
+
+void SaeClient::restartInstancesAsync(const RestartInstancesRequest& request, const RestartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restartInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::RestartInstancesOutcomeCallable SaeClient::restartInstancesCallable(const RestartInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestartInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->restartInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2025,6 +2313,42 @@ SaeClient::UpdateAppSecurityGroupOutcomeCallable SaeClient::updateAppSecurityGro
 			[this, request]()
 			{
 			return this->updateAppSecurityGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UpdateApplicationScalingRuleOutcome SaeClient::updateApplicationScalingRule(const UpdateApplicationScalingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationScalingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationScalingRuleOutcome(UpdateApplicationScalingRuleResult(outcome.result()));
+	else
+		return UpdateApplicationScalingRuleOutcome(outcome.error());
+}
+
+void SaeClient::updateApplicationScalingRuleAsync(const UpdateApplicationScalingRuleRequest& request, const UpdateApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationScalingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateApplicationScalingRuleOutcomeCallable SaeClient::updateApplicationScalingRuleCallable(const UpdateApplicationScalingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationScalingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationScalingRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

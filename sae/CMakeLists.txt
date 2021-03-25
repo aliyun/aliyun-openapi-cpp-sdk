@@ -35,6 +35,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/ConfirmPipelineBatchResult.h
 	include/alibabacloud/sae/model/CreateApplicationRequest.h
 	include/alibabacloud/sae/model/CreateApplicationResult.h
+	include/alibabacloud/sae/model/CreateApplicationScalingRuleRequest.h
+	include/alibabacloud/sae/model/CreateApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/CreateConfigMapRequest.h
 	include/alibabacloud/sae/model/CreateConfigMapResult.h
 	include/alibabacloud/sae/model/CreateIngressRequest.h
@@ -43,6 +45,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/CreateNamespaceResult.h
 	include/alibabacloud/sae/model/DeleteApplicationRequest.h
 	include/alibabacloud/sae/model/DeleteApplicationResult.h
+	include/alibabacloud/sae/model/DeleteApplicationScalingRuleRequest.h
+	include/alibabacloud/sae/model/DeleteApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/DeleteConfigMapRequest.h
 	include/alibabacloud/sae/model/DeleteConfigMapResult.h
 	include/alibabacloud/sae/model/DeleteIngressRequest.h
@@ -59,6 +63,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribeApplicationImageResult.h
 	include/alibabacloud/sae/model/DescribeApplicationInstancesRequest.h
 	include/alibabacloud/sae/model/DescribeApplicationInstancesResult.h
+	include/alibabacloud/sae/model/DescribeApplicationScalingRulesRequest.h
+	include/alibabacloud/sae/model/DescribeApplicationScalingRulesResult.h
 	include/alibabacloud/sae/model/DescribeApplicationSlbsRequest.h
 	include/alibabacloud/sae/model/DescribeApplicationSlbsResult.h
 	include/alibabacloud/sae/model/DescribeApplicationStatusRequest.h
@@ -85,8 +91,14 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribeNamespaceResourcesResult.h
 	include/alibabacloud/sae/model/DescribeNamespacesRequest.h
 	include/alibabacloud/sae/model/DescribeNamespacesResult.h
+	include/alibabacloud/sae/model/DescribePipelineRequest.h
+	include/alibabacloud/sae/model/DescribePipelineResult.h
 	include/alibabacloud/sae/model/DescribeRegionsRequest.h
 	include/alibabacloud/sae/model/DescribeRegionsResult.h
+	include/alibabacloud/sae/model/DisableApplicationScalingRuleRequest.h
+	include/alibabacloud/sae/model/DisableApplicationScalingRuleResult.h
+	include/alibabacloud/sae/model/EnableApplicationScalingRuleRequest.h
+	include/alibabacloud/sae/model/EnableApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/ListAppEventsRequest.h
 	include/alibabacloud/sae/model/ListAppEventsResult.h
 	include/alibabacloud/sae/model/ListAppVersionsRequest.h
@@ -109,6 +121,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/ListPublishedServicesResult.h
 	include/alibabacloud/sae/model/ListTagResourcesRequest.h
 	include/alibabacloud/sae/model/ListTagResourcesResult.h
+	include/alibabacloud/sae/model/OpenSaeServiceRequest.h
+	include/alibabacloud/sae/model/OpenSaeServiceResult.h
 	include/alibabacloud/sae/model/QueryResourceStaticsRequest.h
 	include/alibabacloud/sae/model/QueryResourceStaticsResult.h
 	include/alibabacloud/sae/model/RescaleApplicationRequest.h
@@ -117,6 +131,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/RescaleApplicationVerticallyResult.h
 	include/alibabacloud/sae/model/RestartApplicationRequest.h
 	include/alibabacloud/sae/model/RestartApplicationResult.h
+	include/alibabacloud/sae/model/RestartInstancesRequest.h
+	include/alibabacloud/sae/model/RestartInstancesResult.h
 	include/alibabacloud/sae/model/RollbackApplicationRequest.h
 	include/alibabacloud/sae/model/RollbackApplicationResult.h
 	include/alibabacloud/sae/model/StartApplicationRequest.h
@@ -131,6 +147,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/UntagResourcesResult.h
 	include/alibabacloud/sae/model/UpdateAppSecurityGroupRequest.h
 	include/alibabacloud/sae/model/UpdateAppSecurityGroupResult.h
+	include/alibabacloud/sae/model/UpdateApplicationScalingRuleRequest.h
+	include/alibabacloud/sae/model/UpdateApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/UpdateConfigMapRequest.h
 	include/alibabacloud/sae/model/UpdateConfigMapResult.h
 	include/alibabacloud/sae/model/UpdateIngressRequest.h
@@ -156,6 +174,8 @@ set(sae_src
 	src/model/ConfirmPipelineBatchResult.cc
 	src/model/CreateApplicationRequest.cc
 	src/model/CreateApplicationResult.cc
+	src/model/CreateApplicationScalingRuleRequest.cc
+	src/model/CreateApplicationScalingRuleResult.cc
 	src/model/CreateConfigMapRequest.cc
 	src/model/CreateConfigMapResult.cc
 	src/model/CreateIngressRequest.cc
@@ -164,6 +184,8 @@ set(sae_src
 	src/model/CreateNamespaceResult.cc
 	src/model/DeleteApplicationRequest.cc
 	src/model/DeleteApplicationResult.cc
+	src/model/DeleteApplicationScalingRuleRequest.cc
+	src/model/DeleteApplicationScalingRuleResult.cc
 	src/model/DeleteConfigMapRequest.cc
 	src/model/DeleteConfigMapResult.cc
 	src/model/DeleteIngressRequest.cc
@@ -180,6 +202,8 @@ set(sae_src
 	src/model/DescribeApplicationImageResult.cc
 	src/model/DescribeApplicationInstancesRequest.cc
 	src/model/DescribeApplicationInstancesResult.cc
+	src/model/DescribeApplicationScalingRulesRequest.cc
+	src/model/DescribeApplicationScalingRulesResult.cc
 	src/model/DescribeApplicationSlbsRequest.cc
 	src/model/DescribeApplicationSlbsResult.cc
 	src/model/DescribeApplicationStatusRequest.cc
@@ -206,8 +230,14 @@ set(sae_src
 	src/model/DescribeNamespaceResourcesResult.cc
 	src/model/DescribeNamespacesRequest.cc
 	src/model/DescribeNamespacesResult.cc
+	src/model/DescribePipelineRequest.cc
+	src/model/DescribePipelineResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DisableApplicationScalingRuleRequest.cc
+	src/model/DisableApplicationScalingRuleResult.cc
+	src/model/EnableApplicationScalingRuleRequest.cc
+	src/model/EnableApplicationScalingRuleResult.cc
 	src/model/ListAppEventsRequest.cc
 	src/model/ListAppEventsResult.cc
 	src/model/ListAppVersionsRequest.cc
@@ -230,6 +260,8 @@ set(sae_src
 	src/model/ListPublishedServicesResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/OpenSaeServiceRequest.cc
+	src/model/OpenSaeServiceResult.cc
 	src/model/QueryResourceStaticsRequest.cc
 	src/model/QueryResourceStaticsResult.cc
 	src/model/RescaleApplicationRequest.cc
@@ -238,6 +270,8 @@ set(sae_src
 	src/model/RescaleApplicationVerticallyResult.cc
 	src/model/RestartApplicationRequest.cc
 	src/model/RestartApplicationResult.cc
+	src/model/RestartInstancesRequest.cc
+	src/model/RestartInstancesResult.cc
 	src/model/RollbackApplicationRequest.cc
 	src/model/RollbackApplicationResult.cc
 	src/model/StartApplicationRequest.cc
@@ -252,6 +286,8 @@ set(sae_src
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateAppSecurityGroupRequest.cc
 	src/model/UpdateAppSecurityGroupResult.cc
+	src/model/UpdateApplicationScalingRuleRequest.cc
+	src/model/UpdateApplicationScalingRuleResult.cc
 	src/model/UpdateConfigMapRequest.cc
 	src/model/UpdateConfigMapResult.cc
 	src/model/UpdateIngressRequest.cc

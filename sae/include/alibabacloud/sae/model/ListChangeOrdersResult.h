@@ -38,7 +38,6 @@ namespace AlibabaCloud
 					{
 						int status;
 						std::string description;
-						std::string pipelines;
 						std::string createTime;
 						std::string changeOrderId;
 						std::string createUserId;

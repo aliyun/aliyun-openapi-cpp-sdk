@@ -58,14 +58,14 @@ void ListNamespacedConfigMapsResult::parse(const std::string &payload)
 			configMapObject.createTime = std::stol(dataNodeConfigMapsConfigMap["CreateTime"].asString());
 		if(!dataNodeConfigMapsConfigMap["UpdateTime"].isNull())
 			configMapObject.updateTime = std::stol(dataNodeConfigMapsConfigMap["UpdateTime"].asString());
-		auto allRelateAppsNode = allConfigMapsNode["RelateApps"]["RelateApp"];
-		for (auto allConfigMapsNodeRelateAppsRelateApp : allRelateAppsNode)
+		auto allRelateAppsNode = dataNodeConfigMapsConfigMap["RelateApps"]["RelateApp"];
+		for (auto dataNodeConfigMapsConfigMapRelateAppsRelateApp : allRelateAppsNode)
 		{
 			Data::ConfigMap::RelateApp relateAppsObject;
-			if(!allConfigMapsNodeRelateAppsRelateApp["AppId"].isNull())
-				relateAppsObject.appId = allConfigMapsNodeRelateAppsRelateApp["AppId"].asString();
-			if(!allConfigMapsNodeRelateAppsRelateApp["AppName"].isNull())
-				relateAppsObject.appName = allConfigMapsNodeRelateAppsRelateApp["AppName"].asString();
+			if(!dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppId"].isNull())
+				relateAppsObject.appId = dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppId"].asString();
+			if(!dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppName"].isNull())
+				relateAppsObject.appName = dataNodeConfigMapsConfigMapRelateAppsRelateApp["AppName"].asString();
 			configMapObject.relateApps.push_back(relateAppsObject);
 		}
 		data_.configMaps.push_back(configMapObject);

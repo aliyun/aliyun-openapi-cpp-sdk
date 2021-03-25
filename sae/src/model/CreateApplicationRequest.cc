@@ -94,6 +94,17 @@ void CreateApplicationRequest::setCommandArgs(const std::string& commandArgs)
 	setParameter("CommandArgs", commandArgs);
 }
 
+std::string CreateApplicationRequest::getAcrAssumeRoleArn()const
+{
+	return acrAssumeRoleArn_;
+}
+
+void CreateApplicationRequest::setAcrAssumeRoleArn(const std::string& acrAssumeRoleArn)
+{
+	acrAssumeRoleArn_ = acrAssumeRoleArn;
+	setParameter("AcrAssumeRoleArn", acrAssumeRoleArn);
+}
+
 std::string CreateApplicationRequest::getReadiness()const
 {
 	return readiness_;

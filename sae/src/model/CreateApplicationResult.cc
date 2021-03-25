@@ -44,14 +44,14 @@ void CreateApplicationResult::parse(const std::string &payload)
 		data_.appId = dataNode["AppId"].asString();
 	if(!dataNode["ChangeOrderId"].isNull())
 		data_.changeOrderId = dataNode["ChangeOrderId"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TraceId"].isNull())
 		traceId_ = value["TraceId"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

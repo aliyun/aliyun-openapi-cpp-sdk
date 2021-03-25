@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setSlsConfigs(const std::string& slsConfigs);
 				std::string getCommandArgs()const;
 				void setCommandArgs(const std::string& commandArgs);
+				std::string getAcrAssumeRoleArn()const;
+				void setAcrAssumeRoleArn(const std::string& acrAssumeRoleArn);
 				std::string getReadiness()const;
 				void setReadiness(const std::string& readiness);
 				std::string getTimezone()const;
@@ -123,6 +125,7 @@ namespace AlibabaCloud
 				int memory_;
 				std::string slsConfigs_;
 				std::string commandArgs_;
+				std::string acrAssumeRoleArn_;
 				std::string readiness_;
 				std::string timezone_;
 				std::string mountHost_;
