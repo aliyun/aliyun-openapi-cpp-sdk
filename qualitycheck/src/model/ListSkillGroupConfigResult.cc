@@ -79,6 +79,8 @@ void ListSkillGroupConfigResult::parse(const std::string &payload)
 			dataObject.allRids = valueDataSkillGroupConfig["AllRids"].asString();
 		if(!valueDataSkillGroupConfig["SkillGroupFrom"].isNull())
 			dataObject.skillGroupFrom = std::stoi(valueDataSkillGroupConfig["SkillGroupFrom"].asString());
+		if(!valueDataSkillGroupConfig["ScreenSwitch"].isNull())
+			dataObject.screenSwitch = valueDataSkillGroupConfig["ScreenSwitch"].asString() == "true";
 		auto allRuleListNode = valueDataSkillGroupConfig["RuleList"]["RuleNameInfo"];
 		for (auto valueDataSkillGroupConfigRuleListRuleNameInfo : allRuleListNode)
 		{
@@ -98,6 +100,20 @@ void ListSkillGroupConfigResult::parse(const std::string &payload)
 			if(!valueDataSkillGroupConfigAllRuleListRuleNameInfo["RuleName"].isNull())
 				allRuleListObject.ruleName = valueDataSkillGroupConfigAllRuleListRuleNameInfo["RuleName"].asString();
 			dataObject.allRuleList.push_back(allRuleListObject);
+		}
+		auto allSkillGroupScreensNode = valueDataSkillGroupConfig["SkillGroupScreens"]["SkillGroupScreen"];
+		for (auto valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen : allSkillGroupScreensNode)
+		{
+			SkillGroupConfig::SkillGroupScreen skillGroupScreensObject;
+			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Name"].isNull())
+				skillGroupScreensObject.name = valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Name"].asString();
+			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["DataType"].isNull())
+				skillGroupScreensObject.dataType = std::stoi(valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["DataType"].asString());
+			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Symbol"].isNull())
+				skillGroupScreensObject.symbol = std::stoi(valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Symbol"].asString());
+			if(!valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Value"].isNull())
+				skillGroupScreensObject.value = valueDataSkillGroupConfigSkillGroupScreensSkillGroupScreen["Value"].asString();
+			dataObject.skillGroupScreens.push_back(skillGroupScreensObject);
 		}
 		data_.push_back(dataObject);
 	}

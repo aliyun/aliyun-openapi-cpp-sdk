@@ -29,8 +29,6 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/AddThesaurusForApiResult.h
 	include/alibabacloud/qualitycheck/model/AssignReviewerRequest.h
 	include/alibabacloud/qualitycheck/model/AssignReviewerResult.h
-	include/alibabacloud/qualitycheck/model/CloseServiceRequest.h
-	include/alibabacloud/qualitycheck/model/CloseServiceResult.h
 	include/alibabacloud/qualitycheck/model/CreateAsrVocabRequest.h
 	include/alibabacloud/qualitycheck/model/CreateAsrVocabResult.h
 	include/alibabacloud/qualitycheck/model/CreateSkillGroupConfigRequest.h
@@ -75,16 +73,12 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/GetBusinessCategoryListResult.h
 	include/alibabacloud/qualitycheck/model/GetCustomizationConfigListRequest.h
 	include/alibabacloud/qualitycheck/model/GetCustomizationConfigListResult.h
-	include/alibabacloud/qualitycheck/model/GetDataSetListRequest.h
-	include/alibabacloud/qualitycheck/model/GetDataSetListResult.h
 	include/alibabacloud/qualitycheck/model/GetHitResultRequest.h
 	include/alibabacloud/qualitycheck/model/GetHitResultResult.h
 	include/alibabacloud/qualitycheck/model/GetNextResultToVerifyRequest.h
 	include/alibabacloud/qualitycheck/model/GetNextResultToVerifyResult.h
 	include/alibabacloud/qualitycheck/model/GetPrecisionTaskRequest.h
 	include/alibabacloud/qualitycheck/model/GetPrecisionTaskResult.h
-	include/alibabacloud/qualitycheck/model/GetRecognizeResultRequest.h
-	include/alibabacloud/qualitycheck/model/GetRecognizeResultResult.h
 	include/alibabacloud/qualitycheck/model/GetResultRequest.h
 	include/alibabacloud/qualitycheck/model/GetResultResult.h
 	include/alibabacloud/qualitycheck/model/GetResultCallbackRequest.h
@@ -131,20 +125,12 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/ListUsersResult.h
 	include/alibabacloud/qualitycheck/model/ListWarningConfigRequest.h
 	include/alibabacloud/qualitycheck/model/ListWarningConfigResult.h
-	include/alibabacloud/qualitycheck/model/OpenServiceRequest.h
-	include/alibabacloud/qualitycheck/model/OpenServiceResult.h
-	include/alibabacloud/qualitycheck/model/RegisterNoticeRequest.h
-	include/alibabacloud/qualitycheck/model/RegisterNoticeResult.h
 	include/alibabacloud/qualitycheck/model/RestartAsrTaskRequest.h
 	include/alibabacloud/qualitycheck/model/RestartAsrTaskResult.h
-	include/alibabacloud/qualitycheck/model/RetrySubmitAsrRequest.h
-	include/alibabacloud/qualitycheck/model/RetrySubmitAsrResult.h
 	include/alibabacloud/qualitycheck/model/SaveConfigDataSetRequest.h
 	include/alibabacloud/qualitycheck/model/SaveConfigDataSetResult.h
 	include/alibabacloud/qualitycheck/model/SubmitComplaintRequest.h
 	include/alibabacloud/qualitycheck/model/SubmitComplaintResult.h
-	include/alibabacloud/qualitycheck/model/SubmitModelTestTaskRequest.h
-	include/alibabacloud/qualitycheck/model/SubmitModelTestTaskResult.h
 	include/alibabacloud/qualitycheck/model/SubmitPrecisionTaskRequest.h
 	include/alibabacloud/qualitycheck/model/SubmitPrecisionTaskResult.h
 	include/alibabacloud/qualitycheck/model/SubmitQualityCheckTaskRequest.h
@@ -157,8 +143,6 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/UpdateAsrVocabResult.h
 	include/alibabacloud/qualitycheck/model/UpdateRuleRequest.h
 	include/alibabacloud/qualitycheck/model/UpdateRuleResult.h
-	include/alibabacloud/qualitycheck/model/UpdateRuleForAntRequest.h
-	include/alibabacloud/qualitycheck/model/UpdateRuleForAntResult.h
 	include/alibabacloud/qualitycheck/model/UpdateScoreForApiRequest.h
 	include/alibabacloud/qualitycheck/model/UpdateScoreForApiResult.h
 	include/alibabacloud/qualitycheck/model/UpdateSkillGroupConfigRequest.h
@@ -183,8 +167,6 @@ set(qualitycheck_public_header_model
 	include/alibabacloud/qualitycheck/model/UploadDataSyncResult.h
 	include/alibabacloud/qualitycheck/model/UploadRuleRequest.h
 	include/alibabacloud/qualitycheck/model/UploadRuleResult.h
-	include/alibabacloud/qualitycheck/model/ValidateRoleSetRequest.h
-	include/alibabacloud/qualitycheck/model/ValidateRoleSetResult.h
 	include/alibabacloud/qualitycheck/model/VerifyFileRequest.h
 	include/alibabacloud/qualitycheck/model/VerifyFileResult.h
 	include/alibabacloud/qualitycheck/model/VerifySentenceRequest.h
@@ -200,8 +182,6 @@ set(qualitycheck_src
 	src/model/AddThesaurusForApiResult.cc
 	src/model/AssignReviewerRequest.cc
 	src/model/AssignReviewerResult.cc
-	src/model/CloseServiceRequest.cc
-	src/model/CloseServiceResult.cc
 	src/model/CreateAsrVocabRequest.cc
 	src/model/CreateAsrVocabResult.cc
 	src/model/CreateSkillGroupConfigRequest.cc
@@ -246,16 +226,12 @@ set(qualitycheck_src
 	src/model/GetBusinessCategoryListResult.cc
 	src/model/GetCustomizationConfigListRequest.cc
 	src/model/GetCustomizationConfigListResult.cc
-	src/model/GetDataSetListRequest.cc
-	src/model/GetDataSetListResult.cc
 	src/model/GetHitResultRequest.cc
 	src/model/GetHitResultResult.cc
 	src/model/GetNextResultToVerifyRequest.cc
 	src/model/GetNextResultToVerifyResult.cc
 	src/model/GetPrecisionTaskRequest.cc
 	src/model/GetPrecisionTaskResult.cc
-	src/model/GetRecognizeResultRequest.cc
-	src/model/GetRecognizeResultResult.cc
 	src/model/GetResultRequest.cc
 	src/model/GetResultResult.cc
 	src/model/GetResultCallbackRequest.cc
@@ -302,20 +278,12 @@ set(qualitycheck_src
 	src/model/ListUsersResult.cc
 	src/model/ListWarningConfigRequest.cc
 	src/model/ListWarningConfigResult.cc
-	src/model/OpenServiceRequest.cc
-	src/model/OpenServiceResult.cc
-	src/model/RegisterNoticeRequest.cc
-	src/model/RegisterNoticeResult.cc
 	src/model/RestartAsrTaskRequest.cc
 	src/model/RestartAsrTaskResult.cc
-	src/model/RetrySubmitAsrRequest.cc
-	src/model/RetrySubmitAsrResult.cc
 	src/model/SaveConfigDataSetRequest.cc
 	src/model/SaveConfigDataSetResult.cc
 	src/model/SubmitComplaintRequest.cc
 	src/model/SubmitComplaintResult.cc
-	src/model/SubmitModelTestTaskRequest.cc
-	src/model/SubmitModelTestTaskResult.cc
 	src/model/SubmitPrecisionTaskRequest.cc
 	src/model/SubmitPrecisionTaskResult.cc
 	src/model/SubmitQualityCheckTaskRequest.cc
@@ -328,8 +296,6 @@ set(qualitycheck_src
 	src/model/UpdateAsrVocabResult.cc
 	src/model/UpdateRuleRequest.cc
 	src/model/UpdateRuleResult.cc
-	src/model/UpdateRuleForAntRequest.cc
-	src/model/UpdateRuleForAntResult.cc
 	src/model/UpdateScoreForApiRequest.cc
 	src/model/UpdateScoreForApiResult.cc
 	src/model/UpdateSkillGroupConfigRequest.cc
@@ -354,8 +320,6 @@ set(qualitycheck_src
 	src/model/UploadDataSyncResult.cc
 	src/model/UploadRuleRequest.cc
 	src/model/UploadRuleResult.cc
-	src/model/ValidateRoleSetRequest.cc
-	src/model/ValidateRoleSetResult.cc
 	src/model/VerifyFileRequest.cc
 	src/model/VerifyFileResult.cc
 	src/model/VerifySentenceRequest.cc

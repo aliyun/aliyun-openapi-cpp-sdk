@@ -30,8 +30,6 @@
 #include "model/AddThesaurusForApiResult.h"
 #include "model/AssignReviewerRequest.h"
 #include "model/AssignReviewerResult.h"
-#include "model/CloseServiceRequest.h"
-#include "model/CloseServiceResult.h"
 #include "model/CreateAsrVocabRequest.h"
 #include "model/CreateAsrVocabResult.h"
 #include "model/CreateSkillGroupConfigRequest.h"
@@ -76,16 +74,12 @@
 #include "model/GetBusinessCategoryListResult.h"
 #include "model/GetCustomizationConfigListRequest.h"
 #include "model/GetCustomizationConfigListResult.h"
-#include "model/GetDataSetListRequest.h"
-#include "model/GetDataSetListResult.h"
 #include "model/GetHitResultRequest.h"
 #include "model/GetHitResultResult.h"
 #include "model/GetNextResultToVerifyRequest.h"
 #include "model/GetNextResultToVerifyResult.h"
 #include "model/GetPrecisionTaskRequest.h"
 #include "model/GetPrecisionTaskResult.h"
-#include "model/GetRecognizeResultRequest.h"
-#include "model/GetRecognizeResultResult.h"
 #include "model/GetResultRequest.h"
 #include "model/GetResultResult.h"
 #include "model/GetResultCallbackRequest.h"
@@ -132,20 +126,12 @@
 #include "model/ListUsersResult.h"
 #include "model/ListWarningConfigRequest.h"
 #include "model/ListWarningConfigResult.h"
-#include "model/OpenServiceRequest.h"
-#include "model/OpenServiceResult.h"
-#include "model/RegisterNoticeRequest.h"
-#include "model/RegisterNoticeResult.h"
 #include "model/RestartAsrTaskRequest.h"
 #include "model/RestartAsrTaskResult.h"
-#include "model/RetrySubmitAsrRequest.h"
-#include "model/RetrySubmitAsrResult.h"
 #include "model/SaveConfigDataSetRequest.h"
 #include "model/SaveConfigDataSetResult.h"
 #include "model/SubmitComplaintRequest.h"
 #include "model/SubmitComplaintResult.h"
-#include "model/SubmitModelTestTaskRequest.h"
-#include "model/SubmitModelTestTaskResult.h"
 #include "model/SubmitPrecisionTaskRequest.h"
 #include "model/SubmitPrecisionTaskResult.h"
 #include "model/SubmitQualityCheckTaskRequest.h"
@@ -158,8 +144,6 @@
 #include "model/UpdateAsrVocabResult.h"
 #include "model/UpdateRuleRequest.h"
 #include "model/UpdateRuleResult.h"
-#include "model/UpdateRuleForAntRequest.h"
-#include "model/UpdateRuleForAntResult.h"
 #include "model/UpdateScoreForApiRequest.h"
 #include "model/UpdateScoreForApiResult.h"
 #include "model/UpdateSkillGroupConfigRequest.h"
@@ -184,8 +168,6 @@
 #include "model/UploadDataSyncResult.h"
 #include "model/UploadRuleRequest.h"
 #include "model/UploadRuleResult.h"
-#include "model/ValidateRoleSetRequest.h"
-#include "model/ValidateRoleSetResult.h"
 #include "model/VerifyFileRequest.h"
 #include "model/VerifyFileResult.h"
 #include "model/VerifySentenceRequest.h"
@@ -211,9 +193,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AssignReviewerResult> AssignReviewerOutcome;
 			typedef std::future<AssignReviewerOutcome> AssignReviewerOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::AssignReviewerRequest&, const AssignReviewerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignReviewerAsyncHandler;
-			typedef Outcome<Error, Model::CloseServiceResult> CloseServiceOutcome;
-			typedef std::future<CloseServiceOutcome> CloseServiceOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::CloseServiceRequest&, const CloseServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseServiceAsyncHandler;
 			typedef Outcome<Error, Model::CreateAsrVocabResult> CreateAsrVocabOutcome;
 			typedef std::future<CreateAsrVocabOutcome> CreateAsrVocabOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::CreateAsrVocabRequest&, const CreateAsrVocabOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsrVocabAsyncHandler;
@@ -280,9 +259,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCustomizationConfigListResult> GetCustomizationConfigListOutcome;
 			typedef std::future<GetCustomizationConfigListOutcome> GetCustomizationConfigListOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::GetCustomizationConfigListRequest&, const GetCustomizationConfigListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomizationConfigListAsyncHandler;
-			typedef Outcome<Error, Model::GetDataSetListResult> GetDataSetListOutcome;
-			typedef std::future<GetDataSetListOutcome> GetDataSetListOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::GetDataSetListRequest&, const GetDataSetListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataSetListAsyncHandler;
 			typedef Outcome<Error, Model::GetHitResultResult> GetHitResultOutcome;
 			typedef std::future<GetHitResultOutcome> GetHitResultOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::GetHitResultRequest&, const GetHitResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHitResultAsyncHandler;
@@ -292,9 +268,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPrecisionTaskResult> GetPrecisionTaskOutcome;
 			typedef std::future<GetPrecisionTaskOutcome> GetPrecisionTaskOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::GetPrecisionTaskRequest&, const GetPrecisionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPrecisionTaskAsyncHandler;
-			typedef Outcome<Error, Model::GetRecognizeResultResult> GetRecognizeResultOutcome;
-			typedef std::future<GetRecognizeResultOutcome> GetRecognizeResultOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::GetRecognizeResultRequest&, const GetRecognizeResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRecognizeResultAsyncHandler;
 			typedef Outcome<Error, Model::GetResultResult> GetResultOutcome;
 			typedef std::future<GetResultOutcome> GetResultOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::GetResultRequest&, const GetResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResultAsyncHandler;
@@ -364,27 +337,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListWarningConfigResult> ListWarningConfigOutcome;
 			typedef std::future<ListWarningConfigOutcome> ListWarningConfigOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::ListWarningConfigRequest&, const ListWarningConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWarningConfigAsyncHandler;
-			typedef Outcome<Error, Model::OpenServiceResult> OpenServiceOutcome;
-			typedef std::future<OpenServiceOutcome> OpenServiceOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::OpenServiceRequest&, const OpenServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenServiceAsyncHandler;
-			typedef Outcome<Error, Model::RegisterNoticeResult> RegisterNoticeOutcome;
-			typedef std::future<RegisterNoticeOutcome> RegisterNoticeOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::RegisterNoticeRequest&, const RegisterNoticeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterNoticeAsyncHandler;
 			typedef Outcome<Error, Model::RestartAsrTaskResult> RestartAsrTaskOutcome;
 			typedef std::future<RestartAsrTaskOutcome> RestartAsrTaskOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::RestartAsrTaskRequest&, const RestartAsrTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartAsrTaskAsyncHandler;
-			typedef Outcome<Error, Model::RetrySubmitAsrResult> RetrySubmitAsrOutcome;
-			typedef std::future<RetrySubmitAsrOutcome> RetrySubmitAsrOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::RetrySubmitAsrRequest&, const RetrySubmitAsrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetrySubmitAsrAsyncHandler;
 			typedef Outcome<Error, Model::SaveConfigDataSetResult> SaveConfigDataSetOutcome;
 			typedef std::future<SaveConfigDataSetOutcome> SaveConfigDataSetOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::SaveConfigDataSetRequest&, const SaveConfigDataSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveConfigDataSetAsyncHandler;
 			typedef Outcome<Error, Model::SubmitComplaintResult> SubmitComplaintOutcome;
 			typedef std::future<SubmitComplaintOutcome> SubmitComplaintOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::SubmitComplaintRequest&, const SubmitComplaintOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitComplaintAsyncHandler;
-			typedef Outcome<Error, Model::SubmitModelTestTaskResult> SubmitModelTestTaskOutcome;
-			typedef std::future<SubmitModelTestTaskOutcome> SubmitModelTestTaskOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::SubmitModelTestTaskRequest&, const SubmitModelTestTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitModelTestTaskAsyncHandler;
 			typedef Outcome<Error, Model::SubmitPrecisionTaskResult> SubmitPrecisionTaskOutcome;
 			typedef std::future<SubmitPrecisionTaskOutcome> SubmitPrecisionTaskOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::SubmitPrecisionTaskRequest&, const SubmitPrecisionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitPrecisionTaskAsyncHandler;
@@ -403,9 +364,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateRuleResult> UpdateRuleOutcome;
 			typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::UpdateRuleRequest&, const UpdateRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRuleAsyncHandler;
-			typedef Outcome<Error, Model::UpdateRuleForAntResult> UpdateRuleForAntOutcome;
-			typedef std::future<UpdateRuleForAntOutcome> UpdateRuleForAntOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::UpdateRuleForAntRequest&, const UpdateRuleForAntOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRuleForAntAsyncHandler;
 			typedef Outcome<Error, Model::UpdateScoreForApiResult> UpdateScoreForApiOutcome;
 			typedef std::future<UpdateScoreForApiOutcome> UpdateScoreForApiOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::UpdateScoreForApiRequest&, const UpdateScoreForApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScoreForApiAsyncHandler;
@@ -442,9 +400,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UploadRuleResult> UploadRuleOutcome;
 			typedef std::future<UploadRuleOutcome> UploadRuleOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::UploadRuleRequest&, const UploadRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadRuleAsyncHandler;
-			typedef Outcome<Error, Model::ValidateRoleSetResult> ValidateRoleSetOutcome;
-			typedef std::future<ValidateRoleSetOutcome> ValidateRoleSetOutcomeCallable;
-			typedef std::function<void(const QualitycheckClient*, const Model::ValidateRoleSetRequest&, const ValidateRoleSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateRoleSetAsyncHandler;
 			typedef Outcome<Error, Model::VerifyFileResult> VerifyFileOutcome;
 			typedef std::future<VerifyFileOutcome> VerifyFileOutcomeCallable;
 			typedef std::function<void(const QualitycheckClient*, const Model::VerifyFileRequest&, const VerifyFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyFileAsyncHandler;
@@ -468,9 +423,6 @@ namespace AlibabaCloud
 			AssignReviewerOutcome assignReviewer(const Model::AssignReviewerRequest &request)const;
 			void assignReviewerAsync(const Model::AssignReviewerRequest& request, const AssignReviewerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssignReviewerOutcomeCallable assignReviewerCallable(const Model::AssignReviewerRequest& request) const;
-			CloseServiceOutcome closeService(const Model::CloseServiceRequest &request)const;
-			void closeServiceAsync(const Model::CloseServiceRequest& request, const CloseServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CloseServiceOutcomeCallable closeServiceCallable(const Model::CloseServiceRequest& request) const;
 			CreateAsrVocabOutcome createAsrVocab(const Model::CreateAsrVocabRequest &request)const;
 			void createAsrVocabAsync(const Model::CreateAsrVocabRequest& request, const CreateAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAsrVocabOutcomeCallable createAsrVocabCallable(const Model::CreateAsrVocabRequest& request) const;
@@ -537,9 +489,6 @@ namespace AlibabaCloud
 			GetCustomizationConfigListOutcome getCustomizationConfigList(const Model::GetCustomizationConfigListRequest &request)const;
 			void getCustomizationConfigListAsync(const Model::GetCustomizationConfigListRequest& request, const GetCustomizationConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCustomizationConfigListOutcomeCallable getCustomizationConfigListCallable(const Model::GetCustomizationConfigListRequest& request) const;
-			GetDataSetListOutcome getDataSetList(const Model::GetDataSetListRequest &request)const;
-			void getDataSetListAsync(const Model::GetDataSetListRequest& request, const GetDataSetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetDataSetListOutcomeCallable getDataSetListCallable(const Model::GetDataSetListRequest& request) const;
 			GetHitResultOutcome getHitResult(const Model::GetHitResultRequest &request)const;
 			void getHitResultAsync(const Model::GetHitResultRequest& request, const GetHitResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetHitResultOutcomeCallable getHitResultCallable(const Model::GetHitResultRequest& request) const;
@@ -549,9 +498,6 @@ namespace AlibabaCloud
 			GetPrecisionTaskOutcome getPrecisionTask(const Model::GetPrecisionTaskRequest &request)const;
 			void getPrecisionTaskAsync(const Model::GetPrecisionTaskRequest& request, const GetPrecisionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPrecisionTaskOutcomeCallable getPrecisionTaskCallable(const Model::GetPrecisionTaskRequest& request) const;
-			GetRecognizeResultOutcome getRecognizeResult(const Model::GetRecognizeResultRequest &request)const;
-			void getRecognizeResultAsync(const Model::GetRecognizeResultRequest& request, const GetRecognizeResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetRecognizeResultOutcomeCallable getRecognizeResultCallable(const Model::GetRecognizeResultRequest& request) const;
 			GetResultOutcome getResult(const Model::GetResultRequest &request)const;
 			void getResultAsync(const Model::GetResultRequest& request, const GetResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetResultOutcomeCallable getResultCallable(const Model::GetResultRequest& request) const;
@@ -621,27 +567,15 @@ namespace AlibabaCloud
 			ListWarningConfigOutcome listWarningConfig(const Model::ListWarningConfigRequest &request)const;
 			void listWarningConfigAsync(const Model::ListWarningConfigRequest& request, const ListWarningConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListWarningConfigOutcomeCallable listWarningConfigCallable(const Model::ListWarningConfigRequest& request) const;
-			OpenServiceOutcome openService(const Model::OpenServiceRequest &request)const;
-			void openServiceAsync(const Model::OpenServiceRequest& request, const OpenServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OpenServiceOutcomeCallable openServiceCallable(const Model::OpenServiceRequest& request) const;
-			RegisterNoticeOutcome registerNotice(const Model::RegisterNoticeRequest &request)const;
-			void registerNoticeAsync(const Model::RegisterNoticeRequest& request, const RegisterNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RegisterNoticeOutcomeCallable registerNoticeCallable(const Model::RegisterNoticeRequest& request) const;
 			RestartAsrTaskOutcome restartAsrTask(const Model::RestartAsrTaskRequest &request)const;
 			void restartAsrTaskAsync(const Model::RestartAsrTaskRequest& request, const RestartAsrTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartAsrTaskOutcomeCallable restartAsrTaskCallable(const Model::RestartAsrTaskRequest& request) const;
-			RetrySubmitAsrOutcome retrySubmitAsr(const Model::RetrySubmitAsrRequest &request)const;
-			void retrySubmitAsrAsync(const Model::RetrySubmitAsrRequest& request, const RetrySubmitAsrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RetrySubmitAsrOutcomeCallable retrySubmitAsrCallable(const Model::RetrySubmitAsrRequest& request) const;
 			SaveConfigDataSetOutcome saveConfigDataSet(const Model::SaveConfigDataSetRequest &request)const;
 			void saveConfigDataSetAsync(const Model::SaveConfigDataSetRequest& request, const SaveConfigDataSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveConfigDataSetOutcomeCallable saveConfigDataSetCallable(const Model::SaveConfigDataSetRequest& request) const;
 			SubmitComplaintOutcome submitComplaint(const Model::SubmitComplaintRequest &request)const;
 			void submitComplaintAsync(const Model::SubmitComplaintRequest& request, const SubmitComplaintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitComplaintOutcomeCallable submitComplaintCallable(const Model::SubmitComplaintRequest& request) const;
-			SubmitModelTestTaskOutcome submitModelTestTask(const Model::SubmitModelTestTaskRequest &request)const;
-			void submitModelTestTaskAsync(const Model::SubmitModelTestTaskRequest& request, const SubmitModelTestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SubmitModelTestTaskOutcomeCallable submitModelTestTaskCallable(const Model::SubmitModelTestTaskRequest& request) const;
 			SubmitPrecisionTaskOutcome submitPrecisionTask(const Model::SubmitPrecisionTaskRequest &request)const;
 			void submitPrecisionTaskAsync(const Model::SubmitPrecisionTaskRequest& request, const SubmitPrecisionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitPrecisionTaskOutcomeCallable submitPrecisionTaskCallable(const Model::SubmitPrecisionTaskRequest& request) const;
@@ -660,9 +594,6 @@ namespace AlibabaCloud
 			UpdateRuleOutcome updateRule(const Model::UpdateRuleRequest &request)const;
 			void updateRuleAsync(const Model::UpdateRuleRequest& request, const UpdateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRuleOutcomeCallable updateRuleCallable(const Model::UpdateRuleRequest& request) const;
-			UpdateRuleForAntOutcome updateRuleForAnt(const Model::UpdateRuleForAntRequest &request)const;
-			void updateRuleForAntAsync(const Model::UpdateRuleForAntRequest& request, const UpdateRuleForAntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateRuleForAntOutcomeCallable updateRuleForAntCallable(const Model::UpdateRuleForAntRequest& request) const;
 			UpdateScoreForApiOutcome updateScoreForApi(const Model::UpdateScoreForApiRequest &request)const;
 			void updateScoreForApiAsync(const Model::UpdateScoreForApiRequest& request, const UpdateScoreForApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateScoreForApiOutcomeCallable updateScoreForApiCallable(const Model::UpdateScoreForApiRequest& request) const;
@@ -699,9 +630,6 @@ namespace AlibabaCloud
 			UploadRuleOutcome uploadRule(const Model::UploadRuleRequest &request)const;
 			void uploadRuleAsync(const Model::UploadRuleRequest& request, const UploadRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadRuleOutcomeCallable uploadRuleCallable(const Model::UploadRuleRequest& request) const;
-			ValidateRoleSetOutcome validateRoleSet(const Model::ValidateRoleSetRequest &request)const;
-			void validateRoleSetAsync(const Model::ValidateRoleSetRequest& request, const ValidateRoleSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ValidateRoleSetOutcomeCallable validateRoleSetCallable(const Model::ValidateRoleSetRequest& request) const;
 			VerifyFileOutcome verifyFile(const Model::VerifyFileRequest &request)const;
 			void verifyFileAsync(const Model::VerifyFileRequest& request, const VerifyFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyFileOutcomeCallable verifyFileCallable(const Model::VerifyFileRequest& request) const;

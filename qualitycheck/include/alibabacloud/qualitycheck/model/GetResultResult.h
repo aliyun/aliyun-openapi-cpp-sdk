@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string remark11;
 						std::string remark12;
 						int callType;
+						int dialogueSize;
 						std::string url;
 						std::string dataSetName;
 						std::string name;
@@ -127,11 +128,14 @@ namespace AlibabaCloud
 					std::vector<ResultInfo::HitResultItem> hitResult;
 					int score;
 					std::string taskName;
+					std::string assignmentTime;
 					int reviewStatus;
+					std::string lastDataId;
 					std::string reviewTimeLong;
 					Recording recording;
 					std::string errorMessage;
 					std::vector<ResultInfo::AsrResultItem> asrResult;
+					int reviewType;
 				};
 
 

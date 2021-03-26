@@ -44,8 +44,16 @@ namespace AlibabaCloud
 						long rid;
 						std::string ruleName;
 					};
+					struct SkillGroupScreen
+					{
+						int symbol;
+						std::string value;
+						int dataType;
+						std::string name;
+					};
 					int status;
 					std::vector<SkillGroupConfig::RuleNameInfo> ruleList;
+					bool screenSwitch;
 					std::string modelName;
 					long vocabId;
 					int qualityCheckType;
@@ -57,6 +65,7 @@ namespace AlibabaCloud
 					std::string vocabName;
 					std::string name;
 					int type;
+					std::vector<SkillGroupConfig::SkillGroupScreen> skillGroupScreens;
 					std::string skillGroupName;
 					std::string updateTime;
 					long id;

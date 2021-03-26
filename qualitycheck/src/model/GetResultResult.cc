@@ -71,6 +71,12 @@ void GetResultResult::parse(const std::string &payload)
 			dataObject.createTimeLong = valueDataResultInfo["CreateTimeLong"].asString();
 		if(!valueDataResultInfo["ReviewTimeLong"].isNull())
 			dataObject.reviewTimeLong = valueDataResultInfo["ReviewTimeLong"].asString();
+		if(!valueDataResultInfo["ReviewType"].isNull())
+			dataObject.reviewType = std::stoi(valueDataResultInfo["ReviewType"].asString());
+		if(!valueDataResultInfo["AssignmentTime"].isNull())
+			dataObject.assignmentTime = valueDataResultInfo["AssignmentTime"].asString();
+		if(!valueDataResultInfo["LastDataId"].isNull())
+			dataObject.lastDataId = valueDataResultInfo["LastDataId"].asString();
 		auto allAsrResultNode = valueDataResultInfo["AsrResult"]["AsrResultItem"];
 		for (auto valueDataResultInfoAsrResultAsrResultItem : allAsrResultNode)
 		{
@@ -202,6 +208,8 @@ void GetResultResult::parse(const std::string &payload)
 			dataObject.recording.remark12 = recordingNode["Remark12"].asString();
 		if(!recordingNode["Remark13"].isNull())
 			dataObject.recording.remark13 = recordingNode["Remark13"].asString();
+		if(!recordingNode["DialogueSize"].isNull())
+			dataObject.recording.dialogueSize = std::stoi(recordingNode["DialogueSize"].asString());
 		auto agentNode = value["Agent"];
 		if(!agentNode["Id"].isNull())
 			dataObject.agent.id = agentNode["Id"].asString();
