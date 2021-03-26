@@ -183,6 +183,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ReleaseDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionResult.h
+	include/alibabacloud/r-kvstore/model/RenewAdditionalBandwidthRequest.h
+	include/alibabacloud/r-kvstore/model/RenewAdditionalBandwidthResult.h
 	include/alibabacloud/r-kvstore/model/RenewInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/RenewInstanceResult.h
 	include/alibabacloud/r-kvstore/model/ReplaceUserClusterHostRequest.h
@@ -370,6 +372,8 @@ set(r-kvstore_src
 	src/model/ReleaseDirectConnectionResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
 	src/model/ReleaseInstancePublicConnectionResult.cc
+	src/model/RenewAdditionalBandwidthRequest.cc
+	src/model/RenewAdditionalBandwidthResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
 	src/model/ReplaceUserClusterHostRequest.cc

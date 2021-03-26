@@ -82,6 +82,17 @@ void AddShardingNodeRequest::setSecurityToken(const std::string& securityToken)
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string AddShardingNodeRequest::getSourceBiz()const
+{
+	return sourceBiz_;
+}
+
+void AddShardingNodeRequest::setSourceBiz(const std::string& sourceBiz)
+{
+	sourceBiz_ = sourceBiz;
+	setParameter("SourceBiz", sourceBiz);
+}
+
 int AddShardingNodeRequest::getShardCount()const
 {
 	return shardCount_;

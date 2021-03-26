@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_ADDSHARDINGNODEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_ADDSHARDINGNODEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_RENEWADDITIONALBANDWIDTHREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_RENEWADDITIONALBANDWIDTHREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT AddShardingNodeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT RenewAdditionalBandwidthRequest : public RpcServiceRequest
 			{
 
 			public:
-				AddShardingNodeRequest();
-				~AddShardingNodeRequest();
+				RenewAdditionalBandwidthRequest();
+				~RenewAdditionalBandwidthRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getCouponNo()const;
 				void setCouponNo(const std::string& couponNo);
 				std::string getAccessKeyId()const;
@@ -47,10 +45,10 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				std::string getSourceBiz()const;
 				void setSourceBiz(const std::string& sourceBiz);
-				int getShardCount()const;
-				void setShardCount(int shardCount);
-				std::string getBusinessInfo()const;
-				void setBusinessInfo(const std::string& businessInfo);
+				std::string getOrderTimeLength()const;
+				void setOrderTimeLength(const std::string& orderTimeLength);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
@@ -61,27 +59,26 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getShardClass()const;
-				void setShardClass(const std::string& shardClass);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
 				std::string couponNo_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string sourceBiz_;
-				int shardCount_;
-				std::string businessInfo_;
+				std::string orderTimeLength_;
+				std::string product_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string instanceId_;
-				std::string shardClass_;
+				std::string category_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_ADDSHARDINGNODEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_RENEWADDITIONALBANDWIDTHREQUEST_H_

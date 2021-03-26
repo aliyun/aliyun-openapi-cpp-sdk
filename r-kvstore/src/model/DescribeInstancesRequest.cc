@@ -241,6 +241,17 @@ void DescribeInstancesRequest::setGlobalInstance(bool globalInstance)
 	setParameter("GlobalInstance", globalInstance ? "true" : "false");
 }
 
+std::string DescribeInstancesRequest::getPrivateIp()const
+{
+	return privateIp_;
+}
+
+void DescribeInstancesRequest::setPrivateIp(const std::string& privateIp)
+{
+	privateIp_ = privateIp;
+	setParameter("PrivateIp", privateIp);
+}
+
 long DescribeInstancesRequest::getOwnerId()const
 {
 	return ownerId_;

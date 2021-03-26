@@ -79,6 +79,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				bool getGlobalInstance()const;
 				void setGlobalInstance(bool globalInstance);
+				std::string getPrivateIp()const;
+				void setPrivateIp(const std::string& privateIp);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getVSwitchId()const;
@@ -116,6 +118,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				bool globalInstance_;
+				std::string privateIp_;
 				long ownerId_;
 				std::string vSwitchId_;
 				int vpcCloudInsInfo_;

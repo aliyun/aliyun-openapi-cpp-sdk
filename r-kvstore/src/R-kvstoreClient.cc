@@ -2967,6 +2967,42 @@ R_kvstoreClient::ReleaseInstancePublicConnectionOutcomeCallable R_kvstoreClient:
 	return task->get_future();
 }
 
+R_kvstoreClient::RenewAdditionalBandwidthOutcome R_kvstoreClient::renewAdditionalBandwidth(const RenewAdditionalBandwidthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewAdditionalBandwidthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewAdditionalBandwidthOutcome(RenewAdditionalBandwidthResult(outcome.result()));
+	else
+		return RenewAdditionalBandwidthOutcome(outcome.error());
+}
+
+void R_kvstoreClient::renewAdditionalBandwidthAsync(const RenewAdditionalBandwidthRequest& request, const RenewAdditionalBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewAdditionalBandwidth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::RenewAdditionalBandwidthOutcomeCallable R_kvstoreClient::renewAdditionalBandwidthCallable(const RenewAdditionalBandwidthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewAdditionalBandwidthOutcome()>>(
+			[this, request]()
+			{
+			return this->renewAdditionalBandwidth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::RenewInstanceOutcome R_kvstoreClient::renewInstance(const RenewInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -184,6 +184,8 @@
 #include "model/ReleaseDirectConnectionResult.h"
 #include "model/ReleaseInstancePublicConnectionRequest.h"
 #include "model/ReleaseInstancePublicConnectionResult.h"
+#include "model/RenewAdditionalBandwidthRequest.h"
+#include "model/RenewAdditionalBandwidthResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
 #include "model/ReplaceUserClusterHostRequest.h"
@@ -458,6 +460,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ReleaseInstancePublicConnectionResult> ReleaseInstancePublicConnectionOutcome;
 			typedef std::future<ReleaseInstancePublicConnectionOutcome> ReleaseInstancePublicConnectionOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ReleaseInstancePublicConnectionRequest&, const ReleaseInstancePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstancePublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::RenewAdditionalBandwidthResult> RenewAdditionalBandwidthOutcome;
+			typedef std::future<RenewAdditionalBandwidthOutcome> RenewAdditionalBandwidthOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::RenewAdditionalBandwidthRequest&, const RenewAdditionalBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewAdditionalBandwidthAsyncHandler;
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -739,6 +744,9 @@ namespace AlibabaCloud
 			ReleaseInstancePublicConnectionOutcome releaseInstancePublicConnection(const Model::ReleaseInstancePublicConnectionRequest &request)const;
 			void releaseInstancePublicConnectionAsync(const Model::ReleaseInstancePublicConnectionRequest& request, const ReleaseInstancePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstancePublicConnectionOutcomeCallable releaseInstancePublicConnectionCallable(const Model::ReleaseInstancePublicConnectionRequest& request) const;
+			RenewAdditionalBandwidthOutcome renewAdditionalBandwidth(const Model::RenewAdditionalBandwidthRequest &request)const;
+			void renewAdditionalBandwidthAsync(const Model::RenewAdditionalBandwidthRequest& request, const RenewAdditionalBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RenewAdditionalBandwidthOutcomeCallable renewAdditionalBandwidthCallable(const Model::RenewAdditionalBandwidthRequest& request) const;
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
