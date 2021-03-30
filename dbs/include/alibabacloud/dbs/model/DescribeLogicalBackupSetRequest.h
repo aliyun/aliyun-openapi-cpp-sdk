@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_CLOSEDLASERVICEREQUEST_H_
-#define ALIBABACLOUD_DBS_MODEL_CLOSEDLASERVICEREQUEST_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBELOGICALBACKUPSETREQUEST_H_
+#define ALIBABACLOUD_DBS_MODEL_DESCRIBELOGICALBACKUPSETREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT CloseDLAServiceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DBS_EXPORT DescribeLogicalBackupSetRequest : public RpcServiceRequest
 			{
 
 			public:
-				CloseDLAServiceRequest();
-				~CloseDLAServiceRequest();
+				DescribeLogicalBackupSetRequest();
+				~DescribeLogicalBackupSetRequest();
 
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
+				std::string getBackupsetId()const;
+				void setBackupsetId(const std::string& backupsetId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
 
             private:
 				std::string clientToken_;
 				std::string backupPlanId_;
+				std::string backupsetId_;
 				std::string ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_CLOSEDLASERVICEREQUEST_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBELOGICALBACKUPSETREQUEST_H_

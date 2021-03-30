@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dbs/model/CloseDLAServiceResult.h>
+#include <alibabacloud/dbs/model/DescribeLogicalBackupSetResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dbs;
 using namespace AlibabaCloud::Dbs::Model;
 
-CloseDLAServiceResult::CloseDLAServiceResult() :
+DescribeLogicalBackupSetResult::DescribeLogicalBackupSetResult() :
 	ServiceResult()
 {}
 
-CloseDLAServiceResult::CloseDLAServiceResult(const std::string &payload) :
+DescribeLogicalBackupSetResult::DescribeLogicalBackupSetResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CloseDLAServiceResult::~CloseDLAServiceResult()
+DescribeLogicalBackupSetResult::~DescribeLogicalBackupSetResult()
 {}
 
-void CloseDLAServiceResult::parse(const std::string &payload)
+void DescribeLogicalBackupSetResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -47,25 +47,39 @@ void CloseDLAServiceResult::parse(const std::string &payload)
 		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["RowNum"].isNull())
+		rowNum_ = std::stol(value["RowNum"].asString());
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 
 }
 
-int CloseDLAServiceResult::getHttpStatusCode()const
+std::string DescribeLogicalBackupSetResult::getStatus()const
+{
+	return status_;
+}
+
+int DescribeLogicalBackupSetResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string CloseDLAServiceResult::getErrMessage()const
+std::string DescribeLogicalBackupSetResult::getErrMessage()const
 {
 	return errMessage_;
 }
 
-bool CloseDLAServiceResult::getSuccess()const
+long DescribeLogicalBackupSetResult::getRowNum()const
+{
+	return rowNum_;
+}
+
+bool DescribeLogicalBackupSetResult::getSuccess()const
 {
 	return success_;
 }
 
-std::string CloseDLAServiceResult::getErrCode()const
+std::string DescribeLogicalBackupSetResult::getErrCode()const
 {
 	return errCode_;
 }

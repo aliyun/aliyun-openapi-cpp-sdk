@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICERESULT_H_
-#define ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICERESULT_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBELOGICALBACKUPSETRESULT_H_
+#define ALIBABACLOUD_DBS_MODEL_DESCRIBELOGICALBACKUPSETRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,24 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT CreateDLAServiceResult : public ServiceResult
+			class ALIBABACLOUD_DBS_EXPORT DescribeLogicalBackupSetResult : public ServiceResult
 			{
 			public:
 
 
-				CreateDLAServiceResult();
-				explicit CreateDLAServiceResult(const std::string &payload);
-				~CreateDLAServiceResult();
+				DescribeLogicalBackupSetResult();
+				explicit DescribeLogicalBackupSetResult(const std::string &payload);
+				~DescribeLogicalBackupSetResult();
+				std::string getStatus()const;
 				int getHttpStatusCode()const;
 				std::string getErrMessage()const;
+				long getRowNum()const;
 				bool getSuccess()const;
 				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string status_;
 				int httpStatusCode_;
 				std::string errMessage_;
+				long rowNum_;
 				bool success_;
 				std::string errCode_;
 
@@ -54,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICERESULT_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBELOGICALBACKUPSETRESULT_H_

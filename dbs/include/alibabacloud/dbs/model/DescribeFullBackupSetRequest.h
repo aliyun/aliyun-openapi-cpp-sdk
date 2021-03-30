@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICEREQUEST_H_
-#define ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICEREQUEST_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBEFULLBACKUPSETREQUEST_H_
+#define ALIBABACLOUD_DBS_MODEL_DESCRIBEFULLBACKUPSETREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT CreateDLAServiceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DBS_EXPORT DescribeFullBackupSetRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateDLAServiceRequest();
-				~CreateDLAServiceRequest();
+				DescribeFullBackupSetRequest();
+				~DescribeFullBackupSetRequest();
 
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				bool getAutoAdd()const;
-				void setAutoAdd(bool autoAdd);
-				std::string getBackupSetIds()const;
-				void setBackupSetIds(const std::string& backupSetIds);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
+				std::string getBackupsetId()const;
+				void setBackupsetId(const std::string& backupsetId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
 
             private:
 				std::string clientToken_;
-				bool autoAdd_;
-				std::string backupSetIds_;
 				std::string backupPlanId_;
+				std::string backupsetId_;
 				std::string ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_CREATEDLASERVICEREQUEST_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBEFULLBACKUPSETREQUEST_H_

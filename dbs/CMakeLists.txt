@@ -21,16 +21,12 @@ set(dbs_public_header
 	include/alibabacloud/dbs/DbsExport.h )
 
 set(dbs_public_header_model 
-	include/alibabacloud/dbs/model/CloseDLAServiceRequest.h
-	include/alibabacloud/dbs/model/CloseDLAServiceResult.h
 	include/alibabacloud/dbs/model/ConfigureBackupPlanRequest.h
 	include/alibabacloud/dbs/model/ConfigureBackupPlanResult.h
 	include/alibabacloud/dbs/model/CreateAndStartBackupPlanRequest.h
 	include/alibabacloud/dbs/model/CreateAndStartBackupPlanResult.h
 	include/alibabacloud/dbs/model/CreateBackupPlanRequest.h
 	include/alibabacloud/dbs/model/CreateBackupPlanResult.h
-	include/alibabacloud/dbs/model/CreateDLAServiceRequest.h
-	include/alibabacloud/dbs/model/CreateDLAServiceResult.h
 	include/alibabacloud/dbs/model/CreateFullBackupSetDownloadRequest.h
 	include/alibabacloud/dbs/model/CreateFullBackupSetDownloadResult.h
 	include/alibabacloud/dbs/model/CreateGetDBListFromAgentTaskRequest.h
@@ -51,10 +47,14 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/DescribeDLAServiceResult.h
 	include/alibabacloud/dbs/model/DescribeFullBackupListRequest.h
 	include/alibabacloud/dbs/model/DescribeFullBackupListResult.h
+	include/alibabacloud/dbs/model/DescribeFullBackupSetRequest.h
+	include/alibabacloud/dbs/model/DescribeFullBackupSetResult.h
 	include/alibabacloud/dbs/model/DescribeIncrementBackupListRequest.h
 	include/alibabacloud/dbs/model/DescribeIncrementBackupListResult.h
 	include/alibabacloud/dbs/model/DescribeJobErrorCodeRequest.h
 	include/alibabacloud/dbs/model/DescribeJobErrorCodeResult.h
+	include/alibabacloud/dbs/model/DescribeLogicalBackupSetRequest.h
+	include/alibabacloud/dbs/model/DescribeLogicalBackupSetResult.h
 	include/alibabacloud/dbs/model/DescribeNodeCidrListRequest.h
 	include/alibabacloud/dbs/model/DescribeNodeCidrListResult.h
 	include/alibabacloud/dbs/model/DescribePreCheckProgressListRequest.h
@@ -100,16 +100,12 @@ set(dbs_public_header_model
 
 set(dbs_src 
 	src/DbsClient.cc
-	src/model/CloseDLAServiceRequest.cc
-	src/model/CloseDLAServiceResult.cc
 	src/model/ConfigureBackupPlanRequest.cc
 	src/model/ConfigureBackupPlanResult.cc
 	src/model/CreateAndStartBackupPlanRequest.cc
 	src/model/CreateAndStartBackupPlanResult.cc
 	src/model/CreateBackupPlanRequest.cc
 	src/model/CreateBackupPlanResult.cc
-	src/model/CreateDLAServiceRequest.cc
-	src/model/CreateDLAServiceResult.cc
 	src/model/CreateFullBackupSetDownloadRequest.cc
 	src/model/CreateFullBackupSetDownloadResult.cc
 	src/model/CreateGetDBListFromAgentTaskRequest.cc
@@ -130,10 +126,14 @@ set(dbs_src
 	src/model/DescribeDLAServiceResult.cc
 	src/model/DescribeFullBackupListRequest.cc
 	src/model/DescribeFullBackupListResult.cc
+	src/model/DescribeFullBackupSetRequest.cc
+	src/model/DescribeFullBackupSetResult.cc
 	src/model/DescribeIncrementBackupListRequest.cc
 	src/model/DescribeIncrementBackupListResult.cc
 	src/model/DescribeJobErrorCodeRequest.cc
 	src/model/DescribeJobErrorCodeResult.cc
+	src/model/DescribeLogicalBackupSetRequest.cc
+	src/model/DescribeLogicalBackupSetResult.cc
 	src/model/DescribeNodeCidrListRequest.cc
 	src/model/DescribeNodeCidrListResult.cc
 	src/model/DescribePreCheckProgressListRequest.cc

@@ -51,42 +51,6 @@ DbsClient::DbsClient(const std::string & accessKeyId, const std::string & access
 DbsClient::~DbsClient()
 {}
 
-DbsClient::CloseDLAServiceOutcome DbsClient::closeDLAService(const CloseDLAServiceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CloseDLAServiceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CloseDLAServiceOutcome(CloseDLAServiceResult(outcome.result()));
-	else
-		return CloseDLAServiceOutcome(outcome.error());
-}
-
-void DbsClient::closeDLAServiceAsync(const CloseDLAServiceRequest& request, const CloseDLAServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, closeDLAService(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DbsClient::CloseDLAServiceOutcomeCallable DbsClient::closeDLAServiceCallable(const CloseDLAServiceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CloseDLAServiceOutcome()>>(
-			[this, request]()
-			{
-			return this->closeDLAService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DbsClient::ConfigureBackupPlanOutcome DbsClient::configureBackupPlan(const ConfigureBackupPlanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,42 +153,6 @@ DbsClient::CreateBackupPlanOutcomeCallable DbsClient::createBackupPlanCallable(c
 			[this, request]()
 			{
 			return this->createBackupPlan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DbsClient::CreateDLAServiceOutcome DbsClient::createDLAService(const CreateDLAServiceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDLAServiceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDLAServiceOutcome(CreateDLAServiceResult(outcome.result()));
-	else
-		return CreateDLAServiceOutcome(outcome.error());
-}
-
-void DbsClient::createDLAServiceAsync(const CreateDLAServiceRequest& request, const CreateDLAServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDLAService(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DbsClient::CreateDLAServiceOutcomeCallable DbsClient::createDLAServiceCallable(const CreateDLAServiceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDLAServiceOutcome()>>(
-			[this, request]()
-			{
-			return this->createDLAService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,6 +519,42 @@ DbsClient::DescribeFullBackupListOutcomeCallable DbsClient::describeFullBackupLi
 	return task->get_future();
 }
 
+DbsClient::DescribeFullBackupSetOutcome DbsClient::describeFullBackupSet(const DescribeFullBackupSetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFullBackupSetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFullBackupSetOutcome(DescribeFullBackupSetResult(outcome.result()));
+	else
+		return DescribeFullBackupSetOutcome(outcome.error());
+}
+
+void DbsClient::describeFullBackupSetAsync(const DescribeFullBackupSetRequest& request, const DescribeFullBackupSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFullBackupSet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeFullBackupSetOutcomeCallable DbsClient::describeFullBackupSetCallable(const DescribeFullBackupSetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFullBackupSetOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFullBackupSet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DbsClient::DescribeIncrementBackupListOutcome DbsClient::describeIncrementBackupList(const DescribeIncrementBackupListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +621,42 @@ DbsClient::DescribeJobErrorCodeOutcomeCallable DbsClient::describeJobErrorCodeCa
 			[this, request]()
 			{
 			return this->describeJobErrorCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::DescribeLogicalBackupSetOutcome DbsClient::describeLogicalBackupSet(const DescribeLogicalBackupSetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLogicalBackupSetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLogicalBackupSetOutcome(DescribeLogicalBackupSetResult(outcome.result()));
+	else
+		return DescribeLogicalBackupSetOutcome(outcome.error());
+}
+
+void DbsClient::describeLogicalBackupSetAsync(const DescribeLogicalBackupSetRequest& request, const DescribeLogicalBackupSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLogicalBackupSet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeLogicalBackupSetOutcomeCallable DbsClient::describeLogicalBackupSetCallable(const DescribeLogicalBackupSetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLogicalBackupSetOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLogicalBackupSet(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
