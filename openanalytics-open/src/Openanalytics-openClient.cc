@@ -231,6 +231,78 @@ Openanalytics_openClient::AlterTableOutcomeCallable Openanalytics_openClient::al
 	return task->get_future();
 }
 
+Openanalytics_openClient::CancelQueryByExecuteIdOutcome Openanalytics_openClient::cancelQueryByExecuteId(const CancelQueryByExecuteIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelQueryByExecuteIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelQueryByExecuteIdOutcome(CancelQueryByExecuteIdResult(outcome.result()));
+	else
+		return CancelQueryByExecuteIdOutcome(outcome.error());
+}
+
+void Openanalytics_openClient::cancelQueryByExecuteIdAsync(const CancelQueryByExecuteIdRequest& request, const CancelQueryByExecuteIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelQueryByExecuteId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Openanalytics_openClient::CancelQueryByExecuteIdOutcomeCallable Openanalytics_openClient::cancelQueryByExecuteIdCallable(const CancelQueryByExecuteIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelQueryByExecuteIdOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelQueryByExecuteId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Openanalytics_openClient::CancelQueryByIdOutcome Openanalytics_openClient::cancelQueryById(const CancelQueryByIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelQueryByIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelQueryByIdOutcome(CancelQueryByIdResult(outcome.result()));
+	else
+		return CancelQueryByIdOutcome(outcome.error());
+}
+
+void Openanalytics_openClient::cancelQueryByIdAsync(const CancelQueryByIdRequest& request, const CancelQueryByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelQueryById(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Openanalytics_openClient::CancelQueryByIdOutcomeCallable Openanalytics_openClient::cancelQueryByIdCallable(const CancelQueryByIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelQueryByIdOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelQueryById(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Openanalytics_openClient::CreateDatabaseOutcome Openanalytics_openClient::createDatabase(const CreateDatabaseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +441,42 @@ Openanalytics_openClient::DeleteAccountOutcomeCallable Openanalytics_openClient:
 			[this, request]()
 			{
 			return this->deleteAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Openanalytics_openClient::DescribeTagsOutcome Openanalytics_openClient::describeTags(const DescribeTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTagsOutcome(DescribeTagsResult(outcome.result()));
+	else
+		return DescribeTagsOutcome(outcome.error());
+}
+
+void Openanalytics_openClient::describeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Openanalytics_openClient::DescribeTagsOutcomeCallable Openanalytics_openClient::describeTagsCallable(const DescribeTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1131,42 @@ Openanalytics_openClient::ListSparkJobOutcomeCallable Openanalytics_openClient::
 	return task->get_future();
 }
 
+Openanalytics_openClient::ListTagResourcesOutcome Openanalytics_openClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void Openanalytics_openClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Openanalytics_openClient::ListTagResourcesOutcomeCallable Openanalytics_openClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Openanalytics_openClient::QueryAccountListOutcome Openanalytics_openClient::queryAccountList(const QueryAccountListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1311,6 +1455,42 @@ Openanalytics_openClient::SubmitSparkJobOutcomeCallable Openanalytics_openClient
 	return task->get_future();
 }
 
+Openanalytics_openClient::TagResourcesOutcome Openanalytics_openClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void Openanalytics_openClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Openanalytics_openClient::TagResourcesOutcomeCallable Openanalytics_openClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Openanalytics_openClient::UnSubscribeRegionOutcome Openanalytics_openClient::unSubscribeRegion(const UnSubscribeRegionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1521,42 @@ Openanalytics_openClient::UnSubscribeRegionOutcomeCallable Openanalytics_openCli
 			[this, request]()
 			{
 			return this->unSubscribeRegion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Openanalytics_openClient::UntagResourcesOutcome Openanalytics_openClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void Openanalytics_openClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Openanalytics_openClient::UntagResourcesOutcomeCallable Openanalytics_openClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1413,6 +1629,42 @@ Openanalytics_openClient::UpgradeInstanceOutcomeCallable Openanalytics_openClien
 			[this, request]()
 			{
 			return this->upgradeInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Openanalytics_openClient::ValidateVirtualClusterNameOutcome Openanalytics_openClient::validateVirtualClusterName(const ValidateVirtualClusterNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ValidateVirtualClusterNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ValidateVirtualClusterNameOutcome(ValidateVirtualClusterNameResult(outcome.result()));
+	else
+		return ValidateVirtualClusterNameOutcome(outcome.error());
+}
+
+void Openanalytics_openClient::validateVirtualClusterNameAsync(const ValidateVirtualClusterNameRequest& request, const ValidateVirtualClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, validateVirtualClusterName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Openanalytics_openClient::ValidateVirtualClusterNameOutcomeCallable Openanalytics_openClient::validateVirtualClusterNameCallable(const ValidateVirtualClusterNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ValidateVirtualClusterNameOutcome()>>(
+			[this, request]()
+			{
+			return this->validateVirtualClusterName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

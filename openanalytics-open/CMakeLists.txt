@@ -31,6 +31,10 @@ set(openanalytics-open_public_header_model
 	include/alibabacloud/openanalytics-open/model/AlterDatabaseResult.h
 	include/alibabacloud/openanalytics-open/model/AlterTableRequest.h
 	include/alibabacloud/openanalytics-open/model/AlterTableResult.h
+	include/alibabacloud/openanalytics-open/model/CancelQueryByExecuteIdRequest.h
+	include/alibabacloud/openanalytics-open/model/CancelQueryByExecuteIdResult.h
+	include/alibabacloud/openanalytics-open/model/CancelQueryByIdRequest.h
+	include/alibabacloud/openanalytics-open/model/CancelQueryByIdResult.h
 	include/alibabacloud/openanalytics-open/model/CreateDatabaseRequest.h
 	include/alibabacloud/openanalytics-open/model/CreateDatabaseResult.h
 	include/alibabacloud/openanalytics-open/model/CreateInstanceRequest.h
@@ -39,6 +43,8 @@ set(openanalytics-open_public_header_model
 	include/alibabacloud/openanalytics-open/model/CreateTableResult.h
 	include/alibabacloud/openanalytics-open/model/DeleteAccountRequest.h
 	include/alibabacloud/openanalytics-open/model/DeleteAccountResult.h
+	include/alibabacloud/openanalytics-open/model/DescribeTagsRequest.h
+	include/alibabacloud/openanalytics-open/model/DescribeTagsResult.h
 	include/alibabacloud/openanalytics-open/model/DropDatabaseRequest.h
 	include/alibabacloud/openanalytics-open/model/DropDatabaseResult.h
 	include/alibabacloud/openanalytics-open/model/DropPartitionRequest.h
@@ -75,6 +81,8 @@ set(openanalytics-open_public_header_model
 	include/alibabacloud/openanalytics-open/model/KillSparkJobResult.h
 	include/alibabacloud/openanalytics-open/model/ListSparkJobRequest.h
 	include/alibabacloud/openanalytics-open/model/ListSparkJobResult.h
+	include/alibabacloud/openanalytics-open/model/ListTagResourcesRequest.h
+	include/alibabacloud/openanalytics-open/model/ListTagResourcesResult.h
 	include/alibabacloud/openanalytics-open/model/QueryAccountListRequest.h
 	include/alibabacloud/openanalytics-open/model/QueryAccountListResult.h
 	include/alibabacloud/openanalytics-open/model/QueryEndPointListRequest.h
@@ -91,12 +99,18 @@ set(openanalytics-open_public_header_model
 	include/alibabacloud/openanalytics-open/model/SetAllowIPResult.h
 	include/alibabacloud/openanalytics-open/model/SubmitSparkJobRequest.h
 	include/alibabacloud/openanalytics-open/model/SubmitSparkJobResult.h
+	include/alibabacloud/openanalytics-open/model/TagResourcesRequest.h
+	include/alibabacloud/openanalytics-open/model/TagResourcesResult.h
 	include/alibabacloud/openanalytics-open/model/UnSubscribeRegionRequest.h
 	include/alibabacloud/openanalytics-open/model/UnSubscribeRegionResult.h
+	include/alibabacloud/openanalytics-open/model/UntagResourcesRequest.h
+	include/alibabacloud/openanalytics-open/model/UntagResourcesResult.h
 	include/alibabacloud/openanalytics-open/model/UpdateAccountPasswordRequest.h
 	include/alibabacloud/openanalytics-open/model/UpdateAccountPasswordResult.h
 	include/alibabacloud/openanalytics-open/model/UpgradeInstanceRequest.h
-	include/alibabacloud/openanalytics-open/model/UpgradeInstanceResult.h )
+	include/alibabacloud/openanalytics-open/model/UpgradeInstanceResult.h
+	include/alibabacloud/openanalytics-open/model/ValidateVirtualClusterNameRequest.h
+	include/alibabacloud/openanalytics-open/model/ValidateVirtualClusterNameResult.h )
 
 set(openanalytics-open_src 
 	src/Openanalytics-openClient.cc
@@ -110,6 +124,10 @@ set(openanalytics-open_src
 	src/model/AlterDatabaseResult.cc
 	src/model/AlterTableRequest.cc
 	src/model/AlterTableResult.cc
+	src/model/CancelQueryByExecuteIdRequest.cc
+	src/model/CancelQueryByExecuteIdResult.cc
+	src/model/CancelQueryByIdRequest.cc
+	src/model/CancelQueryByIdResult.cc
 	src/model/CreateDatabaseRequest.cc
 	src/model/CreateDatabaseResult.cc
 	src/model/CreateInstanceRequest.cc
@@ -118,6 +136,8 @@ set(openanalytics-open_src
 	src/model/CreateTableResult.cc
 	src/model/DeleteAccountRequest.cc
 	src/model/DeleteAccountResult.cc
+	src/model/DescribeTagsRequest.cc
+	src/model/DescribeTagsResult.cc
 	src/model/DropDatabaseRequest.cc
 	src/model/DropDatabaseResult.cc
 	src/model/DropPartitionRequest.cc
@@ -154,6 +174,8 @@ set(openanalytics-open_src
 	src/model/KillSparkJobResult.cc
 	src/model/ListSparkJobRequest.cc
 	src/model/ListSparkJobResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/QueryAccountListRequest.cc
 	src/model/QueryAccountListResult.cc
 	src/model/QueryEndPointListRequest.cc
@@ -170,12 +192,18 @@ set(openanalytics-open_src
 	src/model/SetAllowIPResult.cc
 	src/model/SubmitSparkJobRequest.cc
 	src/model/SubmitSparkJobResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/UnSubscribeRegionRequest.cc
 	src/model/UnSubscribeRegionResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateAccountPasswordRequest.cc
 	src/model/UpdateAccountPasswordResult.cc
 	src/model/UpgradeInstanceRequest.cc
-	src/model/UpgradeInstanceResult.cc )
+	src/model/UpgradeInstanceResult.cc
+	src/model/ValidateVirtualClusterNameRequest.cc
+	src/model/ValidateVirtualClusterNameResult.cc )
 
 add_library(openanalytics-open ${LIB_TYPE}
 	${openanalytics-open_public_header}

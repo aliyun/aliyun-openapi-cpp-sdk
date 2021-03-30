@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getCondition()const;
+				void setCondition(const std::string& condition);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getVcName()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				int pageNumber_;
+				std::string condition_;
 				int pageSize_;
 				std::string vcName_;
 

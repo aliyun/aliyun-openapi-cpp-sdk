@@ -32,6 +32,10 @@
 #include "model/AlterDatabaseResult.h"
 #include "model/AlterTableRequest.h"
 #include "model/AlterTableResult.h"
+#include "model/CancelQueryByExecuteIdRequest.h"
+#include "model/CancelQueryByExecuteIdResult.h"
+#include "model/CancelQueryByIdRequest.h"
+#include "model/CancelQueryByIdResult.h"
 #include "model/CreateDatabaseRequest.h"
 #include "model/CreateDatabaseResult.h"
 #include "model/CreateInstanceRequest.h"
@@ -40,6 +44,8 @@
 #include "model/CreateTableResult.h"
 #include "model/DeleteAccountRequest.h"
 #include "model/DeleteAccountResult.h"
+#include "model/DescribeTagsRequest.h"
+#include "model/DescribeTagsResult.h"
 #include "model/DropDatabaseRequest.h"
 #include "model/DropDatabaseResult.h"
 #include "model/DropPartitionRequest.h"
@@ -76,6 +82,8 @@
 #include "model/KillSparkJobResult.h"
 #include "model/ListSparkJobRequest.h"
 #include "model/ListSparkJobResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/QueryAccountListRequest.h"
 #include "model/QueryAccountListResult.h"
 #include "model/QueryEndPointListRequest.h"
@@ -92,12 +100,18 @@
 #include "model/SetAllowIPResult.h"
 #include "model/SubmitSparkJobRequest.h"
 #include "model/SubmitSparkJobResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/UnSubscribeRegionRequest.h"
 #include "model/UnSubscribeRegionResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateAccountPasswordRequest.h"
 #include "model/UpdateAccountPasswordResult.h"
 #include "model/UpgradeInstanceRequest.h"
 #include "model/UpgradeInstanceResult.h"
+#include "model/ValidateVirtualClusterNameRequest.h"
+#include "model/ValidateVirtualClusterNameResult.h"
 
 
 namespace AlibabaCloud
@@ -122,6 +136,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AlterTableResult> AlterTableOutcome;
 			typedef std::future<AlterTableOutcome> AlterTableOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::AlterTableRequest&, const AlterTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AlterTableAsyncHandler;
+			typedef Outcome<Error, Model::CancelQueryByExecuteIdResult> CancelQueryByExecuteIdOutcome;
+			typedef std::future<CancelQueryByExecuteIdOutcome> CancelQueryByExecuteIdOutcomeCallable;
+			typedef std::function<void(const Openanalytics_openClient*, const Model::CancelQueryByExecuteIdRequest&, const CancelQueryByExecuteIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelQueryByExecuteIdAsyncHandler;
+			typedef Outcome<Error, Model::CancelQueryByIdResult> CancelQueryByIdOutcome;
+			typedef std::future<CancelQueryByIdOutcome> CancelQueryByIdOutcomeCallable;
+			typedef std::function<void(const Openanalytics_openClient*, const Model::CancelQueryByIdRequest&, const CancelQueryByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelQueryByIdAsyncHandler;
 			typedef Outcome<Error, Model::CreateDatabaseResult> CreateDatabaseOutcome;
 			typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::CreateDatabaseRequest&, const CreateDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
@@ -134,6 +154,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
 			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTagsResult> DescribeTagsOutcome;
+			typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
+			typedef std::function<void(const Openanalytics_openClient*, const Model::DescribeTagsRequest&, const DescribeTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagsAsyncHandler;
 			typedef Outcome<Error, Model::DropDatabaseResult> DropDatabaseOutcome;
 			typedef std::future<DropDatabaseOutcome> DropDatabaseOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::DropDatabaseRequest&, const DropDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DropDatabaseAsyncHandler;
@@ -188,6 +211,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSparkJobResult> ListSparkJobOutcome;
 			typedef std::future<ListSparkJobOutcome> ListSparkJobOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::ListSparkJobRequest&, const ListSparkJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSparkJobAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const Openanalytics_openClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::QueryAccountListResult> QueryAccountListOutcome;
 			typedef std::future<QueryAccountListOutcome> QueryAccountListOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::QueryAccountListRequest&, const QueryAccountListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAccountListAsyncHandler;
@@ -212,15 +238,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitSparkJobResult> SubmitSparkJobOutcome;
 			typedef std::future<SubmitSparkJobOutcome> SubmitSparkJobOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::SubmitSparkJobRequest&, const SubmitSparkJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSparkJobAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const Openanalytics_openClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UnSubscribeRegionResult> UnSubscribeRegionOutcome;
 			typedef std::future<UnSubscribeRegionOutcome> UnSubscribeRegionOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::UnSubscribeRegionRequest&, const UnSubscribeRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnSubscribeRegionAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const Openanalytics_openClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAccountPasswordResult> UpdateAccountPasswordOutcome;
 			typedef std::future<UpdateAccountPasswordOutcome> UpdateAccountPasswordOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::UpdateAccountPasswordRequest&, const UpdateAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccountPasswordAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeInstanceResult> UpgradeInstanceOutcome;
 			typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
 			typedef std::function<void(const Openanalytics_openClient*, const Model::UpgradeInstanceRequest&, const UpgradeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ValidateVirtualClusterNameResult> ValidateVirtualClusterNameOutcome;
+			typedef std::future<ValidateVirtualClusterNameOutcome> ValidateVirtualClusterNameOutcomeCallable;
+			typedef std::function<void(const Openanalytics_openClient*, const Model::ValidateVirtualClusterNameRequest&, const ValidateVirtualClusterNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateVirtualClusterNameAsyncHandler;
 
 			Openanalytics_openClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Openanalytics_openClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -241,6 +276,12 @@ namespace AlibabaCloud
 			AlterTableOutcome alterTable(const Model::AlterTableRequest &request)const;
 			void alterTableAsync(const Model::AlterTableRequest& request, const AlterTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AlterTableOutcomeCallable alterTableCallable(const Model::AlterTableRequest& request) const;
+			CancelQueryByExecuteIdOutcome cancelQueryByExecuteId(const Model::CancelQueryByExecuteIdRequest &request)const;
+			void cancelQueryByExecuteIdAsync(const Model::CancelQueryByExecuteIdRequest& request, const CancelQueryByExecuteIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelQueryByExecuteIdOutcomeCallable cancelQueryByExecuteIdCallable(const Model::CancelQueryByExecuteIdRequest& request) const;
+			CancelQueryByIdOutcome cancelQueryById(const Model::CancelQueryByIdRequest &request)const;
+			void cancelQueryByIdAsync(const Model::CancelQueryByIdRequest& request, const CancelQueryByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelQueryByIdOutcomeCallable cancelQueryByIdCallable(const Model::CancelQueryByIdRequest& request) const;
 			CreateDatabaseOutcome createDatabase(const Model::CreateDatabaseRequest &request)const;
 			void createDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDatabaseOutcomeCallable createDatabaseCallable(const Model::CreateDatabaseRequest& request) const;
@@ -253,6 +294,9 @@ namespace AlibabaCloud
 			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
 			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
+			DescribeTagsOutcome describeTags(const Model::DescribeTagsRequest &request)const;
+			void describeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTagsOutcomeCallable describeTagsCallable(const Model::DescribeTagsRequest& request) const;
 			DropDatabaseOutcome dropDatabase(const Model::DropDatabaseRequest &request)const;
 			void dropDatabaseAsync(const Model::DropDatabaseRequest& request, const DropDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DropDatabaseOutcomeCallable dropDatabaseCallable(const Model::DropDatabaseRequest& request) const;
@@ -307,6 +351,9 @@ namespace AlibabaCloud
 			ListSparkJobOutcome listSparkJob(const Model::ListSparkJobRequest &request)const;
 			void listSparkJobAsync(const Model::ListSparkJobRequest& request, const ListSparkJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSparkJobOutcomeCallable listSparkJobCallable(const Model::ListSparkJobRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			QueryAccountListOutcome queryAccountList(const Model::QueryAccountListRequest &request)const;
 			void queryAccountListAsync(const Model::QueryAccountListRequest& request, const QueryAccountListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryAccountListOutcomeCallable queryAccountListCallable(const Model::QueryAccountListRequest& request) const;
@@ -331,15 +378,24 @@ namespace AlibabaCloud
 			SubmitSparkJobOutcome submitSparkJob(const Model::SubmitSparkJobRequest &request)const;
 			void submitSparkJobAsync(const Model::SubmitSparkJobRequest& request, const SubmitSparkJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitSparkJobOutcomeCallable submitSparkJobCallable(const Model::SubmitSparkJobRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			UnSubscribeRegionOutcome unSubscribeRegion(const Model::UnSubscribeRegionRequest &request)const;
 			void unSubscribeRegionAsync(const Model::UnSubscribeRegionRequest& request, const UnSubscribeRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnSubscribeRegionOutcomeCallable unSubscribeRegionCallable(const Model::UnSubscribeRegionRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateAccountPasswordOutcome updateAccountPassword(const Model::UpdateAccountPasswordRequest &request)const;
 			void updateAccountPasswordAsync(const Model::UpdateAccountPasswordRequest& request, const UpdateAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAccountPasswordOutcomeCallable updateAccountPasswordCallable(const Model::UpdateAccountPasswordRequest& request) const;
 			UpgradeInstanceOutcome upgradeInstance(const Model::UpgradeInstanceRequest &request)const;
 			void upgradeInstanceAsync(const Model::UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeInstanceOutcomeCallable upgradeInstanceCallable(const Model::UpgradeInstanceRequest& request) const;
+			ValidateVirtualClusterNameOutcome validateVirtualClusterName(const Model::ValidateVirtualClusterNameRequest &request)const;
+			void validateVirtualClusterNameAsync(const Model::ValidateVirtualClusterNameRequest& request, const ValidateVirtualClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ValidateVirtualClusterNameOutcomeCallable validateVirtualClusterNameCallable(const Model::ValidateVirtualClusterNameRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -38,6 +38,17 @@ void ListSparkJobRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string ListSparkJobRequest::getCondition()const
+{
+	return condition_;
+}
+
+void ListSparkJobRequest::setCondition(const std::string& condition)
+{
+	condition_ = condition;
+	setParameter("Condition", condition);
+}
+
 int ListSparkJobRequest::getPageSize()const
 {
 	return pageSize_;
