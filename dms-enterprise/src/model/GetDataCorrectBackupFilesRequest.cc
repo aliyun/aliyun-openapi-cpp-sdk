@@ -27,17 +27,6 @@ GetDataCorrectBackupFilesRequest::GetDataCorrectBackupFilesRequest() :
 GetDataCorrectBackupFilesRequest::~GetDataCorrectBackupFilesRequest()
 {}
 
-std::map<std::string, std::string> GetDataCorrectBackupFilesRequest::getActionDetail()const
-{
-	return actionDetail_;
-}
-
-void GetDataCorrectBackupFilesRequest::setActionDetail(const std::map<std::string, std::string>& actionDetail)
-{
-	actionDetail_ = actionDetail;
-	setJsonParameters("ActionDetail", actionDetail);
-}
-
 long GetDataCorrectBackupFilesRequest::getOrderId()const
 {
 	return orderId_;
@@ -69,5 +58,16 @@ void GetDataCorrectBackupFilesRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+std::map<std::string, std::string> GetDataCorrectBackupFilesRequest::getActionDetail()const
+{
+	return actionDetail_;
+}
+
+void GetDataCorrectBackupFilesRequest::setActionDetail(const std::map<std::string, std::string>& actionDetail)
+{
+	actionDetail_ = actionDetail;
+	setJsonParameters("ActionDetail", actionDetail);
 }
 

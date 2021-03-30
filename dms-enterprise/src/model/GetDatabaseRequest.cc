@@ -38,28 +38,6 @@ void GetDatabaseRequest::setSchemaName(const std::string& schemaName)
 	setParameter("SchemaName", schemaName);
 }
 
-int GetDatabaseRequest::getPort()const
-{
-	return port_;
-}
-
-void GetDatabaseRequest::setPort(int port)
-{
-	port_ = port;
-	setParameter("Port", std::to_string(port));
-}
-
-std::string GetDatabaseRequest::getHost()const
-{
-	return host_;
-}
-
-void GetDatabaseRequest::setHost(const std::string& host)
-{
-	host_ = host;
-	setParameter("Host", host);
-}
-
 long GetDatabaseRequest::getTid()const
 {
 	return tid_;
@@ -80,5 +58,27 @@ void GetDatabaseRequest::setSid(const std::string& sid)
 {
 	sid_ = sid;
 	setParameter("Sid", sid);
+}
+
+int GetDatabaseRequest::getPort()const
+{
+	return port_;
+}
+
+void GetDatabaseRequest::setPort(int port)
+{
+	port_ = port;
+	setParameter("Port", std::to_string(port));
+}
+
+std::string GetDatabaseRequest::getHost()const
+{
+	return host_;
+}
+
+void GetDatabaseRequest::setHost(const std::string& host)
+{
+	host_ = host;
+	setParameter("Host", host);
 }
 

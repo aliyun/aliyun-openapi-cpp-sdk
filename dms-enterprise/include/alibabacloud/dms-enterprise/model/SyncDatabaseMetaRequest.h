@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				SyncDatabaseMetaRequest();
 				~SyncDatabaseMetaRequest();
 
+				long getTid()const;
+				void setTid(long tid);
 				std::string getDbId()const;
 				void setDbId(const std::string& dbId);
 				bool getLogic()const;
 				void setLogic(bool logic);
-				long getTid()const;
-				void setTid(long tid);
 
             private:
+				long tid_;
 				std::string dbId_;
 				bool logic_;
-				long tid_;
 
 			};
 		}

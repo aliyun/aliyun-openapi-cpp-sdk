@@ -43,38 +43,38 @@ void ListWorkFlowNodesResult::parse(const std::string &payload)
 	for (auto valueWorkflowNodesWorkflowNode : allWorkflowNodesNode)
 	{
 		WorkflowNode workflowNodesObject;
-		if(!valueWorkflowNodesWorkflowNode["NodeName"].isNull())
-			workflowNodesObject.nodeName = valueWorkflowNodesWorkflowNode["NodeName"].asString();
 		if(!valueWorkflowNodesWorkflowNode["Comment"].isNull())
 			workflowNodesObject.comment = valueWorkflowNodesWorkflowNode["Comment"].asString();
-		if(!valueWorkflowNodesWorkflowNode["NodeId"].isNull())
-			workflowNodesObject.nodeId = std::stol(valueWorkflowNodesWorkflowNode["NodeId"].asString());
-		if(!valueWorkflowNodesWorkflowNode["NodeType"].isNull())
-			workflowNodesObject.nodeType = valueWorkflowNodesWorkflowNode["NodeType"].asString();
-		if(!valueWorkflowNodesWorkflowNode["CreateUserId"].isNull())
-			workflowNodesObject.createUserId = std::stol(valueWorkflowNodesWorkflowNode["CreateUserId"].asString());
 		if(!valueWorkflowNodesWorkflowNode["CreateUserNickName"].isNull())
 			workflowNodesObject.createUserNickName = valueWorkflowNodesWorkflowNode["CreateUserNickName"].asString();
+		if(!valueWorkflowNodesWorkflowNode["NodeName"].isNull())
+			workflowNodesObject.nodeName = valueWorkflowNodesWorkflowNode["NodeName"].asString();
+		if(!valueWorkflowNodesWorkflowNode["NodeType"].isNull())
+			workflowNodesObject.nodeType = valueWorkflowNodesWorkflowNode["NodeType"].asString();
+		if(!valueWorkflowNodesWorkflowNode["NodeId"].isNull())
+			workflowNodesObject.nodeId = std::stol(valueWorkflowNodesWorkflowNode["NodeId"].asString());
+		if(!valueWorkflowNodesWorkflowNode["CreateUserId"].isNull())
+			workflowNodesObject.createUserId = std::stol(valueWorkflowNodesWorkflowNode["CreateUserId"].asString());
 		auto allAuditUsersNode = valueWorkflowNodesWorkflowNode["AuditUsers"]["AuditUser"];
 		for (auto valueWorkflowNodesWorkflowNodeAuditUsersAuditUser : allAuditUsersNode)
 		{
 			WorkflowNode::AuditUser auditUsersObject;
 			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["UserId"].isNull())
 				auditUsersObject.userId = std::stol(valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["UserId"].asString());
-			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["NickName"].isNull())
-				auditUsersObject.nickName = valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["NickName"].asString();
 			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["RealName"].isNull())
 				auditUsersObject.realName = valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["RealName"].asString();
+			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["NickName"].isNull())
+				auditUsersObject.nickName = valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["NickName"].asString();
 			workflowNodesObject.auditUsers.push_back(auditUsersObject);
 		}
 		workflowNodes_.push_back(workflowNodesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -45,42 +45,42 @@ void ListTablesResult::parse(const std::string &payload)
 		Table tableListObject;
 		if(!valueTableListTable["TableId"].isNull())
 			tableListObject.tableId = valueTableListTable["TableId"].asString();
-		if(!valueTableListTable["DatabaseId"].isNull())
-			tableListObject.databaseId = valueTableListTable["DatabaseId"].asString();
 		if(!valueTableListTable["TableName"].isNull())
 			tableListObject.tableName = valueTableListTable["TableName"].asString();
-		if(!valueTableListTable["TableSchemaName"].isNull())
-			tableListObject.tableSchemaName = valueTableListTable["TableSchemaName"].asString();
-		if(!valueTableListTable["Engine"].isNull())
-			tableListObject.engine = valueTableListTable["Engine"].asString();
-		if(!valueTableListTable["Encoding"].isNull())
-			tableListObject.encoding = valueTableListTable["Encoding"].asString();
+		if(!valueTableListTable["TableGuid"].isNull())
+			tableListObject.tableGuid = valueTableListTable["TableGuid"].asString();
 		if(!valueTableListTable["TableType"].isNull())
 			tableListObject.tableType = valueTableListTable["TableType"].asString();
+		if(!valueTableListTable["Description"].isNull())
+			tableListObject.description = valueTableListTable["Description"].asString();
+		if(!valueTableListTable["TableSchemaName"].isNull())
+			tableListObject.tableSchemaName = valueTableListTable["TableSchemaName"].asString();
+		if(!valueTableListTable["Encoding"].isNull())
+			tableListObject.encoding = valueTableListTable["Encoding"].asString();
+		if(!valueTableListTable["DatabaseId"].isNull())
+			tableListObject.databaseId = valueTableListTable["DatabaseId"].asString();
 		if(!valueTableListTable["NumRows"].isNull())
 			tableListObject.numRows = std::stol(valueTableListTable["NumRows"].asString());
 		if(!valueTableListTable["StoreCapacity"].isNull())
 			tableListObject.storeCapacity = std::stol(valueTableListTable["StoreCapacity"].asString());
-		if(!valueTableListTable["TableGuid"].isNull())
-			tableListObject.tableGuid = valueTableListTable["TableGuid"].asString();
-		if(!valueTableListTable["Description"].isNull())
-			tableListObject.description = valueTableListTable["Description"].asString();
-		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
-		for (auto value : allOwnerIdList)
-			tableListObject.ownerIdList.push_back(value.asString());
+		if(!valueTableListTable["Engine"].isNull())
+			tableListObject.engine = valueTableListTable["Engine"].asString();
 		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
 		for (auto value : allOwnerNameList)
 			tableListObject.ownerNameList.push_back(value.asString());
+		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
+		for (auto value : allOwnerIdList)
+			tableListObject.ownerIdList.push_back(value.asString());
 		tableList_.push_back(tableListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

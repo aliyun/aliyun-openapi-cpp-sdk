@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string database;
 					std::string opContent;
 					std::string userNick;
-					std::string module;
 					long orderId;
+					std::string module;
 					std::string opTime;
 				};
 

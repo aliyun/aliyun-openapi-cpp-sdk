@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ListLogicDatabasesRequest();
 				~ListLogicDatabasesRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getTid()const;
 				void setTid(long tid);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				int pageSize_;
 				long tid_;
 				int pageNumber_;
+				int pageSize_;
 
 			};
 		}

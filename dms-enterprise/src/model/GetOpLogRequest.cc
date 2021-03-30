@@ -38,17 +38,6 @@ void GetOpLogRequest::setModule(const std::string& module)
 	setParameter("Module", module);
 }
 
-int GetOpLogRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void GetOpLogRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
 std::string GetOpLogRequest::getEndTime()const
 {
 	return endTime_;
@@ -91,5 +80,16 @@ void GetOpLogRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int GetOpLogRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetOpLogRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

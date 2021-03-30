@@ -45,28 +45,28 @@ void GetOpLogResult::parse(const std::string &payload)
 		OpLogDetail opLogDetailsObject;
 		if(!valueOpLogDetailsOpLogDetail["UserId"].isNull())
 			opLogDetailsObject.userId = std::stol(valueOpLogDetailsOpLogDetail["UserId"].asString());
-		if(!valueOpLogDetailsOpLogDetail["UserNick"].isNull())
-			opLogDetailsObject.userNick = valueOpLogDetailsOpLogDetail["UserNick"].asString();
-		if(!valueOpLogDetailsOpLogDetail["Module"].isNull())
-			opLogDetailsObject.module = valueOpLogDetailsOpLogDetail["Module"].asString();
-		if(!valueOpLogDetailsOpLogDetail["OpContent"].isNull())
-			opLogDetailsObject.opContent = valueOpLogDetailsOpLogDetail["OpContent"].asString();
-		if(!valueOpLogDetailsOpLogDetail["OpTime"].isNull())
-			opLogDetailsObject.opTime = valueOpLogDetailsOpLogDetail["OpTime"].asString();
 		if(!valueOpLogDetailsOpLogDetail["Database"].isNull())
 			opLogDetailsObject.database = valueOpLogDetailsOpLogDetail["Database"].asString();
+		if(!valueOpLogDetailsOpLogDetail["OpContent"].isNull())
+			opLogDetailsObject.opContent = valueOpLogDetailsOpLogDetail["OpContent"].asString();
+		if(!valueOpLogDetailsOpLogDetail["UserNick"].isNull())
+			opLogDetailsObject.userNick = valueOpLogDetailsOpLogDetail["UserNick"].asString();
 		if(!valueOpLogDetailsOpLogDetail["OrderId"].isNull())
 			opLogDetailsObject.orderId = std::stol(valueOpLogDetailsOpLogDetail["OrderId"].asString());
+		if(!valueOpLogDetailsOpLogDetail["Module"].isNull())
+			opLogDetailsObject.module = valueOpLogDetailsOpLogDetail["Module"].asString();
+		if(!valueOpLogDetailsOpLogDetail["OpTime"].isNull())
+			opLogDetailsObject.opTime = valueOpLogDetailsOpLogDetail["OpTime"].asString();
 		opLogDetails_.push_back(opLogDetailsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

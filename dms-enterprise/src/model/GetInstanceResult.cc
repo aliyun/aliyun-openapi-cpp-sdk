@@ -40,62 +40,62 @@ void GetInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto instanceNode = value["Instance"];
+	if(!instanceNode["InstanceSource"].isNull())
+		instance_.instanceSource = instanceNode["InstanceSource"].asString();
 	if(!instanceNode["InstanceId"].isNull())
 		instance_.instanceId = instanceNode["InstanceId"].asString();
-	if(!instanceNode["InstanceType"].isNull())
-		instance_.instanceType = instanceNode["InstanceType"].asString();
-	if(!instanceNode["EnvType"].isNull())
-		instance_.envType = instanceNode["EnvType"].asString();
-	if(!instanceNode["Host"].isNull())
-		instance_.host = instanceNode["Host"].asString();
+	if(!instanceNode["DatabasePassword"].isNull())
+		instance_.databasePassword = instanceNode["DatabasePassword"].asString();
 	if(!instanceNode["Port"].isNull())
 		instance_.port = std::stoi(instanceNode["Port"].asString());
-	if(!instanceNode["Sid"].isNull())
-		instance_.sid = instanceNode["Sid"].asString();
-	if(!instanceNode["InstanceAlias"].isNull())
-		instance_.instanceAlias = instanceNode["InstanceAlias"].asString();
-	if(!instanceNode["DataLinkName"].isNull())
-		instance_.dataLinkName = instanceNode["DataLinkName"].asString();
-	if(!instanceNode["DbaNickName"].isNull())
-		instance_.dbaNickName = instanceNode["DbaNickName"].asString();
-	if(!instanceNode["SafeRuleId"].isNull())
-		instance_.safeRuleId = instanceNode["SafeRuleId"].asString();
-	if(!instanceNode["QueryTimeout"].isNull())
-		instance_.queryTimeout = std::stoi(instanceNode["QueryTimeout"].asString());
+	if(!instanceNode["Host"].isNull())
+		instance_.host = instanceNode["Host"].asString();
 	if(!instanceNode["ExportTimeout"].isNull())
 		instance_.exportTimeout = std::stoi(instanceNode["ExportTimeout"].asString());
-	if(!instanceNode["State"].isNull())
-		instance_.state = instanceNode["State"].asString();
-	if(!instanceNode["DbaId"].isNull())
-		instance_.dbaId = instanceNode["DbaId"].asString();
 	if(!instanceNode["DdlOnline"].isNull())
 		instance_.ddlOnline = std::stoi(instanceNode["DdlOnline"].asString());
+	if(!instanceNode["EnvType"].isNull())
+		instance_.envType = instanceNode["EnvType"].asString();
+	if(!instanceNode["Sid"].isNull())
+		instance_.sid = instanceNode["Sid"].asString();
 	if(!instanceNode["UseDsql"].isNull())
 		instance_.useDsql = std::stoi(instanceNode["UseDsql"].asString());
 	if(!instanceNode["EcsInstanceId"].isNull())
 		instance_.ecsInstanceId = instanceNode["EcsInstanceId"].asString();
+	if(!instanceNode["DbaId"].isNull())
+		instance_.dbaId = instanceNode["DbaId"].asString();
 	if(!instanceNode["VpcId"].isNull())
 		instance_.vpcId = instanceNode["VpcId"].asString();
 	if(!instanceNode["EcsRegion"].isNull())
 		instance_.ecsRegion = instanceNode["EcsRegion"].asString();
+	if(!instanceNode["InstanceAlias"].isNull())
+		instance_.instanceAlias = instanceNode["InstanceAlias"].asString();
+	if(!instanceNode["State"].isNull())
+		instance_.state = instanceNode["State"].asString();
 	if(!instanceNode["DatabaseUser"].isNull())
 		instance_.databaseUser = instanceNode["DatabaseUser"].asString();
-	if(!instanceNode["DatabasePassword"].isNull())
-		instance_.databasePassword = instanceNode["DatabasePassword"].asString();
-	if(!instanceNode["InstanceSource"].isNull())
-		instance_.instanceSource = instanceNode["InstanceSource"].asString();
-		auto allOwnerIdList = instanceNode["OwnerIdList"]["OwnerIds"];
-		for (auto value : allOwnerIdList)
-			instance_.ownerIdList.push_back(value.asString());
+	if(!instanceNode["InstanceType"].isNull())
+		instance_.instanceType = instanceNode["InstanceType"].asString();
+	if(!instanceNode["DbaNickName"].isNull())
+		instance_.dbaNickName = instanceNode["DbaNickName"].asString();
+	if(!instanceNode["DataLinkName"].isNull())
+		instance_.dataLinkName = instanceNode["DataLinkName"].asString();
+	if(!instanceNode["QueryTimeout"].isNull())
+		instance_.queryTimeout = std::stoi(instanceNode["QueryTimeout"].asString());
+	if(!instanceNode["SafeRuleId"].isNull())
+		instance_.safeRuleId = instanceNode["SafeRuleId"].asString();
 		auto allOwnerNameList = instanceNode["OwnerNameList"]["OwnerNames"];
 		for (auto value : allOwnerNameList)
 			instance_.ownerNameList.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+		auto allOwnerIdList = instanceNode["OwnerIdList"]["OwnerIds"];
+		for (auto value : allOwnerIdList)
+			instance_.ownerIdList.push_back(value.asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

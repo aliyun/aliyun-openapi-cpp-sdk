@@ -45,46 +45,46 @@ void SearchTableResult::parse(const std::string &payload)
 		SearchTable searchTableListObject;
 		if(!valueSearchTableListSearchTable["TableId"].isNull())
 			searchTableListObject.tableId = valueSearchTableListSearchTable["TableId"].asString();
-		if(!valueSearchTableListSearchTable["DatabaseId"].isNull())
-			searchTableListObject.databaseId = valueSearchTableListSearchTable["DatabaseId"].asString();
 		if(!valueSearchTableListSearchTable["TableName"].isNull())
 			searchTableListObject.tableName = valueSearchTableListSearchTable["TableName"].asString();
-		if(!valueSearchTableListSearchTable["TableSchemaName"].isNull())
-			searchTableListObject.tableSchemaName = valueSearchTableListSearchTable["TableSchemaName"].asString();
-		if(!valueSearchTableListSearchTable["Engine"].isNull())
-			searchTableListObject.engine = valueSearchTableListSearchTable["Engine"].asString();
-		if(!valueSearchTableListSearchTable["Encoding"].isNull())
-			searchTableListObject.encoding = valueSearchTableListSearchTable["Encoding"].asString();
-		if(!valueSearchTableListSearchTable["Logic"].isNull())
-			searchTableListObject.logic = valueSearchTableListSearchTable["Logic"].asString() == "true";
-		if(!valueSearchTableListSearchTable["EnvType"].isNull())
-			searchTableListObject.envType = valueSearchTableListSearchTable["EnvType"].asString();
-		if(!valueSearchTableListSearchTable["DBSearchName"].isNull())
-			searchTableListObject.dBSearchName = valueSearchTableListSearchTable["DBSearchName"].asString();
-		if(!valueSearchTableListSearchTable["DbType"].isNull())
-			searchTableListObject.dbType = valueSearchTableListSearchTable["DbType"].asString();
-		if(!valueSearchTableListSearchTable["Description"].isNull())
-			searchTableListObject.description = valueSearchTableListSearchTable["Description"].asString();
-		if(!valueSearchTableListSearchTable["DbName"].isNull())
-			searchTableListObject.dbName = valueSearchTableListSearchTable["DbName"].asString();
 		if(!valueSearchTableListSearchTable["TableGuid"].isNull())
 			searchTableListObject.tableGuid = valueSearchTableListSearchTable["TableGuid"].asString();
-		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
-		for (auto value : allOwnerIdList)
-			searchTableListObject.ownerIdList.push_back(value.asString());
+		if(!valueSearchTableListSearchTable["Description"].isNull())
+			searchTableListObject.description = valueSearchTableListSearchTable["Description"].asString();
+		if(!valueSearchTableListSearchTable["TableSchemaName"].isNull())
+			searchTableListObject.tableSchemaName = valueSearchTableListSearchTable["TableSchemaName"].asString();
+		if(!valueSearchTableListSearchTable["Encoding"].isNull())
+			searchTableListObject.encoding = valueSearchTableListSearchTable["Encoding"].asString();
+		if(!valueSearchTableListSearchTable["DbName"].isNull())
+			searchTableListObject.dbName = valueSearchTableListSearchTable["DbName"].asString();
+		if(!valueSearchTableListSearchTable["DatabaseId"].isNull())
+			searchTableListObject.databaseId = valueSearchTableListSearchTable["DatabaseId"].asString();
+		if(!valueSearchTableListSearchTable["Logic"].isNull())
+			searchTableListObject.logic = valueSearchTableListSearchTable["Logic"].asString() == "true";
+		if(!valueSearchTableListSearchTable["DBSearchName"].isNull())
+			searchTableListObject.dBSearchName = valueSearchTableListSearchTable["DBSearchName"].asString();
+		if(!valueSearchTableListSearchTable["Engine"].isNull())
+			searchTableListObject.engine = valueSearchTableListSearchTable["Engine"].asString();
+		if(!valueSearchTableListSearchTable["DbType"].isNull())
+			searchTableListObject.dbType = valueSearchTableListSearchTable["DbType"].asString();
+		if(!valueSearchTableListSearchTable["EnvType"].isNull())
+			searchTableListObject.envType = valueSearchTableListSearchTable["EnvType"].asString();
 		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
 		for (auto value : allOwnerNameList)
 			searchTableListObject.ownerNameList.push_back(value.asString());
+		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
+		for (auto value : allOwnerIdList)
+			searchTableListObject.ownerIdList.push_back(value.asString());
 		searchTableList_.push_back(searchTableListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

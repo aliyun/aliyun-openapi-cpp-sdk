@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getSchemaName()const;
 				void setSchemaName(const std::string& schemaName);
-				std::string getTableName()const;
-				void setTableName(const std::string& tableName);
 				std::string getColumnName()const;
 				void setColumnName(const std::string& columnName);
 				long getTid()const;
 				void setTid(long tid);
+				std::string getTableName()const;
+				void setTableName(const std::string& tableName);
 
             private:
 				std::string schemaName_;
-				std::string tableName_;
 				std::string columnName_;
 				long tid_;
+				std::string tableName_;
 
 			};
 		}

@@ -39,22 +39,22 @@ namespace AlibabaCloud
 				void setSearchName(const std::string& searchName);
 				bool getReturnGuid()const;
 				void setReturnGuid(bool returnGuid);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getDatabaseId()const;
-				void setDatabaseId(const std::string& databaseId);
 				long getTid()const;
 				void setTid(long tid);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getDatabaseId()const;
+				void setDatabaseId(const std::string& databaseId);
 
             private:
 				std::string searchName_;
 				bool returnGuid_;
-				int pageSize_;
-				std::string databaseId_;
 				long tid_;
 				int pageNumber_;
+				int pageSize_;
+				std::string databaseId_;
 
 			};
 		}

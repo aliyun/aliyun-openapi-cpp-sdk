@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					long tableCount;
 					long executeCount;
 					std::string securityRule;
+					long dBTaskGroupId;
 				};
 
 

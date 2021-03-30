@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				GetDataCorrectBackupFilesRequest();
 				~GetDataCorrectBackupFilesRequest();
 
-				std::map<std::string, std::string> getActionDetail()const;
-				void setActionDetail(const std::map<std::string, std::string>& actionDetail);
 				long getOrderId()const;
 				void setOrderId(long orderId);
 				std::string getActionName()const;
 				void setActionName(const std::string& actionName);
 				long getTid()const;
 				void setTid(long tid);
+				std::map<std::string, std::string> getActionDetail()const;
+				void setActionDetail(const std::map<std::string, std::string>& actionDetail);
 
             private:
-				std::map<std::string, std::string> actionDetail_;
 				long orderId_;
 				std::string actionName_;
 				long tid_;
+				std::map<std::string, std::string> actionDetail_;
 
 			};
 		}

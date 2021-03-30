@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Column
 				{
 					std::string columnId;
-					std::string columnType;
 					std::string description;
+					std::string columnType;
 					bool autoIncrement;
 					std::string functionType;
 					int dataPrecision;

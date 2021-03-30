@@ -40,40 +40,40 @@ void GetUserResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto userNode = value["User"];
-	if(!userNode["UserId"].isNull())
-		user_.userId = userNode["UserId"].asString();
 	if(!userNode["Uid"].isNull())
 		user_.uid = userNode["Uid"].asString();
+	if(!userNode["LastLoginTime"].isNull())
+		user_.lastLoginTime = userNode["LastLoginTime"].asString();
+	if(!userNode["CurResultCount"].isNull())
+		user_.curResultCount = std::stol(userNode["CurResultCount"].asString());
+	if(!userNode["MaxResultCount"].isNull())
+		user_.maxResultCount = std::stol(userNode["MaxResultCount"].asString());
+	if(!userNode["UserId"].isNull())
+		user_.userId = userNode["UserId"].asString();
+	if(!userNode["State"].isNull())
+		user_.state = userNode["State"].asString();
+	if(!userNode["CurExecuteCount"].isNull())
+		user_.curExecuteCount = std::stol(userNode["CurExecuteCount"].asString());
 	if(!userNode["NickName"].isNull())
 		user_.nickName = userNode["NickName"].asString();
 	if(!userNode["Mobile"].isNull())
 		user_.mobile = userNode["Mobile"].asString();
-	if(!userNode["ParentUid"].isNull())
-		user_.parentUid = std::stol(userNode["ParentUid"].asString());
-	if(!userNode["State"].isNull())
-		user_.state = userNode["State"].asString();
-	if(!userNode["LastLoginTime"].isNull())
-		user_.lastLoginTime = userNode["LastLoginTime"].asString();
-	if(!userNode["CurExecuteCount"].isNull())
-		user_.curExecuteCount = std::stol(userNode["CurExecuteCount"].asString());
-	if(!userNode["CurResultCount"].isNull())
-		user_.curResultCount = std::stol(userNode["CurResultCount"].asString());
 	if(!userNode["MaxExecuteCount"].isNull())
 		user_.maxExecuteCount = std::stol(userNode["MaxExecuteCount"].asString());
-	if(!userNode["MaxResultCount"].isNull())
-		user_.maxResultCount = std::stol(userNode["MaxResultCount"].asString());
+	if(!userNode["ParentUid"].isNull())
+		user_.parentUid = std::stol(userNode["ParentUid"].asString());
 		auto allRoleIdList = userNode["RoleIdList"]["RoleIds"];
 		for (auto value : allRoleIdList)
 			user_.roleIdList.push_back(value.asString());
 		auto allRoleNameList = userNode["RoleNameList"]["RoleNames"];
 		for (auto value : allRoleNameList)
 			user_.roleNameList.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

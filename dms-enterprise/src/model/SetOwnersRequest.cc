@@ -49,17 +49,6 @@ void SetOwnersRequest::setOwnerIds(const std::string& ownerIds)
 	setParameter("OwnerIds", ownerIds);
 }
 
-std::string SetOwnersRequest::getOwnerType()const
-{
-	return ownerType_;
-}
-
-void SetOwnersRequest::setOwnerType(const std::string& ownerType)
-{
-	ownerType_ = ownerType;
-	setParameter("OwnerType", ownerType);
-}
-
 long SetOwnersRequest::getTid()const
 {
 	return tid_;
@@ -69,5 +58,16 @@ void SetOwnersRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+std::string SetOwnersRequest::getOwnerType()const
+{
+	return ownerType_;
+}
+
+void SetOwnersRequest::setOwnerType(const std::string& ownerType)
+{
+	ownerType_ = ownerType;
+	setParameter("OwnerType", ownerType);
 }
 

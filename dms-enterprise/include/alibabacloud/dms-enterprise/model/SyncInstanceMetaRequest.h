@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				SyncInstanceMetaRequest();
 				~SyncInstanceMetaRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				bool getIgnoreTable()const;
 				void setIgnoreTable(bool ignoreTable);
 				long getTid()const;
 				void setTid(long tid);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
-				std::string instanceId_;
 				bool ignoreTable_;
 				long tid_;
+				std::string instanceId_;
 
 			};
 		}

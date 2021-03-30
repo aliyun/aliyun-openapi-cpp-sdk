@@ -47,34 +47,34 @@ void GetMetaTableColumnResult::parse(const std::string &payload)
 			columnListObject.columnId = valueColumnListColumn["ColumnId"].asString();
 		if(!valueColumnListColumn["ColumnName"].isNull())
 			columnListObject.columnName = valueColumnListColumn["ColumnName"].asString();
-		if(!valueColumnListColumn["ColumnType"].isNull())
-			columnListObject.columnType = valueColumnListColumn["ColumnType"].asString();
-		if(!valueColumnListColumn["DataLength"].isNull())
-			columnListObject.dataLength = std::stoi(valueColumnListColumn["DataLength"].asString());
 		if(!valueColumnListColumn["Description"].isNull())
 			columnListObject.description = valueColumnListColumn["Description"].asString();
+		if(!valueColumnListColumn["ColumnType"].isNull())
+			columnListObject.columnType = valueColumnListColumn["ColumnType"].asString();
 		if(!valueColumnListColumn["Position"].isNull())
 			columnListObject.position = std::stoi(valueColumnListColumn["Position"].asString());
 		if(!valueColumnListColumn["AutoIncrement"].isNull())
 			columnListObject.autoIncrement = valueColumnListColumn["AutoIncrement"].asString() == "true";
-		if(!valueColumnListColumn["Nullable"].isNull())
-			columnListObject.nullable = valueColumnListColumn["Nullable"].asString() == "true";
 		if(!valueColumnListColumn["SecurityLevel"].isNull())
 			columnListObject.securityLevel = valueColumnListColumn["SecurityLevel"].asString();
-		if(!valueColumnListColumn["PrimaryKey"].isNull())
-			columnListObject.primaryKey = valueColumnListColumn["PrimaryKey"].asString();
+		if(!valueColumnListColumn["DataLength"].isNull())
+			columnListObject.dataLength = std::stol(valueColumnListColumn["DataLength"].asString());
 		if(!valueColumnListColumn["DataScale"].isNull())
 			columnListObject.dataScale = std::stoi(valueColumnListColumn["DataScale"].asString());
 		if(!valueColumnListColumn["DataPrecision"].isNull())
 			columnListObject.dataPrecision = std::stoi(valueColumnListColumn["DataPrecision"].asString());
+		if(!valueColumnListColumn["PrimaryKey"].isNull())
+			columnListObject.primaryKey = valueColumnListColumn["PrimaryKey"].asString();
+		if(!valueColumnListColumn["Nullable"].isNull())
+			columnListObject.nullable = valueColumnListColumn["Nullable"].asString() == "true";
 		columnList_.push_back(columnListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

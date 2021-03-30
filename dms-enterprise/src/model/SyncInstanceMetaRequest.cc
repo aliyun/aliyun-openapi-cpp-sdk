@@ -27,17 +27,6 @@ SyncInstanceMetaRequest::SyncInstanceMetaRequest() :
 SyncInstanceMetaRequest::~SyncInstanceMetaRequest()
 {}
 
-std::string SyncInstanceMetaRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void SyncInstanceMetaRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
 bool SyncInstanceMetaRequest::getIgnoreTable()const
 {
 	return ignoreTable_;
@@ -58,5 +47,16 @@ void SyncInstanceMetaRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+std::string SyncInstanceMetaRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void SyncInstanceMetaRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 

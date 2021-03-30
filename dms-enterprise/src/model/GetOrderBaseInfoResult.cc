@@ -40,40 +40,40 @@ void GetOrderBaseInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto orderBaseInfoNode = value["OrderBaseInfo"];
+	if(!orderBaseInfoNode["StatusDesc"].isNull())
+		orderBaseInfo_.statusDesc = orderBaseInfoNode["StatusDesc"].asString();
+	if(!orderBaseInfoNode["WorkflowStatusDesc"].isNull())
+		orderBaseInfo_.workflowStatusDesc = orderBaseInfoNode["WorkflowStatusDesc"].asString();
 	if(!orderBaseInfoNode["Comment"].isNull())
 		orderBaseInfo_.comment = orderBaseInfoNode["Comment"].asString();
-	if(!orderBaseInfoNode["Committer"].isNull())
-		orderBaseInfo_.committer = orderBaseInfoNode["Committer"].asString();
-	if(!orderBaseInfoNode["CommitterId"].isNull())
-		orderBaseInfo_.committerId = std::stol(orderBaseInfoNode["CommitterId"].asString());
 	if(!orderBaseInfoNode["CreateTime"].isNull())
 		orderBaseInfo_.createTime = orderBaseInfoNode["CreateTime"].asString();
-	if(!orderBaseInfoNode["LastModifyTime"].isNull())
-		orderBaseInfo_.lastModifyTime = orderBaseInfoNode["LastModifyTime"].asString();
+	if(!orderBaseInfoNode["WorkflowInstanceId"].isNull())
+		orderBaseInfo_.workflowInstanceId = std::stol(orderBaseInfoNode["WorkflowInstanceId"].asString());
+	if(!orderBaseInfoNode["Committer"].isNull())
+		orderBaseInfo_.committer = orderBaseInfoNode["Committer"].asString();
 	if(!orderBaseInfoNode["OrderId"].isNull())
 		orderBaseInfo_.orderId = std::stol(orderBaseInfoNode["OrderId"].asString());
+	if(!orderBaseInfoNode["LastModifyTime"].isNull())
+		orderBaseInfo_.lastModifyTime = orderBaseInfoNode["LastModifyTime"].asString();
 	if(!orderBaseInfoNode["PluginType"].isNull())
 		orderBaseInfo_.pluginType = orderBaseInfoNode["PluginType"].asString();
 	if(!orderBaseInfoNode["StatusCode"].isNull())
 		orderBaseInfo_.statusCode = orderBaseInfoNode["StatusCode"].asString();
-	if(!orderBaseInfoNode["StatusDesc"].isNull())
-		orderBaseInfo_.statusDesc = orderBaseInfoNode["StatusDesc"].asString();
-	if(!orderBaseInfoNode["WorkflowInstanceId"].isNull())
-		orderBaseInfo_.workflowInstanceId = std::stol(orderBaseInfoNode["WorkflowInstanceId"].asString());
-	if(!orderBaseInfoNode["WorkflowStatusDesc"].isNull())
-		orderBaseInfo_.workflowStatusDesc = orderBaseInfoNode["WorkflowStatusDesc"].asString();
+	if(!orderBaseInfoNode["CommitterId"].isNull())
+		orderBaseInfo_.committerId = std::stol(orderBaseInfoNode["CommitterId"].asString());
 		auto allRelatedUserList = orderBaseInfoNode["RelatedUserList"]["UserIds"];
 		for (auto value : allRelatedUserList)
 			orderBaseInfo_.relatedUserList.push_back(value.asString());
 		auto allRelatedUserNickList = orderBaseInfoNode["RelatedUserNickList"]["UserNicks"];
 		for (auto value : allRelatedUserNickList)
 			orderBaseInfo_.relatedUserNickList.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

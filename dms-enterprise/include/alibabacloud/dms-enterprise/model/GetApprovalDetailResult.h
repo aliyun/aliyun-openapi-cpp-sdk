@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct ApprovalDetail
 				{
+					struct CurrentHandler
+					{
+						long id;
+						std::string nickName;
+					};
 					struct WorkflowNode
 					{
 						std::string operateTime;
@@ -42,11 +47,6 @@ namespace AlibabaCloud
 						std::string operateComment;
 						long operatorId;
 						std::vector<std::string> auditUserIdList;
-					};
-					struct CurrentHandler
-					{
-						long id;
-						std::string nickName;
 					};
 					std::vector<CurrentHandler> currentHandlers;
 					std::vector<std::string> reasonList;

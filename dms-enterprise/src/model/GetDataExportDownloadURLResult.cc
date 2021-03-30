@@ -42,16 +42,16 @@ void GetDataExportDownloadURLResult::parse(const std::string &payload)
 	auto downloadURLResultNode = value["DownloadURLResult"];
 	if(!downloadURLResultNode["HasResult"].isNull())
 		downloadURLResult_.hasResult = downloadURLResultNode["HasResult"].asString() == "true";
-	if(!downloadURLResultNode["URL"].isNull())
-		downloadURLResult_.uRL = downloadURLResultNode["URL"].asString();
 	if(!downloadURLResultNode["TipMessage"].isNull())
 		downloadURLResult_.tipMessage = downloadURLResultNode["TipMessage"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!downloadURLResultNode["URL"].isNull())
+		downloadURLResult_.uRL = downloadURLResultNode["URL"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

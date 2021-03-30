@@ -27,6 +27,17 @@ ListIndexesRequest::ListIndexesRequest() :
 ListIndexesRequest::~ListIndexesRequest()
 {}
 
+long ListIndexesRequest::getTid()const
+{
+	return tid_;
+}
+
+void ListIndexesRequest::setTid(long tid)
+{
+	tid_ = tid;
+	setParameter("Tid", std::to_string(tid));
+}
+
 std::string ListIndexesRequest::getTableId()const
 {
 	return tableId_;
@@ -47,16 +58,5 @@ void ListIndexesRequest::setLogic(bool logic)
 {
 	logic_ = logic;
 	setParameter("Logic", logic ? "true" : "false");
-}
-
-long ListIndexesRequest::getTid()const
-{
-	return tid_;
-}
-
-void ListIndexesRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
 }
 

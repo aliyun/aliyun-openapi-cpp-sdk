@@ -38,17 +38,6 @@ void ListSensitiveColumnsDetailRequest::setSchemaName(const std::string& schemaN
 	setParameter("SchemaName", schemaName);
 }
 
-std::string ListSensitiveColumnsDetailRequest::getTableName()const
-{
-	return tableName_;
-}
-
-void ListSensitiveColumnsDetailRequest::setTableName(const std::string& tableName)
-{
-	tableName_ = tableName;
-	setParameter("TableName", tableName);
-}
-
 std::string ListSensitiveColumnsDetailRequest::getColumnName()const
 {
 	return columnName_;
@@ -69,5 +58,16 @@ void ListSensitiveColumnsDetailRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+std::string ListSensitiveColumnsDetailRequest::getTableName()const
+{
+	return tableName_;
+}
+
+void ListSensitiveColumnsDetailRequest::setTableName(const std::string& tableName)
+{
+	tableName_ = tableName;
+	setParameter("TableName", tableName);
 }
 

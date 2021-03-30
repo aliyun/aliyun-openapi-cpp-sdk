@@ -41,8 +41,8 @@ namespace AlibabaCloud
 					std::string columnDescription;
 					long dbId;
 					bool logic;
-					std::string schemaName;
 					std::string envType;
+					std::string schemaName;
 					std::string dbType;
 				};
 

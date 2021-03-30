@@ -40,18 +40,18 @@ void GetUserActiveTenantResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto tenantNode = value["Tenant"];
-	if(!tenantNode["Tid"].isNull())
-		tenant_.tid = std::stol(tenantNode["Tid"].asString());
-	if(!tenantNode["TenantName"].isNull())
-		tenant_.tenantName = tenantNode["TenantName"].asString();
 	if(!tenantNode["Status"].isNull())
 		tenant_.status = tenantNode["Status"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!tenantNode["TenantName"].isNull())
+		tenant_.tenantName = tenantNode["TenantName"].asString();
+	if(!tenantNode["Tid"].isNull())
+		tenant_.tid = std::stol(tenantNode["Tid"].asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string instanceSource;
 					std::string instanceId;
-					int port;
 					std::string databasePassword;
+					int port;
 					std::string host;
 					int exportTimeout;
 					int ddlOnline;
@@ -47,9 +47,9 @@ namespace AlibabaCloud
 					std::string ecsInstanceId;
 					std::string dbaId;
 					std::string vpcId;
+					std::string ecsRegion;
 					std::string instanceAlias;
 					std::string state;
-					std::string ecsRegion;
 					std::string databaseUser;
 					std::vector<std::string> ownerNameList;
 					std::string instanceType;

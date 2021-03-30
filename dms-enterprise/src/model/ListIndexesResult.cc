@@ -43,24 +43,24 @@ void ListIndexesResult::parse(const std::string &payload)
 	for (auto valueIndexListIndex : allIndexListNode)
 	{
 		Index indexListObject;
-		if(!valueIndexListIndex["IndexId"].isNull())
-			indexListObject.indexId = valueIndexListIndex["IndexId"].asString();
 		if(!valueIndexListIndex["TableId"].isNull())
 			indexListObject.tableId = valueIndexListIndex["TableId"].asString();
 		if(!valueIndexListIndex["IndexName"].isNull())
 			indexListObject.indexName = valueIndexListIndex["IndexName"].asString();
-		if(!valueIndexListIndex["IndexType"].isNull())
-			indexListObject.indexType = valueIndexListIndex["IndexType"].asString();
+		if(!valueIndexListIndex["IndexId"].isNull())
+			indexListObject.indexId = valueIndexListIndex["IndexId"].asString();
 		if(!valueIndexListIndex["IndexComment"].isNull())
 			indexListObject.indexComment = valueIndexListIndex["IndexComment"].asString();
+		if(!valueIndexListIndex["IndexType"].isNull())
+			indexListObject.indexType = valueIndexListIndex["IndexType"].asString();
 		indexList_.push_back(indexListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

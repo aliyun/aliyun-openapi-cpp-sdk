@@ -35,8 +35,11 @@ namespace AlibabaCloud
 				ListUserTenantsRequest();
 				~ListUserTenantsRequest();
 
+				long getTid()const;
+				void setTid(long tid);
 
             private:
+				long tid_;
 
 			};
 		}

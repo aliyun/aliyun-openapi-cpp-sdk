@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				long getOrderId()const;
 				void setOrderId(long orderId);
+				long getTid()const;
+				void setTid(long tid);
 				int getDbId()const;
 				void setDbId(int dbId);
 				std::string getPlanTime()const;
 				void setPlanTime(const std::string& planTime);
 				bool getLogic()const;
 				void setLogic(bool logic);
-				long getTid()const;
-				void setTid(long tid);
 				std::string getPublishStrategy()const;
 				void setPublishStrategy(const std::string& publishStrategy);
 
             private:
 				long orderId_;
+				long tid_;
 				int dbId_;
 				std::string planTime_;
 				bool logic_;
-				long tid_;
 				std::string publishStrategy_;
 
 			};

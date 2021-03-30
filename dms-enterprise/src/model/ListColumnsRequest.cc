@@ -27,6 +27,17 @@ ListColumnsRequest::ListColumnsRequest() :
 ListColumnsRequest::~ListColumnsRequest()
 {}
 
+long ListColumnsRequest::getTid()const
+{
+	return tid_;
+}
+
+void ListColumnsRequest::setTid(long tid)
+{
+	tid_ = tid;
+	setParameter("Tid", std::to_string(tid));
+}
+
 std::string ListColumnsRequest::getTableId()const
 {
 	return tableId_;
@@ -47,16 +58,5 @@ void ListColumnsRequest::setLogic(bool logic)
 {
 	logic_ = logic;
 	setParameter("Logic", logic ? "true" : "false");
-}
-
-long ListColumnsRequest::getTid()const
-{
-	return tid_;
-}
-
-void ListColumnsRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
 }
 

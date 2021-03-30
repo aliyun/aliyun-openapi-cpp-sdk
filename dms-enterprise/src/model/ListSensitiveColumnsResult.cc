@@ -43,28 +43,28 @@ void ListSensitiveColumnsResult::parse(const std::string &payload)
 	for (auto valueSensitiveColumnListSensitiveColumn : allSensitiveColumnListNode)
 	{
 		SensitiveColumn sensitiveColumnListObject;
-		if(!valueSensitiveColumnListSensitiveColumn["SchemaName"].isNull())
-			sensitiveColumnListObject.schemaName = valueSensitiveColumnListSensitiveColumn["SchemaName"].asString();
 		if(!valueSensitiveColumnListSensitiveColumn["TableName"].isNull())
 			sensitiveColumnListObject.tableName = valueSensitiveColumnListSensitiveColumn["TableName"].asString();
 		if(!valueSensitiveColumnListSensitiveColumn["ColumnName"].isNull())
 			sensitiveColumnListObject.columnName = valueSensitiveColumnListSensitiveColumn["ColumnName"].asString();
-		if(!valueSensitiveColumnListSensitiveColumn["SecurityLevel"].isNull())
-			sensitiveColumnListObject.securityLevel = valueSensitiveColumnListSensitiveColumn["SecurityLevel"].asString();
 		if(!valueSensitiveColumnListSensitiveColumn["ColumnCount"].isNull())
 			sensitiveColumnListObject.columnCount = std::stol(valueSensitiveColumnListSensitiveColumn["ColumnCount"].asString());
 		if(!valueSensitiveColumnListSensitiveColumn["FunctionType"].isNull())
 			sensitiveColumnListObject.functionType = valueSensitiveColumnListSensitiveColumn["FunctionType"].asString();
+		if(!valueSensitiveColumnListSensitiveColumn["SecurityLevel"].isNull())
+			sensitiveColumnListObject.securityLevel = valueSensitiveColumnListSensitiveColumn["SecurityLevel"].asString();
+		if(!valueSensitiveColumnListSensitiveColumn["SchemaName"].isNull())
+			sensitiveColumnListObject.schemaName = valueSensitiveColumnListSensitiveColumn["SchemaName"].asString();
 		sensitiveColumnList_.push_back(sensitiveColumnListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -79,6 +79,12 @@ Struct CreateUploadOSSFileJobRequest::getUploadTarget()const
 void CreateUploadOSSFileJobRequest::setUploadTarget(const Struct& uploadTarget)
 {
 	uploadTarget_ = uploadTarget;
-	setParameter("UploadTarget", std::to_string(uploadTarget));
+	for(int dep1 = 0; dep1!= uploadTarget.size(); dep1++) {
+		auto uploadTargetObj = uploadTarget.at(dep1);
+		std::string uploadTargetObjStr = "UploadTarget." + std::to_string(dep1 + 1);
+		setParameter(uploadTargetObjStr + ".Endpoint", uploadTargetObj.endpoint);
+		setParameter(uploadTargetObjStr + ".BucketName", uploadTargetObj.bucketName);
+		setParameter(uploadTargetObjStr + ".ObjectName", uploadTargetObj.objectName);
+	}
 }
 

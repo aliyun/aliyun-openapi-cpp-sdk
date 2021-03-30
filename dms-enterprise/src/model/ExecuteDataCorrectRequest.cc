@@ -27,17 +27,6 @@ ExecuteDataCorrectRequest::ExecuteDataCorrectRequest() :
 ExecuteDataCorrectRequest::~ExecuteDataCorrectRequest()
 {}
 
-std::map<std::string, std::string> ExecuteDataCorrectRequest::getActionDetail()const
-{
-	return actionDetail_;
-}
-
-void ExecuteDataCorrectRequest::setActionDetail(const std::map<std::string, std::string>& actionDetail)
-{
-	actionDetail_ = actionDetail;
-	setJsonParameters("ActionDetail", actionDetail);
-}
-
 long ExecuteDataCorrectRequest::getOrderId()const
 {
 	return orderId_;
@@ -69,5 +58,16 @@ void ExecuteDataCorrectRequest::setTid(const std::string& tid)
 {
 	tid_ = tid;
 	setParameter("Tid", tid);
+}
+
+std::map<std::string, std::string> ExecuteDataCorrectRequest::getActionDetail()const
+{
+	return actionDetail_;
+}
+
+void ExecuteDataCorrectRequest::setActionDetail(const std::map<std::string, std::string>& actionDetail)
+{
+	actionDetail_ = actionDetail;
+	setJsonParameters("ActionDetail", actionDetail);
 }
 

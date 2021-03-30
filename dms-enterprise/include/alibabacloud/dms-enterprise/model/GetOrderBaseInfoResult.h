@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					std::string comment;
 					std::string createTime;
-					std::string lastModifyTime;
 					long orderId;
-					long committerId;
+					std::string lastModifyTime;
 					std::string pluginType;
 					std::string statusCode;
+					long committerId;
 					std::vector<std::string> relatedUserNickList;
 					std::string statusDesc;
 					std::string workflowStatusDesc;

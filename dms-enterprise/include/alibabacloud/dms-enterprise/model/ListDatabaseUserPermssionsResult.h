@@ -47,14 +47,14 @@ namespace AlibabaCloud
 					std::string searchName;
 					std::string instanceId;
 					std::vector<UserPermission::PermDetail> permDetails;
-					std::string envType;
 					std::string dbType;
+					std::string envType;
 					std::string dsType;
-					std::string tableName;
 					std::string columnName;
+					std::string tableName;
 					std::string userNickName;
-					std::string userId;
 					std::string alias;
+					std::string userId;
 					std::string dbId;
 					bool logic;
 					std::string schemaName;

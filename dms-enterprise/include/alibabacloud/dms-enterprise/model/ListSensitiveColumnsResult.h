@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string tableName;
 					std::string columnName;
 					long columnCount;
-					std::string securityLevel;
 					std::string functionType;
+					std::string securityLevel;
 					std::string schemaName;
 				};
 

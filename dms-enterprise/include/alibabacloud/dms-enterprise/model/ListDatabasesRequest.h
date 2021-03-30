@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				ListDatabasesRequest();
 				~ListDatabasesRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				long getTid()const;
 				void setTid(long tid);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string instanceId_;
-				int pageSize_;
 				long tid_;
 				int pageNumber_;
+				std::string instanceId_;
+				int pageSize_;
 
 			};
 		}

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct OrderDetail
 					{
 						bool ignoreAffectRows;
-						std::string classify;
 						std::string exeSQL;
+						std::string classify;
 						std::string ignoreAffectRowsReason;
 						std::string database;
 						int dbId;

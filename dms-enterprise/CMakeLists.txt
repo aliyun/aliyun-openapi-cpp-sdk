@@ -25,6 +25,14 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ApproveOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateDataCronClearOrderRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateDataCronClearOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateDataImportOrderRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateDataImportOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateFreeLockCorrectOrderRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateFreeLockCorrectOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreatePublishGroupTaskRequest.h
@@ -59,6 +67,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectOrderDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectSQLFileRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectSQLFileResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataCorrectTaskDetailRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataCorrectTaskDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataCronClearTaskDetailListRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataCronClearTaskDetailListResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataExportDownloadURLRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataExportDownloadURLResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataExportOrderDetailRequest.h
@@ -107,6 +119,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobResult.h
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDBTaskSQLJobDetailResult.h
+	include/alibabacloud/dms-enterprise/model/ListDDLPublishRecordsRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDDLPublishRecordsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabasesRequest.h
@@ -168,6 +182,14 @@ set(dms-enterprise_src
 	src/model/ApproveOrderResult.cc
 	src/model/CloseOrderRequest.cc
 	src/model/CloseOrderResult.cc
+	src/model/CreateDataCorrectOrderRequest.cc
+	src/model/CreateDataCorrectOrderResult.cc
+	src/model/CreateDataCronClearOrderRequest.cc
+	src/model/CreateDataCronClearOrderResult.cc
+	src/model/CreateDataImportOrderRequest.cc
+	src/model/CreateDataImportOrderResult.cc
+	src/model/CreateFreeLockCorrectOrderRequest.cc
+	src/model/CreateFreeLockCorrectOrderResult.cc
 	src/model/CreateOrderRequest.cc
 	src/model/CreateOrderResult.cc
 	src/model/CreatePublishGroupTaskRequest.cc
@@ -202,6 +224,10 @@ set(dms-enterprise_src
 	src/model/GetDataCorrectOrderDetailResult.cc
 	src/model/GetDataCorrectSQLFileRequest.cc
 	src/model/GetDataCorrectSQLFileResult.cc
+	src/model/GetDataCorrectTaskDetailRequest.cc
+	src/model/GetDataCorrectTaskDetailResult.cc
+	src/model/GetDataCronClearTaskDetailListRequest.cc
+	src/model/GetDataCronClearTaskDetailListResult.cc
 	src/model/GetDataExportDownloadURLRequest.cc
 	src/model/GetDataExportDownloadURLResult.cc
 	src/model/GetDataExportOrderDetailRequest.cc
@@ -250,6 +276,8 @@ set(dms-enterprise_src
 	src/model/ListDBTaskSQLJobResult.cc
 	src/model/ListDBTaskSQLJobDetailRequest.cc
 	src/model/ListDBTaskSQLJobDetailResult.cc
+	src/model/ListDDLPublishRecordsRequest.cc
+	src/model/ListDDLPublishRecordsResult.cc
 	src/model/ListDatabaseUserPermssionsRequest.cc
 	src/model/ListDatabaseUserPermssionsResult.cc
 	src/model/ListDatabasesRequest.cc

@@ -38,6 +38,17 @@ void CreatePublishGroupTaskRequest::setOrderId(long orderId)
 	setParameter("OrderId", std::to_string(orderId));
 }
 
+long CreatePublishGroupTaskRequest::getTid()const
+{
+	return tid_;
+}
+
+void CreatePublishGroupTaskRequest::setTid(long tid)
+{
+	tid_ = tid;
+	setParameter("Tid", std::to_string(tid));
+}
+
 int CreatePublishGroupTaskRequest::getDbId()const
 {
 	return dbId_;
@@ -69,17 +80,6 @@ void CreatePublishGroupTaskRequest::setLogic(bool logic)
 {
 	logic_ = logic;
 	setParameter("Logic", logic ? "true" : "false");
-}
-
-long CreatePublishGroupTaskRequest::getTid()const
-{
-	return tid_;
-}
-
-void CreatePublishGroupTaskRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
 }
 
 std::string CreatePublishGroupTaskRequest::getPublishStrategy()const

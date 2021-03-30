@@ -27,6 +27,17 @@ SyncDatabaseMetaRequest::SyncDatabaseMetaRequest() :
 SyncDatabaseMetaRequest::~SyncDatabaseMetaRequest()
 {}
 
+long SyncDatabaseMetaRequest::getTid()const
+{
+	return tid_;
+}
+
+void SyncDatabaseMetaRequest::setTid(long tid)
+{
+	tid_ = tid;
+	setParameter("Tid", std::to_string(tid));
+}
+
 std::string SyncDatabaseMetaRequest::getDbId()const
 {
 	return dbId_;
@@ -47,16 +58,5 @@ void SyncDatabaseMetaRequest::setLogic(bool logic)
 {
 	logic_ = logic;
 	setParameter("Logic", logic ? "true" : "false");
-}
-
-long SyncDatabaseMetaRequest::getTid()const
-{
-	return tid_;
-}
-
-void SyncDatabaseMetaRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
 }
 

@@ -37,21 +37,21 @@ namespace AlibabaCloud
 
 				std::string getSchemaName()const;
 				void setSchemaName(const std::string& schemaName);
-				int getPort()const;
-				void setPort(int port);
-				std::string getHost()const;
-				void setHost(const std::string& host);
 				long getTid()const;
 				void setTid(long tid);
 				std::string getSid()const;
 				void setSid(const std::string& sid);
+				int getPort()const;
+				void setPort(int port);
+				std::string getHost()const;
+				void setHost(const std::string& host);
 
             private:
 				std::string schemaName_;
-				int port_;
-				std::string host_;
 				long tid_;
 				std::string sid_;
+				int port_;
+				std::string host_;
 
 			};
 		}

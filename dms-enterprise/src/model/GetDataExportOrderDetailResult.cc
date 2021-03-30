@@ -41,35 +41,35 @@ void GetDataExportOrderDetailResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataExportOrderDetailNode = value["DataExportOrderDetail"];
 	auto orderDetailNode = dataExportOrderDetailNode["OrderDetail"];
-	if(!orderDetailNode["ActualAffectRows"].isNull())
-		dataExportOrderDetail_.orderDetail.actualAffectRows = std::stol(orderDetailNode["ActualAffectRows"].asString());
+	if(!orderDetailNode["IgnoreAffectRows"].isNull())
+		dataExportOrderDetail_.orderDetail.ignoreAffectRows = orderDetailNode["IgnoreAffectRows"].asString() == "true";
+	if(!orderDetailNode["ExeSQL"].isNull())
+		dataExportOrderDetail_.orderDetail.exeSQL = orderDetailNode["ExeSQL"].asString();
 	if(!orderDetailNode["Classify"].isNull())
 		dataExportOrderDetail_.orderDetail.classify = orderDetailNode["Classify"].asString();
+	if(!orderDetailNode["IgnoreAffectRowsReason"].isNull())
+		dataExportOrderDetail_.orderDetail.ignoreAffectRowsReason = orderDetailNode["IgnoreAffectRowsReason"].asString();
 	if(!orderDetailNode["Database"].isNull())
 		dataExportOrderDetail_.orderDetail.database = orderDetailNode["Database"].asString();
 	if(!orderDetailNode["DbId"].isNull())
 		dataExportOrderDetail_.orderDetail.dbId = std::stoi(orderDetailNode["DbId"].asString());
-	if(!orderDetailNode["EnvType"].isNull())
-		dataExportOrderDetail_.orderDetail.envType = orderDetailNode["EnvType"].asString();
-	if(!orderDetailNode["ExeSQL"].isNull())
-		dataExportOrderDetail_.orderDetail.exeSQL = orderDetailNode["ExeSQL"].asString();
-	if(!orderDetailNode["IgnoreAffectRows"].isNull())
-		dataExportOrderDetail_.orderDetail.ignoreAffectRows = orderDetailNode["IgnoreAffectRows"].asString() == "true";
-	if(!orderDetailNode["IgnoreAffectRowsReason"].isNull())
-		dataExportOrderDetail_.orderDetail.ignoreAffectRowsReason = orderDetailNode["IgnoreAffectRowsReason"].asString();
+	if(!orderDetailNode["ActualAffectRows"].isNull())
+		dataExportOrderDetail_.orderDetail.actualAffectRows = std::stol(orderDetailNode["ActualAffectRows"].asString());
 	if(!orderDetailNode["Logic"].isNull())
 		dataExportOrderDetail_.orderDetail.logic = orderDetailNode["Logic"].asString() == "true";
+	if(!orderDetailNode["EnvType"].isNull())
+		dataExportOrderDetail_.orderDetail.envType = orderDetailNode["EnvType"].asString();
 	auto keyInfoNode = dataExportOrderDetailNode["KeyInfo"];
 	if(!keyInfoNode["JobStatus"].isNull())
 		dataExportOrderDetail_.keyInfo.jobStatus = keyInfoNode["JobStatus"].asString();
 	if(!keyInfoNode["PreCheckId"].isNull())
 		dataExportOrderDetail_.keyInfo.preCheckId = std::stol(keyInfoNode["PreCheckId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

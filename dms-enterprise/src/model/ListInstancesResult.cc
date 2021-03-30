@@ -43,66 +43,66 @@ void ListInstancesResult::parse(const std::string &payload)
 	for (auto valueInstanceListInstance : allInstanceListNode)
 	{
 		Instance instanceListObject;
+		if(!valueInstanceListInstance["InstanceSource"].isNull())
+			instanceListObject.instanceSource = valueInstanceListInstance["InstanceSource"].asString();
 		if(!valueInstanceListInstance["InstanceId"].isNull())
 			instanceListObject.instanceId = valueInstanceListInstance["InstanceId"].asString();
-		if(!valueInstanceListInstance["InstanceType"].isNull())
-			instanceListObject.instanceType = valueInstanceListInstance["InstanceType"].asString();
-		if(!valueInstanceListInstance["EnvType"].isNull())
-			instanceListObject.envType = valueInstanceListInstance["EnvType"].asString();
-		if(!valueInstanceListInstance["Host"].isNull())
-			instanceListObject.host = valueInstanceListInstance["Host"].asString();
+		if(!valueInstanceListInstance["DatabasePassword"].isNull())
+			instanceListObject.databasePassword = valueInstanceListInstance["DatabasePassword"].asString();
 		if(!valueInstanceListInstance["Port"].isNull())
 			instanceListObject.port = std::stoi(valueInstanceListInstance["Port"].asString());
-		if(!valueInstanceListInstance["Sid"].isNull())
-			instanceListObject.sid = valueInstanceListInstance["Sid"].asString();
-		if(!valueInstanceListInstance["InstanceAlias"].isNull())
-			instanceListObject.instanceAlias = valueInstanceListInstance["InstanceAlias"].asString();
-		if(!valueInstanceListInstance["DataLinkName"].isNull())
-			instanceListObject.dataLinkName = valueInstanceListInstance["DataLinkName"].asString();
-		if(!valueInstanceListInstance["DbaNickName"].isNull())
-			instanceListObject.dbaNickName = valueInstanceListInstance["DbaNickName"].asString();
-		if(!valueInstanceListInstance["SafeRuleId"].isNull())
-			instanceListObject.safeRuleId = valueInstanceListInstance["SafeRuleId"].asString();
-		if(!valueInstanceListInstance["QueryTimeout"].isNull())
-			instanceListObject.queryTimeout = std::stoi(valueInstanceListInstance["QueryTimeout"].asString());
+		if(!valueInstanceListInstance["Host"].isNull())
+			instanceListObject.host = valueInstanceListInstance["Host"].asString();
 		if(!valueInstanceListInstance["ExportTimeout"].isNull())
 			instanceListObject.exportTimeout = std::stoi(valueInstanceListInstance["ExportTimeout"].asString());
-		if(!valueInstanceListInstance["State"].isNull())
-			instanceListObject.state = valueInstanceListInstance["State"].asString();
-		if(!valueInstanceListInstance["DbaId"].isNull())
-			instanceListObject.dbaId = valueInstanceListInstance["DbaId"].asString();
 		if(!valueInstanceListInstance["DdlOnline"].isNull())
 			instanceListObject.ddlOnline = std::stoi(valueInstanceListInstance["DdlOnline"].asString());
+		if(!valueInstanceListInstance["EnvType"].isNull())
+			instanceListObject.envType = valueInstanceListInstance["EnvType"].asString();
+		if(!valueInstanceListInstance["Sid"].isNull())
+			instanceListObject.sid = valueInstanceListInstance["Sid"].asString();
 		if(!valueInstanceListInstance["UseDsql"].isNull())
 			instanceListObject.useDsql = std::stoi(valueInstanceListInstance["UseDsql"].asString());
 		if(!valueInstanceListInstance["EcsInstanceId"].isNull())
 			instanceListObject.ecsInstanceId = valueInstanceListInstance["EcsInstanceId"].asString();
+		if(!valueInstanceListInstance["DbaId"].isNull())
+			instanceListObject.dbaId = valueInstanceListInstance["DbaId"].asString();
 		if(!valueInstanceListInstance["VpcId"].isNull())
 			instanceListObject.vpcId = valueInstanceListInstance["VpcId"].asString();
 		if(!valueInstanceListInstance["EcsRegion"].isNull())
 			instanceListObject.ecsRegion = valueInstanceListInstance["EcsRegion"].asString();
+		if(!valueInstanceListInstance["InstanceAlias"].isNull())
+			instanceListObject.instanceAlias = valueInstanceListInstance["InstanceAlias"].asString();
+		if(!valueInstanceListInstance["State"].isNull())
+			instanceListObject.state = valueInstanceListInstance["State"].asString();
 		if(!valueInstanceListInstance["DatabaseUser"].isNull())
 			instanceListObject.databaseUser = valueInstanceListInstance["DatabaseUser"].asString();
-		if(!valueInstanceListInstance["DatabasePassword"].isNull())
-			instanceListObject.databasePassword = valueInstanceListInstance["DatabasePassword"].asString();
-		if(!valueInstanceListInstance["InstanceSource"].isNull())
-			instanceListObject.instanceSource = valueInstanceListInstance["InstanceSource"].asString();
-		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
-		for (auto value : allOwnerIdList)
-			instanceListObject.ownerIdList.push_back(value.asString());
+		if(!valueInstanceListInstance["InstanceType"].isNull())
+			instanceListObject.instanceType = valueInstanceListInstance["InstanceType"].asString();
+		if(!valueInstanceListInstance["DbaNickName"].isNull())
+			instanceListObject.dbaNickName = valueInstanceListInstance["DbaNickName"].asString();
+		if(!valueInstanceListInstance["DataLinkName"].isNull())
+			instanceListObject.dataLinkName = valueInstanceListInstance["DataLinkName"].asString();
+		if(!valueInstanceListInstance["QueryTimeout"].isNull())
+			instanceListObject.queryTimeout = std::stoi(valueInstanceListInstance["QueryTimeout"].asString());
+		if(!valueInstanceListInstance["SafeRuleId"].isNull())
+			instanceListObject.safeRuleId = valueInstanceListInstance["SafeRuleId"].asString();
 		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
 		for (auto value : allOwnerNameList)
 			instanceListObject.ownerNameList.push_back(value.asString());
+		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
+		for (auto value : allOwnerIdList)
+			instanceListObject.ownerIdList.push_back(value.asString());
 		instanceList_.push_back(instanceListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

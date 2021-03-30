@@ -49,28 +49,6 @@ void ListLogicTablesRequest::setReturnGuid(bool returnGuid)
 	setParameter("ReturnGuid", returnGuid ? "true" : "false");
 }
 
-int ListLogicTablesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListLogicTablesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListLogicTablesRequest::getDatabaseId()const
-{
-	return databaseId_;
-}
-
-void ListLogicTablesRequest::setDatabaseId(const std::string& databaseId)
-{
-	databaseId_ = databaseId;
-	setParameter("DatabaseId", databaseId);
-}
-
 long ListLogicTablesRequest::getTid()const
 {
 	return tid_;
@@ -91,5 +69,27 @@ void ListLogicTablesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int ListLogicTablesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListLogicTablesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListLogicTablesRequest::getDatabaseId()const
+{
+	return databaseId_;
+}
+
+void ListLogicTablesRequest::setDatabaseId(const std::string& databaseId)
+{
+	databaseId_ = databaseId;
+	setParameter("DatabaseId", databaseId);
 }
 

@@ -27,17 +27,6 @@ ListLogicDatabasesRequest::ListLogicDatabasesRequest() :
 ListLogicDatabasesRequest::~ListLogicDatabasesRequest()
 {}
 
-int ListLogicDatabasesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListLogicDatabasesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
 long ListLogicDatabasesRequest::getTid()const
 {
 	return tid_;
@@ -58,5 +47,16 @@ void ListLogicDatabasesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int ListLogicDatabasesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListLogicDatabasesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

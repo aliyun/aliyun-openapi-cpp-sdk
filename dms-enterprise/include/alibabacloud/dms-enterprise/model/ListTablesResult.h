@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string tableId;
 					std::string tableType;
 					std::string description;
-					std::string databaseId;
 					std::string encoding;
+					std::string databaseId;
 					long numRows;
 					std::string tableName;
 					std::string tableGuid;

@@ -43,20 +43,20 @@ void ListUserTenantsResult::parse(const std::string &payload)
 	for (auto valueTenantListTenant : allTenantListNode)
 	{
 		Tenant tenantListObject;
-		if(!valueTenantListTenant["Tid"].isNull())
-			tenantListObject.tid = std::stol(valueTenantListTenant["Tid"].asString());
-		if(!valueTenantListTenant["TenantName"].isNull())
-			tenantListObject.tenantName = valueTenantListTenant["TenantName"].asString();
 		if(!valueTenantListTenant["Status"].isNull())
 			tenantListObject.status = valueTenantListTenant["Status"].asString();
+		if(!valueTenantListTenant["TenantName"].isNull())
+			tenantListObject.tenantName = valueTenantListTenant["TenantName"].asString();
+		if(!valueTenantListTenant["Tid"].isNull())
+			tenantListObject.tid = std::stol(valueTenantListTenant["Tid"].asString());
 		tenantList_.push_back(tenantListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

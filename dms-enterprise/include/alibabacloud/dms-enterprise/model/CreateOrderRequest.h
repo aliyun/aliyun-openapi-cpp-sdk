@@ -35,21 +35,24 @@ namespace AlibabaCloud
 				CreateOrderRequest();
 				~CreateOrderRequest();
 
-				std::string getPluginType()const;
-				void setPluginType(const std::string& pluginType);
-				std::string getComment()const;
-				void setComment(const std::string& comment);
 				long getTid()const;
 				void setTid(long tid);
+				std::string getPluginType()const;
+				void setPluginType(const std::string& pluginType);
+				std::string getAttachmentKey()const;
+				void setAttachmentKey(const std::string& attachmentKey);
+				std::string getComment()const;
+				void setComment(const std::string& comment);
 				std::map<std::string, std::string> getPluginParam()const;
 				void setPluginParam(const std::map<std::string, std::string>& pluginParam);
 				std::string getRelatedUserList()const;
 				void setRelatedUserList(const std::string& relatedUserList);
 
             private:
-				std::string pluginType_;
-				std::string comment_;
 				long tid_;
+				std::string pluginType_;
+				std::string attachmentKey_;
+				std::string comment_;
 				std::map<std::string, std::string> pluginParam_;
 				std::string relatedUserList_;
 

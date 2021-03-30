@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				ListIndexesRequest();
 				~ListIndexesRequest();
 
+				long getTid()const;
+				void setTid(long tid);
 				std::string getTableId()const;
 				void setTableId(const std::string& tableId);
 				bool getLogic()const;
 				void setLogic(bool logic);
-				long getTid()const;
-				void setTid(long tid);
 
             private:
+				long tid_;
 				std::string tableId_;
 				bool logic_;
-				long tid_;
 
 			};
 		}

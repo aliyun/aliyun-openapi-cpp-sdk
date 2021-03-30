@@ -38,11 +38,11 @@ namespace AlibabaCloud
 					{
 						std::string columnId;
 						std::string columnName;
-						std::string description;
 						std::string columnType;
+						std::string description;
 						std::string position;
 						bool autoIncrement;
-						int dataLength;
+						long dataLength;
 						int dataScale;
 						int dataPrecision;
 						bool nullable;

@@ -40,30 +40,30 @@ void GetLogicDatabaseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto logicDatabaseNode = value["LogicDatabase"];
+	if(!logicDatabaseNode["SearchName"].isNull())
+		logicDatabase_.searchName = logicDatabaseNode["SearchName"].asString();
+	if(!logicDatabaseNode["DatabaseId"].isNull())
+		logicDatabase_.databaseId = logicDatabaseNode["DatabaseId"].asString();
 	if(!logicDatabaseNode["Logic"].isNull())
 		logicDatabase_.logic = logicDatabaseNode["Logic"].asString() == "true";
 	if(!logicDatabaseNode["EnvType"].isNull())
 		logicDatabase_.envType = logicDatabaseNode["EnvType"].asString();
 	if(!logicDatabaseNode["SchemaName"].isNull())
 		logicDatabase_.schemaName = logicDatabaseNode["SchemaName"].asString();
-	if(!logicDatabaseNode["SearchName"].isNull())
-		logicDatabase_.searchName = logicDatabaseNode["SearchName"].asString();
 	if(!logicDatabaseNode["DbType"].isNull())
 		logicDatabase_.dbType = logicDatabaseNode["DbType"].asString();
-	if(!logicDatabaseNode["DatabaseId"].isNull())
-		logicDatabase_.databaseId = logicDatabaseNode["DatabaseId"].asString();
-		auto allOwnerIdList = logicDatabaseNode["OwnerIdList"]["OwnerIds"];
-		for (auto value : allOwnerIdList)
-			logicDatabase_.ownerIdList.push_back(value.asString());
 		auto allOwnerNameList = logicDatabaseNode["OwnerNameList"]["OwnerNames"];
 		for (auto value : allOwnerNameList)
 			logicDatabase_.ownerNameList.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+		auto allOwnerIdList = logicDatabaseNode["OwnerIdList"]["OwnerIds"];
+		for (auto value : allOwnerIdList)
+			logicDatabase_.ownerIdList.push_back(value.asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

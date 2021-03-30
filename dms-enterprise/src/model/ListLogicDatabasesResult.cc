@@ -43,34 +43,34 @@ void ListLogicDatabasesResult::parse(const std::string &payload)
 	for (auto valueLogicDatabaseListLogicDatabase : allLogicDatabaseListNode)
 	{
 		LogicDatabase logicDatabaseListObject;
-		if(!valueLogicDatabaseListLogicDatabase["Logic"].isNull())
-			logicDatabaseListObject.logic = valueLogicDatabaseListLogicDatabase["Logic"].asString() == "true";
+		if(!valueLogicDatabaseListLogicDatabase["SearchName"].isNull())
+			logicDatabaseListObject.searchName = valueLogicDatabaseListLogicDatabase["SearchName"].asString();
 		if(!valueLogicDatabaseListLogicDatabase["DatabaseId"].isNull())
 			logicDatabaseListObject.databaseId = valueLogicDatabaseListLogicDatabase["DatabaseId"].asString();
+		if(!valueLogicDatabaseListLogicDatabase["Logic"].isNull())
+			logicDatabaseListObject.logic = valueLogicDatabaseListLogicDatabase["Logic"].asString() == "true";
 		if(!valueLogicDatabaseListLogicDatabase["EnvType"].isNull())
 			logicDatabaseListObject.envType = valueLogicDatabaseListLogicDatabase["EnvType"].asString();
 		if(!valueLogicDatabaseListLogicDatabase["SchemaName"].isNull())
 			logicDatabaseListObject.schemaName = valueLogicDatabaseListLogicDatabase["SchemaName"].asString();
-		if(!valueLogicDatabaseListLogicDatabase["SearchName"].isNull())
-			logicDatabaseListObject.searchName = valueLogicDatabaseListLogicDatabase["SearchName"].asString();
 		if(!valueLogicDatabaseListLogicDatabase["DbType"].isNull())
 			logicDatabaseListObject.dbType = valueLogicDatabaseListLogicDatabase["DbType"].asString();
-		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
-		for (auto value : allOwnerIdList)
-			logicDatabaseListObject.ownerIdList.push_back(value.asString());
 		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
 		for (auto value : allOwnerNameList)
 			logicDatabaseListObject.ownerNameList.push_back(value.asString());
+		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
+		for (auto value : allOwnerIdList)
+			logicDatabaseListObject.ownerIdList.push_back(value.asString());
 		logicDatabaseList_.push_back(logicDatabaseListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

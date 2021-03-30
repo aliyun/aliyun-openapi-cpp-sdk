@@ -37,17 +37,17 @@ namespace AlibabaCloud
 					struct WorkflowNode
 					{
 						std::string comment;
-						std::string nodeName;
 						int position;
+						std::string nodeName;
 						std::string nodeType;
 						long nodeId;
 						long createUserId;
 						long templateId;
 					};
 					std::string comment;
+					long createUserId;
 					std::string templateName;
 					std::string enabled;
-					long createUserId;
 					int isSystem;
 					std::vector<WorkFlowTemplate::WorkflowNode> workflowNodes;
 					long templateId;

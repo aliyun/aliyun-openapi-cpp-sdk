@@ -27,17 +27,6 @@ ExecuteDataExportRequest::ExecuteDataExportRequest() :
 ExecuteDataExportRequest::~ExecuteDataExportRequest()
 {}
 
-std::map<std::string, std::string> ExecuteDataExportRequest::getActionDetail()const
-{
-	return actionDetail_;
-}
-
-void ExecuteDataExportRequest::setActionDetail(const std::map<std::string, std::string>& actionDetail)
-{
-	actionDetail_ = actionDetail;
-	setJsonParameters("ActionDetail", actionDetail);
-}
-
 long ExecuteDataExportRequest::getOrderId()const
 {
 	return orderId_;
@@ -69,5 +58,16 @@ void ExecuteDataExportRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+std::map<std::string, std::string> ExecuteDataExportRequest::getActionDetail()const
+{
+	return actionDetail_;
+}
+
+void ExecuteDataExportRequest::setActionDetail(const std::map<std::string, std::string>& actionDetail)
+{
+	actionDetail_ = actionDetail;
+	setJsonParameters("ActionDetail", actionDetail);
 }
 

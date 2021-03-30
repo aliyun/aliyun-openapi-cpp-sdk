@@ -27,6 +27,17 @@ CreateOrderRequest::CreateOrderRequest() :
 CreateOrderRequest::~CreateOrderRequest()
 {}
 
+long CreateOrderRequest::getTid()const
+{
+	return tid_;
+}
+
+void CreateOrderRequest::setTid(long tid)
+{
+	tid_ = tid;
+	setParameter("Tid", std::to_string(tid));
+}
+
 std::string CreateOrderRequest::getPluginType()const
 {
 	return pluginType_;
@@ -38,6 +49,17 @@ void CreateOrderRequest::setPluginType(const std::string& pluginType)
 	setParameter("PluginType", pluginType);
 }
 
+std::string CreateOrderRequest::getAttachmentKey()const
+{
+	return attachmentKey_;
+}
+
+void CreateOrderRequest::setAttachmentKey(const std::string& attachmentKey)
+{
+	attachmentKey_ = attachmentKey;
+	setParameter("AttachmentKey", attachmentKey);
+}
+
 std::string CreateOrderRequest::getComment()const
 {
 	return comment_;
@@ -47,17 +69,6 @@ void CreateOrderRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
 	setParameter("Comment", comment);
-}
-
-long CreateOrderRequest::getTid()const
-{
-	return tid_;
-}
-
-void CreateOrderRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
 }
 
 std::map<std::string, std::string> CreateOrderRequest::getPluginParam()const

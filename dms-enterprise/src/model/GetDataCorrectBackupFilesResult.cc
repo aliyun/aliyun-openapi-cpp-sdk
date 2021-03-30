@@ -42,12 +42,12 @@ void GetDataCorrectBackupFilesResult::parse(const std::string &payload)
 	auto allDataCorrectBackupFiles = value["DataCorrectBackupFiles"]["FileUrl"];
 	for (const auto &item : allDataCorrectBackupFiles)
 		dataCorrectBackupFiles_.push_back(item.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

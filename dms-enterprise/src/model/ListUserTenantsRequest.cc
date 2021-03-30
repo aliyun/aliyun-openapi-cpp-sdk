@@ -27,3 +27,14 @@ ListUserTenantsRequest::ListUserTenantsRequest() :
 ListUserTenantsRequest::~ListUserTenantsRequest()
 {}
 
+long ListUserTenantsRequest::getTid()const
+{
+	return tid_;
+}
+
+void ListUserTenantsRequest::setTid(long tid)
+{
+	tid_ = tid;
+	setParameter("Tid", std::to_string(tid));
+}
+

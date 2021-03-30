@@ -54,6 +54,8 @@ void GetStructSyncJobDetailResult::parse(const std::string &payload)
 		structSyncJobDetail_.executeCount = std::stol(structSyncJobDetailNode["ExecuteCount"].asString());
 	if(!structSyncJobDetailNode["SecurityRule"].isNull())
 		structSyncJobDetail_.securityRule = structSyncJobDetailNode["SecurityRule"].asString();
+	if(!structSyncJobDetailNode["DBTaskGroupId"].isNull())
+		structSyncJobDetail_.dBTaskGroupId = std::stol(structSyncJobDetailNode["DBTaskGroupId"].asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())

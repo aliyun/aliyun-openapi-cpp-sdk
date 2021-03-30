@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getModule()const;
 				void setModule(const std::string& module);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
@@ -47,14 +45,16 @@ namespace AlibabaCloud
 				void setTid(long tid);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
 				std::string module_;
-				int pageSize_;
 				std::string endTime_;
 				std::string startTime_;
 				long tid_;
 				int pageNumber_;
+				int pageSize_;
 
 			};
 		}

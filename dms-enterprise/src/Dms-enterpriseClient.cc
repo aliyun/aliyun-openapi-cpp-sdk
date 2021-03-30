@@ -31,21 +31,21 @@ Dms_enterpriseClient::Dms_enterpriseClient(const Credentials &credentials, const
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dmsenterprise");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 Dms_enterpriseClient::Dms_enterpriseClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dmsenterprise");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 Dms_enterpriseClient::Dms_enterpriseClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dmsenterprise");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 Dms_enterpriseClient::~Dms_enterpriseClient()
@@ -117,6 +117,150 @@ Dms_enterpriseClient::CloseOrderOutcomeCallable Dms_enterpriseClient::closeOrder
 			[this, request]()
 			{
 			return this->closeOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateDataCorrectOrderOutcome Dms_enterpriseClient::createDataCorrectOrder(const CreateDataCorrectOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataCorrectOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataCorrectOrderOutcome(CreateDataCorrectOrderResult(outcome.result()));
+	else
+		return CreateDataCorrectOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createDataCorrectOrderAsync(const CreateDataCorrectOrderRequest& request, const CreateDataCorrectOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataCorrectOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateDataCorrectOrderOutcomeCallable Dms_enterpriseClient::createDataCorrectOrderCallable(const CreateDataCorrectOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataCorrectOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataCorrectOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateDataCronClearOrderOutcome Dms_enterpriseClient::createDataCronClearOrder(const CreateDataCronClearOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataCronClearOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataCronClearOrderOutcome(CreateDataCronClearOrderResult(outcome.result()));
+	else
+		return CreateDataCronClearOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createDataCronClearOrderAsync(const CreateDataCronClearOrderRequest& request, const CreateDataCronClearOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataCronClearOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateDataCronClearOrderOutcomeCallable Dms_enterpriseClient::createDataCronClearOrderCallable(const CreateDataCronClearOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataCronClearOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataCronClearOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateDataImportOrderOutcome Dms_enterpriseClient::createDataImportOrder(const CreateDataImportOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataImportOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataImportOrderOutcome(CreateDataImportOrderResult(outcome.result()));
+	else
+		return CreateDataImportOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createDataImportOrderAsync(const CreateDataImportOrderRequest& request, const CreateDataImportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataImportOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateDataImportOrderOutcomeCallable Dms_enterpriseClient::createDataImportOrderCallable(const CreateDataImportOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataImportOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataImportOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateFreeLockCorrectOrderOutcome Dms_enterpriseClient::createFreeLockCorrectOrder(const CreateFreeLockCorrectOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFreeLockCorrectOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFreeLockCorrectOrderOutcome(CreateFreeLockCorrectOrderResult(outcome.result()));
+	else
+		return CreateFreeLockCorrectOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createFreeLockCorrectOrderAsync(const CreateFreeLockCorrectOrderRequest& request, const CreateFreeLockCorrectOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFreeLockCorrectOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateFreeLockCorrectOrderOutcomeCallable Dms_enterpriseClient::createFreeLockCorrectOrderCallable(const CreateFreeLockCorrectOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFreeLockCorrectOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createFreeLockCorrectOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +873,78 @@ Dms_enterpriseClient::GetDataCorrectSQLFileOutcomeCallable Dms_enterpriseClient:
 			[this, request]()
 			{
 			return this->getDataCorrectSQLFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataCorrectTaskDetailOutcome Dms_enterpriseClient::getDataCorrectTaskDetail(const GetDataCorrectTaskDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataCorrectTaskDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataCorrectTaskDetailOutcome(GetDataCorrectTaskDetailResult(outcome.result()));
+	else
+		return GetDataCorrectTaskDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataCorrectTaskDetailAsync(const GetDataCorrectTaskDetailRequest& request, const GetDataCorrectTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataCorrectTaskDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataCorrectTaskDetailOutcomeCallable Dms_enterpriseClient::getDataCorrectTaskDetailCallable(const GetDataCorrectTaskDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataCorrectTaskDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataCorrectTaskDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataCronClearTaskDetailListOutcome Dms_enterpriseClient::getDataCronClearTaskDetailList(const GetDataCronClearTaskDetailListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataCronClearTaskDetailListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataCronClearTaskDetailListOutcome(GetDataCronClearTaskDetailListResult(outcome.result()));
+	else
+		return GetDataCronClearTaskDetailListOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataCronClearTaskDetailListAsync(const GetDataCronClearTaskDetailListRequest& request, const GetDataCronClearTaskDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataCronClearTaskDetailList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataCronClearTaskDetailListOutcomeCallable Dms_enterpriseClient::getDataCronClearTaskDetailListCallable(const GetDataCronClearTaskDetailListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataCronClearTaskDetailListOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataCronClearTaskDetailList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1593,6 +1809,42 @@ Dms_enterpriseClient::ListDBTaskSQLJobDetailOutcomeCallable Dms_enterpriseClient
 			[this, request]()
 			{
 			return this->listDBTaskSQLJobDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListDDLPublishRecordsOutcome Dms_enterpriseClient::listDDLPublishRecords(const ListDDLPublishRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDDLPublishRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDDLPublishRecordsOutcome(ListDDLPublishRecordsResult(outcome.result()));
+	else
+		return ListDDLPublishRecordsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDDLPublishRecordsAsync(const ListDDLPublishRecordsRequest& request, const ListDDLPublishRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDDLPublishRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDDLPublishRecordsOutcomeCallable Dms_enterpriseClient::listDDLPublishRecordsCallable(const ListDDLPublishRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDDLPublishRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDDLPublishRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
