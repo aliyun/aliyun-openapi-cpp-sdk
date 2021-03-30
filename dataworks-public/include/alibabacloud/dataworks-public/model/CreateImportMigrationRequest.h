@@ -43,14 +43,14 @@ namespace AlibabaCloud
 				void setWorkspaceMap(const std::string& workspaceMap);
 				std::string getCalculateEngineMap()const;
 				void setCalculateEngineMap(const std::string& calculateEngineMap);
+				std::string getPackageFile()const;
+				void setPackageFile(const std::string& packageFile);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getPackageType()const;
 				void setPackageType(const std::string& packageType);
 				long getProjectId()const;
 				void setProjectId(long projectId);
-				std::string getPackageOssDownloadLink()const;
-				void setPackageOssDownloadLink(const std::string& packageOssDownloadLink);
 				std::string getResourceGroupMap()const;
 				void setResourceGroupMap(const std::string& resourceGroupMap);
 
@@ -59,10 +59,10 @@ namespace AlibabaCloud
 				std::string commitRule_;
 				std::string workspaceMap_;
 				std::string calculateEngineMap_;
+				std::string packageFile_;
 				std::string name_;
 				std::string packageType_;
 				long projectId_;
-				std::string packageOssDownloadLink_;
 				std::string resourceGroupMap_;
 
 			};

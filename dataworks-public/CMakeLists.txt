@@ -337,6 +337,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/UpdateRemindResult.h
 	include/alibabacloud/dataworks-public/model/UpdateTableRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateTableResult.h
+	include/alibabacloud/dataworks-public/model/UpdateTableAddColumnRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateTableAddColumnResult.h
 	include/alibabacloud/dataworks-public/model/UpdateTableLevelRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateTableLevelResult.h
 	include/alibabacloud/dataworks-public/model/UpdateTableModelInfoRequest.h
@@ -664,6 +666,8 @@ set(dataworks-public_src
 	src/model/UpdateRemindResult.cc
 	src/model/UpdateTableRequest.cc
 	src/model/UpdateTableResult.cc
+	src/model/UpdateTableAddColumnRequest.cc
+	src/model/UpdateTableAddColumnResult.cc
 	src/model/UpdateTableLevelRequest.cc
 	src/model/UpdateTableLevelResult.cc
 	src/model/UpdateTableModelInfoRequest.cc

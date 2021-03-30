@@ -338,6 +338,8 @@
 #include "model/UpdateRemindResult.h"
 #include "model/UpdateTableRequest.h"
 #include "model/UpdateTableResult.h"
+#include "model/UpdateTableAddColumnRequest.h"
+#include "model/UpdateTableAddColumnResult.h"
 #include "model/UpdateTableLevelRequest.h"
 #include "model/UpdateTableLevelResult.h"
 #include "model/UpdateTableModelInfoRequest.h"
@@ -829,6 +831,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateTableResult> UpdateTableOutcome;
 			typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateTableRequest&, const UpdateTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTableAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTableAddColumnResult> UpdateTableAddColumnOutcome;
+			typedef std::future<UpdateTableAddColumnOutcome> UpdateTableAddColumnOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateTableAddColumnRequest&, const UpdateTableAddColumnOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTableAddColumnAsyncHandler;
 			typedef Outcome<Error, Model::UpdateTableLevelResult> UpdateTableLevelOutcome;
 			typedef std::future<UpdateTableLevelOutcome> UpdateTableLevelOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateTableLevelRequest&, const UpdateTableLevelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTableLevelAsyncHandler;
@@ -1320,6 +1325,9 @@ namespace AlibabaCloud
 			UpdateTableOutcome updateTable(const Model::UpdateTableRequest &request)const;
 			void updateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateTableOutcomeCallable updateTableCallable(const Model::UpdateTableRequest& request) const;
+			UpdateTableAddColumnOutcome updateTableAddColumn(const Model::UpdateTableAddColumnRequest &request)const;
+			void updateTableAddColumnAsync(const Model::UpdateTableAddColumnRequest& request, const UpdateTableAddColumnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTableAddColumnOutcomeCallable updateTableAddColumnCallable(const Model::UpdateTableAddColumnRequest& request) const;
 			UpdateTableLevelOutcome updateTableLevel(const Model::UpdateTableLevelRequest &request)const;
 			void updateTableLevelAsync(const Model::UpdateTableLevelRequest& request, const UpdateTableLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateTableLevelOutcomeCallable updateTableLevelCallable(const Model::UpdateTableLevelRequest& request) const;

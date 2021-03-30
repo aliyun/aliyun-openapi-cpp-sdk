@@ -27,28 +27,6 @@ UpdateTableRequest::UpdateTableRequest() :
 UpdateTableRequest::~UpdateTableRequest()
 {}
 
-int UpdateTableRequest::getVisibility()const
-{
-	return visibility_;
-}
-
-void UpdateTableRequest::setVisibility(int visibility)
-{
-	visibility_ = visibility;
-	setParameter("Visibility", std::to_string(visibility));
-}
-
-long UpdateTableRequest::getPhysicsLevelId()const
-{
-	return physicsLevelId_;
-}
-
-void UpdateTableRequest::setPhysicsLevelId(long physicsLevelId)
-{
-	physicsLevelId_ = physicsLevelId;
-	setParameter("PhysicsLevelId", std::to_string(physicsLevelId));
-}
-
 std::vector<UpdateTableRequest::Columns> UpdateTableRequest::getColumns()const
 {
 	return columns_;
@@ -68,17 +46,6 @@ void UpdateTableRequest::setColumns(const std::vector<Columns>& columns)
 		setParameter(columnsObjStr + ".ColumnName", columnsObj.columnName);
 		setParameter(columnsObjStr + ".ColumnType", columnsObj.columnType);
 	}
-}
-
-std::string UpdateTableRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateTableRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
 }
 
 int UpdateTableRequest::getLifeCycle()const
@@ -130,28 +97,6 @@ void UpdateTableRequest::setEndpoint(const std::string& endpoint)
 	setBodyParameter("Endpoint", endpoint);
 }
 
-int UpdateTableRequest::getIsView()const
-{
-	return isView_;
-}
-
-void UpdateTableRequest::setIsView(int isView)
-{
-	isView_ = isView;
-	setParameter("IsView", std::to_string(isView));
-}
-
-std::string UpdateTableRequest::getExternalTableType()const
-{
-	return externalTableType_;
-}
-
-void UpdateTableRequest::setExternalTableType(const std::string& externalTableType)
-{
-	externalTableType_ = externalTableType;
-	setParameter("ExternalTableType", externalTableType);
-}
-
 int UpdateTableRequest::getEnvType()const
 {
 	return envType_;
@@ -161,17 +106,6 @@ void UpdateTableRequest::setEnvType(int envType)
 {
 	envType_ = envType;
 	setBodyParameter("EnvType", std::to_string(envType));
-}
-
-std::string UpdateTableRequest::getLocation()const
-{
-	return location_;
-}
-
-void UpdateTableRequest::setLocation(const std::string& location)
-{
-	location_ = location;
-	setParameter("Location", location);
 }
 
 int UpdateTableRequest::getHasPart()const
@@ -227,6 +161,83 @@ void UpdateTableRequest::setCategoryId(long categoryId)
 {
 	categoryId_ = categoryId;
 	setParameter("CategoryId", std::to_string(categoryId));
+}
+
+int UpdateTableRequest::getVisibility()const
+{
+	return visibility_;
+}
+
+void UpdateTableRequest::setVisibility(int visibility)
+{
+	visibility_ = visibility;
+	setParameter("Visibility", std::to_string(visibility));
+}
+
+long UpdateTableRequest::getPhysicsLevelId()const
+{
+	return physicsLevelId_;
+}
+
+void UpdateTableRequest::setPhysicsLevelId(long physicsLevelId)
+{
+	physicsLevelId_ = physicsLevelId;
+	setParameter("PhysicsLevelId", std::to_string(physicsLevelId));
+}
+
+std::string UpdateTableRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void UpdateTableRequest::setOwnerId(const std::string& ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", ownerId);
+}
+
+int UpdateTableRequest::getIsView()const
+{
+	return isView_;
+}
+
+void UpdateTableRequest::setIsView(int isView)
+{
+	isView_ = isView;
+	setParameter("IsView", std::to_string(isView));
+}
+
+std::string UpdateTableRequest::getExternalTableType()const
+{
+	return externalTableType_;
+}
+
+void UpdateTableRequest::setExternalTableType(const std::string& externalTableType)
+{
+	externalTableType_ = externalTableType;
+	setParameter("ExternalTableType", externalTableType);
+}
+
+std::string UpdateTableRequest::getLocation()const
+{
+	return location_;
+}
+
+void UpdateTableRequest::setLocation(const std::string& location)
+{
+	location_ = location;
+	setParameter("Location", location);
+}
+
+std::string UpdateTableRequest::getComment()const
+{
+	return comment_;
+}
+
+void UpdateTableRequest::setComment(const std::string& comment)
+{
+	comment_ = comment;
+	setParameter("Comment", comment);
 }
 
 bool UpdateTableRequest::getCreateIfNotExists()const

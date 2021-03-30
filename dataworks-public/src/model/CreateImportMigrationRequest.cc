@@ -71,6 +71,17 @@ void CreateImportMigrationRequest::setCalculateEngineMap(const std::string& calc
 	setBodyParameter("CalculateEngineMap", calculateEngineMap);
 }
 
+std::string CreateImportMigrationRequest::getPackageFile()const
+{
+	return packageFile_;
+}
+
+void CreateImportMigrationRequest::setPackageFile(const std::string& packageFile)
+{
+	packageFile_ = packageFile;
+	setBodyParameter("PackageFile", packageFile);
+}
+
 std::string CreateImportMigrationRequest::getName()const
 {
 	return name_;
@@ -102,17 +113,6 @@ void CreateImportMigrationRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
 	setBodyParameter("ProjectId", std::to_string(projectId));
-}
-
-std::string CreateImportMigrationRequest::getPackageOssDownloadLink()const
-{
-	return packageOssDownloadLink_;
-}
-
-void CreateImportMigrationRequest::setPackageOssDownloadLink(const std::string& packageOssDownloadLink)
-{
-	packageOssDownloadLink_ = packageOssDownloadLink;
-	setBodyParameter("PackageOssDownloadLink", packageOssDownloadLink);
 }
 
 std::string CreateImportMigrationRequest::getResourceGroupMap()const
