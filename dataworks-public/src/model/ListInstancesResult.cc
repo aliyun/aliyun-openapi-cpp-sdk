@@ -100,6 +100,8 @@ void ListInstancesResult::parse(const std::string &payload)
 			instanceObject.relatedFlowId = std::stol(dataNodeInstancesInstance["RelatedFlowId"].asString());
 		if(!dataNodeInstancesInstance["TaskType"].isNull())
 			instanceObject.taskType = dataNodeInstancesInstance["TaskType"].asString();
+		if(!dataNodeInstancesInstance["TaskRerunTime"].isNull())
+			instanceObject.taskRerunTime = std::stoi(dataNodeInstancesInstance["TaskRerunTime"].asString());
 		data_.instances.push_back(instanceObject);
 	}
 	if(!value["Success"].isNull())
