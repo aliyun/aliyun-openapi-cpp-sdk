@@ -39,19 +39,26 @@ void DowngradeInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["InstanceId"].isNull())
-		result_.instanceId = resultNode["InstanceId"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["instanceId"].isNull())
+		result_.instanceId = resultNode["instanceId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 
 std::string DowngradeInstanceResult::getMessage()const
 {
 	return message_;
+}
+
+std::string DowngradeInstanceResult::getRequestId()const
+{
+	return requestId_;
 }
 
 std::string DowngradeInstanceResult::getCode()const

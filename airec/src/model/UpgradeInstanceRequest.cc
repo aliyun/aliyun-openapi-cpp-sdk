@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::UpgradeInstanceRequest;
 
 UpgradeInstanceRequest::UpgradeInstanceRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/actions/upgrade");
+	setResourcePath("/v2/openapi/instances/[instanceId]/actions/upgrade");
 	setMethod(HttpRequest::Method::Post);
 }
 

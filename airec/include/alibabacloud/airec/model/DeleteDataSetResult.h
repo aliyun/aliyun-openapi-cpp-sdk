@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				explicit DeleteDataSetResult(const std::string &payload);
 				~DeleteDataSetResult();
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
 				Result getResult()const;
 
@@ -53,6 +54,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string requestId_;
 				std::string code_;
 				Result result_;
 

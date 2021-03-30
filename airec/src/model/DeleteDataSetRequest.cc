@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::DeleteDataSetRequest;
 
 DeleteDataSetRequest::DeleteDataSetRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/dataSets/[VersionId]");
+	setResourcePath("/v2/openapi/instances/[instanceId]/dataSets/[versionId]");
 	setMethod(HttpRequest::Method::Delete);
 }
 

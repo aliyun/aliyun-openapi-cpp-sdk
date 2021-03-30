@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::ListScenesRequest;
 
 ListScenesRequest::ListScenesRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/scenes");
+	setResourcePath("/v2/openapi/instances/[instanceId]/scenes");
 	setMethod(HttpRequest::Method::Get);
 }
 
@@ -37,5 +37,49 @@ void ListScenesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+int ListScenesRequest::getSize()const
+{
+	return size_;
+}
+
+void ListScenesRequest::setSize(int size)
+{
+	size_ = size;
+	setParameter("Size", std::to_string(size));
+}
+
+std::string ListScenesRequest::getSceneId()const
+{
+	return sceneId_;
+}
+
+void ListScenesRequest::setSceneId(const std::string& sceneId)
+{
+	sceneId_ = sceneId;
+	setParameter("SceneId", sceneId);
+}
+
+int ListScenesRequest::getPage()const
+{
+	return page_;
+}
+
+void ListScenesRequest::setPage(int page)
+{
+	page_ = page;
+	setParameter("Page", std::to_string(page));
+}
+
+std::string ListScenesRequest::getStatus()const
+{
+	return status_;
+}
+
+void ListScenesRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
 }
 

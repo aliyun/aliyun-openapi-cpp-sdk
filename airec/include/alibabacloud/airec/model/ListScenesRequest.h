@@ -37,9 +37,21 @@ namespace AlibabaCloud
 
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				int getSize()const;
+				void setSize(int size);
+				std::string getSceneId()const;
+				void setSceneId(const std::string& sceneId);
+				int getPage()const;
+				void setPage(int page);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				std::string instanceId_;
+				int size_;
+				std::string sceneId_;
+				int page_;
+				std::string status_;
 
 			};
 		}

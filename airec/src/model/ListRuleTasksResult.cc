@@ -39,12 +39,33 @@ void ListRuleTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["FinishRate"].isNull())
-		result_.finishRate = std::stoi(resultNode["FinishRate"].asString());
-	if(!resultNode["FinishTime"].isNull())
-		result_.finishTime = std::stoi(resultNode["FinishTime"].asString());
+	auto resultNode = value["result"];
+	if(!resultNode["finishRate"].isNull())
+		result_.finishRate = std::stoi(resultNode["finishRate"].asString());
+	if(!resultNode["finishTime"].isNull())
+		result_.finishTime = std::stoi(resultNode["finishTime"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
+}
+
+std::string ListRuleTasksResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListRuleTasksResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListRuleTasksResult::getCode()const
+{
+	return code_;
 }
 
 ListRuleTasksResult::Result ListRuleTasksResult::getResult()const

@@ -38,32 +38,33 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string gmtModified;
 					std::string lockMode;
-					std::string scene;
 					std::string name;
 					std::string industry;
-					std::string type;
 					std::string gmtCreate;
+					std::string type;
 					std::string chargeType;
 					std::string expiredTime;
 					std::string commodityCode;
-					std::string regionId;
 					std::string dataSetVersion;
+					std::string regionId;
 				};
 
 
 				ListInstanceResult();
 				explicit ListInstanceResult(const std::string &payload);
 				~ListInstanceResult();
+				std::vector<ResultItem> getresult()const;
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
-				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::string code_;
 				std::vector<ResultItem> result_;
+				std::string message_;
+				std::string requestId_;
+				std::string code_;
 
 			};
 		}

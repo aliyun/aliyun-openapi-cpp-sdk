@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::DescribeSceneThroughputRequest;
 
 DescribeSceneThroughputRequest::DescribeSceneThroughputRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/scenes/[SceneId]/throughput");
+	setResourcePath("/v2/openapi/instances/[instanceId]/scenes/[sceneId]/throughput");
 	setMethod(HttpRequest::Method::Get);
 }
 

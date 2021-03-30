@@ -39,16 +39,37 @@ void ModifySceneResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["SceneId"].isNull())
-		result_.sceneId = resultNode["SceneId"].asString();
-	if(!resultNode["GmtCreate"].isNull())
-		result_.gmtCreate = resultNode["GmtCreate"].asString();
-	if(!resultNode["GmtModified"].isNull())
-		result_.gmtModified = resultNode["GmtModified"].asString();
-	if(!resultNode["Status"].isNull())
-		result_.status = resultNode["Status"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["gmtCreate"].isNull())
+		result_.gmtCreate = resultNode["gmtCreate"].asString();
+	if(!resultNode["gmtModified"].isNull())
+		result_.gmtModified = resultNode["gmtModified"].asString();
+	if(!resultNode["sceneId"].isNull())
+		result_.sceneId = resultNode["sceneId"].asString();
+	if(!resultNode["status"].isNull())
+		result_.status = resultNode["status"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
+}
+
+std::string ModifySceneResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ModifySceneResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ModifySceneResult::getCode()const
+{
+	return code_;
 }
 
 ModifySceneResult::Result ModifySceneResult::getResult()const

@@ -39,10 +39,31 @@ void DescribeSceneThroughputResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["PvCount"].isNull())
-		result_.pvCount = std::stol(resultNode["PvCount"].asString());
+	auto resultNode = value["result"];
+	if(!resultNode["pvCount"].isNull())
+		result_.pvCount = std::stol(resultNode["pvCount"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
+}
+
+std::string DescribeSceneThroughputResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string DescribeSceneThroughputResult::getMessage()const
+{
+	return message_;
+}
+
+std::string DescribeSceneThroughputResult::getCode()const
+{
+	return code_;
 }
 
 DescribeSceneThroughputResult::Result DescribeSceneThroughputResult::getResult()const

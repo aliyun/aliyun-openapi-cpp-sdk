@@ -39,10 +39,31 @@ void DeleteSceneResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["SceneId"].isNull())
-		result_.sceneId = resultNode["SceneId"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["sceneId"].isNull())
+		result_.sceneId = resultNode["sceneId"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
+}
+
+std::string DeleteSceneResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string DeleteSceneResult::getMessage()const
+{
+	return message_;
+}
+
+std::string DeleteSceneResult::getCode()const
+{
+	return code_;
 }
 
 DeleteSceneResult::Result DeleteSceneResult::getResult()const

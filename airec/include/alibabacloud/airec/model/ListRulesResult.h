@@ -35,21 +35,27 @@ namespace AlibabaCloud
 				struct ResultItem
 				{
 					std::string status;
-					long gmtCreate;
+					std::string gmtCreate;
 					std::string ruleId;
-					long gmtModified;
+					std::string gmtModified;
 				};
 
 
 				ListRulesResult();
 				explicit ListRulesResult(const std::string &payload);
 				~ListRulesResult();
-				std::vector<ResultItem> getResult()const;
+				std::vector<ResultItem> getresult()const;
+				std::string getRequestId()const;
+				std::string getMessage()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<ResultItem> result_;
+				std::string requestId_;
+				std::string message_;
+				std::string code_;
 
 			};
 		}

@@ -39,45 +39,50 @@ void ListInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["ResultItem"];
+	for (auto valueresultResultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["InstanceId"].isNull())
-			resultObject.instanceId = valueResultResultItem["InstanceId"].asString();
-		if(!valueResultResultItem["ChargeType"].isNull())
-			resultObject.chargeType = valueResultResultItem["ChargeType"].asString();
-		if(!valueResultResultItem["RegionId"].isNull())
-			resultObject.regionId = valueResultResultItem["RegionId"].asString();
-		if(!valueResultResultItem["Name"].isNull())
-			resultObject.name = valueResultResultItem["Name"].asString();
-		if(!valueResultResultItem["Type"].isNull())
-			resultObject.type = valueResultResultItem["Type"].asString();
-		if(!valueResultResultItem["ExpiredTime"].isNull())
-			resultObject.expiredTime = valueResultResultItem["ExpiredTime"].asString();
-		if(!valueResultResultItem["GmtCreate"].isNull())
-			resultObject.gmtCreate = valueResultResultItem["GmtCreate"].asString();
-		if(!valueResultResultItem["GmtModified"].isNull())
-			resultObject.gmtModified = valueResultResultItem["GmtModified"].asString();
-		if(!valueResultResultItem["Status"].isNull())
-			resultObject.status = valueResultResultItem["Status"].asString();
-		if(!valueResultResultItem["Industry"].isNull())
-			resultObject.industry = valueResultResultItem["Industry"].asString();
-		if(!valueResultResultItem["Scene"].isNull())
-			resultObject.scene = valueResultResultItem["Scene"].asString();
-		if(!valueResultResultItem["DataSetVersion"].isNull())
-			resultObject.dataSetVersion = valueResultResultItem["DataSetVersion"].asString();
-		if(!valueResultResultItem["CommodityCode"].isNull())
-			resultObject.commodityCode = valueResultResultItem["CommodityCode"].asString();
-		if(!valueResultResultItem["LockMode"].isNull())
-			resultObject.lockMode = valueResultResultItem["LockMode"].asString();
+		if(!valueresultResultItem["chargeType"].isNull())
+			resultObject.chargeType = valueresultResultItem["chargeType"].asString();
+		if(!valueresultResultItem["commodityCode"].isNull())
+			resultObject.commodityCode = valueresultResultItem["commodityCode"].asString();
+		if(!valueresultResultItem["dataSetVersion"].isNull())
+			resultObject.dataSetVersion = valueresultResultItem["dataSetVersion"].asString();
+		if(!valueresultResultItem["expiredTime"].isNull())
+			resultObject.expiredTime = valueresultResultItem["expiredTime"].asString();
+		if(!valueresultResultItem["gmtCreate"].isNull())
+			resultObject.gmtCreate = valueresultResultItem["gmtCreate"].asString();
+		if(!valueresultResultItem["gmtModified"].isNull())
+			resultObject.gmtModified = valueresultResultItem["gmtModified"].asString();
+		if(!valueresultResultItem["industry"].isNull())
+			resultObject.industry = valueresultResultItem["industry"].asString();
+		if(!valueresultResultItem["instanceId"].isNull())
+			resultObject.instanceId = valueresultResultItem["instanceId"].asString();
+		if(!valueresultResultItem["lockMode"].isNull())
+			resultObject.lockMode = valueresultResultItem["lockMode"].asString();
+		if(!valueresultResultItem["name"].isNull())
+			resultObject.name = valueresultResultItem["name"].asString();
+		if(!valueresultResultItem["regionId"].isNull())
+			resultObject.regionId = valueresultResultItem["regionId"].asString();
+		if(!valueresultResultItem["status"].isNull())
+			resultObject.status = valueresultResultItem["status"].asString();
+		if(!valueresultResultItem["type"].isNull())
+			resultObject.type = valueresultResultItem["type"].asString();
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
+}
+
+std::vector<ListInstanceResult::ResultItem> ListInstanceResult::getresult()const
+{
+	return result_;
 }
 
 std::string ListInstanceResult::getMessage()const
@@ -85,13 +90,13 @@ std::string ListInstanceResult::getMessage()const
 	return message_;
 }
 
+std::string ListInstanceResult::getRequestId()const
+{
+	return requestId_;
+}
+
 std::string ListInstanceResult::getCode()const
 {
 	return code_;
-}
-
-std::vector<ListInstanceResult::ResultItem> ListInstanceResult::getResult()const
-{
-	return result_;
 }
 

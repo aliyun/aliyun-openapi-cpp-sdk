@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::QuerySingleAggregationReportRequest;
 
 QuerySingleAggregationReportRequest::QuerySingleAggregationReportRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/sync-reports/single-aggregation-report");
+	setResourcePath("/v2/openapi/instances/[instanceId]/sync-reports/single-aggregation-report");
 	setMethod(HttpRequest::Method::Get);
 }
 

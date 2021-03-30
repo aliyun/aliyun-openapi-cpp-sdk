@@ -42,12 +42,18 @@ namespace AlibabaCloud
 				ListDashboardMetricsFlowsResult();
 				explicit ListDashboardMetricsFlowsResult(const std::string &payload);
 				~ListDashboardMetricsFlowsResult();
-				std::vector<ResultItem> getResult()const;
+				std::vector<ResultItem> getresult()const;
+				std::string getRequestId()const;
+				std::string getMessage()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<ResultItem> result_;
+				std::string requestId_;
+				std::string message_;
+				std::string code_;
 
 			};
 		}

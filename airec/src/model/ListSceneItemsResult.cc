@@ -39,49 +39,70 @@ void ListSceneItemsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	auto allDetailNode = resultNode["Detail"]["DetailItem"];
-	for (auto resultNodeDetailDetailItem : allDetailNode)
+	auto resultNode = value["result"];
+	auto alldetailNode = resultNode["detail"]["DetailItem"];
+	for (auto resultNodedetailDetailItem : alldetailNode)
 	{
 		Result::DetailItem detailItemObject;
-		if(!resultNodeDetailDetailItem["ItemId"].isNull())
-			detailItemObject.itemId = resultNodeDetailDetailItem["ItemId"].asString();
-		if(!resultNodeDetailDetailItem["ItemType"].isNull())
-			detailItemObject.itemType = resultNodeDetailDetailItem["ItemType"].asString();
-		if(!resultNodeDetailDetailItem["ExpireTime"].isNull())
-			detailItemObject.expireTime = resultNodeDetailDetailItem["ExpireTime"].asString();
-		if(!resultNodeDetailDetailItem["CategoryPath"].isNull())
-			detailItemObject.categoryPath = resultNodeDetailDetailItem["CategoryPath"].asString();
-		if(!resultNodeDetailDetailItem["PubTime"].isNull())
-			detailItemObject.pubTime = resultNodeDetailDetailItem["PubTime"].asString();
-		if(!resultNodeDetailDetailItem["BrandId"].isNull())
-			detailItemObject.brandId = resultNodeDetailDetailItem["BrandId"].asString();
-		if(!resultNodeDetailDetailItem["ShopId"].isNull())
-			detailItemObject.shopId = resultNodeDetailDetailItem["ShopId"].asString();
-		if(!resultNodeDetailDetailItem["Title"].isNull())
-			detailItemObject.title = resultNodeDetailDetailItem["Title"].asString();
-		if(!resultNodeDetailDetailItem["Status"].isNull())
-			detailItemObject.status = resultNodeDetailDetailItem["Status"].asString();
-		if(!resultNodeDetailDetailItem["Duration"].isNull())
-			detailItemObject.duration = resultNodeDetailDetailItem["Duration"].asString();
-		if(!resultNodeDetailDetailItem["Author"].isNull())
-			detailItemObject.author = resultNodeDetailDetailItem["Author"].asString();
-		if(!resultNodeDetailDetailItem["Channel"].isNull())
-			detailItemObject.channel = resultNodeDetailDetailItem["Channel"].asString();
+		if(!resultNodedetailDetailItem["author"].isNull())
+			detailItemObject.author = resultNodedetailDetailItem["author"].asString();
+		if(!resultNodedetailDetailItem["brandId"].isNull())
+			detailItemObject.brandId = resultNodedetailDetailItem["brandId"].asString();
+		if(!resultNodedetailDetailItem["categoryPath"].isNull())
+			detailItemObject.categoryPath = resultNodedetailDetailItem["categoryPath"].asString();
+		if(!resultNodedetailDetailItem["channel"].isNull())
+			detailItemObject.channel = resultNodedetailDetailItem["channel"].asString();
+		if(!resultNodedetailDetailItem["duration"].isNull())
+			detailItemObject.duration = resultNodedetailDetailItem["duration"].asString();
+		if(!resultNodedetailDetailItem["expireTime"].isNull())
+			detailItemObject.expireTime = resultNodedetailDetailItem["expireTime"].asString();
+		if(!resultNodedetailDetailItem["itemId"].isNull())
+			detailItemObject.itemId = resultNodedetailDetailItem["itemId"].asString();
+		if(!resultNodedetailDetailItem["itemType"].isNull())
+			detailItemObject.itemType = resultNodedetailDetailItem["itemType"].asString();
+		if(!resultNodedetailDetailItem["pubTime"].isNull())
+			detailItemObject.pubTime = resultNodedetailDetailItem["pubTime"].asString();
+		if(!resultNodedetailDetailItem["shopId"].isNull())
+			detailItemObject.shopId = resultNodedetailDetailItem["shopId"].asString();
+		if(!resultNodedetailDetailItem["status"].isNull())
+			detailItemObject.status = resultNodedetailDetailItem["status"].asString();
+		if(!resultNodedetailDetailItem["title"].isNull())
+			detailItemObject.title = resultNodedetailDetailItem["title"].asString();
 		result_.detail.push_back(detailItemObject);
 	}
-	auto totalNode = resultNode["Total"];
-	if(!totalNode["InstanceRecommendItem"].isNull())
-		result_.total.instanceRecommendItem = std::stol(totalNode["InstanceRecommendItem"].asString());
-	if(!totalNode["SceneRecommendItem"].isNull())
-		result_.total.sceneRecommendItem = std::stol(totalNode["SceneRecommendItem"].asString());
-	if(!totalNode["WeightItem"].isNull())
-		result_.total.weightItem = std::stol(totalNode["WeightItem"].asString());
-	if(!totalNode["SceneWeightItem"].isNull())
-		result_.total.sceneWeightItem = std::stol(totalNode["SceneWeightItem"].asString());
-	if(!totalNode["TotalCount"].isNull())
-		result_.total.totalCount = std::stol(totalNode["TotalCount"].asString());
+	auto totalNode = resultNode["total"];
+	if(!totalNode["instanceRecommendItem"].isNull())
+		result_.total.instanceRecommendItem = std::stol(totalNode["instanceRecommendItem"].asString());
+	if(!totalNode["sceneRecommendItem"].isNull())
+		result_.total.sceneRecommendItem = std::stol(totalNode["sceneRecommendItem"].asString());
+	if(!totalNode["sceneWeightItem"].isNull())
+		result_.total.sceneWeightItem = std::stol(totalNode["sceneWeightItem"].asString());
+	if(!totalNode["totalCount"].isNull())
+		result_.total.totalCount = std::stol(totalNode["totalCount"].asString());
+	if(!totalNode["weightItem"].isNull())
+		result_.total.weightItem = std::stol(totalNode["weightItem"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
+}
+
+std::string ListSceneItemsResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListSceneItemsResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListSceneItemsResult::getCode()const
+{
+	return code_;
 }
 
 ListSceneItemsResult::Result ListSceneItemsResult::getResult()const

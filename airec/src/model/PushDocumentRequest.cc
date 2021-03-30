@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::PushDocumentRequest;
 
 PushDocumentRequest::PushDocumentRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/tables/[TableName]/actions/bulk");
+	setResourcePath("/v2/openapi/instances/[instanceId]/tables/[tableName]/actions/bulk");
 	setMethod(HttpRequest::Method::Post);
 }
 

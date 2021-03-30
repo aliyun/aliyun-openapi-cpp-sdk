@@ -39,27 +39,34 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["Item"];
-	for (auto valueResultItem : allResultNode)
+	auto allresultNode = value["result"]["resultItem"];
+	for (auto valueresultresultItem : allresultNode)
 	{
-		Item resultObject;
-		if(!valueResultItem["RegionId"].isNull())
-			resultObject.regionId = valueResultItem["RegionId"].asString();
-		if(!valueResultItem["LocalName"].isNull())
-			resultObject.localName = valueResultItem["LocalName"].asString();
-		if(!valueResultItem["Endpoint"].isNull())
-			resultObject.endpoint = valueResultItem["Endpoint"].asString();
-		if(!valueResultItem["Status"].isNull())
-			resultObject.status = valueResultItem["Status"].asString();
-		if(!valueResultItem["ConsoleUrl"].isNull())
-			resultObject.consoleUrl = valueResultItem["ConsoleUrl"].asString();
+		ResultItem resultObject;
+		if(!valueresultresultItem["consoleUrl"].isNull())
+			resultObject.consoleUrl = valueresultresultItem["consoleUrl"].asString();
+		if(!valueresultresultItem["endpoint"].isNull())
+			resultObject.endpoint = valueresultresultItem["endpoint"].asString();
+		if(!valueresultresultItem["localName"].isNull())
+			resultObject.localName = valueresultresultItem["localName"].asString();
+		if(!valueresultresultItem["regionId"].isNull())
+			resultObject.regionId = valueresultresultItem["regionId"].asString();
+		if(!valueresultresultItem["status"].isNull())
+			resultObject.status = valueresultresultItem["status"].asString();
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
+}
+
+std::vector<DescribeRegionsResult::ResultItem> DescribeRegionsResult::getresult()const
+{
+	return result_;
 }
 
 std::string DescribeRegionsResult::getMessage()const
@@ -67,13 +74,13 @@ std::string DescribeRegionsResult::getMessage()const
 	return message_;
 }
 
+std::string DescribeRegionsResult::getRequestId()const
+{
+	return requestId_;
+}
+
 std::string DescribeRegionsResult::getCode()const
 {
 	return code_;
-}
-
-std::vector<DescribeRegionsResult::Item> DescribeRegionsResult::getResult()const
-{
-	return result_;
 }
 

@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::ListUmengAppkeysRequest;
 
 ListUmengAppkeysRequest::ListUmengAppkeysRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/umeng/appkeys");
+	setResourcePath("/v2/openapi/umeng/appkeys");
 	setMethod(HttpRequest::Method::Get);
 }
 

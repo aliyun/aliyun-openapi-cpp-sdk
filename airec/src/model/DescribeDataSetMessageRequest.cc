@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::DescribeDataSetMessageRequest;
 
 DescribeDataSetMessageRequest::DescribeDataSetMessageRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/dataSets/[VersionId]/messages");
+	setResourcePath("/v2/openapi/instances/[instanceId]/dataSets/[versionId]/messages");
 	setMethod(HttpRequest::Method::Get);
 }
 

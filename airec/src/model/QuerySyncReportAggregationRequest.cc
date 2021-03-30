@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::QuerySyncReportAggregationRequest;
 
 QuerySyncReportAggregationRequest::QuerySyncReportAggregationRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/sync-reports/aggregation");
+	setResourcePath("/v2/openapi/instances/[instanceId]/sync-reports/aggregation");
 	setMethod(HttpRequest::Method::Get);
 }
 

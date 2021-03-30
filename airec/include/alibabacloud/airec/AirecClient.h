@@ -24,36 +24,52 @@
 #include "AirecExport.h"
 #include "model/AttachDatasetRequest.h"
 #include "model/AttachDatasetResult.h"
-#include "model/CreateDiversifyRequest.h"
-#include "model/CreateDiversifyResult.h"
+#include "model/AttachIndexVersionRequest.h"
+#include "model/AttachIndexVersionResult.h"
+#include "model/CheckRankingModelReachableRequest.h"
+#include "model/CheckRankingModelReachableResult.h"
+#include "model/CloneExperimentRequest.h"
+#include "model/CloneExperimentResult.h"
+#include "model/CreateFilteringAlgorithmRequest.h"
+#include "model/CreateFilteringAlgorithmResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
-#include "model/CreateMixRequest.h"
-#include "model/CreateMixResult.h"
+#include "model/CreateRankingModelRequest.h"
+#include "model/CreateRankingModelResult.h"
 #include "model/CreateRuleRequest.h"
 #include "model/CreateRuleResult.h"
 #include "model/CreateSceneRequest.h"
 #include "model/CreateSceneResult.h"
+#include "model/DecribeRankingModelRequest.h"
+#include "model/DecribeRankingModelResult.h"
 #include "model/DeleteDataSetRequest.h"
 #include "model/DeleteDataSetResult.h"
-#include "model/DeleteDiversifyRequest.h"
-#include "model/DeleteDiversifyResult.h"
-#include "model/DeleteMixRequest.h"
-#include "model/DeleteMixResult.h"
+#include "model/DeleteExperimentRequest.h"
+#include "model/DeleteExperimentResult.h"
+#include "model/DeleteFilteringAlgorithmRequest.h"
+#include "model/DeleteFilteringAlgorithmResult.h"
+#include "model/DeleteRankingModelRequest.h"
+#include "model/DeleteRankingModelResult.h"
 #include "model/DeleteSceneRequest.h"
 #include "model/DeleteSceneResult.h"
+#include "model/DescribeBaseExperimentRequest.h"
+#include "model/DescribeBaseExperimentResult.h"
 #include "model/DescribeDataSetMessageRequest.h"
 #include "model/DescribeDataSetMessageResult.h"
-#include "model/DescribeDataSetReportRequest.h"
-#include "model/DescribeDataSetReportResult.h"
-#include "model/DescribeDiversifyRequest.h"
-#include "model/DescribeDiversifyResult.h"
-#include "model/DescribeExposureSettingsRequest.h"
-#include "model/DescribeExposureSettingsResult.h"
+#include "model/DescribeDefaultAlgorithmsRequest.h"
+#include "model/DescribeDefaultAlgorithmsResult.h"
+#include "model/DescribeExperimentRequest.h"
+#include "model/DescribeExperimentResult.h"
+#include "model/DescribeExperimentEnvRequest.h"
+#include "model/DescribeExperimentEnvResult.h"
+#include "model/DescribeExperimentEnvProgressRequest.h"
+#include "model/DescribeExperimentEnvProgressResult.h"
+#include "model/DescribeFilteringAlgorithmRequest.h"
+#include "model/DescribeFilteringAlgorithmResult.h"
 #include "model/DescribeInstanceRequest.h"
 #include "model/DescribeInstanceResult.h"
-#include "model/DescribeMixRequest.h"
-#include "model/DescribeMixResult.h"
+#include "model/DescribeLatestTaskRequest.h"
+#include "model/DescribeLatestTaskResult.h"
 #include "model/DescribeQuotaRequest.h"
 #include "model/DescribeQuotaResult.h"
 #include "model/DescribeRegionsRequest.h"
@@ -62,6 +78,8 @@
 #include "model/DescribeRuleResult.h"
 #include "model/DescribeSceneRequest.h"
 #include "model/DescribeSceneResult.h"
+#include "model/DescribeSceneBucketRequest.h"
+#include "model/DescribeSceneBucketResult.h"
 #include "model/DescribeSceneThroughputRequest.h"
 #include "model/DescribeSceneThroughputResult.h"
 #include "model/DescribeSyncReportDetailRequest.h"
@@ -72,8 +90,8 @@
 #include "model/DescribeUserMetricsResult.h"
 #include "model/DowngradeInstanceRequest.h"
 #include "model/DowngradeInstanceResult.h"
-#include "model/ListDashboardRequest.h"
-#include "model/ListDashboardResult.h"
+#include "model/EnableExperimentRequest.h"
+#include "model/EnableExperimentResult.h"
 #include "model/ListDashboardDetailsRequest.h"
 #include "model/ListDashboardDetailsResult.h"
 #include "model/ListDashboardDetailsFlowsRequest.h"
@@ -82,22 +100,28 @@
 #include "model/ListDashboardMetricsResult.h"
 #include "model/ListDashboardMetricsFlowsRequest.h"
 #include "model/ListDashboardMetricsFlowsResult.h"
-#include "model/ListDashboardParametersRequest.h"
-#include "model/ListDashboardParametersResult.h"
-#include "model/ListDashboardUidRequest.h"
-#include "model/ListDashboardUidResult.h"
 #include "model/ListDataSetRequest.h"
 #include "model/ListDataSetResult.h"
 #include "model/ListDataSourceRequest.h"
 #include "model/ListDataSourceResult.h"
-#include "model/ListDiversifyRequest.h"
-#include "model/ListDiversifyResult.h"
+#include "model/ListExperimentsRequest.h"
+#include "model/ListExperimentsResult.h"
+#include "model/ListFilteringAlgorithmsRequest.h"
+#include "model/ListFilteringAlgorithmsResult.h"
+#include "model/ListIndexVersionsRequest.h"
+#include "model/ListIndexVersionsResult.h"
 #include "model/ListInstanceRequest.h"
 #include "model/ListInstanceResult.h"
 #include "model/ListInstanceTaskRequest.h"
 #include "model/ListInstanceTaskResult.h"
-#include "model/ListMixRequest.h"
-#include "model/ListMixResult.h"
+#include "model/ListItemsRequest.h"
+#include "model/ListItemsResult.h"
+#include "model/ListLogsRequest.h"
+#include "model/ListLogsResult.h"
+#include "model/ListMixCategoriesRequest.h"
+#include "model/ListMixCategoriesResult.h"
+#include "model/ListRankingModelsRequest.h"
+#include "model/ListRankingModelsResult.h"
 #include "model/ListRuleConditionsRequest.h"
 #include "model/ListRuleConditionsResult.h"
 #include "model/ListRuleTasksRequest.h"
@@ -106,24 +130,30 @@
 #include "model/ListRulesResult.h"
 #include "model/ListSceneItemsRequest.h"
 #include "model/ListSceneItemsResult.h"
+#include "model/ListSceneParametersRequest.h"
+#include "model/ListSceneParametersResult.h"
 #include "model/ListScenesRequest.h"
 #include "model/ListScenesResult.h"
 #include "model/ListUmengAppkeysRequest.h"
 #include "model/ListUmengAppkeysResult.h"
+#include "model/ListUserClustersRequest.h"
+#include "model/ListUserClustersResult.h"
 #include "model/ModifyDataSourceRequest.h"
 #include "model/ModifyDataSourceResult.h"
-#include "model/ModifyDiversifyRequest.h"
-#include "model/ModifyDiversifyResult.h"
-#include "model/ModifyExposureSettingsRequest.h"
-#include "model/ModifyExposureSettingsResult.h"
+#include "model/ModifyFilteringAlgorithmMetaRequest.h"
+#include "model/ModifyFilteringAlgorithmMetaResult.h"
 #include "model/ModifyInstanceRequest.h"
 #include "model/ModifyInstanceResult.h"
-#include "model/ModifyMixRequest.h"
-#include "model/ModifyMixResult.h"
+#include "model/ModifyItemsRequest.h"
+#include "model/ModifyItemsResult.h"
+#include "model/ModifyRankingModelRequest.h"
+#include "model/ModifyRankingModelResult.h"
 #include "model/ModifyRuleRequest.h"
 #include "model/ModifyRuleResult.h"
 #include "model/ModifySceneRequest.h"
 #include "model/ModifySceneResult.h"
+#include "model/OfflineFilteringAlgorithmRequest.h"
+#include "model/OfflineFilteringAlgorithmResult.h"
 #include "model/PublishRuleRequest.h"
 #include "model/PublishRuleResult.h"
 #include "model/PushDocumentRequest.h"
@@ -132,6 +162,8 @@
 #include "model/PushInterventionResult.h"
 #include "model/QueryDataMessageRequest.h"
 #include "model/QueryDataMessageResult.h"
+#include "model/QueryDataMessageStatisticsRequest.h"
+#include "model/QueryDataMessageStatisticsResult.h"
 #include "model/QueryExceptionHistoryRequest.h"
 #include "model/QueryExceptionHistoryResult.h"
 #include "model/QueryRawDataRequest.h"
@@ -142,12 +174,22 @@
 #include "model/QuerySingleReportResult.h"
 #include "model/QuerySyncReportAggregationRequest.h"
 #include "model/QuerySyncReportAggregationResult.h"
+#include "model/RebuildIndexRequest.h"
+#include "model/RebuildIndexResult.h"
 #include "model/RecommendRequest.h"
 #include "model/RecommendResult.h"
 #include "model/RunInstanceRequest.h"
 #include "model/RunInstanceResult.h"
 #include "model/StopDataSetRequest.h"
 #include "model/StopDataSetResult.h"
+#include "model/UnLockIndexVersionRequest.h"
+#include "model/UnLockIndexVersionResult.h"
+#include "model/UpdateExperimentBasicInfoRequest.h"
+#include "model/UpdateExperimentBasicInfoResult.h"
+#include "model/UpdateExperimentConfigRequest.h"
+#include "model/UpdateExperimentConfigResult.h"
+#include "model/UpdateExperimentStatusRequest.h"
+#include "model/UpdateExperimentStatusResult.h"
 #include "model/UpgradeInstanceRequest.h"
 #include "model/UpgradeInstanceResult.h"
 #include "model/ValidateInstanceRequest.h"
@@ -164,51 +206,75 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachDatasetResult> AttachDatasetOutcome;
 			typedef std::future<AttachDatasetOutcome> AttachDatasetOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::AttachDatasetRequest&, const AttachDatasetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachDatasetAsyncHandler;
-			typedef Outcome<Error, Model::CreateDiversifyResult> CreateDiversifyOutcome;
-			typedef std::future<CreateDiversifyOutcome> CreateDiversifyOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::CreateDiversifyRequest&, const CreateDiversifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiversifyAsyncHandler;
+			typedef Outcome<Error, Model::AttachIndexVersionResult> AttachIndexVersionOutcome;
+			typedef std::future<AttachIndexVersionOutcome> AttachIndexVersionOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::AttachIndexVersionRequest&, const AttachIndexVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachIndexVersionAsyncHandler;
+			typedef Outcome<Error, Model::CheckRankingModelReachableResult> CheckRankingModelReachableOutcome;
+			typedef std::future<CheckRankingModelReachableOutcome> CheckRankingModelReachableOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::CheckRankingModelReachableRequest&, const CheckRankingModelReachableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckRankingModelReachableAsyncHandler;
+			typedef Outcome<Error, Model::CloneExperimentResult> CloneExperimentOutcome;
+			typedef std::future<CloneExperimentOutcome> CloneExperimentOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::CloneExperimentRequest&, const CloneExperimentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloneExperimentAsyncHandler;
+			typedef Outcome<Error, Model::CreateFilteringAlgorithmResult> CreateFilteringAlgorithmOutcome;
+			typedef std::future<CreateFilteringAlgorithmOutcome> CreateFilteringAlgorithmOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::CreateFilteringAlgorithmRequest&, const CreateFilteringAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFilteringAlgorithmAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
-			typedef Outcome<Error, Model::CreateMixResult> CreateMixOutcome;
-			typedef std::future<CreateMixOutcome> CreateMixOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::CreateMixRequest&, const CreateMixOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMixAsyncHandler;
+			typedef Outcome<Error, Model::CreateRankingModelResult> CreateRankingModelOutcome;
+			typedef std::future<CreateRankingModelOutcome> CreateRankingModelOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::CreateRankingModelRequest&, const CreateRankingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRankingModelAsyncHandler;
 			typedef Outcome<Error, Model::CreateRuleResult> CreateRuleOutcome;
 			typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::CreateRuleRequest&, const CreateRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
 			typedef Outcome<Error, Model::CreateSceneResult> CreateSceneOutcome;
 			typedef std::future<CreateSceneOutcome> CreateSceneOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::CreateSceneRequest&, const CreateSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneAsyncHandler;
+			typedef Outcome<Error, Model::DecribeRankingModelResult> DecribeRankingModelOutcome;
+			typedef std::future<DecribeRankingModelOutcome> DecribeRankingModelOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DecribeRankingModelRequest&, const DecribeRankingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DecribeRankingModelAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDataSetResult> DeleteDataSetOutcome;
 			typedef std::future<DeleteDataSetOutcome> DeleteDataSetOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::DeleteDataSetRequest&, const DeleteDataSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSetAsyncHandler;
-			typedef Outcome<Error, Model::DeleteDiversifyResult> DeleteDiversifyOutcome;
-			typedef std::future<DeleteDiversifyOutcome> DeleteDiversifyOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::DeleteDiversifyRequest&, const DeleteDiversifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiversifyAsyncHandler;
-			typedef Outcome<Error, Model::DeleteMixResult> DeleteMixOutcome;
-			typedef std::future<DeleteMixOutcome> DeleteMixOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::DeleteMixRequest&, const DeleteMixOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMixAsyncHandler;
+			typedef Outcome<Error, Model::DeleteExperimentResult> DeleteExperimentOutcome;
+			typedef std::future<DeleteExperimentOutcome> DeleteExperimentOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DeleteExperimentRequest&, const DeleteExperimentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExperimentAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFilteringAlgorithmResult> DeleteFilteringAlgorithmOutcome;
+			typedef std::future<DeleteFilteringAlgorithmOutcome> DeleteFilteringAlgorithmOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DeleteFilteringAlgorithmRequest&, const DeleteFilteringAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFilteringAlgorithmAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRankingModelResult> DeleteRankingModelOutcome;
+			typedef std::future<DeleteRankingModelOutcome> DeleteRankingModelOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DeleteRankingModelRequest&, const DeleteRankingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRankingModelAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSceneResult> DeleteSceneOutcome;
 			typedef std::future<DeleteSceneOutcome> DeleteSceneOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::DeleteSceneRequest&, const DeleteSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSceneAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBaseExperimentResult> DescribeBaseExperimentOutcome;
+			typedef std::future<DescribeBaseExperimentOutcome> DescribeBaseExperimentOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DescribeBaseExperimentRequest&, const DescribeBaseExperimentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaseExperimentAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDataSetMessageResult> DescribeDataSetMessageOutcome;
 			typedef std::future<DescribeDataSetMessageOutcome> DescribeDataSetMessageOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::DescribeDataSetMessageRequest&, const DescribeDataSetMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSetMessageAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDataSetReportResult> DescribeDataSetReportOutcome;
-			typedef std::future<DescribeDataSetReportOutcome> DescribeDataSetReportOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::DescribeDataSetReportRequest&, const DescribeDataSetReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSetReportAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDiversifyResult> DescribeDiversifyOutcome;
-			typedef std::future<DescribeDiversifyOutcome> DescribeDiversifyOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::DescribeDiversifyRequest&, const DescribeDiversifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiversifyAsyncHandler;
-			typedef Outcome<Error, Model::DescribeExposureSettingsResult> DescribeExposureSettingsOutcome;
-			typedef std::future<DescribeExposureSettingsOutcome> DescribeExposureSettingsOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::DescribeExposureSettingsRequest&, const DescribeExposureSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExposureSettingsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDefaultAlgorithmsResult> DescribeDefaultAlgorithmsOutcome;
+			typedef std::future<DescribeDefaultAlgorithmsOutcome> DescribeDefaultAlgorithmsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DescribeDefaultAlgorithmsRequest&, const DescribeDefaultAlgorithmsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultAlgorithmsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeExperimentResult> DescribeExperimentOutcome;
+			typedef std::future<DescribeExperimentOutcome> DescribeExperimentOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DescribeExperimentRequest&, const DescribeExperimentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExperimentAsyncHandler;
+			typedef Outcome<Error, Model::DescribeExperimentEnvResult> DescribeExperimentEnvOutcome;
+			typedef std::future<DescribeExperimentEnvOutcome> DescribeExperimentEnvOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DescribeExperimentEnvRequest&, const DescribeExperimentEnvOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExperimentEnvAsyncHandler;
+			typedef Outcome<Error, Model::DescribeExperimentEnvProgressResult> DescribeExperimentEnvProgressOutcome;
+			typedef std::future<DescribeExperimentEnvProgressOutcome> DescribeExperimentEnvProgressOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DescribeExperimentEnvProgressRequest&, const DescribeExperimentEnvProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExperimentEnvProgressAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFilteringAlgorithmResult> DescribeFilteringAlgorithmOutcome;
+			typedef std::future<DescribeFilteringAlgorithmOutcome> DescribeFilteringAlgorithmOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DescribeFilteringAlgorithmRequest&, const DescribeFilteringAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilteringAlgorithmAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceResult> DescribeInstanceOutcome;
 			typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::DescribeInstanceRequest&, const DescribeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
-			typedef Outcome<Error, Model::DescribeMixResult> DescribeMixOutcome;
-			typedef std::future<DescribeMixOutcome> DescribeMixOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::DescribeMixRequest&, const DescribeMixOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMixAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLatestTaskResult> DescribeLatestTaskOutcome;
+			typedef std::future<DescribeLatestTaskOutcome> DescribeLatestTaskOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DescribeLatestTaskRequest&, const DescribeLatestTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLatestTaskAsyncHandler;
 			typedef Outcome<Error, Model::DescribeQuotaResult> DescribeQuotaOutcome;
 			typedef std::future<DescribeQuotaOutcome> DescribeQuotaOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::DescribeQuotaRequest&, const DescribeQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaAsyncHandler;
@@ -221,6 +287,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSceneResult> DescribeSceneOutcome;
 			typedef std::future<DescribeSceneOutcome> DescribeSceneOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::DescribeSceneRequest&, const DescribeSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSceneAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSceneBucketResult> DescribeSceneBucketOutcome;
+			typedef std::future<DescribeSceneBucketOutcome> DescribeSceneBucketOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::DescribeSceneBucketRequest&, const DescribeSceneBucketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSceneBucketAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSceneThroughputResult> DescribeSceneThroughputOutcome;
 			typedef std::future<DescribeSceneThroughputOutcome> DescribeSceneThroughputOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::DescribeSceneThroughputRequest&, const DescribeSceneThroughputOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSceneThroughputAsyncHandler;
@@ -236,9 +305,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DowngradeInstanceResult> DowngradeInstanceOutcome;
 			typedef std::future<DowngradeInstanceOutcome> DowngradeInstanceOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::DowngradeInstanceRequest&, const DowngradeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DowngradeInstanceAsyncHandler;
-			typedef Outcome<Error, Model::ListDashboardResult> ListDashboardOutcome;
-			typedef std::future<ListDashboardOutcome> ListDashboardOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::ListDashboardRequest&, const ListDashboardOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDashboardAsyncHandler;
+			typedef Outcome<Error, Model::EnableExperimentResult> EnableExperimentOutcome;
+			typedef std::future<EnableExperimentOutcome> EnableExperimentOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::EnableExperimentRequest&, const EnableExperimentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableExperimentAsyncHandler;
 			typedef Outcome<Error, Model::ListDashboardDetailsResult> ListDashboardDetailsOutcome;
 			typedef std::future<ListDashboardDetailsOutcome> ListDashboardDetailsOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListDashboardDetailsRequest&, const ListDashboardDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDashboardDetailsAsyncHandler;
@@ -251,30 +320,39 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDashboardMetricsFlowsResult> ListDashboardMetricsFlowsOutcome;
 			typedef std::future<ListDashboardMetricsFlowsOutcome> ListDashboardMetricsFlowsOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListDashboardMetricsFlowsRequest&, const ListDashboardMetricsFlowsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDashboardMetricsFlowsAsyncHandler;
-			typedef Outcome<Error, Model::ListDashboardParametersResult> ListDashboardParametersOutcome;
-			typedef std::future<ListDashboardParametersOutcome> ListDashboardParametersOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::ListDashboardParametersRequest&, const ListDashboardParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDashboardParametersAsyncHandler;
-			typedef Outcome<Error, Model::ListDashboardUidResult> ListDashboardUidOutcome;
-			typedef std::future<ListDashboardUidOutcome> ListDashboardUidOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::ListDashboardUidRequest&, const ListDashboardUidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDashboardUidAsyncHandler;
 			typedef Outcome<Error, Model::ListDataSetResult> ListDataSetOutcome;
 			typedef std::future<ListDataSetOutcome> ListDataSetOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListDataSetRequest&, const ListDataSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataSetAsyncHandler;
 			typedef Outcome<Error, Model::ListDataSourceResult> ListDataSourceOutcome;
 			typedef std::future<ListDataSourceOutcome> ListDataSourceOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListDataSourceRequest&, const ListDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataSourceAsyncHandler;
-			typedef Outcome<Error, Model::ListDiversifyResult> ListDiversifyOutcome;
-			typedef std::future<ListDiversifyOutcome> ListDiversifyOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::ListDiversifyRequest&, const ListDiversifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiversifyAsyncHandler;
+			typedef Outcome<Error, Model::ListExperimentsResult> ListExperimentsOutcome;
+			typedef std::future<ListExperimentsOutcome> ListExperimentsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListExperimentsRequest&, const ListExperimentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExperimentsAsyncHandler;
+			typedef Outcome<Error, Model::ListFilteringAlgorithmsResult> ListFilteringAlgorithmsOutcome;
+			typedef std::future<ListFilteringAlgorithmsOutcome> ListFilteringAlgorithmsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListFilteringAlgorithmsRequest&, const ListFilteringAlgorithmsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFilteringAlgorithmsAsyncHandler;
+			typedef Outcome<Error, Model::ListIndexVersionsResult> ListIndexVersionsOutcome;
+			typedef std::future<ListIndexVersionsOutcome> ListIndexVersionsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListIndexVersionsRequest&, const ListIndexVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIndexVersionsAsyncHandler;
 			typedef Outcome<Error, Model::ListInstanceResult> ListInstanceOutcome;
 			typedef std::future<ListInstanceOutcome> ListInstanceOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListInstanceRequest&, const ListInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceAsyncHandler;
 			typedef Outcome<Error, Model::ListInstanceTaskResult> ListInstanceTaskOutcome;
 			typedef std::future<ListInstanceTaskOutcome> ListInstanceTaskOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListInstanceTaskRequest&, const ListInstanceTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceTaskAsyncHandler;
-			typedef Outcome<Error, Model::ListMixResult> ListMixOutcome;
-			typedef std::future<ListMixOutcome> ListMixOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::ListMixRequest&, const ListMixOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMixAsyncHandler;
+			typedef Outcome<Error, Model::ListItemsResult> ListItemsOutcome;
+			typedef std::future<ListItemsOutcome> ListItemsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListItemsRequest&, const ListItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListItemsAsyncHandler;
+			typedef Outcome<Error, Model::ListLogsResult> ListLogsOutcome;
+			typedef std::future<ListLogsOutcome> ListLogsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListLogsRequest&, const ListLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLogsAsyncHandler;
+			typedef Outcome<Error, Model::ListMixCategoriesResult> ListMixCategoriesOutcome;
+			typedef std::future<ListMixCategoriesOutcome> ListMixCategoriesOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListMixCategoriesRequest&, const ListMixCategoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMixCategoriesAsyncHandler;
+			typedef Outcome<Error, Model::ListRankingModelsResult> ListRankingModelsOutcome;
+			typedef std::future<ListRankingModelsOutcome> ListRankingModelsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListRankingModelsRequest&, const ListRankingModelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRankingModelsAsyncHandler;
 			typedef Outcome<Error, Model::ListRuleConditionsResult> ListRuleConditionsOutcome;
 			typedef std::future<ListRuleConditionsOutcome> ListRuleConditionsOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListRuleConditionsRequest&, const ListRuleConditionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRuleConditionsAsyncHandler;
@@ -287,33 +365,42 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSceneItemsResult> ListSceneItemsOutcome;
 			typedef std::future<ListSceneItemsOutcome> ListSceneItemsOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListSceneItemsRequest&, const ListSceneItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSceneItemsAsyncHandler;
+			typedef Outcome<Error, Model::ListSceneParametersResult> ListSceneParametersOutcome;
+			typedef std::future<ListSceneParametersOutcome> ListSceneParametersOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListSceneParametersRequest&, const ListSceneParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSceneParametersAsyncHandler;
 			typedef Outcome<Error, Model::ListScenesResult> ListScenesOutcome;
 			typedef std::future<ListScenesOutcome> ListScenesOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListScenesRequest&, const ListScenesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScenesAsyncHandler;
 			typedef Outcome<Error, Model::ListUmengAppkeysResult> ListUmengAppkeysOutcome;
 			typedef std::future<ListUmengAppkeysOutcome> ListUmengAppkeysOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ListUmengAppkeysRequest&, const ListUmengAppkeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUmengAppkeysAsyncHandler;
+			typedef Outcome<Error, Model::ListUserClustersResult> ListUserClustersOutcome;
+			typedef std::future<ListUserClustersOutcome> ListUserClustersOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ListUserClustersRequest&, const ListUserClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserClustersAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDataSourceResult> ModifyDataSourceOutcome;
 			typedef std::future<ModifyDataSourceOutcome> ModifyDataSourceOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ModifyDataSourceRequest&, const ModifyDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataSourceAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDiversifyResult> ModifyDiversifyOutcome;
-			typedef std::future<ModifyDiversifyOutcome> ModifyDiversifyOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::ModifyDiversifyRequest&, const ModifyDiversifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiversifyAsyncHandler;
-			typedef Outcome<Error, Model::ModifyExposureSettingsResult> ModifyExposureSettingsOutcome;
-			typedef std::future<ModifyExposureSettingsOutcome> ModifyExposureSettingsOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::ModifyExposureSettingsRequest&, const ModifyExposureSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExposureSettingsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFilteringAlgorithmMetaResult> ModifyFilteringAlgorithmMetaOutcome;
+			typedef std::future<ModifyFilteringAlgorithmMetaOutcome> ModifyFilteringAlgorithmMetaOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ModifyFilteringAlgorithmMetaRequest&, const ModifyFilteringAlgorithmMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFilteringAlgorithmMetaAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceResult> ModifyInstanceOutcome;
 			typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ModifyInstanceRequest&, const ModifyInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
-			typedef Outcome<Error, Model::ModifyMixResult> ModifyMixOutcome;
-			typedef std::future<ModifyMixOutcome> ModifyMixOutcomeCallable;
-			typedef std::function<void(const AirecClient*, const Model::ModifyMixRequest&, const ModifyMixOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMixAsyncHandler;
+			typedef Outcome<Error, Model::ModifyItemsResult> ModifyItemsOutcome;
+			typedef std::future<ModifyItemsOutcome> ModifyItemsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ModifyItemsRequest&, const ModifyItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyItemsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyRankingModelResult> ModifyRankingModelOutcome;
+			typedef std::future<ModifyRankingModelOutcome> ModifyRankingModelOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::ModifyRankingModelRequest&, const ModifyRankingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRankingModelAsyncHandler;
 			typedef Outcome<Error, Model::ModifyRuleResult> ModifyRuleOutcome;
 			typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ModifyRuleRequest&, const ModifyRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
 			typedef Outcome<Error, Model::ModifySceneResult> ModifySceneOutcome;
 			typedef std::future<ModifySceneOutcome> ModifySceneOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::ModifySceneRequest&, const ModifySceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySceneAsyncHandler;
+			typedef Outcome<Error, Model::OfflineFilteringAlgorithmResult> OfflineFilteringAlgorithmOutcome;
+			typedef std::future<OfflineFilteringAlgorithmOutcome> OfflineFilteringAlgorithmOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::OfflineFilteringAlgorithmRequest&, const OfflineFilteringAlgorithmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OfflineFilteringAlgorithmAsyncHandler;
 			typedef Outcome<Error, Model::PublishRuleResult> PublishRuleOutcome;
 			typedef std::future<PublishRuleOutcome> PublishRuleOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::PublishRuleRequest&, const PublishRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishRuleAsyncHandler;
@@ -326,6 +413,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDataMessageResult> QueryDataMessageOutcome;
 			typedef std::future<QueryDataMessageOutcome> QueryDataMessageOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::QueryDataMessageRequest&, const QueryDataMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataMessageAsyncHandler;
+			typedef Outcome<Error, Model::QueryDataMessageStatisticsResult> QueryDataMessageStatisticsOutcome;
+			typedef std::future<QueryDataMessageStatisticsOutcome> QueryDataMessageStatisticsOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::QueryDataMessageStatisticsRequest&, const QueryDataMessageStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataMessageStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::QueryExceptionHistoryResult> QueryExceptionHistoryOutcome;
 			typedef std::future<QueryExceptionHistoryOutcome> QueryExceptionHistoryOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::QueryExceptionHistoryRequest&, const QueryExceptionHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryExceptionHistoryAsyncHandler;
@@ -341,6 +431,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySyncReportAggregationResult> QuerySyncReportAggregationOutcome;
 			typedef std::future<QuerySyncReportAggregationOutcome> QuerySyncReportAggregationOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::QuerySyncReportAggregationRequest&, const QuerySyncReportAggregationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySyncReportAggregationAsyncHandler;
+			typedef Outcome<Error, Model::RebuildIndexResult> RebuildIndexOutcome;
+			typedef std::future<RebuildIndexOutcome> RebuildIndexOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::RebuildIndexRequest&, const RebuildIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebuildIndexAsyncHandler;
 			typedef Outcome<Error, Model::RecommendResult> RecommendOutcome;
 			typedef std::future<RecommendOutcome> RecommendOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::RecommendRequest&, const RecommendOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecommendAsyncHandler;
@@ -350,6 +443,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopDataSetResult> StopDataSetOutcome;
 			typedef std::future<StopDataSetOutcome> StopDataSetOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::StopDataSetRequest&, const StopDataSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopDataSetAsyncHandler;
+			typedef Outcome<Error, Model::UnLockIndexVersionResult> UnLockIndexVersionOutcome;
+			typedef std::future<UnLockIndexVersionOutcome> UnLockIndexVersionOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::UnLockIndexVersionRequest&, const UnLockIndexVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnLockIndexVersionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateExperimentBasicInfoResult> UpdateExperimentBasicInfoOutcome;
+			typedef std::future<UpdateExperimentBasicInfoOutcome> UpdateExperimentBasicInfoOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::UpdateExperimentBasicInfoRequest&, const UpdateExperimentBasicInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExperimentBasicInfoAsyncHandler;
+			typedef Outcome<Error, Model::UpdateExperimentConfigResult> UpdateExperimentConfigOutcome;
+			typedef std::future<UpdateExperimentConfigOutcome> UpdateExperimentConfigOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::UpdateExperimentConfigRequest&, const UpdateExperimentConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExperimentConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdateExperimentStatusResult> UpdateExperimentStatusOutcome;
+			typedef std::future<UpdateExperimentStatusOutcome> UpdateExperimentStatusOutcomeCallable;
+			typedef std::function<void(const AirecClient*, const Model::UpdateExperimentStatusRequest&, const UpdateExperimentStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExperimentStatusAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeInstanceResult> UpgradeInstanceOutcome;
 			typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
 			typedef std::function<void(const AirecClient*, const Model::UpgradeInstanceRequest&, const UpgradeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
@@ -364,51 +469,75 @@ namespace AlibabaCloud
 			AttachDatasetOutcome attachDataset(const Model::AttachDatasetRequest &request)const;
 			void attachDatasetAsync(const Model::AttachDatasetRequest& request, const AttachDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachDatasetOutcomeCallable attachDatasetCallable(const Model::AttachDatasetRequest& request) const;
-			CreateDiversifyOutcome createDiversify(const Model::CreateDiversifyRequest &request)const;
-			void createDiversifyAsync(const Model::CreateDiversifyRequest& request, const CreateDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateDiversifyOutcomeCallable createDiversifyCallable(const Model::CreateDiversifyRequest& request) const;
+			AttachIndexVersionOutcome attachIndexVersion(const Model::AttachIndexVersionRequest &request)const;
+			void attachIndexVersionAsync(const Model::AttachIndexVersionRequest& request, const AttachIndexVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachIndexVersionOutcomeCallable attachIndexVersionCallable(const Model::AttachIndexVersionRequest& request) const;
+			CheckRankingModelReachableOutcome checkRankingModelReachable(const Model::CheckRankingModelReachableRequest &request)const;
+			void checkRankingModelReachableAsync(const Model::CheckRankingModelReachableRequest& request, const CheckRankingModelReachableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckRankingModelReachableOutcomeCallable checkRankingModelReachableCallable(const Model::CheckRankingModelReachableRequest& request) const;
+			CloneExperimentOutcome cloneExperiment(const Model::CloneExperimentRequest &request)const;
+			void cloneExperimentAsync(const Model::CloneExperimentRequest& request, const CloneExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CloneExperimentOutcomeCallable cloneExperimentCallable(const Model::CloneExperimentRequest& request) const;
+			CreateFilteringAlgorithmOutcome createFilteringAlgorithm(const Model::CreateFilteringAlgorithmRequest &request)const;
+			void createFilteringAlgorithmAsync(const Model::CreateFilteringAlgorithmRequest& request, const CreateFilteringAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFilteringAlgorithmOutcomeCallable createFilteringAlgorithmCallable(const Model::CreateFilteringAlgorithmRequest& request) const;
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
-			CreateMixOutcome createMix(const Model::CreateMixRequest &request)const;
-			void createMixAsync(const Model::CreateMixRequest& request, const CreateMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateMixOutcomeCallable createMixCallable(const Model::CreateMixRequest& request) const;
+			CreateRankingModelOutcome createRankingModel(const Model::CreateRankingModelRequest &request)const;
+			void createRankingModelAsync(const Model::CreateRankingModelRequest& request, const CreateRankingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRankingModelOutcomeCallable createRankingModelCallable(const Model::CreateRankingModelRequest& request) const;
 			CreateRuleOutcome createRule(const Model::CreateRuleRequest &request)const;
 			void createRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRuleOutcomeCallable createRuleCallable(const Model::CreateRuleRequest& request) const;
 			CreateSceneOutcome createScene(const Model::CreateSceneRequest &request)const;
 			void createSceneAsync(const Model::CreateSceneRequest& request, const CreateSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSceneOutcomeCallable createSceneCallable(const Model::CreateSceneRequest& request) const;
+			DecribeRankingModelOutcome decribeRankingModel(const Model::DecribeRankingModelRequest &request)const;
+			void decribeRankingModelAsync(const Model::DecribeRankingModelRequest& request, const DecribeRankingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DecribeRankingModelOutcomeCallable decribeRankingModelCallable(const Model::DecribeRankingModelRequest& request) const;
 			DeleteDataSetOutcome deleteDataSet(const Model::DeleteDataSetRequest &request)const;
 			void deleteDataSetAsync(const Model::DeleteDataSetRequest& request, const DeleteDataSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDataSetOutcomeCallable deleteDataSetCallable(const Model::DeleteDataSetRequest& request) const;
-			DeleteDiversifyOutcome deleteDiversify(const Model::DeleteDiversifyRequest &request)const;
-			void deleteDiversifyAsync(const Model::DeleteDiversifyRequest& request, const DeleteDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteDiversifyOutcomeCallable deleteDiversifyCallable(const Model::DeleteDiversifyRequest& request) const;
-			DeleteMixOutcome deleteMix(const Model::DeleteMixRequest &request)const;
-			void deleteMixAsync(const Model::DeleteMixRequest& request, const DeleteMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteMixOutcomeCallable deleteMixCallable(const Model::DeleteMixRequest& request) const;
+			DeleteExperimentOutcome deleteExperiment(const Model::DeleteExperimentRequest &request)const;
+			void deleteExperimentAsync(const Model::DeleteExperimentRequest& request, const DeleteExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteExperimentOutcomeCallable deleteExperimentCallable(const Model::DeleteExperimentRequest& request) const;
+			DeleteFilteringAlgorithmOutcome deleteFilteringAlgorithm(const Model::DeleteFilteringAlgorithmRequest &request)const;
+			void deleteFilteringAlgorithmAsync(const Model::DeleteFilteringAlgorithmRequest& request, const DeleteFilteringAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFilteringAlgorithmOutcomeCallable deleteFilteringAlgorithmCallable(const Model::DeleteFilteringAlgorithmRequest& request) const;
+			DeleteRankingModelOutcome deleteRankingModel(const Model::DeleteRankingModelRequest &request)const;
+			void deleteRankingModelAsync(const Model::DeleteRankingModelRequest& request, const DeleteRankingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRankingModelOutcomeCallable deleteRankingModelCallable(const Model::DeleteRankingModelRequest& request) const;
 			DeleteSceneOutcome deleteScene(const Model::DeleteSceneRequest &request)const;
 			void deleteSceneAsync(const Model::DeleteSceneRequest& request, const DeleteSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSceneOutcomeCallable deleteSceneCallable(const Model::DeleteSceneRequest& request) const;
+			DescribeBaseExperimentOutcome describeBaseExperiment(const Model::DescribeBaseExperimentRequest &request)const;
+			void describeBaseExperimentAsync(const Model::DescribeBaseExperimentRequest& request, const DescribeBaseExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBaseExperimentOutcomeCallable describeBaseExperimentCallable(const Model::DescribeBaseExperimentRequest& request) const;
 			DescribeDataSetMessageOutcome describeDataSetMessage(const Model::DescribeDataSetMessageRequest &request)const;
 			void describeDataSetMessageAsync(const Model::DescribeDataSetMessageRequest& request, const DescribeDataSetMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDataSetMessageOutcomeCallable describeDataSetMessageCallable(const Model::DescribeDataSetMessageRequest& request) const;
-			DescribeDataSetReportOutcome describeDataSetReport(const Model::DescribeDataSetReportRequest &request)const;
-			void describeDataSetReportAsync(const Model::DescribeDataSetReportRequest& request, const DescribeDataSetReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDataSetReportOutcomeCallable describeDataSetReportCallable(const Model::DescribeDataSetReportRequest& request) const;
-			DescribeDiversifyOutcome describeDiversify(const Model::DescribeDiversifyRequest &request)const;
-			void describeDiversifyAsync(const Model::DescribeDiversifyRequest& request, const DescribeDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDiversifyOutcomeCallable describeDiversifyCallable(const Model::DescribeDiversifyRequest& request) const;
-			DescribeExposureSettingsOutcome describeExposureSettings(const Model::DescribeExposureSettingsRequest &request)const;
-			void describeExposureSettingsAsync(const Model::DescribeExposureSettingsRequest& request, const DescribeExposureSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeExposureSettingsOutcomeCallable describeExposureSettingsCallable(const Model::DescribeExposureSettingsRequest& request) const;
+			DescribeDefaultAlgorithmsOutcome describeDefaultAlgorithms(const Model::DescribeDefaultAlgorithmsRequest &request)const;
+			void describeDefaultAlgorithmsAsync(const Model::DescribeDefaultAlgorithmsRequest& request, const DescribeDefaultAlgorithmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDefaultAlgorithmsOutcomeCallable describeDefaultAlgorithmsCallable(const Model::DescribeDefaultAlgorithmsRequest& request) const;
+			DescribeExperimentOutcome describeExperiment(const Model::DescribeExperimentRequest &request)const;
+			void describeExperimentAsync(const Model::DescribeExperimentRequest& request, const DescribeExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeExperimentOutcomeCallable describeExperimentCallable(const Model::DescribeExperimentRequest& request) const;
+			DescribeExperimentEnvOutcome describeExperimentEnv(const Model::DescribeExperimentEnvRequest &request)const;
+			void describeExperimentEnvAsync(const Model::DescribeExperimentEnvRequest& request, const DescribeExperimentEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeExperimentEnvOutcomeCallable describeExperimentEnvCallable(const Model::DescribeExperimentEnvRequest& request) const;
+			DescribeExperimentEnvProgressOutcome describeExperimentEnvProgress(const Model::DescribeExperimentEnvProgressRequest &request)const;
+			void describeExperimentEnvProgressAsync(const Model::DescribeExperimentEnvProgressRequest& request, const DescribeExperimentEnvProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeExperimentEnvProgressOutcomeCallable describeExperimentEnvProgressCallable(const Model::DescribeExperimentEnvProgressRequest& request) const;
+			DescribeFilteringAlgorithmOutcome describeFilteringAlgorithm(const Model::DescribeFilteringAlgorithmRequest &request)const;
+			void describeFilteringAlgorithmAsync(const Model::DescribeFilteringAlgorithmRequest& request, const DescribeFilteringAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFilteringAlgorithmOutcomeCallable describeFilteringAlgorithmCallable(const Model::DescribeFilteringAlgorithmRequest& request) const;
 			DescribeInstanceOutcome describeInstance(const Model::DescribeInstanceRequest &request)const;
 			void describeInstanceAsync(const Model::DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceOutcomeCallable describeInstanceCallable(const Model::DescribeInstanceRequest& request) const;
-			DescribeMixOutcome describeMix(const Model::DescribeMixRequest &request)const;
-			void describeMixAsync(const Model::DescribeMixRequest& request, const DescribeMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeMixOutcomeCallable describeMixCallable(const Model::DescribeMixRequest& request) const;
+			DescribeLatestTaskOutcome describeLatestTask(const Model::DescribeLatestTaskRequest &request)const;
+			void describeLatestTaskAsync(const Model::DescribeLatestTaskRequest& request, const DescribeLatestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLatestTaskOutcomeCallable describeLatestTaskCallable(const Model::DescribeLatestTaskRequest& request) const;
 			DescribeQuotaOutcome describeQuota(const Model::DescribeQuotaRequest &request)const;
 			void describeQuotaAsync(const Model::DescribeQuotaRequest& request, const DescribeQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeQuotaOutcomeCallable describeQuotaCallable(const Model::DescribeQuotaRequest& request) const;
@@ -421,6 +550,9 @@ namespace AlibabaCloud
 			DescribeSceneOutcome describeScene(const Model::DescribeSceneRequest &request)const;
 			void describeSceneAsync(const Model::DescribeSceneRequest& request, const DescribeSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSceneOutcomeCallable describeSceneCallable(const Model::DescribeSceneRequest& request) const;
+			DescribeSceneBucketOutcome describeSceneBucket(const Model::DescribeSceneBucketRequest &request)const;
+			void describeSceneBucketAsync(const Model::DescribeSceneBucketRequest& request, const DescribeSceneBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSceneBucketOutcomeCallable describeSceneBucketCallable(const Model::DescribeSceneBucketRequest& request) const;
 			DescribeSceneThroughputOutcome describeSceneThroughput(const Model::DescribeSceneThroughputRequest &request)const;
 			void describeSceneThroughputAsync(const Model::DescribeSceneThroughputRequest& request, const DescribeSceneThroughputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSceneThroughputOutcomeCallable describeSceneThroughputCallable(const Model::DescribeSceneThroughputRequest& request) const;
@@ -436,9 +568,9 @@ namespace AlibabaCloud
 			DowngradeInstanceOutcome downgradeInstance(const Model::DowngradeInstanceRequest &request)const;
 			void downgradeInstanceAsync(const Model::DowngradeInstanceRequest& request, const DowngradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DowngradeInstanceOutcomeCallable downgradeInstanceCallable(const Model::DowngradeInstanceRequest& request) const;
-			ListDashboardOutcome listDashboard(const Model::ListDashboardRequest &request)const;
-			void listDashboardAsync(const Model::ListDashboardRequest& request, const ListDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListDashboardOutcomeCallable listDashboardCallable(const Model::ListDashboardRequest& request) const;
+			EnableExperimentOutcome enableExperiment(const Model::EnableExperimentRequest &request)const;
+			void enableExperimentAsync(const Model::EnableExperimentRequest& request, const EnableExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableExperimentOutcomeCallable enableExperimentCallable(const Model::EnableExperimentRequest& request) const;
 			ListDashboardDetailsOutcome listDashboardDetails(const Model::ListDashboardDetailsRequest &request)const;
 			void listDashboardDetailsAsync(const Model::ListDashboardDetailsRequest& request, const ListDashboardDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDashboardDetailsOutcomeCallable listDashboardDetailsCallable(const Model::ListDashboardDetailsRequest& request) const;
@@ -451,30 +583,39 @@ namespace AlibabaCloud
 			ListDashboardMetricsFlowsOutcome listDashboardMetricsFlows(const Model::ListDashboardMetricsFlowsRequest &request)const;
 			void listDashboardMetricsFlowsAsync(const Model::ListDashboardMetricsFlowsRequest& request, const ListDashboardMetricsFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDashboardMetricsFlowsOutcomeCallable listDashboardMetricsFlowsCallable(const Model::ListDashboardMetricsFlowsRequest& request) const;
-			ListDashboardParametersOutcome listDashboardParameters(const Model::ListDashboardParametersRequest &request)const;
-			void listDashboardParametersAsync(const Model::ListDashboardParametersRequest& request, const ListDashboardParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListDashboardParametersOutcomeCallable listDashboardParametersCallable(const Model::ListDashboardParametersRequest& request) const;
-			ListDashboardUidOutcome listDashboardUid(const Model::ListDashboardUidRequest &request)const;
-			void listDashboardUidAsync(const Model::ListDashboardUidRequest& request, const ListDashboardUidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListDashboardUidOutcomeCallable listDashboardUidCallable(const Model::ListDashboardUidRequest& request) const;
 			ListDataSetOutcome listDataSet(const Model::ListDataSetRequest &request)const;
 			void listDataSetAsync(const Model::ListDataSetRequest& request, const ListDataSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataSetOutcomeCallable listDataSetCallable(const Model::ListDataSetRequest& request) const;
 			ListDataSourceOutcome listDataSource(const Model::ListDataSourceRequest &request)const;
 			void listDataSourceAsync(const Model::ListDataSourceRequest& request, const ListDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataSourceOutcomeCallable listDataSourceCallable(const Model::ListDataSourceRequest& request) const;
-			ListDiversifyOutcome listDiversify(const Model::ListDiversifyRequest &request)const;
-			void listDiversifyAsync(const Model::ListDiversifyRequest& request, const ListDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListDiversifyOutcomeCallable listDiversifyCallable(const Model::ListDiversifyRequest& request) const;
+			ListExperimentsOutcome listExperiments(const Model::ListExperimentsRequest &request)const;
+			void listExperimentsAsync(const Model::ListExperimentsRequest& request, const ListExperimentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListExperimentsOutcomeCallable listExperimentsCallable(const Model::ListExperimentsRequest& request) const;
+			ListFilteringAlgorithmsOutcome listFilteringAlgorithms(const Model::ListFilteringAlgorithmsRequest &request)const;
+			void listFilteringAlgorithmsAsync(const Model::ListFilteringAlgorithmsRequest& request, const ListFilteringAlgorithmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFilteringAlgorithmsOutcomeCallable listFilteringAlgorithmsCallable(const Model::ListFilteringAlgorithmsRequest& request) const;
+			ListIndexVersionsOutcome listIndexVersions(const Model::ListIndexVersionsRequest &request)const;
+			void listIndexVersionsAsync(const Model::ListIndexVersionsRequest& request, const ListIndexVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListIndexVersionsOutcomeCallable listIndexVersionsCallable(const Model::ListIndexVersionsRequest& request) const;
 			ListInstanceOutcome listInstance(const Model::ListInstanceRequest &request)const;
 			void listInstanceAsync(const Model::ListInstanceRequest& request, const ListInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceOutcomeCallable listInstanceCallable(const Model::ListInstanceRequest& request) const;
 			ListInstanceTaskOutcome listInstanceTask(const Model::ListInstanceTaskRequest &request)const;
 			void listInstanceTaskAsync(const Model::ListInstanceTaskRequest& request, const ListInstanceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceTaskOutcomeCallable listInstanceTaskCallable(const Model::ListInstanceTaskRequest& request) const;
-			ListMixOutcome listMix(const Model::ListMixRequest &request)const;
-			void listMixAsync(const Model::ListMixRequest& request, const ListMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListMixOutcomeCallable listMixCallable(const Model::ListMixRequest& request) const;
+			ListItemsOutcome listItems(const Model::ListItemsRequest &request)const;
+			void listItemsAsync(const Model::ListItemsRequest& request, const ListItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListItemsOutcomeCallable listItemsCallable(const Model::ListItemsRequest& request) const;
+			ListLogsOutcome listLogs(const Model::ListLogsRequest &request)const;
+			void listLogsAsync(const Model::ListLogsRequest& request, const ListLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListLogsOutcomeCallable listLogsCallable(const Model::ListLogsRequest& request) const;
+			ListMixCategoriesOutcome listMixCategories(const Model::ListMixCategoriesRequest &request)const;
+			void listMixCategoriesAsync(const Model::ListMixCategoriesRequest& request, const ListMixCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMixCategoriesOutcomeCallable listMixCategoriesCallable(const Model::ListMixCategoriesRequest& request) const;
+			ListRankingModelsOutcome listRankingModels(const Model::ListRankingModelsRequest &request)const;
+			void listRankingModelsAsync(const Model::ListRankingModelsRequest& request, const ListRankingModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRankingModelsOutcomeCallable listRankingModelsCallable(const Model::ListRankingModelsRequest& request) const;
 			ListRuleConditionsOutcome listRuleConditions(const Model::ListRuleConditionsRequest &request)const;
 			void listRuleConditionsAsync(const Model::ListRuleConditionsRequest& request, const ListRuleConditionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRuleConditionsOutcomeCallable listRuleConditionsCallable(const Model::ListRuleConditionsRequest& request) const;
@@ -487,33 +628,42 @@ namespace AlibabaCloud
 			ListSceneItemsOutcome listSceneItems(const Model::ListSceneItemsRequest &request)const;
 			void listSceneItemsAsync(const Model::ListSceneItemsRequest& request, const ListSceneItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSceneItemsOutcomeCallable listSceneItemsCallable(const Model::ListSceneItemsRequest& request) const;
+			ListSceneParametersOutcome listSceneParameters(const Model::ListSceneParametersRequest &request)const;
+			void listSceneParametersAsync(const Model::ListSceneParametersRequest& request, const ListSceneParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSceneParametersOutcomeCallable listSceneParametersCallable(const Model::ListSceneParametersRequest& request) const;
 			ListScenesOutcome listScenes(const Model::ListScenesRequest &request)const;
 			void listScenesAsync(const Model::ListScenesRequest& request, const ListScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListScenesOutcomeCallable listScenesCallable(const Model::ListScenesRequest& request) const;
 			ListUmengAppkeysOutcome listUmengAppkeys(const Model::ListUmengAppkeysRequest &request)const;
 			void listUmengAppkeysAsync(const Model::ListUmengAppkeysRequest& request, const ListUmengAppkeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUmengAppkeysOutcomeCallable listUmengAppkeysCallable(const Model::ListUmengAppkeysRequest& request) const;
+			ListUserClustersOutcome listUserClusters(const Model::ListUserClustersRequest &request)const;
+			void listUserClustersAsync(const Model::ListUserClustersRequest& request, const ListUserClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserClustersOutcomeCallable listUserClustersCallable(const Model::ListUserClustersRequest& request) const;
 			ModifyDataSourceOutcome modifyDataSource(const Model::ModifyDataSourceRequest &request)const;
 			void modifyDataSourceAsync(const Model::ModifyDataSourceRequest& request, const ModifyDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDataSourceOutcomeCallable modifyDataSourceCallable(const Model::ModifyDataSourceRequest& request) const;
-			ModifyDiversifyOutcome modifyDiversify(const Model::ModifyDiversifyRequest &request)const;
-			void modifyDiversifyAsync(const Model::ModifyDiversifyRequest& request, const ModifyDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDiversifyOutcomeCallable modifyDiversifyCallable(const Model::ModifyDiversifyRequest& request) const;
-			ModifyExposureSettingsOutcome modifyExposureSettings(const Model::ModifyExposureSettingsRequest &request)const;
-			void modifyExposureSettingsAsync(const Model::ModifyExposureSettingsRequest& request, const ModifyExposureSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyExposureSettingsOutcomeCallable modifyExposureSettingsCallable(const Model::ModifyExposureSettingsRequest& request) const;
+			ModifyFilteringAlgorithmMetaOutcome modifyFilteringAlgorithmMeta(const Model::ModifyFilteringAlgorithmMetaRequest &request)const;
+			void modifyFilteringAlgorithmMetaAsync(const Model::ModifyFilteringAlgorithmMetaRequest& request, const ModifyFilteringAlgorithmMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFilteringAlgorithmMetaOutcomeCallable modifyFilteringAlgorithmMetaCallable(const Model::ModifyFilteringAlgorithmMetaRequest& request) const;
 			ModifyInstanceOutcome modifyInstance(const Model::ModifyInstanceRequest &request)const;
 			void modifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceOutcomeCallable modifyInstanceCallable(const Model::ModifyInstanceRequest& request) const;
-			ModifyMixOutcome modifyMix(const Model::ModifyMixRequest &request)const;
-			void modifyMixAsync(const Model::ModifyMixRequest& request, const ModifyMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyMixOutcomeCallable modifyMixCallable(const Model::ModifyMixRequest& request) const;
+			ModifyItemsOutcome modifyItems(const Model::ModifyItemsRequest &request)const;
+			void modifyItemsAsync(const Model::ModifyItemsRequest& request, const ModifyItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyItemsOutcomeCallable modifyItemsCallable(const Model::ModifyItemsRequest& request) const;
+			ModifyRankingModelOutcome modifyRankingModel(const Model::ModifyRankingModelRequest &request)const;
+			void modifyRankingModelAsync(const Model::ModifyRankingModelRequest& request, const ModifyRankingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyRankingModelOutcomeCallable modifyRankingModelCallable(const Model::ModifyRankingModelRequest& request) const;
 			ModifyRuleOutcome modifyRule(const Model::ModifyRuleRequest &request)const;
 			void modifyRuleAsync(const Model::ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyRuleOutcomeCallable modifyRuleCallable(const Model::ModifyRuleRequest& request) const;
 			ModifySceneOutcome modifyScene(const Model::ModifySceneRequest &request)const;
 			void modifySceneAsync(const Model::ModifySceneRequest& request, const ModifySceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySceneOutcomeCallable modifySceneCallable(const Model::ModifySceneRequest& request) const;
+			OfflineFilteringAlgorithmOutcome offlineFilteringAlgorithm(const Model::OfflineFilteringAlgorithmRequest &request)const;
+			void offlineFilteringAlgorithmAsync(const Model::OfflineFilteringAlgorithmRequest& request, const OfflineFilteringAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OfflineFilteringAlgorithmOutcomeCallable offlineFilteringAlgorithmCallable(const Model::OfflineFilteringAlgorithmRequest& request) const;
 			PublishRuleOutcome publishRule(const Model::PublishRuleRequest &request)const;
 			void publishRuleAsync(const Model::PublishRuleRequest& request, const PublishRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishRuleOutcomeCallable publishRuleCallable(const Model::PublishRuleRequest& request) const;
@@ -526,6 +676,9 @@ namespace AlibabaCloud
 			QueryDataMessageOutcome queryDataMessage(const Model::QueryDataMessageRequest &request)const;
 			void queryDataMessageAsync(const Model::QueryDataMessageRequest& request, const QueryDataMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDataMessageOutcomeCallable queryDataMessageCallable(const Model::QueryDataMessageRequest& request) const;
+			QueryDataMessageStatisticsOutcome queryDataMessageStatistics(const Model::QueryDataMessageStatisticsRequest &request)const;
+			void queryDataMessageStatisticsAsync(const Model::QueryDataMessageStatisticsRequest& request, const QueryDataMessageStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDataMessageStatisticsOutcomeCallable queryDataMessageStatisticsCallable(const Model::QueryDataMessageStatisticsRequest& request) const;
 			QueryExceptionHistoryOutcome queryExceptionHistory(const Model::QueryExceptionHistoryRequest &request)const;
 			void queryExceptionHistoryAsync(const Model::QueryExceptionHistoryRequest& request, const QueryExceptionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryExceptionHistoryOutcomeCallable queryExceptionHistoryCallable(const Model::QueryExceptionHistoryRequest& request) const;
@@ -541,6 +694,9 @@ namespace AlibabaCloud
 			QuerySyncReportAggregationOutcome querySyncReportAggregation(const Model::QuerySyncReportAggregationRequest &request)const;
 			void querySyncReportAggregationAsync(const Model::QuerySyncReportAggregationRequest& request, const QuerySyncReportAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySyncReportAggregationOutcomeCallable querySyncReportAggregationCallable(const Model::QuerySyncReportAggregationRequest& request) const;
+			RebuildIndexOutcome rebuildIndex(const Model::RebuildIndexRequest &request)const;
+			void rebuildIndexAsync(const Model::RebuildIndexRequest& request, const RebuildIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebuildIndexOutcomeCallable rebuildIndexCallable(const Model::RebuildIndexRequest& request) const;
 			RecommendOutcome recommend(const Model::RecommendRequest &request)const;
 			void recommendAsync(const Model::RecommendRequest& request, const RecommendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecommendOutcomeCallable recommendCallable(const Model::RecommendRequest& request) const;
@@ -550,6 +706,18 @@ namespace AlibabaCloud
 			StopDataSetOutcome stopDataSet(const Model::StopDataSetRequest &request)const;
 			void stopDataSetAsync(const Model::StopDataSetRequest& request, const StopDataSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopDataSetOutcomeCallable stopDataSetCallable(const Model::StopDataSetRequest& request) const;
+			UnLockIndexVersionOutcome unLockIndexVersion(const Model::UnLockIndexVersionRequest &request)const;
+			void unLockIndexVersionAsync(const Model::UnLockIndexVersionRequest& request, const UnLockIndexVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnLockIndexVersionOutcomeCallable unLockIndexVersionCallable(const Model::UnLockIndexVersionRequest& request) const;
+			UpdateExperimentBasicInfoOutcome updateExperimentBasicInfo(const Model::UpdateExperimentBasicInfoRequest &request)const;
+			void updateExperimentBasicInfoAsync(const Model::UpdateExperimentBasicInfoRequest& request, const UpdateExperimentBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateExperimentBasicInfoOutcomeCallable updateExperimentBasicInfoCallable(const Model::UpdateExperimentBasicInfoRequest& request) const;
+			UpdateExperimentConfigOutcome updateExperimentConfig(const Model::UpdateExperimentConfigRequest &request)const;
+			void updateExperimentConfigAsync(const Model::UpdateExperimentConfigRequest& request, const UpdateExperimentConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateExperimentConfigOutcomeCallable updateExperimentConfigCallable(const Model::UpdateExperimentConfigRequest& request) const;
+			UpdateExperimentStatusOutcome updateExperimentStatus(const Model::UpdateExperimentStatusRequest &request)const;
+			void updateExperimentStatusAsync(const Model::UpdateExperimentStatusRequest& request, const UpdateExperimentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateExperimentStatusOutcomeCallable updateExperimentStatusCallable(const Model::UpdateExperimentStatusRequest& request) const;
 			UpgradeInstanceOutcome upgradeInstance(const Model::UpgradeInstanceRequest &request)const;
 			void upgradeInstanceAsync(const Model::UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeInstanceOutcomeCallable upgradeInstanceCallable(const Model::UpgradeInstanceRequest& request) const;

@@ -39,39 +39,46 @@ void DescribeSyncReportDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["resultItem"];
+	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["Type"].isNull())
-			resultObject.type = valueResultResultItem["Type"].asString();
-		if(!valueResultResultItem["ErrorPercent"].isNull())
-			resultObject.errorPercent = std::stof(valueResultResultItem["ErrorPercent"].asString());
-		if(!valueResultResultItem["ErrorCount"].isNull())
-			resultObject.errorCount = std::stoi(valueResultResultItem["ErrorCount"].asString());
-		if(!valueResultResultItem["DefaultDisplay"].isNull())
-			resultObject.defaultDisplay = valueResultResultItem["DefaultDisplay"].asString() == "true";
-		if(!valueResultResultItem["SampleDisplay"].isNull())
-			resultObject.sampleDisplay = valueResultResultItem["SampleDisplay"].asString() == "true";
-		auto allHistoryDataNode = allResultNode["HistoryData"]["HistoryDataItem"];
-		for (auto allResultNodeHistoryDataHistoryDataItem : allHistoryDataNode)
+		if(!valueresultresultItem["defaultDisplay"].isNull())
+			resultObject.defaultDisplay = valueresultresultItem["defaultDisplay"].asString() == "true";
+		if(!valueresultresultItem["errorCount"].isNull())
+			resultObject.errorCount = std::stoi(valueresultresultItem["errorCount"].asString());
+		if(!valueresultresultItem["errorPercent"].isNull())
+			resultObject.errorPercent = std::stof(valueresultresultItem["errorPercent"].asString());
+		if(!valueresultresultItem["sampleDisplay"].isNull())
+			resultObject.sampleDisplay = valueresultresultItem["sampleDisplay"].asString() == "true";
+		if(!valueresultresultItem["type"].isNull())
+			resultObject.type = valueresultresultItem["type"].asString();
+		auto allhistoryDataNode = valueresultresultItem["historyData"]["HistoryDataItem"];
+		for (auto valueresultresultItemhistoryDataHistoryDataItem : allhistoryDataNode)
 		{
 			ResultItem::HistoryDataItem historyDataObject;
-			if(!allResultNodeHistoryDataHistoryDataItem["ErrorPercent"].isNull())
-				historyDataObject.errorPercent = std::stof(allResultNodeHistoryDataHistoryDataItem["ErrorPercent"].asString());
-			if(!allResultNodeHistoryDataHistoryDataItem["StartTime"].isNull())
-				historyDataObject.startTime = std::stol(allResultNodeHistoryDataHistoryDataItem["StartTime"].asString());
-			if(!allResultNodeHistoryDataHistoryDataItem["EndTime"].isNull())
-				historyDataObject.endTime = std::stol(allResultNodeHistoryDataHistoryDataItem["EndTime"].asString());
+			if(!valueresultresultItemhistoryDataHistoryDataItem["endTime"].isNull())
+				historyDataObject.endTime = std::stol(valueresultresultItemhistoryDataHistoryDataItem["endTime"].asString());
+			if(!valueresultresultItemhistoryDataHistoryDataItem["errorPercent"].isNull())
+				historyDataObject.errorPercent = std::stof(valueresultresultItemhistoryDataHistoryDataItem["errorPercent"].asString());
+			if(!valueresultresultItemhistoryDataHistoryDataItem["startTime"].isNull())
+				historyDataObject.startTime = std::stol(valueresultresultItemhistoryDataHistoryDataItem["startTime"].asString());
 			resultObject.historyData.push_back(historyDataObject);
 		}
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
+}
+
+std::vector<DescribeSyncReportDetailResult::ResultItem> DescribeSyncReportDetailResult::getresult()const
+{
+	return result_;
 }
 
 std::string DescribeSyncReportDetailResult::getMessage()const
@@ -79,13 +86,13 @@ std::string DescribeSyncReportDetailResult::getMessage()const
 	return message_;
 }
 
+std::string DescribeSyncReportDetailResult::getRequestId()const
+{
+	return requestId_;
+}
+
 std::string DescribeSyncReportDetailResult::getCode()const
 {
 	return code_;
-}
-
-std::vector<DescribeSyncReportDetailResult::ResultItem> DescribeSyncReportDetailResult::getResult()const
-{
-	return result_;
 }
 

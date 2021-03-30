@@ -46,14 +46,14 @@ namespace AlibabaCloud
 					{
 						std::string status;
 						std::string categoryPath;
-						std::string itemType;
 						std::string channel;
-						std::string title;
+						std::string itemType;
 						std::string author;
+						std::string title;
 						std::string duration;
+						std::string brandId;
 						std::string expireTime;
 						std::string pubTime;
-						std::string brandId;
 						std::string itemId;
 						std::string shopId;
 					};
@@ -65,11 +65,17 @@ namespace AlibabaCloud
 				ListSceneItemsResult();
 				explicit ListSceneItemsResult(const std::string &payload);
 				~ListSceneItemsResult();
+				std::string getRequestId()const;
+				std::string getMessage()const;
+				std::string getCode()const;
 				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string requestId_;
+				std::string message_;
+				std::string code_;
 				Result result_;
 
 			};

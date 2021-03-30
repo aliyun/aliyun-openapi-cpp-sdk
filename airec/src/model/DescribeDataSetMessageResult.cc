@@ -39,25 +39,32 @@ void DescribeDataSetMessageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["resultItem"];
+	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["Message"].isNull())
-			resultObject.message = valueResultResultItem["Message"].asString();
-		if(!valueResultResultItem["ErrorLevel"].isNull())
-			resultObject.errorLevel = valueResultResultItem["ErrorLevel"].asString();
-		if(!valueResultResultItem["ErrorType"].isNull())
-			resultObject.errorType = valueResultResultItem["ErrorType"].asString();
-		if(!valueResultResultItem["Timestamp"].isNull())
-			resultObject.timestamp = valueResultResultItem["Timestamp"].asString();
+		if(!valueresultresultItem["errorLevel"].isNull())
+			resultObject.errorLevel = valueresultresultItem["errorLevel"].asString();
+		if(!valueresultresultItem["errorType"].isNull())
+			resultObject.errorType = valueresultresultItem["errorType"].asString();
+		if(!valueresultresultItem["message"].isNull())
+			resultObject.message = valueresultresultItem["message"].asString();
+		if(!valueresultresultItem["timestamp"].isNull())
+			resultObject.timestamp = valueresultresultItem["timestamp"].asString();
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
+}
+
+std::vector<DescribeDataSetMessageResult::ResultItem> DescribeDataSetMessageResult::getresult()const
+{
+	return result_;
 }
 
 std::string DescribeDataSetMessageResult::getMessage()const
@@ -65,13 +72,13 @@ std::string DescribeDataSetMessageResult::getMessage()const
 	return message_;
 }
 
+std::string DescribeDataSetMessageResult::getRequestId()const
+{
+	return requestId_;
+}
+
 std::string DescribeDataSetMessageResult::getCode()const
 {
 	return code_;
-}
-
-std::vector<DescribeDataSetMessageResult::ResultItem> DescribeDataSetMessageResult::getResult()const
-{
-	return result_;
 }
 

@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::ValidateInstanceRequest;
 
 ValidateInstanceRequest::ValidateInstanceRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/actions/validate");
+	setResourcePath("/v2/openapi/instances/[instanceId]/actions/validate");
 	setMethod(HttpRequest::Method::Post);
 }
 

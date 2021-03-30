@@ -39,31 +39,38 @@ void DescribeUserMetricsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["ResultItem"];
+	for (auto valueresultResultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["SceneId"].isNull())
-			resultObject.sceneId = valueResultResultItem["SceneId"].asString();
-		auto allDataPointsNode = allResultNode["DataPoints"]["DataPointsItem"];
-		for (auto allResultNodeDataPointsDataPointsItem : allDataPointsNode)
+		if(!valueresultResultItem["sceneId"].isNull())
+			resultObject.sceneId = valueresultResultItem["sceneId"].asString();
+		auto alldataPointsNode = valueresultResultItem["dataPoints"]["DataPointsItem"];
+		for (auto valueresultResultItemdataPointsDataPointsItem : alldataPointsNode)
 		{
 			ResultItem::DataPointsItem dataPointsObject;
-			if(!allResultNodeDataPointsDataPointsItem["Val"].isNull())
-				dataPointsObject.val = std::stof(allResultNodeDataPointsDataPointsItem["Val"].asString());
-			if(!allResultNodeDataPointsDataPointsItem["StartTime"].isNull())
-				dataPointsObject.startTime = std::stol(allResultNodeDataPointsDataPointsItem["StartTime"].asString());
-			if(!allResultNodeDataPointsDataPointsItem["EndTime"].isNull())
-				dataPointsObject.endTime = std::stol(allResultNodeDataPointsDataPointsItem["EndTime"].asString());
+			if(!valueresultResultItemdataPointsDataPointsItem["endTime"].isNull())
+				dataPointsObject.endTime = std::stol(valueresultResultItemdataPointsDataPointsItem["endTime"].asString());
+			if(!valueresultResultItemdataPointsDataPointsItem["startTime"].isNull())
+				dataPointsObject.startTime = std::stol(valueresultResultItemdataPointsDataPointsItem["startTime"].asString());
+			if(!valueresultResultItemdataPointsDataPointsItem["val"].isNull())
+				dataPointsObject.val = std::stof(valueresultResultItemdataPointsDataPointsItem["val"].asString());
 			resultObject.dataPoints.push_back(dataPointsObject);
 		}
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
+}
+
+std::vector<DescribeUserMetricsResult::ResultItem> DescribeUserMetricsResult::getresult()const
+{
+	return result_;
 }
 
 std::string DescribeUserMetricsResult::getMessage()const
@@ -71,13 +78,13 @@ std::string DescribeUserMetricsResult::getMessage()const
 	return message_;
 }
 
+std::string DescribeUserMetricsResult::getRequestId()const
+{
+	return requestId_;
+}
+
 std::string DescribeUserMetricsResult::getCode()const
 {
 	return code_;
-}
-
-std::vector<DescribeUserMetricsResult::ResultItem> DescribeUserMetricsResult::getResult()const
-{
-	return result_;
 }
 

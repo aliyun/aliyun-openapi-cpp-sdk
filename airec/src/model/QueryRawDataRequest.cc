@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::QueryRawDataRequest;
 
 QueryRawDataRequest::QueryRawDataRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/tables/[Table]/raw-data");
+	setResourcePath("/v2/openapi/instances/[instanceId]/tables/[table]/raw-data");
 	setMethod(HttpRequest::Method::Get);
 }
 

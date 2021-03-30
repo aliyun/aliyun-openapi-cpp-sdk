@@ -39,25 +39,46 @@ void ListScenesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["ResultItem"];
+	for (auto valueresultResultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["SceneId"].isNull())
-			resultObject.sceneId = valueResultResultItem["SceneId"].asString();
-		if(!valueResultResultItem["GmtCreate"].isNull())
-			resultObject.gmtCreate = valueResultResultItem["GmtCreate"].asString();
-		if(!valueResultResultItem["GmtModified"].isNull())
-			resultObject.gmtModified = valueResultResultItem["GmtModified"].asString();
-		if(!valueResultResultItem["Status"].isNull())
-			resultObject.status = valueResultResultItem["Status"].asString();
+		if(!valueresultResultItem["gmtCreate"].isNull())
+			resultObject.gmtCreate = valueresultResultItem["gmtCreate"].asString();
+		if(!valueresultResultItem["gmtModified"].isNull())
+			resultObject.gmtModified = valueresultResultItem["gmtModified"].asString();
+		if(!valueresultResultItem["sceneId"].isNull())
+			resultObject.sceneId = valueresultResultItem["sceneId"].asString();
+		if(!valueresultResultItem["status"].isNull())
+			resultObject.status = valueresultResultItem["status"].asString();
 		result_.push_back(resultObject);
 	}
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
 }
 
-std::vector<ListScenesResult::ResultItem> ListScenesResult::getResult()const
+std::vector<ListScenesResult::ResultItem> ListScenesResult::getresult()const
 {
 	return result_;
+}
+
+std::string ListScenesResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListScenesResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListScenesResult::getCode()const
+{
+	return code_;
 }
 

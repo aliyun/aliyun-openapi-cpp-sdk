@@ -37,30 +37,42 @@ namespace AlibabaCloud
 
 				int getReturnCount()const;
 				void setReturnCount(int returnCount);
+				std::string getServiceType()const;
+				void setServiceType(const std::string& serviceType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				std::string getDebug()const;
+				void setDebug(const std::string& debug);
 				std::string getIp()const;
 				void setIp(const std::string& ip);
+				std::string getLogLevel()const;
+				void setLogLevel(const std::string& logLevel);
 				std::string getSceneId()const;
 				void setSceneId(const std::string& sceneId);
 				std::string getImei()const;
 				void setImei(const std::string& imei);
+				std::string getExperimentId()const;
+				void setExperimentId(const std::string& experimentId);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				std::string getItems()const;
 				void setItems(const std::string& items);
+				std::string getUserInfo()const;
+				void setUserInfo(const std::string& userInfo);
 
             private:
 				int returnCount_;
+				std::string serviceType_;
 				std::string instanceId_;
-				std::string regionId_;
+				std::string debug_;
 				std::string ip_;
+				std::string logLevel_;
 				std::string sceneId_;
 				std::string imei_;
+				std::string experimentId_;
 				std::string userId_;
 				std::string items_;
+				std::string userInfo_;
 
 			};
 		}

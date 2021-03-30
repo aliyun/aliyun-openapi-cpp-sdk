@@ -39,27 +39,34 @@ void ListDataSetResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["ResultItem"];
+	for (auto valueresultResultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["InstanceId"].isNull())
-			resultObject.instanceId = valueResultResultItem["InstanceId"].asString();
-		if(!valueResultResultItem["VersionId"].isNull())
-			resultObject.versionId = valueResultResultItem["VersionId"].asString();
-		if(!valueResultResultItem["State"].isNull())
-			resultObject.state = valueResultResultItem["State"].asString();
-		if(!valueResultResultItem["GmtCreate"].isNull())
-			resultObject.gmtCreate = std::stol(valueResultResultItem["GmtCreate"].asString());
-		if(!valueResultResultItem["GmtModified"].isNull())
-			resultObject.gmtModified = std::stol(valueResultResultItem["GmtModified"].asString());
+		if(!valueresultResultItem["gmtCreate"].isNull())
+			resultObject.gmtCreate = std::stol(valueresultResultItem["gmtCreate"].asString());
+		if(!valueresultResultItem["gmtModified"].isNull())
+			resultObject.gmtModified = std::stol(valueresultResultItem["gmtModified"].asString());
+		if(!valueresultResultItem["instanceId"].isNull())
+			resultObject.instanceId = valueresultResultItem["instanceId"].asString();
+		if(!valueresultResultItem["state"].isNull())
+			resultObject.state = valueresultResultItem["state"].asString();
+		if(!valueresultResultItem["versionId"].isNull())
+			resultObject.versionId = valueresultResultItem["versionId"].asString();
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
+}
+
+std::vector<ListDataSetResult::ResultItem> ListDataSetResult::getresult()const
+{
+	return result_;
 }
 
 std::string ListDataSetResult::getMessage()const
@@ -67,13 +74,13 @@ std::string ListDataSetResult::getMessage()const
 	return message_;
 }
 
+std::string ListDataSetResult::getRequestId()const
+{
+	return requestId_;
+}
+
 std::string ListDataSetResult::getCode()const
 {
 	return code_;
-}
-
-std::vector<ListDataSetResult::ResultItem> ListDataSetResult::getResult()const
-{
-	return result_;
 }
 

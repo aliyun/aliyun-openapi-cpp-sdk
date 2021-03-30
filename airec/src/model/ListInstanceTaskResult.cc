@@ -39,37 +39,44 @@ void ListInstanceTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["resultItem"];
+	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["Name"].isNull())
-			resultObject.name = valueResultResultItem["Name"].asString();
-		if(!valueResultResultItem["TotalProgress"].isNull())
-			resultObject.totalProgress = std::stoi(valueResultResultItem["TotalProgress"].asString());
-		auto allSubProgressInfosNode = allResultNode["SubProgressInfos"]["SubProgressInfosItem"];
-		for (auto allResultNodeSubProgressInfosSubProgressInfosItem : allSubProgressInfosNode)
+		if(!valueresultresultItem["name"].isNull())
+			resultObject.name = valueresultresultItem["name"].asString();
+		if(!valueresultresultItem["totalProgress"].isNull())
+			resultObject.totalProgress = std::stoi(valueresultresultItem["totalProgress"].asString());
+		auto allsubProgressInfosNode = valueresultresultItem["subProgressInfos"]["subProgressInfosItem"];
+		for (auto valueresultresultItemsubProgressInfossubProgressInfosItem : allsubProgressInfosNode)
 		{
 			ResultItem::SubProgressInfosItem subProgressInfosObject;
-			if(!allResultNodeSubProgressInfosSubProgressInfosItem["Type"].isNull())
-				subProgressInfosObject.type = allResultNodeSubProgressInfosSubProgressInfosItem["Type"].asString();
-			if(!allResultNodeSubProgressInfosSubProgressInfosItem["Progress"].isNull())
-				subProgressInfosObject.progress = std::stoi(allResultNodeSubProgressInfosSubProgressInfosItem["Progress"].asString());
-			if(!allResultNodeSubProgressInfosSubProgressInfosItem["Detail"].isNull())
-				subProgressInfosObject.detail = allResultNodeSubProgressInfosSubProgressInfosItem["Detail"].asString();
-			if(!allResultNodeSubProgressInfosSubProgressInfosItem["TotalNum"].isNull())
-				subProgressInfosObject.totalNum = std::stoi(allResultNodeSubProgressInfosSubProgressInfosItem["TotalNum"].asString());
-			if(!allResultNodeSubProgressInfosSubProgressInfosItem["FinishedNum"].isNull())
-				subProgressInfosObject.finishedNum = std::stoi(allResultNodeSubProgressInfosSubProgressInfosItem["FinishedNum"].asString());
+			if(!valueresultresultItemsubProgressInfossubProgressInfosItem["detail"].isNull())
+				subProgressInfosObject.detail = valueresultresultItemsubProgressInfossubProgressInfosItem["detail"].asString();
+			if(!valueresultresultItemsubProgressInfossubProgressInfosItem["finishedNum"].isNull())
+				subProgressInfosObject.finishedNum = std::stoi(valueresultresultItemsubProgressInfossubProgressInfosItem["finishedNum"].asString());
+			if(!valueresultresultItemsubProgressInfossubProgressInfosItem["progress"].isNull())
+				subProgressInfosObject.progress = std::stoi(valueresultresultItemsubProgressInfossubProgressInfosItem["progress"].asString());
+			if(!valueresultresultItemsubProgressInfossubProgressInfosItem["totalNum"].isNull())
+				subProgressInfosObject.totalNum = std::stoi(valueresultresultItemsubProgressInfossubProgressInfosItem["totalNum"].asString());
+			if(!valueresultresultItemsubProgressInfossubProgressInfosItem["type"].isNull())
+				subProgressInfosObject.type = valueresultresultItemsubProgressInfossubProgressInfosItem["type"].asString();
 			resultObject.subProgressInfos.push_back(subProgressInfosObject);
 		}
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
+}
+
+std::vector<ListInstanceTaskResult::ResultItem> ListInstanceTaskResult::getresult()const
+{
+	return result_;
 }
 
 std::string ListInstanceTaskResult::getMessage()const
@@ -77,13 +84,13 @@ std::string ListInstanceTaskResult::getMessage()const
 	return message_;
 }
 
+std::string ListInstanceTaskResult::getRequestId()const
+{
+	return requestId_;
+}
+
 std::string ListInstanceTaskResult::getCode()const
 {
 	return code_;
-}
-
-std::vector<ListInstanceTaskResult::ResultItem> ListInstanceTaskResult::getResult()const
-{
-	return result_;
 }
 

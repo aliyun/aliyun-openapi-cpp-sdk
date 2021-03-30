@@ -87,36 +87,144 @@ AirecClient::AttachDatasetOutcomeCallable AirecClient::attachDatasetCallable(con
 	return task->get_future();
 }
 
-AirecClient::CreateDiversifyOutcome AirecClient::createDiversify(const CreateDiversifyRequest &request) const
+AirecClient::AttachIndexVersionOutcome AirecClient::attachIndexVersion(const AttachIndexVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateDiversifyOutcome(endpointOutcome.error());
+		return AttachIndexVersionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateDiversifyOutcome(CreateDiversifyResult(outcome.result()));
+		return AttachIndexVersionOutcome(AttachIndexVersionResult(outcome.result()));
 	else
-		return CreateDiversifyOutcome(outcome.error());
+		return AttachIndexVersionOutcome(outcome.error());
 }
 
-void AirecClient::createDiversifyAsync(const CreateDiversifyRequest& request, const CreateDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::attachIndexVersionAsync(const AttachIndexVersionRequest& request, const AttachIndexVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createDiversify(request), context);
+		handler(this, request, attachIndexVersion(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::CreateDiversifyOutcomeCallable AirecClient::createDiversifyCallable(const CreateDiversifyRequest &request) const
+AirecClient::AttachIndexVersionOutcomeCallable AirecClient::attachIndexVersionCallable(const AttachIndexVersionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateDiversifyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AttachIndexVersionOutcome()>>(
 			[this, request]()
 			{
-			return this->createDiversify(request);
+			return this->attachIndexVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::CheckRankingModelReachableOutcome AirecClient::checkRankingModelReachable(const CheckRankingModelReachableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckRankingModelReachableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckRankingModelReachableOutcome(CheckRankingModelReachableResult(outcome.result()));
+	else
+		return CheckRankingModelReachableOutcome(outcome.error());
+}
+
+void AirecClient::checkRankingModelReachableAsync(const CheckRankingModelReachableRequest& request, const CheckRankingModelReachableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkRankingModelReachable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::CheckRankingModelReachableOutcomeCallable AirecClient::checkRankingModelReachableCallable(const CheckRankingModelReachableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckRankingModelReachableOutcome()>>(
+			[this, request]()
+			{
+			return this->checkRankingModelReachable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::CloneExperimentOutcome AirecClient::cloneExperiment(const CloneExperimentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CloneExperimentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CloneExperimentOutcome(CloneExperimentResult(outcome.result()));
+	else
+		return CloneExperimentOutcome(outcome.error());
+}
+
+void AirecClient::cloneExperimentAsync(const CloneExperimentRequest& request, const CloneExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cloneExperiment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::CloneExperimentOutcomeCallable AirecClient::cloneExperimentCallable(const CloneExperimentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CloneExperimentOutcome()>>(
+			[this, request]()
+			{
+			return this->cloneExperiment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::CreateFilteringAlgorithmOutcome AirecClient::createFilteringAlgorithm(const CreateFilteringAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFilteringAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFilteringAlgorithmOutcome(CreateFilteringAlgorithmResult(outcome.result()));
+	else
+		return CreateFilteringAlgorithmOutcome(outcome.error());
+}
+
+void AirecClient::createFilteringAlgorithmAsync(const CreateFilteringAlgorithmRequest& request, const CreateFilteringAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFilteringAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::CreateFilteringAlgorithmOutcomeCallable AirecClient::createFilteringAlgorithmCallable(const CreateFilteringAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFilteringAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->createFilteringAlgorithm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -159,36 +267,36 @@ AirecClient::CreateInstanceOutcomeCallable AirecClient::createInstanceCallable(c
 	return task->get_future();
 }
 
-AirecClient::CreateMixOutcome AirecClient::createMix(const CreateMixRequest &request) const
+AirecClient::CreateRankingModelOutcome AirecClient::createRankingModel(const CreateRankingModelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateMixOutcome(endpointOutcome.error());
+		return CreateRankingModelOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateMixOutcome(CreateMixResult(outcome.result()));
+		return CreateRankingModelOutcome(CreateRankingModelResult(outcome.result()));
 	else
-		return CreateMixOutcome(outcome.error());
+		return CreateRankingModelOutcome(outcome.error());
 }
 
-void AirecClient::createMixAsync(const CreateMixRequest& request, const CreateMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::createRankingModelAsync(const CreateRankingModelRequest& request, const CreateRankingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createMix(request), context);
+		handler(this, request, createRankingModel(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::CreateMixOutcomeCallable AirecClient::createMixCallable(const CreateMixRequest &request) const
+AirecClient::CreateRankingModelOutcomeCallable AirecClient::createRankingModelCallable(const CreateRankingModelRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateMixOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateRankingModelOutcome()>>(
 			[this, request]()
 			{
-			return this->createMix(request);
+			return this->createRankingModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,6 +375,42 @@ AirecClient::CreateSceneOutcomeCallable AirecClient::createSceneCallable(const C
 	return task->get_future();
 }
 
+AirecClient::DecribeRankingModelOutcome AirecClient::decribeRankingModel(const DecribeRankingModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DecribeRankingModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DecribeRankingModelOutcome(DecribeRankingModelResult(outcome.result()));
+	else
+		return DecribeRankingModelOutcome(outcome.error());
+}
+
+void AirecClient::decribeRankingModelAsync(const DecribeRankingModelRequest& request, const DecribeRankingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, decribeRankingModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::DecribeRankingModelOutcomeCallable AirecClient::decribeRankingModelCallable(const DecribeRankingModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DecribeRankingModelOutcome()>>(
+			[this, request]()
+			{
+			return this->decribeRankingModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AirecClient::DeleteDataSetOutcome AirecClient::deleteDataSet(const DeleteDataSetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -303,72 +447,108 @@ AirecClient::DeleteDataSetOutcomeCallable AirecClient::deleteDataSetCallable(con
 	return task->get_future();
 }
 
-AirecClient::DeleteDiversifyOutcome AirecClient::deleteDiversify(const DeleteDiversifyRequest &request) const
+AirecClient::DeleteExperimentOutcome AirecClient::deleteExperiment(const DeleteExperimentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteDiversifyOutcome(endpointOutcome.error());
+		return DeleteExperimentOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteDiversifyOutcome(DeleteDiversifyResult(outcome.result()));
+		return DeleteExperimentOutcome(DeleteExperimentResult(outcome.result()));
 	else
-		return DeleteDiversifyOutcome(outcome.error());
+		return DeleteExperimentOutcome(outcome.error());
 }
 
-void AirecClient::deleteDiversifyAsync(const DeleteDiversifyRequest& request, const DeleteDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::deleteExperimentAsync(const DeleteExperimentRequest& request, const DeleteExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteDiversify(request), context);
+		handler(this, request, deleteExperiment(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::DeleteDiversifyOutcomeCallable AirecClient::deleteDiversifyCallable(const DeleteDiversifyRequest &request) const
+AirecClient::DeleteExperimentOutcomeCallable AirecClient::deleteExperimentCallable(const DeleteExperimentRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteDiversifyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteExperimentOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteDiversify(request);
+			return this->deleteExperiment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AirecClient::DeleteMixOutcome AirecClient::deleteMix(const DeleteMixRequest &request) const
+AirecClient::DeleteFilteringAlgorithmOutcome AirecClient::deleteFilteringAlgorithm(const DeleteFilteringAlgorithmRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteMixOutcome(endpointOutcome.error());
+		return DeleteFilteringAlgorithmOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteMixOutcome(DeleteMixResult(outcome.result()));
+		return DeleteFilteringAlgorithmOutcome(DeleteFilteringAlgorithmResult(outcome.result()));
 	else
-		return DeleteMixOutcome(outcome.error());
+		return DeleteFilteringAlgorithmOutcome(outcome.error());
 }
 
-void AirecClient::deleteMixAsync(const DeleteMixRequest& request, const DeleteMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::deleteFilteringAlgorithmAsync(const DeleteFilteringAlgorithmRequest& request, const DeleteFilteringAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteMix(request), context);
+		handler(this, request, deleteFilteringAlgorithm(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::DeleteMixOutcomeCallable AirecClient::deleteMixCallable(const DeleteMixRequest &request) const
+AirecClient::DeleteFilteringAlgorithmOutcomeCallable AirecClient::deleteFilteringAlgorithmCallable(const DeleteFilteringAlgorithmRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteMixOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteFilteringAlgorithmOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteMix(request);
+			return this->deleteFilteringAlgorithm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::DeleteRankingModelOutcome AirecClient::deleteRankingModel(const DeleteRankingModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRankingModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRankingModelOutcome(DeleteRankingModelResult(outcome.result()));
+	else
+		return DeleteRankingModelOutcome(outcome.error());
+}
+
+void AirecClient::deleteRankingModelAsync(const DeleteRankingModelRequest& request, const DeleteRankingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRankingModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::DeleteRankingModelOutcomeCallable AirecClient::deleteRankingModelCallable(const DeleteRankingModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRankingModelOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRankingModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,6 +591,42 @@ AirecClient::DeleteSceneOutcomeCallable AirecClient::deleteSceneCallable(const D
 	return task->get_future();
 }
 
+AirecClient::DescribeBaseExperimentOutcome AirecClient::describeBaseExperiment(const DescribeBaseExperimentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBaseExperimentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBaseExperimentOutcome(DescribeBaseExperimentResult(outcome.result()));
+	else
+		return DescribeBaseExperimentOutcome(outcome.error());
+}
+
+void AirecClient::describeBaseExperimentAsync(const DescribeBaseExperimentRequest& request, const DescribeBaseExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBaseExperiment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::DescribeBaseExperimentOutcomeCallable AirecClient::describeBaseExperimentCallable(const DescribeBaseExperimentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBaseExperimentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBaseExperiment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AirecClient::DescribeDataSetMessageOutcome AirecClient::describeDataSetMessage(const DescribeDataSetMessageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,108 +663,180 @@ AirecClient::DescribeDataSetMessageOutcomeCallable AirecClient::describeDataSetM
 	return task->get_future();
 }
 
-AirecClient::DescribeDataSetReportOutcome AirecClient::describeDataSetReport(const DescribeDataSetReportRequest &request) const
+AirecClient::DescribeDefaultAlgorithmsOutcome AirecClient::describeDefaultAlgorithms(const DescribeDefaultAlgorithmsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDataSetReportOutcome(endpointOutcome.error());
+		return DescribeDefaultAlgorithmsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDataSetReportOutcome(DescribeDataSetReportResult(outcome.result()));
+		return DescribeDefaultAlgorithmsOutcome(DescribeDefaultAlgorithmsResult(outcome.result()));
 	else
-		return DescribeDataSetReportOutcome(outcome.error());
+		return DescribeDefaultAlgorithmsOutcome(outcome.error());
 }
 
-void AirecClient::describeDataSetReportAsync(const DescribeDataSetReportRequest& request, const DescribeDataSetReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::describeDefaultAlgorithmsAsync(const DescribeDefaultAlgorithmsRequest& request, const DescribeDefaultAlgorithmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDataSetReport(request), context);
+		handler(this, request, describeDefaultAlgorithms(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::DescribeDataSetReportOutcomeCallable AirecClient::describeDataSetReportCallable(const DescribeDataSetReportRequest &request) const
+AirecClient::DescribeDefaultAlgorithmsOutcomeCallable AirecClient::describeDefaultAlgorithmsCallable(const DescribeDefaultAlgorithmsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDataSetReportOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDefaultAlgorithmsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDataSetReport(request);
+			return this->describeDefaultAlgorithms(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AirecClient::DescribeDiversifyOutcome AirecClient::describeDiversify(const DescribeDiversifyRequest &request) const
+AirecClient::DescribeExperimentOutcome AirecClient::describeExperiment(const DescribeExperimentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDiversifyOutcome(endpointOutcome.error());
+		return DescribeExperimentOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDiversifyOutcome(DescribeDiversifyResult(outcome.result()));
+		return DescribeExperimentOutcome(DescribeExperimentResult(outcome.result()));
 	else
-		return DescribeDiversifyOutcome(outcome.error());
+		return DescribeExperimentOutcome(outcome.error());
 }
 
-void AirecClient::describeDiversifyAsync(const DescribeDiversifyRequest& request, const DescribeDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::describeExperimentAsync(const DescribeExperimentRequest& request, const DescribeExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDiversify(request), context);
+		handler(this, request, describeExperiment(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::DescribeDiversifyOutcomeCallable AirecClient::describeDiversifyCallable(const DescribeDiversifyRequest &request) const
+AirecClient::DescribeExperimentOutcomeCallable AirecClient::describeExperimentCallable(const DescribeExperimentRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDiversifyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeExperimentOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDiversify(request);
+			return this->describeExperiment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AirecClient::DescribeExposureSettingsOutcome AirecClient::describeExposureSettings(const DescribeExposureSettingsRequest &request) const
+AirecClient::DescribeExperimentEnvOutcome AirecClient::describeExperimentEnv(const DescribeExperimentEnvRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeExposureSettingsOutcome(endpointOutcome.error());
+		return DescribeExperimentEnvOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeExposureSettingsOutcome(DescribeExposureSettingsResult(outcome.result()));
+		return DescribeExperimentEnvOutcome(DescribeExperimentEnvResult(outcome.result()));
 	else
-		return DescribeExposureSettingsOutcome(outcome.error());
+		return DescribeExperimentEnvOutcome(outcome.error());
 }
 
-void AirecClient::describeExposureSettingsAsync(const DescribeExposureSettingsRequest& request, const DescribeExposureSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::describeExperimentEnvAsync(const DescribeExperimentEnvRequest& request, const DescribeExperimentEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeExposureSettings(request), context);
+		handler(this, request, describeExperimentEnv(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::DescribeExposureSettingsOutcomeCallable AirecClient::describeExposureSettingsCallable(const DescribeExposureSettingsRequest &request) const
+AirecClient::DescribeExperimentEnvOutcomeCallable AirecClient::describeExperimentEnvCallable(const DescribeExperimentEnvRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeExposureSettingsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeExperimentEnvOutcome()>>(
 			[this, request]()
 			{
-			return this->describeExposureSettings(request);
+			return this->describeExperimentEnv(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::DescribeExperimentEnvProgressOutcome AirecClient::describeExperimentEnvProgress(const DescribeExperimentEnvProgressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeExperimentEnvProgressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeExperimentEnvProgressOutcome(DescribeExperimentEnvProgressResult(outcome.result()));
+	else
+		return DescribeExperimentEnvProgressOutcome(outcome.error());
+}
+
+void AirecClient::describeExperimentEnvProgressAsync(const DescribeExperimentEnvProgressRequest& request, const DescribeExperimentEnvProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeExperimentEnvProgress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::DescribeExperimentEnvProgressOutcomeCallable AirecClient::describeExperimentEnvProgressCallable(const DescribeExperimentEnvProgressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeExperimentEnvProgressOutcome()>>(
+			[this, request]()
+			{
+			return this->describeExperimentEnvProgress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::DescribeFilteringAlgorithmOutcome AirecClient::describeFilteringAlgorithm(const DescribeFilteringAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFilteringAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFilteringAlgorithmOutcome(DescribeFilteringAlgorithmResult(outcome.result()));
+	else
+		return DescribeFilteringAlgorithmOutcome(outcome.error());
+}
+
+void AirecClient::describeFilteringAlgorithmAsync(const DescribeFilteringAlgorithmRequest& request, const DescribeFilteringAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFilteringAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::DescribeFilteringAlgorithmOutcomeCallable AirecClient::describeFilteringAlgorithmCallable(const DescribeFilteringAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFilteringAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFilteringAlgorithm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,36 +879,36 @@ AirecClient::DescribeInstanceOutcomeCallable AirecClient::describeInstanceCallab
 	return task->get_future();
 }
 
-AirecClient::DescribeMixOutcome AirecClient::describeMix(const DescribeMixRequest &request) const
+AirecClient::DescribeLatestTaskOutcome AirecClient::describeLatestTask(const DescribeLatestTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeMixOutcome(endpointOutcome.error());
+		return DescribeLatestTaskOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeMixOutcome(DescribeMixResult(outcome.result()));
+		return DescribeLatestTaskOutcome(DescribeLatestTaskResult(outcome.result()));
 	else
-		return DescribeMixOutcome(outcome.error());
+		return DescribeLatestTaskOutcome(outcome.error());
 }
 
-void AirecClient::describeMixAsync(const DescribeMixRequest& request, const DescribeMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::describeLatestTaskAsync(const DescribeLatestTaskRequest& request, const DescribeLatestTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeMix(request), context);
+		handler(this, request, describeLatestTask(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::DescribeMixOutcomeCallable AirecClient::describeMixCallable(const DescribeMixRequest &request) const
+AirecClient::DescribeLatestTaskOutcomeCallable AirecClient::describeLatestTaskCallable(const DescribeLatestTaskRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeMixOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeLatestTaskOutcome()>>(
 			[this, request]()
 			{
-			return this->describeMix(request);
+			return this->describeLatestTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -765,6 +1053,42 @@ AirecClient::DescribeSceneOutcomeCallable AirecClient::describeSceneCallable(con
 			[this, request]()
 			{
 			return this->describeScene(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::DescribeSceneBucketOutcome AirecClient::describeSceneBucket(const DescribeSceneBucketRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSceneBucketOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSceneBucketOutcome(DescribeSceneBucketResult(outcome.result()));
+	else
+		return DescribeSceneBucketOutcome(outcome.error());
+}
+
+void AirecClient::describeSceneBucketAsync(const DescribeSceneBucketRequest& request, const DescribeSceneBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSceneBucket(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::DescribeSceneBucketOutcomeCallable AirecClient::describeSceneBucketCallable(const DescribeSceneBucketRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSceneBucketOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSceneBucket(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,36 +1275,36 @@ AirecClient::DowngradeInstanceOutcomeCallable AirecClient::downgradeInstanceCall
 	return task->get_future();
 }
 
-AirecClient::ListDashboardOutcome AirecClient::listDashboard(const ListDashboardRequest &request) const
+AirecClient::EnableExperimentOutcome AirecClient::enableExperiment(const EnableExperimentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListDashboardOutcome(endpointOutcome.error());
+		return EnableExperimentOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListDashboardOutcome(ListDashboardResult(outcome.result()));
+		return EnableExperimentOutcome(EnableExperimentResult(outcome.result()));
 	else
-		return ListDashboardOutcome(outcome.error());
+		return EnableExperimentOutcome(outcome.error());
 }
 
-void AirecClient::listDashboardAsync(const ListDashboardRequest& request, const ListDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::enableExperimentAsync(const EnableExperimentRequest& request, const EnableExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listDashboard(request), context);
+		handler(this, request, enableExperiment(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::ListDashboardOutcomeCallable AirecClient::listDashboardCallable(const ListDashboardRequest &request) const
+AirecClient::EnableExperimentOutcomeCallable AirecClient::enableExperimentCallable(const EnableExperimentRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListDashboardOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<EnableExperimentOutcome()>>(
 			[this, request]()
 			{
-			return this->listDashboard(request);
+			return this->enableExperiment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1131,78 +1455,6 @@ AirecClient::ListDashboardMetricsFlowsOutcomeCallable AirecClient::listDashboard
 	return task->get_future();
 }
 
-AirecClient::ListDashboardParametersOutcome AirecClient::listDashboardParameters(const ListDashboardParametersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListDashboardParametersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListDashboardParametersOutcome(ListDashboardParametersResult(outcome.result()));
-	else
-		return ListDashboardParametersOutcome(outcome.error());
-}
-
-void AirecClient::listDashboardParametersAsync(const ListDashboardParametersRequest& request, const ListDashboardParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listDashboardParameters(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AirecClient::ListDashboardParametersOutcomeCallable AirecClient::listDashboardParametersCallable(const ListDashboardParametersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListDashboardParametersOutcome()>>(
-			[this, request]()
-			{
-			return this->listDashboardParameters(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AirecClient::ListDashboardUidOutcome AirecClient::listDashboardUid(const ListDashboardUidRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListDashboardUidOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListDashboardUidOutcome(ListDashboardUidResult(outcome.result()));
-	else
-		return ListDashboardUidOutcome(outcome.error());
-}
-
-void AirecClient::listDashboardUidAsync(const ListDashboardUidRequest& request, const ListDashboardUidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listDashboardUid(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AirecClient::ListDashboardUidOutcomeCallable AirecClient::listDashboardUidCallable(const ListDashboardUidRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListDashboardUidOutcome()>>(
-			[this, request]()
-			{
-			return this->listDashboardUid(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AirecClient::ListDataSetOutcome AirecClient::listDataSet(const ListDataSetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1275,36 +1527,108 @@ AirecClient::ListDataSourceOutcomeCallable AirecClient::listDataSourceCallable(c
 	return task->get_future();
 }
 
-AirecClient::ListDiversifyOutcome AirecClient::listDiversify(const ListDiversifyRequest &request) const
+AirecClient::ListExperimentsOutcome AirecClient::listExperiments(const ListExperimentsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListDiversifyOutcome(endpointOutcome.error());
+		return ListExperimentsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListDiversifyOutcome(ListDiversifyResult(outcome.result()));
+		return ListExperimentsOutcome(ListExperimentsResult(outcome.result()));
 	else
-		return ListDiversifyOutcome(outcome.error());
+		return ListExperimentsOutcome(outcome.error());
 }
 
-void AirecClient::listDiversifyAsync(const ListDiversifyRequest& request, const ListDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::listExperimentsAsync(const ListExperimentsRequest& request, const ListExperimentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listDiversify(request), context);
+		handler(this, request, listExperiments(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::ListDiversifyOutcomeCallable AirecClient::listDiversifyCallable(const ListDiversifyRequest &request) const
+AirecClient::ListExperimentsOutcomeCallable AirecClient::listExperimentsCallable(const ListExperimentsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListDiversifyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListExperimentsOutcome()>>(
 			[this, request]()
 			{
-			return this->listDiversify(request);
+			return this->listExperiments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::ListFilteringAlgorithmsOutcome AirecClient::listFilteringAlgorithms(const ListFilteringAlgorithmsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFilteringAlgorithmsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFilteringAlgorithmsOutcome(ListFilteringAlgorithmsResult(outcome.result()));
+	else
+		return ListFilteringAlgorithmsOutcome(outcome.error());
+}
+
+void AirecClient::listFilteringAlgorithmsAsync(const ListFilteringAlgorithmsRequest& request, const ListFilteringAlgorithmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFilteringAlgorithms(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::ListFilteringAlgorithmsOutcomeCallable AirecClient::listFilteringAlgorithmsCallable(const ListFilteringAlgorithmsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFilteringAlgorithmsOutcome()>>(
+			[this, request]()
+			{
+			return this->listFilteringAlgorithms(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::ListIndexVersionsOutcome AirecClient::listIndexVersions(const ListIndexVersionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIndexVersionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIndexVersionsOutcome(ListIndexVersionsResult(outcome.result()));
+	else
+		return ListIndexVersionsOutcome(outcome.error());
+}
+
+void AirecClient::listIndexVersionsAsync(const ListIndexVersionsRequest& request, const ListIndexVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIndexVersions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::ListIndexVersionsOutcomeCallable AirecClient::listIndexVersionsCallable(const ListIndexVersionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIndexVersionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listIndexVersions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1383,36 +1707,144 @@ AirecClient::ListInstanceTaskOutcomeCallable AirecClient::listInstanceTaskCallab
 	return task->get_future();
 }
 
-AirecClient::ListMixOutcome AirecClient::listMix(const ListMixRequest &request) const
+AirecClient::ListItemsOutcome AirecClient::listItems(const ListItemsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListMixOutcome(endpointOutcome.error());
+		return ListItemsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListMixOutcome(ListMixResult(outcome.result()));
+		return ListItemsOutcome(ListItemsResult(outcome.result()));
 	else
-		return ListMixOutcome(outcome.error());
+		return ListItemsOutcome(outcome.error());
 }
 
-void AirecClient::listMixAsync(const ListMixRequest& request, const ListMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::listItemsAsync(const ListItemsRequest& request, const ListItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listMix(request), context);
+		handler(this, request, listItems(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::ListMixOutcomeCallable AirecClient::listMixCallable(const ListMixRequest &request) const
+AirecClient::ListItemsOutcomeCallable AirecClient::listItemsCallable(const ListItemsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListMixOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListItemsOutcome()>>(
 			[this, request]()
 			{
-			return this->listMix(request);
+			return this->listItems(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::ListLogsOutcome AirecClient::listLogs(const ListLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLogsOutcome(ListLogsResult(outcome.result()));
+	else
+		return ListLogsOutcome(outcome.error());
+}
+
+void AirecClient::listLogsAsync(const ListLogsRequest& request, const ListLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::ListLogsOutcomeCallable AirecClient::listLogsCallable(const ListLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->listLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::ListMixCategoriesOutcome AirecClient::listMixCategories(const ListMixCategoriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMixCategoriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMixCategoriesOutcome(ListMixCategoriesResult(outcome.result()));
+	else
+		return ListMixCategoriesOutcome(outcome.error());
+}
+
+void AirecClient::listMixCategoriesAsync(const ListMixCategoriesRequest& request, const ListMixCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMixCategories(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::ListMixCategoriesOutcomeCallable AirecClient::listMixCategoriesCallable(const ListMixCategoriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMixCategoriesOutcome()>>(
+			[this, request]()
+			{
+			return this->listMixCategories(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::ListRankingModelsOutcome AirecClient::listRankingModels(const ListRankingModelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRankingModelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRankingModelsOutcome(ListRankingModelsResult(outcome.result()));
+	else
+		return ListRankingModelsOutcome(outcome.error());
+}
+
+void AirecClient::listRankingModelsAsync(const ListRankingModelsRequest& request, const ListRankingModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRankingModels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::ListRankingModelsOutcomeCallable AirecClient::listRankingModelsCallable(const ListRankingModelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRankingModelsOutcome()>>(
+			[this, request]()
+			{
+			return this->listRankingModels(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1563,6 +1995,42 @@ AirecClient::ListSceneItemsOutcomeCallable AirecClient::listSceneItemsCallable(c
 	return task->get_future();
 }
 
+AirecClient::ListSceneParametersOutcome AirecClient::listSceneParameters(const ListSceneParametersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSceneParametersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSceneParametersOutcome(ListSceneParametersResult(outcome.result()));
+	else
+		return ListSceneParametersOutcome(outcome.error());
+}
+
+void AirecClient::listSceneParametersAsync(const ListSceneParametersRequest& request, const ListSceneParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSceneParameters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::ListSceneParametersOutcomeCallable AirecClient::listSceneParametersCallable(const ListSceneParametersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSceneParametersOutcome()>>(
+			[this, request]()
+			{
+			return this->listSceneParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AirecClient::ListScenesOutcome AirecClient::listScenes(const ListScenesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1635,6 +2103,42 @@ AirecClient::ListUmengAppkeysOutcomeCallable AirecClient::listUmengAppkeysCallab
 	return task->get_future();
 }
 
+AirecClient::ListUserClustersOutcome AirecClient::listUserClusters(const ListUserClustersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserClustersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserClustersOutcome(ListUserClustersResult(outcome.result()));
+	else
+		return ListUserClustersOutcome(outcome.error());
+}
+
+void AirecClient::listUserClustersAsync(const ListUserClustersRequest& request, const ListUserClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserClusters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::ListUserClustersOutcomeCallable AirecClient::listUserClustersCallable(const ListUserClustersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserClustersOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserClusters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AirecClient::ModifyDataSourceOutcome AirecClient::modifyDataSource(const ModifyDataSourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,72 +2175,36 @@ AirecClient::ModifyDataSourceOutcomeCallable AirecClient::modifyDataSourceCallab
 	return task->get_future();
 }
 
-AirecClient::ModifyDiversifyOutcome AirecClient::modifyDiversify(const ModifyDiversifyRequest &request) const
+AirecClient::ModifyFilteringAlgorithmMetaOutcome AirecClient::modifyFilteringAlgorithmMeta(const ModifyFilteringAlgorithmMetaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyDiversifyOutcome(endpointOutcome.error());
+		return ModifyFilteringAlgorithmMetaOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyDiversifyOutcome(ModifyDiversifyResult(outcome.result()));
+		return ModifyFilteringAlgorithmMetaOutcome(ModifyFilteringAlgorithmMetaResult(outcome.result()));
 	else
-		return ModifyDiversifyOutcome(outcome.error());
+		return ModifyFilteringAlgorithmMetaOutcome(outcome.error());
 }
 
-void AirecClient::modifyDiversifyAsync(const ModifyDiversifyRequest& request, const ModifyDiversifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::modifyFilteringAlgorithmMetaAsync(const ModifyFilteringAlgorithmMetaRequest& request, const ModifyFilteringAlgorithmMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyDiversify(request), context);
+		handler(this, request, modifyFilteringAlgorithmMeta(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::ModifyDiversifyOutcomeCallable AirecClient::modifyDiversifyCallable(const ModifyDiversifyRequest &request) const
+AirecClient::ModifyFilteringAlgorithmMetaOutcomeCallable AirecClient::modifyFilteringAlgorithmMetaCallable(const ModifyFilteringAlgorithmMetaRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyDiversifyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyFilteringAlgorithmMetaOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyDiversify(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AirecClient::ModifyExposureSettingsOutcome AirecClient::modifyExposureSettings(const ModifyExposureSettingsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyExposureSettingsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyExposureSettingsOutcome(ModifyExposureSettingsResult(outcome.result()));
-	else
-		return ModifyExposureSettingsOutcome(outcome.error());
-}
-
-void AirecClient::modifyExposureSettingsAsync(const ModifyExposureSettingsRequest& request, const ModifyExposureSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyExposureSettings(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AirecClient::ModifyExposureSettingsOutcomeCallable AirecClient::modifyExposureSettingsCallable(const ModifyExposureSettingsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyExposureSettingsOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyExposureSettings(request);
+			return this->modifyFilteringAlgorithmMeta(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,36 +2247,72 @@ AirecClient::ModifyInstanceOutcomeCallable AirecClient::modifyInstanceCallable(c
 	return task->get_future();
 }
 
-AirecClient::ModifyMixOutcome AirecClient::modifyMix(const ModifyMixRequest &request) const
+AirecClient::ModifyItemsOutcome AirecClient::modifyItems(const ModifyItemsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyMixOutcome(endpointOutcome.error());
+		return ModifyItemsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyMixOutcome(ModifyMixResult(outcome.result()));
+		return ModifyItemsOutcome(ModifyItemsResult(outcome.result()));
 	else
-		return ModifyMixOutcome(outcome.error());
+		return ModifyItemsOutcome(outcome.error());
 }
 
-void AirecClient::modifyMixAsync(const ModifyMixRequest& request, const ModifyMixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AirecClient::modifyItemsAsync(const ModifyItemsRequest& request, const ModifyItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyMix(request), context);
+		handler(this, request, modifyItems(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AirecClient::ModifyMixOutcomeCallable AirecClient::modifyMixCallable(const ModifyMixRequest &request) const
+AirecClient::ModifyItemsOutcomeCallable AirecClient::modifyItemsCallable(const ModifyItemsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyMixOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyItemsOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyMix(request);
+			return this->modifyItems(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::ModifyRankingModelOutcome AirecClient::modifyRankingModel(const ModifyRankingModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRankingModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRankingModelOutcome(ModifyRankingModelResult(outcome.result()));
+	else
+		return ModifyRankingModelOutcome(outcome.error());
+}
+
+void AirecClient::modifyRankingModelAsync(const ModifyRankingModelRequest& request, const ModifyRankingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRankingModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::ModifyRankingModelOutcomeCallable AirecClient::modifyRankingModelCallable(const ModifyRankingModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRankingModelOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRankingModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1881,6 +2385,42 @@ AirecClient::ModifySceneOutcomeCallable AirecClient::modifySceneCallable(const M
 			[this, request]()
 			{
 			return this->modifyScene(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::OfflineFilteringAlgorithmOutcome AirecClient::offlineFilteringAlgorithm(const OfflineFilteringAlgorithmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OfflineFilteringAlgorithmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OfflineFilteringAlgorithmOutcome(OfflineFilteringAlgorithmResult(outcome.result()));
+	else
+		return OfflineFilteringAlgorithmOutcome(outcome.error());
+}
+
+void AirecClient::offlineFilteringAlgorithmAsync(const OfflineFilteringAlgorithmRequest& request, const OfflineFilteringAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, offlineFilteringAlgorithm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::OfflineFilteringAlgorithmOutcomeCallable AirecClient::offlineFilteringAlgorithmCallable(const OfflineFilteringAlgorithmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OfflineFilteringAlgorithmOutcome()>>(
+			[this, request]()
+			{
+			return this->offlineFilteringAlgorithm(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2025,6 +2565,42 @@ AirecClient::QueryDataMessageOutcomeCallable AirecClient::queryDataMessageCallab
 			[this, request]()
 			{
 			return this->queryDataMessage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::QueryDataMessageStatisticsOutcome AirecClient::queryDataMessageStatistics(const QueryDataMessageStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDataMessageStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDataMessageStatisticsOutcome(QueryDataMessageStatisticsResult(outcome.result()));
+	else
+		return QueryDataMessageStatisticsOutcome(outcome.error());
+}
+
+void AirecClient::queryDataMessageStatisticsAsync(const QueryDataMessageStatisticsRequest& request, const QueryDataMessageStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDataMessageStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::QueryDataMessageStatisticsOutcomeCallable AirecClient::queryDataMessageStatisticsCallable(const QueryDataMessageStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDataMessageStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDataMessageStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2211,6 +2787,42 @@ AirecClient::QuerySyncReportAggregationOutcomeCallable AirecClient::querySyncRep
 	return task->get_future();
 }
 
+AirecClient::RebuildIndexOutcome AirecClient::rebuildIndex(const RebuildIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebuildIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebuildIndexOutcome(RebuildIndexResult(outcome.result()));
+	else
+		return RebuildIndexOutcome(outcome.error());
+}
+
+void AirecClient::rebuildIndexAsync(const RebuildIndexRequest& request, const RebuildIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebuildIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::RebuildIndexOutcomeCallable AirecClient::rebuildIndexCallable(const RebuildIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebuildIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->rebuildIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AirecClient::RecommendOutcome AirecClient::recommend(const RecommendRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2925,150 @@ AirecClient::StopDataSetOutcomeCallable AirecClient::stopDataSetCallable(const S
 			[this, request]()
 			{
 			return this->stopDataSet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::UnLockIndexVersionOutcome AirecClient::unLockIndexVersion(const UnLockIndexVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnLockIndexVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnLockIndexVersionOutcome(UnLockIndexVersionResult(outcome.result()));
+	else
+		return UnLockIndexVersionOutcome(outcome.error());
+}
+
+void AirecClient::unLockIndexVersionAsync(const UnLockIndexVersionRequest& request, const UnLockIndexVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unLockIndexVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::UnLockIndexVersionOutcomeCallable AirecClient::unLockIndexVersionCallable(const UnLockIndexVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnLockIndexVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->unLockIndexVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::UpdateExperimentBasicInfoOutcome AirecClient::updateExperimentBasicInfo(const UpdateExperimentBasicInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateExperimentBasicInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateExperimentBasicInfoOutcome(UpdateExperimentBasicInfoResult(outcome.result()));
+	else
+		return UpdateExperimentBasicInfoOutcome(outcome.error());
+}
+
+void AirecClient::updateExperimentBasicInfoAsync(const UpdateExperimentBasicInfoRequest& request, const UpdateExperimentBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateExperimentBasicInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::UpdateExperimentBasicInfoOutcomeCallable AirecClient::updateExperimentBasicInfoCallable(const UpdateExperimentBasicInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateExperimentBasicInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->updateExperimentBasicInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::UpdateExperimentConfigOutcome AirecClient::updateExperimentConfig(const UpdateExperimentConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateExperimentConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateExperimentConfigOutcome(UpdateExperimentConfigResult(outcome.result()));
+	else
+		return UpdateExperimentConfigOutcome(outcome.error());
+}
+
+void AirecClient::updateExperimentConfigAsync(const UpdateExperimentConfigRequest& request, const UpdateExperimentConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateExperimentConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::UpdateExperimentConfigOutcomeCallable AirecClient::updateExperimentConfigCallable(const UpdateExperimentConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateExperimentConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateExperimentConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AirecClient::UpdateExperimentStatusOutcome AirecClient::updateExperimentStatus(const UpdateExperimentStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateExperimentStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateExperimentStatusOutcome(UpdateExperimentStatusResult(outcome.result()));
+	else
+		return UpdateExperimentStatusOutcome(outcome.error());
+}
+
+void AirecClient::updateExperimentStatusAsync(const UpdateExperimentStatusRequest& request, const UpdateExperimentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateExperimentStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AirecClient::UpdateExperimentStatusOutcomeCallable AirecClient::updateExperimentStatusCallable(const UpdateExperimentStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateExperimentStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->updateExperimentStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

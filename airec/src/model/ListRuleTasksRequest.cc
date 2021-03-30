@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::ListRuleTasksRequest;
 
 ListRuleTasksRequest::ListRuleTasksRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/rule-tasks");
+	setResourcePath("/v2/openapi/instances/[instanceId]/rule-tasks");
 	setMethod(HttpRequest::Method::Get);
 }
 

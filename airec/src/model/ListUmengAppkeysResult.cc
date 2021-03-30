@@ -39,23 +39,30 @@ void ListUmengAppkeysResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["ResultItem"];
+	for (auto valueresultResultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["Name"].isNull())
-			resultObject.name = valueResultResultItem["Name"].asString();
-		if(!valueResultResultItem["Appkey"].isNull())
-			resultObject.appkey = valueResultResultItem["Appkey"].asString();
-		if(!valueResultResultItem["Platform"].isNull())
-			resultObject.platform = valueResultResultItem["Platform"].asString();
+		if(!valueresultResultItem["appkey"].isNull())
+			resultObject.appkey = valueresultResultItem["appkey"].asString();
+		if(!valueresultResultItem["name"].isNull())
+			resultObject.name = valueresultResultItem["name"].asString();
+		if(!valueresultResultItem["platform"].isNull())
+			resultObject.platform = valueresultResultItem["platform"].asString();
 		result_.push_back(resultObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
+}
+
+std::vector<ListUmengAppkeysResult::ResultItem> ListUmengAppkeysResult::getresult()const
+{
+	return result_;
 }
 
 std::string ListUmengAppkeysResult::getMessage()const
@@ -63,13 +70,13 @@ std::string ListUmengAppkeysResult::getMessage()const
 	return message_;
 }
 
+std::string ListUmengAppkeysResult::getRequestId()const
+{
+	return requestId_;
+}
+
 std::string ListUmengAppkeysResult::getCode()const
 {
 	return code_;
-}
-
-std::vector<ListUmengAppkeysResult::ResultItem> ListUmengAppkeysResult::getResult()const
-{
-	return result_;
 }
 

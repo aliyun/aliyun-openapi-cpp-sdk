@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setMetricType(const std::string& metricType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getExperimentIds()const;
+				void setExperimentIds(const std::string& experimentIds);
 				std::string getTraceIds()const;
 				void setTraceIds(const std::string& traceIds);
 				long getEndTime()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string metricType_;
 				std::string instanceId_;
+				std::string experimentIds_;
 				std::string traceIds_;
 				long endTime_;
 				long startTime_;

@@ -43,12 +43,18 @@ namespace AlibabaCloud
 				ListRuleConditionsResult();
 				explicit ListRuleConditionsResult(const std::string &payload);
 				~ListRuleConditionsResult();
-				std::vector<ResultItem> getResult()const;
+				std::vector<ResultItem> getresult()const;
+				std::string getRequestId()const;
+				std::string getMessage()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<ResultItem> result_;
+				std::string requestId_;
+				std::string message_;
+				std::string code_;
 
 			};
 		}

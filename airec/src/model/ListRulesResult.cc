@@ -39,25 +39,46 @@ void ListRulesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["ResultItem"];
+	for (auto valueresultResultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["RuleId"].isNull())
-			resultObject.ruleId = valueResultResultItem["RuleId"].asString();
-		if(!valueResultResultItem["Status"].isNull())
-			resultObject.status = valueResultResultItem["Status"].asString();
-		if(!valueResultResultItem["GmtCreate"].isNull())
-			resultObject.gmtCreate = std::stol(valueResultResultItem["GmtCreate"].asString());
-		if(!valueResultResultItem["GmtModified"].isNull())
-			resultObject.gmtModified = std::stol(valueResultResultItem["GmtModified"].asString());
+		if(!valueresultResultItem["gmtCreate"].isNull())
+			resultObject.gmtCreate = valueresultResultItem["gmtCreate"].asString();
+		if(!valueresultResultItem["gmtModified"].isNull())
+			resultObject.gmtModified = valueresultResultItem["gmtModified"].asString();
+		if(!valueresultResultItem["ruleId"].isNull())
+			resultObject.ruleId = valueresultResultItem["ruleId"].asString();
+		if(!valueresultResultItem["status"].isNull())
+			resultObject.status = valueresultResultItem["status"].asString();
 		result_.push_back(resultObject);
 	}
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
 }
 
-std::vector<ListRulesResult::ResultItem> ListRulesResult::getResult()const
+std::vector<ListRulesResult::ResultItem> ListRulesResult::getresult()const
 {
 	return result_;
+}
+
+std::string ListRulesResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListRulesResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListRulesResult::getCode()const
+{
+	return code_;
 }
 

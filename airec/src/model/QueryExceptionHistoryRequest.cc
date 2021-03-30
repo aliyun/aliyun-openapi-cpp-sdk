@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::QueryExceptionHistoryRequest;
 
 QueryExceptionHistoryRequest::QueryExceptionHistoryRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/sync-reports/exception-history");
+	setResourcePath("/v2/openapi/instances/[instanceId]/sync-reports/exception-history");
 	setMethod(HttpRequest::Method::Get);
 }
 

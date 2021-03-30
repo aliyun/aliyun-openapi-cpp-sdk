@@ -35,6 +35,18 @@ namespace AlibabaCloud
 				QueryDataMessageRequest();
 				~QueryDataMessageRequest();
 
+				std::string getTraceId()const;
+				void setTraceId(const std::string& traceId);
+				std::string getMessageSource()const;
+				void setMessageSource(const std::string& messageSource);
+				long getEndTime()const;
+				void setEndTime(long endTime);
+				std::string getUserType()const;
+				void setUserType(const std::string& userType);
+				long getStartTime()const;
+				void setStartTime(long startTime);
+				std::string getUserId()const;
+				void setUserId(const std::string& userId);
 				std::string getItemId()const;
 				void setItemId(const std::string& itemId);
 				std::string getInstanceId()const;
@@ -45,30 +57,30 @@ namespace AlibabaCloud
 				void setCmdType(const std::string& cmdType);
 				int getSize()const;
 				void setSize(int size);
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				std::string getUserType()const;
-				void setUserType(const std::string& userType);
-				long getStartTime()const;
-				void setStartTime(long startTime);
+				std::string getSceneId()const;
+				void setSceneId(const std::string& sceneId);
+				std::string getBhvType()const;
+				void setBhvType(const std::string& bhvType);
 				int getPage()const;
 				void setPage(int page);
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
 				std::string getTable()const;
 				void setTable(const std::string& table);
 
             private:
+				std::string traceId_;
+				std::string messageSource_;
+				long endTime_;
+				std::string userType_;
+				long startTime_;
+				std::string userId_;
 				std::string itemId_;
 				std::string instanceId_;
 				std::string itemType_;
 				std::string cmdType_;
 				int size_;
-				long endTime_;
-				std::string userType_;
-				long startTime_;
+				std::string sceneId_;
+				std::string bhvType_;
 				int page_;
-				std::string userId_;
 				std::string table_;
 
 			};

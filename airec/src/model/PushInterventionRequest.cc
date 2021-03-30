@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::PushInterventionRequest;
 
 PushInterventionRequest::PushInterventionRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/actions/intervene");
+	setResourcePath("/v2/openapi/instances/[instanceId]/actions/intervene");
 	setMethod(HttpRequest::Method::Post);
 }
 

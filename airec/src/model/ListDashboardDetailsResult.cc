@@ -39,26 +39,47 @@ void ListDashboardDetailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["resultItem"];
+	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["TraceId"].isNull())
-			resultObject.traceId = valueResultResultItem["TraceId"].asString();
-		if(!valueResultResultItem["SceneId"].isNull())
-			resultObject.sceneId = valueResultResultItem["SceneId"].asString();
-		auto metricResNode = value["MetricRes"];
-		if(!metricResNode["Total"].isNull())
-			resultObject.metricRes.total = metricResNode["Total"].asString();
-		if(!metricResNode["Detail"].isNull())
-			resultObject.metricRes.detail = metricResNode["Detail"].asString();
+		if(!valueresultresultItem["sceneId"].isNull())
+			resultObject.sceneId = valueresultresultItem["sceneId"].asString();
+		if(!valueresultresultItem["traceId"].isNull())
+			resultObject.traceId = valueresultresultItem["traceId"].asString();
+		auto metricResNode = value["metricRes"];
+		if(!metricResNode["detail"].isNull())
+			resultObject.metricRes.detail = metricResNode["detail"].asString();
+		if(!metricResNode["total"].isNull())
+			resultObject.metricRes.total = metricResNode["total"].asString();
 		result_.push_back(resultObject);
 	}
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
 }
 
-std::vector<ListDashboardDetailsResult::ResultItem> ListDashboardDetailsResult::getResult()const
+std::vector<ListDashboardDetailsResult::ResultItem> ListDashboardDetailsResult::getresult()const
 {
 	return result_;
+}
+
+std::string ListDashboardDetailsResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListDashboardDetailsResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListDashboardDetailsResult::getCode()const
+{
+	return code_;
 }
 

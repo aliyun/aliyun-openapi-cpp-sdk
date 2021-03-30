@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::CreateSceneRequest;
 
 CreateSceneRequest::CreateSceneRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/scenes");
+	setResourcePath("/v2/openapi/instances/[instanceId]/scenes");
 	setMethod(HttpRequest::Method::Post);
 }
 

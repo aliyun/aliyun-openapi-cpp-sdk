@@ -42,9 +42,9 @@ namespace AlibabaCloud
 					};
 					bool defaultDisplay;
 					std::string type;
-					std::vector<ResultItem::HistoryDataItem> historyData;
 					bool sampleDisplay;
 					int errorCount;
+					std::vector<ResultItem::HistoryDataItem> historyData;
 					float errorPercent;
 				};
 
@@ -52,16 +52,18 @@ namespace AlibabaCloud
 				DescribeSyncReportDetailResult();
 				explicit DescribeSyncReportDetailResult(const std::string &payload);
 				~DescribeSyncReportDetailResult();
+				std::vector<ResultItem> getresult()const;
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
-				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::string code_;
 				std::vector<ResultItem> result_;
+				std::string message_;
+				std::string requestId_;
+				std::string code_;
 
 			};
 		}

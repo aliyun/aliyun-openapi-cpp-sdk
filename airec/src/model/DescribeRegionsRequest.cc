@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/configurations/regions");
+	setResourcePath("/v2/openapi/configurations/regions");
 	setMethod(HttpRequest::Method::Get);
 }
 

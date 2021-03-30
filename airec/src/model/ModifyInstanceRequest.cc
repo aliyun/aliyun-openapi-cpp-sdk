@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::ModifyInstanceRequest;
 
 ModifyInstanceRequest::ModifyInstanceRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]");
+	setResourcePath("/v2/openapi/instances/[instanceId]");
 	setMethod(HttpRequest::Method::Put);
 }
 

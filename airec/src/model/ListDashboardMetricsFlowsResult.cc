@@ -39,21 +39,42 @@ void ListDashboardMetricsFlowsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["resultItem"];
+	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["MetricType"].isNull())
-			resultObject.metricType = valueResultResultItem["MetricType"].asString();
-		if(!valueResultResultItem["MetricData"].isNull())
-			resultObject.metricData = valueResultResultItem["MetricData"].asString();
+		if(!valueresultresultItem["metricData"].isNull())
+			resultObject.metricData = valueresultresultItem["metricData"].asString();
+		if(!valueresultresultItem["metricType"].isNull())
+			resultObject.metricType = valueresultresultItem["metricType"].asString();
 		result_.push_back(resultObject);
 	}
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
 }
 
-std::vector<ListDashboardMetricsFlowsResult::ResultItem> ListDashboardMetricsFlowsResult::getResult()const
+std::vector<ListDashboardMetricsFlowsResult::ResultItem> ListDashboardMetricsFlowsResult::getresult()const
 {
 	return result_;
+}
+
+std::string ListDashboardMetricsFlowsResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListDashboardMetricsFlowsResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListDashboardMetricsFlowsResult::getCode()const
+{
+	return code_;
 }
 

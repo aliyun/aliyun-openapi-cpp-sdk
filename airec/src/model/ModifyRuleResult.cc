@@ -39,18 +39,39 @@ void ModifyRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["RuleId"].isNull())
-		result_.ruleId = resultNode["RuleId"].asString();
-	if(!resultNode["GmtCreate"].isNull())
-		result_.gmtCreate = resultNode["GmtCreate"].asString();
-	if(!resultNode["GmtModified"].isNull())
-		result_.gmtModified = resultNode["GmtModified"].asString();
-	if(!resultNode["Status"].isNull())
-		result_.status = resultNode["Status"].asString();
-	if(!resultNode["RuleMeta"].isNull())
-		result_.ruleMeta = resultNode["RuleMeta"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["gmtCreate"].isNull())
+		result_.gmtCreate = resultNode["gmtCreate"].asString();
+	if(!resultNode["gmtModified"].isNull())
+		result_.gmtModified = resultNode["gmtModified"].asString();
+	if(!resultNode["ruleId"].isNull())
+		result_.ruleId = resultNode["ruleId"].asString();
+	if(!resultNode["ruleMeta"].isNull())
+		result_.ruleMeta = resultNode["ruleMeta"].asString();
+	if(!resultNode["status"].isNull())
+		result_.status = resultNode["status"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
+}
+
+std::string ModifyRuleResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ModifyRuleResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ModifyRuleResult::getCode()const
+{
+	return code_;
 }
 
 ModifyRuleResult::Result ModifyRuleResult::getResult()const

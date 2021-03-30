@@ -35,14 +35,26 @@ namespace AlibabaCloud
 				ListInstanceRequest();
 				~ListInstanceRequest();
 
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				int getSize()const;
 				void setSize(int size);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getExpiredTime()const;
+				void setExpiredTime(const std::string& expiredTime);
 				int getPage()const;
 				void setPage(int page);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
+				std::string instanceId_;
 				int size_;
+				std::string name_;
+				std::string expiredTime_;
 				int page_;
+				std::string status_;
 
 			};
 		}

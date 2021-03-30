@@ -19,14 +19,80 @@
 using AlibabaCloud::Airec::Model::QueryDataMessageRequest;
 
 QueryDataMessageRequest::QueryDataMessageRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/tables/[Table]/data-message");
+	setResourcePath("/v2/openapi/instances/[instanceId]/tables/[table]/data-message");
 	setMethod(HttpRequest::Method::Get);
 }
 
 QueryDataMessageRequest::~QueryDataMessageRequest()
 {}
+
+std::string QueryDataMessageRequest::getTraceId()const
+{
+	return traceId_;
+}
+
+void QueryDataMessageRequest::setTraceId(const std::string& traceId)
+{
+	traceId_ = traceId;
+	setParameter("TraceId", traceId);
+}
+
+std::string QueryDataMessageRequest::getMessageSource()const
+{
+	return messageSource_;
+}
+
+void QueryDataMessageRequest::setMessageSource(const std::string& messageSource)
+{
+	messageSource_ = messageSource;
+	setParameter("MessageSource", messageSource);
+}
+
+long QueryDataMessageRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void QueryDataMessageRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
+}
+
+std::string QueryDataMessageRequest::getUserType()const
+{
+	return userType_;
+}
+
+void QueryDataMessageRequest::setUserType(const std::string& userType)
+{
+	userType_ = userType;
+	setParameter("UserType", userType);
+}
+
+long QueryDataMessageRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void QueryDataMessageRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", std::to_string(startTime));
+}
+
+std::string QueryDataMessageRequest::getUserId()const
+{
+	return userId_;
+}
+
+void QueryDataMessageRequest::setUserId(const std::string& userId)
+{
+	userId_ = userId;
+	setParameter("UserId", userId);
+}
 
 std::string QueryDataMessageRequest::getItemId()const
 {
@@ -83,37 +149,26 @@ void QueryDataMessageRequest::setSize(int size)
 	setParameter("Size", std::to_string(size));
 }
 
-long QueryDataMessageRequest::getEndTime()const
+std::string QueryDataMessageRequest::getSceneId()const
 {
-	return endTime_;
+	return sceneId_;
 }
 
-void QueryDataMessageRequest::setEndTime(long endTime)
+void QueryDataMessageRequest::setSceneId(const std::string& sceneId)
 {
-	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	sceneId_ = sceneId;
+	setParameter("SceneId", sceneId);
 }
 
-std::string QueryDataMessageRequest::getUserType()const
+std::string QueryDataMessageRequest::getBhvType()const
 {
-	return userType_;
+	return bhvType_;
 }
 
-void QueryDataMessageRequest::setUserType(const std::string& userType)
+void QueryDataMessageRequest::setBhvType(const std::string& bhvType)
 {
-	userType_ = userType;
-	setParameter("UserType", userType);
-}
-
-long QueryDataMessageRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void QueryDataMessageRequest::setStartTime(long startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+	bhvType_ = bhvType;
+	setParameter("BhvType", bhvType);
 }
 
 int QueryDataMessageRequest::getPage()const
@@ -125,17 +180,6 @@ void QueryDataMessageRequest::setPage(int page)
 {
 	page_ = page;
 	setParameter("Page", std::to_string(page));
-}
-
-std::string QueryDataMessageRequest::getUserId()const
-{
-	return userId_;
-}
-
-void QueryDataMessageRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
 }
 
 std::string QueryDataMessageRequest::getTable()const

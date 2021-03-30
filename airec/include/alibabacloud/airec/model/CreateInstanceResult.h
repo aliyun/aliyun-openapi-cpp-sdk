@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				CreateInstanceResult();
 				explicit CreateInstanceResult(const std::string &payload);
 				~CreateInstanceResult();
+				std::string getRequestId()const;
 				std::string getMessage()const;
 				std::string getCode()const;
 				Result getResult()const;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string requestId_;
 				std::string message_;
 				std::string code_;
 				Result result_;

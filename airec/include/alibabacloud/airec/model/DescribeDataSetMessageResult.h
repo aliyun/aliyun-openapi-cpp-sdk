@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct ResultItem
 				{
-					std::string message;
 					std::string errorType;
+					std::string message;
 					std::string errorLevel;
 					std::string timestamp;
 				};
@@ -44,16 +44,18 @@ namespace AlibabaCloud
 				DescribeDataSetMessageResult();
 				explicit DescribeDataSetMessageResult(const std::string &payload);
 				~DescribeDataSetMessageResult();
+				std::vector<ResultItem> getresult()const;
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
-				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::string code_;
 				std::vector<ResultItem> result_;
+				std::string message_;
+				std::string requestId_;
+				std::string code_;
 
 			};
 		}

@@ -39,23 +39,44 @@ void ListRuleConditionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["resultItem"];
+	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["SelectType"].isNull())
-			resultObject.selectType = valueResultResultItem["SelectType"].asString();
-		if(!valueResultResultItem["SelectionOperation"].isNull())
-			resultObject.selectionOperation = valueResultResultItem["SelectionOperation"].asString();
-		if(!valueResultResultItem["SelectValue"].isNull())
-			resultObject.selectValue = valueResultResultItem["SelectValue"].asString();
+		if(!valueresultresultItem["selectType"].isNull())
+			resultObject.selectType = valueresultresultItem["selectType"].asString();
+		if(!valueresultresultItem["selectValue"].isNull())
+			resultObject.selectValue = valueresultresultItem["selectValue"].asString();
+		if(!valueresultresultItem["selectionOperation"].isNull())
+			resultObject.selectionOperation = valueresultresultItem["selectionOperation"].asString();
 		result_.push_back(resultObject);
 	}
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
 }
 
-std::vector<ListRuleConditionsResult::ResultItem> ListRuleConditionsResult::getResult()const
+std::vector<ListRuleConditionsResult::ResultItem> ListRuleConditionsResult::getresult()const
 {
 	return result_;
+}
+
+std::string ListRuleConditionsResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListRuleConditionsResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListRuleConditionsResult::getCode()const
+{
+	return code_;
 }
 

@@ -39,10 +39,31 @@ void PublishRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["RuleId"].isNull())
-		result_.ruleId = resultNode["RuleId"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["ruleId"].isNull())
+		result_.ruleId = resultNode["ruleId"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
+}
+
+std::string PublishRuleResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string PublishRuleResult::getMessage()const
+{
+	return message_;
+}
+
+std::string PublishRuleResult::getCode()const
+{
+	return code_;
 }
 
 PublishRuleResult::Result PublishRuleResult::getResult()const

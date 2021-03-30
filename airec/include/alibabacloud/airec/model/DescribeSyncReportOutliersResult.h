@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeSyncReportOutliersResult(const std::string &payload);
 				~DescribeSyncReportOutliersResult();
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
 				std::string getResult()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string requestId_;
 				std::string code_;
 				std::string result_;
 

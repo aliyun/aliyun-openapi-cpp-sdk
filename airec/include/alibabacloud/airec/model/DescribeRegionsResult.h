@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AIREC_EXPORT DescribeRegionsResult : public ServiceResult
 			{
 			public:
-				struct Item
+				struct ResultItem
 				{
 					std::string status;
 					std::string endpoint;
@@ -45,16 +45,18 @@ namespace AlibabaCloud
 				DescribeRegionsResult();
 				explicit DescribeRegionsResult(const std::string &payload);
 				~DescribeRegionsResult();
+				std::vector<ResultItem> getresult()const;
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
-				std::vector<Item> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<ResultItem> result_;
 				std::string message_;
+				std::string requestId_;
 				std::string code_;
-				std::vector<Item> result_;
 
 			};
 		}

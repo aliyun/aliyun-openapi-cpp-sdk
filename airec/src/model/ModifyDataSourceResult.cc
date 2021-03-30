@@ -39,40 +39,47 @@ void ModifyDataSourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["TableName"].isNull())
-		result_.tableName = resultNode["TableName"].asString();
-	if(!resultNode["GmtCreate"].isNull())
-		result_.gmtCreate = resultNode["GmtCreate"].asString();
-	if(!resultNode["GmtModified"].isNull())
-		result_.gmtModified = resultNode["GmtModified"].asString();
-	auto metaNode = resultNode["Meta"];
-	if(!metaNode["AccessKeyId"].isNull())
-		result_.meta.accessKeyId = metaNode["AccessKeyId"].asString();
-	if(!metaNode["ProjectName"].isNull())
-		result_.meta.projectName = metaNode["ProjectName"].asString();
-	if(!metaNode["TableName"].isNull())
-		result_.meta.tableName = metaNode["TableName"].asString();
-	if(!metaNode["Partition"].isNull())
-		result_.meta.partition = metaNode["Partition"].asString();
-	if(!metaNode["Timestamp"].isNull())
-		result_.meta.timestamp = std::stol(metaNode["Timestamp"].asString());
-	if(!metaNode["BucketName"].isNull())
-		result_.meta.bucketName = metaNode["BucketName"].asString();
-	if(!metaNode["Path"].isNull())
-		result_.meta.path = metaNode["Path"].asString();
-	if(!metaNode["Type"].isNull())
-		result_.meta.type = metaNode["Type"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["gmtCreate"].isNull())
+		result_.gmtCreate = resultNode["gmtCreate"].asString();
+	if(!resultNode["gmtModified"].isNull())
+		result_.gmtModified = resultNode["gmtModified"].asString();
+	if(!resultNode["tableName"].isNull())
+		result_.tableName = resultNode["tableName"].asString();
+	auto metaNode = resultNode["meta"];
+	if(!metaNode["accessKeyId"].isNull())
+		result_.meta.accessKeyId = metaNode["accessKeyId"].asString();
+	if(!metaNode["bucketName"].isNull())
+		result_.meta.bucketName = metaNode["bucketName"].asString();
+	if(!metaNode["partition"].isNull())
+		result_.meta.partition = metaNode["partition"].asString();
+	if(!metaNode["path"].isNull())
+		result_.meta.path = metaNode["path"].asString();
+	if(!metaNode["projectName"].isNull())
+		result_.meta.projectName = metaNode["projectName"].asString();
+	if(!metaNode["tableName"].isNull())
+		result_.meta.tableName = metaNode["tableName"].asString();
+	if(!metaNode["timestamp"].isNull())
+		result_.meta.timestamp = std::stol(metaNode["timestamp"].asString());
+	if(!metaNode["type"].isNull())
+		result_.meta.type = metaNode["type"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 
 std::string ModifyDataSourceResult::getMessage()const
 {
 	return message_;
+}
+
+std::string ModifyDataSourceResult::getRequestId()const
+{
+	return requestId_;
 }
 
 std::string ModifyDataSourceResult::getCode()const

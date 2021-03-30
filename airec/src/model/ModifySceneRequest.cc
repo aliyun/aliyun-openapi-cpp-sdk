@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::ModifySceneRequest;
 
 ModifySceneRequest::ModifySceneRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/scenes/[SceneId]");
+	setResourcePath("/v2/openapi/instances/[instanceId]/scenes/[sceneId]");
 	setMethod(HttpRequest::Method::Put);
 }
 

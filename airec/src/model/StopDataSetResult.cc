@@ -39,27 +39,34 @@ void StopDataSetResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["InstanceId"].isNull())
-		result_.instanceId = resultNode["InstanceId"].asString();
-	if(!resultNode["VersionId"].isNull())
-		result_.versionId = resultNode["VersionId"].asString();
-	if(!resultNode["State"].isNull())
-		result_.state = resultNode["State"].asString();
-	if(!resultNode["GmtCreate"].isNull())
-		result_.gmtCreate = std::stol(resultNode["GmtCreate"].asString());
-	if(!resultNode["GmtModified"].isNull())
-		result_.gmtModified = std::stol(resultNode["GmtModified"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["gmtCreate"].isNull())
+		result_.gmtCreate = std::stol(resultNode["gmtCreate"].asString());
+	if(!resultNode["gmtModified"].isNull())
+		result_.gmtModified = std::stol(resultNode["gmtModified"].asString());
+	if(!resultNode["instanceId"].isNull())
+		result_.instanceId = resultNode["instanceId"].asString();
+	if(!resultNode["state"].isNull())
+		result_.state = resultNode["state"].asString();
+	if(!resultNode["versionId"].isNull())
+		result_.versionId = resultNode["versionId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 
 std::string StopDataSetResult::getMessage()const
 {
 	return message_;
+}
+
+std::string StopDataSetResult::getRequestId()const
+{
+	return requestId_;
 }
 
 std::string StopDataSetResult::getCode()const

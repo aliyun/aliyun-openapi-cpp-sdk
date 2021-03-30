@@ -38,16 +38,15 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string gmtModified;
 					std::string lockMode;
-					std::string scene;
 					std::string name;
 					std::string industry;
-					std::string type;
 					std::string gmtCreate;
+					std::string type;
 					std::string chargeType;
 					std::string expiredTime;
 					std::string commodityCode;
-					std::string regionId;
 					std::string dataSetVersion;
+					std::string regionId;
 				};
 
 
@@ -55,6 +54,7 @@ namespace AlibabaCloud
 				explicit ModifyInstanceResult(const std::string &payload);
 				~ModifyInstanceResult();
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
 				Result getResult()const;
 
@@ -62,6 +62,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string requestId_;
 				std::string code_;
 				Result result_;
 

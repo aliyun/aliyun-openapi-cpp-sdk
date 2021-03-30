@@ -39,29 +39,36 @@ void DescribeQuotaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["UserCount"].isNull())
-		result_.userCount = std::stol(resultNode["UserCount"].asString());
-	if(!resultNode["UserCountUsed"].isNull())
-		result_.userCountUsed = std::stol(resultNode["UserCountUsed"].asString());
-	if(!resultNode["ItemCount"].isNull())
-		result_.itemCount = std::stol(resultNode["ItemCount"].asString());
-	if(!resultNode["ItemCountUsed"].isNull())
-		result_.itemCountUsed = std::stol(resultNode["ItemCountUsed"].asString());
-	if(!resultNode["Qps"].isNull())
-		result_.qps = std::stoi(resultNode["Qps"].asString());
-	if(!resultNode["CurrentQps"].isNull())
-		result_.currentQps = std::stoi(resultNode["CurrentQps"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["currentQps"].isNull())
+		result_.currentQps = std::stoi(resultNode["currentQps"].asString());
+	if(!resultNode["itemCount"].isNull())
+		result_.itemCount = std::stol(resultNode["itemCount"].asString());
+	if(!resultNode["itemCountUsed"].isNull())
+		result_.itemCountUsed = std::stol(resultNode["itemCountUsed"].asString());
+	if(!resultNode["qps"].isNull())
+		result_.qps = std::stoi(resultNode["qps"].asString());
+	if(!resultNode["userCount"].isNull())
+		result_.userCount = std::stol(resultNode["userCount"].asString());
+	if(!resultNode["userCountUsed"].isNull())
+		result_.userCountUsed = std::stol(resultNode["userCountUsed"].asString());
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 
 std::string DescribeQuotaResult::getMessage()const
 {
 	return message_;
+}
+
+std::string DescribeQuotaResult::getRequestId()const
+{
+	return requestId_;
 }
 
 std::string DescribeQuotaResult::getCode()const

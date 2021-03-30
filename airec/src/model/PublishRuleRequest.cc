@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::PublishRuleRequest;
 
 PublishRuleRequest::PublishRuleRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/rules/[RuleId]/actions/publish");
+	setResourcePath("/v2/openapi/instances/[instanceId]/rules/[ruleId]/actions/publish");
 	setMethod(HttpRequest::Method::Put);
 }
 

@@ -42,11 +42,17 @@ namespace AlibabaCloud
 				ListRuleTasksResult();
 				explicit ListRuleTasksResult(const std::string &payload);
 				~ListRuleTasksResult();
+				std::string getRequestId()const;
+				std::string getMessage()const;
+				std::string getCode()const;
 				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string requestId_;
+				std::string message_;
+				std::string code_;
 				Result result_;
 
 			};

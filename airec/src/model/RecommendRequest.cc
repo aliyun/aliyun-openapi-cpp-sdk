@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::RecommendRequest;
 
 RecommendRequest::RecommendRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/actions/recommend");
+	setResourcePath("/v2/openapi/instances/[instanceId]/actions/recommend");
 	setMethod(HttpRequest::Method::Get);
 }
 
@@ -39,6 +39,17 @@ void RecommendRequest::setReturnCount(int returnCount)
 	setParameter("ReturnCount", std::to_string(returnCount));
 }
 
+std::string RecommendRequest::getServiceType()const
+{
+	return serviceType_;
+}
+
+void RecommendRequest::setServiceType(const std::string& serviceType)
+{
+	serviceType_ = serviceType;
+	setParameter("ServiceType", serviceType);
+}
+
 std::string RecommendRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -50,15 +61,15 @@ void RecommendRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string RecommendRequest::getRegionId()const
+std::string RecommendRequest::getDebug()const
 {
-	return regionId_;
+	return debug_;
 }
 
-void RecommendRequest::setRegionId(const std::string& regionId)
+void RecommendRequest::setDebug(const std::string& debug)
 {
-	regionId_ = regionId;
-	setHeader("RegionId", regionId);
+	debug_ = debug;
+	setParameter("Debug", debug);
 }
 
 std::string RecommendRequest::getIp()const
@@ -70,6 +81,17 @@ void RecommendRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
 	setParameter("Ip", ip);
+}
+
+std::string RecommendRequest::getLogLevel()const
+{
+	return logLevel_;
+}
+
+void RecommendRequest::setLogLevel(const std::string& logLevel)
+{
+	logLevel_ = logLevel;
+	setParameter("LogLevel", logLevel);
 }
 
 std::string RecommendRequest::getSceneId()const
@@ -94,6 +116,17 @@ void RecommendRequest::setImei(const std::string& imei)
 	setParameter("Imei", imei);
 }
 
+std::string RecommendRequest::getExperimentId()const
+{
+	return experimentId_;
+}
+
+void RecommendRequest::setExperimentId(const std::string& experimentId)
+{
+	experimentId_ = experimentId;
+	setParameter("ExperimentId", experimentId);
+}
+
 std::string RecommendRequest::getUserId()const
 {
 	return userId_;
@@ -114,5 +147,16 @@ void RecommendRequest::setItems(const std::string& items)
 {
 	items_ = items;
 	setParameter("Items", items);
+}
+
+std::string RecommendRequest::getUserInfo()const
+{
+	return userInfo_;
+}
+
+void RecommendRequest::setUserInfo(const std::string& userInfo)
+{
+	userInfo_ = userInfo;
+	setParameter("UserInfo", userInfo);
 }
 

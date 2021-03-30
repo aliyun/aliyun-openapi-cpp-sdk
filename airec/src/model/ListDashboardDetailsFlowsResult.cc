@@ -39,22 +39,43 @@ void ListDashboardDetailsFlowsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["MetricType"].isNull())
-		result_.metricType = resultNode["MetricType"].asString();
-	auto allMetricDataNode = resultNode["MetricData"]["MetricDataItem"];
-	for (auto resultNodeMetricDataMetricDataItem : allMetricDataNode)
+	auto resultNode = value["result"];
+	if(!resultNode["metricType"].isNull())
+		result_.metricType = resultNode["metricType"].asString();
+	auto allmetricDataNode = resultNode["metricData"]["MetricDataItem"];
+	for (auto resultNodemetricDataMetricDataItem : allmetricDataNode)
 	{
 		Result::MetricDataItem metricDataItemObject;
-		if(!resultNodeMetricDataMetricDataItem["TraceId"].isNull())
-			metricDataItemObject.traceId = resultNodeMetricDataMetricDataItem["TraceId"].asString();
-		if(!resultNodeMetricDataMetricDataItem["SceneId"].isNull())
-			metricDataItemObject.sceneId = resultNodeMetricDataMetricDataItem["SceneId"].asString();
-		if(!resultNodeMetricDataMetricDataItem["MetricRes"].isNull())
-			metricDataItemObject.metricRes = resultNodeMetricDataMetricDataItem["MetricRes"].asString();
+		if(!resultNodemetricDataMetricDataItem["metricRes"].isNull())
+			metricDataItemObject.metricRes = resultNodemetricDataMetricDataItem["metricRes"].asString();
+		if(!resultNodemetricDataMetricDataItem["sceneId"].isNull())
+			metricDataItemObject.sceneId = resultNodemetricDataMetricDataItem["sceneId"].asString();
+		if(!resultNodemetricDataMetricDataItem["traceId"].isNull())
+			metricDataItemObject.traceId = resultNodemetricDataMetricDataItem["traceId"].asString();
 		result_.metricData.push_back(metricDataItemObject);
 	}
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
+}
+
+std::string ListDashboardDetailsFlowsResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListDashboardDetailsFlowsResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListDashboardDetailsFlowsResult::getCode()const
+{
+	return code_;
 }
 
 ListDashboardDetailsFlowsResult::Result ListDashboardDetailsFlowsResult::getResult()const

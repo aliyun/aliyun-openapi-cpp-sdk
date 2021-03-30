@@ -19,9 +19,9 @@
 using AlibabaCloud::Airec::Model::ListDashboardDetailsRequest;
 
 ListDashboardDetailsRequest::ListDashboardDetailsRequest() :
-	RoaServiceRequest("airec", "2018-10-12")
+	RoaServiceRequest("airec", "2020-11-26")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/dashboard/details");
+	setResourcePath("/v2/openapi/instances/[instanceId]/dashboard/details");
 	setMethod(HttpRequest::Method::Get);
 }
 
@@ -48,6 +48,17 @@ void ListDashboardDetailsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string ListDashboardDetailsRequest::getExperimentIds()const
+{
+	return experimentIds_;
+}
+
+void ListDashboardDetailsRequest::setExperimentIds(const std::string& experimentIds)
+{
+	experimentIds_ = experimentIds;
+	setParameter("ExperimentIds", experimentIds);
 }
 
 std::string ListDashboardDetailsRequest::getTraceIds()const

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Meta
 					{
 						std::string path;
-						std::string tableName;
 						std::string partition;
+						std::string tableName;
 						std::string type;
 						std::string bucketName;
 						std::string projectName;
@@ -56,6 +56,7 @@ namespace AlibabaCloud
 				explicit ModifyDataSourceResult(const std::string &payload);
 				~ModifyDataSourceResult();
 				std::string getMessage()const;
+				std::string getRequestId()const;
 				std::string getCode()const;
 				Result getResult()const;
 
@@ -63,6 +64,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string requestId_;
 				std::string code_;
 				Result result_;
 

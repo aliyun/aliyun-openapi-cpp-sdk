@@ -39,18 +39,25 @@ void PushInterventionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Result"].isNull())
-		result_ = value["Result"].asString() == "true";
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["result"].isNull())
+		result_ = value["result"].asString() == "true";
 
 }
 
 std::string PushInterventionResult::getMessage()const
 {
 	return message_;
+}
+
+std::string PushInterventionResult::getRequestId()const
+{
+	return requestId_;
 }
 
 std::string PushInterventionResult::getCode()const

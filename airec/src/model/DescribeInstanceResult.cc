@@ -39,45 +39,52 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["InstanceId"].isNull())
-		result_.instanceId = resultNode["InstanceId"].asString();
-	if(!resultNode["ChargeType"].isNull())
-		result_.chargeType = resultNode["ChargeType"].asString();
-	if(!resultNode["RegionId"].isNull())
-		result_.regionId = resultNode["RegionId"].asString();
-	if(!resultNode["Name"].isNull())
-		result_.name = resultNode["Name"].asString();
-	if(!resultNode["Type"].isNull())
-		result_.type = resultNode["Type"].asString();
-	if(!resultNode["ExpiredTime"].isNull())
-		result_.expiredTime = resultNode["ExpiredTime"].asString();
-	if(!resultNode["GmtCreate"].isNull())
-		result_.gmtCreate = resultNode["GmtCreate"].asString();
-	if(!resultNode["GmtModified"].isNull())
-		result_.gmtModified = resultNode["GmtModified"].asString();
-	if(!resultNode["Status"].isNull())
-		result_.status = resultNode["Status"].asString();
-	if(!resultNode["Industry"].isNull())
-		result_.industry = resultNode["Industry"].asString();
-	if(!resultNode["Scene"].isNull())
-		result_.scene = resultNode["Scene"].asString();
-	if(!resultNode["DataSetVersion"].isNull())
-		result_.dataSetVersion = resultNode["DataSetVersion"].asString();
-	if(!resultNode["CommodityCode"].isNull())
-		result_.commodityCode = resultNode["CommodityCode"].asString();
-	if(!resultNode["LockMode"].isNull())
-		result_.lockMode = resultNode["LockMode"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	auto resultNode = value["result"];
+	if(!resultNode["chargeType"].isNull())
+		result_.chargeType = resultNode["chargeType"].asString();
+	if(!resultNode["commodityCode"].isNull())
+		result_.commodityCode = resultNode["commodityCode"].asString();
+	if(!resultNode["dataSetVersion"].isNull())
+		result_.dataSetVersion = resultNode["dataSetVersion"].asString();
+	if(!resultNode["expiredTime"].isNull())
+		result_.expiredTime = resultNode["expiredTime"].asString();
+	if(!resultNode["gmtCreate"].isNull())
+		result_.gmtCreate = resultNode["gmtCreate"].asString();
+	if(!resultNode["gmtModified"].isNull())
+		result_.gmtModified = resultNode["gmtModified"].asString();
+	if(!resultNode["industry"].isNull())
+		result_.industry = resultNode["industry"].asString();
+	if(!resultNode["instanceId"].isNull())
+		result_.instanceId = resultNode["instanceId"].asString();
+	if(!resultNode["lockMode"].isNull())
+		result_.lockMode = resultNode["lockMode"].asString();
+	if(!resultNode["name"].isNull())
+		result_.name = resultNode["name"].asString();
+	if(!resultNode["regionId"].isNull())
+		result_.regionId = resultNode["regionId"].asString();
+	if(!resultNode["scene"].isNull())
+		result_.scene = resultNode["scene"].asString();
+	if(!resultNode["status"].isNull())
+		result_.status = resultNode["status"].asString();
+	if(!resultNode["type"].isNull())
+		result_.type = resultNode["type"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 
 std::string DescribeInstanceResult::getMessage()const
 {
 	return message_;
+}
+
+std::string DescribeInstanceResult::getRequestId()const
+{
+	return requestId_;
 }
 
 std::string DescribeInstanceResult::getCode()const

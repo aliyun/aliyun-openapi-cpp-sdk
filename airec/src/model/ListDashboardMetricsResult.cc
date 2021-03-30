@@ -39,31 +39,52 @@ void ListDashboardMetricsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["ResultItem"];
-	for (auto valueResultResultItem : allResultNode)
+	auto allresultNode = value["result"]["resultItem"];
+	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["Total"].isNull())
-			resultObject.total = valueResultResultItem["Total"].asString();
-		auto allDetailNode = allResultNode["Detail"]["DetailItem"];
-		for (auto allResultNodeDetailDetailItem : allDetailNode)
+		if(!valueresultresultItem["total"].isNull())
+			resultObject.total = valueresultresultItem["total"].asString();
+		auto alldetailNode = valueresultresultItem["detail"]["detailItem"];
+		for (auto valueresultresultItemdetaildetailItem : alldetailNode)
 		{
 			ResultItem::DetailItem detailObject;
-			if(!allResultNodeDetailDetailItem["Val"].isNull())
-				detailObject.val = allResultNodeDetailDetailItem["Val"].asString();
-			if(!allResultNodeDetailDetailItem["StartTime"].isNull())
-				detailObject.startTime = allResultNodeDetailDetailItem["StartTime"].asString();
-			if(!allResultNodeDetailDetailItem["EndTime"].isNull())
-				detailObject.endTime = allResultNodeDetailDetailItem["EndTime"].asString();
+			if(!valueresultresultItemdetaildetailItem["endTime"].isNull())
+				detailObject.endTime = valueresultresultItemdetaildetailItem["endTime"].asString();
+			if(!valueresultresultItemdetaildetailItem["startTime"].isNull())
+				detailObject.startTime = valueresultresultItemdetaildetailItem["startTime"].asString();
+			if(!valueresultresultItemdetaildetailItem["val"].isNull())
+				detailObject.val = valueresultresultItemdetaildetailItem["val"].asString();
 			resultObject.detail.push_back(detailObject);
 		}
 		result_.push_back(resultObject);
 	}
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
+	if(!value["code"].isNull())
+		code_ = value["code"].asString();
+	if(!value["message"].isNull())
+		message_ = value["message"].asString();
 
 }
 
-std::vector<ListDashboardMetricsResult::ResultItem> ListDashboardMetricsResult::getResult()const
+std::vector<ListDashboardMetricsResult::ResultItem> ListDashboardMetricsResult::getresult()const
 {
 	return result_;
+}
+
+std::string ListDashboardMetricsResult::getRequestId()const
+{
+	return requestId_;
+}
+
+std::string ListDashboardMetricsResult::getMessage()const
+{
+	return message_;
+}
+
+std::string ListDashboardMetricsResult::getCode()const
+{
+	return code_;
 }
 
