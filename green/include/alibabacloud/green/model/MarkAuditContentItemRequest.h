@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				MarkAuditContentItemRequest();
 				~MarkAuditContentItemRequest();
 
+				std::string getBizTypes()const;
+				void setBizTypes(const std::string& bizTypes);
 				std::string getAuditIllegalReasons()const;
 				void setAuditIllegalReasons(const std::string& auditIllegalReasons);
 				std::string getSourceIp()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 
             private:
+				std::string bizTypes_;
 				std::string auditIllegalReasons_;
 				std::string sourceIp_;
 				std::string auditResult_;

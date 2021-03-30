@@ -48,6 +48,10 @@ namespace AlibabaCloud
 				{
 					std::vector<std::string> categories3;
 				};
+				struct Live
+				{
+					std::vector<std::string> categories4;
+				};
 
 
 				DescribeBizTypeSettingResult();
@@ -56,6 +60,7 @@ namespace AlibabaCloud
 				Antispam getAntispam()const;
 				Ad getAd()const;
 				Terrorism getTerrorism()const;
+				Live getLive()const;
 				Porn getPorn()const;
 
 			protected:
@@ -64,6 +69,7 @@ namespace AlibabaCloud
 				Antispam antispam_;
 				Ad ad_;
 				Terrorism terrorism_;
+				Live live_;
 				Porn porn_;
 
 			};

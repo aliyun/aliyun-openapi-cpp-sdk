@@ -38,6 +38,17 @@ void UpdateAuditCallbackRequest::setSeed(const std::string& seed)
 	setParameter("Seed", seed);
 }
 
+int UpdateAuditCallbackRequest::getCryptType()const
+{
+	return cryptType_;
+}
+
+void UpdateAuditCallbackRequest::setCryptType(int cryptType)
+{
+	cryptType_ = cryptType;
+	setParameter("CryptType", std::to_string(cryptType));
+}
+
 std::string UpdateAuditCallbackRequest::getSourceIp()const
 {
 	return sourceIp_;

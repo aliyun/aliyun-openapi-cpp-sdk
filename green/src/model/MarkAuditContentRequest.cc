@@ -27,6 +27,17 @@ MarkAuditContentRequest::MarkAuditContentRequest() :
 MarkAuditContentRequest::~MarkAuditContentRequest()
 {}
 
+std::string MarkAuditContentRequest::getBizTypes()const
+{
+	return bizTypes_;
+}
+
+void MarkAuditContentRequest::setBizTypes(const std::string& bizTypes)
+{
+	bizTypes_ = bizTypes;
+	setParameter("BizTypes", bizTypes);
+}
+
 std::string MarkAuditContentRequest::getAuditIllegalReasons()const
 {
 	return auditIllegalReasons_;

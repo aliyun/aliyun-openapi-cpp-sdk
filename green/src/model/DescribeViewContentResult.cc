@@ -87,7 +87,85 @@ void DescribeViewContentResult::parse(const std::string &payload)
 				frameResultsObject.url = valueViewContentListViewContentFrameResultsframeResult["Url"].asString();
 			if(!valueViewContentListViewContentFrameResultsframeResult["Offset"].isNull())
 				frameResultsObject.offset = std::stoi(valueViewContentListViewContentFrameResultsframeResult["Offset"].asString());
+			if(!valueViewContentListViewContentFrameResultsframeResult["Label"].isNull())
+				frameResultsObject.label = valueViewContentListViewContentFrameResultsframeResult["Label"].asString();
 			viewContentListObject.frameResults.push_back(frameResultsObject);
+		}
+		auto allFaceResultsNode = valueViewContentListViewContent["FaceResults"]["faceResult"];
+		for (auto valueViewContentListViewContentFaceResultsfaceResult : allFaceResultsNode)
+		{
+			ViewContent::FaceResult faceResultsObject;
+			if(!valueViewContentListViewContentFaceResultsfaceResult["Bualified"].isNull())
+				faceResultsObject.bualified = valueViewContentListViewContentFaceResultsfaceResult["Bualified"].asString() == "true";
+			auto locationNode = value["Location"];
+			if(!locationNode["X"].isNull())
+				faceResultsObject.location.x = std::stoi(locationNode["X"].asString());
+			if(!locationNode["Y"].isNull())
+				faceResultsObject.location.y = std::stoi(locationNode["Y"].asString());
+			if(!locationNode["W"].isNull())
+				faceResultsObject.location.w = std::stoi(locationNode["W"].asString());
+			if(!locationNode["H"].isNull())
+				faceResultsObject.location.h = std::stoi(locationNode["H"].asString());
+			auto genderNode = value["Gender"];
+			if(!genderNode["Rate"].isNull())
+				faceResultsObject.gender.rate = std::stof(genderNode["Rate"].asString());
+			if(!genderNode["Value"].isNull())
+				faceResultsObject.gender.value = genderNode["Value"].asString();
+			auto glassesNode = value["Glasses"];
+			if(!glassesNode["Rate"].isNull())
+				faceResultsObject.glasses.rate = std::stof(glassesNode["Rate"].asString());
+			if(!glassesNode["Value"].isNull())
+				faceResultsObject.glasses.value = glassesNode["Value"].asString();
+			auto ageNode = value["Age"];
+			if(!ageNode["Rate"].isNull())
+				faceResultsObject.age.rate = std::stof(ageNode["Rate"].asString());
+			if(!ageNode["Value"].isNull())
+				faceResultsObject.age.value = std::stoi(ageNode["Value"].asString());
+			auto smileNode = value["Smile"];
+			if(!smileNode["Rate"].isNull())
+				faceResultsObject.smile.rate = std::stof(smileNode["Rate"].asString());
+			if(!smileNode["Value"].isNull())
+				faceResultsObject.smile.value = std::stof(smileNode["Value"].asString());
+			auto qualityNode = value["Quality"];
+			if(!qualityNode["Blur"].isNull())
+				faceResultsObject.quality.blur = std::stof(qualityNode["Blur"].asString());
+			if(!qualityNode["Pitch"].isNull())
+				faceResultsObject.quality.pitch = std::stof(qualityNode["Pitch"].asString());
+			if(!qualityNode["Yaw"].isNull())
+				faceResultsObject.quality.yaw = std::stof(qualityNode["Yaw"].asString());
+			if(!qualityNode["Roll"].isNull())
+				faceResultsObject.quality.roll = std::stof(qualityNode["Roll"].asString());
+			auto respiratorNode = value["Respirator"];
+			if(!respiratorNode["Rate"].isNull())
+				faceResultsObject.respirator.rate = std::stof(respiratorNode["Rate"].asString());
+			if(!respiratorNode["Value"].isNull())
+				faceResultsObject.respirator.value = respiratorNode["Value"].asString();
+			auto hatNode = value["Hat"];
+			if(!hatNode["Rate"].isNull())
+				faceResultsObject.hat.rate = std::stof(hatNode["Rate"].asString());
+			if(!hatNode["Value"].isNull())
+				faceResultsObject.hat.value = hatNode["Value"].asString();
+			auto mustacheNode = value["Mustache"];
+			if(!mustacheNode["Rate"].isNull())
+				faceResultsObject.mustache.rate = std::stof(mustacheNode["Rate"].asString());
+			if(!mustacheNode["Value"].isNull())
+				faceResultsObject.mustache.value = mustacheNode["Value"].asString();
+			auto bangNode = value["Bang"];
+			if(!bangNode["Rate"].isNull())
+				faceResultsObject.bang.rate = std::stof(bangNode["Rate"].asString());
+			if(!bangNode["Value"].isNull())
+				faceResultsObject.bang.value = bangNode["Value"].asString();
+			auto hairstyleNode = value["Hairstyle"];
+			if(!hairstyleNode["Rate"].isNull())
+				faceResultsObject.hairstyle.rate = std::stof(hairstyleNode["Rate"].asString());
+			if(!hairstyleNode["Value"].isNull())
+				faceResultsObject.hairstyle.value = hairstyleNode["Value"].asString();
+			auto imageNode = value["Image"];
+			if(!imageNode["Width"].isNull())
+				faceResultsObject.image.width = std::stoi(imageNode["Width"].asString());
+			if(!imageNode["Height"].isNull())
+				faceResultsObject.image.height = std::stoi(imageNode["Height"].asString());
+			viewContentListObject.faceResults.push_back(faceResultsObject);
 		}
 		viewContentList_.push_back(viewContentListObject);
 	}

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getVideoSceneList()const;
 				void setVideoSceneList(const std::string& videoSceneList);
+				bool getScanImageNoFileType()const;
+				void setScanImageNoFileType(bool scanImageNoFileType);
 				std::string getImageSceneList()const;
 				void setImageSceneList(const std::string& imageSceneList);
 				std::string getAudioSceneList()const;
@@ -72,6 +74,7 @@ namespace AlibabaCloud
 
             private:
 				std::string videoSceneList_;
+				bool scanImageNoFileType_;
 				std::string imageSceneList_;
 				std::string audioSceneList_;
 				int videoFrameInterval_;

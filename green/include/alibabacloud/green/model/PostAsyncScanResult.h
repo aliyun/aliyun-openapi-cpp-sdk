@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKRESULT_H_
-#define ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKRESULT_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANRESULT_H_
+#define ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT DescribeAuditCallbackResult : public ServiceResult
+			class ALIBABACLOUD_GREEN_EXPORT PostAsyncScanResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeAuditCallbackResult();
-				explicit DescribeAuditCallbackResult(const std::string &payload);
-				~DescribeAuditCallbackResult();
-				int getCryptType()const;
-				std::string getCallback()const;
-				std::string getSeed()const;
+				PostAsyncScanResult();
+				explicit PostAsyncScanResult(const std::string &payload);
+				~PostAsyncScanResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int cryptType_;
-				std::string callback_;
-				std::string seed_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKRESULT_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANRESULT_H_

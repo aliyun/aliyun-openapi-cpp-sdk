@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setTerrorism(const std::string& terrorism);
 				std::string getBizTypeName()const;
 				void setBizTypeName(const std::string& bizTypeName);
+				std::string getLive()const;
+				void setLive(const std::string& live);
 				std::string getAd()const;
 				void setAd(const std::string& ad);
 				std::string getResourceType()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				std::string terrorism_;
 				std::string bizTypeName_;
+				std::string live_;
 				std::string ad_;
 				std::string resourceType_;
 

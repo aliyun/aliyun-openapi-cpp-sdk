@@ -84,6 +84,8 @@ void DescribeOssIncrementCheckSettingResult::parse(const std::string &payload)
 		imageEnableLimit_ = value["ImageEnableLimit"].asString() == "true";
 	if(!value["ImageScanLimit"].isNull())
 		imageScanLimit_ = std::stol(value["ImageScanLimit"].asString());
+	if(!value["ScanImageNoFileType"].isNull())
+		scanImageNoFileType_ = value["ScanImageNoFileType"].asString() == "true";
 	if(!value["VideoFrameInterval"].isNull())
 		videoFrameInterval_ = std::stoi(value["VideoFrameInterval"].asString());
 	if(!value["VideoMaxFrames"].isNull())
@@ -126,6 +128,11 @@ std::string DescribeOssIncrementCheckSettingResult::getCallbackId()const
 long DescribeOssIncrementCheckSettingResult::getImageScanLimit()const
 {
 	return imageScanLimit_;
+}
+
+bool DescribeOssIncrementCheckSettingResult::getScanImageNoFileType()const
+{
+	return scanImageNoFileType_;
 }
 
 std::vector<DescribeOssIncrementCheckSettingResult::BucketConfig> DescribeOssIncrementCheckSettingResult::getBucketConfigList()const

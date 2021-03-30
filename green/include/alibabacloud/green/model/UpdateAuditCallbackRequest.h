@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getSeed()const;
 				void setSeed(const std::string& seed);
+				int getCryptType()const;
+				void setCryptType(int cryptType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getCallback()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string seed_;
+				int cryptType_;
 				std::string sourceIp_;
 				std::string callback_;
 

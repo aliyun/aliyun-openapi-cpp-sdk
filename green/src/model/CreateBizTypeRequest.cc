@@ -27,6 +27,17 @@ CreateBizTypeRequest::CreateBizTypeRequest() :
 CreateBizTypeRequest::~CreateBizTypeRequest()
 {}
 
+std::string CreateBizTypeRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateBizTypeRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
 std::string CreateBizTypeRequest::getBizTypeImport()const
 {
 	return bizTypeImport_;

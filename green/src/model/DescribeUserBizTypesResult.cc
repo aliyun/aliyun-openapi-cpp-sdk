@@ -55,24 +55,28 @@ void DescribeUserBizTypesResult::parse(const std::string &payload)
 			bizTypeListObject.citeTemplate = valueBizTypeListitem["CiteTemplate"].asString() == "true";
 		if(!valueBizTypeListitem["IndustryInfo"].isNull())
 			bizTypeListObject.industryInfo = valueBizTypeListitem["IndustryInfo"].asString();
+		if(!valueBizTypeListitem["Description"].isNull())
+			bizTypeListObject.description = valueBizTypeListitem["Description"].asString();
 		bizTypeList_.push_back(bizTypeListObject);
 	}
-	auto allBizTypeListImportNode = value["BizTypeListImport"]["item"];
-	for (auto valueBizTypeListImportitem : allBizTypeListImportNode)
+	auto allBizTypeListImportNode = value["BizTypeListImport"]["importItem"];
+	for (auto valueBizTypeListImportimportItem : allBizTypeListImportNode)
 	{
-		Item bizTypeListImportObject;
-		if(!valueBizTypeListImportitem["BizType"].isNull())
-			bizTypeListImportObject.bizType = valueBizTypeListImportitem["BizType"].asString();
-		if(!valueBizTypeListImportitem["SourceBizType"].isNull())
-			bizTypeListImportObject.sourceBizType = valueBizTypeListImportitem["SourceBizType"].asString();
-		if(!valueBizTypeListImportitem["Gray"].isNull())
-			bizTypeListImportObject.gray = valueBizTypeListImportitem["Gray"].asString() == "true";
-		if(!valueBizTypeListImportitem["Source"].isNull())
-			bizTypeListImportObject.source = valueBizTypeListImportitem["Source"].asString();
-		if(!valueBizTypeListImportitem["CiteTemplate"].isNull())
-			bizTypeListImportObject.citeTemplate = valueBizTypeListImportitem["CiteTemplate"].asString() == "true";
-		if(!valueBizTypeListImportitem["IndustryInfo"].isNull())
-			bizTypeListImportObject.industryInfo = valueBizTypeListImportitem["IndustryInfo"].asString();
+		ImportItem bizTypeListImportObject;
+		if(!valueBizTypeListImportimportItem["BizType"].isNull())
+			bizTypeListImportObject.bizType = valueBizTypeListImportimportItem["BizType"].asString();
+		if(!valueBizTypeListImportimportItem["SourceBizType"].isNull())
+			bizTypeListImportObject.sourceBizType = valueBizTypeListImportimportItem["SourceBizType"].asString();
+		if(!valueBizTypeListImportimportItem["Gray"].isNull())
+			bizTypeListImportObject.gray = valueBizTypeListImportimportItem["Gray"].asString() == "true";
+		if(!valueBizTypeListImportimportItem["Source"].isNull())
+			bizTypeListImportObject.source = valueBizTypeListImportimportItem["Source"].asString();
+		if(!valueBizTypeListImportimportItem["CiteTemplate"].isNull())
+			bizTypeListImportObject.citeTemplate = valueBizTypeListImportimportItem["CiteTemplate"].asString() == "true";
+		if(!valueBizTypeListImportimportItem["IndustryInfo"].isNull())
+			bizTypeListImportObject.industryInfo = valueBizTypeListImportimportItem["IndustryInfo"].asString();
+		if(!valueBizTypeListImportimportItem["Description"].isNull())
+			bizTypeListImportObject.description = valueBizTypeListImportimportItem["Description"].asString();
 		bizTypeListImport_.push_back(bizTypeListImportObject);
 	}
 
@@ -83,7 +87,7 @@ std::vector<DescribeUserBizTypesResult::Item> DescribeUserBizTypesResult::getBiz
 	return bizTypeList_;
 }
 
-std::vector<DescribeUserBizTypesResult::Item> DescribeUserBizTypesResult::getBizTypeListImport()const
+std::vector<DescribeUserBizTypesResult::ImportItem> DescribeUserBizTypesResult::getBizTypeListImport()const
 {
 	return bizTypeListImport_;
 }

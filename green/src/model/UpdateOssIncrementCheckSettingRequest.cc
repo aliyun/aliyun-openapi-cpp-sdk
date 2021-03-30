@@ -38,6 +38,17 @@ void UpdateOssIncrementCheckSettingRequest::setVideoSceneList(const std::string&
 	setParameter("VideoSceneList", videoSceneList);
 }
 
+bool UpdateOssIncrementCheckSettingRequest::getScanImageNoFileType()const
+{
+	return scanImageNoFileType_;
+}
+
+void UpdateOssIncrementCheckSettingRequest::setScanImageNoFileType(bool scanImageNoFileType)
+{
+	scanImageNoFileType_ = scanImageNoFileType;
+	setParameter("ScanImageNoFileType", scanImageNoFileType ? "true" : "false");
+}
+
 std::string UpdateOssIncrementCheckSettingRequest::getImageSceneList()const
 {
 	return imageSceneList_;

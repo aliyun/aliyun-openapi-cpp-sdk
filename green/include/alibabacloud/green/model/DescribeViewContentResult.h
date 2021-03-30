@@ -42,8 +42,89 @@ namespace AlibabaCloud
 					};
 					struct FrameResult
 					{
+						std::string label;
 						std::string url;
 						int offset;
+					};
+					struct FaceResult
+					{
+						struct Location
+						{
+							int w;
+							int x;
+							int h;
+							int y;
+						};
+						struct Gender
+						{
+							float rate;
+							std::string value;
+						};
+						struct Glasses
+						{
+							float rate;
+							std::string value;
+						};
+						struct Age
+						{
+							float rate;
+							int value;
+						};
+						struct Smile
+						{
+							float rate;
+							float value;
+						};
+						struct Quality
+						{
+							float blur;
+							float pitch;
+							float roll;
+							float yaw;
+						};
+						struct Respirator
+						{
+							float rate;
+							std::string value;
+						};
+						struct Hat
+						{
+							float rate;
+							std::string value;
+						};
+						struct Mustache
+						{
+							float rate;
+							std::string value;
+						};
+						struct Bang
+						{
+							float rate;
+							std::string value;
+						};
+						struct Hairstyle
+						{
+							float rate;
+							std::string value;
+						};
+						struct Image
+						{
+							int height;
+							int width;
+						};
+						bool bualified;
+						Respirator respirator;
+						Bang bang;
+						Mustache mustache;
+						Gender gender;
+						Smile smile;
+						Image image;
+						Quality quality;
+						Glasses glasses;
+						Hat hat;
+						Hairstyle hairstyle;
+						Age age;
+						Location location;
 					};
 					std::string scanResult;
 					std::string taskId;
@@ -58,6 +139,7 @@ namespace AlibabaCloud
 					std::vector<ViewContent::Result> results;
 					std::vector<ViewContent::FrameResult> frameResults;
 					std::string content;
+					std::vector<ViewContent::FaceResult> faceResults;
 					long id;
 				};
 

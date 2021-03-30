@@ -40,21 +40,25 @@ void DescribeBizTypeSettingResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto terrorismNode = value["Terrorism"];
-		auto allCategories = terrorismNode["Categories"]["category"];
+		auto allCategories = terrorismNode["Categories"]["liveCategory"];
 		for (auto value : allCategories)
 			terrorism_.categories.push_back(value.asString());
 	auto pornNode = value["Porn"];
-		auto allCategories1 = pornNode["Categories"]["category"];
+		auto allCategories1 = pornNode["Categories"]["liveCategory"];
 		for (auto value : allCategories1)
 			porn_.categories1.push_back(value.asString());
 	auto antispamNode = value["Antispam"];
-		auto allCategories2 = antispamNode["Categories"]["category"];
+		auto allCategories2 = antispamNode["Categories"]["liveCategory"];
 		for (auto value : allCategories2)
 			antispam_.categories2.push_back(value.asString());
 	auto adNode = value["Ad"];
-		auto allCategories3 = adNode["Categories"]["category"];
+		auto allCategories3 = adNode["Categories"]["liveCategory"];
 		for (auto value : allCategories3)
 			ad_.categories3.push_back(value.asString());
+	auto liveNode = value["Live"];
+		auto allCategories4 = liveNode["Categories"]["liveCategory"];
+		for (auto value : allCategories4)
+			live_.categories4.push_back(value.asString());
 
 }
 
@@ -71,6 +75,11 @@ DescribeBizTypeSettingResult::Ad DescribeBizTypeSettingResult::getAd()const
 DescribeBizTypeSettingResult::Terrorism DescribeBizTypeSettingResult::getTerrorism()const
 {
 	return terrorism_;
+}
+
+DescribeBizTypeSettingResult::Live DescribeBizTypeSettingResult::getLive()const
+{
+	return live_;
 }
 
 DescribeBizTypeSettingResult::Porn DescribeBizTypeSettingResult::getPorn()const

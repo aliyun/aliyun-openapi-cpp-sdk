@@ -14,52 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/DescribeAuditCallbackResult.h>
+#include <alibabacloud/green/model/PostAsyncScanResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Green;
 using namespace AlibabaCloud::Green::Model;
 
-DescribeAuditCallbackResult::DescribeAuditCallbackResult() :
+PostAsyncScanResult::PostAsyncScanResult() :
 	ServiceResult()
 {}
 
-DescribeAuditCallbackResult::DescribeAuditCallbackResult(const std::string &payload) :
+PostAsyncScanResult::PostAsyncScanResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeAuditCallbackResult::~DescribeAuditCallbackResult()
+PostAsyncScanResult::~PostAsyncScanResult()
 {}
 
-void DescribeAuditCallbackResult::parse(const std::string &payload)
+void PostAsyncScanResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Seed"].isNull())
-		seed_ = value["Seed"].asString();
-	if(!value["Callback"].isNull())
-		callback_ = value["Callback"].asString();
-	if(!value["CryptType"].isNull())
-		cryptType_ = std::stoi(value["CryptType"].asString());
 
-}
-
-int DescribeAuditCallbackResult::getCryptType()const
-{
-	return cryptType_;
-}
-
-std::string DescribeAuditCallbackResult::getCallback()const
-{
-	return callback_;
-}
-
-std::string DescribeAuditCallbackResult::getSeed()const
-{
-	return seed_;
 }
 

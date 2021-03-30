@@ -94,8 +94,12 @@
 #include "model/DescribeAuditRangeResult.h"
 #include "model/DescribeAuditSettingRequest.h"
 #include "model/DescribeAuditSettingResult.h"
+#include "model/DescribeBizTypeImageLibRequest.h"
+#include "model/DescribeBizTypeImageLibResult.h"
 #include "model/DescribeBizTypeSettingRequest.h"
 #include "model/DescribeBizTypeSettingResult.h"
+#include "model/DescribeBizTypeTextLibRequest.h"
+#include "model/DescribeBizTypeTextLibResult.h"
 #include "model/DescribeBizTypesRequest.h"
 #include "model/DescribeBizTypesResult.h"
 #include "model/DescribeCloudMonitorServicesRequest.h"
@@ -224,6 +228,10 @@
 #include "model/MarkOssResultResult.h"
 #include "model/MarkWebsiteScanResultRequest.h"
 #include "model/MarkWebsiteScanResultResult.h"
+#include "model/PostAsyncScanRequest.h"
+#include "model/PostAsyncScanResult.h"
+#include "model/PostAsyncScanResultsRequest.h"
+#include "model/PostAsyncScanResultsResult.h"
 #include "model/RefundCdiBagRequest.h"
 #include "model/RefundCdiBagResult.h"
 #include "model/RefundCdiBaseBagRequest.h"
@@ -262,6 +270,8 @@
 #include "model/UpdateAuditRangeResult.h"
 #include "model/UpdateAuditSettingRequest.h"
 #include "model/UpdateAuditSettingResult.h"
+#include "model/UpdateBizTypeRequest.h"
+#include "model/UpdateBizTypeResult.h"
 #include "model/UpdateBizTypeImageLibRequest.h"
 #include "model/UpdateBizTypeImageLibResult.h"
 #include "model/UpdateBizTypeSettingRequest.h"
@@ -465,9 +475,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAuditSettingResult> DescribeAuditSettingOutcome;
 			typedef std::future<DescribeAuditSettingOutcome> DescribeAuditSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAuditSettingRequest&, const DescribeAuditSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBizTypeImageLibResult> DescribeBizTypeImageLibOutcome;
+			typedef std::future<DescribeBizTypeImageLibOutcome> DescribeBizTypeImageLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeImageLibRequest&, const DescribeBizTypeImageLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeImageLibAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBizTypeSettingResult> DescribeBizTypeSettingOutcome;
 			typedef std::future<DescribeBizTypeSettingOutcome> DescribeBizTypeSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeSettingRequest&, const DescribeBizTypeSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBizTypeTextLibResult> DescribeBizTypeTextLibOutcome;
+			typedef std::future<DescribeBizTypeTextLibOutcome> DescribeBizTypeTextLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeTextLibRequest&, const DescribeBizTypeTextLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeTextLibAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBizTypesResult> DescribeBizTypesOutcome;
 			typedef std::future<DescribeBizTypesOutcome> DescribeBizTypesOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypesRequest&, const DescribeBizTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypesAsyncHandler;
@@ -660,6 +676,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MarkWebsiteScanResultResult> MarkWebsiteScanResultOutcome;
 			typedef std::future<MarkWebsiteScanResultOutcome> MarkWebsiteScanResultOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::MarkWebsiteScanResultRequest&, const MarkWebsiteScanResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MarkWebsiteScanResultAsyncHandler;
+			typedef Outcome<Error, Model::PostAsyncScanResult> PostAsyncScanOutcome;
+			typedef std::future<PostAsyncScanOutcome> PostAsyncScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::PostAsyncScanRequest&, const PostAsyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PostAsyncScanAsyncHandler;
+			typedef Outcome<Error, Model::PostAsyncScanResultsResult> PostAsyncScanResultsOutcome;
+			typedef std::future<PostAsyncScanResultsOutcome> PostAsyncScanResultsOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::PostAsyncScanResultsRequest&, const PostAsyncScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PostAsyncScanResultsAsyncHandler;
 			typedef Outcome<Error, Model::RefundCdiBagResult> RefundCdiBagOutcome;
 			typedef std::future<RefundCdiBagOutcome> RefundCdiBagOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::RefundCdiBagRequest&, const RefundCdiBagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundCdiBagAsyncHandler;
@@ -717,6 +739,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAuditSettingResult> UpdateAuditSettingOutcome;
 			typedef std::future<UpdateAuditSettingOutcome> UpdateAuditSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateAuditSettingRequest&, const UpdateAuditSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAuditSettingAsyncHandler;
+			typedef Outcome<Error, Model::UpdateBizTypeResult> UpdateBizTypeOutcome;
+			typedef std::future<UpdateBizTypeOutcome> UpdateBizTypeOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::UpdateBizTypeRequest&, const UpdateBizTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBizTypeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateBizTypeImageLibResult> UpdateBizTypeImageLibOutcome;
 			typedef std::future<UpdateBizTypeImageLibOutcome> UpdateBizTypeImageLibOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateBizTypeImageLibRequest&, const UpdateBizTypeImageLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBizTypeImageLibAsyncHandler;
@@ -959,9 +984,15 @@ namespace AlibabaCloud
 			DescribeAuditSettingOutcome describeAuditSetting(const Model::DescribeAuditSettingRequest &request)const;
 			void describeAuditSettingAsync(const Model::DescribeAuditSettingRequest& request, const DescribeAuditSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditSettingOutcomeCallable describeAuditSettingCallable(const Model::DescribeAuditSettingRequest& request) const;
+			DescribeBizTypeImageLibOutcome describeBizTypeImageLib(const Model::DescribeBizTypeImageLibRequest &request)const;
+			void describeBizTypeImageLibAsync(const Model::DescribeBizTypeImageLibRequest& request, const DescribeBizTypeImageLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBizTypeImageLibOutcomeCallable describeBizTypeImageLibCallable(const Model::DescribeBizTypeImageLibRequest& request) const;
 			DescribeBizTypeSettingOutcome describeBizTypeSetting(const Model::DescribeBizTypeSettingRequest &request)const;
 			void describeBizTypeSettingAsync(const Model::DescribeBizTypeSettingRequest& request, const DescribeBizTypeSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizTypeSettingOutcomeCallable describeBizTypeSettingCallable(const Model::DescribeBizTypeSettingRequest& request) const;
+			DescribeBizTypeTextLibOutcome describeBizTypeTextLib(const Model::DescribeBizTypeTextLibRequest &request)const;
+			void describeBizTypeTextLibAsync(const Model::DescribeBizTypeTextLibRequest& request, const DescribeBizTypeTextLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBizTypeTextLibOutcomeCallable describeBizTypeTextLibCallable(const Model::DescribeBizTypeTextLibRequest& request) const;
 			DescribeBizTypesOutcome describeBizTypes(const Model::DescribeBizTypesRequest &request)const;
 			void describeBizTypesAsync(const Model::DescribeBizTypesRequest& request, const DescribeBizTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizTypesOutcomeCallable describeBizTypesCallable(const Model::DescribeBizTypesRequest& request) const;
@@ -1154,6 +1185,12 @@ namespace AlibabaCloud
 			MarkWebsiteScanResultOutcome markWebsiteScanResult(const Model::MarkWebsiteScanResultRequest &request)const;
 			void markWebsiteScanResultAsync(const Model::MarkWebsiteScanResultRequest& request, const MarkWebsiteScanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MarkWebsiteScanResultOutcomeCallable markWebsiteScanResultCallable(const Model::MarkWebsiteScanResultRequest& request) const;
+			PostAsyncScanOutcome postAsyncScan(const Model::PostAsyncScanRequest &request)const;
+			void postAsyncScanAsync(const Model::PostAsyncScanRequest& request, const PostAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PostAsyncScanOutcomeCallable postAsyncScanCallable(const Model::PostAsyncScanRequest& request) const;
+			PostAsyncScanResultsOutcome postAsyncScanResults(const Model::PostAsyncScanResultsRequest &request)const;
+			void postAsyncScanResultsAsync(const Model::PostAsyncScanResultsRequest& request, const PostAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PostAsyncScanResultsOutcomeCallable postAsyncScanResultsCallable(const Model::PostAsyncScanResultsRequest& request) const;
 			RefundCdiBagOutcome refundCdiBag(const Model::RefundCdiBagRequest &request)const;
 			void refundCdiBagAsync(const Model::RefundCdiBagRequest& request, const RefundCdiBagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefundCdiBagOutcomeCallable refundCdiBagCallable(const Model::RefundCdiBagRequest& request) const;
@@ -1211,6 +1248,9 @@ namespace AlibabaCloud
 			UpdateAuditSettingOutcome updateAuditSetting(const Model::UpdateAuditSettingRequest &request)const;
 			void updateAuditSettingAsync(const Model::UpdateAuditSettingRequest& request, const UpdateAuditSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAuditSettingOutcomeCallable updateAuditSettingCallable(const Model::UpdateAuditSettingRequest& request) const;
+			UpdateBizTypeOutcome updateBizType(const Model::UpdateBizTypeRequest &request)const;
+			void updateBizTypeAsync(const Model::UpdateBizTypeRequest& request, const UpdateBizTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateBizTypeOutcomeCallable updateBizTypeCallable(const Model::UpdateBizTypeRequest& request) const;
 			UpdateBizTypeImageLibOutcome updateBizTypeImageLib(const Model::UpdateBizTypeImageLibRequest &request)const;
 			void updateBizTypeImageLibAsync(const Model::UpdateBizTypeImageLibRequest& request, const UpdateBizTypeImageLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateBizTypeImageLibOutcomeCallable updateBizTypeImageLibCallable(const Model::UpdateBizTypeImageLibRequest& request) const;

@@ -1347,6 +1347,42 @@ GreenClient::DescribeAuditSettingOutcomeCallable GreenClient::describeAuditSetti
 	return task->get_future();
 }
 
+GreenClient::DescribeBizTypeImageLibOutcome GreenClient::describeBizTypeImageLib(const DescribeBizTypeImageLibRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBizTypeImageLibOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBizTypeImageLibOutcome(DescribeBizTypeImageLibResult(outcome.result()));
+	else
+		return DescribeBizTypeImageLibOutcome(outcome.error());
+}
+
+void GreenClient::describeBizTypeImageLibAsync(const DescribeBizTypeImageLibRequest& request, const DescribeBizTypeImageLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBizTypeImageLib(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DescribeBizTypeImageLibOutcomeCallable GreenClient::describeBizTypeImageLibCallable(const DescribeBizTypeImageLibRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBizTypeImageLibOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBizTypeImageLib(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::DescribeBizTypeSettingOutcome GreenClient::describeBizTypeSetting(const DescribeBizTypeSettingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +1413,42 @@ GreenClient::DescribeBizTypeSettingOutcomeCallable GreenClient::describeBizTypeS
 			[this, request]()
 			{
 			return this->describeBizTypeSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::DescribeBizTypeTextLibOutcome GreenClient::describeBizTypeTextLib(const DescribeBizTypeTextLibRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBizTypeTextLibOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBizTypeTextLibOutcome(DescribeBizTypeTextLibResult(outcome.result()));
+	else
+		return DescribeBizTypeTextLibOutcome(outcome.error());
+}
+
+void GreenClient::describeBizTypeTextLibAsync(const DescribeBizTypeTextLibRequest& request, const DescribeBizTypeTextLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBizTypeTextLib(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DescribeBizTypeTextLibOutcomeCallable GreenClient::describeBizTypeTextLibCallable(const DescribeBizTypeTextLibRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBizTypeTextLibOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBizTypeTextLib(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3687,6 +3759,78 @@ GreenClient::MarkWebsiteScanResultOutcomeCallable GreenClient::markWebsiteScanRe
 	return task->get_future();
 }
 
+GreenClient::PostAsyncScanOutcome GreenClient::postAsyncScan(const PostAsyncScanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PostAsyncScanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PostAsyncScanOutcome(PostAsyncScanResult(outcome.result()));
+	else
+		return PostAsyncScanOutcome(outcome.error());
+}
+
+void GreenClient::postAsyncScanAsync(const PostAsyncScanRequest& request, const PostAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, postAsyncScan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::PostAsyncScanOutcomeCallable GreenClient::postAsyncScanCallable(const PostAsyncScanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PostAsyncScanOutcome()>>(
+			[this, request]()
+			{
+			return this->postAsyncScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::PostAsyncScanResultsOutcome GreenClient::postAsyncScanResults(const PostAsyncScanResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PostAsyncScanResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PostAsyncScanResultsOutcome(PostAsyncScanResultsResult(outcome.result()));
+	else
+		return PostAsyncScanResultsOutcome(outcome.error());
+}
+
+void GreenClient::postAsyncScanResultsAsync(const PostAsyncScanResultsRequest& request, const PostAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, postAsyncScanResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::PostAsyncScanResultsOutcomeCallable GreenClient::postAsyncScanResultsCallable(const PostAsyncScanResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PostAsyncScanResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->postAsyncScanResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::RefundCdiBagOutcome GreenClient::refundCdiBag(const RefundCdiBagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4365,6 +4509,42 @@ GreenClient::UpdateAuditSettingOutcomeCallable GreenClient::updateAuditSettingCa
 			[this, request]()
 			{
 			return this->updateAuditSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::UpdateBizTypeOutcome GreenClient::updateBizType(const UpdateBizTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateBizTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateBizTypeOutcome(UpdateBizTypeResult(outcome.result()));
+	else
+		return UpdateBizTypeOutcome(outcome.error());
+}
+
+void GreenClient::updateBizTypeAsync(const UpdateBizTypeRequest& request, const UpdateBizTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateBizType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::UpdateBizTypeOutcomeCallable GreenClient::updateBizTypeCallable(const UpdateBizTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateBizTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateBizType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

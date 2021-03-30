@@ -36,6 +36,17 @@ namespace AlibabaCloud
 				{
 					std::string sourceBizType;
 					bool gray;
+					std::string description;
+					bool citeTemplate;
+					std::string bizType;
+					std::string source;
+					std::string industryInfo;
+				};
+				struct ImportItem
+				{
+					std::string sourceBizType;
+					bool gray;
+					std::string description;
 					bool citeTemplate;
 					std::string bizType;
 					std::string source;
@@ -47,13 +58,13 @@ namespace AlibabaCloud
 				explicit DescribeUserBizTypesResult(const std::string &payload);
 				~DescribeUserBizTypesResult();
 				std::vector<Item> getBizTypeList()const;
-				std::vector<Item> getBizTypeListImport()const;
+				std::vector<ImportItem> getBizTypeListImport()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Item> bizTypeList_;
-				std::vector<Item> bizTypeListImport_;
+				std::vector<ImportItem> bizTypeListImport_;
 
 			};
 		}

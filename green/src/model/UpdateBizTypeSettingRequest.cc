@@ -82,6 +82,17 @@ void UpdateBizTypeSettingRequest::setBizTypeName(const std::string& bizTypeName)
 	setParameter("BizTypeName", bizTypeName);
 }
 
+std::string UpdateBizTypeSettingRequest::getLive()const
+{
+	return live_;
+}
+
+void UpdateBizTypeSettingRequest::setLive(const std::string& live)
+{
+	live_ = live;
+	setParameter("Live", live);
+}
+
 std::string UpdateBizTypeSettingRequest::getAd()const
 {
 	return ad_;

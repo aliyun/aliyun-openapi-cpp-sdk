@@ -61,6 +61,7 @@ namespace AlibabaCloud
 				AudioAntispamFreezeConfig getAudioAntispamFreezeConfig()const;
 				std::string getCallbackId()const;
 				long getImageScanLimit()const;
+				bool getScanImageNoFileType()const;
 				ImageAutoFreeze getImageAutoFreeze()const;
 				std::vector<BucketConfig> getBucketConfigList()const;
 				std::vector<std::string> getAudioSceneList()const;
@@ -82,6 +83,7 @@ namespace AlibabaCloud
 				AudioAntispamFreezeConfig audioAntispamFreezeConfig_;
 				std::string callbackId_;
 				long imageScanLimit_;
+				bool scanImageNoFileType_;
 				ImageAutoFreeze imageAutoFreeze_;
 				std::vector<BucketConfig> bucketConfigList_;
 				std::vector<std::string> audioSceneList_;

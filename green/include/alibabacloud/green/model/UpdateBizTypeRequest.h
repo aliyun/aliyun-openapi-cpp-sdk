@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKRESULT_H_
-#define ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKRESULT_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_UPDATEBIZTYPEREQUEST_H_
+#define ALIBABACLOUD_GREEN_MODEL_UPDATEBIZTYPEREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/green/GreenExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT DescribeAuditCallbackResult : public ServiceResult
+			class ALIBABACLOUD_GREEN_EXPORT UpdateBizTypeRequest : public RpcServiceRequest
 			{
+
 			public:
+				UpdateBizTypeRequest();
+				~UpdateBizTypeRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getBizTypeName()const;
+				void setBizTypeName(const std::string& bizTypeName);
 
-				DescribeAuditCallbackResult();
-				explicit DescribeAuditCallbackResult(const std::string &payload);
-				~DescribeAuditCallbackResult();
-				int getCryptType()const;
-				std::string getCallback()const;
-				std::string getSeed()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				int cryptType_;
-				std::string callback_;
-				std::string seed_;
+            private:
+				std::string description_;
+				std::string sourceIp_;
+				std::string bizTypeName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKRESULT_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_UPDATEBIZTYPEREQUEST_H_

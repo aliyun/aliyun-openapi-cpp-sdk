@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_CREATEBIZTYPEREQUEST_H_
-#define ALIBABACLOUD_GREEN_MODEL_CREATEBIZTYPEREQUEST_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEBIZTYPEIMAGELIBREQUEST_H_
+#define ALIBABACLOUD_GREEN_MODEL_DESCRIBEBIZTYPEIMAGELIBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT CreateBizTypeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_GREEN_EXPORT DescribeBizTypeImageLibRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateBizTypeRequest();
-				~CreateBizTypeRequest();
+				DescribeBizTypeImageLibRequest();
+				~DescribeBizTypeImageLibRequest();
 
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getBizTypeImport()const;
-				void setBizTypeImport(const std::string& bizTypeImport);
-				bool getCiteTemplate()const;
-				void setCiteTemplate(bool citeTemplate);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
+				std::string getScene()const;
+				void setScene(const std::string& scene);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getIndustryInfo()const;
-				void setIndustryInfo(const std::string& industryInfo);
 				std::string getBizTypeName()const;
 				void setBizTypeName(const std::string& bizTypeName);
 
             private:
-				std::string description_;
-				std::string bizTypeImport_;
-				bool citeTemplate_;
+				std::string resourceType_;
+				std::string scene_;
 				std::string sourceIp_;
-				std::string industryInfo_;
 				std::string bizTypeName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_CREATEBIZTYPEREQUEST_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEBIZTYPEIMAGELIBREQUEST_H_
