@@ -461,6 +461,17 @@ void CreateInstanceRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthO
 	setParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
+bool CreateInstanceRequest::getHibernationOptionsConfigured()const
+{
+	return hibernationOptionsConfigured_;
+}
+
+void CreateInstanceRequest::setHibernationOptionsConfigured(bool hibernationOptionsConfigured)
+{
+	hibernationOptionsConfigured_ = hibernationOptionsConfigured;
+	setParameter("HibernationOptionsConfigured", hibernationOptionsConfigured ? "true" : "false");
+}
+
 std::string CreateInstanceRequest::getDescription()const
 {
 	return description_;

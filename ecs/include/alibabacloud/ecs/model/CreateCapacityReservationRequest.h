@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT CreateCapacityReservationRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				CreateCapacityReservationRequest();
@@ -45,12 +51,16 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getPrivatePoolOptionsMatchCriteria()const;
 				void setPrivatePoolOptionsMatchCriteria(const std::string& privatePoolOptionsMatchCriteria);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
 				int getEfficientStatus()const;
@@ -90,9 +100,11 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string startTime_;
 				std::string platform_;
+				std::string resourceGroupId_;
 				std::string privatePoolOptionsMatchCriteria_;
 				std::string regionId_;
 				std::string instanceType_;
+				std::vector<Tag> tag_;
 				std::string instanceChargeType_;
 				int efficientStatus_;
 				int period_;

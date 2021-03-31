@@ -126,18 +126,16 @@ namespace AlibabaCloud
 				void setIoOptimized(const std::string& ioOptimized);
 				std::string getSecurityGroupId()const;
 				void setSecurityGroupId(const std::string& securityGroupId);
+				bool getHibernationOptionsConfigured()const;
+				void setHibernationOptionsConfigured(bool hibernationOptionsConfigured);
 				std::string getSystemDiskPerformanceLevel()const;
 				void setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel);
 				bool getPasswordInherit()const;
 				void setPasswordInherit(bool passwordInherit);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
-				bool getHibernationConfigured()const;
-				void setHibernationConfigured(bool hibernationConfigured);
 				std::vector<Arn> getArn()const;
 				void setArn(const std::vector<Arn>& arn);
-				std::string getSchedulerOptions()const;
-				void setSchedulerOptions(const std::string& schedulerOptions);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getSchedulerOptionsDedicatedHostClusterId()const;
@@ -180,6 +178,8 @@ namespace AlibabaCloud
 				void setLaunchTemplateId(const std::string& launchTemplateId);
 				int getIpv6AddressCount()const;
 				void setIpv6AddressCount(int ipv6AddressCount);
+				std::vector<std::string> getHostNames()const;
+				void setHostNames(const std::vector<std::string>& hostNames);
 				std::string getCapacityReservationPreference()const;
 				void setCapacityReservationPreference(const std::string& capacityReservationPreference);
 				std::string getVSwitchId()const;
@@ -200,6 +200,8 @@ namespace AlibabaCloud
 				void setCpuOptionsThreadsPerCore(int cpuOptionsThreadsPerCore);
 				std::string getSystemDiskCategory()const;
 				void setSystemDiskCategory(const std::string& systemDiskCategory);
+				std::string getSecurityOptionsTrustedSystemMode()const;
+				void setSecurityOptionsTrustedSystemMode(const std::string& securityOptionsTrustedSystemMode);
 				std::string getCapacityReservationId()const;
 				void setCapacityReservationId(const std::string& capacityReservationId);
 				std::string getUserData()const;
@@ -267,12 +269,11 @@ namespace AlibabaCloud
 				int networkInterfaceQueueNumber_;
 				std::string ioOptimized_;
 				std::string securityGroupId_;
+				bool hibernationOptionsConfigured_;
 				std::string systemDiskPerformanceLevel_;
 				bool passwordInherit_;
 				std::string instanceType_;
-				bool hibernationConfigured_;
 				std::vector<Arn> arn_;
-				std::string schedulerOptions_;
 				std::string resourceOwnerAccount_;
 				std::string schedulerOptionsDedicatedHostClusterId_;
 				std::string systemDiskDiskName_;
@@ -294,6 +295,7 @@ namespace AlibabaCloud
 				int autoRenewPeriod_;
 				std::string launchTemplateId_;
 				int ipv6AddressCount_;
+				std::vector<std::string> hostNames_;
 				std::string capacityReservationPreference_;
 				std::string vSwitchId_;
 				std::string instanceName_;
@@ -304,6 +306,7 @@ namespace AlibabaCloud
 				std::string description_;
 				int cpuOptionsThreadsPerCore_;
 				std::string systemDiskCategory_;
+				std::string securityOptionsTrustedSystemMode_;
 				std::string capacityReservationId_;
 				std::string userData_;
 				std::string regionId_;

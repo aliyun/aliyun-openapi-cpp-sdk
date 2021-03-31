@@ -49,6 +49,17 @@ void DescribeElasticityAssurancesRequest::setPlatform(const std::string& platfor
 	setParameter("Platform", platform);
 }
 
+std::string DescribeElasticityAssurancesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeElasticityAssurancesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeElasticityAssurancesRequest::getRegionId()const
 {
 	return regionId_;
@@ -80,6 +91,22 @@ void DescribeElasticityAssurancesRequest::setInstanceType(const std::string& ins
 {
 	instanceType_ = instanceType;
 	setParameter("InstanceType", instanceType);
+}
+
+std::vector<DescribeElasticityAssurancesRequest::Tag> DescribeElasticityAssurancesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeElasticityAssurancesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+	}
 }
 
 std::string DescribeElasticityAssurancesRequest::getInstanceChargeType()const

@@ -337,6 +337,17 @@ void DescribePriceRequest::setInstanceType(const std::string& instanceType)
 	setParameter("InstanceType", instanceType);
 }
 
+std::string DescribePriceRequest::getDedicatedHostType()const
+{
+	return dedicatedHostType_;
+}
+
+void DescribePriceRequest::setDedicatedHostType(const std::string& dedicatedHostType)
+{
+	dedicatedHostType_ = dedicatedHostType;
+	setParameter("DedicatedHostType", dedicatedHostType);
+}
+
 std::string DescribePriceRequest::getDataDisk2Category()const
 {
 	return dataDisk2Category_;

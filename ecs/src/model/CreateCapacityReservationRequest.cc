@@ -82,6 +82,17 @@ void CreateCapacityReservationRequest::setPlatform(const std::string& platform)
 	setParameter("Platform", platform);
 }
 
+std::string CreateCapacityReservationRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateCapacityReservationRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateCapacityReservationRequest::getPrivatePoolOptionsMatchCriteria()const
 {
 	return privatePoolOptionsMatchCriteria_;
@@ -113,6 +124,22 @@ void CreateCapacityReservationRequest::setInstanceType(const std::string& instan
 {
 	instanceType_ = instanceType;
 	setParameter("InstanceType", instanceType);
+}
+
+std::vector<CreateCapacityReservationRequest::Tag> CreateCapacityReservationRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateCapacityReservationRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+	}
 }
 
 std::string CreateCapacityReservationRequest::getInstanceChargeType()const

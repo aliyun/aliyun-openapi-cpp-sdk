@@ -324,6 +324,17 @@ void RunInstancesRequest::setSecurityGroupId(const std::string& securityGroupId)
 	setParameter("SecurityGroupId", securityGroupId);
 }
 
+bool RunInstancesRequest::getHibernationOptionsConfigured()const
+{
+	return hibernationOptionsConfigured_;
+}
+
+void RunInstancesRequest::setHibernationOptionsConfigured(bool hibernationOptionsConfigured)
+{
+	hibernationOptionsConfigured_ = hibernationOptionsConfigured;
+	setParameter("HibernationOptionsConfigured", hibernationOptionsConfigured ? "true" : "false");
+}
+
 std::string RunInstancesRequest::getSystemDiskPerformanceLevel()const
 {
 	return systemDiskPerformanceLevel_;
@@ -357,17 +368,6 @@ void RunInstancesRequest::setInstanceType(const std::string& instanceType)
 	setParameter("InstanceType", instanceType);
 }
 
-bool RunInstancesRequest::getHibernationConfigured()const
-{
-	return hibernationConfigured_;
-}
-
-void RunInstancesRequest::setHibernationConfigured(bool hibernationConfigured)
-{
-	hibernationConfigured_ = hibernationConfigured;
-	setParameter("HibernationConfigured", hibernationConfigured ? "true" : "false");
-}
-
 std::vector<RunInstancesRequest::Arn> RunInstancesRequest::getArn()const
 {
 	return arn_;
@@ -383,17 +383,6 @@ void RunInstancesRequest::setArn(const std::vector<Arn>& arn)
 		setParameter(arnObjStr + ".Rolearn", arnObj.rolearn);
 		setParameter(arnObjStr + ".RoleType", arnObj.roleType);
 	}
-}
-
-std::string RunInstancesRequest::getSchedulerOptions()const
-{
-	return schedulerOptions_;
-}
-
-void RunInstancesRequest::setSchedulerOptions(const std::string& schedulerOptions)
-{
-	schedulerOptions_ = schedulerOptions;
-	setParameter("SchedulerOptions", schedulerOptions);
 }
 
 std::string RunInstancesRequest::getResourceOwnerAccount()const
@@ -634,6 +623,19 @@ void RunInstancesRequest::setIpv6AddressCount(int ipv6AddressCount)
 	setParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
 }
 
+std::vector<std::string> RunInstancesRequest::getHostNames()const
+{
+	return hostNames_;
+}
+
+void RunInstancesRequest::setHostNames(const std::vector<std::string>& hostNames)
+{
+	hostNames_ = hostNames;
+	for(int dep1 = 0; dep1!= hostNames.size(); dep1++) {
+		setParameter("HostNames."+ std::to_string(dep1), hostNames.at(dep1));
+	}
+}
+
 std::string RunInstancesRequest::getCapacityReservationPreference()const
 {
 	return capacityReservationPreference_;
@@ -744,6 +746,17 @@ void RunInstancesRequest::setSystemDiskCategory(const std::string& systemDiskCat
 {
 	systemDiskCategory_ = systemDiskCategory;
 	setParameter("SystemDiskCategory", systemDiskCategory);
+}
+
+std::string RunInstancesRequest::getSecurityOptionsTrustedSystemMode()const
+{
+	return securityOptionsTrustedSystemMode_;
+}
+
+void RunInstancesRequest::setSecurityOptionsTrustedSystemMode(const std::string& securityOptionsTrustedSystemMode)
+{
+	securityOptionsTrustedSystemMode_ = securityOptionsTrustedSystemMode;
+	setParameter("SecurityOptionsTrustedSystemMode", securityOptionsTrustedSystemMode);
 }
 
 std::string RunInstancesRequest::getCapacityReservationId()const

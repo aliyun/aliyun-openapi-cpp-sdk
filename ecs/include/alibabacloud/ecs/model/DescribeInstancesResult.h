@@ -49,6 +49,10 @@ namespace AlibabaCloud
 						bool isSupportUnassociate;
 						std::string internetChargeType;
 					};
+					struct HibernationOptions
+					{
+						bool configured;
+					};
 					struct DedicatedHostAttribute
 					{
 						std::string dedicatedHostId;
@@ -119,6 +123,7 @@ namespace AlibabaCloud
 					std::string hostName;
 					std::string vlanId;
 					std::string status;
+					HibernationOptions hibernationOptions;
 					MetadataOptions metadataOptions;
 					std::string instanceId;
 					std::string stoppedMode;

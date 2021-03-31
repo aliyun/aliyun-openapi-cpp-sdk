@@ -310,6 +310,8 @@
 #include "model/DescribeInstanceHistoryEventsResult.h"
 #include "model/DescribeInstanceMaintenanceAttributesRequest.h"
 #include "model/DescribeInstanceMaintenanceAttributesResult.h"
+#include "model/DescribeInstanceModificationPriceRequest.h"
+#include "model/DescribeInstanceModificationPriceResult.h"
 #include "model/DescribeInstanceMonitorDataRequest.h"
 #include "model/DescribeInstanceMonitorDataResult.h"
 #include "model/DescribeInstanceRamRoleRequest.h"
@@ -1113,6 +1115,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceMaintenanceAttributesResult> DescribeInstanceMaintenanceAttributesOutcome;
 			typedef std::future<DescribeInstanceMaintenanceAttributesOutcome> DescribeInstanceMaintenanceAttributesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceMaintenanceAttributesRequest&, const DescribeInstanceMaintenanceAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMaintenanceAttributesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceModificationPriceResult> DescribeInstanceModificationPriceOutcome;
+			typedef std::future<DescribeInstanceModificationPriceOutcome> DescribeInstanceModificationPriceOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceModificationPriceRequest&, const DescribeInstanceModificationPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceModificationPriceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceMonitorDataResult> DescribeInstanceMonitorDataOutcome;
 			typedef std::future<DescribeInstanceMonitorDataOutcome> DescribeInstanceMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceMonitorDataRequest&, const DescribeInstanceMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorDataAsyncHandler;
@@ -2093,6 +2098,9 @@ namespace AlibabaCloud
 			DescribeInstanceMaintenanceAttributesOutcome describeInstanceMaintenanceAttributes(const Model::DescribeInstanceMaintenanceAttributesRequest &request)const;
 			void describeInstanceMaintenanceAttributesAsync(const Model::DescribeInstanceMaintenanceAttributesRequest& request, const DescribeInstanceMaintenanceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceMaintenanceAttributesOutcomeCallable describeInstanceMaintenanceAttributesCallable(const Model::DescribeInstanceMaintenanceAttributesRequest& request) const;
+			DescribeInstanceModificationPriceOutcome describeInstanceModificationPrice(const Model::DescribeInstanceModificationPriceRequest &request)const;
+			void describeInstanceModificationPriceAsync(const Model::DescribeInstanceModificationPriceRequest& request, const DescribeInstanceModificationPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceModificationPriceOutcomeCallable describeInstanceModificationPriceCallable(const Model::DescribeInstanceModificationPriceRequest& request) const;
 			DescribeInstanceMonitorDataOutcome describeInstanceMonitorData(const Model::DescribeInstanceMonitorDataRequest &request)const;
 			void describeInstanceMonitorDataAsync(const Model::DescribeInstanceMonitorDataRequest& request, const DescribeInstanceMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceMonitorDataOutcomeCallable describeInstanceMonitorDataCallable(const Model::DescribeInstanceMonitorDataRequest& request) const;

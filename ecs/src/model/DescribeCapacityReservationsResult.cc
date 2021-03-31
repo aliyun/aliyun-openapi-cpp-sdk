@@ -67,6 +67,8 @@ void DescribeCapacityReservationsResult::parse(const std::string &payload)
 			capacityReservationSetObject.platform = valueCapacityReservationSetCapacityReservationItem["Platform"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["TimeSlot"].isNull())
 			capacityReservationSetObject.timeSlot = valueCapacityReservationSetCapacityReservationItem["TimeSlot"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["ResourceGroupId"].isNull())
+			capacityReservationSetObject.resourceGroupId = valueCapacityReservationSetCapacityReservationItem["ResourceGroupId"].asString();
 		auto allAllocatedResourcesNode = valueCapacityReservationSetCapacityReservationItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{
@@ -80,6 +82,16 @@ void DescribeCapacityReservationsResult::parse(const std::string &payload)
 			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].isNull())
 				allocatedResourcesObject.usedAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].asString());
 			capacityReservationSetObject.allocatedResources.push_back(allocatedResourcesObject);
+		}
+		auto allTagsNode = valueCapacityReservationSetCapacityReservationItem["Tags"]["Tag"];
+		for (auto valueCapacityReservationSetCapacityReservationItemTagsTag : allTagsNode)
+		{
+			CapacityReservationItem::Tag tagsObject;
+			if(!valueCapacityReservationSetCapacityReservationItemTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueCapacityReservationSetCapacityReservationItemTagsTag["TagKey"].asString();
+			if(!valueCapacityReservationSetCapacityReservationItemTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueCapacityReservationSetCapacityReservationItemTagsTag["TagValue"].asString();
+			capacityReservationSetObject.tags.push_back(tagsObject);
 		}
 		capacityReservationSet_.push_back(capacityReservationSetObject);
 	}

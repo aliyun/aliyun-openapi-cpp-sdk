@@ -93,6 +93,8 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.primaryEniQueueNumber = std::stoi(valueInstanceTypesInstanceType["PrimaryEniQueueNumber"].asString());
 		if(!valueInstanceTypesInstanceType["SecondaryEniQueueNumber"].isNull())
 			instanceTypesObject.secondaryEniQueueNumber = std::stoi(valueInstanceTypesInstanceType["SecondaryEniQueueNumber"].asString());
+		if(!valueInstanceTypesInstanceType["DiskQuantity"].isNull())
+			instanceTypesObject.diskQuantity = std::stoi(valueInstanceTypesInstanceType["DiskQuantity"].asString());
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 

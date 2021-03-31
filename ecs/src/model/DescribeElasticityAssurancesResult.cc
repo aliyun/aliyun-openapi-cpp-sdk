@@ -65,6 +65,8 @@ void DescribeElasticityAssurancesResult::parse(const std::string &payload)
 			elasticityAssuranceSetObject.endTime = valueElasticityAssuranceSetElasticityAssuranceItem["EndTime"].asString();
 		if(!valueElasticityAssuranceSetElasticityAssuranceItem["LatestStartTime"].isNull())
 			elasticityAssuranceSetObject.latestStartTime = valueElasticityAssuranceSetElasticityAssuranceItem["LatestStartTime"].asString();
+		if(!valueElasticityAssuranceSetElasticityAssuranceItem["ResourceGroupId"].isNull())
+			elasticityAssuranceSetObject.resourceGroupId = valueElasticityAssuranceSetElasticityAssuranceItem["ResourceGroupId"].asString();
 		auto allAllocatedResourcesNode = valueElasticityAssuranceSetElasticityAssuranceItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{
@@ -78,6 +80,16 @@ void DescribeElasticityAssurancesResult::parse(const std::string &payload)
 			if(!valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["UsedAmount"].isNull())
 				allocatedResourcesObject.usedAmount = std::stoi(valueElasticityAssuranceSetElasticityAssuranceItemAllocatedResourcesAllocatedResource["UsedAmount"].asString());
 			elasticityAssuranceSetObject.allocatedResources.push_back(allocatedResourcesObject);
+		}
+		auto allTagsNode = valueElasticityAssuranceSetElasticityAssuranceItem["Tags"]["Tag"];
+		for (auto valueElasticityAssuranceSetElasticityAssuranceItemTagsTag : allTagsNode)
+		{
+			ElasticityAssuranceItem::Tag tagsObject;
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueElasticityAssuranceSetElasticityAssuranceItemTagsTag["TagKey"].asString();
+			if(!valueElasticityAssuranceSetElasticityAssuranceItemTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueElasticityAssuranceSetElasticityAssuranceItemTagsTag["TagValue"].asString();
+			elasticityAssuranceSetObject.tags.push_back(tagsObject);
 		}
 		elasticityAssuranceSet_.push_back(elasticityAssuranceSetObject);
 	}

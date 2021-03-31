@@ -1,3 +1,7 @@
+2021-03-31 Version: 1.36.666
+- Ecs support hibernation.
+- DescribeSnapshotGroups add ProgressStatus.
+
 2021-03-30 Version: 1.36.665
 - Generated 2020-05-18 for `dataworks-public`.
 

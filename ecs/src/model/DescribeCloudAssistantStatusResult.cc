@@ -45,17 +45,46 @@ void DescribeCloudAssistantStatusResult::parse(const std::string &payload)
 		InstanceCloudAssistantStatus instanceCloudAssistantStatusSetObject;
 		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["InstanceId"].isNull())
 			instanceCloudAssistantStatusSetObject.instanceId = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["InstanceId"].asString();
+		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["OSType"].isNull())
+			instanceCloudAssistantStatusSetObject.oSType = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["OSType"].asString();
 		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantStatus"].isNull())
 			instanceCloudAssistantStatusSetObject.cloudAssistantStatus = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantStatus"].asString();
 		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantVersion"].isNull())
 			instanceCloudAssistantStatusSetObject.cloudAssistantVersion = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["CloudAssistantVersion"].asString();
+		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["InvocationCount"].isNull())
+			instanceCloudAssistantStatusSetObject.invocationCount = std::stol(valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["InvocationCount"].asString());
+		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["ActiveTaskCount"].isNull())
+			instanceCloudAssistantStatusSetObject.activeTaskCount = std::stol(valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["ActiveTaskCount"].asString());
+		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["LastInvokedTime"].isNull())
+			instanceCloudAssistantStatusSetObject.lastInvokedTime = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["LastInvokedTime"].asString();
 		instanceCloudAssistantStatusSet_.push_back(instanceCloudAssistantStatusSetObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
 
+}
+
+long DescribeCloudAssistantStatusResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+long DescribeCloudAssistantStatusResult::getPageSize()const
+{
+	return pageSize_;
 }
 
 std::vector<DescribeCloudAssistantStatusResult::InstanceCloudAssistantStatus> DescribeCloudAssistantStatusResult::getInstanceCloudAssistantStatusSet()const
 {
 	return instanceCloudAssistantStatusSet_;
+}
+
+long DescribeCloudAssistantStatusResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 

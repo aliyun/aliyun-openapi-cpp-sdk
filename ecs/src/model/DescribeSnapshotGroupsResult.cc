@@ -55,6 +55,8 @@ void DescribeSnapshotGroupsResult::parse(const std::string &payload)
 			snapshotGroupsObject.description = valueSnapshotGroupsSnapshotGroup["Description"].asString();
 		if(!valueSnapshotGroupsSnapshotGroup["CreationTime"].isNull())
 			snapshotGroupsObject.creationTime = valueSnapshotGroupsSnapshotGroup["CreationTime"].asString();
+		if(!valueSnapshotGroupsSnapshotGroup["ProgressStatus"].isNull())
+			snapshotGroupsObject.progressStatus = valueSnapshotGroupsSnapshotGroup["ProgressStatus"].asString();
 		auto allSnapshotsNode = valueSnapshotGroupsSnapshotGroup["Snapshots"]["Snapshot"];
 		for (auto valueSnapshotGroupsSnapshotGroupSnapshotsSnapshot : allSnapshotsNode)
 		{

@@ -82,6 +82,17 @@ void AllocateDedicatedHostsRequest::setResourceGroupId(const std::string& resour
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+int AllocateDedicatedHostsRequest::getMinQuantity()const
+{
+	return minQuantity_;
+}
+
+void AllocateDedicatedHostsRequest::setMinQuantity(int minQuantity)
+{
+	minQuantity_ = minQuantity;
+	setParameter("MinQuantity", std::to_string(minQuantity));
+}
+
 std::string AllocateDedicatedHostsRequest::getRegionId()const
 {
 	return regionId_;

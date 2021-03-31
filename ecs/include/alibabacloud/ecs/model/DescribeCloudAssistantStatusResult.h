@@ -36,19 +36,29 @@ namespace AlibabaCloud
 				{
 					std::string cloudAssistantVersion;
 					std::string instanceId;
+					std::string oSType;
+					long invocationCount;
 					std::string cloudAssistantStatus;
+					std::string lastInvokedTime;
+					long activeTaskCount;
 				};
 
 
 				DescribeCloudAssistantStatusResult();
 				explicit DescribeCloudAssistantStatusResult(const std::string &payload);
 				~DescribeCloudAssistantStatusResult();
+				long getTotalCount()const;
+				long getPageSize()const;
 				std::vector<InstanceCloudAssistantStatus> getInstanceCloudAssistantStatusSet()const;
+				long getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long totalCount_;
+				long pageSize_;
 				std::vector<InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet_;
+				long pageNumber_;
 
 			};
 		}

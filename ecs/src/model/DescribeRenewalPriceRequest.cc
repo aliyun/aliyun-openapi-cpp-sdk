@@ -104,6 +104,17 @@ void DescribeRenewalPriceRequest::setOwnerAccount(const std::string& ownerAccoun
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+int DescribeRenewalPriceRequest::getExpectedRenewDay()const
+{
+	return expectedRenewDay_;
+}
+
+void DescribeRenewalPriceRequest::setExpectedRenewDay(int expectedRenewDay)
+{
+	expectedRenewDay_ = expectedRenewDay;
+	setParameter("ExpectedRenewDay", std::to_string(expectedRenewDay));
+}
+
 long DescribeRenewalPriceRequest::getOwnerId()const
 {
 	return ownerId_;

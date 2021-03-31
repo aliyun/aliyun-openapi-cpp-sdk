@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeCapacityReservationsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				DescribeCapacityReservationsRequest();
@@ -39,12 +45,16 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getNextToken()const;
 				void setNextToken(const std::string& nextToken);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
 				std::string getResourceOwnerAccount()const;
@@ -67,9 +77,11 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string platform_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string nextToken_;
 				std::string instanceType_;
+				std::vector<Tag> tag_;
 				std::string instanceChargeType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

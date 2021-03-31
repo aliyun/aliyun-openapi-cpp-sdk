@@ -41,18 +41,25 @@ namespace AlibabaCloud
 						int totalAmount;
 						std::string instanceType;
 					};
-					std::string totalAssuranceTimes;
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					int usedAssuranceTimes;
 					std::string description;
 					std::string endTime;
+					std::string resourceGroupId;
 					std::string privatePoolOptionsName;
 					std::string latestStartTime;
 					std::string startTime;
-					std::string regionId;
 					std::string privatePoolOptionsMatchCriteria;
 					std::vector<ElasticityAssuranceItem::AllocatedResource> allocatedResources;
 					std::string privatePoolOptionsId;
+					std::string totalAssuranceTimes;
+					std::string regionId;
+					std::vector<ElasticityAssuranceItem::Tag> tags;
 				};
 
 

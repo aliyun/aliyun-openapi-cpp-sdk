@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setSnapshotGroupId(const std::vector<std::string>& snapshotGroupId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::vector<std::string> getAdditionalAttributes()const;
+				void setAdditionalAttributes(const std::vector<std::string>& additionalAttributes);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getName()const;
@@ -66,6 +68,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::vector<std::string> snapshotGroupId_;
 				long ownerId_;
+				std::vector<std::string> additionalAttributes_;
 				std::string instanceId_;
 				std::string name_;
 				int maxResults_;

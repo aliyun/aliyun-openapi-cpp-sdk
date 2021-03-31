@@ -5235,6 +5235,42 @@ EcsClient::DescribeInstanceMaintenanceAttributesOutcomeCallable EcsClient::descr
 	return task->get_future();
 }
 
+EcsClient::DescribeInstanceModificationPriceOutcome EcsClient::describeInstanceModificationPrice(const DescribeInstanceModificationPriceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceModificationPriceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceModificationPriceOutcome(DescribeInstanceModificationPriceResult(outcome.result()));
+	else
+		return DescribeInstanceModificationPriceOutcome(outcome.error());
+}
+
+void EcsClient::describeInstanceModificationPriceAsync(const DescribeInstanceModificationPriceRequest& request, const DescribeInstanceModificationPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceModificationPrice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeInstanceModificationPriceOutcomeCallable EcsClient::describeInstanceModificationPriceCallable(const DescribeInstanceModificationPriceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceModificationPriceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceModificationPrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeInstanceMonitorDataOutcome EcsClient::describeInstanceMonitorData(const DescribeInstanceMonitorDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

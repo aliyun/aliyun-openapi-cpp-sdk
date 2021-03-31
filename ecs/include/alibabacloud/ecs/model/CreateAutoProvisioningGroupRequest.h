@@ -86,6 +86,8 @@ namespace AlibabaCloud
 				void setLaunchConfigurationImageId(const std::string& launchConfigurationImageId);
 				std::string getLaunchConfigurationResourceGroupId()const;
 				void setLaunchConfigurationResourceGroupId(const std::string& launchConfigurationResourceGroupId);
+				std::string getLaunchConfigurationPassword()const;
+				void setLaunchConfigurationPassword(const std::string& launchConfigurationPassword);
 				std::string getPayAsYouGoAllocationStrategy()const;
 				void setPayAsYouGoAllocationStrategy(const std::string& payAsYouGoAllocationStrategy);
 				std::string getDefaultTargetCapacityType()const;
@@ -152,6 +154,8 @@ namespace AlibabaCloud
 				void setLaunchConfigurationSecurityEnhancementStrategy(const std::string& launchConfigurationSecurityEnhancementStrategy);
 				std::vector<LaunchConfigurationTag> getLaunchConfigurationTag()const;
 				void setLaunchConfigurationTag(const std::vector<LaunchConfigurationTag>& launchConfigurationTag);
+				std::string getLaunchConfigurationDeploymentSetId()const;
+				void setLaunchConfigurationDeploymentSetId(const std::string& launchConfigurationDeploymentSetId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -184,6 +188,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string launchConfigurationImageId_;
 				std::string launchConfigurationResourceGroupId_;
+				std::string launchConfigurationPassword_;
 				std::string payAsYouGoAllocationStrategy_;
 				std::string defaultTargetCapacityType_;
 				std::string launchConfigurationKeyPairName_;
@@ -217,6 +222,7 @@ namespace AlibabaCloud
 				std::string spotInstanceInterruptionBehavior_;
 				std::string launchConfigurationSecurityEnhancementStrategy_;
 				std::vector<LaunchConfigurationTag> launchConfigurationTag_;
+				std::string launchConfigurationDeploymentSetId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				int spotInstancePoolsToUseCount_;

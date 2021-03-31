@@ -106,6 +106,19 @@ void DescribeSnapshotGroupsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::vector<std::string> DescribeSnapshotGroupsRequest::getAdditionalAttributes()const
+{
+	return additionalAttributes_;
+}
+
+void DescribeSnapshotGroupsRequest::setAdditionalAttributes(const std::vector<std::string>& additionalAttributes)
+{
+	additionalAttributes_ = additionalAttributes;
+	for(int dep1 = 0; dep1!= additionalAttributes.size(); dep1++) {
+		setParameter("AdditionalAttributes."+ std::to_string(dep1), additionalAttributes.at(dep1));
+	}
+}
+
 std::string DescribeSnapshotGroupsRequest::getInstanceId()const
 {
 	return instanceId_;

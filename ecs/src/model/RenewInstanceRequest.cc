@@ -82,6 +82,17 @@ void RenewInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+int RenewInstanceRequest::getExpectedRenewDay()const
+{
+	return expectedRenewDay_;
+}
+
+void RenewInstanceRequest::setExpectedRenewDay(int expectedRenewDay)
+{
+	expectedRenewDay_ = expectedRenewDay;
+	setParameter("ExpectedRenewDay", std::to_string(expectedRenewDay));
+}
+
 long RenewInstanceRequest::getOwnerId()const
 {
 	return ownerId_;

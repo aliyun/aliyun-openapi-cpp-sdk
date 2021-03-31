@@ -139,6 +139,8 @@ namespace AlibabaCloud
 				void setSecurityGroupId(const std::string& securityGroupId);
 				int getInternetMaxBandwidthOut()const;
 				void setInternetMaxBandwidthOut(int internetMaxBandwidthOut);
+				bool getHibernationOptionsConfigured()const;
+				void setHibernationOptionsConfigured(bool hibernationOptionsConfigured);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getSystemDiskCategory()const;
@@ -236,6 +238,7 @@ namespace AlibabaCloud
 				std::string ioOptimized_;
 				std::string securityGroupId_;
 				int internetMaxBandwidthOut_;
+				bool hibernationOptionsConfigured_;
 				std::string description_;
 				std::string systemDiskCategory_;
 				std::string capacityReservationId_;

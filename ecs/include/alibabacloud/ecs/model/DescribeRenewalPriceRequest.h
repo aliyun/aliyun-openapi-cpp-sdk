@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				int getExpectedRenewDay()const;
+				void setExpectedRenewDay(int expectedRenewDay);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				int period_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				int expectedRenewDay_;
 				long ownerId_;
 				std::string resourceType_;
 

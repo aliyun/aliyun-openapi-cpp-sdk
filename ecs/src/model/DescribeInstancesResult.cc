@@ -210,6 +210,9 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.eipAddress.internetChargeType = eipAddressNode["InternetChargeType"].asString();
 		if(!eipAddressNode["IsSupportUnassociate"].isNull())
 			instancesObject.eipAddress.isSupportUnassociate = eipAddressNode["IsSupportUnassociate"].asString() == "true";
+		auto hibernationOptionsNode = value["HibernationOptions"];
+		if(!hibernationOptionsNode["Configured"].isNull())
+			instancesObject.hibernationOptions.configured = hibernationOptionsNode["Configured"].asString() == "true";
 		auto dedicatedHostAttributeNode = value["DedicatedHostAttribute"];
 		if(!dedicatedHostAttributeNode["DedicatedHostId"].isNull())
 			instancesObject.dedicatedHostAttribute.dedicatedHostId = dedicatedHostAttributeNode["DedicatedHostId"].asString();

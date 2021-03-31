@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBECLOUDASSISTANTSTATUSREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBECLOUDASSISTANTSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMODIFICATIONPRICEREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMODIFICATIONPRICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,52 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeCloudAssistantStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceModificationPriceRequest : public RpcServiceRequest
 			{
+			public:
+				struct DataDisk
+				{
+					int size;
+					std::string category;
+					std::string performanceLevel;
+				};
 
 			public:
-				DescribeCloudAssistantStatusRequest();
-				~DescribeCloudAssistantStatusRequest();
+				DescribeInstanceModificationPriceRequest();
+				~DescribeInstanceModificationPriceRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				long getPageNumber()const;
-				void setPageNumber(long pageNumber);
+				std::string getSystemDiskCategory()const;
+				void setSystemDiskCategory(const std::string& systemDiskCategory);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getOSType()const;
-				void setOSType(const std::string& oSType);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
+				std::vector<DataDisk> getDataDisk()const;
+				void setDataDisk(const std::vector<DataDisk>& dataDisk);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
 				long resourceOwnerId_;
-				long pageNumber_;
+				std::string systemDiskCategory_;
 				std::string regionId_;
-				long pageSize_;
+				std::string instanceType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string oSType_;
 				long ownerId_;
-				std::vector<std::string> instanceId_;
+				std::vector<DataDisk> dataDisk_;
+				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBECLOUDASSISTANTSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEINSTANCEMODIFICATIONPRICEREQUEST_H_

@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setCpuOverCommitRatio(float cpuOverCommitRatio);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				int getMinQuantity()const;
+				void setMinQuantity(int minQuantity);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getActionOnMaintenance()const;
@@ -98,6 +100,7 @@ namespace AlibabaCloud
 				std::string description_;
 				float cpuOverCommitRatio_;
 				std::string resourceGroupId_;
+				int minQuantity_;
 				std::string regionId_;
 				std::string actionOnMaintenance_;
 				std::string dedicatedHostClusterId_;

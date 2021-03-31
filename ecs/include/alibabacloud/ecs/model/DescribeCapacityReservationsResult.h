@@ -41,10 +41,16 @@ namespace AlibabaCloud
 						int totalAmount;
 						std::string instanceType;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					std::string description;
 					std::string endTime;
 					std::string platform;
+					std::string resourceGroupId;
 					std::string privatePoolOptionsName;
 					std::string instanceChargeType;
 					std::string startTime;
@@ -54,6 +60,7 @@ namespace AlibabaCloud
 					std::string privatePoolOptionsId;
 					std::string endTimeType;
 					std::string regionId;
+					std::vector<CapacityReservationItem::Tag> tags;
 				};
 
 

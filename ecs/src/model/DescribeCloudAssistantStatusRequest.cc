@@ -38,6 +38,17 @@ void DescribeCloudAssistantStatusRequest::setResourceOwnerId(long resourceOwnerI
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+long DescribeCloudAssistantStatusRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeCloudAssistantStatusRequest::setPageNumber(long pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeCloudAssistantStatusRequest::getRegionId()const
 {
 	return regionId_;
@@ -47,6 +58,17 @@ void DescribeCloudAssistantStatusRequest::setRegionId(const std::string& regionI
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+long DescribeCloudAssistantStatusRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeCloudAssistantStatusRequest::setPageSize(long pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCloudAssistantStatusRequest::getResourceOwnerAccount()const
@@ -69,6 +91,17 @@ void DescribeCloudAssistantStatusRequest::setOwnerAccount(const std::string& own
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string DescribeCloudAssistantStatusRequest::getOSType()const
+{
+	return oSType_;
+}
+
+void DescribeCloudAssistantStatusRequest::setOSType(const std::string& oSType)
+{
+	oSType_ = oSType;
+	setParameter("OSType", oSType);
 }
 
 long DescribeCloudAssistantStatusRequest::getOwnerId()const

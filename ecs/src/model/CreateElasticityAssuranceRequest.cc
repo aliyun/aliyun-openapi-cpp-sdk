@@ -82,6 +82,17 @@ void CreateElasticityAssuranceRequest::setPlatform(const std::string& platform)
 	setParameter("Platform", platform);
 }
 
+std::string CreateElasticityAssuranceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateElasticityAssuranceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateElasticityAssuranceRequest::getPrivatePoolOptionsMatchCriteria()const
 {
 	return privatePoolOptionsMatchCriteria_;
@@ -114,6 +125,22 @@ void CreateElasticityAssuranceRequest::setInstanceType(const std::vector<std::st
 	instanceType_ = instanceType;
 	for(int dep1 = 0; dep1!= instanceType.size(); dep1++) {
 		setParameter("InstanceType."+ std::to_string(dep1), instanceType.at(dep1));
+	}
+}
+
+std::vector<CreateElasticityAssuranceRequest::Tag> CreateElasticityAssuranceRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateElasticityAssuranceRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 

@@ -309,6 +309,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeInstanceHistoryEventsResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceMaintenanceAttributesRequest.h
 	include/alibabacloud/ecs/model/DescribeInstanceMaintenanceAttributesResult.h
+	include/alibabacloud/ecs/model/DescribeInstanceModificationPriceRequest.h
+	include/alibabacloud/ecs/model/DescribeInstanceModificationPriceResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeInstanceMonitorDataResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceRamRoleRequest.h
@@ -962,6 +964,8 @@ set(ecs_src
 	src/model/DescribeInstanceHistoryEventsResult.cc
 	src/model/DescribeInstanceMaintenanceAttributesRequest.cc
 	src/model/DescribeInstanceMaintenanceAttributesResult.cc
+	src/model/DescribeInstanceModificationPriceRequest.cc
+	src/model/DescribeInstanceModificationPriceResult.cc
 	src/model/DescribeInstanceMonitorDataRequest.cc
 	src/model/DescribeInstanceMonitorDataResult.cc
 	src/model/DescribeInstanceRamRoleRequest.cc

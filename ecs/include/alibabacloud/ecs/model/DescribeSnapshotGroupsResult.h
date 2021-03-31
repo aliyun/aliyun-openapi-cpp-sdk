@@ -44,6 +44,7 @@ namespace AlibabaCloud
 						std::string sourceDiskId;
 					};
 					std::string status;
+					std::string progressStatus;
 					std::string description;
 					std::string instanceId;
 					std::string creationTime;

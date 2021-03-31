@@ -91,6 +91,8 @@ namespace AlibabaCloud
 				void setScope(const std::string& scope);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getDedicatedHostType()const;
+				void setDedicatedHostType(const std::string& dedicatedHostType);
 				std::string getDataDisk2Category()const;
 				void setDataDisk2Category(const std::string& dataDisk2Category);
 				int getDataDisk1Size()const;
@@ -143,6 +145,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string scope_;
 				std::string instanceType_;
+				std::string dedicatedHostType_;
 				std::string dataDisk2Category_;
 				int dataDisk1Size_;
 				int amount_;

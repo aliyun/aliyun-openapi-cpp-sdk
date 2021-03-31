@@ -128,6 +128,17 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationResourceGroupId(c
 	setParameter("LaunchConfigurationResourceGroupId", launchConfigurationResourceGroupId);
 }
 
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationPassword()const
+{
+	return launchConfigurationPassword_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationPassword(const std::string& launchConfigurationPassword)
+{
+	launchConfigurationPassword_ = launchConfigurationPassword;
+	setParameter("LaunchConfigurationPassword", launchConfigurationPassword);
+}
+
 std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoAllocationStrategy()const
 {
 	return payAsYouGoAllocationStrategy_;
@@ -510,6 +521,17 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationTag(const std::ve
 		setParameter(launchConfigurationTagObjStr + ".Key", launchConfigurationTagObj.key);
 		setParameter(launchConfigurationTagObjStr + ".Value", launchConfigurationTagObj.value);
 	}
+}
+
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationDeploymentSetId()const
+{
+	return launchConfigurationDeploymentSetId_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDeploymentSetId(const std::string& launchConfigurationDeploymentSetId)
+{
+	launchConfigurationDeploymentSetId_ = launchConfigurationDeploymentSetId;
+	setParameter("LaunchConfigurationDeploymentSetId", launchConfigurationDeploymentSetId);
 }
 
 std::string CreateAutoProvisioningGroupRequest::getResourceOwnerAccount()const

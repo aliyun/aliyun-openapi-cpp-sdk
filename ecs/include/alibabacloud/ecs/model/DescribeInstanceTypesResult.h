@@ -56,6 +56,7 @@ namespace AlibabaCloud
 					int initialCredit;
 					int eniQuantity;
 					int gPUAmount;
+					int diskQuantity;
 					int baselineCredit;
 					std::string instanceFamilyLevel;
 					int eniPrivateIpAddressQuantity;

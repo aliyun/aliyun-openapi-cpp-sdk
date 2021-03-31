@@ -44,6 +44,8 @@ void RunInstancesResult::parse(const std::string &payload)
 		instanceIdSets_.push_back(item.asString());
 	if(!value["TradePrice"].isNull())
 		tradePrice_ = std::stof(value["TradePrice"].asString());
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
@@ -55,5 +57,10 @@ std::vector<std::string> RunInstancesResult::getInstanceIdSets()const
 float RunInstancesResult::getTradePrice()const
 {
 	return tradePrice_;
+}
+
+std::string RunInstancesResult::getOrderId()const
+{
+	return orderId_;
 }
 
