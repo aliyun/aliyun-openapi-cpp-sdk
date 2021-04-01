@@ -27,6 +27,17 @@ CreateTopicRouteTableRequest::CreateTopicRouteTableRequest() :
 CreateTopicRouteTableRequest::~CreateTopicRouteTableRequest()
 {}
 
+std::string CreateTopicRouteTableRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void CreateTopicRouteTableRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string CreateTopicRouteTableRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void CreateTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateTopicRouteTableRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void CreateTopicRouteTableRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string CreateTopicRouteTableRequest::getIotInstanceId()const

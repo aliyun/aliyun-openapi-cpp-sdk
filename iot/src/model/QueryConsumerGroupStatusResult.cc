@@ -49,6 +49,10 @@ void QueryConsumerGroupStatusResult::parse(const std::string &payload)
 			clientConnectionStatusListObject.clientIpPort = valueClientConnectionStatusListConsumerGroupClientConnectionInfo["ClientIpPort"].asString();
 		if(!valueClientConnectionStatusListConsumerGroupClientConnectionInfo["OnlineTime"].isNull())
 			clientConnectionStatusListObject.onlineTime = std::stol(valueClientConnectionStatusListConsumerGroupClientConnectionInfo["OnlineTime"].asString());
+		if(!valueClientConnectionStatusListConsumerGroupClientConnectionInfo["RealTimeConsumeCountPerMinute"].isNull())
+			clientConnectionStatusListObject.realTimeConsumeCountPerMinute = std::stoi(valueClientConnectionStatusListConsumerGroupClientConnectionInfo["RealTimeConsumeCountPerMinute"].asString());
+		if(!valueClientConnectionStatusListConsumerGroupClientConnectionInfo["AccumulatedConsumeCountPerMinute"].isNull())
+			clientConnectionStatusListObject.accumulatedConsumeCountPerMinute = std::stoi(valueClientConnectionStatusListConsumerGroupClientConnectionInfo["AccumulatedConsumeCountPerMinute"].asString());
 		clientConnectionStatusList_.push_back(clientConnectionStatusListObject);
 	}
 	if(!value["Success"].isNull())
@@ -63,6 +67,10 @@ void QueryConsumerGroupStatusResult::parse(const std::string &payload)
 		lastConsumerTime_ = value["LastConsumerTime"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["AccumulatedConsumeCountPerMinute"].isNull())
+		accumulatedConsumeCountPerMinute_ = std::stoi(value["AccumulatedConsumeCountPerMinute"].asString());
+	if(!value["RealTimeConsumeCountPerMinute"].isNull())
+		realTimeConsumeCountPerMinute_ = std::stoi(value["RealTimeConsumeCountPerMinute"].asString());
 
 }
 
@@ -74,6 +82,11 @@ std::vector<QueryConsumerGroupStatusResult::ConsumerGroupClientConnectionInfo> Q
 std::string QueryConsumerGroupStatusResult::getLastConsumerTime()const
 {
 	return lastConsumerTime_;
+}
+
+int QueryConsumerGroupStatusResult::getAccumulatedConsumeCountPerMinute()const
+{
+	return accumulatedConsumeCountPerMinute_;
 }
 
 std::string QueryConsumerGroupStatusResult::getErrorMessage()const
@@ -89,6 +102,11 @@ std::string QueryConsumerGroupStatusResult::getCode()const
 bool QueryConsumerGroupStatusResult::getSuccess()const
 {
 	return success_;
+}
+
+int QueryConsumerGroupStatusResult::getRealTimeConsumeCountPerMinute()const
+{
+	return realTimeConsumeCountPerMinute_;
 }
 
 int QueryConsumerGroupStatusResult::getAccumulationCount()const

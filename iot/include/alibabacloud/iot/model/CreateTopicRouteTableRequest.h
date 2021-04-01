@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				CreateTopicRouteTableRequest();
 				~CreateTopicRouteTableRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::vector<std::string> getDstTopic()const;
@@ -49,7 +53,9 @@ namespace AlibabaCloud
 				void setSrcTopic(const std::string& srcTopic);
 
             private:
+				std::string realTenantId_;
 				std::string accessKeyId_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				std::vector<std::string> dstTopic_;
 				std::string apiProduct_;

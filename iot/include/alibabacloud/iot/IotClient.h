@@ -260,6 +260,8 @@
 #include "model/InvokeThingServiceResult.h"
 #include "model/InvokeThingsServiceRequest.h"
 #include "model/InvokeThingsServiceResult.h"
+#include "model/ListAnalyticsDataRequest.h"
+#include "model/ListAnalyticsDataResult.h"
 #include "model/ListDeviceDistributeJobRequest.h"
 #include "model/ListDeviceDistributeJobResult.h"
 #include "model/ListDistributedDeviceRequest.h"
@@ -300,6 +302,8 @@
 #include "model/NotifyAddThingTopoResult.h"
 #include "model/OpenIotServiceRequest.h"
 #include "model/OpenIotServiceResult.h"
+#include "model/PrintByTemplateRequest.h"
+#include "model/PrintByTemplateResult.h"
 #include "model/PubRequest.h"
 #include "model/PubResult.h"
 #include "model/PubBroadcastRequest.h"
@@ -888,6 +892,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InvokeThingsServiceResult> InvokeThingsServiceOutcome;
 			typedef std::future<InvokeThingsServiceOutcome> InvokeThingsServiceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::InvokeThingsServiceRequest&, const InvokeThingsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeThingsServiceAsyncHandler;
+			typedef Outcome<Error, Model::ListAnalyticsDataResult> ListAnalyticsDataOutcome;
+			typedef std::future<ListAnalyticsDataOutcome> ListAnalyticsDataOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListAnalyticsDataRequest&, const ListAnalyticsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAnalyticsDataAsyncHandler;
 			typedef Outcome<Error, Model::ListDeviceDistributeJobResult> ListDeviceDistributeJobOutcome;
 			typedef std::future<ListDeviceDistributeJobOutcome> ListDeviceDistributeJobOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListDeviceDistributeJobRequest&, const ListDeviceDistributeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceDistributeJobAsyncHandler;
@@ -948,6 +955,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OpenIotServiceResult> OpenIotServiceOutcome;
 			typedef std::future<OpenIotServiceOutcome> OpenIotServiceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::OpenIotServiceRequest&, const OpenIotServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenIotServiceAsyncHandler;
+			typedef Outcome<Error, Model::PrintByTemplateResult> PrintByTemplateOutcome;
+			typedef std::future<PrintByTemplateOutcome> PrintByTemplateOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::PrintByTemplateRequest&, const PrintByTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PrintByTemplateAsyncHandler;
 			typedef Outcome<Error, Model::PubResult> PubOutcome;
 			typedef std::future<PubOutcome> PubOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::PubRequest&, const PubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PubAsyncHandler;
@@ -1643,6 +1653,9 @@ namespace AlibabaCloud
 			InvokeThingsServiceOutcome invokeThingsService(const Model::InvokeThingsServiceRequest &request)const;
 			void invokeThingsServiceAsync(const Model::InvokeThingsServiceRequest& request, const InvokeThingsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InvokeThingsServiceOutcomeCallable invokeThingsServiceCallable(const Model::InvokeThingsServiceRequest& request) const;
+			ListAnalyticsDataOutcome listAnalyticsData(const Model::ListAnalyticsDataRequest &request)const;
+			void listAnalyticsDataAsync(const Model::ListAnalyticsDataRequest& request, const ListAnalyticsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAnalyticsDataOutcomeCallable listAnalyticsDataCallable(const Model::ListAnalyticsDataRequest& request) const;
 			ListDeviceDistributeJobOutcome listDeviceDistributeJob(const Model::ListDeviceDistributeJobRequest &request)const;
 			void listDeviceDistributeJobAsync(const Model::ListDeviceDistributeJobRequest& request, const ListDeviceDistributeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDeviceDistributeJobOutcomeCallable listDeviceDistributeJobCallable(const Model::ListDeviceDistributeJobRequest& request) const;
@@ -1703,6 +1716,9 @@ namespace AlibabaCloud
 			OpenIotServiceOutcome openIotService(const Model::OpenIotServiceRequest &request)const;
 			void openIotServiceAsync(const Model::OpenIotServiceRequest& request, const OpenIotServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenIotServiceOutcomeCallable openIotServiceCallable(const Model::OpenIotServiceRequest& request) const;
+			PrintByTemplateOutcome printByTemplate(const Model::PrintByTemplateRequest &request)const;
+			void printByTemplateAsync(const Model::PrintByTemplateRequest& request, const PrintByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PrintByTemplateOutcomeCallable printByTemplateCallable(const Model::PrintByTemplateRequest& request) const;
 			PubOutcome pub(const Model::PubRequest &request)const;
 			void pubAsync(const Model::PubRequest& request, const PubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PubOutcomeCallable pubCallable(const Model::PubRequest& request) const;

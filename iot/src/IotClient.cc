@@ -4335,6 +4335,42 @@ IotClient::InvokeThingsServiceOutcomeCallable IotClient::invokeThingsServiceCall
 	return task->get_future();
 }
 
+IotClient::ListAnalyticsDataOutcome IotClient::listAnalyticsData(const ListAnalyticsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAnalyticsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAnalyticsDataOutcome(ListAnalyticsDataResult(outcome.result()));
+	else
+		return ListAnalyticsDataOutcome(outcome.error());
+}
+
+void IotClient::listAnalyticsDataAsync(const ListAnalyticsDataRequest& request, const ListAnalyticsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAnalyticsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListAnalyticsDataOutcomeCallable IotClient::listAnalyticsDataCallable(const ListAnalyticsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAnalyticsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->listAnalyticsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ListDeviceDistributeJobOutcome IotClient::listDeviceDistributeJob(const ListDeviceDistributeJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5049,6 +5085,42 @@ IotClient::OpenIotServiceOutcomeCallable IotClient::openIotServiceCallable(const
 			[this, request]()
 			{
 			return this->openIotService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::PrintByTemplateOutcome IotClient::printByTemplate(const PrintByTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PrintByTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PrintByTemplateOutcome(PrintByTemplateResult(outcome.result()));
+	else
+		return PrintByTemplateOutcome(outcome.error());
+}
+
+void IotClient::printByTemplateAsync(const PrintByTemplateRequest& request, const PrintByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, printByTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::PrintByTemplateOutcomeCallable IotClient::printByTemplateCallable(const PrintByTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PrintByTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->printByTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

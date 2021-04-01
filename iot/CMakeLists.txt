@@ -259,6 +259,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/InvokeThingServiceResult.h
 	include/alibabacloud/iot/model/InvokeThingsServiceRequest.h
 	include/alibabacloud/iot/model/InvokeThingsServiceResult.h
+	include/alibabacloud/iot/model/ListAnalyticsDataRequest.h
+	include/alibabacloud/iot/model/ListAnalyticsDataResult.h
 	include/alibabacloud/iot/model/ListDeviceDistributeJobRequest.h
 	include/alibabacloud/iot/model/ListDeviceDistributeJobResult.h
 	include/alibabacloud/iot/model/ListDistributedDeviceRequest.h
@@ -299,6 +301,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/NotifyAddThingTopoResult.h
 	include/alibabacloud/iot/model/OpenIotServiceRequest.h
 	include/alibabacloud/iot/model/OpenIotServiceResult.h
+	include/alibabacloud/iot/model/PrintByTemplateRequest.h
+	include/alibabacloud/iot/model/PrintByTemplateResult.h
 	include/alibabacloud/iot/model/PubRequest.h
 	include/alibabacloud/iot/model/PubResult.h
 	include/alibabacloud/iot/model/PubBroadcastRequest.h
@@ -762,6 +766,8 @@ set(iot_src
 	src/model/InvokeThingServiceResult.cc
 	src/model/InvokeThingsServiceRequest.cc
 	src/model/InvokeThingsServiceResult.cc
+	src/model/ListAnalyticsDataRequest.cc
+	src/model/ListAnalyticsDataResult.cc
 	src/model/ListDeviceDistributeJobRequest.cc
 	src/model/ListDeviceDistributeJobResult.cc
 	src/model/ListDistributedDeviceRequest.cc
@@ -802,6 +808,8 @@ set(iot_src
 	src/model/NotifyAddThingTopoResult.cc
 	src/model/OpenIotServiceRequest.cc
 	src/model/OpenIotServiceResult.cc
+	src/model/PrintByTemplateRequest.cc
+	src/model/PrintByTemplateResult.cc
 	src/model/PubRequest.cc
 	src/model/PubResult.cc
 	src/model/PubBroadcastRequest.cc

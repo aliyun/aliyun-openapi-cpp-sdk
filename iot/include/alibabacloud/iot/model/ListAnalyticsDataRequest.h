@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_GENERATEFILEUPLOADURLREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_GENERATEFILEUPLOADURLREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_LISTANALYTICSDATAREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_LISTANALYTICSDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,31 +28,46 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT GenerateFileUploadURLRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT ListAnalyticsDataRequest : public RpcServiceRequest
 			{
+			public:
+				struct Condition
+				{
+					std::string fieldName;
+					std::string operate;
+					std::string betweenStart;
+					std::string betweenEnd;
+					std::string value;
+				};
 
 			public:
-				GenerateFileUploadURLRequest();
-				~GenerateFileUploadURLRequest();
+				ListAnalyticsDataRequest();
+				~ListAnalyticsDataRequest();
 
-				std::string getFileSuffix()const;
-				void setFileSuffix(const std::string& fileSuffix);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getFileName()const;
-				void setFileName(const std::string& fileName);
-				std::string getBizCode()const;
-				void setBizCode(const std::string& bizCode);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getIsoId()const;
+				void setIsoId(const std::string& isoId);
+				std::string getApiPath()const;
+				void setApiPath(const std::string& apiPath);
+				std::vector<Condition> getCondition()const;
+				void setCondition(const std::vector<Condition>& condition);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string fileSuffix_;
+				int pageNum_;
 				std::string iotInstanceId_;
-				std::string fileName_;
-				std::string bizCode_;
+				int pageSize_;
+				std::string isoId_;
+				std::string apiPath_;
+				std::vector<Condition> condition_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 
@@ -60,4 +75,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_GENERATEFILEUPLOADURLREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_LISTANALYTICSDATAREQUEST_H_

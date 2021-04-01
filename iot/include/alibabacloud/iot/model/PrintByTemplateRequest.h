@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_GENERATEFILEUPLOADURLREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_GENERATEFILEUPLOADURLREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_PRINTBYTEMPLATEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_PRINTBYTEMPLATEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT GenerateFileUploadURLRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT PrintByTemplateRequest : public RpcServiceRequest
 			{
 
 			public:
-				GenerateFileUploadURLRequest();
-				~GenerateFileUploadURLRequest();
+				PrintByTemplateRequest();
+				~PrintByTemplateRequest();
 
-				std::string getFileSuffix()const;
-				void setFileSuffix(const std::string& fileSuffix);
+				std::string getProjectCode()const;
+				void setProjectCode(const std::string& projectCode);
+				std::string getTemplateBizCode()const;
+				void setTemplateBizCode(const std::string& templateBizCode);
+				std::string getIotId()const;
+				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getFileName()const;
-				void setFileName(const std::string& fileName);
-				std::string getBizCode()const;
-				void setBizCode(const std::string& bizCode);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getParamsJsonString()const;
+				void setParamsJsonString(const std::string& paramsJsonString);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string fileSuffix_;
+				std::string projectCode_;
+				std::string templateBizCode_;
+				std::string iotId_;
 				std::string iotInstanceId_;
-				std::string fileName_;
-				std::string bizCode_;
+				std::string productKey_;
+				std::string paramsJsonString_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_GENERATEFILEUPLOADURLREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_PRINTBYTEMPLATEREQUEST_H_

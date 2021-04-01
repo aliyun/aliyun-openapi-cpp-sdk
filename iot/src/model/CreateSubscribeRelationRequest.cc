@@ -27,6 +27,17 @@ CreateSubscribeRelationRequest::CreateSubscribeRelationRequest() :
 CreateSubscribeRelationRequest::~CreateSubscribeRelationRequest()
 {}
 
+std::string CreateSubscribeRelationRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void CreateSubscribeRelationRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 bool CreateSubscribeRelationRequest::getOtaEventFlag()const
 {
 	return otaEventFlag_;
@@ -69,6 +80,17 @@ void CreateSubscribeRelationRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setParameter("Type", type);
+}
+
+std::string CreateSubscribeRelationRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void CreateSubscribeRelationRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string CreateSubscribeRelationRequest::getIotInstanceId()const

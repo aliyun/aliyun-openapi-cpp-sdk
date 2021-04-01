@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateSubscribeRelationRequest();
 				~CreateSubscribeRelationRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				bool getOtaEventFlag()const;
 				void setOtaEventFlag(bool otaEventFlag);
 				bool getDeviceTopoLifeCycleFlag()const;
@@ -43,6 +45,8 @@ namespace AlibabaCloud
 				void setDeviceLifeCycleFlag(bool deviceLifeCycleFlag);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				bool getDeviceStatusChangeFlag()const;
@@ -71,10 +75,12 @@ namespace AlibabaCloud
 				void setMnsConfiguration(const std::string& mnsConfiguration);
 
             private:
+				std::string realTenantId_;
 				bool otaEventFlag_;
 				bool deviceTopoLifeCycleFlag_;
 				bool deviceLifeCycleFlag_;
 				std::string type_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				bool deviceStatusChangeFlag_;
 				bool otaVersionFlag_;

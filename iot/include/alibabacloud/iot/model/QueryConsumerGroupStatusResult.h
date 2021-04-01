@@ -35,8 +35,10 @@ namespace AlibabaCloud
 				struct ConsumerGroupClientConnectionInfo
 				{
 					std::string clientId;
+					int accumulatedConsumeCountPerMinute;
 					long onlineTime;
 					std::string clientIpPort;
+					int realTimeConsumeCountPerMinute;
 				};
 
 
@@ -45,9 +47,11 @@ namespace AlibabaCloud
 				~QueryConsumerGroupStatusResult();
 				std::vector<ConsumerGroupClientConnectionInfo> getClientConnectionStatusList()const;
 				std::string getLastConsumerTime()const;
+				int getAccumulatedConsumeCountPerMinute()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
+				int getRealTimeConsumeCountPerMinute()const;
 				int getAccumulationCount()const;
 				int getConsumerSpeed()const;
 
@@ -56,9 +60,11 @@ namespace AlibabaCloud
 			private:
 				std::vector<ConsumerGroupClientConnectionInfo> clientConnectionStatusList_;
 				std::string lastConsumerTime_;
+				int accumulatedConsumeCountPerMinute_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
+				int realTimeConsumeCountPerMinute_;
 				int accumulationCount_;
 				int consumerSpeed_;
 

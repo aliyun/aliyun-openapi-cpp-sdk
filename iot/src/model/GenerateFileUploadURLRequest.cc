@@ -49,6 +49,17 @@ void GenerateFileUploadURLRequest::setIotInstanceId(const std::string& iotInstan
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string GenerateFileUploadURLRequest::getFileName()const
+{
+	return fileName_;
+}
+
+void GenerateFileUploadURLRequest::setFileName(const std::string& fileName)
+{
+	fileName_ = fileName;
+	setParameter("FileName", fileName);
+}
+
 std::string GenerateFileUploadURLRequest::getBizCode()const
 {
 	return bizCode_;

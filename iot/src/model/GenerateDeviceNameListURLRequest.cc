@@ -27,6 +27,17 @@ GenerateDeviceNameListURLRequest::GenerateDeviceNameListURLRequest() :
 GenerateDeviceNameListURLRequest::~GenerateDeviceNameListURLRequest()
 {}
 
+std::string GenerateDeviceNameListURLRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GenerateDeviceNameListURLRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::string GenerateDeviceNameListURLRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

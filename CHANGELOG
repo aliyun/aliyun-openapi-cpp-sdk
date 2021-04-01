@@ -1,3 +1,7 @@
+2021-04-01 Version: 1.36.667
+- Add data service api, including ListAnalyticsData.
+- Update file uploading api, including GenerateFileUploadURL.
+
 2021-03-31 Version: 1.36.666
 - Ecs support hibernation.
 - DescribeSnapshotGroups add ProgressStatus.

@@ -27,6 +27,17 @@ CreateProductTopicRequest::CreateProductTopicRequest() :
 CreateProductTopicRequest::~CreateProductTopicRequest()
 {}
 
+std::string CreateProductTopicRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void CreateProductTopicRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string CreateProductTopicRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void CreateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateProductTopicRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void CreateProductTopicRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string CreateProductTopicRequest::getIotInstanceId()const
