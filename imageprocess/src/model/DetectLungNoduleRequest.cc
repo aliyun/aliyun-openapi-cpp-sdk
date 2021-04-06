@@ -27,17 +27,6 @@ DetectLungNoduleRequest::DetectLungNoduleRequest() :
 DetectLungNoduleRequest::~DetectLungNoduleRequest()
 {}
 
-std::string DetectLungNoduleRequest::getDataFormat()const
-{
-	return dataFormat_;
-}
-
-void DetectLungNoduleRequest::setDataFormat(const std::string& dataFormat)
-{
-	dataFormat_ = dataFormat;
-	setBodyParameter("DataFormat", dataFormat);
-}
-
 float DetectLungNoduleRequest::getThreshold()const
 {
 	return threshold_;
@@ -47,6 +36,28 @@ void DetectLungNoduleRequest::setThreshold(float threshold)
 {
 	threshold_ = threshold;
 	setBodyParameter("Threshold", std::to_string(threshold));
+}
+
+std::string DetectLungNoduleRequest::getOrgName()const
+{
+	return orgName_;
+}
+
+void DetectLungNoduleRequest::setOrgName(const std::string& orgName)
+{
+	orgName_ = orgName;
+	setBodyParameter("OrgName", orgName);
+}
+
+std::string DetectLungNoduleRequest::getDataFormat()const
+{
+	return dataFormat_;
+}
+
+void DetectLungNoduleRequest::setDataFormat(const std::string& dataFormat)
+{
+	dataFormat_ = dataFormat;
+	setBodyParameter("DataFormat", dataFormat);
 }
 
 std::vector<DetectLungNoduleRequest::URLList> DetectLungNoduleRequest::getURLList()const
@@ -84,16 +95,5 @@ void DetectLungNoduleRequest::setAsync(bool async)
 {
 	async_ = async;
 	setBodyParameter("Async", async ? "true" : "false");
-}
-
-std::string DetectLungNoduleRequest::getOrgName()const
-{
-	return orgName_;
-}
-
-void DetectLungNoduleRequest::setOrgName(const std::string& orgName)
-{
-	orgName_ = orgName;
-	setBodyParameter("OrgName", orgName);
 }
 

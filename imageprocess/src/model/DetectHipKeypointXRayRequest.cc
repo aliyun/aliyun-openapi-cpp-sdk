@@ -27,6 +27,28 @@ DetectHipKeypointXRayRequest::DetectHipKeypointXRayRequest() :
 DetectHipKeypointXRayRequest::~DetectHipKeypointXRayRequest()
 {}
 
+std::string DetectHipKeypointXRayRequest::getOrgName()const
+{
+	return orgName_;
+}
+
+void DetectHipKeypointXRayRequest::setOrgName(const std::string& orgName)
+{
+	orgName_ = orgName;
+	setBodyParameter("OrgName", orgName);
+}
+
+std::string DetectHipKeypointXRayRequest::getTracerId()const
+{
+	return tracerId_;
+}
+
+void DetectHipKeypointXRayRequest::setTracerId(const std::string& tracerId)
+{
+	tracerId_ = tracerId;
+	setBodyParameter("TracerId", tracerId);
+}
+
 std::string DetectHipKeypointXRayRequest::getDataFormat()const
 {
 	return dataFormat_;
@@ -49,17 +71,6 @@ void DetectHipKeypointXRayRequest::setOrgId(const std::string& orgId)
 	setBodyParameter("OrgId", orgId);
 }
 
-std::string DetectHipKeypointXRayRequest::getOrgName()const
-{
-	return orgName_;
-}
-
-void DetectHipKeypointXRayRequest::setOrgName(const std::string& orgName)
-{
-	orgName_ = orgName;
-	setBodyParameter("OrgName", orgName);
-}
-
 std::string DetectHipKeypointXRayRequest::getImageUrl()const
 {
 	return imageUrl_;
@@ -69,16 +80,5 @@ void DetectHipKeypointXRayRequest::setImageUrl(const std::string& imageUrl)
 {
 	imageUrl_ = imageUrl;
 	setBodyParameter("ImageUrl", imageUrl);
-}
-
-std::string DetectHipKeypointXRayRequest::getTracerId()const
-{
-	return tracerId_;
-}
-
-void DetectHipKeypointXRayRequest::setTracerId(const std::string& tracerId)
-{
-	tracerId_ = tracerId;
-	setBodyParameter("TracerId", tracerId);
 }
 

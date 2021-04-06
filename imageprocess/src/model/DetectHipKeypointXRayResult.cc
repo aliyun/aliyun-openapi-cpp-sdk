@@ -40,10 +40,10 @@ void DetectHipKeypointXRayResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["ImageUrl"].isNull())
-		data_.imageUrl = dataNode["ImageUrl"].asString();
 	if(!dataNode["OrgId"].isNull())
 		data_.orgId = dataNode["OrgId"].asString();
+	if(!dataNode["ImageUrl"].isNull())
+		data_.imageUrl = dataNode["ImageUrl"].asString();
 	if(!dataNode["OrgName"].isNull())
 		data_.orgName = dataNode["OrgName"].asString();
 	auto allKeyPointsNode = dataNode["KeyPoints"]["KeyPointsItem"];
@@ -53,10 +53,10 @@ void DetectHipKeypointXRayResult::parse(const std::string &payload)
 		if(!dataNodeKeyPointsKeyPointsItem["Value"].isNull())
 			keyPointsItemObject.value = std::stof(dataNodeKeyPointsKeyPointsItem["Value"].asString());
 		auto tagNode = value["Tag"];
-		if(!tagNode["Direction"].isNull())
-			keyPointsItemObject.tag.direction = tagNode["Direction"].asString();
 		if(!tagNode["Label"].isNull())
 			keyPointsItemObject.tag.label = tagNode["Label"].asString();
+		if(!tagNode["Direction"].isNull())
+			keyPointsItemObject.tag.direction = tagNode["Direction"].asString();
 		auto allCoordinates = value["Coordinates"]["Coordinate"];
 		for (auto value : allCoordinates)
 			keyPointsItemObject.coordinates.push_back(value.asString());

@@ -27,6 +27,28 @@ DetectRibFractureRequest::DetectRibFractureRequest() :
 DetectRibFractureRequest::~DetectRibFractureRequest()
 {}
 
+std::string DetectRibFractureRequest::getOrgName()const
+{
+	return orgName_;
+}
+
+void DetectRibFractureRequest::setOrgName(const std::string& orgName)
+{
+	orgName_ = orgName;
+	setBodyParameter("OrgName", orgName);
+}
+
+std::string DetectRibFractureRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void DetectRibFractureRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setBodyParameter("SourceType", sourceType);
+}
+
 std::string DetectRibFractureRequest::getDataFormat()const
 {
 	return dataFormat_;
@@ -73,27 +95,5 @@ void DetectRibFractureRequest::setAsync(bool async)
 {
 	async_ = async;
 	setBodyParameter("Async", async ? "true" : "false");
-}
-
-std::string DetectRibFractureRequest::getOrgName()const
-{
-	return orgName_;
-}
-
-void DetectRibFractureRequest::setOrgName(const std::string& orgName)
-{
-	orgName_ = orgName;
-	setBodyParameter("OrgName", orgName);
-}
-
-std::string DetectRibFractureRequest::getSourceType()const
-{
-	return sourceType_;
-}
-
-void DetectRibFractureRequest::setSourceType(const std::string& sourceType)
-{
-	sourceType_ = sourceType;
-	setBodyParameter("SourceType", sourceType);
 }
 

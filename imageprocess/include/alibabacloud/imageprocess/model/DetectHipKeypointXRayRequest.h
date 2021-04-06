@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DetectHipKeypointXRayRequest();
 				~DetectHipKeypointXRayRequest();
 
+				std::string getOrgName()const;
+				void setOrgName(const std::string& orgName);
+				std::string getTracerId()const;
+				void setTracerId(const std::string& tracerId);
 				std::string getDataFormat()const;
 				void setDataFormat(const std::string& dataFormat);
 				std::string getOrgId()const;
 				void setOrgId(const std::string& orgId);
-				std::string getOrgName()const;
-				void setOrgName(const std::string& orgName);
 				std::string getImageUrl()const;
 				void setImageUrl(const std::string& imageUrl);
-				std::string getTracerId()const;
-				void setTracerId(const std::string& tracerId);
 
             private:
+				std::string orgName_;
+				std::string tracerId_;
 				std::string dataFormat_;
 				std::string orgId_;
-				std::string orgName_;
 				std::string imageUrl_;
-				std::string tracerId_;
 
 			};
 		}

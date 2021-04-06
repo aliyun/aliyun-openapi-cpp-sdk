@@ -40,6 +40,10 @@ namespace AlibabaCloud
 				DetectRibFractureRequest();
 				~DetectRibFractureRequest();
 
+				std::string getOrgName()const;
+				void setOrgName(const std::string& orgName);
+				std::string getSourceType()const;
+				void setSourceType(const std::string& sourceType);
 				std::string getDataFormat()const;
 				void setDataFormat(const std::string& dataFormat);
 				std::vector<URLList> getURLList()const;
@@ -48,18 +52,14 @@ namespace AlibabaCloud
 				void setOrgId(const std::string& orgId);
 				bool getAsync()const;
 				void setAsync(bool async);
-				std::string getOrgName()const;
-				void setOrgName(const std::string& orgName);
-				std::string getSourceType()const;
-				void setSourceType(const std::string& sourceType);
 
             private:
+				std::string orgName_;
+				std::string sourceType_;
 				std::string dataFormat_;
 				std::vector<URLList> uRLList_;
 				std::string orgId_;
 				bool async_;
-				std::string orgName_;
-				std::string sourceType_;
 
 			};
 		}

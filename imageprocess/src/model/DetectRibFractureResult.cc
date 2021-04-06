@@ -46,26 +46,30 @@ void DetectRibFractureResult::parse(const std::string &payload)
 	for (auto dataNodeDetectionsDetectionsItem : allDetectionsNode)
 	{
 		Data::DetectionsItem detectionsItemObject;
-		if(!dataNodeDetectionsDetectionsItem["FractureId"].isNull())
-			detectionsItemObject.fractureId = std::stoi(dataNodeDetectionsDetectionsItem["FractureId"].asString());
-		if(!dataNodeDetectionsDetectionsItem["FractureConfidence"].isNull())
-			detectionsItemObject.fractureConfidence = std::stof(dataNodeDetectionsDetectionsItem["FractureConfidence"].asString());
 		if(!dataNodeDetectionsDetectionsItem["FractureCategory"].isNull())
 			detectionsItemObject.fractureCategory = dataNodeDetectionsDetectionsItem["FractureCategory"].asString();
-		auto allCoordinates = value["Coordinates"]["Coordinates"];
-		for (auto value : allCoordinates)
-			detectionsItemObject.coordinates.push_back(value.asString());
+		if(!dataNodeDetectionsDetectionsItem["FractureConfidence"].isNull())
+			detectionsItemObject.fractureConfidence = std::stof(dataNodeDetectionsDetectionsItem["FractureConfidence"].asString());
+		if(!dataNodeDetectionsDetectionsItem["FractureLocation"].isNull())
+			detectionsItemObject.fractureLocation = dataNodeDetectionsDetectionsItem["FractureLocation"].asString();
+		if(!dataNodeDetectionsDetectionsItem["FractureSegment"].isNull())
+			detectionsItemObject.fractureSegment = std::stol(dataNodeDetectionsDetectionsItem["FractureSegment"].asString());
+		if(!dataNodeDetectionsDetectionsItem["FractureId"].isNull())
+			detectionsItemObject.fractureId = std::stoi(dataNodeDetectionsDetectionsItem["FractureId"].asString());
 		auto allCoordinateImage = value["CoordinateImage"]["CoordinateImage"];
 		for (auto value : allCoordinateImage)
 			detectionsItemObject.coordinateImage.push_back(value.asString());
+		auto allCoordinates = value["Coordinates"]["Coordinates"];
+		for (auto value : allCoordinates)
+			detectionsItemObject.coordinates.push_back(value.asString());
 		data_.detections.push_back(detectionsItemObject);
 	}
-		auto allSpacing = dataNode["Spacing"]["Spacing"];
-		for (auto value : allSpacing)
-			data_.spacing.push_back(value.asString());
 		auto allOrigin = dataNode["Origin"]["Origin"];
 		for (auto value : allOrigin)
 			data_.origin.push_back(value.asString());
+		auto allSpacing = dataNode["Spacing"]["Spacing"];
+		for (auto value : allSpacing)
+			data_.spacing.push_back(value.asString());
 
 }
 

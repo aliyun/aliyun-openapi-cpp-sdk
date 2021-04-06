@@ -36,10 +36,12 @@ namespace AlibabaCloud
 				{
 					struct DetectionsItem
 					{
-						float fractureConfidence;
 						std::string fractureCategory;
+						float fractureConfidence;
 						std::vector<std::string> coordinateImage;
 						std::vector<std::string> coordinates;
+						std::string fractureLocation;
+						long fractureSegment;
 						int fractureId;
 					};
 					std::vector<std::string> origin;
