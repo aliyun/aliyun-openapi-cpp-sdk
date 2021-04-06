@@ -113,6 +113,8 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/ListFaceEntitiesResult.h
 	include/alibabacloud/facebody/model/MergeImageFaceRequest.h
 	include/alibabacloud/facebody/model/MergeImageFaceResult.h
+	include/alibabacloud/facebody/model/MonitorExaminationRequest.h
+	include/alibabacloud/facebody/model/MonitorExaminationResult.h
 	include/alibabacloud/facebody/model/PedestrianDetectAttributeRequest.h
 	include/alibabacloud/facebody/model/PedestrianDetectAttributeResult.h
 	include/alibabacloud/facebody/model/QueryFaceImageTemplateRequest.h
@@ -232,6 +234,8 @@ set(facebody_src
 	src/model/ListFaceEntitiesResult.cc
 	src/model/MergeImageFaceRequest.cc
 	src/model/MergeImageFaceResult.cc
+	src/model/MonitorExaminationRequest.cc
+	src/model/MonitorExaminationResult.cc
 	src/model/PedestrianDetectAttributeRequest.cc
 	src/model/PedestrianDetectAttributeResult.cc
 	src/model/QueryFaceImageTemplateRequest.cc

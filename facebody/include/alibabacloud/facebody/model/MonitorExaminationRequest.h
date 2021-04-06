@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEPUBLICFACEREQUEST_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEPUBLICFACEREQUEST_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_MONITOREXAMINATIONREQUEST_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_MONITOREXAMINATIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT RecognizePublicFaceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_FACEBODY_EXPORT MonitorExaminationRequest : public RpcServiceRequest
 			{
-			public:
-				struct Task
-				{
-					std::string imageURL;
-					std::string imageData;
-				};
 
 			public:
-				RecognizePublicFaceRequest();
-				~RecognizePublicFaceRequest();
+				MonitorExaminationRequest();
+				~MonitorExaminationRequest();
 
-				std::vector<Task> getTask()const;
-				void setTask(const std::vector<Task>& task);
+				long getType()const;
+				void setType(long type);
+				std::string getImageURL()const;
+				void setImageURL(const std::string& imageURL);
 
             private:
-				std::vector<Task> task_;
+				long type_;
+				std::string imageURL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEPUBLICFACEREQUEST_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_MONITOREXAMINATIONREQUEST_H_

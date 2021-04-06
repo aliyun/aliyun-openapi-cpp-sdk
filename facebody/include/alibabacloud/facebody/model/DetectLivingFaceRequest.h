@@ -34,6 +34,7 @@ namespace AlibabaCloud
 				struct Tasks
 				{
 					std::string imageURL;
+					std::string imageData;
 				};
 
 			public:

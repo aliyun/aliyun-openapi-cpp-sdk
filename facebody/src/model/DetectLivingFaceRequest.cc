@@ -39,6 +39,7 @@ void DetectLivingFaceRequest::setTasks(const std::vector<Tasks>& tasks)
 		auto tasksObj = tasks.at(dep1);
 		std::string tasksObjStr = "Tasks." + std::to_string(dep1 + 1);
 		setParameter(tasksObjStr + ".ImageURL", tasksObj.imageURL);
+		setParameter(tasksObjStr + ".ImageData", tasksObj.imageData);
 	}
 }
 

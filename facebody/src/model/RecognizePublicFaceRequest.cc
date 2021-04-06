@@ -39,6 +39,7 @@ void RecognizePublicFaceRequest::setTask(const std::vector<Task>& task)
 		auto taskObj = task.at(dep1);
 		std::string taskObjStr = "Task." + std::to_string(dep1 + 1);
 		setParameter(taskObjStr + ".ImageURL", taskObj.imageURL);
+		setParameter(taskObjStr + ".ImageData", taskObj.imageData);
 	}
 }
 

@@ -1707,6 +1707,42 @@ FacebodyClient::MergeImageFaceOutcomeCallable FacebodyClient::mergeImageFaceCall
 	return task->get_future();
 }
 
+FacebodyClient::MonitorExaminationOutcome FacebodyClient::monitorExamination(const MonitorExaminationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MonitorExaminationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MonitorExaminationOutcome(MonitorExaminationResult(outcome.result()));
+	else
+		return MonitorExaminationOutcome(outcome.error());
+}
+
+void FacebodyClient::monitorExaminationAsync(const MonitorExaminationRequest& request, const MonitorExaminationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, monitorExamination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::MonitorExaminationOutcomeCallable FacebodyClient::monitorExaminationCallable(const MonitorExaminationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MonitorExaminationOutcome()>>(
+			[this, request]()
+			{
+			return this->monitorExamination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::PedestrianDetectAttributeOutcome FacebodyClient::pedestrianDetectAttribute(const PedestrianDetectAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

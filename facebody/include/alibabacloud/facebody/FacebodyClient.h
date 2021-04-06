@@ -114,6 +114,8 @@
 #include "model/ListFaceEntitiesResult.h"
 #include "model/MergeImageFaceRequest.h"
 #include "model/MergeImageFaceResult.h"
+#include "model/MonitorExaminationRequest.h"
+#include "model/MonitorExaminationResult.h"
 #include "model/PedestrianDetectAttributeRequest.h"
 #include "model/PedestrianDetectAttributeResult.h"
 #include "model/QueryFaceImageTemplateRequest.h"
@@ -285,6 +287,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MergeImageFaceResult> MergeImageFaceOutcome;
 			typedef std::future<MergeImageFaceOutcome> MergeImageFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::MergeImageFaceRequest&, const MergeImageFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MergeImageFaceAsyncHandler;
+			typedef Outcome<Error, Model::MonitorExaminationResult> MonitorExaminationOutcome;
+			typedef std::future<MonitorExaminationOutcome> MonitorExaminationOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::MonitorExaminationRequest&, const MonitorExaminationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MonitorExaminationAsyncHandler;
 			typedef Outcome<Error, Model::PedestrianDetectAttributeResult> PedestrianDetectAttributeOutcome;
 			typedef std::future<PedestrianDetectAttributeOutcome> PedestrianDetectAttributeOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::PedestrianDetectAttributeRequest&, const PedestrianDetectAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PedestrianDetectAttributeAsyncHandler;
@@ -464,6 +469,9 @@ namespace AlibabaCloud
 			MergeImageFaceOutcome mergeImageFace(const Model::MergeImageFaceRequest &request)const;
 			void mergeImageFaceAsync(const Model::MergeImageFaceRequest& request, const MergeImageFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MergeImageFaceOutcomeCallable mergeImageFaceCallable(const Model::MergeImageFaceRequest& request) const;
+			MonitorExaminationOutcome monitorExamination(const Model::MonitorExaminationRequest &request)const;
+			void monitorExaminationAsync(const Model::MonitorExaminationRequest& request, const MonitorExaminationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MonitorExaminationOutcomeCallable monitorExaminationCallable(const Model::MonitorExaminationRequest& request) const;
 			PedestrianDetectAttributeOutcome pedestrianDetectAttribute(const Model::PedestrianDetectAttributeRequest &request)const;
 			void pedestrianDetectAttributeAsync(const Model::PedestrianDetectAttributeRequest& request, const PedestrianDetectAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PedestrianDetectAttributeOutcomeCallable pedestrianDetectAttributeCallable(const Model::PedestrianDetectAttributeRequest& request) const;
