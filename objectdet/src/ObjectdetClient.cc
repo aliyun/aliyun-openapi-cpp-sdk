@@ -339,6 +339,42 @@ ObjectdetClient::DetectVehicleIllegalParkingOutcomeCallable ObjectdetClient::det
 	return task->get_future();
 }
 
+ObjectdetClient::DetectVideoIPCObjectOutcome ObjectdetClient::detectVideoIPCObject(const DetectVideoIPCObjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectVideoIPCObjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectVideoIPCObjectOutcome(DetectVideoIPCObjectResult(outcome.result()));
+	else
+		return DetectVideoIPCObjectOutcome(outcome.error());
+}
+
+void ObjectdetClient::detectVideoIPCObjectAsync(const DetectVideoIPCObjectRequest& request, const DetectVideoIPCObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectVideoIPCObject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ObjectdetClient::DetectVideoIPCObjectOutcomeCallable ObjectdetClient::detectVideoIPCObjectCallable(const DetectVideoIPCObjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectVideoIPCObjectOutcome()>>(
+			[this, request]()
+			{
+			return this->detectVideoIPCObject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ObjectdetClient::DetectWhiteBaseImageOutcome ObjectdetClient::detectWhiteBaseImage(const DetectWhiteBaseImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ ObjectdetClient::GenerateVehicleRepairPlanOutcomeCallable ObjectdetClient::gener
 			[this, request]()
 			{
 			return this->generateVehicleRepairPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ObjectdetClient::GetAsyncJobResultOutcome ObjectdetClient::getAsyncJobResult(const GetAsyncJobResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAsyncJobResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAsyncJobResultOutcome(GetAsyncJobResultResult(outcome.result()));
+	else
+		return GetAsyncJobResultOutcome(outcome.error());
+}
+
+void ObjectdetClient::getAsyncJobResultAsync(const GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAsyncJobResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ObjectdetClient::GetAsyncJobResultOutcomeCallable ObjectdetClient::getAsyncJobResultCallable(const GetAsyncJobResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAsyncJobResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getAsyncJobResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

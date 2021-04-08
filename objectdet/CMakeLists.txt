@@ -37,10 +37,14 @@ set(objectdet_public_header_model
 	include/alibabacloud/objectdet/model/DetectVehicleICongestionResult.h
 	include/alibabacloud/objectdet/model/DetectVehicleIllegalParkingRequest.h
 	include/alibabacloud/objectdet/model/DetectVehicleIllegalParkingResult.h
+	include/alibabacloud/objectdet/model/DetectVideoIPCObjectRequest.h
+	include/alibabacloud/objectdet/model/DetectVideoIPCObjectResult.h
 	include/alibabacloud/objectdet/model/DetectWhiteBaseImageRequest.h
 	include/alibabacloud/objectdet/model/DetectWhiteBaseImageResult.h
 	include/alibabacloud/objectdet/model/GenerateVehicleRepairPlanRequest.h
 	include/alibabacloud/objectdet/model/GenerateVehicleRepairPlanResult.h
+	include/alibabacloud/objectdet/model/GetAsyncJobResultRequest.h
+	include/alibabacloud/objectdet/model/GetAsyncJobResultResult.h
 	include/alibabacloud/objectdet/model/GetVehicleRepairPlanRequest.h
 	include/alibabacloud/objectdet/model/GetVehicleRepairPlanResult.h
 	include/alibabacloud/objectdet/model/RecognizeVehicleDamageRequest.h
@@ -68,10 +72,14 @@ set(objectdet_src
 	src/model/DetectVehicleICongestionResult.cc
 	src/model/DetectVehicleIllegalParkingRequest.cc
 	src/model/DetectVehicleIllegalParkingResult.cc
+	src/model/DetectVideoIPCObjectRequest.cc
+	src/model/DetectVideoIPCObjectResult.cc
 	src/model/DetectWhiteBaseImageRequest.cc
 	src/model/DetectWhiteBaseImageResult.cc
 	src/model/GenerateVehicleRepairPlanRequest.cc
 	src/model/GenerateVehicleRepairPlanResult.cc
+	src/model/GetAsyncJobResultRequest.cc
+	src/model/GetAsyncJobResultResult.cc
 	src/model/GetVehicleRepairPlanRequest.cc
 	src/model/GetVehicleRepairPlanResult.cc
 	src/model/RecognizeVehicleDamageRequest.cc

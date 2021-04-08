@@ -38,10 +38,14 @@
 #include "model/DetectVehicleICongestionResult.h"
 #include "model/DetectVehicleIllegalParkingRequest.h"
 #include "model/DetectVehicleIllegalParkingResult.h"
+#include "model/DetectVideoIPCObjectRequest.h"
+#include "model/DetectVideoIPCObjectResult.h"
 #include "model/DetectWhiteBaseImageRequest.h"
 #include "model/DetectWhiteBaseImageResult.h"
 #include "model/GenerateVehicleRepairPlanRequest.h"
 #include "model/GenerateVehicleRepairPlanResult.h"
+#include "model/GetAsyncJobResultRequest.h"
+#include "model/GetAsyncJobResultResult.h"
 #include "model/GetVehicleRepairPlanRequest.h"
 #include "model/GetVehicleRepairPlanResult.h"
 #include "model/RecognizeVehicleDamageRequest.h"
@@ -83,12 +87,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectVehicleIllegalParkingResult> DetectVehicleIllegalParkingOutcome;
 			typedef std::future<DetectVehicleIllegalParkingOutcome> DetectVehicleIllegalParkingOutcomeCallable;
 			typedef std::function<void(const ObjectdetClient*, const Model::DetectVehicleIllegalParkingRequest&, const DetectVehicleIllegalParkingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectVehicleIllegalParkingAsyncHandler;
+			typedef Outcome<Error, Model::DetectVideoIPCObjectResult> DetectVideoIPCObjectOutcome;
+			typedef std::future<DetectVideoIPCObjectOutcome> DetectVideoIPCObjectOutcomeCallable;
+			typedef std::function<void(const ObjectdetClient*, const Model::DetectVideoIPCObjectRequest&, const DetectVideoIPCObjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectVideoIPCObjectAsyncHandler;
 			typedef Outcome<Error, Model::DetectWhiteBaseImageResult> DetectWhiteBaseImageOutcome;
 			typedef std::future<DetectWhiteBaseImageOutcome> DetectWhiteBaseImageOutcomeCallable;
 			typedef std::function<void(const ObjectdetClient*, const Model::DetectWhiteBaseImageRequest&, const DetectWhiteBaseImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectWhiteBaseImageAsyncHandler;
 			typedef Outcome<Error, Model::GenerateVehicleRepairPlanResult> GenerateVehicleRepairPlanOutcome;
 			typedef std::future<GenerateVehicleRepairPlanOutcome> GenerateVehicleRepairPlanOutcomeCallable;
 			typedef std::function<void(const ObjectdetClient*, const Model::GenerateVehicleRepairPlanRequest&, const GenerateVehicleRepairPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateVehicleRepairPlanAsyncHandler;
+			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
+			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
+			typedef std::function<void(const ObjectdetClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
 			typedef Outcome<Error, Model::GetVehicleRepairPlanResult> GetVehicleRepairPlanOutcome;
 			typedef std::future<GetVehicleRepairPlanOutcome> GetVehicleRepairPlanOutcomeCallable;
 			typedef std::function<void(const ObjectdetClient*, const Model::GetVehicleRepairPlanRequest&, const GetVehicleRepairPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVehicleRepairPlanAsyncHandler;
@@ -130,12 +140,18 @@ namespace AlibabaCloud
 			DetectVehicleIllegalParkingOutcome detectVehicleIllegalParking(const Model::DetectVehicleIllegalParkingRequest &request)const;
 			void detectVehicleIllegalParkingAsync(const Model::DetectVehicleIllegalParkingRequest& request, const DetectVehicleIllegalParkingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectVehicleIllegalParkingOutcomeCallable detectVehicleIllegalParkingCallable(const Model::DetectVehicleIllegalParkingRequest& request) const;
+			DetectVideoIPCObjectOutcome detectVideoIPCObject(const Model::DetectVideoIPCObjectRequest &request)const;
+			void detectVideoIPCObjectAsync(const Model::DetectVideoIPCObjectRequest& request, const DetectVideoIPCObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectVideoIPCObjectOutcomeCallable detectVideoIPCObjectCallable(const Model::DetectVideoIPCObjectRequest& request) const;
 			DetectWhiteBaseImageOutcome detectWhiteBaseImage(const Model::DetectWhiteBaseImageRequest &request)const;
 			void detectWhiteBaseImageAsync(const Model::DetectWhiteBaseImageRequest& request, const DetectWhiteBaseImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectWhiteBaseImageOutcomeCallable detectWhiteBaseImageCallable(const Model::DetectWhiteBaseImageRequest& request) const;
 			GenerateVehicleRepairPlanOutcome generateVehicleRepairPlan(const Model::GenerateVehicleRepairPlanRequest &request)const;
 			void generateVehicleRepairPlanAsync(const Model::GenerateVehicleRepairPlanRequest& request, const GenerateVehicleRepairPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateVehicleRepairPlanOutcomeCallable generateVehicleRepairPlanCallable(const Model::GenerateVehicleRepairPlanRequest& request) const;
+			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
+			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
 			GetVehicleRepairPlanOutcome getVehicleRepairPlan(const Model::GetVehicleRepairPlanRequest &request)const;
 			void getVehicleRepairPlanAsync(const Model::GetVehicleRepairPlanRequest& request, const GetVehicleRepairPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVehicleRepairPlanOutcomeCallable getVehicleRepairPlanCallable(const Model::GetVehicleRepairPlanRequest& request) const;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTIPCOBJECTRESULT_H_
-#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTIPCOBJECTRESULT_H_
+#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTRESULT_H_
+#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OBJECTDET_EXPORT DetectIPCObjectResult : public ServiceResult
+			class ALIBABACLOUD_OBJECTDET_EXPORT DetectVideoIPCObjectResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Element
+					struct Frame
 					{
-						float targetRate;
-						float score;
-						std::string type;
-						std::vector<std::string> box;
+						struct ElementsItem
+						{
+							float score;
+							std::string type;
+							long x;
+							long y;
+							long height;
+							long width;
+						};
+						long time;
+						std::vector<Frame::ElementsItem> elements;
 					};
+					std::vector<Frame> frames;
 					long height;
-					std::vector<Element> elements;
 					long width;
 				};
 
 
-				DetectIPCObjectResult();
-				explicit DetectIPCObjectResult(const std::string &payload);
-				~DetectIPCObjectResult();
+				DetectVideoIPCObjectResult();
+				explicit DetectVideoIPCObjectResult(const std::string &payload);
+				~DetectVideoIPCObjectResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -65,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTIPCOBJECTRESULT_H_
+#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTVIDEOIPCOBJECTRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OBJECTDET_MODEL_DETECTIPCOBJECTRESULT_H_
-#define ALIBABACLOUD_OBJECTDET_MODEL_DETECTIPCOBJECTRESULT_H_
+#ifndef ALIBABACLOUD_OBJECTDET_MODEL_GETASYNCJOBRESULTRESULT_H_
+#define ALIBABACLOUD_OBJECTDET_MODEL_GETASYNCJOBRESULTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OBJECTDET_EXPORT DetectIPCObjectResult : public ServiceResult
+			class ALIBABACLOUD_OBJECTDET_EXPORT GetAsyncJobResultResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Element
-					{
-						float targetRate;
-						float score;
-						std::string type;
-						std::vector<std::string> box;
-					};
-					long height;
-					std::vector<Element> elements;
-					long width;
+					std::string status;
+					std::string errorCode;
+					std::string errorMessage;
+					std::string jobId;
+					std::string result;
 				};
 
 
-				DetectIPCObjectResult();
-				explicit DetectIPCObjectResult(const std::string &payload);
-				~DetectIPCObjectResult();
-				std::string getMessage()const;
+				GetAsyncJobResultResult();
+				explicit GetAsyncJobResultResult(const std::string &payload);
+				~GetAsyncJobResultResult();
 				Data getData()const;
-				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
 				Data data_;
-				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OBJECTDET_MODEL_DETECTIPCOBJECTRESULT_H_
+#endif // !ALIBABACLOUD_OBJECTDET_MODEL_GETASYNCJOBRESULTRESULT_H_

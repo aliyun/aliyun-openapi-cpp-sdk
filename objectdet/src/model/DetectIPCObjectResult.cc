@@ -48,6 +48,8 @@ void DetectIPCObjectResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
+		if(!dataNodeElementsElement["TargetRate"].isNull())
+			elementObject.targetRate = std::stof(dataNodeElementsElement["TargetRate"].asString());
 		if(!dataNodeElementsElement["Score"].isNull())
 			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
 		if(!dataNodeElementsElement["Type"].isNull())
