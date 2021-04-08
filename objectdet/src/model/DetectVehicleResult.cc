@@ -40,10 +40,10 @@ void DetectVehicleResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Width"].isNull())
-		data_.width = std::stoi(dataNode["Width"].asString());
 	if(!dataNode["Height"].isNull())
 		data_.height = std::stoi(dataNode["Height"].asString());
+	if(!dataNode["Width"].isNull())
+		data_.width = std::stoi(dataNode["Width"].asString());
 	auto allDetectObjectInfoListNode = dataNode["DetectObjectInfoList"]["DetectObjectInfo"];
 	for (auto dataNodeDetectObjectInfoListDetectObjectInfo : allDetectObjectInfoListNode)
 	{

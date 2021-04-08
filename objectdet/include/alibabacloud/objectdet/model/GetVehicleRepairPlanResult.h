@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string partsStdCode;
 						std::string outStandardPartsName;
 						std::string repairType;
-						std::string relationType;
 						std::string repairFee;
+						std::string relationType;
 						std::string garageType;
 						std::string partsStdName;
 						std::string outStandardPartsId;

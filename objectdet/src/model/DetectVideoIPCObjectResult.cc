@@ -44,6 +44,8 @@ void DetectVideoIPCObjectResult::parse(const std::string &payload)
 		data_.height = std::stol(dataNode["Height"].asString());
 	if(!dataNode["Width"].isNull())
 		data_.width = std::stol(dataNode["Width"].asString());
+	if(!dataNode["InputFile"].isNull())
+		data_.inputFile = dataNode["InputFile"].asString();
 	auto allFramesNode = dataNode["Frames"]["Frame"];
 	for (auto dataNodeFramesFrame : allFramesNode)
 	{

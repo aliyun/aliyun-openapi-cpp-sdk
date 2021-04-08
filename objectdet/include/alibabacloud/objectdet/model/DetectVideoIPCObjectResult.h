@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::vector<Frame> frames;
 					long height;
 					long width;
+					std::string inputFile;
 				};
 
 

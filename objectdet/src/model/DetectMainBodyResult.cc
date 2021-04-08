@@ -45,10 +45,10 @@ void DetectMainBodyResult::parse(const std::string &payload)
 		data_.location.x = std::stoi(locationNode["X"].asString());
 	if(!locationNode["Y"].isNull())
 		data_.location.y = std::stoi(locationNode["Y"].asString());
-	if(!locationNode["Width"].isNull())
-		data_.location.width = std::stoi(locationNode["Width"].asString());
 	if(!locationNode["Height"].isNull())
 		data_.location.height = std::stoi(locationNode["Height"].asString());
+	if(!locationNode["Width"].isNull())
+		data_.location.width = std::stoi(locationNode["Width"].asString());
 
 }
 
