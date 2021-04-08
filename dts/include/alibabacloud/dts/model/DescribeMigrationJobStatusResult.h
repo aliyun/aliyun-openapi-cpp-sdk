@@ -101,6 +101,7 @@ namespace AlibabaCloud
 				explicit DescribeMigrationJobStatusResult(const std::string &payload);
 				~DescribeMigrationJobStatusResult();
 				DataInitializationStatus getDataInitializationStatus()const;
+				std::string getTaskId()const;
 				std::string getMigrationJobName()const;
 				std::string getPayType()const;
 				std::string getErrMessage()const;
@@ -121,6 +122,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				DataInitializationStatus dataInitializationStatus_;
+				std::string taskId_;
 				std::string migrationJobName_;
 				std::string payType_;
 				std::string errMessage_;

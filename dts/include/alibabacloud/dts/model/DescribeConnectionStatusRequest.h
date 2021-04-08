@@ -53,10 +53,10 @@ namespace AlibabaCloud
 				void setSourceEndpointIP(const std::string& sourceEndpointIP);
 				std::string getDestinationEndpointUserName()const;
 				void setDestinationEndpointUserName(const std::string& destinationEndpointUserName);
-				bool getDestinationEndpointArchitecture()const;
-				void setDestinationEndpointArchitecture(bool destinationEndpointArchitecture);
-				bool getDestinationEndpointOracleSID()const;
-				void setDestinationEndpointOracleSID(bool destinationEndpointOracleSID);
+				std::string getDestinationEndpointArchitecture()const;
+				void setDestinationEndpointArchitecture(const std::string& destinationEndpointArchitecture);
+				std::string getDestinationEndpointOracleSID()const;
+				void setDestinationEndpointOracleSID(const std::string& destinationEndpointOracleSID);
 				std::string getDestinationEndpointEngineName()const;
 				void setDestinationEndpointEngineName(const std::string& destinationEndpointEngineName);
 				std::string getDestinationEndpointInstanceID()const;
@@ -90,8 +90,8 @@ namespace AlibabaCloud
 				std::string destinationEndpointRegion_;
 				std::string sourceEndpointIP_;
 				std::string destinationEndpointUserName_;
-				bool destinationEndpointArchitecture_;
-				bool destinationEndpointOracleSID_;
+				std::string destinationEndpointArchitecture_;
+				std::string destinationEndpointOracleSID_;
 				std::string destinationEndpointEngineName_;
 				std::string destinationEndpointInstanceID_;
 				std::string destinationEndpointPort_;

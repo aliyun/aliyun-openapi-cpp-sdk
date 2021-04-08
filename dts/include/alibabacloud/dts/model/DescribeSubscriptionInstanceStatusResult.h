@@ -60,6 +60,7 @@ namespace AlibabaCloud
 				explicit DescribeSubscriptionInstanceStatusResult(const std::string &payload);
 				~DescribeSubscriptionInstanceStatusResult();
 				std::string getStatus()const;
+				std::string getTaskId()const;
 				SubscriptionHost getSubscriptionHost()const;
 				std::string getEndTimestamp()const;
 				std::string getPayType()const;
@@ -82,6 +83,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				std::string taskId_;
 				SubscriptionHost subscriptionHost_;
 				std::string endTimestamp_;
 				std::string payType_;

@@ -43,6 +43,8 @@ namespace AlibabaCloud
 
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getInstFilterRegion()const;
+				void setInstFilterRegion(const std::string& instFilterRegion);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getOwnerId()const;
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 
             private:
 				std::string clientToken_;
+				std::string instFilterRegion_;
 				int pageNum_;
 				std::string ownerId_;
 				std::string accessKeyId_;

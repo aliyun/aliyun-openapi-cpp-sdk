@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_DESCRIBESUBSCRIPTIONINSTANCESREQUEST_H_
-#define ALIBABACLOUD_DTS_MODEL_DESCRIBESUBSCRIPTIONINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_MODIFYDTSJOBREQUEST_H_
+#define ALIBABACLOUD_DTS_MODEL_MODIFYDTSJOBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT DescribeSubscriptionInstancesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DTS_EXPORT ModifyDtsJobRequest : public RpcServiceRequest
 			{
-			public:
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
-				DescribeSubscriptionInstancesRequest();
-				~DescribeSubscriptionInstancesRequest();
+				ModifyDtsJobRequest();
+				~ModifyDtsJobRequest();
 
+				std::string getDbList()const;
+				void setDbList(const std::string& dbList);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				std::string getInstFilterRegion()const;
-				void setInstFilterRegion(const std::string& instFilterRegion);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getAccountId()const;
-				void setAccountId(const std::string& accountId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getSubscriptionInstanceName()const;
-				void setSubscriptionInstanceName(const std::string& subscriptionInstanceName);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
+				std::string getDtsInstanceId()const;
+				void setDtsInstanceId(const std::string& dtsInstanceId);
+				std::string getSynchronizationDirection()const;
+				void setSynchronizationDirection(const std::string& synchronizationDirection);
 
             private:
+				std::string dbList_;
 				std::string clientToken_;
-				std::string instFilterRegion_;
-				int pageNum_;
 				std::string ownerId_;
 				std::string accessKeyId_;
-				std::string accountId_;
-				int pageSize_;
-				std::string subscriptionInstanceName_;
-				std::vector<Tag> tag_;
+				std::string dtsInstanceId_;
+				std::string synchronizationDirection_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_DESCRIBESUBSCRIPTIONINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_MODIFYDTSJOBREQUEST_H_

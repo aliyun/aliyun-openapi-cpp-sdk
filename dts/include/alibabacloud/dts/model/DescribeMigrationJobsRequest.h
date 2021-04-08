@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				DescribeMigrationJobsRequest();
 				~DescribeMigrationJobsRequest();
 
+				std::string getInstFilterRegion()const;
+				void setInstFilterRegion(const std::string& instFilterRegion);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getOwnerId()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 
             private:
+				std::string instFilterRegion_;
 				int pageNum_;
 				std::string ownerId_;
 				std::string accessKeyId_;

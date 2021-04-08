@@ -27,6 +27,17 @@ DescribeMigrationJobsRequest::DescribeMigrationJobsRequest() :
 DescribeMigrationJobsRequest::~DescribeMigrationJobsRequest()
 {}
 
+std::string DescribeMigrationJobsRequest::getInstFilterRegion()const
+{
+	return instFilterRegion_;
+}
+
+void DescribeMigrationJobsRequest::setInstFilterRegion(const std::string& instFilterRegion)
+{
+	instFilterRegion_ = instFilterRegion;
+	setParameter("InstFilterRegion", instFilterRegion);
+}
+
 int DescribeMigrationJobsRequest::getPageNum()const
 {
 	return pageNum_;

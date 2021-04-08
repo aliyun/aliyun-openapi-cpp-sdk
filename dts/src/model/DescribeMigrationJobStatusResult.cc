@@ -146,12 +146,19 @@ void DescribeMigrationJobStatusResult::parse(const std::string &payload)
 		payType_ = value["PayType"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 
 DescribeMigrationJobStatusResult::DataInitializationStatus DescribeMigrationJobStatusResult::getDataInitializationStatus()const
 {
 	return dataInitializationStatus_;
+}
+
+std::string DescribeMigrationJobStatusResult::getTaskId()const
+{
+	return taskId_;
 }
 
 std::string DescribeMigrationJobStatusResult::getMigrationJobName()const

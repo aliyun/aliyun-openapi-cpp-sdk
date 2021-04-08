@@ -126,26 +126,26 @@ void DescribeConnectionStatusRequest::setDestinationEndpointUserName(const std::
 	setParameter("DestinationEndpointUserName", destinationEndpointUserName);
 }
 
-bool DescribeConnectionStatusRequest::getDestinationEndpointArchitecture()const
+std::string DescribeConnectionStatusRequest::getDestinationEndpointArchitecture()const
 {
 	return destinationEndpointArchitecture_;
 }
 
-void DescribeConnectionStatusRequest::setDestinationEndpointArchitecture(bool destinationEndpointArchitecture)
+void DescribeConnectionStatusRequest::setDestinationEndpointArchitecture(const std::string& destinationEndpointArchitecture)
 {
 	destinationEndpointArchitecture_ = destinationEndpointArchitecture;
-	setParameter("DestinationEndpointArchitecture", destinationEndpointArchitecture ? "true" : "false");
+	setParameter("DestinationEndpointArchitecture", destinationEndpointArchitecture);
 }
 
-bool DescribeConnectionStatusRequest::getDestinationEndpointOracleSID()const
+std::string DescribeConnectionStatusRequest::getDestinationEndpointOracleSID()const
 {
 	return destinationEndpointOracleSID_;
 }
 
-void DescribeConnectionStatusRequest::setDestinationEndpointOracleSID(bool destinationEndpointOracleSID)
+void DescribeConnectionStatusRequest::setDestinationEndpointOracleSID(const std::string& destinationEndpointOracleSID)
 {
 	destinationEndpointOracleSID_ = destinationEndpointOracleSID;
-	setParameter("DestinationEndpointOracleSID", destinationEndpointOracleSID ? "true" : "false");
+	setParameter("DestinationEndpointOracleSID", destinationEndpointOracleSID);
 }
 
 std::string DescribeConnectionStatusRequest::getDestinationEndpointEngineName()const

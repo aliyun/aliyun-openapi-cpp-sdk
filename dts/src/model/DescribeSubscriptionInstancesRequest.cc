@@ -38,6 +38,17 @@ void DescribeSubscriptionInstancesRequest::setClientToken(const std::string& cli
 	setParameter("ClientToken", clientToken);
 }
 
+std::string DescribeSubscriptionInstancesRequest::getInstFilterRegion()const
+{
+	return instFilterRegion_;
+}
+
+void DescribeSubscriptionInstancesRequest::setInstFilterRegion(const std::string& instFilterRegion)
+{
+	instFilterRegion_ = instFilterRegion;
+	setParameter("InstFilterRegion", instFilterRegion);
+}
+
 int DescribeSubscriptionInstancesRequest::getPageNum()const
 {
 	return pageNum_;

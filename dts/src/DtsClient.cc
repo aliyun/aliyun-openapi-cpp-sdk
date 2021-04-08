@@ -51,6 +51,42 @@ DtsClient::DtsClient(const std::string & accessKeyId, const std::string & access
 DtsClient::~DtsClient()
 {}
 
+DtsClient::ConfigureDtsJobOutcome DtsClient::configureDtsJob(const ConfigureDtsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfigureDtsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfigureDtsJobOutcome(ConfigureDtsJobResult(outcome.result()));
+	else
+		return ConfigureDtsJobOutcome(outcome.error());
+}
+
+void DtsClient::configureDtsJobAsync(const ConfigureDtsJobRequest& request, const ConfigureDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, configureDtsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::ConfigureDtsJobOutcomeCallable DtsClient::configureDtsJobCallable(const ConfigureDtsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfigureDtsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->configureDtsJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::ConfigureMigrationJobOutcome DtsClient::configureMigrationJob(const ConfigureMigrationJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,6 +375,42 @@ DtsClient::CreateConsumerGroupOutcomeCallable DtsClient::createConsumerGroupCall
 	return task->get_future();
 }
 
+DtsClient::CreateDtsInstanceOutcome DtsClient::createDtsInstance(const CreateDtsInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDtsInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDtsInstanceOutcome(CreateDtsInstanceResult(outcome.result()));
+	else
+		return CreateDtsInstanceOutcome(outcome.error());
+}
+
+void DtsClient::createDtsInstanceAsync(const CreateDtsInstanceRequest& request, const CreateDtsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDtsInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::CreateDtsInstanceOutcomeCallable DtsClient::createDtsInstanceCallable(const CreateDtsInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDtsInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createDtsInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::CreateMigrationJobOutcome DtsClient::createMigrationJob(const CreateMigrationJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +549,42 @@ DtsClient::DeleteConsumerGroupOutcomeCallable DtsClient::deleteConsumerGroupCall
 			[this, request]()
 			{
 			return this->deleteConsumerGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::DeleteDtsJobOutcome DtsClient::deleteDtsJob(const DeleteDtsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDtsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDtsJobOutcome(DeleteDtsJobResult(outcome.result()));
+	else
+		return DeleteDtsJobOutcome(outcome.error());
+}
+
+void DtsClient::deleteDtsJobAsync(const DeleteDtsJobRequest& request, const DeleteDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDtsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DeleteDtsJobOutcomeCallable DtsClient::deleteDtsJobCallable(const DeleteDtsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDtsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDtsJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +807,78 @@ DtsClient::DescribeDTSIPOutcomeCallable DtsClient::describeDTSIPCallable(const D
 	return task->get_future();
 }
 
+DtsClient::DescribeDtsJobDetailOutcome DtsClient::describeDtsJobDetail(const DescribeDtsJobDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDtsJobDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDtsJobDetailOutcome(DescribeDtsJobDetailResult(outcome.result()));
+	else
+		return DescribeDtsJobDetailOutcome(outcome.error());
+}
+
+void DtsClient::describeDtsJobDetailAsync(const DescribeDtsJobDetailRequest& request, const DescribeDtsJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDtsJobDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DescribeDtsJobDetailOutcomeCallable DtsClient::describeDtsJobDetailCallable(const DescribeDtsJobDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDtsJobDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDtsJobDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::DescribeDtsJobsOutcome DtsClient::describeDtsJobs(const DescribeDtsJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDtsJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDtsJobsOutcome(DescribeDtsJobsResult(outcome.result()));
+	else
+		return DescribeDtsJobsOutcome(outcome.error());
+}
+
+void DtsClient::describeDtsJobsAsync(const DescribeDtsJobsRequest& request, const DescribeDtsJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDtsJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DescribeDtsJobsOutcomeCallable DtsClient::describeDtsJobsCallable(const DescribeDtsJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDtsJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDtsJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::DescribeEndpointSwitchStatusOutcome DtsClient::describeEndpointSwitchStatus(const DescribeEndpointSwitchStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +1089,42 @@ DtsClient::DescribeMigrationJobsOutcomeCallable DtsClient::describeMigrationJobs
 			[this, request]()
 			{
 			return this->describeMigrationJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::DescribePreCheckStatusOutcome DtsClient::describePreCheckStatus(const DescribePreCheckStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePreCheckStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePreCheckStatusOutcome(DescribePreCheckStatusResult(outcome.result()));
+	else
+		return DescribePreCheckStatusOutcome(outcome.error());
+}
+
+void DtsClient::describePreCheckStatusAsync(const DescribePreCheckStatusRequest& request, const DescribePreCheckStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePreCheckStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DescribePreCheckStatusOutcomeCallable DtsClient::describePreCheckStatusCallable(const DescribePreCheckStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePreCheckStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describePreCheckStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1347,6 +1563,114 @@ DtsClient::ModifyConsumptionTimestampOutcomeCallable DtsClient::modifyConsumptio
 	return task->get_future();
 }
 
+DtsClient::ModifyDtsJobOutcome DtsClient::modifyDtsJob(const ModifyDtsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDtsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDtsJobOutcome(ModifyDtsJobResult(outcome.result()));
+	else
+		return ModifyDtsJobOutcome(outcome.error());
+}
+
+void DtsClient::modifyDtsJobAsync(const ModifyDtsJobRequest& request, const ModifyDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDtsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::ModifyDtsJobOutcomeCallable DtsClient::modifyDtsJobCallable(const ModifyDtsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDtsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDtsJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::ModifyDtsJobNameOutcome DtsClient::modifyDtsJobName(const ModifyDtsJobNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDtsJobNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDtsJobNameOutcome(ModifyDtsJobNameResult(outcome.result()));
+	else
+		return ModifyDtsJobNameOutcome(outcome.error());
+}
+
+void DtsClient::modifyDtsJobNameAsync(const ModifyDtsJobNameRequest& request, const ModifyDtsJobNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDtsJobName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::ModifyDtsJobNameOutcomeCallable DtsClient::modifyDtsJobNameCallable(const ModifyDtsJobNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDtsJobNameOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDtsJobName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::ModifyDtsJobPasswordOutcome DtsClient::modifyDtsJobPassword(const ModifyDtsJobPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDtsJobPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDtsJobPasswordOutcome(ModifyDtsJobPasswordResult(outcome.result()));
+	else
+		return ModifyDtsJobPasswordOutcome(outcome.error());
+}
+
+void DtsClient::modifyDtsJobPasswordAsync(const ModifyDtsJobPasswordRequest& request, const ModifyDtsJobPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDtsJobPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::ModifyDtsJobPasswordOutcomeCallable DtsClient::modifyDtsJobPasswordCallable(const ModifyDtsJobPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDtsJobPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDtsJobPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::ModifySubscriptionObjectOutcome DtsClient::modifySubscriptionObject(const ModifySubscriptionObjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1419,6 +1743,42 @@ DtsClient::ModifySynchronizationObjectOutcomeCallable DtsClient::modifySynchroni
 	return task->get_future();
 }
 
+DtsClient::ResetDtsJobOutcome DtsClient::resetDtsJob(const ResetDtsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetDtsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetDtsJobOutcome(ResetDtsJobResult(outcome.result()));
+	else
+		return ResetDtsJobOutcome(outcome.error());
+}
+
+void DtsClient::resetDtsJobAsync(const ResetDtsJobRequest& request, const ResetDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetDtsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::ResetDtsJobOutcomeCallable DtsClient::resetDtsJobCallable(const ResetDtsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetDtsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->resetDtsJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::ResetSynchronizationJobOutcome DtsClient::resetSynchronizationJob(const ResetSynchronizationJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1845,78 @@ DtsClient::ShieldPrecheckOutcomeCallable DtsClient::shieldPrecheckCallable(const
 			[this, request]()
 			{
 			return this->shieldPrecheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::SkipPreCheckOutcome DtsClient::skipPreCheck(const SkipPreCheckRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SkipPreCheckOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SkipPreCheckOutcome(SkipPreCheckResult(outcome.result()));
+	else
+		return SkipPreCheckOutcome(outcome.error());
+}
+
+void DtsClient::skipPreCheckAsync(const SkipPreCheckRequest& request, const SkipPreCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, skipPreCheck(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::SkipPreCheckOutcomeCallable DtsClient::skipPreCheckCallable(const SkipPreCheckRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SkipPreCheckOutcome()>>(
+			[this, request]()
+			{
+			return this->skipPreCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::StartDtsJobOutcome DtsClient::startDtsJob(const StartDtsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartDtsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartDtsJobOutcome(StartDtsJobResult(outcome.result()));
+	else
+		return StartDtsJobOutcome(outcome.error());
+}
+
+void DtsClient::startDtsJobAsync(const StartDtsJobRequest& request, const StartDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startDtsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::StartDtsJobOutcomeCallable DtsClient::startDtsJobCallable(const StartDtsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartDtsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->startDtsJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1599,6 +2031,42 @@ DtsClient::StartSynchronizationJobOutcomeCallable DtsClient::startSynchronizatio
 	return task->get_future();
 }
 
+DtsClient::StopDtsJobOutcome DtsClient::stopDtsJob(const StopDtsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopDtsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopDtsJobOutcome(StopDtsJobResult(outcome.result()));
+	else
+		return StopDtsJobOutcome(outcome.error());
+}
+
+void DtsClient::stopDtsJobAsync(const StopDtsJobRequest& request, const StopDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopDtsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::StopDtsJobOutcomeCallable DtsClient::stopDtsJobCallable(const StopDtsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopDtsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->stopDtsJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::StopMigrationJobOutcome DtsClient::stopMigrationJob(const StopMigrationJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +2097,42 @@ DtsClient::StopMigrationJobOutcomeCallable DtsClient::stopMigrationJobCallable(c
 			[this, request]()
 			{
 			return this->stopMigrationJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::SuspendDtsJobOutcome DtsClient::suspendDtsJob(const SuspendDtsJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SuspendDtsJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SuspendDtsJobOutcome(SuspendDtsJobResult(outcome.result()));
+	else
+		return SuspendDtsJobOutcome(outcome.error());
+}
+
+void DtsClient::suspendDtsJobAsync(const SuspendDtsJobRequest& request, const SuspendDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, suspendDtsJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::SuspendDtsJobOutcomeCallable DtsClient::suspendDtsJobCallable(const SuspendDtsJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SuspendDtsJobOutcome()>>(
+			[this, request]()
+			{
+			return this->suspendDtsJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

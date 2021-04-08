@@ -38,6 +38,17 @@ void DescribeSynchronizationJobsRequest::setClientToken(const std::string& clien
 	setParameter("ClientToken", clientToken);
 }
 
+std::string DescribeSynchronizationJobsRequest::getInstFilterRegion()const
+{
+	return instFilterRegion_;
+}
+
+void DescribeSynchronizationJobsRequest::setInstFilterRegion(const std::string& instFilterRegion)
+{
+	instFilterRegion_ = instFilterRegion;
+	setParameter("InstFilterRegion", instFilterRegion);
+}
+
 int DescribeSynchronizationJobsRequest::getPageNum()const
 {
 	return pageNum_;

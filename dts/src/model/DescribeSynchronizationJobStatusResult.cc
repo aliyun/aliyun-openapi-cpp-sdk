@@ -178,12 +178,9 @@ void DescribeSynchronizationJobStatusResult::parse(const std::string &payload)
 		synchronizationJobId_ = value["SynchronizationJobId"].asString();
 	if(!value["SynchronizationJobName"].isNull())
 		synchronizationJobName_ = value["SynchronizationJobName"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
-}
-
-std::string DescribeSynchronizationJobStatusResult::getStatus()const
-{
-	return status_;
 }
 
 std::vector<DescribeSynchronizationJobStatusResult::SynchronizationObject> DescribeSynchronizationJobStatusResult::getSynchronizationObjects()const
@@ -194,6 +191,46 @@ std::vector<DescribeSynchronizationJobStatusResult::SynchronizationObject> Descr
 DescribeSynchronizationJobStatusResult::DataInitializationStatus DescribeSynchronizationJobStatusResult::getDataInitializationStatus()const
 {
 	return dataInitializationStatus_;
+}
+
+std::string DescribeSynchronizationJobStatusResult::getTaskId()const
+{
+	return taskId_;
+}
+
+std::string DescribeSynchronizationJobStatusResult::getDelay()const
+{
+	return delay_;
+}
+
+std::string DescribeSynchronizationJobStatusResult::getSuccess()const
+{
+	return success_;
+}
+
+long DescribeSynchronizationJobStatusResult::getDelayMillis()const
+{
+	return delayMillis_;
+}
+
+std::string DescribeSynchronizationJobStatusResult::getDataInitialization()const
+{
+	return dataInitialization_;
+}
+
+std::string DescribeSynchronizationJobStatusResult::getSynchronizationJobClass()const
+{
+	return synchronizationJobClass_;
+}
+
+DescribeSynchronizationJobStatusResult::DataSynchronizationStatus DescribeSynchronizationJobStatusResult::getDataSynchronizationStatus()const
+{
+	return dataSynchronizationStatus_;
+}
+
+std::string DescribeSynchronizationJobStatusResult::getStatus()const
+{
+	return status_;
 }
 
 std::string DescribeSynchronizationJobStatusResult::getSynchronizationJobName()const
@@ -211,16 +248,6 @@ std::string DescribeSynchronizationJobStatusResult::getErrMessage()const
 	return errMessage_;
 }
 
-std::string DescribeSynchronizationJobStatusResult::getDelay()const
-{
-	return delay_;
-}
-
-std::string DescribeSynchronizationJobStatusResult::getSuccess()const
-{
-	return success_;
-}
-
 std::string DescribeSynchronizationJobStatusResult::getErrCode()const
 {
 	return errCode_;
@@ -236,19 +263,9 @@ std::string DescribeSynchronizationJobStatusResult::getCheckpoint()const
 	return checkpoint_;
 }
 
-long DescribeSynchronizationJobStatusResult::getDelayMillis()const
-{
-	return delayMillis_;
-}
-
 std::string DescribeSynchronizationJobStatusResult::getSynchronizationJobId()const
 {
 	return synchronizationJobId_;
-}
-
-std::string DescribeSynchronizationJobStatusResult::getDataInitialization()const
-{
-	return dataInitialization_;
 }
 
 DescribeSynchronizationJobStatusResult::DestinationEndpoint DescribeSynchronizationJobStatusResult::getDestinationEndpoint()const
@@ -281,19 +298,9 @@ std::string DescribeSynchronizationJobStatusResult::getExpireTime()const
 	return expireTime_;
 }
 
-std::string DescribeSynchronizationJobStatusResult::getSynchronizationJobClass()const
-{
-	return synchronizationJobClass_;
-}
-
 std::string DescribeSynchronizationJobStatusResult::getSynchronizationDirection()const
 {
 	return synchronizationDirection_;
-}
-
-DescribeSynchronizationJobStatusResult::DataSynchronizationStatus DescribeSynchronizationJobStatusResult::getDataSynchronizationStatus()const
-{
-	return dataSynchronizationStatus_;
 }
 
 DescribeSynchronizationJobStatusResult::StructureInitializationStatus DescribeSynchronizationJobStatusResult::getStructureInitializationStatus()const
