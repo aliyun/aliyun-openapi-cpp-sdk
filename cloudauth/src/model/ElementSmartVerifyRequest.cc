@@ -38,6 +38,17 @@ void ElementSmartVerifyRequest::setCertFile(const std::string& certFile)
 	setBodyParameter("CertFile", certFile);
 }
 
+std::string ElementSmartVerifyRequest::getCertNationalEmblemUrl()const
+{
+	return certNationalEmblemUrl_;
+}
+
+void ElementSmartVerifyRequest::setCertNationalEmblemUrl(const std::string& certNationalEmblemUrl)
+{
+	certNationalEmblemUrl_ = certNationalEmblemUrl;
+	setBodyParameter("CertNationalEmblemUrl", certNationalEmblemUrl);
+}
+
 std::string ElementSmartVerifyRequest::getCertName()const
 {
 	return certName_;

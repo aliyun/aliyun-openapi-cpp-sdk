@@ -1419,42 +1419,6 @@ CloudauthClient::InitSmartVerifyOutcomeCallable CloudauthClient::initSmartVerify
 	return task->get_future();
 }
 
-CloudauthClient::LivenessDetectOutcome CloudauthClient::livenessDetect(const LivenessDetectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return LivenessDetectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return LivenessDetectOutcome(LivenessDetectResult(outcome.result()));
-	else
-		return LivenessDetectOutcome(outcome.error());
-}
-
-void CloudauthClient::livenessDetectAsync(const LivenessDetectRequest& request, const LivenessDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, livenessDetect(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudauthClient::LivenessDetectOutcomeCallable CloudauthClient::livenessDetectCallable(const LivenessDetectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<LivenessDetectOutcome()>>(
-			[this, request]()
-			{
-			return this->livenessDetect(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudauthClient::LivenessFaceVerifyOutcome CloudauthClient::livenessFaceVerify(const LivenessFaceVerifyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +1665,42 @@ CloudauthClient::UpdateVerifySettingOutcomeCallable CloudauthClient::updateVerif
 			[this, request]()
 			{
 			return this->updateVerifySetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::VerifyBankElementOutcome CloudauthClient::verifyBankElement(const VerifyBankElementRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyBankElementOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyBankElementOutcome(VerifyBankElementResult(outcome.result()));
+	else
+		return VerifyBankElementOutcome(outcome.error());
+}
+
+void CloudauthClient::verifyBankElementAsync(const VerifyBankElementRequest& request, const VerifyBankElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyBankElement(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::VerifyBankElementOutcomeCallable CloudauthClient::verifyBankElementCallable(const VerifyBankElementRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyBankElementOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyBankElement(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

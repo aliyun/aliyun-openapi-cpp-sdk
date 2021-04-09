@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/LivenessDetectResult.h>
+#include <alibabacloud/cloudauth/model/VerifyBankElementResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cloudauth;
 using namespace AlibabaCloud::Cloudauth::Model;
 
-LivenessDetectResult::LivenessDetectResult() :
+VerifyBankElementResult::VerifyBankElementResult() :
 	ServiceResult()
 {}
 
-LivenessDetectResult::LivenessDetectResult(const std::string &payload) :
+VerifyBankElementResult::VerifyBankElementResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-LivenessDetectResult::~LivenessDetectResult()
+VerifyBankElementResult::~VerifyBankElementResult()
 {}
 
-void LivenessDetectResult::parse(const std::string &payload)
+void VerifyBankElementResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -42,28 +42,30 @@ void LivenessDetectResult::parse(const std::string &payload)
 	auto resultObjectNode = value["ResultObject"];
 	if(!resultObjectNode["Passed"].isNull())
 		resultObject_.passed = resultObjectNode["Passed"].asString();
-	if(!resultObjectNode["Score"].isNull())
-		resultObject_.score = std::stof(resultObjectNode["Score"].asString());
-	if(!resultObjectNode["FrameUrl"].isNull())
-		resultObject_.frameUrl = resultObjectNode["FrameUrl"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!resultObjectNode["SubCode"].isNull())
+		resultObject_.subCode = resultObjectNode["SubCode"].asString();
+	if(!resultObjectNode["MaterialInfo"].isNull())
+		resultObject_.materialInfo = resultObjectNode["MaterialInfo"].asString();
+	if(!resultObjectNode["CertifyId"].isNull())
+		resultObject_.certifyId = resultObjectNode["CertifyId"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
 }
 
-LivenessDetectResult::ResultObject LivenessDetectResult::getResultObject()const
+VerifyBankElementResult::ResultObject VerifyBankElementResult::getResultObject()const
 {
 	return resultObject_;
 }
 
-std::string LivenessDetectResult::getMessage()const
+std::string VerifyBankElementResult::getMessage()const
 {
 	return message_;
 }
 
-std::string LivenessDetectResult::getCode()const
+std::string VerifyBankElementResult::getCode()const
 {
 	return code_;
 }

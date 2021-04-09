@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_LIVENESSDETECTRESULT_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_LIVENESSDETECTRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_VERIFYBANKELEMENTRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_VERIFYBANKELEMENTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,20 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT LivenessDetectResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT VerifyBankElementResult : public ServiceResult
 			{
 			public:
 				struct ResultObject
 				{
 					std::string passed;
-					float score;
-					std::string frameUrl;
+					std::string certifyId;
+					std::string materialInfo;
+					std::string subCode;
 				};
 
 
-				LivenessDetectResult();
-				explicit LivenessDetectResult(const std::string &payload);
-				~LivenessDetectResult();
+				VerifyBankElementResult();
+				explicit VerifyBankElementResult(const std::string &payload);
+				~VerifyBankElementResult();
 				ResultObject getResultObject()const;
 				std::string getMessage()const;
 				std::string getCode()const;
@@ -58,4 +59,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_LIVENESSDETECTRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_VERIFYBANKELEMENTRESULT_H_

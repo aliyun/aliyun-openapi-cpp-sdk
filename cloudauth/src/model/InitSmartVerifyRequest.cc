@@ -27,6 +27,17 @@ InitSmartVerifyRequest::InitSmartVerifyRequest() :
 InitSmartVerifyRequest::~InitSmartVerifyRequest()
 {}
 
+std::string InitSmartVerifyRequest::getIdName()const
+{
+	return idName_;
+}
+
+void InitSmartVerifyRequest::setIdName(const std::string& idName)
+{
+	idName_ = idName;
+	setBodyParameter("IdName", idName);
+}
+
 std::string InitSmartVerifyRequest::getUserId()const
 {
 	return userId_;
@@ -179,6 +190,17 @@ void InitSmartVerifyRequest::setMobile(const std::string& mobile)
 {
 	mobile_ = mobile;
 	setBodyParameter("Mobile", mobile);
+}
+
+std::string InitSmartVerifyRequest::getIdNo()const
+{
+	return idNo_;
+}
+
+void InitSmartVerifyRequest::setIdNo(const std::string& idNo)
+{
+	idNo_ = idNo;
+	setBodyParameter("IdNo", idNo);
 }
 
 long InitSmartVerifyRequest::getSceneId()const

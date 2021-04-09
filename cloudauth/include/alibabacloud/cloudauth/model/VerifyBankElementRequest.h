@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_ELEMENTSMARTVERIFYREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_ELEMENTSMARTVERIFYREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_VERIFYBANKELEMENTREQUEST_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_VERIFYBANKELEMENTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT ElementSmartVerifyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT VerifyBankElementRequest : public RpcServiceRequest
 			{
 
 			public:
-				ElementSmartVerifyRequest();
-				~ElementSmartVerifyRequest();
+				VerifyBankElementRequest();
+				~VerifyBankElementRequest();
 
-				std::string getCertFile()const;
-				void setCertFile(const std::string& certFile);
-				std::string getCertNationalEmblemUrl()const;
-				void setCertNationalEmblemUrl(const std::string& certNationalEmblemUrl);
-				std::string getCertName()const;
-				void setCertName(const std::string& certName);
+				std::string getIdName()const;
+				void setIdName(const std::string& idName);
+				std::string getMobile()const;
+				void setMobile(const std::string& mobile);
+				std::string getBankCardUrl()const;
+				void setBankCardUrl(const std::string& bankCardUrl);
+				std::string getIdNo()const;
+				void setIdNo(const std::string& idNo);
+				std::string getBankCardNo()const;
+				void setBankCardNo(const std::string& bankCardNo);
 				std::string getMode()const;
 				void setMode(const std::string& mode);
-				std::string getCertNo()const;
-				void setCertNo(const std::string& certNo);
 				std::string getOuterOrderNo()const;
 				void setOuterOrderNo(const std::string& outerOrderNo);
-				std::string getCertUrl()const;
-				void setCertUrl(const std::string& certUrl);
-				std::string getCertType()const;
-				void setCertType(const std::string& certType);
+				std::string getBankCardFile()const;
+				void setBankCardFile(const std::string& bankCardFile);
 				long getSceneId()const;
 				void setSceneId(long sceneId);
 
             private:
-				std::string certFile_;
-				std::string certNationalEmblemUrl_;
-				std::string certName_;
+				std::string idName_;
+				std::string mobile_;
+				std::string bankCardUrl_;
+				std::string idNo_;
+				std::string bankCardNo_;
 				std::string mode_;
-				std::string certNo_;
 				std::string outerOrderNo_;
-				std::string certUrl_;
-				std::string certType_;
+				std::string bankCardFile_;
 				long sceneId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_ELEMENTSMARTVERIFYREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_VERIFYBANKELEMENTREQUEST_H_

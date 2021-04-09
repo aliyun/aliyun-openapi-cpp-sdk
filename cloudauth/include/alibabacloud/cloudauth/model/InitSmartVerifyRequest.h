@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				InitSmartVerifyRequest();
 				~InitSmartVerifyRequest();
 
+				std::string getIdName()const;
+				void setIdName(const std::string& idName);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				std::string getCertifyId()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setCertName(const std::string& certName);
 				std::string getMobile()const;
 				void setMobile(const std::string& mobile);
+				std::string getIdNo()const;
+				void setIdNo(const std::string& idNo);
 				long getSceneId()const;
 				void setSceneId(long sceneId);
 				std::string getCallbackToken()const;
@@ -73,6 +77,7 @@ namespace AlibabaCloud
 				void setCallbackUrl(const std::string& callbackUrl);
 
             private:
+				std::string idName_;
 				std::string userId_;
 				std::string certifyId_;
 				std::string facePictureBase64_;
@@ -87,6 +92,7 @@ namespace AlibabaCloud
 				std::string ip_;
 				std::string certName_;
 				std::string mobile_;
+				std::string idNo_;
 				long sceneId_;
 				std::string callbackToken_;
 				std::string ossBucketName_;

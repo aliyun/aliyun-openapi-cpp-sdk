@@ -97,8 +97,6 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/InitSmartVerifyRequest.h
 	include/alibabacloud/cloudauth/model/InitSmartVerifyResult.h
-	include/alibabacloud/cloudauth/model/LivenessDetectRequest.h
-	include/alibabacloud/cloudauth/model/LivenessDetectResult.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/LivenessFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
@@ -113,6 +111,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/UpdateFaceConfigResult.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingRequest.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingResult.h
+	include/alibabacloud/cloudauth/model/VerifyBankElementRequest.h
+	include/alibabacloud/cloudauth/model/VerifyBankElementResult.h
 	include/alibabacloud/cloudauth/model/VerifyDeviceRequest.h
 	include/alibabacloud/cloudauth/model/VerifyDeviceResult.h
 	include/alibabacloud/cloudauth/model/VerifyMaterialRequest.h
@@ -196,8 +196,6 @@ set(cloudauth_src
 	src/model/InitFaceVerifyResult.cc
 	src/model/InitSmartVerifyRequest.cc
 	src/model/InitSmartVerifyResult.cc
-	src/model/LivenessDetectRequest.cc
-	src/model/LivenessDetectResult.cc
 	src/model/LivenessFaceVerifyRequest.cc
 	src/model/LivenessFaceVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
@@ -212,6 +210,8 @@ set(cloudauth_src
 	src/model/UpdateFaceConfigResult.cc
 	src/model/UpdateVerifySettingRequest.cc
 	src/model/UpdateVerifySettingResult.cc
+	src/model/VerifyBankElementRequest.cc
+	src/model/VerifyBankElementResult.cc
 	src/model/VerifyDeviceRequest.cc
 	src/model/VerifyDeviceResult.cc
 	src/model/VerifyMaterialRequest.cc

@@ -46,6 +46,8 @@ void ElementSmartVerifyResult::parse(const std::string &payload)
 		resultObject_.subCode = resultObjectNode["SubCode"].asString();
 	if(!resultObjectNode["MaterialInfo"].isNull())
 		resultObject_.materialInfo = resultObjectNode["MaterialInfo"].asString();
+	if(!resultObjectNode["CertifyId"].isNull())
+		resultObject_.certifyId = resultObjectNode["CertifyId"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
