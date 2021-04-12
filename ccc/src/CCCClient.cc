@@ -51,6 +51,114 @@ CCCClient::CCCClient(const std::string & accessKeyId, const std::string & access
 CCCClient::~CCCClient()
 {}
 
+CCCClient::AddNumbersToSkillGroupOutcome CCCClient::addNumbersToSkillGroup(const AddNumbersToSkillGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddNumbersToSkillGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddNumbersToSkillGroupOutcome(AddNumbersToSkillGroupResult(outcome.result()));
+	else
+		return AddNumbersToSkillGroupOutcome(outcome.error());
+}
+
+void CCCClient::addNumbersToSkillGroupAsync(const AddNumbersToSkillGroupRequest& request, const AddNumbersToSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addNumbersToSkillGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::AddNumbersToSkillGroupOutcomeCallable CCCClient::addNumbersToSkillGroupCallable(const AddNumbersToSkillGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddNumbersToSkillGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->addNumbersToSkillGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::AddPhoneNumberToSkillGroupsOutcome CCCClient::addPhoneNumberToSkillGroups(const AddPhoneNumberToSkillGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddPhoneNumberToSkillGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddPhoneNumberToSkillGroupsOutcome(AddPhoneNumberToSkillGroupsResult(outcome.result()));
+	else
+		return AddPhoneNumberToSkillGroupsOutcome(outcome.error());
+}
+
+void CCCClient::addPhoneNumberToSkillGroupsAsync(const AddPhoneNumberToSkillGroupsRequest& request, const AddPhoneNumberToSkillGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addPhoneNumberToSkillGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::AddPhoneNumberToSkillGroupsOutcomeCallable CCCClient::addPhoneNumberToSkillGroupsCallable(const AddPhoneNumberToSkillGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddPhoneNumberToSkillGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->addPhoneNumberToSkillGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::AddSkillGroupsToUserOutcome CCCClient::addSkillGroupsToUser(const AddSkillGroupsToUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddSkillGroupsToUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddSkillGroupsToUserOutcome(AddSkillGroupsToUserResult(outcome.result()));
+	else
+		return AddSkillGroupsToUserOutcome(outcome.error());
+}
+
+void CCCClient::addSkillGroupsToUserAsync(const AddSkillGroupsToUserRequest& request, const AddSkillGroupsToUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addSkillGroupsToUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::AddSkillGroupsToUserOutcomeCallable CCCClient::addSkillGroupsToUserCallable(const AddSkillGroupsToUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddSkillGroupsToUserOutcome()>>(
+			[this, request]()
+			{
+			return this->addSkillGroupsToUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::AnswerCallOutcome CCCClient::answerCall(const AnswerCallRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +369,114 @@ CCCClient::CompleteAttendedTransferOutcomeCallable CCCClient::completeAttendedTr
 			[this, request]()
 			{
 			return this->completeAttendedTransfer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::CreateSkillGroupOutcome CCCClient::createSkillGroup(const CreateSkillGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSkillGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSkillGroupOutcome(CreateSkillGroupResult(outcome.result()));
+	else
+		return CreateSkillGroupOutcome(outcome.error());
+}
+
+void CCCClient::createSkillGroupAsync(const CreateSkillGroupRequest& request, const CreateSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSkillGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::CreateSkillGroupOutcomeCallable CCCClient::createSkillGroupCallable(const CreateSkillGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSkillGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createSkillGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::CreateUserOutcome CCCClient::createUser(const CreateUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUserOutcome(CreateUserResult(outcome.result()));
+	else
+		return CreateUserOutcome(outcome.error());
+}
+
+void CCCClient::createUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::CreateUserOutcomeCallable CCCClient::createUserCallable(const CreateUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
+			[this, request]()
+			{
+			return this->createUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::DeleteSkillGroupOutcome CCCClient::deleteSkillGroup(const DeleteSkillGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSkillGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSkillGroupOutcome(DeleteSkillGroupResult(outcome.result()));
+	else
+		return DeleteSkillGroupOutcome(outcome.error());
+}
+
+void CCCClient::deleteSkillGroupAsync(const DeleteSkillGroupRequest& request, const DeleteSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSkillGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::DeleteSkillGroupOutcomeCallable CCCClient::deleteSkillGroupCallable(const DeleteSkillGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSkillGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSkillGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,6 +987,42 @@ CCCClient::ListConfigItemsOutcomeCallable CCCClient::listConfigItemsCallable(con
 	return task->get_future();
 }
 
+CCCClient::ListContactFlowsOutcome CCCClient::listContactFlows(const ListContactFlowsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListContactFlowsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListContactFlowsOutcome(ListContactFlowsResult(outcome.result()));
+	else
+		return ListContactFlowsOutcome(outcome.error());
+}
+
+void CCCClient::listContactFlowsAsync(const ListContactFlowsRequest& request, const ListContactFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listContactFlows(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListContactFlowsOutcomeCallable CCCClient::listContactFlowsCallable(const ListContactFlowsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListContactFlowsOutcome()>>(
+			[this, request]()
+			{
+			return this->listContactFlows(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListDevicesOutcome CCCClient::listDevices(const ListDevicesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,6 +1089,42 @@ CCCClient::ListHistoricalAgentReportOutcomeCallable CCCClient::listHistoricalAge
 			[this, request]()
 			{
 			return this->listHistoricalAgentReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListInstancesOfUserOutcome CCCClient::listInstancesOfUser(const ListInstancesOfUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstancesOfUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstancesOfUserOutcome(ListInstancesOfUserResult(outcome.result()));
+	else
+		return ListInstancesOfUserOutcome(outcome.error());
+}
+
+void CCCClient::listInstancesOfUserAsync(const ListInstancesOfUserRequest& request, const ListInstancesOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstancesOfUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListInstancesOfUserOutcomeCallable CCCClient::listInstancesOfUserCallable(const ListInstancesOfUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstancesOfUserOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstancesOfUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1311,42 @@ CCCClient::ListSkillLevelsOfUserOutcomeCallable CCCClient::listSkillLevelsOfUser
 	return task->get_future();
 }
 
+CCCClient::ListUserLevelsOfSkillGroupOutcome CCCClient::listUserLevelsOfSkillGroup(const ListUserLevelsOfSkillGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserLevelsOfSkillGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserLevelsOfSkillGroupOutcome(ListUserLevelsOfSkillGroupResult(outcome.result()));
+	else
+		return ListUserLevelsOfSkillGroupOutcome(outcome.error());
+}
+
+void CCCClient::listUserLevelsOfSkillGroupAsync(const ListUserLevelsOfSkillGroupRequest& request, const ListUserLevelsOfSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserLevelsOfSkillGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListUserLevelsOfSkillGroupOutcomeCallable CCCClient::listUserLevelsOfSkillGroupCallable(const ListUserLevelsOfSkillGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserLevelsOfSkillGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserLevelsOfSkillGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::MakeCallOutcome CCCClient::makeCall(const MakeCallRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1377,150 @@ CCCClient::MakeCallOutcomeCallable CCCClient::makeCallCallable(const MakeCallReq
 			[this, request]()
 			{
 			return this->makeCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ModifyPhoneNumberOutcome CCCClient::modifyPhoneNumber(const ModifyPhoneNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPhoneNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPhoneNumberOutcome(ModifyPhoneNumberResult(outcome.result()));
+	else
+		return ModifyPhoneNumberOutcome(outcome.error());
+}
+
+void CCCClient::modifyPhoneNumberAsync(const ModifyPhoneNumberRequest& request, const ModifyPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPhoneNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ModifyPhoneNumberOutcomeCallable CCCClient::modifyPhoneNumberCallable(const ModifyPhoneNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPhoneNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPhoneNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ModifySkillGroupOutcome CCCClient::modifySkillGroup(const ModifySkillGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySkillGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySkillGroupOutcome(ModifySkillGroupResult(outcome.result()));
+	else
+		return ModifySkillGroupOutcome(outcome.error());
+}
+
+void CCCClient::modifySkillGroupAsync(const ModifySkillGroupRequest& request, const ModifySkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySkillGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ModifySkillGroupOutcomeCallable CCCClient::modifySkillGroupCallable(const ModifySkillGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySkillGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySkillGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ModifyUserOutcome CCCClient::modifyUser(const ModifyUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyUserOutcome(ModifyUserResult(outcome.result()));
+	else
+		return ModifyUserOutcome(outcome.error());
+}
+
+void CCCClient::modifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ModifyUserOutcomeCallable CCCClient::modifyUserCallable(const ModifyUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyUserOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ModifyUserLevelsOfSkillGroupOutcome CCCClient::modifyUserLevelsOfSkillGroup(const ModifyUserLevelsOfSkillGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyUserLevelsOfSkillGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyUserLevelsOfSkillGroupOutcome(ModifyUserLevelsOfSkillGroupResult(outcome.result()));
+	else
+		return ModifyUserLevelsOfSkillGroupOutcome(outcome.error());
+}
+
+void CCCClient::modifyUserLevelsOfSkillGroupAsync(const ModifyUserLevelsOfSkillGroupRequest& request, const ModifyUserLevelsOfSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyUserLevelsOfSkillGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ModifyUserLevelsOfSkillGroupOutcomeCallable CCCClient::modifyUserLevelsOfSkillGroupCallable(const ModifyUserLevelsOfSkillGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyUserLevelsOfSkillGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyUserLevelsOfSkillGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,6 +1779,42 @@ CCCClient::ReleaseCallOutcomeCallable CCCClient::releaseCallCallable(const Relea
 	return task->get_future();
 }
 
+CCCClient::RemovePhoneNumbersFromSkillGroupOutcome CCCClient::removePhoneNumbersFromSkillGroup(const RemovePhoneNumbersFromSkillGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemovePhoneNumbersFromSkillGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemovePhoneNumbersFromSkillGroupOutcome(RemovePhoneNumbersFromSkillGroupResult(outcome.result()));
+	else
+		return RemovePhoneNumbersFromSkillGroupOutcome(outcome.error());
+}
+
+void CCCClient::removePhoneNumbersFromSkillGroupAsync(const RemovePhoneNumbersFromSkillGroupRequest& request, const RemovePhoneNumbersFromSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removePhoneNumbersFromSkillGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::RemovePhoneNumbersFromSkillGroupOutcomeCallable CCCClient::removePhoneNumbersFromSkillGroupCallable(const RemovePhoneNumbersFromSkillGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemovePhoneNumbersFromSkillGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->removePhoneNumbersFromSkillGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ResetAgentStateOutcome CCCClient::resetAgentState(const ResetAgentStateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1989,42 @@ CCCClient::SignOutGroupOutcomeCallable CCCClient::signOutGroupCallable(const Sig
 			[this, request]()
 			{
 			return this->signOutGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::StartBack2BackCallOutcome CCCClient::startBack2BackCall(const StartBack2BackCallRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartBack2BackCallOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartBack2BackCallOutcome(StartBack2BackCallResult(outcome.result()));
+	else
+		return StartBack2BackCallOutcome(outcome.error());
+}
+
+void CCCClient::startBack2BackCallAsync(const StartBack2BackCallRequest& request, const StartBack2BackCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startBack2BackCall(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::StartBack2BackCallOutcomeCallable CCCClient::startBack2BackCallCallable(const StartBack2BackCallRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartBack2BackCallOutcome()>>(
+			[this, request]()
+			{
+			return this->startBack2BackCall(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

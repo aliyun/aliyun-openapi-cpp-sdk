@@ -1,3 +1,6 @@
+2021-04-12 Version: 1.36.676
+- Export config api.
+
 2021-04-12 Version: 1.36.675
 - Support GetDBTopology API.
 

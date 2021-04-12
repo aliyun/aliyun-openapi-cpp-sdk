@@ -22,6 +22,12 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "CCCExport.h"
+#include "model/AddNumbersToSkillGroupRequest.h"
+#include "model/AddNumbersToSkillGroupResult.h"
+#include "model/AddPhoneNumberToSkillGroupsRequest.h"
+#include "model/AddPhoneNumberToSkillGroupsResult.h"
+#include "model/AddSkillGroupsToUserRequest.h"
+#include "model/AddSkillGroupsToUserResult.h"
 #include "model/AnswerCallRequest.h"
 #include "model/AnswerCallResult.h"
 #include "model/BargeInCallRequest.h"
@@ -34,6 +40,12 @@
 #include "model/ChangeWorkModeResult.h"
 #include "model/CompleteAttendedTransferRequest.h"
 #include "model/CompleteAttendedTransferResult.h"
+#include "model/CreateSkillGroupRequest.h"
+#include "model/CreateSkillGroupResult.h"
+#include "model/CreateUserRequest.h"
+#include "model/CreateUserResult.h"
+#include "model/DeleteSkillGroupRequest.h"
+#include "model/DeleteSkillGroupResult.h"
 #include "model/GetLoginDetailsRequest.h"
 #include "model/GetLoginDetailsResult.h"
 #include "model/GetMonoRecordingRequest.h"
@@ -62,10 +74,14 @@
 #include "model/ListCallDetailRecordsResult.h"
 #include "model/ListConfigItemsRequest.h"
 #include "model/ListConfigItemsResult.h"
+#include "model/ListContactFlowsRequest.h"
+#include "model/ListContactFlowsResult.h"
 #include "model/ListDevicesRequest.h"
 #include "model/ListDevicesResult.h"
 #include "model/ListHistoricalAgentReportRequest.h"
 #include "model/ListHistoricalAgentReportResult.h"
+#include "model/ListInstancesOfUserRequest.h"
+#include "model/ListInstancesOfUserResult.h"
 #include "model/ListOutboundNumbersOfUserRequest.h"
 #include "model/ListOutboundNumbersOfUserResult.h"
 #include "model/ListPrivilegesOfUserRequest.h"
@@ -76,8 +92,18 @@
 #include "model/ListRecentCallDetailRecordsResult.h"
 #include "model/ListSkillLevelsOfUserRequest.h"
 #include "model/ListSkillLevelsOfUserResult.h"
+#include "model/ListUserLevelsOfSkillGroupRequest.h"
+#include "model/ListUserLevelsOfSkillGroupResult.h"
 #include "model/MakeCallRequest.h"
 #include "model/MakeCallResult.h"
+#include "model/ModifyPhoneNumberRequest.h"
+#include "model/ModifyPhoneNumberResult.h"
+#include "model/ModifySkillGroupRequest.h"
+#include "model/ModifySkillGroupResult.h"
+#include "model/ModifyUserRequest.h"
+#include "model/ModifyUserResult.h"
+#include "model/ModifyUserLevelsOfSkillGroupRequest.h"
+#include "model/ModifyUserLevelsOfSkillGroupResult.h"
 #include "model/MonitorCallRequest.h"
 #include "model/MonitorCallResult.h"
 #include "model/MuteCallRequest.h"
@@ -92,6 +118,8 @@
 #include "model/RegisterDeviceResult.h"
 #include "model/ReleaseCallRequest.h"
 #include "model/ReleaseCallResult.h"
+#include "model/RemovePhoneNumbersFromSkillGroupRequest.h"
+#include "model/RemovePhoneNumbersFromSkillGroupResult.h"
 #include "model/ResetAgentStateRequest.h"
 #include "model/ResetAgentStateResult.h"
 #include "model/RetrieveCallRequest.h"
@@ -102,6 +130,8 @@
 #include "model/SignInGroupResult.h"
 #include "model/SignOutGroupRequest.h"
 #include "model/SignOutGroupResult.h"
+#include "model/StartBack2BackCallRequest.h"
+#include "model/StartBack2BackCallResult.h"
 #include "model/TakeBreakRequest.h"
 #include "model/TakeBreakResult.h"
 #include "model/UnmuteCallRequest.h"
@@ -115,6 +145,15 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CCC_EXPORT CCCClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddNumbersToSkillGroupResult> AddNumbersToSkillGroupOutcome;
+			typedef std::future<AddNumbersToSkillGroupOutcome> AddNumbersToSkillGroupOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::AddNumbersToSkillGroupRequest&, const AddNumbersToSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddNumbersToSkillGroupAsyncHandler;
+			typedef Outcome<Error, Model::AddPhoneNumberToSkillGroupsResult> AddPhoneNumberToSkillGroupsOutcome;
+			typedef std::future<AddPhoneNumberToSkillGroupsOutcome> AddPhoneNumberToSkillGroupsOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::AddPhoneNumberToSkillGroupsRequest&, const AddPhoneNumberToSkillGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddPhoneNumberToSkillGroupsAsyncHandler;
+			typedef Outcome<Error, Model::AddSkillGroupsToUserResult> AddSkillGroupsToUserOutcome;
+			typedef std::future<AddSkillGroupsToUserOutcome> AddSkillGroupsToUserOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::AddSkillGroupsToUserRequest&, const AddSkillGroupsToUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSkillGroupsToUserAsyncHandler;
 			typedef Outcome<Error, Model::AnswerCallResult> AnswerCallOutcome;
 			typedef std::future<AnswerCallOutcome> AnswerCallOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::AnswerCallRequest&, const AnswerCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AnswerCallAsyncHandler;
@@ -133,6 +172,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CompleteAttendedTransferResult> CompleteAttendedTransferOutcome;
 			typedef std::future<CompleteAttendedTransferOutcome> CompleteAttendedTransferOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CompleteAttendedTransferRequest&, const CompleteAttendedTransferOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompleteAttendedTransferAsyncHandler;
+			typedef Outcome<Error, Model::CreateSkillGroupResult> CreateSkillGroupOutcome;
+			typedef std::future<CreateSkillGroupOutcome> CreateSkillGroupOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::CreateSkillGroupRequest&, const CreateSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSkillGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateUserResult> CreateUserOutcome;
+			typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::CreateUserRequest&, const CreateUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSkillGroupResult> DeleteSkillGroupOutcome;
+			typedef std::future<DeleteSkillGroupOutcome> DeleteSkillGroupOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::DeleteSkillGroupRequest&, const DeleteSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSkillGroupAsyncHandler;
 			typedef Outcome<Error, Model::GetLoginDetailsResult> GetLoginDetailsOutcome;
 			typedef std::future<GetLoginDetailsOutcome> GetLoginDetailsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetLoginDetailsRequest&, const GetLoginDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLoginDetailsAsyncHandler;
@@ -175,12 +223,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListConfigItemsResult> ListConfigItemsOutcome;
 			typedef std::future<ListConfigItemsOutcome> ListConfigItemsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListConfigItemsRequest&, const ListConfigItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigItemsAsyncHandler;
+			typedef Outcome<Error, Model::ListContactFlowsResult> ListContactFlowsOutcome;
+			typedef std::future<ListContactFlowsOutcome> ListContactFlowsOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListContactFlowsRequest&, const ListContactFlowsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListContactFlowsAsyncHandler;
 			typedef Outcome<Error, Model::ListDevicesResult> ListDevicesOutcome;
 			typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListDevicesRequest&, const ListDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesAsyncHandler;
 			typedef Outcome<Error, Model::ListHistoricalAgentReportResult> ListHistoricalAgentReportOutcome;
 			typedef std::future<ListHistoricalAgentReportOutcome> ListHistoricalAgentReportOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListHistoricalAgentReportRequest&, const ListHistoricalAgentReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListHistoricalAgentReportAsyncHandler;
+			typedef Outcome<Error, Model::ListInstancesOfUserResult> ListInstancesOfUserOutcome;
+			typedef std::future<ListInstancesOfUserOutcome> ListInstancesOfUserOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListInstancesOfUserRequest&, const ListInstancesOfUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesOfUserAsyncHandler;
 			typedef Outcome<Error, Model::ListOutboundNumbersOfUserResult> ListOutboundNumbersOfUserOutcome;
 			typedef std::future<ListOutboundNumbersOfUserOutcome> ListOutboundNumbersOfUserOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListOutboundNumbersOfUserRequest&, const ListOutboundNumbersOfUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOutboundNumbersOfUserAsyncHandler;
@@ -196,9 +250,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSkillLevelsOfUserResult> ListSkillLevelsOfUserOutcome;
 			typedef std::future<ListSkillLevelsOfUserOutcome> ListSkillLevelsOfUserOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListSkillLevelsOfUserRequest&, const ListSkillLevelsOfUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSkillLevelsOfUserAsyncHandler;
+			typedef Outcome<Error, Model::ListUserLevelsOfSkillGroupResult> ListUserLevelsOfSkillGroupOutcome;
+			typedef std::future<ListUserLevelsOfSkillGroupOutcome> ListUserLevelsOfSkillGroupOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListUserLevelsOfSkillGroupRequest&, const ListUserLevelsOfSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserLevelsOfSkillGroupAsyncHandler;
 			typedef Outcome<Error, Model::MakeCallResult> MakeCallOutcome;
 			typedef std::future<MakeCallOutcome> MakeCallOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::MakeCallRequest&, const MakeCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MakeCallAsyncHandler;
+			typedef Outcome<Error, Model::ModifyPhoneNumberResult> ModifyPhoneNumberOutcome;
+			typedef std::future<ModifyPhoneNumberOutcome> ModifyPhoneNumberOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ModifyPhoneNumberRequest&, const ModifyPhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhoneNumberAsyncHandler;
+			typedef Outcome<Error, Model::ModifySkillGroupResult> ModifySkillGroupOutcome;
+			typedef std::future<ModifySkillGroupOutcome> ModifySkillGroupOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ModifySkillGroupRequest&, const ModifySkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySkillGroupAsyncHandler;
+			typedef Outcome<Error, Model::ModifyUserResult> ModifyUserOutcome;
+			typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ModifyUserRequest&, const ModifyUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
+			typedef Outcome<Error, Model::ModifyUserLevelsOfSkillGroupResult> ModifyUserLevelsOfSkillGroupOutcome;
+			typedef std::future<ModifyUserLevelsOfSkillGroupOutcome> ModifyUserLevelsOfSkillGroupOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ModifyUserLevelsOfSkillGroupRequest&, const ModifyUserLevelsOfSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserLevelsOfSkillGroupAsyncHandler;
 			typedef Outcome<Error, Model::MonitorCallResult> MonitorCallOutcome;
 			typedef std::future<MonitorCallOutcome> MonitorCallOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::MonitorCallRequest&, const MonitorCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MonitorCallAsyncHandler;
@@ -220,6 +289,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ReleaseCallResult> ReleaseCallOutcome;
 			typedef std::future<ReleaseCallOutcome> ReleaseCallOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ReleaseCallRequest&, const ReleaseCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseCallAsyncHandler;
+			typedef Outcome<Error, Model::RemovePhoneNumbersFromSkillGroupResult> RemovePhoneNumbersFromSkillGroupOutcome;
+			typedef std::future<RemovePhoneNumbersFromSkillGroupOutcome> RemovePhoneNumbersFromSkillGroupOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::RemovePhoneNumbersFromSkillGroupRequest&, const RemovePhoneNumbersFromSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemovePhoneNumbersFromSkillGroupAsyncHandler;
 			typedef Outcome<Error, Model::ResetAgentStateResult> ResetAgentStateOutcome;
 			typedef std::future<ResetAgentStateOutcome> ResetAgentStateOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ResetAgentStateRequest&, const ResetAgentStateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAgentStateAsyncHandler;
@@ -235,6 +307,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SignOutGroupResult> SignOutGroupOutcome;
 			typedef std::future<SignOutGroupOutcome> SignOutGroupOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::SignOutGroupRequest&, const SignOutGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SignOutGroupAsyncHandler;
+			typedef Outcome<Error, Model::StartBack2BackCallResult> StartBack2BackCallOutcome;
+			typedef std::future<StartBack2BackCallOutcome> StartBack2BackCallOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::StartBack2BackCallRequest&, const StartBack2BackCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartBack2BackCallAsyncHandler;
 			typedef Outcome<Error, Model::TakeBreakResult> TakeBreakOutcome;
 			typedef std::future<TakeBreakOutcome> TakeBreakOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::TakeBreakRequest&, const TakeBreakOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TakeBreakAsyncHandler;
@@ -246,6 +321,15 @@ namespace AlibabaCloud
 			CCCClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CCCClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CCCClient();
+			AddNumbersToSkillGroupOutcome addNumbersToSkillGroup(const Model::AddNumbersToSkillGroupRequest &request)const;
+			void addNumbersToSkillGroupAsync(const Model::AddNumbersToSkillGroupRequest& request, const AddNumbersToSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddNumbersToSkillGroupOutcomeCallable addNumbersToSkillGroupCallable(const Model::AddNumbersToSkillGroupRequest& request) const;
+			AddPhoneNumberToSkillGroupsOutcome addPhoneNumberToSkillGroups(const Model::AddPhoneNumberToSkillGroupsRequest &request)const;
+			void addPhoneNumberToSkillGroupsAsync(const Model::AddPhoneNumberToSkillGroupsRequest& request, const AddPhoneNumberToSkillGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddPhoneNumberToSkillGroupsOutcomeCallable addPhoneNumberToSkillGroupsCallable(const Model::AddPhoneNumberToSkillGroupsRequest& request) const;
+			AddSkillGroupsToUserOutcome addSkillGroupsToUser(const Model::AddSkillGroupsToUserRequest &request)const;
+			void addSkillGroupsToUserAsync(const Model::AddSkillGroupsToUserRequest& request, const AddSkillGroupsToUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddSkillGroupsToUserOutcomeCallable addSkillGroupsToUserCallable(const Model::AddSkillGroupsToUserRequest& request) const;
 			AnswerCallOutcome answerCall(const Model::AnswerCallRequest &request)const;
 			void answerCallAsync(const Model::AnswerCallRequest& request, const AnswerCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AnswerCallOutcomeCallable answerCallCallable(const Model::AnswerCallRequest& request) const;
@@ -264,6 +348,15 @@ namespace AlibabaCloud
 			CompleteAttendedTransferOutcome completeAttendedTransfer(const Model::CompleteAttendedTransferRequest &request)const;
 			void completeAttendedTransferAsync(const Model::CompleteAttendedTransferRequest& request, const CompleteAttendedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompleteAttendedTransferOutcomeCallable completeAttendedTransferCallable(const Model::CompleteAttendedTransferRequest& request) const;
+			CreateSkillGroupOutcome createSkillGroup(const Model::CreateSkillGroupRequest &request)const;
+			void createSkillGroupAsync(const Model::CreateSkillGroupRequest& request, const CreateSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSkillGroupOutcomeCallable createSkillGroupCallable(const Model::CreateSkillGroupRequest& request) const;
+			CreateUserOutcome createUser(const Model::CreateUserRequest &request)const;
+			void createUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateUserOutcomeCallable createUserCallable(const Model::CreateUserRequest& request) const;
+			DeleteSkillGroupOutcome deleteSkillGroup(const Model::DeleteSkillGroupRequest &request)const;
+			void deleteSkillGroupAsync(const Model::DeleteSkillGroupRequest& request, const DeleteSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSkillGroupOutcomeCallable deleteSkillGroupCallable(const Model::DeleteSkillGroupRequest& request) const;
 			GetLoginDetailsOutcome getLoginDetails(const Model::GetLoginDetailsRequest &request)const;
 			void getLoginDetailsAsync(const Model::GetLoginDetailsRequest& request, const GetLoginDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLoginDetailsOutcomeCallable getLoginDetailsCallable(const Model::GetLoginDetailsRequest& request) const;
@@ -306,12 +399,18 @@ namespace AlibabaCloud
 			ListConfigItemsOutcome listConfigItems(const Model::ListConfigItemsRequest &request)const;
 			void listConfigItemsAsync(const Model::ListConfigItemsRequest& request, const ListConfigItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConfigItemsOutcomeCallable listConfigItemsCallable(const Model::ListConfigItemsRequest& request) const;
+			ListContactFlowsOutcome listContactFlows(const Model::ListContactFlowsRequest &request)const;
+			void listContactFlowsAsync(const Model::ListContactFlowsRequest& request, const ListContactFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListContactFlowsOutcomeCallable listContactFlowsCallable(const Model::ListContactFlowsRequest& request) const;
 			ListDevicesOutcome listDevices(const Model::ListDevicesRequest &request)const;
 			void listDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevicesOutcomeCallable listDevicesCallable(const Model::ListDevicesRequest& request) const;
 			ListHistoricalAgentReportOutcome listHistoricalAgentReport(const Model::ListHistoricalAgentReportRequest &request)const;
 			void listHistoricalAgentReportAsync(const Model::ListHistoricalAgentReportRequest& request, const ListHistoricalAgentReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListHistoricalAgentReportOutcomeCallable listHistoricalAgentReportCallable(const Model::ListHistoricalAgentReportRequest& request) const;
+			ListInstancesOfUserOutcome listInstancesOfUser(const Model::ListInstancesOfUserRequest &request)const;
+			void listInstancesOfUserAsync(const Model::ListInstancesOfUserRequest& request, const ListInstancesOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListInstancesOfUserOutcomeCallable listInstancesOfUserCallable(const Model::ListInstancesOfUserRequest& request) const;
 			ListOutboundNumbersOfUserOutcome listOutboundNumbersOfUser(const Model::ListOutboundNumbersOfUserRequest &request)const;
 			void listOutboundNumbersOfUserAsync(const Model::ListOutboundNumbersOfUserRequest& request, const ListOutboundNumbersOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOutboundNumbersOfUserOutcomeCallable listOutboundNumbersOfUserCallable(const Model::ListOutboundNumbersOfUserRequest& request) const;
@@ -327,9 +426,24 @@ namespace AlibabaCloud
 			ListSkillLevelsOfUserOutcome listSkillLevelsOfUser(const Model::ListSkillLevelsOfUserRequest &request)const;
 			void listSkillLevelsOfUserAsync(const Model::ListSkillLevelsOfUserRequest& request, const ListSkillLevelsOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSkillLevelsOfUserOutcomeCallable listSkillLevelsOfUserCallable(const Model::ListSkillLevelsOfUserRequest& request) const;
+			ListUserLevelsOfSkillGroupOutcome listUserLevelsOfSkillGroup(const Model::ListUserLevelsOfSkillGroupRequest &request)const;
+			void listUserLevelsOfSkillGroupAsync(const Model::ListUserLevelsOfSkillGroupRequest& request, const ListUserLevelsOfSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserLevelsOfSkillGroupOutcomeCallable listUserLevelsOfSkillGroupCallable(const Model::ListUserLevelsOfSkillGroupRequest& request) const;
 			MakeCallOutcome makeCall(const Model::MakeCallRequest &request)const;
 			void makeCallAsync(const Model::MakeCallRequest& request, const MakeCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MakeCallOutcomeCallable makeCallCallable(const Model::MakeCallRequest& request) const;
+			ModifyPhoneNumberOutcome modifyPhoneNumber(const Model::ModifyPhoneNumberRequest &request)const;
+			void modifyPhoneNumberAsync(const Model::ModifyPhoneNumberRequest& request, const ModifyPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyPhoneNumberOutcomeCallable modifyPhoneNumberCallable(const Model::ModifyPhoneNumberRequest& request) const;
+			ModifySkillGroupOutcome modifySkillGroup(const Model::ModifySkillGroupRequest &request)const;
+			void modifySkillGroupAsync(const Model::ModifySkillGroupRequest& request, const ModifySkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifySkillGroupOutcomeCallable modifySkillGroupCallable(const Model::ModifySkillGroupRequest& request) const;
+			ModifyUserOutcome modifyUser(const Model::ModifyUserRequest &request)const;
+			void modifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyUserOutcomeCallable modifyUserCallable(const Model::ModifyUserRequest& request) const;
+			ModifyUserLevelsOfSkillGroupOutcome modifyUserLevelsOfSkillGroup(const Model::ModifyUserLevelsOfSkillGroupRequest &request)const;
+			void modifyUserLevelsOfSkillGroupAsync(const Model::ModifyUserLevelsOfSkillGroupRequest& request, const ModifyUserLevelsOfSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyUserLevelsOfSkillGroupOutcomeCallable modifyUserLevelsOfSkillGroupCallable(const Model::ModifyUserLevelsOfSkillGroupRequest& request) const;
 			MonitorCallOutcome monitorCall(const Model::MonitorCallRequest &request)const;
 			void monitorCallAsync(const Model::MonitorCallRequest& request, const MonitorCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MonitorCallOutcomeCallable monitorCallCallable(const Model::MonitorCallRequest& request) const;
@@ -351,6 +465,9 @@ namespace AlibabaCloud
 			ReleaseCallOutcome releaseCall(const Model::ReleaseCallRequest &request)const;
 			void releaseCallAsync(const Model::ReleaseCallRequest& request, const ReleaseCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseCallOutcomeCallable releaseCallCallable(const Model::ReleaseCallRequest& request) const;
+			RemovePhoneNumbersFromSkillGroupOutcome removePhoneNumbersFromSkillGroup(const Model::RemovePhoneNumbersFromSkillGroupRequest &request)const;
+			void removePhoneNumbersFromSkillGroupAsync(const Model::RemovePhoneNumbersFromSkillGroupRequest& request, const RemovePhoneNumbersFromSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemovePhoneNumbersFromSkillGroupOutcomeCallable removePhoneNumbersFromSkillGroupCallable(const Model::RemovePhoneNumbersFromSkillGroupRequest& request) const;
 			ResetAgentStateOutcome resetAgentState(const Model::ResetAgentStateRequest &request)const;
 			void resetAgentStateAsync(const Model::ResetAgentStateRequest& request, const ResetAgentStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAgentStateOutcomeCallable resetAgentStateCallable(const Model::ResetAgentStateRequest& request) const;
@@ -366,6 +483,9 @@ namespace AlibabaCloud
 			SignOutGroupOutcome signOutGroup(const Model::SignOutGroupRequest &request)const;
 			void signOutGroupAsync(const Model::SignOutGroupRequest& request, const SignOutGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SignOutGroupOutcomeCallable signOutGroupCallable(const Model::SignOutGroupRequest& request) const;
+			StartBack2BackCallOutcome startBack2BackCall(const Model::StartBack2BackCallRequest &request)const;
+			void startBack2BackCallAsync(const Model::StartBack2BackCallRequest& request, const StartBack2BackCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartBack2BackCallOutcomeCallable startBack2BackCallCallable(const Model::StartBack2BackCallRequest& request) const;
 			TakeBreakOutcome takeBreak(const Model::TakeBreakRequest &request)const;
 			void takeBreakAsync(const Model::TakeBreakRequest& request, const TakeBreakAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TakeBreakOutcomeCallable takeBreakCallable(const Model::TakeBreakRequest& request) const;

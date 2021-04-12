@@ -21,6 +21,12 @@ set(ccc_public_header
 	include/alibabacloud/ccc/CCCExport.h )
 
 set(ccc_public_header_model 
+	include/alibabacloud/ccc/model/AddNumbersToSkillGroupRequest.h
+	include/alibabacloud/ccc/model/AddNumbersToSkillGroupResult.h
+	include/alibabacloud/ccc/model/AddPhoneNumberToSkillGroupsRequest.h
+	include/alibabacloud/ccc/model/AddPhoneNumberToSkillGroupsResult.h
+	include/alibabacloud/ccc/model/AddSkillGroupsToUserRequest.h
+	include/alibabacloud/ccc/model/AddSkillGroupsToUserResult.h
 	include/alibabacloud/ccc/model/AnswerCallRequest.h
 	include/alibabacloud/ccc/model/AnswerCallResult.h
 	include/alibabacloud/ccc/model/BargeInCallRequest.h
@@ -33,6 +39,12 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ChangeWorkModeResult.h
 	include/alibabacloud/ccc/model/CompleteAttendedTransferRequest.h
 	include/alibabacloud/ccc/model/CompleteAttendedTransferResult.h
+	include/alibabacloud/ccc/model/CreateSkillGroupRequest.h
+	include/alibabacloud/ccc/model/CreateSkillGroupResult.h
+	include/alibabacloud/ccc/model/CreateUserRequest.h
+	include/alibabacloud/ccc/model/CreateUserResult.h
+	include/alibabacloud/ccc/model/DeleteSkillGroupRequest.h
+	include/alibabacloud/ccc/model/DeleteSkillGroupResult.h
 	include/alibabacloud/ccc/model/GetLoginDetailsRequest.h
 	include/alibabacloud/ccc/model/GetLoginDetailsResult.h
 	include/alibabacloud/ccc/model/GetMonoRecordingRequest.h
@@ -61,10 +73,14 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListCallDetailRecordsResult.h
 	include/alibabacloud/ccc/model/ListConfigItemsRequest.h
 	include/alibabacloud/ccc/model/ListConfigItemsResult.h
+	include/alibabacloud/ccc/model/ListContactFlowsRequest.h
+	include/alibabacloud/ccc/model/ListContactFlowsResult.h
 	include/alibabacloud/ccc/model/ListDevicesRequest.h
 	include/alibabacloud/ccc/model/ListDevicesResult.h
 	include/alibabacloud/ccc/model/ListHistoricalAgentReportRequest.h
 	include/alibabacloud/ccc/model/ListHistoricalAgentReportResult.h
+	include/alibabacloud/ccc/model/ListInstancesOfUserRequest.h
+	include/alibabacloud/ccc/model/ListInstancesOfUserResult.h
 	include/alibabacloud/ccc/model/ListOutboundNumbersOfUserRequest.h
 	include/alibabacloud/ccc/model/ListOutboundNumbersOfUserResult.h
 	include/alibabacloud/ccc/model/ListPrivilegesOfUserRequest.h
@@ -75,8 +91,18 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListRecentCallDetailRecordsResult.h
 	include/alibabacloud/ccc/model/ListSkillLevelsOfUserRequest.h
 	include/alibabacloud/ccc/model/ListSkillLevelsOfUserResult.h
+	include/alibabacloud/ccc/model/ListUserLevelsOfSkillGroupRequest.h
+	include/alibabacloud/ccc/model/ListUserLevelsOfSkillGroupResult.h
 	include/alibabacloud/ccc/model/MakeCallRequest.h
 	include/alibabacloud/ccc/model/MakeCallResult.h
+	include/alibabacloud/ccc/model/ModifyPhoneNumberRequest.h
+	include/alibabacloud/ccc/model/ModifyPhoneNumberResult.h
+	include/alibabacloud/ccc/model/ModifySkillGroupRequest.h
+	include/alibabacloud/ccc/model/ModifySkillGroupResult.h
+	include/alibabacloud/ccc/model/ModifyUserRequest.h
+	include/alibabacloud/ccc/model/ModifyUserResult.h
+	include/alibabacloud/ccc/model/ModifyUserLevelsOfSkillGroupRequest.h
+	include/alibabacloud/ccc/model/ModifyUserLevelsOfSkillGroupResult.h
 	include/alibabacloud/ccc/model/MonitorCallRequest.h
 	include/alibabacloud/ccc/model/MonitorCallResult.h
 	include/alibabacloud/ccc/model/MuteCallRequest.h
@@ -91,6 +117,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/RegisterDeviceResult.h
 	include/alibabacloud/ccc/model/ReleaseCallRequest.h
 	include/alibabacloud/ccc/model/ReleaseCallResult.h
+	include/alibabacloud/ccc/model/RemovePhoneNumbersFromSkillGroupRequest.h
+	include/alibabacloud/ccc/model/RemovePhoneNumbersFromSkillGroupResult.h
 	include/alibabacloud/ccc/model/ResetAgentStateRequest.h
 	include/alibabacloud/ccc/model/ResetAgentStateResult.h
 	include/alibabacloud/ccc/model/RetrieveCallRequest.h
@@ -101,6 +129,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/SignInGroupResult.h
 	include/alibabacloud/ccc/model/SignOutGroupRequest.h
 	include/alibabacloud/ccc/model/SignOutGroupResult.h
+	include/alibabacloud/ccc/model/StartBack2BackCallRequest.h
+	include/alibabacloud/ccc/model/StartBack2BackCallResult.h
 	include/alibabacloud/ccc/model/TakeBreakRequest.h
 	include/alibabacloud/ccc/model/TakeBreakResult.h
 	include/alibabacloud/ccc/model/UnmuteCallRequest.h
@@ -108,6 +138,12 @@ set(ccc_public_header_model
 
 set(ccc_src 
 	src/CCCClient.cc
+	src/model/AddNumbersToSkillGroupRequest.cc
+	src/model/AddNumbersToSkillGroupResult.cc
+	src/model/AddPhoneNumberToSkillGroupsRequest.cc
+	src/model/AddPhoneNumberToSkillGroupsResult.cc
+	src/model/AddSkillGroupsToUserRequest.cc
+	src/model/AddSkillGroupsToUserResult.cc
 	src/model/AnswerCallRequest.cc
 	src/model/AnswerCallResult.cc
 	src/model/BargeInCallRequest.cc
@@ -120,6 +156,12 @@ set(ccc_src
 	src/model/ChangeWorkModeResult.cc
 	src/model/CompleteAttendedTransferRequest.cc
 	src/model/CompleteAttendedTransferResult.cc
+	src/model/CreateSkillGroupRequest.cc
+	src/model/CreateSkillGroupResult.cc
+	src/model/CreateUserRequest.cc
+	src/model/CreateUserResult.cc
+	src/model/DeleteSkillGroupRequest.cc
+	src/model/DeleteSkillGroupResult.cc
 	src/model/GetLoginDetailsRequest.cc
 	src/model/GetLoginDetailsResult.cc
 	src/model/GetMonoRecordingRequest.cc
@@ -148,10 +190,14 @@ set(ccc_src
 	src/model/ListCallDetailRecordsResult.cc
 	src/model/ListConfigItemsRequest.cc
 	src/model/ListConfigItemsResult.cc
+	src/model/ListContactFlowsRequest.cc
+	src/model/ListContactFlowsResult.cc
 	src/model/ListDevicesRequest.cc
 	src/model/ListDevicesResult.cc
 	src/model/ListHistoricalAgentReportRequest.cc
 	src/model/ListHistoricalAgentReportResult.cc
+	src/model/ListInstancesOfUserRequest.cc
+	src/model/ListInstancesOfUserResult.cc
 	src/model/ListOutboundNumbersOfUserRequest.cc
 	src/model/ListOutboundNumbersOfUserResult.cc
 	src/model/ListPrivilegesOfUserRequest.cc
@@ -162,8 +208,18 @@ set(ccc_src
 	src/model/ListRecentCallDetailRecordsResult.cc
 	src/model/ListSkillLevelsOfUserRequest.cc
 	src/model/ListSkillLevelsOfUserResult.cc
+	src/model/ListUserLevelsOfSkillGroupRequest.cc
+	src/model/ListUserLevelsOfSkillGroupResult.cc
 	src/model/MakeCallRequest.cc
 	src/model/MakeCallResult.cc
+	src/model/ModifyPhoneNumberRequest.cc
+	src/model/ModifyPhoneNumberResult.cc
+	src/model/ModifySkillGroupRequest.cc
+	src/model/ModifySkillGroupResult.cc
+	src/model/ModifyUserRequest.cc
+	src/model/ModifyUserResult.cc
+	src/model/ModifyUserLevelsOfSkillGroupRequest.cc
+	src/model/ModifyUserLevelsOfSkillGroupResult.cc
 	src/model/MonitorCallRequest.cc
 	src/model/MonitorCallResult.cc
 	src/model/MuteCallRequest.cc
@@ -178,6 +234,8 @@ set(ccc_src
 	src/model/RegisterDeviceResult.cc
 	src/model/ReleaseCallRequest.cc
 	src/model/ReleaseCallResult.cc
+	src/model/RemovePhoneNumbersFromSkillGroupRequest.cc
+	src/model/RemovePhoneNumbersFromSkillGroupResult.cc
 	src/model/ResetAgentStateRequest.cc
 	src/model/ResetAgentStateResult.cc
 	src/model/RetrieveCallRequest.cc
@@ -188,6 +246,8 @@ set(ccc_src
 	src/model/SignInGroupResult.cc
 	src/model/SignOutGroupRequest.cc
 	src/model/SignOutGroupResult.cc
+	src/model/StartBack2BackCallRequest.cc
+	src/model/StartBack2BackCallResult.cc
 	src/model/TakeBreakRequest.cc
 	src/model/TakeBreakResult.cc
 	src/model/UnmuteCallRequest.cc
