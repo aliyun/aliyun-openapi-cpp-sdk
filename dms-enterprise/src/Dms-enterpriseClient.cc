@@ -771,6 +771,42 @@ Dms_enterpriseClient::GetApprovalDetailOutcomeCallable Dms_enterpriseClient::get
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetDBTopologyOutcome Dms_enterpriseClient::getDBTopology(const GetDBTopologyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDBTopologyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDBTopologyOutcome(GetDBTopologyResult(outcome.result()));
+	else
+		return GetDBTopologyOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDBTopologyAsync(const GetDBTopologyRequest& request, const GetDBTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDBTopology(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDBTopologyOutcomeCallable Dms_enterpriseClient::getDBTopologyCallable(const GetDBTopologyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDBTopologyOutcome()>>(
+			[this, request]()
+			{
+			return this->getDBTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetDataCorrectBackupFilesOutcome Dms_enterpriseClient::getDataCorrectBackupFiles(const GetDataCorrectBackupFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -62,6 +62,8 @@
 #include "model/ExecuteStructSyncResult.h"
 #include "model/GetApprovalDetailRequest.h"
 #include "model/GetApprovalDetailResult.h"
+#include "model/GetDBTopologyRequest.h"
+#include "model/GetDBTopologyResult.h"
 #include "model/GetDataCorrectBackupFilesRequest.h"
 #include "model/GetDataCorrectBackupFilesResult.h"
 #include "model/GetDataCorrectOrderDetailRequest.h"
@@ -245,6 +247,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetApprovalDetailResult> GetApprovalDetailOutcome;
 			typedef std::future<GetApprovalDetailOutcome> GetApprovalDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetApprovalDetailRequest&, const GetApprovalDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApprovalDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetDBTopologyResult> GetDBTopologyOutcome;
+			typedef std::future<GetDBTopologyOutcome> GetDBTopologyOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDBTopologyRequest&, const GetDBTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDBTopologyAsyncHandler;
 			typedef Outcome<Error, Model::GetDataCorrectBackupFilesResult> GetDataCorrectBackupFilesOutcome;
 			typedef std::future<GetDataCorrectBackupFilesOutcome> GetDataCorrectBackupFilesOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataCorrectBackupFilesRequest&, const GetDataCorrectBackupFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataCorrectBackupFilesAsyncHandler;
@@ -481,6 +486,9 @@ namespace AlibabaCloud
 			GetApprovalDetailOutcome getApprovalDetail(const Model::GetApprovalDetailRequest &request)const;
 			void getApprovalDetailAsync(const Model::GetApprovalDetailRequest& request, const GetApprovalDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetApprovalDetailOutcomeCallable getApprovalDetailCallable(const Model::GetApprovalDetailRequest& request) const;
+			GetDBTopologyOutcome getDBTopology(const Model::GetDBTopologyRequest &request)const;
+			void getDBTopologyAsync(const Model::GetDBTopologyRequest& request, const GetDBTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDBTopologyOutcomeCallable getDBTopologyCallable(const Model::GetDBTopologyRequest& request) const;
 			GetDataCorrectBackupFilesOutcome getDataCorrectBackupFiles(const Model::GetDataCorrectBackupFilesRequest &request)const;
 			void getDataCorrectBackupFilesAsync(const Model::GetDataCorrectBackupFilesRequest& request, const GetDataCorrectBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataCorrectBackupFilesOutcomeCallable getDataCorrectBackupFilesCallable(const Model::GetDataCorrectBackupFilesRequest& request) const;

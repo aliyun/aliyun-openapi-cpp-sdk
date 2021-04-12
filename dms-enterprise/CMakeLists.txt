@@ -61,6 +61,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ExecuteStructSyncResult.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetDBTopologyRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDBTopologyResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectBackupFilesRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectBackupFilesResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectOrderDetailRequest.h
@@ -218,6 +220,8 @@ set(dms-enterprise_src
 	src/model/ExecuteStructSyncResult.cc
 	src/model/GetApprovalDetailRequest.cc
 	src/model/GetApprovalDetailResult.cc
+	src/model/GetDBTopologyRequest.cc
+	src/model/GetDBTopologyResult.cc
 	src/model/GetDataCorrectBackupFilesRequest.cc
 	src/model/GetDataCorrectBackupFilesResult.cc
 	src/model/GetDataCorrectOrderDetailRequest.cc
