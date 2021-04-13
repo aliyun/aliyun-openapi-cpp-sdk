@@ -123,6 +123,42 @@ VideoenhanClient::AbstractFilmVideoOutcomeCallable VideoenhanClient::abstractFil
 	return task->get_future();
 }
 
+VideoenhanClient::AddFaceVideoTemplateOutcome VideoenhanClient::addFaceVideoTemplate(const AddFaceVideoTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddFaceVideoTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddFaceVideoTemplateOutcome(AddFaceVideoTemplateResult(outcome.result()));
+	else
+		return AddFaceVideoTemplateOutcome(outcome.error());
+}
+
+void VideoenhanClient::addFaceVideoTemplateAsync(const AddFaceVideoTemplateRequest& request, const AddFaceVideoTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addFaceVideoTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::AddFaceVideoTemplateOutcomeCallable VideoenhanClient::addFaceVideoTemplateCallable(const AddFaceVideoTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddFaceVideoTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->addFaceVideoTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideoenhanClient::AdjustVideoColorOutcome VideoenhanClient::adjustVideoColor(const AdjustVideoColorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +261,42 @@ VideoenhanClient::ConvertHdrVideoOutcomeCallable VideoenhanClient::convertHdrVid
 			[this, request]()
 			{
 			return this->convertHdrVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VideoenhanClient::DeleteFaceVideoTemplateOutcome VideoenhanClient::deleteFaceVideoTemplate(const DeleteFaceVideoTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFaceVideoTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFaceVideoTemplateOutcome(DeleteFaceVideoTemplateResult(outcome.result()));
+	else
+		return DeleteFaceVideoTemplateOutcome(outcome.error());
+}
+
+void VideoenhanClient::deleteFaceVideoTemplateAsync(const DeleteFaceVideoTemplateRequest& request, const DeleteFaceVideoTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFaceVideoTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::DeleteFaceVideoTemplateOutcomeCallable VideoenhanClient::deleteFaceVideoTemplateCallable(const DeleteFaceVideoTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFaceVideoTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFaceVideoTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -477,6 +549,78 @@ VideoenhanClient::MergeVideoFaceOutcomeCallable VideoenhanClient::mergeVideoFace
 			[this, request]()
 			{
 			return this->mergeVideoFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VideoenhanClient::MergeVideoModelFaceOutcome VideoenhanClient::mergeVideoModelFace(const MergeVideoModelFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MergeVideoModelFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MergeVideoModelFaceOutcome(MergeVideoModelFaceResult(outcome.result()));
+	else
+		return MergeVideoModelFaceOutcome(outcome.error());
+}
+
+void VideoenhanClient::mergeVideoModelFaceAsync(const MergeVideoModelFaceRequest& request, const MergeVideoModelFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mergeVideoModelFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::MergeVideoModelFaceOutcomeCallable VideoenhanClient::mergeVideoModelFaceCallable(const MergeVideoModelFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MergeVideoModelFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->mergeVideoModelFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VideoenhanClient::QueryFaceVideoTemplateOutcome VideoenhanClient::queryFaceVideoTemplate(const QueryFaceVideoTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryFaceVideoTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryFaceVideoTemplateOutcome(QueryFaceVideoTemplateResult(outcome.result()));
+	else
+		return QueryFaceVideoTemplateOutcome(outcome.error());
+}
+
+void VideoenhanClient::queryFaceVideoTemplateAsync(const QueryFaceVideoTemplateRequest& request, const QueryFaceVideoTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryFaceVideoTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::QueryFaceVideoTemplateOutcomeCallable VideoenhanClient::queryFaceVideoTemplateCallable(const QueryFaceVideoTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryFaceVideoTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->queryFaceVideoTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

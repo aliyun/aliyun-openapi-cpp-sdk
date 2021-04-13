@@ -14,47 +14,53 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/videoenhan/model/GetAsyncJobResultResult.h>
+#include <alibabacloud/videoenhan/model/MergeVideoModelFaceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Videoenhan;
 using namespace AlibabaCloud::Videoenhan::Model;
 
-GetAsyncJobResultResult::GetAsyncJobResultResult() :
+MergeVideoModelFaceResult::MergeVideoModelFaceResult() :
 	ServiceResult()
 {}
 
-GetAsyncJobResultResult::GetAsyncJobResultResult(const std::string &payload) :
+MergeVideoModelFaceResult::MergeVideoModelFaceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetAsyncJobResultResult::~GetAsyncJobResultResult()
+MergeVideoModelFaceResult::~MergeVideoModelFaceResult()
 {}
 
-void GetAsyncJobResultResult::parse(const std::string &payload)
+void MergeVideoModelFaceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Status"].isNull())
-		data_.status = dataNode["Status"].asString();
-	if(!dataNode["ErrorCode"].isNull())
-		data_.errorCode = dataNode["ErrorCode"].asString();
-	if(!dataNode["ErrorMessage"].isNull())
-		data_.errorMessage = dataNode["ErrorMessage"].asString();
-	if(!dataNode["JobId"].isNull())
-		data_.jobId = dataNode["JobId"].asString();
-	if(!dataNode["Result"].isNull())
-		data_.result = dataNode["Result"].asString();
+	if(!dataNode["VideoURL"].isNull())
+		data_.videoURL = dataNode["VideoURL"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
 }
 
-GetAsyncJobResultResult::Data GetAsyncJobResultResult::getData()const
+std::string MergeVideoModelFaceResult::getMessage()const
+{
+	return message_;
+}
+
+MergeVideoModelFaceResult::Data MergeVideoModelFaceResult::getData()const
 {
 	return data_;
+}
+
+std::string MergeVideoModelFaceResult::getCode()const
+{
+	return code_;
 }
 

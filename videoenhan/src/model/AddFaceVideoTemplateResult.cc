@@ -14,47 +14,53 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/videoenhan/model/GetAsyncJobResultResult.h>
+#include <alibabacloud/videoenhan/model/AddFaceVideoTemplateResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Videoenhan;
 using namespace AlibabaCloud::Videoenhan::Model;
 
-GetAsyncJobResultResult::GetAsyncJobResultResult() :
+AddFaceVideoTemplateResult::AddFaceVideoTemplateResult() :
 	ServiceResult()
 {}
 
-GetAsyncJobResultResult::GetAsyncJobResultResult(const std::string &payload) :
+AddFaceVideoTemplateResult::AddFaceVideoTemplateResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetAsyncJobResultResult::~GetAsyncJobResultResult()
+AddFaceVideoTemplateResult::~AddFaceVideoTemplateResult()
 {}
 
-void GetAsyncJobResultResult::parse(const std::string &payload)
+void AddFaceVideoTemplateResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Status"].isNull())
-		data_.status = dataNode["Status"].asString();
-	if(!dataNode["ErrorCode"].isNull())
-		data_.errorCode = dataNode["ErrorCode"].asString();
-	if(!dataNode["ErrorMessage"].isNull())
-		data_.errorMessage = dataNode["ErrorMessage"].asString();
-	if(!dataNode["JobId"].isNull())
-		data_.jobId = dataNode["JobId"].asString();
-	if(!dataNode["Result"].isNull())
-		data_.result = dataNode["Result"].asString();
+	auto dateNode = value["Date"];
+	if(!dateNode["TemplateId"].isNull())
+		date_.templateId = dateNode["TemplateId"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
 }
 
-GetAsyncJobResultResult::Data GetAsyncJobResultResult::getData()const
+std::string AddFaceVideoTemplateResult::getMessage()const
 {
-	return data_;
+	return message_;
+}
+
+std::string AddFaceVideoTemplateResult::getCode()const
+{
+	return code_;
+}
+
+AddFaceVideoTemplateResult::Date AddFaceVideoTemplateResult::getDate()const
+{
+	return date_;
 }
 

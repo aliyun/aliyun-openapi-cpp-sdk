@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				void setAsync(bool async);
 				std::string getVideoUrl()const;
 				void setVideoUrl(const std::string& videoUrl);
-				std::string getVideoBitrate()const;
-				void setVideoBitrate(const std::string& videoBitrate);
+				long getVideoBitrate()const;
+				void setVideoBitrate(long videoBitrate);
 				std::string getVideoCodec()const;
 				void setVideoCodec(const std::string& videoCodec);
 				std::string getVideoFormat()const;
@@ -52,7 +52,7 @@ namespace AlibabaCloud
 				std::string mode_;
 				bool async_;
 				std::string videoUrl_;
-				std::string videoBitrate_;
+				long videoBitrate_;
 				std::string videoCodec_;
 				std::string videoFormat_;
 

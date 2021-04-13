@@ -25,12 +25,16 @@ set(videoenhan_public_header_model
 	include/alibabacloud/videoenhan/model/AbstractEcommerceVideoResult.h
 	include/alibabacloud/videoenhan/model/AbstractFilmVideoRequest.h
 	include/alibabacloud/videoenhan/model/AbstractFilmVideoResult.h
+	include/alibabacloud/videoenhan/model/AddFaceVideoTemplateRequest.h
+	include/alibabacloud/videoenhan/model/AddFaceVideoTemplateResult.h
 	include/alibabacloud/videoenhan/model/AdjustVideoColorRequest.h
 	include/alibabacloud/videoenhan/model/AdjustVideoColorResult.h
 	include/alibabacloud/videoenhan/model/ChangeVideoSizeRequest.h
 	include/alibabacloud/videoenhan/model/ChangeVideoSizeResult.h
 	include/alibabacloud/videoenhan/model/ConvertHdrVideoRequest.h
 	include/alibabacloud/videoenhan/model/ConvertHdrVideoResult.h
+	include/alibabacloud/videoenhan/model/DeleteFaceVideoTemplateRequest.h
+	include/alibabacloud/videoenhan/model/DeleteFaceVideoTemplateResult.h
 	include/alibabacloud/videoenhan/model/EnhanceVideoQualityRequest.h
 	include/alibabacloud/videoenhan/model/EnhanceVideoQualityResult.h
 	include/alibabacloud/videoenhan/model/EraseVideoLogoRequest.h
@@ -45,6 +49,10 @@ set(videoenhan_public_header_model
 	include/alibabacloud/videoenhan/model/InterpolateVideoFrameResult.h
 	include/alibabacloud/videoenhan/model/MergeVideoFaceRequest.h
 	include/alibabacloud/videoenhan/model/MergeVideoFaceResult.h
+	include/alibabacloud/videoenhan/model/MergeVideoModelFaceRequest.h
+	include/alibabacloud/videoenhan/model/MergeVideoModelFaceResult.h
+	include/alibabacloud/videoenhan/model/QueryFaceVideoTemplateRequest.h
+	include/alibabacloud/videoenhan/model/QueryFaceVideoTemplateResult.h
 	include/alibabacloud/videoenhan/model/SuperResolveVideoRequest.h
 	include/alibabacloud/videoenhan/model/SuperResolveVideoResult.h
 	include/alibabacloud/videoenhan/model/ToneSdrVideoRequest.h
@@ -56,12 +64,16 @@ set(videoenhan_src
 	src/model/AbstractEcommerceVideoResult.cc
 	src/model/AbstractFilmVideoRequest.cc
 	src/model/AbstractFilmVideoResult.cc
+	src/model/AddFaceVideoTemplateRequest.cc
+	src/model/AddFaceVideoTemplateResult.cc
 	src/model/AdjustVideoColorRequest.cc
 	src/model/AdjustVideoColorResult.cc
 	src/model/ChangeVideoSizeRequest.cc
 	src/model/ChangeVideoSizeResult.cc
 	src/model/ConvertHdrVideoRequest.cc
 	src/model/ConvertHdrVideoResult.cc
+	src/model/DeleteFaceVideoTemplateRequest.cc
+	src/model/DeleteFaceVideoTemplateResult.cc
 	src/model/EnhanceVideoQualityRequest.cc
 	src/model/EnhanceVideoQualityResult.cc
 	src/model/EraseVideoLogoRequest.cc
@@ -76,6 +88,10 @@ set(videoenhan_src
 	src/model/InterpolateVideoFrameResult.cc
 	src/model/MergeVideoFaceRequest.cc
 	src/model/MergeVideoFaceResult.cc
+	src/model/MergeVideoModelFaceRequest.cc
+	src/model/MergeVideoModelFaceResult.cc
+	src/model/QueryFaceVideoTemplateRequest.cc
+	src/model/QueryFaceVideoTemplateResult.cc
 	src/model/SuperResolveVideoRequest.cc
 	src/model/SuperResolveVideoResult.cc
 	src/model/ToneSdrVideoRequest.cc

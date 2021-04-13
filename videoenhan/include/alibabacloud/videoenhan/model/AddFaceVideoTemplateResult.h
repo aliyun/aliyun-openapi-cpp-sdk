@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
-#define ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_VIDEOENHAN_MODEL_ADDFACEVIDEOTEMPLATERESULT_H_
+#define ALIBABACLOUD_VIDEOENHAN_MODEL_ADDFACEVIDEOTEMPLATERESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/videoenhan/VideoenhanExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VIDEOENHAN_EXPORT GetAsyncJobResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VIDEOENHAN_EXPORT AddFaceVideoTemplateResult : public ServiceResult
 			{
-
 			public:
-				GetAsyncJobResultRequest();
-				~GetAsyncJobResultRequest();
+				struct Date
+				{
+					std::string templateId;
+				};
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
-				bool getAsync()const;
-				void setAsync(bool async);
 
-            private:
-				std::string jobId_;
-				bool async_;
+				AddFaceVideoTemplateResult();
+				explicit AddFaceVideoTemplateResult(const std::string &payload);
+				~AddFaceVideoTemplateResult();
+				std::string getMessage()const;
+				std::string getCode()const;
+				Date getDate()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				std::string code_;
+				Date date_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_VIDEOENHAN_MODEL_ADDFACEVIDEOTEMPLATERESULT_H_

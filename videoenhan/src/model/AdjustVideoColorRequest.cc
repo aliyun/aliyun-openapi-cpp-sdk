@@ -60,15 +60,15 @@ void AdjustVideoColorRequest::setVideoUrl(const std::string& videoUrl)
 	setBodyParameter("VideoUrl", videoUrl);
 }
 
-std::string AdjustVideoColorRequest::getVideoBitrate()const
+long AdjustVideoColorRequest::getVideoBitrate()const
 {
 	return videoBitrate_;
 }
 
-void AdjustVideoColorRequest::setVideoBitrate(const std::string& videoBitrate)
+void AdjustVideoColorRequest::setVideoBitrate(long videoBitrate)
 {
 	videoBitrate_ = videoBitrate;
-	setBodyParameter("VideoBitrate", videoBitrate);
+	setBodyParameter("VideoBitrate", std::to_string(videoBitrate));
 }
 
 std::string AdjustVideoColorRequest::getVideoCodec()const

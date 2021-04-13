@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
-#define ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_VIDEOENHAN_MODEL_MERGEVIDEOMODELFACERESULT_H_
+#define ALIBABACLOUD_VIDEOENHAN_MODEL_MERGEVIDEOMODELFACERESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/videoenhan/VideoenhanExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VIDEOENHAN_EXPORT GetAsyncJobResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VIDEOENHAN_EXPORT MergeVideoModelFaceResult : public ServiceResult
 			{
-
 			public:
-				GetAsyncJobResultRequest();
-				~GetAsyncJobResultRequest();
+				struct Data
+				{
+					std::string videoURL;
+				};
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
-				bool getAsync()const;
-				void setAsync(bool async);
 
-            private:
-				std::string jobId_;
-				bool async_;
+				MergeVideoModelFaceResult();
+				explicit MergeVideoModelFaceResult(const std::string &payload);
+				~MergeVideoModelFaceResult();
+				std::string getMessage()const;
+				Data getData()const;
+				std::string getCode()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				Data data_;
+				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_VIDEOENHAN_MODEL_MERGEVIDEOMODELFACERESULT_H_

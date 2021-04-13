@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
-#define ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_VIDEOENHAN_MODEL_ADDFACEVIDEOTEMPLATEREQUEST_H_
+#define ALIBABACLOUD_VIDEOENHAN_MODEL_ADDFACEVIDEOTEMPLATEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VIDEOENHAN_EXPORT GetAsyncJobResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VIDEOENHAN_EXPORT AddFaceVideoTemplateRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetAsyncJobResultRequest();
-				~GetAsyncJobResultRequest();
+				AddFaceVideoTemplateRequest();
+				~AddFaceVideoTemplateRequest();
 
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
+				std::string getUserId()const;
+				void setUserId(const std::string& userId);
 				bool getAsync()const;
 				void setAsync(bool async);
+				std::string getVideoURL()const;
+				void setVideoURL(const std::string& videoURL);
 
             private:
-				std::string jobId_;
+				std::string userId_;
 				bool async_;
+				std::string videoURL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VIDEOENHAN_MODEL_GETASYNCJOBRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_VIDEOENHAN_MODEL_ADDFACEVIDEOTEMPLATEREQUEST_H_

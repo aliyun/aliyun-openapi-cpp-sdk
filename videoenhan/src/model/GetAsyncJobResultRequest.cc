@@ -27,17 +27,6 @@ GetAsyncJobResultRequest::GetAsyncJobResultRequest() :
 GetAsyncJobResultRequest::~GetAsyncJobResultRequest()
 {}
 
-bool GetAsyncJobResultRequest::getAsync()const
-{
-	return async_;
-}
-
-void GetAsyncJobResultRequest::setAsync(bool async)
-{
-	async_ = async;
-	setBodyParameter("Async", async ? "true" : "false");
-}
-
 std::string GetAsyncJobResultRequest::getJobId()const
 {
 	return jobId_;
@@ -47,5 +36,16 @@ void GetAsyncJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
 	setBodyParameter("JobId", jobId);
+}
+
+bool GetAsyncJobResultRequest::getAsync()const
+{
+	return async_;
+}
+
+void GetAsyncJobResultRequest::setAsync(bool async)
+{
+	async_ = async;
+	setBodyParameter("Async", async ? "true" : "false");
 }
 
