@@ -44,13 +44,13 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 	{
 		ProgressInfo jobProgressObject;
 		if(!valueJobProgressProgressInfo["BootTime"].isNull())
-			jobProgressObject.bootTime = std::stol(valueJobProgressProgressInfo["BootTime"].asString());
+			jobProgressObject.bootTime = valueJobProgressProgressInfo["BootTime"].asString();
 		if(!valueJobProgressProgressInfo["CanSkip"].isNull())
 			jobProgressObject.canSkip = valueJobProgressProgressInfo["CanSkip"].asString() == "true";
 		if(!valueJobProgressProgressInfo["DelaySeconds"].isNull())
 			jobProgressObject.delaySeconds = std::stoi(valueJobProgressProgressInfo["DelaySeconds"].asString());
 		if(!valueJobProgressProgressInfo["FinishTime"].isNull())
-			jobProgressObject.finishTime = std::stol(valueJobProgressProgressInfo["FinishTime"].asString());
+			jobProgressObject.finishTime = valueJobProgressProgressInfo["FinishTime"].asString();
 		if(!valueJobProgressProgressInfo["IgnoreFlag"].isNull())
 			jobProgressObject.ignoreFlag = valueJobProgressProgressInfo["IgnoreFlag"].asString();
 		if(!valueJobProgressProgressInfo["Item"].isNull())

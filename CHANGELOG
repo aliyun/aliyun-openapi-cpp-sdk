@@ -1,3 +1,7 @@
+2021-04-13 Version: 1.36.678
+- Supported ConfigureDtsJob SynchronizationDirection.
+- Fixed DescribePreCheckStatus JobProgress bootTime.
+
 2021-04-13 Version: 1.36.677
 - Release AddFaceVideoTemplate DeleteFaceVideoTemplate QueryFaceVideoTemplate MergeVideoModelFace.
 

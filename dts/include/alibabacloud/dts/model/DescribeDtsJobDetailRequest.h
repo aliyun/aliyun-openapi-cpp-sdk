@@ -37,9 +37,15 @@ namespace AlibabaCloud
 
 				std::string getDtsJobId()const;
 				void setDtsJobId(const std::string& dtsJobId);
+				std::string getDtsInstanceID()const;
+				void setDtsInstanceID(const std::string& dtsInstanceID);
+				std::string getSynchronizationDirection()const;
+				void setSynchronizationDirection(const std::string& synchronizationDirection);
 
             private:
 				std::string dtsJobId_;
+				std::string dtsInstanceID_;
+				std::string synchronizationDirection_;
 
 			};
 		}

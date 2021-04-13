@@ -134,22 +134,9 @@ void DescribeDtsJobDetailResult::parse(const std::string &payload)
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["DbObject"].isNull())
 		dbObject_ = value["DbObject"].asString();
+	if(!value["SynchronizationDirection"].isNull())
+		synchronizationDirection_ = value["SynchronizationDirection"].asString();
 
-}
-
-std::string DescribeDtsJobDetailResult::getStatus()const
-{
-	return status_;
-}
-
-std::string DescribeDtsJobDetailResult::getDbObject()const
-{
-	return dbObject_;
-}
-
-std::string DescribeDtsJobDetailResult::getCreateTime()const
-{
-	return createTime_;
 }
 
 std::string DescribeDtsJobDetailResult::getDtsJobName()const
@@ -160,21 +147,6 @@ std::string DescribeDtsJobDetailResult::getDtsJobName()const
 std::string DescribeDtsJobDetailResult::getDynamicMessage()const
 {
 	return dynamicMessage_;
-}
-
-std::string DescribeDtsJobDetailResult::getPayType()const
-{
-	return payType_;
-}
-
-std::string DescribeDtsJobDetailResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-int DescribeDtsJobDetailResult::getCode()const
-{
-	return code_;
 }
 
 std::string DescribeDtsJobDetailResult::getDtsInstanceID()const
@@ -197,19 +169,9 @@ int DescribeDtsJobDetailResult::getDelay()const
 	return delay_;
 }
 
-std::string DescribeDtsJobDetailResult::getErrCode()const
-{
-	return errCode_;
-}
-
 std::string DescribeDtsJobDetailResult::getDtsJobClass()const
 {
 	return dtsJobClass_;
-}
-
-int DescribeDtsJobDetailResult::getCheckpoint()const
-{
-	return checkpoint_;
 }
 
 std::string DescribeDtsJobDetailResult::getDtsJobId()const
@@ -217,14 +179,59 @@ std::string DescribeDtsJobDetailResult::getDtsJobId()const
 	return dtsJobId_;
 }
 
-std::string DescribeDtsJobDetailResult::getDtsJobDirection()const
-{
-	return dtsJobDirection_;
-}
-
 std::string DescribeDtsJobDetailResult::getFinishTime()const
 {
 	return finishTime_;
+}
+
+int DescribeDtsJobDetailResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
+}
+
+std::string DescribeDtsJobDetailResult::getStatus()const
+{
+	return status_;
+}
+
+std::string DescribeDtsJobDetailResult::getDbObject()const
+{
+	return dbObject_;
+}
+
+std::string DescribeDtsJobDetailResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string DescribeDtsJobDetailResult::getPayType()const
+{
+	return payType_;
+}
+
+std::string DescribeDtsJobDetailResult::getErrMessage()const
+{
+	return errMessage_;
+}
+
+int DescribeDtsJobDetailResult::getCode()const
+{
+	return code_;
+}
+
+std::string DescribeDtsJobDetailResult::getErrCode()const
+{
+	return errCode_;
+}
+
+int DescribeDtsJobDetailResult::getCheckpoint()const
+{
+	return checkpoint_;
+}
+
+std::string DescribeDtsJobDetailResult::getDtsJobDirection()const
+{
+	return dtsJobDirection_;
 }
 
 DescribeDtsJobDetailResult::DestinationEndpoint DescribeDtsJobDetailResult::getDestinationEndpoint()const
@@ -237,11 +244,6 @@ DescribeDtsJobDetailResult::SourceEndpoint DescribeDtsJobDetailResult::getSource
 	return sourceEndpoint_;
 }
 
-int DescribeDtsJobDetailResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
-}
-
 std::string DescribeDtsJobDetailResult::getExpireTime()const
 {
 	return expireTime_;
@@ -250,6 +252,11 @@ std::string DescribeDtsJobDetailResult::getExpireTime()const
 std::string DescribeDtsJobDetailResult::getErrorMessage()const
 {
 	return errorMessage_;
+}
+
+std::string DescribeDtsJobDetailResult::getSynchronizationDirection()const
+{
+	return synchronizationDirection_;
 }
 
 std::string DescribeDtsJobDetailResult::getReserved()const

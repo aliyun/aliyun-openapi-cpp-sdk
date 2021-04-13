@@ -46,14 +46,14 @@ namespace AlibabaCloud
 					std::string destSchema;
 					std::string errMsg;
 					std::string targetNames;
-					long bootTime;
+					std::string bootTime;
 					std::vector<ProgressInfo::JobLog> logs;
 					std::string names;
 					std::string item;
 					bool canSkip;
 					std::string repairMethod;
 					int delaySeconds;
-					long finishTime;
+					std::string finishTime;
 					int orderNum;
 					long diffRow;
 					std::string parentObj;

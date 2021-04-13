@@ -225,6 +225,17 @@ void ConfigureDtsJobRequest::setDtsInstanceId(const std::string& dtsInstanceId)
 	setParameter("DtsInstanceId", dtsInstanceId);
 }
 
+std::string ConfigureDtsJobRequest::getSynchronizationDirection()const
+{
+	return synchronizationDirection_;
+}
+
+void ConfigureDtsJobRequest::setSynchronizationDirection(const std::string& synchronizationDirection)
+{
+	synchronizationDirection_ = synchronizationDirection;
+	setParameter("SynchronizationDirection", synchronizationDirection);
+}
+
 std::string ConfigureDtsJobRequest::getSourceEndpointRegion()const
 {
 	return sourceEndpointRegion_;

@@ -38,3 +38,25 @@ void DescribeDtsJobDetailRequest::setDtsJobId(const std::string& dtsJobId)
 	setParameter("DtsJobId", dtsJobId);
 }
 
+std::string DescribeDtsJobDetailRequest::getDtsInstanceID()const
+{
+	return dtsInstanceID_;
+}
+
+void DescribeDtsJobDetailRequest::setDtsInstanceID(const std::string& dtsInstanceID)
+{
+	dtsInstanceID_ = dtsInstanceID;
+	setParameter("DtsInstanceID", dtsInstanceID);
+}
+
+std::string DescribeDtsJobDetailRequest::getSynchronizationDirection()const
+{
+	return synchronizationDirection_;
+}
+
+void DescribeDtsJobDetailRequest::setSynchronizationDirection(const std::string& synchronizationDirection)
+{
+	synchronizationDirection_ = synchronizationDirection;
+	setParameter("SynchronizationDirection", synchronizationDirection);
+}
+

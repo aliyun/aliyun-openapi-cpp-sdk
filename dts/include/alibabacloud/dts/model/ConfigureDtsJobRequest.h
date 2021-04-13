@@ -71,6 +71,8 @@ namespace AlibabaCloud
 				void setDtsJobName(const std::string& dtsJobName);
 				std::string getDtsInstanceId()const;
 				void setDtsInstanceId(const std::string& dtsInstanceId);
+				std::string getSynchronizationDirection()const;
+				void setSynchronizationDirection(const std::string& synchronizationDirection);
 				std::string getSourceEndpointRegion()const;
 				void setSourceEndpointRegion(const std::string& sourceEndpointRegion);
 				bool getDelayNotice()const;
@@ -131,6 +133,7 @@ namespace AlibabaCloud
 				std::string sourceEndpointInstanceType_;
 				std::string dtsJobName_;
 				std::string dtsInstanceId_;
+				std::string synchronizationDirection_;
 				std::string sourceEndpointRegion_;
 				bool delayNotice_;
 				std::string destinationEndpointInstanceType_;
