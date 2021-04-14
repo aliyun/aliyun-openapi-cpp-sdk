@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANRESULTSRESULT_H_
-#define ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANRESULTSRESULT_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKLISTRESULT_H_
+#define ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT PostAsyncScanResultsResult : public ServiceResult
+			class ALIBABACLOUD_GREEN_EXPORT DescribeAuditCallbackListResult : public ServiceResult
 			{
 			public:
+				struct Callback
+				{
+					std::string cryptType;
+					std::string modifiedTime;
+					std::string seed;
+					std::string createTime;
+					std::vector<std::string> callbackTypes;
+					long id;
+					std::string url;
+					std::vector<std::string> callbackSuggestions;
+					std::string name;
+				};
 
 
-				PostAsyncScanResultsResult();
-				explicit PostAsyncScanResultsResult(const std::string &payload);
-				~PostAsyncScanResultsResult();
+				DescribeAuditCallbackListResult();
+				explicit DescribeAuditCallbackListResult(const std::string &payload);
+				~DescribeAuditCallbackListResult();
+				int getTotalCount()const;
+				std::vector<Callback> getCallbackList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
+				std::vector<Callback> callbackList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANRESULTSRESULT_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKLISTRESULT_H_

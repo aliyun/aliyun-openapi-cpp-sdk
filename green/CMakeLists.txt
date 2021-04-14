@@ -37,6 +37,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/AddVideoDnaGroupResult.h
 	include/alibabacloud/green/model/CreatCustomOcrTemplateRequest.h
 	include/alibabacloud/green/model/CreatCustomOcrTemplateResult.h
+	include/alibabacloud/green/model/CreateAuditCallbackRequest.h
+	include/alibabacloud/green/model/CreateAuditCallbackResult.h
 	include/alibabacloud/green/model/CreateBizTypeRequest.h
 	include/alibabacloud/green/model/CreateBizTypeResult.h
 	include/alibabacloud/green/model/CreateCdiBagRequest.h
@@ -85,6 +87,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeAppInfoResult.h
 	include/alibabacloud/green/model/DescribeAuditCallbackRequest.h
 	include/alibabacloud/green/model/DescribeAuditCallbackResult.h
+	include/alibabacloud/green/model/DescribeAuditCallbackListRequest.h
+	include/alibabacloud/green/model/DescribeAuditCallbackListResult.h
 	include/alibabacloud/green/model/DescribeAuditContentRequest.h
 	include/alibabacloud/green/model/DescribeAuditContentResult.h
 	include/alibabacloud/green/model/DescribeAuditContentItemRequest.h
@@ -227,10 +231,6 @@ set(green_public_header_model
 	include/alibabacloud/green/model/MarkOssResultResult.h
 	include/alibabacloud/green/model/MarkWebsiteScanResultRequest.h
 	include/alibabacloud/green/model/MarkWebsiteScanResultResult.h
-	include/alibabacloud/green/model/PostAsyncScanRequest.h
-	include/alibabacloud/green/model/PostAsyncScanResult.h
-	include/alibabacloud/green/model/PostAsyncScanResultsRequest.h
-	include/alibabacloud/green/model/PostAsyncScanResultsResult.h
 	include/alibabacloud/green/model/RefundCdiBagRequest.h
 	include/alibabacloud/green/model/RefundCdiBagResult.h
 	include/alibabacloud/green/model/RefundCdiBaseBagRequest.h
@@ -376,6 +376,8 @@ set(green_src
 	src/model/AddVideoDnaGroupResult.cc
 	src/model/CreatCustomOcrTemplateRequest.cc
 	src/model/CreatCustomOcrTemplateResult.cc
+	src/model/CreateAuditCallbackRequest.cc
+	src/model/CreateAuditCallbackResult.cc
 	src/model/CreateBizTypeRequest.cc
 	src/model/CreateBizTypeResult.cc
 	src/model/CreateCdiBagRequest.cc
@@ -424,6 +426,8 @@ set(green_src
 	src/model/DescribeAppInfoResult.cc
 	src/model/DescribeAuditCallbackRequest.cc
 	src/model/DescribeAuditCallbackResult.cc
+	src/model/DescribeAuditCallbackListRequest.cc
+	src/model/DescribeAuditCallbackListResult.cc
 	src/model/DescribeAuditContentRequest.cc
 	src/model/DescribeAuditContentResult.cc
 	src/model/DescribeAuditContentItemRequest.cc
@@ -566,10 +570,6 @@ set(green_src
 	src/model/MarkOssResultResult.cc
 	src/model/MarkWebsiteScanResultRequest.cc
 	src/model/MarkWebsiteScanResultResult.cc
-	src/model/PostAsyncScanRequest.cc
-	src/model/PostAsyncScanResult.cc
-	src/model/PostAsyncScanResultsRequest.cc
-	src/model/PostAsyncScanResultsResult.cc
 	src/model/RefundCdiBagRequest.cc
 	src/model/RefundCdiBagResult.cc
 	src/model/RefundCdiBaseBagRequest.cc

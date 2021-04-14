@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANREQUEST_H_
-#define ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANREQUEST_H_
+#ifndef ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKLISTREQUEST_H_
+#define ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKLISTREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/green/GreenExport.h>
 
 namespace AlibabaCloud
@@ -28,21 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_GREEN_EXPORT PostAsyncScanRequest : public RoaServiceRequest
+			class ALIBABACLOUD_GREEN_EXPORT DescribeAuditCallbackListRequest : public RpcServiceRequest
 			{
 
 			public:
-				PostAsyncScanRequest();
-				~PostAsyncScanRequest();
+				DescribeAuditCallbackListRequest();
+				~DescribeAuditCallbackListRequest();
 
-				std::string getClientInfo()const;
-				void setClientInfo(const std::string& clientInfo);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				std::string clientInfo_;
+				std::string sourceIp_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_GREEN_MODEL_POSTASYNCSCANREQUEST_H_
+#endif // !ALIBABACLOUD_GREEN_MODEL_DESCRIBEAUDITCALLBACKLISTREQUEST_H_

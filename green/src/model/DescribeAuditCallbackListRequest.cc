@@ -14,28 +14,27 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/green/model/PostAsyncScanResultsRequest.h>
+#include <alibabacloud/green/model/DescribeAuditCallbackListRequest.h>
 
-using AlibabaCloud::Green::Model::PostAsyncScanResultsRequest;
+using AlibabaCloud::Green::Model::DescribeAuditCallbackListRequest;
 
-PostAsyncScanResultsRequest::PostAsyncScanResultsRequest() :
-	RoaServiceRequest("green", "2018-05-09")
+DescribeAuditCallbackListRequest::DescribeAuditCallbackListRequest() :
+	RpcServiceRequest("green", "2017-08-23", "DescribeAuditCallbackList")
 {
-	setResourcePath("/green/post/results");
 	setMethod(HttpRequest::Method::Post);
 }
 
-PostAsyncScanResultsRequest::~PostAsyncScanResultsRequest()
+DescribeAuditCallbackListRequest::~DescribeAuditCallbackListRequest()
 {}
 
-std::string PostAsyncScanResultsRequest::getClientInfo()const
+std::string DescribeAuditCallbackListRequest::getSourceIp()const
 {
-	return clientInfo_;
+	return sourceIp_;
 }
 
-void PostAsyncScanResultsRequest::setClientInfo(const std::string& clientInfo)
+void DescribeAuditCallbackListRequest::setSourceIp(const std::string& sourceIp)
 {
-	clientInfo_ = clientInfo;
-	setParameter("ClientInfo", clientInfo);
+	sourceIp_ = sourceIp;
+	setParameter("SourceIp", sourceIp);
 }
 

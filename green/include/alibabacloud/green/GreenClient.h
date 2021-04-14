@@ -38,6 +38,8 @@
 #include "model/AddVideoDnaGroupResult.h"
 #include "model/CreatCustomOcrTemplateRequest.h"
 #include "model/CreatCustomOcrTemplateResult.h"
+#include "model/CreateAuditCallbackRequest.h"
+#include "model/CreateAuditCallbackResult.h"
 #include "model/CreateBizTypeRequest.h"
 #include "model/CreateBizTypeResult.h"
 #include "model/CreateCdiBagRequest.h"
@@ -86,6 +88,8 @@
 #include "model/DescribeAppInfoResult.h"
 #include "model/DescribeAuditCallbackRequest.h"
 #include "model/DescribeAuditCallbackResult.h"
+#include "model/DescribeAuditCallbackListRequest.h"
+#include "model/DescribeAuditCallbackListResult.h"
 #include "model/DescribeAuditContentRequest.h"
 #include "model/DescribeAuditContentResult.h"
 #include "model/DescribeAuditContentItemRequest.h"
@@ -228,10 +232,6 @@
 #include "model/MarkOssResultResult.h"
 #include "model/MarkWebsiteScanResultRequest.h"
 #include "model/MarkWebsiteScanResultResult.h"
-#include "model/PostAsyncScanRequest.h"
-#include "model/PostAsyncScanResult.h"
-#include "model/PostAsyncScanResultsRequest.h"
-#include "model/PostAsyncScanResultsResult.h"
 #include "model/RefundCdiBagRequest.h"
 #include "model/RefundCdiBagResult.h"
 #include "model/RefundCdiBaseBagRequest.h"
@@ -391,6 +391,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatCustomOcrTemplateResult> CreatCustomOcrTemplateOutcome;
 			typedef std::future<CreatCustomOcrTemplateOutcome> CreatCustomOcrTemplateOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::CreatCustomOcrTemplateRequest&, const CreatCustomOcrTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatCustomOcrTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateAuditCallbackResult> CreateAuditCallbackOutcome;
+			typedef std::future<CreateAuditCallbackOutcome> CreateAuditCallbackOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::CreateAuditCallbackRequest&, const CreateAuditCallbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditCallbackAsyncHandler;
 			typedef Outcome<Error, Model::CreateBizTypeResult> CreateBizTypeOutcome;
 			typedef std::future<CreateBizTypeOutcome> CreateBizTypeOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::CreateBizTypeRequest&, const CreateBizTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBizTypeAsyncHandler;
@@ -463,6 +466,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAuditCallbackResult> DescribeAuditCallbackOutcome;
 			typedef std::future<DescribeAuditCallbackOutcome> DescribeAuditCallbackOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAuditCallbackRequest&, const DescribeAuditCallbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditCallbackAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAuditCallbackListResult> DescribeAuditCallbackListOutcome;
+			typedef std::future<DescribeAuditCallbackListOutcome> DescribeAuditCallbackListOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeAuditCallbackListRequest&, const DescribeAuditCallbackListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditCallbackListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditContentResult> DescribeAuditContentOutcome;
 			typedef std::future<DescribeAuditContentOutcome> DescribeAuditContentOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAuditContentRequest&, const DescribeAuditContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditContentAsyncHandler;
@@ -676,12 +682,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MarkWebsiteScanResultResult> MarkWebsiteScanResultOutcome;
 			typedef std::future<MarkWebsiteScanResultOutcome> MarkWebsiteScanResultOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::MarkWebsiteScanResultRequest&, const MarkWebsiteScanResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MarkWebsiteScanResultAsyncHandler;
-			typedef Outcome<Error, Model::PostAsyncScanResult> PostAsyncScanOutcome;
-			typedef std::future<PostAsyncScanOutcome> PostAsyncScanOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::PostAsyncScanRequest&, const PostAsyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PostAsyncScanAsyncHandler;
-			typedef Outcome<Error, Model::PostAsyncScanResultsResult> PostAsyncScanResultsOutcome;
-			typedef std::future<PostAsyncScanResultsOutcome> PostAsyncScanResultsOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::PostAsyncScanResultsRequest&, const PostAsyncScanResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PostAsyncScanResultsAsyncHandler;
 			typedef Outcome<Error, Model::RefundCdiBagResult> RefundCdiBagOutcome;
 			typedef std::future<RefundCdiBagOutcome> RefundCdiBagOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::RefundCdiBagRequest&, const RefundCdiBagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundCdiBagAsyncHandler;
@@ -900,6 +900,9 @@ namespace AlibabaCloud
 			CreatCustomOcrTemplateOutcome creatCustomOcrTemplate(const Model::CreatCustomOcrTemplateRequest &request)const;
 			void creatCustomOcrTemplateAsync(const Model::CreatCustomOcrTemplateRequest& request, const CreatCustomOcrTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatCustomOcrTemplateOutcomeCallable creatCustomOcrTemplateCallable(const Model::CreatCustomOcrTemplateRequest& request) const;
+			CreateAuditCallbackOutcome createAuditCallback(const Model::CreateAuditCallbackRequest &request)const;
+			void createAuditCallbackAsync(const Model::CreateAuditCallbackRequest& request, const CreateAuditCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAuditCallbackOutcomeCallable createAuditCallbackCallable(const Model::CreateAuditCallbackRequest& request) const;
 			CreateBizTypeOutcome createBizType(const Model::CreateBizTypeRequest &request)const;
 			void createBizTypeAsync(const Model::CreateBizTypeRequest& request, const CreateBizTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBizTypeOutcomeCallable createBizTypeCallable(const Model::CreateBizTypeRequest& request) const;
@@ -972,6 +975,9 @@ namespace AlibabaCloud
 			DescribeAuditCallbackOutcome describeAuditCallback(const Model::DescribeAuditCallbackRequest &request)const;
 			void describeAuditCallbackAsync(const Model::DescribeAuditCallbackRequest& request, const DescribeAuditCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditCallbackOutcomeCallable describeAuditCallbackCallable(const Model::DescribeAuditCallbackRequest& request) const;
+			DescribeAuditCallbackListOutcome describeAuditCallbackList(const Model::DescribeAuditCallbackListRequest &request)const;
+			void describeAuditCallbackListAsync(const Model::DescribeAuditCallbackListRequest& request, const DescribeAuditCallbackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAuditCallbackListOutcomeCallable describeAuditCallbackListCallable(const Model::DescribeAuditCallbackListRequest& request) const;
 			DescribeAuditContentOutcome describeAuditContent(const Model::DescribeAuditContentRequest &request)const;
 			void describeAuditContentAsync(const Model::DescribeAuditContentRequest& request, const DescribeAuditContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditContentOutcomeCallable describeAuditContentCallable(const Model::DescribeAuditContentRequest& request) const;
@@ -1185,12 +1191,6 @@ namespace AlibabaCloud
 			MarkWebsiteScanResultOutcome markWebsiteScanResult(const Model::MarkWebsiteScanResultRequest &request)const;
 			void markWebsiteScanResultAsync(const Model::MarkWebsiteScanResultRequest& request, const MarkWebsiteScanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MarkWebsiteScanResultOutcomeCallable markWebsiteScanResultCallable(const Model::MarkWebsiteScanResultRequest& request) const;
-			PostAsyncScanOutcome postAsyncScan(const Model::PostAsyncScanRequest &request)const;
-			void postAsyncScanAsync(const Model::PostAsyncScanRequest& request, const PostAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PostAsyncScanOutcomeCallable postAsyncScanCallable(const Model::PostAsyncScanRequest& request) const;
-			PostAsyncScanResultsOutcome postAsyncScanResults(const Model::PostAsyncScanResultsRequest &request)const;
-			void postAsyncScanResultsAsync(const Model::PostAsyncScanResultsRequest& request, const PostAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PostAsyncScanResultsOutcomeCallable postAsyncScanResultsCallable(const Model::PostAsyncScanResultsRequest& request) const;
 			RefundCdiBagOutcome refundCdiBag(const Model::RefundCdiBagRequest &request)const;
 			void refundCdiBagAsync(const Model::RefundCdiBagRequest& request, const RefundCdiBagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefundCdiBagOutcomeCallable refundCdiBagCallable(const Model::RefundCdiBagRequest& request) const;

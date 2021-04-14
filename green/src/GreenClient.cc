@@ -339,6 +339,42 @@ GreenClient::CreatCustomOcrTemplateOutcomeCallable GreenClient::creatCustomOcrTe
 	return task->get_future();
 }
 
+GreenClient::CreateAuditCallbackOutcome GreenClient::createAuditCallback(const CreateAuditCallbackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAuditCallbackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAuditCallbackOutcome(CreateAuditCallbackResult(outcome.result()));
+	else
+		return CreateAuditCallbackOutcome(outcome.error());
+}
+
+void GreenClient::createAuditCallbackAsync(const CreateAuditCallbackRequest& request, const CreateAuditCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAuditCallback(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::CreateAuditCallbackOutcomeCallable GreenClient::createAuditCallbackCallable(const CreateAuditCallbackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAuditCallbackOutcome()>>(
+			[this, request]()
+			{
+			return this->createAuditCallback(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::CreateBizTypeOutcome GreenClient::createBizType(const CreateBizTypeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,6 +1233,42 @@ GreenClient::DescribeAuditCallbackOutcomeCallable GreenClient::describeAuditCall
 			[this, request]()
 			{
 			return this->describeAuditCallback(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GreenClient::DescribeAuditCallbackListOutcome GreenClient::describeAuditCallbackList(const DescribeAuditCallbackListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAuditCallbackListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAuditCallbackListOutcome(DescribeAuditCallbackListResult(outcome.result()));
+	else
+		return DescribeAuditCallbackListOutcome(outcome.error());
+}
+
+void GreenClient::describeAuditCallbackListAsync(const DescribeAuditCallbackListRequest& request, const DescribeAuditCallbackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAuditCallbackList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DescribeAuditCallbackListOutcomeCallable GreenClient::describeAuditCallbackListCallable(const DescribeAuditCallbackListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAuditCallbackListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAuditCallbackList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3753,78 +3825,6 @@ GreenClient::MarkWebsiteScanResultOutcomeCallable GreenClient::markWebsiteScanRe
 			[this, request]()
 			{
 			return this->markWebsiteScanResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GreenClient::PostAsyncScanOutcome GreenClient::postAsyncScan(const PostAsyncScanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PostAsyncScanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PostAsyncScanOutcome(PostAsyncScanResult(outcome.result()));
-	else
-		return PostAsyncScanOutcome(outcome.error());
-}
-
-void GreenClient::postAsyncScanAsync(const PostAsyncScanRequest& request, const PostAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, postAsyncScan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::PostAsyncScanOutcomeCallable GreenClient::postAsyncScanCallable(const PostAsyncScanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PostAsyncScanOutcome()>>(
-			[this, request]()
-			{
-			return this->postAsyncScan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GreenClient::PostAsyncScanResultsOutcome GreenClient::postAsyncScanResults(const PostAsyncScanResultsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PostAsyncScanResultsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PostAsyncScanResultsOutcome(PostAsyncScanResultsResult(outcome.result()));
-	else
-		return PostAsyncScanResultsOutcome(outcome.error());
-}
-
-void GreenClient::postAsyncScanResultsAsync(const PostAsyncScanResultsRequest& request, const PostAsyncScanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, postAsyncScanResults(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::PostAsyncScanResultsOutcomeCallable GreenClient::postAsyncScanResultsCallable(const PostAsyncScanResultsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PostAsyncScanResultsOutcome()>>(
-			[this, request]()
-			{
-			return this->postAsyncScanResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
