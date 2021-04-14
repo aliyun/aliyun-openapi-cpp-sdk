@@ -27,6 +27,17 @@ DescribeGeoipInstanceDataInfosRequest::DescribeGeoipInstanceDataInfosRequest() :
 DescribeGeoipInstanceDataInfosRequest::~DescribeGeoipInstanceDataInfosRequest()
 {}
 
+std::string DescribeGeoipInstanceDataInfosRequest::getLocationDataType()const
+{
+	return locationDataType_;
+}
+
+void DescribeGeoipInstanceDataInfosRequest::setLocationDataType(const std::string& locationDataType)
+{
+	locationDataType_ = locationDataType;
+	setParameter("LocationDataType", locationDataType);
+}
+
 std::string DescribeGeoipInstanceDataInfosRequest::getInstanceId()const
 {
 	return instanceId_;

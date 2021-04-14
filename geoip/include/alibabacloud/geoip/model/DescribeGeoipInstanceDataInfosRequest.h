@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeGeoipInstanceDataInfosRequest();
 				~DescribeGeoipInstanceDataInfosRequest();
 
+				std::string getLocationDataType()const;
+				void setLocationDataType(const std::string& locationDataType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getUserClientIp()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 
             private:
+				std::string locationDataType_;
 				std::string instanceId_;
 				std::string userClientIp_;
 				std::string lang_;

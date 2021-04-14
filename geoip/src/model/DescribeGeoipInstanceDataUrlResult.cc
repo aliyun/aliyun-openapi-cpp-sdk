@@ -39,9 +39,16 @@ void DescribeGeoipInstanceDataUrlResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["FixedDomainDownloadUrl"].isNull())
+		fixedDomainDownloadUrl_ = value["FixedDomainDownloadUrl"].asString();
 	if(!value["DownloadUrl"].isNull())
 		downloadUrl_ = value["DownloadUrl"].asString();
 
+}
+
+std::string DescribeGeoipInstanceDataUrlResult::getFixedDomainDownloadUrl()const
+{
+	return fixedDomainDownloadUrl_;
 }
 
 std::string DescribeGeoipInstanceDataUrlResult::getDownloadUrl()const

@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				DescribeGeoipInstanceDataUrlResult();
 				explicit DescribeGeoipInstanceDataUrlResult(const std::string &payload);
 				~DescribeGeoipInstanceDataUrlResult();
+				std::string getFixedDomainDownloadUrl()const;
 				std::string getDownloadUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string fixedDomainDownloadUrl_;
 				std::string downloadUrl_;
 
 			};

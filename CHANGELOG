@@ -1,3 +1,6 @@
+2021-04-14 Version: 1.36.679
+- Download url add fixed domain.
+
 2021-04-13 Version: 1.36.678
 - Supported ConfigureDtsJob SynchronizationDirection.
 - Fixed DescribePreCheckStatus JobProgress bootTime.
