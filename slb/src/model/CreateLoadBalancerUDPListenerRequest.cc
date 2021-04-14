@@ -38,6 +38,17 @@ void CreateLoadBalancerUDPListenerRequest::setResourceOwnerId(long resourceOwner
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateLoadBalancerUDPListenerRequest::getHealthCheckURI()const
+{
+	return healthCheckURI_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setHealthCheckURI(const std::string& healthCheckURI)
+{
+	healthCheckURI_ = healthCheckURI;
+	setParameter("HealthCheckURI", healthCheckURI);
+}
+
 std::string CreateLoadBalancerUDPListenerRequest::getAclStatus()const
 {
 	return aclStatus_;
@@ -60,6 +71,17 @@ void CreateLoadBalancerUDPListenerRequest::setAclType(const std::string& aclType
 	setParameter("AclType", aclType);
 }
 
+std::string CreateLoadBalancerUDPListenerRequest::getFailoverStrategy()const
+{
+	return failoverStrategy_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setFailoverStrategy(const std::string& failoverStrategy)
+{
+	failoverStrategy_ = failoverStrategy;
+	setParameter("FailoverStrategy", failoverStrategy);
+}
+
 int CreateLoadBalancerUDPListenerRequest::getPersistenceTimeout()const
 {
 	return persistenceTimeout_;
@@ -80,6 +102,17 @@ void CreateLoadBalancerUDPListenerRequest::setVpcIds(const std::string& vpcIds)
 {
 	vpcIds_ = vpcIds;
 	setParameter("VpcIds", vpcIds);
+}
+
+bool CreateLoadBalancerUDPListenerRequest::getMasterSlaveModeEnabled()const
+{
+	return masterSlaveModeEnabled_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setMasterSlaveModeEnabled(bool masterSlaveModeEnabled)
+{
+	masterSlaveModeEnabled_ = masterSlaveModeEnabled;
+	setParameter("MasterSlaveModeEnabled", masterSlaveModeEnabled ? "true" : "false");
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getVServerGroupId()const
@@ -120,6 +153,28 @@ void CreateLoadBalancerUDPListenerRequest::setPortRange(const std::vector<PortRa
 	}
 }
 
+std::string CreateLoadBalancerUDPListenerRequest::getHealthCheckMethod()const
+{
+	return healthCheckMethod_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setHealthCheckMethod(const std::string& healthCheckMethod)
+{
+	healthCheckMethod_ = healthCheckMethod;
+	setParameter("HealthCheckMethod", healthCheckMethod);
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getHealthCheckDomain()const
+{
+	return healthCheckDomain_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setHealthCheckDomain(const std::string& healthCheckDomain)
+{
+	healthCheckDomain_ = healthCheckDomain;
+	setParameter("HealthCheckDomain", healthCheckDomain);
+}
+
 long CreateLoadBalancerUDPListenerRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -129,6 +184,17 @@ void CreateLoadBalancerUDPListenerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool CreateLoadBalancerUDPListenerRequest::getProxyProtocolVpcIdEnabled()const
+{
+	return proxyProtocolVpcIdEnabled_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setProxyProtocolVpcIdEnabled(bool proxyProtocolVpcIdEnabled)
+{
+	proxyProtocolVpcIdEnabled_ = proxyProtocolVpcIdEnabled;
+	setParameter("ProxyProtocolVpcIdEnabled", proxyProtocolVpcIdEnabled ? "true" : "false");
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getTags()const
@@ -208,6 +274,28 @@ void CreateLoadBalancerUDPListenerRequest::setHealthCheckExp(const std::string& 
 	setParameter("HealthCheckExp", healthCheckExp);
 }
 
+int CreateLoadBalancerUDPListenerRequest::getFailoverThreshold()const
+{
+	return failoverThreshold_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setFailoverThreshold(int failoverThreshold)
+{
+	failoverThreshold_ = failoverThreshold;
+	setParameter("FailoverThreshold", std::to_string(failoverThreshold));
+}
+
+bool CreateLoadBalancerUDPListenerRequest::getProxyProtocolV2Enabled()const
+{
+	return proxyProtocolV2Enabled_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setProxyProtocolV2Enabled(bool proxyProtocolV2Enabled)
+{
+	proxyProtocolV2Enabled_ = proxyProtocolV2Enabled;
+	setParameter("ProxyProtocolV2Enabled", proxyProtocolV2Enabled ? "true" : "false");
+}
+
 std::string CreateLoadBalancerUDPListenerRequest::getConnectionDrain()const
 {
 	return connectionDrain_;
@@ -217,6 +305,17 @@ void CreateLoadBalancerUDPListenerRequest::setConnectionDrain(const std::string&
 {
 	connectionDrain_ = connectionDrain;
 	setParameter("ConnectionDrain", connectionDrain);
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getHealthCheckSwitch()const
+{
+	return healthCheckSwitch_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setHealthCheckSwitch(const std::string& healthCheckSwitch)
+{
+	healthCheckSwitch_ = healthCheckSwitch;
+	setParameter("HealthCheckSwitch", healthCheckSwitch);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getAccess_key_id()const
@@ -239,6 +338,28 @@ void CreateLoadBalancerUDPListenerRequest::setHealthCheckConnectTimeout(int heal
 {
 	healthCheckConnectTimeout_ = healthCheckConnectTimeout;
 	setParameter("HealthCheckConnectTimeout", std::to_string(healthCheckConnectTimeout));
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getSlaveServerGroupId()const
+{
+	return slaveServerGroupId_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setSlaveServerGroupId(const std::string& slaveServerGroupId)
+{
+	slaveServerGroupId_ = slaveServerGroupId;
+	setParameter("SlaveServerGroupId", slaveServerGroupId);
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getQuicVersion()const
+{
+	return quicVersion_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setQuicVersion(const std::string& quicVersion)
+{
+	quicVersion_ = quicVersion;
+	setParameter("QuicVersion", quicVersion);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getDescription()const
@@ -307,6 +428,17 @@ void CreateLoadBalancerUDPListenerRequest::setRegionId(const std::string& region
 	setParameter("RegionId", regionId);
 }
 
+std::string CreateLoadBalancerUDPListenerRequest::getMasterServerGroupId()const
+{
+	return masterServerGroupId_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setMasterServerGroupId(const std::string& masterServerGroupId)
+{
+	masterServerGroupId_ = masterServerGroupId;
+	setParameter("MasterServerGroupId", masterServerGroupId);
+}
+
 int CreateLoadBalancerUDPListenerRequest::getListenerPort()const
 {
 	return listenerPort_;
@@ -316,6 +448,17 @@ void CreateLoadBalancerUDPListenerRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
 	setParameter("ListenerPort", std::to_string(listenerPort));
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getHealthCheckType()const
+{
+	return healthCheckType_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setHealthCheckType(const std::string& healthCheckType)
+{
+	healthCheckType_ = healthCheckType;
+	setParameter("HealthCheckType", healthCheckType);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getResourceOwnerAccount()const
@@ -371,5 +514,16 @@ void CreateLoadBalancerUDPListenerRequest::setHealthCheckConnectPort(int healthC
 {
 	healthCheckConnectPort_ = healthCheckConnectPort;
 	setParameter("HealthCheckConnectPort", std::to_string(healthCheckConnectPort));
+}
+
+std::string CreateLoadBalancerUDPListenerRequest::getHealthCheckHttpCode()const
+{
+	return healthCheckHttpCode_;
+}
+
+void CreateLoadBalancerUDPListenerRequest::setHealthCheckHttpCode(const std::string& healthCheckHttpCode)
+{
+	healthCheckHttpCode_ = healthCheckHttpCode;
+	setParameter("HealthCheckHttpCode", healthCheckHttpCode);
 }
 

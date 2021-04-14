@@ -43,63 +43,93 @@ void DescribeLoadBalancerUDPListenerAttributeResult::parse(const std::string &pa
 	for (auto valuePortRangesPortRange : allPortRangesNode)
 	{
 		PortRange portRangesObject;
-		if(!valuePortRangesPortRange["StartPort"].isNull())
-			portRangesObject.startPort = std::stoi(valuePortRangesPortRange["StartPort"].asString());
 		if(!valuePortRangesPortRange["EndPort"].isNull())
 			portRangesObject.endPort = std::stoi(valuePortRangesPortRange["EndPort"].asString());
+		if(!valuePortRangesPortRange["StartPort"].isNull())
+			portRangesObject.startPort = std::stoi(valuePortRangesPortRange["StartPort"].asString());
 		portRanges_.push_back(portRangesObject);
 	}
 	auto allAclIds = value["AclIds"]["AclId"];
 	for (const auto &item : allAclIds)
 		aclIds_.push_back(item.asString());
-	if(!value["ListenerPort"].isNull())
-		listenerPort_ = std::stoi(value["ListenerPort"].asString());
-	if(!value["BackendServerPort"].isNull())
-		backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["Bandwidth"].isNull())
-		bandwidth_ = std::stoi(value["Bandwidth"].asString());
-	if(!value["Scheduler"].isNull())
-		scheduler_ = value["Scheduler"].asString();
-	if(!value["PersistenceTimeout"].isNull())
-		persistenceTimeout_ = std::stoi(value["PersistenceTimeout"].asString());
-	if(!value["HealthCheck"].isNull())
-		healthCheck_ = value["HealthCheck"].asString();
-	if(!value["HealthyThreshold"].isNull())
-		healthyThreshold_ = std::stoi(value["HealthyThreshold"].asString());
-	if(!value["UnhealthyThreshold"].isNull())
-		unhealthyThreshold_ = std::stoi(value["UnhealthyThreshold"].asString());
-	if(!value["HealthCheckConnectTimeout"].isNull())
-		healthCheckConnectTimeout_ = std::stoi(value["HealthCheckConnectTimeout"].asString());
-	if(!value["HealthCheckConnectPort"].isNull())
-		healthCheckConnectPort_ = std::stoi(value["HealthCheckConnectPort"].asString());
-	if(!value["HealthCheckInterval"].isNull())
-		healthCheckInterval_ = std::stoi(value["HealthCheckInterval"].asString());
-	if(!value["HealthCheckReq"].isNull())
-		healthCheckReq_ = value["HealthCheckReq"].asString();
-	if(!value["HealthCheckExp"].isNull())
-		healthCheckExp_ = value["HealthCheckExp"].asString();
-	if(!value["MaxConnection"].isNull())
-		maxConnection_ = std::stoi(value["MaxConnection"].asString());
-	if(!value["VServerGroupId"].isNull())
-		vServerGroupId_ = value["VServerGroupId"].asString();
-	if(!value["MasterSlaveServerGroupId"].isNull())
-		masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
 	if(!value["AclId"].isNull())
 		aclId_ = value["AclId"].asString();
-	if(!value["AclType"].isNull())
-		aclType_ = value["AclType"].asString();
 	if(!value["AclStatus"].isNull())
 		aclStatus_ = value["AclStatus"].asString();
-	if(!value["VpcIds"].isNull())
-		vpcIds_ = value["VpcIds"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
+	if(!value["AclType"].isNull())
+		aclType_ = value["AclType"].asString();
+	if(!value["BackendServerPort"].isNull())
+		backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = std::stoi(value["Bandwidth"].asString());
 	if(!value["ConnectionDrain"].isNull())
 		connectionDrain_ = value["ConnectionDrain"].asString();
 	if(!value["ConnectionDrainTimeout"].isNull())
 		connectionDrainTimeout_ = std::stoi(value["ConnectionDrainTimeout"].asString());
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["FailoverStrategy"].isNull())
+		failoverStrategy_ = value["FailoverStrategy"].asString();
+	if(!value["FailoverThreshold"].isNull())
+		failoverThreshold_ = std::stoi(value["FailoverThreshold"].asString());
+	if(!value["HealthCheck"].isNull())
+		healthCheck_ = value["HealthCheck"].asString();
+	if(!value["HealthCheckConnectPort"].isNull())
+		healthCheckConnectPort_ = std::stoi(value["HealthCheckConnectPort"].asString());
+	if(!value["HealthCheckConnectTimeout"].isNull())
+		healthCheckConnectTimeout_ = std::stoi(value["HealthCheckConnectTimeout"].asString());
+	if(!value["HealthCheckDomain"].isNull())
+		healthCheckDomain_ = value["HealthCheckDomain"].asString();
+	if(!value["HealthCheckExp"].isNull())
+		healthCheckExp_ = value["HealthCheckExp"].asString();
+	if(!value["HealthCheckHttpCode"].isNull())
+		healthCheckHttpCode_ = value["HealthCheckHttpCode"].asString();
+	if(!value["HealthCheckInterval"].isNull())
+		healthCheckInterval_ = std::stoi(value["HealthCheckInterval"].asString());
+	if(!value["HealthCheckMethod"].isNull())
+		healthCheckMethod_ = value["HealthCheckMethod"].asString();
+	if(!value["HealthCheckReq"].isNull())
+		healthCheckReq_ = value["HealthCheckReq"].asString();
+	if(!value["HealthCheckType"].isNull())
+		healthCheckType_ = value["HealthCheckType"].asString();
+	if(!value["HealthCheckURI"].isNull())
+		healthCheckURI_ = value["HealthCheckURI"].asString();
+	if(!value["HealthyThreshold"].isNull())
+		healthyThreshold_ = std::stoi(value["HealthyThreshold"].asString());
+	if(!value["ListenerPort"].isNull())
+		listenerPort_ = std::stoi(value["ListenerPort"].asString());
+	if(!value["MasterServerGroupId"].isNull())
+		masterServerGroupId_ = value["MasterServerGroupId"].asString();
+	if(!value["MasterSlaveModeEnabled"].isNull())
+		masterSlaveModeEnabled_ = value["MasterSlaveModeEnabled"].asString() == "true";
+	if(!value["MasterSlaveServerGroupId"].isNull())
+		masterSlaveServerGroupId_ = value["MasterSlaveServerGroupId"].asString();
+	if(!value["MaxConnection"].isNull())
+		maxConnection_ = std::stoi(value["MaxConnection"].asString());
+	if(!value["PersistenceTimeout"].isNull())
+		persistenceTimeout_ = std::stoi(value["PersistenceTimeout"].asString());
+	if(!value["ProxyProtocolV2Enabled"].isNull())
+		proxyProtocolV2Enabled_ = value["ProxyProtocolV2Enabled"].asString() == "true";
+	if(!value["ProxyProtocolVpcIdEnabled"].isNull())
+		proxyProtocolVpcIdEnabled_ = value["ProxyProtocolVpcIdEnabled"].asString() == "true";
+	if(!value["QuicVersion"].isNull())
+		quicVersion_ = value["QuicVersion"].asString();
+	if(!value["Scheduler"].isNull())
+		scheduler_ = value["Scheduler"].asString();
+	if(!value["SlaveServerGroupId"].isNull())
+		slaveServerGroupId_ = value["SlaveServerGroupId"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["UnhealthyThreshold"].isNull())
+		unhealthyThreshold_ = std::stoi(value["UnhealthyThreshold"].asString());
+	if(!value["VServerGroupId"].isNull())
+		vServerGroupId_ = value["VServerGroupId"].asString();
+	if(!value["VpcIds"].isNull())
+		vpcIds_ = value["VpcIds"].asString();
+	if(!value["WorkingServerGroupId"].isNull())
+		workingServerGroupId_ = value["WorkingServerGroupId"].asString();
+	if(!value["HealthCheckSwitch"].isNull())
+		healthCheckSwitch_ = value["HealthCheckSwitch"].asString();
 
 }
 
@@ -113,14 +143,34 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getVServerGroupId()c
 	return vServerGroupId_;
 }
 
+bool DescribeLoadBalancerUDPListenerAttributeResult::getProxyProtocolVpcIdEnabled()const
+{
+	return proxyProtocolVpcIdEnabled_;
+}
+
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getDescription()const
 {
 	return description_;
 }
 
+int DescribeLoadBalancerUDPListenerAttributeResult::getFailoverThreshold()const
+{
+	return failoverThreshold_;
+}
+
+bool DescribeLoadBalancerUDPListenerAttributeResult::getProxyProtocolV2Enabled()const
+{
+	return proxyProtocolV2Enabled_;
+}
+
 int DescribeLoadBalancerUDPListenerAttributeResult::getUnhealthyThreshold()const
 {
 	return unhealthyThreshold_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckURI()const
+{
+	return healthCheckURI_;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getScheduler()const
@@ -133,9 +183,19 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheck()cons
 	return healthCheck_;
 }
 
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getWorkingServerGroupId()const
+{
+	return workingServerGroupId_;
+}
+
 int DescribeLoadBalancerUDPListenerAttributeResult::getBackendServerPort()const
 {
 	return backendServerPort_;
+}
+
+bool DescribeLoadBalancerUDPListenerAttributeResult::getMasterSlaveModeEnabled()const
+{
+	return masterSlaveModeEnabled_;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getConnectionDrainTimeout()const
@@ -153,9 +213,34 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckConnectPort()c
 	return healthCheckConnectPort_;
 }
 
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getMasterServerGroupId()const
+{
+	return masterServerGroupId_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckMethod()const
+{
+	return healthCheckMethod_;
+}
+
 int DescribeLoadBalancerUDPListenerAttributeResult::getBandwidth()const
 {
 	return bandwidth_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getQuicVersion()const
+{
+	return quicVersion_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckHttpCode()const
+{
+	return healthCheckHttpCode_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getSlaveServerGroupId()const
+{
+	return slaveServerGroupId_;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getStatus()const
@@ -193,9 +278,9 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getConnectionDrain()
 	return connectionDrain_;
 }
 
-std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckReq()const
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckSwitch()const
 {
-	return healthCheckReq_;
+	return healthCheckSwitch_;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclStatus()const
@@ -203,9 +288,24 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclStatus()const
 	return aclStatus_;
 }
 
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckReq()const
+{
+	return healthCheckReq_;
+}
+
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getVpcIds()const
 {
 	return vpcIds_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getFailoverStrategy()const
+{
+	return failoverStrategy_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckExp()const
+{
+	return healthCheckExp_;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getHealthyThreshold()const
@@ -213,9 +313,9 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getHealthyThreshold()const
 	return healthyThreshold_;
 }
 
-std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckExp()const
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckDomain()const
 {
-	return healthCheckExp_;
+	return healthCheckDomain_;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getMasterSlaveServerGroupId()const
@@ -231,5 +331,10 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclType()const
 std::vector<std::string> DescribeLoadBalancerUDPListenerAttributeResult::getAclIds()const
 {
 	return aclIds_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckType()const
+{
+	return healthCheckType_;
 }
 

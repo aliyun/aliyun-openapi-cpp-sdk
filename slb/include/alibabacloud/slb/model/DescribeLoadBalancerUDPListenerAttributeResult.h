@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct PortRange
 				{
-					int startPort;
 					int endPort;
+					int startPort;
 				};
 
 
@@ -44,15 +44,26 @@ namespace AlibabaCloud
 				~DescribeLoadBalancerUDPListenerAttributeResult();
 				int getMaxConnection()const;
 				std::string getVServerGroupId()const;
+				bool getProxyProtocolVpcIdEnabled()const;
 				std::string getDescription()const;
+				int getFailoverThreshold()const;
+				bool getProxyProtocolV2Enabled()const;
 				int getUnhealthyThreshold()const;
+				std::string getHealthCheckURI()const;
 				std::string getScheduler()const;
 				std::string getHealthCheck()const;
+				std::string getWorkingServerGroupId()const;
 				int getBackendServerPort()const;
+				bool getMasterSlaveModeEnabled()const;
 				int getConnectionDrainTimeout()const;
 				int getPersistenceTimeout()const;
 				int getHealthCheckConnectPort()const;
+				std::string getMasterServerGroupId()const;
+				std::string getHealthCheckMethod()const;
 				int getBandwidth()const;
+				std::string getQuicVersion()const;
+				std::string getHealthCheckHttpCode()const;
+				std::string getSlaveServerGroupId()const;
 				std::string getStatus()const;
 				int getListenerPort()const;
 				int getHealthCheckInterval()const;
@@ -60,29 +71,44 @@ namespace AlibabaCloud
 				std::string getAclId()const;
 				int getHealthCheckConnectTimeout()const;
 				std::string getConnectionDrain()const;
-				std::string getHealthCheckReq()const;
+				std::string getHealthCheckSwitch()const;
 				std::string getAclStatus()const;
+				std::string getHealthCheckReq()const;
 				std::string getVpcIds()const;
-				int getHealthyThreshold()const;
+				std::string getFailoverStrategy()const;
 				std::string getHealthCheckExp()const;
+				int getHealthyThreshold()const;
+				std::string getHealthCheckDomain()const;
 				std::string getMasterSlaveServerGroupId()const;
 				std::string getAclType()const;
 				std::vector<std::string> getAclIds()const;
+				std::string getHealthCheckType()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int maxConnection_;
 				std::string vServerGroupId_;
+				bool proxyProtocolVpcIdEnabled_;
 				std::string description_;
+				int failoverThreshold_;
+				bool proxyProtocolV2Enabled_;
 				int unhealthyThreshold_;
+				std::string healthCheckURI_;
 				std::string scheduler_;
 				std::string healthCheck_;
+				std::string workingServerGroupId_;
 				int backendServerPort_;
+				bool masterSlaveModeEnabled_;
 				int connectionDrainTimeout_;
 				int persistenceTimeout_;
 				int healthCheckConnectPort_;
+				std::string masterServerGroupId_;
+				std::string healthCheckMethod_;
 				int bandwidth_;
+				std::string quicVersion_;
+				std::string healthCheckHttpCode_;
+				std::string slaveServerGroupId_;
 				std::string status_;
 				int listenerPort_;
 				int healthCheckInterval_;
@@ -90,14 +116,18 @@ namespace AlibabaCloud
 				std::string aclId_;
 				int healthCheckConnectTimeout_;
 				std::string connectionDrain_;
-				std::string healthCheckReq_;
+				std::string healthCheckSwitch_;
 				std::string aclStatus_;
+				std::string healthCheckReq_;
 				std::string vpcIds_;
-				int healthyThreshold_;
+				std::string failoverStrategy_;
 				std::string healthCheckExp_;
+				int healthyThreshold_;
+				std::string healthCheckDomain_;
 				std::string masterSlaveServerGroupId_;
 				std::string aclType_;
 				std::vector<std::string> aclIds_;
+				std::string healthCheckType_;
 
 			};
 		}

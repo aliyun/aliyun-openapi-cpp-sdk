@@ -307,6 +307,17 @@ void DescribeLoadBalancersRequest::setResourceOwnerAccount(const std::string& re
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+bool DescribeLoadBalancersRequest::getFilterByTagOrName()const
+{
+	return filterByTagOrName_;
+}
+
+void DescribeLoadBalancersRequest::setFilterByTagOrName(bool filterByTagOrName)
+{
+	filterByTagOrName_ = filterByTagOrName;
+	setParameter("FilterByTagOrName", filterByTagOrName ? "true" : "false");
+}
+
 std::string DescribeLoadBalancersRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

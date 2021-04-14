@@ -85,6 +85,12 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 			loadBalancersObject.modificationProtectionStatus = valueLoadBalancersLoadBalancer["ModificationProtectionStatus"].asString();
 		if(!valueLoadBalancersLoadBalancer["ModificationProtectionReason"].isNull())
 			loadBalancersObject.modificationProtectionReason = valueLoadBalancersLoadBalancer["ModificationProtectionReason"].asString();
+		if(!valueLoadBalancersLoadBalancer["Bandwidth"].isNull())
+			loadBalancersObject.bandwidth = std::stoi(valueLoadBalancersLoadBalancer["Bandwidth"].asString());
+		if(!valueLoadBalancersLoadBalancer["InternetChargeTypeAlias"].isNull())
+			loadBalancersObject.internetChargeTypeAlias = valueLoadBalancersLoadBalancer["InternetChargeTypeAlias"].asString();
+		if(!valueLoadBalancersLoadBalancer["LoadBalancerSpec"].isNull())
+			loadBalancersObject.loadBalancerSpec = valueLoadBalancersLoadBalancer["LoadBalancerSpec"].asString();
 		auto allTagsNode = valueLoadBalancersLoadBalancer["Tags"]["Tag"];
 		for (auto valueLoadBalancersLoadBalancerTagsTag : allTagsNode)
 		{

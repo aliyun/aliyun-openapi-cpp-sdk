@@ -61,6 +61,8 @@ void DescribeVServerGroupAttributeResult::parse(const std::string &payload)
 			backendServersObject.serverRegionId = valueBackendServersBackendServer["ServerRegionId"].asString();
 		if(!valueBackendServersBackendServer["Description"].isNull())
 			backendServersObject.description = valueBackendServersBackendServer["Description"].asString();
+		if(!valueBackendServersBackendServer["ProxyProtocolV2Enabled"].isNull())
+			backendServersObject.proxyProtocolV2Enabled = valueBackendServersBackendServer["ProxyProtocolV2Enabled"].asString() == "true";
 		backendServers_.push_back(backendServersObject);
 	}
 	if(!value["VServerGroupId"].isNull())

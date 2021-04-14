@@ -91,6 +91,8 @@ namespace AlibabaCloud
 				void setAddress(const std::string& address);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				bool getFilterByTagOrName()const;
+				void setFilterByTagOrName(bool filterByTagOrName);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getLoadBalancerStatus()const;
@@ -126,6 +128,7 @@ namespace AlibabaCloud
 				std::string businessStatus_;
 				std::string address_;
 				std::string resourceOwnerAccount_;
+				bool filterByTagOrName_;
 				std::string ownerAccount_;
 				std::string loadBalancerStatus_;
 				std::string vpcId_;

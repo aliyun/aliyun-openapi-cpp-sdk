@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string vpcId;
 					std::string serverRegionId;
+					bool proxyProtocolV2Enabled;
 					int port;
 					std::string serverIp;
 					std::string vbrId;

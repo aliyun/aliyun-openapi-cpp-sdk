@@ -60,6 +60,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setAclStatus(const std::string&
 	setParameter("AclStatus", aclStatus);
 }
 
+bool SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckTcpFastCloseEnabled()const
+{
+	return healthCheckTcpFastCloseEnabled_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckTcpFastCloseEnabled(bool healthCheckTcpFastCloseEnabled)
+{
+	healthCheckTcpFastCloseEnabled_ = healthCheckTcpFastCloseEnabled;
+	setParameter("HealthCheckTcpFastCloseEnabled", healthCheckTcpFastCloseEnabled ? "true" : "false");
+}
+
 std::string SetLoadBalancerTCPListenerAttributeRequest::getAclType()const
 {
 	return aclType_;
@@ -93,6 +104,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setEstablishedTimeout(int estab
 	setParameter("EstablishedTimeout", std::to_string(establishedTimeout));
 }
 
+std::string SetLoadBalancerTCPListenerAttributeRequest::getFailoverStrategy()const
+{
+	return failoverStrategy_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setFailoverStrategy(const std::string& failoverStrategy)
+{
+	failoverStrategy_ = failoverStrategy;
+	setParameter("FailoverStrategy", failoverStrategy);
+}
+
 int SetLoadBalancerTCPListenerAttributeRequest::getPersistenceTimeout()const
 {
 	return persistenceTimeout_;
@@ -113,6 +135,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setVpcIds(const std::string& vp
 {
 	vpcIds_ = vpcIds;
 	setParameter("VpcIds", vpcIds);
+}
+
+bool SetLoadBalancerTCPListenerAttributeRequest::getMasterSlaveModeEnabled()const
+{
+	return masterSlaveModeEnabled_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setMasterSlaveModeEnabled(bool masterSlaveModeEnabled)
+{
+	masterSlaveModeEnabled_ = masterSlaveModeEnabled;
+	setParameter("MasterSlaveModeEnabled", masterSlaveModeEnabled ? "true" : "false");
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getVServerGroupId()const
@@ -197,6 +230,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+bool SetLoadBalancerTCPListenerAttributeRequest::getProxyProtocolVpcIdEnabled()const
+{
+	return proxyProtocolVpcIdEnabled_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setProxyProtocolVpcIdEnabled(bool proxyProtocolVpcIdEnabled)
+{
+	proxyProtocolVpcIdEnabled_ = proxyProtocolVpcIdEnabled;
+	setParameter("ProxyProtocolVpcIdEnabled", proxyProtocolVpcIdEnabled ? "true" : "false");
+}
+
 std::string SetLoadBalancerTCPListenerAttributeRequest::getTags()const
 {
 	return tags_;
@@ -241,6 +285,28 @@ void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckInterval(int heal
 	setParameter("HealthCheckInterval", std::to_string(healthCheckInterval));
 }
 
+int SetLoadBalancerTCPListenerAttributeRequest::getFailoverThreshold()const
+{
+	return failoverThreshold_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setFailoverThreshold(int failoverThreshold)
+{
+	failoverThreshold_ = failoverThreshold;
+	setParameter("FailoverThreshold", std::to_string(failoverThreshold));
+}
+
+bool SetLoadBalancerTCPListenerAttributeRequest::getProxyProtocolV2Enabled()const
+{
+	return proxyProtocolV2Enabled_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setProxyProtocolV2Enabled(bool proxyProtocolV2Enabled)
+{
+	proxyProtocolV2Enabled_ = proxyProtocolV2Enabled;
+	setParameter("ProxyProtocolV2Enabled", proxyProtocolV2Enabled ? "true" : "false");
+}
+
 std::string SetLoadBalancerTCPListenerAttributeRequest::getConnectionDrain()const
 {
 	return connectionDrain_;
@@ -250,6 +316,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setConnectionDrain(const std::s
 {
 	connectionDrain_ = connectionDrain;
 	setParameter("ConnectionDrain", connectionDrain);
+}
+
+std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckSwitch()const
+{
+	return healthCheckSwitch_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckSwitch(const std::string& healthCheckSwitch)
+{
+	healthCheckSwitch_ = healthCheckSwitch;
+	setParameter("HealthCheckSwitch", healthCheckSwitch);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getAccess_key_id()const
@@ -272,6 +349,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckConnectTimeout(in
 {
 	healthCheckConnectTimeout_ = healthCheckConnectTimeout;
 	setParameter("HealthCheckConnectTimeout", std::to_string(healthCheckConnectTimeout));
+}
+
+std::string SetLoadBalancerTCPListenerAttributeRequest::getSlaveServerGroupId()const
+{
+	return slaveServerGroupId_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setSlaveServerGroupId(const std::string& slaveServerGroupId)
+{
+	slaveServerGroupId_ = slaveServerGroupId;
+	setParameter("SlaveServerGroupId", slaveServerGroupId);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getDescription()const
@@ -338,6 +426,17 @@ void SetLoadBalancerTCPListenerAttributeRequest::setRegionId(const std::string& 
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string SetLoadBalancerTCPListenerAttributeRequest::getMasterServerGroupId()const
+{
+	return masterServerGroupId_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setMasterServerGroupId(const std::string& masterServerGroupId)
+{
+	masterServerGroupId_ = masterServerGroupId;
+	setParameter("MasterServerGroupId", masterServerGroupId);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getListenerPort()const
