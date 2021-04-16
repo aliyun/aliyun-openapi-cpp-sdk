@@ -60,6 +60,17 @@ void ImportSpecialPersonnelRequest::setExternalId(const std::string& externalId)
 	setBodyParameter("ExternalId", externalId);
 }
 
+long ImportSpecialPersonnelRequest::getSource()const
+{
+	return source_;
+}
+
+void ImportSpecialPersonnelRequest::setSource(long source)
+{
+	source_ = source;
+	setBodyParameter("Source", std::to_string(source));
+}
+
 std::string ImportSpecialPersonnelRequest::getPersonType()const
 {
 	return personType_;

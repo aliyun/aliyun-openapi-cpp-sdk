@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_REID_CLOUD_MODEL_IMPORTSPECIALPERSONNELRESULT_H_
-#define ALIBABACLOUD_REID_CLOUD_MODEL_IMPORTSPECIALPERSONNELRESULT_H_
+#ifndef ALIBABACLOUD_REID_CLOUD_MODEL_LISTSPECIALPERSONNELBYIMAGERESULT_H_
+#define ALIBABACLOUD_REID_CLOUD_MODEL_LISTSPECIALPERSONNELBYIMAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_REID_CLOUD_EXPORT ImportSpecialPersonnelResult : public ServiceResult
+			class ALIBABACLOUD_REID_CLOUD_EXPORT ListSpecialPersonnelByImageResult : public ServiceResult
 			{
 			public:
-				struct SpecialPersonnelMap
+				struct ListPersonResultItem
 				{
-					long storeId;
+					float score;
 					long ukId;
 				};
 
 
-				ImportSpecialPersonnelResult();
-				explicit ImportSpecialPersonnelResult(const std::string &payload);
-				~ImportSpecialPersonnelResult();
+				ListSpecialPersonnelByImageResult();
+				explicit ListSpecialPersonnelByImageResult(const std::string &payload);
+				~ListSpecialPersonnelByImageResult();
 				std::string getMessage()const;
 				std::string getDynamicCode()const;
 				std::string getDynamicMessage()const;
 				std::string getErrorCode()const;
+				std::vector<ListPersonResultItem> getListPersonResultItems()const;
 				std::string getErrorMessage()const;
-				std::vector<SpecialPersonnelMap> getSpecialPersonnelMaps()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -58,8 +58,8 @@ namespace AlibabaCloud
 				std::string dynamicCode_;
 				std::string dynamicMessage_;
 				std::string errorCode_;
+				std::vector<ListPersonResultItem> listPersonResultItems_;
 				std::string errorMessage_;
-				std::vector<SpecialPersonnelMap> specialPersonnelMaps_;
 				std::string code_;
 				bool success_;
 
@@ -67,4 +67,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_REID_CLOUD_MODEL_IMPORTSPECIALPERSONNELRESULT_H_
+#endif // !ALIBABACLOUD_REID_CLOUD_MODEL_LISTSPECIALPERSONNELBYIMAGERESULT_H_

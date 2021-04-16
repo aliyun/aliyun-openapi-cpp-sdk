@@ -54,6 +54,8 @@
 #include "model/ListMaskDetectionResultsResult.h"
 #include "model/ListPersonByImageRequest.h"
 #include "model/ListPersonByImageResult.h"
+#include "model/ListSpecialPersonnelByImageRequest.h"
+#include "model/ListSpecialPersonnelByImageResult.h"
 #include "model/ListStoreRequest.h"
 #include "model/ListStoreResult.h"
 #include "model/PullActionDataRequest.h"
@@ -115,6 +117,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPersonByImageResult> ListPersonByImageOutcome;
 			typedef std::future<ListPersonByImageOutcome> ListPersonByImageOutcomeCallable;
 			typedef std::function<void(const Reid_cloudClient*, const Model::ListPersonByImageRequest&, const ListPersonByImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonByImageAsyncHandler;
+			typedef Outcome<Error, Model::ListSpecialPersonnelByImageResult> ListSpecialPersonnelByImageOutcome;
+			typedef std::future<ListSpecialPersonnelByImageOutcome> ListSpecialPersonnelByImageOutcomeCallable;
+			typedef std::function<void(const Reid_cloudClient*, const Model::ListSpecialPersonnelByImageRequest&, const ListSpecialPersonnelByImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSpecialPersonnelByImageAsyncHandler;
 			typedef Outcome<Error, Model::ListStoreResult> ListStoreOutcome;
 			typedef std::future<ListStoreOutcome> ListStoreOutcomeCallable;
 			typedef std::function<void(const Reid_cloudClient*, const Model::ListStoreRequest&, const ListStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListStoreAsyncHandler;
@@ -174,6 +179,9 @@ namespace AlibabaCloud
 			ListPersonByImageOutcome listPersonByImage(const Model::ListPersonByImageRequest &request)const;
 			void listPersonByImageAsync(const Model::ListPersonByImageRequest& request, const ListPersonByImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonByImageOutcomeCallable listPersonByImageCallable(const Model::ListPersonByImageRequest& request) const;
+			ListSpecialPersonnelByImageOutcome listSpecialPersonnelByImage(const Model::ListSpecialPersonnelByImageRequest &request)const;
+			void listSpecialPersonnelByImageAsync(const Model::ListSpecialPersonnelByImageRequest& request, const ListSpecialPersonnelByImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSpecialPersonnelByImageOutcomeCallable listSpecialPersonnelByImageCallable(const Model::ListSpecialPersonnelByImageRequest& request) const;
 			ListStoreOutcome listStore(const Model::ListStoreRequest &request)const;
 			void listStoreAsync(const Model::ListStoreRequest& request, const ListStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListStoreOutcomeCallable listStoreCallable(const Model::ListStoreRequest& request) const;

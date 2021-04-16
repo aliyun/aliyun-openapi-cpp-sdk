@@ -43,26 +43,26 @@ void ImportSpecialPersonnelResult::parse(const std::string &payload)
 	for (auto valueSpecialPersonnelMapsSpecialPersonnelMap : allSpecialPersonnelMapsNode)
 	{
 		SpecialPersonnelMap specialPersonnelMapsObject;
-		if(!valueSpecialPersonnelMapsSpecialPersonnelMap["UkId"].isNull())
-			specialPersonnelMapsObject.ukId = std::stol(valueSpecialPersonnelMapsSpecialPersonnelMap["UkId"].asString());
 		if(!valueSpecialPersonnelMapsSpecialPersonnelMap["StoreId"].isNull())
 			specialPersonnelMapsObject.storeId = std::stol(valueSpecialPersonnelMapsSpecialPersonnelMap["StoreId"].asString());
+		if(!valueSpecialPersonnelMapsSpecialPersonnelMap["UkId"].isNull())
+			specialPersonnelMapsObject.ukId = std::stol(valueSpecialPersonnelMapsSpecialPersonnelMap["UkId"].asString());
 		specialPersonnelMaps_.push_back(specialPersonnelMapsObject);
 	}
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["DynamicCode"].isNull())
-		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
 
 }
 
@@ -76,14 +76,14 @@ std::string ImportSpecialPersonnelResult::getDynamicCode()const
 	return dynamicCode_;
 }
 
-std::string ImportSpecialPersonnelResult::getErrorCode()const
-{
-	return errorCode_;
-}
-
 std::string ImportSpecialPersonnelResult::getDynamicMessage()const
 {
 	return dynamicMessage_;
+}
+
+std::string ImportSpecialPersonnelResult::getErrorCode()const
+{
+	return errorCode_;
 }
 
 std::string ImportSpecialPersonnelResult::getErrorMessage()const

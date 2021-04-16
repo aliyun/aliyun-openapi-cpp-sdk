@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getExternalId()const;
 				void setExternalId(const std::string& externalId);
+				long getSource()const;
+				void setSource(long source);
 				std::string getPersonType()const;
 				void setPersonType(const std::string& personType);
 				std::string getUrls()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				long ukId_;
 				std::string description_;
 				std::string externalId_;
+				long source_;
 				std::string personType_;
 				std::string urls_;
 				std::string personName_;

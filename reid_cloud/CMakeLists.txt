@@ -53,6 +53,8 @@ set(reid_cloud_public_header_model
 	include/alibabacloud/reid_cloud/model/ListMaskDetectionResultsResult.h
 	include/alibabacloud/reid_cloud/model/ListPersonByImageRequest.h
 	include/alibabacloud/reid_cloud/model/ListPersonByImageResult.h
+	include/alibabacloud/reid_cloud/model/ListSpecialPersonnelByImageRequest.h
+	include/alibabacloud/reid_cloud/model/ListSpecialPersonnelByImageResult.h
 	include/alibabacloud/reid_cloud/model/ListStoreRequest.h
 	include/alibabacloud/reid_cloud/model/ListStoreResult.h
 	include/alibabacloud/reid_cloud/model/PullActionDataRequest.h
@@ -92,6 +94,8 @@ set(reid_cloud_src
 	src/model/ListMaskDetectionResultsResult.cc
 	src/model/ListPersonByImageRequest.cc
 	src/model/ListPersonByImageResult.cc
+	src/model/ListSpecialPersonnelByImageRequest.cc
+	src/model/ListSpecialPersonnelByImageResult.cc
 	src/model/ListStoreRequest.cc
 	src/model/ListStoreResult.cc
 	src/model/PullActionDataRequest.cc
