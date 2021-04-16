@@ -106,6 +106,8 @@
 #include "model/DisableSlowQueryResult.h"
 #include "model/EnableSlowQueryRequest.h"
 #include "model/EnableSlowQueryResult.h"
+#include "model/GetDomainRequest.h"
+#include "model/GetDomainResult.h"
 #include "model/GetModelProgressRequest.h"
 #include "model/GetModelProgressResult.h"
 #include "model/GetModelReportRequest.h"
@@ -377,6 +379,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableSlowQueryResult> EnableSlowQueryOutcome;
 			typedef std::future<EnableSlowQueryOutcome> EnableSlowQueryOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::EnableSlowQueryRequest&, const EnableSlowQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableSlowQueryAsyncHandler;
+			typedef Outcome<Error, Model::GetDomainResult> GetDomainOutcome;
+			typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::GetDomainRequest&, const GetDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDomainAsyncHandler;
 			typedef Outcome<Error, Model::GetModelProgressResult> GetModelProgressOutcome;
 			typedef std::future<GetModelProgressOutcome> GetModelProgressOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::GetModelProgressRequest&, const GetModelProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetModelProgressAsyncHandler;
@@ -712,6 +717,9 @@ namespace AlibabaCloud
 			EnableSlowQueryOutcome enableSlowQuery(const Model::EnableSlowQueryRequest &request)const;
 			void enableSlowQueryAsync(const Model::EnableSlowQueryRequest& request, const EnableSlowQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableSlowQueryOutcomeCallable enableSlowQueryCallable(const Model::EnableSlowQueryRequest& request) const;
+			GetDomainOutcome getDomain(const Model::GetDomainRequest &request)const;
+			void getDomainAsync(const Model::GetDomainRequest& request, const GetDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDomainOutcomeCallable getDomainCallable(const Model::GetDomainRequest& request) const;
 			GetModelProgressOutcome getModelProgress(const Model::GetModelProgressRequest &request)const;
 			void getModelProgressAsync(const Model::GetModelProgressRequest& request, const GetModelProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetModelProgressOutcomeCallable getModelProgressCallable(const Model::GetModelProgressRequest& request) const;

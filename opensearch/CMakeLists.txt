@@ -105,6 +105,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/DisableSlowQueryResult.h
 	include/alibabacloud/opensearch/model/EnableSlowQueryRequest.h
 	include/alibabacloud/opensearch/model/EnableSlowQueryResult.h
+	include/alibabacloud/opensearch/model/GetDomainRequest.h
+	include/alibabacloud/opensearch/model/GetDomainResult.h
 	include/alibabacloud/opensearch/model/GetModelProgressRequest.h
 	include/alibabacloud/opensearch/model/GetModelProgressResult.h
 	include/alibabacloud/opensearch/model/GetModelReportRequest.h
@@ -328,6 +330,8 @@ set(opensearch_src
 	src/model/DisableSlowQueryResult.cc
 	src/model/EnableSlowQueryRequest.cc
 	src/model/EnableSlowQueryResult.cc
+	src/model/GetDomainRequest.cc
+	src/model/GetDomainResult.cc
 	src/model/GetModelProgressRequest.cc
 	src/model/GetModelProgressResult.cc
 	src/model/GetModelReportRequest.cc

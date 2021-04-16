@@ -69,6 +69,21 @@ void DescribeAppResult::parse(const std::string &payload)
 		result_.quota.qps = std::stoi(quotaNode["qps"].asString());
 	if(!quotaNode["spec"].isNull())
 		result_.quota.spec = quotaNode["spec"].asString();
+	auto domainNode = resultNode["domain"];
+	if(!domainNode["name"].isNull())
+		result_.domain.name = domainNode["name"].asString();
+	if(!domainNode["category"].isNull())
+		result_.domain.category = domainNode["category"].asString();
+	auto functionsNode = domainNode["functions"];
+		auto allQp = functionsNode["qp"]["qp"];
+		for (auto value : allQp)
+			result_.domain.functions.qp.push_back(value.asString());
+		auto allAlgo = functionsNode["algo"]["algo"];
+		for (auto value : allAlgo)
+			result_.domain.functions.algo.push_back(value.asString());
+		auto allService = functionsNode["service"]["service"];
+		for (auto value : allService)
+			result_.domain.functions.service.push_back(value.asString());
 		auto allFetchFields = resultNode["fetchFields"]["fetchFields"];
 		for (auto value : allFetchFields)
 			result_.fetchFields.push_back(value.asString());

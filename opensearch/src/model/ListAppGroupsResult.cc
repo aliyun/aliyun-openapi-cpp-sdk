@@ -89,6 +89,8 @@ void ListAppGroupsResult::parse(const std::string &payload)
 			resultObject.status = valueresultresultItem["status"].asString();
 		if(!valueresultresultItem["lockMode"].isNull())
 			resultObject.lockMode = valueresultresultItem["lockMode"].asString();
+		if(!valueresultresultItem["domain"].isNull())
+			resultObject.domain = valueresultresultItem["domain"].asString();
 		auto quotaNode = value["quota"];
 		if(!quotaNode["docSize"].isNull())
 			resultObject.quota.docSize = std::stoi(quotaNode["docSize"].asString());

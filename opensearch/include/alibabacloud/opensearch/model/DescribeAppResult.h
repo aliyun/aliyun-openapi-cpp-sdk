@@ -41,18 +41,31 @@ namespace AlibabaCloud
 						int computeResource;
 						std::string spec;
 					};
+					struct Domain
+					{
+						struct Functions
+						{
+							std::vector<std::string> service;
+							std::vector<std::string> algo;
+							std::vector<std::string> qp;
+						};
+						std::string category;
+						Functions functions;
+						std::string name;
+					};
 					std::string status;
-					std::string type;
 					std::string description;
-					Quota quota;
 					std::string schema;
-					std::vector<std::string> fetchFields;
-					std::string clusterName;
 					bool autoSwitch;
-					std::string id;
-					int algoDeploymentId;
 					int progressPercent;
 					int created;
+					std::string type;
+					Quota quota;
+					std::vector<std::string> fetchFields;
+					std::string clusterName;
+					std::string id;
+					int algoDeploymentId;
+					Domain domain;
 				};
 
 
