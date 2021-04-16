@@ -75,6 +75,7 @@ void CreateVpcEndpointRequest::setZone(const std::vector<Zone>& zone)
 		std::string zoneObjStr = "Zone." + std::to_string(dep1 + 1);
 		setParameter(zoneObjStr + ".VSwitchId", zoneObj.vSwitchId);
 		setParameter(zoneObjStr + ".ZoneId", zoneObj.zoneId);
+		setParameter(zoneObjStr + ".Ip", zoneObj.ip);
 	}
 }
 

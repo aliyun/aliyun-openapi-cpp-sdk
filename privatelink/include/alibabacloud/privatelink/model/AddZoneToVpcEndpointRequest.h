@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
+				std::string getIp()const;
+				void setIp(const std::string& ip);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getZoneId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string endpointId_;
 				std::string regionId_;
 				bool dryRun_;
+				std::string ip_;
 				std::string vSwitchId_;
 				std::string zoneId_;
 

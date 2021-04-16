@@ -39,22 +39,24 @@ void CreateVpcEndpointServiceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AutoAcceptEnabled"].isNull())
-		autoAcceptEnabled_ = value["AutoAcceptEnabled"].asString() == "true";
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["ServiceBusinessStatus"].isNull())
 		serviceBusinessStatus_ = value["ServiceBusinessStatus"].asString();
+	if(!value["ServiceName"].isNull())
+		serviceName_ = value["ServiceName"].asString();
 	if(!value["ServiceDescription"].isNull())
 		serviceDescription_ = value["ServiceDescription"].asString();
+	if(!value["ServiceStatus"].isNull())
+		serviceStatus_ = value["ServiceStatus"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["ZoneAffinityEnabled"].isNull())
+		zoneAffinityEnabled_ = value["ZoneAffinityEnabled"].asString() == "true";
 	if(!value["ServiceDomain"].isNull())
 		serviceDomain_ = value["ServiceDomain"].asString();
 	if(!value["ServiceId"].isNull())
 		serviceId_ = value["ServiceId"].asString();
-	if(!value["ServiceName"].isNull())
-		serviceName_ = value["ServiceName"].asString();
-	if(!value["ServiceStatus"].isNull())
-		serviceStatus_ = value["ServiceStatus"].asString();
+	if(!value["AutoAcceptEnabled"].isNull())
+		autoAcceptEnabled_ = value["AutoAcceptEnabled"].asString() == "true";
 
 }
 
@@ -83,18 +85,23 @@ std::string CreateVpcEndpointServiceResult::getCreateTime()const
 	return createTime_;
 }
 
+bool CreateVpcEndpointServiceResult::getZoneAffinityEnabled()const
+{
+	return zoneAffinityEnabled_;
+}
+
 std::string CreateVpcEndpointServiceResult::getServiceDomain()const
 {
 	return serviceDomain_;
 }
 
-bool CreateVpcEndpointServiceResult::getAutoAcceptEnabled()const
-{
-	return autoAcceptEnabled_;
-}
-
 std::string CreateVpcEndpointServiceResult::getServiceId()const
 {
 	return serviceId_;
+}
+
+bool CreateVpcEndpointServiceResult::getAutoAcceptEnabled()const
+{
+	return autoAcceptEnabled_;
 }
 

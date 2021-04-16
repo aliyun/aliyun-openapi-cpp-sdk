@@ -71,6 +71,17 @@ void UpdateVpcEndpointServiceAttributeRequest::setRegionId(const std::string& re
 	setParameter("RegionId", regionId);
 }
 
+bool UpdateVpcEndpointServiceAttributeRequest::getZoneAffinityEnabled()const
+{
+	return zoneAffinityEnabled_;
+}
+
+void UpdateVpcEndpointServiceAttributeRequest::setZoneAffinityEnabled(bool zoneAffinityEnabled)
+{
+	zoneAffinityEnabled_ = zoneAffinityEnabled;
+	setParameter("ZoneAffinityEnabled", zoneAffinityEnabled ? "true" : "false");
+}
+
 bool UpdateVpcEndpointServiceAttributeRequest::getDryRun()const
 {
 	return dryRun_;

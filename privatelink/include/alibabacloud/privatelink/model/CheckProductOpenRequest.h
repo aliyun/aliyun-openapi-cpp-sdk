@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_ADDUSERTOVPCENDPOINTSERVICEREQUEST_H_
-#define ALIBABACLOUD_PRIVATELINK_MODEL_ADDUSERTOVPCENDPOINTSERVICEREQUEST_H_
+#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_CHECKPRODUCTOPENREQUEST_H_
+#define ALIBABACLOUD_PRIVATELINK_MODEL_CHECKPRODUCTOPENREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PRIVATELINK_EXPORT AddUserToVpcEndpointServiceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_PRIVATELINK_EXPORT CheckProductOpenRequest : public RpcServiceRequest
 			{
 
 			public:
-				AddUserToVpcEndpointServiceRequest();
-				~AddUserToVpcEndpointServiceRequest();
+				CheckProductOpenRequest();
+				~CheckProductOpenRequest();
 
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				long getUserId()const;
-				void setUserId(long userId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				bool getDryRun()const;
-				void setDryRun(bool dryRun);
-				std::string getServiceId()const;
-				void setServiceId(const std::string& serviceId);
 
             private:
-				std::string clientToken_;
-				long userId_;
 				std::string regionId_;
-				bool dryRun_;
-				std::string serviceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_ADDUSERTOVPCENDPOINTSERVICEREQUEST_H_
+#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_CHECKPRODUCTOPENREQUEST_H_

@@ -43,8 +43,8 @@ namespace AlibabaCloud
 				std::string getEndpointDomain()const;
 				std::string getServiceName()const;
 				std::string getEndpointId()const;
-				std::string getCreateTime()const;
 				long getBandwidth()const;
+				std::string getCreateTime()const;
 				std::string getEndpointBusinessStatus()const;
 				std::string getEndpointDescription()const;
 				std::string getConnectionStatus()const;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				std::string endpointDomain_;
 				std::string serviceName_;
 				std::string endpointId_;
-				std::string createTime_;
 				long bandwidth_;
+				std::string createTime_;
 				std::string endpointBusinessStatus_;
 				std::string endpointDescription_;
 				std::string connectionStatus_;

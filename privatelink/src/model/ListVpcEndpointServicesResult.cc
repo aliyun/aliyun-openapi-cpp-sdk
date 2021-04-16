@@ -43,38 +43,40 @@ void ListVpcEndpointServicesResult::parse(const std::string &payload)
 	for (auto valueServicesService : allServicesNode)
 	{
 		Service servicesObject;
-		if(!valueServicesService["AutoAcceptEnabled"].isNull())
-			servicesObject.autoAcceptEnabled = valueServicesService["AutoAcceptEnabled"].asString() == "true";
-		if(!valueServicesService["ConnectBandwidth"].isNull())
-			servicesObject.connectBandwidth = std::stoi(valueServicesService["ConnectBandwidth"].asString());
-		if(!valueServicesService["CreateTime"].isNull())
-			servicesObject.createTime = valueServicesService["CreateTime"].asString();
-		if(!valueServicesService["MaxBandwidth"].isNull())
-			servicesObject.maxBandwidth = std::stoi(valueServicesService["MaxBandwidth"].asString());
-		if(!valueServicesService["MinBandwidth"].isNull())
-			servicesObject.minBandwidth = std::stoi(valueServicesService["MinBandwidth"].asString());
-		if(!valueServicesService["RegionId"].isNull())
-			servicesObject.regionId = valueServicesService["RegionId"].asString();
-		if(!valueServicesService["ServiceBusinessStatus"].isNull())
-			servicesObject.serviceBusinessStatus = valueServicesService["ServiceBusinessStatus"].asString();
+		if(!valueServicesService["Payer"].isNull())
+			servicesObject.payer = valueServicesService["Payer"].asString();
 		if(!valueServicesService["ServiceDescription"].isNull())
 			servicesObject.serviceDescription = valueServicesService["ServiceDescription"].asString();
+		if(!valueServicesService["MaxBandwidth"].isNull())
+			servicesObject.maxBandwidth = std::stoi(valueServicesService["MaxBandwidth"].asString());
+		if(!valueServicesService["CreateTime"].isNull())
+			servicesObject.createTime = valueServicesService["CreateTime"].asString();
 		if(!valueServicesService["ServiceDomain"].isNull())
 			servicesObject.serviceDomain = valueServicesService["ServiceDomain"].asString();
+		if(!valueServicesService["MinBandwidth"].isNull())
+			servicesObject.minBandwidth = std::stoi(valueServicesService["MinBandwidth"].asString());
 		if(!valueServicesService["ServiceId"].isNull())
 			servicesObject.serviceId = valueServicesService["ServiceId"].asString();
+		if(!valueServicesService["AutoAcceptEnabled"].isNull())
+			servicesObject.autoAcceptEnabled = valueServicesService["AutoAcceptEnabled"].asString() == "true";
+		if(!valueServicesService["ServiceBusinessStatus"].isNull())
+			servicesObject.serviceBusinessStatus = valueServicesService["ServiceBusinessStatus"].asString();
 		if(!valueServicesService["ServiceName"].isNull())
 			servicesObject.serviceName = valueServicesService["ServiceName"].asString();
 		if(!valueServicesService["ServiceStatus"].isNull())
 			servicesObject.serviceStatus = valueServicesService["ServiceStatus"].asString();
-		if(!valueServicesService["Payer"].isNull())
-			servicesObject.payer = valueServicesService["Payer"].asString();
+		if(!valueServicesService["ConnectBandwidth"].isNull())
+			servicesObject.connectBandwidth = std::stoi(valueServicesService["ConnectBandwidth"].asString());
+		if(!valueServicesService["RegionId"].isNull())
+			servicesObject.regionId = valueServicesService["RegionId"].asString();
+		if(!valueServicesService["ZoneAffinityEnabled"].isNull())
+			servicesObject.zoneAffinityEnabled = valueServicesService["ZoneAffinityEnabled"].asString() == "true";
 		services_.push_back(servicesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 

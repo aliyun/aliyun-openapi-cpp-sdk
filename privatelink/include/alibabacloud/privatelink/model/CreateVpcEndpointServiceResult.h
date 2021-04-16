@@ -42,9 +42,10 @@ namespace AlibabaCloud
 				std::string getServiceDescription()const;
 				std::string getServiceStatus()const;
 				std::string getCreateTime()const;
+				bool getZoneAffinityEnabled()const;
 				std::string getServiceDomain()const;
-				bool getAutoAcceptEnabled()const;
 				std::string getServiceId()const;
+				bool getAutoAcceptEnabled()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -54,9 +55,10 @@ namespace AlibabaCloud
 				std::string serviceDescription_;
 				std::string serviceStatus_;
 				std::string createTime_;
+				bool zoneAffinityEnabled_;
 				std::string serviceDomain_;
-				bool autoAcceptEnabled_;
 				std::string serviceId_;
+				bool autoAcceptEnabled_;
 
 			};
 		}

@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				~GetVpcEndpointServiceAttributeResult();
 				std::string getPayer()const;
 				std::string getServiceDescription()const;
-				std::string getCreateTime()const;
 				int getMaxBandwidth()const;
+				std::string getCreateTime()const;
 				std::string getServiceDomain()const;
 				int getMinBandwidth()const;
 				std::vector<std::string> getZones()const;
@@ -51,14 +51,15 @@ namespace AlibabaCloud
 				std::string getServiceStatus()const;
 				int getConnectBandwidth()const;
 				std::string getRegionId()const;
+				bool getZoneAffinityEnabled()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string payer_;
 				std::string serviceDescription_;
-				std::string createTime_;
 				int maxBandwidth_;
+				std::string createTime_;
 				std::string serviceDomain_;
 				int minBandwidth_;
 				std::vector<std::string> zones_;
@@ -69,6 +70,7 @@ namespace AlibabaCloud
 				std::string serviceStatus_;
 				int connectBandwidth_;
 				std::string regionId_;
+				bool zoneAffinityEnabled_;
 
 			};
 		}

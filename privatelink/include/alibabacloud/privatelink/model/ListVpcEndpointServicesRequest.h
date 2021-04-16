@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getNextToken()const;
 				void setNextToken(const std::string& nextToken);
+				bool getZoneAffinityEnabled()const;
+				void setZoneAffinityEnabled(bool zoneAffinityEnabled);
 				std::string getServiceName()const;
 				void setServiceName(const std::string& serviceName);
 				int getMaxResults()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string serviceStatus_;
 				std::string regionId_;
 				std::string nextToken_;
+				bool zoneAffinityEnabled_;
 				std::string serviceName_;
 				int maxResults_;
 				std::string serviceId_;

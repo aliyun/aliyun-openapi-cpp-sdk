@@ -43,26 +43,28 @@ void ListVpcEndpointZonesResult::parse(const std::string &payload)
 	for (auto valueZonesZone : allZonesNode)
 	{
 		Zone zonesObject;
-		if(!valueZonesZone["ZoneDomain"].isNull())
-			zonesObject.zoneDomain = valueZonesZone["ZoneDomain"].asString();
-		if(!valueZonesZone["ZoneStatus"].isNull())
-			zonesObject.zoneStatus = valueZonesZone["ZoneStatus"].asString();
 		if(!valueZonesZone["EniId"].isNull())
 			zonesObject.eniId = valueZonesZone["EniId"].asString();
-		if(!valueZonesZone["EniIp"].isNull())
-			zonesObject.eniIp = valueZonesZone["EniIp"].asString();
-		if(!valueZonesZone["VSwitchId"].isNull())
-			zonesObject.vSwitchId = valueZonesZone["VSwitchId"].asString();
 		if(!valueZonesZone["ZoneId"].isNull())
 			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
+		if(!valueZonesZone["ServiceStatus"].isNull())
+			zonesObject.serviceStatus = valueZonesZone["ServiceStatus"].asString();
+		if(!valueZonesZone["VSwitchId"].isNull())
+			zonesObject.vSwitchId = valueZonesZone["VSwitchId"].asString();
+		if(!valueZonesZone["EniIp"].isNull())
+			zonesObject.eniIp = valueZonesZone["EniIp"].asString();
+		if(!valueZonesZone["ZoneStatus"].isNull())
+			zonesObject.zoneStatus = valueZonesZone["ZoneStatus"].asString();
 		if(!valueZonesZone["RegionId"].isNull())
 			zonesObject.regionId = valueZonesZone["RegionId"].asString();
+		if(!valueZonesZone["ZoneDomain"].isNull())
+			zonesObject.zoneDomain = valueZonesZone["ZoneDomain"].asString();
 		zones_.push_back(zonesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 

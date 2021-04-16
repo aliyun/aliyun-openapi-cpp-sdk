@@ -71,6 +71,17 @@ void AddZoneToVpcEndpointRequest::setDryRun(bool dryRun)
 	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
+std::string AddZoneToVpcEndpointRequest::getIp()const
+{
+	return ip_;
+}
+
+void AddZoneToVpcEndpointRequest::setIp(const std::string& ip)
+{
+	ip_ = ip;
+	setParameter("Ip", ip);
+}
+
 std::string AddZoneToVpcEndpointRequest::getVSwitchId()const
 {
 	return vSwitchId_;

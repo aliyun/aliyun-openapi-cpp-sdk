@@ -42,32 +42,34 @@ void GetVpcEndpointServiceAttributeResult::parse(const std::string &payload)
 	auto allZones = value["Zones"]["Zone"];
 	for (const auto &item : allZones)
 		zones_.push_back(item.asString());
-	if(!value["ServiceId"].isNull())
-		serviceId_ = value["ServiceId"].asString();
-	if(!value["ServiceName"].isNull())
-		serviceName_ = value["ServiceName"].asString();
-	if(!value["ServiceDomain"].isNull())
-		serviceDomain_ = value["ServiceDomain"].asString();
+	if(!value["Payer"].isNull())
+		payer_ = value["Payer"].asString();
 	if(!value["ServiceDescription"].isNull())
 		serviceDescription_ = value["ServiceDescription"].asString();
-	if(!value["ServiceBusinessStatus"].isNull())
-		serviceBusinessStatus_ = value["ServiceBusinessStatus"].asString();
-	if(!value["ServiceStatus"].isNull())
-		serviceStatus_ = value["ServiceStatus"].asString();
-	if(!value["AutoAcceptEnabled"].isNull())
-		autoAcceptEnabled_ = value["AutoAcceptEnabled"].asString() == "true";
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["MaxBandwidth"].isNull())
 		maxBandwidth_ = std::stoi(value["MaxBandwidth"].asString());
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["ServiceDomain"].isNull())
+		serviceDomain_ = value["ServiceDomain"].asString();
 	if(!value["MinBandwidth"].isNull())
 		minBandwidth_ = std::stoi(value["MinBandwidth"].asString());
+	if(!value["ServiceId"].isNull())
+		serviceId_ = value["ServiceId"].asString();
+	if(!value["AutoAcceptEnabled"].isNull())
+		autoAcceptEnabled_ = value["AutoAcceptEnabled"].asString() == "true";
+	if(!value["ServiceBusinessStatus"].isNull())
+		serviceBusinessStatus_ = value["ServiceBusinessStatus"].asString();
+	if(!value["ServiceName"].isNull())
+		serviceName_ = value["ServiceName"].asString();
+	if(!value["ServiceStatus"].isNull())
+		serviceStatus_ = value["ServiceStatus"].asString();
 	if(!value["ConnectBandwidth"].isNull())
 		connectBandwidth_ = std::stoi(value["ConnectBandwidth"].asString());
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
-	if(!value["Payer"].isNull())
-		payer_ = value["Payer"].asString();
+	if(!value["ZoneAffinityEnabled"].isNull())
+		zoneAffinityEnabled_ = value["ZoneAffinityEnabled"].asString() == "true";
 
 }
 
@@ -81,14 +83,14 @@ std::string GetVpcEndpointServiceAttributeResult::getServiceDescription()const
 	return serviceDescription_;
 }
 
-std::string GetVpcEndpointServiceAttributeResult::getCreateTime()const
-{
-	return createTime_;
-}
-
 int GetVpcEndpointServiceAttributeResult::getMaxBandwidth()const
 {
 	return maxBandwidth_;
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getCreateTime()const
+{
+	return createTime_;
 }
 
 std::string GetVpcEndpointServiceAttributeResult::getServiceDomain()const
@@ -139,5 +141,10 @@ int GetVpcEndpointServiceAttributeResult::getConnectBandwidth()const
 std::string GetVpcEndpointServiceAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+bool GetVpcEndpointServiceAttributeResult::getZoneAffinityEnabled()const
+{
+	return zoneAffinityEnabled_;
 }
 

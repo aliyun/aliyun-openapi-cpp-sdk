@@ -33,8 +33,8 @@ namespace AlibabaCloud
 			public:
 				struct Resource
 				{
-					std::string resourceId;
 					std::string resourceType;
+					std::string resourceId;
 				};
 
 			public:
@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setPayer(const std::string& payer);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				bool getZoneAffinityEnabled()const;
+				void setZoneAffinityEnabled(bool zoneAffinityEnabled);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
 				std::vector<Resource> getResource()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string payer_;
 				std::string regionId_;
+				bool zoneAffinityEnabled_;
 				bool dryRun_;
 				std::vector<Resource> resource_;
 				std::string serviceDescription_;

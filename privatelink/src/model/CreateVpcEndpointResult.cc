@@ -39,30 +39,30 @@ void CreateVpcEndpointResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["EndpointId"].isNull())
-		endpointId_ = value["EndpointId"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
+	if(!value["EndpointStatus"].isNull())
+		endpointStatus_ = value["EndpointStatus"].asString();
 	if(!value["EndpointName"].isNull())
 		endpointName_ = value["EndpointName"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
-	if(!value["EndpointDescription"].isNull())
-		endpointDescription_ = value["EndpointDescription"].asString();
-	if(!value["ServiceId"].isNull())
-		serviceId_ = value["ServiceId"].asString();
-	if(!value["ServiceName"].isNull())
-		serviceName_ = value["ServiceName"].asString();
-	if(!value["EndpointBusinessStatus"].isNull())
-		endpointBusinessStatus_ = value["EndpointBusinessStatus"].asString();
-	if(!value["EndpointStatus"].isNull())
-		endpointStatus_ = value["EndpointStatus"].asString();
-	if(!value["ConnectionStatus"].isNull())
-		connectionStatus_ = value["ConnectionStatus"].asString();
 	if(!value["EndpointDomain"].isNull())
 		endpointDomain_ = value["EndpointDomain"].asString();
+	if(!value["ServiceName"].isNull())
+		serviceName_ = value["ServiceName"].asString();
+	if(!value["EndpointId"].isNull())
+		endpointId_ = value["EndpointId"].asString();
 	if(!value["Bandwidth"].isNull())
 		bandwidth_ = std::stol(value["Bandwidth"].asString());
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["EndpointBusinessStatus"].isNull())
+		endpointBusinessStatus_ = value["EndpointBusinessStatus"].asString();
+	if(!value["EndpointDescription"].isNull())
+		endpointDescription_ = value["EndpointDescription"].asString();
+	if(!value["ConnectionStatus"].isNull())
+		connectionStatus_ = value["ConnectionStatus"].asString();
+	if(!value["ServiceId"].isNull())
+		serviceId_ = value["ServiceId"].asString();
 
 }
 
@@ -96,14 +96,14 @@ std::string CreateVpcEndpointResult::getEndpointId()const
 	return endpointId_;
 }
 
-std::string CreateVpcEndpointResult::getCreateTime()const
-{
-	return createTime_;
-}
-
 long CreateVpcEndpointResult::getBandwidth()const
 {
 	return bandwidth_;
+}
+
+std::string CreateVpcEndpointResult::getCreateTime()const
+{
+	return createTime_;
 }
 
 std::string CreateVpcEndpointResult::getEndpointBusinessStatus()const

@@ -43,40 +43,42 @@ void ListVpcEndpointsResult::parse(const std::string &payload)
 	for (auto valueEndpointsEndpoint : allEndpointsNode)
 	{
 		Endpoint endpointsObject;
-		if(!valueEndpointsEndpoint["EndpointId"].isNull())
-			endpointsObject.endpointId = valueEndpointsEndpoint["EndpointId"].asString();
-		if(!valueEndpointsEndpoint["EndpointName"].isNull())
-			endpointsObject.endpointName = valueEndpointsEndpoint["EndpointName"].asString();
-		if(!valueEndpointsEndpoint["EndpointDescription"].isNull())
-			endpointsObject.endpointDescription = valueEndpointsEndpoint["EndpointDescription"].asString();
-		if(!valueEndpointsEndpoint["EndpointStatus"].isNull())
-			endpointsObject.endpointStatus = valueEndpointsEndpoint["EndpointStatus"].asString();
-		if(!valueEndpointsEndpoint["EndpointBusinessStatus"].isNull())
-			endpointsObject.endpointBusinessStatus = valueEndpointsEndpoint["EndpointBusinessStatus"].asString();
 		if(!valueEndpointsEndpoint["EndpointDomain"].isNull())
 			endpointsObject.endpointDomain = valueEndpointsEndpoint["EndpointDomain"].asString();
-		if(!valueEndpointsEndpoint["Bandwidth"].isNull())
-			endpointsObject.bandwidth = std::stol(valueEndpointsEndpoint["Bandwidth"].asString());
-		if(!valueEndpointsEndpoint["ConnectionStatus"].isNull())
-			endpointsObject.connectionStatus = valueEndpointsEndpoint["ConnectionStatus"].asString();
-		if(!valueEndpointsEndpoint["ServiceId"].isNull())
-			endpointsObject.serviceId = valueEndpointsEndpoint["ServiceId"].asString();
-		if(!valueEndpointsEndpoint["ServiceName"].isNull())
-			endpointsObject.serviceName = valueEndpointsEndpoint["ServiceName"].asString();
-		if(!valueEndpointsEndpoint["VpcId"].isNull())
-			endpointsObject.vpcId = valueEndpointsEndpoint["VpcId"].asString();
-		if(!valueEndpointsEndpoint["CreateTime"].isNull())
-			endpointsObject.createTime = valueEndpointsEndpoint["CreateTime"].asString();
-		if(!valueEndpointsEndpoint["RegionId"].isNull())
-			endpointsObject.regionId = valueEndpointsEndpoint["RegionId"].asString();
 		if(!valueEndpointsEndpoint["ResourceOwner"].isNull())
 			endpointsObject.resourceOwner = valueEndpointsEndpoint["ResourceOwner"].asString() == "true";
+		if(!valueEndpointsEndpoint["CreateTime"].isNull())
+			endpointsObject.createTime = valueEndpointsEndpoint["CreateTime"].asString();
+		if(!valueEndpointsEndpoint["EndpointBusinessStatus"].isNull())
+			endpointsObject.endpointBusinessStatus = valueEndpointsEndpoint["EndpointBusinessStatus"].asString();
+		if(!valueEndpointsEndpoint["EndpointDescription"].isNull())
+			endpointsObject.endpointDescription = valueEndpointsEndpoint["EndpointDescription"].asString();
+		if(!valueEndpointsEndpoint["ServiceId"].isNull())
+			endpointsObject.serviceId = valueEndpointsEndpoint["ServiceId"].asString();
+		if(!valueEndpointsEndpoint["EndpointStatus"].isNull())
+			endpointsObject.endpointStatus = valueEndpointsEndpoint["EndpointStatus"].asString();
+		if(!valueEndpointsEndpoint["EndpointName"].isNull())
+			endpointsObject.endpointName = valueEndpointsEndpoint["EndpointName"].asString();
+		if(!valueEndpointsEndpoint["VpcId"].isNull())
+			endpointsObject.vpcId = valueEndpointsEndpoint["VpcId"].asString();
+		if(!valueEndpointsEndpoint["ServiceName"].isNull())
+			endpointsObject.serviceName = valueEndpointsEndpoint["ServiceName"].asString();
+		if(!valueEndpointsEndpoint["EndpointId"].isNull())
+			endpointsObject.endpointId = valueEndpointsEndpoint["EndpointId"].asString();
+		if(!valueEndpointsEndpoint["Bandwidth"].isNull())
+			endpointsObject.bandwidth = std::stol(valueEndpointsEndpoint["Bandwidth"].asString());
+		if(!valueEndpointsEndpoint["RegionId"].isNull())
+			endpointsObject.regionId = valueEndpointsEndpoint["RegionId"].asString();
+		if(!valueEndpointsEndpoint["ConnectionStatus"].isNull())
+			endpointsObject.connectionStatus = valueEndpointsEndpoint["ConnectionStatus"].asString();
+		if(!valueEndpointsEndpoint["ZoneAffinityEnabled"].isNull())
+			endpointsObject.zoneAffinityEnabled = valueEndpointsEndpoint["ZoneAffinityEnabled"].asString() == "true";
 		endpoints_.push_back(endpointsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 

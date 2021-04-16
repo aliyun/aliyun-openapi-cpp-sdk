@@ -30,6 +30,8 @@
 #include "model/AttachResourceToVpcEndpointServiceResult.h"
 #include "model/AttachSecurityGroupToVpcEndpointRequest.h"
 #include "model/AttachSecurityGroupToVpcEndpointResult.h"
+#include "model/CheckProductOpenRequest.h"
+#include "model/CheckProductOpenResult.h"
 #include "model/CreateVpcEndpointRequest.h"
 #include "model/CreateVpcEndpointResult.h"
 #include "model/CreateVpcEndpointServiceRequest.h"
@@ -103,6 +105,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachSecurityGroupToVpcEndpointResult> AttachSecurityGroupToVpcEndpointOutcome;
 			typedef std::future<AttachSecurityGroupToVpcEndpointOutcome> AttachSecurityGroupToVpcEndpointOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::AttachSecurityGroupToVpcEndpointRequest&, const AttachSecurityGroupToVpcEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachSecurityGroupToVpcEndpointAsyncHandler;
+			typedef Outcome<Error, Model::CheckProductOpenResult> CheckProductOpenOutcome;
+			typedef std::future<CheckProductOpenOutcome> CheckProductOpenOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::CheckProductOpenRequest&, const CheckProductOpenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckProductOpenAsyncHandler;
 			typedef Outcome<Error, Model::CreateVpcEndpointResult> CreateVpcEndpointOutcome;
 			typedef std::future<CreateVpcEndpointOutcome> CreateVpcEndpointOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::CreateVpcEndpointRequest&, const CreateVpcEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcEndpointAsyncHandler;
@@ -198,6 +203,9 @@ namespace AlibabaCloud
 			AttachSecurityGroupToVpcEndpointOutcome attachSecurityGroupToVpcEndpoint(const Model::AttachSecurityGroupToVpcEndpointRequest &request)const;
 			void attachSecurityGroupToVpcEndpointAsync(const Model::AttachSecurityGroupToVpcEndpointRequest& request, const AttachSecurityGroupToVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachSecurityGroupToVpcEndpointOutcomeCallable attachSecurityGroupToVpcEndpointCallable(const Model::AttachSecurityGroupToVpcEndpointRequest& request) const;
+			CheckProductOpenOutcome checkProductOpen(const Model::CheckProductOpenRequest &request)const;
+			void checkProductOpenAsync(const Model::CheckProductOpenRequest& request, const CheckProductOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckProductOpenOutcomeCallable checkProductOpenCallable(const Model::CheckProductOpenRequest& request) const;
 			CreateVpcEndpointOutcome createVpcEndpoint(const Model::CreateVpcEndpointRequest &request)const;
 			void createVpcEndpointAsync(const Model::CreateVpcEndpointRequest& request, const CreateVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVpcEndpointOutcomeCallable createVpcEndpointCallable(const Model::CreateVpcEndpointRequest& request) const;

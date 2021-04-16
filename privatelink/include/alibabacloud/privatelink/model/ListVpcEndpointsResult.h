@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Endpoint
 				{
 					std::string endpointDomain;
-					std::string createTime;
 					bool resourceOwner;
+					std::string createTime;
 					std::string endpointBusinessStatus;
 					std::string endpointDescription;
 					std::string serviceId;
@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					long bandwidth;
 					std::string regionId;
 					std::string connectionStatus;
+					bool zoneAffinityEnabled;
 				};
 
 

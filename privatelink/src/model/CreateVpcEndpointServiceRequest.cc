@@ -71,6 +71,17 @@ void CreateVpcEndpointServiceRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+bool CreateVpcEndpointServiceRequest::getZoneAffinityEnabled()const
+{
+	return zoneAffinityEnabled_;
+}
+
+void CreateVpcEndpointServiceRequest::setZoneAffinityEnabled(bool zoneAffinityEnabled)
+{
+	zoneAffinityEnabled_ = zoneAffinityEnabled;
+	setParameter("ZoneAffinityEnabled", zoneAffinityEnabled ? "true" : "false");
+}
+
 bool CreateVpcEndpointServiceRequest::getDryRun()const
 {
 	return dryRun_;
@@ -93,8 +104,8 @@ void CreateVpcEndpointServiceRequest::setResource(const std::vector<Resource>& r
 	for(int dep1 = 0; dep1!= resource.size(); dep1++) {
 		auto resourceObj = resource.at(dep1);
 		std::string resourceObjStr = "Resource." + std::to_string(dep1 + 1);
-		setParameter(resourceObjStr + ".ResourceId", resourceObj.resourceId);
 		setParameter(resourceObjStr + ".ResourceType", resourceObj.resourceType);
+		setParameter(resourceObjStr + ".ResourceId", resourceObj.resourceId);
 	}
 }
 

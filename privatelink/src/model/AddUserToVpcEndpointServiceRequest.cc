@@ -38,15 +38,15 @@ void AddUserToVpcEndpointServiceRequest::setClientToken(const std::string& clien
 	setParameter("ClientToken", clientToken);
 }
 
-std::string AddUserToVpcEndpointServiceRequest::getUserId()const
+long AddUserToVpcEndpointServiceRequest::getUserId()const
 {
 	return userId_;
 }
 
-void AddUserToVpcEndpointServiceRequest::setUserId(const std::string& userId)
+void AddUserToVpcEndpointServiceRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setParameter("UserId", std::to_string(userId));
 }
 
 std::string AddUserToVpcEndpointServiceRequest::getRegionId()const

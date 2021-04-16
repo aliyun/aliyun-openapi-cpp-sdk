@@ -39,36 +39,38 @@ void GetVpcEndpointAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Bandwidth"].isNull())
-		bandwidth_ = std::stoi(value["Bandwidth"].asString());
-	if(!value["ConnectionStatus"].isNull())
-		connectionStatus_ = value["ConnectionStatus"].asString();
+	if(!value["Payer"].isNull())
+		payer_ = value["Payer"].asString();
+	if(!value["EndpointDomain"].isNull())
+		endpointDomain_ = value["EndpointDomain"].asString();
+	if(!value["ResourceOwner"].isNull())
+		resourceOwner_ = value["ResourceOwner"].asString() == "true";
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
 	if(!value["EndpointBusinessStatus"].isNull())
 		endpointBusinessStatus_ = value["EndpointBusinessStatus"].asString();
 	if(!value["EndpointDescription"].isNull())
 		endpointDescription_ = value["EndpointDescription"].asString();
-	if(!value["EndpointDomain"].isNull())
-		endpointDomain_ = value["EndpointDomain"].asString();
-	if(!value["EndpointId"].isNull())
-		endpointId_ = value["EndpointId"].asString();
-	if(!value["EndpointName"].isNull())
-		endpointName_ = value["EndpointName"].asString();
-	if(!value["EndpointStatus"].isNull())
-		endpointStatus_ = value["EndpointStatus"].asString();
 	if(!value["ServiceId"].isNull())
 		serviceId_ = value["ServiceId"].asString();
-	if(!value["ServiceName"].isNull())
-		serviceName_ = value["ServiceName"].asString();
+	if(!value["EndpointStatus"].isNull())
+		endpointStatus_ = value["EndpointStatus"].asString();
+	if(!value["EndpointName"].isNull())
+		endpointName_ = value["EndpointName"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
+	if(!value["ServiceName"].isNull())
+		serviceName_ = value["ServiceName"].asString();
+	if(!value["EndpointId"].isNull())
+		endpointId_ = value["EndpointId"].asString();
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = std::stoi(value["Bandwidth"].asString());
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
-	if(!value["Payer"].isNull())
-		payer_ = value["Payer"].asString();
-	if(!value["ResourceOwner"].isNull())
-		resourceOwner_ = value["ResourceOwner"].asString() == "true";
+	if(!value["ConnectionStatus"].isNull())
+		connectionStatus_ = value["ConnectionStatus"].asString();
+	if(!value["ZoneAffinityEnabled"].isNull())
+		zoneAffinityEnabled_ = value["ZoneAffinityEnabled"].asString() == "true";
 
 }
 
@@ -82,14 +84,14 @@ std::string GetVpcEndpointAttributeResult::getEndpointDomain()const
 	return endpointDomain_;
 }
 
-std::string GetVpcEndpointAttributeResult::getCreateTime()const
-{
-	return createTime_;
-}
-
 bool GetVpcEndpointAttributeResult::getResourceOwner()const
 {
 	return resourceOwner_;
+}
+
+std::string GetVpcEndpointAttributeResult::getCreateTime()const
+{
+	return createTime_;
 }
 
 std::string GetVpcEndpointAttributeResult::getEndpointBusinessStatus()const
@@ -127,14 +129,14 @@ std::string GetVpcEndpointAttributeResult::getServiceName()const
 	return serviceName_;
 }
 
-int GetVpcEndpointAttributeResult::getBandwidth()const
-{
-	return bandwidth_;
-}
-
 std::string GetVpcEndpointAttributeResult::getEndpointId()const
 {
 	return endpointId_;
+}
+
+int GetVpcEndpointAttributeResult::getBandwidth()const
+{
+	return bandwidth_;
 }
 
 std::string GetVpcEndpointAttributeResult::getRegionId()const
@@ -145,5 +147,10 @@ std::string GetVpcEndpointAttributeResult::getRegionId()const
 std::string GetVpcEndpointAttributeResult::getConnectionStatus()const
 {
 	return connectionStatus_;
+}
+
+bool GetVpcEndpointAttributeResult::getZoneAffinityEnabled()const
+{
+	return zoneAffinityEnabled_;
 }
 

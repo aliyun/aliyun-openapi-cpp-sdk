@@ -82,6 +82,17 @@ void ListVpcEndpointServicesRequest::setNextToken(const std::string& nextToken)
 	setParameter("NextToken", nextToken);
 }
 
+bool ListVpcEndpointServicesRequest::getZoneAffinityEnabled()const
+{
+	return zoneAffinityEnabled_;
+}
+
+void ListVpcEndpointServicesRequest::setZoneAffinityEnabled(bool zoneAffinityEnabled)
+{
+	zoneAffinityEnabled_ = zoneAffinityEnabled;
+	setParameter("ZoneAffinityEnabled", zoneAffinityEnabled ? "true" : "false");
+}
+
 std::string ListVpcEndpointServicesRequest::getServiceName()const
 {
 	return serviceName_;

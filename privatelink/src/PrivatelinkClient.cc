@@ -195,6 +195,42 @@ PrivatelinkClient::AttachSecurityGroupToVpcEndpointOutcomeCallable PrivatelinkCl
 	return task->get_future();
 }
 
+PrivatelinkClient::CheckProductOpenOutcome PrivatelinkClient::checkProductOpen(const CheckProductOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckProductOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckProductOpenOutcome(CheckProductOpenResult(outcome.result()));
+	else
+		return CheckProductOpenOutcome(outcome.error());
+}
+
+void PrivatelinkClient::checkProductOpenAsync(const CheckProductOpenRequest& request, const CheckProductOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkProductOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::CheckProductOpenOutcomeCallable PrivatelinkClient::checkProductOpenCallable(const CheckProductOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckProductOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->checkProductOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PrivatelinkClient::CreateVpcEndpointOutcome PrivatelinkClient::createVpcEndpoint(const CreateVpcEndpointRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

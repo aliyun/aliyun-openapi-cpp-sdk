@@ -29,6 +29,8 @@ set(privatelink_public_header_model
 	include/alibabacloud/privatelink/model/AttachResourceToVpcEndpointServiceResult.h
 	include/alibabacloud/privatelink/model/AttachSecurityGroupToVpcEndpointRequest.h
 	include/alibabacloud/privatelink/model/AttachSecurityGroupToVpcEndpointResult.h
+	include/alibabacloud/privatelink/model/CheckProductOpenRequest.h
+	include/alibabacloud/privatelink/model/CheckProductOpenResult.h
 	include/alibabacloud/privatelink/model/CreateVpcEndpointRequest.h
 	include/alibabacloud/privatelink/model/CreateVpcEndpointResult.h
 	include/alibabacloud/privatelink/model/CreateVpcEndpointServiceRequest.h
@@ -92,6 +94,8 @@ set(privatelink_src
 	src/model/AttachResourceToVpcEndpointServiceResult.cc
 	src/model/AttachSecurityGroupToVpcEndpointRequest.cc
 	src/model/AttachSecurityGroupToVpcEndpointResult.cc
+	src/model/CheckProductOpenRequest.cc
+	src/model/CheckProductOpenResult.cc
 	src/model/CreateVpcEndpointRequest.cc
 	src/model/CreateVpcEndpointResult.cc
 	src/model/CreateVpcEndpointServiceRequest.cc

@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setConnectBandwidth(int connectBandwidth);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				bool getZoneAffinityEnabled()const;
+				void setZoneAffinityEnabled(bool zoneAffinityEnabled);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
 				std::string getServiceDescription()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				int connectBandwidth_;
 				std::string regionId_;
+				bool zoneAffinityEnabled_;
 				bool dryRun_;
 				std::string serviceDescription_;
 				std::string serviceId_;

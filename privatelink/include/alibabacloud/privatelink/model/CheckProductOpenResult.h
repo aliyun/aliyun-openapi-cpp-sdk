@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_LISTVPCENDPOINTZONESRESULT_H_
-#define ALIBABACLOUD_PRIVATELINK_MODEL_LISTVPCENDPOINTZONESRESULT_H_
+#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_CHECKPRODUCTOPENRESULT_H_
+#define ALIBABACLOUD_PRIVATELINK_MODEL_CHECKPRODUCTOPENRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PRIVATELINK_EXPORT ListVpcEndpointZonesResult : public ServiceResult
+			class ALIBABACLOUD_PRIVATELINK_EXPORT CheckProductOpenResult : public ServiceResult
 			{
 			public:
-				struct Zone
-				{
-					std::string eniId;
-					std::string zoneId;
-					std::string serviceStatus;
-					std::string vSwitchId;
-					std::string eniIp;
-					std::string zoneStatus;
-					std::string regionId;
-					std::string zoneDomain;
-				};
 
 
-				ListVpcEndpointZonesResult();
-				explicit ListVpcEndpointZonesResult(const std::string &payload);
-				~ListVpcEndpointZonesResult();
-				std::string getNextToken()const;
-				std::string getMaxResults()const;
-				std::vector<Zone> getZones()const;
+				CheckProductOpenResult();
+				explicit CheckProductOpenResult(const std::string &payload);
+				~CheckProductOpenResult();
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string nextToken_;
-				std::string maxResults_;
-				std::vector<Zone> zones_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_LISTVPCENDPOINTZONESRESULT_H_
+#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_CHECKPRODUCTOPENRESULT_H_
