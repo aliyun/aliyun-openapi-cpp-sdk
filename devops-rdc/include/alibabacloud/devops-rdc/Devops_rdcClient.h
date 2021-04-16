@@ -46,6 +46,8 @@
 #include "model/CreateServiceConnectionResult.h"
 #include "model/DeleteCommonGroupRequest.h"
 #include "model/DeleteCommonGroupResult.h"
+#include "model/DeleteDevopsOrganizationRequest.h"
+#include "model/DeleteDevopsOrganizationResult.h"
 #include "model/DeleteDevopsOrganizationMembersRequest.h"
 #include "model/DeleteDevopsOrganizationMembersResult.h"
 #include "model/DeleteDevopsProjectRequest.h"
@@ -191,6 +193,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCommonGroupResult> DeleteCommonGroupOutcome;
 			typedef std::future<DeleteCommonGroupOutcome> DeleteCommonGroupOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::DeleteCommonGroupRequest&, const DeleteCommonGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCommonGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDevopsOrganizationResult> DeleteDevopsOrganizationOutcome;
+			typedef std::future<DeleteDevopsOrganizationOutcome> DeleteDevopsOrganizationOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::DeleteDevopsOrganizationRequest&, const DeleteDevopsOrganizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevopsOrganizationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDevopsOrganizationMembersResult> DeleteDevopsOrganizationMembersOutcome;
 			typedef std::future<DeleteDevopsOrganizationMembersOutcome> DeleteDevopsOrganizationMembersOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::DeleteDevopsOrganizationMembersRequest&, const DeleteDevopsOrganizationMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevopsOrganizationMembersAsyncHandler;
@@ -382,6 +387,9 @@ namespace AlibabaCloud
 			DeleteCommonGroupOutcome deleteCommonGroup(const Model::DeleteCommonGroupRequest &request)const;
 			void deleteCommonGroupAsync(const Model::DeleteCommonGroupRequest& request, const DeleteCommonGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCommonGroupOutcomeCallable deleteCommonGroupCallable(const Model::DeleteCommonGroupRequest& request) const;
+			DeleteDevopsOrganizationOutcome deleteDevopsOrganization(const Model::DeleteDevopsOrganizationRequest &request)const;
+			void deleteDevopsOrganizationAsync(const Model::DeleteDevopsOrganizationRequest& request, const DeleteDevopsOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDevopsOrganizationOutcomeCallable deleteDevopsOrganizationCallable(const Model::DeleteDevopsOrganizationRequest& request) const;
 			DeleteDevopsOrganizationMembersOutcome deleteDevopsOrganizationMembers(const Model::DeleteDevopsOrganizationMembersRequest &request)const;
 			void deleteDevopsOrganizationMembersAsync(const Model::DeleteDevopsOrganizationMembersRequest& request, const DeleteDevopsOrganizationMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDevopsOrganizationMembersOutcomeCallable deleteDevopsOrganizationMembersCallable(const Model::DeleteDevopsOrganizationMembersRequest& request) const;

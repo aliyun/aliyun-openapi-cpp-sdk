@@ -45,6 +45,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/CreateServiceConnectionResult.h
 	include/alibabacloud/devops-rdc/model/DeleteCommonGroupRequest.h
 	include/alibabacloud/devops-rdc/model/DeleteCommonGroupResult.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsOrganizationRequest.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsOrganizationResult.h
 	include/alibabacloud/devops-rdc/model/DeleteDevopsOrganizationMembersRequest.h
 	include/alibabacloud/devops-rdc/model/DeleteDevopsOrganizationMembersResult.h
 	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectRequest.h
@@ -172,6 +174,8 @@ set(devops-rdc_src
 	src/model/CreateServiceConnectionResult.cc
 	src/model/DeleteCommonGroupRequest.cc
 	src/model/DeleteCommonGroupResult.cc
+	src/model/DeleteDevopsOrganizationRequest.cc
+	src/model/DeleteDevopsOrganizationResult.cc
 	src/model/DeleteDevopsOrganizationMembersRequest.cc
 	src/model/DeleteDevopsOrganizationMembersResult.cc
 	src/model/DeleteDevopsProjectRequest.cc

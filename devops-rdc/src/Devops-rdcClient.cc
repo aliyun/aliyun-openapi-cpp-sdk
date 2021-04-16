@@ -483,6 +483,42 @@ Devops_rdcClient::DeleteCommonGroupOutcomeCallable Devops_rdcClient::deleteCommo
 	return task->get_future();
 }
 
+Devops_rdcClient::DeleteDevopsOrganizationOutcome Devops_rdcClient::deleteDevopsOrganization(const DeleteDevopsOrganizationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDevopsOrganizationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDevopsOrganizationOutcome(DeleteDevopsOrganizationResult(outcome.result()));
+	else
+		return DeleteDevopsOrganizationOutcome(outcome.error());
+}
+
+void Devops_rdcClient::deleteDevopsOrganizationAsync(const DeleteDevopsOrganizationRequest& request, const DeleteDevopsOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDevopsOrganization(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::DeleteDevopsOrganizationOutcomeCallable Devops_rdcClient::deleteDevopsOrganizationCallable(const DeleteDevopsOrganizationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDevopsOrganizationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDevopsOrganization(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::DeleteDevopsOrganizationMembersOutcome Devops_rdcClient::deleteDevopsOrganizationMembers(const DeleteDevopsOrganizationMembersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
