@@ -34,20 +34,28 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string answer;
-					std::vector<std::string> similarQuestion;
+					std::vector<std::string> options;
+					std::string reports;
+					std::string questionType;
+					std::string answerType;
+					std::string question;
+					std::string sessionId;
 				};
 
 
 				RunMedQAResult();
 				explicit RunMedQAResult(const std::string &payload);
 				~RunMedQAResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}

@@ -30,22 +30,50 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IMAGEPROCESS_EXPORT RunMedQARequest : public RpcServiceRequest
 			{
+			public:
+				struct AnswerImageDataList
+				{
+					std::string answerImageData;
+				};
+				struct AnswerTextList
+				{
+					std::string answerText;
+				};
+				struct AnswerImageURLList
+				{
+					std::string answerImageURL;
+				};
 
 			public:
 				RunMedQARequest();
 				~RunMedQARequest();
 
-				std::string getQuestion()const;
-				void setQuestion(const std::string& question);
-				std::string getOrgId()const;
-				void setOrgId(const std::string& orgId);
+				std::string getSessionId()const;
+				void setSessionId(const std::string& sessionId);
 				std::string getOrgName()const;
 				void setOrgName(const std::string& orgName);
+				std::vector<AnswerImageDataList> getAnswerImageDataList()const;
+				void setAnswerImageDataList(const std::vector<AnswerImageDataList>& answerImageDataList);
+				std::vector<AnswerTextList> getAnswerTextList()const;
+				void setAnswerTextList(const std::vector<AnswerTextList>& answerTextList);
+				std::string getDepartment()const;
+				void setDepartment(const std::string& department);
+				std::vector<AnswerImageURLList> getAnswerImageURLList()const;
+				void setAnswerImageURLList(const std::vector<AnswerImageURLList>& answerImageURLList);
+				std::string getQuestionType()const;
+				void setQuestionType(const std::string& questionType);
+				std::string getOrgId()const;
+				void setOrgId(const std::string& orgId);
 
             private:
-				std::string question_;
-				std::string orgId_;
+				std::string sessionId_;
 				std::string orgName_;
+				std::vector<AnswerImageDataList> answerImageDataList_;
+				std::vector<AnswerTextList> answerTextList_;
+				std::string department_;
+				std::vector<AnswerImageURLList> answerImageURLList_;
+				std::string questionType_;
+				std::string orgId_;
 
 			};
 		}

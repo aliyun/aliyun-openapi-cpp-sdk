@@ -27,26 +27,15 @@ RunMedQARequest::RunMedQARequest() :
 RunMedQARequest::~RunMedQARequest()
 {}
 
-std::string RunMedQARequest::getQuestion()const
+std::string RunMedQARequest::getSessionId()const
 {
-	return question_;
+	return sessionId_;
 }
 
-void RunMedQARequest::setQuestion(const std::string& question)
+void RunMedQARequest::setSessionId(const std::string& sessionId)
 {
-	question_ = question;
-	setBodyParameter("Question", question);
-}
-
-std::string RunMedQARequest::getOrgId()const
-{
-	return orgId_;
-}
-
-void RunMedQARequest::setOrgId(const std::string& orgId)
-{
-	orgId_ = orgId;
-	setBodyParameter("OrgId", orgId);
+	sessionId_ = sessionId;
+	setBodyParameter("SessionId", sessionId);
 }
 
 std::string RunMedQARequest::getOrgName()const
@@ -58,5 +47,83 @@ void RunMedQARequest::setOrgName(const std::string& orgName)
 {
 	orgName_ = orgName;
 	setBodyParameter("OrgName", orgName);
+}
+
+std::vector<RunMedQARequest::AnswerImageDataList> RunMedQARequest::getAnswerImageDataList()const
+{
+	return answerImageDataList_;
+}
+
+void RunMedQARequest::setAnswerImageDataList(const std::vector<AnswerImageDataList>& answerImageDataList)
+{
+	answerImageDataList_ = answerImageDataList;
+	for(int dep1 = 0; dep1!= answerImageDataList.size(); dep1++) {
+		auto answerImageDataListObj = answerImageDataList.at(dep1);
+		std::string answerImageDataListObjStr = "AnswerImageDataList." + std::to_string(dep1 + 1);
+		setParameter(answerImageDataListObjStr + ".AnswerImageData", answerImageDataListObj.answerImageData);
+	}
+}
+
+std::vector<RunMedQARequest::AnswerTextList> RunMedQARequest::getAnswerTextList()const
+{
+	return answerTextList_;
+}
+
+void RunMedQARequest::setAnswerTextList(const std::vector<AnswerTextList>& answerTextList)
+{
+	answerTextList_ = answerTextList;
+	for(int dep1 = 0; dep1!= answerTextList.size(); dep1++) {
+		auto answerTextListObj = answerTextList.at(dep1);
+		std::string answerTextListObjStr = "AnswerTextList." + std::to_string(dep1 + 1);
+		setParameter(answerTextListObjStr + ".AnswerText", answerTextListObj.answerText);
+	}
+}
+
+std::string RunMedQARequest::getDepartment()const
+{
+	return department_;
+}
+
+void RunMedQARequest::setDepartment(const std::string& department)
+{
+	department_ = department;
+	setBodyParameter("Department", department);
+}
+
+std::vector<RunMedQARequest::AnswerImageURLList> RunMedQARequest::getAnswerImageURLList()const
+{
+	return answerImageURLList_;
+}
+
+void RunMedQARequest::setAnswerImageURLList(const std::vector<AnswerImageURLList>& answerImageURLList)
+{
+	answerImageURLList_ = answerImageURLList;
+	for(int dep1 = 0; dep1!= answerImageURLList.size(); dep1++) {
+		auto answerImageURLListObj = answerImageURLList.at(dep1);
+		std::string answerImageURLListObjStr = "AnswerImageURLList." + std::to_string(dep1 + 1);
+		setParameter(answerImageURLListObjStr + ".AnswerImageURL", answerImageURLListObj.answerImageURL);
+	}
+}
+
+std::string RunMedQARequest::getQuestionType()const
+{
+	return questionType_;
+}
+
+void RunMedQARequest::setQuestionType(const std::string& questionType)
+{
+	questionType_ = questionType;
+	setBodyParameter("QuestionType", questionType);
+}
+
+std::string RunMedQARequest::getOrgId()const
+{
+	return orgId_;
+}
+
+void RunMedQARequest::setOrgId(const std::string& orgId)
+{
+	orgId_ = orgId;
+	setBodyParameter("OrgId", orgId);
 }
 
