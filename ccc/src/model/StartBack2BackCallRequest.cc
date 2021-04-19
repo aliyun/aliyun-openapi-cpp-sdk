@@ -60,6 +60,17 @@ void StartBack2BackCallRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
+std::string StartBack2BackCallRequest::getDeviceId()const
+{
+	return deviceId_;
+}
+
+void StartBack2BackCallRequest::setDeviceId(const std::string& deviceId)
+{
+	deviceId_ = deviceId;
+	setParameter("DeviceId", deviceId);
+}
+
 std::string StartBack2BackCallRequest::getAdditionalBroker()const
 {
 	return additionalBroker_;
