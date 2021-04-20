@@ -19,13 +19,24 @@
 using AlibabaCloud::CCC::Model::CreateUserRequest;
 
 CreateUserRequest::CreateUserRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "CreateUser")
+	RpcServiceRequest("ccc", "2017-07-05", "CreateUser")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 CreateUserRequest::~CreateUserRequest()
 {}
+
+std::string CreateUserRequest::getPrivateOutboundNumberId()const
+{
+	return privateOutboundNumberId_;
+}
+
+void CreateUserRequest::setPrivateOutboundNumberId(const std::string& privateOutboundNumberId)
+{
+	privateOutboundNumberId_ = privateOutboundNumberId;
+	setParameter("PrivateOutboundNumberId", privateOutboundNumberId);
+}
 
 std::string CreateUserRequest::getLoginName()const
 {
@@ -38,37 +49,41 @@ void CreateUserRequest::setLoginName(const std::string& loginName)
 	setParameter("LoginName", loginName);
 }
 
-std::string CreateUserRequest::getRoleId()const
+std::vector<std::string> CreateUserRequest::getRoleId()const
 {
 	return roleId_;
 }
 
-void CreateUserRequest::setRoleId(const std::string& roleId)
+void CreateUserRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
-	setParameter("RoleId", roleId);
+	for(int dep1 = 0; dep1!= roleId.size(); dep1++) {
+		setParameter("RoleId."+ std::to_string(dep1), roleId.at(dep1));
+	}
 }
 
-std::string CreateUserRequest::getMobile()const
+std::string CreateUserRequest::getAccessKeyId()const
 {
-	return mobile_;
+	return accessKeyId_;
 }
 
-void CreateUserRequest::setMobile(const std::string& mobile)
+void CreateUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	mobile_ = mobile;
-	setParameter("Mobile", mobile);
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateUserRequest::getWorkMode()const
+std::vector<int> CreateUserRequest::getSkillLevel()const
 {
-	return workMode_;
+	return skillLevel_;
 }
 
-void CreateUserRequest::setWorkMode(const std::string& workMode)
+void CreateUserRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
-	workMode_ = workMode;
-	setParameter("WorkMode", workMode);
+	skillLevel_ = skillLevel;
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++) {
+		setParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
+	}
 }
 
 std::string CreateUserRequest::getInstanceId()const
@@ -82,6 +97,17 @@ void CreateUserRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string CreateUserRequest::getPhone()const
+{
+	return phone_;
+}
+
+void CreateUserRequest::setPhone(const std::string& phone)
+{
+	phone_ = phone;
+	setParameter("Phone", phone);
+}
+
 std::string CreateUserRequest::getDisplayName()const
 {
 	return displayName_;
@@ -93,26 +119,17 @@ void CreateUserRequest::setDisplayName(const std::string& displayName)
 	setParameter("DisplayName", displayName);
 }
 
-bool CreateUserRequest::getResetPassword()const
+std::vector<std::string> CreateUserRequest::getSkillGroupId()const
 {
-	return resetPassword_;
+	return skillGroupId_;
 }
 
-void CreateUserRequest::setResetPassword(bool resetPassword)
+void CreateUserRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
-	resetPassword_ = resetPassword;
-	setParameter("ResetPassword", resetPassword ? "true" : "false");
-}
-
-std::string CreateUserRequest::getSkillLevelList()const
-{
-	return skillLevelList_;
-}
-
-void CreateUserRequest::setSkillLevelList(const std::string& skillLevelList)
-{
-	skillLevelList_ = skillLevelList;
-	setParameter("SkillLevelList", skillLevelList);
+	skillGroupId_ = skillGroupId;
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
+		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 
 std::string CreateUserRequest::getEmail()const

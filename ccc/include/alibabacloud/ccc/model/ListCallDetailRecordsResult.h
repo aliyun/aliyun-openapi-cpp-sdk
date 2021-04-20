@@ -32,23 +32,44 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT ListCallDetailRecordsResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct CallDetailRecords
 				{
 					struct CallDetailRecord
 					{
-						std::string skillGroupIds;
+						struct CallDetailAgent
+						{
+							std::string feedback;
+							std::string satisfaction;
+							std::string agentId;
+						};
+						struct Recording
+						{
+							std::string fileDescription;
+							std::string qualityCheckTid;
+							std::string fileName;
+							long startTime;
+							int duration;
+							std::string contactId;
+							std::string agentId;
+							std::string agentName;
+							std::string qualityCheckTaskId;
+						};
 						std::string calledNumber;
 						std::string contactType;
 						std::string contactDisposition;
 						std::string instanceId;
+						int satisfaction;
+						std::vector<CallDetailRecord::CallDetailAgent> agents;
 						long startTime;
+						int duration;
+						std::vector<CallDetailRecord::Recording> recordings;
 						std::string contactId;
-						std::string callDuration;
+						std::string satisfactionDesc;
 						std::string callingNumber;
+						std::string feedback;
 						std::string skillGroupNames;
-						std::string agentIds;
-						long establishedTime;
 						std::string agentNames;
+						std::string skillGroupIdList;
 					};
 					int totalCount;
 					int pageSize;
@@ -61,17 +82,19 @@ namespace AlibabaCloud
 				explicit ListCallDetailRecordsResult(const std::string &payload);
 				~ListCallDetailRecordsResult();
 				std::string getMessage()const;
+				CallDetailRecords getCallDetailRecords()const;
 				int getHttpStatusCode()const;
-				Data getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				CallDetailRecords callDetailRecords_;
 				int httpStatusCode_;
-				Data data_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

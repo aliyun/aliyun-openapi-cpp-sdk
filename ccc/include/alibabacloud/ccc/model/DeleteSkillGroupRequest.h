@@ -39,13 +39,13 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getSkillGroupId()const;
 				void setSkillGroupId(const std::string& skillGroupId);
-				bool getForce()const;
-				void setForce(bool force);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string instanceId_;
 				std::string skillGroupId_;
-				bool force_;
+				std::string accessKeyId_;
 
 			};
 		}

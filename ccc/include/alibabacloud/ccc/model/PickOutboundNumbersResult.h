@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT PickOutboundNumbersResult : public ServiceResult
 			{
 			public:
-				struct NumberPair
+				struct DialNumberPair
 				{
 					struct Callee
 					{
@@ -56,16 +56,18 @@ namespace AlibabaCloud
 				~PickOutboundNumbersResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<NumberPair> getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
+				std::vector<DialNumberPair> getDialNumberPairs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<NumberPair> data_;
 				std::string code_;
+				bool success_;
+				std::vector<DialNumberPair> dialNumberPairs_;
 
 			};
 		}

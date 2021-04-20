@@ -39,21 +39,16 @@ void CreateSkillGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Description"].isNull())
-		data_.description = dataNode["Description"].asString();
-	if(!dataNode["InstanceId"].isNull())
-		data_.instanceId = dataNode["InstanceId"].asString();
-	if(!dataNode["Name"].isNull())
-		data_.name = dataNode["Name"].asString();
-	if(!dataNode["SkillGroupId"].isNull())
-		data_.skillGroupId = dataNode["SkillGroupId"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["SkillGroupId"].isNull())
+		skillGroupId_ = value["SkillGroupId"].asString();
 
 }
 
@@ -67,13 +62,18 @@ int CreateSkillGroupResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
-CreateSkillGroupResult::Data CreateSkillGroupResult::getData()const
+std::string CreateSkillGroupResult::getSkillGroupId()const
 {
-	return data_;
+	return skillGroupId_;
 }
 
 std::string CreateSkillGroupResult::getCode()const
 {
 	return code_;
+}
+
+bool CreateSkillGroupResult::getSuccess()const
+{
+	return success_;
 }
 

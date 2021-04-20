@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::ModifyPhoneNumberRequest;
 
 ModifyPhoneNumberRequest::ModifyPhoneNumberRequest() :
-	RpcServiceRequest("ccc", "2020-07-01", "ModifyPhoneNumber")
+	RpcServiceRequest("ccc", "2017-07-05", "ModifyPhoneNumber")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -49,15 +49,15 @@ void ModifyPhoneNumberRequest::setUsage(const std::string& usage)
 	setParameter("Usage", usage);
 }
 
-std::string ModifyPhoneNumberRequest::getNumber()const
+std::string ModifyPhoneNumberRequest::getAccessKeyId()const
 {
-	return number_;
+	return accessKeyId_;
 }
 
-void ModifyPhoneNumberRequest::setNumber(const std::string& number)
+void ModifyPhoneNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
-	number_ = number;
-	setParameter("Number", number);
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyPhoneNumberRequest::getInstanceId()const
@@ -69,5 +69,29 @@ void ModifyPhoneNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string ModifyPhoneNumberRequest::getPhoneNumberId()const
+{
+	return phoneNumberId_;
+}
+
+void ModifyPhoneNumberRequest::setPhoneNumberId(const std::string& phoneNumberId)
+{
+	phoneNumberId_ = phoneNumberId;
+	setParameter("PhoneNumberId", phoneNumberId);
+}
+
+std::vector<std::string> ModifyPhoneNumberRequest::getSkillGroupId()const
+{
+	return skillGroupId_;
+}
+
+void ModifyPhoneNumberRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
+{
+	skillGroupId_ = skillGroupId;
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
+		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 
