@@ -39,10 +39,10 @@ void GetDRMLicenseResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DRMData"].isNull())
-		dRMData_ = value["DRMData"].asString();
 	if(!value["DeviceInfo"].isNull())
 		deviceInfo_ = value["DeviceInfo"].asString();
+	if(!value["DRMData"].isNull())
+		dRMData_ = value["DRMData"].asString();
 
 }
 

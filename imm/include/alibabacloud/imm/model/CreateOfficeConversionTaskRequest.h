@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setPdfVector(bool pdfVector);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getUserData()const;
+				void setUserData(const std::string& userData);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				long getStartPage()const;
@@ -92,6 +94,7 @@ namespace AlibabaCloud
 				std::string idempotentToken_;
 				bool pdfVector_;
 				std::string accessKeyId_;
+				std::string userData_;
 				std::string password_;
 				long startPage_;
 				std::string notifyEndpoint_;

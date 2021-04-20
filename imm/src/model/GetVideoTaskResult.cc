@@ -39,28 +39,28 @@ void GetVideoTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["TaskType"].isNull())
-		taskType_ = value["TaskType"].asString();
-	if(!value["Parameters"].isNull())
-		parameters_ = value["Parameters"].asString();
-	if(!value["Result"].isNull())
-		result_ = value["Result"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["NotifyEndpoint"].isNull())
 		notifyEndpoint_ = value["NotifyEndpoint"].asString();
-	if(!value["NotifyTopicName"].isNull())
-		notifyTopicName_ = value["NotifyTopicName"].asString();
 	if(!value["Progress"].isNull())
 		progress_ = std::stoi(value["Progress"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
+	if(!value["Parameters"].isNull())
+		parameters_ = value["Parameters"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["TaskType"].isNull())
+		taskType_ = value["TaskType"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["NotifyTopicName"].isNull())
+		notifyTopicName_ = value["NotifyTopicName"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Result"].isNull())
+		result_ = value["Result"].asString();
 
 }
 

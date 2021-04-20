@@ -39,16 +39,16 @@ void CreateOfficeConversionTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["TgtLoc"].isNull())
-		tgtLoc_ = value["TgtLoc"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 	if(!value["Percent"].isNull())
 		percent_ = std::stoi(value["Percent"].asString());
+	if(!value["TgtLoc"].isNull())
+		tgtLoc_ = value["TgtLoc"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
 
 }
 

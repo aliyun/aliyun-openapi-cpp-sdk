@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setTargetList(const std::string& targetList);
 				std::string getVideoUri()const;
 				void setVideoUri(const std::string& videoUri);
+				std::string getTargetSegment()const;
+				void setTargetSegment(const std::string& targetSegment);
 
             private:
 				std::string project_;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string notifyTopicName_;
 				std::string targetList_;
 				std::string videoUri_;
+				std::string targetSegment_;
 
 			};
 		}

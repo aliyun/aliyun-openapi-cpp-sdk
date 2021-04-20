@@ -82,6 +82,17 @@ void CreateOfficeConversionTaskRequest::setAccessKeyId(const std::string& access
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateOfficeConversionTaskRequest::getUserData()const
+{
+	return userData_;
+}
+
+void CreateOfficeConversionTaskRequest::setUserData(const std::string& userData)
+{
+	userData_ = userData;
+	setParameter("UserData", userData);
+}
+
 std::string CreateOfficeConversionTaskRequest::getPassword()const
 {
 	return password_;

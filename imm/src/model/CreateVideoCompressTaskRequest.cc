@@ -115,3 +115,14 @@ void CreateVideoCompressTaskRequest::setVideoUri(const std::string& videoUri)
 	setParameter("VideoUri", videoUri);
 }
 
+std::string CreateVideoCompressTaskRequest::getTargetSegment()const
+{
+	return targetSegment_;
+}
+
+void CreateVideoCompressTaskRequest::setTargetSegment(const std::string& targetSegment)
+{
+	targetSegment_ = targetSegment;
+	setParameter("TargetSegment", targetSegment);
+}
+
