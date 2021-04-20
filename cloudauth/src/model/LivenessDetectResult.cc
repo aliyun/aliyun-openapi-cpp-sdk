@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/ContrastFaceVerifyResult.h>
+#include <alibabacloud/cloudauth/model/LivenessDetectResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cloudauth;
 using namespace AlibabaCloud::Cloudauth::Model;
 
-ContrastFaceVerifyResult::ContrastFaceVerifyResult() :
+LivenessDetectResult::LivenessDetectResult() :
 	ServiceResult()
 {}
 
-ContrastFaceVerifyResult::ContrastFaceVerifyResult(const std::string &payload) :
+LivenessDetectResult::LivenessDetectResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ContrastFaceVerifyResult::~ContrastFaceVerifyResult()
+LivenessDetectResult::~LivenessDetectResult()
 {}
 
-void ContrastFaceVerifyResult::parse(const std::string &payload)
+void LivenessDetectResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -42,32 +42,28 @@ void ContrastFaceVerifyResult::parse(const std::string &payload)
 	auto resultObjectNode = value["ResultObject"];
 	if(!resultObjectNode["Passed"].isNull())
 		resultObject_.passed = resultObjectNode["Passed"].asString();
-	if(!resultObjectNode["IdentityInfo"].isNull())
-		resultObject_.identityInfo = resultObjectNode["IdentityInfo"].asString();
-	if(!resultObjectNode["MaterialInfo"].isNull())
-		resultObject_.materialInfo = resultObjectNode["MaterialInfo"].asString();
-	if(!resultObjectNode["SubCode"].isNull())
-		resultObject_.subCode = resultObjectNode["SubCode"].asString();
-	if(!resultObjectNode["CertifyId"].isNull())
-		resultObject_.certifyId = resultObjectNode["CertifyId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!resultObjectNode["Score"].isNull())
+		resultObject_.score = std::stof(resultObjectNode["Score"].asString());
+	if(!resultObjectNode["FrameUrl"].isNull())
+		resultObject_.frameUrl = resultObjectNode["FrameUrl"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
-ContrastFaceVerifyResult::ResultObject ContrastFaceVerifyResult::getResultObject()const
+LivenessDetectResult::ResultObject LivenessDetectResult::getResultObject()const
 {
 	return resultObject_;
 }
 
-std::string ContrastFaceVerifyResult::getMessage()const
+std::string LivenessDetectResult::getMessage()const
 {
 	return message_;
 }
 
-std::string ContrastFaceVerifyResult::getCode()const
+std::string LivenessDetectResult::getCode()const
 {
 	return code_;
 }

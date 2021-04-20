@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string passed;
 					float verifyScore;
+					std::string certifyId;
 				};
 
 

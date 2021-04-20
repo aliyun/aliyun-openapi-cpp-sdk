@@ -1419,6 +1419,42 @@ CloudauthClient::InitSmartVerifyOutcomeCallable CloudauthClient::initSmartVerify
 	return task->get_future();
 }
 
+CloudauthClient::LivenessDetectOutcome CloudauthClient::livenessDetect(const LivenessDetectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LivenessDetectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LivenessDetectOutcome(LivenessDetectResult(outcome.result()));
+	else
+		return LivenessDetectOutcome(outcome.error());
+}
+
+void CloudauthClient::livenessDetectAsync(const LivenessDetectRequest& request, const LivenessDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, livenessDetect(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::LivenessDetectOutcomeCallable CloudauthClient::livenessDetectCallable(const LivenessDetectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LivenessDetectOutcome()>>(
+			[this, request]()
+			{
+			return this->livenessDetect(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::LivenessFaceVerifyOutcome CloudauthClient::livenessFaceVerify(const LivenessFaceVerifyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
