@@ -88,7 +88,7 @@ void DescribeHiTSDBInstanceResult::parse(const std::string &payload)
 	if(!value["PublicConnectionString"].isNull())
 		publicConnectionString_ = value["PublicConnectionString"].asString();
 	if(!value["AutoRenew"].isNull())
-		autoRenew_ = value["AutoRenew"].asString() == "true";
+		autoRenew_ = value["AutoRenew"].asString();
 	if(!value["EngineType"].isNull())
 		engineType_ = value["EngineType"].asString();
 	if(!value["CpuNumber"].isNull())
@@ -112,7 +112,7 @@ void DescribeHiTSDBInstanceResult::parse(const std::string &payload)
 
 }
 
-bool DescribeHiTSDBInstanceResult::getAutoRenew()const
+std::string DescribeHiTSDBInstanceResult::getAutoRenew()const
 {
 	return autoRenew_;
 }

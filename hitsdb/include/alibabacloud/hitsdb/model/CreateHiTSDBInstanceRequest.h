@@ -81,6 +81,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::string getTSDBVersion()const;
 				void setTSDBVersion(const std::string& tSDBVersion);
+				std::string getAppKey()const;
+				void setAppKey(const std::string& appKey);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 				std::string getPricingCycle()const;
@@ -110,6 +112,7 @@ namespace AlibabaCloud
 				std::string vPCId_;
 				std::string zoneId_;
 				std::string tSDBVersion_;
+				std::string appKey_;
 				std::string payType_;
 				std::string pricingCycle_;
 

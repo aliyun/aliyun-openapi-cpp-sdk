@@ -148,3 +148,14 @@ void DescribeHiTSDBInstanceListRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeHiTSDBInstanceListRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void DescribeHiTSDBInstanceListRequest::setAppKey(const std::string& appKey)
+{
+	appKey_ = appKey;
+	setParameter("AppKey", appKey);
+}
+

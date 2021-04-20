@@ -73,12 +73,8 @@ void DescribeHiTSDBInstanceListResult::parse(const std::string &payload)
 			instanceListObject.instanceTps = valueInstanceListInstance["InstanceTps"].asString();
 		if(!valueInstanceListInstance["LockMode"].isNull())
 			instanceListObject.lockMode = valueInstanceListInstance["LockMode"].asString();
-		if(!valueInstanceListInstance["InstanceIdInVpc"].isNull())
-			instanceListObject.instanceIdInVpc = valueInstanceListInstance["InstanceIdInVpc"].asString();
 		if(!valueInstanceListInstance["EngineType"].isNull())
 			instanceListObject.engineType = valueInstanceListInstance["EngineType"].asString();
-		if(!valueInstanceListInstance["MaxDatabaseLimit"].isNull())
-			instanceListObject.maxDatabaseLimit = valueInstanceListInstance["MaxDatabaseLimit"].asString();
 		if(!valueInstanceListInstance["MaxSeriesPerDatabase"].isNull())
 			instanceListObject.maxSeriesPerDatabase = valueInstanceListInstance["MaxSeriesPerDatabase"].asString();
 		if(!valueInstanceListInstance["VpcId"].isNull())

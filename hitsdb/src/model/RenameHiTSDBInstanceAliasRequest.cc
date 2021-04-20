@@ -115,3 +115,14 @@ void RenameHiTSDBInstanceAliasRequest::setInstanceId(const std::string& instance
 	setParameter("InstanceId", instanceId);
 }
 
+std::string RenameHiTSDBInstanceAliasRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void RenameHiTSDBInstanceAliasRequest::setAppKey(const std::string& appKey)
+{
+	appKey_ = appKey;
+	setParameter("AppKey", appKey);
+}
+

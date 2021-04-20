@@ -104,3 +104,14 @@ void DescribeHiTSDBInstanceRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string DescribeHiTSDBInstanceRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void DescribeHiTSDBInstanceRequest::setAppKey(const std::string& appKey)
+{
+	appKey_ = appKey;
+	setParameter("AppKey", appKey);
+}
+

@@ -280,6 +280,17 @@ void CreateHiTSDBInstanceRequest::setTSDBVersion(const std::string& tSDBVersion)
 	setParameter("TSDBVersion", tSDBVersion);
 }
 
+std::string CreateHiTSDBInstanceRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void CreateHiTSDBInstanceRequest::setAppKey(const std::string& appKey)
+{
+	appKey_ = appKey;
+	setParameter("AppKey", appKey);
+}
+
 std::string CreateHiTSDBInstanceRequest::getPayType()const
 {
 	return payType_;

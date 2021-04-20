@@ -93,6 +93,17 @@ void ModifyHiTSDBInstanceSecurityIpListRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyHiTSDBInstanceSecurityIpListRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void ModifyHiTSDBInstanceSecurityIpListRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setParameter("GroupName", groupName);
+}
+
 std::string ModifyHiTSDBInstanceSecurityIpListRequest::getSecurityIpList()const
 {
 	return securityIpList_;

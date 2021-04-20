@@ -104,3 +104,14 @@ void DeleteHiTSDBInstanceRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string DeleteHiTSDBInstanceRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void DeleteHiTSDBInstanceRequest::setAppKey(const std::string& appKey)
+{
+	appKey_ = appKey;
+	setParameter("AppKey", appKey);
+}
+

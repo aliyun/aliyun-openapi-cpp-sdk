@@ -41,7 +41,7 @@ namespace AlibabaCloud
 				DescribeHiTSDBInstanceResult();
 				explicit DescribeHiTSDBInstanceResult(const std::string &payload);
 				~DescribeHiTSDBInstanceResult();
-				bool getAutoRenew()const;
+				std::string getAutoRenew()const;
 				std::string getGmtCreated()const;
 				std::string getCpuNumber()const;
 				std::string getInstanceAlias()const;
@@ -77,7 +77,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				bool autoRenew_;
+				std::string autoRenew_;
 				std::string gmtCreated_;
 				std::string cpuNumber_;
 				std::string instanceAlias_;

@@ -126,3 +126,14 @@ void ModifyHiTSDBInstanceClassRequest::setInstanceId(const std::string& instance
 	setParameter("InstanceId", instanceId);
 }
 
+std::string ModifyHiTSDBInstanceClassRequest::getAppKey()const
+{
+	return appKey_;
+}
+
+void ModifyHiTSDBInstanceClassRequest::setAppKey(const std::string& appKey)
+{
+	appKey_ = appKey;
+	setParameter("AppKey", appKey);
+}
+
