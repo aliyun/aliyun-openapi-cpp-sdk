@@ -951,6 +951,42 @@ CodeupClient::GetBranchInfoOutcomeCallable CodeupClient::getBranchInfoCallable(c
 	return task->get_future();
 }
 
+CodeupClient::GetCodeCompletionOutcome CodeupClient::getCodeCompletion(const GetCodeCompletionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCodeCompletionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCodeCompletionOutcome(GetCodeCompletionResult(outcome.result()));
+	else
+		return GetCodeCompletionOutcome(outcome.error());
+}
+
+void CodeupClient::getCodeCompletionAsync(const GetCodeCompletionRequest& request, const GetCodeCompletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCodeCompletion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetCodeCompletionOutcomeCallable CodeupClient::getCodeCompletionCallable(const GetCodeCompletionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCodeCompletionOutcome()>>(
+			[this, request]()
+			{
+			return this->getCodeCompletion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::GetCodeupOrganizationOutcome CodeupClient::getCodeupOrganization(const GetCodeupOrganizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1773,6 +1809,42 @@ CodeupClient::ListRepositoryMemberOutcomeCallable CodeupClient::listRepositoryMe
 			[this, request]()
 			{
 			return this->listRepositoryMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListRepositoryMemberWithInheritedOutcome CodeupClient::listRepositoryMemberWithInherited(const ListRepositoryMemberWithInheritedRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRepositoryMemberWithInheritedOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRepositoryMemberWithInheritedOutcome(ListRepositoryMemberWithInheritedResult(outcome.result()));
+	else
+		return ListRepositoryMemberWithInheritedOutcome(outcome.error());
+}
+
+void CodeupClient::listRepositoryMemberWithInheritedAsync(const ListRepositoryMemberWithInheritedRequest& request, const ListRepositoryMemberWithInheritedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRepositoryMemberWithInherited(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListRepositoryMemberWithInheritedOutcomeCallable CodeupClient::listRepositoryMemberWithInheritedCallable(const ListRepositoryMemberWithInheritedRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRepositoryMemberWithInheritedOutcome()>>(
+			[this, request]()
+			{
+			return this->listRepositoryMemberWithInherited(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

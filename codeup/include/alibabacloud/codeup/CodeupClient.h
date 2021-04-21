@@ -72,6 +72,8 @@
 #include "model/EnableRepositoryDeployKeyResult.h"
 #include "model/GetBranchInfoRequest.h"
 #include "model/GetBranchInfoResult.h"
+#include "model/GetCodeCompletionRequest.h"
+#include "model/GetCodeCompletionResult.h"
 #include "model/GetCodeupOrganizationRequest.h"
 #include "model/GetCodeupOrganizationResult.h"
 #include "model/GetFileBlobsRequest.h"
@@ -118,6 +120,8 @@
 #include "model/ListRepositoryCommitsResult.h"
 #include "model/ListRepositoryMemberRequest.h"
 #include "model/ListRepositoryMemberResult.h"
+#include "model/ListRepositoryMemberWithInheritedRequest.h"
+#include "model/ListRepositoryMemberWithInheritedResult.h"
 #include "model/ListRepositoryTagsRequest.h"
 #include "model/ListRepositoryTagsResult.h"
 #include "model/ListRepositoryTreeRequest.h"
@@ -224,6 +228,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetBranchInfoResult> GetBranchInfoOutcome;
 			typedef std::future<GetBranchInfoOutcome> GetBranchInfoOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetBranchInfoRequest&, const GetBranchInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBranchInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetCodeCompletionResult> GetCodeCompletionOutcome;
+			typedef std::future<GetCodeCompletionOutcome> GetCodeCompletionOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetCodeCompletionRequest&, const GetCodeCompletionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCodeCompletionAsyncHandler;
 			typedef Outcome<Error, Model::GetCodeupOrganizationResult> GetCodeupOrganizationOutcome;
 			typedef std::future<GetCodeupOrganizationOutcome> GetCodeupOrganizationOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetCodeupOrganizationRequest&, const GetCodeupOrganizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCodeupOrganizationAsyncHandler;
@@ -293,6 +300,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRepositoryMemberResult> ListRepositoryMemberOutcome;
 			typedef std::future<ListRepositoryMemberOutcome> ListRepositoryMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryMemberRequest&, const ListRepositoryMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryMemberAsyncHandler;
+			typedef Outcome<Error, Model::ListRepositoryMemberWithInheritedResult> ListRepositoryMemberWithInheritedOutcome;
+			typedef std::future<ListRepositoryMemberWithInheritedOutcome> ListRepositoryMemberWithInheritedOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryMemberWithInheritedRequest&, const ListRepositoryMemberWithInheritedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryMemberWithInheritedAsyncHandler;
 			typedef Outcome<Error, Model::ListRepositoryTagsResult> ListRepositoryTagsOutcome;
 			typedef std::future<ListRepositoryTagsOutcome> ListRepositoryTagsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryTagsRequest&, const ListRepositoryTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryTagsAsyncHandler;
@@ -406,6 +416,9 @@ namespace AlibabaCloud
 			GetBranchInfoOutcome getBranchInfo(const Model::GetBranchInfoRequest &request)const;
 			void getBranchInfoAsync(const Model::GetBranchInfoRequest& request, const GetBranchInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBranchInfoOutcomeCallable getBranchInfoCallable(const Model::GetBranchInfoRequest& request) const;
+			GetCodeCompletionOutcome getCodeCompletion(const Model::GetCodeCompletionRequest &request)const;
+			void getCodeCompletionAsync(const Model::GetCodeCompletionRequest& request, const GetCodeCompletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCodeCompletionOutcomeCallable getCodeCompletionCallable(const Model::GetCodeCompletionRequest& request) const;
 			GetCodeupOrganizationOutcome getCodeupOrganization(const Model::GetCodeupOrganizationRequest &request)const;
 			void getCodeupOrganizationAsync(const Model::GetCodeupOrganizationRequest& request, const GetCodeupOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCodeupOrganizationOutcomeCallable getCodeupOrganizationCallable(const Model::GetCodeupOrganizationRequest& request) const;
@@ -475,6 +488,9 @@ namespace AlibabaCloud
 			ListRepositoryMemberOutcome listRepositoryMember(const Model::ListRepositoryMemberRequest &request)const;
 			void listRepositoryMemberAsync(const Model::ListRepositoryMemberRequest& request, const ListRepositoryMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryMemberOutcomeCallable listRepositoryMemberCallable(const Model::ListRepositoryMemberRequest& request) const;
+			ListRepositoryMemberWithInheritedOutcome listRepositoryMemberWithInherited(const Model::ListRepositoryMemberWithInheritedRequest &request)const;
+			void listRepositoryMemberWithInheritedAsync(const Model::ListRepositoryMemberWithInheritedRequest& request, const ListRepositoryMemberWithInheritedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRepositoryMemberWithInheritedOutcomeCallable listRepositoryMemberWithInheritedCallable(const Model::ListRepositoryMemberWithInheritedRequest& request) const;
 			ListRepositoryTagsOutcome listRepositoryTags(const Model::ListRepositoryTagsRequest &request)const;
 			void listRepositoryTagsAsync(const Model::ListRepositoryTagsRequest& request, const ListRepositoryTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryTagsOutcomeCallable listRepositoryTagsCallable(const Model::ListRepositoryTagsRequest& request) const;
