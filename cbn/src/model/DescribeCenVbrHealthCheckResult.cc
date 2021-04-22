@@ -61,6 +61,8 @@ void DescribeCenVbrHealthCheckResult::parse(const std::string &payload)
 			vbrHealthChecksObject.healthCheckInterval = std::stoi(valueVbrHealthChecksVbrHealthCheck["HealthCheckInterval"].asString());
 		if(!valueVbrHealthChecksVbrHealthCheck["HealthyThreshold"].isNull())
 			vbrHealthChecksObject.healthyThreshold = std::stoi(valueVbrHealthChecksVbrHealthCheck["HealthyThreshold"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["VbrInstanceRegionId"].isNull())
+			vbrHealthChecksObject.vbrInstanceRegionId = valueVbrHealthChecksVbrHealthCheck["VbrInstanceRegionId"].asString();
 		vbrHealthChecks_.push_back(vbrHealthChecksObject);
 	}
 	if(!value["TotalCount"].isNull())

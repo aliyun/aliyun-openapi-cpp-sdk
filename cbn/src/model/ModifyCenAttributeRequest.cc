@@ -49,6 +49,17 @@ void ModifyCenAttributeRequest::setCenId(const std::string& cenId)
 	setParameter("CenId", cenId);
 }
 
+std::string ModifyCenAttributeRequest::getIpv6Level()const
+{
+	return ipv6Level_;
+}
+
+void ModifyCenAttributeRequest::setIpv6Level(const std::string& ipv6Level)
+{
+	ipv6Level_ = ipv6Level;
+	setParameter("Ipv6Level", ipv6Level);
+}
+
 std::string ModifyCenAttributeRequest::getDescription()const
 {
 	return description_;

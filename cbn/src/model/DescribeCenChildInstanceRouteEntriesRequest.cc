@@ -104,6 +104,17 @@ void DescribeCenChildInstanceRouteEntriesRequest::setOwnerAccount(const std::str
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeCenChildInstanceRouteEntriesRequest::getDestinationCidrBlock()const
+{
+	return destinationCidrBlock_;
+}
+
+void DescribeCenChildInstanceRouteEntriesRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
+{
+	destinationCidrBlock_ = destinationCidrBlock;
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
+}
+
 long DescribeCenChildInstanceRouteEntriesRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -135,6 +146,17 @@ void DescribeCenChildInstanceRouteEntriesRequest::setChildInstanceId(const std::
 {
 	childInstanceId_ = childInstanceId;
 	setParameter("ChildInstanceId", childInstanceId);
+}
+
+std::string DescribeCenChildInstanceRouteEntriesRequest::getChildInstanceRouteTableId()const
+{
+	return childInstanceRouteTableId_;
+}
+
+void DescribeCenChildInstanceRouteEntriesRequest::setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId)
+{
+	childInstanceRouteTableId_ = childInstanceRouteTableId;
+	setParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
 }
 
 std::string DescribeCenChildInstanceRouteEntriesRequest::getStatus()const

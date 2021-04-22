@@ -41,6 +41,11 @@ namespace AlibabaCloud
 						std::string bandwidthLimit;
 						std::string localRegionId;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string description;
 					std::string geographicSpanId;
@@ -63,6 +68,7 @@ namespace AlibabaCloud
 					std::string reservationActiveTime;
 					std::string cenBandwidthPackageId;
 					std::string reservationBandwidth;
+					std::vector<CenBandwidthPackage::Tag> tags;
 				};
 
 

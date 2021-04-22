@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				int getAutoRenewDuration()const;
+				void setAutoRenewDuration(int autoRenewDuration);
 				std::string getBandwidthPackageChargeType()const;
 				void setBandwidthPackageChargeType(const std::string& bandwidthPackageChargeType);
 				std::string getGeographicRegionBId()const;
@@ -59,6 +61,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				bool getAutoRenew()const;
+				void setAutoRenew(bool autoRenew);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getPricingCycle()const;
@@ -68,6 +72,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string description_;
+				int autoRenewDuration_;
 				std::string bandwidthPackageChargeType_;
 				std::string geographicRegionBId_;
 				int period_;
@@ -77,6 +82,7 @@ namespace AlibabaCloud
 				int bandwidth_;
 				std::string ownerAccount_;
 				long ownerId_;
+				bool autoRenew_;
 				std::string name_;
 				std::string pricingCycle_;
 

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeCenAttachedChildInstanceAttributeRequest();
 				~DescribeCenAttachedChildInstanceAttributeRequest();
 
+				bool getIncludeRouteTable()const;
+				void setIncludeRouteTable(bool includeRouteTable);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getCenId()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				void setChildInstanceId(const std::string& childInstanceId);
 
             private:
+				bool includeRouteTable_;
 				long resourceOwnerId_;
 				std::string cenId_;
 				std::string childInstanceRegionId_;

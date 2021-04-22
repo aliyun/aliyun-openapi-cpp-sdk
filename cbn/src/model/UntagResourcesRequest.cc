@@ -38,6 +38,17 @@ void UntagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool UntagResourcesRequest::getAll()const
+{
+	return all_;
+}
+
+void UntagResourcesRequest::setAll(bool all)
+{
+	all_ = all;
+	setParameter("All", all ? "true" : "false");
+}
+
 std::vector<std::string> UntagResourcesRequest::getResourceId()const
 {
 	return resourceId_;

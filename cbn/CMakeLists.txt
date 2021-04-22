@@ -31,6 +31,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/CreateCenResult.h
 	include/alibabacloud/cbn/model/CreateCenBandwidthPackageRequest.h
 	include/alibabacloud/cbn/model/CreateCenBandwidthPackageResult.h
+	include/alibabacloud/cbn/model/CreateCenChildInstanceRouteEntryToCenRequest.h
+	include/alibabacloud/cbn/model/CreateCenChildInstanceRouteEntryToCenResult.h
 	include/alibabacloud/cbn/model/CreateCenRouteMapRequest.h
 	include/alibabacloud/cbn/model/CreateCenRouteMapResult.h
 	include/alibabacloud/cbn/model/CreateFlowlogRequest.h
@@ -41,6 +43,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DeleteCenResult.h
 	include/alibabacloud/cbn/model/DeleteCenBandwidthPackageRequest.h
 	include/alibabacloud/cbn/model/DeleteCenBandwidthPackageResult.h
+	include/alibabacloud/cbn/model/DeleteCenChildInstanceRouteEntryToCenRequest.h
+	include/alibabacloud/cbn/model/DeleteCenChildInstanceRouteEntryToCenResult.h
 	include/alibabacloud/cbn/model/DeleteCenRouteMapRequest.h
 	include/alibabacloud/cbn/model/DeleteCenRouteMapResult.h
 	include/alibabacloud/cbn/model/DeleteFlowlogRequest.h
@@ -113,6 +117,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/SetCenInterRegionBandwidthLimitResult.h
 	include/alibabacloud/cbn/model/TagResourcesRequest.h
 	include/alibabacloud/cbn/model/TagResourcesResult.h
+	include/alibabacloud/cbn/model/TempUpgradeCenBandwidthPackageSpecRequest.h
+	include/alibabacloud/cbn/model/TempUpgradeCenBandwidthPackageSpecResult.h
 	include/alibabacloud/cbn/model/UnassociateCenBandwidthPackageRequest.h
 	include/alibabacloud/cbn/model/UnassociateCenBandwidthPackageResult.h
 	include/alibabacloud/cbn/model/UnroutePrivateZoneInCenToVpcRequest.h
@@ -134,6 +140,8 @@ set(cbn_src
 	src/model/CreateCenResult.cc
 	src/model/CreateCenBandwidthPackageRequest.cc
 	src/model/CreateCenBandwidthPackageResult.cc
+	src/model/CreateCenChildInstanceRouteEntryToCenRequest.cc
+	src/model/CreateCenChildInstanceRouteEntryToCenResult.cc
 	src/model/CreateCenRouteMapRequest.cc
 	src/model/CreateCenRouteMapResult.cc
 	src/model/CreateFlowlogRequest.cc
@@ -144,6 +152,8 @@ set(cbn_src
 	src/model/DeleteCenResult.cc
 	src/model/DeleteCenBandwidthPackageRequest.cc
 	src/model/DeleteCenBandwidthPackageResult.cc
+	src/model/DeleteCenChildInstanceRouteEntryToCenRequest.cc
+	src/model/DeleteCenChildInstanceRouteEntryToCenResult.cc
 	src/model/DeleteCenRouteMapRequest.cc
 	src/model/DeleteCenRouteMapResult.cc
 	src/model/DeleteFlowlogRequest.cc
@@ -216,6 +226,8 @@ set(cbn_src
 	src/model/SetCenInterRegionBandwidthLimitResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TempUpgradeCenBandwidthPackageSpecRequest.cc
+	src/model/TempUpgradeCenBandwidthPackageSpecResult.cc
 	src/model/UnassociateCenBandwidthPackageRequest.cc
 	src/model/UnassociateCenBandwidthPackageResult.cc
 	src/model/UnroutePrivateZoneInCenToVpcRequest.cc

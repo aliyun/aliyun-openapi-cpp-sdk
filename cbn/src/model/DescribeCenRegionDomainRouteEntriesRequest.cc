@@ -93,6 +93,17 @@ void DescribeCenRegionDomainRouteEntriesRequest::setOwnerAccount(const std::stri
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeCenRegionDomainRouteEntriesRequest::getDestinationCidrBlock()const
+{
+	return destinationCidrBlock_;
+}
+
+void DescribeCenRegionDomainRouteEntriesRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
+{
+	destinationCidrBlock_ = destinationCidrBlock;
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
+}
+
 long DescribeCenRegionDomainRouteEntriesRequest::getOwnerId()const
 {
 	return ownerId_;

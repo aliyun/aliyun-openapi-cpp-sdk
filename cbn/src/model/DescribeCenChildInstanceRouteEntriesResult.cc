@@ -61,30 +61,30 @@ void DescribeCenChildInstanceRouteEntriesResult::parse(const std::string &payloa
 			cenRouteEntriesObject.publishStatus = valueCenRouteEntriesCenRouteEntry["PublishStatus"].asString();
 		if(!valueCenRouteEntriesCenRouteEntry["RouteTableId"].isNull())
 			cenRouteEntriesObject.routeTableId = valueCenRouteEntriesCenRouteEntry["RouteTableId"].asString();
-		auto allCenRouteMapRecordsNode = allCenRouteEntriesNode["CenRouteMapRecords"]["CenRouteMapRecord"];
-		for (auto allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord : allCenRouteMapRecordsNode)
+		auto allCenRouteMapRecordsNode = valueCenRouteEntriesCenRouteEntry["CenRouteMapRecords"]["CenRouteMapRecord"];
+		for (auto valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord : allCenRouteMapRecordsNode)
 		{
 			CenRouteEntry::CenRouteMapRecord cenRouteMapRecordsObject;
-			if(!allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
-				cenRouteMapRecordsObject.regionId = allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
-			if(!allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].isNull())
-				cenRouteMapRecordsObject.routeMapId = allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
+				cenRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].isNull())
+				cenRouteMapRecordsObject.routeMapId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].asString();
 			cenRouteEntriesObject.cenRouteMapRecords.push_back(cenRouteMapRecordsObject);
 		}
-		auto allConflictsNode = allCenRouteEntriesNode["Conflicts"]["Conflict"];
-		for (auto allCenRouteEntriesNodeConflictsConflict : allConflictsNode)
+		auto allConflictsNode = valueCenRouteEntriesCenRouteEntry["Conflicts"]["Conflict"];
+		for (auto valueCenRouteEntriesCenRouteEntryConflictsConflict : allConflictsNode)
 		{
 			CenRouteEntry::Conflict conflictsObject;
-			if(!allCenRouteEntriesNodeConflictsConflict["DestinationCidrBlock"].isNull())
-				conflictsObject.destinationCidrBlock = allCenRouteEntriesNodeConflictsConflict["DestinationCidrBlock"].asString();
-			if(!allCenRouteEntriesNodeConflictsConflict["RegionId"].isNull())
-				conflictsObject.regionId = allCenRouteEntriesNodeConflictsConflict["RegionId"].asString();
-			if(!allCenRouteEntriesNodeConflictsConflict["InstanceId"].isNull())
-				conflictsObject.instanceId = allCenRouteEntriesNodeConflictsConflict["InstanceId"].asString();
-			if(!allCenRouteEntriesNodeConflictsConflict["InstanceType"].isNull())
-				conflictsObject.instanceType = allCenRouteEntriesNodeConflictsConflict["InstanceType"].asString();
-			if(!allCenRouteEntriesNodeConflictsConflict["Status"].isNull())
-				conflictsObject.status = allCenRouteEntriesNodeConflictsConflict["Status"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["DestinationCidrBlock"].isNull())
+				conflictsObject.destinationCidrBlock = valueCenRouteEntriesCenRouteEntryConflictsConflict["DestinationCidrBlock"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["RegionId"].isNull())
+				conflictsObject.regionId = valueCenRouteEntriesCenRouteEntryConflictsConflict["RegionId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["InstanceId"].isNull())
+				conflictsObject.instanceId = valueCenRouteEntriesCenRouteEntryConflictsConflict["InstanceId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["InstanceType"].isNull())
+				conflictsObject.instanceType = valueCenRouteEntriesCenRouteEntryConflictsConflict["InstanceType"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryConflictsConflict["Status"].isNull())
+				conflictsObject.status = valueCenRouteEntriesCenRouteEntryConflictsConflict["Status"].asString();
 			cenRouteEntriesObject.conflicts.push_back(conflictsObject);
 		}
 		auto allAsPaths = value["AsPaths"]["AsPath"];

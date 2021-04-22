@@ -57,20 +57,20 @@ void DescribePublishedRouteEntriesResult::parse(const std::string &payload)
 			publishedRouteEntriesObject.operationalMode = valuePublishedRouteEntriesPublishedRouteEntry["OperationalMode"].asString() == "true";
 		if(!valuePublishedRouteEntriesPublishedRouteEntry["PublishStatus"].isNull())
 			publishedRouteEntriesObject.publishStatus = valuePublishedRouteEntriesPublishedRouteEntry["PublishStatus"].asString();
-		auto allConflictsNode = allPublishedRouteEntriesNode["Conflicts"]["Conflict"];
-		for (auto allPublishedRouteEntriesNodeConflictsConflict : allConflictsNode)
+		auto allConflictsNode = valuePublishedRouteEntriesPublishedRouteEntry["Conflicts"]["Conflict"];
+		for (auto valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict : allConflictsNode)
 		{
 			PublishedRouteEntry::Conflict conflictsObject;
-			if(!allPublishedRouteEntriesNodeConflictsConflict["DestinationCidrBlock"].isNull())
-				conflictsObject.destinationCidrBlock = allPublishedRouteEntriesNodeConflictsConflict["DestinationCidrBlock"].asString();
-			if(!allPublishedRouteEntriesNodeConflictsConflict["RegionId"].isNull())
-				conflictsObject.regionId = allPublishedRouteEntriesNodeConflictsConflict["RegionId"].asString();
-			if(!allPublishedRouteEntriesNodeConflictsConflict["InstanceId"].isNull())
-				conflictsObject.instanceId = allPublishedRouteEntriesNodeConflictsConflict["InstanceId"].asString();
-			if(!allPublishedRouteEntriesNodeConflictsConflict["InstanceType"].isNull())
-				conflictsObject.instanceType = allPublishedRouteEntriesNodeConflictsConflict["InstanceType"].asString();
-			if(!allPublishedRouteEntriesNodeConflictsConflict["Status"].isNull())
-				conflictsObject.status = allPublishedRouteEntriesNodeConflictsConflict["Status"].asString();
+			if(!valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["DestinationCidrBlock"].isNull())
+				conflictsObject.destinationCidrBlock = valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["DestinationCidrBlock"].asString();
+			if(!valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["RegionId"].isNull())
+				conflictsObject.regionId = valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["RegionId"].asString();
+			if(!valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["InstanceId"].isNull())
+				conflictsObject.instanceId = valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["InstanceId"].asString();
+			if(!valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["InstanceType"].isNull())
+				conflictsObject.instanceType = valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["InstanceType"].asString();
+			if(!valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["Status"].isNull())
+				conflictsObject.status = valuePublishedRouteEntriesPublishedRouteEntryConflictsConflict["Status"].asString();
 			publishedRouteEntriesObject.conflicts.push_back(conflictsObject);
 		}
 		publishedRouteEntries_.push_back(publishedRouteEntriesObject);

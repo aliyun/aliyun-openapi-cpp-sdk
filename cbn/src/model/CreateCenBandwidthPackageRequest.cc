@@ -60,6 +60,17 @@ void CreateCenBandwidthPackageRequest::setDescription(const std::string& descrip
 	setParameter("Description", description);
 }
 
+int CreateCenBandwidthPackageRequest::getAutoRenewDuration()const
+{
+	return autoRenewDuration_;
+}
+
+void CreateCenBandwidthPackageRequest::setAutoRenewDuration(int autoRenewDuration)
+{
+	autoRenewDuration_ = autoRenewDuration;
+	setParameter("AutoRenewDuration", std::to_string(autoRenewDuration));
+}
+
 std::string CreateCenBandwidthPackageRequest::getBandwidthPackageChargeType()const
 {
 	return bandwidthPackageChargeType_;
@@ -157,6 +168,17 @@ void CreateCenBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool CreateCenBandwidthPackageRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void CreateCenBandwidthPackageRequest::setAutoRenew(bool autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string CreateCenBandwidthPackageRequest::getName()const

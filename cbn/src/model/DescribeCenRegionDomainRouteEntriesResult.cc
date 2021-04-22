@@ -59,24 +59,24 @@ void DescribeCenRegionDomainRouteEntriesResult::parse(const std::string &payload
 			cenRouteEntriesObject.toOtherRegionStatus = valueCenRouteEntriesCenRouteEntry["ToOtherRegionStatus"].asString();
 		if(!valueCenRouteEntriesCenRouteEntry["Preference"].isNull())
 			cenRouteEntriesObject.preference = std::stoi(valueCenRouteEntriesCenRouteEntry["Preference"].asString());
-		auto allCenRouteMapRecordsNode = allCenRouteEntriesNode["CenRouteMapRecords"]["CenRouteMapRecord"];
-		for (auto allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord : allCenRouteMapRecordsNode)
+		auto allCenRouteMapRecordsNode = valueCenRouteEntriesCenRouteEntry["CenRouteMapRecords"]["CenRouteMapRecord"];
+		for (auto valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord : allCenRouteMapRecordsNode)
 		{
 			CenRouteEntry::CenRouteMapRecord cenRouteMapRecordsObject;
-			if(!allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
-				cenRouteMapRecordsObject.regionId = allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
-			if(!allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].isNull())
-				cenRouteMapRecordsObject.routeMapId = allCenRouteEntriesNodeCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].isNull())
+				cenRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RegionId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].isNull())
+				cenRouteMapRecordsObject.routeMapId = valueCenRouteEntriesCenRouteEntryCenRouteMapRecordsCenRouteMapRecord["RouteMapId"].asString();
 			cenRouteEntriesObject.cenRouteMapRecords.push_back(cenRouteMapRecordsObject);
 		}
-		auto allCenOutRouteMapRecordsNode = allCenRouteEntriesNode["CenOutRouteMapRecords"]["CenOutRouteMapRecord"];
-		for (auto allCenRouteEntriesNodeCenOutRouteMapRecordsCenOutRouteMapRecord : allCenOutRouteMapRecordsNode)
+		auto allCenOutRouteMapRecordsNode = valueCenRouteEntriesCenRouteEntry["CenOutRouteMapRecords"]["CenOutRouteMapRecord"];
+		for (auto valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord : allCenOutRouteMapRecordsNode)
 		{
 			CenRouteEntry::CenOutRouteMapRecord cenOutRouteMapRecordsObject;
-			if(!allCenRouteEntriesNodeCenOutRouteMapRecordsCenOutRouteMapRecord["RegionId"].isNull())
-				cenOutRouteMapRecordsObject.regionId = allCenRouteEntriesNodeCenOutRouteMapRecordsCenOutRouteMapRecord["RegionId"].asString();
-			if(!allCenRouteEntriesNodeCenOutRouteMapRecordsCenOutRouteMapRecord["RouteMapId"].isNull())
-				cenOutRouteMapRecordsObject.routeMapId = allCenRouteEntriesNodeCenOutRouteMapRecordsCenOutRouteMapRecord["RouteMapId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RegionId"].isNull())
+				cenOutRouteMapRecordsObject.regionId = valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RegionId"].asString();
+			if(!valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RouteMapId"].isNull())
+				cenOutRouteMapRecordsObject.routeMapId = valueCenRouteEntriesCenRouteEntryCenOutRouteMapRecordsCenOutRouteMapRecord["RouteMapId"].asString();
 			cenRouteEntriesObject.cenOutRouteMapRecords.push_back(cenOutRouteMapRecordsObject);
 		}
 		auto allAsPaths = value["AsPaths"]["AsPath"];

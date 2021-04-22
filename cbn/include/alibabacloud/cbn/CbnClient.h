@@ -32,6 +32,8 @@
 #include "model/CreateCenResult.h"
 #include "model/CreateCenBandwidthPackageRequest.h"
 #include "model/CreateCenBandwidthPackageResult.h"
+#include "model/CreateCenChildInstanceRouteEntryToCenRequest.h"
+#include "model/CreateCenChildInstanceRouteEntryToCenResult.h"
 #include "model/CreateCenRouteMapRequest.h"
 #include "model/CreateCenRouteMapResult.h"
 #include "model/CreateFlowlogRequest.h"
@@ -42,6 +44,8 @@
 #include "model/DeleteCenResult.h"
 #include "model/DeleteCenBandwidthPackageRequest.h"
 #include "model/DeleteCenBandwidthPackageResult.h"
+#include "model/DeleteCenChildInstanceRouteEntryToCenRequest.h"
+#include "model/DeleteCenChildInstanceRouteEntryToCenResult.h"
 #include "model/DeleteCenRouteMapRequest.h"
 #include "model/DeleteCenRouteMapResult.h"
 #include "model/DeleteFlowlogRequest.h"
@@ -114,6 +118,8 @@
 #include "model/SetCenInterRegionBandwidthLimitResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
+#include "model/TempUpgradeCenBandwidthPackageSpecRequest.h"
+#include "model/TempUpgradeCenBandwidthPackageSpecResult.h"
 #include "model/UnassociateCenBandwidthPackageRequest.h"
 #include "model/UnassociateCenBandwidthPackageResult.h"
 #include "model/UnroutePrivateZoneInCenToVpcRequest.h"
@@ -146,6 +152,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCenBandwidthPackageResult> CreateCenBandwidthPackageOutcome;
 			typedef std::future<CreateCenBandwidthPackageOutcome> CreateCenBandwidthPackageOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::CreateCenBandwidthPackageRequest&, const CreateCenBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCenBandwidthPackageAsyncHandler;
+			typedef Outcome<Error, Model::CreateCenChildInstanceRouteEntryToCenResult> CreateCenChildInstanceRouteEntryToCenOutcome;
+			typedef std::future<CreateCenChildInstanceRouteEntryToCenOutcome> CreateCenChildInstanceRouteEntryToCenOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateCenChildInstanceRouteEntryToCenRequest&, const CreateCenChildInstanceRouteEntryToCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCenChildInstanceRouteEntryToCenAsyncHandler;
 			typedef Outcome<Error, Model::CreateCenRouteMapResult> CreateCenRouteMapOutcome;
 			typedef std::future<CreateCenRouteMapOutcome> CreateCenRouteMapOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::CreateCenRouteMapRequest&, const CreateCenRouteMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCenRouteMapAsyncHandler;
@@ -161,6 +170,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCenBandwidthPackageResult> DeleteCenBandwidthPackageOutcome;
 			typedef std::future<DeleteCenBandwidthPackageOutcome> DeleteCenBandwidthPackageOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeleteCenBandwidthPackageRequest&, const DeleteCenBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCenBandwidthPackageAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCenChildInstanceRouteEntryToCenResult> DeleteCenChildInstanceRouteEntryToCenOutcome;
+			typedef std::future<DeleteCenChildInstanceRouteEntryToCenOutcome> DeleteCenChildInstanceRouteEntryToCenOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteCenChildInstanceRouteEntryToCenRequest&, const DeleteCenChildInstanceRouteEntryToCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCenChildInstanceRouteEntryToCenAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCenRouteMapResult> DeleteCenRouteMapOutcome;
 			typedef std::future<DeleteCenRouteMapOutcome> DeleteCenRouteMapOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeleteCenRouteMapRequest&, const DeleteCenRouteMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCenRouteMapAsyncHandler;
@@ -269,6 +281,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::TempUpgradeCenBandwidthPackageSpecResult> TempUpgradeCenBandwidthPackageSpecOutcome;
+			typedef std::future<TempUpgradeCenBandwidthPackageSpecOutcome> TempUpgradeCenBandwidthPackageSpecOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::TempUpgradeCenBandwidthPackageSpecRequest&, const TempUpgradeCenBandwidthPackageSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TempUpgradeCenBandwidthPackageSpecAsyncHandler;
 			typedef Outcome<Error, Model::UnassociateCenBandwidthPackageResult> UnassociateCenBandwidthPackageOutcome;
 			typedef std::future<UnassociateCenBandwidthPackageOutcome> UnassociateCenBandwidthPackageOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::UnassociateCenBandwidthPackageRequest&, const UnassociateCenBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateCenBandwidthPackageAsyncHandler;
@@ -301,6 +316,9 @@ namespace AlibabaCloud
 			CreateCenBandwidthPackageOutcome createCenBandwidthPackage(const Model::CreateCenBandwidthPackageRequest &request)const;
 			void createCenBandwidthPackageAsync(const Model::CreateCenBandwidthPackageRequest& request, const CreateCenBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCenBandwidthPackageOutcomeCallable createCenBandwidthPackageCallable(const Model::CreateCenBandwidthPackageRequest& request) const;
+			CreateCenChildInstanceRouteEntryToCenOutcome createCenChildInstanceRouteEntryToCen(const Model::CreateCenChildInstanceRouteEntryToCenRequest &request)const;
+			void createCenChildInstanceRouteEntryToCenAsync(const Model::CreateCenChildInstanceRouteEntryToCenRequest& request, const CreateCenChildInstanceRouteEntryToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCenChildInstanceRouteEntryToCenOutcomeCallable createCenChildInstanceRouteEntryToCenCallable(const Model::CreateCenChildInstanceRouteEntryToCenRequest& request) const;
 			CreateCenRouteMapOutcome createCenRouteMap(const Model::CreateCenRouteMapRequest &request)const;
 			void createCenRouteMapAsync(const Model::CreateCenRouteMapRequest& request, const CreateCenRouteMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCenRouteMapOutcomeCallable createCenRouteMapCallable(const Model::CreateCenRouteMapRequest& request) const;
@@ -316,6 +334,9 @@ namespace AlibabaCloud
 			DeleteCenBandwidthPackageOutcome deleteCenBandwidthPackage(const Model::DeleteCenBandwidthPackageRequest &request)const;
 			void deleteCenBandwidthPackageAsync(const Model::DeleteCenBandwidthPackageRequest& request, const DeleteCenBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCenBandwidthPackageOutcomeCallable deleteCenBandwidthPackageCallable(const Model::DeleteCenBandwidthPackageRequest& request) const;
+			DeleteCenChildInstanceRouteEntryToCenOutcome deleteCenChildInstanceRouteEntryToCen(const Model::DeleteCenChildInstanceRouteEntryToCenRequest &request)const;
+			void deleteCenChildInstanceRouteEntryToCenAsync(const Model::DeleteCenChildInstanceRouteEntryToCenRequest& request, const DeleteCenChildInstanceRouteEntryToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCenChildInstanceRouteEntryToCenOutcomeCallable deleteCenChildInstanceRouteEntryToCenCallable(const Model::DeleteCenChildInstanceRouteEntryToCenRequest& request) const;
 			DeleteCenRouteMapOutcome deleteCenRouteMap(const Model::DeleteCenRouteMapRequest &request)const;
 			void deleteCenRouteMapAsync(const Model::DeleteCenRouteMapRequest& request, const DeleteCenRouteMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCenRouteMapOutcomeCallable deleteCenRouteMapCallable(const Model::DeleteCenRouteMapRequest& request) const;
@@ -424,6 +445,9 @@ namespace AlibabaCloud
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			TempUpgradeCenBandwidthPackageSpecOutcome tempUpgradeCenBandwidthPackageSpec(const Model::TempUpgradeCenBandwidthPackageSpecRequest &request)const;
+			void tempUpgradeCenBandwidthPackageSpecAsync(const Model::TempUpgradeCenBandwidthPackageSpecRequest& request, const TempUpgradeCenBandwidthPackageSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TempUpgradeCenBandwidthPackageSpecOutcomeCallable tempUpgradeCenBandwidthPackageSpecCallable(const Model::TempUpgradeCenBandwidthPackageSpecRequest& request) const;
 			UnassociateCenBandwidthPackageOutcome unassociateCenBandwidthPackage(const Model::UnassociateCenBandwidthPackageRequest &request)const;
 			void unassociateCenBandwidthPackageAsync(const Model::UnassociateCenBandwidthPackageRequest& request, const UnassociateCenBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateCenBandwidthPackageOutcomeCallable unassociateCenBandwidthPackageCallable(const Model::UnassociateCenBandwidthPackageRequest& request) const;

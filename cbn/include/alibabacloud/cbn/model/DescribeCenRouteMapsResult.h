@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct RouteMap
 				{
+					std::string matchAddressType;
 					std::string description;
 					bool sourceInstanceIdsReverseMatch;
 					std::string transmitDirection;
@@ -54,13 +55,17 @@ namespace AlibabaCloud
 					std::string asPathMatchMode;
 					std::string mapResult;
 					std::string cidrMatchMode;
+					std::vector<std::string> originalRouteTableIds;
 					std::vector<std::string> routeTypes;
+					std::string gatewayZoneId;
 					int preference;
 					std::string communityOperateMode;
 					std::string cenId;
+					std::vector<std::string> destinationRegionIds;
 					int nextPriority;
 					std::vector<std::string> prependAsPath;
 					std::string communityMatchMode;
+					std::vector<std::string> srcZoneIds;
 					std::vector<std::string> matchAsns;
 					std::vector<std::string> sourceRegionIds;
 				};

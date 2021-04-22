@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_DESCRIBECENREGIONDOMAINROUTEENTRIESREQUEST_H_
-#define ALIBABACLOUD_CBN_MODEL_DESCRIBECENREGIONDOMAINROUTEENTRIESREQUEST_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_CREATECENCHILDINSTANCEROUTEENTRYTOCENREQUEST_H_
+#define ALIBABACLOUD_CBN_MODEL_CREATECENCHILDINSTANCEROUTEENTRYTOCENREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT DescribeCenRegionDomainRouteEntriesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CBN_EXPORT CreateCenChildInstanceRouteEntryToCenRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeCenRegionDomainRouteEntriesRequest();
-				~DescribeCenRegionDomainRouteEntriesRequest();
+				CreateCenChildInstanceRouteEntryToCenRequest();
+				~CreateCenChildInstanceRouteEntryToCenRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getCenId()const;
 				void setCenId(const std::string& cenId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getNextHopGatewayZoneId()const;
+				void setNextHopGatewayZoneId(const std::string& nextHopGatewayZoneId);
+				std::string getChildInstanceRegionId()const;
+				void setChildInstanceRegionId(const std::string& childInstanceRegionId);
+				std::string getRouteTableId()const;
+				void setRouteTableId(const std::string& routeTableId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -51,25 +55,30 @@ namespace AlibabaCloud
 				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getCenRegionId()const;
-				void setCenRegionId(const std::string& cenRegionId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getChildInstanceType()const;
+				void setChildInstanceType(const std::string& childInstanceType);
+				std::string getChildInstanceId()const;
+				void setChildInstanceId(const std::string& childInstanceId);
+				long getChildInstanceAliUid()const;
+				void setChildInstanceAliUid(long childInstanceAliUid);
 
             private:
 				long resourceOwnerId_;
 				std::string cenId_;
-				int pageNumber_;
-				int pageSize_;
+				std::string clientToken_;
+				std::string nextHopGatewayZoneId_;
+				std::string childInstanceRegionId_;
+				std::string routeTableId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string destinationCidrBlock_;
 				long ownerId_;
-				std::string cenRegionId_;
-				std::string status_;
+				std::string childInstanceType_;
+				std::string childInstanceId_;
+				long childInstanceAliUid_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_DESCRIBECENREGIONDOMAINROUTEENTRIESREQUEST_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_CREATECENCHILDINSTANCEROUTEENTRYTOCENREQUEST_H_

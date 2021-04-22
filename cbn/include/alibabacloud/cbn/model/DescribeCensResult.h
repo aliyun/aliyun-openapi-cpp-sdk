@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string protectionLevel;
 					std::string description;
+					std::string ipv6Level;
 					std::string cenId;
 					std::string creationTime;
 					std::vector<std::string> cenBandwidthPackageIds;

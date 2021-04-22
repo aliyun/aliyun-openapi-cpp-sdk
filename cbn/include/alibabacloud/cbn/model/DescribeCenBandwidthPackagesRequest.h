@@ -31,6 +31,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CBN_EXPORT DescribeCenBandwidthPackagesRequest : public RpcServiceRequest
 			{
 			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 				struct Filter
 				{
 					std::vector<std::string> value;
@@ -51,6 +56,8 @@ namespace AlibabaCloud
 				void setIsOrKey(bool isOrKey);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -66,6 +73,7 @@ namespace AlibabaCloud
 				int pageNumber_;
 				bool isOrKey_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

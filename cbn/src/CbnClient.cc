@@ -231,6 +231,42 @@ CbnClient::CreateCenBandwidthPackageOutcomeCallable CbnClient::createCenBandwidt
 	return task->get_future();
 }
 
+CbnClient::CreateCenChildInstanceRouteEntryToCenOutcome CbnClient::createCenChildInstanceRouteEntryToCen(const CreateCenChildInstanceRouteEntryToCenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCenChildInstanceRouteEntryToCenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCenChildInstanceRouteEntryToCenOutcome(CreateCenChildInstanceRouteEntryToCenResult(outcome.result()));
+	else
+		return CreateCenChildInstanceRouteEntryToCenOutcome(outcome.error());
+}
+
+void CbnClient::createCenChildInstanceRouteEntryToCenAsync(const CreateCenChildInstanceRouteEntryToCenRequest& request, const CreateCenChildInstanceRouteEntryToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCenChildInstanceRouteEntryToCen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateCenChildInstanceRouteEntryToCenOutcomeCallable CbnClient::createCenChildInstanceRouteEntryToCenCallable(const CreateCenChildInstanceRouteEntryToCenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCenChildInstanceRouteEntryToCenOutcome()>>(
+			[this, request]()
+			{
+			return this->createCenChildInstanceRouteEntryToCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::CreateCenRouteMapOutcome CbnClient::createCenRouteMap(const CreateCenRouteMapRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ CbnClient::DeleteCenBandwidthPackageOutcomeCallable CbnClient::deleteCenBandwidt
 			[this, request]()
 			{
 			return this->deleteCenBandwidthPackage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteCenChildInstanceRouteEntryToCenOutcome CbnClient::deleteCenChildInstanceRouteEntryToCen(const DeleteCenChildInstanceRouteEntryToCenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCenChildInstanceRouteEntryToCenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCenChildInstanceRouteEntryToCenOutcome(DeleteCenChildInstanceRouteEntryToCenResult(outcome.result()));
+	else
+		return DeleteCenChildInstanceRouteEntryToCenOutcome(outcome.error());
+}
+
+void CbnClient::deleteCenChildInstanceRouteEntryToCenAsync(const DeleteCenChildInstanceRouteEntryToCenRequest& request, const DeleteCenChildInstanceRouteEntryToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCenChildInstanceRouteEntryToCen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteCenChildInstanceRouteEntryToCenOutcomeCallable CbnClient::deleteCenChildInstanceRouteEntryToCenCallable(const DeleteCenChildInstanceRouteEntryToCenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCenChildInstanceRouteEntryToCenOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCenChildInstanceRouteEntryToCen(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1701,6 +1773,42 @@ CbnClient::TagResourcesOutcomeCallable CbnClient::tagResourcesCallable(const Tag
 			[this, request]()
 			{
 			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::TempUpgradeCenBandwidthPackageSpecOutcome CbnClient::tempUpgradeCenBandwidthPackageSpec(const TempUpgradeCenBandwidthPackageSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TempUpgradeCenBandwidthPackageSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TempUpgradeCenBandwidthPackageSpecOutcome(TempUpgradeCenBandwidthPackageSpecResult(outcome.result()));
+	else
+		return TempUpgradeCenBandwidthPackageSpecOutcome(outcome.error());
+}
+
+void CbnClient::tempUpgradeCenBandwidthPackageSpecAsync(const TempUpgradeCenBandwidthPackageSpecRequest& request, const TempUpgradeCenBandwidthPackageSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tempUpgradeCenBandwidthPackageSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::TempUpgradeCenBandwidthPackageSpecOutcomeCallable CbnClient::tempUpgradeCenBandwidthPackageSpecCallable(const TempUpgradeCenBandwidthPackageSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TempUpgradeCenBandwidthPackageSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->tempUpgradeCenBandwidthPackageSpec(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

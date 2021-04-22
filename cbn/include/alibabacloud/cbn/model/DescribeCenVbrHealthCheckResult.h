@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct VbrHealthCheck
 				{
+					std::string vbrInstanceRegionId;
 					std::string linkStatus;
 					int healthCheckInterval;
 					std::string vbrInstanceId;

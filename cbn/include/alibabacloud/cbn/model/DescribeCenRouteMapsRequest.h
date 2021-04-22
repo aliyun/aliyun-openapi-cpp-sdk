@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CBN_EXPORT DescribeCenRouteMapsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Filter
+				{
+					std::vector<std::string> value;
+					std::string key;
+				};
 
 			public:
 				DescribeCenRouteMapsRequest();
@@ -53,6 +59,8 @@ namespace AlibabaCloud
 				void setRouteMapId(const std::string& routeMapId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::vector<Filter> getFilter()const;
+				void setFilter(const std::vector<Filter>& filter);
 				std::string getCenRegionId()const;
 				void setCenRegionId(const std::string& cenRegionId);
 
@@ -66,6 +74,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string routeMapId_;
 				long ownerId_;
+				std::vector<Filter> filter_;
 				std::string cenRegionId_;
 
 			};

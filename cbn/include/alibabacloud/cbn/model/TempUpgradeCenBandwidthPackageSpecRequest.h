@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_DESCRIBECENREGIONDOMAINROUTEENTRIESREQUEST_H_
-#define ALIBABACLOUD_CBN_MODEL_DESCRIBECENREGIONDOMAINROUTEENTRIESREQUEST_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_TEMPUPGRADECENBANDWIDTHPACKAGESPECREQUEST_H_
+#define ALIBABACLOUD_CBN_MODEL_TEMPUPGRADECENBANDWIDTHPACKAGESPECREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT DescribeCenRegionDomainRouteEntriesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CBN_EXPORT TempUpgradeCenBandwidthPackageSpecRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeCenRegionDomainRouteEntriesRequest();
-				~DescribeCenRegionDomainRouteEntriesRequest();
+				TempUpgradeCenBandwidthPackageSpecRequest();
+				~TempUpgradeCenBandwidthPackageSpecRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getCenId()const;
-				void setCenId(const std::string& cenId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getBandwidth()const;
+				void setBandwidth(int bandwidth);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getDestinationCidrBlock()const;
-				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getCenRegionId()const;
-				void setCenRegionId(const std::string& cenRegionId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getCenBandwidthPackageId()const;
+				void setCenBandwidthPackageId(const std::string& cenBandwidthPackageId);
 
             private:
 				long resourceOwnerId_;
-				std::string cenId_;
-				int pageNumber_;
-				int pageSize_;
 				std::string resourceOwnerAccount_;
+				int bandwidth_;
 				std::string ownerAccount_;
-				std::string destinationCidrBlock_;
+				std::string endTime_;
 				long ownerId_;
-				std::string cenRegionId_;
-				std::string status_;
+				std::string cenBandwidthPackageId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_DESCRIBECENREGIONDOMAINROUTEENTRIESREQUEST_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_TEMPUPGRADECENBANDWIDTHPACKAGESPECREQUEST_H_

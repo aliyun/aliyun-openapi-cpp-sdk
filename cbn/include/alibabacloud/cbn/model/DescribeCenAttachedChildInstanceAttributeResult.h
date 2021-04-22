@@ -32,13 +32,20 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CBN_EXPORT DescribeCenAttachedChildInstanceAttributeResult : public ServiceResult
 			{
 			public:
+				struct ChildInstanceRouteTable
+				{
+					std::string routeTableId;
+					std::string routeTableType;
+				};
 
 
 				DescribeCenAttachedChildInstanceAttributeResult();
 				explicit DescribeCenAttachedChildInstanceAttributeResult(const std::string &payload);
 				~DescribeCenAttachedChildInstanceAttributeResult();
 				std::string getStatus()const;
+				std::vector<ChildInstanceRouteTable> getChildInstanceRouteTables()const;
 				std::string getChildInstanceType()const;
+				std::string getIpv6StatusInCen()const;
 				std::string getCenId()const;
 				std::string getChildInstanceAttachTime()const;
 				long getChildInstanceOwnerId()const;
@@ -50,7 +57,9 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				std::vector<ChildInstanceRouteTable> childInstanceRouteTables_;
 				std::string childInstanceType_;
+				std::string ipv6StatusInCen_;
 				std::string cenId_;
 				std::string childInstanceAttachTime_;
 				long childInstanceOwnerId_;

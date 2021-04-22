@@ -49,12 +49,16 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getDestinationCidrBlock()const;
+				void setDestinationCidrBlock(const std::string& destinationCidrBlock);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getChildInstanceType()const;
 				void setChildInstanceType(const std::string& childInstanceType);
 				std::string getChildInstanceId()const;
 				void setChildInstanceId(const std::string& childInstanceId);
+				std::string getChildInstanceRouteTableId()const;
+				void setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
@@ -66,9 +70,11 @@ namespace AlibabaCloud
 				std::string childInstanceRegionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string destinationCidrBlock_;
 				long ownerId_;
 				std::string childInstanceType_;
 				std::string childInstanceId_;
+				std::string childInstanceRouteTableId_;
 				std::string status_;
 
 			};

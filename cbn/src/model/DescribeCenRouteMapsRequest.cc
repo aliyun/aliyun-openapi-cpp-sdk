@@ -126,6 +126,24 @@ void DescribeCenRouteMapsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::vector<DescribeCenRouteMapsRequest::Filter> DescribeCenRouteMapsRequest::getFilter()const
+{
+	return filter_;
+}
+
+void DescribeCenRouteMapsRequest::setFilter(const std::vector<Filter>& filter)
+{
+	filter_ = filter;
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
+		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
+			setParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		}
+		setParameter(filterObjStr + ".Key", filterObj.key);
+	}
+}
+
 std::string DescribeCenRouteMapsRequest::getCenRegionId()const
 {
 	return cenRegionId_;

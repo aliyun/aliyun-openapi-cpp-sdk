@@ -83,19 +83,29 @@ void DescribeCenBandwidthPackagesResult::parse(const std::string &payload)
 			cenBandwidthPackagesObject.reservationActiveTime = valueCenBandwidthPackagesCenBandwidthPackage["ReservationActiveTime"].asString();
 		if(!valueCenBandwidthPackagesCenBandwidthPackage["ReservationOrderType"].isNull())
 			cenBandwidthPackagesObject.reservationOrderType = valueCenBandwidthPackagesCenBandwidthPackage["ReservationOrderType"].asString();
-		auto allOrginInterRegionBandwidthLimitsNode = allCenBandwidthPackagesNode["OrginInterRegionBandwidthLimits"]["OrginInterRegionBandwidthLimit"];
-		for (auto allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit : allOrginInterRegionBandwidthLimitsNode)
+		auto allOrginInterRegionBandwidthLimitsNode = valueCenBandwidthPackagesCenBandwidthPackage["OrginInterRegionBandwidthLimits"]["OrginInterRegionBandwidthLimit"];
+		for (auto valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit : allOrginInterRegionBandwidthLimitsNode)
 		{
 			CenBandwidthPackage::OrginInterRegionBandwidthLimit orginInterRegionBandwidthLimitsObject;
-			if(!allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["LocalRegionId"].isNull())
-				orginInterRegionBandwidthLimitsObject.localRegionId = allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["LocalRegionId"].asString();
-			if(!allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["OppositeRegionId"].isNull())
-				orginInterRegionBandwidthLimitsObject.oppositeRegionId = allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["OppositeRegionId"].asString();
-			if(!allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["GeographicSpanId"].isNull())
-				orginInterRegionBandwidthLimitsObject.geographicSpanId = allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["GeographicSpanId"].asString();
-			if(!allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["BandwidthLimit"].isNull())
-				orginInterRegionBandwidthLimitsObject.bandwidthLimit = allCenBandwidthPackagesNodeOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["BandwidthLimit"].asString();
+			if(!valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["LocalRegionId"].isNull())
+				orginInterRegionBandwidthLimitsObject.localRegionId = valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["LocalRegionId"].asString();
+			if(!valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["OppositeRegionId"].isNull())
+				orginInterRegionBandwidthLimitsObject.oppositeRegionId = valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["OppositeRegionId"].asString();
+			if(!valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["GeographicSpanId"].isNull())
+				orginInterRegionBandwidthLimitsObject.geographicSpanId = valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["GeographicSpanId"].asString();
+			if(!valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["BandwidthLimit"].isNull())
+				orginInterRegionBandwidthLimitsObject.bandwidthLimit = valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit["BandwidthLimit"].asString();
 			cenBandwidthPackagesObject.orginInterRegionBandwidthLimits.push_back(orginInterRegionBandwidthLimitsObject);
+		}
+		auto allTagsNode = valueCenBandwidthPackagesCenBandwidthPackage["Tags"]["Tag"];
+		for (auto valueCenBandwidthPackagesCenBandwidthPackageTagsTag : allTagsNode)
+		{
+			CenBandwidthPackage::Tag tagsObject;
+			if(!valueCenBandwidthPackagesCenBandwidthPackageTagsTag["Key"].isNull())
+				tagsObject.key = valueCenBandwidthPackagesCenBandwidthPackageTagsTag["Key"].asString();
+			if(!valueCenBandwidthPackagesCenBandwidthPackageTagsTag["Value"].isNull())
+				tagsObject.value = valueCenBandwidthPackagesCenBandwidthPackageTagsTag["Value"].asString();
+			cenBandwidthPackagesObject.tags.push_back(tagsObject);
 		}
 		auto allCenIds = value["CenIds"]["CenId"];
 		for (auto value : allCenIds)

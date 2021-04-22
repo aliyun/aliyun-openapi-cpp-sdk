@@ -55,14 +55,16 @@ void DescribeCensResult::parse(const std::string &payload)
 			censObject.status = valueCensCen["Status"].asString();
 		if(!valueCensCen["CreationTime"].isNull())
 			censObject.creationTime = valueCensCen["CreationTime"].asString();
-		auto allTagsNode = allCensNode["Tags"]["Tag"];
-		for (auto allCensNodeTagsTag : allTagsNode)
+		if(!valueCensCen["Ipv6Level"].isNull())
+			censObject.ipv6Level = valueCensCen["Ipv6Level"].asString();
+		auto allTagsNode = valueCensCen["Tags"]["Tag"];
+		for (auto valueCensCenTagsTag : allTagsNode)
 		{
 			Cen::Tag tagsObject;
-			if(!allCensNodeTagsTag["Key"].isNull())
-				tagsObject.key = allCensNodeTagsTag["Key"].asString();
-			if(!allCensNodeTagsTag["Value"].isNull())
-				tagsObject.value = allCensNodeTagsTag["Value"].asString();
+			if(!valueCensCenTagsTag["Key"].isNull())
+				tagsObject.key = valueCensCenTagsTag["Key"].asString();
+			if(!valueCensCenTagsTag["Value"].isNull())
+				tagsObject.value = valueCensCenTagsTag["Value"].asString();
 			censObject.tags.push_back(tagsObject);
 		}
 		auto allCenBandwidthPackageIds = value["CenBandwidthPackageIds"]["CenBandwidthPackageId"];

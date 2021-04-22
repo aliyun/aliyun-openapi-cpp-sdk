@@ -27,6 +27,17 @@ DescribeCenAttachedChildInstanceAttributeRequest::DescribeCenAttachedChildInstan
 DescribeCenAttachedChildInstanceAttributeRequest::~DescribeCenAttachedChildInstanceAttributeRequest()
 {}
 
+bool DescribeCenAttachedChildInstanceAttributeRequest::getIncludeRouteTable()const
+{
+	return includeRouteTable_;
+}
+
+void DescribeCenAttachedChildInstanceAttributeRequest::setIncludeRouteTable(bool includeRouteTable)
+{
+	includeRouteTable_ = includeRouteTable;
+	setParameter("IncludeRouteTable", includeRouteTable ? "true" : "false");
+}
+
 long DescribeCenAttachedChildInstanceAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

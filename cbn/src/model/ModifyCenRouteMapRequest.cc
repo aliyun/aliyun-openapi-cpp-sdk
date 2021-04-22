@@ -60,6 +60,19 @@ void ModifyCenRouteMapRequest::setMapResult(const std::string& mapResult)
 	setParameter("MapResult", mapResult);
 }
 
+std::vector<std::string> ModifyCenRouteMapRequest::getDestinationRegionIds()const
+{
+	return destinationRegionIds_;
+}
+
+void ModifyCenRouteMapRequest::setDestinationRegionIds(const std::vector<std::string>& destinationRegionIds)
+{
+	destinationRegionIds_ = destinationRegionIds;
+	for(int dep1 = 0; dep1!= destinationRegionIds.size(); dep1++) {
+		setParameter("DestinationRegionIds."+ std::to_string(dep1), destinationRegionIds.at(dep1));
+	}
+}
+
 int ModifyCenRouteMapRequest::getNextPriority()const
 {
 	return nextPriority_;
@@ -81,6 +94,19 @@ void ModifyCenRouteMapRequest::setDestinationCidrBlocks(const std::vector<std::s
 	destinationCidrBlocks_ = destinationCidrBlocks;
 	for(int dep1 = 0; dep1!= destinationCidrBlocks.size(); dep1++) {
 		setParameter("DestinationCidrBlocks."+ std::to_string(dep1), destinationCidrBlocks.at(dep1));
+	}
+}
+
+std::vector<std::string> ModifyCenRouteMapRequest::getOriginalRouteTableIds()const
+{
+	return originalRouteTableIds_;
+}
+
+void ModifyCenRouteMapRequest::setOriginalRouteTableIds(const std::vector<std::string>& originalRouteTableIds)
+{
+	originalRouteTableIds_ = originalRouteTableIds;
+	for(int dep1 = 0; dep1!= originalRouteTableIds.size(); dep1++) {
+		setParameter("OriginalRouteTableIds."+ std::to_string(dep1), originalRouteTableIds.at(dep1));
 	}
 }
 
@@ -108,6 +134,17 @@ void ModifyCenRouteMapRequest::setSourceRegionIds(const std::vector<std::string>
 	for(int dep1 = 0; dep1!= sourceRegionIds.size(); dep1++) {
 		setParameter("SourceRegionIds."+ std::to_string(dep1), sourceRegionIds.at(dep1));
 	}
+}
+
+std::string ModifyCenRouteMapRequest::getGatewayZoneId()const
+{
+	return gatewayZoneId_;
+}
+
+void ModifyCenRouteMapRequest::setGatewayZoneId(const std::string& gatewayZoneId)
+{
+	gatewayZoneId_ = gatewayZoneId;
+	setParameter("GatewayZoneId", gatewayZoneId);
 }
 
 std::vector<int> ModifyCenRouteMapRequest::getMatchAsns()const
@@ -232,6 +269,17 @@ void ModifyCenRouteMapRequest::setRouteTypes(const std::vector<std::string>& rou
 	}
 }
 
+std::string ModifyCenRouteMapRequest::getMatchAddressType()const
+{
+	return matchAddressType_;
+}
+
+void ModifyCenRouteMapRequest::setMatchAddressType(const std::string& matchAddressType)
+{
+	matchAddressType_ = matchAddressType;
+	setParameter("MatchAddressType", matchAddressType);
+}
+
 std::string ModifyCenRouteMapRequest::getCidrMatchMode()const
 {
 	return cidrMatchMode_;
@@ -286,6 +334,19 @@ void ModifyCenRouteMapRequest::setDestinationRouteTableIds(const std::vector<std
 	destinationRouteTableIds_ = destinationRouteTableIds;
 	for(int dep1 = 0; dep1!= destinationRouteTableIds.size(); dep1++) {
 		setParameter("DestinationRouteTableIds."+ std::to_string(dep1), destinationRouteTableIds.at(dep1));
+	}
+}
+
+std::vector<std::string> ModifyCenRouteMapRequest::getSourceZoneIds()const
+{
+	return sourceZoneIds_;
+}
+
+void ModifyCenRouteMapRequest::setSourceZoneIds(const std::vector<std::string>& sourceZoneIds)
+{
+	sourceZoneIds_ = sourceZoneIds;
+	for(int dep1 = 0; dep1!= sourceZoneIds.size(); dep1++) {
+		setParameter("SourceZoneIds."+ std::to_string(dep1), sourceZoneIds.at(dep1));
 	}
 }
 

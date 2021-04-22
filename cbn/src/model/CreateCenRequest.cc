@@ -49,6 +49,17 @@ void CreateCenRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string CreateCenRequest::getIpv6Level()const
+{
+	return ipv6Level_;
+}
+
+void CreateCenRequest::setIpv6Level(const std::string& ipv6Level)
+{
+	ipv6Level_ = ipv6Level;
+	setParameter("Ipv6Level", ipv6Level);
+}
+
 std::string CreateCenRequest::getDescription()const
 {
 	return description_;

@@ -75,6 +75,10 @@ void DescribeCenRouteMapsResult::parse(const std::string &payload)
 			routeMapsObject.sourceInstanceIdsReverseMatch = valueRouteMapsRouteMap["SourceInstanceIdsReverseMatch"].asString() == "true";
 		if(!valueRouteMapsRouteMap["DestinationInstanceIdsReverseMatch"].isNull())
 			routeMapsObject.destinationInstanceIdsReverseMatch = valueRouteMapsRouteMap["DestinationInstanceIdsReverseMatch"].asString() == "true";
+		if(!valueRouteMapsRouteMap["GatewayZoneId"].isNull())
+			routeMapsObject.gatewayZoneId = valueRouteMapsRouteMap["GatewayZoneId"].asString();
+		if(!valueRouteMapsRouteMap["MatchAddressType"].isNull())
+			routeMapsObject.matchAddressType = valueRouteMapsRouteMap["MatchAddressType"].asString();
 		auto allSourceInstanceIds = value["SourceInstanceIds"]["SourceInstanceId"];
 		for (auto value : allSourceInstanceIds)
 			routeMapsObject.sourceInstanceIds.push_back(value.asString());
@@ -114,6 +118,15 @@ void DescribeCenRouteMapsResult::parse(const std::string &payload)
 		auto allPrependAsPath = value["PrependAsPath"]["AsPath"];
 		for (auto value : allPrependAsPath)
 			routeMapsObject.prependAsPath.push_back(value.asString());
+		auto allDestinationRegionIds = value["DestinationRegionIds"]["DestinationRegionId"];
+		for (auto value : allDestinationRegionIds)
+			routeMapsObject.destinationRegionIds.push_back(value.asString());
+		auto allOriginalRouteTableIds = value["OriginalRouteTableIds"]["OriginalRouteTableId"];
+		for (auto value : allOriginalRouteTableIds)
+			routeMapsObject.originalRouteTableIds.push_back(value.asString());
+		auto allSrcZoneIds = value["SrcZoneIds"]["SrcZoneId"];
+		for (auto value : allSrcZoneIds)
+			routeMapsObject.srcZoneIds.push_back(value.asString());
 		routeMaps_.push_back(routeMapsObject);
 	}
 	if(!value["TotalCount"].isNull())

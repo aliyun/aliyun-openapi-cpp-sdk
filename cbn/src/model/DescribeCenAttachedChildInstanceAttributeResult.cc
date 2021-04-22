@@ -39,6 +39,16 @@ void DescribeCenAttachedChildInstanceAttributeResult::parse(const std::string &p
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allChildInstanceRouteTablesNode = value["ChildInstanceRouteTables"]["ChildInstanceRouteTable"];
+	for (auto valueChildInstanceRouteTablesChildInstanceRouteTable : allChildInstanceRouteTablesNode)
+	{
+		ChildInstanceRouteTable childInstanceRouteTablesObject;
+		if(!valueChildInstanceRouteTablesChildInstanceRouteTable["RouteTableId"].isNull())
+			childInstanceRouteTablesObject.routeTableId = valueChildInstanceRouteTablesChildInstanceRouteTable["RouteTableId"].asString();
+		if(!valueChildInstanceRouteTablesChildInstanceRouteTable["RouteTableType"].isNull())
+			childInstanceRouteTablesObject.routeTableType = valueChildInstanceRouteTablesChildInstanceRouteTable["RouteTableType"].asString();
+		childInstanceRouteTables_.push_back(childInstanceRouteTablesObject);
+	}
 	if(!value["CenId"].isNull())
 		cenId_ = value["CenId"].asString();
 	if(!value["ChildInstanceId"].isNull())
@@ -55,6 +65,8 @@ void DescribeCenAttachedChildInstanceAttributeResult::parse(const std::string &p
 		childInstanceName_ = value["ChildInstanceName"].asString();
 	if(!value["ChildInstanceAttachTime"].isNull())
 		childInstanceAttachTime_ = value["ChildInstanceAttachTime"].asString();
+	if(!value["Ipv6StatusInCen"].isNull())
+		ipv6StatusInCen_ = value["Ipv6StatusInCen"].asString();
 
 }
 
@@ -63,9 +75,19 @@ std::string DescribeCenAttachedChildInstanceAttributeResult::getStatus()const
 	return status_;
 }
 
+std::vector<DescribeCenAttachedChildInstanceAttributeResult::ChildInstanceRouteTable> DescribeCenAttachedChildInstanceAttributeResult::getChildInstanceRouteTables()const
+{
+	return childInstanceRouteTables_;
+}
+
 std::string DescribeCenAttachedChildInstanceAttributeResult::getChildInstanceType()const
 {
 	return childInstanceType_;
+}
+
+std::string DescribeCenAttachedChildInstanceAttributeResult::getIpv6StatusInCen()const
+{
+	return ipv6StatusInCen_;
 }
 
 std::string DescribeCenAttachedChildInstanceAttributeResult::getCenId()const
