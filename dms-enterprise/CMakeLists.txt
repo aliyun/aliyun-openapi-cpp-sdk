@@ -95,6 +95,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetOwnerApplyOrderDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetPermApplyOrderDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetPermApplyOrderDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseRequest.h
+	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncJobAnalyzeResultRequest.h
@@ -254,6 +256,8 @@ set(dms-enterprise_src
 	src/model/GetOwnerApplyOrderDetailResult.cc
 	src/model/GetPermApplyOrderDetailRequest.cc
 	src/model/GetPermApplyOrderDetailResult.cc
+	src/model/GetPhysicalDatabaseRequest.cc
+	src/model/GetPhysicalDatabaseResult.cc
 	src/model/GetStructSyncExecSqlDetailRequest.cc
 	src/model/GetStructSyncExecSqlDetailResult.cc
 	src/model/GetStructSyncJobAnalyzeResultRequest.cc

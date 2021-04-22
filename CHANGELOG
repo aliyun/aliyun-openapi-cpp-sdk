@@ -1,3 +1,6 @@
+2021-04-22 Version: 1.36.694
+- Support GetPhysicalDatabase API.
+
 2021-04-21 Version: 1.36.693
 - Add API to list repo members with group inherited info.
 

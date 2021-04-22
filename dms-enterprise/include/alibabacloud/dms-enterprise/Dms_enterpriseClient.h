@@ -96,6 +96,8 @@
 #include "model/GetOwnerApplyOrderDetailResult.h"
 #include "model/GetPermApplyOrderDetailRequest.h"
 #include "model/GetPermApplyOrderDetailResult.h"
+#include "model/GetPhysicalDatabaseRequest.h"
+#include "model/GetPhysicalDatabaseResult.h"
 #include "model/GetStructSyncExecSqlDetailRequest.h"
 #include "model/GetStructSyncExecSqlDetailResult.h"
 #include "model/GetStructSyncJobAnalyzeResultRequest.h"
@@ -298,6 +300,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPermApplyOrderDetailResult> GetPermApplyOrderDetailOutcome;
 			typedef std::future<GetPermApplyOrderDetailOutcome> GetPermApplyOrderDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetPermApplyOrderDetailRequest&, const GetPermApplyOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPermApplyOrderDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetPhysicalDatabaseResult> GetPhysicalDatabaseOutcome;
+			typedef std::future<GetPhysicalDatabaseOutcome> GetPhysicalDatabaseOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetPhysicalDatabaseRequest&, const GetPhysicalDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhysicalDatabaseAsyncHandler;
 			typedef Outcome<Error, Model::GetStructSyncExecSqlDetailResult> GetStructSyncExecSqlDetailOutcome;
 			typedef std::future<GetStructSyncExecSqlDetailOutcome> GetStructSyncExecSqlDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetStructSyncExecSqlDetailRequest&, const GetStructSyncExecSqlDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetStructSyncExecSqlDetailAsyncHandler;
@@ -537,6 +542,9 @@ namespace AlibabaCloud
 			GetPermApplyOrderDetailOutcome getPermApplyOrderDetail(const Model::GetPermApplyOrderDetailRequest &request)const;
 			void getPermApplyOrderDetailAsync(const Model::GetPermApplyOrderDetailRequest& request, const GetPermApplyOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPermApplyOrderDetailOutcomeCallable getPermApplyOrderDetailCallable(const Model::GetPermApplyOrderDetailRequest& request) const;
+			GetPhysicalDatabaseOutcome getPhysicalDatabase(const Model::GetPhysicalDatabaseRequest &request)const;
+			void getPhysicalDatabaseAsync(const Model::GetPhysicalDatabaseRequest& request, const GetPhysicalDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPhysicalDatabaseOutcomeCallable getPhysicalDatabaseCallable(const Model::GetPhysicalDatabaseRequest& request) const;
 			GetStructSyncExecSqlDetailOutcome getStructSyncExecSqlDetail(const Model::GetStructSyncExecSqlDetailRequest &request)const;
 			void getStructSyncExecSqlDetailAsync(const Model::GetStructSyncExecSqlDetailRequest& request, const GetStructSyncExecSqlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetStructSyncExecSqlDetailOutcomeCallable getStructSyncExecSqlDetailCallable(const Model::GetStructSyncExecSqlDetailRequest& request) const;

@@ -31,21 +31,21 @@ Dms_enterpriseClient::Dms_enterpriseClient(const Credentials &credentials, const
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dms-enterprise");
 }
 
 Dms_enterpriseClient::Dms_enterpriseClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dms-enterprise");
 }
 
 Dms_enterpriseClient::Dms_enterpriseClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dms-enterprise");
 }
 
 Dms_enterpriseClient::~Dms_enterpriseClient()
@@ -1377,6 +1377,42 @@ Dms_enterpriseClient::GetPermApplyOrderDetailOutcomeCallable Dms_enterpriseClien
 			[this, request]()
 			{
 			return this->getPermApplyOrderDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetPhysicalDatabaseOutcome Dms_enterpriseClient::getPhysicalDatabase(const GetPhysicalDatabaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPhysicalDatabaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPhysicalDatabaseOutcome(GetPhysicalDatabaseResult(outcome.result()));
+	else
+		return GetPhysicalDatabaseOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getPhysicalDatabaseAsync(const GetPhysicalDatabaseRequest& request, const GetPhysicalDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPhysicalDatabase(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetPhysicalDatabaseOutcomeCallable Dms_enterpriseClient::getPhysicalDatabaseCallable(const GetPhysicalDatabaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPhysicalDatabaseOutcome()>>(
+			[this, request]()
+			{
+			return this->getPhysicalDatabase(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
