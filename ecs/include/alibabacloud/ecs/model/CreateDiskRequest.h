@@ -73,6 +73,8 @@ namespace AlibabaCloud
 				void setArn(const std::vector<Arn>& arn);
 				std::string getAdvancedFeatures()const;
 				void setAdvancedFeatures(const std::string& advancedFeatures);
+				std::string getDedicatedBlockStorageClusterId()const;
+				void setDedicatedBlockStorageClusterId(const std::string& dedicatedBlockStorageClusterId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getPerformanceLevel()const;
@@ -108,6 +110,7 @@ namespace AlibabaCloud
 				std::vector<Tag> tag_;
 				std::vector<Arn> arn_;
 				std::string advancedFeatures_;
+				std::string dedicatedBlockStorageClusterId_;
 				std::string resourceOwnerAccount_;
 				std::string performanceLevel_;
 				std::string ownerAccount_;

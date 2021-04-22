@@ -117,6 +117,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.bdfId = valueDisksDisk["BdfId"].asString();
 		if(!valueDisksDisk["SerialNumber"].isNull())
 			disksObject.serialNumber = valueDisksDisk["SerialNumber"].asString();
+		if(!valueDisksDisk["DedicatedBlockStorageClusterId"].isNull())
+			disksObject.dedicatedBlockStorageClusterId = valueDisksDisk["DedicatedBlockStorageClusterId"].asString();
 		auto allOperationLocksNode = valueDisksDisk["OperationLocks"]["OperationLock"];
 		for (auto valueDisksDiskOperationLocksOperationLock : allOperationLocksNode)
 		{

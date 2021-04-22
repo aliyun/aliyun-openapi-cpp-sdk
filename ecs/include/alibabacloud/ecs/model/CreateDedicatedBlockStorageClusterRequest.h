@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYDISKATTRIBUTEREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_MODIFYDISKATTRIBUTEREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_CREATEDEDICATEDBLOCKSTORAGECLUSTERREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_CREATEDEDICATEDBLOCKSTORAGECLUSTERREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,54 +28,63 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT ModifyDiskAttributeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT CreateDedicatedBlockStorageClusterRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDiskAttributeRequest();
-				~ModifyDiskAttributeRequest();
+				CreateDedicatedBlockStorageClusterRequest();
+				~CreateDedicatedBlockStorageClusterRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getDedicatedBlockStorageClusterName()const;
+				void setDedicatedBlockStorageClusterName(const std::string& dedicatedBlockStorageClusterName);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getDiskName()const;
-				void setDiskName(const std::string& diskName);
-				bool getDeleteAutoSnapshot()const;
-				void setDeleteAutoSnapshot(bool deleteAutoSnapshot);
+				int getCapacity()const;
+				void setCapacity(int capacity);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::vector<std::string> getDiskIds()const;
-				void setDiskIds(const std::vector<std::string>& diskIds);
-				std::string getDiskId()const;
-				void setDiskId(const std::string& diskId);
-				bool getDeleteWithInstance()const;
-				void setDeleteWithInstance(bool deleteWithInstance);
-				bool getEnableAutoSnapshot()const;
-				void setEnableAutoSnapshot(bool enableAutoSnapshot);
+				int getPeriod()const;
+				void setPeriod(int period);
+				std::string getFromApp()const;
+				void setFromApp(const std::string& fromApp);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getPerformanceLevel()const;
+				void setPerformanceLevel(const std::string& performanceLevel);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPeriodUnit()const;
+				void setPeriodUnit(const std::string& periodUnit);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
 				long resourceOwnerId_;
+				std::string dedicatedBlockStorageClusterName_;
+				std::string clientToken_;
 				std::string description_;
-				std::string diskName_;
-				bool deleteAutoSnapshot_;
+				int capacity_;
 				std::string regionId_;
-				std::vector<std::string> diskIds_;
-				std::string diskId_;
-				bool deleteWithInstance_;
-				bool enableAutoSnapshot_;
+				int period_;
+				std::string fromApp_;
 				std::string resourceOwnerAccount_;
+				std::string performanceLevel_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string periodUnit_;
+				std::string zoneId_;
+				std::string category_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYDISKATTRIBUTEREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_CREATEDEDICATEDBLOCKSTORAGECLUSTERREQUEST_H_

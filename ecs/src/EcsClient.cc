@@ -1275,6 +1275,42 @@ EcsClient::CreateCommandOutcomeCallable EcsClient::createCommandCallable(const C
 	return task->get_future();
 }
 
+EcsClient::CreateDedicatedBlockStorageClusterOutcome EcsClient::createDedicatedBlockStorageCluster(const CreateDedicatedBlockStorageClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDedicatedBlockStorageClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDedicatedBlockStorageClusterOutcome(CreateDedicatedBlockStorageClusterResult(outcome.result()));
+	else
+		return CreateDedicatedBlockStorageClusterOutcome(outcome.error());
+}
+
+void EcsClient::createDedicatedBlockStorageClusterAsync(const CreateDedicatedBlockStorageClusterRequest& request, const CreateDedicatedBlockStorageClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDedicatedBlockStorageCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateDedicatedBlockStorageClusterOutcomeCallable EcsClient::createDedicatedBlockStorageClusterCallable(const CreateDedicatedBlockStorageClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDedicatedBlockStorageClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createDedicatedBlockStorageCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateDedicatedHostClusterOutcome EcsClient::createDedicatedHostCluster(const CreateDedicatedHostClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1449,42 @@ EcsClient::CreateDiskOutcomeCallable EcsClient::createDiskCallable(const CreateD
 			[this, request]()
 			{
 			return this->createDisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::CreateDiskReplicaPairOutcome EcsClient::createDiskReplicaPair(const CreateDiskReplicaPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDiskReplicaPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDiskReplicaPairOutcome(CreateDiskReplicaPairResult(outcome.result()));
+	else
+		return CreateDiskReplicaPairOutcome(outcome.error());
+}
+
+void EcsClient::createDiskReplicaPairAsync(const CreateDiskReplicaPairRequest& request, const CreateDiskReplicaPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDiskReplicaPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateDiskReplicaPairOutcomeCallable EcsClient::createDiskReplicaPairCallable(const CreateDiskReplicaPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDiskReplicaPairOutcome()>>(
+			[this, request]()
+			{
+			return this->createDiskReplicaPair(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2673,6 +2745,42 @@ EcsClient::DeleteDiskOutcomeCallable EcsClient::deleteDiskCallable(const DeleteD
 			[this, request]()
 			{
 			return this->deleteDisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeleteDiskReplicaPairOutcome EcsClient::deleteDiskReplicaPair(const DeleteDiskReplicaPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDiskReplicaPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDiskReplicaPairOutcome(DeleteDiskReplicaPairResult(outcome.result()));
+	else
+		return DeleteDiskReplicaPairOutcome(outcome.error());
+}
+
+void EcsClient::deleteDiskReplicaPairAsync(const DeleteDiskReplicaPairRequest& request, const DeleteDiskReplicaPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDiskReplicaPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteDiskReplicaPairOutcomeCallable EcsClient::deleteDiskReplicaPairCallable(const DeleteDiskReplicaPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDiskReplicaPairOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDiskReplicaPair(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4155,6 +4263,42 @@ EcsClient::DescribeCommandsOutcomeCallable EcsClient::describeCommandsCallable(c
 	return task->get_future();
 }
 
+EcsClient::DescribeDedicatedBlockStorageClustersOutcome EcsClient::describeDedicatedBlockStorageClusters(const DescribeDedicatedBlockStorageClustersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDedicatedBlockStorageClustersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDedicatedBlockStorageClustersOutcome(DescribeDedicatedBlockStorageClustersResult(outcome.result()));
+	else
+		return DescribeDedicatedBlockStorageClustersOutcome(outcome.error());
+}
+
+void EcsClient::describeDedicatedBlockStorageClustersAsync(const DescribeDedicatedBlockStorageClustersRequest& request, const DescribeDedicatedBlockStorageClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDedicatedBlockStorageClusters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDedicatedBlockStorageClustersOutcomeCallable EcsClient::describeDedicatedBlockStorageClustersCallable(const DescribeDedicatedBlockStorageClustersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDedicatedBlockStorageClustersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDedicatedBlockStorageClusters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeDedicatedHostAutoRenewOutcome EcsClient::describeDedicatedHostAutoRenew(const DescribeDedicatedHostAutoRenewRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4437,6 +4581,42 @@ EcsClient::DescribeDiskMonitorDataOutcomeCallable EcsClient::describeDiskMonitor
 			[this, request]()
 			{
 			return this->describeDiskMonitorData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeDiskReplicaPairsOutcome EcsClient::describeDiskReplicaPairs(const DescribeDiskReplicaPairsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiskReplicaPairsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiskReplicaPairsOutcome(DescribeDiskReplicaPairsResult(outcome.result()));
+	else
+		return DescribeDiskReplicaPairsOutcome(outcome.error());
+}
+
+void EcsClient::describeDiskReplicaPairsAsync(const DescribeDiskReplicaPairsRequest& request, const DescribeDiskReplicaPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiskReplicaPairs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDiskReplicaPairsOutcomeCallable EcsClient::describeDiskReplicaPairsCallable(const DescribeDiskReplicaPairsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiskReplicaPairsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiskReplicaPairs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11247,6 +11427,42 @@ EcsClient::SendFileOutcomeCallable EcsClient::sendFileCallable(const SendFileReq
 	return task->get_future();
 }
 
+EcsClient::StartDiskReplicaPairOutcome EcsClient::startDiskReplicaPair(const StartDiskReplicaPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartDiskReplicaPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartDiskReplicaPairOutcome(StartDiskReplicaPairResult(outcome.result()));
+	else
+		return StartDiskReplicaPairOutcome(outcome.error());
+}
+
+void EcsClient::startDiskReplicaPairAsync(const StartDiskReplicaPairRequest& request, const StartDiskReplicaPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startDiskReplicaPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::StartDiskReplicaPairOutcomeCallable EcsClient::startDiskReplicaPairCallable(const StartDiskReplicaPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartDiskReplicaPairOutcome()>>(
+			[this, request]()
+			{
+			return this->startDiskReplicaPair(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::StartElasticityAssuranceOutcome EcsClient::startElasticityAssurance(const StartElasticityAssuranceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11385,6 +11601,42 @@ EcsClient::StartInstancesOutcomeCallable EcsClient::startInstancesCallable(const
 			[this, request]()
 			{
 			return this->startInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::StopDiskReplicaPairOutcome EcsClient::stopDiskReplicaPair(const StopDiskReplicaPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopDiskReplicaPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopDiskReplicaPairOutcome(StopDiskReplicaPairResult(outcome.result()));
+	else
+		return StopDiskReplicaPairOutcome(outcome.error());
+}
+
+void EcsClient::stopDiskReplicaPairAsync(const StopDiskReplicaPairRequest& request, const StopDiskReplicaPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopDiskReplicaPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::StopDiskReplicaPairOutcomeCallable EcsClient::stopDiskReplicaPairCallable(const StopDiskReplicaPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopDiskReplicaPairOutcome()>>(
+			[this, request]()
+			{
+			return this->stopDiskReplicaPair(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

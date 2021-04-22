@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_CREATEDISKREPLICAPAIRREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_CREATEDISKREPLICAPAIRREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT AcceptInquiredSystemEventRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT CreateDiskReplicaPairRequest : public RpcServiceRequest
 			{
 
 			public:
-				AcceptInquiredSystemEventRequest();
-				~AcceptInquiredSystemEventRequest();
+				CreateDiskReplicaPairRequest();
+				~CreateDiskReplicaPairRequest();
 
-				std::string getEventId()const;
-				void setEventId(const std::string& eventId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getPairName()const;
+				void setPairName(const std::string& pairName);
+				std::string getDestinationRegionId()const;
+				void setDestinationRegionId(const std::string& destinationRegionId);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getDiskId()const;
+				void setDiskId(const std::string& diskId);
+				int getAsyncCycle()const;
+				void setAsyncCycle(int asyncCycle);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getChoice()const;
-				void setChoice(const std::string& choice);
+				std::string getDestinationDiskId()const;
+				void setDestinationDiskId(const std::string& destinationDiskId);
 
             private:
-				std::string eventId_;
 				long resourceOwnerId_;
+				std::string pairName_;
+				std::string destinationRegionId_;
+				std::string description_;
 				std::string regionId_;
+				std::string diskId_;
+				int asyncCycle_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string choice_;
+				std::string destinationDiskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_CREATEDISKREPLICAPAIRREQUEST_H_

@@ -66,6 +66,7 @@ namespace AlibabaCloud
 					std::string impactLevel;
 					ExtendedAttribute extendedAttribute;
 					std::string eventId;
+					std::string resourceType;
 					std::string notBefore;
 					std::string reason;
 				};

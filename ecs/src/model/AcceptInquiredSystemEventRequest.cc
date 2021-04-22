@@ -93,3 +93,14 @@ void AcceptInquiredSystemEventRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string AcceptInquiredSystemEventRequest::getChoice()const
+{
+	return choice_;
+}
+
+void AcceptInquiredSystemEventRequest::setChoice(const std::string& choice)
+{
+	choice_ = choice;
+	setParameter("Choice", choice);
+}
+

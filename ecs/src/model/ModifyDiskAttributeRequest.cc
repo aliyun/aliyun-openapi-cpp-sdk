@@ -71,6 +71,17 @@ void ModifyDiskAttributeRequest::setDeleteAutoSnapshot(bool deleteAutoSnapshot)
 	setParameter("DeleteAutoSnapshot", deleteAutoSnapshot ? "true" : "false");
 }
 
+std::string ModifyDiskAttributeRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyDiskAttributeRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::vector<std::string> ModifyDiskAttributeRequest::getDiskIds()const
 {
 	return diskIds_;

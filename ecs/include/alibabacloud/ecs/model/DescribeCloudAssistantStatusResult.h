@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string oSType;
 					long invocationCount;
 					std::string cloudAssistantStatus;
+					std::string lastHeartbeatTime;
 					std::string lastInvokedTime;
 					long activeTaskCount;
 				};

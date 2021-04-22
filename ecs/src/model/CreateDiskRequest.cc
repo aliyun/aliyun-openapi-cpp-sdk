@@ -181,6 +181,17 @@ void CreateDiskRequest::setAdvancedFeatures(const std::string& advancedFeatures)
 	setParameter("AdvancedFeatures", advancedFeatures);
 }
 
+std::string CreateDiskRequest::getDedicatedBlockStorageClusterId()const
+{
+	return dedicatedBlockStorageClusterId_;
+}
+
+void CreateDiskRequest::setDedicatedBlockStorageClusterId(const std::string& dedicatedBlockStorageClusterId)
+{
+	dedicatedBlockStorageClusterId_ = dedicatedBlockStorageClusterId;
+	setParameter("DedicatedBlockStorageClusterId", dedicatedBlockStorageClusterId);
+}
+
 std::string CreateDiskRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

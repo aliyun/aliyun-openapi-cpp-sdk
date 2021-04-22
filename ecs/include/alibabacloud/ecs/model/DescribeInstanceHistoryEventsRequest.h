@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setInstanceEventCycleStatus(const std::vector<std::string>& instanceEventCycleStatus);
 				std::string getEventPublishTimeEnd()const;
 				void setEventPublishTimeEnd(const std::string& eventPublishTimeEnd);
+				std::vector<std::string> getResourceId()const;
+				void setResourceId(const std::vector<std::string>& resourceId);
 				std::vector<std::string> getInstanceEventType()const;
 				void setInstanceEventType(const std::vector<std::string>& instanceEventType);
 				std::string getResourceOwnerAccount()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setNotBeforeStart(const std::string& notBeforeStart);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
 				std::string getEventPublishTimeStart()const;
 				void setEventPublishTimeStart(const std::string& eventPublishTimeStart);
 				std::string getInstanceId()const;
@@ -82,11 +86,13 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::vector<std::string> instanceEventCycleStatus_;
 				std::string eventPublishTimeEnd_;
+				std::vector<std::string> resourceId_;
 				std::vector<std::string> instanceEventType_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string notBeforeStart_;
 				long ownerId_;
+				std::string resourceType_;
 				std::string eventPublishTimeStart_;
 				std::string instanceId_;
 				std::string notBeforeEnd_;

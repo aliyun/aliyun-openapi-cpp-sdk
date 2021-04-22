@@ -77,6 +77,10 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.queueNumber = std::stoi(valueNetworkInterfaceSetsNetworkInterfaceSet["QueueNumber"].asString());
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["OwnerId"].isNull())
 			networkInterfaceSetsObject.ownerId = valueNetworkInterfaceSetsNetworkInterfaceSet["OwnerId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceTrafficMode"].isNull())
+			networkInterfaceSetsObject.networkInterfaceTrafficMode = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceTrafficMode"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["QueuePairNumber"].isNull())
+			networkInterfaceSetsObject.queuePairNumber = std::stoi(valueNetworkInterfaceSetsNetworkInterfaceSet["QueuePairNumber"].asString());
 		auto allPrivateIpSetsNode = valueNetworkInterfaceSetsNetworkInterfaceSet["PrivateIpSets"]["PrivateIpSet"];
 		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetPrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
 		{

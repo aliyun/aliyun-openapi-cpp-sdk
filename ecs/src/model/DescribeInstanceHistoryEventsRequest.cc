@@ -130,6 +130,19 @@ void DescribeInstanceHistoryEventsRequest::setEventPublishTimeEnd(const std::str
 	setParameter("EventPublishTimeEnd", eventPublishTimeEnd);
 }
 
+std::vector<std::string> DescribeInstanceHistoryEventsRequest::getResourceId()const
+{
+	return resourceId_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setResourceId(const std::vector<std::string>& resourceId)
+{
+	resourceId_ = resourceId;
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
+}
+
 std::vector<std::string> DescribeInstanceHistoryEventsRequest::getInstanceEventType()const
 {
 	return instanceEventType_;
@@ -185,6 +198,17 @@ void DescribeInstanceHistoryEventsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeInstanceHistoryEventsRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeInstanceHistoryEventsRequest::getEventPublishTimeStart()const

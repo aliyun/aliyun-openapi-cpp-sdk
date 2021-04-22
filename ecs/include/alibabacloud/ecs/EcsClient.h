@@ -90,6 +90,8 @@
 #include "model/CreateCapacityReservationResult.h"
 #include "model/CreateCommandRequest.h"
 #include "model/CreateCommandResult.h"
+#include "model/CreateDedicatedBlockStorageClusterRequest.h"
+#include "model/CreateDedicatedBlockStorageClusterResult.h"
 #include "model/CreateDedicatedHostClusterRequest.h"
 #include "model/CreateDedicatedHostClusterResult.h"
 #include "model/CreateDemandRequest.h"
@@ -98,6 +100,8 @@
 #include "model/CreateDeploymentSetResult.h"
 #include "model/CreateDiskRequest.h"
 #include "model/CreateDiskResult.h"
+#include "model/CreateDiskReplicaPairRequest.h"
+#include "model/CreateDiskReplicaPairResult.h"
 #include "model/CreateElasticityAssuranceRequest.h"
 #include "model/CreateElasticityAssuranceResult.h"
 #include "model/CreateForwardEntryRequest.h"
@@ -168,6 +172,8 @@
 #include "model/DeleteDeploymentSetResult.h"
 #include "model/DeleteDiskRequest.h"
 #include "model/DeleteDiskResult.h"
+#include "model/DeleteDiskReplicaPairRequest.h"
+#include "model/DeleteDiskReplicaPairResult.h"
 #include "model/DeleteForwardEntryRequest.h"
 #include "model/DeleteForwardEntryResult.h"
 #include "model/DeleteHaVipRequest.h"
@@ -250,6 +256,8 @@
 #include "model/DescribeClustersResult.h"
 #include "model/DescribeCommandsRequest.h"
 #include "model/DescribeCommandsResult.h"
+#include "model/DescribeDedicatedBlockStorageClustersRequest.h"
+#include "model/DescribeDedicatedBlockStorageClustersResult.h"
 #include "model/DescribeDedicatedHostAutoRenewRequest.h"
 #include "model/DescribeDedicatedHostAutoRenewResult.h"
 #include "model/DescribeDedicatedHostClustersRequest.h"
@@ -266,6 +274,8 @@
 #include "model/DescribeDeploymentSetsResult.h"
 #include "model/DescribeDiskMonitorDataRequest.h"
 #include "model/DescribeDiskMonitorDataResult.h"
+#include "model/DescribeDiskReplicaPairsRequest.h"
+#include "model/DescribeDiskReplicaPairsResult.h"
 #include "model/DescribeDisksRequest.h"
 #include "model/DescribeDisksResult.h"
 #include "model/DescribeDisksFullStatusRequest.h"
@@ -644,6 +654,8 @@
 #include "model/RunInstancesResult.h"
 #include "model/SendFileRequest.h"
 #include "model/SendFileResult.h"
+#include "model/StartDiskReplicaPairRequest.h"
+#include "model/StartDiskReplicaPairResult.h"
 #include "model/StartElasticityAssuranceRequest.h"
 #include "model/StartElasticityAssuranceResult.h"
 #include "model/StartImagePipelineExecutionRequest.h"
@@ -652,6 +664,8 @@
 #include "model/StartInstanceResult.h"
 #include "model/StartInstancesRequest.h"
 #include "model/StartInstancesResult.h"
+#include "model/StopDiskReplicaPairRequest.h"
+#include "model/StopDiskReplicaPairResult.h"
 #include "model/StopInstanceRequest.h"
 #include "model/StopInstanceResult.h"
 #include "model/StopInstancesRequest.h"
@@ -785,6 +799,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCommandResult> CreateCommandOutcome;
 			typedef std::future<CreateCommandOutcome> CreateCommandOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateCommandRequest&, const CreateCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommandAsyncHandler;
+			typedef Outcome<Error, Model::CreateDedicatedBlockStorageClusterResult> CreateDedicatedBlockStorageClusterOutcome;
+			typedef std::future<CreateDedicatedBlockStorageClusterOutcome> CreateDedicatedBlockStorageClusterOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateDedicatedBlockStorageClusterRequest&, const CreateDedicatedBlockStorageClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedBlockStorageClusterAsyncHandler;
 			typedef Outcome<Error, Model::CreateDedicatedHostClusterResult> CreateDedicatedHostClusterOutcome;
 			typedef std::future<CreateDedicatedHostClusterOutcome> CreateDedicatedHostClusterOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDedicatedHostClusterRequest&, const CreateDedicatedHostClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedHostClusterAsyncHandler;
@@ -797,6 +814,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDiskResult> CreateDiskOutcome;
 			typedef std::future<CreateDiskOutcome> CreateDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDiskRequest&, const CreateDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskAsyncHandler;
+			typedef Outcome<Error, Model::CreateDiskReplicaPairResult> CreateDiskReplicaPairOutcome;
+			typedef std::future<CreateDiskReplicaPairOutcome> CreateDiskReplicaPairOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateDiskReplicaPairRequest&, const CreateDiskReplicaPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskReplicaPairAsyncHandler;
 			typedef Outcome<Error, Model::CreateElasticityAssuranceResult> CreateElasticityAssuranceOutcome;
 			typedef std::future<CreateElasticityAssuranceOutcome> CreateElasticityAssuranceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateElasticityAssuranceRequest&, const CreateElasticityAssuranceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateElasticityAssuranceAsyncHandler;
@@ -902,6 +922,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDiskResult> DeleteDiskOutcome;
 			typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDiskRequest&, const DeleteDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDiskReplicaPairResult> DeleteDiskReplicaPairOutcome;
+			typedef std::future<DeleteDiskReplicaPairOutcome> DeleteDiskReplicaPairOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DeleteDiskReplicaPairRequest&, const DeleteDiskReplicaPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskReplicaPairAsyncHandler;
 			typedef Outcome<Error, Model::DeleteForwardEntryResult> DeleteForwardEntryOutcome;
 			typedef std::future<DeleteForwardEntryOutcome> DeleteForwardEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteForwardEntryRequest&, const DeleteForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteForwardEntryAsyncHandler;
@@ -1025,6 +1048,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCommandsResult> DescribeCommandsOutcome;
 			typedef std::future<DescribeCommandsOutcome> DescribeCommandsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeCommandsRequest&, const DescribeCommandsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommandsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDedicatedBlockStorageClustersResult> DescribeDedicatedBlockStorageClustersOutcome;
+			typedef std::future<DescribeDedicatedBlockStorageClustersOutcome> DescribeDedicatedBlockStorageClustersOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeDedicatedBlockStorageClustersRequest&, const DescribeDedicatedBlockStorageClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedBlockStorageClustersAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDedicatedHostAutoRenewResult> DescribeDedicatedHostAutoRenewOutcome;
 			typedef std::future<DescribeDedicatedHostAutoRenewOutcome> DescribeDedicatedHostAutoRenewOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDedicatedHostAutoRenewRequest&, const DescribeDedicatedHostAutoRenewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedHostAutoRenewAsyncHandler;
@@ -1049,6 +1075,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDiskMonitorDataResult> DescribeDiskMonitorDataOutcome;
 			typedef std::future<DescribeDiskMonitorDataOutcome> DescribeDiskMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDiskMonitorDataRequest&, const DescribeDiskMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskMonitorDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiskReplicaPairsResult> DescribeDiskReplicaPairsOutcome;
+			typedef std::future<DescribeDiskReplicaPairsOutcome> DescribeDiskReplicaPairsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeDiskReplicaPairsRequest&, const DescribeDiskReplicaPairsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskReplicaPairsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDisksResult> DescribeDisksOutcome;
 			typedef std::future<DescribeDisksOutcome> DescribeDisksOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDisksRequest&, const DescribeDisksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksAsyncHandler;
@@ -1616,6 +1645,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SendFileResult> SendFileOutcome;
 			typedef std::future<SendFileOutcome> SendFileOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::SendFileRequest&, const SendFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendFileAsyncHandler;
+			typedef Outcome<Error, Model::StartDiskReplicaPairResult> StartDiskReplicaPairOutcome;
+			typedef std::future<StartDiskReplicaPairOutcome> StartDiskReplicaPairOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::StartDiskReplicaPairRequest&, const StartDiskReplicaPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartDiskReplicaPairAsyncHandler;
 			typedef Outcome<Error, Model::StartElasticityAssuranceResult> StartElasticityAssuranceOutcome;
 			typedef std::future<StartElasticityAssuranceOutcome> StartElasticityAssuranceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::StartElasticityAssuranceRequest&, const StartElasticityAssuranceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartElasticityAssuranceAsyncHandler;
@@ -1628,6 +1660,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartInstancesResult> StartInstancesOutcome;
 			typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::StartInstancesRequest&, const StartInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
+			typedef Outcome<Error, Model::StopDiskReplicaPairResult> StopDiskReplicaPairOutcome;
+			typedef std::future<StopDiskReplicaPairOutcome> StopDiskReplicaPairOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::StopDiskReplicaPairRequest&, const StopDiskReplicaPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopDiskReplicaPairAsyncHandler;
 			typedef Outcome<Error, Model::StopInstanceResult> StopInstanceOutcome;
 			typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::StopInstanceRequest&, const StopInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
@@ -1768,6 +1803,9 @@ namespace AlibabaCloud
 			CreateCommandOutcome createCommand(const Model::CreateCommandRequest &request)const;
 			void createCommandAsync(const Model::CreateCommandRequest& request, const CreateCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCommandOutcomeCallable createCommandCallable(const Model::CreateCommandRequest& request) const;
+			CreateDedicatedBlockStorageClusterOutcome createDedicatedBlockStorageCluster(const Model::CreateDedicatedBlockStorageClusterRequest &request)const;
+			void createDedicatedBlockStorageClusterAsync(const Model::CreateDedicatedBlockStorageClusterRequest& request, const CreateDedicatedBlockStorageClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDedicatedBlockStorageClusterOutcomeCallable createDedicatedBlockStorageClusterCallable(const Model::CreateDedicatedBlockStorageClusterRequest& request) const;
 			CreateDedicatedHostClusterOutcome createDedicatedHostCluster(const Model::CreateDedicatedHostClusterRequest &request)const;
 			void createDedicatedHostClusterAsync(const Model::CreateDedicatedHostClusterRequest& request, const CreateDedicatedHostClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDedicatedHostClusterOutcomeCallable createDedicatedHostClusterCallable(const Model::CreateDedicatedHostClusterRequest& request) const;
@@ -1780,6 +1818,9 @@ namespace AlibabaCloud
 			CreateDiskOutcome createDisk(const Model::CreateDiskRequest &request)const;
 			void createDiskAsync(const Model::CreateDiskRequest& request, const CreateDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDiskOutcomeCallable createDiskCallable(const Model::CreateDiskRequest& request) const;
+			CreateDiskReplicaPairOutcome createDiskReplicaPair(const Model::CreateDiskReplicaPairRequest &request)const;
+			void createDiskReplicaPairAsync(const Model::CreateDiskReplicaPairRequest& request, const CreateDiskReplicaPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDiskReplicaPairOutcomeCallable createDiskReplicaPairCallable(const Model::CreateDiskReplicaPairRequest& request) const;
 			CreateElasticityAssuranceOutcome createElasticityAssurance(const Model::CreateElasticityAssuranceRequest &request)const;
 			void createElasticityAssuranceAsync(const Model::CreateElasticityAssuranceRequest& request, const CreateElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateElasticityAssuranceOutcomeCallable createElasticityAssuranceCallable(const Model::CreateElasticityAssuranceRequest& request) const;
@@ -1885,6 +1926,9 @@ namespace AlibabaCloud
 			DeleteDiskOutcome deleteDisk(const Model::DeleteDiskRequest &request)const;
 			void deleteDiskAsync(const Model::DeleteDiskRequest& request, const DeleteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDiskOutcomeCallable deleteDiskCallable(const Model::DeleteDiskRequest& request) const;
+			DeleteDiskReplicaPairOutcome deleteDiskReplicaPair(const Model::DeleteDiskReplicaPairRequest &request)const;
+			void deleteDiskReplicaPairAsync(const Model::DeleteDiskReplicaPairRequest& request, const DeleteDiskReplicaPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDiskReplicaPairOutcomeCallable deleteDiskReplicaPairCallable(const Model::DeleteDiskReplicaPairRequest& request) const;
 			DeleteForwardEntryOutcome deleteForwardEntry(const Model::DeleteForwardEntryRequest &request)const;
 			void deleteForwardEntryAsync(const Model::DeleteForwardEntryRequest& request, const DeleteForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteForwardEntryOutcomeCallable deleteForwardEntryCallable(const Model::DeleteForwardEntryRequest& request) const;
@@ -2008,6 +2052,9 @@ namespace AlibabaCloud
 			DescribeCommandsOutcome describeCommands(const Model::DescribeCommandsRequest &request)const;
 			void describeCommandsAsync(const Model::DescribeCommandsRequest& request, const DescribeCommandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCommandsOutcomeCallable describeCommandsCallable(const Model::DescribeCommandsRequest& request) const;
+			DescribeDedicatedBlockStorageClustersOutcome describeDedicatedBlockStorageClusters(const Model::DescribeDedicatedBlockStorageClustersRequest &request)const;
+			void describeDedicatedBlockStorageClustersAsync(const Model::DescribeDedicatedBlockStorageClustersRequest& request, const DescribeDedicatedBlockStorageClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDedicatedBlockStorageClustersOutcomeCallable describeDedicatedBlockStorageClustersCallable(const Model::DescribeDedicatedBlockStorageClustersRequest& request) const;
 			DescribeDedicatedHostAutoRenewOutcome describeDedicatedHostAutoRenew(const Model::DescribeDedicatedHostAutoRenewRequest &request)const;
 			void describeDedicatedHostAutoRenewAsync(const Model::DescribeDedicatedHostAutoRenewRequest& request, const DescribeDedicatedHostAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDedicatedHostAutoRenewOutcomeCallable describeDedicatedHostAutoRenewCallable(const Model::DescribeDedicatedHostAutoRenewRequest& request) const;
@@ -2032,6 +2079,9 @@ namespace AlibabaCloud
 			DescribeDiskMonitorDataOutcome describeDiskMonitorData(const Model::DescribeDiskMonitorDataRequest &request)const;
 			void describeDiskMonitorDataAsync(const Model::DescribeDiskMonitorDataRequest& request, const DescribeDiskMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDiskMonitorDataOutcomeCallable describeDiskMonitorDataCallable(const Model::DescribeDiskMonitorDataRequest& request) const;
+			DescribeDiskReplicaPairsOutcome describeDiskReplicaPairs(const Model::DescribeDiskReplicaPairsRequest &request)const;
+			void describeDiskReplicaPairsAsync(const Model::DescribeDiskReplicaPairsRequest& request, const DescribeDiskReplicaPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiskReplicaPairsOutcomeCallable describeDiskReplicaPairsCallable(const Model::DescribeDiskReplicaPairsRequest& request) const;
 			DescribeDisksOutcome describeDisks(const Model::DescribeDisksRequest &request)const;
 			void describeDisksAsync(const Model::DescribeDisksRequest& request, const DescribeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDisksOutcomeCallable describeDisksCallable(const Model::DescribeDisksRequest& request) const;
@@ -2599,6 +2649,9 @@ namespace AlibabaCloud
 			SendFileOutcome sendFile(const Model::SendFileRequest &request)const;
 			void sendFileAsync(const Model::SendFileRequest& request, const SendFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendFileOutcomeCallable sendFileCallable(const Model::SendFileRequest& request) const;
+			StartDiskReplicaPairOutcome startDiskReplicaPair(const Model::StartDiskReplicaPairRequest &request)const;
+			void startDiskReplicaPairAsync(const Model::StartDiskReplicaPairRequest& request, const StartDiskReplicaPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartDiskReplicaPairOutcomeCallable startDiskReplicaPairCallable(const Model::StartDiskReplicaPairRequest& request) const;
 			StartElasticityAssuranceOutcome startElasticityAssurance(const Model::StartElasticityAssuranceRequest &request)const;
 			void startElasticityAssuranceAsync(const Model::StartElasticityAssuranceRequest& request, const StartElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartElasticityAssuranceOutcomeCallable startElasticityAssuranceCallable(const Model::StartElasticityAssuranceRequest& request) const;
@@ -2611,6 +2664,9 @@ namespace AlibabaCloud
 			StartInstancesOutcome startInstances(const Model::StartInstancesRequest &request)const;
 			void startInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartInstancesOutcomeCallable startInstancesCallable(const Model::StartInstancesRequest& request) const;
+			StopDiskReplicaPairOutcome stopDiskReplicaPair(const Model::StopDiskReplicaPairRequest &request)const;
+			void stopDiskReplicaPairAsync(const Model::StopDiskReplicaPairRequest& request, const StopDiskReplicaPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopDiskReplicaPairOutcomeCallable stopDiskReplicaPairCallable(const Model::StopDiskReplicaPairRequest& request) const;
 			StopInstanceOutcome stopInstance(const Model::StopInstanceRequest &request)const;
 			void stopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstanceOutcomeCallable stopInstanceCallable(const Model::StopInstanceRequest& request) const;

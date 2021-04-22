@@ -71,6 +71,17 @@ void InvokeCommandRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string InvokeCommandRequest::getRepeatMode()const
+{
+	return repeatMode_;
+}
+
+void InvokeCommandRequest::setRepeatMode(const std::string& repeatMode)
+{
+	repeatMode_ = repeatMode;
+	setParameter("RepeatMode", repeatMode);
+}
+
 std::string InvokeCommandRequest::getWindowsPasswordName()const
 {
 	return windowsPasswordName_;

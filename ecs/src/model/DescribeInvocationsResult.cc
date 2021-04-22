@@ -59,6 +59,8 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 			invocationsObject.frequency = valueInvocationsInvocation["Frequency"].asString();
 		if(!valueInvocationsInvocation["Timed"].isNull())
 			invocationsObject.timed = valueInvocationsInvocation["Timed"].asString() == "true";
+		if(!valueInvocationsInvocation["RepeatMode"].isNull())
+			invocationsObject.repeatMode = valueInvocationsInvocation["RepeatMode"].asString();
 		if(!valueInvocationsInvocation["InvokeStatus"].isNull())
 			invocationsObject.invokeStatus = valueInvocationsInvocation["InvokeStatus"].asString();
 		if(!valueInvocationsInvocation["InvocationStatus"].isNull())
@@ -75,6 +77,8 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 				invokeInstancesObject.instanceId = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Repeats"].isNull())
 				invokeInstancesObject.repeats = std::stoi(valueInvocationsInvocationInvokeInstancesInvokeInstance["Repeats"].asString());
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Timed"].isNull())
+				invokeInstancesObject.timed = valueInvocationsInvocationInvokeInstancesInvokeInstance["Timed"].asString() == "true";
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceInvokeStatus"].isNull())
 				invokeInstancesObject.instanceInvokeStatus = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceInvokeStatus"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].isNull())

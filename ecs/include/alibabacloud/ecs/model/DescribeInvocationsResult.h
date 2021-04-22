@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						int dropped;
 						std::string invocationStatus;
 						std::string instanceId;
+						bool timed;
 						std::string instanceInvokeStatus;
 						long exitCode;
 						std::string errorInfo;
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 					bool timed;
 					std::vector<Invocation::InvokeInstance> invokeInstances;
 					std::string commandContent;
+					std::string repeatMode;
 					std::string invokeStatus;
 					std::string commandType;
 					std::string username;

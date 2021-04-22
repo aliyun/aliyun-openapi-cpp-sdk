@@ -89,6 +89,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateCapacityReservationResult.h
 	include/alibabacloud/ecs/model/CreateCommandRequest.h
 	include/alibabacloud/ecs/model/CreateCommandResult.h
+	include/alibabacloud/ecs/model/CreateDedicatedBlockStorageClusterRequest.h
+	include/alibabacloud/ecs/model/CreateDedicatedBlockStorageClusterResult.h
 	include/alibabacloud/ecs/model/CreateDedicatedHostClusterRequest.h
 	include/alibabacloud/ecs/model/CreateDedicatedHostClusterResult.h
 	include/alibabacloud/ecs/model/CreateDemandRequest.h
@@ -97,6 +99,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
 	include/alibabacloud/ecs/model/CreateDiskRequest.h
 	include/alibabacloud/ecs/model/CreateDiskResult.h
+	include/alibabacloud/ecs/model/CreateDiskReplicaPairRequest.h
+	include/alibabacloud/ecs/model/CreateDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/CreateElasticityAssuranceRequest.h
 	include/alibabacloud/ecs/model/CreateElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/CreateForwardEntryRequest.h
@@ -167,6 +171,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteDeploymentSetResult.h
 	include/alibabacloud/ecs/model/DeleteDiskRequest.h
 	include/alibabacloud/ecs/model/DeleteDiskResult.h
+	include/alibabacloud/ecs/model/DeleteDiskReplicaPairRequest.h
+	include/alibabacloud/ecs/model/DeleteDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/DeleteForwardEntryRequest.h
 	include/alibabacloud/ecs/model/DeleteForwardEntryResult.h
 	include/alibabacloud/ecs/model/DeleteHaVipRequest.h
@@ -249,6 +255,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeClustersResult.h
 	include/alibabacloud/ecs/model/DescribeCommandsRequest.h
 	include/alibabacloud/ecs/model/DescribeCommandsResult.h
+	include/alibabacloud/ecs/model/DescribeDedicatedBlockStorageClustersRequest.h
+	include/alibabacloud/ecs/model/DescribeDedicatedBlockStorageClustersResult.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostAutoRenewRequest.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostAutoRenewResult.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostClustersRequest.h
@@ -265,6 +273,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsResult.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataResult.h
+	include/alibabacloud/ecs/model/DescribeDiskReplicaPairsRequest.h
+	include/alibabacloud/ecs/model/DescribeDiskReplicaPairsResult.h
 	include/alibabacloud/ecs/model/DescribeDisksRequest.h
 	include/alibabacloud/ecs/model/DescribeDisksResult.h
 	include/alibabacloud/ecs/model/DescribeDisksFullStatusRequest.h
@@ -643,6 +653,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RunInstancesResult.h
 	include/alibabacloud/ecs/model/SendFileRequest.h
 	include/alibabacloud/ecs/model/SendFileResult.h
+	include/alibabacloud/ecs/model/StartDiskReplicaPairRequest.h
+	include/alibabacloud/ecs/model/StartDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/StartElasticityAssuranceRequest.h
 	include/alibabacloud/ecs/model/StartElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/StartImagePipelineExecutionRequest.h
@@ -651,6 +663,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/StartInstanceResult.h
 	include/alibabacloud/ecs/model/StartInstancesRequest.h
 	include/alibabacloud/ecs/model/StartInstancesResult.h
+	include/alibabacloud/ecs/model/StopDiskReplicaPairRequest.h
+	include/alibabacloud/ecs/model/StopDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/StopInstanceRequest.h
 	include/alibabacloud/ecs/model/StopInstanceResult.h
 	include/alibabacloud/ecs/model/StopInstancesRequest.h
@@ -744,6 +758,8 @@ set(ecs_src
 	src/model/CreateCapacityReservationResult.cc
 	src/model/CreateCommandRequest.cc
 	src/model/CreateCommandResult.cc
+	src/model/CreateDedicatedBlockStorageClusterRequest.cc
+	src/model/CreateDedicatedBlockStorageClusterResult.cc
 	src/model/CreateDedicatedHostClusterRequest.cc
 	src/model/CreateDedicatedHostClusterResult.cc
 	src/model/CreateDemandRequest.cc
@@ -752,6 +768,8 @@ set(ecs_src
 	src/model/CreateDeploymentSetResult.cc
 	src/model/CreateDiskRequest.cc
 	src/model/CreateDiskResult.cc
+	src/model/CreateDiskReplicaPairRequest.cc
+	src/model/CreateDiskReplicaPairResult.cc
 	src/model/CreateElasticityAssuranceRequest.cc
 	src/model/CreateElasticityAssuranceResult.cc
 	src/model/CreateForwardEntryRequest.cc
@@ -822,6 +840,8 @@ set(ecs_src
 	src/model/DeleteDeploymentSetResult.cc
 	src/model/DeleteDiskRequest.cc
 	src/model/DeleteDiskResult.cc
+	src/model/DeleteDiskReplicaPairRequest.cc
+	src/model/DeleteDiskReplicaPairResult.cc
 	src/model/DeleteForwardEntryRequest.cc
 	src/model/DeleteForwardEntryResult.cc
 	src/model/DeleteHaVipRequest.cc
@@ -904,6 +924,8 @@ set(ecs_src
 	src/model/DescribeClustersResult.cc
 	src/model/DescribeCommandsRequest.cc
 	src/model/DescribeCommandsResult.cc
+	src/model/DescribeDedicatedBlockStorageClustersRequest.cc
+	src/model/DescribeDedicatedBlockStorageClustersResult.cc
 	src/model/DescribeDedicatedHostAutoRenewRequest.cc
 	src/model/DescribeDedicatedHostAutoRenewResult.cc
 	src/model/DescribeDedicatedHostClustersRequest.cc
@@ -920,6 +942,8 @@ set(ecs_src
 	src/model/DescribeDeploymentSetsResult.cc
 	src/model/DescribeDiskMonitorDataRequest.cc
 	src/model/DescribeDiskMonitorDataResult.cc
+	src/model/DescribeDiskReplicaPairsRequest.cc
+	src/model/DescribeDiskReplicaPairsResult.cc
 	src/model/DescribeDisksRequest.cc
 	src/model/DescribeDisksResult.cc
 	src/model/DescribeDisksFullStatusRequest.cc
@@ -1298,6 +1322,8 @@ set(ecs_src
 	src/model/RunInstancesResult.cc
 	src/model/SendFileRequest.cc
 	src/model/SendFileResult.cc
+	src/model/StartDiskReplicaPairRequest.cc
+	src/model/StartDiskReplicaPairResult.cc
 	src/model/StartElasticityAssuranceRequest.cc
 	src/model/StartElasticityAssuranceResult.cc
 	src/model/StartImagePipelineExecutionRequest.cc
@@ -1306,6 +1332,8 @@ set(ecs_src
 	src/model/StartInstanceResult.cc
 	src/model/StartInstancesRequest.cc
 	src/model/StartInstancesResult.cc
+	src/model/StopDiskReplicaPairRequest.cc
+	src/model/StopDiskReplicaPairResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
 	src/model/StopInstancesRequest.cc

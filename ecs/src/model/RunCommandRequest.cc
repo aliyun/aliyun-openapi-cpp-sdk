@@ -126,6 +126,17 @@ void RunCommandRequest::setContentEncoding(const std::string& contentEncoding)
 	setParameter("ContentEncoding", contentEncoding);
 }
 
+std::string RunCommandRequest::getRepeatMode()const
+{
+	return repeatMode_;
+}
+
+void RunCommandRequest::setRepeatMode(const std::string& repeatMode)
+{
+	repeatMode_ = repeatMode;
+	setParameter("RepeatMode", repeatMode);
+}
+
 std::string RunCommandRequest::getWindowsPasswordName()const
 {
 	return windowsPasswordName_;

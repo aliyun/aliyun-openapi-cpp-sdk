@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DELETEDISKREPLICAPAIRREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DELETEDISKREPLICAPAIRREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,15 +28,13 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT AcceptInquiredSystemEventRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DeleteDiskReplicaPairRequest : public RpcServiceRequest
 			{
 
 			public:
-				AcceptInquiredSystemEventRequest();
-				~AcceptInquiredSystemEventRequest();
+				DeleteDiskReplicaPairRequest();
+				~DeleteDiskReplicaPairRequest();
 
-				std::string getEventId()const;
-				void setEventId(const std::string& eventId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
@@ -47,20 +45,19 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getChoice()const;
-				void setChoice(const std::string& choice);
+				std::string getReplicaPairId()const;
+				void setReplicaPairId(const std::string& replicaPairId);
 
             private:
-				std::string eventId_;
 				long resourceOwnerId_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string choice_;
+				std::string replicaPairId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DELETEDISKREPLICAPAIRREQUEST_H_

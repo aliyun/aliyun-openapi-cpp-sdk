@@ -197,6 +197,17 @@ void CreateNetworkInterfaceRequest::setOwnerAccount(const std::string& ownerAcco
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+int CreateNetworkInterfaceRequest::getQueuePairNumber()const
+{
+	return queuePairNumber_;
+}
+
+void CreateNetworkInterfaceRequest::setQueuePairNumber(int queuePairNumber)
+{
+	queuePairNumber_ = queuePairNumber;
+	setParameter("QueuePairNumber", std::to_string(queuePairNumber));
+}
+
 long CreateNetworkInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -219,6 +230,17 @@ void CreateNetworkInterfaceRequest::setSecurityGroupIds(const std::vector<std::s
 	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
 		setParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
 	}
+}
+
+std::string CreateNetworkInterfaceRequest::getNetworkInterfaceTrafficMode()const
+{
+	return networkInterfaceTrafficMode_;
+}
+
+void CreateNetworkInterfaceRequest::setNetworkInterfaceTrafficMode(const std::string& networkInterfaceTrafficMode)
+{
+	networkInterfaceTrafficMode_ = networkInterfaceTrafficMode;
+	setParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
 }
 
 std::string CreateNetworkInterfaceRequest::getVSwitchId()const

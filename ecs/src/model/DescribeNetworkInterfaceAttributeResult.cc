@@ -124,12 +124,11 @@ void DescribeNetworkInterfaceAttributeResult::parse(const std::string &payload)
 		queueNumber_ = std::stoi(value["QueueNumber"].asString());
 	if(!value["OwnerId"].isNull())
 		ownerId_ = value["OwnerId"].asString();
+	if(!value["NetworkInterfaceTrafficMode"].isNull())
+		networkInterfaceTrafficMode_ = value["NetworkInterfaceTrafficMode"].asString();
+	if(!value["QueuePairNumber"].isNull())
+		queuePairNumber_ = std::stoi(value["QueuePairNumber"].asString());
 
-}
-
-std::string DescribeNetworkInterfaceAttributeResult::getStatus()const
-{
-	return status_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getPrivateIpAddress()const
@@ -142,11 +141,6 @@ std::string DescribeNetworkInterfaceAttributeResult::getDescription()const
 	return description_;
 }
 
-std::string DescribeNetworkInterfaceAttributeResult::getZoneId()const
-{
-	return zoneId_;
-}
-
 std::string DescribeNetworkInterfaceAttributeResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -155,6 +149,51 @@ std::string DescribeNetworkInterfaceAttributeResult::getResourceGroupId()const
 bool DescribeNetworkInterfaceAttributeResult::getServiceManaged()const
 {
 	return serviceManaged_;
+}
+
+DescribeNetworkInterfaceAttributeResult::Attachment DescribeNetworkInterfaceAttributeResult::getAttachment()const
+{
+	return attachment_;
+}
+
+std::string DescribeNetworkInterfaceAttributeResult::getNetworkInterfaceId()const
+{
+	return networkInterfaceId_;
+}
+
+std::vector<DescribeNetworkInterfaceAttributeResult::Ipv6Set> DescribeNetworkInterfaceAttributeResult::getIpv6Sets()const
+{
+	return ipv6Sets_;
+}
+
+std::string DescribeNetworkInterfaceAttributeResult::getOwnerId()const
+{
+	return ownerId_;
+}
+
+DescribeNetworkInterfaceAttributeResult::AssociatedPublicIp DescribeNetworkInterfaceAttributeResult::getAssociatedPublicIp()const
+{
+	return associatedPublicIp_;
+}
+
+std::vector<DescribeNetworkInterfaceAttributeResult::Tag> DescribeNetworkInterfaceAttributeResult::getTags()const
+{
+	return tags_;
+}
+
+std::string DescribeNetworkInterfaceAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+std::string DescribeNetworkInterfaceAttributeResult::getNetworkInterfaceTrafficMode()const
+{
+	return networkInterfaceTrafficMode_;
+}
+
+std::string DescribeNetworkInterfaceAttributeResult::getZoneId()const
+{
+	return zoneId_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getInstanceId()const
@@ -170,16 +209,6 @@ std::string DescribeNetworkInterfaceAttributeResult::getVSwitchId()const
 std::string DescribeNetworkInterfaceAttributeResult::getNetworkInterfaceName()const
 {
 	return networkInterfaceName_;
-}
-
-DescribeNetworkInterfaceAttributeResult::Attachment DescribeNetworkInterfaceAttributeResult::getAttachment()const
-{
-	return attachment_;
-}
-
-std::string DescribeNetworkInterfaceAttributeResult::getNetworkInterfaceId()const
-{
-	return networkInterfaceId_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getMacAddress()const
@@ -202,14 +231,14 @@ std::string DescribeNetworkInterfaceAttributeResult::getType()const
 	return type_;
 }
 
-std::vector<DescribeNetworkInterfaceAttributeResult::Ipv6Set> DescribeNetworkInterfaceAttributeResult::getIpv6Sets()const
-{
-	return ipv6Sets_;
-}
-
 int DescribeNetworkInterfaceAttributeResult::getQueueNumber()const
 {
 	return queueNumber_;
+}
+
+int DescribeNetworkInterfaceAttributeResult::getQueuePairNumber()const
+{
+	return queuePairNumber_;
 }
 
 std::string DescribeNetworkInterfaceAttributeResult::getVpcId()const
@@ -217,24 +246,9 @@ std::string DescribeNetworkInterfaceAttributeResult::getVpcId()const
 	return vpcId_;
 }
 
-std::string DescribeNetworkInterfaceAttributeResult::getOwnerId()const
-{
-	return ownerId_;
-}
-
-DescribeNetworkInterfaceAttributeResult::AssociatedPublicIp DescribeNetworkInterfaceAttributeResult::getAssociatedPublicIp()const
-{
-	return associatedPublicIp_;
-}
-
 std::string DescribeNetworkInterfaceAttributeResult::getCreationTime()const
 {
 	return creationTime_;
-}
-
-std::vector<DescribeNetworkInterfaceAttributeResult::Tag> DescribeNetworkInterfaceAttributeResult::getTags()const
-{
-	return tags_;
 }
 
 std::vector<DescribeNetworkInterfaceAttributeResult::PrivateIpSet> DescribeNetworkInterfaceAttributeResult::getPrivateIpSets()const

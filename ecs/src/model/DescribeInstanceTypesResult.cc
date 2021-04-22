@@ -95,6 +95,12 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.secondaryEniQueueNumber = std::stoi(valueInstanceTypesInstanceType["SecondaryEniQueueNumber"].asString());
 		if(!valueInstanceTypesInstanceType["DiskQuantity"].isNull())
 			instanceTypesObject.diskQuantity = std::stoi(valueInstanceTypesInstanceType["DiskQuantity"].asString());
+		if(!valueInstanceTypesInstanceType["EriQuantity"].isNull())
+			instanceTypesObject.eriQuantity = std::stoi(valueInstanceTypesInstanceType["EriQuantity"].asString());
+		if(!valueInstanceTypesInstanceType["QueuePairNumber"].isNull())
+			instanceTypesObject.queuePairNumber = std::stoi(valueInstanceTypesInstanceType["QueuePairNumber"].asString());
+		if(!valueInstanceTypesInstanceType["NvmeSupport"].isNull())
+			instanceTypesObject.nvmeSupport = valueInstanceTypesInstanceType["NvmeSupport"].asString();
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 

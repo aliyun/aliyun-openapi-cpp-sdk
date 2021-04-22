@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEDEDICATEDBLOCKSTORAGECLUSTERSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEDEDICATEDBLOCKSTORAGECLUSTERSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT AcceptInquiredSystemEventRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeDedicatedBlockStorageClustersRequest : public RpcServiceRequest
 			{
 
 			public:
-				AcceptInquiredSystemEventRequest();
-				~AcceptInquiredSystemEventRequest();
+				DescribeDedicatedBlockStorageClustersRequest();
+				~DescribeDedicatedBlockStorageClustersRequest();
 
-				std::string getEventId()const;
-				void setEventId(const std::string& eventId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
+				std::vector<std::string> getDedicatedBlockStorageClusterId()const;
+				void setDedicatedBlockStorageClusterId(const std::vector<std::string>& dedicatedBlockStorageClusterId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getChoice()const;
-				void setChoice(const std::string& choice);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
+				std::vector<std::string> getStatus()const;
+				void setStatus(const std::vector<std::string>& status);
 
             private:
-				std::string eventId_;
 				long resourceOwnerId_;
 				std::string regionId_;
+				std::string nextToken_;
+				std::vector<std::string> dedicatedBlockStorageClusterId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string choice_;
+				std::string zoneId_;
+				int maxResults_;
+				std::string category_;
+				std::vector<std::string> status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_ACCEPTINQUIREDSYSTEMEVENTREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEDEDICATEDBLOCKSTORAGECLUSTERSREQUEST_H_

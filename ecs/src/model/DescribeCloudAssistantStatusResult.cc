@@ -57,6 +57,8 @@ void DescribeCloudAssistantStatusResult::parse(const std::string &payload)
 			instanceCloudAssistantStatusSetObject.activeTaskCount = std::stol(valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["ActiveTaskCount"].asString());
 		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["LastInvokedTime"].isNull())
 			instanceCloudAssistantStatusSetObject.lastInvokedTime = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["LastInvokedTime"].asString();
+		if(!valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["LastHeartbeatTime"].isNull())
+			instanceCloudAssistantStatusSetObject.lastHeartbeatTime = valueInstanceCloudAssistantStatusSetInstanceCloudAssistantStatus["LastHeartbeatTime"].asString();
 		instanceCloudAssistantStatusSet_.push_back(instanceCloudAssistantStatusSetObject);
 	}
 	if(!value["TotalCount"].isNull())
