@@ -87,6 +87,42 @@ SmcClient::CreateReplicationJobOutcomeCallable SmcClient::createReplicationJobCa
 	return task->get_future();
 }
 
+SmcClient::CutOverReplicationJobOutcome SmcClient::cutOverReplicationJob(const CutOverReplicationJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CutOverReplicationJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CutOverReplicationJobOutcome(CutOverReplicationJobResult(outcome.result()));
+	else
+		return CutOverReplicationJobOutcome(outcome.error());
+}
+
+void SmcClient::cutOverReplicationJobAsync(const CutOverReplicationJobRequest& request, const CutOverReplicationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cutOverReplicationJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SmcClient::CutOverReplicationJobOutcomeCallable SmcClient::cutOverReplicationJobCallable(const CutOverReplicationJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CutOverReplicationJobOutcome()>>(
+			[this, request]()
+			{
+			return this->cutOverReplicationJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SmcClient::DeleteReplicationJobOutcome SmcClient::deleteReplicationJob(const DeleteReplicationJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

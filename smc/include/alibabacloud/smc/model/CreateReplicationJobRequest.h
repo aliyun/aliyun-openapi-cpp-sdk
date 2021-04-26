@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 				int getNetMode()const;
 				void setNetMode(int netMode);
+				std::string getLicenseType()const;
+				void setLicenseType(const std::string& licenseType);
 				std::string getContainerNamespace()const;
 				void setContainerNamespace(const std::string& containerNamespace);
 				std::string getLaunchTemplateId()const;
@@ -128,6 +130,7 @@ namespace AlibabaCloud
 				int systemDiskSize_;
 				std::vector<Tag> tag_;
 				int netMode_;
+				std::string licenseType_;
 				std::string containerNamespace_;
 				std::string launchTemplateId_;
 				std::string validTime_;

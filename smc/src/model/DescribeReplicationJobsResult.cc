@@ -113,6 +113,8 @@ void DescribeReplicationJobsResult::parse(const std::string &payload)
 			replicationJobsObject.containerRepository = valueReplicationJobsReplicationJob["ContainerRepository"].asString();
 		if(!valueReplicationJobsReplicationJob["ContainerTag"].isNull())
 			replicationJobsObject.containerTag = valueReplicationJobsReplicationJob["ContainerTag"].asString();
+		if(!valueReplicationJobsReplicationJob["LicenseType"].isNull())
+			replicationJobsObject.licenseType = valueReplicationJobsReplicationJob["LicenseType"].asString();
 		auto allSystemDiskPartsNode = valueReplicationJobsReplicationJob["SystemDiskParts"]["SystemDiskPart"];
 		for (auto valueReplicationJobsReplicationJobSystemDiskPartsSystemDiskPart : allSystemDiskPartsNode)
 		{

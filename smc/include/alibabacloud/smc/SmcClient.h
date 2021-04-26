@@ -24,6 +24,8 @@
 #include "SmcExport.h"
 #include "model/CreateReplicationJobRequest.h"
 #include "model/CreateReplicationJobResult.h"
+#include "model/CutOverReplicationJobRequest.h"
+#include "model/CutOverReplicationJobResult.h"
 #include "model/DeleteReplicationJobRequest.h"
 #include "model/DeleteReplicationJobResult.h"
 #include "model/DeleteSourceServerRequest.h"
@@ -58,6 +60,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateReplicationJobResult> CreateReplicationJobOutcome;
 			typedef std::future<CreateReplicationJobOutcome> CreateReplicationJobOutcomeCallable;
 			typedef std::function<void(const SmcClient*, const Model::CreateReplicationJobRequest&, const CreateReplicationJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateReplicationJobAsyncHandler;
+			typedef Outcome<Error, Model::CutOverReplicationJobResult> CutOverReplicationJobOutcome;
+			typedef std::future<CutOverReplicationJobOutcome> CutOverReplicationJobOutcomeCallable;
+			typedef std::function<void(const SmcClient*, const Model::CutOverReplicationJobRequest&, const CutOverReplicationJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CutOverReplicationJobAsyncHandler;
 			typedef Outcome<Error, Model::DeleteReplicationJobResult> DeleteReplicationJobOutcome;
 			typedef std::future<DeleteReplicationJobOutcome> DeleteReplicationJobOutcomeCallable;
 			typedef std::function<void(const SmcClient*, const Model::DeleteReplicationJobRequest&, const DeleteReplicationJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReplicationJobAsyncHandler;
@@ -99,6 +104,9 @@ namespace AlibabaCloud
 			CreateReplicationJobOutcome createReplicationJob(const Model::CreateReplicationJobRequest &request)const;
 			void createReplicationJobAsync(const Model::CreateReplicationJobRequest& request, const CreateReplicationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateReplicationJobOutcomeCallable createReplicationJobCallable(const Model::CreateReplicationJobRequest& request) const;
+			CutOverReplicationJobOutcome cutOverReplicationJob(const Model::CutOverReplicationJobRequest &request)const;
+			void cutOverReplicationJobAsync(const Model::CutOverReplicationJobRequest& request, const CutOverReplicationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CutOverReplicationJobOutcomeCallable cutOverReplicationJobCallable(const Model::CutOverReplicationJobRequest& request) const;
 			DeleteReplicationJobOutcome deleteReplicationJob(const Model::DeleteReplicationJobRequest &request)const;
 			void deleteReplicationJobAsync(const Model::DeleteReplicationJobRequest& request, const DeleteReplicationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteReplicationJobOutcomeCallable deleteReplicationJobCallable(const Model::DeleteReplicationJobRequest& request) const;

@@ -71,6 +71,7 @@ namespace AlibabaCloud
 					std::string businessStatus;
 					std::string name;
 					std::string validTime;
+					std::string licenseType;
 					int maxNumberOfImageToKeep;
 					bool runOnce;
 					std::string instanceRamRole;

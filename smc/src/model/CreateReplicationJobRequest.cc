@@ -87,6 +87,17 @@ void CreateReplicationJobRequest::setNetMode(int netMode)
 	setParameter("NetMode", std::to_string(netMode));
 }
 
+std::string CreateReplicationJobRequest::getLicenseType()const
+{
+	return licenseType_;
+}
+
+void CreateReplicationJobRequest::setLicenseType(const std::string& licenseType)
+{
+	licenseType_ = licenseType;
+	setParameter("LicenseType", licenseType);
+}
+
 std::string CreateReplicationJobRequest::getContainerNamespace()const
 {
 	return containerNamespace_;

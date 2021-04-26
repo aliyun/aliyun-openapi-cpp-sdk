@@ -23,6 +23,8 @@ set(smc_public_header
 set(smc_public_header_model 
 	include/alibabacloud/smc/model/CreateReplicationJobRequest.h
 	include/alibabacloud/smc/model/CreateReplicationJobResult.h
+	include/alibabacloud/smc/model/CutOverReplicationJobRequest.h
+	include/alibabacloud/smc/model/CutOverReplicationJobResult.h
 	include/alibabacloud/smc/model/DeleteReplicationJobRequest.h
 	include/alibabacloud/smc/model/DeleteReplicationJobResult.h
 	include/alibabacloud/smc/model/DeleteSourceServerRequest.h
@@ -50,6 +52,8 @@ set(smc_src
 	src/SmcClient.cc
 	src/model/CreateReplicationJobRequest.cc
 	src/model/CreateReplicationJobResult.cc
+	src/model/CutOverReplicationJobRequest.cc
+	src/model/CutOverReplicationJobResult.cc
 	src/model/DeleteReplicationJobRequest.cc
 	src/model/DeleteReplicationJobResult.cc
 	src/model/DeleteSourceServerRequest.cc
