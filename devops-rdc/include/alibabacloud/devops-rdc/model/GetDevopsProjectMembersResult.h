@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				GetDevopsProjectMembersResult();
 				explicit GetDevopsProjectMembersResult(const std::string &payload);
 				~GetDevopsProjectMembersResult();
+				std::string getNextPageToken()const;
+				int getTotal()const;
 				std::string getErrorMsg()const;
 				std::vector<Member> getObject()const;
 				std::string getErrorCode()const;
@@ -55,6 +57,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string nextPageToken_;
+				int total_;
 				std::string errorMsg_;
 				std::vector<Member> object_;
 				std::string errorCode_;

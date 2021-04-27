@@ -27,6 +27,17 @@ GetDevopsProjectMembersRequest::GetDevopsProjectMembersRequest() :
 GetDevopsProjectMembersRequest::~GetDevopsProjectMembersRequest()
 {}
 
+int GetDevopsProjectMembersRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetDevopsProjectMembersRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string GetDevopsProjectMembersRequest::getProjectId()const
 {
 	return projectId_;
@@ -47,5 +58,16 @@ void GetDevopsProjectMembersRequest::setOrgId(const std::string& orgId)
 {
 	orgId_ = orgId;
 	setBodyParameter("OrgId", orgId);
+}
+
+std::string GetDevopsProjectMembersRequest::getPageToken()const
+{
+	return pageToken_;
+}
+
+void GetDevopsProjectMembersRequest::setPageToken(const std::string& pageToken)
+{
+	pageToken_ = pageToken;
+	setBodyParameter("PageToken", pageToken);
 }
 

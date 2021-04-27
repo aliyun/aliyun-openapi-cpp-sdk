@@ -65,7 +65,21 @@ void GetDevopsProjectMembersResult::parse(const std::string &payload)
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMsg"].isNull())
 		errorMsg_ = value["ErrorMsg"].asString();
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
+	if(!value["NextPageToken"].isNull())
+		nextPageToken_ = value["NextPageToken"].asString();
 
+}
+
+std::string GetDevopsProjectMembersResult::getNextPageToken()const
+{
+	return nextPageToken_;
+}
+
+int GetDevopsProjectMembersResult::getTotal()const
+{
+	return total_;
 }
 
 std::string GetDevopsProjectMembersResult::getErrorMsg()const

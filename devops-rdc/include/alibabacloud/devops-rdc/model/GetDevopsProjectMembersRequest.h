@@ -35,14 +35,20 @@ namespace AlibabaCloud
 				GetDevopsProjectMembersRequest();
 				~GetDevopsProjectMembersRequest();
 
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
 				std::string getOrgId()const;
 				void setOrgId(const std::string& orgId);
+				std::string getPageToken()const;
+				void setPageToken(const std::string& pageToken);
 
             private:
+				int pageSize_;
 				std::string projectId_;
 				std::string orgId_;
+				std::string pageToken_;
 
 			};
 		}
