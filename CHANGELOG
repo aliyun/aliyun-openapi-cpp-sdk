@@ -1,3 +1,6 @@
+2021-04-27 Version: 1.36.699
+- Add CustomMessage to CreateMergeFaceGroupsJob.
+
 2021-04-26 Version: 1.36.698
 - Generated 2019-06-01 for `smc`.
 

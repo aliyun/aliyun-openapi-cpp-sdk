@@ -60,6 +60,17 @@ void CreateMergeFaceGroupsJobRequest::setNotifyEndpoint(const std::string& notif
 	setParameter("NotifyEndpoint", notifyEndpoint);
 }
 
+std::string CreateMergeFaceGroupsJobRequest::getCustomMessage()const
+{
+	return customMessage_;
+}
+
+void CreateMergeFaceGroupsJobRequest::setCustomMessage(const std::string& customMessage)
+{
+	customMessage_ = customMessage;
+	setParameter("CustomMessage", customMessage);
+}
+
 std::string CreateMergeFaceGroupsJobRequest::getGroupIdFrom()const
 {
 	return groupIdFrom_;

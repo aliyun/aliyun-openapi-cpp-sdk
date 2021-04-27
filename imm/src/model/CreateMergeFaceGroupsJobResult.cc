@@ -39,16 +39,16 @@ void CreateMergeFaceGroupsJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["JobId"].isNull())
-		jobId_ = value["JobId"].asString();
-	if(!value["SetId"].isNull())
-		setId_ = value["SetId"].asString();
-	if(!value["JobType"].isNull())
-		jobType_ = value["JobType"].asString();
-	if(!value["GroupIdTo"].isNull())
-		groupIdTo_ = value["GroupIdTo"].asString();
 	if(!value["GroupIdFrom"].isNull())
 		groupIdFrom_ = value["GroupIdFrom"].asString();
+	if(!value["JobType"].isNull())
+		jobType_ = value["JobType"].asString();
+	if(!value["SetId"].isNull())
+		setId_ = value["SetId"].asString();
+	if(!value["GroupIdTo"].isNull())
+		groupIdTo_ = value["GroupIdTo"].asString();
+	if(!value["JobId"].isNull())
+		jobId_ = value["JobId"].asString();
 
 }
 

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getNotifyEndpoint()const;
 				void setNotifyEndpoint(const std::string& notifyEndpoint);
+				std::string getCustomMessage()const;
+				void setCustomMessage(const std::string& customMessage);
 				std::string getGroupIdFrom()const;
 				void setGroupIdFrom(const std::string& groupIdFrom);
 				std::string getNotifyTopicName()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string project_;
 				std::string accessKeyId_;
 				std::string notifyEndpoint_;
+				std::string customMessage_;
 				std::string groupIdFrom_;
 				std::string notifyTopicName_;
 				std::string groupIdTo_;
