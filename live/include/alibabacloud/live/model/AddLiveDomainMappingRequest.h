@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				AddLiveDomainMappingRequest();
 				~AddLiveDomainMappingRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getPullDomain()const;
-				void setPullDomain(const std::string& pullDomain);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getPushDomain()const;
 				void setPushDomain(const std::string& pushDomain);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getPullDomain()const;
+				void setPullDomain(const std::string& pullDomain);
 
             private:
-				long ownerId_;
-				std::string pullDomain_;
 				std::string securityToken_;
 				std::string pushDomain_;
+				long ownerId_;
+				std::string pullDomain_;
 
 			};
 		}

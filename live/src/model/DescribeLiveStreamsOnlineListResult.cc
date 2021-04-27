@@ -55,6 +55,8 @@ void DescribeLiveStreamsOnlineListResult::parse(const std::string &payload)
 			onlineInfoObject.publishUrl = valueOnlineInfoLiveStreamOnlineInfo["PublishUrl"].asString();
 		if(!valueOnlineInfoLiveStreamOnlineInfo["PublishDomain"].isNull())
 			onlineInfoObject.publishDomain = valueOnlineInfoLiveStreamOnlineInfo["PublishDomain"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["StreamUrlArgs"].isNull())
+			onlineInfoObject.streamUrlArgs = valueOnlineInfoLiveStreamOnlineInfo["StreamUrlArgs"].asString();
 		if(!valueOnlineInfoLiveStreamOnlineInfo["PublishType"].isNull())
 			onlineInfoObject.publishType = valueOnlineInfoLiveStreamOnlineInfo["PublishType"].asString();
 		if(!valueOnlineInfoLiveStreamOnlineInfo["Transcoded"].isNull())

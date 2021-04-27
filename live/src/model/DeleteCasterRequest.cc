@@ -49,14 +49,3 @@ void DeleteCasterRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteCasterRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteCasterRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
-}
-

@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string domainName;
 					std::string transcodeId;
 					std::string serverIp;
+					std::string streamUrlArgs;
 					std::string clientIp;
 					std::string publishType;
 					std::string appName;

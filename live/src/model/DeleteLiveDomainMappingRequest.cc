@@ -27,28 +27,6 @@ DeleteLiveDomainMappingRequest::DeleteLiveDomainMappingRequest() :
 DeleteLiveDomainMappingRequest::~DeleteLiveDomainMappingRequest()
 {}
 
-long DeleteLiveDomainMappingRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteLiveDomainMappingRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteLiveDomainMappingRequest::getPullDomain()const
-{
-	return pullDomain_;
-}
-
-void DeleteLiveDomainMappingRequest::setPullDomain(const std::string& pullDomain)
-{
-	pullDomain_ = pullDomain;
-	setParameter("PullDomain", pullDomain);
-}
-
 std::string DeleteLiveDomainMappingRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -69,5 +47,27 @@ void DeleteLiveDomainMappingRequest::setPushDomain(const std::string& pushDomain
 {
 	pushDomain_ = pushDomain;
 	setParameter("PushDomain", pushDomain);
+}
+
+long DeleteLiveDomainMappingRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DeleteLiveDomainMappingRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DeleteLiveDomainMappingRequest::getPullDomain()const
+{
+	return pullDomain_;
+}
+
+void DeleteLiveDomainMappingRequest::setPullDomain(const std::string& pullDomain)
+{
+	pullDomain_ = pullDomain;
+	setParameter("PullDomain", pullDomain);
 }
 

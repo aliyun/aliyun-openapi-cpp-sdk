@@ -27,28 +27,6 @@ DeleteLiveSnapshotDetectPornConfigRequest::DeleteLiveSnapshotDetectPornConfigReq
 DeleteLiveSnapshotDetectPornConfigRequest::~DeleteLiveSnapshotDetectPornConfigRequest()
 {}
 
-std::string DeleteLiveSnapshotDetectPornConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void DeleteLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
-}
-
-long DeleteLiveSnapshotDetectPornConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DeleteLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DeleteLiveSnapshotDetectPornConfigRequest::getAppName()const
 {
 	return appName_;
@@ -69,5 +47,27 @@ void DeleteLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::stri
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
+}
+
+std::string DeleteLiveSnapshotDetectPornConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DeleteLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long DeleteLiveSnapshotDetectPornConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DeleteLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

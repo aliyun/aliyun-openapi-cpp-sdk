@@ -27,28 +27,6 @@ AddLiveDomainMappingRequest::AddLiveDomainMappingRequest() :
 AddLiveDomainMappingRequest::~AddLiveDomainMappingRequest()
 {}
 
-long AddLiveDomainMappingRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AddLiveDomainMappingRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string AddLiveDomainMappingRequest::getPullDomain()const
-{
-	return pullDomain_;
-}
-
-void AddLiveDomainMappingRequest::setPullDomain(const std::string& pullDomain)
-{
-	pullDomain_ = pullDomain;
-	setParameter("PullDomain", pullDomain);
-}
-
 std::string AddLiveDomainMappingRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -69,5 +47,27 @@ void AddLiveDomainMappingRequest::setPushDomain(const std::string& pushDomain)
 {
 	pushDomain_ = pushDomain;
 	setParameter("PushDomain", pushDomain);
+}
+
+long AddLiveDomainMappingRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void AddLiveDomainMappingRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AddLiveDomainMappingRequest::getPullDomain()const
+{
+	return pullDomain_;
+}
+
+void AddLiveDomainMappingRequest::setPullDomain(const std::string& pullDomain)
+{
+	pullDomain_ = pullDomain;
+	setParameter("PullDomain", pullDomain);
 }
 
