@@ -39,16 +39,30 @@ void CreateUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	auto dataNode = value["Data"];
+	if(!dataNode["DisplayName"].isNull())
+		data_.displayName = dataNode["DisplayName"].asString();
+	if(!dataNode["Email"].isNull())
+		data_.email = dataNode["Email"].asString();
+	if(!dataNode["Extension"].isNull())
+		data_.extension = dataNode["Extension"].asString();
+	if(!dataNode["LoginName"].isNull())
+		data_.loginName = dataNode["LoginName"].asString();
+	if(!dataNode["Mobile"].isNull())
+		data_.mobile = dataNode["Mobile"].asString();
+	if(!dataNode["UserId"].isNull())
+		data_.userId = dataNode["UserId"].asString();
+	if(!dataNode["WorkMode"].isNull())
+		data_.workMode = dataNode["WorkMode"].asString();
+	auto allParams = value["Params"]["Param"];
+	for (const auto &item : allParams)
+		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["UserId"].isNull())
-		userId_ = value["UserId"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
@@ -57,23 +71,23 @@ std::string CreateUserResult::getMessage()const
 	return message_;
 }
 
-std::string CreateUserResult::getUserId()const
-{
-	return userId_;
-}
-
 int CreateUserResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
+std::vector<std::string> CreateUserResult::getParams()const
+{
+	return params_;
+}
+
+CreateUserResult::Data CreateUserResult::getData()const
+{
+	return data_;
+}
+
 std::string CreateUserResult::getCode()const
 {
 	return code_;
-}
-
-bool CreateUserResult::getSuccess()const
-{
-	return success_;
 }
 

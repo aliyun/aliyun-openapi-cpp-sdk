@@ -39,71 +39,37 @@ void GetUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto userNode = value["User"];
-	if(!userNode["UserId"].isNull())
-		user_.userId = userNode["UserId"].asString();
-	if(!userNode["RamId"].isNull())
-		user_.ramId = userNode["RamId"].asString();
-	if(!userNode["InstanceId"].isNull())
-		user_.instanceId = userNode["InstanceId"].asString();
-	auto allRolesNode = userNode["Roles"]["Role"];
-	for (auto userNodeRolesRole : allRolesNode)
-	{
-		User::Role roleObject;
-		if(!userNodeRolesRole["RoleId"].isNull())
-			roleObject.roleId = userNodeRolesRole["RoleId"].asString();
-		if(!userNodeRolesRole["InstanceId"].isNull())
-			roleObject.instanceId = userNodeRolesRole["InstanceId"].asString();
-		if(!userNodeRolesRole["RoleName"].isNull())
-			roleObject.roleName = userNodeRolesRole["RoleName"].asString();
-		if(!userNodeRolesRole["RoleDescription"].isNull())
-			roleObject.roleDescription = userNodeRolesRole["RoleDescription"].asString();
-		user_.roles.push_back(roleObject);
-	}
-	auto allSkillLevelsNode = userNode["SkillLevels"]["SkillLevel"];
-	for (auto userNodeSkillLevelsSkillLevel : allSkillLevelsNode)
-	{
-		User::SkillLevel skillLevelObject;
-		if(!userNodeSkillLevelsSkillLevel["SkillLevelId"].isNull())
-			skillLevelObject.skillLevelId = userNodeSkillLevelsSkillLevel["SkillLevelId"].asString();
-		if(!userNodeSkillLevelsSkillLevel["Level"].isNull())
-			skillLevelObject.level = std::stoi(userNodeSkillLevelsSkillLevel["Level"].asString());
-		auto skillNode = value["Skill"];
-		if(!skillNode["SkillGroupId"].isNull())
-			skillLevelObject.skill.skillGroupId = skillNode["SkillGroupId"].asString();
-		if(!skillNode["InstanceId"].isNull())
-			skillLevelObject.skill.instanceId = skillNode["InstanceId"].asString();
-		if(!skillNode["SkillGroupName"].isNull())
-			skillLevelObject.skill.skillGroupName = skillNode["SkillGroupName"].asString();
-		if(!skillNode["SkillGroupDescription"].isNull())
-			skillLevelObject.skill.skillGroupDescription = skillNode["SkillGroupDescription"].asString();
-		user_.skillLevels.push_back(skillLevelObject);
-	}
-	auto detailNode = userNode["Detail"];
-	if(!detailNode["LoginName"].isNull())
-		user_.detail.loginName = detailNode["LoginName"].asString();
-	if(!detailNode["DisplayName"].isNull())
-		user_.detail.displayName = detailNode["DisplayName"].asString();
-	if(!detailNode["Phone"].isNull())
-		user_.detail.phone = detailNode["Phone"].asString();
-	if(!detailNode["Email"].isNull())
-		user_.detail.email = detailNode["Email"].asString();
-	if(!detailNode["Department"].isNull())
-		user_.detail.department = detailNode["Department"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	auto dataNode = value["Data"];
+	if(!dataNode["DisplayName"].isNull())
+		data_.displayName = dataNode["DisplayName"].asString();
+	if(!dataNode["Email"].isNull())
+		data_.email = dataNode["Email"].asString();
+	if(!dataNode["Extension"].isNull())
+		data_.extension = dataNode["Extension"].asString();
+	if(!dataNode["InstanceId"].isNull())
+		data_.instanceId = dataNode["InstanceId"].asString();
+	if(!dataNode["LoginName"].isNull())
+		data_.loginName = dataNode["LoginName"].asString();
+	if(!dataNode["Mobile"].isNull())
+		data_.mobile = dataNode["Mobile"].asString();
+	if(!dataNode["RoleId"].isNull())
+		data_.roleId = dataNode["RoleId"].asString();
+	if(!dataNode["RoleName"].isNull())
+		data_.roleName = dataNode["RoleName"].asString();
+	if(!dataNode["UserId"].isNull())
+		data_.userId = dataNode["UserId"].asString();
+	if(!dataNode["WorkMode"].isNull())
+		data_.workMode = dataNode["WorkMode"].asString();
+	auto allParams = value["Params"]["Param"];
+	for (const auto &item : allParams)
+		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
-}
-
-GetUserResult::User GetUserResult::getUser()const
-{
-	return user_;
 }
 
 std::string GetUserResult::getMessage()const
@@ -116,13 +82,18 @@ int GetUserResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
+std::vector<std::string> GetUserResult::getParams()const
+{
+	return params_;
+}
+
+GetUserResult::Data GetUserResult::getData()const
+{
+	return data_;
+}
+
 std::string GetUserResult::getCode()const
 {
 	return code_;
-}
-
-bool GetUserResult::getSuccess()const
-{
-	return success_;
 }
 

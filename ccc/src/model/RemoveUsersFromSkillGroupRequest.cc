@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::RemoveUsersFromSkillGroupRequest;
 
 RemoveUsersFromSkillGroupRequest::RemoveUsersFromSkillGroupRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "RemoveUsersFromSkillGroup")
+	RpcServiceRequest("ccc", "2020-07-01", "RemoveUsersFromSkillGroup")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,28 +27,15 @@ RemoveUsersFromSkillGroupRequest::RemoveUsersFromSkillGroupRequest() :
 RemoveUsersFromSkillGroupRequest::~RemoveUsersFromSkillGroupRequest()
 {}
 
-std::vector<std::string> RemoveUsersFromSkillGroupRequest::getUserId()const
+std::string RemoveUsersFromSkillGroupRequest::getUserIdList()const
 {
-	return userId_;
+	return userIdList_;
 }
 
-void RemoveUsersFromSkillGroupRequest::setUserId(const std::vector<std::string>& userId)
+void RemoveUsersFromSkillGroupRequest::setUserIdList(const std::string& userIdList)
 {
-	userId_ = userId;
-	for(int dep1 = 0; dep1!= userId.size(); dep1++) {
-		setParameter("UserId."+ std::to_string(dep1), userId.at(dep1));
-	}
-}
-
-std::string RemoveUsersFromSkillGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RemoveUsersFromSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	userIdList_ = userIdList;
+	setParameter("UserIdList", userIdList);
 }
 
 std::string RemoveUsersFromSkillGroupRequest::getInstanceId()const

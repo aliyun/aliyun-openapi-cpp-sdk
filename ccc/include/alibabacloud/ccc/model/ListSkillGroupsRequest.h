@@ -35,14 +35,20 @@ namespace AlibabaCloud
 				ListSkillGroupsRequest();
 				~ListSkillGroupsRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getSearchPattern()const;
+				void setSearchPattern(const std::string& searchPattern);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
+				int pageNumber_;
+				std::string searchPattern_;
 				std::string instanceId_;
-				std::string accessKeyId_;
+				int pageSize_;
 
 			};
 		}

@@ -37,12 +37,9 @@ namespace AlibabaCloud
 
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string instanceId_;
-				std::string accessKeyId_;
 
 			};
 		}

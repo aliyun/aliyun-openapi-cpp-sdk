@@ -39,94 +39,68 @@ void ListPhoneNumbersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allPhoneNumbersNode = value["PhoneNumbers"]["PhoneNumber"];
-	for (auto valuePhoneNumbersPhoneNumber : allPhoneNumbersNode)
+	auto dataNode = value["Data"];
+	if(!dataNode["PageNumber"].isNull())
+		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	auto allListNode = dataNode["List"]["PhoneNumber"];
+	for (auto dataNodeListPhoneNumber : allListNode)
 	{
-		PhoneNumber phoneNumbersObject;
-		if(!valuePhoneNumbersPhoneNumber["PhoneNumberId"].isNull())
-			phoneNumbersObject.phoneNumberId = valuePhoneNumbersPhoneNumber["PhoneNumberId"].asString();
-		if(!valuePhoneNumbersPhoneNumber["InstanceId"].isNull())
-			phoneNumbersObject.instanceId = valuePhoneNumbersPhoneNumber["InstanceId"].asString();
-		if(!valuePhoneNumbersPhoneNumber["Number"].isNull())
-			phoneNumbersObject.number = valuePhoneNumbersPhoneNumber["Number"].asString();
-		if(!valuePhoneNumbersPhoneNumber["PhoneNumberDescription"].isNull())
-			phoneNumbersObject.phoneNumberDescription = valuePhoneNumbersPhoneNumber["PhoneNumberDescription"].asString();
-		if(!valuePhoneNumbersPhoneNumber["TestOnly"].isNull())
-			phoneNumbersObject.testOnly = valuePhoneNumbersPhoneNumber["TestOnly"].asString() == "true";
-		if(!valuePhoneNumbersPhoneNumber["RemainingTime"].isNull())
-			phoneNumbersObject.remainingTime = std::stoi(valuePhoneNumbersPhoneNumber["RemainingTime"].asString());
-		if(!valuePhoneNumbersPhoneNumber["AllowOutbound"].isNull())
-			phoneNumbersObject.allowOutbound = valuePhoneNumbersPhoneNumber["AllowOutbound"].asString() == "true";
-		if(!valuePhoneNumbersPhoneNumber["Usage"].isNull())
-			phoneNumbersObject.usage = valuePhoneNumbersPhoneNumber["Usage"].asString();
-		if(!valuePhoneNumbersPhoneNumber["Trunks"].isNull())
-			phoneNumbersObject.trunks = std::stoi(valuePhoneNumbersPhoneNumber["Trunks"].asString());
-		if(!valuePhoneNumbersPhoneNumber["Province"].isNull())
-			phoneNumbersObject.province = valuePhoneNumbersPhoneNumber["Province"].asString();
-		if(!valuePhoneNumbersPhoneNumber["City"].isNull())
-			phoneNumbersObject.city = valuePhoneNumbersPhoneNumber["City"].asString();
-		if(!valuePhoneNumbersPhoneNumber["Assignee"].isNull())
-			phoneNumbersObject.assignee = valuePhoneNumbersPhoneNumber["Assignee"].asString();
-		if(!valuePhoneNumbersPhoneNumber["NumberCommodityStatus"].isNull())
-			phoneNumbersObject.numberCommodityStatus = std::stoi(valuePhoneNumbersPhoneNumber["NumberCommodityStatus"].asString());
-		if(!valuePhoneNumbersPhoneNumber["SipTelX"].isNull())
-			phoneNumbersObject.sipTelX = valuePhoneNumbersPhoneNumber["SipTelX"].asString();
-		auto allSkillGroupsNode = valuePhoneNumbersPhoneNumber["SkillGroups"]["SkillGroup"];
-		for (auto valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup : allSkillGroupsNode)
+		Data::PhoneNumber phoneNumberObject;
+		if(!dataNodeListPhoneNumber["Active"].isNull())
+			phoneNumberObject.active = dataNodeListPhoneNumber["Active"].asString() == "true";
+		if(!dataNodeListPhoneNumber["City"].isNull())
+			phoneNumberObject.city = dataNodeListPhoneNumber["City"].asString();
+		if(!dataNodeListPhoneNumber["ContactFlowId"].isNull())
+			phoneNumberObject.contactFlowId = dataNodeListPhoneNumber["ContactFlowId"].asString();
+		if(!dataNodeListPhoneNumber["ContactFlowName"].isNull())
+			phoneNumberObject.contactFlowName = dataNodeListPhoneNumber["ContactFlowName"].asString();
+		if(!dataNodeListPhoneNumber["InstanceId"].isNull())
+			phoneNumberObject.instanceId = dataNodeListPhoneNumber["InstanceId"].asString();
+		if(!dataNodeListPhoneNumber["Number"].isNull())
+			phoneNumberObject.number = dataNodeListPhoneNumber["Number"].asString();
+		if(!dataNodeListPhoneNumber["Province"].isNull())
+			phoneNumberObject.province = dataNodeListPhoneNumber["Province"].asString();
+		if(!dataNodeListPhoneNumber["Usage"].isNull())
+			phoneNumberObject.usage = dataNodeListPhoneNumber["Usage"].asString();
+		if(!dataNodeListPhoneNumber["UserId"].isNull())
+			phoneNumberObject.userId = dataNodeListPhoneNumber["UserId"].asString();
+		if(!dataNodeListPhoneNumber["Provider"].isNull())
+			phoneNumberObject.provider = dataNodeListPhoneNumber["Provider"].asString();
+		if(!dataNodeListPhoneNumber["Tags"].isNull())
+			phoneNumberObject.tags = dataNodeListPhoneNumber["Tags"].asString();
+		if(!dataNodeListPhoneNumber["CreateTime"].isNull())
+			phoneNumberObject.createTime = dataNodeListPhoneNumber["CreateTime"].asString();
+		auto allSkillGroupsNode = dataNodeListPhoneNumber["SkillGroups"]["SkillGroup"];
+		for (auto dataNodeListPhoneNumberSkillGroupsSkillGroup : allSkillGroupsNode)
 		{
-			PhoneNumber::SkillGroup skillGroupsObject;
-			if(!valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].isNull())
-				skillGroupsObject.skillGroupId = valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].asString();
-			if(!valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup["SkillGroupName"].isNull())
-				skillGroupsObject.skillGroupName = valuePhoneNumbersPhoneNumberSkillGroupsSkillGroup["SkillGroupName"].asString();
-			phoneNumbersObject.skillGroups.push_back(skillGroupsObject);
+			Data::PhoneNumber::SkillGroup skillGroupsObject;
+			if(!dataNodeListPhoneNumberSkillGroupsSkillGroup["DisplayName"].isNull())
+				skillGroupsObject.displayName = dataNodeListPhoneNumberSkillGroupsSkillGroup["DisplayName"].asString();
+			if(!dataNodeListPhoneNumberSkillGroupsSkillGroup["InstanceId"].isNull())
+				skillGroupsObject.instanceId = dataNodeListPhoneNumberSkillGroupsSkillGroup["InstanceId"].asString();
+			if(!dataNodeListPhoneNumberSkillGroupsSkillGroup["Name"].isNull())
+				skillGroupsObject.name = dataNodeListPhoneNumberSkillGroupsSkillGroup["Name"].asString();
+			if(!dataNodeListPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].isNull())
+				skillGroupsObject.skillGroupId = dataNodeListPhoneNumberSkillGroupsSkillGroup["SkillGroupId"].asString();
+			phoneNumberObject.skillGroups.push_back(skillGroupsObject);
 		}
-		auto contactFlowNode = value["ContactFlow"];
-		if(!contactFlowNode["ContactFlowId"].isNull())
-			phoneNumbersObject.contactFlow.contactFlowId = contactFlowNode["ContactFlowId"].asString();
-		if(!contactFlowNode["InstanceId"].isNull())
-			phoneNumbersObject.contactFlow.instanceId = contactFlowNode["InstanceId"].asString();
-		if(!contactFlowNode["ContactFlowName"].isNull())
-			phoneNumbersObject.contactFlow.contactFlowName = contactFlowNode["ContactFlowName"].asString();
-		if(!contactFlowNode["ContactFlowDescription"].isNull())
-			phoneNumbersObject.contactFlow.contactFlowDescription = contactFlowNode["ContactFlowDescription"].asString();
-		if(!contactFlowNode["Type"].isNull())
-			phoneNumbersObject.contactFlow.type = contactFlowNode["Type"].asString();
-		auto privacyNumberNode = value["PrivacyNumber"];
-		if(!privacyNumberNode["PoolId"].isNull())
-			phoneNumbersObject.privacyNumber.poolId = privacyNumberNode["PoolId"].asString();
-		if(!privacyNumberNode["Type"].isNull())
-			phoneNumbersObject.privacyNumber.type = privacyNumberNode["Type"].asString();
-		if(!privacyNumberNode["TelX"].isNull())
-			phoneNumbersObject.privacyNumber.telX = privacyNumberNode["TelX"].asString();
-		if(!privacyNumberNode["PoolName"].isNull())
-			phoneNumbersObject.privacyNumber.poolName = privacyNumberNode["PoolName"].asString();
-		if(!privacyNumberNode["PhoneNumber"].isNull())
-			phoneNumbersObject.privacyNumber.phoneNumber = privacyNumberNode["PhoneNumber"].asString();
-		if(!privacyNumberNode["Extra"].isNull())
-			phoneNumbersObject.privacyNumber.extra = privacyNumberNode["Extra"].asString();
-		if(!privacyNumberNode["BizId"].isNull())
-			phoneNumbersObject.privacyNumber.bizId = privacyNumberNode["BizId"].asString();
-		if(!privacyNumberNode["SubId"].isNull())
-			phoneNumbersObject.privacyNumber.subId = privacyNumberNode["SubId"].asString();
-		if(!privacyNumberNode["RegionNameCity"].isNull())
-			phoneNumbersObject.privacyNumber.regionNameCity = privacyNumberNode["RegionNameCity"].asString();
-		phoneNumbers_.push_back(phoneNumbersObject);
+		data_.list.push_back(phoneNumberObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
-}
-
-std::vector<ListPhoneNumbersResult::PhoneNumber> ListPhoneNumbersResult::getPhoneNumbers()const
-{
-	return phoneNumbers_;
 }
 
 std::string ListPhoneNumbersResult::getMessage()const
@@ -134,18 +108,28 @@ std::string ListPhoneNumbersResult::getMessage()const
 	return message_;
 }
 
+int ListPhoneNumbersResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int ListPhoneNumbersResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
 int ListPhoneNumbersResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
+ListPhoneNumbersResult::Data ListPhoneNumbersResult::getData()const
+{
+	return data_;
+}
+
 std::string ListPhoneNumbersResult::getCode()const
 {
 	return code_;
-}
-
-bool ListPhoneNumbersResult::getSuccess()const
-{
-	return success_;
 }
 

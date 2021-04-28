@@ -32,6 +32,13 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT CreateSkillGroupResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string description;
+					std::string instanceId;
+					std::string skillGroupId;
+					std::string name;
+				};
 
 
 				CreateSkillGroupResult();
@@ -39,18 +46,16 @@ namespace AlibabaCloud
 				~CreateSkillGroupResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::string getSkillGroupId()const;
+				Data getData()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::string skillGroupId_;
+				Data data_;
 				std::string code_;
-				bool success_;
 
 			};
 		}

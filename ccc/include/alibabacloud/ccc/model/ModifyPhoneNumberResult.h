@@ -32,33 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT ModifyPhoneNumberResult : public ServiceResult
 			{
 			public:
-				struct PhoneNumber
-				{
-					struct ContactFlow
-					{
-						std::string type;
-						std::string contactFlowId;
-						std::string instanceId;
-						std::string contactFlowName;
-						std::string contactFlowDescription;
-					};
-					struct SkillGroup
-					{
-						std::string skillGroupName;
-						std::string skillGroupId;
-					};
-					std::string usage;
-					bool testOnly;
-					bool allowOutbound;
-					std::string number;
-					std::string instanceId;
-					int remainingTime;
-					std::vector<SkillGroup> skillGroups;
-					int trunks;
-					std::string phoneNumberId;
-					ContactFlow contactFlow;
-					std::string phoneNumberDescription;
-				};
 
 
 				ModifyPhoneNumberResult();
@@ -66,18 +39,14 @@ namespace AlibabaCloud
 				~ModifyPhoneNumberResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				PhoneNumber getPhoneNumber()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				PhoneNumber phoneNumber_;
 				std::string code_;
-				bool success_;
 
 			};
 		}

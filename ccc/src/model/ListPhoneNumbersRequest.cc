@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::ListPhoneNumbersRequest;
 
 ListPhoneNumbersRequest::ListPhoneNumbersRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "ListPhoneNumbers")
+	RpcServiceRequest("ccc", "2020-07-01", "ListPhoneNumbers")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,15 +27,48 @@ ListPhoneNumbersRequest::ListPhoneNumbersRequest() :
 ListPhoneNumbersRequest::~ListPhoneNumbersRequest()
 {}
 
-bool ListPhoneNumbersRequest::getOutboundOnly()const
+std::string ListPhoneNumbersRequest::getUsage()const
 {
-	return outboundOnly_;
+	return usage_;
 }
 
-void ListPhoneNumbersRequest::setOutboundOnly(bool outboundOnly)
+void ListPhoneNumbersRequest::setUsage(const std::string& usage)
 {
-	outboundOnly_ = outboundOnly;
-	setParameter("OutboundOnly", outboundOnly ? "true" : "false");
+	usage_ = usage;
+	setParameter("Usage", usage);
+}
+
+bool ListPhoneNumbersRequest::getActive()const
+{
+	return active_;
+}
+
+void ListPhoneNumbersRequest::setActive(bool active)
+{
+	active_ = active;
+	setParameter("Active", active ? "true" : "false");
+}
+
+int ListPhoneNumbersRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListPhoneNumbersRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListPhoneNumbersRequest::getSearchPattern()const
+{
+	return searchPattern_;
+}
+
+void ListPhoneNumbersRequest::setSearchPattern(const std::string& searchPattern)
+{
+	searchPattern_ = searchPattern;
+	setParameter("SearchPattern", searchPattern);
 }
 
 std::string ListPhoneNumbersRequest::getInstanceId()const
@@ -49,14 +82,14 @@ void ListPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string ListPhoneNumbersRequest::getAccessKeyId()const
+int ListPhoneNumbersRequest::getPageSize()const
 {
-	return accessKeyId_;
+	return pageSize_;
 }
 
-void ListPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListPhoneNumbersRequest::setPageSize(int pageSize)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

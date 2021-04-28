@@ -19,7 +19,7 @@
 using AlibabaCloud::CCC::Model::ListUsersRequest;
 
 ListUsersRequest::ListUsersRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "ListUsers")
+	RpcServiceRequest("ccc", "2020-07-01", "ListUsers")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,15 +38,15 @@ void ListUsersRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string ListUsersRequest::getAccessKeyId()const
+std::string ListUsersRequest::getSearchPattern()const
 {
-	return accessKeyId_;
+	return searchPattern_;
 }
 
-void ListUsersRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListUsersRequest::setSearchPattern(const std::string& searchPattern)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	searchPattern_ = searchPattern;
+	setParameter("SearchPattern", searchPattern);
 }
 
 std::string ListUsersRequest::getInstanceId()const
