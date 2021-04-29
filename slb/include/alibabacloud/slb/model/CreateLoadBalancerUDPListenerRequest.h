@@ -69,8 +69,6 @@ namespace AlibabaCloud
 				void setHealthCheckDomain(const std::string& healthCheckDomain);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				bool getProxyProtocolVpcIdEnabled()const;
-				void setProxyProtocolVpcIdEnabled(bool proxyProtocolVpcIdEnabled);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getLoadBalancerId()const;
@@ -147,7 +145,6 @@ namespace AlibabaCloud
 				std::string healthCheckMethod_;
 				std::string healthCheckDomain_;
 				long ownerId_;
-				bool proxyProtocolVpcIdEnabled_;
 				std::string tags_;
 				std::string loadBalancerId_;
 				std::string masterSlaveServerGroupId_;

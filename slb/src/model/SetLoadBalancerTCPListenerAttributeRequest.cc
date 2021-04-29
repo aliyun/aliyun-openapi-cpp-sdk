@@ -230,17 +230,6 @@ void SetLoadBalancerTCPListenerAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-bool SetLoadBalancerTCPListenerAttributeRequest::getProxyProtocolVpcIdEnabled()const
-{
-	return proxyProtocolVpcIdEnabled_;
-}
-
-void SetLoadBalancerTCPListenerAttributeRequest::setProxyProtocolVpcIdEnabled(bool proxyProtocolVpcIdEnabled)
-{
-	proxyProtocolVpcIdEnabled_ = proxyProtocolVpcIdEnabled;
-	setParameter("ProxyProtocolVpcIdEnabled", proxyProtocolVpcIdEnabled ? "true" : "false");
-}
-
 std::string SetLoadBalancerTCPListenerAttributeRequest::getTags()const
 {
 	return tags_;

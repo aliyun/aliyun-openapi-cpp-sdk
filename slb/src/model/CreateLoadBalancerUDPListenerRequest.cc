@@ -186,17 +186,6 @@ void CreateLoadBalancerUDPListenerRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-bool CreateLoadBalancerUDPListenerRequest::getProxyProtocolVpcIdEnabled()const
-{
-	return proxyProtocolVpcIdEnabled_;
-}
-
-void CreateLoadBalancerUDPListenerRequest::setProxyProtocolVpcIdEnabled(bool proxyProtocolVpcIdEnabled)
-{
-	proxyProtocolVpcIdEnabled_ = proxyProtocolVpcIdEnabled;
-	setParameter("ProxyProtocolVpcIdEnabled", proxyProtocolVpcIdEnabled ? "true" : "false");
-}
-
 std::string CreateLoadBalancerUDPListenerRequest::getTags()const
 {
 	return tags_;

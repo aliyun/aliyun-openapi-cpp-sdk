@@ -110,8 +110,6 @@ void DescribeLoadBalancerUDPListenerAttributeResult::parse(const std::string &pa
 		persistenceTimeout_ = std::stoi(value["PersistenceTimeout"].asString());
 	if(!value["ProxyProtocolV2Enabled"].isNull())
 		proxyProtocolV2Enabled_ = value["ProxyProtocolV2Enabled"].asString() == "true";
-	if(!value["ProxyProtocolVpcIdEnabled"].isNull())
-		proxyProtocolVpcIdEnabled_ = value["ProxyProtocolVpcIdEnabled"].asString() == "true";
 	if(!value["QuicVersion"].isNull())
 		quicVersion_ = value["QuicVersion"].asString();
 	if(!value["Scheduler"].isNull())
@@ -141,11 +139,6 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getMaxConnection()const
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getVServerGroupId()const
 {
 	return vServerGroupId_;
-}
-
-bool DescribeLoadBalancerUDPListenerAttributeResult::getProxyProtocolVpcIdEnabled()const
-{
-	return proxyProtocolVpcIdEnabled_;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getDescription()const

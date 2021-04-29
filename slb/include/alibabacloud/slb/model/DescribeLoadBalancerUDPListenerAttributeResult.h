@@ -44,7 +44,6 @@ namespace AlibabaCloud
 				~DescribeLoadBalancerUDPListenerAttributeResult();
 				int getMaxConnection()const;
 				std::string getVServerGroupId()const;
-				bool getProxyProtocolVpcIdEnabled()const;
 				std::string getDescription()const;
 				int getFailoverThreshold()const;
 				bool getProxyProtocolV2Enabled()const;
@@ -89,7 +88,6 @@ namespace AlibabaCloud
 			private:
 				int maxConnection_;
 				std::string vServerGroupId_;
-				bool proxyProtocolVpcIdEnabled_;
 				std::string description_;
 				int failoverThreshold_;
 				bool proxyProtocolV2Enabled_;

@@ -110,8 +110,6 @@ void DescribeLoadBalancerTCPListenerAttributeResult::parse(const std::string &pa
 		persistenceTimeout_ = std::stoi(value["PersistenceTimeout"].asString());
 	if(!value["ProxyProtocolV2Enabled"].isNull())
 		proxyProtocolV2Enabled_ = value["ProxyProtocolV2Enabled"].asString() == "true";
-	if(!value["ProxyProtocolVpcIdEnabled"].isNull())
-		proxyProtocolVpcIdEnabled_ = value["ProxyProtocolVpcIdEnabled"].asString() == "true";
 	if(!value["Scheduler"].isNull())
 		scheduler_ = value["Scheduler"].asString();
 	if(!value["SlaveServerGroupId"].isNull())
@@ -139,11 +137,6 @@ int DescribeLoadBalancerTCPListenerAttributeResult::getMaxConnection()const
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getVServerGroupId()const
 {
 	return vServerGroupId_;
-}
-
-bool DescribeLoadBalancerTCPListenerAttributeResult::getProxyProtocolVpcIdEnabled()const
-{
-	return proxyProtocolVpcIdEnabled_;
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getDescription()const
