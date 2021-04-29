@@ -1,3 +1,6 @@
+2021-04-29 Version: 1.36.707
+- ModifyNodeSpec API add SwitchTime.
+
 2021-04-29 Version: 1.36.706
 - Add DescribeInstances API.
 
