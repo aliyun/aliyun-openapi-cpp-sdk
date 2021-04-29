@@ -45,28 +45,35 @@ void DescribeSagRouteProtocolBgpResult::parse(const std::string &payload)
 		TaskState taskStatesObject;
 		if(!valueTaskStatesTaskState["State"].isNull())
 			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
 			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
+	if(!value["HoldTime"].isNull())
+		holdTime_ = std::stoi(value["HoldTime"].asString());
+	if(!value["AdvertiseIps"].isNull())
+		advertiseIps_ = value["AdvertiseIps"].asString();
+	if(!value["KeepAlive"].isNull())
+		keepAlive_ = std::stoi(value["KeepAlive"].asString());
 	if(!value["RouterId"].isNull())
 		routerId_ = value["RouterId"].asString();
 	if(!value["LocalAs"].isNull())
 		localAs_ = std::stoi(value["LocalAs"].asString());
-	if(!value["HoldTime"].isNull())
-		holdTime_ = std::stoi(value["HoldTime"].asString());
-	if(!value["KeepAlive"].isNull())
-		keepAlive_ = std::stoi(value["KeepAlive"].asString());
 
 }
 
 int DescribeSagRouteProtocolBgpResult::getHoldTime()const
 {
 	return holdTime_;
+}
+
+std::string DescribeSagRouteProtocolBgpResult::getAdvertiseIps()const
+{
+	return advertiseIps_;
 }
 
 int DescribeSagRouteProtocolBgpResult::getKeepAlive()const

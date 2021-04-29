@@ -45,30 +45,30 @@ void DescribeSagRouteProtocolOspfResult::parse(const std::string &payload)
 		TaskState taskStatesObject;
 		if(!valueTaskStatesTaskState["State"].isNull())
 			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
 			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
-	if(!value["RouterId"].isNull())
-		routerId_ = value["RouterId"].asString();
-	if(!value["AreaId"].isNull())
-		areaId_ = value["AreaId"].asString();
-	if(!value["AreaType"].isNull())
-		areaType_ = value["AreaType"].asString();
 	if(!value["DeadTime"].isNull())
 		deadTime_ = std::stoi(value["DeadTime"].asString());
-	if(!value["HelloTime"].isNull())
-		helloTime_ = std::stoi(value["HelloTime"].asString());
-	if(!value["AuthenticationType"].isNull())
-		authenticationType_ = value["AuthenticationType"].asString();
 	if(!value["Md5KeyId"].isNull())
 		md5KeyId_ = std::stoi(value["Md5KeyId"].asString());
+	if(!value["AreaId"].isNull())
+		areaId_ = value["AreaId"].asString();
+	if(!value["HelloTime"].isNull())
+		helloTime_ = std::stoi(value["HelloTime"].asString());
+	if(!value["RouterId"].isNull())
+		routerId_ = value["RouterId"].asString();
+	if(!value["AreaType"].isNull())
+		areaType_ = value["AreaType"].asString();
 	if(!value["Md5Key"].isNull())
 		md5Key_ = value["Md5Key"].asString();
+	if(!value["AuthenticationType"].isNull())
+		authenticationType_ = value["AuthenticationType"].asString();
 
 }
 
@@ -87,14 +87,14 @@ std::string DescribeSagRouteProtocolOspfResult::getAreaId()const
 	return areaId_;
 }
 
-std::string DescribeSagRouteProtocolOspfResult::getRouterId()const
-{
-	return routerId_;
-}
-
 int DescribeSagRouteProtocolOspfResult::getHelloTime()const
 {
 	return helloTime_;
+}
+
+std::string DescribeSagRouteProtocolOspfResult::getRouterId()const
+{
+	return routerId_;
 }
 
 std::vector<DescribeSagRouteProtocolOspfResult::TaskState> DescribeSagRouteProtocolOspfResult::getTaskStates()const

@@ -45,8 +45,12 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVersionType()const;
+				void setVersionType(const std::string& versionType);
 				std::string getSmartAGId()const;
 				void setSmartAGId(const std::string& smartAGId);
+				std::string getSmartAGSn()const;
+				void setSmartAGSn(const std::string& smartAGSn);
 
             private:
 				long resourceOwnerId_;
@@ -54,7 +58,9 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string versionType_;
 				std::string smartAGId_;
+				std::string smartAGSn_;
 
 			};
 		}

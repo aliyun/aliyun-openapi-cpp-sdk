@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getVersionComparator()const;
 				void setVersionComparator(const std::string& versionComparator);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
@@ -57,6 +59,8 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 				std::string getHardwareType()const;
 				void setHardwareType(const std::string& hardwareType);
+				std::vector<std::string> getSmartAGIds()const;
+				void setSmartAGIds(const std::vector<std::string>& smartAGIds);
 				std::string getSerialNumber()const;
 				void setSerialNumber(const std::string& serialNumber);
 				std::string getResourceOwnerAccount()const;
@@ -84,10 +88,12 @@ namespace AlibabaCloud
 				std::string unboundAclIds_;
 				int pageNumber_;
 				std::string versionComparator_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				int pageSize_;
 				std::string instanceType_;
 				std::string hardwareType_;
+				std::vector<std::string> smartAGIds_;
 				std::string serialNumber_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

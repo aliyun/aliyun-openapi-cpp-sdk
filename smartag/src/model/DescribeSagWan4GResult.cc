@@ -39,12 +39,16 @@ void DescribeSagWan4GResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["TrafficState"].isNull())
+		trafficState_ = value["TrafficState"].asString();
+	if(!value["Priority"].isNull())
+		priority_ = std::stoi(value["Priority"].asString());
 	if(!value["Ip"].isNull())
 		ip_ = value["Ip"].asString();
 	if(!value["Mac"].isNull())
 		mac_ = value["Mac"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
 	if(!value["Strength"].isNull())
 		strength_ = value["Strength"].asString();
 
@@ -53,6 +57,16 @@ void DescribeSagWan4GResult::parse(const std::string &payload)
 std::string DescribeSagWan4GResult::getStatus()const
 {
 	return status_;
+}
+
+std::string DescribeSagWan4GResult::getTrafficState()const
+{
+	return trafficState_;
+}
+
+int DescribeSagWan4GResult::getPriority()const
+{
+	return priority_;
 }
 
 std::string DescribeSagWan4GResult::getIp()const

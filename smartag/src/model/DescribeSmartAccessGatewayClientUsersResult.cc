@@ -43,24 +43,24 @@ void DescribeSmartAccessGatewayClientUsersResult::parse(const std::string &paylo
 	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
-		if(!valueUsersUser["ClientIp"].isNull())
-			usersObject.clientIp = valueUsersUser["ClientIp"].asString();
-		if(!valueUsersUser["UserMail"].isNull())
-			usersObject.userMail = valueUsersUser["UserMail"].asString();
 		if(!valueUsersUser["UserName"].isNull())
 			usersObject.userName = valueUsersUser["UserName"].asString();
-		if(!valueUsersUser["Bandwidth"].isNull())
-			usersObject.bandwidth = std::stoi(valueUsersUser["Bandwidth"].asString());
+		if(!valueUsersUser["UserMail"].isNull())
+			usersObject.userMail = valueUsersUser["UserMail"].asString();
 		if(!valueUsersUser["State"].isNull())
 			usersObject.state = std::stoi(valueUsersUser["State"].asString());
+		if(!valueUsersUser["Bandwidth"].isNull())
+			usersObject.bandwidth = std::stoi(valueUsersUser["Bandwidth"].asString());
+		if(!valueUsersUser["ClientIp"].isNull())
+			usersObject.clientIp = valueUsersUser["ClientIp"].asString();
 		users_.push_back(usersObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

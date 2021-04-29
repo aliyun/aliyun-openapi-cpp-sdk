@@ -43,30 +43,30 @@ void DescribeSmartAccessGatewayHaResult::parse(const std::string &payload)
 	for (auto valueLinkBackupInfoListLinkBackupInfoListItem : allLinkBackupInfoListNode)
 	{
 		LinkBackupInfoListItem linkBackupInfoListObject;
-		if(!valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupState"].isNull())
-			linkBackupInfoListObject.linkLevelBackupState = valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupState"].asString();
-		if(!valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupType"].isNull())
-			linkBackupInfoListObject.linkLevelBackupType = valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupType"].asString();
-		if(!valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkId"].isNull())
-			linkBackupInfoListObject.mainLinkId = valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkId"].asString();
+		if(!valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkState"].isNull())
+			linkBackupInfoListObject.backupLinkState = valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkState"].asString();
 		if(!valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkState"].isNull())
 			linkBackupInfoListObject.mainLinkState = valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkState"].asString();
 		if(!valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkId"].isNull())
 			linkBackupInfoListObject.backupLinkId = valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkId"].asString();
-		if(!valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkState"].isNull())
-			linkBackupInfoListObject.backupLinkState = valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkState"].asString();
+		if(!valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupType"].isNull())
+			linkBackupInfoListObject.linkLevelBackupType = valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupType"].asString();
+		if(!valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkId"].isNull())
+			linkBackupInfoListObject.mainLinkId = valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkId"].asString();
+		if(!valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupState"].isNull())
+			linkBackupInfoListObject.linkLevelBackupState = valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupState"].asString();
 		linkBackupInfoList_.push_back(linkBackupInfoListObject);
 	}
 	if(!value["DeviceLevelBackupState"].isNull())
 		deviceLevelBackupState_ = value["DeviceLevelBackupState"].asString();
-	if(!value["DeviceLevelBackupType"].isNull())
-		deviceLevelBackupType_ = value["DeviceLevelBackupType"].asString();
-	if(!value["MainDeviceId"].isNull())
-		mainDeviceId_ = value["MainDeviceId"].asString();
 	if(!value["BackupDeviceId"].isNull())
 		backupDeviceId_ = value["BackupDeviceId"].asString();
 	if(!value["SmartAGId"].isNull())
 		smartAGId_ = value["SmartAGId"].asString();
+	if(!value["DeviceLevelBackupType"].isNull())
+		deviceLevelBackupType_ = value["DeviceLevelBackupType"].asString();
+	if(!value["MainDeviceId"].isNull())
+		mainDeviceId_ = value["MainDeviceId"].asString();
 
 }
 

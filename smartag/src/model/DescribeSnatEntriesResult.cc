@@ -45,20 +45,20 @@ void DescribeSnatEntriesResult::parse(const std::string &payload)
 		SnatEntry snatEntriesObject;
 		if(!valueSnatEntriesSnatEntry["InstanceId"].isNull())
 			snatEntriesObject.instanceId = valueSnatEntriesSnatEntry["InstanceId"].asString();
+		if(!valueSnatEntriesSnatEntry["CreateTime"].isNull())
+			snatEntriesObject.createTime = std::stol(valueSnatEntriesSnatEntry["CreateTime"].asString());
 		if(!valueSnatEntriesSnatEntry["CidrBlock"].isNull())
 			snatEntriesObject.cidrBlock = valueSnatEntriesSnatEntry["CidrBlock"].asString();
 		if(!valueSnatEntriesSnatEntry["SnatIp"].isNull())
 			snatEntriesObject.snatIp = valueSnatEntriesSnatEntry["SnatIp"].asString();
-		if(!valueSnatEntriesSnatEntry["CreateTime"].isNull())
-			snatEntriesObject.createTime = std::stol(valueSnatEntriesSnatEntry["CreateTime"].asString());
 		snatEntries_.push_back(snatEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

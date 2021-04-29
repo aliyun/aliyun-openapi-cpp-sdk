@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getUpgradeType()const;
 				std::string getTimeZone()const;
 				std::string getSerialNumber()const;
+				std::string getJitter()const;
 				std::string getDuration()const;
 				std::string getCronExpression()const;
 				std::string getSmartAGId()const;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 				std::string upgradeType_;
 				std::string timeZone_;
 				std::string serialNumber_;
+				std::string jitter_;
 				std::string duration_;
 				std::string cronExpression_;
 				std::string smartAGId_;

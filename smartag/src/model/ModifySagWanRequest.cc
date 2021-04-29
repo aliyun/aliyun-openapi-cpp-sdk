@@ -38,6 +38,17 @@ void ModifySagWanRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifySagWanRequest::getISP()const
+{
+	return iSP_;
+}
+
+void ModifySagWanRequest::setISP(const std::string& iSP)
+{
+	iSP_ = iSP;
+	setParameter("ISP", iSP);
+}
+
 std::string ModifySagWanRequest::getPassword()const
 {
 	return password_;
@@ -47,6 +58,17 @@ void ModifySagWanRequest::setPassword(const std::string& password)
 {
 	password_ = password;
 	setParameter("Password", password);
+}
+
+std::string ModifySagWanRequest::getVlan()const
+{
+	return vlan_;
+}
+
+void ModifySagWanRequest::setVlan(const std::string& vlan)
+{
+	vlan_ = vlan;
+	setParameter("Vlan", vlan);
 }
 
 std::string ModifySagWanRequest::getRegionId()const
@@ -71,6 +93,17 @@ void ModifySagWanRequest::setMask(const std::string& mask)
 	setParameter("Mask", mask);
 }
 
+std::string ModifySagWanRequest::getStartIp()const
+{
+	return startIp_;
+}
+
+void ModifySagWanRequest::setStartIp(const std::string& startIp)
+{
+	startIp_ = startIp;
+	setParameter("StartIp", startIp);
+}
+
 std::string ModifySagWanRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -80,6 +113,17 @@ void ModifySagWanRequest::setResourceOwnerAccount(const std::string& resourceOwn
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+int ModifySagWanRequest::getBandwidth()const
+{
+	return bandwidth_;
+}
+
+void ModifySagWanRequest::setBandwidth(int bandwidth)
+{
+	bandwidth_ = bandwidth;
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifySagWanRequest::getOwnerAccount()const
@@ -104,6 +148,17 @@ void ModifySagWanRequest::setIP(const std::string& iP)
 	setParameter("IP", iP);
 }
 
+int ModifySagWanRequest::getWeight()const
+{
+	return weight_;
+}
+
+void ModifySagWanRequest::setWeight(int weight)
+{
+	weight_ = weight;
+	setParameter("Weight", std::to_string(weight));
+}
+
 long ModifySagWanRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -124,6 +179,28 @@ void ModifySagWanRequest::setIPType(const std::string& iPType)
 {
 	iPType_ = iPType;
 	setParameter("IPType", iPType);
+}
+
+int ModifySagWanRequest::getPriority()const
+{
+	return priority_;
+}
+
+void ModifySagWanRequest::setPriority(int priority)
+{
+	priority_ = priority;
+	setParameter("Priority", std::to_string(priority));
+}
+
+std::string ModifySagWanRequest::getSourceIps()const
+{
+	return sourceIps_;
+}
+
+void ModifySagWanRequest::setSourceIps(const std::string& sourceIps)
+{
+	sourceIps_ = sourceIps;
+	setParameter("SourceIps", sourceIps);
 }
 
 std::string ModifySagWanRequest::getSmartAGId()const
@@ -157,6 +234,17 @@ void ModifySagWanRequest::setPortName(const std::string& portName)
 {
 	portName_ = portName;
 	setParameter("PortName", portName);
+}
+
+std::string ModifySagWanRequest::getStopIp()const
+{
+	return stopIp_;
+}
+
+void ModifySagWanRequest::setStopIp(const std::string& stopIp)
+{
+	stopIp_ = stopIp;
+	setParameter("StopIp", stopIp);
 }
 
 std::string ModifySagWanRequest::getGateway()const

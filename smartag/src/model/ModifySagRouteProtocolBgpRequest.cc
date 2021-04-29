@@ -104,6 +104,17 @@ void ModifySagRouteProtocolBgpRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifySagRouteProtocolBgpRequest::getAdvertiseIps()const
+{
+	return advertiseIps_;
+}
+
+void ModifySagRouteProtocolBgpRequest::setAdvertiseIps(const std::string& advertiseIps)
+{
+	advertiseIps_ = advertiseIps;
+	setParameter("AdvertiseIps", advertiseIps);
+}
+
 std::string ModifySagRouteProtocolBgpRequest::getRouterId()const
 {
 	return routerId_;

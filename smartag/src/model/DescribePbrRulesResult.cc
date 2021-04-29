@@ -43,30 +43,30 @@ void DescribePbrRulesResult::parse(const std::string &payload)
 	for (auto valuePbrRulesPbrRule : allPbrRulesNode)
 	{
 		PbrRule pbrRulesObject;
-		if(!valuePbrRulesPbrRule["PbrRuleId"].isNull())
-			pbrRulesObject.pbrRuleId = valuePbrRulesPbrRule["PbrRuleId"].asString();
-		if(!valuePbrRulesPbrRule["SrcCidr"].isNull())
-			pbrRulesObject.srcCidr = valuePbrRulesPbrRule["SrcCidr"].asString();
-		if(!valuePbrRulesPbrRule["DstCidr"].isNull())
-			pbrRulesObject.dstCidr = valuePbrRulesPbrRule["DstCidr"].asString();
 		if(!valuePbrRulesPbrRule["SrcPort"].isNull())
 			pbrRulesObject.srcPort = valuePbrRulesPbrRule["SrcPort"].asString();
-		if(!valuePbrRulesPbrRule["DstPort"].isNull())
-			pbrRulesObject.dstPort = valuePbrRulesPbrRule["DstPort"].asString();
-		if(!valuePbrRulesPbrRule["Protocol"].isNull())
-			pbrRulesObject.protocol = valuePbrRulesPbrRule["Protocol"].asString();
-		if(!valuePbrRulesPbrRule["Name"].isNull())
-			pbrRulesObject.name = valuePbrRulesPbrRule["Name"].asString();
 		if(!valuePbrRulesPbrRule["Description"].isNull())
 			pbrRulesObject.description = valuePbrRulesPbrRule["Description"].asString();
+		if(!valuePbrRulesPbrRule["SrcCidr"].isNull())
+			pbrRulesObject.srcCidr = valuePbrRulesPbrRule["SrcCidr"].asString();
+		if(!valuePbrRulesPbrRule["DstPort"].isNull())
+			pbrRulesObject.dstPort = valuePbrRulesPbrRule["DstPort"].asString();
+		if(!valuePbrRulesPbrRule["PbrRuleId"].isNull())
+			pbrRulesObject.pbrRuleId = valuePbrRulesPbrRule["PbrRuleId"].asString();
+		if(!valuePbrRulesPbrRule["Protocol"].isNull())
+			pbrRulesObject.protocol = valuePbrRulesPbrRule["Protocol"].asString();
+		if(!valuePbrRulesPbrRule["DstCidr"].isNull())
+			pbrRulesObject.dstCidr = valuePbrRulesPbrRule["DstCidr"].asString();
+		if(!valuePbrRulesPbrRule["Name"].isNull())
+			pbrRulesObject.name = valuePbrRulesPbrRule["Name"].asString();
 		pbrRules_.push_back(pbrRulesObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

@@ -43,18 +43,36 @@ void DescribeSagWanListResult::parse(const std::string &payload)
 	for (auto valueWansWan : allWansNode)
 	{
 		Wan wansObject;
-		if(!valueWansWan["PortName"].isNull())
-			wansObject.portName = valueWansWan["PortName"].asString();
 		if(!valueWansWan["IPType"].isNull())
 			wansObject.iPType = valueWansWan["IPType"].asString();
+		if(!valueWansWan["TrafficState"].isNull())
+			wansObject.trafficState = valueWansWan["TrafficState"].asString();
+		if(!valueWansWan["Priority"].isNull())
+			wansObject.priority = std::stoi(valueWansWan["Priority"].asString());
+		if(!valueWansWan["SourceIps"].isNull())
+			wansObject.sourceIps = valueWansWan["SourceIps"].asString();
+		if(!valueWansWan["ISP"].isNull())
+			wansObject.iSP = valueWansWan["ISP"].asString();
 		if(!valueWansWan["IP"].isNull())
 			wansObject.iP = valueWansWan["IP"].asString();
 		if(!valueWansWan["Mask"].isNull())
 			wansObject.mask = valueWansWan["Mask"].asString();
-		if(!valueWansWan["Gateway"].isNull())
-			wansObject.gateway = valueWansWan["Gateway"].asString();
+		if(!valueWansWan["StartIp"].isNull())
+			wansObject.startIp = valueWansWan["StartIp"].asString();
+		if(!valueWansWan["Vlan"].isNull())
+			wansObject.vlan = valueWansWan["Vlan"].asString();
+		if(!valueWansWan["PortName"].isNull())
+			wansObject.portName = valueWansWan["PortName"].asString();
+		if(!valueWansWan["Weight"].isNull())
+			wansObject.weight = std::stoi(valueWansWan["Weight"].asString());
+		if(!valueWansWan["StopIp"].isNull())
+			wansObject.stopIp = valueWansWan["StopIp"].asString();
+		if(!valueWansWan["BandWidth"].isNull())
+			wansObject.bandWidth = std::stoi(valueWansWan["BandWidth"].asString());
 		if(!valueWansWan["Username"].isNull())
 			wansObject.username = valueWansWan["Username"].asString();
+		if(!valueWansWan["Gateway"].isNull())
+			wansObject.gateway = valueWansWan["Gateway"].asString();
 		wans_.push_back(wansObject);
 	}
 	auto allTaskStatesNode = value["TaskStates"]["TaskState"];
@@ -63,12 +81,12 @@ void DescribeSagWanListResult::parse(const std::string &payload)
 		TaskState taskStatesObject;
 		if(!valueTaskStatesTaskState["State"].isNull())
 			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
 			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 

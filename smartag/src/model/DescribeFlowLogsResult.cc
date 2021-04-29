@@ -43,42 +43,42 @@ void DescribeFlowLogsResult::parse(const std::string &payload)
 	for (auto valueFlowLogsFlowLogSetType : allFlowLogsNode)
 	{
 		FlowLogSetType flowLogsObject;
-		if(!valueFlowLogsFlowLogSetType["FlowLogId"].isNull())
-			flowLogsObject.flowLogId = valueFlowLogsFlowLogSetType["FlowLogId"].asString();
+		if(!valueFlowLogsFlowLogSetType["NetflowServerPort"].isNull())
+			flowLogsObject.netflowServerPort = valueFlowLogsFlowLogSetType["NetflowServerPort"].asString();
+		if(!valueFlowLogsFlowLogSetType["Status"].isNull())
+			flowLogsObject.status = valueFlowLogsFlowLogSetType["Status"].asString();
+		if(!valueFlowLogsFlowLogSetType["LogstoreName"].isNull())
+			flowLogsObject.logstoreName = valueFlowLogsFlowLogSetType["LogstoreName"].asString();
 		if(!valueFlowLogsFlowLogSetType["Description"].isNull())
 			flowLogsObject.description = valueFlowLogsFlowLogSetType["Description"].asString();
 		if(!valueFlowLogsFlowLogSetType["ActiveAging"].isNull())
 			flowLogsObject.activeAging = std::stoi(valueFlowLogsFlowLogSetType["ActiveAging"].asString());
-		if(!valueFlowLogsFlowLogSetType["InactiveAging"].isNull())
-			flowLogsObject.inactiveAging = std::stoi(valueFlowLogsFlowLogSetType["InactiveAging"].asString());
-		if(!valueFlowLogsFlowLogSetType["OutputType"].isNull())
-			flowLogsObject.outputType = valueFlowLogsFlowLogSetType["OutputType"].asString();
-		if(!valueFlowLogsFlowLogSetType["SlsRegionId"].isNull())
-			flowLogsObject.slsRegionId = valueFlowLogsFlowLogSetType["SlsRegionId"].asString();
 		if(!valueFlowLogsFlowLogSetType["ProjectName"].isNull())
 			flowLogsObject.projectName = valueFlowLogsFlowLogSetType["ProjectName"].asString();
-		if(!valueFlowLogsFlowLogSetType["LogstoreName"].isNull())
-			flowLogsObject.logstoreName = valueFlowLogsFlowLogSetType["LogstoreName"].asString();
 		if(!valueFlowLogsFlowLogSetType["NetflowServerIp"].isNull())
 			flowLogsObject.netflowServerIp = valueFlowLogsFlowLogSetType["NetflowServerIp"].asString();
-		if(!valueFlowLogsFlowLogSetType["NetflowServerPort"].isNull())
-			flowLogsObject.netflowServerPort = valueFlowLogsFlowLogSetType["NetflowServerPort"].asString();
 		if(!valueFlowLogsFlowLogSetType["NetflowVersion"].isNull())
 			flowLogsObject.netflowVersion = valueFlowLogsFlowLogSetType["NetflowVersion"].asString();
-		if(!valueFlowLogsFlowLogSetType["Status"].isNull())
-			flowLogsObject.status = valueFlowLogsFlowLogSetType["Status"].asString();
+		if(!valueFlowLogsFlowLogSetType["InactiveAging"].isNull())
+			flowLogsObject.inactiveAging = std::stoi(valueFlowLogsFlowLogSetType["InactiveAging"].asString());
+		if(!valueFlowLogsFlowLogSetType["FlowLogId"].isNull())
+			flowLogsObject.flowLogId = valueFlowLogsFlowLogSetType["FlowLogId"].asString();
 		if(!valueFlowLogsFlowLogSetType["Name"].isNull())
 			flowLogsObject.name = valueFlowLogsFlowLogSetType["Name"].asString();
 		if(!valueFlowLogsFlowLogSetType["TotalSagNum"].isNull())
 			flowLogsObject.totalSagNum = std::stoi(valueFlowLogsFlowLogSetType["TotalSagNum"].asString());
+		if(!valueFlowLogsFlowLogSetType["SlsRegionId"].isNull())
+			flowLogsObject.slsRegionId = valueFlowLogsFlowLogSetType["SlsRegionId"].asString();
+		if(!valueFlowLogsFlowLogSetType["OutputType"].isNull())
+			flowLogsObject.outputType = valueFlowLogsFlowLogSetType["OutputType"].asString();
 		flowLogs_.push_back(flowLogsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

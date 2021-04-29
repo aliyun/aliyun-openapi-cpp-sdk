@@ -43,26 +43,26 @@ void DescribeNetworkOptimizationsResult::parse(const std::string &payload)
 	for (auto valueNetworkOptimizationsNetworkOptimization : allNetworkOptimizationsNode)
 	{
 		NetworkOptimization networkOptimizationsObject;
-		if(!valueNetworkOptimizationsNetworkOptimization["InstanceId"].isNull())
-			networkOptimizationsObject.instanceId = valueNetworkOptimizationsNetworkOptimization["InstanceId"].asString();
-		if(!valueNetworkOptimizationsNetworkOptimization["Name"].isNull())
-			networkOptimizationsObject.name = valueNetworkOptimizationsNetworkOptimization["Name"].asString();
-		if(!valueNetworkOptimizationsNetworkOptimization["State"].isNull())
-			networkOptimizationsObject.state = valueNetworkOptimizationsNetworkOptimization["State"].asString();
-		if(!valueNetworkOptimizationsNetworkOptimization["CreateTime"].isNull())
-			networkOptimizationsObject.createTime = std::stol(valueNetworkOptimizationsNetworkOptimization["CreateTime"].asString());
 		if(!valueNetworkOptimizationsNetworkOptimization["SagCount"].isNull())
 			networkOptimizationsObject.sagCount = std::stoi(valueNetworkOptimizationsNetworkOptimization["SagCount"].asString());
+		if(!valueNetworkOptimizationsNetworkOptimization["InstanceId"].isNull())
+			networkOptimizationsObject.instanceId = valueNetworkOptimizationsNetworkOptimization["InstanceId"].asString();
+		if(!valueNetworkOptimizationsNetworkOptimization["State"].isNull())
+			networkOptimizationsObject.state = valueNetworkOptimizationsNetworkOptimization["State"].asString();
 		if(!valueNetworkOptimizationsNetworkOptimization["CcnId"].isNull())
 			networkOptimizationsObject.ccnId = valueNetworkOptimizationsNetworkOptimization["CcnId"].asString();
+		if(!valueNetworkOptimizationsNetworkOptimization["CreateTime"].isNull())
+			networkOptimizationsObject.createTime = std::stol(valueNetworkOptimizationsNetworkOptimization["CreateTime"].asString());
+		if(!valueNetworkOptimizationsNetworkOptimization["Name"].isNull())
+			networkOptimizationsObject.name = valueNetworkOptimizationsNetworkOptimization["Name"].asString();
 		networkOptimizations_.push_back(networkOptimizationsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

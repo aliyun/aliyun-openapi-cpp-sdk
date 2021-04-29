@@ -39,28 +39,34 @@ void CreateQosPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["QosId"].isNull())
-		qosId_ = value["QosId"].asString();
-	if(!value["QosPolicyId"].isNull())
-		qosPolicyId_ = value["QosPolicyId"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["Priority"].isNull())
-		priority_ = std::stoi(value["Priority"].asString());
-	if(!value["SourceCidr"].isNull())
-		sourceCidr_ = value["SourceCidr"].asString();
+	auto allDpiSignatureIds = value["DpiSignatureIds"]["DpiSignatureId"];
+	for (const auto &item : allDpiSignatureIds)
+		dpiSignatureIds_.push_back(item.asString());
+	auto allDpiGroupIds = value["DpiGroupIds"]["DpiGroupId"];
+	for (const auto &item : allDpiGroupIds)
+		dpiGroupIds_.push_back(item.asString());
 	if(!value["DestCidr"].isNull())
 		destCidr_ = value["DestCidr"].asString();
-	if(!value["IpProtocol"].isNull())
-		ipProtocol_ = value["IpProtocol"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 	if(!value["SourcePortRange"].isNull())
 		sourcePortRange_ = value["SourcePortRange"].asString();
-	if(!value["DestPortRange"].isNull())
-		destPortRange_ = value["DestPortRange"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
+	if(!value["QosPolicyId"].isNull())
+		qosPolicyId_ = value["QosPolicyId"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["SourceCidr"].isNull())
+		sourceCidr_ = value["SourceCidr"].asString();
+	if(!value["Priority"].isNull())
+		priority_ = std::stoi(value["Priority"].asString());
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["IpProtocol"].isNull())
+		ipProtocol_ = value["IpProtocol"].asString();
+	if(!value["QosId"].isNull())
+		qosId_ = value["QosId"].asString();
+	if(!value["DestPortRange"].isNull())
+		destPortRange_ = value["DestPortRange"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
 
@@ -71,19 +77,14 @@ std::string CreateQosPolicyResult::getDescription()const
 	return description_;
 }
 
-std::string CreateQosPolicyResult::getDestCidr()const
+std::string CreateQosPolicyResult::getSourcePortRange()const
 {
-	return destCidr_;
+	return sourcePortRange_;
 }
 
 std::string CreateQosPolicyResult::getQosPolicyId()const
 {
 	return qosPolicyId_;
-}
-
-std::string CreateQosPolicyResult::getSourcePortRange()const
-{
-	return sourcePortRange_;
 }
 
 std::string CreateQosPolicyResult::getEndTime()const
@@ -106,9 +107,29 @@ std::string CreateQosPolicyResult::getStartTime()const
 	return startTime_;
 }
 
-std::string CreateQosPolicyResult::getQosId()const
+std::string CreateQosPolicyResult::getDestPortRange()const
 {
-	return qosId_;
+	return destPortRange_;
+}
+
+std::vector<std::string> CreateQosPolicyResult::getDpiGroupIds()const
+{
+	return dpiGroupIds_;
+}
+
+std::string CreateQosPolicyResult::getName()const
+{
+	return name_;
+}
+
+std::string CreateQosPolicyResult::getDestCidr()const
+{
+	return destCidr_;
+}
+
+std::vector<std::string> CreateQosPolicyResult::getDpiSignatureIds()const
+{
+	return dpiSignatureIds_;
 }
 
 std::string CreateQosPolicyResult::getIpProtocol()const
@@ -116,13 +137,8 @@ std::string CreateQosPolicyResult::getIpProtocol()const
 	return ipProtocol_;
 }
 
-std::string CreateQosPolicyResult::getDestPortRange()const
+std::string CreateQosPolicyResult::getQosId()const
 {
-	return destPortRange_;
-}
-
-std::string CreateQosPolicyResult::getName()const
-{
-	return name_;
+	return qosId_;
 }
 

@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				std::string getType()const;
 				int getProbeTimeout()const;
 				int getRttThreshold()const;
-				std::string getRegionId()const;
 				int getProbeInterval()const;
+				std::string getRegionId()const;
 				std::string getSmartAGId()const;
 				int getRttFailThreshold()const;
 				std::string getDstIpAddr()const;
@@ -70,8 +70,8 @@ namespace AlibabaCloud
 				std::string type_;
 				int probeTimeout_;
 				int rttThreshold_;
-				std::string regionId_;
 				int probeInterval_;
+				std::string regionId_;
 				std::string smartAGId_;
 				int rttFailThreshold_;
 				std::string dstIpAddr_;

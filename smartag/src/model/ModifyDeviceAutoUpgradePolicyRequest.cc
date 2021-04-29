@@ -137,6 +137,17 @@ void ModifyDeviceAutoUpgradePolicyRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyDeviceAutoUpgradePolicyRequest::getVersionType()const
+{
+	return versionType_;
+}
+
+void ModifyDeviceAutoUpgradePolicyRequest::setVersionType(const std::string& versionType)
+{
+	versionType_ = versionType;
+	setParameter("VersionType", versionType);
+}
+
 std::string ModifyDeviceAutoUpgradePolicyRequest::getSmartAGId()const
 {
 	return smartAGId_;

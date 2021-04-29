@@ -45,20 +45,20 @@ void DescribePolicyBasedRoutingsResult::parse(const std::string &payload)
 		PolicyBasedRouting policyBasedRoutingsObject;
 		if(!valuePolicyBasedRoutingsPolicyBasedRouting["PbrInstanceId"].isNull())
 			policyBasedRoutingsObject.pbrInstanceId = valuePolicyBasedRoutingsPolicyBasedRouting["PbrInstanceId"].asString();
+		if(!valuePolicyBasedRoutingsPolicyBasedRouting["Description"].isNull())
+			policyBasedRoutingsObject.description = valuePolicyBasedRoutingsPolicyBasedRouting["Description"].asString();
 		if(!valuePolicyBasedRoutingsPolicyBasedRouting["Priority"].isNull())
 			policyBasedRoutingsObject.priority = std::stoi(valuePolicyBasedRoutingsPolicyBasedRouting["Priority"].asString());
 		if(!valuePolicyBasedRoutingsPolicyBasedRouting["Name"].isNull())
 			policyBasedRoutingsObject.name = valuePolicyBasedRoutingsPolicyBasedRouting["Name"].asString();
-		if(!valuePolicyBasedRoutingsPolicyBasedRouting["Description"].isNull())
-			policyBasedRoutingsObject.description = valuePolicyBasedRoutingsPolicyBasedRouting["Description"].asString();
 		policyBasedRoutings_.push_back(policyBasedRoutingsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

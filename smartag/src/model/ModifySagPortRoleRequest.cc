@@ -49,6 +49,17 @@ void ModifySagPortRoleRequest::setRole(const std::string& role)
 	setParameter("Role", role);
 }
 
+std::string ModifySagPortRoleRequest::getVlan()const
+{
+	return vlan_;
+}
+
+void ModifySagPortRoleRequest::setVlan(const std::string& vlan)
+{
+	vlan_ = vlan;
+	setParameter("Vlan", vlan);
+}
+
 std::string ModifySagPortRoleRequest::getRegionId()const
 {
 	return regionId_;

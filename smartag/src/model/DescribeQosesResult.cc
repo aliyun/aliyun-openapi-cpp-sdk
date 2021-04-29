@@ -43,24 +43,24 @@ void DescribeQosesResult::parse(const std::string &payload)
 	for (auto valueQosesQos : allQosesNode)
 	{
 		Qos qosesObject;
-		if(!valueQosesQos["QosId"].isNull())
-			qosesObject.qosId = valueQosesQos["QosId"].asString();
-		if(!valueQosesQos["QosName"].isNull())
-			qosesObject.qosName = valueQosesQos["QosName"].asString();
 		if(!valueQosesQos["SagCount"].isNull())
 			qosesObject.sagCount = valueQosesQos["SagCount"].asString();
+		if(!valueQosesQos["QosId"].isNull())
+			qosesObject.qosId = valueQosesQos["QosId"].asString();
 		if(!valueQosesQos["SmartAGIds"].isNull())
 			qosesObject.smartAGIds = valueQosesQos["SmartAGIds"].asString();
+		if(!valueQosesQos["QosName"].isNull())
+			qosesObject.qosName = valueQosesQos["QosName"].asString();
 		if(!valueQosesQos["QosDescription"].isNull())
 			qosesObject.qosDescription = valueQosesQos["QosDescription"].asString();
 		qoses_.push_back(qosesObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

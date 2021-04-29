@@ -39,34 +39,40 @@ void AddACLRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AcrId"].isNull())
-		acrId_ = value["AcrId"].asString();
-	if(!value["AclId"].isNull())
-		aclId_ = value["AclId"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["Direction"].isNull())
-		direction_ = value["Direction"].asString();
-	if(!value["SourceCidr"].isNull())
-		sourceCidr_ = value["SourceCidr"].asString();
-	if(!value["DestCidr"].isNull())
-		destCidr_ = value["DestCidr"].asString();
-	if(!value["IpProtocol"].isNull())
-		ipProtocol_ = value["IpProtocol"].asString();
-	if(!value["SourcePortRange"].isNull())
-		sourcePortRange_ = value["SourcePortRange"].asString();
-	if(!value["DestPortRange"].isNull())
-		destPortRange_ = value["DestPortRange"].asString();
+	auto allDpiSignatureIds = value["DpiSignatureIds"]["DpiSignatureId"];
+	for (const auto &item : allDpiSignatureIds)
+		dpiSignatureIds_.push_back(item.asString());
+	auto allDpiGroupIds = value["DpiGroupIds"]["DpiGroupId"];
+	for (const auto &item : allDpiGroupIds)
+		dpiGroupIds_.push_back(item.asString());
 	if(!value["Policy"].isNull())
 		policy_ = value["Policy"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["SourcePortRange"].isNull())
+		sourcePortRange_ = value["SourcePortRange"].asString();
+	if(!value["SourceCidr"].isNull())
+		sourceCidr_ = value["SourceCidr"].asString();
 	if(!value["Priority"].isNull())
 		priority_ = std::stoi(value["Priority"].asString());
+	if(!value["AclId"].isNull())
+		aclId_ = value["AclId"].asString();
+	if(!value["AcrId"].isNull())
+		acrId_ = value["AcrId"].asString();
+	if(!value["DestPortRange"].isNull())
+		destPortRange_ = value["DestPortRange"].asString();
+	if(!value["Direction"].isNull())
+		direction_ = value["Direction"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 	if(!value["GmtCreate"].isNull())
 		gmtCreate_ = std::stol(value["GmtCreate"].asString());
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
+	if(!value["DestCidr"].isNull())
+		destCidr_ = value["DestCidr"].asString();
+	if(!value["IpProtocol"].isNull())
+		ipProtocol_ = value["IpProtocol"].asString();
 
 }
 
@@ -110,6 +116,11 @@ std::string AddACLRuleResult::getDestPortRange()const
 	return destPortRange_;
 }
 
+std::vector<std::string> AddACLRuleResult::getDpiGroupIds()const
+{
+	return dpiGroupIds_;
+}
+
 std::string AddACLRuleResult::getDirection()const
 {
 	return direction_;
@@ -133,6 +144,11 @@ std::string AddACLRuleResult::getType()const
 std::string AddACLRuleResult::getDestCidr()const
 {
 	return destCidr_;
+}
+
+std::vector<std::string> AddACLRuleResult::getDpiSignatureIds()const
+{
+	return dpiSignatureIds_;
 }
 
 std::string AddACLRuleResult::getIpProtocol()const

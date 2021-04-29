@@ -45,18 +45,18 @@ void DescribeSagUserDnsResult::parse(const std::string &payload)
 		TaskState taskStatesObject;
 		if(!valueTaskStatesTaskState["State"].isNull())
 			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
 			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
-	if(!value["MasterDns"].isNull())
-		masterDns_ = value["MasterDns"].asString();
 	if(!value["SlaveDns"].isNull())
 		slaveDns_ = value["SlaveDns"].asString();
+	if(!value["MasterDns"].isNull())
+		masterDns_ = value["MasterDns"].asString();
 
 }
 

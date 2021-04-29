@@ -39,44 +39,44 @@ void DescribeSagStaticRouteListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStaticRoutesNode = value["StaticRoutes"]["StaticRoute"];
-	for (auto valueStaticRoutesStaticRoute : allStaticRoutesNode)
-	{
-		StaticRoute staticRoutesObject;
-		if(!valueStaticRoutesStaticRoute["PortName"].isNull())
-			staticRoutesObject.portName = valueStaticRoutesStaticRoute["PortName"].asString();
-		if(!valueStaticRoutesStaticRoute["DestinationCidr"].isNull())
-			staticRoutesObject.destinationCidr = valueStaticRoutesStaticRoute["DestinationCidr"].asString();
-		if(!valueStaticRoutesStaticRoute["NextHop"].isNull())
-			staticRoutesObject.nextHop = valueStaticRoutesStaticRoute["NextHop"].asString();
-		if(!valueStaticRoutesStaticRoute["Vlan"].isNull())
-			staticRoutesObject.vlan = valueStaticRoutesStaticRoute["Vlan"].asString();
-		staticRoutes_.push_back(staticRoutesObject);
-	}
 	auto allTaskStatesNode = value["TaskStates"]["TaskState"];
 	for (auto valueTaskStatesTaskState : allTaskStatesNode)
 	{
 		TaskState taskStatesObject;
 		if(!valueTaskStatesTaskState["State"].isNull())
 			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
 			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
+	auto allStaticRoutesNode = value["StaticRoutes"]["StaticRoute"];
+	for (auto valueStaticRoutesStaticRoute : allStaticRoutesNode)
+	{
+		StaticRoute staticRoutesObject;
+		if(!valueStaticRoutesStaticRoute["NextHop"].isNull())
+			staticRoutesObject.nextHop = valueStaticRoutesStaticRoute["NextHop"].asString();
+		if(!valueStaticRoutesStaticRoute["Vlan"].isNull())
+			staticRoutesObject.vlan = valueStaticRoutesStaticRoute["Vlan"].asString();
+		if(!valueStaticRoutesStaticRoute["PortName"].isNull())
+			staticRoutesObject.portName = valueStaticRoutesStaticRoute["PortName"].asString();
+		if(!valueStaticRoutesStaticRoute["DestinationCidr"].isNull())
+			staticRoutesObject.destinationCidr = valueStaticRoutesStaticRoute["DestinationCidr"].asString();
+		staticRoutes_.push_back(staticRoutesObject);
+	}
 
-}
-
-std::vector<DescribeSagStaticRouteListResult::StaticRoute> DescribeSagStaticRouteListResult::getStaticRoutes()const
-{
-	return staticRoutes_;
 }
 
 std::vector<DescribeSagStaticRouteListResult::TaskState> DescribeSagStaticRouteListResult::getTaskStates()const
 {
 	return taskStates_;
+}
+
+std::vector<DescribeSagStaticRouteListResult::StaticRoute> DescribeSagStaticRouteListResult::getStaticRoutes()const
+{
+	return staticRoutes_;
 }
 

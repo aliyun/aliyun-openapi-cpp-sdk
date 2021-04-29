@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string role;
 					std::string status;
+					std::string vlan;
 					std::string portName;
 					std::string mac;
 				};

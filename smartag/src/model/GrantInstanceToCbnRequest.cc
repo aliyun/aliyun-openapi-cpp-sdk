@@ -60,6 +60,17 @@ void GrantInstanceToCbnRequest::setCcnInstanceId(const std::string& ccnInstanceI
 	setParameter("CcnInstanceId", ccnInstanceId);
 }
 
+bool GrantInstanceToCbnRequest::getGrantTrafficService()const
+{
+	return grantTrafficService_;
+}
+
+void GrantInstanceToCbnRequest::setGrantTrafficService(bool grantTrafficService)
+{
+	grantTrafficService_ = grantTrafficService;
+	setParameter("GrantTrafficService", grantTrafficService ? "true" : "false");
+}
+
 std::string GrantInstanceToCbnRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -93,15 +104,15 @@ void GrantInstanceToCbnRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string GrantInstanceToCbnRequest::getCenUid()const
+long GrantInstanceToCbnRequest::getCenUid()const
 {
 	return cenUid_;
 }
 
-void GrantInstanceToCbnRequest::setCenUid(const std::string& cenUid)
+void GrantInstanceToCbnRequest::setCenUid(long cenUid)
 {
 	cenUid_ = cenUid;
-	setParameter("CenUid", cenUid);
+	setParameter("CenUid", std::to_string(cenUid));
 }
 
 std::string GrantInstanceToCbnRequest::getCenInstanceId()const

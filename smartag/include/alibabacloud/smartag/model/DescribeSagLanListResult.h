@@ -32,6 +32,13 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SMARTAG_EXPORT DescribeSagLanListResult : public ServiceResult
 			{
 			public:
+				struct TaskState
+				{
+					std::string state;
+					std::string createTime;
+					std::string errorCode;
+					std::string errorMessage;
+				};
 				struct Lan
 				{
 					std::string iPType;
@@ -41,13 +48,6 @@ namespace AlibabaCloud
 					std::string startIp;
 					std::string portName;
 					std::string endIp;
-				};
-				struct TaskState
-				{
-					std::string state;
-					std::string createTime;
-					std::string errorCode;
-					std::string errorMessage;
 				};
 
 

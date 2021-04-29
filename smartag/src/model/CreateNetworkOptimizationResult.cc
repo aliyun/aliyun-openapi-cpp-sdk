@@ -39,12 +39,12 @@ void CreateNetworkOptimizationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["NetworkOptId"].isNull())
-		networkOptId_ = value["NetworkOptId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["State"].isNull())
 		state_ = value["State"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["NetworkOptId"].isNull())
+		networkOptId_ = value["NetworkOptId"].asString();
 
 }
 
@@ -53,13 +53,13 @@ std::string CreateNetworkOptimizationResult::getState()const
 	return state_;
 }
 
-std::string CreateNetworkOptimizationResult::getNetworkOptId()const
-{
-	return networkOptId_;
-}
-
 std::string CreateNetworkOptimizationResult::getName()const
 {
 	return name_;
+}
+
+std::string CreateNetworkOptimizationResult::getNetworkOptId()const
+{
+	return networkOptId_;
 }
 

@@ -43,10 +43,10 @@ void DescribeSagHaResult::parse(const std::string &payload)
 	for (auto valuePortsPort : allPortsNode)
 	{
 		Port portsObject;
-		if(!valuePortsPort["PortName"].isNull())
-			portsObject.portName = valuePortsPort["PortName"].asString();
 		if(!valuePortsPort["VirtualIp"].isNull())
 			portsObject.virtualIp = valuePortsPort["VirtualIp"].asString();
+		if(!valuePortsPort["PortName"].isNull())
+			portsObject.portName = valuePortsPort["PortName"].asString();
 		ports_.push_back(portsObject);
 	}
 	auto allTaskStatesNode = value["TaskStates"]["TaskState"];
@@ -55,12 +55,12 @@ void DescribeSagHaResult::parse(const std::string &payload)
 		TaskState taskStatesObject;
 		if(!valueTaskStatesTaskState["State"].isNull())
 			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
 			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 	if(!value["Mode"].isNull())

@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string type;
 					std::string externalIp;
 					std::string ipProtocol;
-					std::string sagId;
 					std::string internalPort;
+					std::string sagId;
 					std::string internalIp;
 					std::string dnatEntryId;
 				};

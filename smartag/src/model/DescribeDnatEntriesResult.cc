@@ -43,30 +43,30 @@ void DescribeDnatEntriesResult::parse(const std::string &payload)
 	for (auto valueDnatEntriesDnatEntry : allDnatEntriesNode)
 	{
 		DnatEntry dnatEntriesObject;
-		if(!valueDnatEntriesDnatEntry["DnatEntryId"].isNull())
-			dnatEntriesObject.dnatEntryId = valueDnatEntriesDnatEntry["DnatEntryId"].asString();
-		if(!valueDnatEntriesDnatEntry["Type"].isNull())
-			dnatEntriesObject.type = valueDnatEntriesDnatEntry["Type"].asString();
-		if(!valueDnatEntriesDnatEntry["SagId"].isNull())
-			dnatEntriesObject.sagId = valueDnatEntriesDnatEntry["SagId"].asString();
-		if(!valueDnatEntriesDnatEntry["ExternalIp"].isNull())
-			dnatEntriesObject.externalIp = valueDnatEntriesDnatEntry["ExternalIp"].asString();
 		if(!valueDnatEntriesDnatEntry["ExternalPort"].isNull())
 			dnatEntriesObject.externalPort = valueDnatEntriesDnatEntry["ExternalPort"].asString();
-		if(!valueDnatEntriesDnatEntry["InternalIp"].isNull())
-			dnatEntriesObject.internalIp = valueDnatEntriesDnatEntry["InternalIp"].asString();
+		if(!valueDnatEntriesDnatEntry["Type"].isNull())
+			dnatEntriesObject.type = valueDnatEntriesDnatEntry["Type"].asString();
+		if(!valueDnatEntriesDnatEntry["ExternalIp"].isNull())
+			dnatEntriesObject.externalIp = valueDnatEntriesDnatEntry["ExternalIp"].asString();
 		if(!valueDnatEntriesDnatEntry["IpProtocol"].isNull())
 			dnatEntriesObject.ipProtocol = valueDnatEntriesDnatEntry["IpProtocol"].asString();
 		if(!valueDnatEntriesDnatEntry["InternalPort"].isNull())
 			dnatEntriesObject.internalPort = valueDnatEntriesDnatEntry["InternalPort"].asString();
+		if(!valueDnatEntriesDnatEntry["SagId"].isNull())
+			dnatEntriesObject.sagId = valueDnatEntriesDnatEntry["SagId"].asString();
+		if(!valueDnatEntriesDnatEntry["InternalIp"].isNull())
+			dnatEntriesObject.internalIp = valueDnatEntriesDnatEntry["InternalIp"].asString();
+		if(!valueDnatEntriesDnatEntry["DnatEntryId"].isNull())
+			dnatEntriesObject.dnatEntryId = valueDnatEntriesDnatEntry["DnatEntryId"].asString();
 		dnatEntries_.push_back(dnatEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

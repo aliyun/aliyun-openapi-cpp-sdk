@@ -43,24 +43,24 @@ void DescribeSagECRouteBackupAttributeResult::parse(const std::string &payload)
 	for (auto valueCidrsCidr : allCidrsNode)
 	{
 		Cidr cidrsObject;
-		if(!valueCidrsCidr["Cidr"].isNull())
-			cidrsObject.cidr = valueCidrsCidr["Cidr"].asString();
 		if(!valueCidrsCidr["EnableBackup"].isNull())
 			cidrsObject.enableBackup = valueCidrsCidr["EnableBackup"].asString() == "true";
+		if(!valueCidrsCidr["Cidr"].isNull())
+			cidrsObject.cidr = valueCidrsCidr["Cidr"].asString();
 		cidrs_.push_back(cidrsObject);
 	}
-	if(!value["SagId"].isNull())
-		sagId_ = value["SagId"].asString();
 	if(!value["HcIp"].isNull())
 		hcIp_ = value["HcIp"].asString();
-	if(!value["ExpressConnectionInterface"].isNull())
-		expressConnectionInterface_ = value["ExpressConnectionInterface"].asString();
-	if(!value["ExpressConnectionNexthop"].isNull())
-		expressConnectionNexthop_ = value["ExpressConnectionNexthop"].asString();
-	if(!value["RouteBackup"].isNull())
-		routeBackup_ = value["RouteBackup"].asString() == "true";
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["ExpressConnectionInterface"].isNull())
+		expressConnectionInterface_ = value["ExpressConnectionInterface"].asString();
+	if(!value["RouteBackup"].isNull())
+		routeBackup_ = value["RouteBackup"].asString() == "true";
+	if(!value["ExpressConnectionNexthop"].isNull())
+		expressConnectionNexthop_ = value["ExpressConnectionNexthop"].asString();
+	if(!value["SagId"].isNull())
+		sagId_ = value["SagId"].asString();
 
 }
 

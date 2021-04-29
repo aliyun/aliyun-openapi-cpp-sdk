@@ -41,14 +41,16 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getCcnInstanceId()const;
 				void setCcnInstanceId(const std::string& ccnInstanceId);
+				bool getGrantTrafficService()const;
+				void setGrantTrafficService(bool grantTrafficService);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getCenUid()const;
-				void setCenUid(const std::string& cenUid);
+				long getCenUid()const;
+				void setCenUid(long cenUid);
 				std::string getCenInstanceId()const;
 				void setCenInstanceId(const std::string& cenInstanceId);
 
@@ -56,10 +58,11 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string regionId_;
 				std::string ccnInstanceId_;
+				bool grantTrafficService_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string cenUid_;
+				long cenUid_;
 				std::string cenInstanceId_;
 
 			};

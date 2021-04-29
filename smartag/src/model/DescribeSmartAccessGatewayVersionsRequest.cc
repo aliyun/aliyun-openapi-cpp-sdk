@@ -82,6 +82,17 @@ void DescribeSmartAccessGatewayVersionsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeSmartAccessGatewayVersionsRequest::getVersionType()const
+{
+	return versionType_;
+}
+
+void DescribeSmartAccessGatewayVersionsRequest::setVersionType(const std::string& versionType)
+{
+	versionType_ = versionType;
+	setParameter("VersionType", versionType);
+}
+
 std::string DescribeSmartAccessGatewayVersionsRequest::getSmartAGId()const
 {
 	return smartAGId_;
@@ -91,5 +102,16 @@ void DescribeSmartAccessGatewayVersionsRequest::setSmartAGId(const std::string& 
 {
 	smartAGId_ = smartAGId;
 	setParameter("SmartAGId", smartAGId);
+}
+
+std::string DescribeSmartAccessGatewayVersionsRequest::getSmartAGSn()const
+{
+	return smartAGSn_;
+}
+
+void DescribeSmartAccessGatewayVersionsRequest::setSmartAGSn(const std::string& smartAGSn)
+{
+	smartAGSn_ = smartAGSn;
+	setParameter("SmartAGSn", smartAGSn);
 }
 

@@ -104,6 +104,17 @@ void DescribeSmartAccessGatewaysRequest::setVersionComparator(const std::string&
 	setParameter("VersionComparator", versionComparator);
 }
 
+std::string DescribeSmartAccessGatewaysRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSmartAccessGatewaysRequest::getRegionId()const
 {
 	return regionId_;
@@ -146,6 +157,19 @@ void DescribeSmartAccessGatewaysRequest::setHardwareType(const std::string& hard
 {
 	hardwareType_ = hardwareType;
 	setParameter("HardwareType", hardwareType);
+}
+
+std::vector<std::string> DescribeSmartAccessGatewaysRequest::getSmartAGIds()const
+{
+	return smartAGIds_;
+}
+
+void DescribeSmartAccessGatewaysRequest::setSmartAGIds(const std::vector<std::string>& smartAGIds)
+{
+	smartAGIds_ = smartAGIds;
+	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++) {
+		setParameter("SmartAGIds."+ std::to_string(dep1), smartAGIds.at(dep1));
+	}
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getSerialNumber()const

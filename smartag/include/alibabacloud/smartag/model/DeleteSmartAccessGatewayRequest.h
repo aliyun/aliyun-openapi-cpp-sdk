@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				DeleteSmartAccessGatewayRequest();
 				~DeleteSmartAccessGatewayRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 
             private:
+				long resourceOwnerId_;
 				std::string instanceId_;
 				std::string regionId_;
 

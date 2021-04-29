@@ -43,86 +43,108 @@ void DescribeSmartAccessGatewaysResult::parse(const std::string &payload)
 	for (auto valueSmartAccessGatewaysSmartAccessGateway : allSmartAccessGatewaysNode)
 	{
 		SmartAccessGateway smartAccessGatewaysObject;
-		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].isNull())
-			smartAccessGatewaysObject.smartAGId = valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["Name"].isNull())
-			smartAccessGatewaysObject.name = valueSmartAccessGatewaysSmartAccessGateway["Name"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["City"].isNull())
-			smartAccessGatewaysObject.city = valueSmartAccessGatewaysSmartAccessGateway["City"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["MaxBandwidth"].isNull())
-			smartAccessGatewaysObject.maxBandwidth = valueSmartAccessGatewaysSmartAccessGateway["MaxBandwidth"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["Status"].isNull())
-			smartAccessGatewaysObject.status = valueSmartAccessGatewaysSmartAccessGateway["Status"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["CidrBlock"].isNull())
-			smartAccessGatewaysObject.cidrBlock = valueSmartAccessGatewaysSmartAccessGateway["CidrBlock"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnId"].isNull())
-			smartAccessGatewaysObject.associatedCcnId = valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnId"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnName"].isNull())
-			smartAccessGatewaysObject.associatedCcnName = valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnName"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["Description"].isNull())
 			smartAccessGatewaysObject.description = valueSmartAccessGatewaysSmartAccessGateway["Description"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].isNull())
-			smartAccessGatewaysObject.createTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].asString());
-		if(!valueSmartAccessGatewaysSmartAccessGateway["EndTime"].isNull())
-			smartAccessGatewaysObject.endTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["EndTime"].asString());
-		if(!valueSmartAccessGatewaysSmartAccessGateway["SoftwareVersion"].isNull())
-			smartAccessGatewaysObject.softwareVersion = valueSmartAccessGatewaysSmartAccessGateway["SoftwareVersion"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["HardwareVersion"].isNull())
-			smartAccessGatewaysObject.hardwareVersion = valueSmartAccessGatewaysSmartAccessGateway["HardwareVersion"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["SerialNumber"].isNull())
-			smartAccessGatewaysObject.serialNumber = valueSmartAccessGatewaysSmartAccessGateway["SerialNumber"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["SecurityLockThreshold"].isNull())
-			smartAccessGatewaysObject.securityLockThreshold = std::stoi(valueSmartAccessGatewaysSmartAccessGateway["SecurityLockThreshold"].asString());
-		if(!valueSmartAccessGatewaysSmartAccessGateway["AclIds"].isNull())
-			smartAccessGatewaysObject.aclIds = valueSmartAccessGatewaysSmartAccessGateway["AclIds"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["DataPlan"].isNull())
-			smartAccessGatewaysObject.dataPlan = std::stol(valueSmartAccessGatewaysSmartAccessGateway["DataPlan"].asString());
-		if(!valueSmartAccessGatewaysSmartAccessGateway["UserCount"].isNull())
-			smartAccessGatewaysObject.userCount = std::stoi(valueSmartAccessGatewaysSmartAccessGateway["UserCount"].asString());
-		if(!valueSmartAccessGatewaysSmartAccessGateway["RoutingStrategy"].isNull())
-			smartAccessGatewaysObject.routingStrategy = valueSmartAccessGatewaysSmartAccessGateway["RoutingStrategy"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["UpBandwidthWan"].isNull())
-			smartAccessGatewaysObject.upBandwidthWan = std::stoi(valueSmartAccessGatewaysSmartAccessGateway["UpBandwidthWan"].asString());
 		if(!valueSmartAccessGatewaysSmartAccessGateway["UpBandwidth4G"].isNull())
 			smartAccessGatewaysObject.upBandwidth4G = std::stoi(valueSmartAccessGatewaysSmartAccessGateway["UpBandwidth4G"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["ResourceGroupId"].isNull())
+			smartAccessGatewaysObject.resourceGroupId = valueSmartAccessGatewaysSmartAccessGateway["ResourceGroupId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["EndTime"].isNull())
+			smartAccessGatewaysObject.endTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["EndTime"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["UserCount"].isNull())
+			smartAccessGatewaysObject.userCount = std::stoi(valueSmartAccessGatewaysSmartAccessGateway["UserCount"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["VpnStatus"].isNull())
+			smartAccessGatewaysObject.vpnStatus = valueSmartAccessGatewaysSmartAccessGateway["VpnStatus"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["MaxBandwidth"].isNull())
+			smartAccessGatewaysObject.maxBandwidth = valueSmartAccessGatewaysSmartAccessGateway["MaxBandwidth"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnName"].isNull())
+			smartAccessGatewaysObject.associatedCcnName = valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnName"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["DpiMonitorStatus"].isNull())
+			smartAccessGatewaysObject.dpiMonitorStatus = valueSmartAccessGatewaysSmartAccessGateway["DpiMonitorStatus"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["CidrBlock"].isNull())
+			smartAccessGatewaysObject.cidrBlock = valueSmartAccessGatewaysSmartAccessGateway["CidrBlock"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["QosIds"].isNull())
 			smartAccessGatewaysObject.qosIds = valueSmartAccessGatewaysSmartAccessGateway["QosIds"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["UpBandwidthWan"].isNull())
+			smartAccessGatewaysObject.upBandwidthWan = std::stoi(valueSmartAccessGatewaysSmartAccessGateway["UpBandwidthWan"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["Name"].isNull())
+			smartAccessGatewaysObject.name = valueSmartAccessGatewaysSmartAccessGateway["Name"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["IpsecStatus"].isNull())
+			smartAccessGatewaysObject.ipsecStatus = valueSmartAccessGatewaysSmartAccessGateway["IpsecStatus"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["RoutingStrategy"].isNull())
+			smartAccessGatewaysObject.routingStrategy = valueSmartAccessGatewaysSmartAccessGateway["RoutingStrategy"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnId"].isNull())
+			smartAccessGatewaysObject.associatedCcnId = valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnId"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["BackupSoftwareVersion"].isNull())
 			smartAccessGatewaysObject.backupSoftwareVersion = valueSmartAccessGatewaysSmartAccessGateway["BackupSoftwareVersion"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].isNull())
+			smartAccessGatewaysObject.smartAGId = valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["DpiStatus"].isNull())
+			smartAccessGatewaysObject.dpiStatus = valueSmartAccessGatewaysSmartAccessGateway["DpiStatus"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["EnterpriseCode"].isNull())
+			smartAccessGatewaysObject.enterpriseCode = valueSmartAccessGatewaysSmartAccessGateway["EnterpriseCode"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SecurityLockThreshold"].isNull())
+			smartAccessGatewaysObject.securityLockThreshold = std::stoi(valueSmartAccessGatewaysSmartAccessGateway["SecurityLockThreshold"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["ResellerUid"].isNull())
+			smartAccessGatewaysObject.resellerUid = valueSmartAccessGatewaysSmartAccessGateway["ResellerUid"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["Status"].isNull())
+			smartAccessGatewaysObject.status = valueSmartAccessGatewaysSmartAccessGateway["Status"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["IdaasId"].isNull())
+			smartAccessGatewaysObject.idaasId = valueSmartAccessGatewaysSmartAccessGateway["IdaasId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["IdaasApplicationId"].isNull())
+			smartAccessGatewaysObject.idaasApplicationId = valueSmartAccessGatewaysSmartAccessGateway["IdaasApplicationId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].isNull())
+			smartAccessGatewaysObject.createTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["DataPlan"].isNull())
+			smartAccessGatewaysObject.dataPlan = std::stol(valueSmartAccessGatewaysSmartAccessGateway["DataPlan"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["City"].isNull())
+			smartAccessGatewaysObject.city = valueSmartAccessGatewaysSmartAccessGateway["City"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["HardwareVersion"].isNull())
+			smartAccessGatewaysObject.hardwareVersion = valueSmartAccessGatewaysSmartAccessGateway["HardwareVersion"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGUid"].isNull())
 			smartAccessGatewaysObject.smartAGUid = std::stol(valueSmartAccessGatewaysSmartAccessGateway["SmartAGUid"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["ResellerInstanceId"].isNull())
+			smartAccessGatewaysObject.resellerInstanceId = valueSmartAccessGatewaysSmartAccessGateway["ResellerInstanceId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SoftwareVersion"].isNull())
+			smartAccessGatewaysObject.softwareVersion = valueSmartAccessGatewaysSmartAccessGateway["SoftwareVersion"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SerialNumber"].isNull())
+			smartAccessGatewaysObject.serialNumber = valueSmartAccessGatewaysSmartAccessGateway["SerialNumber"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["AccessPointId"].isNull())
+			smartAccessGatewaysObject.accessPointId = valueSmartAccessGatewaysSmartAccessGateway["AccessPointId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["AclIds"].isNull())
+			smartAccessGatewaysObject.aclIds = valueSmartAccessGatewaysSmartAccessGateway["AclIds"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["BackupStatus"].isNull())
 			smartAccessGatewaysObject.backupStatus = valueSmartAccessGatewaysSmartAccessGateway["BackupStatus"].asString();
-		auto allLinksNode = allSmartAccessGatewaysNode["Links"]["Link"];
-		for (auto allSmartAccessGatewaysNodeLinksLink : allLinksNode)
+		auto allLinksNode = valueSmartAccessGatewaysSmartAccessGateway["Links"]["Link"];
+		for (auto valueSmartAccessGatewaysSmartAccessGatewayLinksLink : allLinksNode)
 		{
 			SmartAccessGateway::Link linksObject;
-			if(!allSmartAccessGatewaysNodeLinksLink["InstanceId"].isNull())
-				linksObject.instanceId = allSmartAccessGatewaysNodeLinksLink["InstanceId"].asString();
-			if(!allSmartAccessGatewaysNodeLinksLink["Type"].isNull())
-				linksObject.type = allSmartAccessGatewaysNodeLinksLink["Type"].asString();
-			if(!allSmartAccessGatewaysNodeLinksLink["Status"].isNull())
-				linksObject.status = allSmartAccessGatewaysNodeLinksLink["Status"].asString();
-			if(!allSmartAccessGatewaysNodeLinksLink["EndTime"].isNull())
-				linksObject.endTime = std::stol(allSmartAccessGatewaysNodeLinksLink["EndTime"].asString());
-			if(!allSmartAccessGatewaysNodeLinksLink["Bandwidth"].isNull())
-				linksObject.bandwidth = allSmartAccessGatewaysNodeLinksLink["Bandwidth"].asString();
-			if(!allSmartAccessGatewaysNodeLinksLink["RelateInstanceId"].isNull())
-				linksObject.relateInstanceId = allSmartAccessGatewaysNodeLinksLink["RelateInstanceId"].asString();
-			if(!allSmartAccessGatewaysNodeLinksLink["RelateInstanceRegionId"].isNull())
-				linksObject.relateInstanceRegionId = allSmartAccessGatewaysNodeLinksLink["RelateInstanceRegionId"].asString();
-			if(!allSmartAccessGatewaysNodeLinksLink["CommodityType"].isNull())
-				linksObject.commodityType = allSmartAccessGatewaysNodeLinksLink["CommodityType"].asString();
+			if(!valueSmartAccessGatewaysSmartAccessGatewayLinksLink["Status"].isNull())
+				linksObject.status = valueSmartAccessGatewaysSmartAccessGatewayLinksLink["Status"].asString();
+			if(!valueSmartAccessGatewaysSmartAccessGatewayLinksLink["Type"].isNull())
+				linksObject.type = valueSmartAccessGatewaysSmartAccessGatewayLinksLink["Type"].asString();
+			if(!valueSmartAccessGatewaysSmartAccessGatewayLinksLink["EndTime"].isNull())
+				linksObject.endTime = std::stol(valueSmartAccessGatewaysSmartAccessGatewayLinksLink["EndTime"].asString());
+			if(!valueSmartAccessGatewaysSmartAccessGatewayLinksLink["InstanceId"].isNull())
+				linksObject.instanceId = valueSmartAccessGatewaysSmartAccessGatewayLinksLink["InstanceId"].asString();
+			if(!valueSmartAccessGatewaysSmartAccessGatewayLinksLink["RelateInstanceId"].isNull())
+				linksObject.relateInstanceId = valueSmartAccessGatewaysSmartAccessGatewayLinksLink["RelateInstanceId"].asString();
+			if(!valueSmartAccessGatewaysSmartAccessGatewayLinksLink["Bandwidth"].isNull())
+				linksObject.bandwidth = valueSmartAccessGatewaysSmartAccessGatewayLinksLink["Bandwidth"].asString();
+			if(!valueSmartAccessGatewaysSmartAccessGatewayLinksLink["CommodityType"].isNull())
+				linksObject.commodityType = valueSmartAccessGatewaysSmartAccessGatewayLinksLink["CommodityType"].asString();
+			if(!valueSmartAccessGatewaysSmartAccessGatewayLinksLink["RelateInstanceRegionId"].isNull())
+				linksObject.relateInstanceRegionId = valueSmartAccessGatewaysSmartAccessGatewayLinksLink["RelateInstanceRegionId"].asString();
 			smartAccessGatewaysObject.links.push_back(linksObject);
 		}
 		smartAccessGateways_.push_back(smartAccessGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

@@ -93,6 +93,17 @@ void DescribeSmartAccessGatewayClientUsersRequest::setOwnerAccount(const std::st
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeSmartAccessGatewayClientUsersRequest::getUserMail()const
+{
+	return userMail_;
+}
+
+void DescribeSmartAccessGatewayClientUsersRequest::setUserMail(const std::string& userMail)
+{
+	userMail_ = userMail;
+	setParameter("UserMail", userMail);
+}
+
 long DescribeSmartAccessGatewayClientUsersRequest::getOwnerId()const
 {
 	return ownerId_;

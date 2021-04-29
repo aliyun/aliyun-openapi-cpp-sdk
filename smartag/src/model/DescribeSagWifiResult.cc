@@ -45,30 +45,30 @@ void DescribeSagWifiResult::parse(const std::string &payload)
 		TaskState taskStatesObject;
 		if(!valueTaskStatesTaskState["State"].isNull())
 			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
 			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 	if(!value["IsEnable"].isNull())
 		isEnable_ = value["IsEnable"].asString();
-	if(!value["Ssid"].isNull())
-		ssid_ = value["Ssid"].asString();
-	if(!value["IsBroadcast"].isNull())
-		isBroadcast_ = value["IsBroadcast"].asString();
 	if(!value["Channel"].isNull())
 		channel_ = value["Channel"].asString();
 	if(!value["Bandwidth"].isNull())
 		bandwidth_ = value["Bandwidth"].asString();
 	if(!value["IsAuth"].isNull())
 		isAuth_ = value["IsAuth"].asString();
-	if(!value["AuthenticationType"].isNull())
-		authenticationType_ = value["AuthenticationType"].asString();
+	if(!value["Ssid"].isNull())
+		ssid_ = value["Ssid"].asString();
+	if(!value["IsBroadcast"].isNull())
+		isBroadcast_ = value["IsBroadcast"].asString();
 	if(!value["EncryptAlgorithm"].isNull())
 		encryptAlgorithm_ = value["EncryptAlgorithm"].asString();
+	if(!value["AuthenticationType"].isNull())
+		authenticationType_ = value["AuthenticationType"].asString();
 
 }
 
@@ -107,13 +107,13 @@ std::string DescribeSagWifiResult::getIsBroadcast()const
 	return isBroadcast_;
 }
 
-std::string DescribeSagWifiResult::getAuthenticationType()const
-{
-	return authenticationType_;
-}
-
 std::string DescribeSagWifiResult::getEncryptAlgorithm()const
 {
 	return encryptAlgorithm_;
+}
+
+std::string DescribeSagWifiResult::getAuthenticationType()const
+{
+	return authenticationType_;
 }
 

@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					long gmtCreate;
 					long cenUid;
+					bool grantTrafficService;
 					std::string ccnInstanceId;
 					std::string grantRuleId;
 					std::string cenInstanceId;

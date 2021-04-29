@@ -43,14 +43,14 @@ void DescribePbrInterfacesResult::parse(const std::string &payload)
 	for (auto valuePbrInterfacesPbrInterface : allPbrInterfacesNode)
 	{
 		PbrInterface pbrInterfacesObject;
-		if(!valuePbrInterfacesPbrInterface["InterfaceName"].isNull())
-			pbrInterfacesObject.interfaceName = valuePbrInterfacesPbrInterface["InterfaceName"].asString();
-		if(!valuePbrInterfacesPbrInterface["HealthCheckInstanceId"].isNull())
-			pbrInterfacesObject.healthCheckInstanceId = valuePbrInterfacesPbrInterface["HealthCheckInstanceId"].asString();
-		if(!valuePbrInterfacesPbrInterface["Priority"].isNull())
-			pbrInterfacesObject.priority = std::stoi(valuePbrInterfacesPbrInterface["Priority"].asString());
 		if(!valuePbrInterfacesPbrInterface["Action"].isNull())
 			pbrInterfacesObject.action = valuePbrInterfacesPbrInterface["Action"].asString();
+		if(!valuePbrInterfacesPbrInterface["Priority"].isNull())
+			pbrInterfacesObject.priority = std::stoi(valuePbrInterfacesPbrInterface["Priority"].asString());
+		if(!valuePbrInterfacesPbrInterface["HealthCheckInstanceId"].isNull())
+			pbrInterfacesObject.healthCheckInstanceId = valuePbrInterfacesPbrInterface["HealthCheckInstanceId"].asString();
+		if(!valuePbrInterfacesPbrInterface["InterfaceName"].isNull())
+			pbrInterfacesObject.interfaceName = valuePbrInterfacesPbrInterface["InterfaceName"].asString();
 		pbrInterfaces_.push_back(pbrInterfacesObject);
 	}
 	if(!value["TotalCount"].isNull())

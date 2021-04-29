@@ -45,10 +45,10 @@ void DescribeRegionsResult::parse(const std::string &payload)
 		Region regionsObject;
 		if(!valueRegionsRegion["RegionId"].isNull())
 			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
-		if(!valueRegionsRegion["LocalName"].isNull())
-			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
 		if(!valueRegionsRegion["RegionEndpoint"].isNull())
 			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
+		if(!valueRegionsRegion["LocalName"].isNull())
+			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
 		regions_.push_back(regionsObject);
 	}
 

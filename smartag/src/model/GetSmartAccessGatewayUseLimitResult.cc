@@ -39,10 +39,10 @@ void GetSmartAccessGatewayUseLimitResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TotalAmount"].isNull())
-		totalAmount_ = std::stoi(value["TotalAmount"].asString());
 	if(!value["UsedAmount"].isNull())
 		usedAmount_ = std::stoi(value["UsedAmount"].asString());
+	if(!value["TotalAmount"].isNull())
+		totalAmount_ = std::stoi(value["TotalAmount"].asString());
 
 }
 

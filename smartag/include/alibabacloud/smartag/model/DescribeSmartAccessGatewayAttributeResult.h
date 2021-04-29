@@ -40,15 +40,18 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string relateInstanceId;
 					std::string bandwidth;
-					std::string relateInstanceRegionId;
 					std::string commodityType;
+					std::string relateInstanceRegionId;
 					std::string healthCheckTargetIp;
 				};
 				struct Device
 				{
 					std::string monitorVersion;
-					long softwareVersion;
+					std::string secretKey;
+					std::string softwareVersion;
 					std::string serialNumber;
+					int distributeSkStatus;
+					std::string dpiSignatureDbVersion;
 					std::string haState;
 					std::string hcState;
 				};
@@ -59,11 +62,12 @@ namespace AlibabaCloud
 				~DescribeSmartAccessGatewayAttributeResult();
 				std::string getDescription()const;
 				int getUpBandwidth4G()const;
+				std::string getResourceGroupId()const;
 				long getEndTime()const;
 				int getUserCount()const;
+				std::string getVpnStatus()const;
 				std::string getMaxBandwidth()const;
 				std::string getAssociatedCcnName()const;
-				std::string getVpnStatus()const;
 				std::string getBoxControllerIp()const;
 				std::vector<std::string> getQosIds()const;
 				std::string getCidrBlock()const;
@@ -75,17 +79,20 @@ namespace AlibabaCloud
 				std::string getRoutingStrategy()const;
 				std::vector<std::string> getFlowLogIds()const;
 				std::string getAssociatedCcnId()const;
-				std::string getSmartAGId()const;
 				std::string getInstanceType()const;
+				std::string getSmartAGId()const;
 				int getSecurityLockThreshold()const;
+				std::string getResellerUid()const;
 				std::string getStatus()const;
 				long getCreateTime()const;
 				long getDataPlan()const;
 				bool getEnableOptimization()const;
 				std::string getCity()const;
-				std::string getSerialNumber()const;
+				std::string getResellerInstanceId()const;
 				std::string getBackupBoxControllerIp()const;
+				std::string getSerialNumber()const;
 				std::string getTrafficMasterSn()const;
+				std::string getAccessPointId()const;
 				std::vector<Link> getLinks()const;
 				std::vector<std::string> getAclIds()const;
 
@@ -94,11 +101,12 @@ namespace AlibabaCloud
 			private:
 				std::string description_;
 				int upBandwidth4G_;
+				std::string resourceGroupId_;
 				long endTime_;
 				int userCount_;
+				std::string vpnStatus_;
 				std::string maxBandwidth_;
 				std::string associatedCcnName_;
-				std::string vpnStatus_;
 				std::string boxControllerIp_;
 				std::vector<std::string> qosIds_;
 				std::string cidrBlock_;
@@ -110,17 +118,20 @@ namespace AlibabaCloud
 				std::string routingStrategy_;
 				std::vector<std::string> flowLogIds_;
 				std::string associatedCcnId_;
-				std::string smartAGId_;
 				std::string instanceType_;
+				std::string smartAGId_;
 				int securityLockThreshold_;
+				std::string resellerUid_;
 				std::string status_;
 				long createTime_;
 				long dataPlan_;
 				bool enableOptimization_;
 				std::string city_;
-				std::string serialNumber_;
+				std::string resellerInstanceId_;
 				std::string backupBoxControllerIp_;
+				std::string serialNumber_;
 				std::string trafficMasterSn_;
+				std::string accessPointId_;
 				std::vector<Link> links_;
 				std::vector<std::string> aclIds_;
 

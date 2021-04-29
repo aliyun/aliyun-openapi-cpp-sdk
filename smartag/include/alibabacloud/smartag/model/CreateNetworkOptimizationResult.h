@@ -38,15 +38,15 @@ namespace AlibabaCloud
 				explicit CreateNetworkOptimizationResult(const std::string &payload);
 				~CreateNetworkOptimizationResult();
 				std::string getState()const;
-				std::string getNetworkOptId()const;
 				std::string getName()const;
+				std::string getNetworkOptId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string state_;
-				std::string networkOptId_;
 				std::string name_;
+				std::string networkOptId_;
 
 			};
 		}

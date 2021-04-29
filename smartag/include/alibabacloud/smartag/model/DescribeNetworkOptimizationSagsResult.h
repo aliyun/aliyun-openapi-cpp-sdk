@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					long endTime;
 					std::string instanceId;
 					std::string state;
-					long createTime;
 					std::string maxBandwidth;
+					long createTime;
 					std::string name;
 				};
 

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string srcPort;
 					std::string description;
 					std::string srcCidr;
-					std::string pbrRuleId;
 					std::string dstPort;
+					std::string pbrRuleId;
 					std::string protocol;
 					std::string dstCidr;
 					std::string name;

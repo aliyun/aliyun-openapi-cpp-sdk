@@ -104,6 +104,17 @@ void UpdateSmartAccessGatewayVersionRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string UpdateSmartAccessGatewayVersionRequest::getVersionType()const
+{
+	return versionType_;
+}
+
+void UpdateSmartAccessGatewayVersionRequest::setVersionType(const std::string& versionType)
+{
+	versionType_ = versionType;
+	setParameter("VersionType", versionType);
+}
+
 std::string UpdateSmartAccessGatewayVersionRequest::getSmartAGId()const
 {
 	return smartAGId_;

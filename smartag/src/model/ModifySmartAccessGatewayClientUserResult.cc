@@ -39,14 +39,14 @@ void ModifySmartAccessGatewayClientUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ClientIp"].isNull())
-		clientIp_ = value["ClientIp"].asString();
-	if(!value["UserMail"].isNull())
-		userMail_ = value["UserMail"].asString();
 	if(!value["UserName"].isNull())
 		userName_ = value["UserName"].asString();
+	if(!value["UserMail"].isNull())
+		userMail_ = value["UserMail"].asString();
 	if(!value["Bandwidth"].isNull())
 		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["ClientIp"].isNull())
+		clientIp_ = value["ClientIp"].asString();
 
 }
 

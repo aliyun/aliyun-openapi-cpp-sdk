@@ -27,6 +27,19 @@ ModifyQosPolicyRequest::ModifyQosPolicyRequest() :
 ModifyQosPolicyRequest::~ModifyQosPolicyRequest()
 {}
 
+std::vector<std::string> ModifyQosPolicyRequest::getDpiGroupIds()const
+{
+	return dpiGroupIds_;
+}
+
+void ModifyQosPolicyRequest::setDpiGroupIds(const std::vector<std::string>& dpiGroupIds)
+{
+	dpiGroupIds_ = dpiGroupIds;
+	for(int dep1 = 0; dep1!= dpiGroupIds.size(); dep1++) {
+		setParameter("DpiGroupIds."+ std::to_string(dep1), dpiGroupIds.at(dep1));
+	}
+}
+
 long ModifyQosPolicyRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -102,6 +115,19 @@ void ModifyQosPolicyRequest::setDestCidr(const std::string& destCidr)
 {
 	destCidr_ = destCidr;
 	setParameter("DestCidr", destCidr);
+}
+
+std::vector<std::string> ModifyQosPolicyRequest::getDpiSignatureIds()const
+{
+	return dpiSignatureIds_;
+}
+
+void ModifyQosPolicyRequest::setDpiSignatureIds(const std::vector<std::string>& dpiSignatureIds)
+{
+	dpiSignatureIds_ = dpiSignatureIds;
+	for(int dep1 = 0; dep1!= dpiSignatureIds.size(); dep1++) {
+		setParameter("DpiSignatureIds."+ std::to_string(dep1), dpiSignatureIds.at(dep1));
+	}
 }
 
 std::string ModifyQosPolicyRequest::getRegionId()const

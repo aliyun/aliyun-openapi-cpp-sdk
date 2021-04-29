@@ -38,6 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeSagWan4GResult(const std::string &payload);
 				~DescribeSagWan4GResult();
 				std::string getStatus()const;
+				std::string getTrafficState()const;
+				int getPriority()const;
 				std::string getIp()const;
 				std::string getMac()const;
 				std::string getStrength()const;
@@ -46,6 +48,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				std::string trafficState_;
+				int priority_;
 				std::string ip_;
 				std::string mac_;
 				std::string strength_;

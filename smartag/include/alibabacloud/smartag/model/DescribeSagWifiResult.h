@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				std::vector<TaskState> getTaskStates()const;
 				std::string getSsid()const;
 				std::string getIsBroadcast()const;
-				std::string getAuthenticationType()const;
 				std::string getEncryptAlgorithm()const;
+				std::string getAuthenticationType()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -64,8 +64,8 @@ namespace AlibabaCloud
 				std::vector<TaskState> taskStates_;
 				std::string ssid_;
 				std::string isBroadcast_;
-				std::string authenticationType_;
 				std::string encryptAlgorithm_;
+				std::string authenticationType_;
 
 			};
 		}

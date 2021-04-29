@@ -43,38 +43,38 @@ void DescribeRouteDistributionStrategiesResult::parse(const std::string &payload
 	for (auto valueStrategiesStrategy : allStrategiesNode)
 	{
 		Strategy strategiesObject;
-		if(!valueStrategiesStrategy["CreateTime"].isNull())
-			strategiesObject.createTime = std::stol(valueStrategiesStrategy["CreateTime"].asString());
-		if(!valueStrategiesStrategy["InstanceId"].isNull())
-			strategiesObject.instanceId = valueStrategiesStrategy["InstanceId"].asString();
-		if(!valueStrategiesStrategy["SmartAGId"].isNull())
-			strategiesObject.smartAGId = valueStrategiesStrategy["SmartAGId"].asString();
-		if(!valueStrategiesStrategy["HcInstanceId"].isNull())
-			strategiesObject.hcInstanceId = valueStrategiesStrategy["HcInstanceId"].asString();
-		if(!valueStrategiesStrategy["SourceType"].isNull())
-			strategiesObject.sourceType = valueStrategiesStrategy["SourceType"].asString();
-		if(!valueStrategiesStrategy["DestCidrBlock"].isNull())
-			strategiesObject.destCidrBlock = valueStrategiesStrategy["DestCidrBlock"].asString();
-		if(!valueStrategiesStrategy["RouteSource"].isNull())
-			strategiesObject.routeSource = valueStrategiesStrategy["RouteSource"].asString();
-		if(!valueStrategiesStrategy["RouteDistribution"].isNull())
-			strategiesObject.routeDistribution = valueStrategiesStrategy["RouteDistribution"].asString();
 		if(!valueStrategiesStrategy["Status"].isNull())
 			strategiesObject.status = valueStrategiesStrategy["Status"].asString();
+		if(!valueStrategiesStrategy["InstanceId"].isNull())
+			strategiesObject.instanceId = valueStrategiesStrategy["InstanceId"].asString();
+		if(!valueStrategiesStrategy["HcInstanceId"].isNull())
+			strategiesObject.hcInstanceId = valueStrategiesStrategy["HcInstanceId"].asString();
+		if(!valueStrategiesStrategy["RouteSource"].isNull())
+			strategiesObject.routeSource = valueStrategiesStrategy["RouteSource"].asString();
+		if(!valueStrategiesStrategy["SourceType"].isNull())
+			strategiesObject.sourceType = valueStrategiesStrategy["SourceType"].asString();
+		if(!valueStrategiesStrategy["CreateTime"].isNull())
+			strategiesObject.createTime = std::stol(valueStrategiesStrategy["CreateTime"].asString());
+		if(!valueStrategiesStrategy["RouteDistribution"].isNull())
+			strategiesObject.routeDistribution = valueStrategiesStrategy["RouteDistribution"].asString();
 		if(!valueStrategiesStrategy["IsConflict"].isNull())
 			strategiesObject.isConflict = valueStrategiesStrategy["IsConflict"].asString() == "true";
+		if(!valueStrategiesStrategy["SmartAGId"].isNull())
+			strategiesObject.smartAGId = valueStrategiesStrategy["SmartAGId"].asString();
 		if(!valueStrategiesStrategy["StrategyPublishStatus"].isNull())
 			strategiesObject.strategyPublishStatus = valueStrategiesStrategy["StrategyPublishStatus"].asString();
 		if(!valueStrategiesStrategy["ConflictInfo"].isNull())
 			strategiesObject.conflictInfo = valueStrategiesStrategy["ConflictInfo"].asString();
+		if(!valueStrategiesStrategy["DestCidrBlock"].isNull())
+			strategiesObject.destCidrBlock = valueStrategiesStrategy["DestCidrBlock"].asString();
 		strategies_.push_back(strategiesObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

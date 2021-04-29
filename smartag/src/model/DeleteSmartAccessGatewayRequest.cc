@@ -27,6 +27,17 @@ DeleteSmartAccessGatewayRequest::DeleteSmartAccessGatewayRequest() :
 DeleteSmartAccessGatewayRequest::~DeleteSmartAccessGatewayRequest()
 {}
 
+long DeleteSmartAccessGatewayRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DeleteSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
 std::string DeleteSmartAccessGatewayRequest::getInstanceId()const
 {
 	return instanceId_;

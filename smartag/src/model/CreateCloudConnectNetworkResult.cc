@@ -39,18 +39,18 @@ void CreateCloudConnectNetworkResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CcnId"].isNull())
-		ccnId_ = value["CcnId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["SnatCidrBlock"].isNull())
-		snatCidrBlock_ = value["SnatCidrBlock"].asString();
+	if(!value["CcnId"].isNull())
+		ccnId_ = value["CcnId"].asString();
 	if(!value["CidrBlock"].isNull())
 		cidrBlock_ = value["CidrBlock"].asString();
+	if(!value["SnatCidrBlock"].isNull())
+		snatCidrBlock_ = value["SnatCidrBlock"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 

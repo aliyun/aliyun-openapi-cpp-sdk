@@ -39,22 +39,22 @@ void DescribeSAGDeviceInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ControllerState"].isNull())
+		controllerState_ = value["ControllerState"].asString();
+	if(!value["ServiceIP"].isNull())
+		serviceIP_ = value["ServiceIP"].asString();
+	if(!value["SmartAGType"].isNull())
+		smartAGType_ = value["SmartAGType"].asString();
+	if(!value["SynStatus"].isNull())
+		synStatus_ = value["SynStatus"].asString();
 	if(!value["Version"].isNull())
 		version_ = value["Version"].asString();
 	if(!value["VpnState"].isNull())
 		vpnState_ = value["VpnState"].asString();
-	if(!value["SmartAGType"].isNull())
-		smartAGType_ = value["SmartAGType"].asString();
-	if(!value["ControllerState"].isNull())
-		controllerState_ = value["ControllerState"].asString();
 	if(!value["StartupTime"].isNull())
 		startupTime_ = value["StartupTime"].asString();
 	if(!value["LastConnectedControllerTime"].isNull())
 		lastConnectedControllerTime_ = value["LastConnectedControllerTime"].asString();
-	if(!value["ServiceIP"].isNull())
-		serviceIP_ = value["ServiceIP"].asString();
-	if(!value["SynStatus"].isNull())
-		synStatus_ = value["SynStatus"].asString();
 
 }
 

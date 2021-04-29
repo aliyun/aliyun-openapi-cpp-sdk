@@ -39,10 +39,10 @@ void DescribeSagCurrentDnsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["MasterDns"].isNull())
-		masterDns_ = value["MasterDns"].asString();
 	if(!value["SlaveDns"].isNull())
 		slaveDns_ = value["SlaveDns"].asString();
+	if(!value["MasterDns"].isNull())
+		masterDns_ = value["MasterDns"].asString();
 
 }
 

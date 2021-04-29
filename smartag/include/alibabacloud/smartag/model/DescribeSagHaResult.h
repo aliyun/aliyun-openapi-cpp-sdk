@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Port
 				{
-					std::string portName;
 					std::string virtualIp;
+					std::string portName;
 				};
 				struct TaskState
 				{

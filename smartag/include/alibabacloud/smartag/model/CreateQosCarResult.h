@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				std::string getQosCarId()const;
 				int getPriority()const;
-				int getMaxBandwidthAbs()const;
 				int getMaxBandwidthPercent()const;
+				int getMaxBandwidthAbs()const;
 				std::string getQosId()const;
 				std::string getPercentSourceType()const;
 				int getMinBandwidthPercent()const;
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string qosCarId_;
 				int priority_;
-				int maxBandwidthAbs_;
 				int maxBandwidthPercent_;
+				int maxBandwidthAbs_;
 				std::string qosId_;
 				std::string percentSourceType_;
 				int minBandwidthPercent_;

@@ -43,10 +43,10 @@ void DescribeUnbindFlowLogSagsResult::parse(const std::string &payload)
 	for (auto valueSagsSag : allSagsNode)
 	{
 		Sag sagsObject;
-		if(!valueSagsSag["SmartAGId"].isNull())
-			sagsObject.smartAGId = valueSagsSag["SmartAGId"].asString();
 		if(!valueSagsSag["Description"].isNull())
 			sagsObject.description = valueSagsSag["Description"].asString();
+		if(!valueSagsSag["SmartAGId"].isNull())
+			sagsObject.smartAGId = valueSagsSag["SmartAGId"].asString();
 		if(!valueSagsSag["Name"].isNull())
 			sagsObject.name = valueSagsSag["Name"].asString();
 		sags_.push_back(sagsObject);

@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRole()const;
 				void setRole(const std::string& role);
+				std::string getVlan()const;
+				void setVlan(const std::string& vlan);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string role_;
+				std::string vlan_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

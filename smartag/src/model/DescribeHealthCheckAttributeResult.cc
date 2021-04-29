@@ -39,38 +39,38 @@ void DescribeHealthCheckAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CreateTime"].isNull())
-		createTime_ = std::stol(value["CreateTime"].asString());
-	if(!value["HcInstanceId"].isNull())
-		hcInstanceId_ = value["HcInstanceId"].asString();
-	if(!value["SmartAGId"].isNull())
-		smartAGId_ = value["SmartAGId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["Type"].isNull())
-		type_ = value["Type"].asString();
-	if(!value["DstIpAddr"].isNull())
-		dstIpAddr_ = value["DstIpAddr"].asString();
-	if(!value["DstPort"].isNull())
-		dstPort_ = std::stoi(value["DstPort"].asString());
-	if(!value["SrcIpAddr"].isNull())
-		srcIpAddr_ = value["SrcIpAddr"].asString();
 	if(!value["SrcPort"].isNull())
 		srcPort_ = std::stoi(value["SrcPort"].asString());
-	if(!value["ProbeInterval"].isNull())
-		probeInterval_ = std::stoi(value["ProbeInterval"].asString());
-	if(!value["ProbeCount"].isNull())
-		probeCount_ = std::stoi(value["ProbeCount"].asString());
-	if(!value["ProbeTimeout"].isNull())
-		probeTimeout_ = std::stoi(value["ProbeTimeout"].asString());
-	if(!value["RttThreshold"].isNull())
-		rttThreshold_ = std::stoi(value["RttThreshold"].asString());
-	if(!value["RttFailThreshold"].isNull())
-		rttFailThreshold_ = std::stoi(value["RttFailThreshold"].asString());
+	if(!value["SrcIpAddr"].isNull())
+		srcIpAddr_ = value["SrcIpAddr"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
 	if(!value["FailCountThreshold"].isNull())
 		failCountThreshold_ = std::stoi(value["FailCountThreshold"].asString());
+	if(!value["DstPort"].isNull())
+		dstPort_ = std::stoi(value["DstPort"].asString());
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["ProbeCount"].isNull())
+		probeCount_ = std::stoi(value["ProbeCount"].asString());
+	if(!value["Type"].isNull())
+		type_ = value["Type"].asString();
+	if(!value["ProbeTimeout"].isNull())
+		probeTimeout_ = std::stoi(value["ProbeTimeout"].asString());
+	if(!value["HcInstanceId"].isNull())
+		hcInstanceId_ = value["HcInstanceId"].asString();
+	if(!value["RttThreshold"].isNull())
+		rttThreshold_ = std::stoi(value["RttThreshold"].asString());
+	if(!value["ProbeInterval"].isNull())
+		probeInterval_ = std::stoi(value["ProbeInterval"].asString());
+	if(!value["SmartAGId"].isNull())
+		smartAGId_ = value["SmartAGId"].asString();
+	if(!value["RttFailThreshold"].isNull())
+		rttFailThreshold_ = std::stoi(value["RttFailThreshold"].asString());
+	if(!value["DstIpAddr"].isNull())
+		dstIpAddr_ = value["DstIpAddr"].asString();
 
 }
 

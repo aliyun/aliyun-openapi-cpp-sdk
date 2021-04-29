@@ -43,26 +43,26 @@ void DescribeNetworkOptimizationSagsResult::parse(const std::string &payload)
 	for (auto valueSmartAccessGatewaysSmartAccessGateway : allSmartAccessGatewaysNode)
 	{
 		SmartAccessGateway smartAccessGatewaysObject;
-		if(!valueSmartAccessGatewaysSmartAccessGateway["InstanceId"].isNull())
-			smartAccessGatewaysObject.instanceId = valueSmartAccessGatewaysSmartAccessGateway["InstanceId"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["Name"].isNull())
-			smartAccessGatewaysObject.name = valueSmartAccessGatewaysSmartAccessGateway["Name"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["State"].isNull())
-			smartAccessGatewaysObject.state = valueSmartAccessGatewaysSmartAccessGateway["State"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].isNull())
-			smartAccessGatewaysObject.createTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].asString());
 		if(!valueSmartAccessGatewaysSmartAccessGateway["EndTime"].isNull())
 			smartAccessGatewaysObject.endTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["EndTime"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["InstanceId"].isNull())
+			smartAccessGatewaysObject.instanceId = valueSmartAccessGatewaysSmartAccessGateway["InstanceId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["State"].isNull())
+			smartAccessGatewaysObject.state = valueSmartAccessGatewaysSmartAccessGateway["State"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["MaxBandwidth"].isNull())
 			smartAccessGatewaysObject.maxBandwidth = valueSmartAccessGatewaysSmartAccessGateway["MaxBandwidth"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].isNull())
+			smartAccessGatewaysObject.createTime = std::stol(valueSmartAccessGatewaysSmartAccessGateway["CreateTime"].asString());
+		if(!valueSmartAccessGatewaysSmartAccessGateway["Name"].isNull())
+			smartAccessGatewaysObject.name = valueSmartAccessGatewaysSmartAccessGateway["Name"].asString();
 		smartAccessGateways_.push_back(smartAccessGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

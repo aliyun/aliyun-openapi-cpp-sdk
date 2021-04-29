@@ -43,48 +43,48 @@ void DescribeCloudConnectNetworksResult::parse(const std::string &payload)
 	for (auto valueCloudConnectNetworksCloudConnectNetwork : allCloudConnectNetworksNode)
 	{
 		CloudConnectNetwork cloudConnectNetworksObject;
-		if(!valueCloudConnectNetworksCloudConnectNetwork["CcnId"].isNull())
-			cloudConnectNetworksObject.ccnId = valueCloudConnectNetworksCloudConnectNetwork["CcnId"].asString();
-		if(!valueCloudConnectNetworksCloudConnectNetwork["Name"].isNull())
-			cloudConnectNetworksObject.name = valueCloudConnectNetworksCloudConnectNetwork["Name"].asString();
-		if(!valueCloudConnectNetworksCloudConnectNetwork["AssociatedCloudBoxCount"].isNull())
-			cloudConnectNetworksObject.associatedCloudBoxCount = valueCloudConnectNetworksCloudConnectNetwork["AssociatedCloudBoxCount"].asString();
-		if(!valueCloudConnectNetworksCloudConnectNetwork["AvailableCloudBoxCount"].isNull())
-			cloudConnectNetworksObject.availableCloudBoxCount = valueCloudConnectNetworksCloudConnectNetwork["AvailableCloudBoxCount"].asString();
-		if(!valueCloudConnectNetworksCloudConnectNetwork["AssociatedCenId"].isNull())
-			cloudConnectNetworksObject.associatedCenId = valueCloudConnectNetworksCloudConnectNetwork["AssociatedCenId"].asString();
-		if(!valueCloudConnectNetworksCloudConnectNetwork["AssociatedCenOwnerId"].isNull())
-			cloudConnectNetworksObject.associatedCenOwnerId = valueCloudConnectNetworksCloudConnectNetwork["AssociatedCenOwnerId"].asString();
-		if(!valueCloudConnectNetworksCloudConnectNetwork["Description"].isNull())
-			cloudConnectNetworksObject.description = valueCloudConnectNetworksCloudConnectNetwork["Description"].asString();
-		if(!valueCloudConnectNetworksCloudConnectNetwork["CreateTime"].isNull())
-			cloudConnectNetworksObject.createTime = std::stol(valueCloudConnectNetworksCloudConnectNetwork["CreateTime"].asString());
 		if(!valueCloudConnectNetworksCloudConnectNetwork["IsDefault"].isNull())
 			cloudConnectNetworksObject.isDefault = valueCloudConnectNetworksCloudConnectNetwork["IsDefault"].asString() == "true";
-		if(!valueCloudConnectNetworksCloudConnectNetwork["CidrBlock"].isNull())
-			cloudConnectNetworksObject.cidrBlock = valueCloudConnectNetworksCloudConnectNetwork["CidrBlock"].asString();
-		if(!valueCloudConnectNetworksCloudConnectNetwork["SnatCidrBlock"].isNull())
-			cloudConnectNetworksObject.snatCidrBlock = valueCloudConnectNetworksCloudConnectNetwork["SnatCidrBlock"].asString();
+		if(!valueCloudConnectNetworksCloudConnectNetwork["Description"].isNull())
+			cloudConnectNetworksObject.description = valueCloudConnectNetworksCloudConnectNetwork["Description"].asString();
 		if(!valueCloudConnectNetworksCloudConnectNetwork["InterworkingStatus"].isNull())
 			cloudConnectNetworksObject.interworkingStatus = valueCloudConnectNetworksCloudConnectNetwork["InterworkingStatus"].asString();
-		auto allTagsNode = allCloudConnectNetworksNode["Tags"]["Tag"];
-		for (auto allCloudConnectNetworksNodeTagsTag : allTagsNode)
+		if(!valueCloudConnectNetworksCloudConnectNetwork["AvailableCloudBoxCount"].isNull())
+			cloudConnectNetworksObject.availableCloudBoxCount = valueCloudConnectNetworksCloudConnectNetwork["AvailableCloudBoxCount"].asString();
+		if(!valueCloudConnectNetworksCloudConnectNetwork["CcnId"].isNull())
+			cloudConnectNetworksObject.ccnId = valueCloudConnectNetworksCloudConnectNetwork["CcnId"].asString();
+		if(!valueCloudConnectNetworksCloudConnectNetwork["CreateTime"].isNull())
+			cloudConnectNetworksObject.createTime = std::stol(valueCloudConnectNetworksCloudConnectNetwork["CreateTime"].asString());
+		if(!valueCloudConnectNetworksCloudConnectNetwork["CidrBlock"].isNull())
+			cloudConnectNetworksObject.cidrBlock = valueCloudConnectNetworksCloudConnectNetwork["CidrBlock"].asString();
+		if(!valueCloudConnectNetworksCloudConnectNetwork["AssociatedCenOwnerId"].isNull())
+			cloudConnectNetworksObject.associatedCenOwnerId = valueCloudConnectNetworksCloudConnectNetwork["AssociatedCenOwnerId"].asString();
+		if(!valueCloudConnectNetworksCloudConnectNetwork["AssociatedCenId"].isNull())
+			cloudConnectNetworksObject.associatedCenId = valueCloudConnectNetworksCloudConnectNetwork["AssociatedCenId"].asString();
+		if(!valueCloudConnectNetworksCloudConnectNetwork["SnatCidrBlock"].isNull())
+			cloudConnectNetworksObject.snatCidrBlock = valueCloudConnectNetworksCloudConnectNetwork["SnatCidrBlock"].asString();
+		if(!valueCloudConnectNetworksCloudConnectNetwork["AssociatedCloudBoxCount"].isNull())
+			cloudConnectNetworksObject.associatedCloudBoxCount = valueCloudConnectNetworksCloudConnectNetwork["AssociatedCloudBoxCount"].asString();
+		if(!valueCloudConnectNetworksCloudConnectNetwork["Name"].isNull())
+			cloudConnectNetworksObject.name = valueCloudConnectNetworksCloudConnectNetwork["Name"].asString();
+		auto allTagsNode = valueCloudConnectNetworksCloudConnectNetwork["Tags"]["Tag"];
+		for (auto valueCloudConnectNetworksCloudConnectNetworkTagsTag : allTagsNode)
 		{
 			CloudConnectNetwork::Tag tagsObject;
-			if(!allCloudConnectNetworksNodeTagsTag["Key"].isNull())
-				tagsObject.key = allCloudConnectNetworksNodeTagsTag["Key"].asString();
-			if(!allCloudConnectNetworksNodeTagsTag["Value"].isNull())
-				tagsObject.value = allCloudConnectNetworksNodeTagsTag["Value"].asString();
+			if(!valueCloudConnectNetworksCloudConnectNetworkTagsTag["Value"].isNull())
+				tagsObject.value = valueCloudConnectNetworksCloudConnectNetworkTagsTag["Value"].asString();
+			if(!valueCloudConnectNetworksCloudConnectNetworkTagsTag["Key"].isNull())
+				tagsObject.key = valueCloudConnectNetworksCloudConnectNetworkTagsTag["Key"].asString();
 			cloudConnectNetworksObject.tags.push_back(tagsObject);
 		}
 		cloudConnectNetworks_.push_back(cloudConnectNetworksObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

@@ -71,6 +71,17 @@ void GrantSagInstanceToCcnRequest::setCcnInstanceId(const std::string& ccnInstan
 	setParameter("CcnInstanceId", ccnInstanceId);
 }
 
+bool GrantSagInstanceToCcnRequest::getGrantTrafficService()const
+{
+	return grantTrafficService_;
+}
+
+void GrantSagInstanceToCcnRequest::setGrantTrafficService(bool grantTrafficService)
+{
+	grantTrafficService_ = grantTrafficService;
+	setParameter("GrantTrafficService", grantTrafficService ? "true" : "false");
+}
+
 std::string GrantSagInstanceToCcnRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

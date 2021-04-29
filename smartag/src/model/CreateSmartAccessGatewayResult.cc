@@ -39,14 +39,14 @@ void CreateSmartAccessGatewayResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SmartAGId"].isNull())
-		smartAGId_ = value["SmartAGId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["SmartAGId"].isNull())
+		smartAGId_ = value["SmartAGId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 

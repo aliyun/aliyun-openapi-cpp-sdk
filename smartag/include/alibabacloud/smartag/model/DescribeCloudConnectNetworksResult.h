@@ -44,8 +44,8 @@ namespace AlibabaCloud
 					std::string interworkingStatus;
 					std::string availableCloudBoxCount;
 					long createTime;
-					std::string associatedCenOwnerId;
 					std::string cidrBlock;
+					std::string associatedCenOwnerId;
 					std::string name;
 					std::string ccnId;
 					std::string associatedCenId;

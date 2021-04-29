@@ -43,48 +43,48 @@ void DescribeHealthChecksResult::parse(const std::string &payload)
 	for (auto valueHealthChecksHealthCheck : allHealthChecksNode)
 	{
 		HealthCheck healthChecksObject;
-		if(!valueHealthChecksHealthCheck["HcInstanceId"].isNull())
-			healthChecksObject.hcInstanceId = valueHealthChecksHealthCheck["HcInstanceId"].asString();
-		if(!valueHealthChecksHealthCheck["SmartAGId"].isNull())
-			healthChecksObject.smartAGId = valueHealthChecksHealthCheck["SmartAGId"].asString();
-		if(!valueHealthChecksHealthCheck["Name"].isNull())
-			healthChecksObject.name = valueHealthChecksHealthCheck["Name"].asString();
-		if(!valueHealthChecksHealthCheck["Description"].isNull())
-			healthChecksObject.description = valueHealthChecksHealthCheck["Description"].asString();
-		if(!valueHealthChecksHealthCheck["Type"].isNull())
-			healthChecksObject.type = valueHealthChecksHealthCheck["Type"].asString();
-		if(!valueHealthChecksHealthCheck["DstIpAddr"].isNull())
-			healthChecksObject.dstIpAddr = valueHealthChecksHealthCheck["DstIpAddr"].asString();
-		if(!valueHealthChecksHealthCheck["DstPort"].isNull())
-			healthChecksObject.dstPort = std::stoi(valueHealthChecksHealthCheck["DstPort"].asString());
-		if(!valueHealthChecksHealthCheck["SrcIpAddr"].isNull())
-			healthChecksObject.srcIpAddr = valueHealthChecksHealthCheck["SrcIpAddr"].asString();
-		if(!valueHealthChecksHealthCheck["SrcPort"].isNull())
-			healthChecksObject.srcPort = std::stoi(valueHealthChecksHealthCheck["SrcPort"].asString());
-		if(!valueHealthChecksHealthCheck["ProbeInterval"].isNull())
-			healthChecksObject.probeInterval = std::stoi(valueHealthChecksHealthCheck["ProbeInterval"].asString());
-		if(!valueHealthChecksHealthCheck["ProbeCount"].isNull())
-			healthChecksObject.probeCount = std::stoi(valueHealthChecksHealthCheck["ProbeCount"].asString());
-		if(!valueHealthChecksHealthCheck["ProbeTimeout"].isNull())
-			healthChecksObject.probeTimeout = std::stoi(valueHealthChecksHealthCheck["ProbeTimeout"].asString());
-		if(!valueHealthChecksHealthCheck["RttThreshold"].isNull())
-			healthChecksObject.rttThreshold = std::stoi(valueHealthChecksHealthCheck["RttThreshold"].asString());
-		if(!valueHealthChecksHealthCheck["RttFailThreshold"].isNull())
-			healthChecksObject.rttFailThreshold = std::stoi(valueHealthChecksHealthCheck["RttFailThreshold"].asString());
-		if(!valueHealthChecksHealthCheck["FailCountThreshold"].isNull())
-			healthChecksObject.failCountThreshold = std::stoi(valueHealthChecksHealthCheck["FailCountThreshold"].asString());
-		if(!valueHealthChecksHealthCheck["RelationCount"].isNull())
-			healthChecksObject.relationCount = std::stoi(valueHealthChecksHealthCheck["RelationCount"].asString());
 		if(!valueHealthChecksHealthCheck["Status"].isNull())
 			healthChecksObject.status = valueHealthChecksHealthCheck["Status"].asString();
+		if(!valueHealthChecksHealthCheck["Description"].isNull())
+			healthChecksObject.description = valueHealthChecksHealthCheck["Description"].asString();
+		if(!valueHealthChecksHealthCheck["SrcPort"].isNull())
+			healthChecksObject.srcPort = std::stoi(valueHealthChecksHealthCheck["SrcPort"].asString());
+		if(!valueHealthChecksHealthCheck["SrcIpAddr"].isNull())
+			healthChecksObject.srcIpAddr = valueHealthChecksHealthCheck["SrcIpAddr"].asString();
+		if(!valueHealthChecksHealthCheck["FailCountThreshold"].isNull())
+			healthChecksObject.failCountThreshold = std::stoi(valueHealthChecksHealthCheck["FailCountThreshold"].asString());
+		if(!valueHealthChecksHealthCheck["DstPort"].isNull())
+			healthChecksObject.dstPort = std::stoi(valueHealthChecksHealthCheck["DstPort"].asString());
+		if(!valueHealthChecksHealthCheck["Name"].isNull())
+			healthChecksObject.name = valueHealthChecksHealthCheck["Name"].asString();
+		if(!valueHealthChecksHealthCheck["ProbeCount"].isNull())
+			healthChecksObject.probeCount = std::stoi(valueHealthChecksHealthCheck["ProbeCount"].asString());
+		if(!valueHealthChecksHealthCheck["Type"].isNull())
+			healthChecksObject.type = valueHealthChecksHealthCheck["Type"].asString();
+		if(!valueHealthChecksHealthCheck["ProbeTimeout"].isNull())
+			healthChecksObject.probeTimeout = std::stoi(valueHealthChecksHealthCheck["ProbeTimeout"].asString());
+		if(!valueHealthChecksHealthCheck["HcInstanceId"].isNull())
+			healthChecksObject.hcInstanceId = valueHealthChecksHealthCheck["HcInstanceId"].asString();
+		if(!valueHealthChecksHealthCheck["RttThreshold"].isNull())
+			healthChecksObject.rttThreshold = std::stoi(valueHealthChecksHealthCheck["RttThreshold"].asString());
+		if(!valueHealthChecksHealthCheck["ProbeInterval"].isNull())
+			healthChecksObject.probeInterval = std::stoi(valueHealthChecksHealthCheck["ProbeInterval"].asString());
+		if(!valueHealthChecksHealthCheck["RelationCount"].isNull())
+			healthChecksObject.relationCount = std::stoi(valueHealthChecksHealthCheck["RelationCount"].asString());
+		if(!valueHealthChecksHealthCheck["SmartAGId"].isNull())
+			healthChecksObject.smartAGId = valueHealthChecksHealthCheck["SmartAGId"].asString();
+		if(!valueHealthChecksHealthCheck["RttFailThreshold"].isNull())
+			healthChecksObject.rttFailThreshold = std::stoi(valueHealthChecksHealthCheck["RttFailThreshold"].asString());
+		if(!valueHealthChecksHealthCheck["DstIpAddr"].isNull())
+			healthChecksObject.dstIpAddr = valueHealthChecksHealthCheck["DstIpAddr"].asString();
 		healthChecks_.push_back(healthChecksObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

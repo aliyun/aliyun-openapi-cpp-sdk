@@ -27,6 +27,19 @@ ModifyACLRuleRequest::ModifyACLRuleRequest() :
 ModifyACLRuleRequest::~ModifyACLRuleRequest()
 {}
 
+std::vector<std::string> ModifyACLRuleRequest::getDpiGroupIds()const
+{
+	return dpiGroupIds_;
+}
+
+void ModifyACLRuleRequest::setDpiGroupIds(const std::vector<std::string>& dpiGroupIds)
+{
+	dpiGroupIds_ = dpiGroupIds;
+	for(int dep1 = 0; dep1!= dpiGroupIds.size(); dep1++) {
+		setParameter("DpiGroupIds."+ std::to_string(dep1), dpiGroupIds.at(dep1));
+	}
+}
+
 long ModifyACLRuleRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -91,6 +104,19 @@ void ModifyACLRuleRequest::setDestCidr(const std::string& destCidr)
 {
 	destCidr_ = destCidr;
 	setParameter("DestCidr", destCidr);
+}
+
+std::vector<std::string> ModifyACLRuleRequest::getDpiSignatureIds()const
+{
+	return dpiSignatureIds_;
+}
+
+void ModifyACLRuleRequest::setDpiSignatureIds(const std::vector<std::string>& dpiSignatureIds)
+{
+	dpiSignatureIds_ = dpiSignatureIds;
+	for(int dep1 = 0; dep1!= dpiSignatureIds.size(); dep1++) {
+		setParameter("DpiSignatureIds."+ std::to_string(dep1), dpiSignatureIds.at(dep1));
+	}
 }
 
 std::string ModifyACLRuleRequest::getRegionId()const

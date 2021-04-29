@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getAdvertiseIps()const;
+				void setAdvertiseIps(const std::string& advertiseIps);
 				std::string getRouterId()const;
 				void setRouterId(const std::string& routerId);
 				int getLocalAs()const;
@@ -66,6 +68,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string advertiseIps_;
 				std::string routerId_;
 				int localAs_;
 				std::string smartAGId_;

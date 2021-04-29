@@ -43,20 +43,20 @@ void DescribeACLsResult::parse(const std::string &payload)
 	for (auto valueAclsAcl : allAclsNode)
 	{
 		Acl aclsObject;
+		if(!valueAclsAcl["SagCount"].isNull())
+			aclsObject.sagCount = valueAclsAcl["SagCount"].asString();
 		if(!valueAclsAcl["AclId"].isNull())
 			aclsObject.aclId = valueAclsAcl["AclId"].asString();
 		if(!valueAclsAcl["Name"].isNull())
 			aclsObject.name = valueAclsAcl["Name"].asString();
-		if(!valueAclsAcl["SagCount"].isNull())
-			aclsObject.sagCount = valueAclsAcl["SagCount"].asString();
 		acls_.push_back(aclsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

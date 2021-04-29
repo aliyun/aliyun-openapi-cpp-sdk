@@ -35,11 +35,20 @@ namespace AlibabaCloud
 				struct Wan
 				{
 					std::string iPType;
-					std::string username;
-					std::string gateway;
+					std::string trafficState;
+					int priority;
+					std::string sourceIps;
+					std::string iSP;
 					std::string iP;
 					std::string mask;
+					std::string startIp;
+					std::string vlan;
 					std::string portName;
+					int weight;
+					std::string stopIp;
+					int bandWidth;
+					std::string username;
+					std::string gateway;
 				};
 				struct TaskState
 				{

@@ -45,6 +45,7 @@ namespace AlibabaCloud
 				explicit DescribeSagRouteProtocolBgpResult(const std::string &payload);
 				~DescribeSagRouteProtocolBgpResult();
 				int getHoldTime()const;
+				std::string getAdvertiseIps()const;
 				int getKeepAlive()const;
 				std::string getRouterId()const;
 				int getLocalAs()const;
@@ -54,6 +55,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int holdTime_;
+				std::string advertiseIps_;
 				int keepAlive_;
 				std::string routerId_;
 				int localAs_;

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					int sagCount;
 					std::string instanceId;
 					std::string state;
-					long createTime;
 					std::string ccnId;
+					long createTime;
 					std::string name;
 				};
 

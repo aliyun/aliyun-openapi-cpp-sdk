@@ -35,17 +35,19 @@ namespace AlibabaCloud
 				struct QosPolicy
 				{
 					std::string description;
-					std::string destCidr;
-					std::string qosPolicyId;
 					std::string sourcePortRange;
+					std::string qosPolicyId;
 					std::string endTime;
 					std::string sourceCidr;
 					int priority;
 					std::string startTime;
+					std::string destPortRange;
+					std::vector<std::string> dpiGroupIds;
+					std::string name;
+					std::string destCidr;
+					std::vector<std::string> dpiSignatureIds;
 					std::string qosId;
 					std::string ipProtocol;
-					std::string destPortRange;
-					std::string name;
 				};
 
 

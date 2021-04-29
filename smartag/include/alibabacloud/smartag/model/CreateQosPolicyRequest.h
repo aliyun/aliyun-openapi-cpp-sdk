@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateQosPolicyRequest();
 				~CreateQosPolicyRequest();
 
+				std::vector<std::string> getDpiGroupIds()const;
+				void setDpiGroupIds(const std::vector<std::string>& dpiGroupIds);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourcePortRange()const;
@@ -47,6 +49,8 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getDestCidr()const;
 				void setDestCidr(const std::string& destCidr);
+				std::vector<std::string> getDpiSignatureIds()const;
+				void setDpiSignatureIds(const std::vector<std::string>& dpiSignatureIds);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getQosId()const;
@@ -69,12 +73,14 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 
             private:
+				std::vector<std::string> dpiGroupIds_;
 				long resourceOwnerId_;
 				std::string sourcePortRange_;
 				std::string sourceCidr_;
 				std::string description_;
 				std::string startTime_;
 				std::string destCidr_;
+				std::vector<std::string> dpiSignatureIds_;
 				std::string regionId_;
 				std::string qosId_;
 				std::string resourceOwnerAccount_;

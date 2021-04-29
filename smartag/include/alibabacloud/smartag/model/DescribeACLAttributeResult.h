@@ -43,10 +43,12 @@ namespace AlibabaCloud
 					std::string acrId;
 					std::string destPortRange;
 					std::string direction;
+					std::vector<std::string> dpiGroupIds;
 					std::string name;
 					long gmtCreate;
 					std::string type;
 					std::string destCidr;
+					std::vector<std::string> dpiSignatureIds;
 					std::string ipProtocol;
 				};
 

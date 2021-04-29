@@ -39,10 +39,10 @@ void DescribeSagRouteableAddressResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RouteableAddress"].isNull())
-		routeableAddress_ = value["RouteableAddress"].asString();
 	if(!value["Origin"].isNull())
 		origin_ = value["Origin"].asString();
+	if(!value["RouteableAddress"].isNull())
+		routeableAddress_ = value["RouteableAddress"].asString();
 
 }
 

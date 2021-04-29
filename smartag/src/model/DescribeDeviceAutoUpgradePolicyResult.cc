@@ -39,18 +39,20 @@ void DescribeDeviceAutoUpgradePolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SmartAGId"].isNull())
-		smartAGId_ = value["SmartAGId"].asString();
-	if(!value["SerialNumber"].isNull())
-		serialNumber_ = value["SerialNumber"].asString();
 	if(!value["UpgradeType"].isNull())
 		upgradeType_ = value["UpgradeType"].asString();
-	if(!value["CronExpression"].isNull())
-		cronExpression_ = value["CronExpression"].asString();
-	if(!value["Duration"].isNull())
-		duration_ = value["Duration"].asString();
 	if(!value["TimeZone"].isNull())
 		timeZone_ = value["TimeZone"].asString();
+	if(!value["SerialNumber"].isNull())
+		serialNumber_ = value["SerialNumber"].asString();
+	if(!value["Jitter"].isNull())
+		jitter_ = value["Jitter"].asString();
+	if(!value["Duration"].isNull())
+		duration_ = value["Duration"].asString();
+	if(!value["CronExpression"].isNull())
+		cronExpression_ = value["CronExpression"].asString();
+	if(!value["SmartAGId"].isNull())
+		smartAGId_ = value["SmartAGId"].asString();
 
 }
 
@@ -67,6 +69,11 @@ std::string DescribeDeviceAutoUpgradePolicyResult::getTimeZone()const
 std::string DescribeDeviceAutoUpgradePolicyResult::getSerialNumber()const
 {
 	return serialNumber_;
+}
+
+std::string DescribeDeviceAutoUpgradePolicyResult::getJitter()const
+{
+	return jitter_;
 }
 
 std::string DescribeDeviceAutoUpgradePolicyResult::getDuration()const
