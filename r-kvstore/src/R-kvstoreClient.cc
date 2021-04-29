@@ -339,6 +339,42 @@ R_kvstoreClient::CreateInstanceOutcomeCallable R_kvstoreClient::createInstanceCa
 	return task->get_future();
 }
 
+R_kvstoreClient::CreateInstancesOutcome R_kvstoreClient::createInstances(const CreateInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInstancesOutcome(CreateInstancesResult(outcome.result()));
+	else
+		return CreateInstancesOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createInstancesAsync(const CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateInstancesOutcomeCallable R_kvstoreClient::createInstancesCallable(const CreateInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->createInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::CreateTairInstanceOutcome R_kvstoreClient::createTairInstance(const CreateTairInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3321,6 +3357,42 @@ R_kvstoreClient::TagResourcesOutcomeCallable R_kvstoreClient::tagResourcesCallab
 			[this, request]()
 			{
 			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::TransformInstanceChargeTypeOutcome R_kvstoreClient::transformInstanceChargeType(const TransformInstanceChargeTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransformInstanceChargeTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransformInstanceChargeTypeOutcome(TransformInstanceChargeTypeResult(outcome.result()));
+	else
+		return TransformInstanceChargeTypeOutcome(outcome.error());
+}
+
+void R_kvstoreClient::transformInstanceChargeTypeAsync(const TransformInstanceChargeTypeRequest& request, const TransformInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transformInstanceChargeType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::TransformInstanceChargeTypeOutcomeCallable R_kvstoreClient::transformInstanceChargeTypeCallable(const TransformInstanceChargeTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransformInstanceChargeTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->transformInstanceChargeType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

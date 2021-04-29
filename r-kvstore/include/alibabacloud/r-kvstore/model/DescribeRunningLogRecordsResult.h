@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string content;
 					std::string createTime;
+					std::string nodeId;
 					std::string level;
 					int id;
 				};

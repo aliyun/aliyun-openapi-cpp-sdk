@@ -129,6 +129,10 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.storageType = valueInstancesDBInstanceAttribute["StorageType"].asString();
 		if(!valueInstancesDBInstanceAttribute["GlobalInstanceId"].isNull())
 			instancesObject.globalInstanceId = valueInstancesDBInstanceAttribute["GlobalInstanceId"].asString();
+		if(!valueInstancesDBInstanceAttribute["SecondaryZoneId"].isNull())
+			instancesObject.secondaryZoneId = valueInstancesDBInstanceAttribute["SecondaryZoneId"].asString();
+		if(!valueInstancesDBInstanceAttribute["ZoneType"].isNull())
+			instancesObject.zoneType = valueInstancesDBInstanceAttribute["ZoneType"].asString();
 		auto allTagsNode = valueInstancesDBInstanceAttribute["Tags"]["Tag"];
 		for (auto valueInstancesDBInstanceAttributeTagsTag : allTagsNode)
 		{

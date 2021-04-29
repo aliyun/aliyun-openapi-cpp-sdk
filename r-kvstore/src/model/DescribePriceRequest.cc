@@ -148,6 +148,17 @@ void DescribePriceRequest::setPeriod(long period)
 	setParameter("Period", std::to_string(period));
 }
 
+std::string DescribePriceRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribePriceRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
 long DescribePriceRequest::getQuantity()const
 {
 	return quantity_;
@@ -234,6 +245,17 @@ void DescribePriceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
 	setParameter("ChargeType", chargeType);
+}
+
+std::string DescribePriceRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribePriceRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 
 bool DescribePriceRequest::getForceUpgrade()const

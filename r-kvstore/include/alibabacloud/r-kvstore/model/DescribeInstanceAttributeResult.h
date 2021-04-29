@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string globalInstanceId;
 					std::string hasRenewChangeOrder;
 					int shardCount;
+					std::string zoneType;
 					std::string connectionDomain;
 					std::string maintainEndTime;
 					long capacity;
@@ -75,6 +76,7 @@ namespace AlibabaCloud
 					bool isRds;
 					std::string replicationMode;
 					std::string replicaId;
+					std::string secondaryZoneId;
 					std::string instanceName;
 					std::string storage;
 					std::string vpcId;

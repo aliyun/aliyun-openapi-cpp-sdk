@@ -77,6 +77,8 @@ void DescribePriceResult::parse(const std::string &payload)
 		order_.discountAmount = orderNode["DiscountAmount"].asString();
 	if(!orderNode["Currency"].isNull())
 		order_.currency = orderNode["Currency"].asString();
+	if(!orderNode["HandlingFeeAmount"].isNull())
+		order_.handlingFeeAmount = orderNode["HandlingFeeAmount"].asString();
 	auto allCouponsNode = orderNode["Coupons"]["Coupon"];
 	for (auto orderNodeCouponsCoupon : allCouponsNode)
 	{

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MIGRATETOOTHERZONEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_MIGRATETOOTHERZONEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_TRANSFORMINSTANCECHARGETYPEREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_TRANSFORMINSTANCECHARGETYPEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT MigrateToOtherZoneRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT TransformInstanceChargeTypeRequest : public RpcServiceRequest
 			{
 
 			public:
-				MigrateToOtherZoneRequest();
-				~MigrateToOtherZoneRequest();
+				TransformInstanceChargeTypeRequest();
+				~TransformInstanceChargeTypeRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSecondaryZoneId()const;
-				void setSecondaryZoneId(const std::string& secondaryZoneId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
+				long getPeriod()const;
+				void setPeriod(long period);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
+				std::string getFromApp()const;
+				void setFromApp(const std::string& fromApp);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getChargeType()const;
+				void setChargeType(const std::string& chargeType);
 
             private:
 				long resourceOwnerId_;
-				std::string secondaryZoneId_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				std::string effectiveTime_;
-				std::string dBInstanceId_;
+				long period_;
+				bool autoPay_;
+				std::string fromApp_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string vSwitchId_;
-				std::string zoneId_;
+				std::string instanceId_;
+				std::string chargeType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MIGRATETOOTHERZONEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_TRANSFORMINSTANCECHARGETYPEREQUEST_H_

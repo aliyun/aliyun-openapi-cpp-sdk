@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_TRANSFORMTOPREPAIDREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_TRANSFORMTOPREPAIDREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_CREATEINSTANCESREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_CREATEINSTANCESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,69 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT TransformToPrePaidRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT CreateInstancesRequest : public RpcServiceRequest
 			{
 
 			public:
-				TransformToPrePaidRequest();
-				~TransformToPrePaidRequest();
+				CreateInstancesRequest();
+				~CreateInstancesRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getInstances()const;
+				void setInstances(const std::string& instances);
+				std::string getCouponNo()const;
+				void setCouponNo(const std::string& couponNo);
+				std::string getEngineVersion()const;
+				void setEngineVersion(const std::string& engineVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				long getPeriod()const;
-				void setPeriod(long period);
+				bool getRebuildInstance()const;
+				void setRebuildInstance(bool rebuildInstance);
+				std::string getBusinessInfo()const;
+				void setBusinessInfo(const std::string& businessInfo);
+				std::string getAgentId()const;
+				void setAgentId(const std::string& agentId);
+				std::string getRestoreTime()const;
+				void setRestoreTime(const std::string& restoreTime);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
-				std::string getFromApp()const;
-				void setFromApp(const std::string& fromApp);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getChargeType()const;
-				void setChargeType(const std::string& chargeType);
+				std::string getToken()const;
+				void setToken(const std::string& token);
+				std::string getPrivateIpAddress()const;
+				void setPrivateIpAddress(const std::string& privateIpAddress);
+				std::string getAutoRenew()const;
+				void setAutoRenew(const std::string& autoRenew);
 
             private:
 				long resourceOwnerId_;
+				std::string instances_;
+				std::string couponNo_;
+				std::string engineVersion_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				long period_;
+				bool rebuildInstance_;
+				std::string businessInfo_;
+				std::string agentId_;
+				std::string restoreTime_;
 				bool autoPay_;
-				std::string fromApp_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string instanceId_;
-				std::string chargeType_;
+				std::string token_;
+				std::string privateIpAddress_;
+				std::string autoRenew_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_TRANSFORMTOPREPAIDREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_CREATEINSTANCESREQUEST_H_

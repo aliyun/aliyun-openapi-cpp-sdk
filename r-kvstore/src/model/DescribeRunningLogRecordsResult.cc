@@ -57,6 +57,8 @@ void DescribeRunningLogRecordsResult::parse(const std::string &payload)
 			itemsObject.content = valueItemsLogRecords["Content"].asString();
 		if(!valueItemsLogRecords["InstanceId"].isNull())
 			itemsObject.instanceId = valueItemsLogRecords["InstanceId"].asString();
+		if(!valueItemsLogRecords["NodeId"].isNull())
+			itemsObject.nodeId = valueItemsLogRecords["NodeId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["InstanceId"].isNull())

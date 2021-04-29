@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string executeTime;
 					std::string databaseName;
+					std::string nodeId;
 					std::string totalExecutionTimes;
 					std::string hostAddress;
 					std::string iPAddress;

@@ -42,6 +42,7 @@ namespace AlibabaCloud
 						std::string name;
 					};
 					std::vector<std::string> ruleIds1;
+					std::string handlingFeeAmount;
 					std::string currency;
 					std::string tradeAmount;
 					std::vector<Coupon> coupons;

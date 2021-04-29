@@ -59,6 +59,8 @@ void DescribeAuditRecordsResult::parse(const std::string &payload)
 			itemsObject.executeTime = valueItemsSQL["ExecuteTime"].asString();
 		if(!valueItemsSQL["AccountName"].isNull())
 			itemsObject.accountName = valueItemsSQL["AccountName"].asString();
+		if(!valueItemsSQL["NodeId"].isNull())
+			itemsObject.nodeId = valueItemsSQL["NodeId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

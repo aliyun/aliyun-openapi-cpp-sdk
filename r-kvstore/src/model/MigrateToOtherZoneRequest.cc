@@ -38,6 +38,17 @@ void MigrateToOtherZoneRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string MigrateToOtherZoneRequest::getSecondaryZoneId()const
+{
+	return secondaryZoneId_;
+}
+
+void MigrateToOtherZoneRequest::setSecondaryZoneId(const std::string& secondaryZoneId)
+{
+	secondaryZoneId_ = secondaryZoneId;
+	setParameter("SecondaryZoneId", secondaryZoneId);
+}
+
 std::string MigrateToOtherZoneRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

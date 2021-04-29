@@ -60,6 +60,17 @@ void ModifyInstanceConfigRequest::setSecurityToken(const std::string& securityTo
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyInstanceConfigRequest::getProduct()const
+{
+	return product_;
+}
+
+void ModifyInstanceConfigRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
 std::string ModifyInstanceConfigRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -102,6 +113,17 @@ void ModifyInstanceConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string ModifyInstanceConfigRequest::getCategory()const
+{
+	return category_;
+}
+
+void ModifyInstanceConfigRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 
 std::string ModifyInstanceConfigRequest::getConfig()const

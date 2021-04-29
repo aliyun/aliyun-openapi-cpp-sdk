@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setBusinessInfo(const std::string& businessInfo);
 				long getPeriod()const;
 				void setPeriod(long period);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				long getQuantity()const;
 				void setQuantity(long quantity);
 				std::string getResourceOwnerAccount()const;
@@ -73,6 +75,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 				bool getForceUpgrade()const;
 				void setForceUpgrade(bool forceUpgrade);
 				std::string getOrderType()const;
@@ -90,6 +94,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string businessInfo_;
 				long period_;
+				std::string product_;
 				long quantity_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
@@ -98,6 +103,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string zoneId_;
 				std::string chargeType_;
+				std::string category_;
 				bool forceUpgrade_;
 				std::string orderType_;
 

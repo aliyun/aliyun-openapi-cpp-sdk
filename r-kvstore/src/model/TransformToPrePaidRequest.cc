@@ -137,3 +137,14 @@ void TransformToPrePaidRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string TransformToPrePaidRequest::getChargeType()const
+{
+	return chargeType_;
+}
+
+void TransformToPrePaidRequest::setChargeType(const std::string& chargeType)
+{
+	chargeType_ = chargeType;
+	setParameter("ChargeType", chargeType);
+}
+

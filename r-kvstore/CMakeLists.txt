@@ -37,6 +37,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateGlobalDistributeCacheResult.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceResult.h
+	include/alibabacloud/r-kvstore/model/CreateInstancesRequest.h
+	include/alibabacloud/r-kvstore/model/CreateInstancesResult.h
 	include/alibabacloud/r-kvstore/model/CreateTairInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/CreateTairInstanceResult.h
 	include/alibabacloud/r-kvstore/model/CreateUserClusterHostRequest.h
@@ -203,6 +205,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/SyncDtsStatusResult.h
 	include/alibabacloud/r-kvstore/model/TagResourcesRequest.h
 	include/alibabacloud/r-kvstore/model/TagResourcesResult.h
+	include/alibabacloud/r-kvstore/model/TransformInstanceChargeTypeRequest.h
+	include/alibabacloud/r-kvstore/model/TransformInstanceChargeTypeResult.h
 	include/alibabacloud/r-kvstore/model/TransformToPrePaidRequest.h
 	include/alibabacloud/r-kvstore/model/TransformToPrePaidResult.h
 	include/alibabacloud/r-kvstore/model/UntagResourcesRequest.h
@@ -226,6 +230,8 @@ set(r-kvstore_src
 	src/model/CreateGlobalDistributeCacheResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
+	src/model/CreateInstancesRequest.cc
+	src/model/CreateInstancesResult.cc
 	src/model/CreateTairInstanceRequest.cc
 	src/model/CreateTairInstanceResult.cc
 	src/model/CreateUserClusterHostRequest.cc
@@ -392,6 +398,8 @@ set(r-kvstore_src
 	src/model/SyncDtsStatusResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TransformInstanceChargeTypeRequest.cc
+	src/model/TransformInstanceChargeTypeResult.cc
 	src/model/TransformToPrePaidRequest.cc
 	src/model/TransformToPrePaidResult.cc
 	src/model/UntagResourcesRequest.cc

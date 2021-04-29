@@ -38,6 +38,8 @@
 #include "model/CreateGlobalDistributeCacheResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
+#include "model/CreateInstancesRequest.h"
+#include "model/CreateInstancesResult.h"
 #include "model/CreateTairInstanceRequest.h"
 #include "model/CreateTairInstanceResult.h"
 #include "model/CreateUserClusterHostRequest.h"
@@ -204,6 +206,8 @@
 #include "model/SyncDtsStatusResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
+#include "model/TransformInstanceChargeTypeRequest.h"
+#include "model/TransformInstanceChargeTypeResult.h"
 #include "model/TransformToPrePaidRequest.h"
 #include "model/TransformToPrePaidResult.h"
 #include "model/UntagResourcesRequest.h"
@@ -241,6 +245,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateInstancesResult> CreateInstancesOutcome;
+			typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::CreateInstancesRequest&, const CreateInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
 			typedef Outcome<Error, Model::CreateTairInstanceResult> CreateTairInstanceOutcome;
 			typedef std::future<CreateTairInstanceOutcome> CreateTairInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateTairInstanceRequest&, const CreateTairInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTairInstanceAsyncHandler;
@@ -490,6 +497,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::TransformInstanceChargeTypeResult> TransformInstanceChargeTypeOutcome;
+			typedef std::future<TransformInstanceChargeTypeOutcome> TransformInstanceChargeTypeOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::TransformInstanceChargeTypeRequest&, const TransformInstanceChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransformInstanceChargeTypeAsyncHandler;
 			typedef Outcome<Error, Model::TransformToPrePaidResult> TransformToPrePaidOutcome;
 			typedef std::future<TransformToPrePaidOutcome> TransformToPrePaidOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::TransformToPrePaidRequest&, const TransformToPrePaidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransformToPrePaidAsyncHandler;
@@ -525,6 +535,9 @@ namespace AlibabaCloud
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
+			CreateInstancesOutcome createInstances(const Model::CreateInstancesRequest &request)const;
+			void createInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateInstancesOutcomeCallable createInstancesCallable(const Model::CreateInstancesRequest& request) const;
 			CreateTairInstanceOutcome createTairInstance(const Model::CreateTairInstanceRequest &request)const;
 			void createTairInstanceAsync(const Model::CreateTairInstanceRequest& request, const CreateTairInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTairInstanceOutcomeCallable createTairInstanceCallable(const Model::CreateTairInstanceRequest& request) const;
@@ -774,6 +787,9 @@ namespace AlibabaCloud
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			TransformInstanceChargeTypeOutcome transformInstanceChargeType(const Model::TransformInstanceChargeTypeRequest &request)const;
+			void transformInstanceChargeTypeAsync(const Model::TransformInstanceChargeTypeRequest& request, const TransformInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TransformInstanceChargeTypeOutcomeCallable transformInstanceChargeTypeCallable(const Model::TransformInstanceChargeTypeRequest& request) const;
 			TransformToPrePaidOutcome transformToPrePaid(const Model::TransformToPrePaidRequest &request)const;
 			void transformToPrePaidAsync(const Model::TransformToPrePaidRequest& request, const TransformToPrePaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransformToPrePaidOutcomeCallable transformToPrePaidCallable(const Model::TransformToPrePaidRequest& request) const;
