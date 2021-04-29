@@ -52,8 +52,12 @@ void ExtractPedestrianFeatureAttrResult::parse(const std::string &payload)
 		data_.qualityScore = std::stof(dataNode["QualityScore"].asString());
 	if(!dataNode["Gender"].isNull())
 		data_.gender = dataNode["Gender"].asString();
+	if(!dataNode["Orientation"].isNull())
+		data_.orientation = dataNode["Orientation"].asString();
 	if(!dataNode["Feature"].isNull())
 		data_.feature = dataNode["Feature"].asString();
+	if(!dataNode["OrientationScore"].isNull())
+		data_.orientationScore = std::stof(dataNode["OrientationScore"].asString());
 	if(!dataNode["UpperColorScore"].isNull())
 		data_.upperColorScore = std::stof(dataNode["UpperColorScore"].asString());
 	if(!dataNode["GenderScore"].isNull())
@@ -76,11 +80,25 @@ void ExtractPedestrianFeatureAttrResult::parse(const std::string &payload)
 		data_.objTypeScore = std::stof(dataNode["ObjTypeScore"].asString());
 	if(!dataNode["Age"].isNull())
 		data_.age = dataNode["Age"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
+}
+
+std::string ExtractPedestrianFeatureAttrResult::getMessage()const
+{
+	return message_;
 }
 
 ExtractPedestrianFeatureAttrResult::Data ExtractPedestrianFeatureAttrResult::getData()const
 {
 	return data_;
+}
+
+std::string ExtractPedestrianFeatureAttrResult::getCode()const
+{
+	return code_;
 }
 

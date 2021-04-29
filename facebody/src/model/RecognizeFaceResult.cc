@@ -77,15 +77,15 @@ void RecognizeFaceResult::parse(const std::string &payload)
 		auto allFaceProbabilityList = dataNode["FaceProbabilityList"]["FaceProbability"];
 		for (auto value : allFaceProbabilityList)
 			data_.faceProbabilityList.push_back(value.asString());
+		auto allBeautyList = dataNode["BeautyList"]["Beauty"];
+		for (auto value : allBeautyList)
+			data_.beautyList.push_back(value.asString());
 		auto allHatList = dataNode["HatList"]["Hat"];
 		for (auto value : allHatList)
 			data_.hatList.push_back(value.asString());
 		auto allAgeList = dataNode["AgeList"]["Age"];
 		for (auto value : allAgeList)
 			data_.ageList.push_back(value.asString());
-		auto allBeuatyList = dataNode["BeuatyList"]["Beauty"];
-		for (auto value : allBeuatyList)
-			data_.beuatyList.push_back(value.asString());
 		auto allFaceRectangles = dataNode["FaceRectangles"]["FaceRectangle"];
 		for (auto value : allFaceRectangles)
 			data_.faceRectangles.push_back(value.asString());
@@ -98,6 +98,9 @@ void RecognizeFaceResult::parse(const std::string &payload)
 		auto allExpressions = dataNode["Expressions"]["Expression"];
 		for (auto value : allExpressions)
 			data_.expressions.push_back(value.asString());
+		auto allMasks = dataNode["Masks"]["Mask"];
+		for (auto value : allMasks)
+			data_.masks.push_back(value.asString());
 		auto allPoseList = dataNode["PoseList"]["Pose"];
 		for (auto value : allPoseList)
 			data_.poseList.push_back(value.asString());

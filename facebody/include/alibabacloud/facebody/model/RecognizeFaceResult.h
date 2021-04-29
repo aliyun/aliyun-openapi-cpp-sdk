@@ -45,10 +45,11 @@ namespace AlibabaCloud
 						std::vector<std::string> poseList1;
 						std::vector<std::string> illuList;
 					};
-					std::vector<std::string> beuatyList;
+					std::vector<std::string> beautyList;
 					std::vector<std::string> faceRectangles;
 					Qualities qualities;
 					int denseFeatureLength;
+					std::vector<std::string> masks;
 					std::vector<std::string> poseList;
 					std::vector<std::string> genderList;
 					std::vector<std::string> pupils;

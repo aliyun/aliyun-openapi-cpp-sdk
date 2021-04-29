@@ -40,7 +40,9 @@ namespace AlibabaCloud
 					std::string lowerColor;
 					float qualityScore;
 					std::string gender;
+					std::string orientation;
 					std::string feature;
+					float orientationScore;
 					float upperColorScore;
 					float genderScore;
 					float lowerColorScore;
@@ -58,12 +60,16 @@ namespace AlibabaCloud
 				ExtractPedestrianFeatureAttrResult();
 				explicit ExtractPedestrianFeatureAttrResult(const std::string &payload);
 				~ExtractPedestrianFeatureAttrResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}
