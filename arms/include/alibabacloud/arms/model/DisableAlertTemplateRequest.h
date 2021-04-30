@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_DISABLEALERTTEMPLATEREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_DISABLEALERTTEMPLATEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT OpenVClusterRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT DisableAlertTemplateRequest : public RpcServiceRequest
 			{
 
 			public:
-				OpenVClusterRequest();
-				~OpenVClusterRequest();
+				DisableAlertTemplateRequest();
+				~DisableAlertTemplateRequest();
 
-				std::string getClusterType()const;
-				void setClusterType(const std::string& clusterType);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
-				bool getRecreateSwitch()const;
-				void setRecreateSwitch(bool recreateSwitch);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getLength()const;
-				void setLength(int length);
+				long getId()const;
+				void setId(long id);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 
             private:
-				std::string clusterType_;
-				std::string product_;
-				bool recreateSwitch_;
 				std::string regionId_;
-				int length_;
+				long id_;
+				std::string proxyUserId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_DISABLEALERTTEMPLATEREQUEST_H_

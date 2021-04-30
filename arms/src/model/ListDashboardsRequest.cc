@@ -27,26 +27,37 @@ ListDashboardsRequest::ListDashboardsRequest() :
 ListDashboardsRequest::~ListDashboardsRequest()
 {}
 
-std::string ListDashboardsRequest::getClusterType()const
+std::string ListDashboardsRequest::getDashboardName()const
 {
-	return clusterType_;
+	return dashboardName_;
 }
 
-void ListDashboardsRequest::setClusterType(const std::string& clusterType)
+void ListDashboardsRequest::setDashboardName(const std::string& dashboardName)
 {
-	clusterType_ = clusterType;
-	setParameter("ClusterType", clusterType);
+	dashboardName_ = dashboardName;
+	setParameter("DashboardName", dashboardName);
 }
 
-std::string ListDashboardsRequest::getRegionId()const
+std::string ListDashboardsRequest::getProduct()const
 {
-	return regionId_;
+	return product_;
 }
 
-void ListDashboardsRequest::setRegionId(const std::string& regionId)
+void ListDashboardsRequest::setProduct(const std::string& product)
 {
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	product_ = product;
+	setParameter("Product", product);
+}
+
+bool ListDashboardsRequest::getRecreateSwitch()const
+{
+	return recreateSwitch_;
+}
+
+void ListDashboardsRequest::setRecreateSwitch(bool recreateSwitch)
+{
+	recreateSwitch_ = recreateSwitch;
+	setParameter("RecreateSwitch", recreateSwitch ? "true" : "false");
 }
 
 std::string ListDashboardsRequest::getClusterId()const
@@ -69,5 +80,27 @@ void ListDashboardsRequest::setTitle(const std::string& title)
 {
 	title_ = title;
 	setParameter("Title", title);
+}
+
+std::string ListDashboardsRequest::getClusterType()const
+{
+	return clusterType_;
+}
+
+void ListDashboardsRequest::setClusterType(const std::string& clusterType)
+{
+	clusterType_ = clusterType;
+	setParameter("ClusterType", clusterType);
+}
+
+std::string ListDashboardsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ListDashboardsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 

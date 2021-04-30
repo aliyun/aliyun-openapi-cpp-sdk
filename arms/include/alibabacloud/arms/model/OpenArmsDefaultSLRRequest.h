@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_OPENARMSDEFAULTSLRREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_OPENARMSDEFAULTSLRREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT OpenVClusterRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT OpenArmsDefaultSLRRequest : public RpcServiceRequest
 			{
 
 			public:
-				OpenVClusterRequest();
-				~OpenVClusterRequest();
+				OpenArmsDefaultSLRRequest();
+				~OpenArmsDefaultSLRRequest();
 
-				std::string getClusterType()const;
-				void setClusterType(const std::string& clusterType);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
-				bool getRecreateSwitch()const;
-				void setRecreateSwitch(bool recreateSwitch);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getLength()const;
-				void setLength(int length);
 
             private:
-				std::string clusterType_;
-				std::string product_;
-				bool recreateSwitch_;
 				std::string regionId_;
-				int length_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_OPENARMSDEFAULTSLRREQUEST_H_

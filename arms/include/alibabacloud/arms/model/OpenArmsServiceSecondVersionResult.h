@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_OPENARMSSERVICESECONDVERSIONRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_OPENARMSSERVICESECONDVERSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ListDashboardsResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT OpenArmsServiceSecondVersionResult : public ServiceResult
 			{
 			public:
-				struct DashboardVosItem
-				{
-					std::string title;
-					std::string time;
-					std::string exporter;
-					std::string url;
-					std::string name;
-					std::string uid;
-					std::string type;
-					bool needUpdate;
-					std::string version;
-					std::string kind;
-					std::string id;
-					std::string dashboardType;
-					std::vector<std::string> tags;
-					bool isArmsExporter;
-				};
 
 
-				ListDashboardsResult();
-				explicit ListDashboardsResult(const std::string &payload);
-				~ListDashboardsResult();
-				std::vector<DashboardVosItem> getDashboardVos()const;
+				OpenArmsServiceSecondVersionResult();
+				explicit OpenArmsServiceSecondVersionResult(const std::string &payload);
+				~OpenArmsServiceSecondVersionResult();
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DashboardVosItem> dashboardVos_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_OPENARMSSERVICESECONDVERSIONRESULT_H_

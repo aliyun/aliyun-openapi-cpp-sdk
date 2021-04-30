@@ -59,6 +59,16 @@ void ListDashboardsResult::parse(const std::string &payload)
 			dashboardVosObject.exporter = valueDashboardVosDashboardVosItem["Exporter"].asString();
 		if(!valueDashboardVosDashboardVosItem["IsArmsExporter"].isNull())
 			dashboardVosObject.isArmsExporter = valueDashboardVosDashboardVosItem["IsArmsExporter"].asString() == "true";
+		if(!valueDashboardVosDashboardVosItem["Name"].isNull())
+			dashboardVosObject.name = valueDashboardVosDashboardVosItem["Name"].asString();
+		if(!valueDashboardVosDashboardVosItem["Version"].isNull())
+			dashboardVosObject.version = valueDashboardVosDashboardVosItem["Version"].asString();
+		if(!valueDashboardVosDashboardVosItem["DashboardType"].isNull())
+			dashboardVosObject.dashboardType = valueDashboardVosDashboardVosItem["DashboardType"].asString();
+		if(!valueDashboardVosDashboardVosItem["Kind"].isNull())
+			dashboardVosObject.kind = valueDashboardVosDashboardVosItem["Kind"].asString();
+		if(!valueDashboardVosDashboardVosItem["NeedUpdate"].isNull())
+			dashboardVosObject.needUpdate = valueDashboardVosDashboardVosItem["NeedUpdate"].asString() == "true";
 		auto allTags = value["Tags"]["Tags"];
 		for (auto value : allTags)
 			dashboardVosObject.tags.push_back(value.asString());

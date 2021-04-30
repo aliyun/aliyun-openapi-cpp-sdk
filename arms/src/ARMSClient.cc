@@ -375,6 +375,42 @@ ARMSClient::CreateAlertContactGroupOutcomeCallable ARMSClient::createAlertContac
 	return task->get_future();
 }
 
+ARMSClient::CreateAlertTemplateOutcome ARMSClient::createAlertTemplate(const CreateAlertTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAlertTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAlertTemplateOutcome(CreateAlertTemplateResult(outcome.result()));
+	else
+		return CreateAlertTemplateOutcome(outcome.error());
+}
+
+void ARMSClient::createAlertTemplateAsync(const CreateAlertTemplateRequest& request, const CreateAlertTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAlertTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateAlertTemplateOutcomeCallable ARMSClient::createAlertTemplateCallable(const CreateAlertTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAlertTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createAlertTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CreateDispatchRuleOutcome ARMSClient::createDispatchRule(const CreateDispatchRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,6 +447,42 @@ ARMSClient::CreateDispatchRuleOutcomeCallable ARMSClient::createDispatchRuleCall
 	return task->get_future();
 }
 
+ARMSClient::CreatePrometheusAlertRuleOutcome ARMSClient::createPrometheusAlertRule(const CreatePrometheusAlertRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePrometheusAlertRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePrometheusAlertRuleOutcome(CreatePrometheusAlertRuleResult(outcome.result()));
+	else
+		return CreatePrometheusAlertRuleOutcome(outcome.error());
+}
+
+void ARMSClient::createPrometheusAlertRuleAsync(const CreatePrometheusAlertRuleRequest& request, const CreatePrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPrometheusAlertRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreatePrometheusAlertRuleOutcomeCallable ARMSClient::createPrometheusAlertRuleCallable(const CreatePrometheusAlertRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePrometheusAlertRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createPrometheusAlertRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CreateRetcodeAppOutcome ARMSClient::createRetcodeApp(const CreateRetcodeAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +513,42 @@ ARMSClient::CreateRetcodeAppOutcomeCallable ARMSClient::createRetcodeAppCallable
 			[this, request]()
 			{
 			return this->createRetcodeApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::CreateWebhookOutcome ARMSClient::createWebhook(const CreateWebhookRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateWebhookOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateWebhookOutcome(CreateWebhookResult(outcome.result()));
+	else
+		return CreateWebhookOutcome(outcome.error());
+}
+
+void ARMSClient::createWebhookAsync(const CreateWebhookRequest& request, const CreateWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createWebhook(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateWebhookOutcomeCallable ARMSClient::createWebhookCallable(const CreateWebhookRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateWebhookOutcome()>>(
+			[this, request]()
+			{
+			return this->createWebhook(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,6 +699,42 @@ ARMSClient::DeleteAlertRulesOutcomeCallable ARMSClient::deleteAlertRulesCallable
 	return task->get_future();
 }
 
+ARMSClient::DeleteAlertTemplateOutcome ARMSClient::deleteAlertTemplate(const DeleteAlertTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAlertTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAlertTemplateOutcome(DeleteAlertTemplateResult(outcome.result()));
+	else
+		return DeleteAlertTemplateOutcome(outcome.error());
+}
+
+void ARMSClient::deleteAlertTemplateAsync(const DeleteAlertTemplateRequest& request, const DeleteAlertTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAlertTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteAlertTemplateOutcomeCallable ARMSClient::deleteAlertTemplateCallable(const DeleteAlertTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAlertTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAlertTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DeleteDispatchRuleOutcome ARMSClient::deleteDispatchRule(const DeleteDispatchRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +765,78 @@ ARMSClient::DeleteDispatchRuleOutcomeCallable ARMSClient::deleteDispatchRuleCall
 			[this, request]()
 			{
 			return this->deleteDispatchRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeleteGrafanaResourceOutcome ARMSClient::deleteGrafanaResource(const DeleteGrafanaResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGrafanaResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGrafanaResourceOutcome(DeleteGrafanaResourceResult(outcome.result()));
+	else
+		return DeleteGrafanaResourceOutcome(outcome.error());
+}
+
+void ARMSClient::deleteGrafanaResourceAsync(const DeleteGrafanaResourceRequest& request, const DeleteGrafanaResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGrafanaResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteGrafanaResourceOutcomeCallable ARMSClient::deleteGrafanaResourceCallable(const DeleteGrafanaResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGrafanaResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGrafanaResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DeletePrometheusAlertRuleOutcome ARMSClient::deletePrometheusAlertRule(const DeletePrometheusAlertRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePrometheusAlertRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePrometheusAlertRuleOutcome(DeletePrometheusAlertRuleResult(outcome.result()));
+	else
+		return DeletePrometheusAlertRuleOutcome(outcome.error());
+}
+
+void ARMSClient::deletePrometheusAlertRuleAsync(const DeletePrometheusAlertRuleRequest& request, const DeletePrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePrometheusAlertRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeletePrometheusAlertRuleOutcomeCallable ARMSClient::deletePrometheusAlertRuleCallable(const DeletePrometheusAlertRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePrometheusAlertRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePrometheusAlertRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,6 +987,42 @@ ARMSClient::DescribeDispatchRuleOutcomeCallable ARMSClient::describeDispatchRule
 	return task->get_future();
 }
 
+ARMSClient::DescribePrometheusAlertRuleOutcome ARMSClient::describePrometheusAlertRule(const DescribePrometheusAlertRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePrometheusAlertRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePrometheusAlertRuleOutcome(DescribePrometheusAlertRuleResult(outcome.result()));
+	else
+		return DescribePrometheusAlertRuleOutcome(outcome.error());
+}
+
+void ARMSClient::describePrometheusAlertRuleAsync(const DescribePrometheusAlertRuleRequest& request, const DescribePrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePrometheusAlertRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribePrometheusAlertRuleOutcomeCallable ARMSClient::describePrometheusAlertRuleCallable(const DescribePrometheusAlertRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePrometheusAlertRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->describePrometheusAlertRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DescribeTraceLicenseKeyOutcome ARMSClient::describeTraceLicenseKey(const DescribeTraceLicenseKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,6 +1089,78 @@ ARMSClient::DescribeTraceLocationOutcomeCallable ARMSClient::describeTraceLocati
 			[this, request]()
 			{
 			return this->describeTraceLocation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DisableAlertTemplateOutcome ARMSClient::disableAlertTemplate(const DisableAlertTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableAlertTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableAlertTemplateOutcome(DisableAlertTemplateResult(outcome.result()));
+	else
+		return DisableAlertTemplateOutcome(outcome.error());
+}
+
+void ARMSClient::disableAlertTemplateAsync(const DisableAlertTemplateRequest& request, const DisableAlertTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableAlertTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DisableAlertTemplateOutcomeCallable ARMSClient::disableAlertTemplateCallable(const DisableAlertTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableAlertTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->disableAlertTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::EnableAlertTemplateOutcome ARMSClient::enableAlertTemplate(const EnableAlertTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableAlertTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableAlertTemplateOutcome(EnableAlertTemplateResult(outcome.result()));
+	else
+		return EnableAlertTemplateOutcome(outcome.error());
+}
+
+void ARMSClient::enableAlertTemplateAsync(const EnableAlertTemplateRequest& request, const EnableAlertTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableAlertTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::EnableAlertTemplateOutcomeCallable ARMSClient::enableAlertTemplateCallable(const EnableAlertTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableAlertTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->enableAlertTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1347,6 +1671,78 @@ ARMSClient::ImportPrometheusRulesOutcomeCallable ARMSClient::importPrometheusRul
 	return task->get_future();
 }
 
+ARMSClient::ListActivatedAlertsOutcome ARMSClient::listActivatedAlerts(const ListActivatedAlertsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListActivatedAlertsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListActivatedAlertsOutcome(ListActivatedAlertsResult(outcome.result()));
+	else
+		return ListActivatedAlertsOutcome(outcome.error());
+}
+
+void ARMSClient::listActivatedAlertsAsync(const ListActivatedAlertsRequest& request, const ListActivatedAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listActivatedAlerts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListActivatedAlertsOutcomeCallable ARMSClient::listActivatedAlertsCallable(const ListActivatedAlertsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListActivatedAlertsOutcome()>>(
+			[this, request]()
+			{
+			return this->listActivatedAlerts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListAlertTemplatesOutcome ARMSClient::listAlertTemplates(const ListAlertTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAlertTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAlertTemplatesOutcome(ListAlertTemplatesResult(outcome.result()));
+	else
+		return ListAlertTemplatesOutcome(outcome.error());
+}
+
+void ARMSClient::listAlertTemplatesAsync(const ListAlertTemplatesRequest& request, const ListAlertTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAlertTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListAlertTemplatesOutcomeCallable ARMSClient::listAlertTemplatesCallable(const ListAlertTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAlertTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAlertTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::ListClusterFromGrafanaOutcome ARMSClient::listClusterFromGrafana(const ListClusterFromGrafanaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1881,78 @@ ARMSClient::ListPromClustersOutcomeCallable ARMSClient::listPromClustersCallable
 			[this, request]()
 			{
 			return this->listPromClusters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListPrometheusAlertRulesOutcome ARMSClient::listPrometheusAlertRules(const ListPrometheusAlertRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPrometheusAlertRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPrometheusAlertRulesOutcome(ListPrometheusAlertRulesResult(outcome.result()));
+	else
+		return ListPrometheusAlertRulesOutcome(outcome.error());
+}
+
+void ARMSClient::listPrometheusAlertRulesAsync(const ListPrometheusAlertRulesRequest& request, const ListPrometheusAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPrometheusAlertRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListPrometheusAlertRulesOutcomeCallable ARMSClient::listPrometheusAlertRulesCallable(const ListPrometheusAlertRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPrometheusAlertRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listPrometheusAlertRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListPrometheusAlertTemplatesOutcome ARMSClient::listPrometheusAlertTemplates(const ListPrometheusAlertTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPrometheusAlertTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPrometheusAlertTemplatesOutcome(ListPrometheusAlertTemplatesResult(outcome.result()));
+	else
+		return ListPrometheusAlertTemplatesOutcome(outcome.error());
+}
+
+void ARMSClient::listPrometheusAlertTemplatesAsync(const ListPrometheusAlertTemplatesRequest& request, const ListPrometheusAlertTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPrometheusAlertTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListPrometheusAlertTemplatesOutcomeCallable ARMSClient::listPrometheusAlertTemplatesCallable(const ListPrometheusAlertTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPrometheusAlertTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listPrometheusAlertTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,6 +2103,42 @@ ARMSClient::ListTraceAppsOutcomeCallable ARMSClient::listTraceAppsCallable(const
 	return task->get_future();
 }
 
+ARMSClient::OpenArmsDefaultSLROutcome ARMSClient::openArmsDefaultSLR(const OpenArmsDefaultSLRRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenArmsDefaultSLROutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenArmsDefaultSLROutcome(OpenArmsDefaultSLRResult(outcome.result()));
+	else
+		return OpenArmsDefaultSLROutcome(outcome.error());
+}
+
+void ARMSClient::openArmsDefaultSLRAsync(const OpenArmsDefaultSLRRequest& request, const OpenArmsDefaultSLRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openArmsDefaultSLR(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::OpenArmsDefaultSLROutcomeCallable ARMSClient::openArmsDefaultSLRCallable(const OpenArmsDefaultSLRRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenArmsDefaultSLROutcome()>>(
+			[this, request]()
+			{
+			return this->openArmsDefaultSLR(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::OpenArmsServiceOutcome ARMSClient::openArmsService(const OpenArmsServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,6 +2175,42 @@ ARMSClient::OpenArmsServiceOutcomeCallable ARMSClient::openArmsServiceCallable(c
 	return task->get_future();
 }
 
+ARMSClient::OpenArmsServiceSecondVersionOutcome ARMSClient::openArmsServiceSecondVersion(const OpenArmsServiceSecondVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenArmsServiceSecondVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenArmsServiceSecondVersionOutcome(OpenArmsServiceSecondVersionResult(outcome.result()));
+	else
+		return OpenArmsServiceSecondVersionOutcome(outcome.error());
+}
+
+void ARMSClient::openArmsServiceSecondVersionAsync(const OpenArmsServiceSecondVersionRequest& request, const OpenArmsServiceSecondVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openArmsServiceSecondVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::OpenArmsServiceSecondVersionOutcomeCallable ARMSClient::openArmsServiceSecondVersionCallable(const OpenArmsServiceSecondVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenArmsServiceSecondVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->openArmsServiceSecondVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::OpenVClusterOutcome ARMSClient::openVCluster(const OpenVClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +2241,42 @@ ARMSClient::OpenVClusterOutcomeCallable ARMSClient::openVClusterCallable(const O
 			[this, request]()
 			{
 			return this->openVCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::OpenXtraceDefaultSLROutcome ARMSClient::openXtraceDefaultSLR(const OpenXtraceDefaultSLRRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenXtraceDefaultSLROutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenXtraceDefaultSLROutcome(OpenXtraceDefaultSLRResult(outcome.result()));
+	else
+		return OpenXtraceDefaultSLROutcome(outcome.error());
+}
+
+void ARMSClient::openXtraceDefaultSLRAsync(const OpenXtraceDefaultSLRRequest& request, const OpenXtraceDefaultSLRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openXtraceDefaultSLR(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::OpenXtraceDefaultSLROutcomeCallable ARMSClient::openXtraceDefaultSLRCallable(const OpenXtraceDefaultSLRRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenXtraceDefaultSLROutcome()>>(
+			[this, request]()
+			{
+			return this->openXtraceDefaultSLR(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2499,6 +3075,42 @@ ARMSClient::UpdateAlertRuleOutcomeCallable ARMSClient::updateAlertRuleCallable(c
 	return task->get_future();
 }
 
+ARMSClient::UpdateAlertTemplateOutcome ARMSClient::updateAlertTemplate(const UpdateAlertTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAlertTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAlertTemplateOutcome(UpdateAlertTemplateResult(outcome.result()));
+	else
+		return UpdateAlertTemplateOutcome(outcome.error());
+}
+
+void ARMSClient::updateAlertTemplateAsync(const UpdateAlertTemplateRequest& request, const UpdateAlertTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAlertTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateAlertTemplateOutcomeCallable ARMSClient::updateAlertTemplateCallable(const UpdateAlertTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAlertTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAlertTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::UpdateDispatchRuleOutcome ARMSClient::updateDispatchRule(const UpdateDispatchRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +3141,42 @@ ARMSClient::UpdateDispatchRuleOutcomeCallable ARMSClient::updateDispatchRuleCall
 			[this, request]()
 			{
 			return this->updateDispatchRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdatePrometheusAlertRuleOutcome ARMSClient::updatePrometheusAlertRule(const UpdatePrometheusAlertRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePrometheusAlertRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePrometheusAlertRuleOutcome(UpdatePrometheusAlertRuleResult(outcome.result()));
+	else
+		return UpdatePrometheusAlertRuleOutcome(outcome.error());
+}
+
+void ARMSClient::updatePrometheusAlertRuleAsync(const UpdatePrometheusAlertRuleRequest& request, const UpdatePrometheusAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePrometheusAlertRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdatePrometheusAlertRuleOutcomeCallable ARMSClient::updatePrometheusAlertRuleCallable(const UpdatePrometheusAlertRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePrometheusAlertRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePrometheusAlertRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

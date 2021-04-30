@@ -39,10 +39,16 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CreateAlertContactResult.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupRequest.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupResult.h
+	include/alibabacloud/arms/model/CreateAlertTemplateRequest.h
+	include/alibabacloud/arms/model/CreateAlertTemplateResult.h
 	include/alibabacloud/arms/model/CreateDispatchRuleRequest.h
 	include/alibabacloud/arms/model/CreateDispatchRuleResult.h
+	include/alibabacloud/arms/model/CreatePrometheusAlertRuleRequest.h
+	include/alibabacloud/arms/model/CreatePrometheusAlertRuleResult.h
 	include/alibabacloud/arms/model/CreateRetcodeAppRequest.h
 	include/alibabacloud/arms/model/CreateRetcodeAppResult.h
+	include/alibabacloud/arms/model/CreateWebhookRequest.h
+	include/alibabacloud/arms/model/CreateWebhookResult.h
 	include/alibabacloud/arms/model/CreateWehookRequest.h
 	include/alibabacloud/arms/model/CreateWehookResult.h
 	include/alibabacloud/arms/model/DeleteAlertContactRequest.h
@@ -51,8 +57,14 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteAlertContactGroupResult.h
 	include/alibabacloud/arms/model/DeleteAlertRulesRequest.h
 	include/alibabacloud/arms/model/DeleteAlertRulesResult.h
+	include/alibabacloud/arms/model/DeleteAlertTemplateRequest.h
+	include/alibabacloud/arms/model/DeleteAlertTemplateResult.h
 	include/alibabacloud/arms/model/DeleteDispatchRuleRequest.h
 	include/alibabacloud/arms/model/DeleteDispatchRuleResult.h
+	include/alibabacloud/arms/model/DeleteGrafanaResourceRequest.h
+	include/alibabacloud/arms/model/DeleteGrafanaResourceResult.h
+	include/alibabacloud/arms/model/DeletePrometheusAlertRuleRequest.h
+	include/alibabacloud/arms/model/DeletePrometheusAlertRuleResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
 	include/alibabacloud/arms/model/DeleteScenarioRequest.h
@@ -61,10 +73,16 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteTraceAppResult.h
 	include/alibabacloud/arms/model/DescribeDispatchRuleRequest.h
 	include/alibabacloud/arms/model/DescribeDispatchRuleResult.h
+	include/alibabacloud/arms/model/DescribePrometheusAlertRuleRequest.h
+	include/alibabacloud/arms/model/DescribePrometheusAlertRuleResult.h
 	include/alibabacloud/arms/model/DescribeTraceLicenseKeyRequest.h
 	include/alibabacloud/arms/model/DescribeTraceLicenseKeyResult.h
 	include/alibabacloud/arms/model/DescribeTraceLocationRequest.h
 	include/alibabacloud/arms/model/DescribeTraceLocationResult.h
+	include/alibabacloud/arms/model/DisableAlertTemplateRequest.h
+	include/alibabacloud/arms/model/DisableAlertTemplateResult.h
+	include/alibabacloud/arms/model/EnableAlertTemplateRequest.h
+	include/alibabacloud/arms/model/EnableAlertTemplateResult.h
 	include/alibabacloud/arms/model/ExportPrometheusRulesRequest.h
 	include/alibabacloud/arms/model/ExportPrometheusRulesResult.h
 	include/alibabacloud/arms/model/GetAgentDownloadUrlRequest.h
@@ -93,6 +111,10 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ImportCustomAlertRulesResult.h
 	include/alibabacloud/arms/model/ImportPrometheusRulesRequest.h
 	include/alibabacloud/arms/model/ImportPrometheusRulesResult.h
+	include/alibabacloud/arms/model/ListActivatedAlertsRequest.h
+	include/alibabacloud/arms/model/ListActivatedAlertsResult.h
+	include/alibabacloud/arms/model/ListAlertTemplatesRequest.h
+	include/alibabacloud/arms/model/ListAlertTemplatesResult.h
 	include/alibabacloud/arms/model/ListClusterFromGrafanaRequest.h
 	include/alibabacloud/arms/model/ListClusterFromGrafanaResult.h
 	include/alibabacloud/arms/model/ListDashboardsRequest.h
@@ -101,6 +123,10 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ListDispatchRuleResult.h
 	include/alibabacloud/arms/model/ListPromClustersRequest.h
 	include/alibabacloud/arms/model/ListPromClustersResult.h
+	include/alibabacloud/arms/model/ListPrometheusAlertRulesRequest.h
+	include/alibabacloud/arms/model/ListPrometheusAlertRulesResult.h
+	include/alibabacloud/arms/model/ListPrometheusAlertTemplatesRequest.h
+	include/alibabacloud/arms/model/ListPrometheusAlertTemplatesResult.h
 	include/alibabacloud/arms/model/ListRetcodeAppsRequest.h
 	include/alibabacloud/arms/model/ListRetcodeAppsResult.h
 	include/alibabacloud/arms/model/ListScenarioRequest.h
@@ -109,10 +135,16 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ListServerlessTopNAppsResult.h
 	include/alibabacloud/arms/model/ListTraceAppsRequest.h
 	include/alibabacloud/arms/model/ListTraceAppsResult.h
+	include/alibabacloud/arms/model/OpenArmsDefaultSLRRequest.h
+	include/alibabacloud/arms/model/OpenArmsDefaultSLRResult.h
 	include/alibabacloud/arms/model/OpenArmsServiceRequest.h
 	include/alibabacloud/arms/model/OpenArmsServiceResult.h
+	include/alibabacloud/arms/model/OpenArmsServiceSecondVersionRequest.h
+	include/alibabacloud/arms/model/OpenArmsServiceSecondVersionResult.h
 	include/alibabacloud/arms/model/OpenVClusterRequest.h
 	include/alibabacloud/arms/model/OpenVClusterResult.h
+	include/alibabacloud/arms/model/OpenXtraceDefaultSLRRequest.h
+	include/alibabacloud/arms/model/OpenXtraceDefaultSLRResult.h
 	include/alibabacloud/arms/model/QueryDatasetRequest.h
 	include/alibabacloud/arms/model/QueryDatasetResult.h
 	include/alibabacloud/arms/model/QueryMetricRequest.h
@@ -157,8 +189,12 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/UpdateAlertContactGroupResult.h
 	include/alibabacloud/arms/model/UpdateAlertRuleRequest.h
 	include/alibabacloud/arms/model/UpdateAlertRuleResult.h
+	include/alibabacloud/arms/model/UpdateAlertTemplateRequest.h
+	include/alibabacloud/arms/model/UpdateAlertTemplateResult.h
 	include/alibabacloud/arms/model/UpdateDispatchRuleRequest.h
 	include/alibabacloud/arms/model/UpdateDispatchRuleResult.h
+	include/alibabacloud/arms/model/UpdatePrometheusAlertRuleRequest.h
+	include/alibabacloud/arms/model/UpdatePrometheusAlertRuleResult.h
 	include/alibabacloud/arms/model/UpdateWebhookRequest.h
 	include/alibabacloud/arms/model/UpdateWebhookResult.h )
 
@@ -182,10 +218,16 @@ set(arms_src
 	src/model/CreateAlertContactResult.cc
 	src/model/CreateAlertContactGroupRequest.cc
 	src/model/CreateAlertContactGroupResult.cc
+	src/model/CreateAlertTemplateRequest.cc
+	src/model/CreateAlertTemplateResult.cc
 	src/model/CreateDispatchRuleRequest.cc
 	src/model/CreateDispatchRuleResult.cc
+	src/model/CreatePrometheusAlertRuleRequest.cc
+	src/model/CreatePrometheusAlertRuleResult.cc
 	src/model/CreateRetcodeAppRequest.cc
 	src/model/CreateRetcodeAppResult.cc
+	src/model/CreateWebhookRequest.cc
+	src/model/CreateWebhookResult.cc
 	src/model/CreateWehookRequest.cc
 	src/model/CreateWehookResult.cc
 	src/model/DeleteAlertContactRequest.cc
@@ -194,8 +236,14 @@ set(arms_src
 	src/model/DeleteAlertContactGroupResult.cc
 	src/model/DeleteAlertRulesRequest.cc
 	src/model/DeleteAlertRulesResult.cc
+	src/model/DeleteAlertTemplateRequest.cc
+	src/model/DeleteAlertTemplateResult.cc
 	src/model/DeleteDispatchRuleRequest.cc
 	src/model/DeleteDispatchRuleResult.cc
+	src/model/DeleteGrafanaResourceRequest.cc
+	src/model/DeleteGrafanaResourceResult.cc
+	src/model/DeletePrometheusAlertRuleRequest.cc
+	src/model/DeletePrometheusAlertRuleResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
 	src/model/DeleteRetcodeAppResult.cc
 	src/model/DeleteScenarioRequest.cc
@@ -204,10 +252,16 @@ set(arms_src
 	src/model/DeleteTraceAppResult.cc
 	src/model/DescribeDispatchRuleRequest.cc
 	src/model/DescribeDispatchRuleResult.cc
+	src/model/DescribePrometheusAlertRuleRequest.cc
+	src/model/DescribePrometheusAlertRuleResult.cc
 	src/model/DescribeTraceLicenseKeyRequest.cc
 	src/model/DescribeTraceLicenseKeyResult.cc
 	src/model/DescribeTraceLocationRequest.cc
 	src/model/DescribeTraceLocationResult.cc
+	src/model/DisableAlertTemplateRequest.cc
+	src/model/DisableAlertTemplateResult.cc
+	src/model/EnableAlertTemplateRequest.cc
+	src/model/EnableAlertTemplateResult.cc
 	src/model/ExportPrometheusRulesRequest.cc
 	src/model/ExportPrometheusRulesResult.cc
 	src/model/GetAgentDownloadUrlRequest.cc
@@ -236,6 +290,10 @@ set(arms_src
 	src/model/ImportCustomAlertRulesResult.cc
 	src/model/ImportPrometheusRulesRequest.cc
 	src/model/ImportPrometheusRulesResult.cc
+	src/model/ListActivatedAlertsRequest.cc
+	src/model/ListActivatedAlertsResult.cc
+	src/model/ListAlertTemplatesRequest.cc
+	src/model/ListAlertTemplatesResult.cc
 	src/model/ListClusterFromGrafanaRequest.cc
 	src/model/ListClusterFromGrafanaResult.cc
 	src/model/ListDashboardsRequest.cc
@@ -244,6 +302,10 @@ set(arms_src
 	src/model/ListDispatchRuleResult.cc
 	src/model/ListPromClustersRequest.cc
 	src/model/ListPromClustersResult.cc
+	src/model/ListPrometheusAlertRulesRequest.cc
+	src/model/ListPrometheusAlertRulesResult.cc
+	src/model/ListPrometheusAlertTemplatesRequest.cc
+	src/model/ListPrometheusAlertTemplatesResult.cc
 	src/model/ListRetcodeAppsRequest.cc
 	src/model/ListRetcodeAppsResult.cc
 	src/model/ListScenarioRequest.cc
@@ -252,10 +314,16 @@ set(arms_src
 	src/model/ListServerlessTopNAppsResult.cc
 	src/model/ListTraceAppsRequest.cc
 	src/model/ListTraceAppsResult.cc
+	src/model/OpenArmsDefaultSLRRequest.cc
+	src/model/OpenArmsDefaultSLRResult.cc
 	src/model/OpenArmsServiceRequest.cc
 	src/model/OpenArmsServiceResult.cc
+	src/model/OpenArmsServiceSecondVersionRequest.cc
+	src/model/OpenArmsServiceSecondVersionResult.cc
 	src/model/OpenVClusterRequest.cc
 	src/model/OpenVClusterResult.cc
+	src/model/OpenXtraceDefaultSLRRequest.cc
+	src/model/OpenXtraceDefaultSLRResult.cc
 	src/model/QueryDatasetRequest.cc
 	src/model/QueryDatasetResult.cc
 	src/model/QueryMetricRequest.cc
@@ -300,8 +368,12 @@ set(arms_src
 	src/model/UpdateAlertContactGroupResult.cc
 	src/model/UpdateAlertRuleRequest.cc
 	src/model/UpdateAlertRuleResult.cc
+	src/model/UpdateAlertTemplateRequest.cc
+	src/model/UpdateAlertTemplateResult.cc
 	src/model/UpdateDispatchRuleRequest.cc
 	src/model/UpdateDispatchRuleResult.cc
+	src/model/UpdatePrometheusAlertRuleRequest.cc
+	src/model/UpdatePrometheusAlertRuleResult.cc
 	src/model/UpdateWebhookRequest.cc
 	src/model/UpdateWebhookResult.cc )
 

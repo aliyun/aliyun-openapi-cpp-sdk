@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_LISTPROMETHEUSALERTRULESREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_LISTPROMETHEUSALERTRULESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ListDashboardsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT ListPrometheusAlertRulesRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListDashboardsRequest();
-				~ListDashboardsRequest();
+				ListPrometheusAlertRulesRequest();
+				~ListPrometheusAlertRulesRequest();
 
-				std::string getDashboardName()const;
-				void setDashboardName(const std::string& dashboardName);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
-				bool getRecreateSwitch()const;
-				void setRecreateSwitch(bool recreateSwitch);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
-				std::string getClusterType()const;
-				void setClusterType(const std::string& clusterType);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getMatchExpressions()const;
+				void setMatchExpressions(const std::string& matchExpressions);
+				int getStatus()const;
+				void setStatus(int status);
 
             private:
-				std::string dashboardName_;
-				std::string product_;
-				bool recreateSwitch_;
 				std::string clusterId_;
-				std::string title_;
-				std::string clusterType_;
+				std::string proxyUserId_;
+				std::string type_;
 				std::string regionId_;
+				std::string name_;
+				std::string matchExpressions_;
+				int status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_LISTPROMETHEUSALERTRULESREQUEST_H_

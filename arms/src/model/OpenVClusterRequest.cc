@@ -38,6 +38,28 @@ void OpenVClusterRequest::setClusterType(const std::string& clusterType)
 	setParameter("ClusterType", clusterType);
 }
 
+std::string OpenVClusterRequest::getProduct()const
+{
+	return product_;
+}
+
+void OpenVClusterRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
+bool OpenVClusterRequest::getRecreateSwitch()const
+{
+	return recreateSwitch_;
+}
+
+void OpenVClusterRequest::setRecreateSwitch(bool recreateSwitch)
+{
+	recreateSwitch_ = recreateSwitch;
+	setParameter("RecreateSwitch", recreateSwitch ? "true" : "false");
+}
+
 std::string OpenVClusterRequest::getRegionId()const
 {
 	return regionId_;

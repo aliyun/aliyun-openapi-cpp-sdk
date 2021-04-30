@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_LISTPROMETHEUSALERTTEMPLATESREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_LISTPROMETHEUSALERTTEMPLATESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT OpenVClusterRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT ListPrometheusAlertTemplatesRequest : public RpcServiceRequest
 			{
 
 			public:
-				OpenVClusterRequest();
-				~OpenVClusterRequest();
+				ListPrometheusAlertTemplatesRequest();
+				~ListPrometheusAlertTemplatesRequest();
 
-				std::string getClusterType()const;
-				void setClusterType(const std::string& clusterType);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
-				bool getRecreateSwitch()const;
-				void setRecreateSwitch(bool recreateSwitch);
+				std::string getProductCode()const;
+				void setProductCode(const std::string& productCode);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getLength()const;
-				void setLength(int length);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 
             private:
-				std::string clusterType_;
-				std::string product_;
-				bool recreateSwitch_;
+				std::string productCode_;
 				std::string regionId_;
-				int length_;
+				std::string clusterId_;
+				std::string proxyUserId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_OPENVCLUSTERREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_LISTPROMETHEUSALERTTEMPLATESREQUEST_H_
