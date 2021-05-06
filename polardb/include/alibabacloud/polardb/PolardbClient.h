@@ -128,20 +128,16 @@
 #include "model/DescribeParameterGroupResult.h"
 #include "model/DescribeParameterGroupsRequest.h"
 #include "model/DescribeParameterGroupsResult.h"
+#include "model/DescribeParameterTemplatesRequest.h"
+#include "model/DescribeParameterTemplatesResult.h"
 #include "model/DescribePendingMaintenanceActionRequest.h"
 #include "model/DescribePendingMaintenanceActionResult.h"
 #include "model/DescribePendingMaintenanceActionsRequest.h"
 #include "model/DescribePendingMaintenanceActionsResult.h"
+#include "model/DescribePolarSQLCollectorPolicyRequest.h"
+#include "model/DescribePolarSQLCollectorPolicyResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
-#include "model/DescribeSQLExplorerPolicyRequest.h"
-#include "model/DescribeSQLExplorerPolicyResult.h"
-#include "model/DescribeSQLExplorerRetentionRequest.h"
-#include "model/DescribeSQLExplorerRetentionResult.h"
-#include "model/DescribeSQLLogRecordsRequest.h"
-#include "model/DescribeSQLLogRecordsResult.h"
-#include "model/DescribeSQLLogTemplatesRequest.h"
-#include "model/DescribeSQLLogTemplatesResult.h"
 #include "model/DescribeScheduleTasksRequest.h"
 #include "model/DescribeScheduleTasksResult.h"
 #include "model/DescribeSlowLogRecordsRequest.h"
@@ -378,27 +374,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeParameterGroupsResult> DescribeParameterGroupsOutcome;
 			typedef std::future<DescribeParameterGroupsOutcome> DescribeParameterGroupsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeParameterGroupsRequest&, const DescribeParameterGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterGroupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeParameterTemplatesResult> DescribeParameterTemplatesOutcome;
+			typedef std::future<DescribeParameterTemplatesOutcome> DescribeParameterTemplatesOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeParameterTemplatesRequest&, const DescribeParameterTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::DescribePendingMaintenanceActionResult> DescribePendingMaintenanceActionOutcome;
 			typedef std::future<DescribePendingMaintenanceActionOutcome> DescribePendingMaintenanceActionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribePendingMaintenanceActionRequest&, const DescribePendingMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePendingMaintenanceActionAsyncHandler;
 			typedef Outcome<Error, Model::DescribePendingMaintenanceActionsResult> DescribePendingMaintenanceActionsOutcome;
 			typedef std::future<DescribePendingMaintenanceActionsOutcome> DescribePendingMaintenanceActionsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribePendingMaintenanceActionsRequest&, const DescribePendingMaintenanceActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePendingMaintenanceActionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePolarSQLCollectorPolicyResult> DescribePolarSQLCollectorPolicyOutcome;
+			typedef std::future<DescribePolarSQLCollectorPolicyOutcome> DescribePolarSQLCollectorPolicyOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribePolarSQLCollectorPolicyRequest&, const DescribePolarSQLCollectorPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolarSQLCollectorPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLExplorerPolicyResult> DescribeSQLExplorerPolicyOutcome;
-			typedef std::future<DescribeSQLExplorerPolicyOutcome> DescribeSQLExplorerPolicyOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLExplorerPolicyRequest&, const DescribeSQLExplorerPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLExplorerPolicyAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLExplorerRetentionResult> DescribeSQLExplorerRetentionOutcome;
-			typedef std::future<DescribeSQLExplorerRetentionOutcome> DescribeSQLExplorerRetentionOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLExplorerRetentionRequest&, const DescribeSQLExplorerRetentionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLExplorerRetentionAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLLogRecordsResult> DescribeSQLLogRecordsOutcome;
-			typedef std::future<DescribeSQLLogRecordsOutcome> DescribeSQLLogRecordsOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLLogRecordsRequest&, const DescribeSQLLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLLogRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLLogTemplatesResult> DescribeSQLLogTemplatesOutcome;
-			typedef std::future<DescribeSQLLogTemplatesOutcome> DescribeSQLLogTemplatesOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeSQLLogTemplatesRequest&, const DescribeSQLLogTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLLogTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScheduleTasksResult> DescribeScheduleTasksOutcome;
 			typedef std::future<DescribeScheduleTasksOutcome> DescribeScheduleTasksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeScheduleTasksRequest&, const DescribeScheduleTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduleTasksAsyncHandler;
@@ -665,27 +655,21 @@ namespace AlibabaCloud
 			DescribeParameterGroupsOutcome describeParameterGroups(const Model::DescribeParameterGroupsRequest &request)const;
 			void describeParameterGroupsAsync(const Model::DescribeParameterGroupsRequest& request, const DescribeParameterGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParameterGroupsOutcomeCallable describeParameterGroupsCallable(const Model::DescribeParameterGroupsRequest& request) const;
+			DescribeParameterTemplatesOutcome describeParameterTemplates(const Model::DescribeParameterTemplatesRequest &request)const;
+			void describeParameterTemplatesAsync(const Model::DescribeParameterTemplatesRequest& request, const DescribeParameterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeParameterTemplatesOutcomeCallable describeParameterTemplatesCallable(const Model::DescribeParameterTemplatesRequest& request) const;
 			DescribePendingMaintenanceActionOutcome describePendingMaintenanceAction(const Model::DescribePendingMaintenanceActionRequest &request)const;
 			void describePendingMaintenanceActionAsync(const Model::DescribePendingMaintenanceActionRequest& request, const DescribePendingMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePendingMaintenanceActionOutcomeCallable describePendingMaintenanceActionCallable(const Model::DescribePendingMaintenanceActionRequest& request) const;
 			DescribePendingMaintenanceActionsOutcome describePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest &request)const;
 			void describePendingMaintenanceActionsAsync(const Model::DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePendingMaintenanceActionsOutcomeCallable describePendingMaintenanceActionsCallable(const Model::DescribePendingMaintenanceActionsRequest& request) const;
+			DescribePolarSQLCollectorPolicyOutcome describePolarSQLCollectorPolicy(const Model::DescribePolarSQLCollectorPolicyRequest &request)const;
+			void describePolarSQLCollectorPolicyAsync(const Model::DescribePolarSQLCollectorPolicyRequest& request, const DescribePolarSQLCollectorPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePolarSQLCollectorPolicyOutcomeCallable describePolarSQLCollectorPolicyCallable(const Model::DescribePolarSQLCollectorPolicyRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
-			DescribeSQLExplorerPolicyOutcome describeSQLExplorerPolicy(const Model::DescribeSQLExplorerPolicyRequest &request)const;
-			void describeSQLExplorerPolicyAsync(const Model::DescribeSQLExplorerPolicyRequest& request, const DescribeSQLExplorerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLExplorerPolicyOutcomeCallable describeSQLExplorerPolicyCallable(const Model::DescribeSQLExplorerPolicyRequest& request) const;
-			DescribeSQLExplorerRetentionOutcome describeSQLExplorerRetention(const Model::DescribeSQLExplorerRetentionRequest &request)const;
-			void describeSQLExplorerRetentionAsync(const Model::DescribeSQLExplorerRetentionRequest& request, const DescribeSQLExplorerRetentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLExplorerRetentionOutcomeCallable describeSQLExplorerRetentionCallable(const Model::DescribeSQLExplorerRetentionRequest& request) const;
-			DescribeSQLLogRecordsOutcome describeSQLLogRecords(const Model::DescribeSQLLogRecordsRequest &request)const;
-			void describeSQLLogRecordsAsync(const Model::DescribeSQLLogRecordsRequest& request, const DescribeSQLLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLLogRecordsOutcomeCallable describeSQLLogRecordsCallable(const Model::DescribeSQLLogRecordsRequest& request) const;
-			DescribeSQLLogTemplatesOutcome describeSQLLogTemplates(const Model::DescribeSQLLogTemplatesRequest &request)const;
-			void describeSQLLogTemplatesAsync(const Model::DescribeSQLLogTemplatesRequest& request, const DescribeSQLLogTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLLogTemplatesOutcomeCallable describeSQLLogTemplatesCallable(const Model::DescribeSQLLogTemplatesRequest& request) const;
 			DescribeScheduleTasksOutcome describeScheduleTasks(const Model::DescribeScheduleTasksRequest &request)const;
 			void describeScheduleTasksAsync(const Model::DescribeScheduleTasksRequest& request, const DescribeScheduleTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScheduleTasksOutcomeCallable describeScheduleTasksCallable(const Model::DescribeScheduleTasksRequest& request) const;

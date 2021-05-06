@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERPOLICYREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERPOLICYREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPARAMETERTEMPLATESREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPARAMETERTEMPLATESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeSQLExplorerPolicyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeParameterTemplatesRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeSQLExplorerPolicyRequest();
-				~DescribeSQLExplorerPolicyRequest();
+				DescribeParameterTemplatesRequest();
+				~DescribeParameterTemplatesRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getDBType()const;
+				void setDBType(const std::string& dBType);
+				std::string getDBVersion()const;
+				void setDBVersion(const std::string& dBVersion);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
-				std::string dBInstanceId_;
+				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string dBType_;
+				std::string dBVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERPOLICYREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPARAMETERTEMPLATESREQUEST_H_

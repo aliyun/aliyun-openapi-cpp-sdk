@@ -60,17 +60,6 @@ void ModifyDBClusterParametersRequest::setParameterGroupId(const std::string& pa
 	setParameter("ParameterGroupId", parameterGroupId);
 }
 
-std::string ModifyDBClusterParametersRequest::getEffectiveTime()const
-{
-	return effectiveTime_;
-}
-
-void ModifyDBClusterParametersRequest::setEffectiveTime(const std::string& effectiveTime)
-{
-	effectiveTime_ = effectiveTime;
-	setParameter("EffectiveTime", effectiveTime);
-}
-
 std::string ModifyDBClusterParametersRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

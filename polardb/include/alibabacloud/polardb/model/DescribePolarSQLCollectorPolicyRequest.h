@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERRETENTIONREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERRETENTIONREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPOLARSQLCOLLECTORPOLICYREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPOLARSQLCOLLECTORPOLICYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,25 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeSQLExplorerRetentionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT DescribePolarSQLCollectorPolicyRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeSQLExplorerRetentionRequest();
-				~DescribeSQLExplorerRetentionRequest();
+				DescribePolarSQLCollectorPolicyRequest();
+				~DescribePolarSQLCollectorPolicyRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -55,10 +51,8 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
-				std::string securityToken_;
-				std::string regionId_;
-				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
 
@@ -66,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERRETENTIONREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPOLARSQLCOLLECTORPOLICYREQUEST_H_

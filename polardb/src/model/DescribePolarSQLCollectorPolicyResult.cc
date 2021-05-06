@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/DescribeSQLExplorerPolicyResult.h>
+#include <alibabacloud/polardb/model/DescribePolarSQLCollectorPolicyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-DescribeSQLExplorerPolicyResult::DescribeSQLExplorerPolicyResult() :
+DescribePolarSQLCollectorPolicyResult::DescribePolarSQLCollectorPolicyResult() :
 	ServiceResult()
 {}
 
-DescribeSQLExplorerPolicyResult::DescribeSQLExplorerPolicyResult(const std::string &payload) :
+DescribePolarSQLCollectorPolicyResult::DescribePolarSQLCollectorPolicyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeSQLExplorerPolicyResult::~DescribeSQLExplorerPolicyResult()
+DescribePolarSQLCollectorPolicyResult::~DescribePolarSQLCollectorPolicyResult()
 {}
 
-void DescribeSQLExplorerPolicyResult::parse(const std::string &payload)
+void DescribePolarSQLCollectorPolicyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -44,7 +44,7 @@ void DescribeSQLExplorerPolicyResult::parse(const std::string &payload)
 
 }
 
-std::string DescribeSQLExplorerPolicyResult::getSQLCollectorStatus()const
+std::string DescribePolarSQLCollectorPolicyResult::getSQLCollectorStatus()const
 {
 	return sQLCollectorStatus_;
 }

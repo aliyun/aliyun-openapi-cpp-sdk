@@ -39,19 +39,32 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["DBVersion"].isNull())
-		dBVersion_ = value["DBVersion"].asString();
-	if(!value["DBMinorVersion"].isNull())
-		dBMinorVersion_ = value["DBMinorVersion"].asString();
-	if(!value["DBVersionStatus"].isNull())
-		dBVersionStatus_ = value["DBVersionStatus"].asString();
+	if(!value["ProxyVersionStatus"].isNull())
+		proxyVersionStatus_ = value["ProxyVersionStatus"].asString();
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString();
+	if(!value["DBVersion"].isNull())
+		dBVersion_ = value["DBVersion"].asString();
 	if(!value["DBRevisionVersion"].isNull())
 		dBRevisionVersion_ = value["DBRevisionVersion"].asString();
+	if(!value["DBVersionStatus"].isNull())
+		dBVersionStatus_ = value["DBVersionStatus"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["DBLatestVersion"].isNull())
+		dBLatestVersion_ = value["DBLatestVersion"].asString();
+	if(!value["ProxyRevisionVersion"].isNull())
+		proxyRevisionVersion_ = value["ProxyRevisionVersion"].asString();
+	if(!value["DBMinorVersion"].isNull())
+		dBMinorVersion_ = value["DBMinorVersion"].asString();
+	if(!value["ProxyLatestVersion"].isNull())
+		proxyLatestVersion_ = value["ProxyLatestVersion"].asString();
 
+}
+
+std::string DescribeDBClusterVersionResult::getProxyVersionStatus()const
+{
+	return proxyVersionStatus_;
 }
 
 std::string DescribeDBClusterVersionResult::getIsLatestVersion()const
@@ -79,8 +92,23 @@ std::string DescribeDBClusterVersionResult::getDBClusterId()const
 	return dBClusterId_;
 }
 
+std::string DescribeDBClusterVersionResult::getDBLatestVersion()const
+{
+	return dBLatestVersion_;
+}
+
+std::string DescribeDBClusterVersionResult::getProxyRevisionVersion()const
+{
+	return proxyRevisionVersion_;
+}
+
 std::string DescribeDBClusterVersionResult::getDBMinorVersion()const
 {
 	return dBMinorVersion_;
+}
+
+std::string DescribeDBClusterVersionResult::getProxyLatestVersion()const
+{
+	return proxyLatestVersion_;
 }
 

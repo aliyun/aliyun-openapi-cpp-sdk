@@ -1959,6 +1959,42 @@ PolardbClient::DescribeParameterGroupsOutcomeCallable PolardbClient::describePar
 	return task->get_future();
 }
 
+PolardbClient::DescribeParameterTemplatesOutcome PolardbClient::describeParameterTemplates(const DescribeParameterTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeParameterTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeParameterTemplatesOutcome(DescribeParameterTemplatesResult(outcome.result()));
+	else
+		return DescribeParameterTemplatesOutcome(outcome.error());
+}
+
+void PolardbClient::describeParameterTemplatesAsync(const DescribeParameterTemplatesRequest& request, const DescribeParameterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeParameterTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeParameterTemplatesOutcomeCallable PolardbClient::describeParameterTemplatesCallable(const DescribeParameterTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeParameterTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeParameterTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribePendingMaintenanceActionOutcome PolardbClient::describePendingMaintenanceAction(const DescribePendingMaintenanceActionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2031,6 +2067,42 @@ PolardbClient::DescribePendingMaintenanceActionsOutcomeCallable PolardbClient::d
 	return task->get_future();
 }
 
+PolardbClient::DescribePolarSQLCollectorPolicyOutcome PolardbClient::describePolarSQLCollectorPolicy(const DescribePolarSQLCollectorPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePolarSQLCollectorPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePolarSQLCollectorPolicyOutcome(DescribePolarSQLCollectorPolicyResult(outcome.result()));
+	else
+		return DescribePolarSQLCollectorPolicyOutcome(outcome.error());
+}
+
+void PolardbClient::describePolarSQLCollectorPolicyAsync(const DescribePolarSQLCollectorPolicyRequest& request, const DescribePolarSQLCollectorPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePolarSQLCollectorPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribePolarSQLCollectorPolicyOutcomeCallable PolardbClient::describePolarSQLCollectorPolicyCallable(const DescribePolarSQLCollectorPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePolarSQLCollectorPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describePolarSQLCollectorPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeRegionsOutcome PolardbClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2061,150 +2133,6 @@ PolardbClient::DescribeRegionsOutcomeCallable PolardbClient::describeRegionsCall
 			[this, request]()
 			{
 			return this->describeRegions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::DescribeSQLExplorerPolicyOutcome PolardbClient::describeSQLExplorerPolicy(const DescribeSQLExplorerPolicyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLExplorerPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLExplorerPolicyOutcome(DescribeSQLExplorerPolicyResult(outcome.result()));
-	else
-		return DescribeSQLExplorerPolicyOutcome(outcome.error());
-}
-
-void PolardbClient::describeSQLExplorerPolicyAsync(const DescribeSQLExplorerPolicyRequest& request, const DescribeSQLExplorerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLExplorerPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::DescribeSQLExplorerPolicyOutcomeCallable PolardbClient::describeSQLExplorerPolicyCallable(const DescribeSQLExplorerPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLExplorerPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLExplorerPolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::DescribeSQLExplorerRetentionOutcome PolardbClient::describeSQLExplorerRetention(const DescribeSQLExplorerRetentionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLExplorerRetentionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLExplorerRetentionOutcome(DescribeSQLExplorerRetentionResult(outcome.result()));
-	else
-		return DescribeSQLExplorerRetentionOutcome(outcome.error());
-}
-
-void PolardbClient::describeSQLExplorerRetentionAsync(const DescribeSQLExplorerRetentionRequest& request, const DescribeSQLExplorerRetentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLExplorerRetention(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::DescribeSQLExplorerRetentionOutcomeCallable PolardbClient::describeSQLExplorerRetentionCallable(const DescribeSQLExplorerRetentionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLExplorerRetentionOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLExplorerRetention(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::DescribeSQLLogRecordsOutcome PolardbClient::describeSQLLogRecords(const DescribeSQLLogRecordsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLLogRecordsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLLogRecordsOutcome(DescribeSQLLogRecordsResult(outcome.result()));
-	else
-		return DescribeSQLLogRecordsOutcome(outcome.error());
-}
-
-void PolardbClient::describeSQLLogRecordsAsync(const DescribeSQLLogRecordsRequest& request, const DescribeSQLLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLLogRecords(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::DescribeSQLLogRecordsOutcomeCallable PolardbClient::describeSQLLogRecordsCallable(const DescribeSQLLogRecordsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLLogRecordsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLLogRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-PolardbClient::DescribeSQLLogTemplatesOutcome PolardbClient::describeSQLLogTemplates(const DescribeSQLLogTemplatesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSQLLogTemplatesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSQLLogTemplatesOutcome(DescribeSQLLogTemplatesResult(outcome.result()));
-	else
-		return DescribeSQLLogTemplatesOutcome(outcome.error());
-}
-
-void PolardbClient::describeSQLLogTemplatesAsync(const DescribeSQLLogTemplatesRequest& request, const DescribeSQLLogTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSQLLogTemplates(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::DescribeSQLLogTemplatesOutcomeCallable PolardbClient::describeSQLLogTemplatesCallable(const DescribeSQLLogTemplatesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSQLLogTemplatesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSQLLogTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

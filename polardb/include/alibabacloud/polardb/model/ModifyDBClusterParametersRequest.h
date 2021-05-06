@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getParameterGroupId()const;
 				void setParameterGroupId(const std::string& parameterGroupId);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -58,7 +56,6 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string parameterGroupId_;
-				std::string effectiveTime_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;

@@ -127,20 +127,16 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeParameterGroupResult.h
 	include/alibabacloud/polardb/model/DescribeParameterGroupsRequest.h
 	include/alibabacloud/polardb/model/DescribeParameterGroupsResult.h
+	include/alibabacloud/polardb/model/DescribeParameterTemplatesRequest.h
+	include/alibabacloud/polardb/model/DescribeParameterTemplatesResult.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionRequest.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionResult.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionsRequest.h
 	include/alibabacloud/polardb/model/DescribePendingMaintenanceActionsResult.h
+	include/alibabacloud/polardb/model/DescribePolarSQLCollectorPolicyRequest.h
+	include/alibabacloud/polardb/model/DescribePolarSQLCollectorPolicyResult.h
 	include/alibabacloud/polardb/model/DescribeRegionsRequest.h
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
-	include/alibabacloud/polardb/model/DescribeSQLExplorerPolicyRequest.h
-	include/alibabacloud/polardb/model/DescribeSQLExplorerPolicyResult.h
-	include/alibabacloud/polardb/model/DescribeSQLExplorerRetentionRequest.h
-	include/alibabacloud/polardb/model/DescribeSQLExplorerRetentionResult.h
-	include/alibabacloud/polardb/model/DescribeSQLLogRecordsRequest.h
-	include/alibabacloud/polardb/model/DescribeSQLLogRecordsResult.h
-	include/alibabacloud/polardb/model/DescribeSQLLogTemplatesRequest.h
-	include/alibabacloud/polardb/model/DescribeSQLLogTemplatesResult.h
 	include/alibabacloud/polardb/model/DescribeScheduleTasksRequest.h
 	include/alibabacloud/polardb/model/DescribeScheduleTasksResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
@@ -318,20 +314,16 @@ set(polardb_src
 	src/model/DescribeParameterGroupResult.cc
 	src/model/DescribeParameterGroupsRequest.cc
 	src/model/DescribeParameterGroupsResult.cc
+	src/model/DescribeParameterTemplatesRequest.cc
+	src/model/DescribeParameterTemplatesResult.cc
 	src/model/DescribePendingMaintenanceActionRequest.cc
 	src/model/DescribePendingMaintenanceActionResult.cc
 	src/model/DescribePendingMaintenanceActionsRequest.cc
 	src/model/DescribePendingMaintenanceActionsResult.cc
+	src/model/DescribePolarSQLCollectorPolicyRequest.cc
+	src/model/DescribePolarSQLCollectorPolicyResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
-	src/model/DescribeSQLExplorerPolicyRequest.cc
-	src/model/DescribeSQLExplorerPolicyResult.cc
-	src/model/DescribeSQLExplorerRetentionRequest.cc
-	src/model/DescribeSQLExplorerRetentionResult.cc
-	src/model/DescribeSQLLogRecordsRequest.cc
-	src/model/DescribeSQLLogRecordsResult.cc
-	src/model/DescribeSQLLogTemplatesRequest.cc
-	src/model/DescribeSQLLogTemplatesResult.cc
 	src/model/DescribeScheduleTasksRequest.cc
 	src/model/DescribeScheduleTasksResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc

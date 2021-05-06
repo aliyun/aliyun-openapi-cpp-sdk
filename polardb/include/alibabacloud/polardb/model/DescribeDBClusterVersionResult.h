@@ -37,22 +37,30 @@ namespace AlibabaCloud
 				DescribeDBClusterVersionResult();
 				explicit DescribeDBClusterVersionResult(const std::string &payload);
 				~DescribeDBClusterVersionResult();
+				std::string getProxyVersionStatus()const;
 				std::string getIsLatestVersion()const;
 				std::string getDBVersion()const;
 				std::string getDBRevisionVersion()const;
 				std::string getDBVersionStatus()const;
 				std::string getDBClusterId()const;
+				std::string getDBLatestVersion()const;
+				std::string getProxyRevisionVersion()const;
 				std::string getDBMinorVersion()const;
+				std::string getProxyLatestVersion()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string proxyVersionStatus_;
 				std::string isLatestVersion_;
 				std::string dBVersion_;
 				std::string dBRevisionVersion_;
 				std::string dBVersionStatus_;
 				std::string dBClusterId_;
+				std::string dBLatestVersion_;
+				std::string proxyRevisionVersion_;
 				std::string dBMinorVersion_;
+				std::string proxyLatestVersion_;
 
 			};
 		}

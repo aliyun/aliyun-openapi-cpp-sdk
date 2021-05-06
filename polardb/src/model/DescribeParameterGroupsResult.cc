@@ -47,8 +47,6 @@ void DescribeParameterGroupsResult::parse(const std::string &payload)
 			parameterGroupsObject.dBVersion = valueParameterGroupsParameterGroupsItem["DBVersion"].asString();
 		if(!valueParameterGroupsParameterGroupsItem["ParameterGroupId"].isNull())
 			parameterGroupsObject.parameterGroupId = valueParameterGroupsParameterGroupsItem["ParameterGroupId"].asString();
-		if(!valueParameterGroupsParameterGroupsItem["DigitalId"].isNull())
-			parameterGroupsObject.digitalId = valueParameterGroupsParameterGroupsItem["DigitalId"].asString();
 		if(!valueParameterGroupsParameterGroupsItem["ForceRestart"].isNull())
 			parameterGroupsObject.forceRestart = valueParameterGroupsParameterGroupsItem["ForceRestart"].asString();
 		if(!valueParameterGroupsParameterGroupsItem["ParameterGroupName"].isNull())

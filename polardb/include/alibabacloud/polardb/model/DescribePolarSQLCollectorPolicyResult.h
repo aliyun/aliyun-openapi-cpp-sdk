@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERPOLICYRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERPOLICYRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPOLARSQLCOLLECTORPOLICYRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPOLARSQLCOLLECTORPOLICYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeSQLExplorerPolicyResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DescribePolarSQLCollectorPolicyResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeSQLExplorerPolicyResult();
-				explicit DescribeSQLExplorerPolicyResult(const std::string &payload);
-				~DescribeSQLExplorerPolicyResult();
+				DescribePolarSQLCollectorPolicyResult();
+				explicit DescribePolarSQLCollectorPolicyResult(const std::string &payload);
+				~DescribePolarSQLCollectorPolicyResult();
 				std::string getSQLCollectorStatus()const;
 
 			protected:
@@ -48,4 +48,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBESQLEXPLORERPOLICYRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEPOLARSQLCOLLECTORPOLICYRESULT_H_

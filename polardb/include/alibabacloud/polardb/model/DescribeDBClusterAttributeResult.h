@@ -32,22 +32,22 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterAttributeResult : public ServiceResult
 			{
 			public:
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 				struct DBNode
 				{
 					std::string dBNodeStatus;
-					std::string zoneId;
 					int maxConnections;
+					std::string zoneId;
 					std::string dBNodeRole;
 					std::string creationTime;
 					std::string dBNodeId;
 					int failoverPriority;
 					std::string dBNodeClass;
 					int maxIOPS;
+				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
 				};
 
 
@@ -74,10 +74,11 @@ namespace AlibabaCloud
 				std::string getVSwitchId()const;
 				std::string getDBClusterDescription()const;
 				std::string getExpired()const;
-				std::string getPayType()const;
 				std::string getLockMode()const;
+				std::string getPayType()const;
 				long getStorageUsed()const;
 				std::string getDBVersionStatus()const;
+				std::string getSubCategory()const;
 				std::string getCreationTime()const;
 				std::string getRegionId()const;
 				long getSQLSize()const;
@@ -106,10 +107,11 @@ namespace AlibabaCloud
 				std::string vSwitchId_;
 				std::string dBClusterDescription_;
 				std::string expired_;
-				std::string payType_;
 				std::string lockMode_;
+				std::string payType_;
 				long storageUsed_;
 				std::string dBVersionStatus_;
+				std::string subCategory_;
 				std::string creationTime_;
 				std::string regionId_;
 				long sQLSize_;
