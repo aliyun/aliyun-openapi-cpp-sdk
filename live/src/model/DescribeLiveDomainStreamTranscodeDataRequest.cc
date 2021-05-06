@@ -82,3 +82,14 @@ void DescribeLiveDomainStreamTranscodeDataRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeLiveDomainStreamTranscodeDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeLiveDomainStreamTranscodeDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setParameter("Interval", interval);
+}
+
