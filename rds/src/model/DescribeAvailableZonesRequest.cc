@@ -27,6 +27,17 @@ DescribeAvailableZonesRequest::DescribeAvailableZonesRequest() :
 DescribeAvailableZonesRequest::~DescribeAvailableZonesRequest()
 {}
 
+std::string DescribeAvailableZonesRequest::getDBInstanceName()const
+{
+	return dBInstanceName_;
+}
+
+void DescribeAvailableZonesRequest::setDBInstanceName(const std::string& dBInstanceName)
+{
+	dBInstanceName_ = dBInstanceName;
+	setParameter("DBInstanceName", dBInstanceName);
+}
+
 long DescribeAvailableZonesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

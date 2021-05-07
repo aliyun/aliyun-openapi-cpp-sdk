@@ -93,6 +93,17 @@ void DescribeBinlogFilesRequest::setDBInstanceId(const std::string& dBInstanceId
 	setParameter("DBInstanceId", dBInstanceId);
 }
 
+int DescribeBinlogFilesRequest::getLatest()const
+{
+	return latest_;
+}
+
+void DescribeBinlogFilesRequest::setLatest(int latest)
+{
+	latest_ = latest;
+	setParameter("Latest", std::to_string(latest));
+}
+
 std::string DescribeBinlogFilesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

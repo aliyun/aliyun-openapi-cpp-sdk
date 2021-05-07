@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_MIGRATECONNECTIONTOOTHERZONERESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_MIGRATECONNECTIONTOOTHERZONERESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEMETALISTRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEMETALISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT MigrateConnectionToOtherZoneResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT DescribeMetaListResult : public ServiceResult
 			{
 			public:
+				struct Meta
+				{
+					std::string size;
+					std::string database;
+					std::string tables;
+				};
 
 
-				MigrateConnectionToOtherZoneResult();
-				explicit MigrateConnectionToOtherZoneResult(const std::string &payload);
-				~MigrateConnectionToOtherZoneResult();
-				std::string getMessage()const;
-				std::string getCode()const;
+				DescribeMetaListResult();
+				explicit DescribeMetaListResult(const std::string &payload);
+				~DescribeMetaListResult();
+				int getTotalRecordCount()const;
+				int getTotalPageCount()const;
+				int getPageRecordCount()const;
+				int getPageNumber()const;
+				std::vector<Meta> getItems()const;
+				std::string getDBInstanceName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				std::string code_;
+				int totalRecordCount_;
+				int totalPageCount_;
+				int pageRecordCount_;
+				int pageNumber_;
+				std::vector<Meta> items_;
+				std::string dBInstanceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_MIGRATECONNECTIONTOOTHERZONERESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEMETALISTRESULT_H_

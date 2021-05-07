@@ -203,6 +203,17 @@ void CreateReadOnlyDBInstanceRequest::setTddlBizType(const std::string& tddlBizT
 	setParameter("TddlBizType", tddlBizType);
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getPeriod()const
+{
+	return period_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setPeriod(const std::string& period)
+{
+	period_ = period;
+	setParameter("Period", period);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -236,6 +247,17 @@ void CreateReadOnlyDBInstanceRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getUsedTime()const
+{
+	return usedTime_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setUsedTime(const std::string& usedTime)
+{
+	usedTime_ = usedTime;
+	setParameter("UsedTime", usedTime);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getDBInstanceClass()const
 {
 	return dBInstanceClass_;
@@ -267,6 +289,17 @@ void CreateReadOnlyDBInstanceRequest::setPrivateIpAddress(const std::string& pri
 {
 	privateIpAddress_ = privateIpAddress;
 	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setAutoRenew(const std::string& autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getVPCId()const

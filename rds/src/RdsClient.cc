@@ -2067,6 +2067,42 @@ RdsClient::DescribeDBInstanceDetailOutcomeCallable RdsClient::describeDBInstance
 	return task->get_future();
 }
 
+RdsClient::DescribeDBInstanceEncryptionKeyOutcome RdsClient::describeDBInstanceEncryptionKey(const DescribeDBInstanceEncryptionKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBInstanceEncryptionKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBInstanceEncryptionKeyOutcome(DescribeDBInstanceEncryptionKeyResult(outcome.result()));
+	else
+		return DescribeDBInstanceEncryptionKeyOutcome(outcome.error());
+}
+
+void RdsClient::describeDBInstanceEncryptionKeyAsync(const DescribeDBInstanceEncryptionKeyRequest& request, const DescribeDBInstanceEncryptionKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBInstanceEncryptionKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDBInstanceEncryptionKeyOutcomeCallable RdsClient::describeDBInstanceEncryptionKeyCallable(const DescribeDBInstanceEncryptionKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBInstanceEncryptionKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBInstanceEncryptionKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeDBInstanceHAConfigOutcome RdsClient::describeDBInstanceHAConfig(const DescribeDBInstanceHAConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3213,6 +3249,42 @@ RdsClient::DescribeLogBackupFilesOutcomeCallable RdsClient::describeLogBackupFil
 			[this, request]()
 			{
 			return this->describeLogBackupFiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeMetaListOutcome RdsClient::describeMetaList(const DescribeMetaListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMetaListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMetaListOutcome(DescribeMetaListResult(outcome.result()));
+	else
+		return DescribeMetaListOutcome(outcome.error());
+}
+
+void RdsClient::describeMetaListAsync(const DescribeMetaListRequest& request, const DescribeMetaListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMetaList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeMetaListOutcomeCallable RdsClient::describeMetaListCallable(const DescribeMetaListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMetaListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMetaList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4437,42 +4509,6 @@ RdsClient::LockAccountOutcomeCallable RdsClient::lockAccountCallable(const LockA
 			[this, request]()
 			{
 			return this->lockAccount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RdsClient::MigrateConnectionToOtherZoneOutcome RdsClient::migrateConnectionToOtherZone(const MigrateConnectionToOtherZoneRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MigrateConnectionToOtherZoneOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MigrateConnectionToOtherZoneOutcome(MigrateConnectionToOtherZoneResult(outcome.result()));
-	else
-		return MigrateConnectionToOtherZoneOutcome(outcome.error());
-}
-
-void RdsClient::migrateConnectionToOtherZoneAsync(const MigrateConnectionToOtherZoneRequest& request, const MigrateConnectionToOtherZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, migrateConnectionToOtherZone(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RdsClient::MigrateConnectionToOtherZoneOutcomeCallable RdsClient::migrateConnectionToOtherZoneCallable(const MigrateConnectionToOtherZoneRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MigrateConnectionToOtherZoneOutcome()>>(
-			[this, request]()
-			{
-			return this->migrateConnectionToOtherZone(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

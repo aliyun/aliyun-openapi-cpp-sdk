@@ -129,6 +129,8 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.vpcName = valueItemsDBInstance["VpcName"].asString();
 		if(!valueItemsDBInstance["DedicatedHostGroupName"].isNull())
 			itemsObject.dedicatedHostGroupName = valueItemsDBInstance["DedicatedHostGroupName"].asString();
+		if(!valueItemsDBInstance["ConnectionString"].isNull())
+			itemsObject.connectionString = valueItemsDBInstance["ConnectionString"].asString();
 		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstance["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{

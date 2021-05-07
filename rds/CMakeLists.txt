@@ -133,6 +133,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDBInstanceAttributeResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceDetailRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstanceDetailResult.h
+	include/alibabacloud/rds/model/DescribeDBInstanceEncryptionKeyRequest.h
+	include/alibabacloud/rds/model/DescribeDBInstanceEncryptionKeyResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceHAConfigRequest.h
 	include/alibabacloud/rds/model/DescribeDBInstanceHAConfigResult.h
 	include/alibabacloud/rds/model/DescribeDBInstanceIPArrayListRequest.h
@@ -197,6 +199,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeLocalAvailableRecoveryTimeResult.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesRequest.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesResult.h
+	include/alibabacloud/rds/model/DescribeMetaListRequest.h
+	include/alibabacloud/rds/model/DescribeMetaListResult.h
 	include/alibabacloud/rds/model/DescribeMigrateTaskByIdRequest.h
 	include/alibabacloud/rds/model/DescribeMigrateTaskByIdResult.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksRequest.h
@@ -265,8 +269,6 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ListTagResourcesResult.h
 	include/alibabacloud/rds/model/LockAccountRequest.h
 	include/alibabacloud/rds/model/LockAccountResult.h
-	include/alibabacloud/rds/model/MigrateConnectionToOtherZoneRequest.h
-	include/alibabacloud/rds/model/MigrateConnectionToOtherZoneResult.h
 	include/alibabacloud/rds/model/MigrateDBInstanceRequest.h
 	include/alibabacloud/rds/model/MigrateDBInstanceResult.h
 	include/alibabacloud/rds/model/MigrateSecurityIPModeRequest.h
@@ -522,6 +524,8 @@ set(rds_src
 	src/model/DescribeDBInstanceAttributeResult.cc
 	src/model/DescribeDBInstanceDetailRequest.cc
 	src/model/DescribeDBInstanceDetailResult.cc
+	src/model/DescribeDBInstanceEncryptionKeyRequest.cc
+	src/model/DescribeDBInstanceEncryptionKeyResult.cc
 	src/model/DescribeDBInstanceHAConfigRequest.cc
 	src/model/DescribeDBInstanceHAConfigResult.cc
 	src/model/DescribeDBInstanceIPArrayListRequest.cc
@@ -586,6 +590,8 @@ set(rds_src
 	src/model/DescribeLocalAvailableRecoveryTimeResult.cc
 	src/model/DescribeLogBackupFilesRequest.cc
 	src/model/DescribeLogBackupFilesResult.cc
+	src/model/DescribeMetaListRequest.cc
+	src/model/DescribeMetaListResult.cc
 	src/model/DescribeMigrateTaskByIdRequest.cc
 	src/model/DescribeMigrateTaskByIdResult.cc
 	src/model/DescribeMigrateTasksRequest.cc
@@ -654,8 +660,6 @@ set(rds_src
 	src/model/ListTagResourcesResult.cc
 	src/model/LockAccountRequest.cc
 	src/model/LockAccountResult.cc
-	src/model/MigrateConnectionToOtherZoneRequest.cc
-	src/model/MigrateConnectionToOtherZoneResult.cc
 	src/model/MigrateDBInstanceRequest.cc
 	src/model/MigrateDBInstanceResult.cc
 	src/model/MigrateSecurityIPModeRequest.cc

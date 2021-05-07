@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEBINLOGFILESREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEBINLOGFILESREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEMETALISTREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEMETALISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,57 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeBinlogFilesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DescribeMetaListRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeBinlogFilesRequest();
-				~DescribeBinlogFilesRequest();
+				DescribeMetaListRequest();
+				~DescribeMetaListRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getPattern()const;
+				void setPattern(const std::string& pattern);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				int getLatest()const;
-				void setLatest(int latest);
+				int getPageIndex()const;
+				void setPageIndex(int pageIndex);
+				std::string getRestoreTime()const;
+				void setRestoreTime(const std::string& restoreTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
+				int getBackupSetID()const;
+				void setBackupSetID(int backupSetID);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getGetDbName()const;
+				void setGetDbName(const std::string& getDbName);
+				std::string getRestoreType()const;
+				void setRestoreType(const std::string& restoreType);
 
             private:
 				long resourceOwnerId_;
-				std::string startTime_;
-				int pageNumber_;
+				std::string clientToken_;
+				std::string pattern_;
 				std::string accessKeyId_;
 				int pageSize_;
 				std::string dBInstanceId_;
-				int latest_;
+				int pageIndex_;
+				std::string restoreTime_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string endTime_;
+				int backupSetID_;
 				long ownerId_;
+				std::string getDbName_;
+				std::string restoreType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEBINLOGFILESREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEMETALISTREQUEST_H_

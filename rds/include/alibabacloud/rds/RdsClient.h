@@ -134,6 +134,8 @@
 #include "model/DescribeDBInstanceAttributeResult.h"
 #include "model/DescribeDBInstanceDetailRequest.h"
 #include "model/DescribeDBInstanceDetailResult.h"
+#include "model/DescribeDBInstanceEncryptionKeyRequest.h"
+#include "model/DescribeDBInstanceEncryptionKeyResult.h"
 #include "model/DescribeDBInstanceHAConfigRequest.h"
 #include "model/DescribeDBInstanceHAConfigResult.h"
 #include "model/DescribeDBInstanceIPArrayListRequest.h"
@@ -198,6 +200,8 @@
 #include "model/DescribeLocalAvailableRecoveryTimeResult.h"
 #include "model/DescribeLogBackupFilesRequest.h"
 #include "model/DescribeLogBackupFilesResult.h"
+#include "model/DescribeMetaListRequest.h"
+#include "model/DescribeMetaListResult.h"
 #include "model/DescribeMigrateTaskByIdRequest.h"
 #include "model/DescribeMigrateTaskByIdResult.h"
 #include "model/DescribeMigrateTasksRequest.h"
@@ -266,8 +270,6 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/LockAccountRequest.h"
 #include "model/LockAccountResult.h"
-#include "model/MigrateConnectionToOtherZoneRequest.h"
-#include "model/MigrateConnectionToOtherZoneResult.h"
 #include "model/MigrateDBInstanceRequest.h"
 #include "model/MigrateDBInstanceResult.h"
 #include "model/MigrateSecurityIPModeRequest.h"
@@ -585,6 +587,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstanceDetailResult> DescribeDBInstanceDetailOutcome;
 			typedef std::future<DescribeDBInstanceDetailOutcome> DescribeDBInstanceDetailOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceDetailRequest&, const DescribeDBInstanceDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBInstanceEncryptionKeyResult> DescribeDBInstanceEncryptionKeyOutcome;
+			typedef std::future<DescribeDBInstanceEncryptionKeyOutcome> DescribeDBInstanceEncryptionKeyOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceEncryptionKeyRequest&, const DescribeDBInstanceEncryptionKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceEncryptionKeyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBInstanceHAConfigResult> DescribeDBInstanceHAConfigOutcome;
 			typedef std::future<DescribeDBInstanceHAConfigOutcome> DescribeDBInstanceHAConfigOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDBInstanceHAConfigRequest&, const DescribeDBInstanceHAConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceHAConfigAsyncHandler;
@@ -681,6 +686,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLogBackupFilesResult> DescribeLogBackupFilesOutcome;
 			typedef std::future<DescribeLogBackupFilesOutcome> DescribeLogBackupFilesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeLogBackupFilesRequest&, const DescribeLogBackupFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogBackupFilesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMetaListResult> DescribeMetaListOutcome;
+			typedef std::future<DescribeMetaListOutcome> DescribeMetaListOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeMetaListRequest&, const DescribeMetaListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetaListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMigrateTaskByIdResult> DescribeMigrateTaskByIdOutcome;
 			typedef std::future<DescribeMigrateTaskByIdOutcome> DescribeMigrateTaskByIdOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeMigrateTaskByIdRequest&, const DescribeMigrateTaskByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateTaskByIdAsyncHandler;
@@ -783,9 +791,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::LockAccountResult> LockAccountOutcome;
 			typedef std::future<LockAccountOutcome> LockAccountOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::LockAccountRequest&, const LockAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LockAccountAsyncHandler;
-			typedef Outcome<Error, Model::MigrateConnectionToOtherZoneResult> MigrateConnectionToOtherZoneOutcome;
-			typedef std::future<MigrateConnectionToOtherZoneOutcome> MigrateConnectionToOtherZoneOutcomeCallable;
-			typedef std::function<void(const RdsClient*, const Model::MigrateConnectionToOtherZoneRequest&, const MigrateConnectionToOtherZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateConnectionToOtherZoneAsyncHandler;
 			typedef Outcome<Error, Model::MigrateDBInstanceResult> MigrateDBInstanceOutcome;
 			typedef std::future<MigrateDBInstanceOutcome> MigrateDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::MigrateDBInstanceRequest&, const MigrateDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateDBInstanceAsyncHandler;
@@ -1169,6 +1174,9 @@ namespace AlibabaCloud
 			DescribeDBInstanceDetailOutcome describeDBInstanceDetail(const Model::DescribeDBInstanceDetailRequest &request)const;
 			void describeDBInstanceDetailAsync(const Model::DescribeDBInstanceDetailRequest& request, const DescribeDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceDetailOutcomeCallable describeDBInstanceDetailCallable(const Model::DescribeDBInstanceDetailRequest& request) const;
+			DescribeDBInstanceEncryptionKeyOutcome describeDBInstanceEncryptionKey(const Model::DescribeDBInstanceEncryptionKeyRequest &request)const;
+			void describeDBInstanceEncryptionKeyAsync(const Model::DescribeDBInstanceEncryptionKeyRequest& request, const DescribeDBInstanceEncryptionKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBInstanceEncryptionKeyOutcomeCallable describeDBInstanceEncryptionKeyCallable(const Model::DescribeDBInstanceEncryptionKeyRequest& request) const;
 			DescribeDBInstanceHAConfigOutcome describeDBInstanceHAConfig(const Model::DescribeDBInstanceHAConfigRequest &request)const;
 			void describeDBInstanceHAConfigAsync(const Model::DescribeDBInstanceHAConfigRequest& request, const DescribeDBInstanceHAConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceHAConfigOutcomeCallable describeDBInstanceHAConfigCallable(const Model::DescribeDBInstanceHAConfigRequest& request) const;
@@ -1265,6 +1273,9 @@ namespace AlibabaCloud
 			DescribeLogBackupFilesOutcome describeLogBackupFiles(const Model::DescribeLogBackupFilesRequest &request)const;
 			void describeLogBackupFilesAsync(const Model::DescribeLogBackupFilesRequest& request, const DescribeLogBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLogBackupFilesOutcomeCallable describeLogBackupFilesCallable(const Model::DescribeLogBackupFilesRequest& request) const;
+			DescribeMetaListOutcome describeMetaList(const Model::DescribeMetaListRequest &request)const;
+			void describeMetaListAsync(const Model::DescribeMetaListRequest& request, const DescribeMetaListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMetaListOutcomeCallable describeMetaListCallable(const Model::DescribeMetaListRequest& request) const;
 			DescribeMigrateTaskByIdOutcome describeMigrateTaskById(const Model::DescribeMigrateTaskByIdRequest &request)const;
 			void describeMigrateTaskByIdAsync(const Model::DescribeMigrateTaskByIdRequest& request, const DescribeMigrateTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMigrateTaskByIdOutcomeCallable describeMigrateTaskByIdCallable(const Model::DescribeMigrateTaskByIdRequest& request) const;
@@ -1367,9 +1378,6 @@ namespace AlibabaCloud
 			LockAccountOutcome lockAccount(const Model::LockAccountRequest &request)const;
 			void lockAccountAsync(const Model::LockAccountRequest& request, const LockAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LockAccountOutcomeCallable lockAccountCallable(const Model::LockAccountRequest& request) const;
-			MigrateConnectionToOtherZoneOutcome migrateConnectionToOtherZone(const Model::MigrateConnectionToOtherZoneRequest &request)const;
-			void migrateConnectionToOtherZoneAsync(const Model::MigrateConnectionToOtherZoneRequest& request, const MigrateConnectionToOtherZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			MigrateConnectionToOtherZoneOutcomeCallable migrateConnectionToOtherZoneCallable(const Model::MigrateConnectionToOtherZoneRequest& request) const;
 			MigrateDBInstanceOutcome migrateDBInstance(const Model::MigrateDBInstanceRequest &request)const;
 			void migrateDBInstanceAsync(const Model::MigrateDBInstanceRequest& request, const MigrateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MigrateDBInstanceOutcomeCallable migrateDBInstanceCallable(const Model::MigrateDBInstanceRequest& request) const;

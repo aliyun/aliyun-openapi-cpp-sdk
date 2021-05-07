@@ -61,6 +61,8 @@ void DescribeBinlogFilesResult::parse(const std::string &payload)
 			itemsObject.hostInstanceID = valueItemsBinLogFile["HostInstanceID"].asString();
 		if(!valueItemsBinLogFile["LogFileName"].isNull())
 			itemsObject.logFileName = valueItemsBinLogFile["LogFileName"].asString();
+		if(!valueItemsBinLogFile["RemoteStatus"].isNull())
+			itemsObject.remoteStatus = valueItemsBinLogFile["RemoteStatus"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

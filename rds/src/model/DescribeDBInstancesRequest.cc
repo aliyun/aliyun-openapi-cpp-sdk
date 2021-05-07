@@ -60,6 +60,17 @@ void DescribeDBInstancesRequest::setTag2key(const std::string& tag2key)
 	setParameter("Tag2key", tag2key);
 }
 
+std::string DescribeDBInstancesRequest::getConnectionString()const
+{
+	return connectionString_;
+}
+
+void DescribeDBInstancesRequest::setConnectionString(const std::string& connectionString)
+{
+	connectionString_ = connectionString;
+	setParameter("ConnectionString", connectionString);
+}
+
 bool DescribeDBInstancesRequest::getNeedVpcName()const
 {
 	return needVpcName_;

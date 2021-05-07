@@ -80,6 +80,7 @@ namespace AlibabaCloud
 					std::string vpcName;
 					std::string regionId;
 					std::string expireTime;
+					std::string connectionString;
 					std::string dedicatedHostIdForMaster;
 					std::string dedicatedHostZoneIdForSlave;
 				};
