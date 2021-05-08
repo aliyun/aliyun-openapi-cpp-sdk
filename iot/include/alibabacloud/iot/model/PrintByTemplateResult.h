@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Data
 				{
 					int retryCount;
+					int maxRetryCount;
 					std::string deviceErrorCode;
 					std::string id;
 					std::string deviceErrorMessage;

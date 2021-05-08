@@ -50,6 +50,8 @@ void PrintByTemplateResult::parse(const std::string &payload)
 		data_.id = dataNode["Id"].asString();
 	if(!dataNode["RetryCount"].isNull())
 		data_.retryCount = std::stoi(dataNode["RetryCount"].asString());
+	if(!dataNode["MaxRetryCount"].isNull())
+		data_.maxRetryCount = std::stoi(dataNode["MaxRetryCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

@@ -56,6 +56,8 @@ void QueryJobResult::parse(const std::string &payload)
 		data_.jobDocument = dataNode["JobDocument"].asString();
 	if(!dataNode["UtcModified"].isNull())
 		data_.utcModified = dataNode["UtcModified"].asString();
+	if(!dataNode["ScheduledTime"].isNull())
+		data_.scheduledTime = std::stol(dataNode["ScheduledTime"].asString());
 	auto rolloutConfigNode = dataNode["RolloutConfig"];
 	if(!rolloutConfigNode["MaximumPerMinute"].isNull())
 		data_.rolloutConfig.maximumPerMinute = std::stoi(rolloutConfigNode["MaximumPerMinute"].asString());

@@ -31,21 +31,21 @@ IotClient::IotClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::IotClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::IotClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::~IotClient()
@@ -1347,6 +1347,42 @@ IotClient::CancelOTATaskByJobOutcomeCallable IotClient::cancelOTATaskByJobCallab
 	return task->get_future();
 }
 
+IotClient::CancelReleaseProductOutcome IotClient::cancelReleaseProduct(const CancelReleaseProductRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelReleaseProductOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelReleaseProductOutcome(CancelReleaseProductResult(outcome.result()));
+	else
+		return CancelReleaseProductOutcome(outcome.error());
+}
+
+void IotClient::cancelReleaseProductAsync(const CancelReleaseProductRequest& request, const CancelReleaseProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelReleaseProduct(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CancelReleaseProductOutcomeCallable IotClient::cancelReleaseProductCallable(const CancelReleaseProductRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelReleaseProductOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelReleaseProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ClearEdgeInstanceDriverConfigsOutcome IotClient::clearEdgeInstanceDriverConfigs(const ClearEdgeInstanceDriverConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,6 +1845,42 @@ IotClient::CreateEdgeInstanceDeploymentOutcomeCallable IotClient::createEdgeInst
 			[this, request]()
 			{
 			return this->createEdgeInstanceDeployment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateEdgeInstanceMessageRoutingOutcome IotClient::createEdgeInstanceMessageRouting(const CreateEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEdgeInstanceMessageRoutingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEdgeInstanceMessageRoutingOutcome(CreateEdgeInstanceMessageRoutingResult(outcome.result()));
+	else
+		return CreateEdgeInstanceMessageRoutingOutcome(outcome.error());
+}
+
+void IotClient::createEdgeInstanceMessageRoutingAsync(const CreateEdgeInstanceMessageRoutingRequest& request, const CreateEdgeInstanceMessageRoutingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEdgeInstanceMessageRouting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateEdgeInstanceMessageRoutingOutcomeCallable IotClient::createEdgeInstanceMessageRoutingCallable(const CreateEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEdgeInstanceMessageRoutingOutcome()>>(
+			[this, request]()
+			{
+			return this->createEdgeInstanceMessageRouting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2895,6 +2967,42 @@ IotClient::DeleteEdgeInstanceOutcomeCallable IotClient::deleteEdgeInstanceCallab
 	return task->get_future();
 }
 
+IotClient::DeleteEdgeInstanceMessageRoutingOutcome IotClient::deleteEdgeInstanceMessageRouting(const DeleteEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEdgeInstanceMessageRoutingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEdgeInstanceMessageRoutingOutcome(DeleteEdgeInstanceMessageRoutingResult(outcome.result()));
+	else
+		return DeleteEdgeInstanceMessageRoutingOutcome(outcome.error());
+}
+
+void IotClient::deleteEdgeInstanceMessageRoutingAsync(const DeleteEdgeInstanceMessageRoutingRequest& request, const DeleteEdgeInstanceMessageRoutingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEdgeInstanceMessageRouting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteEdgeInstanceMessageRoutingOutcomeCallable IotClient::deleteEdgeInstanceMessageRoutingCallable(const DeleteEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEdgeInstanceMessageRoutingOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEdgeInstanceMessageRouting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DeleteJobOutcome IotClient::deleteJob(const DeleteJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3219,6 +3327,42 @@ IotClient::DeleteSceneRuleOutcomeCallable IotClient::deleteSceneRuleCallable(con
 	return task->get_future();
 }
 
+IotClient::DeleteSpeechOutcome IotClient::deleteSpeech(const DeleteSpeechRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSpeechOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSpeechOutcome(DeleteSpeechResult(outcome.result()));
+	else
+		return DeleteSpeechOutcome(outcome.error());
+}
+
+void IotClient::deleteSpeechAsync(const DeleteSpeechRequest& request, const DeleteSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSpeech(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteSpeechOutcomeCallable IotClient::deleteSpeechCallable(const DeleteSpeechRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSpeechOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSpeech(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DeleteSubscribeRelationOutcome IotClient::deleteSubscribeRelation(const DeleteSubscribeRelationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3327,6 +3471,78 @@ IotClient::DeleteTopicRouteTableOutcomeCallable IotClient::deleteTopicRouteTable
 	return task->get_future();
 }
 
+IotClient::DisableDeviceTunnelOutcome IotClient::disableDeviceTunnel(const DisableDeviceTunnelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableDeviceTunnelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableDeviceTunnelOutcome(DisableDeviceTunnelResult(outcome.result()));
+	else
+		return DisableDeviceTunnelOutcome(outcome.error());
+}
+
+void IotClient::disableDeviceTunnelAsync(const DisableDeviceTunnelRequest& request, const DisableDeviceTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableDeviceTunnel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DisableDeviceTunnelOutcomeCallable IotClient::disableDeviceTunnelCallable(const DisableDeviceTunnelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableDeviceTunnelOutcome()>>(
+			[this, request]()
+			{
+			return this->disableDeviceTunnel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DisableDeviceTunnelShareOutcome IotClient::disableDeviceTunnelShare(const DisableDeviceTunnelShareRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableDeviceTunnelShareOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableDeviceTunnelShareOutcome(DisableDeviceTunnelShareResult(outcome.result()));
+	else
+		return DisableDeviceTunnelShareOutcome(outcome.error());
+}
+
+void IotClient::disableDeviceTunnelShareAsync(const DisableDeviceTunnelShareRequest& request, const DisableDeviceTunnelShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableDeviceTunnelShare(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DisableDeviceTunnelShareOutcomeCallable IotClient::disableDeviceTunnelShareCallable(const DisableDeviceTunnelShareRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableDeviceTunnelShareOutcome()>>(
+			[this, request]()
+			{
+			return this->disableDeviceTunnelShare(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DisableSceneRuleOutcome IotClient::disableSceneRule(const DisableSceneRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3393,6 +3609,78 @@ IotClient::DisableThingOutcomeCallable IotClient::disableThingCallable(const Dis
 			[this, request]()
 			{
 			return this->disableThing(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::EnableDeviceTunnelOutcome IotClient::enableDeviceTunnel(const EnableDeviceTunnelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableDeviceTunnelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableDeviceTunnelOutcome(EnableDeviceTunnelResult(outcome.result()));
+	else
+		return EnableDeviceTunnelOutcome(outcome.error());
+}
+
+void IotClient::enableDeviceTunnelAsync(const EnableDeviceTunnelRequest& request, const EnableDeviceTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableDeviceTunnel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::EnableDeviceTunnelOutcomeCallable IotClient::enableDeviceTunnelCallable(const EnableDeviceTunnelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableDeviceTunnelOutcome()>>(
+			[this, request]()
+			{
+			return this->enableDeviceTunnel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::EnableDeviceTunnelShareOutcome IotClient::enableDeviceTunnelShare(const EnableDeviceTunnelShareRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableDeviceTunnelShareOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableDeviceTunnelShareOutcome(EnableDeviceTunnelShareResult(outcome.result()));
+	else
+		return EnableDeviceTunnelShareOutcome(outcome.error());
+}
+
+void IotClient::enableDeviceTunnelShareAsync(const EnableDeviceTunnelShareRequest& request, const EnableDeviceTunnelShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableDeviceTunnelShare(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::EnableDeviceTunnelShareOutcomeCallable IotClient::enableDeviceTunnelShareCallable(const EnableDeviceTunnelShareRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableDeviceTunnelShareOutcome()>>(
+			[this, request]()
+			{
+			return this->enableDeviceTunnelShare(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3687,6 +3975,78 @@ IotClient::GetDeviceStatusOutcomeCallable IotClient::getDeviceStatusCallable(con
 	return task->get_future();
 }
 
+IotClient::GetDeviceTunnelShareStatusOutcome IotClient::getDeviceTunnelShareStatus(const GetDeviceTunnelShareStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDeviceTunnelShareStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDeviceTunnelShareStatusOutcome(GetDeviceTunnelShareStatusResult(outcome.result()));
+	else
+		return GetDeviceTunnelShareStatusOutcome(outcome.error());
+}
+
+void IotClient::getDeviceTunnelShareStatusAsync(const GetDeviceTunnelShareStatusRequest& request, const GetDeviceTunnelShareStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDeviceTunnelShareStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetDeviceTunnelShareStatusOutcomeCallable IotClient::getDeviceTunnelShareStatusCallable(const GetDeviceTunnelShareStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDeviceTunnelShareStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getDeviceTunnelShareStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetDeviceTunnelStatusOutcome IotClient::getDeviceTunnelStatus(const GetDeviceTunnelStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDeviceTunnelStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDeviceTunnelStatusOutcome(GetDeviceTunnelStatusResult(outcome.result()));
+	else
+		return GetDeviceTunnelStatusOutcome(outcome.error());
+}
+
+void IotClient::getDeviceTunnelStatusAsync(const GetDeviceTunnelStatusRequest& request, const GetDeviceTunnelStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDeviceTunnelStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetDeviceTunnelStatusOutcomeCallable IotClient::getDeviceTunnelStatusCallable(const GetDeviceTunnelStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDeviceTunnelStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getDeviceTunnelStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::GetEdgeDriverVersionOutcome IotClient::getEdgeDriverVersion(const GetEdgeDriverVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3789,6 +4149,42 @@ IotClient::GetEdgeInstanceDeploymentOutcomeCallable IotClient::getEdgeInstanceDe
 			[this, request]()
 			{
 			return this->getEdgeInstanceDeployment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetEdgeInstanceMessageRoutingOutcome IotClient::getEdgeInstanceMessageRouting(const GetEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetEdgeInstanceMessageRoutingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetEdgeInstanceMessageRoutingOutcome(GetEdgeInstanceMessageRoutingResult(outcome.result()));
+	else
+		return GetEdgeInstanceMessageRoutingOutcome(outcome.error());
+}
+
+void IotClient::getEdgeInstanceMessageRoutingAsync(const GetEdgeInstanceMessageRoutingRequest& request, const GetEdgeInstanceMessageRoutingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getEdgeInstanceMessageRouting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetEdgeInstanceMessageRoutingOutcomeCallable IotClient::getEdgeInstanceMessageRoutingCallable(const GetEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetEdgeInstanceMessageRoutingOutcome()>>(
+			[this, request]()
+			{
+			return this->getEdgeInstanceMessageRouting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6819,6 +7215,42 @@ IotClient::QueryEdgeInstanceHistoricDeploymentOutcomeCallable IotClient::queryEd
 	return task->get_future();
 }
 
+IotClient::QueryEdgeInstanceMessageRoutingOutcome IotClient::queryEdgeInstanceMessageRouting(const QueryEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryEdgeInstanceMessageRoutingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryEdgeInstanceMessageRoutingOutcome(QueryEdgeInstanceMessageRoutingResult(outcome.result()));
+	else
+		return QueryEdgeInstanceMessageRoutingOutcome(outcome.error());
+}
+
+void IotClient::queryEdgeInstanceMessageRoutingAsync(const QueryEdgeInstanceMessageRoutingRequest& request, const QueryEdgeInstanceMessageRoutingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryEdgeInstanceMessageRouting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryEdgeInstanceMessageRoutingOutcomeCallable IotClient::queryEdgeInstanceMessageRoutingCallable(const QueryEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryEdgeInstanceMessageRoutingOutcome()>>(
+			[this, request]()
+			{
+			return this->queryEdgeInstanceMessageRouting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QueryEdgeInstanceSceneRuleOutcome IotClient::queryEdgeInstanceSceneRule(const QueryEdgeInstanceSceneRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7647,6 +8079,42 @@ IotClient::RRpcOutcomeCallable IotClient::rRpcCallable(const RRpcRequest &reques
 	return task->get_future();
 }
 
+IotClient::RefreshDeviceTunnelSharePasswordOutcome IotClient::refreshDeviceTunnelSharePassword(const RefreshDeviceTunnelSharePasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshDeviceTunnelSharePasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshDeviceTunnelSharePasswordOutcome(RefreshDeviceTunnelSharePasswordResult(outcome.result()));
+	else
+		return RefreshDeviceTunnelSharePasswordOutcome(outcome.error());
+}
+
+void IotClient::refreshDeviceTunnelSharePasswordAsync(const RefreshDeviceTunnelSharePasswordRequest& request, const RefreshDeviceTunnelSharePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshDeviceTunnelSharePassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::RefreshDeviceTunnelSharePasswordOutcomeCallable IotClient::refreshDeviceTunnelSharePasswordCallable(const RefreshDeviceTunnelSharePasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshDeviceTunnelSharePasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshDeviceTunnelSharePassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::RegisterDeviceOutcome IotClient::registerDevice(const RegisterDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7713,6 +8181,42 @@ IotClient::ReleaseEdgeDriverVersionOutcomeCallable IotClient::releaseEdgeDriverV
 			[this, request]()
 			{
 			return this->releaseEdgeDriverVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ReleaseProductOutcome IotClient::releaseProduct(const ReleaseProductRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReleaseProductOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReleaseProductOutcome(ReleaseProductResult(outcome.result()));
+	else
+		return ReleaseProductOutcome(outcome.error());
+}
+
+void IotClient::releaseProductAsync(const ReleaseProductRequest& request, const ReleaseProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, releaseProduct(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ReleaseProductOutcomeCallable IotClient::releaseProductCallable(const ReleaseProductRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReleaseProductOutcome()>>(
+			[this, request]()
+			{
+			return this->releaseProduct(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8649,6 +9153,42 @@ IotClient::UpdateEdgeInstanceChannelOutcomeCallable IotClient::updateEdgeInstanc
 			[this, request]()
 			{
 			return this->updateEdgeInstanceChannel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateEdgeInstanceMessageRoutingOutcome IotClient::updateEdgeInstanceMessageRouting(const UpdateEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateEdgeInstanceMessageRoutingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateEdgeInstanceMessageRoutingOutcome(UpdateEdgeInstanceMessageRoutingResult(outcome.result()));
+	else
+		return UpdateEdgeInstanceMessageRoutingOutcome(outcome.error());
+}
+
+void IotClient::updateEdgeInstanceMessageRoutingAsync(const UpdateEdgeInstanceMessageRoutingRequest& request, const UpdateEdgeInstanceMessageRoutingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateEdgeInstanceMessageRouting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateEdgeInstanceMessageRoutingOutcomeCallable IotClient::updateEdgeInstanceMessageRoutingCallable(const UpdateEdgeInstanceMessageRoutingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateEdgeInstanceMessageRoutingOutcome()>>(
+			[this, request]()
+			{
+			return this->updateEdgeInstanceMessageRouting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

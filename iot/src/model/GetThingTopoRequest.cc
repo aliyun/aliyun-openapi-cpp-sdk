@@ -27,6 +27,17 @@ GetThingTopoRequest::GetThingTopoRequest() :
 GetThingTopoRequest::~GetThingTopoRequest()
 {}
 
+std::string GetThingTopoRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void GetThingTopoRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string GetThingTopoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void GetThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetThingTopoRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void GetThingTopoRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string GetThingTopoRequest::getIotId()const

@@ -93,6 +93,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CancelOTATaskByDeviceResult.h
 	include/alibabacloud/iot/model/CancelOTATaskByJobRequest.h
 	include/alibabacloud/iot/model/CancelOTATaskByJobResult.h
+	include/alibabacloud/iot/model/CancelReleaseProductRequest.h
+	include/alibabacloud/iot/model/CancelReleaseProductResult.h
 	include/alibabacloud/iot/model/ClearEdgeInstanceDriverConfigsRequest.h
 	include/alibabacloud/iot/model/ClearEdgeInstanceDriverConfigsResult.h
 	include/alibabacloud/iot/model/CloseEdgeInstanceDeploymentRequest.h
@@ -119,6 +121,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateEdgeInstanceChannelResult.h
 	include/alibabacloud/iot/model/CreateEdgeInstanceDeploymentRequest.h
 	include/alibabacloud/iot/model/CreateEdgeInstanceDeploymentResult.h
+	include/alibabacloud/iot/model/CreateEdgeInstanceMessageRoutingRequest.h
+	include/alibabacloud/iot/model/CreateEdgeInstanceMessageRoutingResult.h
 	include/alibabacloud/iot/model/CreateEdgeOssPreSignedAddressRequest.h
 	include/alibabacloud/iot/model/CreateEdgeOssPreSignedAddressResult.h
 	include/alibabacloud/iot/model/CreateJobRequest.h
@@ -179,6 +183,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteEdgeDriverVersionResult.h
 	include/alibabacloud/iot/model/DeleteEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/DeleteEdgeInstanceResult.h
+	include/alibabacloud/iot/model/DeleteEdgeInstanceMessageRoutingRequest.h
+	include/alibabacloud/iot/model/DeleteEdgeInstanceMessageRoutingResult.h
 	include/alibabacloud/iot/model/DeleteJobRequest.h
 	include/alibabacloud/iot/model/DeleteJobResult.h
 	include/alibabacloud/iot/model/DeleteOTAFirmwareRequest.h
@@ -197,16 +203,26 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteRuleActionResult.h
 	include/alibabacloud/iot/model/DeleteSceneRuleRequest.h
 	include/alibabacloud/iot/model/DeleteSceneRuleResult.h
+	include/alibabacloud/iot/model/DeleteSpeechRequest.h
+	include/alibabacloud/iot/model/DeleteSpeechResult.h
 	include/alibabacloud/iot/model/DeleteSubscribeRelationRequest.h
 	include/alibabacloud/iot/model/DeleteSubscribeRelationResult.h
 	include/alibabacloud/iot/model/DeleteThingModelRequest.h
 	include/alibabacloud/iot/model/DeleteThingModelResult.h
 	include/alibabacloud/iot/model/DeleteTopicRouteTableRequest.h
 	include/alibabacloud/iot/model/DeleteTopicRouteTableResult.h
+	include/alibabacloud/iot/model/DisableDeviceTunnelRequest.h
+	include/alibabacloud/iot/model/DisableDeviceTunnelResult.h
+	include/alibabacloud/iot/model/DisableDeviceTunnelShareRequest.h
+	include/alibabacloud/iot/model/DisableDeviceTunnelShareResult.h
 	include/alibabacloud/iot/model/DisableSceneRuleRequest.h
 	include/alibabacloud/iot/model/DisableSceneRuleResult.h
 	include/alibabacloud/iot/model/DisableThingRequest.h
 	include/alibabacloud/iot/model/DisableThingResult.h
+	include/alibabacloud/iot/model/EnableDeviceTunnelRequest.h
+	include/alibabacloud/iot/model/EnableDeviceTunnelResult.h
+	include/alibabacloud/iot/model/EnableDeviceTunnelShareRequest.h
+	include/alibabacloud/iot/model/EnableDeviceTunnelShareResult.h
 	include/alibabacloud/iot/model/EnableSceneRuleRequest.h
 	include/alibabacloud/iot/model/EnableSceneRuleResult.h
 	include/alibabacloud/iot/model/EnableThingRequest.h
@@ -223,12 +239,18 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetDeviceShadowResult.h
 	include/alibabacloud/iot/model/GetDeviceStatusRequest.h
 	include/alibabacloud/iot/model/GetDeviceStatusResult.h
+	include/alibabacloud/iot/model/GetDeviceTunnelShareStatusRequest.h
+	include/alibabacloud/iot/model/GetDeviceTunnelShareStatusResult.h
+	include/alibabacloud/iot/model/GetDeviceTunnelStatusRequest.h
+	include/alibabacloud/iot/model/GetDeviceTunnelStatusResult.h
 	include/alibabacloud/iot/model/GetEdgeDriverVersionRequest.h
 	include/alibabacloud/iot/model/GetEdgeDriverVersionResult.h
 	include/alibabacloud/iot/model/GetEdgeInstanceRequest.h
 	include/alibabacloud/iot/model/GetEdgeInstanceResult.h
 	include/alibabacloud/iot/model/GetEdgeInstanceDeploymentRequest.h
 	include/alibabacloud/iot/model/GetEdgeInstanceDeploymentResult.h
+	include/alibabacloud/iot/model/GetEdgeInstanceMessageRoutingRequest.h
+	include/alibabacloud/iot/model/GetEdgeInstanceMessageRoutingResult.h
 	include/alibabacloud/iot/model/GetGatewayBySubDeviceRequest.h
 	include/alibabacloud/iot/model/GetGatewayBySubDeviceResult.h
 	include/alibabacloud/iot/model/GetLoraNodesTaskRequest.h
@@ -397,6 +419,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryEdgeInstanceGatewayResult.h
 	include/alibabacloud/iot/model/QueryEdgeInstanceHistoricDeploymentRequest.h
 	include/alibabacloud/iot/model/QueryEdgeInstanceHistoricDeploymentResult.h
+	include/alibabacloud/iot/model/QueryEdgeInstanceMessageRoutingRequest.h
+	include/alibabacloud/iot/model/QueryEdgeInstanceMessageRoutingResult.h
 	include/alibabacloud/iot/model/QueryEdgeInstanceSceneRuleRequest.h
 	include/alibabacloud/iot/model/QueryEdgeInstanceSceneRuleResult.h
 	include/alibabacloud/iot/model/QueryJobRequest.h
@@ -443,10 +467,14 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryTopicRouteTableResult.h
 	include/alibabacloud/iot/model/RRpcRequest.h
 	include/alibabacloud/iot/model/RRpcResult.h
+	include/alibabacloud/iot/model/RefreshDeviceTunnelSharePasswordRequest.h
+	include/alibabacloud/iot/model/RefreshDeviceTunnelSharePasswordResult.h
 	include/alibabacloud/iot/model/RegisterDeviceRequest.h
 	include/alibabacloud/iot/model/RegisterDeviceResult.h
 	include/alibabacloud/iot/model/ReleaseEdgeDriverVersionRequest.h
 	include/alibabacloud/iot/model/ReleaseEdgeDriverVersionResult.h
+	include/alibabacloud/iot/model/ReleaseProductRequest.h
+	include/alibabacloud/iot/model/ReleaseProductResult.h
 	include/alibabacloud/iot/model/RemoveThingTopoRequest.h
 	include/alibabacloud/iot/model/RemoveThingTopoResult.h
 	include/alibabacloud/iot/model/ReplaceEdgeInstanceGatewayRequest.h
@@ -499,6 +527,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UpdateEdgeInstanceResult.h
 	include/alibabacloud/iot/model/UpdateEdgeInstanceChannelRequest.h
 	include/alibabacloud/iot/model/UpdateEdgeInstanceChannelResult.h
+	include/alibabacloud/iot/model/UpdateEdgeInstanceMessageRoutingRequest.h
+	include/alibabacloud/iot/model/UpdateEdgeInstanceMessageRoutingResult.h
 	include/alibabacloud/iot/model/UpdateJobRequest.h
 	include/alibabacloud/iot/model/UpdateJobResult.h
 	include/alibabacloud/iot/model/UpdateOTAModuleRequest.h
@@ -600,6 +630,8 @@ set(iot_src
 	src/model/CancelOTATaskByDeviceResult.cc
 	src/model/CancelOTATaskByJobRequest.cc
 	src/model/CancelOTATaskByJobResult.cc
+	src/model/CancelReleaseProductRequest.cc
+	src/model/CancelReleaseProductResult.cc
 	src/model/ClearEdgeInstanceDriverConfigsRequest.cc
 	src/model/ClearEdgeInstanceDriverConfigsResult.cc
 	src/model/CloseEdgeInstanceDeploymentRequest.cc
@@ -626,6 +658,8 @@ set(iot_src
 	src/model/CreateEdgeInstanceChannelResult.cc
 	src/model/CreateEdgeInstanceDeploymentRequest.cc
 	src/model/CreateEdgeInstanceDeploymentResult.cc
+	src/model/CreateEdgeInstanceMessageRoutingRequest.cc
+	src/model/CreateEdgeInstanceMessageRoutingResult.cc
 	src/model/CreateEdgeOssPreSignedAddressRequest.cc
 	src/model/CreateEdgeOssPreSignedAddressResult.cc
 	src/model/CreateJobRequest.cc
@@ -686,6 +720,8 @@ set(iot_src
 	src/model/DeleteEdgeDriverVersionResult.cc
 	src/model/DeleteEdgeInstanceRequest.cc
 	src/model/DeleteEdgeInstanceResult.cc
+	src/model/DeleteEdgeInstanceMessageRoutingRequest.cc
+	src/model/DeleteEdgeInstanceMessageRoutingResult.cc
 	src/model/DeleteJobRequest.cc
 	src/model/DeleteJobResult.cc
 	src/model/DeleteOTAFirmwareRequest.cc
@@ -704,16 +740,26 @@ set(iot_src
 	src/model/DeleteRuleActionResult.cc
 	src/model/DeleteSceneRuleRequest.cc
 	src/model/DeleteSceneRuleResult.cc
+	src/model/DeleteSpeechRequest.cc
+	src/model/DeleteSpeechResult.cc
 	src/model/DeleteSubscribeRelationRequest.cc
 	src/model/DeleteSubscribeRelationResult.cc
 	src/model/DeleteThingModelRequest.cc
 	src/model/DeleteThingModelResult.cc
 	src/model/DeleteTopicRouteTableRequest.cc
 	src/model/DeleteTopicRouteTableResult.cc
+	src/model/DisableDeviceTunnelRequest.cc
+	src/model/DisableDeviceTunnelResult.cc
+	src/model/DisableDeviceTunnelShareRequest.cc
+	src/model/DisableDeviceTunnelShareResult.cc
 	src/model/DisableSceneRuleRequest.cc
 	src/model/DisableSceneRuleResult.cc
 	src/model/DisableThingRequest.cc
 	src/model/DisableThingResult.cc
+	src/model/EnableDeviceTunnelRequest.cc
+	src/model/EnableDeviceTunnelResult.cc
+	src/model/EnableDeviceTunnelShareRequest.cc
+	src/model/EnableDeviceTunnelShareResult.cc
 	src/model/EnableSceneRuleRequest.cc
 	src/model/EnableSceneRuleResult.cc
 	src/model/EnableThingRequest.cc
@@ -730,12 +776,18 @@ set(iot_src
 	src/model/GetDeviceShadowResult.cc
 	src/model/GetDeviceStatusRequest.cc
 	src/model/GetDeviceStatusResult.cc
+	src/model/GetDeviceTunnelShareStatusRequest.cc
+	src/model/GetDeviceTunnelShareStatusResult.cc
+	src/model/GetDeviceTunnelStatusRequest.cc
+	src/model/GetDeviceTunnelStatusResult.cc
 	src/model/GetEdgeDriverVersionRequest.cc
 	src/model/GetEdgeDriverVersionResult.cc
 	src/model/GetEdgeInstanceRequest.cc
 	src/model/GetEdgeInstanceResult.cc
 	src/model/GetEdgeInstanceDeploymentRequest.cc
 	src/model/GetEdgeInstanceDeploymentResult.cc
+	src/model/GetEdgeInstanceMessageRoutingRequest.cc
+	src/model/GetEdgeInstanceMessageRoutingResult.cc
 	src/model/GetGatewayBySubDeviceRequest.cc
 	src/model/GetGatewayBySubDeviceResult.cc
 	src/model/GetLoraNodesTaskRequest.cc
@@ -904,6 +956,8 @@ set(iot_src
 	src/model/QueryEdgeInstanceGatewayResult.cc
 	src/model/QueryEdgeInstanceHistoricDeploymentRequest.cc
 	src/model/QueryEdgeInstanceHistoricDeploymentResult.cc
+	src/model/QueryEdgeInstanceMessageRoutingRequest.cc
+	src/model/QueryEdgeInstanceMessageRoutingResult.cc
 	src/model/QueryEdgeInstanceSceneRuleRequest.cc
 	src/model/QueryEdgeInstanceSceneRuleResult.cc
 	src/model/QueryJobRequest.cc
@@ -950,10 +1004,14 @@ set(iot_src
 	src/model/QueryTopicRouteTableResult.cc
 	src/model/RRpcRequest.cc
 	src/model/RRpcResult.cc
+	src/model/RefreshDeviceTunnelSharePasswordRequest.cc
+	src/model/RefreshDeviceTunnelSharePasswordResult.cc
 	src/model/RegisterDeviceRequest.cc
 	src/model/RegisterDeviceResult.cc
 	src/model/ReleaseEdgeDriverVersionRequest.cc
 	src/model/ReleaseEdgeDriverVersionResult.cc
+	src/model/ReleaseProductRequest.cc
+	src/model/ReleaseProductResult.cc
 	src/model/RemoveThingTopoRequest.cc
 	src/model/RemoveThingTopoResult.cc
 	src/model/ReplaceEdgeInstanceGatewayRequest.cc
@@ -1006,6 +1064,8 @@ set(iot_src
 	src/model/UpdateEdgeInstanceResult.cc
 	src/model/UpdateEdgeInstanceChannelRequest.cc
 	src/model/UpdateEdgeInstanceChannelResult.cc
+	src/model/UpdateEdgeInstanceMessageRoutingRequest.cc
+	src/model/UpdateEdgeInstanceMessageRoutingResult.cc
 	src/model/UpdateJobRequest.cc
 	src/model/UpdateJobResult.cc
 	src/model/UpdateOTAModuleRequest.cc

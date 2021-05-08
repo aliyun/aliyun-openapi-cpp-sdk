@@ -35,8 +35,12 @@ namespace AlibabaCloud
 				QueryDeviceBySQLRequest();
 				~QueryDeviceBySQLRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getSQL()const;
 				void setSQL(const std::string& sQL);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getApiProduct()const;
@@ -45,7 +49,9 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 
             private:
+				std::string realTenantId_;
 				std::string sQL_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				std::string apiProduct_;
 				std::string apiRevision_;

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string taskId;
 					std::string productName;
 					std::string firmwareId;
+					std::string timeout;
 					std::string taskStatus;
 					std::string iotId;
 					std::string utcCreate;

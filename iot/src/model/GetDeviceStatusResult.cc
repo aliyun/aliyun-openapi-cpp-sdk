@@ -42,6 +42,8 @@ void GetDeviceStatusResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
+	if(!dataNode["Timestamp"].isNull())
+		data_.timestamp = std::stol(dataNode["Timestamp"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

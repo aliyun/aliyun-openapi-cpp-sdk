@@ -27,6 +27,17 @@ ListDeviceDistributeJobRequest::ListDeviceDistributeJobRequest() :
 ListDeviceDistributeJobRequest::~ListDeviceDistributeJobRequest()
 {}
 
+std::string ListDeviceDistributeJobRequest::getJobId()const
+{
+	return jobId_;
+}
+
+void ListDeviceDistributeJobRequest::setJobId(const std::string& jobId)
+{
+	jobId_ = jobId;
+	setBodyParameter("JobId", jobId);
+}
+
 int ListDeviceDistributeJobRequest::getPageSize()const
 {
 	return pageSize_;

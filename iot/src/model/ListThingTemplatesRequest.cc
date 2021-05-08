@@ -38,17 +38,6 @@ void ListThingTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string ListThingTemplatesRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void ListThingTemplatesRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
 std::string ListThingTemplatesRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

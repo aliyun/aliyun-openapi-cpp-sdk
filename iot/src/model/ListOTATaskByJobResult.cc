@@ -71,6 +71,8 @@ void ListOTATaskByJobResult::parse(const std::string &payload)
 			dataObject.iotId = valueDataSimpleOTATaskInfo["IotId"].asString();
 		if(!valueDataSimpleOTATaskInfo["UtcCreate"].isNull())
 			dataObject.utcCreate = valueDataSimpleOTATaskInfo["UtcCreate"].asString();
+		if(!valueDataSimpleOTATaskInfo["Timeout"].isNull())
+			dataObject.timeout = valueDataSimpleOTATaskInfo["Timeout"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

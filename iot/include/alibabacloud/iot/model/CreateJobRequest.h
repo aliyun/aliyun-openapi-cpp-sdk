@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				long getScheduledTime()const;
+				void setScheduledTime(long scheduledTime);
 
             private:
 				std::string jobDocument_;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string jobFile_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				long scheduledTime_;
 
 			};
 		}

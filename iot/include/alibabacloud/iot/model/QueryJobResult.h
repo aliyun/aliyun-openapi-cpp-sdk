@@ -61,16 +61,17 @@ namespace AlibabaCloud
 						std::string targetProduct;
 					};
 					std::string status;
-					RolloutConfig rolloutConfig;
 					TimeoutConfig timeoutConfig;
-					std::string type;
+					long scheduledTime;
 					std::string description;
 					JobFile jobFile;
-					std::string utcCreate;
 					std::string jobDocument;
 					std::string jobName;
-					std::string utcModified;
 					TargetConfig targetConfig;
+					RolloutConfig rolloutConfig;
+					std::string type;
+					std::string utcCreate;
+					std::string utcModified;
 					std::string jobId;
 				};
 

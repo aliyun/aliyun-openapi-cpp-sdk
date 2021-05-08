@@ -57,6 +57,8 @@ void ListJobResult::parse(const std::string &payload)
 			dataObject.description = valueDatadataItem["Description"].asString();
 		if(!valueDatadataItem["Type"].isNull())
 			dataObject.type = valueDatadataItem["Type"].asString();
+		if(!valueDatadataItem["ScheduledTime"].isNull())
+			dataObject.scheduledTime = std::stol(valueDatadataItem["ScheduledTime"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

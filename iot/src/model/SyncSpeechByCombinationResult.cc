@@ -44,6 +44,14 @@ void SyncSpeechByCombinationResult::parse(const std::string &payload)
 		data_.id = dataNode["Id"].asString();
 	if(!dataNode["RetryCount"].isNull())
 		data_.retryCount = std::stoi(dataNode["RetryCount"].asString());
+	if(!dataNode["Success"].isNull())
+		data_.success = dataNode["Success"].asString() == "true";
+	if(!dataNode["MaxRetryCount"].isNull())
+		data_.maxRetryCount = std::stoi(dataNode["MaxRetryCount"].asString());
+	if(!dataNode["DeviceErrorCode"].isNull())
+		data_.deviceErrorCode = dataNode["DeviceErrorCode"].asString();
+	if(!dataNode["DeviceErrorMessage"].isNull())
+		data_.deviceErrorMessage = dataNode["DeviceErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

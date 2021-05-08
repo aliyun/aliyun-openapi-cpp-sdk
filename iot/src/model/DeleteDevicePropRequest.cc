@@ -27,6 +27,17 @@ DeleteDevicePropRequest::DeleteDevicePropRequest() :
 DeleteDevicePropRequest::~DeleteDevicePropRequest()
 {}
 
+std::string DeleteDevicePropRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void DeleteDevicePropRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string DeleteDevicePropRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +58,17 @@ void DeleteDevicePropRequest::setPropKey(const std::string& propKey)
 {
 	propKey_ = propKey;
 	setParameter("PropKey", propKey);
+}
+
+std::string DeleteDevicePropRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void DeleteDevicePropRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string DeleteDevicePropRequest::getIotId()const

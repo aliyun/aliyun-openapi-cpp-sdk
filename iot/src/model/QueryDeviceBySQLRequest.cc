@@ -27,6 +27,17 @@ QueryDeviceBySQLRequest::QueryDeviceBySQLRequest() :
 QueryDeviceBySQLRequest::~QueryDeviceBySQLRequest()
 {}
 
+std::string QueryDeviceBySQLRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void QueryDeviceBySQLRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string QueryDeviceBySQLRequest::getSQL()const
 {
 	return sQL_;
@@ -36,6 +47,17 @@ void QueryDeviceBySQLRequest::setSQL(const std::string& sQL)
 {
 	sQL_ = sQL;
 	setParameter("SQL", sQL);
+}
+
+std::string QueryDeviceBySQLRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void QueryDeviceBySQLRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string QueryDeviceBySQLRequest::getIotInstanceId()const

@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string type;
+					long scheduledTime;
 					std::string description;
 					std::string utcCreate;
 					std::string jobName;

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ListDeviceDistributeJobRequest();
 				~ListDeviceDistributeJobRequest();
 
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				void setStatus(int status);
 
             private:
+				std::string jobId_;
 				int pageSize_;
 				int currentPage_;
 				std::string apiProduct_;

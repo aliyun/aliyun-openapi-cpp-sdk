@@ -148,3 +148,14 @@ void CreateJobRequest::setApiRevision(const std::string& apiRevision)
 	setBodyParameter("ApiRevision", apiRevision);
 }
 
+long CreateJobRequest::getScheduledTime()const
+{
+	return scheduledTime_;
+}
+
+void CreateJobRequest::setScheduledTime(long scheduledTime)
+{
+	scheduledTime_ = scheduledTime;
+	setParameter("ScheduledTime", std::to_string(scheduledTime));
+}
+

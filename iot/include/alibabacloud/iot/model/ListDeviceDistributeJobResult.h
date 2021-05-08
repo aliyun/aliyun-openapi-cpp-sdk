@@ -38,9 +38,12 @@ namespace AlibabaCloud
 					{
 						struct TargetInstanceConfigsItem
 						{
+							std::string targetRegion;
+							std::string targetInstanceName;
 							std::string targetInstanceId;
 						};
 						int status;
+						std::string sourceInstanceName;
 						long gmtCreate;
 						std::string sourceUid;
 						int total;
@@ -48,6 +51,7 @@ namespace AlibabaCloud
 						std::string targetUid;
 						std::vector<Items::TargetInstanceConfigsItem> targetInstanceConfigs;
 						std::string sourceInstanceId;
+						std::string sourceRegion;
 						std::string jobId;
 						std::string productKey;
 					};

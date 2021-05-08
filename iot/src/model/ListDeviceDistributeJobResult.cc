@@ -64,12 +64,20 @@ void ListDeviceDistributeJobResult::parse(const std::string &payload)
 			itemsObject.status = std::stoi(dataNodeJobInfoitems["Status"].asString());
 		if(!dataNodeJobInfoitems["Strategy"].isNull())
 			itemsObject.strategy = std::stoi(dataNodeJobInfoitems["Strategy"].asString());
+		if(!dataNodeJobInfoitems["SourceRegion"].isNull())
+			itemsObject.sourceRegion = dataNodeJobInfoitems["SourceRegion"].asString();
+		if(!dataNodeJobInfoitems["SourceInstanceName"].isNull())
+			itemsObject.sourceInstanceName = dataNodeJobInfoitems["SourceInstanceName"].asString();
 		auto allTargetInstanceConfigsNode = dataNodeJobInfoitems["TargetInstanceConfigs"]["targetInstanceConfigsItem"];
 		for (auto dataNodeJobInfoitemsTargetInstanceConfigstargetInstanceConfigsItem : allTargetInstanceConfigsNode)
 		{
 			Data::Items::TargetInstanceConfigsItem targetInstanceConfigsObject;
 			if(!dataNodeJobInfoitemsTargetInstanceConfigstargetInstanceConfigsItem["TargetInstanceId"].isNull())
 				targetInstanceConfigsObject.targetInstanceId = dataNodeJobInfoitemsTargetInstanceConfigstargetInstanceConfigsItem["TargetInstanceId"].asString();
+			if(!dataNodeJobInfoitemsTargetInstanceConfigstargetInstanceConfigsItem["TargetRegion"].isNull())
+				targetInstanceConfigsObject.targetRegion = dataNodeJobInfoitemsTargetInstanceConfigstargetInstanceConfigsItem["TargetRegion"].asString();
+			if(!dataNodeJobInfoitemsTargetInstanceConfigstargetInstanceConfigsItem["TargetInstanceName"].isNull())
+				targetInstanceConfigsObject.targetInstanceName = dataNodeJobInfoitemsTargetInstanceConfigstargetInstanceConfigsItem["TargetInstanceName"].asString();
 			itemsObject.targetInstanceConfigs.push_back(targetInstanceConfigsObject);
 		}
 		data_.jobInfo.push_back(itemsObject);
