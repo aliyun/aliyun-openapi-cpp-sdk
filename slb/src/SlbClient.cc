@@ -1383,6 +1383,42 @@ SlbClient::DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::
 	return task->get_future();
 }
 
+SlbClient::DescribeLoadBalancerListenersOutcome SlbClient::describeLoadBalancerListeners(const DescribeLoadBalancerListenersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLoadBalancerListenersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLoadBalancerListenersOutcome(DescribeLoadBalancerListenersResult(outcome.result()));
+	else
+		return DescribeLoadBalancerListenersOutcome(outcome.error());
+}
+
+void SlbClient::describeLoadBalancerListenersAsync(const DescribeLoadBalancerListenersRequest& request, const DescribeLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLoadBalancerListeners(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeLoadBalancerListenersOutcomeCallable SlbClient::describeLoadBalancerListenersCallable(const DescribeLoadBalancerListenersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerListenersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLoadBalancerListeners(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::DescribeLoadBalancerTCPListenerAttributeOutcome SlbClient::describeLoadBalancerTCPListenerAttribute(const DescribeLoadBalancerTCPListenerAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

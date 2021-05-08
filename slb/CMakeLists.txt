@@ -95,6 +95,8 @@ set(slb_public_header_model
 	include/alibabacloud/slb/model/DescribeLoadBalancerHTTPListenerAttributeResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerHTTPSListenerAttributeResult.h
+	include/alibabacloud/slb/model/DescribeLoadBalancerListenersRequest.h
+	include/alibabacloud/slb/model/DescribeLoadBalancerListenersResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerTCPListenerAttributeRequest.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerTCPListenerAttributeResult.h
 	include/alibabacloud/slb/model/DescribeLoadBalancerUDPListenerAttributeRequest.h
@@ -266,6 +268,8 @@ set(slb_src
 	src/model/DescribeLoadBalancerHTTPListenerAttributeResult.cc
 	src/model/DescribeLoadBalancerHTTPSListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerHTTPSListenerAttributeResult.cc
+	src/model/DescribeLoadBalancerListenersRequest.cc
+	src/model/DescribeLoadBalancerListenersResult.cc
 	src/model/DescribeLoadBalancerTCPListenerAttributeRequest.cc
 	src/model/DescribeLoadBalancerTCPListenerAttributeResult.cc
 	src/model/DescribeLoadBalancerUDPListenerAttributeRequest.cc

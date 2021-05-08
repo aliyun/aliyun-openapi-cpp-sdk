@@ -96,6 +96,8 @@
 #include "model/DescribeLoadBalancerHTTPListenerAttributeResult.h"
 #include "model/DescribeLoadBalancerHTTPSListenerAttributeRequest.h"
 #include "model/DescribeLoadBalancerHTTPSListenerAttributeResult.h"
+#include "model/DescribeLoadBalancerListenersRequest.h"
+#include "model/DescribeLoadBalancerListenersResult.h"
 #include "model/DescribeLoadBalancerTCPListenerAttributeRequest.h"
 #include "model/DescribeLoadBalancerTCPListenerAttributeResult.h"
 #include "model/DescribeLoadBalancerUDPListenerAttributeRequest.h"
@@ -310,6 +312,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLoadBalancerHTTPSListenerAttributeResult> DescribeLoadBalancerHTTPSListenerAttributeOutcome;
 			typedef std::future<DescribeLoadBalancerHTTPSListenerAttributeOutcome> DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest&, const DescribeLoadBalancerHTTPSListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerHTTPSListenerAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLoadBalancerListenersResult> DescribeLoadBalancerListenersOutcome;
+			typedef std::future<DescribeLoadBalancerListenersOutcome> DescribeLoadBalancerListenersOutcomeCallable;
+			typedef std::function<void(const SlbClient*, const Model::DescribeLoadBalancerListenersRequest&, const DescribeLoadBalancerListenersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerListenersAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLoadBalancerTCPListenerAttributeResult> DescribeLoadBalancerTCPListenerAttributeOutcome;
 			typedef std::future<DescribeLoadBalancerTCPListenerAttributeOutcome> DescribeLoadBalancerTCPListenerAttributeOutcomeCallable;
 			typedef std::function<void(const SlbClient*, const Model::DescribeLoadBalancerTCPListenerAttributeRequest&, const DescribeLoadBalancerTCPListenerAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerTCPListenerAttributeAsyncHandler;
@@ -567,6 +572,9 @@ namespace AlibabaCloud
 			DescribeLoadBalancerHTTPSListenerAttributeOutcome describeLoadBalancerHTTPSListenerAttribute(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest &request)const;
 			void describeLoadBalancerHTTPSListenerAttributeAsync(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest& request, const DescribeLoadBalancerHTTPSListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable describeLoadBalancerHTTPSListenerAttributeCallable(const Model::DescribeLoadBalancerHTTPSListenerAttributeRequest& request) const;
+			DescribeLoadBalancerListenersOutcome describeLoadBalancerListeners(const Model::DescribeLoadBalancerListenersRequest &request)const;
+			void describeLoadBalancerListenersAsync(const Model::DescribeLoadBalancerListenersRequest& request, const DescribeLoadBalancerListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLoadBalancerListenersOutcomeCallable describeLoadBalancerListenersCallable(const Model::DescribeLoadBalancerListenersRequest& request) const;
 			DescribeLoadBalancerTCPListenerAttributeOutcome describeLoadBalancerTCPListenerAttribute(const Model::DescribeLoadBalancerTCPListenerAttributeRequest &request)const;
 			void describeLoadBalancerTCPListenerAttributeAsync(const Model::DescribeLoadBalancerTCPListenerAttributeRequest& request, const DescribeLoadBalancerTCPListenerAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLoadBalancerTCPListenerAttributeOutcomeCallable describeLoadBalancerTCPListenerAttributeCallable(const Model::DescribeLoadBalancerTCPListenerAttributeRequest& request) const;
