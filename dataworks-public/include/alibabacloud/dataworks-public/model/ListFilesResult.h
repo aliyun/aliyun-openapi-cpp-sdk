@@ -55,6 +55,7 @@ namespace AlibabaCloud
 						long fileId;
 						std::string fileFolderId;
 						long bizId;
+						long businessId;
 					};
 					int totalCount;
 					int pageSize;

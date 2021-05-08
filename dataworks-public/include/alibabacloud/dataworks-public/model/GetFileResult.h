@@ -52,8 +52,10 @@ namespace AlibabaCloud
 						std::string lastEditUser;
 						long nodeId;
 						int commitStatus;
+						std::string deletedStatus;
 						std::string fileFolderId;
 						long bizId;
+						long businessId;
 					};
 					struct NodeConfiguration
 					{

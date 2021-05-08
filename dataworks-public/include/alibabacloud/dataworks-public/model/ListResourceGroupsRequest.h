@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				ListResourceGroupsRequest();
 				~ListResourceGroupsRequest();
 
+				std::string getBizExtKey()const;
+				void setBizExtKey(const std::string& bizExtKey);
 				int getResourceGroupType()const;
 				void setResourceGroupType(int resourceGroupType);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
 
             private:
+				std::string bizExtKey_;
 				int resourceGroupType_;
 				std::string keyword_;
 

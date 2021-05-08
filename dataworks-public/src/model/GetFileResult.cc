@@ -77,6 +77,10 @@ void GetFileResult::parse(const std::string &payload)
 		data_.file.lastEditTime = std::stol(fileNode["LastEditTime"].asString());
 	if(!fileNode["CommitStatus"].isNull())
 		data_.file.commitStatus = std::stoi(fileNode["CommitStatus"].asString());
+	if(!fileNode["DeletedStatus"].isNull())
+		data_.file.deletedStatus = fileNode["DeletedStatus"].asString();
+	if(!fileNode["BusinessId"].isNull())
+		data_.file.businessId = std::stol(fileNode["BusinessId"].asString());
 	auto nodeConfigurationNode = dataNode["NodeConfiguration"];
 	if(!nodeConfigurationNode["AutoRerunTimes"].isNull())
 		data_.nodeConfiguration.autoRerunTimes = std::stoi(nodeConfigurationNode["AutoRerunTimes"].asString());

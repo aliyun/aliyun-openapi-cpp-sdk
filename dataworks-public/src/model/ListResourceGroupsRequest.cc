@@ -27,6 +27,17 @@ ListResourceGroupsRequest::ListResourceGroupsRequest() :
 ListResourceGroupsRequest::~ListResourceGroupsRequest()
 {}
 
+std::string ListResourceGroupsRequest::getBizExtKey()const
+{
+	return bizExtKey_;
+}
+
+void ListResourceGroupsRequest::setBizExtKey(const std::string& bizExtKey)
+{
+	bizExtKey_ = bizExtKey;
+	setParameter("BizExtKey", bizExtKey);
+}
+
 int ListResourceGroupsRequest::getResourceGroupType()const
 {
 	return resourceGroupType_;
