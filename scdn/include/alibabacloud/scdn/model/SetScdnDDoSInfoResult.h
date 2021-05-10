@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT SetScdnDdosInfoResult : public ServiceResult
+			class ALIBABACLOUD_SCDN_EXPORT SetScdnDDoSInfoResult : public ServiceResult
 			{
 			public:
 
 
-				SetScdnDdosInfoResult();
-				explicit SetScdnDdosInfoResult(const std::string &payload);
-				~SetScdnDdosInfoResult();
+				SetScdnDDoSInfoResult();
+				explicit SetScdnDDoSInfoResult(const std::string &payload);
+				~SetScdnDDoSInfoResult();
 
 			protected:
 				void parse(const std::string &payload);

@@ -45,10 +45,10 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/DescribeScdnCertificateDetailResult.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateListRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateListResult.h
-	include/alibabacloud/scdn/model/DescribeScdnDdosInfoRequest.h
-	include/alibabacloud/scdn/model/DescribeScdnDdosInfoResult.h
-	include/alibabacloud/scdn/model/DescribeScdnDdosTrafficInfoRequest.h
-	include/alibabacloud/scdn/model/DescribeScdnDdosTrafficInfoResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDDoSInfoRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDDoSInfoResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDDoSTrafficInfoRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDDoSTrafficInfoResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainBpsDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainBpsDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainCertificateInfoRequest.h
@@ -125,8 +125,8 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/SetScdnBotInfoResult.h
 	include/alibabacloud/scdn/model/SetScdnCcInfoRequest.h
 	include/alibabacloud/scdn/model/SetScdnCcInfoResult.h
-	include/alibabacloud/scdn/model/SetScdnDdosInfoRequest.h
-	include/alibabacloud/scdn/model/SetScdnDdosInfoResult.h
+	include/alibabacloud/scdn/model/SetScdnDDoSInfoRequest.h
+	include/alibabacloud/scdn/model/SetScdnDDoSInfoResult.h
 	include/alibabacloud/scdn/model/SetScdnDomainBizInfoRequest.h
 	include/alibabacloud/scdn/model/SetScdnDomainBizInfoResult.h
 	include/alibabacloud/scdn/model/SetScdnDomainCertificateRequest.h
@@ -164,10 +164,10 @@ set(scdn_src
 	src/model/DescribeScdnCertificateDetailResult.cc
 	src/model/DescribeScdnCertificateListRequest.cc
 	src/model/DescribeScdnCertificateListResult.cc
-	src/model/DescribeScdnDdosInfoRequest.cc
-	src/model/DescribeScdnDdosInfoResult.cc
-	src/model/DescribeScdnDdosTrafficInfoRequest.cc
-	src/model/DescribeScdnDdosTrafficInfoResult.cc
+	src/model/DescribeScdnDDoSInfoRequest.cc
+	src/model/DescribeScdnDDoSInfoResult.cc
+	src/model/DescribeScdnDDoSTrafficInfoRequest.cc
+	src/model/DescribeScdnDDoSTrafficInfoResult.cc
 	src/model/DescribeScdnDomainBpsDataRequest.cc
 	src/model/DescribeScdnDomainBpsDataResult.cc
 	src/model/DescribeScdnDomainCertificateInfoRequest.cc
@@ -244,8 +244,8 @@ set(scdn_src
 	src/model/SetScdnBotInfoResult.cc
 	src/model/SetScdnCcInfoRequest.cc
 	src/model/SetScdnCcInfoResult.cc
-	src/model/SetScdnDdosInfoRequest.cc
-	src/model/SetScdnDdosInfoResult.cc
+	src/model/SetScdnDDoSInfoRequest.cc
+	src/model/SetScdnDDoSInfoResult.cc
 	src/model/SetScdnDomainBizInfoRequest.cc
 	src/model/SetScdnDomainBizInfoResult.cc
 	src/model/SetScdnDomainCertificateRequest.cc

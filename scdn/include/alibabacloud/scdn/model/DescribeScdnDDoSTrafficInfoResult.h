@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDdosTrafficInfoResult : public ServiceResult
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDDoSTrafficInfoResult : public ServiceResult
 			{
 			public:
 				struct TimeScope
@@ -39,9 +39,9 @@ namespace AlibabaCloud
 				};
 
 
-				DescribeScdnDdosTrafficInfoResult();
-				explicit DescribeScdnDdosTrafficInfoResult(const std::string &payload);
-				~DescribeScdnDdosTrafficInfoResult();
+				DescribeScdnDDoSTrafficInfoResult();
+				explicit DescribeScdnDDoSTrafficInfoResult(const std::string &payload);
+				~DescribeScdnDDoSTrafficInfoResult();
 				std::vector<TimeScope> getTimeScopes()const;
 				std::vector<std::string> getBpsDrops()const;
 				std::vector<std::string> getPpsDrops()const;

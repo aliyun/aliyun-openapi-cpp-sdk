@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_SETSCDNDDOSINFOREQUEST_H_
-#define ALIBABACLOUD_SCDN_MODEL_SETSCDNDDOSINFOREQUEST_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDDOSINFORESULT_H_
+#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDDOSINFORESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/scdn/ScdnExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT SetScdnDdosInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDDoSInfoResult : public ServiceResult
 			{
-
 			public:
-				SetScdnDdosInfoRequest();
-				~SetScdnDdosInfoRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
+
+				DescribeScdnDDoSInfoResult();
+				explicit DescribeScdnDDoSInfoResult(const std::string &payload);
+				~DescribeScdnDDoSInfoResult();
+				int getSecBandwidth()const;
 				int getElasticBandwidth()const;
-				void setElasticBandwidth(int elasticBandwidth);
 
-            private:
-				long ownerId_;
+			protected:
+				void parse(const std::string &payload);
+			private:
+				int secBandwidth_;
 				int elasticBandwidth_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_SETSCDNDDOSINFOREQUEST_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDDOSINFORESULT_H_

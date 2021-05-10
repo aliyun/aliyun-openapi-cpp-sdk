@@ -14,31 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/scdn/model/SetScdnDdosInfoResult.h>
+#include <alibabacloud/scdn/model/DescribeScdnDDoSInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Scdn;
 using namespace AlibabaCloud::Scdn::Model;
 
-SetScdnDdosInfoResult::SetScdnDdosInfoResult() :
+DescribeScdnDDoSInfoResult::DescribeScdnDDoSInfoResult() :
 	ServiceResult()
 {}
 
-SetScdnDdosInfoResult::SetScdnDdosInfoResult(const std::string &payload) :
+DescribeScdnDDoSInfoResult::DescribeScdnDDoSInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetScdnDdosInfoResult::~SetScdnDdosInfoResult()
+DescribeScdnDDoSInfoResult::~DescribeScdnDDoSInfoResult()
 {}
 
-void SetScdnDdosInfoResult::parse(const std::string &payload)
+void DescribeScdnDDoSInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["SecBandwidth"].isNull())
+		secBandwidth_ = std::stoi(value["SecBandwidth"].asString());
+	if(!value["ElasticBandwidth"].isNull())
+		elasticBandwidth_ = std::stoi(value["ElasticBandwidth"].asString());
 
+}
+
+int DescribeScdnDDoSInfoResult::getSecBandwidth()const
+{
+	return secBandwidth_;
+}
+
+int DescribeScdnDDoSInfoResult::getElasticBandwidth()const
+{
+	return elasticBandwidth_;
 }
 

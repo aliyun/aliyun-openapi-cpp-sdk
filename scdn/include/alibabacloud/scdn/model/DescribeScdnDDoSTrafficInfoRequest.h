@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDdosTrafficInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDDoSTrafficInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeScdnDdosTrafficInfoRequest();
-				~DescribeScdnDdosTrafficInfoRequest();
+				DescribeScdnDDoSTrafficInfoRequest();
+				~DescribeScdnDDoSTrafficInfoRequest();
 
 				std::string getLine()const;
 				void setLine(const std::string& line);

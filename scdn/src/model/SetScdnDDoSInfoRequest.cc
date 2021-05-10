@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/scdn/model/SetScdnDdosInfoRequest.h>
+#include <alibabacloud/scdn/model/SetScdnDDoSInfoRequest.h>
 
-using AlibabaCloud::Scdn::Model::SetScdnDdosInfoRequest;
+using AlibabaCloud::Scdn::Model::SetScdnDDoSInfoRequest;
 
-SetScdnDdosInfoRequest::SetScdnDdosInfoRequest() :
-	RpcServiceRequest("scdn", "2017-11-15", "SetScdnDdosInfo")
+SetScdnDDoSInfoRequest::SetScdnDDoSInfoRequest() :
+	RpcServiceRequest("scdn", "2017-11-15", "SetScdnDDoSInfo")
 {
 	setMethod(HttpRequest::Method::Get);
 }
 
-SetScdnDdosInfoRequest::~SetScdnDdosInfoRequest()
+SetScdnDDoSInfoRequest::~SetScdnDDoSInfoRequest()
 {}
 
-long SetScdnDdosInfoRequest::getOwnerId()const
+long SetScdnDDoSInfoRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void SetScdnDdosInfoRequest::setOwnerId(long ownerId)
+void SetScdnDDoSInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-int SetScdnDdosInfoRequest::getElasticBandwidth()const
+int SetScdnDDoSInfoRequest::getElasticBandwidth()const
 {
 	return elasticBandwidth_;
 }
 
-void SetScdnDdosInfoRequest::setElasticBandwidth(int elasticBandwidth)
+void SetScdnDDoSInfoRequest::setElasticBandwidth(int elasticBandwidth)
 {
 	elasticBandwidth_ = elasticBandwidth;
 	setParameter("ElasticBandwidth", std::to_string(elasticBandwidth));

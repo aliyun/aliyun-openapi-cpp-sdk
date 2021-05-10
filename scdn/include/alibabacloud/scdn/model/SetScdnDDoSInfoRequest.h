@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDDOSINFOREQUEST_H_
-#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDDOSINFOREQUEST_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_SETSCDNDDOSINFOREQUEST_H_
+#define ALIBABACLOUD_SCDN_MODEL_SETSCDNDDOSINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnDdosInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT SetScdnDDoSInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeScdnDdosInfoRequest();
-				~DescribeScdnDdosInfoRequest();
+				SetScdnDDoSInfoRequest();
+				~SetScdnDDoSInfoRequest();
 
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getElasticBandwidth()const;
+				void setElasticBandwidth(int elasticBandwidth);
 
             private:
 				long ownerId_;
+				int elasticBandwidth_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNDDOSINFOREQUEST_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_SETSCDNDDOSINFOREQUEST_H_

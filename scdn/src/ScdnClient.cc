@@ -483,72 +483,72 @@ ScdnClient::DescribeScdnCertificateListOutcomeCallable ScdnClient::describeScdnC
 	return task->get_future();
 }
 
-ScdnClient::DescribeScdnDdosInfoOutcome ScdnClient::describeScdnDdosInfo(const DescribeScdnDdosInfoRequest &request) const
+ScdnClient::DescribeScdnDDoSInfoOutcome ScdnClient::describeScdnDDoSInfo(const DescribeScdnDDoSInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeScdnDdosInfoOutcome(endpointOutcome.error());
+		return DescribeScdnDDoSInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeScdnDdosInfoOutcome(DescribeScdnDdosInfoResult(outcome.result()));
+		return DescribeScdnDDoSInfoOutcome(DescribeScdnDDoSInfoResult(outcome.result()));
 	else
-		return DescribeScdnDdosInfoOutcome(outcome.error());
+		return DescribeScdnDDoSInfoOutcome(outcome.error());
 }
 
-void ScdnClient::describeScdnDdosInfoAsync(const DescribeScdnDdosInfoRequest& request, const DescribeScdnDdosInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void ScdnClient::describeScdnDDoSInfoAsync(const DescribeScdnDDoSInfoRequest& request, const DescribeScdnDDoSInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeScdnDdosInfo(request), context);
+		handler(this, request, describeScdnDDoSInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-ScdnClient::DescribeScdnDdosInfoOutcomeCallable ScdnClient::describeScdnDdosInfoCallable(const DescribeScdnDdosInfoRequest &request) const
+ScdnClient::DescribeScdnDDoSInfoOutcomeCallable ScdnClient::describeScdnDDoSInfoCallable(const DescribeScdnDDoSInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeScdnDdosInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDDoSInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->describeScdnDdosInfo(request);
+			return this->describeScdnDDoSInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-ScdnClient::DescribeScdnDdosTrafficInfoOutcome ScdnClient::describeScdnDdosTrafficInfo(const DescribeScdnDdosTrafficInfoRequest &request) const
+ScdnClient::DescribeScdnDDoSTrafficInfoOutcome ScdnClient::describeScdnDDoSTrafficInfo(const DescribeScdnDDoSTrafficInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeScdnDdosTrafficInfoOutcome(endpointOutcome.error());
+		return DescribeScdnDDoSTrafficInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeScdnDdosTrafficInfoOutcome(DescribeScdnDdosTrafficInfoResult(outcome.result()));
+		return DescribeScdnDDoSTrafficInfoOutcome(DescribeScdnDDoSTrafficInfoResult(outcome.result()));
 	else
-		return DescribeScdnDdosTrafficInfoOutcome(outcome.error());
+		return DescribeScdnDDoSTrafficInfoOutcome(outcome.error());
 }
 
-void ScdnClient::describeScdnDdosTrafficInfoAsync(const DescribeScdnDdosTrafficInfoRequest& request, const DescribeScdnDdosTrafficInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void ScdnClient::describeScdnDDoSTrafficInfoAsync(const DescribeScdnDDoSTrafficInfoRequest& request, const DescribeScdnDDoSTrafficInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeScdnDdosTrafficInfo(request), context);
+		handler(this, request, describeScdnDDoSTrafficInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-ScdnClient::DescribeScdnDdosTrafficInfoOutcomeCallable ScdnClient::describeScdnDdosTrafficInfoCallable(const DescribeScdnDdosTrafficInfoRequest &request) const
+ScdnClient::DescribeScdnDDoSTrafficInfoOutcomeCallable ScdnClient::describeScdnDDoSTrafficInfoCallable(const DescribeScdnDDoSTrafficInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeScdnDdosTrafficInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeScdnDDoSTrafficInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->describeScdnDdosTrafficInfo(request);
+			return this->describeScdnDDoSTrafficInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1923,36 +1923,36 @@ ScdnClient::SetScdnCcInfoOutcomeCallable ScdnClient::setScdnCcInfoCallable(const
 	return task->get_future();
 }
 
-ScdnClient::SetScdnDdosInfoOutcome ScdnClient::setScdnDdosInfo(const SetScdnDdosInfoRequest &request) const
+ScdnClient::SetScdnDDoSInfoOutcome ScdnClient::setScdnDDoSInfo(const SetScdnDDoSInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SetScdnDdosInfoOutcome(endpointOutcome.error());
+		return SetScdnDDoSInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SetScdnDdosInfoOutcome(SetScdnDdosInfoResult(outcome.result()));
+		return SetScdnDDoSInfoOutcome(SetScdnDDoSInfoResult(outcome.result()));
 	else
-		return SetScdnDdosInfoOutcome(outcome.error());
+		return SetScdnDDoSInfoOutcome(outcome.error());
 }
 
-void ScdnClient::setScdnDdosInfoAsync(const SetScdnDdosInfoRequest& request, const SetScdnDdosInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void ScdnClient::setScdnDDoSInfoAsync(const SetScdnDDoSInfoRequest& request, const SetScdnDDoSInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, setScdnDdosInfo(request), context);
+		handler(this, request, setScdnDDoSInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-ScdnClient::SetScdnDdosInfoOutcomeCallable ScdnClient::setScdnDdosInfoCallable(const SetScdnDdosInfoRequest &request) const
+ScdnClient::SetScdnDDoSInfoOutcomeCallable ScdnClient::setScdnDDoSInfoCallable(const SetScdnDDoSInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SetScdnDdosInfoOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SetScdnDDoSInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->setScdnDdosInfo(request);
+			return this->setScdnDDoSInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/scdn/model/DescribeScdnDdosTrafficInfoResult.h>
+#include <alibabacloud/scdn/model/DescribeScdnDDoSTrafficInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Scdn;
 using namespace AlibabaCloud::Scdn::Model;
 
-DescribeScdnDdosTrafficInfoResult::DescribeScdnDdosTrafficInfoResult() :
+DescribeScdnDDoSTrafficInfoResult::DescribeScdnDDoSTrafficInfoResult() :
 	ServiceResult()
 {}
 
-DescribeScdnDdosTrafficInfoResult::DescribeScdnDdosTrafficInfoResult(const std::string &payload) :
+DescribeScdnDDoSTrafficInfoResult::DescribeScdnDDoSTrafficInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeScdnDdosTrafficInfoResult::~DescribeScdnDdosTrafficInfoResult()
+DescribeScdnDDoSTrafficInfoResult::~DescribeScdnDDoSTrafficInfoResult()
 {}
 
-void DescribeScdnDdosTrafficInfoResult::parse(const std::string &payload)
+void DescribeScdnDDoSTrafficInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -64,27 +64,27 @@ void DescribeScdnDdosTrafficInfoResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeScdnDdosTrafficInfoResult::TimeScope> DescribeScdnDdosTrafficInfoResult::getTimeScopes()const
+std::vector<DescribeScdnDDoSTrafficInfoResult::TimeScope> DescribeScdnDDoSTrafficInfoResult::getTimeScopes()const
 {
 	return timeScopes_;
 }
 
-std::vector<std::string> DescribeScdnDdosTrafficInfoResult::getBpsDrops()const
+std::vector<std::string> DescribeScdnDDoSTrafficInfoResult::getBpsDrops()const
 {
 	return bpsDrops_;
 }
 
-std::vector<std::string> DescribeScdnDdosTrafficInfoResult::getPpsDrops()const
+std::vector<std::string> DescribeScdnDDoSTrafficInfoResult::getPpsDrops()const
 {
 	return ppsDrops_;
 }
 
-std::vector<std::string> DescribeScdnDdosTrafficInfoResult::getBpsTotals()const
+std::vector<std::string> DescribeScdnDDoSTrafficInfoResult::getBpsTotals()const
 {
 	return bpsTotals_;
 }
 
-std::vector<std::string> DescribeScdnDdosTrafficInfoResult::getPpsTotals()const
+std::vector<std::string> DescribeScdnDDoSTrafficInfoResult::getPpsTotals()const
 {
 	return ppsTotals_;
 }

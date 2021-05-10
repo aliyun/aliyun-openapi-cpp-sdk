@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/scdn/model/DescribeScdnDdosInfoRequest.h>
+#include <alibabacloud/scdn/model/DescribeScdnDDoSInfoRequest.h>
 
-using AlibabaCloud::Scdn::Model::DescribeScdnDdosInfoRequest;
+using AlibabaCloud::Scdn::Model::DescribeScdnDDoSInfoRequest;
 
-DescribeScdnDdosInfoRequest::DescribeScdnDdosInfoRequest() :
-	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDdosInfo")
+DescribeScdnDDoSInfoRequest::DescribeScdnDDoSInfoRequest() :
+	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDDoSInfo")
 {
 	setMethod(HttpRequest::Method::Get);
 }
 
-DescribeScdnDdosInfoRequest::~DescribeScdnDdosInfoRequest()
+DescribeScdnDDoSInfoRequest::~DescribeScdnDDoSInfoRequest()
 {}
 
-long DescribeScdnDdosInfoRequest::getOwnerId()const
+long DescribeScdnDDoSInfoRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeScdnDdosInfoRequest::setOwnerId(long ownerId)
+void DescribeScdnDDoSInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));

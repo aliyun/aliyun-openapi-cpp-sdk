@@ -1,3 +1,6 @@
+2021-05-10 Version: 1.36.718
+- Delete API.
+
 2021-05-08 Version: 1.36.717
 - Support SLB DescribeLoadBalancerListeners.
 

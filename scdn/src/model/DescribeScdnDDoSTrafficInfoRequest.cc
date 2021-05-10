@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/scdn/model/DescribeScdnDdosTrafficInfoRequest.h>
+#include <alibabacloud/scdn/model/DescribeScdnDDoSTrafficInfoRequest.h>
 
-using AlibabaCloud::Scdn::Model::DescribeScdnDdosTrafficInfoRequest;
+using AlibabaCloud::Scdn::Model::DescribeScdnDDoSTrafficInfoRequest;
 
-DescribeScdnDdosTrafficInfoRequest::DescribeScdnDdosTrafficInfoRequest() :
-	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDdosTrafficInfo")
+DescribeScdnDDoSTrafficInfoRequest::DescribeScdnDDoSTrafficInfoRequest() :
+	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDDoSTrafficInfo")
 {
 	setMethod(HttpRequest::Method::Get);
 }
 
-DescribeScdnDdosTrafficInfoRequest::~DescribeScdnDdosTrafficInfoRequest()
+DescribeScdnDDoSTrafficInfoRequest::~DescribeScdnDDoSTrafficInfoRequest()
 {}
 
-std::string DescribeScdnDdosTrafficInfoRequest::getLine()const
+std::string DescribeScdnDDoSTrafficInfoRequest::getLine()const
 {
 	return line_;
 }
 
-void DescribeScdnDdosTrafficInfoRequest::setLine(const std::string& line)
+void DescribeScdnDDoSTrafficInfoRequest::setLine(const std::string& line)
 {
 	line_ = line;
 	setParameter("Line", line);
 }
 
-std::string DescribeScdnDdosTrafficInfoRequest::getStartTime()const
+std::string DescribeScdnDDoSTrafficInfoRequest::getStartTime()const
 {
 	return startTime_;
 }
 
-void DescribeScdnDdosTrafficInfoRequest::setStartTime(const std::string& startTime)
+void DescribeScdnDDoSTrafficInfoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
 	setParameter("StartTime", startTime);
 }
 
-std::string DescribeScdnDdosTrafficInfoRequest::getEndTime()const
+std::string DescribeScdnDDoSTrafficInfoRequest::getEndTime()const
 {
 	return endTime_;
 }
 
-void DescribeScdnDdosTrafficInfoRequest::setEndTime(const std::string& endTime)
+void DescribeScdnDDoSTrafficInfoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
 	setParameter("EndTime", endTime);
 }
 
-long DescribeScdnDdosTrafficInfoRequest::getOwnerId()const
+long DescribeScdnDDoSTrafficInfoRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeScdnDdosTrafficInfoRequest::setOwnerId(long ownerId)
+void DescribeScdnDDoSTrafficInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
