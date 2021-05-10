@@ -1,3 +1,6 @@
+2021-05-10 Version: 1.36.723
+- Update RecognizeDriverLicense RecognizeLicensePlate.
+
 2021-05-10 Version: 1.36.722
 - Add API GenerateMergedTable.
 - Add API ListDateSourceTables.

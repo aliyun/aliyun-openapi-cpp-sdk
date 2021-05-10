@@ -40,31 +40,53 @@ void RecognizeDriverLicenseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto faceResultNode = dataNode["FaceResult"];
-	if(!faceResultNode["Name"].isNull())
-		data_.faceResult.name = faceResultNode["Name"].asString();
-	if(!faceResultNode["LicenseNumber"].isNull())
-		data_.faceResult.licenseNumber = faceResultNode["LicenseNumber"].asString();
-	if(!faceResultNode["VehicleType"].isNull())
-		data_.faceResult.vehicleType = faceResultNode["VehicleType"].asString();
-	if(!faceResultNode["StartDate"].isNull())
-		data_.faceResult.startDate = faceResultNode["StartDate"].asString();
-	if(!faceResultNode["EndDate"].isNull())
-		data_.faceResult.endDate = faceResultNode["EndDate"].asString();
-	if(!faceResultNode["IssueDate"].isNull())
-		data_.faceResult.issueDate = faceResultNode["IssueDate"].asString();
-	if(!faceResultNode["Address"].isNull())
-		data_.faceResult.address = faceResultNode["Address"].asString();
-	if(!faceResultNode["Gender"].isNull())
-		data_.faceResult.gender = faceResultNode["Gender"].asString();
 	auto backResultNode = dataNode["BackResult"];
 	if(!backResultNode["ArchiveNumber"].isNull())
 		data_.backResult.archiveNumber = backResultNode["ArchiveNumber"].asString();
+	if(!backResultNode["Name"].isNull())
+		data_.backResult.name = backResultNode["Name"].asString();
+	if(!backResultNode["CardNumber"].isNull())
+		data_.backResult.cardNumber = backResultNode["CardNumber"].asString();
+	if(!backResultNode["Record"].isNull())
+		data_.backResult.record = backResultNode["Record"].asString();
+	auto faceResultNode = dataNode["FaceResult"];
+	if(!faceResultNode["VehicleType"].isNull())
+		data_.faceResult.vehicleType = faceResultNode["VehicleType"].asString();
+	if(!faceResultNode["IssueDate"].isNull())
+		data_.faceResult.issueDate = faceResultNode["IssueDate"].asString();
+	if(!faceResultNode["EndDate"].isNull())
+		data_.faceResult.endDate = faceResultNode["EndDate"].asString();
+	if(!faceResultNode["Gender"].isNull())
+		data_.faceResult.gender = faceResultNode["Gender"].asString();
+	if(!faceResultNode["Address"].isNull())
+		data_.faceResult.address = faceResultNode["Address"].asString();
+	if(!faceResultNode["StartDate"].isNull())
+		data_.faceResult.startDate = faceResultNode["StartDate"].asString();
+	if(!faceResultNode["LicenseNumber"].isNull())
+		data_.faceResult.licenseNumber = faceResultNode["LicenseNumber"].asString();
+	if(!faceResultNode["Name"].isNull())
+		data_.faceResult.name = faceResultNode["Name"].asString();
+	if(!faceResultNode["IssueUnit"].isNull())
+		data_.faceResult.issueUnit = faceResultNode["IssueUnit"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string RecognizeDriverLicenseResult::getMessage()const
+{
+	return message_;
 }
 
 RecognizeDriverLicenseResult::Data RecognizeDriverLicenseResult::getData()const
 {
 	return data_;
+}
+
+std::string RecognizeDriverLicenseResult::getCode()const
+{
+	return code_;
 }
 

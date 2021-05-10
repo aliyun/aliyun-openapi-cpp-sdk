@@ -34,6 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct BackResult
+					{
+						std::string cardNumber;
+						std::string record;
+						std::string archiveNumber;
+						std::string name;
+					};
 					struct FaceResult
 					{
 						std::string startDate;
@@ -42,12 +49,9 @@ namespace AlibabaCloud
 						std::string vehicleType;
 						std::string issueDate;
 						std::string gender;
+						std::string issueUnit;
 						std::string endDate;
 						std::string name;
-					};
-					struct BackResult
-					{
-						std::string archiveNumber;
 					};
 					FaceResult faceResult;
 					BackResult backResult;
@@ -57,12 +61,16 @@ namespace AlibabaCloud
 				RecognizeDriverLicenseResult();
 				explicit RecognizeDriverLicenseResult(const std::string &payload);
 				~RecognizeDriverLicenseResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}

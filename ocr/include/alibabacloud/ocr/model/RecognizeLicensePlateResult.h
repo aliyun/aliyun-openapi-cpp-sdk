@@ -43,9 +43,15 @@ namespace AlibabaCloud
 							int x;
 							int y;
 						};
+						struct PositionsItem
+						{
+							long x;
+							long y;
+						};
 						std::string plateNumber;
 						float confidence;
 						std::string plateType;
+						std::vector<Plate::PositionsItem> positions;
 						float plateTypeConfidence;
 						Roi roi;
 					};
@@ -56,12 +62,16 @@ namespace AlibabaCloud
 				RecognizeLicensePlateResult();
 				explicit RecognizeLicensePlateResult(const std::string &payload);
 				~RecognizeLicensePlateResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}

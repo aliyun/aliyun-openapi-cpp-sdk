@@ -44,30 +44,54 @@ void RecognizeLicensePlateResult::parse(const std::string &payload)
 	for (auto dataNodePlatesPlate : allPlatesNode)
 	{
 		Data::Plate plateObject;
+		if(!dataNodePlatesPlate["PlateTypeConfidence"].isNull())
+			plateObject.plateTypeConfidence = std::stof(dataNodePlatesPlate["PlateTypeConfidence"].asString());
+		if(!dataNodePlatesPlate["PlateType"].isNull())
+			plateObject.plateType = dataNodePlatesPlate["PlateType"].asString();
 		if(!dataNodePlatesPlate["Confidence"].isNull())
 			plateObject.confidence = std::stof(dataNodePlatesPlate["Confidence"].asString());
 		if(!dataNodePlatesPlate["PlateNumber"].isNull())
 			plateObject.plateNumber = dataNodePlatesPlate["PlateNumber"].asString();
-		if(!dataNodePlatesPlate["PlateType"].isNull())
-			plateObject.plateType = dataNodePlatesPlate["PlateType"].asString();
-		if(!dataNodePlatesPlate["PlateTypeConfidence"].isNull())
-			plateObject.plateTypeConfidence = std::stof(dataNodePlatesPlate["PlateTypeConfidence"].asString());
+		auto allPositionsNode = dataNodePlatesPlate["Positions"]["positionsItem"];
+		for (auto dataNodePlatesPlatePositionspositionsItem : allPositionsNode)
+		{
+			Data::Plate::PositionsItem positionsObject;
+			if(!dataNodePlatesPlatePositionspositionsItem["X"].isNull())
+				positionsObject.x = std::stol(dataNodePlatesPlatePositionspositionsItem["X"].asString());
+			if(!dataNodePlatesPlatePositionspositionsItem["Y"].isNull())
+				positionsObject.y = std::stol(dataNodePlatesPlatePositionspositionsItem["Y"].asString());
+			plateObject.positions.push_back(positionsObject);
+		}
 		auto roiNode = value["Roi"];
-		if(!roiNode["H"].isNull())
-			plateObject.roi.h = std::stoi(roiNode["H"].asString());
 		if(!roiNode["W"].isNull())
 			plateObject.roi.w = std::stoi(roiNode["W"].asString());
-		if(!roiNode["X"].isNull())
-			plateObject.roi.x = std::stoi(roiNode["X"].asString());
+		if(!roiNode["H"].isNull())
+			plateObject.roi.h = std::stoi(roiNode["H"].asString());
 		if(!roiNode["Y"].isNull())
 			plateObject.roi.y = std::stoi(roiNode["Y"].asString());
+		if(!roiNode["X"].isNull())
+			plateObject.roi.x = std::stoi(roiNode["X"].asString());
 		data_.plates.push_back(plateObject);
 	}
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string RecognizeLicensePlateResult::getMessage()const
+{
+	return message_;
 }
 
 RecognizeLicensePlateResult::Data RecognizeLicensePlateResult::getData()const
 {
 	return data_;
+}
+
+std::string RecognizeLicensePlateResult::getCode()const
+{
+	return code_;
 }
 
