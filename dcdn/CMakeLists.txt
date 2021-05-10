@@ -65,6 +65,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpBpsDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpTrafficDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnBgpTrafficDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnBlockedRegionsRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnBlockedRegionsResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateDetailRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateDetailResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateListRequest.h
@@ -177,6 +179,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnReportResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnReportListRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnReportListResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSecFuncInfoRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnSecFuncInfoResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnServiceRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnServiceResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnStagingIpRequest.h
@@ -201,6 +205,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnUserResourcePackageResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserSecDropRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserSecDropResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserSecDropByMinuteRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnUserSecDropByMinuteResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserTagsRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnUserTagsResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnVerifyContentRequest.h
@@ -211,6 +217,10 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeUserDcdnIpaStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnStatusRequest.h
 	include/alibabacloud/dcdn/model/DescribeUserDcdnStatusResult.h
+	include/alibabacloud/dcdn/model/DescribeUserErStatusRequest.h
+	include/alibabacloud/dcdn/model/DescribeUserErStatusResult.h
+	include/alibabacloud/dcdn/model/DescribeUserLogserviceStatusRequest.h
+	include/alibabacloud/dcdn/model/DescribeUserLogserviceStatusResult.h
 	include/alibabacloud/dcdn/model/DisableDcdnDomainOfflineLogDeliveryRequest.h
 	include/alibabacloud/dcdn/model/DisableDcdnDomainOfflineLogDeliveryResult.h
 	include/alibabacloud/dcdn/model/DisableDcdnOfflineLogDeliveryRequest.h
@@ -306,6 +316,8 @@ set(dcdn_src
 	src/model/DescribeDcdnBgpBpsDataResult.cc
 	src/model/DescribeDcdnBgpTrafficDataRequest.cc
 	src/model/DescribeDcdnBgpTrafficDataResult.cc
+	src/model/DescribeDcdnBlockedRegionsRequest.cc
+	src/model/DescribeDcdnBlockedRegionsResult.cc
 	src/model/DescribeDcdnCertificateDetailRequest.cc
 	src/model/DescribeDcdnCertificateDetailResult.cc
 	src/model/DescribeDcdnCertificateListRequest.cc
@@ -418,6 +430,8 @@ set(dcdn_src
 	src/model/DescribeDcdnReportResult.cc
 	src/model/DescribeDcdnReportListRequest.cc
 	src/model/DescribeDcdnReportListResult.cc
+	src/model/DescribeDcdnSecFuncInfoRequest.cc
+	src/model/DescribeDcdnSecFuncInfoResult.cc
 	src/model/DescribeDcdnServiceRequest.cc
 	src/model/DescribeDcdnServiceResult.cc
 	src/model/DescribeDcdnStagingIpRequest.cc
@@ -442,6 +456,8 @@ set(dcdn_src
 	src/model/DescribeDcdnUserResourcePackageResult.cc
 	src/model/DescribeDcdnUserSecDropRequest.cc
 	src/model/DescribeDcdnUserSecDropResult.cc
+	src/model/DescribeDcdnUserSecDropByMinuteRequest.cc
+	src/model/DescribeDcdnUserSecDropByMinuteResult.cc
 	src/model/DescribeDcdnUserTagsRequest.cc
 	src/model/DescribeDcdnUserTagsResult.cc
 	src/model/DescribeDcdnVerifyContentRequest.cc
@@ -452,6 +468,10 @@ set(dcdn_src
 	src/model/DescribeUserDcdnIpaStatusResult.cc
 	src/model/DescribeUserDcdnStatusRequest.cc
 	src/model/DescribeUserDcdnStatusResult.cc
+	src/model/DescribeUserErStatusRequest.cc
+	src/model/DescribeUserErStatusResult.cc
+	src/model/DescribeUserLogserviceStatusRequest.cc
+	src/model/DescribeUserLogserviceStatusResult.cc
 	src/model/DisableDcdnDomainOfflineLogDeliveryRequest.cc
 	src/model/DisableDcdnDomainOfflineLogDeliveryResult.cc
 	src/model/DisableDcdnOfflineLogDeliveryRequest.cc
