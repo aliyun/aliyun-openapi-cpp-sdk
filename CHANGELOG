@@ -1,3 +1,9 @@
+2021-05-10 Version: 1.36.722
+- Add API GenerateMergedTable.
+- Add API ListDateSourceTables.
+- Add API ListDateSourceTableFields.
+- Add API ListRamRoles.
+
 2021-05-10 Version: 1.36.721
 - Delete API.
 

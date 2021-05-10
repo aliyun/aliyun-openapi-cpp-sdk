@@ -106,6 +106,8 @@
 #include "model/DisableSlowQueryResult.h"
 #include "model/EnableSlowQueryRequest.h"
 #include "model/EnableSlowQueryResult.h"
+#include "model/GenerateMergedTableRequest.h"
+#include "model/GenerateMergedTableResult.h"
 #include "model/GetDomainRequest.h"
 #include "model/GetDomainResult.h"
 #include "model/GetModelProgressRequest.h"
@@ -142,6 +144,10 @@
 #include "model/ListAppsResult.h"
 #include "model/ListDataCollectionsRequest.h"
 #include "model/ListDataCollectionsResult.h"
+#include "model/ListDataSourceTableFieldsRequest.h"
+#include "model/ListDataSourceTableFieldsResult.h"
+#include "model/ListDataSourceTablesRequest.h"
+#include "model/ListDataSourceTablesResult.h"
 #include "model/ListDeployedAlgorithmModelsRequest.h"
 #include "model/ListDeployedAlgorithmModelsResult.h"
 #include "model/ListFirstRanksRequest.h"
@@ -160,6 +166,8 @@
 #include "model/ListQueryProcessorNersResult.h"
 #include "model/ListQueryProcessorsRequest.h"
 #include "model/ListQueryProcessorsResult.h"
+#include "model/ListRamRolesRequest.h"
+#include "model/ListRamRolesResult.h"
 #include "model/ListScheduledTasksRequest.h"
 #include "model/ListScheduledTasksResult.h"
 #include "model/ListSecondRanksRequest.h"
@@ -379,6 +387,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableSlowQueryResult> EnableSlowQueryOutcome;
 			typedef std::future<EnableSlowQueryOutcome> EnableSlowQueryOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::EnableSlowQueryRequest&, const EnableSlowQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableSlowQueryAsyncHandler;
+			typedef Outcome<Error, Model::GenerateMergedTableResult> GenerateMergedTableOutcome;
+			typedef std::future<GenerateMergedTableOutcome> GenerateMergedTableOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::GenerateMergedTableRequest&, const GenerateMergedTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateMergedTableAsyncHandler;
 			typedef Outcome<Error, Model::GetDomainResult> GetDomainOutcome;
 			typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::GetDomainRequest&, const GetDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDomainAsyncHandler;
@@ -433,6 +444,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDataCollectionsResult> ListDataCollectionsOutcome;
 			typedef std::future<ListDataCollectionsOutcome> ListDataCollectionsOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListDataCollectionsRequest&, const ListDataCollectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataCollectionsAsyncHandler;
+			typedef Outcome<Error, Model::ListDataSourceTableFieldsResult> ListDataSourceTableFieldsOutcome;
+			typedef std::future<ListDataSourceTableFieldsOutcome> ListDataSourceTableFieldsOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListDataSourceTableFieldsRequest&, const ListDataSourceTableFieldsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataSourceTableFieldsAsyncHandler;
+			typedef Outcome<Error, Model::ListDataSourceTablesResult> ListDataSourceTablesOutcome;
+			typedef std::future<ListDataSourceTablesOutcome> ListDataSourceTablesOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListDataSourceTablesRequest&, const ListDataSourceTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDataSourceTablesAsyncHandler;
 			typedef Outcome<Error, Model::ListDeployedAlgorithmModelsResult> ListDeployedAlgorithmModelsOutcome;
 			typedef std::future<ListDeployedAlgorithmModelsOutcome> ListDeployedAlgorithmModelsOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListDeployedAlgorithmModelsRequest&, const ListDeployedAlgorithmModelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeployedAlgorithmModelsAsyncHandler;
@@ -460,6 +477,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListQueryProcessorsResult> ListQueryProcessorsOutcome;
 			typedef std::future<ListQueryProcessorsOutcome> ListQueryProcessorsOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListQueryProcessorsRequest&, const ListQueryProcessorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQueryProcessorsAsyncHandler;
+			typedef Outcome<Error, Model::ListRamRolesResult> ListRamRolesOutcome;
+			typedef std::future<ListRamRolesOutcome> ListRamRolesOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListRamRolesRequest&, const ListRamRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRamRolesAsyncHandler;
 			typedef Outcome<Error, Model::ListScheduledTasksResult> ListScheduledTasksOutcome;
 			typedef std::future<ListScheduledTasksOutcome> ListScheduledTasksOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListScheduledTasksRequest&, const ListScheduledTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScheduledTasksAsyncHandler;
@@ -717,6 +737,9 @@ namespace AlibabaCloud
 			EnableSlowQueryOutcome enableSlowQuery(const Model::EnableSlowQueryRequest &request)const;
 			void enableSlowQueryAsync(const Model::EnableSlowQueryRequest& request, const EnableSlowQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableSlowQueryOutcomeCallable enableSlowQueryCallable(const Model::EnableSlowQueryRequest& request) const;
+			GenerateMergedTableOutcome generateMergedTable(const Model::GenerateMergedTableRequest &request)const;
+			void generateMergedTableAsync(const Model::GenerateMergedTableRequest& request, const GenerateMergedTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateMergedTableOutcomeCallable generateMergedTableCallable(const Model::GenerateMergedTableRequest& request) const;
 			GetDomainOutcome getDomain(const Model::GetDomainRequest &request)const;
 			void getDomainAsync(const Model::GetDomainRequest& request, const GetDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDomainOutcomeCallable getDomainCallable(const Model::GetDomainRequest& request) const;
@@ -771,6 +794,12 @@ namespace AlibabaCloud
 			ListDataCollectionsOutcome listDataCollections(const Model::ListDataCollectionsRequest &request)const;
 			void listDataCollectionsAsync(const Model::ListDataCollectionsRequest& request, const ListDataCollectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDataCollectionsOutcomeCallable listDataCollectionsCallable(const Model::ListDataCollectionsRequest& request) const;
+			ListDataSourceTableFieldsOutcome listDataSourceTableFields(const Model::ListDataSourceTableFieldsRequest &request)const;
+			void listDataSourceTableFieldsAsync(const Model::ListDataSourceTableFieldsRequest& request, const ListDataSourceTableFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDataSourceTableFieldsOutcomeCallable listDataSourceTableFieldsCallable(const Model::ListDataSourceTableFieldsRequest& request) const;
+			ListDataSourceTablesOutcome listDataSourceTables(const Model::ListDataSourceTablesRequest &request)const;
+			void listDataSourceTablesAsync(const Model::ListDataSourceTablesRequest& request, const ListDataSourceTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDataSourceTablesOutcomeCallable listDataSourceTablesCallable(const Model::ListDataSourceTablesRequest& request) const;
 			ListDeployedAlgorithmModelsOutcome listDeployedAlgorithmModels(const Model::ListDeployedAlgorithmModelsRequest &request)const;
 			void listDeployedAlgorithmModelsAsync(const Model::ListDeployedAlgorithmModelsRequest& request, const ListDeployedAlgorithmModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDeployedAlgorithmModelsOutcomeCallable listDeployedAlgorithmModelsCallable(const Model::ListDeployedAlgorithmModelsRequest& request) const;
@@ -798,6 +827,9 @@ namespace AlibabaCloud
 			ListQueryProcessorsOutcome listQueryProcessors(const Model::ListQueryProcessorsRequest &request)const;
 			void listQueryProcessorsAsync(const Model::ListQueryProcessorsRequest& request, const ListQueryProcessorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQueryProcessorsOutcomeCallable listQueryProcessorsCallable(const Model::ListQueryProcessorsRequest& request) const;
+			ListRamRolesOutcome listRamRoles(const Model::ListRamRolesRequest &request)const;
+			void listRamRolesAsync(const Model::ListRamRolesRequest& request, const ListRamRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRamRolesOutcomeCallable listRamRolesCallable(const Model::ListRamRolesRequest& request) const;
 			ListScheduledTasksOutcome listScheduledTasks(const Model::ListScheduledTasksRequest &request)const;
 			void listScheduledTasksAsync(const Model::ListScheduledTasksRequest& request, const ListScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListScheduledTasksOutcomeCallable listScheduledTasksCallable(const Model::ListScheduledTasksRequest& request) const;

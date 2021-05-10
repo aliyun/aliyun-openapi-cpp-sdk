@@ -105,6 +105,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/DisableSlowQueryResult.h
 	include/alibabacloud/opensearch/model/EnableSlowQueryRequest.h
 	include/alibabacloud/opensearch/model/EnableSlowQueryResult.h
+	include/alibabacloud/opensearch/model/GenerateMergedTableRequest.h
+	include/alibabacloud/opensearch/model/GenerateMergedTableResult.h
 	include/alibabacloud/opensearch/model/GetDomainRequest.h
 	include/alibabacloud/opensearch/model/GetDomainResult.h
 	include/alibabacloud/opensearch/model/GetModelProgressRequest.h
@@ -141,6 +143,10 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/ListAppsResult.h
 	include/alibabacloud/opensearch/model/ListDataCollectionsRequest.h
 	include/alibabacloud/opensearch/model/ListDataCollectionsResult.h
+	include/alibabacloud/opensearch/model/ListDataSourceTableFieldsRequest.h
+	include/alibabacloud/opensearch/model/ListDataSourceTableFieldsResult.h
+	include/alibabacloud/opensearch/model/ListDataSourceTablesRequest.h
+	include/alibabacloud/opensearch/model/ListDataSourceTablesResult.h
 	include/alibabacloud/opensearch/model/ListDeployedAlgorithmModelsRequest.h
 	include/alibabacloud/opensearch/model/ListDeployedAlgorithmModelsResult.h
 	include/alibabacloud/opensearch/model/ListFirstRanksRequest.h
@@ -159,6 +165,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/ListQueryProcessorNersResult.h
 	include/alibabacloud/opensearch/model/ListQueryProcessorsRequest.h
 	include/alibabacloud/opensearch/model/ListQueryProcessorsResult.h
+	include/alibabacloud/opensearch/model/ListRamRolesRequest.h
+	include/alibabacloud/opensearch/model/ListRamRolesResult.h
 	include/alibabacloud/opensearch/model/ListScheduledTasksRequest.h
 	include/alibabacloud/opensearch/model/ListScheduledTasksResult.h
 	include/alibabacloud/opensearch/model/ListSecondRanksRequest.h
@@ -330,6 +338,8 @@ set(opensearch_src
 	src/model/DisableSlowQueryResult.cc
 	src/model/EnableSlowQueryRequest.cc
 	src/model/EnableSlowQueryResult.cc
+	src/model/GenerateMergedTableRequest.cc
+	src/model/GenerateMergedTableResult.cc
 	src/model/GetDomainRequest.cc
 	src/model/GetDomainResult.cc
 	src/model/GetModelProgressRequest.cc
@@ -366,6 +376,10 @@ set(opensearch_src
 	src/model/ListAppsResult.cc
 	src/model/ListDataCollectionsRequest.cc
 	src/model/ListDataCollectionsResult.cc
+	src/model/ListDataSourceTableFieldsRequest.cc
+	src/model/ListDataSourceTableFieldsResult.cc
+	src/model/ListDataSourceTablesRequest.cc
+	src/model/ListDataSourceTablesResult.cc
 	src/model/ListDeployedAlgorithmModelsRequest.cc
 	src/model/ListDeployedAlgorithmModelsResult.cc
 	src/model/ListFirstRanksRequest.cc
@@ -384,6 +398,8 @@ set(opensearch_src
 	src/model/ListQueryProcessorNersResult.cc
 	src/model/ListQueryProcessorsRequest.cc
 	src/model/ListQueryProcessorsResult.cc
+	src/model/ListRamRolesRequest.cc
+	src/model/ListRamRolesResult.cc
 	src/model/ListScheduledTasksRequest.cc
 	src/model/ListScheduledTasksResult.cc
 	src/model/ListSecondRanksRequest.cc

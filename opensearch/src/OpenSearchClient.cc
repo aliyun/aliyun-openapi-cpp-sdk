@@ -1563,6 +1563,42 @@ OpenSearchClient::EnableSlowQueryOutcomeCallable OpenSearchClient::enableSlowQue
 	return task->get_future();
 }
 
+OpenSearchClient::GenerateMergedTableOutcome OpenSearchClient::generateMergedTable(const GenerateMergedTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateMergedTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateMergedTableOutcome(GenerateMergedTableResult(outcome.result()));
+	else
+		return GenerateMergedTableOutcome(outcome.error());
+}
+
+void OpenSearchClient::generateMergedTableAsync(const GenerateMergedTableRequest& request, const GenerateMergedTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateMergedTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenSearchClient::GenerateMergedTableOutcomeCallable OpenSearchClient::generateMergedTableCallable(const GenerateMergedTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateMergedTableOutcome()>>(
+			[this, request]()
+			{
+			return this->generateMergedTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OpenSearchClient::GetDomainOutcome OpenSearchClient::getDomain(const GetDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2211,6 +2247,78 @@ OpenSearchClient::ListDataCollectionsOutcomeCallable OpenSearchClient::listDataC
 	return task->get_future();
 }
 
+OpenSearchClient::ListDataSourceTableFieldsOutcome OpenSearchClient::listDataSourceTableFields(const ListDataSourceTableFieldsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataSourceTableFieldsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataSourceTableFieldsOutcome(ListDataSourceTableFieldsResult(outcome.result()));
+	else
+		return ListDataSourceTableFieldsOutcome(outcome.error());
+}
+
+void OpenSearchClient::listDataSourceTableFieldsAsync(const ListDataSourceTableFieldsRequest& request, const ListDataSourceTableFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataSourceTableFields(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenSearchClient::ListDataSourceTableFieldsOutcomeCallable OpenSearchClient::listDataSourceTableFieldsCallable(const ListDataSourceTableFieldsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataSourceTableFieldsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataSourceTableFields(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OpenSearchClient::ListDataSourceTablesOutcome OpenSearchClient::listDataSourceTables(const ListDataSourceTablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataSourceTablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataSourceTablesOutcome(ListDataSourceTablesResult(outcome.result()));
+	else
+		return ListDataSourceTablesOutcome(outcome.error());
+}
+
+void OpenSearchClient::listDataSourceTablesAsync(const ListDataSourceTablesRequest& request, const ListDataSourceTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataSourceTables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenSearchClient::ListDataSourceTablesOutcomeCallable OpenSearchClient::listDataSourceTablesCallable(const ListDataSourceTablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataSourceTablesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataSourceTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OpenSearchClient::ListDeployedAlgorithmModelsOutcome OpenSearchClient::listDeployedAlgorithmModels(const ListDeployedAlgorithmModelsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +2637,42 @@ OpenSearchClient::ListQueryProcessorsOutcomeCallable OpenSearchClient::listQuery
 			[this, request]()
 			{
 			return this->listQueryProcessors(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OpenSearchClient::ListRamRolesOutcome OpenSearchClient::listRamRoles(const ListRamRolesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRamRolesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRamRolesOutcome(ListRamRolesResult(outcome.result()));
+	else
+		return ListRamRolesOutcome(outcome.error());
+}
+
+void OpenSearchClient::listRamRolesAsync(const ListRamRolesRequest& request, const ListRamRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRamRoles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenSearchClient::ListRamRolesOutcomeCallable OpenSearchClient::listRamRolesCallable(const ListRamRolesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRamRolesOutcome()>>(
+			[this, request]()
+			{
+			return this->listRamRoles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
