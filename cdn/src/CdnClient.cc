@@ -159,42 +159,6 @@ CdnClient::AddLiveAppRecordConfigOutcomeCallable CdnClient::addLiveAppRecordConf
 	return task->get_future();
 }
 
-CdnClient::AddLiveStreamTranscodeOutcome CdnClient::addLiveStreamTranscode(const AddLiveStreamTranscodeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddLiveStreamTranscodeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddLiveStreamTranscodeOutcome(AddLiveStreamTranscodeResult(outcome.result()));
-	else
-		return AddLiveStreamTranscodeOutcome(outcome.error());
-}
-
-void CdnClient::addLiveStreamTranscodeAsync(const AddLiveStreamTranscodeRequest& request, const AddLiveStreamTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addLiveStreamTranscode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::AddLiveStreamTranscodeOutcomeCallable CdnClient::addLiveStreamTranscodeCallable(const AddLiveStreamTranscodeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddLiveStreamTranscodeOutcome()>>(
-			[this, request]()
-			{
-			return this->addLiveStreamTranscode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::BatchAddCdnDomainOutcome CdnClient::batchAddCdnDomain(const BatchAddCdnDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +447,78 @@ CdnClient::CreateCdnCertificateSigningRequestOutcomeCallable CdnClient::createCd
 	return task->get_future();
 }
 
+CdnClient::CreateCdnDeliverTaskOutcome CdnClient::createCdnDeliverTask(const CreateCdnDeliverTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCdnDeliverTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCdnDeliverTaskOutcome(CreateCdnDeliverTaskResult(outcome.result()));
+	else
+		return CreateCdnDeliverTaskOutcome(outcome.error());
+}
+
+void CdnClient::createCdnDeliverTaskAsync(const CreateCdnDeliverTaskRequest& request, const CreateCdnDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCdnDeliverTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::CreateCdnDeliverTaskOutcomeCallable CdnClient::createCdnDeliverTaskCallable(const CreateCdnDeliverTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCdnDeliverTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createCdnDeliverTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::CreateCdnSubTaskOutcome CdnClient::createCdnSubTask(const CreateCdnSubTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCdnSubTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCdnSubTaskOutcome(CreateCdnSubTaskResult(outcome.result()));
+	else
+		return CreateCdnSubTaskOutcome(outcome.error());
+}
+
+void CdnClient::createCdnSubTaskAsync(const CreateCdnSubTaskRequest& request, const CreateCdnSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCdnSubTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::CreateCdnSubTaskOutcomeCallable CdnClient::createCdnSubTaskCallable(const CreateCdnSubTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCdnSubTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createCdnSubTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::CreateIllegalUrlExportTaskOutcome CdnClient::createIllegalUrlExportTask(const CreateIllegalUrlExportTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -699,6 +735,42 @@ CdnClient::DeleteCacheExpiredConfigOutcomeCallable CdnClient::deleteCacheExpired
 	return task->get_future();
 }
 
+CdnClient::DeleteCdnDeliverTaskOutcome CdnClient::deleteCdnDeliverTask(const DeleteCdnDeliverTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCdnDeliverTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCdnDeliverTaskOutcome(DeleteCdnDeliverTaskResult(outcome.result()));
+	else
+		return DeleteCdnDeliverTaskOutcome(outcome.error());
+}
+
+void CdnClient::deleteCdnDeliverTaskAsync(const DeleteCdnDeliverTaskRequest& request, const DeleteCdnDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCdnDeliverTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DeleteCdnDeliverTaskOutcomeCallable CdnClient::deleteCdnDeliverTaskCallable(const DeleteCdnDeliverTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCdnDeliverTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCdnDeliverTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DeleteCdnDomainOutcome CdnClient::deleteCdnDomain(const DeleteCdnDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +801,42 @@ CdnClient::DeleteCdnDomainOutcomeCallable CdnClient::deleteCdnDomainCallable(con
 			[this, request]()
 			{
 			return this->deleteCdnDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DeleteCdnSubTaskOutcome CdnClient::deleteCdnSubTask(const DeleteCdnSubTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCdnSubTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCdnSubTaskOutcome(DeleteCdnSubTaskResult(outcome.result()));
+	else
+		return DeleteCdnSubTaskOutcome(outcome.error());
+}
+
+void CdnClient::deleteCdnSubTaskAsync(const DeleteCdnSubTaskRequest& request, const DeleteCdnSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCdnSubTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DeleteCdnSubTaskOutcomeCallable CdnClient::deleteCdnSubTaskCallable(const DeleteCdnSubTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCdnSubTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCdnSubTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1203,42 @@ CdnClient::DescribeCdnCertificateListOutcomeCallable CdnClient::describeCdnCerti
 	return task->get_future();
 }
 
+CdnClient::DescribeCdnDeliverListOutcome CdnClient::describeCdnDeliverList(const DescribeCdnDeliverListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnDeliverListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnDeliverListOutcome(DescribeCdnDeliverListResult(outcome.result()));
+	else
+		return DescribeCdnDeliverListOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnDeliverListAsync(const DescribeCdnDeliverListRequest& request, const DescribeCdnDeliverListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnDeliverList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnDeliverListOutcomeCallable CdnClient::describeCdnDeliverListCallable(const DescribeCdnDeliverListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnDeliverListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnDeliverList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeCdnDomainByCertificateOutcome CdnClient::describeCdnDomainByCertificate(const DescribeCdnDomainByCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1383,6 +1527,78 @@ CdnClient::DescribeCdnRegionAndIspOutcomeCallable CdnClient::describeCdnRegionAn
 	return task->get_future();
 }
 
+CdnClient::DescribeCdnReportOutcome CdnClient::describeCdnReport(const DescribeCdnReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnReportOutcome(DescribeCdnReportResult(outcome.result()));
+	else
+		return DescribeCdnReportOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnReportAsync(const DescribeCdnReportRequest& request, const DescribeCdnReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnReportOutcomeCallable CdnClient::describeCdnReportCallable(const DescribeCdnReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnReportOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeCdnReportListOutcome CdnClient::describeCdnReportList(const DescribeCdnReportListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnReportListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnReportListOutcome(DescribeCdnReportListResult(outcome.result()));
+	else
+		return DescribeCdnReportListOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnReportListAsync(const DescribeCdnReportListRequest& request, const DescribeCdnReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnReportList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnReportListOutcomeCallable CdnClient::describeCdnReportListCallable(const DescribeCdnReportListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnReportListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnReportList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeCdnServiceOutcome CdnClient::describeCdnService(const DescribeCdnServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1629,42 @@ CdnClient::DescribeCdnServiceOutcomeCallable CdnClient::describeCdnServiceCallab
 			[this, request]()
 			{
 			return this->describeCdnService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeCdnSubListOutcome CdnClient::describeCdnSubList(const DescribeCdnSubListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnSubListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnSubListOutcome(DescribeCdnSubListResult(outcome.result()));
+	else
+		return DescribeCdnSubListOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnSubListAsync(const DescribeCdnSubListRequest& request, const DescribeCdnSubListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnSubList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnSubListOutcomeCallable CdnClient::describeCdnSubListCallable(const DescribeCdnSubListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnSubListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnSubList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3615,6 +3867,78 @@ CdnClient::DescribeDomainsUsageByDayOutcomeCallable CdnClient::describeDomainsUs
 	return task->get_future();
 }
 
+CdnClient::DescribeEsExceptionDataOutcome CdnClient::describeEsExceptionData(const DescribeEsExceptionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEsExceptionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEsExceptionDataOutcome(DescribeEsExceptionDataResult(outcome.result()));
+	else
+		return DescribeEsExceptionDataOutcome(outcome.error());
+}
+
+void CdnClient::describeEsExceptionDataAsync(const DescribeEsExceptionDataRequest& request, const DescribeEsExceptionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEsExceptionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeEsExceptionDataOutcomeCallable CdnClient::describeEsExceptionDataCallable(const DescribeEsExceptionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEsExceptionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEsExceptionData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeEsExecuteDataOutcome CdnClient::describeEsExecuteData(const DescribeEsExecuteDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEsExecuteDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEsExecuteDataOutcome(DescribeEsExecuteDataResult(outcome.result()));
+	else
+		return DescribeEsExecuteDataOutcome(outcome.error());
+}
+
+void CdnClient::describeEsExecuteDataAsync(const DescribeEsExecuteDataRequest& request, const DescribeEsExecuteDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEsExecuteData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeEsExecuteDataOutcomeCallable CdnClient::describeEsExecuteDataCallable(const DescribeEsExecuteDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEsExecuteDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEsExecuteData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeFCTriggerOutcome CdnClient::describeFCTrigger(const DescribeFCTriggerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5379,42 +5703,6 @@ CdnClient::ModifyDomainCustomLogConfigOutcomeCallable CdnClient::modifyDomainCus
 	return task->get_future();
 }
 
-CdnClient::ModifyPathCacheExpiredConfigOutcome CdnClient::modifyPathCacheExpiredConfig(const ModifyPathCacheExpiredConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyPathCacheExpiredConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyPathCacheExpiredConfigOutcome(ModifyPathCacheExpiredConfigResult(outcome.result()));
-	else
-		return ModifyPathCacheExpiredConfigOutcome(outcome.error());
-}
-
-void CdnClient::modifyPathCacheExpiredConfigAsync(const ModifyPathCacheExpiredConfigRequest& request, const ModifyPathCacheExpiredConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyPathCacheExpiredConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::ModifyPathCacheExpiredConfigOutcomeCallable CdnClient::modifyPathCacheExpiredConfigCallable(const ModifyPathCacheExpiredConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyPathCacheExpiredConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyPathCacheExpiredConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::ModifyRealtimeLogDeliveryOutcome CdnClient::modifyRealtimeLogDelivery(const ModifyRealtimeLogDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5445,42 +5733,6 @@ CdnClient::ModifyRealtimeLogDeliveryOutcomeCallable CdnClient::modifyRealtimeLog
 			[this, request]()
 			{
 			return this->modifyRealtimeLogDelivery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::ModifyUserCustomLogConfigOutcome CdnClient::modifyUserCustomLogConfig(const ModifyUserCustomLogConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyUserCustomLogConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyUserCustomLogConfigOutcome(ModifyUserCustomLogConfigResult(outcome.result()));
-	else
-		return ModifyUserCustomLogConfigOutcome(outcome.error());
-}
-
-void CdnClient::modifyUserCustomLogConfigAsync(const ModifyUserCustomLogConfigRequest& request, const ModifyUserCustomLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyUserCustomLogConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::ModifyUserCustomLogConfigOutcomeCallable CdnClient::modifyUserCustomLogConfigCallable(const ModifyUserCustomLogConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyUserCustomLogConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyUserCustomLogConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5919,42 +6171,6 @@ CdnClient::SetDomainServerCertificateOutcomeCallable CdnClient::setDomainServerC
 	return task->get_future();
 }
 
-CdnClient::SetErrorPageConfigOutcome CdnClient::setErrorPageConfig(const SetErrorPageConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetErrorPageConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetErrorPageConfigOutcome(SetErrorPageConfigResult(outcome.result()));
-	else
-		return SetErrorPageConfigOutcome(outcome.error());
-}
-
-void CdnClient::setErrorPageConfigAsync(const SetErrorPageConfigRequest& request, const SetErrorPageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setErrorPageConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetErrorPageConfigOutcomeCallable CdnClient::setErrorPageConfigCallable(const SetErrorPageConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetErrorPageConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setErrorPageConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::SetFileCacheExpiredConfigOutcome CdnClient::setFileCacheExpiredConfig(const SetFileCacheExpiredConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6057,42 +6273,6 @@ CdnClient::SetForwardSchemeConfigOutcomeCallable CdnClient::setForwardSchemeConf
 			[this, request]()
 			{
 			return this->setForwardSchemeConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::SetHttpErrorPageConfigOutcome CdnClient::setHttpErrorPageConfig(const SetHttpErrorPageConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetHttpErrorPageConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetHttpErrorPageConfigOutcome(SetHttpErrorPageConfigResult(outcome.result()));
-	else
-		return SetHttpErrorPageConfigOutcome(outcome.error());
-}
-
-void CdnClient::setHttpErrorPageConfigAsync(const SetHttpErrorPageConfigRequest& request, const SetHttpErrorPageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setHttpErrorPageConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetHttpErrorPageConfigOutcomeCallable CdnClient::setHttpErrorPageConfigCallable(const SetHttpErrorPageConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetHttpErrorPageConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setHttpErrorPageConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6603,42 +6783,6 @@ CdnClient::SetSourceHostConfigOutcomeCallable CdnClient::setSourceHostConfigCall
 	return task->get_future();
 }
 
-CdnClient::SetVideoSeekConfigOutcome CdnClient::setVideoSeekConfig(const SetVideoSeekConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetVideoSeekConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetVideoSeekConfigOutcome(SetVideoSeekConfigResult(outcome.result()));
-	else
-		return SetVideoSeekConfigOutcome(outcome.error());
-}
-
-void CdnClient::setVideoSeekConfigAsync(const SetVideoSeekConfigRequest& request, const SetVideoSeekConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setVideoSeekConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetVideoSeekConfigOutcomeCallable CdnClient::setVideoSeekConfigCallable(const SetVideoSeekConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetVideoSeekConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setVideoSeekConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::SetWaitingRoomConfigOutcome CdnClient::setWaitingRoomConfig(const SetWaitingRoomConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6813,6 +6957,78 @@ CdnClient::UntagResourcesOutcomeCallable CdnClient::untagResourcesCallable(const
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::UpdateCdnDeliverTaskOutcome CdnClient::updateCdnDeliverTask(const UpdateCdnDeliverTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCdnDeliverTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCdnDeliverTaskOutcome(UpdateCdnDeliverTaskResult(outcome.result()));
+	else
+		return UpdateCdnDeliverTaskOutcome(outcome.error());
+}
+
+void CdnClient::updateCdnDeliverTaskAsync(const UpdateCdnDeliverTaskRequest& request, const UpdateCdnDeliverTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCdnDeliverTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::UpdateCdnDeliverTaskOutcomeCallable CdnClient::updateCdnDeliverTaskCallable(const UpdateCdnDeliverTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCdnDeliverTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCdnDeliverTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::UpdateCdnSubTaskOutcome CdnClient::updateCdnSubTask(const UpdateCdnSubTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateCdnSubTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateCdnSubTaskOutcome(UpdateCdnSubTaskResult(outcome.result()));
+	else
+		return UpdateCdnSubTaskOutcome(outcome.error());
+}
+
+void CdnClient::updateCdnSubTaskAsync(const UpdateCdnSubTaskRequest& request, const UpdateCdnSubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateCdnSubTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::UpdateCdnSubTaskOutcomeCallable CdnClient::updateCdnSubTaskCallable(const UpdateCdnSubTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateCdnSubTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->updateCdnSubTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
