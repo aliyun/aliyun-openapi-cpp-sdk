@@ -81,6 +81,8 @@ void GetFileResult::parse(const std::string &payload)
 		data_.file.deletedStatus = fileNode["DeletedStatus"].asString();
 	if(!fileNode["BusinessId"].isNull())
 		data_.file.businessId = std::stol(fileNode["BusinessId"].asString());
+	if(!fileNode["AutoParse"].isNull())
+		data_.file.autoParse = fileNode["AutoParse"].asString() == "true";
 	auto nodeConfigurationNode = dataNode["NodeConfiguration"];
 	if(!nodeConfigurationNode["AutoRerunTimes"].isNull())
 		data_.nodeConfiguration.autoRerunTimes = std::stoi(nodeConfigurationNode["AutoRerunTimes"].asString());
@@ -112,6 +114,8 @@ void GetFileResult::parse(const std::string &payload)
 		Data::NodeConfiguration::NodeInputOutput nodeInputOutputObject;
 		if(!nodeConfigurationNodeInputListNodeInputOutput["Input"].isNull())
 			nodeInputOutputObject.input = nodeConfigurationNodeInputListNodeInputOutput["Input"].asString();
+		if(!nodeConfigurationNodeInputListNodeInputOutput["ParseType"].isNull())
+			nodeInputOutputObject.parseType = nodeConfigurationNodeInputListNodeInputOutput["ParseType"].asString();
 		data_.nodeConfiguration.inputList.push_back(nodeInputOutputObject);
 	}
 	auto allOutputListNode = nodeConfigurationNode["OutputList"]["NodeInputOutput"];

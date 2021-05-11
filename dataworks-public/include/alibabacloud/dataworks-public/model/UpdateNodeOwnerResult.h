@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTFILESRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTFILESRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATENODEOWNERRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATENODEOWNERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,47 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListFilesResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateNodeOwnerResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct File
-					{
-						long parentId;
-						std::string owner;
-						long createTime;
-						std::string fileName;
-						std::string useType;
-						int currentVersion;
-						std::string createUser;
-						bool isMaxCompute;
-						std::string connectionName;
-						long lastEditTime;
-						std::string fileDescription;
-						int fileType;
-						std::string content;
-						std::string lastEditUser;
-						long nodeId;
-						int commitStatus;
-						long fileId;
-						std::string fileFolderId;
-						long bizId;
-						long businessId;
-						bool autoParse;
-					};
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-					std::vector<File> files;
-				};
 
 
-				ListFilesResult();
-				explicit ListFilesResult(const std::string &payload);
-				~ListFilesResult();
+				UpdateNodeOwnerResult();
+				explicit UpdateNodeOwnerResult(const std::string &payload);
+				~UpdateNodeOwnerResult();
 				int getHttpStatusCode()const;
-				Data getData()const;
+				bool getData()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -78,7 +47,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int httpStatusCode_;
-				Data data_;
+				bool data_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -87,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTFILESRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATENODEOWNERRESULT_H_

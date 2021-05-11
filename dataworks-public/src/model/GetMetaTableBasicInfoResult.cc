@@ -88,6 +88,8 @@ void GetMetaTableBasicInfoResult::parse(const std::string &payload)
 		data_.viewCount = std::stol(dataNode["ViewCount"].asString());
 	if(!dataNode["FavoriteCount"].isNull())
 		data_.favoriteCount = std::stol(dataNode["FavoriteCount"].asString());
+	if(!dataNode["IsView"].isNull())
+		data_.isView = dataNode["IsView"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())

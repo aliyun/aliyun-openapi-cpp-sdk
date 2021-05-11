@@ -56,12 +56,14 @@ namespace AlibabaCloud
 						std::string fileFolderId;
 						long bizId;
 						long businessId;
+						bool autoParse;
 					};
 					struct NodeConfiguration
 					{
 						struct NodeInputOutput
 						{
 							std::string input;
+							std::string parseType;
 						};
 						struct NodeInputOutput1
 						{

@@ -35,26 +35,27 @@ namespace AlibabaCloud
 				struct Data
 				{
 					int lifeCycle;
-					std::string comment;
+					bool isView;
 					bool isPartitionTable;
 					std::string projectName;
+					long lastModifyTime;
+					long lastAccessTime;
+					int envType;
+					std::string ownerId;
+					long dataSize;
+					std::string partitionKeys;
+					std::string comment;
 					std::string clusterId;
 					long lastDdlTime;
 					long createTime;
 					long projectId;
 					std::string databaseName;
 					long viewCount;
-					long lastModifyTime;
-					long lastAccessTime;
-					int envType;
 					std::string caption;
 					std::string tableName;
 					std::string tableGuid;
 					long tenantId;
-					std::string ownerId;
-					long dataSize;
 					long favoriteCount;
-					std::string partitionKeys;
 					int isVisible;
 					long readCount;
 					std::string location;

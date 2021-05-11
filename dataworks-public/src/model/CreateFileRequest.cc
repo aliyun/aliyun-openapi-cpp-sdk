@@ -49,6 +49,17 @@ void CreateFileRequest::setDependentNodeIdList(const std::string& dependentNodeI
 	setBodyParameter("DependentNodeIdList", dependentNodeIdList);
 }
 
+bool CreateFileRequest::getAutoParse()const
+{
+	return autoParse_;
+}
+
+void CreateFileRequest::setAutoParse(bool autoParse)
+{
+	autoParse_ = autoParse;
+	setBodyParameter("AutoParse", autoParse ? "true" : "false");
+}
+
 std::string CreateFileRequest::getContent()const
 {
 	return content_;

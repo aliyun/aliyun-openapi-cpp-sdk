@@ -4371,6 +4371,42 @@ Dataworks_publicClient::ListCalcEnginesOutcomeCallable Dataworks_publicClient::l
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListColumnWithLabelPermissionOutcome Dataworks_publicClient::listColumnWithLabelPermission(const ListColumnWithLabelPermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListColumnWithLabelPermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListColumnWithLabelPermissionOutcome(ListColumnWithLabelPermissionResult(outcome.result()));
+	else
+		return ListColumnWithLabelPermissionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listColumnWithLabelPermissionAsync(const ListColumnWithLabelPermissionRequest& request, const ListColumnWithLabelPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listColumnWithLabelPermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListColumnWithLabelPermissionOutcomeCallable Dataworks_publicClient::listColumnWithLabelPermissionCallable(const ListColumnWithLabelPermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListColumnWithLabelPermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->listColumnWithLabelPermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListConnectionsOutcome Dataworks_publicClient::listConnections(const ListConnectionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5595,6 +5631,42 @@ Dataworks_publicClient::ListSuccessInstanceAmountOutcomeCallable Dataworks_publi
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListTableGranteesOutcome Dataworks_publicClient::listTableGrantees(const ListTableGranteesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTableGranteesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTableGranteesOutcome(ListTableGranteesResult(outcome.result()));
+	else
+		return ListTableGranteesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listTableGranteesAsync(const ListTableGranteesRequest& request, const ListTableGranteesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTableGrantees(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListTableGranteesOutcomeCallable Dataworks_publicClient::listTableGranteesCallable(const ListTableGranteesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTableGranteesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTableGrantees(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListTableLevelOutcome Dataworks_publicClient::listTableLevel(const ListTableLevelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5667,6 +5739,42 @@ Dataworks_publicClient::ListTableThemeOutcomeCallable Dataworks_publicClient::li
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListTableWithPermissionOutcome Dataworks_publicClient::listTableWithPermission(const ListTableWithPermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTableWithPermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTableWithPermissionOutcome(ListTableWithPermissionResult(outcome.result()));
+	else
+		return ListTableWithPermissionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listTableWithPermissionAsync(const ListTableWithPermissionRequest& request, const ListTableWithPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTableWithPermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListTableWithPermissionOutcomeCallable Dataworks_publicClient::listTableWithPermissionCallable(const ListTableWithPermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTableWithPermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->listTableWithPermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListTopicsOutcome Dataworks_publicClient::listTopics(const ListTopicsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5733,6 +5841,42 @@ Dataworks_publicClient::PublishDataServiceApiOutcomeCallable Dataworks_publicCli
 			[this, request]()
 			{
 			return this->publishDataServiceApi(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::QueryPublicModelEngineOutcome Dataworks_publicClient::queryPublicModelEngine(const QueryPublicModelEngineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryPublicModelEngineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryPublicModelEngineOutcome(QueryPublicModelEngineResult(outcome.result()));
+	else
+		return QueryPublicModelEngineOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::queryPublicModelEngineAsync(const QueryPublicModelEngineRequest& request, const QueryPublicModelEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryPublicModelEngine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::QueryPublicModelEngineOutcomeCallable Dataworks_publicClient::queryPublicModelEngineCallable(const QueryPublicModelEngineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryPublicModelEngineOutcome()>>(
+			[this, request]()
+			{
+			return this->queryPublicModelEngine(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6741,6 +6885,78 @@ Dataworks_publicClient::UpdateMetaTableIntroWikiOutcomeCallable Dataworks_public
 			[this, request]()
 			{
 			return this->updateMetaTableIntroWiki(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateNodeOwnerOutcome Dataworks_publicClient::updateNodeOwner(const UpdateNodeOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNodeOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNodeOwnerOutcome(UpdateNodeOwnerResult(outcome.result()));
+	else
+		return UpdateNodeOwnerOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateNodeOwnerAsync(const UpdateNodeOwnerRequest& request, const UpdateNodeOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNodeOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateNodeOwnerOutcomeCallable Dataworks_publicClient::updateNodeOwnerCallable(const UpdateNodeOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNodeOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNodeOwner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateNodeRunModeOutcome Dataworks_publicClient::updateNodeRunMode(const UpdateNodeRunModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNodeRunModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNodeRunModeOutcome(UpdateNodeRunModeResult(outcome.result()));
+	else
+		return UpdateNodeRunModeOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateNodeRunModeAsync(const UpdateNodeRunModeRequest& request, const UpdateNodeRunModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNodeRunMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateNodeRunModeOutcomeCallable Dataworks_publicClient::updateNodeRunModeCallable(const UpdateNodeRunModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNodeRunModeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNodeRunMode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

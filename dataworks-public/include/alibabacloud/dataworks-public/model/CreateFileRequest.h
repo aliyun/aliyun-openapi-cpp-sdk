@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setFileType(int fileType);
 				std::string getDependentNodeIdList()const;
 				void setDependentNodeIdList(const std::string& dependentNodeIdList);
+				bool getAutoParse()const;
+				void setAutoParse(bool autoParse);
 				std::string getContent()const;
 				void setContent(const std::string& content);
 				std::string getProjectIdentifier()const;
@@ -85,6 +87,7 @@ namespace AlibabaCloud
             private:
 				int fileType_;
 				std::string dependentNodeIdList_;
+				bool autoParse_;
 				std::string content_;
 				std::string projectIdentifier_;
 				long resourceGroupId_;

@@ -90,6 +90,8 @@ void ListFilesResult::parse(const std::string &payload)
 			fileObject.fileId = std::stol(dataNodeFilesFile["FileId"].asString());
 		if(!dataNodeFilesFile["BusinessId"].isNull())
 			fileObject.businessId = std::stol(dataNodeFilesFile["BusinessId"].asString());
+		if(!dataNodeFilesFile["AutoParse"].isNull())
+			fileObject.autoParse = dataNodeFilesFile["AutoParse"].asString() == "true";
 		data_.files.push_back(fileObject);
 	}
 	if(!value["Success"].isNull())
