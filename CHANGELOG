@@ -1,3 +1,6 @@
+2021-05-11 Version: 1.36.725
+- CreateInstance API add Port, Tags, DryRun.
+
 2021-05-11 Version: 1.36.724
 - SDK device authorization API.
 

@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_R_KVSTORE_EXPORT CreateInstanceRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				CreateInstanceRequest();
@@ -51,6 +57,8 @@ namespace AlibabaCloud
 				void setPassword(const std::string& password);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getBusinessInfo()const;
 				void setBusinessInfo(const std::string& businessInfo);
 				int getShardCount()const;
@@ -59,6 +67,8 @@ namespace AlibabaCloud
 				void setAutoRenewPeriod(const std::string& autoRenewPeriod);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				std::string getBackupId()const;
 				void setBackupId(const std::string& backupId);
 				long getOwnerId()const;
@@ -71,6 +81,8 @@ namespace AlibabaCloud
 				void setInstanceName(const std::string& instanceName);
 				std::string getAutoRenew()const;
 				void setAutoRenew(const std::string& autoRenew);
+				std::string getPort()const;
+				void setPort(const std::string& port);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 				std::string getNodeType()const;
@@ -119,16 +131,19 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string password_;
 				std::string securityToken_;
+				std::vector<Tag> tag_;
 				std::string businessInfo_;
 				int shardCount_;
 				std::string autoRenewPeriod_;
 				std::string period_;
+				bool dryRun_;
 				std::string backupId_;
 				long ownerId_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
 				std::string instanceName_;
 				std::string autoRenew_;
+				std::string port_;
 				std::string zoneId_;
 				std::string nodeType_;
 				std::string autoUseCoupon_;

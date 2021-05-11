@@ -115,6 +115,22 @@ void CreateInstanceRequest::setSecurityToken(const std::string& securityToken)
 	setParameter("SecurityToken", securityToken);
 }
 
+std::vector<CreateInstanceRequest::Tag> CreateInstanceRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateInstanceRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
 std::string CreateInstanceRequest::getBusinessInfo()const
 {
 	return businessInfo_;
@@ -157,6 +173,17 @@ void CreateInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
 	setParameter("Period", period);
+}
+
+bool CreateInstanceRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void CreateInstanceRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getBackupId()const
@@ -223,6 +250,17 @@ void CreateInstanceRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
 	setParameter("AutoRenew", autoRenew);
+}
+
+std::string CreateInstanceRequest::getPort()const
+{
+	return port_;
+}
+
+void CreateInstanceRequest::setPort(const std::string& port)
+{
+	port_ = port;
+	setParameter("Port", port);
 }
 
 std::string CreateInstanceRequest::getZoneId()const
