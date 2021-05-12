@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_RENEWTSDBINSTANCERESULT_H_
-#define ALIBABACLOUD_HITSDB_MODEL_RENEWTSDBINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTRESULT_H_
+#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT RenewTSDBInstanceResult : public ServiceResult
+			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceEngineListResult : public ServiceResult
 			{
 			public:
+				struct EngineInfo
+				{
+					struct NetInfo
+					{
+						int port;
+						std::string connectionString;
+						std::string netType;
+						int accessType;
+					};
+					std::vector<EngineInfo::NetInfo> netInfoList;
+					std::string engineType;
+				};
 
 
-				RenewTSDBInstanceResult();
-				explicit RenewTSDBInstanceResult(const std::string &payload);
-				~RenewTSDBInstanceResult();
-				long getOrderId()const;
+				GetLindormInstanceEngineListResult();
+				explicit GetLindormInstanceEngineListResult(const std::string &payload);
+				~GetLindormInstanceEngineListResult();
+				std::vector<EngineInfo> getEngineList()const;
+				std::string getInstanceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long orderId_;
+				std::vector<EngineInfo> engineList_;
+				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_RENEWTSDBINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEENGINELISTRESULT_H_

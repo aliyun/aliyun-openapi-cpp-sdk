@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_SWITCHHITSDBINSTANCEPUBLICNETREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_SWITCHHITSDBINSTANCEPUBLICNETREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT SwitchHiTSDBInstancePublicNetRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceListRequest : public RpcServiceRequest
 			{
 
 			public:
-				SwitchHiTSDBInstancePublicNetRequest();
-				~SwitchHiTSDBInstancePublicNetRequest();
+				GetLindormInstanceListRequest();
+				~GetLindormInstanceListRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getSupportEngine()const;
+				void setSupportEngine(int supportEngine);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				long getSwitchAction()const;
-				void setSwitchAction(long switchAction);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getQueryStr()const;
+				void setQueryStr(const std::string& queryStr);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getServiceType()const;
+				void setServiceType(const std::string& serviceType);
 
             private:
 				long resourceOwnerId_;
+				int supportEngine_;
+				int pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;
-				long switchAction_;
+				std::string regionId_;
+				int pageSize_;
+				std::string queryStr_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string instanceId_;
+				std::string serviceType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_SWITCHHITSDBINSTANCEPUBLICNETREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTREQUEST_H_

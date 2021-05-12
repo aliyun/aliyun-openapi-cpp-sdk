@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT RenameHiTSDBInstanceAliasRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HITSDB_EXPORT UpdateInstanceIpWhiteListRequest : public RpcServiceRequest
 			{
 
 			public:
-				RenameHiTSDBInstanceAliasRequest();
-				~RenameHiTSDBInstanceAliasRequest();
+				UpdateInstanceIpWhiteListRequest();
+				~UpdateInstanceIpWhiteListRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
@@ -45,14 +45,14 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getInstanceAlias()const;
-				void setInstanceAlias(const std::string& instanceAlias);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getGroupName()const;
+				void setGroupName(const std::string& groupName);
+				std::string getSecurityIpList()const;
+				void setSecurityIpList(const std::string& securityIpList);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getAppKey()const;
-				void setAppKey(const std::string& appKey);
 
             private:
 				long resourceOwnerId_;
@@ -60,13 +60,13 @@ namespace AlibabaCloud
 				std::string securityToken_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string instanceAlias_;
 				long ownerId_;
+				std::string groupName_;
+				std::string securityIpList_;
 				std::string instanceId_;
-				std::string appKey_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTREQUEST_H_
