@@ -90,6 +90,8 @@
 #include "model/GetOrganizationSecurityCenterStatusResult.h"
 #include "model/GetProjectMemberRequest.h"
 #include "model/GetProjectMemberResult.h"
+#include "model/GetRepositoryCommitRequest.h"
+#include "model/GetRepositoryCommitResult.h"
 #include "model/GetRepositoryInfoRequest.h"
 #include "model/GetRepositoryInfoResult.h"
 #include "model/GetRepositoryTagRequest.h"
@@ -116,6 +118,8 @@
 #include "model/ListRepositoriesResult.h"
 #include "model/ListRepositoryBranchesRequest.h"
 #include "model/ListRepositoryBranchesResult.h"
+#include "model/ListRepositoryCommitDiffRequest.h"
+#include "model/ListRepositoryCommitDiffResult.h"
 #include "model/ListRepositoryCommitsRequest.h"
 #include "model/ListRepositoryCommitsResult.h"
 #include "model/ListRepositoryMemberRequest.h"
@@ -255,6 +259,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetProjectMemberResult> GetProjectMemberOutcome;
 			typedef std::future<GetProjectMemberOutcome> GetProjectMemberOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetProjectMemberRequest&, const GetProjectMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProjectMemberAsyncHandler;
+			typedef Outcome<Error, Model::GetRepositoryCommitResult> GetRepositoryCommitOutcome;
+			typedef std::future<GetRepositoryCommitOutcome> GetRepositoryCommitOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::GetRepositoryCommitRequest&, const GetRepositoryCommitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepositoryCommitAsyncHandler;
 			typedef Outcome<Error, Model::GetRepositoryInfoResult> GetRepositoryInfoOutcome;
 			typedef std::future<GetRepositoryInfoOutcome> GetRepositoryInfoOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::GetRepositoryInfoRequest&, const GetRepositoryInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepositoryInfoAsyncHandler;
@@ -294,6 +301,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRepositoryBranchesResult> ListRepositoryBranchesOutcome;
 			typedef std::future<ListRepositoryBranchesOutcome> ListRepositoryBranchesOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryBranchesRequest&, const ListRepositoryBranchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryBranchesAsyncHandler;
+			typedef Outcome<Error, Model::ListRepositoryCommitDiffResult> ListRepositoryCommitDiffOutcome;
+			typedef std::future<ListRepositoryCommitDiffOutcome> ListRepositoryCommitDiffOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryCommitDiffRequest&, const ListRepositoryCommitDiffOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryCommitDiffAsyncHandler;
 			typedef Outcome<Error, Model::ListRepositoryCommitsResult> ListRepositoryCommitsOutcome;
 			typedef std::future<ListRepositoryCommitsOutcome> ListRepositoryCommitsOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::ListRepositoryCommitsRequest&, const ListRepositoryCommitsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRepositoryCommitsAsyncHandler;
@@ -443,6 +453,9 @@ namespace AlibabaCloud
 			GetProjectMemberOutcome getProjectMember(const Model::GetProjectMemberRequest &request)const;
 			void getProjectMemberAsync(const Model::GetProjectMemberRequest& request, const GetProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProjectMemberOutcomeCallable getProjectMemberCallable(const Model::GetProjectMemberRequest& request) const;
+			GetRepositoryCommitOutcome getRepositoryCommit(const Model::GetRepositoryCommitRequest &request)const;
+			void getRepositoryCommitAsync(const Model::GetRepositoryCommitRequest& request, const GetRepositoryCommitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRepositoryCommitOutcomeCallable getRepositoryCommitCallable(const Model::GetRepositoryCommitRequest& request) const;
 			GetRepositoryInfoOutcome getRepositoryInfo(const Model::GetRepositoryInfoRequest &request)const;
 			void getRepositoryInfoAsync(const Model::GetRepositoryInfoRequest& request, const GetRepositoryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRepositoryInfoOutcomeCallable getRepositoryInfoCallable(const Model::GetRepositoryInfoRequest& request) const;
@@ -482,6 +495,9 @@ namespace AlibabaCloud
 			ListRepositoryBranchesOutcome listRepositoryBranches(const Model::ListRepositoryBranchesRequest &request)const;
 			void listRepositoryBranchesAsync(const Model::ListRepositoryBranchesRequest& request, const ListRepositoryBranchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryBranchesOutcomeCallable listRepositoryBranchesCallable(const Model::ListRepositoryBranchesRequest& request) const;
+			ListRepositoryCommitDiffOutcome listRepositoryCommitDiff(const Model::ListRepositoryCommitDiffRequest &request)const;
+			void listRepositoryCommitDiffAsync(const Model::ListRepositoryCommitDiffRequest& request, const ListRepositoryCommitDiffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRepositoryCommitDiffOutcomeCallable listRepositoryCommitDiffCallable(const Model::ListRepositoryCommitDiffRequest& request) const;
 			ListRepositoryCommitsOutcome listRepositoryCommits(const Model::ListRepositoryCommitsRequest &request)const;
 			void listRepositoryCommitsAsync(const Model::ListRepositoryCommitsRequest& request, const ListRepositoryCommitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRepositoryCommitsOutcomeCallable listRepositoryCommitsCallable(const Model::ListRepositoryCommitsRequest& request) const;

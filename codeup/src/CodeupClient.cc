@@ -1275,6 +1275,42 @@ CodeupClient::GetProjectMemberOutcomeCallable CodeupClient::getProjectMemberCall
 	return task->get_future();
 }
 
+CodeupClient::GetRepositoryCommitOutcome CodeupClient::getRepositoryCommit(const GetRepositoryCommitRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRepositoryCommitOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRepositoryCommitOutcome(GetRepositoryCommitResult(outcome.result()));
+	else
+		return GetRepositoryCommitOutcome(outcome.error());
+}
+
+void CodeupClient::getRepositoryCommitAsync(const GetRepositoryCommitRequest& request, const GetRepositoryCommitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRepositoryCommit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::GetRepositoryCommitOutcomeCallable CodeupClient::getRepositoryCommitCallable(const GetRepositoryCommitRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRepositoryCommitOutcome()>>(
+			[this, request]()
+			{
+			return this->getRepositoryCommit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::GetRepositoryInfoOutcome CodeupClient::getRepositoryInfo(const GetRepositoryInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,6 +1773,42 @@ CodeupClient::ListRepositoryBranchesOutcomeCallable CodeupClient::listRepository
 			[this, request]()
 			{
 			return this->listRepositoryBranches(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CodeupClient::ListRepositoryCommitDiffOutcome CodeupClient::listRepositoryCommitDiff(const ListRepositoryCommitDiffRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRepositoryCommitDiffOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRepositoryCommitDiffOutcome(ListRepositoryCommitDiffResult(outcome.result()));
+	else
+		return ListRepositoryCommitDiffOutcome(outcome.error());
+}
+
+void CodeupClient::listRepositoryCommitDiffAsync(const ListRepositoryCommitDiffRequest& request, const ListRepositoryCommitDiffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRepositoryCommitDiff(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::ListRepositoryCommitDiffOutcomeCallable CodeupClient::listRepositoryCommitDiffCallable(const ListRepositoryCommitDiffRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRepositoryCommitDiffOutcome()>>(
+			[this, request]()
+			{
+			return this->listRepositoryCommitDiff(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
