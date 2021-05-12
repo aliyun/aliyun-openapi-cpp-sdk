@@ -261,8 +261,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListBusinessResult.h
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesRequest.h
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesResult.h
-	include/alibabacloud/dataworks-public/model/ListColumnWithLabelPermissionRequest.h
-	include/alibabacloud/dataworks-public/model/ListColumnWithLabelPermissionResult.h
 	include/alibabacloud/dataworks-public/model/ListConnectionsRequest.h
 	include/alibabacloud/dataworks-public/model/ListConnectionsResult.h
 	include/alibabacloud/dataworks-public/model/ListDISyncTasksRequest.h
@@ -331,14 +329,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListResourceGroupsResult.h
 	include/alibabacloud/dataworks-public/model/ListSuccessInstanceAmountRequest.h
 	include/alibabacloud/dataworks-public/model/ListSuccessInstanceAmountResult.h
-	include/alibabacloud/dataworks-public/model/ListTableGranteesRequest.h
-	include/alibabacloud/dataworks-public/model/ListTableGranteesResult.h
 	include/alibabacloud/dataworks-public/model/ListTableLevelRequest.h
 	include/alibabacloud/dataworks-public/model/ListTableLevelResult.h
 	include/alibabacloud/dataworks-public/model/ListTableThemeRequest.h
 	include/alibabacloud/dataworks-public/model/ListTableThemeResult.h
-	include/alibabacloud/dataworks-public/model/ListTableWithPermissionRequest.h
-	include/alibabacloud/dataworks-public/model/ListTableWithPermissionResult.h
 	include/alibabacloud/dataworks-public/model/ListTopicsRequest.h
 	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiRequest.h
@@ -401,10 +395,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableResult.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableIntroWikiRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableIntroWikiResult.h
-	include/alibabacloud/dataworks-public/model/UpdateNodeOwnerRequest.h
-	include/alibabacloud/dataworks-public/model/UpdateNodeOwnerResult.h
-	include/alibabacloud/dataworks-public/model/UpdateNodeRunModeRequest.h
-	include/alibabacloud/dataworks-public/model/UpdateNodeRunModeResult.h
 	include/alibabacloud/dataworks-public/model/UpdateQualityFollowerRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateQualityFollowerResult.h
 	include/alibabacloud/dataworks-public/model/UpdateQualityRuleRequest.h
@@ -666,8 +656,6 @@ set(dataworks-public_src
 	src/model/ListBusinessResult.cc
 	src/model/ListCalcEnginesRequest.cc
 	src/model/ListCalcEnginesResult.cc
-	src/model/ListColumnWithLabelPermissionRequest.cc
-	src/model/ListColumnWithLabelPermissionResult.cc
 	src/model/ListConnectionsRequest.cc
 	src/model/ListConnectionsResult.cc
 	src/model/ListDISyncTasksRequest.cc
@@ -736,14 +724,10 @@ set(dataworks-public_src
 	src/model/ListResourceGroupsResult.cc
 	src/model/ListSuccessInstanceAmountRequest.cc
 	src/model/ListSuccessInstanceAmountResult.cc
-	src/model/ListTableGranteesRequest.cc
-	src/model/ListTableGranteesResult.cc
 	src/model/ListTableLevelRequest.cc
 	src/model/ListTableLevelResult.cc
 	src/model/ListTableThemeRequest.cc
 	src/model/ListTableThemeResult.cc
-	src/model/ListTableWithPermissionRequest.cc
-	src/model/ListTableWithPermissionResult.cc
 	src/model/ListTopicsRequest.cc
 	src/model/ListTopicsResult.cc
 	src/model/PublishDataServiceApiRequest.cc
@@ -806,10 +790,6 @@ set(dataworks-public_src
 	src/model/UpdateMetaTableResult.cc
 	src/model/UpdateMetaTableIntroWikiRequest.cc
 	src/model/UpdateMetaTableIntroWikiResult.cc
-	src/model/UpdateNodeOwnerRequest.cc
-	src/model/UpdateNodeOwnerResult.cc
-	src/model/UpdateNodeRunModeRequest.cc
-	src/model/UpdateNodeRunModeResult.cc
 	src/model/UpdateQualityFollowerRequest.cc
 	src/model/UpdateQualityFollowerResult.cc
 	src/model/UpdateQualityRuleRequest.cc

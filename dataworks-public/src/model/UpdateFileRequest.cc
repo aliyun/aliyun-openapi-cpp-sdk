@@ -49,17 +49,6 @@ void UpdateFileRequest::setDependentNodeIdList(const std::string& dependentNodeI
 	setBodyParameter("DependentNodeIdList", dependentNodeIdList);
 }
 
-bool UpdateFileRequest::getAutoParse()const
-{
-	return autoParse_;
-}
-
-void UpdateFileRequest::setAutoParse(bool autoParse)
-{
-	autoParse_ = autoParse;
-	setBodyParameter("AutoParse", autoParse ? "true" : "false");
-}
-
 std::string UpdateFileRequest::getContent()const
 {
 	return content_;
