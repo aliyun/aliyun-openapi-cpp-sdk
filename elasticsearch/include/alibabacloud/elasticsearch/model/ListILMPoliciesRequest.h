@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTILMPOLICIESREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTILMPOLICIESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListInstanceIndicesRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListILMPoliciesRequest : public RoaServiceRequest
 			{
 
 			public:
-				ListInstanceIndicesRequest();
-				~ListInstanceIndicesRequest();
+				ListILMPoliciesRequest();
+				~ListILMPoliciesRequest();
 
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				bool getIsManaged()const;
-				void setIsManaged(bool isManaged);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				std::string getPolicyName()const;
+				void setPolicyName(const std::string& policyName);
 
             private:
 				std::string instanceId_;
-				bool isManaged_;
-				std::string name_;
-				std::string lang_;
+				std::string policyName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTILMPOLICIESREQUEST_H_

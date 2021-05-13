@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CLOSEMANAGEDINDEXREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CLOSEMANAGEDINDEXREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListInstanceIndicesRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT CloseManagedIndexRequest : public RoaServiceRequest
 			{
 
 			public:
-				ListInstanceIndicesRequest();
-				~ListInstanceIndicesRequest();
+				CloseManagedIndexRequest();
+				~CloseManagedIndexRequest();
 
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				bool getIsManaged()const;
-				void setIsManaged(bool isManaged);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getIndex()const;
+				void setIndex(const std::string& index);
 
             private:
 				std::string instanceId_;
-				bool isManaged_;
-				std::string name_;
-				std::string lang_;
+				std::string clientToken_;
+				std::string index_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CLOSEMANAGEDINDEXREQUEST_H_

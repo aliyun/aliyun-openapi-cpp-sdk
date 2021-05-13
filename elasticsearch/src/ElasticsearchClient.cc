@@ -339,6 +339,42 @@ ElasticsearchClient::CloseHttpsOutcomeCallable ElasticsearchClient::closeHttpsCa
 	return task->get_future();
 }
 
+ElasticsearchClient::CloseManagedIndexOutcome ElasticsearchClient::closeManagedIndex(const CloseManagedIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CloseManagedIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CloseManagedIndexOutcome(CloseManagedIndexResult(outcome.result()));
+	else
+		return CloseManagedIndexOutcome(outcome.error());
+}
+
+void ElasticsearchClient::closeManagedIndexAsync(const CloseManagedIndexRequest& request, const CloseManagedIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, closeManagedIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CloseManagedIndexOutcomeCallable ElasticsearchClient::closeManagedIndexCallable(const CloseManagedIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CloseManagedIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->closeManagedIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::CreateCollectorOutcome ElasticsearchClient::createCollector(const CreateCollectorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -375,6 +411,42 @@ ElasticsearchClient::CreateCollectorOutcomeCallable ElasticsearchClient::createC
 	return task->get_future();
 }
 
+ElasticsearchClient::CreateDataStreamOutcome ElasticsearchClient::createDataStream(const CreateDataStreamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataStreamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataStreamOutcome(CreateDataStreamResult(outcome.result()));
+	else
+		return CreateDataStreamOutcome(outcome.error());
+}
+
+void ElasticsearchClient::createDataStreamAsync(const CreateDataStreamRequest& request, const CreateDataStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataStream(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CreateDataStreamOutcomeCallable ElasticsearchClient::createDataStreamCallable(const CreateDataStreamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataStreamOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::CreateDataTasksOutcome ElasticsearchClient::createDataTasks(const CreateDataTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +477,78 @@ ElasticsearchClient::CreateDataTasksOutcomeCallable ElasticsearchClient::createD
 			[this, request]()
 			{
 			return this->createDataTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::CreateILMPolicyOutcome ElasticsearchClient::createILMPolicy(const CreateILMPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateILMPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateILMPolicyOutcome(CreateILMPolicyResult(outcome.result()));
+	else
+		return CreateILMPolicyOutcome(outcome.error());
+}
+
+void ElasticsearchClient::createILMPolicyAsync(const CreateILMPolicyRequest& request, const CreateILMPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createILMPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CreateILMPolicyOutcomeCallable ElasticsearchClient::createILMPolicyCallable(const CreateILMPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateILMPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createILMPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::CreateIndexTemplateOutcome ElasticsearchClient::createIndexTemplate(const CreateIndexTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateIndexTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateIndexTemplateOutcome(CreateIndexTemplateResult(outcome.result()));
+	else
+		return CreateIndexTemplateOutcome(outcome.error());
+}
+
+void ElasticsearchClient::createIndexTemplateAsync(const CreateIndexTemplateRequest& request, const CreateIndexTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createIndexTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CreateIndexTemplateOutcomeCallable ElasticsearchClient::createIndexTemplateCallable(const CreateIndexTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateIndexTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createIndexTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +843,42 @@ ElasticsearchClient::DeleteConnectedClusterOutcomeCallable ElasticsearchClient::
 	return task->get_future();
 }
 
+ElasticsearchClient::DeleteDataStreamOutcome ElasticsearchClient::deleteDataStream(const DeleteDataStreamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDataStreamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDataStreamOutcome(DeleteDataStreamResult(outcome.result()));
+	else
+		return DeleteDataStreamOutcome(outcome.error());
+}
+
+void ElasticsearchClient::deleteDataStreamAsync(const DeleteDataStreamRequest& request, const DeleteDataStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDataStream(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DeleteDataStreamOutcomeCallable ElasticsearchClient::deleteDataStreamCallable(const DeleteDataStreamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDataStreamOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDataStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::DeleteDataTaskOutcome ElasticsearchClient::deleteDataTask(const DeleteDataTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +909,78 @@ ElasticsearchClient::DeleteDataTaskOutcomeCallable ElasticsearchClient::deleteDa
 			[this, request]()
 			{
 			return this->deleteDataTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DeleteILMPolicyOutcome ElasticsearchClient::deleteILMPolicy(const DeleteILMPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteILMPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteILMPolicyOutcome(DeleteILMPolicyResult(outcome.result()));
+	else
+		return DeleteILMPolicyOutcome(outcome.error());
+}
+
+void ElasticsearchClient::deleteILMPolicyAsync(const DeleteILMPolicyRequest& request, const DeleteILMPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteILMPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DeleteILMPolicyOutcomeCallable ElasticsearchClient::deleteILMPolicyCallable(const DeleteILMPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteILMPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteILMPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DeleteIndexTemplateOutcome ElasticsearchClient::deleteIndexTemplate(const DeleteIndexTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteIndexTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteIndexTemplateOutcome(DeleteIndexTemplateResult(outcome.result()));
+	else
+		return DeleteIndexTemplateOutcome(outcome.error());
+}
+
+void ElasticsearchClient::deleteIndexTemplateAsync(const DeleteIndexTemplateRequest& request, const DeleteIndexTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteIndexTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DeleteIndexTemplateOutcomeCallable ElasticsearchClient::deleteIndexTemplateCallable(const DeleteIndexTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteIndexTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteIndexTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,6 +1377,78 @@ ElasticsearchClient::DescribeElasticsearchHealthOutcomeCallable ElasticsearchCli
 			[this, request]()
 			{
 			return this->describeElasticsearchHealth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DescribeILMPolicyOutcome ElasticsearchClient::describeILMPolicy(const DescribeILMPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeILMPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeILMPolicyOutcome(DescribeILMPolicyResult(outcome.result()));
+	else
+		return DescribeILMPolicyOutcome(outcome.error());
+}
+
+void ElasticsearchClient::describeILMPolicyAsync(const DescribeILMPolicyRequest& request, const DescribeILMPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeILMPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DescribeILMPolicyOutcomeCallable ElasticsearchClient::describeILMPolicyCallable(const DescribeILMPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeILMPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeILMPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DescribeIndexTemplateOutcome ElasticsearchClient::describeIndexTemplate(const DescribeIndexTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIndexTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIndexTemplateOutcome(DescribeIndexTemplateResult(outcome.result()));
+	else
+		return DescribeIndexTemplateOutcome(outcome.error());
+}
+
+void ElasticsearchClient::describeIndexTemplateAsync(const DescribeIndexTemplateRequest& request, const DescribeIndexTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIndexTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DescribeIndexTemplateOutcomeCallable ElasticsearchClient::describeIndexTemplateCallable(const DescribeIndexTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIndexTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIndexTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2319,6 +2643,42 @@ ElasticsearchClient::ListConnectedClustersOutcomeCallable ElasticsearchClient::l
 	return task->get_future();
 }
 
+ElasticsearchClient::ListDataStreamsOutcome ElasticsearchClient::listDataStreams(const ListDataStreamsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataStreamsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataStreamsOutcome(ListDataStreamsResult(outcome.result()));
+	else
+		return ListDataStreamsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listDataStreamsAsync(const ListDataStreamsRequest& request, const ListDataStreamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataStreams(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListDataStreamsOutcomeCallable ElasticsearchClient::listDataStreamsCallable(const ListDataStreamsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataStreamsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataStreams(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ListDataTasksOutcome ElasticsearchClient::listDataTasks(const ListDataTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2601,6 +2961,78 @@ ElasticsearchClient::ListExtendfilesOutcomeCallable ElasticsearchClient::listExt
 			[this, request]()
 			{
 			return this->listExtendfiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListILMPoliciesOutcome ElasticsearchClient::listILMPolicies(const ListILMPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListILMPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListILMPoliciesOutcome(ListILMPoliciesResult(outcome.result()));
+	else
+		return ListILMPoliciesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listILMPoliciesAsync(const ListILMPoliciesRequest& request, const ListILMPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listILMPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListILMPoliciesOutcomeCallable ElasticsearchClient::listILMPoliciesCallable(const ListILMPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListILMPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->listILMPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListIndexTemplatesOutcome ElasticsearchClient::listIndexTemplates(const ListIndexTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIndexTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIndexTemplatesOutcome(ListIndexTemplatesResult(outcome.result()));
+	else
+		return ListIndexTemplatesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listIndexTemplatesAsync(const ListIndexTemplatesRequest& request, const ListIndexTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIndexTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListIndexTemplatesOutcomeCallable ElasticsearchClient::listIndexTemplatesCallable(const ListIndexTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIndexTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listIndexTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3759,6 +4191,42 @@ ElasticsearchClient::RollbackInstanceOutcomeCallable ElasticsearchClient::rollba
 	return task->get_future();
 }
 
+ElasticsearchClient::RolloverDataStreamOutcome ElasticsearchClient::rolloverDataStream(const RolloverDataStreamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RolloverDataStreamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RolloverDataStreamOutcome(RolloverDataStreamResult(outcome.result()));
+	else
+		return RolloverDataStreamOutcome(outcome.error());
+}
+
+void ElasticsearchClient::rolloverDataStreamAsync(const RolloverDataStreamRequest& request, const RolloverDataStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rolloverDataStream(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::RolloverDataStreamOutcomeCallable ElasticsearchClient::rolloverDataStreamCallable(const RolloverDataStreamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RolloverDataStreamOutcome()>>(
+			[this, request]()
+			{
+			return this->rolloverDataStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::RunPipelinesOutcome ElasticsearchClient::runPipelines(const RunPipelinesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4617,6 +5085,78 @@ ElasticsearchClient::UpdateHotIkDictsOutcomeCallable ElasticsearchClient::update
 			[this, request]()
 			{
 			return this->updateHotIkDicts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::UpdateILMPolicyOutcome ElasticsearchClient::updateILMPolicy(const UpdateILMPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateILMPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateILMPolicyOutcome(UpdateILMPolicyResult(outcome.result()));
+	else
+		return UpdateILMPolicyOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updateILMPolicyAsync(const UpdateILMPolicyRequest& request, const UpdateILMPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateILMPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdateILMPolicyOutcomeCallable ElasticsearchClient::updateILMPolicyCallable(const UpdateILMPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateILMPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateILMPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::UpdateIndexTemplateOutcome ElasticsearchClient::updateIndexTemplate(const UpdateIndexTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateIndexTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateIndexTemplateOutcome(UpdateIndexTemplateResult(outcome.result()));
+	else
+		return UpdateIndexTemplateOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updateIndexTemplateAsync(const UpdateIndexTemplateRequest& request, const UpdateIndexTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateIndexTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdateIndexTemplateOutcomeCallable ElasticsearchClient::updateIndexTemplateCallable(const UpdateIndexTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateIndexTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateIndexTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

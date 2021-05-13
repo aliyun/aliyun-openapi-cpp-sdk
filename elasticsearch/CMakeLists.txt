@@ -37,10 +37,18 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/CloseDiagnosisResult.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsRequest.h
 	include/alibabacloud/elasticsearch/model/CloseHttpsResult.h
+	include/alibabacloud/elasticsearch/model/CloseManagedIndexRequest.h
+	include/alibabacloud/elasticsearch/model/CloseManagedIndexResult.h
 	include/alibabacloud/elasticsearch/model/CreateCollectorRequest.h
 	include/alibabacloud/elasticsearch/model/CreateCollectorResult.h
+	include/alibabacloud/elasticsearch/model/CreateDataStreamRequest.h
+	include/alibabacloud/elasticsearch/model/CreateDataStreamResult.h
 	include/alibabacloud/elasticsearch/model/CreateDataTasksRequest.h
 	include/alibabacloud/elasticsearch/model/CreateDataTasksResult.h
+	include/alibabacloud/elasticsearch/model/CreateILMPolicyRequest.h
+	include/alibabacloud/elasticsearch/model/CreateILMPolicyResult.h
+	include/alibabacloud/elasticsearch/model/CreateIndexTemplateRequest.h
+	include/alibabacloud/elasticsearch/model/CreateIndexTemplateResult.h
 	include/alibabacloud/elasticsearch/model/CreateInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/CreateInstanceResult.h
 	include/alibabacloud/elasticsearch/model/CreateLogstashRequest.h
@@ -57,8 +65,14 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DeleteCollectorResult.h
 	include/alibabacloud/elasticsearch/model/DeleteConnectedClusterRequest.h
 	include/alibabacloud/elasticsearch/model/DeleteConnectedClusterResult.h
+	include/alibabacloud/elasticsearch/model/DeleteDataStreamRequest.h
+	include/alibabacloud/elasticsearch/model/DeleteDataStreamResult.h
 	include/alibabacloud/elasticsearch/model/DeleteDataTaskRequest.h
 	include/alibabacloud/elasticsearch/model/DeleteDataTaskResult.h
+	include/alibabacloud/elasticsearch/model/DeleteILMPolicyRequest.h
+	include/alibabacloud/elasticsearch/model/DeleteILMPolicyResult.h
+	include/alibabacloud/elasticsearch/model/DeleteIndexTemplateRequest.h
+	include/alibabacloud/elasticsearch/model/DeleteIndexTemplateResult.h
 	include/alibabacloud/elasticsearch/model/DeleteInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/DeleteInstanceResult.h
 	include/alibabacloud/elasticsearch/model/DeleteLogstashRequest.h
@@ -81,6 +95,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DescribeDiagnosisSettingsResult.h
 	include/alibabacloud/elasticsearch/model/DescribeElasticsearchHealthRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeElasticsearchHealthResult.h
+	include/alibabacloud/elasticsearch/model/DescribeILMPolicyRequest.h
+	include/alibabacloud/elasticsearch/model/DescribeILMPolicyResult.h
+	include/alibabacloud/elasticsearch/model/DescribeIndexTemplateRequest.h
+	include/alibabacloud/elasticsearch/model/DescribeIndexTemplateResult.h
 	include/alibabacloud/elasticsearch/model/DescribeInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeInstanceResult.h
 	include/alibabacloud/elasticsearch/model/DescribeKibanaSettingsRequest.h
@@ -147,6 +165,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListCollectorsResult.h
 	include/alibabacloud/elasticsearch/model/ListConnectedClustersRequest.h
 	include/alibabacloud/elasticsearch/model/ListConnectedClustersResult.h
+	include/alibabacloud/elasticsearch/model/ListDataStreamsRequest.h
+	include/alibabacloud/elasticsearch/model/ListDataStreamsResult.h
 	include/alibabacloud/elasticsearch/model/ListDataTasksRequest.h
 	include/alibabacloud/elasticsearch/model/ListDataTasksResult.h
 	include/alibabacloud/elasticsearch/model/ListDefaultCollectorConfigurationsRequest.h
@@ -163,6 +183,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListEcsInstancesResult.h
 	include/alibabacloud/elasticsearch/model/ListExtendfilesRequest.h
 	include/alibabacloud/elasticsearch/model/ListExtendfilesResult.h
+	include/alibabacloud/elasticsearch/model/ListILMPoliciesRequest.h
+	include/alibabacloud/elasticsearch/model/ListILMPoliciesResult.h
+	include/alibabacloud/elasticsearch/model/ListIndexTemplatesRequest.h
+	include/alibabacloud/elasticsearch/model/ListIndexTemplatesResult.h
 	include/alibabacloud/elasticsearch/model/ListInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/ListInstanceResult.h
 	include/alibabacloud/elasticsearch/model/ListInstanceIndicesRequest.h
@@ -227,6 +251,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ResumeLogstashTaskResult.h
 	include/alibabacloud/elasticsearch/model/RollbackInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/RollbackInstanceResult.h
+	include/alibabacloud/elasticsearch/model/RolloverDataStreamRequest.h
+	include/alibabacloud/elasticsearch/model/RolloverDataStreamResult.h
 	include/alibabacloud/elasticsearch/model/RunPipelinesRequest.h
 	include/alibabacloud/elasticsearch/model/RunPipelinesResult.h
 	include/alibabacloud/elasticsearch/model/ShrinkNodeRequest.h
@@ -275,6 +301,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/UpdateExtendfilesResult.h
 	include/alibabacloud/elasticsearch/model/UpdateHotIkDictsRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateHotIkDictsResult.h
+	include/alibabacloud/elasticsearch/model/UpdateILMPolicyRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateILMPolicyResult.h
+	include/alibabacloud/elasticsearch/model/UpdateIndexTemplateRequest.h
+	include/alibabacloud/elasticsearch/model/UpdateIndexTemplateResult.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceRequest.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceResult.h
 	include/alibabacloud/elasticsearch/model/UpdateInstanceChargeTypeRequest.h
@@ -344,10 +374,18 @@ set(elasticsearch_src
 	src/model/CloseDiagnosisResult.cc
 	src/model/CloseHttpsRequest.cc
 	src/model/CloseHttpsResult.cc
+	src/model/CloseManagedIndexRequest.cc
+	src/model/CloseManagedIndexResult.cc
 	src/model/CreateCollectorRequest.cc
 	src/model/CreateCollectorResult.cc
+	src/model/CreateDataStreamRequest.cc
+	src/model/CreateDataStreamResult.cc
 	src/model/CreateDataTasksRequest.cc
 	src/model/CreateDataTasksResult.cc
+	src/model/CreateILMPolicyRequest.cc
+	src/model/CreateILMPolicyResult.cc
+	src/model/CreateIndexTemplateRequest.cc
+	src/model/CreateIndexTemplateResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
 	src/model/CreateLogstashRequest.cc
@@ -364,8 +402,14 @@ set(elasticsearch_src
 	src/model/DeleteCollectorResult.cc
 	src/model/DeleteConnectedClusterRequest.cc
 	src/model/DeleteConnectedClusterResult.cc
+	src/model/DeleteDataStreamRequest.cc
+	src/model/DeleteDataStreamResult.cc
 	src/model/DeleteDataTaskRequest.cc
 	src/model/DeleteDataTaskResult.cc
+	src/model/DeleteILMPolicyRequest.cc
+	src/model/DeleteILMPolicyResult.cc
+	src/model/DeleteIndexTemplateRequest.cc
+	src/model/DeleteIndexTemplateResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteLogstashRequest.cc
@@ -388,6 +432,10 @@ set(elasticsearch_src
 	src/model/DescribeDiagnosisSettingsResult.cc
 	src/model/DescribeElasticsearchHealthRequest.cc
 	src/model/DescribeElasticsearchHealthResult.cc
+	src/model/DescribeILMPolicyRequest.cc
+	src/model/DescribeILMPolicyResult.cc
+	src/model/DescribeIndexTemplateRequest.cc
+	src/model/DescribeIndexTemplateResult.cc
 	src/model/DescribeInstanceRequest.cc
 	src/model/DescribeInstanceResult.cc
 	src/model/DescribeKibanaSettingsRequest.cc
@@ -454,6 +502,8 @@ set(elasticsearch_src
 	src/model/ListCollectorsResult.cc
 	src/model/ListConnectedClustersRequest.cc
 	src/model/ListConnectedClustersResult.cc
+	src/model/ListDataStreamsRequest.cc
+	src/model/ListDataStreamsResult.cc
 	src/model/ListDataTasksRequest.cc
 	src/model/ListDataTasksResult.cc
 	src/model/ListDefaultCollectorConfigurationsRequest.cc
@@ -470,6 +520,10 @@ set(elasticsearch_src
 	src/model/ListEcsInstancesResult.cc
 	src/model/ListExtendfilesRequest.cc
 	src/model/ListExtendfilesResult.cc
+	src/model/ListILMPoliciesRequest.cc
+	src/model/ListILMPoliciesResult.cc
+	src/model/ListIndexTemplatesRequest.cc
+	src/model/ListIndexTemplatesResult.cc
 	src/model/ListInstanceRequest.cc
 	src/model/ListInstanceResult.cc
 	src/model/ListInstanceIndicesRequest.cc
@@ -534,6 +588,8 @@ set(elasticsearch_src
 	src/model/ResumeLogstashTaskResult.cc
 	src/model/RollbackInstanceRequest.cc
 	src/model/RollbackInstanceResult.cc
+	src/model/RolloverDataStreamRequest.cc
+	src/model/RolloverDataStreamResult.cc
 	src/model/RunPipelinesRequest.cc
 	src/model/RunPipelinesResult.cc
 	src/model/ShrinkNodeRequest.cc
@@ -582,6 +638,10 @@ set(elasticsearch_src
 	src/model/UpdateExtendfilesResult.cc
 	src/model/UpdateHotIkDictsRequest.cc
 	src/model/UpdateHotIkDictsResult.cc
+	src/model/UpdateILMPolicyRequest.cc
+	src/model/UpdateILMPolicyResult.cc
+	src/model/UpdateIndexTemplateRequest.cc
+	src/model/UpdateIndexTemplateResult.cc
 	src/model/UpdateInstanceRequest.cc
 	src/model/UpdateInstanceResult.cc
 	src/model/UpdateInstanceChargeTypeRequest.cc

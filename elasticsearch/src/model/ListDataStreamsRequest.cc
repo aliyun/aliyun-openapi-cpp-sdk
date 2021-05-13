@@ -14,61 +14,50 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/ListInstanceIndicesRequest.h>
+#include <alibabacloud/elasticsearch/model/ListDataStreamsRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::ListInstanceIndicesRequest;
+using AlibabaCloud::Elasticsearch::Model::ListDataStreamsRequest;
 
-ListInstanceIndicesRequest::ListInstanceIndicesRequest() :
+ListDataStreamsRequest::ListDataStreamsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/indices");
+	setResourcePath("/openapi/instances/[InstanceId]/data-streams");
 	setMethod(HttpRequest::Method::Get);
 }
 
-ListInstanceIndicesRequest::~ListInstanceIndicesRequest()
+ListDataStreamsRequest::~ListDataStreamsRequest()
 {}
 
-std::string ListInstanceIndicesRequest::getInstanceId()const
+std::string ListDataStreamsRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void ListInstanceIndicesRequest::setInstanceId(const std::string& instanceId)
+void ListDataStreamsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
 }
 
-bool ListInstanceIndicesRequest::getIsManaged()const
+bool ListDataStreamsRequest::getIsManaged()const
 {
 	return isManaged_;
 }
 
-void ListInstanceIndicesRequest::setIsManaged(bool isManaged)
+void ListDataStreamsRequest::setIsManaged(bool isManaged)
 {
 	isManaged_ = isManaged;
 	setParameter("IsManaged", isManaged ? "true" : "false");
 }
 
-std::string ListInstanceIndicesRequest::getName()const
+std::string ListDataStreamsRequest::getName()const
 {
 	return name_;
 }
 
-void ListInstanceIndicesRequest::setName(const std::string& name)
+void ListDataStreamsRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
-}
-
-std::string ListInstanceIndicesRequest::getLang()const
-{
-	return lang_;
-}
-
-void ListInstanceIndicesRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
 }
 

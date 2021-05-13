@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESRESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESRESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTDATASTREAMSRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTDATASTREAMSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListInstanceIndicesResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListDataStreamsResult : public ServiceResult
 			{
 			public:
 				struct Headers
@@ -39,18 +39,28 @@ namespace AlibabaCloud
 				};
 				struct ResultItem
 				{
-					std::string managedStatus;
+					struct IndicesItem
+					{
+						std::string managedStatus;
+						std::string health;
+						long size;
+						std::string createTime;
+						bool isManaged;
+						std::string name;
+					};
+					std::vector<ResultItem::IndicesItem> indices;
+					long totalStorageSize;
 					std::string health;
-					long size;
-					std::string createTime;
-					std::string isManaged;
+					long managedStorageSize;
+					std::string indexTemplateName;
+					std::string ilmPolicyName;
 					std::string name;
 				};
 
 
-				ListInstanceIndicesResult();
-				explicit ListInstanceIndicesResult(const std::string &payload);
-				~ListInstanceIndicesResult();
+				ListDataStreamsResult();
+				explicit ListDataStreamsResult(const std::string &payload);
+				~ListDataStreamsResult();
 				Headers getHeaders()const;
 				std::vector<ResultItem> getResult()const;
 
@@ -64,4 +74,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESRESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTDATASTREAMSRESULT_H_

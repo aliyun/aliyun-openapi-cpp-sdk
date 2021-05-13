@@ -1,3 +1,7 @@
+2021-05-13 Version: 1.36.730
+- Add Indexing-Service support.
+- Remove jsonItem form.
+
 2021-05-12 Version: 1.36.729
 - Add GetRepositoryCommit and ListRepositoryCommitDiff API.
 

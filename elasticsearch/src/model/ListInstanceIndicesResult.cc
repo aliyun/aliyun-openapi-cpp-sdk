@@ -39,13 +39,38 @@ void ListInstanceIndicesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResult = value["Result"]["Result"];
-	for (const auto &item : allResult)
-		result_.push_back(item.asString());
+	auto allResultNode = value["Result"]["ResultItem"];
+	for (auto valueResultResultItem : allResultNode)
+	{
+		ResultItem resultObject;
+		if(!valueResultResultItem["name"].isNull())
+			resultObject.name = valueResultResultItem["name"].asString();
+		if(!valueResultResultItem["health"].isNull())
+			resultObject.health = valueResultResultItem["health"].asString();
+		if(!valueResultResultItem["size"].isNull())
+			resultObject.size = std::stol(valueResultResultItem["size"].asString());
+		if(!valueResultResultItem["createTime"].isNull())
+			resultObject.createTime = valueResultResultItem["createTime"].asString();
+		if(!valueResultResultItem["isManaged"].isNull())
+			resultObject.isManaged = valueResultResultItem["isManaged"].asString();
+		if(!valueResultResultItem["managedStatus"].isNull())
+			resultObject.managedStatus = valueResultResultItem["managedStatus"].asString();
+		result_.push_back(resultObject);
+	}
+	auto headersNode = value["Headers"];
+	if(!headersNode["X-Managed-Count"].isNull())
+		headers_.xManagedCount = std::stoi(headersNode["X-Managed-Count"].asString());
+	if(!headersNode["X-Managed-StorageSize"].isNull())
+		headers_.xManagedStorageSize = std::stol(headersNode["X-Managed-StorageSize"].asString());
 
 }
 
-std::vector<std::string> ListInstanceIndicesResult::getResult()const
+ListInstanceIndicesResult::Headers ListInstanceIndicesResult::getHeaders()const
+{
+	return headers_;
+}
+
+std::vector<ListInstanceIndicesResult::ResultItem> ListInstanceIndicesResult::getResult()const
 {
 	return result_;
 }
