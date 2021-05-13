@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEWEBRULESRESULT_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEWEBRULESRESULT_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINRESOURCERESULT_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINRESOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeWebRulesResult : public ServiceResult
+			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDomainResourceResult : public ServiceResult
 			{
 			public:
 				struct WebRule
@@ -38,11 +38,6 @@ namespace AlibabaCloud
 					{
 						std::vector<std::string> proxyPorts;
 						std::string proxyType;
-					};
-					struct RealServer
-					{
-						std::string realServer;
-						int rsType;
 					};
 					std::vector<std::string> customCiphers;
 					bool ccEnabled;
@@ -55,22 +50,25 @@ namespace AlibabaCloud
 					bool punishStatus;
 					std::string cname;
 					bool proxyEnabled;
+					std::string httpsExt;
 					bool https2HttpEnable;
-					std::vector<WebRule::RealServer> realServers;
+					int rsType;
+					std::vector<std::string> realServers;
 					bool http2HttpsEnable;
 					int punishReason;
 					std::string certName;
 					std::string domain;
 					bool http2Enable;
+					std::vector<std::string> instanceIds;
 					std::string ccTemplate;
 					bool ssl13Enabled;
 					std::string policyMode;
 				};
 
 
-				DescribeWebRulesResult();
-				explicit DescribeWebRulesResult(const std::string &payload);
-				~DescribeWebRulesResult();
+				DescribeDomainResourceResult();
+				explicit DescribeDomainResourceResult(const std::string &payload);
+				~DescribeDomainResourceResult();
 				long getTotalCount()const;
 				std::vector<WebRule> getWebRules()const;
 
@@ -84,4 +82,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEWEBRULESRESULT_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINRESOURCERESULT_H_

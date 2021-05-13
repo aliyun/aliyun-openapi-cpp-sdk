@@ -195,6 +195,42 @@ DdoscooClient::AttachSceneDefenseObjectOutcomeCallable DdoscooClient::attachScen
 	return task->get_future();
 }
 
+DdoscooClient::ConfigL7RsPolicyOutcome DdoscooClient::configL7RsPolicy(const ConfigL7RsPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfigL7RsPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfigL7RsPolicyOutcome(ConfigL7RsPolicyResult(outcome.result()));
+	else
+		return ConfigL7RsPolicyOutcome(outcome.error());
+}
+
+void DdoscooClient::configL7RsPolicyAsync(const ConfigL7RsPolicyRequest& request, const ConfigL7RsPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, configL7RsPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::ConfigL7RsPolicyOutcomeCallable DdoscooClient::configL7RsPolicyCallable(const ConfigL7RsPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfigL7RsPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->configL7RsPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::ConfigNetworkRegionBlockOutcome DdoscooClient::configNetworkRegionBlock(const ConfigNetworkRegionBlockRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ DdoscooClient::ConfigNetworkRulesOutcomeCallable DdoscooClient::configNetworkRul
 			[this, request]()
 			{
 			return this->configNetworkRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::ConfigUdpReflectOutcome DdoscooClient::configUdpReflect(const ConfigUdpReflectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfigUdpReflectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfigUdpReflectOutcome(ConfigUdpReflectResult(outcome.result()));
+	else
+		return ConfigUdpReflectOutcome(outcome.error());
+}
+
+void DdoscooClient::configUdpReflectAsync(const ConfigUdpReflectRequest& request, const ConfigUdpReflectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, configUdpReflect(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::ConfigUdpReflectOutcomeCallable DdoscooClient::configUdpReflectCallable(const ConfigUdpReflectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfigUdpReflectOutcome()>>(
+			[this, request]()
+			{
+			return this->configUdpReflect(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +447,42 @@ DdoscooClient::CreateAsyncTaskOutcomeCallable DdoscooClient::createAsyncTaskCall
 	return task->get_future();
 }
 
+DdoscooClient::CreateDomainResourceOutcome DdoscooClient::createDomainResource(const CreateDomainResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDomainResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDomainResourceOutcome(CreateDomainResourceResult(outcome.result()));
+	else
+		return CreateDomainResourceOutcome(outcome.error());
+}
+
+void DdoscooClient::createDomainResourceAsync(const CreateDomainResourceRequest& request, const CreateDomainResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDomainResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::CreateDomainResourceOutcomeCallable DdoscooClient::createDomainResourceCallable(const CreateDomainResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDomainResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->createDomainResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::CreateNetworkRulesOutcome DdoscooClient::createNetworkRules(const CreateNetworkRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +513,42 @@ DdoscooClient::CreateNetworkRulesOutcomeCallable DdoscooClient::createNetworkRul
 			[this, request]()
 			{
 			return this->createNetworkRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::CreatePortOutcome DdoscooClient::createPort(const CreatePortRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePortOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePortOutcome(CreatePortResult(outcome.result()));
+	else
+		return CreatePortOutcome(outcome.error());
+}
+
+void DdoscooClient::createPortAsync(const CreatePortRequest& request, const CreatePortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPort(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::CreatePortOutcomeCallable DdoscooClient::createPortCallable(const CreatePortRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePortOutcome()>>(
+			[this, request]()
+			{
+			return this->createPort(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +843,42 @@ DdoscooClient::DeleteAutoCcWhitelistOutcomeCallable DdoscooClient::deleteAutoCcW
 	return task->get_future();
 }
 
+DdoscooClient::DeleteDomainResourceOutcome DdoscooClient::deleteDomainResource(const DeleteDomainResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDomainResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDomainResourceOutcome(DeleteDomainResourceResult(outcome.result()));
+	else
+		return DeleteDomainResourceOutcome(outcome.error());
+}
+
+void DdoscooClient::deleteDomainResourceAsync(const DeleteDomainResourceRequest& request, const DeleteDomainResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDomainResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DeleteDomainResourceOutcomeCallable DdoscooClient::deleteDomainResourceCallable(const DeleteDomainResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDomainResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDomainResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::DeleteNetworkRuleOutcome DdoscooClient::deleteNetworkRule(const DeleteNetworkRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +909,42 @@ DdoscooClient::DeleteNetworkRuleOutcomeCallable DdoscooClient::deleteNetworkRule
 			[this, request]()
 			{
 			return this->deleteNetworkRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::DeletePortOutcome DdoscooClient::deletePort(const DeletePortRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePortOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePortOutcome(DeletePortResult(outcome.result()));
+	else
+		return DeletePortOutcome(outcome.error());
+}
+
+void DdoscooClient::deletePortAsync(const DeletePortRequest& request, const DeletePortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePort(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DeletePortOutcomeCallable DdoscooClient::deletePortCallable(const DeletePortRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePortOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePort(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,6 +1995,42 @@ DdoscooClient::DescribeDomainQpsWithCacheOutcomeCallable DdoscooClient::describe
 	return task->get_future();
 }
 
+DdoscooClient::DescribeDomainResourceOutcome DdoscooClient::describeDomainResource(const DescribeDomainResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainResourceOutcome(DescribeDomainResourceResult(outcome.result()));
+	else
+		return DescribeDomainResourceOutcome(outcome.error());
+}
+
+void DdoscooClient::describeDomainResourceAsync(const DescribeDomainResourceRequest& request, const DescribeDomainResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DescribeDomainResourceOutcomeCallable DdoscooClient::describeDomainResourceCallable(const DescribeDomainResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::DescribeDomainStatusCodeCountOutcome DdoscooClient::describeDomainStatusCodeCount(const DescribeDomainStatusCodeCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2319,6 +2571,42 @@ DdoscooClient::DescribeInstanceStatisticsOutcomeCallable DdoscooClient::describe
 	return task->get_future();
 }
 
+DdoscooClient::DescribeInstanceStatusOutcome DdoscooClient::describeInstanceStatus(const DescribeInstanceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceStatusOutcome(DescribeInstanceStatusResult(outcome.result()));
+	else
+		return DescribeInstanceStatusOutcome(outcome.error());
+}
+
+void DdoscooClient::describeInstanceStatusAsync(const DescribeInstanceStatusRequest& request, const DescribeInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DescribeInstanceStatusOutcomeCallable DdoscooClient::describeInstanceStatusCallable(const DescribeInstanceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::DescribeInstancesOutcome DdoscooClient::describeInstances(const DescribeInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2349,6 +2637,42 @@ DdoscooClient::DescribeInstancesOutcomeCallable DdoscooClient::describeInstances
 			[this, request]()
 			{
 			return this->describeInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::DescribeL7RsPolicyOutcome DdoscooClient::describeL7RsPolicy(const DescribeL7RsPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeL7RsPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeL7RsPolicyOutcome(DescribeL7RsPolicyResult(outcome.result()));
+	else
+		return DescribeL7RsPolicyOutcome(outcome.error());
+}
+
+void DdoscooClient::describeL7RsPolicyAsync(const DescribeL7RsPolicyRequest& request, const DescribeL7RsPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeL7RsPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DescribeL7RsPolicyOutcomeCallable DdoscooClient::describeL7RsPolicyCallable(const DescribeL7RsPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeL7RsPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeL7RsPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2529,6 +2853,42 @@ DdoscooClient::DescribeOpEntitiesOutcomeCallable DdoscooClient::describeOpEntiti
 			[this, request]()
 			{
 			return this->describeOpEntities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::DescribePortOutcome DdoscooClient::describePort(const DescribePortRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePortOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePortOutcome(DescribePortResult(outcome.result()));
+	else
+		return DescribePortOutcome(outcome.error());
+}
+
+void DdoscooClient::describePortAsync(const DescribePortRequest& request, const DescribePortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePort(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DescribePortOutcomeCallable DdoscooClient::describePortCallable(const DescribePortRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePortOutcome()>>(
+			[this, request]()
+			{
+			return this->describePort(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3177,6 +3537,42 @@ DdoscooClient::DescribeTagResourcesOutcomeCallable DdoscooClient::describeTagRes
 			[this, request]()
 			{
 			return this->describeTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::DescribeUdpReflectOutcome DdoscooClient::describeUdpReflect(const DescribeUdpReflectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUdpReflectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUdpReflectOutcome(DescribeUdpReflectResult(outcome.result()));
+	else
+		return DescribeUdpReflectOutcome(outcome.error());
+}
+
+void DdoscooClient::describeUdpReflectAsync(const DescribeUdpReflectRequest& request, const DescribeUdpReflectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUdpReflect(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DescribeUdpReflectOutcomeCallable DdoscooClient::describeUdpReflectCallable(const DescribeUdpReflectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUdpReflectOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUdpReflect(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4227,6 +4623,42 @@ DdoscooClient::ModifyCnameReuseOutcomeCallable DdoscooClient::modifyCnameReuseCa
 	return task->get_future();
 }
 
+DdoscooClient::ModifyDomainResourceOutcome DdoscooClient::modifyDomainResource(const ModifyDomainResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDomainResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDomainResourceOutcome(ModifyDomainResourceResult(outcome.result()));
+	else
+		return ModifyDomainResourceOutcome(outcome.error());
+}
+
+void DdoscooClient::modifyDomainResourceAsync(const ModifyDomainResourceRequest& request, const ModifyDomainResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDomainResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::ModifyDomainResourceOutcomeCallable DdoscooClient::modifyDomainResourceCallable(const ModifyDomainResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDomainResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDomainResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::ModifyElasticBandWidthOutcome DdoscooClient::modifyElasticBandWidth(const ModifyElasticBandWidthRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4437,6 +4869,42 @@ DdoscooClient::ModifyNetworkRuleAttributeOutcomeCallable DdoscooClient::modifyNe
 			[this, request]()
 			{
 			return this->modifyNetworkRuleAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdoscooClient::ModifyPortOutcome DdoscooClient::modifyPort(const ModifyPortRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPortOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPortOutcome(ModifyPortResult(outcome.result()));
+	else
+		return ModifyPortOutcome(outcome.error());
+}
+
+void DdoscooClient::modifyPortAsync(const ModifyPortRequest& request, const ModifyPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPort(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::ModifyPortOutcomeCallable DdoscooClient::modifyPortCallable(const ModifyPortRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPortOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPort(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

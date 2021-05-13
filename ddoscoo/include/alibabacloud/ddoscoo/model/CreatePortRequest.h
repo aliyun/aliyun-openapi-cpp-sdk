@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_MODIFYWEBRULEREQUEST_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_MODIFYWEBRULEREQUEST_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_CREATEPORTREQUEST_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_CREATEPORTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT ModifyWebRuleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDOSCOO_EXPORT CreatePortRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyWebRuleRequest();
-				~ModifyWebRuleRequest();
+				CreatePortRequest();
+				~CreatePortRequest();
 
-				std::string getHttpsExt()const;
-				void setHttpsExt(const std::string& httpsExt);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getRsType()const;
-				void setRsType(int rsType);
+				std::string getBackendPort()const;
+				void setBackendPort(const std::string& backendPort);
+				std::string getFrontendProtocol()const;
+				void setFrontendProtocol(const std::string& frontendProtocol);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::vector<std::string> getRealServers()const;
 				void setRealServers(const std::vector<std::string>& realServers);
-				std::string getProxyTypes()const;
-				void setProxyTypes(const std::string& proxyTypes);
-				std::vector<std::string> getInstanceIds()const;
-				void setInstanceIds(const std::vector<std::string>& instanceIds);
-				std::string getDomain()const;
-				void setDomain(const std::string& domain);
+				std::string getFrontendPort()const;
+				void setFrontendPort(const std::string& frontendPort);
 
             private:
-				std::string httpsExt_;
-				std::string resourceGroupId_;
 				std::string sourceIp_;
-				int rsType_;
+				std::string backendPort_;
+				std::string frontendProtocol_;
+				std::string instanceId_;
 				std::vector<std::string> realServers_;
-				std::string proxyTypes_;
-				std::vector<std::string> instanceIds_;
-				std::string domain_;
+				std::string frontendPort_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_MODIFYWEBRULEREQUEST_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_CREATEPORTREQUEST_H_

@@ -27,6 +27,17 @@ ModifyWebRuleRequest::ModifyWebRuleRequest() :
 ModifyWebRuleRequest::~ModifyWebRuleRequest()
 {}
 
+std::string ModifyWebRuleRequest::getHttpsExt()const
+{
+	return httpsExt_;
+}
+
+void ModifyWebRuleRequest::setHttpsExt(const std::string& httpsExt)
+{
+	httpsExt_ = httpsExt;
+	setParameter("HttpsExt", httpsExt);
+}
+
 std::string ModifyWebRuleRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

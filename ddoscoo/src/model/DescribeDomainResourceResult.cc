@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ddoscoo/model/DescribeWebRulesResult.h>
+#include <alibabacloud/ddoscoo/model/DescribeDomainResourceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ddoscoo;
 using namespace AlibabaCloud::Ddoscoo::Model;
 
-DescribeWebRulesResult::DescribeWebRulesResult() :
+DescribeDomainResourceResult::DescribeDomainResourceResult() :
 	ServiceResult()
 {}
 
-DescribeWebRulesResult::DescribeWebRulesResult(const std::string &payload) :
+DescribeDomainResourceResult::DescribeDomainResourceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeWebRulesResult::~DescribeWebRulesResult()
+DescribeDomainResourceResult::~DescribeDomainResourceResult()
 {}
 
-void DescribeWebRulesResult::parse(const std::string &payload)
+void DescribeDomainResourceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,6 +45,8 @@ void DescribeWebRulesResult::parse(const std::string &payload)
 		WebRule webRulesObject;
 		if(!valueWebRulesWebRule["Domain"].isNull())
 			webRulesObject.domain = valueWebRulesWebRule["Domain"].asString();
+		if(!valueWebRulesWebRule["RsType"].isNull())
+			webRulesObject.rsType = std::stoi(valueWebRulesWebRule["RsType"].asString());
 		if(!valueWebRulesWebRule["CcEnabled"].isNull())
 			webRulesObject.ccEnabled = valueWebRulesWebRule["CcEnabled"].asString() == "true";
 		if(!valueWebRulesWebRule["CcRuleEnabled"].isNull())
@@ -75,6 +77,8 @@ void DescribeWebRulesResult::parse(const std::string &payload)
 			webRulesObject.cname = valueWebRulesWebRule["Cname"].asString();
 		if(!valueWebRulesWebRule["CertName"].isNull())
 			webRulesObject.certName = valueWebRulesWebRule["CertName"].asString();
+		if(!valueWebRulesWebRule["HttpsExt"].isNull())
+			webRulesObject.httpsExt = valueWebRulesWebRule["HttpsExt"].asString();
 		auto allProxyTypesNode = valueWebRulesWebRule["ProxyTypes"]["ProxyConfig"];
 		for (auto valueWebRulesWebRuleProxyTypesProxyConfig : allProxyTypesNode)
 		{
@@ -86,16 +90,9 @@ void DescribeWebRulesResult::parse(const std::string &payload)
 				proxyTypesObject.proxyPorts.push_back(value.asString());
 			webRulesObject.proxyTypes.push_back(proxyTypesObject);
 		}
-		auto allRealServersNode = valueWebRulesWebRule["RealServers"]["RealServer"];
-		for (auto valueWebRulesWebRuleRealServersRealServer : allRealServersNode)
-		{
-			WebRule::RealServer realServersObject;
-			if(!valueWebRulesWebRuleRealServersRealServer["RsType"].isNull())
-				realServersObject.rsType = std::stoi(valueWebRulesWebRuleRealServersRealServer["RsType"].asString());
-			if(!valueWebRulesWebRuleRealServersRealServer["RealServer"].isNull())
-				realServersObject.realServer = valueWebRulesWebRuleRealServersRealServer["RealServer"].asString();
-			webRulesObject.realServers.push_back(realServersObject);
-		}
+		auto allRealServers = value["RealServers"]["RealServers"];
+		for (auto value : allRealServers)
+			webRulesObject.realServers.push_back(value.asString());
 		auto allWhiteList = value["WhiteList"]["WhiteItem"];
 		for (auto value : allWhiteList)
 			webRulesObject.whiteList.push_back(value.asString());
@@ -105,6 +102,9 @@ void DescribeWebRulesResult::parse(const std::string &payload)
 		auto allCustomCiphers = value["CustomCiphers"]["CustomCipher"];
 		for (auto value : allCustomCiphers)
 			webRulesObject.customCiphers.push_back(value.asString());
+		auto allInstanceIds = value["InstanceIds"]["InstanceIds"];
+		for (auto value : allInstanceIds)
+			webRulesObject.instanceIds.push_back(value.asString());
 		webRules_.push_back(webRulesObject);
 	}
 	if(!value["TotalCount"].isNull())
@@ -112,12 +112,12 @@ void DescribeWebRulesResult::parse(const std::string &payload)
 
 }
 
-long DescribeWebRulesResult::getTotalCount()const
+long DescribeDomainResourceResult::getTotalCount()const
 {
 	return totalCount_;
 }
 
-std::vector<DescribeWebRulesResult::WebRule> DescribeWebRulesResult::getWebRules()const
+std::vector<DescribeDomainResourceResult::WebRule> DescribeDomainResourceResult::getWebRules()const
 {
 	return webRules_;
 }

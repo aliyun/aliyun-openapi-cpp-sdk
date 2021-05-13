@@ -27,6 +27,17 @@ CreateWebRuleRequest::CreateWebRuleRequest() :
 CreateWebRuleRequest::~CreateWebRuleRequest()
 {}
 
+std::string CreateWebRuleRequest::getHttpsExt()const
+{
+	return httpsExt_;
+}
+
+void CreateWebRuleRequest::setHttpsExt(const std::string& httpsExt)
+{
+	httpsExt_ = httpsExt;
+	setParameter("HttpsExt", httpsExt);
+}
+
 std::string CreateWebRuleRequest::getRules()const
 {
 	return rules_;
@@ -69,6 +80,17 @@ void CreateWebRuleRequest::setRsType(int rsType)
 {
 	rsType_ = rsType;
 	setParameter("RsType", std::to_string(rsType));
+}
+
+std::string CreateWebRuleRequest::getDefenseId()const
+{
+	return defenseId_;
+}
+
+void CreateWebRuleRequest::setDefenseId(const std::string& defenseId)
+{
+	defenseId_ = defenseId;
+	setParameter("DefenseId", defenseId);
 }
 
 std::vector<std::string> CreateWebRuleRequest::getInstanceIds()const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_CREATEWEBRULEREQUEST_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_CREATEWEBRULEREQUEST_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_MODIFYDOMAINRESOURCEREQUEST_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_MODIFYDOMAINRESOURCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,25 +28,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT CreateWebRuleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDOSCOO_EXPORT ModifyDomainResourceRequest : public RpcServiceRequest
 			{
+			public:
+				struct ProxyTypes
+				{
+					std::vector<int> proxyPorts;
+					std::string proxyType;
+				};
 
 			public:
-				CreateWebRuleRequest();
-				~CreateWebRuleRequest();
+				ModifyDomainResourceRequest();
+				~ModifyDomainResourceRequest();
 
 				std::string getHttpsExt()const;
 				void setHttpsExt(const std::string& httpsExt);
-				std::string getRules()const;
-				void setRules(const std::string& rules);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getRsType()const;
 				void setRsType(int rsType);
-				std::string getDefenseId()const;
-				void setDefenseId(const std::string& defenseId);
+				std::vector<std::string> getRealServers()const;
+				void setRealServers(const std::vector<std::string>& realServers);
+				std::vector<ProxyTypes> getProxyTypes()const;
+				void setProxyTypes(const std::vector<ProxyTypes>& proxyTypes);
 				std::vector<std::string> getInstanceIds()const;
 				void setInstanceIds(const std::vector<std::string>& instanceIds);
 				std::string getDomain()const;
@@ -54,11 +58,10 @@ namespace AlibabaCloud
 
             private:
 				std::string httpsExt_;
-				std::string rules_;
-				std::string resourceGroupId_;
 				std::string sourceIp_;
 				int rsType_;
-				std::string defenseId_;
+				std::vector<std::string> realServers_;
+				std::vector<ProxyTypes> proxyTypes_;
 				std::vector<std::string> instanceIds_;
 				std::string domain_;
 
@@ -66,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_CREATEWEBRULEREQUEST_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_MODIFYDOMAINRESOURCEREQUEST_H_

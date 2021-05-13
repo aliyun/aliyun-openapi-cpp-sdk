@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_CREATEWEBRULEREQUEST_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_CREATEWEBRULEREQUEST_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINRESOURCEREQUEST_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINRESOURCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT CreateWebRuleRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDomainResourceRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateWebRuleRequest();
-				~CreateWebRuleRequest();
+				DescribeDomainResourceRequest();
+				~DescribeDomainResourceRequest();
 
-				std::string getHttpsExt()const;
-				void setHttpsExt(const std::string& httpsExt);
-				std::string getRules()const;
-				void setRules(const std::string& rules);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getRsType()const;
-				void setRsType(int rsType);
-				std::string getDefenseId()const;
-				void setDefenseId(const std::string& defenseId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::vector<std::string> getInstanceIds()const;
 				void setInstanceIds(const std::vector<std::string>& instanceIds);
+				std::string getQueryDomainPattern()const;
+				void setQueryDomainPattern(const std::string& queryDomainPattern);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
 
             private:
-				std::string httpsExt_;
-				std::string rules_;
-				std::string resourceGroupId_;
+				int pageNumber_;
 				std::string sourceIp_;
-				int rsType_;
-				std::string defenseId_;
+				int pageSize_;
 				std::vector<std::string> instanceIds_;
+				std::string queryDomainPattern_;
 				std::string domain_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_CREATEWEBRULEREQUEST_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINRESOURCEREQUEST_H_
