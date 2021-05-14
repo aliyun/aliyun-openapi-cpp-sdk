@@ -42,6 +42,8 @@ namespace AlibabaCloud
 
 				std::string getOrgName()const;
 				void setOrgName(const std::string& orgName);
+				long getMask()const;
+				void setMask(long mask);
 				std::string getDataFormat()const;
 				void setDataFormat(const std::string& dataFormat);
 				std::vector<URLList> getURLList()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 
             private:
 				std::string orgName_;
+				long mask_;
 				std::string dataFormat_;
 				std::vector<URLList> uRLList_;
 				std::string orgId_;

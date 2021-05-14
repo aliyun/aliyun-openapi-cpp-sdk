@@ -38,6 +38,17 @@ void ScreenChestCTRequest::setOrgName(const std::string& orgName)
 	setBodyParameter("OrgName", orgName);
 }
 
+long ScreenChestCTRequest::getMask()const
+{
+	return mask_;
+}
+
+void ScreenChestCTRequest::setMask(long mask)
+{
+	mask_ = mask;
+	setBodyParameter("Mask", std::to_string(mask));
+}
+
 std::string ScreenChestCTRequest::getDataFormat()const
 {
 	return dataFormat_;

@@ -34,19 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct Covid
-					{
-						std::string newProbability;
-						std::string otherProbability;
-						std::string normalProbability;
-						std::string mask;
-						std::string lesionRatio;
-					};
-					struct CACS
-					{
-						std::string score;
-						std::string resultUrl;
-					};
 					struct LungNodule
 					{
 						struct Serie
@@ -55,13 +42,13 @@ namespace AlibabaCloud
 							{
 								float imageZ;
 								float imageY;
-								float imageX;
 								std::string lobe;
+								float imageX;
 								std::string category;
 								std::string lung;
 								float meanValue;
-								float volume;
 								float confidence;
+								float volume;
 								float x;
 								float y;
 								float z;
@@ -76,27 +63,41 @@ namespace AlibabaCloud
 						};
 						std::vector<Serie> series;
 					};
+					struct CACS
+					{
+						std::string score;
+						std::string resultUrl;
+					};
+					struct Covid
+					{
+						std::string newProbability;
+						std::string otherProbability;
+						std::string normalProbability;
+						std::string mask;
+						std::string lesionRatio;
+					};
 					struct DetectRibFracture
 					{
 						struct DetectionsItem
 						{
-							long fractureCategory;
 							float fractureConfidence;
+							long fractureCategory;
 							std::vector<std::string> coordinateImage;
 							std::vector<std::string> coordinates;
 							std::string fractureLocation;
 							long fractureSegment;
 							long fractureId;
 						};
-						std::vector<std::string> origin1;
-						std::vector<std::string> spacing2;
+						std::vector<std::string> origin2;
+						std::vector<std::string> spacing1;
 						std::vector<DetectionsItem> detections;
 						std::string resultURL;
 					};
-					Covid covid;
-					CACS cACS;
 					LungNodule lungNodule;
+					CACS cACS;
+					Covid covid;
 					DetectRibFracture detectRibFracture;
+					std::string errorMessage;
 				};
 
 
