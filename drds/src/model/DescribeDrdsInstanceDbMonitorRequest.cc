@@ -19,7 +19,7 @@
 using AlibabaCloud::Drds::Model::DescribeDrdsInstanceDbMonitorRequest;
 
 DescribeDrdsInstanceDbMonitorRequest::DescribeDrdsInstanceDbMonitorRequest() :
-	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsInstanceDbMonitor")
+	RpcServiceRequest("drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -80,6 +80,17 @@ void DescribeDrdsInstanceDbMonitorRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
 	setParameter("DbName", dbName);
+}
+
+std::string DescribeDrdsInstanceDbMonitorRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDrdsInstanceDbMonitorRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getKey()const

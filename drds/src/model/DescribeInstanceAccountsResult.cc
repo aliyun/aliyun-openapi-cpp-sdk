@@ -51,14 +51,14 @@ void DescribeInstanceAccountsResult::parse(const std::string &payload)
 			instanceAccountsObject.accountType = std::stoi(valueInstanceAccountsInstanceAccount["AccountType"].asString());
 		if(!valueInstanceAccountsInstanceAccount["Description"].isNull())
 			instanceAccountsObject.description = valueInstanceAccountsInstanceAccount["Description"].asString();
-		auto allDbPrivilegesNode = allInstanceAccountsNode["DbPrivileges"]["DbPrivilege"];
-		for (auto allInstanceAccountsNodeDbPrivilegesDbPrivilege : allDbPrivilegesNode)
+		auto allDbPrivilegesNode = valueInstanceAccountsInstanceAccount["DbPrivileges"]["DbPrivilege"];
+		for (auto valueInstanceAccountsInstanceAccountDbPrivilegesDbPrivilege : allDbPrivilegesNode)
 		{
 			InstanceAccount::DbPrivilege dbPrivilegesObject;
-			if(!allInstanceAccountsNodeDbPrivilegesDbPrivilege["DbName"].isNull())
-				dbPrivilegesObject.dbName = allInstanceAccountsNodeDbPrivilegesDbPrivilege["DbName"].asString();
-			if(!allInstanceAccountsNodeDbPrivilegesDbPrivilege["Privilege"].isNull())
-				dbPrivilegesObject.privilege = allInstanceAccountsNodeDbPrivilegesDbPrivilege["Privilege"].asString();
+			if(!valueInstanceAccountsInstanceAccountDbPrivilegesDbPrivilege["DbName"].isNull())
+				dbPrivilegesObject.dbName = valueInstanceAccountsInstanceAccountDbPrivilegesDbPrivilege["DbName"].asString();
+			if(!valueInstanceAccountsInstanceAccountDbPrivilegesDbPrivilege["Privilege"].isNull())
+				dbPrivilegesObject.privilege = valueInstanceAccountsInstanceAccountDbPrivilegesDbPrivilege["Privilege"].asString();
 			instanceAccountsObject.dbPrivileges.push_back(dbPrivilegesObject);
 		}
 		instanceAccounts_.push_back(instanceAccountsObject);

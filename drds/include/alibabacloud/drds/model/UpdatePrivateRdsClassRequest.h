@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DRDS_MODEL_DESCRIBEDRDSINSTANCEVERSIONREQUEST_H_
-#define ALIBABACLOUD_DRDS_MODEL_DESCRIBEDRDSINSTANCEVERSIONREQUEST_H_
+#ifndef ALIBABACLOUD_DRDS_MODEL_UPDATEPRIVATERDSCLASSREQUEST_H_
+#define ALIBABACLOUD_DRDS_MODEL_UPDATEPRIVATERDSCLASSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DRDS_EXPORT DescribeDrdsInstanceVersionRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DRDS_EXPORT UpdatePrivateRdsClassRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDrdsInstanceVersionRequest();
-				~DescribeDrdsInstanceVersionRequest();
+				UpdatePrivateRdsClassRequest();
+				~UpdatePrivateRdsClassRequest();
 
+				std::string getStorage()const;
+				void setStorage(const std::string& storage);
+				bool getAutoUseCoupon()const;
+				void setAutoUseCoupon(bool autoUseCoupon);
 				std::string getDrdsInstanceId()const;
 				void setDrdsInstanceId(const std::string& drdsInstanceId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
+				std::string getRdsClass()const;
+				void setRdsClass(const std::string& rdsClass);
+				int getPrePayDuration()const;
+				void setPrePayDuration(int prePayDuration);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
+				std::string storage_;
+				bool autoUseCoupon_;
 				std::string drdsInstanceId_;
-				std::string accessKeyId_;
-				std::string regionId_;
+				std::string rdsClass_;
+				int prePayDuration_;
+				std::string dBInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DRDS_MODEL_DESCRIBEDRDSINSTANCEVERSIONREQUEST_H_
+#endif // !ALIBABACLOUD_DRDS_MODEL_UPDATEPRIVATERDSCLASSREQUEST_H_

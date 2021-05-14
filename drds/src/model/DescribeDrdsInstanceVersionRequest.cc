@@ -49,3 +49,14 @@ void DescribeDrdsInstanceVersionRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDrdsInstanceVersionRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDrdsInstanceVersionRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

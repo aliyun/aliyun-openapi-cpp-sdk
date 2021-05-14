@@ -30,25 +30,52 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DRDS_EXPORT DescribeDrdsInstancesRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeDrdsInstancesRequest();
 				~DescribeDrdsInstancesRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getProductVersion()const;
+				void setProductVersion(const std::string& productVersion);
 				std::string getType()const;
 				void setType(const std::string& type);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getTags()const;
-				void setTags(const std::string& tags);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				bool getExpired()const;
+				void setExpired(bool expired);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				bool getMix()const;
+				void setMix(bool mix);
 
             private:
+				std::string description_;
+				std::string productVersion_;
 				std::string type_;
+				int pageNumber_;
 				std::string accessKeyId_;
-				std::string tags_;
+				std::string resourceGroupId_;
+				bool expired_;
 				std::string regionId_;
+				int pageSize_;
+				std::vector<Tag> tag_;
+				bool mix_;
 
 			};
 		}

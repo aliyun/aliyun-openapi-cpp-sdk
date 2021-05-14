@@ -32,22 +32,18 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DRDS_EXPORT DescribeDrdsDBIpWhiteListResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::vector<std::string> ipWhiteList;
-				};
 
 
 				DescribeDrdsDBIpWhiteListResult();
 				explicit DescribeDrdsDBIpWhiteListResult(const std::string &payload);
 				~DescribeDrdsDBIpWhiteListResult();
-				Data getData()const;
+				std::vector<std::string> getIpWhiteList()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Data data_;
+				std::vector<std::string> ipWhiteList_;
 				bool success_;
 
 			};

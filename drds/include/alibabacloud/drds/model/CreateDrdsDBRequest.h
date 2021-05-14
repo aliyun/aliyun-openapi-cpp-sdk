@@ -30,6 +30,18 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DRDS_EXPORT CreateDrdsDBRequest : public RpcServiceRequest
 			{
+			public:
+				struct RdsSuperAccount
+				{
+					std::string password;
+					std::string accountName;
+					std::string dbInstanceId;
+				};
+				struct InstDbName
+				{
+					std::vector<std::string> shardDbName;
+					std::string dbInstanceId;
+				};
 
 			public:
 				CreateDrdsDBRequest();
@@ -37,24 +49,42 @@ namespace AlibabaCloud
 
 				std::string getEncode()const;
 				void setEncode(const std::string& encode);
-				std::string getDrdsInstanceId()const;
-				void setDrdsInstanceId(const std::string& drdsInstanceId);
+				std::vector<std::string> getRdsInstance()const;
+				void setRdsInstance(const std::vector<std::string>& rdsInstance);
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
+				std::vector<RdsSuperAccount> getRdsSuperAccount()const;
+				void setRdsSuperAccount(const std::vector<RdsSuperAccount>& rdsSuperAccount);
+				std::string getAccountName()const;
+				void setAccountName(const std::string& accountName);
+				std::string getDrdsInstanceId()const;
+				void setDrdsInstanceId(const std::string& drdsInstanceId);
+				bool getDbInstanceIsCreating()const;
+				void setDbInstanceIsCreating(bool dbInstanceIsCreating);
+				std::vector<InstDbName> getInstDbName()const;
+				void setInstDbName(const std::vector<InstDbName>& instDbName);
 				std::string getDbName()const;
 				void setDbName(const std::string& dbName);
-				std::string getRdsInstances()const;
-				void setRdsInstances(const std::string& rdsInstances);
+				std::string getDbInstType()const;
+				void setDbInstType(const std::string& dbInstType);
 
             private:
 				std::string encode_;
-				std::string drdsInstanceId_;
+				std::vector<std::string> rdsInstance_;
+				std::string type_;
 				std::string accessKeyId_;
 				std::string password_;
+				std::vector<RdsSuperAccount> rdsSuperAccount_;
+				std::string accountName_;
+				std::string drdsInstanceId_;
+				bool dbInstanceIsCreating_;
+				std::vector<InstDbName> instDbName_;
 				std::string dbName_;
-				std::string rdsInstances_;
+				std::string dbInstType_;
 
 			};
 		}

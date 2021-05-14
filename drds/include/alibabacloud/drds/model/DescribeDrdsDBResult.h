@@ -34,10 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					int status;
-					std::string msg;
+					std::string status;
+					std::string dbInstType;
+					std::string instRole;
 					std::string createTime;
 					std::string mode;
+					std::string schema;
 					std::string dbName;
 				};
 

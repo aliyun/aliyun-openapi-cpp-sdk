@@ -19,13 +19,35 @@
 using AlibabaCloud::Drds::Model::DescribeDrdsInstancesRequest;
 
 DescribeDrdsInstancesRequest::DescribeDrdsInstancesRequest() :
-	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsInstances")
+	RpcServiceRequest("drds", "2019-01-23", "DescribeDrdsInstances")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeDrdsInstancesRequest::~DescribeDrdsInstancesRequest()
 {}
+
+std::string DescribeDrdsInstancesRequest::getDescription()const
+{
+	return description_;
+}
+
+void DescribeDrdsInstancesRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
+std::string DescribeDrdsInstancesRequest::getProductVersion()const
+{
+	return productVersion_;
+}
+
+void DescribeDrdsInstancesRequest::setProductVersion(const std::string& productVersion)
+{
+	productVersion_ = productVersion;
+	setParameter("ProductVersion", productVersion);
+}
 
 std::string DescribeDrdsInstancesRequest::getType()const
 {
@@ -36,6 +58,17 @@ void DescribeDrdsInstancesRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setParameter("Type", type);
+}
+
+int DescribeDrdsInstancesRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDrdsInstancesRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDrdsInstancesRequest::getAccessKeyId()const
@@ -49,15 +82,26 @@ void DescribeDrdsInstancesRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeDrdsInstancesRequest::getTags()const
+std::string DescribeDrdsInstancesRequest::getResourceGroupId()const
 {
-	return tags_;
+	return resourceGroupId_;
 }
 
-void DescribeDrdsInstancesRequest::setTags(const std::string& tags)
+void DescribeDrdsInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	tags_ = tags;
-	setParameter("Tags", tags);
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+bool DescribeDrdsInstancesRequest::getExpired()const
+{
+	return expired_;
+}
+
+void DescribeDrdsInstancesRequest::setExpired(bool expired)
+{
+	expired_ = expired;
+	setParameter("Expired", expired ? "true" : "false");
 }
 
 std::string DescribeDrdsInstancesRequest::getRegionId()const
@@ -69,5 +113,43 @@ void DescribeDrdsInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+int DescribeDrdsInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeDrdsInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeDrdsInstancesRequest::Tag> DescribeDrdsInstancesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeDrdsInstancesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
+bool DescribeDrdsInstancesRequest::getMix()const
+{
+	return mix_;
+}
+
+void DescribeDrdsInstancesRequest::setMix(bool mix)
+{
+	mix_ = mix;
+	setParameter("Mix", mix ? "true" : "false");
 }
 

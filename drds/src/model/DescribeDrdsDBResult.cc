@@ -43,13 +43,17 @@ void DescribeDrdsDBResult::parse(const std::string &payload)
 	if(!dataNode["DbName"].isNull())
 		data_.dbName = dataNode["DbName"].asString();
 	if(!dataNode["Status"].isNull())
-		data_.status = std::stoi(dataNode["Status"].asString());
+		data_.status = dataNode["Status"].asString();
 	if(!dataNode["CreateTime"].isNull())
 		data_.createTime = dataNode["CreateTime"].asString();
-	if(!dataNode["Msg"].isNull())
-		data_.msg = dataNode["Msg"].asString();
 	if(!dataNode["Mode"].isNull())
 		data_.mode = dataNode["Mode"].asString();
+	if(!dataNode["Schema"].isNull())
+		data_.schema = dataNode["Schema"].asString();
+	if(!dataNode["DbInstType"].isNull())
+		data_.dbInstType = dataNode["DbInstType"].asString();
+	if(!dataNode["InstRole"].isNull())
+		data_.instRole = dataNode["InstRole"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

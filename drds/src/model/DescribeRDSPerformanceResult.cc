@@ -51,14 +51,14 @@ void DescribeRDSPerformanceResult::parse(const std::string &payload)
 			dataObject.nodeNum = std::stoi(valueDataPartialPerformanceData["NodeNum"].asString());
 		if(!valueDataPartialPerformanceData["NodeName"].isNull())
 			dataObject.nodeName = valueDataPartialPerformanceData["NodeName"].asString();
-		auto allValuesNode = allDataNode["Values"]["PerformanceValue"];
-		for (auto allDataNodeValuesPerformanceValue : allValuesNode)
+		auto allValuesNode = valueDataPartialPerformanceData["Values"]["PerformanceValue"];
+		for (auto valueDataPartialPerformanceDataValuesPerformanceValue : allValuesNode)
 		{
 			PartialPerformanceData::PerformanceValue valuesObject;
-			if(!allDataNodeValuesPerformanceValue["Value"].isNull())
-				valuesObject.value = allDataNodeValuesPerformanceValue["Value"].asString();
-			if(!allDataNodeValuesPerformanceValue["Date"].isNull())
-				valuesObject.date = std::stol(allDataNodeValuesPerformanceValue["Date"].asString());
+			if(!valueDataPartialPerformanceDataValuesPerformanceValue["Value"].isNull())
+				valuesObject.value = valueDataPartialPerformanceDataValuesPerformanceValue["Value"].asString();
+			if(!valueDataPartialPerformanceDataValuesPerformanceValue["Date"].isNull())
+				valuesObject.date = std::stol(valueDataPartialPerformanceDataValuesPerformanceValue["Date"].asString());
 			dataObject.values.push_back(valuesObject);
 		}
 		data_.push_back(dataObject);

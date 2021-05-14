@@ -19,7 +19,7 @@
 using AlibabaCloud::Drds::Model::CreateDrdsDBRequest;
 
 CreateDrdsDBRequest::CreateDrdsDBRequest() :
-	RpcServiceRequest("drds", "2017-10-16", "CreateDrdsDB")
+	RpcServiceRequest("drds", "2019-01-23", "CreateDrdsDB")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,15 +38,28 @@ void CreateDrdsDBRequest::setEncode(const std::string& encode)
 	setParameter("Encode", encode);
 }
 
-std::string CreateDrdsDBRequest::getDrdsInstanceId()const
+std::vector<std::string> CreateDrdsDBRequest::getRdsInstance()const
 {
-	return drdsInstanceId_;
+	return rdsInstance_;
 }
 
-void CreateDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
+void CreateDrdsDBRequest::setRdsInstance(const std::vector<std::string>& rdsInstance)
 {
-	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	rdsInstance_ = rdsInstance;
+	for(int dep1 = 0; dep1!= rdsInstance.size(); dep1++) {
+		setParameter("RdsInstance."+ std::to_string(dep1), rdsInstance.at(dep1));
+	}
+}
+
+std::string CreateDrdsDBRequest::getType()const
+{
+	return type_;
+}
+
+void CreateDrdsDBRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setParameter("Type", type);
 }
 
 std::string CreateDrdsDBRequest::getAccessKeyId()const
@@ -71,6 +84,74 @@ void CreateDrdsDBRequest::setPassword(const std::string& password)
 	setParameter("Password", password);
 }
 
+std::vector<CreateDrdsDBRequest::RdsSuperAccount> CreateDrdsDBRequest::getRdsSuperAccount()const
+{
+	return rdsSuperAccount_;
+}
+
+void CreateDrdsDBRequest::setRdsSuperAccount(const std::vector<RdsSuperAccount>& rdsSuperAccount)
+{
+	rdsSuperAccount_ = rdsSuperAccount;
+	for(int dep1 = 0; dep1!= rdsSuperAccount.size(); dep1++) {
+		auto rdsSuperAccountObj = rdsSuperAccount.at(dep1);
+		std::string rdsSuperAccountObjStr = "RdsSuperAccount." + std::to_string(dep1 + 1);
+		setParameter(rdsSuperAccountObjStr + ".Password", rdsSuperAccountObj.password);
+		setParameter(rdsSuperAccountObjStr + ".AccountName", rdsSuperAccountObj.accountName);
+		setParameter(rdsSuperAccountObjStr + ".DbInstanceId", rdsSuperAccountObj.dbInstanceId);
+	}
+}
+
+std::string CreateDrdsDBRequest::getAccountName()const
+{
+	return accountName_;
+}
+
+void CreateDrdsDBRequest::setAccountName(const std::string& accountName)
+{
+	accountName_ = accountName;
+	setParameter("AccountName", accountName);
+}
+
+std::string CreateDrdsDBRequest::getDrdsInstanceId()const
+{
+	return drdsInstanceId_;
+}
+
+void CreateDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
+{
+	drdsInstanceId_ = drdsInstanceId;
+	setParameter("DrdsInstanceId", drdsInstanceId);
+}
+
+bool CreateDrdsDBRequest::getDbInstanceIsCreating()const
+{
+	return dbInstanceIsCreating_;
+}
+
+void CreateDrdsDBRequest::setDbInstanceIsCreating(bool dbInstanceIsCreating)
+{
+	dbInstanceIsCreating_ = dbInstanceIsCreating;
+	setParameter("DbInstanceIsCreating", dbInstanceIsCreating ? "true" : "false");
+}
+
+std::vector<CreateDrdsDBRequest::InstDbName> CreateDrdsDBRequest::getInstDbName()const
+{
+	return instDbName_;
+}
+
+void CreateDrdsDBRequest::setInstDbName(const std::vector<InstDbName>& instDbName)
+{
+	instDbName_ = instDbName;
+	for(int dep1 = 0; dep1!= instDbName.size(); dep1++) {
+		auto instDbNameObj = instDbName.at(dep1);
+		std::string instDbNameObjStr = "InstDbName." + std::to_string(dep1 + 1);
+		for(int dep2 = 0; dep2!= instDbNameObj.shardDbName.size(); dep2++) {
+			setParameter(instDbNameObjStr + ".ShardDbName."+ std::to_string(dep2), instDbNameObj.shardDbName.at(dep2));
+		}
+		setParameter(instDbNameObjStr + ".DbInstanceId", instDbNameObj.dbInstanceId);
+	}
+}
+
 std::string CreateDrdsDBRequest::getDbName()const
 {
 	return dbName_;
@@ -82,14 +163,14 @@ void CreateDrdsDBRequest::setDbName(const std::string& dbName)
 	setParameter("DbName", dbName);
 }
 
-std::string CreateDrdsDBRequest::getRdsInstances()const
+std::string CreateDrdsDBRequest::getDbInstType()const
 {
-	return rdsInstances_;
+	return dbInstType_;
 }
 
-void CreateDrdsDBRequest::setRdsInstances(const std::string& rdsInstances)
+void CreateDrdsDBRequest::setDbInstType(const std::string& dbInstType)
 {
-	rdsInstances_ = rdsInstances;
-	setParameter("RdsInstances", rdsInstances);
+	dbInstType_ = dbInstType;
+	setParameter("DbInstType", dbInstType);
 }
 

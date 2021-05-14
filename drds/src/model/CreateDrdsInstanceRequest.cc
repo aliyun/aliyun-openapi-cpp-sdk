@@ -19,7 +19,7 @@
 using AlibabaCloud::Drds::Model::CreateDrdsInstanceRequest;
 
 CreateDrdsInstanceRequest::CreateDrdsInstanceRequest() :
-	RpcServiceRequest("drds", "2017-10-16", "CreateDrdsInstance")
+	RpcServiceRequest("drds", "2019-01-23", "CreateDrdsInstance")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -93,6 +93,17 @@ void CreateDrdsInstanceRequest::setDuration(int duration)
 	setParameter("Duration", std::to_string(duration));
 }
 
+std::string CreateDrdsInstanceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateDrdsInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 bool CreateDrdsInstanceRequest::getIsHa()const
 {
 	return isHa_;
@@ -102,6 +113,17 @@ void CreateDrdsInstanceRequest::setIsHa(bool isHa)
 {
 	isHa_ = isHa;
 	setParameter("IsHa", isHa ? "true" : "false");
+}
+
+int CreateDrdsInstanceRequest::getMySQLVersion()const
+{
+	return mySQLVersion_;
+}
+
+void CreateDrdsInstanceRequest::setMySQLVersion(int mySQLVersion)
+{
+	mySQLVersion_ = mySQLVersion;
+	setParameter("MySQLVersion", std::to_string(mySQLVersion));
 }
 
 std::string CreateDrdsInstanceRequest::getRegionId()const
@@ -124,6 +146,17 @@ void CreateDrdsInstanceRequest::setInstanceSeries(const std::string& instanceSer
 {
 	instanceSeries_ = instanceSeries;
 	setParameter("InstanceSeries", instanceSeries);
+}
+
+std::string CreateDrdsInstanceRequest::getMasterInstId()const
+{
+	return masterInstId_;
+}
+
+void CreateDrdsInstanceRequest::setMasterInstId(const std::string& masterInstId)
+{
+	masterInstId_ = masterInstId;
+	setParameter("MasterInstId", masterInstId);
 }
 
 int CreateDrdsInstanceRequest::getQuantity()const

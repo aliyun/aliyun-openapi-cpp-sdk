@@ -14,48 +14,44 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/drds/model/CreateDrdsInstanceResult.h>
+#include <alibabacloud/drds/model/UpdatePrivateRdsClassResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Drds;
 using namespace AlibabaCloud::Drds::Model;
 
-CreateDrdsInstanceResult::CreateDrdsInstanceResult() :
+UpdatePrivateRdsClassResult::UpdatePrivateRdsClassResult() :
 	ServiceResult()
 {}
 
-CreateDrdsInstanceResult::CreateDrdsInstanceResult(const std::string &payload) :
+UpdatePrivateRdsClassResult::UpdatePrivateRdsClassResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateDrdsInstanceResult::~CreateDrdsInstanceResult()
+UpdatePrivateRdsClassResult::~UpdatePrivateRdsClassResult()
 {}
 
-void CreateDrdsInstanceResult::parse(const std::string &payload)
+void UpdatePrivateRdsClassResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["OrderId"].isNull())
-		data_.orderId = std::stol(dataNode["OrderId"].asString());
-		auto allDrdsInstanceIdList = dataNode["DrdsInstanceIdList"]["drdsInstanceIdList"];
-		for (auto value : allDrdsInstanceIdList)
-			data_.drdsInstanceIdList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
-CreateDrdsInstanceResult::Data CreateDrdsInstanceResult::getData()const
+std::string UpdatePrivateRdsClassResult::getData()const
 {
 	return data_;
 }
 
-bool CreateDrdsInstanceResult::getSuccess()const
+bool UpdatePrivateRdsClassResult::getSuccess()const
 {
 	return success_;
 }

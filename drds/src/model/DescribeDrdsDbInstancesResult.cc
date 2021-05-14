@@ -71,38 +71,38 @@ void DescribeDrdsDbInstancesResult::parse(const std::string &payload)
 			dbInstancesObject.expireTime = valueDbInstancesDbInstance["ExpireTime"].asString();
 		if(!valueDbInstancesDbInstance["RemainDays"].isNull())
 			dbInstancesObject.remainDays = std::stoi(valueDbInstancesDbInstance["RemainDays"].asString());
-		auto allReadOnlyInstancesNode = allDbInstancesNode["ReadOnlyInstances"]["ReadOnlyInstance"];
-		for (auto allDbInstancesNodeReadOnlyInstancesReadOnlyInstance : allReadOnlyInstancesNode)
+		auto allReadOnlyInstancesNode = valueDbInstancesDbInstance["ReadOnlyInstances"]["ReadOnlyInstance"];
+		for (auto valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance : allReadOnlyInstancesNode)
 		{
 			DbInstance::ReadOnlyInstance readOnlyInstancesObject;
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["InstanceName"].isNull())
-				readOnlyInstancesObject.instanceName = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["InstanceName"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["DmInstanceId"].isNull())
-				readOnlyInstancesObject.dmInstanceId = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["DmInstanceId"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["ConnectUrl"].isNull())
-				readOnlyInstancesObject.connectUrl = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["ConnectUrl"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["Port"].isNull())
-				readOnlyInstancesObject.port = std::stoi(allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["Port"].asString());
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["DBInstanceStatus"].isNull())
-				readOnlyInstancesObject.dBInstanceStatus = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["DBInstanceStatus"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["DbInstType"].isNull())
-				readOnlyInstancesObject.dbInstType = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["DbInstType"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["ReadWeight"].isNull())
-				readOnlyInstancesObject.readWeight = std::stoi(allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["ReadWeight"].asString());
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["NetworkType"].isNull())
-				readOnlyInstancesObject.networkType = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["NetworkType"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["Engine"].isNull())
-				readOnlyInstancesObject.engine = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["Engine"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["EngineVersion"].isNull())
-				readOnlyInstancesObject.engineVersion = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["EngineVersion"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["RdsInstType"].isNull())
-				readOnlyInstancesObject.rdsInstType = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["RdsInstType"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["PayType"].isNull())
-				readOnlyInstancesObject.payType = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["PayType"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["ExpireTime"].isNull())
-				readOnlyInstancesObject.expireTime = allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["ExpireTime"].asString();
-			if(!allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["RemainDays"].isNull())
-				readOnlyInstancesObject.remainDays = std::stoi(allDbInstancesNodeReadOnlyInstancesReadOnlyInstance["RemainDays"].asString());
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["InstanceName"].isNull())
+				readOnlyInstancesObject.instanceName = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["InstanceName"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["DmInstanceId"].isNull())
+				readOnlyInstancesObject.dmInstanceId = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["DmInstanceId"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["ConnectUrl"].isNull())
+				readOnlyInstancesObject.connectUrl = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["ConnectUrl"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["Port"].isNull())
+				readOnlyInstancesObject.port = std::stoi(valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["Port"].asString());
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["DBInstanceStatus"].isNull())
+				readOnlyInstancesObject.dBInstanceStatus = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["DBInstanceStatus"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["DbInstType"].isNull())
+				readOnlyInstancesObject.dbInstType = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["DbInstType"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["ReadWeight"].isNull())
+				readOnlyInstancesObject.readWeight = std::stoi(valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["ReadWeight"].asString());
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["NetworkType"].isNull())
+				readOnlyInstancesObject.networkType = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["NetworkType"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["Engine"].isNull())
+				readOnlyInstancesObject.engine = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["Engine"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["EngineVersion"].isNull())
+				readOnlyInstancesObject.engineVersion = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["EngineVersion"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["RdsInstType"].isNull())
+				readOnlyInstancesObject.rdsInstType = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["RdsInstType"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["PayType"].isNull())
+				readOnlyInstancesObject.payType = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["PayType"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["ExpireTime"].isNull())
+				readOnlyInstancesObject.expireTime = valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["ExpireTime"].asString();
+			if(!valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["RemainDays"].isNull())
+				readOnlyInstancesObject.remainDays = std::stoi(valueDbInstancesDbInstanceReadOnlyInstancesReadOnlyInstance["RemainDays"].asString());
 			dbInstancesObject.readOnlyInstances.push_back(readOnlyInstancesObject);
 		}
 		dbInstances_.push_back(dbInstancesObject);

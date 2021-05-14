@@ -58,16 +58,44 @@ void DescribeDrdsInstanceResult::parse(const std::string &payload)
 		data_.createTime = std::stol(dataNode["CreateTime"].asString());
 	if(!dataNode["Version"].isNull())
 		data_.version = std::stol(dataNode["Version"].asString());
-	if(!dataNode["Specification"].isNull())
-		data_.specification = dataNode["Specification"].asString();
+	if(!dataNode["InstanceSeries"].isNull())
+		data_.instanceSeries = dataNode["InstanceSeries"].asString();
+	if(!dataNode["InstanceSpec"].isNull())
+		data_.instanceSpec = dataNode["InstanceSpec"].asString();
 	if(!dataNode["VpcCloudInstanceId"].isNull())
 		data_.vpcCloudInstanceId = dataNode["VpcCloudInstanceId"].asString();
+	if(!dataNode["InstRole"].isNull())
+		data_.instRole = dataNode["InstRole"].asString();
+	if(!dataNode["CommodityCode"].isNull())
+		data_.commodityCode = dataNode["CommodityCode"].asString();
+	if(!dataNode["ExpireDate"].isNull())
+		data_.expireDate = std::stol(dataNode["ExpireDate"].asString());
+	if(!dataNode["VersionAction"].isNull())
+		data_.versionAction = dataNode["VersionAction"].asString();
+	if(!dataNode["Label"].isNull())
+		data_.label = dataNode["Label"].asString();
+	if(!dataNode["MasterInstanceId"].isNull())
+		data_.masterInstanceId = dataNode["MasterInstanceId"].asString();
+	if(!dataNode["MachineType"].isNull())
+		data_.machineType = dataNode["MachineType"].asString();
+	if(!dataNode["OrderInstanceId"].isNull())
+		data_.orderInstanceId = dataNode["OrderInstanceId"].asString();
+	if(!dataNode["MysqlVersion"].isNull())
+		data_.mysqlVersion = std::stoi(dataNode["MysqlVersion"].asString());
+	if(!dataNode["StorageType"].isNull())
+		data_.storageType = dataNode["StorageType"].asString();
+	if(!dataNode["ResourceGroupId"].isNull())
+		data_.resourceGroupId = dataNode["ResourceGroupId"].asString();
+	if(!dataNode["ProductVersion"].isNull())
+		data_.productVersion = dataNode["ProductVersion"].asString();
 	auto allVipsNode = dataNode["Vips"]["Vip"];
 	for (auto dataNodeVipsVip : allVipsNode)
 	{
 		Data::Vip vipObject;
-		if(!dataNodeVipsVip["IP"].isNull())
-			vipObject.iP = dataNodeVipsVip["IP"].asString();
+		if(!dataNodeVipsVip["Dns"].isNull())
+			vipObject.dns = dataNodeVipsVip["Dns"].asString();
+		if(!dataNodeVipsVip["ExpireDays"].isNull())
+			vipObject.expireDays = std::stol(dataNodeVipsVip["ExpireDays"].asString());
 		if(!dataNodeVipsVip["Port"].isNull())
 			vipObject.port = dataNodeVipsVip["Port"].asString();
 		if(!dataNodeVipsVip["Type"].isNull())
@@ -78,6 +106,9 @@ void DescribeDrdsInstanceResult::parse(const std::string &payload)
 			vipObject.vswitchId = dataNodeVipsVip["VswitchId"].asString();
 		data_.vips.push_back(vipObject);
 	}
+		auto allReadOnlyDBInstanceIds = dataNode["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
+		for (auto value : allReadOnlyDBInstanceIds)
+			data_.readOnlyDBInstanceIds.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

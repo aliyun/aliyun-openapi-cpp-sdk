@@ -19,7 +19,7 @@
 using AlibabaCloud::Drds::Model::DescribeDrdsDBIpWhiteListRequest;
 
 DescribeDrdsDBIpWhiteListRequest::DescribeDrdsDBIpWhiteListRequest() :
-	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsDBIpWhiteList")
+	RpcServiceRequest("drds", "2019-01-23", "DescribeDrdsDBIpWhiteList")
 {
 	setMethod(HttpRequest::Method::Post);
 }

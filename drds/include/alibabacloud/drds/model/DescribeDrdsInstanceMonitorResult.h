@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string value;
 						long date;
 					};
+					int nodeNum;
 					std::vector<PartialPerformanceData::PerformanceValue> values;
 					std::string unit;
 					std::string key;
@@ -49,13 +50,11 @@ namespace AlibabaCloud
 				explicit DescribeDrdsInstanceMonitorResult(const std::string &payload);
 				~DescribeDrdsInstanceMonitorResult();
 				std::vector<PartialPerformanceData> getData()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<PartialPerformanceData> data_;
-				bool success_;
 
 			};
 		}

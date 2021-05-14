@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DRDS_MODEL_DESCRIBEDRDSDBSRESULT_H_
-#define ALIBABACLOUD_DRDS_MODEL_DESCRIBEDRDSDBSRESULT_H_
+#ifndef ALIBABACLOUD_DRDS_MODEL_UPDATEPRIVATERDSCLASSRESULT_H_
+#define ALIBABACLOUD_DRDS_MODEL_UPDATEPRIVATERDSCLASSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DRDS_EXPORT DescribeDrdsDBsResult : public ServiceResult
+			class ALIBABACLOUD_DRDS_EXPORT UpdatePrivateRdsClassResult : public ServiceResult
 			{
 			public:
-				struct Db
-				{
-					std::string status;
-					std::string dbInstType;
-					std::string createTime;
-					std::string mode;
-					std::string schema;
-					std::string dbName;
-				};
 
 
-				DescribeDrdsDBsResult();
-				explicit DescribeDrdsDBsResult(const std::string &payload);
-				~DescribeDrdsDBsResult();
-				std::string getPageSize()const;
-				std::string getPageNumber()const;
-				std::string getTotal()const;
-				std::vector<Db> getData()const;
+				UpdatePrivateRdsClassResult();
+				explicit UpdatePrivateRdsClassResult(const std::string &payload);
+				~UpdatePrivateRdsClassResult();
+				std::string getData()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string pageSize_;
-				std::string pageNumber_;
-				std::string total_;
-				std::vector<Db> data_;
+				std::string data_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DRDS_MODEL_DESCRIBEDRDSDBSRESULT_H_
+#endif // !ALIBABACLOUD_DRDS_MODEL_UPDATEPRIVATERDSCLASSRESULT_H_

@@ -19,7 +19,7 @@
 using AlibabaCloud::Drds::Model::DescribeDrdsDBsRequest;
 
 DescribeDrdsDBsRequest::DescribeDrdsDBsRequest() :
-	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsDBs")
+	RpcServiceRequest("drds", "2019-01-23", "DescribeDrdsDBs")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,6 +38,17 @@ void DescribeDrdsDBsRequest::setDrdsInstanceId(const std::string& drdsInstanceId
 	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
+int DescribeDrdsDBsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDrdsDBsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeDrdsDBsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,5 +58,27 @@ void DescribeDrdsDBsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDrdsDBsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDrdsDBsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+int DescribeDrdsDBsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeDrdsDBsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

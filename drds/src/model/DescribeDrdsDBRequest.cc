@@ -19,7 +19,7 @@
 using AlibabaCloud::Drds::Model::DescribeDrdsDBRequest;
 
 DescribeDrdsDBRequest::DescribeDrdsDBRequest() :
-	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsDB")
+	RpcServiceRequest("drds", "2019-01-23", "DescribeDrdsDB")
 {
 	setMethod(HttpRequest::Method::Post);
 }

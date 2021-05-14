@@ -39,67 +39,103 @@ void DescribeDrdsInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["Instance"];
-	for (auto valueDataInstance : allDataNode)
+	auto allInstancesNode = value["Instances"]["Instance"];
+	for (auto valueInstancesInstance : allInstancesNode)
 	{
-		Instance dataObject;
-		if(!valueDataInstance["DrdsInstanceId"].isNull())
-			dataObject.drdsInstanceId = valueDataInstance["DrdsInstanceId"].asString();
-		if(!valueDataInstance["Type"].isNull())
-			dataObject.type = valueDataInstance["Type"].asString();
-		if(!valueDataInstance["RegionId"].isNull())
-			dataObject.regionId = valueDataInstance["RegionId"].asString();
-		if(!valueDataInstance["ZoneId"].isNull())
-			dataObject.zoneId = valueDataInstance["ZoneId"].asString();
-		if(!valueDataInstance["Description"].isNull())
-			dataObject.description = valueDataInstance["Description"].asString();
-		if(!valueDataInstance["NetworkType"].isNull())
-			dataObject.networkType = valueDataInstance["NetworkType"].asString();
-		if(!valueDataInstance["Status"].isNull())
-			dataObject.status = valueDataInstance["Status"].asString();
-		if(!valueDataInstance["CreateTime"].isNull())
-			dataObject.createTime = std::stol(valueDataInstance["CreateTime"].asString());
-		if(!valueDataInstance["Version"].isNull())
-			dataObject.version = std::stol(valueDataInstance["Version"].asString());
-		if(!valueDataInstance["VpcCloudInstanceId"].isNull())
-			dataObject.vpcCloudInstanceId = valueDataInstance["VpcCloudInstanceId"].asString();
-		if(!valueDataInstance["InstRole"].isNull())
-			dataObject.instRole = valueDataInstance["InstRole"].asString();
-		if(!valueDataInstance["MasterInstId"].isNull())
-			dataObject.masterInstId = valueDataInstance["MasterInstId"].asString();
-		auto allVipsNode = allDataNode["Vips"]["Vip"];
-		for (auto allDataNodeVipsVip : allVipsNode)
+		Instance instancesObject;
+		if(!valueInstancesInstance["DrdsInstanceId"].isNull())
+			instancesObject.drdsInstanceId = valueInstancesInstance["DrdsInstanceId"].asString();
+		if(!valueInstancesInstance["Type"].isNull())
+			instancesObject.type = valueInstancesInstance["Type"].asString();
+		if(!valueInstancesInstance["RegionId"].isNull())
+			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
+		if(!valueInstancesInstance["ZoneId"].isNull())
+			instancesObject.zoneId = valueInstancesInstance["ZoneId"].asString();
+		if(!valueInstancesInstance["Description"].isNull())
+			instancesObject.description = valueInstancesInstance["Description"].asString();
+		if(!valueInstancesInstance["NetworkType"].isNull())
+			instancesObject.networkType = valueInstancesInstance["NetworkType"].asString();
+		if(!valueInstancesInstance["Status"].isNull())
+			instancesObject.status = valueInstancesInstance["Status"].asString();
+		if(!valueInstancesInstance["CreateTime"].isNull())
+			instancesObject.createTime = std::stol(valueInstancesInstance["CreateTime"].asString());
+		if(!valueInstancesInstance["Version"].isNull())
+			instancesObject.version = std::stol(valueInstancesInstance["Version"].asString());
+		if(!valueInstancesInstance["CommodityCode"].isNull())
+			instancesObject.commodityCode = valueInstancesInstance["CommodityCode"].asString();
+		if(!valueInstancesInstance["InstRole"].isNull())
+			instancesObject.instRole = valueInstancesInstance["InstRole"].asString();
+		if(!valueInstancesInstance["InstanceSeries"].isNull())
+			instancesObject.instanceSeries = valueInstancesInstance["InstanceSeries"].asString();
+		if(!valueInstancesInstance["InstanceSpec"].isNull())
+			instancesObject.instanceSpec = valueInstancesInstance["InstanceSpec"].asString();
+		if(!valueInstancesInstance["MasterInstanceId"].isNull())
+			instancesObject.masterInstanceId = valueInstancesInstance["MasterInstanceId"].asString();
+		if(!valueInstancesInstance["VpcCloudInstanceId"].isNull())
+			instancesObject.vpcCloudInstanceId = valueInstancesInstance["VpcCloudInstanceId"].asString();
+		if(!valueInstancesInstance["VpcId"].isNull())
+			instancesObject.vpcId = valueInstancesInstance["VpcId"].asString();
+		if(!valueInstancesInstance["ExpireDate"].isNull())
+			instancesObject.expireDate = std::stol(valueInstancesInstance["ExpireDate"].asString());
+		if(!valueInstancesInstance["VersionAction"].isNull())
+			instancesObject.versionAction = valueInstancesInstance["VersionAction"].asString();
+		if(!valueInstancesInstance["Label"].isNull())
+			instancesObject.label = valueInstancesInstance["Label"].asString();
+		if(!valueInstancesInstance["MachineType"].isNull())
+			instancesObject.machineType = valueInstancesInstance["MachineType"].asString();
+		if(!valueInstancesInstance["OrderInstanceId"].isNull())
+			instancesObject.orderInstanceId = valueInstancesInstance["OrderInstanceId"].asString();
+		if(!valueInstancesInstance["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
+		if(!valueInstancesInstance["ProductVersion"].isNull())
+			instancesObject.productVersion = valueInstancesInstance["ProductVersion"].asString();
+		auto allVipsNode = valueInstancesInstance["Vips"]["Vip"];
+		for (auto valueInstancesInstanceVipsVip : allVipsNode)
 		{
 			Instance::Vip vipsObject;
-			if(!allDataNodeVipsVip["IP"].isNull())
-				vipsObject.iP = allDataNodeVipsVip["IP"].asString();
-			if(!allDataNodeVipsVip["Port"].isNull())
-				vipsObject.port = allDataNodeVipsVip["Port"].asString();
-			if(!allDataNodeVipsVip["Type"].isNull())
-				vipsObject.type = allDataNodeVipsVip["Type"].asString();
-			if(!allDataNodeVipsVip["VpcId"].isNull())
-				vipsObject.vpcId = allDataNodeVipsVip["VpcId"].asString();
-			if(!allDataNodeVipsVip["VswitchId"].isNull())
-				vipsObject.vswitchId = allDataNodeVipsVip["VswitchId"].asString();
-			dataObject.vips.push_back(vipsObject);
+			if(!valueInstancesInstanceVipsVip["IP"].isNull())
+				vipsObject.iP = valueInstancesInstanceVipsVip["IP"].asString();
+			if(!valueInstancesInstanceVipsVip["Port"].isNull())
+				vipsObject.port = valueInstancesInstanceVipsVip["Port"].asString();
+			if(!valueInstancesInstanceVipsVip["Type"].isNull())
+				vipsObject.type = valueInstancesInstanceVipsVip["Type"].asString();
+			if(!valueInstancesInstanceVipsVip["VpcId"].isNull())
+				vipsObject.vpcId = valueInstancesInstanceVipsVip["VpcId"].asString();
+			if(!valueInstancesInstanceVipsVip["VswitchId"].isNull())
+				vipsObject.vswitchId = valueInstancesInstanceVipsVip["VswitchId"].asString();
+			instancesObject.vips.push_back(vipsObject);
 		}
-		auto allSlaveInstId = value["SlaveInstId"]["instId"];
-		for (auto value : allSlaveInstId)
-			dataObject.slaveInstId.push_back(value.asString());
-		data_.push_back(dataObject);
+		auto allReadOnlyDBInstanceIds = value["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
+		for (auto value : allReadOnlyDBInstanceIds)
+			instancesObject.readOnlyDBInstanceIds.push_back(value.asString());
+		instances_.push_back(instancesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 
-std::vector<DescribeDrdsInstancesResult::Instance> DescribeDrdsInstancesResult::getData()const
+std::vector<DescribeDrdsInstancesResult::Instance> DescribeDrdsInstancesResult::getInstances()const
 {
-	return data_;
+	return instances_;
 }
 
-bool DescribeDrdsInstancesResult::getSuccess()const
+int DescribeDrdsInstancesResult::getPageSize()const
 {
-	return success_;
+	return pageSize_;
+}
+
+int DescribeDrdsInstancesResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+int DescribeDrdsInstancesResult::getTotal()const
+{
+	return total_;
 }
 

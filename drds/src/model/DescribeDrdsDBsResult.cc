@@ -46,18 +46,41 @@ void DescribeDrdsDBsResult::parse(const std::string &payload)
 		if(!valueDataDb["DbName"].isNull())
 			dataObject.dbName = valueDataDb["DbName"].asString();
 		if(!valueDataDb["Status"].isNull())
-			dataObject.status = std::stoi(valueDataDb["Status"].asString());
+			dataObject.status = valueDataDb["Status"].asString();
 		if(!valueDataDb["CreateTime"].isNull())
 			dataObject.createTime = valueDataDb["CreateTime"].asString();
-		if(!valueDataDb["Msg"].isNull())
-			dataObject.msg = valueDataDb["Msg"].asString();
 		if(!valueDataDb["Mode"].isNull())
 			dataObject.mode = valueDataDb["Mode"].asString();
+		if(!valueDataDb["Schema"].isNull())
+			dataObject.schema = valueDataDb["Schema"].asString();
+		if(!valueDataDb["DbInstType"].isNull())
+			dataObject.dbInstType = valueDataDb["DbInstType"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = value["PageSize"].asString();
+	if(!value["Total"].isNull())
+		total_ = value["Total"].asString();
 
+}
+
+std::string DescribeDrdsDBsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+std::string DescribeDrdsDBsResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+std::string DescribeDrdsDBsResult::getTotal()const
+{
+	return total_;
 }
 
 std::vector<DescribeDrdsDBsResult::Db> DescribeDrdsDBsResult::getData()const

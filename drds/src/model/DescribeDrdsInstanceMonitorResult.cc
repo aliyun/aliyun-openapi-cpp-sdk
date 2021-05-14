@@ -47,30 +47,25 @@ void DescribeDrdsInstanceMonitorResult::parse(const std::string &payload)
 			dataObject.key = valueDataPartialPerformanceData["Key"].asString();
 		if(!valueDataPartialPerformanceData["Unit"].isNull())
 			dataObject.unit = valueDataPartialPerformanceData["Unit"].asString();
-		auto allValuesNode = allDataNode["Values"]["PerformanceValue"];
-		for (auto allDataNodeValuesPerformanceValue : allValuesNode)
+		if(!valueDataPartialPerformanceData["NodeNum"].isNull())
+			dataObject.nodeNum = std::stoi(valueDataPartialPerformanceData["NodeNum"].asString());
+		auto allValuesNode = valueDataPartialPerformanceData["Values"]["PerformanceValue"];
+		for (auto valueDataPartialPerformanceDataValuesPerformanceValue : allValuesNode)
 		{
 			PartialPerformanceData::PerformanceValue valuesObject;
-			if(!allDataNodeValuesPerformanceValue["Date"].isNull())
-				valuesObject.date = std::stol(allDataNodeValuesPerformanceValue["Date"].asString());
-			if(!allDataNodeValuesPerformanceValue["Value"].isNull())
-				valuesObject.value = allDataNodeValuesPerformanceValue["Value"].asString();
+			if(!valueDataPartialPerformanceDataValuesPerformanceValue["Date"].isNull())
+				valuesObject.date = std::stol(valueDataPartialPerformanceDataValuesPerformanceValue["Date"].asString());
+			if(!valueDataPartialPerformanceDataValuesPerformanceValue["Value"].isNull())
+				valuesObject.value = valueDataPartialPerformanceDataValuesPerformanceValue["Value"].asString();
 			dataObject.values.push_back(valuesObject);
 		}
 		data_.push_back(dataObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
 std::vector<DescribeDrdsInstanceMonitorResult::PartialPerformanceData> DescribeDrdsInstanceMonitorResult::getData()const
 {
 	return data_;
-}
-
-bool DescribeDrdsInstanceMonitorResult::getSuccess()const
-{
-	return success_;
 }
 

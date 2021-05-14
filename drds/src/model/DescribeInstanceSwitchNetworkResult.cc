@@ -49,20 +49,20 @@ void DescribeInstanceSwitchNetworkResult::parse(const std::string &payload)
 			vpcInfosObject.regionId = valueVpcInfosVpcInfo["RegionId"].asString();
 		if(!valueVpcInfosVpcInfo["VpcName"].isNull())
 			vpcInfosObject.vpcName = valueVpcInfosVpcInfo["VpcName"].asString();
-		auto allVswitchInfosNode = allVpcInfosNode["VswitchInfos"]["VswitchInfo"];
-		for (auto allVpcInfosNodeVswitchInfosVswitchInfo : allVswitchInfosNode)
+		auto allVswitchInfosNode = valueVpcInfosVpcInfo["VswitchInfos"]["VswitchInfo"];
+		for (auto valueVpcInfosVpcInfoVswitchInfosVswitchInfo : allVswitchInfosNode)
 		{
 			VpcInfo::VswitchInfo vswitchInfosObject;
-			if(!allVpcInfosNodeVswitchInfosVswitchInfo["VswitchId"].isNull())
-				vswitchInfosObject.vswitchId = allVpcInfosNodeVswitchInfosVswitchInfo["VswitchId"].asString();
-			if(!allVpcInfosNodeVswitchInfosVswitchInfo["VpcId"].isNull())
-				vswitchInfosObject.vpcId = allVpcInfosNodeVswitchInfosVswitchInfo["VpcId"].asString();
-			if(!allVpcInfosNodeVswitchInfosVswitchInfo["VswitchName"].isNull())
-				vswitchInfosObject.vswitchName = allVpcInfosNodeVswitchInfosVswitchInfo["VswitchName"].asString();
-			if(!allVpcInfosNodeVswitchInfosVswitchInfo["AzoneId"].isNull())
-				vswitchInfosObject.azoneId = allVpcInfosNodeVswitchInfosVswitchInfo["AzoneId"].asString();
-			if(!allVpcInfosNodeVswitchInfosVswitchInfo["DrdsSupported"].isNull())
-				vswitchInfosObject.drdsSupported = allVpcInfosNodeVswitchInfosVswitchInfo["DrdsSupported"].asString() == "true";
+			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchId"].isNull())
+				vswitchInfosObject.vswitchId = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchId"].asString();
+			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VpcId"].isNull())
+				vswitchInfosObject.vpcId = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VpcId"].asString();
+			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchName"].isNull())
+				vswitchInfosObject.vswitchName = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["VswitchName"].asString();
+			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["AzoneId"].isNull())
+				vswitchInfosObject.azoneId = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["AzoneId"].asString();
+			if(!valueVpcInfosVpcInfoVswitchInfosVswitchInfo["DrdsSupported"].isNull())
+				vswitchInfosObject.drdsSupported = valueVpcInfosVpcInfoVswitchInfosVswitchInfo["DrdsSupported"].asString() == "true";
 			vpcInfosObject.vswitchInfos.push_back(vswitchInfosObject);
 		}
 		vpcInfos_.push_back(vpcInfosObject);
