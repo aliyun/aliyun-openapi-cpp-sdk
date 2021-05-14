@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/facebody/model/GenerateHumanSketchStyleRequest.h>
+#include <alibabacloud/facebody/model/ExtractFingerPrintRequest.h>
 
-using AlibabaCloud::Facebody::Model::GenerateHumanSketchStyleRequest;
+using AlibabaCloud::Facebody::Model::ExtractFingerPrintRequest;
 
-GenerateHumanSketchStyleRequest::GenerateHumanSketchStyleRequest() :
-	RpcServiceRequest("facebody", "2019-12-30", "GenerateHumanSketchStyle")
+ExtractFingerPrintRequest::ExtractFingerPrintRequest() :
+	RpcServiceRequest("facebody", "2019-12-30", "ExtractFingerPrint")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GenerateHumanSketchStyleRequest::~GenerateHumanSketchStyleRequest()
+ExtractFingerPrintRequest::~ExtractFingerPrintRequest()
 {}
 
-std::string GenerateHumanSketchStyleRequest::getReturnType()const
+std::string ExtractFingerPrintRequest::getImageData()const
 {
-	return returnType_;
+	return imageData_;
 }
 
-void GenerateHumanSketchStyleRequest::setReturnType(const std::string& returnType)
+void ExtractFingerPrintRequest::setImageData(const std::string& imageData)
 {
-	returnType_ = returnType;
-	setBodyParameter("ReturnType", returnType);
+	imageData_ = imageData;
+	setBodyParameter("ImageData", imageData);
 }
 
-std::string GenerateHumanSketchStyleRequest::getImageURL()const
+std::string ExtractFingerPrintRequest::getImageURL()const
 {
 	return imageURL_;
 }
 
-void GenerateHumanSketchStyleRequest::setImageURL(const std::string& imageURL)
+void ExtractFingerPrintRequest::setImageURL(const std::string& imageURL)
 {
 	imageURL_ = imageURL;
 	setBodyParameter("ImageURL", imageURL);

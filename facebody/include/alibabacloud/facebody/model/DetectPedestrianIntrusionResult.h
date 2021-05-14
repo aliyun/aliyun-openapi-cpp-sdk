@@ -44,8 +44,8 @@ namespace AlibabaCloud
 							long bottom;
 						};
 						long boxId;
-						std::string type;
 						long score;
+						std::string type;
 						bool isIntrude;
 						Box box;
 					};

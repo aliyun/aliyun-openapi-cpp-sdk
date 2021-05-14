@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				GenerateHumanSketchStyleRequest();
 				~GenerateHumanSketchStyleRequest();
 
+				std::string getReturnType()const;
+				void setReturnType(const std::string& returnType);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				std::string returnType_;
 				std::string imageURL_;
 
 			};

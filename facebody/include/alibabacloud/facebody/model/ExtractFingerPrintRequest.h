@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_GETREALPERSONVERIFICATIONRESULTREQUEST_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_GETREALPERSONVERIFICATIONRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_EXTRACTFINGERPRINTREQUEST_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_EXTRACTFINGERPRINTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT GetRealPersonVerificationResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_FACEBODY_EXPORT ExtractFingerPrintRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetRealPersonVerificationResultRequest();
-				~GetRealPersonVerificationResultRequest();
+				ExtractFingerPrintRequest();
+				~ExtractFingerPrintRequest();
 
-				std::string getMaterialHash()const;
-				void setMaterialHash(const std::string& materialHash);
-				std::string getVerificationToken()const;
-				void setVerificationToken(const std::string& verificationToken);
+				std::string getImageData()const;
+				void setImageData(const std::string& imageData);
+				std::string getImageURL()const;
+				void setImageURL(const std::string& imageURL);
 
             private:
-				std::string materialHash_;
-				std::string verificationToken_;
+				std::string imageData_;
+				std::string imageURL_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_GETREALPERSONVERIFICATIONRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_EXTRACTFINGERPRINTREQUEST_H_

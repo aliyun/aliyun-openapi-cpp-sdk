@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					bool pass;
+					bool passed;
 					std::string materialMatch;
 					std::string identityInfo;
 				};

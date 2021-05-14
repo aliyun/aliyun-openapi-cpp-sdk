@@ -42,10 +42,10 @@ void AddFaceImageTemplateResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["TemplateId"].isNull())
 		data_.templateId = dataNode["TemplateId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

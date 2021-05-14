@@ -40,22 +40,22 @@ void RecognizeHandGestureResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Score"].isNull())
-		data_.score = std::stof(dataNode["Score"].asString());
 	if(!dataNode["Type"].isNull())
 		data_.type = dataNode["Type"].asString();
 	if(!dataNode["X"].isNull())
 		data_.x = std::stol(dataNode["X"].asString());
 	if(!dataNode["Y"].isNull())
 		data_.y = std::stol(dataNode["Y"].asString());
-	if(!dataNode["Height"].isNull())
-		data_.height = std::stol(dataNode["Height"].asString());
 	if(!dataNode["Width"].isNull())
 		data_.width = std::stol(dataNode["Width"].asString());
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!dataNode["Height"].isNull())
+		data_.height = std::stol(dataNode["Height"].asString());
+	if(!dataNode["Score"].isNull())
+		data_.score = std::stof(dataNode["Score"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

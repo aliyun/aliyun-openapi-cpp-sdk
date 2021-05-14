@@ -27,17 +27,6 @@ GetRealPersonVerificationResultRequest::GetRealPersonVerificationResultRequest()
 GetRealPersonVerificationResultRequest::~GetRealPersonVerificationResultRequest()
 {}
 
-std::string GetRealPersonVerificationResultRequest::getVerificationToken()const
-{
-	return verificationToken_;
-}
-
-void GetRealPersonVerificationResultRequest::setVerificationToken(const std::string& verificationToken)
-{
-	verificationToken_ = verificationToken;
-	setBodyParameter("VerificationToken", verificationToken);
-}
-
 std::string GetRealPersonVerificationResultRequest::getMaterialHash()const
 {
 	return materialHash_;
@@ -47,5 +36,16 @@ void GetRealPersonVerificationResultRequest::setMaterialHash(const std::string& 
 {
 	materialHash_ = materialHash;
 	setBodyParameter("MaterialHash", materialHash);
+}
+
+std::string GetRealPersonVerificationResultRequest::getVerificationToken()const
+{
+	return verificationToken_;
+}
+
+void GetRealPersonVerificationResultRequest::setVerificationToken(const std::string& verificationToken)
+{
+	verificationToken_ = verificationToken;
+	setBodyParameter("VerificationToken", verificationToken);
 }
 

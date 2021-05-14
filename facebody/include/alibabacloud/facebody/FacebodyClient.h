@@ -78,6 +78,8 @@
 #include "model/DetectVideoLivingFaceResult.h"
 #include "model/EnhanceFaceRequest.h"
 #include "model/EnhanceFaceResult.h"
+#include "model/ExtractFingerPrintRequest.h"
+#include "model/ExtractFingerPrintResult.h"
 #include "model/ExtractPedestrianFeatureAttrRequest.h"
 #include "model/ExtractPedestrianFeatureAttrResult.h"
 #include "model/ExtractPedestrianFeatureAttributeRequest.h"
@@ -233,6 +235,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnhanceFaceResult> EnhanceFaceOutcome;
 			typedef std::future<EnhanceFaceOutcome> EnhanceFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::EnhanceFaceRequest&, const EnhanceFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceFaceAsyncHandler;
+			typedef Outcome<Error, Model::ExtractFingerPrintResult> ExtractFingerPrintOutcome;
+			typedef std::future<ExtractFingerPrintOutcome> ExtractFingerPrintOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::ExtractFingerPrintRequest&, const ExtractFingerPrintOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractFingerPrintAsyncHandler;
 			typedef Outcome<Error, Model::ExtractPedestrianFeatureAttrResult> ExtractPedestrianFeatureAttrOutcome;
 			typedef std::future<ExtractPedestrianFeatureAttrOutcome> ExtractPedestrianFeatureAttrOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::ExtractPedestrianFeatureAttrRequest&, const ExtractPedestrianFeatureAttrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractPedestrianFeatureAttrAsyncHandler;
@@ -415,6 +420,9 @@ namespace AlibabaCloud
 			EnhanceFaceOutcome enhanceFace(const Model::EnhanceFaceRequest &request)const;
 			void enhanceFaceAsync(const Model::EnhanceFaceRequest& request, const EnhanceFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnhanceFaceOutcomeCallable enhanceFaceCallable(const Model::EnhanceFaceRequest& request) const;
+			ExtractFingerPrintOutcome extractFingerPrint(const Model::ExtractFingerPrintRequest &request)const;
+			void extractFingerPrintAsync(const Model::ExtractFingerPrintRequest& request, const ExtractFingerPrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExtractFingerPrintOutcomeCallable extractFingerPrintCallable(const Model::ExtractFingerPrintRequest& request) const;
 			ExtractPedestrianFeatureAttrOutcome extractPedestrianFeatureAttr(const Model::ExtractPedestrianFeatureAttrRequest &request)const;
 			void extractPedestrianFeatureAttrAsync(const Model::ExtractPedestrianFeatureAttrRequest& request, const ExtractPedestrianFeatureAttrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExtractPedestrianFeatureAttrOutcomeCallable extractPedestrianFeatureAttrCallable(const Model::ExtractPedestrianFeatureAttrRequest& request) const;

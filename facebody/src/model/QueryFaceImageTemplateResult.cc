@@ -44,22 +44,22 @@ void QueryFaceImageTemplateResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElementsItem : allElementsNode)
 	{
 		Data::ElementsItem elementsItemObject;
-		if(!dataNodeElementsElementsItem["TemplateURL"].isNull())
-			elementsItemObject.templateURL = dataNodeElementsElementsItem["TemplateURL"].asString();
-		if(!dataNodeElementsElementsItem["UserId"].isNull())
-			elementsItemObject.userId = dataNodeElementsElementsItem["UserId"].asString();
 		if(!dataNodeElementsElementsItem["CreateTime"].isNull())
 			elementsItemObject.createTime = dataNodeElementsElementsItem["CreateTime"].asString();
 		if(!dataNodeElementsElementsItem["UpdateTime"].isNull())
 			elementsItemObject.updateTime = dataNodeElementsElementsItem["UpdateTime"].asString();
+		if(!dataNodeElementsElementsItem["UserId"].isNull())
+			elementsItemObject.userId = dataNodeElementsElementsItem["UserId"].asString();
 		if(!dataNodeElementsElementsItem["TemplateId"].isNull())
 			elementsItemObject.templateId = dataNodeElementsElementsItem["TemplateId"].asString();
+		if(!dataNodeElementsElementsItem["TemplateURL"].isNull())
+			elementsItemObject.templateURL = dataNodeElementsElementsItem["TemplateURL"].asString();
 		data_.elements.push_back(elementsItemObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

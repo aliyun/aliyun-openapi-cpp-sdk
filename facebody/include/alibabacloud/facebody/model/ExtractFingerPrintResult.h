@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_MONITOREXAMINATIONRESULT_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_MONITOREXAMINATIONRESULT_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_EXTRACTFINGERPRINTRESULT_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_EXTRACTFINGERPRINTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,49 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT MonitorExaminationResult : public ServiceResult
+			class ALIBABACLOUD_FACEBODY_EXPORT ExtractFingerPrintResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct FaceInfo
-					{
-						struct Pose
-						{
-							float pitch;
-							float roll;
-							float yaw;
-						};
-						long completeness;
-						Pose pose;
-						long faceNumber;
-					};
-					struct PersonInfo
-					{
-						struct CellPhone
-						{
-							float score;
-							float threshold;
-						};
-						struct EarPhone
-						{
-							float score;
-							float threshold;
-						};
-						long personNumber;
-						EarPhone earPhone;
-						CellPhone cellPhone;
-					};
-					PersonInfo personInfo;
-					float chatScore;
-					FaceInfo faceInfo;
-					float threshold;
+					std::string fingerPrint;
 				};
 
 
-				MonitorExaminationResult();
-				explicit MonitorExaminationResult(const std::string &payload);
-				~MonitorExaminationResult();
+				ExtractFingerPrintResult();
+				explicit ExtractFingerPrintResult(const std::string &payload);
+				~ExtractFingerPrintResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -87,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_MONITOREXAMINATIONRESULT_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_EXTRACTFINGERPRINTRESULT_H_

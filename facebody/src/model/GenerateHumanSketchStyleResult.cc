@@ -42,10 +42,10 @@ void GenerateHumanSketchStyleResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["ImageURL"].isNull())
 		data_.imageURL = dataNode["ImageURL"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

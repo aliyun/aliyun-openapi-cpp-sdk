@@ -44,19 +44,6 @@ void MonitorExaminationResult::parse(const std::string &payload)
 		data_.chatScore = std::stof(dataNode["ChatScore"].asString());
 	if(!dataNode["Threshold"].isNull())
 		data_.threshold = std::stof(dataNode["Threshold"].asString());
-	auto personInfoNode = dataNode["PersonInfo"];
-	if(!personInfoNode["PersonNumber"].isNull())
-		data_.personInfo.personNumber = std::stol(personInfoNode["PersonNumber"].asString());
-	auto earPhoneNode = personInfoNode["EarPhone"];
-	if(!earPhoneNode["Score"].isNull())
-		data_.personInfo.earPhone.score = std::stof(earPhoneNode["Score"].asString());
-	if(!earPhoneNode["Threshold"].isNull())
-		data_.personInfo.earPhone.threshold = std::stof(earPhoneNode["Threshold"].asString());
-	auto cellPhoneNode = personInfoNode["CellPhone"];
-	if(!cellPhoneNode["Score"].isNull())
-		data_.personInfo.cellPhone.score = std::stof(cellPhoneNode["Score"].asString());
-	if(!cellPhoneNode["Threshold"].isNull())
-		data_.personInfo.cellPhone.threshold = std::stof(cellPhoneNode["Threshold"].asString());
 	auto faceInfoNode = dataNode["FaceInfo"];
 	if(!faceInfoNode["Completeness"].isNull())
 		data_.faceInfo.completeness = std::stol(faceInfoNode["Completeness"].asString());
@@ -69,6 +56,19 @@ void MonitorExaminationResult::parse(const std::string &payload)
 		data_.faceInfo.pose.roll = std::stof(poseNode["Roll"].asString());
 	if(!poseNode["Yaw"].isNull())
 		data_.faceInfo.pose.yaw = std::stof(poseNode["Yaw"].asString());
+	auto personInfoNode = dataNode["PersonInfo"];
+	if(!personInfoNode["PersonNumber"].isNull())
+		data_.personInfo.personNumber = std::stol(personInfoNode["PersonNumber"].asString());
+	auto cellPhoneNode = personInfoNode["CellPhone"];
+	if(!cellPhoneNode["Score"].isNull())
+		data_.personInfo.cellPhone.score = std::stof(cellPhoneNode["Score"].asString());
+	if(!cellPhoneNode["Threshold"].isNull())
+		data_.personInfo.cellPhone.threshold = std::stof(cellPhoneNode["Threshold"].asString());
+	auto earPhoneNode = personInfoNode["EarPhone"];
+	if(!earPhoneNode["Score"].isNull())
+		data_.personInfo.earPhone.score = std::stof(earPhoneNode["Score"].asString());
+	if(!earPhoneNode["Threshold"].isNull())
+		data_.personInfo.earPhone.threshold = std::stof(earPhoneNode["Threshold"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())

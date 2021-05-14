@@ -14,31 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/facebody/model/DeleteFaceImageTemplateResult.h>
+#include <alibabacloud/facebody/model/ExtractFingerPrintResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Facebody;
 using namespace AlibabaCloud::Facebody::Model;
 
-DeleteFaceImageTemplateResult::DeleteFaceImageTemplateResult() :
+ExtractFingerPrintResult::ExtractFingerPrintResult() :
 	ServiceResult()
 {}
 
-DeleteFaceImageTemplateResult::DeleteFaceImageTemplateResult(const std::string &payload) :
+ExtractFingerPrintResult::ExtractFingerPrintResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteFaceImageTemplateResult::~DeleteFaceImageTemplateResult()
+ExtractFingerPrintResult::~ExtractFingerPrintResult()
 {}
 
-void DeleteFaceImageTemplateResult::parse(const std::string &payload)
+void ExtractFingerPrintResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["FingerPrint"].isNull())
+		data_.fingerPrint = dataNode["FingerPrint"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -46,12 +49,17 @@ void DeleteFaceImageTemplateResult::parse(const std::string &payload)
 
 }
 
-std::string DeleteFaceImageTemplateResult::getMessage()const
+std::string ExtractFingerPrintResult::getMessage()const
 {
 	return message_;
 }
 
-std::string DeleteFaceImageTemplateResult::getCode()const
+ExtractFingerPrintResult::Data ExtractFingerPrintResult::getData()const
+{
+	return data_;
+}
+
+std::string ExtractFingerPrintResult::getCode()const
 {
 	return code_;
 }

@@ -1059,6 +1059,42 @@ FacebodyClient::EnhanceFaceOutcomeCallable FacebodyClient::enhanceFaceCallable(c
 	return task->get_future();
 }
 
+FacebodyClient::ExtractFingerPrintOutcome FacebodyClient::extractFingerPrint(const ExtractFingerPrintRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExtractFingerPrintOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExtractFingerPrintOutcome(ExtractFingerPrintResult(outcome.result()));
+	else
+		return ExtractFingerPrintOutcome(outcome.error());
+}
+
+void FacebodyClient::extractFingerPrintAsync(const ExtractFingerPrintRequest& request, const ExtractFingerPrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, extractFingerPrint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::ExtractFingerPrintOutcomeCallable FacebodyClient::extractFingerPrintCallable(const ExtractFingerPrintRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExtractFingerPrintOutcome()>>(
+			[this, request]()
+			{
+			return this->extractFingerPrint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::ExtractPedestrianFeatureAttrOutcome FacebodyClient::extractPedestrianFeatureAttr(const ExtractPedestrianFeatureAttrRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

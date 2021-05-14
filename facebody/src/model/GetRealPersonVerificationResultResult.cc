@@ -40,16 +40,16 @@ void GetRealPersonVerificationResultResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Pass"].isNull())
-		data_.pass = dataNode["Pass"].asString() == "true";
-	if(!dataNode["MaterialMatch"].isNull())
-		data_.materialMatch = dataNode["MaterialMatch"].asString();
+	if(!dataNode["Passed"].isNull())
+		data_.passed = dataNode["Passed"].asString() == "true";
 	if(!dataNode["IdentityInfo"].isNull())
 		data_.identityInfo = dataNode["IdentityInfo"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	if(!dataNode["MaterialMatch"].isNull())
+		data_.materialMatch = dataNode["MaterialMatch"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
