@@ -104,6 +104,17 @@ void EnableAdditionalBandwidthRequest::setOrderTimeLength(const std::string& ord
 	setParameter("OrderTimeLength", orderTimeLength);
 }
 
+int EnableAdditionalBandwidthRequest::getAutoRenewPeriod()const
+{
+	return autoRenewPeriod_;
+}
+
+void EnableAdditionalBandwidthRequest::setAutoRenewPeriod(int autoRenewPeriod)
+{
+	autoRenewPeriod_ = autoRenewPeriod;
+	setParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+}
+
 std::string EnableAdditionalBandwidthRequest::getProduct()const
 {
 	return product_;
@@ -179,6 +190,17 @@ void EnableAdditionalBandwidthRequest::setInstanceId(const std::string& instance
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+bool EnableAdditionalBandwidthRequest::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+void EnableAdditionalBandwidthRequest::setAutoRenew(bool autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string EnableAdditionalBandwidthRequest::getCategory()const

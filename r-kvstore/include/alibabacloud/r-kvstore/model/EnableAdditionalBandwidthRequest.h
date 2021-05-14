@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setNodeId(const std::string& nodeId);
 				std::string getOrderTimeLength()const;
 				void setOrderTimeLength(const std::string& orderTimeLength);
+				int getAutoRenewPeriod()const;
+				void setAutoRenewPeriod(int autoRenewPeriod);
 				std::string getProduct()const;
 				void setProduct(const std::string& product);
 				bool getAutoPay()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				bool getAutoRenew()const;
+				void setAutoRenew(bool autoRenew);
 				std::string getCategory()const;
 				void setCategory(const std::string& category);
 
@@ -74,6 +78,7 @@ namespace AlibabaCloud
 				std::string sourceBiz_;
 				std::string nodeId_;
 				std::string orderTimeLength_;
+				int autoRenewPeriod_;
 				std::string product_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
@@ -81,6 +86,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string instanceId_;
+				bool autoRenew_;
 				std::string category_;
 
 			};
