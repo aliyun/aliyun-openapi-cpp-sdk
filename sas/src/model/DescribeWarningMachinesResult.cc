@@ -45,8 +45,12 @@ void DescribeWarningMachinesResult::parse(const std::string &payload)
 		WarningMachine warningMachinesObject;
 		if(!valueWarningMachinesWarningMachine["Uuid"].isNull())
 			warningMachinesObject.uuid = valueWarningMachinesWarningMachine["Uuid"].asString();
-		if(!valueWarningMachinesWarningMachine["MachineName"].isNull())
-			warningMachinesObject.machineName = valueWarningMachinesWarningMachine["MachineName"].asString();
+		if(!valueWarningMachinesWarningMachine["InstanceName"].isNull())
+			warningMachinesObject.instanceName = valueWarningMachinesWarningMachine["InstanceName"].asString();
+		if(!valueWarningMachinesWarningMachine["InstanceId"].isNull())
+			warningMachinesObject.instanceId = valueWarningMachinesWarningMachine["InstanceId"].asString();
+		if(!valueWarningMachinesWarningMachine["RegionId"].isNull())
+			warningMachinesObject.regionId = valueWarningMachinesWarningMachine["RegionId"].asString();
 		if(!valueWarningMachinesWarningMachine["InternetIp"].isNull())
 			warningMachinesObject.internetIp = valueWarningMachinesWarningMachine["InternetIp"].asString();
 		if(!valueWarningMachinesWarningMachine["IntranetIp"].isNull())

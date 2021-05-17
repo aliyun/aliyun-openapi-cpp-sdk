@@ -27,26 +27,26 @@ DescribeVulListRequest::DescribeVulListRequest() :
 DescribeVulListRequest::~DescribeVulListRequest()
 {}
 
-std::string DescribeVulListRequest::getStatusList()const
+int DescribeVulListRequest::getMinScore()const
 {
-	return statusList_;
+	return minScore_;
 }
 
-void DescribeVulListRequest::setStatusList(const std::string& statusList)
+void DescribeVulListRequest::setMinScore(int minScore)
 {
-	statusList_ = statusList;
-	setParameter("StatusList", statusList);
+	minScore_ = minScore;
+	setParameter("MinScore", std::to_string(minScore));
 }
 
-std::string DescribeVulListRequest::getRemark()const
+std::string DescribeVulListRequest::getAttachTypes()const
 {
-	return remark_;
+	return attachTypes_;
 }
 
-void DescribeVulListRequest::setRemark(const std::string& remark)
+void DescribeVulListRequest::setAttachTypes(const std::string& attachTypes)
 {
-	remark_ = remark;
-	setParameter("Remark", remark);
+	attachTypes_ = attachTypes;
+	setParameter("AttachTypes", attachTypes);
 }
 
 std::string DescribeVulListRequest::getType()const
@@ -60,6 +60,39 @@ void DescribeVulListRequest::setType(const std::string& type)
 	setParameter("Type", type);
 }
 
+std::string DescribeVulListRequest::getVpcInstanceIds()const
+{
+	return vpcInstanceIds_;
+}
+
+void DescribeVulListRequest::setVpcInstanceIds(const std::string& vpcInstanceIds)
+{
+	vpcInstanceIds_ = vpcInstanceIds;
+	setParameter("VpcInstanceIds", vpcInstanceIds);
+}
+
+long DescribeVulListRequest::getCreateTsStart()const
+{
+	return createTsStart_;
+}
+
+void DescribeVulListRequest::setCreateTsStart(long createTsStart)
+{
+	createTsStart_ = createTsStart;
+	setParameter("CreateTsStart", std::to_string(createTsStart));
+}
+
+std::string DescribeVulListRequest::getContainerFieldName()const
+{
+	return containerFieldName_;
+}
+
+void DescribeVulListRequest::setContainerFieldName(const std::string& containerFieldName)
+{
+	containerFieldName_ = containerFieldName;
+	setParameter("ContainerFieldName", containerFieldName);
+}
+
 std::string DescribeVulListRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -71,48 +104,48 @@ void DescribeVulListRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-int DescribeVulListRequest::getPageSize()const
+long DescribeVulListRequest::getModifyTsEnd()const
 {
-	return pageSize_;
+	return modifyTsEnd_;
 }
 
-void DescribeVulListRequest::setPageSize(int pageSize)
+void DescribeVulListRequest::setModifyTsEnd(long modifyTsEnd)
 {
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	modifyTsEnd_ = modifyTsEnd;
+	setParameter("ModifyTsEnd", std::to_string(modifyTsEnd));
 }
 
-std::string DescribeVulListRequest::getLang()const
+std::string DescribeVulListRequest::getLevel()const
 {
-	return lang_;
+	return level_;
 }
 
-void DescribeVulListRequest::setLang(const std::string& lang)
+void DescribeVulListRequest::setLevel(const std::string& level)
 {
-	lang_ = lang;
-	setParameter("Lang", lang);
+	level_ = level;
+	setParameter("Level", level);
 }
 
-std::string DescribeVulListRequest::getDealed()const
+std::string DescribeVulListRequest::getResource()const
 {
-	return dealed_;
+	return resource_;
 }
 
-void DescribeVulListRequest::setDealed(const std::string& dealed)
+void DescribeVulListRequest::setResource(const std::string& resource)
 {
-	dealed_ = dealed;
-	setParameter("Dealed", dealed);
+	resource_ = resource;
+	setParameter("Resource", resource);
 }
 
-int DescribeVulListRequest::getCurrentPage()const
+std::string DescribeVulListRequest::getGroupId()const
 {
-	return currentPage_;
+	return groupId_;
 }
 
-void DescribeVulListRequest::setCurrentPage(int currentPage)
+void DescribeVulListRequest::setGroupId(const std::string& groupId)
 {
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeVulListRequest::getAliasName()const
@@ -148,6 +181,17 @@ void DescribeVulListRequest::setIds(const std::string& ids)
 	setParameter("Ids", ids);
 }
 
+long DescribeVulListRequest::getCreateTsEnd()const
+{
+	return createTsEnd_;
+}
+
+void DescribeVulListRequest::setCreateTsEnd(long createTsEnd)
+{
+	createTsEnd_ = createTsEnd;
+	setParameter("CreateTsEnd", std::to_string(createTsEnd));
+}
+
 std::string DescribeVulListRequest::getNecessity()const
 {
 	return necessity_;
@@ -168,5 +212,126 @@ void DescribeVulListRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
 	setParameter("Uuids", uuids);
+}
+
+std::string DescribeVulListRequest::getStatusList()const
+{
+	return statusList_;
+}
+
+void DescribeVulListRequest::setStatusList(const std::string& statusList)
+{
+	statusList_ = statusList;
+	setParameter("StatusList", statusList);
+}
+
+std::string DescribeVulListRequest::getTargetType()const
+{
+	return targetType_;
+}
+
+void DescribeVulListRequest::setTargetType(const std::string& targetType)
+{
+	targetType_ = targetType;
+	setParameter("TargetType", targetType);
+}
+
+std::string DescribeVulListRequest::getRemark()const
+{
+	return remark_;
+}
+
+void DescribeVulListRequest::setRemark(const std::string& remark)
+{
+	remark_ = remark;
+	setParameter("Remark", remark);
+}
+
+std::string DescribeVulListRequest::getContainerFieldValue()const
+{
+	return containerFieldValue_;
+}
+
+void DescribeVulListRequest::setContainerFieldValue(const std::string& containerFieldValue)
+{
+	containerFieldValue_ = containerFieldValue;
+	setParameter("ContainerFieldValue", containerFieldValue);
+}
+
+int DescribeVulListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeVulListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+long DescribeVulListRequest::getModifyTsStart()const
+{
+	return modifyTsStart_;
+}
+
+void DescribeVulListRequest::setModifyTsStart(long modifyTsStart)
+{
+	modifyTsStart_ = modifyTsStart;
+	setParameter("ModifyTsStart", std::to_string(modifyTsStart));
+}
+
+std::string DescribeVulListRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeVulListRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
+}
+
+std::string DescribeVulListRequest::getDealed()const
+{
+	return dealed_;
+}
+
+void DescribeVulListRequest::setDealed(const std::string& dealed)
+{
+	dealed_ = dealed;
+	setParameter("Dealed", dealed);
+}
+
+int DescribeVulListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeVulListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeVulListRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeVulListRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
+std::string DescribeVulListRequest::getBatchName()const
+{
+	return batchName_;
+}
+
+void DescribeVulListRequest::setBatchName(const std::string& batchName)
+{
+	batchName_ = batchName;
+	setParameter("BatchName", batchName);
 }
 

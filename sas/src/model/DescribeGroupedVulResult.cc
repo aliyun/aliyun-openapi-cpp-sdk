@@ -61,6 +61,8 @@ void DescribeGroupedVulResult::parse(const std::string &payload)
 			groupedVulItemsObject.handledCount = std::stoi(valueGroupedVulItemsGroupedVulItem["HandledCount"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["Tags"].isNull())
 			groupedVulItemsObject.tags = valueGroupedVulItemsGroupedVulItem["Tags"].asString();
+		if(!valueGroupedVulItemsGroupedVulItem["TotalFixCount"].isNull())
+			groupedVulItemsObject.totalFixCount = std::stol(valueGroupedVulItemsGroupedVulItem["TotalFixCount"].asString());
 		groupedVulItems_.push_back(groupedVulItemsObject);
 	}
 	if(!value["PageSize"].isNull())

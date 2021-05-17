@@ -45,9 +45,9 @@ void DescribeAssetDetailByUuidResult::parse(const std::string &payload)
 	if(!assetDetailNode["IntranetIp"].isNull())
 		assetDetail_.intranetIp = assetDetailNode["IntranetIp"].asString();
 	if(!assetDetailNode["InstanceName"].isNull())
-		assetDetail_.instanceName = std::stoi(assetDetailNode["InstanceName"].asString());
+		assetDetail_.instanceName = assetDetailNode["InstanceName"].asString();
 	if(!assetDetailNode["InstanceId"].isNull())
-		assetDetail_.instanceId = std::stoi(assetDetailNode["InstanceId"].asString());
+		assetDetail_.instanceId = assetDetailNode["InstanceId"].asString();
 	if(!assetDetailNode["Ip"].isNull())
 		assetDetail_.ip = assetDetailNode["Ip"].asString();
 	if(!assetDetailNode["Uuid"].isNull())
@@ -60,6 +60,8 @@ void DescribeAssetDetailByUuidResult::parse(const std::string &payload)
 		assetDetail_.clientStatus = assetDetailNode["ClientStatus"].asString();
 	if(!assetDetailNode["Region"].isNull())
 		assetDetail_.region = assetDetailNode["Region"].asString();
+	if(!assetDetailNode["RegionId"].isNull())
+		assetDetail_.regionId = assetDetailNode["RegionId"].asString();
 	if(!assetDetailNode["RegionName"].isNull())
 		assetDetail_.regionName = assetDetailNode["RegionName"].asString();
 	if(!assetDetailNode["Tag"].isNull())
@@ -84,8 +86,10 @@ void DescribeAssetDetailByUuidResult::parse(const std::string &payload)
 		assetDetail_.osName = assetDetailNode["OsName"].asString();
 	if(!assetDetailNode["VpcInstanceId"].isNull())
 		assetDetail_.vpcInstanceId = assetDetailNode["VpcInstanceId"].asString();
-	if(!assetDetailNode["OsName"].isNull())
-		assetDetail_.osName1 = assetDetailNode["OsName"].asString();
+	if(!assetDetailNode["InstanceStatus"].isNull())
+		assetDetail_.instanceStatus = assetDetailNode["InstanceStatus"].asString();
+	if(!assetDetailNode["CreateTime"].isNull())
+		assetDetail_.createTime = std::stol(assetDetailNode["CreateTime"].asString());
 		auto allIpList = assetDetailNode["IpList"]["Ip"];
 		for (auto value : allIpList)
 			assetDetail_.ipList.push_back(value.asString());

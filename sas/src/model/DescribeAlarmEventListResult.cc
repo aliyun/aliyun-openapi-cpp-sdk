@@ -57,6 +57,8 @@ void DescribeAlarmEventListResult::parse(const std::string &payload)
 			suspEventsObject.startTime = std::stol(valueSuspEventsSuspEventsItem["StartTime"].asString());
 		if(!valueSuspEventsSuspEventsItem["EndTime"].isNull())
 			suspEventsObject.endTime = std::stol(valueSuspEventsSuspEventsItem["EndTime"].asString());
+		if(!valueSuspEventsSuspEventsItem["OperateTime"].isNull())
+			suspEventsObject.operateTime = std::stol(valueSuspEventsSuspEventsItem["OperateTime"].asString());
 		if(!valueSuspEventsSuspEventsItem["AlarmEventType"].isNull())
 			suspEventsObject.alarmEventType = valueSuspEventsSuspEventsItem["AlarmEventType"].asString();
 		if(!valueSuspEventsSuspEventsItem["SuspiciousEventCount"].isNull())
@@ -91,6 +93,30 @@ void DescribeAlarmEventListResult::parse(const std::string &payload)
 			suspEventsObject.alarmEventNameOriginal = valueSuspEventsSuspEventsItem["AlarmEventNameOriginal"].asString();
 		if(!valueSuspEventsSuspEventsItem["InstanceId"].isNull())
 			suspEventsObject.instanceId = valueSuspEventsSuspEventsItem["InstanceId"].asString();
+		if(!valueSuspEventsSuspEventsItem["ContainHwMode"].isNull())
+			suspEventsObject.containHwMode = valueSuspEventsSuspEventsItem["ContainHwMode"].asString() == "true";
+		if(!valueSuspEventsSuspEventsItem["Stages"].isNull())
+			suspEventsObject.stages = valueSuspEventsSuspEventsItem["Stages"].asString();
+		if(!valueSuspEventsSuspEventsItem["ContainerImageId"].isNull())
+			suspEventsObject.containerImageId = valueSuspEventsSuspEventsItem["ContainerImageId"].asString();
+		if(!valueSuspEventsSuspEventsItem["ContainerImageName"].isNull())
+			suspEventsObject.containerImageName = valueSuspEventsSuspEventsItem["ContainerImageName"].asString();
+		if(!valueSuspEventsSuspEventsItem["ContainerId"].isNull())
+			suspEventsObject.containerId = valueSuspEventsSuspEventsItem["ContainerId"].asString();
+		if(!valueSuspEventsSuspEventsItem["K8sNamespace"].isNull())
+			suspEventsObject.k8sNamespace = valueSuspEventsSuspEventsItem["K8sNamespace"].asString();
+		if(!valueSuspEventsSuspEventsItem["K8sClusterId"].isNull())
+			suspEventsObject.k8sClusterId = valueSuspEventsSuspEventsItem["K8sClusterId"].asString();
+		if(!valueSuspEventsSuspEventsItem["K8sClusterName"].isNull())
+			suspEventsObject.k8sClusterName = valueSuspEventsSuspEventsItem["K8sClusterName"].asString();
+		if(!valueSuspEventsSuspEventsItem["K8sNodeId"].isNull())
+			suspEventsObject.k8sNodeId = valueSuspEventsSuspEventsItem["K8sNodeId"].asString();
+		if(!valueSuspEventsSuspEventsItem["K8sPodName"].isNull())
+			suspEventsObject.k8sPodName = valueSuspEventsSuspEventsItem["K8sPodName"].asString();
+		if(!valueSuspEventsSuspEventsItem["K8sNodeName"].isNull())
+			suspEventsObject.k8sNodeName = valueSuspEventsSuspEventsItem["K8sNodeName"].asString();
+		if(!valueSuspEventsSuspEventsItem["AppName"].isNull())
+			suspEventsObject.appName = valueSuspEventsSuspEventsItem["AppName"].asString();
 		suspEvents_.push_back(suspEventsObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

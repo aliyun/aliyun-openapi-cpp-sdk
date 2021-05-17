@@ -27,6 +27,17 @@ HandleSimilarSecurityEventsRequest::HandleSimilarSecurityEventsRequest() :
 HandleSimilarSecurityEventsRequest::~HandleSimilarSecurityEventsRequest()
 {}
 
+std::string HandleSimilarSecurityEventsRequest::getMarkMissParam()const
+{
+	return markMissParam_;
+}
+
+void HandleSimilarSecurityEventsRequest::setMarkMissParam(const std::string& markMissParam)
+{
+	markMissParam_ = markMissParam;
+	setParameter("MarkMissParam", markMissParam);
+}
+
 long HandleSimilarSecurityEventsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

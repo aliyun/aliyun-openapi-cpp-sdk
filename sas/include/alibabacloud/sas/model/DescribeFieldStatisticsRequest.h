@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setMachineTypes(const std::string& machineTypes);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
 				std::string machineTypes_;
 				std::string sourceIp_;
+				std::string regionId_;
 
 			};
 		}

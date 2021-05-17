@@ -43,22 +43,24 @@ namespace AlibabaCloud
 					std::vector<std::string> diskInfoList;
 					std::string internetIp;
 					std::string regionName;
+					std::string instanceStatus;
 					std::string kernel;
 					std::string hostName;
-					std::string osName1;
 					std::string clientStatus;
-					int instanceId;
+					std::string instanceId;
 					std::string cpuInfo;
 					std::vector<std::string> ipList;
 					std::string osName;
+					long createTime;
 					std::string sysInfo;
-					int instanceName;
+					std::string instanceName;
 					std::vector<std::string> macList;
 					std::string assetType;
 					std::string uuid;
 					int mem;
 					std::string region;
 					std::string vpcInstanceId;
+					std::string regionId;
 					std::string tag;
 				};
 

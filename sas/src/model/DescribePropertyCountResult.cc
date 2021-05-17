@@ -49,7 +49,16 @@ void DescribePropertyCountResult::parse(const std::string &payload)
 		user_ = std::stoi(value["User"].asString());
 	if(!value["Cron"].isNull())
 		cron_ = std::stoi(value["Cron"].asString());
+	if(!value["Sca"].isNull())
+		sca_ = std::stoi(value["Sca"].asString());
+	if(!value["AutoRun"].isNull())
+		autoRun_ = std::stoi(value["AutoRun"].asString());
 
+}
+
+int DescribePropertyCountResult::getSca()const
+{
+	return sca_;
 }
 
 int DescribePropertyCountResult::getUser()const
@@ -75,5 +84,10 @@ int DescribePropertyCountResult::getSoftware()const
 int DescribePropertyCountResult::getCron()const
 {
 	return cron_;
+}
+
+int DescribePropertyCountResult::getAutoRun()const
+{
+	return autoRun_;
 }
 

@@ -82,6 +82,17 @@ void DescribeRiskCheckResultRequest::setAssetType(const std::string& assetType)
 	setParameter("AssetType", assetType);
 }
 
+std::string DescribeRiskCheckResultRequest::getQueryFlag()const
+{
+	return queryFlag_;
+}
+
+void DescribeRiskCheckResultRequest::setQueryFlag(const std::string& queryFlag)
+{
+	queryFlag_ = queryFlag;
+	setParameter("QueryFlag", queryFlag);
+}
+
 long DescribeRiskCheckResultRequest::getGroupId()const
 {
 	return groupId_;

@@ -47,16 +47,16 @@ void DescribeSecureSuggestionResult::parse(const std::string &payload)
 			suggestionsObject.suggestType = valueSuggestionsSuggestion["SuggestType"].asString();
 		if(!valueSuggestionsSuggestion["Points"].isNull())
 			suggestionsObject.points = std::stoi(valueSuggestionsSuggestion["Points"].asString());
-		auto allDetailNode = allSuggestionsNode["Detail"]["DetailItem"];
-		for (auto allSuggestionsNodeDetailDetailItem : allDetailNode)
+		auto allDetailNode = valueSuggestionsSuggestion["Detail"]["DetailItem"];
+		for (auto valueSuggestionsSuggestionDetailDetailItem : allDetailNode)
 		{
 			Suggestion::DetailItem detailObject;
-			if(!allSuggestionsNodeDetailDetailItem["Description"].isNull())
-				detailObject.description = allSuggestionsNodeDetailDetailItem["Description"].asString();
-			if(!allSuggestionsNodeDetailDetailItem["SubType"].isNull())
-				detailObject.subType = allSuggestionsNodeDetailDetailItem["SubType"].asString();
-			if(!allSuggestionsNodeDetailDetailItem["Title"].isNull())
-				detailObject.title = allSuggestionsNodeDetailDetailItem["Title"].asString();
+			if(!valueSuggestionsSuggestionDetailDetailItem["Description"].isNull())
+				detailObject.description = valueSuggestionsSuggestionDetailDetailItem["Description"].asString();
+			if(!valueSuggestionsSuggestionDetailDetailItem["SubType"].isNull())
+				detailObject.subType = valueSuggestionsSuggestionDetailDetailItem["SubType"].asString();
+			if(!valueSuggestionsSuggestionDetailDetailItem["Title"].isNull())
+				detailObject.title = valueSuggestionsSuggestionDetailDetailItem["Title"].asString();
 			suggestionsObject.detail.push_back(detailObject);
 		}
 		suggestions_.push_back(suggestionsObject);

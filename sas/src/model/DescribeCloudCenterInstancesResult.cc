@@ -93,6 +93,24 @@ void DescribeCloudCenterInstancesResult::parse(const std::string &payload)
 			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
 		if(!valueInstancesInstance["GroupId"].isNull())
 			instancesObject.groupId = valueInstancesInstance["GroupId"].asString();
+		if(!valueInstancesInstance["Importance"].isNull())
+			instancesObject.importance = std::stoi(valueInstancesInstance["Importance"].asString());
+		if(!valueInstancesInstance["ClientVersion"].isNull())
+			instancesObject.clientVersion = valueInstancesInstance["ClientVersion"].asString();
+		if(!valueInstancesInstance["RiskCount"].isNull())
+			instancesObject.riskCount = valueInstancesInstance["RiskCount"].asString();
+		if(!valueInstancesInstance["ClusterId"].isNull())
+			instancesObject.clusterId = valueInstancesInstance["ClusterId"].asString();
+		if(!valueInstancesInstance["ClusterName"].isNull())
+			instancesObject.clusterName = valueInstancesInstance["ClusterName"].asString();
+		if(!valueInstancesInstance["CreatedTime"].isNull())
+			instancesObject.createdTime = std::stol(valueInstancesInstance["CreatedTime"].asString());
+		if(!valueInstancesInstance["PodCount"].isNull())
+			instancesObject.podCount = std::stoi(valueInstancesInstance["PodCount"].asString());
+		if(!valueInstancesInstance["ExposedStatus"].isNull())
+			instancesObject.exposedStatus = std::stoi(valueInstancesInstance["ExposedStatus"].asString());
+		if(!valueInstancesInstance["AutoSnapshotsLevel"].isNull())
+			instancesObject.autoSnapshotsLevel = std::stoi(valueInstancesInstance["AutoSnapshotsLevel"].asString());
 		instances_.push_back(instancesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

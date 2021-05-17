@@ -37,12 +37,14 @@ namespace AlibabaCloud
 				DescribeDomainCountResult();
 				explicit DescribeDomainCountResult(const std::string &payload);
 				~DescribeDomainCountResult();
+				int getSubDomainsCount()const;
 				int getTotalDomainsCount()const;
 				int getRootDomainsCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int subDomainsCount_;
 				int totalDomainsCount_;
 				int rootDomainsCount_;
 

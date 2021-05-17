@@ -34,9 +34,26 @@ namespace AlibabaCloud
 			public:
 				struct SecurityEventOperation
 				{
+					struct MarkFieldItem
+					{
+						std::string filedName;
+						std::vector<std::string> supportedMisType;
+						std::string markMisValue;
+						std::string markMisType;
+						std::string filedAliasName;
+					};
+					struct SecurityEventOperation1
+					{
+						std::string filedName;
+						std::string markMisValue;
+						std::vector<std::string> supportedMisType2;
+						std::string filedAliasName;
+					};
 					std::string operationParams;
 					std::string operationCode;
 					bool userCanOperate;
+					std::vector<SecurityEventOperation::SecurityEventOperation1> markFieldsSource;
+					std::vector<SecurityEventOperation::MarkFieldItem> markField;
 				};
 
 

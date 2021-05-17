@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				HandleSimilarSecurityEventsRequest();
 				~HandleSimilarSecurityEventsRequest();
 
+				std::string getMarkMissParam()const;
+				void setMarkMissParam(const std::string& markMissParam);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
 				void setOperationParams(const std::string& operationParams);
 
             private:
+				std::string markMissParam_;
 				long resourceOwnerId_;
 				std::string sourceIp_;
 				std::string operationCode_;

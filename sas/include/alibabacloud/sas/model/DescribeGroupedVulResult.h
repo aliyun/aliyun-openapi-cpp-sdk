@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string aliasName;
 					int asapCount;
 					int nntfCount;
+					long totalFixCount;
 					std::string tags;
 					std::string name;
 				};

@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					int cveNum;
 					int trojan;
 					int cmsNum;
+					int scaNum;
 					int emgNum;
 					int sysNum;
 					int vul;

@@ -50,6 +50,8 @@ namespace AlibabaCloud
 				std::vector<DomainDetailItem> getDomainDetailItems()const;
 				std::string getRootDomain()const;
 				std::string getDomain()const;
+				int getVulCount()const;
+				int getAlarmCount()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -57,6 +59,8 @@ namespace AlibabaCloud
 				std::vector<DomainDetailItem> domainDetailItems_;
 				std::string rootDomain_;
 				std::string domain_;
+				int vulCount_;
+				int alarmCount_;
 
 			};
 		}

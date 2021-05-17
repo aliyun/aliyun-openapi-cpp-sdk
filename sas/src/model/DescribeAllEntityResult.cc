@@ -51,6 +51,8 @@ void DescribeAllEntityResult::parse(const std::string &payload)
 			entityListObject.ip = valueEntityListEntity["Ip"].asString();
 		if(!valueEntityListEntity["Uuid"].isNull())
 			entityListObject.uuid = valueEntityListEntity["Uuid"].asString();
+		if(!valueEntityListEntity["Os"].isNull())
+			entityListObject.os = valueEntityListEntity["Os"].asString();
 		if(!valueEntityListEntity["InternetIp"].isNull())
 			entityListObject.internetIp = valueEntityListEntity["InternetIp"].asString();
 		if(!valueEntityListEntity["IntranetIp"].isNull())

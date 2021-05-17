@@ -48,9 +48,9 @@ void DescribeAssetDetailByUuidsResult::parse(const std::string &payload)
 		if(!valueAssetListAsset["IntranetIp"].isNull())
 			assetListObject.intranetIp = valueAssetListAsset["IntranetIp"].asString();
 		if(!valueAssetListAsset["InstanceName"].isNull())
-			assetListObject.instanceName = std::stoi(valueAssetListAsset["InstanceName"].asString());
+			assetListObject.instanceName = valueAssetListAsset["InstanceName"].asString();
 		if(!valueAssetListAsset["InstanceId"].isNull())
-			assetListObject.instanceId = std::stoi(valueAssetListAsset["InstanceId"].asString());
+			assetListObject.instanceId = valueAssetListAsset["InstanceId"].asString();
 		if(!valueAssetListAsset["Ip"].isNull())
 			assetListObject.ip = valueAssetListAsset["Ip"].asString();
 		if(!valueAssetListAsset["Uuid"].isNull())
@@ -61,6 +61,8 @@ void DescribeAssetDetailByUuidsResult::parse(const std::string &payload)
 			assetListObject.os = valueAssetListAsset["Os"].asString();
 		if(!valueAssetListAsset["ClientStatus"].isNull())
 			assetListObject.clientStatus = valueAssetListAsset["ClientStatus"].asString();
+		if(!valueAssetListAsset["RegionId"].isNull())
+			assetListObject.regionId = valueAssetListAsset["RegionId"].asString();
 		if(!valueAssetListAsset["Region"].isNull())
 			assetListObject.region = valueAssetListAsset["Region"].asString();
 		if(!valueAssetListAsset["RegionName"].isNull())

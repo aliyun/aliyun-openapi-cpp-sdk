@@ -69,14 +69,14 @@ void DescribeRiskCheckResultResult::parse(const std::string &payload)
 			listObject.repairStatus = valueListRiskCheckResultForDisplay["RepairStatus"].asString();
 		if(!valueListRiskCheckResultForDisplay["RiskAssertType"].isNull())
 			listObject.riskAssertType = valueListRiskCheckResultForDisplay["RiskAssertType"].asString();
-		auto allRiskItemResourcesNode = allListNode["RiskItemResources"]["RiskItemResource"];
-		for (auto allListNodeRiskItemResourcesRiskItemResource : allRiskItemResourcesNode)
+		auto allRiskItemResourcesNode = valueListRiskCheckResultForDisplay["RiskItemResources"]["RiskItemResource"];
+		for (auto valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource : allRiskItemResourcesNode)
 		{
 			RiskCheckResultForDisplay::RiskItemResource riskItemResourcesObject;
-			if(!allListNodeRiskItemResourcesRiskItemResource["ResourceName"].isNull())
-				riskItemResourcesObject.resourceName = allListNodeRiskItemResourcesRiskItemResource["ResourceName"].asString();
-			if(!allListNodeRiskItemResourcesRiskItemResource["ContentResource"].isNull())
-				riskItemResourcesObject.contentResource = allListNodeRiskItemResourcesRiskItemResource["ContentResource"].asString();
+			if(!valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ResourceName"].isNull())
+				riskItemResourcesObject.resourceName = valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ResourceName"].asString();
+			if(!valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ContentResource"].isNull())
+				riskItemResourcesObject.contentResource = valueListRiskCheckResultForDisplayRiskItemResourcesRiskItemResource["ContentResource"].asString();
 			listObject.riskItemResources.push_back(riskItemResourcesObject);
 		}
 		list_.push_back(listObject);

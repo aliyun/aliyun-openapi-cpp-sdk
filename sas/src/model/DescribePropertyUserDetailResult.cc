@@ -45,6 +45,8 @@ void DescribePropertyUserDetailResult::parse(const std::string &payload)
 		PropertyUser propertysObject;
 		if(!valuePropertysPropertyUser["LastLoginTime"].isNull())
 			propertysObject.lastLoginTime = valuePropertysPropertyUser["LastLoginTime"].asString();
+		if(!valuePropertysPropertyUser["LastLoginTimestamp"].isNull())
+			propertysObject.lastLoginTimestamp = std::stol(valuePropertysPropertyUser["LastLoginTimestamp"].asString());
 		if(!valuePropertysPropertyUser["IsRoot"].isNull())
 			propertysObject.isRoot = valuePropertysPropertyUser["IsRoot"].asString();
 		if(!valuePropertysPropertyUser["InstanceName"].isNull())

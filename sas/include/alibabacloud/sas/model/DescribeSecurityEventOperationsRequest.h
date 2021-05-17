@@ -39,12 +39,15 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 				long getSecurityEventId()const;
 				void setSecurityEventId(long securityEventId);
 
             private:
 				long resourceOwnerId_;
 				std::string sourceIp_;
+				std::string lang_;
 				long securityEventId_;
 
 			};

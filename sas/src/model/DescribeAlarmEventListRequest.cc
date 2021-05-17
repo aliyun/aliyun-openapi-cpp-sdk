@@ -27,6 +27,17 @@ DescribeAlarmEventListRequest::DescribeAlarmEventListRequest() :
 DescribeAlarmEventListRequest::~DescribeAlarmEventListRequest()
 {}
 
+std::string DescribeAlarmEventListRequest::getTargetType()const
+{
+	return targetType_;
+}
+
+void DescribeAlarmEventListRequest::setTargetType(const std::string& targetType)
+{
+	targetType_ = targetType;
+	setParameter("TargetType", targetType);
+}
+
 std::string DescribeAlarmEventListRequest::getAlarmEventType()const
 {
 	return alarmEventType_;
@@ -49,6 +60,17 @@ void DescribeAlarmEventListRequest::setRemark(const std::string& remark)
 	setParameter("Remark", remark);
 }
 
+std::string DescribeAlarmEventListRequest::getContainerFieldName()const
+{
+	return containerFieldName_;
+}
+
+void DescribeAlarmEventListRequest::setContainerFieldName(const std::string& containerFieldName)
+{
+	containerFieldName_ = containerFieldName;
+	setParameter("ContainerFieldName", containerFieldName);
+}
+
 std::string DescribeAlarmEventListRequest::getAlarmEventName()const
 {
 	return alarmEventName_;
@@ -69,6 +91,17 @@ void DescribeAlarmEventListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeAlarmEventListRequest::getContainerFieldValue()const
+{
+	return containerFieldValue_;
+}
+
+void DescribeAlarmEventListRequest::setContainerFieldValue(const std::string& containerFieldValue)
+{
+	containerFieldValue_ = containerFieldValue;
+	setParameter("ContainerFieldValue", containerFieldValue);
 }
 
 std::string DescribeAlarmEventListRequest::getPageSize()const
@@ -135,6 +168,17 @@ void DescribeAlarmEventListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeAlarmEventListRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeAlarmEventListRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
 }
 
 std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList()const

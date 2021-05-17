@@ -58,6 +58,14 @@ void DescribeFieldStatisticsResult::parse(const std::string &payload)
 		groupedFields_.notRunningStatusCount = std::stoi(groupedFieldsNode["NotRunningStatusCount"].asString());
 	if(!groupedFieldsNode["OfflineInstanceCount"].isNull())
 		groupedFields_.offlineInstanceCount = std::stoi(groupedFieldsNode["OfflineInstanceCount"].asString());
+	if(!groupedFieldsNode["ImportantAssetCount"].isNull())
+		groupedFields_.importantAssetCount = std::stoi(groupedFieldsNode["ImportantAssetCount"].asString());
+	if(!groupedFieldsNode["GeneralAssetCount"].isNull())
+		groupedFields_.generalAssetCount = std::stoi(groupedFieldsNode["GeneralAssetCount"].asString());
+	if(!groupedFieldsNode["TestAssetCount"].isNull())
+		groupedFields_.testAssetCount = std::stoi(groupedFieldsNode["TestAssetCount"].asString());
+	if(!groupedFieldsNode["ExposedInstanceCount"].isNull())
+		groupedFields_.exposedInstanceCount = std::stoi(groupedFieldsNode["ExposedInstanceCount"].asString());
 
 }
 

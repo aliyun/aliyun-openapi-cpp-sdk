@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::vector<std::string> levelsOn;
 					int suspiciousCount;
 					std::vector<std::string> seriousList;
+					std::vector<std::string> timeArray;
 					int remindCount;
 					int seriousCount;
 					std::vector<std::string> valueArray;
@@ -62,20 +63,22 @@ namespace AlibabaCloud
 					std::vector<std::string> lowList;
 					int lowCount;
 					std::vector<std::string> dateArray3;
+					std::vector<std::string> timeArray6;
 					int mediumCount;
 				};
 				struct Vulnerability
 				{
 					int totalCount;
 					std::vector<std::string> asapList;
-					std::vector<std::string> valueArray7;
 					std::vector<std::string> laterList;
 					int laterCount;
 					int asapCount;
+					std::vector<std::string> dateArray7;
+					std::vector<std::string> valueArray8;
+					std::vector<std::string> levelsOn9;
 					std::vector<std::string> nntfList;
 					int nntfCount;
-					std::vector<std::string> levelsOn8;
-					std::vector<std::string> dateArray6;
+					std::vector<std::string> timeArray10;
 				};
 
 

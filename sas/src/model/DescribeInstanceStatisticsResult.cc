@@ -65,6 +65,8 @@ void DescribeInstanceStatisticsResult::parse(const std::string &payload)
 			dataObject.cmsNum = std::stoi(valueDataDataItem["CmsNum"].asString());
 		if(!valueDataDataItem["AppNum"].isNull())
 			dataObject.appNum = std::stoi(valueDataDataItem["AppNum"].asString());
+		if(!valueDataDataItem["ScaNum"].isNull())
+			dataObject.scaNum = std::stoi(valueDataDataItem["ScaNum"].asString());
 		data_.push_back(dataObject);
 	}
 

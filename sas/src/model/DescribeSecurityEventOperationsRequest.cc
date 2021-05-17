@@ -49,6 +49,17 @@ void DescribeSecurityEventOperationsRequest::setSourceIp(const std::string& sour
 	setParameter("SourceIp", sourceIp);
 }
 
+std::string DescribeSecurityEventOperationsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeSecurityEventOperationsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
+}
+
 long DescribeSecurityEventOperationsRequest::getSecurityEventId()const
 {
 	return securityEventId_;

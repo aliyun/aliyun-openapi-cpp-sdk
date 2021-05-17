@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getAssetType()const;
 				void setAssetType(const std::string& assetType);
+				std::string getQueryFlag()const;
+				void setQueryFlag(const std::string& queryFlag);
 				long getGroupId()const;
 				void setGroupId(long groupId);
 				std::vector<std::string> getItemIds()const;
@@ -66,6 +68,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string lang_;
 				std::string assetType_;
+				std::string queryFlag_;
 				long groupId_;
 				std::vector<std::string> itemIds_;
 				int currentPage_;

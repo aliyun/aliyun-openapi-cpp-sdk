@@ -49,3 +49,14 @@ void DescribeFieldStatisticsRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
+std::string DescribeFieldStatisticsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeFieldStatisticsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

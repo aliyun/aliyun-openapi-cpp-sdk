@@ -38,6 +38,28 @@ void DescribeGroupedVulRequest::setStatusList(const std::string& statusList)
 	setParameter("StatusList", statusList);
 }
 
+std::string DescribeGroupedVulRequest::getTargetType()const
+{
+	return targetType_;
+}
+
+void DescribeGroupedVulRequest::setTargetType(const std::string& targetType)
+{
+	targetType_ = targetType;
+	setParameter("TargetType", targetType);
+}
+
+int DescribeGroupedVulRequest::getMinScore()const
+{
+	return minScore_;
+}
+
+void DescribeGroupedVulRequest::setMinScore(int minScore)
+{
+	minScore_ = minScore;
+	setParameter("MinScore", std::to_string(minScore));
+}
+
 std::string DescribeGroupedVulRequest::getType()const
 {
 	return type_;
@@ -49,6 +71,17 @@ void DescribeGroupedVulRequest::setType(const std::string& type)
 	setParameter("Type", type);
 }
 
+std::string DescribeGroupedVulRequest::getContainerFieldName()const
+{
+	return containerFieldName_;
+}
+
+void DescribeGroupedVulRequest::setContainerFieldName(const std::string& containerFieldName)
+{
+	containerFieldName_ = containerFieldName;
+	setParameter("ContainerFieldName", containerFieldName);
+}
+
 std::string DescribeGroupedVulRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -58,6 +91,17 @@ void DescribeGroupedVulRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeGroupedVulRequest::getContainerFieldValue()const
+{
+	return containerFieldValue_;
+}
+
+void DescribeGroupedVulRequest::setContainerFieldValue(const std::string& containerFieldValue)
+{
+	containerFieldValue_ = containerFieldValue;
+	setParameter("ContainerFieldValue", containerFieldValue);
 }
 
 int DescribeGroupedVulRequest::getPageSize()const
@@ -113,6 +157,17 @@ void DescribeGroupedVulRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeGroupedVulRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeGroupedVulRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeGroupedVulRequest::getAliasName()const

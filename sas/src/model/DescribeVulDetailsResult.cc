@@ -79,16 +79,16 @@ void DescribeVulDetailsResult::parse(const std::string &payload)
 			cvesObject.reference = valueCvesCve["Reference"].asString();
 		if(!valueCvesCve["Classify"].isNull())
 			cvesObject.classify = valueCvesCve["Classify"].asString();
-		auto allClassifysNode = allCvesNode["Classifys"]["Classify"];
-		for (auto allCvesNodeClassifysClassify : allClassifysNode)
+		auto allClassifysNode = valueCvesCve["Classifys"]["Classify"];
+		for (auto valueCvesCveClassifysClassify : allClassifysNode)
 		{
 			Cve::Classify classifysObject;
-			if(!allCvesNodeClassifysClassify["Classify"].isNull())
-				classifysObject.classify = allCvesNodeClassifysClassify["Classify"].asString();
-			if(!allCvesNodeClassifysClassify["Description"].isNull())
-				classifysObject.description = allCvesNodeClassifysClassify["Description"].asString();
-			if(!allCvesNodeClassifysClassify["DemoVideoUrl"].isNull())
-				classifysObject.demoVideoUrl = allCvesNodeClassifysClassify["DemoVideoUrl"].asString();
+			if(!valueCvesCveClassifysClassify["Classify"].isNull())
+				classifysObject.classify = valueCvesCveClassifysClassify["Classify"].asString();
+			if(!valueCvesCveClassifysClassify["Description"].isNull())
+				classifysObject.description = valueCvesCveClassifysClassify["Description"].asString();
+			if(!valueCvesCveClassifysClassify["DemoVideoUrl"].isNull())
+				classifysObject.demoVideoUrl = valueCvesCveClassifysClassify["DemoVideoUrl"].asString();
 			cvesObject.classifys.push_back(classifysObject);
 		}
 		cves_.push_back(cvesObject);

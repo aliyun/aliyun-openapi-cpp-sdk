@@ -39,6 +39,13 @@ void CreateOrUpdateAssetGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["GroupId"].isNull())
+		groupId_ = std::stol(value["GroupId"].asString());
 
+}
+
+long CreateOrUpdateAssetGroupResult::getGroupId()const
+{
+	return groupId_;
 }
 

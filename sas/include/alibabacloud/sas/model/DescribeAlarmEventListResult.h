@@ -41,30 +41,43 @@ namespace AlibabaCloud
 				};
 				struct SuspEventsItem
 				{
-					bool canCancelFault;
 					std::string description;
-					std::string alarmEventNameOriginal;
+					std::string k8sNodeId;
 					long endTime;
+					bool containHwMode;
+					std::string k8sNodeName;
 					std::string operateErrorCode;
-					std::string instanceId;
 					std::string alarmEventName;
 					std::string securityEventIds;
-					long startTime;
 					long gmtModified;
-					std::string saleVersion;
 					std::string intranetIp;
-					bool dealed;
 					bool hasTraceInfo;
+					std::string k8sClusterId;
+					std::string appName;
+					std::string k8sNamespace;
+					std::string internetIp;
+					std::string containerId;
+					std::string alarmEventType;
+					std::string solution;
+					bool canCancelFault;
+					std::string alarmEventNameOriginal;
+					std::string instanceId;
+					std::string stages;
+					long startTime;
+					std::string saleVersion;
+					std::string k8sPodName;
+					bool dealed;
+					std::string containerImageId;
 					std::string dataSource;
 					std::string instanceName;
+					long operateTime;
 					bool canBeDealOnLine;
 					std::string uuid;
-					std::string internetIp;
-					std::string alarmEventType;
+					std::string k8sClusterName;
+					std::string containerImageName;
 					int suspiciousEventCount;
 					std::string alarmUniqueInfo;
 					std::string level;
-					std::string solution;
 				};
 
 

@@ -70,22 +70,44 @@ void DescribeAlarmEventDetailResult::parse(const std::string &payload)
 		data_.dataSource = dataNode["DataSource"].asString();
 	if(!dataNode["CanCancelFault"].isNull())
 		data_.canCancelFault = dataNode["CanCancelFault"].asString() == "true";
+	if(!dataNode["ContainHwMode"].isNull())
+		data_.containHwMode = dataNode["ContainHwMode"].asString() == "true";
+	if(!dataNode["ContainerImageId"].isNull())
+		data_.containerImageId = dataNode["ContainerImageId"].asString();
+	if(!dataNode["ContainerImageName"].isNull())
+		data_.containerImageName = dataNode["ContainerImageName"].asString();
+	if(!dataNode["ContainerId"].isNull())
+		data_.containerId = dataNode["ContainerId"].asString();
+	if(!dataNode["K8sNamespace"].isNull())
+		data_.k8sNamespace = dataNode["K8sNamespace"].asString();
+	if(!dataNode["K8sClusterId"].isNull())
+		data_.k8sClusterId = dataNode["K8sClusterId"].asString();
+	if(!dataNode["K8sClusterName"].isNull())
+		data_.k8sClusterName = dataNode["K8sClusterName"].asString();
+	if(!dataNode["K8sNodeId"].isNull())
+		data_.k8sNodeId = dataNode["K8sNodeId"].asString();
+	if(!dataNode["K8sPodName"].isNull())
+		data_.k8sPodName = dataNode["K8sPodName"].asString();
+	if(!dataNode["K8sNodeName"].isNull())
+		data_.k8sNodeName = dataNode["K8sNodeName"].asString();
+	if(!dataNode["AppName"].isNull())
+		data_.appName = dataNode["AppName"].asString();
 	auto allCauseDetailsNode = dataNode["CauseDetails"]["CauseDetail"];
 	for (auto dataNodeCauseDetailsCauseDetail : allCauseDetailsNode)
 	{
 		Data::CauseDetail causeDetailObject;
 		if(!dataNodeCauseDetailsCauseDetail["Key"].isNull())
 			causeDetailObject.key = dataNodeCauseDetailsCauseDetail["Key"].asString();
-		auto allValueNode = allCauseDetailsNode["Value"]["ValueItem"];
-		for (auto allCauseDetailsNodeValueValueItem : allValueNode)
+		auto allValueNode = dataNodeCauseDetailsCauseDetail["Value"]["ValueItem"];
+		for (auto dataNodeCauseDetailsCauseDetailValueValueItem : allValueNode)
 		{
 			Data::CauseDetail::ValueItem valueObject;
-			if(!allCauseDetailsNodeValueValueItem["Name"].isNull())
-				valueObject.name = allCauseDetailsNodeValueValueItem["Name"].asString();
-			if(!allCauseDetailsNodeValueValueItem["Type"].isNull())
-				valueObject.type = allCauseDetailsNodeValueValueItem["Type"].asString();
-			if(!allCauseDetailsNodeValueValueItem["Value"].isNull())
-				valueObject.value = allCauseDetailsNodeValueValueItem["Value"].asString();
+			if(!dataNodeCauseDetailsCauseDetailValueValueItem["Name"].isNull())
+				valueObject.name = dataNodeCauseDetailsCauseDetailValueValueItem["Name"].asString();
+			if(!dataNodeCauseDetailsCauseDetailValueValueItem["Type"].isNull())
+				valueObject.type = dataNodeCauseDetailsCauseDetailValueValueItem["Type"].asString();
+			if(!dataNodeCauseDetailsCauseDetailValueValueItem["Value"].isNull())
+				valueObject.value = dataNodeCauseDetailsCauseDetailValueValueItem["Value"].asString();
 			causeDetailObject.value.push_back(valueObject);
 		}
 		data_.causeDetails.push_back(causeDetailObject);

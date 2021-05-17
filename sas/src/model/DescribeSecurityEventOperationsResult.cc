@@ -49,6 +49,38 @@ void DescribeSecurityEventOperationsResult::parse(const std::string &payload)
 			securityEventOperationsResponseObject.operationParams = valueSecurityEventOperationsResponseSecurityEventOperation["OperationParams"].asString();
 		if(!valueSecurityEventOperationsResponseSecurityEventOperation["UserCanOperate"].isNull())
 			securityEventOperationsResponseObject.userCanOperate = valueSecurityEventOperationsResponseSecurityEventOperation["UserCanOperate"].asString() == "true";
+		auto allMarkFieldNode = valueSecurityEventOperationsResponseSecurityEventOperation["MarkField"]["MarkFieldItem"];
+		for (auto valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem : allMarkFieldNode)
+		{
+			SecurityEventOperation::MarkFieldItem markFieldObject;
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["FiledName"].isNull())
+				markFieldObject.filedName = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["FiledName"].asString();
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["FiledAliasName"].isNull())
+				markFieldObject.filedAliasName = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["FiledAliasName"].asString();
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisType"].isNull())
+				markFieldObject.markMisType = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisType"].asString();
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisValue"].isNull())
+				markFieldObject.markMisValue = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldMarkFieldItem["MarkMisValue"].asString();
+			auto allSupportedMisType = value["SupportedMisType"]["StringItem"];
+			for (auto value : allSupportedMisType)
+				markFieldObject.supportedMisType.push_back(value.asString());
+			securityEventOperationsResponseObject.markField.push_back(markFieldObject);
+		}
+		auto allMarkFieldsSourceNode = valueSecurityEventOperationsResponseSecurityEventOperation["MarkFieldsSource"]["SecurityEventOperation"];
+		for (auto valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldsSourceSecurityEventOperation : allMarkFieldsSourceNode)
+		{
+			SecurityEventOperation::SecurityEventOperation1 markFieldsSourceObject;
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldsSourceSecurityEventOperation["FiledName"].isNull())
+				markFieldsSourceObject.filedName = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldsSourceSecurityEventOperation["FiledName"].asString();
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldsSourceSecurityEventOperation["FiledAliasName"].isNull())
+				markFieldsSourceObject.filedAliasName = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldsSourceSecurityEventOperation["FiledAliasName"].asString();
+			if(!valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldsSourceSecurityEventOperation["MarkMisValue"].isNull())
+				markFieldsSourceObject.markMisValue = valueSecurityEventOperationsResponseSecurityEventOperationMarkFieldsSourceSecurityEventOperation["MarkMisValue"].asString();
+			auto allSupportedMisType2 = value["SupportedMisType"]["StringItem"];
+			for (auto value : allSupportedMisType2)
+				markFieldsSourceObject.supportedMisType2.push_back(value.asString());
+			securityEventOperationsResponseObject.markFieldsSource.push_back(markFieldsSourceObject);
+		}
 		securityEventOperationsResponse_.push_back(securityEventOperationsResponseObject);
 	}
 

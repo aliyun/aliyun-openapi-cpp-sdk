@@ -34,24 +34,65 @@ namespace AlibabaCloud
 			public:
 				struct WarningSummary
 				{
-					std::string uniqueInfo;
+					struct QuaraFile
+					{
+						std::string type;
+						std::string value;
+						std::string infoType;
+						std::string valueDisplay;
+						std::string nameDisplay;
+						std::string name;
+					};
+					struct EventNote
+					{
+						long noteId;
+						std::string noteTime;
+						std::string note;
+					};
 					bool advanced;
+					std::string k8sNodeId;
+					bool containHwMode;
+					std::string k8sNodeName;
+					std::string operateErrorCode;
 					std::string alarmEventName;
+					std::string securityEventIds;
 					int eventStatus;
-					std::string saleVersion;
 					std::string intranetIp;
+					bool hasTraceInfo;
 					std::string eventSubType;
+					std::string k8sClusterId;
 					std::string name;
+					std::string appName;
+					std::string k8sNamespace;
+					long lastTimeStamp;
+					std::string desc;
+					std::string internetIp;
+					std::string containerId;
+					std::string alarmEventType;
+					std::string alarmEventNameDisplay;
+					std::string uniqueInfo;
+					bool canCancelFault;
+					std::string alarmEventTypeDisplay;
+					std::string instanceId;
+					std::string stages;
+					std::string markMisRules;
+					std::vector<WarningSummary::EventNote> eventNotes;
+					std::string saleVersion;
+					std::string k8sPodName;
+					std::string containerImageId;
 					std::string dataSource;
 					std::string occurrenceTime;
 					std::string instanceName;
-					std::string desc;
+					long operateTime;
 					std::string operateMsg;
 					bool canBeDealOnLine;
+					std::vector<WarningSummary::QuaraFile> details;
 					std::string uuid;
-					std::string internetIp;
-					std::string alarmEventType;
+					std::string k8sClusterName;
+					std::string containerImageName;
 					std::string alarmUniqueInfo;
+					bool autoBreaking;
+					long occurrenceTimeStamp;
 					std::string level;
 					long id;
 					std::string lastTime;

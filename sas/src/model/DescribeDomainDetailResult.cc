@@ -63,6 +63,10 @@ void DescribeDomainDetailResult::parse(const std::string &payload)
 		domain_ = value["Domain"].asString();
 	if(!value["RootDomain"].isNull())
 		rootDomain_ = value["RootDomain"].asString();
+	if(!value["VulCount"].isNull())
+		vulCount_ = std::stoi(value["VulCount"].asString());
+	if(!value["AlarmCount"].isNull())
+		alarmCount_ = std::stoi(value["AlarmCount"].asString());
 
 }
 
@@ -79,5 +83,15 @@ std::string DescribeDomainDetailResult::getRootDomain()const
 std::string DescribeDomainDetailResult::getDomain()const
 {
 	return domain_;
+}
+
+int DescribeDomainDetailResult::getVulCount()const
+{
+	return vulCount_;
+}
+
+int DescribeDomainDetailResult::getAlarmCount()const
+{
+	return alarmCount_;
 }
 

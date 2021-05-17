@@ -43,7 +43,14 @@ void DescribeDomainCountResult::parse(const std::string &payload)
 		totalDomainsCount_ = std::stoi(value["TotalDomainsCount"].asString());
 	if(!value["RootDomainsCount"].isNull())
 		rootDomainsCount_ = std::stoi(value["RootDomainsCount"].asString());
+	if(!value["SubDomainsCount"].isNull())
+		subDomainsCount_ = std::stoi(value["SubDomainsCount"].asString());
 
+}
+
+int DescribeDomainCountResult::getSubDomainsCount()const
+{
+	return subDomainsCount_;
 }
 
 int DescribeDomainCountResult::getTotalDomainsCount()const

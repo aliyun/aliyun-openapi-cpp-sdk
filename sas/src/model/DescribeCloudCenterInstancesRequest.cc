@@ -38,6 +38,17 @@ void DescribeCloudCenterInstancesRequest::setCriteria(const std::string& criteri
 	setParameter("Criteria", criteria);
 }
 
+int DescribeCloudCenterInstancesRequest::getImportance()const
+{
+	return importance_;
+}
+
+void DescribeCloudCenterInstancesRequest::setImportance(int importance)
+{
+	importance_ = importance;
+	setParameter("Importance", std::to_string(importance));
+}
+
 std::string DescribeCloudCenterInstancesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,6 +58,17 @@ void DescribeCloudCenterInstancesRequest::setSourceIp(const std::string& sourceI
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeCloudCenterInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeCloudCenterInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 bool DescribeCloudCenterInstancesRequest::getNoPage()const

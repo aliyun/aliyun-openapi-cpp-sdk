@@ -1,3 +1,6 @@
+2021-05-17 Version: 1.36.740
+- Support DescribeInstallCaptcha API.
+
 2021-05-17 Version: 1.36.739
 - Export new API for predictive dialer.
 

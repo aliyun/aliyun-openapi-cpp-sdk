@@ -27,6 +27,17 @@ DescribeSuspEventsRequest::DescribeSuspEventsRequest() :
 DescribeSuspEventsRequest::~DescribeSuspEventsRequest()
 {}
 
+std::string DescribeSuspEventsRequest::getTargetType()const
+{
+	return targetType_;
+}
+
+void DescribeSuspEventsRequest::setTargetType(const std::string& targetType)
+{
+	targetType_ = targetType;
+	setParameter("TargetType", targetType);
+}
+
 std::string DescribeSuspEventsRequest::getRemark()const
 {
 	return remark_;
@@ -38,6 +49,28 @@ void DescribeSuspEventsRequest::setRemark(const std::string& remark)
 	setParameter("Remark", remark);
 }
 
+std::string DescribeSuspEventsRequest::getSource()const
+{
+	return source_;
+}
+
+void DescribeSuspEventsRequest::setSource(const std::string& source)
+{
+	source_ = source;
+	setParameter("Source", source);
+}
+
+std::string DescribeSuspEventsRequest::getContainerFieldName()const
+{
+	return containerFieldName_;
+}
+
+void DescribeSuspEventsRequest::setContainerFieldName(const std::string& containerFieldName)
+{
+	containerFieldName_ = containerFieldName;
+	setParameter("ContainerFieldName", containerFieldName);
+}
+
 std::string DescribeSuspEventsRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,6 +80,17 @@ void DescribeSuspEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeSuspEventsRequest::getContainerFieldValue()const
+{
+	return containerFieldValue_;
+}
+
+void DescribeSuspEventsRequest::setContainerFieldValue(const std::string& containerFieldValue)
+{
+	containerFieldValue_ = containerFieldValue;
+	setParameter("ContainerFieldValue", containerFieldValue);
 }
 
 std::string DescribeSuspEventsRequest::getPageSize()const
@@ -93,6 +137,28 @@ void DescribeSuspEventsRequest::setAlarmUniqueInfo(const std::string& alarmUniqu
 	setParameter("AlarmUniqueInfo", alarmUniqueInfo);
 }
 
+std::string DescribeSuspEventsRequest::getUniqueInfo()const
+{
+	return uniqueInfo_;
+}
+
+void DescribeSuspEventsRequest::setUniqueInfo(const std::string& uniqueInfo)
+{
+	uniqueInfo_ = uniqueInfo;
+	setParameter("UniqueInfo", uniqueInfo);
+}
+
+long DescribeSuspEventsRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeSuspEventsRequest::setGroupId(long groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", std::to_string(groupId));
+}
+
 std::string DescribeSuspEventsRequest::getDealed()const
 {
 	return dealed_;
@@ -113,6 +179,30 @@ void DescribeSuspEventsRequest::setCurrentPage(const std::string& currentPage)
 {
 	currentPage_ = currentPage;
 	setParameter("CurrentPage", currentPage);
+}
+
+std::string DescribeSuspEventsRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeSuspEventsRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
+std::vector<std::string> DescribeSuspEventsRequest::getOperateErrorCodeList()const
+{
+	return operateErrorCodeList_;
+}
+
+void DescribeSuspEventsRequest::setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList)
+{
+	operateErrorCodeList_ = operateErrorCodeList;
+	for(int dep1 = 0; dep1!= operateErrorCodeList.size(); dep1++) {
+		setParameter("OperateErrorCodeList."+ std::to_string(dep1), operateErrorCodeList.at(dep1));
+	}
 }
 
 std::string DescribeSuspEventsRequest::getName()const
@@ -146,5 +236,27 @@ void DescribeSuspEventsRequest::setParentEventTypes(const std::string& parentEve
 {
 	parentEventTypes_ = parentEventTypes;
 	setParameter("ParentEventTypes", parentEventTypes);
+}
+
+std::string DescribeSuspEventsRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeSuspEventsRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
+}
+
+std::string DescribeSuspEventsRequest::getUuids()const
+{
+	return uuids_;
+}
+
+void DescribeSuspEventsRequest::setUuids(const std::string& uuids)
+{
+	uuids_ = uuids;
+	setParameter("Uuids", uuids);
 }
 

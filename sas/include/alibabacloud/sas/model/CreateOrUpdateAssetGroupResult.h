@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CreateOrUpdateAssetGroupResult();
 				explicit CreateOrUpdateAssetGroupResult(const std::string &payload);
 				~CreateOrUpdateAssetGroupResult();
+				long getGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long groupId_;
 
 			};
 		}

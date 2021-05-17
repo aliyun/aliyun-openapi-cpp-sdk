@@ -62,16 +62,16 @@ void DescribeGraph4InvestigationOnlineResult::parse(const std::string &payload)
 			vertexObject.positionId = dataNodeVertexListVertex["PositionId"].asString();
 		if(!dataNodeVertexListVertex["Position"].isNull())
 			vertexObject.position = dataNodeVertexListVertex["Position"].asString();
-		auto allNeighborListNode = allVertexListNode["NeighborList"]["Neighbor"];
-		for (auto allVertexListNodeNeighborListNeighbor : allNeighborListNode)
+		auto allNeighborListNode = dataNodeVertexListVertex["NeighborList"]["Neighbor"];
+		for (auto dataNodeVertexListVertexNeighborListNeighbor : allNeighborListNode)
 		{
 			Data::Vertex::Neighbor neighborListObject;
-			if(!allVertexListNodeNeighborListNeighbor["Type"].isNull())
-				neighborListObject.type = allVertexListNodeNeighborListNeighbor["Type"].asString();
-			if(!allVertexListNodeNeighborListNeighbor["Count"].isNull())
-				neighborListObject.count = std::stoi(allVertexListNodeNeighborListNeighbor["Count"].asString());
-			if(!allVertexListNodeNeighborListNeighbor["HasMore"].isNull())
-				neighborListObject.hasMore = allVertexListNodeNeighborListNeighbor["HasMore"].asString() == "true";
+			if(!dataNodeVertexListVertexNeighborListNeighbor["Type"].isNull())
+				neighborListObject.type = dataNodeVertexListVertexNeighborListNeighbor["Type"].asString();
+			if(!dataNodeVertexListVertexNeighborListNeighbor["Count"].isNull())
+				neighborListObject.count = std::stoi(dataNodeVertexListVertexNeighborListNeighbor["Count"].asString());
+			if(!dataNodeVertexListVertexNeighborListNeighbor["HasMore"].isNull())
+				neighborListObject.hasMore = dataNodeVertexListVertexNeighborListNeighbor["HasMore"].asString() == "true";
 			vertexObject.neighborList.push_back(neighborListObject);
 		}
 		data_.vertexList.push_back(vertexObject);

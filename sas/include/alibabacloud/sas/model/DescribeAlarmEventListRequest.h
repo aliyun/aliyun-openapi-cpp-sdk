@@ -35,14 +35,20 @@ namespace AlibabaCloud
 				DescribeAlarmEventListRequest();
 				~DescribeAlarmEventListRequest();
 
+				std::string getTargetType()const;
+				void setTargetType(const std::string& targetType);
 				std::string getAlarmEventType()const;
 				void setAlarmEventType(const std::string& alarmEventType);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
+				std::string getContainerFieldName()const;
+				void setContainerFieldName(const std::string& containerFieldName);
 				std::string getAlarmEventName()const;
 				void setAlarmEventName(const std::string& alarmEventName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getContainerFieldValue()const;
+				void setContainerFieldValue(const std::string& containerFieldValue);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
 				std::string getFrom()const;
@@ -55,22 +61,28 @@ namespace AlibabaCloud
 				void setDealed(const std::string& dealed);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::vector<std::string> getOperateErrorCodeList()const;
 				void setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList);
 				std::string getLevels()const;
 				void setLevels(const std::string& levels);
 
             private:
+				std::string targetType_;
 				std::string alarmEventType_;
 				std::string remark_;
+				std::string containerFieldName_;
 				std::string alarmEventName_;
 				std::string sourceIp_;
+				std::string containerFieldValue_;
 				std::string pageSize_;
 				std::string from_;
 				std::string lang_;
 				std::string groupId_;
 				std::string dealed_;
 				int currentPage_;
+				std::string clusterId_;
 				std::vector<std::string> operateErrorCodeList_;
 				std::string levels_;
 

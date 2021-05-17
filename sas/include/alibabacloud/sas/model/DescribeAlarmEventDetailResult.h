@@ -45,22 +45,33 @@ namespace AlibabaCloud
 						std::vector<CauseDetail::ValueItem> value;
 						std::string key;
 					};
-					bool canCancelFault;
+					std::string k8sNodeId;
 					long endTime;
+					bool containHwMode;
+					std::string k8sNodeName;
+					std::string intranetIp;
+					std::string k8sClusterId;
+					std::string appName;
+					std::string k8sNamespace;
+					std::string internetIp;
+					std::string containerId;
+					std::string alarmEventDesc;
+					std::string solution;
+					bool canCancelFault;
 					std::vector<CauseDetail> causeDetails;
 					long startTime;
-					std::string intranetIp;
+					std::string k8sPodName;
+					std::string containerImageId;
 					std::string dataSource;
 					std::string instanceName;
 					std::string type;
 					bool canBeDealOnLine;
 					std::string uuid;
-					std::string internetIp;
-					std::string alarmEventDesc;
+					std::string k8sClusterName;
+					std::string containerImageName;
 					std::string alarmUniqueInfo;
 					std::string level;
 					std::string alarmEventAliasName;
-					std::string solution;
 				};
 
 

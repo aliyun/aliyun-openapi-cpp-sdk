@@ -101,13 +101,33 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.progress = std::stoi(valueVulRecordsVulRecord["Progress"].asString());
 		if(!valueVulRecordsVulRecord["CanFix"].isNull())
 			vulRecordsObject.canFix = valueVulRecordsVulRecord["CanFix"].asString();
+		if(!valueVulRecordsVulRecord["ContainerImageId"].isNull())
+			vulRecordsObject.containerImageId = valueVulRecordsVulRecord["ContainerImageId"].asString();
+		if(!valueVulRecordsVulRecord["ContainerImageName"].isNull())
+			vulRecordsObject.containerImageName = valueVulRecordsVulRecord["ContainerImageName"].asString();
+		if(!valueVulRecordsVulRecord["ContainerName"].isNull())
+			vulRecordsObject.containerName = valueVulRecordsVulRecord["ContainerName"].asString();
+		if(!valueVulRecordsVulRecord["ContainerInnerPath"].isNull())
+			vulRecordsObject.containerInnerPath = valueVulRecordsVulRecord["ContainerInnerPath"].asString();
+		if(!valueVulRecordsVulRecord["ContainerId"].isNull())
+			vulRecordsObject.containerId = valueVulRecordsVulRecord["ContainerId"].asString();
+		if(!valueVulRecordsVulRecord["K8sNamespace"].isNull())
+			vulRecordsObject.k8sNamespace = valueVulRecordsVulRecord["K8sNamespace"].asString();
+		if(!valueVulRecordsVulRecord["K8sClusterId"].isNull())
+			vulRecordsObject.k8sClusterId = valueVulRecordsVulRecord["K8sClusterId"].asString();
+		if(!valueVulRecordsVulRecord["K8sNodeId"].isNull())
+			vulRecordsObject.k8sNodeId = valueVulRecordsVulRecord["K8sNodeId"].asString();
+		if(!valueVulRecordsVulRecord["K8sPodName"].isNull())
+			vulRecordsObject.k8sPodName = valueVulRecordsVulRecord["K8sPodName"].asString();
+		if(!valueVulRecordsVulRecord["K8sNodeName"].isNull())
+			vulRecordsObject.k8sNodeName = valueVulRecordsVulRecord["K8sNodeName"].asString();
 		auto extendContentJsonNode = value["ExtendContentJson"];
 		if(!extendContentJsonNode["Os"].isNull())
 			vulRecordsObject.extendContentJson.os = extendContentJsonNode["Os"].asString();
 		if(!extendContentJsonNode["OsRelease"].isNull())
 			vulRecordsObject.extendContentJson.osRelease = extendContentJsonNode["OsRelease"].asString();
 		if(!extendContentJsonNode["Status"].isNull())
-			vulRecordsObject.extendContentJson.status = std::stoi(extendContentJsonNode["Status"].asString());
+			vulRecordsObject.extendContentJson.status = extendContentJsonNode["Status"].asString();
 		if(!extendContentJsonNode["LastTs"].isNull())
 			vulRecordsObject.extendContentJson.lastTs = std::stol(extendContentJsonNode["LastTs"].asString());
 		if(!extendContentJsonNode["AliasName"].isNull())
@@ -199,16 +219,16 @@ void DescribeVulListResult::parse(const std::string &payload)
 				processObject.pname = processInfoNodeProcessListProcess["Pname"].asString();
 			if(!processInfoNodeProcessListProcess["Pid"].isNull())
 				processObject.pid = processInfoNodeProcessListProcess["Pid"].asString();
-			auto allSubProcessListNode = allProcessListNode["SubProcessList"]["SubProcess"];
-			for (auto allProcessListNodeSubProcessListSubProcess : allSubProcessListNode)
+			auto allSubProcessListNode = processInfoNodeProcessListProcess["SubProcessList"]["SubProcess"];
+			for (auto processInfoNodeProcessListProcessSubProcessListSubProcess : allSubProcessListNode)
 			{
 				VulRecord::ProcessInfo::Process::SubProcess subProcessListObject;
-				if(!allProcessListNodeSubProcessListSubProcess["Rpm"].isNull())
-					subProcessListObject.rpm = allProcessListNodeSubProcessListSubProcess["Rpm"].asString();
-				if(!allProcessListNodeSubProcessListSubProcess["Pname"].isNull())
-					subProcessListObject.pname = allProcessListNodeSubProcessListSubProcess["Pname"].asString();
-				if(!allProcessListNodeSubProcessListSubProcess["Pid"].isNull())
-					subProcessListObject.pid = allProcessListNodeSubProcessListSubProcess["Pid"].asString();
+				if(!processInfoNodeProcessListProcessSubProcessListSubProcess["Rpm"].isNull())
+					subProcessListObject.rpm = processInfoNodeProcessListProcessSubProcessListSubProcess["Rpm"].asString();
+				if(!processInfoNodeProcessListProcessSubProcessListSubProcess["Pname"].isNull())
+					subProcessListObject.pname = processInfoNodeProcessListProcessSubProcessListSubProcess["Pname"].asString();
+				if(!processInfoNodeProcessListProcessSubProcessListSubProcess["Pid"].isNull())
+					subProcessListObject.pid = processInfoNodeProcessListProcessSubProcessListSubProcess["Pid"].asString();
 				processObject.subProcessList.push_back(subProcessListObject);
 			}
 			vulRecordsObject.processInfo.processList.push_back(processObject);

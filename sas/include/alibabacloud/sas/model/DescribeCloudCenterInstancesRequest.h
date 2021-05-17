@@ -37,8 +37,12 @@ namespace AlibabaCloud
 
 				std::string getCriteria()const;
 				void setCriteria(const std::string& criteria);
+				int getImportance()const;
+				void setImportance(int importance);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				bool getNoPage()const;
 				void setNoPage(bool noPage);
 				int getPageSize()const;
@@ -52,7 +56,9 @@ namespace AlibabaCloud
 
             private:
 				std::string criteria_;
+				int importance_;
 				std::string sourceIp_;
+				std::string regionId_;
 				bool noPage_;
 				int pageSize_;
 				std::string logicalExp_;

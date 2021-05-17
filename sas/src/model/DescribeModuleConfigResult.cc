@@ -47,22 +47,22 @@ void DescribeModuleConfigResult::parse(const std::string &payload)
 			moduleConfigListObject.configName = valueModuleConfigListModuleConfig["ConfigName"].asString();
 		if(!valueModuleConfigListModuleConfig["ModuleName"].isNull())
 			moduleConfigListObject.moduleName = valueModuleConfigListModuleConfig["ModuleName"].asString();
-		auto allItemsNode = allModuleConfigListNode["Items"]["Item"];
-		for (auto allModuleConfigListNodeItemsItem : allItemsNode)
+		auto allItemsNode = valueModuleConfigListModuleConfig["Items"]["Item"];
+		for (auto valueModuleConfigListModuleConfigItemsItem : allItemsNode)
 		{
 			ModuleConfig::Item itemsObject;
-			if(!allModuleConfigListNodeItemsItem["InstanceId"].isNull())
-				itemsObject.instanceId = allModuleConfigListNodeItemsItem["InstanceId"].asString();
-			if(!allModuleConfigListNodeItemsItem["InstanceName"].isNull())
-				itemsObject.instanceName = allModuleConfigListNodeItemsItem["InstanceName"].asString();
-			if(!allModuleConfigListNodeItemsItem["GroupId"].isNull())
-				itemsObject.groupId = std::stoi(allModuleConfigListNodeItemsItem["GroupId"].asString());
-			if(!allModuleConfigListNodeItemsItem["Ip"].isNull())
-				itemsObject.ip = allModuleConfigListNodeItemsItem["Ip"].asString();
-			if(!allModuleConfigListNodeItemsItem["Region"].isNull())
-				itemsObject.region = allModuleConfigListNodeItemsItem["Region"].asString();
-			if(!allModuleConfigListNodeItemsItem["Uuid"].isNull())
-				itemsObject.uuid = allModuleConfigListNodeItemsItem["Uuid"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["InstanceId"].isNull())
+				itemsObject.instanceId = valueModuleConfigListModuleConfigItemsItem["InstanceId"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["InstanceName"].isNull())
+				itemsObject.instanceName = valueModuleConfigListModuleConfigItemsItem["InstanceName"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["GroupId"].isNull())
+				itemsObject.groupId = std::stoi(valueModuleConfigListModuleConfigItemsItem["GroupId"].asString());
+			if(!valueModuleConfigListModuleConfigItemsItem["Ip"].isNull())
+				itemsObject.ip = valueModuleConfigListModuleConfigItemsItem["Ip"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["Region"].isNull())
+				itemsObject.region = valueModuleConfigListModuleConfigItemsItem["Region"].asString();
+			if(!valueModuleConfigListModuleConfigItemsItem["Uuid"].isNull())
+				itemsObject.uuid = valueModuleConfigListModuleConfigItemsItem["Uuid"].asString();
 			moduleConfigListObject.items.push_back(itemsObject);
 		}
 		moduleConfigList_.push_back(moduleConfigListObject);

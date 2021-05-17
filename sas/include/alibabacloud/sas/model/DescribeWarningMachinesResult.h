@@ -34,12 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct WarningMachine
 				{
+					std::string instanceName;
 					int status;
 					int mediumWarningCount;
 					std::string uuid;
-					std::string machineName;
 					std::string internetIp;
+					std::string instanceId;
 					int highWarningCount;
+					std::string regionId;
 					int passCount;
 					std::string intranetIp;
 					int lowWarningCount;

@@ -80,14 +80,14 @@ void DescribeRiskCheckSummaryResult::parse(const std::string &payload)
 			groupObject.remainingTime = std::stoi(riskCheckSummaryNodeGroupsgroup["RemainingTime"].asString());
 		if(!riskCheckSummaryNodeGroupsgroup["Sort"].isNull())
 			groupObject.sort = std::stoi(riskCheckSummaryNodeGroupsgroup["Sort"].asString());
-		auto allCountByStatusNode = allGroupsNode["CountByStatus"]["statusCount"];
-		for (auto allGroupsNodeCountByStatusstatusCount : allCountByStatusNode)
+		auto allCountByStatusNode = riskCheckSummaryNodeGroupsgroup["CountByStatus"]["statusCount"];
+		for (auto riskCheckSummaryNodeGroupsgroupCountByStatusstatusCount : allCountByStatusNode)
 		{
 			RiskCheckSummary::Group::StatusCount countByStatusObject;
-			if(!allGroupsNodeCountByStatusstatusCount["Status"].isNull())
-				countByStatusObject.status = allGroupsNodeCountByStatusstatusCount["Status"].asString();
-			if(!allGroupsNodeCountByStatusstatusCount["Count"].isNull())
-				countByStatusObject.count = std::stoi(allGroupsNodeCountByStatusstatusCount["Count"].asString());
+			if(!riskCheckSummaryNodeGroupsgroupCountByStatusstatusCount["Status"].isNull())
+				countByStatusObject.status = riskCheckSummaryNodeGroupsgroupCountByStatusstatusCount["Status"].asString();
+			if(!riskCheckSummaryNodeGroupsgroupCountByStatusstatusCount["Count"].isNull())
+				countByStatusObject.count = std::stoi(riskCheckSummaryNodeGroupsgroupCountByStatusstatusCount["Count"].asString());
 			groupObject.countByStatus.push_back(countByStatusObject);
 		}
 		riskCheckSummary_.groups.push_back(groupObject);
