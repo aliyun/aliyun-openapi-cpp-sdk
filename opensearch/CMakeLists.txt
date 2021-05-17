@@ -165,6 +165,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/ListQueryProcessorNersResult.h
 	include/alibabacloud/opensearch/model/ListQueryProcessorsRequest.h
 	include/alibabacloud/opensearch/model/ListQueryProcessorsResult.h
+	include/alibabacloud/opensearch/model/ListQuotaReviewTasksRequest.h
+	include/alibabacloud/opensearch/model/ListQuotaReviewTasksResult.h
 	include/alibabacloud/opensearch/model/ListRamRolesRequest.h
 	include/alibabacloud/opensearch/model/ListRamRolesResult.h
 	include/alibabacloud/opensearch/model/ListScheduledTasksRequest.h
@@ -249,6 +251,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/UpdateABTestSceneResult.h
 	include/alibabacloud/opensearch/model/UpdateFetchFieldsRequest.h
 	include/alibabacloud/opensearch/model/UpdateFetchFieldsResult.h
+	include/alibabacloud/opensearch/model/UpdateSortScriptRequest.h
+	include/alibabacloud/opensearch/model/UpdateSortScriptResult.h
 	include/alibabacloud/opensearch/model/UpdateSummariesRequest.h
 	include/alibabacloud/opensearch/model/UpdateSummariesResult.h )
 
@@ -398,6 +402,8 @@ set(opensearch_src
 	src/model/ListQueryProcessorNersResult.cc
 	src/model/ListQueryProcessorsRequest.cc
 	src/model/ListQueryProcessorsResult.cc
+	src/model/ListQuotaReviewTasksRequest.cc
+	src/model/ListQuotaReviewTasksResult.cc
 	src/model/ListRamRolesRequest.cc
 	src/model/ListRamRolesResult.cc
 	src/model/ListScheduledTasksRequest.cc
@@ -482,6 +488,8 @@ set(opensearch_src
 	src/model/UpdateABTestSceneResult.cc
 	src/model/UpdateFetchFieldsRequest.cc
 	src/model/UpdateFetchFieldsResult.cc
+	src/model/UpdateSortScriptRequest.cc
+	src/model/UpdateSortScriptResult.cc
 	src/model/UpdateSummariesRequest.cc
 	src/model/UpdateSummariesResult.cc )
 

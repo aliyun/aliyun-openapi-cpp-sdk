@@ -166,6 +166,8 @@
 #include "model/ListQueryProcessorNersResult.h"
 #include "model/ListQueryProcessorsRequest.h"
 #include "model/ListQueryProcessorsResult.h"
+#include "model/ListQuotaReviewTasksRequest.h"
+#include "model/ListQuotaReviewTasksResult.h"
 #include "model/ListRamRolesRequest.h"
 #include "model/ListRamRolesResult.h"
 #include "model/ListScheduledTasksRequest.h"
@@ -250,6 +252,8 @@
 #include "model/UpdateABTestSceneResult.h"
 #include "model/UpdateFetchFieldsRequest.h"
 #include "model/UpdateFetchFieldsResult.h"
+#include "model/UpdateSortScriptRequest.h"
+#include "model/UpdateSortScriptResult.h"
 #include "model/UpdateSummariesRequest.h"
 #include "model/UpdateSummariesResult.h"
 
@@ -477,6 +481,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListQueryProcessorsResult> ListQueryProcessorsOutcome;
 			typedef std::future<ListQueryProcessorsOutcome> ListQueryProcessorsOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListQueryProcessorsRequest&, const ListQueryProcessorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQueryProcessorsAsyncHandler;
+			typedef Outcome<Error, Model::ListQuotaReviewTasksResult> ListQuotaReviewTasksOutcome;
+			typedef std::future<ListQuotaReviewTasksOutcome> ListQuotaReviewTasksOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListQuotaReviewTasksRequest&, const ListQuotaReviewTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQuotaReviewTasksAsyncHandler;
 			typedef Outcome<Error, Model::ListRamRolesResult> ListRamRolesOutcome;
 			typedef std::future<ListRamRolesOutcome> ListRamRolesOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListRamRolesRequest&, const ListRamRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRamRolesAsyncHandler;
@@ -603,6 +610,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateFetchFieldsResult> UpdateFetchFieldsOutcome;
 			typedef std::future<UpdateFetchFieldsOutcome> UpdateFetchFieldsOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::UpdateFetchFieldsRequest&, const UpdateFetchFieldsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFetchFieldsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSortScriptResult> UpdateSortScriptOutcome;
+			typedef std::future<UpdateSortScriptOutcome> UpdateSortScriptOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::UpdateSortScriptRequest&, const UpdateSortScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSortScriptAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSummariesResult> UpdateSummariesOutcome;
 			typedef std::future<UpdateSummariesOutcome> UpdateSummariesOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::UpdateSummariesRequest&, const UpdateSummariesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSummariesAsyncHandler;
@@ -827,6 +837,9 @@ namespace AlibabaCloud
 			ListQueryProcessorsOutcome listQueryProcessors(const Model::ListQueryProcessorsRequest &request)const;
 			void listQueryProcessorsAsync(const Model::ListQueryProcessorsRequest& request, const ListQueryProcessorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQueryProcessorsOutcomeCallable listQueryProcessorsCallable(const Model::ListQueryProcessorsRequest& request) const;
+			ListQuotaReviewTasksOutcome listQuotaReviewTasks(const Model::ListQuotaReviewTasksRequest &request)const;
+			void listQuotaReviewTasksAsync(const Model::ListQuotaReviewTasksRequest& request, const ListQuotaReviewTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListQuotaReviewTasksOutcomeCallable listQuotaReviewTasksCallable(const Model::ListQuotaReviewTasksRequest& request) const;
 			ListRamRolesOutcome listRamRoles(const Model::ListRamRolesRequest &request)const;
 			void listRamRolesAsync(const Model::ListRamRolesRequest& request, const ListRamRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRamRolesOutcomeCallable listRamRolesCallable(const Model::ListRamRolesRequest& request) const;
@@ -953,6 +966,9 @@ namespace AlibabaCloud
 			UpdateFetchFieldsOutcome updateFetchFields(const Model::UpdateFetchFieldsRequest &request)const;
 			void updateFetchFieldsAsync(const Model::UpdateFetchFieldsRequest& request, const UpdateFetchFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateFetchFieldsOutcomeCallable updateFetchFieldsCallable(const Model::UpdateFetchFieldsRequest& request) const;
+			UpdateSortScriptOutcome updateSortScript(const Model::UpdateSortScriptRequest &request)const;
+			void updateSortScriptAsync(const Model::UpdateSortScriptRequest& request, const UpdateSortScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSortScriptOutcomeCallable updateSortScriptCallable(const Model::UpdateSortScriptRequest& request) const;
 			UpdateSummariesOutcome updateSummaries(const Model::UpdateSummariesRequest &request)const;
 			void updateSummariesAsync(const Model::UpdateSummariesRequest& request, const UpdateSummariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSummariesOutcomeCallable updateSummariesCallable(const Model::UpdateSummariesRequest& request) const;

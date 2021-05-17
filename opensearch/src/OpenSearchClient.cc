@@ -2643,6 +2643,42 @@ OpenSearchClient::ListQueryProcessorsOutcomeCallable OpenSearchClient::listQuery
 	return task->get_future();
 }
 
+OpenSearchClient::ListQuotaReviewTasksOutcome OpenSearchClient::listQuotaReviewTasks(const ListQuotaReviewTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQuotaReviewTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQuotaReviewTasksOutcome(ListQuotaReviewTasksResult(outcome.result()));
+	else
+		return ListQuotaReviewTasksOutcome(outcome.error());
+}
+
+void OpenSearchClient::listQuotaReviewTasksAsync(const ListQuotaReviewTasksRequest& request, const ListQuotaReviewTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQuotaReviewTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenSearchClient::ListQuotaReviewTasksOutcomeCallable OpenSearchClient::listQuotaReviewTasksCallable(const ListQuotaReviewTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQuotaReviewTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->listQuotaReviewTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OpenSearchClient::ListRamRolesOutcome OpenSearchClient::listRamRoles(const ListRamRolesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4149,6 +4185,42 @@ OpenSearchClient::UpdateFetchFieldsOutcomeCallable OpenSearchClient::updateFetch
 			[this, request]()
 			{
 			return this->updateFetchFields(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OpenSearchClient::UpdateSortScriptOutcome OpenSearchClient::updateSortScript(const UpdateSortScriptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSortScriptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSortScriptOutcome(UpdateSortScriptResult(outcome.result()));
+	else
+		return UpdateSortScriptOutcome(outcome.error());
+}
+
+void OpenSearchClient::updateSortScriptAsync(const UpdateSortScriptRequest& request, const UpdateSortScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSortScript(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OpenSearchClient::UpdateSortScriptOutcomeCallable OpenSearchClient::updateSortScriptCallable(const UpdateSortScriptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSortScriptOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSortScript(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
