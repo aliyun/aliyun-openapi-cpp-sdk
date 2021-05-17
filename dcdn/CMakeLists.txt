@@ -171,6 +171,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnOfflineLogDeliveryStatusResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshQuotaResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTaskByIdRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTaskByIdResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTasksRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRefreshTasksResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnRegionAndIspRequest.h
@@ -422,6 +424,8 @@ set(dcdn_src
 	src/model/DescribeDcdnOfflineLogDeliveryStatusResult.cc
 	src/model/DescribeDcdnRefreshQuotaRequest.cc
 	src/model/DescribeDcdnRefreshQuotaResult.cc
+	src/model/DescribeDcdnRefreshTaskByIdRequest.cc
+	src/model/DescribeDcdnRefreshTaskByIdResult.cc
 	src/model/DescribeDcdnRefreshTasksRequest.cc
 	src/model/DescribeDcdnRefreshTasksResult.cc
 	src/model/DescribeDcdnRegionAndIspRequest.cc

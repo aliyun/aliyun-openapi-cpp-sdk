@@ -172,6 +172,8 @@
 #include "model/DescribeDcdnOfflineLogDeliveryStatusResult.h"
 #include "model/DescribeDcdnRefreshQuotaRequest.h"
 #include "model/DescribeDcdnRefreshQuotaResult.h"
+#include "model/DescribeDcdnRefreshTaskByIdRequest.h"
+#include "model/DescribeDcdnRefreshTaskByIdResult.h"
 #include "model/DescribeDcdnRefreshTasksRequest.h"
 #include "model/DescribeDcdnRefreshTasksResult.h"
 #include "model/DescribeDcdnRegionAndIspRequest.h"
@@ -504,6 +506,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDcdnRefreshQuotaResult> DescribeDcdnRefreshQuotaOutcome;
 			typedef std::future<DescribeDcdnRefreshQuotaOutcome> DescribeDcdnRefreshQuotaOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnRefreshQuotaRequest&, const DescribeDcdnRefreshQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnRefreshQuotaAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDcdnRefreshTaskByIdResult> DescribeDcdnRefreshTaskByIdOutcome;
+			typedef std::future<DescribeDcdnRefreshTaskByIdOutcome> DescribeDcdnRefreshTaskByIdOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnRefreshTaskByIdRequest&, const DescribeDcdnRefreshTaskByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnRefreshTaskByIdAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDcdnRefreshTasksResult> DescribeDcdnRefreshTasksOutcome;
 			typedef std::future<DescribeDcdnRefreshTasksOutcome> DescribeDcdnRefreshTasksOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::DescribeDcdnRefreshTasksRequest&, const DescribeDcdnRefreshTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcdnRefreshTasksAsyncHandler;
@@ -881,6 +886,9 @@ namespace AlibabaCloud
 			DescribeDcdnRefreshQuotaOutcome describeDcdnRefreshQuota(const Model::DescribeDcdnRefreshQuotaRequest &request)const;
 			void describeDcdnRefreshQuotaAsync(const Model::DescribeDcdnRefreshQuotaRequest& request, const DescribeDcdnRefreshQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnRefreshQuotaOutcomeCallable describeDcdnRefreshQuotaCallable(const Model::DescribeDcdnRefreshQuotaRequest& request) const;
+			DescribeDcdnRefreshTaskByIdOutcome describeDcdnRefreshTaskById(const Model::DescribeDcdnRefreshTaskByIdRequest &request)const;
+			void describeDcdnRefreshTaskByIdAsync(const Model::DescribeDcdnRefreshTaskByIdRequest& request, const DescribeDcdnRefreshTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDcdnRefreshTaskByIdOutcomeCallable describeDcdnRefreshTaskByIdCallable(const Model::DescribeDcdnRefreshTaskByIdRequest& request) const;
 			DescribeDcdnRefreshTasksOutcome describeDcdnRefreshTasks(const Model::DescribeDcdnRefreshTasksRequest &request)const;
 			void describeDcdnRefreshTasksAsync(const Model::DescribeDcdnRefreshTasksRequest& request, const DescribeDcdnRefreshTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDcdnRefreshTasksOutcomeCallable describeDcdnRefreshTasksCallable(const Model::DescribeDcdnRefreshTasksRequest& request) const;

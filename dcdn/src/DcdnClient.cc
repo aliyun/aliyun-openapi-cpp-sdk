@@ -2751,6 +2751,42 @@ DcdnClient::DescribeDcdnRefreshQuotaOutcomeCallable DcdnClient::describeDcdnRefr
 	return task->get_future();
 }
 
+DcdnClient::DescribeDcdnRefreshTaskByIdOutcome DcdnClient::describeDcdnRefreshTaskById(const DescribeDcdnRefreshTaskByIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDcdnRefreshTaskByIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDcdnRefreshTaskByIdOutcome(DescribeDcdnRefreshTaskByIdResult(outcome.result()));
+	else
+		return DescribeDcdnRefreshTaskByIdOutcome(outcome.error());
+}
+
+void DcdnClient::describeDcdnRefreshTaskByIdAsync(const DescribeDcdnRefreshTaskByIdRequest& request, const DescribeDcdnRefreshTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDcdnRefreshTaskById(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::DescribeDcdnRefreshTaskByIdOutcomeCallable DcdnClient::describeDcdnRefreshTaskByIdCallable(const DescribeDcdnRefreshTaskByIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDcdnRefreshTaskByIdOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDcdnRefreshTaskById(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::DescribeDcdnRefreshTasksOutcome DcdnClient::describeDcdnRefreshTasks(const DescribeDcdnRefreshTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
