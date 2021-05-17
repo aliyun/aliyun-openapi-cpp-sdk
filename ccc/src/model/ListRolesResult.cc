@@ -39,22 +39,28 @@ void ListRolesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["Role"];
-	for (auto valueDataRole : allDataNode)
+	auto allRolesNode = value["Roles"]["Role"];
+	for (auto valueRolesRole : allRolesNode)
 	{
-		Role dataObject;
-		if(!valueDataRole["Name"].isNull())
-			dataObject.name = valueDataRole["Name"].asString();
-		if(!valueDataRole["RoleId"].isNull())
-			dataObject.roleId = valueDataRole["RoleId"].asString();
-		data_.push_back(dataObject);
+		Role rolesObject;
+		if(!valueRolesRole["RoleId"].isNull())
+			rolesObject.roleId = valueRolesRole["RoleId"].asString();
+		if(!valueRolesRole["InstanceId"].isNull())
+			rolesObject.instanceId = valueRolesRole["InstanceId"].asString();
+		if(!valueRolesRole["RoleName"].isNull())
+			rolesObject.roleName = valueRolesRole["RoleName"].asString();
+		if(!valueRolesRole["RoleDescription"].isNull())
+			rolesObject.roleDescription = valueRolesRole["RoleDescription"].asString();
+		roles_.push_back(rolesObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
 }
 
@@ -68,13 +74,18 @@ int ListRolesResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
-std::vector<ListRolesResult::Role> ListRolesResult::getData()const
+std::vector<ListRolesResult::Role> ListRolesResult::getRoles()const
 {
-	return data_;
+	return roles_;
 }
 
 std::string ListRolesResult::getCode()const
 {
 	return code_;
+}
+
+bool ListRolesResult::getSuccess()const
+{
+	return success_;
 }
 

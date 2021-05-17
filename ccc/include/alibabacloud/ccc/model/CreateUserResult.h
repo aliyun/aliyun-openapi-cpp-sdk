@@ -32,35 +32,25 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT CreateUserResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string extension;
-					std::string loginName;
-					std::string email;
-					std::string userId;
-					std::string displayName;
-					std::string mobile;
-					std::string workMode;
-				};
 
 
 				CreateUserResult();
 				explicit CreateUserResult(const std::string &payload);
 				~CreateUserResult();
 				std::string getMessage()const;
+				std::string getUserId()const;
 				int getHttpStatusCode()const;
-				std::vector<std::string> getParams()const;
-				Data getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string userId_;
 				int httpStatusCode_;
-				std::vector<std::string> params_;
-				Data data_;
 				std::string code_;
+				bool success_;
 
 			};
 		}
