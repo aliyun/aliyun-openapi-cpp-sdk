@@ -31,21 +31,21 @@ IotClient::IotClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
 }
 
 IotClient::IotClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
 }
 
 IotClient::IotClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
 }
 
 IotClient::~IotClient()
@@ -2463,6 +2463,78 @@ IotClient::CreateSceneRuleOutcomeCallable IotClient::createSceneRuleCallable(con
 	return task->get_future();
 }
 
+IotClient::CreateSpeechOutcome IotClient::createSpeech(const CreateSpeechRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSpeechOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSpeechOutcome(CreateSpeechResult(outcome.result()));
+	else
+		return CreateSpeechOutcome(outcome.error());
+}
+
+void IotClient::createSpeechAsync(const CreateSpeechRequest& request, const CreateSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSpeech(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateSpeechOutcomeCallable IotClient::createSpeechCallable(const CreateSpeechRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSpeechOutcome()>>(
+			[this, request]()
+			{
+			return this->createSpeech(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateStudioAppDomainOpenOutcome IotClient::createStudioAppDomainOpen(const CreateStudioAppDomainOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateStudioAppDomainOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateStudioAppDomainOpenOutcome(CreateStudioAppDomainOpenResult(outcome.result()));
+	else
+		return CreateStudioAppDomainOpenOutcome(outcome.error());
+}
+
+void IotClient::createStudioAppDomainOpenAsync(const CreateStudioAppDomainOpenRequest& request, const CreateStudioAppDomainOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createStudioAppDomainOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateStudioAppDomainOpenOutcomeCallable IotClient::createStudioAppDomainOpenCallable(const CreateStudioAppDomainOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateStudioAppDomainOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->createStudioAppDomainOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateSubscribeRelationOutcome IotClient::createSubscribeRelation(const CreateSubscribeRelationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3357,6 +3429,42 @@ IotClient::DeleteSpeechOutcomeCallable IotClient::deleteSpeechCallable(const Del
 			[this, request]()
 			{
 			return this->deleteSpeech(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::DeleteStudioAppDomainOpenOutcome IotClient::deleteStudioAppDomainOpen(const DeleteStudioAppDomainOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStudioAppDomainOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStudioAppDomainOpenOutcome(DeleteStudioAppDomainOpenResult(outcome.result()));
+	else
+		return DeleteStudioAppDomainOpenOutcome(outcome.error());
+}
+
+void IotClient::deleteStudioAppDomainOpenAsync(const DeleteStudioAppDomainOpenRequest& request, const DeleteStudioAppDomainOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStudioAppDomainOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteStudioAppDomainOpenOutcomeCallable IotClient::deleteStudioAppDomainOpenCallable(const DeleteStudioAppDomainOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStudioAppDomainOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStudioAppDomainOpen(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4401,6 +4509,78 @@ IotClient::GetSceneRuleOutcomeCallable IotClient::getSceneRuleCallable(const Get
 			[this, request]()
 			{
 			return this->getSceneRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetSpeechVoiceOutcome IotClient::getSpeechVoice(const GetSpeechVoiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSpeechVoiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSpeechVoiceOutcome(GetSpeechVoiceResult(outcome.result()));
+	else
+		return GetSpeechVoiceOutcome(outcome.error());
+}
+
+void IotClient::getSpeechVoiceAsync(const GetSpeechVoiceRequest& request, const GetSpeechVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSpeechVoice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetSpeechVoiceOutcomeCallable IotClient::getSpeechVoiceCallable(const GetSpeechVoiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSpeechVoiceOutcome()>>(
+			[this, request]()
+			{
+			return this->getSpeechVoice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetStudioAppTokenOpenOutcome IotClient::getStudioAppTokenOpen(const GetStudioAppTokenOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetStudioAppTokenOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetStudioAppTokenOpenOutcome(GetStudioAppTokenOpenResult(outcome.result()));
+	else
+		return GetStudioAppTokenOpenOutcome(outcome.error());
+}
+
+void IotClient::getStudioAppTokenOpenAsync(const GetStudioAppTokenOpenRequest& request, const GetStudioAppTokenOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getStudioAppTokenOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetStudioAppTokenOpenOutcomeCallable IotClient::getStudioAppTokenOpenCallable(const GetStudioAppTokenOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetStudioAppTokenOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->getStudioAppTokenOpen(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5595,6 +5775,42 @@ IotClient::PubBroadcastOutcomeCallable IotClient::pubBroadcastCallable(const Pub
 	return task->get_future();
 }
 
+IotClient::PublishStudioAppOutcome IotClient::publishStudioApp(const PublishStudioAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PublishStudioAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PublishStudioAppOutcome(PublishStudioAppResult(outcome.result()));
+	else
+		return PublishStudioAppOutcome(outcome.error());
+}
+
+void IotClient::publishStudioAppAsync(const PublishStudioAppRequest& request, const PublishStudioAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, publishStudioApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::PublishStudioAppOutcomeCallable IotClient::publishStudioAppCallable(const PublishStudioAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PublishStudioAppOutcome()>>(
+			[this, request]()
+			{
+			return this->publishStudioApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::PublishThingModelOutcome IotClient::publishThingModel(const PublishThingModelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5625,6 +5841,42 @@ IotClient::PublishThingModelOutcomeCallable IotClient::publishThingModelCallable
 			[this, request]()
 			{
 			return this->publishThingModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::PushSpeechOutcome IotClient::pushSpeech(const PushSpeechRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PushSpeechOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PushSpeechOutcome(PushSpeechResult(outcome.result()));
+	else
+		return PushSpeechOutcome(outcome.error());
+}
+
+void IotClient::pushSpeechAsync(const PushSpeechRequest& request, const PushSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pushSpeech(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::PushSpeechOutcomeCallable IotClient::pushSpeechCallable(const PushSpeechRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PushSpeechOutcome()>>(
+			[this, request]()
+			{
+			return this->pushSpeech(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7683,6 +7935,366 @@ IotClient::QuerySceneRuleOutcomeCallable IotClient::querySceneRuleCallable(const
 	return task->get_future();
 }
 
+IotClient::QuerySolutionDeviceGroupPageOutcome IotClient::querySolutionDeviceGroupPage(const QuerySolutionDeviceGroupPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySolutionDeviceGroupPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySolutionDeviceGroupPageOutcome(QuerySolutionDeviceGroupPageResult(outcome.result()));
+	else
+		return QuerySolutionDeviceGroupPageOutcome(outcome.error());
+}
+
+void IotClient::querySolutionDeviceGroupPageAsync(const QuerySolutionDeviceGroupPageRequest& request, const QuerySolutionDeviceGroupPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySolutionDeviceGroupPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySolutionDeviceGroupPageOutcomeCallable IotClient::querySolutionDeviceGroupPageCallable(const QuerySolutionDeviceGroupPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySolutionDeviceGroupPageOutcome()>>(
+			[this, request]()
+			{
+			return this->querySolutionDeviceGroupPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySpeechOutcome IotClient::querySpeech(const QuerySpeechRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySpeechOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySpeechOutcome(QuerySpeechResult(outcome.result()));
+	else
+		return QuerySpeechOutcome(outcome.error());
+}
+
+void IotClient::querySpeechAsync(const QuerySpeechRequest& request, const QuerySpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySpeech(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySpeechOutcomeCallable IotClient::querySpeechCallable(const QuerySpeechRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySpeechOutcome()>>(
+			[this, request]()
+			{
+			return this->querySpeech(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySpeechListOutcome IotClient::querySpeechList(const QuerySpeechListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySpeechListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySpeechListOutcome(QuerySpeechListResult(outcome.result()));
+	else
+		return QuerySpeechListOutcome(outcome.error());
+}
+
+void IotClient::querySpeechListAsync(const QuerySpeechListRequest& request, const QuerySpeechListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySpeechList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySpeechListOutcomeCallable IotClient::querySpeechListCallable(const QuerySpeechListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySpeechListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySpeechList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySpeechPushJobOutcome IotClient::querySpeechPushJob(const QuerySpeechPushJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySpeechPushJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySpeechPushJobOutcome(QuerySpeechPushJobResult(outcome.result()));
+	else
+		return QuerySpeechPushJobOutcome(outcome.error());
+}
+
+void IotClient::querySpeechPushJobAsync(const QuerySpeechPushJobRequest& request, const QuerySpeechPushJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySpeechPushJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySpeechPushJobOutcomeCallable IotClient::querySpeechPushJobCallable(const QuerySpeechPushJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySpeechPushJobOutcome()>>(
+			[this, request]()
+			{
+			return this->querySpeechPushJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySpeechPushJobDeviceOutcome IotClient::querySpeechPushJobDevice(const QuerySpeechPushJobDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySpeechPushJobDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySpeechPushJobDeviceOutcome(QuerySpeechPushJobDeviceResult(outcome.result()));
+	else
+		return QuerySpeechPushJobDeviceOutcome(outcome.error());
+}
+
+void IotClient::querySpeechPushJobDeviceAsync(const QuerySpeechPushJobDeviceRequest& request, const QuerySpeechPushJobDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySpeechPushJobDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySpeechPushJobDeviceOutcomeCallable IotClient::querySpeechPushJobDeviceCallable(const QuerySpeechPushJobDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySpeechPushJobDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->querySpeechPushJobDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySpeechPushJobSpeechOutcome IotClient::querySpeechPushJobSpeech(const QuerySpeechPushJobSpeechRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySpeechPushJobSpeechOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySpeechPushJobSpeechOutcome(QuerySpeechPushJobSpeechResult(outcome.result()));
+	else
+		return QuerySpeechPushJobSpeechOutcome(outcome.error());
+}
+
+void IotClient::querySpeechPushJobSpeechAsync(const QuerySpeechPushJobSpeechRequest& request, const QuerySpeechPushJobSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySpeechPushJobSpeech(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySpeechPushJobSpeechOutcomeCallable IotClient::querySpeechPushJobSpeechCallable(const QuerySpeechPushJobSpeechRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySpeechPushJobSpeechOutcome()>>(
+			[this, request]()
+			{
+			return this->querySpeechPushJobSpeech(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryStudioAppDomainListOpenOutcome IotClient::queryStudioAppDomainListOpen(const QueryStudioAppDomainListOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryStudioAppDomainListOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryStudioAppDomainListOpenOutcome(QueryStudioAppDomainListOpenResult(outcome.result()));
+	else
+		return QueryStudioAppDomainListOpenOutcome(outcome.error());
+}
+
+void IotClient::queryStudioAppDomainListOpenAsync(const QueryStudioAppDomainListOpenRequest& request, const QueryStudioAppDomainListOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryStudioAppDomainListOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryStudioAppDomainListOpenOutcomeCallable IotClient::queryStudioAppDomainListOpenCallable(const QueryStudioAppDomainListOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryStudioAppDomainListOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->queryStudioAppDomainListOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryStudioAppListOutcome IotClient::queryStudioAppList(const QueryStudioAppListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryStudioAppListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryStudioAppListOutcome(QueryStudioAppListResult(outcome.result()));
+	else
+		return QueryStudioAppListOutcome(outcome.error());
+}
+
+void IotClient::queryStudioAppListAsync(const QueryStudioAppListRequest& request, const QueryStudioAppListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryStudioAppList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryStudioAppListOutcomeCallable IotClient::queryStudioAppListCallable(const QueryStudioAppListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryStudioAppListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryStudioAppList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryStudioAppPageListOpenOutcome IotClient::queryStudioAppPageListOpen(const QueryStudioAppPageListOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryStudioAppPageListOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryStudioAppPageListOpenOutcome(QueryStudioAppPageListOpenResult(outcome.result()));
+	else
+		return QueryStudioAppPageListOpenOutcome(outcome.error());
+}
+
+void IotClient::queryStudioAppPageListOpenAsync(const QueryStudioAppPageListOpenRequest& request, const QueryStudioAppPageListOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryStudioAppPageListOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryStudioAppPageListOpenOutcomeCallable IotClient::queryStudioAppPageListOpenCallable(const QueryStudioAppPageListOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryStudioAppPageListOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->queryStudioAppPageListOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryStudioProjectListOutcome IotClient::queryStudioProjectList(const QueryStudioProjectListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryStudioProjectListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryStudioProjectListOutcome(QueryStudioProjectListResult(outcome.result()));
+	else
+		return QueryStudioProjectListOutcome(outcome.error());
+}
+
+void IotClient::queryStudioProjectListAsync(const QueryStudioProjectListRequest& request, const QueryStudioProjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryStudioProjectList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryStudioProjectListOutcomeCallable IotClient::queryStudioProjectListCallable(const QueryStudioProjectListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryStudioProjectListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryStudioProjectList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QuerySubscribeRelationOutcome IotClient::querySubscribeRelation(const QuerySubscribeRelationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8109,6 +8721,42 @@ IotClient::RefreshDeviceTunnelSharePasswordOutcomeCallable IotClient::refreshDev
 			[this, request]()
 			{
 			return this->refreshDeviceTunnelSharePassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::RefreshStudioAppTokenOpenOutcome IotClient::refreshStudioAppTokenOpen(const RefreshStudioAppTokenOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshStudioAppTokenOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshStudioAppTokenOpenOutcome(RefreshStudioAppTokenOpenResult(outcome.result()));
+	else
+		return RefreshStudioAppTokenOpenOutcome(outcome.error());
+}
+
+void IotClient::refreshStudioAppTokenOpenAsync(const RefreshStudioAppTokenOpenRequest& request, const RefreshStudioAppTokenOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshStudioAppTokenOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::RefreshStudioAppTokenOpenOutcomeCallable IotClient::refreshStudioAppTokenOpenCallable(const RefreshStudioAppTokenOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshStudioAppTokenOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshStudioAppTokenOpen(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8619,6 +9267,78 @@ IotClient::SetProductCertInfoOutcomeCallable IotClient::setProductCertInfoCallab
 	return task->get_future();
 }
 
+IotClient::SetStudioProjectCooperationOutcome IotClient::setStudioProjectCooperation(const SetStudioProjectCooperationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetStudioProjectCooperationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetStudioProjectCooperationOutcome(SetStudioProjectCooperationResult(outcome.result()));
+	else
+		return SetStudioProjectCooperationOutcome(outcome.error());
+}
+
+void IotClient::setStudioProjectCooperationAsync(const SetStudioProjectCooperationRequest& request, const SetStudioProjectCooperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setStudioProjectCooperation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::SetStudioProjectCooperationOutcomeCallable IotClient::setStudioProjectCooperationCallable(const SetStudioProjectCooperationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetStudioProjectCooperationOutcome()>>(
+			[this, request]()
+			{
+			return this->setStudioProjectCooperation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::SetupStudioAppAuthModeOpenOutcome IotClient::setupStudioAppAuthModeOpen(const SetupStudioAppAuthModeOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetupStudioAppAuthModeOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetupStudioAppAuthModeOpenOutcome(SetupStudioAppAuthModeOpenResult(outcome.result()));
+	else
+		return SetupStudioAppAuthModeOpenOutcome(outcome.error());
+}
+
+void IotClient::setupStudioAppAuthModeOpenAsync(const SetupStudioAppAuthModeOpenRequest& request, const SetupStudioAppAuthModeOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setupStudioAppAuthModeOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::SetupStudioAppAuthModeOpenOutcomeCallable IotClient::setupStudioAppAuthModeOpenCallable(const SetupStudioAppAuthModeOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetupStudioAppAuthModeOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->setupStudioAppAuthModeOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::SpeechByCombinationOutcome IotClient::speechByCombination(const SpeechByCombinationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8757,6 +9477,42 @@ IotClient::SyncSpeechByCombinationOutcomeCallable IotClient::syncSpeechByCombina
 			[this, request]()
 			{
 			return this->syncSpeechByCombination(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::TestSpeechOutcome IotClient::testSpeech(const TestSpeechRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TestSpeechOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TestSpeechOutcome(TestSpeechResult(outcome.result()));
+	else
+		return TestSpeechOutcome(outcome.error());
+}
+
+void IotClient::testSpeechAsync(const TestSpeechRequest& request, const TestSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, testSpeech(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::TestSpeechOutcomeCallable IotClient::testSpeechCallable(const TestSpeechRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TestSpeechOutcome()>>(
+			[this, request]()
+			{
+			return this->testSpeech(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9513,6 +10269,42 @@ IotClient::UpdateSceneRuleOutcomeCallable IotClient::updateSceneRuleCallable(con
 			[this, request]()
 			{
 			return this->updateSceneRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::UpdateSpeechOutcome IotClient::updateSpeech(const UpdateSpeechRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSpeechOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSpeechOutcome(UpdateSpeechResult(outcome.result()));
+	else
+		return UpdateSpeechOutcome(outcome.error());
+}
+
+void IotClient::updateSpeechAsync(const UpdateSpeechRequest& request, const UpdateSpeechAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSpeech(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateSpeechOutcomeCallable IotClient::updateSpeechCallable(const UpdateSpeechRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSpeechOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSpeech(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
