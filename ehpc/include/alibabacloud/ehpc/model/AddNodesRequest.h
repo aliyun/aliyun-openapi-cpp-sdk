@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
 				std::string getSystemDiskType()const;
 				void setSystemDiskType(const std::string& systemDiskType);
+				int getMinCount()const;
+				void setMinCount(int minCount);
 				int getSystemDiskSize()const;
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getInstanceType()const;
@@ -102,6 +104,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
 				std::string systemDiskType_;
+				int minCount_;
 				int systemDiskSize_;
 				std::string instanceType_;
 				std::string hostNamePrefix_;

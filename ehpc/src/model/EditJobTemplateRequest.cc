@@ -38,6 +38,17 @@ void EditJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRedi
 	setParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
+std::string EditJobTemplateRequest::getClockTime()const
+{
+	return clockTime_;
+}
+
+void EditJobTemplateRequest::setClockTime(const std::string& clockTime)
+{
+	clockTime_ = clockTime;
+	setParameter("ClockTime", clockTime);
+}
+
 std::string EditJobTemplateRequest::getCommandLine()const
 {
 	return commandLine_;
@@ -80,6 +91,17 @@ void EditJobTemplateRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
 	setParameter("PackagePath", packagePath);
+}
+
+std::string EditJobTemplateRequest::getMem()const
+{
+	return mem_;
+}
+
+void EditJobTemplateRequest::setMem(const std::string& mem)
+{
+	mem_ = mem;
+	setParameter("Mem", mem);
 }
 
 std::string EditJobTemplateRequest::getStdoutRedirectPath()const
@@ -126,6 +148,17 @@ void EditJobTemplateRequest::setReRunable(bool reRunable)
 	setParameter("ReRunable", reRunable ? "true" : "false");
 }
 
+int EditJobTemplateRequest::getThread()const
+{
+	return thread_;
+}
+
+void EditJobTemplateRequest::setThread(int thread)
+{
+	thread_ = thread;
+	setParameter("Thread", std::to_string(thread));
+}
+
 std::string EditJobTemplateRequest::getTemplateId()const
 {
 	return templateId_;
@@ -148,6 +181,39 @@ void EditJobTemplateRequest::setPriority(int priority)
 	setParameter("Priority", std::to_string(priority));
 }
 
+int EditJobTemplateRequest::getGpu()const
+{
+	return gpu_;
+}
+
+void EditJobTemplateRequest::setGpu(int gpu)
+{
+	gpu_ = gpu;
+	setParameter("Gpu", std::to_string(gpu));
+}
+
+int EditJobTemplateRequest::getNode()const
+{
+	return node_;
+}
+
+void EditJobTemplateRequest::setNode(int node)
+{
+	node_ = node;
+	setParameter("Node", std::to_string(node));
+}
+
+int EditJobTemplateRequest::getTask()const
+{
+	return task_;
+}
+
+void EditJobTemplateRequest::setTask(int task)
+{
+	task_ = task;
+	setParameter("Task", std::to_string(task));
+}
+
 std::string EditJobTemplateRequest::getName()const
 {
 	return name_;
@@ -157,5 +223,16 @@ void EditJobTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+std::string EditJobTemplateRequest::getQueue()const
+{
+	return queue_;
+}
+
+void EditJobTemplateRequest::setQueue(const std::string& queue)
+{
+	queue_ = queue;
+	setParameter("Queue", queue);
 }
 

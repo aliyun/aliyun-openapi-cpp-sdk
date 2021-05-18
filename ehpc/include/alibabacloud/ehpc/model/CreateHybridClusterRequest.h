@@ -55,6 +55,8 @@ namespace AlibabaCloud
 
 				std::string getKeyPairName()const;
 				void setKeyPairName(const std::string& keyPairName);
+				bool getMultiOs()const;
+				void setMultiOs(bool multiOs);
 				std::string getSecurityGroupName()const;
 				void setSecurityGroupName(const std::string& securityGroupName);
 				std::string getOnPremiseVolumeRemotePath()const;
@@ -128,6 +130,7 @@ namespace AlibabaCloud
 
             private:
 				std::string keyPairName_;
+				bool multiOs_;
 				std::string securityGroupName_;
 				std::string onPremiseVolumeRemotePath_;
 				std::string imageOwnerAlias_;

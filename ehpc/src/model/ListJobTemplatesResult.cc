@@ -65,6 +65,20 @@ void ListJobTemplatesResult::parse(const std::string &payload)
 			templatesObject.arrayRequest = valueTemplatesJobTemplates["ArrayRequest"].asString();
 		if(!valueTemplatesJobTemplates["Variables"].isNull())
 			templatesObject.variables = valueTemplatesJobTemplates["Variables"].asString();
+		if(!valueTemplatesJobTemplates["Queue"].isNull())
+			templatesObject.queue = valueTemplatesJobTemplates["Queue"].asString();
+		if(!valueTemplatesJobTemplates["ClockTime"].isNull())
+			templatesObject.clockTime = valueTemplatesJobTemplates["ClockTime"].asString();
+		if(!valueTemplatesJobTemplates["Node"].isNull())
+			templatesObject.node = std::stoi(valueTemplatesJobTemplates["Node"].asString());
+		if(!valueTemplatesJobTemplates["Task"].isNull())
+			templatesObject.task = std::stoi(valueTemplatesJobTemplates["Task"].asString());
+		if(!valueTemplatesJobTemplates["Thread"].isNull())
+			templatesObject.thread = std::stoi(valueTemplatesJobTemplates["Thread"].asString());
+		if(!valueTemplatesJobTemplates["Mem"].isNull())
+			templatesObject.mem = valueTemplatesJobTemplates["Mem"].asString();
+		if(!valueTemplatesJobTemplates["Gpu"].isNull())
+			templatesObject.gpu = std::stoi(valueTemplatesJobTemplates["Gpu"].asString());
 		templates_.push_back(templatesObject);
 	}
 	if(!value["TotalCount"].isNull())

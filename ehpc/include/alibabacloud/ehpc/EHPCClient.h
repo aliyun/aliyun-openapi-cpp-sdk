@@ -24,6 +24,8 @@
 #include "EHPCExport.h"
 #include "model/AddContainerAppRequest.h"
 #include "model/AddContainerAppResult.h"
+#include "model/AddExistedNodesRequest.h"
+#include "model/AddExistedNodesResult.h"
 #include "model/AddLocalNodesRequest.h"
 #include "model/AddLocalNodesResult.h"
 #include "model/AddNodesRequest.h"
@@ -100,6 +102,8 @@
 #include "model/DescribeNFSClientStatusResult.h"
 #include "model/DescribePriceRequest.h"
 #include "model/DescribePriceResult.h"
+#include "model/EcdDeleteDesktopsRequest.h"
+#include "model/EcdDeleteDesktopsResult.h"
 #include "model/EditJobTemplateRequest.h"
 #include "model/EditJobTemplateResult.h"
 #include "model/GetAccountingReportRequest.h"
@@ -272,6 +276,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddContainerAppResult> AddContainerAppOutcome;
 			typedef std::future<AddContainerAppOutcome> AddContainerAppOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddContainerAppRequest&, const AddContainerAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddContainerAppAsyncHandler;
+			typedef Outcome<Error, Model::AddExistedNodesResult> AddExistedNodesOutcome;
+			typedef std::future<AddExistedNodesOutcome> AddExistedNodesOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::AddExistedNodesRequest&, const AddExistedNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddExistedNodesAsyncHandler;
 			typedef Outcome<Error, Model::AddLocalNodesResult> AddLocalNodesOutcome;
 			typedef std::future<AddLocalNodesOutcome> AddLocalNodesOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddLocalNodesRequest&, const AddLocalNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLocalNodesAsyncHandler;
@@ -386,6 +393,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePriceResult> DescribePriceOutcome;
 			typedef std::future<DescribePriceOutcome> DescribePriceOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DescribePriceRequest&, const DescribePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceAsyncHandler;
+			typedef Outcome<Error, Model::EcdDeleteDesktopsResult> EcdDeleteDesktopsOutcome;
+			typedef std::future<EcdDeleteDesktopsOutcome> EcdDeleteDesktopsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::EcdDeleteDesktopsRequest&, const EcdDeleteDesktopsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EcdDeleteDesktopsAsyncHandler;
 			typedef Outcome<Error, Model::EditJobTemplateResult> EditJobTemplateOutcome;
 			typedef std::future<EditJobTemplateOutcome> EditJobTemplateOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::EditJobTemplateRequest&, const EditJobTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditJobTemplateAsyncHandler;
@@ -634,6 +644,9 @@ namespace AlibabaCloud
 			AddContainerAppOutcome addContainerApp(const Model::AddContainerAppRequest &request)const;
 			void addContainerAppAsync(const Model::AddContainerAppRequest& request, const AddContainerAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddContainerAppOutcomeCallable addContainerAppCallable(const Model::AddContainerAppRequest& request) const;
+			AddExistedNodesOutcome addExistedNodes(const Model::AddExistedNodesRequest &request)const;
+			void addExistedNodesAsync(const Model::AddExistedNodesRequest& request, const AddExistedNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddExistedNodesOutcomeCallable addExistedNodesCallable(const Model::AddExistedNodesRequest& request) const;
 			AddLocalNodesOutcome addLocalNodes(const Model::AddLocalNodesRequest &request)const;
 			void addLocalNodesAsync(const Model::AddLocalNodesRequest& request, const AddLocalNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLocalNodesOutcomeCallable addLocalNodesCallable(const Model::AddLocalNodesRequest& request) const;
@@ -748,6 +761,9 @@ namespace AlibabaCloud
 			DescribePriceOutcome describePrice(const Model::DescribePriceRequest &request)const;
 			void describePriceAsync(const Model::DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePriceOutcomeCallable describePriceCallable(const Model::DescribePriceRequest& request) const;
+			EcdDeleteDesktopsOutcome ecdDeleteDesktops(const Model::EcdDeleteDesktopsRequest &request)const;
+			void ecdDeleteDesktopsAsync(const Model::EcdDeleteDesktopsRequest& request, const EcdDeleteDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EcdDeleteDesktopsOutcomeCallable ecdDeleteDesktopsCallable(const Model::EcdDeleteDesktopsRequest& request) const;
 			EditJobTemplateOutcome editJobTemplate(const Model::EditJobTemplateRequest &request)const;
 			void editJobTemplateAsync(const Model::EditJobTemplateRequest& request, const EditJobTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EditJobTemplateOutcomeCallable editJobTemplateCallable(const Model::EditJobTemplateRequest& request) const;

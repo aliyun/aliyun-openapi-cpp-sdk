@@ -38,6 +38,17 @@ void CreateJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRe
 	setParameter("StderrRedirectPath", stderrRedirectPath);
 }
 
+std::string CreateJobTemplateRequest::getClockTime()const
+{
+	return clockTime_;
+}
+
+void CreateJobTemplateRequest::setClockTime(const std::string& clockTime)
+{
+	clockTime_ = clockTime;
+	setParameter("ClockTime", clockTime);
+}
+
 std::string CreateJobTemplateRequest::getCommandLine()const
 {
 	return commandLine_;
@@ -80,6 +91,17 @@ void CreateJobTemplateRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
 	setParameter("PackagePath", packagePath);
+}
+
+std::string CreateJobTemplateRequest::getMem()const
+{
+	return mem_;
+}
+
+void CreateJobTemplateRequest::setMem(const std::string& mem)
+{
+	mem_ = mem;
+	setParameter("Mem", mem);
 }
 
 std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
@@ -126,6 +148,17 @@ void CreateJobTemplateRequest::setReRunable(bool reRunable)
 	setParameter("ReRunable", reRunable ? "true" : "false");
 }
 
+int CreateJobTemplateRequest::getThread()const
+{
+	return thread_;
+}
+
+void CreateJobTemplateRequest::setThread(int thread)
+{
+	thread_ = thread;
+	setParameter("Thread", std::to_string(thread));
+}
+
 int CreateJobTemplateRequest::getPriority()const
 {
 	return priority_;
@@ -137,6 +170,39 @@ void CreateJobTemplateRequest::setPriority(int priority)
 	setParameter("Priority", std::to_string(priority));
 }
 
+int CreateJobTemplateRequest::getGpu()const
+{
+	return gpu_;
+}
+
+void CreateJobTemplateRequest::setGpu(int gpu)
+{
+	gpu_ = gpu;
+	setParameter("Gpu", std::to_string(gpu));
+}
+
+int CreateJobTemplateRequest::getNode()const
+{
+	return node_;
+}
+
+void CreateJobTemplateRequest::setNode(int node)
+{
+	node_ = node;
+	setParameter("Node", std::to_string(node));
+}
+
+int CreateJobTemplateRequest::getTask()const
+{
+	return task_;
+}
+
+void CreateJobTemplateRequest::setTask(int task)
+{
+	task_ = task;
+	setParameter("Task", std::to_string(task));
+}
+
 std::string CreateJobTemplateRequest::getName()const
 {
 	return name_;
@@ -146,5 +212,16 @@ void CreateJobTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+std::string CreateJobTemplateRequest::getQueue()const
+{
+	return queue_;
+}
+
+void CreateJobTemplateRequest::setQueue(const std::string& queue)
+{
+	queue_ = queue;
+	setParameter("Queue", queue);
 }
 

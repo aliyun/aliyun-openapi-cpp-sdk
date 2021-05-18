@@ -27,6 +27,17 @@ ListCustomImagesRequest::ListCustomImagesRequest() :
 ListCustomImagesRequest::~ListCustomImagesRequest()
 {}
 
+std::string ListCustomImagesRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ListCustomImagesRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 std::string ListCustomImagesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

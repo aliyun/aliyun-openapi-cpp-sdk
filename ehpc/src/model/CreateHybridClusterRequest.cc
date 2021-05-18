@@ -38,6 +38,17 @@ void CreateHybridClusterRequest::setKeyPairName(const std::string& keyPairName)
 	setParameter("KeyPairName", keyPairName);
 }
 
+bool CreateHybridClusterRequest::getMultiOs()const
+{
+	return multiOs_;
+}
+
+void CreateHybridClusterRequest::setMultiOs(bool multiOs)
+{
+	multiOs_ = multiOs;
+	setParameter("MultiOs", multiOs ? "true" : "false");
+}
+
 std::string CreateHybridClusterRequest::getSecurityGroupName()const
 {
 	return securityGroupName_;

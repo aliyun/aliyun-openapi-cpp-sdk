@@ -87,6 +87,42 @@ EHPCClient::AddContainerAppOutcomeCallable EHPCClient::addContainerAppCallable(c
 	return task->get_future();
 }
 
+EHPCClient::AddExistedNodesOutcome EHPCClient::addExistedNodes(const AddExistedNodesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddExistedNodesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddExistedNodesOutcome(AddExistedNodesResult(outcome.result()));
+	else
+		return AddExistedNodesOutcome(outcome.error());
+}
+
+void EHPCClient::addExistedNodesAsync(const AddExistedNodesRequest& request, const AddExistedNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addExistedNodes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::AddExistedNodesOutcomeCallable EHPCClient::addExistedNodesCallable(const AddExistedNodesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddExistedNodesOutcome()>>(
+			[this, request]()
+			{
+			return this->addExistedNodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::AddLocalNodesOutcome EHPCClient::addLocalNodes(const AddLocalNodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1449,6 +1485,42 @@ EHPCClient::DescribePriceOutcomeCallable EHPCClient::describePriceCallable(const
 			[this, request]()
 			{
 			return this->describePrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::EcdDeleteDesktopsOutcome EHPCClient::ecdDeleteDesktops(const EcdDeleteDesktopsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EcdDeleteDesktopsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EcdDeleteDesktopsOutcome(EcdDeleteDesktopsResult(outcome.result()));
+	else
+		return EcdDeleteDesktopsOutcome(outcome.error());
+}
+
+void EHPCClient::ecdDeleteDesktopsAsync(const EcdDeleteDesktopsRequest& request, const EcdDeleteDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, ecdDeleteDesktops(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::EcdDeleteDesktopsOutcomeCallable EHPCClient::ecdDeleteDesktopsCallable(const EcdDeleteDesktopsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EcdDeleteDesktopsOutcome()>>(
+			[this, request]()
+			{
+			return this->ecdDeleteDesktops(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -49,8 +49,29 @@ void ListQueuesResult::parse(const std::string &payload)
 			queuesObject.type = valueQueuesQueueInfo["Type"].asString();
 		if(!valueQueuesQueueInfo["ResourceGroupId"].isNull())
 			queuesObject.resourceGroupId = valueQueuesQueueInfo["ResourceGroupId"].asString();
-		if(!valueQueuesQueueInfo["ComputeInstanceType"].isNull())
-			queuesObject.computeInstanceType = valueQueuesQueueInfo["ComputeInstanceType"].asString();
+		if(!valueQueuesQueueInfo["HostNamePrefix"].isNull())
+			queuesObject.hostNamePrefix = valueQueuesQueueInfo["HostNamePrefix"].asString();
+		if(!valueQueuesQueueInfo["HostNameSuffix"].isNull())
+			queuesObject.hostNameSuffix = valueQueuesQueueInfo["HostNameSuffix"].asString();
+		if(!valueQueuesQueueInfo["SpotStrategy"].isNull())
+			queuesObject.spotStrategy = valueQueuesQueueInfo["SpotStrategy"].asString();
+		if(!valueQueuesQueueInfo["ImageId"].isNull())
+			queuesObject.imageId = valueQueuesQueueInfo["ImageId"].asString();
+		if(!valueQueuesQueueInfo["EnableAutoGrow"].isNull())
+			queuesObject.enableAutoGrow = valueQueuesQueueInfo["EnableAutoGrow"].asString() == "true";
+		auto allSpotInstanceTypesNode = valueQueuesQueueInfo["SpotInstanceTypes"]["Instance"];
+		for (auto valueQueuesQueueInfoSpotInstanceTypesInstance : allSpotInstanceTypesNode)
+		{
+			QueueInfo::Instance spotInstanceTypesObject;
+			if(!valueQueuesQueueInfoSpotInstanceTypesInstance["InstanceType"].isNull())
+				spotInstanceTypesObject.instanceType = valueQueuesQueueInfoSpotInstanceTypesInstance["InstanceType"].asString();
+			if(!valueQueuesQueueInfoSpotInstanceTypesInstance["SpotPriceLimit"].isNull())
+				spotInstanceTypesObject.spotPriceLimit = std::stof(valueQueuesQueueInfoSpotInstanceTypesInstance["SpotPriceLimit"].asString());
+			queuesObject.spotInstanceTypes.push_back(spotInstanceTypesObject);
+		}
+		auto allComputeInstanceType = value["ComputeInstanceType"]["InstanceType"];
+		for (auto value : allComputeInstanceType)
+			queuesObject.computeInstanceType.push_back(value.asString());
 		queues_.push_back(queuesObject);
 	}
 

@@ -97,6 +97,8 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.computeSpotPriceLimit = std::stof(valueClustersClusterInfoSimple["ComputeSpotPriceLimit"].asString());
 		if(!valueClustersClusterInfoSimple["ClientVersion"].isNull())
 			clustersObject.clientVersion = valueClustersClusterInfoSimple["ClientVersion"].asString();
+		if(!valueClustersClusterInfoSimple["IsComputeEss"].isNull())
+			clustersObject.isComputeEss = valueClustersClusterInfoSimple["IsComputeEss"].asString() == "true";
 		auto managersNode = value["Managers"];
 		if(!managersNode["Total"].isNull())
 			clustersObject.managers.total = std::stoi(managersNode["Total"].asString());

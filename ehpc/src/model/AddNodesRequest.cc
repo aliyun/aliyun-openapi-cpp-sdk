@@ -126,6 +126,17 @@ void AddNodesRequest::setSystemDiskType(const std::string& systemDiskType)
 	setParameter("SystemDiskType", systemDiskType);
 }
 
+int AddNodesRequest::getMinCount()const
+{
+	return minCount_;
+}
+
+void AddNodesRequest::setMinCount(int minCount)
+{
+	minCount_ = minCount;
+	setParameter("MinCount", std::to_string(minCount));
+}
+
 int AddNodesRequest::getSystemDiskSize()const
 {
 	return systemDiskSize_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_ADDEXISTEDNODESREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_ADDEXISTEDNODESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListCustomImagesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT AddExistedNodesRequest : public RpcServiceRequest
 			{
+			public:
+				struct Instance
+				{
+					std::string id;
+				};
 
 			public:
-				ListCustomImagesRequest();
-				~ListCustomImagesRequest();
+				AddExistedNodesRequest();
+				~AddExistedNodesRequest();
 
+				std::string getImageId()const;
+				void setImageId(const std::string& imageId);
+				std::vector<Instance> getInstance()const;
+				void setInstance(const std::vector<Instance>& instance);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				std::string getJobQueue()const;
+				void setJobQueue(const std::string& jobQueue);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getImageOwnerAlias()const;
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
-				std::string getBaseOsTag()const;
-				void setBaseOsTag(const std::string& baseOsTag);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
 
             private:
+				std::string imageId_;
+				std::vector<Instance> instance_;
+				std::string clientToken_;
 				std::string clusterId_;
+				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
-				std::string baseOsTag_;
-				std::string instanceType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_ADDEXISTEDNODESREQUEST_H_

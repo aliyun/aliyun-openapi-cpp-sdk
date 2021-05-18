@@ -34,17 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct JobTemplates
 				{
+					int task;
+					int priority;
+					std::string stderrRedirectPath;
+					int node;
+					std::string clockTime;
+					std::string runasUser;
+					int gpu;
+					std::string name;
+					int thread;
 					std::string variables;
 					bool reRunable;
 					std::string commandLine;
-					int priority;
-					std::string stderrRedirectPath;
+					std::string mem;
 					std::string stdoutRedirectPath;
 					std::string id;
 					std::string arrayRequest;
-					std::string runasUser;
+					std::string queue;
 					std::string packagePath;
-					std::string name;
 				};
 
 

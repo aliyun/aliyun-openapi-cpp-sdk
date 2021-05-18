@@ -37,35 +37,41 @@ namespace AlibabaCloud
 
 				std::string getRole()const;
 				void setRole(const std::string& role);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getHostName()const;
+				void setHostName(const std::string& hostName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getHostNamePrefix()const;
+				void setHostNamePrefix(const std::string& hostNamePrefix);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getHostNameSuffix()const;
+				void setHostNameSuffix(const std::string& hostNameSuffix);
 				std::string getFilter()const;
 				void setFilter(const std::string& filter);
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
 				std::string getSequence()const;
 				void setSequence(const std::string& sequence);
-				std::string getHostName()const;
-				void setHostName(const std::string& hostName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getSortBy()const;
 				void setSortBy(const std::string& sortBy);
 
             private:
 				std::string role_;
-				std::string clusterId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string hostName_;
+				int pageSize_;
+				std::string hostNamePrefix_;
+				std::string clusterId_;
+				std::string hostNameSuffix_;
 				std::string filter_;
 				std::string privateIpAddress_;
 				std::string sequence_;
-				std::string hostName_;
-				int pageSize_;
 				std::string sortBy_;
 
 			};

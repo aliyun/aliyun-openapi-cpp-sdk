@@ -65,6 +65,8 @@ void ListClustersMetaResult::parse(const std::string &payload)
 			clustersObject.vpcId = valueClustersClusterInfoSimple["VpcId"].asString();
 		if(!valueClustersClusterInfoSimple["DeployMode"].isNull())
 			clustersObject.deployMode = valueClustersClusterInfoSimple["DeployMode"].asString();
+		if(!valueClustersClusterInfoSimple["IsComputeEss"].isNull())
+			clustersObject.isComputeEss = valueClustersClusterInfoSimple["IsComputeEss"].asString() == "true";
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["TotalCount"].isNull())

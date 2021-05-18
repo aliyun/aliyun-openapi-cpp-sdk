@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_ECDDELETEDESKTOPSREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_ECDDELETEDESKTOPSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListCustomImagesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT EcdDeleteDesktopsRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListCustomImagesRequest();
-				~ListCustomImagesRequest();
+				EcdDeleteDesktopsRequest();
+				~EcdDeleteDesktopsRequest();
 
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getImageOwnerAlias()const;
-				void setImageOwnerAlias(const std::string& imageOwnerAlias);
-				std::string getBaseOsTag()const;
-				void setBaseOsTag(const std::string& baseOsTag);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
+				std::vector<std::string> getDesktopId()const;
+				void setDesktopId(const std::vector<std::string>& desktopId);
 
             private:
-				std::string clusterId_;
 				std::string accessKeyId_;
-				std::string imageOwnerAlias_;
-				std::string baseOsTag_;
-				std::string instanceType_;
+				std::vector<std::string> desktopId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_ECDDELETEDESKTOPSREQUEST_H_

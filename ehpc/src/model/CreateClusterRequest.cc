@@ -521,6 +521,17 @@ void CreateClusterRequest::setOsTag(const std::string& osTag)
 	setParameter("OsTag", osTag);
 }
 
+bool CreateClusterRequest::getIsComputeEss()const
+{
+	return isComputeEss_;
+}
+
+void CreateClusterRequest::setIsComputeEss(bool isComputeEss)
+{
+	isComputeEss_ = isComputeEss;
+	setParameter("IsComputeEss", isComputeEss ? "true" : "false");
+}
+
 std::vector<CreateClusterRequest::Application> CreateClusterRequest::getApplication()const
 {
 	return application_;

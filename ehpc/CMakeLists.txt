@@ -23,6 +23,8 @@ set(ehpc_public_header
 set(ehpc_public_header_model 
 	include/alibabacloud/ehpc/model/AddContainerAppRequest.h
 	include/alibabacloud/ehpc/model/AddContainerAppResult.h
+	include/alibabacloud/ehpc/model/AddExistedNodesRequest.h
+	include/alibabacloud/ehpc/model/AddExistedNodesResult.h
 	include/alibabacloud/ehpc/model/AddLocalNodesRequest.h
 	include/alibabacloud/ehpc/model/AddLocalNodesResult.h
 	include/alibabacloud/ehpc/model/AddNodesRequest.h
@@ -99,6 +101,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/DescribeNFSClientStatusResult.h
 	include/alibabacloud/ehpc/model/DescribePriceRequest.h
 	include/alibabacloud/ehpc/model/DescribePriceResult.h
+	include/alibabacloud/ehpc/model/EcdDeleteDesktopsRequest.h
+	include/alibabacloud/ehpc/model/EcdDeleteDesktopsResult.h
 	include/alibabacloud/ehpc/model/EditJobTemplateRequest.h
 	include/alibabacloud/ehpc/model/EditJobTemplateResult.h
 	include/alibabacloud/ehpc/model/GetAccountingReportRequest.h
@@ -264,6 +268,8 @@ set(ehpc_src
 	src/EHPCClient.cc
 	src/model/AddContainerAppRequest.cc
 	src/model/AddContainerAppResult.cc
+	src/model/AddExistedNodesRequest.cc
+	src/model/AddExistedNodesResult.cc
 	src/model/AddLocalNodesRequest.cc
 	src/model/AddLocalNodesResult.cc
 	src/model/AddNodesRequest.cc
@@ -340,6 +346,8 @@ set(ehpc_src
 	src/model/DescribeNFSClientStatusResult.cc
 	src/model/DescribePriceRequest.cc
 	src/model/DescribePriceResult.cc
+	src/model/EcdDeleteDesktopsRequest.cc
+	src/model/EcdDeleteDesktopsResult.cc
 	src/model/EditJobTemplateRequest.cc
 	src/model/EditJobTemplateResult.cc
 	src/model/GetAccountingReportRequest.cc

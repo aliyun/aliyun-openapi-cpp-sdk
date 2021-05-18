@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getStderrRedirectPath()const;
 				void setStderrRedirectPath(const std::string& stderrRedirectPath);
+				std::string getClockTime()const;
+				void setClockTime(const std::string& clockTime);
 				std::string getCommandLine()const;
 				void setCommandLine(const std::string& commandLine);
 				std::string getAccessKeyId()const;
@@ -45,6 +47,8 @@ namespace AlibabaCloud
 				void setArrayRequest(const std::string& arrayRequest);
 				std::string getPackagePath()const;
 				void setPackagePath(const std::string& packagePath);
+				std::string getMem()const;
+				void setMem(const std::string& mem);
 				std::string getStdoutRedirectPath()const;
 				void setStdoutRedirectPath(const std::string& stdoutRedirectPath);
 				std::string getVariables()const;
@@ -53,23 +57,40 @@ namespace AlibabaCloud
 				void setRunasUser(const std::string& runasUser);
 				bool getReRunable()const;
 				void setReRunable(bool reRunable);
+				int getThread()const;
+				void setThread(int thread);
 				int getPriority()const;
 				void setPriority(int priority);
+				int getGpu()const;
+				void setGpu(int gpu);
+				int getNode()const;
+				void setNode(int node);
+				int getTask()const;
+				void setTask(int task);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getQueue()const;
+				void setQueue(const std::string& queue);
 
             private:
 				std::string stderrRedirectPath_;
+				std::string clockTime_;
 				std::string commandLine_;
 				std::string accessKeyId_;
 				std::string arrayRequest_;
 				std::string packagePath_;
+				std::string mem_;
 				std::string stdoutRedirectPath_;
 				std::string variables_;
 				std::string runasUser_;
 				bool reRunable_;
+				int thread_;
 				int priority_;
+				int gpu_;
+				int node_;
+				int task_;
 				std::string name_;
+				std::string queue_;
 
 			};
 		}

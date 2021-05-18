@@ -38,17 +38,6 @@ void ListNodesRequest::setRole(const std::string& role)
 	setParameter("Role", role);
 }
 
-std::string ListNodesRequest::getClusterId()const
-{
-	return clusterId_;
-}
-
-void ListNodesRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
-}
-
 int ListNodesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -69,6 +58,61 @@ void ListNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListNodesRequest::getHostName()const
+{
+	return hostName_;
+}
+
+void ListNodesRequest::setHostName(const std::string& hostName)
+{
+	hostName_ = hostName;
+	setParameter("HostName", hostName);
+}
+
+int ListNodesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListNodesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListNodesRequest::getHostNamePrefix()const
+{
+	return hostNamePrefix_;
+}
+
+void ListNodesRequest::setHostNamePrefix(const std::string& hostNamePrefix)
+{
+	hostNamePrefix_ = hostNamePrefix;
+	setParameter("HostNamePrefix", hostNamePrefix);
+}
+
+std::string ListNodesRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ListNodesRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
+std::string ListNodesRequest::getHostNameSuffix()const
+{
+	return hostNameSuffix_;
+}
+
+void ListNodesRequest::setHostNameSuffix(const std::string& hostNameSuffix)
+{
+	hostNameSuffix_ = hostNameSuffix;
+	setParameter("HostNameSuffix", hostNameSuffix);
 }
 
 std::string ListNodesRequest::getFilter()const
@@ -102,28 +146,6 @@ void ListNodesRequest::setSequence(const std::string& sequence)
 {
 	sequence_ = sequence;
 	setParameter("Sequence", sequence);
-}
-
-std::string ListNodesRequest::getHostName()const
-{
-	return hostName_;
-}
-
-void ListNodesRequest::setHostName(const std::string& hostName)
-{
-	hostName_ = hostName;
-	setParameter("HostName", hostName);
-}
-
-int ListNodesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListNodesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListNodesRequest::getSortBy()const

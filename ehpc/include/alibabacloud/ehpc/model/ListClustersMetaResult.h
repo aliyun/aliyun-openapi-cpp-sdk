@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string description;
+					bool isComputeEss;
 					std::string vpcId;
 					std::string deployMode;
 					std::string osTag;

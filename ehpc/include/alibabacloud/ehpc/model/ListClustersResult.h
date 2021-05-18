@@ -78,6 +78,7 @@ namespace AlibabaCloud
 					std::string loginNodes;
 					Computes computes;
 					std::string status;
+					bool isComputeEss;
 					std::string zoneId;
 					std::string vSwitchId;
 					std::string createTime;
