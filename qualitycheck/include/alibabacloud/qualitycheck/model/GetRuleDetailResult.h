@@ -58,10 +58,12 @@ namespace AlibabaCloud
 						{
 							struct Param
 							{
+								std::string notRegex;
 								std::vector<std::string> operKeyWords;
 								std::vector<std::string> similarlySentences;
 								bool differentRole;
 								std::vector<std::string> excludes;
+								std::vector<std::string> antModelInfo;
 								int maxEmotionChangeValue;
 								int target;
 								std::string regex;
@@ -70,10 +72,13 @@ namespace AlibabaCloud
 								float threshold;
 								int velocityInMint;
 								std::string beginType;
+								float similarity_threshold;
 								int minWordSize;
 								bool average;
+								std::vector<std::string> pvalues;
 								std::string phrase;
 								int from;
+								int delayTime;
 								int maxEmotionChangeValue2;
 								bool keywordExtension;
 								std::string compareOperator;

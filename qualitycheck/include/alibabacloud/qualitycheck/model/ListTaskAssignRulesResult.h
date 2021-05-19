@@ -34,6 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct TaskAssignRuleInfo
 				{
+					struct SamplingMode
+					{
+						struct SamplingModeAgent
+						{
+							std::string agentId;
+							std::string agentName;
+						};
+						int anyNumberOfDraws;
+						int numberOfDraws;
+						float proportion;
+						bool designated;
+						std::vector<SamplingModeAgent> samplingModeAgents;
+						int randomInspectionNumber;
+						int dimension;
+						int limit;
+					};
 					struct Agent
 					{
 						std::string agentId;
@@ -54,6 +70,8 @@ namespace AlibabaCloud
 						std::string rid;
 						std::string name;
 					};
+					SamplingMode samplingMode;
+					long callTimeEnd;
 					int priority;
 					long ruleId;
 					std::string createTime;
@@ -64,10 +82,13 @@ namespace AlibabaCloud
 					std::vector<TaskAssignRuleInfo::RuleBasicInfo> rules;
 					int durationMin;
 					std::string skillGroupsStr;
+					int assignmentType;
 					std::string updateTime;
 					std::string agentsStr;
 					int durationMax;
 					std::vector<TaskAssignRuleInfo::Reviewer> reviewers;
+					long callTimeStart;
+					std::string ruleName;
 				};
 
 

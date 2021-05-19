@@ -146,6 +146,7 @@ namespace AlibabaCloud
 						int reviewResult;
 						int oldScore;
 					};
+					int status;
 					std::vector<Dialogue> dialogues;
 					int reviewNumber;
 					std::string comments;

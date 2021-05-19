@@ -107,6 +107,12 @@ void GetRuleDetailResult::parse(const std::string &payload)
 				operatorsObject.param.checkType1 = std::stoi(paramNode["CheckType"].asString());
 			if(!paramNode["MaxEmotionChangeValue"].isNull())
 				operatorsObject.param.maxEmotionChangeValue2 = std::stoi(paramNode["MaxEmotionChangeValue"].asString());
+			if(!paramNode["NotRegex"].isNull())
+				operatorsObject.param.notRegex = paramNode["NotRegex"].asString();
+			if(!paramNode["Similarity_threshold"].isNull())
+				operatorsObject.param.similarity_threshold = std::stof(paramNode["Similarity_threshold"].asString());
+			if(!paramNode["DelayTime"].isNull())
+				operatorsObject.param.delayTime = std::stoi(paramNode["DelayTime"].asString());
 				auto allOperKeyWords = paramNode["OperKeyWords"]["OperKeyWord"];
 				for (auto value : allOperKeyWords)
 					operatorsObject.param.operKeyWords.push_back(value.asString());
@@ -119,6 +125,12 @@ void GetRuleDetailResult::parse(const std::string &payload)
 				auto allExcludes = paramNode["Excludes"]["Excludes"];
 				for (auto value : allExcludes)
 					operatorsObject.param.excludes.push_back(value.asString());
+				auto allPvalues = paramNode["Pvalues"]["Pvalues"];
+				for (auto value : allPvalues)
+					operatorsObject.param.pvalues.push_back(value.asString());
+				auto allAntModelInfo = paramNode["AntModelInfo"]["AntModelInfo"];
+				for (auto value : allAntModelInfo)
+					operatorsObject.param.antModelInfo.push_back(value.asString());
 			conditionBasicInfoObject.operators.push_back(operatorsObject);
 		}
 		auto checkRangeNode = value["CheckRange"];

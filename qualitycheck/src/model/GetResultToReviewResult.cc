@@ -64,6 +64,8 @@ void GetResultToReviewResult::parse(const std::string &payload)
 		data_.comments = dataNode["Comments"].asString();
 	if(!dataNode["FileId"].isNull())
 		data_.fileId = dataNode["FileId"].asString();
+	if(!dataNode["Status"].isNull())
+		data_.status = std::stoi(dataNode["Status"].asString());
 	auto allDialoguesNode = dataNode["Dialogues"]["Dialogue"];
 	for (auto dataNodeDialoguesDialogue : allDialoguesNode)
 	{

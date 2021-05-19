@@ -63,6 +63,14 @@ void ListTaskAssignRulesResult::parse(const std::string &payload)
 			dataObject.agentsStr = valueDataTaskAssignRuleInfo["AgentsStr"].asString();
 		if(!valueDataTaskAssignRuleInfo["SkillGroupsStr"].isNull())
 			dataObject.skillGroupsStr = valueDataTaskAssignRuleInfo["SkillGroupsStr"].asString();
+		if(!valueDataTaskAssignRuleInfo["CallTimeStart"].isNull())
+			dataObject.callTimeStart = std::stol(valueDataTaskAssignRuleInfo["CallTimeStart"].asString());
+		if(!valueDataTaskAssignRuleInfo["CallTimeEnd"].isNull())
+			dataObject.callTimeEnd = std::stol(valueDataTaskAssignRuleInfo["CallTimeEnd"].asString());
+		if(!valueDataTaskAssignRuleInfo["AssignmentType"].isNull())
+			dataObject.assignmentType = std::stoi(valueDataTaskAssignRuleInfo["AssignmentType"].asString());
+		if(!valueDataTaskAssignRuleInfo["RuleName"].isNull())
+			dataObject.ruleName = valueDataTaskAssignRuleInfo["RuleName"].asString();
 		auto allAgentsNode = valueDataTaskAssignRuleInfo["Agents"]["Agent"];
 		for (auto valueDataTaskAssignRuleInfoAgentsAgent : allAgentsNode)
 		{
@@ -102,6 +110,31 @@ void ListTaskAssignRulesResult::parse(const std::string &payload)
 			if(!valueDataTaskAssignRuleInfoRulesRuleBasicInfo["Name"].isNull())
 				rulesObject.name = valueDataTaskAssignRuleInfoRulesRuleBasicInfo["Name"].asString();
 			dataObject.rules.push_back(rulesObject);
+		}
+		auto samplingModeNode = value["SamplingMode"];
+		if(!samplingModeNode["Dimension"].isNull())
+			dataObject.samplingMode.dimension = std::stoi(samplingModeNode["Dimension"].asString());
+		if(!samplingModeNode["Proportion"].isNull())
+			dataObject.samplingMode.proportion = std::stof(samplingModeNode["Proportion"].asString());
+		if(!samplingModeNode["Limit"].isNull())
+			dataObject.samplingMode.limit = std::stoi(samplingModeNode["Limit"].asString());
+		if(!samplingModeNode["NumberOfDraws"].isNull())
+			dataObject.samplingMode.numberOfDraws = std::stoi(samplingModeNode["NumberOfDraws"].asString());
+		if(!samplingModeNode["AnyNumberOfDraws"].isNull())
+			dataObject.samplingMode.anyNumberOfDraws = std::stoi(samplingModeNode["AnyNumberOfDraws"].asString());
+		if(!samplingModeNode["Designated"].isNull())
+			dataObject.samplingMode.designated = samplingModeNode["Designated"].asString() == "true";
+		if(!samplingModeNode["RandomInspectionNumber"].isNull())
+			dataObject.samplingMode.randomInspectionNumber = std::stoi(samplingModeNode["RandomInspectionNumber"].asString());
+		auto allSamplingModeAgentsNode = samplingModeNode["SamplingModeAgents"]["SamplingModeAgent"];
+		for (auto samplingModeNodeSamplingModeAgentsSamplingModeAgent : allSamplingModeAgentsNode)
+		{
+			TaskAssignRuleInfo::SamplingMode::SamplingModeAgent samplingModeAgentObject;
+			if(!samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentId"].isNull())
+				samplingModeAgentObject.agentId = samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentId"].asString();
+			if(!samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentName"].isNull())
+				samplingModeAgentObject.agentName = samplingModeNodeSamplingModeAgentsSamplingModeAgent["AgentName"].asString();
+			dataObject.samplingMode.samplingModeAgents.push_back(samplingModeAgentObject);
 		}
 		data_.push_back(dataObject);
 	}
