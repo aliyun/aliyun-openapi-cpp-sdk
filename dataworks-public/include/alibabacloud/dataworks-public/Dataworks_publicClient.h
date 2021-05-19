@@ -396,6 +396,10 @@
 #include "model/UpdateMetaTableResult.h"
 #include "model/UpdateMetaTableIntroWikiRequest.h"
 #include "model/UpdateMetaTableIntroWikiResult.h"
+#include "model/UpdateNodeOwnerRequest.h"
+#include "model/UpdateNodeOwnerResult.h"
+#include "model/UpdateNodeRunModeRequest.h"
+#include "model/UpdateNodeRunModeResult.h"
 #include "model/UpdateQualityFollowerRequest.h"
 #include "model/UpdateQualityFollowerResult.h"
 #include "model/UpdateQualityRuleRequest.h"
@@ -984,6 +988,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateMetaTableIntroWikiResult> UpdateMetaTableIntroWikiOutcome;
 			typedef std::future<UpdateMetaTableIntroWikiOutcome> UpdateMetaTableIntroWikiOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateMetaTableIntroWikiRequest&, const UpdateMetaTableIntroWikiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMetaTableIntroWikiAsyncHandler;
+			typedef Outcome<Error, Model::UpdateNodeOwnerResult> UpdateNodeOwnerOutcome;
+			typedef std::future<UpdateNodeOwnerOutcome> UpdateNodeOwnerOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateNodeOwnerRequest&, const UpdateNodeOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNodeOwnerAsyncHandler;
+			typedef Outcome<Error, Model::UpdateNodeRunModeResult> UpdateNodeRunModeOutcome;
+			typedef std::future<UpdateNodeRunModeOutcome> UpdateNodeRunModeOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateNodeRunModeRequest&, const UpdateNodeRunModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNodeRunModeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateQualityFollowerResult> UpdateQualityFollowerOutcome;
 			typedef std::future<UpdateQualityFollowerOutcome> UpdateQualityFollowerOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateQualityFollowerRequest&, const UpdateQualityFollowerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateQualityFollowerAsyncHandler;
@@ -1577,6 +1587,12 @@ namespace AlibabaCloud
 			UpdateMetaTableIntroWikiOutcome updateMetaTableIntroWiki(const Model::UpdateMetaTableIntroWikiRequest &request)const;
 			void updateMetaTableIntroWikiAsync(const Model::UpdateMetaTableIntroWikiRequest& request, const UpdateMetaTableIntroWikiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateMetaTableIntroWikiOutcomeCallable updateMetaTableIntroWikiCallable(const Model::UpdateMetaTableIntroWikiRequest& request) const;
+			UpdateNodeOwnerOutcome updateNodeOwner(const Model::UpdateNodeOwnerRequest &request)const;
+			void updateNodeOwnerAsync(const Model::UpdateNodeOwnerRequest& request, const UpdateNodeOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateNodeOwnerOutcomeCallable updateNodeOwnerCallable(const Model::UpdateNodeOwnerRequest& request) const;
+			UpdateNodeRunModeOutcome updateNodeRunMode(const Model::UpdateNodeRunModeRequest &request)const;
+			void updateNodeRunModeAsync(const Model::UpdateNodeRunModeRequest& request, const UpdateNodeRunModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateNodeRunModeOutcomeCallable updateNodeRunModeCallable(const Model::UpdateNodeRunModeRequest& request) const;
 			UpdateQualityFollowerOutcome updateQualityFollower(const Model::UpdateQualityFollowerRequest &request)const;
 			void updateQualityFollowerAsync(const Model::UpdateQualityFollowerRequest& request, const UpdateQualityFollowerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateQualityFollowerOutcomeCallable updateQualityFollowerCallable(const Model::UpdateQualityFollowerRequest& request) const;

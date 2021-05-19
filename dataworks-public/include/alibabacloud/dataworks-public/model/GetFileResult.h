@@ -53,6 +53,7 @@ namespace AlibabaCloud
 						long nodeId;
 						int commitStatus;
 						std::string deletedStatus;
+						bool autoParsing;
 						std::string fileFolderId;
 						long bizId;
 						long businessId;
@@ -62,6 +63,7 @@ namespace AlibabaCloud
 						struct NodeInputOutput
 						{
 							std::string input;
+							std::string parseType;
 						};
 						struct NodeInputOutput1
 						{

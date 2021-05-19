@@ -81,6 +81,8 @@ namespace AlibabaCloud
 				void setFileFolderPath(const std::string& fileFolderPath);
 				std::string getFileDescription()const;
 				void setFileDescription(const std::string& fileDescription);
+				bool getAutoParsing()const;
+				void setAutoParsing(bool autoParsing);
 
             private:
 				int fileType_;
@@ -106,6 +108,7 @@ namespace AlibabaCloud
 				std::string dependentType_;
 				std::string fileFolderPath_;
 				std::string fileDescription_;
+				bool autoParsing_;
 
 			};
 		}

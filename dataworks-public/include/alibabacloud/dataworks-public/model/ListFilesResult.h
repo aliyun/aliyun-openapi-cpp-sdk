@@ -53,6 +53,7 @@ namespace AlibabaCloud
 						long nodeId;
 						int commitStatus;
 						long fileId;
+						bool autoParsing;
 						std::string fileFolderId;
 						long bizId;
 						long businessId;

@@ -280,3 +280,14 @@ void CreateFileRequest::setFileDescription(const std::string& fileDescription)
 	setBodyParameter("FileDescription", fileDescription);
 }
 
+bool CreateFileRequest::getAutoParsing()const
+{
+	return autoParsing_;
+}
+
+void CreateFileRequest::setAutoParsing(bool autoParsing)
+{
+	autoParsing_ = autoParsing;
+	setBodyParameter("AutoParsing", autoParsing ? "true" : "false");
+}
+

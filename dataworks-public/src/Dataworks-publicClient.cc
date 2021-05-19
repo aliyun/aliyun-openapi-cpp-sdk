@@ -6783,6 +6783,78 @@ Dataworks_publicClient::UpdateMetaTableIntroWikiOutcomeCallable Dataworks_public
 	return task->get_future();
 }
 
+Dataworks_publicClient::UpdateNodeOwnerOutcome Dataworks_publicClient::updateNodeOwner(const UpdateNodeOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNodeOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNodeOwnerOutcome(UpdateNodeOwnerResult(outcome.result()));
+	else
+		return UpdateNodeOwnerOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateNodeOwnerAsync(const UpdateNodeOwnerRequest& request, const UpdateNodeOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNodeOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateNodeOwnerOutcomeCallable Dataworks_publicClient::updateNodeOwnerCallable(const UpdateNodeOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNodeOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNodeOwner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateNodeRunModeOutcome Dataworks_publicClient::updateNodeRunMode(const UpdateNodeRunModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateNodeRunModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateNodeRunModeOutcome(UpdateNodeRunModeResult(outcome.result()));
+	else
+		return UpdateNodeRunModeOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateNodeRunModeAsync(const UpdateNodeRunModeRequest& request, const UpdateNodeRunModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateNodeRunMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateNodeRunModeOutcomeCallable Dataworks_publicClient::updateNodeRunModeCallable(const UpdateNodeRunModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateNodeRunModeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateNodeRunMode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::UpdateQualityFollowerOutcome Dataworks_publicClient::updateQualityFollower(const UpdateQualityFollowerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

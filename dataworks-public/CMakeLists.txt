@@ -395,6 +395,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableResult.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableIntroWikiRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableIntroWikiResult.h
+	include/alibabacloud/dataworks-public/model/UpdateNodeOwnerRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateNodeOwnerResult.h
+	include/alibabacloud/dataworks-public/model/UpdateNodeRunModeRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateNodeRunModeResult.h
 	include/alibabacloud/dataworks-public/model/UpdateQualityFollowerRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateQualityFollowerResult.h
 	include/alibabacloud/dataworks-public/model/UpdateQualityRuleRequest.h
@@ -790,6 +794,10 @@ set(dataworks-public_src
 	src/model/UpdateMetaTableResult.cc
 	src/model/UpdateMetaTableIntroWikiRequest.cc
 	src/model/UpdateMetaTableIntroWikiResult.cc
+	src/model/UpdateNodeOwnerRequest.cc
+	src/model/UpdateNodeOwnerResult.cc
+	src/model/UpdateNodeRunModeRequest.cc
+	src/model/UpdateNodeRunModeResult.cc
 	src/model/UpdateQualityFollowerRequest.cc
 	src/model/UpdateQualityFollowerResult.cc
 	src/model/UpdateQualityRuleRequest.cc
