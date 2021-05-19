@@ -1,3 +1,6 @@
+2021-05-19 Version: 1.36.744
+- Publish multi language sdk.
+
 2021-05-18 Version: 1.36.743
 - Add IoT Studio SetStudioProjectCooperation API.
 - Add IoT Studio QueryStudioProjectList API.
