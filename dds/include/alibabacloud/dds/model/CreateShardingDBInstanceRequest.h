@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getStorageEngine()const;
 				void setStorageEngine(const std::string& storageEngine);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getEngine()const;
@@ -112,6 +114,7 @@ namespace AlibabaCloud
 				std::vector<ReplicaSet> replicaSet_;
 				std::string accessKeyId_;
 				std::string storageEngine_;
+				std::string regionId_;
 				std::string securityToken_;
 				std::string engine_;
 				std::string dBInstanceDescription_;

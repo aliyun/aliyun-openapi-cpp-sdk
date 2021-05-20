@@ -60,17 +60,6 @@ void ModifyNodeSpecRequest::setReadonlyReplicas(int readonlyReplicas)
 	setParameter("ReadonlyReplicas", std::to_string(readonlyReplicas));
 }
 
-std::string ModifyNodeSpecRequest::getCouponNo()const
-{
-	return couponNo_;
-}
-
-void ModifyNodeSpecRequest::setCouponNo(const std::string& couponNo)
-{
-	couponNo_ = couponNo;
-	setParameter("CouponNo", couponNo);
-}
-
 std::string ModifyNodeSpecRequest::getNodeClass()const
 {
 	return nodeClass_;
@@ -126,17 +115,6 @@ void ModifyNodeSpecRequest::setDBInstanceId(const std::string& dBInstanceId)
 	setParameter("DBInstanceId", dBInstanceId);
 }
 
-std::string ModifyNodeSpecRequest::getSwitchTime()const
-{
-	return switchTime_;
-}
-
-void ModifyNodeSpecRequest::setSwitchTime(const std::string& switchTime)
-{
-	switchTime_ = switchTime;
-	setParameter("SwitchTime", switchTime);
-}
-
 std::string ModifyNodeSpecRequest::getNodeId()const
 {
 	return nodeId_;
@@ -146,17 +124,6 @@ void ModifyNodeSpecRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
 	setParameter("NodeId", nodeId);
-}
-
-std::string ModifyNodeSpecRequest::getBusinessInfo()const
-{
-	return businessInfo_;
-}
-
-void ModifyNodeSpecRequest::setBusinessInfo(const std::string& businessInfo)
-{
-	businessInfo_ = businessInfo;
-	setParameter("BusinessInfo", businessInfo);
 }
 
 bool ModifyNodeSpecRequest::getAutoPay()const

@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				int getReadonlyReplicas()const;
 				void setReadonlyReplicas(int readonlyReplicas);
-				std::string getCouponNo()const;
-				void setCouponNo(const std::string& couponNo);
 				std::string getNodeClass()const;
 				void setNodeClass(const std::string& nodeClass);
 				std::string getAccessKeyId()const;
@@ -53,12 +51,8 @@ namespace AlibabaCloud
 				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getSwitchTime()const;
-				void setSwitchTime(const std::string& switchTime);
 				std::string getNodeId()const;
 				void setNodeId(const std::string& nodeId);
-				std::string getBusinessInfo()const;
-				void setBusinessInfo(const std::string& businessInfo);
 				bool getAutoPay()const;
 				void setAutoPay(bool autoPay);
 				std::string getFromApp()const;
@@ -78,15 +72,12 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string clientToken_;
 				int readonlyReplicas_;
-				std::string couponNo_;
 				std::string nodeClass_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string effectiveTime_;
 				std::string dBInstanceId_;
-				std::string switchTime_;
 				std::string nodeId_;
-				std::string businessInfo_;
 				bool autoPay_;
 				std::string fromApp_;
 				std::string resourceOwnerAccount_;

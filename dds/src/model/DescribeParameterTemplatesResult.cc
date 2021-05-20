@@ -43,6 +43,8 @@ void DescribeParameterTemplatesResult::parse(const std::string &payload)
 	for (auto valueParametersTemplateRecord : allParametersNode)
 	{
 		TemplateRecord parametersObject;
+		if(!valueParametersTemplateRecord["CheckingCode"].isNull())
+			parametersObject.checkingCode = valueParametersTemplateRecord["CheckingCode"].asString();
 		if(!valueParametersTemplateRecord["ParameterName"].isNull())
 			parametersObject.parameterName = valueParametersTemplateRecord["ParameterName"].asString();
 		if(!valueParametersTemplateRecord["ParameterValue"].isNull())
@@ -51,18 +53,16 @@ void DescribeParameterTemplatesResult::parse(const std::string &payload)
 			parametersObject.forceModify = valueParametersTemplateRecord["ForceModify"].asString() == "true";
 		if(!valueParametersTemplateRecord["ForceRestart"].isNull())
 			parametersObject.forceRestart = valueParametersTemplateRecord["ForceRestart"].asString() == "true";
-		if(!valueParametersTemplateRecord["CheckingCode"].isNull())
-			parametersObject.checkingCode = valueParametersTemplateRecord["CheckingCode"].asString();
 		if(!valueParametersTemplateRecord["ParameterDescription"].isNull())
 			parametersObject.parameterDescription = valueParametersTemplateRecord["ParameterDescription"].asString();
 		parameters_.push_back(parametersObject);
 	}
-	if(!value["Engine"].isNull())
-		engine_ = value["Engine"].asString();
-	if(!value["EngineVersion"].isNull())
-		engineVersion_ = value["EngineVersion"].asString();
 	if(!value["ParameterCount"].isNull())
 		parameterCount_ = value["ParameterCount"].asString();
+	if(!value["EngineVersion"].isNull())
+		engineVersion_ = value["EngineVersion"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
 
 }
 

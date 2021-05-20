@@ -280,6 +280,17 @@ void CreateDBInstanceRequest::setDatabaseNames(const std::string& databaseNames)
 	setParameter("DatabaseNames", databaseNames);
 }
 
+std::string CreateDBInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateDBInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string CreateDBInstanceRequest::getEngine()const
 {
 	return engine_;

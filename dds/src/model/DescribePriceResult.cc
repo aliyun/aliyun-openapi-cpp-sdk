@@ -43,14 +43,14 @@ void DescribePriceResult::parse(const std::string &payload)
 	for (auto valueSubOrdersSubOrder : allSubOrdersNode)
 	{
 		SubOrder subOrdersObject;
-		if(!valueSubOrdersSubOrder["InstanceId"].isNull())
-			subOrdersObject.instanceId = valueSubOrdersSubOrder["InstanceId"].asString();
-		if(!valueSubOrdersSubOrder["TradeAmount"].isNull())
-			subOrdersObject.tradeAmount = valueSubOrdersSubOrder["TradeAmount"].asString();
 		if(!valueSubOrdersSubOrder["OriginalAmount"].isNull())
 			subOrdersObject.originalAmount = valueSubOrdersSubOrder["OriginalAmount"].asString();
 		if(!valueSubOrdersSubOrder["DiscountAmount"].isNull())
 			subOrdersObject.discountAmount = valueSubOrdersSubOrder["DiscountAmount"].asString();
+		if(!valueSubOrdersSubOrder["TradeAmount"].isNull())
+			subOrdersObject.tradeAmount = valueSubOrdersSubOrder["TradeAmount"].asString();
+		if(!valueSubOrdersSubOrder["InstanceId"].isNull())
+			subOrdersObject.instanceId = valueSubOrdersSubOrder["InstanceId"].asString();
 		auto allRuleIds = value["RuleIds"]["RuleId"];
 		for (auto value : allRuleIds)
 			subOrdersObject.ruleIds.push_back(value.asString());
@@ -69,24 +69,24 @@ void DescribePriceResult::parse(const std::string &payload)
 		rules_.push_back(rulesObject);
 	}
 	auto orderNode = value["Order"];
-	if(!orderNode["Currency"].isNull())
-		order_.currency = orderNode["Currency"].asString();
-	if(!orderNode["TradeAmount"].isNull())
-		order_.tradeAmount = orderNode["TradeAmount"].asString();
 	if(!orderNode["OriginalAmount"].isNull())
 		order_.originalAmount = orderNode["OriginalAmount"].asString();
 	if(!orderNode["DiscountAmount"].isNull())
 		order_.discountAmount = orderNode["DiscountAmount"].asString();
+	if(!orderNode["TradeAmount"].isNull())
+		order_.tradeAmount = orderNode["TradeAmount"].asString();
+	if(!orderNode["Currency"].isNull())
+		order_.currency = orderNode["Currency"].asString();
 	auto allCouponsNode = orderNode["Coupons"]["Coupon"];
 	for (auto orderNodeCouponsCoupon : allCouponsNode)
 	{
 		Order::Coupon couponObject;
-		if(!orderNodeCouponsCoupon["CouponNo"].isNull())
-			couponObject.couponNo = orderNodeCouponsCoupon["CouponNo"].asString();
 		if(!orderNodeCouponsCoupon["Description"].isNull())
 			couponObject.description = orderNodeCouponsCoupon["Description"].asString();
 		if(!orderNodeCouponsCoupon["IsSelected"].isNull())
 			couponObject.isSelected = orderNodeCouponsCoupon["IsSelected"].asString();
+		if(!orderNodeCouponsCoupon["CouponNo"].isNull())
+			couponObject.couponNo = orderNodeCouponsCoupon["CouponNo"].asString();
 		if(!orderNodeCouponsCoupon["Name"].isNull())
 			couponObject.name = orderNodeCouponsCoupon["Name"].asString();
 		order_.coupons.push_back(couponObject);

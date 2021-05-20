@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct DBInstance
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					struct MongosAttribute
 					{
 						std::string nodeClass;
@@ -45,19 +50,14 @@ namespace AlibabaCloud
 						std::string nodeClass;
 						std::string nodeDescription;
 						int readonlyReplicas;
-						std::string nodeId;
 						int nodeStorage;
-					};
-					struct Tag
-					{
-						std::string value;
-						std::string key;
+						std::string nodeId;
 					};
 					std::string engineVersion;
-					std::string replicationFactor;
-					std::string zoneId;
-					std::string resourceGroupId;
 					std::string dBInstanceStatus;
+					std::string resourceGroupId;
+					std::string zoneId;
+					std::string replicationFactor;
 					std::string dBInstanceClass;
 					std::string destroyTime;
 					std::vector<DBInstance::ShardAttribute> shardList;
@@ -65,18 +65,18 @@ namespace AlibabaCloud
 					std::string lockMode;
 					std::vector<DBInstance::MongosAttribute> mongosList;
 					std::string dBInstanceId;
-					std::string networkType;
-					std::string vpcAuthMode;
 					std::string chargeType;
-					int dBInstanceStorage;
+					std::string vpcAuthMode;
+					std::string networkType;
 					std::string lastDowngradeTime;
+					int dBInstanceStorage;
 					std::string creationTime;
 					std::string regionId;
 					std::string expireTime;
 					std::string kindCode;
 					std::vector<DBInstance::Tag> tags;
-					std::string engine;
 					std::string dBInstanceDescription;
+					std::string engine;
 				};
 
 

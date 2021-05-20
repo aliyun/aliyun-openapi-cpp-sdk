@@ -71,6 +71,17 @@ void DescribeParameterTemplatesRequest::setSecurityToken(const std::string& secu
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeParameterTemplatesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeParameterTemplatesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeParameterTemplatesRequest::getEngine()const
 {
 	return engine_;
