@@ -93,6 +93,17 @@ void ApplyNodesRequest::setResourceAmountType(const std::string& resourceAmountT
 	setParameter("ResourceAmountType", resourceAmountType);
 }
 
+bool ApplyNodesRequest::getStrictResourceProvision()const
+{
+	return strictResourceProvision_;
+}
+
+void ApplyNodesRequest::setStrictResourceProvision(bool strictResourceProvision)
+{
+	strictResourceProvision_ = strictResourceProvision;
+	setParameter("StrictResourceProvision", strictResourceProvision ? "true" : "false");
+}
+
 std::string ApplyNodesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

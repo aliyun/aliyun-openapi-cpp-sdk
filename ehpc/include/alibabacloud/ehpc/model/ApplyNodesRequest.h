@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setInternetMaxBandWidthOut(int internetMaxBandWidthOut);
 				std::string getResourceAmountType()const;
 				void setResourceAmountType(const std::string& resourceAmountType);
+				bool getStrictResourceProvision()const;
+				void setStrictResourceProvision(bool strictResourceProvision);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSystemDiskType()const;
@@ -101,6 +103,7 @@ namespace AlibabaCloud
 				bool allocatePublicAddress_;
 				int internetMaxBandWidthOut_;
 				std::string resourceAmountType_;
+				bool strictResourceProvision_;
 				std::string accessKeyId_;
 				std::string systemDiskType_;
 				int cores_;
