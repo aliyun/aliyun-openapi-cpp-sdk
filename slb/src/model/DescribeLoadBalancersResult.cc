@@ -91,6 +91,8 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 			loadBalancersObject.internetChargeTypeAlias = valueLoadBalancersLoadBalancer["InternetChargeTypeAlias"].asString();
 		if(!valueLoadBalancersLoadBalancer["LoadBalancerSpec"].isNull())
 			loadBalancersObject.loadBalancerSpec = valueLoadBalancersLoadBalancer["LoadBalancerSpec"].asString();
+		if(!valueLoadBalancersLoadBalancer["DeleteProtection"].isNull())
+			loadBalancersObject.deleteProtection = valueLoadBalancersLoadBalancer["DeleteProtection"].asString();
 		auto allTagsNode = valueLoadBalancersLoadBalancer["Tags"]["Tag"];
 		for (auto valueLoadBalancersLoadBalancerTagsTag : allTagsNode)
 		{

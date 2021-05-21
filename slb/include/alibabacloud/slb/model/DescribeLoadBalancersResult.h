@@ -60,6 +60,7 @@ namespace AlibabaCloud
 					std::string internetChargeTypeAlias;
 					std::string loadBalancerName;
 					std::string vpcId;
+					std::string deleteProtection;
 					std::string regionId;
 					std::string addressType;
 					std::string loadBalancerStatus;
