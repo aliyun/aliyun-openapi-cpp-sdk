@@ -195,6 +195,42 @@ Address_purificationClient::ExtractAddressOutcomeCallable Address_purificationCl
 	return task->get_future();
 }
 
+Address_purificationClient::ExtractExpressOutcome Address_purificationClient::extractExpress(const ExtractExpressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExtractExpressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExtractExpressOutcome(ExtractExpressResult(outcome.result()));
+	else
+		return ExtractExpressOutcome(outcome.error());
+}
+
+void Address_purificationClient::extractExpressAsync(const ExtractExpressRequest& request, const ExtractExpressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, extractExpress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Address_purificationClient::ExtractExpressOutcomeCallable Address_purificationClient::extractExpressCallable(const ExtractExpressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExtractExpressOutcome()>>(
+			[this, request]()
+			{
+			return this->extractExpress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Address_purificationClient::ExtractNameOutcome Address_purificationClient::extractName(const ExtractNameRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -267,6 +303,42 @@ Address_purificationClient::ExtractPhoneOutcomeCallable Address_purificationClie
 	return task->get_future();
 }
 
+Address_purificationClient::GetAddressBlockMappingOutcome Address_purificationClient::getAddressBlockMapping(const GetAddressBlockMappingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAddressBlockMappingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAddressBlockMappingOutcome(GetAddressBlockMappingResult(outcome.result()));
+	else
+		return GetAddressBlockMappingOutcome(outcome.error());
+}
+
+void Address_purificationClient::getAddressBlockMappingAsync(const GetAddressBlockMappingRequest& request, const GetAddressBlockMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAddressBlockMapping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Address_purificationClient::GetAddressBlockMappingOutcomeCallable Address_purificationClient::getAddressBlockMappingCallable(const GetAddressBlockMappingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAddressBlockMappingOutcome()>>(
+			[this, request]()
+			{
+			return this->getAddressBlockMapping(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Address_purificationClient::GetAddressDivisionCodeOutcome Address_purificationClient::getAddressDivisionCode(const GetAddressDivisionCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +369,114 @@ Address_purificationClient::GetAddressDivisionCodeOutcomeCallable Address_purifi
 			[this, request]()
 			{
 			return this->getAddressDivisionCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Address_purificationClient::GetAddressEvaluateOutcome Address_purificationClient::getAddressEvaluate(const GetAddressEvaluateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAddressEvaluateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAddressEvaluateOutcome(GetAddressEvaluateResult(outcome.result()));
+	else
+		return GetAddressEvaluateOutcome(outcome.error());
+}
+
+void Address_purificationClient::getAddressEvaluateAsync(const GetAddressEvaluateRequest& request, const GetAddressEvaluateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAddressEvaluate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Address_purificationClient::GetAddressEvaluateOutcomeCallable Address_purificationClient::getAddressEvaluateCallable(const GetAddressEvaluateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAddressEvaluateOutcome()>>(
+			[this, request]()
+			{
+			return this->getAddressEvaluate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Address_purificationClient::GetAddressGeocodeOutcome Address_purificationClient::getAddressGeocode(const GetAddressGeocodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAddressGeocodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAddressGeocodeOutcome(GetAddressGeocodeResult(outcome.result()));
+	else
+		return GetAddressGeocodeOutcome(outcome.error());
+}
+
+void Address_purificationClient::getAddressGeocodeAsync(const GetAddressGeocodeRequest& request, const GetAddressGeocodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAddressGeocode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Address_purificationClient::GetAddressGeocodeOutcomeCallable Address_purificationClient::getAddressGeocodeCallable(const GetAddressGeocodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAddressGeocodeOutcome()>>(
+			[this, request]()
+			{
+			return this->getAddressGeocode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Address_purificationClient::GetAddressSearchOutcome Address_purificationClient::getAddressSearch(const GetAddressSearchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAddressSearchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAddressSearchOutcome(GetAddressSearchResult(outcome.result()));
+	else
+		return GetAddressSearchOutcome(outcome.error());
+}
+
+void Address_purificationClient::getAddressSearchAsync(const GetAddressSearchRequest& request, const GetAddressSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAddressSearch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Address_purificationClient::GetAddressSearchOutcomeCallable Address_purificationClient::getAddressSearchCallable(const GetAddressSearchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAddressSearchOutcome()>>(
+			[this, request]()
+			{
+			return this->getAddressSearch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,6 +519,42 @@ Address_purificationClient::GetAddressSimilarityOutcomeCallable Address_purifica
 	return task->get_future();
 }
 
+Address_purificationClient::GetInputSearchOutcome Address_purificationClient::getInputSearch(const GetInputSearchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInputSearchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInputSearchOutcome(GetInputSearchResult(outcome.result()));
+	else
+		return GetInputSearchOutcome(outcome.error());
+}
+
+void Address_purificationClient::getInputSearchAsync(const GetInputSearchRequest& request, const GetInputSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInputSearch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Address_purificationClient::GetInputSearchOutcomeCallable Address_purificationClient::getInputSearchCallable(const GetInputSearchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInputSearchOutcome()>>(
+			[this, request]()
+			{
+			return this->getInputSearch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Address_purificationClient::GetZipcodeOutcome Address_purificationClient::getZipcode(const GetZipcodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -375,6 +591,42 @@ Address_purificationClient::GetZipcodeOutcomeCallable Address_purificationClient
 	return task->get_future();
 }
 
+Address_purificationClient::PredictPOIOutcome Address_purificationClient::predictPOI(const PredictPOIRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PredictPOIOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PredictPOIOutcome(PredictPOIResult(outcome.result()));
+	else
+		return PredictPOIOutcome(outcome.error());
+}
+
+void Address_purificationClient::predictPOIAsync(const PredictPOIRequest& request, const PredictPOIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, predictPOI(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Address_purificationClient::PredictPOIOutcomeCallable Address_purificationClient::predictPOICallable(const PredictPOIRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PredictPOIOutcome()>>(
+			[this, request]()
+			{
+			return this->predictPOI(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Address_purificationClient::StructureAddressOutcome Address_purificationClient::structureAddress(const StructureAddressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +657,42 @@ Address_purificationClient::StructureAddressOutcomeCallable Address_purification
 			[this, request]()
 			{
 			return this->structureAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Address_purificationClient::TransferCoordOutcome Address_purificationClient::transferCoord(const TransferCoordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransferCoordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransferCoordOutcome(TransferCoordResult(outcome.result()));
+	else
+		return TransferCoordOutcome(outcome.error());
+}
+
+void Address_purificationClient::transferCoordAsync(const TransferCoordRequest& request, const TransferCoordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transferCoord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Address_purificationClient::TransferCoordOutcomeCallable Address_purificationClient::transferCoordCallable(const TransferCoordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransferCoordOutcome()>>(
+			[this, request]()
+			{
+			return this->transferCoord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
