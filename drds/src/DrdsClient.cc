@@ -2283,6 +2283,42 @@ DrdsClient::EnableSqlFlashbackMatchSwitchOutcomeCallable DrdsClient::enableSqlFl
 	return task->get_future();
 }
 
+DrdsClient::GetDrdsDbRdsRelationInfoOutcome DrdsClient::getDrdsDbRdsRelationInfo(const GetDrdsDbRdsRelationInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDrdsDbRdsRelationInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDrdsDbRdsRelationInfoOutcome(GetDrdsDbRdsRelationInfoResult(outcome.result()));
+	else
+		return GetDrdsDbRdsRelationInfoOutcome(outcome.error());
+}
+
+void DrdsClient::getDrdsDbRdsRelationInfoAsync(const GetDrdsDbRdsRelationInfoRequest& request, const GetDrdsDbRdsRelationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDrdsDbRdsRelationInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DrdsClient::GetDrdsDbRdsRelationInfoOutcomeCallable DrdsClient::getDrdsDbRdsRelationInfoCallable(const GetDrdsDbRdsRelationInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDrdsDbRdsRelationInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getDrdsDbRdsRelationInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DrdsClient::ListTagResourcesOutcome DrdsClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

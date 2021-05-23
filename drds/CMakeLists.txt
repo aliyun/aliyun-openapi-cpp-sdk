@@ -145,6 +145,8 @@ set(drds_public_header_model
 	include/alibabacloud/drds/model/EnableSqlAuditResult.h
 	include/alibabacloud/drds/model/EnableSqlFlashbackMatchSwitchRequest.h
 	include/alibabacloud/drds/model/EnableSqlFlashbackMatchSwitchResult.h
+	include/alibabacloud/drds/model/GetDrdsDbRdsRelationInfoRequest.h
+	include/alibabacloud/drds/model/GetDrdsDbRdsRelationInfoResult.h
 	include/alibabacloud/drds/model/ListTagResourcesRequest.h
 	include/alibabacloud/drds/model/ListTagResourcesResult.h
 	include/alibabacloud/drds/model/ManagePrivateRdsRequest.h
@@ -342,6 +344,8 @@ set(drds_src
 	src/model/EnableSqlAuditResult.cc
 	src/model/EnableSqlFlashbackMatchSwitchRequest.cc
 	src/model/EnableSqlFlashbackMatchSwitchResult.cc
+	src/model/GetDrdsDbRdsRelationInfoRequest.cc
+	src/model/GetDrdsDbRdsRelationInfoResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ManagePrivateRdsRequest.cc

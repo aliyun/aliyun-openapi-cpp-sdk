@@ -146,6 +146,8 @@
 #include "model/EnableSqlAuditResult.h"
 #include "model/EnableSqlFlashbackMatchSwitchRequest.h"
 #include "model/EnableSqlFlashbackMatchSwitchResult.h"
+#include "model/GetDrdsDbRdsRelationInfoRequest.h"
+#include "model/GetDrdsDbRdsRelationInfoResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ManagePrivateRdsRequest.h"
@@ -411,6 +413,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableSqlFlashbackMatchSwitchResult> EnableSqlFlashbackMatchSwitchOutcome;
 			typedef std::future<EnableSqlFlashbackMatchSwitchOutcome> EnableSqlFlashbackMatchSwitchOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::EnableSqlFlashbackMatchSwitchRequest&, const EnableSqlFlashbackMatchSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableSqlFlashbackMatchSwitchAsyncHandler;
+			typedef Outcome<Error, Model::GetDrdsDbRdsRelationInfoResult> GetDrdsDbRdsRelationInfoOutcome;
+			typedef std::future<GetDrdsDbRdsRelationInfoOutcome> GetDrdsDbRdsRelationInfoOutcomeCallable;
+			typedef std::function<void(const DrdsClient*, const Model::GetDrdsDbRdsRelationInfoRequest&, const GetDrdsDbRdsRelationInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDrdsDbRdsRelationInfoAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const DrdsClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -707,6 +712,9 @@ namespace AlibabaCloud
 			EnableSqlFlashbackMatchSwitchOutcome enableSqlFlashbackMatchSwitch(const Model::EnableSqlFlashbackMatchSwitchRequest &request)const;
 			void enableSqlFlashbackMatchSwitchAsync(const Model::EnableSqlFlashbackMatchSwitchRequest& request, const EnableSqlFlashbackMatchSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableSqlFlashbackMatchSwitchOutcomeCallable enableSqlFlashbackMatchSwitchCallable(const Model::EnableSqlFlashbackMatchSwitchRequest& request) const;
+			GetDrdsDbRdsRelationInfoOutcome getDrdsDbRdsRelationInfo(const Model::GetDrdsDbRdsRelationInfoRequest &request)const;
+			void getDrdsDbRdsRelationInfoAsync(const Model::GetDrdsDbRdsRelationInfoRequest& request, const GetDrdsDbRdsRelationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDrdsDbRdsRelationInfoOutcomeCallable getDrdsDbRdsRelationInfoCallable(const Model::GetDrdsDbRdsRelationInfoRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
