@@ -200,6 +200,8 @@
 #include "model/RevokeAccountPrivilegeResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
+#include "model/TransformDBClusterPayTypeRequest.h"
+#include "model/TransformDBClusterPayTypeResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
 #include "model/UpgradeDBClusterMinorVersionRequest.h"
@@ -482,6 +484,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::TransformDBClusterPayTypeResult> TransformDBClusterPayTypeOutcome;
+			typedef std::future<TransformDBClusterPayTypeOutcome> TransformDBClusterPayTypeOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::TransformDBClusterPayTypeRequest&, const TransformDBClusterPayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransformDBClusterPayTypeAsyncHandler;
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
@@ -763,6 +768,9 @@ namespace AlibabaCloud
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			TransformDBClusterPayTypeOutcome transformDBClusterPayType(const Model::TransformDBClusterPayTypeRequest &request)const;
+			void transformDBClusterPayTypeAsync(const Model::TransformDBClusterPayTypeRequest& request, const TransformDBClusterPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TransformDBClusterPayTypeOutcomeCallable transformDBClusterPayTypeCallable(const Model::TransformDBClusterPayTypeRequest& request) const;
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;

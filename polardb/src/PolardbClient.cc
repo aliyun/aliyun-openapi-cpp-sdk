@@ -3255,6 +3255,42 @@ PolardbClient::TagResourcesOutcomeCallable PolardbClient::tagResourcesCallable(c
 	return task->get_future();
 }
 
+PolardbClient::TransformDBClusterPayTypeOutcome PolardbClient::transformDBClusterPayType(const TransformDBClusterPayTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransformDBClusterPayTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransformDBClusterPayTypeOutcome(TransformDBClusterPayTypeResult(outcome.result()));
+	else
+		return TransformDBClusterPayTypeOutcome(outcome.error());
+}
+
+void PolardbClient::transformDBClusterPayTypeAsync(const TransformDBClusterPayTypeRequest& request, const TransformDBClusterPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transformDBClusterPayType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::TransformDBClusterPayTypeOutcomeCallable PolardbClient::transformDBClusterPayTypeCallable(const TransformDBClusterPayTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransformDBClusterPayTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->transformDBClusterPayType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::UntagResourcesOutcome PolardbClient::untagResources(const UntagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

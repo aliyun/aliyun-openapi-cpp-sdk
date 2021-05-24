@@ -199,6 +199,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/RevokeAccountPrivilegeResult.h
 	include/alibabacloud/polardb/model/TagResourcesRequest.h
 	include/alibabacloud/polardb/model/TagResourcesResult.h
+	include/alibabacloud/polardb/model/TransformDBClusterPayTypeRequest.h
+	include/alibabacloud/polardb/model/TransformDBClusterPayTypeResult.h
 	include/alibabacloud/polardb/model/UntagResourcesRequest.h
 	include/alibabacloud/polardb/model/UntagResourcesResult.h
 	include/alibabacloud/polardb/model/UpgradeDBClusterMinorVersionRequest.h
@@ -386,6 +388,8 @@ set(polardb_src
 	src/model/RevokeAccountPrivilegeResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TransformDBClusterPayTypeRequest.cc
+	src/model/TransformDBClusterPayTypeResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
 	src/model/UpgradeDBClusterMinorVersionRequest.cc

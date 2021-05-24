@@ -1,3 +1,6 @@
+2021-05-24 Version: 1.36.753
+- Support TransformDBClusterPayType.
+
 2021-05-23 Version: 1.36.752
 - New API- GetDrdsDbRdsRelationInfo, which can get private RDS list under certain DB out of DRDS instance ID and DB name.
 
