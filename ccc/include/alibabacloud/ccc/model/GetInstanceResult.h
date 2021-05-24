@@ -32,51 +32,52 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CCC_EXPORT GetInstanceResult : public ServiceResult
 			{
 			public:
-				struct Instance
+				struct Data
 				{
 					struct User
 					{
-						struct Detail
-						{
-							std::string loginName;
-							std::string department;
-							std::string email;
-							std::string phone;
-							std::string displayName;
-						};
+						std::string extension;
+						std::string loginName;
+						std::string roleName;
+						std::string email;
 						std::string instanceId;
 						std::string userId;
-						std::string ramId;
-						Detail detail;
+						std::string displayName;
+						std::string mobile;
+						std::string roleId;
+						std::string workMode;
 					};
 					struct PhoneNumber
 					{
+						struct SkillGroup
+						{
+							std::string description;
+							std::string instanceId;
+							int phoneNumberCount;
+							int userCount;
+							std::string displayName;
+							std::string skillGroupId;
+							std::string name;
+						};
+						bool active;
 						std::string usage;
-						bool testOnly;
-						bool allowOutbound;
 						std::string number;
+						std::string contactFlowId;
 						std::string instanceId;
-						int remainingTime;
-						int trunks;
-						std::string phoneNumberId;
-						std::string phoneNumberDescription;
+						std::string userId;
+						std::vector<PhoneNumber::SkillGroup> skillGroups;
+						std::string city;
+						std::string province;
 					};
 					std::string status;
-					std::vector<PhoneNumber> phoneNumbers;
-					std::string owner;
-					long createdTime;
-					std::string instanceId;
-					std::string domainName;
+					std::vector<User> adminList;
+					std::string description;
 					std::string consoleUrl;
-					int storageMaxSize;
-					std::vector<User> admin;
-					std::string instanceName;
-					int maxOnlineAgents;
-					std::string tenantId;
-					std::string directoryId;
-					std::string storageBucket;
-					std::string instanceDescription;
-					int storageMaxDays;
+					std::string domainName;
+					std::string aliyunUid;
+					std::vector<PhoneNumber> numberList;
+					std::string id;
+					std::string name;
 				};
 
 
@@ -84,19 +85,19 @@ namespace AlibabaCloud
 				explicit GetInstanceResult(const std::string &payload);
 				~GetInstanceResult();
 				std::string getMessage()const;
-				Instance getInstance()const;
 				int getHttpStatusCode()const;
+				std::vector<std::string> getParams()const;
+				Data getData()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Instance instance_;
 				int httpStatusCode_;
+				std::vector<std::string> params_;
+				Data data_;
 				std::string code_;
-				bool success_;
 
 			};
 		}

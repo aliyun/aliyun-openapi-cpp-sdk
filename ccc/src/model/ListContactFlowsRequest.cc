@@ -19,13 +19,35 @@
 using AlibabaCloud::CCC::Model::ListContactFlowsRequest;
 
 ListContactFlowsRequest::ListContactFlowsRequest() :
-	RpcServiceRequest("ccc", "2017-07-05", "ListContactFlows")
+	RpcServiceRequest("ccc", "2020-07-01", "ListContactFlows")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ListContactFlowsRequest::~ListContactFlowsRequest()
 {}
+
+std::string ListContactFlowsRequest::getType()const
+{
+	return type_;
+}
+
+void ListContactFlowsRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setParameter("Type", type);
+}
+
+int ListContactFlowsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListContactFlowsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
 
 std::string ListContactFlowsRequest::getInstanceId()const
 {
@@ -38,14 +60,14 @@ void ListContactFlowsRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string ListContactFlowsRequest::getAccessKeyId()const
+int ListContactFlowsRequest::getPageSize()const
 {
-	return accessKeyId_;
+	return pageSize_;
 }
 
-void ListContactFlowsRequest::setAccessKeyId(const std::string& accessKeyId)
+void ListContactFlowsRequest::setPageSize(int pageSize)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
