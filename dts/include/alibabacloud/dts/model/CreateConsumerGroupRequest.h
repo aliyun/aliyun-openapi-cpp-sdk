@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setAccountId(const std::string& accountId);
 				std::string getConsumerGroupUserName()const;
 				void setConsumerGroupUserName(const std::string& consumerGroupUserName);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
 				std::string consumerGroupName_;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string accountId_;
 				std::string consumerGroupUserName_;
+				std::string regionId_;
 
 			};
 		}

@@ -82,6 +82,17 @@ void DescribeConsumerGroupRequest::setAccountId(const std::string& accountId)
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeConsumerGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeConsumerGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int DescribeConsumerGroupRequest::getPageSize()const
 {
 	return pageSize_;

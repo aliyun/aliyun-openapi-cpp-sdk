@@ -71,6 +71,17 @@ void ModifySubscriptionObjectRequest::setAccountId(const std::string& accountId)
 	setParameter("AccountId", accountId);
 }
 
+std::string ModifySubscriptionObjectRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifySubscriptionObjectRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifySubscriptionObjectRequest::getSubscriptionObject()const
 {
 	return subscriptionObject_;

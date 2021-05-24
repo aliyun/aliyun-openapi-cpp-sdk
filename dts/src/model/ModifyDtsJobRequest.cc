@@ -71,6 +71,17 @@ void ModifyDtsJobRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDtsJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyDtsJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyDtsJobRequest::getDtsInstanceId()const
 {
 	return dtsInstanceId_;

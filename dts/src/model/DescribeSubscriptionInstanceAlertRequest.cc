@@ -82,3 +82,14 @@ void DescribeSubscriptionInstanceAlertRequest::setAccountId(const std::string& a
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeSubscriptionInstanceAlertRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeSubscriptionInstanceAlertRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

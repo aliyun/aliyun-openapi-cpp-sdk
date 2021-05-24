@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setAccountId(const std::string& accountId);
 				bool getMigrationModeDataSynchronization()const;
 				void setMigrationModeDataSynchronization(bool migrationModeDataSynchronization);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getOwnerId()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string accountId_;
 				bool migrationModeDataSynchronization_;
+				std::string regionId_;
 				int pageSize_;
 				std::string ownerId_;
 				bool migrationModeStructureInitialization_;

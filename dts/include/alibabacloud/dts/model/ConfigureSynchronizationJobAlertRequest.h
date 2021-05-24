@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setSynchronizationJobId(const std::string& synchronizationJobId);
 				std::string getAccountId()const;
 				void setAccountId(const std::string& accountId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDelayAlertPhone()const;
 				void setDelayAlertPhone(const std::string& delayAlertPhone);
 				std::string getDelayOverSeconds()const;
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string synchronizationJobId_;
 				std::string accountId_;
+				std::string regionId_;
 				std::string delayAlertPhone_;
 				std::string delayOverSeconds_;
 				std::string delayAlertStatus_;

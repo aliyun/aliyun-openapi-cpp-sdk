@@ -82,3 +82,14 @@ void DescribeMigrationJobAlertRequest::setAccountId(const std::string& accountId
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeMigrationJobAlertRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeMigrationJobAlertRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

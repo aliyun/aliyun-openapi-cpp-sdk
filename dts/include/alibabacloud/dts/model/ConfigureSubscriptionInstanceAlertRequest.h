@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setAccountId(const std::string& accountId);
 				std::string getErrorAlertPhone()const;
 				void setErrorAlertPhone(const std::string& errorAlertPhone);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDelayAlertPhone()const;
 				void setDelayAlertPhone(const std::string& delayAlertPhone);
 				std::string getErrorAlertStatus()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string accountId_;
 				std::string errorAlertPhone_;
+				std::string regionId_;
 				std::string delayAlertPhone_;
 				std::string errorAlertStatus_;
 

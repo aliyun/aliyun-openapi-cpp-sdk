@@ -82,3 +82,14 @@ void StopMigrationJobRequest::setAccountId(const std::string& accountId)
 	setParameter("AccountId", accountId);
 }
 
+std::string StopMigrationJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void StopMigrationJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

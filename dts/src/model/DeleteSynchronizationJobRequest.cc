@@ -71,3 +71,14 @@ void DeleteSynchronizationJobRequest::setAccountId(const std::string& accountId)
 	setParameter("AccountId", accountId);
 }
 
+std::string DeleteSynchronizationJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteSynchronizationJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

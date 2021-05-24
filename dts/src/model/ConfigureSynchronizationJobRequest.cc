@@ -192,6 +192,17 @@ void ConfigureSynchronizationJobRequest::setAccountId(const std::string& account
 	setParameter("AccountId", accountId);
 }
 
+std::string ConfigureSynchronizationJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigureSynchronizationJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ConfigureSynchronizationJobRequest::getSourceEndpointUserName()const
 {
 	return sourceEndpointUserName_;

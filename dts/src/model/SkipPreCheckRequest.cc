@@ -60,6 +60,17 @@ void SkipPreCheckRequest::setJobId(const std::string& jobId)
 	setParameter("JobId", jobId);
 }
 
+std::string SkipPreCheckRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void SkipPreCheckRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string SkipPreCheckRequest::getSkipPreCheckNames()const
 {
 	return skipPreCheckNames_;
@@ -69,5 +80,16 @@ void SkipPreCheckRequest::setSkipPreCheckNames(const std::string& skipPreCheckNa
 {
 	skipPreCheckNames_ = skipPreCheckNames;
 	setParameter("SkipPreCheckNames", skipPreCheckNames);
+}
+
+std::string SkipPreCheckRequest::getDtsJobId()const
+{
+	return dtsJobId_;
+}
+
+void SkipPreCheckRequest::setDtsJobId(const std::string& dtsJobId)
+{
+	dtsJobId_ = dtsJobId;
+	setParameter("DtsJobId", dtsJobId);
 }
 

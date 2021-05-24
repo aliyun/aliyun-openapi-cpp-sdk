@@ -91,6 +91,8 @@ namespace AlibabaCloud
 				void setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName);
 				std::string getDestinationEndpointRegion()const;
 				void setDestinationEndpointRegion(const std::string& destinationEndpointRegion);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getReserve()const;
 				void setReserve(const std::string& reserve);
 				bool getDataSynchronization()const;
@@ -143,6 +145,7 @@ namespace AlibabaCloud
 				std::string sourceEndpointOwnerID_;
 				std::string sourceEndpointDatabaseName_;
 				std::string destinationEndpointRegion_;
+				std::string regionId_;
 				std::string reserve_;
 				bool dataSynchronization_;
 				std::string destinationEndpointEngineName_;

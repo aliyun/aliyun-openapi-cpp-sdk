@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setEndpointType(const std::string& endpointType);
 				std::string getAccountId()const;
 				void setAccountId(const std::string& accountId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getEndpointPort()const;
 				void setEndpointPort(const std::string& endpointPort);
 				std::string getEndpointInstanceType()const;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 				std::string synchronizationJobId_;
 				std::string endpointType_;
 				std::string accountId_;
+				std::string regionId_;
 				std::string endpointPort_;
 				std::string endpointInstanceType_;
 				std::string sourceEndpointOwnerID_;

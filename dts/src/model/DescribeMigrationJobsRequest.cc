@@ -82,6 +82,17 @@ void DescribeMigrationJobsRequest::setAccountId(const std::string& accountId)
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeMigrationJobsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeMigrationJobsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int DescribeMigrationJobsRequest::getPageSize()const
 {
 	return pageSize_;

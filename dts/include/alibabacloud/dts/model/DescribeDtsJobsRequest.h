@@ -39,18 +39,22 @@ namespace AlibabaCloud
 				void setOrderDirection(const std::string& orderDirection);
 				std::string getType()const;
 				void setType(const std::string& type);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getOrderColumn()const;
+				void setOrderColumn(const std::string& orderColumn);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				std::string getParams()const;
 				void setParams(const std::string& params);
 				std::string getJobType()const;
 				void setJobType(const std::string& jobType);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
-				std::string getOrderColumn()const;
-				void setOrderColumn(const std::string& orderColumn);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
 				std::string getStatus()const;
@@ -59,12 +63,14 @@ namespace AlibabaCloud
             private:
 				std::string orderDirection_;
 				std::string type_;
+				int pageNumber_;
+				std::string orderColumn_;
+				std::string regionId_;
+				int pageSize_;
+				std::string groupId_;
 				std::string params_;
 				std::string jobType_;
-				int pageNumber_;
 				std::string tags_;
-				std::string orderColumn_;
-				int pageSize_;
 				std::string region_;
 				std::string status_;
 

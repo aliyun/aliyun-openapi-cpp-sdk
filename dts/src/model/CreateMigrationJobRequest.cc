@@ -71,6 +71,17 @@ void CreateMigrationJobRequest::setAccountId(const std::string& accountId)
 	setParameter("AccountId", accountId);
 }
 
+std::string CreateMigrationJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateMigrationJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string CreateMigrationJobRequest::getRegion()const
 {
 	return region_;

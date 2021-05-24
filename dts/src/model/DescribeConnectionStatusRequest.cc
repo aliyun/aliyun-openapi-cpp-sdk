@@ -115,6 +115,17 @@ void DescribeConnectionStatusRequest::setSourceEndpointIP(const std::string& sou
 	setParameter("SourceEndpointIP", sourceEndpointIP);
 }
 
+std::string DescribeConnectionStatusRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeConnectionStatusRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeConnectionStatusRequest::getDestinationEndpointUserName()const
 {
 	return destinationEndpointUserName_;

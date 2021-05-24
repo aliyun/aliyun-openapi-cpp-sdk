@@ -38,6 +38,17 @@ void ModifyDtsJobNameRequest::setDtsJobName(const std::string& dtsJobName)
 	setParameter("DtsJobName", dtsJobName);
 }
 
+std::string ModifyDtsJobNameRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyDtsJobNameRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyDtsJobNameRequest::getDtsJobId()const
 {
 	return dtsJobId_;

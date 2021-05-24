@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getStructType()const;
 				void setStructType(const std::string& structType);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getPageNo()const;
 				void setPageNo(const std::string& pageNo);
 				std::string getPageSize()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				std::string structType_;
+				std::string regionId_;
 				std::string pageNo_;
 				std::string pageSize_;
 				std::string jobCode_;

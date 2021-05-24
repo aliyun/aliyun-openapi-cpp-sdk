@@ -104,6 +104,17 @@ void DescribeMigrationJobDetailRequest::setMigrationModeDataSynchronization(bool
 	setParameter("MigrationModeDataSynchronization", migrationModeDataSynchronization ? "true" : "false");
 }
 
+std::string DescribeMigrationJobDetailRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeMigrationJobDetailRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int DescribeMigrationJobDetailRequest::getPageSize()const
 {
 	return pageSize_;

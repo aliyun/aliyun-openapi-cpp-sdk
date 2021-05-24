@@ -71,6 +71,17 @@ void DescribeSynchronizationObjectModifyStatusRequest::setAccountId(const std::s
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeSynchronizationObjectModifyStatusRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeSynchronizationObjectModifyStatusRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeSynchronizationObjectModifyStatusRequest::getTaskId()const
 {
 	return taskId_;

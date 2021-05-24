@@ -104,6 +104,17 @@ void ConfigureSubscriptionInstanceAlertRequest::setErrorAlertPhone(const std::st
 	setParameter("ErrorAlertPhone", errorAlertPhone);
 }
 
+std::string ConfigureSubscriptionInstanceAlertRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigureSubscriptionInstanceAlertRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ConfigureSubscriptionInstanceAlertRequest::getDelayAlertPhone()const
 {
 	return delayAlertPhone_;

@@ -104,6 +104,17 @@ void ConfigureMigrationJobAlertRequest::setErrorAlertPhone(const std::string& er
 	setParameter("ErrorAlertPhone", errorAlertPhone);
 }
 
+std::string ConfigureMigrationJobAlertRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigureMigrationJobAlertRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ConfigureMigrationJobAlertRequest::getDelayAlertPhone()const
 {
 	return delayAlertPhone_;

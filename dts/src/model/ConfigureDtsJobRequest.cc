@@ -335,6 +335,17 @@ void ConfigureDtsJobRequest::setDestinationEndpointRegion(const std::string& des
 	setParameter("DestinationEndpointRegion", destinationEndpointRegion);
 }
 
+std::string ConfigureDtsJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigureDtsJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ConfigureDtsJobRequest::getReserve()const
 {
 	return reserve_;

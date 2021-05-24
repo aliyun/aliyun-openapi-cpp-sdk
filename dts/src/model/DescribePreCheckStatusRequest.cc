@@ -38,6 +38,17 @@ void DescribePreCheckStatusRequest::setStructType(const std::string& structType)
 	setParameter("StructType", structType);
 }
 
+std::string DescribePreCheckStatusRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribePreCheckStatusRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribePreCheckStatusRequest::getPageNo()const
 {
 	return pageNo_;

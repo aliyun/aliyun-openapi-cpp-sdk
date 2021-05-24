@@ -203,6 +203,17 @@ void ConfigureMigrationJobRequest::setMigrationModeDataSynchronization(bool migr
 	setParameter("MigrationModeDataSynchronization", migrationModeDataSynchronization ? "true" : "false");
 }
 
+std::string ConfigureMigrationJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigureMigrationJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ConfigureMigrationJobRequest::getDestinationEndpointRegion()const
 {
 	return destinationEndpointRegion_;

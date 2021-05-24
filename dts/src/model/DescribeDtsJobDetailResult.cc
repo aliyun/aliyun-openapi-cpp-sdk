@@ -92,6 +92,20 @@ void DescribeDtsJobDetailResult::parse(const std::string &payload)
 		migrationMode_.dataInitialization = migrationModeNode["DataInitialization"].asString() == "true";
 	if(!migrationModeNode["DataSynchronization"].isNull())
 		migrationMode_.dataSynchronization = migrationModeNode["DataSynchronization"].asString() == "true";
+	if(!migrationModeNode["DataExtractTransformLoad"].isNull())
+		migrationMode_.dataExtractTransformLoad = migrationModeNode["DataExtractTransformLoad"].asString() == "true";
+	auto subscriptionHostNode = value["SubscriptionHost"];
+	if(!subscriptionHostNode["PublicHost"].isNull())
+		subscriptionHost_.publicHost = subscriptionHostNode["PublicHost"].asString();
+	if(!subscriptionHostNode["PrivateHost"].isNull())
+		subscriptionHost_.privateHost = subscriptionHostNode["PrivateHost"].asString();
+	if(!subscriptionHostNode["VpcHost"].isNull())
+		subscriptionHost_.vpcHost = subscriptionHostNode["VpcHost"].asString();
+	auto subscriptionDataTypeNode = value["SubscriptionDataType"];
+	if(!subscriptionDataTypeNode["Ddl"].isNull())
+		subscriptionDataType_.ddl = subscriptionDataTypeNode["Ddl"].asString() == "true";
+	if(!subscriptionDataTypeNode["Dml"].isNull())
+		subscriptionDataType_.dml = subscriptionDataTypeNode["Dml"].asString() == "true";
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -136,12 +150,42 @@ void DescribeDtsJobDetailResult::parse(const std::string &payload)
 		dbObject_ = value["DbObject"].asString();
 	if(!value["SynchronizationDirection"].isNull())
 		synchronizationDirection_ = value["SynchronizationDirection"].asString();
+	if(!value["EtlCalculator"].isNull())
+		etlCalculator_ = value["EtlCalculator"].asString();
+	if(!value["GroupId"].isNull())
+		groupId_ = value["GroupId"].asString();
+	if(!value["DatabaseCount"].isNull())
+		databaseCount_ = std::stoi(value["DatabaseCount"].asString());
+	if(!value["SubscribeTopic"].isNull())
+		subscribeTopic_ = value["SubscribeTopic"].asString();
+	if(!value["ConsumptionCheckpoint"].isNull())
+		consumptionCheckpoint_ = value["ConsumptionCheckpoint"].asString();
+	if(!value["BeginTimestamp"].isNull())
+		beginTimestamp_ = value["BeginTimestamp"].asString();
+	if(!value["EndTimestamp"].isNull())
+		endTimestamp_ = value["EndTimestamp"].asString();
+	if(!value["ConsumptionClient"].isNull())
+		consumptionClient_ = value["ConsumptionClient"].asString();
+	if(!value["AppName"].isNull())
+		appName_ = value["AppName"].asString();
+	if(!value["DestNetType"].isNull())
+		destNetType_ = value["DestNetType"].asString();
 
+}
+
+DescribeDtsJobDetailResult::SubscriptionHost DescribeDtsJobDetailResult::getSubscriptionHost()const
+{
+	return subscriptionHost_;
 }
 
 std::string DescribeDtsJobDetailResult::getDtsJobName()const
 {
 	return dtsJobName_;
+}
+
+std::string DescribeDtsJobDetailResult::getEndTimestamp()const
+{
+	return endTimestamp_;
 }
 
 std::string DescribeDtsJobDetailResult::getDynamicMessage()const
@@ -169,6 +213,16 @@ int DescribeDtsJobDetailResult::getDelay()const
 	return delay_;
 }
 
+std::string DescribeDtsJobDetailResult::getAppName()const
+{
+	return appName_;
+}
+
+DescribeDtsJobDetailResult::SubscriptionDataType DescribeDtsJobDetailResult::getSubscriptionDataType()const
+{
+	return subscriptionDataType_;
+}
+
 std::string DescribeDtsJobDetailResult::getDtsJobClass()const
 {
 	return dtsJobClass_;
@@ -187,6 +241,16 @@ std::string DescribeDtsJobDetailResult::getFinishTime()const
 int DescribeDtsJobDetailResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::string DescribeDtsJobDetailResult::getDestNetType()const
+{
+	return destNetType_;
+}
+
+std::string DescribeDtsJobDetailResult::getEtlCalculator()const
+{
+	return etlCalculator_;
 }
 
 std::string DescribeDtsJobDetailResult::getStatus()const
@@ -224,9 +288,19 @@ std::string DescribeDtsJobDetailResult::getErrCode()const
 	return errCode_;
 }
 
+std::string DescribeDtsJobDetailResult::getGroupId()const
+{
+	return groupId_;
+}
+
 int DescribeDtsJobDetailResult::getCheckpoint()const
 {
 	return checkpoint_;
+}
+
+std::string DescribeDtsJobDetailResult::getConsumptionCheckpoint()const
+{
+	return consumptionCheckpoint_;
 }
 
 std::string DescribeDtsJobDetailResult::getDtsJobDirection()const
@@ -234,9 +308,24 @@ std::string DescribeDtsJobDetailResult::getDtsJobDirection()const
 	return dtsJobDirection_;
 }
 
+int DescribeDtsJobDetailResult::getDatabaseCount()const
+{
+	return databaseCount_;
+}
+
 DescribeDtsJobDetailResult::DestinationEndpoint DescribeDtsJobDetailResult::getDestinationEndpoint()const
 {
 	return destinationEndpoint_;
+}
+
+std::string DescribeDtsJobDetailResult::getSubscribeTopic()const
+{
+	return subscribeTopic_;
+}
+
+std::string DescribeDtsJobDetailResult::getConsumptionClient()const
+{
+	return consumptionClient_;
 }
 
 DescribeDtsJobDetailResult::SourceEndpoint DescribeDtsJobDetailResult::getSourceEndpoint()const
@@ -252,6 +341,11 @@ std::string DescribeDtsJobDetailResult::getExpireTime()const
 std::string DescribeDtsJobDetailResult::getErrorMessage()const
 {
 	return errorMessage_;
+}
+
+std::string DescribeDtsJobDetailResult::getBeginTimestamp()const
+{
+	return beginTimestamp_;
 }
 
 std::string DescribeDtsJobDetailResult::getSynchronizationDirection()const

@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setSynchronizationJobName(const std::string& synchronizationJobName);
 				std::string getAccountId()const;
 				void setAccountId(const std::string& accountId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string synchronizationJobName_;
 				std::string accountId_;
+				std::string regionId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
 

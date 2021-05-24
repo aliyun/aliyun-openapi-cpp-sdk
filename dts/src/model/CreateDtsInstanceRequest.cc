@@ -82,6 +82,28 @@ void CreateDtsInstanceRequest::setJobId(const std::string& jobId)
 	setParameter("JobId", jobId);
 }
 
+std::string CreateDtsInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateDtsInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+int CreateDtsInstanceRequest::getComputeUnit()const
+{
+	return computeUnit_;
+}
+
+void CreateDtsInstanceRequest::setComputeUnit(int computeUnit)
+{
+	computeUnit_ = computeUnit;
+	setParameter("ComputeUnit", std::to_string(computeUnit));
+}
+
 std::string CreateDtsInstanceRequest::getDestinationRegion()const
 {
 	return destinationRegion_;

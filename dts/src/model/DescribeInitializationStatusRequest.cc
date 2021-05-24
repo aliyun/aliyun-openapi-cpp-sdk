@@ -82,6 +82,17 @@ void DescribeInitializationStatusRequest::setAccountId(const std::string& accoun
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeInitializationStatusRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeInitializationStatusRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int DescribeInitializationStatusRequest::getPageSize()const
 {
 	return pageSize_;

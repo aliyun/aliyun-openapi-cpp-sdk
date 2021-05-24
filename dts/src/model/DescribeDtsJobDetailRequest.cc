@@ -27,6 +27,17 @@ DescribeDtsJobDetailRequest::DescribeDtsJobDetailRequest() :
 DescribeDtsJobDetailRequest::~DescribeDtsJobDetailRequest()
 {}
 
+std::string DescribeDtsJobDetailRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDtsJobDetailRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeDtsJobDetailRequest::getDtsJobId()const
 {
 	return dtsJobId_;

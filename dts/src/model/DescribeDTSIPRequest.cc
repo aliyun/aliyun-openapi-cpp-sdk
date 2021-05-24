@@ -49,3 +49,14 @@ void DescribeDTSIPRequest::setDestinationEndpointRegion(const std::string& desti
 	setParameter("DestinationEndpointRegion", destinationEndpointRegion);
 }
 
+std::string DescribeDTSIPRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDTSIPRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

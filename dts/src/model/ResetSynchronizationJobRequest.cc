@@ -71,6 +71,17 @@ void ResetSynchronizationJobRequest::setAccountId(const std::string& accountId)
 	setParameter("AccountId", accountId);
 }
 
+std::string ResetSynchronizationJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ResetSynchronizationJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ResetSynchronizationJobRequest::getSynchronizationDirection()const
 {
 	return synchronizationDirection_;

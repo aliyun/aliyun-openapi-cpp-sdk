@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setOwnerId(const std::string& ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDtsInstanceId()const;
 				void setDtsInstanceId(const std::string& dtsInstanceId);
 				std::string getSynchronizationDirection()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string ownerId_;
 				std::string accessKeyId_;
+				std::string regionId_;
 				std::string dtsInstanceId_;
 				std::string synchronizationDirection_;
 

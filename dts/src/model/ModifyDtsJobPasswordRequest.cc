@@ -49,6 +49,17 @@ void ModifyDtsJobPasswordRequest::setEndpoint(const std::string& endpoint)
 	setParameter("Endpoint", endpoint);
 }
 
+std::string ModifyDtsJobPasswordRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyDtsJobPasswordRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifyDtsJobPasswordRequest::getDtsJobId()const
 {
 	return dtsJobId_;

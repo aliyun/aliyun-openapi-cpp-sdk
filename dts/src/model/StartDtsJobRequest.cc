@@ -27,6 +27,17 @@ StartDtsJobRequest::StartDtsJobRequest() :
 StartDtsJobRequest::~StartDtsJobRequest()
 {}
 
+std::string StartDtsJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void StartDtsJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string StartDtsJobRequest::getDtsJobId()const
 {
 	return dtsJobId_;

@@ -82,3 +82,14 @@ void ModifyConsumptionTimestampRequest::setAccountId(const std::string& accountI
 	setParameter("AccountId", accountId);
 }
 
+std::string ModifyConsumptionTimestampRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyConsumptionTimestampRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

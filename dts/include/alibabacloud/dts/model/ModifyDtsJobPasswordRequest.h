@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setPassword(const std::string& password);
 				std::string getEndpoint()const;
 				void setEndpoint(const std::string& endpoint);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDtsJobId()const;
 				void setDtsJobId(const std::string& dtsJobId);
 				std::string getUserName()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string password_;
 				std::string endpoint_;
+				std::string regionId_;
 				std::string dtsJobId_;
 				std::string userName_;
 

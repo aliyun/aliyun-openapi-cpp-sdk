@@ -126,3 +126,14 @@ void ModifyConsumerGroupPasswordRequest::setConsumerGroupUserName(const std::str
 	setParameter("ConsumerGroupUserName", consumerGroupUserName);
 }
 
+std::string ModifyConsumerGroupPasswordRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyConsumerGroupPasswordRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

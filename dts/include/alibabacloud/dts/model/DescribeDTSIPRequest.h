@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setSourceEndpointRegion(const std::string& sourceEndpointRegion);
 				std::string getDestinationEndpointRegion()const;
 				void setDestinationEndpointRegion(const std::string& destinationEndpointRegion);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
 				std::string sourceEndpointRegion_;
 				std::string destinationEndpointRegion_;
+				std::string regionId_;
 
 			};
 		}

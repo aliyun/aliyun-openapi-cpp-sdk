@@ -71,3 +71,14 @@ void DeleteSubscriptionInstanceRequest::setAccountId(const std::string& accountI
 	setParameter("AccountId", accountId);
 }
 
+std::string DeleteSubscriptionInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteSubscriptionInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

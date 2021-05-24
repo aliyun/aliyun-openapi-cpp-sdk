@@ -71,3 +71,14 @@ void StartSubscriptionInstanceRequest::setAccountId(const std::string& accountId
 	setParameter("AccountId", accountId);
 }
 
+std::string StartSubscriptionInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void StartSubscriptionInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

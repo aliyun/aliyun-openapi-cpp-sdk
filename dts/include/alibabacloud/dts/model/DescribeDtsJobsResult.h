@@ -34,18 +34,26 @@ namespace AlibabaCloud
 			public:
 				struct DtsJobStatus
 				{
-					struct SourceEndpoint
+					struct DataInitializationStatus
 					{
-						std::string oracleSID;
-						std::string userName;
-						std::string instanceID;
-						std::string sslSolutionEnum;
-						std::string ip;
-						std::string port;
-						std::string databaseName;
-						std::string region;
-						std::string instanceType;
-						std::string engineName;
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
+					};
+					struct DataSynchronizationStatus
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
+					};
+					struct DataEtlStatus
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
 					};
 					struct DestinationEndpoint
 					{
@@ -66,6 +74,11 @@ namespace AlibabaCloud
 						bool dataSynchronization;
 						bool structureInitialization;
 					};
+					struct Performance
+					{
+						std::string rps;
+						std::string flow;
+					};
 					struct PrecheckStatus
 					{
 						struct PrecheckDetail
@@ -81,35 +94,23 @@ namespace AlibabaCloud
 						std::string errorMessage;
 						std::vector<PrecheckDetail> detail;
 					};
-					struct StructureInitializationStatus
-					{
-						std::string status;
-						std::string progress;
-						std::string percent;
-						std::string errorMessage;
-					};
-					struct DataInitializationStatus
-					{
-						std::string status;
-						std::string progress;
-						std::string percent;
-						std::string errorMessage;
-					};
-					struct DataSynchronizationStatus
-					{
-						std::string status;
-						std::string progress;
-						std::string percent;
-						std::string errorMessage;
-					};
-					struct Performance
-					{
-						std::string rps;
-						std::string flow;
-					};
 					struct ReverseJob
 					{
-						struct SourceEndpoint1
+						struct DataInitializationStatus1
+						{
+							std::string status;
+							std::string progress;
+							std::string percent;
+							std::string errorMessage;
+						};
+						struct DataSynchronizationStatus2
+						{
+							std::string status;
+							std::string progress;
+							std::string percent;
+							std::string errorMessage;
+						};
+						struct DestinationEndpoint3
 						{
 							std::string oracleSID;
 							std::string userName;
@@ -122,26 +123,18 @@ namespace AlibabaCloud
 							std::string instanceType;
 							std::string engineName;
 						};
-						struct DestinationEndpoint2
-						{
-							std::string oracleSID;
-							std::string userName;
-							std::string instanceID;
-							std::string sslSolutionEnum;
-							std::string ip;
-							std::string port;
-							std::string databaseName;
-							std::string region;
-							std::string instanceType;
-							std::string engineName;
-						};
-						struct MigrationMode3
+						struct MigrationMode4
 						{
 							bool dataInitialization;
 							bool dataSynchronization;
 							bool structureInitialization;
 						};
-						struct PrecheckStatus4
+						struct Performance5
+						{
+							std::string rps;
+							std::string flow;
+						};
+						struct PrecheckStatus6
 						{
 							struct PrecheckDetail10
 							{
@@ -156,83 +149,103 @@ namespace AlibabaCloud
 							std::vector<PrecheckDetail10> detail9;
 							std::string errorMessage;
 						};
-						struct StructureInitializationStatus5
+						struct SourceEndpoint7
+						{
+							std::string oracleSID;
+							std::string userName;
+							std::string instanceID;
+							std::string sslSolutionEnum;
+							std::string ip;
+							std::string port;
+							std::string databaseName;
+							std::string region;
+							std::string instanceType;
+							std::string engineName;
+						};
+						struct StructureInitializationStatus8
 						{
 							std::string status;
 							std::string progress;
 							std::string percent;
 							std::string errorMessage;
-						};
-						struct DataInitializationStatus6
-						{
-							std::string status;
-							std::string progress;
-							std::string percent;
-							std::string errorMessage;
-						};
-						struct DataSynchronizationStatus7
-						{
-							std::string status;
-							std::string progress;
-							std::string percent;
-							std::string errorMessage;
-						};
-						struct Performance8
-						{
-							std::string rps;
-							std::string flow;
 						};
 						std::string status;
-						Performance8 performance8;
-						SourceEndpoint1 sourceEndpoint1;
+						SourceEndpoint7 sourceEndpoint7;
 						std::string dbObject;
 						std::string createTime;
-						PrecheckStatus4 precheckStatus4;
 						std::string dtsJobName;
+						PrecheckStatus6 precheckStatus6;
 						std::string payType;
-						MigrationMode3 migrationMode3;
+						MigrationMode4 migrationMode4;
+						StructureInitializationStatus8 structureInitializationStatus8;
 						std::string dtsInstanceID;
+						DestinationEndpoint3 destinationEndpoint3;
 						int delay;
-						StructureInitializationStatus5 structureInitializationStatus5;
-						DestinationEndpoint2 destinationEndpoint2;
-						std::string dtsJobClass;
+						Performance5 performance5;
 						std::string checkpoint;
-						std::string dtsJobId;
+						std::string dtsJobClass;
 						std::string dtsJobDirection;
-						DataInitializationStatus6 dataInitializationStatus6;
-						DataSynchronizationStatus7 dataSynchronizationStatus7;
-						std::string expireTime;
+						std::string dtsJobId;
+						DataInitializationStatus1 dataInitializationStatus1;
 						std::string errorMessage;
+						std::string expireTime;
+						DataSynchronizationStatus2 dataSynchronizationStatus2;
 						std::string reserved;
+					};
+					struct SourceEndpoint
+					{
+						std::string oracleSID;
+						std::string userName;
+						std::string instanceID;
+						std::string sslSolutionEnum;
+						std::string ip;
+						std::string port;
+						std::string databaseName;
+						std::string region;
+						std::string instanceType;
+						std::string engineName;
+					};
+					struct StructureInitializationStatus
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
 					};
 					struct DtsTag
 					{
 						std::string tagKey;
 						std::string tagValue;
 					};
-					std::string status;
 					DataInitializationStatus dataInitializationStatus;
-					std::string dbObject;
-					std::string createTime;
-					ReverseJob reverseJob;
 					std::string dtsJobName;
-					std::string payType;
+					std::string endTimestamp;
 					std::string dtsInstanceID;
 					MigrationMode migrationMode;
 					int delay;
-					PrecheckStatus precheckStatus;
+					std::string appName;
 					std::string dtsJobClass;
-					std::string checkpoint;
 					std::string dtsJobId;
+					std::vector<DtsJobStatus::DtsTag> tagList;
+					DataSynchronizationStatus dataSynchronizationStatus;
+					std::string status;
+					DataEtlStatus dataEtlStatus;
+					std::string dbObject;
+					std::string createTime;
+					ReverseJob reverseJob;
+					std::string payType;
+					PrecheckStatus precheckStatus;
+					std::string checkpoint;
+					std::string consumptionCheckpoint;
 					std::string dtsJobDirection;
 					DestinationEndpoint destinationEndpoint;
+					std::string consumptionClient;
 					SourceEndpoint sourceEndpoint;
-					std::vector<DtsJobStatus::DtsTag> tagList;
 					Performance performance;
-					std::string expireTime;
 					std::string errorMessage;
+					std::string expireTime;
+					std::string beginTimestamp;
 					StructureInitializationStatus structureInitializationStatus;
-					DataSynchronizationStatus dataSynchronizationStatus;
 					std::string reserved;
 				};
 

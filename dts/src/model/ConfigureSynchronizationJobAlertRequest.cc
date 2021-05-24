@@ -60,6 +60,17 @@ void ConfigureSynchronizationJobAlertRequest::setAccountId(const std::string& ac
 	setParameter("AccountId", accountId);
 }
 
+std::string ConfigureSynchronizationJobAlertRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigureSynchronizationJobAlertRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ConfigureSynchronizationJobAlertRequest::getDelayAlertPhone()const
 {
 	return delayAlertPhone_;

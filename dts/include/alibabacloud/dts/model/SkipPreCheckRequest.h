@@ -41,14 +41,20 @@ namespace AlibabaCloud
 				void setSkip(bool skip);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getSkipPreCheckNames()const;
 				void setSkipPreCheckNames(const std::string& skipPreCheckNames);
+				std::string getDtsJobId()const;
+				void setDtsJobId(const std::string& dtsJobId);
 
             private:
 				std::string skipPreCheckItems_;
 				bool skip_;
 				std::string jobId_;
+				std::string regionId_;
 				std::string skipPreCheckNames_;
+				std::string dtsJobId_;
 
 			};
 		}

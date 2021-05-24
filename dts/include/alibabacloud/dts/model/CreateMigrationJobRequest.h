@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getAccountId()const;
 				void setAccountId(const std::string& accountId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
 				std::string getMigrationJobClass()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string ownerId_;
 				std::string accessKeyId_;
 				std::string accountId_;
+				std::string regionId_;
 				std::string region_;
 				std::string migrationJobClass_;
 

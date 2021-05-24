@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getAccountId()const;
 				void setAccountId(const std::string& accountId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getSubscriptionObject()const;
 				void setSubscriptionObject(const std::string& subscriptionObject);
 				std::string getSubscriptionInstanceVSwitchId()const;
@@ -86,6 +88,7 @@ namespace AlibabaCloud
 				std::string sourceEndpointInstanceType_;
 				std::string accessKeyId_;
 				std::string accountId_;
+				std::string regionId_;
 				std::string subscriptionObject_;
 				std::string subscriptionInstanceVSwitchId_;
 				std::string sourceEndpointUserName_;

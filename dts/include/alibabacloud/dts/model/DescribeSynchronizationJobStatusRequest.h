@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setSynchronizationJobId(const std::string& synchronizationJobId);
 				std::string getAccountId()const;
 				void setAccountId(const std::string& accountId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getSynchronizationDirection()const;
 				void setSynchronizationDirection(const std::string& synchronizationDirection);
 
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string synchronizationJobId_;
 				std::string accountId_;
+				std::string regionId_;
 				std::string synchronizationDirection_;
 
 			};

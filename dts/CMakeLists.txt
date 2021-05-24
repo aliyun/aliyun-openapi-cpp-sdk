@@ -41,6 +41,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/CreateConsumerGroupResult.h
 	include/alibabacloud/dts/model/CreateDtsInstanceRequest.h
 	include/alibabacloud/dts/model/CreateDtsInstanceResult.h
+	include/alibabacloud/dts/model/CreateJobMonitorRuleRequest.h
+	include/alibabacloud/dts/model/CreateJobMonitorRuleResult.h
 	include/alibabacloud/dts/model/CreateMigrationJobRequest.h
 	include/alibabacloud/dts/model/CreateMigrationJobResult.h
 	include/alibabacloud/dts/model/CreateSubscriptionInstanceRequest.h
@@ -57,20 +59,30 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DeleteSubscriptionInstanceResult.h
 	include/alibabacloud/dts/model/DeleteSynchronizationJobRequest.h
 	include/alibabacloud/dts/model/DeleteSynchronizationJobResult.h
+	include/alibabacloud/dts/model/DescribeCenVpcRequest.h
+	include/alibabacloud/dts/model/DescribeCenVpcResult.h
 	include/alibabacloud/dts/model/DescribeConnectionStatusRequest.h
 	include/alibabacloud/dts/model/DescribeConnectionStatusResult.h
 	include/alibabacloud/dts/model/DescribeConsumerGroupRequest.h
 	include/alibabacloud/dts/model/DescribeConsumerGroupResult.h
 	include/alibabacloud/dts/model/DescribeDTSIPRequest.h
 	include/alibabacloud/dts/model/DescribeDTSIPResult.h
+	include/alibabacloud/dts/model/DescribeDgDatabasesRequest.h
+	include/alibabacloud/dts/model/DescribeDgDatabasesResult.h
 	include/alibabacloud/dts/model/DescribeDtsJobDetailRequest.h
 	include/alibabacloud/dts/model/DescribeDtsJobDetailResult.h
+	include/alibabacloud/dts/model/DescribeDtsJobLogsRequest.h
+	include/alibabacloud/dts/model/DescribeDtsJobLogsResult.h
 	include/alibabacloud/dts/model/DescribeDtsJobsRequest.h
 	include/alibabacloud/dts/model/DescribeDtsJobsResult.h
 	include/alibabacloud/dts/model/DescribeEndpointSwitchStatusRequest.h
 	include/alibabacloud/dts/model/DescribeEndpointSwitchStatusResult.h
 	include/alibabacloud/dts/model/DescribeInitializationStatusRequest.h
 	include/alibabacloud/dts/model/DescribeInitializationStatusResult.h
+	include/alibabacloud/dts/model/DescribeJobDiffStatusRequest.h
+	include/alibabacloud/dts/model/DescribeJobDiffStatusResult.h
+	include/alibabacloud/dts/model/DescribeJobMonitorRuleRequest.h
+	include/alibabacloud/dts/model/DescribeJobMonitorRuleResult.h
 	include/alibabacloud/dts/model/DescribeMigrationJobAlertRequest.h
 	include/alibabacloud/dts/model/DescribeMigrationJobAlertResult.h
 	include/alibabacloud/dts/model/DescribeMigrationJobDetailRequest.h
@@ -115,6 +127,10 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/ModifySubscriptionObjectResult.h
 	include/alibabacloud/dts/model/ModifySynchronizationObjectRequest.h
 	include/alibabacloud/dts/model/ModifySynchronizationObjectResult.h
+	include/alibabacloud/dts/model/PreviewSqlRequest.h
+	include/alibabacloud/dts/model/PreviewSqlResult.h
+	include/alibabacloud/dts/model/ReplaceInstanceRequest.h
+	include/alibabacloud/dts/model/ReplaceInstanceResult.h
 	include/alibabacloud/dts/model/ResetDtsJobRequest.h
 	include/alibabacloud/dts/model/ResetDtsJobResult.h
 	include/alibabacloud/dts/model/ResetSynchronizationJobRequest.h
@@ -145,8 +161,14 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/SwitchSynchronizationEndpointResult.h
 	include/alibabacloud/dts/model/TagResourcesRequest.h
 	include/alibabacloud/dts/model/TagResourcesResult.h
+	include/alibabacloud/dts/model/TransferPayTypeRequest.h
+	include/alibabacloud/dts/model/TransferPayTypeResult.h
 	include/alibabacloud/dts/model/UntagResourcesRequest.h
-	include/alibabacloud/dts/model/UntagResourcesResult.h )
+	include/alibabacloud/dts/model/UntagResourcesResult.h
+	include/alibabacloud/dts/model/UpgradeTwoWayRequest.h
+	include/alibabacloud/dts/model/UpgradeTwoWayResult.h
+	include/alibabacloud/dts/model/WhiteIpListRequest.h
+	include/alibabacloud/dts/model/WhiteIpListResult.h )
 
 set(dts_src 
 	src/DtsClient.cc
@@ -170,6 +192,8 @@ set(dts_src
 	src/model/CreateConsumerGroupResult.cc
 	src/model/CreateDtsInstanceRequest.cc
 	src/model/CreateDtsInstanceResult.cc
+	src/model/CreateJobMonitorRuleRequest.cc
+	src/model/CreateJobMonitorRuleResult.cc
 	src/model/CreateMigrationJobRequest.cc
 	src/model/CreateMigrationJobResult.cc
 	src/model/CreateSubscriptionInstanceRequest.cc
@@ -186,20 +210,30 @@ set(dts_src
 	src/model/DeleteSubscriptionInstanceResult.cc
 	src/model/DeleteSynchronizationJobRequest.cc
 	src/model/DeleteSynchronizationJobResult.cc
+	src/model/DescribeCenVpcRequest.cc
+	src/model/DescribeCenVpcResult.cc
 	src/model/DescribeConnectionStatusRequest.cc
 	src/model/DescribeConnectionStatusResult.cc
 	src/model/DescribeConsumerGroupRequest.cc
 	src/model/DescribeConsumerGroupResult.cc
 	src/model/DescribeDTSIPRequest.cc
 	src/model/DescribeDTSIPResult.cc
+	src/model/DescribeDgDatabasesRequest.cc
+	src/model/DescribeDgDatabasesResult.cc
 	src/model/DescribeDtsJobDetailRequest.cc
 	src/model/DescribeDtsJobDetailResult.cc
+	src/model/DescribeDtsJobLogsRequest.cc
+	src/model/DescribeDtsJobLogsResult.cc
 	src/model/DescribeDtsJobsRequest.cc
 	src/model/DescribeDtsJobsResult.cc
 	src/model/DescribeEndpointSwitchStatusRequest.cc
 	src/model/DescribeEndpointSwitchStatusResult.cc
 	src/model/DescribeInitializationStatusRequest.cc
 	src/model/DescribeInitializationStatusResult.cc
+	src/model/DescribeJobDiffStatusRequest.cc
+	src/model/DescribeJobDiffStatusResult.cc
+	src/model/DescribeJobMonitorRuleRequest.cc
+	src/model/DescribeJobMonitorRuleResult.cc
 	src/model/DescribeMigrationJobAlertRequest.cc
 	src/model/DescribeMigrationJobAlertResult.cc
 	src/model/DescribeMigrationJobDetailRequest.cc
@@ -244,6 +278,10 @@ set(dts_src
 	src/model/ModifySubscriptionObjectResult.cc
 	src/model/ModifySynchronizationObjectRequest.cc
 	src/model/ModifySynchronizationObjectResult.cc
+	src/model/PreviewSqlRequest.cc
+	src/model/PreviewSqlResult.cc
+	src/model/ReplaceInstanceRequest.cc
+	src/model/ReplaceInstanceResult.cc
 	src/model/ResetDtsJobRequest.cc
 	src/model/ResetDtsJobResult.cc
 	src/model/ResetSynchronizationJobRequest.cc
@@ -274,8 +312,14 @@ set(dts_src
 	src/model/SwitchSynchronizationEndpointResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TransferPayTypeRequest.cc
+	src/model/TransferPayTypeResult.cc
 	src/model/UntagResourcesRequest.cc
-	src/model/UntagResourcesResult.cc )
+	src/model/UntagResourcesResult.cc
+	src/model/UpgradeTwoWayRequest.cc
+	src/model/UpgradeTwoWayResult.cc
+	src/model/WhiteIpListRequest.cc
+	src/model/WhiteIpListResult.cc )
 
 add_library(dts ${LIB_TYPE}
 	${dts_public_header}

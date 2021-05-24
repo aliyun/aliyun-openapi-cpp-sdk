@@ -27,6 +27,17 @@ DeleteDtsJobRequest::DeleteDtsJobRequest() :
 DeleteDtsJobRequest::~DeleteDtsJobRequest()
 {}
 
+std::string DeleteDtsJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteDtsJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DeleteDtsJobRequest::getDtsJobId()const
 {
 	return dtsJobId_;

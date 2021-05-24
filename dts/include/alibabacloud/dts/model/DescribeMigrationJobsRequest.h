@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getAccountId()const;
 				void setAccountId(const std::string& accountId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getMigrationJobName()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string ownerId_;
 				std::string accessKeyId_;
 				std::string accountId_;
+				std::string regionId_;
 				int pageSize_;
 				std::string migrationJobName_;
 				std::vector<Tag> tag_;

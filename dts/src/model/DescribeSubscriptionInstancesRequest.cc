@@ -93,6 +93,17 @@ void DescribeSubscriptionInstancesRequest::setAccountId(const std::string& accou
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeSubscriptionInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeSubscriptionInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int DescribeSubscriptionInstancesRequest::getPageSize()const
 {
 	return pageSize_;

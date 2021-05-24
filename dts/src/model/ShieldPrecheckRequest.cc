@@ -38,6 +38,17 @@ void ShieldPrecheckRequest::setPrecheckItems(const std::string& precheckItems)
 	setParameter("PrecheckItems", precheckItems);
 }
 
+std::string ShieldPrecheckRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ShieldPrecheckRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ShieldPrecheckRequest::getDtsInstanceId()const
 {
 	return dtsInstanceId_;

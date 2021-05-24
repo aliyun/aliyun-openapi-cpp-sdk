@@ -27,6 +27,17 @@ StopDtsJobRequest::StopDtsJobRequest() :
 StopDtsJobRequest::~StopDtsJobRequest()
 {}
 
+std::string StopDtsJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void StopDtsJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string StopDtsJobRequest::getDtsJobId()const
 {
 	return dtsJobId_;

@@ -49,6 +49,61 @@ void DescribeDtsJobsRequest::setType(const std::string& type)
 	setParameter("Type", type);
 }
 
+int DescribeDtsJobsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeDtsJobsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeDtsJobsRequest::getOrderColumn()const
+{
+	return orderColumn_;
+}
+
+void DescribeDtsJobsRequest::setOrderColumn(const std::string& orderColumn)
+{
+	orderColumn_ = orderColumn;
+	setParameter("OrderColumn", orderColumn);
+}
+
+std::string DescribeDtsJobsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDtsJobsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+int DescribeDtsJobsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeDtsJobsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeDtsJobsRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeDtsJobsRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
 std::string DescribeDtsJobsRequest::getParams()const
 {
 	return params_;
@@ -71,17 +126,6 @@ void DescribeDtsJobsRequest::setJobType(const std::string& jobType)
 	setParameter("JobType", jobType);
 }
 
-int DescribeDtsJobsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void DescribeDtsJobsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
-}
-
 std::string DescribeDtsJobsRequest::getTags()const
 {
 	return tags_;
@@ -91,28 +135,6 @@ void DescribeDtsJobsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setParameter("Tags", tags);
-}
-
-std::string DescribeDtsJobsRequest::getOrderColumn()const
-{
-	return orderColumn_;
-}
-
-void DescribeDtsJobsRequest::setOrderColumn(const std::string& orderColumn)
-{
-	orderColumn_ = orderColumn;
-	setParameter("OrderColumn", orderColumn);
-}
-
-int DescribeDtsJobsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeDtsJobsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDtsJobsRequest::getRegion()const

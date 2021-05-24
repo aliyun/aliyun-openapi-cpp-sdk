@@ -43,10 +43,14 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 	for (auto valueJobProgressProgressInfo : allJobProgressNode)
 	{
 		ProgressInfo jobProgressObject;
-		if(!valueJobProgressProgressInfo["BootTime"].isNull())
-			jobProgressObject.bootTime = valueJobProgressProgressInfo["BootTime"].asString();
+		if(!valueJobProgressProgressInfo["Skip"].isNull())
+			jobProgressObject.skip = valueJobProgressProgressInfo["Skip"].asString() == "true";
 		if(!valueJobProgressProgressInfo["CanSkip"].isNull())
 			jobProgressObject.canSkip = valueJobProgressProgressInfo["CanSkip"].asString() == "true";
+		if(!valueJobProgressProgressInfo["ErrMsg"].isNull())
+			jobProgressObject.errMsg = valueJobProgressProgressInfo["ErrMsg"].asString();
+		if(!valueJobProgressProgressInfo["BootTime"].isNull())
+			jobProgressObject.bootTime = valueJobProgressProgressInfo["BootTime"].asString();
 		if(!valueJobProgressProgressInfo["DelaySeconds"].isNull())
 			jobProgressObject.delaySeconds = std::stoi(valueJobProgressProgressInfo["DelaySeconds"].asString());
 		if(!valueJobProgressProgressInfo["FinishTime"].isNull())
@@ -61,8 +65,6 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 			jobProgressObject.names = valueJobProgressProgressInfo["Names"].asString();
 		if(!valueJobProgressProgressInfo["OrderNum"].isNull())
 			jobProgressObject.orderNum = std::stoi(valueJobProgressProgressInfo["OrderNum"].asString());
-		if(!valueJobProgressProgressInfo["Skip"].isNull())
-			jobProgressObject.skip = valueJobProgressProgressInfo["Skip"].asString() == "true";
 		if(!valueJobProgressProgressInfo["State"].isNull())
 			jobProgressObject.state = valueJobProgressProgressInfo["State"].asString();
 		if(!valueJobProgressProgressInfo["Sub"].isNull())
@@ -83,8 +85,6 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 			jobProgressObject.destSchema = valueJobProgressProgressInfo["DestSchema"].asString();
 		if(!valueJobProgressProgressInfo["ErrDetail"].isNull())
 			jobProgressObject.errDetail = valueJobProgressProgressInfo["ErrDetail"].asString();
-		if(!valueJobProgressProgressInfo["ErrMsg"].isNull())
-			jobProgressObject.errMsg = valueJobProgressProgressInfo["ErrMsg"].asString();
 		if(!valueJobProgressProgressInfo["DdlSql"].isNull())
 			jobProgressObject.ddlSql = valueJobProgressProgressInfo["DdlSql"].asString();
 		auto allLogsNode = valueJobProgressProgressInfo["Logs"]["JobLog"];
@@ -103,6 +103,88 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 		}
 		jobProgress_.push_back(jobProgressObject);
 	}
+	auto allSubDistributedJobStatusNode = value["SubDistributedJobStatus"]["SubDistributedJobStatusItem"];
+	for (auto valueSubDistributedJobStatusSubDistributedJobStatusItem : allSubDistributedJobStatusNode)
+	{
+		SubDistributedJobStatusItem subDistributedJobStatusObject;
+		if(!valueSubDistributedJobStatusSubDistributedJobStatusItem["State"].isNull())
+			subDistributedJobStatusObject.state = valueSubDistributedJobStatusSubDistributedJobStatusItem["State"].asString();
+		if(!valueSubDistributedJobStatusSubDistributedJobStatusItem["ErrorItem"].isNull())
+			subDistributedJobStatusObject.errorItem = std::stoi(valueSubDistributedJobStatusSubDistributedJobStatusItem["ErrorItem"].asString());
+		if(!valueSubDistributedJobStatusSubDistributedJobStatusItem["JobName"].isNull())
+			subDistributedJobStatusObject.jobName = valueSubDistributedJobStatusSubDistributedJobStatusItem["JobName"].asString();
+		if(!valueSubDistributedJobStatusSubDistributedJobStatusItem["JobId"].isNull())
+			subDistributedJobStatusObject.jobId = valueSubDistributedJobStatusSubDistributedJobStatusItem["JobId"].asString();
+		if(!valueSubDistributedJobStatusSubDistributedJobStatusItem["Code"].isNull())
+			subDistributedJobStatusObject.code = valueSubDistributedJobStatusSubDistributedJobStatusItem["Code"].asString();
+		if(!valueSubDistributedJobStatusSubDistributedJobStatusItem["Total"].isNull())
+			subDistributedJobStatusObject.total = std::stoi(valueSubDistributedJobStatusSubDistributedJobStatusItem["Total"].asString());
+		auto allJobProgress1Node = valueSubDistributedJobStatusSubDistributedJobStatusItem["JobProgress"]["ProgressInfo"];
+		for (auto valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo : allJobProgress1Node)
+		{
+			SubDistributedJobStatusItem::ProgressInfo2 jobProgress1Object;
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Skip"].isNull())
+				jobProgress1Object.skip = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Skip"].asString() == "true";
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["CanSkip"].isNull())
+				jobProgress1Object.canSkip = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["CanSkip"].asString() == "true";
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["ErrMsg"].isNull())
+				jobProgress1Object.errMsg = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["ErrMsg"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["BootTime"].isNull())
+				jobProgress1Object.bootTime = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["BootTime"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DelaySeconds"].isNull())
+				jobProgress1Object.delaySeconds = std::stoi(valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DelaySeconds"].asString());
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["FinishTime"].isNull())
+				jobProgress1Object.finishTime = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["FinishTime"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["IgnoreFlag"].isNull())
+				jobProgress1Object.ignoreFlag = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["IgnoreFlag"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Item"].isNull())
+				jobProgress1Object.item = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Item"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["JobId"].isNull())
+				jobProgress1Object.jobId = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["JobId"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Names"].isNull())
+				jobProgress1Object.names = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Names"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["OrderNum"].isNull())
+				jobProgress1Object.orderNum = std::stoi(valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["OrderNum"].asString());
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["State"].isNull())
+				jobProgress1Object.state = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["State"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Sub"].isNull())
+				jobProgress1Object.sub = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Sub"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["RepairMethod"].isNull())
+				jobProgress1Object.repairMethod = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["RepairMethod"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["TargetNames"].isNull())
+				jobProgress1Object.targetNames = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["TargetNames"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Total"].isNull())
+				jobProgress1Object.total = std::stoi(valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Total"].asString());
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["SourceSchema"].isNull())
+				jobProgress1Object.sourceSchema = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["SourceSchema"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["ParentObj"].isNull())
+				jobProgress1Object.parentObj = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["ParentObj"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DiffRow"].isNull())
+				jobProgress1Object.diffRow = std::stol(valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DiffRow"].asString());
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DestSchema"].isNull())
+				jobProgress1Object.destSchema = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DestSchema"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["ErrDetail"].isNull())
+				jobProgress1Object.errDetail = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["ErrDetail"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DdlSql"].isNull())
+				jobProgress1Object.ddlSql = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DdlSql"].asString();
+			auto allLogs3Node = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Logs"]["JobLog"];
+			for (auto valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog : allLogs3Node)
+			{
+				SubDistributedJobStatusItem::ProgressInfo2::JobLog4 logs3Object;
+				if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog["ErrData"].isNull())
+					logs3Object.errData = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog["ErrData"].asString();
+				if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog["ErrMsg"].isNull())
+					logs3Object.errMsg = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog["ErrMsg"].asString();
+				if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog["ErrType"].isNull())
+					logs3Object.errType = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog["ErrType"].asString();
+				if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog["LogLevel"].isNull())
+					logs3Object.logLevel = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog["LogLevel"].asString();
+				jobProgress1Object.logs3.push_back(logs3Object);
+			}
+			subDistributedJobStatusObject.jobProgress1.push_back(jobProgress1Object);
+		}
+		subDistributedJobStatus_.push_back(subDistributedJobStatusObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["ErrorItem"].isNull())
@@ -117,6 +199,8 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 		success_ = value["Success"].asString() == "true";
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["JobId"].isNull())
+		jobId_ = value["JobId"].asString();
 
 }
 
@@ -145,6 +229,11 @@ int DescribePreCheckStatusResult::getErrorItem()const
 	return errorItem_;
 }
 
+std::vector<DescribePreCheckStatusResult::SubDistributedJobStatusItem> DescribePreCheckStatusResult::getSubDistributedJobStatus()const
+{
+	return subDistributedJobStatus_;
+}
+
 std::string DescribePreCheckStatusResult::getCode()const
 {
 	return code_;
@@ -153,6 +242,11 @@ std::string DescribePreCheckStatusResult::getCode()const
 bool DescribePreCheckStatusResult::getSuccess()const
 {
 	return success_;
+}
+
+std::string DescribePreCheckStatusResult::getJobId()const
+{
+	return jobId_;
 }
 
 std::vector<DescribePreCheckStatusResult::ProgressInfo> DescribePreCheckStatusResult::getJobProgress()const

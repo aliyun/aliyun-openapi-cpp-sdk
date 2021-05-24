@@ -37,11 +37,14 @@ namespace AlibabaCloud
 
 				std::string getPrecheckItems()const;
 				void setPrecheckItems(const std::string& precheckItems);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getDtsInstanceId()const;
 				void setDtsInstanceId(const std::string& dtsInstanceId);
 
             private:
 				std::string precheckItems_;
+				std::string regionId_;
 				std::string dtsInstanceId_;
 
 			};

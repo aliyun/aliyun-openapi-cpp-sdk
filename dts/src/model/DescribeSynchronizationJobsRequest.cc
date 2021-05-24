@@ -104,6 +104,17 @@ void DescribeSynchronizationJobsRequest::setAccountId(const std::string& account
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeSynchronizationJobsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeSynchronizationJobsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 int DescribeSynchronizationJobsRequest::getPageSize()const
 {
 	return pageSize_;

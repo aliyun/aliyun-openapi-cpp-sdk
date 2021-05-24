@@ -82,6 +82,17 @@ void ModifySynchronizationObjectRequest::setAccountId(const std::string& account
 	setParameter("AccountId", accountId);
 }
 
+std::string ModifySynchronizationObjectRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifySynchronizationObjectRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifySynchronizationObjectRequest::getSynchronizationDirection()const
 {
 	return synchronizationDirection_;

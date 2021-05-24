@@ -71,6 +71,17 @@ void DescribeEndpointSwitchStatusRequest::setAccountId(const std::string& accoun
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeEndpointSwitchStatusRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeEndpointSwitchStatusRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeEndpointSwitchStatusRequest::getTaskId()const
 {
 	return taskId_;

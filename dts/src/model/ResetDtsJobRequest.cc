@@ -27,6 +27,17 @@ ResetDtsJobRequest::ResetDtsJobRequest() :
 ResetDtsJobRequest::~ResetDtsJobRequest()
 {}
 
+std::string ResetDtsJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ResetDtsJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ResetDtsJobRequest::getDtsJobId()const
 {
 	return dtsJobId_;

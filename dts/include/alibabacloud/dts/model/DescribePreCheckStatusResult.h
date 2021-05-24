@@ -65,6 +65,49 @@ namespace AlibabaCloud
 					std::string jobId;
 					std::string ddlSql;
 				};
+				struct SubDistributedJobStatusItem
+				{
+					struct ProgressInfo2
+					{
+						struct JobLog4
+						{
+							std::string errData;
+							std::string errMsg;
+							std::string errType;
+							std::string logLevel;
+						};
+						std::string sourceSchema;
+						std::string sub;
+						std::string destSchema;
+						std::string errMsg;
+						std::string targetNames;
+						std::vector<ProgressInfo2::JobLog4> logs3;
+						std::string bootTime;
+						std::string names;
+						std::string item;
+						bool canSkip;
+						std::string repairMethod;
+						int delaySeconds;
+						std::string finishTime;
+						int orderNum;
+						long diffRow;
+						std::string parentObj;
+						std::string ignoreFlag;
+						std::string state;
+						int total;
+						bool skip;
+						std::string errDetail;
+						std::string jobId;
+						std::string ddlSql;
+					};
+					std::vector<SubDistributedJobStatusItem::ProgressInfo2> jobProgress1;
+					std::string state;
+					int total;
+					std::string jobName;
+					int errorItem;
+					std::string code;
+					std::string jobId;
+				};
 
 
 				DescribePreCheckStatusResult();
@@ -75,8 +118,10 @@ namespace AlibabaCloud
 				int getHttpStatusCode()const;
 				std::string getJobName()const;
 				int getErrorItem()const;
+				std::vector<SubDistributedJobStatusItem> getSubDistributedJobStatus()const;
 				std::string getCode()const;
 				bool getSuccess()const;
+				std::string getJobId()const;
 				std::vector<ProgressInfo> getJobProgress()const;
 
 			protected:
@@ -87,8 +132,10 @@ namespace AlibabaCloud
 				int httpStatusCode_;
 				std::string jobName_;
 				int errorItem_;
+				std::vector<SubDistributedJobStatusItem> subDistributedJobStatus_;
 				std::string code_;
 				bool success_;
+				std::string jobId_;
 				std::vector<ProgressInfo> jobProgress_;
 
 			};

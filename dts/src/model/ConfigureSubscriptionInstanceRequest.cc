@@ -104,6 +104,17 @@ void ConfigureSubscriptionInstanceRequest::setAccountId(const std::string& accou
 	setParameter("AccountId", accountId);
 }
 
+std::string ConfigureSubscriptionInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigureSubscriptionInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ConfigureSubscriptionInstanceRequest::getSubscriptionObject()const
 {
 	return subscriptionObject_;

@@ -42,6 +42,8 @@
 #include "model/CreateConsumerGroupResult.h"
 #include "model/CreateDtsInstanceRequest.h"
 #include "model/CreateDtsInstanceResult.h"
+#include "model/CreateJobMonitorRuleRequest.h"
+#include "model/CreateJobMonitorRuleResult.h"
 #include "model/CreateMigrationJobRequest.h"
 #include "model/CreateMigrationJobResult.h"
 #include "model/CreateSubscriptionInstanceRequest.h"
@@ -58,20 +60,30 @@
 #include "model/DeleteSubscriptionInstanceResult.h"
 #include "model/DeleteSynchronizationJobRequest.h"
 #include "model/DeleteSynchronizationJobResult.h"
+#include "model/DescribeCenVpcRequest.h"
+#include "model/DescribeCenVpcResult.h"
 #include "model/DescribeConnectionStatusRequest.h"
 #include "model/DescribeConnectionStatusResult.h"
 #include "model/DescribeConsumerGroupRequest.h"
 #include "model/DescribeConsumerGroupResult.h"
 #include "model/DescribeDTSIPRequest.h"
 #include "model/DescribeDTSIPResult.h"
+#include "model/DescribeDgDatabasesRequest.h"
+#include "model/DescribeDgDatabasesResult.h"
 #include "model/DescribeDtsJobDetailRequest.h"
 #include "model/DescribeDtsJobDetailResult.h"
+#include "model/DescribeDtsJobLogsRequest.h"
+#include "model/DescribeDtsJobLogsResult.h"
 #include "model/DescribeDtsJobsRequest.h"
 #include "model/DescribeDtsJobsResult.h"
 #include "model/DescribeEndpointSwitchStatusRequest.h"
 #include "model/DescribeEndpointSwitchStatusResult.h"
 #include "model/DescribeInitializationStatusRequest.h"
 #include "model/DescribeInitializationStatusResult.h"
+#include "model/DescribeJobDiffStatusRequest.h"
+#include "model/DescribeJobDiffStatusResult.h"
+#include "model/DescribeJobMonitorRuleRequest.h"
+#include "model/DescribeJobMonitorRuleResult.h"
 #include "model/DescribeMigrationJobAlertRequest.h"
 #include "model/DescribeMigrationJobAlertResult.h"
 #include "model/DescribeMigrationJobDetailRequest.h"
@@ -116,6 +128,10 @@
 #include "model/ModifySubscriptionObjectResult.h"
 #include "model/ModifySynchronizationObjectRequest.h"
 #include "model/ModifySynchronizationObjectResult.h"
+#include "model/PreviewSqlRequest.h"
+#include "model/PreviewSqlResult.h"
+#include "model/ReplaceInstanceRequest.h"
+#include "model/ReplaceInstanceResult.h"
 #include "model/ResetDtsJobRequest.h"
 #include "model/ResetDtsJobResult.h"
 #include "model/ResetSynchronizationJobRequest.h"
@@ -146,8 +162,14 @@
 #include "model/SwitchSynchronizationEndpointResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
+#include "model/TransferPayTypeRequest.h"
+#include "model/TransferPayTypeResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
+#include "model/UpgradeTwoWayRequest.h"
+#include "model/UpgradeTwoWayResult.h"
+#include "model/WhiteIpListRequest.h"
+#include "model/WhiteIpListResult.h"
 
 
 namespace AlibabaCloud
@@ -187,6 +209,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDtsInstanceResult> CreateDtsInstanceOutcome;
 			typedef std::future<CreateDtsInstanceOutcome> CreateDtsInstanceOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::CreateDtsInstanceRequest&, const CreateDtsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDtsInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateJobMonitorRuleResult> CreateJobMonitorRuleOutcome;
+			typedef std::future<CreateJobMonitorRuleOutcome> CreateJobMonitorRuleOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::CreateJobMonitorRuleRequest&, const CreateJobMonitorRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobMonitorRuleAsyncHandler;
 			typedef Outcome<Error, Model::CreateMigrationJobResult> CreateMigrationJobOutcome;
 			typedef std::future<CreateMigrationJobOutcome> CreateMigrationJobOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::CreateMigrationJobRequest&, const CreateMigrationJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMigrationJobAsyncHandler;
@@ -211,6 +236,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSynchronizationJobResult> DeleteSynchronizationJobOutcome;
 			typedef std::future<DeleteSynchronizationJobOutcome> DeleteSynchronizationJobOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DeleteSynchronizationJobRequest&, const DeleteSynchronizationJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSynchronizationJobAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCenVpcResult> DescribeCenVpcOutcome;
+			typedef std::future<DescribeCenVpcOutcome> DescribeCenVpcOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::DescribeCenVpcRequest&, const DescribeCenVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCenVpcAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConnectionStatusResult> DescribeConnectionStatusOutcome;
 			typedef std::future<DescribeConnectionStatusOutcome> DescribeConnectionStatusOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeConnectionStatusRequest&, const DescribeConnectionStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectionStatusAsyncHandler;
@@ -220,9 +248,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDTSIPResult> DescribeDTSIPOutcome;
 			typedef std::future<DescribeDTSIPOutcome> DescribeDTSIPOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeDTSIPRequest&, const DescribeDTSIPOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDTSIPAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDgDatabasesResult> DescribeDgDatabasesOutcome;
+			typedef std::future<DescribeDgDatabasesOutcome> DescribeDgDatabasesOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::DescribeDgDatabasesRequest&, const DescribeDgDatabasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDgDatabasesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDtsJobDetailResult> DescribeDtsJobDetailOutcome;
 			typedef std::future<DescribeDtsJobDetailOutcome> DescribeDtsJobDetailOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeDtsJobDetailRequest&, const DescribeDtsJobDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDtsJobDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDtsJobLogsResult> DescribeDtsJobLogsOutcome;
+			typedef std::future<DescribeDtsJobLogsOutcome> DescribeDtsJobLogsOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::DescribeDtsJobLogsRequest&, const DescribeDtsJobLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDtsJobLogsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDtsJobsResult> DescribeDtsJobsOutcome;
 			typedef std::future<DescribeDtsJobsOutcome> DescribeDtsJobsOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeDtsJobsRequest&, const DescribeDtsJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDtsJobsAsyncHandler;
@@ -232,6 +266,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInitializationStatusResult> DescribeInitializationStatusOutcome;
 			typedef std::future<DescribeInitializationStatusOutcome> DescribeInitializationStatusOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeInitializationStatusRequest&, const DescribeInitializationStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInitializationStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeJobDiffStatusResult> DescribeJobDiffStatusOutcome;
+			typedef std::future<DescribeJobDiffStatusOutcome> DescribeJobDiffStatusOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::DescribeJobDiffStatusRequest&, const DescribeJobDiffStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobDiffStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeJobMonitorRuleResult> DescribeJobMonitorRuleOutcome;
+			typedef std::future<DescribeJobMonitorRuleOutcome> DescribeJobMonitorRuleOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::DescribeJobMonitorRuleRequest&, const DescribeJobMonitorRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobMonitorRuleAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMigrationJobAlertResult> DescribeMigrationJobAlertOutcome;
 			typedef std::future<DescribeMigrationJobAlertOutcome> DescribeMigrationJobAlertOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeMigrationJobAlertRequest&, const DescribeMigrationJobAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrationJobAlertAsyncHandler;
@@ -298,6 +338,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySynchronizationObjectResult> ModifySynchronizationObjectOutcome;
 			typedef std::future<ModifySynchronizationObjectOutcome> ModifySynchronizationObjectOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::ModifySynchronizationObjectRequest&, const ModifySynchronizationObjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySynchronizationObjectAsyncHandler;
+			typedef Outcome<Error, Model::PreviewSqlResult> PreviewSqlOutcome;
+			typedef std::future<PreviewSqlOutcome> PreviewSqlOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::PreviewSqlRequest&, const PreviewSqlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreviewSqlAsyncHandler;
+			typedef Outcome<Error, Model::ReplaceInstanceResult> ReplaceInstanceOutcome;
+			typedef std::future<ReplaceInstanceOutcome> ReplaceInstanceOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::ReplaceInstanceRequest&, const ReplaceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceInstanceAsyncHandler;
 			typedef Outcome<Error, Model::ResetDtsJobResult> ResetDtsJobOutcome;
 			typedef std::future<ResetDtsJobOutcome> ResetDtsJobOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::ResetDtsJobRequest&, const ResetDtsJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetDtsJobAsyncHandler;
@@ -343,9 +389,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::TransferPayTypeResult> TransferPayTypeOutcome;
+			typedef std::future<TransferPayTypeOutcome> TransferPayTypeOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::TransferPayTypeRequest&, const TransferPayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferPayTypeAsyncHandler;
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpgradeTwoWayResult> UpgradeTwoWayOutcome;
+			typedef std::future<UpgradeTwoWayOutcome> UpgradeTwoWayOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::UpgradeTwoWayRequest&, const UpgradeTwoWayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeTwoWayAsyncHandler;
+			typedef Outcome<Error, Model::WhiteIpListResult> WhiteIpListOutcome;
+			typedef std::future<WhiteIpListOutcome> WhiteIpListOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::WhiteIpListRequest&, const WhiteIpListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WhiteIpListAsyncHandler;
 
 			DtsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			DtsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -381,6 +436,9 @@ namespace AlibabaCloud
 			CreateDtsInstanceOutcome createDtsInstance(const Model::CreateDtsInstanceRequest &request)const;
 			void createDtsInstanceAsync(const Model::CreateDtsInstanceRequest& request, const CreateDtsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDtsInstanceOutcomeCallable createDtsInstanceCallable(const Model::CreateDtsInstanceRequest& request) const;
+			CreateJobMonitorRuleOutcome createJobMonitorRule(const Model::CreateJobMonitorRuleRequest &request)const;
+			void createJobMonitorRuleAsync(const Model::CreateJobMonitorRuleRequest& request, const CreateJobMonitorRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateJobMonitorRuleOutcomeCallable createJobMonitorRuleCallable(const Model::CreateJobMonitorRuleRequest& request) const;
 			CreateMigrationJobOutcome createMigrationJob(const Model::CreateMigrationJobRequest &request)const;
 			void createMigrationJobAsync(const Model::CreateMigrationJobRequest& request, const CreateMigrationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMigrationJobOutcomeCallable createMigrationJobCallable(const Model::CreateMigrationJobRequest& request) const;
@@ -405,6 +463,9 @@ namespace AlibabaCloud
 			DeleteSynchronizationJobOutcome deleteSynchronizationJob(const Model::DeleteSynchronizationJobRequest &request)const;
 			void deleteSynchronizationJobAsync(const Model::DeleteSynchronizationJobRequest& request, const DeleteSynchronizationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSynchronizationJobOutcomeCallable deleteSynchronizationJobCallable(const Model::DeleteSynchronizationJobRequest& request) const;
+			DescribeCenVpcOutcome describeCenVpc(const Model::DescribeCenVpcRequest &request)const;
+			void describeCenVpcAsync(const Model::DescribeCenVpcRequest& request, const DescribeCenVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCenVpcOutcomeCallable describeCenVpcCallable(const Model::DescribeCenVpcRequest& request) const;
 			DescribeConnectionStatusOutcome describeConnectionStatus(const Model::DescribeConnectionStatusRequest &request)const;
 			void describeConnectionStatusAsync(const Model::DescribeConnectionStatusRequest& request, const DescribeConnectionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConnectionStatusOutcomeCallable describeConnectionStatusCallable(const Model::DescribeConnectionStatusRequest& request) const;
@@ -414,9 +475,15 @@ namespace AlibabaCloud
 			DescribeDTSIPOutcome describeDTSIP(const Model::DescribeDTSIPRequest &request)const;
 			void describeDTSIPAsync(const Model::DescribeDTSIPRequest& request, const DescribeDTSIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDTSIPOutcomeCallable describeDTSIPCallable(const Model::DescribeDTSIPRequest& request) const;
+			DescribeDgDatabasesOutcome describeDgDatabases(const Model::DescribeDgDatabasesRequest &request)const;
+			void describeDgDatabasesAsync(const Model::DescribeDgDatabasesRequest& request, const DescribeDgDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDgDatabasesOutcomeCallable describeDgDatabasesCallable(const Model::DescribeDgDatabasesRequest& request) const;
 			DescribeDtsJobDetailOutcome describeDtsJobDetail(const Model::DescribeDtsJobDetailRequest &request)const;
 			void describeDtsJobDetailAsync(const Model::DescribeDtsJobDetailRequest& request, const DescribeDtsJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDtsJobDetailOutcomeCallable describeDtsJobDetailCallable(const Model::DescribeDtsJobDetailRequest& request) const;
+			DescribeDtsJobLogsOutcome describeDtsJobLogs(const Model::DescribeDtsJobLogsRequest &request)const;
+			void describeDtsJobLogsAsync(const Model::DescribeDtsJobLogsRequest& request, const DescribeDtsJobLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDtsJobLogsOutcomeCallable describeDtsJobLogsCallable(const Model::DescribeDtsJobLogsRequest& request) const;
 			DescribeDtsJobsOutcome describeDtsJobs(const Model::DescribeDtsJobsRequest &request)const;
 			void describeDtsJobsAsync(const Model::DescribeDtsJobsRequest& request, const DescribeDtsJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDtsJobsOutcomeCallable describeDtsJobsCallable(const Model::DescribeDtsJobsRequest& request) const;
@@ -426,6 +493,12 @@ namespace AlibabaCloud
 			DescribeInitializationStatusOutcome describeInitializationStatus(const Model::DescribeInitializationStatusRequest &request)const;
 			void describeInitializationStatusAsync(const Model::DescribeInitializationStatusRequest& request, const DescribeInitializationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInitializationStatusOutcomeCallable describeInitializationStatusCallable(const Model::DescribeInitializationStatusRequest& request) const;
+			DescribeJobDiffStatusOutcome describeJobDiffStatus(const Model::DescribeJobDiffStatusRequest &request)const;
+			void describeJobDiffStatusAsync(const Model::DescribeJobDiffStatusRequest& request, const DescribeJobDiffStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeJobDiffStatusOutcomeCallable describeJobDiffStatusCallable(const Model::DescribeJobDiffStatusRequest& request) const;
+			DescribeJobMonitorRuleOutcome describeJobMonitorRule(const Model::DescribeJobMonitorRuleRequest &request)const;
+			void describeJobMonitorRuleAsync(const Model::DescribeJobMonitorRuleRequest& request, const DescribeJobMonitorRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeJobMonitorRuleOutcomeCallable describeJobMonitorRuleCallable(const Model::DescribeJobMonitorRuleRequest& request) const;
 			DescribeMigrationJobAlertOutcome describeMigrationJobAlert(const Model::DescribeMigrationJobAlertRequest &request)const;
 			void describeMigrationJobAlertAsync(const Model::DescribeMigrationJobAlertRequest& request, const DescribeMigrationJobAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMigrationJobAlertOutcomeCallable describeMigrationJobAlertCallable(const Model::DescribeMigrationJobAlertRequest& request) const;
@@ -492,6 +565,12 @@ namespace AlibabaCloud
 			ModifySynchronizationObjectOutcome modifySynchronizationObject(const Model::ModifySynchronizationObjectRequest &request)const;
 			void modifySynchronizationObjectAsync(const Model::ModifySynchronizationObjectRequest& request, const ModifySynchronizationObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySynchronizationObjectOutcomeCallable modifySynchronizationObjectCallable(const Model::ModifySynchronizationObjectRequest& request) const;
+			PreviewSqlOutcome previewSql(const Model::PreviewSqlRequest &request)const;
+			void previewSqlAsync(const Model::PreviewSqlRequest& request, const PreviewSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PreviewSqlOutcomeCallable previewSqlCallable(const Model::PreviewSqlRequest& request) const;
+			ReplaceInstanceOutcome replaceInstance(const Model::ReplaceInstanceRequest &request)const;
+			void replaceInstanceAsync(const Model::ReplaceInstanceRequest& request, const ReplaceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReplaceInstanceOutcomeCallable replaceInstanceCallable(const Model::ReplaceInstanceRequest& request) const;
 			ResetDtsJobOutcome resetDtsJob(const Model::ResetDtsJobRequest &request)const;
 			void resetDtsJobAsync(const Model::ResetDtsJobRequest& request, const ResetDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetDtsJobOutcomeCallable resetDtsJobCallable(const Model::ResetDtsJobRequest& request) const;
@@ -537,9 +616,18 @@ namespace AlibabaCloud
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			TransferPayTypeOutcome transferPayType(const Model::TransferPayTypeRequest &request)const;
+			void transferPayTypeAsync(const Model::TransferPayTypeRequest& request, const TransferPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TransferPayTypeOutcomeCallable transferPayTypeCallable(const Model::TransferPayTypeRequest& request) const;
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
+			UpgradeTwoWayOutcome upgradeTwoWay(const Model::UpgradeTwoWayRequest &request)const;
+			void upgradeTwoWayAsync(const Model::UpgradeTwoWayRequest& request, const UpgradeTwoWayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpgradeTwoWayOutcomeCallable upgradeTwoWayCallable(const Model::UpgradeTwoWayRequest& request) const;
+			WhiteIpListOutcome whiteIpList(const Model::WhiteIpListRequest &request)const;
+			void whiteIpListAsync(const Model::WhiteIpListRequest& request, const WhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			WhiteIpListOutcomeCallable whiteIpListCallable(const Model::WhiteIpListRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

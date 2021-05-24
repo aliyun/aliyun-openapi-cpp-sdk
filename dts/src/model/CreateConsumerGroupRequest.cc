@@ -104,3 +104,14 @@ void CreateConsumerGroupRequest::setConsumerGroupUserName(const std::string& con
 	setParameter("ConsumerGroupUserName", consumerGroupUserName);
 }
 
+std::string CreateConsumerGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void CreateConsumerGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+

@@ -45,6 +45,10 @@ namespace AlibabaCloud
 				void setDatabaseCount(int databaseCount);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getComputeUnit()const;
+				void setComputeUnit(int computeUnit);
 				std::string getDestinationRegion()const;
 				void setDestinationRegion(const std::string& destinationRegion);
 				std::string getPeriod()const;
@@ -72,6 +76,8 @@ namespace AlibabaCloud
 				std::string instanceClass_;
 				int databaseCount_;
 				std::string jobId_;
+				std::string regionId_;
+				int computeUnit_;
 				std::string destinationRegion_;
 				std::string period_;
 				std::string destinationEndpointEngineName_;

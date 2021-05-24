@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setSynchronizationJobName(const std::string& synchronizationJobName);
 				std::string getAccountId()const;
 				void setAccountId(const std::string& accountId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getSourceEndpointUserName()const;
 				void setSourceEndpointUserName(const std::string& sourceEndpointUserName);
 				std::string getSourceEndpointDatabaseName()const;
@@ -116,6 +118,7 @@ namespace AlibabaCloud
 				std::string synchronizationJobId_;
 				std::string synchronizationJobName_;
 				std::string accountId_;
+				std::string regionId_;
 				std::string sourceEndpointUserName_;
 				std::string sourceEndpointDatabaseName_;
 				bool partitionKeyModifyTime_Month_;

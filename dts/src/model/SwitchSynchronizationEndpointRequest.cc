@@ -71,6 +71,17 @@ void SwitchSynchronizationEndpointRequest::setAccountId(const std::string& accou
 	setParameter("AccountId", accountId);
 }
 
+std::string SwitchSynchronizationEndpointRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void SwitchSynchronizationEndpointRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string SwitchSynchronizationEndpointRequest::getEndpointPort()const
 {
 	return endpointPort_;

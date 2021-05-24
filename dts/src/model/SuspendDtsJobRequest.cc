@@ -27,6 +27,17 @@ SuspendDtsJobRequest::SuspendDtsJobRequest() :
 SuspendDtsJobRequest::~SuspendDtsJobRequest()
 {}
 
+std::string SuspendDtsJobRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void SuspendDtsJobRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string SuspendDtsJobRequest::getDtsJobId()const
 {
 	return dtsJobId_;

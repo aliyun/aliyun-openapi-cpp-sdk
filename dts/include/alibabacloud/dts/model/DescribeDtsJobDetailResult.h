@@ -64,23 +64,41 @@ namespace AlibabaCloud
 				{
 					bool dataInitialization;
 					bool dataSynchronization;
+					bool dataExtractTransformLoad;
 					bool structureInitialization;
+				};
+				struct SubscriptionHost
+				{
+					std::string publicHost;
+					std::string privateHost;
+					std::string vpcHost;
+				};
+				struct SubscriptionDataType
+				{
+					bool dml;
+					bool ddl;
 				};
 
 
 				DescribeDtsJobDetailResult();
 				explicit DescribeDtsJobDetailResult(const std::string &payload);
 				~DescribeDtsJobDetailResult();
+				SubscriptionHost getSubscriptionHost()const;
 				std::string getDtsJobName()const;
+				std::string getEndTimestamp()const;
 				std::string getDynamicMessage()const;
 				std::string getDtsInstanceID()const;
 				MigrationMode getMigrationMode()const;
 				bool getSuccess()const;
 				int getDelay()const;
+				std::string getAppName()const;
+				SubscriptionDataType getSubscriptionDataType()const;
 				std::string getDtsJobClass()const;
 				std::string getDtsJobId()const;
 				std::string getFinishTime()const;
 				int getHttpStatusCode()const;
+				std::string getDestNetType()const;
+				std::string getEtlCalculator()const;
 				std::string getStatus()const;
 				std::string getDbObject()const;
 				std::string getCreateTime()const;
@@ -88,28 +106,40 @@ namespace AlibabaCloud
 				std::string getErrMessage()const;
 				int getCode()const;
 				std::string getErrCode()const;
+				std::string getGroupId()const;
 				int getCheckpoint()const;
+				std::string getConsumptionCheckpoint()const;
 				std::string getDtsJobDirection()const;
+				int getDatabaseCount()const;
 				DestinationEndpoint getDestinationEndpoint()const;
+				std::string getSubscribeTopic()const;
+				std::string getConsumptionClient()const;
 				SourceEndpoint getSourceEndpoint()const;
 				std::string getExpireTime()const;
 				std::string getErrorMessage()const;
+				std::string getBeginTimestamp()const;
 				std::string getSynchronizationDirection()const;
 				std::string getReserved()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				SubscriptionHost subscriptionHost_;
 				std::string dtsJobName_;
+				std::string endTimestamp_;
 				std::string dynamicMessage_;
 				std::string dtsInstanceID_;
 				MigrationMode migrationMode_;
 				bool success_;
 				int delay_;
+				std::string appName_;
+				SubscriptionDataType subscriptionDataType_;
 				std::string dtsJobClass_;
 				std::string dtsJobId_;
 				std::string finishTime_;
 				int httpStatusCode_;
+				std::string destNetType_;
+				std::string etlCalculator_;
 				std::string status_;
 				std::string dbObject_;
 				std::string createTime_;
@@ -117,12 +147,18 @@ namespace AlibabaCloud
 				std::string errMessage_;
 				int code_;
 				std::string errCode_;
+				std::string groupId_;
 				int checkpoint_;
+				std::string consumptionCheckpoint_;
 				std::string dtsJobDirection_;
+				int databaseCount_;
 				DestinationEndpoint destinationEndpoint_;
+				std::string subscribeTopic_;
+				std::string consumptionClient_;
 				SourceEndpoint sourceEndpoint_;
 				std::string expireTime_;
 				std::string errorMessage_;
+				std::string beginTimestamp_;
 				std::string synchronizationDirection_;
 				std::string reserved_;
 

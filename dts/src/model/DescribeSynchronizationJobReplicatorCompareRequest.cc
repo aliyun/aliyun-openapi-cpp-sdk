@@ -82,6 +82,17 @@ void DescribeSynchronizationJobReplicatorCompareRequest::setAccountId(const std:
 	setParameter("AccountId", accountId);
 }
 
+std::string DescribeSynchronizationJobReplicatorCompareRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeSynchronizationJobReplicatorCompareRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeSynchronizationJobReplicatorCompareRequest::getSynchronizationDirection()const
 {
 	return synchronizationDirection_;
