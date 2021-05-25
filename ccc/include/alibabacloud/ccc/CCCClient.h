@@ -116,6 +116,8 @@
 #include "model/ListIntervalInstanceReportResult.h"
 #include "model/ListIntervalSkillGroupReportRequest.h"
 #include "model/ListIntervalSkillGroupReportResult.h"
+#include "model/ListIvrTrackingDetailsRequest.h"
+#include "model/ListIvrTrackingDetailsResult.h"
 #include "model/ListOutboundNumbersOfUserRequest.h"
 #include "model/ListOutboundNumbersOfUserResult.h"
 #include "model/ListPersonalNumbersOfUserRequest.h"
@@ -348,6 +350,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListIntervalSkillGroupReportResult> ListIntervalSkillGroupReportOutcome;
 			typedef std::future<ListIntervalSkillGroupReportOutcome> ListIntervalSkillGroupReportOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListIntervalSkillGroupReportRequest&, const ListIntervalSkillGroupReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIntervalSkillGroupReportAsyncHandler;
+			typedef Outcome<Error, Model::ListIvrTrackingDetailsResult> ListIvrTrackingDetailsOutcome;
+			typedef std::future<ListIvrTrackingDetailsOutcome> ListIvrTrackingDetailsOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListIvrTrackingDetailsRequest&, const ListIvrTrackingDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIvrTrackingDetailsAsyncHandler;
 			typedef Outcome<Error, Model::ListOutboundNumbersOfUserResult> ListOutboundNumbersOfUserOutcome;
 			typedef std::future<ListOutboundNumbersOfUserOutcome> ListOutboundNumbersOfUserOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListOutboundNumbersOfUserRequest&, const ListOutboundNumbersOfUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOutboundNumbersOfUserAsyncHandler;
@@ -617,6 +622,9 @@ namespace AlibabaCloud
 			ListIntervalSkillGroupReportOutcome listIntervalSkillGroupReport(const Model::ListIntervalSkillGroupReportRequest &request)const;
 			void listIntervalSkillGroupReportAsync(const Model::ListIntervalSkillGroupReportRequest& request, const ListIntervalSkillGroupReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListIntervalSkillGroupReportOutcomeCallable listIntervalSkillGroupReportCallable(const Model::ListIntervalSkillGroupReportRequest& request) const;
+			ListIvrTrackingDetailsOutcome listIvrTrackingDetails(const Model::ListIvrTrackingDetailsRequest &request)const;
+			void listIvrTrackingDetailsAsync(const Model::ListIvrTrackingDetailsRequest& request, const ListIvrTrackingDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListIvrTrackingDetailsOutcomeCallable listIvrTrackingDetailsCallable(const Model::ListIvrTrackingDetailsRequest& request) const;
 			ListOutboundNumbersOfUserOutcome listOutboundNumbersOfUser(const Model::ListOutboundNumbersOfUserRequest &request)const;
 			void listOutboundNumbersOfUserAsync(const Model::ListOutboundNumbersOfUserRequest& request, const ListOutboundNumbersOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOutboundNumbersOfUserOutcomeCallable listOutboundNumbersOfUserCallable(const Model::ListOutboundNumbersOfUserRequest& request) const;

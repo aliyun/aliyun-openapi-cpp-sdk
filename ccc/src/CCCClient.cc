@@ -1743,6 +1743,42 @@ CCCClient::ListIntervalSkillGroupReportOutcomeCallable CCCClient::listIntervalSk
 	return task->get_future();
 }
 
+CCCClient::ListIvrTrackingDetailsOutcome CCCClient::listIvrTrackingDetails(const ListIvrTrackingDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListIvrTrackingDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListIvrTrackingDetailsOutcome(ListIvrTrackingDetailsResult(outcome.result()));
+	else
+		return ListIvrTrackingDetailsOutcome(outcome.error());
+}
+
+void CCCClient::listIvrTrackingDetailsAsync(const ListIvrTrackingDetailsRequest& request, const ListIvrTrackingDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listIvrTrackingDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListIvrTrackingDetailsOutcomeCallable CCCClient::listIvrTrackingDetailsCallable(const ListIvrTrackingDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListIvrTrackingDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->listIvrTrackingDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListOutboundNumbersOfUserOutcome CCCClient::listOutboundNumbersOfUser(const ListOutboundNumbersOfUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

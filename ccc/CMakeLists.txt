@@ -115,6 +115,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListIntervalInstanceReportResult.h
 	include/alibabacloud/ccc/model/ListIntervalSkillGroupReportRequest.h
 	include/alibabacloud/ccc/model/ListIntervalSkillGroupReportResult.h
+	include/alibabacloud/ccc/model/ListIvrTrackingDetailsRequest.h
+	include/alibabacloud/ccc/model/ListIvrTrackingDetailsResult.h
 	include/alibabacloud/ccc/model/ListOutboundNumbersOfUserRequest.h
 	include/alibabacloud/ccc/model/ListOutboundNumbersOfUserResult.h
 	include/alibabacloud/ccc/model/ListPersonalNumbersOfUserRequest.h
@@ -294,6 +296,8 @@ set(ccc_src
 	src/model/ListIntervalInstanceReportResult.cc
 	src/model/ListIntervalSkillGroupReportRequest.cc
 	src/model/ListIntervalSkillGroupReportResult.cc
+	src/model/ListIvrTrackingDetailsRequest.cc
+	src/model/ListIvrTrackingDetailsResult.cc
 	src/model/ListOutboundNumbersOfUserRequest.cc
 	src/model/ListOutboundNumbersOfUserResult.cc
 	src/model/ListPersonalNumbersOfUserRequest.cc
