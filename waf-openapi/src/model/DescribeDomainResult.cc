@@ -52,6 +52,8 @@ void DescribeDomainResult::parse(const std::string &payload)
 		domain_.cname = domainNode["Cname"].asString();
 	if(!domainNode["IsAccessProduct"].isNull())
 		domain_.isAccessProduct = std::stoi(domainNode["IsAccessProduct"].asString());
+	if(!domainNode["AccessHeaderMode"].isNull())
+		domain_.accessHeaderMode = std::stoi(domainNode["AccessHeaderMode"].asString());
 	if(!domainNode["Version"].isNull())
 		domain_.version = std::stol(domainNode["Version"].asString());
 	if(!domainNode["ClusterType"].isNull())
@@ -82,6 +84,8 @@ void DescribeDomainResult::parse(const std::string &payload)
 		Domain::CloudNativeInstancesItem cloudNativeInstancesItemObject;
 		if(!domainNodeCloudNativeInstancesCloudNativeInstancesItem["CloudNativeProductName"].isNull())
 			cloudNativeInstancesItemObject.cloudNativeProductName = domainNodeCloudNativeInstancesCloudNativeInstancesItem["CloudNativeProductName"].asString();
+		if(!domainNodeCloudNativeInstancesCloudNativeInstancesItem["RedirectionTypeName"].isNull())
+			cloudNativeInstancesItemObject.redirectionTypeName = domainNodeCloudNativeInstancesCloudNativeInstancesItem["RedirectionTypeName"].asString();
 		if(!domainNodeCloudNativeInstancesCloudNativeInstancesItem["InstanceId"].isNull())
 			cloudNativeInstancesItemObject.instanceId = domainNodeCloudNativeInstancesCloudNativeInstancesItem["InstanceId"].asString();
 		if(!domainNodeCloudNativeInstancesCloudNativeInstancesItem["IPAddressList"].isNull())
@@ -107,6 +111,9 @@ void DescribeDomainResult::parse(const std::string &payload)
 		auto allHttpPort = domainNode["HttpPort"]["HttpPort"];
 		for (auto value : allHttpPort)
 			domain_.httpPort.push_back(value.asString());
+		auto allAccessHeaders = domainNode["AccessHeaders"]["AccessHeaders"];
+		for (auto value : allAccessHeaders)
+			domain_.accessHeaders.push_back(value.asString());
 		auto allHttpsPort = domainNode["HttpsPort"]["HttpsPort"];
 		for (auto value : allHttpsPort)
 			domain_.httpsPort.push_back(value.asString());

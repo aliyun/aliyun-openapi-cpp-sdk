@@ -46,6 +46,8 @@
 #include "model/DescribeDomainAdvanceConfigsResult.h"
 #include "model/DescribeDomainBasicConfigsRequest.h"
 #include "model/DescribeDomainBasicConfigsResult.h"
+#include "model/DescribeDomainListRequest.h"
+#include "model/DescribeDomainListResult.h"
 #include "model/DescribeDomainNamesRequest.h"
 #include "model/DescribeDomainNamesResult.h"
 #include "model/DescribeDomainRuleGroupRequest.h"
@@ -56,6 +58,8 @@
 #include "model/DescribeInstanceInfosResult.h"
 #include "model/DescribeInstanceSpecInfoRequest.h"
 #include "model/DescribeInstanceSpecInfoResult.h"
+#include "model/DescribeLogServiceStatusRequest.h"
+#include "model/DescribeLogServiceStatusResult.h"
 #include "model/DescribeProtectionModuleCodeConfigRequest.h"
 #include "model/DescribeProtectionModuleCodeConfigResult.h"
 #include "model/DescribeProtectionModuleModeRequest.h"
@@ -131,6 +135,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainBasicConfigsResult> DescribeDomainBasicConfigsOutcome;
 			typedef std::future<DescribeDomainBasicConfigsOutcome> DescribeDomainBasicConfigsOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainBasicConfigsRequest&, const DescribeDomainBasicConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBasicConfigsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainListResult> DescribeDomainListOutcome;
+			typedef std::future<DescribeDomainListOutcome> DescribeDomainListOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainListRequest&, const DescribeDomainListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainNamesResult> DescribeDomainNamesOutcome;
 			typedef std::future<DescribeDomainNamesOutcome> DescribeDomainNamesOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainNamesRequest&, const DescribeDomainNamesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainNamesAsyncHandler;
@@ -146,6 +153,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceSpecInfoResult> DescribeInstanceSpecInfoOutcome;
 			typedef std::future<DescribeInstanceSpecInfoOutcome> DescribeInstanceSpecInfoOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeInstanceSpecInfoRequest&, const DescribeInstanceSpecInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLogServiceStatusResult> DescribeLogServiceStatusOutcome;
+			typedef std::future<DescribeLogServiceStatusOutcome> DescribeLogServiceStatusOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeLogServiceStatusRequest&, const DescribeLogServiceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogServiceStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleCodeConfigResult> DescribeProtectionModuleCodeConfigOutcome;
 			typedef std::future<DescribeProtectionModuleCodeConfigOutcome> DescribeProtectionModuleCodeConfigOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleCodeConfigRequest&, const DescribeProtectionModuleCodeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleCodeConfigAsyncHandler;
@@ -232,6 +242,9 @@ namespace AlibabaCloud
 			DescribeDomainBasicConfigsOutcome describeDomainBasicConfigs(const Model::DescribeDomainBasicConfigsRequest &request)const;
 			void describeDomainBasicConfigsAsync(const Model::DescribeDomainBasicConfigsRequest& request, const DescribeDomainBasicConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainBasicConfigsOutcomeCallable describeDomainBasicConfigsCallable(const Model::DescribeDomainBasicConfigsRequest& request) const;
+			DescribeDomainListOutcome describeDomainList(const Model::DescribeDomainListRequest &request)const;
+			void describeDomainListAsync(const Model::DescribeDomainListRequest& request, const DescribeDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainListOutcomeCallable describeDomainListCallable(const Model::DescribeDomainListRequest& request) const;
 			DescribeDomainNamesOutcome describeDomainNames(const Model::DescribeDomainNamesRequest &request)const;
 			void describeDomainNamesAsync(const Model::DescribeDomainNamesRequest& request, const DescribeDomainNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainNamesOutcomeCallable describeDomainNamesCallable(const Model::DescribeDomainNamesRequest& request) const;
@@ -247,6 +260,9 @@ namespace AlibabaCloud
 			DescribeInstanceSpecInfoOutcome describeInstanceSpecInfo(const Model::DescribeInstanceSpecInfoRequest &request)const;
 			void describeInstanceSpecInfoAsync(const Model::DescribeInstanceSpecInfoRequest& request, const DescribeInstanceSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceSpecInfoOutcomeCallable describeInstanceSpecInfoCallable(const Model::DescribeInstanceSpecInfoRequest& request) const;
+			DescribeLogServiceStatusOutcome describeLogServiceStatus(const Model::DescribeLogServiceStatusRequest &request)const;
+			void describeLogServiceStatusAsync(const Model::DescribeLogServiceStatusRequest& request, const DescribeLogServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLogServiceStatusOutcomeCallable describeLogServiceStatusCallable(const Model::DescribeLogServiceStatusRequest& request) const;
 			DescribeProtectionModuleCodeConfigOutcome describeProtectionModuleCodeConfig(const Model::DescribeProtectionModuleCodeConfigRequest &request)const;
 			void describeProtectionModuleCodeConfigAsync(const Model::DescribeProtectionModuleCodeConfigRequest& request, const DescribeProtectionModuleCodeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleCodeConfigOutcomeCallable describeProtectionModuleCodeConfigCallable(const Model::DescribeProtectionModuleCodeConfigRequest& request) const;

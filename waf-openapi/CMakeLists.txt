@@ -45,6 +45,8 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeDomainAdvanceConfigsResult.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainBasicConfigsRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainBasicConfigsResult.h
+	include/alibabacloud/waf-openapi/model/DescribeDomainListRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeDomainListResult.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainNamesRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainNamesResult.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainRuleGroupRequest.h
@@ -55,6 +57,8 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeInstanceInfosResult.h
 	include/alibabacloud/waf-openapi/model/DescribeInstanceSpecInfoRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeInstanceSpecInfoResult.h
+	include/alibabacloud/waf-openapi/model/DescribeLogServiceStatusRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeLogServiceStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleCodeConfigResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeRequest.h
@@ -112,6 +116,8 @@ set(waf-openapi_src
 	src/model/DescribeDomainAdvanceConfigsResult.cc
 	src/model/DescribeDomainBasicConfigsRequest.cc
 	src/model/DescribeDomainBasicConfigsResult.cc
+	src/model/DescribeDomainListRequest.cc
+	src/model/DescribeDomainListResult.cc
 	src/model/DescribeDomainNamesRequest.cc
 	src/model/DescribeDomainNamesResult.cc
 	src/model/DescribeDomainRuleGroupRequest.cc
@@ -122,6 +128,8 @@ set(waf-openapi_src
 	src/model/DescribeInstanceInfosResult.cc
 	src/model/DescribeInstanceSpecInfoRequest.cc
 	src/model/DescribeInstanceSpecInfoResult.cc
+	src/model/DescribeLogServiceStatusRequest.cc
+	src/model/DescribeLogServiceStatusResult.cc
 	src/model/DescribeProtectionModuleCodeConfigRequest.cc
 	src/model/DescribeProtectionModuleCodeConfigResult.cc
 	src/model/DescribeProtectionModuleModeRequest.cc

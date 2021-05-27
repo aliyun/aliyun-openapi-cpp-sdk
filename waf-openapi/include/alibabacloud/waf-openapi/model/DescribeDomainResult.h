@@ -47,6 +47,7 @@ namespace AlibabaCloud
 							std::string protocol;
 						};
 						std::vector<CloudNativeInstancesItem::ProtocolPortConfigsItem> protocolPortConfigs;
+						std::string redirectionTypeName;
 						std::string instanceId;
 						std::string iPAddressList;
 						std::string cloudNativeProductName;
@@ -54,7 +55,9 @@ namespace AlibabaCloud
 					int httpToUserIp;
 					std::vector<std::string> httpPort;
 					int isAccessProduct;
+					int accessHeaderMode;
 					std::string resourceGroupId;
+					std::vector<std::string> accessHeaders;
 					int readTime;
 					std::vector<std::string> sourceIps;
 					int ipFollowStatus;

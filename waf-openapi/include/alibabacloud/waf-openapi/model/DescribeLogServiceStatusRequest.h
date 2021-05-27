@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINREQUEST_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINREQUEST_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBELOGSERVICESTATUSREQUEST_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBELOGSERVICESTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeDomainRequest : public RpcServiceRequest
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeLogServiceStatusRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDomainRequest();
-				~DescribeDomainRequest();
+				DescribeLogServiceStatusRequest();
+				~DescribeLogServiceStatusRequest();
 
+				std::vector<std::string> getDomainNames()const;
+				void setDomainNames(const std::vector<std::string>& domainNames);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getDomain()const;
-				void setDomain(const std::string& domain);
+				std::string getRegion()const;
+				void setRegion(const std::string& region);
 
             private:
+				std::vector<std::string> domainNames_;
+				int pageNumber_;
+				std::string resourceGroupId_;
 				std::string sourceIp_;
-				std::string lang_;
+				int pageSize_;
 				std::string instanceId_;
-				std::string domain_;
+				std::string region_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINREQUEST_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBELOGSERVICESTATUSREQUEST_H_

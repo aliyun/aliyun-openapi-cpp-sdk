@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINREQUEST_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINREQUEST_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINLISTREQUEST_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeDomainRequest : public RpcServiceRequest
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeDomainListRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDomainRequest();
-				~DescribeDomainRequest();
+				DescribeDomainListRequest();
+				~DescribeDomainListRequest();
 
+				std::vector<std::string> getDomainNames()const;
+				void setDomainNames(const std::vector<std::string>& domainNames);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
+				int getIsSub()const;
+				void setIsSub(int isSub);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getDomain()const;
-				void setDomain(const std::string& domain);
 
             private:
+				std::vector<std::string> domainNames_;
+				int pageNumber_;
+				std::string resourceGroupId_;
 				std::string sourceIp_;
-				std::string lang_;
+				int pageSize_;
+				std::string domainName_;
+				int isSub_;
 				std::string instanceId_;
-				std::string domain_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINREQUEST_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINLISTREQUEST_H_

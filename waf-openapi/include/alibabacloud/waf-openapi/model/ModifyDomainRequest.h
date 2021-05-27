@@ -37,10 +37,10 @@ namespace AlibabaCloud
 
 				int getIpFollowStatus()const;
 				void setIpFollowStatus(int ipFollowStatus);
+				int getHybridCloudType()const;
+				void setHybridCloudType(int hybridCloudType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				int getXffHeaderMode()const;
-				void setXffHeaderMode(int xffHeaderMode);
 				std::string getHttpPort()const;
 				void setHttpPort(const std::string& httpPort);
 				std::string getHttp2Port()const;
@@ -49,14 +49,16 @@ namespace AlibabaCloud
 				void setWriteTime(int writeTime);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getXffHeaders()const;
-				void setXffHeaders(const std::string& xffHeaders);
+				int getAccessHeaderMode()const;
+				void setAccessHeaderMode(int accessHeaderMode);
 				std::string getAccessType()const;
 				void setAccessType(const std::string& accessType);
 				int getBindingIpv6()const;
 				void setBindingIpv6(int bindingIpv6);
 				std::string getLogHeaders()const;
 				void setLogHeaders(const std::string& logHeaders);
+				std::string getAccessHeaders()const;
+				void setAccessHeaders(const std::string& accessHeaders);
 				int getConnectionTime()const;
 				void setConnectionTime(int connectionTime);
 				int getClusterType()const;
@@ -84,16 +86,17 @@ namespace AlibabaCloud
 
             private:
 				int ipFollowStatus_;
+				int hybridCloudType_;
 				std::string sourceIp_;
-				int xffHeaderMode_;
 				std::string httpPort_;
 				std::string http2Port_;
 				int writeTime_;
 				std::string lang_;
-				std::string xffHeaders_;
+				int accessHeaderMode_;
 				std::string accessType_;
 				int bindingIpv6_;
 				std::string logHeaders_;
+				std::string accessHeaders_;
 				int connectionTime_;
 				int clusterType_;
 				std::string cloudNativeInstances_;

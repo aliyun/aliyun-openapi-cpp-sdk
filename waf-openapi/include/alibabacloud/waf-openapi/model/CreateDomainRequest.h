@@ -49,10 +49,14 @@ namespace AlibabaCloud
 				void setWriteTime(int writeTime);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getAccessHeaderMode()const;
+				void setAccessHeaderMode(int accessHeaderMode);
 				std::string getAccessType()const;
 				void setAccessType(const std::string& accessType);
 				std::string getLogHeaders()const;
 				void setLogHeaders(const std::string& logHeaders);
+				std::string getAccessHeaders()const;
+				void setAccessHeaders(const std::string& accessHeaders);
 				int getConnectionTime()const;
 				void setConnectionTime(int connectionTime);
 				int getClusterType()const;
@@ -86,8 +90,10 @@ namespace AlibabaCloud
 				std::string http2Port_;
 				int writeTime_;
 				std::string lang_;
+				int accessHeaderMode_;
 				std::string accessType_;
 				std::string logHeaders_;
+				std::string accessHeaders_;
 				int connectionTime_;
 				int clusterType_;
 				std::string cloudNativeInstances_;

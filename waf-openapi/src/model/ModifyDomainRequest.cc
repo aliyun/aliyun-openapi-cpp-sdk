@@ -38,6 +38,17 @@ void ModifyDomainRequest::setIpFollowStatus(int ipFollowStatus)
 	setParameter("IpFollowStatus", std::to_string(ipFollowStatus));
 }
 
+int ModifyDomainRequest::getHybridCloudType()const
+{
+	return hybridCloudType_;
+}
+
+void ModifyDomainRequest::setHybridCloudType(int hybridCloudType)
+{
+	hybridCloudType_ = hybridCloudType;
+	setParameter("HybridCloudType", std::to_string(hybridCloudType));
+}
+
 std::string ModifyDomainRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -47,17 +58,6 @@ void ModifyDomainRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
-}
-
-int ModifyDomainRequest::getXffHeaderMode()const
-{
-	return xffHeaderMode_;
-}
-
-void ModifyDomainRequest::setXffHeaderMode(int xffHeaderMode)
-{
-	xffHeaderMode_ = xffHeaderMode;
-	setParameter("XffHeaderMode", std::to_string(xffHeaderMode));
 }
 
 std::string ModifyDomainRequest::getHttpPort()const
@@ -104,15 +104,15 @@ void ModifyDomainRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
-std::string ModifyDomainRequest::getXffHeaders()const
+int ModifyDomainRequest::getAccessHeaderMode()const
 {
-	return xffHeaders_;
+	return accessHeaderMode_;
 }
 
-void ModifyDomainRequest::setXffHeaders(const std::string& xffHeaders)
+void ModifyDomainRequest::setAccessHeaderMode(int accessHeaderMode)
 {
-	xffHeaders_ = xffHeaders;
-	setParameter("XffHeaders", xffHeaders);
+	accessHeaderMode_ = accessHeaderMode;
+	setParameter("AccessHeaderMode", std::to_string(accessHeaderMode));
 }
 
 std::string ModifyDomainRequest::getAccessType()const
@@ -146,6 +146,17 @@ void ModifyDomainRequest::setLogHeaders(const std::string& logHeaders)
 {
 	logHeaders_ = logHeaders;
 	setParameter("LogHeaders", logHeaders);
+}
+
+std::string ModifyDomainRequest::getAccessHeaders()const
+{
+	return accessHeaders_;
+}
+
+void ModifyDomainRequest::setAccessHeaders(const std::string& accessHeaders)
+{
+	accessHeaders_ = accessHeaders;
+	setParameter("AccessHeaders", accessHeaders);
 }
 
 int ModifyDomainRequest::getConnectionTime()const

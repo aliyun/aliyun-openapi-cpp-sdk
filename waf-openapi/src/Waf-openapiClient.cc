@@ -483,6 +483,42 @@ Waf_openapiClient::DescribeDomainBasicConfigsOutcomeCallable Waf_openapiClient::
 	return task->get_future();
 }
 
+Waf_openapiClient::DescribeDomainListOutcome Waf_openapiClient::describeDomainList(const DescribeDomainListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainListOutcome(DescribeDomainListResult(outcome.result()));
+	else
+		return DescribeDomainListOutcome(outcome.error());
+}
+
+void Waf_openapiClient::describeDomainListAsync(const DescribeDomainListRequest& request, const DescribeDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Waf_openapiClient::DescribeDomainListOutcomeCallable Waf_openapiClient::describeDomainListCallable(const DescribeDomainListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Waf_openapiClient::DescribeDomainNamesOutcome Waf_openapiClient::describeDomainNames(const DescribeDomainNamesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +693,42 @@ Waf_openapiClient::DescribeInstanceSpecInfoOutcomeCallable Waf_openapiClient::de
 			[this, request]()
 			{
 			return this->describeInstanceSpecInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Waf_openapiClient::DescribeLogServiceStatusOutcome Waf_openapiClient::describeLogServiceStatus(const DescribeLogServiceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLogServiceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLogServiceStatusOutcome(DescribeLogServiceStatusResult(outcome.result()));
+	else
+		return DescribeLogServiceStatusOutcome(outcome.error());
+}
+
+void Waf_openapiClient::describeLogServiceStatusAsync(const DescribeLogServiceStatusRequest& request, const DescribeLogServiceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLogServiceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Waf_openapiClient::DescribeLogServiceStatusOutcomeCallable Waf_openapiClient::describeLogServiceStatusCallable(const DescribeLogServiceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLogServiceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLogServiceStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

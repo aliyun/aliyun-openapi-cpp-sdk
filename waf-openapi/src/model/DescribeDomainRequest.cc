@@ -27,17 +27,6 @@ DescribeDomainRequest::DescribeDomainRequest() :
 DescribeDomainRequest::~DescribeDomainRequest()
 {}
 
-std::string DescribeDomainRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeDomainRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
 std::string DescribeDomainRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -49,17 +38,6 @@ void DescribeDomainRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeDomainRequest::getDomain()const
-{
-	return domain_;
-}
-
-void DescribeDomainRequest::setDomain(const std::string& domain)
-{
-	domain_ = domain;
-	setParameter("Domain", domain);
-}
-
 std::string DescribeDomainRequest::getLang()const
 {
 	return lang_;
@@ -69,5 +47,27 @@ void DescribeDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
 	setParameter("Lang", lang);
+}
+
+std::string DescribeDomainRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeDomainRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string DescribeDomainRequest::getDomain()const
+{
+	return domain_;
+}
+
+void DescribeDomainRequest::setDomain(const std::string& domain)
+{
+	domain_ = domain;
+	setParameter("Domain", domain);
 }
 

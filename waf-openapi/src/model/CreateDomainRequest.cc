@@ -104,6 +104,17 @@ void CreateDomainRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+int CreateDomainRequest::getAccessHeaderMode()const
+{
+	return accessHeaderMode_;
+}
+
+void CreateDomainRequest::setAccessHeaderMode(int accessHeaderMode)
+{
+	accessHeaderMode_ = accessHeaderMode;
+	setParameter("AccessHeaderMode", std::to_string(accessHeaderMode));
+}
+
 std::string CreateDomainRequest::getAccessType()const
 {
 	return accessType_;
@@ -124,6 +135,17 @@ void CreateDomainRequest::setLogHeaders(const std::string& logHeaders)
 {
 	logHeaders_ = logHeaders;
 	setParameter("LogHeaders", logHeaders);
+}
+
+std::string CreateDomainRequest::getAccessHeaders()const
+{
+	return accessHeaders_;
+}
+
+void CreateDomainRequest::setAccessHeaders(const std::string& accessHeaders)
+{
+	accessHeaders_ = accessHeaders;
+	setParameter("AccessHeaders", accessHeaders);
 }
 
 int CreateDomainRequest::getConnectionTime()const
