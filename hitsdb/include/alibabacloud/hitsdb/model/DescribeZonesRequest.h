@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_DESCRIBEZONESREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_DESCRIBEZONESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,15 +28,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetInstanceIpWhiteListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HITSDB_EXPORT DescribeZonesRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetInstanceIpWhiteListRequest();
-				~GetInstanceIpWhiteListRequest();
+				DescribeZonesRequest();
+				~DescribeZonesRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getLanguage()const;
+				void setLanguage(const std::string& language);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
@@ -47,23 +49,18 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 
             private:
 				long resourceOwnerId_;
+				std::string language_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string groupName_;
-				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_DESCRIBEZONESREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEREQUEST_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_RENEWTSDBINSTANCEREQUEST_H_
+#define ALIBABACLOUD_HITSDB_MODEL_RENEWTSDBINSTANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HITSDB_EXPORT RenewTSDBInstanceRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetLindormInstanceRequest();
-				~GetLindormInstanceRequest();
+				RenewTSDBInstanceRequest();
+				~RenewTSDBInstanceRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				int getDuration()const;
+				void setDuration(int duration);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -51,19 +53,23 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getPricingCycle()const;
+				void setPricingCycle(const std::string& pricingCycle);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
+				int duration_;
 				std::string securityToken_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string instanceId_;
+				std::string pricingCycle_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_RENEWTSDBINSTANCEREQUEST_H_
