@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCACHESRESULT_H_
-#define ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCACHESRESULT_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYNFSCLIENTSRESULT_H_
+#define ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYNFSCLIENTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT DescribeGatewayCachesResult : public ServiceResult
+			class ALIBABACLOUD_SGW_EXPORT DescribeGatewayNFSClientsResult : public ServiceResult
 			{
 			public:
-				struct Cache
+				struct ClientInfo
 				{
-					long sizeInGB;
-					std::string buyURL;
-					std::string renewURL;
-					std::string cacheId;
-					std::string performanceLevel;
-					long expiredTime;
-					int expireStatus;
-					bool isUsed;
-					long iops;
-					std::string subscriptionInstanceId;
-					std::string localFilePath;
-					std::string cacheType;
+					bool hasNFSv3;
+					bool hasNFSv40;
+					std::string clientIpAddr;
+					bool hasNFSv41;
 				};
 
 
-				DescribeGatewayCachesResult();
-				explicit DescribeGatewayCachesResult(const std::string &payload);
-				~DescribeGatewayCachesResult();
+				DescribeGatewayNFSClientsResult();
+				explicit DescribeGatewayNFSClientsResult(const std::string &payload);
+				~DescribeGatewayNFSClientsResult();
+				bool getVersion40Enabled()const;
+				int getTotalCount()const;
+				bool getVersion41Enabled()const;
 				std::string getMessage()const;
-				std::vector<Cache> getCaches()const;
+				int getPageSize()const;
+				int getPageNumber()const;
+				std::vector<ClientInfo> getClientInfoList()const;
+				bool getVersion3Enabled()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool version40Enabled_;
+				int totalCount_;
+				bool version41Enabled_;
 				std::string message_;
-				std::vector<Cache> caches_;
+				int pageSize_;
+				int pageNumber_;
+				std::vector<ClientInfo> clientInfoList_;
+				bool version3Enabled_;
 				std::string code_;
 				bool success_;
 
@@ -69,4 +73,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCACHESRESULT_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYNFSCLIENTSRESULT_H_

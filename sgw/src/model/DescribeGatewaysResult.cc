@@ -113,6 +113,8 @@ void DescribeGatewaysResult::parse(const std::string &payload)
 			gatewaysObject.dataLoadInterval = std::stoi(valueGatewaysGateway["DataLoadInterval"].asString());
 		if(!valueGatewaysGateway["LastErrorKey"].isNull())
 			gatewaysObject.lastErrorKey = valueGatewaysGateway["LastErrorKey"].asString();
+		if(!valueGatewaysGateway["InnerIpv6Ip"].isNull())
+			gatewaysObject.innerIpv6Ip = valueGatewaysGateway["InnerIpv6Ip"].asString();
 		auto allElasticNodes = value["ElasticNodes"]["ElasticNode"];
 		for (auto value : allElasticNodes)
 			gatewaysObject.elasticNodes.push_back(value.asString());

@@ -45,6 +45,8 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/CheckUpgradeVersionResult.h
 	include/alibabacloud/sgw/model/CreateCacheRequest.h
 	include/alibabacloud/sgw/model/CreateCacheResult.h
+	include/alibabacloud/sgw/model/CreateElasticGatewayPrivateZoneRequest.h
+	include/alibabacloud/sgw/model/CreateElasticGatewayPrivateZoneResult.h
 	include/alibabacloud/sgw/model/CreateExpressSyncRequest.h
 	include/alibabacloud/sgw/model/CreateExpressSyncResult.h
 	include/alibabacloud/sgw/model/CreateGatewayRequest.h
@@ -61,6 +63,8 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/CreateGatewaySMBUserResult.h
 	include/alibabacloud/sgw/model/CreateStorageBundleRequest.h
 	include/alibabacloud/sgw/model/CreateStorageBundleResult.h
+	include/alibabacloud/sgw/model/DeleteElasticGatewayPrivateZoneRequest.h
+	include/alibabacloud/sgw/model/DeleteElasticGatewayPrivateZoneResult.h
 	include/alibabacloud/sgw/model/DeleteExpressSyncRequest.h
 	include/alibabacloud/sgw/model/DeleteExpressSyncResult.h
 	include/alibabacloud/sgw/model/DeleteGatewayRequest.h
@@ -135,6 +139,8 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/DescribeGatewayLogsResult.h
 	include/alibabacloud/sgw/model/DescribeGatewayModificationClassesRequest.h
 	include/alibabacloud/sgw/model/DescribeGatewayModificationClassesResult.h
+	include/alibabacloud/sgw/model/DescribeGatewayNFSClientsRequest.h
+	include/alibabacloud/sgw/model/DescribeGatewayNFSClientsResult.h
 	include/alibabacloud/sgw/model/DescribeGatewaySMBUsersRequest.h
 	include/alibabacloud/sgw/model/DescribeGatewaySMBUsersResult.h
 	include/alibabacloud/sgw/model/DescribeGatewayStatisticsRequest.h
@@ -181,6 +187,10 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/DescribeZonesResult.h
 	include/alibabacloud/sgw/model/DisableGatewayLoggingRequest.h
 	include/alibabacloud/sgw/model/DisableGatewayLoggingResult.h
+	include/alibabacloud/sgw/model/DisableGatewayNFSVersionRequest.h
+	include/alibabacloud/sgw/model/DisableGatewayNFSVersionResult.h
+	include/alibabacloud/sgw/model/EnableGatewayIpv6Request.h
+	include/alibabacloud/sgw/model/EnableGatewayIpv6Result.h
 	include/alibabacloud/sgw/model/EnableGatewayLoggingRequest.h
 	include/alibabacloud/sgw/model/EnableGatewayLoggingResult.h
 	include/alibabacloud/sgw/model/ExpandCacheDiskRequest.h
@@ -203,8 +213,12 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/ModifyGatewayClassResult.h
 	include/alibabacloud/sgw/model/ModifyGatewayFileShareRequest.h
 	include/alibabacloud/sgw/model/ModifyGatewayFileShareResult.h
+	include/alibabacloud/sgw/model/ModifyGatewayFileShareWatermarkRequest.h
+	include/alibabacloud/sgw/model/ModifyGatewayFileShareWatermarkResult.h
 	include/alibabacloud/sgw/model/ModifyStorageBundleRequest.h
 	include/alibabacloud/sgw/model/ModifyStorageBundleResult.h
+	include/alibabacloud/sgw/model/OpenSgwServiceRequest.h
+	include/alibabacloud/sgw/model/OpenSgwServiceResult.h
 	include/alibabacloud/sgw/model/OperateGatewayRequest.h
 	include/alibabacloud/sgw/model/OperateGatewayResult.h
 	include/alibabacloud/sgw/model/ReleaseServiceRequest.h
@@ -237,6 +251,8 @@ set(sgw_public_header_model
 	include/alibabacloud/sgw/model/SwitchToSubscriptionResult.h
 	include/alibabacloud/sgw/model/TagResourcesRequest.h
 	include/alibabacloud/sgw/model/TagResourcesResult.h
+	include/alibabacloud/sgw/model/TriggerGatewayRemoteSyncRequest.h
+	include/alibabacloud/sgw/model/TriggerGatewayRemoteSyncResult.h
 	include/alibabacloud/sgw/model/UntagResourcesRequest.h
 	include/alibabacloud/sgw/model/UntagResourcesResult.h
 	include/alibabacloud/sgw/model/UpdateGatewayBlockVolumeRequest.h
@@ -278,6 +294,8 @@ set(sgw_src
 	src/model/CheckUpgradeVersionResult.cc
 	src/model/CreateCacheRequest.cc
 	src/model/CreateCacheResult.cc
+	src/model/CreateElasticGatewayPrivateZoneRequest.cc
+	src/model/CreateElasticGatewayPrivateZoneResult.cc
 	src/model/CreateExpressSyncRequest.cc
 	src/model/CreateExpressSyncResult.cc
 	src/model/CreateGatewayRequest.cc
@@ -294,6 +312,8 @@ set(sgw_src
 	src/model/CreateGatewaySMBUserResult.cc
 	src/model/CreateStorageBundleRequest.cc
 	src/model/CreateStorageBundleResult.cc
+	src/model/DeleteElasticGatewayPrivateZoneRequest.cc
+	src/model/DeleteElasticGatewayPrivateZoneResult.cc
 	src/model/DeleteExpressSyncRequest.cc
 	src/model/DeleteExpressSyncResult.cc
 	src/model/DeleteGatewayRequest.cc
@@ -368,6 +388,8 @@ set(sgw_src
 	src/model/DescribeGatewayLogsResult.cc
 	src/model/DescribeGatewayModificationClassesRequest.cc
 	src/model/DescribeGatewayModificationClassesResult.cc
+	src/model/DescribeGatewayNFSClientsRequest.cc
+	src/model/DescribeGatewayNFSClientsResult.cc
 	src/model/DescribeGatewaySMBUsersRequest.cc
 	src/model/DescribeGatewaySMBUsersResult.cc
 	src/model/DescribeGatewayStatisticsRequest.cc
@@ -414,6 +436,10 @@ set(sgw_src
 	src/model/DescribeZonesResult.cc
 	src/model/DisableGatewayLoggingRequest.cc
 	src/model/DisableGatewayLoggingResult.cc
+	src/model/DisableGatewayNFSVersionRequest.cc
+	src/model/DisableGatewayNFSVersionResult.cc
+	src/model/EnableGatewayIpv6Request.cc
+	src/model/EnableGatewayIpv6Result.cc
 	src/model/EnableGatewayLoggingRequest.cc
 	src/model/EnableGatewayLoggingResult.cc
 	src/model/ExpandCacheDiskRequest.cc
@@ -436,8 +462,12 @@ set(sgw_src
 	src/model/ModifyGatewayClassResult.cc
 	src/model/ModifyGatewayFileShareRequest.cc
 	src/model/ModifyGatewayFileShareResult.cc
+	src/model/ModifyGatewayFileShareWatermarkRequest.cc
+	src/model/ModifyGatewayFileShareWatermarkResult.cc
 	src/model/ModifyStorageBundleRequest.cc
 	src/model/ModifyStorageBundleResult.cc
+	src/model/OpenSgwServiceRequest.cc
+	src/model/OpenSgwServiceResult.cc
 	src/model/OperateGatewayRequest.cc
 	src/model/OperateGatewayResult.cc
 	src/model/ReleaseServiceRequest.cc
@@ -470,6 +500,8 @@ set(sgw_src
 	src/model/SwitchToSubscriptionResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TriggerGatewayRemoteSyncRequest.cc
+	src/model/TriggerGatewayRemoteSyncResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateGatewayBlockVolumeRequest.cc

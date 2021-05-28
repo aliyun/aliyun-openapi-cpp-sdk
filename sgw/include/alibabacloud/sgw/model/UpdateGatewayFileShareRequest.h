@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setPollingInterval(int pollingInterval);
 				std::string getReadWriteClientList()const;
 				void setReadWriteClientList(const std::string& readWriteClientList);
+				bool getBypassCacheRead()const;
+				void setBypassCacheRead(bool bypassCacheRead);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getBackendLimit()const;
@@ -107,6 +109,7 @@ namespace AlibabaCloud
 				std::string readWriteUserList_;
 				int pollingInterval_;
 				std::string readWriteClientList_;
+				bool bypassCacheRead_;
 				std::string accessKeyId_;
 				int backendLimit_;
 				std::string squash_;

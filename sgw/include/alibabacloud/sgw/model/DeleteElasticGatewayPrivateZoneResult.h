@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCACHESRESULT_H_
-#define ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCACHESRESULT_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_DELETEELASTICGATEWAYPRIVATEZONERESULT_H_
+#define ALIBABACLOUD_SGW_MODEL_DELETEELASTICGATEWAYPRIVATEZONERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT DescribeGatewayCachesResult : public ServiceResult
+			class ALIBABACLOUD_SGW_EXPORT DeleteElasticGatewayPrivateZoneResult : public ServiceResult
 			{
 			public:
-				struct Cache
-				{
-					long sizeInGB;
-					std::string buyURL;
-					std::string renewURL;
-					std::string cacheId;
-					std::string performanceLevel;
-					long expiredTime;
-					int expireStatus;
-					bool isUsed;
-					long iops;
-					std::string subscriptionInstanceId;
-					std::string localFilePath;
-					std::string cacheType;
-				};
 
 
-				DescribeGatewayCachesResult();
-				explicit DescribeGatewayCachesResult(const std::string &payload);
-				~DescribeGatewayCachesResult();
+				DeleteElasticGatewayPrivateZoneResult();
+				explicit DeleteElasticGatewayPrivateZoneResult(const std::string &payload);
+				~DeleteElasticGatewayPrivateZoneResult();
+				std::string getTaskId()const;
 				std::string getMessage()const;
-				std::vector<Cache> getCaches()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 				std::string message_;
-				std::vector<Cache> caches_;
 				std::string code_;
 				bool success_;
 
@@ -69,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCACHESRESULT_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_DELETEELASTICGATEWAYPRIVATEZONERESULT_H_

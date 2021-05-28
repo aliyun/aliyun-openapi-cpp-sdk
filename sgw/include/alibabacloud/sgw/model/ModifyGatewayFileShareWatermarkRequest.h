@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_DELETEGATEWAYREQUEST_H_
-#define ALIBABACLOUD_SGW_MODEL_DELETEGATEWAYREQUEST_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_MODIFYGATEWAYFILESHAREWATERMARKREQUEST_H_
+#define ALIBABACLOUD_SGW_MODEL_MODIFYGATEWAYFILESHAREWATERMARKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT DeleteGatewayRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SGW_EXPORT ModifyGatewayFileShareWatermarkRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteGatewayRequest();
-				~DeleteGatewayRequest();
+				ModifyGatewayFileShareWatermarkRequest();
+				~ModifyGatewayFileShareWatermarkRequest();
 
+				int getWatermark()const;
+				void setWatermark(int watermark);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getReasonDetail()const;
-				void setReasonDetail(const std::string& reasonDetail);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getIndexId()const;
+				void setIndexId(const std::string& indexId);
 				std::string getGatewayId()const;
 				void setGatewayId(const std::string& gatewayId);
-				std::string getReasonType()const;
-				void setReasonType(const std::string& reasonType);
 
             private:
+				int watermark_;
 				std::string accessKeyId_;
-				std::string reasonDetail_;
 				std::string securityToken_;
+				std::string indexId_;
 				std::string gatewayId_;
-				std::string reasonType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_DELETEGATEWAYREQUEST_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_MODIFYGATEWAYFILESHAREWATERMARKREQUEST_H_

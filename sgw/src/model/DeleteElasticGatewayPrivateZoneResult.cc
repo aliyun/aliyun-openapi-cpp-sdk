@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sgw/model/CreateGatewayFileShareResult.h>
+#include <alibabacloud/sgw/model/DeleteElasticGatewayPrivateZoneResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sgw;
 using namespace AlibabaCloud::Sgw::Model;
 
-CreateGatewayFileShareResult::CreateGatewayFileShareResult() :
+DeleteElasticGatewayPrivateZoneResult::DeleteElasticGatewayPrivateZoneResult() :
 	ServiceResult()
 {}
 
-CreateGatewayFileShareResult::CreateGatewayFileShareResult(const std::string &payload) :
+DeleteElasticGatewayPrivateZoneResult::DeleteElasticGatewayPrivateZoneResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateGatewayFileShareResult::~CreateGatewayFileShareResult()
+DeleteElasticGatewayPrivateZoneResult::~DeleteElasticGatewayPrivateZoneResult()
 {}
 
-void CreateGatewayFileShareResult::parse(const std::string &payload)
+void DeleteElasticGatewayPrivateZoneResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 
-std::string CreateGatewayFileShareResult::getTaskId()const
+std::string DeleteElasticGatewayPrivateZoneResult::getTaskId()const
 {
 	return taskId_;
 }
 
-std::string CreateGatewayFileShareResult::getMessage()const
+std::string DeleteElasticGatewayPrivateZoneResult::getMessage()const
 {
 	return message_;
 }
 
-std::string CreateGatewayFileShareResult::getCode()const
+std::string DeleteElasticGatewayPrivateZoneResult::getCode()const
 {
 	return code_;
 }
 
-bool CreateGatewayFileShareResult::getSuccess()const
+bool DeleteElasticGatewayPrivateZoneResult::getSuccess()const
 {
 	return success_;
 }

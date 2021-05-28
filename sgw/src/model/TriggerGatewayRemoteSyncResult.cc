@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sgw/model/CreateGatewayFileShareResult.h>
+#include <alibabacloud/sgw/model/TriggerGatewayRemoteSyncResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sgw;
 using namespace AlibabaCloud::Sgw::Model;
 
-CreateGatewayFileShareResult::CreateGatewayFileShareResult() :
+TriggerGatewayRemoteSyncResult::TriggerGatewayRemoteSyncResult() :
 	ServiceResult()
 {}
 
-CreateGatewayFileShareResult::CreateGatewayFileShareResult(const std::string &payload) :
+TriggerGatewayRemoteSyncResult::TriggerGatewayRemoteSyncResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateGatewayFileShareResult::~CreateGatewayFileShareResult()
+TriggerGatewayRemoteSyncResult::~TriggerGatewayRemoteSyncResult()
 {}
 
-void CreateGatewayFileShareResult::parse(const std::string &payload)
+void TriggerGatewayRemoteSyncResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string CreateGatewayFileShareResult::getTaskId()const
+std::string TriggerGatewayRemoteSyncResult::getTaskId()const
 {
 	return taskId_;
 }
 
-std::string CreateGatewayFileShareResult::getMessage()const
+std::string TriggerGatewayRemoteSyncResult::getMessage()const
 {
 	return message_;
 }
 
-std::string CreateGatewayFileShareResult::getCode()const
+std::string TriggerGatewayRemoteSyncResult::getCode()const
 {
 	return code_;
 }
 
-bool CreateGatewayFileShareResult::getSuccess()const
+bool TriggerGatewayRemoteSyncResult::getSuccess()const
 {
 	return success_;
 }

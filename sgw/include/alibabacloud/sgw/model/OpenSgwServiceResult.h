@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCAPACITYLIMITRESULT_H_
-#define ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCAPACITYLIMITRESULT_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_OPENSGWSERVICERESULT_H_
+#define ALIBABACLOUD_SGW_MODEL_OPENSGWSERVICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT DescribeGatewayCapacityLimitResult : public ServiceResult
+			class ALIBABACLOUD_SGW_EXPORT OpenSgwServiceResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeGatewayCapacityLimitResult();
-				explicit DescribeGatewayCapacityLimitResult(const std::string &payload);
-				~DescribeGatewayCapacityLimitResult();
-				long getFileSystemSizeInTB()const;
-				std::string getMessage()const;
-				bool getIsMetadataSeparate()const;
-				long getFileNumber()const;
-				std::string getCode()const;
-				bool getSuccess()const;
+				OpenSgwServiceResult();
+				explicit OpenSgwServiceResult(const std::string &payload);
+				~OpenSgwServiceResult();
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long fileSystemSizeInTB_;
-				std::string message_;
-				bool isMetadataSeparate_;
-				long fileNumber_;
-				std::string code_;
-				bool success_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_DESCRIBEGATEWAYCAPACITYLIMITRESULT_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_OPENSGWSERVICERESULT_H_

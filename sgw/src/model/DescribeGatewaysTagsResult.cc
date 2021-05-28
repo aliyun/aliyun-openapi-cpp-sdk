@@ -45,14 +45,14 @@ void DescribeGatewaysTagsResult::parse(const std::string &payload)
 		GatewayTag gatewayTagsObject;
 		if(!valueGatewayTagsGatewayTag["GatewayId"].isNull())
 			gatewayTagsObject.gatewayId = valueGatewayTagsGatewayTag["GatewayId"].asString();
-		auto allTagsNode = allGatewayTagsNode["Tags"]["Tag"];
-		for (auto allGatewayTagsNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueGatewayTagsGatewayTag["Tags"]["Tag"];
+		for (auto valueGatewayTagsGatewayTagTagsTag : allTagsNode)
 		{
 			GatewayTag::Tag tagsObject;
-			if(!allGatewayTagsNodeTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = allGatewayTagsNodeTagsTag["TagKey"].asString();
-			if(!allGatewayTagsNodeTagsTag["TagValue"].isNull())
-				tagsObject.tagValue = allGatewayTagsNodeTagsTag["TagValue"].asString();
+			if(!valueGatewayTagsGatewayTagTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueGatewayTagsGatewayTagTagsTag["TagKey"].asString();
+			if(!valueGatewayTagsGatewayTagTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueGatewayTagsGatewayTagTagsTag["TagValue"].asString();
 			gatewayTagsObject.tags.push_back(tagsObject);
 		}
 		gatewayTags_.push_back(gatewayTagsObject);

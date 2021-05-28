@@ -483,6 +483,42 @@ SgwClient::CreateCacheOutcomeCallable SgwClient::createCacheCallable(const Creat
 	return task->get_future();
 }
 
+SgwClient::CreateElasticGatewayPrivateZoneOutcome SgwClient::createElasticGatewayPrivateZone(const CreateElasticGatewayPrivateZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateElasticGatewayPrivateZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateElasticGatewayPrivateZoneOutcome(CreateElasticGatewayPrivateZoneResult(outcome.result()));
+	else
+		return CreateElasticGatewayPrivateZoneOutcome(outcome.error());
+}
+
+void SgwClient::createElasticGatewayPrivateZoneAsync(const CreateElasticGatewayPrivateZoneRequest& request, const CreateElasticGatewayPrivateZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createElasticGatewayPrivateZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::CreateElasticGatewayPrivateZoneOutcomeCallable SgwClient::createElasticGatewayPrivateZoneCallable(const CreateElasticGatewayPrivateZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateElasticGatewayPrivateZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->createElasticGatewayPrivateZone(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SgwClient::CreateExpressSyncOutcome SgwClient::createExpressSync(const CreateExpressSyncRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +801,42 @@ SgwClient::CreateStorageBundleOutcomeCallable SgwClient::createStorageBundleCall
 			[this, request]()
 			{
 			return this->createStorageBundle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SgwClient::DeleteElasticGatewayPrivateZoneOutcome SgwClient::deleteElasticGatewayPrivateZone(const DeleteElasticGatewayPrivateZoneRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteElasticGatewayPrivateZoneOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteElasticGatewayPrivateZoneOutcome(DeleteElasticGatewayPrivateZoneResult(outcome.result()));
+	else
+		return DeleteElasticGatewayPrivateZoneOutcome(outcome.error());
+}
+
+void SgwClient::deleteElasticGatewayPrivateZoneAsync(const DeleteElasticGatewayPrivateZoneRequest& request, const DeleteElasticGatewayPrivateZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteElasticGatewayPrivateZone(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::DeleteElasticGatewayPrivateZoneOutcomeCallable SgwClient::deleteElasticGatewayPrivateZoneCallable(const DeleteElasticGatewayPrivateZoneRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteElasticGatewayPrivateZoneOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteElasticGatewayPrivateZone(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2103,6 +2175,42 @@ SgwClient::DescribeGatewayModificationClassesOutcomeCallable SgwClient::describe
 	return task->get_future();
 }
 
+SgwClient::DescribeGatewayNFSClientsOutcome SgwClient::describeGatewayNFSClients(const DescribeGatewayNFSClientsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGatewayNFSClientsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGatewayNFSClientsOutcome(DescribeGatewayNFSClientsResult(outcome.result()));
+	else
+		return DescribeGatewayNFSClientsOutcome(outcome.error());
+}
+
+void SgwClient::describeGatewayNFSClientsAsync(const DescribeGatewayNFSClientsRequest& request, const DescribeGatewayNFSClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGatewayNFSClients(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::DescribeGatewayNFSClientsOutcomeCallable SgwClient::describeGatewayNFSClientsCallable(const DescribeGatewayNFSClientsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGatewayNFSClientsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGatewayNFSClients(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SgwClient::DescribeGatewaySMBUsersOutcome SgwClient::describeGatewaySMBUsers(const DescribeGatewaySMBUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2931,6 +3039,78 @@ SgwClient::DisableGatewayLoggingOutcomeCallable SgwClient::disableGatewayLogging
 	return task->get_future();
 }
 
+SgwClient::DisableGatewayNFSVersionOutcome SgwClient::disableGatewayNFSVersion(const DisableGatewayNFSVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableGatewayNFSVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableGatewayNFSVersionOutcome(DisableGatewayNFSVersionResult(outcome.result()));
+	else
+		return DisableGatewayNFSVersionOutcome(outcome.error());
+}
+
+void SgwClient::disableGatewayNFSVersionAsync(const DisableGatewayNFSVersionRequest& request, const DisableGatewayNFSVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableGatewayNFSVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::DisableGatewayNFSVersionOutcomeCallable SgwClient::disableGatewayNFSVersionCallable(const DisableGatewayNFSVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableGatewayNFSVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->disableGatewayNFSVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SgwClient::EnableGatewayIpv6Outcome SgwClient::enableGatewayIpv6(const EnableGatewayIpv6Request &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableGatewayIpv6Outcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableGatewayIpv6Outcome(EnableGatewayIpv6Result(outcome.result()));
+	else
+		return EnableGatewayIpv6Outcome(outcome.error());
+}
+
+void SgwClient::enableGatewayIpv6Async(const EnableGatewayIpv6Request& request, const EnableGatewayIpv6AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableGatewayIpv6(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::EnableGatewayIpv6OutcomeCallable SgwClient::enableGatewayIpv6Callable(const EnableGatewayIpv6Request &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableGatewayIpv6Outcome()>>(
+			[this, request]()
+			{
+			return this->enableGatewayIpv6(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SgwClient::EnableGatewayLoggingOutcome SgwClient::enableGatewayLogging(const EnableGatewayLoggingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3327,6 +3507,42 @@ SgwClient::ModifyGatewayFileShareOutcomeCallable SgwClient::modifyGatewayFileSha
 	return task->get_future();
 }
 
+SgwClient::ModifyGatewayFileShareWatermarkOutcome SgwClient::modifyGatewayFileShareWatermark(const ModifyGatewayFileShareWatermarkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyGatewayFileShareWatermarkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyGatewayFileShareWatermarkOutcome(ModifyGatewayFileShareWatermarkResult(outcome.result()));
+	else
+		return ModifyGatewayFileShareWatermarkOutcome(outcome.error());
+}
+
+void SgwClient::modifyGatewayFileShareWatermarkAsync(const ModifyGatewayFileShareWatermarkRequest& request, const ModifyGatewayFileShareWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyGatewayFileShareWatermark(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::ModifyGatewayFileShareWatermarkOutcomeCallable SgwClient::modifyGatewayFileShareWatermarkCallable(const ModifyGatewayFileShareWatermarkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyGatewayFileShareWatermarkOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyGatewayFileShareWatermark(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SgwClient::ModifyStorageBundleOutcome SgwClient::modifyStorageBundle(const ModifyStorageBundleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3357,6 +3573,42 @@ SgwClient::ModifyStorageBundleOutcomeCallable SgwClient::modifyStorageBundleCall
 			[this, request]()
 			{
 			return this->modifyStorageBundle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SgwClient::OpenSgwServiceOutcome SgwClient::openSgwService(const OpenSgwServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenSgwServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenSgwServiceOutcome(OpenSgwServiceResult(outcome.result()));
+	else
+		return OpenSgwServiceOutcome(outcome.error());
+}
+
+void SgwClient::openSgwServiceAsync(const OpenSgwServiceRequest& request, const OpenSgwServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openSgwService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::OpenSgwServiceOutcomeCallable SgwClient::openSgwServiceCallable(const OpenSgwServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenSgwServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openSgwService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3933,6 +4185,42 @@ SgwClient::TagResourcesOutcomeCallable SgwClient::tagResourcesCallable(const Tag
 			[this, request]()
 			{
 			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SgwClient::TriggerGatewayRemoteSyncOutcome SgwClient::triggerGatewayRemoteSync(const TriggerGatewayRemoteSyncRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TriggerGatewayRemoteSyncOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TriggerGatewayRemoteSyncOutcome(TriggerGatewayRemoteSyncResult(outcome.result()));
+	else
+		return TriggerGatewayRemoteSyncOutcome(outcome.error());
+}
+
+void SgwClient::triggerGatewayRemoteSyncAsync(const TriggerGatewayRemoteSyncRequest& request, const TriggerGatewayRemoteSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, triggerGatewayRemoteSync(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SgwClient::TriggerGatewayRemoteSyncOutcomeCallable SgwClient::triggerGatewayRemoteSyncCallable(const TriggerGatewayRemoteSyncRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TriggerGatewayRemoteSyncOutcome()>>(
+			[this, request]()
+			{
+			return this->triggerGatewayRemoteSync(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

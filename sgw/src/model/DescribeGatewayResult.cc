@@ -118,6 +118,8 @@ void DescribeGatewayResult::parse(const std::string &payload)
 		dataLoadInterval_ = std::stoi(value["DataLoadInterval"].asString());
 	if(!value["LastErrorKey"].isNull())
 		lastErrorKey_ = value["LastErrorKey"].asString();
+	if(!value["InnerIpv6Ip"].isNull())
+		innerIpv6Ip_ = value["InnerIpv6Ip"].asString();
 
 }
 
@@ -304,6 +306,11 @@ std::string DescribeGatewayResult::getCommonBuyInstanceId()const
 std::string DescribeGatewayResult::getModel()const
 {
 	return model_;
+}
+
+std::string DescribeGatewayResult::getInnerIpv6Ip()const
+{
+	return innerIpv6Ip_;
 }
 
 std::string DescribeGatewayResult::getLastErrorKey()const

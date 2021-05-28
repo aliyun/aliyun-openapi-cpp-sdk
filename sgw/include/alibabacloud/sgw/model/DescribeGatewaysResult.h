@@ -68,6 +68,7 @@ namespace AlibabaCloud
 					bool elasticGateway;
 					std::string commonBuyInstanceId;
 					std::string model;
+					std::string innerIpv6Ip;
 					std::string lastErrorKey;
 					std::string location;
 				};

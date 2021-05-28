@@ -93,6 +93,17 @@ void UpdateGatewayFileShareRequest::setReadWriteClientList(const std::string& re
 	setParameter("ReadWriteClientList", readWriteClientList);
 }
 
+bool UpdateGatewayFileShareRequest::getBypassCacheRead()const
+{
+	return bypassCacheRead_;
+}
+
+void UpdateGatewayFileShareRequest::setBypassCacheRead(bool bypassCacheRead)
+{
+	bypassCacheRead_ = bypassCacheRead;
+	setParameter("BypassCacheRead", bypassCacheRead ? "true" : "false");
+}
+
 std::string UpdateGatewayFileShareRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

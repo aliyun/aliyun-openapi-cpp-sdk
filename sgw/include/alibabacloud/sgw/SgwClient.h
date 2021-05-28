@@ -46,6 +46,8 @@
 #include "model/CheckUpgradeVersionResult.h"
 #include "model/CreateCacheRequest.h"
 #include "model/CreateCacheResult.h"
+#include "model/CreateElasticGatewayPrivateZoneRequest.h"
+#include "model/CreateElasticGatewayPrivateZoneResult.h"
 #include "model/CreateExpressSyncRequest.h"
 #include "model/CreateExpressSyncResult.h"
 #include "model/CreateGatewayRequest.h"
@@ -62,6 +64,8 @@
 #include "model/CreateGatewaySMBUserResult.h"
 #include "model/CreateStorageBundleRequest.h"
 #include "model/CreateStorageBundleResult.h"
+#include "model/DeleteElasticGatewayPrivateZoneRequest.h"
+#include "model/DeleteElasticGatewayPrivateZoneResult.h"
 #include "model/DeleteExpressSyncRequest.h"
 #include "model/DeleteExpressSyncResult.h"
 #include "model/DeleteGatewayRequest.h"
@@ -136,6 +140,8 @@
 #include "model/DescribeGatewayLogsResult.h"
 #include "model/DescribeGatewayModificationClassesRequest.h"
 #include "model/DescribeGatewayModificationClassesResult.h"
+#include "model/DescribeGatewayNFSClientsRequest.h"
+#include "model/DescribeGatewayNFSClientsResult.h"
 #include "model/DescribeGatewaySMBUsersRequest.h"
 #include "model/DescribeGatewaySMBUsersResult.h"
 #include "model/DescribeGatewayStatisticsRequest.h"
@@ -182,6 +188,10 @@
 #include "model/DescribeZonesResult.h"
 #include "model/DisableGatewayLoggingRequest.h"
 #include "model/DisableGatewayLoggingResult.h"
+#include "model/DisableGatewayNFSVersionRequest.h"
+#include "model/DisableGatewayNFSVersionResult.h"
+#include "model/EnableGatewayIpv6Request.h"
+#include "model/EnableGatewayIpv6Result.h"
 #include "model/EnableGatewayLoggingRequest.h"
 #include "model/EnableGatewayLoggingResult.h"
 #include "model/ExpandCacheDiskRequest.h"
@@ -204,8 +214,12 @@
 #include "model/ModifyGatewayClassResult.h"
 #include "model/ModifyGatewayFileShareRequest.h"
 #include "model/ModifyGatewayFileShareResult.h"
+#include "model/ModifyGatewayFileShareWatermarkRequest.h"
+#include "model/ModifyGatewayFileShareWatermarkResult.h"
 #include "model/ModifyStorageBundleRequest.h"
 #include "model/ModifyStorageBundleResult.h"
+#include "model/OpenSgwServiceRequest.h"
+#include "model/OpenSgwServiceResult.h"
 #include "model/OperateGatewayRequest.h"
 #include "model/OperateGatewayResult.h"
 #include "model/ReleaseServiceRequest.h"
@@ -238,6 +252,8 @@
 #include "model/SwitchToSubscriptionResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
+#include "model/TriggerGatewayRemoteSyncRequest.h"
+#include "model/TriggerGatewayRemoteSyncResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateGatewayBlockVolumeRequest.h"
@@ -297,6 +313,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCacheResult> CreateCacheOutcome;
 			typedef std::future<CreateCacheOutcome> CreateCacheOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::CreateCacheRequest&, const CreateCacheOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCacheAsyncHandler;
+			typedef Outcome<Error, Model::CreateElasticGatewayPrivateZoneResult> CreateElasticGatewayPrivateZoneOutcome;
+			typedef std::future<CreateElasticGatewayPrivateZoneOutcome> CreateElasticGatewayPrivateZoneOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::CreateElasticGatewayPrivateZoneRequest&, const CreateElasticGatewayPrivateZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateElasticGatewayPrivateZoneAsyncHandler;
 			typedef Outcome<Error, Model::CreateExpressSyncResult> CreateExpressSyncOutcome;
 			typedef std::future<CreateExpressSyncOutcome> CreateExpressSyncOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::CreateExpressSyncRequest&, const CreateExpressSyncOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateExpressSyncAsyncHandler;
@@ -321,6 +340,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateStorageBundleResult> CreateStorageBundleOutcome;
 			typedef std::future<CreateStorageBundleOutcome> CreateStorageBundleOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::CreateStorageBundleRequest&, const CreateStorageBundleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStorageBundleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteElasticGatewayPrivateZoneResult> DeleteElasticGatewayPrivateZoneOutcome;
+			typedef std::future<DeleteElasticGatewayPrivateZoneOutcome> DeleteElasticGatewayPrivateZoneOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::DeleteElasticGatewayPrivateZoneRequest&, const DeleteElasticGatewayPrivateZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteElasticGatewayPrivateZoneAsyncHandler;
 			typedef Outcome<Error, Model::DeleteExpressSyncResult> DeleteExpressSyncOutcome;
 			typedef std::future<DeleteExpressSyncOutcome> DeleteExpressSyncOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DeleteExpressSyncRequest&, const DeleteExpressSyncOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExpressSyncAsyncHandler;
@@ -432,6 +454,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeGatewayModificationClassesResult> DescribeGatewayModificationClassesOutcome;
 			typedef std::future<DescribeGatewayModificationClassesOutcome> DescribeGatewayModificationClassesOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DescribeGatewayModificationClassesRequest&, const DescribeGatewayModificationClassesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayModificationClassesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGatewayNFSClientsResult> DescribeGatewayNFSClientsOutcome;
+			typedef std::future<DescribeGatewayNFSClientsOutcome> DescribeGatewayNFSClientsOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::DescribeGatewayNFSClientsRequest&, const DescribeGatewayNFSClientsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayNFSClientsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGatewaySMBUsersResult> DescribeGatewaySMBUsersOutcome;
 			typedef std::future<DescribeGatewaySMBUsersOutcome> DescribeGatewaySMBUsersOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DescribeGatewaySMBUsersRequest&, const DescribeGatewaySMBUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewaySMBUsersAsyncHandler;
@@ -501,6 +526,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableGatewayLoggingResult> DisableGatewayLoggingOutcome;
 			typedef std::future<DisableGatewayLoggingOutcome> DisableGatewayLoggingOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::DisableGatewayLoggingRequest&, const DisableGatewayLoggingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableGatewayLoggingAsyncHandler;
+			typedef Outcome<Error, Model::DisableGatewayNFSVersionResult> DisableGatewayNFSVersionOutcome;
+			typedef std::future<DisableGatewayNFSVersionOutcome> DisableGatewayNFSVersionOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::DisableGatewayNFSVersionRequest&, const DisableGatewayNFSVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableGatewayNFSVersionAsyncHandler;
+			typedef Outcome<Error, Model::EnableGatewayIpv6Result> EnableGatewayIpv6Outcome;
+			typedef std::future<EnableGatewayIpv6Outcome> EnableGatewayIpv6OutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::EnableGatewayIpv6Request&, const EnableGatewayIpv6Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableGatewayIpv6AsyncHandler;
 			typedef Outcome<Error, Model::EnableGatewayLoggingResult> EnableGatewayLoggingOutcome;
 			typedef std::future<EnableGatewayLoggingOutcome> EnableGatewayLoggingOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::EnableGatewayLoggingRequest&, const EnableGatewayLoggingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableGatewayLoggingAsyncHandler;
@@ -534,9 +565,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyGatewayFileShareResult> ModifyGatewayFileShareOutcome;
 			typedef std::future<ModifyGatewayFileShareOutcome> ModifyGatewayFileShareOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::ModifyGatewayFileShareRequest&, const ModifyGatewayFileShareOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGatewayFileShareAsyncHandler;
+			typedef Outcome<Error, Model::ModifyGatewayFileShareWatermarkResult> ModifyGatewayFileShareWatermarkOutcome;
+			typedef std::future<ModifyGatewayFileShareWatermarkOutcome> ModifyGatewayFileShareWatermarkOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::ModifyGatewayFileShareWatermarkRequest&, const ModifyGatewayFileShareWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGatewayFileShareWatermarkAsyncHandler;
 			typedef Outcome<Error, Model::ModifyStorageBundleResult> ModifyStorageBundleOutcome;
 			typedef std::future<ModifyStorageBundleOutcome> ModifyStorageBundleOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::ModifyStorageBundleRequest&, const ModifyStorageBundleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStorageBundleAsyncHandler;
+			typedef Outcome<Error, Model::OpenSgwServiceResult> OpenSgwServiceOutcome;
+			typedef std::future<OpenSgwServiceOutcome> OpenSgwServiceOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::OpenSgwServiceRequest&, const OpenSgwServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenSgwServiceAsyncHandler;
 			typedef Outcome<Error, Model::OperateGatewayResult> OperateGatewayOutcome;
 			typedef std::future<OperateGatewayOutcome> OperateGatewayOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::OperateGatewayRequest&, const OperateGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateGatewayAsyncHandler;
@@ -585,6 +622,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::TriggerGatewayRemoteSyncResult> TriggerGatewayRemoteSyncOutcome;
+			typedef std::future<TriggerGatewayRemoteSyncOutcome> TriggerGatewayRemoteSyncOutcomeCallable;
+			typedef std::function<void(const SgwClient*, const Model::TriggerGatewayRemoteSyncRequest&, const TriggerGatewayRemoteSyncOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TriggerGatewayRemoteSyncAsyncHandler;
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const SgwClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
@@ -647,6 +687,9 @@ namespace AlibabaCloud
 			CreateCacheOutcome createCache(const Model::CreateCacheRequest &request)const;
 			void createCacheAsync(const Model::CreateCacheRequest& request, const CreateCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCacheOutcomeCallable createCacheCallable(const Model::CreateCacheRequest& request) const;
+			CreateElasticGatewayPrivateZoneOutcome createElasticGatewayPrivateZone(const Model::CreateElasticGatewayPrivateZoneRequest &request)const;
+			void createElasticGatewayPrivateZoneAsync(const Model::CreateElasticGatewayPrivateZoneRequest& request, const CreateElasticGatewayPrivateZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateElasticGatewayPrivateZoneOutcomeCallable createElasticGatewayPrivateZoneCallable(const Model::CreateElasticGatewayPrivateZoneRequest& request) const;
 			CreateExpressSyncOutcome createExpressSync(const Model::CreateExpressSyncRequest &request)const;
 			void createExpressSyncAsync(const Model::CreateExpressSyncRequest& request, const CreateExpressSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateExpressSyncOutcomeCallable createExpressSyncCallable(const Model::CreateExpressSyncRequest& request) const;
@@ -671,6 +714,9 @@ namespace AlibabaCloud
 			CreateStorageBundleOutcome createStorageBundle(const Model::CreateStorageBundleRequest &request)const;
 			void createStorageBundleAsync(const Model::CreateStorageBundleRequest& request, const CreateStorageBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateStorageBundleOutcomeCallable createStorageBundleCallable(const Model::CreateStorageBundleRequest& request) const;
+			DeleteElasticGatewayPrivateZoneOutcome deleteElasticGatewayPrivateZone(const Model::DeleteElasticGatewayPrivateZoneRequest &request)const;
+			void deleteElasticGatewayPrivateZoneAsync(const Model::DeleteElasticGatewayPrivateZoneRequest& request, const DeleteElasticGatewayPrivateZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteElasticGatewayPrivateZoneOutcomeCallable deleteElasticGatewayPrivateZoneCallable(const Model::DeleteElasticGatewayPrivateZoneRequest& request) const;
 			DeleteExpressSyncOutcome deleteExpressSync(const Model::DeleteExpressSyncRequest &request)const;
 			void deleteExpressSyncAsync(const Model::DeleteExpressSyncRequest& request, const DeleteExpressSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteExpressSyncOutcomeCallable deleteExpressSyncCallable(const Model::DeleteExpressSyncRequest& request) const;
@@ -782,6 +828,9 @@ namespace AlibabaCloud
 			DescribeGatewayModificationClassesOutcome describeGatewayModificationClasses(const Model::DescribeGatewayModificationClassesRequest &request)const;
 			void describeGatewayModificationClassesAsync(const Model::DescribeGatewayModificationClassesRequest& request, const DescribeGatewayModificationClassesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGatewayModificationClassesOutcomeCallable describeGatewayModificationClassesCallable(const Model::DescribeGatewayModificationClassesRequest& request) const;
+			DescribeGatewayNFSClientsOutcome describeGatewayNFSClients(const Model::DescribeGatewayNFSClientsRequest &request)const;
+			void describeGatewayNFSClientsAsync(const Model::DescribeGatewayNFSClientsRequest& request, const DescribeGatewayNFSClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGatewayNFSClientsOutcomeCallable describeGatewayNFSClientsCallable(const Model::DescribeGatewayNFSClientsRequest& request) const;
 			DescribeGatewaySMBUsersOutcome describeGatewaySMBUsers(const Model::DescribeGatewaySMBUsersRequest &request)const;
 			void describeGatewaySMBUsersAsync(const Model::DescribeGatewaySMBUsersRequest& request, const DescribeGatewaySMBUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGatewaySMBUsersOutcomeCallable describeGatewaySMBUsersCallable(const Model::DescribeGatewaySMBUsersRequest& request) const;
@@ -851,6 +900,12 @@ namespace AlibabaCloud
 			DisableGatewayLoggingOutcome disableGatewayLogging(const Model::DisableGatewayLoggingRequest &request)const;
 			void disableGatewayLoggingAsync(const Model::DisableGatewayLoggingRequest& request, const DisableGatewayLoggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableGatewayLoggingOutcomeCallable disableGatewayLoggingCallable(const Model::DisableGatewayLoggingRequest& request) const;
+			DisableGatewayNFSVersionOutcome disableGatewayNFSVersion(const Model::DisableGatewayNFSVersionRequest &request)const;
+			void disableGatewayNFSVersionAsync(const Model::DisableGatewayNFSVersionRequest& request, const DisableGatewayNFSVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableGatewayNFSVersionOutcomeCallable disableGatewayNFSVersionCallable(const Model::DisableGatewayNFSVersionRequest& request) const;
+			EnableGatewayIpv6Outcome enableGatewayIpv6(const Model::EnableGatewayIpv6Request &request)const;
+			void enableGatewayIpv6Async(const Model::EnableGatewayIpv6Request& request, const EnableGatewayIpv6AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableGatewayIpv6OutcomeCallable enableGatewayIpv6Callable(const Model::EnableGatewayIpv6Request& request) const;
 			EnableGatewayLoggingOutcome enableGatewayLogging(const Model::EnableGatewayLoggingRequest &request)const;
 			void enableGatewayLoggingAsync(const Model::EnableGatewayLoggingRequest& request, const EnableGatewayLoggingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableGatewayLoggingOutcomeCallable enableGatewayLoggingCallable(const Model::EnableGatewayLoggingRequest& request) const;
@@ -884,9 +939,15 @@ namespace AlibabaCloud
 			ModifyGatewayFileShareOutcome modifyGatewayFileShare(const Model::ModifyGatewayFileShareRequest &request)const;
 			void modifyGatewayFileShareAsync(const Model::ModifyGatewayFileShareRequest& request, const ModifyGatewayFileShareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyGatewayFileShareOutcomeCallable modifyGatewayFileShareCallable(const Model::ModifyGatewayFileShareRequest& request) const;
+			ModifyGatewayFileShareWatermarkOutcome modifyGatewayFileShareWatermark(const Model::ModifyGatewayFileShareWatermarkRequest &request)const;
+			void modifyGatewayFileShareWatermarkAsync(const Model::ModifyGatewayFileShareWatermarkRequest& request, const ModifyGatewayFileShareWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyGatewayFileShareWatermarkOutcomeCallable modifyGatewayFileShareWatermarkCallable(const Model::ModifyGatewayFileShareWatermarkRequest& request) const;
 			ModifyStorageBundleOutcome modifyStorageBundle(const Model::ModifyStorageBundleRequest &request)const;
 			void modifyStorageBundleAsync(const Model::ModifyStorageBundleRequest& request, const ModifyStorageBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyStorageBundleOutcomeCallable modifyStorageBundleCallable(const Model::ModifyStorageBundleRequest& request) const;
+			OpenSgwServiceOutcome openSgwService(const Model::OpenSgwServiceRequest &request)const;
+			void openSgwServiceAsync(const Model::OpenSgwServiceRequest& request, const OpenSgwServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenSgwServiceOutcomeCallable openSgwServiceCallable(const Model::OpenSgwServiceRequest& request) const;
 			OperateGatewayOutcome operateGateway(const Model::OperateGatewayRequest &request)const;
 			void operateGatewayAsync(const Model::OperateGatewayRequest& request, const OperateGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateGatewayOutcomeCallable operateGatewayCallable(const Model::OperateGatewayRequest& request) const;
@@ -935,6 +996,9 @@ namespace AlibabaCloud
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			TriggerGatewayRemoteSyncOutcome triggerGatewayRemoteSync(const Model::TriggerGatewayRemoteSyncRequest &request)const;
+			void triggerGatewayRemoteSyncAsync(const Model::TriggerGatewayRemoteSyncRequest& request, const TriggerGatewayRemoteSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TriggerGatewayRemoteSyncOutcomeCallable triggerGatewayRemoteSyncCallable(const Model::TriggerGatewayRemoteSyncRequest& request) const;
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;

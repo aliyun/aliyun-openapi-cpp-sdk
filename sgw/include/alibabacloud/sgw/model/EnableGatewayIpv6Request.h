@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SGW_MODEL_DELETEGATEWAYREQUEST_H_
-#define ALIBABACLOUD_SGW_MODEL_DELETEGATEWAYREQUEST_H_
+#ifndef ALIBABACLOUD_SGW_MODEL_ENABLEGATEWAYIPV6REQUEST_H_
+#define ALIBABACLOUD_SGW_MODEL_ENABLEGATEWAYIPV6REQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SGW_EXPORT DeleteGatewayRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SGW_EXPORT EnableGatewayIpv6Request : public RpcServiceRequest
 			{
 
 			public:
-				DeleteGatewayRequest();
-				~DeleteGatewayRequest();
+				EnableGatewayIpv6Request();
+				~EnableGatewayIpv6Request();
 
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getReasonDetail()const;
-				void setReasonDetail(const std::string& reasonDetail);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getGatewayId()const;
 				void setGatewayId(const std::string& gatewayId);
-				std::string getReasonType()const;
-				void setReasonType(const std::string& reasonType);
 
             private:
 				std::string accessKeyId_;
-				std::string reasonDetail_;
 				std::string securityToken_;
 				std::string gatewayId_;
-				std::string reasonType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SGW_MODEL_DELETEGATEWAYREQUEST_H_
+#endif // !ALIBABACLOUD_SGW_MODEL_ENABLEGATEWAYIPV6REQUEST_H_

@@ -38,6 +38,17 @@ void DeleteGatewayRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DeleteGatewayRequest::getReasonDetail()const
+{
+	return reasonDetail_;
+}
+
+void DeleteGatewayRequest::setReasonDetail(const std::string& reasonDetail)
+{
+	reasonDetail_ = reasonDetail;
+	setParameter("ReasonDetail", reasonDetail);
+}
+
 std::string DeleteGatewayRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -58,5 +69,16 @@ void DeleteGatewayRequest::setGatewayId(const std::string& gatewayId)
 {
 	gatewayId_ = gatewayId;
 	setParameter("GatewayId", gatewayId);
+}
+
+std::string DeleteGatewayRequest::getReasonType()const
+{
+	return reasonType_;
+}
+
+void DeleteGatewayRequest::setReasonType(const std::string& reasonType)
+{
+	reasonType_ = reasonType;
+	setParameter("ReasonType", reasonType);
 }
 

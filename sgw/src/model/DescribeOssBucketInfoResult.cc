@@ -57,6 +57,8 @@ void DescribeOssBucketInfoResult::parse(const std::string &payload)
 		isFresh_ = value["IsFresh"].asString() == "true";
 	if(!value["StorageSize"].isNull())
 		storageSize_ = std::stol(value["StorageSize"].asString());
+	if(!value["IsVersioning"].isNull())
+		isVersioning_ = value["IsVersioning"].asString() == "true";
 
 }
 
@@ -93,6 +95,11 @@ bool DescribeOssBucketInfoResult::getIsBackToResource()const
 int DescribeOssBucketInfoResult::getPollingInterval()const
 {
 	return pollingInterval_;
+}
+
+bool DescribeOssBucketInfoResult::getIsVersioning()const
+{
+	return isVersioning_;
 }
 
 std::string DescribeOssBucketInfoResult::getCode()const

@@ -39,18 +39,18 @@ void DescribeGatewayCapacityLimitResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["FileNumber"].isNull())
-		fileNumber_ = std::stol(value["FileNumber"].asString());
 	if(!value["FileSystemSizeInTB"].isNull())
 		fileSystemSizeInTB_ = std::stol(value["FileSystemSizeInTB"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["IsMetadataSeparate"].isNull())
 		isMetadataSeparate_ = value["IsMetadataSeparate"].asString() == "true";
+	if(!value["FileNumber"].isNull())
+		fileNumber_ = std::stol(value["FileNumber"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -64,9 +64,9 @@ std::string DescribeGatewayCapacityLimitResult::getMessage()const
 	return message_;
 }
 
-std::string DescribeGatewayCapacityLimitResult::getCode()const
+bool DescribeGatewayCapacityLimitResult::getIsMetadataSeparate()const
 {
-	return code_;
+	return isMetadataSeparate_;
 }
 
 long DescribeGatewayCapacityLimitResult::getFileNumber()const
@@ -74,9 +74,9 @@ long DescribeGatewayCapacityLimitResult::getFileNumber()const
 	return fileNumber_;
 }
 
-bool DescribeGatewayCapacityLimitResult::getIsMetadataSeparate()const
+std::string DescribeGatewayCapacityLimitResult::getCode()const
 {
-	return isMetadataSeparate_;
+	return code_;
 }
 
 bool DescribeGatewayCapacityLimitResult::getSuccess()const

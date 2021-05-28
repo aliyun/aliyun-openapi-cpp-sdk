@@ -74,6 +74,7 @@ namespace AlibabaCloud
 				bool getElasticGateway()const;
 				std::string getCommonBuyInstanceId()const;
 				std::string getModel()const;
+				std::string getInnerIpv6Ip()const;
 				std::string getLastErrorKey()const;
 				std::string getLocation()const;
 
@@ -117,6 +118,7 @@ namespace AlibabaCloud
 				bool elasticGateway_;
 				std::string commonBuyInstanceId_;
 				std::string model_;
+				std::string innerIpv6Ip_;
 				std::string lastErrorKey_;
 				std::string location_;
 

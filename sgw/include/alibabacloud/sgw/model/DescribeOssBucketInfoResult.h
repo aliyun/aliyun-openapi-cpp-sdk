@@ -44,6 +44,7 @@ namespace AlibabaCloud
 				long getStorageSize()const;
 				bool getIsBackToResource()const;
 				int getPollingInterval()const;
+				bool getIsVersioning()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -57,6 +58,7 @@ namespace AlibabaCloud
 				long storageSize_;
 				bool isBackToResource_;
 				int pollingInterval_;
+				bool isVersioning_;
 				std::string code_;
 				bool success_;
 

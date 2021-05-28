@@ -65,6 +65,8 @@ void DescribeGatewayCachesResult::parse(const std::string &payload)
 			cachesObject.performanceLevel = valueCachesCache["PerformanceLevel"].asString();
 		if(!valueCachesCache["BuyURL"].isNull())
 			cachesObject.buyURL = valueCachesCache["BuyURL"].asString();
+		if(!valueCachesCache["SubscriptionInstanceId"].isNull())
+			cachesObject.subscriptionInstanceId = valueCachesCache["SubscriptionInstanceId"].asString();
 		caches_.push_back(cachesObject);
 	}
 	if(!value["Success"].isNull())

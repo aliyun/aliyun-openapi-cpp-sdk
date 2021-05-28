@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setOssEndpoint(const std::string& ossEndpoint);
 				std::string getReadWriteClientList()const;
 				void setReadWriteClientList(const std::string& readWriteClientList);
+				bool getBypassCacheRead()const;
+				void setBypassCacheRead(bool bypassCacheRead);
 				int getBackendLimit()const;
 				void setBackendLimit(int backendLimit);
 				std::string getSquash()const;
@@ -97,6 +99,8 @@ namespace AlibabaCloud
 				void setEnabled(bool enabled);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getServerSideAlgorithm()const;
+				void setServerSideAlgorithm(const std::string& serverSideAlgorithm);
 				std::string getServerSideCmk()const;
 				void setServerSideCmk(const std::string& serverSideCmk);
 				bool getServerSideEncryption()const;
@@ -120,6 +124,7 @@ namespace AlibabaCloud
 				bool inPlace_;
 				std::string ossEndpoint_;
 				std::string readWriteClientList_;
+				bool bypassCacheRead_;
 				int backendLimit_;
 				std::string squash_;
 				std::string readOnlyClientList_;
@@ -148,6 +153,7 @@ namespace AlibabaCloud
 				int pollingInterval_;
 				bool enabled_;
 				std::string accessKeyId_;
+				std::string serverSideAlgorithm_;
 				std::string serverSideCmk_;
 				bool serverSideEncryption_;
 				bool ignoreDelete_;

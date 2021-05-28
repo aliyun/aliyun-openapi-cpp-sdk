@@ -60,6 +60,17 @@ void CreateGatewayFileShareRequest::setReadWriteClientList(const std::string& re
 	setParameter("ReadWriteClientList", readWriteClientList);
 }
 
+bool CreateGatewayFileShareRequest::getBypassCacheRead()const
+{
+	return bypassCacheRead_;
+}
+
+void CreateGatewayFileShareRequest::setBypassCacheRead(bool bypassCacheRead)
+{
+	bypassCacheRead_ = bypassCacheRead;
+	setParameter("BypassCacheRead", bypassCacheRead ? "true" : "false");
+}
+
 int CreateGatewayFileShareRequest::getBackendLimit()const
 {
 	return backendLimit_;
@@ -366,6 +377,17 @@ void CreateGatewayFileShareRequest::setAccessKeyId(const std::string& accessKeyI
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateGatewayFileShareRequest::getServerSideAlgorithm()const
+{
+	return serverSideAlgorithm_;
+}
+
+void CreateGatewayFileShareRequest::setServerSideAlgorithm(const std::string& serverSideAlgorithm)
+{
+	serverSideAlgorithm_ = serverSideAlgorithm;
+	setParameter("ServerSideAlgorithm", serverSideAlgorithm);
 }
 
 std::string CreateGatewayFileShareRequest::getServerSideCmk()const

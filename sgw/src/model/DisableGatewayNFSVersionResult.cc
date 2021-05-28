@@ -14,58 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sgw/model/CreateGatewayFileShareResult.h>
+#include <alibabacloud/sgw/model/DisableGatewayNFSVersionResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sgw;
 using namespace AlibabaCloud::Sgw::Model;
 
-CreateGatewayFileShareResult::CreateGatewayFileShareResult() :
+DisableGatewayNFSVersionResult::DisableGatewayNFSVersionResult() :
 	ServiceResult()
 {}
 
-CreateGatewayFileShareResult::CreateGatewayFileShareResult(const std::string &payload) :
+DisableGatewayNFSVersionResult::DisableGatewayNFSVersionResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateGatewayFileShareResult::~CreateGatewayFileShareResult()
+DisableGatewayNFSVersionResult::~DisableGatewayNFSVersionResult()
 {}
 
-void CreateGatewayFileShareResult::parse(const std::string &payload)
+void DisableGatewayNFSVersionResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
 }
 
-std::string CreateGatewayFileShareResult::getTaskId()const
+std::string DisableGatewayNFSVersionResult::getTaskId()const
 {
 	return taskId_;
 }
 
-std::string CreateGatewayFileShareResult::getMessage()const
+std::string DisableGatewayNFSVersionResult::getMessage()const
 {
 	return message_;
 }
 
-std::string CreateGatewayFileShareResult::getCode()const
+std::string DisableGatewayNFSVersionResult::getCode()const
 {
 	return code_;
 }
 
-bool CreateGatewayFileShareResult::getSuccess()const
+bool DisableGatewayNFSVersionResult::getSuccess()const
 {
 	return success_;
 }
