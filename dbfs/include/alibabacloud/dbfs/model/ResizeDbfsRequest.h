@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				ResizeDbfsRequest();
 				~ResizeDbfsRequest();
 
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				int getNewSizeG()const;
 				void setNewSizeG(int newSizeG);
 				std::string getRegionId()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setFsId(const std::string& fsId);
 
             private:
-				std::string clientToken_;
 				int newSizeG_;
 				std::string regionId_;
 				std::string fsId_;

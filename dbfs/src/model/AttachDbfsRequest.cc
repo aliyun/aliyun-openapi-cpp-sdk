@@ -19,7 +19,7 @@
 using AlibabaCloud::DBFS::Model::AttachDbfsRequest;
 
 AttachDbfsRequest::AttachDbfsRequest() :
-	RpcServiceRequest("dbfs", "2020-02-19", "AttachDbfs")
+	RpcServiceRequest("dbfs", "2020-04-18", "AttachDbfs")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -47,6 +47,17 @@ void AttachDbfsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string AttachDbfsRequest::getServerUrl()const
+{
+	return serverUrl_;
+}
+
+void AttachDbfsRequest::setServerUrl(const std::string& serverUrl)
+{
+	serverUrl_ = serverUrl;
+	setParameter("ServerUrl", serverUrl);
 }
 
 std::string AttachDbfsRequest::getFsId()const

@@ -19,9 +19,9 @@
 using AlibabaCloud::DBFS::Model::GetDbfsRequest;
 
 GetDbfsRequest::GetDbfsRequest() :
-	RpcServiceRequest("dbfs", "2020-02-19", "GetDbfs")
+	RpcServiceRequest("dbfs", "2020-04-18", "GetDbfs")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetDbfsRequest::~GetDbfsRequest()

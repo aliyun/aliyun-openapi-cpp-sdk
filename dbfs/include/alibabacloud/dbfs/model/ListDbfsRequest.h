@@ -35,11 +35,32 @@ namespace AlibabaCloud
 				ListDbfsRequest();
 				~ListDbfsRequest();
 
+				std::string getSortType()const;
+				void setSortType(const std::string& sortType);
+				std::string getFilterValue()const;
+				void setFilterValue(const std::string& filterValue);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
+				std::string getFilterKey()const;
+				void setFilterKey(const std::string& filterKey);
+				std::string getSortKey()const;
+				void setSortKey(const std::string& sortKey);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
+				std::string sortType_;
+				std::string filterValue_;
+				int pageNumber_;
+				std::string tags_;
+				std::string filterKey_;
+				std::string sortKey_;
 				std::string regionId_;
+				int pageSize_;
 
 			};
 		}

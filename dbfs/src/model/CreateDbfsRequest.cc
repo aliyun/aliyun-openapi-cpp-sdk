@@ -19,7 +19,7 @@
 using AlibabaCloud::DBFS::Model::CreateDbfsRequest;
 
 CreateDbfsRequest::CreateDbfsRequest() :
-	RpcServiceRequest("dbfs", "2020-02-19", "CreateDbfs")
+	RpcServiceRequest("dbfs", "2020-04-18", "CreateDbfs")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -38,6 +38,17 @@ void CreateDbfsRequest::setSizeG(int sizeG)
 	setParameter("SizeG", std::to_string(sizeG));
 }
 
+std::string CreateDbfsRequest::getSnapshotId()const
+{
+	return snapshotId_;
+}
+
+void CreateDbfsRequest::setSnapshotId(const std::string& snapshotId)
+{
+	snapshotId_ = snapshotId;
+	setParameter("SnapshotId", snapshotId);
+}
+
 std::string CreateDbfsRequest::getClientToken()const
 {
 	return clientToken_;
@@ -47,6 +58,17 @@ void CreateDbfsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
+}
+
+std::string CreateDbfsRequest::getUsedScene()const
+{
+	return usedScene_;
+}
+
+void CreateDbfsRequest::setUsedScene(const std::string& usedScene)
+{
+	usedScene_ = usedScene;
+	setParameter("UsedScene", usedScene);
 }
 
 std::string CreateDbfsRequest::getFsName()const
@@ -60,6 +82,28 @@ void CreateDbfsRequest::setFsName(const std::string& fsName)
 	setParameter("FsName", fsName);
 }
 
+int CreateDbfsRequest::getRaidStripeUnitNumber()const
+{
+	return raidStripeUnitNumber_;
+}
+
+void CreateDbfsRequest::setRaidStripeUnitNumber(int raidStripeUnitNumber)
+{
+	raidStripeUnitNumber_ = raidStripeUnitNumber;
+	setParameter("RaidStripeUnitNumber", std::to_string(raidStripeUnitNumber));
+}
+
+bool CreateDbfsRequest::getEncryption()const
+{
+	return encryption_;
+}
+
+void CreateDbfsRequest::setEncryption(bool encryption)
+{
+	encryption_ = encryption;
+	setParameter("Encryption", encryption ? "true" : "false");
+}
+
 std::string CreateDbfsRequest::getRegionId()const
 {
 	return regionId_;
@@ -69,6 +113,39 @@ void CreateDbfsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string CreateDbfsRequest::getPerformanceLevel()const
+{
+	return performanceLevel_;
+}
+
+void CreateDbfsRequest::setPerformanceLevel(const std::string& performanceLevel)
+{
+	performanceLevel_ = performanceLevel;
+	setParameter("PerformanceLevel", performanceLevel);
+}
+
+bool CreateDbfsRequest::getEnableRaid()const
+{
+	return enableRaid_;
+}
+
+void CreateDbfsRequest::setEnableRaid(bool enableRaid)
+{
+	enableRaid_ = enableRaid;
+	setParameter("EnableRaid", enableRaid ? "true" : "false");
+}
+
+bool CreateDbfsRequest::getDeleteSnapshot()const
+{
+	return deleteSnapshot_;
+}
+
+void CreateDbfsRequest::setDeleteSnapshot(bool deleteSnapshot)
+{
+	deleteSnapshot_ = deleteSnapshot;
+	setParameter("DeleteSnapshot", deleteSnapshot ? "true" : "false");
 }
 
 std::string CreateDbfsRequest::getZoneId()const
@@ -91,5 +168,16 @@ void CreateDbfsRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setParameter("Category", category);
+}
+
+std::string CreateDbfsRequest::getKMSKeyId()const
+{
+	return kMSKeyId_;
+}
+
+void CreateDbfsRequest::setKMSKeyId(const std::string& kMSKeyId)
+{
+	kMSKeyId_ = kMSKeyId;
+	setParameter("KMSKeyId", kMSKeyId);
 }
 

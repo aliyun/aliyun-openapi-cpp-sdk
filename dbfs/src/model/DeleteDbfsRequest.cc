@@ -19,7 +19,7 @@
 using AlibabaCloud::DBFS::Model::DeleteDbfsRequest;
 
 DeleteDbfsRequest::DeleteDbfsRequest() :
-	RpcServiceRequest("dbfs", "2020-02-19", "DeleteDbfs")
+	RpcServiceRequest("dbfs", "2020-04-18", "DeleteDbfs")
 {
 	setMethod(HttpRequest::Method::Post);
 }

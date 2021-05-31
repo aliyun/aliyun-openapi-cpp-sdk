@@ -34,16 +34,43 @@ namespace AlibabaCloud
 			public:
 				struct Info
 				{
+					struct TagList
+					{
+						std::string tagKey;
+						long id;
+						std::string tagValue;
+					};
+					struct EcsListItem
+					{
+						std::string ecsId;
+					};
+					struct EbsListItem
+					{
+						int sizeG;
+						std::string ebsId;
+					};
 					std::string status;
 					std::string category;
-					std::string fsName;
+					std::string createdTime;
+					std::string kMSKeyId;
 					std::string zoneId;
+					bool enableRaid;
+					std::vector<Info::EcsListItem> ecsList;
 					int sizeG;
-					std::string dBFSClusterId;
+					std::string performanceLevel;
 					std::string fsId;
+					std::string dBFSClusterId;
+					bool encryption;
+					std::string payType;
+					std::string lastUmountTime;
+					std::string fsName;
+					std::vector<Info::EbsListItem> ebsList;
+					std::string usedScene;
+					int raidStrip;
+					std::string lastMountTime;
 					std::string regionId;
 					int attachNodeNumber;
-					std::string payType;
+					std::vector<Info::TagList> tags;
 				};
 
 

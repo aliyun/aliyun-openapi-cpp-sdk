@@ -19,24 +19,13 @@
 using AlibabaCloud::DBFS::Model::ResizeDbfsRequest;
 
 ResizeDbfsRequest::ResizeDbfsRequest() :
-	RpcServiceRequest("dbfs", "2020-02-19", "ResizeDbfs")
+	RpcServiceRequest("dbfs", "2020-04-18", "ResizeDbfs")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ResizeDbfsRequest::~ResizeDbfsRequest()
 {}
-
-std::string ResizeDbfsRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void ResizeDbfsRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
-}
 
 int ResizeDbfsRequest::getNewSizeG()const
 {

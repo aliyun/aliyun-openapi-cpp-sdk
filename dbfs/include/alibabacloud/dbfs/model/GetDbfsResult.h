@@ -32,30 +32,58 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DBFS_EXPORT GetDbfsResult : public ServiceResult
 			{
 			public:
-				struct Info
+				struct DBFSInfo
 				{
+					struct TagList
+					{
+						std::string tagKey;
+						int id;
+						std::string tagValue;
+					};
+					struct EcsListItem
+					{
+						std::string ecsId;
+					};
+					struct EbsListItem
+					{
+						int sizeG;
+						std::string ebsId;
+					};
 					std::string status;
+					std::string description;
 					std::string category;
-					std::string fsName;
+					std::string createdTime;
+					std::string kMSKeyId;
 					std::string zoneId;
+					bool enableRaid;
+					std::vector<EcsListItem> ecsList;
 					int sizeG;
-					std::string dBFSClusterId;
+					std::string performanceLevel;
 					std::string fsId;
+					std::string dBFSClusterId;
+					std::string payType;
+					bool encryption;
+					std::string lastUmountTime;
+					std::string fsName;
+					std::vector<EbsListItem> ebsList;
+					std::string usedScene;
+					int raidStrip;
+					std::string lastMountTime;
 					std::string regionId;
 					int attachNodeNumber;
-					std::string payType;
+					std::vector<TagList> tags;
 				};
 
 
 				GetDbfsResult();
 				explicit GetDbfsResult(const std::string &payload);
 				~GetDbfsResult();
-				std::vector<Info> getDBFSInfo()const;
+				DBFSInfo getDBFSInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Info> dBFSInfo_;
+				DBFSInfo dBFSInfo_;
 
 			};
 		}

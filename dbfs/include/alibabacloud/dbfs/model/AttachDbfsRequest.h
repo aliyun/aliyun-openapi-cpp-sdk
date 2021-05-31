@@ -39,12 +39,15 @@ namespace AlibabaCloud
 				void setECSInstanceId(const std::string& eCSInstanceId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getServerUrl()const;
+				void setServerUrl(const std::string& serverUrl);
 				std::string getFsId()const;
 				void setFsId(const std::string& fsId);
 
             private:
 				std::string eCSInstanceId_;
 				std::string regionId_;
+				std::string serverUrl_;
 				std::string fsId_;
 
 			};

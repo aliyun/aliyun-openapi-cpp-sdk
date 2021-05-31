@@ -43,34 +43,82 @@ void ListDbfsResult::parse(const std::string &payload)
 	for (auto valueDBFSInfoInfo : allDBFSInfoNode)
 	{
 		Info dBFSInfoObject;
-		if(!valueDBFSInfoInfo["FsName"].isNull())
-			dBFSInfoObject.fsName = valueDBFSInfoInfo["FsName"].asString();
-		if(!valueDBFSInfoInfo["DBFSClusterId"].isNull())
-			dBFSInfoObject.dBFSClusterId = valueDBFSInfoInfo["DBFSClusterId"].asString();
-		if(!valueDBFSInfoInfo["Category"].isNull())
-			dBFSInfoObject.category = valueDBFSInfoInfo["Category"].asString();
 		if(!valueDBFSInfoInfo["Status"].isNull())
 			dBFSInfoObject.status = valueDBFSInfoInfo["Status"].asString();
-		if(!valueDBFSInfoInfo["RegionId"].isNull())
-			dBFSInfoObject.regionId = valueDBFSInfoInfo["RegionId"].asString();
-		if(!valueDBFSInfoInfo["ZoneId"].isNull())
-			dBFSInfoObject.zoneId = valueDBFSInfoInfo["ZoneId"].asString();
-		if(!valueDBFSInfoInfo["AttachNodeNumber"].isNull())
-			dBFSInfoObject.attachNodeNumber = std::stoi(valueDBFSInfoInfo["AttachNodeNumber"].asString());
+		if(!valueDBFSInfoInfo["Encryption"].isNull())
+			dBFSInfoObject.encryption = valueDBFSInfoInfo["Encryption"].asString() == "true";
 		if(!valueDBFSInfoInfo["PayType"].isNull())
 			dBFSInfoObject.payType = valueDBFSInfoInfo["PayType"].asString();
 		if(!valueDBFSInfoInfo["FsId"].isNull())
 			dBFSInfoObject.fsId = valueDBFSInfoInfo["FsId"].asString();
 		if(!valueDBFSInfoInfo["SizeG"].isNull())
 			dBFSInfoObject.sizeG = std::stoi(valueDBFSInfoInfo["SizeG"].asString());
+		if(!valueDBFSInfoInfo["RegionId"].isNull())
+			dBFSInfoObject.regionId = valueDBFSInfoInfo["RegionId"].asString();
+		if(!valueDBFSInfoInfo["DBFSClusterId"].isNull())
+			dBFSInfoObject.dBFSClusterId = valueDBFSInfoInfo["DBFSClusterId"].asString();
+		if(!valueDBFSInfoInfo["ZoneId"].isNull())
+			dBFSInfoObject.zoneId = valueDBFSInfoInfo["ZoneId"].asString();
+		if(!valueDBFSInfoInfo["FsName"].isNull())
+			dBFSInfoObject.fsName = valueDBFSInfoInfo["FsName"].asString();
+		if(!valueDBFSInfoInfo["Category"].isNull())
+			dBFSInfoObject.category = valueDBFSInfoInfo["Category"].asString();
+		if(!valueDBFSInfoInfo["CreatedTime"].isNull())
+			dBFSInfoObject.createdTime = valueDBFSInfoInfo["CreatedTime"].asString();
+		if(!valueDBFSInfoInfo["AttachNodeNumber"].isNull())
+			dBFSInfoObject.attachNodeNumber = std::stoi(valueDBFSInfoInfo["AttachNodeNumber"].asString());
+		if(!valueDBFSInfoInfo["KMSKeyId"].isNull())
+			dBFSInfoObject.kMSKeyId = valueDBFSInfoInfo["KMSKeyId"].asString();
+		if(!valueDBFSInfoInfo["PerformanceLevel"].isNull())
+			dBFSInfoObject.performanceLevel = valueDBFSInfoInfo["PerformanceLevel"].asString();
+		if(!valueDBFSInfoInfo["UsedScene"].isNull())
+			dBFSInfoObject.usedScene = valueDBFSInfoInfo["UsedScene"].asString();
+		if(!valueDBFSInfoInfo["LastMountTime"].isNull())
+			dBFSInfoObject.lastMountTime = valueDBFSInfoInfo["LastMountTime"].asString();
+		if(!valueDBFSInfoInfo["LastUmountTime"].isNull())
+			dBFSInfoObject.lastUmountTime = valueDBFSInfoInfo["LastUmountTime"].asString();
+		if(!valueDBFSInfoInfo["EnableRaid"].isNull())
+			dBFSInfoObject.enableRaid = valueDBFSInfoInfo["EnableRaid"].asString() == "true";
+		if(!valueDBFSInfoInfo["RaidStrip"].isNull())
+			dBFSInfoObject.raidStrip = std::stoi(valueDBFSInfoInfo["RaidStrip"].asString());
+		auto allTagsNode = valueDBFSInfoInfo["Tags"]["TagList"];
+		for (auto valueDBFSInfoInfoTagsTagList : allTagsNode)
+		{
+			Info::TagList tagsObject;
+			if(!valueDBFSInfoInfoTagsTagList["TagValue"].isNull())
+				tagsObject.tagValue = valueDBFSInfoInfoTagsTagList["TagValue"].asString();
+			if(!valueDBFSInfoInfoTagsTagList["Id"].isNull())
+				tagsObject.id = std::stol(valueDBFSInfoInfoTagsTagList["Id"].asString());
+			if(!valueDBFSInfoInfoTagsTagList["TagKey"].isNull())
+				tagsObject.tagKey = valueDBFSInfoInfoTagsTagList["TagKey"].asString();
+			dBFSInfoObject.tags.push_back(tagsObject);
+		}
+		auto allEcsListNode = valueDBFSInfoInfo["EcsList"]["EcsListItem"];
+		for (auto valueDBFSInfoInfoEcsListEcsListItem : allEcsListNode)
+		{
+			Info::EcsListItem ecsListObject;
+			if(!valueDBFSInfoInfoEcsListEcsListItem["EcsId"].isNull())
+				ecsListObject.ecsId = valueDBFSInfoInfoEcsListEcsListItem["EcsId"].asString();
+			dBFSInfoObject.ecsList.push_back(ecsListObject);
+		}
+		auto allEbsListNode = valueDBFSInfoInfo["EbsList"]["EbsListItem"];
+		for (auto valueDBFSInfoInfoEbsListEbsListItem : allEbsListNode)
+		{
+			Info::EbsListItem ebsListObject;
+			if(!valueDBFSInfoInfoEbsListEbsListItem["EbsId"].isNull())
+				ebsListObject.ebsId = valueDBFSInfoInfoEbsListEbsListItem["EbsId"].asString();
+			if(!valueDBFSInfoInfoEbsListEbsListItem["SizeG"].isNull())
+				ebsListObject.sizeG = std::stoi(valueDBFSInfoInfoEbsListEbsListItem["SizeG"].asString());
+			dBFSInfoObject.ebsList.push_back(ebsListObject);
+		}
 		dBFSInfo_.push_back(dBFSInfoObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

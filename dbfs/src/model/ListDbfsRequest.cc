@@ -19,13 +19,79 @@
 using AlibabaCloud::DBFS::Model::ListDbfsRequest;
 
 ListDbfsRequest::ListDbfsRequest() :
-	RpcServiceRequest("dbfs", "2020-02-19", "ListDbfs")
+	RpcServiceRequest("dbfs", "2020-04-18", "ListDbfs")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ListDbfsRequest::~ListDbfsRequest()
 {}
+
+std::string ListDbfsRequest::getSortType()const
+{
+	return sortType_;
+}
+
+void ListDbfsRequest::setSortType(const std::string& sortType)
+{
+	sortType_ = sortType;
+	setParameter("SortType", sortType);
+}
+
+std::string ListDbfsRequest::getFilterValue()const
+{
+	return filterValue_;
+}
+
+void ListDbfsRequest::setFilterValue(const std::string& filterValue)
+{
+	filterValue_ = filterValue;
+	setParameter("FilterValue", filterValue);
+}
+
+int ListDbfsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListDbfsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListDbfsRequest::getTags()const
+{
+	return tags_;
+}
+
+void ListDbfsRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
+std::string ListDbfsRequest::getFilterKey()const
+{
+	return filterKey_;
+}
+
+void ListDbfsRequest::setFilterKey(const std::string& filterKey)
+{
+	filterKey_ = filterKey;
+	setParameter("FilterKey", filterKey);
+}
+
+std::string ListDbfsRequest::getSortKey()const
+{
+	return sortKey_;
+}
+
+void ListDbfsRequest::setSortKey(const std::string& sortKey)
+{
+	sortKey_ = sortKey;
+	setParameter("SortKey", sortKey);
+}
 
 std::string ListDbfsRequest::getRegionId()const
 {
@@ -36,5 +102,16 @@ void ListDbfsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+int ListDbfsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListDbfsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

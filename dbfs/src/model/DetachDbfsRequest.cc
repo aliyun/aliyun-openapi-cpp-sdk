@@ -19,7 +19,7 @@
 using AlibabaCloud::DBFS::Model::DetachDbfsRequest;
 
 DetachDbfsRequest::DetachDbfsRequest() :
-	RpcServiceRequest("dbfs", "2020-02-19", "DetachDbfs")
+	RpcServiceRequest("dbfs", "2020-04-18", "DetachDbfs")
 {
 	setMethod(HttpRequest::Method::Post);
 }
