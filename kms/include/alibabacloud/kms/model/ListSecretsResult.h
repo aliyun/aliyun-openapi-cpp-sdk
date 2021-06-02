@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					std::string secretName;
+					std::string secretType;
 					std::string createTime;
 					std::string updateTime;
 					std::string plannedDeleteTime;

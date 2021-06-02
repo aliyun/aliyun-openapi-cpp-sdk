@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getSecretName()const;
 				void setSecretName(const std::string& secretName);
+				std::string getExtendedConfigCustomData()const;
+				void setExtendedConfigCustomData(const std::string& extendedConfigCustomData);
 
             private:
 				std::string description_;
 				std::string secretName_;
+				std::string extendedConfigCustomData_;
 
 			};
 		}

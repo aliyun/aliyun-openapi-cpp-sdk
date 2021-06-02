@@ -51,6 +51,8 @@ void ListSecretsResult::parse(const std::string &payload)
 			secretListObject.secretName = valueSecretListSecret["SecretName"].asString();
 		if(!valueSecretListSecret["UpdateTime"].isNull())
 			secretListObject.updateTime = valueSecretListSecret["UpdateTime"].asString();
+		if(!valueSecretListSecret["SecretType"].isNull())
+			secretListObject.secretType = valueSecretListSecret["SecretType"].asString();
 		auto allTagsNode = valueSecretListSecret["Tags"]["Tag"];
 		for (auto valueSecretListSecretTagsTag : allTagsNode)
 		{

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_ROTATESECRETREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_ROTATESECRETREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT GetSecretValueRequest : public RpcServiceRequest
+			class ALIBABACLOUD_KMS_EXPORT RotateSecretRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetSecretValueRequest();
-				~GetSecretValueRequest();
+				RotateSecretRequest();
+				~RotateSecretRequest();
 
 				std::string getVersionId()const;
 				void setVersionId(const std::string& versionId);
-				std::string getVersionStage()const;
-				void setVersionStage(const std::string& versionStage);
 				std::string getSecretName()const;
 				void setSecretName(const std::string& secretName);
-				bool getFetchExtendedConfig()const;
-				void setFetchExtendedConfig(bool fetchExtendedConfig);
 
             private:
 				std::string versionId_;
-				std::string versionStage_;
 				std::string secretName_;
-				bool fetchExtendedConfig_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_ROTATESECRETREQUEST_H_

@@ -74,6 +74,10 @@ void DescribeKeyResult::parse(const std::string &payload)
 		keyMetadata_.nextRotationDate = keyMetadataNode["NextRotationDate"].asString();
 	if(!keyMetadataNode["KeySpec"].isNull())
 		keyMetadata_.keySpec = keyMetadataNode["KeySpec"].asString();
+	if(!keyMetadataNode["DeletionProtection"].isNull())
+		keyMetadata_.deletionProtection = keyMetadataNode["DeletionProtection"].asString();
+	if(!keyMetadataNode["DeletionProtectionDescription"].isNull())
+		keyMetadata_.deletionProtectionDescription = keyMetadataNode["DeletionProtectionDescription"].asString();
 
 }
 

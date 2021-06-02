@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_UPDATESECRETROTATIONPOLICYREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_UPDATESECRETROTATIONPOLICYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT GetSecretValueRequest : public RpcServiceRequest
+			class ALIBABACLOUD_KMS_EXPORT UpdateSecretRotationPolicyRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetSecretValueRequest();
-				~GetSecretValueRequest();
+				UpdateSecretRotationPolicyRequest();
+				~UpdateSecretRotationPolicyRequest();
 
-				std::string getVersionId()const;
-				void setVersionId(const std::string& versionId);
-				std::string getVersionStage()const;
-				void setVersionStage(const std::string& versionStage);
+				std::string getRotationInterval()const;
+				void setRotationInterval(const std::string& rotationInterval);
 				std::string getSecretName()const;
 				void setSecretName(const std::string& secretName);
-				bool getFetchExtendedConfig()const;
-				void setFetchExtendedConfig(bool fetchExtendedConfig);
+				bool getEnableAutomaticRotation()const;
+				void setEnableAutomaticRotation(bool enableAutomaticRotation);
 
             private:
-				std::string versionId_;
-				std::string versionStage_;
+				std::string rotationInterval_;
 				std::string secretName_;
-				bool fetchExtendedConfig_;
+				bool enableAutomaticRotation_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_UPDATESECRETROTATIONPOLICYREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_LISTCERTIFICATESRESULT_H_
-#define ALIBABACLOUD_KMS_MODEL_LISTCERTIFICATESRESULT_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_ROTATESECRETRESULT_H_
+#define ALIBABACLOUD_KMS_MODEL_ROTATESECRETRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT ListCertificatesResult : public ServiceResult
+			class ALIBABACLOUD_KMS_EXPORT RotateSecretResult : public ServiceResult
 			{
 			public:
-				struct CertificateSummary
-				{
-					std::string certificateId;
-				};
-				struct Certificate
-				{
-					std::string certificateId;
-				};
 
 
-				ListCertificatesResult();
-				explicit ListCertificatesResult(const std::string &payload);
-				~ListCertificatesResult();
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<CertificateSummary> getCertificateSummaryList()const;
-				std::vector<Certificate> getCertificates()const;
-				int getTotalSize()const;
+				RotateSecretResult();
+				explicit RotateSecretResult(const std::string &payload);
+				~RotateSecretResult();
+				std::string getVersionId()const;
+				std::string getSecretName()const;
+				std::string getArn()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int pageNumber_;
-				std::vector<CertificateSummary> certificateSummaryList_;
-				std::vector<Certificate> certificates_;
-				int totalSize_;
+				std::string versionId_;
+				std::string secretName_;
+				std::string arn_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_LISTCERTIFICATESRESULT_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_ROTATESECRETRESULT_H_

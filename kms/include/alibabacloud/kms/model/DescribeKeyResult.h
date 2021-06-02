@@ -45,10 +45,12 @@ namespace AlibabaCloud
 					std::string keyId;
 					std::string primaryKeyVersion;
 					std::string creator;
+					std::string deletionProtection;
 					std::string deleteDate;
 					std::string automaticRotation;
 					std::string nextRotationDate;
 					std::string materialExpireTime;
+					std::string deletionProtectionDescription;
 					std::string arn;
 					std::string keyState;
 				};

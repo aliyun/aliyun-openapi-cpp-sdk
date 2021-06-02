@@ -129,8 +129,12 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ReEncryptResult.h
 	include/alibabacloud/kms/model/RestoreSecretRequest.h
 	include/alibabacloud/kms/model/RestoreSecretResult.h
+	include/alibabacloud/kms/model/RotateSecretRequest.h
+	include/alibabacloud/kms/model/RotateSecretResult.h
 	include/alibabacloud/kms/model/ScheduleKeyDeletionRequest.h
 	include/alibabacloud/kms/model/ScheduleKeyDeletionResult.h
+	include/alibabacloud/kms/model/SetDeletionProtectionRequest.h
+	include/alibabacloud/kms/model/SetDeletionProtectionResult.h
 	include/alibabacloud/kms/model/TagResourceRequest.h
 	include/alibabacloud/kms/model/TagResourceResult.h
 	include/alibabacloud/kms/model/UntagResourceRequest.h
@@ -145,6 +149,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/UpdateRotationPolicyResult.h
 	include/alibabacloud/kms/model/UpdateSecretRequest.h
 	include/alibabacloud/kms/model/UpdateSecretResult.h
+	include/alibabacloud/kms/model/UpdateSecretRotationPolicyRequest.h
+	include/alibabacloud/kms/model/UpdateSecretRotationPolicyResult.h
 	include/alibabacloud/kms/model/UpdateSecretVersionStageRequest.h
 	include/alibabacloud/kms/model/UpdateSecretVersionStageResult.h
 	include/alibabacloud/kms/model/UploadCertificateRequest.h
@@ -260,8 +266,12 @@ set(kms_src
 	src/model/ReEncryptResult.cc
 	src/model/RestoreSecretRequest.cc
 	src/model/RestoreSecretResult.cc
+	src/model/RotateSecretRequest.cc
+	src/model/RotateSecretResult.cc
 	src/model/ScheduleKeyDeletionRequest.cc
 	src/model/ScheduleKeyDeletionResult.cc
+	src/model/SetDeletionProtectionRequest.cc
+	src/model/SetDeletionProtectionResult.cc
 	src/model/TagResourceRequest.cc
 	src/model/TagResourceResult.cc
 	src/model/UntagResourceRequest.cc
@@ -276,6 +286,8 @@ set(kms_src
 	src/model/UpdateRotationPolicyResult.cc
 	src/model/UpdateSecretRequest.cc
 	src/model/UpdateSecretResult.cc
+	src/model/UpdateSecretRotationPolicyRequest.cc
+	src/model/UpdateSecretRotationPolicyResult.cc
 	src/model/UpdateSecretVersionStageRequest.cc
 	src/model/UpdateSecretVersionStageResult.cc
 	src/model/UploadCertificateRequest.cc

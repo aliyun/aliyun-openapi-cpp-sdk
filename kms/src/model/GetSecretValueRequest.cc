@@ -60,3 +60,14 @@ void GetSecretValueRequest::setSecretName(const std::string& secretName)
 	setParameter("SecretName", secretName);
 }
 
+bool GetSecretValueRequest::getFetchExtendedConfig()const
+{
+	return fetchExtendedConfig_;
+}
+
+void GetSecretValueRequest::setFetchExtendedConfig(bool fetchExtendedConfig)
+{
+	fetchExtendedConfig_ = fetchExtendedConfig;
+	setParameter("FetchExtendedConfig", fetchExtendedConfig ? "true" : "false");
+}
+

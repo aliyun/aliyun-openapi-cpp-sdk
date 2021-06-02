@@ -63,12 +63,19 @@ void DescribeSecretResult::parse(const std::string &payload)
 		updateTime_ = value["UpdateTime"].asString();
 	if(!value["PlannedDeleteTime"].isNull())
 		plannedDeleteTime_ = value["PlannedDeleteTime"].asString();
+	if(!value["AutomaticRotation"].isNull())
+		automaticRotation_ = value["AutomaticRotation"].asString();
+	if(!value["LastRotationDate"].isNull())
+		lastRotationDate_ = value["LastRotationDate"].asString();
+	if(!value["RotationInterval"].isNull())
+		rotationInterval_ = value["RotationInterval"].asString();
+	if(!value["NextRotationDate"].isNull())
+		nextRotationDate_ = value["NextRotationDate"].asString();
+	if(!value["ExtendedConfig"].isNull())
+		extendedConfig_ = value["ExtendedConfig"].asString();
+	if(!value["SecretType"].isNull())
+		secretType_ = value["SecretType"].asString();
 
-}
-
-std::string DescribeSecretResult::getSecretName()const
-{
-	return secretName_;
 }
 
 std::string DescribeSecretResult::getDescription()const
@@ -76,9 +83,39 @@ std::string DescribeSecretResult::getDescription()const
 	return description_;
 }
 
+std::string DescribeSecretResult::getLastRotationDate()const
+{
+	return lastRotationDate_;
+}
+
+std::string DescribeSecretResult::getRotationInterval()const
+{
+	return rotationInterval_;
+}
+
+std::string DescribeSecretResult::getSecretType()const
+{
+	return secretType_;
+}
+
 std::string DescribeSecretResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string DescribeSecretResult::getAutomaticRotation()const
+{
+	return automaticRotation_;
+}
+
+std::string DescribeSecretResult::getSecretName()const
+{
+	return secretName_;
+}
+
+std::string DescribeSecretResult::getNextRotationDate()const
+{
+	return nextRotationDate_;
 }
 
 std::string DescribeSecretResult::getUpdateTime()const
@@ -89,6 +126,11 @@ std::string DescribeSecretResult::getUpdateTime()const
 std::string DescribeSecretResult::getPlannedDeleteTime()const
 {
 	return plannedDeleteTime_;
+}
+
+std::string DescribeSecretResult::getExtendedConfig()const
+{
+	return extendedConfig_;
 }
 
 std::string DescribeSecretResult::getArn()const

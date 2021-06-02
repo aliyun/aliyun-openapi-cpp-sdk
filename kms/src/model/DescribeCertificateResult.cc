@@ -48,8 +48,6 @@ void DescribeCertificateResult::parse(const std::string &payload)
 		arn_ = value["Arn"].asString();
 	if(!value["KeySpec"].isNull())
 		keySpec_ = value["KeySpec"].asString();
-	if(!value["ProtectionLevel"].isNull())
-		protectionLevel_ = value["ProtectionLevel"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["CreatedAt"].isNull())
@@ -74,6 +72,10 @@ void DescribeCertificateResult::parse(const std::string &payload)
 		subjectKeyIdentifier_ = value["SubjectKeyIdentifier"].asString();
 	if(!value["Tags"].isNull())
 		tags_ = value["Tags"].asString();
+	if(!value["ExportablePrivateKey"].isNull())
+		exportablePrivateKey_ = value["ExportablePrivateKey"].asString() == "true";
+	if(!value["ProtectionLevel"].isNull())
+		protectionLevel_ = value["ProtectionLevel"].asString();
 
 }
 
@@ -160,5 +162,10 @@ std::string DescribeCertificateResult::getNotBefore()const
 std::string DescribeCertificateResult::getTags()const
 {
 	return tags_;
+}
+
+bool DescribeCertificateResult::getExportablePrivateKey()const
+{
+	return exportablePrivateKey_;
 }
 

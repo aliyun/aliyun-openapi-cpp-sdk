@@ -130,8 +130,12 @@
 #include "model/ReEncryptResult.h"
 #include "model/RestoreSecretRequest.h"
 #include "model/RestoreSecretResult.h"
+#include "model/RotateSecretRequest.h"
+#include "model/RotateSecretResult.h"
 #include "model/ScheduleKeyDeletionRequest.h"
 #include "model/ScheduleKeyDeletionResult.h"
+#include "model/SetDeletionProtectionRequest.h"
+#include "model/SetDeletionProtectionResult.h"
 #include "model/TagResourceRequest.h"
 #include "model/TagResourceResult.h"
 #include "model/UntagResourceRequest.h"
@@ -146,6 +150,8 @@
 #include "model/UpdateRotationPolicyResult.h"
 #include "model/UpdateSecretRequest.h"
 #include "model/UpdateSecretResult.h"
+#include "model/UpdateSecretRotationPolicyRequest.h"
+#include "model/UpdateSecretRotationPolicyResult.h"
 #include "model/UpdateSecretVersionStageRequest.h"
 #include "model/UpdateSecretVersionStageResult.h"
 #include "model/UploadCertificateRequest.h"
@@ -321,9 +327,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RestoreSecretResult> RestoreSecretOutcome;
 			typedef std::future<RestoreSecretOutcome> RestoreSecretOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::RestoreSecretRequest&, const RestoreSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestoreSecretAsyncHandler;
+			typedef Outcome<Error, Model::RotateSecretResult> RotateSecretOutcome;
+			typedef std::future<RotateSecretOutcome> RotateSecretOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::RotateSecretRequest&, const RotateSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RotateSecretAsyncHandler;
 			typedef Outcome<Error, Model::ScheduleKeyDeletionResult> ScheduleKeyDeletionOutcome;
 			typedef std::future<ScheduleKeyDeletionOutcome> ScheduleKeyDeletionOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ScheduleKeyDeletionRequest&, const ScheduleKeyDeletionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScheduleKeyDeletionAsyncHandler;
+			typedef Outcome<Error, Model::SetDeletionProtectionResult> SetDeletionProtectionOutcome;
+			typedef std::future<SetDeletionProtectionOutcome> SetDeletionProtectionOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::SetDeletionProtectionRequest&, const SetDeletionProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDeletionProtectionAsyncHandler;
 			typedef Outcome<Error, Model::TagResourceResult> TagResourceOutcome;
 			typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::TagResourceRequest&, const TagResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourceAsyncHandler;
@@ -345,6 +357,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateSecretResult> UpdateSecretOutcome;
 			typedef std::future<UpdateSecretOutcome> UpdateSecretOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UpdateSecretRequest&, const UpdateSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSecretAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSecretRotationPolicyResult> UpdateSecretRotationPolicyOutcome;
+			typedef std::future<UpdateSecretRotationPolicyOutcome> UpdateSecretRotationPolicyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::UpdateSecretRotationPolicyRequest&, const UpdateSecretRotationPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSecretRotationPolicyAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSecretVersionStageResult> UpdateSecretVersionStageOutcome;
 			typedef std::future<UpdateSecretVersionStageOutcome> UpdateSecretVersionStageOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UpdateSecretVersionStageRequest&, const UpdateSecretVersionStageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSecretVersionStageAsyncHandler;
@@ -518,9 +533,15 @@ namespace AlibabaCloud
 			RestoreSecretOutcome restoreSecret(const Model::RestoreSecretRequest &request)const;
 			void restoreSecretAsync(const Model::RestoreSecretRequest& request, const RestoreSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestoreSecretOutcomeCallable restoreSecretCallable(const Model::RestoreSecretRequest& request) const;
+			RotateSecretOutcome rotateSecret(const Model::RotateSecretRequest &request)const;
+			void rotateSecretAsync(const Model::RotateSecretRequest& request, const RotateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RotateSecretOutcomeCallable rotateSecretCallable(const Model::RotateSecretRequest& request) const;
 			ScheduleKeyDeletionOutcome scheduleKeyDeletion(const Model::ScheduleKeyDeletionRequest &request)const;
 			void scheduleKeyDeletionAsync(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ScheduleKeyDeletionOutcomeCallable scheduleKeyDeletionCallable(const Model::ScheduleKeyDeletionRequest& request) const;
+			SetDeletionProtectionOutcome setDeletionProtection(const Model::SetDeletionProtectionRequest &request)const;
+			void setDeletionProtectionAsync(const Model::SetDeletionProtectionRequest& request, const SetDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDeletionProtectionOutcomeCallable setDeletionProtectionCallable(const Model::SetDeletionProtectionRequest& request) const;
 			TagResourceOutcome tagResource(const Model::TagResourceRequest &request)const;
 			void tagResourceAsync(const Model::TagResourceRequest& request, const TagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourceOutcomeCallable tagResourceCallable(const Model::TagResourceRequest& request) const;
@@ -542,6 +563,9 @@ namespace AlibabaCloud
 			UpdateSecretOutcome updateSecret(const Model::UpdateSecretRequest &request)const;
 			void updateSecretAsync(const Model::UpdateSecretRequest& request, const UpdateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSecretOutcomeCallable updateSecretCallable(const Model::UpdateSecretRequest& request) const;
+			UpdateSecretRotationPolicyOutcome updateSecretRotationPolicy(const Model::UpdateSecretRotationPolicyRequest &request)const;
+			void updateSecretRotationPolicyAsync(const Model::UpdateSecretRotationPolicyRequest& request, const UpdateSecretRotationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSecretRotationPolicyOutcomeCallable updateSecretRotationPolicyCallable(const Model::UpdateSecretRotationPolicyRequest& request) const;
 			UpdateSecretVersionStageOutcome updateSecretVersionStage(const Model::UpdateSecretVersionStageRequest &request)const;
 			void updateSecretVersionStageAsync(const Model::UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSecretVersionStageOutcomeCallable updateSecretVersionStageCallable(const Model::UpdateSecretVersionStageRequest& request) const;

@@ -49,3 +49,14 @@ void UpdateSecretRequest::setSecretName(const std::string& secretName)
 	setParameter("SecretName", secretName);
 }
 
+std::string UpdateSecretRequest::getExtendedConfigCustomData()const
+{
+	return extendedConfigCustomData_;
+}
+
+void UpdateSecretRequest::setExtendedConfigCustomData(const std::string& extendedConfigCustomData)
+{
+	extendedConfigCustomData_ = extendedConfigCustomData;
+	setParameter("ExtendedConfigCustomData", extendedConfigCustomData);
+}
+

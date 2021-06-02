@@ -39,20 +39,32 @@ namespace AlibabaCloud
 				~GetSecretValueResult();
 				std::string getSecretName()const;
 				std::string getVersionId()const;
+				std::string getNextRotationDate()const;
+				std::string getRotationInterval()const;
+				std::string getLastRotationDate()const;
+				std::string getSecretType()const;
 				std::string getCreateTime()const;
 				std::string getSecretDataType()const;
+				std::string getExtendedConfig()const;
 				std::string getSecretData()const;
 				std::vector<std::string> getVersionStages()const;
+				std::string getAutomaticRotation()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string secretName_;
 				std::string versionId_;
+				std::string nextRotationDate_;
+				std::string rotationInterval_;
+				std::string lastRotationDate_;
+				std::string secretType_;
 				std::string createTime_;
 				std::string secretDataType_;
+				std::string extendedConfig_;
 				std::string secretData_;
 				std::vector<std::string> versionStages_;
+				std::string automaticRotation_;
 
 			};
 		}

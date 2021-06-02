@@ -31,21 +31,21 @@ KmsClient::KmsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms-service");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms");
 }
 
 KmsClient::KmsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms-service");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms");
 }
 
 KmsClient::KmsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms-service");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms");
 }
 
 KmsClient::~KmsClient()
@@ -1995,6 +1995,42 @@ KmsClient::RestoreSecretOutcomeCallable KmsClient::restoreSecretCallable(const R
 	return task->get_future();
 }
 
+KmsClient::RotateSecretOutcome KmsClient::rotateSecret(const RotateSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RotateSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RotateSecretOutcome(RotateSecretResult(outcome.result()));
+	else
+		return RotateSecretOutcome(outcome.error());
+}
+
+void KmsClient::rotateSecretAsync(const RotateSecretRequest& request, const RotateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rotateSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::RotateSecretOutcomeCallable KmsClient::rotateSecretCallable(const RotateSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RotateSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->rotateSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::ScheduleKeyDeletionOutcome KmsClient::scheduleKeyDeletion(const ScheduleKeyDeletionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2025,6 +2061,42 @@ KmsClient::ScheduleKeyDeletionOutcomeCallable KmsClient::scheduleKeyDeletionCall
 			[this, request]()
 			{
 			return this->scheduleKeyDeletion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::SetDeletionProtectionOutcome KmsClient::setDeletionProtection(const SetDeletionProtectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDeletionProtectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDeletionProtectionOutcome(SetDeletionProtectionResult(outcome.result()));
+	else
+		return SetDeletionProtectionOutcome(outcome.error());
+}
+
+void KmsClient::setDeletionProtectionAsync(const SetDeletionProtectionRequest& request, const SetDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDeletionProtection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::SetDeletionProtectionOutcomeCallable KmsClient::setDeletionProtectionCallable(const SetDeletionProtectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDeletionProtectionOutcome()>>(
+			[this, request]()
+			{
+			return this->setDeletionProtection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2277,6 +2349,42 @@ KmsClient::UpdateSecretOutcomeCallable KmsClient::updateSecretCallable(const Upd
 			[this, request]()
 			{
 			return this->updateSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UpdateSecretRotationPolicyOutcome KmsClient::updateSecretRotationPolicy(const UpdateSecretRotationPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSecretRotationPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSecretRotationPolicyOutcome(UpdateSecretRotationPolicyResult(outcome.result()));
+	else
+		return UpdateSecretRotationPolicyOutcome(outcome.error());
+}
+
+void KmsClient::updateSecretRotationPolicyAsync(const UpdateSecretRotationPolicyRequest& request, const UpdateSecretRotationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSecretRotationPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UpdateSecretRotationPolicyOutcomeCallable KmsClient::updateSecretRotationPolicyCallable(const UpdateSecretRotationPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSecretRotationPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSecretRotationPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

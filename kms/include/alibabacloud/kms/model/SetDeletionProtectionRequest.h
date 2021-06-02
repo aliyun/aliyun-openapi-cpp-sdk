@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_SETDELETIONPROTECTIONREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_SETDELETIONPROTECTIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT GetSecretValueRequest : public RpcServiceRequest
+			class ALIBABACLOUD_KMS_EXPORT SetDeletionProtectionRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetSecretValueRequest();
-				~GetSecretValueRequest();
+				SetDeletionProtectionRequest();
+				~SetDeletionProtectionRequest();
 
-				std::string getVersionId()const;
-				void setVersionId(const std::string& versionId);
-				std::string getVersionStage()const;
-				void setVersionStage(const std::string& versionStage);
-				std::string getSecretName()const;
-				void setSecretName(const std::string& secretName);
-				bool getFetchExtendedConfig()const;
-				void setFetchExtendedConfig(bool fetchExtendedConfig);
+				bool getEnableDeletionProtection()const;
+				void setEnableDeletionProtection(bool enableDeletionProtection);
+				std::string getProtectedResourceArn()const;
+				void setProtectedResourceArn(const std::string& protectedResourceArn);
+				std::string getDeletionProtectionDescription()const;
+				void setDeletionProtectionDescription(const std::string& deletionProtectionDescription);
 
             private:
-				std::string versionId_;
-				std::string versionStage_;
-				std::string secretName_;
-				bool fetchExtendedConfig_;
+				bool enableDeletionProtection_;
+				std::string protectedResourceArn_;
+				std::string deletionProtectionDescription_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_GETSECRETVALUEREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_SETDELETIONPROTECTIONREQUEST_H_

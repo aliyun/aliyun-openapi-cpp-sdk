@@ -45,6 +45,16 @@ void CreateSecretResult::parse(const std::string &payload)
 		versionId_ = value["VersionId"].asString();
 	if(!value["SecretName"].isNull())
 		secretName_ = value["SecretName"].asString();
+	if(!value["SecretType"].isNull())
+		secretType_ = value["SecretType"].asString();
+	if(!value["AutomaticRotation"].isNull())
+		automaticRotation_ = value["AutomaticRotation"].asString();
+	if(!value["RotationInterval"].isNull())
+		rotationInterval_ = value["RotationInterval"].asString();
+	if(!value["NextRotationDate"].isNull())
+		nextRotationDate_ = value["NextRotationDate"].asString();
+	if(!value["ExtendedConfig"].isNull())
+		extendedConfig_ = value["ExtendedConfig"].asString();
 
 }
 
@@ -58,8 +68,33 @@ std::string CreateSecretResult::getSecretName()const
 	return secretName_;
 }
 
+std::string CreateSecretResult::getNextRotationDate()const
+{
+	return nextRotationDate_;
+}
+
+std::string CreateSecretResult::getSecretType()const
+{
+	return secretType_;
+}
+
+std::string CreateSecretResult::getRotationInterval()const
+{
+	return rotationInterval_;
+}
+
+std::string CreateSecretResult::getExtendedConfig()const
+{
+	return extendedConfig_;
+}
+
 std::string CreateSecretResult::getArn()const
 {
 	return arn_;
+}
+
+std::string CreateSecretResult::getAutomaticRotation()const
+{
+	return automaticRotation_;
 }
 

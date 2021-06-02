@@ -45,21 +45,15 @@ void ListCertificatesResult::parse(const std::string &payload)
 		CertificateSummary certificateSummaryListObject;
 		if(!valueCertificateSummaryListCertificateSummary["CertificateId"].isNull())
 			certificateSummaryListObject.certificateId = valueCertificateSummaryListCertificateSummary["CertificateId"].asString();
-		if(!valueCertificateSummaryListCertificateSummary["Subject"].isNull())
-			certificateSummaryListObject.subject = valueCertificateSummaryListCertificateSummary["Subject"].asString();
-		if(!valueCertificateSummaryListCertificateSummary["Issuer"].isNull())
-			certificateSummaryListObject.issuer = valueCertificateSummaryListCertificateSummary["Issuer"].asString();
-		if(!valueCertificateSummaryListCertificateSummary["KeySpec"].isNull())
-			certificateSummaryListObject.keySpec = valueCertificateSummaryListCertificateSummary["KeySpec"].asString();
-		if(!valueCertificateSummaryListCertificateSummary["ProtectionLevel"].isNull())
-			certificateSummaryListObject.protectionLevel = valueCertificateSummaryListCertificateSummary["ProtectionLevel"].asString();
-		if(!valueCertificateSummaryListCertificateSummary["NotBefore"].isNull())
-			certificateSummaryListObject.notBefore = valueCertificateSummaryListCertificateSummary["NotBefore"].asString();
-		if(!valueCertificateSummaryListCertificateSummary["NotAfter"].isNull())
-			certificateSummaryListObject.notAfter = valueCertificateSummaryListCertificateSummary["NotAfter"].asString();
-		if(!valueCertificateSummaryListCertificateSummary["Status"].isNull())
-			certificateSummaryListObject.status = valueCertificateSummaryListCertificateSummary["Status"].asString();
 		certificateSummaryList_.push_back(certificateSummaryListObject);
+	}
+	auto allCertificatesNode = value["Certificates"]["Certificate"];
+	for (auto valueCertificatesCertificate : allCertificatesNode)
+	{
+		Certificate certificatesObject;
+		if(!valueCertificatesCertificate["CertificateId"].isNull())
+			certificatesObject.certificateId = valueCertificatesCertificate["CertificateId"].asString();
+		certificates_.push_back(certificatesObject);
 	}
 	if(!value["TotalSize"].isNull())
 		totalSize_ = std::stoi(value["TotalSize"].asString());
@@ -83,6 +77,11 @@ int ListCertificatesResult::getPageNumber()const
 std::vector<ListCertificatesResult::CertificateSummary> ListCertificatesResult::getCertificateSummaryList()const
 {
 	return certificateSummaryList_;
+}
+
+std::vector<ListCertificatesResult::Certificate> ListCertificatesResult::getCertificates()const
+{
+	return certificates_;
 }
 
 int ListCertificatesResult::getTotalSize()const

@@ -38,6 +38,28 @@ void CreateCertificateRequest::setProtectionLevel(const std::string& protectionL
 	setParameter("ProtectionLevel", protectionLevel);
 }
 
+bool CreateCertificateRequest::getExportablePrivateKey()const
+{
+	return exportablePrivateKey_;
+}
+
+void CreateCertificateRequest::setExportablePrivateKey(bool exportablePrivateKey)
+{
+	exportablePrivateKey_ = exportablePrivateKey;
+	setParameter("ExportablePrivateKey", exportablePrivateKey ? "true" : "false");
+}
+
+std::string CreateCertificateRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateCertificateRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string CreateCertificateRequest::getSubject()const
 {
 	return subject_;

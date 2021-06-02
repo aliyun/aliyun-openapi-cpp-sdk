@@ -37,6 +37,10 @@ namespace AlibabaCloud
 
 				std::string getProtectionLevel()const;
 				void setProtectionLevel(const std::string& protectionLevel);
+				bool getExportablePrivateKey()const;
+				void setExportablePrivateKey(bool exportablePrivateKey);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getSubject()const;
 				void setSubject(const std::string& subject);
 				std::map<std::string, std::string> getSubjectAlternativeNames()const;
@@ -46,6 +50,8 @@ namespace AlibabaCloud
 
             private:
 				std::string protectionLevel_;
+				bool exportablePrivateKey_;
+				std::string clientToken_;
 				std::string subject_;
 				std::map<std::string, std::string> subjectAlternativeNames_;
 				std::string keySpec_;

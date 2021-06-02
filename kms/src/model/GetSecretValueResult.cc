@@ -52,6 +52,18 @@ void GetSecretValueResult::parse(const std::string &payload)
 		secretData_ = value["SecretData"].asString();
 	if(!value["SecretDataType"].isNull())
 		secretDataType_ = value["SecretDataType"].asString();
+	if(!value["AutomaticRotation"].isNull())
+		automaticRotation_ = value["AutomaticRotation"].asString();
+	if(!value["RotationInterval"].isNull())
+		rotationInterval_ = value["RotationInterval"].asString();
+	if(!value["NextRotationDate"].isNull())
+		nextRotationDate_ = value["NextRotationDate"].asString();
+	if(!value["ExtendedConfig"].isNull())
+		extendedConfig_ = value["ExtendedConfig"].asString();
+	if(!value["LastRotationDate"].isNull())
+		lastRotationDate_ = value["LastRotationDate"].asString();
+	if(!value["SecretType"].isNull())
+		secretType_ = value["SecretType"].asString();
 
 }
 
@@ -65,6 +77,26 @@ std::string GetSecretValueResult::getVersionId()const
 	return versionId_;
 }
 
+std::string GetSecretValueResult::getNextRotationDate()const
+{
+	return nextRotationDate_;
+}
+
+std::string GetSecretValueResult::getRotationInterval()const
+{
+	return rotationInterval_;
+}
+
+std::string GetSecretValueResult::getLastRotationDate()const
+{
+	return lastRotationDate_;
+}
+
+std::string GetSecretValueResult::getSecretType()const
+{
+	return secretType_;
+}
+
 std::string GetSecretValueResult::getCreateTime()const
 {
 	return createTime_;
@@ -75,6 +107,11 @@ std::string GetSecretValueResult::getSecretDataType()const
 	return secretDataType_;
 }
 
+std::string GetSecretValueResult::getExtendedConfig()const
+{
+	return extendedConfig_;
+}
+
 std::string GetSecretValueResult::getSecretData()const
 {
 	return secretData_;
@@ -83,5 +120,10 @@ std::string GetSecretValueResult::getSecretData()const
 std::vector<std::string> GetSecretValueResult::getVersionStages()const
 {
 	return versionStages_;
+}
+
+std::string GetSecretValueResult::getAutomaticRotation()const
+{
+	return automaticRotation_;
 }
 

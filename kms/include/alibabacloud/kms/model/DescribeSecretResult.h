@@ -42,11 +42,17 @@ namespace AlibabaCloud
 				DescribeSecretResult();
 				explicit DescribeSecretResult(const std::string &payload);
 				~DescribeSecretResult();
-				std::string getSecretName()const;
 				std::string getDescription()const;
+				std::string getLastRotationDate()const;
+				std::string getRotationInterval()const;
+				std::string getSecretType()const;
 				std::string getCreateTime()const;
+				std::string getAutomaticRotation()const;
+				std::string getSecretName()const;
+				std::string getNextRotationDate()const;
 				std::string getUpdateTime()const;
 				std::string getPlannedDeleteTime()const;
+				std::string getExtendedConfig()const;
 				std::string getArn()const;
 				std::vector<Tag> getTags()const;
 				std::string getEncryptionKeyId()const;
@@ -54,11 +60,17 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string secretName_;
 				std::string description_;
+				std::string lastRotationDate_;
+				std::string rotationInterval_;
+				std::string secretType_;
 				std::string createTime_;
+				std::string automaticRotation_;
+				std::string secretName_;
+				std::string nextRotationDate_;
 				std::string updateTime_;
 				std::string plannedDeleteTime_;
+				std::string extendedConfig_;
 				std::string arn_;
 				std::vector<Tag> tags_;
 				std::string encryptionKeyId_;

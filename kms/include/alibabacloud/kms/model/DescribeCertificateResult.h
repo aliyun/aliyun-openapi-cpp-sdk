@@ -54,6 +54,7 @@ namespace AlibabaCloud
 				std::string getArn()const;
 				std::string getNotBefore()const;
 				std::string getTags()const;
+				bool getExportablePrivateKey()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -75,6 +76,7 @@ namespace AlibabaCloud
 				std::string arn_;
 				std::string notBefore_;
 				std::string tags_;
+				bool exportablePrivateKey_;
 
 			};
 		}

@@ -27,6 +27,17 @@ CreateSecretRequest::CreateSecretRequest() :
 CreateSecretRequest::~CreateSecretRequest()
 {}
 
+std::string CreateSecretRequest::getSecretType()const
+{
+	return secretType_;
+}
+
+void CreateSecretRequest::setSecretType(const std::string& secretType)
+{
+	secretType_ = secretType;
+	setParameter("SecretType", secretType);
+}
+
 std::string CreateSecretRequest::getVersionId()const
 {
 	return versionId_;
@@ -60,6 +71,17 @@ void CreateSecretRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
+std::string CreateSecretRequest::getRotationInterval()const
+{
+	return rotationInterval_;
+}
+
+void CreateSecretRequest::setRotationInterval(const std::string& rotationInterval)
+{
+	rotationInterval_ = rotationInterval;
+	setParameter("RotationInterval", rotationInterval);
+}
+
 std::string CreateSecretRequest::getSecretName()const
 {
 	return secretName_;
@@ -69,6 +91,17 @@ void CreateSecretRequest::setSecretName(const std::string& secretName)
 {
 	secretName_ = secretName;
 	setParameter("SecretName", secretName);
+}
+
+bool CreateSecretRequest::getEnableAutomaticRotation()const
+{
+	return enableAutomaticRotation_;
+}
+
+void CreateSecretRequest::setEnableAutomaticRotation(bool enableAutomaticRotation)
+{
+	enableAutomaticRotation_ = enableAutomaticRotation;
+	setParameter("EnableAutomaticRotation", enableAutomaticRotation ? "true" : "false");
 }
 
 std::string CreateSecretRequest::getEncryptionKeyId()const
@@ -102,5 +135,16 @@ void CreateSecretRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
 	setParameter("Tags", tags);
+}
+
+std::string CreateSecretRequest::getExtendedConfig()const
+{
+	return extendedConfig_;
+}
+
+void CreateSecretRequest::setExtendedConfig(const std::string& extendedConfig)
+{
+	extendedConfig_ = extendedConfig;
+	setParameter("ExtendedConfig", extendedConfig);
 }
 
