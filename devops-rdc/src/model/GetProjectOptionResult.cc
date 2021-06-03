@@ -47,6 +47,10 @@ void GetProjectOptionResult::parse(const std::string &payload)
 			objectObject.name = valueObjectOption["Name"].asString();
 		if(!valueObjectOption["Value"].isNull())
 			objectObject.value = valueObjectOption["Value"].asString();
+		if(!valueObjectOption["Kind"].isNull())
+			objectObject.kind = valueObjectOption["Kind"].asString();
+		if(!valueObjectOption["ScopeName"].isNull())
+			objectObject.scopeName = valueObjectOption["ScopeName"].asString();
 		object_.push_back(objectObject);
 	}
 	if(!value["Successful"].isNull())

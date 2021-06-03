@@ -34,6 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Option
 				{
+					std::string scopeName;
+					std::string kind;
 					std::string value;
 					std::string name;
 				};
