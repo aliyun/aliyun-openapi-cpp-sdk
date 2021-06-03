@@ -47,6 +47,8 @@ void ListDevopsScenarioFieldConfigResult::parse(const std::string &payload)
 			objectObject.id = valueObjectScenarioFieldConfig["Id"].asString();
 		if(!valueObjectScenarioFieldConfig["Type"].isNull())
 			objectObject.type = valueObjectScenarioFieldConfig["Type"].asString();
+		if(!valueObjectScenarioFieldConfig["Name"].isNull())
+			objectObject.name = valueObjectScenarioFieldConfig["Name"].asString();
 		object_.push_back(objectObject);
 	}
 	if(!value["Successful"].isNull())
