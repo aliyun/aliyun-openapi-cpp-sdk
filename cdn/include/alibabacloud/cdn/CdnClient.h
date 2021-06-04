@@ -26,12 +26,8 @@
 #include "model/AddCdnDomainResult.h"
 #include "model/AddFCTriggerRequest.h"
 #include "model/AddFCTriggerResult.h"
-#include "model/AddLiveAppRecordConfigRequest.h"
-#include "model/AddLiveAppRecordConfigResult.h"
 #include "model/BatchAddCdnDomainRequest.h"
 #include "model/BatchAddCdnDomainResult.h"
-#include "model/BatchDeleteCdnDomainConfigRequest.h"
-#include "model/BatchDeleteCdnDomainConfigResult.h"
 #include "model/BatchSetCdnDomainConfigRequest.h"
 #include "model/BatchSetCdnDomainConfigResult.h"
 #include "model/BatchSetCdnDomainServerCertificateRequest.h"
@@ -68,8 +64,6 @@
 #include "model/DeleteCdnSubTaskResult.h"
 #include "model/DeleteFCTriggerRequest.h"
 #include "model/DeleteFCTriggerResult.h"
-#include "model/DeleteHttpHeaderConfigRequest.h"
-#include "model/DeleteHttpHeaderConfigResult.h"
 #include "model/DeleteRealtimeLogDeliveryRequest.h"
 #include "model/DeleteRealtimeLogDeliveryResult.h"
 #include "model/DeleteSpecificConfigRequest.h"
@@ -204,8 +198,6 @@
 #include "model/DescribeDomainRegionDataResult.h"
 #include "model/DescribeDomainReqHitRateDataRequest.h"
 #include "model/DescribeDomainReqHitRateDataResult.h"
-#include "model/DescribeDomainSlowRatioRequest.h"
-#include "model/DescribeDomainSlowRatioResult.h"
 #include "model/DescribeDomainSrcBpsDataRequest.h"
 #include "model/DescribeDomainSrcBpsDataResult.h"
 #include "model/DescribeDomainSrcFlowDataRequest.h"
@@ -246,14 +238,8 @@
 #include "model/DescribeIpInfoResult.h"
 #include "model/DescribeL2VipsByDomainRequest.h"
 #include "model/DescribeL2VipsByDomainResult.h"
-#include "model/DescribeL2VipsByDynamicDomainRequest.h"
-#include "model/DescribeL2VipsByDynamicDomainResult.h"
 #include "model/DescribeLivePullStreamConfigRequest.h"
 #include "model/DescribeLivePullStreamConfigResult.h"
-#include "model/DescribeLiveRecordConfigRequest.h"
-#include "model/DescribeLiveRecordConfigResult.h"
-#include "model/DescribeLiveSnapshotConfigRequest.h"
-#include "model/DescribeLiveSnapshotConfigResult.h"
 #include "model/DescribeLiveStreamBitRateDataRequest.h"
 #include "model/DescribeLiveStreamBitRateDataResult.h"
 #include "model/DescribeLiveStreamOnlineUserNumRequest.h"
@@ -266,12 +252,8 @@
 #include "model/DescribeLiveStreamRecordIndexFilesResult.h"
 #include "model/DescribeLiveStreamSnapshotInfoRequest.h"
 #include "model/DescribeLiveStreamSnapshotInfoResult.h"
-#include "model/DescribeLiveStreamTranscodeInfoRequest.h"
-#include "model/DescribeLiveStreamTranscodeInfoResult.h"
 #include "model/DescribeLiveStreamsBlockListRequest.h"
 #include "model/DescribeLiveStreamsBlockListResult.h"
-#include "model/DescribeLiveStreamsControlHistoryRequest.h"
-#include "model/DescribeLiveStreamsControlHistoryResult.h"
 #include "model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.h"
 #include "model/DescribeLiveStreamsFrameRateAndBitRateDataResult.h"
 #include "model/DescribeLiveStreamsOnlineListRequest.h"
@@ -298,8 +280,6 @@
 #include "model/DescribeUserCertificateExpireCountResult.h"
 #include "model/DescribeUserConfigsRequest.h"
 #include "model/DescribeUserConfigsResult.h"
-#include "model/DescribeUserCustomLogConfigRequest.h"
-#include "model/DescribeUserCustomLogConfigResult.h"
 #include "model/DescribeUserCustomerLabelsRequest.h"
 #include "model/DescribeUserCustomerLabelsResult.h"
 #include "model/DescribeUserDomainsRequest.h"
@@ -429,15 +409,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddFCTriggerResult> AddFCTriggerOutcome;
 			typedef std::future<AddFCTriggerOutcome> AddFCTriggerOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::AddFCTriggerRequest&, const AddFCTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFCTriggerAsyncHandler;
-			typedef Outcome<Error, Model::AddLiveAppRecordConfigResult> AddLiveAppRecordConfigOutcome;
-			typedef std::future<AddLiveAppRecordConfigOutcome> AddLiveAppRecordConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::AddLiveAppRecordConfigRequest&, const AddLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAppRecordConfigAsyncHandler;
 			typedef Outcome<Error, Model::BatchAddCdnDomainResult> BatchAddCdnDomainOutcome;
 			typedef std::future<BatchAddCdnDomainOutcome> BatchAddCdnDomainOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::BatchAddCdnDomainRequest&, const BatchAddCdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddCdnDomainAsyncHandler;
-			typedef Outcome<Error, Model::BatchDeleteCdnDomainConfigResult> BatchDeleteCdnDomainConfigOutcome;
-			typedef std::future<BatchDeleteCdnDomainConfigOutcome> BatchDeleteCdnDomainConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::BatchDeleteCdnDomainConfigRequest&, const BatchDeleteCdnDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteCdnDomainConfigAsyncHandler;
 			typedef Outcome<Error, Model::BatchSetCdnDomainConfigResult> BatchSetCdnDomainConfigOutcome;
 			typedef std::future<BatchSetCdnDomainConfigOutcome> BatchSetCdnDomainConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::BatchSetCdnDomainConfigRequest&, const BatchSetCdnDomainConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetCdnDomainConfigAsyncHandler;
@@ -492,9 +466,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteFCTriggerResult> DeleteFCTriggerOutcome;
 			typedef std::future<DeleteFCTriggerOutcome> DeleteFCTriggerOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DeleteFCTriggerRequest&, const DeleteFCTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFCTriggerAsyncHandler;
-			typedef Outcome<Error, Model::DeleteHttpHeaderConfigResult> DeleteHttpHeaderConfigOutcome;
-			typedef std::future<DeleteHttpHeaderConfigOutcome> DeleteHttpHeaderConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DeleteHttpHeaderConfigRequest&, const DeleteHttpHeaderConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHttpHeaderConfigAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRealtimeLogDeliveryResult> DeleteRealtimeLogDeliveryOutcome;
 			typedef std::future<DeleteRealtimeLogDeliveryOutcome> DeleteRealtimeLogDeliveryOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DeleteRealtimeLogDeliveryRequest&, const DeleteRealtimeLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRealtimeLogDeliveryAsyncHandler;
@@ -696,9 +667,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainReqHitRateDataResult> DescribeDomainReqHitRateDataOutcome;
 			typedef std::future<DescribeDomainReqHitRateDataOutcome> DescribeDomainReqHitRateDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainReqHitRateDataRequest&, const DescribeDomainReqHitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainReqHitRateDataAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDomainSlowRatioResult> DescribeDomainSlowRatioOutcome;
-			typedef std::future<DescribeDomainSlowRatioOutcome> DescribeDomainSlowRatioOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeDomainSlowRatioRequest&, const DescribeDomainSlowRatioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainSlowRatioAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainSrcBpsDataResult> DescribeDomainSrcBpsDataOutcome;
 			typedef std::future<DescribeDomainSrcBpsDataOutcome> DescribeDomainSrcBpsDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainSrcBpsDataRequest&, const DescribeDomainSrcBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainSrcBpsDataAsyncHandler;
@@ -759,18 +727,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeL2VipsByDomainResult> DescribeL2VipsByDomainOutcome;
 			typedef std::future<DescribeL2VipsByDomainOutcome> DescribeL2VipsByDomainOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeL2VipsByDomainRequest&, const DescribeL2VipsByDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL2VipsByDomainAsyncHandler;
-			typedef Outcome<Error, Model::DescribeL2VipsByDynamicDomainResult> DescribeL2VipsByDynamicDomainOutcome;
-			typedef std::future<DescribeL2VipsByDynamicDomainOutcome> DescribeL2VipsByDynamicDomainOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeL2VipsByDynamicDomainRequest&, const DescribeL2VipsByDynamicDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL2VipsByDynamicDomainAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLivePullStreamConfigResult> DescribeLivePullStreamConfigOutcome;
 			typedef std::future<DescribeLivePullStreamConfigOutcome> DescribeLivePullStreamConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLivePullStreamConfigRequest&, const DescribeLivePullStreamConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePullStreamConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveRecordConfigResult> DescribeLiveRecordConfigOutcome;
-			typedef std::future<DescribeLiveRecordConfigOutcome> DescribeLiveRecordConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeLiveRecordConfigRequest&, const DescribeLiveRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveSnapshotConfigResult> DescribeLiveSnapshotConfigOutcome;
-			typedef std::future<DescribeLiveSnapshotConfigOutcome> DescribeLiveSnapshotConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeLiveSnapshotConfigRequest&, const DescribeLiveSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveSnapshotConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamBitRateDataResult> DescribeLiveStreamBitRateDataOutcome;
 			typedef std::future<DescribeLiveStreamBitRateDataOutcome> DescribeLiveStreamBitRateDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamBitRateDataRequest&, const DescribeLiveStreamBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamBitRateDataAsyncHandler;
@@ -789,15 +748,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveStreamSnapshotInfoResult> DescribeLiveStreamSnapshotInfoOutcome;
 			typedef std::future<DescribeLiveStreamSnapshotInfoOutcome> DescribeLiveStreamSnapshotInfoOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamSnapshotInfoRequest&, const DescribeLiveStreamSnapshotInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamSnapshotInfoAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveStreamTranscodeInfoResult> DescribeLiveStreamTranscodeInfoOutcome;
-			typedef std::future<DescribeLiveStreamTranscodeInfoOutcome> DescribeLiveStreamTranscodeInfoOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamTranscodeInfoRequest&, const DescribeLiveStreamTranscodeInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamTranscodeInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamsBlockListResult> DescribeLiveStreamsBlockListOutcome;
 			typedef std::future<DescribeLiveStreamsBlockListOutcome> DescribeLiveStreamsBlockListOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamsBlockListRequest&, const DescribeLiveStreamsBlockListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsBlockListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLiveStreamsControlHistoryResult> DescribeLiveStreamsControlHistoryOutcome;
-			typedef std::future<DescribeLiveStreamsControlHistoryOutcome> DescribeLiveStreamsControlHistoryOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamsControlHistoryRequest&, const DescribeLiveStreamsControlHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsControlHistoryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveStreamsFrameRateAndBitRateDataResult> DescribeLiveStreamsFrameRateAndBitRateDataOutcome;
 			typedef std::future<DescribeLiveStreamsFrameRateAndBitRateDataOutcome> DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest&, const DescribeLiveStreamsFrameRateAndBitRateDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamsFrameRateAndBitRateDataAsyncHandler;
@@ -837,9 +790,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUserConfigsResult> DescribeUserConfigsOutcome;
 			typedef std::future<DescribeUserConfigsOutcome> DescribeUserConfigsOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeUserConfigsRequest&, const DescribeUserConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserConfigsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeUserCustomLogConfigResult> DescribeUserCustomLogConfigOutcome;
-			typedef std::future<DescribeUserCustomLogConfigOutcome> DescribeUserCustomLogConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeUserCustomLogConfigRequest&, const DescribeUserCustomLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCustomLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserCustomerLabelsResult> DescribeUserCustomerLabelsOutcome;
 			typedef std::future<DescribeUserCustomerLabelsOutcome> DescribeUserCustomerLabelsOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeUserCustomerLabelsRequest&, const DescribeUserCustomerLabelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCustomerLabelsAsyncHandler;
@@ -1022,15 +972,9 @@ namespace AlibabaCloud
 			AddFCTriggerOutcome addFCTrigger(const Model::AddFCTriggerRequest &request)const;
 			void addFCTriggerAsync(const Model::AddFCTriggerRequest& request, const AddFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddFCTriggerOutcomeCallable addFCTriggerCallable(const Model::AddFCTriggerRequest& request) const;
-			AddLiveAppRecordConfigOutcome addLiveAppRecordConfig(const Model::AddLiveAppRecordConfigRequest &request)const;
-			void addLiveAppRecordConfigAsync(const Model::AddLiveAppRecordConfigRequest& request, const AddLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddLiveAppRecordConfigOutcomeCallable addLiveAppRecordConfigCallable(const Model::AddLiveAppRecordConfigRequest& request) const;
 			BatchAddCdnDomainOutcome batchAddCdnDomain(const Model::BatchAddCdnDomainRequest &request)const;
 			void batchAddCdnDomainAsync(const Model::BatchAddCdnDomainRequest& request, const BatchAddCdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchAddCdnDomainOutcomeCallable batchAddCdnDomainCallable(const Model::BatchAddCdnDomainRequest& request) const;
-			BatchDeleteCdnDomainConfigOutcome batchDeleteCdnDomainConfig(const Model::BatchDeleteCdnDomainConfigRequest &request)const;
-			void batchDeleteCdnDomainConfigAsync(const Model::BatchDeleteCdnDomainConfigRequest& request, const BatchDeleteCdnDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			BatchDeleteCdnDomainConfigOutcomeCallable batchDeleteCdnDomainConfigCallable(const Model::BatchDeleteCdnDomainConfigRequest& request) const;
 			BatchSetCdnDomainConfigOutcome batchSetCdnDomainConfig(const Model::BatchSetCdnDomainConfigRequest &request)const;
 			void batchSetCdnDomainConfigAsync(const Model::BatchSetCdnDomainConfigRequest& request, const BatchSetCdnDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchSetCdnDomainConfigOutcomeCallable batchSetCdnDomainConfigCallable(const Model::BatchSetCdnDomainConfigRequest& request) const;
@@ -1085,9 +1029,6 @@ namespace AlibabaCloud
 			DeleteFCTriggerOutcome deleteFCTrigger(const Model::DeleteFCTriggerRequest &request)const;
 			void deleteFCTriggerAsync(const Model::DeleteFCTriggerRequest& request, const DeleteFCTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFCTriggerOutcomeCallable deleteFCTriggerCallable(const Model::DeleteFCTriggerRequest& request) const;
-			DeleteHttpHeaderConfigOutcome deleteHttpHeaderConfig(const Model::DeleteHttpHeaderConfigRequest &request)const;
-			void deleteHttpHeaderConfigAsync(const Model::DeleteHttpHeaderConfigRequest& request, const DeleteHttpHeaderConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteHttpHeaderConfigOutcomeCallable deleteHttpHeaderConfigCallable(const Model::DeleteHttpHeaderConfigRequest& request) const;
 			DeleteRealtimeLogDeliveryOutcome deleteRealtimeLogDelivery(const Model::DeleteRealtimeLogDeliveryRequest &request)const;
 			void deleteRealtimeLogDeliveryAsync(const Model::DeleteRealtimeLogDeliveryRequest& request, const DeleteRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRealtimeLogDeliveryOutcomeCallable deleteRealtimeLogDeliveryCallable(const Model::DeleteRealtimeLogDeliveryRequest& request) const;
@@ -1289,9 +1230,6 @@ namespace AlibabaCloud
 			DescribeDomainReqHitRateDataOutcome describeDomainReqHitRateData(const Model::DescribeDomainReqHitRateDataRequest &request)const;
 			void describeDomainReqHitRateDataAsync(const Model::DescribeDomainReqHitRateDataRequest& request, const DescribeDomainReqHitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainReqHitRateDataOutcomeCallable describeDomainReqHitRateDataCallable(const Model::DescribeDomainReqHitRateDataRequest& request) const;
-			DescribeDomainSlowRatioOutcome describeDomainSlowRatio(const Model::DescribeDomainSlowRatioRequest &request)const;
-			void describeDomainSlowRatioAsync(const Model::DescribeDomainSlowRatioRequest& request, const DescribeDomainSlowRatioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDomainSlowRatioOutcomeCallable describeDomainSlowRatioCallable(const Model::DescribeDomainSlowRatioRequest& request) const;
 			DescribeDomainSrcBpsDataOutcome describeDomainSrcBpsData(const Model::DescribeDomainSrcBpsDataRequest &request)const;
 			void describeDomainSrcBpsDataAsync(const Model::DescribeDomainSrcBpsDataRequest& request, const DescribeDomainSrcBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainSrcBpsDataOutcomeCallable describeDomainSrcBpsDataCallable(const Model::DescribeDomainSrcBpsDataRequest& request) const;
@@ -1352,18 +1290,9 @@ namespace AlibabaCloud
 			DescribeL2VipsByDomainOutcome describeL2VipsByDomain(const Model::DescribeL2VipsByDomainRequest &request)const;
 			void describeL2VipsByDomainAsync(const Model::DescribeL2VipsByDomainRequest& request, const DescribeL2VipsByDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeL2VipsByDomainOutcomeCallable describeL2VipsByDomainCallable(const Model::DescribeL2VipsByDomainRequest& request) const;
-			DescribeL2VipsByDynamicDomainOutcome describeL2VipsByDynamicDomain(const Model::DescribeL2VipsByDynamicDomainRequest &request)const;
-			void describeL2VipsByDynamicDomainAsync(const Model::DescribeL2VipsByDynamicDomainRequest& request, const DescribeL2VipsByDynamicDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeL2VipsByDynamicDomainOutcomeCallable describeL2VipsByDynamicDomainCallable(const Model::DescribeL2VipsByDynamicDomainRequest& request) const;
 			DescribeLivePullStreamConfigOutcome describeLivePullStreamConfig(const Model::DescribeLivePullStreamConfigRequest &request)const;
 			void describeLivePullStreamConfigAsync(const Model::DescribeLivePullStreamConfigRequest& request, const DescribeLivePullStreamConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLivePullStreamConfigOutcomeCallable describeLivePullStreamConfigCallable(const Model::DescribeLivePullStreamConfigRequest& request) const;
-			DescribeLiveRecordConfigOutcome describeLiveRecordConfig(const Model::DescribeLiveRecordConfigRequest &request)const;
-			void describeLiveRecordConfigAsync(const Model::DescribeLiveRecordConfigRequest& request, const DescribeLiveRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveRecordConfigOutcomeCallable describeLiveRecordConfigCallable(const Model::DescribeLiveRecordConfigRequest& request) const;
-			DescribeLiveSnapshotConfigOutcome describeLiveSnapshotConfig(const Model::DescribeLiveSnapshotConfigRequest &request)const;
-			void describeLiveSnapshotConfigAsync(const Model::DescribeLiveSnapshotConfigRequest& request, const DescribeLiveSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveSnapshotConfigOutcomeCallable describeLiveSnapshotConfigCallable(const Model::DescribeLiveSnapshotConfigRequest& request) const;
 			DescribeLiveStreamBitRateDataOutcome describeLiveStreamBitRateData(const Model::DescribeLiveStreamBitRateDataRequest &request)const;
 			void describeLiveStreamBitRateDataAsync(const Model::DescribeLiveStreamBitRateDataRequest& request, const DescribeLiveStreamBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamBitRateDataOutcomeCallable describeLiveStreamBitRateDataCallable(const Model::DescribeLiveStreamBitRateDataRequest& request) const;
@@ -1382,15 +1311,9 @@ namespace AlibabaCloud
 			DescribeLiveStreamSnapshotInfoOutcome describeLiveStreamSnapshotInfo(const Model::DescribeLiveStreamSnapshotInfoRequest &request)const;
 			void describeLiveStreamSnapshotInfoAsync(const Model::DescribeLiveStreamSnapshotInfoRequest& request, const DescribeLiveStreamSnapshotInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamSnapshotInfoOutcomeCallable describeLiveStreamSnapshotInfoCallable(const Model::DescribeLiveStreamSnapshotInfoRequest& request) const;
-			DescribeLiveStreamTranscodeInfoOutcome describeLiveStreamTranscodeInfo(const Model::DescribeLiveStreamTranscodeInfoRequest &request)const;
-			void describeLiveStreamTranscodeInfoAsync(const Model::DescribeLiveStreamTranscodeInfoRequest& request, const DescribeLiveStreamTranscodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveStreamTranscodeInfoOutcomeCallable describeLiveStreamTranscodeInfoCallable(const Model::DescribeLiveStreamTranscodeInfoRequest& request) const;
 			DescribeLiveStreamsBlockListOutcome describeLiveStreamsBlockList(const Model::DescribeLiveStreamsBlockListRequest &request)const;
 			void describeLiveStreamsBlockListAsync(const Model::DescribeLiveStreamsBlockListRequest& request, const DescribeLiveStreamsBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamsBlockListOutcomeCallable describeLiveStreamsBlockListCallable(const Model::DescribeLiveStreamsBlockListRequest& request) const;
-			DescribeLiveStreamsControlHistoryOutcome describeLiveStreamsControlHistory(const Model::DescribeLiveStreamsControlHistoryRequest &request)const;
-			void describeLiveStreamsControlHistoryAsync(const Model::DescribeLiveStreamsControlHistoryRequest& request, const DescribeLiveStreamsControlHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLiveStreamsControlHistoryOutcomeCallable describeLiveStreamsControlHistoryCallable(const Model::DescribeLiveStreamsControlHistoryRequest& request) const;
 			DescribeLiveStreamsFrameRateAndBitRateDataOutcome describeLiveStreamsFrameRateAndBitRateData(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest &request)const;
 			void describeLiveStreamsFrameRateAndBitRateDataAsync(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest& request, const DescribeLiveStreamsFrameRateAndBitRateDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveStreamsFrameRateAndBitRateDataOutcomeCallable describeLiveStreamsFrameRateAndBitRateDataCallable(const Model::DescribeLiveStreamsFrameRateAndBitRateDataRequest& request) const;
@@ -1430,9 +1353,6 @@ namespace AlibabaCloud
 			DescribeUserConfigsOutcome describeUserConfigs(const Model::DescribeUserConfigsRequest &request)const;
 			void describeUserConfigsAsync(const Model::DescribeUserConfigsRequest& request, const DescribeUserConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserConfigsOutcomeCallable describeUserConfigsCallable(const Model::DescribeUserConfigsRequest& request) const;
-			DescribeUserCustomLogConfigOutcome describeUserCustomLogConfig(const Model::DescribeUserCustomLogConfigRequest &request)const;
-			void describeUserCustomLogConfigAsync(const Model::DescribeUserCustomLogConfigRequest& request, const DescribeUserCustomLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeUserCustomLogConfigOutcomeCallable describeUserCustomLogConfigCallable(const Model::DescribeUserCustomLogConfigRequest& request) const;
 			DescribeUserCustomerLabelsOutcome describeUserCustomerLabels(const Model::DescribeUserCustomerLabelsRequest &request)const;
 			void describeUserCustomerLabelsAsync(const Model::DescribeUserCustomerLabelsRequest& request, const DescribeUserCustomerLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserCustomerLabelsOutcomeCallable describeUserCustomerLabelsCallable(const Model::DescribeUserCustomerLabelsRequest& request) const;
