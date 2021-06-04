@@ -267,6 +267,19 @@ void DescribeNetworkInterfacesRequest::setNetworkInterfaceId(const std::vector<s
 	}
 }
 
+std::vector<std::string> DescribeNetworkInterfacesRequest::getIpv6Address()const
+{
+	return ipv6Address_;
+}
+
+void DescribeNetworkInterfacesRequest::setIpv6Address(const std::vector<std::string>& ipv6Address)
+{
+	ipv6Address_ = ipv6Address;
+	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++) {
+		setParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
+	}
+}
+
 std::string DescribeNetworkInterfacesRequest::getStatus()const
 {
 	return status_;

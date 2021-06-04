@@ -104,6 +104,17 @@ void DescribeInvocationsRequest::setContentEncoding(const std::string& contentEn
 	setParameter("ContentEncoding", contentEncoding);
 }
 
+std::string DescribeInvocationsRequest::getRepeatMode()const
+{
+	return repeatMode_;
+}
+
+void DescribeInvocationsRequest::setRepeatMode(const std::string& repeatMode)
+{
+	repeatMode_ = repeatMode;
+	setParameter("RepeatMode", repeatMode);
+}
+
 long DescribeInvocationsRequest::getPageSize()const
 {
 	return pageSize_;

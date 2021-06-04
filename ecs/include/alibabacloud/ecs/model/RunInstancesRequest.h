@@ -33,9 +33,9 @@ namespace AlibabaCloud
 			public:
 				struct Arn
 				{
-					long assumeRoleFor;
-					std::string rolearn;
 					std::string roleType;
+					std::string rolearn;
+					long assumeRoleFor;
 				};
 				struct Tag
 				{
@@ -44,28 +44,28 @@ namespace AlibabaCloud
 				};
 				struct NetworkInterface
 				{
-					std::string primaryIpAddress;
 					std::string vSwitchId;
-					std::string securityGroupId;
-					std::vector<std::string> securityGroupIds;
 					std::string networkInterfaceName;
 					std::string description;
+					std::string securityGroupId;
+					std::string primaryIpAddress;
 					int queueNumber;
+					std::vector<std::string> securityGroupIds;
 				};
 				struct DataDisk
 				{
-					int size;
-					std::string snapshotId;
-					std::string category;
-					std::string encrypted;
-					std::string kMSKeyId;
-					std::string diskName;
-					std::string description;
-					std::string device;
-					bool deleteWithInstance;
 					std::string performanceLevel;
 					std::string autoSnapshotPolicyId;
+					std::string encrypted;
+					std::string description;
+					std::string snapshotId;
+					std::string device;
+					int size;
+					std::string diskName;
+					std::string category;
 					std::string encryptAlgorithm;
+					bool deleteWithInstance;
+					std::string kMSKeyId;
 				};
 
 			public:
@@ -144,10 +144,10 @@ namespace AlibabaCloud
 				void setSystemDiskDiskName(const std::string& systemDiskDiskName);
 				std::string getDedicatedHostId()const;
 				void setDedicatedHostId(const std::string& dedicatedHostId);
-				std::vector<std::string> getSecurityGroupIds()const;
-				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
 				int getSpotDuration()const;
 				void setSpotDuration(int spotDuration);
+				std::vector<std::string> getSecurityGroupIds()const;
+				void setSecurityGroupIds(const std::vector<std::string>& securityGroupIds);
 				std::string getSystemDiskSize()const;
 				void setSystemDiskSize(const std::string& systemDiskSize);
 				std::string getImageFamily()const;
@@ -212,10 +212,10 @@ namespace AlibabaCloud
 				void setHttpEndpoint(const std::string& httpEndpoint);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
-				std::vector<NetworkInterface> getNetworkInterface()const;
-				void setNetworkInterface(const std::vector<NetworkInterface>& networkInterface);
 				std::string getDeploymentSetId()const;
 				void setDeploymentSetId(const std::string& deploymentSetId);
+				std::vector<NetworkInterface> getNetworkInterface()const;
+				void setNetworkInterface(const std::vector<NetworkInterface>& networkInterface);
 				int getAmount()const;
 				void setAmount(int amount);
 				std::string getOwnerAccount()const;
@@ -228,12 +228,12 @@ namespace AlibabaCloud
 				void setAutoReleaseTime(const std::string& autoReleaseTime);
 				std::string getCreditSpecification()const;
 				void setCreditSpecification(const std::string& creditSpecification);
-				std::vector<DataDisk> getDataDisk()const;
-				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				long getLaunchTemplateVersion()const;
 				void setLaunchTemplateVersion(long launchTemplateVersion);
 				std::string getSchedulerOptionsManagedPrivateSpaceId()const;
 				void setSchedulerOptionsManagedPrivateSpaceId(const std::string& schedulerOptionsManagedPrivateSpaceId);
+				std::vector<DataDisk> getDataDisk()const;
+				void setDataDisk(const std::vector<DataDisk>& dataDisk);
 				std::string getStorageSetId()const;
 				void setStorageSetId(const std::string& storageSetId);
 				std::string getHttpTokens()const;
@@ -278,8 +278,8 @@ namespace AlibabaCloud
 				std::string schedulerOptionsDedicatedHostClusterId_;
 				std::string systemDiskDiskName_;
 				std::string dedicatedHostId_;
-				std::vector<std::string> securityGroupIds_;
 				int spotDuration_;
+				std::vector<std::string> securityGroupIds_;
 				std::string systemDiskSize_;
 				std::string imageFamily_;
 				std::string launchTemplateName_;
@@ -312,17 +312,17 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string httpEndpoint_;
 				std::string instanceChargeType_;
-				std::vector<NetworkInterface> networkInterface_;
 				std::string deploymentSetId_;
+				std::vector<NetworkInterface> networkInterface_;
 				int amount_;
 				std::string ownerAccount_;
 				std::string tenancy_;
 				std::string ramRoleName_;
 				std::string autoReleaseTime_;
 				std::string creditSpecification_;
-				std::vector<DataDisk> dataDisk_;
 				long launchTemplateVersion_;
 				std::string schedulerOptionsManagedPrivateSpaceId_;
+				std::vector<DataDisk> dataDisk_;
 				std::string storageSetId_;
 				std::string httpTokens_;
 				std::string systemDiskDescription_;

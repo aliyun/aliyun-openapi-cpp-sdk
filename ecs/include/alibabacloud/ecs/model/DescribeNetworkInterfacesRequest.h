@@ -83,6 +83,8 @@ namespace AlibabaCloud
 				void setMaxResults(int maxResults);
 				std::vector<std::string> getNetworkInterfaceId()const;
 				void setNetworkInterfaceId(const std::vector<std::string>& networkInterfaceId);
+				std::vector<std::string> getIpv6Address()const;
+				void setIpv6Address(const std::vector<std::string>& ipv6Address);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
@@ -108,6 +110,7 @@ namespace AlibabaCloud
 				std::string primaryIpAddress_;
 				int maxResults_;
 				std::vector<std::string> networkInterfaceId_;
+				std::vector<std::string> ipv6Address_;
 				std::string status_;
 
 			};

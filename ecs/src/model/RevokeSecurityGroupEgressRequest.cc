@@ -71,6 +71,17 @@ void RevokeSecurityGroupEgressRequest::setClientToken(const std::string& clientT
 	setParameter("ClientToken", clientToken);
 }
 
+std::string RevokeSecurityGroupEgressRequest::getDestPrefixListId()const
+{
+	return destPrefixListId_;
+}
+
+void RevokeSecurityGroupEgressRequest::setDestPrefixListId(const std::string& destPrefixListId)
+{
+	destPrefixListId_ = destPrefixListId;
+	setParameter("DestPrefixListId", destPrefixListId);
+}
+
 std::string RevokeSecurityGroupEgressRequest::getSecurityGroupId()const
 {
 	return securityGroupId_;

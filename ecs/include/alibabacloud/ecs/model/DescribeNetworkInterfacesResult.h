@@ -65,10 +65,10 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
-					std::string privateIpAddress;
 					std::string description;
-					std::string resourceGroupId;
+					std::string privateIpAddress;
 					bool serviceManaged;
+					std::string resourceGroupId;
 					Attachment attachment;
 					std::string networkInterfaceId;
 					std::vector<NetworkInterfaceSet::Ipv6Set> ipv6Sets;
@@ -85,8 +85,8 @@ namespace AlibabaCloud
 					std::vector<std::string> securityGroupIds;
 					long serviceID;
 					std::string type;
-					int queueNumber;
 					int queuePairNumber;
+					int queueNumber;
 					std::string vpcId;
 					std::string creationTime;
 					std::vector<NetworkInterfaceSet::PrivateIpSet> privateIpSets;
@@ -97,8 +97,8 @@ namespace AlibabaCloud
 				explicit DescribeNetworkInterfacesResult(const std::string &payload);
 				~DescribeNetworkInterfacesResult();
 				int getTotalCount()const;
-				int getPageSize()const;
 				std::string getNextToken()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<NetworkInterfaceSet> getNetworkInterfaceSets()const;
 
@@ -106,8 +106,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
 				std::string nextToken_;
+				int pageSize_;
 				int pageNumber_;
 				std::vector<NetworkInterfaceSet> networkInterfaceSets_;
 

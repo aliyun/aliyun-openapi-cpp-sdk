@@ -298,6 +298,19 @@ void DescribeInstancesRequest::setMaxResults(int maxResults)
 	setParameter("MaxResults", std::to_string(maxResults));
 }
 
+std::vector<std::string> DescribeInstancesRequest::getIpv6Address()const
+{
+	return ipv6Address_;
+}
+
+void DescribeInstancesRequest::setIpv6Address(const std::vector<std::string>& ipv6Address)
+{
+	ipv6Address_ = ipv6Address;
+	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++) {
+		setParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
+	}
+}
+
 std::string DescribeInstancesRequest::getInstanceNetworkType()const
 {
 	return instanceNetworkType_;

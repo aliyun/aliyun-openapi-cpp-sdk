@@ -71,6 +71,17 @@ void ModifySecurityGroupEgressRuleRequest::setClientToken(const std::string& cli
 	setParameter("ClientToken", clientToken);
 }
 
+std::string ModifySecurityGroupEgressRuleRequest::getDestPrefixListId()const
+{
+	return destPrefixListId_;
+}
+
+void ModifySecurityGroupEgressRuleRequest::setDestPrefixListId(const std::string& destPrefixListId)
+{
+	destPrefixListId_ = destPrefixListId;
+	setParameter("DestPrefixListId", destPrefixListId);
+}
+
 std::string ModifySecurityGroupEgressRuleRequest::getSecurityGroupId()const
 {
 	return securityGroupId_;

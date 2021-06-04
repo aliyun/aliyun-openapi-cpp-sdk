@@ -131,6 +131,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateNetworkInterfacePermissionResult.h
 	include/alibabacloud/ecs/model/CreatePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/CreatePhysicalConnectionResult.h
+	include/alibabacloud/ecs/model/CreatePrefixListRequest.h
+	include/alibabacloud/ecs/model/CreatePrefixListResult.h
 	include/alibabacloud/ecs/model/CreateRouteEntryRequest.h
 	include/alibabacloud/ecs/model/CreateRouteEntryResult.h
 	include/alibabacloud/ecs/model/CreateRouterInterfaceRequest.h
@@ -203,6 +205,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteNetworkInterfacePermissionResult.h
 	include/alibabacloud/ecs/model/DeletePhysicalConnectionRequest.h
 	include/alibabacloud/ecs/model/DeletePhysicalConnectionResult.h
+	include/alibabacloud/ecs/model/DeletePrefixListRequest.h
+	include/alibabacloud/ecs/model/DeletePrefixListResult.h
 	include/alibabacloud/ecs/model/DeleteRouteEntryRequest.h
 	include/alibabacloud/ecs/model/DeleteRouteEntryResult.h
 	include/alibabacloud/ecs/model/DeleteRouterInterfaceRequest.h
@@ -367,6 +371,12 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeNewProjectEipMonitorDataResult.h
 	include/alibabacloud/ecs/model/DescribePhysicalConnectionsRequest.h
 	include/alibabacloud/ecs/model/DescribePhysicalConnectionsResult.h
+	include/alibabacloud/ecs/model/DescribePrefixListAssociationsRequest.h
+	include/alibabacloud/ecs/model/DescribePrefixListAssociationsResult.h
+	include/alibabacloud/ecs/model/DescribePrefixListAttributesRequest.h
+	include/alibabacloud/ecs/model/DescribePrefixListAttributesResult.h
+	include/alibabacloud/ecs/model/DescribePrefixListsRequest.h
+	include/alibabacloud/ecs/model/DescribePrefixListsResult.h
 	include/alibabacloud/ecs/model/DescribePriceRequest.h
 	include/alibabacloud/ecs/model/DescribePriceResult.h
 	include/alibabacloud/ecs/model/DescribeRecommendInstanceTypeRequest.h
@@ -563,6 +573,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyNetworkInterfaceAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyPhysicalConnectionAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyPrefixListRequest.h
+	include/alibabacloud/ecs/model/ModifyPrefixListResult.h
 	include/alibabacloud/ecs/model/ModifyPrepayInstanceSpecRequest.h
 	include/alibabacloud/ecs/model/ModifyPrepayInstanceSpecResult.h
 	include/alibabacloud/ecs/model/ModifyReservedInstanceAttributeRequest.h
@@ -800,6 +812,8 @@ set(ecs_src
 	src/model/CreateNetworkInterfacePermissionResult.cc
 	src/model/CreatePhysicalConnectionRequest.cc
 	src/model/CreatePhysicalConnectionResult.cc
+	src/model/CreatePrefixListRequest.cc
+	src/model/CreatePrefixListResult.cc
 	src/model/CreateRouteEntryRequest.cc
 	src/model/CreateRouteEntryResult.cc
 	src/model/CreateRouterInterfaceRequest.cc
@@ -872,6 +886,8 @@ set(ecs_src
 	src/model/DeleteNetworkInterfacePermissionResult.cc
 	src/model/DeletePhysicalConnectionRequest.cc
 	src/model/DeletePhysicalConnectionResult.cc
+	src/model/DeletePrefixListRequest.cc
+	src/model/DeletePrefixListResult.cc
 	src/model/DeleteRouteEntryRequest.cc
 	src/model/DeleteRouteEntryResult.cc
 	src/model/DeleteRouterInterfaceRequest.cc
@@ -1036,6 +1052,12 @@ set(ecs_src
 	src/model/DescribeNewProjectEipMonitorDataResult.cc
 	src/model/DescribePhysicalConnectionsRequest.cc
 	src/model/DescribePhysicalConnectionsResult.cc
+	src/model/DescribePrefixListAssociationsRequest.cc
+	src/model/DescribePrefixListAssociationsResult.cc
+	src/model/DescribePrefixListAttributesRequest.cc
+	src/model/DescribePrefixListAttributesResult.cc
+	src/model/DescribePrefixListsRequest.cc
+	src/model/DescribePrefixListsResult.cc
 	src/model/DescribePriceRequest.cc
 	src/model/DescribePriceResult.cc
 	src/model/DescribeRecommendInstanceTypeRequest.cc
@@ -1232,6 +1254,8 @@ set(ecs_src
 	src/model/ModifyNetworkInterfaceAttributeResult.cc
 	src/model/ModifyPhysicalConnectionAttributeRequest.cc
 	src/model/ModifyPhysicalConnectionAttributeResult.cc
+	src/model/ModifyPrefixListRequest.cc
+	src/model/ModifyPrefixListResult.cc
 	src/model/ModifyPrepayInstanceSpecRequest.cc
 	src/model/ModifyPrepayInstanceSpecResult.cc
 	src/model/ModifyReservedInstanceAttributeRequest.cc

@@ -89,6 +89,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				int getMaxResults()const;
 				void setMaxResults(int maxResults);
+				std::vector<std::string> getIpv6Address()const;
+				void setIpv6Address(const std::vector<std::string>& ipv6Address);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
 				std::string getStatus()const;
@@ -163,6 +165,7 @@ namespace AlibabaCloud
 				std::string internetChargeType_;
 				std::string zoneId_;
 				int maxResults_;
+				std::vector<std::string> ipv6Address_;
 				std::string instanceNetworkType_;
 				std::string status_;
 				std::string imageId_;

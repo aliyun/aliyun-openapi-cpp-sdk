@@ -43,8 +43,8 @@ namespace AlibabaCloud
 					};
 					struct EipAddress
 					{
-						std::string allocationId;
 						int bandwidth;
+						std::string allocationId;
 						std::string ipAddress;
 						bool isSupportUnassociate;
 						std::string internetChargeType;
@@ -95,8 +95,8 @@ namespace AlibabaCloud
 						std::string type;
 						std::vector<NetworkInterface::Ipv6Set> ipv6Sets;
 						std::string primaryIpAddress;
-						std::string networkInterfaceId;
 						std::string macAddress;
+						std::string networkInterfaceId;
 						std::vector<NetworkInterface::PrivateIpSet> privateIpSets;
 					};
 					struct LockReason
@@ -120,8 +120,8 @@ namespace AlibabaCloud
 					EipAddress eipAddress;
 					std::string imageId;
 					std::vector<Instance::Tag> tags;
-					std::string hostName;
 					std::string vlanId;
+					std::string hostName;
 					std::string status;
 					HibernationOptions hibernationOptions;
 					MetadataOptions metadataOptions;
@@ -133,8 +133,8 @@ namespace AlibabaCloud
 					VpcAttributes vpcAttributes;
 					std::vector<std::string> securityGroupIds;
 					std::string internetChargeType;
-					std::string instanceName;
 					std::string deploymentSetId;
+					std::string instanceName;
 					int internetMaxBandwidthOut;
 					std::string serialNumber;
 					std::string oSType;
@@ -153,8 +153,8 @@ namespace AlibabaCloud
 					std::string saleCycle;
 					bool deviceAvailable;
 					std::string instanceType;
-					std::string oSNameEn;
 					std::string spotStrategy;
+					std::string oSNameEn;
 					std::string keyPairName;
 					bool ioOptimized;
 					std::string zoneId;
@@ -179,8 +179,8 @@ namespace AlibabaCloud
 				~DescribeInstancesResult();
 				std::vector<Instance> getInstances()const;
 				int getTotalCount()const;
-				int getPageSize()const;
 				std::string getNextToken()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 
 			protected:
@@ -188,8 +188,8 @@ namespace AlibabaCloud
 			private:
 				std::vector<Instance> instances_;
 				int totalCount_;
-				int pageSize_;
 				std::string nextToken_;
+				int pageSize_;
 				int pageNumber_;
 
 			};

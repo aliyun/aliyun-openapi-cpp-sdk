@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string sourcePortRange;
 					std::string priority;
 					std::string createTime;
+					std::string destPrefixListName;
 					std::string ipv6SourceCidrIp;
 					std::string nicType;
 					std::string destGroupId;
@@ -47,12 +48,15 @@ namespace AlibabaCloud
 					std::string sourceGroupName;
 					std::string portRange;
 					std::string destGroupOwnerAccount;
+					std::string destPrefixListId;
 					std::string sourceCidrIp;
+					std::string sourcePrefixListName;
 					std::string ipProtocol;
 					std::string destGroupName;
 					std::string destCidrIp;
 					std::string sourceGroupOwnerAccount;
 					std::string ipv6DestCidrIp;
+					std::string sourcePrefixListId;
 				};
 
 

@@ -43,44 +43,44 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 	for (auto valueNetworkInterfaceSetsNetworkInterfaceSet : allNetworkInterfaceSetsNode)
 	{
 		NetworkInterfaceSet networkInterfaceSetsObject;
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceId"].isNull())
-			networkInterfaceSetsObject.networkInterfaceId = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceId"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Status"].isNull())
-			networkInterfaceSetsObject.status = valueNetworkInterfaceSetsNetworkInterfaceSet["Status"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Type"].isNull())
-			networkInterfaceSetsObject.type = valueNetworkInterfaceSetsNetworkInterfaceSet["Type"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["CreationTime"].isNull())
+			networkInterfaceSetsObject.creationTime = valueNetworkInterfaceSetsNetworkInterfaceSet["CreationTime"].asString();
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["VpcId"].isNull())
 			networkInterfaceSetsObject.vpcId = valueNetworkInterfaceSetsNetworkInterfaceSet["VpcId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Type"].isNull())
+			networkInterfaceSetsObject.type = valueNetworkInterfaceSetsNetworkInterfaceSet["Type"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Status"].isNull())
+			networkInterfaceSetsObject.status = valueNetworkInterfaceSetsNetworkInterfaceSet["Status"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceTrafficMode"].isNull())
+			networkInterfaceSetsObject.networkInterfaceTrafficMode = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceTrafficMode"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceName"].isNull())
+			networkInterfaceSetsObject.networkInterfaceName = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceName"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["MacAddress"].isNull())
+			networkInterfaceSetsObject.macAddress = valueNetworkInterfaceSetsNetworkInterfaceSet["MacAddress"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["QueuePairNumber"].isNull())
+			networkInterfaceSetsObject.queuePairNumber = std::stoi(valueNetworkInterfaceSetsNetworkInterfaceSet["QueuePairNumber"].asString());
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceId"].isNull())
+			networkInterfaceSetsObject.networkInterfaceId = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceID"].isNull())
+			networkInterfaceSetsObject.serviceID = std::stol(valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceID"].asString());
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceId"].isNull())
+			networkInterfaceSetsObject.instanceId = valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["OwnerId"].isNull())
+			networkInterfaceSetsObject.ownerId = valueNetworkInterfaceSetsNetworkInterfaceSet["OwnerId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceManaged"].isNull())
+			networkInterfaceSetsObject.serviceManaged = valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceManaged"].asString() == "true";
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["VSwitchId"].isNull())
 			networkInterfaceSetsObject.vSwitchId = valueNetworkInterfaceSetsNetworkInterfaceSet["VSwitchId"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Description"].isNull())
+			networkInterfaceSetsObject.description = valueNetworkInterfaceSetsNetworkInterfaceSet["Description"].asString();
+		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ResourceGroupId"].isNull())
+			networkInterfaceSetsObject.resourceGroupId = valueNetworkInterfaceSetsNetworkInterfaceSet["ResourceGroupId"].asString();
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ZoneId"].isNull())
 			networkInterfaceSetsObject.zoneId = valueNetworkInterfaceSetsNetworkInterfaceSet["ZoneId"].asString();
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["PrivateIpAddress"].isNull())
 			networkInterfaceSetsObject.privateIpAddress = valueNetworkInterfaceSetsNetworkInterfaceSet["PrivateIpAddress"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["MacAddress"].isNull())
-			networkInterfaceSetsObject.macAddress = valueNetworkInterfaceSetsNetworkInterfaceSet["MacAddress"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceName"].isNull())
-			networkInterfaceSetsObject.networkInterfaceName = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceName"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["Description"].isNull())
-			networkInterfaceSetsObject.description = valueNetworkInterfaceSetsNetworkInterfaceSet["Description"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceId"].isNull())
-			networkInterfaceSetsObject.instanceId = valueNetworkInterfaceSetsNetworkInterfaceSet["InstanceId"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["CreationTime"].isNull())
-			networkInterfaceSetsObject.creationTime = valueNetworkInterfaceSetsNetworkInterfaceSet["CreationTime"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ResourceGroupId"].isNull())
-			networkInterfaceSetsObject.resourceGroupId = valueNetworkInterfaceSetsNetworkInterfaceSet["ResourceGroupId"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceID"].isNull())
-			networkInterfaceSetsObject.serviceID = std::stol(valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceID"].asString());
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceManaged"].isNull())
-			networkInterfaceSetsObject.serviceManaged = valueNetworkInterfaceSetsNetworkInterfaceSet["ServiceManaged"].asString() == "true";
 		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["QueueNumber"].isNull())
 			networkInterfaceSetsObject.queueNumber = std::stoi(valueNetworkInterfaceSetsNetworkInterfaceSet["QueueNumber"].asString());
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["OwnerId"].isNull())
-			networkInterfaceSetsObject.ownerId = valueNetworkInterfaceSetsNetworkInterfaceSet["OwnerId"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceTrafficMode"].isNull())
-			networkInterfaceSetsObject.networkInterfaceTrafficMode = valueNetworkInterfaceSetsNetworkInterfaceSet["NetworkInterfaceTrafficMode"].asString();
-		if(!valueNetworkInterfaceSetsNetworkInterfaceSet["QueuePairNumber"].isNull())
-			networkInterfaceSetsObject.queuePairNumber = std::stoi(valueNetworkInterfaceSetsNetworkInterfaceSet["QueuePairNumber"].asString());
 		auto allPrivateIpSetsNode = valueNetworkInterfaceSetsNetworkInterfaceSet["PrivateIpSets"]["PrivateIpSet"];
 		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetPrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
 		{
@@ -108,10 +108,10 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetTagsTag : allTagsNode)
 		{
 			NetworkInterfaceSet::Tag tagsObject;
-			if(!valueNetworkInterfaceSetsNetworkInterfaceSetTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueNetworkInterfaceSetsNetworkInterfaceSetTagsTag["TagKey"].asString();
 			if(!valueNetworkInterfaceSetsNetworkInterfaceSetTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueNetworkInterfaceSetsNetworkInterfaceSetTagsTag["TagValue"].asString();
+			if(!valueNetworkInterfaceSetsNetworkInterfaceSetTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueNetworkInterfaceSetsNetworkInterfaceSetTagsTag["TagKey"].asString();
 			networkInterfaceSetsObject.tags.push_back(tagsObject);
 		}
 		auto associatedPublicIpNode = value["AssociatedPublicIp"];
@@ -120,25 +120,25 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 		if(!associatedPublicIpNode["AllocationId"].isNull())
 			networkInterfaceSetsObject.associatedPublicIp.allocationId = associatedPublicIpNode["AllocationId"].asString();
 		auto attachmentNode = value["Attachment"];
+		if(!attachmentNode["DeviceIndex"].isNull())
+			networkInterfaceSetsObject.attachment.deviceIndex = std::stoi(attachmentNode["DeviceIndex"].asString());
 		if(!attachmentNode["InstanceId"].isNull())
 			networkInterfaceSetsObject.attachment.instanceId = attachmentNode["InstanceId"].asString();
 		if(!attachmentNode["TrunkNetworkInterfaceId"].isNull())
 			networkInterfaceSetsObject.attachment.trunkNetworkInterfaceId = attachmentNode["TrunkNetworkInterfaceId"].asString();
-		if(!attachmentNode["DeviceIndex"].isNull())
-			networkInterfaceSetsObject.attachment.deviceIndex = std::stoi(attachmentNode["DeviceIndex"].asString());
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			networkInterfaceSetsObject.securityGroupIds.push_back(value.asString());
 		networkInterfaceSets_.push_back(networkInterfaceSetsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -147,14 +147,14 @@ int DescribeNetworkInterfacesResult::getTotalCount()const
 	return totalCount_;
 }
 
-int DescribeNetworkInterfacesResult::getPageSize()const
-{
-	return pageSize_;
-}
-
 std::string DescribeNetworkInterfacesResult::getNextToken()const
 {
 	return nextToken_;
+}
+
+int DescribeNetworkInterfacesResult::getPageSize()const
+{
+	return pageSize_;
 }
 
 int DescribeNetworkInterfacesResult::getPageNumber()const

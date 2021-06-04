@@ -67,12 +67,14 @@ namespace AlibabaCloud
 				void setDiskCategory(const std::string& diskCategory);
 				int getStorageSetPartitionNumber()const;
 				void setStorageSetPartitionNumber(int storageSetPartitionNumber);
+				std::string getMultiAttach()const;
+				void setMultiAttach(const std::string& multiAttach);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
-				std::vector<Arn> getArn()const;
-				void setArn(const std::vector<Arn>& arn);
 				std::string getAdvancedFeatures()const;
 				void setAdvancedFeatures(const std::string& advancedFeatures);
+				std::vector<Arn> getArn()const;
+				void setArn(const std::vector<Arn>& arn);
 				std::string getDedicatedBlockStorageClusterId()const;
 				void setDedicatedBlockStorageClusterId(const std::string& dedicatedBlockStorageClusterId);
 				std::string getResourceOwnerAccount()const;
@@ -107,9 +109,10 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string diskCategory_;
 				int storageSetPartitionNumber_;
+				std::string multiAttach_;
 				std::vector<Tag> tag_;
-				std::vector<Arn> arn_;
 				std::string advancedFeatures_;
+				std::vector<Arn> arn_;
 				std::string dedicatedBlockStorageClusterId_;
 				std::string resourceOwnerAccount_;
 				std::string performanceLevel_;

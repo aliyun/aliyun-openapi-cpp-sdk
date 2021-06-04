@@ -49,6 +49,17 @@ void RevokeSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RevokeSecurityGroupRequest::getSourcePrefixListId()const
+{
+	return sourcePrefixListId_;
+}
+
+void RevokeSecurityGroupRequest::setSourcePrefixListId(const std::string& sourcePrefixListId)
+{
+	sourcePrefixListId_ = sourcePrefixListId;
+	setParameter("SourcePrefixListId", sourcePrefixListId);
+}
+
 std::string RevokeSecurityGroupRequest::getSourcePortRange()const
 {
 	return sourcePortRange_;

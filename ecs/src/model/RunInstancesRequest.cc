@@ -379,9 +379,9 @@ void RunInstancesRequest::setArn(const std::vector<Arn>& arn)
 	for(int dep1 = 0; dep1!= arn.size(); dep1++) {
 		auto arnObj = arn.at(dep1);
 		std::string arnObjStr = "Arn." + std::to_string(dep1 + 1);
-		setParameter(arnObjStr + ".AssumeRoleFor", std::to_string(arnObj.assumeRoleFor));
-		setParameter(arnObjStr + ".Rolearn", arnObj.rolearn);
 		setParameter(arnObjStr + ".RoleType", arnObj.roleType);
+		setParameter(arnObjStr + ".Rolearn", arnObj.rolearn);
+		setParameter(arnObjStr + ".AssumeRoleFor", std::to_string(arnObj.assumeRoleFor));
 	}
 }
 
@@ -429,6 +429,17 @@ void RunInstancesRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 	setParameter("DedicatedHostId", dedicatedHostId);
 }
 
+int RunInstancesRequest::getSpotDuration()const
+{
+	return spotDuration_;
+}
+
+void RunInstancesRequest::setSpotDuration(int spotDuration)
+{
+	spotDuration_ = spotDuration;
+	setParameter("SpotDuration", std::to_string(spotDuration));
+}
+
 std::vector<std::string> RunInstancesRequest::getSecurityGroupIds()const
 {
 	return securityGroupIds_;
@@ -440,17 +451,6 @@ void RunInstancesRequest::setSecurityGroupIds(const std::vector<std::string>& se
 	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
 		setParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
 	}
-}
-
-int RunInstancesRequest::getSpotDuration()const
-{
-	return spotDuration_;
-}
-
-void RunInstancesRequest::setSpotDuration(int spotDuration)
-{
-	spotDuration_ = spotDuration;
-	setParameter("SpotDuration", std::to_string(spotDuration));
 }
 
 std::string RunInstancesRequest::getSystemDiskSize()const
@@ -814,6 +814,17 @@ void RunInstancesRequest::setInstanceChargeType(const std::string& instanceCharg
 	setParameter("InstanceChargeType", instanceChargeType);
 }
 
+std::string RunInstancesRequest::getDeploymentSetId()const
+{
+	return deploymentSetId_;
+}
+
+void RunInstancesRequest::setDeploymentSetId(const std::string& deploymentSetId)
+{
+	deploymentSetId_ = deploymentSetId;
+	setParameter("DeploymentSetId", deploymentSetId);
+}
+
 std::vector<RunInstancesRequest::NetworkInterface> RunInstancesRequest::getNetworkInterface()const
 {
 	return networkInterface_;
@@ -825,27 +836,16 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<NetworkInterface
 	for(int dep1 = 0; dep1!= networkInterface.size(); dep1++) {
 		auto networkInterfaceObj = networkInterface.at(dep1);
 		std::string networkInterfaceObjStr = "NetworkInterface." + std::to_string(dep1 + 1);
-		setParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
 		setParameter(networkInterfaceObjStr + ".VSwitchId", networkInterfaceObj.vSwitchId);
+		setParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
+		setParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
 		setParameter(networkInterfaceObjStr + ".SecurityGroupId", networkInterfaceObj.securityGroupId);
+		setParameter(networkInterfaceObjStr + ".PrimaryIpAddress", networkInterfaceObj.primaryIpAddress);
+		setParameter(networkInterfaceObjStr + ".QueueNumber", std::to_string(networkInterfaceObj.queueNumber));
 		for(int dep2 = 0; dep2!= networkInterfaceObj.securityGroupIds.size(); dep2++) {
 			setParameter(networkInterfaceObjStr + ".SecurityGroupIds."+ std::to_string(dep2), networkInterfaceObj.securityGroupIds.at(dep2));
 		}
-		setParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
-		setParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
-		setParameter(networkInterfaceObjStr + ".QueueNumber", std::to_string(networkInterfaceObj.queueNumber));
 	}
-}
-
-std::string RunInstancesRequest::getDeploymentSetId()const
-{
-	return deploymentSetId_;
-}
-
-void RunInstancesRequest::setDeploymentSetId(const std::string& deploymentSetId)
-{
-	deploymentSetId_ = deploymentSetId;
-	setParameter("DeploymentSetId", deploymentSetId);
 }
 
 int RunInstancesRequest::getAmount()const
@@ -914,32 +914,6 @@ void RunInstancesRequest::setCreditSpecification(const std::string& creditSpecif
 	setParameter("CreditSpecification", creditSpecification);
 }
 
-std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk()const
-{
-	return dataDisk_;
-}
-
-void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
-{
-	dataDisk_ = dataDisk;
-	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
-		auto dataDiskObj = dataDisk.at(dep1);
-		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1 + 1);
-		setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
-		setParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
-		setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
-		setParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
-		setParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
-		setParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
-		setParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
-		setParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
-		setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
-		setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
-		setParameter(dataDiskObjStr + ".AutoSnapshotPolicyId", dataDiskObj.autoSnapshotPolicyId);
-		setParameter(dataDiskObjStr + ".EncryptAlgorithm", dataDiskObj.encryptAlgorithm);
-	}
-}
-
 long RunInstancesRequest::getLaunchTemplateVersion()const
 {
 	return launchTemplateVersion_;
@@ -960,6 +934,32 @@ void RunInstancesRequest::setSchedulerOptionsManagedPrivateSpaceId(const std::st
 {
 	schedulerOptionsManagedPrivateSpaceId_ = schedulerOptionsManagedPrivateSpaceId;
 	setParameter("SchedulerOptionsManagedPrivateSpaceId", schedulerOptionsManagedPrivateSpaceId);
+}
+
+std::vector<RunInstancesRequest::DataDisk> RunInstancesRequest::getDataDisk()const
+{
+	return dataDisk_;
+}
+
+void RunInstancesRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
+{
+	dataDisk_ = dataDisk;
+	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
+		auto dataDiskObj = dataDisk.at(dep1);
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1 + 1);
+		setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
+		setParameter(dataDiskObjStr + ".AutoSnapshotPolicyId", dataDiskObj.autoSnapshotPolicyId);
+		setParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
+		setParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
+		setParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
+		setParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
+		setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
+		setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
+		setParameter(dataDiskObjStr + ".EncryptAlgorithm", dataDiskObj.encryptAlgorithm);
+		setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
+		setParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
+	}
 }
 
 std::string RunInstancesRequest::getStorageSetId()const

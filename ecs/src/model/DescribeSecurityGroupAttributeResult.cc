@@ -57,6 +57,10 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 			permissionsObject.sourceCidrIp = valuePermissionsPermission["SourceCidrIp"].asString();
 		if(!valuePermissionsPermission["Ipv6SourceCidrIp"].isNull())
 			permissionsObject.ipv6SourceCidrIp = valuePermissionsPermission["Ipv6SourceCidrIp"].asString();
+		if(!valuePermissionsPermission["SourcePrefixListId"].isNull())
+			permissionsObject.sourcePrefixListId = valuePermissionsPermission["SourcePrefixListId"].asString();
+		if(!valuePermissionsPermission["SourcePrefixListName"].isNull())
+			permissionsObject.sourcePrefixListName = valuePermissionsPermission["SourcePrefixListName"].asString();
 		if(!valuePermissionsPermission["Policy"].isNull())
 			permissionsObject.policy = valuePermissionsPermission["Policy"].asString();
 		if(!valuePermissionsPermission["NicType"].isNull())
@@ -71,6 +75,10 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 			permissionsObject.destCidrIp = valuePermissionsPermission["DestCidrIp"].asString();
 		if(!valuePermissionsPermission["Ipv6DestCidrIp"].isNull())
 			permissionsObject.ipv6DestCidrIp = valuePermissionsPermission["Ipv6DestCidrIp"].asString();
+		if(!valuePermissionsPermission["DestPrefixListId"].isNull())
+			permissionsObject.destPrefixListId = valuePermissionsPermission["DestPrefixListId"].asString();
+		if(!valuePermissionsPermission["DestPrefixListName"].isNull())
+			permissionsObject.destPrefixListName = valuePermissionsPermission["DestPrefixListName"].asString();
 		if(!valuePermissionsPermission["DestGroupOwnerAccount"].isNull())
 			permissionsObject.destGroupOwnerAccount = valuePermissionsPermission["DestGroupOwnerAccount"].asString();
 		if(!valuePermissionsPermission["Priority"].isNull())

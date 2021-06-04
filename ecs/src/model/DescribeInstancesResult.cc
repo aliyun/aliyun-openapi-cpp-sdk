@@ -43,112 +43,112 @@ void DescribeInstancesResult::parse(const std::string &payload)
 	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!valueInstancesInstance["InstanceId"].isNull())
-			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
-		if(!valueInstancesInstance["InstanceName"].isNull())
-			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
-		if(!valueInstancesInstance["Description"].isNull())
-			instancesObject.description = valueInstancesInstance["Description"].asString();
-		if(!valueInstancesInstance["ImageId"].isNull())
-			instancesObject.imageId = valueInstancesInstance["ImageId"].asString();
-		if(!valueInstancesInstance["OSName"].isNull())
-			instancesObject.oSName = valueInstancesInstance["OSName"].asString();
-		if(!valueInstancesInstance["OSNameEn"].isNull())
-			instancesObject.oSNameEn = valueInstancesInstance["OSNameEn"].asString();
-		if(!valueInstancesInstance["OSType"].isNull())
-			instancesObject.oSType = valueInstancesInstance["OSType"].asString();
-		if(!valueInstancesInstance["RegionId"].isNull())
-			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
-		if(!valueInstancesInstance["ZoneId"].isNull())
-			instancesObject.zoneId = valueInstancesInstance["ZoneId"].asString();
-		if(!valueInstancesInstance["ClusterId"].isNull())
-			instancesObject.clusterId = valueInstancesInstance["ClusterId"].asString();
-		if(!valueInstancesInstance["InstanceType"].isNull())
-			instancesObject.instanceType = valueInstancesInstance["InstanceType"].asString();
-		if(!valueInstancesInstance["Cpu"].isNull())
-			instancesObject.cpu = std::stoi(valueInstancesInstance["Cpu"].asString());
-		if(!valueInstancesInstance["Memory"].isNull())
-			instancesObject.memory = std::stoi(valueInstancesInstance["Memory"].asString());
-		if(!valueInstancesInstance["HostName"].isNull())
-			instancesObject.hostName = valueInstancesInstance["HostName"].asString();
-		if(!valueInstancesInstance["DeploymentSetId"].isNull())
-			instancesObject.deploymentSetId = valueInstancesInstance["DeploymentSetId"].asString();
-		if(!valueInstancesInstance["DeploymentSetGroupNo"].isNull())
-			instancesObject.deploymentSetGroupNo = std::stoi(valueInstancesInstance["DeploymentSetGroupNo"].asString());
-		if(!valueInstancesInstance["Status"].isNull())
-			instancesObject.status = valueInstancesInstance["Status"].asString();
-		if(!valueInstancesInstance["SerialNumber"].isNull())
-			instancesObject.serialNumber = valueInstancesInstance["SerialNumber"].asString();
-		if(!valueInstancesInstance["InternetChargeType"].isNull())
-			instancesObject.internetChargeType = valueInstancesInstance["InternetChargeType"].asString();
-		if(!valueInstancesInstance["InternetMaxBandwidthIn"].isNull())
-			instancesObject.internetMaxBandwidthIn = std::stoi(valueInstancesInstance["InternetMaxBandwidthIn"].asString());
-		if(!valueInstancesInstance["InternetMaxBandwidthOut"].isNull())
-			instancesObject.internetMaxBandwidthOut = std::stoi(valueInstancesInstance["InternetMaxBandwidthOut"].asString());
-		if(!valueInstancesInstance["VlanId"].isNull())
-			instancesObject.vlanId = valueInstancesInstance["VlanId"].asString();
 		if(!valueInstancesInstance["CreationTime"].isNull())
 			instancesObject.creationTime = valueInstancesInstance["CreationTime"].asString();
-		if(!valueInstancesInstance["StartTime"].isNull())
-			instancesObject.startTime = valueInstancesInstance["StartTime"].asString();
-		if(!valueInstancesInstance["InstanceNetworkType"].isNull())
-			instancesObject.instanceNetworkType = valueInstancesInstance["InstanceNetworkType"].asString();
-		if(!valueInstancesInstance["InstanceChargeType"].isNull())
-			instancesObject.instanceChargeType = valueInstancesInstance["InstanceChargeType"].asString();
-		if(!valueInstancesInstance["SaleCycle"].isNull())
-			instancesObject.saleCycle = valueInstancesInstance["SaleCycle"].asString();
-		if(!valueInstancesInstance["ExpiredTime"].isNull())
-			instancesObject.expiredTime = valueInstancesInstance["ExpiredTime"].asString();
-		if(!valueInstancesInstance["AutoReleaseTime"].isNull())
-			instancesObject.autoReleaseTime = valueInstancesInstance["AutoReleaseTime"].asString();
-		if(!valueInstancesInstance["IoOptimized"].isNull())
-			instancesObject.ioOptimized = valueInstancesInstance["IoOptimized"].asString() == "true";
-		if(!valueInstancesInstance["DeviceAvailable"].isNull())
-			instancesObject.deviceAvailable = valueInstancesInstance["DeviceAvailable"].asString() == "true";
-		if(!valueInstancesInstance["InstanceTypeFamily"].isNull())
-			instancesObject.instanceTypeFamily = valueInstancesInstance["InstanceTypeFamily"].asString();
-		if(!valueInstancesInstance["LocalStorageCapacity"].isNull())
-			instancesObject.localStorageCapacity = std::stol(valueInstancesInstance["LocalStorageCapacity"].asString());
-		if(!valueInstancesInstance["LocalStorageAmount"].isNull())
-			instancesObject.localStorageAmount = std::stoi(valueInstancesInstance["LocalStorageAmount"].asString());
-		if(!valueInstancesInstance["GPUAmount"].isNull())
-			instancesObject.gPUAmount = std::stoi(valueInstancesInstance["GPUAmount"].asString());
-		if(!valueInstancesInstance["GPUSpec"].isNull())
-			instancesObject.gPUSpec = valueInstancesInstance["GPUSpec"].asString();
-		if(!valueInstancesInstance["SpotStrategy"].isNull())
-			instancesObject.spotStrategy = valueInstancesInstance["SpotStrategy"].asString();
-		if(!valueInstancesInstance["SpotPriceLimit"].isNull())
-			instancesObject.spotPriceLimit = std::stof(valueInstancesInstance["SpotPriceLimit"].asString());
-		if(!valueInstancesInstance["SpotDuration"].isNull())
-			instancesObject.spotDuration = std::stoi(valueInstancesInstance["SpotDuration"].asString());
-		if(!valueInstancesInstance["ResourceGroupId"].isNull())
-			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
+		if(!valueInstancesInstance["SerialNumber"].isNull())
+			instancesObject.serialNumber = valueInstancesInstance["SerialNumber"].asString();
+		if(!valueInstancesInstance["Status"].isNull())
+			instancesObject.status = valueInstancesInstance["Status"].asString();
+		if(!valueInstancesInstance["DeploymentSetId"].isNull())
+			instancesObject.deploymentSetId = valueInstancesInstance["DeploymentSetId"].asString();
 		if(!valueInstancesInstance["KeyPairName"].isNull())
 			instancesObject.keyPairName = valueInstancesInstance["KeyPairName"].asString();
-		if(!valueInstancesInstance["Recyclable"].isNull())
-			instancesObject.recyclable = valueInstancesInstance["Recyclable"].asString() == "true";
+		if(!valueInstancesInstance["SaleCycle"].isNull())
+			instancesObject.saleCycle = valueInstancesInstance["SaleCycle"].asString();
+		if(!valueInstancesInstance["SpotStrategy"].isNull())
+			instancesObject.spotStrategy = valueInstancesInstance["SpotStrategy"].asString();
+		if(!valueInstancesInstance["DeviceAvailable"].isNull())
+			instancesObject.deviceAvailable = valueInstancesInstance["DeviceAvailable"].asString() == "true";
+		if(!valueInstancesInstance["LocalStorageCapacity"].isNull())
+			instancesObject.localStorageCapacity = std::stol(valueInstancesInstance["LocalStorageCapacity"].asString());
+		if(!valueInstancesInstance["Description"].isNull())
+			instancesObject.description = valueInstancesInstance["Description"].asString();
+		if(!valueInstancesInstance["SpotDuration"].isNull())
+			instancesObject.spotDuration = std::stoi(valueInstancesInstance["SpotDuration"].asString());
+		if(!valueInstancesInstance["InstanceNetworkType"].isNull())
+			instancesObject.instanceNetworkType = valueInstancesInstance["InstanceNetworkType"].asString();
+		if(!valueInstancesInstance["InstanceName"].isNull())
+			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
+		if(!valueInstancesInstance["OSNameEn"].isNull())
+			instancesObject.oSNameEn = valueInstancesInstance["OSNameEn"].asString();
 		if(!valueInstancesInstance["HpcClusterId"].isNull())
 			instancesObject.hpcClusterId = valueInstancesInstance["HpcClusterId"].asString();
-		if(!valueInstancesInstance["StoppedMode"].isNull())
-			instancesObject.stoppedMode = valueInstancesInstance["StoppedMode"].asString();
-		if(!valueInstancesInstance["CreditSpecification"].isNull())
-			instancesObject.creditSpecification = valueInstancesInstance["CreditSpecification"].asString();
+		if(!valueInstancesInstance["SpotPriceLimit"].isNull())
+			instancesObject.spotPriceLimit = std::stof(valueInstancesInstance["SpotPriceLimit"].asString());
+		if(!valueInstancesInstance["Memory"].isNull())
+			instancesObject.memory = std::stoi(valueInstancesInstance["Memory"].asString());
+		if(!valueInstancesInstance["OSName"].isNull())
+			instancesObject.oSName = valueInstancesInstance["OSName"].asString();
+		if(!valueInstancesInstance["DeploymentSetGroupNo"].isNull())
+			instancesObject.deploymentSetGroupNo = std::stoi(valueInstancesInstance["DeploymentSetGroupNo"].asString());
+		if(!valueInstancesInstance["ImageId"].isNull())
+			instancesObject.imageId = valueInstancesInstance["ImageId"].asString();
+		if(!valueInstancesInstance["VlanId"].isNull())
+			instancesObject.vlanId = valueInstancesInstance["VlanId"].asString();
+		if(!valueInstancesInstance["ClusterId"].isNull())
+			instancesObject.clusterId = valueInstancesInstance["ClusterId"].asString();
+		if(!valueInstancesInstance["GPUSpec"].isNull())
+			instancesObject.gPUSpec = valueInstancesInstance["GPUSpec"].asString();
+		if(!valueInstancesInstance["AutoReleaseTime"].isNull())
+			instancesObject.autoReleaseTime = valueInstancesInstance["AutoReleaseTime"].asString();
 		if(!valueInstancesInstance["DeletionProtection"].isNull())
 			instancesObject.deletionProtection = valueInstancesInstance["DeletionProtection"].asString() == "true";
+		if(!valueInstancesInstance["StoppedMode"].isNull())
+			instancesObject.stoppedMode = valueInstancesInstance["StoppedMode"].asString();
+		if(!valueInstancesInstance["GPUAmount"].isNull())
+			instancesObject.gPUAmount = std::stoi(valueInstancesInstance["GPUAmount"].asString());
+		if(!valueInstancesInstance["HostName"].isNull())
+			instancesObject.hostName = valueInstancesInstance["HostName"].asString();
+		if(!valueInstancesInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
+		if(!valueInstancesInstance["InternetMaxBandwidthOut"].isNull())
+			instancesObject.internetMaxBandwidthOut = std::stoi(valueInstancesInstance["InternetMaxBandwidthOut"].asString());
+		if(!valueInstancesInstance["InternetMaxBandwidthIn"].isNull())
+			instancesObject.internetMaxBandwidthIn = std::stoi(valueInstancesInstance["InternetMaxBandwidthIn"].asString());
+		if(!valueInstancesInstance["InstanceType"].isNull())
+			instancesObject.instanceType = valueInstancesInstance["InstanceType"].asString();
+		if(!valueInstancesInstance["InstanceChargeType"].isNull())
+			instancesObject.instanceChargeType = valueInstancesInstance["InstanceChargeType"].asString();
+		if(!valueInstancesInstance["RegionId"].isNull())
+			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
+		if(!valueInstancesInstance["IoOptimized"].isNull())
+			instancesObject.ioOptimized = valueInstancesInstance["IoOptimized"].asString() == "true";
+		if(!valueInstancesInstance["StartTime"].isNull())
+			instancesObject.startTime = valueInstancesInstance["StartTime"].asString();
+		if(!valueInstancesInstance["Cpu"].isNull())
+			instancesObject.cpu = std::stoi(valueInstancesInstance["Cpu"].asString());
+		if(!valueInstancesInstance["LocalStorageAmount"].isNull())
+			instancesObject.localStorageAmount = std::stoi(valueInstancesInstance["LocalStorageAmount"].asString());
+		if(!valueInstancesInstance["ExpiredTime"].isNull())
+			instancesObject.expiredTime = valueInstancesInstance["ExpiredTime"].asString();
+		if(!valueInstancesInstance["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
+		if(!valueInstancesInstance["InternetChargeType"].isNull())
+			instancesObject.internetChargeType = valueInstancesInstance["InternetChargeType"].asString();
+		if(!valueInstancesInstance["ZoneId"].isNull())
+			instancesObject.zoneId = valueInstancesInstance["ZoneId"].asString();
+		if(!valueInstancesInstance["Recyclable"].isNull())
+			instancesObject.recyclable = valueInstancesInstance["Recyclable"].asString() == "true";
 		if(!valueInstancesInstance["ISP"].isNull())
 			instancesObject.iSP = valueInstancesInstance["ISP"].asString();
+		if(!valueInstancesInstance["CreditSpecification"].isNull())
+			instancesObject.creditSpecification = valueInstancesInstance["CreditSpecification"].asString();
+		if(!valueInstancesInstance["InstanceTypeFamily"].isNull())
+			instancesObject.instanceTypeFamily = valueInstancesInstance["InstanceTypeFamily"].asString();
+		if(!valueInstancesInstance["OSType"].isNull())
+			instancesObject.oSType = valueInstancesInstance["OSType"].asString();
 		auto allNetworkInterfacesNode = valueInstancesInstance["NetworkInterfaces"]["NetworkInterface"];
 		for (auto valueInstancesInstanceNetworkInterfacesNetworkInterface : allNetworkInterfacesNode)
 		{
 			Instance::NetworkInterface networkInterfacesObject;
-			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["NetworkInterfaceId"].isNull())
-				networkInterfacesObject.networkInterfaceId = valueInstancesInstanceNetworkInterfacesNetworkInterface["NetworkInterfaceId"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["Type"].isNull())
+				networkInterfacesObject.type = valueInstancesInstanceNetworkInterfacesNetworkInterface["Type"].asString();
 			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["MacAddress"].isNull())
 				networkInterfacesObject.macAddress = valueInstancesInstanceNetworkInterfacesNetworkInterface["MacAddress"].asString();
 			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["PrimaryIpAddress"].isNull())
 				networkInterfacesObject.primaryIpAddress = valueInstancesInstanceNetworkInterfacesNetworkInterface["PrimaryIpAddress"].asString();
-			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["Type"].isNull())
-				networkInterfacesObject.type = valueInstancesInstanceNetworkInterfacesNetworkInterface["Type"].asString();
+			if(!valueInstancesInstanceNetworkInterfacesNetworkInterface["NetworkInterfaceId"].isNull())
+				networkInterfacesObject.networkInterfaceId = valueInstancesInstanceNetworkInterfacesNetworkInterface["NetworkInterfaceId"].asString();
 			auto allPrivateIpSetsNode = valueInstancesInstanceNetworkInterfacesNetworkInterface["PrivateIpSets"]["PrivateIpSet"];
 			for (auto valueInstancesInstanceNetworkInterfacesNetworkInterfacePrivateIpSetsPrivateIpSet : allPrivateIpSetsNode)
 			{
@@ -173,43 +173,43 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		for (auto valueInstancesInstanceOperationLocksLockReason : allOperationLocksNode)
 		{
 			Instance::LockReason operationLocksObject;
-			if(!valueInstancesInstanceOperationLocksLockReason["LockReason"].isNull())
-				operationLocksObject.lockReason = valueInstancesInstanceOperationLocksLockReason["LockReason"].asString();
 			if(!valueInstancesInstanceOperationLocksLockReason["LockMsg"].isNull())
 				operationLocksObject.lockMsg = valueInstancesInstanceOperationLocksLockReason["LockMsg"].asString();
+			if(!valueInstancesInstanceOperationLocksLockReason["LockReason"].isNull())
+				operationLocksObject.lockReason = valueInstancesInstanceOperationLocksLockReason["LockReason"].asString();
 			instancesObject.operationLocks.push_back(operationLocksObject);
 		}
 		auto allTagsNode = valueInstancesInstance["Tags"]["Tag"];
 		for (auto valueInstancesInstanceTagsTag : allTagsNode)
 		{
 			Instance::Tag tagsObject;
-			if(!valueInstancesInstanceTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueInstancesInstanceTagsTag["TagKey"].asString();
 			if(!valueInstancesInstanceTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueInstancesInstanceTagsTag["TagValue"].asString();
+			if(!valueInstancesInstanceTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueInstancesInstanceTagsTag["TagKey"].asString();
 			instancesObject.tags.push_back(tagsObject);
 		}
 		auto vpcAttributesNode = value["VpcAttributes"];
 		if(!vpcAttributesNode["VpcId"].isNull())
 			instancesObject.vpcAttributes.vpcId = vpcAttributesNode["VpcId"].asString();
-		if(!vpcAttributesNode["VSwitchId"].isNull())
-			instancesObject.vpcAttributes.vSwitchId = vpcAttributesNode["VSwitchId"].asString();
 		if(!vpcAttributesNode["NatIpAddress"].isNull())
 			instancesObject.vpcAttributes.natIpAddress = vpcAttributesNode["NatIpAddress"].asString();
+		if(!vpcAttributesNode["VSwitchId"].isNull())
+			instancesObject.vpcAttributes.vSwitchId = vpcAttributesNode["VSwitchId"].asString();
 			auto allPrivateIpAddress = vpcAttributesNode["PrivateIpAddress"]["IpAddress"];
 			for (auto value : allPrivateIpAddress)
 				instancesObject.vpcAttributes.privateIpAddress.push_back(value.asString());
 		auto eipAddressNode = value["EipAddress"];
-		if(!eipAddressNode["AllocationId"].isNull())
-			instancesObject.eipAddress.allocationId = eipAddressNode["AllocationId"].asString();
+		if(!eipAddressNode["IsSupportUnassociate"].isNull())
+			instancesObject.eipAddress.isSupportUnassociate = eipAddressNode["IsSupportUnassociate"].asString() == "true";
+		if(!eipAddressNode["InternetChargeType"].isNull())
+			instancesObject.eipAddress.internetChargeType = eipAddressNode["InternetChargeType"].asString();
 		if(!eipAddressNode["IpAddress"].isNull())
 			instancesObject.eipAddress.ipAddress = eipAddressNode["IpAddress"].asString();
 		if(!eipAddressNode["Bandwidth"].isNull())
 			instancesObject.eipAddress.bandwidth = std::stoi(eipAddressNode["Bandwidth"].asString());
-		if(!eipAddressNode["InternetChargeType"].isNull())
-			instancesObject.eipAddress.internetChargeType = eipAddressNode["InternetChargeType"].asString();
-		if(!eipAddressNode["IsSupportUnassociate"].isNull())
-			instancesObject.eipAddress.isSupportUnassociate = eipAddressNode["IsSupportUnassociate"].asString() == "true";
+		if(!eipAddressNode["AllocationId"].isNull())
+			instancesObject.eipAddress.allocationId = eipAddressNode["AllocationId"].asString();
 		auto hibernationOptionsNode = value["HibernationOptions"];
 		if(!hibernationOptionsNode["Configured"].isNull())
 			instancesObject.hibernationOptions.configured = hibernationOptionsNode["Configured"].asString() == "true";
@@ -221,29 +221,32 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		if(!dedicatedHostAttributeNode["DedicatedHostClusterId"].isNull())
 			instancesObject.dedicatedHostAttribute.dedicatedHostClusterId = dedicatedHostAttributeNode["DedicatedHostClusterId"].asString();
 		auto ecsCapacityReservationAttrNode = value["EcsCapacityReservationAttr"];
-		if(!ecsCapacityReservationAttrNode["CapacityReservationId"].isNull())
-			instancesObject.ecsCapacityReservationAttr.capacityReservationId = ecsCapacityReservationAttrNode["CapacityReservationId"].asString();
 		if(!ecsCapacityReservationAttrNode["CapacityReservationPreference"].isNull())
 			instancesObject.ecsCapacityReservationAttr.capacityReservationPreference = ecsCapacityReservationAttrNode["CapacityReservationPreference"].asString();
+		if(!ecsCapacityReservationAttrNode["CapacityReservationId"].isNull())
+			instancesObject.ecsCapacityReservationAttr.capacityReservationId = ecsCapacityReservationAttrNode["CapacityReservationId"].asString();
 		auto dedicatedInstanceAttributeNode = value["DedicatedInstanceAttribute"];
-		if(!dedicatedInstanceAttributeNode["Tenancy"].isNull())
-			instancesObject.dedicatedInstanceAttribute.tenancy = dedicatedInstanceAttributeNode["Tenancy"].asString();
 		if(!dedicatedInstanceAttributeNode["Affinity"].isNull())
 			instancesObject.dedicatedInstanceAttribute.affinity = dedicatedInstanceAttributeNode["Affinity"].asString();
+		if(!dedicatedInstanceAttributeNode["Tenancy"].isNull())
+			instancesObject.dedicatedInstanceAttribute.tenancy = dedicatedInstanceAttributeNode["Tenancy"].asString();
 		auto cpuOptionsNode = value["CpuOptions"];
+		if(!cpuOptionsNode["Numa"].isNull())
+			instancesObject.cpuOptions.numa = cpuOptionsNode["Numa"].asString();
 		if(!cpuOptionsNode["CoreCount"].isNull())
 			instancesObject.cpuOptions.coreCount = std::stoi(cpuOptionsNode["CoreCount"].asString());
 		if(!cpuOptionsNode["ThreadsPerCore"].isNull())
 			instancesObject.cpuOptions.threadsPerCore = std::stoi(cpuOptionsNode["ThreadsPerCore"].asString());
-		if(!cpuOptionsNode["Numa"].isNull())
-			instancesObject.cpuOptions.numa = cpuOptionsNode["Numa"].asString();
 		auto metadataOptionsNode = value["MetadataOptions"];
 		if(!metadataOptionsNode["HttpEndpoint"].isNull())
 			instancesObject.metadataOptions.httpEndpoint = metadataOptionsNode["HttpEndpoint"].asString();
-		if(!metadataOptionsNode["HttpTokens"].isNull())
-			instancesObject.metadataOptions.httpTokens = metadataOptionsNode["HttpTokens"].asString();
 		if(!metadataOptionsNode["HttpPutResponseHopLimit"].isNull())
 			instancesObject.metadataOptions.httpPutResponseHopLimit = std::stoi(metadataOptionsNode["HttpPutResponseHopLimit"].asString());
+		if(!metadataOptionsNode["HttpTokens"].isNull())
+			instancesObject.metadataOptions.httpTokens = metadataOptionsNode["HttpTokens"].asString();
+		auto allRdmaIpAddress = value["RdmaIpAddress"]["IpAddress"];
+		for (auto value : allRdmaIpAddress)
+			instancesObject.rdmaIpAddress.push_back(value.asString());
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			instancesObject.securityGroupIds.push_back(value.asString());
@@ -253,19 +256,16 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		auto allInnerIpAddress = value["InnerIpAddress"]["IpAddress"];
 		for (auto value : allInnerIpAddress)
 			instancesObject.innerIpAddress.push_back(value.asString());
-		auto allRdmaIpAddress = value["RdmaIpAddress"]["IpAddress"];
-		for (auto value : allRdmaIpAddress)
-			instancesObject.rdmaIpAddress.push_back(value.asString());
 		instances_.push_back(instancesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -279,14 +279,14 @@ int DescribeInstancesResult::getTotalCount()const
 	return totalCount_;
 }
 
-int DescribeInstancesResult::getPageSize()const
-{
-	return pageSize_;
-}
-
 std::string DescribeInstancesResult::getNextToken()const
 {
 	return nextToken_;
+}
+
+int DescribeInstancesResult::getPageSize()const
+{
+	return pageSize_;
 }
 
 int DescribeInstancesResult::getPageNumber()const

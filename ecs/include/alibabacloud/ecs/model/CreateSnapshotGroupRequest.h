@@ -37,10 +37,10 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::vector<std::string> getExcludeDiskId()const;
-				void setExcludeDiskId(const std::vector<std::string>& excludeDiskId);
 				bool getInstantAccess()const;
 				void setInstantAccess(bool instantAccess);
+				std::vector<std::string> getExcludeDiskId()const;
+				void setExcludeDiskId(const std::vector<std::string>& excludeDiskId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				int getInstantAccessRetentionDays()const;
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::vector<std::string> excludeDiskId_;
 				bool instantAccess_;
+				std::vector<std::string> excludeDiskId_;
 				std::string description_;
 				int instantAccessRetentionDays_;
 				std::string regionId_;

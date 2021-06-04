@@ -41,10 +41,10 @@ void CreateInstanceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
-	if(!value["TradePrice"].isNull())
-		tradePrice_ = std::stof(value["TradePrice"].asString());
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
+	if(!value["TradePrice"].isNull())
+		tradePrice_ = std::stof(value["TradePrice"].asString());
 
 }
 
@@ -53,13 +53,13 @@ std::string CreateInstanceResult::getInstanceId()const
 	return instanceId_;
 }
 
-float CreateInstanceResult::getTradePrice()const
-{
-	return tradePrice_;
-}
-
 std::string CreateInstanceResult::getOrderId()const
 {
 	return orderId_;
+}
+
+float CreateInstanceResult::getTradePrice()const
+{
+	return tradePrice_;
 }
 

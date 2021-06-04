@@ -320,6 +320,17 @@ void DescribeDisksRequest::setDiskIds(const std::string& diskIds)
 	setParameter("DiskIds", diskIds);
 }
 
+std::string DescribeDisksRequest::getMultiAttach()const
+{
+	return multiAttach_;
+}
+
+void DescribeDisksRequest::setMultiAttach(const std::string& multiAttach)
+{
+	multiAttach_ = multiAttach;
+	setParameter("MultiAttach", multiAttach);
+}
+
 bool DescribeDisksRequest::getDeleteWithInstance()const
 {
 	return deleteWithInstance_;

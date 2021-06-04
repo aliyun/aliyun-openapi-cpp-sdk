@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setSourcePortRange(const std::string& sourcePortRange);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getDestPrefixListId()const;
+				void setDestPrefixListId(const std::string& destPrefixListId);
 				std::string getSecurityGroupId()const;
 				void setSecurityGroupId(const std::string& securityGroupId);
 				std::string getDescription()const;
@@ -83,6 +85,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string sourcePortRange_;
 				std::string clientToken_;
+				std::string destPrefixListId_;
 				std::string securityGroupId_;
 				std::string description_;
 				std::string regionId_;

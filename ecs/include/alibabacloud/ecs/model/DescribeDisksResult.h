@@ -49,32 +49,40 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
+					struct Attachment
+					{
+						std::string attachedTime;
+						std::string instanceId;
+						std::string device;
+					};
 					std::string detachedTime;
 					std::string description;
-					std::string category;
 					std::string kMSKeyId;
+					std::string category;
 					std::string resourceGroupId;
 					std::string dedicatedBlockStorageClusterId;
-					int size;
 					bool encrypted;
+					int size;
 					bool deleteAutoSnapshot;
 					std::string diskChargeType;
 					int storageSetPartitionNumber;
 					int iOPS;
+					std::vector<Disk::Attachment> attachments;
+					std::string multiAttach;
 					std::string expiredTime;
 					std::string imageId;
 					std::string storageSetId;
 					std::vector<Disk::Tag> tags;
 					std::string status;
-					std::string attachedTime;
 					int iOPSRead;
+					std::string attachedTime;
 					int iOPSWrite;
 					std::string zoneId;
 					std::string sourceSnapshotId;
-					std::string productCode;
 					std::string instanceId;
-					std::string device;
+					std::string productCode;
 					std::string performanceLevel;
+					std::string device;
 					bool deleteWithInstance;
 					bool enableAutomatedSnapshotPolicy;
 					bool enableAutoSnapshot;
@@ -97,8 +105,8 @@ namespace AlibabaCloud
 				explicit DescribeDisksResult(const std::string &payload);
 				~DescribeDisksResult();
 				int getTotalCount()const;
-				int getPageSize()const;
 				std::string getNextToken()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<Disk> getDisks()const;
 
@@ -106,8 +114,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
 				std::string nextToken_;
+				int pageSize_;
 				int pageNumber_;
 				std::vector<Disk> disks_;
 

@@ -132,6 +132,8 @@
 #include "model/CreateNetworkInterfacePermissionResult.h"
 #include "model/CreatePhysicalConnectionRequest.h"
 #include "model/CreatePhysicalConnectionResult.h"
+#include "model/CreatePrefixListRequest.h"
+#include "model/CreatePrefixListResult.h"
 #include "model/CreateRouteEntryRequest.h"
 #include "model/CreateRouteEntryResult.h"
 #include "model/CreateRouterInterfaceRequest.h"
@@ -204,6 +206,8 @@
 #include "model/DeleteNetworkInterfacePermissionResult.h"
 #include "model/DeletePhysicalConnectionRequest.h"
 #include "model/DeletePhysicalConnectionResult.h"
+#include "model/DeletePrefixListRequest.h"
+#include "model/DeletePrefixListResult.h"
 #include "model/DeleteRouteEntryRequest.h"
 #include "model/DeleteRouteEntryResult.h"
 #include "model/DeleteRouterInterfaceRequest.h"
@@ -368,6 +372,12 @@
 #include "model/DescribeNewProjectEipMonitorDataResult.h"
 #include "model/DescribePhysicalConnectionsRequest.h"
 #include "model/DescribePhysicalConnectionsResult.h"
+#include "model/DescribePrefixListAssociationsRequest.h"
+#include "model/DescribePrefixListAssociationsResult.h"
+#include "model/DescribePrefixListAttributesRequest.h"
+#include "model/DescribePrefixListAttributesResult.h"
+#include "model/DescribePrefixListsRequest.h"
+#include "model/DescribePrefixListsResult.h"
 #include "model/DescribePriceRequest.h"
 #include "model/DescribePriceResult.h"
 #include "model/DescribeRecommendInstanceTypeRequest.h"
@@ -564,6 +574,8 @@
 #include "model/ModifyNetworkInterfaceAttributeResult.h"
 #include "model/ModifyPhysicalConnectionAttributeRequest.h"
 #include "model/ModifyPhysicalConnectionAttributeResult.h"
+#include "model/ModifyPrefixListRequest.h"
+#include "model/ModifyPrefixListResult.h"
 #include "model/ModifyPrepayInstanceSpecRequest.h"
 #include "model/ModifyPrepayInstanceSpecResult.h"
 #include "model/ModifyReservedInstanceAttributeRequest.h"
@@ -862,6 +874,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePhysicalConnectionResult> CreatePhysicalConnectionOutcome;
 			typedef std::future<CreatePhysicalConnectionOutcome> CreatePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreatePhysicalConnectionRequest&, const CreatePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::CreatePrefixListResult> CreatePrefixListOutcome;
+			typedef std::future<CreatePrefixListOutcome> CreatePrefixListOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreatePrefixListRequest&, const CreatePrefixListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrefixListAsyncHandler;
 			typedef Outcome<Error, Model::CreateRouteEntryResult> CreateRouteEntryOutcome;
 			typedef std::future<CreateRouteEntryOutcome> CreateRouteEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateRouteEntryRequest&, const CreateRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteEntryAsyncHandler;
@@ -970,6 +985,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePhysicalConnectionResult> DeletePhysicalConnectionOutcome;
 			typedef std::future<DeletePhysicalConnectionOutcome> DeletePhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeletePhysicalConnectionRequest&, const DeletePhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhysicalConnectionAsyncHandler;
+			typedef Outcome<Error, Model::DeletePrefixListResult> DeletePrefixListOutcome;
+			typedef std::future<DeletePrefixListOutcome> DeletePrefixListOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DeletePrefixListRequest&, const DeletePrefixListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrefixListAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRouteEntryResult> DeleteRouteEntryOutcome;
 			typedef std::future<DeleteRouteEntryOutcome> DeleteRouteEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteRouteEntryRequest&, const DeleteRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteEntryAsyncHandler;
@@ -1216,6 +1234,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePhysicalConnectionsResult> DescribePhysicalConnectionsOutcome;
 			typedef std::future<DescribePhysicalConnectionsOutcome> DescribePhysicalConnectionsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribePhysicalConnectionsRequest&, const DescribePhysicalConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhysicalConnectionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePrefixListAssociationsResult> DescribePrefixListAssociationsOutcome;
+			typedef std::future<DescribePrefixListAssociationsOutcome> DescribePrefixListAssociationsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribePrefixListAssociationsRequest&, const DescribePrefixListAssociationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefixListAssociationsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePrefixListAttributesResult> DescribePrefixListAttributesOutcome;
+			typedef std::future<DescribePrefixListAttributesOutcome> DescribePrefixListAttributesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribePrefixListAttributesRequest&, const DescribePrefixListAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefixListAttributesAsyncHandler;
+			typedef Outcome<Error, Model::DescribePrefixListsResult> DescribePrefixListsOutcome;
+			typedef std::future<DescribePrefixListsOutcome> DescribePrefixListsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribePrefixListsRequest&, const DescribePrefixListsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefixListsAsyncHandler;
 			typedef Outcome<Error, Model::DescribePriceResult> DescribePriceOutcome;
 			typedef std::future<DescribePriceOutcome> DescribePriceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribePriceRequest&, const DescribePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceAsyncHandler;
@@ -1510,6 +1537,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyPhysicalConnectionAttributeResult> ModifyPhysicalConnectionAttributeOutcome;
 			typedef std::future<ModifyPhysicalConnectionAttributeOutcome> ModifyPhysicalConnectionAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyPhysicalConnectionAttributeRequest&, const ModifyPhysicalConnectionAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhysicalConnectionAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyPrefixListResult> ModifyPrefixListOutcome;
+			typedef std::future<ModifyPrefixListOutcome> ModifyPrefixListOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyPrefixListRequest&, const ModifyPrefixListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrefixListAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPrepayInstanceSpecResult> ModifyPrepayInstanceSpecOutcome;
 			typedef std::future<ModifyPrepayInstanceSpecOutcome> ModifyPrepayInstanceSpecOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyPrepayInstanceSpecRequest&, const ModifyPrepayInstanceSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrepayInstanceSpecAsyncHandler;
@@ -1866,6 +1896,9 @@ namespace AlibabaCloud
 			CreatePhysicalConnectionOutcome createPhysicalConnection(const Model::CreatePhysicalConnectionRequest &request)const;
 			void createPhysicalConnectionAsync(const Model::CreatePhysicalConnectionRequest& request, const CreatePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePhysicalConnectionOutcomeCallable createPhysicalConnectionCallable(const Model::CreatePhysicalConnectionRequest& request) const;
+			CreatePrefixListOutcome createPrefixList(const Model::CreatePrefixListRequest &request)const;
+			void createPrefixListAsync(const Model::CreatePrefixListRequest& request, const CreatePrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePrefixListOutcomeCallable createPrefixListCallable(const Model::CreatePrefixListRequest& request) const;
 			CreateRouteEntryOutcome createRouteEntry(const Model::CreateRouteEntryRequest &request)const;
 			void createRouteEntryAsync(const Model::CreateRouteEntryRequest& request, const CreateRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRouteEntryOutcomeCallable createRouteEntryCallable(const Model::CreateRouteEntryRequest& request) const;
@@ -1974,6 +2007,9 @@ namespace AlibabaCloud
 			DeletePhysicalConnectionOutcome deletePhysicalConnection(const Model::DeletePhysicalConnectionRequest &request)const;
 			void deletePhysicalConnectionAsync(const Model::DeletePhysicalConnectionRequest& request, const DeletePhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePhysicalConnectionOutcomeCallable deletePhysicalConnectionCallable(const Model::DeletePhysicalConnectionRequest& request) const;
+			DeletePrefixListOutcome deletePrefixList(const Model::DeletePrefixListRequest &request)const;
+			void deletePrefixListAsync(const Model::DeletePrefixListRequest& request, const DeletePrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePrefixListOutcomeCallable deletePrefixListCallable(const Model::DeletePrefixListRequest& request) const;
 			DeleteRouteEntryOutcome deleteRouteEntry(const Model::DeleteRouteEntryRequest &request)const;
 			void deleteRouteEntryAsync(const Model::DeleteRouteEntryRequest& request, const DeleteRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRouteEntryOutcomeCallable deleteRouteEntryCallable(const Model::DeleteRouteEntryRequest& request) const;
@@ -2220,6 +2256,15 @@ namespace AlibabaCloud
 			DescribePhysicalConnectionsOutcome describePhysicalConnections(const Model::DescribePhysicalConnectionsRequest &request)const;
 			void describePhysicalConnectionsAsync(const Model::DescribePhysicalConnectionsRequest& request, const DescribePhysicalConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhysicalConnectionsOutcomeCallable describePhysicalConnectionsCallable(const Model::DescribePhysicalConnectionsRequest& request) const;
+			DescribePrefixListAssociationsOutcome describePrefixListAssociations(const Model::DescribePrefixListAssociationsRequest &request)const;
+			void describePrefixListAssociationsAsync(const Model::DescribePrefixListAssociationsRequest& request, const DescribePrefixListAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePrefixListAssociationsOutcomeCallable describePrefixListAssociationsCallable(const Model::DescribePrefixListAssociationsRequest& request) const;
+			DescribePrefixListAttributesOutcome describePrefixListAttributes(const Model::DescribePrefixListAttributesRequest &request)const;
+			void describePrefixListAttributesAsync(const Model::DescribePrefixListAttributesRequest& request, const DescribePrefixListAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePrefixListAttributesOutcomeCallable describePrefixListAttributesCallable(const Model::DescribePrefixListAttributesRequest& request) const;
+			DescribePrefixListsOutcome describePrefixLists(const Model::DescribePrefixListsRequest &request)const;
+			void describePrefixListsAsync(const Model::DescribePrefixListsRequest& request, const DescribePrefixListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePrefixListsOutcomeCallable describePrefixListsCallable(const Model::DescribePrefixListsRequest& request) const;
 			DescribePriceOutcome describePrice(const Model::DescribePriceRequest &request)const;
 			void describePriceAsync(const Model::DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePriceOutcomeCallable describePriceCallable(const Model::DescribePriceRequest& request) const;
@@ -2514,6 +2559,9 @@ namespace AlibabaCloud
 			ModifyPhysicalConnectionAttributeOutcome modifyPhysicalConnectionAttribute(const Model::ModifyPhysicalConnectionAttributeRequest &request)const;
 			void modifyPhysicalConnectionAttributeAsync(const Model::ModifyPhysicalConnectionAttributeRequest& request, const ModifyPhysicalConnectionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPhysicalConnectionAttributeOutcomeCallable modifyPhysicalConnectionAttributeCallable(const Model::ModifyPhysicalConnectionAttributeRequest& request) const;
+			ModifyPrefixListOutcome modifyPrefixList(const Model::ModifyPrefixListRequest &request)const;
+			void modifyPrefixListAsync(const Model::ModifyPrefixListRequest& request, const ModifyPrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyPrefixListOutcomeCallable modifyPrefixListCallable(const Model::ModifyPrefixListRequest& request) const;
 			ModifyPrepayInstanceSpecOutcome modifyPrepayInstanceSpec(const Model::ModifyPrepayInstanceSpecRequest &request)const;
 			void modifyPrepayInstanceSpecAsync(const Model::ModifyPrepayInstanceSpecRequest& request, const ModifyPrepayInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPrepayInstanceSpecOutcomeCallable modifyPrepayInstanceSpecCallable(const Model::ModifyPrepayInstanceSpecRequest& request) const;

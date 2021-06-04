@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setNicType(const std::string& nicType);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getSourcePrefixListId()const;
+				void setSourcePrefixListId(const std::string& sourcePrefixListId);
 				std::string getSourcePortRange()const;
 				void setSourcePortRange(const std::string& sourcePortRange);
 				std::string getClientToken()const;
@@ -81,6 +83,7 @@ namespace AlibabaCloud
             private:
 				std::string nicType_;
 				long resourceOwnerId_;
+				std::string sourcePrefixListId_;
 				std::string sourcePortRange_;
 				std::string clientToken_;
 				std::string securityGroupId_;

@@ -43,76 +43,76 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 	for (auto valueInvocationsInvocation : allInvocationsNode)
 	{
 		Invocation invocationsObject;
-		if(!valueInvocationsInvocation["InvokeId"].isNull())
-			invocationsObject.invokeId = valueInvocationsInvocation["InvokeId"].asString();
 		if(!valueInvocationsInvocation["CreationTime"].isNull())
 			invocationsObject.creationTime = valueInvocationsInvocation["CreationTime"].asString();
+		if(!valueInvocationsInvocation["Frequency"].isNull())
+			invocationsObject.frequency = valueInvocationsInvocation["Frequency"].asString();
+		if(!valueInvocationsInvocation["InvocationStatus"].isNull())
+			invocationsObject.invocationStatus = valueInvocationsInvocation["InvocationStatus"].asString();
+		if(!valueInvocationsInvocation["RepeatMode"].isNull())
+			invocationsObject.repeatMode = valueInvocationsInvocation["RepeatMode"].asString();
 		if(!valueInvocationsInvocation["CommandId"].isNull())
 			invocationsObject.commandId = valueInvocationsInvocation["CommandId"].asString();
 		if(!valueInvocationsInvocation["CommandType"].isNull())
 			invocationsObject.commandType = valueInvocationsInvocation["CommandType"].asString();
-		if(!valueInvocationsInvocation["CommandName"].isNull())
-			invocationsObject.commandName = valueInvocationsInvocation["CommandName"].asString();
-		if(!valueInvocationsInvocation["CommandContent"].isNull())
-			invocationsObject.commandContent = valueInvocationsInvocation["CommandContent"].asString();
-		if(!valueInvocationsInvocation["Frequency"].isNull())
-			invocationsObject.frequency = valueInvocationsInvocation["Frequency"].asString();
-		if(!valueInvocationsInvocation["Timed"].isNull())
-			invocationsObject.timed = valueInvocationsInvocation["Timed"].asString() == "true";
-		if(!valueInvocationsInvocation["RepeatMode"].isNull())
-			invocationsObject.repeatMode = valueInvocationsInvocation["RepeatMode"].asString();
 		if(!valueInvocationsInvocation["InvokeStatus"].isNull())
 			invocationsObject.invokeStatus = valueInvocationsInvocation["InvokeStatus"].asString();
-		if(!valueInvocationsInvocation["InvocationStatus"].isNull())
-			invocationsObject.invocationStatus = valueInvocationsInvocation["InvocationStatus"].asString();
 		if(!valueInvocationsInvocation["Parameters"].isNull())
 			invocationsObject.parameters = valueInvocationsInvocation["Parameters"].asString();
+		if(!valueInvocationsInvocation["Timed"].isNull())
+			invocationsObject.timed = valueInvocationsInvocation["Timed"].asString() == "true";
+		if(!valueInvocationsInvocation["CommandContent"].isNull())
+			invocationsObject.commandContent = valueInvocationsInvocation["CommandContent"].asString();
+		if(!valueInvocationsInvocation["CommandName"].isNull())
+			invocationsObject.commandName = valueInvocationsInvocation["CommandName"].asString();
+		if(!valueInvocationsInvocation["InvokeId"].isNull())
+			invocationsObject.invokeId = valueInvocationsInvocation["InvokeId"].asString();
 		if(!valueInvocationsInvocation["Username"].isNull())
 			invocationsObject.username = valueInvocationsInvocation["Username"].asString();
 		auto allInvokeInstancesNode = valueInvocationsInvocation["InvokeInstances"]["InvokeInstance"];
 		for (auto valueInvocationsInvocationInvokeInstancesInvokeInstance : allInvokeInstancesNode)
 		{
 			Invocation::InvokeInstance invokeInstancesObject;
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].isNull())
-				invokeInstancesObject.instanceId = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Repeats"].isNull())
-				invokeInstancesObject.repeats = std::stoi(valueInvocationsInvocationInvokeInstancesInvokeInstance["Repeats"].asString());
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Timed"].isNull())
-				invokeInstancesObject.timed = valueInvocationsInvocationInvokeInstancesInvokeInstance["Timed"].asString() == "true";
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceInvokeStatus"].isNull())
-				invokeInstancesObject.instanceInvokeStatus = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceInvokeStatus"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].isNull())
-				invokeInstancesObject.invocationStatus = valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Output"].isNull())
-				invokeInstancesObject.output = valueInvocationsInvocationInvokeInstancesInvokeInstance["Output"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ExitCode"].isNull())
-				invokeInstancesObject.exitCode = std::stol(valueInvocationsInvocationInvokeInstancesInvokeInstance["ExitCode"].asString());
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Dropped"].isNull())
-				invokeInstancesObject.dropped = std::stoi(valueInvocationsInvocationInvokeInstancesInvokeInstance["Dropped"].asString());
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorCode"].isNull())
-				invokeInstancesObject.errorCode = valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorCode"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorInfo"].isNull())
-				invokeInstancesObject.errorInfo = valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorInfo"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["CreationTime"].isNull())
 				invokeInstancesObject.creationTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["CreationTime"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["StartTime"].isNull())
-				invokeInstancesObject.startTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["StartTime"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["StopTime"].isNull())
-				invokeInstancesObject.stopTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["StopTime"].asString();
-			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["FinishTime"].isNull())
-				invokeInstancesObject.finishTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["FinishTime"].asString();
 			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["UpdateTime"].isNull())
 				invokeInstancesObject.updateTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["UpdateTime"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["FinishTime"].isNull())
+				invokeInstancesObject.finishTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["FinishTime"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].isNull())
+				invokeInstancesObject.invocationStatus = valueInvocationsInvocationInvokeInstancesInvokeInstance["InvocationStatus"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Repeats"].isNull())
+				invokeInstancesObject.repeats = std::stoi(valueInvocationsInvocationInvokeInstancesInvokeInstance["Repeats"].asString());
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].isNull())
+				invokeInstancesObject.instanceId = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Output"].isNull())
+				invokeInstancesObject.output = valueInvocationsInvocationInvokeInstancesInvokeInstance["Output"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Dropped"].isNull())
+				invokeInstancesObject.dropped = std::stoi(valueInvocationsInvocationInvokeInstancesInvokeInstance["Dropped"].asString());
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["StopTime"].isNull())
+				invokeInstancesObject.stopTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["StopTime"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ExitCode"].isNull())
+				invokeInstancesObject.exitCode = std::stol(valueInvocationsInvocationInvokeInstancesInvokeInstance["ExitCode"].asString());
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["StartTime"].isNull())
+				invokeInstancesObject.startTime = valueInvocationsInvocationInvokeInstancesInvokeInstance["StartTime"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorInfo"].isNull())
+				invokeInstancesObject.errorInfo = valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorInfo"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["Timed"].isNull())
+				invokeInstancesObject.timed = valueInvocationsInvocationInvokeInstancesInvokeInstance["Timed"].asString() == "true";
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorCode"].isNull())
+				invokeInstancesObject.errorCode = valueInvocationsInvocationInvokeInstancesInvokeInstance["ErrorCode"].asString();
+			if(!valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceInvokeStatus"].isNull())
+				invokeInstancesObject.instanceInvokeStatus = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceInvokeStatus"].asString();
 			invocationsObject.invokeInstances.push_back(invokeInstancesObject);
 		}
 		invocations_.push_back(invocationsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 

@@ -93,8 +93,8 @@ void ResetDisksRequest::setDisk(const std::vector<Disk>& disk)
 	for(int dep1 = 0; dep1!= disk.size(); dep1++) {
 		auto diskObj = disk.at(dep1);
 		std::string diskObjStr = "Disk." + std::to_string(dep1 + 1);
-		setParameter(diskObjStr + ".DiskId", diskObj.diskId);
 		setParameter(diskObjStr + ".SnapshotId", diskObj.snapshotId);
+		setParameter(diskObjStr + ".DiskId", diskObj.diskId);
 	}
 }
 

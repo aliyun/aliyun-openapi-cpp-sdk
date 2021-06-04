@@ -93,6 +93,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getDiskIds()const;
 				void setDiskIds(const std::string& diskIds);
+				std::string getMultiAttach()const;
+				void setMultiAttach(const std::string& multiAttach);
 				bool getDeleteWithInstance()const;
 				void setDeleteWithInstance(bool deleteWithInstance);
 				std::string getResourceOwnerAccount()const;
@@ -141,6 +143,7 @@ namespace AlibabaCloud
 				std::string nextToken_;
 				int pageSize_;
 				std::string diskIds_;
+				std::string multiAttach_;
 				bool deleteWithInstance_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

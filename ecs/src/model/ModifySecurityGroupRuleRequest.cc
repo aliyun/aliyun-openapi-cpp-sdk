@@ -49,6 +49,17 @@ void ModifySecurityGroupRuleRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifySecurityGroupRuleRequest::getSourcePrefixListId()const
+{
+	return sourcePrefixListId_;
+}
+
+void ModifySecurityGroupRuleRequest::setSourcePrefixListId(const std::string& sourcePrefixListId)
+{
+	sourcePrefixListId_ = sourcePrefixListId;
+	setParameter("SourcePrefixListId", sourcePrefixListId);
+}
+
 std::string ModifySecurityGroupRuleRequest::getSourcePortRange()const
 {
 	return sourcePortRange_;

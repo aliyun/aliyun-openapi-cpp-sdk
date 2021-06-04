@@ -137,6 +137,17 @@ void CreateDiskRequest::setStorageSetPartitionNumber(int storageSetPartitionNumb
 	setParameter("StorageSetPartitionNumber", std::to_string(storageSetPartitionNumber));
 }
 
+std::string CreateDiskRequest::getMultiAttach()const
+{
+	return multiAttach_;
+}
+
+void CreateDiskRequest::setMultiAttach(const std::string& multiAttach)
+{
+	multiAttach_ = multiAttach;
+	setParameter("MultiAttach", multiAttach);
+}
+
 std::vector<CreateDiskRequest::Tag> CreateDiskRequest::getTag()const
 {
 	return tag_;
@@ -151,6 +162,17 @@ void CreateDiskRequest::setTag(const std::vector<Tag>& tag)
 		setParameter(tagObjStr + ".Value", tagObj.value);
 		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
+}
+
+std::string CreateDiskRequest::getAdvancedFeatures()const
+{
+	return advancedFeatures_;
+}
+
+void CreateDiskRequest::setAdvancedFeatures(const std::string& advancedFeatures)
+{
+	advancedFeatures_ = advancedFeatures;
+	setParameter("AdvancedFeatures", advancedFeatures);
 }
 
 std::vector<CreateDiskRequest::Arn> CreateDiskRequest::getArn()const
@@ -168,17 +190,6 @@ void CreateDiskRequest::setArn(const std::vector<Arn>& arn)
 		setParameter(arnObjStr + ".RoleType", arnObj.roleType);
 		setParameter(arnObjStr + ".AssumeRoleFor", std::to_string(arnObj.assumeRoleFor));
 	}
-}
-
-std::string CreateDiskRequest::getAdvancedFeatures()const
-{
-	return advancedFeatures_;
-}
-
-void CreateDiskRequest::setAdvancedFeatures(const std::string& advancedFeatures)
-{
-	advancedFeatures_ = advancedFeatures;
-	setParameter("AdvancedFeatures", advancedFeatures);
 }
 
 std::string CreateDiskRequest::getDedicatedBlockStorageClusterId()const

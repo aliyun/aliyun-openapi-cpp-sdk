@@ -71,6 +71,17 @@ void AuthorizeSecurityGroupEgressRequest::setClientToken(const std::string& clie
 	setParameter("ClientToken", clientToken);
 }
 
+std::string AuthorizeSecurityGroupEgressRequest::getDestPrefixListId()const
+{
+	return destPrefixListId_;
+}
+
+void AuthorizeSecurityGroupEgressRequest::setDestPrefixListId(const std::string& destPrefixListId)
+{
+	destPrefixListId_ = destPrefixListId;
+	setParameter("DestPrefixListId", destPrefixListId);
+}
+
 std::string AuthorizeSecurityGroupEgressRequest::getSecurityGroupId()const
 {
 	return securityGroupId_;

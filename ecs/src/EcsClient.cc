@@ -2031,6 +2031,42 @@ EcsClient::CreatePhysicalConnectionOutcomeCallable EcsClient::createPhysicalConn
 	return task->get_future();
 }
 
+EcsClient::CreatePrefixListOutcome EcsClient::createPrefixList(const CreatePrefixListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePrefixListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePrefixListOutcome(CreatePrefixListResult(outcome.result()));
+	else
+		return CreatePrefixListOutcome(outcome.error());
+}
+
+void EcsClient::createPrefixListAsync(const CreatePrefixListRequest& request, const CreatePrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPrefixList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreatePrefixListOutcomeCallable EcsClient::createPrefixListCallable(const CreatePrefixListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePrefixListOutcome()>>(
+			[this, request]()
+			{
+			return this->createPrefixList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateRouteEntryOutcome EcsClient::createRouteEntry(const CreateRouteEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3321,6 +3357,42 @@ EcsClient::DeletePhysicalConnectionOutcomeCallable EcsClient::deletePhysicalConn
 			[this, request]()
 			{
 			return this->deletePhysicalConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeletePrefixListOutcome EcsClient::deletePrefixList(const DeletePrefixListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePrefixListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePrefixListOutcome(DeletePrefixListResult(outcome.result()));
+	else
+		return DeletePrefixListOutcome(outcome.error());
+}
+
+void EcsClient::deletePrefixListAsync(const DeletePrefixListRequest& request, const DeletePrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePrefixList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeletePrefixListOutcomeCallable EcsClient::deletePrefixListCallable(const DeletePrefixListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePrefixListOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePrefixList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6273,6 +6345,114 @@ EcsClient::DescribePhysicalConnectionsOutcomeCallable EcsClient::describePhysica
 			[this, request]()
 			{
 			return this->describePhysicalConnections(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribePrefixListAssociationsOutcome EcsClient::describePrefixListAssociations(const DescribePrefixListAssociationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePrefixListAssociationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePrefixListAssociationsOutcome(DescribePrefixListAssociationsResult(outcome.result()));
+	else
+		return DescribePrefixListAssociationsOutcome(outcome.error());
+}
+
+void EcsClient::describePrefixListAssociationsAsync(const DescribePrefixListAssociationsRequest& request, const DescribePrefixListAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePrefixListAssociations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribePrefixListAssociationsOutcomeCallable EcsClient::describePrefixListAssociationsCallable(const DescribePrefixListAssociationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePrefixListAssociationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePrefixListAssociations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribePrefixListAttributesOutcome EcsClient::describePrefixListAttributes(const DescribePrefixListAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePrefixListAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePrefixListAttributesOutcome(DescribePrefixListAttributesResult(outcome.result()));
+	else
+		return DescribePrefixListAttributesOutcome(outcome.error());
+}
+
+void EcsClient::describePrefixListAttributesAsync(const DescribePrefixListAttributesRequest& request, const DescribePrefixListAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePrefixListAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribePrefixListAttributesOutcomeCallable EcsClient::describePrefixListAttributesCallable(const DescribePrefixListAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePrefixListAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePrefixListAttributes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribePrefixListsOutcome EcsClient::describePrefixLists(const DescribePrefixListsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePrefixListsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePrefixListsOutcome(DescribePrefixListsResult(outcome.result()));
+	else
+		return DescribePrefixListsOutcome(outcome.error());
+}
+
+void EcsClient::describePrefixListsAsync(const DescribePrefixListsRequest& request, const DescribePrefixListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePrefixLists(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribePrefixListsOutcomeCallable EcsClient::describePrefixListsCallable(const DescribePrefixListsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePrefixListsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePrefixLists(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9801,6 +9981,42 @@ EcsClient::ModifyPhysicalConnectionAttributeOutcomeCallable EcsClient::modifyPhy
 			[this, request]()
 			{
 			return this->modifyPhysicalConnectionAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyPrefixListOutcome EcsClient::modifyPrefixList(const ModifyPrefixListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPrefixListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPrefixListOutcome(ModifyPrefixListResult(outcome.result()));
+	else
+		return ModifyPrefixListOutcome(outcome.error());
+}
+
+void EcsClient::modifyPrefixListAsync(const ModifyPrefixListRequest& request, const ModifyPrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPrefixList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyPrefixListOutcomeCallable EcsClient::modifyPrefixListCallable(const ModifyPrefixListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPrefixListOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPrefixList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

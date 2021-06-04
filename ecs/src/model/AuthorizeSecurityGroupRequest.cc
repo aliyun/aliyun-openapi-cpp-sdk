@@ -49,6 +49,17 @@ void AuthorizeSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AuthorizeSecurityGroupRequest::getSourcePrefixListId()const
+{
+	return sourcePrefixListId_;
+}
+
+void AuthorizeSecurityGroupRequest::setSourcePrefixListId(const std::string& sourcePrefixListId)
+{
+	sourcePrefixListId_ = sourcePrefixListId;
+	setParameter("SourcePrefixListId", sourcePrefixListId);
+}
+
 std::string AuthorizeSecurityGroupRequest::getSourcePortRange()const
 {
 	return sourcePortRange_;

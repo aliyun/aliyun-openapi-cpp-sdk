@@ -33,8 +33,8 @@ namespace AlibabaCloud
 			public:
 				struct Disk
 				{
-					std::string diskId;
 					std::string snapshotId;
+					std::string diskId;
 				};
 
 			public:

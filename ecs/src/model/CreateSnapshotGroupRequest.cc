@@ -38,6 +38,17 @@ void CreateSnapshotGroupRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool CreateSnapshotGroupRequest::getInstantAccess()const
+{
+	return instantAccess_;
+}
+
+void CreateSnapshotGroupRequest::setInstantAccess(bool instantAccess)
+{
+	instantAccess_ = instantAccess;
+	setParameter("InstantAccess", instantAccess ? "true" : "false");
+}
+
 std::vector<std::string> CreateSnapshotGroupRequest::getExcludeDiskId()const
 {
 	return excludeDiskId_;
@@ -49,17 +60,6 @@ void CreateSnapshotGroupRequest::setExcludeDiskId(const std::vector<std::string>
 	for(int dep1 = 0; dep1!= excludeDiskId.size(); dep1++) {
 		setParameter("ExcludeDiskId."+ std::to_string(dep1), excludeDiskId.at(dep1));
 	}
-}
-
-bool CreateSnapshotGroupRequest::getInstantAccess()const
-{
-	return instantAccess_;
-}
-
-void CreateSnapshotGroupRequest::setInstantAccess(bool instantAccess)
-{
-	instantAccess_ = instantAccess;
-	setParameter("InstantAccess", instantAccess ? "true" : "false");
 }
 
 std::string CreateSnapshotGroupRequest::getDescription()const
