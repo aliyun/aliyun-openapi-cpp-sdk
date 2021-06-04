@@ -55,8 +55,6 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/CreateLogstashResult.h
 	include/alibabacloud/elasticsearch/model/CreatePipelinesRequest.h
 	include/alibabacloud/elasticsearch/model/CreatePipelinesResult.h
-	include/alibabacloud/elasticsearch/model/CreateProjectRequest.h
-	include/alibabacloud/elasticsearch/model/CreateProjectResult.h
 	include/alibabacloud/elasticsearch/model/CreateSnapshotRequest.h
 	include/alibabacloud/elasticsearch/model/CreateSnapshotResult.h
 	include/alibabacloud/elasticsearch/model/DeactivateZonesRequest.h
@@ -79,8 +77,6 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DeleteLogstashResult.h
 	include/alibabacloud/elasticsearch/model/DeletePipelinesRequest.h
 	include/alibabacloud/elasticsearch/model/DeletePipelinesResult.h
-	include/alibabacloud/elasticsearch/model/DeleteProjectRequest.h
-	include/alibabacloud/elasticsearch/model/DeleteProjectResult.h
 	include/alibabacloud/elasticsearch/model/DeleteSnapshotRepoRequest.h
 	include/alibabacloud/elasticsearch/model/DeleteSnapshotRepoResult.h
 	include/alibabacloud/elasticsearch/model/DescribeAckOperatorRequest.h
@@ -127,6 +123,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/GetClusterDataInformationResult.h
 	include/alibabacloud/elasticsearch/model/GetElastictaskRequest.h
 	include/alibabacloud/elasticsearch/model/GetElastictaskResult.h
+	include/alibabacloud/elasticsearch/model/GetEmonGrafanaAlertsRequest.h
+	include/alibabacloud/elasticsearch/model/GetEmonGrafanaAlertsResult.h
+	include/alibabacloud/elasticsearch/model/GetEmonGrafanaDashboardsRequest.h
+	include/alibabacloud/elasticsearch/model/GetEmonGrafanaDashboardsResult.h
 	include/alibabacloud/elasticsearch/model/GetEmonMonitorDataRequest.h
 	include/alibabacloud/elasticsearch/model/GetEmonMonitorDataResult.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationRequest.h
@@ -231,6 +231,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/OpenDiagnosisResult.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsRequest.h
 	include/alibabacloud/elasticsearch/model/OpenHttpsResult.h
+	include/alibabacloud/elasticsearch/model/PostEmonTryAlarmRuleRequest.h
+	include/alibabacloud/elasticsearch/model/PostEmonTryAlarmRuleResult.h
 	include/alibabacloud/elasticsearch/model/RecommendTemplatesRequest.h
 	include/alibabacloud/elasticsearch/model/RecommendTemplatesResult.h
 	include/alibabacloud/elasticsearch/model/ReinstallCollectorRequest.h
@@ -249,8 +251,6 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ResumeElasticsearchTaskResult.h
 	include/alibabacloud/elasticsearch/model/ResumeLogstashTaskRequest.h
 	include/alibabacloud/elasticsearch/model/ResumeLogstashTaskResult.h
-	include/alibabacloud/elasticsearch/model/RollbackInstanceRequest.h
-	include/alibabacloud/elasticsearch/model/RollbackInstanceResult.h
 	include/alibabacloud/elasticsearch/model/RolloverDataStreamRequest.h
 	include/alibabacloud/elasticsearch/model/RolloverDataStreamResult.h
 	include/alibabacloud/elasticsearch/model/RunPipelinesRequest.h
@@ -392,8 +392,6 @@ set(elasticsearch_src
 	src/model/CreateLogstashResult.cc
 	src/model/CreatePipelinesRequest.cc
 	src/model/CreatePipelinesResult.cc
-	src/model/CreateProjectRequest.cc
-	src/model/CreateProjectResult.cc
 	src/model/CreateSnapshotRequest.cc
 	src/model/CreateSnapshotResult.cc
 	src/model/DeactivateZonesRequest.cc
@@ -416,8 +414,6 @@ set(elasticsearch_src
 	src/model/DeleteLogstashResult.cc
 	src/model/DeletePipelinesRequest.cc
 	src/model/DeletePipelinesResult.cc
-	src/model/DeleteProjectRequest.cc
-	src/model/DeleteProjectResult.cc
 	src/model/DeleteSnapshotRepoRequest.cc
 	src/model/DeleteSnapshotRepoResult.cc
 	src/model/DescribeAckOperatorRequest.cc
@@ -464,6 +460,10 @@ set(elasticsearch_src
 	src/model/GetClusterDataInformationResult.cc
 	src/model/GetElastictaskRequest.cc
 	src/model/GetElastictaskResult.cc
+	src/model/GetEmonGrafanaAlertsRequest.cc
+	src/model/GetEmonGrafanaAlertsResult.cc
+	src/model/GetEmonGrafanaDashboardsRequest.cc
+	src/model/GetEmonGrafanaDashboardsResult.cc
 	src/model/GetEmonMonitorDataRequest.cc
 	src/model/GetEmonMonitorDataResult.cc
 	src/model/GetRegionConfigurationRequest.cc
@@ -568,6 +568,8 @@ set(elasticsearch_src
 	src/model/OpenDiagnosisResult.cc
 	src/model/OpenHttpsRequest.cc
 	src/model/OpenHttpsResult.cc
+	src/model/PostEmonTryAlarmRuleRequest.cc
+	src/model/PostEmonTryAlarmRuleResult.cc
 	src/model/RecommendTemplatesRequest.cc
 	src/model/RecommendTemplatesResult.cc
 	src/model/ReinstallCollectorRequest.cc
@@ -586,8 +588,6 @@ set(elasticsearch_src
 	src/model/ResumeElasticsearchTaskResult.cc
 	src/model/ResumeLogstashTaskRequest.cc
 	src/model/ResumeLogstashTaskResult.cc
-	src/model/RollbackInstanceRequest.cc
-	src/model/RollbackInstanceResult.cc
 	src/model/RolloverDataStreamRequest.cc
 	src/model/RolloverDataStreamResult.cc
 	src/model/RunPipelinesRequest.cc

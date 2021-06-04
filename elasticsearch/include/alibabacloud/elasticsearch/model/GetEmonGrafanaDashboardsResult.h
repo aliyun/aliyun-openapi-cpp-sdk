@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEPROJECTRESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEPROJECTRESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANADASHBOARDSRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANADASHBOARDSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateProjectResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetEmonGrafanaDashboardsResult : public ServiceResult
 			{
 			public:
-				struct Result
-				{
-					std::string id;
-				};
 
 
-				CreateProjectResult();
-				explicit CreateProjectResult(const std::string &payload);
-				~CreateProjectResult();
-				Result getResult()const;
+				GetEmonGrafanaDashboardsResult();
+				explicit GetEmonGrafanaDashboardsResult(const std::string &payload);
+				~GetEmonGrafanaDashboardsResult();
+				std::string getMessage()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
+				std::string message_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEPROJECTRESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANADASHBOARDSRESULT_H_

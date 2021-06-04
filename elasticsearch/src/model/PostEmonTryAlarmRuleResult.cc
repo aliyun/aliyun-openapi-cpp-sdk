@@ -14,31 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/DeleteProjectResult.h>
+#include <alibabacloud/elasticsearch/model/PostEmonTryAlarmRuleResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Elasticsearch;
 using namespace AlibabaCloud::Elasticsearch::Model;
 
-DeleteProjectResult::DeleteProjectResult() :
+PostEmonTryAlarmRuleResult::PostEmonTryAlarmRuleResult() :
 	ServiceResult()
 {}
 
-DeleteProjectResult::DeleteProjectResult(const std::string &payload) :
+PostEmonTryAlarmRuleResult::PostEmonTryAlarmRuleResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteProjectResult::~DeleteProjectResult()
+PostEmonTryAlarmRuleResult::~PostEmonTryAlarmRuleResult()
 {}
 
-void DeleteProjectResult::parse(const std::string &payload)
+void PostEmonTryAlarmRuleResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+std::string PostEmonTryAlarmRuleResult::getMessage()const
+{
+	return message_;
+}
+
+std::string PostEmonTryAlarmRuleResult::getCode()const
+{
+	return code_;
+}
+
+bool PostEmonTryAlarmRuleResult::getSuccess()const
+{
+	return success_;
 }
 

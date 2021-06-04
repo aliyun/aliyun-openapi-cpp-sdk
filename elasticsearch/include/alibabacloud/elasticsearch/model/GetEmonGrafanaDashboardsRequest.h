@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEPROJECTREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEPROJECTREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANADASHBOARDSREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANADASHBOARDSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateProjectRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetEmonGrafanaDashboardsRequest : public RoaServiceRequest
 			{
 
 			public:
-				CreateProjectRequest();
-				~CreateProjectRequest();
+				GetEmonGrafanaDashboardsRequest();
+				~GetEmonGrafanaDashboardsRequest();
 
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
 
             private:
-				std::string clientToken_;
+				std::string projectId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEPROJECTREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANADASHBOARDSREQUEST_H_

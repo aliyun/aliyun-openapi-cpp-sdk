@@ -104,6 +104,7 @@ namespace AlibabaCloud
 					bool advancedDedicateMaster;
 					NodeSpec nodeSpec;
 					std::string paymentType;
+					std::string postpaidServiceStatus;
 					ClientNodeConfiguration clientNodeConfiguration;
 				};
 

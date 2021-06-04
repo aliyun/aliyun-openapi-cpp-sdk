@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETEPROJECTREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETEPROJECTREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_POSTEMONTRYALARMRULEREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_POSTEMONTRYALARMRULEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteProjectRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT PostEmonTryAlarmRuleRequest : public RoaServiceRequest
 			{
 
 			public:
-				DeleteProjectRequest();
-				~DeleteProjectRequest();
+				PostEmonTryAlarmRuleRequest();
+				~PostEmonTryAlarmRuleRequest();
 
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getId()const;
-				void setId(const std::string& id);
+				std::string getAlarmGroupId()const;
+				void setAlarmGroupId(const std::string& alarmGroupId);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
 
             private:
-				std::string clientToken_;
-				std::string id_;
+				std::string alarmGroupId_;
+				std::string projectId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETEPROJECTREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_POSTEMONTRYALARMRULEREQUEST_H_

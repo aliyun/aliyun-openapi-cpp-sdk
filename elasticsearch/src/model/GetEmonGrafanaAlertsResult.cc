@@ -14,39 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/CreateProjectResult.h>
+#include <alibabacloud/elasticsearch/model/GetEmonGrafanaAlertsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Elasticsearch;
 using namespace AlibabaCloud::Elasticsearch::Model;
 
-CreateProjectResult::CreateProjectResult() :
+GetEmonGrafanaAlertsResult::GetEmonGrafanaAlertsResult() :
 	ServiceResult()
 {}
 
-CreateProjectResult::CreateProjectResult(const std::string &payload) :
+GetEmonGrafanaAlertsResult::GetEmonGrafanaAlertsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateProjectResult::~CreateProjectResult()
+GetEmonGrafanaAlertsResult::~GetEmonGrafanaAlertsResult()
 {}
 
-void CreateProjectResult::parse(const std::string &payload)
+void GetEmonGrafanaAlertsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["id"].isNull())
-		result_.id = resultNode["id"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
-CreateProjectResult::Result CreateProjectResult::getResult()const
+std::string GetEmonGrafanaAlertsResult::getMessage()const
 {
-	return result_;
+	return message_;
+}
+
+std::string GetEmonGrafanaAlertsResult::getCode()const
+{
+	return code_;
+}
+
+bool GetEmonGrafanaAlertsResult::getSuccess()const
+{
+	return success_;
 }
 

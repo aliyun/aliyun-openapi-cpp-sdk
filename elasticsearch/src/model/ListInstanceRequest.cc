@@ -50,17 +50,6 @@ void ListInstanceRequest::setInstanceCategory(const std::string& instanceCategor
 	setParameter("InstanceCategory", instanceCategory);
 }
 
-std::string ListInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListInstanceRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
-}
-
 std::string ListInstanceRequest::getTags()const
 {
 	return tags_;

@@ -14,28 +14,28 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/CreateProjectRequest.h>
+#include <alibabacloud/elasticsearch/model/GetEmonGrafanaAlertsRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::CreateProjectRequest;
+using AlibabaCloud::Elasticsearch::Model::GetEmonGrafanaAlertsRequest;
 
-CreateProjectRequest::CreateProjectRequest() :
+GetEmonGrafanaAlertsRequest::GetEmonGrafanaAlertsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/projects");
-	setMethod(HttpRequest::Method::Post);
+	setResourcePath("/openapi/emon/projects/[ProjectId]/grafana/proxy/api/alerts");
+	setMethod(HttpRequest::Method::Get);
 }
 
-CreateProjectRequest::~CreateProjectRequest()
+GetEmonGrafanaAlertsRequest::~GetEmonGrafanaAlertsRequest()
 {}
 
-std::string CreateProjectRequest::getClientToken()const
+std::string GetEmonGrafanaAlertsRequest::getProjectId()const
 {
-	return clientToken_;
+	return projectId_;
 }
 
-void CreateProjectRequest::setClientToken(const std::string& clientToken)
+void GetEmonGrafanaAlertsRequest::setProjectId(const std::string& projectId)
 {
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	projectId_ = projectId;
+	setParameter("ProjectId", projectId);
 }
 

@@ -56,8 +56,6 @@
 #include "model/CreateLogstashResult.h"
 #include "model/CreatePipelinesRequest.h"
 #include "model/CreatePipelinesResult.h"
-#include "model/CreateProjectRequest.h"
-#include "model/CreateProjectResult.h"
 #include "model/CreateSnapshotRequest.h"
 #include "model/CreateSnapshotResult.h"
 #include "model/DeactivateZonesRequest.h"
@@ -80,8 +78,6 @@
 #include "model/DeleteLogstashResult.h"
 #include "model/DeletePipelinesRequest.h"
 #include "model/DeletePipelinesResult.h"
-#include "model/DeleteProjectRequest.h"
-#include "model/DeleteProjectResult.h"
 #include "model/DeleteSnapshotRepoRequest.h"
 #include "model/DeleteSnapshotRepoResult.h"
 #include "model/DescribeAckOperatorRequest.h"
@@ -128,6 +124,10 @@
 #include "model/GetClusterDataInformationResult.h"
 #include "model/GetElastictaskRequest.h"
 #include "model/GetElastictaskResult.h"
+#include "model/GetEmonGrafanaAlertsRequest.h"
+#include "model/GetEmonGrafanaAlertsResult.h"
+#include "model/GetEmonGrafanaDashboardsRequest.h"
+#include "model/GetEmonGrafanaDashboardsResult.h"
 #include "model/GetEmonMonitorDataRequest.h"
 #include "model/GetEmonMonitorDataResult.h"
 #include "model/GetRegionConfigurationRequest.h"
@@ -232,6 +232,8 @@
 #include "model/OpenDiagnosisResult.h"
 #include "model/OpenHttpsRequest.h"
 #include "model/OpenHttpsResult.h"
+#include "model/PostEmonTryAlarmRuleRequest.h"
+#include "model/PostEmonTryAlarmRuleResult.h"
 #include "model/RecommendTemplatesRequest.h"
 #include "model/RecommendTemplatesResult.h"
 #include "model/ReinstallCollectorRequest.h"
@@ -250,8 +252,6 @@
 #include "model/ResumeElasticsearchTaskResult.h"
 #include "model/ResumeLogstashTaskRequest.h"
 #include "model/ResumeLogstashTaskResult.h"
-#include "model/RollbackInstanceRequest.h"
-#include "model/RollbackInstanceResult.h"
 #include "model/RolloverDataStreamRequest.h"
 #include "model/RolloverDataStreamResult.h"
 #include "model/RunPipelinesRequest.h"
@@ -416,9 +416,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePipelinesResult> CreatePipelinesOutcome;
 			typedef std::future<CreatePipelinesOutcome> CreatePipelinesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreatePipelinesRequest&, const CreatePipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePipelinesAsyncHandler;
-			typedef Outcome<Error, Model::CreateProjectResult> CreateProjectOutcome;
-			typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
-			typedef std::function<void(const ElasticsearchClient*, const Model::CreateProjectRequest&, const CreateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
 			typedef Outcome<Error, Model::CreateSnapshotResult> CreateSnapshotOutcome;
 			typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateSnapshotRequest&, const CreateSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
@@ -452,9 +449,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePipelinesResult> DeletePipelinesOutcome;
 			typedef std::future<DeletePipelinesOutcome> DeletePipelinesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeletePipelinesRequest&, const DeletePipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePipelinesAsyncHandler;
-			typedef Outcome<Error, Model::DeleteProjectResult> DeleteProjectOutcome;
-			typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
-			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteProjectRequest&, const DeleteProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSnapshotRepoResult> DeleteSnapshotRepoOutcome;
 			typedef std::future<DeleteSnapshotRepoOutcome> DeleteSnapshotRepoOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteSnapshotRepoRequest&, const DeleteSnapshotRepoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotRepoAsyncHandler;
@@ -524,6 +518,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetElastictaskResult> GetElastictaskOutcome;
 			typedef std::future<GetElastictaskOutcome> GetElastictaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetElastictaskRequest&, const GetElastictaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetElastictaskAsyncHandler;
+			typedef Outcome<Error, Model::GetEmonGrafanaAlertsResult> GetEmonGrafanaAlertsOutcome;
+			typedef std::future<GetEmonGrafanaAlertsOutcome> GetEmonGrafanaAlertsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::GetEmonGrafanaAlertsRequest&, const GetEmonGrafanaAlertsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEmonGrafanaAlertsAsyncHandler;
+			typedef Outcome<Error, Model::GetEmonGrafanaDashboardsResult> GetEmonGrafanaDashboardsOutcome;
+			typedef std::future<GetEmonGrafanaDashboardsOutcome> GetEmonGrafanaDashboardsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::GetEmonGrafanaDashboardsRequest&, const GetEmonGrafanaDashboardsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEmonGrafanaDashboardsAsyncHandler;
 			typedef Outcome<Error, Model::GetEmonMonitorDataResult> GetEmonMonitorDataOutcome;
 			typedef std::future<GetEmonMonitorDataOutcome> GetEmonMonitorDataOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetEmonMonitorDataRequest&, const GetEmonMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEmonMonitorDataAsyncHandler;
@@ -680,6 +680,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OpenHttpsResult> OpenHttpsOutcome;
 			typedef std::future<OpenHttpsOutcome> OpenHttpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::OpenHttpsRequest&, const OpenHttpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenHttpsAsyncHandler;
+			typedef Outcome<Error, Model::PostEmonTryAlarmRuleResult> PostEmonTryAlarmRuleOutcome;
+			typedef std::future<PostEmonTryAlarmRuleOutcome> PostEmonTryAlarmRuleOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::PostEmonTryAlarmRuleRequest&, const PostEmonTryAlarmRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PostEmonTryAlarmRuleAsyncHandler;
 			typedef Outcome<Error, Model::RecommendTemplatesResult> RecommendTemplatesOutcome;
 			typedef std::future<RecommendTemplatesOutcome> RecommendTemplatesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::RecommendTemplatesRequest&, const RecommendTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecommendTemplatesAsyncHandler;
@@ -707,9 +710,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResumeLogstashTaskResult> ResumeLogstashTaskOutcome;
 			typedef std::future<ResumeLogstashTaskOutcome> ResumeLogstashTaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ResumeLogstashTaskRequest&, const ResumeLogstashTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeLogstashTaskAsyncHandler;
-			typedef Outcome<Error, Model::RollbackInstanceResult> RollbackInstanceOutcome;
-			typedef std::future<RollbackInstanceOutcome> RollbackInstanceOutcomeCallable;
-			typedef std::function<void(const ElasticsearchClient*, const Model::RollbackInstanceRequest&, const RollbackInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RollbackInstanceAsyncHandler;
 			typedef Outcome<Error, Model::RolloverDataStreamResult> RolloverDataStreamOutcome;
 			typedef std::future<RolloverDataStreamOutcome> RolloverDataStreamOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::RolloverDataStreamRequest&, const RolloverDataStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RolloverDataStreamAsyncHandler;
@@ -922,9 +922,6 @@ namespace AlibabaCloud
 			CreatePipelinesOutcome createPipelines(const Model::CreatePipelinesRequest &request)const;
 			void createPipelinesAsync(const Model::CreatePipelinesRequest& request, const CreatePipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePipelinesOutcomeCallable createPipelinesCallable(const Model::CreatePipelinesRequest& request) const;
-			CreateProjectOutcome createProject(const Model::CreateProjectRequest &request)const;
-			void createProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateProjectOutcomeCallable createProjectCallable(const Model::CreateProjectRequest& request) const;
 			CreateSnapshotOutcome createSnapshot(const Model::CreateSnapshotRequest &request)const;
 			void createSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSnapshotOutcomeCallable createSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
@@ -958,9 +955,6 @@ namespace AlibabaCloud
 			DeletePipelinesOutcome deletePipelines(const Model::DeletePipelinesRequest &request)const;
 			void deletePipelinesAsync(const Model::DeletePipelinesRequest& request, const DeletePipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePipelinesOutcomeCallable deletePipelinesCallable(const Model::DeletePipelinesRequest& request) const;
-			DeleteProjectOutcome deleteProject(const Model::DeleteProjectRequest &request)const;
-			void deleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteProjectOutcomeCallable deleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 			DeleteSnapshotRepoOutcome deleteSnapshotRepo(const Model::DeleteSnapshotRepoRequest &request)const;
 			void deleteSnapshotRepoAsync(const Model::DeleteSnapshotRepoRequest& request, const DeleteSnapshotRepoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotRepoOutcomeCallable deleteSnapshotRepoCallable(const Model::DeleteSnapshotRepoRequest& request) const;
@@ -1030,6 +1024,12 @@ namespace AlibabaCloud
 			GetElastictaskOutcome getElastictask(const Model::GetElastictaskRequest &request)const;
 			void getElastictaskAsync(const Model::GetElastictaskRequest& request, const GetElastictaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetElastictaskOutcomeCallable getElastictaskCallable(const Model::GetElastictaskRequest& request) const;
+			GetEmonGrafanaAlertsOutcome getEmonGrafanaAlerts(const Model::GetEmonGrafanaAlertsRequest &request)const;
+			void getEmonGrafanaAlertsAsync(const Model::GetEmonGrafanaAlertsRequest& request, const GetEmonGrafanaAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetEmonGrafanaAlertsOutcomeCallable getEmonGrafanaAlertsCallable(const Model::GetEmonGrafanaAlertsRequest& request) const;
+			GetEmonGrafanaDashboardsOutcome getEmonGrafanaDashboards(const Model::GetEmonGrafanaDashboardsRequest &request)const;
+			void getEmonGrafanaDashboardsAsync(const Model::GetEmonGrafanaDashboardsRequest& request, const GetEmonGrafanaDashboardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetEmonGrafanaDashboardsOutcomeCallable getEmonGrafanaDashboardsCallable(const Model::GetEmonGrafanaDashboardsRequest& request) const;
 			GetEmonMonitorDataOutcome getEmonMonitorData(const Model::GetEmonMonitorDataRequest &request)const;
 			void getEmonMonitorDataAsync(const Model::GetEmonMonitorDataRequest& request, const GetEmonMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEmonMonitorDataOutcomeCallable getEmonMonitorDataCallable(const Model::GetEmonMonitorDataRequest& request) const;
@@ -1186,6 +1186,9 @@ namespace AlibabaCloud
 			OpenHttpsOutcome openHttps(const Model::OpenHttpsRequest &request)const;
 			void openHttpsAsync(const Model::OpenHttpsRequest& request, const OpenHttpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenHttpsOutcomeCallable openHttpsCallable(const Model::OpenHttpsRequest& request) const;
+			PostEmonTryAlarmRuleOutcome postEmonTryAlarmRule(const Model::PostEmonTryAlarmRuleRequest &request)const;
+			void postEmonTryAlarmRuleAsync(const Model::PostEmonTryAlarmRuleRequest& request, const PostEmonTryAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PostEmonTryAlarmRuleOutcomeCallable postEmonTryAlarmRuleCallable(const Model::PostEmonTryAlarmRuleRequest& request) const;
 			RecommendTemplatesOutcome recommendTemplates(const Model::RecommendTemplatesRequest &request)const;
 			void recommendTemplatesAsync(const Model::RecommendTemplatesRequest& request, const RecommendTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecommendTemplatesOutcomeCallable recommendTemplatesCallable(const Model::RecommendTemplatesRequest& request) const;
@@ -1213,9 +1216,6 @@ namespace AlibabaCloud
 			ResumeLogstashTaskOutcome resumeLogstashTask(const Model::ResumeLogstashTaskRequest &request)const;
 			void resumeLogstashTaskAsync(const Model::ResumeLogstashTaskRequest& request, const ResumeLogstashTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeLogstashTaskOutcomeCallable resumeLogstashTaskCallable(const Model::ResumeLogstashTaskRequest& request) const;
-			RollbackInstanceOutcome rollbackInstance(const Model::RollbackInstanceRequest &request)const;
-			void rollbackInstanceAsync(const Model::RollbackInstanceRequest& request, const RollbackInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RollbackInstanceOutcomeCallable rollbackInstanceCallable(const Model::RollbackInstanceRequest& request) const;
 			RolloverDataStreamOutcome rolloverDataStream(const Model::RolloverDataStreamRequest &request)const;
 			void rolloverDataStreamAsync(const Model::RolloverDataStreamRequest& request, const RolloverDataStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RolloverDataStreamOutcomeCallable rolloverDataStreamCallable(const Model::RolloverDataStreamRequest& request) const;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETEPROJECTRESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETEPROJECTRESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANAALERTSRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANAALERTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteProjectResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetEmonGrafanaAlertsResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteProjectResult();
-				explicit DeleteProjectResult(const std::string &payload);
-				~DeleteProjectResult();
+				GetEmonGrafanaAlertsResult();
+				explicit GetEmonGrafanaAlertsResult(const std::string &payload);
+				~GetEmonGrafanaAlertsResult();
+				std::string getMessage()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETEPROJECTRESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANAALERTSRESULT_H_

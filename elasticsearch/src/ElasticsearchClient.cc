@@ -663,42 +663,6 @@ ElasticsearchClient::CreatePipelinesOutcomeCallable ElasticsearchClient::createP
 	return task->get_future();
 }
 
-ElasticsearchClient::CreateProjectOutcome ElasticsearchClient::createProject(const CreateProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateProjectOutcome(CreateProjectResult(outcome.result()));
-	else
-		return CreateProjectOutcome(outcome.error());
-}
-
-void ElasticsearchClient::createProjectAsync(const CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ElasticsearchClient::CreateProjectOutcomeCallable ElasticsearchClient::createProjectCallable(const CreateProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->createProject(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ElasticsearchClient::CreateSnapshotOutcome ElasticsearchClient::createSnapshot(const CreateSnapshotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,42 +1053,6 @@ ElasticsearchClient::DeletePipelinesOutcomeCallable ElasticsearchClient::deleteP
 			[this, request]()
 			{
 			return this->deletePipelines(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ElasticsearchClient::DeleteProjectOutcome ElasticsearchClient::deleteProject(const DeleteProjectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteProjectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteProjectOutcome(DeleteProjectResult(outcome.result()));
-	else
-		return DeleteProjectOutcome(outcome.error());
-}
-
-void ElasticsearchClient::deleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteProject(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ElasticsearchClient::DeleteProjectOutcomeCallable ElasticsearchClient::deleteProjectCallable(const DeleteProjectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteProjectOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1953,6 +1881,78 @@ ElasticsearchClient::GetElastictaskOutcomeCallable ElasticsearchClient::getElast
 			[this, request]()
 			{
 			return this->getElastictask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::GetEmonGrafanaAlertsOutcome ElasticsearchClient::getEmonGrafanaAlerts(const GetEmonGrafanaAlertsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetEmonGrafanaAlertsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetEmonGrafanaAlertsOutcome(GetEmonGrafanaAlertsResult(outcome.result()));
+	else
+		return GetEmonGrafanaAlertsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::getEmonGrafanaAlertsAsync(const GetEmonGrafanaAlertsRequest& request, const GetEmonGrafanaAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getEmonGrafanaAlerts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::GetEmonGrafanaAlertsOutcomeCallable ElasticsearchClient::getEmonGrafanaAlertsCallable(const GetEmonGrafanaAlertsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetEmonGrafanaAlertsOutcome()>>(
+			[this, request]()
+			{
+			return this->getEmonGrafanaAlerts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::GetEmonGrafanaDashboardsOutcome ElasticsearchClient::getEmonGrafanaDashboards(const GetEmonGrafanaDashboardsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetEmonGrafanaDashboardsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetEmonGrafanaDashboardsOutcome(GetEmonGrafanaDashboardsResult(outcome.result()));
+	else
+		return GetEmonGrafanaDashboardsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::getEmonGrafanaDashboardsAsync(const GetEmonGrafanaDashboardsRequest& request, const GetEmonGrafanaDashboardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getEmonGrafanaDashboards(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::GetEmonGrafanaDashboardsOutcomeCallable ElasticsearchClient::getEmonGrafanaDashboardsCallable(const GetEmonGrafanaDashboardsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetEmonGrafanaDashboardsOutcome()>>(
+			[this, request]()
+			{
+			return this->getEmonGrafanaDashboards(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3831,6 +3831,42 @@ ElasticsearchClient::OpenHttpsOutcomeCallable ElasticsearchClient::openHttpsCall
 	return task->get_future();
 }
 
+ElasticsearchClient::PostEmonTryAlarmRuleOutcome ElasticsearchClient::postEmonTryAlarmRule(const PostEmonTryAlarmRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PostEmonTryAlarmRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PostEmonTryAlarmRuleOutcome(PostEmonTryAlarmRuleResult(outcome.result()));
+	else
+		return PostEmonTryAlarmRuleOutcome(outcome.error());
+}
+
+void ElasticsearchClient::postEmonTryAlarmRuleAsync(const PostEmonTryAlarmRuleRequest& request, const PostEmonTryAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, postEmonTryAlarmRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::PostEmonTryAlarmRuleOutcomeCallable ElasticsearchClient::postEmonTryAlarmRuleCallable(const PostEmonTryAlarmRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PostEmonTryAlarmRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->postEmonTryAlarmRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::RecommendTemplatesOutcome ElasticsearchClient::recommendTemplates(const RecommendTemplatesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4149,42 +4185,6 @@ ElasticsearchClient::ResumeLogstashTaskOutcomeCallable ElasticsearchClient::resu
 			[this, request]()
 			{
 			return this->resumeLogstashTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ElasticsearchClient::RollbackInstanceOutcome ElasticsearchClient::rollbackInstance(const RollbackInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RollbackInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RollbackInstanceOutcome(RollbackInstanceResult(outcome.result()));
-	else
-		return RollbackInstanceOutcome(outcome.error());
-}
-
-void ElasticsearchClient::rollbackInstanceAsync(const RollbackInstanceRequest& request, const RollbackInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, rollbackInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ElasticsearchClient::RollbackInstanceOutcomeCallable ElasticsearchClient::rollbackInstanceCallable(const RollbackInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RollbackInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->rollbackInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

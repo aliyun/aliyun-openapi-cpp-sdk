@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_ROLLBACKINSTANCEREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_ROLLBACKINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANAALERTSREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANAALERTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT RollbackInstanceRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetEmonGrafanaAlertsRequest : public RoaServiceRequest
 			{
 
 			public:
-				RollbackInstanceRequest();
-				~RollbackInstanceRequest();
+				GetEmonGrafanaAlertsRequest();
+				~GetEmonGrafanaAlertsRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
+				std::string getProjectId()const;
+				void setProjectId(const std::string& projectId);
 
             private:
-				std::string instanceId_;
-				std::string clientToken_;
+				std::string projectId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_ROLLBACKINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_GETEMONGRAFANAALERTSREQUEST_H_

@@ -39,8 +39,6 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getInstanceCategory()const;
 				void setInstanceCategory(const std::string& instanceCategory);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
 				std::string getResourceGroupId()const;
@@ -63,7 +61,6 @@ namespace AlibabaCloud
             private:
 				std::string description_;
 				std::string instanceCategory_;
-				std::string ownerId_;
 				std::string tags_;
 				std::string resourceGroupId_;
 				std::string instanceId_;
