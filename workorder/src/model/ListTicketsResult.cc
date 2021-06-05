@@ -39,36 +39,39 @@ void ListTicketsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Total"].isNull())
-		data_.total = std::stoi(dataNode["Total"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
-	if(!dataNode["CurrentPage"].isNull())
-		data_.currentPage = std::stoi(dataNode["CurrentPage"].asString());
-	auto allListNode = dataNode["List"]["ListItem"];
-	for (auto dataNodeListListItem : allListNode)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
-		Data::ListItem listItemObject;
-		if(!dataNodeListListItem["AddTime"].isNull())
-			listItemObject.addTime = std::stoi(dataNodeListListItem["AddTime"].asString());
-		if(!dataNodeListListItem["TicketStatus"].isNull())
-			listItemObject.ticketStatus = dataNodeListListItem["TicketStatus"].asString();
-		if(!dataNodeListListItem["CreatorId"].isNull())
-			listItemObject.creatorId = dataNodeListListItem["CreatorId"].asString();
-		if(!dataNodeListListItem["Id"].isNull())
-			listItemObject.id = dataNodeListListItem["Id"].asString();
-		if(!dataNodeListListItem["Title"].isNull())
-			listItemObject.title = dataNodeListListItem["Title"].asString();
-		data_.list.push_back(listItemObject);
+		DataItem dataObject;
+		if(!valueDataDataItem["Title"].isNull())
+			dataObject.title = valueDataDataItem["Title"].asString();
+		if(!valueDataDataItem["TicketId"].isNull())
+			dataObject.ticketId = valueDataDataItem["TicketId"].asString();
+		auto statusNode = value["Status"];
+		if(!statusNode["Label"].isNull())
+			dataObject.status.label = statusNode["Label"].asString();
+		if(!statusNode["Value"].isNull())
+			dataObject.status.value = statusNode["Value"].asString();
+		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
+}
+
+long ListTicketsResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string ListTicketsResult::getMessage()const
@@ -76,7 +79,17 @@ std::string ListTicketsResult::getMessage()const
 	return message_;
 }
 
-ListTicketsResult::Data ListTicketsResult::getData()const
+int ListTicketsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int ListTicketsResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+std::vector<ListTicketsResult::DataItem> ListTicketsResult::getData()const
 {
 	return data_;
 }

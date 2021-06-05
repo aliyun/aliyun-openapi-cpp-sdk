@@ -19,24 +19,13 @@
 using AlibabaCloud::Workorder::Model::CloseTicketRequest;
 
 CloseTicketRequest::CloseTicketRequest() :
-	RpcServiceRequest("workorder", "2020-03-26", "CloseTicket")
+	RpcServiceRequest("workorder", "2021-05-10", "CloseTicket")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 CloseTicketRequest::~CloseTicketRequest()
 {}
-
-std::string CloseTicketRequest::getLanguage()const
-{
-	return language_;
-}
-
-void CloseTicketRequest::setLanguage(const std::string& language)
-{
-	language_ = language;
-	setParameter("Language", language);
-}
 
 std::string CloseTicketRequest::getTicketId()const
 {
@@ -46,6 +35,6 @@ std::string CloseTicketRequest::getTicketId()const
 void CloseTicketRequest::setTicketId(const std::string& ticketId)
 {
 	ticketId_ = ticketId;
-	setParameter("TicketId", ticketId);
+	setBodyParameter("TicketId", ticketId);
 }
 

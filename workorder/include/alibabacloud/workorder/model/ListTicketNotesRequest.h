@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				ListTicketNotesRequest();
 				~ListTicketNotesRequest();
 
-				std::string getLanguage()const;
-				void setLanguage(const std::string& language);
 				std::string getTicketId()const;
 				void setTicketId(const std::string& ticketId);
 
             private:
-				std::string language_;
 				std::string ticketId_;
 
 			};

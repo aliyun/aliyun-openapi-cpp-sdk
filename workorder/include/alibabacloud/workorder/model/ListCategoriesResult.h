@@ -32,14 +32,10 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_WORKORDER_EXPORT ListCategoriesResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct DataItem
 				{
-					struct ListItem
-					{
-						int id;
-						std::string name;
-					};
-					std::vector<ListItem> list;
+					long categoryId;
+					std::string categoryName;
 				};
 
 
@@ -47,7 +43,7 @@ namespace AlibabaCloud
 				explicit ListCategoriesResult(const std::string &payload);
 				~ListCategoriesResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::vector<DataItem> getData()const;
 				int getCode()const;
 				bool getSuccess()const;
 
@@ -55,7 +51,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::vector<DataItem> data_;
 				int code_;
 				bool success_;
 

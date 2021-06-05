@@ -39,7 +39,7 @@ namespace AlibabaCloud
 				~CreateTicketResult();
 				std::string getMessage()const;
 				std::string getData()const;
-				std::string getCode()const;
+				int getCode()const;
 				bool getSuccess()const;
 
 			protected:
@@ -47,7 +47,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				std::string data_;
-				std::string code_;
+				int code_;
 				bool success_;
 
 			};

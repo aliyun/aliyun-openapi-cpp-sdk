@@ -25,6 +25,8 @@ set(workorder_public_header_model
 	include/alibabacloud/workorder/model/CloseTicketResult.h
 	include/alibabacloud/workorder/model/CreateTicketRequest.h
 	include/alibabacloud/workorder/model/CreateTicketResult.h
+	include/alibabacloud/workorder/model/GetMessageTagRequest.h
+	include/alibabacloud/workorder/model/GetMessageTagResult.h
 	include/alibabacloud/workorder/model/ListCategoriesRequest.h
 	include/alibabacloud/workorder/model/ListCategoriesResult.h
 	include/alibabacloud/workorder/model/ListProductsRequest.h
@@ -42,6 +44,8 @@ set(workorder_src
 	src/model/CloseTicketResult.cc
 	src/model/CreateTicketRequest.cc
 	src/model/CreateTicketResult.cc
+	src/model/GetMessageTagRequest.cc
+	src/model/GetMessageTagResult.cc
 	src/model/ListCategoriesRequest.cc
 	src/model/ListCategoriesResult.cc
 	src/model/ListProductsRequest.cc

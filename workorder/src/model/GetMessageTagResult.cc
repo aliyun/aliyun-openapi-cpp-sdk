@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/workorder/model/CreateTicketResult.h>
+#include <alibabacloud/workorder/model/GetMessageTagResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Workorder;
 using namespace AlibabaCloud::Workorder::Model;
 
-CreateTicketResult::CreateTicketResult() :
+GetMessageTagResult::GetMessageTagResult() :
 	ServiceResult()
 {}
 
-CreateTicketResult::CreateTicketResult(const std::string &payload) :
+GetMessageTagResult::GetMessageTagResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateTicketResult::~CreateTicketResult()
+GetMessageTagResult::~GetMessageTagResult()
 {}
 
-void CreateTicketResult::parse(const std::string &payload)
+void GetMessageTagResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -50,22 +50,22 @@ void CreateTicketResult::parse(const std::string &payload)
 
 }
 
-std::string CreateTicketResult::getMessage()const
+std::string GetMessageTagResult::getMessage()const
 {
 	return message_;
 }
 
-std::string CreateTicketResult::getData()const
+std::string GetMessageTagResult::getData()const
 {
 	return data_;
 }
 
-int CreateTicketResult::getCode()const
+int GetMessageTagResult::getCode()const
 {
 	return code_;
 }
 
-bool CreateTicketResult::getSuccess()const
+bool GetMessageTagResult::getSuccess()const
 {
 	return success_;
 }

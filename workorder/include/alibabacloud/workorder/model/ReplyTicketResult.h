@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit ReplyTicketResult(const std::string &payload);
 				~ReplyTicketResult();
 				std::string getMessage()const;
+				std::string getData()const;
 				int getCode()const;
 				bool getSuccess()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string data_;
 				int code_;
 				bool success_;
 

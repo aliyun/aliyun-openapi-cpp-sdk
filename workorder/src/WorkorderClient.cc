@@ -31,21 +31,21 @@ WorkorderClient::WorkorderClient(const Credentials &credentials, const ClientCon
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "workorder");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 WorkorderClient::WorkorderClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "workorder");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 WorkorderClient::WorkorderClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "workorder");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 WorkorderClient::~WorkorderClient()
@@ -117,6 +117,42 @@ WorkorderClient::CreateTicketOutcomeCallable WorkorderClient::createTicketCallab
 			[this, request]()
 			{
 			return this->createTicket(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+WorkorderClient::GetMessageTagOutcome WorkorderClient::getMessageTag(const GetMessageTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMessageTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMessageTagOutcome(GetMessageTagResult(outcome.result()));
+	else
+		return GetMessageTagOutcome(outcome.error());
+}
+
+void WorkorderClient::getMessageTagAsync(const GetMessageTagRequest& request, const GetMessageTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMessageTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+WorkorderClient::GetMessageTagOutcomeCallable WorkorderClient::getMessageTagCallable(const GetMessageTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMessageTagOutcome()>>(
+			[this, request]()
+			{
+			return this->getMessageTag(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

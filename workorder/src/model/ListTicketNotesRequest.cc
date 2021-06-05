@@ -19,24 +19,13 @@
 using AlibabaCloud::Workorder::Model::ListTicketNotesRequest;
 
 ListTicketNotesRequest::ListTicketNotesRequest() :
-	RpcServiceRequest("workorder", "2020-03-26", "ListTicketNotes")
+	RpcServiceRequest("workorder", "2021-05-10", "ListTicketNotes")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ListTicketNotesRequest::~ListTicketNotesRequest()
 {}
-
-std::string ListTicketNotesRequest::getLanguage()const
-{
-	return language_;
-}
-
-void ListTicketNotesRequest::setLanguage(const std::string& language)
-{
-	language_ = language;
-	setParameter("Language", language);
-}
 
 std::string ListTicketNotesRequest::getTicketId()const
 {

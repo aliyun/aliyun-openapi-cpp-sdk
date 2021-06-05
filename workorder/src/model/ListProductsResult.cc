@@ -39,69 +39,34 @@ void ListProductsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	auto allTechMoreNode = dataNode["TechMore"]["TechMoreItem"];
-	for (auto dataNodeTechMoreTechMoreItem : allTechMoreNode)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
-		Data::TechMoreItem techMoreItemObject;
-		if(!dataNodeTechMoreTechMoreItem["GroupName"].isNull())
-			techMoreItemObject.groupName = dataNodeTechMoreTechMoreItem["GroupName"].asString();
-		auto allProductListNode = allTechMoreNode["ProductList"]["ProductListItem"];
-		for (auto allTechMoreNodeProductListProductListItem : allProductListNode)
+		DataItem dataObject;
+		if(!valueDataDataItem["TopCategoryName"].isNull())
+			dataObject.topCategoryName = valueDataDataItem["TopCategoryName"].asString();
+		if(!valueDataDataItem["TopCategoryId"].isNull())
+			dataObject.topCategoryId = std::stol(valueDataDataItem["TopCategoryId"].asString());
+		if(!valueDataDataItem["OrderNumber"].isNull())
+			dataObject.orderNumber = std::stoi(valueDataDataItem["OrderNumber"].asString());
+		auto allRootsNode = valueDataDataItem["Roots"]["RootsItem"];
+		for (auto valueDataDataItemRootsRootsItem : allRootsNode)
 		{
-			Data::TechMoreItem::ProductListItem productListObject;
-			if(!allTechMoreNodeProductListProductListItem["Name"].isNull())
-				productListObject.name = allTechMoreNodeProductListProductListItem["Name"].asString();
-			if(!allTechMoreNodeProductListProductListItem["ProductCode"].isNull())
-				productListObject.productCode = allTechMoreNodeProductListProductListItem["ProductCode"].asString();
-			if(!allTechMoreNodeProductListProductListItem["Description"].isNull())
-				productListObject.description = allTechMoreNodeProductListProductListItem["Description"].asString();
-			techMoreItemObject.productList.push_back(productListObject);
+			DataItem::RootsItem rootsObject;
+			if(!valueDataDataItemRootsRootsItem["CategoryId"].isNull())
+				rootsObject.categoryId = std::stol(valueDataDataItemRootsRootsItem["CategoryId"].asString());
+			if(!valueDataDataItemRootsRootsItem["CategoryName"].isNull())
+				rootsObject.categoryName = valueDataDataItemRootsRootsItem["CategoryName"].asString();
+			dataObject.roots.push_back(rootsObject);
 		}
-		data_.techMore.push_back(techMoreItemObject);
-	}
-	auto allHotConsultationNode = dataNode["HotConsultation"]["HotConsultationItem"];
-	for (auto dataNodeHotConsultationHotConsultationItem : allHotConsultationNode)
-	{
-		Data::HotConsultationItem hotConsultationItemObject;
-		if(!dataNodeHotConsultationHotConsultationItem["Name"].isNull())
-			hotConsultationItemObject.name = dataNodeHotConsultationHotConsultationItem["Name"].asString();
-		if(!dataNodeHotConsultationHotConsultationItem["ProductCode"].isNull())
-			hotConsultationItemObject.productCode = dataNodeHotConsultationHotConsultationItem["ProductCode"].asString();
-		if(!dataNodeHotConsultationHotConsultationItem["Description"].isNull())
-			hotConsultationItemObject.description = dataNodeHotConsultationHotConsultationItem["Description"].asString();
-		data_.hotConsultation.push_back(hotConsultationItemObject);
-	}
-	auto allConsultationMoreNode = dataNode["ConsultationMore"]["ConsultationMoreItem"];
-	for (auto dataNodeConsultationMoreConsultationMoreItem : allConsultationMoreNode)
-	{
-		Data::ConsultationMoreItem consultationMoreItemObject;
-		if(!dataNodeConsultationMoreConsultationMoreItem["Name"].isNull())
-			consultationMoreItemObject.name = dataNodeConsultationMoreConsultationMoreItem["Name"].asString();
-		if(!dataNodeConsultationMoreConsultationMoreItem["ProductCode"].isNull())
-			consultationMoreItemObject.productCode = dataNodeConsultationMoreConsultationMoreItem["ProductCode"].asString();
-		if(!dataNodeConsultationMoreConsultationMoreItem["Description"].isNull())
-			consultationMoreItemObject.description = dataNodeConsultationMoreConsultationMoreItem["Description"].asString();
-		data_.consultationMore.push_back(consultationMoreItemObject);
-	}
-	auto allHotTechNode = dataNode["HotTech"]["HotTechItem"];
-	for (auto dataNodeHotTechHotTechItem : allHotTechNode)
-	{
-		Data::HotTechItem hotTechItemObject;
-		if(!dataNodeHotTechHotTechItem["Name"].isNull())
-			hotTechItemObject.name = dataNodeHotTechHotTechItem["Name"].asString();
-		if(!dataNodeHotTechHotTechItem["ProductCode"].isNull())
-			hotTechItemObject.productCode = dataNodeHotTechHotTechItem["ProductCode"].asString();
-		if(!dataNodeHotTechHotTechItem["Description"].isNull())
-			hotTechItemObject.description = dataNodeHotTechHotTechItem["Description"].asString();
-		data_.hotTech.push_back(hotTechItemObject);
+		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -110,7 +75,7 @@ std::string ListProductsResult::getMessage()const
 	return message_;
 }
 
-ListProductsResult::Data ListProductsResult::getData()const
+std::vector<ListProductsResult::DataItem> ListProductsResult::getData()const
 {
 	return data_;
 }

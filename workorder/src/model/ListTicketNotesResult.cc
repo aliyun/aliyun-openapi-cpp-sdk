@@ -39,27 +39,38 @@ void ListTicketNotesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	auto allListNode = dataNode["List"]["ListItem"];
-	for (auto dataNodeListListItem : allListNode)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
-		Data::ListItem listItemObject;
-		if(!dataNodeListListItem["FromOfficial"].isNull())
-			listItemObject.fromOfficial = dataNodeListListItem["FromOfficial"].asString() == "true";
-		if(!dataNodeListListItem["GmtCreated"].isNull())
-			listItemObject.gmtCreated = std::stoi(dataNodeListListItem["GmtCreated"].asString());
-		if(!dataNodeListListItem["NoteId"].isNull())
-			listItemObject.noteId = dataNodeListListItem["NoteId"].asString();
-		if(!dataNodeListListItem["Content"].isNull())
-			listItemObject.content = dataNodeListListItem["Content"].asString();
-		data_.list.push_back(listItemObject);
+		DataItem dataObject;
+		if(!valueDataDataItem["Status"].isNull())
+			dataObject.status = std::stoi(valueDataDataItem["Status"].asString());
+		if(!valueDataDataItem["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataDataItem["CreateTime"].asString());
+		if(!valueDataDataItem["Type"].isNull())
+			dataObject.type = std::stoi(valueDataDataItem["Type"].asString());
+		if(!valueDataDataItem["DialogId"].isNull())
+			dataObject.dialogId = std::stol(valueDataDataItem["DialogId"].asString());
+		if(!valueDataDataItem["Tip"].isNull())
+			dataObject.tip = valueDataDataItem["Tip"].asString();
+		auto dataInfoNode = value["DataInfo"];
+		if(!dataInfoNode["Content"].isNull())
+			dataObject.dataInfo.content = dataInfoNode["Content"].asString();
+		if(!dataInfoNode["Schema"].isNull())
+			dataObject.dataInfo.schema = dataInfoNode["Schema"].asString();
+		auto userInfoNode = value["UserInfo"];
+		if(!userInfoNode["UserName"].isNull())
+			dataObject.userInfo.userName = userInfoNode["UserName"].asString();
+		if(!userInfoNode["Role"].isNull())
+			dataObject.userInfo.role = std::stoi(userInfoNode["Role"].asString());
+		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -68,7 +79,7 @@ std::string ListTicketNotesResult::getMessage()const
 	return message_;
 }
 
-ListTicketNotesResult::Data ListTicketNotesResult::getData()const
+std::vector<ListTicketNotesResult::DataItem> ListTicketNotesResult::getData()const
 {
 	return data_;
 }

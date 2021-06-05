@@ -14,27 +14,16 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/workorder/model/ListCategoriesRequest.h>
+#include <alibabacloud/workorder/model/GetMessageTagRequest.h>
 
-using AlibabaCloud::Workorder::Model::ListCategoriesRequest;
+using AlibabaCloud::Workorder::Model::GetMessageTagRequest;
 
-ListCategoriesRequest::ListCategoriesRequest() :
-	RpcServiceRequest("workorder", "2021-05-10", "ListCategories")
+GetMessageTagRequest::GetMessageTagRequest() :
+	RpcServiceRequest("workorder", "2021-05-10", "GetMessageTag")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-ListCategoriesRequest::~ListCategoriesRequest()
+GetMessageTagRequest::~GetMessageTagRequest()
 {}
-
-long ListCategoriesRequest::getParentId()const
-{
-	return parentId_;
-}
-
-void ListCategoriesRequest::setParentId(long parentId)
-{
-	parentId_ = parentId;
-	setParameter("ParentId", std::to_string(parentId));
-}
 

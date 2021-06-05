@@ -35,20 +35,17 @@ namespace AlibabaCloud
 				ReplyTicketRequest();
 				~ReplyTicketRequest();
 
-				std::string getLanguage()const;
-				void setLanguage(const std::string& language);
-				std::string getTicketId()const;
-				void setTicketId(const std::string& ticketId);
+				std::string getSecContent()const;
+				void setSecContent(const std::string& secContent);
 				std::string getContent()const;
 				void setContent(const std::string& content);
-				std::string getSecretContent()const;
-				void setSecretContent(const std::string& secretContent);
+				std::string getTicketId()const;
+				void setTicketId(const std::string& ticketId);
 
             private:
-				std::string language_;
-				std::string ticketId_;
+				std::string secContent_;
 				std::string content_;
-				std::string secretContent_;
+				std::string ticketId_;
 
 			};
 		}

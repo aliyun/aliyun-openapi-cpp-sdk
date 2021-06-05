@@ -35,35 +35,17 @@ namespace AlibabaCloud
 				CreateTicketRequest();
 				~CreateTicketRequest();
 
-				std::string getProductCode()const;
-				void setProductCode(const std::string& productCode);
-				std::string getLanguage()const;
-				void setLanguage(const std::string& language);
-				std::string getTitle()const;
-				void setTitle(const std::string& title);
-				std::string getContent()const;
-				void setContent(const std::string& content);
-				std::string getNotifyTimeRange()const;
-				void setNotifyTimeRange(const std::string& notifyTimeRange);
-				std::string getPhone()const;
-				void setPhone(const std::string& phone);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
-				std::string getEmail()const;
-				void setEmail(const std::string& email);
-				std::string getSecretContent()const;
-				void setSecretContent(const std::string& secretContent);
+				int getSeverity()const;
+				void setSeverity(int severity);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getCategoryId()const;
+				void setCategoryId(const std::string& categoryId);
 
             private:
-				std::string productCode_;
-				std::string language_;
-				std::string title_;
-				std::string content_;
-				std::string notifyTimeRange_;
-				std::string phone_;
-				std::string category_;
-				std::string email_;
-				std::string secretContent_;
+				int severity_;
+				std::string description_;
+				std::string categoryId_;
 
 			};
 		}

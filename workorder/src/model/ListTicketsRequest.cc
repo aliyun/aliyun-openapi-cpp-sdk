@@ -19,7 +19,7 @@
 using AlibabaCloud::Workorder::Model::ListTicketsRequest;
 
 ListTicketsRequest::ListTicketsRequest() :
-	RpcServiceRequest("workorder", "2020-03-26", "ListTickets")
+	RpcServiceRequest("workorder", "2021-05-10", "ListTickets")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,48 +27,50 @@ ListTicketsRequest::ListTicketsRequest() :
 ListTicketsRequest::~ListTicketsRequest()
 {}
 
-std::string ListTicketsRequest::getProductCode()const
+long ListTicketsRequest::getBeginDate()const
 {
-	return productCode_;
+	return beginDate_;
 }
 
-void ListTicketsRequest::setProductCode(const std::string& productCode)
+void ListTicketsRequest::setBeginDate(long beginDate)
 {
-	productCode_ = productCode;
-	setParameter("ProductCode", productCode);
+	beginDate_ = beginDate;
+	setParameter("BeginDate", std::to_string(beginDate));
 }
 
-std::string ListTicketsRequest::getLanguage()const
+std::vector<std::string> ListTicketsRequest::getStatusList()const
 {
-	return language_;
+	return statusList_;
 }
 
-void ListTicketsRequest::setLanguage(const std::string& language)
+void ListTicketsRequest::setStatusList(const std::vector<std::string>& statusList)
 {
-	language_ = language;
-	setParameter("Language", language);
+	statusList_ = statusList;
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
-std::string ListTicketsRequest::getSubUserId()const
+int ListTicketsRequest::getPageNumber()const
 {
-	return subUserId_;
+	return pageNumber_;
 }
 
-void ListTicketsRequest::setSubUserId(const std::string& subUserId)
+void ListTicketsRequest::setPageNumber(int pageNumber)
 {
-	subUserId_ = subUserId;
-	setParameter("SubUserId", subUserId);
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-long ListTicketsRequest::getCreatedBeforeTime()const
+long ListTicketsRequest::getEndDate()const
 {
-	return createdBeforeTime_;
+	return endDate_;
 }
 
-void ListTicketsRequest::setCreatedBeforeTime(long createdBeforeTime)
+void ListTicketsRequest::setEndDate(long endDate)
 {
-	createdBeforeTime_ = createdBeforeTime;
-	setParameter("CreatedBeforeTime", std::to_string(createdBeforeTime));
+	endDate_ = endDate;
+	setParameter("EndDate", std::to_string(endDate));
 }
 
 int ListTicketsRequest::getPageSize()const
@@ -82,47 +84,25 @@ void ListTicketsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string ListTicketsRequest::getIds()const
+std::string ListTicketsRequest::getKeyword()const
 {
-	return ids_;
+	return keyword_;
 }
 
-void ListTicketsRequest::setIds(const std::string& ids)
+void ListTicketsRequest::setKeyword(const std::string& keyword)
 {
-	ids_ = ids;
-	setParameter("Ids", ids);
+	keyword_ = keyword;
+	setParameter("Keyword", keyword);
 }
 
-std::string ListTicketsRequest::getTicketStatus()const
+std::string ListTicketsRequest::getTicketId()const
 {
-	return ticketStatus_;
+	return ticketId_;
 }
 
-void ListTicketsRequest::setTicketStatus(const std::string& ticketStatus)
+void ListTicketsRequest::setTicketId(const std::string& ticketId)
 {
-	ticketStatus_ = ticketStatus;
-	setParameter("TicketStatus", ticketStatus);
-}
-
-int ListTicketsRequest::getPageStart()const
-{
-	return pageStart_;
-}
-
-void ListTicketsRequest::setPageStart(int pageStart)
-{
-	pageStart_ = pageStart;
-	setParameter("PageStart", std::to_string(pageStart));
-}
-
-long ListTicketsRequest::getCreatedAfterTime()const
-{
-	return createdAfterTime_;
-}
-
-void ListTicketsRequest::setCreatedAfterTime(long createdAfterTime)
-{
-	createdAfterTime_ = createdAfterTime;
-	setParameter("CreatedAfterTime", std::to_string(createdAfterTime));
+	ticketId_ = ticketId;
+	setParameter("TicketId", ticketId);
 }
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::Workorder::Model::ReplyTicketRequest;
 
 ReplyTicketRequest::ReplyTicketRequest() :
-	RpcServiceRequest("workorder", "2020-03-26", "ReplyTicket")
+	RpcServiceRequest("workorder", "2021-05-10", "ReplyTicket")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,26 +27,15 @@ ReplyTicketRequest::ReplyTicketRequest() :
 ReplyTicketRequest::~ReplyTicketRequest()
 {}
 
-std::string ReplyTicketRequest::getLanguage()const
+std::string ReplyTicketRequest::getSecContent()const
 {
-	return language_;
+	return secContent_;
 }
 
-void ReplyTicketRequest::setLanguage(const std::string& language)
+void ReplyTicketRequest::setSecContent(const std::string& secContent)
 {
-	language_ = language;
-	setParameter("Language", language);
-}
-
-std::string ReplyTicketRequest::getTicketId()const
-{
-	return ticketId_;
-}
-
-void ReplyTicketRequest::setTicketId(const std::string& ticketId)
-{
-	ticketId_ = ticketId;
-	setParameter("TicketId", ticketId);
+	secContent_ = secContent;
+	setBodyParameter("SecContent", secContent);
 }
 
 std::string ReplyTicketRequest::getContent()const
@@ -57,17 +46,17 @@ std::string ReplyTicketRequest::getContent()const
 void ReplyTicketRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setParameter("Content", content);
+	setBodyParameter("Content", content);
 }
 
-std::string ReplyTicketRequest::getSecretContent()const
+std::string ReplyTicketRequest::getTicketId()const
 {
-	return secretContent_;
+	return ticketId_;
 }
 
-void ReplyTicketRequest::setSecretContent(const std::string& secretContent)
+void ReplyTicketRequest::setTicketId(const std::string& ticketId)
 {
-	secretContent_ = secretContent;
-	setParameter("SecretContent", secretContent);
+	ticketId_ = ticketId;
+	setBodyParameter("TicketId", ticketId);
 }
 

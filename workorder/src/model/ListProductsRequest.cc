@@ -19,7 +19,7 @@
 using AlibabaCloud::Workorder::Model::ListProductsRequest;
 
 ListProductsRequest::ListProductsRequest() :
-	RpcServiceRequest("workorder", "2020-03-26", "ListProducts")
+	RpcServiceRequest("workorder", "2021-05-10", "ListProducts")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,14 +27,14 @@ ListProductsRequest::ListProductsRequest() :
 ListProductsRequest::~ListProductsRequest()
 {}
 
-std::string ListProductsRequest::getLanguage()const
+std::string ListProductsRequest::getName()const
 {
-	return language_;
+	return name_;
 }
 
-void ListProductsRequest::setLanguage(const std::string& language)
+void ListProductsRequest::setName(const std::string& name)
 {
-	language_ = language;
-	setParameter("Language", language);
+	name_ = name;
+	setParameter("Name", name);
 }
 

@@ -35,35 +35,29 @@ namespace AlibabaCloud
 				ListTicketsRequest();
 				~ListTicketsRequest();
 
-				std::string getProductCode()const;
-				void setProductCode(const std::string& productCode);
-				std::string getLanguage()const;
-				void setLanguage(const std::string& language);
-				std::string getSubUserId()const;
-				void setSubUserId(const std::string& subUserId);
-				long getCreatedBeforeTime()const;
-				void setCreatedBeforeTime(long createdBeforeTime);
+				long getBeginDate()const;
+				void setBeginDate(long beginDate);
+				std::vector<std::string> getStatusList()const;
+				void setStatusList(const std::vector<std::string>& statusList);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				long getEndDate()const;
+				void setEndDate(long endDate);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getIds()const;
-				void setIds(const std::string& ids);
-				std::string getTicketStatus()const;
-				void setTicketStatus(const std::string& ticketStatus);
-				int getPageStart()const;
-				void setPageStart(int pageStart);
-				long getCreatedAfterTime()const;
-				void setCreatedAfterTime(long createdAfterTime);
+				std::string getKeyword()const;
+				void setKeyword(const std::string& keyword);
+				std::string getTicketId()const;
+				void setTicketId(const std::string& ticketId);
 
             private:
-				std::string productCode_;
-				std::string language_;
-				std::string subUserId_;
-				long createdBeforeTime_;
+				long beginDate_;
+				std::vector<std::string> statusList_;
+				int pageNumber_;
+				long endDate_;
 				int pageSize_;
-				std::string ids_;
-				std::string ticketStatus_;
-				int pageStart_;
-				long createdAfterTime_;
+				std::string keyword_;
+				std::string ticketId_;
 
 			};
 		}

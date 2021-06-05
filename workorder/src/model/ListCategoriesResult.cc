@@ -39,16 +39,15 @@ void ListCategoriesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	auto allListNode = dataNode["List"]["ListItem"];
-	for (auto dataNodeListListItem : allListNode)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
-		Data::ListItem listItemObject;
-		if(!dataNodeListListItem["Id"].isNull())
-			listItemObject.id = std::stoi(dataNodeListListItem["Id"].asString());
-		if(!dataNodeListListItem["Name"].isNull())
-			listItemObject.name = dataNodeListListItem["Name"].asString();
-		data_.list.push_back(listItemObject);
+		DataItem dataObject;
+		if(!valueDataDataItem["CategoryName"].isNull())
+			dataObject.categoryName = valueDataDataItem["CategoryName"].asString();
+		if(!valueDataDataItem["CategoryId"].isNull())
+			dataObject.categoryId = std::stol(valueDataDataItem["CategoryId"].asString());
+		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
@@ -64,7 +63,7 @@ std::string ListCategoriesResult::getMessage()const
 	return message_;
 }
 
-ListCategoriesResult::Data ListCategoriesResult::getData()const
+std::vector<ListCategoriesResult::DataItem> ListCategoriesResult::getData()const
 {
 	return data_;
 }
