@@ -66,6 +66,7 @@ namespace AlibabaCloud
 					OptionJson optionJson;
 					std::string taskId;
 					std::string address;
+					std::string endTime;
 					std::string taskName;
 					std::string taskType;
 					std::vector<IspCity> ispCities;

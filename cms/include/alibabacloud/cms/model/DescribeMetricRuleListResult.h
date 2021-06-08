@@ -68,6 +68,7 @@ namespace AlibabaCloud
 					std::string noEffectiveInterval;
 					int silenceTime;
 					std::string contactGroups;
+					std::string groupBy;
 					std::string mailSubject;
 					std::string ruleId;
 					std::string sourceType;

@@ -88,13 +88,20 @@ namespace AlibabaCloud
 						int quotaPackage;
 						int quotaLimit;
 					};
+					struct EnterpriseQuota
+					{
+						std::string instanceId;
+						std::string suitInfo;
+					};
 					SiteMonitorOperatorProbe siteMonitorOperatorProbe;
 					std::string instanceId;
+					LogMonitor logMonitor;
+					std::string cRMType;
+					EnterpriseQuota enterpriseQuota;
 					Phone phone;
 					std::string suitInfo;
 					SiteMonitorTask siteMonitorTask;
 					SMS sMS;
-					LogMonitor logMonitor;
 					Api api;
 					SiteMonitorEcsProbe siteMonitorEcsProbe;
 					std::string expireTime;

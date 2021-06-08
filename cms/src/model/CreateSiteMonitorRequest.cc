@@ -27,6 +27,28 @@ CreateSiteMonitorRequest::CreateSiteMonitorRequest() :
 CreateSiteMonitorRequest::~CreateSiteMonitorRequest()
 {}
 
+std::string CreateSiteMonitorRequest::getTaskName()const
+{
+	return taskName_;
+}
+
+void CreateSiteMonitorRequest::setTaskName(const std::string& taskName)
+{
+	taskName_ = taskName;
+	setParameter("TaskName", taskName);
+}
+
+std::string CreateSiteMonitorRequest::getAlertIds()const
+{
+	return alertIds_;
+}
+
+void CreateSiteMonitorRequest::setAlertIds(const std::string& alertIds)
+{
+	alertIds_ = alertIds;
+	setParameter("AlertIds", alertIds);
+}
+
 std::string CreateSiteMonitorRequest::getAddress()const
 {
 	return address_;
@@ -49,15 +71,15 @@ void CreateSiteMonitorRequest::setTaskType(const std::string& taskType)
 	setParameter("TaskType", taskType);
 }
 
-std::string CreateSiteMonitorRequest::getTaskName()const
+long CreateSiteMonitorRequest::getEndTime()const
 {
-	return taskName_;
+	return endTime_;
 }
 
-void CreateSiteMonitorRequest::setTaskName(const std::string& taskName)
+void CreateSiteMonitorRequest::setEndTime(long endTime)
 {
-	taskName_ = taskName;
-	setParameter("TaskName", taskName);
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string CreateSiteMonitorRequest::getIspCities()const
@@ -82,15 +104,15 @@ void CreateSiteMonitorRequest::setOptionsJson(const std::string& optionsJson)
 	setParameter("OptionsJson", optionsJson);
 }
 
-std::string CreateSiteMonitorRequest::getAlertIds()const
+std::string CreateSiteMonitorRequest::getIntervalUnit()const
 {
-	return alertIds_;
+	return intervalUnit_;
 }
 
-void CreateSiteMonitorRequest::setAlertIds(const std::string& alertIds)
+void CreateSiteMonitorRequest::setIntervalUnit(const std::string& intervalUnit)
 {
-	alertIds_ = alertIds;
-	setParameter("AlertIds", alertIds);
+	intervalUnit_ = intervalUnit;
+	setParameter("IntervalUnit", intervalUnit);
 }
 
 std::string CreateSiteMonitorRequest::getInterval()const

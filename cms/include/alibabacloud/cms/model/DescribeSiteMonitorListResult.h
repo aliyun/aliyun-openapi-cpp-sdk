@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						std::string expect_value;
 						std::string http_method;
 						long time_out;
+						std::string group_id;
 						std::string header;
 						std::string response_content;
 						std::string username;
@@ -58,6 +59,7 @@ namespace AlibabaCloud
 					};
 					std::string taskId;
 					std::string address;
+					std::string endTime;
 					OptionsJson optionsJson;
 					std::string taskName;
 					std::string taskType;

@@ -79,6 +79,8 @@ void DescribeMetricRuleListResult::parse(const std::string &payload)
 			alarmsObject.dimensions = valueAlarmsAlarm["Dimensions"].asString();
 		if(!valueAlarmsAlarm["SourceType"].isNull())
 			alarmsObject.sourceType = valueAlarmsAlarm["SourceType"].asString();
+		if(!valueAlarmsAlarm["GroupBy"].isNull())
+			alarmsObject.groupBy = valueAlarmsAlarm["GroupBy"].asString();
 		auto escalationsNode = value["Escalations"];
 		auto infoNode = escalationsNode["Info"];
 		if(!infoNode["ComparisonOperator"].isNull())

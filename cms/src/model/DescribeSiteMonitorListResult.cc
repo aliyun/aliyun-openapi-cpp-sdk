@@ -59,11 +59,15 @@ void DescribeSiteMonitorListResult::parse(const std::string &payload)
 			siteMonitorsObject.interval = valueSiteMonitorsSiteMonitor["Interval"].asString();
 		if(!valueSiteMonitorsSiteMonitor["UpdateTime"].isNull())
 			siteMonitorsObject.updateTime = valueSiteMonitorsSiteMonitor["UpdateTime"].asString();
+		if(!valueSiteMonitorsSiteMonitor["EndTime"].isNull())
+			siteMonitorsObject.endTime = valueSiteMonitorsSiteMonitor["EndTime"].asString();
 		auto optionsJsonNode = value["OptionsJson"];
 		if(!optionsJsonNode["dns_type"].isNull())
 			siteMonitorsObject.optionsJson.dns_type = optionsJsonNode["dns_type"].asString();
 		if(!optionsJsonNode["dns_server"].isNull())
 			siteMonitorsObject.optionsJson.dns_server = optionsJsonNode["dns_server"].asString();
+		if(!optionsJsonNode["group_id"].isNull())
+			siteMonitorsObject.optionsJson.group_id = optionsJsonNode["group_id"].asString();
 		if(!optionsJsonNode["expect_value"].isNull())
 			siteMonitorsObject.optionsJson.expect_value = optionsJsonNode["expect_value"].asString();
 		if(!optionsJsonNode["http_method"].isNull())

@@ -214,6 +214,17 @@ void PutResourceMetricRuleRequest::setEscalationsInfoTimes(int escalationsInfoTi
 	setParameter("EscalationsInfoTimes", std::to_string(escalationsInfoTimes));
 }
 
+std::string PutResourceMetricRuleRequest::getGroupBy()const
+{
+	return groupBy_;
+}
+
+void PutResourceMetricRuleRequest::setGroupBy(const std::string& groupBy)
+{
+	groupBy_ = groupBy;
+	setParameter("GroupBy", groupBy);
+}
+
 int PutResourceMetricRuleRequest::getEscalationsCriticalTimes()const
 {
 	return escalationsCriticalTimes_;

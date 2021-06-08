@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string httpURI;
 						bool httpNegative;
 						std::string httpMethod;
+						int interval;
 					};
 					struct AlertConfig
 					{

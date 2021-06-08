@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setResources(const std::string& resources);
 				int getEscalationsInfoTimes()const;
 				void setEscalationsInfoTimes(int escalationsInfoTimes);
+				std::string getGroupBy()const;
+				void setGroupBy(const std::string& groupBy);
 				int getEscalationsCriticalTimes()const;
 				void setEscalationsCriticalTimes(int escalationsCriticalTimes);
 				std::string getEscalationsWarnStatistics()const;
@@ -104,6 +106,7 @@ namespace AlibabaCloud
 				std::string escalationsCriticalStatistics_;
 				std::string resources_;
 				int escalationsInfoTimes_;
+				std::string groupBy_;
 				int escalationsCriticalTimes_;
 				std::string escalationsWarnStatistics_;
 				std::string escalationsInfoThreshold_;

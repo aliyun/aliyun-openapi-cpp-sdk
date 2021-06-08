@@ -58,6 +58,8 @@ namespace AlibabaCloud
 				void setTaskOptionHttpResponseCharset(const std::string& taskOptionHttpResponseCharset);
 				bool getTaskOptionHttpNegative()const;
 				void setTaskOptionHttpNegative(bool taskOptionHttpNegative);
+				int getTaskOptionInterval()const;
+				void setTaskOptionInterval(int taskOptionInterval);
 				int getAlertConfigNotifyType()const;
 				void setAlertConfigNotifyType(int alertConfigNotifyType);
 				std::string getTaskOptionTelnetOrPingHost()const;
@@ -91,6 +93,7 @@ namespace AlibabaCloud
 				int alertConfigSilenceTime_;
 				std::string taskOptionHttpResponseCharset_;
 				bool taskOptionHttpNegative_;
+				int taskOptionInterval_;
 				int alertConfigNotifyType_;
 				std::string taskOptionTelnetOrPingHost_;
 				std::string taskOptionHttpResponseMatchContent_;

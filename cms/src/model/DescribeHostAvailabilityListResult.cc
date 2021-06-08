@@ -72,6 +72,8 @@ void DescribeHostAvailabilityListResult::parse(const std::string &payload)
 			taskListObject.taskOption.httpMethod = taskOptionNode["HttpMethod"].asString();
 		if(!taskOptionNode["HttpNegative"].isNull())
 			taskListObject.taskOption.httpNegative = taskOptionNode["HttpNegative"].asString() == "true";
+		if(!taskOptionNode["Interval"].isNull())
+			taskListObject.taskOption.interval = std::stoi(taskOptionNode["Interval"].asString());
 		auto alertConfigNode = value["AlertConfig"];
 		if(!alertConfigNode["NotifyType"].isNull())
 			taskListObject.alertConfig.notifyType = std::stoi(alertConfigNode["NotifyType"].asString());

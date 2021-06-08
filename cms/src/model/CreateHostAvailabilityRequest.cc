@@ -112,6 +112,17 @@ void CreateHostAvailabilityRequest::setTaskOptionHttpNegative(bool taskOptionHtt
 	setParameter("TaskOptionHttpNegative", taskOptionHttpNegative ? "true" : "false");
 }
 
+int CreateHostAvailabilityRequest::getTaskOptionInterval()const
+{
+	return taskOptionInterval_;
+}
+
+void CreateHostAvailabilityRequest::setTaskOptionInterval(int taskOptionInterval)
+{
+	taskOptionInterval_ = taskOptionInterval;
+	setParameter("TaskOptionInterval", std::to_string(taskOptionInterval));
+}
+
 int CreateHostAvailabilityRequest::getAlertConfigNotifyType()const
 {
 	return alertConfigNotifyType_;

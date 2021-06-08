@@ -90,6 +90,8 @@ void DescribeSiteMonitorAttributeResult::parse(const std::string &payload)
 		siteMonitors_.interval = siteMonitorsNode["Interval"].asString();
 	if(!siteMonitorsNode["TaskId"].isNull())
 		siteMonitors_.taskId = siteMonitorsNode["TaskId"].asString();
+	if(!siteMonitorsNode["EndTime"].isNull())
+		siteMonitors_.endTime = siteMonitorsNode["EndTime"].asString();
 	auto allIspCitiesNode = siteMonitorsNode["IspCities"]["IspCity"];
 	for (auto siteMonitorsNodeIspCitiesIspCity : allIspCitiesNode)
 	{

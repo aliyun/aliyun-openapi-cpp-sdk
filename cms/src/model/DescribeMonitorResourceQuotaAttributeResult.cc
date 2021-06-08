@@ -44,6 +44,8 @@ void DescribeMonitorResourceQuotaAttributeResult::parse(const std::string &paylo
 		resourceQuota_.expireTime = resourceQuotaNode["ExpireTime"].asString();
 	if(!resourceQuotaNode["SuitInfo"].isNull())
 		resourceQuota_.suitInfo = resourceQuotaNode["SuitInfo"].asString();
+	if(!resourceQuotaNode["CRMType"].isNull())
+		resourceQuota_.cRMType = resourceQuotaNode["CRMType"].asString();
 	if(!resourceQuotaNode["InstanceId"].isNull())
 		resourceQuota_.instanceId = resourceQuotaNode["InstanceId"].asString();
 	auto siteMonitorEcsProbeNode = resourceQuotaNode["SiteMonitorEcsProbe"];
@@ -109,6 +111,11 @@ void DescribeMonitorResourceQuotaAttributeResult::parse(const std::string &paylo
 		resourceQuota_.phone.quotaPackage = std::stoi(phoneNode["QuotaPackage"].asString());
 	if(!phoneNode["QuotaUsed"].isNull())
 		resourceQuota_.phone.quotaUsed = std::stoi(phoneNode["QuotaUsed"].asString());
+	auto enterpriseQuotaNode = resourceQuotaNode["EnterpriseQuota"];
+	if(!enterpriseQuotaNode["SuitInfo"].isNull())
+		resourceQuota_.enterpriseQuota.suitInfo = enterpriseQuotaNode["SuitInfo"].asString();
+	if(!enterpriseQuotaNode["InstanceId"].isNull())
+		resourceQuota_.enterpriseQuota.instanceId = enterpriseQuotaNode["InstanceId"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

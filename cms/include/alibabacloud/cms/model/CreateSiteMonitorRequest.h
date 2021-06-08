@@ -35,28 +35,34 @@ namespace AlibabaCloud
 				CreateSiteMonitorRequest();
 				~CreateSiteMonitorRequest();
 
+				std::string getTaskName()const;
+				void setTaskName(const std::string& taskName);
+				std::string getAlertIds()const;
+				void setAlertIds(const std::string& alertIds);
 				std::string getAddress()const;
 				void setAddress(const std::string& address);
 				std::string getTaskType()const;
 				void setTaskType(const std::string& taskType);
-				std::string getTaskName()const;
-				void setTaskName(const std::string& taskName);
+				long getEndTime()const;
+				void setEndTime(long endTime);
 				std::string getIspCities()const;
 				void setIspCities(const std::string& ispCities);
 				std::string getOptionsJson()const;
 				void setOptionsJson(const std::string& optionsJson);
-				std::string getAlertIds()const;
-				void setAlertIds(const std::string& alertIds);
+				std::string getIntervalUnit()const;
+				void setIntervalUnit(const std::string& intervalUnit);
 				std::string getInterval()const;
 				void setInterval(const std::string& interval);
 
             private:
+				std::string taskName_;
+				std::string alertIds_;
 				std::string address_;
 				std::string taskType_;
-				std::string taskName_;
+				long endTime_;
 				std::string ispCities_;
 				std::string optionsJson_;
-				std::string alertIds_;
+				std::string intervalUnit_;
 				std::string interval_;
 
 			};

@@ -82,6 +82,17 @@ void ModifySiteMonitorRequest::setAlertIds(const std::string& alertIds)
 	setParameter("AlertIds", alertIds);
 }
 
+std::string ModifySiteMonitorRequest::getIntervalUnit()const
+{
+	return intervalUnit_;
+}
+
+void ModifySiteMonitorRequest::setIntervalUnit(const std::string& intervalUnit)
+{
+	intervalUnit_ = intervalUnit;
+	setParameter("IntervalUnit", intervalUnit);
+}
+
 std::string ModifySiteMonitorRequest::getInterval()const
 {
 	return interval_;

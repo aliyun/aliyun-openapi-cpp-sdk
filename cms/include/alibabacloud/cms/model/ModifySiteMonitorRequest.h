@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setOptionsJson(const std::string& optionsJson);
 				std::string getAlertIds()const;
 				void setAlertIds(const std::string& alertIds);
+				std::string getIntervalUnit()const;
+				void setIntervalUnit(const std::string& intervalUnit);
 				std::string getInterval()const;
 				void setInterval(const std::string& interval);
 				std::string getTaskId()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				std::string ispCities_;
 				std::string optionsJson_;
 				std::string alertIds_;
+				std::string intervalUnit_;
 				std::string interval_;
 				std::string taskId_;
 
