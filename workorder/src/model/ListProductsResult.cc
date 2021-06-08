@@ -43,21 +43,19 @@ void ListProductsResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["TopCategoryName"].isNull())
-			dataObject.topCategoryName = valueDataDataItem["TopCategoryName"].asString();
-		if(!valueDataDataItem["TopCategoryId"].isNull())
-			dataObject.topCategoryId = std::stol(valueDataDataItem["TopCategoryId"].asString());
-		if(!valueDataDataItem["OrderNumber"].isNull())
-			dataObject.orderNumber = std::stoi(valueDataDataItem["OrderNumber"].asString());
-		auto allRootsNode = valueDataDataItem["Roots"]["RootsItem"];
-		for (auto valueDataDataItemRootsRootsItem : allRootsNode)
+		if(!valueDataDataItem["DirectoryName"].isNull())
+			dataObject.directoryName = valueDataDataItem["DirectoryName"].asString();
+		if(!valueDataDataItem["DirectoryId"].isNull())
+			dataObject.directoryId = std::stol(valueDataDataItem["DirectoryId"].asString());
+		auto allProductListNode = valueDataDataItem["ProductList"]["ProductListItem"];
+		for (auto valueDataDataItemProductListProductListItem : allProductListNode)
 		{
-			DataItem::RootsItem rootsObject;
-			if(!valueDataDataItemRootsRootsItem["CategoryId"].isNull())
-				rootsObject.categoryId = std::stol(valueDataDataItemRootsRootsItem["CategoryId"].asString());
-			if(!valueDataDataItemRootsRootsItem["CategoryName"].isNull())
-				rootsObject.categoryName = valueDataDataItemRootsRootsItem["CategoryName"].asString();
-			dataObject.roots.push_back(rootsObject);
+			DataItem::ProductListItem productListObject;
+			if(!valueDataDataItemProductListProductListItem["ProductId"].isNull())
+				productListObject.productId = std::stol(valueDataDataItemProductListProductListItem["ProductId"].asString());
+			if(!valueDataDataItemProductListProductListItem["ProductName"].isNull())
+				productListObject.productName = valueDataDataItemProductListProductListItem["ProductName"].asString();
+			dataObject.productList.push_back(productListObject);
 		}
 		data_.push_back(dataObject);
 	}

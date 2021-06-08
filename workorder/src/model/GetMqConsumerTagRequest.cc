@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/workorder/model/GetMessageTagRequest.h>
+#include <alibabacloud/workorder/model/GetMqConsumerTagRequest.h>
 
-using AlibabaCloud::Workorder::Model::GetMessageTagRequest;
+using AlibabaCloud::Workorder::Model::GetMqConsumerTagRequest;
 
-GetMessageTagRequest::GetMessageTagRequest() :
-	RpcServiceRequest("workorder", "2021-05-10", "GetMessageTag")
+GetMqConsumerTagRequest::GetMqConsumerTagRequest() :
+	RpcServiceRequest("workorder", "2021-06-10", "GetMqConsumerTag")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetMessageTagRequest::~GetMessageTagRequest()
+GetMqConsumerTagRequest::~GetMqConsumerTagRequest()
 {}
 

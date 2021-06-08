@@ -34,22 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct DataItem
 				{
-					struct DataInfo
+					struct Dialog
 					{
 						std::string content;
 						std::string schema;
 					};
-					struct UserInfo
+					struct User
 					{
 						int role;
-						std::string userName;
+						std::string name;
 					};
-					DataInfo dataInfo;
 					int status;
 					int type;
+					User user;
+					Dialog dialog;
 					long createTime;
 					long dialogId;
-					UserInfo userInfo;
 					std::string tip;
 				};
 

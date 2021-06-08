@@ -19,7 +19,7 @@
 using AlibabaCloud::Workorder::Model::ReplyTicketRequest;
 
 ReplyTicketRequest::ReplyTicketRequest() :
-	RpcServiceRequest("workorder", "2021-05-10", "ReplyTicket")
+	RpcServiceRequest("workorder", "2021-06-10", "ReplyTicket")
 {
 	setMethod(HttpRequest::Method::Post);
 }

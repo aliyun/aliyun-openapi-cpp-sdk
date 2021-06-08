@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				ListTicketsRequest();
 				~ListTicketsRequest();
 
-				long getBeginDate()const;
-				void setBeginDate(long beginDate);
 				std::vector<std::string> getStatusList()const;
 				void setStatusList(const std::vector<std::string>& statusList);
+				long getStartDate()const;
+				void setStartDate(long startDate);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				long getEndDate()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setTicketId(const std::string& ticketId);
 
             private:
-				long beginDate_;
 				std::vector<std::string> statusList_;
+				long startDate_;
 				int pageNumber_;
 				long endDate_;
 				int pageSize_;

@@ -26,8 +26,8 @@
 #include "model/CloseTicketResult.h"
 #include "model/CreateTicketRequest.h"
 #include "model/CreateTicketResult.h"
-#include "model/GetMessageTagRequest.h"
-#include "model/GetMessageTagResult.h"
+#include "model/GetMqConsumerTagRequest.h"
+#include "model/GetMqConsumerTagResult.h"
 #include "model/ListCategoriesRequest.h"
 #include "model/ListCategoriesResult.h"
 #include "model/ListProductsRequest.h"
@@ -53,9 +53,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTicketResult> CreateTicketOutcome;
 			typedef std::future<CreateTicketOutcome> CreateTicketOutcomeCallable;
 			typedef std::function<void(const WorkorderClient*, const Model::CreateTicketRequest&, const CreateTicketOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTicketAsyncHandler;
-			typedef Outcome<Error, Model::GetMessageTagResult> GetMessageTagOutcome;
-			typedef std::future<GetMessageTagOutcome> GetMessageTagOutcomeCallable;
-			typedef std::function<void(const WorkorderClient*, const Model::GetMessageTagRequest&, const GetMessageTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMessageTagAsyncHandler;
+			typedef Outcome<Error, Model::GetMqConsumerTagResult> GetMqConsumerTagOutcome;
+			typedef std::future<GetMqConsumerTagOutcome> GetMqConsumerTagOutcomeCallable;
+			typedef std::function<void(const WorkorderClient*, const Model::GetMqConsumerTagRequest&, const GetMqConsumerTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMqConsumerTagAsyncHandler;
 			typedef Outcome<Error, Model::ListCategoriesResult> ListCategoriesOutcome;
 			typedef std::future<ListCategoriesOutcome> ListCategoriesOutcomeCallable;
 			typedef std::function<void(const WorkorderClient*, const Model::ListCategoriesRequest&, const ListCategoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCategoriesAsyncHandler;
@@ -82,9 +82,9 @@ namespace AlibabaCloud
 			CreateTicketOutcome createTicket(const Model::CreateTicketRequest &request)const;
 			void createTicketAsync(const Model::CreateTicketRequest& request, const CreateTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTicketOutcomeCallable createTicketCallable(const Model::CreateTicketRequest& request) const;
-			GetMessageTagOutcome getMessageTag(const Model::GetMessageTagRequest &request)const;
-			void getMessageTagAsync(const Model::GetMessageTagRequest& request, const GetMessageTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetMessageTagOutcomeCallable getMessageTagCallable(const Model::GetMessageTagRequest& request) const;
+			GetMqConsumerTagOutcome getMqConsumerTag(const Model::GetMqConsumerTagRequest &request)const;
+			void getMqConsumerTagAsync(const Model::GetMqConsumerTagRequest& request, const GetMqConsumerTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMqConsumerTagOutcomeCallable getMqConsumerTagCallable(const Model::GetMqConsumerTagRequest& request) const;
 			ListCategoriesOutcome listCategories(const Model::ListCategoriesRequest &request)const;
 			void listCategoriesAsync(const Model::ListCategoriesRequest& request, const ListCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCategoriesOutcomeCallable listCategoriesCallable(const Model::ListCategoriesRequest& request) const;

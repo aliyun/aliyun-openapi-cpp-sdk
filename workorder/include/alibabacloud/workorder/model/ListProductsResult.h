@@ -34,15 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct DataItem
 				{
-					struct RootsItem
+					struct ProductListItem
 					{
-						long categoryId;
-						std::string categoryName;
+						std::string productName;
+						long productId;
 					};
-					std::string topCategoryName;
-					long topCategoryId;
-					std::vector<DataItem::RootsItem> roots;
-					int orderNumber;
+					std::vector<DataItem::ProductListItem> productList;
+					long directoryId;
+					std::string directoryName;
 				};
 
 

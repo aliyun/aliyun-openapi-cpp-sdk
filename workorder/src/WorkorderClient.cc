@@ -123,36 +123,36 @@ WorkorderClient::CreateTicketOutcomeCallable WorkorderClient::createTicketCallab
 	return task->get_future();
 }
 
-WorkorderClient::GetMessageTagOutcome WorkorderClient::getMessageTag(const GetMessageTagRequest &request) const
+WorkorderClient::GetMqConsumerTagOutcome WorkorderClient::getMqConsumerTag(const GetMqConsumerTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetMessageTagOutcome(endpointOutcome.error());
+		return GetMqConsumerTagOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetMessageTagOutcome(GetMessageTagResult(outcome.result()));
+		return GetMqConsumerTagOutcome(GetMqConsumerTagResult(outcome.result()));
 	else
-		return GetMessageTagOutcome(outcome.error());
+		return GetMqConsumerTagOutcome(outcome.error());
 }
 
-void WorkorderClient::getMessageTagAsync(const GetMessageTagRequest& request, const GetMessageTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void WorkorderClient::getMqConsumerTagAsync(const GetMqConsumerTagRequest& request, const GetMqConsumerTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getMessageTag(request), context);
+		handler(this, request, getMqConsumerTag(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-WorkorderClient::GetMessageTagOutcomeCallable WorkorderClient::getMessageTagCallable(const GetMessageTagRequest &request) const
+WorkorderClient::GetMqConsumerTagOutcomeCallable WorkorderClient::getMqConsumerTagCallable(const GetMqConsumerTagRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetMessageTagOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetMqConsumerTagOutcome()>>(
 			[this, request]()
 			{
-			return this->getMessageTag(request);
+			return this->getMqConsumerTag(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -35,11 +35,14 @@ namespace AlibabaCloud
 				ListCategoriesRequest();
 				~ListCategoriesRequest();
 
-				long getParentId()const;
-				void setParentId(long parentId);
+				long getProductId()const;
+				void setProductId(long productId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
-				long parentId_;
+				long productId_;
+				std::string name_;
 
 			};
 		}

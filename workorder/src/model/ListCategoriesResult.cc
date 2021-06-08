@@ -43,10 +43,10 @@ void ListCategoriesResult::parse(const std::string &payload)
 	for (auto valueDataDataItem : allDataNode)
 	{
 		DataItem dataObject;
-		if(!valueDataDataItem["CategoryName"].isNull())
-			dataObject.categoryName = valueDataDataItem["CategoryName"].asString();
 		if(!valueDataDataItem["CategoryId"].isNull())
 			dataObject.categoryId = std::stol(valueDataDataItem["CategoryId"].asString());
+		if(!valueDataDataItem["CategoryName"].isNull())
+			dataObject.categoryName = valueDataDataItem["CategoryName"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

@@ -19,7 +19,7 @@
 using AlibabaCloud::Workorder::Model::CreateTicketRequest;
 
 CreateTicketRequest::CreateTicketRequest() :
-	RpcServiceRequest("workorder", "2021-05-10", "CreateTicket")
+	RpcServiceRequest("workorder", "2021-06-10", "CreateTicket")
 {
 	setMethod(HttpRequest::Method::Post);
 }

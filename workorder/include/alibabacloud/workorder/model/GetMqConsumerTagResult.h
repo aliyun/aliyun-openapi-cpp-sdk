@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WORKORDER_MODEL_GETMESSAGETAGREQUEST_H_
-#define ALIBABACLOUD_WORKORDER_MODEL_GETMESSAGETAGREQUEST_H_
+#ifndef ALIBABACLOUD_WORKORDER_MODEL_GETMQCONSUMERTAGRESULT_H_
+#define ALIBABACLOUD_WORKORDER_MODEL_GETMQCONSUMERTAGRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/workorder/WorkorderExport.h>
 
 namespace AlibabaCloud
@@ -28,18 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WORKORDER_EXPORT GetMessageTagRequest : public RpcServiceRequest
+			class ALIBABACLOUD_WORKORDER_EXPORT GetMqConsumerTagResult : public ServiceResult
 			{
-
 			public:
-				GetMessageTagRequest();
-				~GetMessageTagRequest();
 
 
-            private:
+				GetMqConsumerTagResult();
+				explicit GetMqConsumerTagResult(const std::string &payload);
+				~GetMqConsumerTagResult();
+				std::string getMessage()const;
+				std::string getData()const;
+				int getCode()const;
+				bool getSuccess()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				std::string data_;
+				int code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WORKORDER_MODEL_GETMESSAGETAGREQUEST_H_
+#endif // !ALIBABACLOUD_WORKORDER_MODEL_GETMQCONSUMERTAGRESULT_H_

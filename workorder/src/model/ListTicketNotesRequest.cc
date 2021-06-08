@@ -19,7 +19,7 @@
 using AlibabaCloud::Workorder::Model::ListTicketNotesRequest;
 
 ListTicketNotesRequest::ListTicketNotesRequest() :
-	RpcServiceRequest("workorder", "2021-05-10", "ListTicketNotes")
+	RpcServiceRequest("workorder", "2021-06-10", "ListTicketNotes")
 {
 	setMethod(HttpRequest::Method::Post);
 }

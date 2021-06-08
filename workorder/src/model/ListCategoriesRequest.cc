@@ -19,7 +19,7 @@
 using AlibabaCloud::Workorder::Model::ListCategoriesRequest;
 
 ListCategoriesRequest::ListCategoriesRequest() :
-	RpcServiceRequest("workorder", "2021-05-10", "ListCategories")
+	RpcServiceRequest("workorder", "2021-06-10", "ListCategories")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,14 +27,25 @@ ListCategoriesRequest::ListCategoriesRequest() :
 ListCategoriesRequest::~ListCategoriesRequest()
 {}
 
-long ListCategoriesRequest::getParentId()const
+long ListCategoriesRequest::getProductId()const
 {
-	return parentId_;
+	return productId_;
 }
 
-void ListCategoriesRequest::setParentId(long parentId)
+void ListCategoriesRequest::setProductId(long productId)
 {
-	parentId_ = parentId;
-	setParameter("ParentId", std::to_string(parentId));
+	productId_ = productId;
+	setBodyParameter("ProductId", std::to_string(productId));
+}
+
+std::string ListCategoriesRequest::getName()const
+{
+	return name_;
+}
+
+void ListCategoriesRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setBodyParameter("Name", name);
 }
 

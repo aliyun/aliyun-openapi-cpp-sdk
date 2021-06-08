@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/workorder/model/GetMessageTagResult.h>
+#include <alibabacloud/workorder/model/GetMqConsumerTagResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Workorder;
 using namespace AlibabaCloud::Workorder::Model;
 
-GetMessageTagResult::GetMessageTagResult() :
+GetMqConsumerTagResult::GetMqConsumerTagResult() :
 	ServiceResult()
 {}
 
-GetMessageTagResult::GetMessageTagResult(const std::string &payload) :
+GetMqConsumerTagResult::GetMqConsumerTagResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetMessageTagResult::~GetMessageTagResult()
+GetMqConsumerTagResult::~GetMqConsumerTagResult()
 {}
 
-void GetMessageTagResult::parse(const std::string &payload)
+void GetMqConsumerTagResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -50,22 +50,22 @@ void GetMessageTagResult::parse(const std::string &payload)
 
 }
 
-std::string GetMessageTagResult::getMessage()const
+std::string GetMqConsumerTagResult::getMessage()const
 {
 	return message_;
 }
 
-std::string GetMessageTagResult::getData()const
+std::string GetMqConsumerTagResult::getData()const
 {
 	return data_;
 }
 
-int GetMessageTagResult::getCode()const
+int GetMqConsumerTagResult::getCode()const
 {
 	return code_;
 }
 
-bool GetMessageTagResult::getSuccess()const
+bool GetMqConsumerTagResult::getSuccess()const
 {
 	return success_;
 }

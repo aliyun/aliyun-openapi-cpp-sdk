@@ -19,7 +19,7 @@
 using AlibabaCloud::Workorder::Model::CloseTicketRequest;
 
 CloseTicketRequest::CloseTicketRequest() :
-	RpcServiceRequest("workorder", "2021-05-10", "CloseTicket")
+	RpcServiceRequest("workorder", "2021-06-10", "CloseTicket")
 {
 	setMethod(HttpRequest::Method::Post);
 }

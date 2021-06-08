@@ -53,16 +53,16 @@ void ListTicketNotesResult::parse(const std::string &payload)
 			dataObject.dialogId = std::stol(valueDataDataItem["DialogId"].asString());
 		if(!valueDataDataItem["Tip"].isNull())
 			dataObject.tip = valueDataDataItem["Tip"].asString();
-		auto dataInfoNode = value["DataInfo"];
-		if(!dataInfoNode["Content"].isNull())
-			dataObject.dataInfo.content = dataInfoNode["Content"].asString();
-		if(!dataInfoNode["Schema"].isNull())
-			dataObject.dataInfo.schema = dataInfoNode["Schema"].asString();
-		auto userInfoNode = value["UserInfo"];
-		if(!userInfoNode["UserName"].isNull())
-			dataObject.userInfo.userName = userInfoNode["UserName"].asString();
-		if(!userInfoNode["Role"].isNull())
-			dataObject.userInfo.role = std::stoi(userInfoNode["Role"].asString());
+		auto dialogNode = value["Dialog"];
+		if(!dialogNode["Content"].isNull())
+			dataObject.dialog.content = dialogNode["Content"].asString();
+		if(!dialogNode["Schema"].isNull())
+			dataObject.dialog.schema = dialogNode["Schema"].asString();
+		auto userNode = value["User"];
+		if(!userNode["Name"].isNull())
+			dataObject.user.name = userNode["Name"].asString();
+		if(!userNode["Role"].isNull())
+			dataObject.user.role = std::stoi(userNode["Role"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

@@ -19,24 +19,13 @@
 using AlibabaCloud::Workorder::Model::ListTicketsRequest;
 
 ListTicketsRequest::ListTicketsRequest() :
-	RpcServiceRequest("workorder", "2021-05-10", "ListTickets")
+	RpcServiceRequest("workorder", "2021-06-10", "ListTickets")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 ListTicketsRequest::~ListTicketsRequest()
 {}
-
-long ListTicketsRequest::getBeginDate()const
-{
-	return beginDate_;
-}
-
-void ListTicketsRequest::setBeginDate(long beginDate)
-{
-	beginDate_ = beginDate;
-	setParameter("BeginDate", std::to_string(beginDate));
-}
 
 std::vector<std::string> ListTicketsRequest::getStatusList()const
 {
@@ -47,8 +36,19 @@ void ListTicketsRequest::setStatusList(const std::vector<std::string>& statusLis
 {
 	statusList_ = statusList;
 	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
-		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+		setBodyParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
 	}
+}
+
+long ListTicketsRequest::getStartDate()const
+{
+	return startDate_;
+}
+
+void ListTicketsRequest::setStartDate(long startDate)
+{
+	startDate_ = startDate;
+	setBodyParameter("StartDate", std::to_string(startDate));
 }
 
 int ListTicketsRequest::getPageNumber()const
@@ -70,7 +70,7 @@ long ListTicketsRequest::getEndDate()const
 void ListTicketsRequest::setEndDate(long endDate)
 {
 	endDate_ = endDate;
-	setParameter("EndDate", std::to_string(endDate));
+	setBodyParameter("EndDate", std::to_string(endDate));
 }
 
 int ListTicketsRequest::getPageSize()const
@@ -92,7 +92,7 @@ std::string ListTicketsRequest::getKeyword()const
 void ListTicketsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+	setBodyParameter("Keyword", keyword);
 }
 
 std::string ListTicketsRequest::getTicketId()const
@@ -103,6 +103,6 @@ std::string ListTicketsRequest::getTicketId()const
 void ListTicketsRequest::setTicketId(const std::string& ticketId)
 {
 	ticketId_ = ticketId;
-	setParameter("TicketId", ticketId);
+	setBodyParameter("TicketId", ticketId);
 }
 
