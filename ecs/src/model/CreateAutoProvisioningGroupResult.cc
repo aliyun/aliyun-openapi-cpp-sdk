@@ -43,16 +43,16 @@ void CreateAutoProvisioningGroupResult::parse(const std::string &payload)
 	for (auto valueLaunchResultsLaunchResult : allLaunchResultsNode)
 	{
 		LaunchResult launchResultsObject;
-		if(!valueLaunchResultsLaunchResult["SpotStrategy"].isNull())
-			launchResultsObject.spotStrategy = valueLaunchResultsLaunchResult["SpotStrategy"].asString();
-		if(!valueLaunchResultsLaunchResult["InstanceType"].isNull())
-			launchResultsObject.instanceType = valueLaunchResultsLaunchResult["InstanceType"].asString();
 		if(!valueLaunchResultsLaunchResult["ZoneId"].isNull())
 			launchResultsObject.zoneId = valueLaunchResultsLaunchResult["ZoneId"].asString();
-		if(!valueLaunchResultsLaunchResult["ErrorCode"].isNull())
-			launchResultsObject.errorCode = valueLaunchResultsLaunchResult["ErrorCode"].asString();
 		if(!valueLaunchResultsLaunchResult["ErrorMsg"].isNull())
 			launchResultsObject.errorMsg = valueLaunchResultsLaunchResult["ErrorMsg"].asString();
+		if(!valueLaunchResultsLaunchResult["InstanceType"].isNull())
+			launchResultsObject.instanceType = valueLaunchResultsLaunchResult["InstanceType"].asString();
+		if(!valueLaunchResultsLaunchResult["ErrorCode"].isNull())
+			launchResultsObject.errorCode = valueLaunchResultsLaunchResult["ErrorCode"].asString();
+		if(!valueLaunchResultsLaunchResult["SpotStrategy"].isNull())
+			launchResultsObject.spotStrategy = valueLaunchResultsLaunchResult["SpotStrategy"].asString();
 		auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 		for (auto value : allInstanceIds)
 			launchResultsObject.instanceIds.push_back(value.asString());

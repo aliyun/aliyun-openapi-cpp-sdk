@@ -38,16 +38,16 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationDataDisk(const st
 	for(int dep1 = 0; dep1!= launchConfigurationDataDisk.size(); dep1++) {
 		auto launchConfigurationDataDiskObj = launchConfigurationDataDisk.at(dep1);
 		std::string launchConfigurationDataDiskObjStr = "LaunchConfiguration.DataDisk." + std::to_string(dep1 + 1);
-		setParameter(launchConfigurationDataDiskObjStr + ".Size", std::to_string(launchConfigurationDataDiskObj.size));
-		setParameter(launchConfigurationDataDiskObjStr + ".Category", launchConfigurationDataDiskObj.category);
 		setParameter(launchConfigurationDataDiskObjStr + ".PerformanceLevel", launchConfigurationDataDiskObj.performanceLevel);
-		setParameter(launchConfigurationDataDiskObjStr + ".Device", launchConfigurationDataDiskObj.device);
+		setParameter(launchConfigurationDataDiskObjStr + ".KmsKeyId", launchConfigurationDataDiskObj.kmsKeyId);
+		setParameter(launchConfigurationDataDiskObjStr + ".Description", launchConfigurationDataDiskObj.description);
 		setParameter(launchConfigurationDataDiskObjStr + ".SnapshotId", launchConfigurationDataDiskObj.snapshotId);
+		setParameter(launchConfigurationDataDiskObjStr + ".Size", std::to_string(launchConfigurationDataDiskObj.size));
+		setParameter(launchConfigurationDataDiskObjStr + ".Device", launchConfigurationDataDiskObj.device);
+		setParameter(launchConfigurationDataDiskObjStr + ".DiskName", launchConfigurationDataDiskObj.diskName);
+		setParameter(launchConfigurationDataDiskObjStr + ".Category", launchConfigurationDataDiskObj.category);
 		setParameter(launchConfigurationDataDiskObjStr + ".DeleteWithInstance", launchConfigurationDataDiskObj.deleteWithInstance ? "true" : "false");
 		setParameter(launchConfigurationDataDiskObjStr + ".Encrypted", launchConfigurationDataDiskObj.encrypted ? "true" : "false");
-		setParameter(launchConfigurationDataDiskObjStr + ".KmsKeyId", launchConfigurationDataDiskObj.kmsKeyId);
-		setParameter(launchConfigurationDataDiskObjStr + ".DiskName", launchConfigurationDataDiskObj.diskName);
-		setParameter(launchConfigurationDataDiskObjStr + ".Description", launchConfigurationDataDiskObj.description);
 	}
 }
 
@@ -93,6 +93,19 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationSystemDiskPerform
 {
 	launchConfigurationSystemDiskPerformanceLevel_ = launchConfigurationSystemDiskPerformanceLevel;
 	setParameter("LaunchConfigurationSystemDiskPerformanceLevel", launchConfigurationSystemDiskPerformanceLevel);
+}
+
+std::vector<std::string> CreateAutoProvisioningGroupRequest::getLaunchConfigurationHostNames()const
+{
+	return launchConfigurationHostNames_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationHostNames(const std::vector<std::string>& launchConfigurationHostNames)
+{
+	launchConfigurationHostNames_ = launchConfigurationHostNames;
+	for(int dep1 = 0; dep1!= launchConfigurationHostNames.size(); dep1++) {
+		setParameter("LaunchConfigurationHostNames."+ std::to_string(dep1), launchConfigurationHostNames.at(dep1));
+	}
 }
 
 std::string CreateAutoProvisioningGroupRequest::getResourceGroupId()const
@@ -266,6 +279,17 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationHostName(const st
 {
 	launchConfigurationHostName_ = launchConfigurationHostName;
 	setParameter("LaunchConfigurationHostName", launchConfigurationHostName);
+}
+
+std::string CreateAutoProvisioningGroupRequest::getMinTargetCapacity()const
+{
+	return minTargetCapacity_;
+}
+
+void CreateAutoProvisioningGroupRequest::setMinTargetCapacity(const std::string& minTargetCapacity)
+{
+	minTargetCapacity_ = minTargetCapacity;
+	setParameter("MinTargetCapacity", minTargetCapacity);
 }
 
 float CreateAutoProvisioningGroupRequest::getMaxSpotPrice()const
@@ -455,11 +479,11 @@ void CreateAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vect
 	for(int dep1 = 0; dep1!= launchTemplateConfig.size(); dep1++) {
 		auto launchTemplateConfigObj = launchTemplateConfig.at(dep1);
 		std::string launchTemplateConfigObjStr = "LaunchTemplateConfig." + std::to_string(dep1 + 1);
-		setParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
-		setParameter(launchTemplateConfigObjStr + ".MaxPrice", std::to_string(launchTemplateConfigObj.maxPrice));
 		setParameter(launchTemplateConfigObjStr + ".VSwitchId", launchTemplateConfigObj.vSwitchId);
-		setParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
+		setParameter(launchTemplateConfigObjStr + ".MaxPrice", std::to_string(launchTemplateConfigObj.maxPrice));
 		setParameter(launchTemplateConfigObjStr + ".Priority", std::to_string(launchTemplateConfigObj.priority));
+		setParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
+		setParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
 	}
 }
 

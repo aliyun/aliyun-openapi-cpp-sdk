@@ -33,16 +33,16 @@ namespace AlibabaCloud
 			public:
 				struct LaunchConfigurationDataDisk
 				{
-					int size;
-					std::string category;
 					std::string performanceLevel;
-					std::string device;
+					std::string kmsKeyId;
+					std::string description;
 					std::string snapshotId;
+					int size;
+					std::string device;
+					std::string diskName;
+					std::string category;
 					bool deleteWithInstance;
 					bool encrypted;
-					std::string kmsKeyId;
-					std::string diskName;
-					std::string description;
 				};
 				struct SystemDiskConfig
 				{
@@ -54,11 +54,11 @@ namespace AlibabaCloud
 				};
 				struct LaunchTemplateConfig
 				{
-					std::string instanceType;
-					double maxPrice;
 					std::string vSwitchId;
-					double weightedCapacity;
+					double maxPrice;
 					int priority;
+					std::string instanceType;
+					double weightedCapacity;
 				};
 				struct LaunchConfigurationTag
 				{
@@ -80,6 +80,8 @@ namespace AlibabaCloud
 				void setAutoProvisioningGroupType(const std::string& autoProvisioningGroupType);
 				std::string getLaunchConfigurationSystemDiskPerformanceLevel()const;
 				void setLaunchConfigurationSystemDiskPerformanceLevel(const std::string& launchConfigurationSystemDiskPerformanceLevel);
+				std::vector<std::string> getLaunchConfigurationHostNames()const;
+				void setLaunchConfigurationHostNames(const std::vector<std::string>& launchConfigurationHostNames);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getLaunchConfigurationImageId()const;
@@ -110,6 +112,8 @@ namespace AlibabaCloud
 				void setLaunchConfigurationInternetMaxBandwidthOut(int launchConfigurationInternetMaxBandwidthOut);
 				std::string getLaunchConfigurationHostName()const;
 				void setLaunchConfigurationHostName(const std::string& launchConfigurationHostName);
+				std::string getMinTargetCapacity()const;
+				void setMinTargetCapacity(const std::string& minTargetCapacity);
 				float getMaxSpotPrice()const;
 				void setMaxSpotPrice(float maxSpotPrice);
 				bool getLaunchConfigurationPasswordInherit()const;
@@ -185,6 +189,7 @@ namespace AlibabaCloud
 				std::string launchConfigurationSystemDiskCategory_;
 				std::string autoProvisioningGroupType_;
 				std::string launchConfigurationSystemDiskPerformanceLevel_;
+				std::vector<std::string> launchConfigurationHostNames_;
 				std::string resourceGroupId_;
 				std::string launchConfigurationImageId_;
 				std::string launchConfigurationResourceGroupId_;
@@ -200,6 +205,7 @@ namespace AlibabaCloud
 				int launchConfigurationSystemDiskSize_;
 				int launchConfigurationInternetMaxBandwidthOut_;
 				std::string launchConfigurationHostName_;
+				std::string minTargetCapacity_;
 				float maxSpotPrice_;
 				bool launchConfigurationPasswordInherit_;
 				std::string clientToken_;
