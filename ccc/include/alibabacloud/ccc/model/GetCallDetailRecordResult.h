@@ -34,19 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct CdrAgentEventsItem
+					struct AgentEventsItem
 					{
 						struct EventSequenceItem
 						{
 							long eventTime;
 							std::string event;
 						};
-						std::vector<CdrAgentEventsItem::EventSequenceItem> eventSequence;
+						std::vector<AgentEventsItem::EventSequenceItem> eventSequence;
 						std::string agentId;
 						std::string agentName;
 						std::string skillGroupId;
 					};
-					struct CdrIvrEventsItem
+					struct IvrEventsItem
 					{
 						struct EventSequenceItem2
 						{
@@ -54,9 +54,9 @@ namespace AlibabaCloud
 							std::string event;
 						};
 						std::string flowId;
-						std::vector<CdrIvrEventsItem::EventSequenceItem2> eventSequence1;
+						std::vector<IvrEventsItem::EventSequenceItem2> eventSequence1;
 					};
-					struct CdrQueueEventsItem
+					struct QueueEventsItem
 					{
 						struct EventSequenceItem4
 						{
@@ -64,33 +64,33 @@ namespace AlibabaCloud
 							std::string event;
 						};
 						std::string flowId;
-						std::vector<CdrQueueEventsItem::EventSequenceItem4> eventSequence3;
+						std::vector<QueueEventsItem::EventSequenceItem4> eventSequence3;
 						std::string queueId;
 						std::string queueName;
 						int queueType;
 					};
+					std::vector<AgentEventsItem> agentEvents;
 					std::string skillGroupIds;
 					std::string calledNumber;
 					std::string contactType;
 					std::string contactDisposition;
 					std::string instanceId;
 					std::string releaseInitiator;
-					std::vector<CdrIvrEventsItem> cdrIvrEvents;
 					int satisfaction;
 					long startTime;
 					std::string contactId;
 					long callDuration;
 					std::string callingNumber;
+					std::vector<QueueEventsItem> queueEvents;
 					long releaseTime;
 					bool recordingReady;
 					std::string skillGroupNames;
-					std::vector<CdrQueueEventsItem> cdrQueueEvents;
 					std::string satisfactionSurveyChannel;
 					std::string agentIds;
 					bool satisfactionSurveyOffered;
-					std::vector<CdrAgentEventsItem> cdrAgentEvents;
 					long establishedTime;
 					std::string agentNames;
+					std::vector<IvrEventsItem> ivrEvents;
 				};
 
 

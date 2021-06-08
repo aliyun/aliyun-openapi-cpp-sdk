@@ -78,69 +78,69 @@ void GetCallDetailRecordResult::parse(const std::string &payload)
 		data_.releaseInitiator = dataNode["ReleaseInitiator"].asString();
 	if(!dataNode["RecordingReady"].isNull())
 		data_.recordingReady = dataNode["RecordingReady"].asString() == "true";
-	auto allCdrAgentEventsNode = dataNode["CdrAgentEvents"]["CdrAgentEventsItem"];
-	for (auto dataNodeCdrAgentEventsCdrAgentEventsItem : allCdrAgentEventsNode)
+	auto allAgentEventsNode = dataNode["AgentEvents"]["AgentEventsItem"];
+	for (auto dataNodeAgentEventsAgentEventsItem : allAgentEventsNode)
 	{
-		Data::CdrAgentEventsItem cdrAgentEventsItemObject;
-		if(!dataNodeCdrAgentEventsCdrAgentEventsItem["AgentId"].isNull())
-			cdrAgentEventsItemObject.agentId = dataNodeCdrAgentEventsCdrAgentEventsItem["AgentId"].asString();
-		if(!dataNodeCdrAgentEventsCdrAgentEventsItem["AgentName"].isNull())
-			cdrAgentEventsItemObject.agentName = dataNodeCdrAgentEventsCdrAgentEventsItem["AgentName"].asString();
-		if(!dataNodeCdrAgentEventsCdrAgentEventsItem["SkillGroupId"].isNull())
-			cdrAgentEventsItemObject.skillGroupId = dataNodeCdrAgentEventsCdrAgentEventsItem["SkillGroupId"].asString();
-		auto allEventSequenceNode = dataNodeCdrAgentEventsCdrAgentEventsItem["EventSequence"]["EventSequenceItem"];
-		for (auto dataNodeCdrAgentEventsCdrAgentEventsItemEventSequenceEventSequenceItem : allEventSequenceNode)
+		Data::AgentEventsItem agentEventsItemObject;
+		if(!dataNodeAgentEventsAgentEventsItem["AgentId"].isNull())
+			agentEventsItemObject.agentId = dataNodeAgentEventsAgentEventsItem["AgentId"].asString();
+		if(!dataNodeAgentEventsAgentEventsItem["AgentName"].isNull())
+			agentEventsItemObject.agentName = dataNodeAgentEventsAgentEventsItem["AgentName"].asString();
+		if(!dataNodeAgentEventsAgentEventsItem["SkillGroupId"].isNull())
+			agentEventsItemObject.skillGroupId = dataNodeAgentEventsAgentEventsItem["SkillGroupId"].asString();
+		auto allEventSequenceNode = dataNodeAgentEventsAgentEventsItem["EventSequence"]["EventSequenceItem"];
+		for (auto dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem : allEventSequenceNode)
 		{
-			Data::CdrAgentEventsItem::EventSequenceItem eventSequenceObject;
-			if(!dataNodeCdrAgentEventsCdrAgentEventsItemEventSequenceEventSequenceItem["Event"].isNull())
-				eventSequenceObject.event = dataNodeCdrAgentEventsCdrAgentEventsItemEventSequenceEventSequenceItem["Event"].asString();
-			if(!dataNodeCdrAgentEventsCdrAgentEventsItemEventSequenceEventSequenceItem["EventTime"].isNull())
-				eventSequenceObject.eventTime = std::stol(dataNodeCdrAgentEventsCdrAgentEventsItemEventSequenceEventSequenceItem["EventTime"].asString());
-			cdrAgentEventsItemObject.eventSequence.push_back(eventSequenceObject);
+			Data::AgentEventsItem::EventSequenceItem eventSequenceObject;
+			if(!dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["Event"].isNull())
+				eventSequenceObject.event = dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["Event"].asString();
+			if(!dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["EventTime"].isNull())
+				eventSequenceObject.eventTime = std::stol(dataNodeAgentEventsAgentEventsItemEventSequenceEventSequenceItem["EventTime"].asString());
+			agentEventsItemObject.eventSequence.push_back(eventSequenceObject);
 		}
-		data_.cdrAgentEvents.push_back(cdrAgentEventsItemObject);
+		data_.agentEvents.push_back(agentEventsItemObject);
 	}
-	auto allCdrIvrEventsNode = dataNode["CdrIvrEvents"]["CdrIvrEventsItem"];
-	for (auto dataNodeCdrIvrEventsCdrIvrEventsItem : allCdrIvrEventsNode)
+	auto allIvrEventsNode = dataNode["IvrEvents"]["IvrEventsItem"];
+	for (auto dataNodeIvrEventsIvrEventsItem : allIvrEventsNode)
 	{
-		Data::CdrIvrEventsItem cdrIvrEventsItemObject;
-		if(!dataNodeCdrIvrEventsCdrIvrEventsItem["FlowId"].isNull())
-			cdrIvrEventsItemObject.flowId = dataNodeCdrIvrEventsCdrIvrEventsItem["FlowId"].asString();
-		auto allEventSequence1Node = dataNodeCdrIvrEventsCdrIvrEventsItem["EventSequence"]["EventSequenceItem"];
-		for (auto dataNodeCdrIvrEventsCdrIvrEventsItemEventSequenceEventSequenceItem : allEventSequence1Node)
+		Data::IvrEventsItem ivrEventsItemObject;
+		if(!dataNodeIvrEventsIvrEventsItem["FlowId"].isNull())
+			ivrEventsItemObject.flowId = dataNodeIvrEventsIvrEventsItem["FlowId"].asString();
+		auto allEventSequence1Node = dataNodeIvrEventsIvrEventsItem["EventSequence"]["EventSequenceItem"];
+		for (auto dataNodeIvrEventsIvrEventsItemEventSequenceEventSequenceItem : allEventSequence1Node)
 		{
-			Data::CdrIvrEventsItem::EventSequenceItem2 eventSequence1Object;
-			if(!dataNodeCdrIvrEventsCdrIvrEventsItemEventSequenceEventSequenceItem["Event"].isNull())
-				eventSequence1Object.event = dataNodeCdrIvrEventsCdrIvrEventsItemEventSequenceEventSequenceItem["Event"].asString();
-			if(!dataNodeCdrIvrEventsCdrIvrEventsItemEventSequenceEventSequenceItem["EventTime"].isNull())
-				eventSequence1Object.eventTime = std::stol(dataNodeCdrIvrEventsCdrIvrEventsItemEventSequenceEventSequenceItem["EventTime"].asString());
-			cdrIvrEventsItemObject.eventSequence1.push_back(eventSequence1Object);
+			Data::IvrEventsItem::EventSequenceItem2 eventSequence1Object;
+			if(!dataNodeIvrEventsIvrEventsItemEventSequenceEventSequenceItem["Event"].isNull())
+				eventSequence1Object.event = dataNodeIvrEventsIvrEventsItemEventSequenceEventSequenceItem["Event"].asString();
+			if(!dataNodeIvrEventsIvrEventsItemEventSequenceEventSequenceItem["EventTime"].isNull())
+				eventSequence1Object.eventTime = std::stol(dataNodeIvrEventsIvrEventsItemEventSequenceEventSequenceItem["EventTime"].asString());
+			ivrEventsItemObject.eventSequence1.push_back(eventSequence1Object);
 		}
-		data_.cdrIvrEvents.push_back(cdrIvrEventsItemObject);
+		data_.ivrEvents.push_back(ivrEventsItemObject);
 	}
-	auto allCdrQueueEventsNode = dataNode["CdrQueueEvents"]["CdrQueueEventsItem"];
-	for (auto dataNodeCdrQueueEventsCdrQueueEventsItem : allCdrQueueEventsNode)
+	auto allQueueEventsNode = dataNode["QueueEvents"]["QueueEventsItem"];
+	for (auto dataNodeQueueEventsQueueEventsItem : allQueueEventsNode)
 	{
-		Data::CdrQueueEventsItem cdrQueueEventsItemObject;
-		if(!dataNodeCdrQueueEventsCdrQueueEventsItem["FlowId"].isNull())
-			cdrQueueEventsItemObject.flowId = dataNodeCdrQueueEventsCdrQueueEventsItem["FlowId"].asString();
-		if(!dataNodeCdrQueueEventsCdrQueueEventsItem["QueueId"].isNull())
-			cdrQueueEventsItemObject.queueId = dataNodeCdrQueueEventsCdrQueueEventsItem["QueueId"].asString();
-		if(!dataNodeCdrQueueEventsCdrQueueEventsItem["QueueName"].isNull())
-			cdrQueueEventsItemObject.queueName = dataNodeCdrQueueEventsCdrQueueEventsItem["QueueName"].asString();
-		if(!dataNodeCdrQueueEventsCdrQueueEventsItem["QueueType"].isNull())
-			cdrQueueEventsItemObject.queueType = std::stoi(dataNodeCdrQueueEventsCdrQueueEventsItem["QueueType"].asString());
-		auto allEventSequence3Node = dataNodeCdrQueueEventsCdrQueueEventsItem["EventSequence"]["EventSequenceItem"];
-		for (auto dataNodeCdrQueueEventsCdrQueueEventsItemEventSequenceEventSequenceItem : allEventSequence3Node)
+		Data::QueueEventsItem queueEventsItemObject;
+		if(!dataNodeQueueEventsQueueEventsItem["FlowId"].isNull())
+			queueEventsItemObject.flowId = dataNodeQueueEventsQueueEventsItem["FlowId"].asString();
+		if(!dataNodeQueueEventsQueueEventsItem["QueueId"].isNull())
+			queueEventsItemObject.queueId = dataNodeQueueEventsQueueEventsItem["QueueId"].asString();
+		if(!dataNodeQueueEventsQueueEventsItem["QueueName"].isNull())
+			queueEventsItemObject.queueName = dataNodeQueueEventsQueueEventsItem["QueueName"].asString();
+		if(!dataNodeQueueEventsQueueEventsItem["QueueType"].isNull())
+			queueEventsItemObject.queueType = std::stoi(dataNodeQueueEventsQueueEventsItem["QueueType"].asString());
+		auto allEventSequence3Node = dataNodeQueueEventsQueueEventsItem["EventSequence"]["EventSequenceItem"];
+		for (auto dataNodeQueueEventsQueueEventsItemEventSequenceEventSequenceItem : allEventSequence3Node)
 		{
-			Data::CdrQueueEventsItem::EventSequenceItem4 eventSequence3Object;
-			if(!dataNodeCdrQueueEventsCdrQueueEventsItemEventSequenceEventSequenceItem["Event"].isNull())
-				eventSequence3Object.event = dataNodeCdrQueueEventsCdrQueueEventsItemEventSequenceEventSequenceItem["Event"].asString();
-			if(!dataNodeCdrQueueEventsCdrQueueEventsItemEventSequenceEventSequenceItem["EventTime"].isNull())
-				eventSequence3Object.eventTime = std::stol(dataNodeCdrQueueEventsCdrQueueEventsItemEventSequenceEventSequenceItem["EventTime"].asString());
-			cdrQueueEventsItemObject.eventSequence3.push_back(eventSequence3Object);
+			Data::QueueEventsItem::EventSequenceItem4 eventSequence3Object;
+			if(!dataNodeQueueEventsQueueEventsItemEventSequenceEventSequenceItem["Event"].isNull())
+				eventSequence3Object.event = dataNodeQueueEventsQueueEventsItemEventSequenceEventSequenceItem["Event"].asString();
+			if(!dataNodeQueueEventsQueueEventsItemEventSequenceEventSequenceItem["EventTime"].isNull())
+				eventSequence3Object.eventTime = std::stol(dataNodeQueueEventsQueueEventsItemEventSequenceEventSequenceItem["EventTime"].asString());
+			queueEventsItemObject.eventSequence3.push_back(eventSequence3Object);
 		}
-		data_.cdrQueueEvents.push_back(cdrQueueEventsItemObject);
+		data_.queueEvents.push_back(queueEventsItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
