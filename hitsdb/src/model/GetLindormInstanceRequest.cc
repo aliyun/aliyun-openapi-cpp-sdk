@@ -14,91 +14,102 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/hitsdb/model/RestartHiTSDBInstanceRequest.h>
+#include <alibabacloud/hitsdb/model/GetLindormInstanceRequest.h>
 
-using AlibabaCloud::Hitsdb::Model::RestartHiTSDBInstanceRequest;
+using AlibabaCloud::Hitsdb::Model::GetLindormInstanceRequest;
 
-RestartHiTSDBInstanceRequest::RestartHiTSDBInstanceRequest() :
-	RpcServiceRequest("hitsdb", "2017-06-01", "RestartHiTSDBInstance")
+GetLindormInstanceRequest::GetLindormInstanceRequest() :
+	RpcServiceRequest("hitsdb", "2020-06-15", "GetLindormInstance")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-RestartHiTSDBInstanceRequest::~RestartHiTSDBInstanceRequest()
+GetLindormInstanceRequest::~GetLindormInstanceRequest()
 {}
 
-long RestartHiTSDBInstanceRequest::getResourceOwnerId()const
+long GetLindormInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void RestartHiTSDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
+void GetLindormInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RestartHiTSDBInstanceRequest::getAccessKeyId()const
+std::string GetLindormInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void RestartHiTSDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+void GetLindormInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string RestartHiTSDBInstanceRequest::getSecurityToken()const
+std::string GetLindormInstanceRequest::getSecurityToken()const
 {
 	return securityToken_;
 }
 
-void RestartHiTSDBInstanceRequest::setSecurityToken(const std::string& securityToken)
+void GetLindormInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
 }
 
-std::string RestartHiTSDBInstanceRequest::getResourceOwnerAccount()const
+std::string GetLindormInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void GetLindormInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string GetLindormInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void RestartHiTSDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void GetLindormInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string RestartHiTSDBInstanceRequest::getOwnerAccount()const
+std::string GetLindormInstanceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void RestartHiTSDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
+void GetLindormInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-long RestartHiTSDBInstanceRequest::getOwnerId()const
+long GetLindormInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void RestartHiTSDBInstanceRequest::setOwnerId(long ownerId)
+void GetLindormInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string RestartHiTSDBInstanceRequest::getInstanceId()const
+std::string GetLindormInstanceRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void RestartHiTSDBInstanceRequest::setInstanceId(const std::string& instanceId)
+void GetLindormInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);

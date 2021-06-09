@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASRESULT_H_
-#define ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASRESULT_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTRESULT_H_
+#define ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT RenameHiTSDBInstanceAliasResult : public ServiceResult
+			class ALIBABACLOUD_HITSDB_EXPORT UpdateInstanceIpWhiteListResult : public ServiceResult
 			{
 			public:
 
 
-				RenameHiTSDBInstanceAliasResult();
-				explicit RenameHiTSDBInstanceAliasResult(const std::string &payload);
-				~RenameHiTSDBInstanceAliasResult();
+				UpdateInstanceIpWhiteListResult();
+				explicit UpdateInstanceIpWhiteListResult(const std::string &payload);
+				~UpdateInstanceIpWhiteListResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_RENAMEHITSDBINSTANCEALIASRESULT_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_UPDATEINSTANCEIPWHITELISTRESULT_H_

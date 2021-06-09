@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_DESCRIBEHITSDBINSTANCELISTRESULT_H_
-#define ALIBABACLOUD_HITSDB_MODEL_DESCRIBEHITSDBINSTANCELISTRESULT_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTRESULT_H_
+#define ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT DescribeHiTSDBInstanceListResult : public ServiceResult
+			class ALIBABACLOUD_HITSDB_EXPORT GetLindormInstanceListResult : public ServiceResult
 			{
 			public:
-				struct Instance
+				struct LindormInstanceSummary
 				{
-					std::string status;
 					std::string instanceStorage;
 					std::string zoneId;
 					std::string instanceId;
-					std::string maxSeriesPerDatabase;
-					long createTime;
-					std::string instanceClass;
-					std::string gmtCreated;
-					std::string lockMode;
-					std::string vswitchId;
+					std::string createTime;
+					std::string payType;
 					std::string vpcId;
 					std::string instanceAlias;
-					std::string userId;
 					std::string instanceStatus;
-					std::string chargeType;
 					std::string networkType;
-					std::string gmtExpire;
-					long expiredTime;
-					std::string paymentType;
-					std::string instanceDescription;
+					std::string serviceType;
 					std::string engineType;
 					std::string regionId;
-					std::string instanceTps;
+					std::string expireTime;
+					long aliUid;
 				};
 
 
-				DescribeHiTSDBInstanceListResult();
-				explicit DescribeHiTSDBInstanceListResult(const std::string &payload);
-				~DescribeHiTSDBInstanceListResult();
+				GetLindormInstanceListResult();
+				explicit GetLindormInstanceListResult(const std::string &payload);
+				~GetLindormInstanceListResult();
 				int getPageSize()const;
 				int getPageNumber()const;
 				int getTotal()const;
-				std::vector<Instance> getInstanceList()const;
+				std::vector<LindormInstanceSummary> getInstanceList()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -74,10 +65,10 @@ namespace AlibabaCloud
 				int pageSize_;
 				int pageNumber_;
 				int total_;
-				std::vector<Instance> instanceList_;
+				std::vector<LindormInstanceSummary> instanceList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_DESCRIBEHITSDBINSTANCELISTRESULT_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_GETLINDORMINSTANCELISTRESULT_H_

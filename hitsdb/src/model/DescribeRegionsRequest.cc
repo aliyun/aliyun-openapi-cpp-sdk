@@ -19,7 +19,7 @@
 using AlibabaCloud::Hitsdb::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
-	RpcServiceRequest("hitsdb", "2017-06-01", "DescribeRegions")
+	RpcServiceRequest("hitsdb", "2020-06-15", "DescribeRegions")
 {
 	setMethod(HttpRequest::Method::Post);
 }
