@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string screenCode;
 					std::string ip;
+					std::string port;
 					std::string ssId;
 					std::string mac;
 				};

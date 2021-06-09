@@ -40,24 +40,26 @@ void GetDeviceInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto deviceNode = value["Device"];
-	if(!deviceNode["ActivationCode"].isNull())
-		device_.activationCode = deviceNode["ActivationCode"].asString();
-	if(!deviceNode["CastScreenCode"].isNull())
-		device_.castScreenCode = deviceNode["CastScreenCode"].asString();
-	if(!deviceNode["Sn"].isNull())
-		device_.sn = deviceNode["Sn"].asString();
 	if(!deviceNode["Status"].isNull())
 		device_.status = std::stoi(deviceNode["Status"].asString());
+	if(!deviceNode["CastScreenCode"].isNull())
+		device_.castScreenCode = deviceNode["CastScreenCode"].asString();
 	if(!deviceNode["IP"].isNull())
 		device_.iP = deviceNode["IP"].asString();
-	if(!deviceNode["Mac"].isNull())
-		device_.mac = deviceNode["Mac"].asString();
+	if(!deviceNode["Port"].isNull())
+		device_.port = deviceNode["Port"].asString();
+	if(!deviceNode["Sn"].isNull())
+		device_.sn = deviceNode["Sn"].asString();
 	if(!deviceNode["Ssid"].isNull())
 		device_.ssid = deviceNode["Ssid"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = std::stoi(value["ErrorCode"].asString());
+	if(!deviceNode["ActivationCode"].isNull())
+		device_.activationCode = deviceNode["ActivationCode"].asString();
+	if(!deviceNode["Mac"].isNull())
+		device_.mac = deviceNode["Mac"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

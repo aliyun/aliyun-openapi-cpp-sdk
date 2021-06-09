@@ -71,6 +71,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/GetDeviceActiveCodeResult.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceInfoRequest.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceInfoResult.h
+	include/alibabacloud/aliyuncvc/model/GetDeviceListRequest.h
+	include/alibabacloud/aliyuncvc/model/GetDeviceListResult.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceTokenRequest.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceTokenResult.h
 	include/alibabacloud/aliyuncvc/model/GetMeetingRequest.h
@@ -81,10 +83,14 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/GetMeetingMemberResult.h
 	include/alibabacloud/aliyuncvc/model/GetMembersRequest.h
 	include/alibabacloud/aliyuncvc/model/GetMembersResult.h
+	include/alibabacloud/aliyuncvc/model/GetScreenVerificationCodeRequest.h
+	include/alibabacloud/aliyuncvc/model/GetScreenVerificationCodeResult.h
 	include/alibabacloud/aliyuncvc/model/GetStatisticRequest.h
 	include/alibabacloud/aliyuncvc/model/GetStatisticResult.h
 	include/alibabacloud/aliyuncvc/model/GetUserRequest.h
 	include/alibabacloud/aliyuncvc/model/GetUserResult.h
+	include/alibabacloud/aliyuncvc/model/GetWebSocketTokenRequest.h
+	include/alibabacloud/aliyuncvc/model/GetWebSocketTokenResult.h
 	include/alibabacloud/aliyuncvc/model/InviteUserRequest.h
 	include/alibabacloud/aliyuncvc/model/InviteUserResult.h
 	include/alibabacloud/aliyuncvc/model/JoinDeviceMeetingRequest.h
@@ -115,6 +121,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordResult.h
 	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordInternationalRequest.h
 	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordInternationalResult.h
+	include/alibabacloud/aliyuncvc/model/QueryMeetingMemberActionRequest.h
+	include/alibabacloud/aliyuncvc/model/QueryMeetingMemberActionResult.h
 	include/alibabacloud/aliyuncvc/model/RefreshDeviceScreenCodeRequest.h
 	include/alibabacloud/aliyuncvc/model/RefreshDeviceScreenCodeResult.h
 	include/alibabacloud/aliyuncvc/model/RegisterDeviceRequest.h
@@ -123,6 +131,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/RegisterUemDeviceResult.h
 	include/alibabacloud/aliyuncvc/model/SendMeetingCommandRequest.h
 	include/alibabacloud/aliyuncvc/model/SendMeetingCommandResult.h
+	include/alibabacloud/aliyuncvc/model/SendScreenStartRequest.h
+	include/alibabacloud/aliyuncvc/model/SendScreenStartResult.h
 	include/alibabacloud/aliyuncvc/model/StartLiveRequest.h
 	include/alibabacloud/aliyuncvc/model/StartLiveResult.h
 	include/alibabacloud/aliyuncvc/model/UpdateDeviceHeartBeatRequest.h
@@ -186,6 +196,8 @@ set(aliyuncvc_src
 	src/model/GetDeviceActiveCodeResult.cc
 	src/model/GetDeviceInfoRequest.cc
 	src/model/GetDeviceInfoResult.cc
+	src/model/GetDeviceListRequest.cc
+	src/model/GetDeviceListResult.cc
 	src/model/GetDeviceTokenRequest.cc
 	src/model/GetDeviceTokenResult.cc
 	src/model/GetMeetingRequest.cc
@@ -196,10 +208,14 @@ set(aliyuncvc_src
 	src/model/GetMeetingMemberResult.cc
 	src/model/GetMembersRequest.cc
 	src/model/GetMembersResult.cc
+	src/model/GetScreenVerificationCodeRequest.cc
+	src/model/GetScreenVerificationCodeResult.cc
 	src/model/GetStatisticRequest.cc
 	src/model/GetStatisticResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/GetWebSocketTokenRequest.cc
+	src/model/GetWebSocketTokenResult.cc
 	src/model/InviteUserRequest.cc
 	src/model/InviteUserResult.cc
 	src/model/JoinDeviceMeetingRequest.cc
@@ -230,6 +246,8 @@ set(aliyuncvc_src
 	src/model/ModifyMeetingPasswordResult.cc
 	src/model/ModifyMeetingPasswordInternationalRequest.cc
 	src/model/ModifyMeetingPasswordInternationalResult.cc
+	src/model/QueryMeetingMemberActionRequest.cc
+	src/model/QueryMeetingMemberActionResult.cc
 	src/model/RefreshDeviceScreenCodeRequest.cc
 	src/model/RefreshDeviceScreenCodeResult.cc
 	src/model/RegisterDeviceRequest.cc
@@ -238,6 +256,8 @@ set(aliyuncvc_src
 	src/model/RegisterUemDeviceResult.cc
 	src/model/SendMeetingCommandRequest.cc
 	src/model/SendMeetingCommandResult.cc
+	src/model/SendScreenStartRequest.cc
+	src/model/SendScreenStartResult.cc
 	src/model/StartLiveRequest.cc
 	src/model/StartLiveResult.cc
 	src/model/UpdateDeviceHeartBeatRequest.cc

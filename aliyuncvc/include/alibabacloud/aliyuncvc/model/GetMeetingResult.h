@@ -48,8 +48,8 @@ namespace AlibabaCloud
 					std::string userId;
 					long createTime;
 					std::string meetingName;
-					long validTime;
 					std::string password;
+					long validTime;
 				};
 
 

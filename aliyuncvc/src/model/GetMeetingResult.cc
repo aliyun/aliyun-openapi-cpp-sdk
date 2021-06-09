@@ -40,40 +40,40 @@ void GetMeetingResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto meetingInfoNode = value["MeetingInfo"];
-	if(!meetingInfoNode["MeetingName"].isNull())
-		meetingInfo_.meetingName = meetingInfoNode["MeetingName"].asString();
-	if(!meetingInfoNode["ValidTime"].isNull())
-		meetingInfo_.validTime = std::stol(meetingInfoNode["ValidTime"].asString());
-	if(!meetingInfoNode["MeetingCode"].isNull())
-		meetingInfo_.meetingCode = meetingInfoNode["MeetingCode"].asString();
-	if(!meetingInfoNode["CreateTime"].isNull())
-		meetingInfo_.createTime = std::stol(meetingInfoNode["CreateTime"].asString());
-	if(!meetingInfoNode["UserId"].isNull())
-		meetingInfo_.userId = meetingInfoNode["UserId"].asString();
-	if(!meetingInfoNode["MeetingUUID"].isNull())
-		meetingInfo_.meetingUUID = meetingInfoNode["MeetingUUID"].asString();
 	if(!meetingInfoNode["Password"].isNull())
 		meetingInfo_.password = meetingInfoNode["Password"].asString();
+	if(!meetingInfoNode["MeetingUUID"].isNull())
+		meetingInfo_.meetingUUID = meetingInfoNode["MeetingUUID"].asString();
+	if(!meetingInfoNode["ValidTime"].isNull())
+		meetingInfo_.validTime = std::stol(meetingInfoNode["ValidTime"].asString());
+	if(!meetingInfoNode["CreateTime"].isNull())
+		meetingInfo_.createTime = std::stol(meetingInfoNode["CreateTime"].asString());
+	if(!meetingInfoNode["MeetingName"].isNull())
+		meetingInfo_.meetingName = meetingInfoNode["MeetingName"].asString();
+	if(!meetingInfoNode["UserId"].isNull())
+		meetingInfo_.userId = meetingInfoNode["UserId"].asString();
+	if(!meetingInfoNode["MeetingCode"].isNull())
+		meetingInfo_.meetingCode = meetingInfoNode["MeetingCode"].asString();
 	auto allMemberListNode = meetingInfoNode["MemberList"]["MemberListItem"];
 	for (auto meetingInfoNodeMemberListMemberListItem : allMemberListNode)
 	{
 		MeetingInfo::MemberListItem memberListItemObject;
-		if(!meetingInfoNodeMemberListMemberListItem["UserAvatarUrl"].isNull())
-			memberListItemObject.userAvatarUrl = meetingInfoNodeMemberListMemberListItem["UserAvatarUrl"].asString();
-		if(!meetingInfoNodeMemberListMemberListItem["MemberUUID"].isNull())
-			memberListItemObject.memberUUID = meetingInfoNodeMemberListMemberListItem["MemberUUID"].asString();
-		if(!meetingInfoNodeMemberListMemberListItem["UserName"].isNull())
-			memberListItemObject.userName = meetingInfoNodeMemberListMemberListItem["UserName"].asString();
-		if(!meetingInfoNodeMemberListMemberListItem["UserId"].isNull())
-			memberListItemObject.userId = meetingInfoNodeMemberListMemberListItem["UserId"].asString();
 		if(!meetingInfoNodeMemberListMemberListItem["Status"].isNull())
 			memberListItemObject.status = meetingInfoNodeMemberListMemberListItem["Status"].asString();
+		if(!meetingInfoNodeMemberListMemberListItem["MemberUUID"].isNull())
+			memberListItemObject.memberUUID = meetingInfoNodeMemberListMemberListItem["MemberUUID"].asString();
+		if(!meetingInfoNodeMemberListMemberListItem["UserAvatarUrl"].isNull())
+			memberListItemObject.userAvatarUrl = meetingInfoNodeMemberListMemberListItem["UserAvatarUrl"].asString();
+		if(!meetingInfoNodeMemberListMemberListItem["UserId"].isNull())
+			memberListItemObject.userId = meetingInfoNodeMemberListMemberListItem["UserId"].asString();
+		if(!meetingInfoNodeMemberListMemberListItem["UserName"].isNull())
+			memberListItemObject.userName = meetingInfoNodeMemberListMemberListItem["UserName"].asString();
 		meetingInfo_.memberList.push_back(memberListItemObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 

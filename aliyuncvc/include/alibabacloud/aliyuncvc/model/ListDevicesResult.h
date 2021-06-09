@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string castScreenCode;
 						std::string createTime;
 						std::string pictureUrl;
+						std::string startUpPictureUrl;
 						std::string sN;
 						std::string conferenceName;
 						std::string activationCode;

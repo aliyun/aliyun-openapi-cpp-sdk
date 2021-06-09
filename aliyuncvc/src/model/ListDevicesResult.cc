@@ -66,6 +66,8 @@ void ListDevicesResult::parse(const std::string &payload)
 			deviceObject.status = dataNodeDevicesDevice["Status"].asString();
 		if(!dataNodeDevicesDevice["CastScreenCode"].isNull())
 			deviceObject.castScreenCode = dataNodeDevicesDevice["CastScreenCode"].asString();
+		if(!dataNodeDevicesDevice["StartUpPictureUrl"].isNull())
+			deviceObject.startUpPictureUrl = dataNodeDevicesDevice["StartUpPictureUrl"].asString();
 		data_.devices.push_back(deviceObject);
 	}
 	if(!value["ErrorCode"].isNull())

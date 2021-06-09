@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFORESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFORESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYMEETINGMEMBERACTIONRESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYMEETINGMEMBERACTIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT GetDeviceInfoResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT QueryMeetingMemberActionResult : public ServiceResult
 			{
 			public:
-				struct Device
+				struct ErrorCodeListItem
 				{
-					int status;
-					std::string castScreenCode;
-					std::string iP;
-					std::string port;
-					std::string sn;
-					std::string ssid;
-					std::string activationCode;
-					std::string mac;
+					long errorCodeCount;
+					long time;
 				};
 
 
-				GetDeviceInfoResult();
-				explicit GetDeviceInfoResult(const std::string &payload);
-				~GetDeviceInfoResult();
+				QueryMeetingMemberActionResult();
+				explicit QueryMeetingMemberActionResult(const std::string &payload);
+				~QueryMeetingMemberActionResult();
 				std::string getMessage()const;
-				Device getDevice()const;
+				int getMeetingStatus()const;
+				int getVideoStatus()const;
+				int getAudioStatus()const;
+				long getErrorCodeCount()const;
 				int getErrorCode()const;
+				std::vector<ErrorCodeListItem> getErrorCodeList()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Device device_;
+				int meetingStatus_;
+				int videoStatus_;
+				int audioStatus_;
+				long errorCodeCount_;
 				int errorCode_;
+				std::vector<ErrorCodeListItem> errorCodeList_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFORESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYMEETINGMEMBERACTIONRESULT_H_

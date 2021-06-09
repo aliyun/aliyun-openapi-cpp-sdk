@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_SENDSCREENSTARTREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_SENDSCREENSTARTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT GetDeviceInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT SendScreenStartRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetDeviceInfoRequest();
-				~GetDeviceInfoRequest();
+				SendScreenStartRequest();
+				~SendScreenStartRequest();
 
 				std::string getCastScreenCode()const;
 				void setCastScreenCode(const std::string& castScreenCode);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
-				std::string getSn()const;
-				void setSn(const std::string& sn);
+				std::string getSessionId()const;
+				void setSessionId(const std::string& sessionId);
 
             private:
 				std::string castScreenCode_;
-				std::string groupId_;
-				std::string sn_;
+				std::string sessionId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_SENDSCREENSTARTREQUEST_H_

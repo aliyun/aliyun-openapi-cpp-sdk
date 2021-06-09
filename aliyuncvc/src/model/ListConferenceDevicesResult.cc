@@ -70,6 +70,8 @@ void ListConferenceDevicesResult::parse(const std::string &payload)
 			dataObject.status = conferencesDatasNodeConferencesdata["Status"].asString();
 		if(!conferencesDatasNodeConferencesdata["CastScreenCode"].isNull())
 			dataObject.castScreenCode = conferencesDatasNodeConferencesdata["CastScreenCode"].asString();
+		if(!conferencesDatasNodeConferencesdata["StartUpPictureUrl"].isNull())
+			dataObject.startUpPictureUrl = conferencesDatasNodeConferencesdata["StartUpPictureUrl"].asString();
 		conferencesDatas_.conferences.push_back(dataObject);
 	}
 	if(!value["ErrorCode"].isNull())

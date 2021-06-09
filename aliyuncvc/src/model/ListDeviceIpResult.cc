@@ -51,6 +51,8 @@ void ListDeviceIpResult::parse(const std::string &payload)
 			devicesObject.mac = valueDevicesDevicesItem["Mac"].asString();
 		if(!valueDevicesDevicesItem["SsId"].isNull())
 			devicesObject.ssId = valueDevicesDevicesItem["SsId"].asString();
+		if(!valueDevicesDevicesItem["Port"].isNull())
+			devicesObject.port = valueDevicesDevicesItem["Port"].asString();
 		devices_.push_back(devicesObject);
 	}
 	if(!value["ErrorCode"].isNull())

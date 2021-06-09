@@ -14,49 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/GetDeviceInfoRequest.h>
+#include <alibabacloud/aliyuncvc/model/GetDeviceListRequest.h>
 
-using AlibabaCloud::Aliyuncvc::Model::GetDeviceInfoRequest;
+using AlibabaCloud::Aliyuncvc::Model::GetDeviceListRequest;
 
-GetDeviceInfoRequest::GetDeviceInfoRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-10-30", "GetDeviceInfo")
+GetDeviceListRequest::GetDeviceListRequest() :
+	RpcServiceRequest("aliyuncvc", "2019-10-30", "GetDeviceList")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetDeviceInfoRequest::~GetDeviceInfoRequest()
+GetDeviceListRequest::~GetDeviceListRequest()
 {}
 
-std::string GetDeviceInfoRequest::getCastScreenCode()const
+std::string GetDeviceListRequest::getCastScreenCode()const
 {
 	return castScreenCode_;
 }
 
-void GetDeviceInfoRequest::setCastScreenCode(const std::string& castScreenCode)
+void GetDeviceListRequest::setCastScreenCode(const std::string& castScreenCode)
 {
 	castScreenCode_ = castScreenCode;
 	setParameter("CastScreenCode", castScreenCode);
 }
 
-std::string GetDeviceInfoRequest::getGroupId()const
+std::string GetDeviceListRequest::getGroupId()const
 {
 	return groupId_;
 }
 
-void GetDeviceInfoRequest::setGroupId(const std::string& groupId)
+void GetDeviceListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
 	setParameter("GroupId", groupId);
-}
-
-std::string GetDeviceInfoRequest::getSn()const
-{
-	return sn_;
-}
-
-void GetDeviceInfoRequest::setSn(const std::string& sn)
-{
-	sn_ = sn;
-	setParameter("Sn", sn);
 }
 

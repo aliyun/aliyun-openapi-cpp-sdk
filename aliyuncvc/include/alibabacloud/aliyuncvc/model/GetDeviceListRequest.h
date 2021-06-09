@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICELISTREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT GetDeviceInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT GetDeviceListRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetDeviceInfoRequest();
-				~GetDeviceInfoRequest();
+				GetDeviceListRequest();
+				~GetDeviceListRequest();
 
 				std::string getCastScreenCode()const;
 				void setCastScreenCode(const std::string& castScreenCode);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
-				std::string getSn()const;
-				void setSn(const std::string& sn);
 
             private:
 				std::string castScreenCode_;
 				std::string groupId_;
-				std::string sn_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICELISTREQUEST_H_
