@@ -1455,6 +1455,42 @@ IotClient::CloseEdgeInstanceDeploymentOutcomeCallable IotClient::closeEdgeInstan
 	return task->get_future();
 }
 
+IotClient::ConfirmOTATaskOutcome IotClient::confirmOTATask(const ConfirmOTATaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfirmOTATaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfirmOTATaskOutcome(ConfirmOTATaskResult(outcome.result()));
+	else
+		return ConfirmOTATaskOutcome(outcome.error());
+}
+
+void IotClient::confirmOTATaskAsync(const ConfirmOTATaskRequest& request, const ConfirmOTATaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, confirmOTATask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ConfirmOTATaskOutcomeCallable IotClient::confirmOTATaskCallable(const ConfirmOTATaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfirmOTATaskOutcome()>>(
+			[this, request]()
+			{
+			return this->confirmOTATask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CopyThingModelOutcome IotClient::copyThingModel(const CopyThingModelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5307,6 +5343,42 @@ IotClient::ListOTATaskByJobOutcomeCallable IotClient::listOTATaskByJobCallable(c
 	return task->get_future();
 }
 
+IotClient::ListOTAUnfinishedTaskByDeviceOutcome IotClient::listOTAUnfinishedTaskByDevice(const ListOTAUnfinishedTaskByDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOTAUnfinishedTaskByDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOTAUnfinishedTaskByDeviceOutcome(ListOTAUnfinishedTaskByDeviceResult(outcome.result()));
+	else
+		return ListOTAUnfinishedTaskByDeviceOutcome(outcome.error());
+}
+
+void IotClient::listOTAUnfinishedTaskByDeviceAsync(const ListOTAUnfinishedTaskByDeviceRequest& request, const ListOTAUnfinishedTaskByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOTAUnfinishedTaskByDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ListOTAUnfinishedTaskByDeviceOutcomeCallable IotClient::listOTAUnfinishedTaskByDeviceCallable(const ListOTAUnfinishedTaskByDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOTAUnfinishedTaskByDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->listOTAUnfinishedTaskByDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ListProductByTagsOutcome IotClient::listProductByTags(const ListProductByTagsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6741,6 +6813,42 @@ IotClient::QueryDeviceGroupTagListOutcomeCallable IotClient::queryDeviceGroupTag
 			[this, request]()
 			{
 			return this->queryDeviceGroupTagList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryDeviceInfoOutcome IotClient::queryDeviceInfo(const QueryDeviceInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDeviceInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDeviceInfoOutcome(QueryDeviceInfoResult(outcome.result()));
+	else
+		return QueryDeviceInfoOutcome(outcome.error());
+}
+
+void IotClient::queryDeviceInfoAsync(const QueryDeviceInfoRequest& request, const QueryDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDeviceInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryDeviceInfoOutcomeCallable IotClient::queryDeviceInfoCallable(const QueryDeviceInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDeviceInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDeviceInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

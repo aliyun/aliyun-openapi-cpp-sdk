@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CANCELOTATASKBYJOBREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CANCELOTATASKBYJOBREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICEINFOREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICEINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CancelOTATaskByJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT QueryDeviceInfoRequest : public RpcServiceRequest
 			{
 
 			public:
-				CancelOTATaskByJobRequest();
-				~CancelOTATaskByJobRequest();
+				QueryDeviceInfoRequest();
+				~QueryDeviceInfoRequest();
 
-				bool getCancelScheduledTask()const;
-				void setCancelScheduledTask(bool cancelScheduledTask);
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getJobId()const;
-				void setJobId(const std::string& jobId);
-				bool getCancelUnconfirmedTask()const;
-				void setCancelUnconfirmedTask(bool cancelUnconfirmedTask);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
+				std::string getIotId()const;
+				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				bool getCancelQueuedTask()const;
-				void setCancelQueuedTask(bool cancelQueuedTask);
-				bool getCancelInProgressTask()const;
-				void setCancelInProgressTask(bool cancelInProgressTask);
-				bool getCancelNotifiedTask()const;
-				void setCancelNotifiedTask(bool cancelNotifiedTask);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				bool cancelScheduledTask_;
+				std::string realTenantId_;
 				std::string accessKeyId_;
-				std::string jobId_;
-				bool cancelUnconfirmedTask_;
+				std::string realTripartiteKey_;
+				std::string iotId_;
 				std::string iotInstanceId_;
-				bool cancelQueuedTask_;
-				bool cancelInProgressTask_;
-				bool cancelNotifiedTask_;
+				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CANCELOTATASKBYJOBREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICEINFOREQUEST_H_

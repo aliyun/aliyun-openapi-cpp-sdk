@@ -38,6 +38,17 @@ void ListDeviceDistributeJobRequest::setJobId(const std::string& jobId)
 	setBodyParameter("JobId", jobId);
 }
 
+std::string ListDeviceDistributeJobRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void ListDeviceDistributeJobRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
+}
+
 int ListDeviceDistributeJobRequest::getPageSize()const
 {
 	return pageSize_;

@@ -60,6 +60,17 @@ void CancelOTATaskByJobRequest::setJobId(const std::string& jobId)
 	setParameter("JobId", jobId);
 }
 
+bool CancelOTATaskByJobRequest::getCancelUnconfirmedTask()const
+{
+	return cancelUnconfirmedTask_;
+}
+
+void CancelOTATaskByJobRequest::setCancelUnconfirmedTask(bool cancelUnconfirmedTask)
+{
+	cancelUnconfirmedTask_ = cancelUnconfirmedTask;
+	setParameter("CancelUnconfirmedTask", cancelUnconfirmedTask ? "true" : "false");
+}
+
 std::string CancelOTATaskByJobRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

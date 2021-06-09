@@ -37,8 +37,12 @@ namespace AlibabaCloud
 
 				int getTimeoutInMinutes()const;
 				void setTimeoutInMinutes(int timeoutInMinutes);
+				bool getNeedConfirm()const;
+				void setNeedConfirm(bool needConfirm);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				bool getNeedPush()const;
+				void setNeedPush(bool needPush);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getFirmwareId()const;
@@ -54,7 +58,9 @@ namespace AlibabaCloud
 
             private:
 				int timeoutInMinutes_;
+				bool needConfirm_;
 				std::string accessKeyId_;
+				bool needPush_;
 				std::string iotInstanceId_;
 				std::string firmwareId_;
 				std::string productKey_;

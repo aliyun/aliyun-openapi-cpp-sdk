@@ -38,6 +38,17 @@ void CreateOTAVerifyJobRequest::setTimeoutInMinutes(int timeoutInMinutes)
 	setParameter("TimeoutInMinutes", std::to_string(timeoutInMinutes));
 }
 
+bool CreateOTAVerifyJobRequest::getNeedConfirm()const
+{
+	return needConfirm_;
+}
+
+void CreateOTAVerifyJobRequest::setNeedConfirm(bool needConfirm)
+{
+	needConfirm_ = needConfirm;
+	setParameter("NeedConfirm", needConfirm ? "true" : "false");
+}
+
 std::string CreateOTAVerifyJobRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +58,17 @@ void CreateOTAVerifyJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+bool CreateOTAVerifyJobRequest::getNeedPush()const
+{
+	return needPush_;
+}
+
+void CreateOTAVerifyJobRequest::setNeedPush(bool needPush)
+{
+	needPush_ = needPush;
+	setParameter("NeedPush", needPush ? "true" : "false");
 }
 
 std::string CreateOTAVerifyJobRequest::getIotInstanceId()const

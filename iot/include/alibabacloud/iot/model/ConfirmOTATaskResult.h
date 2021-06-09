@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICERESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICERESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_CONFIRMOTATASKRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_CONFIRMOTATASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryDeviceResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT ConfirmOTATaskResult : public ServiceResult
 			{
 			public:
-				struct DeviceInfo
-				{
-					std::string deviceType;
-					std::string iotId;
-					std::string gmtCreate;
-					std::string utcCreate;
-					std::string deviceId;
-					std::string deviceSecret;
-					std::string gmtModified;
-					std::string deviceStatus;
-					std::string utcModified;
-					std::string productKey;
-					std::string deviceName;
-					std::string nickname;
-				};
 
 
-				QueryDeviceResult();
-				explicit QueryDeviceResult(const std::string &payload);
-				~QueryDeviceResult();
-				int getPageSize()const;
-				int getPageCount()const;
-				std::string getNextToken()const;
-				int getTotal()const;
-				std::vector<DeviceInfo> getData()const;
-				int getPage()const;
+				ConfirmOTATaskResult();
+				explicit ConfirmOTATaskResult(const std::string &payload);
+				~ConfirmOTATaskResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -65,12 +44,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int pageCount_;
-				std::string nextToken_;
-				int total_;
-				std::vector<DeviceInfo> data_;
-				int page_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -79,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICERESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_CONFIRMOTATASKRESULT_H_

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 
             private:
 				std::string jobId_;
+				std::string nextToken_;
 				int pageSize_;
 				int currentPage_;
 				std::string apiProduct_;

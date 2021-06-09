@@ -83,6 +83,8 @@ void QueryDeviceResult::parse(const std::string &payload)
 		pageCount_ = std::stoi(value["PageCount"].asString());
 	if(!value["Page"].isNull())
 		page_ = std::stoi(value["Page"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -94,6 +96,11 @@ int QueryDeviceResult::getPageSize()const
 int QueryDeviceResult::getPageCount()const
 {
 	return pageCount_;
+}
+
+std::string QueryDeviceResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 int QueryDeviceResult::getTotal()const

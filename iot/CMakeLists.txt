@@ -99,6 +99,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ClearEdgeInstanceDriverConfigsResult.h
 	include/alibabacloud/iot/model/CloseEdgeInstanceDeploymentRequest.h
 	include/alibabacloud/iot/model/CloseEdgeInstanceDeploymentResult.h
+	include/alibabacloud/iot/model/ConfirmOTATaskRequest.h
+	include/alibabacloud/iot/model/ConfirmOTATaskResult.h
 	include/alibabacloud/iot/model/CopyThingModelRequest.h
 	include/alibabacloud/iot/model/CopyThingModelResult.h
 	include/alibabacloud/iot/model/CreateConsumerGroupRequest.h
@@ -313,6 +315,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ListOTAModuleVersionsByDeviceResult.h
 	include/alibabacloud/iot/model/ListOTATaskByJobRequest.h
 	include/alibabacloud/iot/model/ListOTATaskByJobResult.h
+	include/alibabacloud/iot/model/ListOTAUnfinishedTaskByDeviceRequest.h
+	include/alibabacloud/iot/model/ListOTAUnfinishedTaskByDeviceResult.h
 	include/alibabacloud/iot/model/ListProductByTagsRequest.h
 	include/alibabacloud/iot/model/ListProductByTagsResult.h
 	include/alibabacloud/iot/model/ListProductTagsRequest.h
@@ -393,6 +397,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDeviceGroupListResult.h
 	include/alibabacloud/iot/model/QueryDeviceGroupTagListRequest.h
 	include/alibabacloud/iot/model/QueryDeviceGroupTagListResult.h
+	include/alibabacloud/iot/model/QueryDeviceInfoRequest.h
+	include/alibabacloud/iot/model/QueryDeviceInfoResult.h
 	include/alibabacloud/iot/model/QueryDeviceListByDeviceGroupRequest.h
 	include/alibabacloud/iot/model/QueryDeviceListByDeviceGroupResult.h
 	include/alibabacloud/iot/model/QueryDeviceOriginalEventDataRequest.h
@@ -680,6 +686,8 @@ set(iot_src
 	src/model/ClearEdgeInstanceDriverConfigsResult.cc
 	src/model/CloseEdgeInstanceDeploymentRequest.cc
 	src/model/CloseEdgeInstanceDeploymentResult.cc
+	src/model/ConfirmOTATaskRequest.cc
+	src/model/ConfirmOTATaskResult.cc
 	src/model/CopyThingModelRequest.cc
 	src/model/CopyThingModelResult.cc
 	src/model/CreateConsumerGroupRequest.cc
@@ -894,6 +902,8 @@ set(iot_src
 	src/model/ListOTAModuleVersionsByDeviceResult.cc
 	src/model/ListOTATaskByJobRequest.cc
 	src/model/ListOTATaskByJobResult.cc
+	src/model/ListOTAUnfinishedTaskByDeviceRequest.cc
+	src/model/ListOTAUnfinishedTaskByDeviceResult.cc
 	src/model/ListProductByTagsRequest.cc
 	src/model/ListProductByTagsResult.cc
 	src/model/ListProductTagsRequest.cc
@@ -974,6 +984,8 @@ set(iot_src
 	src/model/QueryDeviceGroupListResult.cc
 	src/model/QueryDeviceGroupTagListRequest.cc
 	src/model/QueryDeviceGroupTagListResult.cc
+	src/model/QueryDeviceInfoRequest.cc
+	src/model/QueryDeviceInfoResult.cc
 	src/model/QueryDeviceListByDeviceGroupRequest.cc
 	src/model/QueryDeviceListByDeviceGroupResult.cc
 	src/model/QueryDeviceOriginalEventDataRequest.cc

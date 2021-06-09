@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTDEVICEDISTRIBUTEJOBRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTDEVICEDISTRIBUTEJOBRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICEINFORESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICEINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListDeviceDistributeJobResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT QueryDeviceInfoResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Items
-					{
-						struct TargetInstanceConfigsItem
-						{
-							std::string targetRegion;
-							std::string targetInstanceName;
-							std::string targetInstanceId;
-						};
-						int status;
-						std::string sourceInstanceName;
-						long gmtCreate;
-						std::string sourceUid;
-						int total;
-						int strategy;
-						std::string targetUid;
-						std::vector<Items::TargetInstanceConfigsItem> targetInstanceConfigs;
-						std::string sourceInstanceId;
-						std::string sourceRegion;
-						std::string jobId;
-						std::string productKey;
-					};
-					std::string nextToken;
-					std::vector<Items> jobInfo;
-					int total;
+					std::string iotId;
+					std::string deviceSecret;
+					std::string productKey;
+					std::string deviceName;
+					std::string nickname;
 				};
 
 
-				ListDeviceDistributeJobResult();
-				explicit ListDeviceDistributeJobResult(const std::string &payload);
-				~ListDeviceDistributeJobResult();
+				QueryDeviceInfoResult();
+				explicit QueryDeviceInfoResult(const std::string &payload);
+				~QueryDeviceInfoResult();
 				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
@@ -81,4 +62,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTDEVICEDISTRIBUTEJOBRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICEINFORESULT_H_

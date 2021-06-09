@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					std::string utcEndTime;
+					bool needPush;
 					int overwriteMode;
 					std::string firmwareId;
 					std::string name;
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 					std::string utcStartTime;
 					std::string utcScheduleFinishTime;
 					std::vector<std::string> srcVersions;
+					bool needConfirm;
 					std::string jobDesc;
 					std::string jobType;
 					std::string utcCreate;

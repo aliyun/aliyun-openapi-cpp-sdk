@@ -49,6 +49,17 @@ void CreateOTAStaticUpgradeJobRequest::setTimeoutInMinutes(int timeoutInMinutes)
 	setParameter("TimeoutInMinutes", std::to_string(timeoutInMinutes));
 }
 
+bool CreateOTAStaticUpgradeJobRequest::getNeedConfirm()const
+{
+	return needConfirm_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setNeedConfirm(bool needConfirm)
+{
+	needConfirm_ = needConfirm;
+	setParameter("NeedConfirm", needConfirm ? "true" : "false");
+}
+
 std::string CreateOTAStaticUpgradeJobRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,6 +69,17 @@ void CreateOTAStaticUpgradeJobRequest::setAccessKeyId(const std::string& accessK
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+bool CreateOTAStaticUpgradeJobRequest::getNeedPush()const
+{
+	return needPush_;
+}
+
+void CreateOTAStaticUpgradeJobRequest::setNeedPush(bool needPush)
+{
+	needPush_ = needPush;
+	setParameter("NeedPush", needPush ? "true" : "false");
 }
 
 std::string CreateOTAStaticUpgradeJobRequest::getIotInstanceId()const

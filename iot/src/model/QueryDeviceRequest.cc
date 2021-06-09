@@ -60,6 +60,17 @@ void QueryDeviceRequest::setRealTripartiteKey(const std::string& realTripartiteK
 	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
+std::string QueryDeviceRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void QueryDeviceRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
+}
+
 std::string QueryDeviceRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

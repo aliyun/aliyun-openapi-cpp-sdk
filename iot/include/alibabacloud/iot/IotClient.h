@@ -100,6 +100,8 @@
 #include "model/ClearEdgeInstanceDriverConfigsResult.h"
 #include "model/CloseEdgeInstanceDeploymentRequest.h"
 #include "model/CloseEdgeInstanceDeploymentResult.h"
+#include "model/ConfirmOTATaskRequest.h"
+#include "model/ConfirmOTATaskResult.h"
 #include "model/CopyThingModelRequest.h"
 #include "model/CopyThingModelResult.h"
 #include "model/CreateConsumerGroupRequest.h"
@@ -314,6 +316,8 @@
 #include "model/ListOTAModuleVersionsByDeviceResult.h"
 #include "model/ListOTATaskByJobRequest.h"
 #include "model/ListOTATaskByJobResult.h"
+#include "model/ListOTAUnfinishedTaskByDeviceRequest.h"
+#include "model/ListOTAUnfinishedTaskByDeviceResult.h"
 #include "model/ListProductByTagsRequest.h"
 #include "model/ListProductByTagsResult.h"
 #include "model/ListProductTagsRequest.h"
@@ -394,6 +398,8 @@
 #include "model/QueryDeviceGroupListResult.h"
 #include "model/QueryDeviceGroupTagListRequest.h"
 #include "model/QueryDeviceGroupTagListResult.h"
+#include "model/QueryDeviceInfoRequest.h"
+#include "model/QueryDeviceInfoResult.h"
 #include "model/QueryDeviceListByDeviceGroupRequest.h"
 #include "model/QueryDeviceListByDeviceGroupResult.h"
 #include "model/QueryDeviceOriginalEventDataRequest.h"
@@ -726,6 +732,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CloseEdgeInstanceDeploymentResult> CloseEdgeInstanceDeploymentOutcome;
 			typedef std::future<CloseEdgeInstanceDeploymentOutcome> CloseEdgeInstanceDeploymentOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CloseEdgeInstanceDeploymentRequest&, const CloseEdgeInstanceDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseEdgeInstanceDeploymentAsyncHandler;
+			typedef Outcome<Error, Model::ConfirmOTATaskResult> ConfirmOTATaskOutcome;
+			typedef std::future<ConfirmOTATaskOutcome> ConfirmOTATaskOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ConfirmOTATaskRequest&, const ConfirmOTATaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmOTATaskAsyncHandler;
 			typedef Outcome<Error, Model::CopyThingModelResult> CopyThingModelOutcome;
 			typedef std::future<CopyThingModelOutcome> CopyThingModelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CopyThingModelRequest&, const CopyThingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyThingModelAsyncHandler;
@@ -1047,6 +1056,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListOTATaskByJobResult> ListOTATaskByJobOutcome;
 			typedef std::future<ListOTATaskByJobOutcome> ListOTATaskByJobOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListOTATaskByJobRequest&, const ListOTATaskByJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOTATaskByJobAsyncHandler;
+			typedef Outcome<Error, Model::ListOTAUnfinishedTaskByDeviceResult> ListOTAUnfinishedTaskByDeviceOutcome;
+			typedef std::future<ListOTAUnfinishedTaskByDeviceOutcome> ListOTAUnfinishedTaskByDeviceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ListOTAUnfinishedTaskByDeviceRequest&, const ListOTAUnfinishedTaskByDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOTAUnfinishedTaskByDeviceAsyncHandler;
 			typedef Outcome<Error, Model::ListProductByTagsResult> ListProductByTagsOutcome;
 			typedef std::future<ListProductByTagsOutcome> ListProductByTagsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListProductByTagsRequest&, const ListProductByTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProductByTagsAsyncHandler;
@@ -1167,6 +1179,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDeviceGroupTagListResult> QueryDeviceGroupTagListOutcome;
 			typedef std::future<QueryDeviceGroupTagListOutcome> QueryDeviceGroupTagListOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceGroupTagListRequest&, const QueryDeviceGroupTagListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceGroupTagListAsyncHandler;
+			typedef Outcome<Error, Model::QueryDeviceInfoResult> QueryDeviceInfoOutcome;
+			typedef std::future<QueryDeviceInfoOutcome> QueryDeviceInfoOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDeviceInfoRequest&, const QueryDeviceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceInfoAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceListByDeviceGroupResult> QueryDeviceListByDeviceGroupOutcome;
 			typedef std::future<QueryDeviceListByDeviceGroupOutcome> QueryDeviceListByDeviceGroupOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceListByDeviceGroupRequest&, const QueryDeviceListByDeviceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceListByDeviceGroupAsyncHandler;
@@ -1598,6 +1613,9 @@ namespace AlibabaCloud
 			CloseEdgeInstanceDeploymentOutcome closeEdgeInstanceDeployment(const Model::CloseEdgeInstanceDeploymentRequest &request)const;
 			void closeEdgeInstanceDeploymentAsync(const Model::CloseEdgeInstanceDeploymentRequest& request, const CloseEdgeInstanceDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseEdgeInstanceDeploymentOutcomeCallable closeEdgeInstanceDeploymentCallable(const Model::CloseEdgeInstanceDeploymentRequest& request) const;
+			ConfirmOTATaskOutcome confirmOTATask(const Model::ConfirmOTATaskRequest &request)const;
+			void confirmOTATaskAsync(const Model::ConfirmOTATaskRequest& request, const ConfirmOTATaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfirmOTATaskOutcomeCallable confirmOTATaskCallable(const Model::ConfirmOTATaskRequest& request) const;
 			CopyThingModelOutcome copyThingModel(const Model::CopyThingModelRequest &request)const;
 			void copyThingModelAsync(const Model::CopyThingModelRequest& request, const CopyThingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyThingModelOutcomeCallable copyThingModelCallable(const Model::CopyThingModelRequest& request) const;
@@ -1919,6 +1937,9 @@ namespace AlibabaCloud
 			ListOTATaskByJobOutcome listOTATaskByJob(const Model::ListOTATaskByJobRequest &request)const;
 			void listOTATaskByJobAsync(const Model::ListOTATaskByJobRequest& request, const ListOTATaskByJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOTATaskByJobOutcomeCallable listOTATaskByJobCallable(const Model::ListOTATaskByJobRequest& request) const;
+			ListOTAUnfinishedTaskByDeviceOutcome listOTAUnfinishedTaskByDevice(const Model::ListOTAUnfinishedTaskByDeviceRequest &request)const;
+			void listOTAUnfinishedTaskByDeviceAsync(const Model::ListOTAUnfinishedTaskByDeviceRequest& request, const ListOTAUnfinishedTaskByDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListOTAUnfinishedTaskByDeviceOutcomeCallable listOTAUnfinishedTaskByDeviceCallable(const Model::ListOTAUnfinishedTaskByDeviceRequest& request) const;
 			ListProductByTagsOutcome listProductByTags(const Model::ListProductByTagsRequest &request)const;
 			void listProductByTagsAsync(const Model::ListProductByTagsRequest& request, const ListProductByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProductByTagsOutcomeCallable listProductByTagsCallable(const Model::ListProductByTagsRequest& request) const;
@@ -2039,6 +2060,9 @@ namespace AlibabaCloud
 			QueryDeviceGroupTagListOutcome queryDeviceGroupTagList(const Model::QueryDeviceGroupTagListRequest &request)const;
 			void queryDeviceGroupTagListAsync(const Model::QueryDeviceGroupTagListRequest& request, const QueryDeviceGroupTagListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceGroupTagListOutcomeCallable queryDeviceGroupTagListCallable(const Model::QueryDeviceGroupTagListRequest& request) const;
+			QueryDeviceInfoOutcome queryDeviceInfo(const Model::QueryDeviceInfoRequest &request)const;
+			void queryDeviceInfoAsync(const Model::QueryDeviceInfoRequest& request, const QueryDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDeviceInfoOutcomeCallable queryDeviceInfoCallable(const Model::QueryDeviceInfoRequest& request) const;
 			QueryDeviceListByDeviceGroupOutcome queryDeviceListByDeviceGroup(const Model::QueryDeviceListByDeviceGroupRequest &request)const;
 			void queryDeviceListByDeviceGroupAsync(const Model::QueryDeviceListByDeviceGroupRequest& request, const QueryDeviceListByDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceListByDeviceGroupOutcomeCallable queryDeviceListByDeviceGroupCallable(const Model::QueryDeviceListByDeviceGroupRequest& request) const;

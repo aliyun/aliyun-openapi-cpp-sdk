@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICERESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICERESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_LISTOTAUNFINISHEDTASKBYDEVICERESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_LISTOTAUNFINISHEDTASKBYDEVICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT QueryDeviceResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT ListOTAUnfinishedTaskByDeviceResult : public ServiceResult
 			{
 			public:
-				struct DeviceInfo
+				struct SimpleOTATaskInfo
 				{
-					std::string deviceType;
+					std::string taskId;
+					std::string productName;
+					std::string moduleName;
+					std::string firmwareId;
+					std::string taskStatus;
 					std::string iotId;
-					std::string gmtCreate;
 					std::string utcCreate;
-					std::string deviceId;
-					std::string deviceSecret;
-					std::string gmtModified;
-					std::string deviceStatus;
 					std::string utcModified;
+					std::string destVersion;
 					std::string productKey;
+					std::string jobId;
 					std::string deviceName;
-					std::string nickname;
+					std::string srcVersion;
 				};
 
 
-				QueryDeviceResult();
-				explicit QueryDeviceResult(const std::string &payload);
-				~QueryDeviceResult();
-				int getPageSize()const;
-				int getPageCount()const;
-				std::string getNextToken()const;
-				int getTotal()const;
-				std::vector<DeviceInfo> getData()const;
-				int getPage()const;
+				ListOTAUnfinishedTaskByDeviceResult();
+				explicit ListOTAUnfinishedTaskByDeviceResult(const std::string &payload);
+				~ListOTAUnfinishedTaskByDeviceResult();
+				std::vector<SimpleOTATaskInfo> getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -65,12 +61,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int pageCount_;
-				std::string nextToken_;
-				int total_;
-				std::vector<DeviceInfo> data_;
-				int page_;
+				std::vector<SimpleOTATaskInfo> data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -79,4 +70,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICERESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_LISTOTAUNFINISHEDTASKBYDEVICERESULT_H_

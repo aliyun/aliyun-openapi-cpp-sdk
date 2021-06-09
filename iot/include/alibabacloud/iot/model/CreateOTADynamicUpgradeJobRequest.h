@@ -47,8 +47,12 @@ namespace AlibabaCloud
 				void setRetryCount(int retryCount);
 				int getTimeoutInMinutes()const;
 				void setTimeoutInMinutes(int timeoutInMinutes);
+				bool getNeedConfirm()const;
+				void setNeedConfirm(bool needConfirm);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				bool getNeedPush()const;
+				void setNeedPush(bool needPush);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::vector<Tag> getTag()const;
@@ -74,7 +78,9 @@ namespace AlibabaCloud
 				int dynamicMode_;
 				int retryCount_;
 				int timeoutInMinutes_;
+				bool needConfirm_;
 				std::string accessKeyId_;
+				bool needPush_;
 				std::string iotInstanceId_;
 				std::vector<Tag> tag_;
 				std::string firmwareId_;

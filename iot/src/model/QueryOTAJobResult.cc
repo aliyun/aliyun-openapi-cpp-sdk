@@ -86,6 +86,10 @@ void QueryOTAJobResult::parse(const std::string &payload)
 		data_.overwriteMode = std::stoi(dataNode["OverwriteMode"].asString());
 	if(!dataNode["DynamicMode"].isNull())
 		data_.dynamicMode = std::stoi(dataNode["DynamicMode"].asString());
+	if(!dataNode["NeedPush"].isNull())
+		data_.needPush = dataNode["NeedPush"].asString() == "true";
+	if(!dataNode["NeedConfirm"].isNull())
+		data_.needConfirm = dataNode["NeedConfirm"].asString() == "true";
 	auto allTagsNode = dataNode["Tags"]["OtaTagDTO"];
 	for (auto dataNodeTagsOtaTagDTO : allTagsNode)
 	{

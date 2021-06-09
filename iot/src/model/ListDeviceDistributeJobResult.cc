@@ -42,6 +42,8 @@ void ListDeviceDistributeJobResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Total"].isNull())
 		data_.total = std::stoi(dataNode["Total"].asString());
+	if(!dataNode["NextToken"].isNull())
+		data_.nextToken = dataNode["NextToken"].asString();
 	auto allJobInfoNode = dataNode["JobInfo"]["items"];
 	for (auto dataNodeJobInfoitems : allJobInfoNode)
 	{
