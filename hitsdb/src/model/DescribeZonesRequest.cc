@@ -14,93 +14,93 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/hitsdb/model/DescribeRegionsRequest.h>
+#include <alibabacloud/hitsdb/model/DescribeZonesRequest.h>
 
-using AlibabaCloud::Hitsdb::Model::DescribeRegionsRequest;
+using AlibabaCloud::Hitsdb::Model::DescribeZonesRequest;
 
-DescribeRegionsRequest::DescribeRegionsRequest() :
-	RpcServiceRequest("hitsdb", "2017-06-01", "DescribeRegions")
+DescribeZonesRequest::DescribeZonesRequest() :
+	RpcServiceRequest("hitsdb", "2017-06-01", "DescribeZones")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeRegionsRequest::~DescribeRegionsRequest()
+DescribeZonesRequest::~DescribeZonesRequest()
 {}
 
-long DescribeRegionsRequest::getResourceOwnerId()const
+long DescribeZonesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeZonesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRegionsRequest::getAccessKeyId()const
+std::string DescribeZonesRequest::getLanguage()const
+{
+	return language_;
+}
+
+void DescribeZonesRequest::setLanguage(const std::string& language)
+{
+	language_ = language;
+	setParameter("Language", language);
+}
+
+std::string DescribeZonesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeZonesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeRegionsRequest::getSecurityToken()const
+std::string DescribeZonesRequest::getSecurityToken()const
 {
 	return securityToken_;
 }
 
-void DescribeRegionsRequest::setSecurityToken(const std::string& securityToken)
+void DescribeZonesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeRegionsRequest::getResourceOwnerAccount()const
+std::string DescribeZonesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void DescribeZonesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeRegionsRequest::getOwnerAccount()const
+std::string DescribeZonesRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
+void DescribeZonesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeRegionsRequest::getOwnerId()const
+long DescribeZonesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRegionsRequest::setOwnerId(long ownerId)
+void DescribeZonesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeRegionsRequest::getAcceptLanguage()const
-{
-	return acceptLanguage_;
-}
-
-void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
-{
-	acceptLanguage_ = acceptLanguage;
-	setParameter("AcceptLanguage", acceptLanguage);
 }
 

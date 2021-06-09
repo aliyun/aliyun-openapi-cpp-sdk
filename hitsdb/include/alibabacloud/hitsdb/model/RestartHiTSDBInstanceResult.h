@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
-#define ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
+#ifndef ALIBABACLOUD_HITSDB_MODEL_RESTARTHITSDBINSTANCERESULT_H_
+#define ALIBABACLOUD_HITSDB_MODEL_RESTARTHITSDBINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HITSDB_EXPORT GetInstanceIpWhiteListResult : public ServiceResult
+			class ALIBABACLOUD_HITSDB_EXPORT RestartHiTSDBInstanceResult : public ServiceResult
 			{
 			public:
 
 
-				GetInstanceIpWhiteListResult();
-				explicit GetInstanceIpWhiteListResult(const std::string &payload);
-				~GetInstanceIpWhiteListResult();
-				std::vector<std::string> getIpList()const;
-				std::string getInstanceId()const;
+				RestartHiTSDBInstanceResult();
+				explicit RestartHiTSDBInstanceResult(const std::string &payload);
+				~RestartHiTSDBInstanceResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> ipList_;
-				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HITSDB_MODEL_GETINSTANCEIPWHITELISTRESULT_H_
+#endif // !ALIBABACLOUD_HITSDB_MODEL_RESTARTHITSDBINSTANCERESULT_H_
