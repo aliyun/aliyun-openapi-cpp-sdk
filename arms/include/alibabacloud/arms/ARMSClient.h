@@ -90,8 +90,12 @@
 #include "model/GetAgentDownloadUrlResult.h"
 #include "model/GetAppApiByPageRequest.h"
 #include "model/GetAppApiByPageResult.h"
+#include "model/GetArmsConsoleUrlRequest.h"
+#include "model/GetArmsConsoleUrlResult.h"
 #include "model/GetConsistencySnapshotRequest.h"
 #include "model/GetConsistencySnapshotResult.h"
+#include "model/GetExploreUrlRequest.h"
+#include "model/GetExploreUrlResult.h"
 #include "model/GetIntegrationTokenRequest.h"
 #include "model/GetIntegrationTokenResult.h"
 #include "model/GetMultipleTraceRequest.h"
@@ -309,9 +313,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAppApiByPageResult> GetAppApiByPageOutcome;
 			typedef std::future<GetAppApiByPageOutcome> GetAppApiByPageOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetAppApiByPageRequest&, const GetAppApiByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAppApiByPageAsyncHandler;
+			typedef Outcome<Error, Model::GetArmsConsoleUrlResult> GetArmsConsoleUrlOutcome;
+			typedef std::future<GetArmsConsoleUrlOutcome> GetArmsConsoleUrlOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetArmsConsoleUrlRequest&, const GetArmsConsoleUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetArmsConsoleUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetConsistencySnapshotResult> GetConsistencySnapshotOutcome;
 			typedef std::future<GetConsistencySnapshotOutcome> GetConsistencySnapshotOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetConsistencySnapshotRequest&, const GetConsistencySnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConsistencySnapshotAsyncHandler;
+			typedef Outcome<Error, Model::GetExploreUrlResult> GetExploreUrlOutcome;
+			typedef std::future<GetExploreUrlOutcome> GetExploreUrlOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetExploreUrlRequest&, const GetExploreUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetExploreUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetIntegrationTokenResult> GetIntegrationTokenOutcome;
 			typedef std::future<GetIntegrationTokenOutcome> GetIntegrationTokenOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetIntegrationTokenRequest&, const GetIntegrationTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetIntegrationTokenAsyncHandler;
@@ -578,9 +588,15 @@ namespace AlibabaCloud
 			GetAppApiByPageOutcome getAppApiByPage(const Model::GetAppApiByPageRequest &request)const;
 			void getAppApiByPageAsync(const Model::GetAppApiByPageRequest& request, const GetAppApiByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAppApiByPageOutcomeCallable getAppApiByPageCallable(const Model::GetAppApiByPageRequest& request) const;
+			GetArmsConsoleUrlOutcome getArmsConsoleUrl(const Model::GetArmsConsoleUrlRequest &request)const;
+			void getArmsConsoleUrlAsync(const Model::GetArmsConsoleUrlRequest& request, const GetArmsConsoleUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetArmsConsoleUrlOutcomeCallable getArmsConsoleUrlCallable(const Model::GetArmsConsoleUrlRequest& request) const;
 			GetConsistencySnapshotOutcome getConsistencySnapshot(const Model::GetConsistencySnapshotRequest &request)const;
 			void getConsistencySnapshotAsync(const Model::GetConsistencySnapshotRequest& request, const GetConsistencySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetConsistencySnapshotOutcomeCallable getConsistencySnapshotCallable(const Model::GetConsistencySnapshotRequest& request) const;
+			GetExploreUrlOutcome getExploreUrl(const Model::GetExploreUrlRequest &request)const;
+			void getExploreUrlAsync(const Model::GetExploreUrlRequest& request, const GetExploreUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetExploreUrlOutcomeCallable getExploreUrlCallable(const Model::GetExploreUrlRequest& request) const;
 			GetIntegrationTokenOutcome getIntegrationToken(const Model::GetIntegrationTokenRequest &request)const;
 			void getIntegrationTokenAsync(const Model::GetIntegrationTokenRequest& request, const GetIntegrationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetIntegrationTokenOutcomeCallable getIntegrationTokenCallable(const Model::GetIntegrationTokenRequest& request) const;

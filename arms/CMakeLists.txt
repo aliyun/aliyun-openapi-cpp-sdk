@@ -89,8 +89,12 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/GetAgentDownloadUrlResult.h
 	include/alibabacloud/arms/model/GetAppApiByPageRequest.h
 	include/alibabacloud/arms/model/GetAppApiByPageResult.h
+	include/alibabacloud/arms/model/GetArmsConsoleUrlRequest.h
+	include/alibabacloud/arms/model/GetArmsConsoleUrlResult.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotRequest.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotResult.h
+	include/alibabacloud/arms/model/GetExploreUrlRequest.h
+	include/alibabacloud/arms/model/GetExploreUrlResult.h
 	include/alibabacloud/arms/model/GetIntegrationTokenRequest.h
 	include/alibabacloud/arms/model/GetIntegrationTokenResult.h
 	include/alibabacloud/arms/model/GetMultipleTraceRequest.h
@@ -268,8 +272,12 @@ set(arms_src
 	src/model/GetAgentDownloadUrlResult.cc
 	src/model/GetAppApiByPageRequest.cc
 	src/model/GetAppApiByPageResult.cc
+	src/model/GetArmsConsoleUrlRequest.cc
+	src/model/GetArmsConsoleUrlResult.cc
 	src/model/GetConsistencySnapshotRequest.cc
 	src/model/GetConsistencySnapshotResult.cc
+	src/model/GetExploreUrlRequest.cc
+	src/model/GetExploreUrlResult.cc
 	src/model/GetIntegrationTokenRequest.cc
 	src/model/GetIntegrationTokenResult.cc
 	src/model/GetMultipleTraceRequest.cc

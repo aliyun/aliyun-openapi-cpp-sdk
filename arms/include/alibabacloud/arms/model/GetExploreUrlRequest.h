@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_GETTRACEREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_GETTRACEREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_GETEXPLOREURLREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_GETEXPLOREURLREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT GetTraceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT GetExploreUrlRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetTraceRequest();
-				~GetTraceRequest();
+				GetExploreUrlRequest();
+				~GetExploreUrlRequest();
 
-				std::string getTraceID()const;
-				void setTraceID(const std::string& traceID);
+				std::string getExpression()const;
+				void setExpression(const std::string& expression);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				long getStartTime()const;
-				void setStartTime(long startTime);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getType()const;
+				void setType(const std::string& type);
 
             private:
-				std::string traceID_;
+				std::string expression_;
 				std::string regionId_;
-				long endTime_;
-				long startTime_;
+				std::string clusterId_;
+				std::string type_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_GETTRACEREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_GETEXPLOREURLREQUEST_H_

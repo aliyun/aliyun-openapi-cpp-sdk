@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_GETARMSCONSOLEURLRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_GETARMSCONSOLEURLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT ListDashboardsResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT GetArmsConsoleUrlResult : public ServiceResult
 			{
 			public:
-				struct DashboardVosItem
-				{
-					std::string title;
-					std::string time;
-					std::string exporter;
-					std::string url;
-					std::string httpUrl;
-					std::string name;
-					std::string uid;
-					std::string type;
-					bool needUpdate;
-					std::string version;
-					std::string kind;
-					std::string id;
-					std::string dashboardType;
-					std::string httpsUrl;
-					std::vector<std::string> tags;
-					bool isArmsExporter;
-				};
 
 
-				ListDashboardsResult();
-				explicit ListDashboardsResult(const std::string &payload);
-				~ListDashboardsResult();
-				std::vector<DashboardVosItem> getDashboardVos()const;
+				GetArmsConsoleUrlResult();
+				explicit GetArmsConsoleUrlResult(const std::string &payload);
+				~GetArmsConsoleUrlResult();
+				std::string getArmsConsoleUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DashboardVosItem> dashboardVos_;
+				std::string armsConsoleUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_LISTDASHBOARDSRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_GETARMSCONSOLEURLRESULT_H_

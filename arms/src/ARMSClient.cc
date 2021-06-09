@@ -1275,6 +1275,42 @@ ARMSClient::GetAppApiByPageOutcomeCallable ARMSClient::getAppApiByPageCallable(c
 	return task->get_future();
 }
 
+ARMSClient::GetArmsConsoleUrlOutcome ARMSClient::getArmsConsoleUrl(const GetArmsConsoleUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetArmsConsoleUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetArmsConsoleUrlOutcome(GetArmsConsoleUrlResult(outcome.result()));
+	else
+		return GetArmsConsoleUrlOutcome(outcome.error());
+}
+
+void ARMSClient::getArmsConsoleUrlAsync(const GetArmsConsoleUrlRequest& request, const GetArmsConsoleUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getArmsConsoleUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetArmsConsoleUrlOutcomeCallable ARMSClient::getArmsConsoleUrlCallable(const GetArmsConsoleUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetArmsConsoleUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getArmsConsoleUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetConsistencySnapshotOutcome ARMSClient::getConsistencySnapshot(const GetConsistencySnapshotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1341,42 @@ ARMSClient::GetConsistencySnapshotOutcomeCallable ARMSClient::getConsistencySnap
 			[this, request]()
 			{
 			return this->getConsistencySnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetExploreUrlOutcome ARMSClient::getExploreUrl(const GetExploreUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetExploreUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetExploreUrlOutcome(GetExploreUrlResult(outcome.result()));
+	else
+		return GetExploreUrlOutcome(outcome.error());
+}
+
+void ARMSClient::getExploreUrlAsync(const GetExploreUrlRequest& request, const GetExploreUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getExploreUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetExploreUrlOutcomeCallable ARMSClient::getExploreUrlCallable(const GetExploreUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetExploreUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getExploreUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

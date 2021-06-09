@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_GETTRACEREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_GETTRACEREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_GETARMSCONSOLEURLREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_GETARMSCONSOLEURLREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT GetTraceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT GetArmsConsoleUrlRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetTraceRequest();
-				~GetTraceRequest();
+				GetArmsConsoleUrlRequest();
+				~GetArmsConsoleUrlRequest();
 
-				std::string getTraceID()const;
-				void setTraceID(const std::string& traceID);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				long getStartTime()const;
-				void setStartTime(long startTime);
 
             private:
-				std::string traceID_;
 				std::string regionId_;
-				long endTime_;
-				long startTime_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_GETTRACEREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_GETARMSCONSOLEURLREQUEST_H_

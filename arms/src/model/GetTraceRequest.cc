@@ -49,3 +49,25 @@ void GetTraceRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+long GetTraceRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void GetTraceRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
+}
+
+long GetTraceRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void GetTraceRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", std::to_string(startTime));
+}
+

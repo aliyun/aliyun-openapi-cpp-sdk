@@ -69,6 +69,10 @@ void ListDashboardsResult::parse(const std::string &payload)
 			dashboardVosObject.kind = valueDashboardVosDashboardVosItem["Kind"].asString();
 		if(!valueDashboardVosDashboardVosItem["NeedUpdate"].isNull())
 			dashboardVosObject.needUpdate = valueDashboardVosDashboardVosItem["NeedUpdate"].asString() == "true";
+		if(!valueDashboardVosDashboardVosItem["HttpUrl"].isNull())
+			dashboardVosObject.httpUrl = valueDashboardVosDashboardVosItem["HttpUrl"].asString();
+		if(!valueDashboardVosDashboardVosItem["HttpsUrl"].isNull())
+			dashboardVosObject.httpsUrl = valueDashboardVosDashboardVosItem["HttpsUrl"].asString();
 		auto allTags = value["Tags"]["Tags"];
 		for (auto value : allTags)
 			dashboardVosObject.tags.push_back(value.asString());
