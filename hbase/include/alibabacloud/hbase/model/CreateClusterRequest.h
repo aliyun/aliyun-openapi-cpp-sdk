@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setPeriod(int period);
 				int getDiskSize()const;
 				void setDiskSize(int diskSize);
+				std::string getEncryptionKey()const;
+				void setEncryptionKey(const std::string& encryptionKey);
 				std::string getMasterInstanceType()const;
 				void setMasterInstanceType(const std::string& masterInstanceType);
 				std::string getDiskType()const;
@@ -86,6 +88,7 @@ namespace AlibabaCloud
 				int autoRenewPeriod_;
 				int period_;
 				int diskSize_;
+				std::string encryptionKey_;
 				std::string masterInstanceType_;
 				std::string diskType_;
 				std::string vSwitchId_;

@@ -135,6 +135,10 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		coldStorageSize_ = std::stoi(value["ColdStorageSize"].asString());
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["EncryptionType"].isNull())
+		encryptionType_ = value["EncryptionType"].asString() == "true";
+	if(!value["EncryptionKey"].isNull())
+		encryptionKey_ = value["EncryptionKey"].asString();
 
 }
 
@@ -156,6 +160,11 @@ std::string DescribeInstanceResult::getCreatedTime()const
 std::string DescribeInstanceResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
+}
+
+std::string DescribeInstanceResult::getEncryptionKey()const
+{
+	return encryptionKey_;
 }
 
 std::string DescribeInstanceResult::getMasterInstanceType()const
@@ -241,6 +250,11 @@ std::string DescribeInstanceResult::getParentId()const
 int DescribeInstanceResult::getColdStorageSize()const
 {
 	return coldStorageSize_;
+}
+
+bool DescribeInstanceResult::getEncryptionType()const
+{
+	return encryptionType_;
 }
 
 int DescribeInstanceResult::getMasterDiskSize()const

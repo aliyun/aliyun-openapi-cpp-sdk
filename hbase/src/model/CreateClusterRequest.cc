@@ -126,6 +126,17 @@ void CreateClusterRequest::setDiskSize(int diskSize)
 	setParameter("DiskSize", std::to_string(diskSize));
 }
 
+std::string CreateClusterRequest::getEncryptionKey()const
+{
+	return encryptionKey_;
+}
+
+void CreateClusterRequest::setEncryptionKey(const std::string& encryptionKey)
+{
+	encryptionKey_ = encryptionKey;
+	setParameter("EncryptionKey", encryptionKey);
+}
+
 std::string CreateClusterRequest::getMasterInstanceType()const
 {
 	return masterInstanceType_;

@@ -155,6 +155,10 @@ void DescribeMultiZoneClusterResult::parse(const std::string &payload)
 		vpcId_ = value["VpcId"].asString();
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["EncryptionType"].isNull())
+		encryptionType_ = value["EncryptionType"].asString() == "true";
+	if(!value["EncryptionKey"].isNull())
+		encryptionKey_ = value["EncryptionKey"].asString();
 
 }
 
@@ -178,69 +182,14 @@ std::string DescribeMultiZoneClusterResult::getResourceGroupId()const
 	return resourceGroupId_;
 }
 
-std::string DescribeMultiZoneClusterResult::getMasterInstanceType()const
-{
-	return masterInstanceType_;
-}
-
-std::string DescribeMultiZoneClusterResult::getPrimaryVSwitchIds()const
-{
-	return primaryVSwitchIds_;
-}
-
-bool DescribeMultiZoneClusterResult::getIsDeletionProtection()const
-{
-	return isDeletionProtection_;
-}
-
-std::string DescribeMultiZoneClusterResult::getLogDiskCount()const
-{
-	return logDiskCount_;
-}
-
-int DescribeMultiZoneClusterResult::getLogDiskSize()const
-{
-	return logDiskSize_;
-}
-
 int DescribeMultiZoneClusterResult::getModuleId()const
 {
 	return moduleId_;
 }
 
-std::string DescribeMultiZoneClusterResult::getArbiterVSwitchIds()const
-{
-	return arbiterVSwitchIds_;
-}
-
-std::string DescribeMultiZoneClusterResult::getMaintainEndTime()const
-{
-	return maintainEndTime_;
-}
-
 std::string DescribeMultiZoneClusterResult::getStandbyVSwitchIds()const
 {
 	return standbyVSwitchIds_;
-}
-
-std::string DescribeMultiZoneClusterResult::getNetworkType()const
-{
-	return networkType_;
-}
-
-std::string DescribeMultiZoneClusterResult::getCoreInstanceType()const
-{
-	return coreInstanceType_;
-}
-
-std::string DescribeMultiZoneClusterResult::getClusterName()const
-{
-	return clusterName_;
-}
-
-std::string DescribeMultiZoneClusterResult::getMasterDiskType()const
-{
-	return masterDiskType_;
 }
 
 std::vector<DescribeMultiZoneClusterResult::Tag> DescribeMultiZoneClusterResult::getTags()const
@@ -253,39 +202,14 @@ std::string DescribeMultiZoneClusterResult::getEngine()const
 	return engine_;
 }
 
-std::string DescribeMultiZoneClusterResult::getMaintainStartTime()const
-{
-	return maintainStartTime_;
-}
-
-std::string DescribeMultiZoneClusterResult::getArbiterZoneId()const
-{
-	return arbiterZoneId_;
-}
-
-std::string DescribeMultiZoneClusterResult::getMajorVersion()const
-{
-	return majorVersion_;
-}
-
-std::string DescribeMultiZoneClusterResult::getCoreDiskCount()const
-{
-	return coreDiskCount_;
-}
-
-std::string DescribeMultiZoneClusterResult::getParentId()const
-{
-	return parentId_;
-}
-
 std::string DescribeMultiZoneClusterResult::getStatus()const
 {
 	return status_;
 }
 
-std::vector<DescribeMultiZoneClusterResult::MultiZoneInstanceModel> DescribeMultiZoneClusterResult::getMultiZoneInstanceModels()const
+bool DescribeMultiZoneClusterResult::getEncryptionType()const
 {
-	return multiZoneInstanceModels_;
+	return encryptionType_;
 }
 
 std::string DescribeMultiZoneClusterResult::getExpireTimeUTC()const
@@ -298,44 +222,14 @@ int DescribeMultiZoneClusterResult::getMasterDiskSize()const
 	return masterDiskSize_;
 }
 
-std::string DescribeMultiZoneClusterResult::getPrimaryZoneId()const
-{
-	return primaryZoneId_;
-}
-
-std::string DescribeMultiZoneClusterResult::getMultiZoneCombination()const
-{
-	return multiZoneCombination_;
-}
-
-std::string DescribeMultiZoneClusterResult::getClusterId()const
-{
-	return clusterId_;
-}
-
 std::string DescribeMultiZoneClusterResult::getInstanceId()const
 {
 	return instanceId_;
 }
 
-int DescribeMultiZoneClusterResult::getCoreNodeCount()const
-{
-	return coreNodeCount_;
-}
-
-std::string DescribeMultiZoneClusterResult::getCreatedTimeUTC()const
-{
-	return createdTimeUTC_;
-}
-
 int DescribeMultiZoneClusterResult::getDuration()const
 {
 	return duration_;
-}
-
-std::string DescribeMultiZoneClusterResult::getLogInstanceType()const
-{
-	return logInstanceType_;
 }
 
 std::string DescribeMultiZoneClusterResult::getPayType()const
@@ -368,6 +262,131 @@ std::string DescribeMultiZoneClusterResult::getCoreDiskType()const
 	return coreDiskType_;
 }
 
+std::string DescribeMultiZoneClusterResult::getExpireTime()const
+{
+	return expireTime_;
+}
+
+std::string DescribeMultiZoneClusterResult::getEncryptionKey()const
+{
+	return encryptionKey_;
+}
+
+std::string DescribeMultiZoneClusterResult::getMasterInstanceType()const
+{
+	return masterInstanceType_;
+}
+
+std::string DescribeMultiZoneClusterResult::getPrimaryVSwitchIds()const
+{
+	return primaryVSwitchIds_;
+}
+
+bool DescribeMultiZoneClusterResult::getIsDeletionProtection()const
+{
+	return isDeletionProtection_;
+}
+
+std::string DescribeMultiZoneClusterResult::getLogDiskCount()const
+{
+	return logDiskCount_;
+}
+
+int DescribeMultiZoneClusterResult::getLogDiskSize()const
+{
+	return logDiskSize_;
+}
+
+std::string DescribeMultiZoneClusterResult::getArbiterVSwitchIds()const
+{
+	return arbiterVSwitchIds_;
+}
+
+std::string DescribeMultiZoneClusterResult::getMaintainEndTime()const
+{
+	return maintainEndTime_;
+}
+
+std::string DescribeMultiZoneClusterResult::getNetworkType()const
+{
+	return networkType_;
+}
+
+std::string DescribeMultiZoneClusterResult::getCoreInstanceType()const
+{
+	return coreInstanceType_;
+}
+
+std::string DescribeMultiZoneClusterResult::getClusterName()const
+{
+	return clusterName_;
+}
+
+std::string DescribeMultiZoneClusterResult::getMasterDiskType()const
+{
+	return masterDiskType_;
+}
+
+std::string DescribeMultiZoneClusterResult::getMaintainStartTime()const
+{
+	return maintainStartTime_;
+}
+
+std::string DescribeMultiZoneClusterResult::getArbiterZoneId()const
+{
+	return arbiterZoneId_;
+}
+
+std::string DescribeMultiZoneClusterResult::getMajorVersion()const
+{
+	return majorVersion_;
+}
+
+std::string DescribeMultiZoneClusterResult::getCoreDiskCount()const
+{
+	return coreDiskCount_;
+}
+
+std::string DescribeMultiZoneClusterResult::getParentId()const
+{
+	return parentId_;
+}
+
+std::vector<DescribeMultiZoneClusterResult::MultiZoneInstanceModel> DescribeMultiZoneClusterResult::getMultiZoneInstanceModels()const
+{
+	return multiZoneInstanceModels_;
+}
+
+std::string DescribeMultiZoneClusterResult::getPrimaryZoneId()const
+{
+	return primaryZoneId_;
+}
+
+std::string DescribeMultiZoneClusterResult::getMultiZoneCombination()const
+{
+	return multiZoneCombination_;
+}
+
+std::string DescribeMultiZoneClusterResult::getClusterId()const
+{
+	return clusterId_;
+}
+
+int DescribeMultiZoneClusterResult::getCoreNodeCount()const
+{
+	return coreNodeCount_;
+}
+
+std::string DescribeMultiZoneClusterResult::getCreatedTimeUTC()const
+{
+	return createdTimeUTC_;
+}
+
+std::string DescribeMultiZoneClusterResult::getLogInstanceType()const
+{
+	return logInstanceType_;
+}
+
 int DescribeMultiZoneClusterResult::getLogNodeCount()const
 {
 	return logNodeCount_;
@@ -381,11 +400,6 @@ std::string DescribeMultiZoneClusterResult::getLogDiskType()const
 std::string DescribeMultiZoneClusterResult::getRegionId()const
 {
 	return regionId_;
-}
-
-std::string DescribeMultiZoneClusterResult::getExpireTime()const
-{
-	return expireTime_;
 }
 
 int DescribeMultiZoneClusterResult::getCoreDiskSize()const

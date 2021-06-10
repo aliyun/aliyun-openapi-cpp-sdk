@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				bool getIsHa()const;
 				std::string getCreatedTime()const;
 				std::string getResourceGroupId()const;
+				std::string getEncryptionKey()const;
 				std::string getMasterInstanceType()const;
 				bool getIsDeletionProtection()const;
 				bool getIsLatestVersion()const;
@@ -63,6 +64,7 @@ namespace AlibabaCloud
 				std::string getCoreDiskCount()const;
 				std::string getParentId()const;
 				int getColdStorageSize()const;
+				bool getEncryptionType()const;
 				int getMasterDiskSize()const;
 				std::string getExpireTimeUTC()const;
 				std::string getZoneId()const;
@@ -94,6 +96,7 @@ namespace AlibabaCloud
 				bool isHa_;
 				std::string createdTime_;
 				std::string resourceGroupId_;
+				std::string encryptionKey_;
 				std::string masterInstanceType_;
 				bool isDeletionProtection_;
 				bool isLatestVersion_;
@@ -111,6 +114,7 @@ namespace AlibabaCloud
 				std::string coreDiskCount_;
 				std::string parentId_;
 				int coldStorageSize_;
+				bool encryptionType_;
 				int masterDiskSize_;
 				std::string expireTimeUTC_;
 				std::string zoneId_;
