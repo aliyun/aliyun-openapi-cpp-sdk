@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSTAGINGCONFIGRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSTAGINGCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLivePullStreamConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainStagingConfigResult : public ServiceResult
 			{
 			public:
-				struct LiveAppRecord
+				struct DomainConfig
 				{
-					std::string sourceUrl;
-					std::string streamName;
-					std::string endTime;
-					std::string domainName;
-					std::string startTime;
-					std::string sourceUsing;
-					std::string appName;
+					struct FunctionArg
+					{
+						std::string argValue;
+						std::string argName;
+					};
+					std::string status;
+					std::string functionName;
+					std::vector<DomainConfig::FunctionArg> functionArgs;
+					std::string configId;
 				};
 
 
-				DescribeLivePullStreamConfigResult();
-				explicit DescribeLivePullStreamConfigResult(const std::string &payload);
-				~DescribeLivePullStreamConfigResult();
-				std::vector<LiveAppRecord> getLiveAppRecordList()const;
+				DescribeLiveDomainStagingConfigResult();
+				explicit DescribeLiveDomainStagingConfigResult(const std::string &payload);
+				~DescribeLiveDomainStagingConfigResult();
+				std::vector<DomainConfig> getDomainConfigs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveAppRecord> liveAppRecordList_;
+				std::vector<DomainConfig> domainConfigs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSTAGINGCONFIGRESULT_H_

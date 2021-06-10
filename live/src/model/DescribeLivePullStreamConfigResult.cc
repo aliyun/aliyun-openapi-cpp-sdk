@@ -51,6 +51,8 @@ void DescribeLivePullStreamConfigResult::parse(const std::string &payload)
 			liveAppRecordListObject.streamName = valueLiveAppRecordListLiveAppRecord["StreamName"].asString();
 		if(!valueLiveAppRecordListLiveAppRecord["SourceUrl"].isNull())
 			liveAppRecordListObject.sourceUrl = valueLiveAppRecordListLiveAppRecord["SourceUrl"].asString();
+		if(!valueLiveAppRecordListLiveAppRecord["SourceUsing"].isNull())
+			liveAppRecordListObject.sourceUsing = valueLiveAppRecordListLiveAppRecord["SourceUsing"].asString();
 		if(!valueLiveAppRecordListLiveAppRecord["StartTime"].isNull())
 			liveAppRecordListObject.startTime = valueLiveAppRecordListLiveAppRecord["StartTime"].asString();
 		if(!valueLiveAppRecordListLiveAppRecord["EndTime"].isNull())

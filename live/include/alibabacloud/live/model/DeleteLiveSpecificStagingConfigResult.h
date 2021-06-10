@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETELIVESPECIFICSTAGINGCONFIGRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETELIVESPECIFICSTAGINGCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLivePullStreamConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DeleteLiveSpecificStagingConfigResult : public ServiceResult
 			{
 			public:
-				struct LiveAppRecord
-				{
-					std::string sourceUrl;
-					std::string streamName;
-					std::string endTime;
-					std::string domainName;
-					std::string startTime;
-					std::string sourceUsing;
-					std::string appName;
-				};
 
 
-				DescribeLivePullStreamConfigResult();
-				explicit DescribeLivePullStreamConfigResult(const std::string &payload);
-				~DescribeLivePullStreamConfigResult();
-				std::vector<LiveAppRecord> getLiveAppRecordList()const;
+				DeleteLiveSpecificStagingConfigResult();
+				explicit DeleteLiveSpecificStagingConfigResult(const std::string &payload);
+				~DeleteLiveSpecificStagingConfigResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveAppRecord> liveAppRecordList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETELIVESPECIFICSTAGINGCONFIGRESULT_H_

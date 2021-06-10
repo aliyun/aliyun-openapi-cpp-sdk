@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTAGINGIPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTAGINGIPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLivePullStreamConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveStagingIpResult : public ServiceResult
 			{
 			public:
-				struct LiveAppRecord
-				{
-					std::string sourceUrl;
-					std::string streamName;
-					std::string endTime;
-					std::string domainName;
-					std::string startTime;
-					std::string sourceUsing;
-					std::string appName;
-				};
 
 
-				DescribeLivePullStreamConfigResult();
-				explicit DescribeLivePullStreamConfigResult(const std::string &payload);
-				~DescribeLivePullStreamConfigResult();
-				std::vector<LiveAppRecord> getLiveAppRecordList()const;
+				DescribeLiveStagingIpResult();
+				explicit DescribeLiveStagingIpResult(const std::string &payload);
+				~DescribeLiveStagingIpResult();
+				std::vector<std::string> getIPV4s()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveAppRecord> liveAppRecordList_;
+				std::vector<std::string> iPV4s_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVESTAGINGIPRESULT_H_

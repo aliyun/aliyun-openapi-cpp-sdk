@@ -2643,6 +2643,42 @@ LiveClient::DeleteLiveSnapshotDetectPornConfigOutcomeCallable LiveClient::delete
 	return task->get_future();
 }
 
+LiveClient::DeleteLiveSpecificStagingConfigOutcome LiveClient::deleteLiveSpecificStagingConfig(const DeleteLiveSpecificStagingConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveSpecificStagingConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveSpecificStagingConfigOutcome(DeleteLiveSpecificStagingConfigResult(outcome.result()));
+	else
+		return DeleteLiveSpecificStagingConfigOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveSpecificStagingConfigAsync(const DeleteLiveSpecificStagingConfigRequest& request, const DeleteLiveSpecificStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveSpecificStagingConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveSpecificStagingConfigOutcomeCallable LiveClient::deleteLiveSpecificStagingConfigCallable(const DeleteLiveSpecificStagingConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveSpecificStagingConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveSpecificStagingConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteLiveStreamTranscodeOutcome LiveClient::deleteLiveStreamTranscode(const DeleteLiveStreamTranscodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4551,6 +4587,42 @@ LiveClient::DescribeLiveDomainSnapshotDataOutcomeCallable LiveClient::describeLi
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainStagingConfigOutcome LiveClient::describeLiveDomainStagingConfig(const DescribeLiveDomainStagingConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainStagingConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainStagingConfigOutcome(DescribeLiveDomainStagingConfigResult(outcome.result()));
+	else
+		return DescribeLiveDomainStagingConfigOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainStagingConfigAsync(const DescribeLiveDomainStagingConfigRequest& request, const DescribeLiveDomainStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainStagingConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainStagingConfigOutcomeCallable LiveClient::describeLiveDomainStagingConfigCallable(const DescribeLiveDomainStagingConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainStagingConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainStagingConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainStreamTranscodeDataOutcome LiveClient::describeLiveDomainStreamTranscodeData(const DescribeLiveDomainStreamTranscodeDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5049,6 +5121,42 @@ LiveClient::DescribeLiveSnapshotDetectPornConfigOutcomeCallable LiveClient::desc
 			[this, request]()
 			{
 			return this->describeLiveSnapshotDetectPornConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveStagingIpOutcome LiveClient::describeLiveStagingIp(const DescribeLiveStagingIpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStagingIpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStagingIpOutcome(DescribeLiveStagingIpResult(outcome.result()));
+	else
+		return DescribeLiveStagingIpOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStagingIpAsync(const DescribeLiveStagingIpRequest& request, const DescribeLiveStagingIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStagingIp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStagingIpOutcomeCallable LiveClient::describeLiveStagingIpCallable(const DescribeLiveStagingIpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStagingIpOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStagingIp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7071,6 +7179,42 @@ LiveClient::OpenLiveShiftOutcomeCallable LiveClient::openLiveShiftCallable(const
 	return task->get_future();
 }
 
+LiveClient::PublishLiveStagingConfigToProductionOutcome LiveClient::publishLiveStagingConfigToProduction(const PublishLiveStagingConfigToProductionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PublishLiveStagingConfigToProductionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PublishLiveStagingConfigToProductionOutcome(PublishLiveStagingConfigToProductionResult(outcome.result()));
+	else
+		return PublishLiveStagingConfigToProductionOutcome(outcome.error());
+}
+
+void LiveClient::publishLiveStagingConfigToProductionAsync(const PublishLiveStagingConfigToProductionRequest& request, const PublishLiveStagingConfigToProductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, publishLiveStagingConfigToProduction(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::PublishLiveStagingConfigToProductionOutcomeCallable LiveClient::publishLiveStagingConfigToProductionCallable(const PublishLiveStagingConfigToProductionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PublishLiveStagingConfigToProductionOutcome()>>(
+			[this, request]()
+			{
+			return this->publishLiveStagingConfigToProduction(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::RealTimeRecordCommandOutcome LiveClient::realTimeRecordCommand(const RealTimeRecordCommandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7173,6 +7317,42 @@ LiveClient::ResumeLiveStreamOutcomeCallable LiveClient::resumeLiveStreamCallable
 			[this, request]()
 			{
 			return this->resumeLiveStream(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::RollbackLiveStagingConfigOutcome LiveClient::rollbackLiveStagingConfig(const RollbackLiveStagingConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RollbackLiveStagingConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RollbackLiveStagingConfigOutcome(RollbackLiveStagingConfigResult(outcome.result()));
+	else
+		return RollbackLiveStagingConfigOutcome(outcome.error());
+}
+
+void LiveClient::rollbackLiveStagingConfigAsync(const RollbackLiveStagingConfigRequest& request, const RollbackLiveStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rollbackLiveStagingConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::RollbackLiveStagingConfigOutcomeCallable LiveClient::rollbackLiveStagingConfigCallable(const RollbackLiveStagingConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RollbackLiveStagingConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->rollbackLiveStagingConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7461,6 +7641,42 @@ LiveClient::SetLiveDomainCertificateOutcomeCallable LiveClient::setLiveDomainCer
 			[this, request]()
 			{
 			return this->setLiveDomainCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SetLiveDomainStagingConfigOutcome LiveClient::setLiveDomainStagingConfig(const SetLiveDomainStagingConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLiveDomainStagingConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLiveDomainStagingConfigOutcome(SetLiveDomainStagingConfigResult(outcome.result()));
+	else
+		return SetLiveDomainStagingConfigOutcome(outcome.error());
+}
+
+void LiveClient::setLiveDomainStagingConfigAsync(const SetLiveDomainStagingConfigRequest& request, const SetLiveDomainStagingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLiveDomainStagingConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SetLiveDomainStagingConfigOutcomeCallable LiveClient::setLiveDomainStagingConfigCallable(const SetLiveDomainStagingConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLiveDomainStagingConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->setLiveDomainStagingConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
