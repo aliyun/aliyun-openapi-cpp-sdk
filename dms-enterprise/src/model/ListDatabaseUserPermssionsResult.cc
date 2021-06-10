@@ -43,50 +43,50 @@ void ListDatabaseUserPermssionsResult::parse(const std::string &payload)
 	for (auto valueUserPermissionsUserPermission : allUserPermissionsNode)
 	{
 		UserPermission userPermissionsObject;
+		if(!valueUserPermissionsUserPermission["DbId"].isNull())
+			userPermissionsObject.dbId = valueUserPermissionsUserPermission["DbId"].asString();
+		if(!valueUserPermissionsUserPermission["TableName"].isNull())
+			userPermissionsObject.tableName = valueUserPermissionsUserPermission["TableName"].asString();
+		if(!valueUserPermissionsUserPermission["UserId"].isNull())
+			userPermissionsObject.userId = valueUserPermissionsUserPermission["UserId"].asString();
+		if(!valueUserPermissionsUserPermission["SchemaName"].isNull())
+			userPermissionsObject.schemaName = valueUserPermissionsUserPermission["SchemaName"].asString();
+		if(!valueUserPermissionsUserPermission["Logic"].isNull())
+			userPermissionsObject.logic = valueUserPermissionsUserPermission["Logic"].asString() == "true";
+		if(!valueUserPermissionsUserPermission["UserNickName"].isNull())
+			userPermissionsObject.userNickName = valueUserPermissionsUserPermission["UserNickName"].asString();
+		if(!valueUserPermissionsUserPermission["InstanceId"].isNull())
+			userPermissionsObject.instanceId = valueUserPermissionsUserPermission["InstanceId"].asString();
+		if(!valueUserPermissionsUserPermission["EnvType"].isNull())
+			userPermissionsObject.envType = valueUserPermissionsUserPermission["EnvType"].asString();
+		if(!valueUserPermissionsUserPermission["ColumnName"].isNull())
+			userPermissionsObject.columnName = valueUserPermissionsUserPermission["ColumnName"].asString();
+		if(!valueUserPermissionsUserPermission["DbType"].isNull())
+			userPermissionsObject.dbType = valueUserPermissionsUserPermission["DbType"].asString();
+		if(!valueUserPermissionsUserPermission["DsType"].isNull())
+			userPermissionsObject.dsType = valueUserPermissionsUserPermission["DsType"].asString();
 		if(!valueUserPermissionsUserPermission["TableId"].isNull())
 			userPermissionsObject.tableId = valueUserPermissionsUserPermission["TableId"].asString();
 		if(!valueUserPermissionsUserPermission["SearchName"].isNull())
 			userPermissionsObject.searchName = valueUserPermissionsUserPermission["SearchName"].asString();
-		if(!valueUserPermissionsUserPermission["InstanceId"].isNull())
-			userPermissionsObject.instanceId = valueUserPermissionsUserPermission["InstanceId"].asString();
-		if(!valueUserPermissionsUserPermission["DbType"].isNull())
-			userPermissionsObject.dbType = valueUserPermissionsUserPermission["DbType"].asString();
-		if(!valueUserPermissionsUserPermission["EnvType"].isNull())
-			userPermissionsObject.envType = valueUserPermissionsUserPermission["EnvType"].asString();
-		if(!valueUserPermissionsUserPermission["DsType"].isNull())
-			userPermissionsObject.dsType = valueUserPermissionsUserPermission["DsType"].asString();
-		if(!valueUserPermissionsUserPermission["ColumnName"].isNull())
-			userPermissionsObject.columnName = valueUserPermissionsUserPermission["ColumnName"].asString();
-		if(!valueUserPermissionsUserPermission["TableName"].isNull())
-			userPermissionsObject.tableName = valueUserPermissionsUserPermission["TableName"].asString();
-		if(!valueUserPermissionsUserPermission["UserNickName"].isNull())
-			userPermissionsObject.userNickName = valueUserPermissionsUserPermission["UserNickName"].asString();
 		if(!valueUserPermissionsUserPermission["Alias"].isNull())
 			userPermissionsObject.alias = valueUserPermissionsUserPermission["Alias"].asString();
-		if(!valueUserPermissionsUserPermission["UserId"].isNull())
-			userPermissionsObject.userId = valueUserPermissionsUserPermission["UserId"].asString();
-		if(!valueUserPermissionsUserPermission["DbId"].isNull())
-			userPermissionsObject.dbId = valueUserPermissionsUserPermission["DbId"].asString();
-		if(!valueUserPermissionsUserPermission["Logic"].isNull())
-			userPermissionsObject.logic = valueUserPermissionsUserPermission["Logic"].asString() == "true";
-		if(!valueUserPermissionsUserPermission["SchemaName"].isNull())
-			userPermissionsObject.schemaName = valueUserPermissionsUserPermission["SchemaName"].asString();
 		auto allPermDetailsNode = valueUserPermissionsUserPermission["PermDetails"]["PermDetail"];
 		for (auto valueUserPermissionsUserPermissionPermDetailsPermDetail : allPermDetailsNode)
 		{
 			UserPermission::PermDetail permDetailsObject;
-			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["ExpireDate"].isNull())
-				permDetailsObject.expireDate = valueUserPermissionsUserPermissionPermDetailsPermDetail["ExpireDate"].asString();
-			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["PermType"].isNull())
-				permDetailsObject.permType = valueUserPermissionsUserPermissionPermDetailsPermDetail["PermType"].asString();
-			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["ExtraData"].isNull())
-				permDetailsObject.extraData = valueUserPermissionsUserPermissionPermDetailsPermDetail["ExtraData"].asString();
-			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["CreateDate"].isNull())
-				permDetailsObject.createDate = valueUserPermissionsUserPermissionPermDetailsPermDetail["CreateDate"].asString();
 			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["OriginFrom"].isNull())
 				permDetailsObject.originFrom = valueUserPermissionsUserPermissionPermDetailsPermDetail["OriginFrom"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["PermType"].isNull())
+				permDetailsObject.permType = valueUserPermissionsUserPermissionPermDetailsPermDetail["PermType"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["ExpireDate"].isNull())
+				permDetailsObject.expireDate = valueUserPermissionsUserPermissionPermDetailsPermDetail["ExpireDate"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["CreateDate"].isNull())
+				permDetailsObject.createDate = valueUserPermissionsUserPermissionPermDetailsPermDetail["CreateDate"].asString();
 			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["UserAccessId"].isNull())
 				permDetailsObject.userAccessId = valueUserPermissionsUserPermissionPermDetailsPermDetail["UserAccessId"].asString();
+			if(!valueUserPermissionsUserPermissionPermDetailsPermDetail["ExtraData"].isNull())
+				permDetailsObject.extraData = valueUserPermissionsUserPermissionPermDetailsPermDetail["ExtraData"].asString();
 			userPermissionsObject.permDetails.push_back(permDetailsObject);
 		}
 		userPermissions_.push_back(userPermissionsObject);

@@ -40,20 +40,20 @@ void GetDataCorrectTaskDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataCorrectTaskDetailNode = value["DataCorrectTaskDetail"];
-	if(!dataCorrectTaskDetailNode["jobStatus"].isNull())
-		dataCorrectTaskDetail_.jobStatus = dataCorrectTaskDetailNode["jobStatus"].asString();
-	if(!dataCorrectTaskDetailNode["CreateTime"].isNull())
-		dataCorrectTaskDetail_.createTime = dataCorrectTaskDetailNode["CreateTime"].asString();
-	if(!dataCorrectTaskDetailNode["ActualAffectRows"].isNull())
-		dataCorrectTaskDetail_.actualAffectRows = std::stol(dataCorrectTaskDetailNode["ActualAffectRows"].asString());
 	if(!dataCorrectTaskDetailNode["DBTaskGroupId"].isNull())
 		dataCorrectTaskDetail_.dBTaskGroupId = std::stol(dataCorrectTaskDetailNode["DBTaskGroupId"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!dataCorrectTaskDetailNode["jobStatus"].isNull())
+		dataCorrectTaskDetail_.jobStatus = dataCorrectTaskDetailNode["jobStatus"].asString();
+	if(!dataCorrectTaskDetailNode["ActualAffectRows"].isNull())
+		dataCorrectTaskDetail_.actualAffectRows = std::stol(dataCorrectTaskDetailNode["ActualAffectRows"].asString());
+	if(!dataCorrectTaskDetailNode["CreateTime"].isNull())
+		dataCorrectTaskDetail_.createTime = dataCorrectTaskDetailNode["CreateTime"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

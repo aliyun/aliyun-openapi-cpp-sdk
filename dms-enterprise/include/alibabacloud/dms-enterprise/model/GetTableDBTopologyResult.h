@@ -47,8 +47,8 @@ namespace AlibabaCloud
 							std::string dbId;
 							std::string dbName;
 							std::vector<Database::Table> tableList;
-							std::string envType;
 							std::string dbType;
+							std::string envType;
 						};
 						std::vector<DataSource::Database> databaseList;
 						int port;

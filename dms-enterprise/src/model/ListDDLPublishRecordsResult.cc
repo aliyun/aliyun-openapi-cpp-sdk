@@ -43,54 +43,54 @@ void ListDDLPublishRecordsResult::parse(const std::string &payload)
 	for (auto valueDDLPublishRecordListDDLPublishRecord : allDDLPublishRecordListNode)
 	{
 		DDLPublishRecord dDLPublishRecordListObject;
-		if(!valueDDLPublishRecordListDDLPublishRecord["StatusDesc"].isNull())
-			dDLPublishRecordListObject.statusDesc = valueDDLPublishRecordListDDLPublishRecord["StatusDesc"].asString();
 		if(!valueDDLPublishRecordListDDLPublishRecord["AuditStatus"].isNull())
 			dDLPublishRecordListObject.auditStatus = valueDDLPublishRecordListDDLPublishRecord["AuditStatus"].asString();
+		if(!valueDDLPublishRecordListDDLPublishRecord["AuditExpireTime"].isNull())
+			dDLPublishRecordListObject.auditExpireTime = valueDDLPublishRecordListDDLPublishRecord["AuditExpireTime"].asString();
 		if(!valueDDLPublishRecordListDDLPublishRecord["CreatorId"].isNull())
 			dDLPublishRecordListObject.creatorId = std::stol(valueDDLPublishRecordListDDLPublishRecord["CreatorId"].asString());
 		if(!valueDDLPublishRecordListDDLPublishRecord["Finality"].isNull())
 			dDLPublishRecordListObject.finality = valueDDLPublishRecordListDDLPublishRecord["Finality"].asString() == "true";
-		if(!valueDDLPublishRecordListDDLPublishRecord["AuditExpireTime"].isNull())
-			dDLPublishRecordListObject.auditExpireTime = valueDDLPublishRecordListDDLPublishRecord["AuditExpireTime"].asString();
-		if(!valueDDLPublishRecordListDDLPublishRecord["WorkflowInstanceId"].isNull())
-			dDLPublishRecordListObject.workflowInstanceId = std::stol(valueDDLPublishRecordListDDLPublishRecord["WorkflowInstanceId"].asString());
-		if(!valueDDLPublishRecordListDDLPublishRecord["RiskLevel"].isNull())
-			dDLPublishRecordListObject.riskLevel = valueDDLPublishRecordListDDLPublishRecord["RiskLevel"].asString();
 		if(!valueDDLPublishRecordListDDLPublishRecord["FinalityReason"].isNull())
 			dDLPublishRecordListObject.finalityReason = valueDDLPublishRecordListDDLPublishRecord["FinalityReason"].asString();
 		if(!valueDDLPublishRecordListDDLPublishRecord["PublishStatus"].isNull())
 			dDLPublishRecordListObject.publishStatus = valueDDLPublishRecordListDDLPublishRecord["PublishStatus"].asString();
+		if(!valueDDLPublishRecordListDDLPublishRecord["RiskLevel"].isNull())
+			dDLPublishRecordListObject.riskLevel = valueDDLPublishRecordListDDLPublishRecord["RiskLevel"].asString();
+		if(!valueDDLPublishRecordListDDLPublishRecord["StatusDesc"].isNull())
+			dDLPublishRecordListObject.statusDesc = valueDDLPublishRecordListDDLPublishRecord["StatusDesc"].asString();
+		if(!valueDDLPublishRecordListDDLPublishRecord["WorkflowInstanceId"].isNull())
+			dDLPublishRecordListObject.workflowInstanceId = std::stol(valueDDLPublishRecordListDDLPublishRecord["WorkflowInstanceId"].asString());
 		auto allPublishTaskInfoListNode = valueDDLPublishRecordListDDLPublishRecord["PublishTaskInfoList"]["PublishTaskInfo"];
 		for (auto valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo : allPublishTaskInfoListNode)
 		{
 			DDLPublishRecord::PublishTaskInfo publishTaskInfoListObject;
+			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["DbId"].isNull())
+				publishTaskInfoListObject.dbId = std::stol(valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["DbId"].asString());
+			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["Logic"].isNull())
+				publishTaskInfoListObject.logic = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["Logic"].asString() == "true";
+			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PlanTime"].isNull())
+				publishTaskInfoListObject.planTime = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PlanTime"].asString();
+			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PublishStrategy"].isNull())
+				publishTaskInfoListObject.publishStrategy = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PublishStrategy"].asString();
 			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["StatusDesc"].isNull())
 				publishTaskInfoListObject.statusDesc = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["StatusDesc"].asString();
 			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["TaskJobStatus"].isNull())
 				publishTaskInfoListObject.taskJobStatus = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["TaskJobStatus"].asString();
-			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PublishStrategy"].isNull())
-				publishTaskInfoListObject.publishStrategy = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PublishStrategy"].asString();
-			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["DbId"].isNull())
-				publishTaskInfoListObject.dbId = std::stol(valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["DbId"].asString());
-			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PlanTime"].isNull())
-				publishTaskInfoListObject.planTime = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PlanTime"].asString();
-			if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["Logic"].isNull())
-				publishTaskInfoListObject.logic = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["Logic"].asString() == "true";
 			auto allPublishJobListNode = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo["PublishJobList"]["PublishJob"];
 			for (auto valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob : allPublishJobListNode)
 			{
 				DDLPublishRecord::PublishTaskInfo::PublishJob publishJobListObject;
-				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["StatusDesc"].isNull())
-					publishJobListObject.statusDesc = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["StatusDesc"].asString();
-				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["TableName"].isNull())
-					publishJobListObject.tableName = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["TableName"].asString();
-				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["Scripts"].isNull())
-					publishJobListObject.scripts = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["Scripts"].asString();
-				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["TaskJobStatus"].isNull())
-					publishJobListObject.taskJobStatus = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["TaskJobStatus"].asString();
 				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["ExecuteCount"].isNull())
 					publishJobListObject.executeCount = std::stol(valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["ExecuteCount"].asString());
+				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["Scripts"].isNull())
+					publishJobListObject.scripts = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["Scripts"].asString();
+				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["TableName"].isNull())
+					publishJobListObject.tableName = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["TableName"].asString();
+				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["StatusDesc"].isNull())
+					publishJobListObject.statusDesc = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["StatusDesc"].asString();
+				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["TaskJobStatus"].isNull())
+					publishJobListObject.taskJobStatus = valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["TaskJobStatus"].asString();
 				if(!valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["DBTaskGroupId"].isNull())
 					publishJobListObject.dBTaskGroupId = std::stol(valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfoPublishJobListPublishJob["DBTaskGroupId"].asString());
 				publishTaskInfoListObject.publishJobList.push_back(publishJobListObject);
@@ -99,12 +99,12 @@ void ListDDLPublishRecordsResult::parse(const std::string &payload)
 		}
 		dDLPublishRecordList_.push_back(dDLPublishRecordListObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

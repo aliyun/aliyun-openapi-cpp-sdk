@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct StructSyncExecSqlDetail
 				{
-					std::string execSql;
 					long totalSqlCount;
+					std::string execSql;
 				};
 
 

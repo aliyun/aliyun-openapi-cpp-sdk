@@ -40,72 +40,72 @@ void GetPermApplyOrderDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto permApplyOrderDetailNode = value["PermApplyOrderDetail"];
-	if(!permApplyOrderDetailNode["ApplyType"].isNull())
-		permApplyOrderDetail_.applyType = permApplyOrderDetailNode["ApplyType"].asString();
 	if(!permApplyOrderDetailNode["PermType"].isNull())
 		permApplyOrderDetail_.permType = std::stol(permApplyOrderDetailNode["PermType"].asString());
 	if(!permApplyOrderDetailNode["Seconds"].isNull())
 		permApplyOrderDetail_.seconds = std::stol(permApplyOrderDetailNode["Seconds"].asString());
+	if(!permApplyOrderDetailNode["ApplyType"].isNull())
+		permApplyOrderDetail_.applyType = permApplyOrderDetailNode["ApplyType"].asString();
 	auto allResourcesNode = permApplyOrderDetailNode["Resources"]["Resource"];
 	for (auto permApplyOrderDetailNodeResourcesResource : allResourcesNode)
 	{
 		PermApplyOrderDetail::Resource resourceObject;
 		auto databaseInfoNode = value["DatabaseInfo"];
-		if(!databaseInfoNode["SearchName"].isNull())
-			resourceObject.databaseInfo.searchName = databaseInfoNode["SearchName"].asString();
 		if(!databaseInfoNode["DbId"].isNull())
 			resourceObject.databaseInfo.dbId = std::stol(databaseInfoNode["DbId"].asString());
 		if(!databaseInfoNode["Logic"].isNull())
 			resourceObject.databaseInfo.logic = databaseInfoNode["Logic"].asString() == "true";
-		if(!databaseInfoNode["EnvType"].isNull())
-			resourceObject.databaseInfo.envType = databaseInfoNode["EnvType"].asString();
 		if(!databaseInfoNode["DbType"].isNull())
 			resourceObject.databaseInfo.dbType = databaseInfoNode["DbType"].asString();
-			auto allOwnerNickNames = databaseInfoNode["OwnerNickNames"]["OwnerNickName"];
-			for (auto value : allOwnerNickNames)
-				resourceObject.databaseInfo.ownerNickNames.push_back(value.asString());
+		if(!databaseInfoNode["SearchName"].isNull())
+			resourceObject.databaseInfo.searchName = databaseInfoNode["SearchName"].asString();
+		if(!databaseInfoNode["EnvType"].isNull())
+			resourceObject.databaseInfo.envType = databaseInfoNode["EnvType"].asString();
 			auto allOwnerIds = databaseInfoNode["OwnerIds"]["OwnerId"];
 			for (auto value : allOwnerIds)
 				resourceObject.databaseInfo.ownerIds.push_back(value.asString());
-		auto columnInfoNode = value["ColumnInfo"];
-		if(!columnInfoNode["ColumnName"].isNull())
-			resourceObject.columnInfo.columnName = columnInfoNode["ColumnName"].asString();
-		if(!columnInfoNode["TableName"].isNull())
-			resourceObject.columnInfo.tableName = columnInfoNode["TableName"].asString();
+			auto allOwnerNickNames = databaseInfoNode["OwnerNickNames"]["OwnerNickName"];
+			for (auto value : allOwnerNickNames)
+				resourceObject.databaseInfo.ownerNickNames.push_back(value.asString());
 		auto tableInfoNode = value["TableInfo"];
 		if(!tableInfoNode["TableName"].isNull())
 			resourceObject.tableInfo.tableName = tableInfoNode["TableName"].asString();
+		auto columnInfoNode = value["ColumnInfo"];
+		if(!columnInfoNode["TableName"].isNull())
+			resourceObject.columnInfo.tableName = columnInfoNode["TableName"].asString();
+		if(!columnInfoNode["ColumnName"].isNull())
+			resourceObject.columnInfo.columnName = columnInfoNode["ColumnName"].asString();
 		auto instanceInfoNode = value["InstanceInfo"];
-		if(!instanceInfoNode["DbaId"].isNull())
-			resourceObject.instanceInfo.dbaId = std::stol(instanceInfoNode["DbaId"].asString());
-		if(!instanceInfoNode["SearchName"].isNull())
-			resourceObject.instanceInfo.searchName = instanceInfoNode["SearchName"].asString();
 		if(!instanceInfoNode["InstanceId"].isNull())
 			resourceObject.instanceInfo.instanceId = instanceInfoNode["InstanceId"].asString();
-		if(!instanceInfoNode["Port"].isNull())
-			resourceObject.instanceInfo.port = std::stol(instanceInfoNode["Port"].asString());
-		if(!instanceInfoNode["Host"].isNull())
-			resourceObject.instanceInfo.host = instanceInfoNode["Host"].asString();
-		if(!instanceInfoNode["DbaNickName"].isNull())
-			resourceObject.instanceInfo.dbaNickName = instanceInfoNode["DbaNickName"].asString();
-		if(!instanceInfoNode["EnvType"].isNull())
-			resourceObject.instanceInfo.envType = instanceInfoNode["EnvType"].asString();
+		if(!instanceInfoNode["SearchName"].isNull())
+			resourceObject.instanceInfo.searchName = instanceInfoNode["SearchName"].asString();
 		if(!instanceInfoNode["DbType"].isNull())
 			resourceObject.instanceInfo.dbType = instanceInfoNode["DbType"].asString();
-			auto allOwnerNickName = instanceInfoNode["OwnerNickName"]["OwnerNickName"];
-			for (auto value : allOwnerNickName)
-				resourceObject.instanceInfo.ownerNickName.push_back(value.asString());
+		if(!instanceInfoNode["EnvType"].isNull())
+			resourceObject.instanceInfo.envType = instanceInfoNode["EnvType"].asString();
+		if(!instanceInfoNode["Host"].isNull())
+			resourceObject.instanceInfo.host = instanceInfoNode["Host"].asString();
+		if(!instanceInfoNode["Port"].isNull())
+			resourceObject.instanceInfo.port = std::stol(instanceInfoNode["Port"].asString());
+		if(!instanceInfoNode["DbaId"].isNull())
+			resourceObject.instanceInfo.dbaId = std::stol(instanceInfoNode["DbaId"].asString());
+		if(!instanceInfoNode["DbaNickName"].isNull())
+			resourceObject.instanceInfo.dbaNickName = instanceInfoNode["DbaNickName"].asString();
 			auto allOwnerIds1 = instanceInfoNode["OwnerIds"]["OwnerId"];
 			for (auto value : allOwnerIds1)
 				resourceObject.instanceInfo.ownerIds1.push_back(value.asString());
+			auto allOwnerNickName = instanceInfoNode["OwnerNickName"]["OwnerNickName"];
+			for (auto value : allOwnerNickName)
+				resourceObject.instanceInfo.ownerNickName.push_back(value.asString());
 		permApplyOrderDetail_.resources.push_back(resourceObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

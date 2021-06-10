@@ -36,24 +36,24 @@ namespace AlibabaCloud
 				{
 					struct DBTopologyInfo
 					{
-						std::string instanceSource;
 						std::string instanceResourceId;
-						long instanceId;
+						std::string instanceSource;
 						std::string searchName;
+						long instanceId;
 						long dbId;
 						std::string catalogName;
 						std::string regionId;
-						std::string envType;
-						std::string dbType;
 						std::string schemaName;
+						std::string dbType;
+						std::string envType;
 					};
 					long logicDbId;
 					std::string searchName;
 					std::string alias;
 					std::string logicDbName;
 					std::vector<DBTopologyInfo> dBTopologyInfoList;
-					std::string envType;
 					std::string dbType;
+					std::string envType;
 				};
 
 

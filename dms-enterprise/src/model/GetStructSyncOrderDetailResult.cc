@@ -57,39 +57,39 @@ void GetStructSyncOrderDetailResult::parse(const std::string &payload)
 		structSyncOrderDetail_.tableInfoList.push_back(tableInfoObject);
 	}
 	auto sourceDatabaseInfoNode = structSyncOrderDetailNode["SourceDatabaseInfo"];
-	if(!sourceDatabaseInfoNode["SearchName"].isNull())
-		structSyncOrderDetail_.sourceDatabaseInfo.searchName = sourceDatabaseInfoNode["SearchName"].asString();
 	if(!sourceDatabaseInfoNode["DbId"].isNull())
 		structSyncOrderDetail_.sourceDatabaseInfo.dbId = std::stol(sourceDatabaseInfoNode["DbId"].asString());
-	if(!sourceDatabaseInfoNode["Logic"].isNull())
-		structSyncOrderDetail_.sourceDatabaseInfo.logic = sourceDatabaseInfoNode["Logic"].asString() == "true";
-	if(!sourceDatabaseInfoNode["EnvType"].isNull())
-		structSyncOrderDetail_.sourceDatabaseInfo.envType = sourceDatabaseInfoNode["EnvType"].asString();
+	if(!sourceDatabaseInfoNode["SearchName"].isNull())
+		structSyncOrderDetail_.sourceDatabaseInfo.searchName = sourceDatabaseInfoNode["SearchName"].asString();
 	if(!sourceDatabaseInfoNode["DbType"].isNull())
 		structSyncOrderDetail_.sourceDatabaseInfo.dbType = sourceDatabaseInfoNode["DbType"].asString();
+	if(!sourceDatabaseInfoNode["EnvType"].isNull())
+		structSyncOrderDetail_.sourceDatabaseInfo.envType = sourceDatabaseInfoNode["EnvType"].asString();
+	if(!sourceDatabaseInfoNode["Logic"].isNull())
+		structSyncOrderDetail_.sourceDatabaseInfo.logic = sourceDatabaseInfoNode["Logic"].asString() == "true";
 	auto targetDatabaseInfoNode = structSyncOrderDetailNode["TargetDatabaseInfo"];
-	if(!targetDatabaseInfoNode["SearchName"].isNull())
-		structSyncOrderDetail_.targetDatabaseInfo.searchName = targetDatabaseInfoNode["SearchName"].asString();
 	if(!targetDatabaseInfoNode["DbId"].isNull())
 		structSyncOrderDetail_.targetDatabaseInfo.dbId = std::stol(targetDatabaseInfoNode["DbId"].asString());
-	if(!targetDatabaseInfoNode["Logic"].isNull())
-		structSyncOrderDetail_.targetDatabaseInfo.logic = targetDatabaseInfoNode["Logic"].asString() == "true";
-	if(!targetDatabaseInfoNode["EnvType"].isNull())
-		structSyncOrderDetail_.targetDatabaseInfo.envType = targetDatabaseInfoNode["EnvType"].asString();
+	if(!targetDatabaseInfoNode["SearchName"].isNull())
+		structSyncOrderDetail_.targetDatabaseInfo.searchName = targetDatabaseInfoNode["SearchName"].asString();
 	if(!targetDatabaseInfoNode["DbType"].isNull())
 		structSyncOrderDetail_.targetDatabaseInfo.dbType = targetDatabaseInfoNode["DbType"].asString();
+	if(!targetDatabaseInfoNode["EnvType"].isNull())
+		structSyncOrderDetail_.targetDatabaseInfo.envType = targetDatabaseInfoNode["EnvType"].asString();
+	if(!targetDatabaseInfoNode["Logic"].isNull())
+		structSyncOrderDetail_.targetDatabaseInfo.logic = targetDatabaseInfoNode["Logic"].asString() == "true";
 	auto sourceVersionInfoNode = structSyncOrderDetailNode["SourceVersionInfo"];
 	if(!sourceVersionInfoNode["VersionId"].isNull())
 		structSyncOrderDetail_.sourceVersionInfo.versionId = sourceVersionInfoNode["VersionId"].asString();
 	auto targetVersionInfoNode = structSyncOrderDetailNode["TargetVersionInfo"];
 	if(!targetVersionInfoNode["VersionId"].isNull())
 		structSyncOrderDetail_.targetVersionInfo.versionId = targetVersionInfoNode["VersionId"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

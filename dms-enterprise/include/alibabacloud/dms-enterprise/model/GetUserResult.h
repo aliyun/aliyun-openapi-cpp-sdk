@@ -36,15 +36,15 @@ namespace AlibabaCloud
 				{
 					std::vector<std::string> roleNameList;
 					std::string nickName;
-					std::string mobile;
 					long maxExecuteCount;
-					std::string uid;
-					std::string lastLoginTime;
+					std::string mobile;
 					long curResultCount;
+					std::string lastLoginTime;
+					std::string uid;
 					std::vector<std::string> roleIdList;
 					long maxResultCount;
-					std::string userId;
 					std::string state;
+					std::string userId;
 					long curExecuteCount;
 					long parentUid;
 				};

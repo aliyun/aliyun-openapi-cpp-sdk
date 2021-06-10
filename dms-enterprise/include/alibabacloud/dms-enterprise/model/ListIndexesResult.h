@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Index
 				{
-					std::string tableId;
 					std::string indexName;
+					std::string tableId;
 					std::string indexId;
 					std::string indexComment;
 					std::string indexType;

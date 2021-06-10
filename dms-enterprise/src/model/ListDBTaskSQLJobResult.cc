@@ -43,38 +43,38 @@ void ListDBTaskSQLJobResult::parse(const std::string &payload)
 	for (auto valueDBTaskSQLJobListDBTaskSQLJob : allDBTaskSQLJobListNode)
 	{
 		DBTaskSQLJob dBTaskSQLJobListObject;
-		if(!valueDBTaskSQLJobListDBTaskSQLJob["Status"].isNull())
-			dBTaskSQLJobListObject.status = valueDBTaskSQLJobListDBTaskSQLJob["Status"].asString();
-		if(!valueDBTaskSQLJobListDBTaskSQLJob["Comment"].isNull())
-			dBTaskSQLJobListObject.comment = valueDBTaskSQLJobListDBTaskSQLJob["Comment"].asString();
-		if(!valueDBTaskSQLJobListDBTaskSQLJob["LastExecTime"].isNull())
-			dBTaskSQLJobListObject.lastExecTime = valueDBTaskSQLJobListDBTaskSQLJob["LastExecTime"].asString();
-		if(!valueDBTaskSQLJobListDBTaskSQLJob["DbSearchName"].isNull())
-			dBTaskSQLJobListObject.dbSearchName = valueDBTaskSQLJobListDBTaskSQLJob["DbSearchName"].asString();
+		if(!valueDBTaskSQLJobListDBTaskSQLJob["JobId"].isNull())
+			dBTaskSQLJobListObject.jobId = std::stol(valueDBTaskSQLJobListDBTaskSQLJob["JobId"].asString());
 		if(!valueDBTaskSQLJobListDBTaskSQLJob["JobType"].isNull())
 			dBTaskSQLJobListObject.jobType = valueDBTaskSQLJobListDBTaskSQLJob["JobType"].asString();
-		if(!valueDBTaskSQLJobListDBTaskSQLJob["CreateTime"].isNull())
-			dBTaskSQLJobListObject.createTime = valueDBTaskSQLJobListDBTaskSQLJob["CreateTime"].asString();
-		if(!valueDBTaskSQLJobListDBTaskSQLJob["DbTaskGroupId"].isNull())
-			dBTaskSQLJobListObject.dbTaskGroupId = std::stol(valueDBTaskSQLJobListDBTaskSQLJob["DbTaskGroupId"].asString());
+		if(!valueDBTaskSQLJobListDBTaskSQLJob["Comment"].isNull())
+			dBTaskSQLJobListObject.comment = valueDBTaskSQLJobListDBTaskSQLJob["Comment"].asString();
+		if(!valueDBTaskSQLJobListDBTaskSQLJob["DbSearchName"].isNull())
+			dBTaskSQLJobListObject.dbSearchName = valueDBTaskSQLJobListDBTaskSQLJob["DbSearchName"].asString();
 		if(!valueDBTaskSQLJobListDBTaskSQLJob["DbId"].isNull())
 			dBTaskSQLJobListObject.dbId = std::stol(valueDBTaskSQLJobListDBTaskSQLJob["DbId"].asString());
 		if(!valueDBTaskSQLJobListDBTaskSQLJob["Logic"].isNull())
 			dBTaskSQLJobListObject.logic = valueDBTaskSQLJobListDBTaskSQLJob["Logic"].asString() == "true";
-		if(!valueDBTaskSQLJobListDBTaskSQLJob["JobId"].isNull())
-			dBTaskSQLJobListObject.jobId = std::stol(valueDBTaskSQLJobListDBTaskSQLJob["JobId"].asString());
+		if(!valueDBTaskSQLJobListDBTaskSQLJob["CreateTime"].isNull())
+			dBTaskSQLJobListObject.createTime = valueDBTaskSQLJobListDBTaskSQLJob["CreateTime"].asString();
+		if(!valueDBTaskSQLJobListDBTaskSQLJob["LastExecTime"].isNull())
+			dBTaskSQLJobListObject.lastExecTime = valueDBTaskSQLJobListDBTaskSQLJob["LastExecTime"].asString();
+		if(!valueDBTaskSQLJobListDBTaskSQLJob["DbTaskGroupId"].isNull())
+			dBTaskSQLJobListObject.dbTaskGroupId = std::stol(valueDBTaskSQLJobListDBTaskSQLJob["DbTaskGroupId"].asString());
+		if(!valueDBTaskSQLJobListDBTaskSQLJob["Status"].isNull())
+			dBTaskSQLJobListObject.status = valueDBTaskSQLJobListDBTaskSQLJob["Status"].asString();
 		if(!valueDBTaskSQLJobListDBTaskSQLJob["Transactional"].isNull())
 			dBTaskSQLJobListObject.transactional = valueDBTaskSQLJobListDBTaskSQLJob["Transactional"].asString() == "true";
 		dBTaskSQLJobList_.push_back(dBTaskSQLJobListObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 

@@ -43,28 +43,28 @@ void ListUsersResult::parse(const std::string &payload)
 	for (auto valueUserListUser : allUserListNode)
 	{
 		User userListObject;
-		if(!valueUserListUser["Uid"].isNull())
-			userListObject.uid = valueUserListUser["Uid"].asString();
-		if(!valueUserListUser["LastLoginTime"].isNull())
-			userListObject.lastLoginTime = valueUserListUser["LastLoginTime"].asString();
-		if(!valueUserListUser["CurResultCount"].isNull())
-			userListObject.curResultCount = std::stol(valueUserListUser["CurResultCount"].asString());
-		if(!valueUserListUser["MaxResultCount"].isNull())
-			userListObject.maxResultCount = std::stol(valueUserListUser["MaxResultCount"].asString());
-		if(!valueUserListUser["UserId"].isNull())
-			userListObject.userId = valueUserListUser["UserId"].asString();
 		if(!valueUserListUser["State"].isNull())
 			userListObject.state = valueUserListUser["State"].asString();
-		if(!valueUserListUser["CurExecuteCount"].isNull())
-			userListObject.curExecuteCount = std::stol(valueUserListUser["CurExecuteCount"].asString());
-		if(!valueUserListUser["NickName"].isNull())
-			userListObject.nickName = valueUserListUser["NickName"].asString();
-		if(!valueUserListUser["Mobile"].isNull())
-			userListObject.mobile = valueUserListUser["Mobile"].asString();
-		if(!valueUserListUser["MaxExecuteCount"].isNull())
-			userListObject.maxExecuteCount = std::stol(valueUserListUser["MaxExecuteCount"].asString());
+		if(!valueUserListUser["CurResultCount"].isNull())
+			userListObject.curResultCount = std::stol(valueUserListUser["CurResultCount"].asString());
+		if(!valueUserListUser["UserId"].isNull())
+			userListObject.userId = valueUserListUser["UserId"].asString();
+		if(!valueUserListUser["LastLoginTime"].isNull())
+			userListObject.lastLoginTime = valueUserListUser["LastLoginTime"].asString();
+		if(!valueUserListUser["MaxResultCount"].isNull())
+			userListObject.maxResultCount = std::stol(valueUserListUser["MaxResultCount"].asString());
 		if(!valueUserListUser["ParentUid"].isNull())
 			userListObject.parentUid = valueUserListUser["ParentUid"].asString();
+		if(!valueUserListUser["NickName"].isNull())
+			userListObject.nickName = valueUserListUser["NickName"].asString();
+		if(!valueUserListUser["MaxExecuteCount"].isNull())
+			userListObject.maxExecuteCount = std::stol(valueUserListUser["MaxExecuteCount"].asString());
+		if(!valueUserListUser["CurExecuteCount"].isNull())
+			userListObject.curExecuteCount = std::stol(valueUserListUser["CurExecuteCount"].asString());
+		if(!valueUserListUser["Mobile"].isNull())
+			userListObject.mobile = valueUserListUser["Mobile"].asString();
+		if(!valueUserListUser["Uid"].isNull())
+			userListObject.uid = valueUserListUser["Uid"].asString();
 		auto allRoleIdList = value["RoleIdList"]["RoleIds"];
 		for (auto value : allRoleIdList)
 			userListObject.roleIdList.push_back(value.asString());

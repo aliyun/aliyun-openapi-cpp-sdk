@@ -37,11 +37,11 @@ namespace AlibabaCloud
 					std::string status;
 					bool skip;
 					long dbId;
-					std::string sqlType;
 					long executeCount;
-					bool logic;
-					std::string currentSql;
+					std::string sqlType;
 					long jobDetailId;
+					std::string currentSql;
+					bool logic;
 					long jobId;
 				};
 

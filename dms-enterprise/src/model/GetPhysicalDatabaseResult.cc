@@ -40,40 +40,40 @@ void GetPhysicalDatabaseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto databaseNode = value["Database"];
-	if(!databaseNode["SearchName"].isNull())
-		database_.searchName = databaseNode["SearchName"].asString();
+	if(!databaseNode["DatabaseId"].isNull())
+		database_.databaseId = databaseNode["DatabaseId"].asString();
+	if(!databaseNode["Host"].isNull())
+		database_.host = databaseNode["Host"].asString();
+	if(!databaseNode["CatalogName"].isNull())
+		database_.catalogName = databaseNode["CatalogName"].asString();
+	if(!databaseNode["DbaName"].isNull())
+		database_.dbaName = databaseNode["DbaName"].asString();
+	if(!databaseNode["State"].isNull())
+		database_.state = databaseNode["State"].asString();
+	if(!databaseNode["DbaId"].isNull())
+		database_.dbaId = databaseNode["DbaId"].asString();
+	if(!databaseNode["SchemaName"].isNull())
+		database_.schemaName = databaseNode["SchemaName"].asString();
 	if(!databaseNode["InstanceId"].isNull())
 		database_.instanceId = databaseNode["InstanceId"].asString();
 	if(!databaseNode["Port"].isNull())
 		database_.port = std::stoi(databaseNode["Port"].asString());
-	if(!databaseNode["Encoding"].isNull())
-		database_.encoding = databaseNode["Encoding"].asString();
-	if(!databaseNode["Host"].isNull())
-		database_.host = databaseNode["Host"].asString();
-	if(!databaseNode["DatabaseId"].isNull())
-		database_.databaseId = databaseNode["DatabaseId"].asString();
-	if(!databaseNode["DbType"].isNull())
-		database_.dbType = databaseNode["DbType"].asString();
 	if(!databaseNode["EnvType"].isNull())
 		database_.envType = databaseNode["EnvType"].asString();
 	if(!databaseNode["Sid"].isNull())
 		database_.sid = databaseNode["Sid"].asString();
-	if(!databaseNode["DbaName"].isNull())
-		database_.dbaName = databaseNode["DbaName"].asString();
-	if(!databaseNode["DbaId"].isNull())
-		database_.dbaId = databaseNode["DbaId"].asString();
-	if(!databaseNode["State"].isNull())
-		database_.state = databaseNode["State"].asString();
-	if(!databaseNode["CatalogName"].isNull())
-		database_.catalogName = databaseNode["CatalogName"].asString();
-	if(!databaseNode["SchemaName"].isNull())
-		database_.schemaName = databaseNode["SchemaName"].asString();
-		auto allOwnerNameList = databaseNode["OwnerNameList"]["OwnerNames"];
-		for (auto value : allOwnerNameList)
-			database_.ownerNameList.push_back(value.asString());
+	if(!databaseNode["Encoding"].isNull())
+		database_.encoding = databaseNode["Encoding"].asString();
+	if(!databaseNode["DbType"].isNull())
+		database_.dbType = databaseNode["DbType"].asString();
+	if(!databaseNode["SearchName"].isNull())
+		database_.searchName = databaseNode["SearchName"].asString();
 		auto allOwnerIdList = databaseNode["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			database_.ownerIdList.push_back(value.asString());
+		auto allOwnerNameList = databaseNode["OwnerNameList"]["OwnerNames"];
+		for (auto value : allOwnerNameList)
+			database_.ownerNameList.push_back(value.asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())

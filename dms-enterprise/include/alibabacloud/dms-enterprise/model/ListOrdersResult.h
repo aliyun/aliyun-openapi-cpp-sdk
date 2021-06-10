@@ -34,15 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct Order
 				{
-					std::string statusDesc;
 					std::string comment;
+					std::string statusDesc;
 					std::string createTime;
 					std::string committer;
-					long orderId;
 					std::string lastModifyTime;
-					std::string pluginType;
-					long committerId;
+					long orderId;
 					std::string statusCode;
+					long committerId;
+					std::string pluginType;
 				};
 
 

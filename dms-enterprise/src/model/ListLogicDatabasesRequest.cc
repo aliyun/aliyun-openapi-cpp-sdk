@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Dms_enterprise::Model::ListLogicDatabasesRequest;
 
-ListLogicDatabasesRequest::ListLogicDatabasesRequest() :
-	RpcServiceRequest("dms-enterprise", "2018-11-01", "ListLogicDatabases")
-{
-	setMethod(HttpRequest::Method::Post);
+ListLogicDatabasesRequest::ListLogicDatabasesRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "ListLogicDatabases") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListLogicDatabasesRequest::~ListLogicDatabasesRequest()
-{}
+ListLogicDatabasesRequest::~ListLogicDatabasesRequest() {}
 
-long ListLogicDatabasesRequest::getTid()const
-{
-	return tid_;
+long ListLogicDatabasesRequest::getTid() const {
+  return tid_;
 }
 
-void ListLogicDatabasesRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
+void ListLogicDatabasesRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-int ListLogicDatabasesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListLogicDatabasesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListLogicDatabasesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListLogicDatabasesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-int ListLogicDatabasesRequest::getPageSize()const
-{
-	return pageSize_;
+int ListLogicDatabasesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListLogicDatabasesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListLogicDatabasesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

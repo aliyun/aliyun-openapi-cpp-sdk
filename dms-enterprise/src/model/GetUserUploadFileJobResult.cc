@@ -40,39 +40,39 @@ void GetUserUploadFileJobResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto uploadFileJobDetailNode = value["UploadFileJobDetail"];
-	if(!uploadFileJobDetailNode["JobStatus"].isNull())
-		uploadFileJobDetail_.jobStatus = uploadFileJobDetailNode["JobStatus"].asString();
-	if(!uploadFileJobDetailNode["AttachmentKey"].isNull())
-		uploadFileJobDetail_.attachmentKey = uploadFileJobDetailNode["AttachmentKey"].asString();
 	if(!uploadFileJobDetailNode["JobKey"].isNull())
 		uploadFileJobDetail_.jobKey = uploadFileJobDetailNode["JobKey"].asString();
+	if(!uploadFileJobDetailNode["FileName"].isNull())
+		uploadFileJobDetail_.fileName = uploadFileJobDetailNode["FileName"].asString();
+	if(!uploadFileJobDetailNode["FileSize"].isNull())
+		uploadFileJobDetail_.fileSize = std::stol(uploadFileJobDetailNode["FileSize"].asString());
+	if(!uploadFileJobDetailNode["FileSource"].isNull())
+		uploadFileJobDetail_.fileSource = uploadFileJobDetailNode["FileSource"].asString();
+	if(!uploadFileJobDetailNode["UploadType"].isNull())
+		uploadFileJobDetail_.uploadType = uploadFileJobDetailNode["UploadType"].asString();
 	if(!uploadFileJobDetailNode["UploadURL"].isNull())
 		uploadFileJobDetail_.uploadURL = uploadFileJobDetailNode["UploadURL"].asString();
 	if(!uploadFileJobDetailNode["UploadedSize"].isNull())
 		uploadFileJobDetail_.uploadedSize = std::stol(uploadFileJobDetailNode["UploadedSize"].asString());
+	if(!uploadFileJobDetailNode["JobStatus"].isNull())
+		uploadFileJobDetail_.jobStatus = uploadFileJobDetailNode["JobStatus"].asString();
 	if(!uploadFileJobDetailNode["JobStatusDesc"].isNull())
 		uploadFileJobDetail_.jobStatusDesc = uploadFileJobDetailNode["JobStatusDesc"].asString();
-	if(!uploadFileJobDetailNode["FileSource"].isNull())
-		uploadFileJobDetail_.fileSource = uploadFileJobDetailNode["FileSource"].asString();
-	if(!uploadFileJobDetailNode["FileName"].isNull())
-		uploadFileJobDetail_.fileName = uploadFileJobDetailNode["FileName"].asString();
-	if(!uploadFileJobDetailNode["UploadType"].isNull())
-		uploadFileJobDetail_.uploadType = uploadFileJobDetailNode["UploadType"].asString();
-	if(!uploadFileJobDetailNode["FileSize"].isNull())
-		uploadFileJobDetail_.fileSize = std::stol(uploadFileJobDetailNode["FileSize"].asString());
+	if(!uploadFileJobDetailNode["AttachmentKey"].isNull())
+		uploadFileJobDetail_.attachmentKey = uploadFileJobDetailNode["AttachmentKey"].asString();
 	auto uploadOSSParamNode = uploadFileJobDetailNode["UploadOSSParam"];
-	if(!uploadOSSParamNode["BucketName"].isNull())
-		uploadFileJobDetail_.uploadOSSParam.bucketName = uploadOSSParamNode["BucketName"].asString();
 	if(!uploadOSSParamNode["Endpoint"].isNull())
 		uploadFileJobDetail_.uploadOSSParam.endpoint = uploadOSSParamNode["Endpoint"].asString();
+	if(!uploadOSSParamNode["BucketName"].isNull())
+		uploadFileJobDetail_.uploadOSSParam.bucketName = uploadOSSParamNode["BucketName"].asString();
 	if(!uploadOSSParamNode["ObjectName"].isNull())
 		uploadFileJobDetail_.uploadOSSParam.objectName = uploadOSSParamNode["ObjectName"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

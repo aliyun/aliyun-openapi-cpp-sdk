@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Database
 				{
-					std::string searchName;
 					std::string instanceId;
+					std::string searchName;
 					int port;
-					std::string encoding;
-					std::string host;
 					std::string databaseId;
-					std::string dbType;
+					std::string host;
+					std::string encoding;
 					std::string envType;
+					std::string dbType;
 					std::string sid;
 					std::string dbaName;
 					std::string dbaId;

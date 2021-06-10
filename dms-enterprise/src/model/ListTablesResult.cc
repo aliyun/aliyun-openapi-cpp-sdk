@@ -43,34 +43,34 @@ void ListTablesResult::parse(const std::string &payload)
 	for (auto valueTableListTable : allTableListNode)
 	{
 		Table tableListObject;
-		if(!valueTableListTable["TableId"].isNull())
-			tableListObject.tableId = valueTableListTable["TableId"].asString();
-		if(!valueTableListTable["TableName"].isNull())
-			tableListObject.tableName = valueTableListTable["TableName"].asString();
-		if(!valueTableListTable["TableGuid"].isNull())
-			tableListObject.tableGuid = valueTableListTable["TableGuid"].asString();
-		if(!valueTableListTable["TableType"].isNull())
-			tableListObject.tableType = valueTableListTable["TableType"].asString();
-		if(!valueTableListTable["Description"].isNull())
-			tableListObject.description = valueTableListTable["Description"].asString();
-		if(!valueTableListTable["TableSchemaName"].isNull())
-			tableListObject.tableSchemaName = valueTableListTable["TableSchemaName"].asString();
-		if(!valueTableListTable["Encoding"].isNull())
-			tableListObject.encoding = valueTableListTable["Encoding"].asString();
 		if(!valueTableListTable["DatabaseId"].isNull())
 			tableListObject.databaseId = valueTableListTable["DatabaseId"].asString();
-		if(!valueTableListTable["NumRows"].isNull())
-			tableListObject.numRows = std::stol(valueTableListTable["NumRows"].asString());
+		if(!valueTableListTable["TableName"].isNull())
+			tableListObject.tableName = valueTableListTable["TableName"].asString();
 		if(!valueTableListTable["StoreCapacity"].isNull())
 			tableListObject.storeCapacity = std::stol(valueTableListTable["StoreCapacity"].asString());
+		if(!valueTableListTable["Description"].isNull())
+			tableListObject.description = valueTableListTable["Description"].asString();
+		if(!valueTableListTable["Encoding"].isNull())
+			tableListObject.encoding = valueTableListTable["Encoding"].asString();
+		if(!valueTableListTable["TableSchemaName"].isNull())
+			tableListObject.tableSchemaName = valueTableListTable["TableSchemaName"].asString();
+		if(!valueTableListTable["TableType"].isNull())
+			tableListObject.tableType = valueTableListTable["TableType"].asString();
+		if(!valueTableListTable["TableGuid"].isNull())
+			tableListObject.tableGuid = valueTableListTable["TableGuid"].asString();
 		if(!valueTableListTable["Engine"].isNull())
 			tableListObject.engine = valueTableListTable["Engine"].asString();
-		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
-		for (auto value : allOwnerNameList)
-			tableListObject.ownerNameList.push_back(value.asString());
+		if(!valueTableListTable["NumRows"].isNull())
+			tableListObject.numRows = std::stol(valueTableListTable["NumRows"].asString());
+		if(!valueTableListTable["TableId"].isNull())
+			tableListObject.tableId = valueTableListTable["TableId"].asString();
 		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			tableListObject.ownerIdList.push_back(value.asString());
+		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
+		for (auto value : allOwnerNameList)
+			tableListObject.ownerNameList.push_back(value.asString());
 		tableList_.push_back(tableListObject);
 	}
 	if(!value["TotalCount"].isNull())

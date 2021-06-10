@@ -41,14 +41,14 @@ namespace AlibabaCloud
 						std::string objectName;
 					};
 					std::string jobStatus;
-					std::string attachmentKey;
 					std::string jobKey;
+					std::string attachmentKey;
 					std::string uploadURL;
 					long uploadedSize;
 					UploadOSSParam uploadOSSParam;
 					std::string jobStatusDesc;
-					std::string fileSource;
 					std::string fileName;
+					std::string fileSource;
 					std::string uploadType;
 					long fileSize;
 				};

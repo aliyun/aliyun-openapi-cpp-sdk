@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Dms_enterprise::Model::UpdateUserRequest;
 
-UpdateUserRequest::UpdateUserRequest() :
-	RpcServiceRequest("dms-enterprise", "2018-11-01", "UpdateUser")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateUserRequest::UpdateUserRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "UpdateUser") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateUserRequest::~UpdateUserRequest()
-{}
+UpdateUserRequest::~UpdateUserRequest() {}
 
-std::string UpdateUserRequest::getRoleNames()const
-{
-	return roleNames_;
+std::string UpdateUserRequest::getRoleNames() const {
+  return roleNames_;
 }
 
-void UpdateUserRequest::setRoleNames(const std::string& roleNames)
-{
-	roleNames_ = roleNames;
-	setParameter("RoleNames", roleNames);
+void UpdateUserRequest::setRoleNames(const std::string &roleNames) {
+  roleNames_ = roleNames;
+  setParameter(std::string("RoleNames"), roleNames);
 }
 
-long UpdateUserRequest::getMaxResultCount()const
-{
-	return maxResultCount_;
+long UpdateUserRequest::getMaxResultCount() const {
+  return maxResultCount_;
 }
 
-void UpdateUserRequest::setMaxResultCount(long maxResultCount)
-{
-	maxResultCount_ = maxResultCount;
-	setParameter("MaxResultCount", std::to_string(maxResultCount));
+void UpdateUserRequest::setMaxResultCount(long maxResultCount) {
+  maxResultCount_ = maxResultCount;
+  setParameter(std::string("MaxResultCount"), std::to_string(maxResultCount));
 }
 
-long UpdateUserRequest::getMaxExecuteCount()const
-{
-	return maxExecuteCount_;
+long UpdateUserRequest::getMaxExecuteCount() const {
+  return maxExecuteCount_;
 }
 
-void UpdateUserRequest::setMaxExecuteCount(long maxExecuteCount)
-{
-	maxExecuteCount_ = maxExecuteCount;
-	setParameter("MaxExecuteCount", std::to_string(maxExecuteCount));
+void UpdateUserRequest::setMaxExecuteCount(long maxExecuteCount) {
+  maxExecuteCount_ = maxExecuteCount;
+  setParameter(std::string("MaxExecuteCount"), std::to_string(maxExecuteCount));
 }
 
-std::string UpdateUserRequest::getUserNick()const
-{
-	return userNick_;
+std::string UpdateUserRequest::getUserNick() const {
+  return userNick_;
 }
 
-void UpdateUserRequest::setUserNick(const std::string& userNick)
-{
-	userNick_ = userNick;
-	setParameter("UserNick", userNick);
+void UpdateUserRequest::setUserNick(const std::string &userNick) {
+  userNick_ = userNick;
+  setParameter(std::string("UserNick"), userNick);
 }
 
-std::string UpdateUserRequest::getMobile()const
-{
-	return mobile_;
+std::string UpdateUserRequest::getMobile() const {
+  return mobile_;
 }
 
-void UpdateUserRequest::setMobile(const std::string& mobile)
-{
-	mobile_ = mobile;
-	setParameter("Mobile", mobile);
+void UpdateUserRequest::setMobile(const std::string &mobile) {
+  mobile_ = mobile;
+  setParameter(std::string("Mobile"), mobile);
 }
 
-long UpdateUserRequest::getTid()const
-{
-	return tid_;
+long UpdateUserRequest::getTid() const {
+  return tid_;
 }
 
-void UpdateUserRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
+void UpdateUserRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-long UpdateUserRequest::getUid()const
-{
-	return uid_;
+long UpdateUserRequest::getUid() const {
+  return uid_;
 }
 
-void UpdateUserRequest::setUid(long uid)
-{
-	uid_ = uid;
-	setParameter("Uid", std::to_string(uid));
+void UpdateUserRequest::setUid(long uid) {
+  uid_ = uid;
+  setParameter(std::string("Uid"), std::to_string(uid));
 }
 

@@ -40,18 +40,6 @@ void GetStructSyncJobAnalyzeResultResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto structSyncJobAnalyzeResultNode = value["StructSyncJobAnalyzeResult"];
-	auto allResultListNode = structSyncJobAnalyzeResultNode["ResultList"]["Result"];
-	for (auto structSyncJobAnalyzeResultNodeResultListResult : allResultListNode)
-	{
-		StructSyncJobAnalyzeResult::Result resultObject;
-		if(!structSyncJobAnalyzeResultNodeResultListResult["SourceTableName"].isNull())
-			resultObject.sourceTableName = structSyncJobAnalyzeResultNodeResultListResult["SourceTableName"].asString();
-		if(!structSyncJobAnalyzeResultNodeResultListResult["Script"].isNull())
-			resultObject.script = structSyncJobAnalyzeResultNodeResultListResult["Script"].asString();
-		if(!structSyncJobAnalyzeResultNodeResultListResult["TargetTableName"].isNull())
-			resultObject.targetTableName = structSyncJobAnalyzeResultNodeResultListResult["TargetTableName"].asString();
-		structSyncJobAnalyzeResult_.resultList.push_back(resultObject);
-	}
 	auto allSummaryListNode = structSyncJobAnalyzeResultNode["SummaryList"]["Summary"];
 	for (auto structSyncJobAnalyzeResultNodeSummaryListSummary : allSummaryListNode)
 	{
@@ -62,12 +50,24 @@ void GetStructSyncJobAnalyzeResultResult::parse(const std::string &payload)
 			summaryObject.count = std::stol(structSyncJobAnalyzeResultNodeSummaryListSummary["Count"].asString());
 		structSyncJobAnalyzeResult_.summaryList.push_back(summaryObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	auto allResultListNode = structSyncJobAnalyzeResultNode["ResultList"]["Result"];
+	for (auto structSyncJobAnalyzeResultNodeResultListResult : allResultListNode)
+	{
+		StructSyncJobAnalyzeResult::Result resultObject;
+		if(!structSyncJobAnalyzeResultNodeResultListResult["SourceTableName"].isNull())
+			resultObject.sourceTableName = structSyncJobAnalyzeResultNodeResultListResult["SourceTableName"].asString();
+		if(!structSyncJobAnalyzeResultNodeResultListResult["TargetTableName"].isNull())
+			resultObject.targetTableName = structSyncJobAnalyzeResultNodeResultListResult["TargetTableName"].asString();
+		if(!structSyncJobAnalyzeResultNodeResultListResult["Script"].isNull())
+			resultObject.script = structSyncJobAnalyzeResultNodeResultListResult["Script"].asString();
+		structSyncJobAnalyzeResult_.resultList.push_back(resultObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

@@ -40,8 +40,6 @@ void GetStructSyncJobDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto structSyncJobDetailNode = value["StructSyncJobDetail"];
-	if(!structSyncJobDetailNode["SqlCount"].isNull())
-		structSyncJobDetail_.sqlCount = std::stol(structSyncJobDetailNode["SqlCount"].asString());
 	if(!structSyncJobDetailNode["JobStatus"].isNull())
 		structSyncJobDetail_.jobStatus = structSyncJobDetailNode["JobStatus"].asString();
 	if(!structSyncJobDetailNode["Message"].isNull())
@@ -50,18 +48,20 @@ void GetStructSyncJobDetailResult::parse(const std::string &payload)
 		structSyncJobDetail_.tableAnalyzed = std::stol(structSyncJobDetailNode["TableAnalyzed"].asString());
 	if(!structSyncJobDetailNode["TableCount"].isNull())
 		structSyncJobDetail_.tableCount = std::stol(structSyncJobDetailNode["TableCount"].asString());
+	if(!structSyncJobDetailNode["SqlCount"].isNull())
+		structSyncJobDetail_.sqlCount = std::stol(structSyncJobDetailNode["SqlCount"].asString());
 	if(!structSyncJobDetailNode["ExecuteCount"].isNull())
 		structSyncJobDetail_.executeCount = std::stol(structSyncJobDetailNode["ExecuteCount"].asString());
 	if(!structSyncJobDetailNode["SecurityRule"].isNull())
 		structSyncJobDetail_.securityRule = structSyncJobDetailNode["SecurityRule"].asString();
 	if(!structSyncJobDetailNode["DBTaskGroupId"].isNull())
 		structSyncJobDetail_.dBTaskGroupId = std::stol(structSyncJobDetailNode["DBTaskGroupId"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

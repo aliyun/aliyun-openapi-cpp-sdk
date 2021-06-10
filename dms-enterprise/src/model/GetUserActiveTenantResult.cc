@@ -42,10 +42,10 @@ void GetUserActiveTenantResult::parse(const std::string &payload)
 	auto tenantNode = value["Tenant"];
 	if(!tenantNode["Status"].isNull())
 		tenant_.status = tenantNode["Status"].asString();
-	if(!tenantNode["TenantName"].isNull())
-		tenant_.tenantName = tenantNode["TenantName"].asString();
 	if(!tenantNode["Tid"].isNull())
 		tenant_.tid = std::stol(tenantNode["Tid"].asString());
+	if(!tenantNode["TenantName"].isNull())
+		tenant_.tenantName = tenantNode["TenantName"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())

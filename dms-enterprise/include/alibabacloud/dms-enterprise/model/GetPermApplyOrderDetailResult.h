@@ -42,31 +42,31 @@ namespace AlibabaCloud
 							std::vector<std::string> ownerNickNames;
 							long dbId;
 							bool logic;
-							std::string envType;
 							std::string dbType;
+							std::string envType;
 							std::vector<std::string> ownerIds;
-						};
-						struct ColumnInfo
-						{
-							std::string columnName;
-							std::string tableName;
 						};
 						struct TableInfo
 						{
 							std::string tableName;
 						};
+						struct ColumnInfo
+						{
+							std::string tableName;
+							std::string columnName;
+						};
 						struct InstanceInfo
 						{
 							long dbaId;
-							std::string searchName;
 							std::string instanceId;
+							std::string searchName;
 							std::vector<std::string> ownerIds1;
 							long port;
 							std::string host;
 							std::string dbaNickName;
 							std::vector<std::string> ownerNickName;
-							std::string envType;
 							std::string dbType;
+							std::string envType;
 						};
 						DatabaseInfo databaseInfo;
 						ColumnInfo columnInfo;

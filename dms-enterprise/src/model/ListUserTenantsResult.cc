@@ -45,10 +45,10 @@ void ListUserTenantsResult::parse(const std::string &payload)
 		Tenant tenantListObject;
 		if(!valueTenantListTenant["Status"].isNull())
 			tenantListObject.status = valueTenantListTenant["Status"].asString();
-		if(!valueTenantListTenant["TenantName"].isNull())
-			tenantListObject.tenantName = valueTenantListTenant["TenantName"].asString();
 		if(!valueTenantListTenant["Tid"].isNull())
 			tenantListObject.tid = std::stol(valueTenantListTenant["Tid"].asString());
+		if(!valueTenantListTenant["TenantName"].isNull())
+			tenantListObject.tenantName = valueTenantListTenant["TenantName"].asString();
 		tenantList_.push_back(tenantListObject);
 	}
 	if(!value["ErrorCode"].isNull())

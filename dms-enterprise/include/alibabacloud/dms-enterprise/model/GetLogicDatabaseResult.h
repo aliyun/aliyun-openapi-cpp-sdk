@@ -38,9 +38,9 @@ namespace AlibabaCloud
 					std::string databaseId;
 					std::vector<std::string> ownerNameList;
 					bool logic;
-					std::string envType;
-					std::string schemaName;
 					std::string dbType;
+					std::string schemaName;
+					std::string envType;
 					std::vector<std::string> ownerIdList;
 				};
 

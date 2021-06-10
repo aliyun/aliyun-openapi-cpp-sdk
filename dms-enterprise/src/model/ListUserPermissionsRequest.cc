@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Dms_enterprise::Model::ListUserPermissionsRequest;
 
-ListUserPermissionsRequest::ListUserPermissionsRequest() :
-	RpcServiceRequest("dms-enterprise", "2018-11-01", "ListUserPermissions")
-{
-	setMethod(HttpRequest::Method::Post);
+ListUserPermissionsRequest::ListUserPermissionsRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "ListUserPermissions") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListUserPermissionsRequest::~ListUserPermissionsRequest()
-{}
+ListUserPermissionsRequest::~ListUserPermissionsRequest() {}
 
-std::string ListUserPermissionsRequest::getUserId()const
-{
-	return userId_;
+std::string ListUserPermissionsRequest::getUserId() const {
+  return userId_;
 }
 
-void ListUserPermissionsRequest::setUserId(const std::string& userId)
-{
-	userId_ = userId;
-	setParameter("UserId", userId);
+void ListUserPermissionsRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
 }
 
-long ListUserPermissionsRequest::getTid()const
-{
-	return tid_;
+long ListUserPermissionsRequest::getTid() const {
+  return tid_;
 }
 
-void ListUserPermissionsRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
+void ListUserPermissionsRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-int ListUserPermissionsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListUserPermissionsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListUserPermissionsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListUserPermissionsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListUserPermissionsRequest::getPermType()const
-{
-	return permType_;
+std::string ListUserPermissionsRequest::getPermType() const {
+  return permType_;
 }
 
-void ListUserPermissionsRequest::setPermType(const std::string& permType)
-{
-	permType_ = permType;
-	setParameter("PermType", permType);
+void ListUserPermissionsRequest::setPermType(const std::string &permType) {
+  permType_ = permType;
+  setParameter(std::string("PermType"), permType);
 }
 
-std::string ListUserPermissionsRequest::getDatabaseName()const
-{
-	return databaseName_;
+std::string ListUserPermissionsRequest::getDatabaseName() const {
+  return databaseName_;
 }
 
-void ListUserPermissionsRequest::setDatabaseName(const std::string& databaseName)
-{
-	databaseName_ = databaseName;
-	setParameter("DatabaseName", databaseName);
+void ListUserPermissionsRequest::setDatabaseName(const std::string &databaseName) {
+  databaseName_ = databaseName;
+  setParameter(std::string("DatabaseName"), databaseName);
 }
 
-std::string ListUserPermissionsRequest::getEnvType()const
-{
-	return envType_;
+std::string ListUserPermissionsRequest::getEnvType() const {
+  return envType_;
 }
 
-void ListUserPermissionsRequest::setEnvType(const std::string& envType)
-{
-	envType_ = envType;
-	setParameter("EnvType", envType);
+void ListUserPermissionsRequest::setEnvType(const std::string &envType) {
+  envType_ = envType;
+  setParameter(std::string("EnvType"), envType);
 }
 
-std::string ListUserPermissionsRequest::getDbType()const
-{
-	return dbType_;
+std::string ListUserPermissionsRequest::getDbType() const {
+  return dbType_;
 }
 
-void ListUserPermissionsRequest::setDbType(const std::string& dbType)
-{
-	dbType_ = dbType;
-	setParameter("DbType", dbType);
+void ListUserPermissionsRequest::setDbType(const std::string &dbType) {
+  dbType_ = dbType;
+  setParameter(std::string("DbType"), dbType);
 }
 
-int ListUserPermissionsRequest::getPageSize()const
-{
-	return pageSize_;
+int ListUserPermissionsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListUserPermissionsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListUserPermissionsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-bool ListUserPermissionsRequest::getLogic()const
-{
-	return logic_;
+bool ListUserPermissionsRequest::getLogic() const {
+  return logic_;
 }
 
-void ListUserPermissionsRequest::setLogic(bool logic)
-{
-	logic_ = logic;
-	setParameter("Logic", logic ? "true" : "false");
+void ListUserPermissionsRequest::setLogic(bool logic) {
+  logic_ = logic;
+  setParameter(std::string("Logic"), logic ? "true" : "false");
 }
 

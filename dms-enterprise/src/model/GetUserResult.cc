@@ -40,28 +40,28 @@ void GetUserResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto userNode = value["User"];
-	if(!userNode["Uid"].isNull())
-		user_.uid = userNode["Uid"].asString();
-	if(!userNode["LastLoginTime"].isNull())
-		user_.lastLoginTime = userNode["LastLoginTime"].asString();
-	if(!userNode["CurResultCount"].isNull())
-		user_.curResultCount = std::stol(userNode["CurResultCount"].asString());
-	if(!userNode["MaxResultCount"].isNull())
-		user_.maxResultCount = std::stol(userNode["MaxResultCount"].asString());
-	if(!userNode["UserId"].isNull())
-		user_.userId = userNode["UserId"].asString();
 	if(!userNode["State"].isNull())
 		user_.state = userNode["State"].asString();
-	if(!userNode["CurExecuteCount"].isNull())
-		user_.curExecuteCount = std::stol(userNode["CurExecuteCount"].asString());
-	if(!userNode["NickName"].isNull())
-		user_.nickName = userNode["NickName"].asString();
-	if(!userNode["Mobile"].isNull())
-		user_.mobile = userNode["Mobile"].asString();
-	if(!userNode["MaxExecuteCount"].isNull())
-		user_.maxExecuteCount = std::stol(userNode["MaxExecuteCount"].asString());
+	if(!userNode["CurResultCount"].isNull())
+		user_.curResultCount = std::stol(userNode["CurResultCount"].asString());
+	if(!userNode["UserId"].isNull())
+		user_.userId = userNode["UserId"].asString();
+	if(!userNode["LastLoginTime"].isNull())
+		user_.lastLoginTime = userNode["LastLoginTime"].asString();
+	if(!userNode["MaxResultCount"].isNull())
+		user_.maxResultCount = std::stol(userNode["MaxResultCount"].asString());
 	if(!userNode["ParentUid"].isNull())
 		user_.parentUid = std::stol(userNode["ParentUid"].asString());
+	if(!userNode["NickName"].isNull())
+		user_.nickName = userNode["NickName"].asString();
+	if(!userNode["MaxExecuteCount"].isNull())
+		user_.maxExecuteCount = std::stol(userNode["MaxExecuteCount"].asString());
+	if(!userNode["CurExecuteCount"].isNull())
+		user_.curExecuteCount = std::stol(userNode["CurExecuteCount"].asString());
+	if(!userNode["Mobile"].isNull())
+		user_.mobile = userNode["Mobile"].asString();
+	if(!userNode["Uid"].isNull())
+		user_.uid = userNode["Uid"].asString();
 		auto allRoleIdList = userNode["RoleIdList"]["RoleIds"];
 		for (auto value : allRoleIdList)
 			user_.roleIdList.push_back(value.asString());

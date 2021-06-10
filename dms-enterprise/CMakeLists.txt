@@ -37,6 +37,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CreateOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreatePublishGroupTaskRequest.h
 	include/alibabacloud/dms-enterprise/model/CreatePublishGroupTaskResult.h
+	include/alibabacloud/dms-enterprise/model/CreateSQLReviewOrderRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateSQLReviewOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateStructSyncOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateStructSyncOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateUploadFileJobRequest.h
@@ -97,6 +99,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetPermApplyOrderDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseRequest.h
 	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseResult.h
+	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusRequest.h
+	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncJobAnalyzeResultRequest.h
@@ -139,6 +143,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListLogicTablesResult.h
 	include/alibabacloud/dms-enterprise/model/ListOrdersRequest.h
 	include/alibabacloud/dms-enterprise/model/ListOrdersResult.h
+	include/alibabacloud/dms-enterprise/model/ListSQLReviewOriginSQLRequest.h
+	include/alibabacloud/dms-enterprise/model/ListSQLReviewOriginSQLResult.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsResult.h
 	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsDetailRequest.h
@@ -198,6 +204,8 @@ set(dms-enterprise_src
 	src/model/CreateOrderResult.cc
 	src/model/CreatePublishGroupTaskRequest.cc
 	src/model/CreatePublishGroupTaskResult.cc
+	src/model/CreateSQLReviewOrderRequest.cc
+	src/model/CreateSQLReviewOrderResult.cc
 	src/model/CreateStructSyncOrderRequest.cc
 	src/model/CreateStructSyncOrderResult.cc
 	src/model/CreateUploadFileJobRequest.cc
@@ -258,6 +266,8 @@ set(dms-enterprise_src
 	src/model/GetPermApplyOrderDetailResult.cc
 	src/model/GetPhysicalDatabaseRequest.cc
 	src/model/GetPhysicalDatabaseResult.cc
+	src/model/GetSQLReviewCheckResultStatusRequest.cc
+	src/model/GetSQLReviewCheckResultStatusResult.cc
 	src/model/GetStructSyncExecSqlDetailRequest.cc
 	src/model/GetStructSyncExecSqlDetailResult.cc
 	src/model/GetStructSyncJobAnalyzeResultRequest.cc
@@ -300,6 +310,8 @@ set(dms-enterprise_src
 	src/model/ListLogicTablesResult.cc
 	src/model/ListOrdersRequest.cc
 	src/model/ListOrdersResult.cc
+	src/model/ListSQLReviewOriginSQLRequest.cc
+	src/model/ListSQLReviewOriginSQLResult.cc
 	src/model/ListSensitiveColumnsRequest.cc
 	src/model/ListSensitiveColumnsResult.cc
 	src/model/ListSensitiveColumnsDetailRequest.cc

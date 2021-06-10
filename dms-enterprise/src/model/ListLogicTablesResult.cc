@@ -43,28 +43,28 @@ void ListLogicTablesResult::parse(const std::string &payload)
 	for (auto valueLogicTableListLogicTable : allLogicTableListNode)
 	{
 		LogicTable logicTableListObject;
-		if(!valueLogicTableListLogicTable["TableId"].isNull())
-			logicTableListObject.tableId = valueLogicTableListLogicTable["TableId"].asString();
-		if(!valueLogicTableListLogicTable["TableName"].isNull())
-			logicTableListObject.tableName = valueLogicTableListLogicTable["TableName"].asString();
-		if(!valueLogicTableListLogicTable["TableGuid"].isNull())
-			logicTableListObject.tableGuid = valueLogicTableListLogicTable["TableGuid"].asString();
-		if(!valueLogicTableListLogicTable["TableExpr"].isNull())
-			logicTableListObject.tableExpr = valueLogicTableListLogicTable["TableExpr"].asString();
-		if(!valueLogicTableListLogicTable["TableCount"].isNull())
-			logicTableListObject.tableCount = valueLogicTableListLogicTable["TableCount"].asString();
 		if(!valueLogicTableListLogicTable["DatabaseId"].isNull())
 			logicTableListObject.databaseId = valueLogicTableListLogicTable["DatabaseId"].asString();
-		if(!valueLogicTableListLogicTable["Logic"].isNull())
-			logicTableListObject.logic = valueLogicTableListLogicTable["Logic"].asString() == "true";
+		if(!valueLogicTableListLogicTable["TableName"].isNull())
+			logicTableListObject.tableName = valueLogicTableListLogicTable["TableName"].asString();
+		if(!valueLogicTableListLogicTable["TableCount"].isNull())
+			logicTableListObject.tableCount = valueLogicTableListLogicTable["TableCount"].asString();
 		if(!valueLogicTableListLogicTable["SchemaName"].isNull())
 			logicTableListObject.schemaName = valueLogicTableListLogicTable["SchemaName"].asString();
-		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
-		for (auto value : allOwnerNameList)
-			logicTableListObject.ownerNameList.push_back(value.asString());
+		if(!valueLogicTableListLogicTable["Logic"].isNull())
+			logicTableListObject.logic = valueLogicTableListLogicTable["Logic"].asString() == "true";
+		if(!valueLogicTableListLogicTable["TableExpr"].isNull())
+			logicTableListObject.tableExpr = valueLogicTableListLogicTable["TableExpr"].asString();
+		if(!valueLogicTableListLogicTable["TableGuid"].isNull())
+			logicTableListObject.tableGuid = valueLogicTableListLogicTable["TableGuid"].asString();
+		if(!valueLogicTableListLogicTable["TableId"].isNull())
+			logicTableListObject.tableId = valueLogicTableListLogicTable["TableId"].asString();
 		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			logicTableListObject.ownerIdList.push_back(value.asString());
+		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
+		for (auto value : allOwnerNameList)
+			logicTableListObject.ownerNameList.push_back(value.asString());
 		logicTableList_.push_back(logicTableListObject);
 	}
 	if(!value["TotalCount"].isNull())

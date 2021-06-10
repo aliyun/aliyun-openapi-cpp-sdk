@@ -51,28 +51,28 @@ void GetOwnerApplyOrderDetailResult::parse(const std::string &payload)
 		if(!ownerApplyOrderDetailNodeResourcesResource["TargetId"].isNull())
 			resourceObject.targetId = ownerApplyOrderDetailNodeResourcesResource["TargetId"].asString();
 		auto resourceDetailNode = value["ResourceDetail"];
-		if(!resourceDetailNode["TableName"].isNull())
-			resourceObject.resourceDetail.tableName = resourceDetailNode["TableName"].asString();
 		if(!resourceDetailNode["SearchName"].isNull())
 			resourceObject.resourceDetail.searchName = resourceDetailNode["SearchName"].asString();
-		if(!resourceDetailNode["EnvType"].isNull())
-			resourceObject.resourceDetail.envType = resourceDetailNode["EnvType"].asString();
 		if(!resourceDetailNode["DbType"].isNull())
 			resourceObject.resourceDetail.dbType = resourceDetailNode["DbType"].asString();
-			auto allOwnerNickNames = resourceDetailNode["OwnerNickNames"]["OwnerNickName"];
-			for (auto value : allOwnerNickNames)
-				resourceObject.resourceDetail.ownerNickNames.push_back(value.asString());
+		if(!resourceDetailNode["EnvType"].isNull())
+			resourceObject.resourceDetail.envType = resourceDetailNode["EnvType"].asString();
+		if(!resourceDetailNode["TableName"].isNull())
+			resourceObject.resourceDetail.tableName = resourceDetailNode["TableName"].asString();
 			auto allOwnerIds = resourceDetailNode["OwnerIds"]["OwnerId"];
 			for (auto value : allOwnerIds)
 				resourceObject.resourceDetail.ownerIds.push_back(value.asString());
+			auto allOwnerNickNames = resourceDetailNode["OwnerNickNames"]["OwnerNickName"];
+			for (auto value : allOwnerNickNames)
+				resourceObject.resourceDetail.ownerNickNames.push_back(value.asString());
 		ownerApplyOrderDetail_.resources.push_back(resourceObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

@@ -43,38 +43,38 @@ void SearchDatabaseResult::parse(const std::string &payload)
 	for (auto valueSearchDatabaseListSearchDatabase : allSearchDatabaseListNode)
 	{
 		SearchDatabase searchDatabaseListObject;
+		if(!valueSearchDatabaseListSearchDatabase["DatabaseId"].isNull())
+			searchDatabaseListObject.databaseId = valueSearchDatabaseListSearchDatabase["DatabaseId"].asString();
+		if(!valueSearchDatabaseListSearchDatabase["Host"].isNull())
+			searchDatabaseListObject.host = valueSearchDatabaseListSearchDatabase["Host"].asString();
 		if(!valueSearchDatabaseListSearchDatabase["DbaId"].isNull())
 			searchDatabaseListObject.dbaId = valueSearchDatabaseListSearchDatabase["DbaId"].asString();
+		if(!valueSearchDatabaseListSearchDatabase["SchemaName"].isNull())
+			searchDatabaseListObject.schemaName = valueSearchDatabaseListSearchDatabase["SchemaName"].asString();
+		if(!valueSearchDatabaseListSearchDatabase["Logic"].isNull())
+			searchDatabaseListObject.logic = valueSearchDatabaseListSearchDatabase["Logic"].asString() == "true";
+		if(!valueSearchDatabaseListSearchDatabase["DatalinkName"].isNull())
+			searchDatabaseListObject.datalinkName = valueSearchDatabaseListSearchDatabase["DatalinkName"].asString();
+		if(!valueSearchDatabaseListSearchDatabase["Port"].isNull())
+			searchDatabaseListObject.port = std::stoi(valueSearchDatabaseListSearchDatabase["Port"].asString());
+		if(!valueSearchDatabaseListSearchDatabase["EnvType"].isNull())
+			searchDatabaseListObject.envType = valueSearchDatabaseListSearchDatabase["EnvType"].asString();
+		if(!valueSearchDatabaseListSearchDatabase["Sid"].isNull())
+			searchDatabaseListObject.sid = valueSearchDatabaseListSearchDatabase["Sid"].asString();
+		if(!valueSearchDatabaseListSearchDatabase["Encoding"].isNull())
+			searchDatabaseListObject.encoding = valueSearchDatabaseListSearchDatabase["Encoding"].asString();
+		if(!valueSearchDatabaseListSearchDatabase["DbType"].isNull())
+			searchDatabaseListObject.dbType = valueSearchDatabaseListSearchDatabase["DbType"].asString();
 		if(!valueSearchDatabaseListSearchDatabase["SearchName"].isNull())
 			searchDatabaseListObject.searchName = valueSearchDatabaseListSearchDatabase["SearchName"].asString();
 		if(!valueSearchDatabaseListSearchDatabase["Alias"].isNull())
 			searchDatabaseListObject.alias = valueSearchDatabaseListSearchDatabase["Alias"].asString();
-		if(!valueSearchDatabaseListSearchDatabase["Port"].isNull())
-			searchDatabaseListObject.port = std::stoi(valueSearchDatabaseListSearchDatabase["Port"].asString());
-		if(!valueSearchDatabaseListSearchDatabase["DatalinkName"].isNull())
-			searchDatabaseListObject.datalinkName = valueSearchDatabaseListSearchDatabase["DatalinkName"].asString();
-		if(!valueSearchDatabaseListSearchDatabase["Encoding"].isNull())
-			searchDatabaseListObject.encoding = valueSearchDatabaseListSearchDatabase["Encoding"].asString();
-		if(!valueSearchDatabaseListSearchDatabase["Host"].isNull())
-			searchDatabaseListObject.host = valueSearchDatabaseListSearchDatabase["Host"].asString();
-		if(!valueSearchDatabaseListSearchDatabase["DatabaseId"].isNull())
-			searchDatabaseListObject.databaseId = valueSearchDatabaseListSearchDatabase["DatabaseId"].asString();
-		if(!valueSearchDatabaseListSearchDatabase["Logic"].isNull())
-			searchDatabaseListObject.logic = valueSearchDatabaseListSearchDatabase["Logic"].asString() == "true";
-		if(!valueSearchDatabaseListSearchDatabase["DbType"].isNull())
-			searchDatabaseListObject.dbType = valueSearchDatabaseListSearchDatabase["DbType"].asString();
-		if(!valueSearchDatabaseListSearchDatabase["EnvType"].isNull())
-			searchDatabaseListObject.envType = valueSearchDatabaseListSearchDatabase["EnvType"].asString();
-		if(!valueSearchDatabaseListSearchDatabase["SchemaName"].isNull())
-			searchDatabaseListObject.schemaName = valueSearchDatabaseListSearchDatabase["SchemaName"].asString();
-		if(!valueSearchDatabaseListSearchDatabase["Sid"].isNull())
-			searchDatabaseListObject.sid = valueSearchDatabaseListSearchDatabase["Sid"].asString();
-		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
-		for (auto value : allOwnerNameList)
-			searchDatabaseListObject.ownerNameList.push_back(value.asString());
 		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			searchDatabaseListObject.ownerIdList.push_back(value.asString());
+		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
+		for (auto value : allOwnerNameList)
+			searchDatabaseListObject.ownerNameList.push_back(value.asString());
 		searchDatabaseList_.push_back(searchDatabaseListObject);
 	}
 	if(!value["TotalCount"].isNull())

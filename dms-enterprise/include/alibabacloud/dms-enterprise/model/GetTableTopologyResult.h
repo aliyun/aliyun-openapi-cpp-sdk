@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						std::string tableNameExpr;
 						std::string dbSearchName;
-						std::string instanceSource;
 						std::string instanceResourceId;
+						std::string instanceSource;
 						long instanceId;
 						std::string tableNameList;
 						long tableCount;

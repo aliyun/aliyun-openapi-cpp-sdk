@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				struct Table
 				{
 					std::string tableId;
-					std::string tableType;
 					std::string description;
-					std::string encoding;
+					std::string tableType;
 					std::string databaseId;
+					std::string encoding;
 					long numRows;
 					std::string tableName;
 					std::string tableGuid;

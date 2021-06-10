@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Dms_enterprise::Model::SetOwnersRequest;
 
-SetOwnersRequest::SetOwnersRequest() :
-	RpcServiceRequest("dms-enterprise", "2018-11-01", "SetOwners")
-{
-	setMethod(HttpRequest::Method::Post);
+SetOwnersRequest::SetOwnersRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "SetOwners") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetOwnersRequest::~SetOwnersRequest()
-{}
+SetOwnersRequest::~SetOwnersRequest() {}
 
-std::string SetOwnersRequest::getResourceId()const
-{
-	return resourceId_;
+std::string SetOwnersRequest::getResourceId() const {
+  return resourceId_;
 }
 
-void SetOwnersRequest::setResourceId(const std::string& resourceId)
-{
-	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+void SetOwnersRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-std::string SetOwnersRequest::getOwnerIds()const
-{
-	return ownerIds_;
+std::string SetOwnersRequest::getOwnerIds() const {
+  return ownerIds_;
 }
 
-void SetOwnersRequest::setOwnerIds(const std::string& ownerIds)
-{
-	ownerIds_ = ownerIds;
-	setParameter("OwnerIds", ownerIds);
+void SetOwnersRequest::setOwnerIds(const std::string &ownerIds) {
+  ownerIds_ = ownerIds;
+  setParameter(std::string("OwnerIds"), ownerIds);
 }
 
-long SetOwnersRequest::getTid()const
-{
-	return tid_;
+long SetOwnersRequest::getTid() const {
+  return tid_;
 }
 
-void SetOwnersRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
+void SetOwnersRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string SetOwnersRequest::getOwnerType()const
-{
-	return ownerType_;
+std::string SetOwnersRequest::getOwnerType() const {
+  return ownerType_;
 }
 
-void SetOwnersRequest::setOwnerType(const std::string& ownerType)
-{
-	ownerType_ = ownerType;
-	setParameter("OwnerType", ownerType);
+void SetOwnersRequest::setOwnerType(const std::string &ownerType) {
+  ownerType_ = ownerType;
+  setParameter(std::string("OwnerType"), ownerType);
 }
 

@@ -42,48 +42,48 @@ void GetDBTopologyResult::parse(const std::string &payload)
 	auto dBTopologyNode = value["DBTopology"];
 	if(!dBTopologyNode["LogicDbId"].isNull())
 		dBTopology_.logicDbId = std::stol(dBTopologyNode["LogicDbId"].asString());
+	if(!dBTopologyNode["LogicDbName"].isNull())
+		dBTopology_.logicDbName = dBTopologyNode["LogicDbName"].asString();
 	if(!dBTopologyNode["SearchName"].isNull())
 		dBTopology_.searchName = dBTopologyNode["SearchName"].asString();
 	if(!dBTopologyNode["Alias"].isNull())
 		dBTopology_.alias = dBTopologyNode["Alias"].asString();
-	if(!dBTopologyNode["LogicDbName"].isNull())
-		dBTopology_.logicDbName = dBTopologyNode["LogicDbName"].asString();
-	if(!dBTopologyNode["EnvType"].isNull())
-		dBTopology_.envType = dBTopologyNode["EnvType"].asString();
 	if(!dBTopologyNode["DbType"].isNull())
 		dBTopology_.dbType = dBTopologyNode["DbType"].asString();
+	if(!dBTopologyNode["EnvType"].isNull())
+		dBTopology_.envType = dBTopologyNode["EnvType"].asString();
 	auto allDBTopologyInfoListNode = dBTopologyNode["DBTopologyInfoList"]["DBTopologyInfo"];
 	for (auto dBTopologyNodeDBTopologyInfoListDBTopologyInfo : allDBTopologyInfoListNode)
 	{
 		DBTopology::DBTopologyInfo dBTopologyInfoObject;
-		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceSource"].isNull())
-			dBTopologyInfoObject.instanceSource = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceSource"].asString();
-		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceResourceId"].isNull())
-			dBTopologyInfoObject.instanceResourceId = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceResourceId"].asString();
-		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceId"].isNull())
-			dBTopologyInfoObject.instanceId = std::stol(dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceId"].asString());
-		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["SearchName"].isNull())
-			dBTopologyInfoObject.searchName = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["SearchName"].asString();
 		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["DbId"].isNull())
 			dBTopologyInfoObject.dbId = std::stol(dBTopologyNodeDBTopologyInfoListDBTopologyInfo["DbId"].asString());
-		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["CatalogName"].isNull())
-			dBTopologyInfoObject.catalogName = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["CatalogName"].asString();
-		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["RegionId"].isNull())
-			dBTopologyInfoObject.regionId = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["RegionId"].asString();
-		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["EnvType"].isNull())
-			dBTopologyInfoObject.envType = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["EnvType"].asString();
-		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["DbType"].isNull())
-			dBTopologyInfoObject.dbType = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["DbType"].asString();
 		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["SchemaName"].isNull())
 			dBTopologyInfoObject.schemaName = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["SchemaName"].asString();
+		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["CatalogName"].isNull())
+			dBTopologyInfoObject.catalogName = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["CatalogName"].asString();
+		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["SearchName"].isNull())
+			dBTopologyInfoObject.searchName = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["SearchName"].asString();
+		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["DbType"].isNull())
+			dBTopologyInfoObject.dbType = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["DbType"].asString();
+		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["EnvType"].isNull())
+			dBTopologyInfoObject.envType = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["EnvType"].asString();
+		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceId"].isNull())
+			dBTopologyInfoObject.instanceId = std::stol(dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceId"].asString());
+		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["RegionId"].isNull())
+			dBTopologyInfoObject.regionId = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["RegionId"].asString();
+		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceResourceId"].isNull())
+			dBTopologyInfoObject.instanceResourceId = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceResourceId"].asString();
+		if(!dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceSource"].isNull())
+			dBTopologyInfoObject.instanceSource = dBTopologyNodeDBTopologyInfoListDBTopologyInfo["InstanceSource"].asString();
 		dBTopology_.dBTopologyInfoList.push_back(dBTopologyInfoObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

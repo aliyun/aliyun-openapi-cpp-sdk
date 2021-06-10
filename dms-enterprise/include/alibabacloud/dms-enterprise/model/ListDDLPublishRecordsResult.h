@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						struct PublishJob
 						{
-							std::string statusDesc;
 							std::string tableName;
+							std::string statusDesc;
 							std::string scripts;
 							std::string taskJobStatus;
 							long executeCount;
@@ -50,18 +50,18 @@ namespace AlibabaCloud
 						std::string publishStrategy;
 						std::vector<PublishTaskInfo::PublishJob> publishJobList;
 						long dbId;
-						std::string planTime;
 						bool logic;
+						std::string planTime;
 					};
 					std::string statusDesc;
 					std::vector<DDLPublishRecord::PublishTaskInfo> publishTaskInfoList;
 					std::string auditStatus;
 					long creatorId;
-					bool finality;
 					std::string auditExpireTime;
+					bool finality;
 					long workflowInstanceId;
-					std::string riskLevel;
 					std::string finalityReason;
+					std::string riskLevel;
 					std::string publishStatus;
 				};
 

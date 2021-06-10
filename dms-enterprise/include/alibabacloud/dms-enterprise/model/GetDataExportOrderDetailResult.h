@@ -34,22 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct DataExportOrderDetail
 				{
-					struct OrderDetail
-					{
-						bool ignoreAffectRows;
-						std::string exeSQL;
-						std::string classify;
-						std::string ignoreAffectRowsReason;
-						std::string database;
-						int dbId;
-						long actualAffectRows;
-						bool logic;
-						std::string envType;
-					};
 					struct KeyInfo
 					{
 						std::string jobStatus;
 						long preCheckId;
+					};
+					struct OrderDetail
+					{
+						bool ignoreAffectRows;
+						std::string classify;
+						std::string exeSQL;
+						std::string ignoreAffectRowsReason;
+						std::string database;
+						int dbId;
+						bool logic;
+						long actualAffectRows;
+						std::string envType;
 					};
 					OrderDetail orderDetail;
 					KeyInfo keyInfo;

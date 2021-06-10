@@ -40,46 +40,46 @@ void GetApprovalDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto approvalDetailNode = value["ApprovalDetail"];
-	if(!approvalDetailNode["OrderType"].isNull())
-		approvalDetail_.orderType = approvalDetailNode["OrderType"].asString();
 	if(!approvalDetailNode["Description"].isNull())
 		approvalDetail_.description = approvalDetailNode["Description"].asString();
-	if(!approvalDetailNode["WorkflowInsCode"].isNull())
-		approvalDetail_.workflowInsCode = approvalDetailNode["WorkflowInsCode"].asString();
-	if(!approvalDetailNode["AuditId"].isNull())
-		approvalDetail_.auditId = std::stol(approvalDetailNode["AuditId"].asString());
+	if(!approvalDetailNode["OrderType"].isNull())
+		approvalDetail_.orderType = approvalDetailNode["OrderType"].asString();
 	if(!approvalDetailNode["Title"].isNull())
 		approvalDetail_.title = approvalDetailNode["Title"].asString();
+	if(!approvalDetailNode["AuditId"].isNull())
+		approvalDetail_.auditId = std::stol(approvalDetailNode["AuditId"].asString());
 	if(!approvalDetailNode["OrderId"].isNull())
 		approvalDetail_.orderId = std::stol(approvalDetailNode["OrderId"].asString());
-	auto allCurrentHandlersNode = approvalDetailNode["CurrentHandlers"]["CurrentHandler"];
-	for (auto approvalDetailNodeCurrentHandlersCurrentHandler : allCurrentHandlersNode)
-	{
-		ApprovalDetail::CurrentHandler currentHandlerObject;
-		if(!approvalDetailNodeCurrentHandlersCurrentHandler["Id"].isNull())
-			currentHandlerObject.id = std::stol(approvalDetailNodeCurrentHandlersCurrentHandler["Id"].asString());
-		if(!approvalDetailNodeCurrentHandlersCurrentHandler["NickName"].isNull())
-			currentHandlerObject.nickName = approvalDetailNodeCurrentHandlersCurrentHandler["NickName"].asString();
-		approvalDetail_.currentHandlers.push_back(currentHandlerObject);
-	}
+	if(!approvalDetailNode["WorkflowInsCode"].isNull())
+		approvalDetail_.workflowInsCode = approvalDetailNode["WorkflowInsCode"].asString();
 	auto allWorkflowNodesNode = approvalDetailNode["WorkflowNodes"]["WorkflowNode"];
 	for (auto approvalDetailNodeWorkflowNodesWorkflowNode : allWorkflowNodesNode)
 	{
 		ApprovalDetail::WorkflowNode workflowNodeObject;
 		if(!approvalDetailNodeWorkflowNodesWorkflowNode["OperateTime"].isNull())
 			workflowNodeObject.operateTime = approvalDetailNodeWorkflowNodesWorkflowNode["OperateTime"].asString();
-		if(!approvalDetailNodeWorkflowNodesWorkflowNode["WorkflowInsCode"].isNull())
-			workflowNodeObject.workflowInsCode = approvalDetailNodeWorkflowNodesWorkflowNode["WorkflowInsCode"].asString();
+		if(!approvalDetailNodeWorkflowNodesWorkflowNode["OperatorId"].isNull())
+			workflowNodeObject.operatorId = std::stol(approvalDetailNodeWorkflowNodesWorkflowNode["OperatorId"].asString());
 		if(!approvalDetailNodeWorkflowNodesWorkflowNode["NodeName"].isNull())
 			workflowNodeObject.nodeName = approvalDetailNodeWorkflowNodesWorkflowNode["NodeName"].asString();
 		if(!approvalDetailNodeWorkflowNodesWorkflowNode["OperateComment"].isNull())
 			workflowNodeObject.operateComment = approvalDetailNodeWorkflowNodesWorkflowNode["OperateComment"].asString();
-		if(!approvalDetailNodeWorkflowNodesWorkflowNode["OperatorId"].isNull())
-			workflowNodeObject.operatorId = std::stol(approvalDetailNodeWorkflowNodesWorkflowNode["OperatorId"].asString());
+		if(!approvalDetailNodeWorkflowNodesWorkflowNode["WorkflowInsCode"].isNull())
+			workflowNodeObject.workflowInsCode = approvalDetailNodeWorkflowNodesWorkflowNode["WorkflowInsCode"].asString();
 		auto allAuditUserIdList = value["AuditUserIdList"]["AuditUserIds"];
 		for (auto value : allAuditUserIdList)
 			workflowNodeObject.auditUserIdList.push_back(value.asString());
 		approvalDetail_.workflowNodes.push_back(workflowNodeObject);
+	}
+	auto allCurrentHandlersNode = approvalDetailNode["CurrentHandlers"]["CurrentHandler"];
+	for (auto approvalDetailNodeCurrentHandlersCurrentHandler : allCurrentHandlersNode)
+	{
+		ApprovalDetail::CurrentHandler currentHandlerObject;
+		if(!approvalDetailNodeCurrentHandlersCurrentHandler["NickName"].isNull())
+			currentHandlerObject.nickName = approvalDetailNodeCurrentHandlersCurrentHandler["NickName"].asString();
+		if(!approvalDetailNodeCurrentHandlersCurrentHandler["Id"].isNull())
+			currentHandlerObject.id = std::stol(approvalDetailNodeCurrentHandlersCurrentHandler["Id"].asString());
+		approvalDetail_.currentHandlers.push_back(currentHandlerObject);
 	}
 		auto allReasonList = approvalDetailNode["ReasonList"]["Reasons"];
 		for (auto value : allReasonList)

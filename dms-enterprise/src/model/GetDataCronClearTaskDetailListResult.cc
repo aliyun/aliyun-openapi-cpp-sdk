@@ -43,24 +43,24 @@ void GetDataCronClearTaskDetailListResult::parse(const std::string &payload)
 	for (auto valueDataCronClearTaskDetailListDataCronClearTaskDetail : allDataCronClearTaskDetailListNode)
 	{
 		DataCronClearTaskDetail dataCronClearTaskDetailListObject;
-		if(!valueDataCronClearTaskDetailListDataCronClearTaskDetail["jobStatus"].isNull())
-			dataCronClearTaskDetailListObject.jobStatus = valueDataCronClearTaskDetailListDataCronClearTaskDetail["jobStatus"].asString();
-		if(!valueDataCronClearTaskDetailListDataCronClearTaskDetail["CreateTime"].isNull())
-			dataCronClearTaskDetailListObject.createTime = valueDataCronClearTaskDetailListDataCronClearTaskDetail["CreateTime"].asString();
-		if(!valueDataCronClearTaskDetailListDataCronClearTaskDetail["ActualAffectRows"].isNull())
-			dataCronClearTaskDetailListObject.actualAffectRows = std::stol(valueDataCronClearTaskDetailListDataCronClearTaskDetail["ActualAffectRows"].asString());
 		if(!valueDataCronClearTaskDetailListDataCronClearTaskDetail["DBTaskGroupId"].isNull())
 			dataCronClearTaskDetailListObject.dBTaskGroupId = std::stol(valueDataCronClearTaskDetailListDataCronClearTaskDetail["DBTaskGroupId"].asString());
+		if(!valueDataCronClearTaskDetailListDataCronClearTaskDetail["jobStatus"].isNull())
+			dataCronClearTaskDetailListObject.jobStatus = valueDataCronClearTaskDetailListDataCronClearTaskDetail["jobStatus"].asString();
+		if(!valueDataCronClearTaskDetailListDataCronClearTaskDetail["ActualAffectRows"].isNull())
+			dataCronClearTaskDetailListObject.actualAffectRows = std::stol(valueDataCronClearTaskDetailListDataCronClearTaskDetail["ActualAffectRows"].asString());
+		if(!valueDataCronClearTaskDetailListDataCronClearTaskDetail["CreateTime"].isNull())
+			dataCronClearTaskDetailListObject.createTime = valueDataCronClearTaskDetailListDataCronClearTaskDetail["CreateTime"].asString();
 		dataCronClearTaskDetailList_.push_back(dataCronClearTaskDetailListObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 

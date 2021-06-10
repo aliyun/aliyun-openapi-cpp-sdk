@@ -38,29 +38,29 @@ namespace AlibabaCloud
 					{
 						long estimateAffectRows;
 						bool ignoreAffectRows;
-						std::string exeSQL;
 						std::string classify;
-						std::string ignoreAffectRowsReason;
+						std::string exeSQL;
 						std::string attachmentName;
+						std::string ignoreAffectRowsReason;
 						std::string sqlType;
 						std::string rbSQLType;
 						long actualAffectRows;
 						std::string rbAttachmentName;
 						std::string rbSQL;
 					};
-					struct Database
-					{
-						std::string searchName;
-						int dbId;
-						bool logic;
-						std::string envType;
-						std::string dbType;
-					};
 					struct TaskCheckDO
 					{
 						std::string userTip;
 						std::string checkStep;
 						std::string checkStatus;
+					};
+					struct Database
+					{
+						std::string searchName;
+						int dbId;
+						bool logic;
+						std::string dbType;
+						std::string envType;
 					};
 					OrderDetail orderDetail;
 					std::string status;

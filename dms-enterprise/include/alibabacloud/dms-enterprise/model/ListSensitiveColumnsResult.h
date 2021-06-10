@@ -34,11 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct SensitiveColumn
 				{
-					std::string tableName;
 					std::string columnName;
+					std::string tableName;
 					long columnCount;
-					std::string functionType;
 					std::string securityLevel;
+					std::string functionType;
 					std::string schemaName;
 				};
 

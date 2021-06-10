@@ -47,22 +47,22 @@ void ListWorkFlowNodesResult::parse(const std::string &payload)
 			workflowNodesObject.comment = valueWorkflowNodesWorkflowNode["Comment"].asString();
 		if(!valueWorkflowNodesWorkflowNode["CreateUserNickName"].isNull())
 			workflowNodesObject.createUserNickName = valueWorkflowNodesWorkflowNode["CreateUserNickName"].asString();
-		if(!valueWorkflowNodesWorkflowNode["NodeName"].isNull())
-			workflowNodesObject.nodeName = valueWorkflowNodesWorkflowNode["NodeName"].asString();
 		if(!valueWorkflowNodesWorkflowNode["NodeType"].isNull())
 			workflowNodesObject.nodeType = valueWorkflowNodesWorkflowNode["NodeType"].asString();
-		if(!valueWorkflowNodesWorkflowNode["NodeId"].isNull())
-			workflowNodesObject.nodeId = std::stol(valueWorkflowNodesWorkflowNode["NodeId"].asString());
+		if(!valueWorkflowNodesWorkflowNode["NodeName"].isNull())
+			workflowNodesObject.nodeName = valueWorkflowNodesWorkflowNode["NodeName"].asString();
 		if(!valueWorkflowNodesWorkflowNode["CreateUserId"].isNull())
 			workflowNodesObject.createUserId = std::stol(valueWorkflowNodesWorkflowNode["CreateUserId"].asString());
+		if(!valueWorkflowNodesWorkflowNode["NodeId"].isNull())
+			workflowNodesObject.nodeId = std::stol(valueWorkflowNodesWorkflowNode["NodeId"].asString());
 		auto allAuditUsersNode = valueWorkflowNodesWorkflowNode["AuditUsers"]["AuditUser"];
 		for (auto valueWorkflowNodesWorkflowNodeAuditUsersAuditUser : allAuditUsersNode)
 		{
 			WorkflowNode::AuditUser auditUsersObject;
-			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["UserId"].isNull())
-				auditUsersObject.userId = std::stol(valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["UserId"].asString());
 			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["RealName"].isNull())
 				auditUsersObject.realName = valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["RealName"].asString();
+			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["UserId"].isNull())
+				auditUsersObject.userId = std::stol(valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["UserId"].asString());
 			if(!valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["NickName"].isNull())
 				auditUsersObject.nickName = valueWorkflowNodesWorkflowNodeAuditUsersAuditUser["NickName"].asString();
 			workflowNodesObject.auditUsers.push_back(auditUsersObject);

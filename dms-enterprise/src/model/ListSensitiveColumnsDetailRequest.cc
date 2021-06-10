@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Dms_enterprise::Model::ListSensitiveColumnsDetailRequest;
 
-ListSensitiveColumnsDetailRequest::ListSensitiveColumnsDetailRequest() :
-	RpcServiceRequest("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail")
-{
-	setMethod(HttpRequest::Method::Post);
+ListSensitiveColumnsDetailRequest::ListSensitiveColumnsDetailRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListSensitiveColumnsDetailRequest::~ListSensitiveColumnsDetailRequest()
-{}
+ListSensitiveColumnsDetailRequest::~ListSensitiveColumnsDetailRequest() {}
 
-std::string ListSensitiveColumnsDetailRequest::getSchemaName()const
-{
-	return schemaName_;
+std::string ListSensitiveColumnsDetailRequest::getSchemaName() const {
+  return schemaName_;
 }
 
-void ListSensitiveColumnsDetailRequest::setSchemaName(const std::string& schemaName)
-{
-	schemaName_ = schemaName;
-	setParameter("SchemaName", schemaName);
+void ListSensitiveColumnsDetailRequest::setSchemaName(const std::string &schemaName) {
+  schemaName_ = schemaName;
+  setParameter(std::string("SchemaName"), schemaName);
 }
 
-std::string ListSensitiveColumnsDetailRequest::getColumnName()const
-{
-	return columnName_;
+std::string ListSensitiveColumnsDetailRequest::getColumnName() const {
+  return columnName_;
 }
 
-void ListSensitiveColumnsDetailRequest::setColumnName(const std::string& columnName)
-{
-	columnName_ = columnName;
-	setParameter("ColumnName", columnName);
+void ListSensitiveColumnsDetailRequest::setColumnName(const std::string &columnName) {
+  columnName_ = columnName;
+  setParameter(std::string("ColumnName"), columnName);
 }
 
-long ListSensitiveColumnsDetailRequest::getTid()const
-{
-	return tid_;
+long ListSensitiveColumnsDetailRequest::getTid() const {
+  return tid_;
 }
 
-void ListSensitiveColumnsDetailRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
+void ListSensitiveColumnsDetailRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string ListSensitiveColumnsDetailRequest::getTableName()const
-{
-	return tableName_;
+std::string ListSensitiveColumnsDetailRequest::getTableName() const {
+  return tableName_;
 }
 
-void ListSensitiveColumnsDetailRequest::setTableName(const std::string& tableName)
-{
-	tableName_ = tableName;
-	setParameter("TableName", tableName);
+void ListSensitiveColumnsDetailRequest::setTableName(const std::string &tableName) {
+  tableName_ = tableName;
+  setParameter(std::string("TableName"), tableName);
 }
 

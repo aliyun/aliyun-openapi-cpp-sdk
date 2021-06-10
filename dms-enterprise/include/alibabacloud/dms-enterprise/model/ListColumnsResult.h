@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				struct Column
 				{
 					std::string columnId;
-					std::string description;
 					std::string columnType;
+					std::string description;
 					bool autoIncrement;
 					std::string functionType;
 					int dataPrecision;
-					std::string columnName;
 					std::string defaultValue;
+					std::string columnName;
 					std::string securityLevel;
-					long dataLength;
 					int dataScale;
+					long dataLength;
 					bool sensitive;
 					bool nullable;
 				};

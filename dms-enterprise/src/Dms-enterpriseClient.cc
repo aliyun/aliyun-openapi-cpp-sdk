@@ -339,6 +339,42 @@ Dms_enterpriseClient::CreatePublishGroupTaskOutcomeCallable Dms_enterpriseClient
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateSQLReviewOrderOutcome Dms_enterpriseClient::createSQLReviewOrder(const CreateSQLReviewOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSQLReviewOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSQLReviewOrderOutcome(CreateSQLReviewOrderResult(outcome.result()));
+	else
+		return CreateSQLReviewOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createSQLReviewOrderAsync(const CreateSQLReviewOrderRequest& request, const CreateSQLReviewOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSQLReviewOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateSQLReviewOrderOutcomeCallable Dms_enterpriseClient::createSQLReviewOrderCallable(const CreateSQLReviewOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSQLReviewOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createSQLReviewOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CreateStructSyncOrderOutcome Dms_enterpriseClient::createStructSyncOrder(const CreateStructSyncOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1419,6 +1455,42 @@ Dms_enterpriseClient::GetPhysicalDatabaseOutcomeCallable Dms_enterpriseClient::g
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetSQLReviewCheckResultStatusOutcome Dms_enterpriseClient::getSQLReviewCheckResultStatus(const GetSQLReviewCheckResultStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSQLReviewCheckResultStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSQLReviewCheckResultStatusOutcome(GetSQLReviewCheckResultStatusResult(outcome.result()));
+	else
+		return GetSQLReviewCheckResultStatusOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getSQLReviewCheckResultStatusAsync(const GetSQLReviewCheckResultStatusRequest& request, const GetSQLReviewCheckResultStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSQLReviewCheckResultStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetSQLReviewCheckResultStatusOutcomeCallable Dms_enterpriseClient::getSQLReviewCheckResultStatusCallable(const GetSQLReviewCheckResultStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSQLReviewCheckResultStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getSQLReviewCheckResultStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetStructSyncExecSqlDetailOutcome Dms_enterpriseClient::getStructSyncExecSqlDetail(const GetStructSyncExecSqlDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +2241,42 @@ Dms_enterpriseClient::ListOrdersOutcomeCallable Dms_enterpriseClient::listOrders
 			[this, request]()
 			{
 			return this->listOrders(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListSQLReviewOriginSQLOutcome Dms_enterpriseClient::listSQLReviewOriginSQL(const ListSQLReviewOriginSQLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSQLReviewOriginSQLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSQLReviewOriginSQLOutcome(ListSQLReviewOriginSQLResult(outcome.result()));
+	else
+		return ListSQLReviewOriginSQLOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listSQLReviewOriginSQLAsync(const ListSQLReviewOriginSQLRequest& request, const ListSQLReviewOriginSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSQLReviewOriginSQL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListSQLReviewOriginSQLOutcomeCallable Dms_enterpriseClient::listSQLReviewOriginSQLCallable(const ListSQLReviewOriginSQLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSQLReviewOriginSQLOutcome()>>(
+			[this, request]()
+			{
+			return this->listSQLReviewOriginSQL(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

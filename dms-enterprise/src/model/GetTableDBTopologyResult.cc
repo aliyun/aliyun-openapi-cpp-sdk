@@ -48,14 +48,14 @@ void GetTableDBTopologyResult::parse(const std::string &payload)
 	for (auto dBTopologyNodeDataSourceListDataSource : allDataSourceListNode)
 	{
 		DBTopology::DataSource dataSourceObject;
-		if(!dBTopologyNodeDataSourceListDataSource["Port"].isNull())
-			dataSourceObject.port = std::stoi(dBTopologyNodeDataSourceListDataSource["Port"].asString());
+		if(!dBTopologyNodeDataSourceListDataSource["Sid"].isNull())
+			dataSourceObject.sid = dBTopologyNodeDataSourceListDataSource["Sid"].asString();
 		if(!dBTopologyNodeDataSourceListDataSource["Host"].isNull())
 			dataSourceObject.host = dBTopologyNodeDataSourceListDataSource["Host"].asString();
 		if(!dBTopologyNodeDataSourceListDataSource["DbType"].isNull())
 			dataSourceObject.dbType = dBTopologyNodeDataSourceListDataSource["DbType"].asString();
-		if(!dBTopologyNodeDataSourceListDataSource["Sid"].isNull())
-			dataSourceObject.sid = dBTopologyNodeDataSourceListDataSource["Sid"].asString();
+		if(!dBTopologyNodeDataSourceListDataSource["Port"].isNull())
+			dataSourceObject.port = std::stoi(dBTopologyNodeDataSourceListDataSource["Port"].asString());
 		auto allDatabaseListNode = dBTopologyNodeDataSourceListDataSource["DatabaseList"]["Database"];
 		for (auto dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase : allDatabaseListNode)
 		{
@@ -64,20 +64,20 @@ void GetTableDBTopologyResult::parse(const std::string &payload)
 				databaseListObject.dbId = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["DbId"].asString();
 			if(!dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["DbName"].isNull())
 				databaseListObject.dbName = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["DbName"].asString();
-			if(!dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["EnvType"].isNull())
-				databaseListObject.envType = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["EnvType"].asString();
 			if(!dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["DbType"].isNull())
 				databaseListObject.dbType = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["DbType"].asString();
+			if(!dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["EnvType"].isNull())
+				databaseListObject.envType = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["EnvType"].asString();
 			auto allTableListNode = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabase["TableList"]["Table"];
 			for (auto dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable : allTableListNode)
 			{
 				DBTopology::DataSource::Database::Table tableListObject;
-				if(!dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable["TableId"].isNull())
-					tableListObject.tableId = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable["TableId"].asString();
 				if(!dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable["TableName"].isNull())
 					tableListObject.tableName = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable["TableName"].asString();
 				if(!dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable["TableType"].isNull())
 					tableListObject.tableType = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable["TableType"].asString();
+				if(!dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable["TableId"].isNull())
+					tableListObject.tableId = dBTopologyNodeDataSourceListDataSourceDatabaseListDatabaseTableListTable["TableId"].asString();
 				databaseListObject.tableList.push_back(tableListObject);
 			}
 			dataSourceObject.databaseList.push_back(databaseListObject);

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Dms_enterprise::Model::CreateOrderRequest;
 
-CreateOrderRequest::CreateOrderRequest() :
-	RpcServiceRequest("dms-enterprise", "2018-11-01", "CreateOrder")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateOrderRequest::CreateOrderRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "CreateOrder") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateOrderRequest::~CreateOrderRequest()
-{}
+CreateOrderRequest::~CreateOrderRequest() {}
 
-long CreateOrderRequest::getTid()const
-{
-	return tid_;
+long CreateOrderRequest::getTid() const {
+  return tid_;
 }
 
-void CreateOrderRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
+void CreateOrderRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string CreateOrderRequest::getPluginType()const
-{
-	return pluginType_;
+std::string CreateOrderRequest::getPluginType() const {
+  return pluginType_;
 }
 
-void CreateOrderRequest::setPluginType(const std::string& pluginType)
-{
-	pluginType_ = pluginType;
-	setParameter("PluginType", pluginType);
+void CreateOrderRequest::setPluginType(const std::string &pluginType) {
+  pluginType_ = pluginType;
+  setParameter(std::string("PluginType"), pluginType);
 }
 
-std::string CreateOrderRequest::getAttachmentKey()const
-{
-	return attachmentKey_;
+std::string CreateOrderRequest::getAttachmentKey() const {
+  return attachmentKey_;
 }
 
-void CreateOrderRequest::setAttachmentKey(const std::string& attachmentKey)
-{
-	attachmentKey_ = attachmentKey;
-	setParameter("AttachmentKey", attachmentKey);
+void CreateOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
+  attachmentKey_ = attachmentKey;
+  setParameter(std::string("AttachmentKey"), attachmentKey);
 }
 
-std::string CreateOrderRequest::getComment()const
-{
-	return comment_;
+std::string CreateOrderRequest::getComment() const {
+  return comment_;
 }
 
-void CreateOrderRequest::setComment(const std::string& comment)
-{
-	comment_ = comment;
-	setParameter("Comment", comment);
+void CreateOrderRequest::setComment(const std::string &comment) {
+  comment_ = comment;
+  setParameter(std::string("Comment"), comment);
 }
 
-std::map<std::string, std::string> CreateOrderRequest::getPluginParam()const
-{
-	return pluginParam_;
+std::map<std::string, std::string> CreateOrderRequest::getPluginParam() const {
+  return pluginParam_;
 }
 
-void CreateOrderRequest::setPluginParam(const std::map<std::string, std::string>& pluginParam)
-{
-	pluginParam_ = pluginParam;
-	setJsonParameters("PluginParam", pluginParam);
+void CreateOrderRequest::setPluginParam(std::map<std::string, std::string> pluginParam) {
+  pluginParam_ = pluginParam;
+  setBodyParameter(std::string("PluginParam"), pluginParam);
 }
 
-std::string CreateOrderRequest::getRelatedUserList()const
-{
-	return relatedUserList_;
+std::string CreateOrderRequest::getRelatedUserList() const {
+  return relatedUserList_;
 }
 
-void CreateOrderRequest::setRelatedUserList(const std::string& relatedUserList)
-{
-	relatedUserList_ = relatedUserList;
-	setParameter("RelatedUserList", relatedUserList);
+void CreateOrderRequest::setRelatedUserList(const std::string &relatedUserList) {
+  relatedUserList_ = relatedUserList;
+  setParameter(std::string("RelatedUserList"), relatedUserList);
 }
 

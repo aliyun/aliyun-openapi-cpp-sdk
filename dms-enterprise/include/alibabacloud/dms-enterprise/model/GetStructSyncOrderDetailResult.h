@@ -39,16 +39,16 @@ namespace AlibabaCloud
 						std::string searchName;
 						long dbId;
 						bool logic;
-						std::string envType;
 						std::string dbType;
+						std::string envType;
 					};
 					struct TargetDatabaseInfo
 					{
 						std::string searchName;
 						long dbId;
 						bool logic;
-						std::string envType;
 						std::string dbType;
+						std::string envType;
 					};
 					struct SourceVersionInfo
 					{

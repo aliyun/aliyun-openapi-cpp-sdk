@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct StructSyncJobDetail
 				{
-					long sqlCount;
 					std::string jobStatus;
+					long sqlCount;
 					std::string message;
 					long tableAnalyzed;
 					long tableCount;

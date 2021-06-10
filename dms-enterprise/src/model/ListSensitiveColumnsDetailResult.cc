@@ -43,26 +43,26 @@ void ListSensitiveColumnsDetailResult::parse(const std::string &payload)
 	for (auto valueSensitiveColumnsDetailListSensitiveColumnsDetail : allSensitiveColumnsDetailListNode)
 	{
 		SensitiveColumnsDetail sensitiveColumnsDetailListObject;
-		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["TableName"].isNull())
-			sensitiveColumnsDetailListObject.tableName = valueSensitiveColumnsDetailListSensitiveColumnsDetail["TableName"].asString();
-		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnName"].isNull())
-			sensitiveColumnsDetailListObject.columnName = valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnName"].asString();
-		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnType"].isNull())
-			sensitiveColumnsDetailListObject.columnType = valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnType"].asString();
-		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["SearchName"].isNull())
-			sensitiveColumnsDetailListObject.searchName = valueSensitiveColumnsDetailListSensitiveColumnsDetail["SearchName"].asString();
-		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnDescription"].isNull())
-			sensitiveColumnsDetailListObject.columnDescription = valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnDescription"].asString();
 		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["DbId"].isNull())
 			sensitiveColumnsDetailListObject.dbId = std::stol(valueSensitiveColumnsDetailListSensitiveColumnsDetail["DbId"].asString());
-		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["Logic"].isNull())
-			sensitiveColumnsDetailListObject.logic = valueSensitiveColumnsDetailListSensitiveColumnsDetail["Logic"].asString() == "true";
-		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["EnvType"].isNull())
-			sensitiveColumnsDetailListObject.envType = valueSensitiveColumnsDetailListSensitiveColumnsDetail["EnvType"].asString();
-		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["SchemaName"].isNull())
-			sensitiveColumnsDetailListObject.schemaName = valueSensitiveColumnsDetailListSensitiveColumnsDetail["SchemaName"].asString();
+		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnName"].isNull())
+			sensitiveColumnsDetailListObject.columnName = valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnName"].asString();
+		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnDescription"].isNull())
+			sensitiveColumnsDetailListObject.columnDescription = valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnDescription"].asString();
+		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["TableName"].isNull())
+			sensitiveColumnsDetailListObject.tableName = valueSensitiveColumnsDetailListSensitiveColumnsDetail["TableName"].asString();
 		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["DbType"].isNull())
 			sensitiveColumnsDetailListObject.dbType = valueSensitiveColumnsDetailListSensitiveColumnsDetail["DbType"].asString();
+		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnType"].isNull())
+			sensitiveColumnsDetailListObject.columnType = valueSensitiveColumnsDetailListSensitiveColumnsDetail["ColumnType"].asString();
+		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["Logic"].isNull())
+			sensitiveColumnsDetailListObject.logic = valueSensitiveColumnsDetailListSensitiveColumnsDetail["Logic"].asString() == "true";
+		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["SchemaName"].isNull())
+			sensitiveColumnsDetailListObject.schemaName = valueSensitiveColumnsDetailListSensitiveColumnsDetail["SchemaName"].asString();
+		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["SearchName"].isNull())
+			sensitiveColumnsDetailListObject.searchName = valueSensitiveColumnsDetailListSensitiveColumnsDetail["SearchName"].asString();
+		if(!valueSensitiveColumnsDetailListSensitiveColumnsDetail["EnvType"].isNull())
+			sensitiveColumnsDetailListObject.envType = valueSensitiveColumnsDetailListSensitiveColumnsDetail["EnvType"].asString();
 		sensitiveColumnsDetailList_.push_back(sensitiveColumnsDetailListObject);
 	}
 	if(!value["ErrorCode"].isNull())

@@ -34,19 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct DetailInfo
 				{
-					struct Column
-					{
-						std::string columnId;
-						std::string columnName;
-						std::string columnType;
-						std::string description;
-						std::string position;
-						bool autoIncrement;
-						long dataLength;
-						int dataScale;
-						int dataPrecision;
-						bool nullable;
-					};
 					struct Index
 					{
 						std::string indexName;
@@ -54,6 +41,19 @@ namespace AlibabaCloud
 						std::vector<std::string> indexColumns;
 						bool unique;
 						std::string indexType;
+					};
+					struct Column
+					{
+						std::string columnId;
+						std::string columnName;
+						std::string description;
+						std::string columnType;
+						std::string position;
+						bool autoIncrement;
+						int dataScale;
+						long dataLength;
+						int dataPrecision;
+						bool nullable;
 					};
 					std::vector<Column> columnList;
 					std::vector<Index> indexList;

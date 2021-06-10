@@ -40,16 +40,16 @@ void GetStructSyncExecSqlDetailResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto structSyncExecSqlDetailNode = value["StructSyncExecSqlDetail"];
-	if(!structSyncExecSqlDetailNode["ExecSql"].isNull())
-		structSyncExecSqlDetail_.execSql = structSyncExecSqlDetailNode["ExecSql"].asString();
 	if(!structSyncExecSqlDetailNode["TotalSqlCount"].isNull())
 		structSyncExecSqlDetail_.totalSqlCount = std::stol(structSyncExecSqlDetailNode["TotalSqlCount"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!structSyncExecSqlDetailNode["ExecSql"].isNull())
+		structSyncExecSqlDetail_.execSql = structSyncExecSqlDetailNode["ExecSql"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

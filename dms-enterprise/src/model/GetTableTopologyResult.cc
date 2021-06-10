@@ -40,46 +40,46 @@ void GetTableTopologyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto tableTopologyNode = value["TableTopology"];
-	if(!tableTopologyNode["TableName"].isNull())
-		tableTopology_.tableName = tableTopologyNode["TableName"].asString();
 	if(!tableTopologyNode["TableGuid"].isNull())
 		tableTopology_.tableGuid = tableTopologyNode["TableGuid"].asString();
+	if(!tableTopologyNode["TableName"].isNull())
+		tableTopology_.tableName = tableTopologyNode["TableName"].asString();
 	if(!tableTopologyNode["Logic"].isNull())
 		tableTopology_.logic = tableTopologyNode["Logic"].asString() == "true";
 	auto allTableTopologyInfoListNode = tableTopologyNode["TableTopologyInfoList"]["TableTopologyInfo"];
 	for (auto tableTopologyNodeTableTopologyInfoListTableTopologyInfo : allTableTopologyInfoListNode)
 	{
 		TableTopology::TableTopologyInfo tableTopologyInfoObject;
-		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["TableNameExpr"].isNull())
-			tableTopologyInfoObject.tableNameExpr = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["TableNameExpr"].asString();
-		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbSearchName"].isNull())
-			tableTopologyInfoObject.dbSearchName = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbSearchName"].asString();
-		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceSource"].isNull())
-			tableTopologyInfoObject.instanceSource = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceSource"].asString();
-		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceResourceId"].isNull())
-			tableTopologyInfoObject.instanceResourceId = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceResourceId"].asString();
-		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceId"].isNull())
-			tableTopologyInfoObject.instanceId = std::stol(tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceId"].asString());
 		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["TableNameList"].isNull())
 			tableTopologyInfoObject.tableNameList = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["TableNameList"].asString();
+		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["TableNameExpr"].isNull())
+			tableTopologyInfoObject.tableNameExpr = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["TableNameExpr"].asString();
 		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["TableCount"].isNull())
 			tableTopologyInfoObject.tableCount = std::stol(tableTopologyNodeTableTopologyInfoListTableTopologyInfo["TableCount"].asString());
 		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbId"].isNull())
 			tableTopologyInfoObject.dbId = std::stol(tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbId"].asString());
-		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbName"].isNull())
-			tableTopologyInfoObject.dbName = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbName"].asString();
+		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbSearchName"].isNull())
+			tableTopologyInfoObject.dbSearchName = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbSearchName"].asString();
+		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceId"].isNull())
+			tableTopologyInfoObject.instanceId = std::stol(tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceId"].asString());
 		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["RegionId"].isNull())
 			tableTopologyInfoObject.regionId = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["RegionId"].asString();
+		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceResourceId"].isNull())
+			tableTopologyInfoObject.instanceResourceId = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceResourceId"].asString();
+		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceSource"].isNull())
+			tableTopologyInfoObject.instanceSource = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["InstanceSource"].asString();
+		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbName"].isNull())
+			tableTopologyInfoObject.dbName = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbName"].asString();
 		if(!tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbType"].isNull())
 			tableTopologyInfoObject.dbType = tableTopologyNodeTableTopologyInfoListTableTopologyInfo["DbType"].asString();
 		tableTopology_.tableTopologyInfoList.push_back(tableTopologyInfoObject);
 	}
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

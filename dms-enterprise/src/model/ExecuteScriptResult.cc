@@ -43,12 +43,12 @@ void ExecuteScriptResult::parse(const std::string &payload)
 	for (auto valueResultsResult : allResultsNode)
 	{
 		Result resultsObject;
+		if(!valueResultsResult["Success"].isNull())
+			resultsObject.success = valueResultsResult["Success"].asString() == "true";
 		if(!valueResultsResult["Message"].isNull())
 			resultsObject.message = valueResultsResult["Message"].asString();
 		if(!valueResultsResult["RowCount"].isNull())
 			resultsObject.rowCount = std::stol(valueResultsResult["RowCount"].asString());
-		if(!valueResultsResult["Success"].isNull())
-			resultsObject.success = valueResultsResult["Success"].asString() == "true";
 		auto allColumnNames = value["ColumnNames"]["ColumnNames"];
 		for (auto value : allColumnNames)
 			resultsObject.columnNames.push_back(value.asString());

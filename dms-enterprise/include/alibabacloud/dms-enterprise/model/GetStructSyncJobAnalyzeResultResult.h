@@ -34,16 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct StructSyncJobAnalyzeResult
 				{
+					struct Summary
+					{
+						std::string compareType;
+						long count;
+					};
 					struct Result
 					{
 						std::string sourceTableName;
 						std::string script;
 						std::string targetTableName;
-					};
-					struct Summary
-					{
-						std::string compareType;
-						long count;
 					};
 					std::vector<Result> resultList;
 					std::vector<Summary> summaryList;

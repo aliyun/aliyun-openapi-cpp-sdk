@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string comment;
 					std::string lastExecTime;
-					std::string dbSearchName;
 					std::string jobType;
+					std::string dbSearchName;
 					std::string createTime;
 					long dbTaskGroupId;
 					long dbId;

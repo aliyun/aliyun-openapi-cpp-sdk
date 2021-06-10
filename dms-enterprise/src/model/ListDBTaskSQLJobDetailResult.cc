@@ -43,34 +43,34 @@ void ListDBTaskSQLJobDetailResult::parse(const std::string &payload)
 	for (auto valueDBTaskSQLJobDetailListDBTaskSQLJobDetail : allDBTaskSQLJobDetailListNode)
 	{
 		DBTaskSQLJobDetail dBTaskSQLJobDetailListObject;
-		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Status"].isNull())
-			dBTaskSQLJobDetailListObject.status = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Status"].asString();
-		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Skip"].isNull())
-			dBTaskSQLJobDetailListObject.skip = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Skip"].asString() == "true";
-		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["DbId"].isNull())
-			dBTaskSQLJobDetailListObject.dbId = std::stol(valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["DbId"].asString());
-		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["SqlType"].isNull())
-			dBTaskSQLJobDetailListObject.sqlType = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["SqlType"].asString();
-		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["ExecuteCount"].isNull())
-			dBTaskSQLJobDetailListObject.executeCount = std::stol(valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["ExecuteCount"].asString());
-		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Logic"].isNull())
-			dBTaskSQLJobDetailListObject.logic = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Logic"].asString() == "true";
-		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["CurrentSql"].isNull())
-			dBTaskSQLJobDetailListObject.currentSql = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["CurrentSql"].asString();
 		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["JobDetailId"].isNull())
 			dBTaskSQLJobDetailListObject.jobDetailId = std::stol(valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["JobDetailId"].asString());
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["CurrentSql"].isNull())
+			dBTaskSQLJobDetailListObject.currentSql = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["CurrentSql"].asString();
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["ExecuteCount"].isNull())
+			dBTaskSQLJobDetailListObject.executeCount = std::stol(valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["ExecuteCount"].asString());
 		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["JobId"].isNull())
 			dBTaskSQLJobDetailListObject.jobId = std::stol(valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["JobId"].asString());
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["DbId"].isNull())
+			dBTaskSQLJobDetailListObject.dbId = std::stol(valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["DbId"].asString());
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Logic"].isNull())
+			dBTaskSQLJobDetailListObject.logic = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Logic"].asString() == "true";
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Skip"].isNull())
+			dBTaskSQLJobDetailListObject.skip = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Skip"].asString() == "true";
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["SqlType"].isNull())
+			dBTaskSQLJobDetailListObject.sqlType = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["SqlType"].asString();
+		if(!valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Status"].isNull())
+			dBTaskSQLJobDetailListObject.status = valueDBTaskSQLJobDetailListDBTaskSQLJobDetail["Status"].asString();
 		dBTaskSQLJobDetailList_.push_back(dBTaskSQLJobDetailListObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
 }
 

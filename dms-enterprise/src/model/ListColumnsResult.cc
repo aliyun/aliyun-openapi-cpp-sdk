@@ -43,32 +43,32 @@ void ListColumnsResult::parse(const std::string &payload)
 	for (auto valueColumnListColumn : allColumnListNode)
 	{
 		Column columnListObject;
-		if(!valueColumnListColumn["ColumnId"].isNull())
-			columnListObject.columnId = valueColumnListColumn["ColumnId"].asString();
-		if(!valueColumnListColumn["ColumnName"].isNull())
-			columnListObject.columnName = valueColumnListColumn["ColumnName"].asString();
-		if(!valueColumnListColumn["DefaultValue"].isNull())
-			columnListObject.defaultValue = valueColumnListColumn["DefaultValue"].asString();
-		if(!valueColumnListColumn["Description"].isNull())
-			columnListObject.description = valueColumnListColumn["Description"].asString();
 		if(!valueColumnListColumn["ColumnType"].isNull())
 			columnListObject.columnType = valueColumnListColumn["ColumnType"].asString();
 		if(!valueColumnListColumn["AutoIncrement"].isNull())
 			columnListObject.autoIncrement = valueColumnListColumn["AutoIncrement"].asString() == "true";
-		if(!valueColumnListColumn["FunctionType"].isNull())
-			columnListObject.functionType = valueColumnListColumn["FunctionType"].asString();
-		if(!valueColumnListColumn["SecurityLevel"].isNull())
-			columnListObject.securityLevel = valueColumnListColumn["SecurityLevel"].asString();
-		if(!valueColumnListColumn["DataLength"].isNull())
-			columnListObject.dataLength = std::stol(valueColumnListColumn["DataLength"].asString());
-		if(!valueColumnListColumn["DataScale"].isNull())
-			columnListObject.dataScale = std::stoi(valueColumnListColumn["DataScale"].asString());
-		if(!valueColumnListColumn["DataPrecision"].isNull())
-			columnListObject.dataPrecision = std::stoi(valueColumnListColumn["DataPrecision"].asString());
+		if(!valueColumnListColumn["ColumnId"].isNull())
+			columnListObject.columnId = valueColumnListColumn["ColumnId"].asString();
+		if(!valueColumnListColumn["DefaultValue"].isNull())
+			columnListObject.defaultValue = valueColumnListColumn["DefaultValue"].asString();
 		if(!valueColumnListColumn["Sensitive"].isNull())
 			columnListObject.sensitive = valueColumnListColumn["Sensitive"].asString() == "true";
+		if(!valueColumnListColumn["ColumnName"].isNull())
+			columnListObject.columnName = valueColumnListColumn["ColumnName"].asString();
+		if(!valueColumnListColumn["SecurityLevel"].isNull())
+			columnListObject.securityLevel = valueColumnListColumn["SecurityLevel"].asString();
+		if(!valueColumnListColumn["Description"].isNull())
+			columnListObject.description = valueColumnListColumn["Description"].asString();
+		if(!valueColumnListColumn["DataPrecision"].isNull())
+			columnListObject.dataPrecision = std::stoi(valueColumnListColumn["DataPrecision"].asString());
+		if(!valueColumnListColumn["DataScale"].isNull())
+			columnListObject.dataScale = std::stoi(valueColumnListColumn["DataScale"].asString());
+		if(!valueColumnListColumn["FunctionType"].isNull())
+			columnListObject.functionType = valueColumnListColumn["FunctionType"].asString();
 		if(!valueColumnListColumn["Nullable"].isNull())
 			columnListObject.nullable = valueColumnListColumn["Nullable"].asString() == "true";
+		if(!valueColumnListColumn["DataLength"].isNull())
+			columnListObject.dataLength = std::stol(valueColumnListColumn["DataLength"].asString());
 		columnList_.push_back(columnListObject);
 	}
 	if(!value["ErrorCode"].isNull())

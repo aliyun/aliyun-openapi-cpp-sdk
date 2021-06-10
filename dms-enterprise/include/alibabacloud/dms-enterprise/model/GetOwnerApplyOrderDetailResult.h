@@ -41,8 +41,8 @@ namespace AlibabaCloud
 							std::string tableName;
 							std::string searchName;
 							std::vector<std::string> ownerNickNames;
-							std::string envType;
 							std::string dbType;
+							std::string envType;
 							std::vector<std::string> ownerIds;
 						};
 						ResourceDetail resourceDetail;

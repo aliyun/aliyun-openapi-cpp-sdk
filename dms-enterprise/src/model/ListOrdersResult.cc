@@ -43,24 +43,24 @@ void ListOrdersResult::parse(const std::string &payload)
 	for (auto valueOrdersOrder : allOrdersNode)
 	{
 		Order ordersObject;
-		if(!valueOrdersOrder["StatusDesc"].isNull())
-			ordersObject.statusDesc = valueOrdersOrder["StatusDesc"].asString();
 		if(!valueOrdersOrder["Comment"].isNull())
 			ordersObject.comment = valueOrdersOrder["Comment"].asString();
+		if(!valueOrdersOrder["LastModifyTime"].isNull())
+			ordersObject.lastModifyTime = valueOrdersOrder["LastModifyTime"].asString();
+		if(!valueOrdersOrder["StatusCode"].isNull())
+			ordersObject.statusCode = valueOrdersOrder["StatusCode"].asString();
 		if(!valueOrdersOrder["CreateTime"].isNull())
 			ordersObject.createTime = valueOrdersOrder["CreateTime"].asString();
 		if(!valueOrdersOrder["Committer"].isNull())
 			ordersObject.committer = valueOrdersOrder["Committer"].asString();
-		if(!valueOrdersOrder["OrderId"].isNull())
-			ordersObject.orderId = std::stol(valueOrdersOrder["OrderId"].asString());
-		if(!valueOrdersOrder["LastModifyTime"].isNull())
-			ordersObject.lastModifyTime = valueOrdersOrder["LastModifyTime"].asString();
-		if(!valueOrdersOrder["PluginType"].isNull())
-			ordersObject.pluginType = valueOrdersOrder["PluginType"].asString();
 		if(!valueOrdersOrder["CommitterId"].isNull())
 			ordersObject.committerId = std::stol(valueOrdersOrder["CommitterId"].asString());
-		if(!valueOrdersOrder["StatusCode"].isNull())
-			ordersObject.statusCode = valueOrdersOrder["StatusCode"].asString();
+		if(!valueOrdersOrder["StatusDesc"].isNull())
+			ordersObject.statusDesc = valueOrdersOrder["StatusDesc"].asString();
+		if(!valueOrdersOrder["PluginType"].isNull())
+			ordersObject.pluginType = valueOrdersOrder["PluginType"].asString();
+		if(!valueOrdersOrder["OrderId"].isNull())
+			ordersObject.orderId = std::stol(valueOrdersOrder["OrderId"].asString());
 		orders_.push_back(ordersObject);
 	}
 	if(!value["TotalCount"].isNull())

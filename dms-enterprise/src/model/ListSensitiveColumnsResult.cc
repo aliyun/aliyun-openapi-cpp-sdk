@@ -43,18 +43,18 @@ void ListSensitiveColumnsResult::parse(const std::string &payload)
 	for (auto valueSensitiveColumnListSensitiveColumn : allSensitiveColumnListNode)
 	{
 		SensitiveColumn sensitiveColumnListObject;
-		if(!valueSensitiveColumnListSensitiveColumn["TableName"].isNull())
-			sensitiveColumnListObject.tableName = valueSensitiveColumnListSensitiveColumn["TableName"].asString();
 		if(!valueSensitiveColumnListSensitiveColumn["ColumnName"].isNull())
 			sensitiveColumnListObject.columnName = valueSensitiveColumnListSensitiveColumn["ColumnName"].asString();
-		if(!valueSensitiveColumnListSensitiveColumn["ColumnCount"].isNull())
-			sensitiveColumnListObject.columnCount = std::stol(valueSensitiveColumnListSensitiveColumn["ColumnCount"].asString());
-		if(!valueSensitiveColumnListSensitiveColumn["FunctionType"].isNull())
-			sensitiveColumnListObject.functionType = valueSensitiveColumnListSensitiveColumn["FunctionType"].asString();
+		if(!valueSensitiveColumnListSensitiveColumn["TableName"].isNull())
+			sensitiveColumnListObject.tableName = valueSensitiveColumnListSensitiveColumn["TableName"].asString();
 		if(!valueSensitiveColumnListSensitiveColumn["SecurityLevel"].isNull())
 			sensitiveColumnListObject.securityLevel = valueSensitiveColumnListSensitiveColumn["SecurityLevel"].asString();
+		if(!valueSensitiveColumnListSensitiveColumn["ColumnCount"].isNull())
+			sensitiveColumnListObject.columnCount = std::stol(valueSensitiveColumnListSensitiveColumn["ColumnCount"].asString());
 		if(!valueSensitiveColumnListSensitiveColumn["SchemaName"].isNull())
 			sensitiveColumnListObject.schemaName = valueSensitiveColumnListSensitiveColumn["SchemaName"].asString();
+		if(!valueSensitiveColumnListSensitiveColumn["FunctionType"].isNull())
+			sensitiveColumnListObject.functionType = valueSensitiveColumnListSensitiveColumn["FunctionType"].asString();
 		sensitiveColumnList_.push_back(sensitiveColumnListObject);
 	}
 	if(!value["TotalCount"].isNull())
