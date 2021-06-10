@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribeNatGatewaysRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeNatGatewaysRequest();
@@ -51,8 +57,12 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getNatGatewayId()const;
 				void setNatGatewayId(const std::string& natGatewayId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -63,6 +73,8 @@ namespace AlibabaCloud
 				void setVpcId(const std::string& vpcId);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
@@ -73,12 +85,15 @@ namespace AlibabaCloud
 				std::string natType_;
 				int pageSize_;
 				std::string natGatewayId_;
+				std::vector<Tag> tag_;
 				std::string instanceChargeType_;
+				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string vpcId_;
 				std::string name_;
+				std::string status_;
 
 			};
 		}

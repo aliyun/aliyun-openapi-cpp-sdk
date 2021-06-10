@@ -38,6 +38,17 @@ void DescribeVpcsRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+long DescribeVpcsRequest::getVpcOwnerId()const
+{
+	return vpcOwnerId_;
+}
+
+void DescribeVpcsRequest::setVpcOwnerId(long vpcOwnerId)
+{
+	vpcOwnerId_ = vpcOwnerId;
+	setParameter("VpcOwnerId", std::to_string(vpcOwnerId));
+}
+
 int DescribeVpcsRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -131,6 +142,17 @@ void DescribeVpcsRequest::setDryRun(bool dryRun)
 	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
+std::string DescribeVpcsRequest::getDhcpOptionsSetId()const
+{
+	return dhcpOptionsSetId_;
+}
+
+void DescribeVpcsRequest::setDhcpOptionsSetId(const std::string& dhcpOptionsSetId)
+{
+	dhcpOptionsSetId_ = dhcpOptionsSetId;
+	setParameter("DhcpOptionsSetId", dhcpOptionsSetId);
+}
+
 std::string DescribeVpcsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -151,6 +173,17 @@ void DescribeVpcsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
+}
+
+bool DescribeVpcsRequest::getAdvancedFeature()const
+{
+	return advancedFeature_;
+}
+
+void DescribeVpcsRequest::setAdvancedFeature(bool advancedFeature)
+{
+	advancedFeature_ = advancedFeature;
+	setParameter("AdvancedFeature", advancedFeature ? "true" : "false");
 }
 
 long DescribeVpcsRequest::getOwnerId()const

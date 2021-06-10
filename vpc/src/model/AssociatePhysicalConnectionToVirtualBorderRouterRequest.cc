@@ -71,6 +71,17 @@ void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setClientToken(con
 	setParameter("ClientToken", clientToken);
 }
 
+std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getEnableIpv6()const
+{
+	return enableIpv6_;
+}
+
+void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setEnableIpv6(const std::string& enableIpv6)
+{
+	enableIpv6_ = enableIpv6;
+	setParameter("EnableIpv6", enableIpv6);
+}
+
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getVbrId()const
 {
 	return vbrId_;
@@ -91,6 +102,17 @@ void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setPeerGatewayIp(c
 {
 	peerGatewayIp_ = peerGatewayIp;
 	setParameter("PeerGatewayIp", peerGatewayIp);
+}
+
+std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPeerIpv6GatewayIp()const
+{
+	return peerIpv6GatewayIp_;
+}
+
+void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setPeerIpv6GatewayIp(const std::string& peerIpv6GatewayIp)
+{
+	peerIpv6GatewayIp_ = peerIpv6GatewayIp;
+	setParameter("PeerIpv6GatewayIp", peerIpv6GatewayIp);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPeeringSubnetMask()const
@@ -124,6 +146,17 @@ void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setLocalGatewayIp(
 {
 	localGatewayIp_ = localGatewayIp;
 	setParameter("LocalGatewayIp", localGatewayIp);
+}
+
+std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPeeringIpv6SubnetMask()const
+{
+	return peeringIpv6SubnetMask_;
+}
+
+void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setPeeringIpv6SubnetMask(const std::string& peeringIpv6SubnetMask)
+{
+	peeringIpv6SubnetMask_ = peeringIpv6SubnetMask;
+	setParameter("PeeringIpv6SubnetMask", peeringIpv6SubnetMask);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getResourceOwnerAccount()const
@@ -168,5 +201,16 @@ void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setPhysicalConnect
 {
 	physicalConnectionId_ = physicalConnectionId;
 	setParameter("PhysicalConnectionId", physicalConnectionId);
+}
+
+std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getLocalIpv6GatewayIp()const
+{
+	return localIpv6GatewayIp_;
+}
+
+void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setLocalIpv6GatewayIp(const std::string& localIpv6GatewayIp)
+{
+	localIpv6GatewayIp_ = localIpv6GatewayIp;
+	setParameter("LocalIpv6GatewayIp", localIpv6GatewayIp);
 }
 

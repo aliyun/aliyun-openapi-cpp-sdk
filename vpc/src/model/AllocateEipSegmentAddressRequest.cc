@@ -49,6 +49,17 @@ void AllocateEipSegmentAddressRequest::setClientToken(const std::string& clientT
 	setParameter("ClientToken", clientToken);
 }
 
+std::string AllocateEipSegmentAddressRequest::getIsp()const
+{
+	return isp_;
+}
+
+void AllocateEipSegmentAddressRequest::setIsp(const std::string& isp)
+{
+	isp_ = isp;
+	setParameter("Isp", isp);
+}
+
 std::string AllocateEipSegmentAddressRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;

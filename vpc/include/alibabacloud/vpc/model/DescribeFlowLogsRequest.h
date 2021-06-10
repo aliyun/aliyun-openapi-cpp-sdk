@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
+				std::string getVpcId()const;
+				void setVpcId(const std::string& vpcId);
 				std::string getTrafficType()const;
 				void setTrafficType(const std::string& trafficType);
 				std::string getFlowLogId()const;
@@ -81,6 +83,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string resourceType_;
+				std::string vpcId_;
 				std::string trafficType_;
 				std::string flowLogId_;
 				std::string flowLogName_;

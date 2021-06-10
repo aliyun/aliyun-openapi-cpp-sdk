@@ -38,6 +38,17 @@ void DescribeVpnGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool DescribeVpnGatewaysRequest::getIncludeReservationData()const
+{
+	return includeReservationData_;
+}
+
+void DescribeVpnGatewaysRequest::setIncludeReservationData(bool includeReservationData)
+{
+	includeReservationData_ = includeReservationData;
+	setParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+}
+
 int DescribeVpnGatewaysRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -69,6 +80,22 @@ void DescribeVpnGatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeVpnGatewaysRequest::Tag> DescribeVpnGatewaysRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeVpnGatewaysRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 
 std::string DescribeVpnGatewaysRequest::getBusinessStatus()const

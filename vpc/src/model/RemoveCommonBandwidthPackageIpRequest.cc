@@ -38,6 +38,17 @@ void RemoveCommonBandwidthPackageIpRequest::setResourceOwnerId(long resourceOwne
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string RemoveCommonBandwidthPackageIpRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void RemoveCommonBandwidthPackageIpRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string RemoveCommonBandwidthPackageIpRequest::getRegionId()const
 {
 	return regionId_;

@@ -159,6 +159,17 @@ void DescribeFlowLogsRequest::setResourceType(const std::string& resourceType)
 	setParameter("ResourceType", resourceType);
 }
 
+std::string DescribeFlowLogsRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void DescribeFlowLogsRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
+}
+
 std::string DescribeFlowLogsRequest::getTrafficType()const
 {
 	return trafficType_;

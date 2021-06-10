@@ -115,6 +115,17 @@ void CreateVSwitchRequest::setIpv6CidrBlock(int ipv6CidrBlock)
 	setParameter("Ipv6CidrBlock", std::to_string(ipv6CidrBlock));
 }
 
+std::string CreateVSwitchRequest::getVpcIpv6CidrBlock()const
+{
+	return vpcIpv6CidrBlock_;
+}
+
+void CreateVSwitchRequest::setVpcIpv6CidrBlock(const std::string& vpcIpv6CidrBlock)
+{
+	vpcIpv6CidrBlock_ = vpcIpv6CidrBlock;
+	setParameter("VpcIpv6CidrBlock", vpcIpv6CidrBlock);
+}
+
 std::string CreateVSwitchRequest::getVpcId()const
 {
 	return vpcId_;

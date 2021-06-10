@@ -115,6 +115,22 @@ void DescribeNatGatewaysRequest::setNatGatewayId(const std::string& natGatewayId
 	setParameter("NatGatewayId", natGatewayId);
 }
 
+std::vector<DescribeNatGatewaysRequest::Tag> DescribeNatGatewaysRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeNatGatewaysRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
 std::string DescribeNatGatewaysRequest::getInstanceChargeType()const
 {
 	return instanceChargeType_;
@@ -124,6 +140,17 @@ void DescribeNatGatewaysRequest::setInstanceChargeType(const std::string& instan
 {
 	instanceChargeType_ = instanceChargeType;
 	setParameter("InstanceChargeType", instanceChargeType);
+}
+
+bool DescribeNatGatewaysRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void DescribeNatGatewaysRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeNatGatewaysRequest::getResourceOwnerAccount()const
@@ -179,5 +206,16 @@ void DescribeNatGatewaysRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+std::string DescribeNatGatewaysRequest::getStatus()const
+{
+	return status_;
+}
+
+void DescribeNatGatewaysRequest::setStatus(const std::string& status)
+{
+	status_ = status;
+	setParameter("Status", status);
 }
 

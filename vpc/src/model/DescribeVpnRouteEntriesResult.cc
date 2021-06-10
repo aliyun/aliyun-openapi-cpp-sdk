@@ -55,6 +55,14 @@ void DescribeVpnRouteEntriesResult::parse(const std::string &payload)
 			vpnRouteEntriesObject.createTime = std::stol(valueVpnRouteEntriesVpnRouteEntry["CreateTime"].asString());
 		if(!valueVpnRouteEntriesVpnRouteEntry["State"].isNull())
 			vpnRouteEntriesObject.state = valueVpnRouteEntriesVpnRouteEntry["State"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["AsPath"].isNull())
+			vpnRouteEntriesObject.asPath = valueVpnRouteEntriesVpnRouteEntry["AsPath"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["Community"].isNull())
+			vpnRouteEntriesObject.community = valueVpnRouteEntriesVpnRouteEntry["Community"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["Source"].isNull())
+			vpnRouteEntriesObject.source = valueVpnRouteEntriesVpnRouteEntry["Source"].asString();
+		if(!valueVpnRouteEntriesVpnRouteEntry["RouteEntryType"].isNull())
+			vpnRouteEntriesObject.routeEntryType = valueVpnRouteEntriesVpnRouteEntry["RouteEntryType"].asString();
 		vpnRouteEntries_.push_back(vpnRouteEntriesObject);
 	}
 	if(!value["TotalCount"].isNull())

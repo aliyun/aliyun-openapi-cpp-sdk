@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
+				long getVSwitchOwnerId()const;
+				void setVSwitchOwnerId(long vSwitchOwnerId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getVSwitchName()const;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string vSwitchId_;
+				long vSwitchOwnerId_;
 				std::string vpcId_;
 				std::string vSwitchName_;
 				std::string zoneId_;

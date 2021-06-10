@@ -38,6 +38,17 @@ void CreateVpnGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateVpnGatewayRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateVpnGatewayRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 bool CreateVpnGatewayRequest::getEnableIpsec()const
 {
 	return enableIpsec_;
@@ -135,6 +146,17 @@ void CreateVpnGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateVpnGatewayRequest::getVpnType()const
+{
+	return vpnType_;
+}
+
+void CreateVpnGatewayRequest::setVpnType(const std::string& vpnType)
+{
+	vpnType_ = vpnType;
+	setParameter("VpnType", vpnType);
 }
 
 std::string CreateVpnGatewayRequest::getVSwitchId()const

@@ -126,3 +126,14 @@ void CreateCustomerGatewayRequest::setName(const std::string& name)
 	setParameter("Name", name);
 }
 
+std::string CreateCustomerGatewayRequest::getAsn()const
+{
+	return asn_;
+}
+
+void CreateCustomerGatewayRequest::setAsn(const std::string& asn)
+{
+	asn_ = asn;
+	setParameter("Asn", asn);
+}
+

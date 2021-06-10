@@ -71,6 +71,17 @@ void ModifySslVpnServerRequest::setLocalSubnet(const std::string& localSubnet)
 	setParameter("LocalSubnet", localSubnet);
 }
 
+std::string ModifySslVpnServerRequest::getIDaaSRegionId()const
+{
+	return iDaaSRegionId_;
+}
+
+void ModifySslVpnServerRequest::setIDaaSRegionId(const std::string& iDaaSRegionId)
+{
+	iDaaSRegionId_ = iDaaSRegionId;
+	setParameter("IDaaSRegionId", iDaaSRegionId);
+}
+
 std::string ModifySslVpnServerRequest::getRegionId()const
 {
 	return regionId_;

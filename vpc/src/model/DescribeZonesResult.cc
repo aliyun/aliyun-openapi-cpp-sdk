@@ -47,6 +47,8 @@ void DescribeZonesResult::parse(const std::string &payload)
 			zonesObject.zoneId = valueZonesZone["ZoneId"].asString();
 		if(!valueZonesZone["LocalName"].isNull())
 			zonesObject.localName = valueZonesZone["LocalName"].asString();
+		if(!valueZonesZone["ZoneType"].isNull())
+			zonesObject.zoneType = valueZonesZone["ZoneType"].asString();
 		zones_.push_back(zonesObject);
 	}
 

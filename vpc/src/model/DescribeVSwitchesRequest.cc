@@ -175,6 +175,17 @@ void DescribeVSwitchesRequest::setVSwitchId(const std::string& vSwitchId)
 	setParameter("VSwitchId", vSwitchId);
 }
 
+long DescribeVSwitchesRequest::getVSwitchOwnerId()const
+{
+	return vSwitchOwnerId_;
+}
+
+void DescribeVSwitchesRequest::setVSwitchOwnerId(long vSwitchOwnerId)
+{
+	vSwitchOwnerId_ = vSwitchOwnerId;
+	setParameter("VSwitchOwnerId", std::to_string(vSwitchOwnerId));
+}
+
 std::string DescribeVSwitchesRequest::getVpcId()const
 {
 	return vpcId_;

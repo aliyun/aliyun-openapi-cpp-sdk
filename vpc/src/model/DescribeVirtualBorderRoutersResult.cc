@@ -95,42 +95,62 @@ void DescribeVirtualBorderRoutersResult::parse(const std::string &payload)
 			virtualBorderRouterSetObject.minRxInterval = std::stol(valueVirtualBorderRouterSetVirtualBorderRouterType["MinRxInterval"].asString());
 		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["DetectMultiplier"].isNull())
 			virtualBorderRouterSetObject.detectMultiplier = std::stol(valueVirtualBorderRouterSetVirtualBorderRouterType["DetectMultiplier"].asString());
-		auto allAssociatedPhysicalConnectionsNode = allVirtualBorderRouterSetNode["AssociatedPhysicalConnections"]["AssociatedPhysicalConnection"];
-		for (auto allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection : allAssociatedPhysicalConnectionsNode)
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["LocalIpv6GatewayIp"].isNull())
+			virtualBorderRouterSetObject.localIpv6GatewayIp = valueVirtualBorderRouterSetVirtualBorderRouterType["LocalIpv6GatewayIp"].asString();
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["PeerIpv6GatewayIp"].isNull())
+			virtualBorderRouterSetObject.peerIpv6GatewayIp = valueVirtualBorderRouterSetVirtualBorderRouterType["PeerIpv6GatewayIp"].asString();
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["PeeringIpv6SubnetMask"].isNull())
+			virtualBorderRouterSetObject.peeringIpv6SubnetMask = valueVirtualBorderRouterSetVirtualBorderRouterType["PeeringIpv6SubnetMask"].asString();
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["EnableIpv6"].isNull())
+			virtualBorderRouterSetObject.enableIpv6 = valueVirtualBorderRouterSetVirtualBorderRouterType["EnableIpv6"].asString() == "true";
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["CloudBoxInstanceId"].isNull())
+			virtualBorderRouterSetObject.cloudBoxInstanceId = valueVirtualBorderRouterSetVirtualBorderRouterType["CloudBoxInstanceId"].asString();
+		auto allAssociatedPhysicalConnectionsNode = valueVirtualBorderRouterSetVirtualBorderRouterType["AssociatedPhysicalConnections"]["AssociatedPhysicalConnection"];
+		for (auto valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection : allAssociatedPhysicalConnectionsNode)
 		{
 			VirtualBorderRouterType::AssociatedPhysicalConnection associatedPhysicalConnectionsObject;
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["CircuitCode"].isNull())
-				associatedPhysicalConnectionsObject.circuitCode = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["CircuitCode"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["VlanInterfaceId"].isNull())
-				associatedPhysicalConnectionsObject.vlanInterfaceId = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["VlanInterfaceId"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["LocalGatewayIp"].isNull())
-				associatedPhysicalConnectionsObject.localGatewayIp = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["LocalGatewayIp"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeerGatewayIp"].isNull())
-				associatedPhysicalConnectionsObject.peerGatewayIp = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeerGatewayIp"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeeringSubnetMask"].isNull())
-				associatedPhysicalConnectionsObject.peeringSubnetMask = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeeringSubnetMask"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionId"].isNull())
-				associatedPhysicalConnectionsObject.physicalConnectionId = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionId"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionStatus"].isNull())
-				associatedPhysicalConnectionsObject.physicalConnectionStatus = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionStatus"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionBusinessStatus"].isNull())
-				associatedPhysicalConnectionsObject.physicalConnectionBusinessStatus = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionBusinessStatus"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionOwnerUid"].isNull())
-				associatedPhysicalConnectionsObject.physicalConnectionOwnerUid = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionOwnerUid"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["VlanId"].isNull())
-				associatedPhysicalConnectionsObject.vlanId = allVirtualBorderRouterSetNodeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["VlanId"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["CircuitCode"].isNull())
+				associatedPhysicalConnectionsObject.circuitCode = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["CircuitCode"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["VlanInterfaceId"].isNull())
+				associatedPhysicalConnectionsObject.vlanInterfaceId = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["VlanInterfaceId"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["LocalGatewayIp"].isNull())
+				associatedPhysicalConnectionsObject.localGatewayIp = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["LocalGatewayIp"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeerGatewayIp"].isNull())
+				associatedPhysicalConnectionsObject.peerGatewayIp = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeerGatewayIp"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeeringSubnetMask"].isNull())
+				associatedPhysicalConnectionsObject.peeringSubnetMask = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeeringSubnetMask"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionId"].isNull())
+				associatedPhysicalConnectionsObject.physicalConnectionId = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionId"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionStatus"].isNull())
+				associatedPhysicalConnectionsObject.physicalConnectionStatus = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionStatus"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionBusinessStatus"].isNull())
+				associatedPhysicalConnectionsObject.physicalConnectionBusinessStatus = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionBusinessStatus"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionOwnerUid"].isNull())
+				associatedPhysicalConnectionsObject.physicalConnectionOwnerUid = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PhysicalConnectionOwnerUid"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["VlanId"].isNull())
+				associatedPhysicalConnectionsObject.vlanId = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["VlanId"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["LocalIpv6GatewayIp"].isNull())
+				associatedPhysicalConnectionsObject.localIpv6GatewayIp = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["LocalIpv6GatewayIp"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeerIpv6GatewayIp"].isNull())
+				associatedPhysicalConnectionsObject.peerIpv6GatewayIp = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeerIpv6GatewayIp"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeeringIpv6SubnetMask"].isNull())
+				associatedPhysicalConnectionsObject.peeringIpv6SubnetMask = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["PeeringIpv6SubnetMask"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["Status"].isNull())
+				associatedPhysicalConnectionsObject.status = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["Status"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["EnableIpv6"].isNull())
+				associatedPhysicalConnectionsObject.enableIpv6 = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedPhysicalConnectionsAssociatedPhysicalConnection["EnableIpv6"].asString() == "true";
 			virtualBorderRouterSetObject.associatedPhysicalConnections.push_back(associatedPhysicalConnectionsObject);
 		}
-		auto allAssociatedCensNode = allVirtualBorderRouterSetNode["AssociatedCens"]["AssociatedCen"];
-		for (auto allVirtualBorderRouterSetNodeAssociatedCensAssociatedCen : allAssociatedCensNode)
+		auto allAssociatedCensNode = valueVirtualBorderRouterSetVirtualBorderRouterType["AssociatedCens"]["AssociatedCen"];
+		for (auto valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen : allAssociatedCensNode)
 		{
 			VirtualBorderRouterType::AssociatedCen associatedCensObject;
-			if(!allVirtualBorderRouterSetNodeAssociatedCensAssociatedCen["CenId"].isNull())
-				associatedCensObject.cenId = allVirtualBorderRouterSetNodeAssociatedCensAssociatedCen["CenId"].asString();
-			if(!allVirtualBorderRouterSetNodeAssociatedCensAssociatedCen["CenOwnerId"].isNull())
-				associatedCensObject.cenOwnerId = std::stol(allVirtualBorderRouterSetNodeAssociatedCensAssociatedCen["CenOwnerId"].asString());
-			if(!allVirtualBorderRouterSetNodeAssociatedCensAssociatedCen["CenStatus"].isNull())
-				associatedCensObject.cenStatus = allVirtualBorderRouterSetNodeAssociatedCensAssociatedCen["CenStatus"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen["CenId"].isNull())
+				associatedCensObject.cenId = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen["CenId"].asString();
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen["CenOwnerId"].isNull())
+				associatedCensObject.cenOwnerId = std::stol(valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen["CenOwnerId"].asString());
+			if(!valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen["CenStatus"].isNull())
+				associatedCensObject.cenStatus = valueVirtualBorderRouterSetVirtualBorderRouterTypeAssociatedCensAssociatedCen["CenStatus"].asString();
 			virtualBorderRouterSetObject.associatedCens.push_back(associatedCensObject);
 		}
 		virtualBorderRouterSet_.push_back(virtualBorderRouterSetObject);

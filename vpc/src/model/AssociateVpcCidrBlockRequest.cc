@@ -60,6 +60,28 @@ void AssociateVpcCidrBlockRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string AssociateVpcCidrBlockRequest::getIpv6Isp()const
+{
+	return ipv6Isp_;
+}
+
+void AssociateVpcCidrBlockRequest::setIpv6Isp(const std::string& ipv6Isp)
+{
+	ipv6Isp_ = ipv6Isp;
+	setParameter("Ipv6Isp", ipv6Isp);
+}
+
+std::string AssociateVpcCidrBlockRequest::getIpVersion()const
+{
+	return ipVersion_;
+}
+
+void AssociateVpcCidrBlockRequest::setIpVersion(const std::string& ipVersion)
+{
+	ipVersion_ = ipVersion;
+	setParameter("IpVersion", ipVersion);
+}
+
 std::string AssociateVpcCidrBlockRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

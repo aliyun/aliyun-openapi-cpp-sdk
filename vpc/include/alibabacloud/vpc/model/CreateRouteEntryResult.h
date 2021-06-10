@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CreateRouteEntryResult();
 				explicit CreateRouteEntryResult(const std::string &payload);
 				~CreateRouteEntryResult();
+				std::string getRouteEntryId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string routeEntryId_;
 
 			};
 		}

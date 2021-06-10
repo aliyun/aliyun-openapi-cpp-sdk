@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string peerIpAddress;
+					std::string ipVersion;
 					std::string keepalive;
 					std::string routerId;
 					std::string peerAsn;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 					std::string bgpPeerId;
 					std::string localAsn;
 					bool enableBfd;
+					int bfdMultiHop;
 					std::string bgpStatus;
 					std::string authKey;
 					std::string isFake;

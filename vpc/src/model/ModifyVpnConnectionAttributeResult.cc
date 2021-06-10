@@ -78,6 +78,21 @@ void ModifyVpnConnectionAttributeResult::parse(const std::string &payload)
 		vcoHealthCheck_.interval = std::stoi(vcoHealthCheckNode["Interval"].asString());
 	if(!vcoHealthCheckNode["Retry"].isNull())
 		vcoHealthCheck_.retry = std::stoi(vcoHealthCheckNode["Retry"].asString());
+	auto vpnBgpConfigNode = value["VpnBgpConfig"];
+	if(!vpnBgpConfigNode["EnableBgp"].isNull())
+		vpnBgpConfig_.enableBgp = vpnBgpConfigNode["EnableBgp"].asString();
+	if(!vpnBgpConfigNode["TunnelCidr"].isNull())
+		vpnBgpConfig_.tunnelCidr = vpnBgpConfigNode["TunnelCidr"].asString();
+	if(!vpnBgpConfigNode["LocalBgpIp"].isNull())
+		vpnBgpConfig_.localBgpIp = vpnBgpConfigNode["LocalBgpIp"].asString();
+	if(!vpnBgpConfigNode["PeerBgpIp"].isNull())
+		vpnBgpConfig_.peerBgpIp = vpnBgpConfigNode["PeerBgpIp"].asString();
+	if(!vpnBgpConfigNode["LocalAsn"].isNull())
+		vpnBgpConfig_.localAsn = std::stoi(vpnBgpConfigNode["LocalAsn"].asString());
+	if(!vpnBgpConfigNode["PeerAsn"].isNull())
+		vpnBgpConfig_.peerAsn = std::stoi(vpnBgpConfigNode["PeerAsn"].asString());
+	if(!vpnBgpConfigNode["Status"].isNull())
+		vpnBgpConfig_.status = vpnBgpConfigNode["Status"].asString();
 	if(!value["VpnConnectionId"].isNull())
 		vpnConnectionId_ = value["VpnConnectionId"].asString();
 	if(!value["CustomerGatewayId"].isNull())
@@ -171,5 +186,10 @@ ModifyVpnConnectionAttributeResult::IkeConfig ModifyVpnConnectionAttributeResult
 bool ModifyVpnConnectionAttributeResult::getEnableDpd()const
 {
 	return enableDpd_;
+}
+
+ModifyVpnConnectionAttributeResult::VpnBgpConfig ModifyVpnConnectionAttributeResult::getVpnBgpConfig()const
+{
+	return vpnBgpConfig_;
 }
 

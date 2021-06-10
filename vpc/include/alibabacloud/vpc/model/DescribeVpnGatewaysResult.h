@@ -34,13 +34,31 @@ namespace AlibabaCloud
 			public:
 				struct VpnGateway
 				{
+					struct ReservationData
+					{
+						std::string status;
+						std::string reservationOrderType;
+						std::string reservationEndTime;
+						std::string reservationSsl;
+						int reservationMaxConnections;
+						std::string reservationSpec;
+						std::string reservationIpsec;
+					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string ipsecVpn;
 					std::string sslVpn;
+					std::string vpnType;
 					std::string description;
+					bool enableBgp;
 					long endTime;
 					std::string vSwitchId;
 					long createTime;
+					bool autoPropagate;
 					std::string businessStatus;
 					std::string name;
 					std::string vpcId;
@@ -50,6 +68,8 @@ namespace AlibabaCloud
 					std::string tag;
 					std::string spec;
 					long sslMaxConnections;
+					std::vector<VpnGateway::Tag> tags;
+					ReservationData reservationData;
 				};
 
 

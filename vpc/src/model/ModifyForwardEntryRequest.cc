@@ -170,6 +170,17 @@ void ModifyForwardEntryRequest::setInternalPort(const std::string& internalPort)
 	setParameter("InternalPort", internalPort);
 }
 
+bool ModifyForwardEntryRequest::getPortBreak()const
+{
+	return portBreak_;
+}
+
+void ModifyForwardEntryRequest::setPortBreak(bool portBreak)
+{
+	portBreak_ = portBreak;
+	setParameter("PortBreak", portBreak ? "true" : "false");
+}
+
 std::string ModifyForwardEntryRequest::getExternalPort()const
 {
 	return externalPort_;

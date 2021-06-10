@@ -43,16 +43,22 @@ namespace AlibabaCloud
 				void setVlanId(const std::string& vlanId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getEnableIpv6()const;
+				void setEnableIpv6(const std::string& enableIpv6);
 				std::string getVbrId()const;
 				void setVbrId(const std::string& vbrId);
 				std::string getPeerGatewayIp()const;
 				void setPeerGatewayIp(const std::string& peerGatewayIp);
+				std::string getPeerIpv6GatewayIp()const;
+				void setPeerIpv6GatewayIp(const std::string& peerIpv6GatewayIp);
 				std::string getPeeringSubnetMask()const;
 				void setPeeringSubnetMask(const std::string& peeringSubnetMask);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getLocalGatewayIp()const;
 				void setLocalGatewayIp(const std::string& localGatewayIp);
+				std::string getPeeringIpv6SubnetMask()const;
+				void setPeeringIpv6SubnetMask(const std::string& peeringIpv6SubnetMask);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -61,21 +67,27 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getPhysicalConnectionId()const;
 				void setPhysicalConnectionId(const std::string& physicalConnectionId);
+				std::string getLocalIpv6GatewayIp()const;
+				void setLocalIpv6GatewayIp(const std::string& localIpv6GatewayIp);
 
             private:
 				long resourceOwnerId_;
 				std::string circuitCode_;
 				std::string vlanId_;
 				std::string clientToken_;
+				std::string enableIpv6_;
 				std::string vbrId_;
 				std::string peerGatewayIp_;
+				std::string peerIpv6GatewayIp_;
 				std::string peeringSubnetMask_;
 				std::string regionId_;
 				std::string localGatewayIp_;
+				std::string peeringIpv6SubnetMask_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string physicalConnectionId_;
+				std::string localIpv6GatewayIp_;
 
 			};
 		}

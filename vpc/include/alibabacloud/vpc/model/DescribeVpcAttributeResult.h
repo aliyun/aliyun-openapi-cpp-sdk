@@ -43,6 +43,11 @@ namespace AlibabaCloud
 					int resourceCount;
 					std::string resourceType;
 				};
+				struct Ipv6CidrBlock
+				{
+					std::string ipv6Isp;
+					std::string ipv6CidrBlock;
+				};
 
 
 				DescribeVpcAttributeResult();
@@ -51,6 +56,7 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				bool getIsDefault()const;
 				std::string getDescription()const;
+				std::string getDhcpOptionsSetStatus()const;
 				bool getClassicLinkEnabled()const;
 				std::string getResourceGroupId()const;
 				std::vector<std::string> getVSwitchIds()const;
@@ -59,11 +65,14 @@ namespace AlibabaCloud
 				std::vector<std::string> getUserCidrs()const;
 				std::string getNetworkAclNum()const;
 				std::string getVRouterId()const;
+				std::string getDhcpOptionsSetId()const;
 				std::string getVpcId()const;
+				long getOwnerId()const;
 				std::vector<AssociatedCen> getAssociatedCens()const;
 				std::string getCreationTime()const;
 				std::string getVpcName()const;
 				std::string getRegionId()const;
+				std::vector<Ipv6CidrBlock> getIpv6CidrBlocks()const;
 				std::string getIpv6CidrBlock()const;
 				std::vector<CloudResourceSetType> getCloudResources()const;
 
@@ -73,6 +82,7 @@ namespace AlibabaCloud
 				std::string status_;
 				bool isDefault_;
 				std::string description_;
+				std::string dhcpOptionsSetStatus_;
 				bool classicLinkEnabled_;
 				std::string resourceGroupId_;
 				std::vector<std::string> vSwitchIds_;
@@ -81,11 +91,14 @@ namespace AlibabaCloud
 				std::vector<std::string> userCidrs_;
 				std::string networkAclNum_;
 				std::string vRouterId_;
+				std::string dhcpOptionsSetId_;
 				std::string vpcId_;
+				long ownerId_;
 				std::vector<AssociatedCen> associatedCens_;
 				std::string creationTime_;
 				std::string vpcName_;
 				std::string regionId_;
+				std::vector<Ipv6CidrBlock> ipv6CidrBlocks_;
 				std::string ipv6CidrBlock_;
 				std::vector<CloudResourceSetType> cloudResources_;
 

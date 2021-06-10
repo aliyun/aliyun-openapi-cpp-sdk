@@ -41,6 +41,10 @@ namespace AlibabaCloud
 				void setIPv6CidrType(const std::string& iPv6CidrType);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getIpv6Isp()const;
+				void setIpv6Isp(const std::string& ipv6Isp);
+				std::string getIpVersion()const;
+				void setIpVersion(const std::string& ipVersion);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -58,6 +62,8 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string iPv6CidrType_;
 				std::string regionId_;
+				std::string ipv6Isp_;
+				std::string ipVersion_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

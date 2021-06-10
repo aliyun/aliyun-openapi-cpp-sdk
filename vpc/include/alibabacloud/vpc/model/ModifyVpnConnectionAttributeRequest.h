@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getIpsecConfig()const;
 				void setIpsecConfig(const std::string& ipsecConfig);
+				std::string getBgpConfig()const;
+				void setBgpConfig(const std::string& bgpConfig);
 				std::string getHealthCheckConfig()const;
 				void setHealthCheckConfig(const std::string& healthCheckConfig);
 				std::string getLocalSubnet()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				bool getEnableDpd()const;
 				void setEnableDpd(bool enableDpd);
+				std::string getRemoteCaCertificate()const;
+				void setRemoteCaCertificate(const std::string& remoteCaCertificate);
 				std::string getVpnConnectionId()const;
 				void setVpnConnectionId(const std::string& vpnConnectionId);
 				std::string getName()const;
@@ -76,6 +80,7 @@ namespace AlibabaCloud
 				bool autoConfigRoute_;
 				std::string clientToken_;
 				std::string ipsecConfig_;
+				std::string bgpConfig_;
 				std::string healthCheckConfig_;
 				std::string localSubnet_;
 				std::string regionId_;
@@ -85,6 +90,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				bool enableDpd_;
+				std::string remoteCaCertificate_;
 				std::string vpnConnectionId_;
 				std::string name_;
 				bool enableNatTraversal_;

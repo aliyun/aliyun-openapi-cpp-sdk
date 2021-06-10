@@ -104,6 +104,17 @@ void CreateBgpGroupRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string CreateBgpGroupRequest::getIpVersion()const
+{
+	return ipVersion_;
+}
+
+void CreateBgpGroupRequest::setIpVersion(const std::string& ipVersion)
+{
+	ipVersion_ = ipVersion;
+	setParameter("IpVersion", ipVersion);
+}
+
 std::string CreateBgpGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

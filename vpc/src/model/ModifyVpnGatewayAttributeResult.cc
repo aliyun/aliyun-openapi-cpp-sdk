@@ -63,6 +63,10 @@ void ModifyVpnGatewayAttributeResult::parse(const std::string &payload)
 		status_ = value["Status"].asString();
 	if(!value["BusinessStatus"].isNull())
 		businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["EnableBgp"].isNull())
+		enableBgp_ = value["EnableBgp"].asString() == "true";
+	if(!value["AutoPropagate"].isNull())
+		autoPropagate_ = value["AutoPropagate"].asString() == "true";
 
 }
 
@@ -76,24 +80,14 @@ std::string ModifyVpnGatewayAttributeResult::getDescription()const
 	return description_;
 }
 
-std::string ModifyVpnGatewayAttributeResult::getVpcId()const
+bool ModifyVpnGatewayAttributeResult::getEnableBgp()const
 {
-	return vpcId_;
-}
-
-std::string ModifyVpnGatewayAttributeResult::getInternetIp()const
-{
-	return internetIp_;
+	return enableBgp_;
 }
 
 long ModifyVpnGatewayAttributeResult::getEndTime()const
 {
 	return endTime_;
-}
-
-std::string ModifyVpnGatewayAttributeResult::getVpnGatewayId()const
-{
-	return vpnGatewayId_;
 }
 
 std::string ModifyVpnGatewayAttributeResult::getVSwitchId()const
@@ -106,9 +100,9 @@ long ModifyVpnGatewayAttributeResult::getCreateTime()const
 	return createTime_;
 }
 
-std::string ModifyVpnGatewayAttributeResult::getSpec()const
+bool ModifyVpnGatewayAttributeResult::getAutoPropagate()const
 {
-	return spec_;
+	return autoPropagate_;
 }
 
 std::string ModifyVpnGatewayAttributeResult::getIntranetIp()const
@@ -124,5 +118,25 @@ std::string ModifyVpnGatewayAttributeResult::getBusinessStatus()const
 std::string ModifyVpnGatewayAttributeResult::getName()const
 {
 	return name_;
+}
+
+std::string ModifyVpnGatewayAttributeResult::getVpcId()const
+{
+	return vpcId_;
+}
+
+std::string ModifyVpnGatewayAttributeResult::getInternetIp()const
+{
+	return internetIp_;
+}
+
+std::string ModifyVpnGatewayAttributeResult::getVpnGatewayId()const
+{
+	return vpnGatewayId_;
+}
+
+std::string ModifyVpnGatewayAttributeResult::getSpec()const
+{
+	return spec_;
 }
 

@@ -67,6 +67,8 @@ void DescribeIpv6AddressesResult::parse(const std::string &payload)
 			ipv6AddressesObject.realBandwidth = std::stoi(valueIpv6AddressesIpv6Address["RealBandwidth"].asString());
 		if(!valueIpv6AddressesIpv6Address["AllocationTime"].isNull())
 			ipv6AddressesObject.allocationTime = valueIpv6AddressesIpv6Address["AllocationTime"].asString();
+		if(!valueIpv6AddressesIpv6Address["Ipv6Isp"].isNull())
+			ipv6AddressesObject.ipv6Isp = valueIpv6AddressesIpv6Address["Ipv6Isp"].asString();
 		auto ipv6InternetBandwidthNode = value["Ipv6InternetBandwidth"];
 		if(!ipv6InternetBandwidthNode["Bandwidth"].isNull())
 			ipv6AddressesObject.ipv6InternetBandwidth.bandwidth = std::stoi(ipv6InternetBandwidthNode["Bandwidth"].asString());

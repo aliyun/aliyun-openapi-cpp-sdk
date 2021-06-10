@@ -63,14 +63,16 @@ void DescribeRouteTableListResult::parse(const std::string &payload)
 			routerTableListObject.creationTime = valueRouterTableListRouterTableListType["CreationTime"].asString();
 		if(!valueRouterTableListRouterTableListType["Status"].isNull())
 			routerTableListObject.status = valueRouterTableListRouterTableListType["Status"].asString();
-		auto allTagsNode = allRouterTableListNode["Tags"]["Tag"];
-		for (auto allRouterTableListNodeTagsTag : allTagsNode)
+		if(!valueRouterTableListRouterTableListType["OwnerId"].isNull())
+			routerTableListObject.ownerId = std::stol(valueRouterTableListRouterTableListType["OwnerId"].asString());
+		auto allTagsNode = valueRouterTableListRouterTableListType["Tags"]["Tag"];
+		for (auto valueRouterTableListRouterTableListTypeTagsTag : allTagsNode)
 		{
 			RouterTableListType::Tag tagsObject;
-			if(!allRouterTableListNodeTagsTag["Key"].isNull())
-				tagsObject.key = allRouterTableListNodeTagsTag["Key"].asString();
-			if(!allRouterTableListNodeTagsTag["Value"].isNull())
-				tagsObject.value = allRouterTableListNodeTagsTag["Value"].asString();
+			if(!valueRouterTableListRouterTableListTypeTagsTag["Key"].isNull())
+				tagsObject.key = valueRouterTableListRouterTableListTypeTagsTag["Key"].asString();
+			if(!valueRouterTableListRouterTableListTypeTagsTag["Value"].isNull())
+				tagsObject.value = valueRouterTableListRouterTableListTypeTagsTag["Value"].asString();
 			routerTableListObject.tags.push_back(tagsObject);
 		}
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];

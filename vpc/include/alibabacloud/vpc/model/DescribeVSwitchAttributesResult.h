@@ -58,10 +58,12 @@ namespace AlibabaCloud
 				std::string getCidrBlock()const;
 				RouteTable getRouteTable()const;
 				std::string getVpcId()const;
+				long getOwnerId()const;
 				std::string getCreationTime()const;
 				std::string getVSwitchName()const;
 				std::string getIpv6CidrBlock()const;
 				std::vector<CloudResourceSetType> getCloudResources()const;
+				std::string getShareType()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -77,10 +79,12 @@ namespace AlibabaCloud
 				std::string cidrBlock_;
 				RouteTable routeTable_;
 				std::string vpcId_;
+				long ownerId_;
 				std::string creationTime_;
 				std::string vSwitchName_;
 				std::string ipv6CidrBlock_;
 				std::vector<CloudResourceSetType> cloudResources_;
+				std::string shareType_;
 
 			};
 		}

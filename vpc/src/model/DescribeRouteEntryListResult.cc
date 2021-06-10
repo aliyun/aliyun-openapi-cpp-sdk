@@ -59,20 +59,20 @@ void DescribeRouteEntryListResult::parse(const std::string &payload)
 			routeEntrysObject.status = valueRouteEntrysRouteEntry["Status"].asString();
 		if(!valueRouteEntrysRouteEntry["IpVersion"].isNull())
 			routeEntrysObject.ipVersion = valueRouteEntrysRouteEntry["IpVersion"].asString();
-		auto allNextHopsNode = allRouteEntrysNode["NextHops"]["NextHop"];
-		for (auto allRouteEntrysNodeNextHopsNextHop : allNextHopsNode)
+		auto allNextHopsNode = valueRouteEntrysRouteEntry["NextHops"]["NextHop"];
+		for (auto valueRouteEntrysRouteEntryNextHopsNextHop : allNextHopsNode)
 		{
 			RouteEntry::NextHop nextHopsObject;
-			if(!allRouteEntrysNodeNextHopsNextHop["NextHopType"].isNull())
-				nextHopsObject.nextHopType = allRouteEntrysNodeNextHopsNextHop["NextHopType"].asString();
-			if(!allRouteEntrysNodeNextHopsNextHop["NextHopId"].isNull())
-				nextHopsObject.nextHopId = allRouteEntrysNodeNextHopsNextHop["NextHopId"].asString();
-			if(!allRouteEntrysNodeNextHopsNextHop["Enabled"].isNull())
-				nextHopsObject.enabled = std::stoi(allRouteEntrysNodeNextHopsNextHop["Enabled"].asString());
-			if(!allRouteEntrysNodeNextHopsNextHop["Weight"].isNull())
-				nextHopsObject.weight = std::stoi(allRouteEntrysNodeNextHopsNextHop["Weight"].asString());
-			if(!allRouteEntrysNodeNextHopsNextHop["NextHopRegionId"].isNull())
-				nextHopsObject.nextHopRegionId = allRouteEntrysNodeNextHopsNextHop["NextHopRegionId"].asString();
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].isNull())
+				nextHopsObject.nextHopType = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].asString();
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopId"].isNull())
+				nextHopsObject.nextHopId = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopId"].asString();
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["Enabled"].isNull())
+				nextHopsObject.enabled = std::stoi(valueRouteEntrysRouteEntryNextHopsNextHop["Enabled"].asString());
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["Weight"].isNull())
+				nextHopsObject.weight = std::stoi(valueRouteEntrysRouteEntryNextHopsNextHop["Weight"].asString());
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopRegionId"].isNull())
+				nextHopsObject.nextHopRegionId = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopRegionId"].asString();
 			auto nextHopRelatedInfoNode = value["NextHopRelatedInfo"];
 			if(!nextHopRelatedInfoNode["InstanceType"].isNull())
 				nextHopsObject.nextHopRelatedInfo.instanceType = nextHopRelatedInfoNode["InstanceType"].asString();

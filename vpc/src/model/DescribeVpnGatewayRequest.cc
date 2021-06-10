@@ -38,6 +38,17 @@ void DescribeVpnGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool DescribeVpnGatewayRequest::getIncludeReservationData()const
+{
+	return includeReservationData_;
+}
+
+void DescribeVpnGatewayRequest::setIncludeReservationData(bool includeReservationData)
+{
+	includeReservationData_ = includeReservationData;
+	setParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+}
+
 std::string DescribeVpnGatewayRequest::getRegionId()const
 {
 	return regionId_;

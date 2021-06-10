@@ -69,14 +69,18 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchesObject.resourceGroupId = valueVSwitchesVSwitch["ResourceGroupId"].asString();
 		if(!valueVSwitchesVSwitch["NetworkAclId"].isNull())
 			vSwitchesObject.networkAclId = valueVSwitchesVSwitch["NetworkAclId"].asString();
-		auto allTagsNode = allVSwitchesNode["Tags"]["Tag"];
-		for (auto allVSwitchesNodeTagsTag : allTagsNode)
+		if(!valueVSwitchesVSwitch["OwnerId"].isNull())
+			vSwitchesObject.ownerId = std::stol(valueVSwitchesVSwitch["OwnerId"].asString());
+		if(!valueVSwitchesVSwitch["ShareType"].isNull())
+			vSwitchesObject.shareType = valueVSwitchesVSwitch["ShareType"].asString();
+		auto allTagsNode = valueVSwitchesVSwitch["Tags"]["Tag"];
+		for (auto valueVSwitchesVSwitchTagsTag : allTagsNode)
 		{
 			VSwitch::Tag tagsObject;
-			if(!allVSwitchesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allVSwitchesNodeTagsTag["Key"].asString();
-			if(!allVSwitchesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allVSwitchesNodeTagsTag["Value"].asString();
+			if(!valueVSwitchesVSwitchTagsTag["Key"].isNull())
+				tagsObject.key = valueVSwitchesVSwitchTagsTag["Key"].asString();
+			if(!valueVSwitchesVSwitchTagsTag["Value"].isNull())
+				tagsObject.value = valueVSwitchesVSwitchTagsTag["Value"].asString();
 			vSwitchesObject.tags.push_back(tagsObject);
 		}
 		auto routeTableNode = value["RouteTable"];

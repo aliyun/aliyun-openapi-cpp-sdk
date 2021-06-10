@@ -38,6 +38,17 @@ void DescribeZonesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string DescribeZonesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeZonesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeZonesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -71,14 +82,25 @@ void DescribeZonesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeZonesRequest::getRegionId()const
+std::string DescribeZonesRequest::getAcceptLanguage()const
 {
-	return regionId_;
+	return acceptLanguage_;
 }
 
-void DescribeZonesRequest::setRegionId(const std::string& regionId)
+void DescribeZonesRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	acceptLanguage_ = acceptLanguage;
+	setParameter("AcceptLanguage", acceptLanguage);
+}
+
+std::string DescribeZonesRequest::getZoneType()const
+{
+	return zoneType_;
+}
+
+void DescribeZonesRequest::setZoneType(const std::string& zoneType)
+{
+	zoneType_ = zoneType;
+	setParameter("ZoneType", zoneType);
 }
 

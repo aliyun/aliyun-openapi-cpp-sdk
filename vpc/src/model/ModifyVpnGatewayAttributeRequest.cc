@@ -82,6 +82,17 @@ void ModifyVpnGatewayAttributeRequest::setResourceOwnerAccount(const std::string
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+bool ModifyVpnGatewayAttributeRequest::getAutoPropagate()const
+{
+	return autoPropagate_;
+}
+
+void ModifyVpnGatewayAttributeRequest::setAutoPropagate(bool autoPropagate)
+{
+	autoPropagate_ = autoPropagate;
+	setParameter("AutoPropagate", autoPropagate ? "true" : "false");
+}
+
 std::string ModifyVpnGatewayAttributeRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

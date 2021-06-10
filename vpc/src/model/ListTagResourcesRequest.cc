@@ -133,3 +133,14 @@ void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
 	setParameter("ResourceType", resourceType);
 }
 
+int ListTagResourcesRequest::getMaxResults()const
+{
+	return maxResults_;
+}
+
+void ListTagResourcesRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
+}
+

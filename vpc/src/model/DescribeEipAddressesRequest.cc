@@ -197,6 +197,17 @@ void DescribeEipAddressesRequest::setSegmentInstanceId(const std::string& segmen
 	setParameter("SegmentInstanceId", segmentInstanceId);
 }
 
+bool DescribeEipAddressesRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void DescribeEipAddressesRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", dryRun ? "true" : "false");
+}
+
 std::string DescribeEipAddressesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

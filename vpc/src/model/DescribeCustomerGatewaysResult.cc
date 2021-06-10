@@ -53,6 +53,8 @@ void DescribeCustomerGatewaysResult::parse(const std::string &payload)
 			customerGatewaysObject.description = valueCustomerGatewaysCustomerGateway["Description"].asString();
 		if(!valueCustomerGatewaysCustomerGateway["CreateTime"].isNull())
 			customerGatewaysObject.createTime = std::stol(valueCustomerGatewaysCustomerGateway["CreateTime"].asString());
+		if(!valueCustomerGatewaysCustomerGateway["Asn"].isNull())
+			customerGatewaysObject.asn = std::stoi(valueCustomerGatewaysCustomerGateway["Asn"].asString());
 		customerGateways_.push_back(customerGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

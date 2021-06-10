@@ -105,22 +105,28 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.secondLimited = valueEipAddressesEipAddress["SecondLimited"].asString() == "true";
 		if(!valueEipAddressesEipAddress["SegmentInstanceId"].isNull())
 			eipAddressesObject.segmentInstanceId = valueEipAddressesEipAddress["SegmentInstanceId"].asString();
-		auto allOperationLocksNode = allEipAddressesNode["OperationLocks"]["LockReason"];
-		for (auto allEipAddressesNodeOperationLocksLockReason : allOperationLocksNode)
+		if(!valueEipAddressesEipAddress["Netmode"].isNull())
+			eipAddressesObject.netmode = valueEipAddressesEipAddress["Netmode"].asString();
+		if(!valueEipAddressesEipAddress["ServiceManaged"].isNull())
+			eipAddressesObject.serviceManaged = std::stoi(valueEipAddressesEipAddress["ServiceManaged"].asString());
+		if(!valueEipAddressesEipAddress["BusinessStatus"].isNull())
+			eipAddressesObject.businessStatus = valueEipAddressesEipAddress["BusinessStatus"].asString();
+		auto allOperationLocksNode = valueEipAddressesEipAddress["OperationLocks"]["LockReason"];
+		for (auto valueEipAddressesEipAddressOperationLocksLockReason : allOperationLocksNode)
 		{
 			EipAddress::LockReason operationLocksObject;
-			if(!allEipAddressesNodeOperationLocksLockReason["LockReason"].isNull())
-				operationLocksObject.lockReason = allEipAddressesNodeOperationLocksLockReason["LockReason"].asString();
+			if(!valueEipAddressesEipAddressOperationLocksLockReason["LockReason"].isNull())
+				operationLocksObject.lockReason = valueEipAddressesEipAddressOperationLocksLockReason["LockReason"].asString();
 			eipAddressesObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allTagsNode = allEipAddressesNode["Tags"]["Tag"];
-		for (auto allEipAddressesNodeTagsTag : allTagsNode)
+		auto allTagsNode = valueEipAddressesEipAddress["Tags"]["Tag"];
+		for (auto valueEipAddressesEipAddressTagsTag : allTagsNode)
 		{
 			EipAddress::Tag tagsObject;
-			if(!allEipAddressesNodeTagsTag["Key"].isNull())
-				tagsObject.key = allEipAddressesNodeTagsTag["Key"].asString();
-			if(!allEipAddressesNodeTagsTag["Value"].isNull())
-				tagsObject.value = allEipAddressesNodeTagsTag["Value"].asString();
+			if(!valueEipAddressesEipAddressTagsTag["Key"].isNull())
+				tagsObject.key = valueEipAddressesEipAddressTagsTag["Key"].asString();
+			if(!valueEipAddressesEipAddressTagsTag["Value"].isNull())
+				tagsObject.value = valueEipAddressesEipAddressTagsTag["Value"].asString();
 			eipAddressesObject.tags.push_back(tagsObject);
 		}
 		auto allAvailableRegions = value["AvailableRegions"]["AvailableRegion"];

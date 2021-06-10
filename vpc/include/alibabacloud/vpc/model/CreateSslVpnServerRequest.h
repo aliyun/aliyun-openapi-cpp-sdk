@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getLocalSubnet()const;
 				void setLocalSubnet(const std::string& localSubnet);
+				std::string getIDaaSRegionId()const;
+				void setIDaaSRegionId(const std::string& iDaaSRegionId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				bool getEnableMultiFactorAuth()const;
@@ -72,6 +74,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string localSubnet_;
+				std::string iDaaSRegionId_;
 				std::string regionId_;
 				bool enableMultiFactorAuth_;
 				std::string iDaaSInstanceId_;

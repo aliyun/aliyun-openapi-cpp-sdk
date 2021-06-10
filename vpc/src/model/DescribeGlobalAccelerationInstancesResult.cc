@@ -81,36 +81,36 @@ void DescribeGlobalAccelerationInstancesResult::parse(const std::string &payload
 			globalAccelerationInstancesObject.reservationActiveTime = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationActiveTime"].asString();
 		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationOrderType"].isNull())
 			globalAccelerationInstancesObject.reservationOrderType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationOrderType"].asString();
-		auto allOperationLocksNode = allGlobalAccelerationInstancesNode["OperationLocks"]["LockReason"];
-		for (auto allGlobalAccelerationInstancesNodeOperationLocksLockReason : allOperationLocksNode)
+		auto allOperationLocksNode = valueGlobalAccelerationInstancesGlobalAccelerationInstance["OperationLocks"]["LockReason"];
+		for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstanceOperationLocksLockReason : allOperationLocksNode)
 		{
 			GlobalAccelerationInstance::LockReason operationLocksObject;
-			if(!allGlobalAccelerationInstancesNodeOperationLocksLockReason["LockReason"].isNull())
-				operationLocksObject.lockReason = allGlobalAccelerationInstancesNodeOperationLocksLockReason["LockReason"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceOperationLocksLockReason["LockReason"].isNull())
+				operationLocksObject.lockReason = valueGlobalAccelerationInstancesGlobalAccelerationInstanceOperationLocksLockReason["LockReason"].asString();
 			globalAccelerationInstancesObject.operationLocks.push_back(operationLocksObject);
 		}
-		auto allBackendServersNode = allGlobalAccelerationInstancesNode["BackendServers"]["BackendServer"];
-		for (auto allGlobalAccelerationInstancesNodeBackendServersBackendServer : allBackendServersNode)
+		auto allBackendServersNode = valueGlobalAccelerationInstancesGlobalAccelerationInstance["BackendServers"]["BackendServer"];
+		for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer : allBackendServersNode)
 		{
 			GlobalAccelerationInstance::BackendServer backendServersObject;
-			if(!allGlobalAccelerationInstancesNodeBackendServersBackendServer["RegionId"].isNull())
-				backendServersObject.regionId = allGlobalAccelerationInstancesNodeBackendServersBackendServer["RegionId"].asString();
-			if(!allGlobalAccelerationInstancesNodeBackendServersBackendServer["ServerId"].isNull())
-				backendServersObject.serverId = allGlobalAccelerationInstancesNodeBackendServersBackendServer["ServerId"].asString();
-			if(!allGlobalAccelerationInstancesNodeBackendServersBackendServer["ServerIpAddress"].isNull())
-				backendServersObject.serverIpAddress = allGlobalAccelerationInstancesNodeBackendServersBackendServer["ServerIpAddress"].asString();
-			if(!allGlobalAccelerationInstancesNodeBackendServersBackendServer["ServerType"].isNull())
-				backendServersObject.serverType = allGlobalAccelerationInstancesNodeBackendServersBackendServer["ServerType"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["RegionId"].isNull())
+				backendServersObject.regionId = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["RegionId"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerId"].isNull())
+				backendServersObject.serverId = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerId"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerIpAddress"].isNull())
+				backendServersObject.serverIpAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerIpAddress"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerType"].isNull())
+				backendServersObject.serverType = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerType"].asString();
 			globalAccelerationInstancesObject.backendServers.push_back(backendServersObject);
 		}
-		auto allPublicIpAddressesNode = allGlobalAccelerationInstancesNode["PublicIpAddresses"]["PublicIpAddress"];
-		for (auto allGlobalAccelerationInstancesNodePublicIpAddressesPublicIpAddress : allPublicIpAddressesNode)
+		auto allPublicIpAddressesNode = valueGlobalAccelerationInstancesGlobalAccelerationInstance["PublicIpAddresses"]["PublicIpAddress"];
+		for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress : allPublicIpAddressesNode)
 		{
 			GlobalAccelerationInstance::PublicIpAddress publicIpAddressesObject;
-			if(!allGlobalAccelerationInstancesNodePublicIpAddressesPublicIpAddress["AllocationId"].isNull())
-				publicIpAddressesObject.allocationId = allGlobalAccelerationInstancesNodePublicIpAddressesPublicIpAddress["AllocationId"].asString();
-			if(!allGlobalAccelerationInstancesNodePublicIpAddressesPublicIpAddress["IpAddress"].isNull())
-				publicIpAddressesObject.ipAddress = allGlobalAccelerationInstancesNodePublicIpAddressesPublicIpAddress["IpAddress"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["AllocationId"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["IpAddress"].isNull())
+				publicIpAddressesObject.ipAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["IpAddress"].asString();
 			globalAccelerationInstancesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
 		globalAccelerationInstances_.push_back(globalAccelerationInstancesObject);

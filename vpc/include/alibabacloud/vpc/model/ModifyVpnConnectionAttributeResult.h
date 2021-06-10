@@ -59,6 +59,16 @@ namespace AlibabaCloud
 					int retry;
 					int interval;
 				};
+				struct VpnBgpConfig
+				{
+					std::string status;
+					std::string enableBgp;
+					int localAsn;
+					std::string tunnelCidr;
+					std::string peerBgpIp;
+					int peerAsn;
+					std::string localBgpIp;
+				};
 
 
 				ModifyVpnConnectionAttributeResult();
@@ -78,6 +88,7 @@ namespace AlibabaCloud
 				bool getEnableNatTraversal()const;
 				IkeConfig getIkeConfig()const;
 				bool getEnableDpd()const;
+				VpnBgpConfig getVpnBgpConfig()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -96,6 +107,7 @@ namespace AlibabaCloud
 				bool enableNatTraversal_;
 				IkeConfig ikeConfig_;
 				bool enableDpd_;
+				VpnBgpConfig vpnBgpConfig_;
 
 			};
 		}

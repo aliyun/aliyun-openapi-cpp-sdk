@@ -80,6 +80,10 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 		resourceGroupId_ = value["ResourceGroupId"].asString();
 	if(!value["NetworkAclId"].isNull())
 		networkAclId_ = value["NetworkAclId"].asString();
+	if(!value["OwnerId"].isNull())
+		ownerId_ = std::stol(value["OwnerId"].asString());
+	if(!value["ShareType"].isNull())
+		shareType_ = value["ShareType"].asString();
 
 }
 
@@ -138,6 +142,11 @@ std::string DescribeVSwitchAttributesResult::getVpcId()const
 	return vpcId_;
 }
 
+long DescribeVSwitchAttributesResult::getOwnerId()const
+{
+	return ownerId_;
+}
+
 std::string DescribeVSwitchAttributesResult::getCreationTime()const
 {
 	return creationTime_;
@@ -156,5 +165,10 @@ std::string DescribeVSwitchAttributesResult::getIpv6CidrBlock()const
 std::vector<DescribeVSwitchAttributesResult::CloudResourceSetType> DescribeVSwitchAttributesResult::getCloudResources()const
 {
 	return cloudResources_;
+}
+
+std::string DescribeVSwitchAttributesResult::getShareType()const
+{
+	return shareType_;
 }
 

@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT UnTagResourcesRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				UnTagResourcesRequest();
@@ -39,6 +45,10 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				bool getAll()const;
+				void setAll(bool all);
 				std::vector<std::string> getResourceId()const;
 				void setResourceId(const std::vector<std::string>& resourceId);
 				std::string getResourceOwnerAccount()const;
@@ -55,6 +65,8 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string regionId_;
+				std::vector<Tag> tag_;
+				bool all_;
 				std::vector<std::string> resourceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

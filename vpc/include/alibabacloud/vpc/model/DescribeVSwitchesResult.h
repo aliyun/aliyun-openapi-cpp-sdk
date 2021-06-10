@@ -55,10 +55,12 @@ namespace AlibabaCloud
 					std::string cidrBlock;
 					RouteTable routeTable;
 					std::string vpcId;
+					long ownerId;
 					std::string creationTime;
 					std::string vSwitchName;
 					std::string ipv6CidrBlock;
 					std::vector<VSwitch::Tag> tags;
+					std::string shareType;
 				};
 
 

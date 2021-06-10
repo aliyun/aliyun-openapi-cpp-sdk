@@ -69,6 +69,8 @@ void DescribeBgpGroupsResult::parse(const std::string &payload)
 			bgpGroupsObject.routeLimit = valueBgpGroupsBgpGroup["RouteLimit"].asString();
 		if(!valueBgpGroupsBgpGroup["RegionId"].isNull())
 			bgpGroupsObject.regionId = valueBgpGroupsBgpGroup["RegionId"].asString();
+		if(!valueBgpGroupsBgpGroup["IpVersion"].isNull())
+			bgpGroupsObject.ipVersion = valueBgpGroupsBgpGroup["IpVersion"].asString();
 		bgpGroups_.push_back(bgpGroupsObject);
 	}
 	if(!value["TotalCount"].isNull())

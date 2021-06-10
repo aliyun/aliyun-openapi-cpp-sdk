@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getAsn()const;
+				void setAsn(const std::string& asn);
 
             private:
 				std::string ipAddress_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string name_;
+				std::string asn_;
 
 			};
 		}

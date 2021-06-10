@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string zoneId;
 					std::string localName;
+					std::string zoneType;
 				};
 
 

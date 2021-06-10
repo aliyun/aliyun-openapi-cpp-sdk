@@ -25,18 +25,22 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/ActivateRouterInterfaceResult.h
 	include/alibabacloud/vpc/model/ActiveFlowLogRequest.h
 	include/alibabacloud/vpc/model/ActiveFlowLogResult.h
-	include/alibabacloud/vpc/model/AddBandwidthPackageIpsRequest.h
-	include/alibabacloud/vpc/model/AddBandwidthPackageIpsResult.h
 	include/alibabacloud/vpc/model/AddBgpNetworkRequest.h
 	include/alibabacloud/vpc/model/AddBgpNetworkResult.h
 	include/alibabacloud/vpc/model/AddCommonBandwidthPackageIpRequest.h
 	include/alibabacloud/vpc/model/AddCommonBandwidthPackageIpResult.h
+	include/alibabacloud/vpc/model/AddCommonBandwidthPackageIpsRequest.h
+	include/alibabacloud/vpc/model/AddCommonBandwidthPackageIpsResult.h
 	include/alibabacloud/vpc/model/AddGlobalAccelerationInstanceIpRequest.h
 	include/alibabacloud/vpc/model/AddGlobalAccelerationInstanceIpResult.h
 	include/alibabacloud/vpc/model/AddIPv6TranslatorAclListEntryRequest.h
 	include/alibabacloud/vpc/model/AddIPv6TranslatorAclListEntryResult.h
+	include/alibabacloud/vpc/model/AddSourcesToTrafficMirrorSessionRequest.h
+	include/alibabacloud/vpc/model/AddSourcesToTrafficMirrorSessionResult.h
 	include/alibabacloud/vpc/model/AllocateEipAddressRequest.h
 	include/alibabacloud/vpc/model/AllocateEipAddressResult.h
+	include/alibabacloud/vpc/model/AllocateEipAddressProRequest.h
+	include/alibabacloud/vpc/model/AllocateEipAddressProResult.h
 	include/alibabacloud/vpc/model/AllocateEipSegmentAddressRequest.h
 	include/alibabacloud/vpc/model/AllocateEipSegmentAddressResult.h
 	include/alibabacloud/vpc/model/AllocateIpv6InternetBandwidthRequest.h
@@ -57,6 +61,10 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/AssociateRouteTableResult.h
 	include/alibabacloud/vpc/model/AssociateVpcCidrBlockRequest.h
 	include/alibabacloud/vpc/model/AssociateVpcCidrBlockResult.h
+	include/alibabacloud/vpc/model/AssociateVpnGatewayWithCertificateRequest.h
+	include/alibabacloud/vpc/model/AssociateVpnGatewayWithCertificateResult.h
+	include/alibabacloud/vpc/model/AttachDhcpOptionsSetToVpcRequest.h
+	include/alibabacloud/vpc/model/AttachDhcpOptionsSetToVpcResult.h
 	include/alibabacloud/vpc/model/CancelCommonBandwidthPackageIpBandwidthRequest.h
 	include/alibabacloud/vpc/model/CancelCommonBandwidthPackageIpBandwidthResult.h
 	include/alibabacloud/vpc/model/CancelExpressCloudConnectionRequest.h
@@ -65,14 +73,14 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/CancelPhysicalConnectionResult.h
 	include/alibabacloud/vpc/model/CompletePhysicalConnectionLOARequest.h
 	include/alibabacloud/vpc/model/CompletePhysicalConnectionLOAResult.h
+	include/alibabacloud/vpc/model/ConfirmPhysicalConnectionRequest.h
+	include/alibabacloud/vpc/model/ConfirmPhysicalConnectionResult.h
 	include/alibabacloud/vpc/model/ConnectRouterInterfaceRequest.h
 	include/alibabacloud/vpc/model/ConnectRouterInterfaceResult.h
 	include/alibabacloud/vpc/model/ConvertBandwidthPackageRequest.h
 	include/alibabacloud/vpc/model/ConvertBandwidthPackageResult.h
 	include/alibabacloud/vpc/model/CopyNetworkAclEntriesRequest.h
 	include/alibabacloud/vpc/model/CopyNetworkAclEntriesResult.h
-	include/alibabacloud/vpc/model/CreateBandwidthPackageRequest.h
-	include/alibabacloud/vpc/model/CreateBandwidthPackageResult.h
 	include/alibabacloud/vpc/model/CreateBgpGroupRequest.h
 	include/alibabacloud/vpc/model/CreateBgpGroupResult.h
 	include/alibabacloud/vpc/model/CreateBgpPeerRequest.h
@@ -81,6 +89,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/CreateCommonBandwidthPackageResult.h
 	include/alibabacloud/vpc/model/CreateCustomerGatewayRequest.h
 	include/alibabacloud/vpc/model/CreateCustomerGatewayResult.h
+	include/alibabacloud/vpc/model/CreateDhcpOptionsSetRequest.h
+	include/alibabacloud/vpc/model/CreateDhcpOptionsSetResult.h
 	include/alibabacloud/vpc/model/CreateExpressCloudConnectionRequest.h
 	include/alibabacloud/vpc/model/CreateExpressCloudConnectionResult.h
 	include/alibabacloud/vpc/model/CreateFlowLogRequest.h
@@ -97,6 +107,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/CreateIPv6TranslatorAclListResult.h
 	include/alibabacloud/vpc/model/CreateIPv6TranslatorEntryRequest.h
 	include/alibabacloud/vpc/model/CreateIPv6TranslatorEntryResult.h
+	include/alibabacloud/vpc/model/CreateIpsecServerRequest.h
+	include/alibabacloud/vpc/model/CreateIpsecServerResult.h
 	include/alibabacloud/vpc/model/CreateIpv6EgressOnlyRuleRequest.h
 	include/alibabacloud/vpc/model/CreateIpv6EgressOnlyRuleResult.h
 	include/alibabacloud/vpc/model/CreateIpv6GatewayRequest.h
@@ -123,8 +135,16 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/CreateSslVpnClientCertResult.h
 	include/alibabacloud/vpc/model/CreateSslVpnServerRequest.h
 	include/alibabacloud/vpc/model/CreateSslVpnServerResult.h
+	include/alibabacloud/vpc/model/CreateTrafficMirrorFilterRequest.h
+	include/alibabacloud/vpc/model/CreateTrafficMirrorFilterResult.h
+	include/alibabacloud/vpc/model/CreateTrafficMirrorFilterRulesRequest.h
+	include/alibabacloud/vpc/model/CreateTrafficMirrorFilterRulesResult.h
+	include/alibabacloud/vpc/model/CreateTrafficMirrorSessionRequest.h
+	include/alibabacloud/vpc/model/CreateTrafficMirrorSessionResult.h
 	include/alibabacloud/vpc/model/CreateVSwitchRequest.h
 	include/alibabacloud/vpc/model/CreateVSwitchResult.h
+	include/alibabacloud/vpc/model/CreateVbrHaRequest.h
+	include/alibabacloud/vpc/model/CreateVbrHaResult.h
 	include/alibabacloud/vpc/model/CreateVirtualBorderRouterRequest.h
 	include/alibabacloud/vpc/model/CreateVirtualBorderRouterResult.h
 	include/alibabacloud/vpc/model/CreateVpcRequest.h
@@ -141,8 +161,6 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DeactivateRouterInterfaceResult.h
 	include/alibabacloud/vpc/model/DeactiveFlowLogRequest.h
 	include/alibabacloud/vpc/model/DeactiveFlowLogResult.h
-	include/alibabacloud/vpc/model/DeleteBandwidthPackageRequest.h
-	include/alibabacloud/vpc/model/DeleteBandwidthPackageResult.h
 	include/alibabacloud/vpc/model/DeleteBgpGroupRequest.h
 	include/alibabacloud/vpc/model/DeleteBgpGroupResult.h
 	include/alibabacloud/vpc/model/DeleteBgpNetworkRequest.h
@@ -153,6 +171,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DeleteCommonBandwidthPackageResult.h
 	include/alibabacloud/vpc/model/DeleteCustomerGatewayRequest.h
 	include/alibabacloud/vpc/model/DeleteCustomerGatewayResult.h
+	include/alibabacloud/vpc/model/DeleteDhcpOptionsSetRequest.h
+	include/alibabacloud/vpc/model/DeleteDhcpOptionsSetResult.h
 	include/alibabacloud/vpc/model/DeleteExpressCloudConnectionRequest.h
 	include/alibabacloud/vpc/model/DeleteExpressCloudConnectionResult.h
 	include/alibabacloud/vpc/model/DeleteExpressConnectRequest.h
@@ -171,6 +191,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DeleteIPv6TranslatorAclListResult.h
 	include/alibabacloud/vpc/model/DeleteIPv6TranslatorEntryRequest.h
 	include/alibabacloud/vpc/model/DeleteIPv6TranslatorEntryResult.h
+	include/alibabacloud/vpc/model/DeleteIpsecServerRequest.h
+	include/alibabacloud/vpc/model/DeleteIpsecServerResult.h
 	include/alibabacloud/vpc/model/DeleteIpv6EgressOnlyRuleRequest.h
 	include/alibabacloud/vpc/model/DeleteIpv6EgressOnlyRuleResult.h
 	include/alibabacloud/vpc/model/DeleteIpv6GatewayRequest.h
@@ -195,8 +217,16 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DeleteSslVpnClientCertResult.h
 	include/alibabacloud/vpc/model/DeleteSslVpnServerRequest.h
 	include/alibabacloud/vpc/model/DeleteSslVpnServerResult.h
+	include/alibabacloud/vpc/model/DeleteTrafficMirrorFilterRequest.h
+	include/alibabacloud/vpc/model/DeleteTrafficMirrorFilterResult.h
+	include/alibabacloud/vpc/model/DeleteTrafficMirrorFilterRulesRequest.h
+	include/alibabacloud/vpc/model/DeleteTrafficMirrorFilterRulesResult.h
+	include/alibabacloud/vpc/model/DeleteTrafficMirrorSessionRequest.h
+	include/alibabacloud/vpc/model/DeleteTrafficMirrorSessionResult.h
 	include/alibabacloud/vpc/model/DeleteVSwitchRequest.h
 	include/alibabacloud/vpc/model/DeleteVSwitchResult.h
+	include/alibabacloud/vpc/model/DeleteVbrHaRequest.h
+	include/alibabacloud/vpc/model/DeleteVbrHaResult.h
 	include/alibabacloud/vpc/model/DeleteVirtualBorderRouterRequest.h
 	include/alibabacloud/vpc/model/DeleteVirtualBorderRouterResult.h
 	include/alibabacloud/vpc/model/DeleteVpcRequest.h
@@ -213,8 +243,6 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DeletionProtectionResult.h
 	include/alibabacloud/vpc/model/DescribeAccessPointsRequest.h
 	include/alibabacloud/vpc/model/DescribeAccessPointsResult.h
-	include/alibabacloud/vpc/model/DescribeBandwidthPackagesRequest.h
-	include/alibabacloud/vpc/model/DescribeBandwidthPackagesResult.h
 	include/alibabacloud/vpc/model/DescribeBgpGroupsRequest.h
 	include/alibabacloud/vpc/model/DescribeBgpGroupsResult.h
 	include/alibabacloud/vpc/model/DescribeBgpNetworksRequest.h
@@ -257,6 +285,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeIPv6TranslatorEntriesResult.h
 	include/alibabacloud/vpc/model/DescribeIPv6TranslatorsRequest.h
 	include/alibabacloud/vpc/model/DescribeIPv6TranslatorsResult.h
+	include/alibabacloud/vpc/model/DescribeInstanceAutoRenewAttributeRequest.h
+	include/alibabacloud/vpc/model/DescribeInstanceAutoRenewAttributeResult.h
 	include/alibabacloud/vpc/model/DescribeIpv6AddressesRequest.h
 	include/alibabacloud/vpc/model/DescribeIpv6AddressesResult.h
 	include/alibabacloud/vpc/model/DescribeIpv6EgressOnlyRulesRequest.h
@@ -305,6 +335,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeVSwitchAttributesResult.h
 	include/alibabacloud/vpc/model/DescribeVSwitchesRequest.h
 	include/alibabacloud/vpc/model/DescribeVSwitchesResult.h
+	include/alibabacloud/vpc/model/DescribeVbrHaRequest.h
+	include/alibabacloud/vpc/model/DescribeVbrHaResult.h
 	include/alibabacloud/vpc/model/DescribeVirtualBorderRoutersRequest.h
 	include/alibabacloud/vpc/model/DescribeVirtualBorderRoutersResult.h
 	include/alibabacloud/vpc/model/DescribeVirtualBorderRoutersForPhysicalConnectionRequest.h
@@ -329,28 +361,58 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeVpnSslServerLogsResult.h
 	include/alibabacloud/vpc/model/DescribeZonesRequest.h
 	include/alibabacloud/vpc/model/DescribeZonesResult.h
+	include/alibabacloud/vpc/model/DetachDhcpOptionsSetFromVpcRequest.h
+	include/alibabacloud/vpc/model/DetachDhcpOptionsSetFromVpcResult.h
+	include/alibabacloud/vpc/model/DisableNatGatewayEcsMetricRequest.h
+	include/alibabacloud/vpc/model/DisableNatGatewayEcsMetricResult.h
 	include/alibabacloud/vpc/model/DisableVpcClassicLinkRequest.h
 	include/alibabacloud/vpc/model/DisableVpcClassicLinkResult.h
+	include/alibabacloud/vpc/model/DissociateVpnGatewayWithCertificateRequest.h
+	include/alibabacloud/vpc/model/DissociateVpnGatewayWithCertificateResult.h
 	include/alibabacloud/vpc/model/DownloadVpnConnectionConfigRequest.h
 	include/alibabacloud/vpc/model/DownloadVpnConnectionConfigResult.h
+	include/alibabacloud/vpc/model/EnableNatGatewayEcsMetricRequest.h
+	include/alibabacloud/vpc/model/EnableNatGatewayEcsMetricResult.h
 	include/alibabacloud/vpc/model/EnablePhysicalConnectionRequest.h
 	include/alibabacloud/vpc/model/EnablePhysicalConnectionResult.h
 	include/alibabacloud/vpc/model/EnableVpcClassicLinkRequest.h
 	include/alibabacloud/vpc/model/EnableVpcClassicLinkResult.h
+	include/alibabacloud/vpc/model/GetDhcpOptionsSetRequest.h
+	include/alibabacloud/vpc/model/GetDhcpOptionsSetResult.h
+	include/alibabacloud/vpc/model/GetNatGatewayAttributeRequest.h
+	include/alibabacloud/vpc/model/GetNatGatewayAttributeResult.h
+	include/alibabacloud/vpc/model/GetNatGatewayConvertStatusRequest.h
+	include/alibabacloud/vpc/model/GetNatGatewayConvertStatusResult.h
+	include/alibabacloud/vpc/model/GetTrafficMirrorServiceStatusRequest.h
+	include/alibabacloud/vpc/model/GetTrafficMirrorServiceStatusResult.h
 	include/alibabacloud/vpc/model/GrantInstanceToCenRequest.h
 	include/alibabacloud/vpc/model/GrantInstanceToCenResult.h
+	include/alibabacloud/vpc/model/ListDhcpOptionsSetsRequest.h
+	include/alibabacloud/vpc/model/ListDhcpOptionsSetsResult.h
+	include/alibabacloud/vpc/model/ListEnhanhcedNatGatewayAvailableZonesRequest.h
+	include/alibabacloud/vpc/model/ListEnhanhcedNatGatewayAvailableZonesResult.h
+	include/alibabacloud/vpc/model/ListIpsecServersRequest.h
+	include/alibabacloud/vpc/model/ListIpsecServersResult.h
+	include/alibabacloud/vpc/model/ListNatGatewayEcsMetricRequest.h
+	include/alibabacloud/vpc/model/ListNatGatewayEcsMetricResult.h
+	include/alibabacloud/vpc/model/ListPhysicalConnectionFeaturesRequest.h
+	include/alibabacloud/vpc/model/ListPhysicalConnectionFeaturesResult.h
 	include/alibabacloud/vpc/model/ListTagResourcesRequest.h
 	include/alibabacloud/vpc/model/ListTagResourcesResult.h
-	include/alibabacloud/vpc/model/ModifyBandwidthPackageAttributeRequest.h
-	include/alibabacloud/vpc/model/ModifyBandwidthPackageAttributeResult.h
-	include/alibabacloud/vpc/model/ModifyBandwidthPackageSpecRequest.h
-	include/alibabacloud/vpc/model/ModifyBandwidthPackageSpecResult.h
+	include/alibabacloud/vpc/model/ListTrafficMirrorFiltersRequest.h
+	include/alibabacloud/vpc/model/ListTrafficMirrorFiltersResult.h
+	include/alibabacloud/vpc/model/ListTrafficMirrorSessionsRequest.h
+	include/alibabacloud/vpc/model/ListTrafficMirrorSessionsResult.h
+	include/alibabacloud/vpc/model/ListVpnCertificateAssociationsRequest.h
+	include/alibabacloud/vpc/model/ListVpnCertificateAssociationsResult.h
 	include/alibabacloud/vpc/model/ModifyBgpGroupAttributeRequest.h
 	include/alibabacloud/vpc/model/ModifyBgpGroupAttributeResult.h
 	include/alibabacloud/vpc/model/ModifyBgpPeerAttributeRequest.h
 	include/alibabacloud/vpc/model/ModifyBgpPeerAttributeResult.h
 	include/alibabacloud/vpc/model/ModifyCommonBandwidthPackageAttributeRequest.h
 	include/alibabacloud/vpc/model/ModifyCommonBandwidthPackageAttributeResult.h
+	include/alibabacloud/vpc/model/ModifyCommonBandwidthPackageInternetChargeTypeRequest.h
+	include/alibabacloud/vpc/model/ModifyCommonBandwidthPackageInternetChargeTypeResult.h
 	include/alibabacloud/vpc/model/ModifyCommonBandwidthPackageIpBandwidthRequest.h
 	include/alibabacloud/vpc/model/ModifyCommonBandwidthPackageIpBandwidthResult.h
 	include/alibabacloud/vpc/model/ModifyCommonBandwidthPackagePayTypeRequest.h
@@ -385,6 +447,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/ModifyIPv6TranslatorBandwidthResult.h
 	include/alibabacloud/vpc/model/ModifyIPv6TranslatorEntryRequest.h
 	include/alibabacloud/vpc/model/ModifyIPv6TranslatorEntryResult.h
+	include/alibabacloud/vpc/model/ModifyInstanceAutoRenewalAttributeRequest.h
+	include/alibabacloud/vpc/model/ModifyInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/vpc/model/ModifyIpv6AddressAttributeRequest.h
 	include/alibabacloud/vpc/model/ModifyIpv6AddressAttributeResult.h
 	include/alibabacloud/vpc/model/ModifyIpv6GatewayAttributeRequest.h
@@ -433,6 +497,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/ModifyVpnRouteEntryWeightResult.h
 	include/alibabacloud/vpc/model/MoveResourceGroupRequest.h
 	include/alibabacloud/vpc/model/MoveResourceGroupResult.h
+	include/alibabacloud/vpc/model/OpenTrafficMirrorServiceRequest.h
+	include/alibabacloud/vpc/model/OpenTrafficMirrorServiceResult.h
 	include/alibabacloud/vpc/model/PublishVpnRouteEntryRequest.h
 	include/alibabacloud/vpc/model/PublishVpnRouteEntryResult.h
 	include/alibabacloud/vpc/model/RecoverVirtualBorderRouterRequest.h
@@ -441,14 +507,18 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/ReleaseEipAddressResult.h
 	include/alibabacloud/vpc/model/ReleaseEipSegmentAddressRequest.h
 	include/alibabacloud/vpc/model/ReleaseEipSegmentAddressResult.h
-	include/alibabacloud/vpc/model/RemoveBandwidthPackageIpsRequest.h
-	include/alibabacloud/vpc/model/RemoveBandwidthPackageIpsResult.h
 	include/alibabacloud/vpc/model/RemoveCommonBandwidthPackageIpRequest.h
 	include/alibabacloud/vpc/model/RemoveCommonBandwidthPackageIpResult.h
 	include/alibabacloud/vpc/model/RemoveGlobalAccelerationInstanceIpRequest.h
 	include/alibabacloud/vpc/model/RemoveGlobalAccelerationInstanceIpResult.h
 	include/alibabacloud/vpc/model/RemoveIPv6TranslatorAclListEntryRequest.h
 	include/alibabacloud/vpc/model/RemoveIPv6TranslatorAclListEntryResult.h
+	include/alibabacloud/vpc/model/RemoveSourcesFromTrafficMirrorSessionRequest.h
+	include/alibabacloud/vpc/model/RemoveSourcesFromTrafficMirrorSessionResult.h
+	include/alibabacloud/vpc/model/RenewInstanceRequest.h
+	include/alibabacloud/vpc/model/RenewInstanceResult.h
+	include/alibabacloud/vpc/model/ReplaceVpcDhcpOptionsSetRequest.h
+	include/alibabacloud/vpc/model/ReplaceVpcDhcpOptionsSetResult.h
 	include/alibabacloud/vpc/model/RevokeInstanceFromCenRequest.h
 	include/alibabacloud/vpc/model/RevokeInstanceFromCenResult.h
 	include/alibabacloud/vpc/model/TagResourcesRequest.h
@@ -473,8 +543,22 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/UnassociateRouteTableResult.h
 	include/alibabacloud/vpc/model/UnassociateVpcCidrBlockRequest.h
 	include/alibabacloud/vpc/model/UnassociateVpcCidrBlockResult.h
+	include/alibabacloud/vpc/model/UpdateDhcpOptionsSetAttributeRequest.h
+	include/alibabacloud/vpc/model/UpdateDhcpOptionsSetAttributeResult.h
+	include/alibabacloud/vpc/model/UpdateIpsecServerRequest.h
+	include/alibabacloud/vpc/model/UpdateIpsecServerResult.h
+	include/alibabacloud/vpc/model/UpdateNatGatewayNatTypeRequest.h
+	include/alibabacloud/vpc/model/UpdateNatGatewayNatTypeResult.h
 	include/alibabacloud/vpc/model/UpdateNetworkAclEntriesRequest.h
-	include/alibabacloud/vpc/model/UpdateNetworkAclEntriesResult.h )
+	include/alibabacloud/vpc/model/UpdateNetworkAclEntriesResult.h
+	include/alibabacloud/vpc/model/UpdateTrafficMirrorFilterAttributeRequest.h
+	include/alibabacloud/vpc/model/UpdateTrafficMirrorFilterAttributeResult.h
+	include/alibabacloud/vpc/model/UpdateTrafficMirrorFilterRuleAttributeRequest.h
+	include/alibabacloud/vpc/model/UpdateTrafficMirrorFilterRuleAttributeResult.h
+	include/alibabacloud/vpc/model/UpdateTrafficMirrorSessionAttributeRequest.h
+	include/alibabacloud/vpc/model/UpdateTrafficMirrorSessionAttributeResult.h
+	include/alibabacloud/vpc/model/UpdateVirtualBorderBandwidthRequest.h
+	include/alibabacloud/vpc/model/UpdateVirtualBorderBandwidthResult.h )
 
 set(vpc_src 
 	src/VpcClient.cc
@@ -482,18 +566,22 @@ set(vpc_src
 	src/model/ActivateRouterInterfaceResult.cc
 	src/model/ActiveFlowLogRequest.cc
 	src/model/ActiveFlowLogResult.cc
-	src/model/AddBandwidthPackageIpsRequest.cc
-	src/model/AddBandwidthPackageIpsResult.cc
 	src/model/AddBgpNetworkRequest.cc
 	src/model/AddBgpNetworkResult.cc
 	src/model/AddCommonBandwidthPackageIpRequest.cc
 	src/model/AddCommonBandwidthPackageIpResult.cc
+	src/model/AddCommonBandwidthPackageIpsRequest.cc
+	src/model/AddCommonBandwidthPackageIpsResult.cc
 	src/model/AddGlobalAccelerationInstanceIpRequest.cc
 	src/model/AddGlobalAccelerationInstanceIpResult.cc
 	src/model/AddIPv6TranslatorAclListEntryRequest.cc
 	src/model/AddIPv6TranslatorAclListEntryResult.cc
+	src/model/AddSourcesToTrafficMirrorSessionRequest.cc
+	src/model/AddSourcesToTrafficMirrorSessionResult.cc
 	src/model/AllocateEipAddressRequest.cc
 	src/model/AllocateEipAddressResult.cc
+	src/model/AllocateEipAddressProRequest.cc
+	src/model/AllocateEipAddressProResult.cc
 	src/model/AllocateEipSegmentAddressRequest.cc
 	src/model/AllocateEipSegmentAddressResult.cc
 	src/model/AllocateIpv6InternetBandwidthRequest.cc
@@ -514,6 +602,10 @@ set(vpc_src
 	src/model/AssociateRouteTableResult.cc
 	src/model/AssociateVpcCidrBlockRequest.cc
 	src/model/AssociateVpcCidrBlockResult.cc
+	src/model/AssociateVpnGatewayWithCertificateRequest.cc
+	src/model/AssociateVpnGatewayWithCertificateResult.cc
+	src/model/AttachDhcpOptionsSetToVpcRequest.cc
+	src/model/AttachDhcpOptionsSetToVpcResult.cc
 	src/model/CancelCommonBandwidthPackageIpBandwidthRequest.cc
 	src/model/CancelCommonBandwidthPackageIpBandwidthResult.cc
 	src/model/CancelExpressCloudConnectionRequest.cc
@@ -522,14 +614,14 @@ set(vpc_src
 	src/model/CancelPhysicalConnectionResult.cc
 	src/model/CompletePhysicalConnectionLOARequest.cc
 	src/model/CompletePhysicalConnectionLOAResult.cc
+	src/model/ConfirmPhysicalConnectionRequest.cc
+	src/model/ConfirmPhysicalConnectionResult.cc
 	src/model/ConnectRouterInterfaceRequest.cc
 	src/model/ConnectRouterInterfaceResult.cc
 	src/model/ConvertBandwidthPackageRequest.cc
 	src/model/ConvertBandwidthPackageResult.cc
 	src/model/CopyNetworkAclEntriesRequest.cc
 	src/model/CopyNetworkAclEntriesResult.cc
-	src/model/CreateBandwidthPackageRequest.cc
-	src/model/CreateBandwidthPackageResult.cc
 	src/model/CreateBgpGroupRequest.cc
 	src/model/CreateBgpGroupResult.cc
 	src/model/CreateBgpPeerRequest.cc
@@ -538,6 +630,8 @@ set(vpc_src
 	src/model/CreateCommonBandwidthPackageResult.cc
 	src/model/CreateCustomerGatewayRequest.cc
 	src/model/CreateCustomerGatewayResult.cc
+	src/model/CreateDhcpOptionsSetRequest.cc
+	src/model/CreateDhcpOptionsSetResult.cc
 	src/model/CreateExpressCloudConnectionRequest.cc
 	src/model/CreateExpressCloudConnectionResult.cc
 	src/model/CreateFlowLogRequest.cc
@@ -554,6 +648,8 @@ set(vpc_src
 	src/model/CreateIPv6TranslatorAclListResult.cc
 	src/model/CreateIPv6TranslatorEntryRequest.cc
 	src/model/CreateIPv6TranslatorEntryResult.cc
+	src/model/CreateIpsecServerRequest.cc
+	src/model/CreateIpsecServerResult.cc
 	src/model/CreateIpv6EgressOnlyRuleRequest.cc
 	src/model/CreateIpv6EgressOnlyRuleResult.cc
 	src/model/CreateIpv6GatewayRequest.cc
@@ -580,8 +676,16 @@ set(vpc_src
 	src/model/CreateSslVpnClientCertResult.cc
 	src/model/CreateSslVpnServerRequest.cc
 	src/model/CreateSslVpnServerResult.cc
+	src/model/CreateTrafficMirrorFilterRequest.cc
+	src/model/CreateTrafficMirrorFilterResult.cc
+	src/model/CreateTrafficMirrorFilterRulesRequest.cc
+	src/model/CreateTrafficMirrorFilterRulesResult.cc
+	src/model/CreateTrafficMirrorSessionRequest.cc
+	src/model/CreateTrafficMirrorSessionResult.cc
 	src/model/CreateVSwitchRequest.cc
 	src/model/CreateVSwitchResult.cc
+	src/model/CreateVbrHaRequest.cc
+	src/model/CreateVbrHaResult.cc
 	src/model/CreateVirtualBorderRouterRequest.cc
 	src/model/CreateVirtualBorderRouterResult.cc
 	src/model/CreateVpcRequest.cc
@@ -598,8 +702,6 @@ set(vpc_src
 	src/model/DeactivateRouterInterfaceResult.cc
 	src/model/DeactiveFlowLogRequest.cc
 	src/model/DeactiveFlowLogResult.cc
-	src/model/DeleteBandwidthPackageRequest.cc
-	src/model/DeleteBandwidthPackageResult.cc
 	src/model/DeleteBgpGroupRequest.cc
 	src/model/DeleteBgpGroupResult.cc
 	src/model/DeleteBgpNetworkRequest.cc
@@ -610,6 +712,8 @@ set(vpc_src
 	src/model/DeleteCommonBandwidthPackageResult.cc
 	src/model/DeleteCustomerGatewayRequest.cc
 	src/model/DeleteCustomerGatewayResult.cc
+	src/model/DeleteDhcpOptionsSetRequest.cc
+	src/model/DeleteDhcpOptionsSetResult.cc
 	src/model/DeleteExpressCloudConnectionRequest.cc
 	src/model/DeleteExpressCloudConnectionResult.cc
 	src/model/DeleteExpressConnectRequest.cc
@@ -628,6 +732,8 @@ set(vpc_src
 	src/model/DeleteIPv6TranslatorAclListResult.cc
 	src/model/DeleteIPv6TranslatorEntryRequest.cc
 	src/model/DeleteIPv6TranslatorEntryResult.cc
+	src/model/DeleteIpsecServerRequest.cc
+	src/model/DeleteIpsecServerResult.cc
 	src/model/DeleteIpv6EgressOnlyRuleRequest.cc
 	src/model/DeleteIpv6EgressOnlyRuleResult.cc
 	src/model/DeleteIpv6GatewayRequest.cc
@@ -652,8 +758,16 @@ set(vpc_src
 	src/model/DeleteSslVpnClientCertResult.cc
 	src/model/DeleteSslVpnServerRequest.cc
 	src/model/DeleteSslVpnServerResult.cc
+	src/model/DeleteTrafficMirrorFilterRequest.cc
+	src/model/DeleteTrafficMirrorFilterResult.cc
+	src/model/DeleteTrafficMirrorFilterRulesRequest.cc
+	src/model/DeleteTrafficMirrorFilterRulesResult.cc
+	src/model/DeleteTrafficMirrorSessionRequest.cc
+	src/model/DeleteTrafficMirrorSessionResult.cc
 	src/model/DeleteVSwitchRequest.cc
 	src/model/DeleteVSwitchResult.cc
+	src/model/DeleteVbrHaRequest.cc
+	src/model/DeleteVbrHaResult.cc
 	src/model/DeleteVirtualBorderRouterRequest.cc
 	src/model/DeleteVirtualBorderRouterResult.cc
 	src/model/DeleteVpcRequest.cc
@@ -670,8 +784,6 @@ set(vpc_src
 	src/model/DeletionProtectionResult.cc
 	src/model/DescribeAccessPointsRequest.cc
 	src/model/DescribeAccessPointsResult.cc
-	src/model/DescribeBandwidthPackagesRequest.cc
-	src/model/DescribeBandwidthPackagesResult.cc
 	src/model/DescribeBgpGroupsRequest.cc
 	src/model/DescribeBgpGroupsResult.cc
 	src/model/DescribeBgpNetworksRequest.cc
@@ -714,6 +826,8 @@ set(vpc_src
 	src/model/DescribeIPv6TranslatorEntriesResult.cc
 	src/model/DescribeIPv6TranslatorsRequest.cc
 	src/model/DescribeIPv6TranslatorsResult.cc
+	src/model/DescribeInstanceAutoRenewAttributeRequest.cc
+	src/model/DescribeInstanceAutoRenewAttributeResult.cc
 	src/model/DescribeIpv6AddressesRequest.cc
 	src/model/DescribeIpv6AddressesResult.cc
 	src/model/DescribeIpv6EgressOnlyRulesRequest.cc
@@ -762,6 +876,8 @@ set(vpc_src
 	src/model/DescribeVSwitchAttributesResult.cc
 	src/model/DescribeVSwitchesRequest.cc
 	src/model/DescribeVSwitchesResult.cc
+	src/model/DescribeVbrHaRequest.cc
+	src/model/DescribeVbrHaResult.cc
 	src/model/DescribeVirtualBorderRoutersRequest.cc
 	src/model/DescribeVirtualBorderRoutersResult.cc
 	src/model/DescribeVirtualBorderRoutersForPhysicalConnectionRequest.cc
@@ -786,28 +902,58 @@ set(vpc_src
 	src/model/DescribeVpnSslServerLogsResult.cc
 	src/model/DescribeZonesRequest.cc
 	src/model/DescribeZonesResult.cc
+	src/model/DetachDhcpOptionsSetFromVpcRequest.cc
+	src/model/DetachDhcpOptionsSetFromVpcResult.cc
+	src/model/DisableNatGatewayEcsMetricRequest.cc
+	src/model/DisableNatGatewayEcsMetricResult.cc
 	src/model/DisableVpcClassicLinkRequest.cc
 	src/model/DisableVpcClassicLinkResult.cc
+	src/model/DissociateVpnGatewayWithCertificateRequest.cc
+	src/model/DissociateVpnGatewayWithCertificateResult.cc
 	src/model/DownloadVpnConnectionConfigRequest.cc
 	src/model/DownloadVpnConnectionConfigResult.cc
+	src/model/EnableNatGatewayEcsMetricRequest.cc
+	src/model/EnableNatGatewayEcsMetricResult.cc
 	src/model/EnablePhysicalConnectionRequest.cc
 	src/model/EnablePhysicalConnectionResult.cc
 	src/model/EnableVpcClassicLinkRequest.cc
 	src/model/EnableVpcClassicLinkResult.cc
+	src/model/GetDhcpOptionsSetRequest.cc
+	src/model/GetDhcpOptionsSetResult.cc
+	src/model/GetNatGatewayAttributeRequest.cc
+	src/model/GetNatGatewayAttributeResult.cc
+	src/model/GetNatGatewayConvertStatusRequest.cc
+	src/model/GetNatGatewayConvertStatusResult.cc
+	src/model/GetTrafficMirrorServiceStatusRequest.cc
+	src/model/GetTrafficMirrorServiceStatusResult.cc
 	src/model/GrantInstanceToCenRequest.cc
 	src/model/GrantInstanceToCenResult.cc
+	src/model/ListDhcpOptionsSetsRequest.cc
+	src/model/ListDhcpOptionsSetsResult.cc
+	src/model/ListEnhanhcedNatGatewayAvailableZonesRequest.cc
+	src/model/ListEnhanhcedNatGatewayAvailableZonesResult.cc
+	src/model/ListIpsecServersRequest.cc
+	src/model/ListIpsecServersResult.cc
+	src/model/ListNatGatewayEcsMetricRequest.cc
+	src/model/ListNatGatewayEcsMetricResult.cc
+	src/model/ListPhysicalConnectionFeaturesRequest.cc
+	src/model/ListPhysicalConnectionFeaturesResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
-	src/model/ModifyBandwidthPackageAttributeRequest.cc
-	src/model/ModifyBandwidthPackageAttributeResult.cc
-	src/model/ModifyBandwidthPackageSpecRequest.cc
-	src/model/ModifyBandwidthPackageSpecResult.cc
+	src/model/ListTrafficMirrorFiltersRequest.cc
+	src/model/ListTrafficMirrorFiltersResult.cc
+	src/model/ListTrafficMirrorSessionsRequest.cc
+	src/model/ListTrafficMirrorSessionsResult.cc
+	src/model/ListVpnCertificateAssociationsRequest.cc
+	src/model/ListVpnCertificateAssociationsResult.cc
 	src/model/ModifyBgpGroupAttributeRequest.cc
 	src/model/ModifyBgpGroupAttributeResult.cc
 	src/model/ModifyBgpPeerAttributeRequest.cc
 	src/model/ModifyBgpPeerAttributeResult.cc
 	src/model/ModifyCommonBandwidthPackageAttributeRequest.cc
 	src/model/ModifyCommonBandwidthPackageAttributeResult.cc
+	src/model/ModifyCommonBandwidthPackageInternetChargeTypeRequest.cc
+	src/model/ModifyCommonBandwidthPackageInternetChargeTypeResult.cc
 	src/model/ModifyCommonBandwidthPackageIpBandwidthRequest.cc
 	src/model/ModifyCommonBandwidthPackageIpBandwidthResult.cc
 	src/model/ModifyCommonBandwidthPackagePayTypeRequest.cc
@@ -842,6 +988,8 @@ set(vpc_src
 	src/model/ModifyIPv6TranslatorBandwidthResult.cc
 	src/model/ModifyIPv6TranslatorEntryRequest.cc
 	src/model/ModifyIPv6TranslatorEntryResult.cc
+	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc
+	src/model/ModifyInstanceAutoRenewalAttributeResult.cc
 	src/model/ModifyIpv6AddressAttributeRequest.cc
 	src/model/ModifyIpv6AddressAttributeResult.cc
 	src/model/ModifyIpv6GatewayAttributeRequest.cc
@@ -890,6 +1038,8 @@ set(vpc_src
 	src/model/ModifyVpnRouteEntryWeightResult.cc
 	src/model/MoveResourceGroupRequest.cc
 	src/model/MoveResourceGroupResult.cc
+	src/model/OpenTrafficMirrorServiceRequest.cc
+	src/model/OpenTrafficMirrorServiceResult.cc
 	src/model/PublishVpnRouteEntryRequest.cc
 	src/model/PublishVpnRouteEntryResult.cc
 	src/model/RecoverVirtualBorderRouterRequest.cc
@@ -898,14 +1048,18 @@ set(vpc_src
 	src/model/ReleaseEipAddressResult.cc
 	src/model/ReleaseEipSegmentAddressRequest.cc
 	src/model/ReleaseEipSegmentAddressResult.cc
-	src/model/RemoveBandwidthPackageIpsRequest.cc
-	src/model/RemoveBandwidthPackageIpsResult.cc
 	src/model/RemoveCommonBandwidthPackageIpRequest.cc
 	src/model/RemoveCommonBandwidthPackageIpResult.cc
 	src/model/RemoveGlobalAccelerationInstanceIpRequest.cc
 	src/model/RemoveGlobalAccelerationInstanceIpResult.cc
 	src/model/RemoveIPv6TranslatorAclListEntryRequest.cc
 	src/model/RemoveIPv6TranslatorAclListEntryResult.cc
+	src/model/RemoveSourcesFromTrafficMirrorSessionRequest.cc
+	src/model/RemoveSourcesFromTrafficMirrorSessionResult.cc
+	src/model/RenewInstanceRequest.cc
+	src/model/RenewInstanceResult.cc
+	src/model/ReplaceVpcDhcpOptionsSetRequest.cc
+	src/model/ReplaceVpcDhcpOptionsSetResult.cc
 	src/model/RevokeInstanceFromCenRequest.cc
 	src/model/RevokeInstanceFromCenResult.cc
 	src/model/TagResourcesRequest.cc
@@ -930,8 +1084,22 @@ set(vpc_src
 	src/model/UnassociateRouteTableResult.cc
 	src/model/UnassociateVpcCidrBlockRequest.cc
 	src/model/UnassociateVpcCidrBlockResult.cc
+	src/model/UpdateDhcpOptionsSetAttributeRequest.cc
+	src/model/UpdateDhcpOptionsSetAttributeResult.cc
+	src/model/UpdateIpsecServerRequest.cc
+	src/model/UpdateIpsecServerResult.cc
+	src/model/UpdateNatGatewayNatTypeRequest.cc
+	src/model/UpdateNatGatewayNatTypeResult.cc
 	src/model/UpdateNetworkAclEntriesRequest.cc
-	src/model/UpdateNetworkAclEntriesResult.cc )
+	src/model/UpdateNetworkAclEntriesResult.cc
+	src/model/UpdateTrafficMirrorFilterAttributeRequest.cc
+	src/model/UpdateTrafficMirrorFilterAttributeResult.cc
+	src/model/UpdateTrafficMirrorFilterRuleAttributeRequest.cc
+	src/model/UpdateTrafficMirrorFilterRuleAttributeResult.cc
+	src/model/UpdateTrafficMirrorSessionAttributeRequest.cc
+	src/model/UpdateTrafficMirrorSessionAttributeResult.cc
+	src/model/UpdateVirtualBorderBandwidthRequest.cc
+	src/model/UpdateVirtualBorderBandwidthResult.cc )
 
 add_library(vpc ${LIB_TYPE}
 	${vpc_public_header}

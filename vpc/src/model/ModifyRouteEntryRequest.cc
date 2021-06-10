@@ -27,6 +27,17 @@ ModifyRouteEntryRequest::ModifyRouteEntryRequest() :
 ModifyRouteEntryRequest::~ModifyRouteEntryRequest()
 {}
 
+long ModifyRouteEntryRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void ModifyRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
 std::string ModifyRouteEntryRequest::getRouteEntryName()const
 {
 	return routeEntryName_;

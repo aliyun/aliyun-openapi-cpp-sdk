@@ -82,6 +82,17 @@ void ModifyVpcAttributeRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string ModifyVpcAttributeRequest::getIpv6Isp()const
+{
+	return ipv6Isp_;
+}
+
+void ModifyVpcAttributeRequest::setIpv6Isp(const std::string& ipv6Isp)
+{
+	ipv6Isp_ = ipv6Isp;
+	setParameter("Ipv6Isp", ipv6Isp);
+}
+
 std::string ModifyVpcAttributeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -113,6 +124,17 @@ void ModifyVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyVpcAttributeRequest::getIpv6CidrBlock()const
+{
+	return ipv6CidrBlock_;
+}
+
+void ModifyVpcAttributeRequest::setIpv6CidrBlock(const std::string& ipv6CidrBlock)
+{
+	ipv6CidrBlock_ = ipv6CidrBlock;
+	setParameter("Ipv6CidrBlock", ipv6CidrBlock);
 }
 
 std::string ModifyVpcAttributeRequest::getVpcId()const

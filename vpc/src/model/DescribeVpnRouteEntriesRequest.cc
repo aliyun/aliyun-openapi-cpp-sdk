@@ -71,6 +71,17 @@ void DescribeVpnRouteEntriesRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeVpnRouteEntriesRequest::getRouteEntryType()const
+{
+	return routeEntryType_;
+}
+
+void DescribeVpnRouteEntriesRequest::setRouteEntryType(const std::string& routeEntryType)
+{
+	routeEntryType_ = routeEntryType;
+	setParameter("RouteEntryType", routeEntryType);
+}
+
 std::string DescribeVpnRouteEntriesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

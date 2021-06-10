@@ -54,6 +54,8 @@ void DescribeNetworkAclAttributesResult::parse(const std::string &payload)
 		networkAclAttribute_.creationTime = networkAclAttributeNode["CreationTime"].asString();
 	if(!networkAclAttributeNode["Status"].isNull())
 		networkAclAttribute_.status = networkAclAttributeNode["Status"].asString();
+	if(!networkAclAttributeNode["OwnerId"].isNull())
+		networkAclAttribute_.ownerId = std::stol(networkAclAttributeNode["OwnerId"].asString());
 	auto allIngressAclEntriesNode = networkAclAttributeNode["IngressAclEntries"]["IngressAclEntry"];
 	for (auto networkAclAttributeNodeIngressAclEntriesIngressAclEntry : allIngressAclEntriesNode)
 	{

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getISP()const;
 				void setISP(const std::string& iSP);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
@@ -65,6 +67,8 @@ namespace AlibabaCloud
 				void setActivityId(long activityId);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getPricingCycle()const;
 				void setPricingCycle(const std::string& pricingCycle);
 
@@ -72,6 +76,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string iSP_;
+				std::string description_;
 				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string netmode_;
@@ -84,6 +89,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				long activityId_;
 				std::string internetChargeType_;
+				std::string name_;
 				std::string pricingCycle_;
 
 			};

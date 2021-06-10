@@ -67,6 +67,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string networkAclId;
 					std::string vpcId;
+					long ownerId;
 					std::vector<NetworkAcl::EgressAclEntry> egressAclEntries;
 					std::string creationTime;
 					std::string networkAclName;

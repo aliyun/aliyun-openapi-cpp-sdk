@@ -77,6 +77,10 @@ void DescribeBgpPeersResult::parse(const std::string &payload)
 			bgpPeersObject.regionId = valueBgpPeersBgpPeer["RegionId"].asString();
 		if(!valueBgpPeersBgpPeer["EnableBfd"].isNull())
 			bgpPeersObject.enableBfd = valueBgpPeersBgpPeer["EnableBfd"].asString() == "true";
+		if(!valueBgpPeersBgpPeer["IpVersion"].isNull())
+			bgpPeersObject.ipVersion = valueBgpPeersBgpPeer["IpVersion"].asString();
+		if(!valueBgpPeersBgpPeer["BfdMultiHop"].isNull())
+			bgpPeersObject.bfdMultiHop = std::stoi(valueBgpPeersBgpPeer["BfdMultiHop"].asString());
 		bgpPeers_.push_back(bgpPeersObject);
 	}
 	if(!value["TotalCount"].isNull())

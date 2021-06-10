@@ -39,13 +39,15 @@ namespace AlibabaCloud
 						std::string izNo;
 						std::string privateIpAddress;
 						int maxBandwidth;
-						int eniInstanceId;
+						std::string eniInstanceId;
+						std::string eniType;
 						std::string vswitchId;
 					};
 					struct IpList
 					{
 						std::string usingStatus;
 						bool apAccessEnabled;
+						std::string privateIpAddress;
 						bool snatEntryEnabled;
 						std::string allocationId;
 						std::string ipAddress;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 					std::string name;
 					std::string internetChargeType;
 					NatGatewayPrivateInfo natGatewayPrivateInfo;
+					bool ecsMetricEnabled;
 					std::string vpcId;
 					std::vector<std::string> snatTableIds;
 					std::string expiredTime;

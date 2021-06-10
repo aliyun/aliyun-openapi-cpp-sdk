@@ -104,6 +104,17 @@ void CreateVpcRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string CreateVpcRequest::getIpv6Isp()const
+{
+	return ipv6Isp_;
+}
+
+void CreateVpcRequest::setIpv6Isp(const std::string& ipv6Isp)
+{
+	ipv6Isp_ = ipv6Isp;
+	setParameter("Ipv6Isp", ipv6Isp);
+}
+
 std::string CreateVpcRequest::getUserCidr()const
 {
 	return userCidr_;

@@ -55,58 +55,58 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 			routeTablesObject.resourceGroupId = valueRouteTablesRouteTable["ResourceGroupId"].asString();
 		if(!valueRouteTablesRouteTable["Status"].isNull())
 			routeTablesObject.status = valueRouteTablesRouteTable["Status"].asString();
-		auto allRouteEntrysNode = allRouteTablesNode["RouteEntrys"]["RouteEntry"];
-		for (auto allRouteTablesNodeRouteEntrysRouteEntry : allRouteEntrysNode)
+		auto allRouteEntrysNode = valueRouteTablesRouteTable["RouteEntrys"]["RouteEntry"];
+		for (auto valueRouteTablesRouteTableRouteEntrysRouteEntry : allRouteEntrysNode)
 		{
 			RouteTable::RouteEntry routeEntrysObject;
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["RouteTableId"].isNull())
-				routeEntrysObject.routeTableId = allRouteTablesNodeRouteEntrysRouteEntry["RouteTableId"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["DestinationCidrBlock"].isNull())
-				routeEntrysObject.destinationCidrBlock = allRouteTablesNodeRouteEntrysRouteEntry["DestinationCidrBlock"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["Type"].isNull())
-				routeEntrysObject.type = allRouteTablesNodeRouteEntrysRouteEntry["Type"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["Status"].isNull())
-				routeEntrysObject.status = allRouteTablesNodeRouteEntrysRouteEntry["Status"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["InstanceId"].isNull())
-				routeEntrysObject.instanceId = allRouteTablesNodeRouteEntrysRouteEntry["InstanceId"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopType"].isNull())
-				routeEntrysObject.nextHopType = allRouteTablesNodeRouteEntrysRouteEntry["NextHopType"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryName"].isNull())
-				routeEntrysObject.routeEntryName = allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryName"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["Description"].isNull())
-				routeEntrysObject.description = allRouteTablesNodeRouteEntrysRouteEntry["Description"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryId"].isNull())
-				routeEntrysObject.routeEntryId = allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryId"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopRegionId"].isNull())
-				routeEntrysObject.nextHopRegionId = allRouteTablesNodeRouteEntrysRouteEntry["NextHopRegionId"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteType"].isNull())
-				routeEntrysObject.nextHopOppsiteType = allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteType"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteInstanceId"].isNull())
-				routeEntrysObject.nextHopOppsiteInstanceId = allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteInstanceId"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteRegionId"].isNull())
-				routeEntrysObject.nextHopOppsiteRegionId = allRouteTablesNodeRouteEntrysRouteEntry["NextHopOppsiteRegionId"].asString();
-			if(!allRouteTablesNodeRouteEntrysRouteEntry["PrivateIpAddress"].isNull())
-				routeEntrysObject.privateIpAddress = allRouteTablesNodeRouteEntrysRouteEntry["PrivateIpAddress"].asString();
-			auto allNextHopsNode = allRouteEntrysNode["NextHops"]["NextHop"];
-			for (auto allRouteEntrysNodeNextHopsNextHop : allNextHopsNode)
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["RouteTableId"].isNull())
+				routeEntrysObject.routeTableId = valueRouteTablesRouteTableRouteEntrysRouteEntry["RouteTableId"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["DestinationCidrBlock"].isNull())
+				routeEntrysObject.destinationCidrBlock = valueRouteTablesRouteTableRouteEntrysRouteEntry["DestinationCidrBlock"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["Type"].isNull())
+				routeEntrysObject.type = valueRouteTablesRouteTableRouteEntrysRouteEntry["Type"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["Status"].isNull())
+				routeEntrysObject.status = valueRouteTablesRouteTableRouteEntrysRouteEntry["Status"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["InstanceId"].isNull())
+				routeEntrysObject.instanceId = valueRouteTablesRouteTableRouteEntrysRouteEntry["InstanceId"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopType"].isNull())
+				routeEntrysObject.nextHopType = valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopType"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["RouteEntryName"].isNull())
+				routeEntrysObject.routeEntryName = valueRouteTablesRouteTableRouteEntrysRouteEntry["RouteEntryName"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["Description"].isNull())
+				routeEntrysObject.description = valueRouteTablesRouteTableRouteEntrysRouteEntry["Description"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["RouteEntryId"].isNull())
+				routeEntrysObject.routeEntryId = valueRouteTablesRouteTableRouteEntrysRouteEntry["RouteEntryId"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopRegionId"].isNull())
+				routeEntrysObject.nextHopRegionId = valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopRegionId"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopOppsiteType"].isNull())
+				routeEntrysObject.nextHopOppsiteType = valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopOppsiteType"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopOppsiteInstanceId"].isNull())
+				routeEntrysObject.nextHopOppsiteInstanceId = valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopOppsiteInstanceId"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopOppsiteRegionId"].isNull())
+				routeEntrysObject.nextHopOppsiteRegionId = valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHopOppsiteRegionId"].asString();
+			if(!valueRouteTablesRouteTableRouteEntrysRouteEntry["PrivateIpAddress"].isNull())
+				routeEntrysObject.privateIpAddress = valueRouteTablesRouteTableRouteEntrysRouteEntry["PrivateIpAddress"].asString();
+			auto allNextHopsNode = valueRouteTablesRouteTableRouteEntrysRouteEntry["NextHops"]["NextHop"];
+			for (auto valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop : allNextHopsNode)
 			{
 				RouteTable::RouteEntry::NextHop nextHopsObject;
-				if(!allRouteEntrysNodeNextHopsNextHop["NextHopType"].isNull())
-					nextHopsObject.nextHopType = allRouteEntrysNodeNextHopsNextHop["NextHopType"].asString();
-				if(!allRouteEntrysNodeNextHopsNextHop["NextHopId"].isNull())
-					nextHopsObject.nextHopId = allRouteEntrysNodeNextHopsNextHop["NextHopId"].asString();
-				if(!allRouteEntrysNodeNextHopsNextHop["Enabled"].isNull())
-					nextHopsObject.enabled = std::stoi(allRouteEntrysNodeNextHopsNextHop["Enabled"].asString());
-				if(!allRouteEntrysNodeNextHopsNextHop["Weight"].isNull())
-					nextHopsObject.weight = std::stoi(allRouteEntrysNodeNextHopsNextHop["Weight"].asString());
-				if(!allRouteEntrysNodeNextHopsNextHop["NextHopRegionId"].isNull())
-					nextHopsObject.nextHopRegionId = allRouteEntrysNodeNextHopsNextHop["NextHopRegionId"].asString();
-				if(!allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteType"].isNull())
-					nextHopsObject.nextHopOppsiteType = allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteType"].asString();
-				if(!allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteInstanceId"].isNull())
-					nextHopsObject.nextHopOppsiteInstanceId = allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteInstanceId"].asString();
-				if(!allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteRegionId"].isNull())
-					nextHopsObject.nextHopOppsiteRegionId = allRouteEntrysNodeNextHopsNextHop["NextHopOppsiteRegionId"].asString();
+				if(!valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].isNull())
+					nextHopsObject.nextHopType = valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].asString();
+				if(!valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopId"].isNull())
+					nextHopsObject.nextHopId = valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopId"].asString();
+				if(!valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["Enabled"].isNull())
+					nextHopsObject.enabled = std::stoi(valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["Enabled"].asString());
+				if(!valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["Weight"].isNull())
+					nextHopsObject.weight = std::stoi(valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["Weight"].asString());
+				if(!valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopRegionId"].isNull())
+					nextHopsObject.nextHopRegionId = valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopRegionId"].asString();
+				if(!valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopOppsiteType"].isNull())
+					nextHopsObject.nextHopOppsiteType = valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopOppsiteType"].asString();
+				if(!valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopOppsiteInstanceId"].isNull())
+					nextHopsObject.nextHopOppsiteInstanceId = valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopOppsiteInstanceId"].asString();
+				if(!valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopOppsiteRegionId"].isNull())
+					nextHopsObject.nextHopOppsiteRegionId = valueRouteTablesRouteTableRouteEntrysRouteEntryNextHopsNextHop["NextHopOppsiteRegionId"].asString();
 				routeEntrysObject.nextHops.push_back(nextHopsObject);
 			}
 			routeTablesObject.routeEntrys.push_back(routeEntrysObject);

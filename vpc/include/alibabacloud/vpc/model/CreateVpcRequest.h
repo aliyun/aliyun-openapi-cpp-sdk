@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getIpv6Isp()const;
+				void setIpv6Isp(const std::string& ipv6Isp);
 				std::string getUserCidr()const;
 				void setUserCidr(const std::string& userCidr);
 				bool getDryRun()const;
@@ -72,6 +74,7 @@ namespace AlibabaCloud
 				std::string vpcName_;
 				std::string resourceGroupId_;
 				std::string regionId_;
+				std::string ipv6Isp_;
 				std::string userCidr_;
 				bool dryRun_;
 				std::string resourceOwnerAccount_;

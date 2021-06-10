@@ -71,6 +71,8 @@ namespace AlibabaCloud
 				void setTag(const std::vector<Tag>& tag);
 				std::string getSegmentInstanceId()const;
 				void setSegmentInstanceId(const std::string& segmentInstanceId);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -104,6 +106,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::vector<Tag> tag_;
 				std::string segmentInstanceId_;
+				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string filter1Value_;

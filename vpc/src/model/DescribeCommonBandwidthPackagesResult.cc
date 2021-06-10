@@ -83,14 +83,18 @@ void DescribeCommonBandwidthPackagesResult::parse(const std::string &payload)
 			commonBandwidthPackagesObject.iSP = valueCommonBandwidthPackagesCommonBandwidthPackage["ISP"].asString();
 		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["DeletionProtection"].isNull())
 			commonBandwidthPackagesObject.deletionProtection = valueCommonBandwidthPackagesCommonBandwidthPackage["DeletionProtection"].asString() == "true";
-		auto allPublicIpAddressesNode = allCommonBandwidthPackagesNode["PublicIpAddresses"]["PublicIpAddresse"];
-		for (auto allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse : allPublicIpAddressesNode)
+		if(!valueCommonBandwidthPackagesCommonBandwidthPackage["ServiceManaged"].isNull())
+			commonBandwidthPackagesObject.serviceManaged = std::stoi(valueCommonBandwidthPackagesCommonBandwidthPackage["ServiceManaged"].asString());
+		auto allPublicIpAddressesNode = valueCommonBandwidthPackagesCommonBandwidthPackage["PublicIpAddresses"]["PublicIpAddresse"];
+		for (auto valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse : allPublicIpAddressesNode)
 		{
 			CommonBandwidthPackage::PublicIpAddresse publicIpAddressesObject;
-			if(!allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["AllocationId"].isNull())
-				publicIpAddressesObject.allocationId = allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["AllocationId"].asString();
-			if(!allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["IpAddress"].isNull())
-				publicIpAddressesObject.ipAddress = allCommonBandwidthPackagesNodePublicIpAddressesPublicIpAddresse["IpAddress"].asString();
+			if(!valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse["AllocationId"].asString();
+			if(!valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse["IpAddress"].isNull())
+				publicIpAddressesObject.ipAddress = valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse["IpAddress"].asString();
+			if(!valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse["BandwidthPackageIpRelationStatus"].isNull())
+				publicIpAddressesObject.bandwidthPackageIpRelationStatus = valueCommonBandwidthPackagesCommonBandwidthPackagePublicIpAddressesPublicIpAddresse["BandwidthPackageIpRelationStatus"].asString();
 			commonBandwidthPackagesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
 		commonBandwidthPackages_.push_back(commonBandwidthPackagesObject);

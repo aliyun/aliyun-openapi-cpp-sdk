@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string chargeType;
 					std::string ipAddress;
 					std::string regionId;
+					std::string associatedInstanceType;
 				};
 
 

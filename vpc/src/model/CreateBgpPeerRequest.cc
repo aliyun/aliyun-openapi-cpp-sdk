@@ -71,6 +71,17 @@ void CreateBgpPeerRequest::setPeerIpAddress(const std::string& peerIpAddress)
 	setParameter("PeerIpAddress", peerIpAddress);
 }
 
+int CreateBgpPeerRequest::getBfdMultiHop()const
+{
+	return bfdMultiHop_;
+}
+
+void CreateBgpPeerRequest::setBfdMultiHop(int bfdMultiHop)
+{
+	bfdMultiHop_ = bfdMultiHop;
+	setParameter("BfdMultiHop", std::to_string(bfdMultiHop));
+}
+
 std::string CreateBgpPeerRequest::getRegionId()const
 {
 	return regionId_;
@@ -80,6 +91,17 @@ void CreateBgpPeerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string CreateBgpPeerRequest::getIpVersion()const
+{
+	return ipVersion_;
+}
+
+void CreateBgpPeerRequest::setIpVersion(const std::string& ipVersion)
+{
+	ipVersion_ = ipVersion;
+	setParameter("IpVersion", ipVersion);
 }
 
 bool CreateBgpPeerRequest::getEnableBfd()const

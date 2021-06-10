@@ -34,7 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct AccessPointType
 				{
+					struct AccessPointFeatureModel
+					{
+						std::string featureValue;
+						std::string featureKey;
+					};
 					std::string status;
+					std::vector<AccessPointType::AccessPointFeatureModel> accessPointFeatureModels;
 					std::string type;
 					std::string description;
 					std::string attachedRegionNo;

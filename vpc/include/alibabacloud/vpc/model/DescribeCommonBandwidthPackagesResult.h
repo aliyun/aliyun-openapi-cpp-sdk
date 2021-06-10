@@ -37,11 +37,13 @@ namespace AlibabaCloud
 					struct PublicIpAddresse
 					{
 						std::string allocationId;
+						std::string bandwidthPackageIpRelationStatus;
 						std::string ipAddress;
 					};
 					std::string status;
 					std::string description;
 					std::string resourceGroupId;
+					int serviceManaged;
 					std::string instanceChargeType;
 					std::string iSP;
 					std::string hasReservationData;

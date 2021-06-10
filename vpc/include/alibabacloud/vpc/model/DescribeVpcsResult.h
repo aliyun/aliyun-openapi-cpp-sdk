@@ -39,25 +39,36 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
-					std::string status;
-					bool isDefault;
-					std::string cenStatus;
+					struct Ipv6CidrBlock
+					{
+						std::string ipv6Isp;
+						std::string ipv6CidrBlock;
+					};
 					std::string description;
 					std::string resourceGroupId;
-					std::vector<std::string> vSwitchIds;
 					std::vector<std::string> secondaryCidrBlocks;
 					std::string cidrBlock;
 					std::vector<std::string> routerTableIds;
 					std::vector<std::string> userCidrs;
 					std::string networkAclNum;
 					std::string vRouterId;
+					bool advancedResource;
+					std::string dhcpOptionsSetId;
 					std::vector<std::string> natGatewayIds;
+					long ownerId;
+					std::vector<Vpc::Tag> tags;
+					std::string status;
+					bool isDefault;
+					std::string cenStatus;
+					bool supportAdvancedFeature;
+					std::string dhcpOptionsSetStatus;
+					std::vector<std::string> vSwitchIds;
 					std::string vpcId;
 					std::string creationTime;
 					std::string vpcName;
 					std::string regionId;
+					std::vector<Vpc::Ipv6CidrBlock> ipv6CidrBlocks;
 					std::string ipv6CidrBlock;
-					std::vector<Vpc::Tag> tags;
 				};
 
 

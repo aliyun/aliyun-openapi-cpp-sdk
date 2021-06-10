@@ -61,6 +61,16 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 			cloudResourcesObject.resourceCount = std::stoi(valueCloudResourcesCloudResourceSetType["ResourceCount"].asString());
 		cloudResources_.push_back(cloudResourcesObject);
 	}
+	auto allIpv6CidrBlocksNode = value["Ipv6CidrBlocks"]["Ipv6CidrBlock"];
+	for (auto valueIpv6CidrBlocksIpv6CidrBlock : allIpv6CidrBlocksNode)
+	{
+		Ipv6CidrBlock ipv6CidrBlocksObject;
+		if(!valueIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].isNull())
+			ipv6CidrBlocksObject.ipv6CidrBlock = valueIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].asString();
+		if(!valueIpv6CidrBlocksIpv6CidrBlock["Ipv6Isp"].isNull())
+			ipv6CidrBlocksObject.ipv6Isp = valueIpv6CidrBlocksIpv6CidrBlock["Ipv6Isp"].asString();
+		ipv6CidrBlocks_.push_back(ipv6CidrBlocksObject);
+	}
 	auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 	for (const auto &item : allVSwitchIds)
 		vSwitchIds_.push_back(item.asString());
@@ -96,6 +106,12 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 		resourceGroupId_ = value["ResourceGroupId"].asString();
 	if(!value["NetworkAclNum"].isNull())
 		networkAclNum_ = value["NetworkAclNum"].asString();
+	if(!value["OwnerId"].isNull())
+		ownerId_ = std::stol(value["OwnerId"].asString());
+	if(!value["DhcpOptionsSetId"].isNull())
+		dhcpOptionsSetId_ = value["DhcpOptionsSetId"].asString();
+	if(!value["DhcpOptionsSetStatus"].isNull())
+		dhcpOptionsSetStatus_ = value["DhcpOptionsSetStatus"].asString();
 
 }
 
@@ -112,6 +128,11 @@ bool DescribeVpcAttributeResult::getIsDefault()const
 std::string DescribeVpcAttributeResult::getDescription()const
 {
 	return description_;
+}
+
+std::string DescribeVpcAttributeResult::getDhcpOptionsSetStatus()const
+{
+	return dhcpOptionsSetStatus_;
 }
 
 bool DescribeVpcAttributeResult::getClassicLinkEnabled()const
@@ -154,9 +175,19 @@ std::string DescribeVpcAttributeResult::getVRouterId()const
 	return vRouterId_;
 }
 
+std::string DescribeVpcAttributeResult::getDhcpOptionsSetId()const
+{
+	return dhcpOptionsSetId_;
+}
+
 std::string DescribeVpcAttributeResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+long DescribeVpcAttributeResult::getOwnerId()const
+{
+	return ownerId_;
 }
 
 std::vector<DescribeVpcAttributeResult::AssociatedCen> DescribeVpcAttributeResult::getAssociatedCens()const
@@ -177,6 +208,11 @@ std::string DescribeVpcAttributeResult::getVpcName()const
 std::string DescribeVpcAttributeResult::getRegionId()const
 {
 	return regionId_;
+}
+
+std::vector<DescribeVpcAttributeResult::Ipv6CidrBlock> DescribeVpcAttributeResult::getIpv6CidrBlocks()const
+{
+	return ipv6CidrBlocks_;
 }
 
 std::string DescribeVpcAttributeResult::getIpv6CidrBlock()const

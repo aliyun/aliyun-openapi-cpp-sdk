@@ -39,32 +39,36 @@ namespace AlibabaCloud
 				~ModifyVpnGatewayAttributeResult();
 				std::string getStatus()const;
 				std::string getDescription()const;
-				std::string getVpcId()const;
-				std::string getInternetIp()const;
+				bool getEnableBgp()const;
 				long getEndTime()const;
-				std::string getVpnGatewayId()const;
 				std::string getVSwitchId()const;
 				long getCreateTime()const;
-				std::string getSpec()const;
+				bool getAutoPropagate()const;
 				std::string getIntranetIp()const;
 				std::string getBusinessStatus()const;
 				std::string getName()const;
+				std::string getVpcId()const;
+				std::string getInternetIp()const;
+				std::string getVpnGatewayId()const;
+				std::string getSpec()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
 				std::string description_;
-				std::string vpcId_;
-				std::string internetIp_;
+				bool enableBgp_;
 				long endTime_;
-				std::string vpnGatewayId_;
 				std::string vSwitchId_;
 				long createTime_;
-				std::string spec_;
+				bool autoPropagate_;
 				std::string intranetIp_;
 				std::string businessStatus_;
 				std::string name_;
+				std::string vpcId_;
+				std::string internetIp_;
+				std::string vpnGatewayId_;
+				std::string spec_;
 
 			};
 		}

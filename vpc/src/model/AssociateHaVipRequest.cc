@@ -60,6 +60,17 @@ void AssociateHaVipRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string AssociateHaVipRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void AssociateHaVipRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
+}
+
 std::string AssociateHaVipRequest::getHaVipId()const
 {
 	return haVipId_;

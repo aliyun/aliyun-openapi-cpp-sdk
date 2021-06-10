@@ -38,6 +38,17 @@ void ModifyVSwitchAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool ModifyVSwitchAttributeRequest::getEnableIPv6()const
+{
+	return enableIPv6_;
+}
+
+void ModifyVSwitchAttributeRequest::setEnableIPv6(bool enableIPv6)
+{
+	enableIPv6_ = enableIPv6;
+	setParameter("EnableIPv6", enableIPv6 ? "true" : "false");
+}
+
 std::string ModifyVSwitchAttributeRequest::getDescription()const
 {
 	return description_;
@@ -113,6 +124,17 @@ void ModifyVSwitchAttributeRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
 	setParameter("VSwitchId", vSwitchId);
+}
+
+std::string ModifyVSwitchAttributeRequest::getVpcIpv6CidrBlock()const
+{
+	return vpcIpv6CidrBlock_;
+}
+
+void ModifyVSwitchAttributeRequest::setVpcIpv6CidrBlock(const std::string& vpcIpv6CidrBlock)
+{
+	vpcIpv6CidrBlock_ = vpcIpv6CidrBlock;
+	setParameter("VpcIpv6CidrBlock", vpcIpv6CidrBlock);
 }
 
 std::string ModifyVSwitchAttributeRequest::getVSwitchName()const

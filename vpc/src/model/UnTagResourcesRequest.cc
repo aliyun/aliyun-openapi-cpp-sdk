@@ -49,6 +49,33 @@ void UnTagResourcesRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::vector<UnTagResourcesRequest::Tag> UnTagResourcesRequest::getTag()const
+{
+	return tag_;
+}
+
+void UnTagResourcesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
+bool UnTagResourcesRequest::getAll()const
+{
+	return all_;
+}
+
+void UnTagResourcesRequest::setAll(bool all)
+{
+	all_ = all;
+	setParameter("All", all ? "true" : "false");
+}
+
 std::vector<std::string> UnTagResourcesRequest::getResourceId()const
 {
 	return resourceId_;

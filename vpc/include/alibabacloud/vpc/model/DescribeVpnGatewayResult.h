@@ -32,6 +32,21 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT DescribeVpnGatewayResult : public ServiceResult
 			{
 			public:
+				struct ReservationData
+				{
+					std::string status;
+					std::string reservationOrderType;
+					std::string reservationEndTime;
+					std::string reservationSsl;
+					int reservationMaxConnections;
+					std::string reservationSpec;
+					std::string reservationIpsec;
+				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				DescribeVpnGatewayResult();
@@ -40,10 +55,13 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getIpsecVpn()const;
 				std::string getSslVpn()const;
+				std::string getVpnType()const;
 				std::string getDescription()const;
+				bool getEnableBgp()const;
 				long getEndTime()const;
 				std::string getVSwitchId()const;
 				long getCreateTime()const;
+				bool getAutoPropagate()const;
 				std::string getBusinessStatus()const;
 				std::string getName()const;
 				std::string getVpcId()const;
@@ -53,6 +71,8 @@ namespace AlibabaCloud
 				std::string getTag()const;
 				std::string getSpec()const;
 				long getSslMaxConnections()const;
+				std::vector<Tag> getTags()const;
+				ReservationData getReservationData()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -60,10 +80,13 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string ipsecVpn_;
 				std::string sslVpn_;
+				std::string vpnType_;
 				std::string description_;
+				bool enableBgp_;
 				long endTime_;
 				std::string vSwitchId_;
 				long createTime_;
+				bool autoPropagate_;
 				std::string businessStatus_;
 				std::string name_;
 				std::string vpcId_;
@@ -73,6 +96,8 @@ namespace AlibabaCloud
 				std::string tag_;
 				std::string spec_;
 				long sslMaxConnections_;
+				std::vector<Tag> tags_;
+				ReservationData reservationData_;
 
 			};
 		}

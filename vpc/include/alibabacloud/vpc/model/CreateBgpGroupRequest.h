@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setIsFakeAsn(bool isFakeAsn);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getIpVersion()const;
+				void setIpVersion(const std::string& ipVersion);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				long peerAsn_;
 				bool isFakeAsn_;
 				std::string regionId_;
+				std::string ipVersion_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

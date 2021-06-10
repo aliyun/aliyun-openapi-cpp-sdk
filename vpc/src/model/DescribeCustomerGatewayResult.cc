@@ -49,6 +49,8 @@ void DescribeCustomerGatewayResult::parse(const std::string &payload)
 		description_ = value["Description"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["Asn"].isNull())
+		asn_ = std::stoi(value["Asn"].asString());
 
 }
 
@@ -70,6 +72,11 @@ long DescribeCustomerGatewayResult::getCreateTime()const
 std::string DescribeCustomerGatewayResult::getIpAddress()const
 {
 	return ipAddress_;
+}
+
+int DescribeCustomerGatewayResult::getAsn()const
+{
+	return asn_;
 }
 
 std::string DescribeCustomerGatewayResult::getName()const

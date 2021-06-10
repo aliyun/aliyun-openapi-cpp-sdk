@@ -75,25 +75,29 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.resourceGroupId = valueNatGatewaysNatGateway["ResourceGroupId"].asString();
 		if(!valueNatGatewaysNatGateway["DeletionProtection"].isNull())
 			natGatewaysObject.deletionProtection = valueNatGatewaysNatGateway["DeletionProtection"].asString() == "true";
-		auto allIpListsNode = allNatGatewaysNode["IpLists"]["IpList"];
-		for (auto allNatGatewaysNodeIpListsIpList : allIpListsNode)
+		if(!valueNatGatewaysNatGateway["EcsMetricEnabled"].isNull())
+			natGatewaysObject.ecsMetricEnabled = valueNatGatewaysNatGateway["EcsMetricEnabled"].asString() == "true";
+		auto allIpListsNode = valueNatGatewaysNatGateway["IpLists"]["IpList"];
+		for (auto valueNatGatewaysNatGatewayIpListsIpList : allIpListsNode)
 		{
 			NatGateway::IpList ipListsObject;
-			if(!allNatGatewaysNodeIpListsIpList["AllocationId"].isNull())
-				ipListsObject.allocationId = allNatGatewaysNodeIpListsIpList["AllocationId"].asString();
-			if(!allNatGatewaysNodeIpListsIpList["IpAddress"].isNull())
-				ipListsObject.ipAddress = allNatGatewaysNodeIpListsIpList["IpAddress"].asString();
-			if(!allNatGatewaysNodeIpListsIpList["UsingStatus"].isNull())
-				ipListsObject.usingStatus = allNatGatewaysNodeIpListsIpList["UsingStatus"].asString();
-			if(!allNatGatewaysNodeIpListsIpList["ApAccessEnabled"].isNull())
-				ipListsObject.apAccessEnabled = allNatGatewaysNodeIpListsIpList["ApAccessEnabled"].asString() == "true";
-			if(!allNatGatewaysNodeIpListsIpList["SnatEntryEnabled"].isNull())
-				ipListsObject.snatEntryEnabled = allNatGatewaysNodeIpListsIpList["SnatEntryEnabled"].asString() == "true";
+			if(!valueNatGatewaysNatGatewayIpListsIpList["AllocationId"].isNull())
+				ipListsObject.allocationId = valueNatGatewaysNatGatewayIpListsIpList["AllocationId"].asString();
+			if(!valueNatGatewaysNatGatewayIpListsIpList["IpAddress"].isNull())
+				ipListsObject.ipAddress = valueNatGatewaysNatGatewayIpListsIpList["IpAddress"].asString();
+			if(!valueNatGatewaysNatGatewayIpListsIpList["UsingStatus"].isNull())
+				ipListsObject.usingStatus = valueNatGatewaysNatGatewayIpListsIpList["UsingStatus"].asString();
+			if(!valueNatGatewaysNatGatewayIpListsIpList["ApAccessEnabled"].isNull())
+				ipListsObject.apAccessEnabled = valueNatGatewaysNatGatewayIpListsIpList["ApAccessEnabled"].asString() == "true";
+			if(!valueNatGatewaysNatGatewayIpListsIpList["SnatEntryEnabled"].isNull())
+				ipListsObject.snatEntryEnabled = valueNatGatewaysNatGatewayIpListsIpList["SnatEntryEnabled"].asString() == "true";
+			if(!valueNatGatewaysNatGatewayIpListsIpList["PrivateIpAddress"].isNull())
+				ipListsObject.privateIpAddress = valueNatGatewaysNatGatewayIpListsIpList["PrivateIpAddress"].asString();
 			natGatewaysObject.ipLists.push_back(ipListsObject);
 		}
 		auto natGatewayPrivateInfoNode = value["NatGatewayPrivateInfo"];
 		if(!natGatewayPrivateInfoNode["EniInstanceId"].isNull())
-			natGatewaysObject.natGatewayPrivateInfo.eniInstanceId = std::stoi(natGatewayPrivateInfoNode["EniInstanceId"].asString());
+			natGatewaysObject.natGatewayPrivateInfo.eniInstanceId = natGatewayPrivateInfoNode["EniInstanceId"].asString();
 		if(!natGatewayPrivateInfoNode["PrivateIpAddress"].isNull())
 			natGatewaysObject.natGatewayPrivateInfo.privateIpAddress = natGatewayPrivateInfoNode["PrivateIpAddress"].asString();
 		if(!natGatewayPrivateInfoNode["VswitchId"].isNull())
@@ -102,6 +106,8 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.natGatewayPrivateInfo.izNo = natGatewayPrivateInfoNode["IzNo"].asString();
 		if(!natGatewayPrivateInfoNode["MaxBandwidth"].isNull())
 			natGatewaysObject.natGatewayPrivateInfo.maxBandwidth = std::stoi(natGatewayPrivateInfoNode["MaxBandwidth"].asString());
+		if(!natGatewayPrivateInfoNode["EniType"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.eniType = natGatewayPrivateInfoNode["EniType"].asString();
 		auto allForwardTableIds = value["ForwardTableIds"]["ForwardTableId"];
 		for (auto value : allForwardTableIds)
 			natGatewaysObject.forwardTableIds.push_back(value.asString());

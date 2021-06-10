@@ -39,6 +39,31 @@ void DescribeVpnGatewayResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
+	auto reservationDataNode = value["ReservationData"];
+	if(!reservationDataNode["Status"].isNull())
+		reservationData_.status = reservationDataNode["Status"].asString();
+	if(!reservationDataNode["ReservationEndTime"].isNull())
+		reservationData_.reservationEndTime = reservationDataNode["ReservationEndTime"].asString();
+	if(!reservationDataNode["ReservationOrderType"].isNull())
+		reservationData_.reservationOrderType = reservationDataNode["ReservationOrderType"].asString();
+	if(!reservationDataNode["ReservationSpec"].isNull())
+		reservationData_.reservationSpec = reservationDataNode["ReservationSpec"].asString();
+	if(!reservationDataNode["ReservationIpsec"].isNull())
+		reservationData_.reservationIpsec = reservationDataNode["ReservationIpsec"].asString();
+	if(!reservationDataNode["ReservationSsl"].isNull())
+		reservationData_.reservationSsl = reservationDataNode["ReservationSsl"].asString();
+	if(!reservationDataNode["ReservationMaxConnections"].isNull())
+		reservationData_.reservationMaxConnections = std::stoi(reservationDataNode["ReservationMaxConnections"].asString());
 	if(!value["VpnGatewayId"].isNull())
 		vpnGatewayId_ = value["VpnGatewayId"].asString();
 	if(!value["VpcId"].isNull())
@@ -71,6 +96,12 @@ void DescribeVpnGatewayResult::parse(const std::string &payload)
 		sslMaxConnections_ = std::stol(value["SslMaxConnections"].asString());
 	if(!value["Tag"].isNull())
 		tag_ = value["Tag"].asString();
+	if(!value["EnableBgp"].isNull())
+		enableBgp_ = value["EnableBgp"].asString() == "true";
+	if(!value["AutoPropagate"].isNull())
+		autoPropagate_ = value["AutoPropagate"].asString() == "true";
+	if(!value["VpnType"].isNull())
+		vpnType_ = value["VpnType"].asString();
 
 }
 
@@ -89,9 +120,19 @@ std::string DescribeVpnGatewayResult::getSslVpn()const
 	return sslVpn_;
 }
 
+std::string DescribeVpnGatewayResult::getVpnType()const
+{
+	return vpnType_;
+}
+
 std::string DescribeVpnGatewayResult::getDescription()const
 {
 	return description_;
+}
+
+bool DescribeVpnGatewayResult::getEnableBgp()const
+{
+	return enableBgp_;
 }
 
 long DescribeVpnGatewayResult::getEndTime()const
@@ -107,6 +148,11 @@ std::string DescribeVpnGatewayResult::getVSwitchId()const
 long DescribeVpnGatewayResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+bool DescribeVpnGatewayResult::getAutoPropagate()const
+{
+	return autoPropagate_;
 }
 
 std::string DescribeVpnGatewayResult::getBusinessStatus()const
@@ -152,5 +198,15 @@ std::string DescribeVpnGatewayResult::getSpec()const
 long DescribeVpnGatewayResult::getSslMaxConnections()const
 {
 	return sslMaxConnections_;
+}
+
+std::vector<DescribeVpnGatewayResult::Tag> DescribeVpnGatewayResult::getTags()const
+{
+	return tags_;
+}
+
+DescribeVpnGatewayResult::ReservationData DescribeVpnGatewayResult::getReservationData()const
+{
+	return reservationData_;
 }
 

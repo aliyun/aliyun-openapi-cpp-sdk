@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string sslVpnServerId;
 					long createTime;
 					int port;
+					std::string iDaaSRegionId;
 					std::string name;
 					std::string proto;
 					std::string internetIp;

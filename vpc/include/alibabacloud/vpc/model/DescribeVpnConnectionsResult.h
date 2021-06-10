@@ -62,6 +62,15 @@ namespace AlibabaCloud
 						int retry;
 						int interval;
 					};
+					struct VpnBgpConfig
+					{
+						std::string status;
+						std::string localAsn;
+						std::string tunnelCidr;
+						std::string peerBgpIp;
+						std::string peerAsn;
+						std::string localBgpIp;
+					};
 					std::string localSubnet;
 					std::string status;
 					std::string customerGatewayId;
@@ -72,10 +81,12 @@ namespace AlibabaCloud
 					std::string remoteSubnet;
 					std::string vpnGatewayId;
 					IpsecConfig ipsecConfig;
+					std::string remoteCaCertificate;
 					std::string vpnConnectionId;
 					bool enableNatTraversal;
 					IkeConfig ikeConfig;
 					bool enableDpd;
+					VpnBgpConfig vpnBgpConfig;
 				};
 
 

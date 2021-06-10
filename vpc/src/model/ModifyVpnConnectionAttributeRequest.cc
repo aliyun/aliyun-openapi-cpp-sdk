@@ -82,6 +82,17 @@ void ModifyVpnConnectionAttributeRequest::setIpsecConfig(const std::string& ipse
 	setParameter("IpsecConfig", ipsecConfig);
 }
 
+std::string ModifyVpnConnectionAttributeRequest::getBgpConfig()const
+{
+	return bgpConfig_;
+}
+
+void ModifyVpnConnectionAttributeRequest::setBgpConfig(const std::string& bgpConfig)
+{
+	bgpConfig_ = bgpConfig;
+	setParameter("BgpConfig", bgpConfig);
+}
+
 std::string ModifyVpnConnectionAttributeRequest::getHealthCheckConfig()const
 {
 	return healthCheckConfig_;
@@ -179,6 +190,17 @@ void ModifyVpnConnectionAttributeRequest::setEnableDpd(bool enableDpd)
 {
 	enableDpd_ = enableDpd;
 	setParameter("EnableDpd", enableDpd ? "true" : "false");
+}
+
+std::string ModifyVpnConnectionAttributeRequest::getRemoteCaCertificate()const
+{
+	return remoteCaCertificate_;
+}
+
+void ModifyVpnConnectionAttributeRequest::setRemoteCaCertificate(const std::string& remoteCaCertificate)
+{
+	remoteCaCertificate_ = remoteCaCertificate;
+	setParameter("RemoteCaCertificate", remoteCaCertificate);
 }
 
 std::string ModifyVpnConnectionAttributeRequest::getVpnConnectionId()const

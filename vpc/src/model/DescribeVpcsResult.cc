@@ -69,15 +69,35 @@ void DescribeVpcsResult::parse(const std::string &payload)
 			vpcsObject.resourceGroupId = valueVpcsVpc["ResourceGroupId"].asString();
 		if(!valueVpcsVpc["CenStatus"].isNull())
 			vpcsObject.cenStatus = valueVpcsVpc["CenStatus"].asString();
-		auto allTagsNode = allVpcsNode["Tags"]["Tag"];
-		for (auto allVpcsNodeTagsTag : allTagsNode)
+		if(!valueVpcsVpc["OwnerId"].isNull())
+			vpcsObject.ownerId = std::stol(valueVpcsVpc["OwnerId"].asString());
+		if(!valueVpcsVpc["SupportAdvancedFeature"].isNull())
+			vpcsObject.supportAdvancedFeature = valueVpcsVpc["SupportAdvancedFeature"].asString() == "true";
+		if(!valueVpcsVpc["AdvancedResource"].isNull())
+			vpcsObject.advancedResource = valueVpcsVpc["AdvancedResource"].asString() == "true";
+		if(!valueVpcsVpc["DhcpOptionsSetId"].isNull())
+			vpcsObject.dhcpOptionsSetId = valueVpcsVpc["DhcpOptionsSetId"].asString();
+		if(!valueVpcsVpc["DhcpOptionsSetStatus"].isNull())
+			vpcsObject.dhcpOptionsSetStatus = valueVpcsVpc["DhcpOptionsSetStatus"].asString();
+		auto allTagsNode = valueVpcsVpc["Tags"]["Tag"];
+		for (auto valueVpcsVpcTagsTag : allTagsNode)
 		{
 			Vpc::Tag tagsObject;
-			if(!allVpcsNodeTagsTag["Key"].isNull())
-				tagsObject.key = allVpcsNodeTagsTag["Key"].asString();
-			if(!allVpcsNodeTagsTag["Value"].isNull())
-				tagsObject.value = allVpcsNodeTagsTag["Value"].asString();
+			if(!valueVpcsVpcTagsTag["Key"].isNull())
+				tagsObject.key = valueVpcsVpcTagsTag["Key"].asString();
+			if(!valueVpcsVpcTagsTag["Value"].isNull())
+				tagsObject.value = valueVpcsVpcTagsTag["Value"].asString();
 			vpcsObject.tags.push_back(tagsObject);
+		}
+		auto allIpv6CidrBlocksNode = valueVpcsVpc["Ipv6CidrBlocks"]["Ipv6CidrBlock"];
+		for (auto valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock : allIpv6CidrBlocksNode)
+		{
+			Vpc::Ipv6CidrBlock ipv6CidrBlocksObject;
+			if(!valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].isNull())
+				ipv6CidrBlocksObject.ipv6CidrBlock = valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].asString();
+			if(!valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6Isp"].isNull())
+				ipv6CidrBlocksObject.ipv6Isp = valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6Isp"].asString();
+			vpcsObject.ipv6CidrBlocks.push_back(ipv6CidrBlocksObject);
 		}
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)

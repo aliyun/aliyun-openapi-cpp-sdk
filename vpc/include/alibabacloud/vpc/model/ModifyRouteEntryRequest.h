@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyRouteEntryRequest();
 				~ModifyRouteEntryRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRouteEntryName()const;
 				void setRouteEntryName(const std::string& routeEntryName);
 				std::string getDescription()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				void setRouteEntryId(const std::string& routeEntryId);
 
             private:
+				long resourceOwnerId_;
 				std::string routeEntryName_;
 				std::string description_;
 				std::string regionId_;

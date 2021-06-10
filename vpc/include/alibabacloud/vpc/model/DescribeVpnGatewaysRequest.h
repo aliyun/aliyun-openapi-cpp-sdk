@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribeVpnGatewaysRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeVpnGatewaysRequest();
@@ -37,12 +43,16 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getIncludeReservationData()const;
+				void setIncludeReservationData(bool includeReservationData);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getBusinessStatus()const;
 				void setBusinessStatus(const std::string& businessStatus);
 				std::string getResourceOwnerAccount()const;
@@ -60,9 +70,11 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				bool includeReservationData_;
 				int pageNumber_;
 				std::string regionId_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 				std::string businessStatus_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				bool getEnableIpsec()const;
 				void setEnableIpsec(bool enableIpsec);
 				std::string getRegionId()const;
@@ -55,6 +57,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVpnType()const;
+				void setVpnType(const std::string& vpnType);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				bool getEnableSsl()const;
@@ -68,6 +72,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
 				bool enableIpsec_;
 				std::string regionId_;
 				std::string instanceChargeType_;
@@ -77,6 +82,7 @@ namespace AlibabaCloud
 				int bandwidth_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string vpnType_;
 				std::string vSwitchId_;
 				bool enableSsl_;
 				int sslConnections_;

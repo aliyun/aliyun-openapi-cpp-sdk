@@ -36,14 +36,19 @@ namespace AlibabaCloud
 				{
 					struct AssociatedPhysicalConnection
 					{
-						std::string localGatewayIp;
+						std::string status;
 						std::string peerGatewayIp;
 						std::string circuitCode;
 						std::string physicalConnectionId;
 						std::string vlanInterfaceId;
 						std::string physicalConnectionStatus;
+						std::string peerIpv6GatewayIp;
 						std::string peeringSubnetMask;
 						std::string physicalConnectionOwnerUid;
+						std::string peeringIpv6SubnetMask;
+						bool enableIpv6;
+						std::string localGatewayIp;
+						std::string localIpv6GatewayIp;
 						std::string vlanId;
 						std::string physicalConnectionBusinessStatus;
 					};
@@ -68,19 +73,24 @@ namespace AlibabaCloud
 					std::string physicalConnectionOwnerUid;
 					std::string recoveryTime;
 					std::string name;
+					std::string peeringIpv6SubnetMask;
+					bool enableIpv6;
 					std::vector<VirtualBorderRouterType::AssociatedCen> associatedCens;
 					std::string eccId;
+					std::string localIpv6GatewayIp;
 					int vlanId;
 					std::string status;
 					std::string circuitCode;
 					long minTxInterval;
 					long detectMultiplier;
+					std::string peerIpv6GatewayIp;
 					std::string localGatewayIp;
 					std::string type;
 					std::string creationTime;
 					std::string accessPointId;
 					std::string pConnVbrExpireTime;
 					std::string physicalConnectionBusinessStatus;
+					std::string cloudBoxInstanceId;
 				};
 
 

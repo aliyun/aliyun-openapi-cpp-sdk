@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getInternalPort()const;
 				void setInternalPort(const std::string& internalPort);
+				bool getPortBreak()const;
+				void setPortBreak(bool portBreak);
 				std::string getExternalPort()const;
 				void setExternalPort(const std::string& externalPort);
 
@@ -78,6 +80,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string internalPort_;
+				bool portBreak_;
 				std::string externalPort_;
 
 			};

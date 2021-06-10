@@ -115,16 +115,16 @@ void DescribeExpressCloudConnectionsResult::parse(const std::string &payload)
 			expressCloudConnectionSetObject.ceIp = valueExpressCloudConnectionSetExpressCloudConnectionType["CeIp"].asString();
 		if(!valueExpressCloudConnectionSetExpressCloudConnectionType["ConstructionPeriod"].isNull())
 			expressCloudConnectionSetObject.constructionPeriod = valueExpressCloudConnectionSetExpressCloudConnectionType["ConstructionPeriod"].asString();
-		auto allVirtualBorderRouterModelsNode = allExpressCloudConnectionSetNode["VirtualBorderRouterModels"]["VirtualBorderRouterModel"];
-		for (auto allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel : allVirtualBorderRouterModelsNode)
+		auto allVirtualBorderRouterModelsNode = valueExpressCloudConnectionSetExpressCloudConnectionType["VirtualBorderRouterModels"]["VirtualBorderRouterModel"];
+		for (auto valueExpressCloudConnectionSetExpressCloudConnectionTypeVirtualBorderRouterModelsVirtualBorderRouterModel : allVirtualBorderRouterModelsNode)
 		{
 			ExpressCloudConnectionType::VirtualBorderRouterModel virtualBorderRouterModelsObject;
-			if(!allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["InstanceId"].isNull())
-				virtualBorderRouterModelsObject.instanceId = allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["InstanceId"].asString();
-			if(!allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["AccessPointId"].isNull())
-				virtualBorderRouterModelsObject.accessPointId = allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["AccessPointId"].asString();
-			if(!allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["PhysicalConnectionId"].isNull())
-				virtualBorderRouterModelsObject.physicalConnectionId = allExpressCloudConnectionSetNodeVirtualBorderRouterModelsVirtualBorderRouterModel["PhysicalConnectionId"].asString();
+			if(!valueExpressCloudConnectionSetExpressCloudConnectionTypeVirtualBorderRouterModelsVirtualBorderRouterModel["InstanceId"].isNull())
+				virtualBorderRouterModelsObject.instanceId = valueExpressCloudConnectionSetExpressCloudConnectionTypeVirtualBorderRouterModelsVirtualBorderRouterModel["InstanceId"].asString();
+			if(!valueExpressCloudConnectionSetExpressCloudConnectionTypeVirtualBorderRouterModelsVirtualBorderRouterModel["AccessPointId"].isNull())
+				virtualBorderRouterModelsObject.accessPointId = valueExpressCloudConnectionSetExpressCloudConnectionTypeVirtualBorderRouterModelsVirtualBorderRouterModel["AccessPointId"].asString();
+			if(!valueExpressCloudConnectionSetExpressCloudConnectionTypeVirtualBorderRouterModelsVirtualBorderRouterModel["PhysicalConnectionId"].isNull())
+				virtualBorderRouterModelsObject.physicalConnectionId = valueExpressCloudConnectionSetExpressCloudConnectionTypeVirtualBorderRouterModelsVirtualBorderRouterModel["PhysicalConnectionId"].asString();
 			expressCloudConnectionSetObject.virtualBorderRouterModels.push_back(virtualBorderRouterModelsObject);
 		}
 		expressCloudConnectionSet_.push_back(expressCloudConnectionSetObject);

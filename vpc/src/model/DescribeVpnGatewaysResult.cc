@@ -75,6 +75,37 @@ void DescribeVpnGatewaysResult::parse(const std::string &payload)
 			vpnGatewaysObject.sslMaxConnections = std::stol(valueVpnGatewaysVpnGateway["SslMaxConnections"].asString());
 		if(!valueVpnGatewaysVpnGateway["Tag"].isNull())
 			vpnGatewaysObject.tag = valueVpnGatewaysVpnGateway["Tag"].asString();
+		if(!valueVpnGatewaysVpnGateway["EnableBgp"].isNull())
+			vpnGatewaysObject.enableBgp = valueVpnGatewaysVpnGateway["EnableBgp"].asString() == "true";
+		if(!valueVpnGatewaysVpnGateway["AutoPropagate"].isNull())
+			vpnGatewaysObject.autoPropagate = valueVpnGatewaysVpnGateway["AutoPropagate"].asString() == "true";
+		if(!valueVpnGatewaysVpnGateway["VpnType"].isNull())
+			vpnGatewaysObject.vpnType = valueVpnGatewaysVpnGateway["VpnType"].asString();
+		auto allTagsNode = valueVpnGatewaysVpnGateway["Tags"]["Tag"];
+		for (auto valueVpnGatewaysVpnGatewayTagsTag : allTagsNode)
+		{
+			VpnGateway::Tag tagsObject;
+			if(!valueVpnGatewaysVpnGatewayTagsTag["Key"].isNull())
+				tagsObject.key = valueVpnGatewaysVpnGatewayTagsTag["Key"].asString();
+			if(!valueVpnGatewaysVpnGatewayTagsTag["Value"].isNull())
+				tagsObject.value = valueVpnGatewaysVpnGatewayTagsTag["Value"].asString();
+			vpnGatewaysObject.tags.push_back(tagsObject);
+		}
+		auto reservationDataNode = value["ReservationData"];
+		if(!reservationDataNode["Status"].isNull())
+			vpnGatewaysObject.reservationData.status = reservationDataNode["Status"].asString();
+		if(!reservationDataNode["ReservationEndTime"].isNull())
+			vpnGatewaysObject.reservationData.reservationEndTime = reservationDataNode["ReservationEndTime"].asString();
+		if(!reservationDataNode["ReservationOrderType"].isNull())
+			vpnGatewaysObject.reservationData.reservationOrderType = reservationDataNode["ReservationOrderType"].asString();
+		if(!reservationDataNode["ReservationSpec"].isNull())
+			vpnGatewaysObject.reservationData.reservationSpec = reservationDataNode["ReservationSpec"].asString();
+		if(!reservationDataNode["ReservationIpsec"].isNull())
+			vpnGatewaysObject.reservationData.reservationIpsec = reservationDataNode["ReservationIpsec"].asString();
+		if(!reservationDataNode["ReservationSsl"].isNull())
+			vpnGatewaysObject.reservationData.reservationSsl = reservationDataNode["ReservationSsl"].asString();
+		if(!reservationDataNode["ReservationMaxConnections"].isNull())
+			vpnGatewaysObject.reservationData.reservationMaxConnections = std::stoi(reservationDataNode["ReservationMaxConnections"].asString());
 		vpnGateways_.push_back(vpnGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

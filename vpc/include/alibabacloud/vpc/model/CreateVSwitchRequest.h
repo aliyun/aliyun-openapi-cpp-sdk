@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getIpv6CidrBlock()const;
 				void setIpv6CidrBlock(int ipv6CidrBlock);
+				std::string getVpcIpv6CidrBlock()const;
+				void setVpcIpv6CidrBlock(const std::string& vpcIpv6CidrBlock);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getVSwitchName()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				int ipv6CidrBlock_;
+				std::string vpcIpv6CidrBlock_;
 				std::string vpcId_;
 				std::string vSwitchName_;
 				std::string cidrBlock_;

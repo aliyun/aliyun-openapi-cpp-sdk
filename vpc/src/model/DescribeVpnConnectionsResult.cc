@@ -65,6 +65,8 @@ void DescribeVpnConnectionsResult::parse(const std::string &payload)
 			vpnConnectionsObject.enableDpd = valueVpnConnectionsVpnConnection["EnableDpd"].asString() == "true";
 		if(!valueVpnConnectionsVpnConnection["EnableNatTraversal"].isNull())
 			vpnConnectionsObject.enableNatTraversal = valueVpnConnectionsVpnConnection["EnableNatTraversal"].asString() == "true";
+		if(!valueVpnConnectionsVpnConnection["RemoteCaCertificate"].isNull())
+			vpnConnectionsObject.remoteCaCertificate = valueVpnConnectionsVpnConnection["RemoteCaCertificate"].asString();
 		auto ikeConfigNode = value["IkeConfig"];
 		if(!ikeConfigNode["Psk"].isNull())
 			vpnConnectionsObject.ikeConfig.psk = ikeConfigNode["Psk"].asString();
@@ -106,6 +108,19 @@ void DescribeVpnConnectionsResult::parse(const std::string &payload)
 			vpnConnectionsObject.vcoHealthCheck.retry = std::stoi(vcoHealthCheckNode["Retry"].asString());
 		if(!vcoHealthCheckNode["Status"].isNull())
 			vpnConnectionsObject.vcoHealthCheck.status = vcoHealthCheckNode["Status"].asString();
+		auto vpnBgpConfigNode = value["VpnBgpConfig"];
+		if(!vpnBgpConfigNode["TunnelCidr"].isNull())
+			vpnConnectionsObject.vpnBgpConfig.tunnelCidr = vpnBgpConfigNode["TunnelCidr"].asString();
+		if(!vpnBgpConfigNode["LocalBgpIp"].isNull())
+			vpnConnectionsObject.vpnBgpConfig.localBgpIp = vpnBgpConfigNode["LocalBgpIp"].asString();
+		if(!vpnBgpConfigNode["PeerBgpIp"].isNull())
+			vpnConnectionsObject.vpnBgpConfig.peerBgpIp = vpnBgpConfigNode["PeerBgpIp"].asString();
+		if(!vpnBgpConfigNode["LocalAsn"].isNull())
+			vpnConnectionsObject.vpnBgpConfig.localAsn = vpnBgpConfigNode["LocalAsn"].asString();
+		if(!vpnBgpConfigNode["PeerAsn"].isNull())
+			vpnConnectionsObject.vpnBgpConfig.peerAsn = vpnBgpConfigNode["PeerAsn"].asString();
+		if(!vpnBgpConfigNode["Status"].isNull())
+			vpnConnectionsObject.vpnBgpConfig.status = vpnBgpConfigNode["Status"].asString();
 		vpnConnections_.push_back(vpnConnectionsObject);
 	}
 	if(!value["TotalCount"].isNull())

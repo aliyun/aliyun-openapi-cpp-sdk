@@ -60,6 +60,17 @@ void AllocateEipAddressRequest::setISP(const std::string& iSP)
 	setParameter("ISP", iSP);
 }
 
+std::string AllocateEipAddressRequest::getDescription()const
+{
+	return description_;
+}
+
+void AllocateEipAddressRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
 std::string AllocateEipAddressRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -190,6 +201,17 @@ void AllocateEipAddressRequest::setInternetChargeType(const std::string& interne
 {
 	internetChargeType_ = internetChargeType;
 	setParameter("InternetChargeType", internetChargeType);
+}
+
+std::string AllocateEipAddressRequest::getName()const
+{
+	return name_;
+}
+
+void AllocateEipAddressRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 
 std::string AllocateEipAddressRequest::getPricingCycle()const

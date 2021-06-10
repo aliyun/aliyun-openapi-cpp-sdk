@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				std::string getCustomerGatewayId()const;
 				long getCreateTime()const;
 				std::string getIpAddress()const;
+				int getAsn()const;
 				std::string getName()const;
 
 			protected:
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 				std::string customerGatewayId_;
 				long createTime_;
 				std::string ipAddress_;
+				int asn_;
 				std::string name_;
 
 			};

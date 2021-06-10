@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string internetChargeType;
 					};
 					std::string status;
+					std::string ipv6Isp;
 					std::string vSwitchId;
 					std::string ipv6GatewayId;
 					int realBandwidth;

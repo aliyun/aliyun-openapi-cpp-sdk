@@ -43,6 +43,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				long getVpcOwnerId()const;
+				void setVpcOwnerId(long vpcOwnerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getVpcName()const;
@@ -59,10 +61,14 @@ namespace AlibabaCloud
 				void setIsDefault(bool isDefault);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
+				std::string getDhcpOptionsSetId()const;
+				void setDhcpOptionsSetId(const std::string& dhcpOptionsSetId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				bool getAdvancedFeature()const;
+				void setAdvancedFeature(bool advancedFeature);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getVpcId()const;
@@ -70,6 +76,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				long vpcOwnerId_;
 				int pageNumber_;
 				std::string vpcName_;
 				std::string resourceGroupId_;
@@ -78,8 +85,10 @@ namespace AlibabaCloud
 				std::vector<Tag> tag_;
 				bool isDefault_;
 				bool dryRun_;
+				std::string dhcpOptionsSetId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				bool advancedFeature_;
 				long ownerId_;
 				std::string vpcId_;
 

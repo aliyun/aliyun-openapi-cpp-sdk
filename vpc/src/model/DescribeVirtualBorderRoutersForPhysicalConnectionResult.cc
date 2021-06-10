@@ -79,6 +79,16 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionResult::parse(const std::s
 			virtualBorderRouterForPhysicalConnectionSetObject.pConnVbrBussinessStatus = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PConnVbrBussinessStatus"].asString();
 		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["Bandwidth"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.bandwidth = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["Bandwidth"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["LocalIpv6GatewayIp"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.localIpv6GatewayIp = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["LocalIpv6GatewayIp"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PeerIpv6GatewayIp"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.peerIpv6GatewayIp = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PeerIpv6GatewayIp"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PeeringIpv6SubnetMask"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.peeringIpv6SubnetMask = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PeeringIpv6SubnetMask"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["EnableIpv6"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.enableIpv6 = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["EnableIpv6"].asString() == "true";
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["BandwidthStatus"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.bandwidthStatus = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["BandwidthStatus"].asString();
 		virtualBorderRouterForPhysicalConnectionSet_.push_back(virtualBorderRouterForPhysicalConnectionSetObject);
 	}
 	if(!value["PageNumber"].isNull())

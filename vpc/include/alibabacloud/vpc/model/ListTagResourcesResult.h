@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct TagResource
 				{
+					std::string resourceId;
 					std::string tagKey;
 					std::string resourceType;
 					std::string tagValue;

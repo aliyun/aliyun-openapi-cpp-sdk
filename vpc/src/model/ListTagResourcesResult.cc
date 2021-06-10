@@ -51,6 +51,8 @@ void ListTagResourcesResult::parse(const std::string &payload)
 			tagResourcesObject.resourcId = valueTagResourcesTagResource["ResourcId"].asString();
 		if(!valueTagResourcesTagResource["ResourceType"].isNull())
 			tagResourcesObject.resourceType = valueTagResourcesTagResource["ResourceType"].asString();
+		if(!valueTagResourcesTagResource["ResourceId"].isNull())
+			tagResourcesObject.resourceId = valueTagResourcesTagResource["ResourceId"].asString();
 		tagResources_.push_back(tagResourcesObject);
 	}
 	if(!value["NextToken"].isNull())

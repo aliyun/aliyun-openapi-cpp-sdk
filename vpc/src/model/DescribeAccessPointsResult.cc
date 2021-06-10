@@ -59,6 +59,16 @@ void DescribeAccessPointsResult::parse(const std::string &payload)
 			accessPointSetObject.name = valueAccessPointSetAccessPointType["Name"].asString();
 		if(!valueAccessPointSetAccessPointType["Description"].isNull())
 			accessPointSetObject.description = valueAccessPointSetAccessPointType["Description"].asString();
+		auto allAccessPointFeatureModelsNode = valueAccessPointSetAccessPointType["AccessPointFeatureModels"]["AccessPointFeatureModel"];
+		for (auto valueAccessPointSetAccessPointTypeAccessPointFeatureModelsAccessPointFeatureModel : allAccessPointFeatureModelsNode)
+		{
+			AccessPointType::AccessPointFeatureModel accessPointFeatureModelsObject;
+			if(!valueAccessPointSetAccessPointTypeAccessPointFeatureModelsAccessPointFeatureModel["FeatureKey"].isNull())
+				accessPointFeatureModelsObject.featureKey = valueAccessPointSetAccessPointTypeAccessPointFeatureModelsAccessPointFeatureModel["FeatureKey"].asString();
+			if(!valueAccessPointSetAccessPointTypeAccessPointFeatureModelsAccessPointFeatureModel["FeatureValue"].isNull())
+				accessPointFeatureModelsObject.featureValue = valueAccessPointSetAccessPointTypeAccessPointFeatureModelsAccessPointFeatureModel["FeatureValue"].asString();
+			accessPointSetObject.accessPointFeatureModels.push_back(accessPointFeatureModelsObject);
+		}
 		accessPointSet_.push_back(accessPointSetObject);
 	}
 	if(!value["PageNumber"].isNull())

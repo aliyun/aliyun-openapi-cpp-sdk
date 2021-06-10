@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string description;
+					std::string ipVersion;
 					std::string keepalive;
 					std::string routerId;
 					std::string peerAsn;

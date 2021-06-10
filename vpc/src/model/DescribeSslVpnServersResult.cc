@@ -75,6 +75,8 @@ void DescribeSslVpnServersResult::parse(const std::string &payload)
 			sslVpnServersObject.enableMultiFactorAuth = valueSslVpnServersSslVpnServer["EnableMultiFactorAuth"].asString() == "true";
 		if(!valueSslVpnServersSslVpnServer["IDaaSInstanceId"].isNull())
 			sslVpnServersObject.iDaaSInstanceId = valueSslVpnServersSslVpnServer["IDaaSInstanceId"].asString();
+		if(!valueSslVpnServersSslVpnServer["IDaaSRegionId"].isNull())
+			sslVpnServersObject.iDaaSRegionId = valueSslVpnServersSslVpnServer["IDaaSRegionId"].asString();
 		sslVpnServers_.push_back(sslVpnServersObject);
 	}
 	if(!value["TotalCount"].isNull())

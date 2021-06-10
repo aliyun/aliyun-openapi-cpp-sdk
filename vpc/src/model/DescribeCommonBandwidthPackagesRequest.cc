@@ -93,6 +93,22 @@ void DescribeCommonBandwidthPackagesRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::vector<DescribeCommonBandwidthPackagesRequest::Tag> DescribeCommonBandwidthPackagesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeCommonBandwidthPackagesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
 std::string DescribeCommonBandwidthPackagesRequest::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -102,6 +118,17 @@ void DescribeCommonBandwidthPackagesRequest::setBandwidthPackageId(const std::st
 {
 	bandwidthPackageId_ = bandwidthPackageId;
 	setParameter("BandwidthPackageId", bandwidthPackageId);
+}
+
+bool DescribeCommonBandwidthPackagesRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void DescribeCommonBandwidthPackagesRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeCommonBandwidthPackagesRequest::getResourceOwnerAccount()const

@@ -39,6 +39,13 @@ void CreateRouteEntryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["RouteEntryId"].isNull())
+		routeEntryId_ = value["RouteEntryId"].asString();
 
+}
+
+std::string CreateRouteEntryResult::getRouteEntryId()const
+{
+	return routeEntryId_;
 }
 

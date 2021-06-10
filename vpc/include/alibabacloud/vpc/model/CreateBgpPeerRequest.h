@@ -43,8 +43,12 @@ namespace AlibabaCloud
 				void setBgpGroupId(const std::string& bgpGroupId);
 				std::string getPeerIpAddress()const;
 				void setPeerIpAddress(const std::string& peerIpAddress);
+				int getBfdMultiHop()const;
+				void setBfdMultiHop(int bfdMultiHop);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getIpVersion()const;
+				void setIpVersion(const std::string& ipVersion);
 				bool getEnableBfd()const;
 				void setEnableBfd(bool enableBfd);
 				std::string getResourceOwnerAccount()const;
@@ -59,7 +63,9 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string bgpGroupId_;
 				std::string peerIpAddress_;
+				int bfdMultiHop_;
 				std::string regionId_;
+				std::string ipVersion_;
 				bool enableBfd_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

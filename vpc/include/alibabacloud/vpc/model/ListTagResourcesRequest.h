@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 
             private:
 				long resourceOwnerId_;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string resourceType_;
+				int maxResults_;
 
 			};
 		}

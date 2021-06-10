@@ -71,6 +71,17 @@ void ModifyBgpPeerAttributeRequest::setPeerIpAddress(const std::string& peerIpAd
 	setParameter("PeerIpAddress", peerIpAddress);
 }
 
+int ModifyBgpPeerAttributeRequest::getBfdMultiHop()const
+{
+	return bfdMultiHop_;
+}
+
+void ModifyBgpPeerAttributeRequest::setBfdMultiHop(int bfdMultiHop)
+{
+	bfdMultiHop_ = bfdMultiHop;
+	setParameter("BfdMultiHop", std::to_string(bfdMultiHop));
+}
+
 std::string ModifyBgpPeerAttributeRequest::getRegionId()const
 {
 	return regionId_;

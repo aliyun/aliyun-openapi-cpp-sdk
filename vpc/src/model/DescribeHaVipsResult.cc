@@ -65,6 +65,8 @@ void DescribeHaVipsResult::parse(const std::string &payload)
 			haVipsObject.chargeType = valueHaVipsHaVip["ChargeType"].asString();
 		if(!valueHaVipsHaVip["CreateTime"].isNull())
 			haVipsObject.createTime = valueHaVipsHaVip["CreateTime"].asString();
+		if(!valueHaVipsHaVip["AssociatedInstanceType"].isNull())
+			haVipsObject.associatedInstanceType = valueHaVipsHaVip["AssociatedInstanceType"].asString();
 		auto allAssociatedInstances = value["AssociatedInstances"]["associatedInstance"];
 		for (auto value : allAssociatedInstances)
 			haVipsObject.associatedInstances.push_back(value.asString());

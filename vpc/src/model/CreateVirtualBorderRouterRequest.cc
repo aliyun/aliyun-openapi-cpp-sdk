@@ -71,6 +71,17 @@ void CreateVirtualBorderRouterRequest::setClientToken(const std::string& clientT
 	setParameter("ClientToken", clientToken);
 }
 
+bool CreateVirtualBorderRouterRequest::getEnableIpv6()const
+{
+	return enableIpv6_;
+}
+
+void CreateVirtualBorderRouterRequest::setEnableIpv6(bool enableIpv6)
+{
+	enableIpv6_ = enableIpv6;
+	setParameter("EnableIpv6", enableIpv6 ? "true" : "false");
+}
+
 std::string CreateVirtualBorderRouterRequest::getDescription()const
 {
 	return description_;
@@ -91,6 +102,17 @@ void CreateVirtualBorderRouterRequest::setPeerGatewayIp(const std::string& peerG
 {
 	peerGatewayIp_ = peerGatewayIp;
 	setParameter("PeerGatewayIp", peerGatewayIp);
+}
+
+std::string CreateVirtualBorderRouterRequest::getPeerIpv6GatewayIp()const
+{
+	return peerIpv6GatewayIp_;
+}
+
+void CreateVirtualBorderRouterRequest::setPeerIpv6GatewayIp(const std::string& peerIpv6GatewayIp)
+{
+	peerIpv6GatewayIp_ = peerIpv6GatewayIp;
+	setParameter("PeerIpv6GatewayIp", peerIpv6GatewayIp);
 }
 
 std::string CreateVirtualBorderRouterRequest::getPeeringSubnetMask()const
@@ -126,6 +148,17 @@ void CreateVirtualBorderRouterRequest::setLocalGatewayIp(const std::string& loca
 	setParameter("LocalGatewayIp", localGatewayIp);
 }
 
+std::string CreateVirtualBorderRouterRequest::getPeeringIpv6SubnetMask()const
+{
+	return peeringIpv6SubnetMask_;
+}
+
+void CreateVirtualBorderRouterRequest::setPeeringIpv6SubnetMask(const std::string& peeringIpv6SubnetMask)
+{
+	peeringIpv6SubnetMask_ = peeringIpv6SubnetMask;
+	setParameter("PeeringIpv6SubnetMask", peeringIpv6SubnetMask);
+}
+
 std::string CreateVirtualBorderRouterRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -135,6 +168,17 @@ void CreateVirtualBorderRouterRequest::setResourceOwnerAccount(const std::string
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long CreateVirtualBorderRouterRequest::getBandwidth()const
+{
+	return bandwidth_;
+}
+
+void CreateVirtualBorderRouterRequest::setBandwidth(long bandwidth)
+{
+	bandwidth_ = bandwidth;
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string CreateVirtualBorderRouterRequest::getOwnerAccount()const
@@ -168,6 +212,17 @@ void CreateVirtualBorderRouterRequest::setPhysicalConnectionId(const std::string
 {
 	physicalConnectionId_ = physicalConnectionId;
 	setParameter("PhysicalConnectionId", physicalConnectionId);
+}
+
+std::string CreateVirtualBorderRouterRequest::getLocalIpv6GatewayIp()const
+{
+	return localIpv6GatewayIp_;
+}
+
+void CreateVirtualBorderRouterRequest::setLocalIpv6GatewayIp(const std::string& localIpv6GatewayIp)
+{
+	localIpv6GatewayIp_ = localIpv6GatewayIp;
+	setParameter("LocalIpv6GatewayIp", localIpv6GatewayIp);
 }
 
 std::string CreateVirtualBorderRouterRequest::getName()const
