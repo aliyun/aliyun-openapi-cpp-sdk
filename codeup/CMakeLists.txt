@@ -45,6 +45,8 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/CreateRepositoryGroupResult.h
 	include/alibabacloud/codeup/model/CreateRepositoryProtectedBranchRequest.h
 	include/alibabacloud/codeup/model/CreateRepositoryProtectedBranchResult.h
+	include/alibabacloud/codeup/model/CreateSshKeyRequest.h
+	include/alibabacloud/codeup/model/CreateSshKeyResult.h
 	include/alibabacloud/codeup/model/CreateTagRequest.h
 	include/alibabacloud/codeup/model/CreateTagResult.h
 	include/alibabacloud/codeup/model/DeleteBranchRequest.h
@@ -174,6 +176,8 @@ set(codeup_src
 	src/model/CreateRepositoryGroupResult.cc
 	src/model/CreateRepositoryProtectedBranchRequest.cc
 	src/model/CreateRepositoryProtectedBranchResult.cc
+	src/model/CreateSshKeyRequest.cc
+	src/model/CreateSshKeyResult.cc
 	src/model/CreateTagRequest.cc
 	src/model/CreateTagResult.cc
 	src/model/DeleteBranchRequest.cc

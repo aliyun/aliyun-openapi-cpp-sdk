@@ -483,6 +483,42 @@ CodeupClient::CreateRepositoryProtectedBranchOutcomeCallable CodeupClient::creat
 	return task->get_future();
 }
 
+CodeupClient::CreateSshKeyOutcome CodeupClient::createSshKey(const CreateSshKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSshKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSshKeyOutcome(CreateSshKeyResult(outcome.result()));
+	else
+		return CreateSshKeyOutcome(outcome.error());
+}
+
+void CodeupClient::createSshKeyAsync(const CreateSshKeyRequest& request, const CreateSshKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSshKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CodeupClient::CreateSshKeyOutcomeCallable CodeupClient::createSshKeyCallable(const CreateSshKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSshKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->createSshKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CodeupClient::CreateTagOutcome CodeupClient::createTag(const CreateTagRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

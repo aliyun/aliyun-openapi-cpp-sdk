@@ -46,6 +46,8 @@
 #include "model/CreateRepositoryGroupResult.h"
 #include "model/CreateRepositoryProtectedBranchRequest.h"
 #include "model/CreateRepositoryProtectedBranchResult.h"
+#include "model/CreateSshKeyRequest.h"
+#include "model/CreateSshKeyResult.h"
 #include "model/CreateTagRequest.h"
 #include "model/CreateTagResult.h"
 #include "model/DeleteBranchRequest.h"
@@ -193,6 +195,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRepositoryProtectedBranchResult> CreateRepositoryProtectedBranchOutcome;
 			typedef std::future<CreateRepositoryProtectedBranchOutcome> CreateRepositoryProtectedBranchOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::CreateRepositoryProtectedBranchRequest&, const CreateRepositoryProtectedBranchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryProtectedBranchAsyncHandler;
+			typedef Outcome<Error, Model::CreateSshKeyResult> CreateSshKeyOutcome;
+			typedef std::future<CreateSshKeyOutcome> CreateSshKeyOutcomeCallable;
+			typedef std::function<void(const CodeupClient*, const Model::CreateSshKeyRequest&, const CreateSshKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSshKeyAsyncHandler;
 			typedef Outcome<Error, Model::CreateTagResult> CreateTagOutcome;
 			typedef std::future<CreateTagOutcome> CreateTagOutcomeCallable;
 			typedef std::function<void(const CodeupClient*, const Model::CreateTagRequest&, const CreateTagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagAsyncHandler;
@@ -387,6 +392,9 @@ namespace AlibabaCloud
 			CreateRepositoryProtectedBranchOutcome createRepositoryProtectedBranch(const Model::CreateRepositoryProtectedBranchRequest &request)const;
 			void createRepositoryProtectedBranchAsync(const Model::CreateRepositoryProtectedBranchRequest& request, const CreateRepositoryProtectedBranchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRepositoryProtectedBranchOutcomeCallable createRepositoryProtectedBranchCallable(const Model::CreateRepositoryProtectedBranchRequest& request) const;
+			CreateSshKeyOutcome createSshKey(const Model::CreateSshKeyRequest &request)const;
+			void createSshKeyAsync(const Model::CreateSshKeyRequest& request, const CreateSshKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSshKeyOutcomeCallable createSshKeyCallable(const Model::CreateSshKeyRequest& request) const;
 			CreateTagOutcome createTag(const Model::CreateTagRequest &request)const;
 			void createTagAsync(const Model::CreateTagRequest& request, const CreateTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTagOutcomeCallable createTagCallable(const Model::CreateTagRequest& request) const;
