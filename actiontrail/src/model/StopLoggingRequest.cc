@@ -19,24 +19,13 @@
 using AlibabaCloud::Actiontrail::Model::StopLoggingRequest;
 
 StopLoggingRequest::StopLoggingRequest() :
-	RpcServiceRequest("actiontrail", "2017-12-04", "StopLogging")
+	RpcServiceRequest("actiontrail", "2020-07-06", "StopLogging")
 {
 	setMethod(HttpRequest::Method::Get);
 }
 
 StopLoggingRequest::~StopLoggingRequest()
 {}
-
-std::string StopLoggingRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void StopLoggingRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
 
 std::string StopLoggingRequest::getName()const
 {

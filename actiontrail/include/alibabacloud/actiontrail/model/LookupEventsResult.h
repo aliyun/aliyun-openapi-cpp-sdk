@@ -37,16 +37,16 @@ namespace AlibabaCloud
 				LookupEventsResult();
 				explicit LookupEventsResult(const std::string &payload);
 				~LookupEventsResult();
-				std::string getNextToken()const;
 				std::string getEndTime()const;
+				std::string getNextToken()const;
 				std::vector<std::string> getEvents()const;
 				std::string getStartTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string nextToken_;
 				std::string endTime_;
+				std::string nextToken_;
 				std::vector<std::string> events_;
 				std::string startTime_;
 

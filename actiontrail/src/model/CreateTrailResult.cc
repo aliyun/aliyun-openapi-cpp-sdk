@@ -39,42 +39,30 @@ void CreateTrailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["HomeRegion"].isNull())
-		homeRegion_ = value["HomeRegion"].asString();
-	if(!value["OssBucketName"].isNull())
-		ossBucketName_ = value["OssBucketName"].asString();
-	if(!value["OssKeyPrefix"].isNull())
-		ossKeyPrefix_ = value["OssKeyPrefix"].asString();
-	if(!value["RoleName"].isNull())
-		roleName_ = value["RoleName"].asString();
 	if(!value["SlsProjectArn"].isNull())
 		slsProjectArn_ = value["SlsProjectArn"].asString();
-	if(!value["SlsWriteRoleArn"].isNull())
-		slsWriteRoleArn_ = value["SlsWriteRoleArn"].asString();
 	if(!value["EventRW"].isNull())
 		eventRW_ = value["EventRW"].asString();
+	if(!value["HomeRegion"].isNull())
+		homeRegion_ = value["HomeRegion"].asString();
+	if(!value["OssKeyPrefix"].isNull())
+		ossKeyPrefix_ = value["OssKeyPrefix"].asString();
+	if(!value["OssBucketName"].isNull())
+		ossBucketName_ = value["OssBucketName"].asString();
+	if(!value["SlsWriteRoleArn"].isNull())
+		slsWriteRoleArn_ = value["SlsWriteRoleArn"].asString();
+	if(!value["OssWriteRoleArn"].isNull())
+		ossWriteRoleArn_ = value["OssWriteRoleArn"].asString();
 	if(!value["TrailRegion"].isNull())
 		trailRegion_ = value["TrailRegion"].asString();
-	if(!value["MnsTopicArn"].isNull())
-		mnsTopicArn_ = value["MnsTopicArn"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 
 std::string CreateTrailResult::getSlsProjectArn()const
 {
 	return slsProjectArn_;
-}
-
-std::string CreateTrailResult::getMnsTopicArn()const
-{
-	return mnsTopicArn_;
-}
-
-std::string CreateTrailResult::getRoleName()const
-{
-	return roleName_;
 }
 
 std::string CreateTrailResult::getEventRW()const
@@ -100,6 +88,11 @@ std::string CreateTrailResult::getOssBucketName()const
 std::string CreateTrailResult::getSlsWriteRoleArn()const
 {
 	return slsWriteRoleArn_;
+}
+
+std::string CreateTrailResult::getOssWriteRoleArn()const
+{
+	return ossWriteRoleArn_;
 }
 
 std::string CreateTrailResult::getTrailRegion()const

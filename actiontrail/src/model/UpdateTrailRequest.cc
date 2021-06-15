@@ -19,7 +19,7 @@
 using AlibabaCloud::Actiontrail::Model::UpdateTrailRequest;
 
 UpdateTrailRequest::UpdateTrailRequest() :
-	RpcServiceRequest("actiontrail", "2017-12-04", "UpdateTrail")
+	RpcServiceRequest("actiontrail", "2020-07-06", "UpdateTrail")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -36,17 +36,6 @@ void UpdateTrailRequest::setSlsProjectArn(const std::string& slsProjectArn)
 {
 	slsProjectArn_ = slsProjectArn;
 	setParameter("SlsProjectArn", slsProjectArn);
-}
-
-std::string UpdateTrailRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void UpdateTrailRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateTrailRequest::getSlsWriteRoleArn()const
@@ -71,26 +60,15 @@ void UpdateTrailRequest::setOssKeyPrefix(const std::string& ossKeyPrefix)
 	setParameter("OssKeyPrefix", ossKeyPrefix);
 }
 
-std::string UpdateTrailRequest::getMnsTopicArn()const
+std::string UpdateTrailRequest::getOssWriteRoleArn()const
 {
-	return mnsTopicArn_;
+	return ossWriteRoleArn_;
 }
 
-void UpdateTrailRequest::setMnsTopicArn(const std::string& mnsTopicArn)
+void UpdateTrailRequest::setOssWriteRoleArn(const std::string& ossWriteRoleArn)
 {
-	mnsTopicArn_ = mnsTopicArn;
-	setParameter("MnsTopicArn", mnsTopicArn);
-}
-
-std::string UpdateTrailRequest::getRoleName()const
-{
-	return roleName_;
-}
-
-void UpdateTrailRequest::setRoleName(const std::string& roleName)
-{
-	roleName_ = roleName;
-	setParameter("RoleName", roleName);
+	ossWriteRoleArn_ = ossWriteRoleArn;
+	setParameter("OssWriteRoleArn", ossWriteRoleArn);
 }
 
 std::string UpdateTrailRequest::getEventRW()const

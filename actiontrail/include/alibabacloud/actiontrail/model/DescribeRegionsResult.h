@@ -32,25 +32,23 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ACTIONTRAIL_EXPORT DescribeRegionsResult : public ServiceResult
 			{
 			public:
-				struct Regions
+				struct Region
 				{
-					struct RegionItem
-					{
-						std::string regionId;
-					};
-					std::vector<RegionItem> region;
+					std::string regionId;
+					std::string regionEndpoint;
+					std::string localName;
 				};
 
 
 				DescribeRegionsResult();
 				explicit DescribeRegionsResult(const std::string &payload);
 				~DescribeRegionsResult();
-				Regions getRegions()const;
+				std::vector<Region> getRegions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Regions regions_;
+				std::vector<Region> regions_;
 
 			};
 		}

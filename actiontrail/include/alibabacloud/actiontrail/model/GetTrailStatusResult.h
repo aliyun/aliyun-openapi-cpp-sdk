@@ -37,20 +37,28 @@ namespace AlibabaCloud
 				GetTrailStatusResult();
 				explicit GetTrailStatusResult(const std::string &payload);
 				~GetTrailStatusResult();
+				std::string getLatestDeliveryLogServiceTime()const;
+				std::string getLatestDeliveryLogServiceError()const;
 				std::string getStartLoggingTime()const;
+				bool getOssBucketStatus()const;
 				std::string getLatestDeliveryError()const;
 				std::string getStopLoggingTime()const;
-				bool getIsLogging()const;
+				bool getSlsLogStoreStatus()const;
 				std::string getLatestDeliveryTime()const;
+				bool getIsLogging()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string latestDeliveryLogServiceTime_;
+				std::string latestDeliveryLogServiceError_;
 				std::string startLoggingTime_;
+				bool ossBucketStatus_;
 				std::string latestDeliveryError_;
 				std::string stopLoggingTime_;
-				bool isLogging_;
+				bool slsLogStoreStatus_;
 				std::string latestDeliveryTime_;
+				bool isLogging_;
 
 			};
 		}

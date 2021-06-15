@@ -32,36 +32,39 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ACTIONTRAIL_EXPORT DescribeTrailsResult : public ServiceResult
 			{
 			public:
-				struct TrailListItem
+				struct Trail
 				{
 					std::string status;
-					std::string mnsTopicArn;
 					std::string homeRegion;
-					std::string createTime;
 					std::string startLoggingTime;
+					std::string createTime;
 					std::string stopLoggingTime;
+					std::string organizationId;
 					std::string slsWriteRoleArn;
+					std::string ossBucketLocation;
 					std::string trailRegion;
 					std::string name;
 					bool isOrganizationTrail;
 					std::string slsProjectArn;
-					std::string roleName;
 					std::string eventRW;
 					std::string ossKeyPrefix;
 					std::string updateTime;
+					std::string region;
 					std::string ossBucketName;
+					std::string ossWriteRoleArn;
+					long isShadowTrail;
 				};
 
 
 				DescribeTrailsResult();
 				explicit DescribeTrailsResult(const std::string &payload);
 				~DescribeTrailsResult();
-				std::vector<TrailListItem> getTrailList()const;
+				std::vector<Trail> getTrailList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<TrailListItem> trailList_;
+				std::vector<Trail> trailList_;
 
 			};
 		}

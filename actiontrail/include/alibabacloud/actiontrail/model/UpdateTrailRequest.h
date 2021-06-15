@@ -37,16 +37,12 @@ namespace AlibabaCloud
 
 				std::string getSlsProjectArn()const;
 				void setSlsProjectArn(const std::string& slsProjectArn);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSlsWriteRoleArn()const;
 				void setSlsWriteRoleArn(const std::string& slsWriteRoleArn);
 				std::string getOssKeyPrefix()const;
 				void setOssKeyPrefix(const std::string& ossKeyPrefix);
-				std::string getMnsTopicArn()const;
-				void setMnsTopicArn(const std::string& mnsTopicArn);
-				std::string getRoleName()const;
-				void setRoleName(const std::string& roleName);
+				std::string getOssWriteRoleArn()const;
+				void setOssWriteRoleArn(const std::string& ossWriteRoleArn);
 				std::string getEventRW()const;
 				void setEventRW(const std::string& eventRW);
 				std::string getName()const;
@@ -58,11 +54,9 @@ namespace AlibabaCloud
 
             private:
 				std::string slsProjectArn_;
-				std::string accessKeyId_;
 				std::string slsWriteRoleArn_;
 				std::string ossKeyPrefix_;
-				std::string mnsTopicArn_;
-				std::string roleName_;
+				std::string ossWriteRoleArn_;
 				std::string eventRW_;
 				std::string name_;
 				std::string ossBucketName_;

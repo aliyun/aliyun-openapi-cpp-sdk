@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				DescribeRegionsRequest();
 				~DescribeRegionsRequest();
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAcceptLanguage()const;
+				void setAcceptLanguage(const std::string& acceptLanguage);
 
             private:
-				std::string accessKeyId_;
+				std::string acceptLanguage_;
 
 			};
 		}

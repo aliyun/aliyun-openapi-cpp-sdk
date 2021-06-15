@@ -19,24 +19,13 @@
 using AlibabaCloud::Actiontrail::Model::DeleteTrailRequest;
 
 DeleteTrailRequest::DeleteTrailRequest() :
-	RpcServiceRequest("actiontrail", "2017-12-04", "DeleteTrail")
+	RpcServiceRequest("actiontrail", "2020-07-06", "DeleteTrail")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteTrailRequest::~DeleteTrailRequest()
 {}
-
-std::string DeleteTrailRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DeleteTrailRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
 
 std::string DeleteTrailRequest::getName()const
 {

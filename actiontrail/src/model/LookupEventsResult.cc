@@ -42,23 +42,23 @@ void LookupEventsResult::parse(const std::string &payload)
 	auto allEvents = value["Events"]["Events"];
 	for (const auto &item : allEvents)
 		events_.push_back(item.asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["StartTime"].isNull())
 		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
-}
-
-std::string LookupEventsResult::getNextToken()const
-{
-	return nextToken_;
 }
 
 std::string LookupEventsResult::getEndTime()const
 {
 	return endTime_;
+}
+
+std::string LookupEventsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 std::vector<std::string> LookupEventsResult::getEvents()const

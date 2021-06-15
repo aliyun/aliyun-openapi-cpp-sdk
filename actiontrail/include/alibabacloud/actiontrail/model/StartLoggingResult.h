@@ -37,14 +37,10 @@ namespace AlibabaCloud
 				StartLoggingResult();
 				explicit StartLoggingResult(const std::string &payload);
 				~StartLoggingResult();
-				std::string getParam()const;
-				std::string getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string param_;
-				std::string result_;
 
 			};
 		}

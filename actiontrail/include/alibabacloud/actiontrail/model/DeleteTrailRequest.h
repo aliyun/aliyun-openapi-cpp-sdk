@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				DeleteTrailRequest();
 				~DeleteTrailRequest();
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getName()const;
 				void setName(const std::string& name);
 
             private:
-				std::string accessKeyId_;
 				std::string name_;
 
 			};

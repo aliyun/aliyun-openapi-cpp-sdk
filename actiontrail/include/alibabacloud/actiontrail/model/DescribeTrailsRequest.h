@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				DescribeTrailsRequest();
 				~DescribeTrailsRequest();
 
+				bool getIncludeOrganizationTrail()const;
+				void setIncludeOrganizationTrail(bool includeOrganizationTrail);
 				bool getIncludeShadowTrails()const;
 				void setIncludeShadowTrails(bool includeShadowTrails);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getNameList()const;
 				void setNameList(const std::string& nameList);
 
             private:
+				bool includeOrganizationTrail_;
 				bool includeShadowTrails_;
-				std::string accessKeyId_;
 				std::string nameList_;
 
 			};

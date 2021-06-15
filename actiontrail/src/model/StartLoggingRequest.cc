@@ -19,24 +19,13 @@
 using AlibabaCloud::Actiontrail::Model::StartLoggingRequest;
 
 StartLoggingRequest::StartLoggingRequest() :
-	RpcServiceRequest("actiontrail", "2017-12-04", "StartLogging")
+	RpcServiceRequest("actiontrail", "2020-07-06", "StartLogging")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 StartLoggingRequest::~StartLoggingRequest()
 {}
-
-std::string StartLoggingRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void StartLoggingRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
 
 std::string StartLoggingRequest::getName()const
 {

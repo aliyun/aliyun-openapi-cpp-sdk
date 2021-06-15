@@ -39,22 +39,45 @@ void GetTrailStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["IsLogging"].isNull())
-		isLogging_ = value["IsLogging"].asString() == "true";
-	if(!value["LatestDeliveryError"].isNull())
-		latestDeliveryError_ = value["LatestDeliveryError"].asString();
-	if(!value["LatestDeliveryTime"].isNull())
-		latestDeliveryTime_ = value["LatestDeliveryTime"].asString();
+	if(!value["LatestDeliveryLogServiceTime"].isNull())
+		latestDeliveryLogServiceTime_ = value["LatestDeliveryLogServiceTime"].asString();
+	if(!value["LatestDeliveryLogServiceError"].isNull())
+		latestDeliveryLogServiceError_ = value["LatestDeliveryLogServiceError"].asString();
 	if(!value["StartLoggingTime"].isNull())
 		startLoggingTime_ = value["StartLoggingTime"].asString();
+	if(!value["OssBucketStatus"].isNull())
+		ossBucketStatus_ = value["OssBucketStatus"].asString() == "true";
+	if(!value["LatestDeliveryError"].isNull())
+		latestDeliveryError_ = value["LatestDeliveryError"].asString();
 	if(!value["StopLoggingTime"].isNull())
 		stopLoggingTime_ = value["StopLoggingTime"].asString();
+	if(!value["SlsLogStoreStatus"].isNull())
+		slsLogStoreStatus_ = value["SlsLogStoreStatus"].asString() == "true";
+	if(!value["LatestDeliveryTime"].isNull())
+		latestDeliveryTime_ = value["LatestDeliveryTime"].asString();
+	if(!value["IsLogging"].isNull())
+		isLogging_ = value["IsLogging"].asString() == "true";
 
+}
+
+std::string GetTrailStatusResult::getLatestDeliveryLogServiceTime()const
+{
+	return latestDeliveryLogServiceTime_;
+}
+
+std::string GetTrailStatusResult::getLatestDeliveryLogServiceError()const
+{
+	return latestDeliveryLogServiceError_;
 }
 
 std::string GetTrailStatusResult::getStartLoggingTime()const
 {
 	return startLoggingTime_;
+}
+
+bool GetTrailStatusResult::getOssBucketStatus()const
+{
+	return ossBucketStatus_;
 }
 
 std::string GetTrailStatusResult::getLatestDeliveryError()const
@@ -67,13 +90,18 @@ std::string GetTrailStatusResult::getStopLoggingTime()const
 	return stopLoggingTime_;
 }
 
-bool GetTrailStatusResult::getIsLogging()const
+bool GetTrailStatusResult::getSlsLogStoreStatus()const
 {
-	return isLogging_;
+	return slsLogStoreStatus_;
 }
 
 std::string GetTrailStatusResult::getLatestDeliveryTime()const
 {
 	return latestDeliveryTime_;
+}
+
+bool GetTrailStatusResult::getIsLogging()const
+{
+	return isLogging_;
 }
 

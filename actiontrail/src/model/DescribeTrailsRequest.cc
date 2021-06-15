@@ -19,13 +19,24 @@
 using AlibabaCloud::Actiontrail::Model::DescribeTrailsRequest;
 
 DescribeTrailsRequest::DescribeTrailsRequest() :
-	RpcServiceRequest("actiontrail", "2017-12-04", "DescribeTrails")
+	RpcServiceRequest("actiontrail", "2020-07-06", "DescribeTrails")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeTrailsRequest::~DescribeTrailsRequest()
 {}
+
+bool DescribeTrailsRequest::getIncludeOrganizationTrail()const
+{
+	return includeOrganizationTrail_;
+}
+
+void DescribeTrailsRequest::setIncludeOrganizationTrail(bool includeOrganizationTrail)
+{
+	includeOrganizationTrail_ = includeOrganizationTrail;
+	setParameter("IncludeOrganizationTrail", includeOrganizationTrail ? "true" : "false");
+}
 
 bool DescribeTrailsRequest::getIncludeShadowTrails()const
 {
@@ -36,17 +47,6 @@ void DescribeTrailsRequest::setIncludeShadowTrails(bool includeShadowTrails)
 {
 	includeShadowTrails_ = includeShadowTrails;
 	setParameter("IncludeShadowTrails", includeShadowTrails ? "true" : "false");
-}
-
-std::string DescribeTrailsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeTrailsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeTrailsRequest::getNameList()const

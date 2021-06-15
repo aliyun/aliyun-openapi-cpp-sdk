@@ -39,20 +39,6 @@ void StartLoggingResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Param"].isNull())
-		param_ = value["Param"].asString();
-	if(!value["Result"].isNull())
-		result_ = value["Result"].asString();
 
-}
-
-std::string StartLoggingResult::getParam()const
-{
-	return param_;
-}
-
-std::string StartLoggingResult::getResult()const
-{
-	return result_;
 }
 

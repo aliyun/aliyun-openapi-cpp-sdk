@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				GetTrailStatusRequest();
 				~GetTrailStatusRequest();
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				bool getIsOrganizationTrail()const;
 				void setIsOrganizationTrail(bool isOrganizationTrail);
 
             private:
-				std::string accessKeyId_;
 				std::string name_;
 				bool isOrganizationTrail_;
 

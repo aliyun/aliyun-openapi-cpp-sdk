@@ -19,7 +19,7 @@
 using AlibabaCloud::Actiontrail::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
-	RpcServiceRequest("actiontrail", "2017-12-04", "DescribeRegions")
+	RpcServiceRequest("actiontrail", "2020-07-06", "DescribeRegions")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,14 +27,14 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
 
-std::string DescribeRegionsRequest::getAccessKeyId()const
+std::string DescribeRegionsRequest::getAcceptLanguage()const
 {
-	return accessKeyId_;
+	return acceptLanguage_;
 }
 
-void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
+void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	acceptLanguage_ = acceptLanguage;
+	setParameter("AcceptLanguage", acceptLanguage);
 }
 

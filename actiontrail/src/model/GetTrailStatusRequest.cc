@@ -19,24 +19,13 @@
 using AlibabaCloud::Actiontrail::Model::GetTrailStatusRequest;
 
 GetTrailStatusRequest::GetTrailStatusRequest() :
-	RpcServiceRequest("actiontrail", "2017-12-04", "GetTrailStatus")
+	RpcServiceRequest("actiontrail", "2020-07-06", "GetTrailStatus")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 GetTrailStatusRequest::~GetTrailStatusRequest()
 {}
-
-std::string GetTrailStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void GetTrailStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
 
 std::string GetTrailStatusRequest::getName()const
 {

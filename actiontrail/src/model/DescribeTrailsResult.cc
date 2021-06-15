@@ -39,48 +39,54 @@ void DescribeTrailsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allTrailListNode = value["TrailList"]["TrailListItem"];
-	for (auto valueTrailListTrailListItem : allTrailListNode)
+	auto allTrailListNode = value["TrailList"]["Trail"];
+	for (auto valueTrailListTrail : allTrailListNode)
 	{
-		TrailListItem trailListObject;
-		if(!valueTrailListTrailListItem["Name"].isNull())
-			trailListObject.name = valueTrailListTrailListItem["Name"].asString();
-		if(!valueTrailListTrailListItem["HomeRegion"].isNull())
-			trailListObject.homeRegion = valueTrailListTrailListItem["HomeRegion"].asString();
-		if(!valueTrailListTrailListItem["RoleName"].isNull())
-			trailListObject.roleName = valueTrailListTrailListItem["RoleName"].asString();
-		if(!valueTrailListTrailListItem["OssBucketName"].isNull())
-			trailListObject.ossBucketName = valueTrailListTrailListItem["OssBucketName"].asString();
-		if(!valueTrailListTrailListItem["OssKeyPrefix"].isNull())
-			trailListObject.ossKeyPrefix = valueTrailListTrailListItem["OssKeyPrefix"].asString();
-		if(!valueTrailListTrailListItem["EventRW"].isNull())
-			trailListObject.eventRW = valueTrailListTrailListItem["EventRW"].asString();
-		if(!valueTrailListTrailListItem["SlsWriteRoleArn"].isNull())
-			trailListObject.slsWriteRoleArn = valueTrailListTrailListItem["SlsWriteRoleArn"].asString();
-		if(!valueTrailListTrailListItem["SlsProjectArn"].isNull())
-			trailListObject.slsProjectArn = valueTrailListTrailListItem["SlsProjectArn"].asString();
-		if(!valueTrailListTrailListItem["Status"].isNull())
-			trailListObject.status = valueTrailListTrailListItem["Status"].asString();
-		if(!valueTrailListTrailListItem["TrailRegion"].isNull())
-			trailListObject.trailRegion = valueTrailListTrailListItem["TrailRegion"].asString();
-		if(!valueTrailListTrailListItem["CreateTime"].isNull())
-			trailListObject.createTime = valueTrailListTrailListItem["CreateTime"].asString();
-		if(!valueTrailListTrailListItem["UpdateTime"].isNull())
-			trailListObject.updateTime = valueTrailListTrailListItem["UpdateTime"].asString();
-		if(!valueTrailListTrailListItem["StartLoggingTime"].isNull())
-			trailListObject.startLoggingTime = valueTrailListTrailListItem["StartLoggingTime"].asString();
-		if(!valueTrailListTrailListItem["StopLoggingTime"].isNull())
-			trailListObject.stopLoggingTime = valueTrailListTrailListItem["StopLoggingTime"].asString();
-		if(!valueTrailListTrailListItem["MnsTopicArn"].isNull())
-			trailListObject.mnsTopicArn = valueTrailListTrailListItem["MnsTopicArn"].asString();
-		if(!valueTrailListTrailListItem["IsOrganizationTrail"].isNull())
-			trailListObject.isOrganizationTrail = valueTrailListTrailListItem["IsOrganizationTrail"].asString() == "true";
+		Trail trailListObject;
+		if(!valueTrailListTrail["Status"].isNull())
+			trailListObject.status = valueTrailListTrail["Status"].asString();
+		if(!valueTrailListTrail["HomeRegion"].isNull())
+			trailListObject.homeRegion = valueTrailListTrail["HomeRegion"].asString();
+		if(!valueTrailListTrail["StartLoggingTime"].isNull())
+			trailListObject.startLoggingTime = valueTrailListTrail["StartLoggingTime"].asString();
+		if(!valueTrailListTrail["CreateTime"].isNull())
+			trailListObject.createTime = valueTrailListTrail["CreateTime"].asString();
+		if(!valueTrailListTrail["StopLoggingTime"].isNull())
+			trailListObject.stopLoggingTime = valueTrailListTrail["StopLoggingTime"].asString();
+		if(!valueTrailListTrail["OrganizationId"].isNull())
+			trailListObject.organizationId = valueTrailListTrail["OrganizationId"].asString();
+		if(!valueTrailListTrail["SlsWriteRoleArn"].isNull())
+			trailListObject.slsWriteRoleArn = valueTrailListTrail["SlsWriteRoleArn"].asString();
+		if(!valueTrailListTrail["OssBucketLocation"].isNull())
+			trailListObject.ossBucketLocation = valueTrailListTrail["OssBucketLocation"].asString();
+		if(!valueTrailListTrail["TrailRegion"].isNull())
+			trailListObject.trailRegion = valueTrailListTrail["TrailRegion"].asString();
+		if(!valueTrailListTrail["Name"].isNull())
+			trailListObject.name = valueTrailListTrail["Name"].asString();
+		if(!valueTrailListTrail["IsOrganizationTrail"].isNull())
+			trailListObject.isOrganizationTrail = valueTrailListTrail["IsOrganizationTrail"].asString() == "true";
+		if(!valueTrailListTrail["SlsProjectArn"].isNull())
+			trailListObject.slsProjectArn = valueTrailListTrail["SlsProjectArn"].asString();
+		if(!valueTrailListTrail["EventRW"].isNull())
+			trailListObject.eventRW = valueTrailListTrail["EventRW"].asString();
+		if(!valueTrailListTrail["OssKeyPrefix"].isNull())
+			trailListObject.ossKeyPrefix = valueTrailListTrail["OssKeyPrefix"].asString();
+		if(!valueTrailListTrail["UpdateTime"].isNull())
+			trailListObject.updateTime = valueTrailListTrail["UpdateTime"].asString();
+		if(!valueTrailListTrail["Region"].isNull())
+			trailListObject.region = valueTrailListTrail["Region"].asString();
+		if(!valueTrailListTrail["OssBucketName"].isNull())
+			trailListObject.ossBucketName = valueTrailListTrail["OssBucketName"].asString();
+		if(!valueTrailListTrail["OssWriteRoleArn"].isNull())
+			trailListObject.ossWriteRoleArn = valueTrailListTrail["OssWriteRoleArn"].asString();
+		if(!valueTrailListTrail["IsShadowTrail"].isNull())
+			trailListObject.isShadowTrail = std::stol(valueTrailListTrail["IsShadowTrail"].asString());
 		trailList_.push_back(trailListObject);
 	}
 
 }
 
-std::vector<DescribeTrailsResult::TrailListItem> DescribeTrailsResult::getTrailList()const
+std::vector<DescribeTrailsResult::Trail> DescribeTrailsResult::getTrailList()const
 {
 	return trailList_;
 }

@@ -39,19 +39,22 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto regionsNode = value["Regions"];
-	auto allRegionNode = regionsNode["Region"]["RegionItem"];
-	for (auto regionsNodeRegionRegionItem : allRegionNode)
+	auto allRegionsNode = value["Regions"]["Region"];
+	for (auto valueRegionsRegion : allRegionsNode)
 	{
-		Regions::RegionItem regionItemObject;
-		if(!regionsNodeRegionRegionItem["RegionId"].isNull())
-			regionItemObject.regionId = regionsNodeRegionRegionItem["RegionId"].asString();
-		regions_.region.push_back(regionItemObject);
+		Region regionsObject;
+		if(!valueRegionsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
+		if(!valueRegionsRegion["RegionEndpoint"].isNull())
+			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
+		if(!valueRegionsRegion["LocalName"].isNull())
+			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
+		regions_.push_back(regionsObject);
 	}
 
 }
 
-DescribeRegionsResult::Regions DescribeRegionsResult::getRegions()const
+std::vector<DescribeRegionsResult::Region> DescribeRegionsResult::getRegions()const
 {
 	return regions_;
 }

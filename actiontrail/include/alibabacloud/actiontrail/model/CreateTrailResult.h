@@ -38,13 +38,12 @@ namespace AlibabaCloud
 				explicit CreateTrailResult(const std::string &payload);
 				~CreateTrailResult();
 				std::string getSlsProjectArn()const;
-				std::string getMnsTopicArn()const;
-				std::string getRoleName()const;
 				std::string getEventRW()const;
 				std::string getHomeRegion()const;
 				std::string getOssKeyPrefix()const;
 				std::string getOssBucketName()const;
 				std::string getSlsWriteRoleArn()const;
+				std::string getOssWriteRoleArn()const;
 				std::string getTrailRegion()const;
 				std::string getName()const;
 
@@ -52,13 +51,12 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string slsProjectArn_;
-				std::string mnsTopicArn_;
-				std::string roleName_;
 				std::string eventRW_;
 				std::string homeRegion_;
 				std::string ossKeyPrefix_;
 				std::string ossBucketName_;
 				std::string slsWriteRoleArn_;
+				std::string ossWriteRoleArn_;
 				std::string trailRegion_;
 				std::string name_;
 
