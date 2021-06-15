@@ -1851,6 +1851,42 @@ Devops_rdcClient::ListDevopsProjectTasksOutcomeCallable Devops_rdcClient::listDe
 	return task->get_future();
 }
 
+Devops_rdcClient::ListDevopsProjectsOutcome Devops_rdcClient::listDevopsProjects(const ListDevopsProjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDevopsProjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDevopsProjectsOutcome(ListDevopsProjectsResult(outcome.result()));
+	else
+		return ListDevopsProjectsOutcome(outcome.error());
+}
+
+void Devops_rdcClient::listDevopsProjectsAsync(const ListDevopsProjectsRequest& request, const ListDevopsProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDevopsProjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::ListDevopsProjectsOutcomeCallable Devops_rdcClient::listDevopsProjectsCallable(const ListDevopsProjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDevopsProjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDevopsProjects(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::ListDevopsScenarioFieldConfigOutcome Devops_rdcClient::listDevopsScenarioFieldConfig(const ListDevopsScenarioFieldConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

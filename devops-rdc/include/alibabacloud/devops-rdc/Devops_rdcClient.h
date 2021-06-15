@@ -122,6 +122,8 @@
 #include "model/ListDevopsProjectTaskListResult.h"
 #include "model/ListDevopsProjectTasksRequest.h"
 #include "model/ListDevopsProjectTasksResult.h"
+#include "model/ListDevopsProjectsRequest.h"
+#include "model/ListDevopsProjectsResult.h"
 #include "model/ListDevopsScenarioFieldConfigRequest.h"
 #include "model/ListDevopsScenarioFieldConfigResult.h"
 #include "model/ListPipelinesRequest.h"
@@ -307,6 +309,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDevopsProjectTasksResult> ListDevopsProjectTasksOutcome;
 			typedef std::future<ListDevopsProjectTasksOutcome> ListDevopsProjectTasksOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListDevopsProjectTasksRequest&, const ListDevopsProjectTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevopsProjectTasksAsyncHandler;
+			typedef Outcome<Error, Model::ListDevopsProjectsResult> ListDevopsProjectsOutcome;
+			typedef std::future<ListDevopsProjectsOutcome> ListDevopsProjectsOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::ListDevopsProjectsRequest&, const ListDevopsProjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevopsProjectsAsyncHandler;
 			typedef Outcome<Error, Model::ListDevopsScenarioFieldConfigResult> ListDevopsScenarioFieldConfigOutcome;
 			typedef std::future<ListDevopsScenarioFieldConfigOutcome> ListDevopsScenarioFieldConfigOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListDevopsScenarioFieldConfigRequest&, const ListDevopsScenarioFieldConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevopsScenarioFieldConfigAsyncHandler;
@@ -501,6 +506,9 @@ namespace AlibabaCloud
 			ListDevopsProjectTasksOutcome listDevopsProjectTasks(const Model::ListDevopsProjectTasksRequest &request)const;
 			void listDevopsProjectTasksAsync(const Model::ListDevopsProjectTasksRequest& request, const ListDevopsProjectTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevopsProjectTasksOutcomeCallable listDevopsProjectTasksCallable(const Model::ListDevopsProjectTasksRequest& request) const;
+			ListDevopsProjectsOutcome listDevopsProjects(const Model::ListDevopsProjectsRequest &request)const;
+			void listDevopsProjectsAsync(const Model::ListDevopsProjectsRequest& request, const ListDevopsProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDevopsProjectsOutcomeCallable listDevopsProjectsCallable(const Model::ListDevopsProjectsRequest& request) const;
 			ListDevopsScenarioFieldConfigOutcome listDevopsScenarioFieldConfig(const Model::ListDevopsScenarioFieldConfigRequest &request)const;
 			void listDevopsScenarioFieldConfigAsync(const Model::ListDevopsScenarioFieldConfigRequest& request, const ListDevopsScenarioFieldConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevopsScenarioFieldConfigOutcomeCallable listDevopsScenarioFieldConfigCallable(const Model::ListDevopsScenarioFieldConfigRequest& request) const;

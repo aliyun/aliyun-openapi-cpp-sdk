@@ -1,3 +1,6 @@
+2021-06-15 Version: 1.36.786
+- Add ListDevopsProjects.
+
 2021-06-15 Version: 1.36.785
 - Supported EncryptNewTables for ModifyDBClusterTDE.
 - Supported SSLAutoRotate for ModifyDBClusterSSL.
