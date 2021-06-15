@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setDBEndpointId(const std::string& dBEndpointId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSSLAutoRotate()const;
+				void setSSLAutoRotate(const std::string& sSLAutoRotate);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string dBEndpointId_;
 				std::string accessKeyId_;
+				std::string sSLAutoRotate_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;

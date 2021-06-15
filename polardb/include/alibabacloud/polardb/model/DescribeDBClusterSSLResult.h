@@ -44,11 +44,13 @@ namespace AlibabaCloud
 				DescribeDBClusterSSLResult();
 				explicit DescribeDBClusterSSLResult(const std::string &payload);
 				~DescribeDBClusterSSLResult();
+				std::string getSSLAutoRotate()const;
 				std::vector<Item> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string sSLAutoRotate_;
 				std::vector<Item> items_;
 
 			};

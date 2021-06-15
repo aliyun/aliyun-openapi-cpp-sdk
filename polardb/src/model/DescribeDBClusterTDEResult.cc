@@ -39,18 +39,25 @@ void DescribeDBClusterTDEResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["TDEStatus"].isNull())
 		tDEStatus_ = value["TDEStatus"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["EncryptionKey"].isNull())
 		encryptionKey_ = value["EncryptionKey"].asString();
+	if(!value["EncryptNewTables"].isNull())
+		encryptNewTables_ = value["EncryptNewTables"].asString();
 
 }
 
 std::string DescribeDBClusterTDEResult::getTDEStatus()const
 {
 	return tDEStatus_;
+}
+
+std::string DescribeDBClusterTDEResult::getEncryptNewTables()const
+{
+	return encryptNewTables_;
 }
 
 std::string DescribeDBClusterTDEResult::getDBClusterId()const

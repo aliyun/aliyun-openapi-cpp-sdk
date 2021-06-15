@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getRoleArn()const;
 				void setRoleArn(const std::string& roleArn);
+				std::string getEncryptNewTables()const;
+				void setEncryptNewTables(const std::string& encryptNewTables);
 				std::string getTDEStatus()const;
 				void setTDEStatus(const std::string& tDEStatus);
 
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string encryptionKey_;
 				long ownerId_;
 				std::string roleArn_;
+				std::string encryptNewTables_;
 				std::string tDEStatus_;
 
 			};

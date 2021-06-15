@@ -60,6 +60,17 @@ void ModifyDBClusterSSLRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDBClusterSSLRequest::getSSLAutoRotate()const
+{
+	return sSLAutoRotate_;
+}
+
+void ModifyDBClusterSSLRequest::setSSLAutoRotate(const std::string& sSLAutoRotate)
+{
+	sSLAutoRotate_ = sSLAutoRotate;
+	setParameter("SSLAutoRotate", sSLAutoRotate);
+}
+
 std::string ModifyDBClusterSSLRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

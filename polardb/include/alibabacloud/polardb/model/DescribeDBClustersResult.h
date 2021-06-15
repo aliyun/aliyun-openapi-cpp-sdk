@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct DBCluster
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					struct DBNode
 					{
 						std::string zoneId;
@@ -42,27 +47,22 @@ namespace AlibabaCloud
 						std::string regionId;
 						std::string dBNodeClass;
 					};
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
 					int deletionLock;
-					std::string zoneId;
 					std::string resourceGroupId;
+					std::string zoneId;
 					std::string dBClusterStatus;
 					std::string createTime;
 					std::string dBClusterId;
 					std::string dBClusterDescription;
 					std::string expired;
 					std::string payType;
-					std::string dBClusterNetworkType;
 					std::string dBType;
 					std::string lockMode;
+					std::string dBClusterNetworkType;
 					std::string dBNodeClass;
 					long storageUsed;
-					std::string dBVersion;
 					int dBNodeNumber;
+					std::string dBVersion;
 					std::string vpcId;
 					std::vector<DBCluster::DBNode> dBNodes;
 					std::string regionId;

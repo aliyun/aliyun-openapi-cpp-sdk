@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeDBClusterTDEResult(const std::string &payload);
 				~DescribeDBClusterTDEResult();
 				std::string getTDEStatus()const;
+				std::string getEncryptNewTables()const;
 				std::string getDBClusterId()const;
 				std::string getEncryptionKey()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string tDEStatus_;
+				std::string encryptNewTables_;
 				std::string dBClusterId_;
 				std::string encryptionKey_;
 

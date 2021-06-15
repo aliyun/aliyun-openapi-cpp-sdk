@@ -115,6 +115,17 @@ void ModifyDBClusterTDERequest::setRoleArn(const std::string& roleArn)
 	setParameter("RoleArn", roleArn);
 }
 
+std::string ModifyDBClusterTDERequest::getEncryptNewTables()const
+{
+	return encryptNewTables_;
+}
+
+void ModifyDBClusterTDERequest::setEncryptNewTables(const std::string& encryptNewTables)
+{
+	encryptNewTables_ = encryptNewTables;
+	setParameter("EncryptNewTables", encryptNewTables);
+}
+
 std::string ModifyDBClusterTDERequest::getTDEStatus()const
 {
 	return tDEStatus_;

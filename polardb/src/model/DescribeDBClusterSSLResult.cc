@@ -43,17 +43,24 @@ void DescribeDBClusterSSLResult::parse(const std::string &payload)
 	for (auto valueItemsItem : allItemsNode)
 	{
 		Item itemsObject;
-		if(!valueItemsItem["DBEndpointId"].isNull())
-			itemsObject.dBEndpointId = valueItemsItem["DBEndpointId"].asString();
+		if(!valueItemsItem["SSLExpireTime"].isNull())
+			itemsObject.sSLExpireTime = valueItemsItem["SSLExpireTime"].asString();
 		if(!valueItemsItem["SSLEnabled"].isNull())
 			itemsObject.sSLEnabled = valueItemsItem["SSLEnabled"].asString();
 		if(!valueItemsItem["SSLConnectionString"].isNull())
 			itemsObject.sSLConnectionString = valueItemsItem["SSLConnectionString"].asString();
-		if(!valueItemsItem["SSLExpireTime"].isNull())
-			itemsObject.sSLExpireTime = valueItemsItem["SSLExpireTime"].asString();
+		if(!valueItemsItem["DBEndpointId"].isNull())
+			itemsObject.dBEndpointId = valueItemsItem["DBEndpointId"].asString();
 		items_.push_back(itemsObject);
 	}
+	if(!value["SSLAutoRotate"].isNull())
+		sSLAutoRotate_ = value["SSLAutoRotate"].asString();
 
+}
+
+std::string DescribeDBClusterSSLResult::getSSLAutoRotate()const
+{
+	return sSLAutoRotate_;
 }
 
 std::vector<DescribeDBClusterSSLResult::Item> DescribeDBClusterSSLResult::getItems()const
