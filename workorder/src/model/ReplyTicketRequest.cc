@@ -27,17 +27,6 @@ ReplyTicketRequest::ReplyTicketRequest() :
 ReplyTicketRequest::~ReplyTicketRequest()
 {}
 
-std::string ReplyTicketRequest::getSecContent()const
-{
-	return secContent_;
-}
-
-void ReplyTicketRequest::setSecContent(const std::string& secContent)
-{
-	secContent_ = secContent;
-	setBodyParameter("SecContent", secContent);
-}
-
 std::string ReplyTicketRequest::getContent()const
 {
 	return content_;
@@ -47,6 +36,17 @@ void ReplyTicketRequest::setContent(const std::string& content)
 {
 	content_ = content;
 	setBodyParameter("Content", content);
+}
+
+bool ReplyTicketRequest::getEncrypt()const
+{
+	return encrypt_;
+}
+
+void ReplyTicketRequest::setEncrypt(bool encrypt)
+{
+	encrypt_ = encrypt;
+	setBodyParameter("Encrypt", encrypt ? "true" : "false");
 }
 
 std::string ReplyTicketRequest::getTicketId()const
