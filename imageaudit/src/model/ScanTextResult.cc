@@ -50,12 +50,12 @@ void ScanTextResult::parse(const std::string &payload)
 		for (auto dataNodeElementsElementResultsResult : allResultsNode)
 		{
 			Data::Element::Result resultsObject;
-			if(!dataNodeElementsElementResultsResult["Label"].isNull())
-				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
 			if(!dataNodeElementsElementResultsResult["Suggestion"].isNull())
 				resultsObject.suggestion = dataNodeElementsElementResultsResult["Suggestion"].asString();
 			if(!dataNodeElementsElementResultsResult["Rate"].isNull())
 				resultsObject.rate = std::stof(dataNodeElementsElementResultsResult["Rate"].asString());
+			if(!dataNodeElementsElementResultsResult["Label"].isNull())
+				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
 			auto allDetailsNode = dataNodeElementsElementResultsResult["Details"]["Detail"];
 			for (auto dataNodeElementsElementResultsResultDetailsDetail : allDetailsNode)
 			{

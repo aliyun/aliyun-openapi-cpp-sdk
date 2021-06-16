@@ -43,26 +43,6 @@ namespace AlibabaCloud
 								float rate;
 								std::string uRL;
 							};
-							struct HintWordsInfo
-							{
-								std::string context;
-							};
-							struct ProgramCodeData
-							{
-								float x;
-								float y;
-								float height;
-								float width;
-							};
-							struct LogoData
-							{
-								std::string type;
-								float x;
-								float y;
-								float height;
-								float width;
-								std::string name;
-							};
 							struct SfaceData
 							{
 								struct Face
@@ -77,6 +57,26 @@ namespace AlibabaCloud
 								float width;
 								std::vector<SfaceData::Face> faces;
 							};
+							struct HintWordsInfo
+							{
+								std::string context;
+							};
+							struct LogoData
+							{
+								std::string type;
+								float x;
+								float y;
+								float height;
+								float width;
+								std::string name;
+							};
+							struct ProgramCodeData
+							{
+								float x;
+								float y;
+								float height;
+								float width;
+							};
 							std::vector<SubResult::Frame> frames;
 							std::string suggestion;
 							std::vector<SubResult::SfaceData> sfaceDataList;
@@ -88,8 +88,8 @@ namespace AlibabaCloud
 							std::string scene;
 							std::vector<SubResult::ProgramCodeData> programCodeDataList;
 						};
-						std::string dataId;
 						std::string taskId;
+						std::string dataId;
 						std::string imageURL;
 						std::vector<Result::SubResult> subResults;
 					};
