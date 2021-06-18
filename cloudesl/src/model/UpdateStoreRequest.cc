@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudesl::Model::UpdateStoreRequest;
 
 UpdateStoreRequest::UpdateStoreRequest() :
-	RpcServiceRequest("cloudesl", "2018-08-01", "UpdateStore")
+	RpcServiceRequest("cloudesl", "2020-02-01", "UpdateStore")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -27,15 +27,15 @@ UpdateStoreRequest::UpdateStoreRequest() :
 UpdateStoreRequest::~UpdateStoreRequest()
 {}
 
-std::string UpdateStoreRequest::getComments()const
+std::string UpdateStoreRequest::getExtraParams()const
 {
-	return comments_;
+	return extraParams_;
 }
 
-void UpdateStoreRequest::setComments(const std::string& comments)
+void UpdateStoreRequest::setExtraParams(const std::string& extraParams)
 {
-	comments_ = comments;
-	setParameter("Comments", comments);
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
 }
 
 std::string UpdateStoreRequest::getStoreName()const
@@ -46,18 +46,7 @@ std::string UpdateStoreRequest::getStoreName()const
 void UpdateStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
-}
-
-std::string UpdateStoreRequest::getGroups()const
-{
-	return groups_;
-}
-
-void UpdateStoreRequest::setGroups(const std::string& groups)
-{
-	groups_ = groups;
-	setParameter("Groups", groups);
+	setBodyParameter("StoreName", storeName);
 }
 
 std::string UpdateStoreRequest::getStoreId()const
@@ -68,7 +57,29 @@ std::string UpdateStoreRequest::getStoreId()const
 void UpdateStoreRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setParameter("StoreId", storeId);
+	setBodyParameter("StoreId", storeId);
+}
+
+std::string UpdateStoreRequest::getTemplateVersion()const
+{
+	return templateVersion_;
+}
+
+void UpdateStoreRequest::setTemplateVersion(const std::string& templateVersion)
+{
+	templateVersion_ = templateVersion;
+	setBodyParameter("TemplateVersion", templateVersion);
+}
+
+std::string UpdateStoreRequest::getUserStoreCode()const
+{
+	return userStoreCode_;
+}
+
+void UpdateStoreRequest::setUserStoreCode(const std::string& userStoreCode)
+{
+	userStoreCode_ = userStoreCode;
+	setBodyParameter("UserStoreCode", userStoreCode);
 }
 
 std::string UpdateStoreRequest::getPhone()const
@@ -79,28 +90,6 @@ std::string UpdateStoreRequest::getPhone()const
 void UpdateStoreRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setParameter("Phone", phone);
-}
-
-std::string UpdateStoreRequest::getOutId()const
-{
-	return outId_;
-}
-
-void UpdateStoreRequest::setOutId(const std::string& outId)
-{
-	outId_ = outId;
-	setParameter("OutId", outId);
-}
-
-std::string UpdateStoreRequest::getBrand()const
-{
-	return brand_;
-}
-
-void UpdateStoreRequest::setBrand(const std::string& brand)
-{
-	brand_ = brand;
-	setParameter("Brand", brand);
+	setBodyParameter("Phone", phone);
 }
 

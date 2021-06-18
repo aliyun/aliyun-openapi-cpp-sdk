@@ -43,44 +43,46 @@ void DescribeStoresResult::parse(const std::string &payload)
 	for (auto valueStoresStoreInfo : allStoresNode)
 	{
 		StoreInfo storesObject;
-		if(!valueStoresStoreInfo["CompanyId"].isNull())
-			storesObject.companyId = valueStoresStoreInfo["CompanyId"].asString();
-		if(!valueStoresStoreInfo["StoreId"].isNull())
-			storesObject.storeId = valueStoresStoreInfo["StoreId"].asString();
 		if(!valueStoresStoreInfo["StoreName"].isNull())
 			storesObject.storeName = valueStoresStoreInfo["StoreName"].asString();
-		if(!valueStoresStoreInfo["Brand"].isNull())
-			storesObject.brand = valueStoresStoreInfo["Brand"].asString();
-		if(!valueStoresStoreInfo["OutId"].isNull())
-			storesObject.outId = valueStoresStoreInfo["OutId"].asString();
+		if(!valueStoresStoreInfo["StoreId"].isNull())
+			storesObject.storeId = valueStoresStoreInfo["StoreId"].asString();
+		if(!valueStoresStoreInfo["GmtCreate"].isNull())
+			storesObject.gmtCreate = valueStoresStoreInfo["GmtCreate"].asString();
+		if(!valueStoresStoreInfo["ParentId"].isNull())
+			storesObject.parentId = valueStoresStoreInfo["ParentId"].asString();
+		if(!valueStoresStoreInfo["UserStoreCode"].isNull())
+			storesObject.userStoreCode = valueStoresStoreInfo["UserStoreCode"].asString();
+		if(!valueStoresStoreInfo["GmtModified"].isNull())
+			storesObject.gmtModified = valueStoresStoreInfo["GmtModified"].asString();
 		if(!valueStoresStoreInfo["Phone"].isNull())
 			storesObject.phone = valueStoresStoreInfo["Phone"].asString();
 		if(!valueStoresStoreInfo["Level"].isNull())
 			storesObject.level = valueStoresStoreInfo["Level"].asString();
-		if(!valueStoresStoreInfo["Groups"].isNull())
-			storesObject.groups = valueStoresStoreInfo["Groups"].asString();
-		if(!valueStoresStoreInfo["Comments"].isNull())
-			storesObject.comments = valueStoresStoreInfo["Comments"].asString();
-		if(!valueStoresStoreInfo["ParentId"].isNull())
-			storesObject.parentId = valueStoresStoreInfo["ParentId"].asString();
-		if(!valueStoresStoreInfo["GmtCreate"].isNull())
-			storesObject.gmtCreate = valueStoresStoreInfo["GmtCreate"].asString();
-		if(!valueStoresStoreInfo["GmtModified"].isNull())
-			storesObject.gmtModified = valueStoresStoreInfo["GmtModified"].asString();
+		if(!valueStoresStoreInfo["TemplateVersion"].isNull())
+			storesObject.templateVersion = valueStoresStoreInfo["TemplateVersion"].asString();
 		stores_.push_back(storesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -104,6 +106,11 @@ int DescribeStoresResult::getPageNumber()const
 	return pageNumber_;
 }
 
+std::string DescribeStoresResult::getDynamicCode()const
+{
+	return dynamicCode_;
+}
+
 std::vector<DescribeStoresResult::StoreInfo> DescribeStoresResult::getStores()const
 {
 	return stores_;
@@ -112,6 +119,21 @@ std::vector<DescribeStoresResult::StoreInfo> DescribeStoresResult::getStores()co
 std::string DescribeStoresResult::getErrorCode()const
 {
 	return errorCode_;
+}
+
+std::string DescribeStoresResult::getDynamicMessage()const
+{
+	return dynamicMessage_;
+}
+
+std::string DescribeStoresResult::getErrorMessage()const
+{
+	return errorMessage_;
+}
+
+std::string DescribeStoresResult::getCode()const
+{
+	return code_;
 }
 
 bool DescribeStoresResult::getSuccess()const

@@ -35,29 +35,26 @@ namespace AlibabaCloud
 				UpdateStoreRequest();
 				~UpdateStoreRequest();
 
-				std::string getComments()const;
-				void setComments(const std::string& comments);
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreName()const;
 				void setStoreName(const std::string& storeName);
-				std::string getGroups()const;
-				void setGroups(const std::string& groups);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
+				std::string getTemplateVersion()const;
+				void setTemplateVersion(const std::string& templateVersion);
+				std::string getUserStoreCode()const;
+				void setUserStoreCode(const std::string& userStoreCode);
 				std::string getPhone()const;
 				void setPhone(const std::string& phone);
-				std::string getOutId()const;
-				void setOutId(const std::string& outId);
-				std::string getBrand()const;
-				void setBrand(const std::string& brand);
 
             private:
-				std::string comments_;
+				std::string extraParams_;
 				std::string storeName_;
-				std::string groups_;
 				std::string storeId_;
+				std::string templateVersion_;
+				std::string userStoreCode_;
 				std::string phone_;
-				std::string outId_;
-				std::string brand_;
 
 			};
 		}

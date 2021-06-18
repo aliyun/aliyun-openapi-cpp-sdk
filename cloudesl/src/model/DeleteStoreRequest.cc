@@ -19,13 +19,24 @@
 using AlibabaCloud::Cloudesl::Model::DeleteStoreRequest;
 
 DeleteStoreRequest::DeleteStoreRequest() :
-	RpcServiceRequest("cloudesl", "2018-08-01", "DeleteStore")
+	RpcServiceRequest("cloudesl", "2020-02-01", "DeleteStore")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteStoreRequest::~DeleteStoreRequest()
 {}
+
+std::string DeleteStoreRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void DeleteStoreRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
 
 std::string DeleteStoreRequest::getStoreId()const
 {
@@ -35,6 +46,6 @@ std::string DeleteStoreRequest::getStoreId()const
 void DeleteStoreRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setParameter("StoreId", storeId);
+	setBodyParameter("StoreId", storeId);
 }
 

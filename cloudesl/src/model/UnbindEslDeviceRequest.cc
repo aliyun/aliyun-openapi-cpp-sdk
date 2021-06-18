@@ -19,13 +19,24 @@
 using AlibabaCloud::Cloudesl::Model::UnbindEslDeviceRequest;
 
 UnbindEslDeviceRequest::UnbindEslDeviceRequest() :
-	RpcServiceRequest("cloudesl", "2018-08-01", "UnbindEslDevice")
+	RpcServiceRequest("cloudesl", "2020-02-01", "UnbindEslDevice")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 UnbindEslDeviceRequest::~UnbindEslDeviceRequest()
 {}
+
+std::string UnbindEslDeviceRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void UnbindEslDeviceRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
 
 std::string UnbindEslDeviceRequest::getStoreId()const
 {
@@ -35,7 +46,18 @@ std::string UnbindEslDeviceRequest::getStoreId()const
 void UnbindEslDeviceRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setParameter("StoreId", storeId);
+	setBodyParameter("StoreId", storeId);
+}
+
+int UnbindEslDeviceRequest::getLayer()const
+{
+	return layer_;
+}
+
+void UnbindEslDeviceRequest::setLayer(int layer)
+{
+	layer_ = layer;
+	setBodyParameter("Layer", std::to_string(layer));
 }
 
 std::string UnbindEslDeviceRequest::getEslBarCode()const
@@ -46,7 +68,7 @@ std::string UnbindEslDeviceRequest::getEslBarCode()const
 void UnbindEslDeviceRequest::setEslBarCode(const std::string& eslBarCode)
 {
 	eslBarCode_ = eslBarCode;
-	setParameter("EslBarCode", eslBarCode);
+	setBodyParameter("EslBarCode", eslBarCode);
 }
 
 std::string UnbindEslDeviceRequest::getItemBarCode()const
@@ -57,6 +79,28 @@ std::string UnbindEslDeviceRequest::getItemBarCode()const
 void UnbindEslDeviceRequest::setItemBarCode(const std::string& itemBarCode)
 {
 	itemBarCode_ = itemBarCode;
-	setParameter("ItemBarCode", itemBarCode);
+	setBodyParameter("ItemBarCode", itemBarCode);
+}
+
+std::string UnbindEslDeviceRequest::getColumn()const
+{
+	return column_;
+}
+
+void UnbindEslDeviceRequest::setColumn(const std::string& column)
+{
+	column_ = column;
+	setBodyParameter("Column", column);
+}
+
+std::string UnbindEslDeviceRequest::getShelf()const
+{
+	return shelf_;
+}
+
+void UnbindEslDeviceRequest::setShelf(const std::string& shelf)
+{
+	shelf_ = shelf;
+	setBodyParameter("Shelf", shelf);
 }
 

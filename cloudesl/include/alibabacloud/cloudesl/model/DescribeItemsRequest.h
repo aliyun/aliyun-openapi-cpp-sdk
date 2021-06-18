@@ -35,12 +35,14 @@ namespace AlibabaCloud
 				DescribeItemsRequest();
 				~DescribeItemsRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
-				long getItemId()const;
-				void setItemId(long itemId);
+				std::string getItemId()const;
+				void setItemId(const std::string& itemId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getItemBarCode()const;
@@ -49,20 +51,18 @@ namespace AlibabaCloud
 				void setBePromotion(bool bePromotion);
 				std::string getItemTitle()const;
 				void setItemTitle(const std::string& itemTitle);
-				std::string getShelfCode()const;
-				void setShelfCode(const std::string& shelfCode);
 				std::string getSkuId()const;
 				void setSkuId(const std::string& skuId);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
 				int pageNumber_;
-				long itemId_;
+				std::string itemId_;
 				int pageSize_;
 				std::string itemBarCode_;
 				bool bePromotion_;
 				std::string itemTitle_;
-				std::string shelfCode_;
 				std::string skuId_;
 
 			};

@@ -19,13 +19,35 @@
 using AlibabaCloud::Cloudesl::Model::CreateStoreRequest;
 
 CreateStoreRequest::CreateStoreRequest() :
-	RpcServiceRequest("cloudesl", "2018-08-01", "CreateStore")
+	RpcServiceRequest("cloudesl", "2020-02-01", "CreateStore")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
 CreateStoreRequest::~CreateStoreRequest()
 {}
+
+std::string CreateStoreRequest::getExtraParams()const
+{
+	return extraParams_;
+}
+
+void CreateStoreRequest::setExtraParams(const std::string& extraParams)
+{
+	extraParams_ = extraParams;
+	setBodyParameter("ExtraParams", extraParams);
+}
+
+std::string CreateStoreRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateStoreRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setBodyParameter("ClientToken", clientToken);
+}
 
 std::string CreateStoreRequest::getStoreName()const
 {
@@ -35,7 +57,7 @@ std::string CreateStoreRequest::getStoreName()const
 void CreateStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setBodyParameter("StoreName", storeName);
 }
 
 std::string CreateStoreRequest::getParentId()const
@@ -46,51 +68,18 @@ std::string CreateStoreRequest::getParentId()const
 void CreateStoreRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setParameter("ParentId", parentId);
+	setBodyParameter("ParentId", parentId);
 }
 
-std::string CreateStoreRequest::getCompanyId()const
+std::string CreateStoreRequest::getUserStoreCode()const
 {
-	return companyId_;
+	return userStoreCode_;
 }
 
-void CreateStoreRequest::setCompanyId(const std::string& companyId)
+void CreateStoreRequest::setUserStoreCode(const std::string& userStoreCode)
 {
-	companyId_ = companyId;
-	setParameter("CompanyId", companyId);
-}
-
-std::string CreateStoreRequest::getBrand()const
-{
-	return brand_;
-}
-
-void CreateStoreRequest::setBrand(const std::string& brand)
-{
-	brand_ = brand;
-	setParameter("Brand", brand);
-}
-
-std::string CreateStoreRequest::getComments()const
-{
-	return comments_;
-}
-
-void CreateStoreRequest::setComments(const std::string& comments)
-{
-	comments_ = comments;
-	setParameter("Comments", comments);
-}
-
-std::string CreateStoreRequest::getGroups()const
-{
-	return groups_;
-}
-
-void CreateStoreRequest::setGroups(const std::string& groups)
-{
-	groups_ = groups;
-	setParameter("Groups", groups);
+	userStoreCode_ = userStoreCode;
+	setBodyParameter("UserStoreCode", userStoreCode);
 }
 
 std::string CreateStoreRequest::getPhone()const
@@ -101,17 +90,6 @@ std::string CreateStoreRequest::getPhone()const
 void CreateStoreRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setParameter("Phone", phone);
-}
-
-std::string CreateStoreRequest::getOutId()const
-{
-	return outId_;
-}
-
-void CreateStoreRequest::setOutId(const std::string& outId)
-{
-	outId_ = outId;
-	setParameter("OutId", outId);
+	setBodyParameter("Phone", phone);
 }
 

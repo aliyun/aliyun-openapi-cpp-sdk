@@ -43,52 +43,62 @@ void DescribeAlarmsResult::parse(const std::string &payload)
 	for (auto valueAlarmsAlarmInfo : allAlarmsNode)
 	{
 		AlarmInfo alarmsObject;
-		if(!valueAlarmsAlarmInfo["AlarmId"].isNull())
-			alarmsObject.alarmId = valueAlarmsAlarmInfo["AlarmId"].asString();
-		if(!valueAlarmsAlarmInfo["AlarmType"].isNull())
-			alarmsObject.alarmType = valueAlarmsAlarmInfo["AlarmType"].asString();
-		if(!valueAlarmsAlarmInfo["DeviceType"].isNull())
-			alarmsObject.deviceType = valueAlarmsAlarmInfo["DeviceType"].asString();
-		if(!valueAlarmsAlarmInfo["DeviceBarCode"].isNull())
-			alarmsObject.deviceBarCode = valueAlarmsAlarmInfo["DeviceBarCode"].asString();
-		if(!valueAlarmsAlarmInfo["DeviceMac"].isNull())
-			alarmsObject.deviceMac = valueAlarmsAlarmInfo["DeviceMac"].asString();
-		if(!valueAlarmsAlarmInfo["ErrorType"].isNull())
-			alarmsObject.errorType = valueAlarmsAlarmInfo["ErrorType"].asString();
-		if(!valueAlarmsAlarmInfo["ItemBarCode"].isNull())
-			alarmsObject.itemBarCode = valueAlarmsAlarmInfo["ItemBarCode"].asString();
-		if(!valueAlarmsAlarmInfo["ItemTitle"].isNull())
-			alarmsObject.itemTitle = valueAlarmsAlarmInfo["ItemTitle"].asString();
-		if(!valueAlarmsAlarmInfo["CompanyId"].isNull())
-			alarmsObject.companyId = valueAlarmsAlarmInfo["CompanyId"].asString();
+		if(!valueAlarmsAlarmInfo["Remark"].isNull())
+			alarmsObject.remark = valueAlarmsAlarmInfo["Remark"].asString();
 		if(!valueAlarmsAlarmInfo["StoreId"].isNull())
 			alarmsObject.storeId = valueAlarmsAlarmInfo["StoreId"].asString();
+		if(!valueAlarmsAlarmInfo["DeviceBarCode"].isNull())
+			alarmsObject.deviceBarCode = valueAlarmsAlarmInfo["DeviceBarCode"].asString();
+		if(!valueAlarmsAlarmInfo["DealUserId"].isNull())
+			alarmsObject.dealUserId = valueAlarmsAlarmInfo["DealUserId"].asString();
+		if(!valueAlarmsAlarmInfo["DeviceType"].isNull())
+			alarmsObject.deviceType = valueAlarmsAlarmInfo["DeviceType"].asString();
+		if(!valueAlarmsAlarmInfo["ItemTitle"].isNull())
+			alarmsObject.itemTitle = valueAlarmsAlarmInfo["ItemTitle"].asString();
 		if(!valueAlarmsAlarmInfo["AlarmTime"].isNull())
 			alarmsObject.alarmTime = valueAlarmsAlarmInfo["AlarmTime"].asString();
-		if(!valueAlarmsAlarmInfo["AlarmStatus"].isNull())
-			alarmsObject.alarmStatus = valueAlarmsAlarmInfo["AlarmStatus"].asString();
-		if(!valueAlarmsAlarmInfo["DealUserId"].isNull())
-			alarmsObject.dealUserId = std::stol(valueAlarmsAlarmInfo["DealUserId"].asString());
+		if(!valueAlarmsAlarmInfo["ErrorType"].isNull())
+			alarmsObject.errorType = valueAlarmsAlarmInfo["ErrorType"].asString();
+		if(!valueAlarmsAlarmInfo["DeviceMac"].isNull())
+			alarmsObject.deviceMac = valueAlarmsAlarmInfo["DeviceMac"].asString();
+		if(!valueAlarmsAlarmInfo["AlarmId"].isNull())
+			alarmsObject.alarmId = valueAlarmsAlarmInfo["AlarmId"].asString();
+		if(!valueAlarmsAlarmInfo["RetryGmtCreate"].isNull())
+			alarmsObject.retryGmtCreate = valueAlarmsAlarmInfo["RetryGmtCreate"].asString();
+		if(!valueAlarmsAlarmInfo["RetryGmtModified"].isNull())
+			alarmsObject.retryGmtModified = valueAlarmsAlarmInfo["RetryGmtModified"].asString();
+		if(!valueAlarmsAlarmInfo["ItemBarCode"].isNull())
+			alarmsObject.itemBarCode = valueAlarmsAlarmInfo["ItemBarCode"].asString();
+		if(!valueAlarmsAlarmInfo["RetryTimes"].isNull())
+			alarmsObject.retryTimes = std::stol(valueAlarmsAlarmInfo["RetryTimes"].asString());
 		if(!valueAlarmsAlarmInfo["DealTime"].isNull())
 			alarmsObject.dealTime = valueAlarmsAlarmInfo["DealTime"].asString();
-		if(!valueAlarmsAlarmInfo["Vendor"].isNull())
-			alarmsObject.vendor = valueAlarmsAlarmInfo["Vendor"].asString();
-		if(!valueAlarmsAlarmInfo["Model"].isNull())
-			alarmsObject.model = valueAlarmsAlarmInfo["Model"].asString();
+		if(!valueAlarmsAlarmInfo["AlarmType"].isNull())
+			alarmsObject.alarmType = valueAlarmsAlarmInfo["AlarmType"].asString();
+		if(!valueAlarmsAlarmInfo["AlarmStatus"].isNull())
+			alarmsObject.alarmStatus = valueAlarmsAlarmInfo["AlarmStatus"].asString();
 		alarms_.push_back(alarmsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -97,14 +107,14 @@ int DescribeAlarmsResult::getTotalCount()const
 	return totalCount_;
 }
 
-std::string DescribeAlarmsResult::getMessage()const
-{
-	return message_;
-}
-
 int DescribeAlarmsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeAlarmsResult::getMessage()const
+{
+	return message_;
 }
 
 int DescribeAlarmsResult::getPageNumber()const
@@ -117,9 +127,29 @@ std::vector<DescribeAlarmsResult::AlarmInfo> DescribeAlarmsResult::getAlarms()co
 	return alarms_;
 }
 
+std::string DescribeAlarmsResult::getDynamicCode()const
+{
+	return dynamicCode_;
+}
+
 std::string DescribeAlarmsResult::getErrorCode()const
 {
 	return errorCode_;
+}
+
+std::string DescribeAlarmsResult::getDynamicMessage()const
+{
+	return dynamicMessage_;
+}
+
+std::string DescribeAlarmsResult::getErrorMessage()const
+{
+	return errorMessage_;
+}
+
+std::string DescribeAlarmsResult::getCode()const
+{
+	return code_;
 }
 
 bool DescribeAlarmsResult::getSuccess()const

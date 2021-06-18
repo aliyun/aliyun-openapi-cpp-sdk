@@ -35,47 +35,35 @@ namespace AlibabaCloud
 				DescribeEslDevicesRequest();
 				~DescribeEslDevicesRequest();
 
-				std::string getStoreId()const;
-				void setStoreId(const std::string& storeId);
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getType()const;
 				void setType(const std::string& type);
-				std::string getMac()const;
-				void setMac(const std::string& mac);
+				std::string getStoreId()const;
+				void setStoreId(const std::string& storeId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getEslBarCode()const;
 				void setEslBarCode(const std::string& eslBarCode);
-				std::string getVendor()const;
-				void setVendor(const std::string& vendor);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getItemBarCode()const;
-				void setItemBarCode(const std::string& itemBarCode);
 				std::string getEslStatus()const;
 				void setEslStatus(const std::string& eslStatus);
 				int getToBatteryLevel()const;
 				void setToBatteryLevel(int toBatteryLevel);
 				int getFromBatteryLevel()const;
 				void setFromBatteryLevel(int fromBatteryLevel);
-				std::string getShelfCode()const;
-				void setShelfCode(const std::string& shelfCode);
-				bool getBeBind()const;
-				void setBeBind(bool beBind);
 
             private:
-				std::string storeId_;
+				std::string extraParams_;
 				std::string type_;
-				std::string mac_;
+				std::string storeId_;
 				int pageNumber_;
 				std::string eslBarCode_;
-				std::string vendor_;
 				int pageSize_;
-				std::string itemBarCode_;
 				std::string eslStatus_;
 				int toBatteryLevel_;
 				int fromBatteryLevel_;
-				std::string shelfCode_;
-				bool beBind_;
 
 			};
 		}

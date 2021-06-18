@@ -39,14 +39,22 @@ void CreateStoreResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["StoreId"].isNull())
 		storeId_ = value["StoreId"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -60,9 +68,29 @@ std::string CreateStoreResult::getStoreId()const
 	return storeId_;
 }
 
+std::string CreateStoreResult::getDynamicCode()const
+{
+	return dynamicCode_;
+}
+
 std::string CreateStoreResult::getErrorCode()const
 {
 	return errorCode_;
+}
+
+std::string CreateStoreResult::getDynamicMessage()const
+{
+	return dynamicMessage_;
+}
+
+std::string CreateStoreResult::getErrorMessage()const
+{
+	return errorMessage_;
+}
+
+std::string CreateStoreResult::getCode()const
+{
+	return code_;
 }
 
 bool CreateStoreResult::getSuccess()const

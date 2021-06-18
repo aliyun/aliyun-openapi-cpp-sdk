@@ -34,48 +34,59 @@ namespace AlibabaCloud
 			public:
 				struct ItemInfo
 				{
-					int suggestPrice;
 					std::string saleSpec;
-					std::string sourceCode;
 					int originalPrice;
 					std::string promotionStart;
-					std::string itemBarCode;
-					long itemId;
-					std::string brandName;
+					std::string itemId;
 					std::string promotionEnd;
+					std::string brandName;
 					std::string energyEfficiency;
-					std::string itemShortTitle;
-					std::string storeId;
-					std::string itemTitle;
-					std::string productionPlace;
-					std::string extraAttribute;
-					std::string positionCode;
-					std::string modelNumber;
+					std::string inventoryStatus;
+					std::string manufacturer;
+					std::string taxFee;
 					std::string customizeFeatureJ;
-					std::string forestFirstId;
+					std::string modelNumber;
 					std::string customizeFeatureI;
-					std::string optionGroups;
 					std::string customizeFeatureH;
-					std::string promotionReason;
 					std::string customizeFeatureG;
-					std::string companyId;
+					std::string promotionReason;
 					std::string customizeFeatureF;
 					std::string customizeFeatureE;
 					std::string customizeFeatureD;
 					std::string customizeFeatureC;
-					int actionPrice;
-					std::string rank;
-					std::string forestSecondId;
-					std::string promotionText;
+					std::string customizeFeatureO;
+					std::string customizeFeatureN;
+					std::string customizeFeatureM;
+					std::string customizeFeatureL;
+					std::string customizeFeatureK;
+					int itemInfoIndex;
 					std::string itemQrCode;
-					std::string priceUnit;
+					std::string gmtCreate;
 					std::string customizeFeatureB;
-					std::string categoryName;
-					bool beSourceCode;
 					std::string customizeFeatureA;
 					int memberPrice;
 					std::string skuId;
 					bool bePromotion;
+					int suggestPrice;
+					std::string sourceCode;
+					std::string gmtModified;
+					std::string itemBarCode;
+					int salesPrice;
+					std::string itemShortTitle;
+					std::string itemPicUrl;
+					std::string itemTitle;
+					bool beMember;
+					std::string productionPlace;
+					std::string forestFirstId;
+					int actionPrice;
+					std::string material;
+					std::string rank;
+					std::string forestSecondId;
+					std::string promotionText;
+					std::string priceUnit;
+					std::string supplierName;
+					std::string categoryName;
+					bool beSourceCode;
 				};
 
 
@@ -87,7 +98,12 @@ namespace AlibabaCloud
 				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<ItemInfo> getItems()const;
+				std::string getDynamicCode()const;
 				std::string getErrorCode()const;
+				std::string getDynamicMessage()const;
+				std::string getErrorMessage()const;
+				std::string getTemplateSceneId()const;
+				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
@@ -98,7 +114,12 @@ namespace AlibabaCloud
 				int pageSize_;
 				int pageNumber_;
 				std::vector<ItemInfo> items_;
+				std::string dynamicCode_;
 				std::string errorCode_;
+				std::string dynamicMessage_;
+				std::string errorMessage_;
+				std::string templateSceneId_;
+				std::string code_;
 				bool success_;
 
 			};

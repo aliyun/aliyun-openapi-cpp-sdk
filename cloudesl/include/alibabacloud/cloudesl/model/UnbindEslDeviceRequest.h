@@ -35,17 +35,29 @@ namespace AlibabaCloud
 				UnbindEslDeviceRequest();
 				~UnbindEslDeviceRequest();
 
+				std::string getExtraParams()const;
+				void setExtraParams(const std::string& extraParams);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
+				int getLayer()const;
+				void setLayer(int layer);
 				std::string getEslBarCode()const;
 				void setEslBarCode(const std::string& eslBarCode);
 				std::string getItemBarCode()const;
 				void setItemBarCode(const std::string& itemBarCode);
+				std::string getColumn()const;
+				void setColumn(const std::string& column);
+				std::string getShelf()const;
+				void setShelf(const std::string& shelf);
 
             private:
+				std::string extraParams_;
 				std::string storeId_;
+				int layer_;
 				std::string eslBarCode_;
 				std::string itemBarCode_;
+				std::string column_;
+				std::string shelf_;
 
 			};
 		}
