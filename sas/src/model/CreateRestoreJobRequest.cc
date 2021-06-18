@@ -49,6 +49,17 @@ void CreateRestoreJobRequest::setSnapshotId(const std::string& snapshotId)
 	setParameter("SnapshotId", snapshotId);
 }
 
+std::string CreateRestoreJobRequest::getVaultId()const
+{
+	return vaultId_;
+}
+
+void CreateRestoreJobRequest::setVaultId(const std::string& vaultId)
+{
+	vaultId_ = vaultId;
+	setParameter("VaultId", vaultId);
+}
+
 std::string CreateRestoreJobRequest::getUuid()const
 {
 	return uuid_;
@@ -82,6 +93,17 @@ void CreateRestoreJobRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
+std::string CreateRestoreJobRequest::getSourceType()const
+{
+	return sourceType_;
+}
+
+void CreateRestoreJobRequest::setSourceType(const std::string& sourceType)
+{
+	sourceType_ = sourceType;
+	setParameter("SourceType", sourceType);
+}
+
 std::string CreateRestoreJobRequest::getSnapshotVersion()const
 {
 	return snapshotVersion_;
@@ -91,17 +113,6 @@ void CreateRestoreJobRequest::setSnapshotVersion(const std::string& snapshotVers
 {
 	snapshotVersion_ = snapshotVersion;
 	setParameter("SnapshotVersion", snapshotVersion);
-}
-
-std::string CreateRestoreJobRequest::getPolicyVersion()const
-{
-	return policyVersion_;
-}
-
-void CreateRestoreJobRequest::setPolicyVersion(const std::string& policyVersion)
-{
-	policyVersion_ = policyVersion;
-	setParameter("PolicyVersion", policyVersion);
 }
 
 std::string CreateRestoreJobRequest::getIncludes()const
@@ -124,16 +135,5 @@ void CreateRestoreJobRequest::setTarget(const std::string& target)
 {
 	target_ = target;
 	setParameter("Target", target);
-}
-
-std::string CreateRestoreJobRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateRestoreJobRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
 }
 

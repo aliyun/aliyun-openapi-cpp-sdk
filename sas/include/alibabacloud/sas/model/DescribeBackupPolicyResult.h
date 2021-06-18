@@ -35,10 +35,12 @@ namespace AlibabaCloud
 				struct BackupPolicyDetail
 				{
 					std::string policy;
+					std::string policyVersion;
 					std::string status;
 					std::string clientStatus;
 					std::vector<std::string> uuidList;
 					long id;
+					std::string regionId;
 					std::string name;
 				};
 

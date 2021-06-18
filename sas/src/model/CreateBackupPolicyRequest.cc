@@ -84,6 +84,17 @@ void CreateBackupPolicyRequest::setPolicyVersion(const std::string& policyVersio
 	setParameter("PolicyVersion", policyVersion);
 }
 
+std::string CreateBackupPolicyRequest::getPolicyRegionId()const
+{
+	return policyRegionId_;
+}
+
+void CreateBackupPolicyRequest::setPolicyRegionId(const std::string& policyRegionId)
+{
+	policyRegionId_ = policyRegionId;
+	setParameter("PolicyRegionId", policyRegionId);
+}
+
 std::string CreateBackupPolicyRequest::getName()const
 {
 	return name_;
@@ -93,16 +104,5 @@ void CreateBackupPolicyRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
-}
-
-std::string CreateBackupPolicyRequest::getStatus()const
-{
-	return status_;
-}
-
-void CreateBackupPolicyRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
 }
 

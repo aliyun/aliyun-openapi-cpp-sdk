@@ -37,13 +37,17 @@ namespace AlibabaCloud
 					int groupCount;
 					int exposedInstanceCount;
 					int riskInstanceCount;
+					int tencentInstanceCount;
+					int instanceSyncTaskCount;
 					int importantAssetCount;
 					int generalAssetCount;
+					int idcInstanceCount;
 					int testAssetCount;
 					int unprotectedInstanceCount;
 					int instanceCount;
 					int offlineInstanceCount;
 					int vpcCount;
+					int aliYunInstanceCount;
 					int regionCount;
 					int notRunningStatusCount;
 					int newInstanceCount;

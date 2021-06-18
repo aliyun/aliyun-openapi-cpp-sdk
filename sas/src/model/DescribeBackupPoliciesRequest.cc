@@ -38,17 +38,6 @@ void DescribeBackupPoliciesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int DescribeBackupPoliciesRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeBackupPoliciesRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeBackupPoliciesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -60,15 +49,15 @@ void DescribeBackupPoliciesRequest::setSourceIp(const std::string& sourceIp)
 	setParameter("SourceIp", sourceIp);
 }
 
-std::string DescribeBackupPoliciesRequest::getName()const
+std::string DescribeBackupPoliciesRequest::getMachineRemark()const
 {
-	return name_;
+	return machineRemark_;
 }
 
-void DescribeBackupPoliciesRequest::setName(const std::string& name)
+void DescribeBackupPoliciesRequest::setMachineRemark(const std::string& machineRemark)
 {
-	name_ = name;
-	setParameter("Name", name);
+	machineRemark_ = machineRemark;
+	setParameter("MachineRemark", machineRemark);
 }
 
 int DescribeBackupPoliciesRequest::getPageSize()const
@@ -80,6 +69,28 @@ void DescribeBackupPoliciesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int DescribeBackupPoliciesRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeBackupPoliciesRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeBackupPoliciesRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeBackupPoliciesRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 
 std::string DescribeBackupPoliciesRequest::getStatus()const

@@ -35,12 +35,14 @@ namespace AlibabaCloud
 				struct AssetDetail
 				{
 					std::string groupTrace;
+					bool bind;
 					std::string os;
 					std::string ip;
 					int cpu;
 					std::string intranetIp;
 					std::string osDetail;
 					std::vector<std::string> diskInfoList;
+					long authModifyTime;
 					std::string internetIp;
 					std::string regionName;
 					std::string instanceStatus;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 					std::string vpcInstanceId;
 					std::string regionId;
 					std::string tag;
+					int authVersion;
 				};
 
 

@@ -60,6 +60,17 @@ void DescribeEmgVulItemRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeEmgVulItemRequest::getCheckStatus()const
+{
+	return checkStatus_;
+}
+
+void DescribeEmgVulItemRequest::setCheckStatus(const std::string& checkStatus)
+{
+	checkStatus_ = checkStatus;
+	setParameter("CheckStatus", checkStatus);
+}
+
 std::string DescribeEmgVulItemRequest::getLang()const
 {
 	return lang_;

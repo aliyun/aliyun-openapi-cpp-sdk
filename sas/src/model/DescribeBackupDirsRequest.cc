@@ -38,17 +38,6 @@ void DescribeBackupDirsRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int DescribeBackupDirsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeBackupDirsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeBackupDirsRequest::getUuid()const
 {
 	return uuid_;
@@ -91,5 +80,16 @@ void DescribeBackupDirsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int DescribeBackupDirsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeBackupDirsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 

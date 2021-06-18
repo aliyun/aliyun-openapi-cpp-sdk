@@ -90,6 +90,12 @@ void DescribeAssetDetailByUuidResult::parse(const std::string &payload)
 		assetDetail_.instanceStatus = assetDetailNode["InstanceStatus"].asString();
 	if(!assetDetailNode["CreateTime"].isNull())
 		assetDetail_.createTime = std::stol(assetDetailNode["CreateTime"].asString());
+	if(!assetDetailNode["AuthVersion"].isNull())
+		assetDetail_.authVersion = std::stoi(assetDetailNode["AuthVersion"].asString());
+	if(!assetDetailNode["Bind"].isNull())
+		assetDetail_.bind = assetDetailNode["Bind"].asString() == "true";
+	if(!assetDetailNode["AuthModifyTime"].isNull())
+		assetDetail_.authModifyTime = std::stol(assetDetailNode["AuthModifyTime"].asString());
 		auto allIpList = assetDetailNode["IpList"]["Ip"];
 		for (auto value : allIpList)
 			assetDetail_.ipList.push_back(value.asString());

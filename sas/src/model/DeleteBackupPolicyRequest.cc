@@ -38,17 +38,6 @@ void DeleteBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DeleteBackupPolicyRequest::getPolicyVersion()const
-{
-	return policyVersion_;
-}
-
-void DeleteBackupPolicyRequest::setPolicyVersion(const std::string& policyVersion)
-{
-	policyVersion_ = policyVersion;
-	setParameter("PolicyVersion", policyVersion);
-}
-
 std::string DeleteBackupPolicyRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -69,5 +58,16 @@ void DeleteBackupPolicyRequest::setId(long id)
 {
 	id_ = id;
 	setParameter("Id", std::to_string(id));
+}
+
+std::string DeleteBackupPolicyRequest::getPolicyVersion()const
+{
+	return policyVersion_;
+}
+
+void DeleteBackupPolicyRequest::setPolicyVersion(const std::string& policyVersion)
+{
+	policyVersion_ = policyVersion;
+	setParameter("PolicyVersion", policyVersion);
 }
 

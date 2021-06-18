@@ -77,6 +77,10 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		appWhiteList_ = std::stoi(value["AppWhiteList"].asString());
 	if(!value["SlsCapacity"].isNull())
 		slsCapacity_ = std::stol(value["SlsCapacity"].asString());
+	if(!value["GmtCreate"].isNull())
+		gmtCreate_ = std::stol(value["GmtCreate"].asString());
+	if(!value["LastInstanceReleaseTime"].isNull())
+		lastInstanceReleaseTime_ = std::stol(value["LastInstanceReleaseTime"].asString());
 	if(!value["IsOverBalance"].isNull())
 		isOverBalance_ = value["IsOverBalance"].asString() == "true";
 	if(!value["LastTrailEndTime"].isNull())
@@ -89,6 +93,14 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		vmCores_ = std::stoi(value["VmCores"].asString());
 	if(!value["IsPaidUser"].isNull())
 		isPaidUser_ = value["IsPaidUser"].asString() == "true";
+	if(!value["HighestVersion"].isNull())
+		highestVersion_ = std::stoi(value["HighestVersion"].asString());
+	if(!value["MVAuthCount"].isNull())
+		mVAuthCount_ = std::stoi(value["MVAuthCount"].asString());
+	if(!value["MVUnusedAuthCount"].isNull())
+		mVUnusedAuthCount_ = std::stoi(value["MVUnusedAuthCount"].asString());
+	if(!value["AllowPartialBuy"].isNull())
+		allowPartialBuy_ = std::stoi(value["AllowPartialBuy"].asString());
 
 }
 
@@ -127,6 +139,11 @@ int DescribeVersionConfigResult::getAvdsFlag()const
 	return avdsFlag_;
 }
 
+int DescribeVersionConfigResult::getHighestVersion()const
+{
+	return highestVersion_;
+}
+
 long DescribeVersionConfigResult::getWebLockAuthCount()const
 {
 	return webLockAuthCount_;
@@ -145,6 +162,11 @@ long DescribeVersionConfigResult::getLastTrailEndTime()const
 int DescribeVersionConfigResult::getUserDefinedAlarms()const
 {
 	return userDefinedAlarms_;
+}
+
+int DescribeVersionConfigResult::getAllowPartialBuy()const
+{
+	return allowPartialBuy_;
 }
 
 int DescribeVersionConfigResult::getWebLock()const
@@ -177,6 +199,11 @@ std::string DescribeVersionConfigResult::getInstanceId()const
 	return instanceId_;
 }
 
+long DescribeVersionConfigResult::getLastInstanceReleaseTime()const
+{
+	return lastInstanceReleaseTime_;
+}
+
 long DescribeVersionConfigResult::getCreateTime()const
 {
 	return createTime_;
@@ -202,6 +229,16 @@ int DescribeVersionConfigResult::getFlag()const
 	return flag_;
 }
 
+int DescribeVersionConfigResult::getMVAuthCount()const
+{
+	return mVAuthCount_;
+}
+
+long DescribeVersionConfigResult::getGmtCreate()const
+{
+	return gmtCreate_;
+}
+
 long DescribeVersionConfigResult::getReleaseTime()const
 {
 	return releaseTime_;
@@ -210,6 +247,11 @@ long DescribeVersionConfigResult::getReleaseTime()const
 int DescribeVersionConfigResult::getIsTrialVersion()const
 {
 	return isTrialVersion_;
+}
+
+int DescribeVersionConfigResult::getMVUnusedAuthCount()const
+{
+	return mVUnusedAuthCount_;
 }
 
 int DescribeVersionConfigResult::getAppWhiteList()const

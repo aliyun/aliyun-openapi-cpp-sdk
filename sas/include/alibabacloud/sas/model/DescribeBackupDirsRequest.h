@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
 				std::string getSourceIp()const;
@@ -47,14 +45,16 @@ namespace AlibabaCloud
 				void setPolicyId(long policyId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
 
             private:
 				long resourceOwnerId_;
-				int currentPage_;
 				std::string uuid_;
 				std::string sourceIp_;
 				long policyId_;
 				int pageSize_;
+				int currentPage_;
 
 			};
 		}

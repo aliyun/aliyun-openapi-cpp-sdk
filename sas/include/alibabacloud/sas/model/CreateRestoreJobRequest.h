@@ -39,34 +39,34 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getSnapshotId()const;
 				void setSnapshotId(const std::string& snapshotId);
+				std::string getVaultId()const;
+				void setVaultId(const std::string& vaultId);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
 				std::string getSnapshotHash()const;
 				void setSnapshotHash(const std::string& snapshotHash);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getSourceType()const;
+				void setSourceType(const std::string& sourceType);
 				std::string getSnapshotVersion()const;
 				void setSnapshotVersion(const std::string& snapshotVersion);
-				std::string getPolicyVersion()const;
-				void setPolicyVersion(const std::string& policyVersion);
 				std::string getIncludes()const;
 				void setIncludes(const std::string& includes);
 				std::string getTarget()const;
 				void setTarget(const std::string& target);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 
             private:
 				long resourceOwnerId_;
 				std::string snapshotId_;
+				std::string vaultId_;
 				std::string uuid_;
 				std::string snapshotHash_;
 				std::string sourceIp_;
+				std::string sourceType_;
 				std::string snapshotVersion_;
-				std::string policyVersion_;
 				std::string includes_;
 				std::string target_;
-				std::string instanceId_;
 
 			};
 		}

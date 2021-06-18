@@ -38,17 +38,6 @@ void DescribeBackupMachineStatusRequest::setResourceOwnerId(long resourceOwnerId
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeBackupMachineStatusRequest::getPolicyVersion()const
-{
-	return policyVersion_;
-}
-
-void DescribeBackupMachineStatusRequest::setPolicyVersion(const std::string& policyVersion)
-{
-	policyVersion_ = policyVersion;
-	setParameter("PolicyVersion", policyVersion);
-}
-
 std::string DescribeBackupMachineStatusRequest::getUuid()const
 {
 	return uuid_;
@@ -80,5 +69,16 @@ void DescribeBackupMachineStatusRequest::setPolicyId(long policyId)
 {
 	policyId_ = policyId;
 	setParameter("PolicyId", std::to_string(policyId));
+}
+
+std::string DescribeBackupMachineStatusRequest::getPolicyVersion()const
+{
+	return policyVersion_;
+}
+
+void DescribeBackupMachineStatusRequest::setPolicyVersion(const std::string& policyVersion)
+{
+	policyVersion_ = policyVersion;
+	setParameter("PolicyVersion", policyVersion);
 }
 

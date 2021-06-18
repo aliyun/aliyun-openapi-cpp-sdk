@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setPolicy(const std::string& policy);
 				std::string getPolicyVersion()const;
 				void setPolicyVersion(const std::string& policyVersion);
+				std::string getPolicyRegionId()const;
+				void setPolicyRegionId(const std::string& policyRegionId);
 				std::string getName()const;
 				void setName(const std::string& name);
 
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				long id_;
 				std::string policy_;
 				std::string policyVersion_;
+				std::string policyRegionId_;
 				std::string name_;
 
 			};

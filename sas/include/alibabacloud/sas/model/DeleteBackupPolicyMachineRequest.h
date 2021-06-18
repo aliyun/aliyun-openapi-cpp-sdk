@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPolicyVersion()const;
-				void setPolicyVersion(const std::string& policyVersion);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
 				std::string getSourceIp()const;
@@ -47,14 +45,16 @@ namespace AlibabaCloud
 				void setPolicyId(long policyId);
 				std::vector<std::string> getUuidList()const;
 				void setUuidList(const std::vector<std::string>& uuidList);
+				std::string getPolicyVersion()const;
+				void setPolicyVersion(const std::string& policyVersion);
 
             private:
 				long resourceOwnerId_;
-				std::string policyVersion_;
 				std::string uuid_;
 				std::string sourceIp_;
 				long policyId_;
 				std::vector<std::string> uuidList_;
+				std::string policyVersion_;
 
 			};
 		}

@@ -46,6 +46,10 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		backupPolicyDetail_.name = backupPolicyDetailNode["Name"].asString();
 	if(!backupPolicyDetailNode["Policy"].isNull())
 		backupPolicyDetail_.policy = backupPolicyDetailNode["Policy"].asString();
+	if(!backupPolicyDetailNode["PolicyVersion"].isNull())
+		backupPolicyDetail_.policyVersion = backupPolicyDetailNode["PolicyVersion"].asString();
+	if(!backupPolicyDetailNode["RegionId"].isNull())
+		backupPolicyDetail_.regionId = backupPolicyDetailNode["RegionId"].asString();
 	if(!backupPolicyDetailNode["Status"].isNull())
 		backupPolicyDetail_.status = backupPolicyDetailNode["Status"].asString();
 	if(!backupPolicyDetailNode["ClientStatus"].isNull())

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getCheckStatus()const;
+				void setCheckStatus(const std::string& checkStatus);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				int getCurrentPage()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string scanType_;
 				std::string sourceIp_;
 				int pageSize_;
+				std::string checkStatus_;
 				std::string lang_;
 				int currentPage_;
 				std::string vulName_;

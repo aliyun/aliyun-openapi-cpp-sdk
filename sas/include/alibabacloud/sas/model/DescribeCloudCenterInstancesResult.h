@@ -41,15 +41,18 @@ namespace AlibabaCloud
 				};
 				struct Instance
 				{
+					bool bind;
 					long createdTime;
 					std::string os;
 					std::string vulStatus;
 					std::string ip;
+					int exposedCount;
 					std::string clientVersion;
 					std::string intranetIp;
 					std::string riskCount;
 					int importance;
 					int podCount;
+					long authModifyTime;
 					int autoSnapshotsLevel;
 					std::string internetIp;
 					std::string regionName;
@@ -57,16 +60,19 @@ namespace AlibabaCloud
 					std::string status;
 					int exposedStatus;
 					std::string clientStatus;
+					std::string vendorName;
 					int safeEventCount;
 					std::string instanceId;
 					std::string clusterId;
 					std::string osName;
+					int vendor;
 					int healthCheckCount;
 					int flag;
 					std::string riskStatus;
 					int vulCount;
 					std::string groupId;
 					std::string instanceName;
+					int cores;
 					std::string assetType;
 					std::string uuid;
 					std::string alarmStatus;
@@ -74,6 +80,7 @@ namespace AlibabaCloud
 					std::string vpcInstanceId;
 					std::string tag;
 					std::string regionId;
+					int authVersion;
 					std::string hcStatus;
 				};
 

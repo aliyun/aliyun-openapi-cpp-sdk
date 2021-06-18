@@ -111,6 +111,20 @@ void DescribeCloudCenterInstancesResult::parse(const std::string &payload)
 			instancesObject.exposedStatus = std::stoi(valueInstancesInstance["ExposedStatus"].asString());
 		if(!valueInstancesInstance["AutoSnapshotsLevel"].isNull())
 			instancesObject.autoSnapshotsLevel = std::stoi(valueInstancesInstance["AutoSnapshotsLevel"].asString());
+		if(!valueInstancesInstance["ExposedCount"].isNull())
+			instancesObject.exposedCount = std::stoi(valueInstancesInstance["ExposedCount"].asString());
+		if(!valueInstancesInstance["Vendor"].isNull())
+			instancesObject.vendor = std::stoi(valueInstancesInstance["Vendor"].asString());
+		if(!valueInstancesInstance["VendorName"].isNull())
+			instancesObject.vendorName = valueInstancesInstance["VendorName"].asString();
+		if(!valueInstancesInstance["Cores"].isNull())
+			instancesObject.cores = std::stoi(valueInstancesInstance["Cores"].asString());
+		if(!valueInstancesInstance["AuthVersion"].isNull())
+			instancesObject.authVersion = std::stoi(valueInstancesInstance["AuthVersion"].asString());
+		if(!valueInstancesInstance["Bind"].isNull())
+			instancesObject.bind = valueInstancesInstance["Bind"].asString() == "true";
+		if(!valueInstancesInstance["AuthModifyTime"].isNull())
+			instancesObject.authModifyTime = std::stol(valueInstancesInstance["AuthModifyTime"].asString());
 		instances_.push_back(instancesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

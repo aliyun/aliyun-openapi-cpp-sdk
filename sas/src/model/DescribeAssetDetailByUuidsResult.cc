@@ -71,6 +71,8 @@ void DescribeAssetDetailByUuidsResult::parse(const std::string &payload)
 			assetListObject.vpcInstanceId = valueAssetListAsset["VpcInstanceId"].asString();
 		if(!valueAssetListAsset["OsName"].isNull())
 			assetListObject.osName = valueAssetListAsset["OsName"].asString();
+		if(!valueAssetListAsset["Flag"].isNull())
+			assetListObject.flag = std::stoi(valueAssetListAsset["Flag"].asString());
 		assetList_.push_back(assetListObject);
 	}
 

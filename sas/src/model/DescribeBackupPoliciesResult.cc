@@ -53,6 +53,8 @@ void DescribeBackupPoliciesResult::parse(const std::string &payload)
 			policiesObject.policy = valuePoliciesBackupPolicy["Policy"].asString();
 		if(!valuePoliciesBackupPolicy["PolicyVersion"].isNull())
 			policiesObject.policyVersion = valuePoliciesBackupPolicy["PolicyVersion"].asString();
+		if(!valuePoliciesBackupPolicy["PolicyRegionId"].isNull())
+			policiesObject.policyRegionId = valuePoliciesBackupPolicy["PolicyRegionId"].asString();
 		if(!valuePoliciesBackupPolicy["ClientStatus"].isNull())
 			policiesObject.clientStatus = valuePoliciesBackupPolicy["ClientStatus"].asString();
 		if(!valuePoliciesBackupPolicy["ClientErrorCount"].isNull())
@@ -64,6 +66,9 @@ void DescribeBackupPoliciesResult::parse(const std::string &payload)
 		auto allUuidList = value["UuidList"]["StringItem"];
 		for (auto value : allUuidList)
 			policiesObject.uuidList.push_back(value.asString());
+		auto allRemarkedUuidList = value["RemarkedUuidList"]["StringItem"];
+		for (auto value : allRemarkedUuidList)
+			policiesObject.remarkedUuidList.push_back(value.asString());
 		auto allClientErrorUuidList = value["ClientErrorUuidList"]["StringItem"];
 		for (auto value : allClientErrorUuidList)
 			policiesObject.clientErrorUuidList.push_back(value.asString());

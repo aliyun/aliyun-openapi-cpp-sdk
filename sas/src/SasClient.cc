@@ -195,6 +195,42 @@ SasClient::CreateAntiBruteForceRuleOutcomeCallable SasClient::createAntiBruteFor
 	return task->get_future();
 }
 
+SasClient::CreateAssetOutcome SasClient::createAsset(const CreateAssetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAssetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAssetOutcome(CreateAssetResult(outcome.result()));
+	else
+		return CreateAssetOutcome(outcome.error());
+}
+
+void SasClient::createAssetAsync(const CreateAssetRequest& request, const CreateAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAsset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateAssetOutcomeCallable SasClient::createAssetCallable(const CreateAssetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAssetOutcome()>>(
+			[this, request]()
+			{
+			return this->createAsset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::CreateBackupPolicyOutcome SasClient::createBackupPolicy(const CreateBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,6 +447,42 @@ SasClient::CreateSimilarSecurityEventsQueryTaskOutcomeCallable SasClient::create
 	return task->get_future();
 }
 
+SasClient::DeleteAssetOutcome SasClient::deleteAsset(const DeleteAssetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAssetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAssetOutcome(DeleteAssetResult(outcome.result()));
+	else
+		return DeleteAssetOutcome(outcome.error());
+}
+
+void SasClient::deleteAssetAsync(const DeleteAssetRequest& request, const DeleteAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAsset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DeleteAssetOutcomeCallable SasClient::deleteAssetCallable(const DeleteAssetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAssetOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAsset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DeleteBackupPolicyOutcome SasClient::deleteBackupPolicy(const DeleteBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +621,42 @@ SasClient::DeleteLoginBaseConfigOutcomeCallable SasClient::deleteLoginBaseConfig
 			[this, request]()
 			{
 			return this->deleteLoginBaseConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DeleteStrategyOutcome SasClient::deleteStrategy(const DeleteStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteStrategyOutcome(DeleteStrategyResult(outcome.result()));
+	else
+		return DeleteStrategyOutcome(outcome.error());
+}
+
+void SasClient::deleteStrategyAsync(const DeleteStrategyRequest& request, const DeleteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DeleteStrategyOutcomeCallable SasClient::deleteStrategyCallable(const DeleteStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteStrategy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1053,6 +1161,42 @@ SasClient::DescribeAutoDelConfigOutcomeCallable SasClient::describeAutoDelConfig
 			[this, request]()
 			{
 			return this->describeAutoDelConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeBackupClientsOutcome SasClient::describeBackupClients(const DescribeBackupClientsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupClientsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupClientsOutcome(DescribeBackupClientsResult(outcome.result()));
+	else
+		return DescribeBackupClientsOutcome(outcome.error());
+}
+
+void SasClient::describeBackupClientsAsync(const DescribeBackupClientsRequest& request, const DescribeBackupClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupClients(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeBackupClientsOutcomeCallable SasClient::describeBackupClientsCallable(const DescribeBackupClientsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupClientsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupClients(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2499,6 +2643,42 @@ SasClient::DescribeImageGroupedVulListOutcomeCallable SasClient::describeImageGr
 	return task->get_future();
 }
 
+SasClient::DescribeImageScanAuthCountOutcome SasClient::describeImageScanAuthCount(const DescribeImageScanAuthCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImageScanAuthCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImageScanAuthCountOutcome(DescribeImageScanAuthCountResult(outcome.result()));
+	else
+		return DescribeImageScanAuthCountOutcome(outcome.error());
+}
+
+void SasClient::describeImageScanAuthCountAsync(const DescribeImageScanAuthCountRequest& request, const DescribeImageScanAuthCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImageScanAuthCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeImageScanAuthCountOutcomeCallable SasClient::describeImageScanAuthCountCallable(const DescribeImageScanAuthCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImageScanAuthCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImageScanAuthCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeImageStatisticsOutcome SasClient::describeImageStatistics(const DescribeImageStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3939,6 +4119,42 @@ SasClient::DescribeSnapshotsOutcomeCallable SasClient::describeSnapshotsCallable
 	return task->get_future();
 }
 
+SasClient::DescribeStrategyOutcome SasClient::describeStrategy(const DescribeStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStrategyOutcome(DescribeStrategyResult(outcome.result()));
+	else
+		return DescribeStrategyOutcome(outcome.error());
+}
+
+void SasClient::describeStrategyAsync(const DescribeStrategyRequest& request, const DescribeStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeStrategyOutcomeCallable SasClient::describeStrategyCallable(const DescribeStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeStrategyExecDetailOutcome SasClient::describeStrategyExecDetail(const DescribeStrategyExecDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3969,6 +4185,78 @@ SasClient::DescribeStrategyExecDetailOutcomeCallable SasClient::describeStrategy
 			[this, request]()
 			{
 			return this->describeStrategyExecDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeStrategyProcessOutcome SasClient::describeStrategyProcess(const DescribeStrategyProcessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStrategyProcessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStrategyProcessOutcome(DescribeStrategyProcessResult(outcome.result()));
+	else
+		return DescribeStrategyProcessOutcome(outcome.error());
+}
+
+void SasClient::describeStrategyProcessAsync(const DescribeStrategyProcessRequest& request, const DescribeStrategyProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStrategyProcess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeStrategyProcessOutcomeCallable SasClient::describeStrategyProcessCallable(const DescribeStrategyProcessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStrategyProcessOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStrategyProcess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeStrategyTargetOutcome SasClient::describeStrategyTarget(const DescribeStrategyTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStrategyTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStrategyTargetOutcome(DescribeStrategyTargetResult(outcome.result()));
+	else
+		return DescribeStrategyTargetOutcome(outcome.error());
+}
+
+void SasClient::describeStrategyTargetAsync(const DescribeStrategyTargetRequest& request, const DescribeStrategyTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStrategyTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeStrategyTargetOutcomeCallable SasClient::describeStrategyTargetCallable(const DescribeStrategyTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStrategyTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStrategyTarget(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4695,6 +4983,42 @@ SasClient::DescribeWebLockConfigListOutcomeCallable SasClient::describeWebLockCo
 	return task->get_future();
 }
 
+SasClient::ExecStrategyOutcome SasClient::execStrategy(const ExecStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecStrategyOutcome(ExecStrategyResult(outcome.result()));
+	else
+		return ExecStrategyOutcome(outcome.error());
+}
+
+void SasClient::execStrategyAsync(const ExecStrategyRequest& request, const ExecStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, execStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ExecStrategyOutcomeCallable SasClient::execStrategyCallable(const ExecStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->execStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ExportRecordOutcome SasClient::exportRecord(const ExportRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4869,6 +5193,78 @@ SasClient::GetIncIOCsOutcomeCallable SasClient::getIncIOCsCallable(const GetIncI
 			[this, request]()
 			{
 			return this->getIncIOCs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::GetLocalInstallScriptOutcome SasClient::getLocalInstallScript(const GetLocalInstallScriptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLocalInstallScriptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLocalInstallScriptOutcome(GetLocalInstallScriptResult(outcome.result()));
+	else
+		return GetLocalInstallScriptOutcome(outcome.error());
+}
+
+void SasClient::getLocalInstallScriptAsync(const GetLocalInstallScriptRequest& request, const GetLocalInstallScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLocalInstallScript(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetLocalInstallScriptOutcomeCallable SasClient::getLocalInstallScriptCallable(const GetLocalInstallScriptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLocalInstallScriptOutcome()>>(
+			[this, request]()
+			{
+			return this->getLocalInstallScript(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::GetLocalUninstallScriptOutcome SasClient::getLocalUninstallScript(const GetLocalUninstallScriptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetLocalUninstallScriptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetLocalUninstallScriptOutcome(GetLocalUninstallScriptResult(outcome.result()));
+	else
+		return GetLocalUninstallScriptOutcome(outcome.error());
+}
+
+void SasClient::getLocalUninstallScriptAsync(const GetLocalUninstallScriptRequest& request, const GetLocalUninstallScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getLocalUninstallScript(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetLocalUninstallScriptOutcomeCallable SasClient::getLocalUninstallScriptCallable(const GetLocalUninstallScriptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetLocalUninstallScriptOutcome()>>(
+			[this, request]()
+			{
+			return this->getLocalUninstallScript(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5733,6 +6129,78 @@ SasClient::ModifyStartVulScanOutcomeCallable SasClient::modifyStartVulScanCallab
 			[this, request]()
 			{
 			return this->modifyStartVulScan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ModifyStrategyOutcome SasClient::modifyStrategy(const ModifyStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyStrategyOutcome(ModifyStrategyResult(outcome.result()));
+	else
+		return ModifyStrategyOutcome(outcome.error());
+}
+
+void SasClient::modifyStrategyAsync(const ModifyStrategyRequest& request, const ModifyStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyStrategyOutcomeCallable SasClient::modifyStrategyCallable(const ModifyStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ModifyStrategyTargetOutcome SasClient::modifyStrategyTarget(const ModifyStrategyTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyStrategyTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyStrategyTargetOutcome(ModifyStrategyTargetResult(outcome.result()));
+	else
+		return ModifyStrategyTargetOutcome(outcome.error());
+}
+
+void SasClient::modifyStrategyTargetAsync(const ModifyStrategyTargetRequest& request, const ModifyStrategyTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyStrategyTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyStrategyTargetOutcomeCallable SasClient::modifyStrategyTargetCallable(const ModifyStrategyTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyStrategyTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyStrategyTarget(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

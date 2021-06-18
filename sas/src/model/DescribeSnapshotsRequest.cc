@@ -137,3 +137,14 @@ void DescribeSnapshotsRequest::setMachineRegion(const std::string& machineRegion
 	setParameter("MachineRegion", machineRegion);
 }
 
+std::string DescribeSnapshotsRequest::getIsAliYunEcs()const
+{
+	return isAliYunEcs_;
+}
+
+void DescribeSnapshotsRequest::setIsAliYunEcs(const std::string& isAliYunEcs)
+{
+	isAliYunEcs_ = isAliYunEcs;
+	setParameter("IsAliYunEcs", isAliYunEcs);
+}
+

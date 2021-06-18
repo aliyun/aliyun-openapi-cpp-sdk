@@ -38,17 +38,6 @@ void DescribeUserBackupMachinesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-int DescribeUserBackupMachinesRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeUserBackupMachinesRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string DescribeUserBackupMachinesRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -69,5 +58,16 @@ void DescribeUserBackupMachinesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int DescribeUserBackupMachinesRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeUserBackupMachinesRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 

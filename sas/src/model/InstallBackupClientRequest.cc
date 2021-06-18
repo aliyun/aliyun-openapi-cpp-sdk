@@ -38,17 +38,6 @@ void InstallBackupClientRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string InstallBackupClientRequest::getPolicyVersion()const
-{
-	return policyVersion_;
-}
-
-void InstallBackupClientRequest::setPolicyVersion(const std::string& policyVersion)
-{
-	policyVersion_ = policyVersion;
-	setParameter("PolicyVersion", policyVersion);
-}
-
 std::string InstallBackupClientRequest::getUuid()const
 {
 	return uuid_;
@@ -82,5 +71,16 @@ void InstallBackupClientRequest::setUuidList(const std::vector<std::string>& uui
 	for(int dep1 = 0; dep1!= uuidList.size(); dep1++) {
 		setParameter("UuidList."+ std::to_string(dep1), uuidList.at(dep1));
 	}
+}
+
+std::string InstallBackupClientRequest::getPolicyVersion()const
+{
+	return policyVersion_;
+}
+
+void InstallBackupClientRequest::setPolicyVersion(const std::string& policyVersion)
+{
+	policyVersion_ = policyVersion;
+	setParameter("PolicyVersion", policyVersion);
 }
 

@@ -66,6 +66,14 @@ void DescribeFieldStatisticsResult::parse(const std::string &payload)
 		groupedFields_.testAssetCount = std::stoi(groupedFieldsNode["TestAssetCount"].asString());
 	if(!groupedFieldsNode["ExposedInstanceCount"].isNull())
 		groupedFields_.exposedInstanceCount = std::stoi(groupedFieldsNode["ExposedInstanceCount"].asString());
+	if(!groupedFieldsNode["AliYunInstanceCount"].isNull())
+		groupedFields_.aliYunInstanceCount = std::stoi(groupedFieldsNode["AliYunInstanceCount"].asString());
+	if(!groupedFieldsNode["IdcInstanceCount"].isNull())
+		groupedFields_.idcInstanceCount = std::stoi(groupedFieldsNode["IdcInstanceCount"].asString());
+	if(!groupedFieldsNode["TencentInstanceCount"].isNull())
+		groupedFields_.tencentInstanceCount = std::stoi(groupedFieldsNode["TencentInstanceCount"].asString());
+	if(!groupedFieldsNode["InstanceSyncTaskCount"].isNull())
+		groupedFields_.instanceSyncTaskCount = std::stoi(groupedFieldsNode["InstanceSyncTaskCount"].asString());
 
 }
 

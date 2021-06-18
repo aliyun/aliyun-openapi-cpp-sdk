@@ -95,6 +95,17 @@ void ModifyBackupPolicyRequest::setPolicyVersion(const std::string& policyVersio
 	setParameter("PolicyVersion", policyVersion);
 }
 
+std::string ModifyBackupPolicyRequest::getPolicyRegionId()const
+{
+	return policyRegionId_;
+}
+
+void ModifyBackupPolicyRequest::setPolicyRegionId(const std::string& policyRegionId)
+{
+	policyRegionId_ = policyRegionId;
+	setParameter("PolicyRegionId", policyRegionId);
+}
+
 std::string ModifyBackupPolicyRequest::getName()const
 {
 	return name_;

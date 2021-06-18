@@ -38,17 +38,6 @@ void ModifyBackupPolicyStatusRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyBackupPolicyStatusRequest::getPolicyVersion()const
-{
-	return policyVersion_;
-}
-
-void ModifyBackupPolicyStatusRequest::setPolicyVersion(const std::string& policyVersion)
-{
-	policyVersion_ = policyVersion;
-	setParameter("PolicyVersion", policyVersion);
-}
-
 std::string ModifyBackupPolicyStatusRequest::getSourceIp()const
 {
 	return sourceIp_;
@@ -69,6 +58,17 @@ void ModifyBackupPolicyStatusRequest::setId(long id)
 {
 	id_ = id;
 	setParameter("Id", std::to_string(id));
+}
+
+std::string ModifyBackupPolicyStatusRequest::getPolicyVersion()const
+{
+	return policyVersion_;
+}
+
+void ModifyBackupPolicyStatusRequest::setPolicyVersion(const std::string& policyVersion)
+{
+	policyVersion_ = policyVersion;
+	setParameter("PolicyVersion", policyVersion);
 }
 
 std::string ModifyBackupPolicyStatusRequest::getStatus()const

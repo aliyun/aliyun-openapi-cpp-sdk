@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setApiVersion(const std::string& apiVersion);
 				std::string getMachineRegion()const;
 				void setMachineRegion(const std::string& machineRegion);
+				std::string getIsAliYunEcs()const;
+				void setIsAliYunEcs(const std::string& isAliYunEcs);
 
             private:
 				long resourceOwnerId_;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				int currentPage_;
 				std::string apiVersion_;
 				std::string machineRegion_;
+				std::string isAliYunEcs_;
 
 			};
 		}
