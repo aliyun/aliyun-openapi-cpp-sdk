@@ -39,39 +39,15 @@ void CreateImageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["AliyunPK"].isNull())
-		data_.aliyunPK = dataNode["AliyunPK"].asString();
-	if(!dataNode["Description"].isNull())
-		data_.description = dataNode["Description"].asString();
-	if(!dataNode["DownloadPath"].isNull())
-		data_.downloadPath = dataNode["DownloadPath"].asString();
-	if(!dataNode["GmtCreate"].isNull())
-		data_.gmtCreate = dataNode["GmtCreate"].asString();
-	if(!dataNode["GmtModified"].isNull())
-		data_.gmtModified = dataNode["GmtModified"].asString();
-	if(!dataNode["ImageId"].isNull())
-		data_.imageId = std::stoi(dataNode["ImageId"].asString());
-	if(!dataNode["JobId"].isNull())
-		data_.jobId = dataNode["JobId"].asString();
-	if(!dataNode["ImageName"].isNull())
-		data_.imageName = dataNode["ImageName"].asString();
-	if(!dataNode["RunStatus"].isNull())
-		data_.runStatus = std::stoi(dataNode["RunStatus"].asString());
-	if(!dataNode["UrlUploadPath"].isNull())
-		data_.urlUploadPath = dataNode["UrlUploadPath"].asString();
-	if(!dataNode["FileTime"].isNull())
-		data_.fileTime = std::stol(dataNode["FileTime"].asString());
-	if(!dataNode["StatusCode"].isNull())
-		data_.statusCode = dataNode["StatusCode"].asString();
-	if(!dataNode["StatusMessage"].isNull())
-		data_.statusMessage = dataNode["StatusMessage"].asString();
+	auto allItems = value["Items"]["Contents"];
+	for (const auto &item : allItems)
+		items_.push_back(item.asString());
 	if(!value["ResultCode"].isNull())
 		resultCode_ = std::stoi(value["ResultCode"].asString());
-	if(!value["ImageId"].isNull())
-		imageId_ = value["ImageId"].asString();
 	if(!value["ResultMessage"].isNull())
 		resultMessage_ = value["ResultMessage"].asString();
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
 	if(!value["UserResolution"].isNull())
 		userResolution_ = value["UserResolution"].asString();
 	if(!value["PublishStatus"].isNull())
@@ -89,9 +65,9 @@ std::string CreateImageResult::getImageId()const
 	return imageId_;
 }
 
-CreateImageResult::Data CreateImageResult::getData()const
+std::vector<std::string> CreateImageResult::getItems()const
 {
-	return data_;
+	return items_;
 }
 
 std::string CreateImageResult::getResultMessage()const

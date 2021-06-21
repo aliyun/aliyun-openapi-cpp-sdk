@@ -31,97 +31,25 @@ RsimganalysClient::RsimganalysClient(const Credentials &credentials, const Clien
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rsimganalys");
 }
 
 RsimganalysClient::RsimganalysClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rsimganalys");
 }
 
 RsimganalysClient::RsimganalysClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rsimganalys");
 }
 
 RsimganalysClient::~RsimganalysClient()
 {}
-
-RsimganalysClient::AccessAppkeyOutcome RsimganalysClient::accessAppkey(const AccessAppkeyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AccessAppkeyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AccessAppkeyOutcome(AccessAppkeyResult(outcome.result()));
-	else
-		return AccessAppkeyOutcome(outcome.error());
-}
-
-void RsimganalysClient::accessAppkeyAsync(const AccessAppkeyRequest& request, const AccessAppkeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, accessAppkey(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RsimganalysClient::AccessAppkeyOutcomeCallable RsimganalysClient::accessAppkeyCallable(const AccessAppkeyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AccessAppkeyOutcome()>>(
-			[this, request]()
-			{
-			return this->accessAppkey(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-RsimganalysClient::AccessTokenOutcome RsimganalysClient::accessToken(const AccessTokenRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AccessTokenOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AccessTokenOutcome(AccessTokenResult(outcome.result()));
-	else
-		return AccessTokenOutcome(outcome.error());
-}
-
-void RsimganalysClient::accessTokenAsync(const AccessTokenRequest& request, const AccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, accessToken(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-RsimganalysClient::AccessTokenOutcomeCallable RsimganalysClient::accessTokenCallable(const AccessTokenRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AccessTokenOutcome()>>(
-			[this, request]()
-			{
-			return this->accessToken(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
 
 RsimganalysClient::CreateImageOutcome RsimganalysClient::createImage(const CreateImageRequest &request) const
 {

@@ -37,12 +37,9 @@ namespace AlibabaCloud
 
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
-				std::string getAppkey()const;
-				void setAppkey(const std::string& appkey);
 
             private:
 				std::string jobId_;
-				std::string appkey_;
 
 			};
 		}

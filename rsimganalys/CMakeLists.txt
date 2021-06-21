@@ -21,10 +21,6 @@ set(rsimganalys_public_header
 	include/alibabacloud/rsimganalys/RsimganalysExport.h )
 
 set(rsimganalys_public_header_model 
-	include/alibabacloud/rsimganalys/model/AccessAppkeyRequest.h
-	include/alibabacloud/rsimganalys/model/AccessAppkeyResult.h
-	include/alibabacloud/rsimganalys/model/AccessTokenRequest.h
-	include/alibabacloud/rsimganalys/model/AccessTokenResult.h
 	include/alibabacloud/rsimganalys/model/CreateImageRequest.h
 	include/alibabacloud/rsimganalys/model/CreateImageResult.h
 	include/alibabacloud/rsimganalys/model/CreateTaskRequest.h
@@ -44,10 +40,6 @@ set(rsimganalys_public_header_model
 
 set(rsimganalys_src 
 	src/RsimganalysClient.cc
-	src/model/AccessAppkeyRequest.cc
-	src/model/AccessAppkeyResult.cc
-	src/model/AccessTokenRequest.cc
-	src/model/AccessTokenResult.cc
 	src/model/CreateImageRequest.cc
 	src/model/CreateImageResult.cc
 	src/model/CreateTaskRequest.cc

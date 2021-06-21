@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setAppkey(const std::string& appkey);
 				std::string getDstImageId()const;
 				void setDstImageId(const std::string& dstImageId);
+				std::string getJobName()const;
+				void setJobName(const std::string& jobName);
 
             private:
 				float confidence_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string srcImageId_;
 				std::string appkey_;
 				std::string dstImageId_;
+				std::string jobName_;
 
 			};
 		}

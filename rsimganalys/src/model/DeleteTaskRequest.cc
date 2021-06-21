@@ -38,14 +38,3 @@ void DeleteTaskRequest::setJobId(const std::string& jobId)
 	setParameter("JobId", jobId);
 }
 
-std::string DeleteTaskRequest::getAppkey()const
-{
-	return appkey_;
-}
-
-void DeleteTaskRequest::setAppkey(const std::string& appkey)
-{
-	appkey_ = appkey;
-	setParameter("Appkey", appkey);
-}
-

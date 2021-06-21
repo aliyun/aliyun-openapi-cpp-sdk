@@ -22,10 +22,6 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "RsimganalysExport.h"
-#include "model/AccessAppkeyRequest.h"
-#include "model/AccessAppkeyResult.h"
-#include "model/AccessTokenRequest.h"
-#include "model/AccessTokenResult.h"
 #include "model/CreateImageRequest.h"
 #include "model/CreateImageResult.h"
 #include "model/CreateTaskRequest.h"
@@ -51,12 +47,6 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_RSIMGANALYS_EXPORT RsimganalysClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::AccessAppkeyResult> AccessAppkeyOutcome;
-			typedef std::future<AccessAppkeyOutcome> AccessAppkeyOutcomeCallable;
-			typedef std::function<void(const RsimganalysClient*, const Model::AccessAppkeyRequest&, const AccessAppkeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AccessAppkeyAsyncHandler;
-			typedef Outcome<Error, Model::AccessTokenResult> AccessTokenOutcome;
-			typedef std::future<AccessTokenOutcome> AccessTokenOutcomeCallable;
-			typedef std::function<void(const RsimganalysClient*, const Model::AccessTokenRequest&, const AccessTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AccessTokenAsyncHandler;
 			typedef Outcome<Error, Model::CreateImageResult> CreateImageOutcome;
 			typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
 			typedef std::function<void(const RsimganalysClient*, const Model::CreateImageRequest&, const CreateImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
@@ -86,12 +76,6 @@ namespace AlibabaCloud
 			RsimganalysClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			RsimganalysClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~RsimganalysClient();
-			AccessAppkeyOutcome accessAppkey(const Model::AccessAppkeyRequest &request)const;
-			void accessAppkeyAsync(const Model::AccessAppkeyRequest& request, const AccessAppkeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AccessAppkeyOutcomeCallable accessAppkeyCallable(const Model::AccessAppkeyRequest& request) const;
-			AccessTokenOutcome accessToken(const Model::AccessTokenRequest &request)const;
-			void accessTokenAsync(const Model::AccessTokenRequest& request, const AccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AccessTokenOutcomeCallable accessTokenCallable(const Model::AccessTokenRequest& request) const;
 			CreateImageOutcome createImage(const Model::CreateImageRequest &request)const;
 			void createImageAsync(const Model::CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateImageOutcomeCallable createImageCallable(const Model::CreateImageRequest& request) const;

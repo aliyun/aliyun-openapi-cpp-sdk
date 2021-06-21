@@ -42,6 +42,7 @@ namespace AlibabaCloud
 					std::string appkey;
 					int runStatus;
 					long fileTime;
+					std::string publicResult;
 					std::string pixelSize;
 					std::string resolution;
 					int publishStatus;
@@ -51,7 +52,6 @@ namespace AlibabaCloud
 				GetImageResult();
 				explicit GetImageResult(const std::string &payload);
 				~GetImageResult();
-				std::string getDownloadPath()const;
 				Data getData()const;
 				std::string getResultMessage()const;
 				std::string getResultCode()const;
@@ -59,7 +59,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string downloadPath_;
 				Data data_;
 				std::string resultMessage_;
 				std::string resultCode_;

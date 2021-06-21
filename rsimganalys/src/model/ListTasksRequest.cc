@@ -27,6 +27,61 @@ ListTasksRequest::ListTasksRequest() :
 ListTasksRequest::~ListTasksRequest()
 {}
 
+std::string ListTasksRequest::getSubmitTime()const
+{
+	return submitTime_;
+}
+
+void ListTasksRequest::setSubmitTime(const std::string& submitTime)
+{
+	submitTime_ = submitTime;
+	setParameter("SubmitTime", submitTime);
+}
+
+int ListTasksRequest::getRunStatus()const
+{
+	return runStatus_;
+}
+
+void ListTasksRequest::setRunStatus(int runStatus)
+{
+	runStatus_ = runStatus;
+	setParameter("RunStatus", std::to_string(runStatus));
+}
+
+int ListTasksRequest::getProductType()const
+{
+	return productType_;
+}
+
+void ListTasksRequest::setProductType(int productType)
+{
+	productType_ = productType;
+	setParameter("ProductType", std::to_string(productType));
+}
+
+int ListTasksRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void ListTasksRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setParameter("PageNo", std::to_string(pageNo));
+}
+
+int ListTasksRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListTasksRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string ListTasksRequest::getAppkey()const
 {
 	return appkey_;
@@ -36,5 +91,16 @@ void ListTasksRequest::setAppkey(const std::string& appkey)
 {
 	appkey_ = appkey;
 	setParameter("Appkey", appkey);
+}
+
+std::string ListTasksRequest::getJobName()const
+{
+	return jobName_;
+}
+
+void ListTasksRequest::setJobName(const std::string& jobName)
+{
+	jobName_ = jobName;
+	setParameter("JobName", jobName);
 }
 

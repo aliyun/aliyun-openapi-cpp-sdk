@@ -35,11 +35,29 @@ namespace AlibabaCloud
 				ListTasksRequest();
 				~ListTasksRequest();
 
+				std::string getSubmitTime()const;
+				void setSubmitTime(const std::string& submitTime);
+				int getRunStatus()const;
+				void setRunStatus(int runStatus);
+				int getProductType()const;
+				void setProductType(int productType);
+				int getPageNo()const;
+				void setPageNo(int pageNo);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getAppkey()const;
 				void setAppkey(const std::string& appkey);
+				std::string getJobName()const;
+				void setJobName(const std::string& jobName);
 
             private:
+				std::string submitTime_;
+				int runStatus_;
+				int productType_;
+				int pageNo_;
+				int pageSize_;
 				std::string appkey_;
+				std::string jobName_;
 
 			};
 		}

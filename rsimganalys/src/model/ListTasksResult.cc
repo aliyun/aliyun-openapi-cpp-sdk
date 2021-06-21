@@ -39,71 +39,65 @@ void ListTasksResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["Contents"];
-	for (auto valueDataContents : allDataNode)
+	auto dataNode = value["Data"];
+	if(!dataNode["PageNo"].isNull())
+		data_.pageNo = std::stoi(dataNode["PageNo"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["Total"].isNull())
+		data_.total = std::stoi(dataNode["Total"].asString());
+	if(!dataNode["Pages"].isNull())
+		data_.pages = std::stoi(dataNode["Pages"].asString());
+	auto allContentNode = dataNode["Content"]["Contents"];
+	for (auto dataNodeContentContents : allContentNode)
 	{
-		Contents dataObject;
-		if(!valueDataContents["Appkey"].isNull())
-			dataObject.appkey = valueDataContents["Appkey"].asString();
-		if(!valueDataContents["UserId"].isNull())
-			dataObject.userId = valueDataContents["UserId"].asString();
-		if(!valueDataContents["JobId"].isNull())
-			dataObject.jobId = valueDataContents["JobId"].asString();
-		if(!valueDataContents["Status"].isNull())
-			dataObject.status = valueDataContents["Status"].asString();
-		if(!valueDataContents["Request"].isNull())
-			dataObject.request = valueDataContents["Request"].asString();
-		if(!valueDataContents["Progress"].isNull())
-			dataObject.progress = std::stoi(valueDataContents["Progress"].asString());
-		if(!valueDataContents["Namespace"].isNull())
-			dataObject._namespace = valueDataContents["Namespace"].asString();
-		if(!valueDataContents["Version"].isNull())
-			dataObject.version = valueDataContents["Version"].asString();
-		if(!valueDataContents["CreateTime"].isNull())
-			dataObject.createTime = std::stol(valueDataContents["CreateTime"].asString());
-		if(!valueDataContents["LastUpdateTime"].isNull())
-			dataObject.lastUpdateTime = std::stol(valueDataContents["LastUpdateTime"].asString());
-		if(!valueDataContents["Response"].isNull())
-			dataObject.response = valueDataContents["Response"].asString();
-		if(!valueDataContents["StatusMessage"].isNull())
-			dataObject.statusMessage = valueDataContents["StatusMessage"].asString();
-		if(!valueDataContents["StatusCode"].isNull())
-			dataObject.statusCode = std::stoi(valueDataContents["StatusCode"].asString());
-		if(!valueDataContents["EnableZoneIdentification"].isNull())
-			dataObject.enableZoneIdentification = std::stoi(valueDataContents["EnableZoneIdentification"].asString());
-		if(!valueDataContents["PublishStatus"].isNull())
-			dataObject.publishStatus = std::stoi(valueDataContents["PublishStatus"].asString());
-		data_.push_back(dataObject);
+		Data::Contents contentsObject;
+		if(!dataNodeContentContents["Appkey"].isNull())
+			contentsObject.appkey = dataNodeContentContents["Appkey"].asString();
+		if(!dataNodeContentContents["CreateTime"].isNull())
+			contentsObject.createTime = std::stol(dataNodeContentContents["CreateTime"].asString());
+		if(!dataNodeContentContents["EnableZoneIdentification"].isNull())
+			contentsObject.enableZoneIdentification = std::stoi(dataNodeContentContents["EnableZoneIdentification"].asString());
+		if(!dataNodeContentContents["JobId"].isNull())
+			contentsObject.jobId = dataNodeContentContents["JobId"].asString();
+		if(!dataNodeContentContents["LastUpdateTime"].isNull())
+			contentsObject.lastUpdateTime = std::stol(dataNodeContentContents["LastUpdateTime"].asString());
+		if(!dataNodeContentContents["Namespace"].isNull())
+			contentsObject._namespace = dataNodeContentContents["Namespace"].asString();
+		if(!dataNodeContentContents["Progress"].isNull())
+			contentsObject.progress = std::stoi(dataNodeContentContents["Progress"].asString());
+		if(!dataNodeContentContents["PublishStatus"].isNull())
+			contentsObject.publishStatus = std::stoi(dataNodeContentContents["PublishStatus"].asString());
+		if(!dataNodeContentContents["Request"].isNull())
+			contentsObject.request = dataNodeContentContents["Request"].asString();
+		if(!dataNodeContentContents["Response"].isNull())
+			contentsObject.response = dataNodeContentContents["Response"].asString();
+		if(!dataNodeContentContents["Status"].isNull())
+			contentsObject.status = dataNodeContentContents["Status"].asString();
+		if(!dataNodeContentContents["StatusCode"].isNull())
+			contentsObject.statusCode = std::stoi(dataNodeContentContents["StatusCode"].asString());
+		if(!dataNodeContentContents["StatusMessage"].isNull())
+			contentsObject.statusMessage = dataNodeContentContents["StatusMessage"].asString();
+		if(!dataNodeContentContents["UserId"].isNull())
+			contentsObject.userId = dataNodeContentContents["UserId"].asString();
+		if(!dataNodeContentContents["Version"].isNull())
+			contentsObject.version = dataNodeContentContents["Version"].asString();
+		if(!dataNodeContentContents["JobType"].isNull())
+			contentsObject.jobType = dataNodeContentContents["JobType"].asString();
+		if(!dataNodeContentContents["JobMessage"].isNull())
+			contentsObject.jobMessage = dataNodeContentContents["JobMessage"].asString();
+		if(!dataNodeContentContents["JobName"].isNull())
+			contentsObject.jobName = dataNodeContentContents["JobName"].asString();
+		data_.content.push_back(contentsObject);
 	}
 	if(!value["ResultCode"].isNull())
 		resultCode_ = std::stoi(value["ResultCode"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["ResultMessage"].isNull())
 		resultMessage_ = value["ResultMessage"].asString();
 
 }
 
-int ListTasksResult::getTotalCount()const
-{
-	return totalCount_;
-}
-
-int ListTasksResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-int ListTasksResult::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-std::vector<ListTasksResult::Contents> ListTasksResult::getData()const
+ListTasksResult::Data ListTasksResult::getData()const
 {
 	return data_;
 }

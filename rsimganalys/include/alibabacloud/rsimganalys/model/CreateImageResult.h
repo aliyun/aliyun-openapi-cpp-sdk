@@ -32,22 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RSIMGANALYS_EXPORT CreateImageResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					std::string description;
-					std::string gmtModified;
-					int runStatus;
-					std::string downloadPath;
-					long fileTime;
-					std::string statusCode;
-					std::string statusMessage;
-					std::string imageName;
-					std::string gmtCreate;
-					std::string aliyunPK;
-					int imageId;
-					std::string jobId;
-					std::string urlUploadPath;
-				};
 
 
 				CreateImageResult();
@@ -55,7 +39,7 @@ namespace AlibabaCloud
 				~CreateImageResult();
 				std::string getUserResolution()const;
 				std::string getImageId()const;
-				Data getData()const;
+				std::vector<std::string> getItems()const;
 				std::string getResultMessage()const;
 				int getResultCode()const;
 				int getPublishStatus()const;
@@ -65,7 +49,7 @@ namespace AlibabaCloud
 			private:
 				std::string userResolution_;
 				std::string imageId_;
-				Data data_;
+				std::vector<std::string> items_;
 				std::string resultMessage_;
 				int resultCode_;
 				int publishStatus_;

@@ -32,43 +32,48 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RSIMGANALYS_EXPORT ListTasksResult : public ServiceResult
 			{
 			public:
-				struct Contents
+				struct Data
 				{
-					std::string status;
-					int progress;
-					long createTime;
-					std::string request;
-					std::string _namespace;
-					int statusCode;
-					std::string statusMessage;
-					std::string response;
-					std::string version;
-					long lastUpdateTime;
-					std::string userId;
-					std::string appkey;
-					int enableZoneIdentification;
-					std::string jobId;
-					int publishStatus;
+					struct Contents
+					{
+						std::string status;
+						int progress;
+						long createTime;
+						std::string request;
+						std::string jobName;
+						std::string _namespace;
+						int statusCode;
+						std::string statusMessage;
+						std::string response;
+						std::string jobType;
+						long lastUpdateTime;
+						std::string version;
+						std::string userId;
+						std::string appkey;
+						std::string jobMessage;
+						int enableZoneIdentification;
+						std::string jobId;
+						int publishStatus;
+					};
+					int pages;
+					int pageSize;
+					std::vector<Contents> content;
+					int total;
+					int pageNo;
 				};
 
 
 				ListTasksResult();
 				explicit ListTasksResult(const std::string &payload);
 				~ListTasksResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<Contents> getData()const;
+				Data getData()const;
 				std::string getResultMessage()const;
 				int getResultCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<Contents> data_;
+				Data data_;
 				std::string resultMessage_;
 				int resultCode_;
 

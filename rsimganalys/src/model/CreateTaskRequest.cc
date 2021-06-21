@@ -126,3 +126,14 @@ void CreateTaskRequest::setDstImageId(const std::string& dstImageId)
 	setParameter("DstImageId", dstImageId);
 }
 
+std::string CreateTaskRequest::getJobName()const
+{
+	return jobName_;
+}
+
+void CreateTaskRequest::setJobName(const std::string& jobName)
+{
+	jobName_ = jobName;
+	setParameter("JobName", jobName);
+}
+

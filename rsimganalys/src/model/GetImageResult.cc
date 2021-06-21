@@ -62,18 +62,13 @@ void GetImageResult::parse(const std::string &payload)
 		data_.pixelSize = dataNode["PixelSize"].asString();
 	if(!dataNode["PublishStatus"].isNull())
 		data_.publishStatus = std::stoi(dataNode["PublishStatus"].asString());
+	if(!dataNode["PublicResult"].isNull())
+		data_.publicResult = dataNode["PublicResult"].asString();
 	if(!value["ResultCode"].isNull())
 		resultCode_ = value["ResultCode"].asString();
 	if(!value["ResultMessage"].isNull())
 		resultMessage_ = value["ResultMessage"].asString();
-	if(!value["DownloadPath"].isNull())
-		downloadPath_ = value["DownloadPath"].asString();
 
-}
-
-std::string GetImageResult::getDownloadPath()const
-{
-	return downloadPath_;
 }
 
 GetImageResult::Data GetImageResult::getData()const
