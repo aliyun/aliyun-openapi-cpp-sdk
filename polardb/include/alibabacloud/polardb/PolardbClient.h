@@ -46,6 +46,8 @@
 #include "model/CreateDBNodesResult.h"
 #include "model/CreateDatabaseRequest.h"
 #include "model/CreateDatabaseResult.h"
+#include "model/CreateGlobalDatabaseNetworkRequest.h"
+#include "model/CreateGlobalDatabaseNetworkResult.h"
 #include "model/CreateParameterGroupRequest.h"
 #include "model/CreateParameterGroupResult.h"
 #include "model/DeleteAccountRequest.h"
@@ -64,6 +66,8 @@
 #include "model/DeleteDBNodesResult.h"
 #include "model/DeleteDatabaseRequest.h"
 #include "model/DeleteDatabaseResult.h"
+#include "model/DeleteGlobalDatabaseNetworkRequest.h"
+#include "model/DeleteGlobalDatabaseNetworkResult.h"
 #include "model/DeleteParameterGroupRequest.h"
 #include "model/DeleteParameterGroupResult.h"
 #include "model/DescribeAccountsRequest.h"
@@ -118,6 +122,8 @@
 #include "model/DescribeDatabasesResult.h"
 #include "model/DescribeDetachedBackupsRequest.h"
 #include "model/DescribeDetachedBackupsResult.h"
+#include "model/DescribeGlobalDatabaseNetworkRequest.h"
+#include "model/DescribeGlobalDatabaseNetworkResult.h"
 #include "model/DescribeGlobalDatabaseNetworksRequest.h"
 #include "model/DescribeGlobalDatabaseNetworksResult.h"
 #include "model/DescribeLogBackupPolicyRequest.h"
@@ -186,10 +192,14 @@
 #include "model/ModifyDBEndpointAddressResult.h"
 #include "model/ModifyDBNodeClassRequest.h"
 #include "model/ModifyDBNodeClassResult.h"
+#include "model/ModifyGlobalDatabaseNetworkRequest.h"
+#include "model/ModifyGlobalDatabaseNetworkResult.h"
 #include "model/ModifyLogBackupPolicyRequest.h"
 #include "model/ModifyLogBackupPolicyResult.h"
 #include "model/ModifyPendingMaintenanceActionRequest.h"
 #include "model/ModifyPendingMaintenanceActionResult.h"
+#include "model/RemoveDBClusterFromGDNRequest.h"
+#include "model/RemoveDBClusterFromGDNResult.h"
 #include "model/ResetAccountRequest.h"
 #include "model/ResetAccountResult.h"
 #include "model/RestartDBNodeRequest.h"
@@ -253,6 +263,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDatabaseResult> CreateDatabaseOutcome;
 			typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CreateDatabaseRequest&, const CreateDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
+			typedef Outcome<Error, Model::CreateGlobalDatabaseNetworkResult> CreateGlobalDatabaseNetworkOutcome;
+			typedef std::future<CreateGlobalDatabaseNetworkOutcome> CreateGlobalDatabaseNetworkOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CreateGlobalDatabaseNetworkRequest&, const CreateGlobalDatabaseNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalDatabaseNetworkAsyncHandler;
 			typedef Outcome<Error, Model::CreateParameterGroupResult> CreateParameterGroupOutcome;
 			typedef std::future<CreateParameterGroupOutcome> CreateParameterGroupOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CreateParameterGroupRequest&, const CreateParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParameterGroupAsyncHandler;
@@ -280,6 +293,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDatabaseResult> DeleteDatabaseOutcome;
 			typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DeleteDatabaseRequest&, const DeleteDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatabaseAsyncHandler;
+			typedef Outcome<Error, Model::DeleteGlobalDatabaseNetworkResult> DeleteGlobalDatabaseNetworkOutcome;
+			typedef std::future<DeleteGlobalDatabaseNetworkOutcome> DeleteGlobalDatabaseNetworkOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DeleteGlobalDatabaseNetworkRequest&, const DeleteGlobalDatabaseNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalDatabaseNetworkAsyncHandler;
 			typedef Outcome<Error, Model::DeleteParameterGroupResult> DeleteParameterGroupOutcome;
 			typedef std::future<DeleteParameterGroupOutcome> DeleteParameterGroupOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DeleteParameterGroupRequest&, const DeleteParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParameterGroupAsyncHandler;
@@ -361,6 +377,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDetachedBackupsResult> DescribeDetachedBackupsOutcome;
 			typedef std::future<DescribeDetachedBackupsOutcome> DescribeDetachedBackupsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDetachedBackupsRequest&, const DescribeDetachedBackupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetachedBackupsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGlobalDatabaseNetworkResult> DescribeGlobalDatabaseNetworkOutcome;
+			typedef std::future<DescribeGlobalDatabaseNetworkOutcome> DescribeGlobalDatabaseNetworkOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeGlobalDatabaseNetworkRequest&, const DescribeGlobalDatabaseNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalDatabaseNetworkAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGlobalDatabaseNetworksResult> DescribeGlobalDatabaseNetworksOutcome;
 			typedef std::future<DescribeGlobalDatabaseNetworksOutcome> DescribeGlobalDatabaseNetworksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeGlobalDatabaseNetworksRequest&, const DescribeGlobalDatabaseNetworksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalDatabaseNetworksAsyncHandler;
@@ -463,12 +482,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBNodeClassResult> ModifyDBNodeClassOutcome;
 			typedef std::future<ModifyDBNodeClassOutcome> ModifyDBNodeClassOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBNodeClassRequest&, const ModifyDBNodeClassOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBNodeClassAsyncHandler;
+			typedef Outcome<Error, Model::ModifyGlobalDatabaseNetworkResult> ModifyGlobalDatabaseNetworkOutcome;
+			typedef std::future<ModifyGlobalDatabaseNetworkOutcome> ModifyGlobalDatabaseNetworkOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyGlobalDatabaseNetworkRequest&, const ModifyGlobalDatabaseNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalDatabaseNetworkAsyncHandler;
 			typedef Outcome<Error, Model::ModifyLogBackupPolicyResult> ModifyLogBackupPolicyOutcome;
 			typedef std::future<ModifyLogBackupPolicyOutcome> ModifyLogBackupPolicyOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyLogBackupPolicyRequest&, const ModifyLogBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogBackupPolicyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPendingMaintenanceActionResult> ModifyPendingMaintenanceActionOutcome;
 			typedef std::future<ModifyPendingMaintenanceActionOutcome> ModifyPendingMaintenanceActionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyPendingMaintenanceActionRequest&, const ModifyPendingMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPendingMaintenanceActionAsyncHandler;
+			typedef Outcome<Error, Model::RemoveDBClusterFromGDNResult> RemoveDBClusterFromGDNOutcome;
+			typedef std::future<RemoveDBClusterFromGDNOutcome> RemoveDBClusterFromGDNOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::RemoveDBClusterFromGDNRequest&, const RemoveDBClusterFromGDNOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveDBClusterFromGDNAsyncHandler;
 			typedef Outcome<Error, Model::ResetAccountResult> ResetAccountOutcome;
 			typedef std::future<ResetAccountOutcome> ResetAccountOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ResetAccountRequest&, const ResetAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountAsyncHandler;
@@ -537,6 +562,9 @@ namespace AlibabaCloud
 			CreateDatabaseOutcome createDatabase(const Model::CreateDatabaseRequest &request)const;
 			void createDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDatabaseOutcomeCallable createDatabaseCallable(const Model::CreateDatabaseRequest& request) const;
+			CreateGlobalDatabaseNetworkOutcome createGlobalDatabaseNetwork(const Model::CreateGlobalDatabaseNetworkRequest &request)const;
+			void createGlobalDatabaseNetworkAsync(const Model::CreateGlobalDatabaseNetworkRequest& request, const CreateGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateGlobalDatabaseNetworkOutcomeCallable createGlobalDatabaseNetworkCallable(const Model::CreateGlobalDatabaseNetworkRequest& request) const;
 			CreateParameterGroupOutcome createParameterGroup(const Model::CreateParameterGroupRequest &request)const;
 			void createParameterGroupAsync(const Model::CreateParameterGroupRequest& request, const CreateParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateParameterGroupOutcomeCallable createParameterGroupCallable(const Model::CreateParameterGroupRequest& request) const;
@@ -564,6 +592,9 @@ namespace AlibabaCloud
 			DeleteDatabaseOutcome deleteDatabase(const Model::DeleteDatabaseRequest &request)const;
 			void deleteDatabaseAsync(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDatabaseOutcomeCallable deleteDatabaseCallable(const Model::DeleteDatabaseRequest& request) const;
+			DeleteGlobalDatabaseNetworkOutcome deleteGlobalDatabaseNetwork(const Model::DeleteGlobalDatabaseNetworkRequest &request)const;
+			void deleteGlobalDatabaseNetworkAsync(const Model::DeleteGlobalDatabaseNetworkRequest& request, const DeleteGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteGlobalDatabaseNetworkOutcomeCallable deleteGlobalDatabaseNetworkCallable(const Model::DeleteGlobalDatabaseNetworkRequest& request) const;
 			DeleteParameterGroupOutcome deleteParameterGroup(const Model::DeleteParameterGroupRequest &request)const;
 			void deleteParameterGroupAsync(const Model::DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteParameterGroupOutcomeCallable deleteParameterGroupCallable(const Model::DeleteParameterGroupRequest& request) const;
@@ -645,6 +676,9 @@ namespace AlibabaCloud
 			DescribeDetachedBackupsOutcome describeDetachedBackups(const Model::DescribeDetachedBackupsRequest &request)const;
 			void describeDetachedBackupsAsync(const Model::DescribeDetachedBackupsRequest& request, const DescribeDetachedBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDetachedBackupsOutcomeCallable describeDetachedBackupsCallable(const Model::DescribeDetachedBackupsRequest& request) const;
+			DescribeGlobalDatabaseNetworkOutcome describeGlobalDatabaseNetwork(const Model::DescribeGlobalDatabaseNetworkRequest &request)const;
+			void describeGlobalDatabaseNetworkAsync(const Model::DescribeGlobalDatabaseNetworkRequest& request, const DescribeGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGlobalDatabaseNetworkOutcomeCallable describeGlobalDatabaseNetworkCallable(const Model::DescribeGlobalDatabaseNetworkRequest& request) const;
 			DescribeGlobalDatabaseNetworksOutcome describeGlobalDatabaseNetworks(const Model::DescribeGlobalDatabaseNetworksRequest &request)const;
 			void describeGlobalDatabaseNetworksAsync(const Model::DescribeGlobalDatabaseNetworksRequest& request, const DescribeGlobalDatabaseNetworksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGlobalDatabaseNetworksOutcomeCallable describeGlobalDatabaseNetworksCallable(const Model::DescribeGlobalDatabaseNetworksRequest& request) const;
@@ -747,12 +781,18 @@ namespace AlibabaCloud
 			ModifyDBNodeClassOutcome modifyDBNodeClass(const Model::ModifyDBNodeClassRequest &request)const;
 			void modifyDBNodeClassAsync(const Model::ModifyDBNodeClassRequest& request, const ModifyDBNodeClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBNodeClassOutcomeCallable modifyDBNodeClassCallable(const Model::ModifyDBNodeClassRequest& request) const;
+			ModifyGlobalDatabaseNetworkOutcome modifyGlobalDatabaseNetwork(const Model::ModifyGlobalDatabaseNetworkRequest &request)const;
+			void modifyGlobalDatabaseNetworkAsync(const Model::ModifyGlobalDatabaseNetworkRequest& request, const ModifyGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyGlobalDatabaseNetworkOutcomeCallable modifyGlobalDatabaseNetworkCallable(const Model::ModifyGlobalDatabaseNetworkRequest& request) const;
 			ModifyLogBackupPolicyOutcome modifyLogBackupPolicy(const Model::ModifyLogBackupPolicyRequest &request)const;
 			void modifyLogBackupPolicyAsync(const Model::ModifyLogBackupPolicyRequest& request, const ModifyLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLogBackupPolicyOutcomeCallable modifyLogBackupPolicyCallable(const Model::ModifyLogBackupPolicyRequest& request) const;
 			ModifyPendingMaintenanceActionOutcome modifyPendingMaintenanceAction(const Model::ModifyPendingMaintenanceActionRequest &request)const;
 			void modifyPendingMaintenanceActionAsync(const Model::ModifyPendingMaintenanceActionRequest& request, const ModifyPendingMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPendingMaintenanceActionOutcomeCallable modifyPendingMaintenanceActionCallable(const Model::ModifyPendingMaintenanceActionRequest& request) const;
+			RemoveDBClusterFromGDNOutcome removeDBClusterFromGDN(const Model::RemoveDBClusterFromGDNRequest &request)const;
+			void removeDBClusterFromGDNAsync(const Model::RemoveDBClusterFromGDNRequest& request, const RemoveDBClusterFromGDNAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveDBClusterFromGDNOutcomeCallable removeDBClusterFromGDNCallable(const Model::RemoveDBClusterFromGDNRequest& request) const;
 			ResetAccountOutcome resetAccount(const Model::ResetAccountRequest &request)const;
 			void resetAccountAsync(const Model::ResetAccountRequest& request, const ResetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountOutcomeCallable resetAccountCallable(const Model::ResetAccountRequest& request) const;

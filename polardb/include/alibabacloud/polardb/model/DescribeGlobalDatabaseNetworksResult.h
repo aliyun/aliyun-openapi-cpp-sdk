@@ -44,8 +44,8 @@ namespace AlibabaCloud
 					std::string dBVersion;
 					std::string gDNId;
 					std::string createTime;
-					std::string gDNDescription;
 					std::string dBType;
+					std::string gDNDescription;
 					std::vector<GlobalDatabaseNetwork::DBCluster> dBClusters;
 				};
 

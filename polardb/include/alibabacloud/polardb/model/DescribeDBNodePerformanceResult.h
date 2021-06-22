@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				std::string getDBVersion()const;
 				std::string getEndTime()const;
 				std::string getStartTime()const;
-				std::string getDBNodeId()const;
 				std::string getDBType()const;
+				std::string getDBNodeId()const;
 				std::string getEngine()const;
 
 			protected:
@@ -63,8 +63,8 @@ namespace AlibabaCloud
 				std::string dBVersion_;
 				std::string endTime_;
 				std::string startTime_;
-				std::string dBNodeId_;
 				std::string dBType_;
+				std::string dBNodeId_;
 				std::string engine_;
 
 			};

@@ -43,26 +43,26 @@ void DescribeGlobalDatabaseNetworksResult::parse(const std::string &payload)
 	for (auto valueItemsGlobalDatabaseNetwork : allItemsNode)
 	{
 		GlobalDatabaseNetwork itemsObject;
-		if(!valueItemsGlobalDatabaseNetwork["GDNStatus"].isNull())
-			itemsObject.gDNStatus = valueItemsGlobalDatabaseNetwork["GDNStatus"].asString();
 		if(!valueItemsGlobalDatabaseNetwork["DBVersion"].isNull())
 			itemsObject.dBVersion = valueItemsGlobalDatabaseNetwork["DBVersion"].asString();
 		if(!valueItemsGlobalDatabaseNetwork["GDNId"].isNull())
 			itemsObject.gDNId = valueItemsGlobalDatabaseNetwork["GDNId"].asString();
 		if(!valueItemsGlobalDatabaseNetwork["CreateTime"].isNull())
 			itemsObject.createTime = valueItemsGlobalDatabaseNetwork["CreateTime"].asString();
-		if(!valueItemsGlobalDatabaseNetwork["GDNDescription"].isNull())
-			itemsObject.gDNDescription = valueItemsGlobalDatabaseNetwork["GDNDescription"].asString();
+		if(!valueItemsGlobalDatabaseNetwork["GDNStatus"].isNull())
+			itemsObject.gDNStatus = valueItemsGlobalDatabaseNetwork["GDNStatus"].asString();
 		if(!valueItemsGlobalDatabaseNetwork["DBType"].isNull())
 			itemsObject.dBType = valueItemsGlobalDatabaseNetwork["DBType"].asString();
+		if(!valueItemsGlobalDatabaseNetwork["GDNDescription"].isNull())
+			itemsObject.gDNDescription = valueItemsGlobalDatabaseNetwork["GDNDescription"].asString();
 		auto allDBClustersNode = valueItemsGlobalDatabaseNetwork["DBClusters"]["DBCluster"];
 		for (auto valueItemsGlobalDatabaseNetworkDBClustersDBCluster : allDBClustersNode)
 		{
 			GlobalDatabaseNetwork::DBCluster dBClustersObject;
-			if(!valueItemsGlobalDatabaseNetworkDBClustersDBCluster["Role"].isNull())
-				dBClustersObject.role = valueItemsGlobalDatabaseNetworkDBClustersDBCluster["Role"].asString();
 			if(!valueItemsGlobalDatabaseNetworkDBClustersDBCluster["DBClusterId"].isNull())
 				dBClustersObject.dBClusterId = valueItemsGlobalDatabaseNetworkDBClustersDBCluster["DBClusterId"].asString();
+			if(!valueItemsGlobalDatabaseNetworkDBClustersDBCluster["Role"].isNull())
+				dBClustersObject.role = valueItemsGlobalDatabaseNetworkDBClustersDBCluster["Role"].asString();
 			if(!valueItemsGlobalDatabaseNetworkDBClustersDBCluster["RegionId"].isNull())
 				dBClustersObject.regionId = valueItemsGlobalDatabaseNetworkDBClustersDBCluster["RegionId"].asString();
 			itemsObject.dBClusters.push_back(dBClustersObject);

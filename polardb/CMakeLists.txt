@@ -45,6 +45,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/CreateDBNodesResult.h
 	include/alibabacloud/polardb/model/CreateDatabaseRequest.h
 	include/alibabacloud/polardb/model/CreateDatabaseResult.h
+	include/alibabacloud/polardb/model/CreateGlobalDatabaseNetworkRequest.h
+	include/alibabacloud/polardb/model/CreateGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/CreateParameterGroupRequest.h
 	include/alibabacloud/polardb/model/CreateParameterGroupResult.h
 	include/alibabacloud/polardb/model/DeleteAccountRequest.h
@@ -63,6 +65,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DeleteDBNodesResult.h
 	include/alibabacloud/polardb/model/DeleteDatabaseRequest.h
 	include/alibabacloud/polardb/model/DeleteDatabaseResult.h
+	include/alibabacloud/polardb/model/DeleteGlobalDatabaseNetworkRequest.h
+	include/alibabacloud/polardb/model/DeleteGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/DeleteParameterGroupRequest.h
 	include/alibabacloud/polardb/model/DeleteParameterGroupResult.h
 	include/alibabacloud/polardb/model/DescribeAccountsRequest.h
@@ -117,6 +121,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDatabasesResult.h
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsRequest.h
 	include/alibabacloud/polardb/model/DescribeDetachedBackupsResult.h
+	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworkRequest.h
+	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksRequest.h
 	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksResult.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyRequest.h
@@ -185,10 +191,14 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBEndpointAddressResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassRequest.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassResult.h
+	include/alibabacloud/polardb/model/ModifyGlobalDatabaseNetworkRequest.h
+	include/alibabacloud/polardb/model/ModifyGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/ModifyLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/ModifyLogBackupPolicyResult.h
 	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionRequest.h
 	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionResult.h
+	include/alibabacloud/polardb/model/RemoveDBClusterFromGDNRequest.h
+	include/alibabacloud/polardb/model/RemoveDBClusterFromGDNResult.h
 	include/alibabacloud/polardb/model/ResetAccountRequest.h
 	include/alibabacloud/polardb/model/ResetAccountResult.h
 	include/alibabacloud/polardb/model/RestartDBNodeRequest.h
@@ -234,6 +244,8 @@ set(polardb_src
 	src/model/CreateDBNodesResult.cc
 	src/model/CreateDatabaseRequest.cc
 	src/model/CreateDatabaseResult.cc
+	src/model/CreateGlobalDatabaseNetworkRequest.cc
+	src/model/CreateGlobalDatabaseNetworkResult.cc
 	src/model/CreateParameterGroupRequest.cc
 	src/model/CreateParameterGroupResult.cc
 	src/model/DeleteAccountRequest.cc
@@ -252,6 +264,8 @@ set(polardb_src
 	src/model/DeleteDBNodesResult.cc
 	src/model/DeleteDatabaseRequest.cc
 	src/model/DeleteDatabaseResult.cc
+	src/model/DeleteGlobalDatabaseNetworkRequest.cc
+	src/model/DeleteGlobalDatabaseNetworkResult.cc
 	src/model/DeleteParameterGroupRequest.cc
 	src/model/DeleteParameterGroupResult.cc
 	src/model/DescribeAccountsRequest.cc
@@ -306,6 +320,8 @@ set(polardb_src
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDetachedBackupsRequest.cc
 	src/model/DescribeDetachedBackupsResult.cc
+	src/model/DescribeGlobalDatabaseNetworkRequest.cc
+	src/model/DescribeGlobalDatabaseNetworkResult.cc
 	src/model/DescribeGlobalDatabaseNetworksRequest.cc
 	src/model/DescribeGlobalDatabaseNetworksResult.cc
 	src/model/DescribeLogBackupPolicyRequest.cc
@@ -374,10 +390,14 @@ set(polardb_src
 	src/model/ModifyDBEndpointAddressResult.cc
 	src/model/ModifyDBNodeClassRequest.cc
 	src/model/ModifyDBNodeClassResult.cc
+	src/model/ModifyGlobalDatabaseNetworkRequest.cc
+	src/model/ModifyGlobalDatabaseNetworkResult.cc
 	src/model/ModifyLogBackupPolicyRequest.cc
 	src/model/ModifyLogBackupPolicyResult.cc
 	src/model/ModifyPendingMaintenanceActionRequest.cc
 	src/model/ModifyPendingMaintenanceActionResult.cc
+	src/model/RemoveDBClusterFromGDNRequest.cc
+	src/model/RemoveDBClusterFromGDNResult.cc
 	src/model/ResetAccountRequest.cc
 	src/model/ResetAccountResult.cc
 	src/model/RestartDBNodeRequest.cc

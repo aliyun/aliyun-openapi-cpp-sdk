@@ -483,6 +483,42 @@ PolardbClient::CreateDatabaseOutcomeCallable PolardbClient::createDatabaseCallab
 	return task->get_future();
 }
 
+PolardbClient::CreateGlobalDatabaseNetworkOutcome PolardbClient::createGlobalDatabaseNetwork(const CreateGlobalDatabaseNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGlobalDatabaseNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGlobalDatabaseNetworkOutcome(CreateGlobalDatabaseNetworkResult(outcome.result()));
+	else
+		return CreateGlobalDatabaseNetworkOutcome(outcome.error());
+}
+
+void PolardbClient::createGlobalDatabaseNetworkAsync(const CreateGlobalDatabaseNetworkRequest& request, const CreateGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGlobalDatabaseNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CreateGlobalDatabaseNetworkOutcomeCallable PolardbClient::createGlobalDatabaseNetworkCallable(const CreateGlobalDatabaseNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGlobalDatabaseNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->createGlobalDatabaseNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::CreateParameterGroupOutcome PolardbClient::createParameterGroup(const CreateParameterGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +837,42 @@ PolardbClient::DeleteDatabaseOutcomeCallable PolardbClient::deleteDatabaseCallab
 			[this, request]()
 			{
 			return this->deleteDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DeleteGlobalDatabaseNetworkOutcome PolardbClient::deleteGlobalDatabaseNetwork(const DeleteGlobalDatabaseNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteGlobalDatabaseNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteGlobalDatabaseNetworkOutcome(DeleteGlobalDatabaseNetworkResult(outcome.result()));
+	else
+		return DeleteGlobalDatabaseNetworkOutcome(outcome.error());
+}
+
+void PolardbClient::deleteGlobalDatabaseNetworkAsync(const DeleteGlobalDatabaseNetworkRequest& request, const DeleteGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteGlobalDatabaseNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DeleteGlobalDatabaseNetworkOutcomeCallable PolardbClient::deleteGlobalDatabaseNetworkCallable(const DeleteGlobalDatabaseNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteGlobalDatabaseNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteGlobalDatabaseNetwork(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1773,6 +1845,42 @@ PolardbClient::DescribeDetachedBackupsOutcomeCallable PolardbClient::describeDet
 			[this, request]()
 			{
 			return this->describeDetachedBackups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeGlobalDatabaseNetworkOutcome PolardbClient::describeGlobalDatabaseNetwork(const DescribeGlobalDatabaseNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGlobalDatabaseNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGlobalDatabaseNetworkOutcome(DescribeGlobalDatabaseNetworkResult(outcome.result()));
+	else
+		return DescribeGlobalDatabaseNetworkOutcome(outcome.error());
+}
+
+void PolardbClient::describeGlobalDatabaseNetworkAsync(const DescribeGlobalDatabaseNetworkRequest& request, const DescribeGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGlobalDatabaseNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeGlobalDatabaseNetworkOutcomeCallable PolardbClient::describeGlobalDatabaseNetworkCallable(const DescribeGlobalDatabaseNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGlobalDatabaseNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGlobalDatabaseNetwork(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3003,6 +3111,42 @@ PolardbClient::ModifyDBNodeClassOutcomeCallable PolardbClient::modifyDBNodeClass
 	return task->get_future();
 }
 
+PolardbClient::ModifyGlobalDatabaseNetworkOutcome PolardbClient::modifyGlobalDatabaseNetwork(const ModifyGlobalDatabaseNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyGlobalDatabaseNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyGlobalDatabaseNetworkOutcome(ModifyGlobalDatabaseNetworkResult(outcome.result()));
+	else
+		return ModifyGlobalDatabaseNetworkOutcome(outcome.error());
+}
+
+void PolardbClient::modifyGlobalDatabaseNetworkAsync(const ModifyGlobalDatabaseNetworkRequest& request, const ModifyGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyGlobalDatabaseNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ModifyGlobalDatabaseNetworkOutcomeCallable PolardbClient::modifyGlobalDatabaseNetworkCallable(const ModifyGlobalDatabaseNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyGlobalDatabaseNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyGlobalDatabaseNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::ModifyLogBackupPolicyOutcome PolardbClient::modifyLogBackupPolicy(const ModifyLogBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3069,6 +3213,42 @@ PolardbClient::ModifyPendingMaintenanceActionOutcomeCallable PolardbClient::modi
 			[this, request]()
 			{
 			return this->modifyPendingMaintenanceAction(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::RemoveDBClusterFromGDNOutcome PolardbClient::removeDBClusterFromGDN(const RemoveDBClusterFromGDNRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveDBClusterFromGDNOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveDBClusterFromGDNOutcome(RemoveDBClusterFromGDNResult(outcome.result()));
+	else
+		return RemoveDBClusterFromGDNOutcome(outcome.error());
+}
+
+void PolardbClient::removeDBClusterFromGDNAsync(const RemoveDBClusterFromGDNRequest& request, const RemoveDBClusterFromGDNAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeDBClusterFromGDN(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::RemoveDBClusterFromGDNOutcomeCallable PolardbClient::removeDBClusterFromGDNCallable(const RemoveDBClusterFromGDNRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveDBClusterFromGDNOutcome()>>(
+			[this, request]()
+			{
+			return this->removeDBClusterFromGDN(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

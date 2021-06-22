@@ -59,18 +59,18 @@ void DescribeDBNodePerformanceResult::parse(const std::string &payload)
 		}
 		performanceKeys_.push_back(performanceKeysObject);
 	}
+	if(!value["DBVersion"].isNull())
+		dBVersion_ = value["DBVersion"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DBType"].isNull())
+		dBType_ = value["DBType"].asString();
 	if(!value["DBNodeId"].isNull())
 		dBNodeId_ = value["DBNodeId"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
-	if(!value["DBType"].isNull())
-		dBType_ = value["DBType"].asString();
-	if(!value["DBVersion"].isNull())
-		dBVersion_ = value["DBVersion"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -94,14 +94,14 @@ std::string DescribeDBNodePerformanceResult::getStartTime()const
 	return startTime_;
 }
 
-std::string DescribeDBNodePerformanceResult::getDBNodeId()const
-{
-	return dBNodeId_;
-}
-
 std::string DescribeDBNodePerformanceResult::getDBType()const
 {
 	return dBType_;
+}
+
+std::string DescribeDBNodePerformanceResult::getDBNodeId()const
+{
+	return dBNodeId_;
 }
 
 std::string DescribeDBNodePerformanceResult::getEngine()const
