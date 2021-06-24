@@ -21,61 +21,21 @@ set(hitsdb_public_header
 	include/alibabacloud/hitsdb/HitsdbExport.h )
 
 set(hitsdb_public_header_model 
-	include/alibabacloud/hitsdb/model/CreateHiTSDBInstanceRequest.h
-	include/alibabacloud/hitsdb/model/CreateHiTSDBInstanceResult.h
-	include/alibabacloud/hitsdb/model/DeleteHiTSDBInstanceRequest.h
-	include/alibabacloud/hitsdb/model/DeleteHiTSDBInstanceResult.h
-	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceRequest.h
-	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceResult.h
-	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceListRequest.h
-	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceListResult.h
-	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceSecurityIpListRequest.h
-	include/alibabacloud/hitsdb/model/DescribeHiTSDBInstanceSecurityIpListResult.h
 	include/alibabacloud/hitsdb/model/DescribeRegionsRequest.h
 	include/alibabacloud/hitsdb/model/DescribeRegionsResult.h
-	include/alibabacloud/hitsdb/model/DescribeZonesRequest.h
-	include/alibabacloud/hitsdb/model/DescribeZonesResult.h
-	include/alibabacloud/hitsdb/model/ModifyHiTSDBInstanceClassRequest.h
-	include/alibabacloud/hitsdb/model/ModifyHiTSDBInstanceClassResult.h
-	include/alibabacloud/hitsdb/model/ModifyHiTSDBInstanceSecurityIpListRequest.h
-	include/alibabacloud/hitsdb/model/ModifyHiTSDBInstanceSecurityIpListResult.h
-	include/alibabacloud/hitsdb/model/RenameHiTSDBInstanceAliasRequest.h
-	include/alibabacloud/hitsdb/model/RenameHiTSDBInstanceAliasResult.h
-	include/alibabacloud/hitsdb/model/RenewTSDBInstanceRequest.h
-	include/alibabacloud/hitsdb/model/RenewTSDBInstanceResult.h
-	include/alibabacloud/hitsdb/model/RestartHiTSDBInstanceRequest.h
-	include/alibabacloud/hitsdb/model/RestartHiTSDBInstanceResult.h
-	include/alibabacloud/hitsdb/model/SwitchHiTSDBInstancePublicNetRequest.h
-	include/alibabacloud/hitsdb/model/SwitchHiTSDBInstancePublicNetResult.h )
+	include/alibabacloud/hitsdb/model/GetLindormInstanceRequest.h
+	include/alibabacloud/hitsdb/model/GetLindormInstanceResult.h
+	include/alibabacloud/hitsdb/model/GetLindormInstanceListRequest.h
+	include/alibabacloud/hitsdb/model/GetLindormInstanceListResult.h )
 
 set(hitsdb_src 
 	src/HitsdbClient.cc
-	src/model/CreateHiTSDBInstanceRequest.cc
-	src/model/CreateHiTSDBInstanceResult.cc
-	src/model/DeleteHiTSDBInstanceRequest.cc
-	src/model/DeleteHiTSDBInstanceResult.cc
-	src/model/DescribeHiTSDBInstanceRequest.cc
-	src/model/DescribeHiTSDBInstanceResult.cc
-	src/model/DescribeHiTSDBInstanceListRequest.cc
-	src/model/DescribeHiTSDBInstanceListResult.cc
-	src/model/DescribeHiTSDBInstanceSecurityIpListRequest.cc
-	src/model/DescribeHiTSDBInstanceSecurityIpListResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
-	src/model/DescribeZonesRequest.cc
-	src/model/DescribeZonesResult.cc
-	src/model/ModifyHiTSDBInstanceClassRequest.cc
-	src/model/ModifyHiTSDBInstanceClassResult.cc
-	src/model/ModifyHiTSDBInstanceSecurityIpListRequest.cc
-	src/model/ModifyHiTSDBInstanceSecurityIpListResult.cc
-	src/model/RenameHiTSDBInstanceAliasRequest.cc
-	src/model/RenameHiTSDBInstanceAliasResult.cc
-	src/model/RenewTSDBInstanceRequest.cc
-	src/model/RenewTSDBInstanceResult.cc
-	src/model/RestartHiTSDBInstanceRequest.cc
-	src/model/RestartHiTSDBInstanceResult.cc
-	src/model/SwitchHiTSDBInstancePublicNetRequest.cc
-	src/model/SwitchHiTSDBInstancePublicNetResult.cc )
+	src/model/GetLindormInstanceRequest.cc
+	src/model/GetLindormInstanceResult.cc
+	src/model/GetLindormInstanceListRequest.cc
+	src/model/GetLindormInstanceListResult.cc )
 
 add_library(hitsdb ${LIB_TYPE}
 	${hitsdb_public_header}
