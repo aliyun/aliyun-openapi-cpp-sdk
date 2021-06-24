@@ -116,6 +116,12 @@ void QuerySettleBillResult::parse(const std::string &payload)
 			itemObject.pipCode = dataNodeItemsItem["PipCode"].asString();
 		if(!dataNodeItemsItem["CommodityCode"].isNull())
 			itemObject.commodityCode = dataNodeItemsItem["CommodityCode"].asString();
+		if(!dataNodeItemsItem["BillAccountID"].isNull())
+			itemObject.billAccountID = dataNodeItemsItem["BillAccountID"].asString();
+		if(!dataNodeItemsItem["BillAccountName"].isNull())
+			itemObject.billAccountName = dataNodeItemsItem["BillAccountName"].asString();
+		if(!dataNodeItemsItem["BizType"].isNull())
+			itemObject.bizType = dataNodeItemsItem["BizType"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

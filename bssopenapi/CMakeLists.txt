@@ -21,6 +21,8 @@ set(bssopenapi_public_header
 	include/alibabacloud/bssopenapi/BssOpenApiExport.h )
 
 set(bssopenapi_public_header_model 
+	include/alibabacloud/bssopenapi/model/AddAccountRelationRequest.h
+	include/alibabacloud/bssopenapi/model/AddAccountRelationResult.h
 	include/alibabacloud/bssopenapi/model/AllocateCostUnitResourceRequest.h
 	include/alibabacloud/bssopenapi/model/AllocateCostUnitResourceResult.h
 	include/alibabacloud/bssopenapi/model/ApplyInvoiceRequest.h
@@ -29,6 +31,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/CancelOrderResult.h
 	include/alibabacloud/bssopenapi/model/ChangeResellerConsumeAmountRequest.h
 	include/alibabacloud/bssopenapi/model/ChangeResellerConsumeAmountResult.h
+	include/alibabacloud/bssopenapi/model/ConfirmRelationRequest.h
+	include/alibabacloud/bssopenapi/model/ConfirmRelationResult.h
 	include/alibabacloud/bssopenapi/model/ConvertChargeTypeRequest.h
 	include/alibabacloud/bssopenapi/model/ConvertChargeTypeResult.h
 	include/alibabacloud/bssopenapi/model/CreateAgAccountRequest.h
@@ -47,8 +51,16 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/DescribeInstanceBillResult.h
 	include/alibabacloud/bssopenapi/model/DescribePricingModuleRequest.h
 	include/alibabacloud/bssopenapi/model/DescribePricingModuleResult.h
+	include/alibabacloud/bssopenapi/model/DescribeResourceCoverageDetailRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeResourceCoverageDetailResult.h
+	include/alibabacloud/bssopenapi/model/DescribeResourceCoverageTotalRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeResourceCoverageTotalResult.h
 	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeResourcePackageProductResult.h
+	include/alibabacloud/bssopenapi/model/DescribeResourceUsageDetailRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeResourceUsageDetailResult.h
+	include/alibabacloud/bssopenapi/model/DescribeResourceUsageTotalRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeResourceUsageTotalResult.h
 	include/alibabacloud/bssopenapi/model/DescribeSplitItemBillRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeSplitItemBillResult.h
 	include/alibabacloud/bssopenapi/model/EnableBillGenerationRequest.h
@@ -65,6 +77,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/GetResourcePackagePriceResult.h
 	include/alibabacloud/bssopenapi/model/GetSubscriptionPriceRequest.h
 	include/alibabacloud/bssopenapi/model/GetSubscriptionPriceResult.h
+	include/alibabacloud/bssopenapi/model/ModifyAccountRelationRequest.h
+	include/alibabacloud/bssopenapi/model/ModifyAccountRelationResult.h
 	include/alibabacloud/bssopenapi/model/ModifyCostUnitRequest.h
 	include/alibabacloud/bssopenapi/model/ModifyCostUnitResult.h
 	include/alibabacloud/bssopenapi/model/ModifyInstanceRequest.h
@@ -93,6 +107,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryCostUnitResourceResult.h
 	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryCustomerAddressListResult.h
+	include/alibabacloud/bssopenapi/model/QueryDPUtilizationDetailRequest.h
+	include/alibabacloud/bssopenapi/model/QueryDPUtilizationDetailResult.h
 	include/alibabacloud/bssopenapi/model/QueryEvaluateListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryEvaluateListResult.h
 	include/alibabacloud/bssopenapi/model/QueryFinancialAccountInfoRequest.h
@@ -139,12 +155,16 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QuerySplitItemBillResult.h
 	include/alibabacloud/bssopenapi/model/QueryUserOmsDataRequest.h
 	include/alibabacloud/bssopenapi/model/QueryUserOmsDataResult.h
+	include/alibabacloud/bssopenapi/model/RelieveAccountRelationRequest.h
+	include/alibabacloud/bssopenapi/model/RelieveAccountRelationResult.h
 	include/alibabacloud/bssopenapi/model/RenewInstanceRequest.h
 	include/alibabacloud/bssopenapi/model/RenewInstanceResult.h
 	include/alibabacloud/bssopenapi/model/RenewResourcePackageRequest.h
 	include/alibabacloud/bssopenapi/model/RenewResourcePackageResult.h
 	include/alibabacloud/bssopenapi/model/SaveUserCreditRequest.h
 	include/alibabacloud/bssopenapi/model/SaveUserCreditResult.h
+	include/alibabacloud/bssopenapi/model/SetAllExpirationDayRequest.h
+	include/alibabacloud/bssopenapi/model/SetAllExpirationDayResult.h
 	include/alibabacloud/bssopenapi/model/SetCreditLabelActionRequest.h
 	include/alibabacloud/bssopenapi/model/SetCreditLabelActionResult.h
 	include/alibabacloud/bssopenapi/model/SetRenewalRequest.h
@@ -168,6 +188,8 @@ set(bssopenapi_public_header_model
 
 set(bssopenapi_src 
 	src/BssOpenApiClient.cc
+	src/model/AddAccountRelationRequest.cc
+	src/model/AddAccountRelationResult.cc
 	src/model/AllocateCostUnitResourceRequest.cc
 	src/model/AllocateCostUnitResourceResult.cc
 	src/model/ApplyInvoiceRequest.cc
@@ -176,6 +198,8 @@ set(bssopenapi_src
 	src/model/CancelOrderResult.cc
 	src/model/ChangeResellerConsumeAmountRequest.cc
 	src/model/ChangeResellerConsumeAmountResult.cc
+	src/model/ConfirmRelationRequest.cc
+	src/model/ConfirmRelationResult.cc
 	src/model/ConvertChargeTypeRequest.cc
 	src/model/ConvertChargeTypeResult.cc
 	src/model/CreateAgAccountRequest.cc
@@ -194,8 +218,16 @@ set(bssopenapi_src
 	src/model/DescribeInstanceBillResult.cc
 	src/model/DescribePricingModuleRequest.cc
 	src/model/DescribePricingModuleResult.cc
+	src/model/DescribeResourceCoverageDetailRequest.cc
+	src/model/DescribeResourceCoverageDetailResult.cc
+	src/model/DescribeResourceCoverageTotalRequest.cc
+	src/model/DescribeResourceCoverageTotalResult.cc
 	src/model/DescribeResourcePackageProductRequest.cc
 	src/model/DescribeResourcePackageProductResult.cc
+	src/model/DescribeResourceUsageDetailRequest.cc
+	src/model/DescribeResourceUsageDetailResult.cc
+	src/model/DescribeResourceUsageTotalRequest.cc
+	src/model/DescribeResourceUsageTotalResult.cc
 	src/model/DescribeSplitItemBillRequest.cc
 	src/model/DescribeSplitItemBillResult.cc
 	src/model/EnableBillGenerationRequest.cc
@@ -212,6 +244,8 @@ set(bssopenapi_src
 	src/model/GetResourcePackagePriceResult.cc
 	src/model/GetSubscriptionPriceRequest.cc
 	src/model/GetSubscriptionPriceResult.cc
+	src/model/ModifyAccountRelationRequest.cc
+	src/model/ModifyAccountRelationResult.cc
 	src/model/ModifyCostUnitRequest.cc
 	src/model/ModifyCostUnitResult.cc
 	src/model/ModifyInstanceRequest.cc
@@ -240,6 +274,8 @@ set(bssopenapi_src
 	src/model/QueryCostUnitResourceResult.cc
 	src/model/QueryCustomerAddressListRequest.cc
 	src/model/QueryCustomerAddressListResult.cc
+	src/model/QueryDPUtilizationDetailRequest.cc
+	src/model/QueryDPUtilizationDetailResult.cc
 	src/model/QueryEvaluateListRequest.cc
 	src/model/QueryEvaluateListResult.cc
 	src/model/QueryFinancialAccountInfoRequest.cc
@@ -286,12 +322,16 @@ set(bssopenapi_src
 	src/model/QuerySplitItemBillResult.cc
 	src/model/QueryUserOmsDataRequest.cc
 	src/model/QueryUserOmsDataResult.cc
+	src/model/RelieveAccountRelationRequest.cc
+	src/model/RelieveAccountRelationResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
 	src/model/RenewResourcePackageRequest.cc
 	src/model/RenewResourcePackageResult.cc
 	src/model/SaveUserCreditRequest.cc
 	src/model/SaveUserCreditResult.cc
+	src/model/SetAllExpirationDayRequest.cc
+	src/model/SetAllExpirationDayResult.cc
 	src/model/SetCreditLabelActionRequest.cc
 	src/model/SetCreditLabelActionResult.cc
 	src/model/SetRenewalRequest.cc

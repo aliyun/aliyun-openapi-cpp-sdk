@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCERESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_RELIEVEACCOUNTRELATIONRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_RELIEVEACCOUNTRELATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySavingsPlansInstanceResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT RelieveAccountRelationResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct SavingsPlansDetailResponse
-					{
-						struct Tag
-						{
-							std::string value;
-							std::string key;
-						};
-						std::string status;
-						std::string allocationStatus;
-						std::string endTime;
-						std::string instanceId;
-						std::string instanceFamily;
-						std::string startTime;
-						std::string totalSave;
-						std::string prepayFee;
-						std::string payMode;
-						std::string utilization;
-						std::string currency;
-						std::string poolValue;
-						std::string region;
-						std::vector<SavingsPlansDetailResponse::Tag> tags;
-						std::string savingsType;
-					};
-					int totalCount;
-					int pageNum;
-					int pageSize;
-					std::vector<SavingsPlansDetailResponse> items;
+					std::string hostId;
 				};
 
 
-				QuerySavingsPlansInstanceResult();
-				explicit QuerySavingsPlansInstanceResult(const std::string &payload);
-				~QuerySavingsPlansInstanceResult();
+				RelieveAccountRelationResult();
+				explicit RelieveAccountRelationResult(const std::string &payload);
+				~RelieveAccountRelationResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -84,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_RELIEVEACCOUNTRELATIONRESULT_H_

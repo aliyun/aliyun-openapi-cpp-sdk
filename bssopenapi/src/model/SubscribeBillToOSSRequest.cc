@@ -60,6 +60,17 @@ void SubscribeBillToOSSRequest::setSubscribeBucket(const std::string& subscribeB
 	setParameter("SubscribeBucket", subscribeBucket);
 }
 
+std::string SubscribeBillToOSSRequest::getBeginBillingCycle()const
+{
+	return beginBillingCycle_;
+}
+
+void SubscribeBillToOSSRequest::setBeginBillingCycle(const std::string& beginBillingCycle)
+{
+	beginBillingCycle_ = beginBillingCycle;
+	setParameter("BeginBillingCycle", beginBillingCycle);
+}
+
 std::string SubscribeBillToOSSRequest::getMultAccountRelSubscribe()const
 {
 	return multAccountRelSubscribe_;

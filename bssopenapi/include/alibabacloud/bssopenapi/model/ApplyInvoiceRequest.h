@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setCustomerId(long customerId);
 				std::vector<long> getSelectedIds()const;
 				void setSelectedIds(const std::vector<long>& selectedIds);
+				std::string getUserRemark()const;
+				void setUserRemark(const std::string& userRemark);
 
             private:
 				int invoicingType_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				bool invoiceByAmount_;
 				long customerId_;
 				std::vector<long> selectedIds_;
+				std::string userRemark_;
 
 			};
 		}

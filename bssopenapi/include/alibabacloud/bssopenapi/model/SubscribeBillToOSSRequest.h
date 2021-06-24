@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setSubscribeType(const std::string& subscribeType);
 				std::string getSubscribeBucket()const;
 				void setSubscribeBucket(const std::string& subscribeBucket);
+				std::string getBeginBillingCycle()const;
+				void setBeginBillingCycle(const std::string& beginBillingCycle);
 				std::string getMultAccountRelSubscribe()const;
 				void setMultAccountRelSubscribe(const std::string& multAccountRelSubscribe);
 
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 				long bucketOwnerId_;
 				std::string subscribeType_;
 				std::string subscribeBucket_;
+				std::string beginBillingCycle_;
 				std::string multAccountRelSubscribe_;
 
 			};

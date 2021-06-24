@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCEREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYDPUTILIZATIONDETAILREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYDPUTILIZATIONDETAILREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySavingsPlansInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryDPUtilizationDetailRequest : public RpcServiceRequest
 			{
-			public:
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
-				QuerySavingsPlansInstanceRequest();
-				~QuerySavingsPlansInstanceRequest();
+				QueryDPUtilizationDetailRequest();
+				~QueryDPUtilizationDetailRequest();
 
+				std::string getDeductedInstanceId()const;
+				void setDeductedInstanceId(const std::string& deductedInstanceId);
+				std::string getLastToken()const;
+				void setLastToken(const std::string& lastToken);
+				std::string getInstanceSpec()const;
+				void setInstanceSpec(const std::string& instanceSpec);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
+				bool getIncludeShare()const;
+				void setIncludeShare(bool includeShare);
+				std::string getCommodityCode()const;
+				void setCommodityCode(const std::string& commodityCode);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getLocale()const;
-				void setLocale(const std::string& locale);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
+				int getLimit()const;
+				void setLimit(int limit);
 
             private:
+				std::string deductedInstanceId_;
+				std::string lastToken_;
+				std::string instanceSpec_;
 				std::string endTime_;
+				bool includeShare_;
+				std::string commodityCode_;
 				std::string startTime_;
-				std::string locale_;
-				int pageNum_;
 				std::string instanceId_;
-				int pageSize_;
-				std::vector<Tag> tag_;
+				int limit_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYDPUTILIZATIONDETAILREQUEST_H_

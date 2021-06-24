@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCERESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_DESCRIBERESOURCEUSAGETOTALRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_DESCRIBERESOURCEUSAGETOTALRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySavingsPlansInstanceResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT DescribeResourceUsageTotalResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct SavingsPlansDetailResponse
+					struct TotalUsage
 					{
-						struct Tag
-						{
-							std::string value;
-							std::string key;
-						};
-						std::string status;
-						std::string allocationStatus;
-						std::string endTime;
-						std::string instanceId;
-						std::string instanceFamily;
-						std::string startTime;
-						std::string totalSave;
-						std::string prepayFee;
-						std::string payMode;
-						std::string utilization;
-						std::string currency;
-						std::string poolValue;
-						std::string region;
-						std::vector<SavingsPlansDetailResponse::Tag> tags;
-						std::string savingsType;
+						float reservationCost;
+						float postpaidCost;
+						float savedCost;
+						float potentialSavedCost;
+						float usagePercentage;
 					};
-					int totalCount;
-					int pageNum;
-					int pageSize;
-					std::vector<SavingsPlansDetailResponse> items;
+					struct Item
+					{
+						std::string period;
+						float usagePercentage;
+					};
+					TotalUsage totalUsage;
+					std::vector<Item> periodCoverage;
 				};
 
 
-				QuerySavingsPlansInstanceResult();
-				explicit QuerySavingsPlansInstanceResult(const std::string &payload);
-				~QuerySavingsPlansInstanceResult();
+				DescribeResourceUsageTotalResult();
+				explicit DescribeResourceUsageTotalResult(const std::string &payload);
+				~DescribeResourceUsageTotalResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -84,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_DESCRIBERESOURCEUSAGETOTALRESULT_H_

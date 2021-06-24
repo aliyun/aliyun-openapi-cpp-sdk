@@ -76,8 +76,18 @@ void QuerySavingsPlansInstanceResult::parse(const std::string &payload)
 			savingsPlansDetailResponseObject.totalSave = dataNodeItemsSavingsPlansDetailResponse["TotalSave"].asString();
 		if(!dataNodeItemsSavingsPlansDetailResponse["Utilization"].isNull())
 			savingsPlansDetailResponseObject.utilization = dataNodeItemsSavingsPlansDetailResponse["Utilization"].asString();
-		if(!dataNodeItemsSavingsPlansDetailResponse["Share"].isNull())
-			savingsPlansDetailResponseObject.share = dataNodeItemsSavingsPlansDetailResponse["Share"].asString() == "true";
+		if(!dataNodeItemsSavingsPlansDetailResponse["AllocationStatus"].isNull())
+			savingsPlansDetailResponseObject.allocationStatus = dataNodeItemsSavingsPlansDetailResponse["AllocationStatus"].asString();
+		auto allTagsNode = dataNodeItemsSavingsPlansDetailResponse["Tags"]["Tag"];
+		for (auto dataNodeItemsSavingsPlansDetailResponseTagsTag : allTagsNode)
+		{
+			Data::SavingsPlansDetailResponse::Tag tagsObject;
+			if(!dataNodeItemsSavingsPlansDetailResponseTagsTag["Key"].isNull())
+				tagsObject.key = dataNodeItemsSavingsPlansDetailResponseTagsTag["Key"].asString();
+			if(!dataNodeItemsSavingsPlansDetailResponseTagsTag["Value"].isNull())
+				tagsObject.value = dataNodeItemsSavingsPlansDetailResponseTagsTag["Value"].asString();
+			savingsPlansDetailResponseObject.tags.push_back(tagsObject);
+		}
 		data_.items.push_back(savingsPlansDetailResponseObject);
 	}
 	if(!value["Code"].isNull())

@@ -93,3 +93,19 @@ void QuerySavingsPlansInstanceRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::vector<QuerySavingsPlansInstanceRequest::Tag> QuerySavingsPlansInstanceRequest::getTag()const
+{
+	return tag_;
+}
+
+void QuerySavingsPlansInstanceRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+

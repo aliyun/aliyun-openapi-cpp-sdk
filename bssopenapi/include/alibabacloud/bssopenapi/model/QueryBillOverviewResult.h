@@ -36,27 +36,31 @@ namespace AlibabaCloud
 				{
 					struct Item
 					{
-						float deductedByCoupons;
 						float afterTaxAmount;
-						std::string roundDownDiscount;
 						std::string productName;
-						std::string productDetail;
-						std::string productCode;
-						std::string productType;
-						float outstandingAmount;
+						std::string billAccountID;
 						float deductedByCashCoupons;
 						float tax;
 						std::string paymentCurrency;
 						float paymentAmount;
 						float deductedByPrepaidCard;
-						std::string pipCode;
 						float invoiceDiscount;
 						std::string item;
 						std::string subscriptionType;
 						float pretaxGrossAmount;
-						float pretaxAmount;
 						std::string currency;
 						std::string commodityCode;
+						float deductedByCoupons;
+						std::string roundDownDiscount;
+						std::string productDetail;
+						std::string productCode;
+						std::string productType;
+						float outstandingAmount;
+						std::string bizType;
+						std::string pipCode;
+						float pretaxAmount;
+						std::string ownerID;
+						std::string billAccountName;
 						float pretaxAmountLocal;
 					};
 					std::string billingCycle;

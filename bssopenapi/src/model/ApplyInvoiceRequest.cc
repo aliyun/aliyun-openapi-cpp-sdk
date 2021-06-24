@@ -128,3 +128,14 @@ void ApplyInvoiceRequest::setSelectedIds(const std::vector<long>& selectedIds)
 	}
 }
 
+std::string ApplyInvoiceRequest::getUserRemark()const
+{
+	return userRemark_;
+}
+
+void ApplyInvoiceRequest::setUserRemark(const std::string& userRemark)
+{
+	userRemark_ = userRemark;
+	setParameter("UserRemark", userRemark);
+}
+

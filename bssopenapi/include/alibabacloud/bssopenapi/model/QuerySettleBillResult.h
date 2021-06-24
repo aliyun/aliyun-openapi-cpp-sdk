@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						float afterTaxAmount;
 						std::string productName;
 						std::string subOrderId;
+						std::string billAccountID;
 						float deductedByCashCoupons;
 						std::string paymentTime;
 						float tax;
@@ -61,9 +62,11 @@ namespace AlibabaCloud
 						std::string productCode;
 						std::string productType;
 						float outstandingAmount;
+						std::string bizType;
 						std::string pipCode;
 						std::string ownerID;
 						float pretaxAmount;
+						std::string billAccountName;
 						std::string recordID;
 						float pretaxAmountLocal;
 					};

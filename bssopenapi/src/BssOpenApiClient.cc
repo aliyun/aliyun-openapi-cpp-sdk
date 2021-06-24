@@ -51,6 +51,42 @@ BssOpenApiClient::BssOpenApiClient(const std::string & accessKeyId, const std::s
 BssOpenApiClient::~BssOpenApiClient()
 {}
 
+BssOpenApiClient::AddAccountRelationOutcome BssOpenApiClient::addAccountRelation(const AddAccountRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddAccountRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddAccountRelationOutcome(AddAccountRelationResult(outcome.result()));
+	else
+		return AddAccountRelationOutcome(outcome.error());
+}
+
+void BssOpenApiClient::addAccountRelationAsync(const AddAccountRelationRequest& request, const AddAccountRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addAccountRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::AddAccountRelationOutcomeCallable BssOpenApiClient::addAccountRelationCallable(const AddAccountRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddAccountRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->addAccountRelation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::AllocateCostUnitResourceOutcome BssOpenApiClient::allocateCostUnitResource(const AllocateCostUnitResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,42 @@ BssOpenApiClient::ChangeResellerConsumeAmountOutcomeCallable BssOpenApiClient::c
 			[this, request]()
 			{
 			return this->changeResellerConsumeAmount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::ConfirmRelationOutcome BssOpenApiClient::confirmRelation(const ConfirmRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfirmRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfirmRelationOutcome(ConfirmRelationResult(outcome.result()));
+	else
+		return ConfirmRelationOutcome(outcome.error());
+}
+
+void BssOpenApiClient::confirmRelationAsync(const ConfirmRelationRequest& request, const ConfirmRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, confirmRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::ConfirmRelationOutcomeCallable BssOpenApiClient::confirmRelationCallable(const ConfirmRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfirmRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->confirmRelation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +591,78 @@ BssOpenApiClient::DescribePricingModuleOutcomeCallable BssOpenApiClient::describ
 	return task->get_future();
 }
 
+BssOpenApiClient::DescribeResourceCoverageDetailOutcome BssOpenApiClient::describeResourceCoverageDetail(const DescribeResourceCoverageDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResourceCoverageDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResourceCoverageDetailOutcome(DescribeResourceCoverageDetailResult(outcome.result()));
+	else
+		return DescribeResourceCoverageDetailOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeResourceCoverageDetailAsync(const DescribeResourceCoverageDetailRequest& request, const DescribeResourceCoverageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResourceCoverageDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeResourceCoverageDetailOutcomeCallable BssOpenApiClient::describeResourceCoverageDetailCallable(const DescribeResourceCoverageDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResourceCoverageDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResourceCoverageDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::DescribeResourceCoverageTotalOutcome BssOpenApiClient::describeResourceCoverageTotal(const DescribeResourceCoverageTotalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResourceCoverageTotalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResourceCoverageTotalOutcome(DescribeResourceCoverageTotalResult(outcome.result()));
+	else
+		return DescribeResourceCoverageTotalOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeResourceCoverageTotalAsync(const DescribeResourceCoverageTotalRequest& request, const DescribeResourceCoverageTotalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResourceCoverageTotal(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeResourceCoverageTotalOutcomeCallable BssOpenApiClient::describeResourceCoverageTotalCallable(const DescribeResourceCoverageTotalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResourceCoverageTotalOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResourceCoverageTotal(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::DescribeResourcePackageProductOutcome BssOpenApiClient::describeResourcePackageProduct(const DescribeResourcePackageProductRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +693,78 @@ BssOpenApiClient::DescribeResourcePackageProductOutcomeCallable BssOpenApiClient
 			[this, request]()
 			{
 			return this->describeResourcePackageProduct(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::DescribeResourceUsageDetailOutcome BssOpenApiClient::describeResourceUsageDetail(const DescribeResourceUsageDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResourceUsageDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResourceUsageDetailOutcome(DescribeResourceUsageDetailResult(outcome.result()));
+	else
+		return DescribeResourceUsageDetailOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeResourceUsageDetailAsync(const DescribeResourceUsageDetailRequest& request, const DescribeResourceUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResourceUsageDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeResourceUsageDetailOutcomeCallable BssOpenApiClient::describeResourceUsageDetailCallable(const DescribeResourceUsageDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResourceUsageDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResourceUsageDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::DescribeResourceUsageTotalOutcome BssOpenApiClient::describeResourceUsageTotal(const DescribeResourceUsageTotalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResourceUsageTotalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResourceUsageTotalOutcome(DescribeResourceUsageTotalResult(outcome.result()));
+	else
+		return DescribeResourceUsageTotalOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeResourceUsageTotalAsync(const DescribeResourceUsageTotalRequest& request, const DescribeResourceUsageTotalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResourceUsageTotal(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeResourceUsageTotalOutcomeCallable BssOpenApiClient::describeResourceUsageTotalCallable(const DescribeResourceUsageTotalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResourceUsageTotalOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResourceUsageTotal(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -837,6 +1053,42 @@ BssOpenApiClient::GetSubscriptionPriceOutcomeCallable BssOpenApiClient::getSubsc
 			[this, request]()
 			{
 			return this->getSubscriptionPrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::ModifyAccountRelationOutcome BssOpenApiClient::modifyAccountRelation(const ModifyAccountRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAccountRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAccountRelationOutcome(ModifyAccountRelationResult(outcome.result()));
+	else
+		return ModifyAccountRelationOutcome(outcome.error());
+}
+
+void BssOpenApiClient::modifyAccountRelationAsync(const ModifyAccountRelationRequest& request, const ModifyAccountRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAccountRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::ModifyAccountRelationOutcomeCallable BssOpenApiClient::modifyAccountRelationCallable(const ModifyAccountRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAccountRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAccountRelation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1341,6 +1593,42 @@ BssOpenApiClient::QueryCustomerAddressListOutcomeCallable BssOpenApiClient::quer
 			[this, request]()
 			{
 			return this->queryCustomerAddressList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::QueryDPUtilizationDetailOutcome BssOpenApiClient::queryDPUtilizationDetail(const QueryDPUtilizationDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDPUtilizationDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDPUtilizationDetailOutcome(QueryDPUtilizationDetailResult(outcome.result()));
+	else
+		return QueryDPUtilizationDetailOutcome(outcome.error());
+}
+
+void BssOpenApiClient::queryDPUtilizationDetailAsync(const QueryDPUtilizationDetailRequest& request, const QueryDPUtilizationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDPUtilizationDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QueryDPUtilizationDetailOutcomeCallable BssOpenApiClient::queryDPUtilizationDetailCallable(const QueryDPUtilizationDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDPUtilizationDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDPUtilizationDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2175,6 +2463,42 @@ BssOpenApiClient::QueryUserOmsDataOutcomeCallable BssOpenApiClient::queryUserOms
 	return task->get_future();
 }
 
+BssOpenApiClient::RelieveAccountRelationOutcome BssOpenApiClient::relieveAccountRelation(const RelieveAccountRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RelieveAccountRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RelieveAccountRelationOutcome(RelieveAccountRelationResult(outcome.result()));
+	else
+		return RelieveAccountRelationOutcome(outcome.error());
+}
+
+void BssOpenApiClient::relieveAccountRelationAsync(const RelieveAccountRelationRequest& request, const RelieveAccountRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, relieveAccountRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::RelieveAccountRelationOutcomeCallable BssOpenApiClient::relieveAccountRelationCallable(const RelieveAccountRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RelieveAccountRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->relieveAccountRelation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::RenewInstanceOutcome BssOpenApiClient::renewInstance(const RenewInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2601,42 @@ BssOpenApiClient::SaveUserCreditOutcomeCallable BssOpenApiClient::saveUserCredit
 			[this, request]()
 			{
 			return this->saveUserCredit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::SetAllExpirationDayOutcome BssOpenApiClient::setAllExpirationDay(const SetAllExpirationDayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAllExpirationDayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAllExpirationDayOutcome(SetAllExpirationDayResult(outcome.result()));
+	else
+		return SetAllExpirationDayOutcome(outcome.error());
+}
+
+void BssOpenApiClient::setAllExpirationDayAsync(const SetAllExpirationDayRequest& request, const SetAllExpirationDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAllExpirationDay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::SetAllExpirationDayOutcomeCallable BssOpenApiClient::setAllExpirationDayCallable(const SetAllExpirationDayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAllExpirationDayOutcome()>>(
+			[this, request]()
+			{
+			return this->setAllExpirationDay(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

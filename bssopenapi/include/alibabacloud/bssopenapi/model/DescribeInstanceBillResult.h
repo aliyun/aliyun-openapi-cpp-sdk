@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string instanceSpec;
 						std::string productName;
 						std::string instanceID;
+						std::string billAccountID;
 						float deductedByCashCoupons;
 						std::string listPriceUnit;
 						std::string billingDate;
@@ -62,6 +63,7 @@ namespace AlibabaCloud
 						std::string zone;
 						std::string productType;
 						float outstandingAmount;
+						std::string bizType;
 						std::string billingItem;
 						std::string nickName;
 						std::string intranetIP;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 						float pretaxAmount;
 						std::string internetIP;
 						std::string region;
+						std::string billAccountName;
 						std::string tag;
 					};
 					std::string billingCycle;
