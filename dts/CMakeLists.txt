@@ -27,6 +27,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/ConfigureMigrationJobResult.h
 	include/alibabacloud/dts/model/ConfigureMigrationJobAlertRequest.h
 	include/alibabacloud/dts/model/ConfigureMigrationJobAlertResult.h
+	include/alibabacloud/dts/model/ConfigureSubscriptionRequest.h
+	include/alibabacloud/dts/model/ConfigureSubscriptionResult.h
 	include/alibabacloud/dts/model/ConfigureSubscriptionInstanceRequest.h
 	include/alibabacloud/dts/model/ConfigureSubscriptionInstanceResult.h
 	include/alibabacloud/dts/model/ConfigureSubscriptionInstanceAlertRequest.h
@@ -37,6 +39,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/ConfigureSynchronizationJobAlertResult.h
 	include/alibabacloud/dts/model/ConfigureSynchronizationJobReplicatorCompareRequest.h
 	include/alibabacloud/dts/model/ConfigureSynchronizationJobReplicatorCompareResult.h
+	include/alibabacloud/dts/model/CreateConsumerChannelRequest.h
+	include/alibabacloud/dts/model/CreateConsumerChannelResult.h
 	include/alibabacloud/dts/model/CreateConsumerGroupRequest.h
 	include/alibabacloud/dts/model/CreateConsumerGroupResult.h
 	include/alibabacloud/dts/model/CreateDtsInstanceRequest.h
@@ -49,6 +53,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/CreateSubscriptionInstanceResult.h
 	include/alibabacloud/dts/model/CreateSynchronizationJobRequest.h
 	include/alibabacloud/dts/model/CreateSynchronizationJobResult.h
+	include/alibabacloud/dts/model/DeleteConsumerChannelRequest.h
+	include/alibabacloud/dts/model/DeleteConsumerChannelResult.h
 	include/alibabacloud/dts/model/DeleteConsumerGroupRequest.h
 	include/alibabacloud/dts/model/DeleteConsumerGroupResult.h
 	include/alibabacloud/dts/model/DeleteDtsJobRequest.h
@@ -63,6 +69,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeCenVpcResult.h
 	include/alibabacloud/dts/model/DescribeConnectionStatusRequest.h
 	include/alibabacloud/dts/model/DescribeConnectionStatusResult.h
+	include/alibabacloud/dts/model/DescribeConsumerChannelRequest.h
+	include/alibabacloud/dts/model/DescribeConsumerChannelResult.h
 	include/alibabacloud/dts/model/DescribeConsumerGroupRequest.h
 	include/alibabacloud/dts/model/DescribeConsumerGroupResult.h
 	include/alibabacloud/dts/model/DescribeDTSIPRequest.h
@@ -71,8 +79,6 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeDgDatabasesResult.h
 	include/alibabacloud/dts/model/DescribeDtsJobDetailRequest.h
 	include/alibabacloud/dts/model/DescribeDtsJobDetailResult.h
-	include/alibabacloud/dts/model/DescribeDtsJobLogsRequest.h
-	include/alibabacloud/dts/model/DescribeDtsJobLogsResult.h
 	include/alibabacloud/dts/model/DescribeDtsJobsRequest.h
 	include/alibabacloud/dts/model/DescribeDtsJobsResult.h
 	include/alibabacloud/dts/model/DescribeEndpointSwitchStatusRequest.h
@@ -113,6 +119,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeSynchronizationObjectModifyStatusResult.h
 	include/alibabacloud/dts/model/ListTagResourcesRequest.h
 	include/alibabacloud/dts/model/ListTagResourcesResult.h
+	include/alibabacloud/dts/model/ModifyConsumerChannelRequest.h
+	include/alibabacloud/dts/model/ModifyConsumerChannelResult.h
 	include/alibabacloud/dts/model/ModifyConsumerGroupPasswordRequest.h
 	include/alibabacloud/dts/model/ModifyConsumerGroupPasswordResult.h
 	include/alibabacloud/dts/model/ModifyConsumptionTimestampRequest.h
@@ -123,12 +131,14 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/ModifyDtsJobNameResult.h
 	include/alibabacloud/dts/model/ModifyDtsJobPasswordRequest.h
 	include/alibabacloud/dts/model/ModifyDtsJobPasswordResult.h
+	include/alibabacloud/dts/model/ModifySubscriptionRequest.h
+	include/alibabacloud/dts/model/ModifySubscriptionResult.h
 	include/alibabacloud/dts/model/ModifySubscriptionObjectRequest.h
 	include/alibabacloud/dts/model/ModifySubscriptionObjectResult.h
 	include/alibabacloud/dts/model/ModifySynchronizationObjectRequest.h
 	include/alibabacloud/dts/model/ModifySynchronizationObjectResult.h
-	include/alibabacloud/dts/model/PreviewSqlRequest.h
-	include/alibabacloud/dts/model/PreviewSqlResult.h
+	include/alibabacloud/dts/model/RenewInstanceRequest.h
+	include/alibabacloud/dts/model/RenewInstanceResult.h
 	include/alibabacloud/dts/model/ReplaceInstanceRequest.h
 	include/alibabacloud/dts/model/ReplaceInstanceResult.h
 	include/alibabacloud/dts/model/ResetDtsJobRequest.h
@@ -161,6 +171,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/SwitchSynchronizationEndpointResult.h
 	include/alibabacloud/dts/model/TagResourcesRequest.h
 	include/alibabacloud/dts/model/TagResourcesResult.h
+	include/alibabacloud/dts/model/TransferInstanceClassRequest.h
+	include/alibabacloud/dts/model/TransferInstanceClassResult.h
 	include/alibabacloud/dts/model/TransferPayTypeRequest.h
 	include/alibabacloud/dts/model/TransferPayTypeResult.h
 	include/alibabacloud/dts/model/UntagResourcesRequest.h
@@ -178,6 +190,8 @@ set(dts_src
 	src/model/ConfigureMigrationJobResult.cc
 	src/model/ConfigureMigrationJobAlertRequest.cc
 	src/model/ConfigureMigrationJobAlertResult.cc
+	src/model/ConfigureSubscriptionRequest.cc
+	src/model/ConfigureSubscriptionResult.cc
 	src/model/ConfigureSubscriptionInstanceRequest.cc
 	src/model/ConfigureSubscriptionInstanceResult.cc
 	src/model/ConfigureSubscriptionInstanceAlertRequest.cc
@@ -188,6 +202,8 @@ set(dts_src
 	src/model/ConfigureSynchronizationJobAlertResult.cc
 	src/model/ConfigureSynchronizationJobReplicatorCompareRequest.cc
 	src/model/ConfigureSynchronizationJobReplicatorCompareResult.cc
+	src/model/CreateConsumerChannelRequest.cc
+	src/model/CreateConsumerChannelResult.cc
 	src/model/CreateConsumerGroupRequest.cc
 	src/model/CreateConsumerGroupResult.cc
 	src/model/CreateDtsInstanceRequest.cc
@@ -200,6 +216,8 @@ set(dts_src
 	src/model/CreateSubscriptionInstanceResult.cc
 	src/model/CreateSynchronizationJobRequest.cc
 	src/model/CreateSynchronizationJobResult.cc
+	src/model/DeleteConsumerChannelRequest.cc
+	src/model/DeleteConsumerChannelResult.cc
 	src/model/DeleteConsumerGroupRequest.cc
 	src/model/DeleteConsumerGroupResult.cc
 	src/model/DeleteDtsJobRequest.cc
@@ -214,6 +232,8 @@ set(dts_src
 	src/model/DescribeCenVpcResult.cc
 	src/model/DescribeConnectionStatusRequest.cc
 	src/model/DescribeConnectionStatusResult.cc
+	src/model/DescribeConsumerChannelRequest.cc
+	src/model/DescribeConsumerChannelResult.cc
 	src/model/DescribeConsumerGroupRequest.cc
 	src/model/DescribeConsumerGroupResult.cc
 	src/model/DescribeDTSIPRequest.cc
@@ -222,8 +242,6 @@ set(dts_src
 	src/model/DescribeDgDatabasesResult.cc
 	src/model/DescribeDtsJobDetailRequest.cc
 	src/model/DescribeDtsJobDetailResult.cc
-	src/model/DescribeDtsJobLogsRequest.cc
-	src/model/DescribeDtsJobLogsResult.cc
 	src/model/DescribeDtsJobsRequest.cc
 	src/model/DescribeDtsJobsResult.cc
 	src/model/DescribeEndpointSwitchStatusRequest.cc
@@ -264,6 +282,8 @@ set(dts_src
 	src/model/DescribeSynchronizationObjectModifyStatusResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/ModifyConsumerChannelRequest.cc
+	src/model/ModifyConsumerChannelResult.cc
 	src/model/ModifyConsumerGroupPasswordRequest.cc
 	src/model/ModifyConsumerGroupPasswordResult.cc
 	src/model/ModifyConsumptionTimestampRequest.cc
@@ -274,12 +294,14 @@ set(dts_src
 	src/model/ModifyDtsJobNameResult.cc
 	src/model/ModifyDtsJobPasswordRequest.cc
 	src/model/ModifyDtsJobPasswordResult.cc
+	src/model/ModifySubscriptionRequest.cc
+	src/model/ModifySubscriptionResult.cc
 	src/model/ModifySubscriptionObjectRequest.cc
 	src/model/ModifySubscriptionObjectResult.cc
 	src/model/ModifySynchronizationObjectRequest.cc
 	src/model/ModifySynchronizationObjectResult.cc
-	src/model/PreviewSqlRequest.cc
-	src/model/PreviewSqlResult.cc
+	src/model/RenewInstanceRequest.cc
+	src/model/RenewInstanceResult.cc
 	src/model/ReplaceInstanceRequest.cc
 	src/model/ReplaceInstanceResult.cc
 	src/model/ResetDtsJobRequest.cc
@@ -312,6 +334,8 @@ set(dts_src
 	src/model/SwitchSynchronizationEndpointResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TransferInstanceClassRequest.cc
+	src/model/TransferInstanceClassResult.cc
 	src/model/TransferPayTypeRequest.cc
 	src/model/TransferPayTypeResult.cc
 	src/model/UntagResourcesRequest.cc

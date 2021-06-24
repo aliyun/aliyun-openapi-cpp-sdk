@@ -63,6 +63,10 @@ void DescribeSubscriptionInstancesResult::parse(const std::string &payload)
 			subscriptionInstancesObject.subscriptionInstanceID = valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceID"].asString();
 		if(!valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceName"].isNull())
 			subscriptionInstancesObject.subscriptionInstanceName = valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceName"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["JobCreateTime"].isNull())
+			subscriptionInstancesObject.jobCreateTime = valueSubscriptionInstancesSubscriptionInstance["JobCreateTime"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["InstanceCreateTime"].isNull())
+			subscriptionInstancesObject.instanceCreateTime = valueSubscriptionInstancesSubscriptionInstance["InstanceCreateTime"].asString();
 		auto allSubscriptionObjectNode = valueSubscriptionInstancesSubscriptionInstance["SubscriptionObject"]["SynchronousObject"];
 		for (auto valueSubscriptionInstancesSubscriptionInstanceSubscriptionObjectSynchronousObject : allSubscriptionObjectNode)
 		{

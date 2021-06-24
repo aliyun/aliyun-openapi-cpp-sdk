@@ -14,36 +14,33 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dts/model/PreviewSqlResult.h>
+#include <alibabacloud/dts/model/TransferInstanceClassResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dts;
 using namespace AlibabaCloud::Dts::Model;
 
-PreviewSqlResult::PreviewSqlResult() :
+TransferInstanceClassResult::TransferInstanceClassResult() :
 	ServiceResult()
 {}
 
-PreviewSqlResult::PreviewSqlResult(const std::string &payload) :
+TransferInstanceClassResult::TransferInstanceClassResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-PreviewSqlResult::~PreviewSqlResult()
+TransferInstanceClassResult::~TransferInstanceClassResult()
 {}
 
-void PreviewSqlResult::parse(const std::string &payload)
+void TransferInstanceClassResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSqlList = value["SqlList"]["Sql"];
-	for (const auto &item : allSqlList)
-		sqlList_.push_back(item.asString());
-	if(!value["DynamicCode"].isNull())
-		dynamicCode_ = value["DynamicCode"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 	if(!value["DynamicMessage"].isNull())
 		dynamicMessage_ = value["DynamicMessage"].asString();
 	if(!value["ErrCode"].isNull())
@@ -54,54 +51,63 @@ void PreviewSqlResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["StreamGraph"].isNull())
-		streamGraph_ = value["StreamGraph"].asString();
-	if(!value["ValidationException"].isNull())
-		validationException_ = value["ValidationException"].asString();
+	if(!value["DtsJobId"].isNull())
+		dtsJobId_ = value["DtsJobId"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["ChargeType"].isNull())
+		chargeType_ = value["ChargeType"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
 
 }
 
-std::vector<std::string> PreviewSqlResult::getSqlList()const
+std::string TransferInstanceClassResult::getDtsJobId()const
 {
-	return sqlList_;
+	return dtsJobId_;
 }
 
-std::string PreviewSqlResult::getValidationException()const
+std::string TransferInstanceClassResult::getEndTime()const
 {
-	return validationException_;
+	return endTime_;
 }
 
-int PreviewSqlResult::getHttpStatusCode()const
+std::string TransferInstanceClassResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+std::string TransferInstanceClassResult::getChargeType()const
+{
+	return chargeType_;
+}
+
+int TransferInstanceClassResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string PreviewSqlResult::getStreamGraph()const
-{
-	return streamGraph_;
-}
-
-std::string PreviewSqlResult::getDynamicCode()const
-{
-	return dynamicCode_;
-}
-
-std::string PreviewSqlResult::getDynamicMessage()const
+std::string TransferInstanceClassResult::getDynamicMessage()const
 {
 	return dynamicMessage_;
 }
 
-std::string PreviewSqlResult::getErrMessage()const
+std::string TransferInstanceClassResult::getErrMessage()const
 {
 	return errMessage_;
 }
 
-bool PreviewSqlResult::getSuccess()const
+std::string TransferInstanceClassResult::getCode()const
+{
+	return code_;
+}
+
+bool TransferInstanceClassResult::getSuccess()const
 {
 	return success_;
 }
 
-std::string PreviewSqlResult::getErrCode()const
+std::string TransferInstanceClassResult::getErrCode()const
 {
 	return errCode_;
 }

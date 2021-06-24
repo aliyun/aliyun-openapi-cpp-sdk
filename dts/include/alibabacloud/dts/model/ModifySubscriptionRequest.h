@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_DESCRIBEDTSJOBLOGSREQUEST_H_
-#define ALIBABACLOUD_DTS_MODEL_DESCRIBEDTSJOBLOGSREQUEST_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_MODIFYSUBSCRIPTIONREQUEST_H_
+#define ALIBABACLOUD_DTS_MODEL_MODIFYSUBSCRIPTIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT DescribeDtsJobLogsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DTS_EXPORT ModifySubscriptionRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDtsJobLogsRequest();
-				~DescribeDtsJobLogsRequest();
+				ModifySubscriptionRequest();
+				~ModifySubscriptionRequest();
 
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				std::string getType()const;
-				void setType(const std::string& type);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getDbList()const;
+				void setDbList(const std::string& dbList);
+				bool getSubscriptionDataTypeDDL()const;
+				void setSubscriptionDataTypeDDL(bool subscriptionDataTypeDDL);
+				bool getSubscriptionDataTypeDML()const;
+				void setSubscriptionDataTypeDML(bool subscriptionDataTypeDML);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getDtsJobId()const;
 				void setDtsJobId(const std::string& dtsJobId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				std::string getDtsInstanceId()const;
+				void setDtsInstanceId(const std::string& dtsInstanceId);
 
             private:
-				long endTime_;
-				long startTime_;
-				std::string type_;
-				int pageNumber_;
+				std::string dbList_;
+				bool subscriptionDataTypeDDL_;
+				bool subscriptionDataTypeDML_;
 				std::string regionId_;
-				int pageSize_;
 				std::string dtsJobId_;
-				std::string status_;
+				std::string dtsInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_DESCRIBEDTSJOBLOGSREQUEST_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_MODIFYSUBSCRIPTIONREQUEST_H_

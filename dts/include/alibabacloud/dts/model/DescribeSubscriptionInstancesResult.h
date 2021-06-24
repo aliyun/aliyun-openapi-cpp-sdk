@@ -63,6 +63,8 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					SubscriptionHost subscriptionHost;
+					std::string instanceCreateTime;
+					std::string jobCreateTime;
 					std::string endTimestamp;
 					std::string payType;
 					std::string subscriptionInstanceID;

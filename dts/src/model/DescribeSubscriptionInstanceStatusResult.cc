@@ -95,8 +95,6 @@ void DescribeSubscriptionInstanceStatusResult::parse(const std::string &payload)
 		success_ = value["Success"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage1_ = value["ErrorMessage"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
 
@@ -170,11 +168,6 @@ std::string DescribeSubscriptionInstanceStatusResult::getSubscriptionInstanceNam
 std::string DescribeSubscriptionInstanceStatusResult::getSubscribeTopic()const
 {
 	return subscribeTopic_;
-}
-
-std::string DescribeSubscriptionInstanceStatusResult::getErrorMessage1()const
-{
-	return errorMessage1_;
 }
 
 std::string DescribeSubscriptionInstanceStatusResult::getConsumptionClient()const

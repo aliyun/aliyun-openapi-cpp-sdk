@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_PREVIEWSQLRESULT_H_
-#define ALIBABACLOUD_DTS_MODEL_PREVIEWSQLRESULT_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_DELETECONSUMERCHANNELRESULT_H_
+#define ALIBABACLOUD_DTS_MODEL_DELETECONSUMERCHANNELRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT PreviewSqlResult : public ServiceResult
+			class ALIBABACLOUD_DTS_EXPORT DeleteConsumerChannelResult : public ServiceResult
 			{
 			public:
 
 
-				PreviewSqlResult();
-				explicit PreviewSqlResult(const std::string &payload);
-				~PreviewSqlResult();
-				std::vector<std::string> getSqlList()const;
-				std::string getValidationException()const;
-				int getHttpStatusCode()const;
-				std::string getStreamGraph()const;
-				std::string getDynamicCode()const;
-				std::string getDynamicMessage()const;
+				DeleteConsumerChannelResult();
+				explicit DeleteConsumerChannelResult(const std::string &payload);
+				~DeleteConsumerChannelResult();
+				std::string getHttpStatusCode()const;
 				std::string getErrMessage()const;
-				bool getSuccess()const;
+				std::string getSuccess()const;
 				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> sqlList_;
-				std::string validationException_;
-				int httpStatusCode_;
-				std::string streamGraph_;
-				std::string dynamicCode_;
-				std::string dynamicMessage_;
+				std::string httpStatusCode_;
 				std::string errMessage_;
-				bool success_;
+				std::string success_;
 				std::string errCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_PREVIEWSQLRESULT_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_DELETECONSUMERCHANNELRESULT_H_

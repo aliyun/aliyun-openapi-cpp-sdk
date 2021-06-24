@@ -39,8 +39,6 @@ namespace AlibabaCloud
 				void setPeriod(const std::string& period);
 				std::string getBuyCount()const;
 				void setBuyCount(const std::string& buyCount);
-				std::string getInstanceClass()const;
-				void setInstanceClass(const std::string& instanceClass);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getDtsJobId()const;
@@ -51,7 +49,6 @@ namespace AlibabaCloud
             private:
 				std::string period_;
 				std::string buyCount_;
-				std::string instanceClass_;
 				std::string regionId_;
 				std::string dtsJobId_;
 				std::string chargeType_;

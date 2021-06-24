@@ -53,6 +53,10 @@ void DescribeMigrationJobsResult::parse(const std::string &payload)
 			migrationJobsObject.migrationJobStatus = valueMigrationJobsMigrationJob["MigrationJobStatus"].asString();
 		if(!valueMigrationJobsMigrationJob["PayType"].isNull())
 			migrationJobsObject.payType = valueMigrationJobsMigrationJob["PayType"].asString();
+		if(!valueMigrationJobsMigrationJob["JobCreateTime"].isNull())
+			migrationJobsObject.jobCreateTime = valueMigrationJobsMigrationJob["JobCreateTime"].asString();
+		if(!valueMigrationJobsMigrationJob["InstanceCreateTime"].isNull())
+			migrationJobsObject.instanceCreateTime = valueMigrationJobsMigrationJob["InstanceCreateTime"].asString();
 		auto allMigrationObjectNode = valueMigrationJobsMigrationJob["MigrationObject"]["SynchronousObject"];
 		for (auto valueMigrationJobsMigrationJobMigrationObjectSynchronousObject : allMigrationObjectNode)
 		{

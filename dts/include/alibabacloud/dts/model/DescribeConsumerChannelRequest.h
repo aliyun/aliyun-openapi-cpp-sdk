@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_PREVIEWSQLREQUEST_H_
-#define ALIBABACLOUD_DTS_MODEL_PREVIEWSQLREQUEST_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_DESCRIBECONSUMERCHANNELREQUEST_H_
+#define ALIBABACLOUD_DTS_MODEL_DESCRIBECONSUMERCHANNELREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT PreviewSqlRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DTS_EXPORT DescribeConsumerChannelRequest : public RpcServiceRequest
 			{
 
 			public:
-				PreviewSqlRequest();
-				~PreviewSqlRequest();
+				DescribeConsumerChannelRequest();
+				~DescribeConsumerChannelRequest();
 
-				std::string getEtlCalculator()const;
-				void setEtlCalculator(const std::string& etlCalculator);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getDtsJobId()const;
+				void setDtsJobId(const std::string& dtsJobId);
+				std::string getDtsInstanceId()const;
+				void setDtsInstanceId(const std::string& dtsInstanceId);
 
             private:
-				std::string etlCalculator_;
+				int pageNumber_;
 				std::string regionId_;
+				int pageSize_;
+				std::string dtsJobId_;
+				std::string dtsInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_PREVIEWSQLREQUEST_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_DESCRIBECONSUMERCHANNELREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_STARTDTSJOBREQUEST_H_
-#define ALIBABACLOUD_DTS_MODEL_STARTDTSJOBREQUEST_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_RENEWINSTANCEREQUEST_H_
+#define ALIBABACLOUD_DTS_MODEL_RENEWINSTANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT StartDtsJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DTS_EXPORT RenewInstanceRequest : public RpcServiceRequest
 			{
 
 			public:
-				StartDtsJobRequest();
-				~StartDtsJobRequest();
+				RenewInstanceRequest();
+				~RenewInstanceRequest();
 
-				std::string getResetCheckpoint()const;
-				void setResetCheckpoint(const std::string& resetCheckpoint);
+				std::string getPeriod()const;
+				void setPeriod(const std::string& period);
+				std::string getBuyCount()const;
+				void setBuyCount(const std::string& buyCount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getResumeHoldJob()const;
-				void setResumeHoldJob(const std::string& resumeHoldJob);
 				std::string getDtsJobId()const;
 				void setDtsJobId(const std::string& dtsJobId);
-				std::string getDtsInstanceId()const;
-				void setDtsInstanceId(const std::string& dtsInstanceId);
-				std::string getSynchronizationDirection()const;
-				void setSynchronizationDirection(const std::string& synchronizationDirection);
+				std::string getChargeType()const;
+				void setChargeType(const std::string& chargeType);
 
             private:
-				std::string resetCheckpoint_;
+				std::string period_;
+				std::string buyCount_;
 				std::string regionId_;
-				std::string resumeHoldJob_;
 				std::string dtsJobId_;
-				std::string dtsInstanceId_;
-				std::string synchronizationDirection_;
+				std::string chargeType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_STARTDTSJOBREQUEST_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_RENEWINSTANCEREQUEST_H_

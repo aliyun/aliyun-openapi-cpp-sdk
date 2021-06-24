@@ -67,6 +67,10 @@ void DescribeSynchronizationJobsResult::parse(const std::string &payload)
 			synchronizationInstancesObject.synchronizationJobId = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobId"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobName"].isNull())
 			synchronizationInstancesObject.synchronizationJobName = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobName"].asString();
+		if(!valueSynchronizationInstancesSynchronizationInstance["JobCreateTime"].isNull())
+			synchronizationInstancesObject.jobCreateTime = valueSynchronizationInstancesSynchronizationInstance["JobCreateTime"].asString();
+		if(!valueSynchronizationInstancesSynchronizationInstance["InstanceCreateTime"].isNull())
+			synchronizationInstancesObject.instanceCreateTime = valueSynchronizationInstancesSynchronizationInstance["InstanceCreateTime"].asString();
 		auto allTagsNode = valueSynchronizationInstancesSynchronizationInstance["Tags"]["Tag"];
 		for (auto valueSynchronizationInstancesSynchronizationInstanceTagsTag : allTagsNode)
 		{

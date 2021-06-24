@@ -27,6 +27,17 @@ StartDtsJobRequest::StartDtsJobRequest() :
 StartDtsJobRequest::~StartDtsJobRequest()
 {}
 
+std::string StartDtsJobRequest::getResetCheckpoint()const
+{
+	return resetCheckpoint_;
+}
+
+void StartDtsJobRequest::setResetCheckpoint(const std::string& resetCheckpoint)
+{
+	resetCheckpoint_ = resetCheckpoint;
+	setParameter("ResetCheckpoint", resetCheckpoint);
+}
+
 std::string StartDtsJobRequest::getRegionId()const
 {
 	return regionId_;
@@ -36,6 +47,17 @@ void StartDtsJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string StartDtsJobRequest::getResumeHoldJob()const
+{
+	return resumeHoldJob_;
+}
+
+void StartDtsJobRequest::setResumeHoldJob(const std::string& resumeHoldJob)
+{
+	resumeHoldJob_ = resumeHoldJob;
+	setParameter("ResumeHoldJob", resumeHoldJob);
 }
 
 std::string StartDtsJobRequest::getDtsJobId()const

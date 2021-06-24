@@ -159,6 +159,42 @@ DtsClient::ConfigureMigrationJobAlertOutcomeCallable DtsClient::configureMigrati
 	return task->get_future();
 }
 
+DtsClient::ConfigureSubscriptionOutcome DtsClient::configureSubscription(const ConfigureSubscriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfigureSubscriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfigureSubscriptionOutcome(ConfigureSubscriptionResult(outcome.result()));
+	else
+		return ConfigureSubscriptionOutcome(outcome.error());
+}
+
+void DtsClient::configureSubscriptionAsync(const ConfigureSubscriptionRequest& request, const ConfigureSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, configureSubscription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::ConfigureSubscriptionOutcomeCallable DtsClient::configureSubscriptionCallable(const ConfigureSubscriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfigureSubscriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->configureSubscription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::ConfigureSubscriptionInstanceOutcome DtsClient::configureSubscriptionInstance(const ConfigureSubscriptionInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ DtsClient::ConfigureSynchronizationJobReplicatorCompareOutcomeCallable DtsClient
 			[this, request]()
 			{
 			return this->configureSynchronizationJobReplicatorCompare(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::CreateConsumerChannelOutcome DtsClient::createConsumerChannel(const CreateConsumerChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateConsumerChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateConsumerChannelOutcome(CreateConsumerChannelResult(outcome.result()));
+	else
+		return CreateConsumerChannelOutcome(outcome.error());
+}
+
+void DtsClient::createConsumerChannelAsync(const CreateConsumerChannelRequest& request, const CreateConsumerChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createConsumerChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::CreateConsumerChannelOutcomeCallable DtsClient::createConsumerChannelCallable(const CreateConsumerChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateConsumerChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->createConsumerChannel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -549,6 +621,42 @@ DtsClient::CreateSynchronizationJobOutcomeCallable DtsClient::createSynchronizat
 			[this, request]()
 			{
 			return this->createSynchronizationJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::DeleteConsumerChannelOutcome DtsClient::deleteConsumerChannel(const DeleteConsumerChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteConsumerChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteConsumerChannelOutcome(DeleteConsumerChannelResult(outcome.result()));
+	else
+		return DeleteConsumerChannelOutcome(outcome.error());
+}
+
+void DtsClient::deleteConsumerChannelAsync(const DeleteConsumerChannelRequest& request, const DeleteConsumerChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteConsumerChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DeleteConsumerChannelOutcomeCallable DtsClient::deleteConsumerChannelCallable(const DeleteConsumerChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteConsumerChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteConsumerChannel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -807,6 +915,42 @@ DtsClient::DescribeConnectionStatusOutcomeCallable DtsClient::describeConnection
 	return task->get_future();
 }
 
+DtsClient::DescribeConsumerChannelOutcome DtsClient::describeConsumerChannel(const DescribeConsumerChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeConsumerChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeConsumerChannelOutcome(DescribeConsumerChannelResult(outcome.result()));
+	else
+		return DescribeConsumerChannelOutcome(outcome.error());
+}
+
+void DtsClient::describeConsumerChannelAsync(const DescribeConsumerChannelRequest& request, const DescribeConsumerChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeConsumerChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DescribeConsumerChannelOutcomeCallable DtsClient::describeConsumerChannelCallable(const DescribeConsumerChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeConsumerChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->describeConsumerChannel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::DescribeConsumerGroupOutcome DtsClient::describeConsumerGroup(const DescribeConsumerGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,42 +1089,6 @@ DtsClient::DescribeDtsJobDetailOutcomeCallable DtsClient::describeDtsJobDetailCa
 			[this, request]()
 			{
 			return this->describeDtsJobDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DtsClient::DescribeDtsJobLogsOutcome DtsClient::describeDtsJobLogs(const DescribeDtsJobLogsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDtsJobLogsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDtsJobLogsOutcome(DescribeDtsJobLogsResult(outcome.result()));
-	else
-		return DescribeDtsJobLogsOutcome(outcome.error());
-}
-
-void DtsClient::describeDtsJobLogsAsync(const DescribeDtsJobLogsRequest& request, const DescribeDtsJobLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDtsJobLogs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DtsClient::DescribeDtsJobLogsOutcomeCallable DtsClient::describeDtsJobLogsCallable(const DescribeDtsJobLogsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDtsJobLogsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDtsJobLogs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1707,6 +1815,42 @@ DtsClient::ListTagResourcesOutcomeCallable DtsClient::listTagResourcesCallable(c
 	return task->get_future();
 }
 
+DtsClient::ModifyConsumerChannelOutcome DtsClient::modifyConsumerChannel(const ModifyConsumerChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyConsumerChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyConsumerChannelOutcome(ModifyConsumerChannelResult(outcome.result()));
+	else
+		return ModifyConsumerChannelOutcome(outcome.error());
+}
+
+void DtsClient::modifyConsumerChannelAsync(const ModifyConsumerChannelRequest& request, const ModifyConsumerChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyConsumerChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::ModifyConsumerChannelOutcomeCallable DtsClient::modifyConsumerChannelCallable(const ModifyConsumerChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyConsumerChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyConsumerChannel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::ModifyConsumerGroupPasswordOutcome DtsClient::modifyConsumerGroupPassword(const ModifyConsumerGroupPasswordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1887,6 +2031,42 @@ DtsClient::ModifyDtsJobPasswordOutcomeCallable DtsClient::modifyDtsJobPasswordCa
 	return task->get_future();
 }
 
+DtsClient::ModifySubscriptionOutcome DtsClient::modifySubscription(const ModifySubscriptionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySubscriptionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySubscriptionOutcome(ModifySubscriptionResult(outcome.result()));
+	else
+		return ModifySubscriptionOutcome(outcome.error());
+}
+
+void DtsClient::modifySubscriptionAsync(const ModifySubscriptionRequest& request, const ModifySubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySubscription(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::ModifySubscriptionOutcomeCallable DtsClient::modifySubscriptionCallable(const ModifySubscriptionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySubscriptionOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySubscription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::ModifySubscriptionObjectOutcome DtsClient::modifySubscriptionObject(const ModifySubscriptionObjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1959,36 +2139,36 @@ DtsClient::ModifySynchronizationObjectOutcomeCallable DtsClient::modifySynchroni
 	return task->get_future();
 }
 
-DtsClient::PreviewSqlOutcome DtsClient::previewSql(const PreviewSqlRequest &request) const
+DtsClient::RenewInstanceOutcome DtsClient::renewInstance(const RenewInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return PreviewSqlOutcome(endpointOutcome.error());
+		return RenewInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return PreviewSqlOutcome(PreviewSqlResult(outcome.result()));
+		return RenewInstanceOutcome(RenewInstanceResult(outcome.result()));
 	else
-		return PreviewSqlOutcome(outcome.error());
+		return RenewInstanceOutcome(outcome.error());
 }
 
-void DtsClient::previewSqlAsync(const PreviewSqlRequest& request, const PreviewSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DtsClient::renewInstanceAsync(const RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, previewSql(request), context);
+		handler(this, request, renewInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DtsClient::PreviewSqlOutcomeCallable DtsClient::previewSqlCallable(const PreviewSqlRequest &request) const
+DtsClient::RenewInstanceOutcomeCallable DtsClient::renewInstanceCallable(const RenewInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<PreviewSqlOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RenewInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->previewSql(request);
+			return this->renewInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2565,6 +2745,42 @@ DtsClient::TagResourcesOutcomeCallable DtsClient::tagResourcesCallable(const Tag
 			[this, request]()
 			{
 			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::TransferInstanceClassOutcome DtsClient::transferInstanceClass(const TransferInstanceClassRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransferInstanceClassOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransferInstanceClassOutcome(TransferInstanceClassResult(outcome.result()));
+	else
+		return TransferInstanceClassOutcome(outcome.error());
+}
+
+void DtsClient::transferInstanceClassAsync(const TransferInstanceClassRequest& request, const TransferInstanceClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transferInstanceClass(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::TransferInstanceClassOutcomeCallable DtsClient::transferInstanceClassCallable(const TransferInstanceClassRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransferInstanceClassOutcome()>>(
+			[this, request]()
+			{
+			return this->transferInstanceClass(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

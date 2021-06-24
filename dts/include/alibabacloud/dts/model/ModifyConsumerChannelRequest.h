@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_STARTDTSJOBREQUEST_H_
-#define ALIBABACLOUD_DTS_MODEL_STARTDTSJOBREQUEST_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_MODIFYCONSUMERCHANNELREQUEST_H_
+#define ALIBABACLOUD_DTS_MODEL_MODIFYCONSUMERCHANNELREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT StartDtsJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DTS_EXPORT ModifyConsumerChannelRequest : public RpcServiceRequest
 			{
 
 			public:
-				StartDtsJobRequest();
-				~StartDtsJobRequest();
+				ModifyConsumerChannelRequest();
+				~ModifyConsumerChannelRequest();
 
-				std::string getResetCheckpoint()const;
-				void setResetCheckpoint(const std::string& resetCheckpoint);
+				std::string getConsumerGroupName()const;
+				void setConsumerGroupName(const std::string& consumerGroupName);
+				std::string getConsumerGroupId()const;
+				void setConsumerGroupId(const std::string& consumerGroupId);
+				std::string getConsumerGroupPassword()const;
+				void setConsumerGroupPassword(const std::string& consumerGroupPassword);
+				std::string getConsumerGroupUserName()const;
+				void setConsumerGroupUserName(const std::string& consumerGroupUserName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getResumeHoldJob()const;
-				void setResumeHoldJob(const std::string& resumeHoldJob);
 				std::string getDtsJobId()const;
 				void setDtsJobId(const std::string& dtsJobId);
 				std::string getDtsInstanceId()const;
 				void setDtsInstanceId(const std::string& dtsInstanceId);
-				std::string getSynchronizationDirection()const;
-				void setSynchronizationDirection(const std::string& synchronizationDirection);
 
             private:
-				std::string resetCheckpoint_;
+				std::string consumerGroupName_;
+				std::string consumerGroupId_;
+				std::string consumerGroupPassword_;
+				std::string consumerGroupUserName_;
 				std::string regionId_;
-				std::string resumeHoldJob_;
 				std::string dtsJobId_;
 				std::string dtsInstanceId_;
-				std::string synchronizationDirection_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_STARTDTSJOBREQUEST_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_MODIFYCONSUMERCHANNELREQUEST_H_

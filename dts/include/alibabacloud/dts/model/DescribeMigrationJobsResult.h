@@ -101,6 +101,8 @@ namespace AlibabaCloud
 					};
 					DataSynchronization dataSynchronization;
 					Precheck precheck;
+					std::string instanceCreateTime;
+					std::string jobCreateTime;
 					std::string migrationJobName;
 					std::string payType;
 					MigrationMode migrationMode;

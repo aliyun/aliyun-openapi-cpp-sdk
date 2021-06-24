@@ -115,7 +115,9 @@ namespace AlibabaCloud
 					DataInitializationStatus dataInitializationStatus;
 					std::vector<SynchronizationInstance::SynchronizationObject> synchronizationObjects;
 					std::string synchronizationJobName;
+					std::string instanceCreateTime;
 					std::string createTime;
+					std::string jobCreateTime;
 					std::string payType;
 					std::string delay;
 					PrecheckStatus precheckStatus;

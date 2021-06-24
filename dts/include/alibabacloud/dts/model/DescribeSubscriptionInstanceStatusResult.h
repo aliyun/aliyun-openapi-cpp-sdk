@@ -73,7 +73,6 @@ namespace AlibabaCloud
 				std::string getConsumptionCheckpoint()const;
 				std::string getSubscriptionInstanceName()const;
 				std::string getSubscribeTopic()const;
-				std::string getErrorMessage1()const;
 				std::string getConsumptionClient()const;
 				SourceEndpoint getSourceEndpoint()const;
 				std::string getErrorMessage()const;
@@ -96,7 +95,6 @@ namespace AlibabaCloud
 				std::string consumptionCheckpoint_;
 				std::string subscriptionInstanceName_;
 				std::string subscribeTopic_;
-				std::string errorMessage1_;
 				std::string consumptionClient_;
 				SourceEndpoint sourceEndpoint_;
 				std::string errorMessage_;

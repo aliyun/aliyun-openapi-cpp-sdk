@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_DESCRIBEDTSJOBLOGSRESULT_H_
-#define ALIBABACLOUD_DTS_MODEL_DESCRIBEDTSJOBLOGSRESULT_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_TRANSFERINSTANCECLASSRESULT_H_
+#define ALIBABACLOUD_DTS_MODEL_TRANSFERINSTANCECLASSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT DescribeDtsJobLogsResult : public ServiceResult
+			class ALIBABACLOUD_DTS_EXPORT TransferInstanceClassResult : public ServiceResult
 			{
 			public:
-				struct JobRunningLog
-				{
-					std::string contentKey;
-					std::string status;
-					long logDatetime;
-					std::vector<std::string> params;
-					long id;
-					std::string jobId;
-				};
 
 
-				DescribeDtsJobLogsResult();
-				explicit DescribeDtsJobLogsResult(const std::string &payload);
-				~DescribeDtsJobLogsResult();
-				long getTotalRecordCount()const;
-				int getPageRecordCount()const;
-				int getPageNumber()const;
+				TransferInstanceClassResult();
+				explicit TransferInstanceClassResult(const std::string &payload);
+				~TransferInstanceClassResult();
+				std::string getDtsJobId()const;
+				std::string getEndTime()const;
+				std::string getInstanceId()const;
+				std::string getChargeType()const;
 				int getHttpStatusCode()const;
-				std::vector<JobRunningLog> getJobRunningLogs()const;
-				std::string getDynamicCode()const;
 				std::string getDynamicMessage()const;
 				std::string getErrMessage()const;
+				std::string getCode()const;
 				bool getSuccess()const;
 				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalRecordCount_;
-				int pageRecordCount_;
-				int pageNumber_;
+				std::string dtsJobId_;
+				std::string endTime_;
+				std::string instanceId_;
+				std::string chargeType_;
 				int httpStatusCode_;
-				std::vector<JobRunningLog> jobRunningLogs_;
-				std::string dynamicCode_;
 				std::string dynamicMessage_;
 				std::string errMessage_;
+				std::string code_;
 				bool success_;
 				std::string errCode_;
 
@@ -75,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_DESCRIBEDTSJOBLOGSRESULT_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_TRANSFERINSTANCECLASSRESULT_H_

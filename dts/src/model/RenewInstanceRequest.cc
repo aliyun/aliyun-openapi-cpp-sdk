@@ -14,69 +14,69 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dts/model/TransferPayTypeRequest.h>
+#include <alibabacloud/dts/model/RenewInstanceRequest.h>
 
-using AlibabaCloud::Dts::Model::TransferPayTypeRequest;
+using AlibabaCloud::Dts::Model::RenewInstanceRequest;
 
-TransferPayTypeRequest::TransferPayTypeRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "TransferPayType")
+RenewInstanceRequest::RenewInstanceRequest() :
+	RpcServiceRequest("dts", "2020-01-01", "RenewInstance")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-TransferPayTypeRequest::~TransferPayTypeRequest()
+RenewInstanceRequest::~RenewInstanceRequest()
 {}
 
-std::string TransferPayTypeRequest::getPeriod()const
+std::string RenewInstanceRequest::getPeriod()const
 {
 	return period_;
 }
 
-void TransferPayTypeRequest::setPeriod(const std::string& period)
+void RenewInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
 	setParameter("Period", period);
 }
 
-std::string TransferPayTypeRequest::getBuyCount()const
+std::string RenewInstanceRequest::getBuyCount()const
 {
 	return buyCount_;
 }
 
-void TransferPayTypeRequest::setBuyCount(const std::string& buyCount)
+void RenewInstanceRequest::setBuyCount(const std::string& buyCount)
 {
 	buyCount_ = buyCount;
 	setParameter("BuyCount", buyCount);
 }
 
-std::string TransferPayTypeRequest::getRegionId()const
+std::string RenewInstanceRequest::getRegionId()const
 {
 	return regionId_;
 }
 
-void TransferPayTypeRequest::setRegionId(const std::string& regionId)
+void RenewInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
 }
 
-std::string TransferPayTypeRequest::getDtsJobId()const
+std::string RenewInstanceRequest::getDtsJobId()const
 {
 	return dtsJobId_;
 }
 
-void TransferPayTypeRequest::setDtsJobId(const std::string& dtsJobId)
+void RenewInstanceRequest::setDtsJobId(const std::string& dtsJobId)
 {
 	dtsJobId_ = dtsJobId;
 	setParameter("DtsJobId", dtsJobId);
 }
 
-std::string TransferPayTypeRequest::getChargeType()const
+std::string RenewInstanceRequest::getChargeType()const
 {
 	return chargeType_;
 }
 
-void TransferPayTypeRequest::setChargeType(const std::string& chargeType)
+void RenewInstanceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
 	setParameter("ChargeType", chargeType);
