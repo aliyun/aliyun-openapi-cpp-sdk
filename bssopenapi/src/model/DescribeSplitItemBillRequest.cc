@@ -27,17 +27,6 @@ DescribeSplitItemBillRequest::DescribeSplitItemBillRequest() :
 DescribeSplitItemBillRequest::~DescribeSplitItemBillRequest()
 {}
 
-std::string DescribeSplitItemBillRequest::getSplitItemID()const
-{
-	return splitItemID_;
-}
-
-void DescribeSplitItemBillRequest::setSplitItemID(const std::string& splitItemID)
-{
-	splitItemID_ = splitItemID;
-	setParameter("SplitItemID", splitItemID);
-}
-
 std::string DescribeSplitItemBillRequest::getProductCode()const
 {
 	return productCode_;
@@ -58,6 +47,50 @@ void DescribeSplitItemBillRequest::setSubscriptionType(const std::string& subscr
 {
 	subscriptionType_ = subscriptionType;
 	setParameter("SubscriptionType", subscriptionType);
+}
+
+long DescribeSplitItemBillRequest::getBillOwnerId()const
+{
+	return billOwnerId_;
+}
+
+void DescribeSplitItemBillRequest::setBillOwnerId(long billOwnerId)
+{
+	billOwnerId_ = billOwnerId;
+	setParameter("BillOwnerId", std::to_string(billOwnerId));
+}
+
+std::string DescribeSplitItemBillRequest::getProductType()const
+{
+	return productType_;
+}
+
+void DescribeSplitItemBillRequest::setProductType(const std::string& productType)
+{
+	productType_ = productType;
+	setParameter("ProductType", productType);
+}
+
+std::string DescribeSplitItemBillRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void DescribeSplitItemBillRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
+}
+
+std::string DescribeSplitItemBillRequest::getSplitItemID()const
+{
+	return splitItemID_;
+}
+
+void DescribeSplitItemBillRequest::setSplitItemID(const std::string& splitItemID)
+{
+	splitItemID_ = splitItemID;
+	setParameter("SplitItemID", splitItemID);
 }
 
 std::string DescribeSplitItemBillRequest::getBillingCycle()const
@@ -82,17 +115,6 @@ void DescribeSplitItemBillRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-long DescribeSplitItemBillRequest::getBillOwnerId()const
-{
-	return billOwnerId_;
-}
-
-void DescribeSplitItemBillRequest::setBillOwnerId(long billOwnerId)
-{
-	billOwnerId_ = billOwnerId;
-	setParameter("BillOwnerId", std::to_string(billOwnerId));
-}
-
 std::vector<DescribeSplitItemBillRequest::TagFilter> DescribeSplitItemBillRequest::getTagFilter()const
 {
 	return tagFilter_;
@@ -111,15 +133,15 @@ void DescribeSplitItemBillRequest::setTagFilter(const std::vector<TagFilter>& ta
 	}
 }
 
-std::string DescribeSplitItemBillRequest::getProductType()const
+std::string DescribeSplitItemBillRequest::getBillingDate()const
 {
-	return productType_;
+	return billingDate_;
 }
 
-void DescribeSplitItemBillRequest::setProductType(const std::string& productType)
+void DescribeSplitItemBillRequest::setBillingDate(const std::string& billingDate)
 {
-	productType_ = productType;
-	setParameter("ProductType", productType);
+	billingDate_ = billingDate;
+	setParameter("BillingDate", billingDate);
 }
 
 std::string DescribeSplitItemBillRequest::getInstanceID()const
@@ -133,15 +155,15 @@ void DescribeSplitItemBillRequest::setInstanceID(const std::string& instanceID)
 	setParameter("InstanceID", instanceID);
 }
 
-std::string DescribeSplitItemBillRequest::getNextToken()const
+std::string DescribeSplitItemBillRequest::getGranularity()const
 {
-	return nextToken_;
+	return granularity_;
 }
 
-void DescribeSplitItemBillRequest::setNextToken(const std::string& nextToken)
+void DescribeSplitItemBillRequest::setGranularity(const std::string& granularity)
 {
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+	granularity_ = granularity;
+	setParameter("Granularity", granularity);
 }
 
 int DescribeSplitItemBillRequest::getMaxResults()const

@@ -148,6 +148,14 @@ void DescribeSplitItemBillResult::parse(const std::string &payload)
 			itemObject.splitAccountName = dataNodeItemsItem["SplitAccountName"].asString();
 		if(!dataNodeItemsItem["SplitBillingCycle"].isNull())
 			itemObject.splitBillingCycle = dataNodeItemsItem["SplitBillingCycle"].asString();
+		if(!dataNodeItemsItem["SplitBillingDate"].isNull())
+			itemObject.splitBillingDate = dataNodeItemsItem["SplitBillingDate"].asString();
+		if(!dataNodeItemsItem["BizType"].isNull())
+			itemObject.bizType = dataNodeItemsItem["BizType"].asString();
+		if(!dataNodeItemsItem["BillAccountID"].isNull())
+			itemObject.billAccountID = dataNodeItemsItem["BillAccountID"].asString();
+		if(!dataNodeItemsItem["BillAccountName"].isNull())
+			itemObject.billAccountName = dataNodeItemsItem["BillAccountName"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())
