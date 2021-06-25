@@ -1,0 +1,73 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/outboundbot/model/GetContactBlockListRequest.h>
+
+using AlibabaCloud::OutboundBot::Model::GetContactBlockListRequest;
+
+GetContactBlockListRequest::GetContactBlockListRequest() :
+	RpcServiceRequest("outboundbot", "2019-12-26", "GetContactBlockList")
+{
+	setMethod(HttpRequest::Method::Post);
+}
+
+GetContactBlockListRequest::~GetContactBlockListRequest()
+{}
+
+bool GetContactBlockListRequest::getCountTotalRow()const
+{
+	return countTotalRow_;
+}
+
+void GetContactBlockListRequest::setCountTotalRow(bool countTotalRow)
+{
+	countTotalRow_ = countTotalRow;
+	setParameter("CountTotalRow", countTotalRow ? "true" : "false");
+}
+
+int GetContactBlockListRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void GetContactBlockListRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string GetContactBlockListRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GetContactBlockListRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+int GetContactBlockListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetContactBlockListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+

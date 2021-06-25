@@ -14,60 +14,60 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/ListMediaRequest.h>
+#include <alibabacloud/outboundbot/model/GetContactWhiteListRequest.h>
 
-using AlibabaCloud::OutboundBot::Model::ListMediaRequest;
+using AlibabaCloud::OutboundBot::Model::GetContactWhiteListRequest;
 
-ListMediaRequest::ListMediaRequest() :
-	RpcServiceRequest("outboundbot", "2019-12-26", "ListMedia")
+GetContactWhiteListRequest::GetContactWhiteListRequest() :
+	RpcServiceRequest("outboundbot", "2019-12-26", "GetContactWhiteList")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-ListMediaRequest::~ListMediaRequest()
+GetContactWhiteListRequest::~GetContactWhiteListRequest()
 {}
 
-int ListMediaRequest::getPageNumber()const
+bool GetContactWhiteListRequest::getCountTotalRow()const
+{
+	return countTotalRow_;
+}
+
+void GetContactWhiteListRequest::setCountTotalRow(bool countTotalRow)
+{
+	countTotalRow_ = countTotalRow;
+	setParameter("CountTotalRow", countTotalRow ? "true" : "false");
+}
+
+int GetContactWhiteListRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void ListMediaRequest::setPageNumber(int pageNumber)
+void GetContactWhiteListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string ListMediaRequest::getInstanceId()const
+std::string GetContactWhiteListRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void ListMediaRequest::setInstanceId(const std::string& instanceId)
+void GetContactWhiteListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
 }
 
-int ListMediaRequest::getPageSize()const
+int GetContactWhiteListRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void ListMediaRequest::setPageSize(int pageSize)
+void GetContactWhiteListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListMediaRequest::getNamePrefix()const
-{
-	return namePrefix_;
-}
-
-void ListMediaRequest::setNamePrefix(const std::string& namePrefix)
-{
-	namePrefix_ = namePrefix;
-	setParameter("NamePrefix", namePrefix);
 }
 

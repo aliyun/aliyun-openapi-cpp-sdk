@@ -27,6 +27,28 @@ ListJobGroupsRequest::ListJobGroupsRequest() :
 ListJobGroupsRequest::~ListJobGroupsRequest()
 {}
 
+bool ListJobGroupsRequest::getAsyncQuery()const
+{
+	return asyncQuery_;
+}
+
+void ListJobGroupsRequest::setAsyncQuery(bool asyncQuery)
+{
+	asyncQuery_ = asyncQuery;
+	setParameter("AsyncQuery", asyncQuery ? "true" : "false");
+}
+
+std::string ListJobGroupsRequest::getSearchText()const
+{
+	return searchText_;
+}
+
+void ListJobGroupsRequest::setSearchText(const std::string& searchText)
+{
+	searchText_ = searchText;
+	setParameter("SearchText", searchText);
+}
+
 long ListJobGroupsRequest::getEndTime()const
 {
 	return endTime_;
@@ -69,6 +91,17 @@ void ListJobGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string ListJobGroupsRequest::getJobGroupStatusFilter()const
+{
+	return jobGroupStatusFilter_;
+}
+
+void ListJobGroupsRequest::setJobGroupStatusFilter(const std::string& jobGroupStatusFilter)
+{
+	jobGroupStatusFilter_ = jobGroupStatusFilter;
+	setParameter("JobGroupStatusFilter", jobGroupStatusFilter);
 }
 
 int ListJobGroupsRequest::getPageSize()const

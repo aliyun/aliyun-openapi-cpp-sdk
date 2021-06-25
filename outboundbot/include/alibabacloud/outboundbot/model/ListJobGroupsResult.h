@@ -39,25 +39,41 @@ namespace AlibabaCloud
 						struct Progress
 						{
 							std::string status;
+							int pausedNum;
+							int failedNum;
 							long startTime;
+							int cancelledNum;
+							int executingNum;
 							int duration;
+							int scheduling;
 							int totalCompleted;
 							int totalNotAnswered;
 							int totalJobs;
+						};
+						struct ExportProgress
+						{
+							std::string status;
+							std::string progress;
+							std::string fileHttpUrl;
 						};
 						struct Strategy
 						{
 							long endTime;
 							long startTime;
 						};
+						std::string status;
+						std::string modifyTime;
 						Progress progress;
-						std::string jobGroupId;
+						std::string jobDataParsingTaskId;
 						std::string jobGroupName;
+						std::string scriptVersion;
+						std::string scriptId;
+						std::string jobGroupDescription;
+						std::string jobGroupId;
 						std::string scriptName;
 						long creationTime;
 						Strategy strategy;
-						std::string scriptId;
-						std::string jobGroupDescription;
+						ExportProgress exportProgress;
 					};
 					int totalCount;
 					int pageSize;
@@ -71,6 +87,7 @@ namespace AlibabaCloud
 				~ListJobGroupsResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
+				std::string getAsyncTaskId()const;
 				std::string getCode()const;
 				JobGroups getJobGroups()const;
 				bool getSuccess()const;
@@ -80,6 +97,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
+				std::string asyncTaskId_;
 				std::string code_;
 				JobGroups jobGroups_;
 				bool success_;

@@ -34,6 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct JobGroup
 				{
+					struct ExportProgress
+					{
+						std::string status;
+						std::string progress;
+						std::string fileHttpUrl;
+					};
 					struct Progress
 					{
 						struct KeyValuePair
@@ -78,16 +84,30 @@ namespace AlibabaCloud
 						std::string routingStrategy;
 						std::vector<std::string> repeatDays;
 					};
+					struct Result
+					{
+						int unrecognizedNum;
+						int noInteractNum;
+						int finishedNum;
+						int clientHangupNum;
+						int timeoutHangupNum;
+					};
+					std::string status;
+					std::string modifyTime;
 					Progress progress;
-					std::string jobGroupId;
+					std::string jobDataParsingTaskId;
 					std::string scenarioId;
 					std::string jobGroupName;
+					std::string scriptVersion;
+					std::string scriptId;
+					std::string jobGroupDescription;
+					Result result;
+					std::string jobGroupId;
 					std::string scriptName;
 					long creationTime;
 					Strategy strategy;
 					std::string jobFilePath;
-					std::string scriptId;
-					std::string jobGroupDescription;
+					ExportProgress exportProgress;
 					std::vector<std::string> callingNumbers;
 				};
 

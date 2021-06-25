@@ -41,17 +41,26 @@ namespace AlibabaCloud
 				void setCallingNumber(const std::vector<std::string>& callingNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getRosterType()const;
+				void setRosterType(const std::string& rosterType);
+				std::string getJobDataParsingTaskId()const;
+				void setJobDataParsingTaskId(const std::string& jobDataParsingTaskId);
 				std::string getStrategyJson()const;
 				void setStrategyJson(const std::string& strategyJson);
 				std::string getJobGroupId()const;
 				void setJobGroupId(const std::string& jobGroupId);
+				bool getIsAsynchrony()const;
+				void setIsAsynchrony(bool isAsynchrony);
 
             private:
 				std::vector<std::string> jobsJson_;
 				std::vector<std::string> callingNumber_;
 				std::string instanceId_;
+				std::string rosterType_;
+				std::string jobDataParsingTaskId_;
 				std::string strategyJson_;
 				std::string jobGroupId_;
+				bool isAsynchrony_;
 
 			};
 		}

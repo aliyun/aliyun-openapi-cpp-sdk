@@ -30,13 +30,25 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListInstancesRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				ListInstancesRequest();
 				~ListInstancesRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
+				std::string resourceGroupId_;
+				std::vector<Tag> tag_;
 
 			};
 		}

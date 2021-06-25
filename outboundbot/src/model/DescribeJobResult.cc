@@ -58,6 +58,18 @@ void DescribeJobResult::parse(const std::string &payload)
 		job_.strategyId = jobNode["StrategyId"].asString();
 	if(!jobNode["SystemPriority"].isNull())
 		job_.systemPriority = std::stoi(jobNode["SystemPriority"].asString());
+	if(!jobNode["InstanceId"].isNull())
+		job_.instanceId = jobNode["InstanceId"].asString();
+	if(!jobNode["DsReport"].isNull())
+		job_.dsReport = jobNode["DsReport"].asString();
+	if(!jobNode["EndReason"].isNull())
+		job_.endReason = std::stoi(jobNode["EndReason"].asString());
+	if(!jobNode["ActualTime"].isNull())
+		job_.actualTime = std::stol(jobNode["ActualTime"].asString());
+	if(!jobNode["CalledNumber"].isNull())
+		job_.calledNumber = jobNode["CalledNumber"].asString();
+	if(!jobNode["NextExecutionTime"].isNull())
+		job_.nextExecutionTime = std::stol(jobNode["NextExecutionTime"].asString());
 	auto allContactsNode = jobNode["Contacts"]["Contact"];
 	for (auto jobNodeContactsContact : allContactsNode)
 	{
@@ -130,6 +142,8 @@ void DescribeJobResult::parse(const std::string &payload)
 			taskObject.status = jobNodeTasksTask["Status"].asString();
 		if(!jobNodeTasksTask["TaskId"].isNull())
 			taskObject.taskId = jobNodeTasksTask["TaskId"].asString();
+		if(!jobNodeTasksTask["EndTime"].isNull())
+			taskObject.endTime = std::stol(jobNodeTasksTask["EndTime"].asString());
 		auto allConversationNode = jobNodeTasksTask["Conversation"]["ConversationDetail"];
 		for (auto jobNodeTasksTaskConversationConversationDetail : allConversationNode)
 		{
@@ -140,6 +154,10 @@ void DescribeJobResult::parse(const std::string &payload)
 				conversationObject.speaker = jobNodeTasksTaskConversationConversationDetail["Speaker"].asString();
 			if(!jobNodeTasksTaskConversationConversationDetail["Timestamp"].isNull())
 				conversationObject.timestamp = std::stol(jobNodeTasksTaskConversationConversationDetail["Timestamp"].asString());
+			if(!jobNodeTasksTaskConversationConversationDetail["Action"].isNull())
+				conversationObject.action = jobNodeTasksTaskConversationConversationDetail["Action"].asString();
+			if(!jobNodeTasksTaskConversationConversationDetail["ActionParams"].isNull())
+				conversationObject.actionParams = jobNodeTasksTaskConversationConversationDetail["ActionParams"].asString();
 			auto allSummary1Node = jobNodeTasksTaskConversationConversationDetail["Summary"]["SummaryItem"];
 			for (auto jobNodeTasksTaskConversationConversationDetailSummarySummaryItem : allSummary1Node)
 			{

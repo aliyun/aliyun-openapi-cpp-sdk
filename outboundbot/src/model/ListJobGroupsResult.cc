@@ -62,6 +62,14 @@ void ListJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.scriptId = jobGroupsNodeListJobGroup["ScriptId"].asString();
 		if(!jobGroupsNodeListJobGroup["ScriptName"].isNull())
 			jobGroupObject.scriptName = jobGroupsNodeListJobGroup["ScriptName"].asString();
+		if(!jobGroupsNodeListJobGroup["JobDataParsingTaskId"].isNull())
+			jobGroupObject.jobDataParsingTaskId = jobGroupsNodeListJobGroup["JobDataParsingTaskId"].asString();
+		if(!jobGroupsNodeListJobGroup["ModifyTime"].isNull())
+			jobGroupObject.modifyTime = jobGroupsNodeListJobGroup["ModifyTime"].asString();
+		if(!jobGroupsNodeListJobGroup["ScriptVersion"].isNull())
+			jobGroupObject.scriptVersion = jobGroupsNodeListJobGroup["ScriptVersion"].asString();
+		if(!jobGroupsNodeListJobGroup["Status"].isNull())
+			jobGroupObject.status = jobGroupsNodeListJobGroup["Status"].asString();
 		auto progressNode = value["Progress"];
 		if(!progressNode["Duration"].isNull())
 			jobGroupObject.progress.duration = std::stoi(progressNode["Duration"].asString());
@@ -75,6 +83,23 @@ void ListJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.progress.totalJobs = std::stoi(progressNode["TotalJobs"].asString());
 		if(!progressNode["TotalNotAnswered"].isNull())
 			jobGroupObject.progress.totalNotAnswered = std::stoi(progressNode["TotalNotAnswered"].asString());
+		if(!progressNode["CancelledNum"].isNull())
+			jobGroupObject.progress.cancelledNum = std::stoi(progressNode["CancelledNum"].asString());
+		if(!progressNode["FailedNum"].isNull())
+			jobGroupObject.progress.failedNum = std::stoi(progressNode["FailedNum"].asString());
+		if(!progressNode["Scheduling"].isNull())
+			jobGroupObject.progress.scheduling = std::stoi(progressNode["Scheduling"].asString());
+		if(!progressNode["PausedNum"].isNull())
+			jobGroupObject.progress.pausedNum = std::stoi(progressNode["PausedNum"].asString());
+		if(!progressNode["ExecutingNum"].isNull())
+			jobGroupObject.progress.executingNum = std::stoi(progressNode["ExecutingNum"].asString());
+		auto exportProgressNode = value["ExportProgress"];
+		if(!exportProgressNode["FileHttpUrl"].isNull())
+			jobGroupObject.exportProgress.fileHttpUrl = exportProgressNode["FileHttpUrl"].asString();
+		if(!exportProgressNode["Progress"].isNull())
+			jobGroupObject.exportProgress.progress = exportProgressNode["Progress"].asString();
+		if(!exportProgressNode["Status"].isNull())
+			jobGroupObject.exportProgress.status = exportProgressNode["Status"].asString();
 		auto strategyNode = value["Strategy"];
 		if(!strategyNode["EndTime"].isNull())
 			jobGroupObject.strategy.endTime = std::stol(strategyNode["EndTime"].asString());
@@ -90,6 +115,8 @@ void ListJobGroupsResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["AsyncTaskId"].isNull())
+		asyncTaskId_ = value["AsyncTaskId"].asString();
 
 }
 
@@ -101,6 +128,11 @@ std::string ListJobGroupsResult::getMessage()const
 int ListJobGroupsResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::string ListJobGroupsResult::getAsyncTaskId()const
+{
+	return asyncTaskId_;
 }
 
 std::string ListJobGroupsResult::getCode()const

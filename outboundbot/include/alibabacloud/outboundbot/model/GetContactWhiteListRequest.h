@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTMEDIAREQUEST_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTMEDIAREQUEST_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETCONTACTWHITELISTREQUEST_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETCONTACTWHITELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListMediaRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT GetContactWhiteListRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListMediaRequest();
-				~ListMediaRequest();
+				GetContactWhiteListRequest();
+				~GetContactWhiteListRequest();
 
+				bool getCountTotalRow()const;
+				void setCountTotalRow(bool countTotalRow);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getNamePrefix()const;
-				void setNamePrefix(const std::string& namePrefix);
 
             private:
+				bool countTotalRow_;
 				int pageNumber_;
 				std::string instanceId_;
 				int pageSize_;
-				std::string namePrefix_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTMEDIAREQUEST_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETCONTACTWHITELISTREQUEST_H_

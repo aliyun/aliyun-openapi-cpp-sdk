@@ -42,6 +42,8 @@ void DescribeJobGroupResult::parse(const std::string &payload)
 	auto jobGroupNode = value["JobGroup"];
 	if(!jobGroupNode["CreationTime"].isNull())
 		jobGroup_.creationTime = std::stol(jobGroupNode["CreationTime"].asString());
+	if(!jobGroupNode["JobDataParsingTaskId"].isNull())
+		jobGroup_.jobDataParsingTaskId = jobGroupNode["JobDataParsingTaskId"].asString();
 	if(!jobGroupNode["JobFilePath"].isNull())
 		jobGroup_.jobFilePath = jobGroupNode["JobFilePath"].asString();
 	if(!jobGroupNode["JobGroupDescription"].isNull())
@@ -50,12 +52,25 @@ void DescribeJobGroupResult::parse(const std::string &payload)
 		jobGroup_.jobGroupId = jobGroupNode["JobGroupId"].asString();
 	if(!jobGroupNode["JobGroupName"].isNull())
 		jobGroup_.jobGroupName = jobGroupNode["JobGroupName"].asString();
+	if(!jobGroupNode["ModifyTime"].isNull())
+		jobGroup_.modifyTime = jobGroupNode["ModifyTime"].asString();
 	if(!jobGroupNode["ScenarioId"].isNull())
 		jobGroup_.scenarioId = jobGroupNode["ScenarioId"].asString();
 	if(!jobGroupNode["ScriptId"].isNull())
 		jobGroup_.scriptId = jobGroupNode["ScriptId"].asString();
 	if(!jobGroupNode["ScriptName"].isNull())
 		jobGroup_.scriptName = jobGroupNode["ScriptName"].asString();
+	if(!jobGroupNode["ScriptVersion"].isNull())
+		jobGroup_.scriptVersion = jobGroupNode["ScriptVersion"].asString();
+	if(!jobGroupNode["Status"].isNull())
+		jobGroup_.status = jobGroupNode["Status"].asString();
+	auto exportProgressNode = jobGroupNode["ExportProgress"];
+	if(!exportProgressNode["FileHttpUrl"].isNull())
+		jobGroup_.exportProgress.fileHttpUrl = exportProgressNode["FileHttpUrl"].asString();
+	if(!exportProgressNode["Progress"].isNull())
+		jobGroup_.exportProgress.progress = exportProgressNode["Progress"].asString();
+	if(!exportProgressNode["Status"].isNull())
+		jobGroup_.exportProgress.status = exportProgressNode["Status"].asString();
 	auto progressNode = jobGroupNode["Progress"];
 	if(!progressNode["Cancelled"].isNull())
 		jobGroup_.progress.cancelled = std::stoi(progressNode["Cancelled"].asString());
@@ -139,6 +154,17 @@ void DescribeJobGroupResult::parse(const std::string &payload)
 		auto allRepeatDays = strategyNode["RepeatDays"]["Integer"];
 		for (auto value : allRepeatDays)
 			jobGroup_.strategy.repeatDays.push_back(value.asString());
+	auto resultNode = jobGroupNode["Result"];
+	if(!resultNode["NoInteractNum"].isNull())
+		jobGroup_.result.noInteractNum = std::stoi(resultNode["NoInteractNum"].asString());
+	if(!resultNode["FinishedNum"].isNull())
+		jobGroup_.result.finishedNum = std::stoi(resultNode["FinishedNum"].asString());
+	if(!resultNode["ClientHangupNum"].isNull())
+		jobGroup_.result.clientHangupNum = std::stoi(resultNode["ClientHangupNum"].asString());
+	if(!resultNode["TimeoutHangupNum"].isNull())
+		jobGroup_.result.timeoutHangupNum = std::stoi(resultNode["TimeoutHangupNum"].asString());
+	if(!resultNode["UnrecognizedNum"].isNull())
+		jobGroup_.result.unrecognizedNum = std::stoi(resultNode["UnrecognizedNum"].asString());
 		auto allCallingNumbers = jobGroupNode["CallingNumbers"]["String"];
 		for (auto value : allCallingNumbers)
 			jobGroup_.callingNumbers.push_back(value.asString());

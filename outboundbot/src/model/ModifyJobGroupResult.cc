@@ -42,6 +42,8 @@ void ModifyJobGroupResult::parse(const std::string &payload)
 	auto jobGroupNode = value["JobGroup"];
 	if(!jobGroupNode["CreationTime"].isNull())
 		jobGroup_.creationTime = std::stol(jobGroupNode["CreationTime"].asString());
+	if(!jobGroupNode["JobDataParsingTaskId"].isNull())
+		jobGroup_.jobDataParsingTaskId = jobGroupNode["JobDataParsingTaskId"].asString();
 	if(!jobGroupNode["JobFilePath"].isNull())
 		jobGroup_.jobFilePath = jobGroupNode["JobFilePath"].asString();
 	if(!jobGroupNode["JobGroupDescription"].isNull())
@@ -50,8 +52,23 @@ void ModifyJobGroupResult::parse(const std::string &payload)
 		jobGroup_.jobGroupId = jobGroupNode["JobGroupId"].asString();
 	if(!jobGroupNode["JobGroupName"].isNull())
 		jobGroup_.jobGroupName = jobGroupNode["JobGroupName"].asString();
+	if(!jobGroupNode["ModifyTime"].isNull())
+		jobGroup_.modifyTime = jobGroupNode["ModifyTime"].asString();
 	if(!jobGroupNode["ScenarioId"].isNull())
 		jobGroup_.scenarioId = jobGroupNode["ScenarioId"].asString();
+	if(!jobGroupNode["ScriptName"].isNull())
+		jobGroup_.scriptName = jobGroupNode["ScriptName"].asString();
+	if(!jobGroupNode["ScriptVersion"].isNull())
+		jobGroup_.scriptVersion = jobGroupNode["ScriptVersion"].asString();
+	if(!jobGroupNode["Status"].isNull())
+		jobGroup_.status = jobGroupNode["Status"].asString();
+	auto exportProgressNode = jobGroupNode["ExportProgress"];
+	if(!exportProgressNode["FileHttpUrl"].isNull())
+		jobGroup_.exportProgress.fileHttpUrl = exportProgressNode["FileHttpUrl"].asString();
+	if(!exportProgressNode["Progress"].isNull())
+		jobGroup_.exportProgress.progress = exportProgressNode["Progress"].asString();
+	if(!exportProgressNode["Status"].isNull())
+		jobGroup_.exportProgress.status = exportProgressNode["Status"].asString();
 	auto strategyNode = jobGroupNode["Strategy"];
 	if(!strategyNode["Customized"].isNull())
 		jobGroup_.strategy.customized = strategyNode["Customized"].asString();

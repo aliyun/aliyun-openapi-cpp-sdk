@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTMEDIARESULT_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTMEDIARESULT_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_UNTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_UNTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,24 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListMediaResult : public ServiceResult
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT UntagResourcesResult : public ServiceResult
 			{
 			public:
-				struct Media
-				{
-					std::string mediaId;
-					std::string name;
-				};
 
 
-				ListMediaResult();
-				explicit ListMediaResult(const std::string &payload);
-				~ListMediaResult();
-				std::vector<Media> getMediaList()const;
-				int getTotalCount()const;
+				UntagResourcesResult();
+				explicit UntagResourcesResult(const std::string &payload);
+				~UntagResourcesResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -54,11 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Media> mediaList_;
-				int totalCount_;
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
 				int httpStatusCode_;
 				std::string code_;
 				bool success_;
@@ -67,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTMEDIARESULT_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_UNTAGRESOURCESRESULT_H_

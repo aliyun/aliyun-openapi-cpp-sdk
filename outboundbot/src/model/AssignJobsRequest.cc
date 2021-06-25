@@ -64,6 +64,28 @@ void AssignJobsRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string AssignJobsRequest::getRosterType()const
+{
+	return rosterType_;
+}
+
+void AssignJobsRequest::setRosterType(const std::string& rosterType)
+{
+	rosterType_ = rosterType;
+	setParameter("RosterType", rosterType);
+}
+
+std::string AssignJobsRequest::getJobDataParsingTaskId()const
+{
+	return jobDataParsingTaskId_;
+}
+
+void AssignJobsRequest::setJobDataParsingTaskId(const std::string& jobDataParsingTaskId)
+{
+	jobDataParsingTaskId_ = jobDataParsingTaskId;
+	setParameter("JobDataParsingTaskId", jobDataParsingTaskId);
+}
+
 std::string AssignJobsRequest::getStrategyJson()const
 {
 	return strategyJson_;
@@ -84,5 +106,16 @@ void AssignJobsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
 	setParameter("JobGroupId", jobGroupId);
+}
+
+bool AssignJobsRequest::getIsAsynchrony()const
+{
+	return isAsynchrony_;
+}
+
+void AssignJobsRequest::setIsAsynchrony(bool isAsynchrony)
+{
+	isAsynchrony_ = isAsynchrony;
+	setParameter("IsAsynchrony", isAsynchrony ? "true" : "false");
 }
 

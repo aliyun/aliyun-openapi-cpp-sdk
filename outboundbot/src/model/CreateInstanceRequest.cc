@@ -49,6 +49,17 @@ void CreateInstanceRequest::setSecretKey(const std::string& secretKey)
 	setParameter("SecretKey", secretKey);
 }
 
+std::string CreateInstanceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateInstanceRequest::getEndpoint()const
 {
 	return endpoint_;

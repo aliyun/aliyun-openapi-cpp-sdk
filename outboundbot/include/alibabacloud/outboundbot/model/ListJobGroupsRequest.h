@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ListJobGroupsRequest();
 				~ListJobGroupsRequest();
 
+				bool getAsyncQuery()const;
+				void setAsyncQuery(bool asyncQuery);
+				std::string getSearchText()const;
+				void setSearchText(const std::string& searchText);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				long getStartTime()const;
@@ -43,14 +47,19 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getJobGroupStatusFilter()const;
+				void setJobGroupStatusFilter(const std::string& jobGroupStatusFilter);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 
             private:
+				bool asyncQuery_;
+				std::string searchText_;
 				long endTime_;
 				long startTime_;
 				int pageNumber_;
 				std::string instanceId_;
+				std::string jobGroupStatusFilter_;
 				int pageSize_;
 
 			};

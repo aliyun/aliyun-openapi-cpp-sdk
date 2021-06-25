@@ -78,7 +78,9 @@ namespace AlibabaCloud
 								std::string summaryName;
 							};
 							std::string script;
+							std::string action;
 							std::vector<ConversationDetail::SummaryItem2> summary1;
+							std::string actionParams;
 							long timestamp;
 							std::string speaker;
 						};
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 						std::string calledNumber;
 						std::string scenarioId;
 						std::string taskId;
+						long endTime;
 						long actualTime;
 						std::string callId;
 						std::vector<Task::ConversationDetail> conversation;
@@ -98,12 +101,18 @@ namespace AlibabaCloud
 						std::string jobId;
 					};
 					std::string status;
+					std::string calledNumber;
 					std::vector<Task> tasks;
 					std::string scenarioId;
+					std::string instanceId;
 					int priority;
+					long actualTime;
 					std::string strategyId;
 					std::vector<KeyValuePair> extras;
+					std::string dsReport;
+					long nextExecutionTime;
 					std::string jobGroupId;
+					int endReason;
 					std::vector<Contact> contacts;
 					std::string referenceId;
 					std::string failureReason;

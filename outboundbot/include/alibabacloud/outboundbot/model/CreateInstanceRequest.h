@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setMaxConcurrentConversation(int maxConcurrentConversation);
 				std::string getSecretKey()const;
 				void setSecretKey(const std::string& secretKey);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getEndpoint()const;
 				void setEndpoint(const std::string& endpoint);
 				std::string getInstanceName()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
             private:
 				int maxConcurrentConversation_;
 				std::string secretKey_;
+				std::string resourceGroupId_;
 				std::string endpoint_;
 				std::string instanceName_;
 				std::string callCenterInstanceId_;

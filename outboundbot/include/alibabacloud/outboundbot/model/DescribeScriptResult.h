@@ -34,16 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Script
 				{
-					std::string industry;
 					std::string status;
-					bool isDrafted;
-					std::string scriptName;
+					std::string chatbotId;
 					std::string scriptDescription;
-					long updateTime;
 					std::string scriptId;
 					std::string debugStatus;
 					std::string scene;
 					bool isDebugDrafted;
+					std::string industry;
+					std::string asrConfig;
+					bool isDrafted;
+					std::string scriptName;
+					long updateTime;
+					std::string ttsConfig;
 				};
 
 

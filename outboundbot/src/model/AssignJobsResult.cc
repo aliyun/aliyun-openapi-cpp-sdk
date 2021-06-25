@@ -39,6 +39,9 @@ void AssignJobsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allJobsId = value["JobsId"]["JobsId"];
+	for (const auto &item : allJobsId)
+		jobsId_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -50,6 +53,11 @@ void AssignJobsResult::parse(const std::string &payload)
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
+}
+
+std::vector<std::string> AssignJobsResult::getJobsId()const
+{
+	return jobsId_;
 }
 
 std::string AssignJobsResult::getJobGroupId()const

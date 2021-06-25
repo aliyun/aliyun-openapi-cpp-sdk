@@ -52,15 +52,23 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.instanceName = instanceNode["InstanceName"].asString();
 	if(!instanceNode["MaxConcurrentConversation"].isNull())
 		instance_.maxConcurrentConversation = std::stoi(instanceNode["MaxConcurrentConversation"].asString());
-	if(!instanceNode["Owner"].isNull())
-		instance_.owner = instanceNode["Owner"].asString();
 	if(!instanceNode["NluServiceType"].isNull())
 		instance_.nluServiceType = instanceNode["NluServiceType"].asString();
+	if(!instanceNode["Owner"].isNull())
+		instance_.owner = instanceNode["Owner"].asString();
+	if(!instanceNode["CreatorId"].isNull())
+		instance_.creatorId = std::stol(instanceNode["CreatorId"].asString());
+	if(!instanceNode["CreatorName"].isNull())
+		instance_.creatorName = instanceNode["CreatorName"].asString();
+	if(!instanceNode["OwnerName"].isNull())
+		instance_.ownerName = instanceNode["OwnerName"].asString();
+	if(!instanceNode["ResourceGroupId"].isNull())
+		instance_.resourceGroupId = instanceNode["ResourceGroupId"].asString();
 	auto nluProfileNode = instanceNode["NluProfile"];
-	if(!nluProfileNode["Endpoint"].isNull())
-		instance_.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
 	if(!nluProfileNode["AccessKey"].isNull())
 		instance_.nluProfile.accessKey = nluProfileNode["AccessKey"].asString();
+	if(!nluProfileNode["Endpoint"].isNull())
+		instance_.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
 	if(!nluProfileNode["SecretKey"].isNull())
 		instance_.nluProfile.secretKey = nluProfileNode["SecretKey"].asString();
 	if(!value["Code"].isNull())

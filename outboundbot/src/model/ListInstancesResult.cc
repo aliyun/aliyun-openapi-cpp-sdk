@@ -57,15 +57,33 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.isTemplateContainer = valueInstancesInstance["IsTemplateContainer"].asString() == "true";
 		if(!valueInstancesInstance["MaxConcurrentConversation"].isNull())
 			instancesObject.maxConcurrentConversation = std::stoi(valueInstancesInstance["MaxConcurrentConversation"].asString());
-		if(!valueInstancesInstance["Owner"].isNull())
-			instancesObject.owner = valueInstancesInstance["Owner"].asString();
+		if(!valueInstancesInstance["OwnerName"].isNull())
+			instancesObject.ownerName = valueInstancesInstance["OwnerName"].asString();
+		if(!valueInstancesInstance["CreatorId"].isNull())
+			instancesObject.creatorId = std::stol(valueInstancesInstance["CreatorId"].asString());
+		if(!valueInstancesInstance["CreatorName"].isNull())
+			instancesObject.creatorName = valueInstancesInstance["CreatorName"].asString();
 		if(!valueInstancesInstance["NluServiceType"].isNull())
 			instancesObject.nluServiceType = valueInstancesInstance["NluServiceType"].asString();
+		if(!valueInstancesInstance["Owner"].isNull())
+			instancesObject.owner = valueInstancesInstance["Owner"].asString();
+		if(!valueInstancesInstance["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
+		auto allResourceTagsNode = valueInstancesInstance["ResourceTags"]["ResourceTag"];
+		for (auto valueInstancesInstanceResourceTagsResourceTag : allResourceTagsNode)
+		{
+			Instance::ResourceTag resourceTagsObject;
+			if(!valueInstancesInstanceResourceTagsResourceTag["Key"].isNull())
+				resourceTagsObject.key = valueInstancesInstanceResourceTagsResourceTag["Key"].asString();
+			if(!valueInstancesInstanceResourceTagsResourceTag["Value"].isNull())
+				resourceTagsObject.value = valueInstancesInstanceResourceTagsResourceTag["Value"].asString();
+			instancesObject.resourceTags.push_back(resourceTagsObject);
+		}
 		auto nluProfileNode = value["NluProfile"];
-		if(!nluProfileNode["Endpoint"].isNull())
-			instancesObject.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
 		if(!nluProfileNode["AccessKey"].isNull())
 			instancesObject.nluProfile.accessKey = nluProfileNode["AccessKey"].asString();
+		if(!nluProfileNode["Endpoint"].isNull())
+			instancesObject.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
 		if(!nluProfileNode["SecretKey"].isNull())
 			instancesObject.nluProfile.secretKey = nluProfileNode["SecretKey"].asString();
 		instances_.push_back(instancesObject);

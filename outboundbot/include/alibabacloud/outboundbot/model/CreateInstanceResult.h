@@ -40,15 +40,19 @@ namespace AlibabaCloud
 						std::string endpoint;
 						std::string accessKey;
 					};
-					std::string instanceName;
 					std::string owner;
-					int maxConcurrentConversation;
+					std::string ownerName;
+					std::string resourceGroupId;
 					std::string instanceId;
+					long creatorId;
+					std::string callCenterInstanceId;
+					std::string instanceName;
+					int maxConcurrentConversation;
 					long creationTime;
 					std::string instanceDescription;
 					std::string nluServiceType;
 					NluProfile nluProfile;
-					std::string callCenterInstanceId;
+					std::string creatorName;
 				};
 
 

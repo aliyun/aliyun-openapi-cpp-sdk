@@ -60,6 +60,12 @@ void DescribeScriptResult::parse(const std::string &payload)
 		script_.status = scriptNode["Status"].asString();
 	if(!scriptNode["UpdateTime"].isNull())
 		script_.updateTime = std::stol(scriptNode["UpdateTime"].asString());
+	if(!scriptNode["ChatbotId"].isNull())
+		script_.chatbotId = scriptNode["ChatbotId"].asString();
+	if(!scriptNode["AsrConfig"].isNull())
+		script_.asrConfig = scriptNode["AsrConfig"].asString();
+	if(!scriptNode["TtsConfig"].isNull())
+		script_.ttsConfig = scriptNode["TtsConfig"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
