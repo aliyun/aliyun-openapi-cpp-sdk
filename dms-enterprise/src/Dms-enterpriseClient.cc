@@ -1491,6 +1491,42 @@ Dms_enterpriseClient::GetSQLReviewCheckResultStatusOutcomeCallable Dms_enterpris
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetSQLReviewOptimizeDetailOutcome Dms_enterpriseClient::getSQLReviewOptimizeDetail(const GetSQLReviewOptimizeDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSQLReviewOptimizeDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSQLReviewOptimizeDetailOutcome(GetSQLReviewOptimizeDetailResult(outcome.result()));
+	else
+		return GetSQLReviewOptimizeDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getSQLReviewOptimizeDetailAsync(const GetSQLReviewOptimizeDetailRequest& request, const GetSQLReviewOptimizeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSQLReviewOptimizeDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetSQLReviewOptimizeDetailOutcomeCallable Dms_enterpriseClient::getSQLReviewOptimizeDetailCallable(const GetSQLReviewOptimizeDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSQLReviewOptimizeDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getSQLReviewOptimizeDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetStructSyncExecSqlDetailOutcome Dms_enterpriseClient::getStructSyncExecSqlDetail(const GetStructSyncExecSqlDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

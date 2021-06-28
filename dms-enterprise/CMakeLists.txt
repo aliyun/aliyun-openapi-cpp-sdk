@@ -101,6 +101,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusRequest.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusResult.h
+	include/alibabacloud/dms-enterprise/model/GetSQLReviewOptimizeDetailRequest.h
+	include/alibabacloud/dms-enterprise/model/GetSQLReviewOptimizeDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncExecSqlDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetStructSyncJobAnalyzeResultRequest.h
@@ -268,6 +270,8 @@ set(dms-enterprise_src
 	src/model/GetPhysicalDatabaseResult.cc
 	src/model/GetSQLReviewCheckResultStatusRequest.cc
 	src/model/GetSQLReviewCheckResultStatusResult.cc
+	src/model/GetSQLReviewOptimizeDetailRequest.cc
+	src/model/GetSQLReviewOptimizeDetailResult.cc
 	src/model/GetStructSyncExecSqlDetailRequest.cc
 	src/model/GetStructSyncExecSqlDetailResult.cc
 	src/model/GetStructSyncJobAnalyzeResultRequest.cc

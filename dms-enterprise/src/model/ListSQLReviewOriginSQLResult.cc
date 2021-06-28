@@ -57,6 +57,12 @@ void ListSQLReviewOriginSQLResult::parse(const std::string &payload)
 			originSQLListObject.statusDesc = valueOriginSQLListOriginSQLListItem["StatusDesc"].asString();
 		if(!valueOriginSQLListOriginSQLListItem["CheckedTime"].isNull())
 			originSQLListObject.checkedTime = valueOriginSQLListOriginSQLListItem["CheckedTime"].asString();
+		if(!valueOriginSQLListOriginSQLListItem["SqlHash"].isNull())
+			originSQLListObject.sqlHash = valueOriginSQLListOriginSQLListItem["SqlHash"].asString();
+		if(!valueOriginSQLListOriginSQLListItem["ReviewSummary"].isNull())
+			originSQLListObject.reviewSummary = valueOriginSQLListOriginSQLListItem["ReviewSummary"].asString();
+		if(!valueOriginSQLListOriginSQLListItem["SQLReviewQueryKey"].isNull())
+			originSQLListObject.sQLReviewQueryKey = valueOriginSQLListOriginSQLListItem["SQLReviewQueryKey"].asString();
 		originSQLList_.push_back(originSQLListObject);
 	}
 	if(!value["ErrorCode"].isNull())

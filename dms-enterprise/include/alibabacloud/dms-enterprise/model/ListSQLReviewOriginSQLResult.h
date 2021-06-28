@@ -34,13 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct OriginSQLListItem
 				{
+					std::string sqlHash;
 					std::string statusDesc;
 					std::string sQLContent;
 					std::string checkedTime;
 					std::string fileName;
 					std::string checkStatus;
 					long fileId;
+					std::string reviewSummary;
 					long sQLId;
+					std::string sQLReviewQueryKey;
 				};
 
 
