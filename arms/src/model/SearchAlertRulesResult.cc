@@ -82,6 +82,8 @@ void SearchAlertRulesResult::parse(const std::string &payload)
 			alertRuleEntityObject.title = pageBeanNodeAlertRulesAlertRuleEntity["Title"].asString();
 		if(!pageBeanNodeAlertRulesAlertRuleEntity["ContactGroupIds"].isNull())
 			alertRuleEntityObject.contactGroupIds = pageBeanNodeAlertRulesAlertRuleEntity["ContactGroupIds"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["HostByAlertManager"].isNull())
+			alertRuleEntityObject.hostByAlertManager = pageBeanNodeAlertRulesAlertRuleEntity["HostByAlertManager"].asString() == "true";
 		auto alarmContextNode = value["AlarmContext"];
 		if(!alarmContextNode["AlarmContentTemplate"].isNull())
 			alertRuleEntityObject.alarmContext.alarmContentTemplate = alarmContextNode["AlarmContentTemplate"].asString();

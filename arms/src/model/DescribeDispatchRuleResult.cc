@@ -46,6 +46,10 @@ void DescribeDispatchRuleResult::parse(const std::string &payload)
 		dispatchRule_.name = dispatchRuleNode["Name"].asString();
 	if(!dispatchRuleNode["State"].isNull())
 		dispatchRule_.state = dispatchRuleNode["State"].asString();
+	if(!dispatchRuleNode["DispatchType"].isNull())
+		dispatchRule_.dispatchType = dispatchRuleNode["DispatchType"].asString();
+	if(!dispatchRuleNode["IsRecover"].isNull())
+		dispatchRule_.isRecover = dispatchRuleNode["IsRecover"].asString() == "true";
 	auto allGroupRulesNode = dispatchRuleNode["GroupRules"]["GroupRule"];
 	for (auto dispatchRuleNodeGroupRulesGroupRule : allGroupRulesNode)
 	{
@@ -56,6 +60,8 @@ void DescribeDispatchRuleResult::parse(const std::string &payload)
 			groupRuleObject.groupWaitTime = std::stol(dispatchRuleNodeGroupRulesGroupRule["GroupWaitTime"].asString());
 		if(!dispatchRuleNodeGroupRulesGroupRule["GroupInterval"].isNull())
 			groupRuleObject.groupInterval = std::stol(dispatchRuleNodeGroupRulesGroupRule["GroupInterval"].asString());
+		if(!dispatchRuleNodeGroupRulesGroupRule["RepeatInterval"].isNull())
+			groupRuleObject.repeatInterval = std::stol(dispatchRuleNodeGroupRulesGroupRule["RepeatInterval"].asString());
 		auto allGroupingFields = value["GroupingFields"]["GroupingField"];
 		for (auto value : allGroupingFields)
 			groupRuleObject.groupingFields.push_back(value.asString());

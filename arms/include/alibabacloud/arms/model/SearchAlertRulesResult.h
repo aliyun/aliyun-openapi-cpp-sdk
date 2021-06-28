@@ -79,6 +79,7 @@ namespace AlibabaCloud
 							long noticeEndTime;
 						};
 						std::string status;
+						bool hostByAlertManager;
 						MetricParam metricParam;
 						int alertVersion;
 						long taskId;

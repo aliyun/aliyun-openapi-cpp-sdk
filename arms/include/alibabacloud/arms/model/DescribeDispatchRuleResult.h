@@ -54,6 +54,7 @@ namespace AlibabaCloud
 						std::vector<std::string> groupingFields;
 						long groupWaitTime;
 						long groupId;
+						long repeatInterval;
 					};
 					struct NotifyRule
 					{
@@ -66,7 +67,9 @@ namespace AlibabaCloud
 						std::vector<std::string> notifyChannels;
 						std::vector<NotifyRule::NotifyObject> notifyObjects;
 					};
+					bool isRecover;
 					std::vector<GroupRule> groupRules;
+					std::string dispatchType;
 					std::string state;
 					long ruleId;
 					LabelMatchExpressionGrid labelMatchExpressionGrid;

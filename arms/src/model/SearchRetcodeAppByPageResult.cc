@@ -66,6 +66,8 @@ void SearchRetcodeAppByPageResult::parse(const std::string &payload)
 			retcodeAppObject.createTime = std::stol(pageBeanNodeRetcodeAppsRetcodeApp["CreateTime"].asString());
 		if(!pageBeanNodeRetcodeAppsRetcodeApp["UpdateTime"].isNull())
 			retcodeAppObject.updateTime = std::stol(pageBeanNodeRetcodeAppsRetcodeApp["UpdateTime"].asString());
+		if(!pageBeanNodeRetcodeAppsRetcodeApp["RetcodeAppType"].isNull())
+			retcodeAppObject.retcodeAppType = pageBeanNodeRetcodeAppsRetcodeApp["RetcodeAppType"].asString();
 		pageBean_.retcodeApps.push_back(retcodeAppObject);
 	}
 

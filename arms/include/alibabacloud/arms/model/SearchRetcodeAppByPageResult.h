@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct RetcodeApp
 					{
+						std::string retcodeAppType;
 						std::string type;
 						long appId;
 						std::string userId;

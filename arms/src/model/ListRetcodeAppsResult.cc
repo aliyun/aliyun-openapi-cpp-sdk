@@ -49,6 +49,8 @@ void ListRetcodeAppsResult::parse(const std::string &payload)
 			retcodeAppsObject.pid = valueRetcodeAppsRetcodeApp["Pid"].asString();
 		if(!valueRetcodeAppsRetcodeApp["AppName"].isNull())
 			retcodeAppsObject.appName = valueRetcodeAppsRetcodeApp["AppName"].asString();
+		if(!valueRetcodeAppsRetcodeApp["RetcodeAppType"].isNull())
+			retcodeAppsObject.retcodeAppType = valueRetcodeAppsRetcodeApp["RetcodeAppType"].asString();
 		retcodeApps_.push_back(retcodeAppsObject);
 	}
 
