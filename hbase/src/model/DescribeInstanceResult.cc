@@ -136,7 +136,7 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
 	if(!value["EncryptionType"].isNull())
-		encryptionType_ = value["EncryptionType"].asString() == "true";
+		encryptionType_ = value["EncryptionType"].asString();
 	if(!value["EncryptionKey"].isNull())
 		encryptionKey_ = value["EncryptionKey"].asString();
 
@@ -252,7 +252,7 @@ int DescribeInstanceResult::getColdStorageSize()const
 	return coldStorageSize_;
 }
 
-bool DescribeInstanceResult::getEncryptionType()const
+std::string DescribeInstanceResult::getEncryptionType()const
 {
 	return encryptionType_;
 }

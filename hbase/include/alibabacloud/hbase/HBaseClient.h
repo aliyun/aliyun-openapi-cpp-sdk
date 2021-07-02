@@ -124,8 +124,6 @@
 #include "model/DescribeServerlessClusterResult.h"
 #include "model/DescribeSubDomainRequest.h"
 #include "model/DescribeSubDomainResult.h"
-#include "model/DescribeUserEncryptionKeyListRequest.h"
-#include "model/DescribeUserEncryptionKeyListResult.h"
 #include "model/EnableHBaseueBackupRequest.h"
 #include "model/EnableHBaseueBackupResult.h"
 #include "model/EnableHBaseueModuleRequest.h"
@@ -370,9 +368,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSubDomainResult> DescribeSubDomainOutcome;
 			typedef std::future<DescribeSubDomainOutcome> DescribeSubDomainOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeSubDomainRequest&, const DescribeSubDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubDomainAsyncHandler;
-			typedef Outcome<Error, Model::DescribeUserEncryptionKeyListResult> DescribeUserEncryptionKeyListOutcome;
-			typedef std::future<DescribeUserEncryptionKeyListOutcome> DescribeUserEncryptionKeyListOutcomeCallable;
-			typedef std::function<void(const HBaseClient*, const Model::DescribeUserEncryptionKeyListRequest&, const DescribeUserEncryptionKeyListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserEncryptionKeyListAsyncHandler;
 			typedef Outcome<Error, Model::EnableHBaseueBackupResult> EnableHBaseueBackupOutcome;
 			typedef std::future<EnableHBaseueBackupOutcome> EnableHBaseueBackupOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::EnableHBaseueBackupRequest&, const EnableHBaseueBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableHBaseueBackupAsyncHandler;
@@ -654,9 +649,6 @@ namespace AlibabaCloud
 			DescribeSubDomainOutcome describeSubDomain(const Model::DescribeSubDomainRequest &request)const;
 			void describeSubDomainAsync(const Model::DescribeSubDomainRequest& request, const DescribeSubDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSubDomainOutcomeCallable describeSubDomainCallable(const Model::DescribeSubDomainRequest& request) const;
-			DescribeUserEncryptionKeyListOutcome describeUserEncryptionKeyList(const Model::DescribeUserEncryptionKeyListRequest &request)const;
-			void describeUserEncryptionKeyListAsync(const Model::DescribeUserEncryptionKeyListRequest& request, const DescribeUserEncryptionKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeUserEncryptionKeyListOutcomeCallable describeUserEncryptionKeyListCallable(const Model::DescribeUserEncryptionKeyListRequest& request) const;
 			EnableHBaseueBackupOutcome enableHBaseueBackup(const Model::EnableHBaseueBackupRequest &request)const;
 			void enableHBaseueBackupAsync(const Model::EnableHBaseueBackupRequest& request, const EnableHBaseueBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableHBaseueBackupOutcomeCallable enableHBaseueBackupCallable(const Model::EnableHBaseueBackupRequest& request) const;

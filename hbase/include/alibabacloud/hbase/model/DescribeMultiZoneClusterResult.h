@@ -59,7 +59,7 @@ namespace AlibabaCloud
 				std::vector<Tag> getTags()const;
 				std::string getEngine()const;
 				std::string getStatus()const;
-				bool getEncryptionType()const;
+				std::string getEncryptionType()const;
 				std::string getExpireTimeUTC()const;
 				int getMasterDiskSize()const;
 				std::string getInstanceId()const;
@@ -112,7 +112,7 @@ namespace AlibabaCloud
 				std::vector<Tag> tags_;
 				std::string engine_;
 				std::string status_;
-				bool encryptionType_;
+				std::string encryptionType_;
 				std::string expireTimeUTC_;
 				int masterDiskSize_;
 				std::string instanceId_;

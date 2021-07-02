@@ -123,8 +123,6 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeServerlessClusterResult.h
 	include/alibabacloud/hbase/model/DescribeSubDomainRequest.h
 	include/alibabacloud/hbase/model/DescribeSubDomainResult.h
-	include/alibabacloud/hbase/model/DescribeUserEncryptionKeyListRequest.h
-	include/alibabacloud/hbase/model/DescribeUserEncryptionKeyListResult.h
 	include/alibabacloud/hbase/model/EnableHBaseueBackupRequest.h
 	include/alibabacloud/hbase/model/EnableHBaseueBackupResult.h
 	include/alibabacloud/hbase/model/EnableHBaseueModuleRequest.h
@@ -312,8 +310,6 @@ set(hbase_src
 	src/model/DescribeServerlessClusterResult.cc
 	src/model/DescribeSubDomainRequest.cc
 	src/model/DescribeSubDomainResult.cc
-	src/model/DescribeUserEncryptionKeyListRequest.cc
-	src/model/DescribeUserEncryptionKeyListResult.cc
 	src/model/EnableHBaseueBackupRequest.cc
 	src/model/EnableHBaseueBackupResult.cc
 	src/model/EnableHBaseueModuleRequest.cc

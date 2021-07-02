@@ -1887,42 +1887,6 @@ HBaseClient::DescribeSubDomainOutcomeCallable HBaseClient::describeSubDomainCall
 	return task->get_future();
 }
 
-HBaseClient::DescribeUserEncryptionKeyListOutcome HBaseClient::describeUserEncryptionKeyList(const DescribeUserEncryptionKeyListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeUserEncryptionKeyListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeUserEncryptionKeyListOutcome(DescribeUserEncryptionKeyListResult(outcome.result()));
-	else
-		return DescribeUserEncryptionKeyListOutcome(outcome.error());
-}
-
-void HBaseClient::describeUserEncryptionKeyListAsync(const DescribeUserEncryptionKeyListRequest& request, const DescribeUserEncryptionKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeUserEncryptionKeyList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-HBaseClient::DescribeUserEncryptionKeyListOutcomeCallable HBaseClient::describeUserEncryptionKeyListCallable(const DescribeUserEncryptionKeyListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeUserEncryptionKeyListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeUserEncryptionKeyList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 HBaseClient::EnableHBaseueBackupOutcome HBaseClient::enableHBaseueBackup(const EnableHBaseueBackupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
