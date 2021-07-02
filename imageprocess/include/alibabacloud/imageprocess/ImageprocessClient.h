@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "ImageprocessExport.h"
+#include "model/AnalyzeChestVesselRequest.h"
+#include "model/AnalyzeChestVesselResult.h"
 #include "model/CalcCACSRequest.h"
 #include "model/CalcCACSResult.h"
 #include "model/ClassifyFNFRequest.h"
@@ -61,6 +63,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_IMAGEPROCESS_EXPORT ImageprocessClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AnalyzeChestVesselResult> AnalyzeChestVesselOutcome;
+			typedef std::future<AnalyzeChestVesselOutcome> AnalyzeChestVesselOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::AnalyzeChestVesselRequest&, const AnalyzeChestVesselOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AnalyzeChestVesselAsyncHandler;
 			typedef Outcome<Error, Model::CalcCACSResult> CalcCACSOutcome;
 			typedef std::future<CalcCACSOutcome> CalcCACSOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::CalcCACSRequest&, const CalcCACSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CalcCACSAsyncHandler;
@@ -111,6 +116,9 @@ namespace AlibabaCloud
 			ImageprocessClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			ImageprocessClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~ImageprocessClient();
+			AnalyzeChestVesselOutcome analyzeChestVessel(const Model::AnalyzeChestVesselRequest &request)const;
+			void analyzeChestVesselAsync(const Model::AnalyzeChestVesselRequest& request, const AnalyzeChestVesselAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AnalyzeChestVesselOutcomeCallable analyzeChestVesselCallable(const Model::AnalyzeChestVesselRequest& request) const;
 			CalcCACSOutcome calcCACS(const Model::CalcCACSRequest &request)const;
 			void calcCACSAsync(const Model::CalcCACSRequest& request, const CalcCACSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CalcCACSOutcomeCallable calcCACSCallable(const Model::CalcCACSRequest& request) const;

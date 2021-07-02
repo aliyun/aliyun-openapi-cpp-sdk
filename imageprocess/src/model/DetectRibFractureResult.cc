@@ -46,22 +46,22 @@ void DetectRibFractureResult::parse(const std::string &payload)
 	for (auto dataNodeDetectionsDetectionsItem : allDetectionsNode)
 	{
 		Data::DetectionsItem detectionsItemObject;
-		if(!dataNodeDetectionsDetectionsItem["FractureCategory"].isNull())
-			detectionsItemObject.fractureCategory = dataNodeDetectionsDetectionsItem["FractureCategory"].asString();
+		if(!dataNodeDetectionsDetectionsItem["FractureId"].isNull())
+			detectionsItemObject.fractureId = std::stoi(dataNodeDetectionsDetectionsItem["FractureId"].asString());
 		if(!dataNodeDetectionsDetectionsItem["FractureConfidence"].isNull())
 			detectionsItemObject.fractureConfidence = std::stof(dataNodeDetectionsDetectionsItem["FractureConfidence"].asString());
+		if(!dataNodeDetectionsDetectionsItem["FractureCategory"].isNull())
+			detectionsItemObject.fractureCategory = dataNodeDetectionsDetectionsItem["FractureCategory"].asString();
 		if(!dataNodeDetectionsDetectionsItem["FractureLocation"].isNull())
 			detectionsItemObject.fractureLocation = dataNodeDetectionsDetectionsItem["FractureLocation"].asString();
 		if(!dataNodeDetectionsDetectionsItem["FractureSegment"].isNull())
 			detectionsItemObject.fractureSegment = std::stol(dataNodeDetectionsDetectionsItem["FractureSegment"].asString());
-		if(!dataNodeDetectionsDetectionsItem["FractureId"].isNull())
-			detectionsItemObject.fractureId = std::stoi(dataNodeDetectionsDetectionsItem["FractureId"].asString());
-		auto allCoordinateImage = value["CoordinateImage"]["CoordinateImage"];
-		for (auto value : allCoordinateImage)
-			detectionsItemObject.coordinateImage.push_back(value.asString());
 		auto allCoordinates = value["Coordinates"]["Coordinates"];
 		for (auto value : allCoordinates)
 			detectionsItemObject.coordinates.push_back(value.asString());
+		auto allCoordinateImage = value["CoordinateImage"]["CoordinateImage"];
+		for (auto value : allCoordinateImage)
+			detectionsItemObject.coordinateImage.push_back(value.asString());
 		data_.detections.push_back(detectionsItemObject);
 	}
 		auto allOrigin = dataNode["Origin"]["Origin"];

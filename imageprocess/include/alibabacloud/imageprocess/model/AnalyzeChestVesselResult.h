@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTRIBFRACTURERESULT_H_
-#define ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTRIBFRACTURERESULT_H_
+#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_ANALYZECHESTVESSELRESULT_H_
+#define ALIBABACLOUD_IMAGEPROCESS_MODEL_ANALYZECHESTVESSELRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,52 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMAGEPROCESS_EXPORT DetectRibFractureResult : public ServiceResult
+			class ALIBABACLOUD_IMAGEPROCESS_EXPORT AnalyzeChestVesselResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct DetectionsItem
+					struct AortaInfo
 					{
-						float fractureConfidence;
-						std::string fractureCategory;
-						std::vector<std::string> coordinateImage;
+						float maxArea;
+						std::vector<std::string> area;
+						float maxDiameter;
+						long labelValue;
 						std::vector<std::string> coordinates;
-						std::string fractureLocation;
-						long fractureSegment;
-						int fractureId;
+						long maxAreaIndex;
 					};
-					std::vector<std::string> origin;
-					std::vector<std::string> spacing;
-					std::vector<DetectionsItem> detections;
+					struct PulmonaryInfo
+					{
+						float maxArea;
+						float maxDiameter;
+						long labelValue;
+						std::vector<std::string> coordinates1;
+						long maxAreaIndex;
+						std::vector<std::string> area2;
+						float nearestAortaArea;
+					};
+					PulmonaryInfo pulmonaryInfo;
+					AortaInfo aortaInfo;
 					std::string resultURL;
 				};
 
 
-				DetectRibFractureResult();
-				explicit DetectRibFractureResult(const std::string &payload);
-				~DetectRibFractureResult();
+				AnalyzeChestVesselResult();
+				explicit AnalyzeChestVesselResult(const std::string &payload);
+				~AnalyzeChestVesselResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTRIBFRACTURERESULT_H_
+#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_ANALYZECHESTVESSELRESULT_H_
