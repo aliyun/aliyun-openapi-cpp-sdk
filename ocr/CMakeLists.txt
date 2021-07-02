@@ -45,12 +45,16 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeIdentityCardResult.h
 	include/alibabacloud/ocr/model/RecognizeLicensePlateRequest.h
 	include/alibabacloud/ocr/model/RecognizeLicensePlateResult.h
+	include/alibabacloud/ocr/model/RecognizePDFRequest.h
+	include/alibabacloud/ocr/model/RecognizePDFResult.h
 	include/alibabacloud/ocr/model/RecognizePassportMRZRequest.h
 	include/alibabacloud/ocr/model/RecognizePassportMRZResult.h
 	include/alibabacloud/ocr/model/RecognizePoiNameRequest.h
 	include/alibabacloud/ocr/model/RecognizePoiNameResult.h
 	include/alibabacloud/ocr/model/RecognizeQrCodeRequest.h
 	include/alibabacloud/ocr/model/RecognizeQrCodeResult.h
+	include/alibabacloud/ocr/model/RecognizeQuotaInvoiceRequest.h
+	include/alibabacloud/ocr/model/RecognizeQuotaInvoiceResult.h
 	include/alibabacloud/ocr/model/RecognizeStampRequest.h
 	include/alibabacloud/ocr/model/RecognizeStampResult.h
 	include/alibabacloud/ocr/model/RecognizeTableRequest.h
@@ -59,6 +63,8 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeTakeoutOrderResult.h
 	include/alibabacloud/ocr/model/RecognizeTaxiInvoiceRequest.h
 	include/alibabacloud/ocr/model/RecognizeTaxiInvoiceResult.h
+	include/alibabacloud/ocr/model/RecognizeTicketInvoiceRequest.h
+	include/alibabacloud/ocr/model/RecognizeTicketInvoiceResult.h
 	include/alibabacloud/ocr/model/RecognizeTrainTicketRequest.h
 	include/alibabacloud/ocr/model/RecognizeTrainTicketResult.h
 	include/alibabacloud/ocr/model/RecognizeVATInvoiceRequest.h
@@ -96,12 +102,16 @@ set(ocr_src
 	src/model/RecognizeIdentityCardResult.cc
 	src/model/RecognizeLicensePlateRequest.cc
 	src/model/RecognizeLicensePlateResult.cc
+	src/model/RecognizePDFRequest.cc
+	src/model/RecognizePDFResult.cc
 	src/model/RecognizePassportMRZRequest.cc
 	src/model/RecognizePassportMRZResult.cc
 	src/model/RecognizePoiNameRequest.cc
 	src/model/RecognizePoiNameResult.cc
 	src/model/RecognizeQrCodeRequest.cc
 	src/model/RecognizeQrCodeResult.cc
+	src/model/RecognizeQuotaInvoiceRequest.cc
+	src/model/RecognizeQuotaInvoiceResult.cc
 	src/model/RecognizeStampRequest.cc
 	src/model/RecognizeStampResult.cc
 	src/model/RecognizeTableRequest.cc
@@ -110,6 +120,8 @@ set(ocr_src
 	src/model/RecognizeTakeoutOrderResult.cc
 	src/model/RecognizeTaxiInvoiceRequest.cc
 	src/model/RecognizeTaxiInvoiceResult.cc
+	src/model/RecognizeTicketInvoiceRequest.cc
+	src/model/RecognizeTicketInvoiceResult.cc
 	src/model/RecognizeTrainTicketRequest.cc
 	src/model/RecognizeTrainTicketResult.cc
 	src/model/RecognizeVATInvoiceRequest.cc

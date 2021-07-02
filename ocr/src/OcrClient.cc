@@ -483,6 +483,42 @@ OcrClient::RecognizeLicensePlateOutcomeCallable OcrClient::recognizeLicensePlate
 	return task->get_future();
 }
 
+OcrClient::RecognizePDFOutcome OcrClient::recognizePDF(const RecognizePDFRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizePDFOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizePDFOutcome(RecognizePDFResult(outcome.result()));
+	else
+		return RecognizePDFOutcome(outcome.error());
+}
+
+void OcrClient::recognizePDFAsync(const RecognizePDFRequest& request, const RecognizePDFAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizePDF(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OcrClient::RecognizePDFOutcomeCallable OcrClient::recognizePDFCallable(const RecognizePDFRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizePDFOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizePDF(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OcrClient::RecognizePassportMRZOutcome OcrClient::recognizePassportMRZ(const RecognizePassportMRZRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +621,42 @@ OcrClient::RecognizeQrCodeOutcomeCallable OcrClient::recognizeQrCodeCallable(con
 			[this, request]()
 			{
 			return this->recognizeQrCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OcrClient::RecognizeQuotaInvoiceOutcome OcrClient::recognizeQuotaInvoice(const RecognizeQuotaInvoiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizeQuotaInvoiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizeQuotaInvoiceOutcome(RecognizeQuotaInvoiceResult(outcome.result()));
+	else
+		return RecognizeQuotaInvoiceOutcome(outcome.error());
+}
+
+void OcrClient::recognizeQuotaInvoiceAsync(const RecognizeQuotaInvoiceRequest& request, const RecognizeQuotaInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizeQuotaInvoice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OcrClient::RecognizeQuotaInvoiceOutcomeCallable OcrClient::recognizeQuotaInvoiceCallable(const RecognizeQuotaInvoiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizeQuotaInvoiceOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizeQuotaInvoice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +801,42 @@ OcrClient::RecognizeTaxiInvoiceOutcomeCallable OcrClient::recognizeTaxiInvoiceCa
 			[this, request]()
 			{
 			return this->recognizeTaxiInvoice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OcrClient::RecognizeTicketInvoiceOutcome OcrClient::recognizeTicketInvoice(const RecognizeTicketInvoiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizeTicketInvoiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizeTicketInvoiceOutcome(RecognizeTicketInvoiceResult(outcome.result()));
+	else
+		return RecognizeTicketInvoiceOutcome(outcome.error());
+}
+
+void OcrClient::recognizeTicketInvoiceAsync(const RecognizeTicketInvoiceRequest& request, const RecognizeTicketInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizeTicketInvoice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OcrClient::RecognizeTicketInvoiceOutcomeCallable OcrClient::recognizeTicketInvoiceCallable(const RecognizeTicketInvoiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizeTicketInvoiceOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizeTicketInvoice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
