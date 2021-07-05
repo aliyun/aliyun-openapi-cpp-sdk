@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDESL_MODEL_DELETEROLEACTIONSRESULT_H_
-#define ALIBABACLOUD_CLOUDESL_MODEL_DELETEROLEACTIONSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDESL_MODEL_DELETEITEMRESULT_H_
+#define ALIBABACLOUD_CLOUDESL_MODEL_DELETEITEMRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,18 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDESL_EXPORT DeleteRoleActionsResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDESL_EXPORT DeleteItemResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteRoleActionsResult();
-				explicit DeleteRoleActionsResult(const std::string &payload);
-				~DeleteRoleActionsResult();
+				DeleteItemResult();
+				explicit DeleteItemResult(const std::string &payload);
+				~DeleteItemResult();
 				std::string getMessage()const;
 				std::string getDynamicCode()const;
-				std::string getErrorCode()const;
 				std::string getDynamicMessage()const;
+				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				std::string dynamicCode_;
-				std::string errorCode_;
 				std::string dynamicMessage_;
+				std::string errorCode_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -60,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDESL_MODEL_DELETEROLEACTIONSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDESL_MODEL_DELETEITEMRESULT_H_

@@ -63,6 +63,8 @@ void DescribeEslDevicesResult::parse(const std::string &payload)
 			eslDevicesObject.screenWidth = std::stoi(valueEslDevicesEslDeviceInfo["ScreenWidth"].asString());
 		if(!valueEslDevicesEslDeviceInfo["ScreenHeight"].isNull())
 			eslDevicesObject.screenHeight = std::stoi(valueEslDevicesEslDeviceInfo["ScreenHeight"].asString());
+		if(!valueEslDevicesEslDeviceInfo["EslSignal"].isNull())
+			eslDevicesObject.eslSignal = std::stoi(valueEslDevicesEslDeviceInfo["EslSignal"].asString());
 		eslDevices_.push_back(eslDevicesObject);
 	}
 	if(!value["ErrorMessage"].isNull())

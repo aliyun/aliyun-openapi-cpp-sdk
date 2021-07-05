@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string eslBarCode;
 					std::string type;
+					int eslSignal;
 					int batteryLevel;
 					std::string storeId;
 					std::string model;

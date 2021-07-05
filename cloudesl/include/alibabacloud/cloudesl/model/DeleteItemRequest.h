@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDESL_MODEL_DELETEPLANOGRAMSHELFREQUEST_H_
-#define ALIBABACLOUD_CLOUDESL_MODEL_DELETEPLANOGRAMSHELFREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDESL_MODEL_DELETEITEMREQUEST_H_
+#define ALIBABACLOUD_CLOUDESL_MODEL_DELETEITEMREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDESL_EXPORT DeletePlanogramShelfRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDESL_EXPORT DeleteItemRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeletePlanogramShelfRequest();
-				~DeletePlanogramShelfRequest();
+				DeleteItemRequest();
+				~DeleteItemRequest();
 
-				std::string getExtraParams()const;
-				void setExtraParams(const std::string& extraParams);
-				bool getBeAutoRefresh()const;
-				void setBeAutoRefresh(bool beAutoRefresh);
 				std::string getStoreId()const;
 				void setStoreId(const std::string& storeId);
-				std::string getShelf()const;
-				void setShelf(const std::string& shelf);
+				std::string getItemBarCode()const;
+				void setItemBarCode(const std::string& itemBarCode);
+				bool getUnbindEslDevice()const;
+				void setUnbindEslDevice(bool unbindEslDevice);
 
             private:
-				std::string extraParams_;
-				bool beAutoRefresh_;
 				std::string storeId_;
-				std::string shelf_;
+				std::string itemBarCode_;
+				bool unbindEslDevice_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDESL_MODEL_DELETEPLANOGRAMSHELFREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDESL_MODEL_DELETEITEMREQUEST_H_

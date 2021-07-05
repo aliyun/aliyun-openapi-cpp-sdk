@@ -71,6 +71,7 @@ namespace AlibabaCloud
 					std::string sourceCode;
 					std::string gmtModified;
 					std::string itemBarCode;
+					std::string templateSceneId;
 					int salesPrice;
 					std::string itemShortTitle;
 					std::string itemPicUrl;

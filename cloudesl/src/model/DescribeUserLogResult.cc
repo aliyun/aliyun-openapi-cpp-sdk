@@ -79,6 +79,8 @@ void DescribeUserLogResult::parse(const std::string &payload)
 			userLogsObject.bePromotion = valueUserLogsUserLogInfo["BePromotion"].asString() == "true";
 		if(!valueUserLogsUserLogInfo["UserId"].isNull())
 			userLogsObject.userId = valueUserLogsUserLogInfo["UserId"].asString();
+		if(!valueUserLogsUserLogInfo["EslSignal"].isNull())
+			userLogsObject.eslSignal = std::stoi(valueUserLogsUserLogInfo["EslSignal"].asString());
 		userLogs_.push_back(userLogsObject);
 	}
 	if(!value["ErrorMessage"].isNull())

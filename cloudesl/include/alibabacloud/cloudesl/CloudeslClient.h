@@ -26,36 +26,24 @@
 #include "model/ActivateApDeviceResult.h"
 #include "model/AddApDeviceRequest.h"
 #include "model/AddApDeviceResult.h"
-#include "model/AddPlanogramShelfRequest.h"
-#include "model/AddPlanogramShelfResult.h"
-#include "model/AddRoleActionsRequest.h"
-#include "model/AddRoleActionsResult.h"
 #include "model/AddUserRequest.h"
 #include "model/AddUserResult.h"
 #include "model/AssignUserRequest.h"
 #include "model/AssignUserResult.h"
-#include "model/AssociatePlanogramRailRequest.h"
-#include "model/AssociatePlanogramRailResult.h"
 #include "model/BatchInsertItemsRequest.h"
 #include "model/BatchInsertItemsResult.h"
 #include "model/BindEslDeviceRequest.h"
 #include "model/BindEslDeviceResult.h"
-#include "model/ComposePlanogramPositionsRequest.h"
-#include "model/ComposePlanogramPositionsResult.h"
 #include "model/CreateStoreRequest.h"
 #include "model/CreateStoreResult.h"
 #include "model/DeleteApDeviceRequest.h"
 #include "model/DeleteApDeviceResult.h"
-#include "model/DeletePlanogramShelfRequest.h"
-#include "model/DeletePlanogramShelfResult.h"
-#include "model/DeleteRoleActionsRequest.h"
-#include "model/DeleteRoleActionsResult.h"
+#include "model/DeleteItemRequest.h"
+#include "model/DeleteItemResult.h"
 #include "model/DeleteStoreRequest.h"
 #include "model/DeleteStoreResult.h"
 #include "model/DeleteUserRequest.h"
 #include "model/DeleteUserResult.h"
-#include "model/DescribeAlarmsRequest.h"
-#include "model/DescribeAlarmsResult.h"
 #include "model/DescribeApDevicesRequest.h"
 #include "model/DescribeApDevicesResult.h"
 #include "model/DescribeBindersRequest.h"
@@ -66,28 +54,14 @@
 #include "model/DescribeEslDevicesResult.h"
 #include "model/DescribeItemsRequest.h"
 #include "model/DescribeItemsResult.h"
-#include "model/DescribePlanogramEslDevicesRequest.h"
-#include "model/DescribePlanogramEslDevicesResult.h"
-#include "model/DescribePlanogramPositionsRequest.h"
-#include "model/DescribePlanogramPositionsResult.h"
-#include "model/DescribePlanogramRailsRequest.h"
-#include "model/DescribePlanogramRailsResult.h"
-#include "model/DescribePlanogramShelvesRequest.h"
-#include "model/DescribePlanogramShelvesResult.h"
-#include "model/DescribeRoleActionsRequest.h"
-#include "model/DescribeRoleActionsResult.h"
 #include "model/DescribeStoreConfigRequest.h"
 #include "model/DescribeStoreConfigResult.h"
-#include "model/DescribeStoreStatisticsRequest.h"
-#include "model/DescribeStoreStatisticsResult.h"
 #include "model/DescribeStoresRequest.h"
 #include "model/DescribeStoresResult.h"
 #include "model/DescribeUserLogRequest.h"
 #include "model/DescribeUserLogResult.h"
 #include "model/DescribeUsersRequest.h"
 #include "model/DescribeUsersResult.h"
-#include "model/DissociatePlanogramRailRequest.h"
-#include "model/DissociatePlanogramRailResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
 #include "model/UnassignUserRequest.h"
@@ -100,8 +74,6 @@
 #include "model/UpdateStoreResult.h"
 #include "model/UpdateStoreConfigRequest.h"
 #include "model/UpdateStoreConfigResult.h"
-#include "model/UpdateUserRequest.h"
-#include "model/UpdateUserResult.h"
 
 
 namespace AlibabaCloud
@@ -117,51 +89,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddApDeviceResult> AddApDeviceOutcome;
 			typedef std::future<AddApDeviceOutcome> AddApDeviceOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::AddApDeviceRequest&, const AddApDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddApDeviceAsyncHandler;
-			typedef Outcome<Error, Model::AddPlanogramShelfResult> AddPlanogramShelfOutcome;
-			typedef std::future<AddPlanogramShelfOutcome> AddPlanogramShelfOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::AddPlanogramShelfRequest&, const AddPlanogramShelfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddPlanogramShelfAsyncHandler;
-			typedef Outcome<Error, Model::AddRoleActionsResult> AddRoleActionsOutcome;
-			typedef std::future<AddRoleActionsOutcome> AddRoleActionsOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::AddRoleActionsRequest&, const AddRoleActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddRoleActionsAsyncHandler;
 			typedef Outcome<Error, Model::AddUserResult> AddUserOutcome;
 			typedef std::future<AddUserOutcome> AddUserOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::AddUserRequest&, const AddUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserAsyncHandler;
 			typedef Outcome<Error, Model::AssignUserResult> AssignUserOutcome;
 			typedef std::future<AssignUserOutcome> AssignUserOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::AssignUserRequest&, const AssignUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignUserAsyncHandler;
-			typedef Outcome<Error, Model::AssociatePlanogramRailResult> AssociatePlanogramRailOutcome;
-			typedef std::future<AssociatePlanogramRailOutcome> AssociatePlanogramRailOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::AssociatePlanogramRailRequest&, const AssociatePlanogramRailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociatePlanogramRailAsyncHandler;
 			typedef Outcome<Error, Model::BatchInsertItemsResult> BatchInsertItemsOutcome;
 			typedef std::future<BatchInsertItemsOutcome> BatchInsertItemsOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::BatchInsertItemsRequest&, const BatchInsertItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchInsertItemsAsyncHandler;
 			typedef Outcome<Error, Model::BindEslDeviceResult> BindEslDeviceOutcome;
 			typedef std::future<BindEslDeviceOutcome> BindEslDeviceOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::BindEslDeviceRequest&, const BindEslDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindEslDeviceAsyncHandler;
-			typedef Outcome<Error, Model::ComposePlanogramPositionsResult> ComposePlanogramPositionsOutcome;
-			typedef std::future<ComposePlanogramPositionsOutcome> ComposePlanogramPositionsOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::ComposePlanogramPositionsRequest&, const ComposePlanogramPositionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ComposePlanogramPositionsAsyncHandler;
 			typedef Outcome<Error, Model::CreateStoreResult> CreateStoreOutcome;
 			typedef std::future<CreateStoreOutcome> CreateStoreOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::CreateStoreRequest&, const CreateStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoreAsyncHandler;
 			typedef Outcome<Error, Model::DeleteApDeviceResult> DeleteApDeviceOutcome;
 			typedef std::future<DeleteApDeviceOutcome> DeleteApDeviceOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeleteApDeviceRequest&, const DeleteApDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApDeviceAsyncHandler;
-			typedef Outcome<Error, Model::DeletePlanogramShelfResult> DeletePlanogramShelfOutcome;
-			typedef std::future<DeletePlanogramShelfOutcome> DeletePlanogramShelfOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DeletePlanogramShelfRequest&, const DeletePlanogramShelfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePlanogramShelfAsyncHandler;
-			typedef Outcome<Error, Model::DeleteRoleActionsResult> DeleteRoleActionsOutcome;
-			typedef std::future<DeleteRoleActionsOutcome> DeleteRoleActionsOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DeleteRoleActionsRequest&, const DeleteRoleActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleActionsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteItemResult> DeleteItemOutcome;
+			typedef std::future<DeleteItemOutcome> DeleteItemOutcomeCallable;
+			typedef std::function<void(const CloudeslClient*, const Model::DeleteItemRequest&, const DeleteItemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteItemAsyncHandler;
 			typedef Outcome<Error, Model::DeleteStoreResult> DeleteStoreOutcome;
 			typedef std::future<DeleteStoreOutcome> DeleteStoreOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeleteStoreRequest&, const DeleteStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStoreAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserResult> DeleteUserOutcome;
 			typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DeleteUserRequest&, const DeleteUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAlarmsResult> DescribeAlarmsOutcome;
-			typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DescribeAlarmsRequest&, const DescribeAlarmsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeApDevicesResult> DescribeApDevicesOutcome;
 			typedef std::future<DescribeApDevicesOutcome> DescribeApDevicesOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeApDevicesRequest&, const DescribeApDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApDevicesAsyncHandler;
@@ -177,27 +131,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeItemsResult> DescribeItemsOutcome;
 			typedef std::future<DescribeItemsOutcome> DescribeItemsOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeItemsRequest&, const DescribeItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeItemsAsyncHandler;
-			typedef Outcome<Error, Model::DescribePlanogramEslDevicesResult> DescribePlanogramEslDevicesOutcome;
-			typedef std::future<DescribePlanogramEslDevicesOutcome> DescribePlanogramEslDevicesOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DescribePlanogramEslDevicesRequest&, const DescribePlanogramEslDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlanogramEslDevicesAsyncHandler;
-			typedef Outcome<Error, Model::DescribePlanogramPositionsResult> DescribePlanogramPositionsOutcome;
-			typedef std::future<DescribePlanogramPositionsOutcome> DescribePlanogramPositionsOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DescribePlanogramPositionsRequest&, const DescribePlanogramPositionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlanogramPositionsAsyncHandler;
-			typedef Outcome<Error, Model::DescribePlanogramRailsResult> DescribePlanogramRailsOutcome;
-			typedef std::future<DescribePlanogramRailsOutcome> DescribePlanogramRailsOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DescribePlanogramRailsRequest&, const DescribePlanogramRailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlanogramRailsAsyncHandler;
-			typedef Outcome<Error, Model::DescribePlanogramShelvesResult> DescribePlanogramShelvesOutcome;
-			typedef std::future<DescribePlanogramShelvesOutcome> DescribePlanogramShelvesOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DescribePlanogramShelvesRequest&, const DescribePlanogramShelvesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlanogramShelvesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRoleActionsResult> DescribeRoleActionsOutcome;
-			typedef std::future<DescribeRoleActionsOutcome> DescribeRoleActionsOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DescribeRoleActionsRequest&, const DescribeRoleActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleActionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStoreConfigResult> DescribeStoreConfigOutcome;
 			typedef std::future<DescribeStoreConfigOutcome> DescribeStoreConfigOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeStoreConfigRequest&, const DescribeStoreConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoreConfigAsyncHandler;
-			typedef Outcome<Error, Model::DescribeStoreStatisticsResult> DescribeStoreStatisticsOutcome;
-			typedef std::future<DescribeStoreStatisticsOutcome> DescribeStoreStatisticsOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DescribeStoreStatisticsRequest&, const DescribeStoreStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoreStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStoresResult> DescribeStoresOutcome;
 			typedef std::future<DescribeStoresOutcome> DescribeStoresOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeStoresRequest&, const DescribeStoresOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoresAsyncHandler;
@@ -207,9 +143,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUsersResult> DescribeUsersOutcome;
 			typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::DescribeUsersRequest&, const DescribeUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersAsyncHandler;
-			typedef Outcome<Error, Model::DissociatePlanogramRailResult> DissociatePlanogramRailOutcome;
-			typedef std::future<DissociatePlanogramRailOutcome> DissociatePlanogramRailOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::DissociatePlanogramRailRequest&, const DissociatePlanogramRailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DissociatePlanogramRailAsyncHandler;
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
@@ -228,9 +161,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateStoreConfigResult> UpdateStoreConfigOutcome;
 			typedef std::future<UpdateStoreConfigOutcome> UpdateStoreConfigOutcomeCallable;
 			typedef std::function<void(const CloudeslClient*, const Model::UpdateStoreConfigRequest&, const UpdateStoreConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStoreConfigAsyncHandler;
-			typedef Outcome<Error, Model::UpdateUserResult> UpdateUserOutcome;
-			typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
-			typedef std::function<void(const CloudeslClient*, const Model::UpdateUserRequest&, const UpdateUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserAsyncHandler;
 
 			CloudeslClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CloudeslClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -242,51 +172,33 @@ namespace AlibabaCloud
 			AddApDeviceOutcome addApDevice(const Model::AddApDeviceRequest &request)const;
 			void addApDeviceAsync(const Model::AddApDeviceRequest& request, const AddApDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddApDeviceOutcomeCallable addApDeviceCallable(const Model::AddApDeviceRequest& request) const;
-			AddPlanogramShelfOutcome addPlanogramShelf(const Model::AddPlanogramShelfRequest &request)const;
-			void addPlanogramShelfAsync(const Model::AddPlanogramShelfRequest& request, const AddPlanogramShelfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddPlanogramShelfOutcomeCallable addPlanogramShelfCallable(const Model::AddPlanogramShelfRequest& request) const;
-			AddRoleActionsOutcome addRoleActions(const Model::AddRoleActionsRequest &request)const;
-			void addRoleActionsAsync(const Model::AddRoleActionsRequest& request, const AddRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddRoleActionsOutcomeCallable addRoleActionsCallable(const Model::AddRoleActionsRequest& request) const;
 			AddUserOutcome addUser(const Model::AddUserRequest &request)const;
 			void addUserAsync(const Model::AddUserRequest& request, const AddUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUserOutcomeCallable addUserCallable(const Model::AddUserRequest& request) const;
 			AssignUserOutcome assignUser(const Model::AssignUserRequest &request)const;
 			void assignUserAsync(const Model::AssignUserRequest& request, const AssignUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssignUserOutcomeCallable assignUserCallable(const Model::AssignUserRequest& request) const;
-			AssociatePlanogramRailOutcome associatePlanogramRail(const Model::AssociatePlanogramRailRequest &request)const;
-			void associatePlanogramRailAsync(const Model::AssociatePlanogramRailRequest& request, const AssociatePlanogramRailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AssociatePlanogramRailOutcomeCallable associatePlanogramRailCallable(const Model::AssociatePlanogramRailRequest& request) const;
 			BatchInsertItemsOutcome batchInsertItems(const Model::BatchInsertItemsRequest &request)const;
 			void batchInsertItemsAsync(const Model::BatchInsertItemsRequest& request, const BatchInsertItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchInsertItemsOutcomeCallable batchInsertItemsCallable(const Model::BatchInsertItemsRequest& request) const;
 			BindEslDeviceOutcome bindEslDevice(const Model::BindEslDeviceRequest &request)const;
 			void bindEslDeviceAsync(const Model::BindEslDeviceRequest& request, const BindEslDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindEslDeviceOutcomeCallable bindEslDeviceCallable(const Model::BindEslDeviceRequest& request) const;
-			ComposePlanogramPositionsOutcome composePlanogramPositions(const Model::ComposePlanogramPositionsRequest &request)const;
-			void composePlanogramPositionsAsync(const Model::ComposePlanogramPositionsRequest& request, const ComposePlanogramPositionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ComposePlanogramPositionsOutcomeCallable composePlanogramPositionsCallable(const Model::ComposePlanogramPositionsRequest& request) const;
 			CreateStoreOutcome createStore(const Model::CreateStoreRequest &request)const;
 			void createStoreAsync(const Model::CreateStoreRequest& request, const CreateStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateStoreOutcomeCallable createStoreCallable(const Model::CreateStoreRequest& request) const;
 			DeleteApDeviceOutcome deleteApDevice(const Model::DeleteApDeviceRequest &request)const;
 			void deleteApDeviceAsync(const Model::DeleteApDeviceRequest& request, const DeleteApDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteApDeviceOutcomeCallable deleteApDeviceCallable(const Model::DeleteApDeviceRequest& request) const;
-			DeletePlanogramShelfOutcome deletePlanogramShelf(const Model::DeletePlanogramShelfRequest &request)const;
-			void deletePlanogramShelfAsync(const Model::DeletePlanogramShelfRequest& request, const DeletePlanogramShelfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeletePlanogramShelfOutcomeCallable deletePlanogramShelfCallable(const Model::DeletePlanogramShelfRequest& request) const;
-			DeleteRoleActionsOutcome deleteRoleActions(const Model::DeleteRoleActionsRequest &request)const;
-			void deleteRoleActionsAsync(const Model::DeleteRoleActionsRequest& request, const DeleteRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteRoleActionsOutcomeCallable deleteRoleActionsCallable(const Model::DeleteRoleActionsRequest& request) const;
+			DeleteItemOutcome deleteItem(const Model::DeleteItemRequest &request)const;
+			void deleteItemAsync(const Model::DeleteItemRequest& request, const DeleteItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteItemOutcomeCallable deleteItemCallable(const Model::DeleteItemRequest& request) const;
 			DeleteStoreOutcome deleteStore(const Model::DeleteStoreRequest &request)const;
 			void deleteStoreAsync(const Model::DeleteStoreRequest& request, const DeleteStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteStoreOutcomeCallable deleteStoreCallable(const Model::DeleteStoreRequest& request) const;
 			DeleteUserOutcome deleteUser(const Model::DeleteUserRequest &request)const;
 			void deleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserOutcomeCallable deleteUserCallable(const Model::DeleteUserRequest& request) const;
-			DescribeAlarmsOutcome describeAlarms(const Model::DescribeAlarmsRequest &request)const;
-			void describeAlarmsAsync(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAlarmsOutcomeCallable describeAlarmsCallable(const Model::DescribeAlarmsRequest& request) const;
 			DescribeApDevicesOutcome describeApDevices(const Model::DescribeApDevicesRequest &request)const;
 			void describeApDevicesAsync(const Model::DescribeApDevicesRequest& request, const DescribeApDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeApDevicesOutcomeCallable describeApDevicesCallable(const Model::DescribeApDevicesRequest& request) const;
@@ -302,27 +214,9 @@ namespace AlibabaCloud
 			DescribeItemsOutcome describeItems(const Model::DescribeItemsRequest &request)const;
 			void describeItemsAsync(const Model::DescribeItemsRequest& request, const DescribeItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeItemsOutcomeCallable describeItemsCallable(const Model::DescribeItemsRequest& request) const;
-			DescribePlanogramEslDevicesOutcome describePlanogramEslDevices(const Model::DescribePlanogramEslDevicesRequest &request)const;
-			void describePlanogramEslDevicesAsync(const Model::DescribePlanogramEslDevicesRequest& request, const DescribePlanogramEslDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePlanogramEslDevicesOutcomeCallable describePlanogramEslDevicesCallable(const Model::DescribePlanogramEslDevicesRequest& request) const;
-			DescribePlanogramPositionsOutcome describePlanogramPositions(const Model::DescribePlanogramPositionsRequest &request)const;
-			void describePlanogramPositionsAsync(const Model::DescribePlanogramPositionsRequest& request, const DescribePlanogramPositionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePlanogramPositionsOutcomeCallable describePlanogramPositionsCallable(const Model::DescribePlanogramPositionsRequest& request) const;
-			DescribePlanogramRailsOutcome describePlanogramRails(const Model::DescribePlanogramRailsRequest &request)const;
-			void describePlanogramRailsAsync(const Model::DescribePlanogramRailsRequest& request, const DescribePlanogramRailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePlanogramRailsOutcomeCallable describePlanogramRailsCallable(const Model::DescribePlanogramRailsRequest& request) const;
-			DescribePlanogramShelvesOutcome describePlanogramShelves(const Model::DescribePlanogramShelvesRequest &request)const;
-			void describePlanogramShelvesAsync(const Model::DescribePlanogramShelvesRequest& request, const DescribePlanogramShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePlanogramShelvesOutcomeCallable describePlanogramShelvesCallable(const Model::DescribePlanogramShelvesRequest& request) const;
-			DescribeRoleActionsOutcome describeRoleActions(const Model::DescribeRoleActionsRequest &request)const;
-			void describeRoleActionsAsync(const Model::DescribeRoleActionsRequest& request, const DescribeRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRoleActionsOutcomeCallable describeRoleActionsCallable(const Model::DescribeRoleActionsRequest& request) const;
 			DescribeStoreConfigOutcome describeStoreConfig(const Model::DescribeStoreConfigRequest &request)const;
 			void describeStoreConfigAsync(const Model::DescribeStoreConfigRequest& request, const DescribeStoreConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStoreConfigOutcomeCallable describeStoreConfigCallable(const Model::DescribeStoreConfigRequest& request) const;
-			DescribeStoreStatisticsOutcome describeStoreStatistics(const Model::DescribeStoreStatisticsRequest &request)const;
-			void describeStoreStatisticsAsync(const Model::DescribeStoreStatisticsRequest& request, const DescribeStoreStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeStoreStatisticsOutcomeCallable describeStoreStatisticsCallable(const Model::DescribeStoreStatisticsRequest& request) const;
 			DescribeStoresOutcome describeStores(const Model::DescribeStoresRequest &request)const;
 			void describeStoresAsync(const Model::DescribeStoresRequest& request, const DescribeStoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStoresOutcomeCallable describeStoresCallable(const Model::DescribeStoresRequest& request) const;
@@ -332,9 +226,6 @@ namespace AlibabaCloud
 			DescribeUsersOutcome describeUsers(const Model::DescribeUsersRequest &request)const;
 			void describeUsersAsync(const Model::DescribeUsersRequest& request, const DescribeUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUsersOutcomeCallable describeUsersCallable(const Model::DescribeUsersRequest& request) const;
-			DissociatePlanogramRailOutcome dissociatePlanogramRail(const Model::DissociatePlanogramRailRequest &request)const;
-			void dissociatePlanogramRailAsync(const Model::DissociatePlanogramRailRequest& request, const DissociatePlanogramRailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DissociatePlanogramRailOutcomeCallable dissociatePlanogramRailCallable(const Model::DissociatePlanogramRailRequest& request) const;
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
@@ -353,9 +244,6 @@ namespace AlibabaCloud
 			UpdateStoreConfigOutcome updateStoreConfig(const Model::UpdateStoreConfigRequest &request)const;
 			void updateStoreConfigAsync(const Model::UpdateStoreConfigRequest& request, const UpdateStoreConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateStoreConfigOutcomeCallable updateStoreConfigCallable(const Model::UpdateStoreConfigRequest& request) const;
-			UpdateUserOutcome updateUser(const Model::UpdateUserRequest &request)const;
-			void updateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateUserOutcomeCallable updateUserCallable(const Model::UpdateUserRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string itemId;
 					std::string gmtCreate;
 					std::string eslBarCode;
+					int eslSignal;
 					std::string priceUnit;
 					std::string itemShortTitle;
 					std::string storeId;

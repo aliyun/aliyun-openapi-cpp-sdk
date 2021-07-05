@@ -14,79 +14,79 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudesl/model/DissociatePlanogramRailResult.h>
+#include <alibabacloud/cloudesl/model/DeleteItemResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cloudesl;
 using namespace AlibabaCloud::Cloudesl::Model;
 
-DissociatePlanogramRailResult::DissociatePlanogramRailResult() :
+DeleteItemResult::DeleteItemResult() :
 	ServiceResult()
 {}
 
-DissociatePlanogramRailResult::DissociatePlanogramRailResult(const std::string &payload) :
+DeleteItemResult::DeleteItemResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DissociatePlanogramRailResult::~DissociatePlanogramRailResult()
+DeleteItemResult::~DeleteItemResult()
 {}
 
-void DissociatePlanogramRailResult::parse(const std::string &payload)
+void DeleteItemResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["DynamicCode"].isNull())
-		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["DynamicMessage"].isNull())
 		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string DissociatePlanogramRailResult::getMessage()const
+std::string DeleteItemResult::getMessage()const
 {
 	return message_;
 }
 
-std::string DissociatePlanogramRailResult::getDynamicCode()const
+std::string DeleteItemResult::getDynamicCode()const
 {
 	return dynamicCode_;
 }
 
-std::string DissociatePlanogramRailResult::getErrorCode()const
-{
-	return errorCode_;
-}
-
-std::string DissociatePlanogramRailResult::getDynamicMessage()const
+std::string DeleteItemResult::getDynamicMessage()const
 {
 	return dynamicMessage_;
 }
 
-std::string DissociatePlanogramRailResult::getErrorMessage()const
+std::string DeleteItemResult::getErrorCode()const
+{
+	return errorCode_;
+}
+
+std::string DeleteItemResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string DissociatePlanogramRailResult::getCode()const
+std::string DeleteItemResult::getCode()const
 {
 	return code_;
 }
 
-bool DissociatePlanogramRailResult::getSuccess()const
+bool DeleteItemResult::getSuccess()const
 {
 	return success_;
 }

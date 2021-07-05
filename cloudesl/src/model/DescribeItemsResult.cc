@@ -149,6 +149,8 @@ void DescribeItemsResult::parse(const std::string &payload)
 			itemsObject.gmtModified = valueItemsItemInfo["GmtModified"].asString();
 		if(!valueItemsItemInfo["BeMember"].isNull())
 			itemsObject.beMember = valueItemsItemInfo["BeMember"].asString() == "true";
+		if(!valueItemsItemInfo["TemplateSceneId"].isNull())
+			itemsObject.templateSceneId = valueItemsItemInfo["TemplateSceneId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["ErrorMessage"].isNull())

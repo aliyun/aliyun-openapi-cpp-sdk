@@ -123,78 +123,6 @@ CloudeslClient::AddApDeviceOutcomeCallable CloudeslClient::addApDeviceCallable(c
 	return task->get_future();
 }
 
-CloudeslClient::AddPlanogramShelfOutcome CloudeslClient::addPlanogramShelf(const AddPlanogramShelfRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddPlanogramShelfOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddPlanogramShelfOutcome(AddPlanogramShelfResult(outcome.result()));
-	else
-		return AddPlanogramShelfOutcome(outcome.error());
-}
-
-void CloudeslClient::addPlanogramShelfAsync(const AddPlanogramShelfRequest& request, const AddPlanogramShelfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addPlanogramShelf(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::AddPlanogramShelfOutcomeCallable CloudeslClient::addPlanogramShelfCallable(const AddPlanogramShelfRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddPlanogramShelfOutcome()>>(
-			[this, request]()
-			{
-			return this->addPlanogramShelf(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::AddRoleActionsOutcome CloudeslClient::addRoleActions(const AddRoleActionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddRoleActionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddRoleActionsOutcome(AddRoleActionsResult(outcome.result()));
-	else
-		return AddRoleActionsOutcome(outcome.error());
-}
-
-void CloudeslClient::addRoleActionsAsync(const AddRoleActionsRequest& request, const AddRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addRoleActions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::AddRoleActionsOutcomeCallable CloudeslClient::addRoleActionsCallable(const AddRoleActionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddRoleActionsOutcome()>>(
-			[this, request]()
-			{
-			return this->addRoleActions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudeslClient::AddUserOutcome CloudeslClient::addUser(const AddUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,42 +189,6 @@ CloudeslClient::AssignUserOutcomeCallable CloudeslClient::assignUserCallable(con
 			[this, request]()
 			{
 			return this->assignUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::AssociatePlanogramRailOutcome CloudeslClient::associatePlanogramRail(const AssociatePlanogramRailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AssociatePlanogramRailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AssociatePlanogramRailOutcome(AssociatePlanogramRailResult(outcome.result()));
-	else
-		return AssociatePlanogramRailOutcome(outcome.error());
-}
-
-void CloudeslClient::associatePlanogramRailAsync(const AssociatePlanogramRailRequest& request, const AssociatePlanogramRailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, associatePlanogramRail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::AssociatePlanogramRailOutcomeCallable CloudeslClient::associatePlanogramRailCallable(const AssociatePlanogramRailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AssociatePlanogramRailOutcome()>>(
-			[this, request]()
-			{
-			return this->associatePlanogramRail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,42 +267,6 @@ CloudeslClient::BindEslDeviceOutcomeCallable CloudeslClient::bindEslDeviceCallab
 	return task->get_future();
 }
 
-CloudeslClient::ComposePlanogramPositionsOutcome CloudeslClient::composePlanogramPositions(const ComposePlanogramPositionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ComposePlanogramPositionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ComposePlanogramPositionsOutcome(ComposePlanogramPositionsResult(outcome.result()));
-	else
-		return ComposePlanogramPositionsOutcome(outcome.error());
-}
-
-void CloudeslClient::composePlanogramPositionsAsync(const ComposePlanogramPositionsRequest& request, const ComposePlanogramPositionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, composePlanogramPositions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::ComposePlanogramPositionsOutcomeCallable CloudeslClient::composePlanogramPositionsCallable(const ComposePlanogramPositionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ComposePlanogramPositionsOutcome()>>(
-			[this, request]()
-			{
-			return this->composePlanogramPositions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudeslClient::CreateStoreOutcome CloudeslClient::createStore(const CreateStoreRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,72 +339,36 @@ CloudeslClient::DeleteApDeviceOutcomeCallable CloudeslClient::deleteApDeviceCall
 	return task->get_future();
 }
 
-CloudeslClient::DeletePlanogramShelfOutcome CloudeslClient::deletePlanogramShelf(const DeletePlanogramShelfRequest &request) const
+CloudeslClient::DeleteItemOutcome CloudeslClient::deleteItem(const DeleteItemRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeletePlanogramShelfOutcome(endpointOutcome.error());
+		return DeleteItemOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeletePlanogramShelfOutcome(DeletePlanogramShelfResult(outcome.result()));
+		return DeleteItemOutcome(DeleteItemResult(outcome.result()));
 	else
-		return DeletePlanogramShelfOutcome(outcome.error());
+		return DeleteItemOutcome(outcome.error());
 }
 
-void CloudeslClient::deletePlanogramShelfAsync(const DeletePlanogramShelfRequest& request, const DeletePlanogramShelfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudeslClient::deleteItemAsync(const DeleteItemRequest& request, const DeleteItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deletePlanogramShelf(request), context);
+		handler(this, request, deleteItem(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudeslClient::DeletePlanogramShelfOutcomeCallable CloudeslClient::deletePlanogramShelfCallable(const DeletePlanogramShelfRequest &request) const
+CloudeslClient::DeleteItemOutcomeCallable CloudeslClient::deleteItemCallable(const DeleteItemRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeletePlanogramShelfOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteItemOutcome()>>(
 			[this, request]()
 			{
-			return this->deletePlanogramShelf(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::DeleteRoleActionsOutcome CloudeslClient::deleteRoleActions(const DeleteRoleActionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteRoleActionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteRoleActionsOutcome(DeleteRoleActionsResult(outcome.result()));
-	else
-		return DeleteRoleActionsOutcome(outcome.error());
-}
-
-void CloudeslClient::deleteRoleActionsAsync(const DeleteRoleActionsRequest& request, const DeleteRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteRoleActions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DeleteRoleActionsOutcomeCallable CloudeslClient::deleteRoleActionsCallable(const DeleteRoleActionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteRoleActionsOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteRoleActions(request);
+			return this->deleteItem(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -621,42 +441,6 @@ CloudeslClient::DeleteUserOutcomeCallable CloudeslClient::deleteUserCallable(con
 			[this, request]()
 			{
 			return this->deleteUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::DescribeAlarmsOutcome CloudeslClient::describeAlarms(const DescribeAlarmsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAlarmsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAlarmsOutcome(DescribeAlarmsResult(outcome.result()));
-	else
-		return DescribeAlarmsOutcome(outcome.error());
-}
-
-void CloudeslClient::describeAlarmsAsync(const DescribeAlarmsRequest& request, const DescribeAlarmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAlarms(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DescribeAlarmsOutcomeCallable CloudeslClient::describeAlarmsCallable(const DescribeAlarmsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAlarmsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAlarms(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -843,186 +627,6 @@ CloudeslClient::DescribeItemsOutcomeCallable CloudeslClient::describeItemsCallab
 	return task->get_future();
 }
 
-CloudeslClient::DescribePlanogramEslDevicesOutcome CloudeslClient::describePlanogramEslDevices(const DescribePlanogramEslDevicesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePlanogramEslDevicesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePlanogramEslDevicesOutcome(DescribePlanogramEslDevicesResult(outcome.result()));
-	else
-		return DescribePlanogramEslDevicesOutcome(outcome.error());
-}
-
-void CloudeslClient::describePlanogramEslDevicesAsync(const DescribePlanogramEslDevicesRequest& request, const DescribePlanogramEslDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePlanogramEslDevices(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DescribePlanogramEslDevicesOutcomeCallable CloudeslClient::describePlanogramEslDevicesCallable(const DescribePlanogramEslDevicesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePlanogramEslDevicesOutcome()>>(
-			[this, request]()
-			{
-			return this->describePlanogramEslDevices(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::DescribePlanogramPositionsOutcome CloudeslClient::describePlanogramPositions(const DescribePlanogramPositionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePlanogramPositionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePlanogramPositionsOutcome(DescribePlanogramPositionsResult(outcome.result()));
-	else
-		return DescribePlanogramPositionsOutcome(outcome.error());
-}
-
-void CloudeslClient::describePlanogramPositionsAsync(const DescribePlanogramPositionsRequest& request, const DescribePlanogramPositionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePlanogramPositions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DescribePlanogramPositionsOutcomeCallable CloudeslClient::describePlanogramPositionsCallable(const DescribePlanogramPositionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePlanogramPositionsOutcome()>>(
-			[this, request]()
-			{
-			return this->describePlanogramPositions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::DescribePlanogramRailsOutcome CloudeslClient::describePlanogramRails(const DescribePlanogramRailsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePlanogramRailsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePlanogramRailsOutcome(DescribePlanogramRailsResult(outcome.result()));
-	else
-		return DescribePlanogramRailsOutcome(outcome.error());
-}
-
-void CloudeslClient::describePlanogramRailsAsync(const DescribePlanogramRailsRequest& request, const DescribePlanogramRailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePlanogramRails(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DescribePlanogramRailsOutcomeCallable CloudeslClient::describePlanogramRailsCallable(const DescribePlanogramRailsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePlanogramRailsOutcome()>>(
-			[this, request]()
-			{
-			return this->describePlanogramRails(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::DescribePlanogramShelvesOutcome CloudeslClient::describePlanogramShelves(const DescribePlanogramShelvesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePlanogramShelvesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePlanogramShelvesOutcome(DescribePlanogramShelvesResult(outcome.result()));
-	else
-		return DescribePlanogramShelvesOutcome(outcome.error());
-}
-
-void CloudeslClient::describePlanogramShelvesAsync(const DescribePlanogramShelvesRequest& request, const DescribePlanogramShelvesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePlanogramShelves(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DescribePlanogramShelvesOutcomeCallable CloudeslClient::describePlanogramShelvesCallable(const DescribePlanogramShelvesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePlanogramShelvesOutcome()>>(
-			[this, request]()
-			{
-			return this->describePlanogramShelves(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::DescribeRoleActionsOutcome CloudeslClient::describeRoleActions(const DescribeRoleActionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRoleActionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRoleActionsOutcome(DescribeRoleActionsResult(outcome.result()));
-	else
-		return DescribeRoleActionsOutcome(outcome.error());
-}
-
-void CloudeslClient::describeRoleActionsAsync(const DescribeRoleActionsRequest& request, const DescribeRoleActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRoleActions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DescribeRoleActionsOutcomeCallable CloudeslClient::describeRoleActionsCallable(const DescribeRoleActionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRoleActionsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRoleActions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudeslClient::DescribeStoreConfigOutcome CloudeslClient::describeStoreConfig(const DescribeStoreConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,42 +657,6 @@ CloudeslClient::DescribeStoreConfigOutcomeCallable CloudeslClient::describeStore
 			[this, request]()
 			{
 			return this->describeStoreConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::DescribeStoreStatisticsOutcome CloudeslClient::describeStoreStatistics(const DescribeStoreStatisticsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeStoreStatisticsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeStoreStatisticsOutcome(DescribeStoreStatisticsResult(outcome.result()));
-	else
-		return DescribeStoreStatisticsOutcome(outcome.error());
-}
-
-void CloudeslClient::describeStoreStatisticsAsync(const DescribeStoreStatisticsRequest& request, const DescribeStoreStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeStoreStatistics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DescribeStoreStatisticsOutcomeCallable CloudeslClient::describeStoreStatisticsCallable(const DescribeStoreStatisticsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeStoreStatisticsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeStoreStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1197,42 +765,6 @@ CloudeslClient::DescribeUsersOutcomeCallable CloudeslClient::describeUsersCallab
 			[this, request]()
 			{
 			return this->describeUsers(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::DissociatePlanogramRailOutcome CloudeslClient::dissociatePlanogramRail(const DissociatePlanogramRailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DissociatePlanogramRailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DissociatePlanogramRailOutcome(DissociatePlanogramRailResult(outcome.result()));
-	else
-		return DissociatePlanogramRailOutcome(outcome.error());
-}
-
-void CloudeslClient::dissociatePlanogramRailAsync(const DissociatePlanogramRailRequest& request, const DissociatePlanogramRailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, dissociatePlanogramRail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::DissociatePlanogramRailOutcomeCallable CloudeslClient::dissociatePlanogramRailCallable(const DissociatePlanogramRailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DissociatePlanogramRailOutcome()>>(
-			[this, request]()
-			{
-			return this->dissociatePlanogramRail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1449,42 +981,6 @@ CloudeslClient::UpdateStoreConfigOutcomeCallable CloudeslClient::updateStoreConf
 			[this, request]()
 			{
 			return this->updateStoreConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudeslClient::UpdateUserOutcome CloudeslClient::updateUser(const UpdateUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateUserOutcome(UpdateUserResult(outcome.result()));
-	else
-		return UpdateUserOutcome(outcome.error());
-}
-
-void CloudeslClient::updateUserAsync(const UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudeslClient::UpdateUserOutcomeCallable CloudeslClient::updateUserCallable(const UpdateUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateUserOutcome()>>(
-			[this, request]()
-			{
-			return this->updateUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
