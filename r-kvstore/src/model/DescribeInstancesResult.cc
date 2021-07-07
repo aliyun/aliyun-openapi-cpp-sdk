@@ -115,6 +115,10 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.shardCount = std::stoi(valueInstancesKVStoreInstance["ShardCount"].asString());
 		if(!valueInstancesKVStoreInstance["ProxyCount"].isNull())
 			instancesObject.proxyCount = std::stoi(valueInstancesKVStoreInstance["ProxyCount"].asString());
+		if(!valueInstancesKVStoreInstance["SecondaryZoneId"].isNull())
+			instancesObject.secondaryZoneId = valueInstancesKVStoreInstance["SecondaryZoneId"].asString();
+		if(!valueInstancesKVStoreInstance["GlobalInstanceId"].isNull())
+			instancesObject.globalInstanceId = valueInstancesKVStoreInstance["GlobalInstanceId"].asString();
 		auto allTagsNode = valueInstancesKVStoreInstance["Tags"]["Tag"];
 		for (auto valueInstancesKVStoreInstanceTagsTag : allTagsNode)
 		{

@@ -186,6 +186,8 @@
 #include "model/ReleaseDirectConnectionResult.h"
 #include "model/ReleaseInstancePublicConnectionRequest.h"
 #include "model/ReleaseInstancePublicConnectionResult.h"
+#include "model/RemoveSubInstanceRequest.h"
+#include "model/RemoveSubInstanceResult.h"
 #include "model/RenewAdditionalBandwidthRequest.h"
 #include "model/RenewAdditionalBandwidthResult.h"
 #include "model/RenewInstanceRequest.h"
@@ -200,6 +202,8 @@
 #include "model/RestoreInstanceResult.h"
 #include "model/SwitchInstanceHARequest.h"
 #include "model/SwitchInstanceHAResult.h"
+#include "model/SwitchInstanceProxyRequest.h"
+#include "model/SwitchInstanceProxyResult.h"
 #include "model/SwitchNetworkRequest.h"
 #include "model/SwitchNetworkResult.h"
 #include "model/SyncDtsStatusRequest.h"
@@ -467,6 +471,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ReleaseInstancePublicConnectionResult> ReleaseInstancePublicConnectionOutcome;
 			typedef std::future<ReleaseInstancePublicConnectionOutcome> ReleaseInstancePublicConnectionOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ReleaseInstancePublicConnectionRequest&, const ReleaseInstancePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstancePublicConnectionAsyncHandler;
+			typedef Outcome<Error, Model::RemoveSubInstanceResult> RemoveSubInstanceOutcome;
+			typedef std::future<RemoveSubInstanceOutcome> RemoveSubInstanceOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::RemoveSubInstanceRequest&, const RemoveSubInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveSubInstanceAsyncHandler;
 			typedef Outcome<Error, Model::RenewAdditionalBandwidthResult> RenewAdditionalBandwidthOutcome;
 			typedef std::future<RenewAdditionalBandwidthOutcome> RenewAdditionalBandwidthOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::RenewAdditionalBandwidthRequest&, const RenewAdditionalBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewAdditionalBandwidthAsyncHandler;
@@ -488,6 +495,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SwitchInstanceHAResult> SwitchInstanceHAOutcome;
 			typedef std::future<SwitchInstanceHAOutcome> SwitchInstanceHAOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchInstanceHARequest&, const SwitchInstanceHAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceHAAsyncHandler;
+			typedef Outcome<Error, Model::SwitchInstanceProxyResult> SwitchInstanceProxyOutcome;
+			typedef std::future<SwitchInstanceProxyOutcome> SwitchInstanceProxyOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchInstanceProxyRequest&, const SwitchInstanceProxyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceProxyAsyncHandler;
 			typedef Outcome<Error, Model::SwitchNetworkResult> SwitchNetworkOutcome;
 			typedef std::future<SwitchNetworkOutcome> SwitchNetworkOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::SwitchNetworkRequest&, const SwitchNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchNetworkAsyncHandler;
@@ -757,6 +767,9 @@ namespace AlibabaCloud
 			ReleaseInstancePublicConnectionOutcome releaseInstancePublicConnection(const Model::ReleaseInstancePublicConnectionRequest &request)const;
 			void releaseInstancePublicConnectionAsync(const Model::ReleaseInstancePublicConnectionRequest& request, const ReleaseInstancePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstancePublicConnectionOutcomeCallable releaseInstancePublicConnectionCallable(const Model::ReleaseInstancePublicConnectionRequest& request) const;
+			RemoveSubInstanceOutcome removeSubInstance(const Model::RemoveSubInstanceRequest &request)const;
+			void removeSubInstanceAsync(const Model::RemoveSubInstanceRequest& request, const RemoveSubInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveSubInstanceOutcomeCallable removeSubInstanceCallable(const Model::RemoveSubInstanceRequest& request) const;
 			RenewAdditionalBandwidthOutcome renewAdditionalBandwidth(const Model::RenewAdditionalBandwidthRequest &request)const;
 			void renewAdditionalBandwidthAsync(const Model::RenewAdditionalBandwidthRequest& request, const RenewAdditionalBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewAdditionalBandwidthOutcomeCallable renewAdditionalBandwidthCallable(const Model::RenewAdditionalBandwidthRequest& request) const;
@@ -778,6 +791,9 @@ namespace AlibabaCloud
 			SwitchInstanceHAOutcome switchInstanceHA(const Model::SwitchInstanceHARequest &request)const;
 			void switchInstanceHAAsync(const Model::SwitchInstanceHARequest& request, const SwitchInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchInstanceHAOutcomeCallable switchInstanceHACallable(const Model::SwitchInstanceHARequest& request) const;
+			SwitchInstanceProxyOutcome switchInstanceProxy(const Model::SwitchInstanceProxyRequest &request)const;
+			void switchInstanceProxyAsync(const Model::SwitchInstanceProxyRequest& request, const SwitchInstanceProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SwitchInstanceProxyOutcomeCallable switchInstanceProxyCallable(const Model::SwitchInstanceProxyRequest& request) const;
 			SwitchNetworkOutcome switchNetwork(const Model::SwitchNetworkRequest &request)const;
 			void switchNetworkAsync(const Model::SwitchNetworkRequest& request, const SwitchNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchNetworkOutcomeCallable switchNetworkCallable(const Model::SwitchNetworkRequest& request) const;

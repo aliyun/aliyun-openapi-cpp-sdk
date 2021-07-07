@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_RESTOREINSTANCEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_RESTOREINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_SWITCHINSTANCEPROXYREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_SWITCHINSTANCEPROXYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT RestoreInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT SwitchInstanceProxyRequest : public RpcServiceRequest
 			{
 
 			public:
-				RestoreInstanceRequest();
-				~RestoreInstanceRequest();
+				SwitchInstanceProxyRequest();
+				~SwitchInstanceProxyRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getFilterKey()const;
-				void setFilterKey(const std::string& filterKey);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getRestoreTime()const;
-				void setRestoreTime(const std::string& restoreTime);
+				std::string getProduct()const;
+				void setProduct(const std::string& product);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getBackupId()const;
-				void setBackupId(const std::string& backupId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getRestoreType()const;
-				void setRestoreType(const std::string& restoreType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
-				std::string filterKey_;
 				std::string securityToken_;
-				std::string restoreTime_;
+				std::string product_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string backupId_;
 				long ownerId_;
-				std::string restoreType_;
 				std::string instanceId_;
+				std::string category_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_RESTOREINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_SWITCHINSTANCEPROXYREQUEST_H_

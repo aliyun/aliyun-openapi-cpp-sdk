@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string config;
 					long port;
 					std::string destroyTime;
+					std::string globalInstanceId;
 					bool hasRenewChangeOrder;
 					int shardCount;
 					std::string connectionDomain;
@@ -68,6 +69,7 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::string instanceClass;
 					bool isRds;
+					std::string secondaryZoneId;
 					std::string instanceName;
 					std::string vpcId;
 					std::string chargeType;

@@ -52,7 +52,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string createTime;
 					std::string instanceClass;
-					int characterType;
+					std::string characterType;
 					std::string vswitchId;
 					int shardCount;
 					long currentBandWidth;
@@ -64,6 +64,7 @@ namespace AlibabaCloud
 					std::string instanceStatus;
 					std::vector<InstancesItem::InstanceNodes> instanceNodeList;
 					std::string customId;
+					int proxyCount;
 					std::string clusterName;
 					std::string regionId;
 					std::string maintainStartTime;

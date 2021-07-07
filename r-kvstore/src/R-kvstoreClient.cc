@@ -3003,6 +3003,42 @@ R_kvstoreClient::ReleaseInstancePublicConnectionOutcomeCallable R_kvstoreClient:
 	return task->get_future();
 }
 
+R_kvstoreClient::RemoveSubInstanceOutcome R_kvstoreClient::removeSubInstance(const RemoveSubInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveSubInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveSubInstanceOutcome(RemoveSubInstanceResult(outcome.result()));
+	else
+		return RemoveSubInstanceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::removeSubInstanceAsync(const RemoveSubInstanceRequest& request, const RemoveSubInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeSubInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::RemoveSubInstanceOutcomeCallable R_kvstoreClient::removeSubInstanceCallable(const RemoveSubInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveSubInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->removeSubInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::RenewAdditionalBandwidthOutcome R_kvstoreClient::renewAdditionalBandwidth(const RenewAdditionalBandwidthRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3249,6 +3285,42 @@ R_kvstoreClient::SwitchInstanceHAOutcomeCallable R_kvstoreClient::switchInstance
 			[this, request]()
 			{
 			return this->switchInstanceHA(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::SwitchInstanceProxyOutcome R_kvstoreClient::switchInstanceProxy(const SwitchInstanceProxyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SwitchInstanceProxyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SwitchInstanceProxyOutcome(SwitchInstanceProxyResult(outcome.result()));
+	else
+		return SwitchInstanceProxyOutcome(outcome.error());
+}
+
+void R_kvstoreClient::switchInstanceProxyAsync(const SwitchInstanceProxyRequest& request, const SwitchInstanceProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, switchInstanceProxy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::SwitchInstanceProxyOutcomeCallable R_kvstoreClient::switchInstanceProxyCallable(const SwitchInstanceProxyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SwitchInstanceProxyOutcome()>>(
+			[this, request]()
+			{
+			return this->switchInstanceProxy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

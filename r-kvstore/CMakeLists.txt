@@ -185,6 +185,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ReleaseDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionResult.h
+	include/alibabacloud/r-kvstore/model/RemoveSubInstanceRequest.h
+	include/alibabacloud/r-kvstore/model/RemoveSubInstanceResult.h
 	include/alibabacloud/r-kvstore/model/RenewAdditionalBandwidthRequest.h
 	include/alibabacloud/r-kvstore/model/RenewAdditionalBandwidthResult.h
 	include/alibabacloud/r-kvstore/model/RenewInstanceRequest.h
@@ -199,6 +201,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/RestoreInstanceResult.h
 	include/alibabacloud/r-kvstore/model/SwitchInstanceHARequest.h
 	include/alibabacloud/r-kvstore/model/SwitchInstanceHAResult.h
+	include/alibabacloud/r-kvstore/model/SwitchInstanceProxyRequest.h
+	include/alibabacloud/r-kvstore/model/SwitchInstanceProxyResult.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkRequest.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkResult.h
 	include/alibabacloud/r-kvstore/model/SyncDtsStatusRequest.h
@@ -378,6 +382,8 @@ set(r-kvstore_src
 	src/model/ReleaseDirectConnectionResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
 	src/model/ReleaseInstancePublicConnectionResult.cc
+	src/model/RemoveSubInstanceRequest.cc
+	src/model/RemoveSubInstanceResult.cc
 	src/model/RenewAdditionalBandwidthRequest.cc
 	src/model/RenewAdditionalBandwidthResult.cc
 	src/model/RenewInstanceRequest.cc
@@ -392,6 +398,8 @@ set(r-kvstore_src
 	src/model/RestoreInstanceResult.cc
 	src/model/SwitchInstanceHARequest.cc
 	src/model/SwitchInstanceHAResult.cc
+	src/model/SwitchInstanceProxyRequest.cc
+	src/model/SwitchInstanceProxyResult.cc
 	src/model/SwitchNetworkRequest.cc
 	src/model/SwitchNetworkResult.cc
 	src/model/SyncDtsStatusRequest.cc

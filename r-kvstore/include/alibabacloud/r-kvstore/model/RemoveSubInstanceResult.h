@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_REMOVESUBINSTANCERESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_REMOVESUBINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeBackupTasksResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT RemoveSubInstanceResult : public ServiceResult
 			{
 			public:
-				struct BackupJob
-				{
-					std::string jobMode;
-					std::string taskAction;
-					std::string startTime;
-					std::string nodeId;
-					std::string backupProgressStatus;
-					std::string process;
-					int backupJobID;
-				};
 
 
-				DescribeBackupTasksResult();
-				explicit DescribeBackupTasksResult(const std::string &payload);
-				~DescribeBackupTasksResult();
-				std::string getInstanceId()const;
-				std::vector<BackupJob> getBackupJobs()const;
+				RemoveSubInstanceResult();
+				explicit RemoveSubInstanceResult(const std::string &payload);
+				~RemoveSubInstanceResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string instanceId_;
-				std::vector<BackupJob> backupJobs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEBACKUPTASKSRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_REMOVESUBINSTANCERESULT_H_

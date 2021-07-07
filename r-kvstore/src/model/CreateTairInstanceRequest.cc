@@ -38,6 +38,17 @@ void CreateTairInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateTairInstanceRequest::getSecondaryZoneId()const
+{
+	return secondaryZoneId_;
+}
+
+void CreateTairInstanceRequest::setSecondaryZoneId(const std::string& secondaryZoneId)
+{
+	secondaryZoneId_ = secondaryZoneId;
+	setParameter("SecondaryZoneId", secondaryZoneId);
+}
+
 std::string CreateTairInstanceRequest::getCouponNo()const
 {
 	return couponNo_;

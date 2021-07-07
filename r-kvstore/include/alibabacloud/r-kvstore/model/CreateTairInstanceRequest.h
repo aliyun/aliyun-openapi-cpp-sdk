@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getSecondaryZoneId()const;
+				void setSecondaryZoneId(const std::string& secondaryZoneId);
 				std::string getCouponNo()const;
 				void setCouponNo(const std::string& couponNo);
 				std::string getEngineVersion()const;
@@ -102,6 +104,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string secondaryZoneId_;
 				std::string couponNo_;
 				std::string engineVersion_;
 				std::string storageType_;

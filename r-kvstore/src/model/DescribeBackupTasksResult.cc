@@ -55,6 +55,8 @@ void DescribeBackupTasksResult::parse(const std::string &payload)
 			backupJobsObject.startTime = valueBackupJobsBackupJob["StartTime"].asString();
 		if(!valueBackupJobsBackupJob["TaskAction"].isNull())
 			backupJobsObject.taskAction = valueBackupJobsBackupJob["TaskAction"].asString();
+		if(!valueBackupJobsBackupJob["NodeId"].isNull())
+			backupJobsObject.nodeId = valueBackupJobsBackupJob["NodeId"].asString();
 		backupJobs_.push_back(backupJobsObject);
 	}
 	if(!value["InstanceId"].isNull())

@@ -45,6 +45,8 @@ void DescribeIntranetAttributeResult::parse(const std::string &payload)
 		expireTime_ = value["ExpireTime"].asString();
 	if(!value["BandwidthExpireTime"].isNull())
 		bandwidthExpireTime_ = value["BandwidthExpireTime"].asString();
+	if(!value["AutoRenewal"].isNull())
+		autoRenewal_ = value["AutoRenewal"].asString() == "true";
 
 }
 
@@ -56,6 +58,11 @@ int DescribeIntranetAttributeResult::getIntranetBandwidth()const
 std::string DescribeIntranetAttributeResult::getBandwidthExpireTime()const
 {
 	return bandwidthExpireTime_;
+}
+
+bool DescribeIntranetAttributeResult::getAutoRenewal()const
+{
+	return autoRenewal_;
 }
 
 std::string DescribeIntranetAttributeResult::getExpireTime()const

@@ -133,6 +133,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.secondaryZoneId = valueInstancesDBInstanceAttribute["SecondaryZoneId"].asString();
 		if(!valueInstancesDBInstanceAttribute["ZoneType"].isNull())
 			instancesObject.zoneType = valueInstancesDBInstanceAttribute["ZoneType"].asString();
+		if(!valueInstancesDBInstanceAttribute["BackupLogStartTime"].isNull())
+			instancesObject.backupLogStartTime = valueInstancesDBInstanceAttribute["BackupLogStartTime"].asString();
 		auto allTagsNode = valueInstancesDBInstanceAttribute["Tags"]["Tag"];
 		for (auto valueInstancesDBInstanceAttributeTagsTag : allTagsNode)
 		{

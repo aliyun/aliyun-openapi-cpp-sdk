@@ -49,6 +49,17 @@ void RestoreInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string RestoreInstanceRequest::getFilterKey()const
+{
+	return filterKey_;
+}
+
+void RestoreInstanceRequest::setFilterKey(const std::string& filterKey)
+{
+	filterKey_ = filterKey;
+	setParameter("FilterKey", filterKey);
+}
+
 std::string RestoreInstanceRequest::getSecurityToken()const
 {
 	return securityToken_;

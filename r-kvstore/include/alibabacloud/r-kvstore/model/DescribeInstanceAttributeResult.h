@@ -77,6 +77,7 @@ namespace AlibabaCloud
 					std::string replicationMode;
 					std::string replicaId;
 					std::string secondaryZoneId;
+					std::string backupLogStartTime;
 					std::string instanceName;
 					std::string storage;
 					std::string vpcId;

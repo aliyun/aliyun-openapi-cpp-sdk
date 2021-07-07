@@ -126,6 +126,17 @@ void DescribeParameterTemplatesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeParameterTemplatesRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeParameterTemplatesRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
 std::string DescribeParameterTemplatesRequest::getCharacterType()const
 {
 	return characterType_;

@@ -44,7 +44,7 @@ void DescribeDedicatedClusterInstanceListResult::parse(const std::string &payloa
 	{
 		InstancesItem instancesObject;
 		if(!valueInstancesInstancesItem["CharacterType"].isNull())
-			instancesObject.characterType = std::stoi(valueInstancesInstancesItem["CharacterType"].asString());
+			instancesObject.characterType = valueInstancesInstancesItem["CharacterType"].asString();
 		if(!valueInstancesInstancesItem["ClusterId"].isNull())
 			instancesObject.clusterId = valueInstancesInstancesItem["ClusterId"].asString();
 		if(!valueInstancesInstancesItem["ClusterName"].isNull())
@@ -87,6 +87,8 @@ void DescribeDedicatedClusterInstanceListResult::parse(const std::string &payloa
 			instancesObject.currentBandWidth = std::stol(valueInstancesInstancesItem["CurrentBandWidth"].asString());
 		if(!valueInstancesInstancesItem["BandWidth"].isNull())
 			instancesObject.bandWidth = std::stol(valueInstancesInstancesItem["BandWidth"].asString());
+		if(!valueInstancesInstancesItem["ProxyCount"].isNull())
+			instancesObject.proxyCount = std::stoi(valueInstancesInstancesItem["ProxyCount"].asString());
 		auto allInstanceNodeListNode = valueInstancesInstancesItem["InstanceNodeList"]["InstanceNodes"];
 		for (auto valueInstancesInstancesItemInstanceNodeListInstanceNodes : allInstanceNodeListNode)
 		{

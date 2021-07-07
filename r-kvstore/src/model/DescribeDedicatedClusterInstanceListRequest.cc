@@ -203,3 +203,14 @@ void DescribeDedicatedClusterInstanceListRequest::setInstanceId(const std::strin
 	setParameter("InstanceId", instanceId);
 }
 
+std::string DescribeDedicatedClusterInstanceListRequest::getRegion()const
+{
+	return region_;
+}
+
+void DescribeDedicatedClusterInstanceListRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setParameter("Region", region);
+}
+

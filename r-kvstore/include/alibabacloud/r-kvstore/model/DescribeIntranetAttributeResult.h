@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				~DescribeIntranetAttributeResult();
 				int getIntranetBandwidth()const;
 				std::string getBandwidthExpireTime()const;
+				bool getAutoRenewal()const;
 				std::string getExpireTime()const;
 
 			protected:
@@ -46,6 +47,7 @@ namespace AlibabaCloud
 			private:
 				int intranetBandwidth_;
 				std::string bandwidthExpireTime_;
+				bool autoRenewal_;
 				std::string expireTime_;
 
 			};
