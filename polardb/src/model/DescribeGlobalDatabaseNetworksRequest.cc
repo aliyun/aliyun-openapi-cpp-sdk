@@ -38,6 +38,17 @@ void DescribeGlobalDatabaseNetworksRequest::setResourceOwnerId(long resourceOwne
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+int DescribeGlobalDatabaseNetworksRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeGlobalDatabaseNetworksRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string DescribeGlobalDatabaseNetworksRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,6 +69,17 @@ void DescribeGlobalDatabaseNetworksRequest::setSecurityToken(const std::string& 
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
+}
+
+int DescribeGlobalDatabaseNetworksRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeGlobalDatabaseNetworksRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGlobalDatabaseNetworksRequest::getResourceOwnerAccount()const
