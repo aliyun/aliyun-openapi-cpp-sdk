@@ -168,8 +168,12 @@
 #include "model/ModifyInstanceVpcAuthModeResult.h"
 #include "model/ModifyNodeSpecRequest.h"
 #include "model/ModifyNodeSpecResult.h"
+#include "model/ModifyNodeSpecBatchRequest.h"
+#include "model/ModifyNodeSpecBatchResult.h"
 #include "model/ModifyParametersRequest.h"
 #include "model/ModifyParametersResult.h"
+#include "model/ModifyResourceGroupRequest.h"
+#include "model/ModifyResourceGroupResult.h"
 #include "model/ModifySecurityGroupConfigurationRequest.h"
 #include "model/ModifySecurityGroupConfigurationResult.h"
 #include "model/ModifySecurityIpsRequest.h"
@@ -426,9 +430,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyNodeSpecResult> ModifyNodeSpecOutcome;
 			typedef std::future<ModifyNodeSpecOutcome> ModifyNodeSpecOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyNodeSpecRequest&, const ModifyNodeSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodeSpecAsyncHandler;
+			typedef Outcome<Error, Model::ModifyNodeSpecBatchResult> ModifyNodeSpecBatchOutcome;
+			typedef std::future<ModifyNodeSpecBatchOutcome> ModifyNodeSpecBatchOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifyNodeSpecBatchRequest&, const ModifyNodeSpecBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodeSpecBatchAsyncHandler;
 			typedef Outcome<Error, Model::ModifyParametersResult> ModifyParametersOutcome;
 			typedef std::future<ModifyParametersOutcome> ModifyParametersOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifyParametersRequest&, const ModifyParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParametersAsyncHandler;
+			typedef Outcome<Error, Model::ModifyResourceGroupResult> ModifyResourceGroupOutcome;
+			typedef std::future<ModifyResourceGroupOutcome> ModifyResourceGroupOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::ModifyResourceGroupRequest&, const ModifyResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ModifySecurityGroupConfigurationResult> ModifySecurityGroupConfigurationOutcome;
 			typedef std::future<ModifySecurityGroupConfigurationOutcome> ModifySecurityGroupConfigurationOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ModifySecurityGroupConfigurationRequest&, const ModifySecurityGroupConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupConfigurationAsyncHandler;
@@ -695,9 +705,15 @@ namespace AlibabaCloud
 			ModifyNodeSpecOutcome modifyNodeSpec(const Model::ModifyNodeSpecRequest &request)const;
 			void modifyNodeSpecAsync(const Model::ModifyNodeSpecRequest& request, const ModifyNodeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyNodeSpecOutcomeCallable modifyNodeSpecCallable(const Model::ModifyNodeSpecRequest& request) const;
+			ModifyNodeSpecBatchOutcome modifyNodeSpecBatch(const Model::ModifyNodeSpecBatchRequest &request)const;
+			void modifyNodeSpecBatchAsync(const Model::ModifyNodeSpecBatchRequest& request, const ModifyNodeSpecBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyNodeSpecBatchOutcomeCallable modifyNodeSpecBatchCallable(const Model::ModifyNodeSpecBatchRequest& request) const;
 			ModifyParametersOutcome modifyParameters(const Model::ModifyParametersRequest &request)const;
 			void modifyParametersAsync(const Model::ModifyParametersRequest& request, const ModifyParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyParametersOutcomeCallable modifyParametersCallable(const Model::ModifyParametersRequest& request) const;
+			ModifyResourceGroupOutcome modifyResourceGroup(const Model::ModifyResourceGroupRequest &request)const;
+			void modifyResourceGroupAsync(const Model::ModifyResourceGroupRequest& request, const ModifyResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyResourceGroupOutcomeCallable modifyResourceGroupCallable(const Model::ModifyResourceGroupRequest& request) const;
 			ModifySecurityGroupConfigurationOutcome modifySecurityGroupConfiguration(const Model::ModifySecurityGroupConfigurationRequest &request)const;
 			void modifySecurityGroupConfigurationAsync(const Model::ModifySecurityGroupConfigurationRequest& request, const ModifySecurityGroupConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityGroupConfigurationOutcomeCallable modifySecurityGroupConfigurationCallable(const Model::ModifySecurityGroupConfigurationRequest& request) const;

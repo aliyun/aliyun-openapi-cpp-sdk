@@ -167,8 +167,12 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyInstanceVpcAuthModeResult.h
 	include/alibabacloud/dds/model/ModifyNodeSpecRequest.h
 	include/alibabacloud/dds/model/ModifyNodeSpecResult.h
+	include/alibabacloud/dds/model/ModifyNodeSpecBatchRequest.h
+	include/alibabacloud/dds/model/ModifyNodeSpecBatchResult.h
 	include/alibabacloud/dds/model/ModifyParametersRequest.h
 	include/alibabacloud/dds/model/ModifyParametersResult.h
+	include/alibabacloud/dds/model/ModifyResourceGroupRequest.h
+	include/alibabacloud/dds/model/ModifyResourceGroupResult.h
 	include/alibabacloud/dds/model/ModifySecurityGroupConfigurationRequest.h
 	include/alibabacloud/dds/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/dds/model/ModifySecurityIpsRequest.h
@@ -346,8 +350,12 @@ set(dds_src
 	src/model/ModifyInstanceVpcAuthModeResult.cc
 	src/model/ModifyNodeSpecRequest.cc
 	src/model/ModifyNodeSpecResult.cc
+	src/model/ModifyNodeSpecBatchRequest.cc
+	src/model/ModifyNodeSpecBatchResult.cc
 	src/model/ModifyParametersRequest.cc
 	src/model/ModifyParametersResult.cc
+	src/model/ModifyResourceGroupRequest.cc
+	src/model/ModifyResourceGroupResult.cc
 	src/model/ModifySecurityGroupConfigurationRequest.cc
 	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc

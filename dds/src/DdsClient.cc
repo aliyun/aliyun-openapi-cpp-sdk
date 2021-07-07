@@ -31,21 +31,21 @@ DdsClient::DdsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
 }
 
 DdsClient::DdsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
 }
 
 DdsClient::DdsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "Dds");
 }
 
 DdsClient::~DdsClient()
@@ -2679,6 +2679,42 @@ DdsClient::ModifyNodeSpecOutcomeCallable DdsClient::modifyNodeSpecCallable(const
 	return task->get_future();
 }
 
+DdsClient::ModifyNodeSpecBatchOutcome DdsClient::modifyNodeSpecBatch(const ModifyNodeSpecBatchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyNodeSpecBatchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyNodeSpecBatchOutcome(ModifyNodeSpecBatchResult(outcome.result()));
+	else
+		return ModifyNodeSpecBatchOutcome(outcome.error());
+}
+
+void DdsClient::modifyNodeSpecBatchAsync(const ModifyNodeSpecBatchRequest& request, const ModifyNodeSpecBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyNodeSpecBatch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyNodeSpecBatchOutcomeCallable DdsClient::modifyNodeSpecBatchCallable(const ModifyNodeSpecBatchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyNodeSpecBatchOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyNodeSpecBatch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::ModifyParametersOutcome DdsClient::modifyParameters(const ModifyParametersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,6 +2745,42 @@ DdsClient::ModifyParametersOutcomeCallable DdsClient::modifyParametersCallable(c
 			[this, request]()
 			{
 			return this->modifyParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::ModifyResourceGroupOutcome DdsClient::modifyResourceGroup(const ModifyResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyResourceGroupOutcome(ModifyResourceGroupResult(outcome.result()));
+	else
+		return ModifyResourceGroupOutcome(outcome.error());
+}
+
+void DdsClient::modifyResourceGroupAsync(const ModifyResourceGroupRequest& request, const ModifyResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::ModifyResourceGroupOutcomeCallable DdsClient::modifyResourceGroupCallable(const ModifyResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyResourceGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

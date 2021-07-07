@@ -71,6 +71,17 @@ void CreateNodeRequest::setReadonlyReplicas(int readonlyReplicas)
 	setParameter("ReadonlyReplicas", std::to_string(readonlyReplicas));
 }
 
+std::string CreateNodeRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void CreateNodeRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setParameter("CouponNo", couponNo);
+}
+
 std::string CreateNodeRequest::getNodeClass()const
 {
 	return nodeClass_;
@@ -113,6 +124,17 @@ void CreateNodeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
 	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string CreateNodeRequest::getBusinessInfo()const
+{
+	return businessInfo_;
+}
+
+void CreateNodeRequest::setBusinessInfo(const std::string& businessInfo)
+{
+	businessInfo_ = businessInfo;
+	setParameter("BusinessInfo", businessInfo);
 }
 
 bool CreateNodeRequest::getAutoPay()const

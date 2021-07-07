@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_CREATENODEREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_CREATENODEREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_MODIFYNODESPECBATCHREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_MODIFYNODESPECBATCHREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,29 +28,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT CreateNodeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDS_EXPORT ModifyNodeSpecBatchRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateNodeRequest();
-				~CreateNodeRequest();
+				ModifyNodeSpecBatchRequest();
+				~ModifyNodeSpecBatchRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getNodeType()const;
-				void setNodeType(const std::string& nodeType);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
-				int getReadonlyReplicas()const;
-				void setReadonlyReplicas(int readonlyReplicas);
+				std::string getNodesInfo()const;
+				void setNodesInfo(const std::string& nodesInfo);
 				std::string getCouponNo()const;
 				void setCouponNo(const std::string& couponNo);
-				std::string getNodeClass()const;
-				void setNodeClass(const std::string& nodeClass);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getEffectiveTime()const;
+				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getBusinessInfo()const;
@@ -61,33 +61,33 @@ namespace AlibabaCloud
 				void setFromApp(const std::string& fromApp);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				int getNodeStorage()const;
-				void setNodeStorage(int nodeStorage);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getOrderType()const;
+				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
-				std::string nodeType_;
 				std::string clientToken_;
-				int readonlyReplicas_;
+				std::string nodesInfo_;
 				std::string couponNo_;
-				std::string nodeClass_;
 				std::string accessKeyId_;
 				std::string securityToken_;
+				std::string regionId_;
+				std::string effectiveTime_;
 				std::string dBInstanceId_;
 				std::string businessInfo_;
 				bool autoPay_;
 				std::string fromApp_;
 				std::string resourceOwnerAccount_;
-				int nodeStorage_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string orderType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_CREATENODEREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_MODIFYNODESPECBATCHREQUEST_H_
