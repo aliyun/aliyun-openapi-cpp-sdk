@@ -34,6 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					std::string publicKey;
+					std::string signature;
+					std::string license;
 					std::string rid;
 				};
 

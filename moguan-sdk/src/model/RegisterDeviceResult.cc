@@ -42,6 +42,12 @@ void RegisterDeviceResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Rid"].isNull())
 		data_.rid = dataNode["Rid"].asString();
+	if(!dataNode["License"].isNull())
+		data_.license = dataNode["License"].asString();
+	if(!dataNode["Signature"].isNull())
+		data_.signature = dataNode["Signature"].asString();
+	if(!dataNode["PublicKey"].isNull())
+		data_.publicKey = dataNode["PublicKey"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["ErrorCode"].isNull())
