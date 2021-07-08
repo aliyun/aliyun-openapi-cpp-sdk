@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDRMUSAGEDATARESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDRMUSAGEDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeDRMCertListResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDrmUsageDataResult : public ServiceResult
 			{
 			public:
-				struct CertInfo
+				struct DataModule
 				{
-					std::string privateKey;
-					std::string description;
-					std::string servCert;
-					std::string certId;
-					std::string passphrase;
-					std::string ask;
-					std::string certName;
-					std::string createDate;
+					std::string drmType;
+					std::string region;
+					long count;
+					std::string domain;
+					std::string timeStamp;
 				};
 
 
-				DescribeDRMCertListResult();
-				explicit DescribeDRMCertListResult(const std::string &payload);
-				~DescribeDRMCertListResult();
-				std::vector<CertInfo> getDRMCertInfoListList()const;
+				DescribeLiveDrmUsageDataResult();
+				explicit DescribeLiveDrmUsageDataResult(const std::string &payload);
+				~DescribeLiveDrmUsageDataResult();
+				std::vector<DataModule> getDrmUsageData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<CertInfo> dRMCertInfoListList_;
+				std::vector<DataModule> drmUsageData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDRMUSAGEDATARESULT_H_

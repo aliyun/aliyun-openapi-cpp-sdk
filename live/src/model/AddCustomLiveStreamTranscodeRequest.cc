@@ -60,6 +60,17 @@ void AddCustomLiveStreamTranscodeRequest::setGop(const std::string& gop)
 	setParameter("Gop", gop);
 }
 
+std::string AddCustomLiveStreamTranscodeRequest::getKmsKeyExpireInterval()const
+{
+	return kmsKeyExpireInterval_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setKmsKeyExpireInterval(const std::string& kmsKeyExpireInterval)
+{
+	kmsKeyExpireInterval_ = kmsKeyExpireInterval;
+	setParameter("KmsKeyExpireInterval", kmsKeyExpireInterval);
+}
+
 std::string AddCustomLiveStreamTranscodeRequest::getAudioCodec()const
 {
 	return audioCodec_;
@@ -69,6 +80,17 @@ void AddCustomLiveStreamTranscodeRequest::setAudioCodec(const std::string& audio
 {
 	audioCodec_ = audioCodec;
 	setParameter("AudioCodec", audioCodec);
+}
+
+std::string AddCustomLiveStreamTranscodeRequest::getKmsUID()const
+{
+	return kmsUID_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setKmsUID(const std::string& kmsUID)
+{
+	kmsUID_ = kmsUID;
+	setParameter("KmsUID", kmsUID);
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getTemplateType()const
@@ -113,6 +135,17 @@ void AddCustomLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
 	setParameter("App", app);
+}
+
+std::string AddCustomLiveStreamTranscodeRequest::getEncryptParameters()const
+{
+	return encryptParameters_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setEncryptParameters(const std::string& encryptParameters)
+{
+	encryptParameters_ = encryptParameters;
+	setParameter("EncryptParameters", encryptParameters);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getAudioChannelNum()const
@@ -212,5 +245,16 @@ void AddCustomLiveStreamTranscodeRequest::setVideoBitrate(int videoBitrate)
 {
 	videoBitrate_ = videoBitrate;
 	setParameter("VideoBitrate", std::to_string(videoBitrate));
+}
+
+std::string AddCustomLiveStreamTranscodeRequest::getKmsKeyID()const
+{
+	return kmsKeyID_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setKmsKeyID(const std::string& kmsKeyID)
+{
+	kmsKeyID_ = kmsKeyID;
+	setParameter("KmsKeyID", kmsKeyID);
 }
 

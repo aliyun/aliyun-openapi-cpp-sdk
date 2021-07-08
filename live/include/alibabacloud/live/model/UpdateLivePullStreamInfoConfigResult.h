@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_UPDATELIVEPULLSTREAMINFOCONFIGRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_UPDATELIVEPULLSTREAMINFOCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeDRMCertListResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT UpdateLivePullStreamInfoConfigResult : public ServiceResult
 			{
 			public:
-				struct CertInfo
-				{
-					std::string privateKey;
-					std::string description;
-					std::string servCert;
-					std::string certId;
-					std::string passphrase;
-					std::string ask;
-					std::string certName;
-					std::string createDate;
-				};
 
 
-				DescribeDRMCertListResult();
-				explicit DescribeDRMCertListResult(const std::string &payload);
-				~DescribeDRMCertListResult();
-				std::vector<CertInfo> getDRMCertInfoListList()const;
+				UpdateLivePullStreamInfoConfigResult();
+				explicit UpdateLivePullStreamInfoConfigResult(const std::string &payload);
+				~UpdateLivePullStreamInfoConfigResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<CertInfo> dRMCertInfoListList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_UPDATELIVEPULLSTREAMINFOCONFIGRESULT_H_

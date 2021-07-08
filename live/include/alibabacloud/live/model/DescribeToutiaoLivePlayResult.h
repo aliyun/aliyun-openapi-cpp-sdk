@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBETOUTIAOLIVEPLAYRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBETOUTIAOLIVEPLAYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeDRMCertListResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeToutiaoLivePlayResult : public ServiceResult
 			{
 			public:
-				struct CertInfo
+				struct ContentItem
 				{
-					std::string privateKey;
-					std::string description;
-					std::string servCert;
-					std::string certId;
-					std::string passphrase;
-					std::string ask;
-					std::string certName;
-					std::string createDate;
+					std::string app;
+					std::string cdnName;
+					std::string streamName;
+					float bandwidth;
+					std::string domain;
+					long timestamp;
+					long playNum;
 				};
 
 
-				DescribeDRMCertListResult();
-				explicit DescribeDRMCertListResult(const std::string &payload);
-				~DescribeDRMCertListResult();
-				std::vector<CertInfo> getDRMCertInfoListList()const;
+				DescribeToutiaoLivePlayResult();
+				explicit DescribeToutiaoLivePlayResult(const std::string &payload);
+				~DescribeToutiaoLivePlayResult();
+				std::string getDescription()const;
+				std::vector<ContentItem> getContent()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<CertInfo> dRMCertInfoListList_;
+				std::string description_;
+				std::vector<ContentItem> content_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBEDRMCERTLISTRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBETOUTIAOLIVEPLAYRESULT_H_

@@ -41,8 +41,12 @@ namespace AlibabaCloud
 				void setLazy(const std::string& lazy);
 				std::string getGop()const;
 				void setGop(const std::string& gop);
+				std::string getKmsKeyExpireInterval()const;
+				void setKmsKeyExpireInterval(const std::string& kmsKeyExpireInterval);
 				std::string getAudioCodec()const;
 				void setAudioCodec(const std::string& audioCodec);
+				std::string getKmsUID()const;
+				void setKmsUID(const std::string& kmsUID);
 				std::string getTemplateType()const;
 				void setTemplateType(const std::string& templateType);
 				std::string getAudioProfile()const;
@@ -51,6 +55,8 @@ namespace AlibabaCloud
 				void setHeight(int height);
 				std::string getApp()const;
 				void setApp(const std::string& app);
+				std::string getEncryptParameters()const;
+				void setEncryptParameters(const std::string& encryptParameters);
 				int getAudioChannelNum()const;
 				void setAudioChannelNum(int audioChannelNum);
 				int getProfile()const;
@@ -69,16 +75,21 @@ namespace AlibabaCloud
 				void setWidth(int width);
 				int getVideoBitrate()const;
 				void setVideoBitrate(int videoBitrate);
+				std::string getKmsKeyID()const;
+				void setKmsKeyID(const std::string& kmsKeyID);
 
             private:
 				std::string _template_;
 				std::string lazy_;
 				std::string gop_;
+				std::string kmsKeyExpireInterval_;
 				std::string audioCodec_;
+				std::string kmsUID_;
 				std::string templateType_;
 				std::string audioProfile_;
 				int height_;
 				std::string app_;
+				std::string encryptParameters_;
 				int audioChannelNum_;
 				int profile_;
 				int fPS_;
@@ -88,6 +99,7 @@ namespace AlibabaCloud
 				std::string domain_;
 				int width_;
 				int videoBitrate_;
+				std::string kmsKeyID_;
 
 			};
 		}

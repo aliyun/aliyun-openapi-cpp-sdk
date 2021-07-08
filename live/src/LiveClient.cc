@@ -4551,6 +4551,42 @@ LiveClient::DescribeLiveDomainRecordDataOutcomeCallable LiveClient::describeLive
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainRecordUsageDataOutcome LiveClient::describeLiveDomainRecordUsageData(const DescribeLiveDomainRecordUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDomainRecordUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDomainRecordUsageDataOutcome(DescribeLiveDomainRecordUsageDataResult(outcome.result()));
+	else
+		return DescribeLiveDomainRecordUsageDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDomainRecordUsageDataAsync(const DescribeLiveDomainRecordUsageDataRequest& request, const DescribeLiveDomainRecordUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDomainRecordUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainRecordUsageDataOutcomeCallable LiveClient::describeLiveDomainRecordUsageDataCallable(const DescribeLiveDomainRecordUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDomainRecordUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDomainRecordUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainSnapshotDataOutcome LiveClient::describeLiveDomainSnapshotData(const DescribeLiveDomainSnapshotDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4761,6 +4797,42 @@ LiveClient::DescribeLiveDomainTranscodeDataOutcomeCallable LiveClient::describeL
 			[this, request]()
 			{
 			return this->describeLiveDomainTranscodeData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveDrmUsageDataOutcome LiveClient::describeLiveDrmUsageData(const DescribeLiveDrmUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDrmUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDrmUsageDataOutcome(DescribeLiveDrmUsageDataResult(outcome.result()));
+	else
+		return DescribeLiveDrmUsageDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDrmUsageDataAsync(const DescribeLiveDrmUsageDataRequest& request, const DescribeLiveDrmUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDrmUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDrmUsageDataOutcomeCallable LiveClient::describeLiveDrmUsageDataCallable(const DescribeLiveDrmUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDrmUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDrmUsageData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6165,6 +6237,78 @@ LiveClient::DescribeStudioLayoutsOutcomeCallable LiveClient::describeStudioLayou
 			[this, request]()
 			{
 			return this->describeStudioLayouts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeToutiaoLivePlayOutcome LiveClient::describeToutiaoLivePlay(const DescribeToutiaoLivePlayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeToutiaoLivePlayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeToutiaoLivePlayOutcome(DescribeToutiaoLivePlayResult(outcome.result()));
+	else
+		return DescribeToutiaoLivePlayOutcome(outcome.error());
+}
+
+void LiveClient::describeToutiaoLivePlayAsync(const DescribeToutiaoLivePlayRequest& request, const DescribeToutiaoLivePlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeToutiaoLivePlay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeToutiaoLivePlayOutcomeCallable LiveClient::describeToutiaoLivePlayCallable(const DescribeToutiaoLivePlayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeToutiaoLivePlayOutcome()>>(
+			[this, request]()
+			{
+			return this->describeToutiaoLivePlay(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeToutiaoLivePublishOutcome LiveClient::describeToutiaoLivePublish(const DescribeToutiaoLivePublishRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeToutiaoLivePublishOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeToutiaoLivePublishOutcome(DescribeToutiaoLivePublishResult(outcome.result()));
+	else
+		return DescribeToutiaoLivePublishOutcome(outcome.error());
+}
+
+void LiveClient::describeToutiaoLivePublishAsync(const DescribeToutiaoLivePublishRequest& request, const DescribeToutiaoLivePublishAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeToutiaoLivePublish(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeToutiaoLivePublishOutcomeCallable LiveClient::describeToutiaoLivePublishCallable(const DescribeToutiaoLivePublishRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeToutiaoLivePublishOutcome()>>(
+			[this, request]()
+			{
+			return this->describeToutiaoLivePublish(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8613,6 +8757,42 @@ LiveClient::UpdateLiveDetectNotifyConfigOutcomeCallable LiveClient::updateLiveDe
 			[this, request]()
 			{
 			return this->updateLiveDetectNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLivePullStreamInfoConfigOutcome LiveClient::updateLivePullStreamInfoConfig(const UpdateLivePullStreamInfoConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLivePullStreamInfoConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLivePullStreamInfoConfigOutcome(UpdateLivePullStreamInfoConfigResult(outcome.result()));
+	else
+		return UpdateLivePullStreamInfoConfigOutcome(outcome.error());
+}
+
+void LiveClient::updateLivePullStreamInfoConfigAsync(const UpdateLivePullStreamInfoConfigRequest& request, const UpdateLivePullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLivePullStreamInfoConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLivePullStreamInfoConfigOutcomeCallable LiveClient::updateLivePullStreamInfoConfigCallable(const UpdateLivePullStreamInfoConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLivePullStreamInfoConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLivePullStreamInfoConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

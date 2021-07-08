@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEREALTIMEDELIVERYACCREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEREALTIMEDELIVERYACCREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveRealtimeDeliveryAccRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainRecordUsageDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeLiveRealtimeDeliveryAccRequest();
-				~DescribeLiveRealtimeDeliveryAccRequest();
+				DescribeLiveDomainRecordUsageDataRequest();
+				~DescribeLiveDomainRecordUsageDataRequest();
 
-				std::string getProject()const;
-				void setProject(const std::string& project);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getSplitBy()const;
+				void setSplitBy(const std::string& splitBy);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
-				std::string getLogStore()const;
-				void setLogStore(const std::string& logStore);
 
             private:
-				std::string project_;
 				std::string startTime_;
+				std::string splitBy_;
 				std::string domainName_;
 				std::string endTime_;
 				long ownerId_;
-				std::string interval_;
-				std::string logStore_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEREALTIMEDELIVERYACCREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_

@@ -271,6 +271,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainRealtimeLogDeliveryResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainRecordDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainRecordDataResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainRecordUsageDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainRecordUsageDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainStagingConfigRequest.h
@@ -283,6 +285,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainTrafficDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainTranscodeDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainTranscodeDataResult.h
+	include/alibabacloud/live/model/DescribeLiveDrmUsageDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveDrmUsageDataResult.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigResult.h
 	include/alibabacloud/live/model/DescribeLivePullStreamConfigRequest.h
@@ -361,6 +365,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeRoomStatusResult.h
 	include/alibabacloud/live/model/DescribeStudioLayoutsRequest.h
 	include/alibabacloud/live/model/DescribeStudioLayoutsResult.h
+	include/alibabacloud/live/model/DescribeToutiaoLivePlayRequest.h
+	include/alibabacloud/live/model/DescribeToutiaoLivePlayResult.h
+	include/alibabacloud/live/model/DescribeToutiaoLivePublishRequest.h
+	include/alibabacloud/live/model/DescribeToutiaoLivePublishResult.h
 	include/alibabacloud/live/model/DescribeUpBpsPeakDataRequest.h
 	include/alibabacloud/live/model/DescribeUpBpsPeakDataResult.h
 	include/alibabacloud/live/model/DescribeUpBpsPeakOfLineRequest.h
@@ -497,6 +505,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveAudioAuditNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveDetectNotifyConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveDetectNotifyConfigResult.h
+	include/alibabacloud/live/model/UpdateLivePullStreamInfoConfigRequest.h
+	include/alibabacloud/live/model/UpdateLivePullStreamInfoConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveRecordNotifyConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveRecordNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveSnapshotDetectPornConfigRequest.h
@@ -760,6 +770,8 @@ set(live_src
 	src/model/DescribeLiveDomainRealtimeLogDeliveryResult.cc
 	src/model/DescribeLiveDomainRecordDataRequest.cc
 	src/model/DescribeLiveDomainRecordDataResult.cc
+	src/model/DescribeLiveDomainRecordUsageDataRequest.cc
+	src/model/DescribeLiveDomainRecordUsageDataResult.cc
 	src/model/DescribeLiveDomainSnapshotDataRequest.cc
 	src/model/DescribeLiveDomainSnapshotDataResult.cc
 	src/model/DescribeLiveDomainStagingConfigRequest.cc
@@ -772,6 +784,8 @@ set(live_src
 	src/model/DescribeLiveDomainTrafficDataResult.cc
 	src/model/DescribeLiveDomainTranscodeDataRequest.cc
 	src/model/DescribeLiveDomainTranscodeDataResult.cc
+	src/model/DescribeLiveDrmUsageDataRequest.cc
+	src/model/DescribeLiveDrmUsageDataResult.cc
 	src/model/DescribeLiveLazyPullStreamConfigRequest.cc
 	src/model/DescribeLiveLazyPullStreamConfigResult.cc
 	src/model/DescribeLivePullStreamConfigRequest.cc
@@ -850,6 +864,10 @@ set(live_src
 	src/model/DescribeRoomStatusResult.cc
 	src/model/DescribeStudioLayoutsRequest.cc
 	src/model/DescribeStudioLayoutsResult.cc
+	src/model/DescribeToutiaoLivePlayRequest.cc
+	src/model/DescribeToutiaoLivePlayResult.cc
+	src/model/DescribeToutiaoLivePublishRequest.cc
+	src/model/DescribeToutiaoLivePublishResult.cc
 	src/model/DescribeUpBpsPeakDataRequest.cc
 	src/model/DescribeUpBpsPeakDataResult.cc
 	src/model/DescribeUpBpsPeakOfLineRequest.cc
@@ -986,6 +1004,8 @@ set(live_src
 	src/model/UpdateLiveAudioAuditNotifyConfigResult.cc
 	src/model/UpdateLiveDetectNotifyConfigRequest.cc
 	src/model/UpdateLiveDetectNotifyConfigResult.cc
+	src/model/UpdateLivePullStreamInfoConfigRequest.cc
+	src/model/UpdateLivePullStreamInfoConfigResult.cc
 	src/model/UpdateLiveRecordNotifyConfigRequest.cc
 	src/model/UpdateLiveRecordNotifyConfigResult.cc
 	src/model/UpdateLiveSnapshotDetectPornConfigRequest.cc

@@ -49,6 +49,17 @@ void DescribeLiveRealtimeDeliveryAccRequest::setStartTime(const std::string& sta
 	setParameter("StartTime", startTime);
 }
 
+std::string DescribeLiveRealtimeDeliveryAccRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void DescribeLiveRealtimeDeliveryAccRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
 std::string DescribeLiveRealtimeDeliveryAccRequest::getEndTime()const
 {
 	return endTime_;

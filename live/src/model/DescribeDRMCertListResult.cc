@@ -57,6 +57,8 @@ void DescribeDRMCertListResult::parse(const std::string &payload)
 			dRMCertInfoListListObject.ask = valueDRMCertInfoListListCertInfo["Ask"].asString();
 		if(!valueDRMCertInfoListListCertInfo["Description"].isNull())
 			dRMCertInfoListListObject.description = valueDRMCertInfoListListCertInfo["Description"].asString();
+		if(!valueDRMCertInfoListListCertInfo["CreateDate"].isNull())
+			dRMCertInfoListListObject.createDate = valueDRMCertInfoListListCertInfo["CreateDate"].asString();
 		dRMCertInfoListList_.push_back(dRMCertInfoListListObject);
 	}
 

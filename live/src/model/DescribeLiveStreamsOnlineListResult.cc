@@ -63,6 +63,8 @@ void DescribeLiveStreamsOnlineListResult::parse(const std::string &payload)
 			onlineInfoObject.transcoded = valueOnlineInfoLiveStreamOnlineInfo["Transcoded"].asString();
 		if(!valueOnlineInfoLiveStreamOnlineInfo["TranscodeId"].isNull())
 			onlineInfoObject.transcodeId = valueOnlineInfoLiveStreamOnlineInfo["TranscodeId"].asString();
+		if(!valueOnlineInfoLiveStreamOnlineInfo["TranscodeDrm"].isNull())
+			onlineInfoObject.transcodeDrm = valueOnlineInfoLiveStreamOnlineInfo["TranscodeDrm"].asString();
 		if(!valueOnlineInfoLiveStreamOnlineInfo["ServerIp"].isNull())
 			onlineInfoObject.serverIp = valueOnlineInfoLiveStreamOnlineInfo["ServerIp"].asString();
 		if(!valueOnlineInfoLiveStreamOnlineInfo["ClientIp"].isNull())

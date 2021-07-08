@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEREALTIMEDELIVERYACCREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEREALTIMEDELIVERYACCREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBETOUTIAOLIVEPUBLISHREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBETOUTIAOLIVEPUBLISHREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveRealtimeDeliveryAccRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeToutiaoLivePublishRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeLiveRealtimeDeliveryAccRequest();
-				~DescribeLiveRealtimeDeliveryAccRequest();
+				DescribeToutiaoLivePublishRequest();
+				~DescribeToutiaoLivePublishRequest();
 
-				std::string getProject()const;
-				void setProject(const std::string& project);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getStream()const;
+				void setStream(const std::string& stream);
+				std::string getApp()const;
+				void setApp(const std::string& app);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInterval()const;
-				void setInterval(const std::string& interval);
-				std::string getLogStore()const;
-				void setLogStore(const std::string& logStore);
+				std::string getDomain()const;
+				void setDomain(const std::string& domain);
 
             private:
-				std::string project_;
 				std::string startTime_;
-				std::string domainName_;
+				std::string stream_;
+				std::string app_;
 				std::string endTime_;
 				long ownerId_;
-				std::string interval_;
-				std::string logStore_;
+				std::string domain_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEREALTIMEDELIVERYACCREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBETOUTIAOLIVEPUBLISHREQUEST_H_
