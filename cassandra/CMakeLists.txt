@@ -109,6 +109,8 @@ set(cassandra_public_header_model
 	include/alibabacloud/cassandra/model/ModifyParameterResult.h
 	include/alibabacloud/cassandra/model/ModifySecurityGroupsRequest.h
 	include/alibabacloud/cassandra/model/ModifySecurityGroupsResult.h
+	include/alibabacloud/cassandra/model/MoveResourceGroupRequest.h
+	include/alibabacloud/cassandra/model/MoveResourceGroupResult.h
 	include/alibabacloud/cassandra/model/PurgeClusterRequest.h
 	include/alibabacloud/cassandra/model/PurgeClusterResult.h
 	include/alibabacloud/cassandra/model/RebootClusterRequest.h
@@ -216,6 +218,8 @@ set(cassandra_src
 	src/model/ModifyParameterResult.cc
 	src/model/ModifySecurityGroupsRequest.cc
 	src/model/ModifySecurityGroupsResult.cc
+	src/model/MoveResourceGroupRequest.cc
+	src/model/MoveResourceGroupResult.cc
 	src/model/PurgeClusterRequest.cc
 	src/model/PurgeClusterResult.cc
 	src/model/RebootClusterRequest.cc

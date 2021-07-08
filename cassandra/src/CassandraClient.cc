@@ -1635,6 +1635,42 @@ CassandraClient::ModifySecurityGroupsOutcomeCallable CassandraClient::modifySecu
 	return task->get_future();
 }
 
+CassandraClient::MoveResourceGroupOutcome CassandraClient::moveResourceGroup(const MoveResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoveResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoveResourceGroupOutcome(MoveResourceGroupResult(outcome.result()));
+	else
+		return MoveResourceGroupOutcome(outcome.error());
+}
+
+void CassandraClient::moveResourceGroupAsync(const MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moveResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CassandraClient::MoveResourceGroupOutcomeCallable CassandraClient::moveResourceGroupCallable(const MoveResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoveResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->moveResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CassandraClient::PurgeClusterOutcome CassandraClient::purgeCluster(const PurgeClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

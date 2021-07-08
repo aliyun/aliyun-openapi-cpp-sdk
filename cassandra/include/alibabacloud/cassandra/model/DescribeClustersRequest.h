@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setClusterName(const std::string& clusterName);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
             private:
 				std::string clusterName_;
 				int pageNumber_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				int pageSize_;
 				std::vector<Tag> tag_;

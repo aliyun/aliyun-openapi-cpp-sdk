@@ -27,6 +27,17 @@ AllocatePublicContactPointsRequest::AllocatePublicContactPointsRequest() :
 AllocatePublicContactPointsRequest::~AllocatePublicContactPointsRequest()
 {}
 
+std::string AllocatePublicContactPointsRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AllocatePublicContactPointsRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string AllocatePublicContactPointsRequest::getDataCenterId()const
 {
 	return dataCenterId_;

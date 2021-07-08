@@ -70,6 +70,8 @@ void DescribeClusterResult::parse(const std::string &payload)
 		cluster_.autoRenewal = clusterNode["AutoRenewal"].asString() == "true";
 	if(!clusterNode["AutoRenewPeriod"].isNull())
 		cluster_.autoRenewPeriod = std::stoi(clusterNode["AutoRenewPeriod"].asString());
+	if(!clusterNode["ResourceGroupId"].isNull())
+		cluster_.resourceGroupId = clusterNode["ResourceGroupId"].asString();
 	auto allTagsNode = clusterNode["Tags"]["Tag"];
 	for (auto clusterNodeTagsTag : allTagsNode)
 	{

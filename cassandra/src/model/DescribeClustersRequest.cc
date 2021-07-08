@@ -49,6 +49,17 @@ void DescribeClustersRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeClustersRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeClustersRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeClustersRequest::getRegionId()const
 {
 	return regionId_;

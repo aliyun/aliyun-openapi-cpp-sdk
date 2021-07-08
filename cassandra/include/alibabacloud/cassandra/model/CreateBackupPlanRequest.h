@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateBackupPlanRequest();
 				~CreateBackupPlanRequest();
 
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				int getRetentionPeriod()const;
 				void setRetentionPeriod(int retentionPeriod);
 				std::string getDataCenterId()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				void setBackupPeriod(const std::string& backupPeriod);
 
             private:
+				std::string clientToken_;
 				int retentionPeriod_;
 				std::string dataCenterId_;
 				bool active_;

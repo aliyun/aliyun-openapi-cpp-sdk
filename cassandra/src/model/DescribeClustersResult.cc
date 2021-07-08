@@ -67,6 +67,8 @@ void DescribeClustersResult::parse(const std::string &payload)
 			clustersObject.autoRenewal = valueClustersCluster["AutoRenewal"].asString() == "true";
 		if(!valueClustersCluster["AutoRenewPeriod"].isNull())
 			clustersObject.autoRenewPeriod = std::stoi(valueClustersCluster["AutoRenewPeriod"].asString());
+		if(!valueClustersCluster["ResourceGroupId"].isNull())
+			clustersObject.resourceGroupId = valueClustersCluster["ResourceGroupId"].asString();
 		auto allTagsNode = valueClustersCluster["Tags"]["Tag"];
 		for (auto valueClustersClusterTagsTag : allTagsNode)
 		{

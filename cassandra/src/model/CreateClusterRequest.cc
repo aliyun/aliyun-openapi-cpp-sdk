@@ -49,6 +49,17 @@ void CreateClusterRequest::setClusterName(const std::string& clusterName)
 	setParameter("ClusterName", clusterName);
 }
 
+std::string CreateClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateClusterRequest::getPassword()const
 {
 	return password_;

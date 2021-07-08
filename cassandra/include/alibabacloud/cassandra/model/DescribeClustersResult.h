@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string majorVersion;
 					int autoRenewPeriod;
 					std::string createdTime;
+					std::string resourceGroupId;
 					std::string clusterId;
 					std::string minorVersion;
 					std::string payType;

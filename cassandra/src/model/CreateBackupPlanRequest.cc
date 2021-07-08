@@ -27,6 +27,17 @@ CreateBackupPlanRequest::CreateBackupPlanRequest() :
 CreateBackupPlanRequest::~CreateBackupPlanRequest()
 {}
 
+std::string CreateBackupPlanRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateBackupPlanRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 int CreateBackupPlanRequest::getRetentionPeriod()const
 {
 	return retentionPeriod_;

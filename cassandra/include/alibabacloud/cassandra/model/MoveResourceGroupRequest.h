@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CASSANDRA_MODEL_ALLOCATEPUBLICCONTACTPOINTSREQUEST_H_
-#define ALIBABACLOUD_CASSANDRA_MODEL_ALLOCATEPUBLICCONTACTPOINTSREQUEST_H_
+#ifndef ALIBABACLOUD_CASSANDRA_MODEL_MOVERESOURCEGROUPREQUEST_H_
+#define ALIBABACLOUD_CASSANDRA_MODEL_MOVERESOURCEGROUPREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CASSANDRA_EXPORT AllocatePublicContactPointsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CASSANDRA_EXPORT MoveResourceGroupRequest : public RpcServiceRequest
 			{
 
 			public:
-				AllocatePublicContactPointsRequest();
-				~AllocatePublicContactPointsRequest();
+				MoveResourceGroupRequest();
+				~MoveResourceGroupRequest();
 
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getDataCenterId()const;
-				void setDataCenterId(const std::string& dataCenterId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				std::string getNewResourceGroupId()const;
+				void setNewResourceGroupId(const std::string& newResourceGroupId);
 
             private:
-				std::string clientToken_;
-				std::string dataCenterId_;
 				std::string clusterId_;
+				std::string newResourceGroupId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CASSANDRA_MODEL_ALLOCATEPUBLICCONTACTPOINTSREQUEST_H_
+#endif // !ALIBABACLOUD_CASSANDRA_MODEL_MOVERESOURCEGROUPREQUEST_H_

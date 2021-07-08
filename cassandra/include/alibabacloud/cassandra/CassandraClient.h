@@ -110,6 +110,8 @@
 #include "model/ModifyParameterResult.h"
 #include "model/ModifySecurityGroupsRequest.h"
 #include "model/ModifySecurityGroupsResult.h"
+#include "model/MoveResourceGroupRequest.h"
+#include "model/MoveResourceGroupResult.h"
 #include "model/PurgeClusterRequest.h"
 #include "model/PurgeClusterResult.h"
 #include "model/RebootClusterRequest.h"
@@ -267,6 +269,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySecurityGroupsResult> ModifySecurityGroupsOutcome;
 			typedef std::future<ModifySecurityGroupsOutcome> ModifySecurityGroupsOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::ModifySecurityGroupsRequest&, const ModifySecurityGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupsAsyncHandler;
+			typedef Outcome<Error, Model::MoveResourceGroupResult> MoveResourceGroupOutcome;
+			typedef std::future<MoveResourceGroupOutcome> MoveResourceGroupOutcomeCallable;
+			typedef std::function<void(const CassandraClient*, const Model::MoveResourceGroupRequest&, const MoveResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::PurgeClusterResult> PurgeClusterOutcome;
 			typedef std::future<PurgeClusterOutcome> PurgeClusterOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::PurgeClusterRequest&, const PurgeClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PurgeClusterAsyncHandler;
@@ -428,6 +433,9 @@ namespace AlibabaCloud
 			ModifySecurityGroupsOutcome modifySecurityGroups(const Model::ModifySecurityGroupsRequest &request)const;
 			void modifySecurityGroupsAsync(const Model::ModifySecurityGroupsRequest& request, const ModifySecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityGroupsOutcomeCallable modifySecurityGroupsCallable(const Model::ModifySecurityGroupsRequest& request) const;
+			MoveResourceGroupOutcome moveResourceGroup(const Model::MoveResourceGroupRequest &request)const;
+			void moveResourceGroupAsync(const Model::MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MoveResourceGroupOutcomeCallable moveResourceGroupCallable(const Model::MoveResourceGroupRequest& request) const;
 			PurgeClusterOutcome purgeCluster(const Model::PurgeClusterRequest &request)const;
 			void purgeClusterAsync(const Model::PurgeClusterRequest& request, const PurgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PurgeClusterOutcomeCallable purgeClusterCallable(const Model::PurgeClusterRequest& request) const;
