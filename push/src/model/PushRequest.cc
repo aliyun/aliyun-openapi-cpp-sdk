@@ -302,6 +302,17 @@ void PushRequest::setIOSSubtitle(const std::string& iOSSubtitle)
 	setParameter("IOSSubtitle", iOSSubtitle);
 }
 
+std::string PushRequest::getAndroidXiaomiBigPictureUrl()const
+{
+	return androidXiaomiBigPictureUrl_;
+}
+
+void PushRequest::setAndroidXiaomiBigPictureUrl(const std::string& androidXiaomiBigPictureUrl)
+{
+	androidXiaomiBigPictureUrl_ = androidXiaomiBigPictureUrl;
+	setParameter("AndroidXiaomiBigPictureUrl", androidXiaomiBigPictureUrl);
+}
+
 bool PushRequest::getIOSRemind()const
 {
 	return iOSRemind_;
@@ -368,6 +379,17 @@ void PushRequest::setIOSBadge(int iOSBadge)
 	setParameter("IOSBadge", std::to_string(iOSBadge));
 }
 
+std::string PushRequest::getAndroidBigBody()const
+{
+	return androidBigBody_;
+}
+
+void PushRequest::setAndroidBigBody(const std::string& androidBigBody)
+{
+	androidBigBody_ = androidBigBody;
+	setParameter("AndroidBigBody", androidBigBody);
+}
+
 bool PushRequest::getIOSBadgeAutoIncrement()const
 {
 	return iOSBadgeAutoIncrement_;
@@ -423,6 +445,17 @@ void PushRequest::setSmsDelaySecs(int smsDelaySecs)
 	setParameter("SmsDelaySecs", std::to_string(smsDelaySecs));
 }
 
+int PushRequest::getAndroidRenderStyle()const
+{
+	return androidRenderStyle_;
+}
+
+void PushRequest::setAndroidRenderStyle(int androidRenderStyle)
+{
+	androidRenderStyle_ = androidRenderStyle;
+	setParameter("AndroidRenderStyle", std::to_string(androidRenderStyle));
+}
+
 std::string PushRequest::getIOSExtParameters()const
 {
 	return iOSExtParameters_;
@@ -476,6 +509,17 @@ void PushRequest::setTarget(const std::string& target)
 {
 	target_ = target;
 	setParameter("Target", target);
+}
+
+std::string PushRequest::getAndroidBigTitle()const
+{
+	return androidBigTitle_;
+}
+
+void PushRequest::setAndroidBigTitle(const std::string& androidBigTitle)
+{
+	androidBigTitle_ = androidBigTitle;
+	setParameter("AndroidBigTitle", androidBigTitle);
 }
 
 std::string PushRequest::getAndroidNotificationChannel()const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PUSH_MODEL_QUERYPUSHRECORDSRESULT_H_
-#define ALIBABACLOUD_PUSH_MODEL_QUERYPUSHRECORDSRESULT_H_
+#ifndef ALIBABACLOUD_PUSH_MODEL_CHECKCERTIFICATERESULT_H_
+#define ALIBABACLOUD_PUSH_MODEL_CHECKCERTIFICATERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PUSH_EXPORT QueryPushRecordsResult : public ServiceResult
+			class ALIBABACLOUD_PUSH_EXPORT CheckCertificateResult : public ServiceResult
 			{
 			public:
-				struct PushInfo
+				struct ProductionCertInfo
 				{
 					std::string status;
-					std::string pushType;
-					std::string deviceType;
-					std::string target;
-					std::string pushTime;
-					long appKey;
-					std::string title;
-					std::string body;
-					std::string source;
-					std::string messageId;
+					long exipreTime;
+				};
+				struct DevelopmentCertInfo
+				{
+					std::string status;
+					long exipreTime;
 				};
 
 
-				QueryPushRecordsResult();
-				explicit QueryPushRecordsResult(const std::string &payload);
-				~QueryPushRecordsResult();
-				std::vector<PushInfo> getPushInfos()const;
-				std::string getNextToken()const;
-				int getPageSize()const;
-				int getTotal()const;
-				int getPage()const;
+				CheckCertificateResult();
+				explicit CheckCertificateResult(const std::string &payload);
+				~CheckCertificateResult();
+				DevelopmentCertInfo getDevelopmentCertInfo()const;
+				bool getIOS()const;
+				ProductionCertInfo getProductionCertInfo()const;
+				bool getAndroid()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<PushInfo> pushInfos_;
-				std::string nextToken_;
-				int pageSize_;
-				int total_;
-				int page_;
+				DevelopmentCertInfo developmentCertInfo_;
+				bool iOS_;
+				ProductionCertInfo productionCertInfo_;
+				bool android_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PUSH_MODEL_QUERYPUSHRECORDSRESULT_H_
+#endif // !ALIBABACLOUD_PUSH_MODEL_CHECKCERTIFICATERESULT_H_

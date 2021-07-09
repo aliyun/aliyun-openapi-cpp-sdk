@@ -30,6 +30,8 @@
 #include "model/BindTagResult.h"
 #include "model/CancelPushRequest.h"
 #include "model/CancelPushResult.h"
+#include "model/CheckCertificateRequest.h"
+#include "model/CheckCertificateResult.h"
 #include "model/CheckDeviceRequest.h"
 #include "model/CheckDeviceResult.h"
 #include "model/CheckDevicesRequest.h"
@@ -105,6 +107,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelPushResult> CancelPushOutcome;
 			typedef std::future<CancelPushOutcome> CancelPushOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::CancelPushRequest&, const CancelPushOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPushAsyncHandler;
+			typedef Outcome<Error, Model::CheckCertificateResult> CheckCertificateOutcome;
+			typedef std::future<CheckCertificateOutcome> CheckCertificateOutcomeCallable;
+			typedef std::function<void(const PushClient*, const Model::CheckCertificateRequest&, const CheckCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckCertificateAsyncHandler;
 			typedef Outcome<Error, Model::CheckDeviceResult> CheckDeviceOutcome;
 			typedef std::future<CheckDeviceOutcome> CheckDeviceOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::CheckDeviceRequest&, const CheckDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDeviceAsyncHandler;
@@ -203,6 +208,9 @@ namespace AlibabaCloud
 			CancelPushOutcome cancelPush(const Model::CancelPushRequest &request)const;
 			void cancelPushAsync(const Model::CancelPushRequest& request, const CancelPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelPushOutcomeCallable cancelPushCallable(const Model::CancelPushRequest& request) const;
+			CheckCertificateOutcome checkCertificate(const Model::CheckCertificateRequest &request)const;
+			void checkCertificateAsync(const Model::CheckCertificateRequest& request, const CheckCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckCertificateOutcomeCallable checkCertificateCallable(const Model::CheckCertificateRequest& request) const;
 			CheckDeviceOutcome checkDevice(const Model::CheckDeviceRequest &request)const;
 			void checkDeviceAsync(const Model::CheckDeviceRequest& request, const CheckDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDeviceOutcomeCallable checkDeviceCallable(const Model::CheckDeviceRequest& request) const;

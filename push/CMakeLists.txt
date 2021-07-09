@@ -29,6 +29,8 @@ set(push_public_header_model
 	include/alibabacloud/push/model/BindTagResult.h
 	include/alibabacloud/push/model/CancelPushRequest.h
 	include/alibabacloud/push/model/CancelPushResult.h
+	include/alibabacloud/push/model/CheckCertificateRequest.h
+	include/alibabacloud/push/model/CheckCertificateResult.h
 	include/alibabacloud/push/model/CheckDeviceRequest.h
 	include/alibabacloud/push/model/CheckDeviceResult.h
 	include/alibabacloud/push/model/CheckDevicesRequest.h
@@ -94,6 +96,8 @@ set(push_src
 	src/model/BindTagResult.cc
 	src/model/CancelPushRequest.cc
 	src/model/CancelPushResult.cc
+	src/model/CheckCertificateRequest.cc
+	src/model/CheckCertificateResult.cc
 	src/model/CheckDeviceRequest.cc
 	src/model/CheckDeviceResult.cc
 	src/model/CheckDevicesRequest.cc

@@ -69,6 +69,10 @@ void QueryPushRecordsResult::parse(const std::string &payload)
 		nextToken_ = value["NextToken"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Page"].isNull())
+		page_ = std::stoi(value["Page"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 
@@ -85,5 +89,15 @@ std::string QueryPushRecordsResult::getNextToken()const
 int QueryPushRecordsResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+int QueryPushRecordsResult::getTotal()const
+{
+	return total_;
+}
+
+int QueryPushRecordsResult::getPage()const
+{
+	return page_;
 }
 

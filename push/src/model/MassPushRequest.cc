@@ -52,6 +52,7 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".AndroidNotificationBarType", std::to_string(pushTaskObj.androidNotificationBarType));
 		setParameter(pushTaskObjStr + ".AndroidExtParameters", pushTaskObj.androidExtParameters);
 		setParameter(pushTaskObjStr + ".IOSBadge", std::to_string(pushTaskObj.iOSBadge));
+		setParameter(pushTaskObjStr + ".AndroidBigBody", pushTaskObj.androidBigBody);
 		setParameter(pushTaskObjStr + ".IOSBadgeAutoIncrement", pushTaskObj.iOSBadgeAutoIncrement ? "true" : "false");
 		setParameter(pushTaskObjStr + ".AndroidOpenType", pushTaskObj.androidOpenType);
 		setParameter(pushTaskObjStr + ".Title", pushTaskObj.title);
@@ -62,6 +63,7 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".AndroidNotificationHuaweiChannel", pushTaskObj.androidNotificationHuaweiChannel);
 		setParameter(pushTaskObjStr + ".AndroidPopupActivity", pushTaskObj.androidPopupActivity);
 		setParameter(pushTaskObjStr + ".IOSRemindBody", pushTaskObj.iOSRemindBody);
+		setParameter(pushTaskObjStr + ".AndroidRenderStyle", pushTaskObj.androidRenderStyle);
 		setParameter(pushTaskObjStr + ".IOSExtParameters", pushTaskObj.iOSExtParameters);
 		setParameter(pushTaskObjStr + ".AndroidNotifyType", pushTaskObj.androidNotifyType);
 		setParameter(pushTaskObjStr + ".AndroidPopupTitle", pushTaskObj.androidPopupTitle);
@@ -78,12 +80,14 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".IOSSilentNotification", pushTaskObj.iOSSilentNotification ? "true" : "false");
 		setParameter(pushTaskObjStr + ".JobKey", pushTaskObj.jobKey);
 		setParameter(pushTaskObjStr + ".Target", pushTaskObj.target);
+		setParameter(pushTaskObjStr + ".AndroidBigTitle", pushTaskObj.androidBigTitle);
 		setParameter(pushTaskObjStr + ".AndroidOpenUrl", pushTaskObj.androidOpenUrl);
 		setParameter(pushTaskObjStr + ".AndroidNotificationChannel", pushTaskObj.androidNotificationChannel);
 		setParameter(pushTaskObjStr + ".AndroidRemind", pushTaskObj.androidRemind ? "true" : "false");
 		setParameter(pushTaskObjStr + ".AndroidActivity", pushTaskObj.androidActivity);
 		setParameter(pushTaskObjStr + ".AndroidXiaoMiNotifyBody", pushTaskObj.androidXiaoMiNotifyBody);
 		setParameter(pushTaskObjStr + ".IOSSubtitle", pushTaskObj.iOSSubtitle);
+		setParameter(pushTaskObjStr + ".AndroidXiaomiBigPictureUrl", pushTaskObj.androidXiaomiBigPictureUrl);
 		setParameter(pushTaskObjStr + ".IOSRemind", pushTaskObj.iOSRemind ? "true" : "false");
 		setParameter(pushTaskObjStr + ".AndroidNotificationNotifyId", std::to_string(pushTaskObj.androidNotificationNotifyId));
 		setParameter(pushTaskObjStr + ".TargetValue", pushTaskObj.targetValue);

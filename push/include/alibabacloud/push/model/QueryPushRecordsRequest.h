@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setTarget(const std::string& target);
 				long getAppKey()const;
 				void setAppKey(long appKey);
+				int getPage()const;
+				void setPage(int page);
 				std::string getPushType()const;
 				void setPushType(const std::string& pushType);
 
@@ -66,6 +68,7 @@ namespace AlibabaCloud
 				std::string endTime_;
 				std::string target_;
 				long appKey_;
+				int page_;
 				std::string pushType_;
 
 			};

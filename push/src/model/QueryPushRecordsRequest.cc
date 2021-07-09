@@ -126,6 +126,17 @@ void QueryPushRecordsRequest::setAppKey(long appKey)
 	setParameter("AppKey", std::to_string(appKey));
 }
 
+int QueryPushRecordsRequest::getPage()const
+{
+	return page_;
+}
+
+void QueryPushRecordsRequest::setPage(int page)
+{
+	page_ = page;
+	setParameter("Page", std::to_string(page));
+}
+
 std::string QueryPushRecordsRequest::getPushType()const
 {
 	return pushType_;

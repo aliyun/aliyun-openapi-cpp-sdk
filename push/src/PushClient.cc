@@ -195,6 +195,42 @@ PushClient::CancelPushOutcomeCallable PushClient::cancelPushCallable(const Cance
 	return task->get_future();
 }
 
+PushClient::CheckCertificateOutcome PushClient::checkCertificate(const CheckCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckCertificateOutcome(CheckCertificateResult(outcome.result()));
+	else
+		return CheckCertificateOutcome(outcome.error());
+}
+
+void PushClient::checkCertificateAsync(const CheckCertificateRequest& request, const CheckCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PushClient::CheckCertificateOutcomeCallable PushClient::checkCertificateCallable(const CheckCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->checkCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PushClient::CheckDeviceOutcome PushClient::checkDevice(const CheckDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
