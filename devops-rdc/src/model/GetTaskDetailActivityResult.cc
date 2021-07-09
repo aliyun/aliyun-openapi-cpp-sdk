@@ -43,37 +43,37 @@ void GetTaskDetailActivityResult::parse(const std::string &payload)
 	for (auto valueObjectActivity : allObjectNode)
 	{
 		Activity objectObject;
-		if(!valueObjectActivity["Created"].isNull())
-			objectObject.created = valueObjectActivity["Created"].asString();
-		if(!valueObjectActivity["Title"].isNull())
-			objectObject.title = valueObjectActivity["Title"].asString();
-		if(!valueObjectActivity["Action"].isNull())
-			objectObject.action = valueObjectActivity["Action"].asString();
 		if(!valueObjectActivity["Updated"].isNull())
 			objectObject.updated = valueObjectActivity["Updated"].asString();
+		if(!valueObjectActivity["Action"].isNull())
+			objectObject.action = valueObjectActivity["Action"].asString();
+		if(!valueObjectActivity["Title"].isNull())
+			objectObject.title = valueObjectActivity["Title"].asString();
+		if(!valueObjectActivity["Created"].isNull())
+			objectObject.created = valueObjectActivity["Created"].asString();
 		if(!valueObjectActivity["Content"].isNull())
 			objectObject.content = valueObjectActivity["Content"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
-}
-
-std::string GetTaskDetailActivityResult::getErrorMsg()const
-{
-	return errorMsg_;
 }
 
 int GetTaskDetailActivityResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::string GetTaskDetailActivityResult::getErrorMsg()const
+{
+	return errorMsg_;
 }
 
 std::vector<GetTaskDetailActivityResult::Activity> GetTaskDetailActivityResult::getObject()const

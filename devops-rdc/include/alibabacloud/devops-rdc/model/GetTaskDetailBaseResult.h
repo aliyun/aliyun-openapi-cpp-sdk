@@ -146,9 +146,9 @@ namespace AlibabaCloud
 					std::string scenariofieldconfigId;
 					std::string sprint;
 					std::string id;
+					std::string organization;
 					std::string accomplished;
 					std::string taskId;
-					std::string organization;
 					std::string parent;
 					int rating;
 					std::string sourceId;

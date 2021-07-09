@@ -51,6 +51,42 @@ Devops_rdcClient::Devops_rdcClient(const std::string & accessKeyId, const std::s
 Devops_rdcClient::~Devops_rdcClient()
 {}
 
+Devops_rdcClient::AddCodeupSourceToPipelineOutcome Devops_rdcClient::addCodeupSourceToPipeline(const AddCodeupSourceToPipelineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddCodeupSourceToPipelineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddCodeupSourceToPipelineOutcome(AddCodeupSourceToPipelineResult(outcome.result()));
+	else
+		return AddCodeupSourceToPipelineOutcome(outcome.error());
+}
+
+void Devops_rdcClient::addCodeupSourceToPipelineAsync(const AddCodeupSourceToPipelineRequest& request, const AddCodeupSourceToPipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addCodeupSourceToPipeline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::AddCodeupSourceToPipelineOutcomeCallable Devops_rdcClient::addCodeupSourceToPipelineCallable(const AddCodeupSourceToPipelineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddCodeupSourceToPipelineOutcome()>>(
+			[this, request]()
+			{
+			return this->addCodeupSourceToPipeline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::BatchInsertMembersOutcome Devops_rdcClient::batchInsertMembers(const BatchInsertMembersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ Devops_rdcClient::CreatePipelineOutcomeCallable Devops_rdcClient::createPipeline
 			[this, request]()
 			{
 			return this->createPipeline(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::CreatePipelineFromTemplateOutcome Devops_rdcClient::createPipelineFromTemplate(const CreatePipelineFromTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePipelineFromTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePipelineFromTemplateOutcome(CreatePipelineFromTemplateResult(outcome.result()));
+	else
+		return CreatePipelineFromTemplateOutcome(outcome.error());
+}
+
+void Devops_rdcClient::createPipelineFromTemplateAsync(const CreatePipelineFromTemplateRequest& request, const CreatePipelineFromTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPipelineFromTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::CreatePipelineFromTemplateOutcomeCallable Devops_rdcClient::createPipelineFromTemplateCallable(const CreatePipelineFromTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePipelineFromTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createPipelineFromTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1923,6 +1995,42 @@ Devops_rdcClient::ListDevopsScenarioFieldConfigOutcomeCallable Devops_rdcClient:
 	return task->get_future();
 }
 
+Devops_rdcClient::ListPipelineTemplatesOutcome Devops_rdcClient::listPipelineTemplates(const ListPipelineTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPipelineTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPipelineTemplatesOutcome(ListPipelineTemplatesResult(outcome.result()));
+	else
+		return ListPipelineTemplatesOutcome(outcome.error());
+}
+
+void Devops_rdcClient::listPipelineTemplatesAsync(const ListPipelineTemplatesRequest& request, const ListPipelineTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPipelineTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::ListPipelineTemplatesOutcomeCallable Devops_rdcClient::listPipelineTemplatesCallable(const ListPipelineTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPipelineTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listPipelineTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::ListPipelinesOutcome Devops_rdcClient::listPipelines(const ListPipelinesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2385,42 @@ Devops_rdcClient::UpdateDevopsProjectTaskOutcomeCallable Devops_rdcClient::updat
 			[this, request]()
 			{
 			return this->updateDevopsProjectTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Devops_rdcClient::UpdatePipelineEnvVarsOutcome Devops_rdcClient::updatePipelineEnvVars(const UpdatePipelineEnvVarsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePipelineEnvVarsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePipelineEnvVarsOutcome(UpdatePipelineEnvVarsResult(outcome.result()));
+	else
+		return UpdatePipelineEnvVarsOutcome(outcome.error());
+}
+
+void Devops_rdcClient::updatePipelineEnvVarsAsync(const UpdatePipelineEnvVarsRequest& request, const UpdatePipelineEnvVarsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePipelineEnvVars(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::UpdatePipelineEnvVarsOutcomeCallable Devops_rdcClient::updatePipelineEnvVarsCallable(const UpdatePipelineEnvVarsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePipelineEnvVarsOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePipelineEnvVars(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -46,10 +46,10 @@ void GetPipelineInstanceBuildNumberStatusResult::parse(const std::string &payloa
 	for (auto objectNodeGroupsgroup : allGroupsNode)
 	{
 		Object::Group groupObject;
-		if(!objectNodeGroupsgroup["Name"].isNull())
-			groupObject.name = objectNodeGroupsgroup["Name"].asString();
 		if(!objectNodeGroupsgroup["Status"].isNull())
 			groupObject.status = objectNodeGroupsgroup["Status"].asString();
+		if(!objectNodeGroupsgroup["Name"].isNull())
+			groupObject.name = objectNodeGroupsgroup["Name"].asString();
 		auto allStagesNode = objectNodeGroupsgroup["Stages"]["stage"];
 		for (auto objectNodeGroupsgroupStagesstage : allStagesNode)
 		{
@@ -62,10 +62,10 @@ void GetPipelineInstanceBuildNumberStatusResult::parse(const std::string &payloa
 			for (auto objectNodeGroupsgroupStagesstageComponentscomponent : allComponentsNode)
 			{
 				Object::Group::Stage::Component componentsObject;
-				if(!objectNodeGroupsgroupStagesstageComponentscomponent["Name"].isNull())
-					componentsObject.name = objectNodeGroupsgroupStagesstageComponentscomponent["Name"].asString();
 				if(!objectNodeGroupsgroupStagesstageComponentscomponent["Status"].isNull())
 					componentsObject.status = objectNodeGroupsgroupStagesstageComponentscomponent["Status"].asString();
+				if(!objectNodeGroupsgroupStagesstageComponentscomponent["Name"].isNull())
+					componentsObject.name = objectNodeGroupsgroupStagesstageComponentscomponent["Name"].asString();
 				if(!objectNodeGroupsgroupStagesstageComponentscomponent["JobId"].isNull())
 					componentsObject.jobId = std::stol(objectNodeGroupsgroupStagesstageComponentscomponent["JobId"].asString());
 				stagesObject.components.push_back(componentsObject);
@@ -74,12 +74,12 @@ void GetPipelineInstanceBuildNumberStatusResult::parse(const std::string &payloa
 		}
 		object_.groups.push_back(groupObject);
 	}
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 
 }
 

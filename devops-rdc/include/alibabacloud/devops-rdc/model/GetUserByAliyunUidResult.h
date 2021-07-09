@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Object
 				{
-					std::string avatarUrl;
 					std::string email;
+					std::string avatarUrl;
 					std::string aliyunPk;
 					std::string phone;
 					std::string id;

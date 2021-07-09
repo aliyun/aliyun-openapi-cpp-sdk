@@ -35,15 +35,15 @@ namespace AlibabaCloud
 				struct TaskflowStatus
 				{
 					bool isDeleted;
-					std::string rejectStatusIds;
 					std::string taskflowId;
+					std::string rejectStatusIds;
 					std::string updated;
 					int pos;
 					std::string creatorId;
 					std::string kind;
 					std::string id;
-					std::string created;
 					std::string name;
+					std::string created;
 				};
 
 

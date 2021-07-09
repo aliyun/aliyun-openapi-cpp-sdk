@@ -42,12 +42,12 @@ void ListCredentialsResult::parse(const std::string &payload)
 	auto allObject = value["Object"]["Object"];
 	for (const auto &item : allObject)
 		object_.push_back(item.asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

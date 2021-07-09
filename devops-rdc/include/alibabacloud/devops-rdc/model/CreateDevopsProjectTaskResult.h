@@ -48,8 +48,8 @@ namespace AlibabaCloud
 					std::string dueDate;
 					int uniqueId;
 					std::string updated;
-					std::string creatorId;
 					int priority;
+					std::string creatorId;
 					std::string projectId;
 					std::string taskflowstatusId;
 					bool isDone;

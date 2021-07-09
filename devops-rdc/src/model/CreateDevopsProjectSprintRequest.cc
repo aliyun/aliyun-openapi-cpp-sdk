@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Devops_rdc::Model::CreateDevopsProjectSprintRequest;
 
-CreateDevopsProjectSprintRequest::CreateDevopsProjectSprintRequest() :
-	RpcServiceRequest("devops-rdc", "2020-03-03", "CreateDevopsProjectSprint")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateDevopsProjectSprintRequest::CreateDevopsProjectSprintRequest()
+    : RpcServiceRequest("devops-rdc", "2020-03-03", "CreateDevopsProjectSprint") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateDevopsProjectSprintRequest::~CreateDevopsProjectSprintRequest()
-{}
+CreateDevopsProjectSprintRequest::~CreateDevopsProjectSprintRequest() {}
 
-std::string CreateDevopsProjectSprintRequest::getExecutorId()const
-{
-	return executorId_;
+std::string CreateDevopsProjectSprintRequest::getExecutorId() const {
+  return executorId_;
 }
 
-void CreateDevopsProjectSprintRequest::setExecutorId(const std::string& executorId)
-{
-	executorId_ = executorId;
-	setBodyParameter("ExecutorId", executorId);
+void CreateDevopsProjectSprintRequest::setExecutorId(const std::string &executorId) {
+  executorId_ = executorId;
+  setBodyParameter(std::string("ExecutorId"), executorId);
 }
 
-std::string CreateDevopsProjectSprintRequest::getDescription()const
-{
-	return description_;
+std::string CreateDevopsProjectSprintRequest::getDescription() const {
+  return description_;
 }
 
-void CreateDevopsProjectSprintRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setBodyParameter("Description", description);
+void CreateDevopsProjectSprintRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
 }
 
-std::string CreateDevopsProjectSprintRequest::getStartDate()const
-{
-	return startDate_;
+std::string CreateDevopsProjectSprintRequest::getStartDate() const {
+  return startDate_;
 }
 
-void CreateDevopsProjectSprintRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setBodyParameter("StartDate", startDate);
+void CreateDevopsProjectSprintRequest::setStartDate(const std::string &startDate) {
+  startDate_ = startDate;
+  setBodyParameter(std::string("StartDate"), startDate);
 }
 
-std::string CreateDevopsProjectSprintRequest::getOrgId()const
-{
-	return orgId_;
+std::string CreateDevopsProjectSprintRequest::getOrgId() const {
+  return orgId_;
 }
 
-void CreateDevopsProjectSprintRequest::setOrgId(const std::string& orgId)
-{
-	orgId_ = orgId;
-	setBodyParameter("OrgId", orgId);
+void CreateDevopsProjectSprintRequest::setOrgId(const std::string &orgId) {
+  orgId_ = orgId;
+  setBodyParameter(std::string("OrgId"), orgId);
 }
 
-std::string CreateDevopsProjectSprintRequest::getDueDate()const
-{
-	return dueDate_;
+std::string CreateDevopsProjectSprintRequest::getDueDate() const {
+  return dueDate_;
 }
 
-void CreateDevopsProjectSprintRequest::setDueDate(const std::string& dueDate)
-{
-	dueDate_ = dueDate;
-	setBodyParameter("DueDate", dueDate);
+void CreateDevopsProjectSprintRequest::setDueDate(const std::string &dueDate) {
+  dueDate_ = dueDate;
+  setBodyParameter(std::string("DueDate"), dueDate);
 }
 
-std::string CreateDevopsProjectSprintRequest::getName()const
-{
-	return name_;
+std::string CreateDevopsProjectSprintRequest::getName() const {
+  return name_;
 }
 
-void CreateDevopsProjectSprintRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setBodyParameter("Name", name);
+void CreateDevopsProjectSprintRequest::setName(const std::string &name) {
+  name_ = name;
+  setBodyParameter(std::string("Name"), name);
 }
 
-std::string CreateDevopsProjectSprintRequest::getProjectId()const
-{
-	return projectId_;
+std::string CreateDevopsProjectSprintRequest::getProjectId() const {
+  return projectId_;
 }
 
-void CreateDevopsProjectSprintRequest::setProjectId(const std::string& projectId)
-{
-	projectId_ = projectId;
-	setBodyParameter("ProjectId", projectId);
+void CreateDevopsProjectSprintRequest::setProjectId(const std::string &projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), projectId);
 }
 

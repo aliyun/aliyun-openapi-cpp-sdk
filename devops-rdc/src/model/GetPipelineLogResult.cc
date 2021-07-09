@@ -43,32 +43,32 @@ void GetPipelineLogResult::parse(const std::string &payload)
 	for (auto valueObjectjob : allObjectNode)
 	{
 		Job objectObject;
-		if(!valueObjectjob["JobId"].isNull())
-			objectObject.jobId = std::stol(valueObjectjob["JobId"].asString());
 		if(!valueObjectjob["ActionName"].isNull())
 			objectObject.actionName = valueObjectjob["ActionName"].asString();
 		if(!valueObjectjob["StartTime"].isNull())
 			objectObject.startTime = valueObjectjob["StartTime"].asString();
+		if(!valueObjectjob["JobId"].isNull())
+			objectObject.jobId = std::stol(valueObjectjob["JobId"].asString());
 		auto allBuildProcessNodesNode = valueObjectjob["BuildProcessNodes"]["buildProcessNode"];
 		for (auto valueObjectjobBuildProcessNodesbuildProcessNode : allBuildProcessNodesNode)
 		{
 			Job::BuildProcessNode buildProcessNodesObject;
-			if(!valueObjectjobBuildProcessNodesbuildProcessNode["NodeName"].isNull())
-				buildProcessNodesObject.nodeName = valueObjectjobBuildProcessNodesbuildProcessNode["NodeName"].asString();
-			if(!valueObjectjobBuildProcessNodesbuildProcessNode["NodeIndex"].isNull())
-				buildProcessNodesObject.nodeIndex = std::stoi(valueObjectjobBuildProcessNodesbuildProcessNode["NodeIndex"].asString());
 			if(!valueObjectjobBuildProcessNodesbuildProcessNode["Status"].isNull())
 				buildProcessNodesObject.status = valueObjectjobBuildProcessNodesbuildProcessNode["Status"].asString();
+			if(!valueObjectjobBuildProcessNodesbuildProcessNode["NodeIndex"].isNull())
+				buildProcessNodesObject.nodeIndex = std::stoi(valueObjectjobBuildProcessNodesbuildProcessNode["NodeIndex"].asString());
+			if(!valueObjectjobBuildProcessNodesbuildProcessNode["NodeName"].isNull())
+				buildProcessNodesObject.nodeName = valueObjectjobBuildProcessNodesbuildProcessNode["NodeName"].asString();
 			objectObject.buildProcessNodes.push_back(buildProcessNodesObject);
 		}
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 
 }
 

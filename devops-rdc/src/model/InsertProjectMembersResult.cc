@@ -39,14 +39,14 @@ void InsertProjectMembersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Successful"].isNull())
-		successful_ = value["Successful"].asString() == "true";
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMsg"].isNull())
 		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Object"].isNull())
 		object_ = value["Object"].asString() == "true";
+	if(!value["Successful"].isNull())
+		successful_ = value["Successful"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

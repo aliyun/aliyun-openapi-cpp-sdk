@@ -43,32 +43,32 @@ void ListCommonGroupResult::parse(const std::string &payload)
 	for (auto valueObjectCommonGroup : allObjectNode)
 	{
 		CommonGroup objectObject;
-		if(!valueObjectCommonGroup["Pinyin"].isNull())
-			objectObject.pinyin = valueObjectCommonGroup["Pinyin"].asString();
-		if(!valueObjectCommonGroup["IsRoot"].isNull())
-			objectObject.isRoot = valueObjectCommonGroup["IsRoot"].asString() == "true";
-		if(!valueObjectCommonGroup["Pos"].isNull())
-			objectObject.pos = std::stoi(valueObjectCommonGroup["Pos"].asString());
 		if(!valueObjectCommonGroup["ResourceCount"].isNull())
 			objectObject.resourceCount = std::stoi(valueObjectCommonGroup["ResourceCount"].asString());
-		if(!valueObjectCommonGroup["Name"].isNull())
-			objectObject.name = valueObjectCommonGroup["Name"].asString();
-		if(!valueObjectCommonGroup["CreatorId"].isNull())
-			objectObject.creatorId = valueObjectCommonGroup["CreatorId"].asString();
 		if(!valueObjectCommonGroup["SmartGroupId"].isNull())
 			objectObject.smartGroupId = valueObjectCommonGroup["SmartGroupId"].asString();
+		if(!valueObjectCommonGroup["Pos"].isNull())
+			objectObject.pos = std::stoi(valueObjectCommonGroup["Pos"].asString());
 		if(!valueObjectCommonGroup["ProjectId"].isNull())
 			objectObject.projectId = valueObjectCommonGroup["ProjectId"].asString();
+		if(!valueObjectCommonGroup["IsRoot"].isNull())
+			objectObject.isRoot = valueObjectCommonGroup["IsRoot"].asString() == "true";
+		if(!valueObjectCommonGroup["Pinyin"].isNull())
+			objectObject.pinyin = valueObjectCommonGroup["Pinyin"].asString();
+		if(!valueObjectCommonGroup["CreatorId"].isNull())
+			objectObject.creatorId = valueObjectCommonGroup["CreatorId"].asString();
+		if(!valueObjectCommonGroup["Name"].isNull())
+			objectObject.name = valueObjectCommonGroup["Name"].asString();
 		if(!valueObjectCommonGroup["id"].isNull())
 			objectObject.id = valueObjectCommonGroup["id"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

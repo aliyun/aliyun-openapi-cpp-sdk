@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					bool isDeleted;
 					std::string updated;
-					std::string creatorId;
 					std::string priority;
+					std::string creatorId;
 					std::vector<std::string> involveMembers;
 					std::string projectId;
 					std::string taskflowstatusId;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,50 +17,44 @@
 #ifndef ALIBABACLOUD_DEVOPS_RDC_MODEL_GETPIPELINEINSTHISTORYREQUEST_H_
 #define ALIBABACLOUD_DEVOPS_RDC_MODEL_GETPIPELINEINSTHISTORYREQUEST_H_
 
+#include <alibabacloud/devops-rdc/Devops_rdcExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/devops-rdc/Devops_rdcExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Devops_rdc
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_DEVOPS_RDC_EXPORT GetPipelineInstHistoryRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Devops_rdc {
+namespace Model {
+class ALIBABACLOUD_DEVOPS_RDC_EXPORT GetPipelineInstHistoryRequest : public RpcServiceRequest {
+public:
+	GetPipelineInstHistoryRequest();
+	~GetPipelineInstHistoryRequest();
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getUserPk() const;
+	void setUserPk(const std::string &userPk);
+	std::string getOrgId() const;
+	void setOrgId(const std::string &orgId);
+	long getPipelineId() const;
+	void setPipelineId(long pipelineId);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
+	long getPageStart() const;
+	void setPageStart(long pageStart);
 
-			public:
-				GetPipelineInstHistoryRequest();
-				~GetPipelineInstHistoryRequest();
-
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				std::string getUserPk()const;
-				void setUserPk(const std::string& userPk);
-				std::string getOrgId()const;
-				void setOrgId(const std::string& orgId);
-				long getPipelineId()const;
-				void setPipelineId(long pipelineId);
-				long getPageSize()const;
-				void setPageSize(long pageSize);
-				long getPageStart()const;
-				void setPageStart(long pageStart);
-
-            private:
-				std::string endTime_;
-				std::string startTime_;
-				std::string userPk_;
-				std::string orgId_;
-				long pipelineId_;
-				long pageSize_;
-				long pageStart_;
-
-			};
-		}
-	}
-}
+private:
+	std::string endTime_;
+	std::string startTime_;
+	std::string userPk_;
+	std::string orgId_;
+	long pipelineId_;
+	long pageSize_;
+	long pageStart_;
+};
+} // namespace Model
+} // namespace Devops_rdc
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_DEVOPS_RDC_MODEL_GETPIPELINEINSTHISTORYREQUEST_H_

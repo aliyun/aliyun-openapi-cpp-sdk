@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "Devops_rdcExport.h"
+#include "model/AddCodeupSourceToPipelineRequest.h"
+#include "model/AddCodeupSourceToPipelineResult.h"
 #include "model/BatchInsertMembersRequest.h"
 #include "model/BatchInsertMembersResult.h"
 #include "model/CancelPipelineRequest.h"
@@ -42,6 +44,8 @@
 #include "model/CreateDevopsProjectTaskResult.h"
 #include "model/CreatePipelineRequest.h"
 #include "model/CreatePipelineResult.h"
+#include "model/CreatePipelineFromTemplateRequest.h"
+#include "model/CreatePipelineFromTemplateResult.h"
 #include "model/CreateServiceConnectionRequest.h"
 #include "model/CreateServiceConnectionResult.h"
 #include "model/DeleteCommonGroupRequest.h"
@@ -126,6 +130,8 @@
 #include "model/ListDevopsProjectsResult.h"
 #include "model/ListDevopsScenarioFieldConfigRequest.h"
 #include "model/ListDevopsScenarioFieldConfigResult.h"
+#include "model/ListPipelineTemplatesRequest.h"
+#include "model/ListPipelineTemplatesResult.h"
 #include "model/ListPipelinesRequest.h"
 #include "model/ListPipelinesResult.h"
 #include "model/ListProjectCustomFieldsRequest.h"
@@ -146,6 +152,8 @@
 #include "model/UpdateDevopsProjectSprintResult.h"
 #include "model/UpdateDevopsProjectTaskRequest.h"
 #include "model/UpdateDevopsProjectTaskResult.h"
+#include "model/UpdatePipelineEnvVarsRequest.h"
+#include "model/UpdatePipelineEnvVarsResult.h"
 #include "model/UpdatePipelineMemberRequest.h"
 #include "model/UpdatePipelineMemberResult.h"
 #include "model/UpdateTaskDetailRequest.h"
@@ -159,6 +167,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_DEVOPS_RDC_EXPORT Devops_rdcClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddCodeupSourceToPipelineResult> AddCodeupSourceToPipelineOutcome;
+			typedef std::future<AddCodeupSourceToPipelineOutcome> AddCodeupSourceToPipelineOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::AddCodeupSourceToPipelineRequest&, const AddCodeupSourceToPipelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddCodeupSourceToPipelineAsyncHandler;
 			typedef Outcome<Error, Model::BatchInsertMembersResult> BatchInsertMembersOutcome;
 			typedef std::future<BatchInsertMembersOutcome> BatchInsertMembersOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::BatchInsertMembersRequest&, const BatchInsertMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchInsertMembersAsyncHandler;
@@ -189,6 +200,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePipelineResult> CreatePipelineOutcome;
 			typedef std::future<CreatePipelineOutcome> CreatePipelineOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::CreatePipelineRequest&, const CreatePipelineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePipelineAsyncHandler;
+			typedef Outcome<Error, Model::CreatePipelineFromTemplateResult> CreatePipelineFromTemplateOutcome;
+			typedef std::future<CreatePipelineFromTemplateOutcome> CreatePipelineFromTemplateOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::CreatePipelineFromTemplateRequest&, const CreatePipelineFromTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePipelineFromTemplateAsyncHandler;
 			typedef Outcome<Error, Model::CreateServiceConnectionResult> CreateServiceConnectionOutcome;
 			typedef std::future<CreateServiceConnectionOutcome> CreateServiceConnectionOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::CreateServiceConnectionRequest&, const CreateServiceConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceConnectionAsyncHandler;
@@ -315,6 +329,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDevopsScenarioFieldConfigResult> ListDevopsScenarioFieldConfigOutcome;
 			typedef std::future<ListDevopsScenarioFieldConfigOutcome> ListDevopsScenarioFieldConfigOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListDevopsScenarioFieldConfigRequest&, const ListDevopsScenarioFieldConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevopsScenarioFieldConfigAsyncHandler;
+			typedef Outcome<Error, Model::ListPipelineTemplatesResult> ListPipelineTemplatesOutcome;
+			typedef std::future<ListPipelineTemplatesOutcome> ListPipelineTemplatesOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::ListPipelineTemplatesRequest&, const ListPipelineTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPipelineTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::ListPipelinesResult> ListPipelinesOutcome;
 			typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListPipelinesRequest&, const ListPipelinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPipelinesAsyncHandler;
@@ -345,6 +362,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDevopsProjectTaskResult> UpdateDevopsProjectTaskOutcome;
 			typedef std::future<UpdateDevopsProjectTaskOutcome> UpdateDevopsProjectTaskOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::UpdateDevopsProjectTaskRequest&, const UpdateDevopsProjectTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevopsProjectTaskAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePipelineEnvVarsResult> UpdatePipelineEnvVarsOutcome;
+			typedef std::future<UpdatePipelineEnvVarsOutcome> UpdatePipelineEnvVarsOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::UpdatePipelineEnvVarsRequest&, const UpdatePipelineEnvVarsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePipelineEnvVarsAsyncHandler;
 			typedef Outcome<Error, Model::UpdatePipelineMemberResult> UpdatePipelineMemberOutcome;
 			typedef std::future<UpdatePipelineMemberOutcome> UpdatePipelineMemberOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::UpdatePipelineMemberRequest&, const UpdatePipelineMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePipelineMemberAsyncHandler;
@@ -356,6 +376,9 @@ namespace AlibabaCloud
 			Devops_rdcClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			Devops_rdcClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~Devops_rdcClient();
+			AddCodeupSourceToPipelineOutcome addCodeupSourceToPipeline(const Model::AddCodeupSourceToPipelineRequest &request)const;
+			void addCodeupSourceToPipelineAsync(const Model::AddCodeupSourceToPipelineRequest& request, const AddCodeupSourceToPipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddCodeupSourceToPipelineOutcomeCallable addCodeupSourceToPipelineCallable(const Model::AddCodeupSourceToPipelineRequest& request) const;
 			BatchInsertMembersOutcome batchInsertMembers(const Model::BatchInsertMembersRequest &request)const;
 			void batchInsertMembersAsync(const Model::BatchInsertMembersRequest& request, const BatchInsertMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchInsertMembersOutcomeCallable batchInsertMembersCallable(const Model::BatchInsertMembersRequest& request) const;
@@ -386,6 +409,9 @@ namespace AlibabaCloud
 			CreatePipelineOutcome createPipeline(const Model::CreatePipelineRequest &request)const;
 			void createPipelineAsync(const Model::CreatePipelineRequest& request, const CreatePipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePipelineOutcomeCallable createPipelineCallable(const Model::CreatePipelineRequest& request) const;
+			CreatePipelineFromTemplateOutcome createPipelineFromTemplate(const Model::CreatePipelineFromTemplateRequest &request)const;
+			void createPipelineFromTemplateAsync(const Model::CreatePipelineFromTemplateRequest& request, const CreatePipelineFromTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePipelineFromTemplateOutcomeCallable createPipelineFromTemplateCallable(const Model::CreatePipelineFromTemplateRequest& request) const;
 			CreateServiceConnectionOutcome createServiceConnection(const Model::CreateServiceConnectionRequest &request)const;
 			void createServiceConnectionAsync(const Model::CreateServiceConnectionRequest& request, const CreateServiceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateServiceConnectionOutcomeCallable createServiceConnectionCallable(const Model::CreateServiceConnectionRequest& request) const;
@@ -512,6 +538,9 @@ namespace AlibabaCloud
 			ListDevopsScenarioFieldConfigOutcome listDevopsScenarioFieldConfig(const Model::ListDevopsScenarioFieldConfigRequest &request)const;
 			void listDevopsScenarioFieldConfigAsync(const Model::ListDevopsScenarioFieldConfigRequest& request, const ListDevopsScenarioFieldConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevopsScenarioFieldConfigOutcomeCallable listDevopsScenarioFieldConfigCallable(const Model::ListDevopsScenarioFieldConfigRequest& request) const;
+			ListPipelineTemplatesOutcome listPipelineTemplates(const Model::ListPipelineTemplatesRequest &request)const;
+			void listPipelineTemplatesAsync(const Model::ListPipelineTemplatesRequest& request, const ListPipelineTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPipelineTemplatesOutcomeCallable listPipelineTemplatesCallable(const Model::ListPipelineTemplatesRequest& request) const;
 			ListPipelinesOutcome listPipelines(const Model::ListPipelinesRequest &request)const;
 			void listPipelinesAsync(const Model::ListPipelinesRequest& request, const ListPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPipelinesOutcomeCallable listPipelinesCallable(const Model::ListPipelinesRequest& request) const;
@@ -542,6 +571,9 @@ namespace AlibabaCloud
 			UpdateDevopsProjectTaskOutcome updateDevopsProjectTask(const Model::UpdateDevopsProjectTaskRequest &request)const;
 			void updateDevopsProjectTaskAsync(const Model::UpdateDevopsProjectTaskRequest& request, const UpdateDevopsProjectTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDevopsProjectTaskOutcomeCallable updateDevopsProjectTaskCallable(const Model::UpdateDevopsProjectTaskRequest& request) const;
+			UpdatePipelineEnvVarsOutcome updatePipelineEnvVars(const Model::UpdatePipelineEnvVarsRequest &request)const;
+			void updatePipelineEnvVarsAsync(const Model::UpdatePipelineEnvVarsRequest& request, const UpdatePipelineEnvVarsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePipelineEnvVarsOutcomeCallable updatePipelineEnvVarsCallable(const Model::UpdatePipelineEnvVarsRequest& request) const;
 			UpdatePipelineMemberOutcome updatePipelineMember(const Model::UpdatePipelineMemberRequest &request)const;
 			void updatePipelineMemberAsync(const Model::UpdatePipelineMemberRequest& request, const UpdatePipelineMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePipelineMemberOutcomeCallable updatePipelineMemberCallable(const Model::UpdatePipelineMemberRequest& request) const;

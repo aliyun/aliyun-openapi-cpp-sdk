@@ -46,46 +46,46 @@ void ListDevopsProjectsResult::parse(const std::string &payload)
 	for (auto objectNodeResultProject : allResultNode)
 	{
 		Object::Project projectObject;
-		if(!objectNodeResultProject["RoleId"].isNull())
-			projectObject.roleId = std::stoi(objectNodeResultProject["RoleId"].asString());
-		if(!objectNodeResultProject["OrganizationId"].isNull())
-			projectObject.organizationId = objectNodeResultProject["OrganizationId"].asString();
-		if(!objectNodeResultProject["Id"].isNull())
-			projectObject.id = objectNodeResultProject["Id"].asString();
-		if(!objectNodeResultProject["CreatorId"].isNull())
-			projectObject.creatorId = objectNodeResultProject["CreatorId"].asString();
-		if(!objectNodeResultProject["Visibility"].isNull())
-			projectObject.visibility = objectNodeResultProject["Visibility"].asString();
-		if(!objectNodeResultProject["Updated"].isNull())
-			projectObject.updated = objectNodeResultProject["Updated"].asString();
-		if(!objectNodeResultProject["TasksCount"].isNull())
-			projectObject.tasksCount = std::stoi(objectNodeResultProject["TasksCount"].asString());
-		if(!objectNodeResultProject["Name"].isNull())
-			projectObject.name = objectNodeResultProject["Name"].asString();
-		if(!objectNodeResultProject["MembersCount"].isNull())
-			projectObject.membersCount = std::stoi(objectNodeResultProject["MembersCount"].asString());
 		if(!objectNodeResultProject["Logo"].isNull())
 			projectObject.logo = objectNodeResultProject["Logo"].asString();
-		if(!objectNodeResultProject["IsTemplate"].isNull())
-			projectObject.isTemplate = objectNodeResultProject["IsTemplate"].asString() == "true";
 		if(!objectNodeResultProject["IsStar"].isNull())
 			projectObject.isStar = objectNodeResultProject["IsStar"].asString() == "true";
-		if(!objectNodeResultProject["IsPublic"].isNull())
-			projectObject.isPublic = objectNodeResultProject["IsPublic"].asString() == "true";
-		if(!objectNodeResultProject["IsArchived"].isNull())
-			projectObject.isArchived = objectNodeResultProject["IsArchived"].asString() == "true";
+		if(!objectNodeResultProject["CreatorId"].isNull())
+			projectObject.creatorId = objectNodeResultProject["CreatorId"].asString();
+		if(!objectNodeResultProject["MembersCount"].isNull())
+			projectObject.membersCount = std::stoi(objectNodeResultProject["MembersCount"].asString());
+		if(!objectNodeResultProject["OrganizationId"].isNull())
+			projectObject.organizationId = objectNodeResultProject["OrganizationId"].asString();
+		if(!objectNodeResultProject["Visibility"].isNull())
+			projectObject.visibility = objectNodeResultProject["Visibility"].asString();
+		if(!objectNodeResultProject["IsTemplate"].isNull())
+			projectObject.isTemplate = objectNodeResultProject["IsTemplate"].asString() == "true";
 		if(!objectNodeResultProject["Description"].isNull())
 			projectObject.description = objectNodeResultProject["Description"].asString();
+		if(!objectNodeResultProject["Updated"].isNull())
+			projectObject.updated = objectNodeResultProject["Updated"].asString();
 		if(!objectNodeResultProject["Created"].isNull())
 			projectObject.created = objectNodeResultProject["Created"].asString();
+		if(!objectNodeResultProject["IsArchived"].isNull())
+			projectObject.isArchived = objectNodeResultProject["IsArchived"].asString() == "true";
+		if(!objectNodeResultProject["Name"].isNull())
+			projectObject.name = objectNodeResultProject["Name"].asString();
+		if(!objectNodeResultProject["IsPublic"].isNull())
+			projectObject.isPublic = objectNodeResultProject["IsPublic"].asString() == "true";
+		if(!objectNodeResultProject["TasksCount"].isNull())
+			projectObject.tasksCount = std::stoi(objectNodeResultProject["TasksCount"].asString());
+		if(!objectNodeResultProject["RoleId"].isNull())
+			projectObject.roleId = objectNodeResultProject["RoleId"].asString();
+		if(!objectNodeResultProject["Id"].isNull())
+			projectObject.id = objectNodeResultProject["Id"].asString();
 		object_.result.push_back(projectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

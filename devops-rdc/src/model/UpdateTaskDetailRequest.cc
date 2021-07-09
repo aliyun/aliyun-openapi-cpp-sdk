@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,210 +18,172 @@
 
 using AlibabaCloud::Devops_rdc::Model::UpdateTaskDetailRequest;
 
-UpdateTaskDetailRequest::UpdateTaskDetailRequest() :
-	RpcServiceRequest("devops-rdc", "2020-03-03", "UpdateTaskDetail")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateTaskDetailRequest::UpdateTaskDetailRequest()
+    : RpcServiceRequest("devops-rdc", "2020-03-03", "UpdateTaskDetail") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateTaskDetailRequest::~UpdateTaskDetailRequest()
-{}
+UpdateTaskDetailRequest::~UpdateTaskDetailRequest() {}
 
-std::string UpdateTaskDetailRequest::getNote()const
-{
-	return note_;
+std::string UpdateTaskDetailRequest::getNote() const {
+  return note_;
 }
 
-void UpdateTaskDetailRequest::setNote(const std::string& note)
-{
-	note_ = note;
-	setBodyParameter("Note", note);
+void UpdateTaskDetailRequest::setNote(const std::string &note) {
+  note_ = note;
+  setBodyParameter(std::string("Note"), note);
 }
 
-std::string UpdateTaskDetailRequest::getExecutorId()const
-{
-	return executorId_;
+std::string UpdateTaskDetailRequest::getExecutorId() const {
+  return executorId_;
 }
 
-void UpdateTaskDetailRequest::setExecutorId(const std::string& executorId)
-{
-	executorId_ = executorId;
-	setBodyParameter("ExecutorId", executorId);
+void UpdateTaskDetailRequest::setExecutorId(const std::string &executorId) {
+  executorId_ = executorId;
+  setBodyParameter(std::string("ExecutorId"), executorId);
 }
 
-std::string UpdateTaskDetailRequest::getStartDate()const
-{
-	return startDate_;
+std::string UpdateTaskDetailRequest::getStartDate() const {
+  return startDate_;
 }
 
-void UpdateTaskDetailRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setBodyParameter("StartDate", startDate);
+void UpdateTaskDetailRequest::setStartDate(const std::string &startDate) {
+  startDate_ = startDate;
+  setBodyParameter(std::string("StartDate"), startDate);
 }
 
-std::string UpdateTaskDetailRequest::getDelInvolvers()const
-{
-	return delInvolvers_;
+std::string UpdateTaskDetailRequest::getDelInvolvers() const {
+  return delInvolvers_;
 }
 
-void UpdateTaskDetailRequest::setDelInvolvers(const std::string& delInvolvers)
-{
-	delInvolvers_ = delInvolvers;
-	setBodyParameter("DelInvolvers", delInvolvers);
+void UpdateTaskDetailRequest::setDelInvolvers(const std::string &delInvolvers) {
+  delInvolvers_ = delInvolvers;
+  setBodyParameter(std::string("DelInvolvers"), delInvolvers);
 }
 
-std::string UpdateTaskDetailRequest::getContent()const
-{
-	return content_;
+std::string UpdateTaskDetailRequest::getContent() const {
+  return content_;
 }
 
-void UpdateTaskDetailRequest::setContent(const std::string& content)
-{
-	content_ = content;
-	setBodyParameter("Content", content);
+void UpdateTaskDetailRequest::setContent(const std::string &content) {
+  content_ = content;
+  setBodyParameter(std::string("Content"), content);
 }
 
-std::string UpdateTaskDetailRequest::getSprintId()const
-{
-	return sprintId_;
+std::string UpdateTaskDetailRequest::getSprintId() const {
+  return sprintId_;
 }
 
-void UpdateTaskDetailRequest::setSprintId(const std::string& sprintId)
-{
-	sprintId_ = sprintId;
-	setBodyParameter("SprintId", sprintId);
+void UpdateTaskDetailRequest::setSprintId(const std::string &sprintId) {
+  sprintId_ = sprintId;
+  setBodyParameter(std::string("SprintId"), sprintId);
 }
 
-std::string UpdateTaskDetailRequest::getCustomFieldId()const
-{
-	return customFieldId_;
+std::string UpdateTaskDetailRequest::getCustomFieldId() const {
+  return customFieldId_;
 }
 
-void UpdateTaskDetailRequest::setCustomFieldId(const std::string& customFieldId)
-{
-	customFieldId_ = customFieldId;
-	setBodyParameter("CustomFieldId", customFieldId);
+void UpdateTaskDetailRequest::setCustomFieldId(const std::string &customFieldId) {
+  customFieldId_ = customFieldId;
+  setBodyParameter(std::string("CustomFieldId"), customFieldId);
 }
 
-std::string UpdateTaskDetailRequest::getProjectId()const
-{
-	return projectId_;
+std::string UpdateTaskDetailRequest::getProjectId() const {
+  return projectId_;
 }
 
-void UpdateTaskDetailRequest::setProjectId(const std::string& projectId)
-{
-	projectId_ = projectId;
-	setBodyParameter("ProjectId", projectId);
+void UpdateTaskDetailRequest::setProjectId(const std::string &projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), projectId);
 }
 
-std::string UpdateTaskDetailRequest::getTaskId()const
-{
-	return taskId_;
+std::string UpdateTaskDetailRequest::getTaskId() const {
+  return taskId_;
 }
 
-void UpdateTaskDetailRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setBodyParameter("TaskId", taskId);
+void UpdateTaskDetailRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setBodyParameter(std::string("TaskId"), taskId);
 }
 
-std::string UpdateTaskDetailRequest::getTaskFlowStatusId()const
-{
-	return taskFlowStatusId_;
+std::string UpdateTaskDetailRequest::getTaskFlowStatusId() const {
+  return taskFlowStatusId_;
 }
 
-void UpdateTaskDetailRequest::setTaskFlowStatusId(const std::string& taskFlowStatusId)
-{
-	taskFlowStatusId_ = taskFlowStatusId;
-	setBodyParameter("TaskFlowStatusId", taskFlowStatusId);
+void UpdateTaskDetailRequest::setTaskFlowStatusId(const std::string &taskFlowStatusId) {
+  taskFlowStatusId_ = taskFlowStatusId;
+  setBodyParameter(std::string("TaskFlowStatusId"), taskFlowStatusId);
 }
 
-std::string UpdateTaskDetailRequest::getTagIds()const
-{
-	return tagIds_;
+std::string UpdateTaskDetailRequest::getTagIds() const {
+  return tagIds_;
 }
 
-void UpdateTaskDetailRequest::setTagIds(const std::string& tagIds)
-{
-	tagIds_ = tagIds;
-	setBodyParameter("TagIds", tagIds);
+void UpdateTaskDetailRequest::setTagIds(const std::string &tagIds) {
+  tagIds_ = tagIds;
+  setBodyParameter(std::string("TagIds"), tagIds);
 }
 
-std::string UpdateTaskDetailRequest::getAddInvolvers()const
-{
-	return addInvolvers_;
+std::string UpdateTaskDetailRequest::getAddInvolvers() const {
+  return addInvolvers_;
 }
 
-void UpdateTaskDetailRequest::setAddInvolvers(const std::string& addInvolvers)
-{
-	addInvolvers_ = addInvolvers;
-	setBodyParameter("AddInvolvers", addInvolvers);
+void UpdateTaskDetailRequest::setAddInvolvers(const std::string &addInvolvers) {
+  addInvolvers_ = addInvolvers;
+  setBodyParameter(std::string("AddInvolvers"), addInvolvers);
 }
 
-long UpdateTaskDetailRequest::getPriority()const
-{
-	return priority_;
+long UpdateTaskDetailRequest::getPriority() const {
+  return priority_;
 }
 
-void UpdateTaskDetailRequest::setPriority(long priority)
-{
-	priority_ = priority;
-	setBodyParameter("Priority", std::to_string(priority));
+void UpdateTaskDetailRequest::setPriority(long priority) {
+  priority_ = priority;
+  setBodyParameter(std::string("Priority"), std::to_string(priority));
 }
 
-std::string UpdateTaskDetailRequest::getOrgId()const
-{
-	return orgId_;
+std::string UpdateTaskDetailRequest::getOrgId() const {
+  return orgId_;
 }
 
-void UpdateTaskDetailRequest::setOrgId(const std::string& orgId)
-{
-	orgId_ = orgId;
-	setBodyParameter("OrgId", orgId);
+void UpdateTaskDetailRequest::setOrgId(const std::string &orgId) {
+  orgId_ = orgId;
+  setBodyParameter(std::string("OrgId"), orgId);
 }
 
-std::string UpdateTaskDetailRequest::getDueDate()const
-{
-	return dueDate_;
+std::string UpdateTaskDetailRequest::getDueDate() const {
+  return dueDate_;
 }
 
-void UpdateTaskDetailRequest::setDueDate(const std::string& dueDate)
-{
-	dueDate_ = dueDate;
-	setBodyParameter("DueDate", dueDate);
+void UpdateTaskDetailRequest::setDueDate(const std::string &dueDate) {
+  dueDate_ = dueDate;
+  setBodyParameter(std::string("DueDate"), dueDate);
 }
 
-long UpdateTaskDetailRequest::getWorkTimes()const
-{
-	return workTimes_;
+long UpdateTaskDetailRequest::getWorkTimes() const {
+  return workTimes_;
 }
 
-void UpdateTaskDetailRequest::setWorkTimes(long workTimes)
-{
-	workTimes_ = workTimes;
-	setBodyParameter("WorkTimes", std::to_string(workTimes));
+void UpdateTaskDetailRequest::setWorkTimes(long workTimes) {
+  workTimes_ = workTimes;
+  setBodyParameter(std::string("WorkTimes"), std::to_string(workTimes));
 }
 
-std::string UpdateTaskDetailRequest::getStoryPoint()const
-{
-	return storyPoint_;
+std::string UpdateTaskDetailRequest::getStoryPoint() const {
+  return storyPoint_;
 }
 
-void UpdateTaskDetailRequest::setStoryPoint(const std::string& storyPoint)
-{
-	storyPoint_ = storyPoint;
-	setBodyParameter("StoryPoint", storyPoint);
+void UpdateTaskDetailRequest::setStoryPoint(const std::string &storyPoint) {
+  storyPoint_ = storyPoint;
+  setBodyParameter(std::string("StoryPoint"), storyPoint);
 }
 
-std::string UpdateTaskDetailRequest::getCustomFieldValues()const
-{
-	return customFieldValues_;
+std::string UpdateTaskDetailRequest::getCustomFieldValues() const {
+  return customFieldValues_;
 }
 
-void UpdateTaskDetailRequest::setCustomFieldValues(const std::string& customFieldValues)
-{
-	customFieldValues_ = customFieldValues;
-	setBodyParameter("CustomFieldValues", customFieldValues);
+void UpdateTaskDetailRequest::setCustomFieldValues(const std::string &customFieldValues) {
+  customFieldValues_ = customFieldValues;
+  setBodyParameter(std::string("CustomFieldValues"), customFieldValues);
 }
 

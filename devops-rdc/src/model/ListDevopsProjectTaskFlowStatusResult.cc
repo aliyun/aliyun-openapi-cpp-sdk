@@ -43,34 +43,34 @@ void ListDevopsProjectTaskFlowStatusResult::parse(const std::string &payload)
 	for (auto valueObjecttaskflowStatus : allObjectNode)
 	{
 		TaskflowStatus objectObject;
-		if(!valueObjecttaskflowStatus["IsDeleted"].isNull())
-			objectObject.isDeleted = valueObjecttaskflowStatus["IsDeleted"].asString() == "true";
-		if(!valueObjecttaskflowStatus["RejectStatusIds"].isNull())
-			objectObject.rejectStatusIds = valueObjecttaskflowStatus["RejectStatusIds"].asString();
-		if(!valueObjecttaskflowStatus["Pos"].isNull())
-			objectObject.pos = std::stoi(valueObjecttaskflowStatus["Pos"].asString());
-		if(!valueObjecttaskflowStatus["Kind"].isNull())
-			objectObject.kind = valueObjecttaskflowStatus["Kind"].asString();
-		if(!valueObjecttaskflowStatus["Created"].isNull())
-			objectObject.created = valueObjecttaskflowStatus["Created"].asString();
 		if(!valueObjecttaskflowStatus["TaskflowId"].isNull())
 			objectObject.taskflowId = valueObjecttaskflowStatus["TaskflowId"].asString();
-		if(!valueObjecttaskflowStatus["Name"].isNull())
-			objectObject.name = valueObjecttaskflowStatus["Name"].asString();
-		if(!valueObjecttaskflowStatus["CreatorId"].isNull())
-			objectObject.creatorId = valueObjecttaskflowStatus["CreatorId"].asString();
-		if(!valueObjecttaskflowStatus["Id"].isNull())
-			objectObject.id = valueObjecttaskflowStatus["Id"].asString();
+		if(!valueObjecttaskflowStatus["Kind"].isNull())
+			objectObject.kind = valueObjecttaskflowStatus["Kind"].asString();
+		if(!valueObjecttaskflowStatus["Pos"].isNull())
+			objectObject.pos = std::stoi(valueObjecttaskflowStatus["Pos"].asString());
+		if(!valueObjecttaskflowStatus["IsDeleted"].isNull())
+			objectObject.isDeleted = valueObjecttaskflowStatus["IsDeleted"].asString() == "true";
 		if(!valueObjecttaskflowStatus["Updated"].isNull())
 			objectObject.updated = valueObjecttaskflowStatus["Updated"].asString();
+		if(!valueObjecttaskflowStatus["CreatorId"].isNull())
+			objectObject.creatorId = valueObjecttaskflowStatus["CreatorId"].asString();
+		if(!valueObjecttaskflowStatus["Name"].isNull())
+			objectObject.name = valueObjecttaskflowStatus["Name"].asString();
+		if(!valueObjecttaskflowStatus["Created"].isNull())
+			objectObject.created = valueObjecttaskflowStatus["Created"].asString();
+		if(!valueObjecttaskflowStatus["RejectStatusIds"].isNull())
+			objectObject.rejectStatusIds = valueObjecttaskflowStatus["RejectStatusIds"].asString();
+		if(!valueObjecttaskflowStatus["Id"].isNull())
+			objectObject.id = valueObjecttaskflowStatus["Id"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

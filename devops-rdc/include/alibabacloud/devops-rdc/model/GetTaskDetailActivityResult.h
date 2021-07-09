@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				GetTaskDetailActivityResult();
 				explicit GetTaskDetailActivityResult(const std::string &payload);
 				~GetTaskDetailActivityResult();
-				std::string getErrorMsg()const;
 				int getHttpStatusCode()const;
+				std::string getErrorMsg()const;
 				std::vector<Activity> getObject()const;
 				std::string getErrorCode()const;
 				bool getSuccessful()const;
@@ -54,8 +54,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string errorMsg_;
 				int httpStatusCode_;
+				std::string errorMsg_;
 				std::vector<Activity> object_;
 				std::string errorCode_;
 				bool successful_;

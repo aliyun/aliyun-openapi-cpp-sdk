@@ -43,22 +43,22 @@ void GetProjectOptionResult::parse(const std::string &payload)
 	for (auto valueObjectOption : allObjectNode)
 	{
 		Option objectObject;
-		if(!valueObjectOption["Name"].isNull())
-			objectObject.name = valueObjectOption["Name"].asString();
 		if(!valueObjectOption["Value"].isNull())
 			objectObject.value = valueObjectOption["Value"].asString();
-		if(!valueObjectOption["Kind"].isNull())
-			objectObject.kind = valueObjectOption["Kind"].asString();
+		if(!valueObjectOption["Name"].isNull())
+			objectObject.name = valueObjectOption["Name"].asString();
 		if(!valueObjectOption["ScopeName"].isNull())
 			objectObject.scopeName = valueObjectOption["ScopeName"].asString();
+		if(!valueObjectOption["Kind"].isNull())
+			objectObject.kind = valueObjectOption["Kind"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

@@ -40,28 +40,28 @@ void GetPipelineInstanceInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto objectNode = value["Object"];
+	if(!objectNode["EmployeeId"].isNull())
+		object_.employeeId = objectNode["EmployeeId"].asString();
+	if(!objectNode["EndTime"].isNull())
+		object_.endTime = std::stol(objectNode["EndTime"].asString());
 	if(!objectNode["Status"].isNull())
 		object_.status = objectNode["Status"].asString();
 	if(!objectNode["StartTime"].isNull())
 		object_.startTime = std::stol(objectNode["StartTime"].asString());
-	if(!objectNode["EndTime"].isNull())
-		object_.endTime = std::stol(objectNode["EndTime"].asString());
 	if(!objectNode["Sources"].isNull())
 		object_.sources = objectNode["Sources"].asString();
-	if(!objectNode["EmployeeId"].isNull())
-		object_.employeeId = objectNode["EmployeeId"].asString();
-		auto allPackageDownloadUrls = objectNode["PackageDownloadUrls"]["PackageDownloadUrls"];
-		for (auto value : allPackageDownloadUrls)
-			object_.packageDownloadUrls.push_back(value.asString());
 		auto allDockerImages = objectNode["DockerImages"]["DockerImages"];
 		for (auto value : allDockerImages)
 			object_.dockerImages.push_back(value.asString());
-	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString();
+		auto allPackageDownloadUrls = objectNode["PackageDownloadUrls"]["PackageDownloadUrls"];
+		for (auto value : allPackageDownloadUrls)
+			object_.packageDownloadUrls.push_back(value.asString());
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrorCode"].isNull())
+		errorCode_ = value["ErrorCode"].asString();
 
 }
 

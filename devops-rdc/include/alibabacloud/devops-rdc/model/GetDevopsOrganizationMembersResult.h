@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					int role;
 					std::string memberId;
-					std::string avatarUrl;
 					std::string email;
+					std::string avatarUrl;
 					std::string userId;
 					std::string phone;
 					std::string name;

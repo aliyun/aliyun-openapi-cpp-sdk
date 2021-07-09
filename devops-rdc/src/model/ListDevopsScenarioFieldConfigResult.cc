@@ -43,20 +43,20 @@ void ListDevopsScenarioFieldConfigResult::parse(const std::string &payload)
 	for (auto valueObjectScenarioFieldConfig : allObjectNode)
 	{
 		ScenarioFieldConfig objectObject;
-		if(!valueObjectScenarioFieldConfig["Id"].isNull())
-			objectObject.id = valueObjectScenarioFieldConfig["Id"].asString();
 		if(!valueObjectScenarioFieldConfig["Type"].isNull())
 			objectObject.type = valueObjectScenarioFieldConfig["Type"].asString();
 		if(!valueObjectScenarioFieldConfig["Name"].isNull())
 			objectObject.name = valueObjectScenarioFieldConfig["Name"].asString();
+		if(!valueObjectScenarioFieldConfig["Id"].isNull())
+			objectObject.id = valueObjectScenarioFieldConfig["Id"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

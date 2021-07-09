@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						int workTimes;
 						int storyPoints;
 					};
-					std::string startDate;
 					std::string status;
+					std::string startDate;
 					bool isDeleted;
 					std::string accomplished;
 					PlanToDo planToDo;
@@ -50,14 +50,15 @@ namespace AlibabaCloud
 					std::string projectId;
 					std::string id;
 					std::string dueDate;
-					std::string created;
 					std::string name;
+					std::string created;
 				};
 
 
 				ListDevopsProjectSprintsResult();
 				explicit ListDevopsProjectSprintsResult(const std::string &payload);
 				~ListDevopsProjectSprintsResult();
+				std::string getNextPageToken()const;
 				std::string getErrorMsg()const;
 				std::vector<Sprint> getObject()const;
 				std::string getErrorCode()const;
@@ -66,6 +67,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string nextPageToken_;
 				std::string errorMsg_;
 				std::vector<Sprint> object_;
 				std::string errorCode_;

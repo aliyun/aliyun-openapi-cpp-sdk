@@ -43,10 +43,10 @@ void ListProjectCustomFieldsResult::parse(const std::string &payload)
 	for (auto valueObjectCustomField : allObjectNode)
 	{
 		CustomField objectObject;
-		if(!valueObjectCustomField["CustomFieldId"].isNull())
-			objectObject.customFieldId = valueObjectCustomField["CustomFieldId"].asString();
 		if(!valueObjectCustomField["Type"].isNull())
 			objectObject.type = valueObjectCustomField["Type"].asString();
+		if(!valueObjectCustomField["CustomFieldId"].isNull())
+			objectObject.customFieldId = valueObjectCustomField["CustomFieldId"].asString();
 		if(!valueObjectCustomField["Subtype"].isNull())
 			objectObject.subtype = valueObjectCustomField["Subtype"].asString();
 		if(!valueObjectCustomField["Name"].isNull())
@@ -55,20 +55,20 @@ void ListProjectCustomFieldsResult::parse(const std::string &payload)
 		for (auto valueObjectCustomFieldValuesValue : allValuesNode)
 		{
 			CustomField::Value valuesObject;
-			if(!valueObjectCustomFieldValuesValue["Id"].isNull())
-				valuesObject.id = valueObjectCustomFieldValuesValue["Id"].asString();
 			if(!valueObjectCustomFieldValuesValue["Value"].isNull())
 				valuesObject.value = valueObjectCustomFieldValuesValue["Value"].asString();
+			if(!valueObjectCustomFieldValuesValue["Id"].isNull())
+				valuesObject.id = valueObjectCustomFieldValuesValue["Id"].asString();
 			objectObject.values.push_back(valuesObject);
 		}
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

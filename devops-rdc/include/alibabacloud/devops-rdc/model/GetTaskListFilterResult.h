@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					{
 						struct WorkTime
 						{
-							int totalTime;
 							int usedTime;
+							int totalTime;
 							std::string unit;
 						};
 						struct Badges
@@ -119,24 +119,23 @@ namespace AlibabaCloud
 						std::vector<std::string> labels;
 						std::string storyPoint;
 						bool isFavorite;
-						int pos;
 						std::string content;
 						std::string note;
 						std::vector<Task::Customfield> customfields;
-						std::string id;
 						std::string sprint;
+						std::string id;
 						std::string accomplished;
 						std::string taskId;
 						std::string parent;
 						std::string taskUniqueId;
-						std::string sourceId;
 						int rating;
+						std::string sourceId;
 						std::string taskListId;
 						std::string sprintId;
 						std::string organizationId;
 						std::string source;
-						std::string created;
 						std::string taskFlowStatusId;
+						std::string created;
 						std::string objectType;
 						Executor executor;
 						std::string visible;

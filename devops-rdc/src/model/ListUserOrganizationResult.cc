@@ -49,12 +49,12 @@ void ListUserOrganizationResult::parse(const std::string &payload)
 			objectObject.id = valueObjectOrganization["Id"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 
 }
 

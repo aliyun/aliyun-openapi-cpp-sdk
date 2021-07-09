@@ -48,12 +48,12 @@ void ListDevopsProjectTaskListResult::parse(const std::string &payload)
 			resultItemObject.id = objectNodeResultResultItem["Id"].asString();
 		object_.result.push_back(resultItemObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

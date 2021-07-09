@@ -43,32 +43,32 @@ void ListDevopsProjectTasksResult::parse(const std::string &payload)
 	for (auto valueObjectTask : allObjectNode)
 	{
 		Task objectObject;
+		if(!valueObjectTask["TaskgroupId"].isNull())
+			objectObject.taskgroupId = valueObjectTask["TaskgroupId"].asString();
 		if(!valueObjectTask["TasklistId"].isNull())
 			objectObject.tasklistId = valueObjectTask["TasklistId"].asString();
 		if(!valueObjectTask["ProjectId"].isNull())
 			objectObject.projectId = valueObjectTask["ProjectId"].asString();
-		if(!valueObjectTask["TaskgroupId"].isNull())
-			objectObject.taskgroupId = valueObjectTask["TaskgroupId"].asString();
-		if(!valueObjectTask["Name"].isNull())
-			objectObject.name = valueObjectTask["Name"].asString();
-		if(!valueObjectTask["CreatorId"].isNull())
-			objectObject.creatorId = valueObjectTask["CreatorId"].asString();
-		if(!valueObjectTask["Created"].isNull())
-			objectObject.created = valueObjectTask["Created"].asString();
 		if(!valueObjectTask["ModifierId"].isNull())
 			objectObject.modifierId = valueObjectTask["ModifierId"].asString();
 		if(!valueObjectTask["Updated"].isNull())
 			objectObject.updated = valueObjectTask["Updated"].asString();
+		if(!valueObjectTask["CreatorId"].isNull())
+			objectObject.creatorId = valueObjectTask["CreatorId"].asString();
+		if(!valueObjectTask["Created"].isNull())
+			objectObject.created = valueObjectTask["Created"].asString();
+		if(!valueObjectTask["Name"].isNull())
+			objectObject.name = valueObjectTask["Name"].asString();
 		if(!valueObjectTask["Id"].isNull())
 			objectObject.id = valueObjectTask["Id"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

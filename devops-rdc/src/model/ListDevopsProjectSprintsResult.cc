@@ -43,44 +43,51 @@ void ListDevopsProjectSprintsResult::parse(const std::string &payload)
 	for (auto valueObjectSprint : allObjectNode)
 	{
 		Sprint objectObject;
+		if(!valueObjectSprint["Status"].isNull())
+			objectObject.status = valueObjectSprint["Status"].asString();
 		if(!valueObjectSprint["Accomplished"].isNull())
 			objectObject.accomplished = valueObjectSprint["Accomplished"].asString();
+		if(!valueObjectSprint["ProjectId"].isNull())
+			objectObject.projectId = valueObjectSprint["ProjectId"].asString();
 		if(!valueObjectSprint["IsDeleted"].isNull())
 			objectObject.isDeleted = valueObjectSprint["IsDeleted"].asString() == "true";
-		if(!valueObjectSprint["Created"].isNull())
-			objectObject.created = valueObjectSprint["Created"].asString();
+		if(!valueObjectSprint["StartDate"].isNull())
+			objectObject.startDate = valueObjectSprint["StartDate"].asString();
+		if(!valueObjectSprint["Updated"].isNull())
+			objectObject.updated = valueObjectSprint["Updated"].asString();
+		if(!valueObjectSprint["CreatorId"].isNull())
+			objectObject.creatorId = valueObjectSprint["CreatorId"].asString();
 		if(!valueObjectSprint["DueDate"].isNull())
 			objectObject.dueDate = valueObjectSprint["DueDate"].asString();
 		if(!valueObjectSprint["Name"].isNull())
 			objectObject.name = valueObjectSprint["Name"].asString();
-		if(!valueObjectSprint["CreatorId"].isNull())
-			objectObject.creatorId = valueObjectSprint["CreatorId"].asString();
+		if(!valueObjectSprint["Created"].isNull())
+			objectObject.created = valueObjectSprint["Created"].asString();
 		if(!valueObjectSprint["Id"].isNull())
 			objectObject.id = valueObjectSprint["Id"].asString();
-		if(!valueObjectSprint["Updated"].isNull())
-			objectObject.updated = valueObjectSprint["Updated"].asString();
-		if(!valueObjectSprint["StartDate"].isNull())
-			objectObject.startDate = valueObjectSprint["StartDate"].asString();
-		if(!valueObjectSprint["Status"].isNull())
-			objectObject.status = valueObjectSprint["Status"].asString();
-		if(!valueObjectSprint["ProjectId"].isNull())
-			objectObject.projectId = valueObjectSprint["ProjectId"].asString();
 		auto planToDoNode = value["PlanToDo"];
-		if(!planToDoNode["StoryPoints"].isNull())
-			objectObject.planToDo.storyPoints = std::stoi(planToDoNode["StoryPoints"].asString());
-		if(!planToDoNode["WorkTimes"].isNull())
-			objectObject.planToDo.workTimes = std::stoi(planToDoNode["WorkTimes"].asString());
 		if(!planToDoNode["Tasks"].isNull())
 			objectObject.planToDo.tasks = std::stoi(planToDoNode["Tasks"].asString());
+		if(!planToDoNode["WorkTimes"].isNull())
+			objectObject.planToDo.workTimes = std::stoi(planToDoNode["WorkTimes"].asString());
+		if(!planToDoNode["StoryPoints"].isNull())
+			objectObject.planToDo.storyPoints = std::stoi(planToDoNode["StoryPoints"].asString());
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
+	if(!value["NextPageToken"].isNull())
+		nextPageToken_ = value["NextPageToken"].asString();
 
+}
+
+std::string ListDevopsProjectSprintsResult::getNextPageToken()const
+{
+	return nextPageToken_;
 }
 
 std::string ListDevopsProjectSprintsResult::getErrorMsg()const

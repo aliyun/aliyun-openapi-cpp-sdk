@@ -43,28 +43,28 @@ void GetDevopsOrganizationMembersResult::parse(const std::string &payload)
 	for (auto valueObjectmember : allObjectNode)
 	{
 		Member objectObject;
-		if(!valueObjectmember["MemberId"].isNull())
-			objectObject.memberId = valueObjectmember["MemberId"].asString();
+		if(!valueObjectmember["Email"].isNull())
+			objectObject.email = valueObjectmember["Email"].asString();
+		if(!valueObjectmember["AvatarUrl"].isNull())
+			objectObject.avatarUrl = valueObjectmember["AvatarUrl"].asString();
 		if(!valueObjectmember["UserId"].isNull())
 			objectObject.userId = valueObjectmember["UserId"].asString();
+		if(!valueObjectmember["MemberId"].isNull())
+			objectObject.memberId = valueObjectmember["MemberId"].asString();
 		if(!valueObjectmember["Role"].isNull())
 			objectObject.role = std::stoi(valueObjectmember["Role"].asString());
 		if(!valueObjectmember["Name"].isNull())
 			objectObject.name = valueObjectmember["Name"].asString();
-		if(!valueObjectmember["AvatarUrl"].isNull())
-			objectObject.avatarUrl = valueObjectmember["AvatarUrl"].asString();
-		if(!valueObjectmember["Email"].isNull())
-			objectObject.email = valueObjectmember["Email"].asString();
 		if(!valueObjectmember["Phone"].isNull())
 			objectObject.phone = valueObjectmember["Phone"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

@@ -43,18 +43,18 @@ void ListSmartGroupResult::parse(const std::string &payload)
 	for (auto valueObjectSmartGroup : allObjectNode)
 	{
 		SmartGroup objectObject;
-		if(!valueObjectSmartGroup["Id"].isNull())
-			objectObject.id = valueObjectSmartGroup["Id"].asString();
 		if(!valueObjectSmartGroup["Type"].isNull())
 			objectObject.type = valueObjectSmartGroup["Type"].asString();
+		if(!valueObjectSmartGroup["Id"].isNull())
+			objectObject.id = valueObjectSmartGroup["Id"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

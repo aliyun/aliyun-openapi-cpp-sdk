@@ -21,6 +21,8 @@ set(devops-rdc_public_header
 	include/alibabacloud/devops-rdc/Devops_rdcExport.h )
 
 set(devops-rdc_public_header_model 
+	include/alibabacloud/devops-rdc/model/AddCodeupSourceToPipelineRequest.h
+	include/alibabacloud/devops-rdc/model/AddCodeupSourceToPipelineResult.h
 	include/alibabacloud/devops-rdc/model/BatchInsertMembersRequest.h
 	include/alibabacloud/devops-rdc/model/BatchInsertMembersResult.h
 	include/alibabacloud/devops-rdc/model/CancelPipelineRequest.h
@@ -41,6 +43,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/CreateDevopsProjectTaskResult.h
 	include/alibabacloud/devops-rdc/model/CreatePipelineRequest.h
 	include/alibabacloud/devops-rdc/model/CreatePipelineResult.h
+	include/alibabacloud/devops-rdc/model/CreatePipelineFromTemplateRequest.h
+	include/alibabacloud/devops-rdc/model/CreatePipelineFromTemplateResult.h
 	include/alibabacloud/devops-rdc/model/CreateServiceConnectionRequest.h
 	include/alibabacloud/devops-rdc/model/CreateServiceConnectionResult.h
 	include/alibabacloud/devops-rdc/model/DeleteCommonGroupRequest.h
@@ -125,6 +129,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/ListDevopsProjectsResult.h
 	include/alibabacloud/devops-rdc/model/ListDevopsScenarioFieldConfigRequest.h
 	include/alibabacloud/devops-rdc/model/ListDevopsScenarioFieldConfigResult.h
+	include/alibabacloud/devops-rdc/model/ListPipelineTemplatesRequest.h
+	include/alibabacloud/devops-rdc/model/ListPipelineTemplatesResult.h
 	include/alibabacloud/devops-rdc/model/ListPipelinesRequest.h
 	include/alibabacloud/devops-rdc/model/ListPipelinesResult.h
 	include/alibabacloud/devops-rdc/model/ListProjectCustomFieldsRequest.h
@@ -145,6 +151,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectSprintResult.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskRequest.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskResult.h
+	include/alibabacloud/devops-rdc/model/UpdatePipelineEnvVarsRequest.h
+	include/alibabacloud/devops-rdc/model/UpdatePipelineEnvVarsResult.h
 	include/alibabacloud/devops-rdc/model/UpdatePipelineMemberRequest.h
 	include/alibabacloud/devops-rdc/model/UpdatePipelineMemberResult.h
 	include/alibabacloud/devops-rdc/model/UpdateTaskDetailRequest.h
@@ -152,6 +160,8 @@ set(devops-rdc_public_header_model
 
 set(devops-rdc_src 
 	src/Devops-rdcClient.cc
+	src/model/AddCodeupSourceToPipelineRequest.cc
+	src/model/AddCodeupSourceToPipelineResult.cc
 	src/model/BatchInsertMembersRequest.cc
 	src/model/BatchInsertMembersResult.cc
 	src/model/CancelPipelineRequest.cc
@@ -172,6 +182,8 @@ set(devops-rdc_src
 	src/model/CreateDevopsProjectTaskResult.cc
 	src/model/CreatePipelineRequest.cc
 	src/model/CreatePipelineResult.cc
+	src/model/CreatePipelineFromTemplateRequest.cc
+	src/model/CreatePipelineFromTemplateResult.cc
 	src/model/CreateServiceConnectionRequest.cc
 	src/model/CreateServiceConnectionResult.cc
 	src/model/DeleteCommonGroupRequest.cc
@@ -256,6 +268,8 @@ set(devops-rdc_src
 	src/model/ListDevopsProjectsResult.cc
 	src/model/ListDevopsScenarioFieldConfigRequest.cc
 	src/model/ListDevopsScenarioFieldConfigResult.cc
+	src/model/ListPipelineTemplatesRequest.cc
+	src/model/ListPipelineTemplatesResult.cc
 	src/model/ListPipelinesRequest.cc
 	src/model/ListPipelinesResult.cc
 	src/model/ListProjectCustomFieldsRequest.cc
@@ -276,6 +290,8 @@ set(devops-rdc_src
 	src/model/UpdateDevopsProjectSprintResult.cc
 	src/model/UpdateDevopsProjectTaskRequest.cc
 	src/model/UpdateDevopsProjectTaskResult.cc
+	src/model/UpdatePipelineEnvVarsRequest.cc
+	src/model/UpdatePipelineEnvVarsResult.cc
 	src/model/UpdatePipelineMemberRequest.cc
 	src/model/UpdatePipelineMemberResult.cc
 	src/model/UpdateTaskDetailRequest.cc

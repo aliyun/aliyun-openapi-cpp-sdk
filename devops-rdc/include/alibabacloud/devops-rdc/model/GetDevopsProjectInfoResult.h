@@ -37,13 +37,13 @@ namespace AlibabaCloud
 					std::string sortMethod;
 					std::string description;
 					std::string category;
-					std::string sourceId;
 					std::string sourceType;
-					int nextTaskUniqueId;
+					std::string sourceId;
 					std::string organizationId;
+					int nextTaskUniqueId;
 					std::string rootCollectionId;
-					std::string created;
 					std::string name;
+					std::string created;
 					std::string startDate;
 					std::string defaultCollectionId;
 					std::string normalType;

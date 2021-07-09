@@ -43,10 +43,10 @@ namespace AlibabaCloud
 						int membersCount;
 						std::string organizationId;
 						int tasksCount;
-						int roleId;
-						std::string name;
+						std::string roleId;
 						std::string logo;
 						std::string created;
+						std::string name;
 						bool isArchived;
 						bool isStar;
 						bool isPublic;

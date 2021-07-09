@@ -43,20 +43,20 @@ void ListDevopsProjectTaskFlowResult::parse(const std::string &payload)
 	for (auto valueObjectTaskflow : allObjectNode)
 	{
 		Taskflow objectObject;
-		if(!valueObjectTaskflow["Id"].isNull())
-			objectObject.id = valueObjectTaskflow["Id"].asString();
 		if(!valueObjectTaskflow["Type"].isNull())
 			objectObject.type = valueObjectTaskflow["Type"].asString();
 		if(!valueObjectTaskflow["Name"].isNull())
 			objectObject.name = valueObjectTaskflow["Name"].asString();
+		if(!valueObjectTaskflow["Id"].isNull())
+			objectObject.id = valueObjectTaskflow["Id"].asString();
 		object_.push_back(objectObject);
 	}
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

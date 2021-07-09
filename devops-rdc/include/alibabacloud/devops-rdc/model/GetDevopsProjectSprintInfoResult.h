@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						int workTimes;
 						int storyPoints;
 					};
-					std::string startDate;
 					std::string status;
+					std::string startDate;
 					bool isDeleted;
 					std::string accomplished;
 					PlanToDo planToDo;
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 					std::string projectId;
 					std::string id;
 					std::string dueDate;
-					std::string created;
 					std::string name;
+					std::string created;
 				};
 
 

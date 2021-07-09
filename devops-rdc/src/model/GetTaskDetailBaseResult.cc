@@ -40,96 +40,96 @@ void GetTaskDetailBaseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto objectNode = value["Object"];
-	if(!objectNode["Parent"].isNull())
-		object_.parent = objectNode["Parent"].asString();
-	if(!objectNode["DueDate"].isNull())
-		object_.dueDate = objectNode["DueDate"].asString();
-	if(!objectNode["Sprint"].isNull())
-		object_.sprint = objectNode["Sprint"].asString();
-	if(!objectNode["Rating"].isNull())
-		object_.rating = std::stoi(objectNode["Rating"].asString());
-	if(!objectNode["SourceId"].isNull())
-		object_.sourceId = objectNode["SourceId"].asString();
-	if(!objectNode["Source"].isNull())
-		object_.source = objectNode["Source"].asString();
-	if(!objectNode["StageId"].isNull())
-		object_.stageId = objectNode["StageId"].asString();
-	if(!objectNode["ObjectType"].isNull())
-		object_.objectType = objectNode["ObjectType"].asString();
-	if(!objectNode["TaskflowstatusId"].isNull())
-		object_.taskflowstatusId = objectNode["TaskflowstatusId"].asString();
-	if(!objectNode["LikesCount"].isNull())
-		object_.likesCount = std::stoi(objectNode["LikesCount"].asString());
-	if(!objectNode["Accomplished"].isNull())
-		object_.accomplished = objectNode["Accomplished"].asString();
-	if(!objectNode["ObjectlinksCount"].isNull())
-		object_.objectlinksCount = std::stoi(objectNode["ObjectlinksCount"].asString());
-	if(!objectNode["CreatorId"].isNull())
-		object_.creatorId = objectNode["CreatorId"].asString();
-	if(!objectNode["Visible"].isNull())
-		object_.visible = objectNode["Visible"].asString();
-	if(!objectNode["StoryPoint"].isNull())
-		object_.storyPoint = objectNode["StoryPoint"].asString();
-	if(!objectNode["Created"].isNull())
-		object_.created = objectNode["Created"].asString();
-	if(!objectNode["Priority"].isNull())
-		object_.priority = std::stoi(objectNode["Priority"].asString());
-	if(!objectNode["Recurrence"].isNull())
-		object_.recurrence = objectNode["Recurrence"].asString();
-	if(!objectNode["UntilDate"].isNull())
-		object_.untilDate = objectNode["UntilDate"].asString();
-	if(!objectNode["Id"].isNull())
-		object_.id = objectNode["Id"].asString();
-	if(!objectNode["Updated"].isNull())
-		object_.updated = objectNode["Updated"].asString();
-	if(!objectNode["StartDate"].isNull())
-		object_.startDate = objectNode["StartDate"].asString();
-	if(!objectNode["UniqueId"].isNull())
-		object_.uniqueId = std::stoi(objectNode["UniqueId"].asString());
 	if(!objectNode["IsFavorite"].isNull())
 		object_.isFavorite = objectNode["IsFavorite"].asString() == "true";
+	if(!objectNode["Organization"].isNull())
+		object_.organization = objectNode["Organization"].asString();
+	if(!objectNode["ExecutorId"].isNull())
+		object_.executorId = objectNode["ExecutorId"].asString();
+	if(!objectNode["ScenariofieldconfigId"].isNull())
+		object_.scenariofieldconfigId = objectNode["ScenariofieldconfigId"].asString();
+	if(!objectNode["ProjectId"].isNull())
+		object_.projectId = objectNode["ProjectId"].asString();
+	if(!objectNode["IsTopInProject"].isNull())
+		object_.isTopInProject = objectNode["IsTopInProject"].asString() == "true";
+	if(!objectNode["Priority"].isNull())
+		object_.priority = std::stoi(objectNode["Priority"].asString());
+	if(!objectNode["ShareStatus"].isNull())
+		object_.shareStatus = std::stoi(objectNode["ShareStatus"].asString());
+	if(!objectNode["Accomplished"].isNull())
+		object_.accomplished = objectNode["Accomplished"].asString();
+	if(!objectNode["TaskflowstatusId"].isNull())
+		object_.taskflowstatusId = objectNode["TaskflowstatusId"].asString();
 	if(!objectNode["Note"].isNull())
 		object_.note = objectNode["Note"].asString();
+	if(!objectNode["Updated"].isNull())
+		object_.updated = objectNode["Updated"].asString();
+	if(!objectNode["UniqueId"].isNull())
+		object_.uniqueId = std::stoi(objectNode["UniqueId"].asString());
 	if(!objectNode["IsArchived"].isNull())
 		object_.isArchived = objectNode["IsArchived"].asString() == "true";
 	if(!objectNode["Content"].isNull())
 		object_.content = objectNode["Content"].asString();
-	if(!objectNode["SourceDate"].isNull())
-		object_.sourceDate = objectNode["SourceDate"].asString();
-	if(!objectNode["AttachmentsCount"].isNull())
-		object_.attachmentsCount = std::stoi(objectNode["AttachmentsCount"].asString());
-	if(!objectNode["ScenariofieldconfigId"].isNull())
-		object_.scenariofieldconfigId = objectNode["ScenariofieldconfigId"].asString();
-	if(!objectNode["IsTopInProject"].isNull())
-		object_.isTopInProject = objectNode["IsTopInProject"].asString() == "true";
-	if(!objectNode["ExecutorId"].isNull())
-		object_.executorId = objectNode["ExecutorId"].asString();
-	if(!objectNode["OrganizationId"].isNull())
-		object_.organizationId = objectNode["OrganizationId"].asString();
-	if(!objectNode["IsDone"].isNull())
-		object_.isDone = objectNode["IsDone"].asString() == "true";
-	if(!objectNode["TaskId"].isNull())
-		object_.taskId = objectNode["TaskId"].asString();
 	if(!objectNode["CommentsCount"].isNull())
 		object_.commentsCount = std::stoi(objectNode["CommentsCount"].asString());
-	if(!objectNode["Organization"].isNull())
-		object_.organization = objectNode["Organization"].asString();
+	if(!objectNode["Rating"].isNull())
+		object_.rating = std::stoi(objectNode["Rating"].asString());
+	if(!objectNode["Recurrence"].isNull())
+		object_.recurrence = objectNode["Recurrence"].asString();
+	if(!objectNode["ObjectType"].isNull())
+		object_.objectType = objectNode["ObjectType"].asString();
 	if(!objectNode["Progress"].isNull())
 		object_.progress = std::stoi(objectNode["Progress"].asString());
+	if(!objectNode["UntilDate"].isNull())
+		object_.untilDate = objectNode["UntilDate"].asString();
+	if(!objectNode["StartDate"].isNull())
+		object_.startDate = objectNode["StartDate"].asString();
+	if(!objectNode["StoryPoint"].isNull())
+		object_.storyPoint = objectNode["StoryPoint"].asString();
+	if(!objectNode["ObjectlinksCount"].isNull())
+		object_.objectlinksCount = std::stoi(objectNode["ObjectlinksCount"].asString());
+	if(!objectNode["Sprint"].isNull())
+		object_.sprint = objectNode["Sprint"].asString();
+	if(!objectNode["CreatorId"].isNull())
+		object_.creatorId = objectNode["CreatorId"].asString();
+	if(!objectNode["Source"].isNull())
+		object_.source = objectNode["Source"].asString();
+	if(!objectNode["SourceId"].isNull())
+		object_.sourceId = objectNode["SourceId"].asString();
+	if(!objectNode["OrganizationId"].isNull())
+		object_.organizationId = objectNode["OrganizationId"].asString();
+	if(!objectNode["SourceDate"].isNull())
+		object_.sourceDate = objectNode["SourceDate"].asString();
+	if(!objectNode["LikesCount"].isNull())
+		object_.likesCount = std::stoi(objectNode["LikesCount"].asString());
+	if(!objectNode["StageId"].isNull())
+		object_.stageId = objectNode["StageId"].asString();
+	if(!objectNode["Visible"].isNull())
+		object_.visible = objectNode["Visible"].asString();
+	if(!objectNode["IsDone"].isNull())
+		object_.isDone = objectNode["IsDone"].asString() == "true";
+	if(!objectNode["Parent"].isNull())
+		object_.parent = objectNode["Parent"].asString();
 	if(!objectNode["SprintId"].isNull())
 		object_.sprintId = objectNode["SprintId"].asString();
-	if(!objectNode["ProjectId"].isNull())
-		object_.projectId = objectNode["ProjectId"].asString();
-	if(!objectNode["ShareStatus"].isNull())
-		object_.shareStatus = std::stoi(objectNode["ShareStatus"].asString());
+	if(!objectNode["AttachmentsCount"].isNull())
+		object_.attachmentsCount = std::stoi(objectNode["AttachmentsCount"].asString());
+	if(!objectNode["DueDate"].isNull())
+		object_.dueDate = objectNode["DueDate"].asString();
+	if(!objectNode["Created"].isNull())
+		object_.created = objectNode["Created"].asString();
+	if(!objectNode["TaskId"].isNull())
+		object_.taskId = objectNode["TaskId"].asString();
+	if(!objectNode["Id"].isNull())
+		object_.id = objectNode["Id"].asString();
 	auto allCustomfieldsNode = objectNode["Customfields"]["Customfield"];
 	for (auto objectNodeCustomfieldsCustomfield : allCustomfieldsNode)
 	{
 		Object::Customfield customfieldObject;
-		if(!objectNodeCustomfieldsCustomfield["CustomfieldId"].isNull())
-			customfieldObject.customfieldId = objectNodeCustomfieldsCustomfield["CustomfieldId"].asString();
 		if(!objectNodeCustomfieldsCustomfield["Type"].isNull())
 			customfieldObject.type = objectNodeCustomfieldsCustomfield["Type"].asString();
+		if(!objectNodeCustomfieldsCustomfield["CustomfieldId"].isNull())
+			customfieldObject.customfieldId = objectNodeCustomfieldsCustomfield["CustomfieldId"].asString();
 		auto allValueNode = objectNodeCustomfieldsCustomfield["Value"]["ValueInfo"];
 		for (auto objectNodeCustomfieldsCustomfieldValueValueInfo : allValueNode)
 		{
@@ -149,10 +149,10 @@ void GetTaskDetailBaseResult::parse(const std::string &payload)
 	for (auto objectNodeSubtasksSubtask : allSubtasksNode)
 	{
 		Object::Subtask subtaskObject;
-		if(!objectNodeSubtasksSubtask["Id"].isNull())
-			subtaskObject.id = objectNodeSubtasksSubtask["Id"].asString();
 		if(!objectNodeSubtasksSubtask["Content"].isNull())
 			subtaskObject.content = objectNodeSubtasksSubtask["Content"].asString();
+		if(!objectNodeSubtasksSubtask["Id"].isNull())
+			subtaskObject.id = objectNodeSubtasksSubtask["Id"].asString();
 		object_.subtasks.push_back(subtaskObject);
 	}
 	auto allInvolversNode = objectNode["Involvers"]["Involver"];
@@ -166,12 +166,12 @@ void GetTaskDetailBaseResult::parse(const std::string &payload)
 		object_.involvers.push_back(involverObject);
 	}
 	auto scenariofieldconfigNode = objectNode["Scenariofieldconfig"];
-	if(!scenariofieldconfigNode["Name"].isNull())
-		object_.scenariofieldconfig.name = scenariofieldconfigNode["Name"].asString();
 	if(!scenariofieldconfigNode["Icon"].isNull())
 		object_.scenariofieldconfig.icon = scenariofieldconfigNode["Icon"].asString();
 	if(!scenariofieldconfigNode["ProTemplateConfigType"].isNull())
 		object_.scenariofieldconfig.proTemplateConfigType = scenariofieldconfigNode["ProTemplateConfigType"].asString();
+	if(!scenariofieldconfigNode["Name"].isNull())
+		object_.scenariofieldconfig.name = scenariofieldconfigNode["Name"].asString();
 	if(!scenariofieldconfigNode["Id"].isNull())
 		object_.scenariofieldconfig.id = scenariofieldconfigNode["Id"].asString();
 	auto executorNode = objectNode["Executor"];
@@ -187,28 +187,28 @@ void GetTaskDetailBaseResult::parse(const std::string &payload)
 	if(!tasklistNode["Title"].isNull())
 		object_.tasklist.title = tasklistNode["Title"].asString();
 	auto taskflowstatusNode = objectNode["Taskflowstatus"];
-	if(!taskflowstatusNode["Kind"].isNull())
-		object_.taskflowstatus.kind = taskflowstatusNode["Kind"].asString();
 	if(!taskflowstatusNode["TaskflowId"].isNull())
 		object_.taskflowstatus.taskflowId = taskflowstatusNode["TaskflowId"].asString();
 	if(!taskflowstatusNode["Name"].isNull())
 		object_.taskflowstatus.name = taskflowstatusNode["Name"].asString();
 	if(!taskflowstatusNode["Id"].isNull())
 		object_.taskflowstatus.id = taskflowstatusNode["Id"].asString();
+	if(!taskflowstatusNode["Kind"].isNull())
+		object_.taskflowstatus.kind = taskflowstatusNode["Kind"].asString();
 	auto creatorNode = objectNode["Creator"];
 	if(!creatorNode["Name"].isNull())
 		object_.creator.name = creatorNode["Name"].asString();
 	if(!creatorNode["Id"].isNull())
 		object_.creator.id = creatorNode["Id"].asString();
 	auto reminderNode = objectNode["Reminder"];
+	if(!reminderNode["Type"].isNull())
+		object_.reminder.type = reminderNode["Type"].asString();
 	if(!reminderNode["Date"].isNull())
 		object_.reminder.date = reminderNode["Date"].asString();
 	if(!reminderNode["Method"].isNull())
 		object_.reminder.method = reminderNode["Method"].asString();
 	if(!reminderNode["CreatorId"].isNull())
 		object_.reminder.creatorId = reminderNode["CreatorId"].asString();
-	if(!reminderNode["Type"].isNull())
-		object_.reminder.type = reminderNode["Type"].asString();
 		auto allMemberRoles = reminderNode["MemberRoles"]["MemberRole"];
 		for (auto value : allMemberRoles)
 			object_.reminder.memberRoles.push_back(value.asString());
@@ -219,55 +219,55 @@ void GetTaskDetailBaseResult::parse(const std::string &payload)
 		for (auto value : allRules)
 			object_.reminder.rules.push_back(value.asString());
 	auto subtaskCountNode = objectNode["SubtaskCount"];
-	if(!subtaskCountNode["Total"].isNull())
-		object_.subtaskCount.total = std::stoi(subtaskCountNode["Total"].asString());
 	if(!subtaskCountNode["Done"].isNull())
 		object_.subtaskCount.done = std::stoi(subtaskCountNode["Done"].asString());
+	if(!subtaskCountNode["Total"].isNull())
+		object_.subtaskCount.total = std::stoi(subtaskCountNode["Total"].asString());
 	auto workTimeNode = objectNode["WorkTime"];
 	if(!workTimeNode["UsedTime"].isNull())
 		object_.workTime.usedTime = std::stoi(workTimeNode["UsedTime"].asString());
-	if(!workTimeNode["Unit"].isNull())
-		object_.workTime.unit = workTimeNode["Unit"].asString();
 	if(!workTimeNode["TotalTime"].isNull())
 		object_.workTime.totalTime = std::stoi(workTimeNode["TotalTime"].asString());
+	if(!workTimeNode["Unit"].isNull())
+		object_.workTime.unit = workTimeNode["Unit"].asString();
 	auto badgesNode = objectNode["Badges"];
 	if(!badgesNode["LikesCount"].isNull())
 		object_.badges.likesCount = std::stoi(badgesNode["LikesCount"].asString());
+	if(!badgesNode["ObjectlinksCount"].isNull())
+		object_.badges.objectlinksCount = std::stoi(badgesNode["ObjectlinksCount"].asString());
 	if(!badgesNode["AttachmentsCount"].isNull())
 		object_.badges.attachmentsCount = std::stoi(badgesNode["AttachmentsCount"].asString());
 	if(!badgesNode["CommentsCount"].isNull())
 		object_.badges.commentsCount = std::stoi(badgesNode["CommentsCount"].asString());
-	if(!badgesNode["ObjectlinksCount"].isNull())
-		object_.badges.objectlinksCount = std::stoi(badgesNode["ObjectlinksCount"].asString());
 	auto stageNode = objectNode["Stage"];
 	if(!stageNode["Name"].isNull())
 		object_.stage.name = stageNode["Name"].asString();
 	if(!stageNode["Id"].isNull())
 		object_.stage.id = stageNode["Id"].asString();
+		auto allLabels = objectNode["Labels"]["Label"];
+		for (auto value : allLabels)
+			object_.labels.push_back(value.asString());
 		auto allDivisions = objectNode["Divisions"]["Division"];
 		for (auto value : allDivisions)
 			object_.divisions.push_back(value.asString());
 		auto allAncestors = objectNode["Ancestors"]["Ancestor"];
 		for (auto value : allAncestors)
 			object_.ancestors.push_back(value.asString());
-		auto allLabels = objectNode["Labels"]["Label"];
-		for (auto value : allLabels)
-			object_.labels.push_back(value.asString());
+		auto allInvolveMembers = objectNode["InvolveMembers"]["InvolveMember"];
+		for (auto value : allInvolveMembers)
+			object_.involveMembers.push_back(value.asString());
 		auto allTagIds = objectNode["TagIds"]["TagId"];
 		for (auto value : allTagIds)
 			object_.tagIds.push_back(value.asString());
 		auto allAncestorIds = objectNode["AncestorIds"]["AncestorId"];
 		for (auto value : allAncestorIds)
 			object_.ancestorIds.push_back(value.asString());
-		auto allInvolveMembers = objectNode["InvolveMembers"]["InvolveMember"];
-		for (auto value : allInvolveMembers)
-			object_.involveMembers.push_back(value.asString());
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

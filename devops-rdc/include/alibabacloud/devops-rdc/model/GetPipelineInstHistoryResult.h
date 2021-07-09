@@ -43,11 +43,11 @@ namespace AlibabaCloud
 								std::string mixFlowInstId;
 								int enginePipelineId;
 								std::string enginePipelineName;
-								std::string caches;
 								std::string triggerMode;
+								std::string caches;
 								std::string sources;
-								std::string dateTime;
 								std::string timeStamp;
+								std::string dateTime;
 								int enginePipelineNumber;
 								int enginePipelineInstId;
 							};
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 								std::string resultStatus;
 								long createTime;
 								long startTime;
-								std::string creator;
 								std::string deleteStatus;
+								std::string creator;
 								std::string name;
 								int idExtent;
 								int id;
@@ -70,9 +70,9 @@ namespace AlibabaCloud
 							std::string status;
 							long modifyTime;
 							std::string resultStatus;
+							std::string stages;
 							long createTime;
 							std::string systemCode;
-							std::string stages;
 							std::string systemId;
 							std::string statusName;
 							std::string creator;
@@ -89,8 +89,8 @@ namespace AlibabaCloud
 						FlowInstance flowInstance;
 						long createTime;
 						std::string statusName;
-						std::string creator;
 						int triggerMode;
+						std::string creator;
 						std::string packages;
 						std::string deletion;
 						int pipelineId;

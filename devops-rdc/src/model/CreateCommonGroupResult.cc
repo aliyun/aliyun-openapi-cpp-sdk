@@ -42,12 +42,12 @@ void CreateCommonGroupResult::parse(const std::string &payload)
 	auto objectNode = value["Object"];
 	if(!objectNode["Id"].isNull())
 		object_.id = objectNode["Id"].asString();
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct CommonGroup
 				{
 					bool isRoot;
-					int pos;
 					std::string smartGroupId;
+					int pos;
 					std::string pinyin;
 					std::string creatorId;
 					int resourceCount;

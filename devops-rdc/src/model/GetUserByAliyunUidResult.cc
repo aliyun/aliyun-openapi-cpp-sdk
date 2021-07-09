@@ -40,24 +40,24 @@ void GetUserByAliyunUidResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto objectNode = value["Object"];
+	if(!objectNode["AliyunPk"].isNull())
+		object_.aliyunPk = objectNode["AliyunPk"].asString();
+	if(!objectNode["Email"].isNull())
+		object_.email = objectNode["Email"].asString();
+	if(!objectNode["AvatarUrl"].isNull())
+		object_.avatarUrl = objectNode["AvatarUrl"].asString();
 	if(!objectNode["Name"].isNull())
 		object_.name = objectNode["Name"].asString();
 	if(!objectNode["Id"].isNull())
 		object_.id = objectNode["Id"].asString();
-	if(!objectNode["AliyunPk"].isNull())
-		object_.aliyunPk = objectNode["AliyunPk"].asString();
-	if(!objectNode["AvatarUrl"].isNull())
-		object_.avatarUrl = objectNode["AvatarUrl"].asString();
-	if(!objectNode["Email"].isNull())
-		object_.email = objectNode["Email"].asString();
 	if(!objectNode["Phone"].isNull())
 		object_.phone = objectNode["Phone"].asString();
+	if(!value["ErrorMsg"].isNull())
+		errorMsg_ = value["ErrorMsg"].asString();
 	if(!value["Successful"].isNull())
 		successful_ = value["Successful"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
-	if(!value["ErrorMsg"].isNull())
-		errorMsg_ = value["ErrorMsg"].asString();
 
 }
 
