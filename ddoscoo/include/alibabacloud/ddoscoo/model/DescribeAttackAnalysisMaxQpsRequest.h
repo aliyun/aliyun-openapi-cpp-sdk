@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINSTATUSCODECOUNTREQUEST_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINSTATUSCODECOUNTREQUEST_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEATTACKANALYSISMAXQPSREQUEST_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEATTACKANALYSISMAXQPSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeDomainStatusCodeCountRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeAttackAnalysisMaxQpsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDomainStatusCodeCountRequest();
-				~DescribeDomainStatusCodeCountRequest();
+				DescribeAttackAnalysisMaxQpsRequest();
+				~DescribeAttackAnalysisMaxQpsRequest();
 
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				long getEndTime()const;
 				void setEndTime(long endTime);
-				std::string getDomain()const;
-				void setDomain(const std::string& domain);
+				long getStartTime()const;
+				void setStartTime(long startTime);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
 
             private:
-				long startTime_;
-				std::string resourceGroupId_;
-				std::string sourceIp_;
 				long endTime_;
-				std::string domain_;
+				long startTime_;
+				std::string sourceIp_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEDOMAINSTATUSCODECOUNTREQUEST_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEATTACKANALYSISMAXQPSREQUEST_H_

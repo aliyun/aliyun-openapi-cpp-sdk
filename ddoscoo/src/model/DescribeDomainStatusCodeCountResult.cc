@@ -63,7 +63,51 @@ void DescribeDomainStatusCodeCountResult::parse(const std::string &payload)
 		status404_ = std::stol(value["Status404"].asString());
 	if(!value["Status3XX"].isNull())
 		status3XX_ = std::stol(value["Status3XX"].asString());
+	if(!value["Status2XX"].isNull())
+		status2XX1_ = std::stol(value["Status2XX"].asString());
+	if(!value["Status501"].isNull())
+		status5012_ = std::stol(value["Status501"].asString());
+	if(!value["Status502"].isNull())
+		status5023_ = std::stol(value["Status502"].asString());
+	if(!value["Status503"].isNull())
+		status5034_ = std::stol(value["Status503"].asString());
+	if(!value["Status504"].isNull())
+		status5045_ = std::stol(value["Status504"].asString());
+	if(!value["Status200"].isNull())
+		status2006_ = std::stol(value["Status200"].asString());
+	if(!value["Status405"].isNull())
+		status4057_ = std::stol(value["Status405"].asString());
+	if(!value["Status5XX"].isNull())
+		status5XX8_ = std::stol(value["Status5XX"].asString());
+	if(!value["Status4XX"].isNull())
+		status4XX9_ = std::stol(value["Status4XX"].asString());
+	if(!value["Status403"].isNull())
+		status40310_ = std::stol(value["Status403"].asString());
+	if(!value["Status404"].isNull())
+		status40411_ = std::stol(value["Status404"].asString());
+	if(!value["Status3XX"].isNull())
+		status3XX12_ = std::stol(value["Status3XX"].asString());
 
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus5012()const
+{
+	return status5012_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus5023()const
+{
+	return status5023_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus5034()const
+{
+	return status5034_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus5045()const
+{
+	return status5045_;
 }
 
 long DescribeDomainStatusCodeCountResult::getStatus501()const
@@ -79,6 +123,11 @@ long DescribeDomainStatusCodeCountResult::getStatus502()const
 long DescribeDomainStatusCodeCountResult::getStatus403()const
 {
 	return status403_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus40310()const
+{
+	return status40310_;
 }
 
 long DescribeDomainStatusCodeCountResult::getStatus503()const
@@ -99,6 +148,11 @@ long DescribeDomainStatusCodeCountResult::getStatus504()const
 long DescribeDomainStatusCodeCountResult::getStatus405()const
 {
 	return status405_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus40411()const
+{
+	return status40411_;
 }
 
 long DescribeDomainStatusCodeCountResult::getStatus2XX()const
@@ -124,5 +178,35 @@ long DescribeDomainStatusCodeCountResult::getStatus4XX()const
 long DescribeDomainStatusCodeCountResult::getStatus5XX()const
 {
 	return status5XX_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus3XX12()const
+{
+	return status3XX12_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus4057()const
+{
+	return status4057_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus2XX1()const
+{
+	return status2XX1_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus4XX9()const
+{
+	return status4XX9_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus5XX8()const
+{
+	return status5XX8_;
+}
+
+long DescribeDomainStatusCodeCountResult::getStatus2006()const
+{
+	return status2006_;
 }
 

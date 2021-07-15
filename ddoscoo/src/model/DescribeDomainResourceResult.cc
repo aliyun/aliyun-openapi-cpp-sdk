@@ -45,38 +45,38 @@ void DescribeDomainResourceResult::parse(const std::string &payload)
 		WebRule webRulesObject;
 		if(!valueWebRulesWebRule["Domain"].isNull())
 			webRulesObject.domain = valueWebRulesWebRule["Domain"].asString();
-		if(!valueWebRulesWebRule["RsType"].isNull())
-			webRulesObject.rsType = std::stoi(valueWebRulesWebRule["RsType"].asString());
-		if(!valueWebRulesWebRule["CcEnabled"].isNull())
-			webRulesObject.ccEnabled = valueWebRulesWebRule["CcEnabled"].asString() == "true";
-		if(!valueWebRulesWebRule["CcRuleEnabled"].isNull())
-			webRulesObject.ccRuleEnabled = valueWebRulesWebRule["CcRuleEnabled"].asString() == "true";
-		if(!valueWebRulesWebRule["CcTemplate"].isNull())
-			webRulesObject.ccTemplate = valueWebRulesWebRule["CcTemplate"].asString();
-		if(!valueWebRulesWebRule["SslProtocols"].isNull())
-			webRulesObject.sslProtocols = valueWebRulesWebRule["SslProtocols"].asString();
-		if(!valueWebRulesWebRule["SslCiphers"].isNull())
-			webRulesObject.sslCiphers = valueWebRulesWebRule["SslCiphers"].asString();
-		if(!valueWebRulesWebRule["Http2Enable"].isNull())
-			webRulesObject.http2Enable = valueWebRulesWebRule["Http2Enable"].asString() == "true";
 		if(!valueWebRulesWebRule["Http2HttpsEnable"].isNull())
 			webRulesObject.http2HttpsEnable = valueWebRulesWebRule["Http2HttpsEnable"].asString() == "true";
-		if(!valueWebRulesWebRule["Https2HttpEnable"].isNull())
-			webRulesObject.https2HttpEnable = valueWebRulesWebRule["Https2HttpEnable"].asString() == "true";
-		if(!valueWebRulesWebRule["PolicyMode"].isNull())
-			webRulesObject.policyMode = valueWebRulesWebRule["PolicyMode"].asString();
-		if(!valueWebRulesWebRule["ProxyEnabled"].isNull())
-			webRulesObject.proxyEnabled = valueWebRulesWebRule["ProxyEnabled"].asString() == "true";
-		if(!valueWebRulesWebRule["Ssl13Enabled"].isNull())
-			webRulesObject.ssl13Enabled = valueWebRulesWebRule["Ssl13Enabled"].asString() == "true";
-		if(!valueWebRulesWebRule["PunishStatus"].isNull())
-			webRulesObject.punishStatus = valueWebRulesWebRule["PunishStatus"].asString() == "true";
+		if(!valueWebRulesWebRule["SslProtocols"].isNull())
+			webRulesObject.sslProtocols = valueWebRulesWebRule["SslProtocols"].asString();
 		if(!valueWebRulesWebRule["PunishReason"].isNull())
 			webRulesObject.punishReason = std::stoi(valueWebRulesWebRule["PunishReason"].asString());
-		if(!valueWebRulesWebRule["Cname"].isNull())
-			webRulesObject.cname = valueWebRulesWebRule["Cname"].asString();
+		if(!valueWebRulesWebRule["CcTemplate"].isNull())
+			webRulesObject.ccTemplate = valueWebRulesWebRule["CcTemplate"].asString();
+		if(!valueWebRulesWebRule["CcEnabled"].isNull())
+			webRulesObject.ccEnabled = valueWebRulesWebRule["CcEnabled"].asString() == "true";
+		if(!valueWebRulesWebRule["SslCiphers"].isNull())
+			webRulesObject.sslCiphers = valueWebRulesWebRule["SslCiphers"].asString();
+		if(!valueWebRulesWebRule["Ssl13Enabled"].isNull())
+			webRulesObject.ssl13Enabled = valueWebRulesWebRule["Ssl13Enabled"].asString() == "true";
+		if(!valueWebRulesWebRule["CcRuleEnabled"].isNull())
+			webRulesObject.ccRuleEnabled = valueWebRulesWebRule["CcRuleEnabled"].asString() == "true";
+		if(!valueWebRulesWebRule["PunishStatus"].isNull())
+			webRulesObject.punishStatus = valueWebRulesWebRule["PunishStatus"].asString() == "true";
+		if(!valueWebRulesWebRule["RsType"].isNull())
+			webRulesObject.rsType = std::stoi(valueWebRulesWebRule["RsType"].asString());
+		if(!valueWebRulesWebRule["ProxyEnabled"].isNull())
+			webRulesObject.proxyEnabled = valueWebRulesWebRule["ProxyEnabled"].asString() == "true";
 		if(!valueWebRulesWebRule["CertName"].isNull())
 			webRulesObject.certName = valueWebRulesWebRule["CertName"].asString();
+		if(!valueWebRulesWebRule["PolicyMode"].isNull())
+			webRulesObject.policyMode = valueWebRulesWebRule["PolicyMode"].asString();
+		if(!valueWebRulesWebRule["Cname"].isNull())
+			webRulesObject.cname = valueWebRulesWebRule["Cname"].asString();
+		if(!valueWebRulesWebRule["Http2Enable"].isNull())
+			webRulesObject.http2Enable = valueWebRulesWebRule["Http2Enable"].asString() == "true";
+		if(!valueWebRulesWebRule["Https2HttpEnable"].isNull())
+			webRulesObject.https2HttpEnable = valueWebRulesWebRule["Https2HttpEnable"].asString() == "true";
 		if(!valueWebRulesWebRule["HttpsExt"].isNull())
 			webRulesObject.httpsExt = valueWebRulesWebRule["HttpsExt"].asString();
 		auto allProxyTypesNode = valueWebRulesWebRule["ProxyTypes"]["ProxyConfig"];
@@ -90,18 +90,18 @@ void DescribeDomainResourceResult::parse(const std::string &payload)
 				proxyTypesObject.proxyPorts.push_back(value.asString());
 			webRulesObject.proxyTypes.push_back(proxyTypesObject);
 		}
-		auto allRealServers = value["RealServers"]["RealServers"];
-		for (auto value : allRealServers)
-			webRulesObject.realServers.push_back(value.asString());
-		auto allWhiteList = value["WhiteList"]["WhiteItem"];
-		for (auto value : allWhiteList)
-			webRulesObject.whiteList.push_back(value.asString());
 		auto allBlackList = value["BlackList"]["BlackItem"];
 		for (auto value : allBlackList)
 			webRulesObject.blackList.push_back(value.asString());
+		auto allWhiteList = value["WhiteList"]["WhiteItem"];
+		for (auto value : allWhiteList)
+			webRulesObject.whiteList.push_back(value.asString());
 		auto allCustomCiphers = value["CustomCiphers"]["CustomCipher"];
 		for (auto value : allCustomCiphers)
 			webRulesObject.customCiphers.push_back(value.asString());
+		auto allRealServers = value["RealServers"]["RealServers"];
+		for (auto value : allRealServers)
+			webRulesObject.realServers.push_back(value.asString());
 		auto allInstanceIds = value["InstanceIds"]["InstanceIds"];
 		for (auto value : allInstanceIds)
 			webRulesObject.instanceIds.push_back(value.asString());

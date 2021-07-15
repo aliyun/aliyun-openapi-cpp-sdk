@@ -49,6 +49,10 @@ void DescribeInstanceIdsResult::parse(const std::string &payload)
 			instanceIdsObject.remark = valueInstanceIdsInstance["Remark"].asString();
 		if(!valueInstanceIdsInstance["Edition"].isNull())
 			instanceIdsObject.edition = std::stoi(valueInstanceIdsInstance["Edition"].asString());
+		if(!valueInstanceIdsInstance["IpVersion"].isNull())
+			instanceIdsObject.ipVersion = valueInstanceIdsInstance["IpVersion"].asString();
+		if(!valueInstanceIdsInstance["IpMode"].isNull())
+			instanceIdsObject.ipMode = valueInstanceIdsInstance["IpMode"].asString();
 		instanceIds_.push_back(instanceIdsObject);
 	}
 

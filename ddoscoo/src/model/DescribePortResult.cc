@@ -43,16 +43,16 @@ void DescribePortResult::parse(const std::string &payload)
 	for (auto valueNetworkRulesNetworkRule : allNetworkRulesNode)
 	{
 		NetworkRule networkRulesObject;
-		if(!valueNetworkRulesNetworkRule["InstanceId"].isNull())
-			networkRulesObject.instanceId = valueNetworkRulesNetworkRule["InstanceId"].asString();
-		if(!valueNetworkRulesNetworkRule["FrontendProtocol"].isNull())
-			networkRulesObject.frontendProtocol = valueNetworkRulesNetworkRule["FrontendProtocol"].asString();
 		if(!valueNetworkRulesNetworkRule["FrontendPort"].isNull())
 			networkRulesObject.frontendPort = std::stoi(valueNetworkRulesNetworkRule["FrontendPort"].asString());
-		if(!valueNetworkRulesNetworkRule["BackendPort"].isNull())
-			networkRulesObject.backendPort = std::stoi(valueNetworkRulesNetworkRule["BackendPort"].asString());
 		if(!valueNetworkRulesNetworkRule["IsAutoCreate"].isNull())
 			networkRulesObject.isAutoCreate = valueNetworkRulesNetworkRule["IsAutoCreate"].asString() == "true";
+		if(!valueNetworkRulesNetworkRule["FrontendProtocol"].isNull())
+			networkRulesObject.frontendProtocol = valueNetworkRulesNetworkRule["FrontendProtocol"].asString();
+		if(!valueNetworkRulesNetworkRule["InstanceId"].isNull())
+			networkRulesObject.instanceId = valueNetworkRulesNetworkRule["InstanceId"].asString();
+		if(!valueNetworkRulesNetworkRule["BackendPort"].isNull())
+			networkRulesObject.backendPort = std::stoi(valueNetworkRulesNetworkRule["BackendPort"].asString());
 		auto allRealServers = value["RealServers"]["RealServers"];
 		for (auto value : allRealServers)
 			networkRulesObject.realServers.push_back(value.asString());

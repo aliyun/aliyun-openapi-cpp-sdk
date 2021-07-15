@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				struct Instance
 				{
 					std::string instanceId;
+					std::string ipVersion;
+					std::string ipMode;
 					int edition;
 					std::string remark;
 				};

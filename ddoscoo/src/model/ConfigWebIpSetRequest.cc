@@ -27,6 +27,28 @@ ConfigWebIpSetRequest::ConfigWebIpSetRequest() :
 ConfigWebIpSetRequest::~ConfigWebIpSetRequest()
 {}
 
+std::string ConfigWebIpSetRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ConfigWebIpSetRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string ConfigWebIpSetRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ConfigWebIpSetRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setParameter("SourceIp", sourceIp);
+}
+
 std::vector<std::string> ConfigWebIpSetRequest::getBlackList()const
 {
 	return blackList_;
@@ -51,28 +73,6 @@ void ConfigWebIpSetRequest::setWhiteList(const std::vector<std::string>& whiteLi
 	for(int dep1 = 0; dep1!= whiteList.size(); dep1++) {
 		setParameter("WhiteList."+ std::to_string(dep1), whiteList.at(dep1));
 	}
-}
-
-std::string ConfigWebIpSetRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void ConfigWebIpSetRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string ConfigWebIpSetRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ConfigWebIpSetRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
 }
 
 std::string ConfigWebIpSetRequest::getDomain()const

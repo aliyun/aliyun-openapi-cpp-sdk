@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEINSTANCESRESULT_H_
-#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEATTACKANALYSISMAXQPSRESULT_H_
+#define ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEATTACKANALYSISMAXQPSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeInstancesResult : public ServiceResult
+			class ALIBABACLOUD_DDOSCOO_EXPORT DescribeAttackAnalysisMaxQpsResult : public ServiceResult
 			{
 			public:
-				struct Instance
-				{
-					int status;
-					std::string instanceId;
-					std::string ipVersion;
-					long createTime;
-					std::string connInstanceId;
-					int enabled;
-					std::string ipMode;
-					long expireTime;
-					int edition;
-					std::string remark;
-					int debtStatus;
-				};
 
 
-				DescribeInstancesResult();
-				explicit DescribeInstancesResult(const std::string &payload);
-				~DescribeInstancesResult();
-				std::vector<Instance> getInstances()const;
-				long getTotalCount()const;
+				DescribeAttackAnalysisMaxQpsResult();
+				explicit DescribeAttackAnalysisMaxQpsResult(const std::string &payload);
+				~DescribeAttackAnalysisMaxQpsResult();
+				long getQps()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Instance> instances_;
-				long totalCount_;
+				long qps_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_DDOSCOO_MODEL_DESCRIBEATTACKANALYSISMAXQPSRESULT_H_

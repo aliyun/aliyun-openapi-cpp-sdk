@@ -61,6 +61,10 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.enabled = std::stoi(valueInstancesInstance["Enabled"].asString());
 		if(!valueInstancesInstance["ConnInstanceId"].isNull())
 			instancesObject.connInstanceId = valueInstancesInstance["ConnInstanceId"].asString();
+		if(!valueInstancesInstance["IpVersion"].isNull())
+			instancesObject.ipVersion = valueInstancesInstance["IpVersion"].asString();
+		if(!valueInstancesInstance["IpMode"].isNull())
+			instancesObject.ipMode = valueInstancesInstance["IpMode"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["TotalCount"].isNull())

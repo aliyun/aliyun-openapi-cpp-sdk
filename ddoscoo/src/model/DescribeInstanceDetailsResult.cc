@@ -55,6 +55,10 @@ void DescribeInstanceDetailsResult::parse(const std::string &payload)
 				eipInfosObject.eip = valueInstanceDetailsInstanceDetailEipInfosEipInfo["Eip"].asString();
 			if(!valueInstanceDetailsInstanceDetailEipInfosEipInfo["Status"].isNull())
 				eipInfosObject.status = valueInstanceDetailsInstanceDetailEipInfosEipInfo["Status"].asString();
+			if(!valueInstanceDetailsInstanceDetailEipInfosEipInfo["IpVersion"].isNull())
+				eipInfosObject.ipVersion = valueInstanceDetailsInstanceDetailEipInfosEipInfo["IpVersion"].asString();
+			if(!valueInstanceDetailsInstanceDetailEipInfosEipInfo["IpMode"].isNull())
+				eipInfosObject.ipMode = valueInstanceDetailsInstanceDetailEipInfosEipInfo["IpMode"].asString();
 			instanceDetailsObject.eipInfos.push_back(eipInfosObject);
 		}
 		instanceDetails_.push_back(instanceDetailsObject);

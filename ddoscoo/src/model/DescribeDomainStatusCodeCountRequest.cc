@@ -27,17 +27,6 @@ DescribeDomainStatusCodeCountRequest::DescribeDomainStatusCodeCountRequest() :
 DescribeDomainStatusCodeCountRequest::~DescribeDomainStatusCodeCountRequest()
 {}
 
-long DescribeDomainStatusCodeCountRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeDomainStatusCodeCountRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
-}
-
 long DescribeDomainStatusCodeCountRequest::getStartTime()const
 {
 	return startTime_;
@@ -69,6 +58,17 @@ void DescribeDomainStatusCodeCountRequest::setSourceIp(const std::string& source
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+long DescribeDomainStatusCodeCountRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeDomainStatusCodeCountRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeDomainStatusCodeCountRequest::getDomain()const

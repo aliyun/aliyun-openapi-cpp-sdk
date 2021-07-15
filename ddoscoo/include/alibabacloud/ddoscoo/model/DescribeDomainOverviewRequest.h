@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				DescribeDomainOverviewRequest();
 				~DescribeDomainOverviewRequest();
 
-				long getEndTime()const;
-				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				long getEndTime()const;
+				void setEndTime(long endTime);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
 
             private:
-				long endTime_;
 				long startTime_;
 				std::string resourceGroupId_;
 				std::string sourceIp_;
+				long endTime_;
 				std::string domain_;
 
 			};

@@ -87,6 +87,8 @@ set(ddoscoo_public_header_model
 	include/alibabacloud/ddoscoo/model/DeleteWebRuleResult.h
 	include/alibabacloud/ddoscoo/model/DescribeAsyncTasksRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeAsyncTasksResult.h
+	include/alibabacloud/ddoscoo/model/DescribeAttackAnalysisMaxQpsRequest.h
+	include/alibabacloud/ddoscoo/model/DescribeAttackAnalysisMaxQpsResult.h
 	include/alibabacloud/ddoscoo/model/DescribeAutoCcBlacklistRequest.h
 	include/alibabacloud/ddoscoo/model/DescribeAutoCcBlacklistResult.h
 	include/alibabacloud/ddoscoo/model/DescribeAutoCcListCountRequest.h
@@ -398,6 +400,8 @@ set(ddoscoo_src
 	src/model/DeleteWebRuleResult.cc
 	src/model/DescribeAsyncTasksRequest.cc
 	src/model/DescribeAsyncTasksResult.cc
+	src/model/DescribeAttackAnalysisMaxQpsRequest.cc
+	src/model/DescribeAttackAnalysisMaxQpsResult.cc
 	src/model/DescribeAutoCcBlacklistRequest.cc
 	src/model/DescribeAutoCcBlacklistResult.cc
 	src/model/DescribeAutoCcListCountRequest.cc

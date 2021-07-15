@@ -88,6 +88,8 @@
 #include "model/DeleteWebRuleResult.h"
 #include "model/DescribeAsyncTasksRequest.h"
 #include "model/DescribeAsyncTasksResult.h"
+#include "model/DescribeAttackAnalysisMaxQpsRequest.h"
+#include "model/DescribeAttackAnalysisMaxQpsResult.h"
 #include "model/DescribeAutoCcBlacklistRequest.h"
 #include "model/DescribeAutoCcBlacklistResult.h"
 #include "model/DescribeAutoCcListCountRequest.h"
@@ -438,6 +440,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAsyncTasksResult> DescribeAsyncTasksOutcome;
 			typedef std::future<DescribeAsyncTasksOutcome> DescribeAsyncTasksOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeAsyncTasksRequest&, const DescribeAsyncTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAttackAnalysisMaxQpsResult> DescribeAttackAnalysisMaxQpsOutcome;
+			typedef std::future<DescribeAttackAnalysisMaxQpsOutcome> DescribeAttackAnalysisMaxQpsOutcomeCallable;
+			typedef std::function<void(const DdoscooClient*, const Model::DescribeAttackAnalysisMaxQpsRequest&, const DescribeAttackAnalysisMaxQpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackAnalysisMaxQpsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAutoCcBlacklistResult> DescribeAutoCcBlacklistOutcome;
 			typedef std::future<DescribeAutoCcBlacklistOutcome> DescribeAutoCcBlacklistOutcomeCallable;
 			typedef std::function<void(const DdoscooClient*, const Model::DescribeAutoCcBlacklistRequest&, const DescribeAutoCcBlacklistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoCcBlacklistAsyncHandler;
@@ -905,6 +910,9 @@ namespace AlibabaCloud
 			DescribeAsyncTasksOutcome describeAsyncTasks(const Model::DescribeAsyncTasksRequest &request)const;
 			void describeAsyncTasksAsync(const Model::DescribeAsyncTasksRequest& request, const DescribeAsyncTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAsyncTasksOutcomeCallable describeAsyncTasksCallable(const Model::DescribeAsyncTasksRequest& request) const;
+			DescribeAttackAnalysisMaxQpsOutcome describeAttackAnalysisMaxQps(const Model::DescribeAttackAnalysisMaxQpsRequest &request)const;
+			void describeAttackAnalysisMaxQpsAsync(const Model::DescribeAttackAnalysisMaxQpsRequest& request, const DescribeAttackAnalysisMaxQpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAttackAnalysisMaxQpsOutcomeCallable describeAttackAnalysisMaxQpsCallable(const Model::DescribeAttackAnalysisMaxQpsRequest& request) const;
 			DescribeAutoCcBlacklistOutcome describeAutoCcBlacklist(const Model::DescribeAutoCcBlacklistRequest &request)const;
 			void describeAutoCcBlacklistAsync(const Model::DescribeAutoCcBlacklistRequest& request, const DescribeAutoCcBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAutoCcBlacklistOutcomeCallable describeAutoCcBlacklistCallable(const Model::DescribeAutoCcBlacklistRequest& request) const;

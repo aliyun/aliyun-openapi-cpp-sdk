@@ -27,17 +27,6 @@ DescribeDomainOverviewRequest::DescribeDomainOverviewRequest() :
 DescribeDomainOverviewRequest::~DescribeDomainOverviewRequest()
 {}
 
-long DescribeDomainOverviewRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void DescribeDomainOverviewRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
-}
-
 long DescribeDomainOverviewRequest::getStartTime()const
 {
 	return startTime_;
@@ -69,6 +58,17 @@ void DescribeDomainOverviewRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+long DescribeDomainOverviewRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void DescribeDomainOverviewRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeDomainOverviewRequest::getDomain()const

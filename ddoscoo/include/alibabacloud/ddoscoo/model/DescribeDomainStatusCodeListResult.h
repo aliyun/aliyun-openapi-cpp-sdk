@@ -54,11 +54,13 @@ namespace AlibabaCloud
 				DescribeDomainStatusCodeListResult();
 				explicit DescribeDomainStatusCodeListResult(const std::string &payload);
 				~DescribeDomainStatusCodeListResult();
+				std::vector<StatusCode> getStatusCodeList1()const;
 				std::vector<StatusCode> getStatusCodeList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<StatusCode> statusCodeList1_;
 				std::vector<StatusCode> statusCodeList_;
 
 			};

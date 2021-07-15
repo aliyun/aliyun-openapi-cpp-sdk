@@ -73,7 +73,46 @@ void DescribeDomainStatusCodeListResult::parse(const std::string &payload)
 			statusCodeListObject.status3XX = std::stol(valueStatusCodeListStatusCode["Status3XX"].asString());
 		statusCodeList_.push_back(statusCodeListObject);
 	}
+	auto allStatusCodeList1Node = value["StatusCodeList"]["StatusCode"];
+	for (auto valueStatusCodeListStatusCode : allStatusCodeList1Node)
+	{
+		StatusCode statusCodeList1Object;
+		if(!valueStatusCodeListStatusCode["Index"].isNull())
+			statusCodeList1Object.index = std::stoi(valueStatusCodeListStatusCode["Index"].asString());
+		if(!valueStatusCodeListStatusCode["Time"].isNull())
+			statusCodeList1Object.time = std::stol(valueStatusCodeListStatusCode["Time"].asString());
+		if(!valueStatusCodeListStatusCode["Status2XX"].isNull())
+			statusCodeList1Object.status2XX = std::stol(valueStatusCodeListStatusCode["Status2XX"].asString());
+		if(!valueStatusCodeListStatusCode["Status501"].isNull())
+			statusCodeList1Object.status501 = std::stol(valueStatusCodeListStatusCode["Status501"].asString());
+		if(!valueStatusCodeListStatusCode["Status502"].isNull())
+			statusCodeList1Object.status502 = std::stol(valueStatusCodeListStatusCode["Status502"].asString());
+		if(!valueStatusCodeListStatusCode["Status503"].isNull())
+			statusCodeList1Object.status503 = std::stol(valueStatusCodeListStatusCode["Status503"].asString());
+		if(!valueStatusCodeListStatusCode["Status504"].isNull())
+			statusCodeList1Object.status504 = std::stol(valueStatusCodeListStatusCode["Status504"].asString());
+		if(!valueStatusCodeListStatusCode["Status200"].isNull())
+			statusCodeList1Object.status200 = std::stol(valueStatusCodeListStatusCode["Status200"].asString());
+		if(!valueStatusCodeListStatusCode["Status405"].isNull())
+			statusCodeList1Object.status405 = std::stol(valueStatusCodeListStatusCode["Status405"].asString());
+		if(!valueStatusCodeListStatusCode["Status5XX"].isNull())
+			statusCodeList1Object.status5XX = std::stol(valueStatusCodeListStatusCode["Status5XX"].asString());
+		if(!valueStatusCodeListStatusCode["Status4XX"].isNull())
+			statusCodeList1Object.status4XX = std::stol(valueStatusCodeListStatusCode["Status4XX"].asString());
+		if(!valueStatusCodeListStatusCode["Status403"].isNull())
+			statusCodeList1Object.status403 = std::stol(valueStatusCodeListStatusCode["Status403"].asString());
+		if(!valueStatusCodeListStatusCode["Status404"].isNull())
+			statusCodeList1Object.status404 = std::stol(valueStatusCodeListStatusCode["Status404"].asString());
+		if(!valueStatusCodeListStatusCode["Status3XX"].isNull())
+			statusCodeList1Object.status3XX = std::stol(valueStatusCodeListStatusCode["Status3XX"].asString());
+		statusCodeList1_.push_back(statusCodeList1Object);
+	}
 
+}
+
+std::vector<DescribeDomainStatusCodeListResult::StatusCode> DescribeDomainStatusCodeListResult::getStatusCodeList1()const
+{
+	return statusCodeList1_;
 }
 
 std::vector<DescribeDomainStatusCodeListResult::StatusCode> DescribeDomainStatusCodeListResult::getStatusCodeList()const

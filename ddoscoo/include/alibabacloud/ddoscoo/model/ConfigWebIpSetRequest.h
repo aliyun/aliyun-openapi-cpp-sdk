@@ -35,22 +35,22 @@ namespace AlibabaCloud
 				ConfigWebIpSetRequest();
 				~ConfigWebIpSetRequest();
 
-				std::vector<std::string> getBlackList()const;
-				void setBlackList(const std::vector<std::string>& blackList);
-				std::vector<std::string> getWhiteList()const;
-				void setWhiteList(const std::vector<std::string>& whiteList);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::vector<std::string> getBlackList()const;
+				void setBlackList(const std::vector<std::string>& blackList);
+				std::vector<std::string> getWhiteList()const;
+				void setWhiteList(const std::vector<std::string>& whiteList);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
 
             private:
-				std::vector<std::string> blackList_;
-				std::vector<std::string> whiteList_;
 				std::string resourceGroupId_;
 				std::string sourceIp_;
+				std::vector<std::string> blackList_;
+				std::vector<std::string> whiteList_;
 				std::string domain_;
 
 			};

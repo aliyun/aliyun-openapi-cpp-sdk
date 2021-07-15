@@ -1239,6 +1239,42 @@ DdoscooClient::DescribeAsyncTasksOutcomeCallable DdoscooClient::describeAsyncTas
 	return task->get_future();
 }
 
+DdoscooClient::DescribeAttackAnalysisMaxQpsOutcome DdoscooClient::describeAttackAnalysisMaxQps(const DescribeAttackAnalysisMaxQpsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAttackAnalysisMaxQpsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAttackAnalysisMaxQpsOutcome(DescribeAttackAnalysisMaxQpsResult(outcome.result()));
+	else
+		return DescribeAttackAnalysisMaxQpsOutcome(outcome.error());
+}
+
+void DdoscooClient::describeAttackAnalysisMaxQpsAsync(const DescribeAttackAnalysisMaxQpsRequest& request, const DescribeAttackAnalysisMaxQpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAttackAnalysisMaxQps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdoscooClient::DescribeAttackAnalysisMaxQpsOutcomeCallable DdoscooClient::describeAttackAnalysisMaxQpsCallable(const DescribeAttackAnalysisMaxQpsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAttackAnalysisMaxQpsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAttackAnalysisMaxQps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdoscooClient::DescribeAutoCcBlacklistOutcome DdoscooClient::describeAutoCcBlacklist(const DescribeAutoCcBlacklistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
