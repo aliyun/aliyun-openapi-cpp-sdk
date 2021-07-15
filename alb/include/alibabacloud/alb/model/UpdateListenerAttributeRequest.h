@@ -1,0 +1,120 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_ALB_MODEL_UPDATELISTENERATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_ALB_MODEL_UPDATELISTENERATTRIBUTEREQUEST_H_
+
+#include <alibabacloud/alb/AlbExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <string>
+#include <vector>
+#include <map>
+
+namespace AlibabaCloud {
+namespace Alb {
+namespace Model {
+class ALIBABACLOUD_ALB_EXPORT UpdateListenerAttributeRequest : public RpcServiceRequest {
+public:
+	struct QuicConfig {
+		bool quicUpgradeEnabled;
+		std::string quicListenerId;
+	};
+	struct DefaultActions {
+		struct ForwardGroupConfig {
+			struct ServerGroupTuplesItem {
+				std::string serverGroupId;
+			};
+			ServerGroupTuplesItem serverGroupTuplesItem;
+			std::vector<ServerGroupTuplesItem> serverGroupTuples;
+		};
+		ForwardGroupConfig forwardGroupConfig;
+		std::string type;
+	};
+	struct CaCertificates {
+		std::string certificateId;
+	};
+	struct XForwardedForConfig {
+		std::string xForwardedForClientCertSubjectDNAlias;
+		bool xForwardedForClientCertIssuerDNEnabled;
+		bool xForwardedForClientCertFingerprintEnabled;
+		std::string xForwardedForClientCertIssuerDNAlias;
+		bool xForwardedForProtoEnabled;
+		std::string xForwardedForClientCertFingerprintAlias;
+		bool xForwardedForClientCertClientVerifyEnabled;
+		bool xForwardedForSLBPortEnabled;
+		bool xForwardedForClientCertSubjectDNEnabled;
+		std::string xForwardedForClientCertClientVerifyAlias;
+		bool xForwardedForClientSrcPortEnabled;
+		bool xForwardedForEnabled;
+		bool xForwardedForSLBIdEnabled;
+	};
+	struct Certificates {
+		std::string certificateId;
+	};
+	UpdateListenerAttributeRequest();
+	~UpdateListenerAttributeRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	bool getGzipEnabled() const;
+	void setGzipEnabled(bool gzipEnabled);
+	std::string getListenerId() const;
+	void setListenerId(const std::string &listenerId);
+	QuicConfig getQuicConfig() const;
+	void setQuicConfig(const QuicConfig &quicConfig);
+	bool getHttp2Enabled() const;
+	void setHttp2Enabled(bool http2Enabled);
+	std::vector<DefaultActions> getDefaultActions() const;
+	void setDefaultActions(const std::vector<DefaultActions> &defaultActions);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
+	int getRequestTimeout() const;
+	void setRequestTimeout(int requestTimeout);
+	std::vector<CaCertificates> getCaCertificates() const;
+	void setCaCertificates(const std::vector<CaCertificates> &caCertificates);
+	XForwardedForConfig getXForwardedForConfig() const;
+	void setXForwardedForConfig(const XForwardedForConfig &xForwardedForConfig);
+	std::string getSecurityPolicyId() const;
+	void setSecurityPolicyId(const std::string &securityPolicyId);
+	int getIdleTimeout() const;
+	void setIdleTimeout(int idleTimeout);
+	std::vector<Certificates> getCertificates() const;
+	void setCertificates(const std::vector<Certificates> &certificates);
+	std::string getListenerDescription() const;
+	void setListenerDescription(const std::string &listenerDescription);
+	bool getCaEnabled() const;
+	void setCaEnabled(bool caEnabled);
+
+private:
+	std::string clientToken_;
+	bool gzipEnabled_;
+	std::string listenerId_;
+	QuicConfig quicConfig_;
+	bool http2Enabled_;
+	std::vector<DefaultActions> defaultActions_;
+	bool dryRun_;
+	int requestTimeout_;
+	std::vector<CaCertificates> caCertificates_;
+	XForwardedForConfig xForwardedForConfig_;
+	std::string securityPolicyId_;
+	int idleTimeout_;
+	std::vector<Certificates> certificates_;
+	std::string listenerDescription_;
+	bool caEnabled_;
+};
+} // namespace Model
+} // namespace Alb
+} // namespace AlibabaCloud
+#endif // !ALIBABACLOUD_ALB_MODEL_UPDATELISTENERATTRIBUTEREQUEST_H_
