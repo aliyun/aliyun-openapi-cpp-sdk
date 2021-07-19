@@ -40,13 +40,13 @@ namespace AlibabaCloud
 						{
 							float imageZ;
 							float imageY;
-							float imageX;
 							std::string lobe;
+							float imageX;
 							std::string category;
 							std::string lung;
 							float meanValue;
-							float volume;
 							float confidence;
+							float volume;
 							float x;
 							float y;
 							float z;

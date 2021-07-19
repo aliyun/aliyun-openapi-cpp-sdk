@@ -126,7 +126,7 @@ void ScreenChestCTResult::parse(const std::string &payload)
 			detectionsItemObject.fractureLocation = detectRibFractureNodeDetectionsDetectionsItem["FractureLocation"].asString();
 		if(!detectRibFractureNodeDetectionsDetectionsItem["FractureSegment"].isNull())
 			detectionsItemObject.fractureSegment = std::stol(detectRibFractureNodeDetectionsDetectionsItem["FractureSegment"].asString());
-		auto allCoordinates = value["Coordinates"]["Coordinates"];
+		auto allCoordinates = value["Coordinates"]["coordinates"];
 		for (auto value : allCoordinates)
 			detectionsItemObject.coordinates.push_back(value.asString());
 		auto allCoordinateImage = value["CoordinateImage"]["CoordinateImage"];
@@ -140,6 +140,41 @@ void ScreenChestCTResult::parse(const std::string &payload)
 		auto allOrigin2 = detectRibFractureNode["Origin"]["Origin"];
 		for (auto value : allOrigin2)
 			data_.detectRibFracture.origin2.push_back(value.asString());
+	auto analyzeChestVesselNode = dataNode["AnalyzeChestVessel"];
+	if(!analyzeChestVesselNode["ResultURL"].isNull())
+		data_.analyzeChestVessel.resultURL = analyzeChestVesselNode["ResultURL"].asString();
+	auto aortaInfoNode = analyzeChestVesselNode["AortaInfo"];
+	if(!aortaInfoNode["MaxAreaIndex"].isNull())
+		data_.analyzeChestVessel.aortaInfo.maxAreaIndex = std::stol(aortaInfoNode["MaxAreaIndex"].asString());
+	if(!aortaInfoNode["MaxArea"].isNull())
+		data_.analyzeChestVessel.aortaInfo.maxArea = std::stof(aortaInfoNode["MaxArea"].asString());
+	if(!aortaInfoNode["MaxDiameter"].isNull())
+		data_.analyzeChestVessel.aortaInfo.maxDiameter = std::stof(aortaInfoNode["MaxDiameter"].asString());
+	if(!aortaInfoNode["LabelValue"].isNull())
+		data_.analyzeChestVessel.aortaInfo.labelValue = std::stol(aortaInfoNode["LabelValue"].asString());
+		auto allCoordinates3 = aortaInfoNode["Coordinates"]["coordinates"];
+		for (auto value : allCoordinates3)
+			data_.analyzeChestVessel.aortaInfo.coordinates3.push_back(value.asString());
+		auto allArea = aortaInfoNode["Area"]["area"];
+		for (auto value : allArea)
+			data_.analyzeChestVessel.aortaInfo.area.push_back(value.asString());
+	auto pulmonaryInfoNode = analyzeChestVesselNode["PulmonaryInfo"];
+	if(!pulmonaryInfoNode["MaxAreaIndex"].isNull())
+		data_.analyzeChestVessel.pulmonaryInfo.maxAreaIndex = std::stol(pulmonaryInfoNode["MaxAreaIndex"].asString());
+	if(!pulmonaryInfoNode["MaxArea"].isNull())
+		data_.analyzeChestVessel.pulmonaryInfo.maxArea = std::stof(pulmonaryInfoNode["MaxArea"].asString());
+	if(!pulmonaryInfoNode["MaxDiameter"].isNull())
+		data_.analyzeChestVessel.pulmonaryInfo.maxDiameter = std::stof(pulmonaryInfoNode["MaxDiameter"].asString());
+	if(!pulmonaryInfoNode["LabelValue"].isNull())
+		data_.analyzeChestVessel.pulmonaryInfo.labelValue = std::stol(pulmonaryInfoNode["LabelValue"].asString());
+	if(!pulmonaryInfoNode["NearestAortaArea"].isNull())
+		data_.analyzeChestVessel.pulmonaryInfo.nearestAortaArea = std::stof(pulmonaryInfoNode["NearestAortaArea"].asString());
+		auto allCoordinates4 = pulmonaryInfoNode["Coordinates"]["coordinates"];
+		for (auto value : allCoordinates4)
+			data_.analyzeChestVessel.pulmonaryInfo.coordinates4.push_back(value.asString());
+		auto allArea5 = pulmonaryInfoNode["Area"]["area"];
+		for (auto value : allArea5)
+			data_.analyzeChestVessel.pulmonaryInfo.area5.push_back(value.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

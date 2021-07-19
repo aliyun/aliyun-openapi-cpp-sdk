@@ -93,9 +93,35 @@ namespace AlibabaCloud
 						std::vector<DetectionsItem> detections;
 						std::string resultURL;
 					};
+					struct AnalyzeChestVessel
+					{
+						struct AortaInfo
+						{
+							float maxArea;
+							std::vector<std::string> area;
+							float maxDiameter;
+							long labelValue;
+							std::vector<std::string> coordinates3;
+							long maxAreaIndex;
+						};
+						struct PulmonaryInfo
+						{
+							float maxArea;
+							std::vector<std::string> area5;
+							float maxDiameter;
+							long labelValue;
+							std::vector<std::string> coordinates4;
+							long maxAreaIndex;
+							float nearestAortaArea;
+						};
+						PulmonaryInfo pulmonaryInfo;
+						AortaInfo aortaInfo;
+						std::string resultURL;
+					};
 					LungNodule lungNodule;
 					CACS cACS;
 					Covid covid;
+					AnalyzeChestVessel analyzeChestVessel;
 					DetectRibFracture detectRibFracture;
 					std::string errorMessage;
 				};
