@@ -39,6 +39,21 @@ void AssignIpv6AddressesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allIpv6Sets = value["Ipv6Sets"]["Ipv6Address"];
+	for (const auto &item : allIpv6Sets)
+		ipv6Sets_.push_back(item.asString());
+	if(!value["NetworkInterfaceId"].isNull())
+		networkInterfaceId_ = value["NetworkInterfaceId"].asString();
 
+}
+
+std::vector<std::string> AssignIpv6AddressesResult::getIpv6Sets()const
+{
+	return ipv6Sets_;
+}
+
+std::string AssignIpv6AddressesResult::getNetworkInterfaceId()const
+{
+	return networkInterfaceId_;
 }
 

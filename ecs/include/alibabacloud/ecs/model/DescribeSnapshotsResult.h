@@ -39,30 +39,32 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
-					std::string status;
 					bool instantAccess;
-					std::string progress;
-					std::string usage;
 					std::string description;
-					std::string kMSKeyId;
 					std::string category;
+					std::string kMSKeyId;
 					std::string resourceGroupId;
-					std::string productCode;
 					bool encrypted;
-					int retentionDays;
 					std::string snapshotName;
 					int instantAccessRetentionDays;
 					std::string sourceDiskId;
+					std::string snapshotSN;
+					std::string sourceRegionId;
+					std::vector<Snapshot::Tag> tags;
+					std::string status;
+					std::string progress;
+					std::string usage;
+					std::string productCode;
+					std::string sourceSnapshotId;
+					int retentionDays;
 					std::string sourceStorageType;
 					std::string snapshotId;
-					std::string snapshotSN;
 					std::string sourceDiskSize;
 					std::string creationTime;
 					std::string lastModifiedTime;
 					std::string snapshotType;
-					std::string sourceDiskType;
 					int remainTime;
-					std::vector<Snapshot::Tag> tags;
+					std::string sourceDiskType;
 				};
 
 
@@ -70,8 +72,8 @@ namespace AlibabaCloud
 				explicit DescribeSnapshotsResult(const std::string &payload);
 				~DescribeSnapshotsResult();
 				int getTotalCount()const;
-				int getPageSize()const;
 				std::string getNextToken()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<Snapshot> getSnapshots()const;
 
@@ -79,8 +81,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
 				std::string nextToken_;
+				int pageSize_;
 				int pageNumber_;
 				std::vector<Snapshot> snapshots_;
 

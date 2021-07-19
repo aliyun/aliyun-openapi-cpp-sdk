@@ -84,6 +84,17 @@ void DescribeInstanceHistoryEventsRequest::setImpactLevel(const std::string& imp
 	setParameter("ImpactLevel", impactLevel);
 }
 
+std::string DescribeInstanceHistoryEventsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeInstanceHistoryEventsRequest::getRegionId()const
 {
 	return regionId_;
@@ -116,6 +127,22 @@ void DescribeInstanceHistoryEventsRequest::setInstanceEventCycleStatus(const std
 	instanceEventCycleStatus_ = instanceEventCycleStatus;
 	for(int dep1 = 0; dep1!= instanceEventCycleStatus.size(); dep1++) {
 		setParameter("InstanceEventCycleStatus."+ std::to_string(dep1), instanceEventCycleStatus.at(dep1));
+	}
+}
+
+std::vector<DescribeInstanceHistoryEventsRequest::Tag> DescribeInstanceHistoryEventsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
 	}
 }
 

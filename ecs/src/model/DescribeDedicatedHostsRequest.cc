@@ -104,6 +104,17 @@ void DescribeDedicatedHostsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeDedicatedHostsRequest::getDedicatedHostClusterId()const
+{
+	return dedicatedHostClusterId_;
+}
+
+void DescribeDedicatedHostsRequest::setDedicatedHostClusterId(const std::string& dedicatedHostClusterId)
+{
+	dedicatedHostClusterId_ = dedicatedHostClusterId;
+	setParameter("DedicatedHostClusterId", dedicatedHostClusterId);
+}
+
 std::string DescribeDedicatedHostsRequest::getDedicatedHostType()const
 {
 	return dedicatedHostType_;

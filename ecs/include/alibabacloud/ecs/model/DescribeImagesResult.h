@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string type;
 						std::string progress;
 						std::string format;
-						std::string size;
 						std::string device;
+						std::string size;
 						std::string importOSSBucket;
 						std::string importOSSObject;
 						int remainTime;
@@ -52,10 +52,10 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					std::string imageOwnerAlias;
-					std::string description;
 					std::string isSelfShared;
-					std::string platform;
+					std::string description;
 					std::string resourceGroupId;
+					std::string platform;
 					int size;
 					bool isSubscribed;
 					std::string oSName;

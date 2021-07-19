@@ -148,6 +148,17 @@ void DescribePriceRequest::setInstanceCpuCoreCount(int instanceCpuCoreCount)
 	setParameter("InstanceCpuCoreCount", std::to_string(instanceCpuCoreCount));
 }
 
+std::string DescribePriceRequest::getSpotStrategy()const
+{
+	return spotStrategy_;
+}
+
+void DescribePriceRequest::setSpotStrategy(const std::string& spotStrategy)
+{
+	spotStrategy_ = spotStrategy;
+	setParameter("SpotStrategy", spotStrategy);
+}
+
 std::string DescribePriceRequest::getInternetChargeType()const
 {
 	return internetChargeType_;
@@ -157,6 +168,17 @@ void DescribePriceRequest::setInternetChargeType(const std::string& internetChar
 {
 	internetChargeType_ = internetChargeType;
 	setParameter("InternetChargeType", internetChargeType);
+}
+
+std::string DescribePriceRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribePriceRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribePriceRequest::getInstanceNetworkType()const
@@ -412,6 +434,17 @@ void DescribePriceRequest::setDataDisk2Size(int dataDisk2Size)
 {
 	dataDisk2Size_ = dataDisk2Size;
 	setParameter("DataDisk2Size", std::to_string(dataDisk2Size));
+}
+
+int DescribePriceRequest::getSpotDuration()const
+{
+	return spotDuration_;
+}
+
+void DescribePriceRequest::setSpotDuration(int spotDuration)
+{
+	spotDuration_ = spotDuration;
+	setParameter("SpotDuration", std::to_string(spotDuration));
 }
 
 std::string DescribePriceRequest::getResourceType()const

@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getDedicatedHostClusterId()const;
+				void setDedicatedHostClusterId(const std::string& dedicatedHostClusterId);
 				std::string getDedicatedHostType()const;
 				void setDedicatedHostType(const std::string& dedicatedHostType);
 				std::vector<Tag> getTag()const;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 				std::string lockReason_;
 				std::string regionId_;
 				int pageSize_;
+				std::string dedicatedHostClusterId_;
 				std::string dedicatedHostType_;
 				std::vector<Tag> tag_;
 				std::string needHostDetail_;

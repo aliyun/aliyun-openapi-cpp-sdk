@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setVisible(bool visible);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				int getIpv6AddressCount()const;
+				void setIpv6AddressCount(int ipv6AddressCount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getQueuePairNumber()const;
@@ -85,6 +87,8 @@ namespace AlibabaCloud
 				void setPrivateIpAddress(const std::vector<std::string>& privateIpAddress);
 				std::string getPrimaryIpAddress()const;
 				void setPrimaryIpAddress(const std::string& primaryIpAddress);
+				std::vector<std::string> getIpv6Address()const;
+				void setIpv6Address(const std::vector<std::string>& ipv6Address);
 
             private:
 				int queueNumber_;
@@ -101,6 +105,7 @@ namespace AlibabaCloud
 				std::string networkInterfaceName_;
 				bool visible_;
 				std::string resourceOwnerAccount_;
+				int ipv6AddressCount_;
 				std::string ownerAccount_;
 				int queuePairNumber_;
 				long ownerId_;
@@ -109,6 +114,7 @@ namespace AlibabaCloud
 				std::string vSwitchId_;
 				std::vector<std::string> privateIpAddress_;
 				std::string primaryIpAddress_;
+				std::vector<std::string> ipv6Address_;
 
 			};
 		}

@@ -693,6 +693,17 @@ void RunInstancesRequest::setIpv6Address(const std::vector<std::string>& ipv6Add
 	}
 }
 
+std::string RunInstancesRequest::getSecurityOptionsConfidentialComputingMode()const
+{
+	return securityOptionsConfidentialComputingMode_;
+}
+
+void RunInstancesRequest::setSecurityOptionsConfidentialComputingMode(const std::string& securityOptionsConfidentialComputingMode)
+{
+	securityOptionsConfidentialComputingMode_ = securityOptionsConfidentialComputingMode;
+	setParameter("SecurityOptionsConfidentialComputingMode", securityOptionsConfidentialComputingMode);
+}
+
 std::string RunInstancesRequest::getClientToken()const
 {
 	return clientToken_;

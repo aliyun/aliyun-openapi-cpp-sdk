@@ -54,7 +54,9 @@ namespace AlibabaCloud
 							std::string creationTime;
 							std::string deviceCategory;
 						};
+						std::string hostType;
 						std::string device;
+						std::string hostId;
 						std::vector<InactiveDisk> inactiveDisks;
 						std::string diskId;
 					};

@@ -38,8 +38,8 @@ namespace AlibabaCloud
 				};
 				struct TagFilter
 				{
-					std::string tagKey;
 					std::vector<std::string> tagValues;
+					std::string tagKey;
 				};
 
 			public:

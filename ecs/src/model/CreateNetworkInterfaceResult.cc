@@ -53,43 +53,51 @@ void CreateNetworkInterfaceResult::parse(const std::string &payload)
 	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!valueTagsTag["TagKey"].isNull())
-			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		if(!valueTagsTag["TagValue"].isNull())
 			tagsObject.tagValue = valueTagsTag["TagValue"].asString();
+		if(!valueTagsTag["TagKey"].isNull())
+			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		tags_.push_back(tagsObject);
+	}
+	auto allIpv6SetsNode = value["Ipv6Sets"]["Ipv6Set"];
+	for (auto valueIpv6SetsIpv6Set : allIpv6SetsNode)
+	{
+		Ipv6Set ipv6SetsObject;
+		if(!valueIpv6SetsIpv6Set["Ipv6Address"].isNull())
+			ipv6SetsObject.ipv6Address = valueIpv6SetsIpv6Set["Ipv6Address"].asString();
+		ipv6Sets_.push_back(ipv6SetsObject);
 	}
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 	for (const auto &item : allSecurityGroupIds)
 		securityGroupIds_.push_back(item.asString());
-	if(!value["NetworkInterfaceId"].isNull())
-		networkInterfaceId_ = value["NetworkInterfaceId"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
-	if(!value["VSwitchId"].isNull())
-		vSwitchId_ = value["VSwitchId"].asString();
-	if(!value["ZoneId"].isNull())
-		zoneId_ = value["ZoneId"].asString();
-	if(!value["PrivateIpAddress"].isNull())
-		privateIpAddress_ = value["PrivateIpAddress"].asString();
-	if(!value["MacAddress"].isNull())
-		macAddress_ = value["MacAddress"].asString();
 	if(!value["NetworkInterfaceName"].isNull())
 		networkInterfaceName_ = value["NetworkInterfaceName"].asString();
+	if(!value["MacAddress"].isNull())
+		macAddress_ = value["MacAddress"].asString();
+	if(!value["NetworkInterfaceId"].isNull())
+		networkInterfaceId_ = value["NetworkInterfaceId"].asString();
+	if(!value["ServiceID"].isNull())
+		serviceID_ = std::stol(value["ServiceID"].asString());
+	if(!value["OwnerId"].isNull())
+		ownerId_ = value["OwnerId"].asString();
+	if(!value["ServiceManaged"].isNull())
+		serviceManaged_ = value["ServiceManaged"].asString() == "true";
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
-	if(!value["ServiceID"].isNull())
-		serviceID_ = std::stol(value["ServiceID"].asString());
-	if(!value["ServiceManaged"].isNull())
-		serviceManaged_ = value["ServiceManaged"].asString() == "true";
-	if(!value["OwnerId"].isNull())
-		ownerId_ = value["OwnerId"].asString();
+	if(!value["ZoneId"].isNull())
+		zoneId_ = value["ZoneId"].asString();
+	if(!value["PrivateIpAddress"].isNull())
+		privateIpAddress_ = value["PrivateIpAddress"].asString();
 
 }
 
@@ -98,19 +106,19 @@ std::string CreateNetworkInterfaceResult::getStatus()const
 	return status_;
 }
 
-std::string CreateNetworkInterfaceResult::getPrivateIpAddress()const
-{
-	return privateIpAddress_;
-}
-
 std::string CreateNetworkInterfaceResult::getDescription()const
 {
 	return description_;
 }
 
-std::string CreateNetworkInterfaceResult::getZoneId()const
+std::string CreateNetworkInterfaceResult::getPrivateIpAddress()const
 {
-	return zoneId_;
+	return privateIpAddress_;
+}
+
+bool CreateNetworkInterfaceResult::getServiceManaged()const
+{
+	return serviceManaged_;
 }
 
 std::string CreateNetworkInterfaceResult::getResourceGroupId()const
@@ -118,9 +126,9 @@ std::string CreateNetworkInterfaceResult::getResourceGroupId()const
 	return resourceGroupId_;
 }
 
-bool CreateNetworkInterfaceResult::getServiceManaged()const
+std::string CreateNetworkInterfaceResult::getZoneId()const
 {
-	return serviceManaged_;
+	return zoneId_;
 }
 
 std::string CreateNetworkInterfaceResult::getVSwitchId()const
@@ -133,14 +141,14 @@ std::string CreateNetworkInterfaceResult::getNetworkInterfaceName()const
 	return networkInterfaceName_;
 }
 
-std::string CreateNetworkInterfaceResult::getNetworkInterfaceId()const
-{
-	return networkInterfaceId_;
-}
-
 std::string CreateNetworkInterfaceResult::getMacAddress()const
 {
 	return macAddress_;
+}
+
+std::string CreateNetworkInterfaceResult::getNetworkInterfaceId()const
+{
+	return networkInterfaceId_;
 }
 
 std::vector<std::string> CreateNetworkInterfaceResult::getSecurityGroupIds()const
@@ -156,6 +164,11 @@ long CreateNetworkInterfaceResult::getServiceID()const
 std::string CreateNetworkInterfaceResult::getType()const
 {
 	return type_;
+}
+
+std::vector<CreateNetworkInterfaceResult::Ipv6Set> CreateNetworkInterfaceResult::getIpv6Sets()const
+{
+	return ipv6Sets_;
 }
 
 std::string CreateNetworkInterfaceResult::getVpcId()const

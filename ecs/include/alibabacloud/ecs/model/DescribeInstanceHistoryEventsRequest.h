@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeInstanceHistoryEventsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				DescribeInstanceHistoryEventsRequest();
@@ -45,12 +51,16 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getImpactLevel()const;
 				void setImpactLevel(const std::string& impactLevel);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<std::string> getInstanceEventCycleStatus()const;
 				void setInstanceEventCycleStatus(const std::vector<std::string>& instanceEventCycleStatus);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getEventPublishTimeEnd()const;
 				void setEventPublishTimeEnd(const std::string& eventPublishTimeEnd);
 				std::vector<std::string> getResourceId()const;
@@ -82,9 +92,11 @@ namespace AlibabaCloud
 				std::string eventCycleStatus_;
 				int pageNumber_;
 				std::string impactLevel_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				int pageSize_;
 				std::vector<std::string> instanceEventCycleStatus_;
+				std::vector<Tag> tag_;
 				std::string eventPublishTimeEnd_;
 				std::vector<std::string> resourceId_;
 				std::vector<std::string> instanceEventType_;

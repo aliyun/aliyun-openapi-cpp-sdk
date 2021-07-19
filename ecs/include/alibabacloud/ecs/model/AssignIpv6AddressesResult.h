@@ -37,10 +37,14 @@ namespace AlibabaCloud
 				AssignIpv6AddressesResult();
 				explicit AssignIpv6AddressesResult(const std::string &payload);
 				~AssignIpv6AddressesResult();
+				std::vector<std::string> getIpv6Sets()const;
+				std::string getNetworkInterfaceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> ipv6Sets_;
+				std::string networkInterfaceId_;
 
 			};
 		}

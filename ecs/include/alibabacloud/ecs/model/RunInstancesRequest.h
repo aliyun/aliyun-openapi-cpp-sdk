@@ -190,6 +190,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::vector<std::string> getIpv6Address()const;
 				void setIpv6Address(const std::vector<std::string>& ipv6Address);
+				std::string getSecurityOptionsConfidentialComputingMode()const;
+				void setSecurityOptionsConfidentialComputingMode(const std::string& securityOptionsConfidentialComputingMode);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				int getInternetMaxBandwidthOut()const;
@@ -301,6 +303,7 @@ namespace AlibabaCloud
 				std::string instanceName_;
 				std::string zoneId_;
 				std::vector<std::string> ipv6Address_;
+				std::string securityOptionsConfidentialComputingMode_;
 				std::string clientToken_;
 				int internetMaxBandwidthOut_;
 				std::string description_;

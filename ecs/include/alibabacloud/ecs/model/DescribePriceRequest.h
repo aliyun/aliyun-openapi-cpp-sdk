@@ -57,8 +57,12 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getInstanceCpuCoreCount()const;
 				void setInstanceCpuCoreCount(int instanceCpuCoreCount);
+				std::string getSpotStrategy()const;
+				void setSpotStrategy(const std::string& spotStrategy);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
 				int getInstanceAmount()const;
@@ -105,6 +109,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				int getDataDisk2Size()const;
 				void setDataDisk2Size(int dataDisk2Size);
+				int getSpotDuration()const;
+				void setSpotDuration(int spotDuration);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
 				std::string getDataDisk1Category()const;
@@ -128,7 +134,9 @@ namespace AlibabaCloud
 				std::string assuranceTimes_;
 				long ownerId_;
 				int instanceCpuCoreCount_;
+				std::string spotStrategy_;
 				std::string internetChargeType_;
+				std::string zoneId_;
 				std::string instanceNetworkType_;
 				int instanceAmount_;
 				std::vector<std::string> instanceTypeList_;
@@ -152,6 +160,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				int dataDisk2Size_;
+				int spotDuration_;
 				std::string resourceType_;
 				std::string dataDisk1Category_;
 				std::string dataDisk2PerformanceLevel_;

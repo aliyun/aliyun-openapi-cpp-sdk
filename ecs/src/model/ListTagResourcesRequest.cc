@@ -133,10 +133,10 @@ void ListTagResourcesRequest::setTagFilter(const std::vector<TagFilter>& tagFilt
 	for(int dep1 = 0; dep1!= tagFilter.size(); dep1++) {
 		auto tagFilterObj = tagFilter.at(dep1);
 		std::string tagFilterObjStr = "TagFilter." + std::to_string(dep1 + 1);
-		setParameter(tagFilterObjStr + ".TagKey", tagFilterObj.tagKey);
 		for(int dep2 = 0; dep2!= tagFilterObj.tagValues.size(); dep2++) {
 			setParameter(tagFilterObjStr + ".TagValues."+ std::to_string(dep2), tagFilterObj.tagValues.at(dep2));
 		}
+		setParameter(tagFilterObjStr + ".TagKey", tagFilterObj.tagKey);
 	}
 }
 

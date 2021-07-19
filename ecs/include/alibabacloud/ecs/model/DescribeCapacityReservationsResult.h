@@ -49,8 +49,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string endTime;
-					std::string platform;
 					std::string resourceGroupId;
+					std::string platform;
 					std::string privatePoolOptionsName;
 					std::string instanceChargeType;
 					std::string startTime;

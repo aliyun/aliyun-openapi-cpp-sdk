@@ -43,64 +43,64 @@ void DescribeCapacityReservationsResult::parse(const std::string &payload)
 	for (auto valueCapacityReservationSetCapacityReservationItem : allCapacityReservationSetNode)
 	{
 		CapacityReservationItem capacityReservationSetObject;
+		if(!valueCapacityReservationSetCapacityReservationItem["Status"].isNull())
+			capacityReservationSetObject.status = valueCapacityReservationSetCapacityReservationItem["Status"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["TimeSlot"].isNull())
+			capacityReservationSetObject.timeSlot = valueCapacityReservationSetCapacityReservationItem["TimeSlot"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["PrivatePoolOptionsMatchCriteria"].isNull())
+			capacityReservationSetObject.privatePoolOptionsMatchCriteria = valueCapacityReservationSetCapacityReservationItem["PrivatePoolOptionsMatchCriteria"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["PrivatePoolOptionsId"].isNull())
 			capacityReservationSetObject.privatePoolOptionsId = valueCapacityReservationSetCapacityReservationItem["PrivatePoolOptionsId"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["PrivatePoolOptionsName"].isNull())
 			capacityReservationSetObject.privatePoolOptionsName = valueCapacityReservationSetCapacityReservationItem["PrivatePoolOptionsName"].asString();
-		if(!valueCapacityReservationSetCapacityReservationItem["Description"].isNull())
-			capacityReservationSetObject.description = valueCapacityReservationSetCapacityReservationItem["Description"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["RegionId"].isNull())
 			capacityReservationSetObject.regionId = valueCapacityReservationSetCapacityReservationItem["RegionId"].asString();
-		if(!valueCapacityReservationSetCapacityReservationItem["PrivatePoolOptionsMatchCriteria"].isNull())
-			capacityReservationSetObject.privatePoolOptionsMatchCriteria = valueCapacityReservationSetCapacityReservationItem["PrivatePoolOptionsMatchCriteria"].asString();
-		if(!valueCapacityReservationSetCapacityReservationItem["Status"].isNull())
-			capacityReservationSetObject.status = valueCapacityReservationSetCapacityReservationItem["Status"].asString();
-		if(!valueCapacityReservationSetCapacityReservationItem["StartTime"].isNull())
-			capacityReservationSetObject.startTime = valueCapacityReservationSetCapacityReservationItem["StartTime"].asString();
-		if(!valueCapacityReservationSetCapacityReservationItem["EndTime"].isNull())
-			capacityReservationSetObject.endTime = valueCapacityReservationSetCapacityReservationItem["EndTime"].asString();
-		if(!valueCapacityReservationSetCapacityReservationItem["EndTimeType"].isNull())
-			capacityReservationSetObject.endTimeType = valueCapacityReservationSetCapacityReservationItem["EndTimeType"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["InstanceChargeType"].isNull())
 			capacityReservationSetObject.instanceChargeType = valueCapacityReservationSetCapacityReservationItem["InstanceChargeType"].asString();
-		if(!valueCapacityReservationSetCapacityReservationItem["Platform"].isNull())
-			capacityReservationSetObject.platform = valueCapacityReservationSetCapacityReservationItem["Platform"].asString();
-		if(!valueCapacityReservationSetCapacityReservationItem["TimeSlot"].isNull())
-			capacityReservationSetObject.timeSlot = valueCapacityReservationSetCapacityReservationItem["TimeSlot"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["EndTime"].isNull())
+			capacityReservationSetObject.endTime = valueCapacityReservationSetCapacityReservationItem["EndTime"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["StartTime"].isNull())
+			capacityReservationSetObject.startTime = valueCapacityReservationSetCapacityReservationItem["StartTime"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["Description"].isNull())
+			capacityReservationSetObject.description = valueCapacityReservationSetCapacityReservationItem["Description"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["EndTimeType"].isNull())
+			capacityReservationSetObject.endTimeType = valueCapacityReservationSetCapacityReservationItem["EndTimeType"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["ResourceGroupId"].isNull())
 			capacityReservationSetObject.resourceGroupId = valueCapacityReservationSetCapacityReservationItem["ResourceGroupId"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["Platform"].isNull())
+			capacityReservationSetObject.platform = valueCapacityReservationSetCapacityReservationItem["Platform"].asString();
 		auto allAllocatedResourcesNode = valueCapacityReservationSetCapacityReservationItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{
 			CapacityReservationItem::AllocatedResource allocatedResourcesObject;
+			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].isNull())
+				allocatedResourcesObject.usedAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].asString());
+			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["TotalAmount"].isNull())
+				allocatedResourcesObject.totalAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["TotalAmount"].asString());
 			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["zoneId"].isNull())
 				allocatedResourcesObject.zoneId = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["zoneId"].asString();
 			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["InstanceType"].isNull())
 				allocatedResourcesObject.instanceType = valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["InstanceType"].asString();
-			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["TotalAmount"].isNull())
-				allocatedResourcesObject.totalAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["TotalAmount"].asString());
-			if(!valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].isNull())
-				allocatedResourcesObject.usedAmount = std::stoi(valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource["UsedAmount"].asString());
 			capacityReservationSetObject.allocatedResources.push_back(allocatedResourcesObject);
 		}
 		auto allTagsNode = valueCapacityReservationSetCapacityReservationItem["Tags"]["Tag"];
 		for (auto valueCapacityReservationSetCapacityReservationItemTagsTag : allTagsNode)
 		{
 			CapacityReservationItem::Tag tagsObject;
-			if(!valueCapacityReservationSetCapacityReservationItemTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueCapacityReservationSetCapacityReservationItemTagsTag["TagKey"].asString();
 			if(!valueCapacityReservationSetCapacityReservationItemTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueCapacityReservationSetCapacityReservationItemTagsTag["TagValue"].asString();
+			if(!valueCapacityReservationSetCapacityReservationItemTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueCapacityReservationSetCapacityReservationItemTagsTag["TagKey"].asString();
 			capacityReservationSetObject.tags.push_back(tagsObject);
 		}
 		capacityReservationSet_.push_back(capacityReservationSetObject);
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

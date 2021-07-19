@@ -39,12 +39,12 @@ void ImportImageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ImageId"].isNull())
+		imageId_ = value["ImageId"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
-	if(!value["ImageId"].isNull())
-		imageId_ = value["ImageId"].asString();
 
 }
 

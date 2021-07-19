@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					struct Capacity
 					{
-						int availableVgpus;
 						std::string localStorageCategory;
+						int availableVgpus;
 						int totalVgpus;
-						float totalMemory;
 						float availableMemory;
+						float totalMemory;
 						int availableVcpus;
 						int totalVcpus;
 						int availableLocalStorage;
@@ -79,8 +79,8 @@ namespace AlibabaCloud
 					std::string gPUSpec;
 					Capacity capacity;
 					std::string dedicatedHostName;
-					std::string expiredTime;
 					float cpuOverCommitRatio;
+					std::string expiredTime;
 					std::string saleCycle;
 					std::vector<DedicatedHost::Tag> tags;
 					HostDetailInfo hostDetailInfo;
@@ -94,8 +94,8 @@ namespace AlibabaCloud
 					int sockets;
 					std::string chargeType;
 					std::vector<std::string> supportedInstanceTypeFamilies;
-					std::string actionOnMaintenance;
 					std::string creationTime;
+					std::string actionOnMaintenance;
 					std::string regionId;
 					std::vector<std::string> supportedInstanceTypesList;
 					std::string dedicatedHostClusterId;

@@ -186,6 +186,17 @@ void CreateNetworkInterfaceRequest::setResourceOwnerAccount(const std::string& r
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+int CreateNetworkInterfaceRequest::getIpv6AddressCount()const
+{
+	return ipv6AddressCount_;
+}
+
+void CreateNetworkInterfaceRequest::setIpv6AddressCount(int ipv6AddressCount)
+{
+	ipv6AddressCount_ = ipv6AddressCount;
+	setParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
+}
+
 std::string CreateNetworkInterfaceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -276,5 +287,18 @@ void CreateNetworkInterfaceRequest::setPrimaryIpAddress(const std::string& prima
 {
 	primaryIpAddress_ = primaryIpAddress;
 	setParameter("PrimaryIpAddress", primaryIpAddress);
+}
+
+std::vector<std::string> CreateNetworkInterfaceRequest::getIpv6Address()const
+{
+	return ipv6Address_;
+}
+
+void CreateNetworkInterfaceRequest::setIpv6Address(const std::vector<std::string>& ipv6Address)
+{
+	ipv6Address_ = ipv6Address;
+	for(int dep1 = 0; dep1!= ipv6Address.size(); dep1++) {
+		setParameter("Ipv6Address."+ std::to_string(dep1), ipv6Address.at(dep1));
+	}
 }
 
