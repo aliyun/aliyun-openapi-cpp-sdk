@@ -72,9 +72,12 @@ namespace AlibabaCloud
 						std::string selector;
 					};
 					std::vector<AlertTemplate> alertTemplates;
+					std::string hostAvailabilityTemplates;
 					std::string description;
+					std::string systemEventTemplates;
 					std::string restVersion;
 					std::string templateId;
+					std::string processMonitorTemplates;
 					std::string name;
 				};
 

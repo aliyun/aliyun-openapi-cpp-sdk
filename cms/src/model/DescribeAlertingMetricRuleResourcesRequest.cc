@@ -82,3 +82,14 @@ void DescribeAlertingMetricRuleResourcesRequest::setRuleId(const std::string& ru
 	setParameter("RuleId", ruleId);
 }
 
+std::string DescribeAlertingMetricRuleResourcesRequest::getDimensions()const
+{
+	return dimensions_;
+}
+
+void DescribeAlertingMetricRuleResourcesRequest::setDimensions(const std::string& dimensions)
+{
+	dimensions_ = dimensions;
+	setParameter("Dimensions", dimensions);
+}
+

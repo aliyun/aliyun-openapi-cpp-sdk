@@ -27,6 +27,17 @@ DescribeDynamicTagRuleListRequest::DescribeDynamicTagRuleListRequest() :
 DescribeDynamicTagRuleListRequest::~DescribeDynamicTagRuleListRequest()
 {}
 
+std::string DescribeDynamicTagRuleListRequest::getTagValue()const
+{
+	return tagValue_;
+}
+
+void DescribeDynamicTagRuleListRequest::setTagValue(const std::string& tagValue)
+{
+	tagValue_ = tagValue;
+	setParameter("TagValue", tagValue);
+}
+
 std::string DescribeDynamicTagRuleListRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -58,5 +69,16 @@ void DescribeDynamicTagRuleListRequest::setTagKey(const std::string& tagKey)
 {
 	tagKey_ = tagKey;
 	setParameter("TagKey", tagKey);
+}
+
+std::string DescribeDynamicTagRuleListRequest::getTagRegionId()const
+{
+	return tagRegionId_;
+}
+
+void DescribeDynamicTagRuleListRequest::setTagRegionId(const std::string& tagRegionId)
+{
+	tagRegionId_ = tagRegionId;
+	setParameter("TagRegionId", tagRegionId);
 }
 

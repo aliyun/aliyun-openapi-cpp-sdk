@@ -145,6 +145,16 @@ void DescribeSiteMonitorAttributeResult::parse(const std::string &payload)
 		siteMonitors_.optionJson.authentication = std::stoi(optionJsonNode["authentication"].asString());
 	if(!optionJsonNode["traceroute"].isNull())
 		siteMonitors_.optionJson.traceroute = std::stol(optionJsonNode["traceroute"].asString());
+	if(!optionJsonNode["cert_verify"].isNull())
+		siteMonitors_.optionJson.cert_verify = optionJsonNode["cert_verify"].asString() == "true";
+	if(!optionJsonNode["unfollow_redirect"].isNull())
+		siteMonitors_.optionJson.unfollow_redirect = optionJsonNode["unfollow_redirect"].asString() == "true";
+	if(!optionJsonNode["proxy_protocol"].isNull())
+		siteMonitors_.optionJson.proxy_protocol = optionJsonNode["proxy_protocol"].asString() == "true";
+	if(!optionJsonNode["acceptable_response_code"].isNull())
+		siteMonitors_.optionJson.acceptable_response_code = optionJsonNode["acceptable_response_code"].asString();
+	if(!optionJsonNode["ipv6_task"].isNull())
+		siteMonitors_.optionJson.ipv6_task = optionJsonNode["ipv6_task"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

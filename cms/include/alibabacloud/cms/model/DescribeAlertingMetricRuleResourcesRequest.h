@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setPage(int page);
 				std::string getRuleId()const;
 				void setRuleId(const std::string& ruleId);
+				std::string getDimensions()const;
+				void setDimensions(const std::string& dimensions);
 
             private:
 				std::string groupId_;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 				std::string _namespace_;
 				int page_;
 				std::string ruleId_;
+				std::string dimensions_;
 
 			};
 		}

@@ -53,10 +53,14 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getGroupFounderTagKey()const;
+				void setGroupFounderTagKey(const std::string& groupFounderTagKey);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getGroupFounderTagValue()const;
+				void setGroupFounderTagValue(const std::string& groupFounderTagValue);
 				std::string getKeyword()const;
 				void setKeyword(const std::string& keyword);
 				std::string getGroupId()const;
@@ -75,8 +79,10 @@ namespace AlibabaCloud
 				std::string type_;
 				int pageNumber_;
 				std::string resourceGroupId_;
+				std::string groupFounderTagKey_;
 				int pageSize_;
 				std::vector<Tag> tag_;
+				std::string groupFounderTagValue_;
 				std::string keyword_;
 				std::string groupId_;
 				std::string groupName_;

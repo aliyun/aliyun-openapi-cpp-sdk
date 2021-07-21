@@ -93,6 +93,17 @@ void DescribeMonitorGroupsRequest::setResourceGroupId(const std::string& resourc
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string DescribeMonitorGroupsRequest::getGroupFounderTagKey()const
+{
+	return groupFounderTagKey_;
+}
+
+void DescribeMonitorGroupsRequest::setGroupFounderTagKey(const std::string& groupFounderTagKey)
+{
+	groupFounderTagKey_ = groupFounderTagKey;
+	setParameter("GroupFounderTagKey", groupFounderTagKey);
+}
+
 int DescribeMonitorGroupsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -118,6 +129,17 @@ void DescribeMonitorGroupsRequest::setTag(const std::vector<Tag>& tag)
 		setParameter(tagObjStr + ".Value", tagObj.value);
 		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
+}
+
+std::string DescribeMonitorGroupsRequest::getGroupFounderTagValue()const
+{
+	return groupFounderTagValue_;
+}
+
+void DescribeMonitorGroupsRequest::setGroupFounderTagValue(const std::string& groupFounderTagValue)
+{
+	groupFounderTagValue_ = groupFounderTagValue;
+	setParameter("GroupFounderTagValue", groupFounderTagValue);
 }
 
 std::string DescribeMonitorGroupsRequest::getKeyword()const

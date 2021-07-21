@@ -1,3 +1,6 @@
+2021-07-21 Version: 1.36.822
+- Fix the return SDK of describealertloglist API.
+
 2021-07-21 Version: 1.36.821
 - Support HealthCheckMethod for HTTP and HTTPS listener.
 

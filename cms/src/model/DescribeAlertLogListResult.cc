@@ -73,6 +73,12 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 			alertLogListObject.alertTime = valueAlertLogListAlarm["AlertTime"].asString();
 		if(!valueAlertLogListAlarm["Message"].isNull())
 			alertLogListObject.message = valueAlertLogListAlarm["Message"].asString();
+		if(!valueAlertLogListAlarm["BlackListUUID"].isNull())
+			alertLogListObject.blackListUUID = valueAlertLogListAlarm["BlackListUUID"].asString();
+		if(!valueAlertLogListAlarm["BlackListName"].isNull())
+			alertLogListObject.blackListName = valueAlertLogListAlarm["BlackListName"].asString();
+		if(!valueAlertLogListAlarm["BlackListDetail"].isNull())
+			alertLogListObject.blackListDetail = valueAlertLogListAlarm["BlackListDetail"].asString();
 		auto allExtendedInfoNode = valueAlertLogListAlarm["ExtendedInfo"]["ExtInfo"];
 		for (auto valueAlertLogListAlarmExtendedInfoExtInfo : allExtendedInfoNode)
 		{
@@ -93,6 +99,18 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 				dimensionsObject.value = valueAlertLogListAlarmDimensionsDimensionsItem["Value"].asString();
 			alertLogListObject.dimensions.push_back(dimensionsObject);
 		}
+		auto allWebhookListNode = valueAlertLogListAlarm["WebhookList"]["WebhookListItem"];
+		for (auto valueAlertLogListAlarmWebhookListWebhookListItem : allWebhookListNode)
+		{
+			Alarm::WebhookListItem webhookListObject;
+			if(!valueAlertLogListAlarmWebhookListWebhookListItem["url"].isNull())
+				webhookListObject.url = valueAlertLogListAlarmWebhookListWebhookListItem["url"].asString();
+			if(!valueAlertLogListAlarmWebhookListWebhookListItem["code"].isNull())
+				webhookListObject.code = valueAlertLogListAlarmWebhookListWebhookListItem["code"].asString();
+			if(!valueAlertLogListAlarmWebhookListWebhookListItem["message"].isNull())
+				webhookListObject.message = valueAlertLogListAlarmWebhookListWebhookListItem["message"].asString();
+			alertLogListObject.webhookList.push_back(webhookListObject);
+		}
 		auto escalationNode = value["Escalation"];
 		if(!escalationNode["Times"].isNull())
 			alertLogListObject.escalation.times = std::stoi(escalationNode["Times"].asString());
@@ -103,9 +121,6 @@ void DescribeAlertLogListResult::parse(const std::string &payload)
 		auto allContactGroups = value["ContactGroups"]["ContactGroup"];
 		for (auto value : allContactGroups)
 			alertLogListObject.contactGroups.push_back(value.asString());
-		auto allWebhookList = value["WebhookList"]["WebhookList"];
-		for (auto value : allWebhookList)
-			alertLogListObject.webhookList.push_back(value.asString());
 		auto allContactALIIWWList = value["ContactALIIWWList"]["ContactALIIMs"];
 		for (auto value : allContactALIIWWList)
 			alertLogListObject.contactALIIWWList.push_back(value.asString());

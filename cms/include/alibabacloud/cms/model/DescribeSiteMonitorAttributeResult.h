@@ -38,14 +38,19 @@ namespace AlibabaCloud
 					{
 						std::string cookie;
 						int ping_num;
+						std::string ipv6_task;
+						bool proxy_protocol;
+						bool unfollow_redirect;
 						long traceroute;
 						float failure_rate;
 						int port;
 						int match_rule;
+						std::string acceptable_response_code;
 						std::string response_format;
 						std::string expect_value;
 						std::string http_method;
 						long time_out;
+						bool cert_verify;
 						std::string header;
 						std::string response_content;
 						std::string username;

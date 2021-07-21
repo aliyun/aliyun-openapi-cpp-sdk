@@ -35,17 +35,23 @@ namespace AlibabaCloud
 				DescribeDynamicTagRuleListRequest();
 				~DescribeDynamicTagRuleListRequest();
 
+				std::string getTagValue()const;
+				void setTagValue(const std::string& tagValue);
 				std::string getPageNumber()const;
 				void setPageNumber(const std::string& pageNumber);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
 				std::string getTagKey()const;
 				void setTagKey(const std::string& tagKey);
+				std::string getTagRegionId()const;
+				void setTagRegionId(const std::string& tagRegionId);
 
             private:
+				std::string tagValue_;
 				std::string pageNumber_;
 				std::string pageSize_;
 				std::string tagKey_;
+				std::string tagRegionId_;
 
 			};
 		}

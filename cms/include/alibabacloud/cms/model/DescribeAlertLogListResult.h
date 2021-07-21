@@ -50,6 +50,12 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					struct WebhookListItem
+					{
+						std::string message;
+						std::string code;
+						std::string url;
+					};
 					std::string groupName;
 					std::vector<std::string> contactALIIWWList;
 					std::string message;
@@ -63,8 +69,10 @@ namespace AlibabaCloud
 					std::vector<std::string> contactGroups;
 					std::vector<std::string> dingdingWebhookList;
 					std::string instanceId;
+					std::string blackListName;
 					std::vector<Alarm::DimensionsItem> dimensions;
 					std::string levelChange;
+					std::string blackListUUID;
 					std::vector<std::string> contactOnCallList;
 					std::string _namespace;
 					std::vector<std::string> contactDingList;
@@ -73,7 +81,8 @@ namespace AlibabaCloud
 					std::string alertTime;
 					std::string groupId;
 					std::string instanceName;
-					std::vector<std::string> webhookList;
+					std::vector<Alarm::WebhookListItem> webhookList;
+					std::string blackListDetail;
 					std::vector<std::string> contactMailList;
 					std::string level;
 				};

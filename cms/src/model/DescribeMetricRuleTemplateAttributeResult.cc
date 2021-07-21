@@ -48,6 +48,12 @@ void DescribeMetricRuleTemplateAttributeResult::parse(const std::string &payload
 		resource_.restVersion = resourceNode["RestVersion"].asString();
 	if(!resourceNode["Description"].isNull())
 		resource_.description = resourceNode["Description"].asString();
+	if(!resourceNode["SystemEventTemplates"].isNull())
+		resource_.systemEventTemplates = resourceNode["SystemEventTemplates"].asString();
+	if(!resourceNode["ProcessMonitorTemplates"].isNull())
+		resource_.processMonitorTemplates = resourceNode["ProcessMonitorTemplates"].asString();
+	if(!resourceNode["HostAvailabilityTemplates"].isNull())
+		resource_.hostAvailabilityTemplates = resourceNode["HostAvailabilityTemplates"].asString();
 	auto allAlertTemplatesNode = resourceNode["AlertTemplates"]["AlertTemplate"];
 	for (auto resourceNodeAlertTemplatesAlertTemplate : allAlertTemplatesNode)
 	{
