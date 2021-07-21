@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					};
 					std::string address;
 					std::string resourceGroupId;
+					std::string specType;
 					std::string addressIPVersion;
 					std::string loadBalancerId;
 					std::string businessStatus;
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 					std::string networkType;
 					int bandwidth;
 					std::string modificationProtectionReason;
+					bool specBpsFlag;
 					std::vector<LoadBalancer::Tag> tags;
 					std::string masterZoneId;
 					std::string vSwitchId;

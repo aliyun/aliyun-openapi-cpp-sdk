@@ -71,6 +71,17 @@ void CreateLoadBalancerRequest::setResourceGroupId(const std::string& resourceGr
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string CreateLoadBalancerRequest::getSpecType()const
+{
+	return specType_;
+}
+
+void CreateLoadBalancerRequest::setSpecType(const std::string& specType)
+{
+	specType_ = specType;
+	setParameter("SpecType", specType);
+}
+
 std::string CreateLoadBalancerRequest::getLoadBalancerName()const
 {
 	return loadBalancerName_;

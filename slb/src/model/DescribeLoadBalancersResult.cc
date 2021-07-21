@@ -93,6 +93,10 @@ void DescribeLoadBalancersResult::parse(const std::string &payload)
 			loadBalancersObject.loadBalancerSpec = valueLoadBalancersLoadBalancer["LoadBalancerSpec"].asString();
 		if(!valueLoadBalancersLoadBalancer["DeleteProtection"].isNull())
 			loadBalancersObject.deleteProtection = valueLoadBalancersLoadBalancer["DeleteProtection"].asString();
+		if(!valueLoadBalancersLoadBalancer["SpecBpsFlag"].isNull())
+			loadBalancersObject.specBpsFlag = valueLoadBalancersLoadBalancer["SpecBpsFlag"].asString() == "true";
+		if(!valueLoadBalancersLoadBalancer["SpecType"].isNull())
+			loadBalancersObject.specType = valueLoadBalancersLoadBalancer["SpecType"].asString();
 		auto allTagsNode = valueLoadBalancersLoadBalancer["Tags"]["Tag"];
 		for (auto valueLoadBalancersLoadBalancerTagsTag : allTagsNode)
 		{

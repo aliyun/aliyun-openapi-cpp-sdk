@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setMasterZoneId(const std::string& masterZoneId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getSpecType()const;
+				void setSpecType(const std::string& specType);
 				std::string getLoadBalancerName()const;
 				void setLoadBalancerName(const std::string& loadBalancerName);
 				std::string getSlaveZoneId()const;
@@ -103,6 +105,7 @@ namespace AlibabaCloud
 				std::string addressIPVersion_;
 				std::string masterZoneId_;
 				std::string resourceGroupId_;
+				std::string specType_;
 				std::string loadBalancerName_;
 				std::string slaveZoneId_;
 				std::string loadBalancerSpec_;

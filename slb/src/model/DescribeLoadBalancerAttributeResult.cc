@@ -175,17 +175,11 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 		modificationProtectionStatus_ = value["ModificationProtectionStatus"].asString();
 	if(!value["ModificationProtectionReason"].isNull())
 		modificationProtectionReason_ = value["ModificationProtectionReason"].asString();
+	if(!value["SpecBpsFlag"].isNull())
+		specBpsFlag_ = value["SpecBpsFlag"].asString() == "true";
+	if(!value["SpecType"].isNull())
+		specType_ = value["SpecType"].asString();
 
-}
-
-int DescribeLoadBalancerAttributeResult::getRenewalDuration()const
-{
-	return renewalDuration_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getAssociatedCenStatus()const
-{
-	return associatedCenStatus_;
 }
 
 std::vector<DescribeLoadBalancerAttributeResult::ListenerPortAndProtocal> DescribeLoadBalancerAttributeResult::getListenerPortsAndProtocal()const
@@ -201,6 +195,116 @@ std::string DescribeLoadBalancerAttributeResult::getResourceGroupId()const
 std::string DescribeLoadBalancerAttributeResult::getAddress()const
 {
 	return address_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getSpecType()const
+{
+	return specType_;
+}
+
+std::vector<DescribeLoadBalancerAttributeResult::BackendServer> DescribeLoadBalancerAttributeResult::getBackendServers()const
+{
+	return backendServers_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getHasReservedInfo()const
+{
+	return hasReservedInfo_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getBusinessStatus()const
+{
+	return businessStatus_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getLoadBalancerSpec()const
+{
+	return loadBalancerSpec_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getModificationProtectionReason()const
+{
+	return modificationProtectionReason_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getAssociatedCenId()const
+{
+	return associatedCenId_;
+}
+
+std::vector<std::string> DescribeLoadBalancerAttributeResult::getListenerPorts()const
+{
+	return listenerPorts_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getCloudInstanceType()const
+{
+	return cloudInstanceType_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getRenewalStatus()const
+{
+	return renewalStatus_;
+}
+
+std::vector<std::string> DescribeLoadBalancerAttributeResult::getLabels()const
+{
+	return labels_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getPayType()const
+{
+	return payType_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getInternetChargeType()const
+{
+	return internetChargeType_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getReservedInfoInternetChargeType()const
+{
+	return reservedInfoInternetChargeType_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getVpcId()const
+{
+	return vpcId_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getDeleteProtection()const
+{
+	return deleteProtection_;
+}
+
+long DescribeLoadBalancerAttributeResult::getEndTimeStamp()const
+{
+	return endTimeStamp_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getLoadBalancerStatus()const
+{
+	return loadBalancerStatus_;
+}
+
+long DescribeLoadBalancerAttributeResult::getAutoReleaseTime()const
+{
+	return autoReleaseTime_;
+}
+
+int DescribeLoadBalancerAttributeResult::getRenewalDuration()const
+{
+	return renewalDuration_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getAssociatedCenStatus()const
+{
+	return associatedCenStatus_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getEndTime()const
@@ -228,21 +332,6 @@ std::string DescribeLoadBalancerAttributeResult::getLoadBalancerId()const
 	return loadBalancerId_;
 }
 
-std::vector<DescribeLoadBalancerAttributeResult::BackendServer> DescribeLoadBalancerAttributeResult::getBackendServers()const
-{
-	return backendServers_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getHasReservedInfo()const
-{
-	return hasReservedInfo_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getBusinessStatus()const
-{
-	return businessStatus_;
-}
-
 std::string DescribeLoadBalancerAttributeResult::getReservedInfoBandwidth()const
 {
 	return reservedInfoBandwidth_;
@@ -251,11 +340,6 @@ std::string DescribeLoadBalancerAttributeResult::getReservedInfoBandwidth()const
 std::string DescribeLoadBalancerAttributeResult::getModificationProtectionStatus()const
 {
 	return modificationProtectionStatus_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getLoadBalancerSpec()const
-{
-	return loadBalancerSpec_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getNetworkType()const
@@ -268,19 +352,9 @@ int DescribeLoadBalancerAttributeResult::getBandwidth()const
 	return bandwidth_;
 }
 
-std::string DescribeLoadBalancerAttributeResult::getModificationProtectionReason()const
+bool DescribeLoadBalancerAttributeResult::getSpecBpsFlag()const
 {
-	return modificationProtectionReason_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getAssociatedCenId()const
-{
-	return associatedCenId_;
-}
-
-std::vector<std::string> DescribeLoadBalancerAttributeResult::getListenerPorts()const
-{
-	return listenerPorts_;
+	return specBpsFlag_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getMasterZoneId()const
@@ -298,24 +372,9 @@ std::string DescribeLoadBalancerAttributeResult::getCloudType()const
 	return cloudType_;
 }
 
-std::string DescribeLoadBalancerAttributeResult::getCloudInstanceType()const
-{
-	return cloudInstanceType_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
 std::string DescribeLoadBalancerAttributeResult::getCreateTime()const
 {
 	return createTime_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getRenewalStatus()const
-{
-	return renewalStatus_;
 }
 
 long DescribeLoadBalancerAttributeResult::getCloudInstanceUid()const
@@ -323,19 +382,9 @@ long DescribeLoadBalancerAttributeResult::getCloudInstanceUid()const
 	return cloudInstanceUid_;
 }
 
-std::vector<std::string> DescribeLoadBalancerAttributeResult::getLabels()const
-{
-	return labels_;
-}
-
 std::string DescribeLoadBalancerAttributeResult::getRenewalCycUnit()const
 {
 	return renewalCycUnit_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getPayType()const
-{
-	return payType_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getReservedInfoActiveTime()const
@@ -353,39 +402,14 @@ std::string DescribeLoadBalancerAttributeResult::getSlaveZoneId()const
 	return slaveZoneId_;
 }
 
-std::string DescribeLoadBalancerAttributeResult::getInternetChargeType()const
-{
-	return internetChargeType_;
-}
-
 std::string DescribeLoadBalancerAttributeResult::getRegionIdAlias()const
 {
 	return regionIdAlias_;
 }
 
-std::string DescribeLoadBalancerAttributeResult::getReservedInfoInternetChargeType()const
-{
-	return reservedInfoInternetChargeType_;
-}
-
 std::string DescribeLoadBalancerAttributeResult::getLoadBalancerName()const
 {
 	return loadBalancerName_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getVpcId()const
-{
-	return vpcId_;
-}
-
-std::string DescribeLoadBalancerAttributeResult::getDeleteProtection()const
-{
-	return deleteProtection_;
-}
-
-long DescribeLoadBalancerAttributeResult::getEndTimeStamp()const
-{
-	return endTimeStamp_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getRegionId()const
@@ -403,18 +427,8 @@ std::string DescribeLoadBalancerAttributeResult::getAddressType()const
 	return addressType_;
 }
 
-std::string DescribeLoadBalancerAttributeResult::getLoadBalancerStatus()const
-{
-	return loadBalancerStatus_;
-}
-
 long DescribeLoadBalancerAttributeResult::getCreateTimeStamp()const
 {
 	return createTimeStamp_;
-}
-
-long DescribeLoadBalancerAttributeResult::getAutoReleaseTime()const
-{
-	return autoReleaseTime_;
 }
 
