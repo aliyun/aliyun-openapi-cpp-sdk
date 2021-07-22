@@ -1,3 +1,9 @@
+2021-07-22 Version: 1.36.825
+- Add private-link support.
+- Add download dicts.
+- Add whiteIpGroup support.
+- Add recovery infos support.
+
 2021-07-21 Version: 1.36.824
 - Create Lindorm Open api.
 

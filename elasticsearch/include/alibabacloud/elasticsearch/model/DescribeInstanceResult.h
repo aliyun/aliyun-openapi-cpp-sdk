@@ -43,8 +43,15 @@ namespace AlibabaCloud
 					};
 					struct NetworkConfig
 					{
+						struct WhiteIpGroupListItem
+						{
+							std::string groupName;
+							std::string whiteIpType;
+							std::vector<std::string> ips;
+						};
 						std::string type;
 						std::string vpcId;
+						std::vector<WhiteIpGroupListItem> whiteIpGroupList;
 						std::string vswitchId;
 						std::string vsArea;
 					};
@@ -119,7 +126,6 @@ namespace AlibabaCloud
 						std::string tagValue;
 					};
 					MasterConfiguration masterConfiguration;
-					std::string description;
 					std::string resourceGroupId;
 					ElasticDataNodeConfiguration elasticDataNodeConfiguration;
 					bool dedicateMaster;
@@ -128,17 +134,31 @@ namespace AlibabaCloud
 					std::string createdAt;
 					int port;
 					std::vector<std::string> kibanaPrivateIPWhitelist;
-					bool enablePublic;
 					KibanaConfiguration kibanaConfiguration;
-					bool advancedDedicateMaster;
-					std::string paymentType;
-					std::string protocol;
+					bool serviceVpc;
+					std::string postpaidServiceStatus;
 					bool haveKibana;
 					std::string status;
 					std::vector<std::string> extendConfigs;
+					std::string instanceId;
+					bool isNewDeployment;
+					bool enableKibanaPrivateNetwork;
+					std::vector<DictListItem> dictList;
+					std::string kibanaDomain;
+					std::vector<Tag> tags;
+					NodeSpec nodeSpec;
+					bool warmNode;
+					WarmNodeConfiguration warmNodeConfiguration;
+					std::string domain;
+					bool haveClientNode;
+					ClientNodeConfiguration clientNodeConfiguration;
+					std::string description;
+					bool enablePublic;
+					bool advancedDedicateMaster;
+					std::string paymentType;
+					std::string protocol;
 					std::vector<std::string> publicIpWhitelist;
 					std::vector<Dict> aliwsDicts;
-					std::string instanceId;
 					int kibanaPort;
 					bool enableKibanaPublicNetwork;
 					NetworkConfig networkConfig;
@@ -146,24 +166,14 @@ namespace AlibabaCloud
 					int nodeAmount;
 					std::string esVersion;
 					std::string updatedAt;
-					bool enableKibanaPrivateNetwork;
-					std::vector<DictListItem> dictList;
-					std::string kibanaDomain;
-					std::vector<Tag> tags;
 					std::string publicDomain;
 					std::string esConfig;
 					std::vector<std::string> esIPWhitelist;
 					std::vector<std::string> kibanaIPWhitelist;
-					NodeSpec nodeSpec;
-					bool warmNode;
 					std::vector<std::string> privateNetworkIpWhiteList;
 					std::string vpcInstanceId;
-					WarmNodeConfiguration warmNodeConfiguration;
 					std::vector<SynonymsDictsItem> synonymsDicts;
-					std::string domain;
-					bool haveClientNode;
 					int publicPort;
-					ClientNodeConfiguration clientNodeConfiguration;
 					int zoneCount;
 				};
 

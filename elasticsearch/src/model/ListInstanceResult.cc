@@ -67,6 +67,10 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.updatedAt = valueResultInstance["updatedAt"].asString();
 		if(!valueResultInstance["postpaidServiceStatus"].isNull())
 			resultObject.postpaidServiceStatus = valueResultInstance["postpaidServiceStatus"].asString();
+		if(!valueResultInstance["isNewDeployment"].isNull())
+			resultObject.isNewDeployment = valueResultInstance["isNewDeployment"].asString();
+		if(!valueResultInstance["serviceVpc"].isNull())
+			resultObject.serviceVpc = valueResultInstance["serviceVpc"].asString() == "true";
 		auto alltagsNode = valueResultInstance["tags"]["Tag"];
 		for (auto valueResultInstancetagsTag : alltagsNode)
 		{

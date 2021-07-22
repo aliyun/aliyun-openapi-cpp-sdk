@@ -94,6 +94,12 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.resourceGroupId = resultNode["resourceGroupId"].asString();
 	if(!resultNode["enableKibanaPrivateNetwork"].isNull())
 		result_.enableKibanaPrivateNetwork = resultNode["enableKibanaPrivateNetwork"].asString() == "true";
+	if(!resultNode["isNewDeployment"].isNull())
+		result_.isNewDeployment = resultNode["isNewDeployment"].asString() == "true";
+	if(!resultNode["postpaidServiceStatus"].isNull())
+		result_.postpaidServiceStatus = resultNode["postpaidServiceStatus"].asString();
+	if(!resultNode["serviceVpc"].isNull())
+		result_.serviceVpc = resultNode["serviceVpc"].asString() == "true";
 	auto alldictListNode = resultNode["dictList"]["DictListItem"];
 	for (auto resultNodedictListDictListItem : alldictListNode)
 	{
@@ -174,6 +180,19 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
 	if(!networkConfigNode["vsArea"].isNull())
 		result_.networkConfig.vsArea = networkConfigNode["vsArea"].asString();
+	auto allwhiteIpGroupListNode = networkConfigNode["whiteIpGroupList"]["whiteIpGroupListItem"];
+	for (auto networkConfigNodewhiteIpGroupListwhiteIpGroupListItem : allwhiteIpGroupListNode)
+	{
+		Result::NetworkConfig::WhiteIpGroupListItem whiteIpGroupListItemObject;
+		if(!networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["groupName"].isNull())
+			whiteIpGroupListItemObject.groupName = networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["groupName"].asString();
+		if(!networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["whiteIpType"].isNull())
+			whiteIpGroupListItemObject.whiteIpType = networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["whiteIpType"].asString();
+		auto allIps = value["ips"]["ips"];
+		for (auto value : allIps)
+			whiteIpGroupListItemObject.ips.push_back(value.asString());
+		result_.networkConfig.whiteIpGroupList.push_back(whiteIpGroupListItemObject);
+	}
 	auto kibanaConfigurationNode = resultNode["kibanaConfiguration"];
 	if(!kibanaConfigurationNode["spec"].isNull())
 		result_.kibanaConfiguration.spec = kibanaConfigurationNode["spec"].asString();

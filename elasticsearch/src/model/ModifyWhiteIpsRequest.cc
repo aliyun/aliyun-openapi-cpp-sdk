@@ -28,6 +28,17 @@ ModifyWhiteIpsRequest::ModifyWhiteIpsRequest() :
 ModifyWhiteIpsRequest::~ModifyWhiteIpsRequest()
 {}
 
+std::string ModifyWhiteIpsRequest::getModifyMode()const
+{
+	return modifyMode_;
+}
+
+void ModifyWhiteIpsRequest::setModifyMode(const std::string& modifyMode)
+{
+	modifyMode_ = modifyMode;
+	setBodyParameter("ModifyMode", modifyMode);
+}
+
 std::string ModifyWhiteIpsRequest::getInstanceId()const
 {
 	return instanceId_;

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyWhiteIpsRequest();
 				~ModifyWhiteIpsRequest();
 
+				std::string getModifyMode()const;
+				void setModifyMode(const std::string& modifyMode);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getNodeType()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setNetworkType(const std::string& networkType);
 
             private:
+				std::string modifyMode_;
 				std::string instanceId_;
 				std::string nodeType_;
 				std::string clientToken_;

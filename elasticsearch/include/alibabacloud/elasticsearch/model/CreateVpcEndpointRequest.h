@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEVPCENDPOINTREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEVPCENDPOINTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListInstanceIndicesRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateVpcEndpointRequest : public RoaServiceRequest
 			{
 
 			public:
-				ListInstanceIndicesRequest();
-				~ListInstanceIndicesRequest();
+				CreateVpcEndpointRequest();
+				~CreateVpcEndpointRequest();
 
-				bool getAll()const;
-				void setAll(bool all);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				bool getIsManaged()const;
-				void setIsManaged(bool isManaged);
-				std::string getName()const;
-				void setName(const std::string& name);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 
             private:
-				bool all_;
 				std::string instanceId_;
-				bool isManaged_;
-				std::string name_;
+				bool dryRun_;
+				std::string clientToken_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTINSTANCEINDICESREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEVPCENDPOINTREQUEST_H_

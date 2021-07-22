@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTDICTSRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTDICTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateKibanaWhiteIpsResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListDictsResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct Headers
 				{
-					std::vector<std::string> kibanaIPWhitelist;
-					std::vector<std::string> kibanaPrivateIPWhitelist;
+					int xTotalCount;
+				};
+				struct ResultItem
+				{
+					std::string type;
+					std::string sourceType;
+					std::string name;
+					long fileSize;
+					std::string downloadUrl;
 				};
 
 
-				UpdateKibanaWhiteIpsResult();
-				explicit UpdateKibanaWhiteIpsResult(const std::string &payload);
-				~UpdateKibanaWhiteIpsResult();
-				Result getResult()const;
+				ListDictsResult();
+				explicit ListDictsResult(const std::string &payload);
+				~ListDictsResult();
+				Headers getHeaders()const;
+				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
+				Headers headers_;
+				std::vector<ResultItem> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTDICTSRESULT_H_

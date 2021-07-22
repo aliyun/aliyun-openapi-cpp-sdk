@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				UpdatePublicWhiteIpsRequest();
 				~UpdatePublicWhiteIpsRequest();
 
+				std::string getModifyMode()const;
+				void setModifyMode(const std::string& modifyMode);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 
             private:
+				std::string modifyMode_;
 				std::string instanceId_;
 				std::string clientToken_;
 

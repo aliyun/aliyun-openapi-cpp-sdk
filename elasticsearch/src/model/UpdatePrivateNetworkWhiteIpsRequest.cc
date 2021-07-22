@@ -28,6 +28,17 @@ UpdatePrivateNetworkWhiteIpsRequest::UpdatePrivateNetworkWhiteIpsRequest() :
 UpdatePrivateNetworkWhiteIpsRequest::~UpdatePrivateNetworkWhiteIpsRequest()
 {}
 
+std::string UpdatePrivateNetworkWhiteIpsRequest::getModifyMode()const
+{
+	return modifyMode_;
+}
+
+void UpdatePrivateNetworkWhiteIpsRequest::setModifyMode(const std::string& modifyMode)
+{
+	modifyMode_ = modifyMode;
+	setParameter("ModifyMode", modifyMode);
+}
+
 std::string UpdatePrivateNetworkWhiteIpsRequest::getInstanceId()const
 {
 	return instanceId_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEVPCENDPOINTRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEVPCENDPOINTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,19 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateKibanaWhiteIpsResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT CreateVpcEndpointResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					std::vector<std::string> kibanaIPWhitelist;
-					std::vector<std::string> kibanaPrivateIPWhitelist;
+					std::string endpointName;
+					std::string endpointDomain;
+					std::string endpointId;
+					std::string serviceId;
 				};
 
 
-				UpdateKibanaWhiteIpsResult();
-				explicit UpdateKibanaWhiteIpsResult(const std::string &payload);
-				~UpdateKibanaWhiteIpsResult();
+				CreateVpcEndpointResult();
+				explicit CreateVpcEndpointResult(const std::string &payload);
+				~CreateVpcEndpointResult();
 				Result getResult()const;
 
 			protected:
@@ -53,4 +55,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_CREATEVPCENDPOINTRESULT_H_

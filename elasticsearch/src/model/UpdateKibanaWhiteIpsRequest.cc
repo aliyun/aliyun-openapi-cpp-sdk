@@ -28,6 +28,17 @@ UpdateKibanaWhiteIpsRequest::UpdateKibanaWhiteIpsRequest() :
 UpdateKibanaWhiteIpsRequest::~UpdateKibanaWhiteIpsRequest()
 {}
 
+std::string UpdateKibanaWhiteIpsRequest::getModifyMode()const
+{
+	return modifyMode_;
+}
+
+void UpdateKibanaWhiteIpsRequest::setModifyMode(const std::string& modifyMode)
+{
+	modifyMode_ = modifyMode;
+	setParameter("ModifyMode", modifyMode);
+}
+
 std::string UpdateKibanaWhiteIpsRequest::getInstanceId()const
 {
 	return instanceId_;

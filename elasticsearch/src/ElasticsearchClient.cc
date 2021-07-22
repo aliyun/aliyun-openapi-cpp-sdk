@@ -699,6 +699,42 @@ ElasticsearchClient::CreateSnapshotOutcomeCallable ElasticsearchClient::createSn
 	return task->get_future();
 }
 
+ElasticsearchClient::CreateVpcEndpointOutcome ElasticsearchClient::createVpcEndpoint(const CreateVpcEndpointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVpcEndpointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVpcEndpointOutcome(CreateVpcEndpointResult(outcome.result()));
+	else
+		return CreateVpcEndpointOutcome(outcome.error());
+}
+
+void ElasticsearchClient::createVpcEndpointAsync(const CreateVpcEndpointRequest& request, const CreateVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVpcEndpoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CreateVpcEndpointOutcomeCallable ElasticsearchClient::createVpcEndpointCallable(const CreateVpcEndpointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVpcEndpointOutcome()>>(
+			[this, request]()
+			{
+			return this->createVpcEndpoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::DeactivateZonesOutcome ElasticsearchClient::deactivateZones(const DeactivateZonesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1125,42 @@ ElasticsearchClient::DeleteSnapshotRepoOutcomeCallable ElasticsearchClient::dele
 			[this, request]()
 			{
 			return this->deleteSnapshotRepo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DeleteVpcEndpointOutcome ElasticsearchClient::deleteVpcEndpoint(const DeleteVpcEndpointRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVpcEndpointOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVpcEndpointOutcome(DeleteVpcEndpointResult(outcome.result()));
+	else
+		return DeleteVpcEndpointOutcome(outcome.error());
+}
+
+void ElasticsearchClient::deleteVpcEndpointAsync(const DeleteVpcEndpointRequest& request, const DeleteVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVpcEndpoint(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DeleteVpcEndpointOutcomeCallable ElasticsearchClient::deleteVpcEndpointCallable(const DeleteVpcEndpointRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVpcEndpointOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVpcEndpoint(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2895,6 +2967,42 @@ ElasticsearchClient::ListDictInformationOutcomeCallable ElasticsearchClient::lis
 	return task->get_future();
 }
 
+ElasticsearchClient::ListDictsOutcome ElasticsearchClient::listDicts(const ListDictsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDictsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDictsOutcome(ListDictsResult(outcome.result()));
+	else
+		return ListDictsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listDictsAsync(const ListDictsRequest& request, const ListDictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDicts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListDictsOutcomeCallable ElasticsearchClient::listDictsCallable(const ListDictsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDictsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDicts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ListEcsInstancesOutcome ElasticsearchClient::listEcsInstances(const ListEcsInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3435,6 +3543,42 @@ ElasticsearchClient::ListSearchLogOutcomeCallable ElasticsearchClient::listSearc
 	return task->get_future();
 }
 
+ElasticsearchClient::ListShardRecoveriesOutcome ElasticsearchClient::listShardRecoveries(const ListShardRecoveriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListShardRecoveriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListShardRecoveriesOutcome(ListShardRecoveriesResult(outcome.result()));
+	else
+		return ListShardRecoveriesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listShardRecoveriesAsync(const ListShardRecoveriesRequest& request, const ListShardRecoveriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listShardRecoveries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListShardRecoveriesOutcomeCallable ElasticsearchClient::listShardRecoveriesCallable(const ListShardRecoveriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListShardRecoveriesOutcome()>>(
+			[this, request]()
+			{
+			return this->listShardRecoveries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ListSnapshotReposByInstanceIdOutcome ElasticsearchClient::listSnapshotReposByInstanceId(const ListSnapshotReposByInstanceIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3537,6 +3681,42 @@ ElasticsearchClient::ListTagsOutcomeCallable ElasticsearchClient::listTagsCallab
 			[this, request]()
 			{
 			return this->listTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListVpcEndpointsOutcome ElasticsearchClient::listVpcEndpoints(const ListVpcEndpointsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListVpcEndpointsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListVpcEndpointsOutcome(ListVpcEndpointsResult(outcome.result()));
+	else
+		return ListVpcEndpointsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listVpcEndpointsAsync(const ListVpcEndpointsRequest& request, const ListVpcEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listVpcEndpoints(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListVpcEndpointsOutcomeCallable ElasticsearchClient::listVpcEndpointsCallable(const ListVpcEndpointsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListVpcEndpointsOutcome()>>(
+			[this, request]()
+			{
+			return this->listVpcEndpoints(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

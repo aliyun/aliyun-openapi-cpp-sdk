@@ -14,42 +14,37 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/UpdateKibanaWhiteIpsResult.h>
+#include <alibabacloud/elasticsearch/model/DeleteVpcEndpointResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Elasticsearch;
 using namespace AlibabaCloud::Elasticsearch::Model;
 
-UpdateKibanaWhiteIpsResult::UpdateKibanaWhiteIpsResult() :
+DeleteVpcEndpointResult::DeleteVpcEndpointResult() :
 	ServiceResult()
 {}
 
-UpdateKibanaWhiteIpsResult::UpdateKibanaWhiteIpsResult(const std::string &payload) :
+DeleteVpcEndpointResult::DeleteVpcEndpointResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UpdateKibanaWhiteIpsResult::~UpdateKibanaWhiteIpsResult()
+DeleteVpcEndpointResult::~DeleteVpcEndpointResult()
 {}
 
-void UpdateKibanaWhiteIpsResult::parse(const std::string &payload)
+void DeleteVpcEndpointResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-		auto allKibanaIPWhitelist = resultNode["kibanaIPWhitelist"]["kibanaIPWhitelist"];
-		for (auto value : allKibanaIPWhitelist)
-			result_.kibanaIPWhitelist.push_back(value.asString());
-		auto allKibanaPrivateIPWhitelist = resultNode["kibanaPrivateIPWhitelist"]["kibanaPrivateIPWhitelist"];
-		for (auto value : allKibanaPrivateIPWhitelist)
-			result_.kibanaPrivateIPWhitelist.push_back(value.asString());
+	if(!value["Result"].isNull())
+		result_ = value["Result"].asString() == "true";
 
 }
 
-UpdateKibanaWhiteIpsResult::Result UpdateKibanaWhiteIpsResult::getResult()const
+bool DeleteVpcEndpointResult::getResult()const
 {
 	return result_;
 }

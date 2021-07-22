@@ -14,50 +14,50 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/UpdateWhiteIpsRequest.h>
+#include <alibabacloud/elasticsearch/model/DeleteVpcEndpointRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::UpdateWhiteIpsRequest;
+using AlibabaCloud::Elasticsearch::Model::DeleteVpcEndpointRequest;
 
-UpdateWhiteIpsRequest::UpdateWhiteIpsRequest() :
+DeleteVpcEndpointRequest::DeleteVpcEndpointRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/instances/[InstanceId]/white-ips");
-	setMethod(HttpRequest::Method::Post);
+	setResourcePath("/openapi/instances/[InstanceId]/vpc-endpoints/[EndpointId]");
+	setMethod(HttpRequest::Method::Delete);
 }
 
-UpdateWhiteIpsRequest::~UpdateWhiteIpsRequest()
+DeleteVpcEndpointRequest::~DeleteVpcEndpointRequest()
 {}
 
-std::string UpdateWhiteIpsRequest::getModifyMode()const
-{
-	return modifyMode_;
-}
-
-void UpdateWhiteIpsRequest::setModifyMode(const std::string& modifyMode)
-{
-	modifyMode_ = modifyMode;
-	setParameter("ModifyMode", modifyMode);
-}
-
-std::string UpdateWhiteIpsRequest::getInstanceId()const
+std::string DeleteVpcEndpointRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void UpdateWhiteIpsRequest::setInstanceId(const std::string& instanceId)
+void DeleteVpcEndpointRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
 }
 
-std::string UpdateWhiteIpsRequest::getClientToken()const
+std::string DeleteVpcEndpointRequest::getClientToken()const
 {
 	return clientToken_;
 }
 
-void UpdateWhiteIpsRequest::setClientToken(const std::string& clientToken)
+void DeleteVpcEndpointRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
+}
+
+std::string DeleteVpcEndpointRequest::getEndpointId()const
+{
+	return endpointId_;
+}
+
+void DeleteVpcEndpointRequest::setEndpointId(const std::string& endpointId)
+{
+	endpointId_ = endpointId;
+	setParameter("EndpointId", endpointId);
 }
 

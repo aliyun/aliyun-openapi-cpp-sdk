@@ -96,6 +96,7 @@ namespace AlibabaCloud
 					bool dedicateMaster;
 					std::string createdAt;
 					NetworkConfig networkConfig;
+					std::string isNewDeployment;
 					std::string esVersion;
 					int nodeAmount;
 					std::string updatedAt;
@@ -103,6 +104,7 @@ namespace AlibabaCloud
 					KibanaConfiguration kibanaConfiguration;
 					bool advancedDedicateMaster;
 					NodeSpec nodeSpec;
+					bool serviceVpc;
 					std::string paymentType;
 					std::string postpaidServiceStatus;
 					ClientNodeConfiguration clientNodeConfiguration;

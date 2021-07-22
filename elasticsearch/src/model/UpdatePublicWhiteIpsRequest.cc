@@ -28,6 +28,17 @@ UpdatePublicWhiteIpsRequest::UpdatePublicWhiteIpsRequest() :
 UpdatePublicWhiteIpsRequest::~UpdatePublicWhiteIpsRequest()
 {}
 
+std::string UpdatePublicWhiteIpsRequest::getModifyMode()const
+{
+	return modifyMode_;
+}
+
+void UpdatePublicWhiteIpsRequest::setModifyMode(const std::string& modifyMode)
+{
+	modifyMode_ = modifyMode;
+	setParameter("ModifyMode", modifyMode);
+}
+
 std::string UpdatePublicWhiteIpsRequest::getInstanceId()const
 {
 	return instanceId_;

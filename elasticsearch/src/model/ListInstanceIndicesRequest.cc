@@ -28,6 +28,17 @@ ListInstanceIndicesRequest::ListInstanceIndicesRequest() :
 ListInstanceIndicesRequest::~ListInstanceIndicesRequest()
 {}
 
+bool ListInstanceIndicesRequest::getAll()const
+{
+	return all_;
+}
+
+void ListInstanceIndicesRequest::setAll(bool all)
+{
+	all_ = all;
+	setParameter("All", all ? "true" : "false");
+}
+
 std::string ListInstanceIndicesRequest::getInstanceId()const
 {
 	return instanceId_;
@@ -59,16 +70,5 @@ void ListInstanceIndicesRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
-}
-
-std::string ListInstanceIndicesRequest::getLang()const
-{
-	return lang_;
-}
-
-void ListInstanceIndicesRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
 }
 

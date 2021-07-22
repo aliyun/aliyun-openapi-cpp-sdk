@@ -58,6 +58,8 @@
 #include "model/CreatePipelinesResult.h"
 #include "model/CreateSnapshotRequest.h"
 #include "model/CreateSnapshotResult.h"
+#include "model/CreateVpcEndpointRequest.h"
+#include "model/CreateVpcEndpointResult.h"
 #include "model/DeactivateZonesRequest.h"
 #include "model/DeactivateZonesResult.h"
 #include "model/DeleteCollectorRequest.h"
@@ -80,6 +82,8 @@
 #include "model/DeletePipelinesResult.h"
 #include "model/DeleteSnapshotRepoRequest.h"
 #include "model/DeleteSnapshotRepoResult.h"
+#include "model/DeleteVpcEndpointRequest.h"
+#include "model/DeleteVpcEndpointResult.h"
 #include "model/DescribeAckOperatorRequest.h"
 #include "model/DescribeAckOperatorResult.h"
 #include "model/DescribeCollectorRequest.h"
@@ -180,6 +184,8 @@
 #include "model/ListDiagnoseReportIdsResult.h"
 #include "model/ListDictInformationRequest.h"
 #include "model/ListDictInformationResult.h"
+#include "model/ListDictsRequest.h"
+#include "model/ListDictsResult.h"
 #include "model/ListEcsInstancesRequest.h"
 #include "model/ListEcsInstancesResult.h"
 #include "model/ListExtendfilesRequest.h"
@@ -210,12 +216,16 @@
 #include "model/ListPluginsResult.h"
 #include "model/ListSearchLogRequest.h"
 #include "model/ListSearchLogResult.h"
+#include "model/ListShardRecoveriesRequest.h"
+#include "model/ListShardRecoveriesResult.h"
 #include "model/ListSnapshotReposByInstanceIdRequest.h"
 #include "model/ListSnapshotReposByInstanceIdResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ListTagsRequest.h"
 #include "model/ListTagsResult.h"
+#include "model/ListVpcEndpointsRequest.h"
+#include "model/ListVpcEndpointsResult.h"
 #include "model/MigrateToOtherZoneRequest.h"
 #include "model/MigrateToOtherZoneResult.h"
 #include "model/ModifyDeployMachineRequest.h"
@@ -419,6 +429,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSnapshotResult> CreateSnapshotOutcome;
 			typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateSnapshotRequest&, const CreateSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
+			typedef Outcome<Error, Model::CreateVpcEndpointResult> CreateVpcEndpointOutcome;
+			typedef std::future<CreateVpcEndpointOutcome> CreateVpcEndpointOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CreateVpcEndpointRequest&, const CreateVpcEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcEndpointAsyncHandler;
 			typedef Outcome<Error, Model::DeactivateZonesResult> DeactivateZonesOutcome;
 			typedef std::future<DeactivateZonesOutcome> DeactivateZonesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeactivateZonesRequest&, const DeactivateZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeactivateZonesAsyncHandler;
@@ -452,6 +465,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSnapshotRepoResult> DeleteSnapshotRepoOutcome;
 			typedef std::future<DeleteSnapshotRepoOutcome> DeleteSnapshotRepoOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteSnapshotRepoRequest&, const DeleteSnapshotRepoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotRepoAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVpcEndpointResult> DeleteVpcEndpointOutcome;
+			typedef std::future<DeleteVpcEndpointOutcome> DeleteVpcEndpointOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteVpcEndpointRequest&, const DeleteVpcEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcEndpointAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAckOperatorResult> DescribeAckOperatorOutcome;
 			typedef std::future<DescribeAckOperatorOutcome> DescribeAckOperatorOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeAckOperatorRequest&, const DescribeAckOperatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAckOperatorAsyncHandler;
@@ -602,6 +618,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDictInformationResult> ListDictInformationOutcome;
 			typedef std::future<ListDictInformationOutcome> ListDictInformationOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListDictInformationRequest&, const ListDictInformationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDictInformationAsyncHandler;
+			typedef Outcome<Error, Model::ListDictsResult> ListDictsOutcome;
+			typedef std::future<ListDictsOutcome> ListDictsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDictsRequest&, const ListDictsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDictsAsyncHandler;
 			typedef Outcome<Error, Model::ListEcsInstancesResult> ListEcsInstancesOutcome;
 			typedef std::future<ListEcsInstancesOutcome> ListEcsInstancesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListEcsInstancesRequest&, const ListEcsInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEcsInstancesAsyncHandler;
@@ -647,6 +666,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSearchLogResult> ListSearchLogOutcome;
 			typedef std::future<ListSearchLogOutcome> ListSearchLogOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListSearchLogRequest&, const ListSearchLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSearchLogAsyncHandler;
+			typedef Outcome<Error, Model::ListShardRecoveriesResult> ListShardRecoveriesOutcome;
+			typedef std::future<ListShardRecoveriesOutcome> ListShardRecoveriesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListShardRecoveriesRequest&, const ListShardRecoveriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListShardRecoveriesAsyncHandler;
 			typedef Outcome<Error, Model::ListSnapshotReposByInstanceIdResult> ListSnapshotReposByInstanceIdOutcome;
 			typedef std::future<ListSnapshotReposByInstanceIdOutcome> ListSnapshotReposByInstanceIdOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListSnapshotReposByInstanceIdRequest&, const ListSnapshotReposByInstanceIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSnapshotReposByInstanceIdAsyncHandler;
@@ -656,6 +678,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagsResult> ListTagsOutcome;
 			typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListTagsRequest&, const ListTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsAsyncHandler;
+			typedef Outcome<Error, Model::ListVpcEndpointsResult> ListVpcEndpointsOutcome;
+			typedef std::future<ListVpcEndpointsOutcome> ListVpcEndpointsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListVpcEndpointsRequest&, const ListVpcEndpointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVpcEndpointsAsyncHandler;
 			typedef Outcome<Error, Model::MigrateToOtherZoneResult> MigrateToOtherZoneOutcome;
 			typedef std::future<MigrateToOtherZoneOutcome> MigrateToOtherZoneOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::MigrateToOtherZoneRequest&, const MigrateToOtherZoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateToOtherZoneAsyncHandler;
@@ -925,6 +950,9 @@ namespace AlibabaCloud
 			CreateSnapshotOutcome createSnapshot(const Model::CreateSnapshotRequest &request)const;
 			void createSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSnapshotOutcomeCallable createSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
+			CreateVpcEndpointOutcome createVpcEndpoint(const Model::CreateVpcEndpointRequest &request)const;
+			void createVpcEndpointAsync(const Model::CreateVpcEndpointRequest& request, const CreateVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateVpcEndpointOutcomeCallable createVpcEndpointCallable(const Model::CreateVpcEndpointRequest& request) const;
 			DeactivateZonesOutcome deactivateZones(const Model::DeactivateZonesRequest &request)const;
 			void deactivateZonesAsync(const Model::DeactivateZonesRequest& request, const DeactivateZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeactivateZonesOutcomeCallable deactivateZonesCallable(const Model::DeactivateZonesRequest& request) const;
@@ -958,6 +986,9 @@ namespace AlibabaCloud
 			DeleteSnapshotRepoOutcome deleteSnapshotRepo(const Model::DeleteSnapshotRepoRequest &request)const;
 			void deleteSnapshotRepoAsync(const Model::DeleteSnapshotRepoRequest& request, const DeleteSnapshotRepoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotRepoOutcomeCallable deleteSnapshotRepoCallable(const Model::DeleteSnapshotRepoRequest& request) const;
+			DeleteVpcEndpointOutcome deleteVpcEndpoint(const Model::DeleteVpcEndpointRequest &request)const;
+			void deleteVpcEndpointAsync(const Model::DeleteVpcEndpointRequest& request, const DeleteVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVpcEndpointOutcomeCallable deleteVpcEndpointCallable(const Model::DeleteVpcEndpointRequest& request) const;
 			DescribeAckOperatorOutcome describeAckOperator(const Model::DescribeAckOperatorRequest &request)const;
 			void describeAckOperatorAsync(const Model::DescribeAckOperatorRequest& request, const DescribeAckOperatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAckOperatorOutcomeCallable describeAckOperatorCallable(const Model::DescribeAckOperatorRequest& request) const;
@@ -1108,6 +1139,9 @@ namespace AlibabaCloud
 			ListDictInformationOutcome listDictInformation(const Model::ListDictInformationRequest &request)const;
 			void listDictInformationAsync(const Model::ListDictInformationRequest& request, const ListDictInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDictInformationOutcomeCallable listDictInformationCallable(const Model::ListDictInformationRequest& request) const;
+			ListDictsOutcome listDicts(const Model::ListDictsRequest &request)const;
+			void listDictsAsync(const Model::ListDictsRequest& request, const ListDictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDictsOutcomeCallable listDictsCallable(const Model::ListDictsRequest& request) const;
 			ListEcsInstancesOutcome listEcsInstances(const Model::ListEcsInstancesRequest &request)const;
 			void listEcsInstancesAsync(const Model::ListEcsInstancesRequest& request, const ListEcsInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListEcsInstancesOutcomeCallable listEcsInstancesCallable(const Model::ListEcsInstancesRequest& request) const;
@@ -1153,6 +1187,9 @@ namespace AlibabaCloud
 			ListSearchLogOutcome listSearchLog(const Model::ListSearchLogRequest &request)const;
 			void listSearchLogAsync(const Model::ListSearchLogRequest& request, const ListSearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSearchLogOutcomeCallable listSearchLogCallable(const Model::ListSearchLogRequest& request) const;
+			ListShardRecoveriesOutcome listShardRecoveries(const Model::ListShardRecoveriesRequest &request)const;
+			void listShardRecoveriesAsync(const Model::ListShardRecoveriesRequest& request, const ListShardRecoveriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListShardRecoveriesOutcomeCallable listShardRecoveriesCallable(const Model::ListShardRecoveriesRequest& request) const;
 			ListSnapshotReposByInstanceIdOutcome listSnapshotReposByInstanceId(const Model::ListSnapshotReposByInstanceIdRequest &request)const;
 			void listSnapshotReposByInstanceIdAsync(const Model::ListSnapshotReposByInstanceIdRequest& request, const ListSnapshotReposByInstanceIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSnapshotReposByInstanceIdOutcomeCallable listSnapshotReposByInstanceIdCallable(const Model::ListSnapshotReposByInstanceIdRequest& request) const;
@@ -1162,6 +1199,9 @@ namespace AlibabaCloud
 			ListTagsOutcome listTags(const Model::ListTagsRequest &request)const;
 			void listTagsAsync(const Model::ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsOutcomeCallable listTagsCallable(const Model::ListTagsRequest& request) const;
+			ListVpcEndpointsOutcome listVpcEndpoints(const Model::ListVpcEndpointsRequest &request)const;
+			void listVpcEndpointsAsync(const Model::ListVpcEndpointsRequest& request, const ListVpcEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListVpcEndpointsOutcomeCallable listVpcEndpointsCallable(const Model::ListVpcEndpointsRequest& request) const;
 			MigrateToOtherZoneOutcome migrateToOtherZone(const Model::MigrateToOtherZoneRequest &request)const;
 			void migrateToOtherZoneAsync(const Model::MigrateToOtherZoneRequest& request, const MigrateToOtherZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MigrateToOtherZoneOutcomeCallable migrateToOtherZoneCallable(const Model::MigrateToOtherZoneRequest& request) const;

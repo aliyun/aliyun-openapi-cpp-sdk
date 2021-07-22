@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTSHARDRECOVERIESRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTSHARDRECOVERIESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpdateKibanaWhiteIpsResult : public ServiceResult
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ListShardRecoveriesResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct ResultItem
 				{
-					std::vector<std::string> kibanaIPWhitelist;
-					std::vector<std::string> kibanaPrivateIPWhitelist;
+					std::string sourceNode;
+					std::string targetNode;
+					long translogOps;
+					std::string targetHost;
+					long filesTotal;
+					std::string stage;
+					std::string index;
+					std::string filesPercent;
+					std::string translogOpsPercent;
+					std::string sourceHost;
+					std::string bytesPercent;
+					long bytesTotal;
 				};
 
 
-				UpdateKibanaWhiteIpsResult();
-				explicit UpdateKibanaWhiteIpsResult(const std::string &payload);
-				~UpdateKibanaWhiteIpsResult();
-				Result getResult()const;
+				ListShardRecoveriesResult();
+				explicit ListShardRecoveriesResult(const std::string &payload);
+				~ListShardRecoveriesResult();
+				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
+				std::vector<ResultItem> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_UPDATEKIBANAWHITEIPSRESULT_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_LISTSHARDRECOVERIESRESULT_H_

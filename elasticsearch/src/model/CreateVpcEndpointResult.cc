@@ -14,42 +14,44 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/UpdateKibanaWhiteIpsResult.h>
+#include <alibabacloud/elasticsearch/model/CreateVpcEndpointResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Elasticsearch;
 using namespace AlibabaCloud::Elasticsearch::Model;
 
-UpdateKibanaWhiteIpsResult::UpdateKibanaWhiteIpsResult() :
+CreateVpcEndpointResult::CreateVpcEndpointResult() :
 	ServiceResult()
 {}
 
-UpdateKibanaWhiteIpsResult::UpdateKibanaWhiteIpsResult(const std::string &payload) :
+CreateVpcEndpointResult::CreateVpcEndpointResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UpdateKibanaWhiteIpsResult::~UpdateKibanaWhiteIpsResult()
+CreateVpcEndpointResult::~CreateVpcEndpointResult()
 {}
 
-void UpdateKibanaWhiteIpsResult::parse(const std::string &payload)
+void CreateVpcEndpointResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-		auto allKibanaIPWhitelist = resultNode["kibanaIPWhitelist"]["kibanaIPWhitelist"];
-		for (auto value : allKibanaIPWhitelist)
-			result_.kibanaIPWhitelist.push_back(value.asString());
-		auto allKibanaPrivateIPWhitelist = resultNode["kibanaPrivateIPWhitelist"]["kibanaPrivateIPWhitelist"];
-		for (auto value : allKibanaPrivateIPWhitelist)
-			result_.kibanaPrivateIPWhitelist.push_back(value.asString());
+	if(!resultNode["endpointId"].isNull())
+		result_.endpointId = resultNode["endpointId"].asString();
+	if(!resultNode["endpointName"].isNull())
+		result_.endpointName = resultNode["endpointName"].asString();
+	if(!resultNode["serviceId"].isNull())
+		result_.serviceId = resultNode["serviceId"].asString();
+	if(!resultNode["endpointDomain"].isNull())
+		result_.endpointDomain = resultNode["endpointDomain"].asString();
 
 }
 
-UpdateKibanaWhiteIpsResult::Result UpdateKibanaWhiteIpsResult::getResult()const
+CreateVpcEndpointResult::Result CreateVpcEndpointResult::getResult()const
 {
 	return result_;
 }

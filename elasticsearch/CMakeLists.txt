@@ -57,6 +57,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/CreatePipelinesResult.h
 	include/alibabacloud/elasticsearch/model/CreateSnapshotRequest.h
 	include/alibabacloud/elasticsearch/model/CreateSnapshotResult.h
+	include/alibabacloud/elasticsearch/model/CreateVpcEndpointRequest.h
+	include/alibabacloud/elasticsearch/model/CreateVpcEndpointResult.h
 	include/alibabacloud/elasticsearch/model/DeactivateZonesRequest.h
 	include/alibabacloud/elasticsearch/model/DeactivateZonesResult.h
 	include/alibabacloud/elasticsearch/model/DeleteCollectorRequest.h
@@ -79,6 +81,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DeletePipelinesResult.h
 	include/alibabacloud/elasticsearch/model/DeleteSnapshotRepoRequest.h
 	include/alibabacloud/elasticsearch/model/DeleteSnapshotRepoResult.h
+	include/alibabacloud/elasticsearch/model/DeleteVpcEndpointRequest.h
+	include/alibabacloud/elasticsearch/model/DeleteVpcEndpointResult.h
 	include/alibabacloud/elasticsearch/model/DescribeAckOperatorRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeAckOperatorResult.h
 	include/alibabacloud/elasticsearch/model/DescribeCollectorRequest.h
@@ -179,6 +183,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListDiagnoseReportIdsResult.h
 	include/alibabacloud/elasticsearch/model/ListDictInformationRequest.h
 	include/alibabacloud/elasticsearch/model/ListDictInformationResult.h
+	include/alibabacloud/elasticsearch/model/ListDictsRequest.h
+	include/alibabacloud/elasticsearch/model/ListDictsResult.h
 	include/alibabacloud/elasticsearch/model/ListEcsInstancesRequest.h
 	include/alibabacloud/elasticsearch/model/ListEcsInstancesResult.h
 	include/alibabacloud/elasticsearch/model/ListExtendfilesRequest.h
@@ -209,12 +215,16 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListPluginsResult.h
 	include/alibabacloud/elasticsearch/model/ListSearchLogRequest.h
 	include/alibabacloud/elasticsearch/model/ListSearchLogResult.h
+	include/alibabacloud/elasticsearch/model/ListShardRecoveriesRequest.h
+	include/alibabacloud/elasticsearch/model/ListShardRecoveriesResult.h
 	include/alibabacloud/elasticsearch/model/ListSnapshotReposByInstanceIdRequest.h
 	include/alibabacloud/elasticsearch/model/ListSnapshotReposByInstanceIdResult.h
 	include/alibabacloud/elasticsearch/model/ListTagResourcesRequest.h
 	include/alibabacloud/elasticsearch/model/ListTagResourcesResult.h
 	include/alibabacloud/elasticsearch/model/ListTagsRequest.h
 	include/alibabacloud/elasticsearch/model/ListTagsResult.h
+	include/alibabacloud/elasticsearch/model/ListVpcEndpointsRequest.h
+	include/alibabacloud/elasticsearch/model/ListVpcEndpointsResult.h
 	include/alibabacloud/elasticsearch/model/MigrateToOtherZoneRequest.h
 	include/alibabacloud/elasticsearch/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/elasticsearch/model/ModifyDeployMachineRequest.h
@@ -394,6 +404,8 @@ set(elasticsearch_src
 	src/model/CreatePipelinesResult.cc
 	src/model/CreateSnapshotRequest.cc
 	src/model/CreateSnapshotResult.cc
+	src/model/CreateVpcEndpointRequest.cc
+	src/model/CreateVpcEndpointResult.cc
 	src/model/DeactivateZonesRequest.cc
 	src/model/DeactivateZonesResult.cc
 	src/model/DeleteCollectorRequest.cc
@@ -416,6 +428,8 @@ set(elasticsearch_src
 	src/model/DeletePipelinesResult.cc
 	src/model/DeleteSnapshotRepoRequest.cc
 	src/model/DeleteSnapshotRepoResult.cc
+	src/model/DeleteVpcEndpointRequest.cc
+	src/model/DeleteVpcEndpointResult.cc
 	src/model/DescribeAckOperatorRequest.cc
 	src/model/DescribeAckOperatorResult.cc
 	src/model/DescribeCollectorRequest.cc
@@ -516,6 +530,8 @@ set(elasticsearch_src
 	src/model/ListDiagnoseReportIdsResult.cc
 	src/model/ListDictInformationRequest.cc
 	src/model/ListDictInformationResult.cc
+	src/model/ListDictsRequest.cc
+	src/model/ListDictsResult.cc
 	src/model/ListEcsInstancesRequest.cc
 	src/model/ListEcsInstancesResult.cc
 	src/model/ListExtendfilesRequest.cc
@@ -546,12 +562,16 @@ set(elasticsearch_src
 	src/model/ListPluginsResult.cc
 	src/model/ListSearchLogRequest.cc
 	src/model/ListSearchLogResult.cc
+	src/model/ListShardRecoveriesRequest.cc
+	src/model/ListShardRecoveriesResult.cc
 	src/model/ListSnapshotReposByInstanceIdRequest.cc
 	src/model/ListSnapshotReposByInstanceIdResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
+	src/model/ListVpcEndpointsRequest.cc
+	src/model/ListVpcEndpointsResult.cc
 	src/model/MigrateToOtherZoneRequest.cc
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyDeployMachineRequest.cc
