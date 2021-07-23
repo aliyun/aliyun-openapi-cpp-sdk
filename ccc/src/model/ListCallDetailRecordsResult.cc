@@ -70,14 +70,24 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 			callDetailRecordObject.establishedTime = std::stol(dataNodeListCallDetailRecord["EstablishedTime"].asString());
 		if(!dataNodeListCallDetailRecord["InstanceId"].isNull())
 			callDetailRecordObject.instanceId = dataNodeListCallDetailRecord["InstanceId"].asString();
+		if(!dataNodeListCallDetailRecord["IvrTime"].isNull())
+			callDetailRecordObject.ivrTime = std::stol(dataNodeListCallDetailRecord["IvrTime"].asString());
+		if(!dataNodeListCallDetailRecord["QueueTime"].isNull())
+			callDetailRecordObject.queueTime = std::stol(dataNodeListCallDetailRecord["QueueTime"].asString());
+		if(!dataNodeListCallDetailRecord["RecordingDuration"].isNull())
+			callDetailRecordObject.recordingDuration = std::stol(dataNodeListCallDetailRecord["RecordingDuration"].asString());
 		if(!dataNodeListCallDetailRecord["RecordingReady"].isNull())
 			callDetailRecordObject.recordingReady = dataNodeListCallDetailRecord["RecordingReady"].asString() == "true";
 		if(!dataNodeListCallDetailRecord["ReleaseInitiator"].isNull())
 			callDetailRecordObject.releaseInitiator = dataNodeListCallDetailRecord["ReleaseInitiator"].asString();
 		if(!dataNodeListCallDetailRecord["ReleaseTime"].isNull())
 			callDetailRecordObject.releaseTime = std::stol(dataNodeListCallDetailRecord["ReleaseTime"].asString());
-		if(!dataNodeListCallDetailRecord["Satisfaction"].isNull())
-			callDetailRecordObject.satisfaction = std::stoi(dataNodeListCallDetailRecord["Satisfaction"].asString());
+		if(!dataNodeListCallDetailRecord["RingTime"].isNull())
+			callDetailRecordObject.ringTime = std::stol(dataNodeListCallDetailRecord["RingTime"].asString());
+		if(!dataNodeListCallDetailRecord["SatisfactionDescription"].isNull())
+			callDetailRecordObject.satisfactionDescription = dataNodeListCallDetailRecord["SatisfactionDescription"].asString();
+		if(!dataNodeListCallDetailRecord["SatisfactionIndex"].isNull())
+			callDetailRecordObject.satisfactionIndex = std::stoi(dataNodeListCallDetailRecord["SatisfactionIndex"].asString());
 		if(!dataNodeListCallDetailRecord["SatisfactionSurveyChannel"].isNull())
 			callDetailRecordObject.satisfactionSurveyChannel = dataNodeListCallDetailRecord["SatisfactionSurveyChannel"].asString();
 		if(!dataNodeListCallDetailRecord["SatisfactionSurveyOffered"].isNull())
@@ -88,6 +98,8 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 			callDetailRecordObject.skillGroupNames = dataNodeListCallDetailRecord["SkillGroupNames"].asString();
 		if(!dataNodeListCallDetailRecord["StartTime"].isNull())
 			callDetailRecordObject.startTime = std::stol(dataNodeListCallDetailRecord["StartTime"].asString());
+		if(!dataNodeListCallDetailRecord["WaitTime"].isNull())
+			callDetailRecordObject.waitTime = std::stol(dataNodeListCallDetailRecord["WaitTime"].asString());
 		data_.list.push_back(callDetailRecordObject);
 	}
 	if(!value["Code"].isNull())

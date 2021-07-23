@@ -48,8 +48,8 @@ void GetInstanceTrendingReportResult::parse(const std::string &payload)
 			inboundItemObject.callsAbandonedInIVR = std::stol(dataNodeInboundInboundItem["CallsAbandonedInIVR"].asString());
 		if(!dataNodeInboundInboundItem["CallsAbandonedInQueue"].isNull())
 			inboundItemObject.callsAbandonedInQueue = std::stol(dataNodeInboundInboundItem["CallsAbandonedInQueue"].asString());
-		if(!dataNodeInboundInboundItem["CallsAbandonedInRinging"].isNull())
-			inboundItemObject.callsAbandonedInRinging = std::stol(dataNodeInboundInboundItem["CallsAbandonedInRinging"].asString());
+		if(!dataNodeInboundInboundItem["CallsAbandonedInRing"].isNull())
+			inboundItemObject.callsAbandonedInRing = std::stol(dataNodeInboundInboundItem["CallsAbandonedInRing"].asString());
 		if(!dataNodeInboundInboundItem["CallsHandled"].isNull())
 			inboundItemObject.callsHandled = std::stol(dataNodeInboundInboundItem["CallsHandled"].asString());
 		if(!dataNodeInboundInboundItem["CallsQueued"].isNull())

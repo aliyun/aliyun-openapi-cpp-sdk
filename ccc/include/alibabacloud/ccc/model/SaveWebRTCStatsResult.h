@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_GETREALTIMEINSTANCESTATESRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_GETREALTIMEINSTANCESTATESRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_SAVEWEBRTCSTATSRESULT_H_
+#define ALIBABACLOUD_CCC_MODEL_SAVEWEBRTCSTATSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT GetRealtimeInstanceStatesResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT SaveWebRTCStatsResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					long breakingAgents;
-					long talkingAgents;
-					long longestWaitingTime;
-					std::string instanceId;
-					long loggedInAgents;
-					long readyAgents;
-					long waitingCalls;
-					long interactiveCalls;
-					long totalAgents;
-					long workingAgents;
-				};
 
 
-				GetRealtimeInstanceStatesResult();
-				explicit GetRealtimeInstanceStatesResult(const std::string &payload);
-				~GetRealtimeInstanceStatesResult();
+				SaveWebRTCStatsResult();
+				explicit SaveWebRTCStatsResult(const std::string &payload);
+				~SaveWebRTCStatsResult();
 				std::string getMessage()const;
-				int getHttpStatusCode()const;
-				Data getData()const;
+				long getHttpStatusCode()const;
+				long getRowCount()const;
 				std::string getCode()const;
+				bool getSuccess()const;
+				long getTimeStamp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int httpStatusCode_;
-				Data data_;
+				long httpStatusCode_;
+				long rowCount_;
 				std::string code_;
+				bool success_;
+				long timeStamp_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_GETREALTIMEINSTANCESTATESRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_SAVEWEBRTCSTATSRESULT_H_

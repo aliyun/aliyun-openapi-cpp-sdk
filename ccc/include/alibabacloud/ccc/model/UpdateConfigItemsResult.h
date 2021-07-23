@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_GETREALTIMEINSTANCESTATESRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_GETREALTIMEINSTANCESTATESRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_UPDATECONFIGITEMSRESULT_H_
+#define ALIBABACLOUD_CCC_MODEL_UPDATECONFIGITEMSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT GetRealtimeInstanceStatesResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT UpdateConfigItemsResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					long breakingAgents;
-					long talkingAgents;
-					long longestWaitingTime;
-					std::string instanceId;
-					long loggedInAgents;
-					long readyAgents;
-					long waitingCalls;
-					long interactiveCalls;
-					long totalAgents;
-					long workingAgents;
-				};
 
 
-				GetRealtimeInstanceStatesResult();
-				explicit GetRealtimeInstanceStatesResult(const std::string &payload);
-				~GetRealtimeInstanceStatesResult();
+				UpdateConfigItemsResult();
+				explicit UpdateConfigItemsResult(const std::string &payload);
+				~UpdateConfigItemsResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				Data getData()const;
+				std::vector<std::string> getParams()const;
 				std::string getCode()const;
 
 			protected:
@@ -60,11 +47,11 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				Data data_;
+				std::vector<std::string> params_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_GETREALTIMEINSTANCESTATESRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_UPDATECONFIGITEMSRESULT_H_

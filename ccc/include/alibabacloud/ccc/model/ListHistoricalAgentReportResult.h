@@ -38,50 +38,62 @@ namespace AlibabaCloud
 					{
 						struct Inbound
 						{
-							long callsConsulted;
 							long totalWorkTime;
+							long callsRinged;
 							long totalHoldTime;
 							float averageHoldTime;
-							long satisfactionSurveysOffered;
 							long callsOffered;
 							long maxRingTime;
 							long callsHold;
 							float satisfactionIndex;
-							long callsHandled;
-							long satisfactionSurveysResponded;
 							long totalRingTime;
 							float handleRate;
-							long callsTransferred;
-							float averageRingTime;
 							long totalTalkTime;
 							long maxTalkTime;
-							float averageWorkTime;
-							long maxWorkTime;
+							float satisfactionRate;
+							long callsAttendedTransferOut;
 							float averageTalkTime;
 							long maxHoldTime;
+							long satisfactionSurveysOffered;
+							long callsHandled;
+							long satisfactionSurveysResponded;
+							long callsAttendedTransferIn;
+							float averageRingTime;
+							float averageWorkTime;
+							long callsBlindTransferOut;
+							long callsBlindTransferIn;
+							long maxWorkTime;
 						};
 						struct Outbound
 						{
 							long totalDialingTime;
 							long totalWorkTime;
+							long callsRinged;
 							long totalHoldTime;
 							float averageHoldTime;
-							long callsDialedSuccess;
-							long satisfactionSurveysOffered;
+							long maxRingTime;
 							long callsHold;
 							float satisfactionIndex;
-							long satisfactionSurveysResponded;
+							long totalRingTime;
 							float averageDialingTime;
 							long callsAnswered;
 							long callsDialed;
 							long totalTalkTime;
 							long maxDialingTime;
 							long maxTalkTime;
-							float averageWorkTime;
-							long maxWorkTime;
+							float satisfactionRate;
+							long callsAttendedTransferOut;
 							float answerRate;
 							float averageTalkTime;
 							long maxHoldTime;
+							long satisfactionSurveysOffered;
+							long satisfactionSurveysResponded;
+							long callsAttendedTransferIn;
+							float averageRingTime;
+							float averageWorkTime;
+							long callsBlindTransferOut;
+							long callsBlindTransferIn;
+							long maxWorkTime;
 						};
 						struct Overall
 						{
@@ -90,6 +102,7 @@ namespace AlibabaCloud
 							long totalCalls;
 							long totalWorkTime;
 							long totalHoldTime;
+							float averageHoldTime;
 							long satisfactionSurveysOffered;
 							float satisfactionIndex;
 							float averageBreakTime;
@@ -100,9 +113,11 @@ namespace AlibabaCloud
 							long maxTalkTime;
 							float averageWorkTime;
 							long maxReadyTime;
+							float satisfactionRate;
 							long maxBreakTime;
 							long maxWorkTime;
 							float averageTalkTime;
+							long maxHoldTime;
 							float occupancyRate;
 						};
 						Outbound outbound;

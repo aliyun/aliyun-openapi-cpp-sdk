@@ -1,3 +1,6 @@
+2021-07-23 Version: 1.36.826
+- Export instance relative API.
+
 2021-07-22 Version: 1.36.825
 - Add private-link support.
 - Add download dicts.

@@ -63,16 +63,22 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 			itemsObject.inbound.averageTalkTime = std::stof(inboundNode["AverageTalkTime"].asString());
 		if(!inboundNode["AverageWorkTime"].isNull())
 			itemsObject.inbound.averageWorkTime = std::stof(inboundNode["AverageWorkTime"].asString());
-		if(!inboundNode["CallsConsulted"].isNull())
-			itemsObject.inbound.callsConsulted = std::stol(inboundNode["CallsConsulted"].asString());
+		if(!inboundNode["CallsAttendedTransferIn"].isNull())
+			itemsObject.inbound.callsAttendedTransferIn = std::stol(inboundNode["CallsAttendedTransferIn"].asString());
+		if(!inboundNode["CallsAttendedTransferOut"].isNull())
+			itemsObject.inbound.callsAttendedTransferOut = std::stol(inboundNode["CallsAttendedTransferOut"].asString());
+		if(!inboundNode["CallsBlindTransferIn"].isNull())
+			itemsObject.inbound.callsBlindTransferIn = std::stol(inboundNode["CallsBlindTransferIn"].asString());
+		if(!inboundNode["CallsBlindTransferOut"].isNull())
+			itemsObject.inbound.callsBlindTransferOut = std::stol(inboundNode["CallsBlindTransferOut"].asString());
 		if(!inboundNode["CallsHandled"].isNull())
 			itemsObject.inbound.callsHandled = std::stol(inboundNode["CallsHandled"].asString());
 		if(!inboundNode["CallsHold"].isNull())
 			itemsObject.inbound.callsHold = std::stol(inboundNode["CallsHold"].asString());
 		if(!inboundNode["CallsOffered"].isNull())
 			itemsObject.inbound.callsOffered = std::stol(inboundNode["CallsOffered"].asString());
-		if(!inboundNode["CallsTransferred"].isNull())
-			itemsObject.inbound.callsTransferred = std::stol(inboundNode["CallsTransferred"].asString());
+		if(!inboundNode["CallsRinged"].isNull())
+			itemsObject.inbound.callsRinged = std::stol(inboundNode["CallsRinged"].asString());
 		if(!inboundNode["HandleRate"].isNull())
 			itemsObject.inbound.handleRate = std::stof(inboundNode["HandleRate"].asString());
 		if(!inboundNode["MaxHoldTime"].isNull())
@@ -85,6 +91,8 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 			itemsObject.inbound.maxWorkTime = std::stol(inboundNode["MaxWorkTime"].asString());
 		if(!inboundNode["SatisfactionIndex"].isNull())
 			itemsObject.inbound.satisfactionIndex = std::stof(inboundNode["SatisfactionIndex"].asString());
+		if(!inboundNode["SatisfactionRate"].isNull())
+			itemsObject.inbound.satisfactionRate = std::stof(inboundNode["SatisfactionRate"].asString());
 		if(!inboundNode["SatisfactionSurveysOffered"].isNull())
 			itemsObject.inbound.satisfactionSurveysOffered = std::stol(inboundNode["SatisfactionSurveysOffered"].asString());
 		if(!inboundNode["SatisfactionSurveysResponded"].isNull())
@@ -104,28 +112,42 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 			itemsObject.outbound.averageDialingTime = std::stof(outboundNode["AverageDialingTime"].asString());
 		if(!outboundNode["AverageHoldTime"].isNull())
 			itemsObject.outbound.averageHoldTime = std::stof(outboundNode["AverageHoldTime"].asString());
+		if(!outboundNode["AverageRingTime"].isNull())
+			itemsObject.outbound.averageRingTime = std::stof(outboundNode["AverageRingTime"].asString());
 		if(!outboundNode["AverageTalkTime"].isNull())
 			itemsObject.outbound.averageTalkTime = std::stof(outboundNode["AverageTalkTime"].asString());
 		if(!outboundNode["AverageWorkTime"].isNull())
 			itemsObject.outbound.averageWorkTime = std::stof(outboundNode["AverageWorkTime"].asString());
 		if(!outboundNode["CallsAnswered"].isNull())
 			itemsObject.outbound.callsAnswered = std::stol(outboundNode["CallsAnswered"].asString());
+		if(!outboundNode["CallsAttendedTransferIn"].isNull())
+			itemsObject.outbound.callsAttendedTransferIn = std::stol(outboundNode["CallsAttendedTransferIn"].asString());
+		if(!outboundNode["CallsAttendedTransferOut"].isNull())
+			itemsObject.outbound.callsAttendedTransferOut = std::stol(outboundNode["CallsAttendedTransferOut"].asString());
+		if(!outboundNode["CallsBlindTransferIn"].isNull())
+			itemsObject.outbound.callsBlindTransferIn = std::stol(outboundNode["CallsBlindTransferIn"].asString());
+		if(!outboundNode["CallsBlindTransferOut"].isNull())
+			itemsObject.outbound.callsBlindTransferOut = std::stol(outboundNode["CallsBlindTransferOut"].asString());
 		if(!outboundNode["CallsDialed"].isNull())
 			itemsObject.outbound.callsDialed = std::stol(outboundNode["CallsDialed"].asString());
-		if(!outboundNode["CallsDialedSuccess"].isNull())
-			itemsObject.outbound.callsDialedSuccess = std::stol(outboundNode["CallsDialedSuccess"].asString());
 		if(!outboundNode["CallsHold"].isNull())
 			itemsObject.outbound.callsHold = std::stol(outboundNode["CallsHold"].asString());
+		if(!outboundNode["CallsRinged"].isNull())
+			itemsObject.outbound.callsRinged = std::stol(outboundNode["CallsRinged"].asString());
 		if(!outboundNode["MaxDialingTime"].isNull())
 			itemsObject.outbound.maxDialingTime = std::stol(outboundNode["MaxDialingTime"].asString());
 		if(!outboundNode["MaxHoldTime"].isNull())
 			itemsObject.outbound.maxHoldTime = std::stol(outboundNode["MaxHoldTime"].asString());
+		if(!outboundNode["MaxRingTime"].isNull())
+			itemsObject.outbound.maxRingTime = std::stol(outboundNode["MaxRingTime"].asString());
 		if(!outboundNode["MaxTalkTime"].isNull())
 			itemsObject.outbound.maxTalkTime = std::stol(outboundNode["MaxTalkTime"].asString());
 		if(!outboundNode["MaxWorkTime"].isNull())
 			itemsObject.outbound.maxWorkTime = std::stol(outboundNode["MaxWorkTime"].asString());
 		if(!outboundNode["SatisfactionIndex"].isNull())
 			itemsObject.outbound.satisfactionIndex = std::stof(outboundNode["SatisfactionIndex"].asString());
+		if(!outboundNode["SatisfactionRate"].isNull())
+			itemsObject.outbound.satisfactionRate = std::stof(outboundNode["SatisfactionRate"].asString());
 		if(!outboundNode["SatisfactionSurveysOffered"].isNull())
 			itemsObject.outbound.satisfactionSurveysOffered = std::stol(outboundNode["SatisfactionSurveysOffered"].asString());
 		if(!outboundNode["SatisfactionSurveysResponded"].isNull())
@@ -134,6 +156,8 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 			itemsObject.outbound.totalDialingTime = std::stol(outboundNode["TotalDialingTime"].asString());
 		if(!outboundNode["TotalHoldTime"].isNull())
 			itemsObject.outbound.totalHoldTime = std::stol(outboundNode["TotalHoldTime"].asString());
+		if(!outboundNode["TotalRingTime"].isNull())
+			itemsObject.outbound.totalRingTime = std::stol(outboundNode["TotalRingTime"].asString());
 		if(!outboundNode["TotalTalkTime"].isNull())
 			itemsObject.outbound.totalTalkTime = std::stol(outboundNode["TotalTalkTime"].asString());
 		if(!outboundNode["TotalWorkTime"].isNull())
@@ -141,6 +165,8 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 		auto overallNode = value["Overall"];
 		if(!overallNode["AverageBreakTime"].isNull())
 			itemsObject.overall.averageBreakTime = std::stof(overallNode["AverageBreakTime"].asString());
+		if(!overallNode["AverageHoldTime"].isNull())
+			itemsObject.overall.averageHoldTime = std::stof(overallNode["AverageHoldTime"].asString());
 		if(!overallNode["AverageReadyTime"].isNull())
 			itemsObject.overall.averageReadyTime = std::stof(overallNode["AverageReadyTime"].asString());
 		if(!overallNode["AverageTalkTime"].isNull())
@@ -149,6 +175,8 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 			itemsObject.overall.averageWorkTime = std::stof(overallNode["AverageWorkTime"].asString());
 		if(!overallNode["MaxBreakTime"].isNull())
 			itemsObject.overall.maxBreakTime = std::stol(overallNode["MaxBreakTime"].asString());
+		if(!overallNode["MaxHoldTime"].isNull())
+			itemsObject.overall.maxHoldTime = std::stol(overallNode["MaxHoldTime"].asString());
 		if(!overallNode["MaxReadyTime"].isNull())
 			itemsObject.overall.maxReadyTime = std::stol(overallNode["MaxReadyTime"].asString());
 		if(!overallNode["MaxTalkTime"].isNull())
@@ -159,6 +187,8 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 			itemsObject.overall.occupancyRate = std::stof(overallNode["OccupancyRate"].asString());
 		if(!overallNode["SatisfactionIndex"].isNull())
 			itemsObject.overall.satisfactionIndex = std::stof(overallNode["SatisfactionIndex"].asString());
+		if(!overallNode["SatisfactionRate"].isNull())
+			itemsObject.overall.satisfactionRate = std::stof(overallNode["SatisfactionRate"].asString());
 		if(!overallNode["SatisfactionSurveysOffered"].isNull())
 			itemsObject.overall.satisfactionSurveysOffered = std::stol(overallNode["SatisfactionSurveysOffered"].asString());
 		if(!overallNode["SatisfactionSurveysResponded"].isNull())

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getContactId()const;
 				void setContactId(const std::string& contactId);
+				std::string getCriteria()const;
+				void setCriteria(const std::string& criteria);
 				std::string getOrderByField()const;
 				void setOrderByField(const std::string& orderByField);
 				long getStartTime()const;
@@ -51,6 +53,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getSortOrder()const;
 				void setSortOrder(const std::string& sortOrder);
+				std::string getSatisfactionDescriptionList()const;
+				void setSatisfactionDescriptionList(const std::string& satisfactionDescriptionList);
 				std::string getAgentId()const;
 				void setAgentId(const std::string& agentId);
 				std::string getContactType()const;
@@ -70,6 +74,7 @@ namespace AlibabaCloud
 
             private:
 				std::string contactId_;
+				std::string criteria_;
 				std::string orderByField_;
 				long startTime_;
 				int pageNumber_;
@@ -77,6 +82,7 @@ namespace AlibabaCloud
 				std::string satisfactionList_;
 				int pageSize_;
 				std::string sortOrder_;
+				std::string satisfactionDescriptionList_;
 				std::string agentId_;
 				std::string contactType_;
 				std::string satisfactionSurveyChannel_;

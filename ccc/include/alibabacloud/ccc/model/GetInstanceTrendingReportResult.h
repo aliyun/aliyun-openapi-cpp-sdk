@@ -36,10 +36,10 @@ namespace AlibabaCloud
 				{
 					struct InboundItem
 					{
-						long callsAbandonedInRinging;
 						long totalCalls;
 						long callsAbandonedInQueue;
 						long callsQueued;
+						long callsAbandonedInRing;
 						long callsHandled;
 						long callsAbandonedInIVR;
 						long statsTime;

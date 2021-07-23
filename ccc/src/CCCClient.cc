@@ -555,6 +555,42 @@ CCCClient::CompleteAttendedTransferOutcomeCallable CCCClient::completeAttendedTr
 	return task->get_future();
 }
 
+CCCClient::CreateInstanceOutcome CCCClient::createInstance(const CreateInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInstanceOutcome(CreateInstanceResult(outcome.result()));
+	else
+		return CreateInstanceOutcome(outcome.error());
+}
+
+void CCCClient::createInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::CreateInstanceOutcomeCallable CCCClient::createInstanceCallable(const CreateInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->createInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::CreateSkillGroupOutcome CCCClient::createSkillGroup(const CreateSkillGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1599,6 +1635,42 @@ CCCClient::ListHistoricalSkillGroupReportOutcomeCallable CCCClient::listHistoric
 	return task->get_future();
 }
 
+CCCClient::ListInstancesOutcome CCCClient::listInstances(const ListInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstancesOutcome(ListInstancesResult(outcome.result()));
+	else
+		return ListInstancesOutcome(outcome.error());
+}
+
+void CCCClient::listInstancesAsync(const ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListInstancesOutcomeCallable CCCClient::listInstancesCallable(const ListInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListInstancesOfUserOutcome CCCClient::listInstancesOfUser(const ListInstancesOfUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2349,42 @@ CCCClient::MakeCallOutcomeCallable CCCClient::makeCallCallable(const MakeCallReq
 			[this, request]()
 			{
 			return this->makeCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ModifyInstanceOutcome CCCClient::modifyInstance(const ModifyInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceOutcome(ModifyInstanceResult(outcome.result()));
+	else
+		return ModifyInstanceOutcome(outcome.error());
+}
+
+void CCCClient::modifyInstanceAsync(const ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ModifyInstanceOutcomeCallable CCCClient::modifyInstanceCallable(const ModifyInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3003,6 +3111,42 @@ CCCClient::ResetAgentStateOutcomeCallable CCCClient::resetAgentStateCallable(con
 	return task->get_future();
 }
 
+CCCClient::ResetUserPasswordOutcome CCCClient::resetUserPassword(const ResetUserPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetUserPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetUserPasswordOutcome(ResetUserPasswordResult(outcome.result()));
+	else
+		return ResetUserPasswordOutcome(outcome.error());
+}
+
+void CCCClient::resetUserPasswordAsync(const ResetUserPasswordRequest& request, const ResetUserPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetUserPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ResetUserPasswordOutcomeCallable CCCClient::resetUserPasswordCallable(const ResetUserPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetUserPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->resetUserPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::RetrieveCallOutcome CCCClient::retrieveCall(const RetrieveCallRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3033,6 +3177,150 @@ CCCClient::RetrieveCallOutcomeCallable CCCClient::retrieveCallCallable(const Ret
 			[this, request]()
 			{
 			return this->retrieveCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::SaveRTCStatsV2Outcome CCCClient::saveRTCStatsV2(const SaveRTCStatsV2Request &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveRTCStatsV2Outcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveRTCStatsV2Outcome(SaveRTCStatsV2Result(outcome.result()));
+	else
+		return SaveRTCStatsV2Outcome(outcome.error());
+}
+
+void CCCClient::saveRTCStatsV2Async(const SaveRTCStatsV2Request& request, const SaveRTCStatsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveRTCStatsV2(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::SaveRTCStatsV2OutcomeCallable CCCClient::saveRTCStatsV2Callable(const SaveRTCStatsV2Request &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveRTCStatsV2Outcome()>>(
+			[this, request]()
+			{
+			return this->saveRTCStatsV2(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::SaveTerminalLogOutcome CCCClient::saveTerminalLog(const SaveTerminalLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveTerminalLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveTerminalLogOutcome(SaveTerminalLogResult(outcome.result()));
+	else
+		return SaveTerminalLogOutcome(outcome.error());
+}
+
+void CCCClient::saveTerminalLogAsync(const SaveTerminalLogRequest& request, const SaveTerminalLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveTerminalLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::SaveTerminalLogOutcomeCallable CCCClient::saveTerminalLogCallable(const SaveTerminalLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveTerminalLogOutcome()>>(
+			[this, request]()
+			{
+			return this->saveTerminalLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::SaveWebRTCStatsOutcome CCCClient::saveWebRTCStats(const SaveWebRTCStatsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveWebRTCStatsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveWebRTCStatsOutcome(SaveWebRTCStatsResult(outcome.result()));
+	else
+		return SaveWebRTCStatsOutcome(outcome.error());
+}
+
+void CCCClient::saveWebRTCStatsAsync(const SaveWebRTCStatsRequest& request, const SaveWebRTCStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveWebRTCStats(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::SaveWebRTCStatsOutcomeCallable CCCClient::saveWebRTCStatsCallable(const SaveWebRTCStatsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveWebRTCStatsOutcome()>>(
+			[this, request]()
+			{
+			return this->saveWebRTCStats(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::SaveWebRtcInfoOutcome CCCClient::saveWebRtcInfo(const SaveWebRtcInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveWebRtcInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveWebRtcInfoOutcome(SaveWebRtcInfoResult(outcome.result()));
+	else
+		return SaveWebRtcInfoOutcome(outcome.error());
+}
+
+void CCCClient::saveWebRtcInfoAsync(const SaveWebRtcInfoRequest& request, const SaveWebRtcInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveWebRtcInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::SaveWebRtcInfoOutcomeCallable CCCClient::saveWebRtcInfoCallable(const SaveWebRtcInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveWebRtcInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->saveWebRtcInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3249,6 +3537,42 @@ CCCClient::UnmuteCallOutcomeCallable CCCClient::unmuteCallCallable(const UnmuteC
 			[this, request]()
 			{
 			return this->unmuteCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::UpdateConfigItemsOutcome CCCClient::updateConfigItems(const UpdateConfigItemsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateConfigItemsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateConfigItemsOutcome(UpdateConfigItemsResult(outcome.result()));
+	else
+		return UpdateConfigItemsOutcome(outcome.error());
+}
+
+void CCCClient::updateConfigItemsAsync(const UpdateConfigItemsRequest& request, const UpdateConfigItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateConfigItems(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::UpdateConfigItemsOutcomeCallable CCCClient::updateConfigItemsCallable(const UpdateConfigItemsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateConfigItemsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateConfigItems(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

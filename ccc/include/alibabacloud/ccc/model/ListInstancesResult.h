@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CCC_MODEL_LISTCALLDETAILRECORDSRESULT_H_
-#define ALIBABACLOUD_CCC_MODEL_LISTCALLDETAILRECORDSRESULT_H_
+#ifndef ALIBABACLOUD_CCC_MODEL_LISTINSTANCESRESULT_H_
+#define ALIBABACLOUD_CCC_MODEL_LISTINSTANCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,51 +29,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CCC_EXPORT ListCallDetailRecordsResult : public ServiceResult
+			class ALIBABACLOUD_CCC_EXPORT ListInstancesResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct CallDetailRecord
+					struct CallCenterInstance
 					{
-						std::string calledNumber;
-						long ivrTime;
-						std::string contactType;
-						std::string contactDisposition;
-						int satisfactionIndex;
-						std::string contactId;
-						std::string callingNumber;
-						bool recordingReady;
-						std::string skillGroupNames;
-						bool satisfactionSurveyOffered;
-						long establishedTime;
-						long queueTime;
-						std::string skillGroupIds;
-						std::string instanceId;
-						std::string releaseInitiator;
-						long startTime;
-						long ringTime;
-						std::string callDuration;
-						long releaseTime;
-						std::string satisfactionSurveyChannel;
-						std::string agentIds;
-						std::string satisfactionDescription;
-						long waitTime;
-						std::string agentNames;
-						long recordingDuration;
+						struct User
+						{
+							std::string extension;
+							std::string loginName;
+							std::string roleName;
+							std::string email;
+							std::string instanceId;
+							std::string userId;
+							std::string displayName;
+							std::string mobile;
+							std::string roleId;
+							std::string workMode;
+						};
+						struct PhoneNumber
+						{
+							std::string number;
+						};
+						std::string status;
+						std::vector<CallCenterInstance::User> adminList;
+						std::string description;
+						std::string consoleUrl;
+						std::string domainName;
+						std::string aliyunUid;
+						long createTime;
+						std::vector<CallCenterInstance::PhoneNumber> numberList;
+						std::string id;
+						std::string name;
 					};
 					int totalCount;
 					int pageSize;
 					int pageNumber;
-					std::vector<CallDetailRecord> list;
+					std::vector<CallCenterInstance> list;
 				};
 
 
-				ListCallDetailRecordsResult();
-				explicit ListCallDetailRecordsResult(const std::string &payload);
-				~ListCallDetailRecordsResult();
+				ListInstancesResult();
+				explicit ListInstancesResult(const std::string &payload);
+				~ListInstancesResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
+				std::vector<std::string> getParams()const;
 				Data getData()const;
 				std::string getCode()const;
 
@@ -82,6 +85,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
+				std::vector<std::string> params_;
 				Data data_;
 				std::string code_;
 
@@ -89,4 +93,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CCC_MODEL_LISTCALLDETAILRECORDSRESULT_H_
+#endif // !ALIBABACLOUD_CCC_MODEL_LISTINSTANCESRESULT_H_

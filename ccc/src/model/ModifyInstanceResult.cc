@@ -14,53 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ccc/model/GetLoginDetailsResult.h>
+#include <alibabacloud/ccc/model/ModifyInstanceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CCC;
 using namespace AlibabaCloud::CCC::Model;
 
-GetLoginDetailsResult::GetLoginDetailsResult() :
+ModifyInstanceResult::ModifyInstanceResult() :
 	ServiceResult()
 {}
 
-GetLoginDetailsResult::GetLoginDetailsResult(const std::string &payload) :
+ModifyInstanceResult::ModifyInstanceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetLoginDetailsResult::~GetLoginDetailsResult()
+ModifyInstanceResult::~ModifyInstanceResult()
 {}
 
-void GetLoginDetailsResult::parse(const std::string &payload)
+void ModifyInstanceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["DeviceId"].isNull())
-		data_.deviceId = dataNode["DeviceId"].asString();
-	if(!dataNode["DisplayName"].isNull())
-		data_.displayName = dataNode["DisplayName"].asString();
-	if(!dataNode["Extension"].isNull())
-		data_.extension = dataNode["Extension"].asString();
-	if(!dataNode["Signature"].isNull())
-		data_.signature = dataNode["Signature"].asString();
-	if(!dataNode["SipServerUrl"].isNull())
-		data_.sipServerUrl = dataNode["SipServerUrl"].asString();
-	if(!dataNode["UserId"].isNull())
-		data_.userId = dataNode["UserId"].asString();
-	if(!dataNode["UserKey"].isNull())
-		data_.userKey = dataNode["UserKey"].asString();
-	if(!dataNode["AgentServerUrl"].isNull())
-		data_.agentServerUrl = dataNode["AgentServerUrl"].asString();
 	auto allParams = value["Params"]["Param"];
 	for (const auto &item : allParams)
 		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())
@@ -68,27 +53,27 @@ void GetLoginDetailsResult::parse(const std::string &payload)
 
 }
 
-std::string GetLoginDetailsResult::getMessage()const
+std::string ModifyInstanceResult::getMessage()const
 {
 	return message_;
 }
 
-int GetLoginDetailsResult::getHttpStatusCode()const
+int ModifyInstanceResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::vector<std::string> GetLoginDetailsResult::getParams()const
+std::vector<std::string> ModifyInstanceResult::getParams()const
 {
 	return params_;
 }
 
-GetLoginDetailsResult::Data GetLoginDetailsResult::getData()const
+std::string ModifyInstanceResult::getData()const
 {
 	return data_;
 }
 
-std::string GetLoginDetailsResult::getCode()const
+std::string ModifyInstanceResult::getCode()const
 {
 	return code_;
 }

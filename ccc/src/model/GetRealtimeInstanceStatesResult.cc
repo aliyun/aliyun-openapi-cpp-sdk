@@ -48,8 +48,8 @@ void GetRealtimeInstanceStatesResult::parse(const std::string &payload)
 		data_.interactiveCalls = std::stol(dataNode["InteractiveCalls"].asString());
 	if(!dataNode["LoggedInAgents"].isNull())
 		data_.loggedInAgents = std::stol(dataNode["LoggedInAgents"].asString());
-	if(!dataNode["LongestCall"].isNull())
-		data_.longestCall = std::stol(dataNode["LongestCall"].asString());
+	if(!dataNode["LongestWaitingTime"].isNull())
+		data_.longestWaitingTime = std::stol(dataNode["LongestWaitingTime"].asString());
 	if(!dataNode["ReadyAgents"].isNull())
 		data_.readyAgents = std::stol(dataNode["ReadyAgents"].asString());
 	if(!dataNode["TalkingAgents"].isNull())

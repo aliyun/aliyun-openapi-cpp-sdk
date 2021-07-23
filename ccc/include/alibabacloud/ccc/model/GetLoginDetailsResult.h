@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string extension;
+					std::string agentServerUrl;
 					std::string deviceId;
 					std::string sipServerUrl;
 					std::string userId;

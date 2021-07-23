@@ -46,24 +46,34 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 		if(!valueDataDataItem["StatsTime"].isNull())
 			dataObject.statsTime = std::stol(valueDataDataItem["StatsTime"].asString());
 		auto inboundNode = value["Inbound"];
+		if(!inboundNode["AverageHoldTime"].isNull())
+			dataObject.inbound.averageHoldTime = std::stof(inboundNode["AverageHoldTime"].asString());
 		if(!inboundNode["AverageRingTime"].isNull())
 			dataObject.inbound.averageRingTime = std::stof(inboundNode["AverageRingTime"].asString());
 		if(!inboundNode["AverageTalkTime"].isNull())
 			dataObject.inbound.averageTalkTime = std::stof(inboundNode["AverageTalkTime"].asString());
 		if(!inboundNode["AverageWorkTime"].isNull())
 			dataObject.inbound.averageWorkTime = std::stof(inboundNode["AverageWorkTime"].asString());
-		if(!inboundNode["CallsConsulted"].isNull())
-			dataObject.inbound.callsConsulted = std::stol(inboundNode["CallsConsulted"].asString());
+		if(!inboundNode["CallsAttendedTransferIn"].isNull())
+			dataObject.inbound.callsAttendedTransferIn = std::stol(inboundNode["CallsAttendedTransferIn"].asString());
+		if(!inboundNode["CallsAttendedTransferOut"].isNull())
+			dataObject.inbound.callsAttendedTransferOut = std::stol(inboundNode["CallsAttendedTransferOut"].asString());
+		if(!inboundNode["CallsBlindTransferIn"].isNull())
+			dataObject.inbound.callsBlindTransferIn = std::stol(inboundNode["CallsBlindTransferIn"].asString());
+		if(!inboundNode["CallsBlindTransferOut"].isNull())
+			dataObject.inbound.callsBlindTransferOut = std::stol(inboundNode["CallsBlindTransferOut"].asString());
 		if(!inboundNode["CallsHandled"].isNull())
 			dataObject.inbound.callsHandled = std::stol(inboundNode["CallsHandled"].asString());
 		if(!inboundNode["CallsHold"].isNull())
 			dataObject.inbound.callsHold = std::stol(inboundNode["CallsHold"].asString());
 		if(!inboundNode["CallsOffered"].isNull())
 			dataObject.inbound.callsOffered = std::stol(inboundNode["CallsOffered"].asString());
-		if(!inboundNode["CallsTransferred"].isNull())
-			dataObject.inbound.callsTransferred = std::stol(inboundNode["CallsTransferred"].asString());
+		if(!inboundNode["CallsRinged"].isNull())
+			dataObject.inbound.callsRinged = std::stol(inboundNode["CallsRinged"].asString());
 		if(!inboundNode["HandleRate"].isNull())
 			dataObject.inbound.handleRate = std::stof(inboundNode["HandleRate"].asString());
+		if(!inboundNode["MaxHoldTime"].isNull())
+			dataObject.inbound.maxHoldTime = std::stol(inboundNode["MaxHoldTime"].asString());
 		if(!inboundNode["MaxRingTime"].isNull())
 			dataObject.inbound.maxRingTime = std::stol(inboundNode["MaxRingTime"].asString());
 		if(!inboundNode["MaxTalkTime"].isNull())
@@ -72,6 +82,8 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 			dataObject.inbound.maxWorkTime = std::stol(inboundNode["MaxWorkTime"].asString());
 		if(!inboundNode["SatisfactionIndex"].isNull())
 			dataObject.inbound.satisfactionIndex = std::stof(inboundNode["SatisfactionIndex"].asString());
+		if(!inboundNode["SatisfactionRate"].isNull())
+			dataObject.inbound.satisfactionRate = std::stof(inboundNode["SatisfactionRate"].asString());
 		if(!inboundNode["SatisfactionSurveysOffered"].isNull())
 			dataObject.inbound.satisfactionSurveysOffered = std::stol(inboundNode["SatisfactionSurveysOffered"].asString());
 		if(!inboundNode["SatisfactionSurveysResponded"].isNull())
@@ -89,22 +101,44 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 			dataObject.outbound.answerRate = std::stof(outboundNode["AnswerRate"].asString());
 		if(!outboundNode["AverageDialingTime"].isNull())
 			dataObject.outbound.averageDialingTime = std::stof(outboundNode["AverageDialingTime"].asString());
+		if(!outboundNode["AverageHoldTime"].isNull())
+			dataObject.outbound.averageHoldTime = std::stof(outboundNode["AverageHoldTime"].asString());
+		if(!outboundNode["AverageRingTime"].isNull())
+			dataObject.outbound.averageRingTime = std::stof(outboundNode["AverageRingTime"].asString());
 		if(!outboundNode["AverageTalkTime"].isNull())
 			dataObject.outbound.averageTalkTime = std::stof(outboundNode["AverageTalkTime"].asString());
 		if(!outboundNode["AverageWorkTime"].isNull())
 			dataObject.outbound.averageWorkTime = std::stof(outboundNode["AverageWorkTime"].asString());
 		if(!outboundNode["CallsAnswered"].isNull())
 			dataObject.outbound.callsAnswered = std::stol(outboundNode["CallsAnswered"].asString());
+		if(!outboundNode["CallsAttendedTransferIn"].isNull())
+			dataObject.outbound.callsAttendedTransferIn = std::stol(outboundNode["CallsAttendedTransferIn"].asString());
+		if(!outboundNode["CallsAttendedTransferOut"].isNull())
+			dataObject.outbound.callsAttendedTransferOut = std::stol(outboundNode["CallsAttendedTransferOut"].asString());
+		if(!outboundNode["CallsBlindTransferIn"].isNull())
+			dataObject.outbound.callsBlindTransferIn = std::stol(outboundNode["CallsBlindTransferIn"].asString());
+		if(!outboundNode["CallsBlindTransferOut"].isNull())
+			dataObject.outbound.callsBlindTransferOut = std::stol(outboundNode["CallsBlindTransferOut"].asString());
 		if(!outboundNode["CallsDialed"].isNull())
 			dataObject.outbound.callsDialed = std::stol(outboundNode["CallsDialed"].asString());
+		if(!outboundNode["CallsHold"].isNull())
+			dataObject.outbound.callsHold = std::stol(outboundNode["CallsHold"].asString());
+		if(!outboundNode["CallsRinged"].isNull())
+			dataObject.outbound.callsRinged = std::stol(outboundNode["CallsRinged"].asString());
 		if(!outboundNode["MaxDialingTime"].isNull())
 			dataObject.outbound.maxDialingTime = std::stol(outboundNode["MaxDialingTime"].asString());
+		if(!outboundNode["MaxHoldTime"].isNull())
+			dataObject.outbound.maxHoldTime = std::stol(outboundNode["MaxHoldTime"].asString());
+		if(!outboundNode["MaxRingTime"].isNull())
+			dataObject.outbound.maxRingTime = std::stol(outboundNode["MaxRingTime"].asString());
 		if(!outboundNode["MaxTalkTime"].isNull())
 			dataObject.outbound.maxTalkTime = std::stol(outboundNode["MaxTalkTime"].asString());
 		if(!outboundNode["MaxWorkTime"].isNull())
 			dataObject.outbound.maxWorkTime = std::stol(outboundNode["MaxWorkTime"].asString());
 		if(!outboundNode["SatisfactionIndex"].isNull())
 			dataObject.outbound.satisfactionIndex = std::stof(outboundNode["SatisfactionIndex"].asString());
+		if(!outboundNode["SatisfactionRate"].isNull())
+			dataObject.outbound.satisfactionRate = std::stof(outboundNode["SatisfactionRate"].asString());
 		if(!outboundNode["SatisfactionSurveysOffered"].isNull())
 			dataObject.outbound.satisfactionSurveysOffered = std::stol(outboundNode["SatisfactionSurveysOffered"].asString());
 		if(!outboundNode["SatisfactionSurveysResponded"].isNull())
@@ -113,6 +147,8 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 			dataObject.outbound.totalDialingTime = std::stol(outboundNode["TotalDialingTime"].asString());
 		if(!outboundNode["TotalHoldTime"].isNull())
 			dataObject.outbound.totalHoldTime = std::stol(outboundNode["TotalHoldTime"].asString());
+		if(!outboundNode["TotalRingTime"].isNull())
+			dataObject.outbound.totalRingTime = std::stol(outboundNode["TotalRingTime"].asString());
 		if(!outboundNode["TotalTalkTime"].isNull())
 			dataObject.outbound.totalTalkTime = std::stol(outboundNode["TotalTalkTime"].asString());
 		if(!outboundNode["TotalWorkTime"].isNull())
@@ -120,6 +156,8 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 		auto overallNode = value["Overall"];
 		if(!overallNode["AverageBreakTime"].isNull())
 			dataObject.overall.averageBreakTime = std::stof(overallNode["AverageBreakTime"].asString());
+		if(!overallNode["AverageHoldTime"].isNull())
+			dataObject.overall.averageHoldTime = std::stof(overallNode["AverageHoldTime"].asString());
 		if(!overallNode["AverageReadyTime"].isNull())
 			dataObject.overall.averageReadyTime = std::stof(overallNode["AverageReadyTime"].asString());
 		if(!overallNode["AverageTalkTime"].isNull())
@@ -132,6 +170,8 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 			dataObject.overall.lastCheckoutTime = std::stol(overallNode["LastCheckoutTime"].asString());
 		if(!overallNode["MaxBreakTime"].isNull())
 			dataObject.overall.maxBreakTime = std::stol(overallNode["MaxBreakTime"].asString());
+		if(!overallNode["MaxHoldTime"].isNull())
+			dataObject.overall.maxHoldTime = std::stol(overallNode["MaxHoldTime"].asString());
 		if(!overallNode["MaxReadyTime"].isNull())
 			dataObject.overall.maxReadyTime = std::stol(overallNode["MaxReadyTime"].asString());
 		if(!overallNode["MaxTalkTime"].isNull())
@@ -142,6 +182,8 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 			dataObject.overall.occupancyRate = std::stof(overallNode["OccupancyRate"].asString());
 		if(!overallNode["SatisfactionIndex"].isNull())
 			dataObject.overall.satisfactionIndex = std::stof(overallNode["SatisfactionIndex"].asString());
+		if(!overallNode["SatisfactionRate"].isNull())
+			dataObject.overall.satisfactionRate = std::stof(overallNode["SatisfactionRate"].asString());
 		if(!overallNode["SatisfactionSurveysOffered"].isNull())
 			dataObject.overall.satisfactionSurveysOffered = std::stol(overallNode["SatisfactionSurveysOffered"].asString());
 		if(!overallNode["SatisfactionSurveysResponded"].isNull())

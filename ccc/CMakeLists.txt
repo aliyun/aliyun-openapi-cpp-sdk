@@ -49,6 +49,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/CoachCallResult.h
 	include/alibabacloud/ccc/model/CompleteAttendedTransferRequest.h
 	include/alibabacloud/ccc/model/CompleteAttendedTransferResult.h
+	include/alibabacloud/ccc/model/CreateInstanceRequest.h
+	include/alibabacloud/ccc/model/CreateInstanceResult.h
 	include/alibabacloud/ccc/model/CreateSkillGroupRequest.h
 	include/alibabacloud/ccc/model/CreateSkillGroupResult.h
 	include/alibabacloud/ccc/model/CreateUserRequest.h
@@ -107,6 +109,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListHistoricalAgentReportResult.h
 	include/alibabacloud/ccc/model/ListHistoricalSkillGroupReportRequest.h
 	include/alibabacloud/ccc/model/ListHistoricalSkillGroupReportResult.h
+	include/alibabacloud/ccc/model/ListInstancesRequest.h
+	include/alibabacloud/ccc/model/ListInstancesResult.h
 	include/alibabacloud/ccc/model/ListInstancesOfUserRequest.h
 	include/alibabacloud/ccc/model/ListInstancesOfUserResult.h
 	include/alibabacloud/ccc/model/ListIntervalAgentReportRequest.h
@@ -145,6 +149,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListUsersResult.h
 	include/alibabacloud/ccc/model/MakeCallRequest.h
 	include/alibabacloud/ccc/model/MakeCallResult.h
+	include/alibabacloud/ccc/model/ModifyInstanceRequest.h
+	include/alibabacloud/ccc/model/ModifyInstanceResult.h
 	include/alibabacloud/ccc/model/ModifyPhoneNumberRequest.h
 	include/alibabacloud/ccc/model/ModifyPhoneNumberResult.h
 	include/alibabacloud/ccc/model/ModifySkillGroupRequest.h
@@ -185,8 +191,18 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/RemoveUsersFromSkillGroupResult.h
 	include/alibabacloud/ccc/model/ResetAgentStateRequest.h
 	include/alibabacloud/ccc/model/ResetAgentStateResult.h
+	include/alibabacloud/ccc/model/ResetUserPasswordRequest.h
+	include/alibabacloud/ccc/model/ResetUserPasswordResult.h
 	include/alibabacloud/ccc/model/RetrieveCallRequest.h
 	include/alibabacloud/ccc/model/RetrieveCallResult.h
+	include/alibabacloud/ccc/model/SaveRTCStatsV2Request.h
+	include/alibabacloud/ccc/model/SaveRTCStatsV2Result.h
+	include/alibabacloud/ccc/model/SaveTerminalLogRequest.h
+	include/alibabacloud/ccc/model/SaveTerminalLogResult.h
+	include/alibabacloud/ccc/model/SaveWebRTCStatsRequest.h
+	include/alibabacloud/ccc/model/SaveWebRTCStatsResult.h
+	include/alibabacloud/ccc/model/SaveWebRtcInfoRequest.h
+	include/alibabacloud/ccc/model/SaveWebRtcInfoResult.h
 	include/alibabacloud/ccc/model/SendDtmfSignalingRequest.h
 	include/alibabacloud/ccc/model/SendDtmfSignalingResult.h
 	include/alibabacloud/ccc/model/SignInGroupRequest.h
@@ -198,7 +214,9 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/TakeBreakRequest.h
 	include/alibabacloud/ccc/model/TakeBreakResult.h
 	include/alibabacloud/ccc/model/UnmuteCallRequest.h
-	include/alibabacloud/ccc/model/UnmuteCallResult.h )
+	include/alibabacloud/ccc/model/UnmuteCallResult.h
+	include/alibabacloud/ccc/model/UpdateConfigItemsRequest.h
+	include/alibabacloud/ccc/model/UpdateConfigItemsResult.h )
 
 set(ccc_src 
 	src/CCCClient.cc
@@ -230,6 +248,8 @@ set(ccc_src
 	src/model/CoachCallResult.cc
 	src/model/CompleteAttendedTransferRequest.cc
 	src/model/CompleteAttendedTransferResult.cc
+	src/model/CreateInstanceRequest.cc
+	src/model/CreateInstanceResult.cc
 	src/model/CreateSkillGroupRequest.cc
 	src/model/CreateSkillGroupResult.cc
 	src/model/CreateUserRequest.cc
@@ -288,6 +308,8 @@ set(ccc_src
 	src/model/ListHistoricalAgentReportResult.cc
 	src/model/ListHistoricalSkillGroupReportRequest.cc
 	src/model/ListHistoricalSkillGroupReportResult.cc
+	src/model/ListInstancesRequest.cc
+	src/model/ListInstancesResult.cc
 	src/model/ListInstancesOfUserRequest.cc
 	src/model/ListInstancesOfUserResult.cc
 	src/model/ListIntervalAgentReportRequest.cc
@@ -326,6 +348,8 @@ set(ccc_src
 	src/model/ListUsersResult.cc
 	src/model/MakeCallRequest.cc
 	src/model/MakeCallResult.cc
+	src/model/ModifyInstanceRequest.cc
+	src/model/ModifyInstanceResult.cc
 	src/model/ModifyPhoneNumberRequest.cc
 	src/model/ModifyPhoneNumberResult.cc
 	src/model/ModifySkillGroupRequest.cc
@@ -366,8 +390,18 @@ set(ccc_src
 	src/model/RemoveUsersFromSkillGroupResult.cc
 	src/model/ResetAgentStateRequest.cc
 	src/model/ResetAgentStateResult.cc
+	src/model/ResetUserPasswordRequest.cc
+	src/model/ResetUserPasswordResult.cc
 	src/model/RetrieveCallRequest.cc
 	src/model/RetrieveCallResult.cc
+	src/model/SaveRTCStatsV2Request.cc
+	src/model/SaveRTCStatsV2Result.cc
+	src/model/SaveTerminalLogRequest.cc
+	src/model/SaveTerminalLogResult.cc
+	src/model/SaveWebRTCStatsRequest.cc
+	src/model/SaveWebRTCStatsResult.cc
+	src/model/SaveWebRtcInfoRequest.cc
+	src/model/SaveWebRtcInfoResult.cc
 	src/model/SendDtmfSignalingRequest.cc
 	src/model/SendDtmfSignalingResult.cc
 	src/model/SignInGroupRequest.cc
@@ -379,7 +413,9 @@ set(ccc_src
 	src/model/TakeBreakRequest.cc
 	src/model/TakeBreakResult.cc
 	src/model/UnmuteCallRequest.cc
-	src/model/UnmuteCallResult.cc )
+	src/model/UnmuteCallResult.cc
+	src/model/UpdateConfigItemsRequest.cc
+	src/model/UpdateConfigItemsResult.cc )
 
 add_library(ccc ${LIB_TYPE}
 	${ccc_public_header}

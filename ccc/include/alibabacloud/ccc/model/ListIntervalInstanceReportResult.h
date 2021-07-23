@@ -52,7 +52,6 @@ namespace AlibabaCloud
 						long totalRingTime;
 						float handleRate;
 						float averageAbandonedInQueueTime;
-						long callsAbandonedInRinging;
 						long totalAbandonedInIVRTime;
 						float averageWaitTime;
 						long totalTalkTime;
@@ -60,17 +59,19 @@ namespace AlibabaCloud
 						long callsQueued;
 						long maxTalkTime;
 						float averageAbandonedInIVRTime;
+						float satisfactionRate;
 						long totalAbandonTime;
 						float averageTalkTime;
 						long maxHoldTime;
 						long callsAbandonedInIVR;
-						long callsConsulted;
+						long callsBlindTransferred;
 						long maxAbandonedInQueueTime;
 						long satisfactionSurveysOffered;
+						long callsAbandonedInRing;
 						long callsHandled;
 						long maxWaitTime;
 						long satisfactionSurveysResponded;
-						long callsTransferred;
+						long callsAttendedTransferred;
 						float averageRingTime;
 						long maxAbandonTime;
 						long totalWaitTime;
@@ -85,21 +86,30 @@ namespace AlibabaCloud
 					{
 						long totalDialingTime;
 						long totalWorkTime;
+						long callsRinged;
 						long totalHoldTime;
-						long callsDialedSuccess;
-						long satisfactionSurveysOffered;
+						float averageHoldTime;
+						long maxRingTime;
+						long callsHold;
 						float satisfactionIndex;
-						long satisfactionSurveysResponded;
+						long totalRingTime;
 						float averageDialingTime;
 						long callsAnswered;
 						long callsDialed;
 						long totalTalkTime;
 						long maxDialingTime;
 						long maxTalkTime;
-						float averageWorkTime;
-						long maxWorkTime;
+						float satisfactionRate;
 						float answerRate;
 						float averageTalkTime;
+						long maxHoldTime;
+						long callsBlindTransferred;
+						long satisfactionSurveysOffered;
+						long satisfactionSurveysResponded;
+						long callsAttendedTransferred;
+						float averageRingTime;
+						float averageWorkTime;
+						long maxWorkTime;
 					};
 					struct Overall
 					{
@@ -119,6 +129,7 @@ namespace AlibabaCloud
 						long maxTalkTime;
 						float averageWorkTime;
 						long maxReadyTime;
+						float satisfactionRate;
 						long maxBreakTime;
 						long maxWorkTime;
 						float averageTalkTime;

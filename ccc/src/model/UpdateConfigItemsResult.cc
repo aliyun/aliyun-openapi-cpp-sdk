@@ -14,48 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ccc/model/GetLoginDetailsResult.h>
+#include <alibabacloud/ccc/model/UpdateConfigItemsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CCC;
 using namespace AlibabaCloud::CCC::Model;
 
-GetLoginDetailsResult::GetLoginDetailsResult() :
+UpdateConfigItemsResult::UpdateConfigItemsResult() :
 	ServiceResult()
 {}
 
-GetLoginDetailsResult::GetLoginDetailsResult(const std::string &payload) :
+UpdateConfigItemsResult::UpdateConfigItemsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetLoginDetailsResult::~GetLoginDetailsResult()
+UpdateConfigItemsResult::~UpdateConfigItemsResult()
 {}
 
-void GetLoginDetailsResult::parse(const std::string &payload)
+void UpdateConfigItemsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["DeviceId"].isNull())
-		data_.deviceId = dataNode["DeviceId"].asString();
-	if(!dataNode["DisplayName"].isNull())
-		data_.displayName = dataNode["DisplayName"].asString();
-	if(!dataNode["Extension"].isNull())
-		data_.extension = dataNode["Extension"].asString();
-	if(!dataNode["Signature"].isNull())
-		data_.signature = dataNode["Signature"].asString();
-	if(!dataNode["SipServerUrl"].isNull())
-		data_.sipServerUrl = dataNode["SipServerUrl"].asString();
-	if(!dataNode["UserId"].isNull())
-		data_.userId = dataNode["UserId"].asString();
-	if(!dataNode["UserKey"].isNull())
-		data_.userKey = dataNode["UserKey"].asString();
-	if(!dataNode["AgentServerUrl"].isNull())
-		data_.agentServerUrl = dataNode["AgentServerUrl"].asString();
 	auto allParams = value["Params"]["Param"];
 	for (const auto &item : allParams)
 		params_.push_back(item.asString());
@@ -68,27 +51,22 @@ void GetLoginDetailsResult::parse(const std::string &payload)
 
 }
 
-std::string GetLoginDetailsResult::getMessage()const
+std::string UpdateConfigItemsResult::getMessage()const
 {
 	return message_;
 }
 
-int GetLoginDetailsResult::getHttpStatusCode()const
+int UpdateConfigItemsResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::vector<std::string> GetLoginDetailsResult::getParams()const
+std::vector<std::string> UpdateConfigItemsResult::getParams()const
 {
 	return params_;
 }
 
-GetLoginDetailsResult::Data GetLoginDetailsResult::getData()const
-{
-	return data_;
-}
-
-std::string GetLoginDetailsResult::getCode()const
+std::string UpdateConfigItemsResult::getCode()const
 {
 	return code_;
 }

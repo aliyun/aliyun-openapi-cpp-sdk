@@ -38,6 +38,17 @@ void ListCallDetailRecordsRequest::setContactId(const std::string& contactId)
 	setParameter("ContactId", contactId);
 }
 
+std::string ListCallDetailRecordsRequest::getCriteria()const
+{
+	return criteria_;
+}
+
+void ListCallDetailRecordsRequest::setCriteria(const std::string& criteria)
+{
+	criteria_ = criteria;
+	setParameter("Criteria", criteria);
+}
+
 std::string ListCallDetailRecordsRequest::getOrderByField()const
 {
 	return orderByField_;
@@ -113,6 +124,17 @@ void ListCallDetailRecordsRequest::setSortOrder(const std::string& sortOrder)
 {
 	sortOrder_ = sortOrder;
 	setParameter("SortOrder", sortOrder);
+}
+
+std::string ListCallDetailRecordsRequest::getSatisfactionDescriptionList()const
+{
+	return satisfactionDescriptionList_;
+}
+
+void ListCallDetailRecordsRequest::setSatisfactionDescriptionList(const std::string& satisfactionDescriptionList)
+{
+	satisfactionDescriptionList_ = satisfactionDescriptionList;
+	setParameter("SatisfactionDescriptionList", satisfactionDescriptionList);
 }
 
 std::string ListCallDetailRecordsRequest::getAgentId()const
