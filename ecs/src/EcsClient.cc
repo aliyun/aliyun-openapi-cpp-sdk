@@ -11823,6 +11823,42 @@ EcsClient::StartInstancesOutcomeCallable EcsClient::startInstancesCallable(const
 	return task->get_future();
 }
 
+EcsClient::StartTerminalSessionOutcome EcsClient::startTerminalSession(const StartTerminalSessionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartTerminalSessionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartTerminalSessionOutcome(StartTerminalSessionResult(outcome.result()));
+	else
+		return StartTerminalSessionOutcome(outcome.error());
+}
+
+void EcsClient::startTerminalSessionAsync(const StartTerminalSessionRequest& request, const StartTerminalSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startTerminalSession(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::StartTerminalSessionOutcomeCallable EcsClient::startTerminalSessionCallable(const StartTerminalSessionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartTerminalSessionOutcome()>>(
+			[this, request]()
+			{
+			return this->startTerminalSession(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::StopDiskReplicaPairOutcome EcsClient::stopDiskReplicaPair(const StopDiskReplicaPairRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

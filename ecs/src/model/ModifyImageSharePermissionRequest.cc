@@ -60,6 +60,17 @@ void ModifyImageSharePermissionRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+bool ModifyImageSharePermissionRequest::getIsPublic()const
+{
+	return isPublic_;
+}
+
+void ModifyImageSharePermissionRequest::setIsPublic(bool isPublic)
+{
+	isPublic_ = isPublic;
+	setParameter("IsPublic", isPublic ? "true" : "false");
+}
+
 std::string ModifyImageSharePermissionRequest::getLaunchPermission()const
 {
 	return launchPermission_;

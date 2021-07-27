@@ -115,9 +115,9 @@ void DescribeInstanceModificationPriceRequest::setDataDisk(const std::vector<Dat
 	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
 		auto dataDiskObj = dataDisk.at(dep1);
 		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1 + 1);
+		setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
 		setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
 		setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
-		setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
 	}
 }
 

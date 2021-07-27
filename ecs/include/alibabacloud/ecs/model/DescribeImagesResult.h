@@ -59,6 +59,7 @@ namespace AlibabaCloud
 					int size;
 					bool isSubscribed;
 					std::string oSName;
+					bool isPublic;
 					std::string imageId;
 					std::vector<Image::Tag> tags;
 					std::string oSNameEn;
@@ -67,6 +68,7 @@ namespace AlibabaCloud
 					std::string usage;
 					std::string architecture;
 					std::string productCode;
+					long imageOwnerId;
 					bool isCopied;
 					std::string imageFamily;
 					bool isSupportIoOptimized;

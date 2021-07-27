@@ -48,6 +48,8 @@ namespace AlibabaCloud
 
 				std::string getActionType()const;
 				void setActionType(const std::string& actionType);
+				long getImageOwnerId()const;
+				void setImageOwnerId(long imageOwnerId);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getImageId()const;
@@ -70,6 +72,8 @@ namespace AlibabaCloud
 				void setImageName(const std::string& imageName);
 				bool getIsSupportCloudinit()const;
 				void setIsSupportCloudinit(bool isSupportCloudinit);
+				bool getIsPublic()const;
+				void setIsPublic(bool isPublic);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getInstanceType()const;
@@ -99,6 +103,7 @@ namespace AlibabaCloud
 
             private:
 				std::string actionType_;
+				long imageOwnerId_;
 				long resourceOwnerId_;
 				std::string imageId_;
 				std::string snapshotId_;
@@ -110,6 +115,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string imageName_;
 				bool isSupportCloudinit_;
+				bool isPublic_;
 				int pageSize_;
 				std::string instanceType_;
 				std::vector<Tag> tag_;

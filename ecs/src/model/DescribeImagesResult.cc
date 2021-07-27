@@ -89,6 +89,10 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.productCode = valueImagesImage["ProductCode"].asString();
 		if(!valueImagesImage["Architecture"].isNull())
 			imagesObject.architecture = valueImagesImage["Architecture"].asString();
+		if(!valueImagesImage["IsPublic"].isNull())
+			imagesObject.isPublic = valueImagesImage["IsPublic"].asString() == "true";
+		if(!valueImagesImage["ImageOwnerId"].isNull())
+			imagesObject.imageOwnerId = std::stol(valueImagesImage["ImageOwnerId"].asString());
 		auto allDiskDeviceMappingsNode = valueImagesImage["DiskDeviceMappings"]["DiskDeviceMapping"];
 		for (auto valueImagesImageDiskDeviceMappingsDiskDeviceMapping : allDiskDeviceMappingsNode)
 		{

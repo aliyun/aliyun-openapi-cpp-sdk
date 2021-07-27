@@ -675,6 +675,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/StartInstanceResult.h
 	include/alibabacloud/ecs/model/StartInstancesRequest.h
 	include/alibabacloud/ecs/model/StartInstancesResult.h
+	include/alibabacloud/ecs/model/StartTerminalSessionRequest.h
+	include/alibabacloud/ecs/model/StartTerminalSessionResult.h
 	include/alibabacloud/ecs/model/StopDiskReplicaPairRequest.h
 	include/alibabacloud/ecs/model/StopDiskReplicaPairResult.h
 	include/alibabacloud/ecs/model/StopInstanceRequest.h
@@ -1356,6 +1358,8 @@ set(ecs_src
 	src/model/StartInstanceResult.cc
 	src/model/StartInstancesRequest.cc
 	src/model/StartInstancesResult.cc
+	src/model/StartTerminalSessionRequest.cc
+	src/model/StartTerminalSessionResult.cc
 	src/model/StopDiskReplicaPairRequest.cc
 	src/model/StopDiskReplicaPairResult.cc
 	src/model/StopInstanceRequest.cc

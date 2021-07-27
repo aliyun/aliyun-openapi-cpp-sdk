@@ -38,6 +38,17 @@ void DescribeImagesRequest::setActionType(const std::string& actionType)
 	setParameter("ActionType", actionType);
 }
 
+long DescribeImagesRequest::getImageOwnerId()const
+{
+	return imageOwnerId_;
+}
+
+void DescribeImagesRequest::setImageOwnerId(long imageOwnerId)
+{
+	imageOwnerId_ = imageOwnerId;
+	setParameter("ImageOwnerId", std::to_string(imageOwnerId));
+}
+
 long DescribeImagesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -157,6 +168,17 @@ void DescribeImagesRequest::setIsSupportCloudinit(bool isSupportCloudinit)
 {
 	isSupportCloudinit_ = isSupportCloudinit;
 	setParameter("IsSupportCloudinit", isSupportCloudinit ? "true" : "false");
+}
+
+bool DescribeImagesRequest::getIsPublic()const
+{
+	return isPublic_;
+}
+
+void DescribeImagesRequest::setIsPublic(bool isPublic)
+{
+	isPublic_ = isPublic;
+	setParameter("IsPublic", isPublic ? "true" : "false");
 }
 
 int DescribeImagesRequest::getPageSize()const
