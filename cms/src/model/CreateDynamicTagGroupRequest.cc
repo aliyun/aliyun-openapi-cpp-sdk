@@ -113,3 +113,14 @@ void CreateDynamicTagGroupRequest::setTagKey(const std::string& tagKey)
 	setParameter("TagKey", tagKey);
 }
 
+std::string CreateDynamicTagGroupRequest::getTagRegionId()const
+{
+	return tagRegionId_;
+}
+
+void CreateDynamicTagGroupRequest::setTagRegionId(const std::string& tagRegionId)
+{
+	tagRegionId_ = tagRegionId;
+	setParameter("TagRegionId", tagRegionId);
+}
+

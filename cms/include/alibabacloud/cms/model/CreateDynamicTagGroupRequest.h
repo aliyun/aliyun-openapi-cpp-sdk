@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setTemplateIdList(const std::vector<std::string>& templateIdList);
 				std::string getTagKey()const;
 				void setTagKey(const std::string& tagKey);
+				std::string getTagRegionId()const;
+				void setTagRegionId(const std::string& tagRegionId);
 
             private:
 				bool enableSubscribeEvent_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::vector<std::string> contactGroupList_;
 				std::vector<std::string> templateIdList_;
 				std::string tagKey_;
+				std::string tagRegionId_;
 
 			};
 		}
