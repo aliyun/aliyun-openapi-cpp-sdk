@@ -55,6 +55,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeAccountsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeActiveOperationTaskResult.h
+	include/alibabacloud/r-kvstore/model/DescribeAuditLogConfigRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeAuditLogConfigResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAuditRecordsRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeAuditRecordsResult.h
 	include/alibabacloud/r-kvstore/model/DescribeAvailableResourceRequest.h
@@ -252,6 +254,8 @@ set(r-kvstore_src
 	src/model/DescribeAccountsResult.cc
 	src/model/DescribeActiveOperationTaskRequest.cc
 	src/model/DescribeActiveOperationTaskResult.cc
+	src/model/DescribeAuditLogConfigRequest.cc
+	src/model/DescribeAuditLogConfigResult.cc
 	src/model/DescribeAuditRecordsRequest.cc
 	src/model/DescribeAuditRecordsResult.cc
 	src/model/DescribeAvailableResourceRequest.cc

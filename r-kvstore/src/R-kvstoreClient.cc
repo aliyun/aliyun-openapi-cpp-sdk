@@ -663,6 +663,42 @@ R_kvstoreClient::DescribeActiveOperationTaskOutcomeCallable R_kvstoreClient::des
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeAuditLogConfigOutcome R_kvstoreClient::describeAuditLogConfig(const DescribeAuditLogConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAuditLogConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAuditLogConfigOutcome(DescribeAuditLogConfigResult(outcome.result()));
+	else
+		return DescribeAuditLogConfigOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeAuditLogConfigAsync(const DescribeAuditLogConfigRequest& request, const DescribeAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAuditLogConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeAuditLogConfigOutcomeCallable R_kvstoreClient::describeAuditLogConfigCallable(const DescribeAuditLogConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAuditLogConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAuditLogConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeAuditRecordsOutcome R_kvstoreClient::describeAuditRecords(const DescribeAuditRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

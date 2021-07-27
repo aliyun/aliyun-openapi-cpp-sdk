@@ -39,32 +39,32 @@ void CreateTairInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = std::stol(value["Bandwidth"].asString());
+	if(!value["ChargeType"].isNull())
+		chargeType_ = value["ChargeType"].asString();
+	if(!value["Config"].isNull())
+		config_ = value["Config"].asString();
+	if(!value["ConnectionDomain"].isNull())
+		connectionDomain_ = value["ConnectionDomain"].asString();
+	if(!value["Connections"].isNull())
+		connections_ = std::stol(value["Connections"].asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["InstanceName"].isNull())
 		instanceName_ = value["InstanceName"].asString();
-	if(!value["ConnectionDomain"].isNull())
-		connectionDomain_ = value["ConnectionDomain"].asString();
-	if(!value["Port"].isNull())
-		port_ = std::stoi(value["Port"].asString());
 	if(!value["InstanceStatus"].isNull())
 		instanceStatus_ = value["InstanceStatus"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
+	if(!value["Port"].isNull())
+		port_ = std::stoi(value["Port"].asString());
 	if(!value["QPS"].isNull())
 		qPS_ = std::stol(value["QPS"].asString());
-	if(!value["Bandwidth"].isNull())
-		bandwidth_ = std::stol(value["Bandwidth"].asString());
-	if(!value["Connections"].isNull())
-		connections_ = std::stol(value["Connections"].asString());
-	if(!value["ZoneId"].isNull())
-		zoneId_ = value["ZoneId"].asString();
-	if(!value["Config"].isNull())
-		config_ = value["Config"].asString();
-	if(!value["ChargeType"].isNull())
-		chargeType_ = value["ChargeType"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
+	if(!value["ZoneId"].isNull())
+		zoneId_ = value["ZoneId"].asString();
 
 }
 
@@ -98,14 +98,14 @@ int CreateTairInstanceResult::getPort()const
 	return port_;
 }
 
-std::string CreateTairInstanceResult::getInstanceName()const
-{
-	return instanceName_;
-}
-
 std::string CreateTairInstanceResult::getConnectionDomain()const
 {
 	return connectionDomain_;
+}
+
+std::string CreateTairInstanceResult::getInstanceName()const
+{
+	return instanceName_;
 }
 
 long CreateTairInstanceResult::getQPS()const
@@ -113,14 +113,14 @@ long CreateTairInstanceResult::getQPS()const
 	return qPS_;
 }
 
-std::string CreateTairInstanceResult::getInstanceStatus()const
-{
-	return instanceStatus_;
-}
-
 std::string CreateTairInstanceResult::getChargeType()const
 {
 	return chargeType_;
+}
+
+std::string CreateTairInstanceResult::getInstanceStatus()const
+{
+	return instanceStatus_;
 }
 
 long CreateTairInstanceResult::getBandwidth()const

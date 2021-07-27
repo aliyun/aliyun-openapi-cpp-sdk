@@ -56,6 +56,8 @@
 #include "model/DescribeAccountsResult.h"
 #include "model/DescribeActiveOperationTaskRequest.h"
 #include "model/DescribeActiveOperationTaskResult.h"
+#include "model/DescribeAuditLogConfigRequest.h"
+#include "model/DescribeAuditLogConfigResult.h"
 #include "model/DescribeAuditRecordsRequest.h"
 #include "model/DescribeAuditRecordsResult.h"
 #include "model/DescribeAvailableResourceRequest.h"
@@ -276,6 +278,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeActiveOperationTaskResult> DescribeActiveOperationTaskOutcome;
 			typedef std::future<DescribeActiveOperationTaskOutcome> DescribeActiveOperationTaskOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeActiveOperationTaskRequest&, const DescribeActiveOperationTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAuditLogConfigResult> DescribeAuditLogConfigOutcome;
+			typedef std::future<DescribeAuditLogConfigOutcome> DescribeAuditLogConfigOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeAuditLogConfigRequest&, const DescribeAuditLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditRecordsResult> DescribeAuditRecordsOutcome;
 			typedef std::future<DescribeAuditRecordsOutcome> DescribeAuditRecordsOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeAuditRecordsRequest&, const DescribeAuditRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditRecordsAsyncHandler;
@@ -572,6 +577,9 @@ namespace AlibabaCloud
 			DescribeActiveOperationTaskOutcome describeActiveOperationTask(const Model::DescribeActiveOperationTaskRequest &request)const;
 			void describeActiveOperationTaskAsync(const Model::DescribeActiveOperationTaskRequest& request, const DescribeActiveOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeActiveOperationTaskOutcomeCallable describeActiveOperationTaskCallable(const Model::DescribeActiveOperationTaskRequest& request) const;
+			DescribeAuditLogConfigOutcome describeAuditLogConfig(const Model::DescribeAuditLogConfigRequest &request)const;
+			void describeAuditLogConfigAsync(const Model::DescribeAuditLogConfigRequest& request, const DescribeAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAuditLogConfigOutcomeCallable describeAuditLogConfigCallable(const Model::DescribeAuditLogConfigRequest& request) const;
 			DescribeAuditRecordsOutcome describeAuditRecords(const Model::DescribeAuditRecordsRequest &request)const;
 			void describeAuditRecordsAsync(const Model::DescribeAuditRecordsRequest& request, const DescribeAuditRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditRecordsOutcomeCallable describeAuditRecordsCallable(const Model::DescribeAuditRecordsRequest& request) const;

@@ -43,11 +43,11 @@ namespace AlibabaCloud
 				std::string getInstanceId()const;
 				std::string getConfig()const;
 				int getPort()const;
-				std::string getInstanceName()const;
 				std::string getConnectionDomain()const;
+				std::string getInstanceName()const;
 				long getQPS()const;
-				std::string getInstanceStatus()const;
 				std::string getChargeType()const;
+				std::string getInstanceStatus()const;
 				long getBandwidth()const;
 				std::string getRegionId()const;
 
@@ -60,11 +60,11 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string config_;
 				int port_;
-				std::string instanceName_;
 				std::string connectionDomain_;
+				std::string instanceName_;
 				long qPS_;
-				std::string instanceStatus_;
 				std::string chargeType_;
+				std::string instanceStatus_;
 				long bandwidth_;
 				std::string regionId_;
 
