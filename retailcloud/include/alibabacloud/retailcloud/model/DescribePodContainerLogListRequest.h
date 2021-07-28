@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEENVIRONMENTREQUEST_H_
-#define ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEENVIRONMENTREQUEST_H_
+#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEPODCONTAINERLOGLISTREQUEST_H_
+#define ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEPODCONTAINERLOGLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RETAILCLOUD_EXPORT CreateEnvironmentRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RETAILCLOUD_EXPORT DescribePodContainerLogListRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateEnvironmentRequest();
-				~CreateEnvironmentRequest();
+				DescribePodContainerLogListRequest();
+				~DescribePodContainerLogListRequest();
 
-				std::string getEnvName()const;
-				void setEnvName(const std::string& envName);
-				int getReplicas()const;
-				void setReplicas(int replicas);
+				int getLine()const;
+				void setLine(int line);
 				long getAppId()const;
 				void setAppId(long appId);
-				int getEnvType()const;
-				void setEnvType(int envType);
-				long getAppSchemaId()const;
-				void setAppSchemaId(long appSchemaId);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
+				std::string getPodName()const;
+				void setPodName(const std::string& podName);
+				long getEnvId()const;
+				void setEnvId(long envId);
 
             private:
-				std::string envName_;
-				int replicas_;
+				int line_;
 				long appId_;
-				int envType_;
-				long appSchemaId_;
-				std::string clusterId_;
-				std::string region_;
+				std::string podName_;
+				long envId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEENVIRONMENTREQUEST_H_
+#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEPODCONTAINERLOGLISTREQUEST_H_

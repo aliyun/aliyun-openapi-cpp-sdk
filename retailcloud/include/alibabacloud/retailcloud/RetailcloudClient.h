@@ -28,6 +28,8 @@
 #include "model/AllocatePodConfigResult.h"
 #include "model/BatchAddServersRequest.h"
 #include "model/BatchAddServersResult.h"
+#include "model/BindGroupRequest.h"
+#include "model/BindGroupResult.h"
 #include "model/BindNodeLabelRequest.h"
 #include "model/BindNodeLabelResult.h"
 #include "model/CloseDeployOrderRequest.h"
@@ -36,6 +38,10 @@
 #include "model/CreateAccountResult.h"
 #include "model/CreateAppRequest.h"
 #include "model/CreateAppResult.h"
+#include "model/CreateAppGroupRequest.h"
+#include "model/CreateAppGroupResult.h"
+#include "model/CreateAppMonitorsRequest.h"
+#include "model/CreateAppMonitorsResult.h"
 #include "model/CreateAppResourceAllocRequest.h"
 #include "model/CreateAppResourceAllocResult.h"
 #include "model/CreateClusterRequest.h"
@@ -60,6 +66,8 @@
 #include "model/DeleteAppDetailResult.h"
 #include "model/DeleteAppEnvironmentRequest.h"
 #include "model/DeleteAppEnvironmentResult.h"
+#include "model/DeleteAppGroupRequest.h"
+#include "model/DeleteAppGroupResult.h"
 #include "model/DeleteAppResourceAllocRequest.h"
 #include "model/DeleteAppResourceAllocResult.h"
 #include "model/DeleteClusterRequest.h"
@@ -86,6 +94,8 @@
 #include "model/DescribeAppDetailResult.h"
 #include "model/DescribeAppEnvironmentDetailRequest.h"
 #include "model/DescribeAppEnvironmentDetailResult.h"
+#include "model/DescribeAppMonitorMetricRequest.h"
+#include "model/DescribeAppMonitorMetricResult.h"
 #include "model/DescribeAppResourceAllocRequest.h"
 #include "model/DescribeAppResourceAllocResult.h"
 #include "model/DescribeClusterDetailRequest.h"
@@ -94,8 +104,12 @@
 #include "model/DescribeDatabasesResult.h"
 #include "model/DescribeDeployOrderDetailRequest.h"
 #include "model/DescribeDeployOrderDetailResult.h"
+#include "model/DescribeEventMonitorListRequest.h"
+#include "model/DescribeEventMonitorListResult.h"
 #include "model/DescribeJobLogRequest.h"
 #include "model/DescribeJobLogResult.h"
+#include "model/DescribePodContainerLogListRequest.h"
+#include "model/DescribePodContainerLogListResult.h"
 #include "model/DescribePodEventsRequest.h"
 #include "model/DescribePodEventsResult.h"
 #include "model/DescribePodLogRequest.h"
@@ -118,6 +132,10 @@
 #include "model/ListAppCmsGroupsResult.h"
 #include "model/ListAppEnvironmentRequest.h"
 #include "model/ListAppEnvironmentResult.h"
+#include "model/ListAppGroupRequest.h"
+#include "model/ListAppGroupResult.h"
+#include "model/ListAppGroupMappingRequest.h"
+#include "model/ListAppGroupMappingResult.h"
 #include "model/ListAppInstanceRequest.h"
 #include "model/ListAppInstanceResult.h"
 #include "model/ListAppResourceAllocsRequest.h"
@@ -174,10 +192,14 @@
 #include "model/SubmitInfoResult.h"
 #include "model/SyncPodInfoRequest.h"
 #include "model/SyncPodInfoResult.h"
+#include "model/UnbindGroupRequest.h"
+#include "model/UnbindGroupResult.h"
 #include "model/UnbindNodeLabelRequest.h"
 #include "model/UnbindNodeLabelResult.h"
 #include "model/UpdateAppRequest.h"
 #include "model/UpdateAppResult.h"
+#include "model/UpdateAppMonitorsRequest.h"
+#include "model/UpdateAppMonitorsResult.h"
 #include "model/UpdateDeployConfigRequest.h"
 #include "model/UpdateDeployConfigResult.h"
 #include "model/UpdateEnvironmentRequest.h"
@@ -200,6 +222,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchAddServersResult> BatchAddServersOutcome;
 			typedef std::future<BatchAddServersOutcome> BatchAddServersOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::BatchAddServersRequest&, const BatchAddServersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddServersAsyncHandler;
+			typedef Outcome<Error, Model::BindGroupResult> BindGroupOutcome;
+			typedef std::future<BindGroupOutcome> BindGroupOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::BindGroupRequest&, const BindGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindGroupAsyncHandler;
 			typedef Outcome<Error, Model::BindNodeLabelResult> BindNodeLabelOutcome;
 			typedef std::future<BindNodeLabelOutcome> BindNodeLabelOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::BindNodeLabelRequest&, const BindNodeLabelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindNodeLabelAsyncHandler;
@@ -212,6 +237,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAppResult> CreateAppOutcome;
 			typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::CreateAppRequest&, const CreateAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+			typedef Outcome<Error, Model::CreateAppGroupResult> CreateAppGroupOutcome;
+			typedef std::future<CreateAppGroupOutcome> CreateAppGroupOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::CreateAppGroupRequest&, const CreateAppGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateAppMonitorsResult> CreateAppMonitorsOutcome;
+			typedef std::future<CreateAppMonitorsOutcome> CreateAppMonitorsOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::CreateAppMonitorsRequest&, const CreateAppMonitorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppMonitorsAsyncHandler;
 			typedef Outcome<Error, Model::CreateAppResourceAllocResult> CreateAppResourceAllocOutcome;
 			typedef std::future<CreateAppResourceAllocOutcome> CreateAppResourceAllocOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::CreateAppResourceAllocRequest&, const CreateAppResourceAllocOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppResourceAllocAsyncHandler;
@@ -248,6 +279,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteAppEnvironmentResult> DeleteAppEnvironmentOutcome;
 			typedef std::future<DeleteAppEnvironmentOutcome> DeleteAppEnvironmentOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DeleteAppEnvironmentRequest&, const DeleteAppEnvironmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppEnvironmentAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAppGroupResult> DeleteAppGroupOutcome;
+			typedef std::future<DeleteAppGroupOutcome> DeleteAppGroupOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::DeleteAppGroupRequest&, const DeleteAppGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAppResourceAllocResult> DeleteAppResourceAllocOutcome;
 			typedef std::future<DeleteAppResourceAllocOutcome> DeleteAppResourceAllocOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DeleteAppResourceAllocRequest&, const DeleteAppResourceAllocOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppResourceAllocAsyncHandler;
@@ -287,6 +321,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAppEnvironmentDetailResult> DescribeAppEnvironmentDetailOutcome;
 			typedef std::future<DescribeAppEnvironmentDetailOutcome> DescribeAppEnvironmentDetailOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribeAppEnvironmentDetailRequest&, const DescribeAppEnvironmentDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppEnvironmentDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAppMonitorMetricResult> DescribeAppMonitorMetricOutcome;
+			typedef std::future<DescribeAppMonitorMetricOutcome> DescribeAppMonitorMetricOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::DescribeAppMonitorMetricRequest&, const DescribeAppMonitorMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppMonitorMetricAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAppResourceAllocResult> DescribeAppResourceAllocOutcome;
 			typedef std::future<DescribeAppResourceAllocOutcome> DescribeAppResourceAllocOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribeAppResourceAllocRequest&, const DescribeAppResourceAllocOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppResourceAllocAsyncHandler;
@@ -299,9 +336,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDeployOrderDetailResult> DescribeDeployOrderDetailOutcome;
 			typedef std::future<DescribeDeployOrderDetailOutcome> DescribeDeployOrderDetailOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribeDeployOrderDetailRequest&, const DescribeDeployOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployOrderDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEventMonitorListResult> DescribeEventMonitorListOutcome;
+			typedef std::future<DescribeEventMonitorListOutcome> DescribeEventMonitorListOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::DescribeEventMonitorListRequest&, const DescribeEventMonitorListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventMonitorListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeJobLogResult> DescribeJobLogOutcome;
 			typedef std::future<DescribeJobLogOutcome> DescribeJobLogOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribeJobLogRequest&, const DescribeJobLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribePodContainerLogListResult> DescribePodContainerLogListOutcome;
+			typedef std::future<DescribePodContainerLogListOutcome> DescribePodContainerLogListOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::DescribePodContainerLogListRequest&, const DescribePodContainerLogListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodContainerLogListAsyncHandler;
 			typedef Outcome<Error, Model::DescribePodEventsResult> DescribePodEventsOutcome;
 			typedef std::future<DescribePodEventsOutcome> DescribePodEventsOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribePodEventsRequest&, const DescribePodEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodEventsAsyncHandler;
@@ -335,6 +378,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAppEnvironmentResult> ListAppEnvironmentOutcome;
 			typedef std::future<ListAppEnvironmentOutcome> ListAppEnvironmentOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::ListAppEnvironmentRequest&, const ListAppEnvironmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppEnvironmentAsyncHandler;
+			typedef Outcome<Error, Model::ListAppGroupResult> ListAppGroupOutcome;
+			typedef std::future<ListAppGroupOutcome> ListAppGroupOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::ListAppGroupRequest&, const ListAppGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppGroupAsyncHandler;
+			typedef Outcome<Error, Model::ListAppGroupMappingResult> ListAppGroupMappingOutcome;
+			typedef std::future<ListAppGroupMappingOutcome> ListAppGroupMappingOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::ListAppGroupMappingRequest&, const ListAppGroupMappingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppGroupMappingAsyncHandler;
 			typedef Outcome<Error, Model::ListAppInstanceResult> ListAppInstanceOutcome;
 			typedef std::future<ListAppInstanceOutcome> ListAppInstanceOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::ListAppInstanceRequest&, const ListAppInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppInstanceAsyncHandler;
@@ -419,12 +468,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SyncPodInfoResult> SyncPodInfoOutcome;
 			typedef std::future<SyncPodInfoOutcome> SyncPodInfoOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::SyncPodInfoRequest&, const SyncPodInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncPodInfoAsyncHandler;
+			typedef Outcome<Error, Model::UnbindGroupResult> UnbindGroupOutcome;
+			typedef std::future<UnbindGroupOutcome> UnbindGroupOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::UnbindGroupRequest&, const UnbindGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindGroupAsyncHandler;
 			typedef Outcome<Error, Model::UnbindNodeLabelResult> UnbindNodeLabelOutcome;
 			typedef std::future<UnbindNodeLabelOutcome> UnbindNodeLabelOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::UnbindNodeLabelRequest&, const UnbindNodeLabelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindNodeLabelAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAppResult> UpdateAppOutcome;
 			typedef std::future<UpdateAppOutcome> UpdateAppOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::UpdateAppRequest&, const UpdateAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAppAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAppMonitorsResult> UpdateAppMonitorsOutcome;
+			typedef std::future<UpdateAppMonitorsOutcome> UpdateAppMonitorsOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::UpdateAppMonitorsRequest&, const UpdateAppMonitorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAppMonitorsAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDeployConfigResult> UpdateDeployConfigOutcome;
 			typedef std::future<UpdateDeployConfigOutcome> UpdateDeployConfigOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::UpdateDeployConfigRequest&, const UpdateDeployConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeployConfigAsyncHandler;
@@ -445,6 +500,9 @@ namespace AlibabaCloud
 			BatchAddServersOutcome batchAddServers(const Model::BatchAddServersRequest &request)const;
 			void batchAddServersAsync(const Model::BatchAddServersRequest& request, const BatchAddServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchAddServersOutcomeCallable batchAddServersCallable(const Model::BatchAddServersRequest& request) const;
+			BindGroupOutcome bindGroup(const Model::BindGroupRequest &request)const;
+			void bindGroupAsync(const Model::BindGroupRequest& request, const BindGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindGroupOutcomeCallable bindGroupCallable(const Model::BindGroupRequest& request) const;
 			BindNodeLabelOutcome bindNodeLabel(const Model::BindNodeLabelRequest &request)const;
 			void bindNodeLabelAsync(const Model::BindNodeLabelRequest& request, const BindNodeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindNodeLabelOutcomeCallable bindNodeLabelCallable(const Model::BindNodeLabelRequest& request) const;
@@ -457,6 +515,12 @@ namespace AlibabaCloud
 			CreateAppOutcome createApp(const Model::CreateAppRequest &request)const;
 			void createAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAppOutcomeCallable createAppCallable(const Model::CreateAppRequest& request) const;
+			CreateAppGroupOutcome createAppGroup(const Model::CreateAppGroupRequest &request)const;
+			void createAppGroupAsync(const Model::CreateAppGroupRequest& request, const CreateAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAppGroupOutcomeCallable createAppGroupCallable(const Model::CreateAppGroupRequest& request) const;
+			CreateAppMonitorsOutcome createAppMonitors(const Model::CreateAppMonitorsRequest &request)const;
+			void createAppMonitorsAsync(const Model::CreateAppMonitorsRequest& request, const CreateAppMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAppMonitorsOutcomeCallable createAppMonitorsCallable(const Model::CreateAppMonitorsRequest& request) const;
 			CreateAppResourceAllocOutcome createAppResourceAlloc(const Model::CreateAppResourceAllocRequest &request)const;
 			void createAppResourceAllocAsync(const Model::CreateAppResourceAllocRequest& request, const CreateAppResourceAllocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAppResourceAllocOutcomeCallable createAppResourceAllocCallable(const Model::CreateAppResourceAllocRequest& request) const;
@@ -493,6 +557,9 @@ namespace AlibabaCloud
 			DeleteAppEnvironmentOutcome deleteAppEnvironment(const Model::DeleteAppEnvironmentRequest &request)const;
 			void deleteAppEnvironmentAsync(const Model::DeleteAppEnvironmentRequest& request, const DeleteAppEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAppEnvironmentOutcomeCallable deleteAppEnvironmentCallable(const Model::DeleteAppEnvironmentRequest& request) const;
+			DeleteAppGroupOutcome deleteAppGroup(const Model::DeleteAppGroupRequest &request)const;
+			void deleteAppGroupAsync(const Model::DeleteAppGroupRequest& request, const DeleteAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAppGroupOutcomeCallable deleteAppGroupCallable(const Model::DeleteAppGroupRequest& request) const;
 			DeleteAppResourceAllocOutcome deleteAppResourceAlloc(const Model::DeleteAppResourceAllocRequest &request)const;
 			void deleteAppResourceAllocAsync(const Model::DeleteAppResourceAllocRequest& request, const DeleteAppResourceAllocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAppResourceAllocOutcomeCallable deleteAppResourceAllocCallable(const Model::DeleteAppResourceAllocRequest& request) const;
@@ -532,6 +599,9 @@ namespace AlibabaCloud
 			DescribeAppEnvironmentDetailOutcome describeAppEnvironmentDetail(const Model::DescribeAppEnvironmentDetailRequest &request)const;
 			void describeAppEnvironmentDetailAsync(const Model::DescribeAppEnvironmentDetailRequest& request, const DescribeAppEnvironmentDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppEnvironmentDetailOutcomeCallable describeAppEnvironmentDetailCallable(const Model::DescribeAppEnvironmentDetailRequest& request) const;
+			DescribeAppMonitorMetricOutcome describeAppMonitorMetric(const Model::DescribeAppMonitorMetricRequest &request)const;
+			void describeAppMonitorMetricAsync(const Model::DescribeAppMonitorMetricRequest& request, const DescribeAppMonitorMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAppMonitorMetricOutcomeCallable describeAppMonitorMetricCallable(const Model::DescribeAppMonitorMetricRequest& request) const;
 			DescribeAppResourceAllocOutcome describeAppResourceAlloc(const Model::DescribeAppResourceAllocRequest &request)const;
 			void describeAppResourceAllocAsync(const Model::DescribeAppResourceAllocRequest& request, const DescribeAppResourceAllocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppResourceAllocOutcomeCallable describeAppResourceAllocCallable(const Model::DescribeAppResourceAllocRequest& request) const;
@@ -544,9 +614,15 @@ namespace AlibabaCloud
 			DescribeDeployOrderDetailOutcome describeDeployOrderDetail(const Model::DescribeDeployOrderDetailRequest &request)const;
 			void describeDeployOrderDetailAsync(const Model::DescribeDeployOrderDetailRequest& request, const DescribeDeployOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeployOrderDetailOutcomeCallable describeDeployOrderDetailCallable(const Model::DescribeDeployOrderDetailRequest& request) const;
+			DescribeEventMonitorListOutcome describeEventMonitorList(const Model::DescribeEventMonitorListRequest &request)const;
+			void describeEventMonitorListAsync(const Model::DescribeEventMonitorListRequest& request, const DescribeEventMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEventMonitorListOutcomeCallable describeEventMonitorListCallable(const Model::DescribeEventMonitorListRequest& request) const;
 			DescribeJobLogOutcome describeJobLog(const Model::DescribeJobLogRequest &request)const;
 			void describeJobLogAsync(const Model::DescribeJobLogRequest& request, const DescribeJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeJobLogOutcomeCallable describeJobLogCallable(const Model::DescribeJobLogRequest& request) const;
+			DescribePodContainerLogListOutcome describePodContainerLogList(const Model::DescribePodContainerLogListRequest &request)const;
+			void describePodContainerLogListAsync(const Model::DescribePodContainerLogListRequest& request, const DescribePodContainerLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePodContainerLogListOutcomeCallable describePodContainerLogListCallable(const Model::DescribePodContainerLogListRequest& request) const;
 			DescribePodEventsOutcome describePodEvents(const Model::DescribePodEventsRequest &request)const;
 			void describePodEventsAsync(const Model::DescribePodEventsRequest& request, const DescribePodEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePodEventsOutcomeCallable describePodEventsCallable(const Model::DescribePodEventsRequest& request) const;
@@ -580,6 +656,12 @@ namespace AlibabaCloud
 			ListAppEnvironmentOutcome listAppEnvironment(const Model::ListAppEnvironmentRequest &request)const;
 			void listAppEnvironmentAsync(const Model::ListAppEnvironmentRequest& request, const ListAppEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAppEnvironmentOutcomeCallable listAppEnvironmentCallable(const Model::ListAppEnvironmentRequest& request) const;
+			ListAppGroupOutcome listAppGroup(const Model::ListAppGroupRequest &request)const;
+			void listAppGroupAsync(const Model::ListAppGroupRequest& request, const ListAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAppGroupOutcomeCallable listAppGroupCallable(const Model::ListAppGroupRequest& request) const;
+			ListAppGroupMappingOutcome listAppGroupMapping(const Model::ListAppGroupMappingRequest &request)const;
+			void listAppGroupMappingAsync(const Model::ListAppGroupMappingRequest& request, const ListAppGroupMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAppGroupMappingOutcomeCallable listAppGroupMappingCallable(const Model::ListAppGroupMappingRequest& request) const;
 			ListAppInstanceOutcome listAppInstance(const Model::ListAppInstanceRequest &request)const;
 			void listAppInstanceAsync(const Model::ListAppInstanceRequest& request, const ListAppInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAppInstanceOutcomeCallable listAppInstanceCallable(const Model::ListAppInstanceRequest& request) const;
@@ -664,12 +746,18 @@ namespace AlibabaCloud
 			SyncPodInfoOutcome syncPodInfo(const Model::SyncPodInfoRequest &request)const;
 			void syncPodInfoAsync(const Model::SyncPodInfoRequest& request, const SyncPodInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SyncPodInfoOutcomeCallable syncPodInfoCallable(const Model::SyncPodInfoRequest& request) const;
+			UnbindGroupOutcome unbindGroup(const Model::UnbindGroupRequest &request)const;
+			void unbindGroupAsync(const Model::UnbindGroupRequest& request, const UnbindGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindGroupOutcomeCallable unbindGroupCallable(const Model::UnbindGroupRequest& request) const;
 			UnbindNodeLabelOutcome unbindNodeLabel(const Model::UnbindNodeLabelRequest &request)const;
 			void unbindNodeLabelAsync(const Model::UnbindNodeLabelRequest& request, const UnbindNodeLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindNodeLabelOutcomeCallable unbindNodeLabelCallable(const Model::UnbindNodeLabelRequest& request) const;
 			UpdateAppOutcome updateApp(const Model::UpdateAppRequest &request)const;
 			void updateAppAsync(const Model::UpdateAppRequest& request, const UpdateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAppOutcomeCallable updateAppCallable(const Model::UpdateAppRequest& request) const;
+			UpdateAppMonitorsOutcome updateAppMonitors(const Model::UpdateAppMonitorsRequest &request)const;
+			void updateAppMonitorsAsync(const Model::UpdateAppMonitorsRequest& request, const UpdateAppMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAppMonitorsOutcomeCallable updateAppMonitorsCallable(const Model::UpdateAppMonitorsRequest& request) const;
 			UpdateDeployConfigOutcome updateDeployConfig(const Model::UpdateDeployConfigRequest &request)const;
 			void updateDeployConfigAsync(const Model::UpdateDeployConfigRequest& request, const UpdateDeployConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDeployConfigOutcomeCallable updateDeployConfigCallable(const Model::UpdateDeployConfigRequest& request) const;

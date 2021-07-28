@@ -27,6 +27,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/AllocatePodConfigResult.h
 	include/alibabacloud/retailcloud/model/BatchAddServersRequest.h
 	include/alibabacloud/retailcloud/model/BatchAddServersResult.h
+	include/alibabacloud/retailcloud/model/BindGroupRequest.h
+	include/alibabacloud/retailcloud/model/BindGroupResult.h
 	include/alibabacloud/retailcloud/model/BindNodeLabelRequest.h
 	include/alibabacloud/retailcloud/model/BindNodeLabelResult.h
 	include/alibabacloud/retailcloud/model/CloseDeployOrderRequest.h
@@ -35,6 +37,10 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/CreateAccountResult.h
 	include/alibabacloud/retailcloud/model/CreateAppRequest.h
 	include/alibabacloud/retailcloud/model/CreateAppResult.h
+	include/alibabacloud/retailcloud/model/CreateAppGroupRequest.h
+	include/alibabacloud/retailcloud/model/CreateAppGroupResult.h
+	include/alibabacloud/retailcloud/model/CreateAppMonitorsRequest.h
+	include/alibabacloud/retailcloud/model/CreateAppMonitorsResult.h
 	include/alibabacloud/retailcloud/model/CreateAppResourceAllocRequest.h
 	include/alibabacloud/retailcloud/model/CreateAppResourceAllocResult.h
 	include/alibabacloud/retailcloud/model/CreateClusterRequest.h
@@ -59,6 +65,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/DeleteAppDetailResult.h
 	include/alibabacloud/retailcloud/model/DeleteAppEnvironmentRequest.h
 	include/alibabacloud/retailcloud/model/DeleteAppEnvironmentResult.h
+	include/alibabacloud/retailcloud/model/DeleteAppGroupRequest.h
+	include/alibabacloud/retailcloud/model/DeleteAppGroupResult.h
 	include/alibabacloud/retailcloud/model/DeleteAppResourceAllocRequest.h
 	include/alibabacloud/retailcloud/model/DeleteAppResourceAllocResult.h
 	include/alibabacloud/retailcloud/model/DeleteClusterRequest.h
@@ -85,6 +93,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/DescribeAppDetailResult.h
 	include/alibabacloud/retailcloud/model/DescribeAppEnvironmentDetailRequest.h
 	include/alibabacloud/retailcloud/model/DescribeAppEnvironmentDetailResult.h
+	include/alibabacloud/retailcloud/model/DescribeAppMonitorMetricRequest.h
+	include/alibabacloud/retailcloud/model/DescribeAppMonitorMetricResult.h
 	include/alibabacloud/retailcloud/model/DescribeAppResourceAllocRequest.h
 	include/alibabacloud/retailcloud/model/DescribeAppResourceAllocResult.h
 	include/alibabacloud/retailcloud/model/DescribeClusterDetailRequest.h
@@ -93,8 +103,12 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/DescribeDatabasesResult.h
 	include/alibabacloud/retailcloud/model/DescribeDeployOrderDetailRequest.h
 	include/alibabacloud/retailcloud/model/DescribeDeployOrderDetailResult.h
+	include/alibabacloud/retailcloud/model/DescribeEventMonitorListRequest.h
+	include/alibabacloud/retailcloud/model/DescribeEventMonitorListResult.h
 	include/alibabacloud/retailcloud/model/DescribeJobLogRequest.h
 	include/alibabacloud/retailcloud/model/DescribeJobLogResult.h
+	include/alibabacloud/retailcloud/model/DescribePodContainerLogListRequest.h
+	include/alibabacloud/retailcloud/model/DescribePodContainerLogListResult.h
 	include/alibabacloud/retailcloud/model/DescribePodEventsRequest.h
 	include/alibabacloud/retailcloud/model/DescribePodEventsResult.h
 	include/alibabacloud/retailcloud/model/DescribePodLogRequest.h
@@ -117,6 +131,10 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/ListAppCmsGroupsResult.h
 	include/alibabacloud/retailcloud/model/ListAppEnvironmentRequest.h
 	include/alibabacloud/retailcloud/model/ListAppEnvironmentResult.h
+	include/alibabacloud/retailcloud/model/ListAppGroupRequest.h
+	include/alibabacloud/retailcloud/model/ListAppGroupResult.h
+	include/alibabacloud/retailcloud/model/ListAppGroupMappingRequest.h
+	include/alibabacloud/retailcloud/model/ListAppGroupMappingResult.h
 	include/alibabacloud/retailcloud/model/ListAppInstanceRequest.h
 	include/alibabacloud/retailcloud/model/ListAppInstanceResult.h
 	include/alibabacloud/retailcloud/model/ListAppResourceAllocsRequest.h
@@ -173,10 +191,14 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/SubmitInfoResult.h
 	include/alibabacloud/retailcloud/model/SyncPodInfoRequest.h
 	include/alibabacloud/retailcloud/model/SyncPodInfoResult.h
+	include/alibabacloud/retailcloud/model/UnbindGroupRequest.h
+	include/alibabacloud/retailcloud/model/UnbindGroupResult.h
 	include/alibabacloud/retailcloud/model/UnbindNodeLabelRequest.h
 	include/alibabacloud/retailcloud/model/UnbindNodeLabelResult.h
 	include/alibabacloud/retailcloud/model/UpdateAppRequest.h
 	include/alibabacloud/retailcloud/model/UpdateAppResult.h
+	include/alibabacloud/retailcloud/model/UpdateAppMonitorsRequest.h
+	include/alibabacloud/retailcloud/model/UpdateAppMonitorsResult.h
 	include/alibabacloud/retailcloud/model/UpdateDeployConfigRequest.h
 	include/alibabacloud/retailcloud/model/UpdateDeployConfigResult.h
 	include/alibabacloud/retailcloud/model/UpdateEnvironmentRequest.h
@@ -190,6 +212,8 @@ set(retailcloud_src
 	src/model/AllocatePodConfigResult.cc
 	src/model/BatchAddServersRequest.cc
 	src/model/BatchAddServersResult.cc
+	src/model/BindGroupRequest.cc
+	src/model/BindGroupResult.cc
 	src/model/BindNodeLabelRequest.cc
 	src/model/BindNodeLabelResult.cc
 	src/model/CloseDeployOrderRequest.cc
@@ -198,6 +222,10 @@ set(retailcloud_src
 	src/model/CreateAccountResult.cc
 	src/model/CreateAppRequest.cc
 	src/model/CreateAppResult.cc
+	src/model/CreateAppGroupRequest.cc
+	src/model/CreateAppGroupResult.cc
+	src/model/CreateAppMonitorsRequest.cc
+	src/model/CreateAppMonitorsResult.cc
 	src/model/CreateAppResourceAllocRequest.cc
 	src/model/CreateAppResourceAllocResult.cc
 	src/model/CreateClusterRequest.cc
@@ -222,6 +250,8 @@ set(retailcloud_src
 	src/model/DeleteAppDetailResult.cc
 	src/model/DeleteAppEnvironmentRequest.cc
 	src/model/DeleteAppEnvironmentResult.cc
+	src/model/DeleteAppGroupRequest.cc
+	src/model/DeleteAppGroupResult.cc
 	src/model/DeleteAppResourceAllocRequest.cc
 	src/model/DeleteAppResourceAllocResult.cc
 	src/model/DeleteClusterRequest.cc
@@ -248,6 +278,8 @@ set(retailcloud_src
 	src/model/DescribeAppDetailResult.cc
 	src/model/DescribeAppEnvironmentDetailRequest.cc
 	src/model/DescribeAppEnvironmentDetailResult.cc
+	src/model/DescribeAppMonitorMetricRequest.cc
+	src/model/DescribeAppMonitorMetricResult.cc
 	src/model/DescribeAppResourceAllocRequest.cc
 	src/model/DescribeAppResourceAllocResult.cc
 	src/model/DescribeClusterDetailRequest.cc
@@ -256,8 +288,12 @@ set(retailcloud_src
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDeployOrderDetailRequest.cc
 	src/model/DescribeDeployOrderDetailResult.cc
+	src/model/DescribeEventMonitorListRequest.cc
+	src/model/DescribeEventMonitorListResult.cc
 	src/model/DescribeJobLogRequest.cc
 	src/model/DescribeJobLogResult.cc
+	src/model/DescribePodContainerLogListRequest.cc
+	src/model/DescribePodContainerLogListResult.cc
 	src/model/DescribePodEventsRequest.cc
 	src/model/DescribePodEventsResult.cc
 	src/model/DescribePodLogRequest.cc
@@ -280,6 +316,10 @@ set(retailcloud_src
 	src/model/ListAppCmsGroupsResult.cc
 	src/model/ListAppEnvironmentRequest.cc
 	src/model/ListAppEnvironmentResult.cc
+	src/model/ListAppGroupRequest.cc
+	src/model/ListAppGroupResult.cc
+	src/model/ListAppGroupMappingRequest.cc
+	src/model/ListAppGroupMappingResult.cc
 	src/model/ListAppInstanceRequest.cc
 	src/model/ListAppInstanceResult.cc
 	src/model/ListAppResourceAllocsRequest.cc
@@ -336,10 +376,14 @@ set(retailcloud_src
 	src/model/SubmitInfoResult.cc
 	src/model/SyncPodInfoRequest.cc
 	src/model/SyncPodInfoResult.cc
+	src/model/UnbindGroupRequest.cc
+	src/model/UnbindGroupResult.cc
 	src/model/UnbindNodeLabelRequest.cc
 	src/model/UnbindNodeLabelResult.cc
 	src/model/UpdateAppRequest.cc
 	src/model/UpdateAppResult.cc
+	src/model/UpdateAppMonitorsRequest.cc
+	src/model/UpdateAppMonitorsResult.cc
 	src/model/UpdateDeployConfigRequest.cc
 	src/model/UpdateDeployConfigResult.cc
 	src/model/UpdateEnvironmentRequest.cc

@@ -159,6 +159,42 @@ RetailcloudClient::BatchAddServersOutcomeCallable RetailcloudClient::batchAddSer
 	return task->get_future();
 }
 
+RetailcloudClient::BindGroupOutcome RetailcloudClient::bindGroup(const BindGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindGroupOutcome(BindGroupResult(outcome.result()));
+	else
+		return BindGroupOutcome(outcome.error());
+}
+
+void RetailcloudClient::bindGroupAsync(const BindGroupRequest& request, const BindGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::BindGroupOutcomeCallable RetailcloudClient::bindGroupCallable(const BindGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->bindGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RetailcloudClient::BindNodeLabelOutcome RetailcloudClient::bindNodeLabel(const BindNodeLabelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,78 @@ RetailcloudClient::CreateAppOutcomeCallable RetailcloudClient::createAppCallable
 			[this, request]()
 			{
 			return this->createApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::CreateAppGroupOutcome RetailcloudClient::createAppGroup(const CreateAppGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAppGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAppGroupOutcome(CreateAppGroupResult(outcome.result()));
+	else
+		return CreateAppGroupOutcome(outcome.error());
+}
+
+void RetailcloudClient::createAppGroupAsync(const CreateAppGroupRequest& request, const CreateAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAppGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::CreateAppGroupOutcomeCallable RetailcloudClient::createAppGroupCallable(const CreateAppGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAppGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createAppGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::CreateAppMonitorsOutcome RetailcloudClient::createAppMonitors(const CreateAppMonitorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAppMonitorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAppMonitorsOutcome(CreateAppMonitorsResult(outcome.result()));
+	else
+		return CreateAppMonitorsOutcome(outcome.error());
+}
+
+void RetailcloudClient::createAppMonitorsAsync(const CreateAppMonitorsRequest& request, const CreateAppMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAppMonitors(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::CreateAppMonitorsOutcomeCallable RetailcloudClient::createAppMonitorsCallable(const CreateAppMonitorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAppMonitorsOutcome()>>(
+			[this, request]()
+			{
+			return this->createAppMonitors(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +837,42 @@ RetailcloudClient::DeleteAppEnvironmentOutcomeCallable RetailcloudClient::delete
 			[this, request]()
 			{
 			return this->deleteAppEnvironment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::DeleteAppGroupOutcome RetailcloudClient::deleteAppGroup(const DeleteAppGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAppGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAppGroupOutcome(DeleteAppGroupResult(outcome.result()));
+	else
+		return DeleteAppGroupOutcome(outcome.error());
+}
+
+void RetailcloudClient::deleteAppGroupAsync(const DeleteAppGroupRequest& request, const DeleteAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAppGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::DeleteAppGroupOutcomeCallable RetailcloudClient::deleteAppGroupCallable(const DeleteAppGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAppGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAppGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,6 +1347,42 @@ RetailcloudClient::DescribeAppEnvironmentDetailOutcomeCallable RetailcloudClient
 	return task->get_future();
 }
 
+RetailcloudClient::DescribeAppMonitorMetricOutcome RetailcloudClient::describeAppMonitorMetric(const DescribeAppMonitorMetricRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAppMonitorMetricOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAppMonitorMetricOutcome(DescribeAppMonitorMetricResult(outcome.result()));
+	else
+		return DescribeAppMonitorMetricOutcome(outcome.error());
+}
+
+void RetailcloudClient::describeAppMonitorMetricAsync(const DescribeAppMonitorMetricRequest& request, const DescribeAppMonitorMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAppMonitorMetric(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::DescribeAppMonitorMetricOutcomeCallable RetailcloudClient::describeAppMonitorMetricCallable(const DescribeAppMonitorMetricRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAppMonitorMetricOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAppMonitorMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RetailcloudClient::DescribeAppResourceAllocOutcome RetailcloudClient::describeAppResourceAlloc(const DescribeAppResourceAllocRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1347,6 +1527,42 @@ RetailcloudClient::DescribeDeployOrderDetailOutcomeCallable RetailcloudClient::d
 	return task->get_future();
 }
 
+RetailcloudClient::DescribeEventMonitorListOutcome RetailcloudClient::describeEventMonitorList(const DescribeEventMonitorListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEventMonitorListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEventMonitorListOutcome(DescribeEventMonitorListResult(outcome.result()));
+	else
+		return DescribeEventMonitorListOutcome(outcome.error());
+}
+
+void RetailcloudClient::describeEventMonitorListAsync(const DescribeEventMonitorListRequest& request, const DescribeEventMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEventMonitorList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::DescribeEventMonitorListOutcomeCallable RetailcloudClient::describeEventMonitorListCallable(const DescribeEventMonitorListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEventMonitorListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEventMonitorList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RetailcloudClient::DescribeJobLogOutcome RetailcloudClient::describeJobLog(const DescribeJobLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1377,6 +1593,42 @@ RetailcloudClient::DescribeJobLogOutcomeCallable RetailcloudClient::describeJobL
 			[this, request]()
 			{
 			return this->describeJobLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::DescribePodContainerLogListOutcome RetailcloudClient::describePodContainerLogList(const DescribePodContainerLogListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePodContainerLogListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePodContainerLogListOutcome(DescribePodContainerLogListResult(outcome.result()));
+	else
+		return DescribePodContainerLogListOutcome(outcome.error());
+}
+
+void RetailcloudClient::describePodContainerLogListAsync(const DescribePodContainerLogListRequest& request, const DescribePodContainerLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePodContainerLogList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::DescribePodContainerLogListOutcomeCallable RetailcloudClient::describePodContainerLogListCallable(const DescribePodContainerLogListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePodContainerLogListOutcome()>>(
+			[this, request]()
+			{
+			return this->describePodContainerLogList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1773,6 +2025,78 @@ RetailcloudClient::ListAppEnvironmentOutcomeCallable RetailcloudClient::listAppE
 			[this, request]()
 			{
 			return this->listAppEnvironment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::ListAppGroupOutcome RetailcloudClient::listAppGroup(const ListAppGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppGroupOutcome(ListAppGroupResult(outcome.result()));
+	else
+		return ListAppGroupOutcome(outcome.error());
+}
+
+void RetailcloudClient::listAppGroupAsync(const ListAppGroupRequest& request, const ListAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::ListAppGroupOutcomeCallable RetailcloudClient::listAppGroupCallable(const ListAppGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::ListAppGroupMappingOutcome RetailcloudClient::listAppGroupMapping(const ListAppGroupMappingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAppGroupMappingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAppGroupMappingOutcome(ListAppGroupMappingResult(outcome.result()));
+	else
+		return ListAppGroupMappingOutcome(outcome.error());
+}
+
+void RetailcloudClient::listAppGroupMappingAsync(const ListAppGroupMappingRequest& request, const ListAppGroupMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAppGroupMapping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::ListAppGroupMappingOutcomeCallable RetailcloudClient::listAppGroupMappingCallable(const ListAppGroupMappingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAppGroupMappingOutcome()>>(
+			[this, request]()
+			{
+			return this->listAppGroupMapping(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2787,6 +3111,42 @@ RetailcloudClient::SyncPodInfoOutcomeCallable RetailcloudClient::syncPodInfoCall
 	return task->get_future();
 }
 
+RetailcloudClient::UnbindGroupOutcome RetailcloudClient::unbindGroup(const UnbindGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindGroupOutcome(UnbindGroupResult(outcome.result()));
+	else
+		return UnbindGroupOutcome(outcome.error());
+}
+
+void RetailcloudClient::unbindGroupAsync(const UnbindGroupRequest& request, const UnbindGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::UnbindGroupOutcomeCallable RetailcloudClient::unbindGroupCallable(const UnbindGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RetailcloudClient::UnbindNodeLabelOutcome RetailcloudClient::unbindNodeLabel(const UnbindNodeLabelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2853,6 +3213,42 @@ RetailcloudClient::UpdateAppOutcomeCallable RetailcloudClient::updateAppCallable
 			[this, request]()
 			{
 			return this->updateApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::UpdateAppMonitorsOutcome RetailcloudClient::updateAppMonitors(const UpdateAppMonitorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAppMonitorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAppMonitorsOutcome(UpdateAppMonitorsResult(outcome.result()));
+	else
+		return UpdateAppMonitorsOutcome(outcome.error());
+}
+
+void RetailcloudClient::updateAppMonitorsAsync(const UpdateAppMonitorsRequest& request, const UpdateAppMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAppMonitors(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::UpdateAppMonitorsOutcomeCallable RetailcloudClient::updateAppMonitorsCallable(const UpdateAppMonitorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAppMonitorsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAppMonitors(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

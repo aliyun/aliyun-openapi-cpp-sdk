@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
-#define ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEEVENTMONITORLISTRESULT_H_
+#define ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEEVENTMONITORLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RETAILCLOUD_EXPORT ListAppInstanceResult : public ServiceResult
+			class ALIBABACLOUD_RETAILCLOUD_EXPORT DescribeEventMonitorListResult : public ServiceResult
 			{
 			public:
-				struct AppInstanceDetail
+				struct EventInfo
 				{
-					int restartCount;
-					std::string hostIp;
-					std::string appInstanceId;
-					std::string limits;
-					std::string health;
-					std::string version;
-					std::string createTime;
-					std::string podIp;
-					std::string spec;
-					std::string requests;
+					std::string podName;
+					std::string message;
+					std::string eventTime;
+					std::string kind;
+					std::string level;
+					int count;
+					std::string hostName;
+					std::string reason;
+					std::string _nameSpace;
 				};
 
 
-				ListAppInstanceResult();
-				explicit ListAppInstanceResult(const std::string &payload);
-				~ListAppInstanceResult();
+				DescribeEventMonitorListResult();
+				explicit DescribeEventMonitorListResult(const std::string &payload);
+				~DescribeEventMonitorListResult();
 				long getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::string getErrMsg()const;
-				std::vector<AppInstanceDetail> getData()const;
+				std::string getErrorMsg()const;
+				std::vector<EventInfo> getData()const;
 				int getCode()const;
 
 			protected:
@@ -63,12 +62,12 @@ namespace AlibabaCloud
 				long totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::string errMsg_;
-				std::vector<AppInstanceDetail> data_;
+				std::string errorMsg_;
+				std::vector<EventInfo> data_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEEVENTMONITORLISTRESULT_H_

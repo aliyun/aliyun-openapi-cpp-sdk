@@ -82,6 +82,17 @@ void CreateAppRequest::setTitle(const std::string& title)
 	setBodyParameter("Title", title);
 }
 
+std::string CreateAppRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void CreateAppRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setBodyParameter("GroupName", groupName);
+}
+
 std::vector<int> CreateAppRequest::getMiddleWareIdList()const
 {
 	return middleWareIdList_;

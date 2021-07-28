@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
-#define ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPGROUPMAPPINGRESULT_H_
+#define ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPGROUPMAPPINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RETAILCLOUD_EXPORT ListAppInstanceResult : public ServiceResult
+			class ALIBABACLOUD_RETAILCLOUD_EXPORT ListAppGroupMappingResult : public ServiceResult
 			{
 			public:
-				struct AppInstanceDetail
+				struct AppGroupMappingDetail
 				{
-					int restartCount;
-					std::string hostIp;
-					std::string appInstanceId;
-					std::string limits;
-					std::string health;
-					std::string version;
-					std::string createTime;
-					std::string podIp;
-					std::string spec;
-					std::string requests;
+					long appId;
+					long id;
+					std::string name;
+					long groupId;
 				};
 
 
-				ListAppInstanceResult();
-				explicit ListAppInstanceResult(const std::string &payload);
-				~ListAppInstanceResult();
+				ListAppGroupMappingResult();
+				explicit ListAppGroupMappingResult(const std::string &payload);
+				~ListAppGroupMappingResult();
 				long getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::string getErrMsg()const;
-				std::vector<AppInstanceDetail> getData()const;
+				std::string getErrorMsg()const;
+				std::vector<AppGroupMappingDetail> getData()const;
 				int getCode()const;
 
 			protected:
@@ -63,12 +57,12 @@ namespace AlibabaCloud
 				long totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::string errMsg_;
-				std::vector<AppInstanceDetail> data_;
+				std::string errorMsg_;
+				std::vector<AppGroupMappingDetail> data_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPGROUPMAPPINGRESULT_H_

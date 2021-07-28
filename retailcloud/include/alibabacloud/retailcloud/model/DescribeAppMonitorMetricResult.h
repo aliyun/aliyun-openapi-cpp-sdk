@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
-#define ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEAPPMONITORMETRICRESULT_H_
+#define ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEAPPMONITORMETRICRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,46 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RETAILCLOUD_EXPORT ListAppInstanceResult : public ServiceResult
+			class ALIBABACLOUD_RETAILCLOUD_EXPORT DescribeAppMonitorMetricResult : public ServiceResult
 			{
 			public:
-				struct AppInstanceDetail
+				struct MetricItem
 				{
-					int restartCount;
-					std::string hostIp;
-					std::string appInstanceId;
-					std::string limits;
-					std::string health;
-					std::string version;
-					std::string createTime;
-					std::string podIp;
-					std::string spec;
-					std::string requests;
+					std::vector<std::string> categories;
+					std::vector<std::string> data;
+					std::string name;
 				};
 
 
-				ListAppInstanceResult();
-				explicit ListAppInstanceResult(const std::string &payload);
-				~ListAppInstanceResult();
-				long getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
+				DescribeAppMonitorMetricResult();
+				explicit DescribeAppMonitorMetricResult(const std::string &payload);
+				~DescribeAppMonitorMetricResult();
 				std::string getErrMsg()const;
-				std::vector<AppInstanceDetail> getData()const;
 				int getCode()const;
+				bool getSuccess()const;
+				std::vector<MetricItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				int pageSize_;
-				int pageNumber_;
 				std::string errMsg_;
-				std::vector<AppInstanceDetail> data_;
 				int code_;
+				bool success_;
+				std::vector<MetricItem> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_DESCRIBEAPPMONITORMETRICRESULT_H_

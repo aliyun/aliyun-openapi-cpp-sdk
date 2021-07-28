@@ -82,6 +82,17 @@ void CreateEnvironmentRequest::setAppSchemaId(long appSchemaId)
 	setParameter("AppSchemaId", std::to_string(appSchemaId));
 }
 
+std::string CreateEnvironmentRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void CreateEnvironmentRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
+
 std::string CreateEnvironmentRequest::getRegion()const
 {
 	return region_;

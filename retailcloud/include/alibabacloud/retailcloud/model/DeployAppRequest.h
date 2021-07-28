@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::vector<std::string> getInitContainerImageList()const;
 				void setInitContainerImageList(const std::vector<std::string>& initContainerImageList);
+				std::string getDefaultPacketOfAppGroup()const;
+				void setDefaultPacketOfAppGroup(const std::string& defaultPacketOfAppGroup);
 				bool getArmsFlag()const;
 				void setArmsFlag(bool armsFlag);
 
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				std::vector<std::string> containerImageList_;
 				std::string name_;
 				std::vector<std::string> initContainerImageList_;
+				std::string defaultPacketOfAppGroup_;
 				bool armsFlag_;
 
 			};

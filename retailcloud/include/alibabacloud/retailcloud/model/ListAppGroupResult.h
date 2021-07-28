@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
-#define ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPGROUPRESULT_H_
+#define ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RETAILCLOUD_EXPORT ListAppInstanceResult : public ServiceResult
+			class ALIBABACLOUD_RETAILCLOUD_EXPORT ListAppGroupResult : public ServiceResult
 			{
 			public:
-				struct AppInstanceDetail
+				struct AppGroupDetail
 				{
-					int restartCount;
-					std::string hostIp;
-					std::string appInstanceId;
-					std::string limits;
-					std::string health;
-					std::string version;
-					std::string createTime;
-					std::string podIp;
-					std::string spec;
-					std::string requests;
+					std::string bizName;
+					long id;
+					std::string name;
 				};
 
 
-				ListAppInstanceResult();
-				explicit ListAppInstanceResult(const std::string &payload);
-				~ListAppInstanceResult();
+				ListAppGroupResult();
+				explicit ListAppGroupResult(const std::string &payload);
+				~ListAppGroupResult();
 				long getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::string getErrMsg()const;
-				std::vector<AppInstanceDetail> getData()const;
+				std::string getErrorMsg()const;
+				std::vector<AppGroupDetail> getData()const;
 				int getCode()const;
 
 			protected:
@@ -63,12 +56,12 @@ namespace AlibabaCloud
 				long totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::string errMsg_;
-				std::vector<AppInstanceDetail> data_;
+				std::string errorMsg_;
+				std::vector<AppGroupDetail> data_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_LISTAPPGROUPRESULT_H_

@@ -141,6 +141,17 @@ void DeployAppRequest::setInitContainerImageList(const std::vector<std::string>&
 	}
 }
 
+std::string DeployAppRequest::getDefaultPacketOfAppGroup()const
+{
+	return defaultPacketOfAppGroup_;
+}
+
+void DeployAppRequest::setDefaultPacketOfAppGroup(const std::string& defaultPacketOfAppGroup)
+{
+	defaultPacketOfAppGroup_ = defaultPacketOfAppGroup;
+	setParameter("DefaultPacketOfAppGroup", defaultPacketOfAppGroup);
+}
+
 bool DeployAppRequest::getArmsFlag()const
 {
 	return armsFlag_;

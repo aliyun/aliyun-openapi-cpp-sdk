@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEENVIRONMENTREQUEST_H_
-#define ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEENVIRONMENTREQUEST_H_
+#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEAPPMONITORSREQUEST_H_
+#define ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEAPPMONITORSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RETAILCLOUD_EXPORT CreateEnvironmentRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RETAILCLOUD_EXPORT CreateAppMonitorsRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateEnvironmentRequest();
-				~CreateEnvironmentRequest();
+				CreateAppMonitorsRequest();
+				~CreateAppMonitorsRequest();
 
-				std::string getEnvName()const;
-				void setEnvName(const std::string& envName);
-				int getReplicas()const;
-				void setReplicas(int replicas);
-				long getAppId()const;
-				void setAppId(long appId);
+				std::vector<long> getAppIds()const;
+				void setAppIds(const std::vector<long>& appIds);
+				long getMainUserId()const;
+				void setMainUserId(long mainUserId);
 				int getEnvType()const;
 				void setEnvType(int envType);
-				long getAppSchemaId()const;
-				void setAppSchemaId(long appSchemaId);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
+				long getAlarmTemplateId()const;
+				void setAlarmTemplateId(long alarmTemplateId);
+				std::string getSilenceTime()const;
+				void setSilenceTime(const std::string& silenceTime);
 
             private:
-				std::string envName_;
-				int replicas_;
-				long appId_;
+				std::vector<long> appIds_;
+				long mainUserId_;
 				int envType_;
-				long appSchemaId_;
-				std::string clusterId_;
-				std::string region_;
+				long alarmTemplateId_;
+				std::string silenceTime_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEENVIRONMENTREQUEST_H_
+#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_CREATEAPPMONITORSREQUEST_H_

@@ -52,6 +52,8 @@ namespace AlibabaCloud
 				void setLanguage(const std::string& language);
 				std::string getTitle()const;
 				void setTitle(const std::string& title);
+				std::string getGroupName()const;
+				void setGroupName(const std::string& groupName);
 				std::vector<int> getMiddleWareIdList()const;
 				void setMiddleWareIdList(const std::vector<int>& middleWareIdList);
 				int getStateType()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string language_;
 				std::string title_;
+				std::string groupName_;
 				std::vector<int> middleWareIdList_;
 				int stateType_;
 				std::string serviceType_;
