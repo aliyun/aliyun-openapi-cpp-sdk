@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int restartCount;
 					std::string hostIp;
+					std::string status;
 					std::string appInstanceId;
 					std::string limits;
 					std::string health;

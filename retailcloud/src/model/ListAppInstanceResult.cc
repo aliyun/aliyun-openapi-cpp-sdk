@@ -63,6 +63,8 @@ void ListAppInstanceResult::parse(const std::string &payload)
 			dataObject.limits = valueDataAppInstanceDetail["Limits"].asString();
 		if(!valueDataAppInstanceDetail["Version"].isNull())
 			dataObject.version = valueDataAppInstanceDetail["Version"].asString();
+		if(!valueDataAppInstanceDetail["Status"].isNull())
+			dataObject.status = valueDataAppInstanceDetail["Status"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
