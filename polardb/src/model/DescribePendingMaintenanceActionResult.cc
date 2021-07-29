@@ -43,34 +43,34 @@ void DescribePendingMaintenanceActionResult::parse(const std::string &payload)
 	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!valueItemsItemsItem["Id"].isNull())
-			itemsObject.id = std::stoi(valueItemsItemsItem["Id"].asString());
-		if(!valueItemsItemsItem["DBClusterId"].isNull())
-			itemsObject.dBClusterId = valueItemsItemsItem["DBClusterId"].asString();
-		if(!valueItemsItemsItem["DBType"].isNull())
-			itemsObject.dBType = valueItemsItemsItem["DBType"].asString();
-		if(!valueItemsItemsItem["StartTime"].isNull())
-			itemsObject.startTime = valueItemsItemsItem["StartTime"].asString();
-		if(!valueItemsItemsItem["SwitchTime"].isNull())
-			itemsObject.switchTime = valueItemsItemsItem["SwitchTime"].asString();
-		if(!valueItemsItemsItem["Deadline"].isNull())
-			itemsObject.deadline = valueItemsItemsItem["Deadline"].asString();
 		if(!valueItemsItemsItem["Status"].isNull())
 			itemsObject.status = std::stoi(valueItemsItemsItem["Status"].asString());
-		if(!valueItemsItemsItem["CreatedTime"].isNull())
-			itemsObject.createdTime = valueItemsItemsItem["CreatedTime"].asString();
-		if(!valueItemsItemsItem["ModifiedTime"].isNull())
-			itemsObject.modifiedTime = valueItemsItemsItem["ModifiedTime"].asString();
-		if(!valueItemsItemsItem["ResultInfo"].isNull())
-			itemsObject.resultInfo = valueItemsItemsItem["ResultInfo"].asString();
 		if(!valueItemsItemsItem["PrepareInterval"].isNull())
 			itemsObject.prepareInterval = valueItemsItemsItem["PrepareInterval"].asString();
+		if(!valueItemsItemsItem["Deadline"].isNull())
+			itemsObject.deadline = valueItemsItemsItem["Deadline"].asString();
+		if(!valueItemsItemsItem["DBType"].isNull())
+			itemsObject.dBType = valueItemsItemsItem["DBType"].asString();
 		if(!valueItemsItemsItem["TaskType"].isNull())
 			itemsObject.taskType = valueItemsItemsItem["TaskType"].asString();
+		if(!valueItemsItemsItem["StartTime"].isNull())
+			itemsObject.startTime = valueItemsItemsItem["StartTime"].asString();
 		if(!valueItemsItemsItem["DBVersion"].isNull())
 			itemsObject.dBVersion = valueItemsItemsItem["DBVersion"].asString();
+		if(!valueItemsItemsItem["ModifiedTime"].isNull())
+			itemsObject.modifiedTime = valueItemsItemsItem["ModifiedTime"].asString();
+		if(!valueItemsItemsItem["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsItemsItem["DBClusterId"].asString();
 		if(!valueItemsItemsItem["Region"].isNull())
 			itemsObject.region = valueItemsItemsItem["Region"].asString();
+		if(!valueItemsItemsItem["ResultInfo"].isNull())
+			itemsObject.resultInfo = valueItemsItemsItem["ResultInfo"].asString();
+		if(!valueItemsItemsItem["CreatedTime"].isNull())
+			itemsObject.createdTime = valueItemsItemsItem["CreatedTime"].asString();
+		if(!valueItemsItemsItem["Id"].isNull())
+			itemsObject.id = std::stoi(valueItemsItemsItem["Id"].asString());
+		if(!valueItemsItemsItem["SwitchTime"].isNull())
+			itemsObject.switchTime = valueItemsItemsItem["SwitchTime"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

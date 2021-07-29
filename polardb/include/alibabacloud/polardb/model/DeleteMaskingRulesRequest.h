@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATEPARAMETERGROUPRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_CREATEPARAMETERGROUPRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DELETEMASKINGRULESREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DELETEMASKINGRULESREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/polardb/PolardbExport.h>
 
 namespace AlibabaCloud
@@ -29,23 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT CreateParameterGroupResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DeleteMaskingRulesRequest : public RpcServiceRequest
 			{
+
 			public:
+				DeleteMaskingRulesRequest();
+				~DeleteMaskingRulesRequest();
 
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
+				std::string getRuleNameList()const;
+				void setRuleNameList(const std::string& ruleNameList);
 
-				CreateParameterGroupResult();
-				explicit CreateParameterGroupResult(const std::string &payload);
-				~CreateParameterGroupResult();
-				std::string getParameterGroupId()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string parameterGroupId_;
+            private:
+				std::string dBClusterId_;
+				std::string ruleNameList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATEPARAMETERGROUPRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DELETEMASKINGRULESREQUEST_H_

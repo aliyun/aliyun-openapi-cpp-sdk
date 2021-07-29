@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					int status;
 					std::string createdTime;
 					std::string deadline;
-					std::string dBClusterId;
 					std::string startTime;
+					std::string dBClusterId;
 					std::string dBType;
 					std::string dBVersion;
 					std::string modifiedTime;

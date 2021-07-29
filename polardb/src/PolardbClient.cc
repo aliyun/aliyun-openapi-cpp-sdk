@@ -879,6 +879,42 @@ PolardbClient::DeleteGlobalDatabaseNetworkOutcomeCallable PolardbClient::deleteG
 	return task->get_future();
 }
 
+PolardbClient::DeleteMaskingRulesOutcome PolardbClient::deleteMaskingRules(const DeleteMaskingRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMaskingRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMaskingRulesOutcome(DeleteMaskingRulesResult(outcome.result()));
+	else
+		return DeleteMaskingRulesOutcome(outcome.error());
+}
+
+void PolardbClient::deleteMaskingRulesAsync(const DeleteMaskingRulesRequest& request, const DeleteMaskingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMaskingRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DeleteMaskingRulesOutcomeCallable PolardbClient::deleteMaskingRulesCallable(const DeleteMaskingRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMaskingRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMaskingRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DeleteParameterGroupOutcome PolardbClient::deleteParameterGroup(const DeleteParameterGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,6 +1989,42 @@ PolardbClient::DescribeLogBackupPolicyOutcomeCallable PolardbClient::describeLog
 			[this, request]()
 			{
 			return this->describeLogBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeMaskingRulesOutcome PolardbClient::describeMaskingRules(const DescribeMaskingRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMaskingRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMaskingRulesOutcome(DescribeMaskingRulesResult(outcome.result()));
+	else
+		return DescribeMaskingRulesOutcome(outcome.error());
+}
+
+void PolardbClient::describeMaskingRulesAsync(const DescribeMaskingRulesRequest& request, const DescribeMaskingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMaskingRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeMaskingRulesOutcomeCallable PolardbClient::describeMaskingRulesCallable(const DescribeMaskingRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMaskingRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMaskingRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3177,6 +3249,42 @@ PolardbClient::ModifyLogBackupPolicyOutcomeCallable PolardbClient::modifyLogBack
 			[this, request]()
 			{
 			return this->modifyLogBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::ModifyMaskingRulesOutcome PolardbClient::modifyMaskingRules(const ModifyMaskingRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyMaskingRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyMaskingRulesOutcome(ModifyMaskingRulesResult(outcome.result()));
+	else
+		return ModifyMaskingRulesOutcome(outcome.error());
+}
+
+void PolardbClient::modifyMaskingRulesAsync(const ModifyMaskingRulesRequest& request, const ModifyMaskingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyMaskingRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ModifyMaskingRulesOutcomeCallable PolardbClient::modifyMaskingRulesCallable(const ModifyMaskingRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyMaskingRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyMaskingRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -68,6 +68,8 @@
 #include "model/DeleteDatabaseResult.h"
 #include "model/DeleteGlobalDatabaseNetworkRequest.h"
 #include "model/DeleteGlobalDatabaseNetworkResult.h"
+#include "model/DeleteMaskingRulesRequest.h"
+#include "model/DeleteMaskingRulesResult.h"
 #include "model/DeleteParameterGroupRequest.h"
 #include "model/DeleteParameterGroupResult.h"
 #include "model/DescribeAccountsRequest.h"
@@ -128,6 +130,8 @@
 #include "model/DescribeGlobalDatabaseNetworksResult.h"
 #include "model/DescribeLogBackupPolicyRequest.h"
 #include "model/DescribeLogBackupPolicyResult.h"
+#include "model/DescribeMaskingRulesRequest.h"
+#include "model/DescribeMaskingRulesResult.h"
 #include "model/DescribeMetaListRequest.h"
 #include "model/DescribeMetaListResult.h"
 #include "model/DescribeParameterGroupRequest.h"
@@ -196,6 +200,8 @@
 #include "model/ModifyGlobalDatabaseNetworkResult.h"
 #include "model/ModifyLogBackupPolicyRequest.h"
 #include "model/ModifyLogBackupPolicyResult.h"
+#include "model/ModifyMaskingRulesRequest.h"
+#include "model/ModifyMaskingRulesResult.h"
 #include "model/ModifyPendingMaintenanceActionRequest.h"
 #include "model/ModifyPendingMaintenanceActionResult.h"
 #include "model/RemoveDBClusterFromGDNRequest.h"
@@ -296,6 +302,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteGlobalDatabaseNetworkResult> DeleteGlobalDatabaseNetworkOutcome;
 			typedef std::future<DeleteGlobalDatabaseNetworkOutcome> DeleteGlobalDatabaseNetworkOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DeleteGlobalDatabaseNetworkRequest&, const DeleteGlobalDatabaseNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalDatabaseNetworkAsyncHandler;
+			typedef Outcome<Error, Model::DeleteMaskingRulesResult> DeleteMaskingRulesOutcome;
+			typedef std::future<DeleteMaskingRulesOutcome> DeleteMaskingRulesOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DeleteMaskingRulesRequest&, const DeleteMaskingRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMaskingRulesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteParameterGroupResult> DeleteParameterGroupOutcome;
 			typedef std::future<DeleteParameterGroupOutcome> DeleteParameterGroupOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DeleteParameterGroupRequest&, const DeleteParameterGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParameterGroupAsyncHandler;
@@ -386,6 +395,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLogBackupPolicyResult> DescribeLogBackupPolicyOutcome;
 			typedef std::future<DescribeLogBackupPolicyOutcome> DescribeLogBackupPolicyOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeLogBackupPolicyRequest&, const DescribeLogBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMaskingRulesResult> DescribeMaskingRulesOutcome;
+			typedef std::future<DescribeMaskingRulesOutcome> DescribeMaskingRulesOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeMaskingRulesRequest&, const DescribeMaskingRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaskingRulesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMetaListResult> DescribeMetaListOutcome;
 			typedef std::future<DescribeMetaListOutcome> DescribeMetaListOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeMetaListRequest&, const DescribeMetaListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetaListAsyncHandler;
@@ -488,6 +500,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyLogBackupPolicyResult> ModifyLogBackupPolicyOutcome;
 			typedef std::future<ModifyLogBackupPolicyOutcome> ModifyLogBackupPolicyOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyLogBackupPolicyRequest&, const ModifyLogBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyMaskingRulesResult> ModifyMaskingRulesOutcome;
+			typedef std::future<ModifyMaskingRulesOutcome> ModifyMaskingRulesOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyMaskingRulesRequest&, const ModifyMaskingRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaskingRulesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPendingMaintenanceActionResult> ModifyPendingMaintenanceActionOutcome;
 			typedef std::future<ModifyPendingMaintenanceActionOutcome> ModifyPendingMaintenanceActionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyPendingMaintenanceActionRequest&, const ModifyPendingMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPendingMaintenanceActionAsyncHandler;
@@ -595,6 +610,9 @@ namespace AlibabaCloud
 			DeleteGlobalDatabaseNetworkOutcome deleteGlobalDatabaseNetwork(const Model::DeleteGlobalDatabaseNetworkRequest &request)const;
 			void deleteGlobalDatabaseNetworkAsync(const Model::DeleteGlobalDatabaseNetworkRequest& request, const DeleteGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGlobalDatabaseNetworkOutcomeCallable deleteGlobalDatabaseNetworkCallable(const Model::DeleteGlobalDatabaseNetworkRequest& request) const;
+			DeleteMaskingRulesOutcome deleteMaskingRules(const Model::DeleteMaskingRulesRequest &request)const;
+			void deleteMaskingRulesAsync(const Model::DeleteMaskingRulesRequest& request, const DeleteMaskingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteMaskingRulesOutcomeCallable deleteMaskingRulesCallable(const Model::DeleteMaskingRulesRequest& request) const;
 			DeleteParameterGroupOutcome deleteParameterGroup(const Model::DeleteParameterGroupRequest &request)const;
 			void deleteParameterGroupAsync(const Model::DeleteParameterGroupRequest& request, const DeleteParameterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteParameterGroupOutcomeCallable deleteParameterGroupCallable(const Model::DeleteParameterGroupRequest& request) const;
@@ -685,6 +703,9 @@ namespace AlibabaCloud
 			DescribeLogBackupPolicyOutcome describeLogBackupPolicy(const Model::DescribeLogBackupPolicyRequest &request)const;
 			void describeLogBackupPolicyAsync(const Model::DescribeLogBackupPolicyRequest& request, const DescribeLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLogBackupPolicyOutcomeCallable describeLogBackupPolicyCallable(const Model::DescribeLogBackupPolicyRequest& request) const;
+			DescribeMaskingRulesOutcome describeMaskingRules(const Model::DescribeMaskingRulesRequest &request)const;
+			void describeMaskingRulesAsync(const Model::DescribeMaskingRulesRequest& request, const DescribeMaskingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMaskingRulesOutcomeCallable describeMaskingRulesCallable(const Model::DescribeMaskingRulesRequest& request) const;
 			DescribeMetaListOutcome describeMetaList(const Model::DescribeMetaListRequest &request)const;
 			void describeMetaListAsync(const Model::DescribeMetaListRequest& request, const DescribeMetaListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMetaListOutcomeCallable describeMetaListCallable(const Model::DescribeMetaListRequest& request) const;
@@ -787,6 +808,9 @@ namespace AlibabaCloud
 			ModifyLogBackupPolicyOutcome modifyLogBackupPolicy(const Model::ModifyLogBackupPolicyRequest &request)const;
 			void modifyLogBackupPolicyAsync(const Model::ModifyLogBackupPolicyRequest& request, const ModifyLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyLogBackupPolicyOutcomeCallable modifyLogBackupPolicyCallable(const Model::ModifyLogBackupPolicyRequest& request) const;
+			ModifyMaskingRulesOutcome modifyMaskingRules(const Model::ModifyMaskingRulesRequest &request)const;
+			void modifyMaskingRulesAsync(const Model::ModifyMaskingRulesRequest& request, const ModifyMaskingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyMaskingRulesOutcomeCallable modifyMaskingRulesCallable(const Model::ModifyMaskingRulesRequest& request) const;
 			ModifyPendingMaintenanceActionOutcome modifyPendingMaintenanceAction(const Model::ModifyPendingMaintenanceActionRequest &request)const;
 			void modifyPendingMaintenanceActionAsync(const Model::ModifyPendingMaintenanceActionRequest& request, const ModifyPendingMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPendingMaintenanceActionOutcomeCallable modifyPendingMaintenanceActionCallable(const Model::ModifyPendingMaintenanceActionRequest& request) const;

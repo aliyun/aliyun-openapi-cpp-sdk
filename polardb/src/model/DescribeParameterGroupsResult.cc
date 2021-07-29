@@ -43,24 +43,24 @@ void DescribeParameterGroupsResult::parse(const std::string &payload)
 	for (auto valueParameterGroupsParameterGroupsItem : allParameterGroupsNode)
 	{
 		ParameterGroupsItem parameterGroupsObject;
+		if(!valueParameterGroupsParameterGroupsItem["DBType"].isNull())
+			parameterGroupsObject.dBType = valueParameterGroupsParameterGroupsItem["DBType"].asString();
 		if(!valueParameterGroupsParameterGroupsItem["DBVersion"].isNull())
 			parameterGroupsObject.dBVersion = valueParameterGroupsParameterGroupsItem["DBVersion"].asString();
-		if(!valueParameterGroupsParameterGroupsItem["ParameterGroupId"].isNull())
-			parameterGroupsObject.parameterGroupId = valueParameterGroupsParameterGroupsItem["ParameterGroupId"].asString();
-		if(!valueParameterGroupsParameterGroupsItem["ForceRestart"].isNull())
-			parameterGroupsObject.forceRestart = valueParameterGroupsParameterGroupsItem["ForceRestart"].asString();
 		if(!valueParameterGroupsParameterGroupsItem["ParameterGroupName"].isNull())
 			parameterGroupsObject.parameterGroupName = valueParameterGroupsParameterGroupsItem["ParameterGroupName"].asString();
-		if(!valueParameterGroupsParameterGroupsItem["CreateTime"].isNull())
-			parameterGroupsObject.createTime = valueParameterGroupsParameterGroupsItem["CreateTime"].asString();
-		if(!valueParameterGroupsParameterGroupsItem["ParameterGroupDesc"].isNull())
-			parameterGroupsObject.parameterGroupDesc = valueParameterGroupsParameterGroupsItem["ParameterGroupDesc"].asString();
+		if(!valueParameterGroupsParameterGroupsItem["ForceRestart"].isNull())
+			parameterGroupsObject.forceRestart = valueParameterGroupsParameterGroupsItem["ForceRestart"].asString();
 		if(!valueParameterGroupsParameterGroupsItem["ParameterGroupType"].isNull())
 			parameterGroupsObject.parameterGroupType = valueParameterGroupsParameterGroupsItem["ParameterGroupType"].asString();
 		if(!valueParameterGroupsParameterGroupsItem["ParameterCounts"].isNull())
 			parameterGroupsObject.parameterCounts = std::stol(valueParameterGroupsParameterGroupsItem["ParameterCounts"].asString());
-		if(!valueParameterGroupsParameterGroupsItem["DBType"].isNull())
-			parameterGroupsObject.dBType = valueParameterGroupsParameterGroupsItem["DBType"].asString();
+		if(!valueParameterGroupsParameterGroupsItem["ParameterGroupDesc"].isNull())
+			parameterGroupsObject.parameterGroupDesc = valueParameterGroupsParameterGroupsItem["ParameterGroupDesc"].asString();
+		if(!valueParameterGroupsParameterGroupsItem["CreateTime"].isNull())
+			parameterGroupsObject.createTime = valueParameterGroupsParameterGroupsItem["CreateTime"].asString();
+		if(!valueParameterGroupsParameterGroupsItem["ParameterGroupId"].isNull())
+			parameterGroupsObject.parameterGroupId = valueParameterGroupsParameterGroupsItem["ParameterGroupId"].asString();
 		parameterGroups_.push_back(parameterGroupsObject);
 	}
 

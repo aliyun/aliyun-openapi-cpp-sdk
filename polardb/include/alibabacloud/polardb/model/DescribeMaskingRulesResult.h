@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATEPARAMETERGROUPRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_CREATEPARAMETERGROUPRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEMASKINGRULESRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEMASKINGRULESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT CreateParameterGroupResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeMaskingRulesResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::vector<std::string> ruleList;
+				};
 
 
-				CreateParameterGroupResult();
-				explicit CreateParameterGroupResult(const std::string &payload);
-				~CreateParameterGroupResult();
-				std::string getParameterGroupId()const;
+				DescribeMaskingRulesResult();
+				explicit DescribeMaskingRulesResult(const std::string &payload);
+				~DescribeMaskingRulesResult();
+				std::string getMessage()const;
+				Data getData()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string parameterGroupId_;
+				std::string message_;
+				Data data_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATEPARAMETERGROUPRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEMASKINGRULESRESULT_H_

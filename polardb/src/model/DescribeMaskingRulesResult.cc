@@ -14,38 +14,54 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/CreateParameterGroupResult.h>
+#include <alibabacloud/polardb/model/DescribeMaskingRulesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-CreateParameterGroupResult::CreateParameterGroupResult() :
+DescribeMaskingRulesResult::DescribeMaskingRulesResult() :
 	ServiceResult()
 {}
 
-CreateParameterGroupResult::CreateParameterGroupResult(const std::string &payload) :
+DescribeMaskingRulesResult::DescribeMaskingRulesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateParameterGroupResult::~CreateParameterGroupResult()
+DescribeMaskingRulesResult::~DescribeMaskingRulesResult()
 {}
 
-void CreateParameterGroupResult::parse(const std::string &payload)
+void DescribeMaskingRulesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ParameterGroupId"].isNull())
-		parameterGroupId_ = value["ParameterGroupId"].asString();
+	auto dataNode = value["Data"];
+		auto allRuleList = dataNode["RuleList"]["RuleList"];
+		for (auto value : allRuleList)
+			data_.ruleList.push_back(value.asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string CreateParameterGroupResult::getParameterGroupId()const
+std::string DescribeMaskingRulesResult::getMessage()const
 {
-	return parameterGroupId_;
+	return message_;
+}
+
+DescribeMaskingRulesResult::Data DescribeMaskingRulesResult::getData()const
+{
+	return data_;
+}
+
+bool DescribeMaskingRulesResult::getSuccess()const
+{
+	return success_;
 }
 

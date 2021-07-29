@@ -67,6 +67,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DeleteDatabaseResult.h
 	include/alibabacloud/polardb/model/DeleteGlobalDatabaseNetworkRequest.h
 	include/alibabacloud/polardb/model/DeleteGlobalDatabaseNetworkResult.h
+	include/alibabacloud/polardb/model/DeleteMaskingRulesRequest.h
+	include/alibabacloud/polardb/model/DeleteMaskingRulesResult.h
 	include/alibabacloud/polardb/model/DeleteParameterGroupRequest.h
 	include/alibabacloud/polardb/model/DeleteParameterGroupResult.h
 	include/alibabacloud/polardb/model/DescribeAccountsRequest.h
@@ -127,6 +129,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeGlobalDatabaseNetworksResult.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/DescribeLogBackupPolicyResult.h
+	include/alibabacloud/polardb/model/DescribeMaskingRulesRequest.h
+	include/alibabacloud/polardb/model/DescribeMaskingRulesResult.h
 	include/alibabacloud/polardb/model/DescribeMetaListRequest.h
 	include/alibabacloud/polardb/model/DescribeMetaListResult.h
 	include/alibabacloud/polardb/model/DescribeParameterGroupRequest.h
@@ -195,6 +199,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/ModifyLogBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/ModifyLogBackupPolicyResult.h
+	include/alibabacloud/polardb/model/ModifyMaskingRulesRequest.h
+	include/alibabacloud/polardb/model/ModifyMaskingRulesResult.h
 	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionRequest.h
 	include/alibabacloud/polardb/model/ModifyPendingMaintenanceActionResult.h
 	include/alibabacloud/polardb/model/RemoveDBClusterFromGDNRequest.h
@@ -266,6 +272,8 @@ set(polardb_src
 	src/model/DeleteDatabaseResult.cc
 	src/model/DeleteGlobalDatabaseNetworkRequest.cc
 	src/model/DeleteGlobalDatabaseNetworkResult.cc
+	src/model/DeleteMaskingRulesRequest.cc
+	src/model/DeleteMaskingRulesResult.cc
 	src/model/DeleteParameterGroupRequest.cc
 	src/model/DeleteParameterGroupResult.cc
 	src/model/DescribeAccountsRequest.cc
@@ -326,6 +334,8 @@ set(polardb_src
 	src/model/DescribeGlobalDatabaseNetworksResult.cc
 	src/model/DescribeLogBackupPolicyRequest.cc
 	src/model/DescribeLogBackupPolicyResult.cc
+	src/model/DescribeMaskingRulesRequest.cc
+	src/model/DescribeMaskingRulesResult.cc
 	src/model/DescribeMetaListRequest.cc
 	src/model/DescribeMetaListResult.cc
 	src/model/DescribeParameterGroupRequest.cc
@@ -394,6 +404,8 @@ set(polardb_src
 	src/model/ModifyGlobalDatabaseNetworkResult.cc
 	src/model/ModifyLogBackupPolicyRequest.cc
 	src/model/ModifyLogBackupPolicyResult.cc
+	src/model/ModifyMaskingRulesRequest.cc
+	src/model/ModifyMaskingRulesResult.cc
 	src/model/ModifyPendingMaintenanceActionRequest.cc
 	src/model/ModifyPendingMaintenanceActionResult.cc
 	src/model/RemoveDBClusterFromGDNRequest.cc

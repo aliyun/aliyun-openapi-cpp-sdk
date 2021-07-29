@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					std::string dBVersion;
 					std::string parameterGroupId;
-					std::string forceRestart;
 					std::string parameterGroupName;
-					std::string createTime;
-					std::string parameterGroupDesc;
+					std::string forceRestart;
 					std::string parameterGroupType;
+					std::string parameterGroupDesc;
+					std::string createTime;
 					long parameterCounts;
 					std::string dBType;
 				};
