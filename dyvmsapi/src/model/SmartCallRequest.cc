@@ -236,6 +236,17 @@ void SmartCallRequest::setTtsVolume(int ttsVolume)
 	setParameter("TtsVolume", std::to_string(ttsVolume));
 }
 
+int SmartCallRequest::getStreamAsr()const
+{
+	return streamAsr_;
+}
+
+void SmartCallRequest::setStreamAsr(int streamAsr)
+{
+	streamAsr_ = streamAsr;
+	setParameter("StreamAsr", std::to_string(streamAsr));
+}
+
 int SmartCallRequest::getVolume()const
 {
 	return volume_;

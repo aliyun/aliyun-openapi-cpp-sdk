@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dyvmsapi/model/QueryRobotTaskListResult.h>
+#include <alibabacloud/dyvmsapi/model/ListRobotTaskCallsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dyvmsapi;
 using namespace AlibabaCloud::Dyvmsapi::Model;
 
-QueryRobotTaskListResult::QueryRobotTaskListResult() :
+ListRobotTaskCallsResult::ListRobotTaskCallsResult() :
 	ServiceResult()
 {}
 
-QueryRobotTaskListResult::QueryRobotTaskListResult(const std::string &payload) :
+ListRobotTaskCallsResult::ListRobotTaskCallsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryRobotTaskListResult::~QueryRobotTaskListResult()
+ListRobotTaskCallsResult::~ListRobotTaskCallsResult()
 {}
 
-void QueryRobotTaskListResult::parse(const std::string &payload)
+void ListRobotTaskCallsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -54,32 +54,32 @@ void QueryRobotTaskListResult::parse(const std::string &payload)
 
 }
 
-std::string QueryRobotTaskListResult::getTotalCount()const
+std::string ListRobotTaskCallsResult::getTotalCount()const
 {
 	return totalCount_;
 }
 
-std::string QueryRobotTaskListResult::getPageSize()const
+std::string ListRobotTaskCallsResult::getPageSize()const
 {
 	return pageSize_;
 }
 
-std::string QueryRobotTaskListResult::getMessage()const
+std::string ListRobotTaskCallsResult::getMessage()const
 {
 	return message_;
 }
 
-std::string QueryRobotTaskListResult::getData()const
+std::string ListRobotTaskCallsResult::getData()const
 {
 	return data_;
 }
 
-std::string QueryRobotTaskListResult::getPageNo()const
+std::string ListRobotTaskCallsResult::getPageNo()const
 {
 	return pageNo_;
 }
 
-std::string QueryRobotTaskListResult::getCode()const
+std::string ListRobotTaskCallsResult::getCode()const
 {
 	return code_;
 }

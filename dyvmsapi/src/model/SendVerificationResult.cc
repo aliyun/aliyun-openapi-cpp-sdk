@@ -14,72 +14,51 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dyvmsapi/model/QueryRobotTaskListResult.h>
+#include <alibabacloud/dyvmsapi/model/SendVerificationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dyvmsapi;
 using namespace AlibabaCloud::Dyvmsapi::Model;
 
-QueryRobotTaskListResult::QueryRobotTaskListResult() :
+SendVerificationResult::SendVerificationResult() :
 	ServiceResult()
 {}
 
-QueryRobotTaskListResult::QueryRobotTaskListResult(const std::string &payload) :
+SendVerificationResult::SendVerificationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryRobotTaskListResult::~QueryRobotTaskListResult()
+SendVerificationResult::~SendVerificationResult()
 {}
 
-void QueryRobotTaskListResult::parse(const std::string &payload)
+void SendVerificationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
-	if(!value["PageSize"].isNull())
-		pageSize_ = value["PageSize"].asString();
-	if(!value["PageNo"].isNull())
-		pageNo_ = value["PageNo"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = value["TotalCount"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 
 }
 
-std::string QueryRobotTaskListResult::getTotalCount()const
-{
-	return totalCount_;
-}
-
-std::string QueryRobotTaskListResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-std::string QueryRobotTaskListResult::getMessage()const
+std::string SendVerificationResult::getMessage()const
 {
 	return message_;
 }
 
-std::string QueryRobotTaskListResult::getData()const
+bool SendVerificationResult::getData()const
 {
 	return data_;
 }
 
-std::string QueryRobotTaskListResult::getPageNo()const
-{
-	return pageNo_;
-}
-
-std::string QueryRobotTaskListResult::getCode()const
+std::string SendVerificationResult::getCode()const
 {
 	return code_;
 }

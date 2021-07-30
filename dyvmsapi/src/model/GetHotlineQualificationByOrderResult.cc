@@ -14,39 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dyvmsapi/model/QueryRobotTaskListResult.h>
+#include <alibabacloud/dyvmsapi/model/GetHotlineQualificationByOrderResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dyvmsapi;
 using namespace AlibabaCloud::Dyvmsapi::Model;
 
-QueryRobotTaskListResult::QueryRobotTaskListResult() :
+GetHotlineQualificationByOrderResult::GetHotlineQualificationByOrderResult() :
 	ServiceResult()
 {}
 
-QueryRobotTaskListResult::QueryRobotTaskListResult(const std::string &payload) :
+GetHotlineQualificationByOrderResult::GetHotlineQualificationByOrderResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryRobotTaskListResult::~QueryRobotTaskListResult()
+GetHotlineQualificationByOrderResult::~GetHotlineQualificationByOrderResult()
 {}
 
-void QueryRobotTaskListResult::parse(const std::string &payload)
+void GetHotlineQualificationByOrderResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
-	if(!value["PageSize"].isNull())
-		pageSize_ = value["PageSize"].asString();
-	if(!value["PageNo"].isNull())
-		pageNo_ = value["PageNo"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = value["TotalCount"].asString();
+	auto dataNode = value["Data"];
+	if(!dataNode["Status"].isNull())
+		data_.status = dataNode["Status"].asString();
+	if(!dataNode["QualificationId"].isNull())
+		data_.qualificationId = dataNode["QualificationId"].asString();
+	if(!dataNode["OrderId"].isNull())
+		data_.orderId = dataNode["OrderId"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -54,32 +53,17 @@ void QueryRobotTaskListResult::parse(const std::string &payload)
 
 }
 
-std::string QueryRobotTaskListResult::getTotalCount()const
-{
-	return totalCount_;
-}
-
-std::string QueryRobotTaskListResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-std::string QueryRobotTaskListResult::getMessage()const
+std::string GetHotlineQualificationByOrderResult::getMessage()const
 {
 	return message_;
 }
 
-std::string QueryRobotTaskListResult::getData()const
+GetHotlineQualificationByOrderResult::Data GetHotlineQualificationByOrderResult::getData()const
 {
 	return data_;
 }
 
-std::string QueryRobotTaskListResult::getPageNo()const
-{
-	return pageNo_;
-}
-
-std::string QueryRobotTaskListResult::getCode()const
+std::string GetHotlineQualificationByOrderResult::getCode()const
 {
 	return code_;
 }

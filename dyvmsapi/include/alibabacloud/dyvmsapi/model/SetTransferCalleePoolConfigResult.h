@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
-#define ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
+#ifndef ALIBABACLOUD_DYVMSAPI_MODEL_SETTRANSFERCALLEEPOOLCONFIGRESULT_H_
+#define ALIBABACLOUD_DYVMSAPI_MODEL_SETTRANSFERCALLEEPOOLCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYVMSAPI_EXPORT QueryRobotTaskListResult : public ServiceResult
+			class ALIBABACLOUD_DYVMSAPI_EXPORT SetTransferCalleePoolConfigResult : public ServiceResult
 			{
 			public:
 
 
-				QueryRobotTaskListResult();
-				explicit QueryRobotTaskListResult(const std::string &payload);
-				~QueryRobotTaskListResult();
-				std::string getTotalCount()const;
-				std::string getPageSize()const;
+				SetTransferCalleePoolConfigResult();
+				explicit SetTransferCalleePoolConfigResult(const std::string &payload);
+				~SetTransferCalleePoolConfigResult();
 				std::string getMessage()const;
-				std::string getData()const;
-				std::string getPageNo()const;
+				bool getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string totalCount_;
-				std::string pageSize_;
 				std::string message_;
-				std::string data_;
-				std::string pageNo_;
+				bool data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
+#endif // !ALIBABACLOUD_DYVMSAPI_MODEL_SETTRANSFERCALLEEPOOLCONFIGRESULT_H_

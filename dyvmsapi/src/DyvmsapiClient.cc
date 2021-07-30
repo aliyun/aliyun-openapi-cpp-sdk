@@ -87,6 +87,42 @@ DyvmsapiClient::AddRtcAccountOutcomeCallable DyvmsapiClient::addRtcAccountCallab
 	return task->get_future();
 }
 
+DyvmsapiClient::AddVirtualNumberRelationOutcome DyvmsapiClient::addVirtualNumberRelation(const AddVirtualNumberRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddVirtualNumberRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddVirtualNumberRelationOutcome(AddVirtualNumberRelationResult(outcome.result()));
+	else
+		return AddVirtualNumberRelationOutcome(outcome.error());
+}
+
+void DyvmsapiClient::addVirtualNumberRelationAsync(const AddVirtualNumberRelationRequest& request, const AddVirtualNumberRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addVirtualNumberRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::AddVirtualNumberRelationOutcomeCallable DyvmsapiClient::addVirtualNumberRelationCallable(const AddVirtualNumberRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddVirtualNumberRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->addVirtualNumberRelation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::BatchRobotSmartCallOutcome DyvmsapiClient::batchRobotSmartCall(const BatchRobotSmartCallRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -303,6 +339,78 @@ DyvmsapiClient::ClickToDialOutcomeCallable DyvmsapiClient::clickToDialCallable(c
 	return task->get_future();
 }
 
+DyvmsapiClient::CloseSipAccountOutcome DyvmsapiClient::closeSipAccount(const CloseSipAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CloseSipAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CloseSipAccountOutcome(CloseSipAccountResult(outcome.result()));
+	else
+		return CloseSipAccountOutcome(outcome.error());
+}
+
+void DyvmsapiClient::closeSipAccountAsync(const CloseSipAccountRequest& request, const CloseSipAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, closeSipAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::CloseSipAccountOutcomeCallable DyvmsapiClient::closeSipAccountCallable(const CloseSipAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CloseSipAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->closeSipAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::CreateCallTaskOutcome DyvmsapiClient::createCallTask(const CreateCallTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCallTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCallTaskOutcome(CreateCallTaskResult(outcome.result()));
+	else
+		return CreateCallTaskOutcome(outcome.error());
+}
+
+void DyvmsapiClient::createCallTaskAsync(const CreateCallTaskRequest& request, const CreateCallTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCallTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::CreateCallTaskOutcomeCallable DyvmsapiClient::createCallTaskCallable(const CreateCallTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCallTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createCallTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::CreateRobotTaskOutcome DyvmsapiClient::createRobotTask(const CreateRobotTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +441,42 @@ DyvmsapiClient::CreateRobotTaskOutcomeCallable DyvmsapiClient::createRobotTaskCa
 			[this, request]()
 			{
 			return this->createRobotTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::CreateSipAccountOutcome DyvmsapiClient::createSipAccount(const CreateSipAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSipAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSipAccountOutcome(CreateSipAccountResult(outcome.result()));
+	else
+		return CreateSipAccountOutcome(outcome.error());
+}
+
+void DyvmsapiClient::createSipAccountAsync(const CreateSipAccountRequest& request, const CreateSipAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSipAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::CreateSipAccountOutcomeCallable DyvmsapiClient::createSipAccountCallable(const CreateSipAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSipAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->createSipAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -447,6 +591,114 @@ DyvmsapiClient::DoRtcNumberAuthOutcomeCallable DyvmsapiClient::doRtcNumberAuthCa
 	return task->get_future();
 }
 
+DyvmsapiClient::DoubleCallSeatOutcome DyvmsapiClient::doubleCallSeat(const DoubleCallSeatRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DoubleCallSeatOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DoubleCallSeatOutcome(DoubleCallSeatResult(outcome.result()));
+	else
+		return DoubleCallSeatOutcome(outcome.error());
+}
+
+void DyvmsapiClient::doubleCallSeatAsync(const DoubleCallSeatRequest& request, const DoubleCallSeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, doubleCallSeat(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::DoubleCallSeatOutcomeCallable DyvmsapiClient::doubleCallSeatCallable(const DoubleCallSeatRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DoubleCallSeatOutcome()>>(
+			[this, request]()
+			{
+			return this->doubleCallSeat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::ExecuteCallTaskOutcome DyvmsapiClient::executeCallTask(const ExecuteCallTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteCallTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteCallTaskOutcome(ExecuteCallTaskResult(outcome.result()));
+	else
+		return ExecuteCallTaskOutcome(outcome.error());
+}
+
+void DyvmsapiClient::executeCallTaskAsync(const ExecuteCallTaskRequest& request, const ExecuteCallTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeCallTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ExecuteCallTaskOutcomeCallable DyvmsapiClient::executeCallTaskCallable(const ExecuteCallTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteCallTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->executeCallTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::GetHotlineQualificationByOrderOutcome DyvmsapiClient::getHotlineQualificationByOrder(const GetHotlineQualificationByOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetHotlineQualificationByOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetHotlineQualificationByOrderOutcome(GetHotlineQualificationByOrderResult(outcome.result()));
+	else
+		return GetHotlineQualificationByOrderOutcome(outcome.error());
+}
+
+void DyvmsapiClient::getHotlineQualificationByOrderAsync(const GetHotlineQualificationByOrderRequest& request, const GetHotlineQualificationByOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getHotlineQualificationByOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::GetHotlineQualificationByOrderOutcomeCallable DyvmsapiClient::getHotlineQualificationByOrderCallable(const GetHotlineQualificationByOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetHotlineQualificationByOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->getHotlineQualificationByOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::GetRtcTokenOutcome DyvmsapiClient::getRtcToken(const GetRtcTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,6 +735,42 @@ DyvmsapiClient::GetRtcTokenOutcomeCallable DyvmsapiClient::getRtcTokenCallable(c
 	return task->get_future();
 }
 
+DyvmsapiClient::GetTokenOutcome DyvmsapiClient::getToken(const GetTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTokenOutcome(GetTokenResult(outcome.result()));
+	else
+		return GetTokenOutcome(outcome.error());
+}
+
+void DyvmsapiClient::getTokenAsync(const GetTokenRequest& request, const GetTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::GetTokenOutcomeCallable DyvmsapiClient::getTokenCallable(const GetTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->getToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::IvrCallOutcome DyvmsapiClient::ivrCall(const IvrCallRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +801,150 @@ DyvmsapiClient::IvrCallOutcomeCallable DyvmsapiClient::ivrCallCallable(const Ivr
 			[this, request]()
 			{
 			return this->ivrCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::ListCallTaskOutcome DyvmsapiClient::listCallTask(const ListCallTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCallTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCallTaskOutcome(ListCallTaskResult(outcome.result()));
+	else
+		return ListCallTaskOutcome(outcome.error());
+}
+
+void DyvmsapiClient::listCallTaskAsync(const ListCallTaskRequest& request, const ListCallTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCallTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ListCallTaskOutcomeCallable DyvmsapiClient::listCallTaskCallable(const ListCallTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCallTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->listCallTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::ListCallTaskDetailOutcome DyvmsapiClient::listCallTaskDetail(const ListCallTaskDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCallTaskDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCallTaskDetailOutcome(ListCallTaskDetailResult(outcome.result()));
+	else
+		return ListCallTaskDetailOutcome(outcome.error());
+}
+
+void DyvmsapiClient::listCallTaskDetailAsync(const ListCallTaskDetailRequest& request, const ListCallTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCallTaskDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ListCallTaskDetailOutcomeCallable DyvmsapiClient::listCallTaskDetailCallable(const ListCallTaskDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCallTaskDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->listCallTaskDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::ListHotlineTransferNumberOutcome DyvmsapiClient::listHotlineTransferNumber(const ListHotlineTransferNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListHotlineTransferNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListHotlineTransferNumberOutcome(ListHotlineTransferNumberResult(outcome.result()));
+	else
+		return ListHotlineTransferNumberOutcome(outcome.error());
+}
+
+void DyvmsapiClient::listHotlineTransferNumberAsync(const ListHotlineTransferNumberRequest& request, const ListHotlineTransferNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listHotlineTransferNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ListHotlineTransferNumberOutcomeCallable DyvmsapiClient::listHotlineTransferNumberCallable(const ListHotlineTransferNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListHotlineTransferNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->listHotlineTransferNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::ListHotlineTransferRegisterFileOutcome DyvmsapiClient::listHotlineTransferRegisterFile(const ListHotlineTransferRegisterFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListHotlineTransferRegisterFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListHotlineTransferRegisterFileOutcome(ListHotlineTransferRegisterFileResult(outcome.result()));
+	else
+		return ListHotlineTransferRegisterFileOutcome(outcome.error());
+}
+
+void DyvmsapiClient::listHotlineTransferRegisterFileAsync(const ListHotlineTransferRegisterFileRequest& request, const ListHotlineTransferRegisterFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listHotlineTransferRegisterFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ListHotlineTransferRegisterFileOutcomeCallable DyvmsapiClient::listHotlineTransferRegisterFileCallable(const ListHotlineTransferRegisterFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListHotlineTransferRegisterFileOutcome()>>(
+			[this, request]()
+			{
+			return this->listHotlineTransferRegisterFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,6 +1023,42 @@ DyvmsapiClient::ListOutboundStrategiesOutcomeCallable DyvmsapiClient::listOutbou
 	return task->get_future();
 }
 
+DyvmsapiClient::ListRobotTaskCallsOutcome DyvmsapiClient::listRobotTaskCalls(const ListRobotTaskCallsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRobotTaskCallsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRobotTaskCallsOutcome(ListRobotTaskCallsResult(outcome.result()));
+	else
+		return ListRobotTaskCallsOutcome(outcome.error());
+}
+
+void DyvmsapiClient::listRobotTaskCallsAsync(const ListRobotTaskCallsRequest& request, const ListRobotTaskCallsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRobotTaskCalls(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ListRobotTaskCallsOutcomeCallable DyvmsapiClient::listRobotTaskCallsCallable(const ListRobotTaskCallsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRobotTaskCallsOutcome()>>(
+			[this, request]()
+			{
+			return this->listRobotTaskCalls(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::QueryCallDetailByCallIdOutcome DyvmsapiClient::queryCallDetailByCallId(const QueryCallDetailByCallIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +1125,78 @@ DyvmsapiClient::QueryCallDetailByTaskIdOutcomeCallable DyvmsapiClient::queryCall
 			[this, request]()
 			{
 			return this->queryCallDetailByTaskId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::QueryCallInPoolTransferConfigOutcome DyvmsapiClient::queryCallInPoolTransferConfig(const QueryCallInPoolTransferConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCallInPoolTransferConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCallInPoolTransferConfigOutcome(QueryCallInPoolTransferConfigResult(outcome.result()));
+	else
+		return QueryCallInPoolTransferConfigOutcome(outcome.error());
+}
+
+void DyvmsapiClient::queryCallInPoolTransferConfigAsync(const QueryCallInPoolTransferConfigRequest& request, const QueryCallInPoolTransferConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCallInPoolTransferConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::QueryCallInPoolTransferConfigOutcomeCallable DyvmsapiClient::queryCallInPoolTransferConfigCallable(const QueryCallInPoolTransferConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCallInPoolTransferConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCallInPoolTransferConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::QueryCallInTransferRecordOutcome DyvmsapiClient::queryCallInTransferRecord(const QueryCallInTransferRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCallInTransferRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCallInTransferRecordOutcome(QueryCallInTransferRecordResult(outcome.result()));
+	else
+		return QueryCallInTransferRecordOutcome(outcome.error());
+}
+
+void DyvmsapiClient::queryCallInTransferRecordAsync(const QueryCallInTransferRecordRequest& request, const QueryCallInTransferRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCallInTransferRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::QueryCallInTransferRecordOutcomeCallable DyvmsapiClient::queryCallInTransferRecordCallable(const QueryCallInTransferRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCallInTransferRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCallInTransferRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,6 +1455,78 @@ DyvmsapiClient::QueryRtcNumberAuthStatusOutcomeCallable DyvmsapiClient::queryRtc
 	return task->get_future();
 }
 
+DyvmsapiClient::QueryVirtualNumberOutcome DyvmsapiClient::queryVirtualNumber(const QueryVirtualNumberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryVirtualNumberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryVirtualNumberOutcome(QueryVirtualNumberResult(outcome.result()));
+	else
+		return QueryVirtualNumberOutcome(outcome.error());
+}
+
+void DyvmsapiClient::queryVirtualNumberAsync(const QueryVirtualNumberRequest& request, const QueryVirtualNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryVirtualNumber(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::QueryVirtualNumberOutcomeCallable DyvmsapiClient::queryVirtualNumberCallable(const QueryVirtualNumberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryVirtualNumberOutcome()>>(
+			[this, request]()
+			{
+			return this->queryVirtualNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::QueryVirtualNumberRelationOutcome DyvmsapiClient::queryVirtualNumberRelation(const QueryVirtualNumberRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryVirtualNumberRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryVirtualNumberRelationOutcome(QueryVirtualNumberRelationResult(outcome.result()));
+	else
+		return QueryVirtualNumberRelationOutcome(outcome.error());
+}
+
+void DyvmsapiClient::queryVirtualNumberRelationAsync(const QueryVirtualNumberRelationRequest& request, const QueryVirtualNumberRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryVirtualNumberRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::QueryVirtualNumberRelationOutcomeCallable DyvmsapiClient::queryVirtualNumberRelationCallable(const QueryVirtualNumberRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryVirtualNumberRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->queryVirtualNumberRelation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::QueryVoipNumberBindInfosOutcome DyvmsapiClient::queryVoipNumberBindInfos(const QueryVoipNumberBindInfosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1593,78 @@ DyvmsapiClient::ReportVoipProblemsOutcomeCallable DyvmsapiClient::reportVoipProb
 			[this, request]()
 			{
 			return this->reportVoipProblems(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::SendVerificationOutcome DyvmsapiClient::sendVerification(const SendVerificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendVerificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendVerificationOutcome(SendVerificationResult(outcome.result()));
+	else
+		return SendVerificationOutcome(outcome.error());
+}
+
+void DyvmsapiClient::sendVerificationAsync(const SendVerificationRequest& request, const SendVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendVerification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::SendVerificationOutcomeCallable DyvmsapiClient::sendVerificationCallable(const SendVerificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendVerificationOutcome()>>(
+			[this, request]()
+			{
+			return this->sendVerification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::SetTransferCalleePoolConfigOutcome DyvmsapiClient::setTransferCalleePoolConfig(const SetTransferCalleePoolConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetTransferCalleePoolConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetTransferCalleePoolConfigOutcome(SetTransferCalleePoolConfigResult(outcome.result()));
+	else
+		return SetTransferCalleePoolConfigOutcome(outcome.error());
+}
+
+void DyvmsapiClient::setTransferCalleePoolConfigAsync(const SetTransferCalleePoolConfigRequest& request, const SetTransferCalleePoolConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setTransferCalleePoolConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::SetTransferCalleePoolConfigOutcomeCallable DyvmsapiClient::setTransferCalleePoolConfigCallable(const SetTransferCalleePoolConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetTransferCalleePoolConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->setTransferCalleePoolConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1233,6 +1917,42 @@ DyvmsapiClient::StopRobotTaskOutcomeCallable DyvmsapiClient::stopRobotTaskCallab
 			[this, request]()
 			{
 			return this->stopRobotTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::SubmitHotlineTransferRegisterOutcome DyvmsapiClient::submitHotlineTransferRegister(const SubmitHotlineTransferRegisterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitHotlineTransferRegisterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitHotlineTransferRegisterOutcome(SubmitHotlineTransferRegisterResult(outcome.result()));
+	else
+		return SubmitHotlineTransferRegisterOutcome(outcome.error());
+}
+
+void DyvmsapiClient::submitHotlineTransferRegisterAsync(const SubmitHotlineTransferRegisterRequest& request, const SubmitHotlineTransferRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitHotlineTransferRegister(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::SubmitHotlineTransferRegisterOutcomeCallable DyvmsapiClient::submitHotlineTransferRegisterCallable(const SubmitHotlineTransferRegisterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitHotlineTransferRegisterOutcome()>>(
+			[this, request]()
+			{
+			return this->submitHotlineTransferRegister(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
-#define ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
+#ifndef ALIBABACLOUD_DYVMSAPI_MODEL_GETTOKENRESULT_H_
+#define ALIBABACLOUD_DYVMSAPI_MODEL_GETTOKENRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYVMSAPI_EXPORT QueryRobotTaskListResult : public ServiceResult
+			class ALIBABACLOUD_DYVMSAPI_EXPORT GetTokenResult : public ServiceResult
 			{
 			public:
 
 
-				QueryRobotTaskListResult();
-				explicit QueryRobotTaskListResult(const std::string &payload);
-				~QueryRobotTaskListResult();
-				std::string getTotalCount()const;
-				std::string getPageSize()const;
+				GetTokenResult();
+				explicit GetTokenResult(const std::string &payload);
+				~GetTokenResult();
 				std::string getMessage()const;
-				std::string getData()const;
-				std::string getPageNo()const;
+				std::string getToken()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string totalCount_;
-				std::string pageSize_;
 				std::string message_;
-				std::string data_;
-				std::string pageNo_;
+				std::string token_;
 				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
+#endif // !ALIBABACLOUD_DYVMSAPI_MODEL_GETTOKENRESULT_H_

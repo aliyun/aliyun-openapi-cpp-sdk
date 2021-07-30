@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
-#define ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
+#ifndef ALIBABACLOUD_DYVMSAPI_MODEL_QUERYCALLINTRANSFERRECORDRESULT_H_
+#define ALIBABACLOUD_DYVMSAPI_MODEL_QUERYCALLINTRANSFERRECORDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYVMSAPI_EXPORT QueryRobotTaskListResult : public ServiceResult
+			class ALIBABACLOUD_DYVMSAPI_EXPORT QueryCallInTransferRecordResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct ValuesItem
+					{
+						std::string callInCalled;
+						long gmtCreate;
+						std::string recordUrl;
+						std::string transferCaller;
+						std::string transferCalled;
+						std::string callInCaller;
+					};
+					long pageSize;
+					long total;
+					std::vector<ValuesItem> values;
+					long pageNo;
+				};
 
 
-				QueryRobotTaskListResult();
-				explicit QueryRobotTaskListResult(const std::string &payload);
-				~QueryRobotTaskListResult();
-				std::string getTotalCount()const;
-				std::string getPageSize()const;
+				QueryCallInTransferRecordResult();
+				explicit QueryCallInTransferRecordResult(const std::string &payload);
+				~QueryCallInTransferRecordResult();
 				std::string getMessage()const;
-				std::string getData()const;
-				std::string getPageNo()const;
+				Data getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string totalCount_;
-				std::string pageSize_;
 				std::string message_;
-				std::string data_;
-				std::string pageNo_;
+				Data data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
+#endif // !ALIBABACLOUD_DYVMSAPI_MODEL_QUERYCALLINTRANSFERRECORDRESULT_H_

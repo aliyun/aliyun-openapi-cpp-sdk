@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
-#define ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
+#ifndef ALIBABACLOUD_DYVMSAPI_MODEL_LISTROBOTTASKCALLSRESULT_H_
+#define ALIBABACLOUD_DYVMSAPI_MODEL_LISTROBOTTASKCALLSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYVMSAPI_EXPORT QueryRobotTaskListResult : public ServiceResult
+			class ALIBABACLOUD_DYVMSAPI_EXPORT ListRobotTaskCallsResult : public ServiceResult
 			{
 			public:
 
 
-				QueryRobotTaskListResult();
-				explicit QueryRobotTaskListResult(const std::string &payload);
-				~QueryRobotTaskListResult();
+				ListRobotTaskCallsResult();
+				explicit ListRobotTaskCallsResult(const std::string &payload);
+				~ListRobotTaskCallsResult();
 				std::string getTotalCount()const;
 				std::string getPageSize()const;
 				std::string getMessage()const;
@@ -58,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYVMSAPI_MODEL_QUERYROBOTTASKLISTRESULT_H_
+#endif // !ALIBABACLOUD_DYVMSAPI_MODEL_LISTROBOTTASKCALLSRESULT_H_
