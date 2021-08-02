@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				DbfsRecordRequest();
 				~DbfsRecordRequest();
 
+				std::string getData()const;
+				void setData(const std::string& data);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getBatchStrategyNo()const;
-				void setBatchStrategyNo(const std::string& batchStrategyNo);
 
             private:
+				std::string data_;
 				int pageNumber_;
 				std::string regionId_;
 				int pageSize_;
-				std::string batchStrategyNo_;
 
 			};
 		}

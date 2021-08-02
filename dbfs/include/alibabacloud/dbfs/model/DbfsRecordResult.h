@@ -58,11 +58,17 @@ namespace AlibabaCloud
 				DbfsRecordResult();
 				explicit DbfsRecordResult(const std::string &payload);
 				~DbfsRecordResult();
+				long getPageSize()const;
+				long getTotal()const;
+				long getPageNo()const;
 				std::vector<RecordsItem> getRecords()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long pageSize_;
+				long total_;
+				long pageNo_;
 				std::vector<RecordsItem> records_;
 
 			};

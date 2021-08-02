@@ -27,6 +27,17 @@ DbfsRecordRequest::DbfsRecordRequest() :
 DbfsRecordRequest::~DbfsRecordRequest()
 {}
 
+std::string DbfsRecordRequest::getData()const
+{
+	return data_;
+}
+
+void DbfsRecordRequest::setData(const std::string& data)
+{
+	data_ = data;
+	setParameter("Data", data);
+}
+
 int DbfsRecordRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -58,16 +69,5 @@ void DbfsRecordRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DbfsRecordRequest::getBatchStrategyNo()const
-{
-	return batchStrategyNo_;
-}
-
-void DbfsRecordRequest::setBatchStrategyNo(const std::string& batchStrategyNo)
-{
-	batchStrategyNo_ = batchStrategyNo;
-	setParameter("BatchStrategyNo", batchStrategyNo);
 }
 

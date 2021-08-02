@@ -81,7 +81,28 @@ void DbfsRecordResult::parse(const std::string &payload)
 			recordsObject.isDel = valueRecordsRecordsItem["IsDel"].asString();
 		records_.push_back(recordsObject);
 	}
+	if(!value["PageNo"].isNull())
+		pageNo_ = std::stol(value["PageNo"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
 
+}
+
+long DbfsRecordResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+long DbfsRecordResult::getTotal()const
+{
+	return total_;
+}
+
+long DbfsRecordResult::getPageNo()const
+{
+	return pageNo_;
 }
 
 std::vector<DbfsRecordResult::RecordsItem> DbfsRecordResult::getRecords()const
