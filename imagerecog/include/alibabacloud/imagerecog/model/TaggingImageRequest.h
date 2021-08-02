@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				TaggingImageRequest();
 				~TaggingImageRequest();
 
+				std::string getMode()const;
+				void setMode(const std::string& mode);
 				int getImageType()const;
 				void setImageType(int imageType);
 				bool getAsync()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setImageURL(const std::string& imageURL);
 
             private:
+				std::string mode_;
 				int imageType_;
 				bool async_;
 				std::string imageURL_;

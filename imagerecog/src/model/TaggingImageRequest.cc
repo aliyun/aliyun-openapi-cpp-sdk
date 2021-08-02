@@ -27,6 +27,17 @@ TaggingImageRequest::TaggingImageRequest() :
 TaggingImageRequest::~TaggingImageRequest()
 {}
 
+std::string TaggingImageRequest::getMode()const
+{
+	return mode_;
+}
+
+void TaggingImageRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setBodyParameter("Mode", mode);
+}
+
 int TaggingImageRequest::getImageType()const
 {
 	return imageType_;

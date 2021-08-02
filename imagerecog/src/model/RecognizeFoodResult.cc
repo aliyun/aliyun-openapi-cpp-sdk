@@ -44,18 +44,18 @@ void RecognizeFoodResult::parse(const std::string &payload)
 	for (auto dataNodeTopFivesTopFivesItem : allTopFivesNode)
 	{
 		Data::TopFivesItem topFivesItemObject;
-		if(!dataNodeTopFivesTopFivesItem["Calorie"].isNull())
-			topFivesItemObject.calorie = dataNodeTopFivesTopFivesItem["Calorie"].asString();
-		if(!dataNodeTopFivesTopFivesItem["Score"].isNull())
-			topFivesItemObject.score = std::stof(dataNodeTopFivesTopFivesItem["Score"].asString());
 		if(!dataNodeTopFivesTopFivesItem["Category"].isNull())
 			topFivesItemObject.category = dataNodeTopFivesTopFivesItem["Category"].asString();
+		if(!dataNodeTopFivesTopFivesItem["Score"].isNull())
+			topFivesItemObject.score = std::stof(dataNodeTopFivesTopFivesItem["Score"].asString());
+		if(!dataNodeTopFivesTopFivesItem["Calorie"].isNull())
+			topFivesItemObject.calorie = dataNodeTopFivesTopFivesItem["Calorie"].asString();
 		data_.topFives.push_back(topFivesItemObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

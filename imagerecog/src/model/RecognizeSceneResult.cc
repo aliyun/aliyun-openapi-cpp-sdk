@@ -44,10 +44,10 @@ void RecognizeSceneResult::parse(const std::string &payload)
 	for (auto dataNodeTagsTag : allTagsNode)
 	{
 		Data::Tag tagObject;
-		if(!dataNodeTagsTag["Confidence"].isNull())
-			tagObject.confidence = std::stof(dataNodeTagsTag["Confidence"].asString());
 		if(!dataNodeTagsTag["Value"].isNull())
 			tagObject.value = dataNodeTagsTag["Value"].asString();
+		if(!dataNodeTagsTag["Confidence"].isNull())
+			tagObject.confidence = std::stof(dataNodeTagsTag["Confidence"].asString());
 		data_.tags.push_back(tagObject);
 	}
 
