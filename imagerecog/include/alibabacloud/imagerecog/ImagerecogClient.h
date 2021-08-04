@@ -44,6 +44,8 @@
 #include "model/RecognizeSceneResult.h"
 #include "model/RecognizeVehicleTypeRequest.h"
 #include "model/RecognizeVehicleTypeResult.h"
+#include "model/TaggingAdImageRequest.h"
+#include "model/TaggingAdImageResult.h"
 #include "model/TaggingImageRequest.h"
 #include "model/TaggingImageResult.h"
 
@@ -88,6 +90,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeVehicleTypeResult> RecognizeVehicleTypeOutcome;
 			typedef std::future<RecognizeVehicleTypeOutcome> RecognizeVehicleTypeOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::RecognizeVehicleTypeRequest&, const RecognizeVehicleTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeVehicleTypeAsyncHandler;
+			typedef Outcome<Error, Model::TaggingAdImageResult> TaggingAdImageOutcome;
+			typedef std::future<TaggingAdImageOutcome> TaggingAdImageOutcomeCallable;
+			typedef std::function<void(const ImagerecogClient*, const Model::TaggingAdImageRequest&, const TaggingAdImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaggingAdImageAsyncHandler;
 			typedef Outcome<Error, Model::TaggingImageResult> TaggingImageOutcome;
 			typedef std::future<TaggingImageOutcome> TaggingImageOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::TaggingImageRequest&, const TaggingImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaggingImageAsyncHandler;
@@ -129,6 +134,9 @@ namespace AlibabaCloud
 			RecognizeVehicleTypeOutcome recognizeVehicleType(const Model::RecognizeVehicleTypeRequest &request)const;
 			void recognizeVehicleTypeAsync(const Model::RecognizeVehicleTypeRequest& request, const RecognizeVehicleTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeVehicleTypeOutcomeCallable recognizeVehicleTypeCallable(const Model::RecognizeVehicleTypeRequest& request) const;
+			TaggingAdImageOutcome taggingAdImage(const Model::TaggingAdImageRequest &request)const;
+			void taggingAdImageAsync(const Model::TaggingAdImageRequest& request, const TaggingAdImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TaggingAdImageOutcomeCallable taggingAdImageCallable(const Model::TaggingAdImageRequest& request) const;
 			TaggingImageOutcome taggingImage(const Model::TaggingImageRequest &request)const;
 			void taggingImageAsync(const Model::TaggingImageRequest& request, const TaggingImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TaggingImageOutcomeCallable taggingImageCallable(const Model::TaggingImageRequest& request) const;

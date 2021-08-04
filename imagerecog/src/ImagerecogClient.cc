@@ -447,6 +447,42 @@ ImagerecogClient::RecognizeVehicleTypeOutcomeCallable ImagerecogClient::recogniz
 	return task->get_future();
 }
 
+ImagerecogClient::TaggingAdImageOutcome ImagerecogClient::taggingAdImage(const TaggingAdImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TaggingAdImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TaggingAdImageOutcome(TaggingAdImageResult(outcome.result()));
+	else
+		return TaggingAdImageOutcome(outcome.error());
+}
+
+void ImagerecogClient::taggingAdImageAsync(const TaggingAdImageRequest& request, const TaggingAdImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, taggingAdImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImagerecogClient::TaggingAdImageOutcomeCallable ImagerecogClient::taggingAdImageCallable(const TaggingAdImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TaggingAdImageOutcome()>>(
+			[this, request]()
+			{
+			return this->taggingAdImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImagerecogClient::TaggingImageOutcome ImagerecogClient::taggingImage(const TaggingImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -43,6 +43,8 @@ set(imagerecog_public_header_model
 	include/alibabacloud/imagerecog/model/RecognizeSceneResult.h
 	include/alibabacloud/imagerecog/model/RecognizeVehicleTypeRequest.h
 	include/alibabacloud/imagerecog/model/RecognizeVehicleTypeResult.h
+	include/alibabacloud/imagerecog/model/TaggingAdImageRequest.h
+	include/alibabacloud/imagerecog/model/TaggingAdImageResult.h
 	include/alibabacloud/imagerecog/model/TaggingImageRequest.h
 	include/alibabacloud/imagerecog/model/TaggingImageResult.h )
 
@@ -70,6 +72,8 @@ set(imagerecog_src
 	src/model/RecognizeSceneResult.cc
 	src/model/RecognizeVehicleTypeRequest.cc
 	src/model/RecognizeVehicleTypeResult.cc
+	src/model/TaggingAdImageRequest.cc
+	src/model/TaggingAdImageResult.cc
 	src/model/TaggingImageRequest.cc
 	src/model/TaggingImageResult.cc )
 
