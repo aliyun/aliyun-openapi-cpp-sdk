@@ -51,180 +51,36 @@ HitsdbClient::HitsdbClient(const std::string & accessKeyId, const std::string & 
 HitsdbClient::~HitsdbClient()
 {}
 
-HitsdbClient::CreateHiTSDBInstanceOutcome HitsdbClient::createHiTSDBInstance(const CreateHiTSDBInstanceRequest &request) const
+HitsdbClient::CreateLindormInstanceOutcome HitsdbClient::createLindormInstance(const CreateLindormInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateHiTSDBInstanceOutcome(endpointOutcome.error());
+		return CreateLindormInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateHiTSDBInstanceOutcome(CreateHiTSDBInstanceResult(outcome.result()));
+		return CreateLindormInstanceOutcome(CreateLindormInstanceResult(outcome.result()));
 	else
-		return CreateHiTSDBInstanceOutcome(outcome.error());
+		return CreateLindormInstanceOutcome(outcome.error());
 }
 
-void HitsdbClient::createHiTSDBInstanceAsync(const CreateHiTSDBInstanceRequest& request, const CreateHiTSDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HitsdbClient::createLindormInstanceAsync(const CreateLindormInstanceRequest& request, const CreateLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createHiTSDBInstance(request), context);
+		handler(this, request, createLindormInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HitsdbClient::CreateHiTSDBInstanceOutcomeCallable HitsdbClient::createHiTSDBInstanceCallable(const CreateHiTSDBInstanceRequest &request) const
+HitsdbClient::CreateLindormInstanceOutcomeCallable HitsdbClient::createLindormInstanceCallable(const CreateLindormInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateHiTSDBInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateLindormInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->createHiTSDBInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-HitsdbClient::DeleteHiTSDBInstanceOutcome HitsdbClient::deleteHiTSDBInstance(const DeleteHiTSDBInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteHiTSDBInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteHiTSDBInstanceOutcome(DeleteHiTSDBInstanceResult(outcome.result()));
-	else
-		return DeleteHiTSDBInstanceOutcome(outcome.error());
-}
-
-void HitsdbClient::deleteHiTSDBInstanceAsync(const DeleteHiTSDBInstanceRequest& request, const DeleteHiTSDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteHiTSDBInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-HitsdbClient::DeleteHiTSDBInstanceOutcomeCallable HitsdbClient::deleteHiTSDBInstanceCallable(const DeleteHiTSDBInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteHiTSDBInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteHiTSDBInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-HitsdbClient::DescribeHiTSDBInstanceOutcome HitsdbClient::describeHiTSDBInstance(const DescribeHiTSDBInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeHiTSDBInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeHiTSDBInstanceOutcome(DescribeHiTSDBInstanceResult(outcome.result()));
-	else
-		return DescribeHiTSDBInstanceOutcome(outcome.error());
-}
-
-void HitsdbClient::describeHiTSDBInstanceAsync(const DescribeHiTSDBInstanceRequest& request, const DescribeHiTSDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeHiTSDBInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-HitsdbClient::DescribeHiTSDBInstanceOutcomeCallable HitsdbClient::describeHiTSDBInstanceCallable(const DescribeHiTSDBInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeHiTSDBInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeHiTSDBInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-HitsdbClient::DescribeHiTSDBInstanceListOutcome HitsdbClient::describeHiTSDBInstanceList(const DescribeHiTSDBInstanceListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeHiTSDBInstanceListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeHiTSDBInstanceListOutcome(DescribeHiTSDBInstanceListResult(outcome.result()));
-	else
-		return DescribeHiTSDBInstanceListOutcome(outcome.error());
-}
-
-void HitsdbClient::describeHiTSDBInstanceListAsync(const DescribeHiTSDBInstanceListRequest& request, const DescribeHiTSDBInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeHiTSDBInstanceList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-HitsdbClient::DescribeHiTSDBInstanceListOutcomeCallable HitsdbClient::describeHiTSDBInstanceListCallable(const DescribeHiTSDBInstanceListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeHiTSDBInstanceListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeHiTSDBInstanceList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-HitsdbClient::DescribeHiTSDBInstanceSecurityIpListOutcome HitsdbClient::describeHiTSDBInstanceSecurityIpList(const DescribeHiTSDBInstanceSecurityIpListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeHiTSDBInstanceSecurityIpListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeHiTSDBInstanceSecurityIpListOutcome(DescribeHiTSDBInstanceSecurityIpListResult(outcome.result()));
-	else
-		return DescribeHiTSDBInstanceSecurityIpListOutcome(outcome.error());
-}
-
-void HitsdbClient::describeHiTSDBInstanceSecurityIpListAsync(const DescribeHiTSDBInstanceSecurityIpListRequest& request, const DescribeHiTSDBInstanceSecurityIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeHiTSDBInstanceSecurityIpList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-HitsdbClient::DescribeHiTSDBInstanceSecurityIpListOutcomeCallable HitsdbClient::describeHiTSDBInstanceSecurityIpListCallable(const DescribeHiTSDBInstanceSecurityIpListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeHiTSDBInstanceSecurityIpListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeHiTSDBInstanceSecurityIpList(request);
+			return this->createLindormInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,252 +123,252 @@ HitsdbClient::DescribeRegionsOutcomeCallable HitsdbClient::describeRegionsCallab
 	return task->get_future();
 }
 
-HitsdbClient::DescribeZonesOutcome HitsdbClient::describeZones(const DescribeZonesRequest &request) const
+HitsdbClient::GetInstanceIpWhiteListOutcome HitsdbClient::getInstanceIpWhiteList(const GetInstanceIpWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeZonesOutcome(endpointOutcome.error());
+		return GetInstanceIpWhiteListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeZonesOutcome(DescribeZonesResult(outcome.result()));
+		return GetInstanceIpWhiteListOutcome(GetInstanceIpWhiteListResult(outcome.result()));
 	else
-		return DescribeZonesOutcome(outcome.error());
+		return GetInstanceIpWhiteListOutcome(outcome.error());
 }
 
-void HitsdbClient::describeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HitsdbClient::getInstanceIpWhiteListAsync(const GetInstanceIpWhiteListRequest& request, const GetInstanceIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeZones(request), context);
+		handler(this, request, getInstanceIpWhiteList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HitsdbClient::DescribeZonesOutcomeCallable HitsdbClient::describeZonesCallable(const DescribeZonesRequest &request) const
+HitsdbClient::GetInstanceIpWhiteListOutcomeCallable HitsdbClient::getInstanceIpWhiteListCallable(const GetInstanceIpWhiteListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetInstanceIpWhiteListOutcome()>>(
 			[this, request]()
 			{
-			return this->describeZones(request);
+			return this->getInstanceIpWhiteList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-HitsdbClient::ModifyHiTSDBInstanceClassOutcome HitsdbClient::modifyHiTSDBInstanceClass(const ModifyHiTSDBInstanceClassRequest &request) const
+HitsdbClient::GetLindormInstanceOutcome HitsdbClient::getLindormInstance(const GetLindormInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyHiTSDBInstanceClassOutcome(endpointOutcome.error());
+		return GetLindormInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyHiTSDBInstanceClassOutcome(ModifyHiTSDBInstanceClassResult(outcome.result()));
+		return GetLindormInstanceOutcome(GetLindormInstanceResult(outcome.result()));
 	else
-		return ModifyHiTSDBInstanceClassOutcome(outcome.error());
+		return GetLindormInstanceOutcome(outcome.error());
 }
 
-void HitsdbClient::modifyHiTSDBInstanceClassAsync(const ModifyHiTSDBInstanceClassRequest& request, const ModifyHiTSDBInstanceClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HitsdbClient::getLindormInstanceAsync(const GetLindormInstanceRequest& request, const GetLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyHiTSDBInstanceClass(request), context);
+		handler(this, request, getLindormInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HitsdbClient::ModifyHiTSDBInstanceClassOutcomeCallable HitsdbClient::modifyHiTSDBInstanceClassCallable(const ModifyHiTSDBInstanceClassRequest &request) const
+HitsdbClient::GetLindormInstanceOutcomeCallable HitsdbClient::getLindormInstanceCallable(const GetLindormInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyHiTSDBInstanceClassOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetLindormInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyHiTSDBInstanceClass(request);
+			return this->getLindormInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-HitsdbClient::ModifyHiTSDBInstanceSecurityIpListOutcome HitsdbClient::modifyHiTSDBInstanceSecurityIpList(const ModifyHiTSDBInstanceSecurityIpListRequest &request) const
+HitsdbClient::GetLindormInstanceEngineListOutcome HitsdbClient::getLindormInstanceEngineList(const GetLindormInstanceEngineListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyHiTSDBInstanceSecurityIpListOutcome(endpointOutcome.error());
+		return GetLindormInstanceEngineListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyHiTSDBInstanceSecurityIpListOutcome(ModifyHiTSDBInstanceSecurityIpListResult(outcome.result()));
+		return GetLindormInstanceEngineListOutcome(GetLindormInstanceEngineListResult(outcome.result()));
 	else
-		return ModifyHiTSDBInstanceSecurityIpListOutcome(outcome.error());
+		return GetLindormInstanceEngineListOutcome(outcome.error());
 }
 
-void HitsdbClient::modifyHiTSDBInstanceSecurityIpListAsync(const ModifyHiTSDBInstanceSecurityIpListRequest& request, const ModifyHiTSDBInstanceSecurityIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HitsdbClient::getLindormInstanceEngineListAsync(const GetLindormInstanceEngineListRequest& request, const GetLindormInstanceEngineListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyHiTSDBInstanceSecurityIpList(request), context);
+		handler(this, request, getLindormInstanceEngineList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HitsdbClient::ModifyHiTSDBInstanceSecurityIpListOutcomeCallable HitsdbClient::modifyHiTSDBInstanceSecurityIpListCallable(const ModifyHiTSDBInstanceSecurityIpListRequest &request) const
+HitsdbClient::GetLindormInstanceEngineListOutcomeCallable HitsdbClient::getLindormInstanceEngineListCallable(const GetLindormInstanceEngineListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyHiTSDBInstanceSecurityIpListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetLindormInstanceEngineListOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyHiTSDBInstanceSecurityIpList(request);
+			return this->getLindormInstanceEngineList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-HitsdbClient::RenameHiTSDBInstanceAliasOutcome HitsdbClient::renameHiTSDBInstanceAlias(const RenameHiTSDBInstanceAliasRequest &request) const
+HitsdbClient::GetLindormInstanceListOutcome HitsdbClient::getLindormInstanceList(const GetLindormInstanceListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RenameHiTSDBInstanceAliasOutcome(endpointOutcome.error());
+		return GetLindormInstanceListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RenameHiTSDBInstanceAliasOutcome(RenameHiTSDBInstanceAliasResult(outcome.result()));
+		return GetLindormInstanceListOutcome(GetLindormInstanceListResult(outcome.result()));
 	else
-		return RenameHiTSDBInstanceAliasOutcome(outcome.error());
+		return GetLindormInstanceListOutcome(outcome.error());
 }
 
-void HitsdbClient::renameHiTSDBInstanceAliasAsync(const RenameHiTSDBInstanceAliasRequest& request, const RenameHiTSDBInstanceAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HitsdbClient::getLindormInstanceListAsync(const GetLindormInstanceListRequest& request, const GetLindormInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, renameHiTSDBInstanceAlias(request), context);
+		handler(this, request, getLindormInstanceList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HitsdbClient::RenameHiTSDBInstanceAliasOutcomeCallable HitsdbClient::renameHiTSDBInstanceAliasCallable(const RenameHiTSDBInstanceAliasRequest &request) const
+HitsdbClient::GetLindormInstanceListOutcomeCallable HitsdbClient::getLindormInstanceListCallable(const GetLindormInstanceListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RenameHiTSDBInstanceAliasOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetLindormInstanceListOutcome()>>(
 			[this, request]()
 			{
-			return this->renameHiTSDBInstanceAlias(request);
+			return this->getLindormInstanceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-HitsdbClient::RenewTSDBInstanceOutcome HitsdbClient::renewTSDBInstance(const RenewTSDBInstanceRequest &request) const
+HitsdbClient::ReleaseLindormInstanceOutcome HitsdbClient::releaseLindormInstance(const ReleaseLindormInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RenewTSDBInstanceOutcome(endpointOutcome.error());
+		return ReleaseLindormInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RenewTSDBInstanceOutcome(RenewTSDBInstanceResult(outcome.result()));
+		return ReleaseLindormInstanceOutcome(ReleaseLindormInstanceResult(outcome.result()));
 	else
-		return RenewTSDBInstanceOutcome(outcome.error());
+		return ReleaseLindormInstanceOutcome(outcome.error());
 }
 
-void HitsdbClient::renewTSDBInstanceAsync(const RenewTSDBInstanceRequest& request, const RenewTSDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HitsdbClient::releaseLindormInstanceAsync(const ReleaseLindormInstanceRequest& request, const ReleaseLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, renewTSDBInstance(request), context);
+		handler(this, request, releaseLindormInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HitsdbClient::RenewTSDBInstanceOutcomeCallable HitsdbClient::renewTSDBInstanceCallable(const RenewTSDBInstanceRequest &request) const
+HitsdbClient::ReleaseLindormInstanceOutcomeCallable HitsdbClient::releaseLindormInstanceCallable(const ReleaseLindormInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RenewTSDBInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ReleaseLindormInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->renewTSDBInstance(request);
+			return this->releaseLindormInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-HitsdbClient::RestartHiTSDBInstanceOutcome HitsdbClient::restartHiTSDBInstance(const RestartHiTSDBInstanceRequest &request) const
+HitsdbClient::UpdateInstanceIpWhiteListOutcome HitsdbClient::updateInstanceIpWhiteList(const UpdateInstanceIpWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RestartHiTSDBInstanceOutcome(endpointOutcome.error());
+		return UpdateInstanceIpWhiteListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RestartHiTSDBInstanceOutcome(RestartHiTSDBInstanceResult(outcome.result()));
+		return UpdateInstanceIpWhiteListOutcome(UpdateInstanceIpWhiteListResult(outcome.result()));
 	else
-		return RestartHiTSDBInstanceOutcome(outcome.error());
+		return UpdateInstanceIpWhiteListOutcome(outcome.error());
 }
 
-void HitsdbClient::restartHiTSDBInstanceAsync(const RestartHiTSDBInstanceRequest& request, const RestartHiTSDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HitsdbClient::updateInstanceIpWhiteListAsync(const UpdateInstanceIpWhiteListRequest& request, const UpdateInstanceIpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, restartHiTSDBInstance(request), context);
+		handler(this, request, updateInstanceIpWhiteList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HitsdbClient::RestartHiTSDBInstanceOutcomeCallable HitsdbClient::restartHiTSDBInstanceCallable(const RestartHiTSDBInstanceRequest &request) const
+HitsdbClient::UpdateInstanceIpWhiteListOutcomeCallable HitsdbClient::updateInstanceIpWhiteListCallable(const UpdateInstanceIpWhiteListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RestartHiTSDBInstanceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UpdateInstanceIpWhiteListOutcome()>>(
 			[this, request]()
 			{
-			return this->restartHiTSDBInstance(request);
+			return this->updateInstanceIpWhiteList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-HitsdbClient::SwitchHiTSDBInstancePublicNetOutcome HitsdbClient::switchHiTSDBInstancePublicNet(const SwitchHiTSDBInstancePublicNetRequest &request) const
+HitsdbClient::UpgradeLindormInstanceOutcome HitsdbClient::upgradeLindormInstance(const UpgradeLindormInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SwitchHiTSDBInstancePublicNetOutcome(endpointOutcome.error());
+		return UpgradeLindormInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SwitchHiTSDBInstancePublicNetOutcome(SwitchHiTSDBInstancePublicNetResult(outcome.result()));
+		return UpgradeLindormInstanceOutcome(UpgradeLindormInstanceResult(outcome.result()));
 	else
-		return SwitchHiTSDBInstancePublicNetOutcome(outcome.error());
+		return UpgradeLindormInstanceOutcome(outcome.error());
 }
 
-void HitsdbClient::switchHiTSDBInstancePublicNetAsync(const SwitchHiTSDBInstancePublicNetRequest& request, const SwitchHiTSDBInstancePublicNetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void HitsdbClient::upgradeLindormInstanceAsync(const UpgradeLindormInstanceRequest& request, const UpgradeLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, switchHiTSDBInstancePublicNet(request), context);
+		handler(this, request, upgradeLindormInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-HitsdbClient::SwitchHiTSDBInstancePublicNetOutcomeCallable HitsdbClient::switchHiTSDBInstancePublicNetCallable(const SwitchHiTSDBInstancePublicNetRequest &request) const
+HitsdbClient::UpgradeLindormInstanceOutcomeCallable HitsdbClient::upgradeLindormInstanceCallable(const UpgradeLindormInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SwitchHiTSDBInstancePublicNetOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UpgradeLindormInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->switchHiTSDBInstancePublicNet(request);
+			return this->upgradeLindormInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

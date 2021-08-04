@@ -14,93 +14,93 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/hitsdb/model/DescribeRegionsRequest.h>
+#include <alibabacloud/hitsdb/model/ReleaseLindormInstanceRequest.h>
 
-using AlibabaCloud::Hitsdb::Model::DescribeRegionsRequest;
+using AlibabaCloud::Hitsdb::Model::ReleaseLindormInstanceRequest;
 
-DescribeRegionsRequest::DescribeRegionsRequest() :
-	RpcServiceRequest("hitsdb", "2020-06-15", "DescribeRegions")
+ReleaseLindormInstanceRequest::ReleaseLindormInstanceRequest() :
+	RpcServiceRequest("hitsdb", "2020-06-15", "ReleaseLindormInstance")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeRegionsRequest::~DescribeRegionsRequest()
+ReleaseLindormInstanceRequest::~ReleaseLindormInstanceRequest()
 {}
 
-long DescribeRegionsRequest::getResourceOwnerId()const
+long ReleaseLindormInstanceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
+void ReleaseLindormInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeRegionsRequest::getAccessKeyId()const
+std::string ReleaseLindormInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
 }
 
-void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
+void ReleaseLindormInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeRegionsRequest::getSecurityToken()const
+std::string ReleaseLindormInstanceRequest::getSecurityToken()const
 {
 	return securityToken_;
 }
 
-void DescribeRegionsRequest::setSecurityToken(const std::string& securityToken)
+void ReleaseLindormInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
 }
 
-std::string DescribeRegionsRequest::getResourceOwnerAccount()const
+std::string ReleaseLindormInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
 }
 
-void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+void ReleaseLindormInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeRegionsRequest::getOwnerAccount()const
+std::string ReleaseLindormInstanceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
 }
 
-void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
+void ReleaseLindormInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeRegionsRequest::getOwnerId()const
+long ReleaseLindormInstanceRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRegionsRequest::setOwnerId(long ownerId)
+void ReleaseLindormInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeRegionsRequest::getAcceptLanguage()const
+std::string ReleaseLindormInstanceRequest::getInstanceId()const
 {
-	return acceptLanguage_;
+	return instanceId_;
 }
 
-void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
+void ReleaseLindormInstanceRequest::setInstanceId(const std::string& instanceId)
 {
-	acceptLanguage_ = acceptLanguage;
-	setParameter("AcceptLanguage", acceptLanguage);
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
