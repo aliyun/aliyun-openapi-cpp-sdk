@@ -65,8 +65,6 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DeleteSubscriptionInstanceResult.h
 	include/alibabacloud/dts/model/DeleteSynchronizationJobRequest.h
 	include/alibabacloud/dts/model/DeleteSynchronizationJobResult.h
-	include/alibabacloud/dts/model/DescribeCenVpcRequest.h
-	include/alibabacloud/dts/model/DescribeCenVpcResult.h
 	include/alibabacloud/dts/model/DescribeConnectionStatusRequest.h
 	include/alibabacloud/dts/model/DescribeConnectionStatusResult.h
 	include/alibabacloud/dts/model/DescribeConsumerChannelRequest.h
@@ -75,8 +73,6 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeConsumerGroupResult.h
 	include/alibabacloud/dts/model/DescribeDTSIPRequest.h
 	include/alibabacloud/dts/model/DescribeDTSIPResult.h
-	include/alibabacloud/dts/model/DescribeDgDatabasesRequest.h
-	include/alibabacloud/dts/model/DescribeDgDatabasesResult.h
 	include/alibabacloud/dts/model/DescribeDtsJobDetailRequest.h
 	include/alibabacloud/dts/model/DescribeDtsJobDetailResult.h
 	include/alibabacloud/dts/model/DescribeDtsJobsRequest.h
@@ -85,8 +81,6 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeEndpointSwitchStatusResult.h
 	include/alibabacloud/dts/model/DescribeInitializationStatusRequest.h
 	include/alibabacloud/dts/model/DescribeInitializationStatusResult.h
-	include/alibabacloud/dts/model/DescribeJobDiffStatusRequest.h
-	include/alibabacloud/dts/model/DescribeJobDiffStatusResult.h
 	include/alibabacloud/dts/model/DescribeJobMonitorRuleRequest.h
 	include/alibabacloud/dts/model/DescribeJobMonitorRuleResult.h
 	include/alibabacloud/dts/model/DescribeMigrationJobAlertRequest.h
@@ -139,8 +133,6 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/ModifySynchronizationObjectResult.h
 	include/alibabacloud/dts/model/RenewInstanceRequest.h
 	include/alibabacloud/dts/model/RenewInstanceResult.h
-	include/alibabacloud/dts/model/ReplaceInstanceRequest.h
-	include/alibabacloud/dts/model/ReplaceInstanceResult.h
 	include/alibabacloud/dts/model/ResetDtsJobRequest.h
 	include/alibabacloud/dts/model/ResetDtsJobResult.h
 	include/alibabacloud/dts/model/ResetSynchronizationJobRequest.h
@@ -228,8 +220,6 @@ set(dts_src
 	src/model/DeleteSubscriptionInstanceResult.cc
 	src/model/DeleteSynchronizationJobRequest.cc
 	src/model/DeleteSynchronizationJobResult.cc
-	src/model/DescribeCenVpcRequest.cc
-	src/model/DescribeCenVpcResult.cc
 	src/model/DescribeConnectionStatusRequest.cc
 	src/model/DescribeConnectionStatusResult.cc
 	src/model/DescribeConsumerChannelRequest.cc
@@ -238,8 +228,6 @@ set(dts_src
 	src/model/DescribeConsumerGroupResult.cc
 	src/model/DescribeDTSIPRequest.cc
 	src/model/DescribeDTSIPResult.cc
-	src/model/DescribeDgDatabasesRequest.cc
-	src/model/DescribeDgDatabasesResult.cc
 	src/model/DescribeDtsJobDetailRequest.cc
 	src/model/DescribeDtsJobDetailResult.cc
 	src/model/DescribeDtsJobsRequest.cc
@@ -248,8 +236,6 @@ set(dts_src
 	src/model/DescribeEndpointSwitchStatusResult.cc
 	src/model/DescribeInitializationStatusRequest.cc
 	src/model/DescribeInitializationStatusResult.cc
-	src/model/DescribeJobDiffStatusRequest.cc
-	src/model/DescribeJobDiffStatusResult.cc
 	src/model/DescribeJobMonitorRuleRequest.cc
 	src/model/DescribeJobMonitorRuleResult.cc
 	src/model/DescribeMigrationJobAlertRequest.cc
@@ -302,8 +288,6 @@ set(dts_src
 	src/model/ModifySynchronizationObjectResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
-	src/model/ReplaceInstanceRequest.cc
-	src/model/ReplaceInstanceResult.cc
 	src/model/ResetDtsJobRequest.cc
 	src/model/ResetDtsJobResult.cc
 	src/model/ResetSynchronizationJobRequest.cc

@@ -93,3 +93,14 @@ void DescribePreCheckStatusRequest::setDtsJobId(const std::string& dtsJobId)
 	setParameter("DtsJobId", dtsJobId);
 }
 
+std::string DescribePreCheckStatusRequest::getStructPhase()const
+{
+	return structPhase_;
+}
+
+void DescribePreCheckStatusRequest::setStructPhase(const std::string& structPhase)
+{
+	structPhase_ = structPhase;
+	setParameter("StructPhase", structPhase);
+}
+

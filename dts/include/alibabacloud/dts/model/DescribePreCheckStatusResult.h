@@ -113,28 +113,34 @@ namespace AlibabaCloud
 				DescribePreCheckStatusResult();
 				explicit DescribePreCheckStatusResult(const std::string &payload);
 				~DescribePreCheckStatusResult();
-				std::string getState()const;
-				int getTotal()const;
-				int getHttpStatusCode()const;
+				long getTotalRecordCount()const;
+				long getPageRecordCount()const;
 				std::string getJobName()const;
 				int getErrorItem()const;
 				std::vector<SubDistributedJobStatusItem> getSubDistributedJobStatus()const;
 				std::string getCode()const;
 				bool getSuccess()const;
+				long getPageNumber()const;
+				std::string getState()const;
+				int getTotal()const;
+				int getHttpStatusCode()const;
 				std::string getJobId()const;
 				std::vector<ProgressInfo> getJobProgress()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string state_;
-				int total_;
-				int httpStatusCode_;
+				long totalRecordCount_;
+				long pageRecordCount_;
 				std::string jobName_;
 				int errorItem_;
 				std::vector<SubDistributedJobStatusItem> subDistributedJobStatus_;
 				std::string code_;
 				bool success_;
+				long pageNumber_;
+				std::string state_;
+				int total_;
+				int httpStatusCode_;
 				std::string jobId_;
 				std::vector<ProgressInfo> jobProgress_;
 

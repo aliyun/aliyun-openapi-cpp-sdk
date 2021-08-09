@@ -843,42 +843,6 @@ DtsClient::DeleteSynchronizationJobOutcomeCallable DtsClient::deleteSynchronizat
 	return task->get_future();
 }
 
-DtsClient::DescribeCenVpcOutcome DtsClient::describeCenVpc(const DescribeCenVpcRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCenVpcOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCenVpcOutcome(DescribeCenVpcResult(outcome.result()));
-	else
-		return DescribeCenVpcOutcome(outcome.error());
-}
-
-void DtsClient::describeCenVpcAsync(const DescribeCenVpcRequest& request, const DescribeCenVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCenVpc(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DtsClient::DescribeCenVpcOutcomeCallable DtsClient::describeCenVpcCallable(const DescribeCenVpcRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCenVpcOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCenVpc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DtsClient::DescribeConnectionStatusOutcome DtsClient::describeConnectionStatus(const DescribeConnectionStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1023,42 +987,6 @@ DtsClient::DescribeDTSIPOutcomeCallable DtsClient::describeDTSIPCallable(const D
 	return task->get_future();
 }
 
-DtsClient::DescribeDgDatabasesOutcome DtsClient::describeDgDatabases(const DescribeDgDatabasesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDgDatabasesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDgDatabasesOutcome(DescribeDgDatabasesResult(outcome.result()));
-	else
-		return DescribeDgDatabasesOutcome(outcome.error());
-}
-
-void DtsClient::describeDgDatabasesAsync(const DescribeDgDatabasesRequest& request, const DescribeDgDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDgDatabases(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DtsClient::DescribeDgDatabasesOutcomeCallable DtsClient::describeDgDatabasesCallable(const DescribeDgDatabasesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDgDatabasesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDgDatabases(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DtsClient::DescribeDtsJobDetailOutcome DtsClient::describeDtsJobDetail(const DescribeDtsJobDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,42 +1125,6 @@ DtsClient::DescribeInitializationStatusOutcomeCallable DtsClient::describeInitia
 			[this, request]()
 			{
 			return this->describeInitializationStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DtsClient::DescribeJobDiffStatusOutcome DtsClient::describeJobDiffStatus(const DescribeJobDiffStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeJobDiffStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeJobDiffStatusOutcome(DescribeJobDiffStatusResult(outcome.result()));
-	else
-		return DescribeJobDiffStatusOutcome(outcome.error());
-}
-
-void DtsClient::describeJobDiffStatusAsync(const DescribeJobDiffStatusRequest& request, const DescribeJobDiffStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeJobDiffStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DtsClient::DescribeJobDiffStatusOutcomeCallable DtsClient::describeJobDiffStatusCallable(const DescribeJobDiffStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeJobDiffStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeJobDiffStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2169,42 +2061,6 @@ DtsClient::RenewInstanceOutcomeCallable DtsClient::renewInstanceCallable(const R
 			[this, request]()
 			{
 			return this->renewInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DtsClient::ReplaceInstanceOutcome DtsClient::replaceInstance(const ReplaceInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReplaceInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReplaceInstanceOutcome(ReplaceInstanceResult(outcome.result()));
-	else
-		return ReplaceInstanceOutcome(outcome.error());
-}
-
-void DtsClient::replaceInstanceAsync(const ReplaceInstanceRequest& request, const ReplaceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, replaceInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DtsClient::ReplaceInstanceOutcomeCallable DtsClient::replaceInstanceCallable(const ReplaceInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReplaceInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->replaceInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

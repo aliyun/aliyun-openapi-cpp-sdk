@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setJobCode(const std::string& jobCode);
 				std::string getDtsJobId()const;
 				void setDtsJobId(const std::string& dtsJobId);
+				std::string getStructPhase()const;
+				void setStructPhase(const std::string& structPhase);
 
             private:
 				std::string structType_;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				std::string pageSize_;
 				std::string jobCode_;
 				std::string dtsJobId_;
+				std::string structPhase_;
 
 			};
 		}

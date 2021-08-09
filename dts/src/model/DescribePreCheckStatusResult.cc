@@ -201,22 +201,23 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 		total_ = std::stoi(value["Total"].asString());
 	if(!value["JobId"].isNull())
 		jobId_ = value["JobId"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
+	if(!value["PageRecordCount"].isNull())
+		pageRecordCount_ = std::stol(value["PageRecordCount"].asString());
+	if(!value["TotalRecordCount"].isNull())
+		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
 
 }
 
-std::string DescribePreCheckStatusResult::getState()const
+long DescribePreCheckStatusResult::getTotalRecordCount()const
 {
-	return state_;
+	return totalRecordCount_;
 }
 
-int DescribePreCheckStatusResult::getTotal()const
+long DescribePreCheckStatusResult::getPageRecordCount()const
 {
-	return total_;
-}
-
-int DescribePreCheckStatusResult::getHttpStatusCode()const
-{
-	return httpStatusCode_;
+	return pageRecordCount_;
 }
 
 std::string DescribePreCheckStatusResult::getJobName()const
@@ -242,6 +243,26 @@ std::string DescribePreCheckStatusResult::getCode()const
 bool DescribePreCheckStatusResult::getSuccess()const
 {
 	return success_;
+}
+
+long DescribePreCheckStatusResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+std::string DescribePreCheckStatusResult::getState()const
+{
+	return state_;
+}
+
+int DescribePreCheckStatusResult::getTotal()const
+{
+	return total_;
+}
+
+int DescribePreCheckStatusResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
 }
 
 std::string DescribePreCheckStatusResult::getJobId()const
