@@ -40,15 +40,17 @@ void TaggingAdImageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allTagsNode = dataNode["Tags"]["Tag"];
-	for (auto dataNodeTagsTag : allTagsNode)
+	if(!dataNode["TagInfo"].isNull())
+		data_.tagInfo = dataNode["TagInfo"].asString();
+	auto allTagsNode = dataNode["Tags"]["tagsItem"];
+	for (auto dataNodeTagstagsItem : allTagsNode)
 	{
-		Data::Tag tagObject;
-		if(!dataNodeTagsTag["Value"].isNull())
-			tagObject.value = dataNodeTagsTag["Value"].asString();
-		if(!dataNodeTagsTag["Confidence"].isNull())
-			tagObject.confidence = std::stof(dataNodeTagsTag["Confidence"].asString());
-		data_.tags.push_back(tagObject);
+		Data::TagsItem tagsItemObject;
+		if(!dataNodeTagstagsItem["Value"].isNull())
+			tagsItemObject.value = dataNodeTagstagsItem["Value"].asString();
+		if(!dataNodeTagstagsItem["Confidence"].isNull())
+			tagsItemObject.confidence = std::stof(dataNodeTagstagsItem["Confidence"].asString());
+		data_.tags.push_back(tagsItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();

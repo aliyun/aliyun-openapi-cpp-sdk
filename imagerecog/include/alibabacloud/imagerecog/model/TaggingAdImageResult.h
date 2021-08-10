@@ -34,12 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct Tag
+					struct TagsItem
 					{
 						float confidence;
 						std::string value;
 					};
-					std::vector<Tag> tags;
+					std::string tagInfo;
+					std::vector<TagsItem> tags;
 				};
 
 
