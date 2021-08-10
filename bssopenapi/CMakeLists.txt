@@ -61,6 +61,14 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/DescribeResourceUsageDetailResult.h
 	include/alibabacloud/bssopenapi/model/DescribeResourceUsageTotalRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeResourceUsageTotalResult.h
+	include/alibabacloud/bssopenapi/model/DescribeSavingsPlansCoverageDetailRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeSavingsPlansCoverageDetailResult.h
+	include/alibabacloud/bssopenapi/model/DescribeSavingsPlansCoverageTotalRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeSavingsPlansCoverageTotalResult.h
+	include/alibabacloud/bssopenapi/model/DescribeSavingsPlansUsageDetailRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeSavingsPlansUsageDetailResult.h
+	include/alibabacloud/bssopenapi/model/DescribeSavingsPlansUsageTotalRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeSavingsPlansUsageTotalResult.h
 	include/alibabacloud/bssopenapi/model/DescribeSplitItemBillRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeSplitItemBillResult.h
 	include/alibabacloud/bssopenapi/model/EnableBillGenerationRequest.h
@@ -228,6 +236,14 @@ set(bssopenapi_src
 	src/model/DescribeResourceUsageDetailResult.cc
 	src/model/DescribeResourceUsageTotalRequest.cc
 	src/model/DescribeResourceUsageTotalResult.cc
+	src/model/DescribeSavingsPlansCoverageDetailRequest.cc
+	src/model/DescribeSavingsPlansCoverageDetailResult.cc
+	src/model/DescribeSavingsPlansCoverageTotalRequest.cc
+	src/model/DescribeSavingsPlansCoverageTotalResult.cc
+	src/model/DescribeSavingsPlansUsageDetailRequest.cc
+	src/model/DescribeSavingsPlansUsageDetailResult.cc
+	src/model/DescribeSavingsPlansUsageTotalRequest.cc
+	src/model/DescribeSavingsPlansUsageTotalResult.cc
 	src/model/DescribeSplitItemBillRequest.cc
 	src/model/DescribeSplitItemBillResult.cc
 	src/model/EnableBillGenerationRequest.cc

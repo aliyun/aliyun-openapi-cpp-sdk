@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setLastToken(const std::string& lastToken);
 				std::string getInstanceSpec()const;
 				void setInstanceSpec(const std::string& instanceSpec);
+				std::string getProdCode()const;
+				void setProdCode(const std::string& prodCode);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				bool getIncludeShare()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string deductedInstanceId_;
 				std::string lastToken_;
 				std::string instanceSpec_;
+				std::string prodCode_;
 				std::string endTime_;
 				bool includeShare_;
 				std::string commodityCode_;

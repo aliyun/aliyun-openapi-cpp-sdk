@@ -1,3 +1,9 @@
+2021-08-10 Version: 1.36.847
+- Supported DescribeSavingsPlansUsageTotal.
+- Supported DescribeSavingsPlansUsageDetail.
+- Supported DescribeSavingsPlansCoverageTotal.
+- Supported DescribeSavingsPlansCoverageDetail.
+
 2021-08-10 Version: 1.36.846
 - Export instance relative API.
 

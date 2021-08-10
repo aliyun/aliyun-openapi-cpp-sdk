@@ -771,6 +771,150 @@ BssOpenApiClient::DescribeResourceUsageTotalOutcomeCallable BssOpenApiClient::de
 	return task->get_future();
 }
 
+BssOpenApiClient::DescribeSavingsPlansCoverageDetailOutcome BssOpenApiClient::describeSavingsPlansCoverageDetail(const DescribeSavingsPlansCoverageDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSavingsPlansCoverageDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSavingsPlansCoverageDetailOutcome(DescribeSavingsPlansCoverageDetailResult(outcome.result()));
+	else
+		return DescribeSavingsPlansCoverageDetailOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeSavingsPlansCoverageDetailAsync(const DescribeSavingsPlansCoverageDetailRequest& request, const DescribeSavingsPlansCoverageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSavingsPlansCoverageDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeSavingsPlansCoverageDetailOutcomeCallable BssOpenApiClient::describeSavingsPlansCoverageDetailCallable(const DescribeSavingsPlansCoverageDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSavingsPlansCoverageDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSavingsPlansCoverageDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::DescribeSavingsPlansCoverageTotalOutcome BssOpenApiClient::describeSavingsPlansCoverageTotal(const DescribeSavingsPlansCoverageTotalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSavingsPlansCoverageTotalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSavingsPlansCoverageTotalOutcome(DescribeSavingsPlansCoverageTotalResult(outcome.result()));
+	else
+		return DescribeSavingsPlansCoverageTotalOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeSavingsPlansCoverageTotalAsync(const DescribeSavingsPlansCoverageTotalRequest& request, const DescribeSavingsPlansCoverageTotalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSavingsPlansCoverageTotal(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeSavingsPlansCoverageTotalOutcomeCallable BssOpenApiClient::describeSavingsPlansCoverageTotalCallable(const DescribeSavingsPlansCoverageTotalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSavingsPlansCoverageTotalOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSavingsPlansCoverageTotal(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::DescribeSavingsPlansUsageDetailOutcome BssOpenApiClient::describeSavingsPlansUsageDetail(const DescribeSavingsPlansUsageDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSavingsPlansUsageDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSavingsPlansUsageDetailOutcome(DescribeSavingsPlansUsageDetailResult(outcome.result()));
+	else
+		return DescribeSavingsPlansUsageDetailOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeSavingsPlansUsageDetailAsync(const DescribeSavingsPlansUsageDetailRequest& request, const DescribeSavingsPlansUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSavingsPlansUsageDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeSavingsPlansUsageDetailOutcomeCallable BssOpenApiClient::describeSavingsPlansUsageDetailCallable(const DescribeSavingsPlansUsageDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSavingsPlansUsageDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSavingsPlansUsageDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+BssOpenApiClient::DescribeSavingsPlansUsageTotalOutcome BssOpenApiClient::describeSavingsPlansUsageTotal(const DescribeSavingsPlansUsageTotalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSavingsPlansUsageTotalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSavingsPlansUsageTotalOutcome(DescribeSavingsPlansUsageTotalResult(outcome.result()));
+	else
+		return DescribeSavingsPlansUsageTotalOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeSavingsPlansUsageTotalAsync(const DescribeSavingsPlansUsageTotalRequest& request, const DescribeSavingsPlansUsageTotalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSavingsPlansUsageTotal(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeSavingsPlansUsageTotalOutcomeCallable BssOpenApiClient::describeSavingsPlansUsageTotalCallable(const DescribeSavingsPlansUsageTotalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSavingsPlansUsageTotalOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSavingsPlansUsageTotal(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::DescribeSplitItemBillOutcome BssOpenApiClient::describeSplitItemBill(const DescribeSplitItemBillRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

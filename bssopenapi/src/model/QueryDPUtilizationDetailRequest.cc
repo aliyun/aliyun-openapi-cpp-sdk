@@ -60,6 +60,17 @@ void QueryDPUtilizationDetailRequest::setInstanceSpec(const std::string& instanc
 	setParameter("InstanceSpec", instanceSpec);
 }
 
+std::string QueryDPUtilizationDetailRequest::getProdCode()const
+{
+	return prodCode_;
+}
+
+void QueryDPUtilizationDetailRequest::setProdCode(const std::string& prodCode)
+{
+	prodCode_ = prodCode;
+	setParameter("ProdCode", prodCode);
+}
+
 std::string QueryDPUtilizationDetailRequest::getEndTime()const
 {
 	return endTime_;

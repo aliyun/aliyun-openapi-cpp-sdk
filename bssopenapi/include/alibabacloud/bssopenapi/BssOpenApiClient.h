@@ -62,6 +62,14 @@
 #include "model/DescribeResourceUsageDetailResult.h"
 #include "model/DescribeResourceUsageTotalRequest.h"
 #include "model/DescribeResourceUsageTotalResult.h"
+#include "model/DescribeSavingsPlansCoverageDetailRequest.h"
+#include "model/DescribeSavingsPlansCoverageDetailResult.h"
+#include "model/DescribeSavingsPlansCoverageTotalRequest.h"
+#include "model/DescribeSavingsPlansCoverageTotalResult.h"
+#include "model/DescribeSavingsPlansUsageDetailRequest.h"
+#include "model/DescribeSavingsPlansUsageDetailResult.h"
+#include "model/DescribeSavingsPlansUsageTotalRequest.h"
+#include "model/DescribeSavingsPlansUsageTotalResult.h"
 #include "model/DescribeSplitItemBillRequest.h"
 #include "model/DescribeSplitItemBillResult.h"
 #include "model/EnableBillGenerationRequest.h"
@@ -255,6 +263,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeResourceUsageTotalResult> DescribeResourceUsageTotalOutcome;
 			typedef std::future<DescribeResourceUsageTotalOutcome> DescribeResourceUsageTotalOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeResourceUsageTotalRequest&, const DescribeResourceUsageTotalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceUsageTotalAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSavingsPlansCoverageDetailResult> DescribeSavingsPlansCoverageDetailOutcome;
+			typedef std::future<DescribeSavingsPlansCoverageDetailOutcome> DescribeSavingsPlansCoverageDetailOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeSavingsPlansCoverageDetailRequest&, const DescribeSavingsPlansCoverageDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingsPlansCoverageDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSavingsPlansCoverageTotalResult> DescribeSavingsPlansCoverageTotalOutcome;
+			typedef std::future<DescribeSavingsPlansCoverageTotalOutcome> DescribeSavingsPlansCoverageTotalOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeSavingsPlansCoverageTotalRequest&, const DescribeSavingsPlansCoverageTotalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingsPlansCoverageTotalAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSavingsPlansUsageDetailResult> DescribeSavingsPlansUsageDetailOutcome;
+			typedef std::future<DescribeSavingsPlansUsageDetailOutcome> DescribeSavingsPlansUsageDetailOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeSavingsPlansUsageDetailRequest&, const DescribeSavingsPlansUsageDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingsPlansUsageDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSavingsPlansUsageTotalResult> DescribeSavingsPlansUsageTotalOutcome;
+			typedef std::future<DescribeSavingsPlansUsageTotalOutcome> DescribeSavingsPlansUsageTotalOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeSavingsPlansUsageTotalRequest&, const DescribeSavingsPlansUsageTotalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingsPlansUsageTotalAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSplitItemBillResult> DescribeSplitItemBillOutcome;
 			typedef std::future<DescribeSplitItemBillOutcome> DescribeSplitItemBillOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeSplitItemBillRequest&, const DescribeSplitItemBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSplitItemBillAsyncHandler;
@@ -506,6 +526,18 @@ namespace AlibabaCloud
 			DescribeResourceUsageTotalOutcome describeResourceUsageTotal(const Model::DescribeResourceUsageTotalRequest &request)const;
 			void describeResourceUsageTotalAsync(const Model::DescribeResourceUsageTotalRequest& request, const DescribeResourceUsageTotalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeResourceUsageTotalOutcomeCallable describeResourceUsageTotalCallable(const Model::DescribeResourceUsageTotalRequest& request) const;
+			DescribeSavingsPlansCoverageDetailOutcome describeSavingsPlansCoverageDetail(const Model::DescribeSavingsPlansCoverageDetailRequest &request)const;
+			void describeSavingsPlansCoverageDetailAsync(const Model::DescribeSavingsPlansCoverageDetailRequest& request, const DescribeSavingsPlansCoverageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSavingsPlansCoverageDetailOutcomeCallable describeSavingsPlansCoverageDetailCallable(const Model::DescribeSavingsPlansCoverageDetailRequest& request) const;
+			DescribeSavingsPlansCoverageTotalOutcome describeSavingsPlansCoverageTotal(const Model::DescribeSavingsPlansCoverageTotalRequest &request)const;
+			void describeSavingsPlansCoverageTotalAsync(const Model::DescribeSavingsPlansCoverageTotalRequest& request, const DescribeSavingsPlansCoverageTotalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSavingsPlansCoverageTotalOutcomeCallable describeSavingsPlansCoverageTotalCallable(const Model::DescribeSavingsPlansCoverageTotalRequest& request) const;
+			DescribeSavingsPlansUsageDetailOutcome describeSavingsPlansUsageDetail(const Model::DescribeSavingsPlansUsageDetailRequest &request)const;
+			void describeSavingsPlansUsageDetailAsync(const Model::DescribeSavingsPlansUsageDetailRequest& request, const DescribeSavingsPlansUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSavingsPlansUsageDetailOutcomeCallable describeSavingsPlansUsageDetailCallable(const Model::DescribeSavingsPlansUsageDetailRequest& request) const;
+			DescribeSavingsPlansUsageTotalOutcome describeSavingsPlansUsageTotal(const Model::DescribeSavingsPlansUsageTotalRequest &request)const;
+			void describeSavingsPlansUsageTotalAsync(const Model::DescribeSavingsPlansUsageTotalRequest& request, const DescribeSavingsPlansUsageTotalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSavingsPlansUsageTotalOutcomeCallable describeSavingsPlansUsageTotalCallable(const Model::DescribeSavingsPlansUsageTotalRequest& request) const;
 			DescribeSplitItemBillOutcome describeSplitItemBill(const Model::DescribeSplitItemBillRequest &request)const;
 			void describeSplitItemBillAsync(const Model::DescribeSplitItemBillRequest& request, const DescribeSplitItemBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSplitItemBillOutcomeCallable describeSplitItemBillCallable(const Model::DescribeSplitItemBillRequest& request) const;
