@@ -82,6 +82,17 @@ void ModifyDtsJobRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string ModifyDtsJobRequest::getReserve()const
+{
+	return reserve_;
+}
+
+void ModifyDtsJobRequest::setReserve(const std::string& reserve)
+{
+	reserve_ = reserve;
+	setBodyParameter("Reserve", reserve);
+}
+
 std::string ModifyDtsJobRequest::getDtsInstanceId()const
 {
 	return dtsInstanceId_;

@@ -99,6 +99,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeSubscriptionInstanceStatusResult.h
 	include/alibabacloud/dts/model/DescribeSubscriptionInstancesRequest.h
 	include/alibabacloud/dts/model/DescribeSubscriptionInstancesResult.h
+	include/alibabacloud/dts/model/DescribeSubscriptionMetaRequest.h
+	include/alibabacloud/dts/model/DescribeSubscriptionMetaResult.h
 	include/alibabacloud/dts/model/DescribeSynchronizationJobAlertRequest.h
 	include/alibabacloud/dts/model/DescribeSynchronizationJobAlertResult.h
 	include/alibabacloud/dts/model/DescribeSynchronizationJobReplicatorCompareRequest.h
@@ -254,6 +256,8 @@ set(dts_src
 	src/model/DescribeSubscriptionInstanceStatusResult.cc
 	src/model/DescribeSubscriptionInstancesRequest.cc
 	src/model/DescribeSubscriptionInstancesResult.cc
+	src/model/DescribeSubscriptionMetaRequest.cc
+	src/model/DescribeSubscriptionMetaResult.cc
 	src/model/DescribeSynchronizationJobAlertRequest.cc
 	src/model/DescribeSynchronizationJobAlertResult.cc
 	src/model/DescribeSynchronizationJobReplicatorCompareRequest.cc

@@ -49,6 +49,17 @@ void DescribeConsumerChannelRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string DescribeConsumerChannelRequest::getParentChannelId()const
+{
+	return parentChannelId_;
+}
+
+void DescribeConsumerChannelRequest::setParentChannelId(const std::string& parentChannelId)
+{
+	parentChannelId_ = parentChannelId;
+	setParameter("ParentChannelId", parentChannelId);
+}
+
 int DescribeConsumerChannelRequest::getPageSize()const
 {
 	return pageSize_;

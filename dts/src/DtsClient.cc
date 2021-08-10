@@ -1455,6 +1455,42 @@ DtsClient::DescribeSubscriptionInstancesOutcomeCallable DtsClient::describeSubsc
 	return task->get_future();
 }
 
+DtsClient::DescribeSubscriptionMetaOutcome DtsClient::describeSubscriptionMeta(const DescribeSubscriptionMetaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSubscriptionMetaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSubscriptionMetaOutcome(DescribeSubscriptionMetaResult(outcome.result()));
+	else
+		return DescribeSubscriptionMetaOutcome(outcome.error());
+}
+
+void DtsClient::describeSubscriptionMetaAsync(const DescribeSubscriptionMetaRequest& request, const DescribeSubscriptionMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSubscriptionMeta(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::DescribeSubscriptionMetaOutcomeCallable DtsClient::describeSubscriptionMetaCallable(const DescribeSubscriptionMetaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSubscriptionMetaOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSubscriptionMeta(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::DescribeSynchronizationJobAlertOutcome DtsClient::describeSynchronizationJobAlert(const DescribeSynchronizationJobAlertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

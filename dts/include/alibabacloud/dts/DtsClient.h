@@ -100,6 +100,8 @@
 #include "model/DescribeSubscriptionInstanceStatusResult.h"
 #include "model/DescribeSubscriptionInstancesRequest.h"
 #include "model/DescribeSubscriptionInstancesResult.h"
+#include "model/DescribeSubscriptionMetaRequest.h"
+#include "model/DescribeSubscriptionMetaResult.h"
 #include "model/DescribeSynchronizationJobAlertRequest.h"
 #include "model/DescribeSynchronizationJobAlertResult.h"
 #include "model/DescribeSynchronizationJobReplicatorCompareRequest.h"
@@ -300,6 +302,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSubscriptionInstancesResult> DescribeSubscriptionInstancesOutcome;
 			typedef std::future<DescribeSubscriptionInstancesOutcome> DescribeSubscriptionInstancesOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeSubscriptionInstancesRequest&, const DescribeSubscriptionInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscriptionInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSubscriptionMetaResult> DescribeSubscriptionMetaOutcome;
+			typedef std::future<DescribeSubscriptionMetaOutcome> DescribeSubscriptionMetaOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::DescribeSubscriptionMetaRequest&, const DescribeSubscriptionMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscriptionMetaAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSynchronizationJobAlertResult> DescribeSynchronizationJobAlertOutcome;
 			typedef std::future<DescribeSynchronizationJobAlertOutcome> DescribeSynchronizationJobAlertOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeSynchronizationJobAlertRequest&, const DescribeSynchronizationJobAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSynchronizationJobAlertAsyncHandler;
@@ -533,6 +538,9 @@ namespace AlibabaCloud
 			DescribeSubscriptionInstancesOutcome describeSubscriptionInstances(const Model::DescribeSubscriptionInstancesRequest &request)const;
 			void describeSubscriptionInstancesAsync(const Model::DescribeSubscriptionInstancesRequest& request, const DescribeSubscriptionInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSubscriptionInstancesOutcomeCallable describeSubscriptionInstancesCallable(const Model::DescribeSubscriptionInstancesRequest& request) const;
+			DescribeSubscriptionMetaOutcome describeSubscriptionMeta(const Model::DescribeSubscriptionMetaRequest &request)const;
+			void describeSubscriptionMetaAsync(const Model::DescribeSubscriptionMetaRequest& request, const DescribeSubscriptionMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSubscriptionMetaOutcomeCallable describeSubscriptionMetaCallable(const Model::DescribeSubscriptionMetaRequest& request) const;
 			DescribeSynchronizationJobAlertOutcome describeSynchronizationJobAlert(const Model::DescribeSynchronizationJobAlertRequest &request)const;
 			void describeSynchronizationJobAlertAsync(const Model::DescribeSynchronizationJobAlertRequest& request, const DescribeSynchronizationJobAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSynchronizationJobAlertOutcomeCallable describeSynchronizationJobAlertCallable(const Model::DescribeSynchronizationJobAlertRequest& request) const;

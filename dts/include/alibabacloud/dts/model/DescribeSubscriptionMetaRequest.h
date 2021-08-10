@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_DESCRIBECONSUMERCHANNELREQUEST_H_
-#define ALIBABACLOUD_DTS_MODEL_DESCRIBECONSUMERCHANNELREQUEST_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_DESCRIBESUBSCRIPTIONMETAREQUEST_H_
+#define ALIBABACLOUD_DTS_MODEL_DESCRIBESUBSCRIPTIONMETAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT DescribeConsumerChannelRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DTS_EXPORT DescribeSubscriptionMetaRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeConsumerChannelRequest();
-				~DescribeConsumerChannelRequest();
+				DescribeSubscriptionMetaRequest();
+				~DescribeSubscriptionMetaRequest();
 
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getTopics()const;
+				void setTopics(const std::string& topics);
+				std::string getSid()const;
+				void setSid(const std::string& sid);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getParentChannelId()const;
-				void setParentChannelId(const std::string& parentChannelId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getDtsJobId()const;
-				void setDtsJobId(const std::string& dtsJobId);
+				std::string getSubMigrationJobIds()const;
+				void setSubMigrationJobIds(const std::string& subMigrationJobIds);
 				std::string getDtsInstanceId()const;
 				void setDtsInstanceId(const std::string& dtsInstanceId);
 
             private:
-				int pageNumber_;
+				std::string topics_;
+				std::string sid_;
 				std::string regionId_;
-				std::string parentChannelId_;
-				int pageSize_;
-				std::string dtsJobId_;
+				std::string subMigrationJobIds_;
 				std::string dtsInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_DESCRIBECONSUMERCHANNELREQUEST_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_DESCRIBESUBSCRIPTIONMETAREQUEST_H_
