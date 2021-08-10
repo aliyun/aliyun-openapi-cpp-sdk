@@ -40,6 +40,8 @@ void InitiateAttendedTransferResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["ContextId"].isNull())
+		data_.contextId = std::stol(dataNode["ContextId"].asString());
 	auto callContextNode = dataNode["CallContext"];
 	if(!callContextNode["CallType"].isNull())
 		data_.callContext.callType = callContextNode["CallType"].asString();

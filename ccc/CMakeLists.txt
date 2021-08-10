@@ -131,6 +131,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/ListPhoneNumbersOfSkillGroupResult.h
 	include/alibabacloud/ccc/model/ListPrivilegesOfUserRequest.h
 	include/alibabacloud/ccc/model/ListPrivilegesOfUserResult.h
+	include/alibabacloud/ccc/model/ListRamUsersRequest.h
+	include/alibabacloud/ccc/model/ListRamUsersResult.h
 	include/alibabacloud/ccc/model/ListRealtimeAgentStatesRequest.h
 	include/alibabacloud/ccc/model/ListRealtimeAgentStatesResult.h
 	include/alibabacloud/ccc/model/ListRealtimeSkillGroupStatesRequest.h
@@ -330,6 +332,8 @@ set(ccc_src
 	src/model/ListPhoneNumbersOfSkillGroupResult.cc
 	src/model/ListPrivilegesOfUserRequest.cc
 	src/model/ListPrivilegesOfUserResult.cc
+	src/model/ListRamUsersRequest.cc
+	src/model/ListRamUsersResult.cc
 	src/model/ListRealtimeAgentStatesRequest.cc
 	src/model/ListRealtimeAgentStatesResult.cc
 	src/model/ListRealtimeSkillGroupStatesRequest.cc

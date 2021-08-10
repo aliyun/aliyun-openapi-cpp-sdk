@@ -2031,6 +2031,42 @@ CCCClient::ListPrivilegesOfUserOutcomeCallable CCCClient::listPrivilegesOfUserCa
 	return task->get_future();
 }
 
+CCCClient::ListRamUsersOutcome CCCClient::listRamUsers(const ListRamUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRamUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRamUsersOutcome(ListRamUsersResult(outcome.result()));
+	else
+		return ListRamUsersOutcome(outcome.error());
+}
+
+void CCCClient::listRamUsersAsync(const ListRamUsersRequest& request, const ListRamUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRamUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListRamUsersOutcomeCallable CCCClient::listRamUsersCallable(const ListRamUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRamUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->listRamUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::ListRealtimeAgentStatesOutcome CCCClient::listRealtimeAgentStates(const ListRealtimeAgentStatesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

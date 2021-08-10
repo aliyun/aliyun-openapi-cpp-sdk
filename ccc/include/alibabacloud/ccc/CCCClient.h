@@ -132,6 +132,8 @@
 #include "model/ListPhoneNumbersOfSkillGroupResult.h"
 #include "model/ListPrivilegesOfUserRequest.h"
 #include "model/ListPrivilegesOfUserResult.h"
+#include "model/ListRamUsersRequest.h"
+#include "model/ListRamUsersResult.h"
 #include "model/ListRealtimeAgentStatesRequest.h"
 #include "model/ListRealtimeAgentStatesResult.h"
 #include "model/ListRealtimeSkillGroupStatesRequest.h"
@@ -392,6 +394,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPrivilegesOfUserResult> ListPrivilegesOfUserOutcome;
 			typedef std::future<ListPrivilegesOfUserOutcome> ListPrivilegesOfUserOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListPrivilegesOfUserRequest&, const ListPrivilegesOfUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPrivilegesOfUserAsyncHandler;
+			typedef Outcome<Error, Model::ListRamUsersResult> ListRamUsersOutcome;
+			typedef std::future<ListRamUsersOutcome> ListRamUsersOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListRamUsersRequest&, const ListRamUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRamUsersAsyncHandler;
 			typedef Outcome<Error, Model::ListRealtimeAgentStatesResult> ListRealtimeAgentStatesOutcome;
 			typedef std::future<ListRealtimeAgentStatesOutcome> ListRealtimeAgentStatesOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListRealtimeAgentStatesRequest&, const ListRealtimeAgentStatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRealtimeAgentStatesAsyncHandler;
@@ -691,6 +696,9 @@ namespace AlibabaCloud
 			ListPrivilegesOfUserOutcome listPrivilegesOfUser(const Model::ListPrivilegesOfUserRequest &request)const;
 			void listPrivilegesOfUserAsync(const Model::ListPrivilegesOfUserRequest& request, const ListPrivilegesOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPrivilegesOfUserOutcomeCallable listPrivilegesOfUserCallable(const Model::ListPrivilegesOfUserRequest& request) const;
+			ListRamUsersOutcome listRamUsers(const Model::ListRamUsersRequest &request)const;
+			void listRamUsersAsync(const Model::ListRamUsersRequest& request, const ListRamUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListRamUsersOutcomeCallable listRamUsersCallable(const Model::ListRamUsersRequest& request) const;
 			ListRealtimeAgentStatesOutcome listRealtimeAgentStates(const Model::ListRealtimeAgentStatesRequest &request)const;
 			void listRealtimeAgentStatesAsync(const Model::ListRealtimeAgentStatesRequest& request, const ListRealtimeAgentStatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRealtimeAgentStatesOutcomeCallable listRealtimeAgentStatesCallable(const Model::ListRealtimeAgentStatesRequest& request) const;

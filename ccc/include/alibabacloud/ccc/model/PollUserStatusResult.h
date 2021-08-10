@@ -77,6 +77,7 @@ namespace AlibabaCloud
 						long reserved;
 					};
 					UserContext userContext;
+					long contextId;
 					CallContext callContext;
 				};
 

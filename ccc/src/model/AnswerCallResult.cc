@@ -40,6 +40,8 @@ void AnswerCallResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["ContextId"].isNull())
+		data_.contextId = std::stol(dataNode["ContextId"].asString());
 	auto callContextNode = dataNode["CallContext"];
 	if(!callContextNode["InstanceId"].isNull())
 		data_.callContext.instanceId = callContextNode["InstanceId"].asString();
