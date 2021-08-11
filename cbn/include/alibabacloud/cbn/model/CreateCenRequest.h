@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setIpv6Level(const std::string& ipv6Level);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string ipv6Level_;
 				std::string description_;
+				std::string resourceGroupId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

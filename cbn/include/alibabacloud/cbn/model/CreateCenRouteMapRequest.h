@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setSystemPolicy(bool systemPolicy);
 				std::vector<std::string> getOriginalRouteTableIds()const;
 				void setOriginalRouteTableIds(const std::vector<std::string>& originalRouteTableIds);
+				std::string getTransitRouterRouteTableId()const;
+				void setTransitRouterRouteTableId(const std::string& transitRouterRouteTableId);
 				std::vector<std::string> getSourceInstanceIds()const;
 				void setSourceInstanceIds(const std::vector<std::string>& sourceInstanceIds);
 				std::vector<std::string> getSourceRegionIds()const;
@@ -119,6 +121,7 @@ namespace AlibabaCloud
 				std::vector<std::string> destinationCidrBlocks_;
 				bool systemPolicy_;
 				std::vector<std::string> originalRouteTableIds_;
+				std::string transitRouterRouteTableId_;
 				std::vector<std::string> sourceInstanceIds_;
 				std::vector<std::string> sourceRegionIds_;
 				std::string gatewayZoneId_;

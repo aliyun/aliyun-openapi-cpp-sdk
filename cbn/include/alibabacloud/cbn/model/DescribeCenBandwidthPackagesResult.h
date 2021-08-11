@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string geographicSpanId;
+					std::string resourceGroupId;
 					std::string geographicRegionBId;
 					std::string geographicRegionAId;
 					bool isCrossBorder;

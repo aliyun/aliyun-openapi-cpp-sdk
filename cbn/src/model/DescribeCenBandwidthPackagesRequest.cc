@@ -71,6 +71,17 @@ void DescribeCenBandwidthPackagesRequest::setIsOrKey(bool isOrKey)
 	setParameter("IsOrKey", isOrKey ? "true" : "false");
 }
 
+std::string DescribeCenBandwidthPackagesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeCenBandwidthPackagesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 int DescribeCenBandwidthPackagesRequest::getPageSize()const
 {
 	return pageSize_;

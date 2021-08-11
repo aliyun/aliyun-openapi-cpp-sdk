@@ -25,6 +25,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/ActiveFlowLogResult.h
 	include/alibabacloud/cbn/model/AssociateCenBandwidthPackageRequest.h
 	include/alibabacloud/cbn/model/AssociateCenBandwidthPackageResult.h
+	include/alibabacloud/cbn/model/AssociateTransitRouterAttachmentWithRouteTableRequest.h
+	include/alibabacloud/cbn/model/AssociateTransitRouterAttachmentWithRouteTableResult.h
 	include/alibabacloud/cbn/model/AttachCenChildInstanceRequest.h
 	include/alibabacloud/cbn/model/AttachCenChildInstanceResult.h
 	include/alibabacloud/cbn/model/CreateCenRequest.h
@@ -37,6 +39,18 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/CreateCenRouteMapResult.h
 	include/alibabacloud/cbn/model/CreateFlowlogRequest.h
 	include/alibabacloud/cbn/model/CreateFlowlogResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterPeerAttachmentRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterPeerAttachmentResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterRouteEntryRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterRouteEntryResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterRouteTableRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterRouteTableResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterVbrAttachmentRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterVbrAttachmentResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterVpcAttachmentRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterVpcAttachmentResult.h
 	include/alibabacloud/cbn/model/DeactiveFlowLogRequest.h
 	include/alibabacloud/cbn/model/DeactiveFlowLogResult.h
 	include/alibabacloud/cbn/model/DeleteCenRequest.h
@@ -51,6 +65,16 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DeleteFlowlogResult.h
 	include/alibabacloud/cbn/model/DeleteRouteServiceInCenRequest.h
 	include/alibabacloud/cbn/model/DeleteRouteServiceInCenResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterPeerAttachmentRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterPeerAttachmentResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterRouteEntryRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterRouteEntryResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterRouteTableRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterRouteTableResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterVbrAttachmentRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterVbrAttachmentResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterVpcAttachmentRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterVpcAttachmentResult.h
 	include/alibabacloud/cbn/model/DescribeCenAttachedChildInstanceAttributeRequest.h
 	include/alibabacloud/cbn/model/DescribeCenAttachedChildInstanceAttributeResult.h
 	include/alibabacloud/cbn/model/DescribeCenAttachedChildInstancesRequest.h
@@ -93,10 +117,34 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DetachCenChildInstanceResult.h
 	include/alibabacloud/cbn/model/DisableCenVbrHealthCheckRequest.h
 	include/alibabacloud/cbn/model/DisableCenVbrHealthCheckResult.h
+	include/alibabacloud/cbn/model/DisableTransitRouterRouteTablePropagationRequest.h
+	include/alibabacloud/cbn/model/DisableTransitRouterRouteTablePropagationResult.h
+	include/alibabacloud/cbn/model/DissociateTransitRouterAttachmentFromRouteTableRequest.h
+	include/alibabacloud/cbn/model/DissociateTransitRouterAttachmentFromRouteTableResult.h
 	include/alibabacloud/cbn/model/EnableCenVbrHealthCheckRequest.h
 	include/alibabacloud/cbn/model/EnableCenVbrHealthCheckResult.h
+	include/alibabacloud/cbn/model/EnableTransitRouterRouteTablePropagationRequest.h
+	include/alibabacloud/cbn/model/EnableTransitRouterRouteTablePropagationResult.h
 	include/alibabacloud/cbn/model/ListTagResourcesRequest.h
 	include/alibabacloud/cbn/model/ListTagResourcesResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterAvailableResourceRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterAvailableResourceResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterPeerAttachmentsRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterPeerAttachmentsResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterRouteEntriesRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterRouteEntriesResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterRouteTableAssociationsRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterRouteTableAssociationsResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterRouteTablePropagationsRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterRouteTablePropagationsResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterRouteTablesRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterRouteTablesResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterVbrAttachmentsRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterVbrAttachmentsResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterVpcAttachmentsRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterVpcAttachmentsResult.h
+	include/alibabacloud/cbn/model/ListTransitRoutersRequest.h
+	include/alibabacloud/cbn/model/ListTransitRoutersResult.h
 	include/alibabacloud/cbn/model/ModifyCenAttributeRequest.h
 	include/alibabacloud/cbn/model/ModifyCenAttributeResult.h
 	include/alibabacloud/cbn/model/ModifyCenBandwidthPackageAttributeRequest.h
@@ -125,6 +173,18 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/UnroutePrivateZoneInCenToVpcResult.h
 	include/alibabacloud/cbn/model/UntagResourcesRequest.h
 	include/alibabacloud/cbn/model/UntagResourcesResult.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterRequest.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterResult.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterPeerAttachmentAttributeRequest.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterPeerAttachmentAttributeResult.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterRouteEntryRequest.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterRouteEntryResult.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterRouteTableRequest.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterRouteTableResult.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterVbrAttachmentAttributeRequest.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterVbrAttachmentAttributeResult.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterVpcAttachmentAttributeRequest.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterVpcAttachmentAttributeResult.h
 	include/alibabacloud/cbn/model/WithdrawPublishedRouteEntriesRequest.h
 	include/alibabacloud/cbn/model/WithdrawPublishedRouteEntriesResult.h )
 
@@ -134,6 +194,8 @@ set(cbn_src
 	src/model/ActiveFlowLogResult.cc
 	src/model/AssociateCenBandwidthPackageRequest.cc
 	src/model/AssociateCenBandwidthPackageResult.cc
+	src/model/AssociateTransitRouterAttachmentWithRouteTableRequest.cc
+	src/model/AssociateTransitRouterAttachmentWithRouteTableResult.cc
 	src/model/AttachCenChildInstanceRequest.cc
 	src/model/AttachCenChildInstanceResult.cc
 	src/model/CreateCenRequest.cc
@@ -146,6 +208,18 @@ set(cbn_src
 	src/model/CreateCenRouteMapResult.cc
 	src/model/CreateFlowlogRequest.cc
 	src/model/CreateFlowlogResult.cc
+	src/model/CreateTransitRouterRequest.cc
+	src/model/CreateTransitRouterResult.cc
+	src/model/CreateTransitRouterPeerAttachmentRequest.cc
+	src/model/CreateTransitRouterPeerAttachmentResult.cc
+	src/model/CreateTransitRouterRouteEntryRequest.cc
+	src/model/CreateTransitRouterRouteEntryResult.cc
+	src/model/CreateTransitRouterRouteTableRequest.cc
+	src/model/CreateTransitRouterRouteTableResult.cc
+	src/model/CreateTransitRouterVbrAttachmentRequest.cc
+	src/model/CreateTransitRouterVbrAttachmentResult.cc
+	src/model/CreateTransitRouterVpcAttachmentRequest.cc
+	src/model/CreateTransitRouterVpcAttachmentResult.cc
 	src/model/DeactiveFlowLogRequest.cc
 	src/model/DeactiveFlowLogResult.cc
 	src/model/DeleteCenRequest.cc
@@ -160,6 +234,16 @@ set(cbn_src
 	src/model/DeleteFlowlogResult.cc
 	src/model/DeleteRouteServiceInCenRequest.cc
 	src/model/DeleteRouteServiceInCenResult.cc
+	src/model/DeleteTransitRouterPeerAttachmentRequest.cc
+	src/model/DeleteTransitRouterPeerAttachmentResult.cc
+	src/model/DeleteTransitRouterRouteEntryRequest.cc
+	src/model/DeleteTransitRouterRouteEntryResult.cc
+	src/model/DeleteTransitRouterRouteTableRequest.cc
+	src/model/DeleteTransitRouterRouteTableResult.cc
+	src/model/DeleteTransitRouterVbrAttachmentRequest.cc
+	src/model/DeleteTransitRouterVbrAttachmentResult.cc
+	src/model/DeleteTransitRouterVpcAttachmentRequest.cc
+	src/model/DeleteTransitRouterVpcAttachmentResult.cc
 	src/model/DescribeCenAttachedChildInstanceAttributeRequest.cc
 	src/model/DescribeCenAttachedChildInstanceAttributeResult.cc
 	src/model/DescribeCenAttachedChildInstancesRequest.cc
@@ -202,10 +286,34 @@ set(cbn_src
 	src/model/DetachCenChildInstanceResult.cc
 	src/model/DisableCenVbrHealthCheckRequest.cc
 	src/model/DisableCenVbrHealthCheckResult.cc
+	src/model/DisableTransitRouterRouteTablePropagationRequest.cc
+	src/model/DisableTransitRouterRouteTablePropagationResult.cc
+	src/model/DissociateTransitRouterAttachmentFromRouteTableRequest.cc
+	src/model/DissociateTransitRouterAttachmentFromRouteTableResult.cc
 	src/model/EnableCenVbrHealthCheckRequest.cc
 	src/model/EnableCenVbrHealthCheckResult.cc
+	src/model/EnableTransitRouterRouteTablePropagationRequest.cc
+	src/model/EnableTransitRouterRouteTablePropagationResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/ListTransitRouterAvailableResourceRequest.cc
+	src/model/ListTransitRouterAvailableResourceResult.cc
+	src/model/ListTransitRouterPeerAttachmentsRequest.cc
+	src/model/ListTransitRouterPeerAttachmentsResult.cc
+	src/model/ListTransitRouterRouteEntriesRequest.cc
+	src/model/ListTransitRouterRouteEntriesResult.cc
+	src/model/ListTransitRouterRouteTableAssociationsRequest.cc
+	src/model/ListTransitRouterRouteTableAssociationsResult.cc
+	src/model/ListTransitRouterRouteTablePropagationsRequest.cc
+	src/model/ListTransitRouterRouteTablePropagationsResult.cc
+	src/model/ListTransitRouterRouteTablesRequest.cc
+	src/model/ListTransitRouterRouteTablesResult.cc
+	src/model/ListTransitRouterVbrAttachmentsRequest.cc
+	src/model/ListTransitRouterVbrAttachmentsResult.cc
+	src/model/ListTransitRouterVpcAttachmentsRequest.cc
+	src/model/ListTransitRouterVpcAttachmentsResult.cc
+	src/model/ListTransitRoutersRequest.cc
+	src/model/ListTransitRoutersResult.cc
 	src/model/ModifyCenAttributeRequest.cc
 	src/model/ModifyCenAttributeResult.cc
 	src/model/ModifyCenBandwidthPackageAttributeRequest.cc
@@ -234,6 +342,18 @@ set(cbn_src
 	src/model/UnroutePrivateZoneInCenToVpcResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
+	src/model/UpdateTransitRouterRequest.cc
+	src/model/UpdateTransitRouterResult.cc
+	src/model/UpdateTransitRouterPeerAttachmentAttributeRequest.cc
+	src/model/UpdateTransitRouterPeerAttachmentAttributeResult.cc
+	src/model/UpdateTransitRouterRouteEntryRequest.cc
+	src/model/UpdateTransitRouterRouteEntryResult.cc
+	src/model/UpdateTransitRouterRouteTableRequest.cc
+	src/model/UpdateTransitRouterRouteTableResult.cc
+	src/model/UpdateTransitRouterVbrAttachmentAttributeRequest.cc
+	src/model/UpdateTransitRouterVbrAttachmentAttributeResult.cc
+	src/model/UpdateTransitRouterVpcAttachmentAttributeRequest.cc
+	src/model/UpdateTransitRouterVpcAttachmentAttributeResult.cc
 	src/model/WithdrawPublishedRouteEntriesRequest.cc
 	src/model/WithdrawPublishedRouteEntriesResult.cc )
 

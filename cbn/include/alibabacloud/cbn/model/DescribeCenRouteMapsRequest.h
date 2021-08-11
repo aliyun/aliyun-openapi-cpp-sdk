@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setCenId(const std::string& cenId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getTransitRouterRouteTableId()const;
+				void setTransitRouterRouteTableId(const std::string& transitRouterRouteTableId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getTransmitDirection()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string cenId_;
 				int pageNumber_;
+				std::string transitRouterRouteTableId_;
 				int pageSize_;
 				std::string transmitDirection_;
 				std::string resourceOwnerAccount_;

@@ -71,6 +71,17 @@ void CreateCenRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
+std::string CreateCenRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateCenRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateCenRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

@@ -57,6 +57,8 @@ void DescribeCensResult::parse(const std::string &payload)
 			censObject.creationTime = valueCensCen["CreationTime"].asString();
 		if(!valueCensCen["Ipv6Level"].isNull())
 			censObject.ipv6Level = valueCensCen["Ipv6Level"].asString();
+		if(!valueCensCen["ResourceGroupId"].isNull())
+			censObject.resourceGroupId = valueCensCen["ResourceGroupId"].asString();
 		auto allTagsNode = valueCensCen["Tags"]["Tag"];
 		for (auto valueCensCenTagsTag : allTagsNode)
 		{

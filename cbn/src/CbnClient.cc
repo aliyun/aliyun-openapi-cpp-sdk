@@ -123,6 +123,42 @@ CbnClient::AssociateCenBandwidthPackageOutcomeCallable CbnClient::associateCenBa
 	return task->get_future();
 }
 
+CbnClient::AssociateTransitRouterAttachmentWithRouteTableOutcome CbnClient::associateTransitRouterAttachmentWithRouteTable(const AssociateTransitRouterAttachmentWithRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssociateTransitRouterAttachmentWithRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssociateTransitRouterAttachmentWithRouteTableOutcome(AssociateTransitRouterAttachmentWithRouteTableResult(outcome.result()));
+	else
+		return AssociateTransitRouterAttachmentWithRouteTableOutcome(outcome.error());
+}
+
+void CbnClient::associateTransitRouterAttachmentWithRouteTableAsync(const AssociateTransitRouterAttachmentWithRouteTableRequest& request, const AssociateTransitRouterAttachmentWithRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, associateTransitRouterAttachmentWithRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::AssociateTransitRouterAttachmentWithRouteTableOutcomeCallable CbnClient::associateTransitRouterAttachmentWithRouteTableCallable(const AssociateTransitRouterAttachmentWithRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssociateTransitRouterAttachmentWithRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->associateTransitRouterAttachmentWithRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::AttachCenChildInstanceOutcome CbnClient::attachCenChildInstance(const AttachCenChildInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,222 @@ CbnClient::CreateFlowlogOutcomeCallable CbnClient::createFlowlogCallable(const C
 			[this, request]()
 			{
 			return this->createFlowlog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateTransitRouterOutcome CbnClient::createTransitRouter(const CreateTransitRouterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterOutcome(CreateTransitRouterResult(outcome.result()));
+	else
+		return CreateTransitRouterOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterAsync(const CreateTransitRouterRequest& request, const CreateTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterOutcomeCallable CbnClient::createTransitRouterCallable(const CreateTransitRouterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateTransitRouterPeerAttachmentOutcome CbnClient::createTransitRouterPeerAttachment(const CreateTransitRouterPeerAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterPeerAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterPeerAttachmentOutcome(CreateTransitRouterPeerAttachmentResult(outcome.result()));
+	else
+		return CreateTransitRouterPeerAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterPeerAttachmentAsync(const CreateTransitRouterPeerAttachmentRequest& request, const CreateTransitRouterPeerAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterPeerAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterPeerAttachmentOutcomeCallable CbnClient::createTransitRouterPeerAttachmentCallable(const CreateTransitRouterPeerAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterPeerAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterPeerAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateTransitRouterRouteEntryOutcome CbnClient::createTransitRouterRouteEntry(const CreateTransitRouterRouteEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterRouteEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterRouteEntryOutcome(CreateTransitRouterRouteEntryResult(outcome.result()));
+	else
+		return CreateTransitRouterRouteEntryOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterRouteEntryAsync(const CreateTransitRouterRouteEntryRequest& request, const CreateTransitRouterRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterRouteEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterRouteEntryOutcomeCallable CbnClient::createTransitRouterRouteEntryCallable(const CreateTransitRouterRouteEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterRouteEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterRouteEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateTransitRouterRouteTableOutcome CbnClient::createTransitRouterRouteTable(const CreateTransitRouterRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterRouteTableOutcome(CreateTransitRouterRouteTableResult(outcome.result()));
+	else
+		return CreateTransitRouterRouteTableOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterRouteTableAsync(const CreateTransitRouterRouteTableRequest& request, const CreateTransitRouterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterRouteTableOutcomeCallable CbnClient::createTransitRouterRouteTableCallable(const CreateTransitRouterRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateTransitRouterVbrAttachmentOutcome CbnClient::createTransitRouterVbrAttachment(const CreateTransitRouterVbrAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterVbrAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterVbrAttachmentOutcome(CreateTransitRouterVbrAttachmentResult(outcome.result()));
+	else
+		return CreateTransitRouterVbrAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterVbrAttachmentAsync(const CreateTransitRouterVbrAttachmentRequest& request, const CreateTransitRouterVbrAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterVbrAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterVbrAttachmentOutcomeCallable CbnClient::createTransitRouterVbrAttachmentCallable(const CreateTransitRouterVbrAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterVbrAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterVbrAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateTransitRouterVpcAttachmentOutcome CbnClient::createTransitRouterVpcAttachment(const CreateTransitRouterVpcAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterVpcAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterVpcAttachmentOutcome(CreateTransitRouterVpcAttachmentResult(outcome.result()));
+	else
+		return CreateTransitRouterVpcAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterVpcAttachmentAsync(const CreateTransitRouterVpcAttachmentRequest& request, const CreateTransitRouterVpcAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterVpcAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterVpcAttachmentOutcomeCallable CbnClient::createTransitRouterVpcAttachmentCallable(const CreateTransitRouterVpcAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterVpcAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterVpcAttachment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -585,6 +837,186 @@ CbnClient::DeleteRouteServiceInCenOutcomeCallable CbnClient::deleteRouteServiceI
 			[this, request]()
 			{
 			return this->deleteRouteServiceInCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteTransitRouterPeerAttachmentOutcome CbnClient::deleteTransitRouterPeerAttachment(const DeleteTransitRouterPeerAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterPeerAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterPeerAttachmentOutcome(DeleteTransitRouterPeerAttachmentResult(outcome.result()));
+	else
+		return DeleteTransitRouterPeerAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterPeerAttachmentAsync(const DeleteTransitRouterPeerAttachmentRequest& request, const DeleteTransitRouterPeerAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterPeerAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterPeerAttachmentOutcomeCallable CbnClient::deleteTransitRouterPeerAttachmentCallable(const DeleteTransitRouterPeerAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterPeerAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterPeerAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteTransitRouterRouteEntryOutcome CbnClient::deleteTransitRouterRouteEntry(const DeleteTransitRouterRouteEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterRouteEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterRouteEntryOutcome(DeleteTransitRouterRouteEntryResult(outcome.result()));
+	else
+		return DeleteTransitRouterRouteEntryOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterRouteEntryAsync(const DeleteTransitRouterRouteEntryRequest& request, const DeleteTransitRouterRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterRouteEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterRouteEntryOutcomeCallable CbnClient::deleteTransitRouterRouteEntryCallable(const DeleteTransitRouterRouteEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterRouteEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterRouteEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteTransitRouterRouteTableOutcome CbnClient::deleteTransitRouterRouteTable(const DeleteTransitRouterRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterRouteTableOutcome(DeleteTransitRouterRouteTableResult(outcome.result()));
+	else
+		return DeleteTransitRouterRouteTableOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterRouteTableAsync(const DeleteTransitRouterRouteTableRequest& request, const DeleteTransitRouterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterRouteTableOutcomeCallable CbnClient::deleteTransitRouterRouteTableCallable(const DeleteTransitRouterRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteTransitRouterVbrAttachmentOutcome CbnClient::deleteTransitRouterVbrAttachment(const DeleteTransitRouterVbrAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterVbrAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterVbrAttachmentOutcome(DeleteTransitRouterVbrAttachmentResult(outcome.result()));
+	else
+		return DeleteTransitRouterVbrAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterVbrAttachmentAsync(const DeleteTransitRouterVbrAttachmentRequest& request, const DeleteTransitRouterVbrAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterVbrAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterVbrAttachmentOutcomeCallable CbnClient::deleteTransitRouterVbrAttachmentCallable(const DeleteTransitRouterVbrAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterVbrAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterVbrAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteTransitRouterVpcAttachmentOutcome CbnClient::deleteTransitRouterVpcAttachment(const DeleteTransitRouterVpcAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterVpcAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterVpcAttachmentOutcome(DeleteTransitRouterVpcAttachmentResult(outcome.result()));
+	else
+		return DeleteTransitRouterVpcAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterVpcAttachmentAsync(const DeleteTransitRouterVpcAttachmentRequest& request, const DeleteTransitRouterVpcAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterVpcAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterVpcAttachmentOutcomeCallable CbnClient::deleteTransitRouterVpcAttachmentCallable(const DeleteTransitRouterVpcAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterVpcAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterVpcAttachment(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1347,6 +1779,78 @@ CbnClient::DisableCenVbrHealthCheckOutcomeCallable CbnClient::disableCenVbrHealt
 	return task->get_future();
 }
 
+CbnClient::DisableTransitRouterRouteTablePropagationOutcome CbnClient::disableTransitRouterRouteTablePropagation(const DisableTransitRouterRouteTablePropagationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableTransitRouterRouteTablePropagationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableTransitRouterRouteTablePropagationOutcome(DisableTransitRouterRouteTablePropagationResult(outcome.result()));
+	else
+		return DisableTransitRouterRouteTablePropagationOutcome(outcome.error());
+}
+
+void CbnClient::disableTransitRouterRouteTablePropagationAsync(const DisableTransitRouterRouteTablePropagationRequest& request, const DisableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableTransitRouterRouteTablePropagation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DisableTransitRouterRouteTablePropagationOutcomeCallable CbnClient::disableTransitRouterRouteTablePropagationCallable(const DisableTransitRouterRouteTablePropagationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableTransitRouterRouteTablePropagationOutcome()>>(
+			[this, request]()
+			{
+			return this->disableTransitRouterRouteTablePropagation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DissociateTransitRouterAttachmentFromRouteTableOutcome CbnClient::dissociateTransitRouterAttachmentFromRouteTable(const DissociateTransitRouterAttachmentFromRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DissociateTransitRouterAttachmentFromRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DissociateTransitRouterAttachmentFromRouteTableOutcome(DissociateTransitRouterAttachmentFromRouteTableResult(outcome.result()));
+	else
+		return DissociateTransitRouterAttachmentFromRouteTableOutcome(outcome.error());
+}
+
+void CbnClient::dissociateTransitRouterAttachmentFromRouteTableAsync(const DissociateTransitRouterAttachmentFromRouteTableRequest& request, const DissociateTransitRouterAttachmentFromRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dissociateTransitRouterAttachmentFromRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DissociateTransitRouterAttachmentFromRouteTableOutcomeCallable CbnClient::dissociateTransitRouterAttachmentFromRouteTableCallable(const DissociateTransitRouterAttachmentFromRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DissociateTransitRouterAttachmentFromRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->dissociateTransitRouterAttachmentFromRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::EnableCenVbrHealthCheckOutcome CbnClient::enableCenVbrHealthCheck(const EnableCenVbrHealthCheckRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1383,6 +1887,42 @@ CbnClient::EnableCenVbrHealthCheckOutcomeCallable CbnClient::enableCenVbrHealthC
 	return task->get_future();
 }
 
+CbnClient::EnableTransitRouterRouteTablePropagationOutcome CbnClient::enableTransitRouterRouteTablePropagation(const EnableTransitRouterRouteTablePropagationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableTransitRouterRouteTablePropagationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableTransitRouterRouteTablePropagationOutcome(EnableTransitRouterRouteTablePropagationResult(outcome.result()));
+	else
+		return EnableTransitRouterRouteTablePropagationOutcome(outcome.error());
+}
+
+void CbnClient::enableTransitRouterRouteTablePropagationAsync(const EnableTransitRouterRouteTablePropagationRequest& request, const EnableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableTransitRouterRouteTablePropagation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::EnableTransitRouterRouteTablePropagationOutcomeCallable CbnClient::enableTransitRouterRouteTablePropagationCallable(const EnableTransitRouterRouteTablePropagationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableTransitRouterRouteTablePropagationOutcome()>>(
+			[this, request]()
+			{
+			return this->enableTransitRouterRouteTablePropagation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::ListTagResourcesOutcome CbnClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1953,330 @@ CbnClient::ListTagResourcesOutcomeCallable CbnClient::listTagResourcesCallable(c
 			[this, request]()
 			{
 			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterAvailableResourceOutcome CbnClient::listTransitRouterAvailableResource(const ListTransitRouterAvailableResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterAvailableResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterAvailableResourceOutcome(ListTransitRouterAvailableResourceResult(outcome.result()));
+	else
+		return ListTransitRouterAvailableResourceOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterAvailableResourceAsync(const ListTransitRouterAvailableResourceRequest& request, const ListTransitRouterAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterAvailableResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterAvailableResourceOutcomeCallable CbnClient::listTransitRouterAvailableResourceCallable(const ListTransitRouterAvailableResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterAvailableResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterAvailableResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterPeerAttachmentsOutcome CbnClient::listTransitRouterPeerAttachments(const ListTransitRouterPeerAttachmentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterPeerAttachmentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterPeerAttachmentsOutcome(ListTransitRouterPeerAttachmentsResult(outcome.result()));
+	else
+		return ListTransitRouterPeerAttachmentsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterPeerAttachmentsAsync(const ListTransitRouterPeerAttachmentsRequest& request, const ListTransitRouterPeerAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterPeerAttachments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterPeerAttachmentsOutcomeCallable CbnClient::listTransitRouterPeerAttachmentsCallable(const ListTransitRouterPeerAttachmentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterPeerAttachmentsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterPeerAttachments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterRouteEntriesOutcome CbnClient::listTransitRouterRouteEntries(const ListTransitRouterRouteEntriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterRouteEntriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterRouteEntriesOutcome(ListTransitRouterRouteEntriesResult(outcome.result()));
+	else
+		return ListTransitRouterRouteEntriesOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterRouteEntriesAsync(const ListTransitRouterRouteEntriesRequest& request, const ListTransitRouterRouteEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterRouteEntries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterRouteEntriesOutcomeCallable CbnClient::listTransitRouterRouteEntriesCallable(const ListTransitRouterRouteEntriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterRouteEntriesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterRouteEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterRouteTableAssociationsOutcome CbnClient::listTransitRouterRouteTableAssociations(const ListTransitRouterRouteTableAssociationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterRouteTableAssociationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterRouteTableAssociationsOutcome(ListTransitRouterRouteTableAssociationsResult(outcome.result()));
+	else
+		return ListTransitRouterRouteTableAssociationsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterRouteTableAssociationsAsync(const ListTransitRouterRouteTableAssociationsRequest& request, const ListTransitRouterRouteTableAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterRouteTableAssociations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterRouteTableAssociationsOutcomeCallable CbnClient::listTransitRouterRouteTableAssociationsCallable(const ListTransitRouterRouteTableAssociationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterRouteTableAssociationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterRouteTableAssociations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterRouteTablePropagationsOutcome CbnClient::listTransitRouterRouteTablePropagations(const ListTransitRouterRouteTablePropagationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterRouteTablePropagationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterRouteTablePropagationsOutcome(ListTransitRouterRouteTablePropagationsResult(outcome.result()));
+	else
+		return ListTransitRouterRouteTablePropagationsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterRouteTablePropagationsAsync(const ListTransitRouterRouteTablePropagationsRequest& request, const ListTransitRouterRouteTablePropagationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterRouteTablePropagations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterRouteTablePropagationsOutcomeCallable CbnClient::listTransitRouterRouteTablePropagationsCallable(const ListTransitRouterRouteTablePropagationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterRouteTablePropagationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterRouteTablePropagations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterRouteTablesOutcome CbnClient::listTransitRouterRouteTables(const ListTransitRouterRouteTablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterRouteTablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterRouteTablesOutcome(ListTransitRouterRouteTablesResult(outcome.result()));
+	else
+		return ListTransitRouterRouteTablesOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterRouteTablesAsync(const ListTransitRouterRouteTablesRequest& request, const ListTransitRouterRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterRouteTables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterRouteTablesOutcomeCallable CbnClient::listTransitRouterRouteTablesCallable(const ListTransitRouterRouteTablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterRouteTablesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterRouteTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterVbrAttachmentsOutcome CbnClient::listTransitRouterVbrAttachments(const ListTransitRouterVbrAttachmentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterVbrAttachmentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterVbrAttachmentsOutcome(ListTransitRouterVbrAttachmentsResult(outcome.result()));
+	else
+		return ListTransitRouterVbrAttachmentsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterVbrAttachmentsAsync(const ListTransitRouterVbrAttachmentsRequest& request, const ListTransitRouterVbrAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterVbrAttachments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterVbrAttachmentsOutcomeCallable CbnClient::listTransitRouterVbrAttachmentsCallable(const ListTransitRouterVbrAttachmentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterVbrAttachmentsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterVbrAttachments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterVpcAttachmentsOutcome CbnClient::listTransitRouterVpcAttachments(const ListTransitRouterVpcAttachmentsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterVpcAttachmentsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterVpcAttachmentsOutcome(ListTransitRouterVpcAttachmentsResult(outcome.result()));
+	else
+		return ListTransitRouterVpcAttachmentsOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterVpcAttachmentsAsync(const ListTransitRouterVpcAttachmentsRequest& request, const ListTransitRouterVpcAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterVpcAttachments(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterVpcAttachmentsOutcomeCallable CbnClient::listTransitRouterVpcAttachmentsCallable(const ListTransitRouterVpcAttachmentsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterVpcAttachmentsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterVpcAttachments(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRoutersOutcome CbnClient::listTransitRouters(const ListTransitRoutersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRoutersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRoutersOutcome(ListTransitRoutersResult(outcome.result()));
+	else
+		return ListTransitRoutersOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRoutersAsync(const ListTransitRoutersRequest& request, const ListTransitRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRoutersOutcomeCallable CbnClient::listTransitRoutersCallable(const ListTransitRoutersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRoutersOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1917,6 +2781,222 @@ CbnClient::UntagResourcesOutcomeCallable CbnClient::untagResourcesCallable(const
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::UpdateTransitRouterOutcome CbnClient::updateTransitRouter(const UpdateTransitRouterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTransitRouterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTransitRouterOutcome(UpdateTransitRouterResult(outcome.result()));
+	else
+		return UpdateTransitRouterOutcome(outcome.error());
+}
+
+void CbnClient::updateTransitRouterAsync(const UpdateTransitRouterRequest& request, const UpdateTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTransitRouter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UpdateTransitRouterOutcomeCallable CbnClient::updateTransitRouterCallable(const UpdateTransitRouterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTransitRouterOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTransitRouter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::UpdateTransitRouterPeerAttachmentAttributeOutcome CbnClient::updateTransitRouterPeerAttachmentAttribute(const UpdateTransitRouterPeerAttachmentAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTransitRouterPeerAttachmentAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTransitRouterPeerAttachmentAttributeOutcome(UpdateTransitRouterPeerAttachmentAttributeResult(outcome.result()));
+	else
+		return UpdateTransitRouterPeerAttachmentAttributeOutcome(outcome.error());
+}
+
+void CbnClient::updateTransitRouterPeerAttachmentAttributeAsync(const UpdateTransitRouterPeerAttachmentAttributeRequest& request, const UpdateTransitRouterPeerAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTransitRouterPeerAttachmentAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UpdateTransitRouterPeerAttachmentAttributeOutcomeCallable CbnClient::updateTransitRouterPeerAttachmentAttributeCallable(const UpdateTransitRouterPeerAttachmentAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTransitRouterPeerAttachmentAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTransitRouterPeerAttachmentAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::UpdateTransitRouterRouteEntryOutcome CbnClient::updateTransitRouterRouteEntry(const UpdateTransitRouterRouteEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTransitRouterRouteEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTransitRouterRouteEntryOutcome(UpdateTransitRouterRouteEntryResult(outcome.result()));
+	else
+		return UpdateTransitRouterRouteEntryOutcome(outcome.error());
+}
+
+void CbnClient::updateTransitRouterRouteEntryAsync(const UpdateTransitRouterRouteEntryRequest& request, const UpdateTransitRouterRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTransitRouterRouteEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UpdateTransitRouterRouteEntryOutcomeCallable CbnClient::updateTransitRouterRouteEntryCallable(const UpdateTransitRouterRouteEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTransitRouterRouteEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTransitRouterRouteEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::UpdateTransitRouterRouteTableOutcome CbnClient::updateTransitRouterRouteTable(const UpdateTransitRouterRouteTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTransitRouterRouteTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTransitRouterRouteTableOutcome(UpdateTransitRouterRouteTableResult(outcome.result()));
+	else
+		return UpdateTransitRouterRouteTableOutcome(outcome.error());
+}
+
+void CbnClient::updateTransitRouterRouteTableAsync(const UpdateTransitRouterRouteTableRequest& request, const UpdateTransitRouterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTransitRouterRouteTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UpdateTransitRouterRouteTableOutcomeCallable CbnClient::updateTransitRouterRouteTableCallable(const UpdateTransitRouterRouteTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTransitRouterRouteTableOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTransitRouterRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::UpdateTransitRouterVbrAttachmentAttributeOutcome CbnClient::updateTransitRouterVbrAttachmentAttribute(const UpdateTransitRouterVbrAttachmentAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTransitRouterVbrAttachmentAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTransitRouterVbrAttachmentAttributeOutcome(UpdateTransitRouterVbrAttachmentAttributeResult(outcome.result()));
+	else
+		return UpdateTransitRouterVbrAttachmentAttributeOutcome(outcome.error());
+}
+
+void CbnClient::updateTransitRouterVbrAttachmentAttributeAsync(const UpdateTransitRouterVbrAttachmentAttributeRequest& request, const UpdateTransitRouterVbrAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTransitRouterVbrAttachmentAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UpdateTransitRouterVbrAttachmentAttributeOutcomeCallable CbnClient::updateTransitRouterVbrAttachmentAttributeCallable(const UpdateTransitRouterVbrAttachmentAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTransitRouterVbrAttachmentAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTransitRouterVbrAttachmentAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::UpdateTransitRouterVpcAttachmentAttributeOutcome CbnClient::updateTransitRouterVpcAttachmentAttribute(const UpdateTransitRouterVpcAttachmentAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTransitRouterVpcAttachmentAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTransitRouterVpcAttachmentAttributeOutcome(UpdateTransitRouterVpcAttachmentAttributeResult(outcome.result()));
+	else
+		return UpdateTransitRouterVpcAttachmentAttributeOutcome(outcome.error());
+}
+
+void CbnClient::updateTransitRouterVpcAttachmentAttributeAsync(const UpdateTransitRouterVpcAttachmentAttributeRequest& request, const UpdateTransitRouterVpcAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTransitRouterVpcAttachmentAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable CbnClient::updateTransitRouterVpcAttachmentAttributeCallable(const UpdateTransitRouterVpcAttachmentAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTransitRouterVpcAttachmentAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTransitRouterVpcAttachmentAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

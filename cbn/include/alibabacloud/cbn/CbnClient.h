@@ -26,6 +26,8 @@
 #include "model/ActiveFlowLogResult.h"
 #include "model/AssociateCenBandwidthPackageRequest.h"
 #include "model/AssociateCenBandwidthPackageResult.h"
+#include "model/AssociateTransitRouterAttachmentWithRouteTableRequest.h"
+#include "model/AssociateTransitRouterAttachmentWithRouteTableResult.h"
 #include "model/AttachCenChildInstanceRequest.h"
 #include "model/AttachCenChildInstanceResult.h"
 #include "model/CreateCenRequest.h"
@@ -38,6 +40,18 @@
 #include "model/CreateCenRouteMapResult.h"
 #include "model/CreateFlowlogRequest.h"
 #include "model/CreateFlowlogResult.h"
+#include "model/CreateTransitRouterRequest.h"
+#include "model/CreateTransitRouterResult.h"
+#include "model/CreateTransitRouterPeerAttachmentRequest.h"
+#include "model/CreateTransitRouterPeerAttachmentResult.h"
+#include "model/CreateTransitRouterRouteEntryRequest.h"
+#include "model/CreateTransitRouterRouteEntryResult.h"
+#include "model/CreateTransitRouterRouteTableRequest.h"
+#include "model/CreateTransitRouterRouteTableResult.h"
+#include "model/CreateTransitRouterVbrAttachmentRequest.h"
+#include "model/CreateTransitRouterVbrAttachmentResult.h"
+#include "model/CreateTransitRouterVpcAttachmentRequest.h"
+#include "model/CreateTransitRouterVpcAttachmentResult.h"
 #include "model/DeactiveFlowLogRequest.h"
 #include "model/DeactiveFlowLogResult.h"
 #include "model/DeleteCenRequest.h"
@@ -52,6 +66,16 @@
 #include "model/DeleteFlowlogResult.h"
 #include "model/DeleteRouteServiceInCenRequest.h"
 #include "model/DeleteRouteServiceInCenResult.h"
+#include "model/DeleteTransitRouterPeerAttachmentRequest.h"
+#include "model/DeleteTransitRouterPeerAttachmentResult.h"
+#include "model/DeleteTransitRouterRouteEntryRequest.h"
+#include "model/DeleteTransitRouterRouteEntryResult.h"
+#include "model/DeleteTransitRouterRouteTableRequest.h"
+#include "model/DeleteTransitRouterRouteTableResult.h"
+#include "model/DeleteTransitRouterVbrAttachmentRequest.h"
+#include "model/DeleteTransitRouterVbrAttachmentResult.h"
+#include "model/DeleteTransitRouterVpcAttachmentRequest.h"
+#include "model/DeleteTransitRouterVpcAttachmentResult.h"
 #include "model/DescribeCenAttachedChildInstanceAttributeRequest.h"
 #include "model/DescribeCenAttachedChildInstanceAttributeResult.h"
 #include "model/DescribeCenAttachedChildInstancesRequest.h"
@@ -94,10 +118,34 @@
 #include "model/DetachCenChildInstanceResult.h"
 #include "model/DisableCenVbrHealthCheckRequest.h"
 #include "model/DisableCenVbrHealthCheckResult.h"
+#include "model/DisableTransitRouterRouteTablePropagationRequest.h"
+#include "model/DisableTransitRouterRouteTablePropagationResult.h"
+#include "model/DissociateTransitRouterAttachmentFromRouteTableRequest.h"
+#include "model/DissociateTransitRouterAttachmentFromRouteTableResult.h"
 #include "model/EnableCenVbrHealthCheckRequest.h"
 #include "model/EnableCenVbrHealthCheckResult.h"
+#include "model/EnableTransitRouterRouteTablePropagationRequest.h"
+#include "model/EnableTransitRouterRouteTablePropagationResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
+#include "model/ListTransitRouterAvailableResourceRequest.h"
+#include "model/ListTransitRouterAvailableResourceResult.h"
+#include "model/ListTransitRouterPeerAttachmentsRequest.h"
+#include "model/ListTransitRouterPeerAttachmentsResult.h"
+#include "model/ListTransitRouterRouteEntriesRequest.h"
+#include "model/ListTransitRouterRouteEntriesResult.h"
+#include "model/ListTransitRouterRouteTableAssociationsRequest.h"
+#include "model/ListTransitRouterRouteTableAssociationsResult.h"
+#include "model/ListTransitRouterRouteTablePropagationsRequest.h"
+#include "model/ListTransitRouterRouteTablePropagationsResult.h"
+#include "model/ListTransitRouterRouteTablesRequest.h"
+#include "model/ListTransitRouterRouteTablesResult.h"
+#include "model/ListTransitRouterVbrAttachmentsRequest.h"
+#include "model/ListTransitRouterVbrAttachmentsResult.h"
+#include "model/ListTransitRouterVpcAttachmentsRequest.h"
+#include "model/ListTransitRouterVpcAttachmentsResult.h"
+#include "model/ListTransitRoutersRequest.h"
+#include "model/ListTransitRoutersResult.h"
 #include "model/ModifyCenAttributeRequest.h"
 #include "model/ModifyCenAttributeResult.h"
 #include "model/ModifyCenBandwidthPackageAttributeRequest.h"
@@ -126,6 +174,18 @@
 #include "model/UnroutePrivateZoneInCenToVpcResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
+#include "model/UpdateTransitRouterRequest.h"
+#include "model/UpdateTransitRouterResult.h"
+#include "model/UpdateTransitRouterPeerAttachmentAttributeRequest.h"
+#include "model/UpdateTransitRouterPeerAttachmentAttributeResult.h"
+#include "model/UpdateTransitRouterRouteEntryRequest.h"
+#include "model/UpdateTransitRouterRouteEntryResult.h"
+#include "model/UpdateTransitRouterRouteTableRequest.h"
+#include "model/UpdateTransitRouterRouteTableResult.h"
+#include "model/UpdateTransitRouterVbrAttachmentAttributeRequest.h"
+#include "model/UpdateTransitRouterVbrAttachmentAttributeResult.h"
+#include "model/UpdateTransitRouterVpcAttachmentAttributeRequest.h"
+#include "model/UpdateTransitRouterVpcAttachmentAttributeResult.h"
 #include "model/WithdrawPublishedRouteEntriesRequest.h"
 #include "model/WithdrawPublishedRouteEntriesResult.h"
 
@@ -143,6 +203,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AssociateCenBandwidthPackageResult> AssociateCenBandwidthPackageOutcome;
 			typedef std::future<AssociateCenBandwidthPackageOutcome> AssociateCenBandwidthPackageOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::AssociateCenBandwidthPackageRequest&, const AssociateCenBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateCenBandwidthPackageAsyncHandler;
+			typedef Outcome<Error, Model::AssociateTransitRouterAttachmentWithRouteTableResult> AssociateTransitRouterAttachmentWithRouteTableOutcome;
+			typedef std::future<AssociateTransitRouterAttachmentWithRouteTableOutcome> AssociateTransitRouterAttachmentWithRouteTableOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::AssociateTransitRouterAttachmentWithRouteTableRequest&, const AssociateTransitRouterAttachmentWithRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateTransitRouterAttachmentWithRouteTableAsyncHandler;
 			typedef Outcome<Error, Model::AttachCenChildInstanceResult> AttachCenChildInstanceOutcome;
 			typedef std::future<AttachCenChildInstanceOutcome> AttachCenChildInstanceOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::AttachCenChildInstanceRequest&, const AttachCenChildInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachCenChildInstanceAsyncHandler;
@@ -161,6 +224,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateFlowlogResult> CreateFlowlogOutcome;
 			typedef std::future<CreateFlowlogOutcome> CreateFlowlogOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::CreateFlowlogRequest&, const CreateFlowlogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowlogAsyncHandler;
+			typedef Outcome<Error, Model::CreateTransitRouterResult> CreateTransitRouterOutcome;
+			typedef std::future<CreateTransitRouterOutcome> CreateTransitRouterOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterRequest&, const CreateTransitRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterAsyncHandler;
+			typedef Outcome<Error, Model::CreateTransitRouterPeerAttachmentResult> CreateTransitRouterPeerAttachmentOutcome;
+			typedef std::future<CreateTransitRouterPeerAttachmentOutcome> CreateTransitRouterPeerAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterPeerAttachmentRequest&, const CreateTransitRouterPeerAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterPeerAttachmentAsyncHandler;
+			typedef Outcome<Error, Model::CreateTransitRouterRouteEntryResult> CreateTransitRouterRouteEntryOutcome;
+			typedef std::future<CreateTransitRouterRouteEntryOutcome> CreateTransitRouterRouteEntryOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterRouteEntryRequest&, const CreateTransitRouterRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterRouteEntryAsyncHandler;
+			typedef Outcome<Error, Model::CreateTransitRouterRouteTableResult> CreateTransitRouterRouteTableOutcome;
+			typedef std::future<CreateTransitRouterRouteTableOutcome> CreateTransitRouterRouteTableOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterRouteTableRequest&, const CreateTransitRouterRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::CreateTransitRouterVbrAttachmentResult> CreateTransitRouterVbrAttachmentOutcome;
+			typedef std::future<CreateTransitRouterVbrAttachmentOutcome> CreateTransitRouterVbrAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterVbrAttachmentRequest&, const CreateTransitRouterVbrAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterVbrAttachmentAsyncHandler;
+			typedef Outcome<Error, Model::CreateTransitRouterVpcAttachmentResult> CreateTransitRouterVpcAttachmentOutcome;
+			typedef std::future<CreateTransitRouterVpcAttachmentOutcome> CreateTransitRouterVpcAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateTransitRouterVpcAttachmentRequest&, const CreateTransitRouterVpcAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransitRouterVpcAttachmentAsyncHandler;
 			typedef Outcome<Error, Model::DeactiveFlowLogResult> DeactiveFlowLogOutcome;
 			typedef std::future<DeactiveFlowLogOutcome> DeactiveFlowLogOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeactiveFlowLogRequest&, const DeactiveFlowLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeactiveFlowLogAsyncHandler;
@@ -182,6 +263,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRouteServiceInCenResult> DeleteRouteServiceInCenOutcome;
 			typedef std::future<DeleteRouteServiceInCenOutcome> DeleteRouteServiceInCenOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DeleteRouteServiceInCenRequest&, const DeleteRouteServiceInCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteServiceInCenAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTransitRouterPeerAttachmentResult> DeleteTransitRouterPeerAttachmentOutcome;
+			typedef std::future<DeleteTransitRouterPeerAttachmentOutcome> DeleteTransitRouterPeerAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterPeerAttachmentRequest&, const DeleteTransitRouterPeerAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterPeerAttachmentAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTransitRouterRouteEntryResult> DeleteTransitRouterRouteEntryOutcome;
+			typedef std::future<DeleteTransitRouterRouteEntryOutcome> DeleteTransitRouterRouteEntryOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterRouteEntryRequest&, const DeleteTransitRouterRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterRouteEntryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTransitRouterRouteTableResult> DeleteTransitRouterRouteTableOutcome;
+			typedef std::future<DeleteTransitRouterRouteTableOutcome> DeleteTransitRouterRouteTableOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterRouteTableRequest&, const DeleteTransitRouterRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTransitRouterVbrAttachmentResult> DeleteTransitRouterVbrAttachmentOutcome;
+			typedef std::future<DeleteTransitRouterVbrAttachmentOutcome> DeleteTransitRouterVbrAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterVbrAttachmentRequest&, const DeleteTransitRouterVbrAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterVbrAttachmentAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTransitRouterVpcAttachmentResult> DeleteTransitRouterVpcAttachmentOutcome;
+			typedef std::future<DeleteTransitRouterVpcAttachmentOutcome> DeleteTransitRouterVpcAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DeleteTransitRouterVpcAttachmentRequest&, const DeleteTransitRouterVpcAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTransitRouterVpcAttachmentAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCenAttachedChildInstanceAttributeResult> DescribeCenAttachedChildInstanceAttributeOutcome;
 			typedef std::future<DescribeCenAttachedChildInstanceAttributeOutcome> DescribeCenAttachedChildInstanceAttributeOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DescribeCenAttachedChildInstanceAttributeRequest&, const DescribeCenAttachedChildInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCenAttachedChildInstanceAttributeAsyncHandler;
@@ -245,12 +341,48 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableCenVbrHealthCheckResult> DisableCenVbrHealthCheckOutcome;
 			typedef std::future<DisableCenVbrHealthCheckOutcome> DisableCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DisableCenVbrHealthCheckRequest&, const DisableCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableCenVbrHealthCheckAsyncHandler;
+			typedef Outcome<Error, Model::DisableTransitRouterRouteTablePropagationResult> DisableTransitRouterRouteTablePropagationOutcome;
+			typedef std::future<DisableTransitRouterRouteTablePropagationOutcome> DisableTransitRouterRouteTablePropagationOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DisableTransitRouterRouteTablePropagationRequest&, const DisableTransitRouterRouteTablePropagationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableTransitRouterRouteTablePropagationAsyncHandler;
+			typedef Outcome<Error, Model::DissociateTransitRouterAttachmentFromRouteTableResult> DissociateTransitRouterAttachmentFromRouteTableOutcome;
+			typedef std::future<DissociateTransitRouterAttachmentFromRouteTableOutcome> DissociateTransitRouterAttachmentFromRouteTableOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DissociateTransitRouterAttachmentFromRouteTableRequest&, const DissociateTransitRouterAttachmentFromRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DissociateTransitRouterAttachmentFromRouteTableAsyncHandler;
 			typedef Outcome<Error, Model::EnableCenVbrHealthCheckResult> EnableCenVbrHealthCheckOutcome;
 			typedef std::future<EnableCenVbrHealthCheckOutcome> EnableCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::EnableCenVbrHealthCheckRequest&, const EnableCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableCenVbrHealthCheckAsyncHandler;
+			typedef Outcome<Error, Model::EnableTransitRouterRouteTablePropagationResult> EnableTransitRouterRouteTablePropagationOutcome;
+			typedef std::future<EnableTransitRouterRouteTablePropagationOutcome> EnableTransitRouterRouteTablePropagationOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::EnableTransitRouterRouteTablePropagationRequest&, const EnableTransitRouterRouteTablePropagationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransitRouterRouteTablePropagationAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterAvailableResourceResult> ListTransitRouterAvailableResourceOutcome;
+			typedef std::future<ListTransitRouterAvailableResourceOutcome> ListTransitRouterAvailableResourceOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterAvailableResourceRequest&, const ListTransitRouterAvailableResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterAvailableResourceAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterPeerAttachmentsResult> ListTransitRouterPeerAttachmentsOutcome;
+			typedef std::future<ListTransitRouterPeerAttachmentsOutcome> ListTransitRouterPeerAttachmentsOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterPeerAttachmentsRequest&, const ListTransitRouterPeerAttachmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterPeerAttachmentsAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterRouteEntriesResult> ListTransitRouterRouteEntriesOutcome;
+			typedef std::future<ListTransitRouterRouteEntriesOutcome> ListTransitRouterRouteEntriesOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterRouteEntriesRequest&, const ListTransitRouterRouteEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterRouteEntriesAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterRouteTableAssociationsResult> ListTransitRouterRouteTableAssociationsOutcome;
+			typedef std::future<ListTransitRouterRouteTableAssociationsOutcome> ListTransitRouterRouteTableAssociationsOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterRouteTableAssociationsRequest&, const ListTransitRouterRouteTableAssociationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterRouteTableAssociationsAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterRouteTablePropagationsResult> ListTransitRouterRouteTablePropagationsOutcome;
+			typedef std::future<ListTransitRouterRouteTablePropagationsOutcome> ListTransitRouterRouteTablePropagationsOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterRouteTablePropagationsRequest&, const ListTransitRouterRouteTablePropagationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterRouteTablePropagationsAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterRouteTablesResult> ListTransitRouterRouteTablesOutcome;
+			typedef std::future<ListTransitRouterRouteTablesOutcome> ListTransitRouterRouteTablesOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterRouteTablesRequest&, const ListTransitRouterRouteTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterRouteTablesAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterVbrAttachmentsResult> ListTransitRouterVbrAttachmentsOutcome;
+			typedef std::future<ListTransitRouterVbrAttachmentsOutcome> ListTransitRouterVbrAttachmentsOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterVbrAttachmentsRequest&, const ListTransitRouterVbrAttachmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterVbrAttachmentsAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRouterVpcAttachmentsResult> ListTransitRouterVpcAttachmentsOutcome;
+			typedef std::future<ListTransitRouterVpcAttachmentsOutcome> ListTransitRouterVpcAttachmentsOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRouterVpcAttachmentsRequest&, const ListTransitRouterVpcAttachmentsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRouterVpcAttachmentsAsyncHandler;
+			typedef Outcome<Error, Model::ListTransitRoutersResult> ListTransitRoutersOutcome;
+			typedef std::future<ListTransitRoutersOutcome> ListTransitRoutersOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTransitRoutersRequest&, const ListTransitRoutersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTransitRoutersAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCenAttributeResult> ModifyCenAttributeOutcome;
 			typedef std::future<ModifyCenAttributeOutcome> ModifyCenAttributeOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ModifyCenAttributeRequest&, const ModifyCenAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCenAttributeAsyncHandler;
@@ -293,6 +425,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTransitRouterResult> UpdateTransitRouterOutcome;
+			typedef std::future<UpdateTransitRouterOutcome> UpdateTransitRouterOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterRequest&, const UpdateTransitRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTransitRouterPeerAttachmentAttributeResult> UpdateTransitRouterPeerAttachmentAttributeOutcome;
+			typedef std::future<UpdateTransitRouterPeerAttachmentAttributeOutcome> UpdateTransitRouterPeerAttachmentAttributeOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterPeerAttachmentAttributeRequest&, const UpdateTransitRouterPeerAttachmentAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterPeerAttachmentAttributeAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTransitRouterRouteEntryResult> UpdateTransitRouterRouteEntryOutcome;
+			typedef std::future<UpdateTransitRouterRouteEntryOutcome> UpdateTransitRouterRouteEntryOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterRouteEntryRequest&, const UpdateTransitRouterRouteEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterRouteEntryAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTransitRouterRouteTableResult> UpdateTransitRouterRouteTableOutcome;
+			typedef std::future<UpdateTransitRouterRouteTableOutcome> UpdateTransitRouterRouteTableOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterRouteTableRequest&, const UpdateTransitRouterRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTransitRouterVbrAttachmentAttributeResult> UpdateTransitRouterVbrAttachmentAttributeOutcome;
+			typedef std::future<UpdateTransitRouterVbrAttachmentAttributeOutcome> UpdateTransitRouterVbrAttachmentAttributeOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterVbrAttachmentAttributeRequest&, const UpdateTransitRouterVbrAttachmentAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterVbrAttachmentAttributeAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTransitRouterVpcAttachmentAttributeResult> UpdateTransitRouterVpcAttachmentAttributeOutcome;
+			typedef std::future<UpdateTransitRouterVpcAttachmentAttributeOutcome> UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterVpcAttachmentAttributeRequest&, const UpdateTransitRouterVpcAttachmentAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterVpcAttachmentAttributeAsyncHandler;
 			typedef Outcome<Error, Model::WithdrawPublishedRouteEntriesResult> WithdrawPublishedRouteEntriesOutcome;
 			typedef std::future<WithdrawPublishedRouteEntriesOutcome> WithdrawPublishedRouteEntriesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::WithdrawPublishedRouteEntriesRequest&, const WithdrawPublishedRouteEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawPublishedRouteEntriesAsyncHandler;
@@ -307,6 +457,9 @@ namespace AlibabaCloud
 			AssociateCenBandwidthPackageOutcome associateCenBandwidthPackage(const Model::AssociateCenBandwidthPackageRequest &request)const;
 			void associateCenBandwidthPackageAsync(const Model::AssociateCenBandwidthPackageRequest& request, const AssociateCenBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssociateCenBandwidthPackageOutcomeCallable associateCenBandwidthPackageCallable(const Model::AssociateCenBandwidthPackageRequest& request) const;
+			AssociateTransitRouterAttachmentWithRouteTableOutcome associateTransitRouterAttachmentWithRouteTable(const Model::AssociateTransitRouterAttachmentWithRouteTableRequest &request)const;
+			void associateTransitRouterAttachmentWithRouteTableAsync(const Model::AssociateTransitRouterAttachmentWithRouteTableRequest& request, const AssociateTransitRouterAttachmentWithRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssociateTransitRouterAttachmentWithRouteTableOutcomeCallable associateTransitRouterAttachmentWithRouteTableCallable(const Model::AssociateTransitRouterAttachmentWithRouteTableRequest& request) const;
 			AttachCenChildInstanceOutcome attachCenChildInstance(const Model::AttachCenChildInstanceRequest &request)const;
 			void attachCenChildInstanceAsync(const Model::AttachCenChildInstanceRequest& request, const AttachCenChildInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachCenChildInstanceOutcomeCallable attachCenChildInstanceCallable(const Model::AttachCenChildInstanceRequest& request) const;
@@ -325,6 +478,24 @@ namespace AlibabaCloud
 			CreateFlowlogOutcome createFlowlog(const Model::CreateFlowlogRequest &request)const;
 			void createFlowlogAsync(const Model::CreateFlowlogRequest& request, const CreateFlowlogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFlowlogOutcomeCallable createFlowlogCallable(const Model::CreateFlowlogRequest& request) const;
+			CreateTransitRouterOutcome createTransitRouter(const Model::CreateTransitRouterRequest &request)const;
+			void createTransitRouterAsync(const Model::CreateTransitRouterRequest& request, const CreateTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTransitRouterOutcomeCallable createTransitRouterCallable(const Model::CreateTransitRouterRequest& request) const;
+			CreateTransitRouterPeerAttachmentOutcome createTransitRouterPeerAttachment(const Model::CreateTransitRouterPeerAttachmentRequest &request)const;
+			void createTransitRouterPeerAttachmentAsync(const Model::CreateTransitRouterPeerAttachmentRequest& request, const CreateTransitRouterPeerAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTransitRouterPeerAttachmentOutcomeCallable createTransitRouterPeerAttachmentCallable(const Model::CreateTransitRouterPeerAttachmentRequest& request) const;
+			CreateTransitRouterRouteEntryOutcome createTransitRouterRouteEntry(const Model::CreateTransitRouterRouteEntryRequest &request)const;
+			void createTransitRouterRouteEntryAsync(const Model::CreateTransitRouterRouteEntryRequest& request, const CreateTransitRouterRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTransitRouterRouteEntryOutcomeCallable createTransitRouterRouteEntryCallable(const Model::CreateTransitRouterRouteEntryRequest& request) const;
+			CreateTransitRouterRouteTableOutcome createTransitRouterRouteTable(const Model::CreateTransitRouterRouteTableRequest &request)const;
+			void createTransitRouterRouteTableAsync(const Model::CreateTransitRouterRouteTableRequest& request, const CreateTransitRouterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTransitRouterRouteTableOutcomeCallable createTransitRouterRouteTableCallable(const Model::CreateTransitRouterRouteTableRequest& request) const;
+			CreateTransitRouterVbrAttachmentOutcome createTransitRouterVbrAttachment(const Model::CreateTransitRouterVbrAttachmentRequest &request)const;
+			void createTransitRouterVbrAttachmentAsync(const Model::CreateTransitRouterVbrAttachmentRequest& request, const CreateTransitRouterVbrAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTransitRouterVbrAttachmentOutcomeCallable createTransitRouterVbrAttachmentCallable(const Model::CreateTransitRouterVbrAttachmentRequest& request) const;
+			CreateTransitRouterVpcAttachmentOutcome createTransitRouterVpcAttachment(const Model::CreateTransitRouterVpcAttachmentRequest &request)const;
+			void createTransitRouterVpcAttachmentAsync(const Model::CreateTransitRouterVpcAttachmentRequest& request, const CreateTransitRouterVpcAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTransitRouterVpcAttachmentOutcomeCallable createTransitRouterVpcAttachmentCallable(const Model::CreateTransitRouterVpcAttachmentRequest& request) const;
 			DeactiveFlowLogOutcome deactiveFlowLog(const Model::DeactiveFlowLogRequest &request)const;
 			void deactiveFlowLogAsync(const Model::DeactiveFlowLogRequest& request, const DeactiveFlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeactiveFlowLogOutcomeCallable deactiveFlowLogCallable(const Model::DeactiveFlowLogRequest& request) const;
@@ -346,6 +517,21 @@ namespace AlibabaCloud
 			DeleteRouteServiceInCenOutcome deleteRouteServiceInCen(const Model::DeleteRouteServiceInCenRequest &request)const;
 			void deleteRouteServiceInCenAsync(const Model::DeleteRouteServiceInCenRequest& request, const DeleteRouteServiceInCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRouteServiceInCenOutcomeCallable deleteRouteServiceInCenCallable(const Model::DeleteRouteServiceInCenRequest& request) const;
+			DeleteTransitRouterPeerAttachmentOutcome deleteTransitRouterPeerAttachment(const Model::DeleteTransitRouterPeerAttachmentRequest &request)const;
+			void deleteTransitRouterPeerAttachmentAsync(const Model::DeleteTransitRouterPeerAttachmentRequest& request, const DeleteTransitRouterPeerAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTransitRouterPeerAttachmentOutcomeCallable deleteTransitRouterPeerAttachmentCallable(const Model::DeleteTransitRouterPeerAttachmentRequest& request) const;
+			DeleteTransitRouterRouteEntryOutcome deleteTransitRouterRouteEntry(const Model::DeleteTransitRouterRouteEntryRequest &request)const;
+			void deleteTransitRouterRouteEntryAsync(const Model::DeleteTransitRouterRouteEntryRequest& request, const DeleteTransitRouterRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTransitRouterRouteEntryOutcomeCallable deleteTransitRouterRouteEntryCallable(const Model::DeleteTransitRouterRouteEntryRequest& request) const;
+			DeleteTransitRouterRouteTableOutcome deleteTransitRouterRouteTable(const Model::DeleteTransitRouterRouteTableRequest &request)const;
+			void deleteTransitRouterRouteTableAsync(const Model::DeleteTransitRouterRouteTableRequest& request, const DeleteTransitRouterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTransitRouterRouteTableOutcomeCallable deleteTransitRouterRouteTableCallable(const Model::DeleteTransitRouterRouteTableRequest& request) const;
+			DeleteTransitRouterVbrAttachmentOutcome deleteTransitRouterVbrAttachment(const Model::DeleteTransitRouterVbrAttachmentRequest &request)const;
+			void deleteTransitRouterVbrAttachmentAsync(const Model::DeleteTransitRouterVbrAttachmentRequest& request, const DeleteTransitRouterVbrAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTransitRouterVbrAttachmentOutcomeCallable deleteTransitRouterVbrAttachmentCallable(const Model::DeleteTransitRouterVbrAttachmentRequest& request) const;
+			DeleteTransitRouterVpcAttachmentOutcome deleteTransitRouterVpcAttachment(const Model::DeleteTransitRouterVpcAttachmentRequest &request)const;
+			void deleteTransitRouterVpcAttachmentAsync(const Model::DeleteTransitRouterVpcAttachmentRequest& request, const DeleteTransitRouterVpcAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTransitRouterVpcAttachmentOutcomeCallable deleteTransitRouterVpcAttachmentCallable(const Model::DeleteTransitRouterVpcAttachmentRequest& request) const;
 			DescribeCenAttachedChildInstanceAttributeOutcome describeCenAttachedChildInstanceAttribute(const Model::DescribeCenAttachedChildInstanceAttributeRequest &request)const;
 			void describeCenAttachedChildInstanceAttributeAsync(const Model::DescribeCenAttachedChildInstanceAttributeRequest& request, const DescribeCenAttachedChildInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCenAttachedChildInstanceAttributeOutcomeCallable describeCenAttachedChildInstanceAttributeCallable(const Model::DescribeCenAttachedChildInstanceAttributeRequest& request) const;
@@ -409,12 +595,48 @@ namespace AlibabaCloud
 			DisableCenVbrHealthCheckOutcome disableCenVbrHealthCheck(const Model::DisableCenVbrHealthCheckRequest &request)const;
 			void disableCenVbrHealthCheckAsync(const Model::DisableCenVbrHealthCheckRequest& request, const DisableCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableCenVbrHealthCheckOutcomeCallable disableCenVbrHealthCheckCallable(const Model::DisableCenVbrHealthCheckRequest& request) const;
+			DisableTransitRouterRouteTablePropagationOutcome disableTransitRouterRouteTablePropagation(const Model::DisableTransitRouterRouteTablePropagationRequest &request)const;
+			void disableTransitRouterRouteTablePropagationAsync(const Model::DisableTransitRouterRouteTablePropagationRequest& request, const DisableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableTransitRouterRouteTablePropagationOutcomeCallable disableTransitRouterRouteTablePropagationCallable(const Model::DisableTransitRouterRouteTablePropagationRequest& request) const;
+			DissociateTransitRouterAttachmentFromRouteTableOutcome dissociateTransitRouterAttachmentFromRouteTable(const Model::DissociateTransitRouterAttachmentFromRouteTableRequest &request)const;
+			void dissociateTransitRouterAttachmentFromRouteTableAsync(const Model::DissociateTransitRouterAttachmentFromRouteTableRequest& request, const DissociateTransitRouterAttachmentFromRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DissociateTransitRouterAttachmentFromRouteTableOutcomeCallable dissociateTransitRouterAttachmentFromRouteTableCallable(const Model::DissociateTransitRouterAttachmentFromRouteTableRequest& request) const;
 			EnableCenVbrHealthCheckOutcome enableCenVbrHealthCheck(const Model::EnableCenVbrHealthCheckRequest &request)const;
 			void enableCenVbrHealthCheckAsync(const Model::EnableCenVbrHealthCheckRequest& request, const EnableCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableCenVbrHealthCheckOutcomeCallable enableCenVbrHealthCheckCallable(const Model::EnableCenVbrHealthCheckRequest& request) const;
+			EnableTransitRouterRouteTablePropagationOutcome enableTransitRouterRouteTablePropagation(const Model::EnableTransitRouterRouteTablePropagationRequest &request)const;
+			void enableTransitRouterRouteTablePropagationAsync(const Model::EnableTransitRouterRouteTablePropagationRequest& request, const EnableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableTransitRouterRouteTablePropagationOutcomeCallable enableTransitRouterRouteTablePropagationCallable(const Model::EnableTransitRouterRouteTablePropagationRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			ListTransitRouterAvailableResourceOutcome listTransitRouterAvailableResource(const Model::ListTransitRouterAvailableResourceRequest &request)const;
+			void listTransitRouterAvailableResourceAsync(const Model::ListTransitRouterAvailableResourceRequest& request, const ListTransitRouterAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterAvailableResourceOutcomeCallable listTransitRouterAvailableResourceCallable(const Model::ListTransitRouterAvailableResourceRequest& request) const;
+			ListTransitRouterPeerAttachmentsOutcome listTransitRouterPeerAttachments(const Model::ListTransitRouterPeerAttachmentsRequest &request)const;
+			void listTransitRouterPeerAttachmentsAsync(const Model::ListTransitRouterPeerAttachmentsRequest& request, const ListTransitRouterPeerAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterPeerAttachmentsOutcomeCallable listTransitRouterPeerAttachmentsCallable(const Model::ListTransitRouterPeerAttachmentsRequest& request) const;
+			ListTransitRouterRouteEntriesOutcome listTransitRouterRouteEntries(const Model::ListTransitRouterRouteEntriesRequest &request)const;
+			void listTransitRouterRouteEntriesAsync(const Model::ListTransitRouterRouteEntriesRequest& request, const ListTransitRouterRouteEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterRouteEntriesOutcomeCallable listTransitRouterRouteEntriesCallable(const Model::ListTransitRouterRouteEntriesRequest& request) const;
+			ListTransitRouterRouteTableAssociationsOutcome listTransitRouterRouteTableAssociations(const Model::ListTransitRouterRouteTableAssociationsRequest &request)const;
+			void listTransitRouterRouteTableAssociationsAsync(const Model::ListTransitRouterRouteTableAssociationsRequest& request, const ListTransitRouterRouteTableAssociationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterRouteTableAssociationsOutcomeCallable listTransitRouterRouteTableAssociationsCallable(const Model::ListTransitRouterRouteTableAssociationsRequest& request) const;
+			ListTransitRouterRouteTablePropagationsOutcome listTransitRouterRouteTablePropagations(const Model::ListTransitRouterRouteTablePropagationsRequest &request)const;
+			void listTransitRouterRouteTablePropagationsAsync(const Model::ListTransitRouterRouteTablePropagationsRequest& request, const ListTransitRouterRouteTablePropagationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterRouteTablePropagationsOutcomeCallable listTransitRouterRouteTablePropagationsCallable(const Model::ListTransitRouterRouteTablePropagationsRequest& request) const;
+			ListTransitRouterRouteTablesOutcome listTransitRouterRouteTables(const Model::ListTransitRouterRouteTablesRequest &request)const;
+			void listTransitRouterRouteTablesAsync(const Model::ListTransitRouterRouteTablesRequest& request, const ListTransitRouterRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterRouteTablesOutcomeCallable listTransitRouterRouteTablesCallable(const Model::ListTransitRouterRouteTablesRequest& request) const;
+			ListTransitRouterVbrAttachmentsOutcome listTransitRouterVbrAttachments(const Model::ListTransitRouterVbrAttachmentsRequest &request)const;
+			void listTransitRouterVbrAttachmentsAsync(const Model::ListTransitRouterVbrAttachmentsRequest& request, const ListTransitRouterVbrAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterVbrAttachmentsOutcomeCallable listTransitRouterVbrAttachmentsCallable(const Model::ListTransitRouterVbrAttachmentsRequest& request) const;
+			ListTransitRouterVpcAttachmentsOutcome listTransitRouterVpcAttachments(const Model::ListTransitRouterVpcAttachmentsRequest &request)const;
+			void listTransitRouterVpcAttachmentsAsync(const Model::ListTransitRouterVpcAttachmentsRequest& request, const ListTransitRouterVpcAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRouterVpcAttachmentsOutcomeCallable listTransitRouterVpcAttachmentsCallable(const Model::ListTransitRouterVpcAttachmentsRequest& request) const;
+			ListTransitRoutersOutcome listTransitRouters(const Model::ListTransitRoutersRequest &request)const;
+			void listTransitRoutersAsync(const Model::ListTransitRoutersRequest& request, const ListTransitRoutersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTransitRoutersOutcomeCallable listTransitRoutersCallable(const Model::ListTransitRoutersRequest& request) const;
 			ModifyCenAttributeOutcome modifyCenAttribute(const Model::ModifyCenAttributeRequest &request)const;
 			void modifyCenAttributeAsync(const Model::ModifyCenAttributeRequest& request, const ModifyCenAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCenAttributeOutcomeCallable modifyCenAttributeCallable(const Model::ModifyCenAttributeRequest& request) const;
@@ -457,6 +679,24 @@ namespace AlibabaCloud
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
+			UpdateTransitRouterOutcome updateTransitRouter(const Model::UpdateTransitRouterRequest &request)const;
+			void updateTransitRouterAsync(const Model::UpdateTransitRouterRequest& request, const UpdateTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTransitRouterOutcomeCallable updateTransitRouterCallable(const Model::UpdateTransitRouterRequest& request) const;
+			UpdateTransitRouterPeerAttachmentAttributeOutcome updateTransitRouterPeerAttachmentAttribute(const Model::UpdateTransitRouterPeerAttachmentAttributeRequest &request)const;
+			void updateTransitRouterPeerAttachmentAttributeAsync(const Model::UpdateTransitRouterPeerAttachmentAttributeRequest& request, const UpdateTransitRouterPeerAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTransitRouterPeerAttachmentAttributeOutcomeCallable updateTransitRouterPeerAttachmentAttributeCallable(const Model::UpdateTransitRouterPeerAttachmentAttributeRequest& request) const;
+			UpdateTransitRouterRouteEntryOutcome updateTransitRouterRouteEntry(const Model::UpdateTransitRouterRouteEntryRequest &request)const;
+			void updateTransitRouterRouteEntryAsync(const Model::UpdateTransitRouterRouteEntryRequest& request, const UpdateTransitRouterRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTransitRouterRouteEntryOutcomeCallable updateTransitRouterRouteEntryCallable(const Model::UpdateTransitRouterRouteEntryRequest& request) const;
+			UpdateTransitRouterRouteTableOutcome updateTransitRouterRouteTable(const Model::UpdateTransitRouterRouteTableRequest &request)const;
+			void updateTransitRouterRouteTableAsync(const Model::UpdateTransitRouterRouteTableRequest& request, const UpdateTransitRouterRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTransitRouterRouteTableOutcomeCallable updateTransitRouterRouteTableCallable(const Model::UpdateTransitRouterRouteTableRequest& request) const;
+			UpdateTransitRouterVbrAttachmentAttributeOutcome updateTransitRouterVbrAttachmentAttribute(const Model::UpdateTransitRouterVbrAttachmentAttributeRequest &request)const;
+			void updateTransitRouterVbrAttachmentAttributeAsync(const Model::UpdateTransitRouterVbrAttachmentAttributeRequest& request, const UpdateTransitRouterVbrAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTransitRouterVbrAttachmentAttributeOutcomeCallable updateTransitRouterVbrAttachmentAttributeCallable(const Model::UpdateTransitRouterVbrAttachmentAttributeRequest& request) const;
+			UpdateTransitRouterVpcAttachmentAttributeOutcome updateTransitRouterVpcAttachmentAttribute(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest &request)const;
+			void updateTransitRouterVpcAttachmentAttributeAsync(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest& request, const UpdateTransitRouterVpcAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable updateTransitRouterVpcAttachmentAttributeCallable(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest& request) const;
 			WithdrawPublishedRouteEntriesOutcome withdrawPublishedRouteEntries(const Model::WithdrawPublishedRouteEntriesRequest &request)const;
 			void withdrawPublishedRouteEntriesAsync(const Model::WithdrawPublishedRouteEntriesRequest& request, const WithdrawPublishedRouteEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			WithdrawPublishedRouteEntriesOutcomeCallable withdrawPublishedRouteEntriesCallable(const Model::WithdrawPublishedRouteEntriesRequest& request) const;

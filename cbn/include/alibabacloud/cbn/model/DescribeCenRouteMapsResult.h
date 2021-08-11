@@ -56,6 +56,7 @@ namespace AlibabaCloud
 					std::string mapResult;
 					std::string cidrMatchMode;
 					std::vector<std::string> originalRouteTableIds;
+					std::string transitRouterRouteTableId;
 					std::vector<std::string> routeTypes;
 					std::string gatewayZoneId;
 					int preference;

@@ -60,6 +60,17 @@ void DescribeCenRouteMapsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeCenRouteMapsRequest::getTransitRouterRouteTableId()const
+{
+	return transitRouterRouteTableId_;
+}
+
+void DescribeCenRouteMapsRequest::setTransitRouterRouteTableId(const std::string& transitRouterRouteTableId)
+{
+	transitRouterRouteTableId_ = transitRouterRouteTableId;
+	setParameter("TransitRouterRouteTableId", transitRouterRouteTableId);
+}
+
 int DescribeCenRouteMapsRequest::getPageSize()const
 {
 	return pageSize_;

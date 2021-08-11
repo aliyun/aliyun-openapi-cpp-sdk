@@ -121,6 +121,17 @@ void CreateCenRouteMapRequest::setOriginalRouteTableIds(const std::vector<std::s
 	}
 }
 
+std::string CreateCenRouteMapRequest::getTransitRouterRouteTableId()const
+{
+	return transitRouterRouteTableId_;
+}
+
+void CreateCenRouteMapRequest::setTransitRouterRouteTableId(const std::string& transitRouterRouteTableId)
+{
+	transitRouterRouteTableId_ = transitRouterRouteTableId;
+	setParameter("TransitRouterRouteTableId", transitRouterRouteTableId);
+}
+
 std::vector<std::string> CreateCenRouteMapRequest::getSourceInstanceIds()const
 {
 	return sourceInstanceIds_;

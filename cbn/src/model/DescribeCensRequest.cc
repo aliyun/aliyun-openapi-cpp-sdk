@@ -49,6 +49,17 @@ void DescribeCensRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeCensRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeCensRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 int DescribeCensRequest::getPageSize()const
 {
 	return pageSize_;

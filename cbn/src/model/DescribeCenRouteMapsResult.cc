@@ -79,6 +79,8 @@ void DescribeCenRouteMapsResult::parse(const std::string &payload)
 			routeMapsObject.gatewayZoneId = valueRouteMapsRouteMap["GatewayZoneId"].asString();
 		if(!valueRouteMapsRouteMap["MatchAddressType"].isNull())
 			routeMapsObject.matchAddressType = valueRouteMapsRouteMap["MatchAddressType"].asString();
+		if(!valueRouteMapsRouteMap["TransitRouterRouteTableId"].isNull())
+			routeMapsObject.transitRouterRouteTableId = valueRouteMapsRouteMap["TransitRouterRouteTableId"].asString();
 		auto allSourceInstanceIds = value["SourceInstanceIds"]["SourceInstanceId"];
 		for (auto value : allSourceInstanceIds)
 			routeMapsObject.sourceInstanceIds.push_back(value.asString());

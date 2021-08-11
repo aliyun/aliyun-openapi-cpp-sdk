@@ -83,6 +83,8 @@ void DescribeCenBandwidthPackagesResult::parse(const std::string &payload)
 			cenBandwidthPackagesObject.reservationActiveTime = valueCenBandwidthPackagesCenBandwidthPackage["ReservationActiveTime"].asString();
 		if(!valueCenBandwidthPackagesCenBandwidthPackage["ReservationOrderType"].isNull())
 			cenBandwidthPackagesObject.reservationOrderType = valueCenBandwidthPackagesCenBandwidthPackage["ReservationOrderType"].asString();
+		if(!valueCenBandwidthPackagesCenBandwidthPackage["ResourceGroupId"].isNull())
+			cenBandwidthPackagesObject.resourceGroupId = valueCenBandwidthPackagesCenBandwidthPackage["ResourceGroupId"].asString();
 		auto allOrginInterRegionBandwidthLimitsNode = valueCenBandwidthPackagesCenBandwidthPackage["OrginInterRegionBandwidthLimits"]["OrginInterRegionBandwidthLimit"];
 		for (auto valueCenBandwidthPackagesCenBandwidthPackageOrginInterRegionBandwidthLimitsOrginInterRegionBandwidthLimit : allOrginInterRegionBandwidthLimitsNode)
 		{

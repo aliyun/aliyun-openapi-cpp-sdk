@@ -82,6 +82,17 @@ void CreateCenBandwidthPackageRequest::setBandwidthPackageChargeType(const std::
 	setParameter("BandwidthPackageChargeType", bandwidthPackageChargeType);
 }
 
+std::string CreateCenBandwidthPackageRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateCenBandwidthPackageRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateCenBandwidthPackageRequest::getGeographicRegionBId()const
 {
 	return geographicRegionBId_;

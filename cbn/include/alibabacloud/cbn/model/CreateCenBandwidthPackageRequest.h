@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setAutoRenewDuration(int autoRenewDuration);
 				std::string getBandwidthPackageChargeType()const;
 				void setBandwidthPackageChargeType(const std::string& bandwidthPackageChargeType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getGeographicRegionBId()const;
 				void setGeographicRegionBId(const std::string& geographicRegionBId);
 				int getPeriod()const;
@@ -74,6 +76,7 @@ namespace AlibabaCloud
 				std::string description_;
 				int autoRenewDuration_;
 				std::string bandwidthPackageChargeType_;
+				std::string resourceGroupId_;
 				std::string geographicRegionBId_;
 				int period_;
 				std::string geographicRegionAId_;

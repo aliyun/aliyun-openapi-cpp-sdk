@@ -54,6 +54,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				bool getIsOrKey()const;
 				void setIsOrKey(bool isOrKey);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
@@ -72,6 +74,7 @@ namespace AlibabaCloud
 				bool includeReservationData_;
 				int pageNumber_;
 				bool isOrKey_;
+				std::string resourceGroupId_;
 				int pageSize_;
 				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;
