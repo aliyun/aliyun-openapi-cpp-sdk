@@ -115,6 +115,17 @@ void DescribeAvailableResourceRequest::setInstanceChargeType(const std::string& 
 	setParameter("InstanceChargeType", instanceChargeType);
 }
 
+std::string DescribeAvailableResourceRequest::getNodeId()const
+{
+	return nodeId_;
+}
+
+void DescribeAvailableResourceRequest::setNodeId(const std::string& nodeId)
+{
+	nodeId_ = nodeId;
+	setParameter("NodeId", nodeId);
+}
+
 std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

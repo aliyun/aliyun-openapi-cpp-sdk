@@ -50,6 +50,7 @@ namespace AlibabaCloud
 											{
 												struct AvailableResource
 												{
+													long capacity;
 													std::string instanceClassRemark;
 													std::string instanceClass;
 												};

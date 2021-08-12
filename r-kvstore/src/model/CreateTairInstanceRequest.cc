@@ -368,6 +368,17 @@ void CreateTairInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string CreateTairInstanceRequest::getGlobalInstanceId()const
+{
+	return globalInstanceId_;
+}
+
+void CreateTairInstanceRequest::setGlobalInstanceId(const std::string& globalInstanceId)
+{
+	globalInstanceId_ = globalInstanceId;
+	setParameter("GlobalInstanceId", globalInstanceId);
+}
+
 std::string CreateTairInstanceRequest::getVpcId()const
 {
 	return vpcId_;

@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setEngine(const std::string& engine);
 				std::string getInstanceChargeType()const;
 				void setInstanceChargeType(const std::string& instanceChargeType);
+				std::string getNodeId()const;
+				void setNodeId(const std::string& nodeId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getLevel()const;
@@ -77,6 +79,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string engine_;
 				std::string instanceChargeType_;
+				std::string nodeId_;
 				std::string resourceOwnerAccount_;
 				std::string level_;
 				std::string ownerAccount_;

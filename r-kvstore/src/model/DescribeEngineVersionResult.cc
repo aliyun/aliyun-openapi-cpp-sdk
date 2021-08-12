@@ -51,6 +51,12 @@ void DescribeEngineVersionResult::parse(const std::string &payload)
 		majorVersion_ = value["MajorVersion"].asString();
 	if(!value["EnableUpgradeMajorVersion"].isNull())
 		enableUpgradeMajorVersion_ = value["EnableUpgradeMajorVersion"].asString() == "true";
+	if(!value["ProxyMinorVersion"].isNull())
+		proxyMinorVersion_ = value["ProxyMinorVersion"].asString();
+	if(!value["DBVersionRelease"].isNull())
+		dBVersionRelease_ = value["DBVersionRelease"].asString();
+	if(!value["ProxyVersionRelease"].isNull())
+		proxyVersionRelease_ = value["ProxyVersionRelease"].asString();
 
 }
 
@@ -69,6 +75,11 @@ std::string DescribeEngineVersionResult::getMinorVersion()const
 	return minorVersion_;
 }
 
+std::string DescribeEngineVersionResult::getProxyMinorVersion()const
+{
+	return proxyMinorVersion_;
+}
+
 std::string DescribeEngineVersionResult::getEngine()const
 {
 	return engine_;
@@ -79,8 +90,18 @@ bool DescribeEngineVersionResult::getEnableUpgradeMinorVersion()const
 	return enableUpgradeMinorVersion_;
 }
 
+std::string DescribeEngineVersionResult::getProxyVersionRelease()const
+{
+	return proxyVersionRelease_;
+}
+
 bool DescribeEngineVersionResult::getEnableUpgradeMajorVersion()const
 {
 	return enableUpgradeMajorVersion_;
+}
+
+std::string DescribeEngineVersionResult::getDBVersionRelease()const
+{
+	return dBVersionRelease_;
 }
 

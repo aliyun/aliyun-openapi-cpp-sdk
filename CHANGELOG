@@ -1,3 +1,7 @@
+2021-08-12 Version: 1.36.849
+- DescirbeAvailableResource add NodeId input parameter.
+- CreateTairInstance add GlobalInstanceId input paramter.
+
 2021-08-11 Version: 1.36.848
 - Support CEN latest Apis.
 
