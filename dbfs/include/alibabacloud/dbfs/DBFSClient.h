@@ -44,6 +44,8 @@
 #include "model/DeleteSnapshotResult.h"
 #include "model/DeleteTagsBatchRequest.h"
 #include "model/DeleteTagsBatchResult.h"
+#include "model/DescribeDbfsSpecificationsRequest.h"
+#include "model/DescribeDbfsSpecificationsResult.h"
 #include "model/DetachDbfsRequest.h"
 #include "model/DetachDbfsResult.h"
 #include "model/GenerateUpgradeRecordRequest.h"
@@ -128,6 +130,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteTagsBatchResult> DeleteTagsBatchOutcome;
 			typedef std::future<DeleteTagsBatchOutcome> DeleteTagsBatchOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::DeleteTagsBatchRequest&, const DeleteTagsBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagsBatchAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDbfsSpecificationsResult> DescribeDbfsSpecificationsOutcome;
+			typedef std::future<DescribeDbfsSpecificationsOutcome> DescribeDbfsSpecificationsOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::DescribeDbfsSpecificationsRequest&, const DescribeDbfsSpecificationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDbfsSpecificationsAsyncHandler;
 			typedef Outcome<Error, Model::DetachDbfsResult> DetachDbfsOutcome;
 			typedef std::future<DetachDbfsOutcome> DetachDbfsOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::DetachDbfsRequest&, const DetachDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachDbfsAsyncHandler;
@@ -229,6 +234,9 @@ namespace AlibabaCloud
 			DeleteTagsBatchOutcome deleteTagsBatch(const Model::DeleteTagsBatchRequest &request)const;
 			void deleteTagsBatchAsync(const Model::DeleteTagsBatchRequest& request, const DeleteTagsBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTagsBatchOutcomeCallable deleteTagsBatchCallable(const Model::DeleteTagsBatchRequest& request) const;
+			DescribeDbfsSpecificationsOutcome describeDbfsSpecifications(const Model::DescribeDbfsSpecificationsRequest &request)const;
+			void describeDbfsSpecificationsAsync(const Model::DescribeDbfsSpecificationsRequest& request, const DescribeDbfsSpecificationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDbfsSpecificationsOutcomeCallable describeDbfsSpecificationsCallable(const Model::DescribeDbfsSpecificationsRequest& request) const;
 			DetachDbfsOutcome detachDbfs(const Model::DetachDbfsRequest &request)const;
 			void detachDbfsAsync(const Model::DetachDbfsRequest& request, const DetachDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachDbfsOutcomeCallable detachDbfsCallable(const Model::DetachDbfsRequest& request) const;

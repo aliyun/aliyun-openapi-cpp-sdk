@@ -43,6 +43,8 @@ set(dbfs_public_header_model
 	include/alibabacloud/dbfs/model/DeleteSnapshotResult.h
 	include/alibabacloud/dbfs/model/DeleteTagsBatchRequest.h
 	include/alibabacloud/dbfs/model/DeleteTagsBatchResult.h
+	include/alibabacloud/dbfs/model/DescribeDbfsSpecificationsRequest.h
+	include/alibabacloud/dbfs/model/DescribeDbfsSpecificationsResult.h
 	include/alibabacloud/dbfs/model/DetachDbfsRequest.h
 	include/alibabacloud/dbfs/model/DetachDbfsResult.h
 	include/alibabacloud/dbfs/model/GenerateUpgradeRecordRequest.h
@@ -110,6 +112,8 @@ set(dbfs_src
 	src/model/DeleteSnapshotResult.cc
 	src/model/DeleteTagsBatchRequest.cc
 	src/model/DeleteTagsBatchResult.cc
+	src/model/DescribeDbfsSpecificationsRequest.cc
+	src/model/DescribeDbfsSpecificationsResult.cc
 	src/model/DetachDbfsRequest.cc
 	src/model/DetachDbfsResult.cc
 	src/model/GenerateUpgradeRecordRequest.cc

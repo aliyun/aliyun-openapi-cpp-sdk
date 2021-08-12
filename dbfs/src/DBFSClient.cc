@@ -447,6 +447,42 @@ DBFSClient::DeleteTagsBatchOutcomeCallable DBFSClient::deleteTagsBatchCallable(c
 	return task->get_future();
 }
 
+DBFSClient::DescribeDbfsSpecificationsOutcome DBFSClient::describeDbfsSpecifications(const DescribeDbfsSpecificationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDbfsSpecificationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDbfsSpecificationsOutcome(DescribeDbfsSpecificationsResult(outcome.result()));
+	else
+		return DescribeDbfsSpecificationsOutcome(outcome.error());
+}
+
+void DBFSClient::describeDbfsSpecificationsAsync(const DescribeDbfsSpecificationsRequest& request, const DescribeDbfsSpecificationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDbfsSpecifications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::DescribeDbfsSpecificationsOutcomeCallable DBFSClient::describeDbfsSpecificationsCallable(const DescribeDbfsSpecificationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDbfsSpecificationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDbfsSpecifications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DBFSClient::DetachDbfsOutcome DBFSClient::detachDbfs(const DetachDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
