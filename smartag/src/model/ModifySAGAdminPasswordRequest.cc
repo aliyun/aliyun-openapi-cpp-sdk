@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Smartag::Model::ModifySAGAdminPasswordRequest;
 
-ModifySAGAdminPasswordRequest::ModifySAGAdminPasswordRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "ModifySAGAdminPassword")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifySAGAdminPasswordRequest::ModifySAGAdminPasswordRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "ModifySAGAdminPassword") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifySAGAdminPasswordRequest::~ModifySAGAdminPasswordRequest()
-{}
+ModifySAGAdminPasswordRequest::~ModifySAGAdminPasswordRequest() {}
 
-long ModifySAGAdminPasswordRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifySAGAdminPasswordRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifySAGAdminPasswordRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifySAGAdminPasswordRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifySAGAdminPasswordRequest::getPassword()const
-{
-	return password_;
+std::string ModifySAGAdminPasswordRequest::getPassword() const {
+  return password_;
 }
 
-void ModifySAGAdminPasswordRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setParameter("Password", password);
+void ModifySAGAdminPasswordRequest::setPassword(const std::string &password) {
+  password_ = password;
+  setParameter(std::string("Password"), password);
 }
 
-std::string ModifySAGAdminPasswordRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifySAGAdminPasswordRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifySAGAdminPasswordRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifySAGAdminPasswordRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifySAGAdminPasswordRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifySAGAdminPasswordRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifySAGAdminPasswordRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifySAGAdminPasswordRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ModifySAGAdminPasswordRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifySAGAdminPasswordRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifySAGAdminPasswordRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifySAGAdminPasswordRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ModifySAGAdminPasswordRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifySAGAdminPasswordRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifySAGAdminPasswordRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifySAGAdminPasswordRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifySAGAdminPasswordRequest::getSmartAGId()const
-{
-	return smartAGId_;
+std::string ModifySAGAdminPasswordRequest::getSmartAGId() const {
+  return smartAGId_;
 }
 
-void ModifySAGAdminPasswordRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+void ModifySAGAdminPasswordRequest::setSmartAGId(const std::string &smartAGId) {
+  smartAGId_ = smartAGId;
+  setParameter(std::string("SmartAGId"), smartAGId);
 }
 
-std::string ModifySAGAdminPasswordRequest::getSmartAGSn()const
-{
-	return smartAGSn_;
+std::string ModifySAGAdminPasswordRequest::getSmartAGSn() const {
+  return smartAGSn_;
 }
 
-void ModifySAGAdminPasswordRequest::setSmartAGSn(const std::string& smartAGSn)
-{
-	smartAGSn_ = smartAGSn;
-	setParameter("SmartAGSn", smartAGSn);
+void ModifySAGAdminPasswordRequest::setSmartAGSn(const std::string &smartAGSn) {
+  smartAGSn_ = smartAGSn;
+  setParameter(std::string("SmartAGSn"), smartAGSn);
 }
 

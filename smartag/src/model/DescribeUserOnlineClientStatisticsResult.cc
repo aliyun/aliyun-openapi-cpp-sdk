@@ -43,10 +43,10 @@ void DescribeUserOnlineClientStatisticsResult::parse(const std::string &payload)
 	for (auto valueUserStatisticsStatistics : allUserStatisticsNode)
 	{
 		Statistics userStatisticsObject;
-		if(!valueUserStatisticsStatistics["UserName"].isNull())
-			userStatisticsObject.userName = valueUserStatisticsStatistics["UserName"].asString();
 		if(!valueUserStatisticsStatistics["OnlineCount"].isNull())
 			userStatisticsObject.onlineCount = valueUserStatisticsStatistics["OnlineCount"].asString();
+		if(!valueUserStatisticsStatistics["UserName"].isNull())
+			userStatisticsObject.userName = valueUserStatisticsStatistics["UserName"].asString();
 		userStatistics_.push_back(userStatisticsObject);
 	}
 

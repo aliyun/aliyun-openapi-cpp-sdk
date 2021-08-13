@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,100 @@
 
 using AlibabaCloud::Smartag::Model::DescribeQosesRequest;
 
-DescribeQosesRequest::DescribeQosesRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "DescribeQoses")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeQosesRequest::DescribeQosesRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "DescribeQoses") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeQosesRequest::~DescribeQosesRequest()
-{}
+DescribeQosesRequest::~DescribeQosesRequest() {}
 
-long DescribeQosesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeQosesRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeQosesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeQosesRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeQosesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeQosesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeQosesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeQosesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeQosesRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeQosesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void DescribeQosesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeQosesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-int DescribeQosesRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeQosesRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeQosesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeQosesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeQosesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+int DescribeQosesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeQosesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeQosesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeQosesRequest::getQosIds()const
-{
-	return qosIds_;
+std::string DescribeQosesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeQosesRequest::setQosIds(const std::string& qosIds)
-{
-	qosIds_ = qosIds;
-	setParameter("QosIds", qosIds);
+void DescribeQosesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeQosesRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeQosesRequest::getQosIds() const {
+  return qosIds_;
 }
 
-void DescribeQosesRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeQosesRequest::setQosIds(const std::string &qosIds) {
+  qosIds_ = qosIds;
+  setParameter(std::string("QosIds"), qosIds);
 }
 
-long DescribeQosesRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeQosesRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeQosesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeQosesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string DescribeQosesRequest::getQosName()const
-{
-	return qosName_;
+long DescribeQosesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeQosesRequest::setQosName(const std::string& qosName)
-{
-	qosName_ = qosName;
-	setParameter("QosName", qosName);
+void DescribeQosesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeQosesRequest::getQosName() const {
+  return qosName_;
+}
+
+void DescribeQosesRequest::setQosName(const std::string &qosName) {
+  qosName_ = qosName;
+  setParameter(std::string("QosName"), qosName);
 }
 

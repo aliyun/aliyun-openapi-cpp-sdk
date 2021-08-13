@@ -34,11 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct FlowLogSetType
 				{
-					std::string netflowServerPort;
 					std::string status;
+					std::string netflowServerPort;
 					std::string logstoreName;
 					std::string description;
 					int activeAging;
+					std::string resourceGroupId;
 					std::string projectName;
 					std::string netflowServerIp;
 					std::string netflowVersion;

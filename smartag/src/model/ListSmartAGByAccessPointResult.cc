@@ -43,20 +43,20 @@ void ListSmartAGByAccessPointResult::parse(const std::string &payload)
 	for (auto valueSmartAccessGatewaysSmartAccessGateway : allSmartAccessGatewaysNode)
 	{
 		SmartAccessGateway smartAccessGatewaysObject;
-		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGName"].isNull())
-			smartAccessGatewaysObject.smartAGName = valueSmartAccessGatewaysSmartAccessGateway["SmartAGName"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGStatus"].isNull())
-			smartAccessGatewaysObject.smartAGStatus = valueSmartAccessGatewaysSmartAccessGateway["SmartAGStatus"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["RoutingStrategy"].isNull())
 			smartAccessGatewaysObject.routingStrategy = valueSmartAccessGatewaysSmartAccessGateway["RoutingStrategy"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnId"].isNull())
-			smartAccessGatewaysObject.associatedCcnId = valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGName"].isNull())
+			smartAccessGatewaysObject.smartAGName = valueSmartAccessGatewaysSmartAccessGateway["SmartAGName"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].isNull())
 			smartAccessGatewaysObject.smartAGId = valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].asString();
-		if(!valueSmartAccessGatewaysSmartAccessGateway["HardwareVersion"].isNull())
-			smartAccessGatewaysObject.hardwareVersion = valueSmartAccessGatewaysSmartAccessGateway["HardwareVersion"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGStatus"].isNull())
+			smartAccessGatewaysObject.smartAGStatus = valueSmartAccessGatewaysSmartAccessGateway["SmartAGStatus"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGDescription"].isNull())
 			smartAccessGatewaysObject.smartAGDescription = valueSmartAccessGatewaysSmartAccessGateway["SmartAGDescription"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnId"].isNull())
+			smartAccessGatewaysObject.associatedCcnId = valueSmartAccessGatewaysSmartAccessGateway["AssociatedCcnId"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["HardwareVersion"].isNull())
+			smartAccessGatewaysObject.hardwareVersion = valueSmartAccessGatewaysSmartAccessGateway["HardwareVersion"].asString();
 		smartAccessGateways_.push_back(smartAccessGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

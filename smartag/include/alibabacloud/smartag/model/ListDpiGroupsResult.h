@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct DpiGroupItem
 				{
 					std::string minEngineVersion;
-					std::string dpiGroupName;
 					std::string minSignatureDbVersion;
+					std::string dpiGroupName;
 					std::string dpiGroupId;
 				};
 

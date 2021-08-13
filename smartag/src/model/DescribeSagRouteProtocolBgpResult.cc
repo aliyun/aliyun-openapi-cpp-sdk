@@ -43,26 +43,26 @@ void DescribeSagRouteProtocolBgpResult::parse(const std::string &payload)
 	for (auto valueTaskStatesTaskState : allTaskStatesNode)
 	{
 		TaskState taskStatesObject;
-		if(!valueTaskStatesTaskState["State"].isNull())
-			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
-		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
-			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
+		if(!valueTaskStatesTaskState["State"].isNull())
+			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
+			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 	if(!value["HoldTime"].isNull())
 		holdTime_ = std::stoi(value["HoldTime"].asString());
-	if(!value["AdvertiseIps"].isNull())
-		advertiseIps_ = value["AdvertiseIps"].asString();
 	if(!value["KeepAlive"].isNull())
 		keepAlive_ = std::stoi(value["KeepAlive"].asString());
-	if(!value["RouterId"].isNull())
-		routerId_ = value["RouterId"].asString();
 	if(!value["LocalAs"].isNull())
 		localAs_ = std::stoi(value["LocalAs"].asString());
+	if(!value["RouterId"].isNull())
+		routerId_ = value["RouterId"].asString();
+	if(!value["AdvertiseIps"].isNull())
+		advertiseIps_ = value["AdvertiseIps"].asString();
 
 }
 
@@ -81,14 +81,14 @@ int DescribeSagRouteProtocolBgpResult::getKeepAlive()const
 	return keepAlive_;
 }
 
-std::string DescribeSagRouteProtocolBgpResult::getRouterId()const
-{
-	return routerId_;
-}
-
 int DescribeSagRouteProtocolBgpResult::getLocalAs()const
 {
 	return localAs_;
+}
+
+std::string DescribeSagRouteProtocolBgpResult::getRouterId()const
+{
+	return routerId_;
 }
 
 std::vector<DescribeSagRouteProtocolBgpResult::TaskState> DescribeSagRouteProtocolBgpResult::getTaskStates()const

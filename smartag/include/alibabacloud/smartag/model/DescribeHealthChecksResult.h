@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct HealthCheck
 				{
 					std::string status;
-					std::string description;
 					int srcPort;
+					std::string description;
 					std::string srcIpAddr;
 					int failCountThreshold;
 					int dstPort;
@@ -46,8 +46,8 @@ namespace AlibabaCloud
 					int probeTimeout;
 					std::string hcInstanceId;
 					int rttThreshold;
-					int probeInterval;
 					int relationCount;
+					int probeInterval;
 					std::string smartAGId;
 					int rttFailThreshold;
 					std::string dstIpAddr;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Smartag::Model::DeleteEnterpriseCodeRequest;
 
-DeleteEnterpriseCodeRequest::DeleteEnterpriseCodeRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "DeleteEnterpriseCode")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteEnterpriseCodeRequest::DeleteEnterpriseCodeRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "DeleteEnterpriseCode") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteEnterpriseCodeRequest::~DeleteEnterpriseCodeRequest()
-{}
+DeleteEnterpriseCodeRequest::~DeleteEnterpriseCodeRequest() {}
 
-std::string DeleteEnterpriseCodeRequest::getClientToken()const
-{
-	return clientToken_;
+std::string DeleteEnterpriseCodeRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DeleteEnterpriseCodeRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DeleteEnterpriseCodeRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DeleteEnterpriseCodeRequest::getRegionId()const
-{
-	return regionId_;
+std::string DeleteEnterpriseCodeRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeleteEnterpriseCodeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DeleteEnterpriseCodeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DeleteEnterpriseCodeRequest::getEnterpriseCode()const
-{
-	return enterpriseCode_;
+std::string DeleteEnterpriseCodeRequest::getEnterpriseCode() const {
+  return enterpriseCode_;
 }
 
-void DeleteEnterpriseCodeRequest::setEnterpriseCode(const std::string& enterpriseCode)
-{
-	enterpriseCode_ = enterpriseCode;
-	setParameter("EnterpriseCode", enterpriseCode);
+void DeleteEnterpriseCodeRequest::setEnterpriseCode(const std::string &enterpriseCode) {
+  enterpriseCode_ = enterpriseCode;
+  setParameter(std::string("EnterpriseCode"), enterpriseCode);
 }
 
-bool DeleteEnterpriseCodeRequest::getDryRun()const
-{
-	return dryRun_;
+bool DeleteEnterpriseCodeRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void DeleteEnterpriseCodeRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void DeleteEnterpriseCodeRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 

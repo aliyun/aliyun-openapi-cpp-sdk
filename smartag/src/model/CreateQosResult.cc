@@ -41,7 +41,14 @@ void CreateQosResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["QosId"].isNull())
 		qosId_ = value["QosId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string CreateQosResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateQosResult::getQosId()const

@@ -43,32 +43,32 @@ void DescribeSagWifiResult::parse(const std::string &payload)
 	for (auto valueTaskStatesTaskState : allTaskStatesNode)
 	{
 		TaskState taskStatesObject;
-		if(!valueTaskStatesTaskState["State"].isNull())
-			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
-		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
-			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
+		if(!valueTaskStatesTaskState["State"].isNull())
+			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
+			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 	if(!value["IsEnable"].isNull())
 		isEnable_ = value["IsEnable"].asString();
-	if(!value["Channel"].isNull())
-		channel_ = value["Channel"].asString();
-	if(!value["Bandwidth"].isNull())
-		bandwidth_ = value["Bandwidth"].asString();
 	if(!value["IsAuth"].isNull())
 		isAuth_ = value["IsAuth"].asString();
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = value["Bandwidth"].asString();
+	if(!value["Channel"].isNull())
+		channel_ = value["Channel"].asString();
 	if(!value["Ssid"].isNull())
 		ssid_ = value["Ssid"].asString();
-	if(!value["IsBroadcast"].isNull())
-		isBroadcast_ = value["IsBroadcast"].asString();
-	if(!value["EncryptAlgorithm"].isNull())
-		encryptAlgorithm_ = value["EncryptAlgorithm"].asString();
 	if(!value["AuthenticationType"].isNull())
 		authenticationType_ = value["AuthenticationType"].asString();
+	if(!value["EncryptAlgorithm"].isNull())
+		encryptAlgorithm_ = value["EncryptAlgorithm"].asString();
+	if(!value["IsBroadcast"].isNull())
+		isBroadcast_ = value["IsBroadcast"].asString();
 
 }
 
@@ -77,9 +77,9 @@ std::string DescribeSagWifiResult::getIsEnable()const
 	return isEnable_;
 }
 
-std::string DescribeSagWifiResult::getChannel()const
+std::string DescribeSagWifiResult::getIsAuth()const
 {
-	return channel_;
+	return isAuth_;
 }
 
 std::string DescribeSagWifiResult::getBandwidth()const
@@ -87,9 +87,9 @@ std::string DescribeSagWifiResult::getBandwidth()const
 	return bandwidth_;
 }
 
-std::string DescribeSagWifiResult::getIsAuth()const
+std::string DescribeSagWifiResult::getChannel()const
 {
-	return isAuth_;
+	return channel_;
 }
 
 std::vector<DescribeSagWifiResult::TaskState> DescribeSagWifiResult::getTaskStates()const
@@ -102,9 +102,9 @@ std::string DescribeSagWifiResult::getSsid()const
 	return ssid_;
 }
 
-std::string DescribeSagWifiResult::getIsBroadcast()const
+std::string DescribeSagWifiResult::getAuthenticationType()const
 {
-	return isBroadcast_;
+	return authenticationType_;
 }
 
 std::string DescribeSagWifiResult::getEncryptAlgorithm()const
@@ -112,8 +112,8 @@ std::string DescribeSagWifiResult::getEncryptAlgorithm()const
 	return encryptAlgorithm_;
 }
 
-std::string DescribeSagWifiResult::getAuthenticationType()const
+std::string DescribeSagWifiResult::getIsBroadcast()const
 {
-	return authenticationType_;
+	return isBroadcast_;
 }
 

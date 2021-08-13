@@ -43,10 +43,10 @@ void DescribeSagOnlineClientStatisticsResult::parse(const std::string &payload)
 	for (auto valueSagStatisticsStatistics : allSagStatisticsNode)
 	{
 		Statistics sagStatisticsObject;
-		if(!valueSagStatisticsStatistics["OnlineCount"].isNull())
-			sagStatisticsObject.onlineCount = valueSagStatisticsStatistics["OnlineCount"].asString();
 		if(!valueSagStatisticsStatistics["SmartAGId"].isNull())
 			sagStatisticsObject.smartAGId = valueSagStatisticsStatistics["SmartAGId"].asString();
+		if(!valueSagStatisticsStatistics["OnlineCount"].isNull())
+			sagStatisticsObject.onlineCount = valueSagStatisticsStatistics["OnlineCount"].asString();
 		sagStatistics_.push_back(sagStatisticsObject);
 	}
 

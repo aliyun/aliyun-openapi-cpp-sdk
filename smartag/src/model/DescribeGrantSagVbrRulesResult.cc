@@ -43,22 +43,22 @@ void DescribeGrantSagVbrRulesResult::parse(const std::string &payload)
 	for (auto valueGrantRulesGrantRule : allGrantRulesNode)
 	{
 		GrantRule grantRulesObject;
-		if(!valueGrantRulesGrantRule["VbrUid"].isNull())
-			grantRulesObject.vbrUid = std::stol(valueGrantRulesGrantRule["VbrUid"].asString());
-		if(!valueGrantRulesGrantRule["SmartAGUid"].isNull())
-			grantRulesObject.smartAGUid = std::stol(valueGrantRulesGrantRule["SmartAGUid"].asString());
 		if(!valueGrantRulesGrantRule["VbrInstanceId"].isNull())
 			grantRulesObject.vbrInstanceId = valueGrantRulesGrantRule["VbrInstanceId"].asString();
-		if(!valueGrantRulesGrantRule["InstanceId"].isNull())
-			grantRulesObject.instanceId = valueGrantRulesGrantRule["InstanceId"].asString();
-		if(!valueGrantRulesGrantRule["CreateTime"].isNull())
-			grantRulesObject.createTime = std::stol(valueGrantRulesGrantRule["CreateTime"].asString());
-		if(!valueGrantRulesGrantRule["Bound"].isNull())
-			grantRulesObject.bound = valueGrantRulesGrantRule["Bound"].asString() == "true";
+		if(!valueGrantRulesGrantRule["VbrUid"].isNull())
+			grantRulesObject.vbrUid = std::stol(valueGrantRulesGrantRule["VbrUid"].asString());
 		if(!valueGrantRulesGrantRule["VbrRegionId"].isNull())
 			grantRulesObject.vbrRegionId = valueGrantRulesGrantRule["VbrRegionId"].asString();
+		if(!valueGrantRulesGrantRule["CreateTime"].isNull())
+			grantRulesObject.createTime = std::stol(valueGrantRulesGrantRule["CreateTime"].asString());
 		if(!valueGrantRulesGrantRule["SmartAGId"].isNull())
 			grantRulesObject.smartAGId = valueGrantRulesGrantRule["SmartAGId"].asString();
+		if(!valueGrantRulesGrantRule["Bound"].isNull())
+			grantRulesObject.bound = valueGrantRulesGrantRule["Bound"].asString() == "true";
+		if(!valueGrantRulesGrantRule["InstanceId"].isNull())
+			grantRulesObject.instanceId = valueGrantRulesGrantRule["InstanceId"].asString();
+		if(!valueGrantRulesGrantRule["SmartAGUid"].isNull())
+			grantRulesObject.smartAGUid = std::stol(valueGrantRulesGrantRule["SmartAGUid"].asString());
 		grantRules_.push_back(grantRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

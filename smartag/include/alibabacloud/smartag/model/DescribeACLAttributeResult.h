@@ -45,8 +45,8 @@ namespace AlibabaCloud
 					std::string direction;
 					std::vector<std::string> dpiGroupIds;
 					std::string name;
-					long gmtCreate;
 					std::string type;
+					long gmtCreate;
 					std::string destCidr;
 					std::vector<std::string> dpiSignatureIds;
 					std::string ipProtocol;

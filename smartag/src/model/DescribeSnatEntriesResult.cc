@@ -43,12 +43,12 @@ void DescribeSnatEntriesResult::parse(const std::string &payload)
 	for (auto valueSnatEntriesSnatEntry : allSnatEntriesNode)
 	{
 		SnatEntry snatEntriesObject;
-		if(!valueSnatEntriesSnatEntry["InstanceId"].isNull())
-			snatEntriesObject.instanceId = valueSnatEntriesSnatEntry["InstanceId"].asString();
-		if(!valueSnatEntriesSnatEntry["CreateTime"].isNull())
-			snatEntriesObject.createTime = std::stol(valueSnatEntriesSnatEntry["CreateTime"].asString());
 		if(!valueSnatEntriesSnatEntry["CidrBlock"].isNull())
 			snatEntriesObject.cidrBlock = valueSnatEntriesSnatEntry["CidrBlock"].asString();
+		if(!valueSnatEntriesSnatEntry["CreateTime"].isNull())
+			snatEntriesObject.createTime = std::stol(valueSnatEntriesSnatEntry["CreateTime"].asString());
+		if(!valueSnatEntriesSnatEntry["InstanceId"].isNull())
+			snatEntriesObject.instanceId = valueSnatEntriesSnatEntry["InstanceId"].asString();
 		if(!valueSnatEntriesSnatEntry["SnatIp"].isNull())
 			snatEntriesObject.snatIp = valueSnatEntriesSnatEntry["SnatIp"].asString();
 		snatEntries_.push_back(snatEntriesObject);

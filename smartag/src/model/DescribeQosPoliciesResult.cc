@@ -43,30 +43,30 @@ void DescribeQosPoliciesResult::parse(const std::string &payload)
 	for (auto valueQosPoliciesQosPolicy : allQosPoliciesNode)
 	{
 		QosPolicy qosPoliciesObject;
-		if(!valueQosPoliciesQosPolicy["DestCidr"].isNull())
-			qosPoliciesObject.destCidr = valueQosPoliciesQosPolicy["DestCidr"].asString();
-		if(!valueQosPoliciesQosPolicy["Description"].isNull())
-			qosPoliciesObject.description = valueQosPoliciesQosPolicy["Description"].asString();
-		if(!valueQosPoliciesQosPolicy["SourcePortRange"].isNull())
-			qosPoliciesObject.sourcePortRange = valueQosPoliciesQosPolicy["SourcePortRange"].asString();
-		if(!valueQosPoliciesQosPolicy["QosPolicyId"].isNull())
-			qosPoliciesObject.qosPolicyId = valueQosPoliciesQosPolicy["QosPolicyId"].asString();
-		if(!valueQosPoliciesQosPolicy["EndTime"].isNull())
-			qosPoliciesObject.endTime = valueQosPoliciesQosPolicy["EndTime"].asString();
-		if(!valueQosPoliciesQosPolicy["SourceCidr"].isNull())
-			qosPoliciesObject.sourceCidr = valueQosPoliciesQosPolicy["SourceCidr"].asString();
-		if(!valueQosPoliciesQosPolicy["Priority"].isNull())
-			qosPoliciesObject.priority = std::stoi(valueQosPoliciesQosPolicy["Priority"].asString());
-		if(!valueQosPoliciesQosPolicy["StartTime"].isNull())
-			qosPoliciesObject.startTime = valueQosPoliciesQosPolicy["StartTime"].asString();
-		if(!valueQosPoliciesQosPolicy["QosId"].isNull())
-			qosPoliciesObject.qosId = valueQosPoliciesQosPolicy["QosId"].asString();
 		if(!valueQosPoliciesQosPolicy["IpProtocol"].isNull())
 			qosPoliciesObject.ipProtocol = valueQosPoliciesQosPolicy["IpProtocol"].asString();
+		if(!valueQosPoliciesQosPolicy["QosId"].isNull())
+			qosPoliciesObject.qosId = valueQosPoliciesQosPolicy["QosId"].asString();
+		if(!valueQosPoliciesQosPolicy["Priority"].isNull())
+			qosPoliciesObject.priority = std::stoi(valueQosPoliciesQosPolicy["Priority"].asString());
+		if(!valueQosPoliciesQosPolicy["EndTime"].isNull())
+			qosPoliciesObject.endTime = valueQosPoliciesQosPolicy["EndTime"].asString();
+		if(!valueQosPoliciesQosPolicy["StartTime"].isNull())
+			qosPoliciesObject.startTime = valueQosPoliciesQosPolicy["StartTime"].asString();
+		if(!valueQosPoliciesQosPolicy["Description"].isNull())
+			qosPoliciesObject.description = valueQosPoliciesQosPolicy["Description"].asString();
+		if(!valueQosPoliciesQosPolicy["DestCidr"].isNull())
+			qosPoliciesObject.destCidr = valueQosPoliciesQosPolicy["DestCidr"].asString();
 		if(!valueQosPoliciesQosPolicy["DestPortRange"].isNull())
 			qosPoliciesObject.destPortRange = valueQosPoliciesQosPolicy["DestPortRange"].asString();
+		if(!valueQosPoliciesQosPolicy["QosPolicyId"].isNull())
+			qosPoliciesObject.qosPolicyId = valueQosPoliciesQosPolicy["QosPolicyId"].asString();
 		if(!valueQosPoliciesQosPolicy["Name"].isNull())
 			qosPoliciesObject.name = valueQosPoliciesQosPolicy["Name"].asString();
+		if(!valueQosPoliciesQosPolicy["SourceCidr"].isNull())
+			qosPoliciesObject.sourceCidr = valueQosPoliciesQosPolicy["SourceCidr"].asString();
+		if(!valueQosPoliciesQosPolicy["SourcePortRange"].isNull())
+			qosPoliciesObject.sourcePortRange = valueQosPoliciesQosPolicy["SourcePortRange"].asString();
 		auto allDpiSignatureIds = value["DpiSignatureIds"]["DpiSignatureId"];
 		for (auto value : allDpiSignatureIds)
 			qosPoliciesObject.dpiSignatureIds.push_back(value.asString());

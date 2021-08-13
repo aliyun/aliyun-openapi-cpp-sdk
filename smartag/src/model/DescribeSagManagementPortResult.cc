@@ -43,14 +43,14 @@ void DescribeSagManagementPortResult::parse(const std::string &payload)
 	for (auto valueTaskStatesTaskState : allTaskStatesNode)
 	{
 		TaskState taskStatesObject;
-		if(!valueTaskStatesTaskState["State"].isNull())
-			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
-		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
-			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
+		if(!valueTaskStatesTaskState["State"].isNull())
+			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
+			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 	if(!value["Gateway"].isNull())

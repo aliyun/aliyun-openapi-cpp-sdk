@@ -41,12 +41,14 @@ void CreateSmartAccessGatewayResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["SmartAGId"].isNull())
-		smartAGId_ = value["SmartAGId"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
+	if(!value["SmartAGId"].isNull())
+		smartAGId_ = value["SmartAGId"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -55,14 +57,19 @@ std::string CreateSmartAccessGatewayResult::getDescription()const
 	return description_;
 }
 
-std::string CreateSmartAccessGatewayResult::getSmartAGId()const
+std::string CreateSmartAccessGatewayResult::getResourceGroupId()const
 {
-	return smartAGId_;
+	return resourceGroupId_;
 }
 
 std::string CreateSmartAccessGatewayResult::getOrderId()const
 {
 	return orderId_;
+}
+
+std::string CreateSmartAccessGatewayResult::getSmartAGId()const
+{
+	return smartAGId_;
 }
 
 std::string CreateSmartAccessGatewayResult::getName()const

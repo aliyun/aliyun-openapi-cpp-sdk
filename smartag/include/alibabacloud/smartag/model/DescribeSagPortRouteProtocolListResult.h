@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Port
 				{
-					std::string remoteAs;
 					std::string status;
+					std::string remoteAs;
 					std::string routeProtocol;
 					std::string remoteIp;
 					std::string neighborIp;

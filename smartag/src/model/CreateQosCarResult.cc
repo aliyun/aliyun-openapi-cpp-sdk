@@ -45,12 +45,12 @@ void CreateQosCarResult::parse(const std::string &payload)
 		description_ = value["Description"].asString();
 	if(!value["QosCarId"].isNull())
 		qosCarId_ = value["QosCarId"].asString();
-	if(!value["Priority"].isNull())
-		priority_ = std::stoi(value["Priority"].asString());
-	if(!value["MaxBandwidthPercent"].isNull())
-		maxBandwidthPercent_ = std::stoi(value["MaxBandwidthPercent"].asString());
 	if(!value["MaxBandwidthAbs"].isNull())
 		maxBandwidthAbs_ = std::stoi(value["MaxBandwidthAbs"].asString());
+	if(!value["MaxBandwidthPercent"].isNull())
+		maxBandwidthPercent_ = std::stoi(value["MaxBandwidthPercent"].asString());
+	if(!value["Priority"].isNull())
+		priority_ = std::stoi(value["Priority"].asString());
 	if(!value["QosId"].isNull())
 		qosId_ = value["QosId"].asString();
 	if(!value["PercentSourceType"].isNull())
@@ -77,9 +77,9 @@ std::string CreateQosCarResult::getQosCarId()const
 	return qosCarId_;
 }
 
-int CreateQosCarResult::getPriority()const
+int CreateQosCarResult::getMaxBandwidthAbs()const
 {
-	return priority_;
+	return maxBandwidthAbs_;
 }
 
 int CreateQosCarResult::getMaxBandwidthPercent()const
@@ -87,9 +87,9 @@ int CreateQosCarResult::getMaxBandwidthPercent()const
 	return maxBandwidthPercent_;
 }
 
-int CreateQosCarResult::getMaxBandwidthAbs()const
+int CreateQosCarResult::getPriority()const
 {
-	return maxBandwidthAbs_;
+	return priority_;
 }
 
 std::string CreateQosCarResult::getQosId()const

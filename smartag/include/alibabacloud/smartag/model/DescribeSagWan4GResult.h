@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				std::string getTrafficState()const;
 				int getPriority()const;
 				std::string getIp()const;
-				std::string getMac()const;
 				std::string getStrength()const;
+				std::string getMac()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				std::string trafficState_;
 				int priority_;
 				std::string ip_;
-				std::string mac_;
 				std::string strength_;
+				std::string mac_;
 
 			};
 		}

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Acl
 				{
 					std::string sagCount;
+					std::string resourceGroupId;
 					std::string aclId;
 					std::string name;
 				};

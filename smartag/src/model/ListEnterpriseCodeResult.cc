@@ -45,10 +45,10 @@ void ListEnterpriseCodeResult::parse(const std::string &payload)
 		EnterpriseCode enterpriseCodesObject;
 		if(!valueEnterpriseCodesEnterpriseCode["IsDefault"].isNull())
 			enterpriseCodesObject.isDefault = valueEnterpriseCodesEnterpriseCode["IsDefault"].asString() == "true";
-		if(!valueEnterpriseCodesEnterpriseCode["EnterpriseCode"].isNull())
-			enterpriseCodesObject.enterpriseCode = valueEnterpriseCodesEnterpriseCode["EnterpriseCode"].asString();
 		if(!valueEnterpriseCodesEnterpriseCode["SmartAGCount"].isNull())
 			enterpriseCodesObject.smartAGCount = std::stoi(valueEnterpriseCodesEnterpriseCode["SmartAGCount"].asString());
+		if(!valueEnterpriseCodesEnterpriseCode["EnterpriseCode"].isNull())
+			enterpriseCodesObject.enterpriseCode = valueEnterpriseCodesEnterpriseCode["EnterpriseCode"].asString();
 		enterpriseCodes_.push_back(enterpriseCodesObject);
 	}
 	if(!value["TotalCount"].isNull())

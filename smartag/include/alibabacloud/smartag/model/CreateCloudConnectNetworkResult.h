@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				~CreateCloudConnectNetworkResult();
 				std::string getStatus()const;
 				std::string getDescription()const;
+				std::string getResourceGroupId()const;
 				std::string getCcnId()const;
 				std::string getCidrBlock()const;
 				std::string getSnatCidrBlock()const;
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 			private:
 				std::string status_;
 				std::string description_;
+				std::string resourceGroupId_;
 				std::string ccnId_;
 				std::string cidrBlock_;
 				std::string snatCidrBlock_;

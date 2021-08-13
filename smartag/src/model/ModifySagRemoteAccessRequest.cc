@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Smartag::Model::ModifySagRemoteAccessRequest;
 
-ModifySagRemoteAccessRequest::ModifySagRemoteAccessRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "ModifySagRemoteAccess")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifySagRemoteAccessRequest::ModifySagRemoteAccessRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "ModifySagRemoteAccess") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifySagRemoteAccessRequest::~ModifySagRemoteAccessRequest()
-{}
+ModifySagRemoteAccessRequest::~ModifySagRemoteAccessRequest() {}
 
-long ModifySagRemoteAccessRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifySagRemoteAccessRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifySagRemoteAccessRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifySagRemoteAccessRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifySagRemoteAccessRequest::getRemoteAccessIp()const
-{
-	return remoteAccessIp_;
+std::string ModifySagRemoteAccessRequest::getRemoteAccessIp() const {
+  return remoteAccessIp_;
 }
 
-void ModifySagRemoteAccessRequest::setRemoteAccessIp(const std::string& remoteAccessIp)
-{
-	remoteAccessIp_ = remoteAccessIp;
-	setParameter("RemoteAccessIp", remoteAccessIp);
+void ModifySagRemoteAccessRequest::setRemoteAccessIp(const std::string &remoteAccessIp) {
+  remoteAccessIp_ = remoteAccessIp;
+  setParameter(std::string("RemoteAccessIp"), remoteAccessIp);
 }
 
-std::string ModifySagRemoteAccessRequest::getSerialNumber()const
-{
-	return serialNumber_;
+std::string ModifySagRemoteAccessRequest::getSerialNumber() const {
+  return serialNumber_;
 }
 
-void ModifySagRemoteAccessRequest::setSerialNumber(const std::string& serialNumber)
-{
-	serialNumber_ = serialNumber;
-	setParameter("SerialNumber", serialNumber);
+void ModifySagRemoteAccessRequest::setSerialNumber(const std::string &serialNumber) {
+  serialNumber_ = serialNumber;
+  setParameter(std::string("SerialNumber"), serialNumber);
 }
 
-std::string ModifySagRemoteAccessRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifySagRemoteAccessRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifySagRemoteAccessRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifySagRemoteAccessRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ModifySagRemoteAccessRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifySagRemoteAccessRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifySagRemoteAccessRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifySagRemoteAccessRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ModifySagRemoteAccessRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifySagRemoteAccessRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifySagRemoteAccessRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifySagRemoteAccessRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifySagRemoteAccessRequest::getSmartAGId()const
-{
-	return smartAGId_;
+std::string ModifySagRemoteAccessRequest::getSmartAGId() const {
+  return smartAGId_;
 }
 
-void ModifySagRemoteAccessRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+void ModifySagRemoteAccessRequest::setSmartAGId(const std::string &smartAGId) {
+  smartAGId_ = smartAGId;
+  setParameter(std::string("SmartAGId"), smartAGId);
 }
 

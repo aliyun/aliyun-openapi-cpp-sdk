@@ -45,27 +45,27 @@ namespace AlibabaCloud
 				explicit DescribeSagWifiResult(const std::string &payload);
 				~DescribeSagWifiResult();
 				std::string getIsEnable()const;
-				std::string getChannel()const;
-				std::string getBandwidth()const;
 				std::string getIsAuth()const;
+				std::string getBandwidth()const;
+				std::string getChannel()const;
 				std::vector<TaskState> getTaskStates()const;
 				std::string getSsid()const;
-				std::string getIsBroadcast()const;
-				std::string getEncryptAlgorithm()const;
 				std::string getAuthenticationType()const;
+				std::string getEncryptAlgorithm()const;
+				std::string getIsBroadcast()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string isEnable_;
-				std::string channel_;
-				std::string bandwidth_;
 				std::string isAuth_;
+				std::string bandwidth_;
+				std::string channel_;
 				std::vector<TaskState> taskStates_;
 				std::string ssid_;
-				std::string isBroadcast_;
-				std::string encryptAlgorithm_;
 				std::string authenticationType_;
+				std::string encryptAlgorithm_;
+				std::string isBroadcast_;
 
 			};
 		}

@@ -43,16 +43,16 @@ void ListAccessPointsResult::parse(const std::string &payload)
 	for (auto valueAccessPointsAccessPoint : allAccessPointsNode)
 	{
 		AccessPoint accessPointsObject;
-		if(!valueAccessPointsAccessPoint["AccessPointId"].isNull())
-			accessPointsObject.accessPointId = std::stoi(valueAccessPointsAccessPoint["AccessPointId"].asString());
-		if(!valueAccessPointsAccessPoint["ActiveSmartAGCount"].isNull())
-			accessPointsObject.activeSmartAGCount = std::stoi(valueAccessPointsAccessPoint["ActiveSmartAGCount"].asString());
-		if(!valueAccessPointsAccessPoint["Latitude"].isNull())
-			accessPointsObject.latitude = valueAccessPointsAccessPoint["Latitude"].asString();
-		if(!valueAccessPointsAccessPoint["InactiveSmartAGCount"].isNull())
-			accessPointsObject.inactiveSmartAGCount = std::stoi(valueAccessPointsAccessPoint["InactiveSmartAGCount"].asString());
 		if(!valueAccessPointsAccessPoint["Longitude"].isNull())
 			accessPointsObject.longitude = valueAccessPointsAccessPoint["Longitude"].asString();
+		if(!valueAccessPointsAccessPoint["ActiveSmartAGCount"].isNull())
+			accessPointsObject.activeSmartAGCount = std::stoi(valueAccessPointsAccessPoint["ActiveSmartAGCount"].asString());
+		if(!valueAccessPointsAccessPoint["InactiveSmartAGCount"].isNull())
+			accessPointsObject.inactiveSmartAGCount = std::stoi(valueAccessPointsAccessPoint["InactiveSmartAGCount"].asString());
+		if(!valueAccessPointsAccessPoint["Latitude"].isNull())
+			accessPointsObject.latitude = valueAccessPointsAccessPoint["Latitude"].asString();
+		if(!valueAccessPointsAccessPoint["AccessPointId"].isNull())
+			accessPointsObject.accessPointId = std::stoi(valueAccessPointsAccessPoint["AccessPointId"].asString());
 		accessPoints_.push_back(accessPointsObject);
 	}
 	if(!value["TotalCount"].isNull())

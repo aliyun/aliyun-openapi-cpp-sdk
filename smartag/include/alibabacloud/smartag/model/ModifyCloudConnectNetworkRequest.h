@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,59 +17,53 @@
 #ifndef ALIBABACLOUD_SMARTAG_MODEL_MODIFYCLOUDCONNECTNETWORKREQUEST_H_
 #define ALIBABACLOUD_SMARTAG_MODEL_MODIFYCLOUDCONNECTNETWORKREQUEST_H_
 
+#include <alibabacloud/smartag/SmartagExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/smartag/SmartagExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Smartag
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_SMARTAG_EXPORT ModifyCloudConnectNetworkRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Smartag {
+namespace Model {
+class ALIBABACLOUD_SMARTAG_EXPORT ModifyCloudConnectNetworkRequest : public RpcServiceRequest {
+public:
+	ModifyCloudConnectNetworkRequest();
+	~ModifyCloudConnectNetworkRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getCcnId() const;
+	void setCcnId(const std::string &ccnId);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getName() const;
+	void setName(const std::string &name);
+	std::string getCidrBlock() const;
+	void setCidrBlock(const std::string &cidrBlock);
+	std::string getInterworkingStatus() const;
+	void setInterworkingStatus(const std::string &interworkingStatus);
 
-			public:
-				ModifyCloudConnectNetworkRequest();
-				~ModifyCloudConnectNetworkRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getCcnId()const;
-				void setCcnId(const std::string& ccnId);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getName()const;
-				void setName(const std::string& name);
-				std::string getCidrBlock()const;
-				void setCidrBlock(const std::string& cidrBlock);
-				std::string getInterworkingStatus()const;
-				void setInterworkingStatus(const std::string& interworkingStatus);
-
-            private:
-				long resourceOwnerId_;
-				std::string ccnId_;
-				std::string description_;
-				std::string regionId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
-				std::string name_;
-				std::string cidrBlock_;
-				std::string interworkingStatus_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	std::string ccnId_;
+	std::string description_;
+	std::string regionId_;
+	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
+	long ownerId_;
+	std::string name_;
+	std::string cidrBlock_;
+	std::string interworkingStatus_;
+};
+} // namespace Model
+} // namespace Smartag
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_SMARTAG_MODEL_MODIFYCLOUDCONNECTNETWORKREQUEST_H_

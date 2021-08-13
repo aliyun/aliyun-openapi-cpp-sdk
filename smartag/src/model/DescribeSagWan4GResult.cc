@@ -47,10 +47,10 @@ void DescribeSagWan4GResult::parse(const std::string &payload)
 		priority_ = std::stoi(value["Priority"].asString());
 	if(!value["Ip"].isNull())
 		ip_ = value["Ip"].asString();
-	if(!value["Mac"].isNull())
-		mac_ = value["Mac"].asString();
 	if(!value["Strength"].isNull())
 		strength_ = value["Strength"].asString();
+	if(!value["Mac"].isNull())
+		mac_ = value["Mac"].asString();
 
 }
 
@@ -74,13 +74,13 @@ std::string DescribeSagWan4GResult::getIp()const
 	return ip_;
 }
 
-std::string DescribeSagWan4GResult::getMac()const
-{
-	return mac_;
-}
-
 std::string DescribeSagWan4GResult::getStrength()const
 {
 	return strength_;
+}
+
+std::string DescribeSagWan4GResult::getMac()const
+{
+	return mac_;
 }
 

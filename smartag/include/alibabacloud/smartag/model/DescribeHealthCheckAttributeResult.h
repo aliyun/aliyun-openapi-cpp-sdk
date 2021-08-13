@@ -37,8 +37,8 @@ namespace AlibabaCloud
 				DescribeHealthCheckAttributeResult();
 				explicit DescribeHealthCheckAttributeResult(const std::string &payload);
 				~DescribeHealthCheckAttributeResult();
-				std::string getDescription()const;
 				int getSrcPort()const;
+				std::string getDescription()const;
 				std::string getSrcIpAddr()const;
 				long getCreateTime()const;
 				int getFailCountThreshold()const;
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string description_;
 				int srcPort_;
+				std::string description_;
 				std::string srcIpAddr_;
 				long createTime_;
 				int failCountThreshold_;

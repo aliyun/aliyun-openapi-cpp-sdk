@@ -43,10 +43,10 @@ void DescribeUserOnlineClientsResult::parse(const std::string &payload)
 	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
-		if(!valueUsersUser["OnlineTime"].isNull())
-			usersObject.onlineTime = valueUsersUser["OnlineTime"].asString();
 		if(!valueUsersUser["ClientIp"].isNull())
 			usersObject.clientIp = valueUsersUser["ClientIp"].asString();
+		if(!valueUsersUser["OnlineTime"].isNull())
+			usersObject.onlineTime = valueUsersUser["OnlineTime"].asString();
 		users_.push_back(usersObject);
 	}
 

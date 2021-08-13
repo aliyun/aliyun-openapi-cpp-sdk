@@ -37,8 +37,8 @@ namespace AlibabaCloud
 				ModifySagRemoteAccessResult();
 				explicit ModifySagRemoteAccessResult(const std::string &payload);
 				~ModifySagRemoteAccessResult();
-				std::string getMessage()const;
 				std::string getSerialNumber()const;
+				std::string getMessage()const;
 				std::string getRemoteAccessIp()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -46,8 +46,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
 				std::string serialNumber_;
+				std::string message_;
 				std::string remoteAccessIp_;
 				std::string code_;
 				bool success_;

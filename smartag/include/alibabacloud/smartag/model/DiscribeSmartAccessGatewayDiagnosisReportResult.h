@@ -58,7 +58,7 @@ namespace AlibabaCloud
 						};
 						struct Item
 						{
-							struct EN
+							struct CN
 							{
 								std::string itemLevel;
 								std::string itemType;
@@ -66,13 +66,13 @@ namespace AlibabaCloud
 								std::vector<std::string> advice;
 								std::vector<std::string> details2;
 							};
-							struct CN
+							struct EN
 							{
 								std::string itemLevel;
-								std::vector<std::string> advice4;
+								std::vector<std::string> advice3;
 								std::string itemType;
 								std::string itemName;
-								std::vector<std::string> details3;
+								std::vector<std::string> details4;
 							};
 							std::string type;
 							long endTime;
@@ -88,15 +88,15 @@ namespace AlibabaCloud
 					};
 					std::string parameters;
 					int endTime;
-					std::string instanceId;
-					std::string userLevel;
 					int percent;
-					int startTime;
+					std::string userLevel;
+					std::string instanceId;
 					int finishedNumber;
+					int startTime;
 					Statistics statistics;
 					std::string boxType;
-					std::string storeType;
 					std::string monitorVersion;
+					std::string storeType;
 					std::string uId;
 					std::vector<Detail> details;
 					int reportSLSSuccess;
@@ -104,8 +104,8 @@ namespace AlibabaCloud
 					std::string diagnoseId;
 					int totalNumber;
 					Level level;
-					std::string boxVersion;
 					std::string sN;
+					std::string boxVersion;
 				};
 
 

@@ -39,14 +39,14 @@ void DescribeSAGDeviceInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ControllerState"].isNull())
-		controllerState_ = value["ControllerState"].asString();
 	if(!value["ServiceIP"].isNull())
 		serviceIP_ = value["ServiceIP"].asString();
-	if(!value["SmartAGType"].isNull())
-		smartAGType_ = value["SmartAGType"].asString();
+	if(!value["ControllerState"].isNull())
+		controllerState_ = value["ControllerState"].asString();
 	if(!value["SynStatus"].isNull())
 		synStatus_ = value["SynStatus"].asString();
+	if(!value["SmartAGType"].isNull())
+		smartAGType_ = value["SmartAGType"].asString();
 	if(!value["Version"].isNull())
 		version_ = value["Version"].asString();
 	if(!value["VpnState"].isNull())
@@ -55,12 +55,9 @@ void DescribeSAGDeviceInfoResult::parse(const std::string &payload)
 		startupTime_ = value["StartupTime"].asString();
 	if(!value["LastConnectedControllerTime"].isNull())
 		lastConnectedControllerTime_ = value["LastConnectedControllerTime"].asString();
+	if(!value["ResettableStatus"].isNull())
+		resettableStatus_ = value["ResettableStatus"].asString();
 
-}
-
-std::string DescribeSAGDeviceInfoResult::getControllerState()const
-{
-	return controllerState_;
 }
 
 std::string DescribeSAGDeviceInfoResult::getServiceIP()const
@@ -68,14 +65,19 @@ std::string DescribeSAGDeviceInfoResult::getServiceIP()const
 	return serviceIP_;
 }
 
-std::string DescribeSAGDeviceInfoResult::getSmartAGType()const
+std::string DescribeSAGDeviceInfoResult::getControllerState()const
 {
-	return smartAGType_;
+	return controllerState_;
 }
 
 std::string DescribeSAGDeviceInfoResult::getSynStatus()const
 {
 	return synStatus_;
+}
+
+std::string DescribeSAGDeviceInfoResult::getSmartAGType()const
+{
+	return smartAGType_;
 }
 
 std::string DescribeSAGDeviceInfoResult::getVersion()const
@@ -91,6 +93,11 @@ std::string DescribeSAGDeviceInfoResult::getVpnState()const
 std::string DescribeSAGDeviceInfoResult::getStartupTime()const
 {
 	return startupTime_;
+}
+
+std::string DescribeSAGDeviceInfoResult::getResettableStatus()const
+{
+	return resettableStatus_;
 }
 
 std::string DescribeSAGDeviceInfoResult::getLastConnectedControllerTime()const

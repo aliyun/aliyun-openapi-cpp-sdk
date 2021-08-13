@@ -43,14 +43,14 @@ void DescribeSagTrafficTopNResult::parse(const std::string &payload)
 	for (auto valueTrafficTopNTrafficTopNItem : allTrafficTopNNode)
 	{
 		TrafficTopNItem trafficTopNObject;
-		if(!valueTrafficTopNTrafficTopNItem["InstanceId"].isNull())
-			trafficTopNObject.instanceId = valueTrafficTopNTrafficTopNItem["InstanceId"].asString();
 		if(!valueTrafficTopNTrafficTopNItem["TrafficRate"].isNull())
 			trafficTopNObject.trafficRate = valueTrafficTopNTrafficTopNItem["TrafficRate"].asString();
-		if(!valueTrafficTopNTrafficTopNItem["RegionId"].isNull())
-			trafficTopNObject.regionId = valueTrafficTopNTrafficTopNItem["RegionId"].asString();
+		if(!valueTrafficTopNTrafficTopNItem["InstanceId"].isNull())
+			trafficTopNObject.instanceId = valueTrafficTopNTrafficTopNItem["InstanceId"].asString();
 		if(!valueTrafficTopNTrafficTopNItem["Name"].isNull())
 			trafficTopNObject.name = valueTrafficTopNTrafficTopNItem["Name"].asString();
+		if(!valueTrafficTopNTrafficTopNItem["RegionId"].isNull())
+			trafficTopNObject.regionId = valueTrafficTopNTrafficTopNItem["RegionId"].asString();
 		trafficTopN_.push_back(trafficTopNObject);
 	}
 

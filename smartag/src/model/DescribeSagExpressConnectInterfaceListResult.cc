@@ -43,26 +43,26 @@ void DescribeSagExpressConnectInterfaceListResult::parse(const std::string &payl
 	for (auto valueInterfacesInterface : allInterfacesNode)
 	{
 		Interface interfacesObject;
-		if(!valueInterfacesInterface["IP"].isNull())
-			interfacesObject.iP = valueInterfacesInterface["IP"].asString();
 		if(!valueInterfacesInterface["Mask"].isNull())
 			interfacesObject.mask = valueInterfacesInterface["Mask"].asString();
 		if(!valueInterfacesInterface["Vlan"].isNull())
 			interfacesObject.vlan = valueInterfacesInterface["Vlan"].asString();
+		if(!valueInterfacesInterface["IP"].isNull())
+			interfacesObject.iP = valueInterfacesInterface["IP"].asString();
 		interfaces_.push_back(interfacesObject);
 	}
 	auto allTaskStatesNode = value["TaskStates"]["TaskState"];
 	for (auto valueTaskStatesTaskState : allTaskStatesNode)
 	{
 		TaskState taskStatesObject;
-		if(!valueTaskStatesTaskState["State"].isNull())
-			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
-		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
-			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
+		if(!valueTaskStatesTaskState["State"].isNull())
+			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
+			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 

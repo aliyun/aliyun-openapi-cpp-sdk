@@ -37,25 +37,27 @@ namespace AlibabaCloud
 				DescribeSAGDeviceInfoResult();
 				explicit DescribeSAGDeviceInfoResult(const std::string &payload);
 				~DescribeSAGDeviceInfoResult();
-				std::string getControllerState()const;
 				std::string getServiceIP()const;
-				std::string getSmartAGType()const;
+				std::string getControllerState()const;
 				std::string getSynStatus()const;
+				std::string getSmartAGType()const;
 				std::string getVersion()const;
 				std::string getVpnState()const;
 				std::string getStartupTime()const;
+				std::string getResettableStatus()const;
 				std::string getLastConnectedControllerTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string controllerState_;
 				std::string serviceIP_;
-				std::string smartAGType_;
+				std::string controllerState_;
 				std::string synStatus_;
+				std::string smartAGType_;
 				std::string version_;
 				std::string vpnState_;
 				std::string startupTime_;
+				std::string resettableStatus_;
 				std::string lastConnectedControllerTime_;
 
 			};

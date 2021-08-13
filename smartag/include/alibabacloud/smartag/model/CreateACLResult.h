@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CreateACLResult();
 				explicit CreateACLResult(const std::string &payload);
 				~CreateACLResult();
+				std::string getResourceGroupId()const;
 				std::string getAclId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 				std::string aclId_;
 
 			};

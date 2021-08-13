@@ -43,12 +43,12 @@ void DescribeRegionsResult::parse(const std::string &payload)
 	for (auto valueRegionsRegion : allRegionsNode)
 	{
 		Region regionsObject;
-		if(!valueRegionsRegion["RegionId"].isNull())
-			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
-		if(!valueRegionsRegion["RegionEndpoint"].isNull())
-			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
 		if(!valueRegionsRegion["LocalName"].isNull())
 			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
+		if(!valueRegionsRegion["RegionEndpoint"].isNull())
+			regionsObject.regionEndpoint = valueRegionsRegion["RegionEndpoint"].asString();
+		if(!valueRegionsRegion["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
 		regions_.push_back(regionsObject);
 	}
 

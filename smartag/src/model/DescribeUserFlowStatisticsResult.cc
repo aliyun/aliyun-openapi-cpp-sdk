@@ -43,10 +43,10 @@ void DescribeUserFlowStatisticsResult::parse(const std::string &payload)
 	for (auto valueSagStatisticsStatistics : allSagStatisticsNode)
 	{
 		Statistics sagStatisticsObject;
-		if(!valueSagStatisticsStatistics["UserName"].isNull())
-			sagStatisticsObject.userName = valueSagStatisticsStatistics["UserName"].asString();
 		if(!valueSagStatisticsStatistics["TotalBytes"].isNull())
 			sagStatisticsObject.totalBytes = valueSagStatisticsStatistics["TotalBytes"].asString();
+		if(!valueSagStatisticsStatistics["UserName"].isNull())
+			sagStatisticsObject.userName = valueSagStatisticsStatistics["UserName"].asString();
 		sagStatistics_.push_back(sagStatisticsObject);
 	}
 

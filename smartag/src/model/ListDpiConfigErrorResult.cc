@@ -43,12 +43,12 @@ void ListDpiConfigErrorResult::parse(const std::string &payload)
 	for (auto valueDpiConfigErrorDpiConfigErrorItem : allDpiConfigErrorNode)
 	{
 		DpiConfigErrorItem dpiConfigErrorObject;
-		if(!valueDpiConfigErrorDpiConfigErrorItem["ErrorType"].isNull())
-			dpiConfigErrorObject.errorType = valueDpiConfigErrorDpiConfigErrorItem["ErrorType"].asString();
 		if(!valueDpiConfigErrorDpiConfigErrorItem["SN"].isNull())
 			dpiConfigErrorObject.sN = valueDpiConfigErrorDpiConfigErrorItem["SN"].asString();
 		if(!valueDpiConfigErrorDpiConfigErrorItem["SmartAGId"].isNull())
 			dpiConfigErrorObject.smartAGId = valueDpiConfigErrorDpiConfigErrorItem["SmartAGId"].asString();
+		if(!valueDpiConfigErrorDpiConfigErrorItem["ErrorType"].isNull())
+			dpiConfigErrorObject.errorType = valueDpiConfigErrorDpiConfigErrorItem["ErrorType"].asString();
 		auto allRuleConfigErrorListNode = valueDpiConfigErrorDpiConfigErrorItem["RuleConfigErrorList"]["RuleConfigErrorListItem"];
 		for (auto valueDpiConfigErrorDpiConfigErrorItemRuleConfigErrorListRuleConfigErrorListItem : allRuleConfigErrorListNode)
 		{
@@ -67,10 +67,10 @@ void ListDpiConfigErrorResult::parse(const std::string &payload)
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 
@@ -84,13 +84,13 @@ std::vector<ListDpiConfigErrorResult::DpiConfigErrorItem> ListDpiConfigErrorResu
 	return dpiConfigError_;
 }
 
-int ListDpiConfigErrorResult::getMaxResults()const
-{
-	return maxResults_;
-}
-
 int ListDpiConfigErrorResult::getTotal()const
 {
 	return total_;
+}
+
+int ListDpiConfigErrorResult::getMaxResults()const
+{
+	return maxResults_;
 }
 

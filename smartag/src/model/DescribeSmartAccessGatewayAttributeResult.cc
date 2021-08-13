@@ -39,52 +39,57 @@ void DescribeSmartAccessGatewayAttributeResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLinksNode = value["Links"]["Link"];
-	for (auto valueLinksLink : allLinksNode)
-	{
-		Link linksObject;
-		if(!valueLinksLink["Status"].isNull())
-			linksObject.status = valueLinksLink["Status"].asString();
-		if(!valueLinksLink["Type"].isNull())
-			linksObject.type = valueLinksLink["Type"].asString();
-		if(!valueLinksLink["EndTime"].isNull())
-			linksObject.endTime = std::stol(valueLinksLink["EndTime"].asString());
-		if(!valueLinksLink["InstanceId"].isNull())
-			linksObject.instanceId = valueLinksLink["InstanceId"].asString();
-		if(!valueLinksLink["RelateInstanceId"].isNull())
-			linksObject.relateInstanceId = valueLinksLink["RelateInstanceId"].asString();
-		if(!valueLinksLink["Bandwidth"].isNull())
-			linksObject.bandwidth = valueLinksLink["Bandwidth"].asString();
-		if(!valueLinksLink["CommodityType"].isNull())
-			linksObject.commodityType = valueLinksLink["CommodityType"].asString();
-		if(!valueLinksLink["RelateInstanceRegionId"].isNull())
-			linksObject.relateInstanceRegionId = valueLinksLink["RelateInstanceRegionId"].asString();
-		if(!valueLinksLink["HealthCheckTargetIp"].isNull())
-			linksObject.healthCheckTargetIp = valueLinksLink["HealthCheckTargetIp"].asString();
-		links_.push_back(linksObject);
-	}
 	auto allDevicesNode = value["Devices"]["Device"];
 	for (auto valueDevicesDevice : allDevicesNode)
 	{
 		Device devicesObject;
-		if(!valueDevicesDevice["MonitorVersion"].isNull())
-			devicesObject.monitorVersion = valueDevicesDevice["MonitorVersion"].asString();
-		if(!valueDevicesDevice["SecretKey"].isNull())
-			devicesObject.secretKey = valueDevicesDevice["SecretKey"].asString();
-		if(!valueDevicesDevice["SoftwareVersion"].isNull())
-			devicesObject.softwareVersion = valueDevicesDevice["SoftwareVersion"].asString();
 		if(!valueDevicesDevice["SerialNumber"].isNull())
 			devicesObject.serialNumber = valueDevicesDevice["SerialNumber"].asString();
-		if(!valueDevicesDevice["DistributeSkStatus"].isNull())
-			devicesObject.distributeSkStatus = std::stoi(valueDevicesDevice["DistributeSkStatus"].asString());
-		if(!valueDevicesDevice["DpiSignatureDbVersion"].isNull())
-			devicesObject.dpiSignatureDbVersion = valueDevicesDevice["DpiSignatureDbVersion"].asString();
 		if(!valueDevicesDevice["HaState"].isNull())
 			devicesObject.haState = valueDevicesDevice["HaState"].asString();
+		if(!valueDevicesDevice["SecretKey"].isNull())
+			devicesObject.secretKey = valueDevicesDevice["SecretKey"].asString();
+		if(!valueDevicesDevice["DpiSignatureDbVersion"].isNull())
+			devicesObject.dpiSignatureDbVersion = valueDevicesDevice["DpiSignatureDbVersion"].asString();
+		if(!valueDevicesDevice["SoftwareVersion"].isNull())
+			devicesObject.softwareVersion = valueDevicesDevice["SoftwareVersion"].asString();
+		if(!valueDevicesDevice["DistributeSkStatus"].isNull())
+			devicesObject.distributeSkStatus = std::stoi(valueDevicesDevice["DistributeSkStatus"].asString());
+		if(!valueDevicesDevice["MonitorVersion"].isNull())
+			devicesObject.monitorVersion = valueDevicesDevice["MonitorVersion"].asString();
 		if(!valueDevicesDevice["HcState"].isNull())
 			devicesObject.hcState = valueDevicesDevice["HcState"].asString();
 		devices_.push_back(devicesObject);
 	}
+	auto allLinksNode = value["Links"]["Link"];
+	for (auto valueLinksLink : allLinksNode)
+	{
+		Link linksObject;
+		if(!valueLinksLink["HealthCheckTargetIp"].isNull())
+			linksObject.healthCheckTargetIp = valueLinksLink["HealthCheckTargetIp"].asString();
+		if(!valueLinksLink["EndTime"].isNull())
+			linksObject.endTime = std::stol(valueLinksLink["EndTime"].asString());
+		if(!valueLinksLink["Status"].isNull())
+			linksObject.status = valueLinksLink["Status"].asString();
+		if(!valueLinksLink["Type"].isNull())
+			linksObject.type = valueLinksLink["Type"].asString();
+		if(!valueLinksLink["Bandwidth"].isNull())
+			linksObject.bandwidth = valueLinksLink["Bandwidth"].asString();
+		if(!valueLinksLink["RelateInstanceRegionId"].isNull())
+			linksObject.relateInstanceRegionId = valueLinksLink["RelateInstanceRegionId"].asString();
+		if(!valueLinksLink["RelateInstanceId"].isNull())
+			linksObject.relateInstanceId = valueLinksLink["RelateInstanceId"].asString();
+		if(!valueLinksLink["InstanceId"].isNull())
+			linksObject.instanceId = valueLinksLink["InstanceId"].asString();
+		if(!valueLinksLink["CommodityType"].isNull())
+			linksObject.commodityType = valueLinksLink["CommodityType"].asString();
+		links_.push_back(linksObject);
+	}
+	auto applicationBandwidthPackageOperationLocksNode = value["ApplicationBandwidthPackageOperationLocks"];
+	if(!applicationBandwidthPackageOperationLocksNode["LockType"].isNull())
+		applicationBandwidthPackageOperationLocks_.lockType = applicationBandwidthPackageOperationLocksNode["LockType"].asString();
+	if(!applicationBandwidthPackageOperationLocksNode["LockReason"].isNull())
+		applicationBandwidthPackageOperationLocks_.lockReason = applicationBandwidthPackageOperationLocksNode["LockReason"].asString();
 	auto allQosIds = value["QosIds"]["QosId"];
 	for (const auto &item : allQosIds)
 		qosIds_.push_back(item.asString());
@@ -94,28 +99,28 @@ void DescribeSmartAccessGatewayAttributeResult::parse(const std::string &payload
 	auto allAclIds = value["AclIds"]["AclId"];
 	for (const auto &item : allAclIds)
 		aclIds_.push_back(item.asString());
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
 	if(!value["UpBandwidth4G"].isNull())
 		upBandwidth4G_ = std::stoi(value["UpBandwidth4G"].asString());
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = std::stol(value["EndTime"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 	if(!value["UserCount"].isNull())
 		userCount_ = std::stoi(value["UserCount"].asString());
-	if(!value["VpnStatus"].isNull())
-		vpnStatus_ = value["VpnStatus"].asString();
-	if(!value["MaxBandwidth"].isNull())
-		maxBandwidth_ = value["MaxBandwidth"].asString();
 	if(!value["AssociatedCcnName"].isNull())
 		associatedCcnName_ = value["AssociatedCcnName"].asString();
+	if(!value["MaxBandwidth"].isNull())
+		maxBandwidth_ = value["MaxBandwidth"].asString();
+	if(!value["VpnStatus"].isNull())
+		vpnStatus_ = value["VpnStatus"].asString();
 	if(!value["BoxControllerIp"].isNull())
 		boxControllerIp_ = value["BoxControllerIp"].asString();
-	if(!value["CidrBlock"].isNull())
-		cidrBlock_ = value["CidrBlock"].asString();
 	if(!value["UpBandwidthWan"].isNull())
 		upBandwidthWan_ = std::stoi(value["UpBandwidthWan"].asString());
+	if(!value["CidrBlock"].isNull())
+		cidrBlock_ = value["CidrBlock"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
 	if(!value["OptimizationType"].isNull())
@@ -126,14 +131,14 @@ void DescribeSmartAccessGatewayAttributeResult::parse(const std::string &payload
 		routingStrategy_ = value["RoutingStrategy"].asString();
 	if(!value["AssociatedCcnId"].isNull())
 		associatedCcnId_ = value["AssociatedCcnId"].asString();
-	if(!value["InstanceType"].isNull())
-		instanceType_ = value["InstanceType"].asString();
 	if(!value["SmartAGId"].isNull())
 		smartAGId_ = value["SmartAGId"].asString();
-	if(!value["SecurityLockThreshold"].isNull())
-		securityLockThreshold_ = std::stoi(value["SecurityLockThreshold"].asString());
+	if(!value["InstanceType"].isNull())
+		instanceType_ = value["InstanceType"].asString();
 	if(!value["ResellerUid"].isNull())
 		resellerUid_ = value["ResellerUid"].asString();
+	if(!value["SecurityLockThreshold"].isNull())
+		securityLockThreshold_ = std::stoi(value["SecurityLockThreshold"].asString());
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["CreateTime"].isNull())
@@ -146,20 +151,23 @@ void DescribeSmartAccessGatewayAttributeResult::parse(const std::string &payload
 		city_ = value["City"].asString();
 	if(!value["ResellerInstanceId"].isNull())
 		resellerInstanceId_ = value["ResellerInstanceId"].asString();
-	if(!value["BackupBoxControllerIp"].isNull())
-		backupBoxControllerIp_ = value["BackupBoxControllerIp"].asString();
 	if(!value["SerialNumber"].isNull())
 		serialNumber_ = value["SerialNumber"].asString();
+	if(!value["BackupBoxControllerIp"].isNull())
+		backupBoxControllerIp_ = value["BackupBoxControllerIp"].asString();
 	if(!value["TrafficMasterSn"].isNull())
 		trafficMasterSn_ = value["TrafficMasterSn"].asString();
 	if(!value["AccessPointId"].isNull())
 		accessPointId_ = value["AccessPointId"].asString();
+	if(!value["ApplicationBandwidthPackageId"].isNull())
+		applicationBandwidthPackageId_ = value["ApplicationBandwidthPackageId"].asString();
+	if(!value["ApplicationBandwidthPackageName"].isNull())
+		applicationBandwidthPackageName_ = value["ApplicationBandwidthPackageName"].asString();
+	if(!value["AccelerateBandwidth"].isNull())
+		accelerateBandwidth_ = std::stol(value["AccelerateBandwidth"].asString());
+	if(!value["ApplicationBandwidthPackageBussinessStatus"].isNull())
+		applicationBandwidthPackageBussinessStatus_ = value["ApplicationBandwidthPackageBussinessStatus"].asString();
 
-}
-
-std::string DescribeSmartAccessGatewayAttributeResult::getDescription()const
-{
-	return description_;
 }
 
 int DescribeSmartAccessGatewayAttributeResult::getUpBandwidth4G()const
@@ -167,9 +175,9 @@ int DescribeSmartAccessGatewayAttributeResult::getUpBandwidth4G()const
 	return upBandwidth4G_;
 }
 
-std::string DescribeSmartAccessGatewayAttributeResult::getResourceGroupId()const
+std::string DescribeSmartAccessGatewayAttributeResult::getDescription()const
 {
-	return resourceGroupId_;
+	return description_;
 }
 
 long DescribeSmartAccessGatewayAttributeResult::getEndTime()const
@@ -177,14 +185,19 @@ long DescribeSmartAccessGatewayAttributeResult::getEndTime()const
 	return endTime_;
 }
 
+std::string DescribeSmartAccessGatewayAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
 int DescribeSmartAccessGatewayAttributeResult::getUserCount()const
 {
 	return userCount_;
 }
 
-std::string DescribeSmartAccessGatewayAttributeResult::getVpnStatus()const
+std::string DescribeSmartAccessGatewayAttributeResult::getAssociatedCcnName()const
 {
-	return vpnStatus_;
+	return associatedCcnName_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getMaxBandwidth()const
@@ -192,9 +205,9 @@ std::string DescribeSmartAccessGatewayAttributeResult::getMaxBandwidth()const
 	return maxBandwidth_;
 }
 
-std::string DescribeSmartAccessGatewayAttributeResult::getAssociatedCcnName()const
+std::string DescribeSmartAccessGatewayAttributeResult::getVpnStatus()const
 {
-	return associatedCcnName_;
+	return vpnStatus_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getBoxControllerIp()const
@@ -207,14 +220,14 @@ std::vector<std::string> DescribeSmartAccessGatewayAttributeResult::getQosIds()c
 	return qosIds_;
 }
 
-std::string DescribeSmartAccessGatewayAttributeResult::getCidrBlock()const
-{
-	return cidrBlock_;
-}
-
 int DescribeSmartAccessGatewayAttributeResult::getUpBandwidthWan()const
 {
 	return upBandwidthWan_;
+}
+
+std::string DescribeSmartAccessGatewayAttributeResult::getCidrBlock()const
+{
+	return cidrBlock_;
 }
 
 std::vector<DescribeSmartAccessGatewayAttributeResult::Device> DescribeSmartAccessGatewayAttributeResult::getDevices()const
@@ -232,6 +245,11 @@ bool DescribeSmartAccessGatewayAttributeResult::getOptimizationType()const
 	return optimizationType_;
 }
 
+std::string DescribeSmartAccessGatewayAttributeResult::getApplicationBandwidthPackageName()const
+{
+	return applicationBandwidthPackageName_;
+}
+
 std::string DescribeSmartAccessGatewayAttributeResult::getIpsecStatus()const
 {
 	return ipsecStatus_;
@@ -240,6 +258,11 @@ std::string DescribeSmartAccessGatewayAttributeResult::getIpsecStatus()const
 std::string DescribeSmartAccessGatewayAttributeResult::getRoutingStrategy()const
 {
 	return routingStrategy_;
+}
+
+std::string DescribeSmartAccessGatewayAttributeResult::getApplicationBandwidthPackageId()const
+{
+	return applicationBandwidthPackageId_;
 }
 
 std::vector<std::string> DescribeSmartAccessGatewayAttributeResult::getFlowLogIds()const
@@ -252,24 +275,24 @@ std::string DescribeSmartAccessGatewayAttributeResult::getAssociatedCcnId()const
 	return associatedCcnId_;
 }
 
-std::string DescribeSmartAccessGatewayAttributeResult::getInstanceType()const
-{
-	return instanceType_;
-}
-
 std::string DescribeSmartAccessGatewayAttributeResult::getSmartAGId()const
 {
 	return smartAGId_;
 }
 
-int DescribeSmartAccessGatewayAttributeResult::getSecurityLockThreshold()const
+std::string DescribeSmartAccessGatewayAttributeResult::getInstanceType()const
 {
-	return securityLockThreshold_;
+	return instanceType_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getResellerUid()const
 {
 	return resellerUid_;
+}
+
+int DescribeSmartAccessGatewayAttributeResult::getSecurityLockThreshold()const
+{
+	return securityLockThreshold_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getStatus()const
@@ -292,9 +315,24 @@ bool DescribeSmartAccessGatewayAttributeResult::getEnableOptimization()const
 	return enableOptimization_;
 }
 
+std::string DescribeSmartAccessGatewayAttributeResult::getApplicationBandwidthPackageBussinessStatus()const
+{
+	return applicationBandwidthPackageBussinessStatus_;
+}
+
 std::string DescribeSmartAccessGatewayAttributeResult::getCity()const
 {
 	return city_;
+}
+
+DescribeSmartAccessGatewayAttributeResult::ApplicationBandwidthPackageOperationLocks DescribeSmartAccessGatewayAttributeResult::getApplicationBandwidthPackageOperationLocks()const
+{
+	return applicationBandwidthPackageOperationLocks_;
+}
+
+long DescribeSmartAccessGatewayAttributeResult::getAccelerateBandwidth()const
+{
+	return accelerateBandwidth_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getResellerInstanceId()const
@@ -302,14 +340,14 @@ std::string DescribeSmartAccessGatewayAttributeResult::getResellerInstanceId()co
 	return resellerInstanceId_;
 }
 
-std::string DescribeSmartAccessGatewayAttributeResult::getBackupBoxControllerIp()const
-{
-	return backupBoxControllerIp_;
-}
-
 std::string DescribeSmartAccessGatewayAttributeResult::getSerialNumber()const
 {
 	return serialNumber_;
+}
+
+std::string DescribeSmartAccessGatewayAttributeResult::getBackupBoxControllerIp()const
+{
+	return backupBoxControllerIp_;
 }
 
 std::string DescribeSmartAccessGatewayAttributeResult::getTrafficMasterSn()const

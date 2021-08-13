@@ -39,12 +39,12 @@ void ModifyACLRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDpiSignatureIds = value["DpiSignatureIds"]["DpiSignatureId"];
-	for (const auto &item : allDpiSignatureIds)
-		dpiSignatureIds_.push_back(item.asString());
 	auto allDpiGroupIds = value["DpiGroupIds"]["DpiGroupId"];
 	for (const auto &item : allDpiGroupIds)
 		dpiGroupIds_.push_back(item.asString());
+	auto allDpiSignatureIds = value["DpiSignatureIds"]["DpiSignatureId"];
+	for (const auto &item : allDpiSignatureIds)
+		dpiSignatureIds_.push_back(item.asString());
 	if(!value["Policy"].isNull())
 		policy_ = value["Policy"].asString();
 	if(!value["Description"].isNull())

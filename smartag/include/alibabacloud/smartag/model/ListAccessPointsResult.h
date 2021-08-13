@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct AccessPoint
 				{
-					int accessPointId;
 					int activeSmartAGCount;
+					int accessPointId;
 					std::string latitude;
 					int inactiveSmartAGCount;
 					std::string longitude;

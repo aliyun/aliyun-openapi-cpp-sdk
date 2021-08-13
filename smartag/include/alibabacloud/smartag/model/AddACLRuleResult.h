@@ -48,8 +48,8 @@ namespace AlibabaCloud
 				std::vector<std::string> getDpiGroupIds()const;
 				std::string getDirection()const;
 				std::string getName()const;
-				long getGmtCreate()const;
 				std::string getType()const;
+				long getGmtCreate()const;
 				std::string getDestCidr()const;
 				std::vector<std::string> getDpiSignatureIds()const;
 				std::string getIpProtocol()const;
@@ -68,8 +68,8 @@ namespace AlibabaCloud
 				std::vector<std::string> dpiGroupIds_;
 				std::string direction_;
 				std::string name_;
-				long gmtCreate_;
 				std::string type_;
+				long gmtCreate_;
 				std::string destCidr_;
 				std::vector<std::string> dpiSignatureIds_;
 				std::string ipProtocol_;

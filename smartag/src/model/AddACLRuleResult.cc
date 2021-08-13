@@ -39,12 +39,12 @@ void AddACLRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDpiSignatureIds = value["DpiSignatureIds"]["DpiSignatureId"];
-	for (const auto &item : allDpiSignatureIds)
-		dpiSignatureIds_.push_back(item.asString());
 	auto allDpiGroupIds = value["DpiGroupIds"]["DpiGroupId"];
 	for (const auto &item : allDpiGroupIds)
 		dpiGroupIds_.push_back(item.asString());
+	auto allDpiSignatureIds = value["DpiSignatureIds"]["DpiSignatureId"];
+	for (const auto &item : allDpiSignatureIds)
+		dpiSignatureIds_.push_back(item.asString());
 	if(!value["Policy"].isNull())
 		policy_ = value["Policy"].asString();
 	if(!value["Description"].isNull())
@@ -65,10 +65,10 @@ void AddACLRuleResult::parse(const std::string &payload)
 		direction_ = value["Direction"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
-	if(!value["GmtCreate"].isNull())
-		gmtCreate_ = std::stol(value["GmtCreate"].asString());
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["GmtCreate"].isNull())
+		gmtCreate_ = std::stol(value["GmtCreate"].asString());
 	if(!value["DestCidr"].isNull())
 		destCidr_ = value["DestCidr"].asString();
 	if(!value["IpProtocol"].isNull())
@@ -131,14 +131,14 @@ std::string AddACLRuleResult::getName()const
 	return name_;
 }
 
-long AddACLRuleResult::getGmtCreate()const
-{
-	return gmtCreate_;
-}
-
 std::string AddACLRuleResult::getType()const
 {
 	return type_;
+}
+
+long AddACLRuleResult::getGmtCreate()const
+{
+	return gmtCreate_;
 }
 
 std::string AddACLRuleResult::getDestCidr()const

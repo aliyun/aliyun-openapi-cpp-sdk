@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Smartag::Model::DescribeSagLanListRequest;
 
-DescribeSagLanListRequest::DescribeSagLanListRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "DescribeSagLanList")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeSagLanListRequest::DescribeSagLanListRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "DescribeSagLanList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSagLanListRequest::~DescribeSagLanListRequest()
-{}
+DescribeSagLanListRequest::~DescribeSagLanListRequest() {}
 
-long DescribeSagLanListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeSagLanListRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeSagLanListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeSagLanListRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSagLanListRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeSagLanListRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeSagLanListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeSagLanListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeSagLanListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeSagLanListRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeSagLanListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeSagLanListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeSagLanListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeSagLanListRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeSagLanListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeSagLanListRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeSagLanListRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeSagLanListRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeSagLanListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeSagLanListRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeSagLanListRequest::getSmartAGId()const
-{
-	return smartAGId_;
+std::string DescribeSagLanListRequest::getSmartAGId() const {
+  return smartAGId_;
 }
 
-void DescribeSagLanListRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+void DescribeSagLanListRequest::setSmartAGId(const std::string &smartAGId) {
+  smartAGId_ = smartAGId;
+  setParameter(std::string("SmartAGId"), smartAGId);
 }
 
-std::string DescribeSagLanListRequest::getSmartAGSn()const
-{
-	return smartAGSn_;
+std::string DescribeSagLanListRequest::getSmartAGSn() const {
+  return smartAGSn_;
 }
 
-void DescribeSagLanListRequest::setSmartAGSn(const std::string& smartAGSn)
-{
-	smartAGSn_ = smartAGSn;
-	setParameter("SmartAGSn", smartAGSn);
+void DescribeSagLanListRequest::setSmartAGSn(const std::string &smartAGSn) {
+  smartAGSn_ = smartAGSn;
+  setParameter(std::string("SmartAGSn"), smartAGSn);
 }
 

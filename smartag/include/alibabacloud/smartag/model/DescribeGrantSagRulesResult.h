@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct GrantRule
 				{
-					std::string instanceId;
 					bool grantTrafficService;
+					std::string instanceId;
 					std::string ccnInstanceId;
 					long createTime;
 					long ccnUid;

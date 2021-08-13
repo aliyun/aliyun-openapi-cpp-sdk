@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Smartag::Model::GetAclAttributeRequest;
 
-GetAclAttributeRequest::GetAclAttributeRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "GetAclAttribute")
-{
-	setMethod(HttpRequest::Method::Post);
+GetAclAttributeRequest::GetAclAttributeRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "GetAclAttribute") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetAclAttributeRequest::~GetAclAttributeRequest()
-{}
+GetAclAttributeRequest::~GetAclAttributeRequest() {}
 
-std::string GetAclAttributeRequest::getRegionId()const
-{
-	return regionId_;
+std::string GetAclAttributeRequest::getRegionId() const {
+  return regionId_;
 }
 
-void GetAclAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void GetAclAttributeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string GetAclAttributeRequest::getAclId()const
-{
-	return aclId_;
+std::string GetAclAttributeRequest::getAclId() const {
+  return aclId_;
 }
 
-void GetAclAttributeRequest::setAclId(const std::string& aclId)
-{
-	aclId_ = aclId;
-	setParameter("AclId", aclId);
+void GetAclAttributeRequest::setAclId(const std::string &aclId) {
+  aclId_ = aclId;
+  setParameter(std::string("AclId"), aclId);
 }
 

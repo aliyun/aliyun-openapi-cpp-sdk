@@ -43,14 +43,14 @@ void DescribeSagDropTopNResult::parse(const std::string &payload)
 	for (auto valueDropTopNDropTopNItem : allDropTopNNode)
 	{
 		DropTopNItem dropTopNObject;
-		if(!valueDropTopNDropTopNItem["InstanceId"].isNull())
-			dropTopNObject.instanceId = valueDropTopNDropTopNItem["InstanceId"].asString();
-		if(!valueDropTopNDropTopNItem["RegionId"].isNull())
-			dropTopNObject.regionId = valueDropTopNDropTopNItem["RegionId"].asString();
 		if(!valueDropTopNDropTopNItem["DropRate"].isNull())
 			dropTopNObject.dropRate = valueDropTopNDropTopNItem["DropRate"].asString();
+		if(!valueDropTopNDropTopNItem["InstanceId"].isNull())
+			dropTopNObject.instanceId = valueDropTopNDropTopNItem["InstanceId"].asString();
 		if(!valueDropTopNDropTopNItem["Name"].isNull())
 			dropTopNObject.name = valueDropTopNDropTopNItem["Name"].asString();
+		if(!valueDropTopNDropTopNItem["RegionId"].isNull())
+			dropTopNObject.regionId = valueDropTopNDropTopNItem["RegionId"].asString();
 		dropTopN_.push_back(dropTopNObject);
 	}
 

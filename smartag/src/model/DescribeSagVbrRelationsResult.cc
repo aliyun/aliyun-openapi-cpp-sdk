@@ -45,10 +45,10 @@ void DescribeSagVbrRelationsResult::parse(const std::string &payload)
 		SagVbrRelation sagVbrRelationsObject;
 		if(!valueSagVbrRelationsSagVbrRelation["VbrInstanceId"].isNull())
 			sagVbrRelationsObject.vbrInstanceId = valueSagVbrRelationsSagVbrRelation["VbrInstanceId"].asString();
-		if(!valueSagVbrRelationsSagVbrRelation["SagInstanceId"].isNull())
-			sagVbrRelationsObject.sagInstanceId = valueSagVbrRelationsSagVbrRelation["SagInstanceId"].asString();
 		if(!valueSagVbrRelationsSagVbrRelation["SagUid"].isNull())
 			sagVbrRelationsObject.sagUid = valueSagVbrRelationsSagVbrRelation["SagUid"].asString();
+		if(!valueSagVbrRelationsSagVbrRelation["SagInstanceId"].isNull())
+			sagVbrRelationsObject.sagInstanceId = valueSagVbrRelationsSagVbrRelation["SagInstanceId"].asString();
 		sagVbrRelations_.push_back(sagVbrRelationsObject);
 	}
 

@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				int getHoldTime()const;
 				std::string getAdvertiseIps()const;
 				int getKeepAlive()const;
-				std::string getRouterId()const;
 				int getLocalAs()const;
+				std::string getRouterId()const;
 				std::vector<TaskState> getTaskStates()const;
 
 			protected:
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 				int holdTime_;
 				std::string advertiseIps_;
 				int keepAlive_;
-				std::string routerId_;
 				int localAs_;
+				std::string routerId_;
 				std::vector<TaskState> taskStates_;
 
 			};

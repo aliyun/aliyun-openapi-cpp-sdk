@@ -43,18 +43,18 @@ void DescribeGrantSagRulesResult::parse(const std::string &payload)
 	for (auto valueGrantRulesGrantRule : allGrantRulesNode)
 	{
 		GrantRule grantRulesObject;
-		if(!valueGrantRulesGrantRule["InstanceId"].isNull())
-			grantRulesObject.instanceId = valueGrantRulesGrantRule["InstanceId"].asString();
-		if(!valueGrantRulesGrantRule["GrantTrafficService"].isNull())
-			grantRulesObject.grantTrafficService = valueGrantRulesGrantRule["GrantTrafficService"].asString() == "true";
-		if(!valueGrantRulesGrantRule["CcnInstanceId"].isNull())
-			grantRulesObject.ccnInstanceId = valueGrantRulesGrantRule["CcnInstanceId"].asString();
 		if(!valueGrantRulesGrantRule["CreateTime"].isNull())
 			grantRulesObject.createTime = std::stol(valueGrantRulesGrantRule["CreateTime"].asString());
-		if(!valueGrantRulesGrantRule["CcnUid"].isNull())
-			grantRulesObject.ccnUid = std::stol(valueGrantRulesGrantRule["CcnUid"].asString());
 		if(!valueGrantRulesGrantRule["SmartAGId"].isNull())
 			grantRulesObject.smartAGId = valueGrantRulesGrantRule["SmartAGId"].asString();
+		if(!valueGrantRulesGrantRule["GrantTrafficService"].isNull())
+			grantRulesObject.grantTrafficService = valueGrantRulesGrantRule["GrantTrafficService"].asString() == "true";
+		if(!valueGrantRulesGrantRule["InstanceId"].isNull())
+			grantRulesObject.instanceId = valueGrantRulesGrantRule["InstanceId"].asString();
+		if(!valueGrantRulesGrantRule["CcnUid"].isNull())
+			grantRulesObject.ccnUid = std::stol(valueGrantRulesGrantRule["CcnUid"].asString());
+		if(!valueGrantRulesGrantRule["CcnInstanceId"].isNull())
+			grantRulesObject.ccnInstanceId = valueGrantRulesGrantRule["CcnInstanceId"].asString();
 		grantRules_.push_back(grantRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

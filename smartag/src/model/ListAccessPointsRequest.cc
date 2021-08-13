@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Smartag::Model::ListAccessPointsRequest;
 
-ListAccessPointsRequest::ListAccessPointsRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "ListAccessPoints")
-{
-	setMethod(HttpRequest::Method::Post);
+ListAccessPointsRequest::ListAccessPointsRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "ListAccessPoints") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListAccessPointsRequest::~ListAccessPointsRequest()
-{}
+ListAccessPointsRequest::~ListAccessPointsRequest() {}
 
-long ListAccessPointsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ListAccessPointsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ListAccessPointsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ListAccessPointsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int ListAccessPointsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListAccessPointsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListAccessPointsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListAccessPointsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListAccessPointsRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListAccessPointsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListAccessPointsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListAccessPointsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int ListAccessPointsRequest::getPageSize()const
-{
-	return pageSize_;
+int ListAccessPointsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListAccessPointsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListAccessPointsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListAccessPointsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ListAccessPointsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ListAccessPointsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ListAccessPointsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ListAccessPointsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ListAccessPointsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ListAccessPointsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ListAccessPointsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ListAccessPointsRequest::getOwnerId()const
-{
-	return ownerId_;
+long ListAccessPointsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ListAccessPointsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ListAccessPointsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ListAccessPointsRequest::getSmartAGId()const
-{
-	return smartAGId_;
+std::string ListAccessPointsRequest::getSmartAGId() const {
+  return smartAGId_;
 }
 
-void ListAccessPointsRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+void ListAccessPointsRequest::setSmartAGId(const std::string &smartAGId) {
+  smartAGId_ = smartAGId;
+  setParameter(std::string("SmartAGId"), smartAGId);
 }
 

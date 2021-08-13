@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string routeProtocol;
 					std::vector<std::string> conflictCidrs;
 					std::string nextHop;
-					std::string portName;
 					std::string cost;
+					std::string portName;
 					std::string destinationCidr;
 				};
 

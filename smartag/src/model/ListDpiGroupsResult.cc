@@ -43,14 +43,14 @@ void ListDpiGroupsResult::parse(const std::string &payload)
 	for (auto valueDpiGroupDpiGroupItem : allDpiGroupNode)
 	{
 		DpiGroupItem dpiGroupObject;
-		if(!valueDpiGroupDpiGroupItem["MinEngineVersion"].isNull())
-			dpiGroupObject.minEngineVersion = valueDpiGroupDpiGroupItem["MinEngineVersion"].asString();
-		if(!valueDpiGroupDpiGroupItem["DpiGroupName"].isNull())
-			dpiGroupObject.dpiGroupName = valueDpiGroupDpiGroupItem["DpiGroupName"].asString();
 		if(!valueDpiGroupDpiGroupItem["MinSignatureDbVersion"].isNull())
 			dpiGroupObject.minSignatureDbVersion = valueDpiGroupDpiGroupItem["MinSignatureDbVersion"].asString();
+		if(!valueDpiGroupDpiGroupItem["DpiGroupName"].isNull())
+			dpiGroupObject.dpiGroupName = valueDpiGroupDpiGroupItem["DpiGroupName"].asString();
 		if(!valueDpiGroupDpiGroupItem["DpiGroupId"].isNull())
 			dpiGroupObject.dpiGroupId = valueDpiGroupDpiGroupItem["DpiGroupId"].asString();
+		if(!valueDpiGroupDpiGroupItem["MinEngineVersion"].isNull())
+			dpiGroupObject.minEngineVersion = valueDpiGroupDpiGroupItem["MinEngineVersion"].asString();
 		dpiGroup_.push_back(dpiGroupObject);
 	}
 	if(!value["TotalCount"].isNull())

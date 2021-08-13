@@ -38,9 +38,9 @@ namespace AlibabaCloud
 				explicit CreateQosPolicyResult(const std::string &payload);
 				~CreateQosPolicyResult();
 				std::string getDescription()const;
-				std::string getSourcePortRange()const;
-				std::string getQosPolicyId()const;
 				std::string getEndTime()const;
+				std::string getQosPolicyId()const;
+				std::string getSourcePortRange()const;
 				std::string getSourceCidr()const;
 				int getPriority()const;
 				std::string getStartTime()const;
@@ -49,16 +49,16 @@ namespace AlibabaCloud
 				std::string getName()const;
 				std::string getDestCidr()const;
 				std::vector<std::string> getDpiSignatureIds()const;
-				std::string getIpProtocol()const;
 				std::string getQosId()const;
+				std::string getIpProtocol()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string description_;
-				std::string sourcePortRange_;
-				std::string qosPolicyId_;
 				std::string endTime_;
+				std::string qosPolicyId_;
+				std::string sourcePortRange_;
 				std::string sourceCidr_;
 				int priority_;
 				std::string startTime_;
@@ -67,8 +67,8 @@ namespace AlibabaCloud
 				std::string name_;
 				std::string destCidr_;
 				std::vector<std::string> dpiSignatureIds_;
-				std::string ipProtocol_;
 				std::string qosId_;
+				std::string ipProtocol_;
 
 			};
 		}

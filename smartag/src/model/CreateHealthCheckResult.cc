@@ -39,10 +39,10 @@ void CreateHealthCheckResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
 	if(!value["SrcPort"].isNull())
 		srcPort_ = std::stoi(value["SrcPort"].asString());
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["SrcIpAddr"].isNull())
@@ -63,10 +63,10 @@ void CreateHealthCheckResult::parse(const std::string &payload)
 		probeTimeout_ = std::stoi(value["ProbeTimeout"].asString());
 	if(!value["RttThreshold"].isNull())
 		rttThreshold_ = std::stoi(value["RttThreshold"].asString());
-	if(!value["ProbeInterval"].isNull())
-		probeInterval_ = std::stoi(value["ProbeInterval"].asString());
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["ProbeInterval"].isNull())
+		probeInterval_ = std::stoi(value["ProbeInterval"].asString());
 	if(!value["SmartAGId"].isNull())
 		smartAGId_ = value["SmartAGId"].asString();
 	if(!value["RttFailThreshold"].isNull())
@@ -76,14 +76,14 @@ void CreateHealthCheckResult::parse(const std::string &payload)
 
 }
 
-std::string CreateHealthCheckResult::getDescription()const
-{
-	return description_;
-}
-
 int CreateHealthCheckResult::getSrcPort()const
 {
 	return srcPort_;
+}
+
+std::string CreateHealthCheckResult::getDescription()const
+{
+	return description_;
 }
 
 std::string CreateHealthCheckResult::getInstanceId()const
@@ -136,14 +136,14 @@ int CreateHealthCheckResult::getRttThreshold()const
 	return rttThreshold_;
 }
 
-int CreateHealthCheckResult::getProbeInterval()const
-{
-	return probeInterval_;
-}
-
 std::string CreateHealthCheckResult::getRegionId()const
 {
 	return regionId_;
+}
+
+int CreateHealthCheckResult::getProbeInterval()const
+{
+	return probeInterval_;
 }
 
 std::string CreateHealthCheckResult::getSmartAGId()const

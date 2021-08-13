@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,91 +18,72 @@
 
 using AlibabaCloud::Smartag::Model::ProbeAccessPointNetworkQualityRequest;
 
-ProbeAccessPointNetworkQualityRequest::ProbeAccessPointNetworkQualityRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "ProbeAccessPointNetworkQuality")
-{
-	setMethod(HttpRequest::Method::Post);
+ProbeAccessPointNetworkQualityRequest::ProbeAccessPointNetworkQualityRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "ProbeAccessPointNetworkQuality") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ProbeAccessPointNetworkQualityRequest::~ProbeAccessPointNetworkQualityRequest()
-{}
+ProbeAccessPointNetworkQualityRequest::~ProbeAccessPointNetworkQualityRequest() {}
 
-long ProbeAccessPointNetworkQualityRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ProbeAccessPointNetworkQualityRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ProbeAccessPointNetworkQualityRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ProbeAccessPointNetworkQualityRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ProbeAccessPointNetworkQualityRequest::getRegionId()const
-{
-	return regionId_;
+std::string ProbeAccessPointNetworkQualityRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ProbeAccessPointNetworkQualityRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ProbeAccessPointNetworkQualityRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ProbeAccessPointNetworkQualityRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ProbeAccessPointNetworkQualityRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ProbeAccessPointNetworkQualityRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ProbeAccessPointNetworkQualityRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ProbeAccessPointNetworkQualityRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ProbeAccessPointNetworkQualityRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ProbeAccessPointNetworkQualityRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ProbeAccessPointNetworkQualityRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::vector<int> ProbeAccessPointNetworkQualityRequest::getAccessPointIds()const
-{
-	return accessPointIds_;
+std::vector<int> ProbeAccessPointNetworkQualityRequest::getAccessPointIds() const {
+  return accessPointIds_;
 }
 
-void ProbeAccessPointNetworkQualityRequest::setAccessPointIds(const std::vector<int>& accessPointIds)
-{
-	accessPointIds_ = accessPointIds;
-	for(int dep1 = 0; dep1!= accessPointIds.size(); dep1++) {
-		setParameter("AccessPointIds."+ std::to_string(dep1), std::to_string(accessPointIds.at(dep1)));
-	}
+void ProbeAccessPointNetworkQualityRequest::setAccessPointIds(const std::vector<int> &accessPointIds) {
+  accessPointIds_ = accessPointIds;
 }
 
-long ProbeAccessPointNetworkQualityRequest::getOwnerId()const
-{
-	return ownerId_;
+long ProbeAccessPointNetworkQualityRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ProbeAccessPointNetworkQualityRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ProbeAccessPointNetworkQualityRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ProbeAccessPointNetworkQualityRequest::getSmartAGId()const
-{
-	return smartAGId_;
+std::string ProbeAccessPointNetworkQualityRequest::getSmartAGId() const {
+  return smartAGId_;
 }
 
-void ProbeAccessPointNetworkQualityRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+void ProbeAccessPointNetworkQualityRequest::setSmartAGId(const std::string &smartAGId) {
+  smartAGId_ = smartAGId;
+  setParameter(std::string("SmartAGId"), smartAGId);
 }
 

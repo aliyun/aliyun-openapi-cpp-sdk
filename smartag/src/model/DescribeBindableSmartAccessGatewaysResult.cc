@@ -43,12 +43,12 @@ void DescribeBindableSmartAccessGatewaysResult::parse(const std::string &payload
 	for (auto valueSmartAccessGatewaysSmartAccessGateway : allSmartAccessGatewaysNode)
 	{
 		SmartAccessGateway smartAccessGatewaysObject;
-		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGUid"].isNull())
-			smartAccessGatewaysObject.smartAGUid = std::stol(valueSmartAccessGatewaysSmartAccessGateway["SmartAGUid"].asString());
 		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].isNull())
 			smartAccessGatewaysObject.smartAGId = valueSmartAccessGatewaysSmartAccessGateway["SmartAGId"].asString();
 		if(!valueSmartAccessGatewaysSmartAccessGateway["Name"].isNull())
 			smartAccessGatewaysObject.name = valueSmartAccessGatewaysSmartAccessGateway["Name"].asString();
+		if(!valueSmartAccessGatewaysSmartAccessGateway["SmartAGUid"].isNull())
+			smartAccessGatewaysObject.smartAGUid = std::stol(valueSmartAccessGatewaysSmartAccessGateway["SmartAGUid"].asString());
 		smartAccessGateways_.push_back(smartAccessGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

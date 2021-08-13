@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Smartag::Model::UnbindSerialNumberRequest;
 
-UnbindSerialNumberRequest::UnbindSerialNumberRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "UnbindSerialNumber")
-{
-	setMethod(HttpRequest::Method::Post);
+UnbindSerialNumberRequest::UnbindSerialNumberRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "UnbindSerialNumber") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UnbindSerialNumberRequest::~UnbindSerialNumberRequest()
-{}
+UnbindSerialNumberRequest::~UnbindSerialNumberRequest() {}
 
-long UnbindSerialNumberRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long UnbindSerialNumberRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void UnbindSerialNumberRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void UnbindSerialNumberRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string UnbindSerialNumberRequest::getRegionId()const
-{
-	return regionId_;
+std::string UnbindSerialNumberRequest::getRegionId() const {
+  return regionId_;
 }
 
-void UnbindSerialNumberRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void UnbindSerialNumberRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string UnbindSerialNumberRequest::getSerialNumber()const
-{
-	return serialNumber_;
+std::string UnbindSerialNumberRequest::getSerialNumber() const {
+  return serialNumber_;
 }
 
-void UnbindSerialNumberRequest::setSerialNumber(const std::string& serialNumber)
-{
-	serialNumber_ = serialNumber;
-	setParameter("SerialNumber", serialNumber);
+void UnbindSerialNumberRequest::setSerialNumber(const std::string &serialNumber) {
+  serialNumber_ = serialNumber;
+  setParameter(std::string("SerialNumber"), serialNumber);
 }
 
-std::string UnbindSerialNumberRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string UnbindSerialNumberRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void UnbindSerialNumberRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void UnbindSerialNumberRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string UnbindSerialNumberRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string UnbindSerialNumberRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void UnbindSerialNumberRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void UnbindSerialNumberRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long UnbindSerialNumberRequest::getOwnerId()const
-{
-	return ownerId_;
+long UnbindSerialNumberRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void UnbindSerialNumberRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void UnbindSerialNumberRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string UnbindSerialNumberRequest::getSmartAGId()const
-{
-	return smartAGId_;
+std::string UnbindSerialNumberRequest::getSmartAGId() const {
+  return smartAGId_;
 }
 
-void UnbindSerialNumberRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+void UnbindSerialNumberRequest::setSmartAGId(const std::string &smartAGId) {
+  smartAGId_ = smartAGId;
+  setParameter(std::string("SmartAGId"), smartAGId);
 }
 

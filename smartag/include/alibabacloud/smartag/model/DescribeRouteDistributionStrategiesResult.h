@@ -37,13 +37,13 @@ namespace AlibabaCloud
 					std::string status;
 					std::string instanceId;
 					std::string hcInstanceId;
-					std::string routeSource;
-					std::string sourceType;
 					long createTime;
+					std::string sourceType;
+					std::string routeSource;
 					std::string routeDistribution;
 					bool isConflict;
-					std::string smartAGId;
 					std::string strategyPublishStatus;
+					std::string smartAGId;
 					std::string conflictInfo;
 					std::string destCidrBlock;
 				};

@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				int getDeadTime()const;
 				int getMd5KeyId()const;
 				std::string getAreaId()const;
-				int getHelloTime()const;
 				std::string getRouterId()const;
+				int getHelloTime()const;
 				std::vector<TaskState> getTaskStates()const;
 				std::string getAreaType()const;
 				std::string getMd5Key()const;
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				int deadTime_;
 				int md5KeyId_;
 				std::string areaId_;
-				int helloTime_;
 				std::string routerId_;
+				int helloTime_;
 				std::vector<TaskState> taskStates_;
 				std::string areaType_;
 				std::string md5Key_;

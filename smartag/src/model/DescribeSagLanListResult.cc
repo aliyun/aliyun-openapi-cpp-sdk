@@ -43,34 +43,34 @@ void DescribeSagLanListResult::parse(const std::string &payload)
 	for (auto valueTaskStatesTaskState : allTaskStatesNode)
 	{
 		TaskState taskStatesObject;
-		if(!valueTaskStatesTaskState["State"].isNull())
-			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
-		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
-			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
+		if(!valueTaskStatesTaskState["State"].isNull())
+			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
+			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 	auto allLansNode = value["Lans"]["Lan"];
 	for (auto valueLansLan : allLansNode)
 	{
 		Lan lansObject;
-		if(!valueLansLan["IPType"].isNull())
-			lansObject.iPType = valueLansLan["IPType"].asString();
 		if(!valueLansLan["Lease"].isNull())
 			lansObject.lease = valueLansLan["Lease"].asString();
-		if(!valueLansLan["IP"].isNull())
-			lansObject.iP = valueLansLan["IP"].asString();
 		if(!valueLansLan["Mask"].isNull())
 			lansObject.mask = valueLansLan["Mask"].asString();
-		if(!valueLansLan["StartIp"].isNull())
-			lansObject.startIp = valueLansLan["StartIp"].asString();
-		if(!valueLansLan["PortName"].isNull())
-			lansObject.portName = valueLansLan["PortName"].asString();
 		if(!valueLansLan["EndIp"].isNull())
 			lansObject.endIp = valueLansLan["EndIp"].asString();
+		if(!valueLansLan["PortName"].isNull())
+			lansObject.portName = valueLansLan["PortName"].asString();
+		if(!valueLansLan["StartIp"].isNull())
+			lansObject.startIp = valueLansLan["StartIp"].asString();
+		if(!valueLansLan["IPType"].isNull())
+			lansObject.iPType = valueLansLan["IPType"].asString();
+		if(!valueLansLan["IP"].isNull())
+			lansObject.iP = valueLansLan["IP"].asString();
 		lans_.push_back(lansObject);
 	}
 

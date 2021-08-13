@@ -43,10 +43,10 @@ void ListAccessPointNetworkQualitiesResult::parse(const std::string &payload)
 	for (auto valueAccessPointNetworkQualitiesAccessPointNetworkQuality : allAccessPointNetworkQualitiesNode)
 	{
 		AccessPointNetworkQuality accessPointNetworkQualitiesObject;
-		if(!valueAccessPointNetworkQualitiesAccessPointNetworkQuality["Rtt"].isNull())
-			accessPointNetworkQualitiesObject.rtt = valueAccessPointNetworkQualitiesAccessPointNetworkQuality["Rtt"].asString();
 		if(!valueAccessPointNetworkQualitiesAccessPointNetworkQuality["Loss"].isNull())
 			accessPointNetworkQualitiesObject.loss = valueAccessPointNetworkQualitiesAccessPointNetworkQuality["Loss"].asString();
+		if(!valueAccessPointNetworkQualitiesAccessPointNetworkQuality["Rtt"].isNull())
+			accessPointNetworkQualitiesObject.rtt = valueAccessPointNetworkQualitiesAccessPointNetworkQuality["Rtt"].asString();
 		if(!valueAccessPointNetworkQualitiesAccessPointNetworkQuality["Id"].isNull())
 			accessPointNetworkQualitiesObject.id = std::stoi(valueAccessPointNetworkQualitiesAccessPointNetworkQuality["Id"].asString());
 		accessPointNetworkQualities_.push_back(accessPointNetworkQualitiesObject);

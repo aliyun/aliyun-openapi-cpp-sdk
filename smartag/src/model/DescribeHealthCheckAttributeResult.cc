@@ -39,10 +39,10 @@ void DescribeHealthCheckAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
 	if(!value["SrcPort"].isNull())
 		srcPort_ = std::stoi(value["SrcPort"].asString());
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 	if(!value["SrcIpAddr"].isNull())
 		srcIpAddr_ = value["SrcIpAddr"].asString();
 	if(!value["CreateTime"].isNull())
@@ -74,14 +74,14 @@ void DescribeHealthCheckAttributeResult::parse(const std::string &payload)
 
 }
 
-std::string DescribeHealthCheckAttributeResult::getDescription()const
-{
-	return description_;
-}
-
 int DescribeHealthCheckAttributeResult::getSrcPort()const
 {
 	return srcPort_;
+}
+
+std::string DescribeHealthCheckAttributeResult::getDescription()const
+{
+	return description_;
 }
 
 std::string DescribeHealthCheckAttributeResult::getSrcIpAddr()const

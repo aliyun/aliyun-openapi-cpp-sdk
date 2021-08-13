@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,115 +18,89 @@
 
 using AlibabaCloud::Smartag::Model::ListDpiGroupsRequest;
 
-ListDpiGroupsRequest::ListDpiGroupsRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "ListDpiGroups")
-{
-	setMethod(HttpRequest::Method::Post);
+ListDpiGroupsRequest::ListDpiGroupsRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "ListDpiGroups") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListDpiGroupsRequest::~ListDpiGroupsRequest()
-{}
+ListDpiGroupsRequest::~ListDpiGroupsRequest() {}
 
-std::vector<std::string> ListDpiGroupsRequest::getDpiGroupIds()const
-{
-	return dpiGroupIds_;
+std::vector<std::string> ListDpiGroupsRequest::getDpiGroupIds() const {
+  return dpiGroupIds_;
 }
 
-void ListDpiGroupsRequest::setDpiGroupIds(const std::vector<std::string>& dpiGroupIds)
-{
-	dpiGroupIds_ = dpiGroupIds;
-	for(int dep1 = 0; dep1!= dpiGroupIds.size(); dep1++) {
-		setParameter("DpiGroupIds."+ std::to_string(dep1), dpiGroupIds.at(dep1));
-	}
+void ListDpiGroupsRequest::setDpiGroupIds(const std::vector<std::string> &dpiGroupIds) {
+  dpiGroupIds_ = dpiGroupIds;
 }
 
-long ListDpiGroupsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ListDpiGroupsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ListDpiGroupsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ListDpiGroupsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ListDpiGroupsRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListDpiGroupsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListDpiGroupsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListDpiGroupsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListDpiGroupsRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListDpiGroupsRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListDpiGroupsRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListDpiGroupsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListDpiGroupsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ListDpiGroupsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ListDpiGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ListDpiGroupsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ListDpiGroupsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ListDpiGroupsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ListDpiGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ListDpiGroupsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ListDpiGroupsRequest::getOwnerId()const
-{
-	return ownerId_;
+long ListDpiGroupsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ListDpiGroupsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ListDpiGroupsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::vector<std::string> ListDpiGroupsRequest::getDpiGroupNames()const
-{
-	return dpiGroupNames_;
+std::vector<std::string> ListDpiGroupsRequest::getDpiGroupNames() const {
+  return dpiGroupNames_;
 }
 
-void ListDpiGroupsRequest::setDpiGroupNames(const std::vector<std::string>& dpiGroupNames)
-{
-	dpiGroupNames_ = dpiGroupNames;
-	for(int dep1 = 0; dep1!= dpiGroupNames.size(); dep1++) {
-		setParameter("DpiGroupNames."+ std::to_string(dep1), dpiGroupNames.at(dep1));
-	}
+void ListDpiGroupsRequest::setDpiGroupNames(const std::vector<std::string> &dpiGroupNames) {
+  dpiGroupNames_ = dpiGroupNames;
 }
 
-int ListDpiGroupsRequest::getMaxResults()const
-{
-	return maxResults_;
+int ListDpiGroupsRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListDpiGroupsRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListDpiGroupsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

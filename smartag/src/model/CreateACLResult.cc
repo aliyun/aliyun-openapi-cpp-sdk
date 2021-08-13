@@ -41,7 +41,14 @@ void CreateACLResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["AclId"].isNull())
 		aclId_ = value["AclId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string CreateACLResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateACLResult::getAclId()const

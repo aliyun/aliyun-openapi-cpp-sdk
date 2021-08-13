@@ -43,16 +43,16 @@ void ListDpiSignaturesResult::parse(const std::string &payload)
 	for (auto valueDpiSignatureDpiSignatureItem : allDpiSignatureNode)
 	{
 		DpiSignatureItem dpiSignatureObject;
-		if(!valueDpiSignatureDpiSignatureItem["MinEngineVersion"].isNull())
-			dpiSignatureObject.minEngineVersion = valueDpiSignatureDpiSignatureItem["MinEngineVersion"].asString();
-		if(!valueDpiSignatureDpiSignatureItem["MinSignatureDbVersion"].isNull())
-			dpiSignatureObject.minSignatureDbVersion = valueDpiSignatureDpiSignatureItem["MinSignatureDbVersion"].asString();
 		if(!valueDpiSignatureDpiSignatureItem["DpiSignatureId"].isNull())
 			dpiSignatureObject.dpiSignatureId = valueDpiSignatureDpiSignatureItem["DpiSignatureId"].asString();
-		if(!valueDpiSignatureDpiSignatureItem["DpiSignatureName"].isNull())
-			dpiSignatureObject.dpiSignatureName = valueDpiSignatureDpiSignatureItem["DpiSignatureName"].asString();
+		if(!valueDpiSignatureDpiSignatureItem["MinSignatureDbVersion"].isNull())
+			dpiSignatureObject.minSignatureDbVersion = valueDpiSignatureDpiSignatureItem["MinSignatureDbVersion"].asString();
 		if(!valueDpiSignatureDpiSignatureItem["DpiGroupId"].isNull())
 			dpiSignatureObject.dpiGroupId = valueDpiSignatureDpiSignatureItem["DpiGroupId"].asString();
+		if(!valueDpiSignatureDpiSignatureItem["MinEngineVersion"].isNull())
+			dpiSignatureObject.minEngineVersion = valueDpiSignatureDpiSignatureItem["MinEngineVersion"].asString();
+		if(!valueDpiSignatureDpiSignatureItem["DpiSignatureName"].isNull())
+			dpiSignatureObject.dpiSignatureName = valueDpiSignatureDpiSignatureItem["DpiSignatureName"].asString();
 		dpiSignature_.push_back(dpiSignatureObject);
 	}
 	if(!value["TotalCount"].isNull())

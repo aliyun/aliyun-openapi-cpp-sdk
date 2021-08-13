@@ -38,16 +38,18 @@ namespace AlibabaCloud
 				explicit CreateSmartAccessGatewayResult(const std::string &payload);
 				~CreateSmartAccessGatewayResult();
 				std::string getDescription()const;
-				std::string getSmartAGId()const;
+				std::string getResourceGroupId()const;
 				std::string getOrderId()const;
+				std::string getSmartAGId()const;
 				std::string getName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string description_;
-				std::string smartAGId_;
+				std::string resourceGroupId_;
 				std::string orderId_;
+				std::string smartAGId_;
 				std::string name_;
 
 			};

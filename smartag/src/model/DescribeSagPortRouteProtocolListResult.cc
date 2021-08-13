@@ -43,34 +43,34 @@ void DescribeSagPortRouteProtocolListResult::parse(const std::string &payload)
 	for (auto valuePortsPort : allPortsNode)
 	{
 		Port portsObject;
-		if(!valuePortsPort["RemoteAs"].isNull())
-			portsObject.remoteAs = valuePortsPort["RemoteAs"].asString();
 		if(!valuePortsPort["Status"].isNull())
 			portsObject.status = valuePortsPort["Status"].asString();
-		if(!valuePortsPort["RouteProtocol"].isNull())
-			portsObject.routeProtocol = valuePortsPort["RouteProtocol"].asString();
 		if(!valuePortsPort["RemoteIp"].isNull())
 			portsObject.remoteIp = valuePortsPort["RemoteIp"].asString();
-		if(!valuePortsPort["NeighborIp"].isNull())
-			portsObject.neighborIp = valuePortsPort["NeighborIp"].asString();
-		if(!valuePortsPort["Vlan"].isNull())
-			portsObject.vlan = valuePortsPort["Vlan"].asString();
 		if(!valuePortsPort["PortName"].isNull())
 			portsObject.portName = valuePortsPort["PortName"].asString();
+		if(!valuePortsPort["NeighborIp"].isNull())
+			portsObject.neighborIp = valuePortsPort["NeighborIp"].asString();
+		if(!valuePortsPort["RouteProtocol"].isNull())
+			portsObject.routeProtocol = valuePortsPort["RouteProtocol"].asString();
+		if(!valuePortsPort["RemoteAs"].isNull())
+			portsObject.remoteAs = valuePortsPort["RemoteAs"].asString();
+		if(!valuePortsPort["Vlan"].isNull())
+			portsObject.vlan = valuePortsPort["Vlan"].asString();
 		ports_.push_back(portsObject);
 	}
 	auto allTaskStatesNode = value["TaskStates"]["TaskState"];
 	for (auto valueTaskStatesTaskState : allTaskStatesNode)
 	{
 		TaskState taskStatesObject;
-		if(!valueTaskStatesTaskState["State"].isNull())
-			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
-		if(!valueTaskStatesTaskState["CreateTime"].isNull())
-			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
-		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
-			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
 		if(!valueTaskStatesTaskState["ErrorMessage"].isNull())
 			taskStatesObject.errorMessage = valueTaskStatesTaskState["ErrorMessage"].asString();
+		if(!valueTaskStatesTaskState["State"].isNull())
+			taskStatesObject.state = valueTaskStatesTaskState["State"].asString();
+		if(!valueTaskStatesTaskState["ErrorCode"].isNull())
+			taskStatesObject.errorCode = valueTaskStatesTaskState["ErrorCode"].asString();
+		if(!valueTaskStatesTaskState["CreateTime"].isNull())
+			taskStatesObject.createTime = valueTaskStatesTaskState["CreateTime"].asString();
 		taskStates_.push_back(taskStatesObject);
 	}
 

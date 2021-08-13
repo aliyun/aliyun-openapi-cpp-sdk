@@ -34,9 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct User
 				{
+					long accelerateBandwidth;
 					std::string userName;
-					std::string userMail;
 					int state;
+					std::string userMail;
 					int bandwidth;
 					std::string clientIp;
 				};

@@ -30,10 +30,6 @@
 #include "model/AddACLRuleResult.h"
 #include "model/AddDnatEntryRequest.h"
 #include "model/AddDnatEntryResult.h"
-#include "model/AddNetworkOptimizationSettingRequest.h"
-#include "model/AddNetworkOptimizationSettingResult.h"
-#include "model/AddSagCidrRequest.h"
-#include "model/AddSagCidrResult.h"
 #include "model/AddSnatEntryRequest.h"
 #include "model/AddSnatEntryResult.h"
 #include "model/AssociateACLRequest.h"
@@ -42,8 +38,6 @@
 #include "model/AssociateFlowLogResult.h"
 #include "model/AssociateQosRequest.h"
 #include "model/AssociateQosResult.h"
-#include "model/AttachNetworkOptimizationSagsRequest.h"
-#include "model/AttachNetworkOptimizationSagsResult.h"
 #include "model/BindSerialNumberRequest.h"
 #include "model/BindSerialNumberResult.h"
 #include "model/BindSmartAccessGatewayRequest.h"
@@ -64,8 +58,6 @@
 #include "model/CreateFlowLogResult.h"
 #include "model/CreateHealthCheckRequest.h"
 #include "model/CreateHealthCheckResult.h"
-#include "model/CreateNetworkOptimizationRequest.h"
-#include "model/CreateNetworkOptimizationResult.h"
 #include "model/CreateQosRequest.h"
 #include "model/CreateQosResult.h"
 #include "model/CreateQosCarRequest.h"
@@ -98,10 +90,6 @@
 #include "model/DeleteFlowLogResult.h"
 #include "model/DeleteHealthCheckRequest.h"
 #include "model/DeleteHealthCheckResult.h"
-#include "model/DeleteNetworkOptimizationRequest.h"
-#include "model/DeleteNetworkOptimizationResult.h"
-#include "model/DeleteNetworkOptimizationSettingRequest.h"
-#include "model/DeleteNetworkOptimizationSettingResult.h"
 #include "model/DeleteQosRequest.h"
 #include "model/DeleteQosResult.h"
 #include "model/DeleteQosCarRequest.h"
@@ -110,8 +98,6 @@
 #include "model/DeleteQosPolicyResult.h"
 #include "model/DeleteRouteDistributionStrategyRequest.h"
 #include "model/DeleteRouteDistributionStrategyResult.h"
-#include "model/DeleteSagCidrRequest.h"
-#include "model/DeleteSagCidrResult.h"
 #include "model/DeleteSagExpressConnectInterfaceRequest.h"
 #include "model/DeleteSagExpressConnectInterfaceResult.h"
 #include "model/DeleteSagStaticRouteRequest.h"
@@ -150,18 +136,6 @@
 #include "model/DescribeHealthCheckAttributeResult.h"
 #include "model/DescribeHealthChecksRequest.h"
 #include "model/DescribeHealthChecksResult.h"
-#include "model/DescribeNetworkOptimizationSagsRequest.h"
-#include "model/DescribeNetworkOptimizationSagsResult.h"
-#include "model/DescribeNetworkOptimizationSettingsRequest.h"
-#include "model/DescribeNetworkOptimizationSettingsResult.h"
-#include "model/DescribeNetworkOptimizationsRequest.h"
-#include "model/DescribeNetworkOptimizationsResult.h"
-#include "model/DescribePbrInterfacesRequest.h"
-#include "model/DescribePbrInterfacesResult.h"
-#include "model/DescribePbrRulesRequest.h"
-#include "model/DescribePbrRulesResult.h"
-#include "model/DescribePolicyBasedRoutingsRequest.h"
-#include "model/DescribePolicyBasedRoutingsResult.h"
 #include "model/DescribeQosCarsRequest.h"
 #include "model/DescribeQosCarsResult.h"
 #include "model/DescribeQosPoliciesRequest.h"
@@ -178,8 +152,6 @@
 #include "model/DescribeSagCurrentDnsResult.h"
 #include "model/DescribeSagDropTopNRequest.h"
 #include "model/DescribeSagDropTopNResult.h"
-#include "model/DescribeSagECRouteBackupAttributeRequest.h"
-#include "model/DescribeSagECRouteBackupAttributeResult.h"
 #include "model/DescribeSagExpressConnectInterfaceListRequest.h"
 #include "model/DescribeSagExpressConnectInterfaceListResult.h"
 #include "model/DescribeSagGlobalRouteProtocolRequest.h"
@@ -204,8 +176,6 @@
 #include "model/DescribeSagRouteProtocolBgpResult.h"
 #include "model/DescribeSagRouteProtocolOspfRequest.h"
 #include "model/DescribeSagRouteProtocolOspfResult.h"
-#include "model/DescribeSagRouteableAddressRequest.h"
-#include "model/DescribeSagRouteableAddressResult.h"
 #include "model/DescribeSagStaticRouteListRequest.h"
 #include "model/DescribeSagStaticRouteListResult.h"
 #include "model/DescribeSagTrafficTopNRequest.h"
@@ -242,8 +212,6 @@
 #include "model/DescribeUserOnlineClientStatisticsResult.h"
 #include "model/DescribeUserOnlineClientsRequest.h"
 #include "model/DescribeUserOnlineClientsResult.h"
-#include "model/DetachNetworkOptimizationSagsRequest.h"
-#include "model/DetachNetworkOptimizationSagsResult.h"
 #include "model/DiagnoseSmartAccessGatewayRequest.h"
 #include "model/DiagnoseSmartAccessGatewayResult.h"
 #include "model/DisableSmartAGDpiMonitorRequest.h"
@@ -314,8 +282,6 @@
 #include "model/ModifyFlowLogAttributeResult.h"
 #include "model/ModifyHealthCheckRequest.h"
 #include "model/ModifyHealthCheckResult.h"
-#include "model/ModifyNetworkOptimizationRequest.h"
-#include "model/ModifyNetworkOptimizationResult.h"
 #include "model/ModifyQosRequest.h"
 #include "model/ModifyQosResult.h"
 #include "model/ModifyQosCarRequest.h"
@@ -326,10 +292,6 @@
 #include "model/ModifyRouteDistributionStrategyResult.h"
 #include "model/ModifySAGAdminPasswordRequest.h"
 #include "model/ModifySAGAdminPasswordResult.h"
-#include "model/ModifySagCidrRequest.h"
-#include "model/ModifySagCidrResult.h"
-#include "model/ModifySagECRouteBackupRequest.h"
-#include "model/ModifySagECRouteBackupResult.h"
 #include "model/ModifySagExpressConnectInterfaceRequest.h"
 #include "model/ModifySagExpressConnectInterfaceResult.h"
 #include "model/ModifySagGlobalRouteProtocolRequest.h"
@@ -368,8 +330,6 @@
 #include "model/ModifySmartAccessGatewayUpBandwidthResult.h"
 #include "model/MoveResourceGroupRequest.h"
 #include "model/MoveResourceGroupResult.h"
-#include "model/OrchestrateSagECRouteBackupRequest.h"
-#include "model/OrchestrateSagECRouteBackupResult.h"
 #include "model/ProbeAccessPointNetworkQualityRequest.h"
 #include "model/ProbeAccessPointNetworkQualityResult.h"
 #include "model/RebootSmartAccessGatewayRequest.h"
@@ -384,8 +344,6 @@
 #include "model/RevokeSagInstanceFromCcnResult.h"
 #include "model/RoamClientUserRequest.h"
 #include "model/RoamClientUserResult.h"
-#include "model/SetSagRouteableAddressRequest.h"
-#include "model/SetSagRouteableAddressResult.h"
 #include "model/SynchronizeSmartAGWebConfigRequest.h"
 #include "model/SynchronizeSmartAGWebConfigResult.h"
 #include "model/UnbindSerialNumberRequest.h"
@@ -394,10 +352,6 @@
 #include "model/UnbindSmartAccessGatewayResult.h"
 #include "model/UnbindVbrRequest.h"
 #include "model/UnbindVbrResult.h"
-#include "model/UnicomOrderConfirmRequest.h"
-#include "model/UnicomOrderConfirmResult.h"
-#include "model/UnicomSignConfirmRequest.h"
-#include "model/UnicomSignConfirmResult.h"
 #include "model/UnlockSmartAccessGatewayRequest.h"
 #include "model/UnlockSmartAccessGatewayResult.h"
 #include "model/UpdateEnterpriseCodeRequest.h"
@@ -435,12 +389,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddDnatEntryResult> AddDnatEntryOutcome;
 			typedef std::future<AddDnatEntryOutcome> AddDnatEntryOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::AddDnatEntryRequest&, const AddDnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDnatEntryAsyncHandler;
-			typedef Outcome<Error, Model::AddNetworkOptimizationSettingResult> AddNetworkOptimizationSettingOutcome;
-			typedef std::future<AddNetworkOptimizationSettingOutcome> AddNetworkOptimizationSettingOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::AddNetworkOptimizationSettingRequest&, const AddNetworkOptimizationSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddNetworkOptimizationSettingAsyncHandler;
-			typedef Outcome<Error, Model::AddSagCidrResult> AddSagCidrOutcome;
-			typedef std::future<AddSagCidrOutcome> AddSagCidrOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::AddSagCidrRequest&, const AddSagCidrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSagCidrAsyncHandler;
 			typedef Outcome<Error, Model::AddSnatEntryResult> AddSnatEntryOutcome;
 			typedef std::future<AddSnatEntryOutcome> AddSnatEntryOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::AddSnatEntryRequest&, const AddSnatEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSnatEntryAsyncHandler;
@@ -453,9 +401,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AssociateQosResult> AssociateQosOutcome;
 			typedef std::future<AssociateQosOutcome> AssociateQosOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::AssociateQosRequest&, const AssociateQosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateQosAsyncHandler;
-			typedef Outcome<Error, Model::AttachNetworkOptimizationSagsResult> AttachNetworkOptimizationSagsOutcome;
-			typedef std::future<AttachNetworkOptimizationSagsOutcome> AttachNetworkOptimizationSagsOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::AttachNetworkOptimizationSagsRequest&, const AttachNetworkOptimizationSagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachNetworkOptimizationSagsAsyncHandler;
 			typedef Outcome<Error, Model::BindSerialNumberResult> BindSerialNumberOutcome;
 			typedef std::future<BindSerialNumberOutcome> BindSerialNumberOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::BindSerialNumberRequest&, const BindSerialNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindSerialNumberAsyncHandler;
@@ -486,9 +431,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateHealthCheckResult> CreateHealthCheckOutcome;
 			typedef std::future<CreateHealthCheckOutcome> CreateHealthCheckOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::CreateHealthCheckRequest&, const CreateHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHealthCheckAsyncHandler;
-			typedef Outcome<Error, Model::CreateNetworkOptimizationResult> CreateNetworkOptimizationOutcome;
-			typedef std::future<CreateNetworkOptimizationOutcome> CreateNetworkOptimizationOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::CreateNetworkOptimizationRequest&, const CreateNetworkOptimizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkOptimizationAsyncHandler;
 			typedef Outcome<Error, Model::CreateQosResult> CreateQosOutcome;
 			typedef std::future<CreateQosOutcome> CreateQosOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::CreateQosRequest&, const CreateQosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateQosAsyncHandler;
@@ -537,12 +479,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteHealthCheckResult> DeleteHealthCheckOutcome;
 			typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DeleteHealthCheckRequest&, const DeleteHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHealthCheckAsyncHandler;
-			typedef Outcome<Error, Model::DeleteNetworkOptimizationResult> DeleteNetworkOptimizationOutcome;
-			typedef std::future<DeleteNetworkOptimizationOutcome> DeleteNetworkOptimizationOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DeleteNetworkOptimizationRequest&, const DeleteNetworkOptimizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkOptimizationAsyncHandler;
-			typedef Outcome<Error, Model::DeleteNetworkOptimizationSettingResult> DeleteNetworkOptimizationSettingOutcome;
-			typedef std::future<DeleteNetworkOptimizationSettingOutcome> DeleteNetworkOptimizationSettingOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DeleteNetworkOptimizationSettingRequest&, const DeleteNetworkOptimizationSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkOptimizationSettingAsyncHandler;
 			typedef Outcome<Error, Model::DeleteQosResult> DeleteQosOutcome;
 			typedef std::future<DeleteQosOutcome> DeleteQosOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DeleteQosRequest&, const DeleteQosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQosAsyncHandler;
@@ -555,9 +491,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRouteDistributionStrategyResult> DeleteRouteDistributionStrategyOutcome;
 			typedef std::future<DeleteRouteDistributionStrategyOutcome> DeleteRouteDistributionStrategyOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DeleteRouteDistributionStrategyRequest&, const DeleteRouteDistributionStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteDistributionStrategyAsyncHandler;
-			typedef Outcome<Error, Model::DeleteSagCidrResult> DeleteSagCidrOutcome;
-			typedef std::future<DeleteSagCidrOutcome> DeleteSagCidrOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DeleteSagCidrRequest&, const DeleteSagCidrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSagCidrAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSagExpressConnectInterfaceResult> DeleteSagExpressConnectInterfaceOutcome;
 			typedef std::future<DeleteSagExpressConnectInterfaceOutcome> DeleteSagExpressConnectInterfaceOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DeleteSagExpressConnectInterfaceRequest&, const DeleteSagExpressConnectInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSagExpressConnectInterfaceAsyncHandler;
@@ -615,24 +548,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeHealthChecksResult> DescribeHealthChecksOutcome;
 			typedef std::future<DescribeHealthChecksOutcome> DescribeHealthChecksOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DescribeHealthChecksRequest&, const DescribeHealthChecksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthChecksAsyncHandler;
-			typedef Outcome<Error, Model::DescribeNetworkOptimizationSagsResult> DescribeNetworkOptimizationSagsOutcome;
-			typedef std::future<DescribeNetworkOptimizationSagsOutcome> DescribeNetworkOptimizationSagsOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DescribeNetworkOptimizationSagsRequest&, const DescribeNetworkOptimizationSagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkOptimizationSagsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeNetworkOptimizationSettingsResult> DescribeNetworkOptimizationSettingsOutcome;
-			typedef std::future<DescribeNetworkOptimizationSettingsOutcome> DescribeNetworkOptimizationSettingsOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DescribeNetworkOptimizationSettingsRequest&, const DescribeNetworkOptimizationSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkOptimizationSettingsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeNetworkOptimizationsResult> DescribeNetworkOptimizationsOutcome;
-			typedef std::future<DescribeNetworkOptimizationsOutcome> DescribeNetworkOptimizationsOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DescribeNetworkOptimizationsRequest&, const DescribeNetworkOptimizationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkOptimizationsAsyncHandler;
-			typedef Outcome<Error, Model::DescribePbrInterfacesResult> DescribePbrInterfacesOutcome;
-			typedef std::future<DescribePbrInterfacesOutcome> DescribePbrInterfacesOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DescribePbrInterfacesRequest&, const DescribePbrInterfacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePbrInterfacesAsyncHandler;
-			typedef Outcome<Error, Model::DescribePbrRulesResult> DescribePbrRulesOutcome;
-			typedef std::future<DescribePbrRulesOutcome> DescribePbrRulesOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DescribePbrRulesRequest&, const DescribePbrRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePbrRulesAsyncHandler;
-			typedef Outcome<Error, Model::DescribePolicyBasedRoutingsResult> DescribePolicyBasedRoutingsOutcome;
-			typedef std::future<DescribePolicyBasedRoutingsOutcome> DescribePolicyBasedRoutingsOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DescribePolicyBasedRoutingsRequest&, const DescribePolicyBasedRoutingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyBasedRoutingsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeQosCarsResult> DescribeQosCarsOutcome;
 			typedef std::future<DescribeQosCarsOutcome> DescribeQosCarsOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DescribeQosCarsRequest&, const DescribeQosCarsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQosCarsAsyncHandler;
@@ -657,9 +572,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSagDropTopNResult> DescribeSagDropTopNOutcome;
 			typedef std::future<DescribeSagDropTopNOutcome> DescribeSagDropTopNOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DescribeSagDropTopNRequest&, const DescribeSagDropTopNOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSagDropTopNAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSagECRouteBackupAttributeResult> DescribeSagECRouteBackupAttributeOutcome;
-			typedef std::future<DescribeSagECRouteBackupAttributeOutcome> DescribeSagECRouteBackupAttributeOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DescribeSagECRouteBackupAttributeRequest&, const DescribeSagECRouteBackupAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSagECRouteBackupAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSagExpressConnectInterfaceListResult> DescribeSagExpressConnectInterfaceListOutcome;
 			typedef std::future<DescribeSagExpressConnectInterfaceListOutcome> DescribeSagExpressConnectInterfaceListOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DescribeSagExpressConnectInterfaceListRequest&, const DescribeSagExpressConnectInterfaceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSagExpressConnectInterfaceListAsyncHandler;
@@ -696,9 +608,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSagRouteProtocolOspfResult> DescribeSagRouteProtocolOspfOutcome;
 			typedef std::future<DescribeSagRouteProtocolOspfOutcome> DescribeSagRouteProtocolOspfOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DescribeSagRouteProtocolOspfRequest&, const DescribeSagRouteProtocolOspfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSagRouteProtocolOspfAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSagRouteableAddressResult> DescribeSagRouteableAddressOutcome;
-			typedef std::future<DescribeSagRouteableAddressOutcome> DescribeSagRouteableAddressOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DescribeSagRouteableAddressRequest&, const DescribeSagRouteableAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSagRouteableAddressAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSagStaticRouteListResult> DescribeSagStaticRouteListOutcome;
 			typedef std::future<DescribeSagStaticRouteListOutcome> DescribeSagStaticRouteListOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DescribeSagStaticRouteListRequest&, const DescribeSagStaticRouteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSagStaticRouteListAsyncHandler;
@@ -753,9 +662,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUserOnlineClientsResult> DescribeUserOnlineClientsOutcome;
 			typedef std::future<DescribeUserOnlineClientsOutcome> DescribeUserOnlineClientsOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DescribeUserOnlineClientsRequest&, const DescribeUserOnlineClientsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserOnlineClientsAsyncHandler;
-			typedef Outcome<Error, Model::DetachNetworkOptimizationSagsResult> DetachNetworkOptimizationSagsOutcome;
-			typedef std::future<DetachNetworkOptimizationSagsOutcome> DetachNetworkOptimizationSagsOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::DetachNetworkOptimizationSagsRequest&, const DetachNetworkOptimizationSagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachNetworkOptimizationSagsAsyncHandler;
 			typedef Outcome<Error, Model::DiagnoseSmartAccessGatewayResult> DiagnoseSmartAccessGatewayOutcome;
 			typedef std::future<DiagnoseSmartAccessGatewayOutcome> DiagnoseSmartAccessGatewayOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::DiagnoseSmartAccessGatewayRequest&, const DiagnoseSmartAccessGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DiagnoseSmartAccessGatewayAsyncHandler;
@@ -861,9 +767,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyHealthCheckResult> ModifyHealthCheckOutcome;
 			typedef std::future<ModifyHealthCheckOutcome> ModifyHealthCheckOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::ModifyHealthCheckRequest&, const ModifyHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHealthCheckAsyncHandler;
-			typedef Outcome<Error, Model::ModifyNetworkOptimizationResult> ModifyNetworkOptimizationOutcome;
-			typedef std::future<ModifyNetworkOptimizationOutcome> ModifyNetworkOptimizationOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::ModifyNetworkOptimizationRequest&, const ModifyNetworkOptimizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkOptimizationAsyncHandler;
 			typedef Outcome<Error, Model::ModifyQosResult> ModifyQosOutcome;
 			typedef std::future<ModifyQosOutcome> ModifyQosOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::ModifyQosRequest&, const ModifyQosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQosAsyncHandler;
@@ -879,12 +782,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySAGAdminPasswordResult> ModifySAGAdminPasswordOutcome;
 			typedef std::future<ModifySAGAdminPasswordOutcome> ModifySAGAdminPasswordOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::ModifySAGAdminPasswordRequest&, const ModifySAGAdminPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySAGAdminPasswordAsyncHandler;
-			typedef Outcome<Error, Model::ModifySagCidrResult> ModifySagCidrOutcome;
-			typedef std::future<ModifySagCidrOutcome> ModifySagCidrOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::ModifySagCidrRequest&, const ModifySagCidrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySagCidrAsyncHandler;
-			typedef Outcome<Error, Model::ModifySagECRouteBackupResult> ModifySagECRouteBackupOutcome;
-			typedef std::future<ModifySagECRouteBackupOutcome> ModifySagECRouteBackupOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::ModifySagECRouteBackupRequest&, const ModifySagECRouteBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySagECRouteBackupAsyncHandler;
 			typedef Outcome<Error, Model::ModifySagExpressConnectInterfaceResult> ModifySagExpressConnectInterfaceOutcome;
 			typedef std::future<ModifySagExpressConnectInterfaceOutcome> ModifySagExpressConnectInterfaceOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::ModifySagExpressConnectInterfaceRequest&, const ModifySagExpressConnectInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySagExpressConnectInterfaceAsyncHandler;
@@ -942,9 +839,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MoveResourceGroupResult> MoveResourceGroupOutcome;
 			typedef std::future<MoveResourceGroupOutcome> MoveResourceGroupOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::MoveResourceGroupRequest&, const MoveResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceGroupAsyncHandler;
-			typedef Outcome<Error, Model::OrchestrateSagECRouteBackupResult> OrchestrateSagECRouteBackupOutcome;
-			typedef std::future<OrchestrateSagECRouteBackupOutcome> OrchestrateSagECRouteBackupOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::OrchestrateSagECRouteBackupRequest&, const OrchestrateSagECRouteBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OrchestrateSagECRouteBackupAsyncHandler;
 			typedef Outcome<Error, Model::ProbeAccessPointNetworkQualityResult> ProbeAccessPointNetworkQualityOutcome;
 			typedef std::future<ProbeAccessPointNetworkQualityOutcome> ProbeAccessPointNetworkQualityOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::ProbeAccessPointNetworkQualityRequest&, const ProbeAccessPointNetworkQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProbeAccessPointNetworkQualityAsyncHandler;
@@ -966,9 +860,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RoamClientUserResult> RoamClientUserOutcome;
 			typedef std::future<RoamClientUserOutcome> RoamClientUserOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::RoamClientUserRequest&, const RoamClientUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RoamClientUserAsyncHandler;
-			typedef Outcome<Error, Model::SetSagRouteableAddressResult> SetSagRouteableAddressOutcome;
-			typedef std::future<SetSagRouteableAddressOutcome> SetSagRouteableAddressOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::SetSagRouteableAddressRequest&, const SetSagRouteableAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSagRouteableAddressAsyncHandler;
 			typedef Outcome<Error, Model::SynchronizeSmartAGWebConfigResult> SynchronizeSmartAGWebConfigOutcome;
 			typedef std::future<SynchronizeSmartAGWebConfigOutcome> SynchronizeSmartAGWebConfigOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::SynchronizeSmartAGWebConfigRequest&, const SynchronizeSmartAGWebConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SynchronizeSmartAGWebConfigAsyncHandler;
@@ -981,12 +872,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnbindVbrResult> UnbindVbrOutcome;
 			typedef std::future<UnbindVbrOutcome> UnbindVbrOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::UnbindVbrRequest&, const UnbindVbrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindVbrAsyncHandler;
-			typedef Outcome<Error, Model::UnicomOrderConfirmResult> UnicomOrderConfirmOutcome;
-			typedef std::future<UnicomOrderConfirmOutcome> UnicomOrderConfirmOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::UnicomOrderConfirmRequest&, const UnicomOrderConfirmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnicomOrderConfirmAsyncHandler;
-			typedef Outcome<Error, Model::UnicomSignConfirmResult> UnicomSignConfirmOutcome;
-			typedef std::future<UnicomSignConfirmOutcome> UnicomSignConfirmOutcomeCallable;
-			typedef std::function<void(const SmartagClient*, const Model::UnicomSignConfirmRequest&, const UnicomSignConfirmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnicomSignConfirmAsyncHandler;
 			typedef Outcome<Error, Model::UnlockSmartAccessGatewayResult> UnlockSmartAccessGatewayOutcome;
 			typedef std::future<UnlockSmartAccessGatewayOutcome> UnlockSmartAccessGatewayOutcomeCallable;
 			typedef std::function<void(const SmartagClient*, const Model::UnlockSmartAccessGatewayRequest&, const UnlockSmartAccessGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnlockSmartAccessGatewayAsyncHandler;
@@ -1028,12 +913,6 @@ namespace AlibabaCloud
 			AddDnatEntryOutcome addDnatEntry(const Model::AddDnatEntryRequest &request)const;
 			void addDnatEntryAsync(const Model::AddDnatEntryRequest& request, const AddDnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDnatEntryOutcomeCallable addDnatEntryCallable(const Model::AddDnatEntryRequest& request) const;
-			AddNetworkOptimizationSettingOutcome addNetworkOptimizationSetting(const Model::AddNetworkOptimizationSettingRequest &request)const;
-			void addNetworkOptimizationSettingAsync(const Model::AddNetworkOptimizationSettingRequest& request, const AddNetworkOptimizationSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddNetworkOptimizationSettingOutcomeCallable addNetworkOptimizationSettingCallable(const Model::AddNetworkOptimizationSettingRequest& request) const;
-			AddSagCidrOutcome addSagCidr(const Model::AddSagCidrRequest &request)const;
-			void addSagCidrAsync(const Model::AddSagCidrRequest& request, const AddSagCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddSagCidrOutcomeCallable addSagCidrCallable(const Model::AddSagCidrRequest& request) const;
 			AddSnatEntryOutcome addSnatEntry(const Model::AddSnatEntryRequest &request)const;
 			void addSnatEntryAsync(const Model::AddSnatEntryRequest& request, const AddSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddSnatEntryOutcomeCallable addSnatEntryCallable(const Model::AddSnatEntryRequest& request) const;
@@ -1046,9 +925,6 @@ namespace AlibabaCloud
 			AssociateQosOutcome associateQos(const Model::AssociateQosRequest &request)const;
 			void associateQosAsync(const Model::AssociateQosRequest& request, const AssociateQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssociateQosOutcomeCallable associateQosCallable(const Model::AssociateQosRequest& request) const;
-			AttachNetworkOptimizationSagsOutcome attachNetworkOptimizationSags(const Model::AttachNetworkOptimizationSagsRequest &request)const;
-			void attachNetworkOptimizationSagsAsync(const Model::AttachNetworkOptimizationSagsRequest& request, const AttachNetworkOptimizationSagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AttachNetworkOptimizationSagsOutcomeCallable attachNetworkOptimizationSagsCallable(const Model::AttachNetworkOptimizationSagsRequest& request) const;
 			BindSerialNumberOutcome bindSerialNumber(const Model::BindSerialNumberRequest &request)const;
 			void bindSerialNumberAsync(const Model::BindSerialNumberRequest& request, const BindSerialNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindSerialNumberOutcomeCallable bindSerialNumberCallable(const Model::BindSerialNumberRequest& request) const;
@@ -1079,9 +955,6 @@ namespace AlibabaCloud
 			CreateHealthCheckOutcome createHealthCheck(const Model::CreateHealthCheckRequest &request)const;
 			void createHealthCheckAsync(const Model::CreateHealthCheckRequest& request, const CreateHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateHealthCheckOutcomeCallable createHealthCheckCallable(const Model::CreateHealthCheckRequest& request) const;
-			CreateNetworkOptimizationOutcome createNetworkOptimization(const Model::CreateNetworkOptimizationRequest &request)const;
-			void createNetworkOptimizationAsync(const Model::CreateNetworkOptimizationRequest& request, const CreateNetworkOptimizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateNetworkOptimizationOutcomeCallable createNetworkOptimizationCallable(const Model::CreateNetworkOptimizationRequest& request) const;
 			CreateQosOutcome createQos(const Model::CreateQosRequest &request)const;
 			void createQosAsync(const Model::CreateQosRequest& request, const CreateQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateQosOutcomeCallable createQosCallable(const Model::CreateQosRequest& request) const;
@@ -1130,12 +1003,6 @@ namespace AlibabaCloud
 			DeleteHealthCheckOutcome deleteHealthCheck(const Model::DeleteHealthCheckRequest &request)const;
 			void deleteHealthCheckAsync(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteHealthCheckOutcomeCallable deleteHealthCheckCallable(const Model::DeleteHealthCheckRequest& request) const;
-			DeleteNetworkOptimizationOutcome deleteNetworkOptimization(const Model::DeleteNetworkOptimizationRequest &request)const;
-			void deleteNetworkOptimizationAsync(const Model::DeleteNetworkOptimizationRequest& request, const DeleteNetworkOptimizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteNetworkOptimizationOutcomeCallable deleteNetworkOptimizationCallable(const Model::DeleteNetworkOptimizationRequest& request) const;
-			DeleteNetworkOptimizationSettingOutcome deleteNetworkOptimizationSetting(const Model::DeleteNetworkOptimizationSettingRequest &request)const;
-			void deleteNetworkOptimizationSettingAsync(const Model::DeleteNetworkOptimizationSettingRequest& request, const DeleteNetworkOptimizationSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteNetworkOptimizationSettingOutcomeCallable deleteNetworkOptimizationSettingCallable(const Model::DeleteNetworkOptimizationSettingRequest& request) const;
 			DeleteQosOutcome deleteQos(const Model::DeleteQosRequest &request)const;
 			void deleteQosAsync(const Model::DeleteQosRequest& request, const DeleteQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteQosOutcomeCallable deleteQosCallable(const Model::DeleteQosRequest& request) const;
@@ -1148,9 +1015,6 @@ namespace AlibabaCloud
 			DeleteRouteDistributionStrategyOutcome deleteRouteDistributionStrategy(const Model::DeleteRouteDistributionStrategyRequest &request)const;
 			void deleteRouteDistributionStrategyAsync(const Model::DeleteRouteDistributionStrategyRequest& request, const DeleteRouteDistributionStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRouteDistributionStrategyOutcomeCallable deleteRouteDistributionStrategyCallable(const Model::DeleteRouteDistributionStrategyRequest& request) const;
-			DeleteSagCidrOutcome deleteSagCidr(const Model::DeleteSagCidrRequest &request)const;
-			void deleteSagCidrAsync(const Model::DeleteSagCidrRequest& request, const DeleteSagCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteSagCidrOutcomeCallable deleteSagCidrCallable(const Model::DeleteSagCidrRequest& request) const;
 			DeleteSagExpressConnectInterfaceOutcome deleteSagExpressConnectInterface(const Model::DeleteSagExpressConnectInterfaceRequest &request)const;
 			void deleteSagExpressConnectInterfaceAsync(const Model::DeleteSagExpressConnectInterfaceRequest& request, const DeleteSagExpressConnectInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSagExpressConnectInterfaceOutcomeCallable deleteSagExpressConnectInterfaceCallable(const Model::DeleteSagExpressConnectInterfaceRequest& request) const;
@@ -1208,24 +1072,6 @@ namespace AlibabaCloud
 			DescribeHealthChecksOutcome describeHealthChecks(const Model::DescribeHealthChecksRequest &request)const;
 			void describeHealthChecksAsync(const Model::DescribeHealthChecksRequest& request, const DescribeHealthChecksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHealthChecksOutcomeCallable describeHealthChecksCallable(const Model::DescribeHealthChecksRequest& request) const;
-			DescribeNetworkOptimizationSagsOutcome describeNetworkOptimizationSags(const Model::DescribeNetworkOptimizationSagsRequest &request)const;
-			void describeNetworkOptimizationSagsAsync(const Model::DescribeNetworkOptimizationSagsRequest& request, const DescribeNetworkOptimizationSagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeNetworkOptimizationSagsOutcomeCallable describeNetworkOptimizationSagsCallable(const Model::DescribeNetworkOptimizationSagsRequest& request) const;
-			DescribeNetworkOptimizationSettingsOutcome describeNetworkOptimizationSettings(const Model::DescribeNetworkOptimizationSettingsRequest &request)const;
-			void describeNetworkOptimizationSettingsAsync(const Model::DescribeNetworkOptimizationSettingsRequest& request, const DescribeNetworkOptimizationSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeNetworkOptimizationSettingsOutcomeCallable describeNetworkOptimizationSettingsCallable(const Model::DescribeNetworkOptimizationSettingsRequest& request) const;
-			DescribeNetworkOptimizationsOutcome describeNetworkOptimizations(const Model::DescribeNetworkOptimizationsRequest &request)const;
-			void describeNetworkOptimizationsAsync(const Model::DescribeNetworkOptimizationsRequest& request, const DescribeNetworkOptimizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeNetworkOptimizationsOutcomeCallable describeNetworkOptimizationsCallable(const Model::DescribeNetworkOptimizationsRequest& request) const;
-			DescribePbrInterfacesOutcome describePbrInterfaces(const Model::DescribePbrInterfacesRequest &request)const;
-			void describePbrInterfacesAsync(const Model::DescribePbrInterfacesRequest& request, const DescribePbrInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePbrInterfacesOutcomeCallable describePbrInterfacesCallable(const Model::DescribePbrInterfacesRequest& request) const;
-			DescribePbrRulesOutcome describePbrRules(const Model::DescribePbrRulesRequest &request)const;
-			void describePbrRulesAsync(const Model::DescribePbrRulesRequest& request, const DescribePbrRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePbrRulesOutcomeCallable describePbrRulesCallable(const Model::DescribePbrRulesRequest& request) const;
-			DescribePolicyBasedRoutingsOutcome describePolicyBasedRoutings(const Model::DescribePolicyBasedRoutingsRequest &request)const;
-			void describePolicyBasedRoutingsAsync(const Model::DescribePolicyBasedRoutingsRequest& request, const DescribePolicyBasedRoutingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePolicyBasedRoutingsOutcomeCallable describePolicyBasedRoutingsCallable(const Model::DescribePolicyBasedRoutingsRequest& request) const;
 			DescribeQosCarsOutcome describeQosCars(const Model::DescribeQosCarsRequest &request)const;
 			void describeQosCarsAsync(const Model::DescribeQosCarsRequest& request, const DescribeQosCarsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeQosCarsOutcomeCallable describeQosCarsCallable(const Model::DescribeQosCarsRequest& request) const;
@@ -1250,9 +1096,6 @@ namespace AlibabaCloud
 			DescribeSagDropTopNOutcome describeSagDropTopN(const Model::DescribeSagDropTopNRequest &request)const;
 			void describeSagDropTopNAsync(const Model::DescribeSagDropTopNRequest& request, const DescribeSagDropTopNAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSagDropTopNOutcomeCallable describeSagDropTopNCallable(const Model::DescribeSagDropTopNRequest& request) const;
-			DescribeSagECRouteBackupAttributeOutcome describeSagECRouteBackupAttribute(const Model::DescribeSagECRouteBackupAttributeRequest &request)const;
-			void describeSagECRouteBackupAttributeAsync(const Model::DescribeSagECRouteBackupAttributeRequest& request, const DescribeSagECRouteBackupAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSagECRouteBackupAttributeOutcomeCallable describeSagECRouteBackupAttributeCallable(const Model::DescribeSagECRouteBackupAttributeRequest& request) const;
 			DescribeSagExpressConnectInterfaceListOutcome describeSagExpressConnectInterfaceList(const Model::DescribeSagExpressConnectInterfaceListRequest &request)const;
 			void describeSagExpressConnectInterfaceListAsync(const Model::DescribeSagExpressConnectInterfaceListRequest& request, const DescribeSagExpressConnectInterfaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSagExpressConnectInterfaceListOutcomeCallable describeSagExpressConnectInterfaceListCallable(const Model::DescribeSagExpressConnectInterfaceListRequest& request) const;
@@ -1289,9 +1132,6 @@ namespace AlibabaCloud
 			DescribeSagRouteProtocolOspfOutcome describeSagRouteProtocolOspf(const Model::DescribeSagRouteProtocolOspfRequest &request)const;
 			void describeSagRouteProtocolOspfAsync(const Model::DescribeSagRouteProtocolOspfRequest& request, const DescribeSagRouteProtocolOspfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSagRouteProtocolOspfOutcomeCallable describeSagRouteProtocolOspfCallable(const Model::DescribeSagRouteProtocolOspfRequest& request) const;
-			DescribeSagRouteableAddressOutcome describeSagRouteableAddress(const Model::DescribeSagRouteableAddressRequest &request)const;
-			void describeSagRouteableAddressAsync(const Model::DescribeSagRouteableAddressRequest& request, const DescribeSagRouteableAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSagRouteableAddressOutcomeCallable describeSagRouteableAddressCallable(const Model::DescribeSagRouteableAddressRequest& request) const;
 			DescribeSagStaticRouteListOutcome describeSagStaticRouteList(const Model::DescribeSagStaticRouteListRequest &request)const;
 			void describeSagStaticRouteListAsync(const Model::DescribeSagStaticRouteListRequest& request, const DescribeSagStaticRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSagStaticRouteListOutcomeCallable describeSagStaticRouteListCallable(const Model::DescribeSagStaticRouteListRequest& request) const;
@@ -1346,9 +1186,6 @@ namespace AlibabaCloud
 			DescribeUserOnlineClientsOutcome describeUserOnlineClients(const Model::DescribeUserOnlineClientsRequest &request)const;
 			void describeUserOnlineClientsAsync(const Model::DescribeUserOnlineClientsRequest& request, const DescribeUserOnlineClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserOnlineClientsOutcomeCallable describeUserOnlineClientsCallable(const Model::DescribeUserOnlineClientsRequest& request) const;
-			DetachNetworkOptimizationSagsOutcome detachNetworkOptimizationSags(const Model::DetachNetworkOptimizationSagsRequest &request)const;
-			void detachNetworkOptimizationSagsAsync(const Model::DetachNetworkOptimizationSagsRequest& request, const DetachNetworkOptimizationSagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetachNetworkOptimizationSagsOutcomeCallable detachNetworkOptimizationSagsCallable(const Model::DetachNetworkOptimizationSagsRequest& request) const;
 			DiagnoseSmartAccessGatewayOutcome diagnoseSmartAccessGateway(const Model::DiagnoseSmartAccessGatewayRequest &request)const;
 			void diagnoseSmartAccessGatewayAsync(const Model::DiagnoseSmartAccessGatewayRequest& request, const DiagnoseSmartAccessGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DiagnoseSmartAccessGatewayOutcomeCallable diagnoseSmartAccessGatewayCallable(const Model::DiagnoseSmartAccessGatewayRequest& request) const;
@@ -1454,9 +1291,6 @@ namespace AlibabaCloud
 			ModifyHealthCheckOutcome modifyHealthCheck(const Model::ModifyHealthCheckRequest &request)const;
 			void modifyHealthCheckAsync(const Model::ModifyHealthCheckRequest& request, const ModifyHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyHealthCheckOutcomeCallable modifyHealthCheckCallable(const Model::ModifyHealthCheckRequest& request) const;
-			ModifyNetworkOptimizationOutcome modifyNetworkOptimization(const Model::ModifyNetworkOptimizationRequest &request)const;
-			void modifyNetworkOptimizationAsync(const Model::ModifyNetworkOptimizationRequest& request, const ModifyNetworkOptimizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyNetworkOptimizationOutcomeCallable modifyNetworkOptimizationCallable(const Model::ModifyNetworkOptimizationRequest& request) const;
 			ModifyQosOutcome modifyQos(const Model::ModifyQosRequest &request)const;
 			void modifyQosAsync(const Model::ModifyQosRequest& request, const ModifyQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyQosOutcomeCallable modifyQosCallable(const Model::ModifyQosRequest& request) const;
@@ -1472,12 +1306,6 @@ namespace AlibabaCloud
 			ModifySAGAdminPasswordOutcome modifySAGAdminPassword(const Model::ModifySAGAdminPasswordRequest &request)const;
 			void modifySAGAdminPasswordAsync(const Model::ModifySAGAdminPasswordRequest& request, const ModifySAGAdminPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySAGAdminPasswordOutcomeCallable modifySAGAdminPasswordCallable(const Model::ModifySAGAdminPasswordRequest& request) const;
-			ModifySagCidrOutcome modifySagCidr(const Model::ModifySagCidrRequest &request)const;
-			void modifySagCidrAsync(const Model::ModifySagCidrRequest& request, const ModifySagCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifySagCidrOutcomeCallable modifySagCidrCallable(const Model::ModifySagCidrRequest& request) const;
-			ModifySagECRouteBackupOutcome modifySagECRouteBackup(const Model::ModifySagECRouteBackupRequest &request)const;
-			void modifySagECRouteBackupAsync(const Model::ModifySagECRouteBackupRequest& request, const ModifySagECRouteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifySagECRouteBackupOutcomeCallable modifySagECRouteBackupCallable(const Model::ModifySagECRouteBackupRequest& request) const;
 			ModifySagExpressConnectInterfaceOutcome modifySagExpressConnectInterface(const Model::ModifySagExpressConnectInterfaceRequest &request)const;
 			void modifySagExpressConnectInterfaceAsync(const Model::ModifySagExpressConnectInterfaceRequest& request, const ModifySagExpressConnectInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySagExpressConnectInterfaceOutcomeCallable modifySagExpressConnectInterfaceCallable(const Model::ModifySagExpressConnectInterfaceRequest& request) const;
@@ -1535,9 +1363,6 @@ namespace AlibabaCloud
 			MoveResourceGroupOutcome moveResourceGroup(const Model::MoveResourceGroupRequest &request)const;
 			void moveResourceGroupAsync(const Model::MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoveResourceGroupOutcomeCallable moveResourceGroupCallable(const Model::MoveResourceGroupRequest& request) const;
-			OrchestrateSagECRouteBackupOutcome orchestrateSagECRouteBackup(const Model::OrchestrateSagECRouteBackupRequest &request)const;
-			void orchestrateSagECRouteBackupAsync(const Model::OrchestrateSagECRouteBackupRequest& request, const OrchestrateSagECRouteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OrchestrateSagECRouteBackupOutcomeCallable orchestrateSagECRouteBackupCallable(const Model::OrchestrateSagECRouteBackupRequest& request) const;
 			ProbeAccessPointNetworkQualityOutcome probeAccessPointNetworkQuality(const Model::ProbeAccessPointNetworkQualityRequest &request)const;
 			void probeAccessPointNetworkQualityAsync(const Model::ProbeAccessPointNetworkQualityRequest& request, const ProbeAccessPointNetworkQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ProbeAccessPointNetworkQualityOutcomeCallable probeAccessPointNetworkQualityCallable(const Model::ProbeAccessPointNetworkQualityRequest& request) const;
@@ -1559,9 +1384,6 @@ namespace AlibabaCloud
 			RoamClientUserOutcome roamClientUser(const Model::RoamClientUserRequest &request)const;
 			void roamClientUserAsync(const Model::RoamClientUserRequest& request, const RoamClientUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RoamClientUserOutcomeCallable roamClientUserCallable(const Model::RoamClientUserRequest& request) const;
-			SetSagRouteableAddressOutcome setSagRouteableAddress(const Model::SetSagRouteableAddressRequest &request)const;
-			void setSagRouteableAddressAsync(const Model::SetSagRouteableAddressRequest& request, const SetSagRouteableAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetSagRouteableAddressOutcomeCallable setSagRouteableAddressCallable(const Model::SetSagRouteableAddressRequest& request) const;
 			SynchronizeSmartAGWebConfigOutcome synchronizeSmartAGWebConfig(const Model::SynchronizeSmartAGWebConfigRequest &request)const;
 			void synchronizeSmartAGWebConfigAsync(const Model::SynchronizeSmartAGWebConfigRequest& request, const SynchronizeSmartAGWebConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SynchronizeSmartAGWebConfigOutcomeCallable synchronizeSmartAGWebConfigCallable(const Model::SynchronizeSmartAGWebConfigRequest& request) const;
@@ -1574,12 +1396,6 @@ namespace AlibabaCloud
 			UnbindVbrOutcome unbindVbr(const Model::UnbindVbrRequest &request)const;
 			void unbindVbrAsync(const Model::UnbindVbrRequest& request, const UnbindVbrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindVbrOutcomeCallable unbindVbrCallable(const Model::UnbindVbrRequest& request) const;
-			UnicomOrderConfirmOutcome unicomOrderConfirm(const Model::UnicomOrderConfirmRequest &request)const;
-			void unicomOrderConfirmAsync(const Model::UnicomOrderConfirmRequest& request, const UnicomOrderConfirmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UnicomOrderConfirmOutcomeCallable unicomOrderConfirmCallable(const Model::UnicomOrderConfirmRequest& request) const;
-			UnicomSignConfirmOutcome unicomSignConfirm(const Model::UnicomSignConfirmRequest &request)const;
-			void unicomSignConfirmAsync(const Model::UnicomSignConfirmRequest& request, const UnicomSignConfirmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UnicomSignConfirmOutcomeCallable unicomSignConfirmCallable(const Model::UnicomSignConfirmRequest& request) const;
 			UnlockSmartAccessGatewayOutcome unlockSmartAccessGateway(const Model::UnlockSmartAccessGatewayRequest &request)const;
 			void unlockSmartAccessGatewayAsync(const Model::UnlockSmartAccessGatewayRequest& request, const UnlockSmartAccessGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnlockSmartAccessGatewayOutcomeCallable unlockSmartAccessGatewayCallable(const Model::UnlockSmartAccessGatewayRequest& request) const;

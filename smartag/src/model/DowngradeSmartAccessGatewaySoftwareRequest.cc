@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Smartag::Model::DowngradeSmartAccessGatewaySoftwareRequest;
 
-DowngradeSmartAccessGatewaySoftwareRequest::DowngradeSmartAccessGatewaySoftwareRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "DowngradeSmartAccessGatewaySoftware")
-{
-	setMethod(HttpRequest::Method::Post);
+DowngradeSmartAccessGatewaySoftwareRequest::DowngradeSmartAccessGatewaySoftwareRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "DowngradeSmartAccessGatewaySoftware") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DowngradeSmartAccessGatewaySoftwareRequest::~DowngradeSmartAccessGatewaySoftwareRequest()
-{}
+DowngradeSmartAccessGatewaySoftwareRequest::~DowngradeSmartAccessGatewaySoftwareRequest() {}
 
-long DowngradeSmartAccessGatewaySoftwareRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DowngradeSmartAccessGatewaySoftwareRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DowngradeSmartAccessGatewaySoftwareRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DowngradeSmartAccessGatewaySoftwareRequest::getRegionId()const
-{
-	return regionId_;
+std::string DowngradeSmartAccessGatewaySoftwareRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DowngradeSmartAccessGatewaySoftwareRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int DowngradeSmartAccessGatewaySoftwareRequest::getUserCount()const
-{
-	return userCount_;
+int DowngradeSmartAccessGatewaySoftwareRequest::getUserCount() const {
+  return userCount_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setUserCount(int userCount)
-{
-	userCount_ = userCount;
-	setParameter("UserCount", std::to_string(userCount));
+void DowngradeSmartAccessGatewaySoftwareRequest::setUserCount(int userCount) {
+  userCount_ = userCount;
+  setParameter(std::string("UserCount"), std::to_string(userCount));
 }
 
-bool DowngradeSmartAccessGatewaySoftwareRequest::getAutoPay()const
-{
-	return autoPay_;
+bool DowngradeSmartAccessGatewaySoftwareRequest::getAutoPay() const {
+  return autoPay_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setAutoPay(bool autoPay)
-{
-	autoPay_ = autoPay;
-	setParameter("AutoPay", autoPay ? "true" : "false");
+void DowngradeSmartAccessGatewaySoftwareRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
 }
 
-std::string DowngradeSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DowngradeSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DowngradeSmartAccessGatewaySoftwareRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DowngradeSmartAccessGatewaySoftwareRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DowngradeSmartAccessGatewaySoftwareRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DowngradeSmartAccessGatewaySoftwareRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DowngradeSmartAccessGatewaySoftwareRequest::getOwnerId()const
-{
-	return ownerId_;
+long DowngradeSmartAccessGatewaySoftwareRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DowngradeSmartAccessGatewaySoftwareRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DowngradeSmartAccessGatewaySoftwareRequest::getSmartAGId()const
-{
-	return smartAGId_;
+std::string DowngradeSmartAccessGatewaySoftwareRequest::getSmartAGId() const {
+  return smartAGId_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setSmartAGId(const std::string& smartAGId)
-{
-	smartAGId_ = smartAGId;
-	setParameter("SmartAGId", smartAGId);
+void DowngradeSmartAccessGatewaySoftwareRequest::setSmartAGId(const std::string &smartAGId) {
+  smartAGId_ = smartAGId;
+  setParameter(std::string("SmartAGId"), smartAGId);
 }
 
-long DowngradeSmartAccessGatewaySoftwareRequest::getDataPlan()const
-{
-	return dataPlan_;
+long DowngradeSmartAccessGatewaySoftwareRequest::getDataPlan() const {
+  return dataPlan_;
 }
 
-void DowngradeSmartAccessGatewaySoftwareRequest::setDataPlan(long dataPlan)
-{
-	dataPlan_ = dataPlan;
-	setParameter("DataPlan", std::to_string(dataPlan));
+void DowngradeSmartAccessGatewaySoftwareRequest::setDataPlan(long dataPlan) {
+  dataPlan_ = dataPlan;
+  setParameter(std::string("DataPlan"), std::to_string(dataPlan));
 }
 

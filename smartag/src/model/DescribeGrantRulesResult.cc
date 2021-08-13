@@ -43,24 +43,24 @@ void DescribeGrantRulesResult::parse(const std::string &payload)
 	for (auto valueGrantRulesGrantRule : allGrantRulesNode)
 	{
 		GrantRule grantRulesObject;
-		if(!valueGrantRulesGrantRule["GmtCreate"].isNull())
-			grantRulesObject.gmtCreate = std::stol(valueGrantRulesGrantRule["GmtCreate"].asString());
-		if(!valueGrantRulesGrantRule["CenUid"].isNull())
-			grantRulesObject.cenUid = std::stol(valueGrantRulesGrantRule["CenUid"].asString());
-		if(!valueGrantRulesGrantRule["GrantTrafficService"].isNull())
-			grantRulesObject.grantTrafficService = valueGrantRulesGrantRule["GrantTrafficService"].asString() == "true";
-		if(!valueGrantRulesGrantRule["CcnInstanceId"].isNull())
-			grantRulesObject.ccnInstanceId = valueGrantRulesGrantRule["CcnInstanceId"].asString();
-		if(!valueGrantRulesGrantRule["GrantRuleId"].isNull())
-			grantRulesObject.grantRuleId = valueGrantRulesGrantRule["GrantRuleId"].asString();
 		if(!valueGrantRulesGrantRule["CenInstanceId"].isNull())
 			grantRulesObject.cenInstanceId = valueGrantRulesGrantRule["CenInstanceId"].asString();
+		if(!valueGrantRulesGrantRule["CenUid"].isNull())
+			grantRulesObject.cenUid = std::stol(valueGrantRulesGrantRule["CenUid"].asString());
+		if(!valueGrantRulesGrantRule["GmtCreate"].isNull())
+			grantRulesObject.gmtCreate = std::stol(valueGrantRulesGrantRule["GmtCreate"].asString());
+		if(!valueGrantRulesGrantRule["GrantRuleId"].isNull())
+			grantRulesObject.grantRuleId = valueGrantRulesGrantRule["GrantRuleId"].asString();
+		if(!valueGrantRulesGrantRule["GrantTrafficService"].isNull())
+			grantRulesObject.grantTrafficService = valueGrantRulesGrantRule["GrantTrafficService"].asString() == "true";
 		if(!valueGrantRulesGrantRule["GmtModified"].isNull())
 			grantRulesObject.gmtModified = std::stol(valueGrantRulesGrantRule["GmtModified"].asString());
 		if(!valueGrantRulesGrantRule["CcnUid"].isNull())
 			grantRulesObject.ccnUid = std::stol(valueGrantRulesGrantRule["CcnUid"].asString());
 		if(!valueGrantRulesGrantRule["RegionId"].isNull())
 			grantRulesObject.regionId = valueGrantRulesGrantRule["RegionId"].asString();
+		if(!valueGrantRulesGrantRule["CcnInstanceId"].isNull())
+			grantRulesObject.ccnInstanceId = valueGrantRulesGrantRule["CcnInstanceId"].asString();
 		grantRules_.push_back(grantRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

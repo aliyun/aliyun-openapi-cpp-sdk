@@ -46,8 +46,8 @@ namespace AlibabaCloud
 					std::string iP;
 					std::string mask;
 					std::string startIp;
-					std::string portName;
 					std::string endIp;
+					std::string portName;
 				};
 
 

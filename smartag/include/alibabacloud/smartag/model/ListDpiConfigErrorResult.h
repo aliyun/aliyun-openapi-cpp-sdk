@@ -52,16 +52,16 @@ namespace AlibabaCloud
 				~ListDpiConfigErrorResult();
 				std::string getNextToken()const;
 				std::vector<DpiConfigErrorItem> getDpiConfigError()const;
-				int getMaxResults()const;
 				int getTotal()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string nextToken_;
 				std::vector<DpiConfigErrorItem> dpiConfigError_;
-				int maxResults_;
 				int total_;
+				int maxResults_;
 
 			};
 		}

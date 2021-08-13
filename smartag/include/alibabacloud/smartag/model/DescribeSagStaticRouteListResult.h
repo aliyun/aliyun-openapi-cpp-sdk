@@ -32,13 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SMARTAG_EXPORT DescribeSagStaticRouteListResult : public ServiceResult
 			{
 			public:
-				struct TaskState
-				{
-					std::string state;
-					std::string createTime;
-					std::string errorCode;
-					std::string errorMessage;
-				};
 				struct StaticRoute
 				{
 					std::string nextHop;
@@ -46,19 +39,26 @@ namespace AlibabaCloud
 					std::string portName;
 					std::string destinationCidr;
 				};
+				struct TaskState
+				{
+					std::string state;
+					std::string createTime;
+					std::string errorCode;
+					std::string errorMessage;
+				};
 
 
 				DescribeSagStaticRouteListResult();
 				explicit DescribeSagStaticRouteListResult(const std::string &payload);
 				~DescribeSagStaticRouteListResult();
-				std::vector<TaskState> getTaskStates()const;
 				std::vector<StaticRoute> getStaticRoutes()const;
+				std::vector<TaskState> getTaskStates()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<TaskState> taskStates_;
 				std::vector<StaticRoute> staticRoutes_;
+				std::vector<TaskState> taskStates_;
 
 			};
 		}

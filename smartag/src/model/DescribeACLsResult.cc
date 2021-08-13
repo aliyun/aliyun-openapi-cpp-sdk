@@ -49,6 +49,8 @@ void DescribeACLsResult::parse(const std::string &payload)
 			aclsObject.aclId = valueAclsAcl["AclId"].asString();
 		if(!valueAclsAcl["Name"].isNull())
 			aclsObject.name = valueAclsAcl["Name"].asString();
+		if(!valueAclsAcl["ResourceGroupId"].isNull())
+			aclsObject.resourceGroupId = valueAclsAcl["ResourceGroupId"].asString();
 		acls_.push_back(aclsObject);
 	}
 	if(!value["TotalCount"].isNull())

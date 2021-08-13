@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Qos
 				{
 					std::string sagCount;
+					std::string resourceGroupId;
 					std::string qosId;
 					std::string smartAGIds;
 					std::string qosName;

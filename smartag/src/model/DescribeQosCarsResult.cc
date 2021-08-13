@@ -43,28 +43,28 @@ void DescribeQosCarsResult::parse(const std::string &payload)
 	for (auto valueQosCarsQosCar : allQosCarsNode)
 	{
 		QosCar qosCarsObject;
-		if(!valueQosCarsQosCar["MinBandwidthAbs"].isNull())
-			qosCarsObject.minBandwidthAbs = std::stoi(valueQosCarsQosCar["MinBandwidthAbs"].asString());
-		if(!valueQosCarsQosCar["Description"].isNull())
-			qosCarsObject.description = valueQosCarsQosCar["Description"].asString();
-		if(!valueQosCarsQosCar["QosCarId"].isNull())
-			qosCarsObject.qosCarId = valueQosCarsQosCar["QosCarId"].asString();
-		if(!valueQosCarsQosCar["Priority"].isNull())
-			qosCarsObject.priority = std::stoi(valueQosCarsQosCar["Priority"].asString());
-		if(!valueQosCarsQosCar["MaxBandwidthPercent"].isNull())
-			qosCarsObject.maxBandwidthPercent = std::stoi(valueQosCarsQosCar["MaxBandwidthPercent"].asString());
 		if(!valueQosCarsQosCar["MaxBandwidthAbs"].isNull())
 			qosCarsObject.maxBandwidthAbs = std::stoi(valueQosCarsQosCar["MaxBandwidthAbs"].asString());
-		if(!valueQosCarsQosCar["QosId"].isNull())
-			qosCarsObject.qosId = valueQosCarsQosCar["QosId"].asString();
 		if(!valueQosCarsQosCar["PercentSourceType"].isNull())
 			qosCarsObject.percentSourceType = valueQosCarsQosCar["PercentSourceType"].asString();
-		if(!valueQosCarsQosCar["MinBandwidthPercent"].isNull())
-			qosCarsObject.minBandwidthPercent = std::stoi(valueQosCarsQosCar["MinBandwidthPercent"].asString());
+		if(!valueQosCarsQosCar["MinBandwidthAbs"].isNull())
+			qosCarsObject.minBandwidthAbs = std::stoi(valueQosCarsQosCar["MinBandwidthAbs"].asString());
+		if(!valueQosCarsQosCar["MaxBandwidthPercent"].isNull())
+			qosCarsObject.maxBandwidthPercent = std::stoi(valueQosCarsQosCar["MaxBandwidthPercent"].asString());
+		if(!valueQosCarsQosCar["Description"].isNull())
+			qosCarsObject.description = valueQosCarsQosCar["Description"].asString();
+		if(!valueQosCarsQosCar["QosId"].isNull())
+			qosCarsObject.qosId = valueQosCarsQosCar["QosId"].asString();
 		if(!valueQosCarsQosCar["LimitType"].isNull())
 			qosCarsObject.limitType = valueQosCarsQosCar["LimitType"].asString();
+		if(!valueQosCarsQosCar["Priority"].isNull())
+			qosCarsObject.priority = std::stoi(valueQosCarsQosCar["Priority"].asString());
 		if(!valueQosCarsQosCar["Name"].isNull())
 			qosCarsObject.name = valueQosCarsQosCar["Name"].asString();
+		if(!valueQosCarsQosCar["MinBandwidthPercent"].isNull())
+			qosCarsObject.minBandwidthPercent = std::stoi(valueQosCarsQosCar["MinBandwidthPercent"].asString());
+		if(!valueQosCarsQosCar["QosCarId"].isNull())
+			qosCarsObject.qosCarId = valueQosCarsQosCar["QosCarId"].asString();
 		qosCars_.push_back(qosCarsObject);
 	}
 	if(!value["TotalCount"].isNull())

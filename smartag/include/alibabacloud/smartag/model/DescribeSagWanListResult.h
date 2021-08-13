@@ -37,9 +37,9 @@ namespace AlibabaCloud
 					std::string iPType;
 					std::string trafficState;
 					int priority;
-					std::string sourceIps;
-					std::string iSP;
 					std::string iP;
+					std::string iSP;
+					std::string sourceIps;
 					std::string mask;
 					std::string startIp;
 					std::string vlan;

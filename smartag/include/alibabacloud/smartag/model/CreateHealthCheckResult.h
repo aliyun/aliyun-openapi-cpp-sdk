@@ -37,8 +37,8 @@ namespace AlibabaCloud
 				CreateHealthCheckResult();
 				explicit CreateHealthCheckResult(const std::string &payload);
 				~CreateHealthCheckResult();
-				std::string getDescription()const;
 				int getSrcPort()const;
+				std::string getDescription()const;
 				std::string getInstanceId()const;
 				std::string getSrcIpAddr()const;
 				long getCreateTime()const;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				std::string getType()const;
 				int getProbeTimeout()const;
 				int getRttThreshold()const;
-				int getProbeInterval()const;
 				std::string getRegionId()const;
+				int getProbeInterval()const;
 				std::string getSmartAGId()const;
 				int getRttFailThreshold()const;
 				std::string getDstIpAddr()const;
@@ -58,8 +58,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string description_;
 				int srcPort_;
+				std::string description_;
 				std::string instanceId_;
 				std::string srcIpAddr_;
 				long createTime_;
@@ -70,8 +70,8 @@ namespace AlibabaCloud
 				std::string type_;
 				int probeTimeout_;
 				int rttThreshold_;
-				int probeInterval_;
 				std::string regionId_;
+				int probeInterval_;
 				std::string smartAGId_;
 				int rttFailThreshold_;
 				std::string dstIpAddr_;

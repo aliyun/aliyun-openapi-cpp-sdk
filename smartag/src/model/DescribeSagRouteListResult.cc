@@ -43,16 +43,16 @@ void DescribeSagRouteListResult::parse(const std::string &payload)
 	for (auto valueRoutesRoute : allRoutesNode)
 	{
 		Route routesObject;
-		if(!valueRoutesRoute["RouteProtocol"].isNull())
-			routesObject.routeProtocol = valueRoutesRoute["RouteProtocol"].asString();
 		if(!valueRoutesRoute["NextHop"].isNull())
 			routesObject.nextHop = valueRoutesRoute["NextHop"].asString();
-		if(!valueRoutesRoute["PortName"].isNull())
-			routesObject.portName = valueRoutesRoute["PortName"].asString();
-		if(!valueRoutesRoute["Cost"].isNull())
-			routesObject.cost = valueRoutesRoute["Cost"].asString();
 		if(!valueRoutesRoute["DestinationCidr"].isNull())
 			routesObject.destinationCidr = valueRoutesRoute["DestinationCidr"].asString();
+		if(!valueRoutesRoute["Cost"].isNull())
+			routesObject.cost = valueRoutesRoute["Cost"].asString();
+		if(!valueRoutesRoute["PortName"].isNull())
+			routesObject.portName = valueRoutesRoute["PortName"].asString();
+		if(!valueRoutesRoute["RouteProtocol"].isNull())
+			routesObject.routeProtocol = valueRoutesRoute["RouteProtocol"].asString();
 		auto allConflictCidrs = value["ConflictCidrs"]["ConfilitCidr"];
 		for (auto value : allConflictCidrs)
 			routesObject.conflictCidrs.push_back(value.asString());

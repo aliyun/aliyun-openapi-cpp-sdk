@@ -43,18 +43,18 @@ void DescribeSmartAccessGatewayHaResult::parse(const std::string &payload)
 	for (auto valueLinkBackupInfoListLinkBackupInfoListItem : allLinkBackupInfoListNode)
 	{
 		LinkBackupInfoListItem linkBackupInfoListObject;
-		if(!valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkState"].isNull())
-			linkBackupInfoListObject.backupLinkState = valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkState"].asString();
-		if(!valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkState"].isNull())
-			linkBackupInfoListObject.mainLinkState = valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkState"].asString();
-		if(!valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkId"].isNull())
-			linkBackupInfoListObject.backupLinkId = valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkId"].asString();
-		if(!valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupType"].isNull())
-			linkBackupInfoListObject.linkLevelBackupType = valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupType"].asString();
 		if(!valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkId"].isNull())
 			linkBackupInfoListObject.mainLinkId = valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkId"].asString();
+		if(!valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkState"].isNull())
+			linkBackupInfoListObject.backupLinkState = valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkState"].asString();
 		if(!valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupState"].isNull())
 			linkBackupInfoListObject.linkLevelBackupState = valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupState"].asString();
+		if(!valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkId"].isNull())
+			linkBackupInfoListObject.backupLinkId = valueLinkBackupInfoListLinkBackupInfoListItem["BackupLinkId"].asString();
+		if(!valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkState"].isNull())
+			linkBackupInfoListObject.mainLinkState = valueLinkBackupInfoListLinkBackupInfoListItem["MainLinkState"].asString();
+		if(!valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupType"].isNull())
+			linkBackupInfoListObject.linkLevelBackupType = valueLinkBackupInfoListLinkBackupInfoListItem["LinkLevelBackupType"].asString();
 		linkBackupInfoList_.push_back(linkBackupInfoListObject);
 	}
 	if(!value["DeviceLevelBackupState"].isNull())

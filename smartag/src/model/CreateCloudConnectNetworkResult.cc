@@ -51,6 +51,8 @@ void CreateCloudConnectNetworkResult::parse(const std::string &payload)
 		snatCidrBlock_ = value["SnatCidrBlock"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -62,6 +64,11 @@ std::string CreateCloudConnectNetworkResult::getStatus()const
 std::string CreateCloudConnectNetworkResult::getDescription()const
 {
 	return description_;
+}
+
+std::string CreateCloudConnectNetworkResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateCloudConnectNetworkResult::getCcnId()const

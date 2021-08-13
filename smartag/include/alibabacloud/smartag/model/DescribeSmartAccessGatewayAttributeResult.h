@@ -32,6 +32,22 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SMARTAG_EXPORT DescribeSmartAccessGatewayAttributeResult : public ServiceResult
 			{
 			public:
+				struct ApplicationBandwidthPackageOperationLocks
+				{
+					std::string lockReason;
+					std::string lockType;
+				};
+				struct Device
+				{
+					std::string monitorVersion;
+					std::string secretKey;
+					std::string softwareVersion;
+					std::string serialNumber;
+					std::string haState;
+					std::string dpiSignatureDbVersion;
+					int distributeSkStatus;
+					std::string hcState;
+				};
 				struct Link
 				{
 					std::string status;
@@ -40,57 +56,51 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string relateInstanceId;
 					std::string bandwidth;
-					std::string commodityType;
-					std::string relateInstanceRegionId;
 					std::string healthCheckTargetIp;
-				};
-				struct Device
-				{
-					std::string monitorVersion;
-					std::string secretKey;
-					std::string softwareVersion;
-					std::string serialNumber;
-					int distributeSkStatus;
-					std::string dpiSignatureDbVersion;
-					std::string haState;
-					std::string hcState;
+					std::string relateInstanceRegionId;
+					std::string commodityType;
 				};
 
 
 				DescribeSmartAccessGatewayAttributeResult();
 				explicit DescribeSmartAccessGatewayAttributeResult(const std::string &payload);
 				~DescribeSmartAccessGatewayAttributeResult();
-				std::string getDescription()const;
 				int getUpBandwidth4G()const;
-				std::string getResourceGroupId()const;
+				std::string getDescription()const;
 				long getEndTime()const;
+				std::string getResourceGroupId()const;
 				int getUserCount()const;
-				std::string getVpnStatus()const;
-				std::string getMaxBandwidth()const;
 				std::string getAssociatedCcnName()const;
+				std::string getMaxBandwidth()const;
+				std::string getVpnStatus()const;
 				std::string getBoxControllerIp()const;
 				std::vector<std::string> getQosIds()const;
-				std::string getCidrBlock()const;
 				int getUpBandwidthWan()const;
+				std::string getCidrBlock()const;
 				std::vector<Device> getDevices()const;
 				std::string getName()const;
 				bool getOptimizationType()const;
+				std::string getApplicationBandwidthPackageName()const;
 				std::string getIpsecStatus()const;
 				std::string getRoutingStrategy()const;
+				std::string getApplicationBandwidthPackageId()const;
 				std::vector<std::string> getFlowLogIds()const;
 				std::string getAssociatedCcnId()const;
-				std::string getInstanceType()const;
 				std::string getSmartAGId()const;
-				int getSecurityLockThreshold()const;
+				std::string getInstanceType()const;
 				std::string getResellerUid()const;
+				int getSecurityLockThreshold()const;
 				std::string getStatus()const;
 				long getCreateTime()const;
 				long getDataPlan()const;
 				bool getEnableOptimization()const;
+				std::string getApplicationBandwidthPackageBussinessStatus()const;
 				std::string getCity()const;
+				ApplicationBandwidthPackageOperationLocks getApplicationBandwidthPackageOperationLocks()const;
+				long getAccelerateBandwidth()const;
 				std::string getResellerInstanceId()const;
-				std::string getBackupBoxControllerIp()const;
 				std::string getSerialNumber()const;
+				std::string getBackupBoxControllerIp()const;
 				std::string getTrafficMasterSn()const;
 				std::string getAccessPointId()const;
 				std::vector<Link> getLinks()const;
@@ -99,37 +109,42 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string description_;
 				int upBandwidth4G_;
-				std::string resourceGroupId_;
+				std::string description_;
 				long endTime_;
+				std::string resourceGroupId_;
 				int userCount_;
-				std::string vpnStatus_;
-				std::string maxBandwidth_;
 				std::string associatedCcnName_;
+				std::string maxBandwidth_;
+				std::string vpnStatus_;
 				std::string boxControllerIp_;
 				std::vector<std::string> qosIds_;
-				std::string cidrBlock_;
 				int upBandwidthWan_;
+				std::string cidrBlock_;
 				std::vector<Device> devices_;
 				std::string name_;
 				bool optimizationType_;
+				std::string applicationBandwidthPackageName_;
 				std::string ipsecStatus_;
 				std::string routingStrategy_;
+				std::string applicationBandwidthPackageId_;
 				std::vector<std::string> flowLogIds_;
 				std::string associatedCcnId_;
-				std::string instanceType_;
 				std::string smartAGId_;
-				int securityLockThreshold_;
+				std::string instanceType_;
 				std::string resellerUid_;
+				int securityLockThreshold_;
 				std::string status_;
 				long createTime_;
 				long dataPlan_;
 				bool enableOptimization_;
+				std::string applicationBandwidthPackageBussinessStatus_;
 				std::string city_;
+				ApplicationBandwidthPackageOperationLocks applicationBandwidthPackageOperationLocks_;
+				long accelerateBandwidth_;
 				std::string resellerInstanceId_;
-				std::string backupBoxControllerIp_;
 				std::string serialNumber_;
+				std::string backupBoxControllerIp_;
 				std::string trafficMasterSn_;
 				std::string accessPointId_;
 				std::vector<Link> links_;

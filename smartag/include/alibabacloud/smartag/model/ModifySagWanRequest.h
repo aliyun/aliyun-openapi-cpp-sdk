@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,95 +17,89 @@
 #ifndef ALIBABACLOUD_SMARTAG_MODEL_MODIFYSAGWANREQUEST_H_
 #define ALIBABACLOUD_SMARTAG_MODEL_MODIFYSAGWANREQUEST_H_
 
+#include <alibabacloud/smartag/SmartagExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/smartag/SmartagExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Smartag
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_SMARTAG_EXPORT ModifySagWanRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Smartag {
+namespace Model {
+class ALIBABACLOUD_SMARTAG_EXPORT ModifySagWanRequest : public RpcServiceRequest {
+public:
+	ModifySagWanRequest();
+	~ModifySagWanRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getISP() const;
+	void setISP(const std::string &iSP);
+	std::string getPassword() const;
+	void setPassword(const std::string &password);
+	std::string getVlan() const;
+	void setVlan(const std::string &vlan);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getMask() const;
+	void setMask(const std::string &mask);
+	std::string getStartIp() const;
+	void setStartIp(const std::string &startIp);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	int getBandwidth() const;
+	void setBandwidth(int bandwidth);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getIP() const;
+	void setIP(const std::string &iP);
+	int getWeight() const;
+	void setWeight(int weight);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getIPType() const;
+	void setIPType(const std::string &iPType);
+	int getPriority() const;
+	void setPriority(int priority);
+	std::string getSourceIps() const;
+	void setSourceIps(const std::string &sourceIps);
+	std::string getSmartAGId() const;
+	void setSmartAGId(const std::string &smartAGId);
+	std::string getSmartAGSn() const;
+	void setSmartAGSn(const std::string &smartAGSn);
+	std::string getPortName() const;
+	void setPortName(const std::string &portName);
+	std::string getStopIp() const;
+	void setStopIp(const std::string &stopIp);
+	std::string getGateway() const;
+	void setGateway(const std::string &gateway);
+	std::string getUsername() const;
+	void setUsername(const std::string &username);
 
-			public:
-				ModifySagWanRequest();
-				~ModifySagWanRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getISP()const;
-				void setISP(const std::string& iSP);
-				std::string getPassword()const;
-				void setPassword(const std::string& password);
-				std::string getVlan()const;
-				void setVlan(const std::string& vlan);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getMask()const;
-				void setMask(const std::string& mask);
-				std::string getStartIp()const;
-				void setStartIp(const std::string& startIp);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				int getBandwidth()const;
-				void setBandwidth(int bandwidth);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getIP()const;
-				void setIP(const std::string& iP);
-				int getWeight()const;
-				void setWeight(int weight);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getIPType()const;
-				void setIPType(const std::string& iPType);
-				int getPriority()const;
-				void setPriority(int priority);
-				std::string getSourceIps()const;
-				void setSourceIps(const std::string& sourceIps);
-				std::string getSmartAGId()const;
-				void setSmartAGId(const std::string& smartAGId);
-				std::string getSmartAGSn()const;
-				void setSmartAGSn(const std::string& smartAGSn);
-				std::string getPortName()const;
-				void setPortName(const std::string& portName);
-				std::string getStopIp()const;
-				void setStopIp(const std::string& stopIp);
-				std::string getGateway()const;
-				void setGateway(const std::string& gateway);
-				std::string getUsername()const;
-				void setUsername(const std::string& username);
-
-            private:
-				long resourceOwnerId_;
-				std::string iSP_;
-				std::string password_;
-				std::string vlan_;
-				std::string regionId_;
-				std::string mask_;
-				std::string startIp_;
-				std::string resourceOwnerAccount_;
-				int bandwidth_;
-				std::string ownerAccount_;
-				std::string iP_;
-				int weight_;
-				long ownerId_;
-				std::string iPType_;
-				int priority_;
-				std::string sourceIps_;
-				std::string smartAGId_;
-				std::string smartAGSn_;
-				std::string portName_;
-				std::string stopIp_;
-				std::string gateway_;
-				std::string username_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	std::string iSP_;
+	std::string password_;
+	std::string vlan_;
+	std::string regionId_;
+	std::string mask_;
+	std::string startIp_;
+	std::string resourceOwnerAccount_;
+	int bandwidth_;
+	std::string ownerAccount_;
+	std::string iP_;
+	int weight_;
+	long ownerId_;
+	std::string iPType_;
+	int priority_;
+	std::string sourceIps_;
+	std::string smartAGId_;
+	std::string smartAGSn_;
+	std::string portName_;
+	std::string stopIp_;
+	std::string gateway_;
+	std::string username_;
+};
+} // namespace Model
+} // namespace Smartag
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_SMARTAG_MODEL_MODIFYSAGWANREQUEST_H_

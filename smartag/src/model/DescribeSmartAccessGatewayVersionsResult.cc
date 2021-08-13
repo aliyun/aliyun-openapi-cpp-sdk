@@ -43,14 +43,14 @@ void DescribeSmartAccessGatewayVersionsResult::parse(const std::string &payload)
 	for (auto valueSmartAGVersionsSmartAGVersion : allSmartAGVersionsNode)
 	{
 		SmartAGVersion smartAGVersionsObject;
-		if(!valueSmartAGVersionsSmartAGVersion["VersionCode"].isNull())
-			smartAGVersionsObject.versionCode = valueSmartAGVersionsSmartAGVersion["VersionCode"].asString();
 		if(!valueSmartAGVersionsSmartAGVersion["Type"].isNull())
 			smartAGVersionsObject.type = valueSmartAGVersionsSmartAGVersion["Type"].asString();
 		if(!valueSmartAGVersionsSmartAGVersion["CreateTime"].isNull())
 			smartAGVersionsObject.createTime = std::stol(valueSmartAGVersionsSmartAGVersion["CreateTime"].asString());
 		if(!valueSmartAGVersionsSmartAGVersion["VersionName"].isNull())
 			smartAGVersionsObject.versionName = valueSmartAGVersionsSmartAGVersion["VersionName"].asString();
+		if(!valueSmartAGVersionsSmartAGVersion["VersionCode"].isNull())
+			smartAGVersionsObject.versionCode = valueSmartAGVersionsSmartAGVersion["VersionCode"].asString();
 		smartAGVersions_.push_back(smartAGVersionsObject);
 	}
 

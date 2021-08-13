@@ -37,9 +37,9 @@ namespace AlibabaCloud
 					int minBandwidthAbs;
 					std::string description;
 					std::string qosCarId;
-					int priority;
-					int maxBandwidthPercent;
 					int maxBandwidthAbs;
+					int maxBandwidthPercent;
+					int priority;
 					std::string qosId;
 					std::string percentSourceType;
 					int minBandwidthPercent;

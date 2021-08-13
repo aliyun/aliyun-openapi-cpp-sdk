@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,80 +18,63 @@
 
 using AlibabaCloud::Smartag::Model::DescribeSagOnlineClientStatisticsRequest;
 
-DescribeSagOnlineClientStatisticsRequest::DescribeSagOnlineClientStatisticsRequest() :
-	RpcServiceRequest("smartag", "2018-03-13", "DescribeSagOnlineClientStatistics")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeSagOnlineClientStatisticsRequest::DescribeSagOnlineClientStatisticsRequest()
+    : RpcServiceRequest("smartag", "2018-03-13", "DescribeSagOnlineClientStatistics") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSagOnlineClientStatisticsRequest::~DescribeSagOnlineClientStatisticsRequest()
-{}
+DescribeSagOnlineClientStatisticsRequest::~DescribeSagOnlineClientStatisticsRequest() {}
 
-long DescribeSagOnlineClientStatisticsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeSagOnlineClientStatisticsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSagOnlineClientStatisticsRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeSagOnlineClientStatisticsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeSagOnlineClientStatisticsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeSagOnlineClientStatisticsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::vector<std::string> DescribeSagOnlineClientStatisticsRequest::getSmartAGIds()const
-{
-	return smartAGIds_;
+std::vector<std::string> DescribeSagOnlineClientStatisticsRequest::getSmartAGIds() const {
+  return smartAGIds_;
 }
 
-void DescribeSagOnlineClientStatisticsRequest::setSmartAGIds(const std::vector<std::string>& smartAGIds)
-{
-	smartAGIds_ = smartAGIds;
-	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++) {
-		setParameter("SmartAGIds."+ std::to_string(dep1), smartAGIds.at(dep1));
-	}
+void DescribeSagOnlineClientStatisticsRequest::setSmartAGIds(const std::vector<std::string> &smartAGIds) {
+  smartAGIds_ = smartAGIds;
 }
 
-std::string DescribeSagOnlineClientStatisticsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeSagOnlineClientStatisticsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeSagOnlineClientStatisticsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeSagOnlineClientStatisticsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeSagOnlineClientStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeSagOnlineClientStatisticsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeSagOnlineClientStatisticsRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeSagOnlineClientStatisticsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeSagOnlineClientStatisticsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeSagOnlineClientStatisticsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

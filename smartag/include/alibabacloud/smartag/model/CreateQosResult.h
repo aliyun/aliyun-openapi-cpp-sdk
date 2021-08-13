@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CreateQosResult();
 				explicit CreateQosResult(const std::string &payload);
 				~CreateQosResult();
+				std::string getResourceGroupId()const;
 				std::string getQosId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 				std::string qosId_;
 
 			};

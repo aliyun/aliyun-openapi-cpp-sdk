@@ -43,16 +43,18 @@ void DescribeSmartAccessGatewayClientUsersResult::parse(const std::string &paylo
 	for (auto valueUsersUser : allUsersNode)
 	{
 		User usersObject;
+		if(!valueUsersUser["Bandwidth"].isNull())
+			usersObject.bandwidth = std::stoi(valueUsersUser["Bandwidth"].asString());
+		if(!valueUsersUser["State"].isNull())
+			usersObject.state = std::stoi(valueUsersUser["State"].asString());
+		if(!valueUsersUser["ClientIp"].isNull())
+			usersObject.clientIp = valueUsersUser["ClientIp"].asString();
 		if(!valueUsersUser["UserName"].isNull())
 			usersObject.userName = valueUsersUser["UserName"].asString();
 		if(!valueUsersUser["UserMail"].isNull())
 			usersObject.userMail = valueUsersUser["UserMail"].asString();
-		if(!valueUsersUser["State"].isNull())
-			usersObject.state = std::stoi(valueUsersUser["State"].asString());
-		if(!valueUsersUser["Bandwidth"].isNull())
-			usersObject.bandwidth = std::stoi(valueUsersUser["Bandwidth"].asString());
-		if(!valueUsersUser["ClientIp"].isNull())
-			usersObject.clientIp = valueUsersUser["ClientIp"].asString();
+		if(!valueUsersUser["AccelerateBandwidth"].isNull())
+			usersObject.accelerateBandwidth = std::stol(valueUsersUser["AccelerateBandwidth"].asString());
 		users_.push_back(usersObject);
 	}
 	if(!value["TotalCount"].isNull())

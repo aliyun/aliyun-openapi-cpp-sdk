@@ -43,16 +43,18 @@ void DescribeQosesResult::parse(const std::string &payload)
 	for (auto valueQosesQos : allQosesNode)
 	{
 		Qos qosesObject;
-		if(!valueQosesQos["SagCount"].isNull())
-			qosesObject.sagCount = valueQosesQos["SagCount"].asString();
-		if(!valueQosesQos["QosId"].isNull())
-			qosesObject.qosId = valueQosesQos["QosId"].asString();
-		if(!valueQosesQos["SmartAGIds"].isNull())
-			qosesObject.smartAGIds = valueQosesQos["SmartAGIds"].asString();
-		if(!valueQosesQos["QosName"].isNull())
-			qosesObject.qosName = valueQosesQos["QosName"].asString();
 		if(!valueQosesQos["QosDescription"].isNull())
 			qosesObject.qosDescription = valueQosesQos["QosDescription"].asString();
+		if(!valueQosesQos["SagCount"].isNull())
+			qosesObject.sagCount = valueQosesQos["SagCount"].asString();
+		if(!valueQosesQos["SmartAGIds"].isNull())
+			qosesObject.smartAGIds = valueQosesQos["SmartAGIds"].asString();
+		if(!valueQosesQos["QosId"].isNull())
+			qosesObject.qosId = valueQosesQos["QosId"].asString();
+		if(!valueQosesQos["QosName"].isNull())
+			qosesObject.qosName = valueQosesQos["QosName"].asString();
+		if(!valueQosesQos["ResourceGroupId"].isNull())
+			qosesObject.resourceGroupId = valueQosesQos["ResourceGroupId"].asString();
 		qoses_.push_back(qosesObject);
 	}
 	if(!value["TotalCount"].isNull())
