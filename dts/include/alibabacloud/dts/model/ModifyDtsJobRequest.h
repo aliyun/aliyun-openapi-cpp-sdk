@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getReserve()const;
-				void setReserve(const std::string& reserve);
+				std::string getEtlOperatorColumnReference()const;
+				void setEtlOperatorColumnReference(const std::string& etlOperatorColumnReference);
 				std::string getDtsInstanceId()const;
 				void setDtsInstanceId(const std::string& dtsInstanceId);
 				std::string getSynchronizationDirection()const;
@@ -58,7 +58,7 @@ namespace AlibabaCloud
 				std::string ownerId_;
 				std::string accessKeyId_;
 				std::string regionId_;
-				std::string reserve_;
+				std::string etlOperatorColumnReference_;
 				std::string dtsInstanceId_;
 				std::string synchronizationDirection_;
 

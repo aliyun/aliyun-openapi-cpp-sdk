@@ -114,6 +114,8 @@
 #include "model/DescribeSynchronizationJobsResult.h"
 #include "model/DescribeSynchronizationObjectModifyStatusRequest.h"
 #include "model/DescribeSynchronizationObjectModifyStatusResult.h"
+#include "model/IgnoreJobDetailRequest.h"
+#include "model/IgnoreJobDetailResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyConsumerChannelRequest.h"
@@ -156,6 +158,8 @@
 #include "model/StopDtsJobResult.h"
 #include "model/StopMigrationJobRequest.h"
 #include "model/StopMigrationJobResult.h"
+#include "model/SummaryJobDetailRequest.h"
+#include "model/SummaryJobDetailResult.h"
 #include "model/SuspendDtsJobRequest.h"
 #include "model/SuspendDtsJobResult.h"
 #include "model/SuspendMigrationJobRequest.h"
@@ -323,6 +327,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSynchronizationObjectModifyStatusResult> DescribeSynchronizationObjectModifyStatusOutcome;
 			typedef std::future<DescribeSynchronizationObjectModifyStatusOutcome> DescribeSynchronizationObjectModifyStatusOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::DescribeSynchronizationObjectModifyStatusRequest&, const DescribeSynchronizationObjectModifyStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSynchronizationObjectModifyStatusAsyncHandler;
+			typedef Outcome<Error, Model::IgnoreJobDetailResult> IgnoreJobDetailOutcome;
+			typedef std::future<IgnoreJobDetailOutcome> IgnoreJobDetailOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::IgnoreJobDetailRequest&, const IgnoreJobDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IgnoreJobDetailAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -386,6 +393,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopMigrationJobResult> StopMigrationJobOutcome;
 			typedef std::future<StopMigrationJobOutcome> StopMigrationJobOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::StopMigrationJobRequest&, const StopMigrationJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMigrationJobAsyncHandler;
+			typedef Outcome<Error, Model::SummaryJobDetailResult> SummaryJobDetailOutcome;
+			typedef std::future<SummaryJobDetailOutcome> SummaryJobDetailOutcomeCallable;
+			typedef std::function<void(const DtsClient*, const Model::SummaryJobDetailRequest&, const SummaryJobDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SummaryJobDetailAsyncHandler;
 			typedef Outcome<Error, Model::SuspendDtsJobResult> SuspendDtsJobOutcome;
 			typedef std::future<SuspendDtsJobOutcome> SuspendDtsJobOutcomeCallable;
 			typedef std::function<void(const DtsClient*, const Model::SuspendDtsJobRequest&, const SuspendDtsJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuspendDtsJobAsyncHandler;
@@ -559,6 +569,9 @@ namespace AlibabaCloud
 			DescribeSynchronizationObjectModifyStatusOutcome describeSynchronizationObjectModifyStatus(const Model::DescribeSynchronizationObjectModifyStatusRequest &request)const;
 			void describeSynchronizationObjectModifyStatusAsync(const Model::DescribeSynchronizationObjectModifyStatusRequest& request, const DescribeSynchronizationObjectModifyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSynchronizationObjectModifyStatusOutcomeCallable describeSynchronizationObjectModifyStatusCallable(const Model::DescribeSynchronizationObjectModifyStatusRequest& request) const;
+			IgnoreJobDetailOutcome ignoreJobDetail(const Model::IgnoreJobDetailRequest &request)const;
+			void ignoreJobDetailAsync(const Model::IgnoreJobDetailRequest& request, const IgnoreJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			IgnoreJobDetailOutcomeCallable ignoreJobDetailCallable(const Model::IgnoreJobDetailRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
@@ -622,6 +635,9 @@ namespace AlibabaCloud
 			StopMigrationJobOutcome stopMigrationJob(const Model::StopMigrationJobRequest &request)const;
 			void stopMigrationJobAsync(const Model::StopMigrationJobRequest& request, const StopMigrationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopMigrationJobOutcomeCallable stopMigrationJobCallable(const Model::StopMigrationJobRequest& request) const;
+			SummaryJobDetailOutcome summaryJobDetail(const Model::SummaryJobDetailRequest &request)const;
+			void summaryJobDetailAsync(const Model::SummaryJobDetailRequest& request, const SummaryJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SummaryJobDetailOutcomeCallable summaryJobDetailCallable(const Model::SummaryJobDetailRequest& request) const;
 			SuspendDtsJobOutcome suspendDtsJob(const Model::SuspendDtsJobRequest &request)const;
 			void suspendDtsJobAsync(const Model::SuspendDtsJobRequest& request, const SuspendDtsJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SuspendDtsJobOutcomeCallable suspendDtsJobCallable(const Model::SuspendDtsJobRequest& request) const;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DTS_MODEL_DESCRIBEPRECHECKSTATUSREQUEST_H_
-#define ALIBABACLOUD_DTS_MODEL_DESCRIBEPRECHECKSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_DTS_MODEL_IGNOREJOBDETAILREQUEST_H_
+#define ALIBABACLOUD_DTS_MODEL_IGNOREJOBDETAILREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DTS_EXPORT DescribePreCheckStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DTS_EXPORT IgnoreJobDetailRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribePreCheckStatusRequest();
-				~DescribePreCheckStatusRequest();
+				IgnoreJobDetailRequest();
+				~IgnoreJobDetailRequest();
 
-				std::string getStructType()const;
-				void setStructType(const std::string& structType);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getPageNo()const;
-				void setPageNo(const std::string& pageNo);
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
 				std::string getJobCode()const;
 				void setJobCode(const std::string& jobCode);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDtsJobId()const;
 				void setDtsJobId(const std::string& dtsJobId);
-				std::string getStructPhase()const;
-				void setStructPhase(const std::string& structPhase);
+				std::string getId()const;
+				void setId(const std::string& id);
+				std::string getDtsInstanceId()const;
+				void setDtsInstanceId(const std::string& dtsInstanceId);
+				std::string getSynchronizationDirection()const;
+				void setSynchronizationDirection(const std::string& synchronizationDirection);
 
             private:
-				std::string structType_;
 				std::string regionId_;
-				std::string pageNo_;
-				std::string pageSize_;
 				std::string jobCode_;
-				std::string name_;
 				std::string dtsJobId_;
-				std::string structPhase_;
+				std::string id_;
+				std::string dtsInstanceId_;
+				std::string synchronizationDirection_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DTS_MODEL_DESCRIBEPRECHECKSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_DTS_MODEL_IGNOREJOBDETAILREQUEST_H_

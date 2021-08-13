@@ -82,6 +82,17 @@ void DescribePreCheckStatusRequest::setJobCode(const std::string& jobCode)
 	setParameter("JobCode", jobCode);
 }
 
+std::string DescribePreCheckStatusRequest::getName()const
+{
+	return name_;
+}
+
+void DescribePreCheckStatusRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
 std::string DescribePreCheckStatusRequest::getDtsJobId()const
 {
 	return dtsJobId_;

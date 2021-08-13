@@ -87,6 +87,8 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 			jobProgressObject.errDetail = valueJobProgressProgressInfo["ErrDetail"].asString();
 		if(!valueJobProgressProgressInfo["DdlSql"].isNull())
 			jobProgressObject.ddlSql = valueJobProgressProgressInfo["DdlSql"].asString();
+		if(!valueJobProgressProgressInfo["Id"].isNull())
+			jobProgressObject.id = valueJobProgressProgressInfo["Id"].asString();
 		auto allLogsNode = valueJobProgressProgressInfo["Logs"]["JobLog"];
 		for (auto valueJobProgressProgressInfoLogsJobLog : allLogsNode)
 		{
@@ -167,6 +169,8 @@ void DescribePreCheckStatusResult::parse(const std::string &payload)
 				jobProgress1Object.errDetail = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["ErrDetail"].asString();
 			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DdlSql"].isNull())
 				jobProgress1Object.ddlSql = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["DdlSql"].asString();
+			if(!valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Id"].isNull())
+				jobProgress1Object.id = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Id"].asString();
 			auto allLogs3Node = valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfo["Logs"]["JobLog"];
 			for (auto valueSubDistributedJobStatusSubDistributedJobStatusItemJobProgressProgressInfoLogsJobLog : allLogs3Node)
 			{

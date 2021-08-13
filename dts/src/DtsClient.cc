@@ -1707,6 +1707,42 @@ DtsClient::DescribeSynchronizationObjectModifyStatusOutcomeCallable DtsClient::d
 	return task->get_future();
 }
 
+DtsClient::IgnoreJobDetailOutcome DtsClient::ignoreJobDetail(const IgnoreJobDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return IgnoreJobDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return IgnoreJobDetailOutcome(IgnoreJobDetailResult(outcome.result()));
+	else
+		return IgnoreJobDetailOutcome(outcome.error());
+}
+
+void DtsClient::ignoreJobDetailAsync(const IgnoreJobDetailRequest& request, const IgnoreJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, ignoreJobDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::IgnoreJobDetailOutcomeCallable DtsClient::ignoreJobDetailCallable(const IgnoreJobDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<IgnoreJobDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->ignoreJobDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DtsClient::ListTagResourcesOutcome DtsClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2457,6 +2493,42 @@ DtsClient::StopMigrationJobOutcomeCallable DtsClient::stopMigrationJobCallable(c
 			[this, request]()
 			{
 			return this->stopMigrationJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DtsClient::SummaryJobDetailOutcome DtsClient::summaryJobDetail(const SummaryJobDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SummaryJobDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SummaryJobDetailOutcome(SummaryJobDetailResult(outcome.result()));
+	else
+		return SummaryJobDetailOutcome(outcome.error());
+}
+
+void DtsClient::summaryJobDetailAsync(const SummaryJobDetailRequest& request, const SummaryJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, summaryJobDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DtsClient::SummaryJobDetailOutcomeCallable DtsClient::summaryJobDetailCallable(const SummaryJobDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SummaryJobDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->summaryJobDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

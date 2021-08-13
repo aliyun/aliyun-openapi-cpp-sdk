@@ -62,6 +62,7 @@ namespace AlibabaCloud
 					int total;
 					bool skip;
 					std::string errDetail;
+					std::string id;
 					std::string jobId;
 					std::string ddlSql;
 				};
@@ -97,6 +98,7 @@ namespace AlibabaCloud
 						int total;
 						bool skip;
 						std::string errDetail;
+						std::string id;
 						std::string jobId;
 						std::string ddlSql;
 					};

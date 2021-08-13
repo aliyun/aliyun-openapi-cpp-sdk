@@ -82,15 +82,15 @@ void ModifyDtsJobRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
-std::string ModifyDtsJobRequest::getReserve()const
+std::string ModifyDtsJobRequest::getEtlOperatorColumnReference()const
 {
-	return reserve_;
+	return etlOperatorColumnReference_;
 }
 
-void ModifyDtsJobRequest::setReserve(const std::string& reserve)
+void ModifyDtsJobRequest::setEtlOperatorColumnReference(const std::string& etlOperatorColumnReference)
 {
-	reserve_ = reserve;
-	setBodyParameter("Reserve", reserve);
+	etlOperatorColumnReference_ = etlOperatorColumnReference;
+	setBodyParameter("EtlOperatorColumnReference", etlOperatorColumnReference);
 }
 
 std::string ModifyDtsJobRequest::getDtsInstanceId()const
