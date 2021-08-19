@@ -48,27 +48,27 @@ void SearchFaceResult::parse(const std::string &payload)
 		for (auto dataNodeMatchListMatchListItemFaceItemsFaceItemsItem : allFaceItemsNode)
 		{
 			Data::MatchListItem::FaceItemsItem faceItemsObject;
-			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["FaceId"].isNull())
-				faceItemsObject.faceId = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["FaceId"].asString();
 			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["EntityId"].isNull())
 				faceItemsObject.entityId = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["EntityId"].asString();
+			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["FaceId"].isNull())
+				faceItemsObject.faceId = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["FaceId"].asString();
 			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["Score"].isNull())
 				faceItemsObject.score = std::stof(dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["Score"].asString());
-			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["DbName"].isNull())
-				faceItemsObject.dbName = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["DbName"].asString();
 			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["ExtraData"].isNull())
 				faceItemsObject.extraData = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["ExtraData"].asString();
+			if(!dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["DbName"].isNull())
+				faceItemsObject.dbName = dataNodeMatchListMatchListItemFaceItemsFaceItemsItem["DbName"].asString();
 			matchListItemObject.faceItems.push_back(faceItemsObject);
 		}
 		auto locationNode = value["Location"];
-		if(!locationNode["X"].isNull())
-			matchListItemObject.location.x = std::stoi(locationNode["X"].asString());
-		if(!locationNode["Y"].isNull())
-			matchListItemObject.location.y = std::stoi(locationNode["Y"].asString());
-		if(!locationNode["Height"].isNull())
-			matchListItemObject.location.height = std::stoi(locationNode["Height"].asString());
 		if(!locationNode["Width"].isNull())
 			matchListItemObject.location.width = std::stoi(locationNode["Width"].asString());
+		if(!locationNode["Height"].isNull())
+			matchListItemObject.location.height = std::stoi(locationNode["Height"].asString());
+		if(!locationNode["Y"].isNull())
+			matchListItemObject.location.y = std::stoi(locationNode["Y"].asString());
+		if(!locationNode["X"].isNull())
+			matchListItemObject.location.x = std::stoi(locationNode["X"].asString());
 		data_.matchList.push_back(matchListItemObject);
 	}
 

@@ -195,6 +195,42 @@ FacebodyClient::AddFaceImageTemplateOutcomeCallable FacebodyClient::addFaceImage
 	return task->get_future();
 }
 
+FacebodyClient::BeautifyBodyOutcome FacebodyClient::beautifyBody(const BeautifyBodyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BeautifyBodyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BeautifyBodyOutcome(BeautifyBodyResult(outcome.result()));
+	else
+		return BeautifyBodyOutcome(outcome.error());
+}
+
+void FacebodyClient::beautifyBodyAsync(const BeautifyBodyRequest& request, const BeautifyBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, beautifyBody(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::BeautifyBodyOutcomeCallable FacebodyClient::beautifyBodyCallable(const BeautifyBodyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BeautifyBodyOutcome()>>(
+			[this, request]()
+			{
+			return this->beautifyBody(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::BlurFaceOutcome FacebodyClient::blurFace(const BlurFaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

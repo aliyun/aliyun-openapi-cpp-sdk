@@ -30,6 +30,8 @@
 #include "model/AddFaceEntityResult.h"
 #include "model/AddFaceImageTemplateRequest.h"
 #include "model/AddFaceImageTemplateResult.h"
+#include "model/BeautifyBodyRequest.h"
+#include "model/BeautifyBodyResult.h"
 #include "model/BlurFaceRequest.h"
 #include "model/BlurFaceResult.h"
 #include "model/BodyPostureRequest.h"
@@ -163,6 +165,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddFaceImageTemplateResult> AddFaceImageTemplateOutcome;
 			typedef std::future<AddFaceImageTemplateOutcome> AddFaceImageTemplateOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::AddFaceImageTemplateRequest&, const AddFaceImageTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFaceImageTemplateAsyncHandler;
+			typedef Outcome<Error, Model::BeautifyBodyResult> BeautifyBodyOutcome;
+			typedef std::future<BeautifyBodyOutcome> BeautifyBodyOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::BeautifyBodyRequest&, const BeautifyBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BeautifyBodyAsyncHandler;
 			typedef Outcome<Error, Model::BlurFaceResult> BlurFaceOutcome;
 			typedef std::future<BlurFaceOutcome> BlurFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::BlurFaceRequest&, const BlurFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BlurFaceAsyncHandler;
@@ -348,6 +353,9 @@ namespace AlibabaCloud
 			AddFaceImageTemplateOutcome addFaceImageTemplate(const Model::AddFaceImageTemplateRequest &request)const;
 			void addFaceImageTemplateAsync(const Model::AddFaceImageTemplateRequest& request, const AddFaceImageTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddFaceImageTemplateOutcomeCallable addFaceImageTemplateCallable(const Model::AddFaceImageTemplateRequest& request) const;
+			BeautifyBodyOutcome beautifyBody(const Model::BeautifyBodyRequest &request)const;
+			void beautifyBodyAsync(const Model::BeautifyBodyRequest& request, const BeautifyBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BeautifyBodyOutcomeCallable beautifyBodyCallable(const Model::BeautifyBodyRequest& request) const;
 			BlurFaceOutcome blurFace(const Model::BlurFaceRequest &request)const;
 			void blurFaceAsync(const Model::BlurFaceRequest& request, const BlurFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BlurFaceOutcomeCallable blurFaceCallable(const Model::BlurFaceRequest& request) const;

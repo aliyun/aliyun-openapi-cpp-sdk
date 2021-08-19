@@ -36,17 +36,7 @@ namespace AlibabaCloud
 				{
 					struct AttributesItem
 					{
-						struct Backpack
-						{
-							float score;
-							std::string name;
-						};
-						struct LowerWear
-						{
-							float score;
-							std::string name;
-						};
-						struct ShoulderBag
+						struct Gender
 						{
 							float score;
 							std::string name;
@@ -56,32 +46,7 @@ namespace AlibabaCloud
 							float score;
 							std::string name;
 						};
-						struct LowerColor
-						{
-							float score;
-							std::string name;
-						};
-						struct Glasses
-						{
-							float score;
-							std::string name;
-						};
-						struct UpperColor
-						{
-							float score;
-							std::string name;
-						};
-						struct Handbag
-						{
-							float score;
-							std::string name;
-						};
-						struct Hat
-						{
-							float score;
-							std::string name;
-						};
-						struct Gender
+						struct Age
 						{
 							float score;
 							std::string name;
@@ -91,23 +56,58 @@ namespace AlibabaCloud
 							float score;
 							std::string name;
 						};
-						struct Age
+						struct Glasses
 						{
 							float score;
 							std::string name;
 						};
-						Backpack backpack;
+						struct LowerWear
+						{
+							float score;
+							std::string name;
+						};
+						struct LowerColor
+						{
+							float score;
+							std::string name;
+						};
+						struct Hat
+						{
+							float score;
+							std::string name;
+						};
+						struct Handbag
+						{
+							float score;
+							std::string name;
+						};
+						struct Backpack
+						{
+							float score;
+							std::string name;
+						};
+						struct UpperColor
+						{
+							float score;
+							std::string name;
+						};
+						struct ShoulderBag
+						{
+							float score;
+							std::string name;
+						};
 						LowerWear lowerWear;
-						ShoulderBag shoulderBag;
+						Backpack backpack;
 						Orient orient;
+						ShoulderBag shoulderBag;
 						LowerColor lowerColor;
 						Glasses glasses;
 						UpperColor upperColor;
-						Handbag handbag;
 						Hat hat;
+						Handbag handbag;
 						Gender gender;
-						UpperWear upperWear;
 						Age age;
+						UpperWear upperWear;
 					};
 					struct BoxesItem
 					{

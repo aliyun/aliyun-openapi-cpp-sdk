@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string messageTips;
 					float qualityScoreA;
+					std::string messageTips;
 					float qualityScoreB;
 					std::vector<std::string> thresholds;
 					float confidence;

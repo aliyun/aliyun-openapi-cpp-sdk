@@ -40,23 +40,23 @@ void CompareFaceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["MessageTips"].isNull())
-		data_.messageTips = dataNode["MessageTips"].asString();
+	if(!dataNode["Confidence"].isNull())
+		data_.confidence = std::stof(dataNode["Confidence"].asString());
 	if(!dataNode["QualityScoreA"].isNull())
 		data_.qualityScoreA = std::stof(dataNode["QualityScoreA"].asString());
 	if(!dataNode["QualityScoreB"].isNull())
 		data_.qualityScoreB = std::stof(dataNode["QualityScoreB"].asString());
-	if(!dataNode["Confidence"].isNull())
-		data_.confidence = std::stof(dataNode["Confidence"].asString());
+	if(!dataNode["MessageTips"].isNull())
+		data_.messageTips = dataNode["MessageTips"].asString();
 		auto allThresholds = dataNode["Thresholds"]["Threshold"];
 		for (auto value : allThresholds)
 			data_.thresholds.push_back(value.asString());
-		auto allRectAList = dataNode["RectAList"]["RectA"];
-		for (auto value : allRectAList)
-			data_.rectAList.push_back(value.asString());
 		auto allRectBList = dataNode["RectBList"]["RectB"];
 		for (auto value : allRectBList)
 			data_.rectBList.push_back(value.asString());
+		auto allRectAList = dataNode["RectAList"]["RectA"];
+		for (auto value : allRectAList)
+			data_.rectAList.push_back(value.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 

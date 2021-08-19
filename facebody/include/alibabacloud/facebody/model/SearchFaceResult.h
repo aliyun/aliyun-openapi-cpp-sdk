@@ -45,8 +45,8 @@ namespace AlibabaCloud
 						};
 						struct FaceItemsItem
 						{
-							std::string faceId;
 							std::string entityId;
+							std::string faceId;
 							float score;
 							std::string dbName;
 							std::string extraData;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_DETECTFACERESULT_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_DETECTFACERESULT_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_BEAUTIFYBODYRESULT_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_BEAUTIFYBODYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT DetectFaceResult : public ServiceResult
+			class ALIBABACLOUD_FACEBODY_EXPORT BeautifyBodyResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Qualities
-					{
-						std::vector<std::string> scoreList;
-						std::vector<std::string> noiseList;
-						std::vector<std::string> blurList;
-						std::vector<std::string> fnfList;
-						std::vector<std::string> glassList;
-						std::vector<std::string> maskList;
-						std::vector<std::string> poseList1;
-						std::vector<std::string> illuList;
-					};
-					std::vector<std::string> faceProbabilityList;
-					int landmarkCount;
-					std::vector<std::string> faceRectangles;
-					std::vector<std::string> landmarks;
-					Qualities qualities;
-					int faceCount;
-					std::vector<std::string> pupils;
-					std::vector<std::string> poseList;
+					std::string action;
+					std::string xFlowURL;
+					std::string yFlowURL;
 				};
 
 
-				DetectFaceResult();
-				explicit DetectFaceResult(const std::string &payload);
-				~DetectFaceResult();
+				BeautifyBodyResult();
+				explicit BeautifyBodyResult(const std::string &payload);
+				~BeautifyBodyResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_DETECTFACERESULT_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_BEAUTIFYBODYRESULT_H_

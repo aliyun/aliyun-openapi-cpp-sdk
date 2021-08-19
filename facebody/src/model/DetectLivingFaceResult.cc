@@ -44,28 +44,28 @@ void DetectLivingFaceResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["TaskId"].isNull())
-			elementObject.taskId = dataNodeElementsElement["TaskId"].asString();
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
+		if(!dataNodeElementsElement["TaskId"].isNull())
+			elementObject.taskId = dataNodeElementsElement["TaskId"].asString();
 		auto allResultsNode = dataNodeElementsElement["Results"]["Result"];
 		for (auto dataNodeElementsElementResultsResult : allResultsNode)
 		{
 			Data::Element::Result resultsObject;
 			if(!dataNodeElementsElementResultsResult["Suggestion"].isNull())
 				resultsObject.suggestion = dataNodeElementsElementResultsResult["Suggestion"].asString();
-			if(!dataNodeElementsElementResultsResult["Rate"].isNull())
-				resultsObject.rate = std::stof(dataNodeElementsElementResultsResult["Rate"].asString());
 			if(!dataNodeElementsElementResultsResult["Label"].isNull())
 				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
+			if(!dataNodeElementsElementResultsResult["Rate"].isNull())
+				resultsObject.rate = std::stof(dataNodeElementsElementResultsResult["Rate"].asString());
 			auto allFramesNode = dataNodeElementsElementResultsResult["Frames"]["Frame"];
 			for (auto dataNodeElementsElementResultsResultFramesFrame : allFramesNode)
 			{
 				Data::Element::Result::Frame framesObject;
-				if(!dataNodeElementsElementResultsResultFramesFrame["Rate"].isNull())
-					framesObject.rate = std::stof(dataNodeElementsElementResultsResultFramesFrame["Rate"].asString());
 				if(!dataNodeElementsElementResultsResultFramesFrame["Url"].isNull())
 					framesObject.url = dataNodeElementsElementResultsResultFramesFrame["Url"].asString();
+				if(!dataNodeElementsElementResultsResultFramesFrame["Rate"].isNull())
+					framesObject.rate = std::stof(dataNodeElementsElementResultsResultFramesFrame["Rate"].asString());
 				resultsObject.frames.push_back(framesObject);
 			}
 			elementObject.results.push_back(resultsObject);

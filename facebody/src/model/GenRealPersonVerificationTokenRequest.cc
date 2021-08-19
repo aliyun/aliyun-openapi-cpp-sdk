@@ -27,6 +27,17 @@ GenRealPersonVerificationTokenRequest::GenRealPersonVerificationTokenRequest() :
 GenRealPersonVerificationTokenRequest::~GenRealPersonVerificationTokenRequest()
 {}
 
+std::string GenRealPersonVerificationTokenRequest::getMetaInfo()const
+{
+	return metaInfo_;
+}
+
+void GenRealPersonVerificationTokenRequest::setMetaInfo(const std::string& metaInfo)
+{
+	metaInfo_ = metaInfo;
+	setBodyParameter("MetaInfo", metaInfo);
+}
+
 std::string GenRealPersonVerificationTokenRequest::getCertificateNumber()const
 {
 	return certificateNumber_;
@@ -47,16 +58,5 @@ void GenRealPersonVerificationTokenRequest::setCertificateName(const std::string
 {
 	certificateName_ = certificateName;
 	setBodyParameter("CertificateName", certificateName);
-}
-
-std::string GenRealPersonVerificationTokenRequest::getMetaInfo()const
-{
-	return metaInfo_;
-}
-
-void GenRealPersonVerificationTokenRequest::setMetaInfo(const std::string& metaInfo)
-{
-	metaInfo_ = metaInfo;
-	setBodyParameter("MetaInfo", metaInfo);
 }
 

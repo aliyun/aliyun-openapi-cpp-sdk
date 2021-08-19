@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				GenRealPersonVerificationTokenRequest();
 				~GenRealPersonVerificationTokenRequest();
 
+				std::string getMetaInfo()const;
+				void setMetaInfo(const std::string& metaInfo);
 				std::string getCertificateNumber()const;
 				void setCertificateNumber(const std::string& certificateNumber);
 				std::string getCertificateName()const;
 				void setCertificateName(const std::string& certificateName);
-				std::string getMetaInfo()const;
-				void setMetaInfo(const std::string& metaInfo);
 
             private:
+				std::string metaInfo_;
 				std::string certificateNumber_;
 				std::string certificateName_;
-				std::string metaInfo_;
 
 			};
 		}

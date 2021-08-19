@@ -47,8 +47,8 @@ namespace AlibabaCloud
 									std::string name;
 								};
 								float w;
-								float x;
 								float h;
+								float x;
 								float y;
 								std::vector<SubResult::Face> faces;
 							};

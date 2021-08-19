@@ -1,3 +1,6 @@
+2021-08-19 Version: 1.36.853
+- Release BeautifyBody.
+
 2021-08-13 Version: 1.36.852
 - Supported etlOperatorColumnReference for ModifyDtsJob.
 
