@@ -521,6 +521,17 @@ void CreateClusterRequest::setOsTag(const std::string& osTag)
 	setParameter("OsTag", osTag);
 }
 
+std::string CreateClusterRequest::getClusterVersion()const
+{
+	return clusterVersion_;
+}
+
+void CreateClusterRequest::setClusterVersion(const std::string& clusterVersion)
+{
+	clusterVersion_ = clusterVersion;
+	setParameter("ClusterVersion", clusterVersion);
+}
+
 bool CreateClusterRequest::getIsComputeEss()const
 {
 	return isComputeEss_;

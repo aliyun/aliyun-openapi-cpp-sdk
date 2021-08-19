@@ -247,6 +247,17 @@ void AddNodesRequest::setHostNameSuffix(const std::string& hostNameSuffix)
 	setParameter("HostNameSuffix", hostNameSuffix);
 }
 
+bool AddNodesRequest::getSync()const
+{
+	return sync_;
+}
+
+void AddNodesRequest::setSync(bool sync)
+{
+	sync_ = sync;
+	setParameter("Sync", sync ? "true" : "false");
+}
+
 std::string AddNodesRequest::getVSwitchId()const
 {
 	return vSwitchId_;

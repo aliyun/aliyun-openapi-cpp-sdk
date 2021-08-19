@@ -53,6 +53,17 @@ void DeleteNodesRequest::setClusterId(const std::string& clusterId)
 	setParameter("ClusterId", clusterId);
 }
 
+bool DeleteNodesRequest::getSync()const
+{
+	return sync_;
+}
+
+void DeleteNodesRequest::setSync(bool sync)
+{
+	sync_ = sync;
+	setParameter("Sync", sync ? "true" : "false");
+}
+
 std::string DeleteNodesRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

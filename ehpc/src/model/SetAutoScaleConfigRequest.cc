@@ -181,9 +181,8 @@ void SetAutoScaleConfigRequest::setQueues(const std::vector<Queues>& queues)
 	for(int dep1 = 0; dep1!= queues.size(); dep1++) {
 		auto queuesObj = queues.at(dep1);
 		std::string queuesObjStr = "Queues." + std::to_string(dep1 + 1);
-		setParameter(queuesObjStr + ".SpotStrategy", queuesObj.spotStrategy);
 		setParameter(queuesObjStr + ".QueueName", queuesObj.queueName);
-		setParameter(queuesObjStr + ".MinNodesInQueue", std::to_string(queuesObj.minNodesInQueue));
+		setParameter(queuesObjStr + ".SystemDiskLevel", queuesObj.systemDiskLevel);
 		for(int dep2 = 0; dep2!= queuesObj.instanceTypes.size(); dep2++) {
 			auto instanceTypesObj = queuesObj.instanceTypes.at(dep2);
 			std::string instanceTypesObjStr = queuesObjStr + "InstanceTypes." + std::to_string(dep2 + 1);
@@ -191,15 +190,20 @@ void SetAutoScaleConfigRequest::setQueues(const std::vector<Queues>& queues)
 			setParameter(instanceTypesObjStr + ".VSwitchId", instanceTypesObj.vSwitchId);
 			setParameter(instanceTypesObjStr + ".InstanceType", instanceTypesObj.instanceType);
 			setParameter(instanceTypesObjStr + ".ZoneId", instanceTypesObj.zoneId);
-			setParameter(instanceTypesObjStr + ".HostNamePrefix", instanceTypesObj.hostNamePrefix);
 			setParameter(instanceTypesObjStr + ".SpotPriceLimit", std::to_string(instanceTypesObj.spotPriceLimit));
 		}
-		setParameter(queuesObjStr + ".MaxNodesInQueue", std::to_string(queuesObj.maxNodesInQueue));
-		setParameter(queuesObjStr + ".InstanceType", queuesObj.instanceType);
-		setParameter(queuesObjStr + ".QueueImageId", queuesObj.queueImageId);
 		setParameter(queuesObjStr + ".EnableAutoGrow", queuesObj.enableAutoGrow ? "true" : "false");
 		setParameter(queuesObjStr + ".SpotPriceLimit", std::to_string(queuesObj.spotPriceLimit));
+		setParameter(queuesObjStr + ".HostNameSuffix", queuesObj.hostNameSuffix);
 		setParameter(queuesObjStr + ".EnableAutoShrink", queuesObj.enableAutoShrink ? "true" : "false");
+		setParameter(queuesObjStr + ".SpotStrategy", queuesObj.spotStrategy);
+		setParameter(queuesObjStr + ".MinNodesInQueue", std::to_string(queuesObj.minNodesInQueue));
+		setParameter(queuesObjStr + ".SystemDiskCategory", queuesObj.systemDiskCategory);
+		setParameter(queuesObjStr + ".MaxNodesInQueue", std::to_string(queuesObj.maxNodesInQueue));
+		setParameter(queuesObjStr + ".SystemDiskSize", std::to_string(queuesObj.systemDiskSize));
+		setParameter(queuesObjStr + ".InstanceType", queuesObj.instanceType);
+		setParameter(queuesObjStr + ".QueueImageId", queuesObj.queueImageId);
+		setParameter(queuesObjStr + ".HostNamePrefix", queuesObj.hostNamePrefix);
 	}
 }
 

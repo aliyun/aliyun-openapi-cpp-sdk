@@ -37,8 +37,6 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/AddUsersResult.h
 	include/alibabacloud/ehpc/model/ApplyNodesRequest.h
 	include/alibabacloud/ehpc/model/ApplyNodesResult.h
-	include/alibabacloud/ehpc/model/BindAccountToClusterUserRequest.h
-	include/alibabacloud/ehpc/model/BindAccountToClusterUserResult.h
 	include/alibabacloud/ehpc/model/CreateClusterRequest.h
 	include/alibabacloud/ehpc/model/CreateClusterResult.h
 	include/alibabacloud/ehpc/model/CreateGWSClusterRequest.h
@@ -123,6 +121,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigResult.h
 	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigRequest.h
 	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigResult.h
+	include/alibabacloud/ehpc/model/GetSchedulerInfoRequest.h
+	include/alibabacloud/ehpc/model/GetSchedulerInfoResult.h
 	include/alibabacloud/ehpc/model/GetVisualServiceStatusRequest.h
 	include/alibabacloud/ehpc/model/GetVisualServiceStatusResult.h
 	include/alibabacloud/ehpc/model/GetWorkbenchTokenRequest.h
@@ -133,12 +133,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/InstallSoftwareResult.h
 	include/alibabacloud/ehpc/model/InvokeShellCommandRequest.h
 	include/alibabacloud/ehpc/model/InvokeShellCommandResult.h
-	include/alibabacloud/ehpc/model/ListAccountMappingRequest.h
-	include/alibabacloud/ehpc/model/ListAccountMappingResult.h
 	include/alibabacloud/ehpc/model/ListAvailableEcsTypesRequest.h
 	include/alibabacloud/ehpc/model/ListAvailableEcsTypesResult.h
-	include/alibabacloud/ehpc/model/ListAvailableFileSystemTypesRequest.h
-	include/alibabacloud/ehpc/model/ListAvailableFileSystemTypesResult.h
 	include/alibabacloud/ehpc/model/ListCloudMetricProfilingsRequest.h
 	include/alibabacloud/ehpc/model/ListCloudMetricProfilingsResult.h
 	include/alibabacloud/ehpc/model/ListClusterLogsRequest.h
@@ -229,10 +225,10 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/SetGWSInstanceNameResult.h
 	include/alibabacloud/ehpc/model/SetGWSInstanceUserRequest.h
 	include/alibabacloud/ehpc/model/SetGWSInstanceUserResult.h
-	include/alibabacloud/ehpc/model/SetJobUserRequest.h
-	include/alibabacloud/ehpc/model/SetJobUserResult.h
 	include/alibabacloud/ehpc/model/SetQueueRequest.h
 	include/alibabacloud/ehpc/model/SetQueueResult.h
+	include/alibabacloud/ehpc/model/SetSchedulerInfoRequest.h
+	include/alibabacloud/ehpc/model/SetSchedulerInfoResult.h
 	include/alibabacloud/ehpc/model/StartClusterRequest.h
 	include/alibabacloud/ehpc/model/StartClusterResult.h
 	include/alibabacloud/ehpc/model/StartGWSInstanceRequest.h
@@ -253,8 +249,6 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/StopVisualServiceResult.h
 	include/alibabacloud/ehpc/model/SubmitJobRequest.h
 	include/alibabacloud/ehpc/model/SubmitJobResult.h
-	include/alibabacloud/ehpc/model/UnbindAccountToClusterUserRequest.h
-	include/alibabacloud/ehpc/model/UnbindAccountToClusterUserResult.h
 	include/alibabacloud/ehpc/model/UninstallSoftwareRequest.h
 	include/alibabacloud/ehpc/model/UninstallSoftwareResult.h
 	include/alibabacloud/ehpc/model/UpdateClusterVolumesRequest.h
@@ -282,8 +276,6 @@ set(ehpc_src
 	src/model/AddUsersResult.cc
 	src/model/ApplyNodesRequest.cc
 	src/model/ApplyNodesResult.cc
-	src/model/BindAccountToClusterUserRequest.cc
-	src/model/BindAccountToClusterUserResult.cc
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
 	src/model/CreateGWSClusterRequest.cc
@@ -368,6 +360,8 @@ set(ehpc_src
 	src/model/GetHybridClusterConfigResult.cc
 	src/model/GetIfEcsTypeSupportHtConfigRequest.cc
 	src/model/GetIfEcsTypeSupportHtConfigResult.cc
+	src/model/GetSchedulerInfoRequest.cc
+	src/model/GetSchedulerInfoResult.cc
 	src/model/GetVisualServiceStatusRequest.cc
 	src/model/GetVisualServiceStatusResult.cc
 	src/model/GetWorkbenchTokenRequest.cc
@@ -378,12 +372,8 @@ set(ehpc_src
 	src/model/InstallSoftwareResult.cc
 	src/model/InvokeShellCommandRequest.cc
 	src/model/InvokeShellCommandResult.cc
-	src/model/ListAccountMappingRequest.cc
-	src/model/ListAccountMappingResult.cc
 	src/model/ListAvailableEcsTypesRequest.cc
 	src/model/ListAvailableEcsTypesResult.cc
-	src/model/ListAvailableFileSystemTypesRequest.cc
-	src/model/ListAvailableFileSystemTypesResult.cc
 	src/model/ListCloudMetricProfilingsRequest.cc
 	src/model/ListCloudMetricProfilingsResult.cc
 	src/model/ListClusterLogsRequest.cc
@@ -474,10 +464,10 @@ set(ehpc_src
 	src/model/SetGWSInstanceNameResult.cc
 	src/model/SetGWSInstanceUserRequest.cc
 	src/model/SetGWSInstanceUserResult.cc
-	src/model/SetJobUserRequest.cc
-	src/model/SetJobUserResult.cc
 	src/model/SetQueueRequest.cc
 	src/model/SetQueueResult.cc
+	src/model/SetSchedulerInfoRequest.cc
+	src/model/SetSchedulerInfoResult.cc
 	src/model/StartClusterRequest.cc
 	src/model/StartClusterResult.cc
 	src/model/StartGWSInstanceRequest.cc
@@ -498,8 +488,6 @@ set(ehpc_src
 	src/model/StopVisualServiceResult.cc
 	src/model/SubmitJobRequest.cc
 	src/model/SubmitJobResult.cc
-	src/model/UnbindAccountToClusterUserRequest.cc
-	src/model/UnbindAccountToClusterUserResult.cc
 	src/model/UninstallSoftwareRequest.cc
 	src/model/UninstallSoftwareResult.cc
 	src/model/UpdateClusterVolumesRequest.cc

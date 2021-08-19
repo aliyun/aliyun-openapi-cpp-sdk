@@ -39,13 +39,6 @@ void CreateJobFileResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TemplateId"].isNull())
-		templateId_ = value["TemplateId"].asString();
 
-}
-
-std::string CreateJobFileResult::getTemplateId()const
-{
-	return templateId_;
 }
 

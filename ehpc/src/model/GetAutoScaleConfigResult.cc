@@ -63,6 +63,16 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 			queuesObject.minNodesInQueue = std::stoi(valueQueuesQueueInfo["MinNodesInQueue"].asString());
 		if(!valueQueuesQueueInfo["QueueImageId"].isNull())
 			queuesObject.queueImageId = valueQueuesQueueInfo["QueueImageId"].asString();
+		if(!valueQueuesQueueInfo["HostNamePrefix"].isNull())
+			queuesObject.hostNamePrefix = valueQueuesQueueInfo["HostNamePrefix"].asString();
+		if(!valueQueuesQueueInfo["HostNameSuffix"].isNull())
+			queuesObject.hostNameSuffix = valueQueuesQueueInfo["HostNameSuffix"].asString();
+		if(!valueQueuesQueueInfo["SystemDiskSize"].isNull())
+			queuesObject.systemDiskSize = std::stoi(valueQueuesQueueInfo["SystemDiskSize"].asString());
+		if(!valueQueuesQueueInfo["SystemDiskCategory"].isNull())
+			queuesObject.systemDiskCategory = valueQueuesQueueInfo["SystemDiskCategory"].asString();
+		if(!valueQueuesQueueInfo["SystemDiskLevel"].isNull())
+			queuesObject.systemDiskLevel = valueQueuesQueueInfo["SystemDiskLevel"].asString();
 		auto allInstanceTypesNode = valueQueuesQueueInfo["InstanceTypes"]["InstanceTypeInfo"];
 		for (auto valueQueuesQueueInfoInstanceTypesInstanceTypeInfo : allInstanceTypesNode)
 		{

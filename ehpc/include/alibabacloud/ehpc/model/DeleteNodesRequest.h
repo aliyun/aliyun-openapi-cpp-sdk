@@ -44,6 +44,8 @@ namespace AlibabaCloud
 				void setInstance(const std::vector<Instance>& instance);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				bool getSync()const;
+				void setSync(bool sync);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				bool getReleaseInstance()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
             private:
 				std::vector<Instance> instance_;
 				std::string clusterId_;
+				bool sync_;
 				std::string accessKeyId_;
 				bool releaseInstance_;
 

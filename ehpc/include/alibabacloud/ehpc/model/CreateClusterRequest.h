@@ -147,6 +147,8 @@ namespace AlibabaCloud
 				void setClientVersion(const std::string& clientVersion);
 				std::string getOsTag()const;
 				void setOsTag(const std::string& osTag);
+				std::string getClusterVersion()const;
+				void setClusterVersion(const std::string& clusterVersion);
 				bool getIsComputeEss()const;
 				void setIsComputeEss(bool isComputeEss);
 				std::vector<Application> getApplication()const;
@@ -210,6 +212,7 @@ namespace AlibabaCloud
 				std::string volumeProtocol_;
 				std::string clientVersion_;
 				std::string osTag_;
+				std::string clusterVersion_;
 				bool isComputeEss_;
 				std::vector<Application> application_;
 				std::string ecsChargeType_;

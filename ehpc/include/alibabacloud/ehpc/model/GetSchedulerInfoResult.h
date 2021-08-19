@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTAVAILABLEFILESYSTEMTYPESREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTAVAILABLEFILESYSTEMTYPESREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_GETSCHEDULERINFORESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_GETSCHEDULERINFORESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/ehpc/EHPCExport.h>
 
 namespace AlibabaCloud
@@ -28,21 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListAvailableFileSystemTypesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT GetSchedulerInfoResult : public ServiceResult
 			{
-
 			public:
-				ListAvailableFileSystemTypesRequest();
-				~ListAvailableFileSystemTypesRequest();
+				struct SchedInfoItem
+				{
+					std::string configuration;
+					std::string schedName;
+				};
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 
-            private:
-				std::string accessKeyId_;
+				GetSchedulerInfoResult();
+				explicit GetSchedulerInfoResult(const std::string &payload);
+				~GetSchedulerInfoResult();
+				std::vector<SchedInfoItem> getSchedInfo()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::vector<SchedInfoItem> schedInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTAVAILABLEFILESYSTEMTYPESREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_GETSCHEDULERINFORESULT_H_

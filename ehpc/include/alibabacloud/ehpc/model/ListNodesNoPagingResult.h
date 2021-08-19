@@ -59,7 +59,6 @@ namespace AlibabaCloud
 					std::string imageId;
 					bool htEnabled;
 					std::string id;
-					std::string regionId;
 					std::string lockReason;
 					std::string instanceType;
 					std::string hostName;
@@ -70,17 +69,11 @@ namespace AlibabaCloud
 				ListNodesNoPagingResult();
 				explicit ListNodesNoPagingResult(const std::string &payload);
 				~ListNodesNoPagingResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
 				std::vector<NodeInfo> getNodes()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
 				std::vector<NodeInfo> nodes_;
 
 			};

@@ -339,42 +339,6 @@ EHPCClient::ApplyNodesOutcomeCallable EHPCClient::applyNodesCallable(const Apply
 	return task->get_future();
 }
 
-EHPCClient::BindAccountToClusterUserOutcome EHPCClient::bindAccountToClusterUser(const BindAccountToClusterUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BindAccountToClusterUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BindAccountToClusterUserOutcome(BindAccountToClusterUserResult(outcome.result()));
-	else
-		return BindAccountToClusterUserOutcome(outcome.error());
-}
-
-void EHPCClient::bindAccountToClusterUserAsync(const BindAccountToClusterUserRequest& request, const BindAccountToClusterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bindAccountToClusterUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::BindAccountToClusterUserOutcomeCallable EHPCClient::bindAccountToClusterUserCallable(const BindAccountToClusterUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BindAccountToClusterUserOutcome()>>(
-			[this, request]()
-			{
-			return this->bindAccountToClusterUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::CreateClusterOutcome EHPCClient::createCluster(const CreateClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1887,6 +1851,42 @@ EHPCClient::GetIfEcsTypeSupportHtConfigOutcomeCallable EHPCClient::getIfEcsTypeS
 	return task->get_future();
 }
 
+EHPCClient::GetSchedulerInfoOutcome EHPCClient::getSchedulerInfo(const GetSchedulerInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSchedulerInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSchedulerInfoOutcome(GetSchedulerInfoResult(outcome.result()));
+	else
+		return GetSchedulerInfoOutcome(outcome.error());
+}
+
+void EHPCClient::getSchedulerInfoAsync(const GetSchedulerInfoRequest& request, const GetSchedulerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSchedulerInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::GetSchedulerInfoOutcomeCallable EHPCClient::getSchedulerInfoCallable(const GetSchedulerInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSchedulerInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getSchedulerInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::GetVisualServiceStatusOutcome EHPCClient::getVisualServiceStatus(const GetVisualServiceStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2067,42 +2067,6 @@ EHPCClient::InvokeShellCommandOutcomeCallable EHPCClient::invokeShellCommandCall
 	return task->get_future();
 }
 
-EHPCClient::ListAccountMappingOutcome EHPCClient::listAccountMapping(const ListAccountMappingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListAccountMappingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListAccountMappingOutcome(ListAccountMappingResult(outcome.result()));
-	else
-		return ListAccountMappingOutcome(outcome.error());
-}
-
-void EHPCClient::listAccountMappingAsync(const ListAccountMappingRequest& request, const ListAccountMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listAccountMapping(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::ListAccountMappingOutcomeCallable EHPCClient::listAccountMappingCallable(const ListAccountMappingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListAccountMappingOutcome()>>(
-			[this, request]()
-			{
-			return this->listAccountMapping(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::ListAvailableEcsTypesOutcome EHPCClient::listAvailableEcsTypes(const ListAvailableEcsTypesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,42 +2097,6 @@ EHPCClient::ListAvailableEcsTypesOutcomeCallable EHPCClient::listAvailableEcsTyp
 			[this, request]()
 			{
 			return this->listAvailableEcsTypes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EHPCClient::ListAvailableFileSystemTypesOutcome EHPCClient::listAvailableFileSystemTypes(const ListAvailableFileSystemTypesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListAvailableFileSystemTypesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListAvailableFileSystemTypesOutcome(ListAvailableFileSystemTypesResult(outcome.result()));
-	else
-		return ListAvailableFileSystemTypesOutcome(outcome.error());
-}
-
-void EHPCClient::listAvailableFileSystemTypesAsync(const ListAvailableFileSystemTypesRequest& request, const ListAvailableFileSystemTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listAvailableFileSystemTypes(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::ListAvailableFileSystemTypesOutcomeCallable EHPCClient::listAvailableFileSystemTypesCallable(const ListAvailableFileSystemTypesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListAvailableFileSystemTypesOutcome()>>(
-			[this, request]()
-			{
-			return this->listAvailableFileSystemTypes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3795,42 +3723,6 @@ EHPCClient::SetGWSInstanceUserOutcomeCallable EHPCClient::setGWSInstanceUserCall
 	return task->get_future();
 }
 
-EHPCClient::SetJobUserOutcome EHPCClient::setJobUser(const SetJobUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetJobUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetJobUserOutcome(SetJobUserResult(outcome.result()));
-	else
-		return SetJobUserOutcome(outcome.error());
-}
-
-void EHPCClient::setJobUserAsync(const SetJobUserRequest& request, const SetJobUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setJobUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::SetJobUserOutcomeCallable EHPCClient::setJobUserCallable(const SetJobUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetJobUserOutcome()>>(
-			[this, request]()
-			{
-			return this->setJobUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EHPCClient::SetQueueOutcome EHPCClient::setQueue(const SetQueueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3861,6 +3753,42 @@ EHPCClient::SetQueueOutcomeCallable EHPCClient::setQueueCallable(const SetQueueR
 			[this, request]()
 			{
 			return this->setQueue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::SetSchedulerInfoOutcome EHPCClient::setSchedulerInfo(const SetSchedulerInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetSchedulerInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetSchedulerInfoOutcome(SetSchedulerInfoResult(outcome.result()));
+	else
+		return SetSchedulerInfoOutcome(outcome.error());
+}
+
+void EHPCClient::setSchedulerInfoAsync(const SetSchedulerInfoRequest& request, const SetSchedulerInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setSchedulerInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::SetSchedulerInfoOutcomeCallable EHPCClient::setSchedulerInfoCallable(const SetSchedulerInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetSchedulerInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->setSchedulerInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4221,42 +4149,6 @@ EHPCClient::SubmitJobOutcomeCallable EHPCClient::submitJobCallable(const SubmitJ
 			[this, request]()
 			{
 			return this->submitJob(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EHPCClient::UnbindAccountToClusterUserOutcome EHPCClient::unbindAccountToClusterUser(const UnbindAccountToClusterUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UnbindAccountToClusterUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UnbindAccountToClusterUserOutcome(UnbindAccountToClusterUserResult(outcome.result()));
-	else
-		return UnbindAccountToClusterUserOutcome(outcome.error());
-}
-
-void EHPCClient::unbindAccountToClusterUserAsync(const UnbindAccountToClusterUserRequest& request, const UnbindAccountToClusterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, unbindAccountToClusterUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EHPCClient::UnbindAccountToClusterUserOutcomeCallable EHPCClient::unbindAccountToClusterUserCallable(const UnbindAccountToClusterUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UnbindAccountToClusterUserOutcome()>>(
-			[this, request]()
-			{
-			return this->unbindAccountToClusterUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

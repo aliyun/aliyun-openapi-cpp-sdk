@@ -47,8 +47,6 @@ void ListNodesNoPagingResult::parse(const std::string &payload)
 			nodesObject.id = valueNodesNodeInfo["Id"].asString();
 		if(!valueNodesNodeInfo["HostName"].isNull())
 			nodesObject.hostName = valueNodesNodeInfo["HostName"].asString();
-		if(!valueNodesNodeInfo["RegionId"].isNull())
-			nodesObject.regionId = valueNodesNodeInfo["RegionId"].asString();
 		if(!valueNodesNodeInfo["Status"].isNull())
 			nodesObject.status = valueNodesNodeInfo["Status"].asString();
 		if(!valueNodesNodeInfo["Version"].isNull())
@@ -92,28 +90,7 @@ void ListNodesNoPagingResult::parse(const std::string &payload)
 			nodesObject.roles.push_back(value.asString());
 		nodes_.push_back(nodesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 
-}
-
-int ListNodesNoPagingResult::getTotalCount()const
-{
-	return totalCount_;
-}
-
-int ListNodesNoPagingResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-int ListNodesNoPagingResult::getPageNumber()const
-{
-	return pageNumber_;
 }
 
 std::vector<ListNodesNoPagingResult::NodeInfo> ListNodesNoPagingResult::getNodes()const

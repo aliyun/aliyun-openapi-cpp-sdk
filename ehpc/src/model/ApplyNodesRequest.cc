@@ -241,6 +241,17 @@ void ApplyNodesRequest::setInstanceFamilyLevel(const std::string& instanceFamily
 	setParameter("InstanceFamilyLevel", instanceFamilyLevel);
 }
 
+int ApplyNodesRequest::getRound()const
+{
+	return round_;
+}
+
+void ApplyNodesRequest::setRound(int round)
+{
+	round_ = round;
+	setParameter("Round", std::to_string(round));
+}
+
 std::string ApplyNodesRequest::getInternetChargeType()const
 {
 	return internetChargeType_;
@@ -250,6 +261,17 @@ void ApplyNodesRequest::setInternetChargeType(const std::string& internetChargeT
 {
 	internetChargeType_ = internetChargeType;
 	setParameter("InternetChargeType", internetChargeType);
+}
+
+int ApplyNodesRequest::getInterval()const
+{
+	return interval_;
+}
+
+void ApplyNodesRequest::setInterval(int interval)
+{
+	interval_ = interval;
+	setParameter("Interval", std::to_string(interval));
 }
 
 std::vector<ApplyNodesRequest::InstanceTypeModel> ApplyNodesRequest::getInstanceTypeModel()const

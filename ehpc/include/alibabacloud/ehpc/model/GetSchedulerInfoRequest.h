@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_UNBINDACCOUNTTOCLUSTERUSERREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_UNBINDACCOUNTTOCLUSTERUSERREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_GETSCHEDULERINFOREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_GETSCHEDULERINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT UnbindAccountToClusterUserRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT GetSchedulerInfoRequest : public RpcServiceRequest
 			{
+			public:
+				struct Scheduler
+				{
+					std::string schedName;
+				};
 
 			public:
-				UnbindAccountToClusterUserRequest();
-				~UnbindAccountToClusterUserRequest();
+				GetSchedulerInfoRequest();
+				~GetSchedulerInfoRequest();
 
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getAccountUid()const;
-				void setAccountUid(const std::string& accountUid);
-				std::string getUserName()const;
-				void setUserName(const std::string& userName);
+				std::vector<Scheduler> getScheduler()const;
+				void setScheduler(const std::vector<Scheduler>& scheduler);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 
             private:
 				std::string clusterId_;
 				std::string accessKeyId_;
-				std::string accountUid_;
-				std::string userName_;
+				std::vector<Scheduler> scheduler_;
+				std::string regionId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_UNBINDACCOUNTTOCLUSTERUSERREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_GETSCHEDULERINFOREQUEST_H_

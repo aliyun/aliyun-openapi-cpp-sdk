@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_SETJOBUSERRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_SETJOBUSERRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_SETSCHEDULERINFORESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_SETSCHEDULERINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT SetJobUserResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT SetSchedulerInfoResult : public ServiceResult
 			{
 			public:
 
 
-				SetJobUserResult();
-				explicit SetJobUserResult(const std::string &payload);
-				~SetJobUserResult();
+				SetSchedulerInfoResult();
+				explicit SetSchedulerInfoResult(const std::string &payload);
+				~SetSchedulerInfoResult();
+				std::string getMessage()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_SETJOBUSERRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_SETSCHEDULERINFORESULT_H_

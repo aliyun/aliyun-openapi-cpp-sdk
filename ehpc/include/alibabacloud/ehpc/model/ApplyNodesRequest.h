@@ -85,8 +85,12 @@ namespace AlibabaCloud
 				void setPriorityStrategy(const std::string& priorityStrategy);
 				std::string getInstanceFamilyLevel()const;
 				void setInstanceFamilyLevel(const std::string& instanceFamilyLevel);
+				int getRound()const;
+				void setRound(int round);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
+				int getInterval()const;
+				void setInterval(int interval);
 				std::vector<InstanceTypeModel> getInstanceTypeModel()const;
 				void setInstanceTypeModel(const std::vector<InstanceTypeModel>& instanceTypeModel);
 				int getInternetMaxBandWidthIn()const;
@@ -116,7 +120,9 @@ namespace AlibabaCloud
 				std::string hostNameSuffix_;
 				std::string priorityStrategy_;
 				std::string instanceFamilyLevel_;
+				int round_;
 				std::string internetChargeType_;
+				int interval_;
 				std::vector<InstanceTypeModel> instanceTypeModel_;
 				int internetMaxBandWidthIn_;
 				int targetCapacity_;

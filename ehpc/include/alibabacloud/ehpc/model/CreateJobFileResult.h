@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				CreateJobFileResult();
 				explicit CreateJobFileResult(const std::string &payload);
 				~CreateJobFileResult();
-				std::string getTemplateId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string templateId_;
 
 			};
 		}

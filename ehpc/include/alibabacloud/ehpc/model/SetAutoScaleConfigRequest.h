@@ -33,25 +33,29 @@ namespace AlibabaCloud
 			public:
 				struct Queues
 				{
-					std::string spotStrategy;
 					std::string queueName;
-					int minNodesInQueue;
+					std::string systemDiskLevel;
 					struct InstanceTypes
 					{
 						std::string spotStrategy;
 						std::string vSwitchId;
 						std::string instanceType;
 						std::string zoneId;
-						std::string hostNamePrefix;
 						float spotPriceLimit;
 					};
 					std::vector<InstanceTypes> instanceTypes;
-					int maxNodesInQueue;
-					std::string instanceType;
-					std::string queueImageId;
 					bool enableAutoGrow;
 					float spotPriceLimit;
+					std::string hostNameSuffix;
 					bool enableAutoShrink;
+					std::string spotStrategy;
+					int minNodesInQueue;
+					std::string systemDiskCategory;
+					int maxNodesInQueue;
+					int systemDiskSize;
+					std::string instanceType;
+					std::string queueImageId;
+					std::string hostNamePrefix;
 				};
 
 			public:

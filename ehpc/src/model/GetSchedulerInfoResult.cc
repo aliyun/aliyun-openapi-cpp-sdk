@@ -14,31 +14,46 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ehpc/model/UnbindAccountToClusterUserResult.h>
+#include <alibabacloud/ehpc/model/GetSchedulerInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::EHPC;
 using namespace AlibabaCloud::EHPC::Model;
 
-UnbindAccountToClusterUserResult::UnbindAccountToClusterUserResult() :
+GetSchedulerInfoResult::GetSchedulerInfoResult() :
 	ServiceResult()
 {}
 
-UnbindAccountToClusterUserResult::UnbindAccountToClusterUserResult(const std::string &payload) :
+GetSchedulerInfoResult::GetSchedulerInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UnbindAccountToClusterUserResult::~UnbindAccountToClusterUserResult()
+GetSchedulerInfoResult::~GetSchedulerInfoResult()
 {}
 
-void UnbindAccountToClusterUserResult::parse(const std::string &payload)
+void GetSchedulerInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allSchedInfoNode = value["SchedInfo"]["SchedInfoItem"];
+	for (auto valueSchedInfoSchedInfoItem : allSchedInfoNode)
+	{
+		SchedInfoItem schedInfoObject;
+		if(!valueSchedInfoSchedInfoItem["SchedName"].isNull())
+			schedInfoObject.schedName = valueSchedInfoSchedInfoItem["SchedName"].asString();
+		if(!valueSchedInfoSchedInfoItem["Configuration"].isNull())
+			schedInfoObject.configuration = valueSchedInfoSchedInfoItem["Configuration"].asString();
+		schedInfo_.push_back(schedInfoObject);
+	}
 
+}
+
+std::vector<GetSchedulerInfoResult::SchedInfoItem> GetSchedulerInfoResult::getSchedInfo()const
+{
+	return schedInfo_;
 }
 

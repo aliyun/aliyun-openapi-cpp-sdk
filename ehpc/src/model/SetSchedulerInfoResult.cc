@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ehpc/model/SetJobUserResult.h>
+#include <alibabacloud/ehpc/model/SetSchedulerInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::EHPC;
 using namespace AlibabaCloud::EHPC::Model;
 
-SetJobUserResult::SetJobUserResult() :
+SetSchedulerInfoResult::SetSchedulerInfoResult() :
 	ServiceResult()
 {}
 
-SetJobUserResult::SetJobUserResult(const std::string &payload) :
+SetSchedulerInfoResult::SetSchedulerInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetJobUserResult::~SetJobUserResult()
+SetSchedulerInfoResult::~SetSchedulerInfoResult()
 {}
 
-void SetJobUserResult::parse(const std::string &payload)
+void SetSchedulerInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string SetSchedulerInfoResult::getMessage()const
+{
+	return message_;
 }
 

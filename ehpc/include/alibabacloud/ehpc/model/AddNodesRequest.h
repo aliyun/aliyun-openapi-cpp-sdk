@@ -75,6 +75,8 @@ namespace AlibabaCloud
 				void setComputeSpotStrategy(const std::string& computeSpotStrategy);
 				std::string getHostNameSuffix()const;
 				void setHostNameSuffix(const std::string& hostNameSuffix);
+				bool getSync()const;
+				void setSync(bool sync);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPeriodUnit()const;
@@ -115,6 +117,7 @@ namespace AlibabaCloud
 				std::string clusterId_;
 				std::string computeSpotStrategy_;
 				std::string hostNameSuffix_;
+				bool sync_;
 				std::string vSwitchId_;
 				std::string periodUnit_;
 				bool computeEnableHt_;
