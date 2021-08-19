@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setTimePoints(const std::string& timePoints);
 				std::string getRepeatWeekdays()const;
 				void setRepeatWeekdays(const std::string& repeatWeekdays);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::vector<Tag> getTag()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				int copiedSnapshotsRetentionDays_;
 				std::string timePoints_;
 				std::string repeatWeekdays_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::vector<Tag> tag_;
 				bool enableCrossRegionCopy_;

@@ -35,9 +35,10 @@ namespace AlibabaCloud
 				struct InstanceCloudAssistantStatus
 				{
 					std::string cloudAssistantVersion;
+					bool supportSessionManager;
 					std::string instanceId;
-					std::string oSType;
 					long invocationCount;
+					std::string oSType;
 					std::string cloudAssistantStatus;
 					std::string lastHeartbeatTime;
 					std::string lastInvokedTime;

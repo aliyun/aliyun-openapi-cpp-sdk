@@ -34,15 +34,21 @@ namespace AlibabaCloud
 			public:
 				struct StorageCapacityUnit
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					std::string description;
 					std::string allocationStatus;
-					std::string storageCapacityUnitId;
 					int capacity;
+					std::string storageCapacityUnitId;
 					std::string expiredTime;
 					std::string creationTime;
 					std::string startTime;
 					std::string regionId;
+					std::vector<StorageCapacityUnit::Tag> tags;
 					std::string name;
 				};
 

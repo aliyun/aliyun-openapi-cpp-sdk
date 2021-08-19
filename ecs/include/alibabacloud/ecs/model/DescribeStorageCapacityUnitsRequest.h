@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeStorageCapacityUnitsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				DescribeStorageCapacityUnitsRequest();
@@ -47,6 +53,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -55,10 +63,10 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::vector<std::string> getStatus()const;
-				void setStatus(const std::vector<std::string>& status);
 				std::string getAllocationType()const;
 				void setAllocationType(const std::string& allocationType);
+				std::vector<std::string> getStatus()const;
+				void setStatus(const std::vector<std::string>& status);
 
             private:
 				long resourceOwnerId_;
@@ -67,12 +75,13 @@ namespace AlibabaCloud
 				std::vector<std::string> storageCapacityUnitId_;
 				std::string regionId_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string name_;
-				std::vector<std::string> status_;
 				std::string allocationType_;
+				std::vector<std::string> status_;
 
 			};
 		}

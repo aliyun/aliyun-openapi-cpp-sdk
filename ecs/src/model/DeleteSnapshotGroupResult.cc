@@ -43,12 +43,12 @@ void DeleteSnapshotGroupResult::parse(const std::string &payload)
 	for (auto valueOperationProgressSetOperationProgress : allOperationProgressSetNode)
 	{
 		OperationProgress operationProgressSetObject;
-		if(!valueOperationProgressSetOperationProgress["OperationStatus"].isNull())
-			operationProgressSetObject.operationStatus = valueOperationProgressSetOperationProgress["OperationStatus"].asString();
-		if(!valueOperationProgressSetOperationProgress["ErrorCode"].isNull())
-			operationProgressSetObject.errorCode = valueOperationProgressSetOperationProgress["ErrorCode"].asString();
 		if(!valueOperationProgressSetOperationProgress["ErrorMsg"].isNull())
 			operationProgressSetObject.errorMsg = valueOperationProgressSetOperationProgress["ErrorMsg"].asString();
+		if(!valueOperationProgressSetOperationProgress["ErrorCode"].isNull())
+			operationProgressSetObject.errorCode = valueOperationProgressSetOperationProgress["ErrorCode"].asString();
+		if(!valueOperationProgressSetOperationProgress["OperationStatus"].isNull())
+			operationProgressSetObject.operationStatus = valueOperationProgressSetOperationProgress["OperationStatus"].asString();
 		auto allRelatedItemSetNode = valueOperationProgressSetOperationProgress["RelatedItemSet"]["RelatedItem"];
 		for (auto valueOperationProgressSetOperationProgressRelatedItemSetRelatedItem : allRelatedItemSetNode)
 		{

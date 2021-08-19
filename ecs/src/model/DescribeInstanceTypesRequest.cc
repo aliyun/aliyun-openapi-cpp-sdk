@@ -51,6 +51,17 @@ void DescribeInstanceTypesRequest::setInstanceTypes(const std::vector<std::strin
 	}
 }
 
+std::string DescribeInstanceTypesRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void DescribeInstanceTypesRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
+}
+
 std::string DescribeInstanceTypesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -93,5 +104,16 @@ void DescribeInstanceTypesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+long DescribeInstanceTypesRequest::getMaxResults()const
+{
+	return maxResults_;
+}
+
+void DescribeInstanceTypesRequest::setMaxResults(long maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
 }
 

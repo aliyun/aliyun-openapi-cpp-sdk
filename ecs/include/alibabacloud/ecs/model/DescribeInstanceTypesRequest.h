@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::vector<std::string> getInstanceTypes()const;
 				void setInstanceTypes(const std::vector<std::string>& instanceTypes);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -47,14 +49,18 @@ namespace AlibabaCloud
 				void setInstanceTypeFamily(const std::string& instanceTypeFamily);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				long getMaxResults()const;
+				void setMaxResults(long maxResults);
 
             private:
 				long resourceOwnerId_;
 				std::vector<std::string> instanceTypes_;
+				std::string nextToken_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string instanceTypeFamily_;
 				long ownerId_;
+				long maxResults_;
 
 			};
 		}

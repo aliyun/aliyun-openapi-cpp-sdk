@@ -43,34 +43,44 @@ void DescribeStorageCapacityUnitsResult::parse(const std::string &payload)
 	for (auto valueStorageCapacityUnitsStorageCapacityUnit : allStorageCapacityUnitsNode)
 	{
 		StorageCapacityUnit storageCapacityUnitsObject;
-		if(!valueStorageCapacityUnitsStorageCapacityUnit["RegionId"].isNull())
-			storageCapacityUnitsObject.regionId = valueStorageCapacityUnitsStorageCapacityUnit["RegionId"].asString();
-		if(!valueStorageCapacityUnitsStorageCapacityUnit["StorageCapacityUnitId"].isNull())
-			storageCapacityUnitsObject.storageCapacityUnitId = valueStorageCapacityUnitsStorageCapacityUnit["StorageCapacityUnitId"].asString();
-		if(!valueStorageCapacityUnitsStorageCapacityUnit["Name"].isNull())
-			storageCapacityUnitsObject.name = valueStorageCapacityUnitsStorageCapacityUnit["Name"].asString();
-		if(!valueStorageCapacityUnitsStorageCapacityUnit["Capacity"].isNull())
-			storageCapacityUnitsObject.capacity = std::stoi(valueStorageCapacityUnitsStorageCapacityUnit["Capacity"].asString());
-		if(!valueStorageCapacityUnitsStorageCapacityUnit["Status"].isNull())
-			storageCapacityUnitsObject.status = valueStorageCapacityUnitsStorageCapacityUnit["Status"].asString();
 		if(!valueStorageCapacityUnitsStorageCapacityUnit["CreationTime"].isNull())
 			storageCapacityUnitsObject.creationTime = valueStorageCapacityUnitsStorageCapacityUnit["CreationTime"].asString();
-		if(!valueStorageCapacityUnitsStorageCapacityUnit["ExpiredTime"].isNull())
-			storageCapacityUnitsObject.expiredTime = valueStorageCapacityUnitsStorageCapacityUnit["ExpiredTime"].asString();
+		if(!valueStorageCapacityUnitsStorageCapacityUnit["Status"].isNull())
+			storageCapacityUnitsObject.status = valueStorageCapacityUnitsStorageCapacityUnit["Status"].asString();
 		if(!valueStorageCapacityUnitsStorageCapacityUnit["StartTime"].isNull())
 			storageCapacityUnitsObject.startTime = valueStorageCapacityUnitsStorageCapacityUnit["StartTime"].asString();
+		if(!valueStorageCapacityUnitsStorageCapacityUnit["Capacity"].isNull())
+			storageCapacityUnitsObject.capacity = std::stoi(valueStorageCapacityUnitsStorageCapacityUnit["Capacity"].asString());
 		if(!valueStorageCapacityUnitsStorageCapacityUnit["Description"].isNull())
 			storageCapacityUnitsObject.description = valueStorageCapacityUnitsStorageCapacityUnit["Description"].asString();
 		if(!valueStorageCapacityUnitsStorageCapacityUnit["AllocationStatus"].isNull())
 			storageCapacityUnitsObject.allocationStatus = valueStorageCapacityUnitsStorageCapacityUnit["AllocationStatus"].asString();
+		if(!valueStorageCapacityUnitsStorageCapacityUnit["ExpiredTime"].isNull())
+			storageCapacityUnitsObject.expiredTime = valueStorageCapacityUnitsStorageCapacityUnit["ExpiredTime"].asString();
+		if(!valueStorageCapacityUnitsStorageCapacityUnit["StorageCapacityUnitId"].isNull())
+			storageCapacityUnitsObject.storageCapacityUnitId = valueStorageCapacityUnitsStorageCapacityUnit["StorageCapacityUnitId"].asString();
+		if(!valueStorageCapacityUnitsStorageCapacityUnit["Name"].isNull())
+			storageCapacityUnitsObject.name = valueStorageCapacityUnitsStorageCapacityUnit["Name"].asString();
+		if(!valueStorageCapacityUnitsStorageCapacityUnit["RegionId"].isNull())
+			storageCapacityUnitsObject.regionId = valueStorageCapacityUnitsStorageCapacityUnit["RegionId"].asString();
+		auto allTagsNode = valueStorageCapacityUnitsStorageCapacityUnit["Tags"]["Tag"];
+		for (auto valueStorageCapacityUnitsStorageCapacityUnitTagsTag : allTagsNode)
+		{
+			StorageCapacityUnit::Tag tagsObject;
+			if(!valueStorageCapacityUnitsStorageCapacityUnitTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueStorageCapacityUnitsStorageCapacityUnitTagsTag["TagValue"].asString();
+			if(!valueStorageCapacityUnitsStorageCapacityUnitTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueStorageCapacityUnitsStorageCapacityUnitTagsTag["TagKey"].asString();
+			storageCapacityUnitsObject.tags.push_back(tagsObject);
+		}
 		storageCapacityUnits_.push_back(storageCapacityUnitsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

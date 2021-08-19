@@ -53,8 +53,8 @@ namespace AlibabaCloud
 					float memorySize;
 					int maximumQueueNumberPerEni;
 					int eniIpv6AddressQuantity;
-					int cpuCoreCount;
 					int eniTotalQuantity;
+					int cpuCoreCount;
 					int initialCredit;
 					int eniQuantity;
 					int gPUAmount;
@@ -69,11 +69,13 @@ namespace AlibabaCloud
 				DescribeInstanceTypesResult();
 				explicit DescribeInstanceTypesResult(const std::string &payload);
 				~DescribeInstanceTypesResult();
+				std::string getNextToken()const;
 				std::vector<InstanceType> getInstanceTypes()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string nextToken_;
 				std::vector<InstanceType> instanceTypes_;
 
 			};

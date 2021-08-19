@@ -95,6 +95,22 @@ void DescribeStorageCapacityUnitsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::vector<DescribeStorageCapacityUnitsRequest::Tag> DescribeStorageCapacityUnitsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeStorageCapacityUnitsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+	}
+}
+
 std::string DescribeStorageCapacityUnitsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -139,6 +155,17 @@ void DescribeStorageCapacityUnitsRequest::setName(const std::string& name)
 	setParameter("Name", name);
 }
 
+std::string DescribeStorageCapacityUnitsRequest::getAllocationType()const
+{
+	return allocationType_;
+}
+
+void DescribeStorageCapacityUnitsRequest::setAllocationType(const std::string& allocationType)
+{
+	allocationType_ = allocationType;
+	setParameter("AllocationType", allocationType);
+}
+
 std::vector<std::string> DescribeStorageCapacityUnitsRequest::getStatus()const
 {
 	return status_;
@@ -150,16 +177,5 @@ void DescribeStorageCapacityUnitsRequest::setStatus(const std::vector<std::strin
 	for(int dep1 = 0; dep1!= status.size(); dep1++) {
 		setParameter("Status."+ std::to_string(dep1), status.at(dep1));
 	}
-}
-
-std::string DescribeStorageCapacityUnitsRequest::getAllocationType()const
-{
-	return allocationType_;
-}
-
-void DescribeStorageCapacityUnitsRequest::setAllocationType(const std::string& allocationType)
-{
-	allocationType_ = allocationType;
-	setParameter("AllocationType", allocationType);
 }
 

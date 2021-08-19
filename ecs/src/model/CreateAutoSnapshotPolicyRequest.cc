@@ -71,6 +71,17 @@ void CreateAutoSnapshotPolicyRequest::setRepeatWeekdays(const std::string& repea
 	setParameter("RepeatWeekdays", repeatWeekdays);
 }
 
+std::string CreateAutoSnapshotPolicyRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateAutoSnapshotPolicyRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateAutoSnapshotPolicyRequest::getRegionId()const
 {
 	return regionId_;

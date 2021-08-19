@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT PurchaseStorageCapacityUnitRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				PurchaseStorageCapacityUnitRequest();
@@ -47,6 +53,8 @@ namespace AlibabaCloud
 				void setCapacity(int capacity);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				int getPeriod()const;
 				void setPeriod(int period);
 				int getAmount()const;
@@ -71,6 +79,7 @@ namespace AlibabaCloud
 				std::string startTime_;
 				int capacity_;
 				std::string regionId_;
+				std::vector<Tag> tag_;
 				int period_;
 				int amount_;
 				std::string fromApp_;
