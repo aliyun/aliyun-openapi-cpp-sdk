@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string chatbotId;
+					bool miniPlaybackConfigEnabled;
 					std::string scriptDescription;
 					std::string scriptId;
 					std::string debugStatus;

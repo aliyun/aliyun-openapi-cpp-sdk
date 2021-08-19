@@ -71,6 +71,19 @@ void CreateInstanceRequest::setEndpoint(const std::string& endpoint)
 	setParameter("Endpoint", endpoint);
 }
 
+std::vector<std::string> CreateInstanceRequest::getCallingNumber()const
+{
+	return callingNumber_;
+}
+
+void CreateInstanceRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
+{
+	callingNumber_ = callingNumber;
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
+}
+
 std::string CreateInstanceRequest::getInstanceName()const
 {
 	return instanceName_;

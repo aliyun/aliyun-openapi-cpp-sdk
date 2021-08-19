@@ -120,10 +120,14 @@
 #include "model/GetAsrServerInfoResult.h"
 #include "model/GetBaseStrategyPeriodRequest.h"
 #include "model/GetBaseStrategyPeriodResult.h"
+#include "model/GetConcurrentConversationQuotaRequest.h"
+#include "model/GetConcurrentConversationQuotaResult.h"
 #include "model/GetContactBlockListRequest.h"
 #include "model/GetContactBlockListResult.h"
 #include "model/GetContactWhiteListRequest.h"
 #include "model/GetContactWhiteListResult.h"
+#include "model/GetCurrentConcurrencyRequest.h"
+#include "model/GetCurrentConcurrencyResult.h"
 #include "model/GetEffectiveDaysRequest.h"
 #include "model/GetEffectiveDaysResult.h"
 #include "model/GetEmptyNumberNoMoreCallsInfoRequest.h"
@@ -244,6 +248,8 @@
 #include "model/TagResourcesResult.h"
 #include "model/TaskPreparingRequest.h"
 #include "model/TaskPreparingResult.h"
+#include "model/TerminateCallRequest.h"
+#include "model/TerminateCallResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
 #include "model/WithdrawScriptReviewRequest.h"
@@ -404,12 +410,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetBaseStrategyPeriodResult> GetBaseStrategyPeriodOutcome;
 			typedef std::future<GetBaseStrategyPeriodOutcome> GetBaseStrategyPeriodOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetBaseStrategyPeriodRequest&, const GetBaseStrategyPeriodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBaseStrategyPeriodAsyncHandler;
+			typedef Outcome<Error, Model::GetConcurrentConversationQuotaResult> GetConcurrentConversationQuotaOutcome;
+			typedef std::future<GetConcurrentConversationQuotaOutcome> GetConcurrentConversationQuotaOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetConcurrentConversationQuotaRequest&, const GetConcurrentConversationQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConcurrentConversationQuotaAsyncHandler;
 			typedef Outcome<Error, Model::GetContactBlockListResult> GetContactBlockListOutcome;
 			typedef std::future<GetContactBlockListOutcome> GetContactBlockListOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetContactBlockListRequest&, const GetContactBlockListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetContactBlockListAsyncHandler;
 			typedef Outcome<Error, Model::GetContactWhiteListResult> GetContactWhiteListOutcome;
 			typedef std::future<GetContactWhiteListOutcome> GetContactWhiteListOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetContactWhiteListRequest&, const GetContactWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetContactWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::GetCurrentConcurrencyResult> GetCurrentConcurrencyOutcome;
+			typedef std::future<GetCurrentConcurrencyOutcome> GetCurrentConcurrencyOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::GetCurrentConcurrencyRequest&, const GetCurrentConcurrencyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCurrentConcurrencyAsyncHandler;
 			typedef Outcome<Error, Model::GetEffectiveDaysResult> GetEffectiveDaysOutcome;
 			typedef std::future<GetEffectiveDaysOutcome> GetEffectiveDaysOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::GetEffectiveDaysRequest&, const GetEffectiveDaysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEffectiveDaysAsyncHandler;
@@ -590,6 +602,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TaskPreparingResult> TaskPreparingOutcome;
 			typedef std::future<TaskPreparingOutcome> TaskPreparingOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::TaskPreparingRequest&, const TaskPreparingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskPreparingAsyncHandler;
+			typedef Outcome<Error, Model::TerminateCallResult> TerminateCallOutcome;
+			typedef std::future<TerminateCallOutcome> TerminateCallOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::TerminateCallRequest&, const TerminateCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TerminateCallAsyncHandler;
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
@@ -748,12 +763,18 @@ namespace AlibabaCloud
 			GetBaseStrategyPeriodOutcome getBaseStrategyPeriod(const Model::GetBaseStrategyPeriodRequest &request)const;
 			void getBaseStrategyPeriodAsync(const Model::GetBaseStrategyPeriodRequest& request, const GetBaseStrategyPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBaseStrategyPeriodOutcomeCallable getBaseStrategyPeriodCallable(const Model::GetBaseStrategyPeriodRequest& request) const;
+			GetConcurrentConversationQuotaOutcome getConcurrentConversationQuota(const Model::GetConcurrentConversationQuotaRequest &request)const;
+			void getConcurrentConversationQuotaAsync(const Model::GetConcurrentConversationQuotaRequest& request, const GetConcurrentConversationQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetConcurrentConversationQuotaOutcomeCallable getConcurrentConversationQuotaCallable(const Model::GetConcurrentConversationQuotaRequest& request) const;
 			GetContactBlockListOutcome getContactBlockList(const Model::GetContactBlockListRequest &request)const;
 			void getContactBlockListAsync(const Model::GetContactBlockListRequest& request, const GetContactBlockListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetContactBlockListOutcomeCallable getContactBlockListCallable(const Model::GetContactBlockListRequest& request) const;
 			GetContactWhiteListOutcome getContactWhiteList(const Model::GetContactWhiteListRequest &request)const;
 			void getContactWhiteListAsync(const Model::GetContactWhiteListRequest& request, const GetContactWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetContactWhiteListOutcomeCallable getContactWhiteListCallable(const Model::GetContactWhiteListRequest& request) const;
+			GetCurrentConcurrencyOutcome getCurrentConcurrency(const Model::GetCurrentConcurrencyRequest &request)const;
+			void getCurrentConcurrencyAsync(const Model::GetCurrentConcurrencyRequest& request, const GetCurrentConcurrencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCurrentConcurrencyOutcomeCallable getCurrentConcurrencyCallable(const Model::GetCurrentConcurrencyRequest& request) const;
 			GetEffectiveDaysOutcome getEffectiveDays(const Model::GetEffectiveDaysRequest &request)const;
 			void getEffectiveDaysAsync(const Model::GetEffectiveDaysRequest& request, const GetEffectiveDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEffectiveDaysOutcomeCallable getEffectiveDaysCallable(const Model::GetEffectiveDaysRequest& request) const;
@@ -934,6 +955,9 @@ namespace AlibabaCloud
 			TaskPreparingOutcome taskPreparing(const Model::TaskPreparingRequest &request)const;
 			void taskPreparingAsync(const Model::TaskPreparingRequest& request, const TaskPreparingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TaskPreparingOutcomeCallable taskPreparingCallable(const Model::TaskPreparingRequest& request) const;
+			TerminateCallOutcome terminateCall(const Model::TerminateCallRequest &request)const;
+			void terminateCallAsync(const Model::TerminateCallRequest& request, const TerminateCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TerminateCallOutcomeCallable terminateCallCallable(const Model::TerminateCallRequest& request) const;
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;

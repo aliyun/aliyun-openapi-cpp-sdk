@@ -70,6 +70,8 @@ void ListJobGroupsResult::parse(const std::string &payload)
 			jobGroupObject.scriptVersion = jobGroupsNodeListJobGroup["ScriptVersion"].asString();
 		if(!jobGroupsNodeListJobGroup["Status"].isNull())
 			jobGroupObject.status = jobGroupsNodeListJobGroup["Status"].asString();
+		if(!jobGroupsNodeListJobGroup["TotalCallNum"].isNull())
+			jobGroupObject.totalCallNum = std::stoi(jobGroupsNodeListJobGroup["TotalCallNum"].asString());
 		auto progressNode = value["Progress"];
 		if(!progressNode["Duration"].isNull())
 			jobGroupObject.progress.duration = std::stoi(progressNode["Duration"].asString());

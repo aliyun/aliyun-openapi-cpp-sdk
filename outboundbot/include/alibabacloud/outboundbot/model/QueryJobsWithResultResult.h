@@ -56,10 +56,16 @@ namespace AlibabaCloud
 								std::string value;
 								std::string key;
 							};
+							struct TagHit
+							{
+								std::string tagName;
+								std::string tagGroup;
+							};
 							bool hasAnswered;
 							std::string status;
 							bool hasHangUpByRejection;
 							std::string taskEndReason;
+							std::vector<TagHit> tagHits;
 							std::string callDurationDisplay;
 							std::string statusName;
 							long callTime;

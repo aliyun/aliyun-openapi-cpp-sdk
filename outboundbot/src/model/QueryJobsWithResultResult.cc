@@ -89,6 +89,16 @@ void QueryJobsWithResultResult::parse(const std::string &payload)
 				extraObject.value = latestTaskNodeExtrasExtra["Value"].asString();
 			jobObject.latestTask.extras.push_back(extraObject);
 		}
+		auto allTagHitsNode = latestTaskNode["TagHits"]["TagHit"];
+		for (auto latestTaskNodeTagHitsTagHit : allTagHitsNode)
+		{
+			Jobs::Job::LatestTask::TagHit tagHitObject;
+			if(!latestTaskNodeTagHitsTagHit["TagGroup"].isNull())
+				tagHitObject.tagGroup = latestTaskNodeTagHitsTagHit["TagGroup"].asString();
+			if(!latestTaskNodeTagHitsTagHit["TagName"].isNull())
+				tagHitObject.tagName = latestTaskNodeTagHitsTagHit["TagName"].asString();
+			jobObject.latestTask.tagHits.push_back(tagHitObject);
+		}
 		auto contactNode = latestTaskNode["Contact"];
 		if(!contactNode["PreferredPhoneNumber"].isNull())
 			jobObject.latestTask.contact.preferredPhoneNumber = contactNode["PreferredPhoneNumber"].asString();

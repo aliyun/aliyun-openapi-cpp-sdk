@@ -49,6 +49,16 @@ void StartJobResult::parse(const std::string &payload)
 			taskIdsObject.value = valueTaskIdsKeyValuePair["Value"].asString();
 		taskIds_.push_back(taskIdsObject);
 	}
+	auto allCallIdsNode = value["CallIds"]["KeyValuePair"];
+	for (auto valueCallIdsKeyValuePair : allCallIdsNode)
+	{
+		KeyValuePair callIdsObject;
+		if(!valueCallIdsKeyValuePair["Key"].isNull())
+			callIdsObject.key = valueCallIdsKeyValuePair["Key"].asString();
+		if(!valueCallIdsKeyValuePair["Value"].isNull())
+			callIdsObject.value = valueCallIdsKeyValuePair["Value"].asString();
+		callIds_.push_back(callIdsObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -58,6 +68,11 @@ void StartJobResult::parse(const std::string &payload)
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
+}
+
+std::vector<StartJobResult::KeyValuePair> StartJobResult::getCallIds()const
+{
+	return callIds_;
 }
 
 std::vector<StartJobResult::KeyValuePair> StartJobResult::getTaskIds()const

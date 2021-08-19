@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTSRESULT_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTSRESULT_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETCONCURRENTCONVERSATIONQUOTARESULT_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETCONCURRENTCONVERSATIONQUOTARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListScriptsResult : public ServiceResult
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT GetConcurrentConversationQuotaResult : public ServiceResult
 			{
 			public:
-				struct Scripts
-				{
-					struct Script
-					{
-						std::string status;
-						std::string scriptDescription;
-						std::string scriptId;
-						std::string failReason;
-						std::string debugStatus;
-						std::string scene;
-						bool miniPlaybackEnabled;
-						bool isDebugDrafted;
-						std::string industry;
-						bool isDrafted;
-						std::string scriptName;
-						long updateTime;
-						std::string rejectReason;
-					};
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-					std::vector<Script> list;
-				};
 
 
-				ListScriptsResult();
-				explicit ListScriptsResult(const std::string &payload);
-				~ListScriptsResult();
-				Scripts getScripts()const;
+				GetConcurrentConversationQuotaResult();
+				explicit GetConcurrentConversationQuotaResult(const std::string &payload);
+				~GetConcurrentConversationQuotaResult();
+				int getRemainingConcurrent()const;
 				std::string getMessage()const;
+				int getMaxConcurrent()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -69,8 +47,9 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Scripts scripts_;
+				int remainingConcurrent_;
 				std::string message_;
+				int maxConcurrent_;
 				int httpStatusCode_;
 				std::string code_;
 				bool success_;
@@ -79,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTSRESULT_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_GETCONCURRENTCONVERSATIONQUOTARESULT_H_

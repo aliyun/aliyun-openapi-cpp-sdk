@@ -69,6 +69,7 @@ namespace AlibabaCloud
 					std::string jobGroupDescription;
 					std::string jobGroupId;
 					std::string scriptName;
+					int totalCallNum;
 					long creationTime;
 					Strategy strategy;
 					ExportProgress exportProgress;

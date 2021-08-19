@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setJobJson(const std::string& jobJson);
 				std::vector<std::string> getCallingNumber()const;
 				void setCallingNumber(const std::vector<std::string>& callingNumber);
+				std::string getScriptId()const;
+				void setScriptId(const std::string& scriptId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getJobGroupId()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string jobJson_;
 				std::vector<std::string> callingNumber_;
+				std::string scriptId_;
 				std::string instanceId_;
 				std::string jobGroupId_;
 				bool selfHostedCallCenter_;

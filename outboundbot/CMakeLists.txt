@@ -119,10 +119,14 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/GetAsrServerInfoResult.h
 	include/alibabacloud/outboundbot/model/GetBaseStrategyPeriodRequest.h
 	include/alibabacloud/outboundbot/model/GetBaseStrategyPeriodResult.h
+	include/alibabacloud/outboundbot/model/GetConcurrentConversationQuotaRequest.h
+	include/alibabacloud/outboundbot/model/GetConcurrentConversationQuotaResult.h
 	include/alibabacloud/outboundbot/model/GetContactBlockListRequest.h
 	include/alibabacloud/outboundbot/model/GetContactBlockListResult.h
 	include/alibabacloud/outboundbot/model/GetContactWhiteListRequest.h
 	include/alibabacloud/outboundbot/model/GetContactWhiteListResult.h
+	include/alibabacloud/outboundbot/model/GetCurrentConcurrencyRequest.h
+	include/alibabacloud/outboundbot/model/GetCurrentConcurrencyResult.h
 	include/alibabacloud/outboundbot/model/GetEffectiveDaysRequest.h
 	include/alibabacloud/outboundbot/model/GetEffectiveDaysResult.h
 	include/alibabacloud/outboundbot/model/GetEmptyNumberNoMoreCallsInfoRequest.h
@@ -243,6 +247,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/TagResourcesResult.h
 	include/alibabacloud/outboundbot/model/TaskPreparingRequest.h
 	include/alibabacloud/outboundbot/model/TaskPreparingResult.h
+	include/alibabacloud/outboundbot/model/TerminateCallRequest.h
+	include/alibabacloud/outboundbot/model/TerminateCallResult.h
 	include/alibabacloud/outboundbot/model/UntagResourcesRequest.h
 	include/alibabacloud/outboundbot/model/UntagResourcesResult.h
 	include/alibabacloud/outboundbot/model/WithdrawScriptReviewRequest.h
@@ -348,10 +354,14 @@ set(outboundbot_src
 	src/model/GetAsrServerInfoResult.cc
 	src/model/GetBaseStrategyPeriodRequest.cc
 	src/model/GetBaseStrategyPeriodResult.cc
+	src/model/GetConcurrentConversationQuotaRequest.cc
+	src/model/GetConcurrentConversationQuotaResult.cc
 	src/model/GetContactBlockListRequest.cc
 	src/model/GetContactBlockListResult.cc
 	src/model/GetContactWhiteListRequest.cc
 	src/model/GetContactWhiteListResult.cc
+	src/model/GetCurrentConcurrencyRequest.cc
+	src/model/GetCurrentConcurrencyResult.cc
 	src/model/GetEffectiveDaysRequest.cc
 	src/model/GetEffectiveDaysResult.cc
 	src/model/GetEmptyNumberNoMoreCallsInfoRequest.cc
@@ -472,6 +482,8 @@ set(outboundbot_src
 	src/model/TagResourcesResult.cc
 	src/model/TaskPreparingRequest.cc
 	src/model/TaskPreparingResult.cc
+	src/model/TerminateCallRequest.cc
+	src/model/TerminateCallResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
 	src/model/WithdrawScriptReviewRequest.cc

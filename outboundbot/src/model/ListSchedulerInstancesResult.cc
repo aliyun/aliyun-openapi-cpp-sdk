@@ -51,6 +51,8 @@ void ListSchedulerInstancesResult::parse(const std::string &payload)
 			schedulerInstancesObject.business = valueSchedulerInstancesSchedulerInstance["Business"].asString();
 		if(!valueSchedulerInstancesSchedulerInstance["MaxConcurrency"].isNull())
 			schedulerInstancesObject.maxConcurrency = std::stoi(valueSchedulerInstancesSchedulerInstance["MaxConcurrency"].asString());
+		if(!valueSchedulerInstancesSchedulerInstance["BaseStrategy"].isNull())
+			schedulerInstancesObject.baseStrategy = valueSchedulerInstancesSchedulerInstance["BaseStrategy"].asString();
 		schedulerInstances_.push_back(schedulerInstancesObject);
 	}
 	if(!value["Success"].isNull())

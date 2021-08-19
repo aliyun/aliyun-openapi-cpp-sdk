@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string ownerId;
 					std::string instanceId;
 					int maxConcurrency;
+					std::string baseStrategy;
 					std::string business;
 				};
 

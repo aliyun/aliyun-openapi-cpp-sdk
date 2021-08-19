@@ -93,6 +93,19 @@ void CreateScriptRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::vector<std::string> CreateScriptRequest::getScriptWaveform()const
+{
+	return scriptWaveform_;
+}
+
+void CreateScriptRequest::setScriptWaveform(const std::vector<std::string>& scriptWaveform)
+{
+	scriptWaveform_ = scriptWaveform;
+	for(int dep1 = 0; dep1!= scriptWaveform.size(); dep1++) {
+		setParameter("ScriptWaveform."+ std::to_string(dep1), scriptWaveform.at(dep1));
+	}
+}
+
 std::string CreateScriptRequest::getAsrConfig()const
 {
 	return asrConfig_;
@@ -113,5 +126,18 @@ void CreateScriptRequest::setScriptDescription(const std::string& scriptDescript
 {
 	scriptDescription_ = scriptDescription;
 	setParameter("ScriptDescription", scriptDescription);
+}
+
+std::vector<std::string> CreateScriptRequest::getScriptContent()const
+{
+	return scriptContent_;
+}
+
+void CreateScriptRequest::setScriptContent(const std::vector<std::string>& scriptContent)
+{
+	scriptContent_ = scriptContent;
+	for(int dep1 = 0; dep1!= scriptContent.size(); dep1++) {
+		setParameter("ScriptContent."+ std::to_string(dep1), scriptContent.at(dep1));
+	}
 }
 

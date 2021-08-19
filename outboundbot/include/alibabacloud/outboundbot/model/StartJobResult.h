@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				StartJobResult();
 				explicit StartJobResult(const std::string &payload);
 				~StartJobResult();
+				std::vector<KeyValuePair> getCallIds()const;
 				std::vector<KeyValuePair> getTaskIds()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<KeyValuePair> callIds_;
 				std::vector<KeyValuePair> taskIds_;
 				std::string message_;
 				int httpStatusCode_;

@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getEndpoint()const;
 				void setEndpoint(const std::string& endpoint);
+				std::vector<std::string> getCallingNumber()const;
+				void setCallingNumber(const std::vector<std::string>& callingNumber);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				std::string getCallCenterInstanceId()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				std::string secretKey_;
 				std::string resourceGroupId_;
 				std::string endpoint_;
+				std::vector<std::string> callingNumber_;
 				std::string instanceName_;
 				std::string callCenterInstanceId_;
 				std::string accessKey_;

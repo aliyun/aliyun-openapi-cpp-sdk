@@ -144,6 +144,8 @@ void DescribeJobResult::parse(const std::string &payload)
 			taskObject.taskId = jobNodeTasksTask["TaskId"].asString();
 		if(!jobNodeTasksTask["EndTime"].isNull())
 			taskObject.endTime = std::stol(jobNodeTasksTask["EndTime"].asString());
+		if(!jobNodeTasksTask["EndReason"].isNull())
+			taskObject.endReason = jobNodeTasksTask["EndReason"].asString();
 		auto allConversationNode = jobNodeTasksTask["Conversation"]["ConversationDetail"];
 		for (auto jobNodeTasksTaskConversationConversationDetail : allConversationNode)
 		{

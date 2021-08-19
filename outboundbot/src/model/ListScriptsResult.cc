@@ -74,6 +74,8 @@ void ListScriptsResult::parse(const std::string &payload)
 			scriptObject.updateTime = std::stol(scriptsNodeListScript["UpdateTime"].asString());
 		if(!scriptsNodeListScript["RejectReason"].isNull())
 			scriptObject.rejectReason = scriptsNodeListScript["RejectReason"].asString();
+		if(!scriptsNodeListScript["MiniPlaybackEnabled"].isNull())
+			scriptObject.miniPlaybackEnabled = scriptsNodeListScript["MiniPlaybackEnabled"].asString() == "true";
 		scripts_.list.push_back(scriptObject);
 	}
 	if(!value["Code"].isNull())

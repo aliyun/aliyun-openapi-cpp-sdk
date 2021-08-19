@@ -51,6 +51,17 @@ void StartJobRequest::setCallingNumber(const std::vector<std::string>& callingNu
 	}
 }
 
+std::string StartJobRequest::getScriptId()const
+{
+	return scriptId_;
+}
+
+void StartJobRequest::setScriptId(const std::string& scriptId)
+{
+	scriptId_ = scriptId;
+	setParameter("ScriptId", scriptId);
+}
+
 std::string StartJobRequest::getInstanceId()const
 {
 	return instanceId_;

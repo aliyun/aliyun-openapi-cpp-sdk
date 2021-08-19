@@ -1815,6 +1815,42 @@ OutboundBotClient::GetBaseStrategyPeriodOutcomeCallable OutboundBotClient::getBa
 	return task->get_future();
 }
 
+OutboundBotClient::GetConcurrentConversationQuotaOutcome OutboundBotClient::getConcurrentConversationQuota(const GetConcurrentConversationQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetConcurrentConversationQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetConcurrentConversationQuotaOutcome(GetConcurrentConversationQuotaResult(outcome.result()));
+	else
+		return GetConcurrentConversationQuotaOutcome(outcome.error());
+}
+
+void OutboundBotClient::getConcurrentConversationQuotaAsync(const GetConcurrentConversationQuotaRequest& request, const GetConcurrentConversationQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getConcurrentConversationQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetConcurrentConversationQuotaOutcomeCallable OutboundBotClient::getConcurrentConversationQuotaCallable(const GetConcurrentConversationQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetConcurrentConversationQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->getConcurrentConversationQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::GetContactBlockListOutcome OutboundBotClient::getContactBlockList(const GetContactBlockListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +1917,42 @@ OutboundBotClient::GetContactWhiteListOutcomeCallable OutboundBotClient::getCont
 			[this, request]()
 			{
 			return this->getContactWhiteList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::GetCurrentConcurrencyOutcome OutboundBotClient::getCurrentConcurrency(const GetCurrentConcurrencyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCurrentConcurrencyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCurrentConcurrencyOutcome(GetCurrentConcurrencyResult(outcome.result()));
+	else
+		return GetCurrentConcurrencyOutcome(outcome.error());
+}
+
+void OutboundBotClient::getCurrentConcurrencyAsync(const GetCurrentConcurrencyRequest& request, const GetCurrentConcurrencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCurrentConcurrency(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::GetCurrentConcurrencyOutcomeCallable OutboundBotClient::getCurrentConcurrencyCallable(const GetCurrentConcurrencyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCurrentConcurrencyOutcome()>>(
+			[this, request]()
+			{
+			return this->getCurrentConcurrency(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4041,6 +4113,42 @@ OutboundBotClient::TaskPreparingOutcomeCallable OutboundBotClient::taskPreparing
 			[this, request]()
 			{
 			return this->taskPreparing(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::TerminateCallOutcome OutboundBotClient::terminateCall(const TerminateCallRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TerminateCallOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TerminateCallOutcome(TerminateCallResult(outcome.result()));
+	else
+		return TerminateCallOutcome(outcome.error());
+}
+
+void OutboundBotClient::terminateCallAsync(const TerminateCallRequest& request, const TerminateCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, terminateCall(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::TerminateCallOutcomeCallable OutboundBotClient::terminateCallCallable(const TerminateCallRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TerminateCallOutcome()>>(
+			[this, request]()
+			{
+			return this->terminateCall(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

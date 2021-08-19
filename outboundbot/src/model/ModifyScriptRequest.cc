@@ -82,6 +82,41 @@ void ModifyScriptRequest::setScriptId(const std::string& scriptId)
 	setParameter("ScriptId", scriptId);
 }
 
+std::vector<std::string> ModifyScriptRequest::getScriptWaveform()const
+{
+	return scriptWaveform_;
+}
+
+void ModifyScriptRequest::setScriptWaveform(const std::vector<std::string>& scriptWaveform)
+{
+	scriptWaveform_ = scriptWaveform;
+	for(int dep1 = 0; dep1!= scriptWaveform.size(); dep1++) {
+		setParameter("ScriptWaveform."+ std::to_string(dep1), scriptWaveform.at(dep1));
+	}
+}
+
+std::string ModifyScriptRequest::getAsrConfig()const
+{
+	return asrConfig_;
+}
+
+void ModifyScriptRequest::setAsrConfig(const std::string& asrConfig)
+{
+	asrConfig_ = asrConfig;
+	setParameter("AsrConfig", asrConfig);
+}
+
+bool ModifyScriptRequest::getMiniPlaybackEnabled()const
+{
+	return miniPlaybackEnabled_;
+}
+
+void ModifyScriptRequest::setMiniPlaybackEnabled(bool miniPlaybackEnabled)
+{
+	miniPlaybackEnabled_ = miniPlaybackEnabled;
+	setParameter("MiniPlaybackEnabled", miniPlaybackEnabled ? "true" : "false");
+}
+
 std::string ModifyScriptRequest::getChatbotId()const
 {
 	return chatbotId_;
@@ -104,17 +139,6 @@ void ModifyScriptRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
-std::string ModifyScriptRequest::getAsrConfig()const
-{
-	return asrConfig_;
-}
-
-void ModifyScriptRequest::setAsrConfig(const std::string& asrConfig)
-{
-	asrConfig_ = asrConfig;
-	setParameter("AsrConfig", asrConfig);
-}
-
 std::string ModifyScriptRequest::getScriptDescription()const
 {
 	return scriptDescription_;
@@ -124,5 +148,18 @@ void ModifyScriptRequest::setScriptDescription(const std::string& scriptDescript
 {
 	scriptDescription_ = scriptDescription;
 	setParameter("ScriptDescription", scriptDescription);
+}
+
+std::vector<std::string> ModifyScriptRequest::getScriptContent()const
+{
+	return scriptContent_;
+}
+
+void ModifyScriptRequest::setScriptContent(const std::vector<std::string>& scriptContent)
+{
+	scriptContent_ = scriptContent;
+	for(int dep1 = 0; dep1!= scriptContent.size(); dep1++) {
+		setParameter("ScriptContent."+ std::to_string(dep1), scriptContent.at(dep1));
+	}
 }
 

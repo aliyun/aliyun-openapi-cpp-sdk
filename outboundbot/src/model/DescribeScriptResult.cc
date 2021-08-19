@@ -66,6 +66,8 @@ void DescribeScriptResult::parse(const std::string &payload)
 		script_.asrConfig = scriptNode["AsrConfig"].asString();
 	if(!scriptNode["TtsConfig"].isNull())
 		script_.ttsConfig = scriptNode["TtsConfig"].asString();
+	if(!scriptNode["MiniPlaybackConfigEnabled"].isNull())
+		script_.miniPlaybackConfigEnabled = scriptNode["MiniPlaybackConfigEnabled"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
