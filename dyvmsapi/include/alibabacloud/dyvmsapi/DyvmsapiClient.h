@@ -56,6 +56,8 @@
 #include "model/DoubleCallSeatResult.h"
 #include "model/ExecuteCallTaskRequest.h"
 #include "model/ExecuteCallTaskResult.h"
+#include "model/GetCallInfoRequest.h"
+#include "model/GetCallInfoResult.h"
 #include "model/GetHotlineQualificationByOrderRequest.h"
 #include "model/GetHotlineQualificationByOrderResult.h"
 #include "model/GetRtcTokenRequest.h"
@@ -198,6 +200,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExecuteCallTaskResult> ExecuteCallTaskOutcome;
 			typedef std::future<ExecuteCallTaskOutcome> ExecuteCallTaskOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::ExecuteCallTaskRequest&, const ExecuteCallTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteCallTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetCallInfoResult> GetCallInfoOutcome;
+			typedef std::future<GetCallInfoOutcome> GetCallInfoOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::GetCallInfoRequest&, const GetCallInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCallInfoAsyncHandler;
 			typedef Outcome<Error, Model::GetHotlineQualificationByOrderResult> GetHotlineQualificationByOrderOutcome;
 			typedef std::future<GetHotlineQualificationByOrderOutcome> GetHotlineQualificationByOrderOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::GetHotlineQualificationByOrderRequest&, const GetHotlineQualificationByOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetHotlineQualificationByOrderAsyncHandler;
@@ -377,6 +382,9 @@ namespace AlibabaCloud
 			ExecuteCallTaskOutcome executeCallTask(const Model::ExecuteCallTaskRequest &request)const;
 			void executeCallTaskAsync(const Model::ExecuteCallTaskRequest& request, const ExecuteCallTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteCallTaskOutcomeCallable executeCallTaskCallable(const Model::ExecuteCallTaskRequest& request) const;
+			GetCallInfoOutcome getCallInfo(const Model::GetCallInfoRequest &request)const;
+			void getCallInfoAsync(const Model::GetCallInfoRequest& request, const GetCallInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCallInfoOutcomeCallable getCallInfoCallable(const Model::GetCallInfoRequest& request) const;
 			GetHotlineQualificationByOrderOutcome getHotlineQualificationByOrder(const Model::GetHotlineQualificationByOrderRequest &request)const;
 			void getHotlineQualificationByOrderAsync(const Model::GetHotlineQualificationByOrderRequest& request, const GetHotlineQualificationByOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetHotlineQualificationByOrderOutcomeCallable getHotlineQualificationByOrderCallable(const Model::GetHotlineQualificationByOrderRequest& request) const;

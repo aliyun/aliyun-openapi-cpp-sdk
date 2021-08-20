@@ -55,6 +55,8 @@ set(dyvmsapi_public_header_model
 	include/alibabacloud/dyvmsapi/model/DoubleCallSeatResult.h
 	include/alibabacloud/dyvmsapi/model/ExecuteCallTaskRequest.h
 	include/alibabacloud/dyvmsapi/model/ExecuteCallTaskResult.h
+	include/alibabacloud/dyvmsapi/model/GetCallInfoRequest.h
+	include/alibabacloud/dyvmsapi/model/GetCallInfoResult.h
 	include/alibabacloud/dyvmsapi/model/GetHotlineQualificationByOrderRequest.h
 	include/alibabacloud/dyvmsapi/model/GetHotlineQualificationByOrderResult.h
 	include/alibabacloud/dyvmsapi/model/GetRtcTokenRequest.h
@@ -174,6 +176,8 @@ set(dyvmsapi_src
 	src/model/DoubleCallSeatResult.cc
 	src/model/ExecuteCallTaskRequest.cc
 	src/model/ExecuteCallTaskResult.cc
+	src/model/GetCallInfoRequest.cc
+	src/model/GetCallInfoResult.cc
 	src/model/GetHotlineQualificationByOrderRequest.cc
 	src/model/GetHotlineQualificationByOrderResult.cc
 	src/model/GetRtcTokenRequest.cc

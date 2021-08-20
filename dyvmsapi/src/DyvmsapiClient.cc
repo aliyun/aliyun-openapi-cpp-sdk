@@ -663,6 +663,42 @@ DyvmsapiClient::ExecuteCallTaskOutcomeCallable DyvmsapiClient::executeCallTaskCa
 	return task->get_future();
 }
 
+DyvmsapiClient::GetCallInfoOutcome DyvmsapiClient::getCallInfo(const GetCallInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCallInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCallInfoOutcome(GetCallInfoResult(outcome.result()));
+	else
+		return GetCallInfoOutcome(outcome.error());
+}
+
+void DyvmsapiClient::getCallInfoAsync(const GetCallInfoRequest& request, const GetCallInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCallInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::GetCallInfoOutcomeCallable DyvmsapiClient::getCallInfoCallable(const GetCallInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCallInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getCallInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::GetHotlineQualificationByOrderOutcome DyvmsapiClient::getHotlineQualificationByOrder(const GetHotlineQualificationByOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
