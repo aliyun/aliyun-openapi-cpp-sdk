@@ -134,6 +134,8 @@
 #include "model/RecognizeHandGestureResult.h"
 #include "model/RecognizePublicFaceRequest.h"
 #include "model/RecognizePublicFaceResult.h"
+#include "model/RetouchBodyRequest.h"
+#include "model/RetouchBodyResult.h"
 #include "model/SearchBodyTraceRequest.h"
 #include "model/SearchBodyTraceResult.h"
 #include "model/SearchFaceRequest.h"
@@ -321,6 +323,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizePublicFaceResult> RecognizePublicFaceOutcome;
 			typedef std::future<RecognizePublicFaceOutcome> RecognizePublicFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::RecognizePublicFaceRequest&, const RecognizePublicFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePublicFaceAsyncHandler;
+			typedef Outcome<Error, Model::RetouchBodyResult> RetouchBodyOutcome;
+			typedef std::future<RetouchBodyOutcome> RetouchBodyOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::RetouchBodyRequest&, const RetouchBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetouchBodyAsyncHandler;
 			typedef Outcome<Error, Model::SearchBodyTraceResult> SearchBodyTraceOutcome;
 			typedef std::future<SearchBodyTraceOutcome> SearchBodyTraceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::SearchBodyTraceRequest&, const SearchBodyTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchBodyTraceAsyncHandler;
@@ -509,6 +514,9 @@ namespace AlibabaCloud
 			RecognizePublicFaceOutcome recognizePublicFace(const Model::RecognizePublicFaceRequest &request)const;
 			void recognizePublicFaceAsync(const Model::RecognizePublicFaceRequest& request, const RecognizePublicFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizePublicFaceOutcomeCallable recognizePublicFaceCallable(const Model::RecognizePublicFaceRequest& request) const;
+			RetouchBodyOutcome retouchBody(const Model::RetouchBodyRequest &request)const;
+			void retouchBodyAsync(const Model::RetouchBodyRequest& request, const RetouchBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RetouchBodyOutcomeCallable retouchBodyCallable(const Model::RetouchBodyRequest& request) const;
 			SearchBodyTraceOutcome searchBodyTrace(const Model::SearchBodyTraceRequest &request)const;
 			void searchBodyTraceAsync(const Model::SearchBodyTraceRequest& request, const SearchBodyTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchBodyTraceOutcomeCallable searchBodyTraceCallable(const Model::SearchBodyTraceRequest& request) const;

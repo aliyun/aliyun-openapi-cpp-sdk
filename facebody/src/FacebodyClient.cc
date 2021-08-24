@@ -2067,6 +2067,42 @@ FacebodyClient::RecognizePublicFaceOutcomeCallable FacebodyClient::recognizePubl
 	return task->get_future();
 }
 
+FacebodyClient::RetouchBodyOutcome FacebodyClient::retouchBody(const RetouchBodyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetouchBodyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetouchBodyOutcome(RetouchBodyResult(outcome.result()));
+	else
+		return RetouchBodyOutcome(outcome.error());
+}
+
+void FacebodyClient::retouchBodyAsync(const RetouchBodyRequest& request, const RetouchBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retouchBody(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::RetouchBodyOutcomeCallable FacebodyClient::retouchBodyCallable(const RetouchBodyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetouchBodyOutcome()>>(
+			[this, request]()
+			{
+			return this->retouchBody(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::SearchBodyTraceOutcome FacebodyClient::searchBodyTrace(const SearchBodyTraceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
