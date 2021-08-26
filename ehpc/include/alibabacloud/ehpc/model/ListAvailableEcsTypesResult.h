@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string gPUSpec;
 						int instancePpsRx;
 						std::string instanceTypeId;
+						std::vector<std::string> zoneIds;
 						int instanceBandwidthRx;
 						int eniQuantity;
 						int gPUAmount;

@@ -73,6 +73,9 @@ void ListAvailableEcsTypesResult::parse(const std::string &payload)
 				typesObject.gPUSpec = valueInstanceTypeFamiliesInstanceTypeFamilyInfoTypesTypesInfo["GPUSpec"].asString();
 			if(!valueInstanceTypeFamiliesInstanceTypeFamilyInfoTypesTypesInfo["Status"].isNull())
 				typesObject.status = valueInstanceTypeFamiliesInstanceTypeFamilyInfoTypesTypesInfo["Status"].asString();
+			auto allZoneIds = value["ZoneIds"]["ZoneId"];
+			for (auto value : allZoneIds)
+				typesObject.zoneIds.push_back(value.asString());
 			instanceTypeFamiliesObject.types.push_back(typesObject);
 		}
 		instanceTypeFamilies_.push_back(instanceTypeFamiliesObject);
