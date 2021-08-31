@@ -29,6 +29,8 @@ set(reid_cloud_public_header_model
 	include/alibabacloud/reid_cloud/model/DescribeCursorResult.h
 	include/alibabacloud/reid_cloud/model/DescribeCustomerFlowByLocationRequest.h
 	include/alibabacloud/reid_cloud/model/DescribeCustomerFlowByLocationResult.h
+	include/alibabacloud/reid_cloud/model/DescribeCustomerFlowByLocationOfflineRequest.h
+	include/alibabacloud/reid_cloud/model/DescribeCustomerFlowByLocationOfflineResult.h
 	include/alibabacloud/reid_cloud/model/DescribeDevicesRequest.h
 	include/alibabacloud/reid_cloud/model/DescribeDevicesResult.h
 	include/alibabacloud/reid_cloud/model/DescribeHeatMapRequest.h
@@ -70,6 +72,8 @@ set(reid_cloud_src
 	src/model/DescribeCursorResult.cc
 	src/model/DescribeCustomerFlowByLocationRequest.cc
 	src/model/DescribeCustomerFlowByLocationResult.cc
+	src/model/DescribeCustomerFlowByLocationOfflineRequest.cc
+	src/model/DescribeCustomerFlowByLocationOfflineResult.cc
 	src/model/DescribeDevicesRequest.cc
 	src/model/DescribeDevicesResult.cc
 	src/model/DescribeHeatMapRequest.cc

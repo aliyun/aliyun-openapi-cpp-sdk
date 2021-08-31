@@ -1,3 +1,6 @@
+2021-08-31 Version: 1.36.865
+- Supported cro algorithm.
+
 2021-08-31 Version: 1.36.864
 - Supported AndroidBigPictureUrl, AndroidInboxBody, AndroidImageUrl, AndroidOppoImageId, AndroidXiaomiImageUrl, iOSNotificationThreadId for Push and MassPush.
 

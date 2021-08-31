@@ -31,21 +31,21 @@ Reid_cloudClient::Reid_cloudClient(const Credentials &credentials, const ClientC
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.2.1");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.2.2");
 }
 
 Reid_cloudClient::Reid_cloudClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.2.1");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.2.2");
 }
 
 Reid_cloudClient::Reid_cloudClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.2.1");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.2.2");
 }
 
 Reid_cloudClient::~Reid_cloudClient()
@@ -189,6 +189,42 @@ Reid_cloudClient::DescribeCustomerFlowByLocationOutcomeCallable Reid_cloudClient
 			[this, request]()
 			{
 			return this->describeCustomerFlowByLocation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Reid_cloudClient::DescribeCustomerFlowByLocationOfflineOutcome Reid_cloudClient::describeCustomerFlowByLocationOffline(const DescribeCustomerFlowByLocationOfflineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCustomerFlowByLocationOfflineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCustomerFlowByLocationOfflineOutcome(DescribeCustomerFlowByLocationOfflineResult(outcome.result()));
+	else
+		return DescribeCustomerFlowByLocationOfflineOutcome(outcome.error());
+}
+
+void Reid_cloudClient::describeCustomerFlowByLocationOfflineAsync(const DescribeCustomerFlowByLocationOfflineRequest& request, const DescribeCustomerFlowByLocationOfflineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCustomerFlowByLocationOffline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Reid_cloudClient::DescribeCustomerFlowByLocationOfflineOutcomeCallable Reid_cloudClient::describeCustomerFlowByLocationOfflineCallable(const DescribeCustomerFlowByLocationOfflineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCustomerFlowByLocationOfflineOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCustomerFlowByLocationOffline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

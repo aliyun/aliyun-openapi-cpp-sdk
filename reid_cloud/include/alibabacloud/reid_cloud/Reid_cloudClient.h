@@ -30,6 +30,8 @@
 #include "model/DescribeCursorResult.h"
 #include "model/DescribeCustomerFlowByLocationRequest.h"
 #include "model/DescribeCustomerFlowByLocationResult.h"
+#include "model/DescribeCustomerFlowByLocationOfflineRequest.h"
+#include "model/DescribeCustomerFlowByLocationOfflineResult.h"
 #include "model/DescribeDevicesRequest.h"
 #include "model/DescribeDevicesResult.h"
 #include "model/DescribeHeatMapRequest.h"
@@ -81,6 +83,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCustomerFlowByLocationResult> DescribeCustomerFlowByLocationOutcome;
 			typedef std::future<DescribeCustomerFlowByLocationOutcome> DescribeCustomerFlowByLocationOutcomeCallable;
 			typedef std::function<void(const Reid_cloudClient*, const Model::DescribeCustomerFlowByLocationRequest&, const DescribeCustomerFlowByLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerFlowByLocationAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCustomerFlowByLocationOfflineResult> DescribeCustomerFlowByLocationOfflineOutcome;
+			typedef std::future<DescribeCustomerFlowByLocationOfflineOutcome> DescribeCustomerFlowByLocationOfflineOutcomeCallable;
+			typedef std::function<void(const Reid_cloudClient*, const Model::DescribeCustomerFlowByLocationOfflineRequest&, const DescribeCustomerFlowByLocationOfflineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerFlowByLocationOfflineAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDevicesResult> DescribeDevicesOutcome;
 			typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
 			typedef std::function<void(const Reid_cloudClient*, const Model::DescribeDevicesRequest&, const DescribeDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
@@ -143,6 +148,9 @@ namespace AlibabaCloud
 			DescribeCustomerFlowByLocationOutcome describeCustomerFlowByLocation(const Model::DescribeCustomerFlowByLocationRequest &request)const;
 			void describeCustomerFlowByLocationAsync(const Model::DescribeCustomerFlowByLocationRequest& request, const DescribeCustomerFlowByLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCustomerFlowByLocationOutcomeCallable describeCustomerFlowByLocationCallable(const Model::DescribeCustomerFlowByLocationRequest& request) const;
+			DescribeCustomerFlowByLocationOfflineOutcome describeCustomerFlowByLocationOffline(const Model::DescribeCustomerFlowByLocationOfflineRequest &request)const;
+			void describeCustomerFlowByLocationOfflineAsync(const Model::DescribeCustomerFlowByLocationOfflineRequest& request, const DescribeCustomerFlowByLocationOfflineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCustomerFlowByLocationOfflineOutcomeCallable describeCustomerFlowByLocationOfflineCallable(const Model::DescribeCustomerFlowByLocationOfflineRequest& request) const;
 			DescribeDevicesOutcome describeDevices(const Model::DescribeDevicesRequest &request)const;
 			void describeDevicesAsync(const Model::DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDevicesOutcomeCallable describeDevicesCallable(const Model::DescribeDevicesRequest& request) const;
