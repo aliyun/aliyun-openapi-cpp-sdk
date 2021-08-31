@@ -203,6 +203,17 @@ void PushRequest::setExpireTime(const std::string& expireTime)
 	setParameter("ExpireTime", expireTime);
 }
 
+std::string PushRequest::getAndroidImageUrl()const
+{
+	return androidImageUrl_;
+}
+
+void PushRequest::setAndroidImageUrl(const std::string& androidImageUrl)
+{
+	androidImageUrl_ = androidImageUrl;
+	setParameter("AndroidImageUrl", androidImageUrl);
+}
+
 std::string PushRequest::getAndroidNotificationVivoChannel()const
 {
 	return androidNotificationVivoChannel_;
@@ -256,6 +267,17 @@ void PushRequest::setSmsParams(const std::string& smsParams)
 {
 	smsParams_ = smsParams;
 	setParameter("SmsParams", smsParams);
+}
+
+std::string PushRequest::getAndroidInboxBody()const
+{
+	return androidInboxBody_;
+}
+
+void PushRequest::setAndroidInboxBody(const std::string& androidInboxBody)
+{
+	androidInboxBody_ = androidInboxBody;
+	setParameter("AndroidInboxBody", androidInboxBody);
 }
 
 std::string PushRequest::getJobKey()const
@@ -322,6 +344,17 @@ void PushRequest::setIOSRemind(bool iOSRemind)
 {
 	iOSRemind_ = iOSRemind;
 	setParameter("IOSRemind", iOSRemind ? "true" : "false");
+}
+
+std::string PushRequest::getIOSNotificationThreadId()const
+{
+	return iOSNotificationThreadId_;
+}
+
+void PushRequest::setIOSNotificationThreadId(const std::string& iOSNotificationThreadId)
+{
+	iOSNotificationThreadId_ = iOSNotificationThreadId;
+	setParameter("IOSNotificationThreadId", iOSNotificationThreadId);
 }
 
 std::string PushRequest::getAndroidMusic()const
@@ -467,6 +500,17 @@ void PushRequest::setIOSExtParameters(const std::string& iOSExtParameters)
 	setParameter("IOSExtParameters", iOSExtParameters);
 }
 
+std::string PushRequest::getAndroidXiaomiImageUrl()const
+{
+	return androidXiaomiImageUrl_;
+}
+
+void PushRequest::setAndroidXiaomiImageUrl(const std::string& androidXiaomiImageUrl)
+{
+	androidXiaomiImageUrl_ = androidXiaomiImageUrl;
+	setParameter("AndroidXiaomiImageUrl", androidXiaomiImageUrl);
+}
+
 std::string PushRequest::getSmsTemplateName()const
 {
 	return smsTemplateName_;
@@ -487,6 +531,17 @@ void PushRequest::setAndroidPopupBody(const std::string& androidPopupBody)
 {
 	androidPopupBody_ = androidPopupBody;
 	setParameter("AndroidPopupBody", androidPopupBody);
+}
+
+std::string PushRequest::getAndroidBigPictureUrl()const
+{
+	return androidBigPictureUrl_;
+}
+
+void PushRequest::setAndroidBigPictureUrl(const std::string& androidBigPictureUrl)
+{
+	androidBigPictureUrl_ = androidBigPictureUrl;
+	setParameter("AndroidBigPictureUrl", androidBigPictureUrl);
 }
 
 bool PushRequest::getIOSSilentNotification()const

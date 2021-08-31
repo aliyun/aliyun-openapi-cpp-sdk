@@ -34,12 +34,6 @@ namespace AlibabaCloud
 				struct PushTask
 				{
 					int androidNotificationBarType;
-					std::string androidExtParameters;
-					int iOSBadge;
-					std::string androidBigBody;
-					bool iOSBadgeAutoIncrement;
-					std::string androidOpenType;
-					std::string title;
 					std::string body;
 					std::string deviceType;
 					std::string pushTime;
@@ -47,8 +41,6 @@ namespace AlibabaCloud
 					std::string androidNotificationHuaweiChannel;
 					std::string androidPopupActivity;
 					std::string iOSRemindBody;
-					std::string androidRenderStyle;
-					std::string iOSExtParameters;
 					std::string androidNotifyType;
 					std::string androidPopupTitle;
 					std::string iOSMusic;
@@ -56,30 +48,43 @@ namespace AlibabaCloud
 					bool iOSMutableContent;
 					int androidNotificationBarPriority;
 					std::string expireTime;
+					std::string androidImageUrl;
 					std::string androidNotificationVivoChannel;
-					std::string androidPopupBody;
 					std::string iOSNotificationCategory;
 					std::string androidNotificationXiaomiChannel;
 					bool storeOffline;
-					bool iOSSilentNotification;
+					std::string androidInboxBody;
 					std::string jobKey;
-					std::string target;
-					std::string androidBigTitle;
 					std::string androidOpenUrl;
-					std::string androidNotificationChannel;
-					bool androidRemind;
-					std::string androidActivity;
 					std::string androidXiaoMiNotifyBody;
 					std::string iOSSubtitle;
 					std::string androidXiaomiBigPictureUrl;
 					bool iOSRemind;
-					int androidNotificationNotifyId;
-					std::string targetValue;
+					std::string iOSNotificationThreadId;
 					std::string androidMusic;
-					std::string androidXiaoMiActivity;
-					std::string androidXiaoMiNotifyTitle;
 					std::string iOSNotificationCollapseId;
 					std::string pushType;
+					std::string androidExtParameters;
+					int iOSBadge;
+					std::string androidBigBody;
+					bool iOSBadgeAutoIncrement;
+					std::string androidOpenType;
+					std::string title;
+					std::string androidRenderStyle;
+					std::string iOSExtParameters;
+					std::string androidXiaomiImageUrl;
+					std::string androidPopupBody;
+					std::string androidBigPictureUrl;
+					bool iOSSilentNotification;
+					std::string target;
+					std::string androidBigTitle;
+					std::string androidNotificationChannel;
+					bool androidRemind;
+					std::string androidActivity;
+					int androidNotificationNotifyId;
+					std::string targetValue;
+					std::string androidXiaoMiNotifyTitle;
+					std::string androidXiaoMiActivity;
 				};
 
 			public:
