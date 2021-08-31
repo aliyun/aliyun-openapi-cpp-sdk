@@ -1,0 +1,63 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_EDAS_MODEL_LISTK8SPVCRESULT_H_
+#define ALIBABACLOUD_EDAS_MODEL_LISTK8SPVCRESULT_H_
+
+#include <string>
+#include <vector>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/edas/EdasExport.h>
+
+namespace AlibabaCloud
+{
+	namespace Edas
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_EDAS_EXPORT ListK8sPvcResult : public ServiceResult
+			{
+			public:
+				struct K8sPvcListItem
+				{
+					std::string volumeName;
+					std::string creationTime;
+					std::string volumeMode;
+					std::string _namespace;
+					std::string name;
+				};
+
+
+				ListK8sPvcResult();
+				explicit ListK8sPvcResult(const std::string &payload);
+				~ListK8sPvcResult();
+				std::string getMessage()const;
+				std::vector<K8sPvcListItem> getK8sPvcList()const;
+				int getCode()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				std::vector<K8sPvcListItem> k8sPvcList_;
+				int code_;
+
+			};
+		}
+	}
+}
+#endif // !ALIBABACLOUD_EDAS_MODEL_LISTK8SPVCRESULT_H_
