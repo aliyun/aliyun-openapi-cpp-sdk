@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setMaleLiquifyDegree(float maleLiquifyDegree);
 				long getOriginalWidth()const;
 				void setOriginalWidth(long originalWidth);
+				bool getIsPregnant()const;
+				void setIsPregnant(bool isPregnant);
 				Array getFaceList()const;
 				void setFaceList(const Array& faceList);
 				Struct getAgeRange()const;
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				float lengthenDegree_;
 				float maleLiquifyDegree_;
 				long originalWidth_;
+				bool isPregnant_;
 				Array faceList_;
 				Struct ageRange_;
 				long custom_;

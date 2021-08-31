@@ -71,6 +71,17 @@ void BeautifyBodyRequest::setOriginalWidth(long originalWidth)
 	setBodyParameter("OriginalWidth", std::to_string(originalWidth));
 }
 
+bool BeautifyBodyRequest::getIsPregnant()const
+{
+	return isPregnant_;
+}
+
+void BeautifyBodyRequest::setIsPregnant(bool isPregnant)
+{
+	isPregnant_ = isPregnant;
+	setBodyParameter("IsPregnant", isPregnant ? "true" : "false");
+}
+
 Array BeautifyBodyRequest::getFaceList()const
 {
 	return faceList_;
