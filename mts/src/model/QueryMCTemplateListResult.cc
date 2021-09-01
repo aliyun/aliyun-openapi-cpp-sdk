@@ -43,32 +43,32 @@ void QueryMCTemplateListResult::parse(const std::string &payload)
 	for (auto valueTemplateListTemplate : allTemplateListNode)
 	{
 		_Template templateListObject;
-		if(!valueTemplateListTemplate["TemplateId"].isNull())
-			templateListObject.templateId = valueTemplateListTemplate["TemplateId"].asString();
-		if(!valueTemplateListTemplate["Name"].isNull())
-			templateListObject.name = valueTemplateListTemplate["Name"].asString();
-		if(!valueTemplateListTemplate["State"].isNull())
-			templateListObject.state = valueTemplateListTemplate["State"].asString();
-		if(!valueTemplateListTemplate["Porn"].isNull())
-			templateListObject.porn = valueTemplateListTemplate["Porn"].asString();
-		if(!valueTemplateListTemplate["Terrorism"].isNull())
-			templateListObject.terrorism = valueTemplateListTemplate["Terrorism"].asString();
-		if(!valueTemplateListTemplate["Politics"].isNull())
-			templateListObject.politics = valueTemplateListTemplate["Politics"].asString();
-		if(!valueTemplateListTemplate["Ad"].isNull())
-			templateListObject.ad = valueTemplateListTemplate["Ad"].asString();
-		if(!valueTemplateListTemplate["Qrcode"].isNull())
-			templateListObject.qrcode = valueTemplateListTemplate["Qrcode"].asString();
-		if(!valueTemplateListTemplate["Live"].isNull())
-			templateListObject.live = valueTemplateListTemplate["Live"].asString();
 		if(!valueTemplateListTemplate["Logo"].isNull())
 			templateListObject.logo = valueTemplateListTemplate["Logo"].asString();
 		if(!valueTemplateListTemplate["Abuse"].isNull())
 			templateListObject.abuse = valueTemplateListTemplate["Abuse"].asString();
-		if(!valueTemplateListTemplate["Contraband"].isNull())
-			templateListObject.contraband = valueTemplateListTemplate["Contraband"].asString();
+		if(!valueTemplateListTemplate["State"].isNull())
+			templateListObject.state = valueTemplateListTemplate["State"].asString();
+		if(!valueTemplateListTemplate["Terrorism"].isNull())
+			templateListObject.terrorism = valueTemplateListTemplate["Terrorism"].asString();
+		if(!valueTemplateListTemplate["Politics"].isNull())
+			templateListObject.politics = valueTemplateListTemplate["Politics"].asString();
+		if(!valueTemplateListTemplate["Qrcode"].isNull())
+			templateListObject.qrcode = valueTemplateListTemplate["Qrcode"].asString();
+		if(!valueTemplateListTemplate["Live"].isNull())
+			templateListObject.live = valueTemplateListTemplate["Live"].asString();
 		if(!valueTemplateListTemplate["Spam"].isNull())
 			templateListObject.spam = valueTemplateListTemplate["Spam"].asString();
+		if(!valueTemplateListTemplate["Contraband"].isNull())
+			templateListObject.contraband = valueTemplateListTemplate["Contraband"].asString();
+		if(!valueTemplateListTemplate["Ad"].isNull())
+			templateListObject.ad = valueTemplateListTemplate["Ad"].asString();
+		if(!valueTemplateListTemplate["Porn"].isNull())
+			templateListObject.porn = valueTemplateListTemplate["Porn"].asString();
+		if(!valueTemplateListTemplate["Name"].isNull())
+			templateListObject.name = valueTemplateListTemplate["Name"].asString();
+		if(!valueTemplateListTemplate["TemplateId"].isNull())
+			templateListObject.templateId = valueTemplateListTemplate["TemplateId"].asString();
 		templateList_.push_back(templateListObject);
 	}
 	auto allNonExistTids = value["NonExistTids"]["String"];

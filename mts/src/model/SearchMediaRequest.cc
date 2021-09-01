@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,177 +18,145 @@
 
 using AlibabaCloud::Mts::Model::SearchMediaRequest;
 
-SearchMediaRequest::SearchMediaRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "SearchMedia")
-{
-	setMethod(HttpRequest::Method::Post);
+SearchMediaRequest::SearchMediaRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "SearchMedia") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SearchMediaRequest::~SearchMediaRequest()
-{}
+SearchMediaRequest::~SearchMediaRequest() {}
 
-long SearchMediaRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long SearchMediaRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void SearchMediaRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void SearchMediaRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string SearchMediaRequest::getDescription()const
-{
-	return description_;
+std::string SearchMediaRequest::getDescription() const {
+  return description_;
 }
 
-void SearchMediaRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void SearchMediaRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string SearchMediaRequest::getTitle()const
-{
-	return title_;
+std::string SearchMediaRequest::getTitle() const {
+  return title_;
 }
 
-void SearchMediaRequest::setTitle(const std::string& title)
-{
-	title_ = title;
-	setParameter("Title", title);
+void SearchMediaRequest::setTitle(const std::string &title) {
+  title_ = title;
+  setParameter(std::string("Title"), title);
 }
 
-long SearchMediaRequest::getPageNumber()const
-{
-	return pageNumber_;
+long SearchMediaRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void SearchMediaRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void SearchMediaRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string SearchMediaRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SearchMediaRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SearchMediaRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SearchMediaRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SearchMediaRequest::getCateId()const
-{
-	return cateId_;
+std::string SearchMediaRequest::getCateId() const {
+  return cateId_;
 }
 
-void SearchMediaRequest::setCateId(const std::string& cateId)
-{
-	cateId_ = cateId;
-	setParameter("CateId", cateId);
+void SearchMediaRequest::setCateId(const std::string &cateId) {
+  cateId_ = cateId;
+  setParameter(std::string("CateId"), cateId);
 }
 
-long SearchMediaRequest::getPageSize()const
-{
-	return pageSize_;
+long SearchMediaRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void SearchMediaRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void SearchMediaRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string SearchMediaRequest::getFrom()const
-{
-	return from_;
+std::string SearchMediaRequest::getFrom() const {
+  return from_;
 }
 
-void SearchMediaRequest::setFrom(const std::string& from)
-{
-	from_ = from;
-	setParameter("From", from);
+void SearchMediaRequest::setFrom(const std::string &from) {
+  from_ = from;
+  setParameter(std::string("From"), from);
 }
 
-std::string SearchMediaRequest::getTag()const
-{
-	return tag_;
+std::string SearchMediaRequest::getTag() const {
+  return tag_;
 }
 
-void SearchMediaRequest::setTag(const std::string& tag)
-{
-	tag_ = tag;
-	setParameter("Tag", tag);
+void SearchMediaRequest::setTag(const std::string &tag) {
+  tag_ = tag;
+  setParameter(std::string("Tag"), tag);
 }
 
-std::string SearchMediaRequest::getKeyWord()const
-{
-	return keyWord_;
+std::string SearchMediaRequest::getKeyWord() const {
+  return keyWord_;
 }
 
-void SearchMediaRequest::setKeyWord(const std::string& keyWord)
-{
-	keyWord_ = keyWord;
-	setParameter("KeyWord", keyWord);
+void SearchMediaRequest::setKeyWord(const std::string &keyWord) {
+  keyWord_ = keyWord;
+  setParameter(std::string("KeyWord"), keyWord);
 }
 
-std::string SearchMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string SearchMediaRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void SearchMediaRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string SearchMediaRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string SearchMediaRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void SearchMediaRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void SearchMediaRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long SearchMediaRequest::getOwnerId()const
-{
-	return ownerId_;
+long SearchMediaRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SearchMediaRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SearchMediaRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string SearchMediaRequest::getSortBy()const
-{
-	return sortBy_;
+std::string SearchMediaRequest::getSortBy() const {
+  return sortBy_;
 }
 
-void SearchMediaRequest::setSortBy(const std::string& sortBy)
-{
-	sortBy_ = sortBy;
-	setParameter("SortBy", sortBy);
+void SearchMediaRequest::setSortBy(const std::string &sortBy) {
+  sortBy_ = sortBy;
+  setParameter(std::string("SortBy"), sortBy);
 }
 
-std::string SearchMediaRequest::getTo()const
-{
-	return to_;
+std::string SearchMediaRequest::getTo() const {
+  return to_;
 }
 
-void SearchMediaRequest::setTo(const std::string& to)
-{
-	to_ = to;
-	setParameter("To", to);
+void SearchMediaRequest::setTo(const std::string &to) {
+  to_ = to;
+  setParameter(std::string("To"), to);
 }
 

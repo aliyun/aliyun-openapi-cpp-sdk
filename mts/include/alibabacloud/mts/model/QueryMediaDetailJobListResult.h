@@ -34,34 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Job
 				{
-					struct Input
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
-					struct MediaDetailConfig
-					{
-						struct OutputFile
-						{
-							std::string bucket;
-							std::string object;
-							std::string location;
-						};
-						OutputFile outputFile;
-						std::string detailType;
-						std::string scenario;
-					};
 					struct MediaDetailResult
 					{
 						struct MediaDetailRecgResult
 						{
-							struct Celebrity
-							{
-								std::string score;
-								std::string target;
-								std::string name;
-							};
 							struct Sensitive
 							{
 								std::string score;
@@ -74,25 +50,31 @@ namespace AlibabaCloud
 								std::string target;
 								std::string name;
 							};
-							struct FrameTagInfo
-							{
-								std::string score;
-								std::string category;
-								std::string tag;
-							};
 							struct Custom
 							{
 								struct Clip
 								{
 									std::string maxScore;
-									std::string startTarget;
 									std::string endTime;
+									std::string startTarget;
 									std::string startTime;
 									std::string endTarget;
 									std::string minScore;
 									std::string avgScore;
 								};
 								std::vector<Custom::Clip> clips;
+								std::string name;
+							};
+							struct FrameTagInfo
+							{
+								std::string score;
+								std::string category;
+								std::string tag;
+							};
+							struct Celebrity
+							{
+								std::string score;
+								std::string target;
 								std::string name;
 							};
 							std::vector<MediaDetailRecgResult::Politician> politicians;
@@ -108,6 +90,24 @@ namespace AlibabaCloud
 						std::string status;
 						std::vector<MediaDetailRecgResult> mediaDetailRecgResults;
 						std::vector<std::string> tags;
+					};
+					struct MediaDetailConfig
+					{
+						struct OutputFile
+						{
+							std::string bucket;
+							std::string object;
+							std::string location;
+						};
+						OutputFile outputFile;
+						std::string detailType;
+						std::string scenario;
+					};
+					struct Input
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
 					};
 					MediaDetailConfig mediaDetailConfig;
 					Input input;

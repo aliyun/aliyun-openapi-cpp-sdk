@@ -40,6 +40,12 @@ namespace AlibabaCloud
 						std::string object;
 						std::string location;
 					};
+					struct MNSMessageResult
+					{
+						std::string errorCode;
+						std::string errorMessage;
+						std::string messageId;
+					};
 					struct Properties
 					{
 						struct Streams
@@ -52,30 +58,33 @@ namespace AlibabaCloud
 									std::string preloadTime;
 									std::string costBandwidth;
 								};
-								std::string codecTag;
 								std::string codecTimeBase;
 								std::string rotate;
 								std::string sar;
 								std::string fps;
-								std::string startTime;
 								std::string index;
-								std::string duration;
-								std::string lang;
+								std::string colorRange;
 								std::string pixFmt;
 								NetworkCost networkCost;
 								std::string codecName;
-								std::string bitrate;
-								std::string profile;
 								std::string avgFPS;
+								std::string profile;
+								std::string colorPrimaries;
+								std::string height;
+								std::string width;
+								std::string numFrames;
+								std::string colorTransfer;
+								std::string codecTag;
+								std::string startTime;
+								std::string lang;
+								std::string duration;
+								std::string bitrate;
 								std::string timebase;
 								std::string codecTagString;
 								std::string hasBFrames;
 								std::string dar;
 								std::string codecLongName;
-								std::string height;
 								std::string level;
-								std::string width;
-								std::string numFrames;
 							};
 							struct AudioStream
 							{
@@ -84,12 +93,12 @@ namespace AlibabaCloud
 								std::string channelLayout;
 								std::string startTime;
 								std::string index;
-								std::string duration;
 								std::string lang;
+								std::string duration;
 								std::string sampleFmt;
-								std::string codecName;
 								std::string samplerate;
 								std::string bitrate;
+								std::string codecName;
 								std::string channels;
 								std::string timebase;
 								std::string codecTagString;
@@ -98,15 +107,15 @@ namespace AlibabaCloud
 							};
 							struct SubtitleStream
 							{
-								std::string codecTag;
 								std::string timebase;
+								std::string codecTag;
 								std::string codecTagString;
 								std::string codecTimeBase;
 								std::string codecLongName;
 								std::string startTime;
 								std::string index;
-								std::string duration;
 								std::string lang;
+								std::string duration;
 								std::string codecName;
 							};
 							std::vector<VideoStream> videoStreamList;
@@ -134,17 +143,11 @@ namespace AlibabaCloud
 						Streams streams;
 						std::string fileSize;
 					};
-					struct MNSMessageResult
-					{
-						std::string errorCode;
-						std::string errorMessage;
-						std::string messageId;
-					};
 					Input input;
 					std::string message;
 					std::string userData;
-					bool async;
 					std::string state;
+					bool async;
 					MNSMessageResult mNSMessageResult;
 					std::string creationTime;
 					std::string pipelineId;

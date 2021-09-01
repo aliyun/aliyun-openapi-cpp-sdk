@@ -35,17 +35,17 @@ namespace AlibabaCloud
 				struct _Template
 				{
 					std::string contraband;
-					std::string ad;
 					std::string qrcode;
-					std::string terrorism;
+					std::string ad;
 					std::string abuse;
+					std::string terrorism;
 					std::string live;
 					std::string politics;
 					std::string porn;
-					std::string templateId;
 					std::string spam;
-					std::string name;
+					std::string templateId;
 					std::string logo;
+					std::string name;
 				};
 
 

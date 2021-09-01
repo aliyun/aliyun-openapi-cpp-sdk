@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Mts::Model::SearchPipelineRequest;
 
-SearchPipelineRequest::SearchPipelineRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "SearchPipeline")
-{
-	setMethod(HttpRequest::Method::Post);
+SearchPipelineRequest::SearchPipelineRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "SearchPipeline") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SearchPipelineRequest::~SearchPipelineRequest()
-{}
+SearchPipelineRequest::~SearchPipelineRequest() {}
 
-long SearchPipelineRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long SearchPipelineRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void SearchPipelineRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void SearchPipelineRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-long SearchPipelineRequest::getPageNumber()const
-{
-	return pageNumber_;
+long SearchPipelineRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void SearchPipelineRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void SearchPipelineRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string SearchPipelineRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SearchPipelineRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SearchPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SearchPipelineRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-long SearchPipelineRequest::getPageSize()const
-{
-	return pageSize_;
+long SearchPipelineRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void SearchPipelineRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void SearchPipelineRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string SearchPipelineRequest::getState()const
-{
-	return state_;
+std::string SearchPipelineRequest::getState() const {
+  return state_;
 }
 
-void SearchPipelineRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setParameter("State", state);
+void SearchPipelineRequest::setState(const std::string &state) {
+  state_ = state;
+  setParameter(std::string("State"), state);
 }
 
-std::string SearchPipelineRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string SearchPipelineRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void SearchPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void SearchPipelineRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string SearchPipelineRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string SearchPipelineRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void SearchPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void SearchPipelineRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long SearchPipelineRequest::getOwnerId()const
-{
-	return ownerId_;
+long SearchPipelineRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SearchPipelineRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SearchPipelineRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

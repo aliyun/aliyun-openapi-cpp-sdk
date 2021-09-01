@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					std::string encryptionType;
 					std::string rand;
-					std::string activityName;
 					std::string downloadType;
+					std::string activityName;
 					std::string size;
-					std::string fps;
 					std::string definition;
+					std::string fps;
 					std::string duration;
 					std::string encryption;
 					std::string bitrate;

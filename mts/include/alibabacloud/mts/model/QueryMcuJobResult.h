@@ -34,6 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct Job
 				{
+					struct CategoryResult
+					{
+						struct Category
+						{
+							std::string score;
+							std::string label;
+						};
+						std::string details;
+						std::vector<Category> categories;
+					};
 					struct Input
 					{
 						std::string bucket;
@@ -53,23 +63,6 @@ namespace AlibabaCloud
 						std::vector<AsrText> asrTextList;
 						std::string duration;
 					};
-					struct CategoryResult
-					{
-						struct Category
-						{
-							std::string score;
-							std::string label;
-						};
-						std::string details;
-						std::vector<Category> categories;
-					};
-					struct Ocr
-					{
-						std::string ocrText;
-						std::string imageId;
-						std::string imageUrl;
-						std::string time;
-					};
 					struct Tag
 					{
 						struct FrameTagInfo
@@ -83,6 +76,19 @@ namespace AlibabaCloud
 						std::string time;
 						std::vector<Tag::FrameTagInfo> frameTagInfos;
 					};
+					struct Ocr
+					{
+						std::string ocrText;
+						std::string imageId;
+						std::string imageUrl;
+						std::string time;
+					};
+					struct SubTask
+					{
+						std::string type;
+						std::string message;
+						std::string code;
+					};
 					struct Face
 					{
 						struct Celebrity
@@ -95,12 +101,6 @@ namespace AlibabaCloud
 						std::string imageId;
 						std::string imageUrl;
 						std::string time;
-					};
-					struct SubTask
-					{
-						std::string type;
-						std::string message;
-						std::string code;
 					};
 					std::vector<Job::Ocr> ocrResult;
 					Input input;

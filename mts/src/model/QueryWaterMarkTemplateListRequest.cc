@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Mts::Model::QueryWaterMarkTemplateListRequest;
 
-QueryWaterMarkTemplateListRequest::QueryWaterMarkTemplateListRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "QueryWaterMarkTemplateList")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryWaterMarkTemplateListRequest::QueryWaterMarkTemplateListRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "QueryWaterMarkTemplateList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryWaterMarkTemplateListRequest::~QueryWaterMarkTemplateListRequest()
-{}
+QueryWaterMarkTemplateListRequest::~QueryWaterMarkTemplateListRequest() {}
 
-long QueryWaterMarkTemplateListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long QueryWaterMarkTemplateListRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryWaterMarkTemplateListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void QueryWaterMarkTemplateListRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string QueryWaterMarkTemplateListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string QueryWaterMarkTemplateListRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void QueryWaterMarkTemplateListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void QueryWaterMarkTemplateListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string QueryWaterMarkTemplateListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string QueryWaterMarkTemplateListRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void QueryWaterMarkTemplateListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void QueryWaterMarkTemplateListRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long QueryWaterMarkTemplateListRequest::getOwnerId()const
-{
-	return ownerId_;
+long QueryWaterMarkTemplateListRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void QueryWaterMarkTemplateListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void QueryWaterMarkTemplateListRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QueryWaterMarkTemplateListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string QueryWaterMarkTemplateListRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void QueryWaterMarkTemplateListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void QueryWaterMarkTemplateListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string QueryWaterMarkTemplateListRequest::getWaterMarkTemplateIds()const
-{
-	return waterMarkTemplateIds_;
+std::string QueryWaterMarkTemplateListRequest::getWaterMarkTemplateIds() const {
+  return waterMarkTemplateIds_;
 }
 
-void QueryWaterMarkTemplateListRequest::setWaterMarkTemplateIds(const std::string& waterMarkTemplateIds)
-{
-	waterMarkTemplateIds_ = waterMarkTemplateIds;
-	setParameter("WaterMarkTemplateIds", waterMarkTemplateIds);
+void QueryWaterMarkTemplateListRequest::setWaterMarkTemplateIds(const std::string &waterMarkTemplateIds) {
+  waterMarkTemplateIds_ = waterMarkTemplateIds;
+  setParameter(std::string("WaterMarkTemplateIds"), waterMarkTemplateIds);
 }
 

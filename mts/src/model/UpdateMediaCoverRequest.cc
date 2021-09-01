@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Mts::Model::UpdateMediaCoverRequest;
 
-UpdateMediaCoverRequest::UpdateMediaCoverRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "UpdateMediaCover")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateMediaCoverRequest::UpdateMediaCoverRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "UpdateMediaCover") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateMediaCoverRequest::~UpdateMediaCoverRequest()
-{}
+UpdateMediaCoverRequest::~UpdateMediaCoverRequest() {}
 
-long UpdateMediaCoverRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long UpdateMediaCoverRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void UpdateMediaCoverRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void UpdateMediaCoverRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string UpdateMediaCoverRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string UpdateMediaCoverRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void UpdateMediaCoverRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void UpdateMediaCoverRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string UpdateMediaCoverRequest::getCoverURL()const
-{
-	return coverURL_;
+std::string UpdateMediaCoverRequest::getCoverURL() const {
+  return coverURL_;
 }
 
-void UpdateMediaCoverRequest::setCoverURL(const std::string& coverURL)
-{
-	coverURL_ = coverURL;
-	setParameter("CoverURL", coverURL);
+void UpdateMediaCoverRequest::setCoverURL(const std::string &coverURL) {
+  coverURL_ = coverURL;
+  setParameter(std::string("CoverURL"), coverURL);
 }
 
-std::string UpdateMediaCoverRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string UpdateMediaCoverRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void UpdateMediaCoverRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void UpdateMediaCoverRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string UpdateMediaCoverRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string UpdateMediaCoverRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void UpdateMediaCoverRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void UpdateMediaCoverRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long UpdateMediaCoverRequest::getOwnerId()const
-{
-	return ownerId_;
+long UpdateMediaCoverRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void UpdateMediaCoverRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void UpdateMediaCoverRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string UpdateMediaCoverRequest::getMediaId()const
-{
-	return mediaId_;
+std::string UpdateMediaCoverRequest::getMediaId() const {
+  return mediaId_;
 }
 
-void UpdateMediaCoverRequest::setMediaId(const std::string& mediaId)
-{
-	mediaId_ = mediaId;
-	setParameter("MediaId", mediaId);
+void UpdateMediaCoverRequest::setMediaId(const std::string &mediaId) {
+  mediaId_ = mediaId;
+  setParameter(std::string("MediaId"), mediaId);
 }
 

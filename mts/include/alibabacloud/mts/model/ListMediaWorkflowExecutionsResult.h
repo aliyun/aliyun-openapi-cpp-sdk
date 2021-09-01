@@ -54,8 +54,8 @@ namespace AlibabaCloud
 							std::string messageId;
 						};
 						std::string type;
-						std::string message;
 						std::string endTime;
+						std::string message;
 						std::string state;
 						MNSMessageResult mNSMessageResult;
 						std::string startTime;

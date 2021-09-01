@@ -50,8 +50,8 @@ namespace AlibabaCloud
 					std::string format;
 					std::string mediaId;
 					std::string creationTime;
-					std::string coverURL;
 					std::string height;
+					std::string coverURL;
 					File file;
 					std::string width;
 					std::vector<std::string> runIdList;

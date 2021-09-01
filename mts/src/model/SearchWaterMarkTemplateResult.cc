@@ -43,46 +43,46 @@ void SearchWaterMarkTemplateResult::parse(const std::string &payload)
 	for (auto valueWaterMarkTemplateListWaterMarkTemplate : allWaterMarkTemplateListNode)
 	{
 		WaterMarkTemplate waterMarkTemplateListObject;
-		if(!valueWaterMarkTemplateListWaterMarkTemplate["Id"].isNull())
-			waterMarkTemplateListObject.id = valueWaterMarkTemplateListWaterMarkTemplate["Id"].asString();
-		if(!valueWaterMarkTemplateListWaterMarkTemplate["Name"].isNull())
-			waterMarkTemplateListObject.name = valueWaterMarkTemplateListWaterMarkTemplate["Name"].asString();
+		if(!valueWaterMarkTemplateListWaterMarkTemplate["Type"].isNull())
+			waterMarkTemplateListObject.type = valueWaterMarkTemplateListWaterMarkTemplate["Type"].asString();
+		if(!valueWaterMarkTemplateListWaterMarkTemplate["ReferPos"].isNull())
+			waterMarkTemplateListObject.referPos = valueWaterMarkTemplateListWaterMarkTemplate["ReferPos"].asString();
+		if(!valueWaterMarkTemplateListWaterMarkTemplate["State"].isNull())
+			waterMarkTemplateListObject.state = valueWaterMarkTemplateListWaterMarkTemplate["State"].asString();
+		if(!valueWaterMarkTemplateListWaterMarkTemplate["Dx"].isNull())
+			waterMarkTemplateListObject.dx = valueWaterMarkTemplateListWaterMarkTemplate["Dx"].asString();
 		if(!valueWaterMarkTemplateListWaterMarkTemplate["Width"].isNull())
 			waterMarkTemplateListObject.width = valueWaterMarkTemplateListWaterMarkTemplate["Width"].asString();
 		if(!valueWaterMarkTemplateListWaterMarkTemplate["Height"].isNull())
 			waterMarkTemplateListObject.height = valueWaterMarkTemplateListWaterMarkTemplate["Height"].asString();
-		if(!valueWaterMarkTemplateListWaterMarkTemplate["Dx"].isNull())
-			waterMarkTemplateListObject.dx = valueWaterMarkTemplateListWaterMarkTemplate["Dx"].asString();
+		if(!valueWaterMarkTemplateListWaterMarkTemplate["Name"].isNull())
+			waterMarkTemplateListObject.name = valueWaterMarkTemplateListWaterMarkTemplate["Name"].asString();
 		if(!valueWaterMarkTemplateListWaterMarkTemplate["Dy"].isNull())
 			waterMarkTemplateListObject.dy = valueWaterMarkTemplateListWaterMarkTemplate["Dy"].asString();
-		if(!valueWaterMarkTemplateListWaterMarkTemplate["ReferPos"].isNull())
-			waterMarkTemplateListObject.referPos = valueWaterMarkTemplateListWaterMarkTemplate["ReferPos"].asString();
-		if(!valueWaterMarkTemplateListWaterMarkTemplate["Type"].isNull())
-			waterMarkTemplateListObject.type = valueWaterMarkTemplateListWaterMarkTemplate["Type"].asString();
-		if(!valueWaterMarkTemplateListWaterMarkTemplate["State"].isNull())
-			waterMarkTemplateListObject.state = valueWaterMarkTemplateListWaterMarkTemplate["State"].asString();
+		if(!valueWaterMarkTemplateListWaterMarkTemplate["Id"].isNull())
+			waterMarkTemplateListObject.id = valueWaterMarkTemplateListWaterMarkTemplate["Id"].asString();
+		auto ratioReferNode = value["RatioRefer"];
+		if(!ratioReferNode["Dx"].isNull())
+			waterMarkTemplateListObject.ratioRefer.dx = ratioReferNode["Dx"].asString();
+		if(!ratioReferNode["Width"].isNull())
+			waterMarkTemplateListObject.ratioRefer.width = ratioReferNode["Width"].asString();
+		if(!ratioReferNode["Height"].isNull())
+			waterMarkTemplateListObject.ratioRefer.height = ratioReferNode["Height"].asString();
+		if(!ratioReferNode["Dy"].isNull())
+			waterMarkTemplateListObject.ratioRefer.dy = ratioReferNode["Dy"].asString();
 		auto timelineNode = value["Timeline"];
 		if(!timelineNode["Start"].isNull())
 			waterMarkTemplateListObject.timeline.start = timelineNode["Start"].asString();
 		if(!timelineNode["Duration"].isNull())
 			waterMarkTemplateListObject.timeline.duration = timelineNode["Duration"].asString();
-		auto ratioReferNode = value["RatioRefer"];
-		if(!ratioReferNode["Dx"].isNull())
-			waterMarkTemplateListObject.ratioRefer.dx = ratioReferNode["Dx"].asString();
-		if(!ratioReferNode["Dy"].isNull())
-			waterMarkTemplateListObject.ratioRefer.dy = ratioReferNode["Dy"].asString();
-		if(!ratioReferNode["Width"].isNull())
-			waterMarkTemplateListObject.ratioRefer.width = ratioReferNode["Width"].asString();
-		if(!ratioReferNode["Height"].isNull())
-			waterMarkTemplateListObject.ratioRefer.height = ratioReferNode["Height"].asString();
 		waterMarkTemplateList_.push_back(waterMarkTemplateListObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

@@ -1,3 +1,6 @@
+2021-09-01 Version: 1.36.867
+- SubmitURLUploadJob, support S3 Storage.
+
 2021-09-01 Version: 1.36.866
 - SDK updated.
 

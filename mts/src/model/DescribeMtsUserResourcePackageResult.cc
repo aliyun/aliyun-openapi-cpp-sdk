@@ -43,18 +43,18 @@ void DescribeMtsUserResourcePackageResult::parse(const std::string &payload)
 	for (auto valueResourcePackageInfosResourcePackageInfo : allResourcePackageInfosNode)
 	{
 		ResourcePackageInfo resourcePackageInfosObject;
+		if(!valueResourcePackageInfosResourcePackageInfo["DisplayName"].isNull())
+			resourcePackageInfosObject.displayName = valueResourcePackageInfosResourcePackageInfo["DisplayName"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["Status"].isNull())
+			resourcePackageInfosObject.status = valueResourcePackageInfosResourcePackageInfo["Status"].asString();
+		if(!valueResourcePackageInfosResourcePackageInfo["CommodityCode"].isNull())
+			resourcePackageInfosObject.commodityCode = valueResourcePackageInfosResourcePackageInfo["CommodityCode"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["CurrCapacity"].isNull())
 			resourcePackageInfosObject.currCapacity = valueResourcePackageInfosResourcePackageInfo["CurrCapacity"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["InitCapacity"].isNull())
 			resourcePackageInfosObject.initCapacity = valueResourcePackageInfosResourcePackageInfo["InitCapacity"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["CommodityCode"].isNull())
-			resourcePackageInfosObject.commodityCode = valueResourcePackageInfosResourcePackageInfo["CommodityCode"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["DisplayName"].isNull())
-			resourcePackageInfosObject.displayName = valueResourcePackageInfosResourcePackageInfo["DisplayName"].asString();
 		if(!valueResourcePackageInfosResourcePackageInfo["InstanceId"].isNull())
 			resourcePackageInfosObject.instanceId = valueResourcePackageInfosResourcePackageInfo["InstanceId"].asString();
-		if(!valueResourcePackageInfosResourcePackageInfo["Status"].isNull())
-			resourcePackageInfosObject.status = valueResourcePackageInfosResourcePackageInfo["Status"].asString();
 		resourcePackageInfos_.push_back(resourcePackageInfosObject);
 	}
 

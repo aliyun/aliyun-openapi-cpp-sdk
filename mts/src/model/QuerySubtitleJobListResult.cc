@@ -43,16 +43,16 @@ void QuerySubtitleJobListResult::parse(const std::string &payload)
 	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!valueJobListJob["JobId"].isNull())
-			jobListObject.jobId = valueJobListJob["JobId"].asString();
-		if(!valueJobListJob["InputConfig"].isNull())
-			jobListObject.inputConfig = valueJobListJob["InputConfig"].asString();
 		if(!valueJobListJob["OutputConfig"].isNull())
 			jobListObject.outputConfig = valueJobListJob["OutputConfig"].asString();
-		if(!valueJobListJob["UserData"].isNull())
-			jobListObject.userData = valueJobListJob["UserData"].asString();
 		if(!valueJobListJob["State"].isNull())
 			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["JobId"].isNull())
+			jobListObject.jobId = valueJobListJob["JobId"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
+		if(!valueJobListJob["InputConfig"].isNull())
+			jobListObject.inputConfig = valueJobListJob["InputConfig"].asString();
 		auto mNSMessageResultNode = value["MNSMessageResult"];
 		if(!mNSMessageResultNode["MessageId"].isNull())
 			jobListObject.mNSMessageResult.messageId = mNSMessageResultNode["MessageId"].asString();

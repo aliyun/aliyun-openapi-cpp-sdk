@@ -43,16 +43,16 @@ void ListFpShotDBResult::parse(const std::string &payload)
 	for (auto valueFpShotDBListFpShotDB : allFpShotDBListNode)
 	{
 		FpShotDB fpShotDBListObject;
-		if(!valueFpShotDBListFpShotDB["FpDBId"].isNull())
-			fpShotDBListObject.fpDBId = valueFpShotDBListFpShotDB["FpDBId"].asString();
-		if(!valueFpShotDBListFpShotDB["Name"].isNull())
-			fpShotDBListObject.name = valueFpShotDBListFpShotDB["Name"].asString();
-		if(!valueFpShotDBListFpShotDB["ModelId"].isNull())
-			fpShotDBListObject.modelId = std::stoi(valueFpShotDBListFpShotDB["ModelId"].asString());
 		if(!valueFpShotDBListFpShotDB["Status"].isNull())
 			fpShotDBListObject.status = valueFpShotDBListFpShotDB["Status"].asString();
 		if(!valueFpShotDBListFpShotDB["Description"].isNull())
 			fpShotDBListObject.description = valueFpShotDBListFpShotDB["Description"].asString();
+		if(!valueFpShotDBListFpShotDB["Name"].isNull())
+			fpShotDBListObject.name = valueFpShotDBListFpShotDB["Name"].asString();
+		if(!valueFpShotDBListFpShotDB["ModelId"].isNull())
+			fpShotDBListObject.modelId = std::stoi(valueFpShotDBListFpShotDB["ModelId"].asString());
+		if(!valueFpShotDBListFpShotDB["FpDBId"].isNull())
+			fpShotDBListObject.fpDBId = valueFpShotDBListFpShotDB["FpDBId"].asString();
 		fpShotDBList_.push_back(fpShotDBListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

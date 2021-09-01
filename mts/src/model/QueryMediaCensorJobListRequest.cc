@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,144 +18,118 @@
 
 using AlibabaCloud::Mts::Model::QueryMediaCensorJobListRequest;
 
-QueryMediaCensorJobListRequest::QueryMediaCensorJobListRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "QueryMediaCensorJobList")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryMediaCensorJobListRequest::QueryMediaCensorJobListRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "QueryMediaCensorJobList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryMediaCensorJobListRequest::~QueryMediaCensorJobListRequest()
-{}
+QueryMediaCensorJobListRequest::~QueryMediaCensorJobListRequest() {}
 
-long QueryMediaCensorJobListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long QueryMediaCensorJobListRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryMediaCensorJobListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void QueryMediaCensorJobListRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string QueryMediaCensorJobListRequest::getNextPageToken()const
-{
-	return nextPageToken_;
+std::string QueryMediaCensorJobListRequest::getNextPageToken() const {
+  return nextPageToken_;
 }
 
-void QueryMediaCensorJobListRequest::setNextPageToken(const std::string& nextPageToken)
-{
-	nextPageToken_ = nextPageToken;
-	setParameter("NextPageToken", nextPageToken);
+void QueryMediaCensorJobListRequest::setNextPageToken(const std::string &nextPageToken) {
+  nextPageToken_ = nextPageToken;
+  setParameter(std::string("NextPageToken"), nextPageToken);
 }
 
-std::string QueryMediaCensorJobListRequest::getStartOfJobCreatedTimeRange()const
-{
-	return startOfJobCreatedTimeRange_;
+std::string QueryMediaCensorJobListRequest::getStartOfJobCreatedTimeRange() const {
+  return startOfJobCreatedTimeRange_;
 }
 
-void QueryMediaCensorJobListRequest::setStartOfJobCreatedTimeRange(const std::string& startOfJobCreatedTimeRange)
-{
-	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
-	setParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+void QueryMediaCensorJobListRequest::setStartOfJobCreatedTimeRange(const std::string &startOfJobCreatedTimeRange) {
+  startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
+  setParameter(std::string("StartOfJobCreatedTimeRange"), startOfJobCreatedTimeRange);
 }
 
-std::string QueryMediaCensorJobListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string QueryMediaCensorJobListRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void QueryMediaCensorJobListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void QueryMediaCensorJobListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string QueryMediaCensorJobListRequest::getJobId()const
-{
-	return jobId_;
+std::string QueryMediaCensorJobListRequest::getJobId() const {
+  return jobId_;
 }
 
-void QueryMediaCensorJobListRequest::setJobId(const std::string& jobId)
-{
-	jobId_ = jobId;
-	setParameter("JobId", jobId);
+void QueryMediaCensorJobListRequest::setJobId(const std::string &jobId) {
+  jobId_ = jobId;
+  setParameter(std::string("JobId"), jobId);
 }
 
-std::string QueryMediaCensorJobListRequest::getState()const
-{
-	return state_;
+std::string QueryMediaCensorJobListRequest::getState() const {
+  return state_;
 }
 
-void QueryMediaCensorJobListRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setParameter("State", state);
+void QueryMediaCensorJobListRequest::setState(const std::string &state) {
+  state_ = state;
+  setParameter(std::string("State"), state);
 }
 
-std::string QueryMediaCensorJobListRequest::getEndOfJobCreatedTimeRange()const
-{
-	return endOfJobCreatedTimeRange_;
+std::string QueryMediaCensorJobListRequest::getEndOfJobCreatedTimeRange() const {
+  return endOfJobCreatedTimeRange_;
 }
 
-void QueryMediaCensorJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
-{
-	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+void QueryMediaCensorJobListRequest::setEndOfJobCreatedTimeRange(const std::string &endOfJobCreatedTimeRange) {
+  endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
+  setParameter(std::string("EndOfJobCreatedTimeRange"), endOfJobCreatedTimeRange);
 }
 
-std::string QueryMediaCensorJobListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string QueryMediaCensorJobListRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void QueryMediaCensorJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void QueryMediaCensorJobListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string QueryMediaCensorJobListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string QueryMediaCensorJobListRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void QueryMediaCensorJobListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void QueryMediaCensorJobListRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long QueryMediaCensorJobListRequest::getMaximumPageSize()const
-{
-	return maximumPageSize_;
+long QueryMediaCensorJobListRequest::getMaximumPageSize() const {
+  return maximumPageSize_;
 }
 
-void QueryMediaCensorJobListRequest::setMaximumPageSize(long maximumPageSize)
-{
-	maximumPageSize_ = maximumPageSize;
-	setParameter("MaximumPageSize", std::to_string(maximumPageSize));
+void QueryMediaCensorJobListRequest::setMaximumPageSize(long maximumPageSize) {
+  maximumPageSize_ = maximumPageSize;
+  setParameter(std::string("MaximumPageSize"), std::to_string(maximumPageSize));
 }
 
-long QueryMediaCensorJobListRequest::getOwnerId()const
-{
-	return ownerId_;
+long QueryMediaCensorJobListRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void QueryMediaCensorJobListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void QueryMediaCensorJobListRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QueryMediaCensorJobListRequest::getPipelineId()const
-{
-	return pipelineId_;
+std::string QueryMediaCensorJobListRequest::getPipelineId() const {
+  return pipelineId_;
 }
 
-void QueryMediaCensorJobListRequest::setPipelineId(const std::string& pipelineId)
-{
-	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+void QueryMediaCensorJobListRequest::setPipelineId(const std::string &pipelineId) {
+  pipelineId_ = pipelineId;
+  setParameter(std::string("PipelineId"), pipelineId);
 }
 

@@ -34,12 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct TagJob
 				{
-					struct Input
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
 					struct VideoTagResult
 					{
 						struct TagAnResult
@@ -61,6 +55,12 @@ namespace AlibabaCloud
 						std::string details;
 						std::vector<TagAnResult> tagAnResults;
 						std::vector<TagFrResult> tagFrResults;
+					};
+					struct Input
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
 					};
 					Input input;
 					std::string message;

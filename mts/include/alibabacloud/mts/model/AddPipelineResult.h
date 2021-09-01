@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct NotifyConfig
 					{
 						std::string mqTag;
-						std::string topic;
 						std::string mqTopic;
+						std::string topic;
 						std::string queueName;
 					};
 					std::string role;

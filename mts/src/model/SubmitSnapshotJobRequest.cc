@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Mts::Model::SubmitSnapshotJobRequest;
 
-SubmitSnapshotJobRequest::SubmitSnapshotJobRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "SubmitSnapshotJob")
-{
-	setMethod(HttpRequest::Method::Post);
+SubmitSnapshotJobRequest::SubmitSnapshotJobRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "SubmitSnapshotJob") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SubmitSnapshotJobRequest::~SubmitSnapshotJobRequest()
-{}
+SubmitSnapshotJobRequest::~SubmitSnapshotJobRequest() {}
 
-long SubmitSnapshotJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long SubmitSnapshotJobRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string SubmitSnapshotJobRequest::getSnapshotConfig()const
-{
-	return snapshotConfig_;
+std::string SubmitSnapshotJobRequest::getSnapshotConfig() const {
+  return snapshotConfig_;
 }
 
-void SubmitSnapshotJobRequest::setSnapshotConfig(const std::string& snapshotConfig)
-{
-	snapshotConfig_ = snapshotConfig;
-	setParameter("SnapshotConfig", snapshotConfig);
+void SubmitSnapshotJobRequest::setSnapshotConfig(const std::string &snapshotConfig) {
+  snapshotConfig_ = snapshotConfig;
+  setParameter(std::string("SnapshotConfig"), snapshotConfig);
 }
 
-std::string SubmitSnapshotJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SubmitSnapshotJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SubmitSnapshotJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SubmitSnapshotJobRequest::getUserData()const
-{
-	return userData_;
+std::string SubmitSnapshotJobRequest::getUserData() const {
+  return userData_;
 }
 
-void SubmitSnapshotJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setParameter("UserData", userData);
+void SubmitSnapshotJobRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
 }
 
-std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string SubmitSnapshotJobRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void SubmitSnapshotJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void SubmitSnapshotJobRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string SubmitSnapshotJobRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string SubmitSnapshotJobRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void SubmitSnapshotJobRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void SubmitSnapshotJobRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long SubmitSnapshotJobRequest::getOwnerId()const
-{
-	return ownerId_;
+long SubmitSnapshotJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SubmitSnapshotJobRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string SubmitSnapshotJobRequest::getPipelineId()const
-{
-	return pipelineId_;
+std::string SubmitSnapshotJobRequest::getPipelineId() const {
+  return pipelineId_;
 }
 
-void SubmitSnapshotJobRequest::setPipelineId(const std::string& pipelineId)
-{
-	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+void SubmitSnapshotJobRequest::setPipelineId(const std::string &pipelineId) {
+  pipelineId_ = pipelineId;
+  setParameter(std::string("PipelineId"), pipelineId);
 }
 
-std::string SubmitSnapshotJobRequest::getInput()const
-{
-	return input_;
+std::string SubmitSnapshotJobRequest::getInput() const {
+  return input_;
 }
 
-void SubmitSnapshotJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setParameter("Input", input);
+void SubmitSnapshotJobRequest::setInput(const std::string &input) {
+  input_ = input;
+  setParameter(std::string("Input"), input);
 }
 

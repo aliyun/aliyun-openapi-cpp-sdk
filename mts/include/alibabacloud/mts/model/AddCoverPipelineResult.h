@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::string queue;
 					};
 					std::string role;
-					std::string priority;
 					std::string state;
+					std::string priority;
 					NotifyConfig notifyConfig;
 					std::string id;
 					std::string name;

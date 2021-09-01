@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Mts::Model::ListMediaRequest;
 
-ListMediaRequest::ListMediaRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "ListMedia")
-{
-	setMethod(HttpRequest::Method::Post);
+ListMediaRequest::ListMediaRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "ListMedia") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListMediaRequest::~ListMediaRequest()
-{}
+ListMediaRequest::~ListMediaRequest() {}
 
-long ListMediaRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ListMediaRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ListMediaRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ListMediaRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ListMediaRequest::getNextPageToken()const
-{
-	return nextPageToken_;
+std::string ListMediaRequest::getNextPageToken() const {
+  return nextPageToken_;
 }
 
-void ListMediaRequest::setNextPageToken(const std::string& nextPageToken)
-{
-	nextPageToken_ = nextPageToken;
-	setParameter("NextPageToken", nextPageToken);
+void ListMediaRequest::setNextPageToken(const std::string &nextPageToken) {
+  nextPageToken_ = nextPageToken;
+  setParameter(std::string("NextPageToken"), nextPageToken);
 }
 
-std::string ListMediaRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ListMediaRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ListMediaRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ListMediaRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ListMediaRequest::getFrom()const
-{
-	return from_;
+std::string ListMediaRequest::getFrom() const {
+  return from_;
 }
 
-void ListMediaRequest::setFrom(const std::string& from)
-{
-	from_ = from;
-	setParameter("From", from);
+void ListMediaRequest::setFrom(const std::string &from) {
+  from_ = from;
+  setParameter(std::string("From"), from);
 }
 
-std::string ListMediaRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ListMediaRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ListMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ListMediaRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ListMediaRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ListMediaRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ListMediaRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ListMediaRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ListMediaRequest::getMaximumPageSize()const
-{
-	return maximumPageSize_;
+long ListMediaRequest::getMaximumPageSize() const {
+  return maximumPageSize_;
 }
 
-void ListMediaRequest::setMaximumPageSize(long maximumPageSize)
-{
-	maximumPageSize_ = maximumPageSize;
-	setParameter("MaximumPageSize", std::to_string(maximumPageSize));
+void ListMediaRequest::setMaximumPageSize(long maximumPageSize) {
+  maximumPageSize_ = maximumPageSize;
+  setParameter(std::string("MaximumPageSize"), std::to_string(maximumPageSize));
 }
 
-long ListMediaRequest::getOwnerId()const
-{
-	return ownerId_;
+long ListMediaRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ListMediaRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ListMediaRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ListMediaRequest::getTo()const
-{
-	return to_;
+std::string ListMediaRequest::getTo() const {
+  return to_;
 }
 
-void ListMediaRequest::setTo(const std::string& to)
-{
-	to_ = to;
-	setParameter("To", to);
+void ListMediaRequest::setTo(const std::string &to) {
+  to_ = to;
+  setParameter(std::string("To"), to);
 }
 

@@ -39,12 +39,12 @@ void QueryIProductionJobListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allNonExistIds = value["NonExistIds"]["String"];
-	for (const auto &item : allNonExistIds)
-		nonExistIds_.push_back(item.asString());
 	auto allJobs = value["Jobs"]["String"];
 	for (const auto &item : allJobs)
 		jobs_.push_back(item.asString());
+	auto allNonExistIds = value["NonExistIds"]["String"];
+	for (const auto &item : allNonExistIds)
+		nonExistIds_.push_back(item.asString());
 	if(!value["NextPageToken"].isNull())
 		nextPageToken_ = value["NextPageToken"].asString();
 

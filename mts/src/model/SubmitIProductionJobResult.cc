@@ -41,11 +41,18 @@ void SubmitIProductionJobResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["JobId"].isNull())
 		jobId_ = value["JobId"].asString();
+	if(!value["Result"].isNull())
+		result_ = value["Result"].asString();
 
 }
 
 std::string SubmitIProductionJobResult::getJobId()const
 {
 	return jobId_;
+}
+
+std::string SubmitIProductionJobResult::getResult()const
+{
+	return result_;
 }
 

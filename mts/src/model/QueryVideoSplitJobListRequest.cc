@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Mts::Model::QueryVideoSplitJobListRequest;
 
-QueryVideoSplitJobListRequest::QueryVideoSplitJobListRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "QueryVideoSplitJobList")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryVideoSplitJobListRequest::QueryVideoSplitJobListRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "QueryVideoSplitJobList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryVideoSplitJobListRequest::~QueryVideoSplitJobListRequest()
-{}
+QueryVideoSplitJobListRequest::~QueryVideoSplitJobListRequest() {}
 
-long QueryVideoSplitJobListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long QueryVideoSplitJobListRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryVideoSplitJobListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void QueryVideoSplitJobListRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string QueryVideoSplitJobListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string QueryVideoSplitJobListRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void QueryVideoSplitJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void QueryVideoSplitJobListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string QueryVideoSplitJobListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string QueryVideoSplitJobListRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void QueryVideoSplitJobListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void QueryVideoSplitJobListRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long QueryVideoSplitJobListRequest::getOwnerId()const
-{
-	return ownerId_;
+long QueryVideoSplitJobListRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void QueryVideoSplitJobListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void QueryVideoSplitJobListRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QueryVideoSplitJobListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string QueryVideoSplitJobListRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void QueryVideoSplitJobListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void QueryVideoSplitJobListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string QueryVideoSplitJobListRequest::getJobIds()const
-{
-	return jobIds_;
+std::string QueryVideoSplitJobListRequest::getJobIds() const {
+  return jobIds_;
 }
 
-void QueryVideoSplitJobListRequest::setJobIds(const std::string& jobIds)
-{
-	jobIds_ = jobIds;
-	setParameter("JobIds", jobIds);
+void QueryVideoSplitJobListRequest::setJobIds(const std::string &jobIds) {
+  jobIds_ = jobIds;
+  setParameter(std::string("JobIds"), jobIds);
 }
 

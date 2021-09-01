@@ -43,19 +43,19 @@ void QueryAsrPipelineListResult::parse(const std::string &payload)
 	for (auto valuePipelineListPipeline : allPipelineListNode)
 	{
 		Pipeline pipelineListObject;
-		if(!valuePipelineListPipeline["Id"].isNull())
-			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
-		if(!valuePipelineListPipeline["Name"].isNull())
-			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
 		if(!valuePipelineListPipeline["State"].isNull())
 			pipelineListObject.state = valuePipelineListPipeline["State"].asString();
 		if(!valuePipelineListPipeline["Priority"].isNull())
 			pipelineListObject.priority = valuePipelineListPipeline["Priority"].asString();
+		if(!valuePipelineListPipeline["Name"].isNull())
+			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
+		if(!valuePipelineListPipeline["Id"].isNull())
+			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
 		auto notifyConfigNode = value["NotifyConfig"];
-		if(!notifyConfigNode["Topic"].isNull())
-			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();
 		if(!notifyConfigNode["QueueName"].isNull())
 			pipelineListObject.notifyConfig.queueName = notifyConfigNode["QueueName"].asString();
+		if(!notifyConfigNode["Topic"].isNull())
+			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();
 		pipelineList_.push_back(pipelineListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

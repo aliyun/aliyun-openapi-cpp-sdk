@@ -43,39 +43,20 @@ void QueryMediaDetailJobListResult::parse(const std::string &payload)
 	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!valueJobListJob["Id"].isNull())
-			jobListObject.id = valueJobListJob["Id"].asString();
-		if(!valueJobListJob["UserData"].isNull())
-			jobListObject.userData = valueJobListJob["UserData"].asString();
-		if(!valueJobListJob["PipelineId"].isNull())
-			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["CreationTime"].isNull())
+			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
 		if(!valueJobListJob["State"].isNull())
 			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
 		if(!valueJobListJob["Code"].isNull())
 			jobListObject.code = valueJobListJob["Code"].asString();
 		if(!valueJobListJob["Message"].isNull())
 			jobListObject.message = valueJobListJob["Message"].asString();
-		if(!valueJobListJob["CreationTime"].isNull())
-			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
-		auto inputNode = value["Input"];
-		if(!inputNode["Bucket"].isNull())
-			jobListObject.input.bucket = inputNode["Bucket"].asString();
-		if(!inputNode["Location"].isNull())
-			jobListObject.input.location = inputNode["Location"].asString();
-		if(!inputNode["Object"].isNull())
-			jobListObject.input.object = inputNode["Object"].asString();
-		auto mediaDetailConfigNode = value["MediaDetailConfig"];
-		if(!mediaDetailConfigNode["Scenario"].isNull())
-			jobListObject.mediaDetailConfig.scenario = mediaDetailConfigNode["Scenario"].asString();
-		if(!mediaDetailConfigNode["DetailType"].isNull())
-			jobListObject.mediaDetailConfig.detailType = mediaDetailConfigNode["DetailType"].asString();
-		auto outputFileNode = mediaDetailConfigNode["OutputFile"];
-		if(!outputFileNode["Bucket"].isNull())
-			jobListObject.mediaDetailConfig.outputFile.bucket = outputFileNode["Bucket"].asString();
-		if(!outputFileNode["Location"].isNull())
-			jobListObject.mediaDetailConfig.outputFile.location = outputFileNode["Location"].asString();
-		if(!outputFileNode["Object"].isNull())
-			jobListObject.mediaDetailConfig.outputFile.object = outputFileNode["Object"].asString();
+		if(!valueJobListJob["PipelineId"].isNull())
+			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["Id"].isNull())
+			jobListObject.id = valueJobListJob["Id"].asString();
 		auto mediaDetailResultNode = value["MediaDetailResult"];
 		if(!mediaDetailResultNode["Status"].isNull())
 			jobListObject.mediaDetailResult.status = mediaDetailResultNode["Status"].asString();
@@ -83,87 +64,87 @@ void QueryMediaDetailJobListResult::parse(const std::string &payload)
 		for (auto mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult : allMediaDetailRecgResultsNode)
 		{
 			Job::MediaDetailResult::MediaDetailRecgResult mediaDetailRecgResultObject;
-			if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["ImageUrl"].isNull())
-				mediaDetailRecgResultObject.imageUrl = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["ImageUrl"].asString();
 			if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["Time"].isNull())
 				mediaDetailRecgResultObject.time = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["Time"].asString();
+			if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["ImageUrl"].isNull())
+				mediaDetailRecgResultObject.imageUrl = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["ImageUrl"].asString();
 			if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["OcrText"].isNull())
 				mediaDetailRecgResultObject.ocrText = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["OcrText"].asString();
-			auto allCelebritiesNode = allMediaDetailRecgResultsNode["Celebrities"]["Celebrity"];
-			for (auto allMediaDetailRecgResultsNodeCelebritiesCelebrity : allCelebritiesNode)
-			{
-				Job::MediaDetailResult::MediaDetailRecgResult::Celebrity celebritiesObject;
-				if(!allMediaDetailRecgResultsNodeCelebritiesCelebrity["Name"].isNull())
-					celebritiesObject.name = allMediaDetailRecgResultsNodeCelebritiesCelebrity["Name"].asString();
-				if(!allMediaDetailRecgResultsNodeCelebritiesCelebrity["Score"].isNull())
-					celebritiesObject.score = allMediaDetailRecgResultsNodeCelebritiesCelebrity["Score"].asString();
-				if(!allMediaDetailRecgResultsNodeCelebritiesCelebrity["Target"].isNull())
-					celebritiesObject.target = allMediaDetailRecgResultsNodeCelebritiesCelebrity["Target"].asString();
-				mediaDetailRecgResultObject.celebrities.push_back(celebritiesObject);
-			}
-			auto allSensitivesNode = allMediaDetailRecgResultsNode["Sensitives"]["Sensitive"];
-			for (auto allMediaDetailRecgResultsNodeSensitivesSensitive : allSensitivesNode)
+			auto allSensitivesNode = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["Sensitives"]["Sensitive"];
+			for (auto mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultSensitivesSensitive : allSensitivesNode)
 			{
 				Job::MediaDetailResult::MediaDetailRecgResult::Sensitive sensitivesObject;
-				if(!allMediaDetailRecgResultsNodeSensitivesSensitive["Name"].isNull())
-					sensitivesObject.name = allMediaDetailRecgResultsNodeSensitivesSensitive["Name"].asString();
-				if(!allMediaDetailRecgResultsNodeSensitivesSensitive["Score"].isNull())
-					sensitivesObject.score = allMediaDetailRecgResultsNodeSensitivesSensitive["Score"].asString();
-				if(!allMediaDetailRecgResultsNodeSensitivesSensitive["Target"].isNull())
-					sensitivesObject.target = allMediaDetailRecgResultsNodeSensitivesSensitive["Target"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultSensitivesSensitive["Score"].isNull())
+					sensitivesObject.score = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultSensitivesSensitive["Score"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultSensitivesSensitive["Name"].isNull())
+					sensitivesObject.name = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultSensitivesSensitive["Name"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultSensitivesSensitive["Target"].isNull())
+					sensitivesObject.target = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultSensitivesSensitive["Target"].asString();
 				mediaDetailRecgResultObject.sensitives.push_back(sensitivesObject);
 			}
-			auto allPoliticiansNode = allMediaDetailRecgResultsNode["Politicians"]["Politician"];
-			for (auto allMediaDetailRecgResultsNodePoliticiansPolitician : allPoliticiansNode)
+			auto allPoliticiansNode = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["Politicians"]["Politician"];
+			for (auto mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultPoliticiansPolitician : allPoliticiansNode)
 			{
 				Job::MediaDetailResult::MediaDetailRecgResult::Politician politiciansObject;
-				if(!allMediaDetailRecgResultsNodePoliticiansPolitician["Name"].isNull())
-					politiciansObject.name = allMediaDetailRecgResultsNodePoliticiansPolitician["Name"].asString();
-				if(!allMediaDetailRecgResultsNodePoliticiansPolitician["Score"].isNull())
-					politiciansObject.score = allMediaDetailRecgResultsNodePoliticiansPolitician["Score"].asString();
-				if(!allMediaDetailRecgResultsNodePoliticiansPolitician["Target"].isNull())
-					politiciansObject.target = allMediaDetailRecgResultsNodePoliticiansPolitician["Target"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultPoliticiansPolitician["Score"].isNull())
+					politiciansObject.score = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultPoliticiansPolitician["Score"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultPoliticiansPolitician["Name"].isNull())
+					politiciansObject.name = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultPoliticiansPolitician["Name"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultPoliticiansPolitician["Target"].isNull())
+					politiciansObject.target = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultPoliticiansPolitician["Target"].asString();
 				mediaDetailRecgResultObject.politicians.push_back(politiciansObject);
 			}
-			auto allFrameTagInfosNode = allMediaDetailRecgResultsNode["FrameTagInfos"]["FrameTagInfo"];
-			for (auto allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo : allFrameTagInfosNode)
-			{
-				Job::MediaDetailResult::MediaDetailRecgResult::FrameTagInfo frameTagInfosObject;
-				if(!allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Tag"].isNull())
-					frameTagInfosObject.tag = allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Tag"].asString();
-				if(!allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Score"].isNull())
-					frameTagInfosObject.score = allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Score"].asString();
-				if(!allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Category"].isNull())
-					frameTagInfosObject.category = allMediaDetailRecgResultsNodeFrameTagInfosFrameTagInfo["Category"].asString();
-				mediaDetailRecgResultObject.frameTagInfos.push_back(frameTagInfosObject);
-			}
-			auto allCustomsNode = allMediaDetailRecgResultsNode["Customs"]["Custom"];
-			for (auto allMediaDetailRecgResultsNodeCustomsCustom : allCustomsNode)
+			auto allCustomsNode = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["Customs"]["Custom"];
+			for (auto mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustom : allCustomsNode)
 			{
 				Job::MediaDetailResult::MediaDetailRecgResult::Custom customsObject;
-				if(!allMediaDetailRecgResultsNodeCustomsCustom["Name"].isNull())
-					customsObject.name = allMediaDetailRecgResultsNodeCustomsCustom["Name"].asString();
-				auto allClipsNode = allCustomsNode["Clips"]["Clip"];
-				for (auto allCustomsNodeClipsClip : allClipsNode)
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustom["Name"].isNull())
+					customsObject.name = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustom["Name"].asString();
+				auto allClipsNode = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustom["Clips"]["Clip"];
+				for (auto mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip : allClipsNode)
 				{
 					Job::MediaDetailResult::MediaDetailRecgResult::Custom::Clip clipsObject;
-					if(!allCustomsNodeClipsClip["MinScore"].isNull())
-						clipsObject.minScore = allCustomsNodeClipsClip["MinScore"].asString();
-					if(!allCustomsNodeClipsClip["MaxScore"].isNull())
-						clipsObject.maxScore = allCustomsNodeClipsClip["MaxScore"].asString();
-					if(!allCustomsNodeClipsClip["AvgScore"].isNull())
-						clipsObject.avgScore = allCustomsNodeClipsClip["AvgScore"].asString();
-					if(!allCustomsNodeClipsClip["StartTarget"].isNull())
-						clipsObject.startTarget = allCustomsNodeClipsClip["StartTarget"].asString();
-					if(!allCustomsNodeClipsClip["EndTarget"].isNull())
-						clipsObject.endTarget = allCustomsNodeClipsClip["EndTarget"].asString();
-					if(!allCustomsNodeClipsClip["StartTime"].isNull())
-						clipsObject.startTime = allCustomsNodeClipsClip["StartTime"].asString();
-					if(!allCustomsNodeClipsClip["EndTime"].isNull())
-						clipsObject.endTime = allCustomsNodeClipsClip["EndTime"].asString();
+					if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["EndTime"].isNull())
+						clipsObject.endTime = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["EndTime"].asString();
+					if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["MinScore"].isNull())
+						clipsObject.minScore = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["MinScore"].asString();
+					if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["StartTime"].isNull())
+						clipsObject.startTime = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["StartTime"].asString();
+					if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["AvgScore"].isNull())
+						clipsObject.avgScore = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["AvgScore"].asString();
+					if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["MaxScore"].isNull())
+						clipsObject.maxScore = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["MaxScore"].asString();
+					if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["EndTarget"].isNull())
+						clipsObject.endTarget = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["EndTarget"].asString();
+					if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["StartTarget"].isNull())
+						clipsObject.startTarget = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCustomsCustomClipsClip["StartTarget"].asString();
 					customsObject.clips.push_back(clipsObject);
 				}
 				mediaDetailRecgResultObject.customs.push_back(customsObject);
+			}
+			auto allFrameTagInfosNode = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["FrameTagInfos"]["FrameTagInfo"];
+			for (auto mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultFrameTagInfosFrameTagInfo : allFrameTagInfosNode)
+			{
+				Job::MediaDetailResult::MediaDetailRecgResult::FrameTagInfo frameTagInfosObject;
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultFrameTagInfosFrameTagInfo["Score"].isNull())
+					frameTagInfosObject.score = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultFrameTagInfosFrameTagInfo["Score"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultFrameTagInfosFrameTagInfo["Category"].isNull())
+					frameTagInfosObject.category = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultFrameTagInfosFrameTagInfo["Category"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultFrameTagInfosFrameTagInfo["Tag"].isNull())
+					frameTagInfosObject.tag = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultFrameTagInfosFrameTagInfo["Tag"].asString();
+				mediaDetailRecgResultObject.frameTagInfos.push_back(frameTagInfosObject);
+			}
+			auto allCelebritiesNode = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResult["Celebrities"]["Celebrity"];
+			for (auto mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCelebritiesCelebrity : allCelebritiesNode)
+			{
+				Job::MediaDetailResult::MediaDetailRecgResult::Celebrity celebritiesObject;
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCelebritiesCelebrity["Score"].isNull())
+					celebritiesObject.score = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCelebritiesCelebrity["Score"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCelebritiesCelebrity["Name"].isNull())
+					celebritiesObject.name = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCelebritiesCelebrity["Name"].asString();
+				if(!mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCelebritiesCelebrity["Target"].isNull())
+					celebritiesObject.target = mediaDetailResultNodeMediaDetailRecgResultsMediaDetailRecgResultCelebritiesCelebrity["Target"].asString();
+				mediaDetailRecgResultObject.celebrities.push_back(celebritiesObject);
 			}
 			auto allFrameTags = value["FrameTags"]["String"];
 			for (auto value : allFrameTags)
@@ -173,6 +154,25 @@ void QueryMediaDetailJobListResult::parse(const std::string &payload)
 			auto allTags = mediaDetailResultNode["Tags"]["String"];
 			for (auto value : allTags)
 				jobListObject.mediaDetailResult.tags.push_back(value.asString());
+		auto mediaDetailConfigNode = value["MediaDetailConfig"];
+		if(!mediaDetailConfigNode["Scenario"].isNull())
+			jobListObject.mediaDetailConfig.scenario = mediaDetailConfigNode["Scenario"].asString();
+		if(!mediaDetailConfigNode["DetailType"].isNull())
+			jobListObject.mediaDetailConfig.detailType = mediaDetailConfigNode["DetailType"].asString();
+		auto outputFileNode = mediaDetailConfigNode["OutputFile"];
+		if(!outputFileNode["Object"].isNull())
+			jobListObject.mediaDetailConfig.outputFile.object = outputFileNode["Object"].asString();
+		if(!outputFileNode["Location"].isNull())
+			jobListObject.mediaDetailConfig.outputFile.location = outputFileNode["Location"].asString();
+		if(!outputFileNode["Bucket"].isNull())
+			jobListObject.mediaDetailConfig.outputFile.bucket = outputFileNode["Bucket"].asString();
+		auto inputNode = value["Input"];
+		if(!inputNode["Object"].isNull())
+			jobListObject.input.object = inputNode["Object"].asString();
+		if(!inputNode["Location"].isNull())
+			jobListObject.input.location = inputNode["Location"].asString();
+		if(!inputNode["Bucket"].isNull())
+			jobListObject.input.bucket = inputNode["Bucket"].asString();
 		jobList_.push_back(jobListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

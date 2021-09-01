@@ -43,127 +43,120 @@ void QueryAnalysisJobListResult::parse(const std::string &payload)
 	for (auto valueAnalysisJobListAnalysisJob : allAnalysisJobListNode)
 	{
 		AnalysisJob analysisJobListObject;
-		if(!valueAnalysisJobListAnalysisJob["Id"].isNull())
-			analysisJobListObject.id = valueAnalysisJobListAnalysisJob["Id"].asString();
-		if(!valueAnalysisJobListAnalysisJob["UserData"].isNull())
-			analysisJobListObject.userData = valueAnalysisJobListAnalysisJob["UserData"].asString();
-		if(!valueAnalysisJobListAnalysisJob["State"].isNull())
-			analysisJobListObject.state = valueAnalysisJobListAnalysisJob["State"].asString();
-		if(!valueAnalysisJobListAnalysisJob["Code"].isNull())
-			analysisJobListObject.code = valueAnalysisJobListAnalysisJob["Code"].asString();
-		if(!valueAnalysisJobListAnalysisJob["Message"].isNull())
-			analysisJobListObject.message = valueAnalysisJobListAnalysisJob["Message"].asString();
-		if(!valueAnalysisJobListAnalysisJob["Percent"].isNull())
-			analysisJobListObject.percent = std::stol(valueAnalysisJobListAnalysisJob["Percent"].asString());
 		if(!valueAnalysisJobListAnalysisJob["CreationTime"].isNull())
 			analysisJobListObject.creationTime = valueAnalysisJobListAnalysisJob["CreationTime"].asString();
-		if(!valueAnalysisJobListAnalysisJob["PipelineId"].isNull())
-			analysisJobListObject.pipelineId = valueAnalysisJobListAnalysisJob["PipelineId"].asString();
+		if(!valueAnalysisJobListAnalysisJob["Percent"].isNull())
+			analysisJobListObject.percent = std::stol(valueAnalysisJobListAnalysisJob["Percent"].asString());
+		if(!valueAnalysisJobListAnalysisJob["State"].isNull())
+			analysisJobListObject.state = valueAnalysisJobListAnalysisJob["State"].asString();
+		if(!valueAnalysisJobListAnalysisJob["Message"].isNull())
+			analysisJobListObject.message = valueAnalysisJobListAnalysisJob["Message"].asString();
 		if(!valueAnalysisJobListAnalysisJob["Priority"].isNull())
 			analysisJobListObject.priority = valueAnalysisJobListAnalysisJob["Priority"].asString();
-		auto allTemplateListNode = allAnalysisJobListNode["TemplateList"]["Template"];
-		for (auto allAnalysisJobListNodeTemplateListTemplate : allTemplateListNode)
+		if(!valueAnalysisJobListAnalysisJob["UserData"].isNull())
+			analysisJobListObject.userData = valueAnalysisJobListAnalysisJob["UserData"].asString();
+		if(!valueAnalysisJobListAnalysisJob["Code"].isNull())
+			analysisJobListObject.code = valueAnalysisJobListAnalysisJob["Code"].asString();
+		if(!valueAnalysisJobListAnalysisJob["PipelineId"].isNull())
+			analysisJobListObject.pipelineId = valueAnalysisJobListAnalysisJob["PipelineId"].asString();
+		if(!valueAnalysisJobListAnalysisJob["Id"].isNull())
+			analysisJobListObject.id = valueAnalysisJobListAnalysisJob["Id"].asString();
+		auto allTemplateListNode = valueAnalysisJobListAnalysisJob["TemplateList"]["Template"];
+		for (auto valueAnalysisJobListAnalysisJobTemplateListTemplate : allTemplateListNode)
 		{
 			AnalysisJob::_Template templateListObject;
-			if(!allAnalysisJobListNodeTemplateListTemplate["Id"].isNull())
-				templateListObject.id = allAnalysisJobListNodeTemplateListTemplate["Id"].asString();
-			if(!allAnalysisJobListNodeTemplateListTemplate["Name"].isNull())
-				templateListObject.name = allAnalysisJobListNodeTemplateListTemplate["Name"].asString();
-			if(!allAnalysisJobListNodeTemplateListTemplate["State"].isNull())
-				templateListObject.state = allAnalysisJobListNodeTemplateListTemplate["State"].asString();
-			auto containerNode = value["Container"];
-			if(!containerNode["Format"].isNull())
-				templateListObject.container.format = containerNode["Format"].asString();
+			if(!valueAnalysisJobListAnalysisJobTemplateListTemplate["State"].isNull())
+				templateListObject.state = valueAnalysisJobListAnalysisJobTemplateListTemplate["State"].asString();
+			if(!valueAnalysisJobListAnalysisJobTemplateListTemplate["Name"].isNull())
+				templateListObject.name = valueAnalysisJobListAnalysisJobTemplateListTemplate["Name"].asString();
+			if(!valueAnalysisJobListAnalysisJobTemplateListTemplate["Id"].isNull())
+				templateListObject.id = valueAnalysisJobListAnalysisJobTemplateListTemplate["Id"].asString();
 			auto videoNode = value["Video"];
+			if(!videoNode["Bufsize"].isNull())
+				templateListObject.video.bufsize = videoNode["Bufsize"].asString();
+			if(!videoNode["Degrain"].isNull())
+				templateListObject.video.degrain = videoNode["Degrain"].asString();
+			if(!videoNode["PixFmt"].isNull())
+				templateListObject.video.pixFmt = videoNode["PixFmt"].asString();
 			if(!videoNode["Codec"].isNull())
 				templateListObject.video.codec = videoNode["Codec"].asString();
-			if(!videoNode["Profile"].isNull())
-				templateListObject.video.profile = videoNode["Profile"].asString();
-			if(!videoNode["Bitrate"].isNull())
-				templateListObject.video.bitrate = videoNode["Bitrate"].asString();
-			if(!videoNode["Crf"].isNull())
-				templateListObject.video.crf = videoNode["Crf"].asString();
-			if(!videoNode["Width"].isNull())
-				templateListObject.video.width = videoNode["Width"].asString();
 			if(!videoNode["Height"].isNull())
 				templateListObject.video.height = videoNode["Height"].asString();
-			if(!videoNode["Fps"].isNull())
-				templateListObject.video.fps = videoNode["Fps"].asString();
+			if(!videoNode["Qscale"].isNull())
+				templateListObject.video.qscale = videoNode["Qscale"].asString();
+			if(!videoNode["Bitrate"].isNull())
+				templateListObject.video.bitrate = videoNode["Bitrate"].asString();
+			if(!videoNode["Maxrate"].isNull())
+				templateListObject.video.maxrate = videoNode["Maxrate"].asString();
+			if(!videoNode["Profile"].isNull())
+				templateListObject.video.profile = videoNode["Profile"].asString();
+			if(!videoNode["Crf"].isNull())
+				templateListObject.video.crf = videoNode["Crf"].asString();
 			if(!videoNode["Gop"].isNull())
 				templateListObject.video.gop = videoNode["Gop"].asString();
+			if(!videoNode["Width"].isNull())
+				templateListObject.video.width = videoNode["Width"].asString();
+			if(!videoNode["Fps"].isNull())
+				templateListObject.video.fps = videoNode["Fps"].asString();
 			if(!videoNode["Preset"].isNull())
 				templateListObject.video.preset = videoNode["Preset"].asString();
 			if(!videoNode["ScanMode"].isNull())
 				templateListObject.video.scanMode = videoNode["ScanMode"].asString();
-			if(!videoNode["Bufsize"].isNull())
-				templateListObject.video.bufsize = videoNode["Bufsize"].asString();
-			if(!videoNode["Maxrate"].isNull())
-				templateListObject.video.maxrate = videoNode["Maxrate"].asString();
-			if(!videoNode["PixFmt"].isNull())
-				templateListObject.video.pixFmt = videoNode["PixFmt"].asString();
-			if(!videoNode["Degrain"].isNull())
-				templateListObject.video.degrain = videoNode["Degrain"].asString();
-			if(!videoNode["Qscale"].isNull())
-				templateListObject.video.qscale = videoNode["Qscale"].asString();
 			auto bitrateBndNode = videoNode["BitrateBnd"];
 			if(!bitrateBndNode["Max"].isNull())
 				templateListObject.video.bitrateBnd.max = bitrateBndNode["Max"].asString();
 			if(!bitrateBndNode["Min"].isNull())
 				templateListObject.video.bitrateBnd.min = bitrateBndNode["Min"].asString();
-			auto audioNode = value["Audio"];
-			if(!audioNode["Codec"].isNull())
-				templateListObject.audio.codec = audioNode["Codec"].asString();
-			if(!audioNode["Profile"].isNull())
-				templateListObject.audio.profile = audioNode["Profile"].asString();
-			if(!audioNode["Samplerate"].isNull())
-				templateListObject.audio.samplerate = audioNode["Samplerate"].asString();
-			if(!audioNode["Bitrate"].isNull())
-				templateListObject.audio.bitrate = audioNode["Bitrate"].asString();
-			if(!audioNode["Channels"].isNull())
-				templateListObject.audio.channels = audioNode["Channels"].asString();
-			if(!audioNode["Qscale"].isNull())
-				templateListObject.audio.qscale = audioNode["Qscale"].asString();
 			auto transConfigNode = value["TransConfig"];
 			if(!transConfigNode["TransMode"].isNull())
 				templateListObject.transConfig.transMode = transConfigNode["TransMode"].asString();
 			auto muxConfigNode = value["MuxConfig"];
+			auto gifNode = muxConfigNode["Gif"];
+			if(!gifNode["FinalDelay"].isNull())
+				templateListObject.muxConfig.gif.finalDelay = gifNode["FinalDelay"].asString();
+			if(!gifNode["Loop"].isNull())
+				templateListObject.muxConfig.gif.loop = gifNode["Loop"].asString();
 			auto segmentNode = muxConfigNode["Segment"];
 			if(!segmentNode["Duration"].isNull())
 				templateListObject.muxConfig.segment.duration = segmentNode["Duration"].asString();
-			auto gifNode = muxConfigNode["Gif"];
-			if(!gifNode["Loop"].isNull())
-				templateListObject.muxConfig.gif.loop = gifNode["Loop"].asString();
-			if(!gifNode["FinalDelay"].isNull())
-				templateListObject.muxConfig.gif.finalDelay = gifNode["FinalDelay"].asString();
+			auto audioNode = value["Audio"];
+			if(!audioNode["Profile"].isNull())
+				templateListObject.audio.profile = audioNode["Profile"].asString();
+			if(!audioNode["Codec"].isNull())
+				templateListObject.audio.codec = audioNode["Codec"].asString();
+			if(!audioNode["Samplerate"].isNull())
+				templateListObject.audio.samplerate = audioNode["Samplerate"].asString();
+			if(!audioNode["Qscale"].isNull())
+				templateListObject.audio.qscale = audioNode["Qscale"].asString();
+			if(!audioNode["Channels"].isNull())
+				templateListObject.audio.channels = audioNode["Channels"].asString();
+			if(!audioNode["Bitrate"].isNull())
+				templateListObject.audio.bitrate = audioNode["Bitrate"].asString();
+			auto containerNode = value["Container"];
+			if(!containerNode["Format"].isNull())
+				templateListObject.container.format = containerNode["Format"].asString();
 			analysisJobListObject.templateList.push_back(templateListObject);
 		}
-		auto inputFileNode = value["InputFile"];
-		if(!inputFileNode["Bucket"].isNull())
-			analysisJobListObject.inputFile.bucket = inputFileNode["Bucket"].asString();
-		if(!inputFileNode["Location"].isNull())
-			analysisJobListObject.inputFile.location = inputFileNode["Location"].asString();
-		if(!inputFileNode["Object"].isNull())
-			analysisJobListObject.inputFile.object = inputFileNode["Object"].asString();
 		auto analysisConfigNode = value["AnalysisConfig"];
 		auto qualityControlNode = analysisConfigNode["QualityControl"];
-		if(!qualityControlNode["RateQuality"].isNull())
-			analysisJobListObject.analysisConfig.qualityControl.rateQuality = qualityControlNode["RateQuality"].asString();
 		if(!qualityControlNode["MethodStreaming"].isNull())
 			analysisJobListObject.analysisConfig.qualityControl.methodStreaming = qualityControlNode["MethodStreaming"].asString();
+		if(!qualityControlNode["RateQuality"].isNull())
+			analysisJobListObject.analysisConfig.qualityControl.rateQuality = qualityControlNode["RateQuality"].asString();
 		auto propertiesControlNode = analysisConfigNode["PropertiesControl"];
 		if(!propertiesControlNode["Deinterlace"].isNull())
 			analysisJobListObject.analysisConfig.propertiesControl.deinterlace = propertiesControlNode["Deinterlace"].asString();
 		auto cropNode = propertiesControlNode["Crop"];
-		if(!cropNode["Mode"].isNull())
-			analysisJobListObject.analysisConfig.propertiesControl.crop.mode = cropNode["Mode"].asString();
+		if(!cropNode["Top"].isNull())
+			analysisJobListObject.analysisConfig.propertiesControl.crop.top = cropNode["Top"].asString();
 		if(!cropNode["Width"].isNull())
 			analysisJobListObject.analysisConfig.propertiesControl.crop.width = cropNode["Width"].asString();
 		if(!cropNode["Height"].isNull())
 			analysisJobListObject.analysisConfig.propertiesControl.crop.height = cropNode["Height"].asString();
-		if(!cropNode["Top"].isNull())
-			analysisJobListObject.analysisConfig.propertiesControl.crop.top = cropNode["Top"].asString();
 		if(!cropNode["Left"].isNull())
 			analysisJobListObject.analysisConfig.propertiesControl.crop.left = cropNode["Left"].asString();
+		if(!cropNode["Mode"].isNull())
+			analysisJobListObject.analysisConfig.propertiesControl.crop.mode = cropNode["Mode"].asString();
 		auto mNSMessageResultNode = value["MNSMessageResult"];
 		if(!mNSMessageResultNode["MessageId"].isNull())
 			analysisJobListObject.mNSMessageResult.messageId = mNSMessageResultNode["MessageId"].asString();
@@ -171,6 +164,13 @@ void QueryAnalysisJobListResult::parse(const std::string &payload)
 			analysisJobListObject.mNSMessageResult.errorMessage = mNSMessageResultNode["ErrorMessage"].asString();
 		if(!mNSMessageResultNode["ErrorCode"].isNull())
 			analysisJobListObject.mNSMessageResult.errorCode = mNSMessageResultNode["ErrorCode"].asString();
+		auto inputFileNode = value["InputFile"];
+		if(!inputFileNode["Object"].isNull())
+			analysisJobListObject.inputFile.object = inputFileNode["Object"].asString();
+		if(!inputFileNode["Location"].isNull())
+			analysisJobListObject.inputFile.location = inputFileNode["Location"].asString();
+		if(!inputFileNode["Bucket"].isNull())
+			analysisJobListObject.inputFile.bucket = inputFileNode["Bucket"].asString();
 		analysisJobList_.push_back(analysisJobListObject);
 	}
 	auto allNonExistAnalysisJobIds = value["NonExistAnalysisJobIds"]["String"];

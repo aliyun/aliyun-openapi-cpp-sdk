@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit SubmitIProductionJobResult(const std::string &payload);
 				~SubmitIProductionJobResult();
 				std::string getJobId()const;
+				std::string getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string jobId_;
+				std::string result_;
 
 			};
 		}

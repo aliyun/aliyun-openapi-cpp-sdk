@@ -38,6 +38,12 @@ namespace AlibabaCloud
 					{
 						struct PornResult
 						{
+							struct PornText
+							{
+								std::string suggestion;
+								std::string score;
+								std::string text;
+							};
 							struct PornVideo
 							{
 								std::string suggestion;
@@ -54,12 +60,6 @@ namespace AlibabaCloud
 								std::string text;
 								std::string object;
 							};
-							struct PornText
-							{
-								std::string suggestion;
-								std::string score;
-								std::string text;
-							};
 							struct PornImage
 							{
 								std::string suggestion;
@@ -72,8 +72,8 @@ namespace AlibabaCloud
 								std::string suggestion;
 								std::string score;
 								std::string time;
-								std::string object;
 								std::string text;
+								std::string object;
 							};
 							std::vector<PornImage> pornImages;
 							std::vector<PornAudio> pornAudios;
@@ -81,111 +81,13 @@ namespace AlibabaCloud
 							std::vector<PornText> pornTexts;
 							std::vector<PornOcr> pornOcrs;
 						};
-						struct TerrorismResult
-						{
-							struct TerrorismVideo
-							{
-								std::string suggestion;
-								std::string score;
-								std::string time;
-								std::string object;
-							};
-							struct TerrorismAudio
-							{
-								std::string suggestion;
-								std::string score;
-								std::string endTime;
-								std::string startTime;
-								std::string text;
-								std::string object;
-							};
-							struct TerrorismText
-							{
-								std::string suggestion;
-								std::string score;
-								std::string text;
-							};
-							struct TerrorismImage
-							{
-								std::string suggestion;
-								std::string score;
-								std::string text;
-								std::string url;
-							};
-							struct TerrorismOcr
-							{
-								std::string suggestion;
-								std::string score;
-								std::string time;
-								std::string object;
-								std::string text;
-							};
-							std::vector<TerrorismAudio> terrorismAudios;
-							std::vector<TerrorismText> terrorismTexts;
-							std::vector<TerrorismImage> terrorismImages;
-							std::vector<TerrorismOcr> terrorismOcrs;
-							std::vector<TerrorismVideo> terrorismVideos;
-						};
-						struct PoliticsResult
-						{
-							struct PoliticsVideo
-							{
-								std::string suggestion;
-								std::string score;
-								std::string time;
-								std::string object;
-							};
-							struct PoliticsAudio
-							{
-								std::string suggestion;
-								std::string score;
-								std::string endTime;
-								std::string startTime;
-								std::string text;
-								std::string object;
-							};
-							struct PoliticsText
-							{
-								std::string suggestion;
-								std::string score;
-								std::string text;
-							};
-							struct PoliticsImage
-							{
-								std::string suggestion;
-								std::string score;
-								std::string text;
-								std::string url;
-							};
-							struct PoliticsOcr
-							{
-								std::string suggestion;
-								std::string score;
-								std::string time;
-								std::string object;
-								std::string text;
-							};
-							std::vector<PoliticsText> politicsTexts;
-							std::vector<PoliticsVideo> politicsVideos;
-							std::vector<PoliticsAudio> politicsAudios;
-							std::vector<PoliticsOcr> politicsOcrs;
-							std::vector<PoliticsImage> politicsImages;
-						};
 						struct AdResult
 						{
-							struct AdVideo
+							struct AdOcr
 							{
 								std::string suggestion;
 								std::string score;
 								std::string time;
-								std::string object;
-							};
-							struct AdAudio
-							{
-								std::string suggestion;
-								std::string score;
-								std::string endTime;
-								std::string startTime;
 								std::string text;
 								std::string object;
 							};
@@ -202,67 +104,30 @@ namespace AlibabaCloud
 								std::string text;
 								std::string url;
 							};
-							struct AdOcr
+							struct AdAudio
+							{
+								std::string suggestion;
+								std::string score;
+								std::string endTime;
+								std::string startTime;
+								std::string text;
+								std::string object;
+							};
+							struct AdVideo
 							{
 								std::string suggestion;
 								std::string score;
 								std::string time;
 								std::string object;
-								std::string text;
 							};
 							std::vector<AdImage> adImages;
 							std::vector<AdAudio> adAudios;
-							std::vector<AdVideo> adVideos;
 							std::vector<AdOcr> adOcrs;
+							std::vector<AdVideo> adVideos;
 							std::vector<AdText> adTexts;
-						};
-						struct QrcodeResult
-						{
-							struct QrcodeVideo
-							{
-								std::string suggestion;
-								std::string score;
-								std::string time;
-								std::string object;
-							};
-							struct QrcodeImage
-							{
-								std::string suggestion;
-								std::string score;
-								std::string text;
-								std::string url;
-							};
-							std::vector<QrcodeVideo> qrcodeVideos;
-							std::vector<QrcodeImage> qrcodeImages;
-						};
-						struct LiveResult
-						{
-							struct LiveVideo
-							{
-								std::string suggestion;
-								std::string score;
-								std::string time;
-								std::string object;
-							};
-							struct LiveImage
-							{
-								std::string suggestion;
-								std::string score;
-								std::string text;
-								std::string url;
-							};
-							std::vector<LiveVideo> liveVideos;
-							std::vector<LiveImage> liveImages;
 						};
 						struct LogoResult
 						{
-							struct LogoVideo
-							{
-								std::string suggestion;
-								std::string score;
-								std::string time;
-								std::string object;
-							};
 							struct LogoImage
 							{
 								std::string suggestion;
@@ -270,11 +135,109 @@ namespace AlibabaCloud
 								std::string text;
 								std::string url;
 							};
+							struct LogoVideo
+							{
+								std::string suggestion;
+								std::string score;
+								std::string time;
+								std::string object;
+							};
 							std::vector<LogoImage> logoImages;
 							std::vector<LogoVideo> logoVideos;
 						};
+						struct QrcodeResult
+						{
+							struct QrcodeImage
+							{
+								std::string suggestion;
+								std::string score;
+								std::string text;
+								std::string url;
+							};
+							struct QrcodeVideo
+							{
+								std::string suggestion;
+								std::string score;
+								std::string time;
+								std::string object;
+							};
+							std::vector<QrcodeVideo> qrcodeVideos;
+							std::vector<QrcodeImage> qrcodeImages;
+						};
+						struct PoliticsResult
+						{
+							struct PoliticsOcr
+							{
+								std::string suggestion;
+								std::string score;
+								std::string time;
+								std::string text;
+								std::string object;
+							};
+							struct PoliticsVideo
+							{
+								std::string suggestion;
+								std::string score;
+								std::string time;
+								std::string object;
+							};
+							struct PoliticsImage
+							{
+								std::string suggestion;
+								std::string score;
+								std::string text;
+								std::string url;
+							};
+							struct PoliticsText
+							{
+								std::string suggestion;
+								std::string score;
+								std::string text;
+							};
+							struct PoliticsAudio
+							{
+								std::string suggestion;
+								std::string score;
+								std::string endTime;
+								std::string startTime;
+								std::string text;
+								std::string object;
+							};
+							std::vector<PoliticsText> politicsTexts;
+							std::vector<PoliticsVideo> politicsVideos;
+							std::vector<PoliticsOcr> politicsOcrs;
+							std::vector<PoliticsAudio> politicsAudios;
+							std::vector<PoliticsImage> politicsImages;
+						};
+						struct LiveResult
+						{
+							struct LiveImage
+							{
+								std::string suggestion;
+								std::string score;
+								std::string text;
+								std::string url;
+							};
+							struct LiveVideo
+							{
+								std::string suggestion;
+								std::string score;
+								std::string time;
+								std::string object;
+							};
+							std::vector<LiveVideo> liveVideos;
+							std::vector<LiveImage> liveImages;
+						};
 						struct AbuseResult
 						{
+							struct AbuseOcr
+							{
+								std::string suggestion;
+								std::string score;
+								std::string time;
+								std::string text;
+								std::string object;
+							};
 							struct AbuseAudio
 							{
 								std::string suggestion;
@@ -290,17 +253,38 @@ namespace AlibabaCloud
 								std::string score;
 								std::string text;
 							};
-							struct AbuseOcr
+							std::vector<AbuseOcr> abuseOcrs;
+							std::vector<AbuseText> abuseTexts;
+							std::vector<AbuseAudio> abuseAudios;
+						};
+						struct SpamResult
+						{
+							struct SpamText
+							{
+								std::string suggestion;
+								std::string score;
+								std::string text;
+							};
+							struct SpamAudio
+							{
+								std::string suggestion;
+								std::string score;
+								std::string endTime;
+								std::string startTime;
+								std::string text;
+								std::string object;
+							};
+							struct SpamOcr
 							{
 								std::string suggestion;
 								std::string score;
 								std::string time;
-								std::string object;
 								std::string text;
+								std::string object;
 							};
-							std::vector<AbuseOcr> abuseOcrs;
-							std::vector<AbuseText> abuseTexts;
-							std::vector<AbuseAudio> abuseAudios;
+							std::vector<SpamText> spamTexts;
+							std::vector<SpamAudio> spamAudios;
+							std::vector<SpamOcr> spamOcrs;
 						};
 						struct ContrabandResult
 						{
@@ -313,27 +297,35 @@ namespace AlibabaCloud
 								std::string text;
 								std::string object;
 							};
+							struct ContrabandOcr
+							{
+								std::string suggestion;
+								std::string score;
+								std::string time;
+								std::string text;
+								std::string object;
+							};
 							struct ContrabandText
 							{
 								std::string suggestion;
 								std::string score;
 								std::string text;
 							};
-							struct ContrabandOcr
+							std::vector<ContrabandOcr> contrabandOcrs;
+							std::vector<ContrabandText> contrabandTexts;
+							std::vector<ContrabandAudio> contrabandAudios;
+						};
+						struct TerrorismResult
+						{
+							struct TerrorismOcr
 							{
 								std::string suggestion;
 								std::string score;
 								std::string time;
-								std::string object;
 								std::string text;
+								std::string object;
 							};
-							std::vector<ContrabandText> contrabandTexts;
-							std::vector<ContrabandOcr> contrabandOcrs;
-							std::vector<ContrabandAudio> contrabandAudios;
-						};
-						struct SpamResult
-						{
-							struct SpamAudio
+							struct TerrorismAudio
 							{
 								std::string suggestion;
 								std::string score;
@@ -342,23 +334,31 @@ namespace AlibabaCloud
 								std::string text;
 								std::string object;
 							};
-							struct SpamText
-							{
-								std::string suggestion;
-								std::string score;
-								std::string text;
-							};
-							struct SpamOcr
+							struct TerrorismVideo
 							{
 								std::string suggestion;
 								std::string score;
 								std::string time;
 								std::string object;
+							};
+							struct TerrorismText
+							{
+								std::string suggestion;
+								std::string score;
 								std::string text;
 							};
-							std::vector<SpamAudio> spamAudios;
-							std::vector<SpamText> spamTexts;
-							std::vector<SpamOcr> spamOcrs;
+							struct TerrorismImage
+							{
+								std::string suggestion;
+								std::string score;
+								std::string text;
+								std::string url;
+							};
+							std::vector<TerrorismAudio> terrorismAudios;
+							std::vector<TerrorismText> terrorismTexts;
+							std::vector<TerrorismImage> terrorismImages;
+							std::vector<TerrorismOcr> terrorismOcrs;
+							std::vector<TerrorismVideo> terrorismVideos;
 						};
 						LogoResult logoResult;
 						std::string suggestion;
@@ -366,15 +366,15 @@ namespace AlibabaCloud
 						PoliticsResult politicsResult;
 						QrcodeResult qrcodeResult;
 						AbuseResult abuseResult;
-						TerrorismResult terrorismResult;
 						LiveResult liveResult;
+						TerrorismResult terrorismResult;
 						SpamResult spamResult;
 						PornResult pornResult;
 						AdResult adResult;
 						ContrabandResult contrabandResult;
 					};
-					std::string message;
 					std::string resultOutputFile;
+					std::string message;
 					std::string userData;
 					std::string state;
 					std::string creationTime;

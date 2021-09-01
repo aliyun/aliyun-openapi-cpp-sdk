@@ -54,13 +54,13 @@ namespace AlibabaCloud
 							std::string object;
 							std::string location;
 						};
-						struct QueryMediaFrames
+						struct MatchedFramesDescFile
 						{
 							std::string bucket;
 							std::string object;
 							std::string location;
 						};
-						struct MatchedFramesDescFile
+						struct QueryMediaFrames
 						{
 							std::string bucket;
 							std::string object;
@@ -72,28 +72,28 @@ namespace AlibabaCloud
 					};
 					struct FpCompareResult
 					{
-						struct MasterMediaInfo
-						{
-							std::string audioBitRate;
-							std::string audioSampleRate;
-							std::string fpNum;
-							std::string totalVideoFrame;
-							std::string audioChannels;
-							std::string fps;
-							std::string duration;
-							std::string height;
-							std::string width;
-						};
 						struct QueryMediaInfo
 						{
-							std::string audioBitRate;
 							std::string audioSampleRate;
+							std::string audioBitRate;
 							std::string fpNum;
 							std::string totalVideoFrame;
 							std::string audioChannels;
 							std::string fps;
-							std::string duration;
 							std::string height;
+							std::string duration;
+							std::string width;
+						};
+						struct MasterMediaInfo
+						{
+							std::string audioSampleRate;
+							std::string audioBitRate;
+							std::string fpNum;
+							std::string totalVideoFrame;
+							std::string audioChannels;
+							std::string fps;
+							std::string height;
+							std::string duration;
 							std::string width;
 						};
 						struct MediaMatchSegment
@@ -105,8 +105,8 @@ namespace AlibabaCloud
 							std::string totalMatchFrameNum;
 							std::string queryStartFrame;
 							std::string queryEndTime;
-							std::string masterEndFrame;
 							std::string masterEndTime;
+							std::string masterEndFrame;
 							std::string queryStartTime;
 						};
 						MasterMediaInfo masterMediaInfo;

@@ -40,18 +40,18 @@ void CreateFpShotDBResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto fpShotDBNode = value["FpShotDB"];
-	if(!fpShotDBNode["FpDBId"].isNull())
-		fpShotDB_.fpDBId = fpShotDBNode["FpDBId"].asString();
-	if(!fpShotDBNode["Name"].isNull())
-		fpShotDB_.name = fpShotDBNode["Name"].asString();
-	if(!fpShotDBNode["ModelId"].isNull())
-		fpShotDB_.modelId = std::stoi(fpShotDBNode["ModelId"].asString());
-	if(!fpShotDBNode["State"].isNull())
-		fpShotDB_.state = fpShotDBNode["State"].asString();
-	if(!fpShotDBNode["Config"].isNull())
-		fpShotDB_.config = fpShotDBNode["Config"].asString();
 	if(!fpShotDBNode["Description"].isNull())
 		fpShotDB_.description = fpShotDBNode["Description"].asString();
+	if(!fpShotDBNode["State"].isNull())
+		fpShotDB_.state = fpShotDBNode["State"].asString();
+	if(!fpShotDBNode["Name"].isNull())
+		fpShotDB_.name = fpShotDBNode["Name"].asString();
+	if(!fpShotDBNode["FpDBId"].isNull())
+		fpShotDB_.fpDBId = fpShotDBNode["FpDBId"].asString();
+	if(!fpShotDBNode["ModelId"].isNull())
+		fpShotDB_.modelId = std::stoi(fpShotDBNode["ModelId"].asString());
+	if(!fpShotDBNode["Config"].isNull())
+		fpShotDB_.config = fpShotDBNode["Config"].asString();
 
 }
 

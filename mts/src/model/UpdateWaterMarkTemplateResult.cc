@@ -40,38 +40,38 @@ void UpdateWaterMarkTemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto waterMarkTemplateNode = value["WaterMarkTemplate"];
-	if(!waterMarkTemplateNode["Id"].isNull())
-		waterMarkTemplate_.id = waterMarkTemplateNode["Id"].asString();
-	if(!waterMarkTemplateNode["Name"].isNull())
-		waterMarkTemplate_.name = waterMarkTemplateNode["Name"].asString();
+	if(!waterMarkTemplateNode["Type"].isNull())
+		waterMarkTemplate_.type = waterMarkTemplateNode["Type"].asString();
+	if(!waterMarkTemplateNode["ReferPos"].isNull())
+		waterMarkTemplate_.referPos = waterMarkTemplateNode["ReferPos"].asString();
+	if(!waterMarkTemplateNode["State"].isNull())
+		waterMarkTemplate_.state = waterMarkTemplateNode["State"].asString();
+	if(!waterMarkTemplateNode["Dx"].isNull())
+		waterMarkTemplate_.dx = waterMarkTemplateNode["Dx"].asString();
 	if(!waterMarkTemplateNode["Width"].isNull())
 		waterMarkTemplate_.width = waterMarkTemplateNode["Width"].asString();
 	if(!waterMarkTemplateNode["Height"].isNull())
 		waterMarkTemplate_.height = waterMarkTemplateNode["Height"].asString();
-	if(!waterMarkTemplateNode["Dx"].isNull())
-		waterMarkTemplate_.dx = waterMarkTemplateNode["Dx"].asString();
+	if(!waterMarkTemplateNode["Name"].isNull())
+		waterMarkTemplate_.name = waterMarkTemplateNode["Name"].asString();
 	if(!waterMarkTemplateNode["Dy"].isNull())
 		waterMarkTemplate_.dy = waterMarkTemplateNode["Dy"].asString();
-	if(!waterMarkTemplateNode["ReferPos"].isNull())
-		waterMarkTemplate_.referPos = waterMarkTemplateNode["ReferPos"].asString();
-	if(!waterMarkTemplateNode["Type"].isNull())
-		waterMarkTemplate_.type = waterMarkTemplateNode["Type"].asString();
-	if(!waterMarkTemplateNode["State"].isNull())
-		waterMarkTemplate_.state = waterMarkTemplateNode["State"].asString();
+	if(!waterMarkTemplateNode["Id"].isNull())
+		waterMarkTemplate_.id = waterMarkTemplateNode["Id"].asString();
+	auto ratioReferNode = waterMarkTemplateNode["RatioRefer"];
+	if(!ratioReferNode["Dx"].isNull())
+		waterMarkTemplate_.ratioRefer.dx = ratioReferNode["Dx"].asString();
+	if(!ratioReferNode["Width"].isNull())
+		waterMarkTemplate_.ratioRefer.width = ratioReferNode["Width"].asString();
+	if(!ratioReferNode["Height"].isNull())
+		waterMarkTemplate_.ratioRefer.height = ratioReferNode["Height"].asString();
+	if(!ratioReferNode["Dy"].isNull())
+		waterMarkTemplate_.ratioRefer.dy = ratioReferNode["Dy"].asString();
 	auto timelineNode = waterMarkTemplateNode["Timeline"];
 	if(!timelineNode["Start"].isNull())
 		waterMarkTemplate_.timeline.start = timelineNode["Start"].asString();
 	if(!timelineNode["Duration"].isNull())
 		waterMarkTemplate_.timeline.duration = timelineNode["Duration"].asString();
-	auto ratioReferNode = waterMarkTemplateNode["RatioRefer"];
-	if(!ratioReferNode["Dx"].isNull())
-		waterMarkTemplate_.ratioRefer.dx = ratioReferNode["Dx"].asString();
-	if(!ratioReferNode["Dy"].isNull())
-		waterMarkTemplate_.ratioRefer.dy = ratioReferNode["Dy"].asString();
-	if(!ratioReferNode["Width"].isNull())
-		waterMarkTemplate_.ratioRefer.width = ratioReferNode["Width"].asString();
-	if(!ratioReferNode["Height"].isNull())
-		waterMarkTemplate_.ratioRefer.height = ratioReferNode["Height"].asString();
 
 }
 

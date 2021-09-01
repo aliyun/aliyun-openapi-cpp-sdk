@@ -43,20 +43,20 @@ void ListFpShotNotaryResult::parse(const std::string &payload)
 	for (auto valueFpShotNotaryListFpShotNotary : allFpShotNotaryListNode)
 	{
 		FpShotNotary fpShotNotaryListObject;
-		if(!valueFpShotNotaryListFpShotNotary["TransactionId"].isNull())
-			fpShotNotaryListObject.transactionId = valueFpShotNotaryListFpShotNotary["TransactionId"].asString();
-		if(!valueFpShotNotaryListFpShotNotary["TxHash"].isNull())
-			fpShotNotaryListObject.txHash = valueFpShotNotaryListFpShotNotary["TxHash"].asString();
-		if(!valueFpShotNotaryListFpShotNotary["FpDBId"].isNull())
-			fpShotNotaryListObject.fpDBId = valueFpShotNotaryListFpShotNotary["FpDBId"].asString();
-		if(!valueFpShotNotaryListFpShotNotary["JobId"].isNull())
-			fpShotNotaryListObject.jobId = valueFpShotNotaryListFpShotNotary["JobId"].asString();
-		if(!valueFpShotNotaryListFpShotNotary["Detail"].isNull())
-			fpShotNotaryListObject.detail = valueFpShotNotaryListFpShotNotary["Detail"].asString();
 		if(!valueFpShotNotaryListFpShotNotary["CreationTime"].isNull())
 			fpShotNotaryListObject.creationTime = valueFpShotNotaryListFpShotNotary["CreationTime"].asString();
 		if(!valueFpShotNotaryListFpShotNotary["FinishTime"].isNull())
 			fpShotNotaryListObject.finishTime = valueFpShotNotaryListFpShotNotary["FinishTime"].asString();
+		if(!valueFpShotNotaryListFpShotNotary["JobId"].isNull())
+			fpShotNotaryListObject.jobId = valueFpShotNotaryListFpShotNotary["JobId"].asString();
+		if(!valueFpShotNotaryListFpShotNotary["TxHash"].isNull())
+			fpShotNotaryListObject.txHash = valueFpShotNotaryListFpShotNotary["TxHash"].asString();
+		if(!valueFpShotNotaryListFpShotNotary["TransactionId"].isNull())
+			fpShotNotaryListObject.transactionId = valueFpShotNotaryListFpShotNotary["TransactionId"].asString();
+		if(!valueFpShotNotaryListFpShotNotary["FpDBId"].isNull())
+			fpShotNotaryListObject.fpDBId = valueFpShotNotaryListFpShotNotary["FpDBId"].asString();
+		if(!valueFpShotNotaryListFpShotNotary["Detail"].isNull())
+			fpShotNotaryListObject.detail = valueFpShotNotaryListFpShotNotary["Detail"].asString();
 		fpShotNotaryList_.push_back(fpShotNotaryListObject);
 	}
 	if(!value["NextPageToken"].isNull())

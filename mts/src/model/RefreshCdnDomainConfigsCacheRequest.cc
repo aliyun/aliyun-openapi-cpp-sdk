@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Mts::Model::RefreshCdnDomainConfigsCacheRequest;
 
-RefreshCdnDomainConfigsCacheRequest::RefreshCdnDomainConfigsCacheRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "RefreshCdnDomainConfigsCache")
-{
-	setMethod(HttpRequest::Method::Post);
+RefreshCdnDomainConfigsCacheRequest::RefreshCdnDomainConfigsCacheRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "RefreshCdnDomainConfigsCache") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RefreshCdnDomainConfigsCacheRequest::~RefreshCdnDomainConfigsCacheRequest()
-{}
+RefreshCdnDomainConfigsCacheRequest::~RefreshCdnDomainConfigsCacheRequest() {}
 
-std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void RefreshCdnDomainConfigsCacheRequest::setResourceOwnerId(const std::string& resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+void RefreshCdnDomainConfigsCacheRequest::setResourceOwnerId(const std::string &resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
 }
 
-std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void RefreshCdnDomainConfigsCacheRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void RefreshCdnDomainConfigsCacheRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string RefreshCdnDomainConfigsCacheRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string RefreshCdnDomainConfigsCacheRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void RefreshCdnDomainConfigsCacheRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void RefreshCdnDomainConfigsCacheRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string RefreshCdnDomainConfigsCacheRequest::getDomains()const
-{
-	return domains_;
+std::string RefreshCdnDomainConfigsCacheRequest::getDomains() const {
+  return domains_;
 }
 
-void RefreshCdnDomainConfigsCacheRequest::setDomains(const std::string& domains)
-{
-	domains_ = domains;
-	setParameter("Domains", domains);
+void RefreshCdnDomainConfigsCacheRequest::setDomains(const std::string &domains) {
+  domains_ = domains;
+  setParameter(std::string("Domains"), domains);
 }
 
-std::string RefreshCdnDomainConfigsCacheRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string RefreshCdnDomainConfigsCacheRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void RefreshCdnDomainConfigsCacheRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void RefreshCdnDomainConfigsCacheRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string RefreshCdnDomainConfigsCacheRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string RefreshCdnDomainConfigsCacheRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void RefreshCdnDomainConfigsCacheRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void RefreshCdnDomainConfigsCacheRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

@@ -43,60 +43,28 @@ void QueryMCJobListResult::parse(const std::string &payload)
 	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!valueJobListJob["JobId"].isNull())
-			jobListObject.jobId = valueJobListJob["JobId"].asString();
-		if(!valueJobListJob["UserData"].isNull())
-			jobListObject.userData = valueJobListJob["UserData"].asString();
-		if(!valueJobListJob["PipelineId"].isNull())
-			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
-		if(!valueJobListJob["State"].isNull())
-			jobListObject.state = valueJobListJob["State"].asString();
-		if(!valueJobListJob["Code"].isNull())
-			jobListObject.code = valueJobListJob["Code"].asString();
-		if(!valueJobListJob["Message"].isNull())
-			jobListObject.message = valueJobListJob["Message"].asString();
 		if(!valueJobListJob["CreationTime"].isNull())
 			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
 		if(!valueJobListJob["ResultOutputFile"].isNull())
 			jobListObject.resultOutputFile = valueJobListJob["ResultOutputFile"].asString();
+		if(!valueJobListJob["State"].isNull())
+			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["JobId"].isNull())
+			jobListObject.jobId = valueJobListJob["JobId"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
+		if(!valueJobListJob["Code"].isNull())
+			jobListObject.code = valueJobListJob["Code"].asString();
+		if(!valueJobListJob["Message"].isNull())
+			jobListObject.message = valueJobListJob["Message"].asString();
+		if(!valueJobListJob["PipelineId"].isNull())
+			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
 		auto resultNode = value["Result"];
 		if(!resultNode["Suggestion"].isNull())
 			jobListObject.result.suggestion = resultNode["Suggestion"].asString();
 		if(!resultNode["Score"].isNull())
 			jobListObject.result.score = resultNode["Score"].asString();
 		auto pornResultNode = resultNode["PornResult"];
-		auto allPornVideosNode = pornResultNode["PornVideos"]["PornVideo"];
-		for (auto pornResultNodePornVideosPornVideo : allPornVideosNode)
-		{
-			Job::Result::PornResult::PornVideo pornVideoObject;
-			if(!pornResultNodePornVideosPornVideo["Suggestion"].isNull())
-				pornVideoObject.suggestion = pornResultNodePornVideosPornVideo["Suggestion"].asString();
-			if(!pornResultNodePornVideosPornVideo["Score"].isNull())
-				pornVideoObject.score = pornResultNodePornVideosPornVideo["Score"].asString();
-			if(!pornResultNodePornVideosPornVideo["Time"].isNull())
-				pornVideoObject.time = pornResultNodePornVideosPornVideo["Time"].asString();
-			if(!pornResultNodePornVideosPornVideo["Object"].isNull())
-				pornVideoObject.object = pornResultNodePornVideosPornVideo["Object"].asString();
-			jobListObject.result.pornResult.pornVideos.push_back(pornVideoObject);
-		}
-		auto allPornAudiosNode = pornResultNode["PornAudios"]["PornAudio"];
-		for (auto pornResultNodePornAudiosPornAudio : allPornAudiosNode)
-		{
-			Job::Result::PornResult::PornAudio pornAudioObject;
-			if(!pornResultNodePornAudiosPornAudio["Suggestion"].isNull())
-				pornAudioObject.suggestion = pornResultNodePornAudiosPornAudio["Suggestion"].asString();
-			if(!pornResultNodePornAudiosPornAudio["Score"].isNull())
-				pornAudioObject.score = pornResultNodePornAudiosPornAudio["Score"].asString();
-			if(!pornResultNodePornAudiosPornAudio["StartTime"].isNull())
-				pornAudioObject.startTime = pornResultNodePornAudiosPornAudio["StartTime"].asString();
-			if(!pornResultNodePornAudiosPornAudio["EndTime"].isNull())
-				pornAudioObject.endTime = pornResultNodePornAudiosPornAudio["EndTime"].asString();
-			if(!pornResultNodePornAudiosPornAudio["Text"].isNull())
-				pornAudioObject.text = pornResultNodePornAudiosPornAudio["Text"].asString();
-			if(!pornResultNodePornAudiosPornAudio["Object"].isNull())
-				pornAudioObject.object = pornResultNodePornAudiosPornAudio["Object"].asString();
-			jobListObject.result.pornResult.pornAudios.push_back(pornAudioObject);
-		}
 		auto allPornTextsNode = pornResultNode["PornTexts"]["PornText"];
 		for (auto pornResultNodePornTextsPornText : allPornTextsNode)
 		{
@@ -108,6 +76,38 @@ void QueryMCJobListResult::parse(const std::string &payload)
 			if(!pornResultNodePornTextsPornText["Text"].isNull())
 				pornTextObject.text = pornResultNodePornTextsPornText["Text"].asString();
 			jobListObject.result.pornResult.pornTexts.push_back(pornTextObject);
+		}
+		auto allPornVideosNode = pornResultNode["PornVideos"]["PornVideo"];
+		for (auto pornResultNodePornVideosPornVideo : allPornVideosNode)
+		{
+			Job::Result::PornResult::PornVideo pornVideoObject;
+			if(!pornResultNodePornVideosPornVideo["Time"].isNull())
+				pornVideoObject.time = pornResultNodePornVideosPornVideo["Time"].asString();
+			if(!pornResultNodePornVideosPornVideo["Suggestion"].isNull())
+				pornVideoObject.suggestion = pornResultNodePornVideosPornVideo["Suggestion"].asString();
+			if(!pornResultNodePornVideosPornVideo["Score"].isNull())
+				pornVideoObject.score = pornResultNodePornVideosPornVideo["Score"].asString();
+			if(!pornResultNodePornVideosPornVideo["Object"].isNull())
+				pornVideoObject.object = pornResultNodePornVideosPornVideo["Object"].asString();
+			jobListObject.result.pornResult.pornVideos.push_back(pornVideoObject);
+		}
+		auto allPornAudiosNode = pornResultNode["PornAudios"]["PornAudio"];
+		for (auto pornResultNodePornAudiosPornAudio : allPornAudiosNode)
+		{
+			Job::Result::PornResult::PornAudio pornAudioObject;
+			if(!pornResultNodePornAudiosPornAudio["EndTime"].isNull())
+				pornAudioObject.endTime = pornResultNodePornAudiosPornAudio["EndTime"].asString();
+			if(!pornResultNodePornAudiosPornAudio["StartTime"].isNull())
+				pornAudioObject.startTime = pornResultNodePornAudiosPornAudio["StartTime"].asString();
+			if(!pornResultNodePornAudiosPornAudio["Suggestion"].isNull())
+				pornAudioObject.suggestion = pornResultNodePornAudiosPornAudio["Suggestion"].asString();
+			if(!pornResultNodePornAudiosPornAudio["Score"].isNull())
+				pornAudioObject.score = pornResultNodePornAudiosPornAudio["Score"].asString();
+			if(!pornResultNodePornAudiosPornAudio["Text"].isNull())
+				pornAudioObject.text = pornResultNodePornAudiosPornAudio["Text"].asString();
+			if(!pornResultNodePornAudiosPornAudio["Object"].isNull())
+				pornAudioObject.object = pornResultNodePornAudiosPornAudio["Object"].asString();
+			jobListObject.result.pornResult.pornAudios.push_back(pornAudioObject);
 		}
 		auto allPornImagesNode = pornResultNode["PornImages"]["PornImage"];
 		for (auto pornResultNodePornImagesPornImage : allPornImagesNode)
@@ -127,200 +127,34 @@ void QueryMCJobListResult::parse(const std::string &payload)
 		for (auto pornResultNodePornOcrsPornOcr : allPornOcrsNode)
 		{
 			Job::Result::PornResult::PornOcr pornOcrObject;
+			if(!pornResultNodePornOcrsPornOcr["Time"].isNull())
+				pornOcrObject.time = pornResultNodePornOcrsPornOcr["Time"].asString();
 			if(!pornResultNodePornOcrsPornOcr["Suggestion"].isNull())
 				pornOcrObject.suggestion = pornResultNodePornOcrsPornOcr["Suggestion"].asString();
 			if(!pornResultNodePornOcrsPornOcr["Score"].isNull())
 				pornOcrObject.score = pornResultNodePornOcrsPornOcr["Score"].asString();
-			if(!pornResultNodePornOcrsPornOcr["Time"].isNull())
-				pornOcrObject.time = pornResultNodePornOcrsPornOcr["Time"].asString();
-			if(!pornResultNodePornOcrsPornOcr["Object"].isNull())
-				pornOcrObject.object = pornResultNodePornOcrsPornOcr["Object"].asString();
 			if(!pornResultNodePornOcrsPornOcr["Text"].isNull())
 				pornOcrObject.text = pornResultNodePornOcrsPornOcr["Text"].asString();
+			if(!pornResultNodePornOcrsPornOcr["Object"].isNull())
+				pornOcrObject.object = pornResultNodePornOcrsPornOcr["Object"].asString();
 			jobListObject.result.pornResult.pornOcrs.push_back(pornOcrObject);
 		}
-		auto terrorismResultNode = resultNode["TerrorismResult"];
-		auto allTerrorismVideosNode = terrorismResultNode["TerrorismVideos"]["TerrorismVideo"];
-		for (auto terrorismResultNodeTerrorismVideosTerrorismVideo : allTerrorismVideosNode)
-		{
-			Job::Result::TerrorismResult::TerrorismVideo terrorismVideoObject;
-			if(!terrorismResultNodeTerrorismVideosTerrorismVideo["Suggestion"].isNull())
-				terrorismVideoObject.suggestion = terrorismResultNodeTerrorismVideosTerrorismVideo["Suggestion"].asString();
-			if(!terrorismResultNodeTerrorismVideosTerrorismVideo["Score"].isNull())
-				terrorismVideoObject.score = terrorismResultNodeTerrorismVideosTerrorismVideo["Score"].asString();
-			if(!terrorismResultNodeTerrorismVideosTerrorismVideo["Time"].isNull())
-				terrorismVideoObject.time = terrorismResultNodeTerrorismVideosTerrorismVideo["Time"].asString();
-			if(!terrorismResultNodeTerrorismVideosTerrorismVideo["Object"].isNull())
-				terrorismVideoObject.object = terrorismResultNodeTerrorismVideosTerrorismVideo["Object"].asString();
-			jobListObject.result.terrorismResult.terrorismVideos.push_back(terrorismVideoObject);
-		}
-		auto allTerrorismAudiosNode = terrorismResultNode["TerrorismAudios"]["TerrorismAudio"];
-		for (auto terrorismResultNodeTerrorismAudiosTerrorismAudio : allTerrorismAudiosNode)
-		{
-			Job::Result::TerrorismResult::TerrorismAudio terrorismAudioObject;
-			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["Suggestion"].isNull())
-				terrorismAudioObject.suggestion = terrorismResultNodeTerrorismAudiosTerrorismAudio["Suggestion"].asString();
-			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["Score"].isNull())
-				terrorismAudioObject.score = terrorismResultNodeTerrorismAudiosTerrorismAudio["Score"].asString();
-			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["StartTime"].isNull())
-				terrorismAudioObject.startTime = terrorismResultNodeTerrorismAudiosTerrorismAudio["StartTime"].asString();
-			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["EndTime"].isNull())
-				terrorismAudioObject.endTime = terrorismResultNodeTerrorismAudiosTerrorismAudio["EndTime"].asString();
-			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["Text"].isNull())
-				terrorismAudioObject.text = terrorismResultNodeTerrorismAudiosTerrorismAudio["Text"].asString();
-			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["Object"].isNull())
-				terrorismAudioObject.object = terrorismResultNodeTerrorismAudiosTerrorismAudio["Object"].asString();
-			jobListObject.result.terrorismResult.terrorismAudios.push_back(terrorismAudioObject);
-		}
-		auto allTerrorismTextsNode = terrorismResultNode["TerrorismTexts"]["TerrorismText"];
-		for (auto terrorismResultNodeTerrorismTextsTerrorismText : allTerrorismTextsNode)
-		{
-			Job::Result::TerrorismResult::TerrorismText terrorismTextObject;
-			if(!terrorismResultNodeTerrorismTextsTerrorismText["Suggestion"].isNull())
-				terrorismTextObject.suggestion = terrorismResultNodeTerrorismTextsTerrorismText["Suggestion"].asString();
-			if(!terrorismResultNodeTerrorismTextsTerrorismText["Score"].isNull())
-				terrorismTextObject.score = terrorismResultNodeTerrorismTextsTerrorismText["Score"].asString();
-			if(!terrorismResultNodeTerrorismTextsTerrorismText["Text"].isNull())
-				terrorismTextObject.text = terrorismResultNodeTerrorismTextsTerrorismText["Text"].asString();
-			jobListObject.result.terrorismResult.terrorismTexts.push_back(terrorismTextObject);
-		}
-		auto allTerrorismImagesNode = terrorismResultNode["TerrorismImages"]["TerrorismImage"];
-		for (auto terrorismResultNodeTerrorismImagesTerrorismImage : allTerrorismImagesNode)
-		{
-			Job::Result::TerrorismResult::TerrorismImage terrorismImageObject;
-			if(!terrorismResultNodeTerrorismImagesTerrorismImage["Suggestion"].isNull())
-				terrorismImageObject.suggestion = terrorismResultNodeTerrorismImagesTerrorismImage["Suggestion"].asString();
-			if(!terrorismResultNodeTerrorismImagesTerrorismImage["Score"].isNull())
-				terrorismImageObject.score = terrorismResultNodeTerrorismImagesTerrorismImage["Score"].asString();
-			if(!terrorismResultNodeTerrorismImagesTerrorismImage["Url"].isNull())
-				terrorismImageObject.url = terrorismResultNodeTerrorismImagesTerrorismImage["Url"].asString();
-			if(!terrorismResultNodeTerrorismImagesTerrorismImage["Text"].isNull())
-				terrorismImageObject.text = terrorismResultNodeTerrorismImagesTerrorismImage["Text"].asString();
-			jobListObject.result.terrorismResult.terrorismImages.push_back(terrorismImageObject);
-		}
-		auto allTerrorismOcrsNode = terrorismResultNode["TerrorismOcrs"]["TerrorismOcr"];
-		for (auto terrorismResultNodeTerrorismOcrsTerrorismOcr : allTerrorismOcrsNode)
-		{
-			Job::Result::TerrorismResult::TerrorismOcr terrorismOcrObject;
-			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Suggestion"].isNull())
-				terrorismOcrObject.suggestion = terrorismResultNodeTerrorismOcrsTerrorismOcr["Suggestion"].asString();
-			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Score"].isNull())
-				terrorismOcrObject.score = terrorismResultNodeTerrorismOcrsTerrorismOcr["Score"].asString();
-			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Time"].isNull())
-				terrorismOcrObject.time = terrorismResultNodeTerrorismOcrsTerrorismOcr["Time"].asString();
-			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Object"].isNull())
-				terrorismOcrObject.object = terrorismResultNodeTerrorismOcrsTerrorismOcr["Object"].asString();
-			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Text"].isNull())
-				terrorismOcrObject.text = terrorismResultNodeTerrorismOcrsTerrorismOcr["Text"].asString();
-			jobListObject.result.terrorismResult.terrorismOcrs.push_back(terrorismOcrObject);
-		}
-		auto politicsResultNode = resultNode["PoliticsResult"];
-		auto allPoliticsVideosNode = politicsResultNode["PoliticsVideos"]["PoliticsVideo"];
-		for (auto politicsResultNodePoliticsVideosPoliticsVideo : allPoliticsVideosNode)
-		{
-			Job::Result::PoliticsResult::PoliticsVideo politicsVideoObject;
-			if(!politicsResultNodePoliticsVideosPoliticsVideo["Suggestion"].isNull())
-				politicsVideoObject.suggestion = politicsResultNodePoliticsVideosPoliticsVideo["Suggestion"].asString();
-			if(!politicsResultNodePoliticsVideosPoliticsVideo["Score"].isNull())
-				politicsVideoObject.score = politicsResultNodePoliticsVideosPoliticsVideo["Score"].asString();
-			if(!politicsResultNodePoliticsVideosPoliticsVideo["Time"].isNull())
-				politicsVideoObject.time = politicsResultNodePoliticsVideosPoliticsVideo["Time"].asString();
-			if(!politicsResultNodePoliticsVideosPoliticsVideo["Object"].isNull())
-				politicsVideoObject.object = politicsResultNodePoliticsVideosPoliticsVideo["Object"].asString();
-			jobListObject.result.politicsResult.politicsVideos.push_back(politicsVideoObject);
-		}
-		auto allPoliticsAudiosNode = politicsResultNode["PoliticsAudios"]["PoliticsAudio"];
-		for (auto politicsResultNodePoliticsAudiosPoliticsAudio : allPoliticsAudiosNode)
-		{
-			Job::Result::PoliticsResult::PoliticsAudio politicsAudioObject;
-			if(!politicsResultNodePoliticsAudiosPoliticsAudio["Suggestion"].isNull())
-				politicsAudioObject.suggestion = politicsResultNodePoliticsAudiosPoliticsAudio["Suggestion"].asString();
-			if(!politicsResultNodePoliticsAudiosPoliticsAudio["Score"].isNull())
-				politicsAudioObject.score = politicsResultNodePoliticsAudiosPoliticsAudio["Score"].asString();
-			if(!politicsResultNodePoliticsAudiosPoliticsAudio["StartTime"].isNull())
-				politicsAudioObject.startTime = politicsResultNodePoliticsAudiosPoliticsAudio["StartTime"].asString();
-			if(!politicsResultNodePoliticsAudiosPoliticsAudio["EndTime"].isNull())
-				politicsAudioObject.endTime = politicsResultNodePoliticsAudiosPoliticsAudio["EndTime"].asString();
-			if(!politicsResultNodePoliticsAudiosPoliticsAudio["Text"].isNull())
-				politicsAudioObject.text = politicsResultNodePoliticsAudiosPoliticsAudio["Text"].asString();
-			if(!politicsResultNodePoliticsAudiosPoliticsAudio["Object"].isNull())
-				politicsAudioObject.object = politicsResultNodePoliticsAudiosPoliticsAudio["Object"].asString();
-			jobListObject.result.politicsResult.politicsAudios.push_back(politicsAudioObject);
-		}
-		auto allPoliticsTextsNode = politicsResultNode["PoliticsTexts"]["PoliticsText"];
-		for (auto politicsResultNodePoliticsTextsPoliticsText : allPoliticsTextsNode)
-		{
-			Job::Result::PoliticsResult::PoliticsText politicsTextObject;
-			if(!politicsResultNodePoliticsTextsPoliticsText["Suggestion"].isNull())
-				politicsTextObject.suggestion = politicsResultNodePoliticsTextsPoliticsText["Suggestion"].asString();
-			if(!politicsResultNodePoliticsTextsPoliticsText["Score"].isNull())
-				politicsTextObject.score = politicsResultNodePoliticsTextsPoliticsText["Score"].asString();
-			if(!politicsResultNodePoliticsTextsPoliticsText["Text"].isNull())
-				politicsTextObject.text = politicsResultNodePoliticsTextsPoliticsText["Text"].asString();
-			jobListObject.result.politicsResult.politicsTexts.push_back(politicsTextObject);
-		}
-		auto allPoliticsImagesNode = politicsResultNode["PoliticsImages"]["PoliticsImage"];
-		for (auto politicsResultNodePoliticsImagesPoliticsImage : allPoliticsImagesNode)
-		{
-			Job::Result::PoliticsResult::PoliticsImage politicsImageObject;
-			if(!politicsResultNodePoliticsImagesPoliticsImage["Suggestion"].isNull())
-				politicsImageObject.suggestion = politicsResultNodePoliticsImagesPoliticsImage["Suggestion"].asString();
-			if(!politicsResultNodePoliticsImagesPoliticsImage["Score"].isNull())
-				politicsImageObject.score = politicsResultNodePoliticsImagesPoliticsImage["Score"].asString();
-			if(!politicsResultNodePoliticsImagesPoliticsImage["Url"].isNull())
-				politicsImageObject.url = politicsResultNodePoliticsImagesPoliticsImage["Url"].asString();
-			if(!politicsResultNodePoliticsImagesPoliticsImage["Text"].isNull())
-				politicsImageObject.text = politicsResultNodePoliticsImagesPoliticsImage["Text"].asString();
-			jobListObject.result.politicsResult.politicsImages.push_back(politicsImageObject);
-		}
-		auto allPoliticsOcrsNode = politicsResultNode["PoliticsOcrs"]["PoliticsOcr"];
-		for (auto politicsResultNodePoliticsOcrsPoliticsOcr : allPoliticsOcrsNode)
-		{
-			Job::Result::PoliticsResult::PoliticsOcr politicsOcrObject;
-			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Suggestion"].isNull())
-				politicsOcrObject.suggestion = politicsResultNodePoliticsOcrsPoliticsOcr["Suggestion"].asString();
-			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Score"].isNull())
-				politicsOcrObject.score = politicsResultNodePoliticsOcrsPoliticsOcr["Score"].asString();
-			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Time"].isNull())
-				politicsOcrObject.time = politicsResultNodePoliticsOcrsPoliticsOcr["Time"].asString();
-			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Object"].isNull())
-				politicsOcrObject.object = politicsResultNodePoliticsOcrsPoliticsOcr["Object"].asString();
-			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Text"].isNull())
-				politicsOcrObject.text = politicsResultNodePoliticsOcrsPoliticsOcr["Text"].asString();
-			jobListObject.result.politicsResult.politicsOcrs.push_back(politicsOcrObject);
-		}
 		auto adResultNode = resultNode["AdResult"];
-		auto allAdVideosNode = adResultNode["AdVideos"]["AdVideo"];
-		for (auto adResultNodeAdVideosAdVideo : allAdVideosNode)
+		auto allAdOcrsNode = adResultNode["AdOcrs"]["AdOcr"];
+		for (auto adResultNodeAdOcrsAdOcr : allAdOcrsNode)
 		{
-			Job::Result::AdResult::AdVideo adVideoObject;
-			if(!adResultNodeAdVideosAdVideo["Suggestion"].isNull())
-				adVideoObject.suggestion = adResultNodeAdVideosAdVideo["Suggestion"].asString();
-			if(!adResultNodeAdVideosAdVideo["Score"].isNull())
-				adVideoObject.score = adResultNodeAdVideosAdVideo["Score"].asString();
-			if(!adResultNodeAdVideosAdVideo["Time"].isNull())
-				adVideoObject.time = adResultNodeAdVideosAdVideo["Time"].asString();
-			if(!adResultNodeAdVideosAdVideo["Object"].isNull())
-				adVideoObject.object = adResultNodeAdVideosAdVideo["Object"].asString();
-			jobListObject.result.adResult.adVideos.push_back(adVideoObject);
-		}
-		auto allAdAudiosNode = adResultNode["AdAudios"]["AdAudio"];
-		for (auto adResultNodeAdAudiosAdAudio : allAdAudiosNode)
-		{
-			Job::Result::AdResult::AdAudio adAudioObject;
-			if(!adResultNodeAdAudiosAdAudio["Suggestion"].isNull())
-				adAudioObject.suggestion = adResultNodeAdAudiosAdAudio["Suggestion"].asString();
-			if(!adResultNodeAdAudiosAdAudio["Score"].isNull())
-				adAudioObject.score = adResultNodeAdAudiosAdAudio["Score"].asString();
-			if(!adResultNodeAdAudiosAdAudio["StartTime"].isNull())
-				adAudioObject.startTime = adResultNodeAdAudiosAdAudio["StartTime"].asString();
-			if(!adResultNodeAdAudiosAdAudio["EndTime"].isNull())
-				adAudioObject.endTime = adResultNodeAdAudiosAdAudio["EndTime"].asString();
-			if(!adResultNodeAdAudiosAdAudio["Text"].isNull())
-				adAudioObject.text = adResultNodeAdAudiosAdAudio["Text"].asString();
-			if(!adResultNodeAdAudiosAdAudio["Object"].isNull())
-				adAudioObject.object = adResultNodeAdAudiosAdAudio["Object"].asString();
-			jobListObject.result.adResult.adAudios.push_back(adAudioObject);
+			Job::Result::AdResult::AdOcr adOcrObject;
+			if(!adResultNodeAdOcrsAdOcr["Time"].isNull())
+				adOcrObject.time = adResultNodeAdOcrsAdOcr["Time"].asString();
+			if(!adResultNodeAdOcrsAdOcr["Suggestion"].isNull())
+				adOcrObject.suggestion = adResultNodeAdOcrsAdOcr["Suggestion"].asString();
+			if(!adResultNodeAdOcrsAdOcr["Score"].isNull())
+				adOcrObject.score = adResultNodeAdOcrsAdOcr["Score"].asString();
+			if(!adResultNodeAdOcrsAdOcr["Text"].isNull())
+				adOcrObject.text = adResultNodeAdOcrsAdOcr["Text"].asString();
+			if(!adResultNodeAdOcrsAdOcr["Object"].isNull())
+				adOcrObject.object = adResultNodeAdOcrsAdOcr["Object"].asString();
+			jobListObject.result.adResult.adOcrs.push_back(adOcrObject);
 		}
 		auto allAdTextsNode = adResultNode["AdTexts"]["AdText"];
 		for (auto adResultNodeAdTextsAdText : allAdTextsNode)
@@ -348,95 +182,39 @@ void QueryMCJobListResult::parse(const std::string &payload)
 				adImageObject.text = adResultNodeAdImagesAdImage["Text"].asString();
 			jobListObject.result.adResult.adImages.push_back(adImageObject);
 		}
-		auto allAdOcrsNode = adResultNode["AdOcrs"]["AdOcr"];
-		for (auto adResultNodeAdOcrsAdOcr : allAdOcrsNode)
+		auto allAdAudiosNode = adResultNode["AdAudios"]["AdAudio"];
+		for (auto adResultNodeAdAudiosAdAudio : allAdAudiosNode)
 		{
-			Job::Result::AdResult::AdOcr adOcrObject;
-			if(!adResultNodeAdOcrsAdOcr["Suggestion"].isNull())
-				adOcrObject.suggestion = adResultNodeAdOcrsAdOcr["Suggestion"].asString();
-			if(!adResultNodeAdOcrsAdOcr["Score"].isNull())
-				adOcrObject.score = adResultNodeAdOcrsAdOcr["Score"].asString();
-			if(!adResultNodeAdOcrsAdOcr["Time"].isNull())
-				adOcrObject.time = adResultNodeAdOcrsAdOcr["Time"].asString();
-			if(!adResultNodeAdOcrsAdOcr["Object"].isNull())
-				adOcrObject.object = adResultNodeAdOcrsAdOcr["Object"].asString();
-			if(!adResultNodeAdOcrsAdOcr["Text"].isNull())
-				adOcrObject.text = adResultNodeAdOcrsAdOcr["Text"].asString();
-			jobListObject.result.adResult.adOcrs.push_back(adOcrObject);
+			Job::Result::AdResult::AdAudio adAudioObject;
+			if(!adResultNodeAdAudiosAdAudio["EndTime"].isNull())
+				adAudioObject.endTime = adResultNodeAdAudiosAdAudio["EndTime"].asString();
+			if(!adResultNodeAdAudiosAdAudio["StartTime"].isNull())
+				adAudioObject.startTime = adResultNodeAdAudiosAdAudio["StartTime"].asString();
+			if(!adResultNodeAdAudiosAdAudio["Suggestion"].isNull())
+				adAudioObject.suggestion = adResultNodeAdAudiosAdAudio["Suggestion"].asString();
+			if(!adResultNodeAdAudiosAdAudio["Score"].isNull())
+				adAudioObject.score = adResultNodeAdAudiosAdAudio["Score"].asString();
+			if(!adResultNodeAdAudiosAdAudio["Text"].isNull())
+				adAudioObject.text = adResultNodeAdAudiosAdAudio["Text"].asString();
+			if(!adResultNodeAdAudiosAdAudio["Object"].isNull())
+				adAudioObject.object = adResultNodeAdAudiosAdAudio["Object"].asString();
+			jobListObject.result.adResult.adAudios.push_back(adAudioObject);
 		}
-		auto qrcodeResultNode = resultNode["QrcodeResult"];
-		auto allQrcodeVideosNode = qrcodeResultNode["QrcodeVideos"]["QrcodeVideo"];
-		for (auto qrcodeResultNodeQrcodeVideosQrcodeVideo : allQrcodeVideosNode)
+		auto allAdVideosNode = adResultNode["AdVideos"]["AdVideo"];
+		for (auto adResultNodeAdVideosAdVideo : allAdVideosNode)
 		{
-			Job::Result::QrcodeResult::QrcodeVideo qrcodeVideoObject;
-			if(!qrcodeResultNodeQrcodeVideosQrcodeVideo["Suggestion"].isNull())
-				qrcodeVideoObject.suggestion = qrcodeResultNodeQrcodeVideosQrcodeVideo["Suggestion"].asString();
-			if(!qrcodeResultNodeQrcodeVideosQrcodeVideo["Score"].isNull())
-				qrcodeVideoObject.score = qrcodeResultNodeQrcodeVideosQrcodeVideo["Score"].asString();
-			if(!qrcodeResultNodeQrcodeVideosQrcodeVideo["Time"].isNull())
-				qrcodeVideoObject.time = qrcodeResultNodeQrcodeVideosQrcodeVideo["Time"].asString();
-			if(!qrcodeResultNodeQrcodeVideosQrcodeVideo["Object"].isNull())
-				qrcodeVideoObject.object = qrcodeResultNodeQrcodeVideosQrcodeVideo["Object"].asString();
-			jobListObject.result.qrcodeResult.qrcodeVideos.push_back(qrcodeVideoObject);
-		}
-		auto allQrcodeImagesNode = qrcodeResultNode["QrcodeImages"]["QrcodeImage"];
-		for (auto qrcodeResultNodeQrcodeImagesQrcodeImage : allQrcodeImagesNode)
-		{
-			Job::Result::QrcodeResult::QrcodeImage qrcodeImageObject;
-			if(!qrcodeResultNodeQrcodeImagesQrcodeImage["Suggestion"].isNull())
-				qrcodeImageObject.suggestion = qrcodeResultNodeQrcodeImagesQrcodeImage["Suggestion"].asString();
-			if(!qrcodeResultNodeQrcodeImagesQrcodeImage["Score"].isNull())
-				qrcodeImageObject.score = qrcodeResultNodeQrcodeImagesQrcodeImage["Score"].asString();
-			if(!qrcodeResultNodeQrcodeImagesQrcodeImage["Url"].isNull())
-				qrcodeImageObject.url = qrcodeResultNodeQrcodeImagesQrcodeImage["Url"].asString();
-			if(!qrcodeResultNodeQrcodeImagesQrcodeImage["Text"].isNull())
-				qrcodeImageObject.text = qrcodeResultNodeQrcodeImagesQrcodeImage["Text"].asString();
-			jobListObject.result.qrcodeResult.qrcodeImages.push_back(qrcodeImageObject);
-		}
-		auto liveResultNode = resultNode["LiveResult"];
-		auto allLiveVideosNode = liveResultNode["LiveVideos"]["LiveVideo"];
-		for (auto liveResultNodeLiveVideosLiveVideo : allLiveVideosNode)
-		{
-			Job::Result::LiveResult::LiveVideo liveVideoObject;
-			if(!liveResultNodeLiveVideosLiveVideo["Suggestion"].isNull())
-				liveVideoObject.suggestion = liveResultNodeLiveVideosLiveVideo["Suggestion"].asString();
-			if(!liveResultNodeLiveVideosLiveVideo["Score"].isNull())
-				liveVideoObject.score = liveResultNodeLiveVideosLiveVideo["Score"].asString();
-			if(!liveResultNodeLiveVideosLiveVideo["Time"].isNull())
-				liveVideoObject.time = liveResultNodeLiveVideosLiveVideo["Time"].asString();
-			if(!liveResultNodeLiveVideosLiveVideo["Object"].isNull())
-				liveVideoObject.object = liveResultNodeLiveVideosLiveVideo["Object"].asString();
-			jobListObject.result.liveResult.liveVideos.push_back(liveVideoObject);
-		}
-		auto allLiveImagesNode = liveResultNode["LiveImages"]["LiveImage"];
-		for (auto liveResultNodeLiveImagesLiveImage : allLiveImagesNode)
-		{
-			Job::Result::LiveResult::LiveImage liveImageObject;
-			if(!liveResultNodeLiveImagesLiveImage["Suggestion"].isNull())
-				liveImageObject.suggestion = liveResultNodeLiveImagesLiveImage["Suggestion"].asString();
-			if(!liveResultNodeLiveImagesLiveImage["Score"].isNull())
-				liveImageObject.score = liveResultNodeLiveImagesLiveImage["Score"].asString();
-			if(!liveResultNodeLiveImagesLiveImage["Url"].isNull())
-				liveImageObject.url = liveResultNodeLiveImagesLiveImage["Url"].asString();
-			if(!liveResultNodeLiveImagesLiveImage["Text"].isNull())
-				liveImageObject.text = liveResultNodeLiveImagesLiveImage["Text"].asString();
-			jobListObject.result.liveResult.liveImages.push_back(liveImageObject);
+			Job::Result::AdResult::AdVideo adVideoObject;
+			if(!adResultNodeAdVideosAdVideo["Time"].isNull())
+				adVideoObject.time = adResultNodeAdVideosAdVideo["Time"].asString();
+			if(!adResultNodeAdVideosAdVideo["Suggestion"].isNull())
+				adVideoObject.suggestion = adResultNodeAdVideosAdVideo["Suggestion"].asString();
+			if(!adResultNodeAdVideosAdVideo["Score"].isNull())
+				adVideoObject.score = adResultNodeAdVideosAdVideo["Score"].asString();
+			if(!adResultNodeAdVideosAdVideo["Object"].isNull())
+				adVideoObject.object = adResultNodeAdVideosAdVideo["Object"].asString();
+			jobListObject.result.adResult.adVideos.push_back(adVideoObject);
 		}
 		auto logoResultNode = resultNode["LogoResult"];
-		auto allLogoVideosNode = logoResultNode["LogoVideos"]["LogoVideo"];
-		for (auto logoResultNodeLogoVideosLogoVideo : allLogoVideosNode)
-		{
-			Job::Result::LogoResult::LogoVideo logoVideoObject;
-			if(!logoResultNodeLogoVideosLogoVideo["Suggestion"].isNull())
-				logoVideoObject.suggestion = logoResultNodeLogoVideosLogoVideo["Suggestion"].asString();
-			if(!logoResultNodeLogoVideosLogoVideo["Score"].isNull())
-				logoVideoObject.score = logoResultNodeLogoVideosLogoVideo["Score"].asString();
-			if(!logoResultNodeLogoVideosLogoVideo["Time"].isNull())
-				logoVideoObject.time = logoResultNodeLogoVideosLogoVideo["Time"].asString();
-			if(!logoResultNodeLogoVideosLogoVideo["Object"].isNull())
-				logoVideoObject.object = logoResultNodeLogoVideosLogoVideo["Object"].asString();
-			jobListObject.result.logoResult.logoVideos.push_back(logoVideoObject);
-		}
 		auto allLogoImagesNode = logoResultNode["LogoImages"]["LogoImage"];
 		for (auto logoResultNodeLogoImagesLogoImage : allLogoImagesNode)
 		{
@@ -451,19 +229,182 @@ void QueryMCJobListResult::parse(const std::string &payload)
 				logoImageObject.text = logoResultNodeLogoImagesLogoImage["Text"].asString();
 			jobListObject.result.logoResult.logoImages.push_back(logoImageObject);
 		}
+		auto allLogoVideosNode = logoResultNode["LogoVideos"]["LogoVideo"];
+		for (auto logoResultNodeLogoVideosLogoVideo : allLogoVideosNode)
+		{
+			Job::Result::LogoResult::LogoVideo logoVideoObject;
+			if(!logoResultNodeLogoVideosLogoVideo["Time"].isNull())
+				logoVideoObject.time = logoResultNodeLogoVideosLogoVideo["Time"].asString();
+			if(!logoResultNodeLogoVideosLogoVideo["Suggestion"].isNull())
+				logoVideoObject.suggestion = logoResultNodeLogoVideosLogoVideo["Suggestion"].asString();
+			if(!logoResultNodeLogoVideosLogoVideo["Score"].isNull())
+				logoVideoObject.score = logoResultNodeLogoVideosLogoVideo["Score"].asString();
+			if(!logoResultNodeLogoVideosLogoVideo["Object"].isNull())
+				logoVideoObject.object = logoResultNodeLogoVideosLogoVideo["Object"].asString();
+			jobListObject.result.logoResult.logoVideos.push_back(logoVideoObject);
+		}
+		auto qrcodeResultNode = resultNode["QrcodeResult"];
+		auto allQrcodeImagesNode = qrcodeResultNode["QrcodeImages"]["QrcodeImage"];
+		for (auto qrcodeResultNodeQrcodeImagesQrcodeImage : allQrcodeImagesNode)
+		{
+			Job::Result::QrcodeResult::QrcodeImage qrcodeImageObject;
+			if(!qrcodeResultNodeQrcodeImagesQrcodeImage["Suggestion"].isNull())
+				qrcodeImageObject.suggestion = qrcodeResultNodeQrcodeImagesQrcodeImage["Suggestion"].asString();
+			if(!qrcodeResultNodeQrcodeImagesQrcodeImage["Score"].isNull())
+				qrcodeImageObject.score = qrcodeResultNodeQrcodeImagesQrcodeImage["Score"].asString();
+			if(!qrcodeResultNodeQrcodeImagesQrcodeImage["Url"].isNull())
+				qrcodeImageObject.url = qrcodeResultNodeQrcodeImagesQrcodeImage["Url"].asString();
+			if(!qrcodeResultNodeQrcodeImagesQrcodeImage["Text"].isNull())
+				qrcodeImageObject.text = qrcodeResultNodeQrcodeImagesQrcodeImage["Text"].asString();
+			jobListObject.result.qrcodeResult.qrcodeImages.push_back(qrcodeImageObject);
+		}
+		auto allQrcodeVideosNode = qrcodeResultNode["QrcodeVideos"]["QrcodeVideo"];
+		for (auto qrcodeResultNodeQrcodeVideosQrcodeVideo : allQrcodeVideosNode)
+		{
+			Job::Result::QrcodeResult::QrcodeVideo qrcodeVideoObject;
+			if(!qrcodeResultNodeQrcodeVideosQrcodeVideo["Time"].isNull())
+				qrcodeVideoObject.time = qrcodeResultNodeQrcodeVideosQrcodeVideo["Time"].asString();
+			if(!qrcodeResultNodeQrcodeVideosQrcodeVideo["Suggestion"].isNull())
+				qrcodeVideoObject.suggestion = qrcodeResultNodeQrcodeVideosQrcodeVideo["Suggestion"].asString();
+			if(!qrcodeResultNodeQrcodeVideosQrcodeVideo["Score"].isNull())
+				qrcodeVideoObject.score = qrcodeResultNodeQrcodeVideosQrcodeVideo["Score"].asString();
+			if(!qrcodeResultNodeQrcodeVideosQrcodeVideo["Object"].isNull())
+				qrcodeVideoObject.object = qrcodeResultNodeQrcodeVideosQrcodeVideo["Object"].asString();
+			jobListObject.result.qrcodeResult.qrcodeVideos.push_back(qrcodeVideoObject);
+		}
+		auto politicsResultNode = resultNode["PoliticsResult"];
+		auto allPoliticsOcrsNode = politicsResultNode["PoliticsOcrs"]["PoliticsOcr"];
+		for (auto politicsResultNodePoliticsOcrsPoliticsOcr : allPoliticsOcrsNode)
+		{
+			Job::Result::PoliticsResult::PoliticsOcr politicsOcrObject;
+			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Time"].isNull())
+				politicsOcrObject.time = politicsResultNodePoliticsOcrsPoliticsOcr["Time"].asString();
+			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Suggestion"].isNull())
+				politicsOcrObject.suggestion = politicsResultNodePoliticsOcrsPoliticsOcr["Suggestion"].asString();
+			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Score"].isNull())
+				politicsOcrObject.score = politicsResultNodePoliticsOcrsPoliticsOcr["Score"].asString();
+			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Text"].isNull())
+				politicsOcrObject.text = politicsResultNodePoliticsOcrsPoliticsOcr["Text"].asString();
+			if(!politicsResultNodePoliticsOcrsPoliticsOcr["Object"].isNull())
+				politicsOcrObject.object = politicsResultNodePoliticsOcrsPoliticsOcr["Object"].asString();
+			jobListObject.result.politicsResult.politicsOcrs.push_back(politicsOcrObject);
+		}
+		auto allPoliticsVideosNode = politicsResultNode["PoliticsVideos"]["PoliticsVideo"];
+		for (auto politicsResultNodePoliticsVideosPoliticsVideo : allPoliticsVideosNode)
+		{
+			Job::Result::PoliticsResult::PoliticsVideo politicsVideoObject;
+			if(!politicsResultNodePoliticsVideosPoliticsVideo["Time"].isNull())
+				politicsVideoObject.time = politicsResultNodePoliticsVideosPoliticsVideo["Time"].asString();
+			if(!politicsResultNodePoliticsVideosPoliticsVideo["Suggestion"].isNull())
+				politicsVideoObject.suggestion = politicsResultNodePoliticsVideosPoliticsVideo["Suggestion"].asString();
+			if(!politicsResultNodePoliticsVideosPoliticsVideo["Score"].isNull())
+				politicsVideoObject.score = politicsResultNodePoliticsVideosPoliticsVideo["Score"].asString();
+			if(!politicsResultNodePoliticsVideosPoliticsVideo["Object"].isNull())
+				politicsVideoObject.object = politicsResultNodePoliticsVideosPoliticsVideo["Object"].asString();
+			jobListObject.result.politicsResult.politicsVideos.push_back(politicsVideoObject);
+		}
+		auto allPoliticsImagesNode = politicsResultNode["PoliticsImages"]["PoliticsImage"];
+		for (auto politicsResultNodePoliticsImagesPoliticsImage : allPoliticsImagesNode)
+		{
+			Job::Result::PoliticsResult::PoliticsImage politicsImageObject;
+			if(!politicsResultNodePoliticsImagesPoliticsImage["Suggestion"].isNull())
+				politicsImageObject.suggestion = politicsResultNodePoliticsImagesPoliticsImage["Suggestion"].asString();
+			if(!politicsResultNodePoliticsImagesPoliticsImage["Score"].isNull())
+				politicsImageObject.score = politicsResultNodePoliticsImagesPoliticsImage["Score"].asString();
+			if(!politicsResultNodePoliticsImagesPoliticsImage["Url"].isNull())
+				politicsImageObject.url = politicsResultNodePoliticsImagesPoliticsImage["Url"].asString();
+			if(!politicsResultNodePoliticsImagesPoliticsImage["Text"].isNull())
+				politicsImageObject.text = politicsResultNodePoliticsImagesPoliticsImage["Text"].asString();
+			jobListObject.result.politicsResult.politicsImages.push_back(politicsImageObject);
+		}
+		auto allPoliticsTextsNode = politicsResultNode["PoliticsTexts"]["PoliticsText"];
+		for (auto politicsResultNodePoliticsTextsPoliticsText : allPoliticsTextsNode)
+		{
+			Job::Result::PoliticsResult::PoliticsText politicsTextObject;
+			if(!politicsResultNodePoliticsTextsPoliticsText["Suggestion"].isNull())
+				politicsTextObject.suggestion = politicsResultNodePoliticsTextsPoliticsText["Suggestion"].asString();
+			if(!politicsResultNodePoliticsTextsPoliticsText["Score"].isNull())
+				politicsTextObject.score = politicsResultNodePoliticsTextsPoliticsText["Score"].asString();
+			if(!politicsResultNodePoliticsTextsPoliticsText["Text"].isNull())
+				politicsTextObject.text = politicsResultNodePoliticsTextsPoliticsText["Text"].asString();
+			jobListObject.result.politicsResult.politicsTexts.push_back(politicsTextObject);
+		}
+		auto allPoliticsAudiosNode = politicsResultNode["PoliticsAudios"]["PoliticsAudio"];
+		for (auto politicsResultNodePoliticsAudiosPoliticsAudio : allPoliticsAudiosNode)
+		{
+			Job::Result::PoliticsResult::PoliticsAudio politicsAudioObject;
+			if(!politicsResultNodePoliticsAudiosPoliticsAudio["EndTime"].isNull())
+				politicsAudioObject.endTime = politicsResultNodePoliticsAudiosPoliticsAudio["EndTime"].asString();
+			if(!politicsResultNodePoliticsAudiosPoliticsAudio["StartTime"].isNull())
+				politicsAudioObject.startTime = politicsResultNodePoliticsAudiosPoliticsAudio["StartTime"].asString();
+			if(!politicsResultNodePoliticsAudiosPoliticsAudio["Suggestion"].isNull())
+				politicsAudioObject.suggestion = politicsResultNodePoliticsAudiosPoliticsAudio["Suggestion"].asString();
+			if(!politicsResultNodePoliticsAudiosPoliticsAudio["Score"].isNull())
+				politicsAudioObject.score = politicsResultNodePoliticsAudiosPoliticsAudio["Score"].asString();
+			if(!politicsResultNodePoliticsAudiosPoliticsAudio["Text"].isNull())
+				politicsAudioObject.text = politicsResultNodePoliticsAudiosPoliticsAudio["Text"].asString();
+			if(!politicsResultNodePoliticsAudiosPoliticsAudio["Object"].isNull())
+				politicsAudioObject.object = politicsResultNodePoliticsAudiosPoliticsAudio["Object"].asString();
+			jobListObject.result.politicsResult.politicsAudios.push_back(politicsAudioObject);
+		}
+		auto liveResultNode = resultNode["LiveResult"];
+		auto allLiveImagesNode = liveResultNode["LiveImages"]["LiveImage"];
+		for (auto liveResultNodeLiveImagesLiveImage : allLiveImagesNode)
+		{
+			Job::Result::LiveResult::LiveImage liveImageObject;
+			if(!liveResultNodeLiveImagesLiveImage["Suggestion"].isNull())
+				liveImageObject.suggestion = liveResultNodeLiveImagesLiveImage["Suggestion"].asString();
+			if(!liveResultNodeLiveImagesLiveImage["Score"].isNull())
+				liveImageObject.score = liveResultNodeLiveImagesLiveImage["Score"].asString();
+			if(!liveResultNodeLiveImagesLiveImage["Url"].isNull())
+				liveImageObject.url = liveResultNodeLiveImagesLiveImage["Url"].asString();
+			if(!liveResultNodeLiveImagesLiveImage["Text"].isNull())
+				liveImageObject.text = liveResultNodeLiveImagesLiveImage["Text"].asString();
+			jobListObject.result.liveResult.liveImages.push_back(liveImageObject);
+		}
+		auto allLiveVideosNode = liveResultNode["LiveVideos"]["LiveVideo"];
+		for (auto liveResultNodeLiveVideosLiveVideo : allLiveVideosNode)
+		{
+			Job::Result::LiveResult::LiveVideo liveVideoObject;
+			if(!liveResultNodeLiveVideosLiveVideo["Time"].isNull())
+				liveVideoObject.time = liveResultNodeLiveVideosLiveVideo["Time"].asString();
+			if(!liveResultNodeLiveVideosLiveVideo["Suggestion"].isNull())
+				liveVideoObject.suggestion = liveResultNodeLiveVideosLiveVideo["Suggestion"].asString();
+			if(!liveResultNodeLiveVideosLiveVideo["Score"].isNull())
+				liveVideoObject.score = liveResultNodeLiveVideosLiveVideo["Score"].asString();
+			if(!liveResultNodeLiveVideosLiveVideo["Object"].isNull())
+				liveVideoObject.object = liveResultNodeLiveVideosLiveVideo["Object"].asString();
+			jobListObject.result.liveResult.liveVideos.push_back(liveVideoObject);
+		}
 		auto abuseResultNode = resultNode["AbuseResult"];
+		auto allAbuseOcrsNode = abuseResultNode["AbuseOcrs"]["AbuseOcr"];
+		for (auto abuseResultNodeAbuseOcrsAbuseOcr : allAbuseOcrsNode)
+		{
+			Job::Result::AbuseResult::AbuseOcr abuseOcrObject;
+			if(!abuseResultNodeAbuseOcrsAbuseOcr["Time"].isNull())
+				abuseOcrObject.time = abuseResultNodeAbuseOcrsAbuseOcr["Time"].asString();
+			if(!abuseResultNodeAbuseOcrsAbuseOcr["Suggestion"].isNull())
+				abuseOcrObject.suggestion = abuseResultNodeAbuseOcrsAbuseOcr["Suggestion"].asString();
+			if(!abuseResultNodeAbuseOcrsAbuseOcr["Score"].isNull())
+				abuseOcrObject.score = abuseResultNodeAbuseOcrsAbuseOcr["Score"].asString();
+			if(!abuseResultNodeAbuseOcrsAbuseOcr["Text"].isNull())
+				abuseOcrObject.text = abuseResultNodeAbuseOcrsAbuseOcr["Text"].asString();
+			if(!abuseResultNodeAbuseOcrsAbuseOcr["Object"].isNull())
+				abuseOcrObject.object = abuseResultNodeAbuseOcrsAbuseOcr["Object"].asString();
+			jobListObject.result.abuseResult.abuseOcrs.push_back(abuseOcrObject);
+		}
 		auto allAbuseAudiosNode = abuseResultNode["AbuseAudios"]["AbuseAudio"];
 		for (auto abuseResultNodeAbuseAudiosAbuseAudio : allAbuseAudiosNode)
 		{
 			Job::Result::AbuseResult::AbuseAudio abuseAudioObject;
+			if(!abuseResultNodeAbuseAudiosAbuseAudio["EndTime"].isNull())
+				abuseAudioObject.endTime = abuseResultNodeAbuseAudiosAbuseAudio["EndTime"].asString();
+			if(!abuseResultNodeAbuseAudiosAbuseAudio["StartTime"].isNull())
+				abuseAudioObject.startTime = abuseResultNodeAbuseAudiosAbuseAudio["StartTime"].asString();
 			if(!abuseResultNodeAbuseAudiosAbuseAudio["Suggestion"].isNull())
 				abuseAudioObject.suggestion = abuseResultNodeAbuseAudiosAbuseAudio["Suggestion"].asString();
 			if(!abuseResultNodeAbuseAudiosAbuseAudio["Score"].isNull())
 				abuseAudioObject.score = abuseResultNodeAbuseAudiosAbuseAudio["Score"].asString();
-			if(!abuseResultNodeAbuseAudiosAbuseAudio["StartTime"].isNull())
-				abuseAudioObject.startTime = abuseResultNodeAbuseAudiosAbuseAudio["StartTime"].asString();
-			if(!abuseResultNodeAbuseAudiosAbuseAudio["EndTime"].isNull())
-				abuseAudioObject.endTime = abuseResultNodeAbuseAudiosAbuseAudio["EndTime"].asString();
 			if(!abuseResultNodeAbuseAudiosAbuseAudio["Text"].isNull())
 				abuseAudioObject.text = abuseResultNodeAbuseAudiosAbuseAudio["Text"].asString();
 			if(!abuseResultNodeAbuseAudiosAbuseAudio["Object"].isNull())
@@ -482,40 +423,87 @@ void QueryMCJobListResult::parse(const std::string &payload)
 				abuseTextObject.text = abuseResultNodeAbuseTextsAbuseText["Text"].asString();
 			jobListObject.result.abuseResult.abuseTexts.push_back(abuseTextObject);
 		}
-		auto allAbuseOcrsNode = abuseResultNode["AbuseOcrs"]["AbuseOcr"];
-		for (auto abuseResultNodeAbuseOcrsAbuseOcr : allAbuseOcrsNode)
+		auto spamResultNode = resultNode["SpamResult"];
+		auto allSpamTextsNode = spamResultNode["SpamTexts"]["SpamText"];
+		for (auto spamResultNodeSpamTextsSpamText : allSpamTextsNode)
 		{
-			Job::Result::AbuseResult::AbuseOcr abuseOcrObject;
-			if(!abuseResultNodeAbuseOcrsAbuseOcr["Suggestion"].isNull())
-				abuseOcrObject.suggestion = abuseResultNodeAbuseOcrsAbuseOcr["Suggestion"].asString();
-			if(!abuseResultNodeAbuseOcrsAbuseOcr["Score"].isNull())
-				abuseOcrObject.score = abuseResultNodeAbuseOcrsAbuseOcr["Score"].asString();
-			if(!abuseResultNodeAbuseOcrsAbuseOcr["Time"].isNull())
-				abuseOcrObject.time = abuseResultNodeAbuseOcrsAbuseOcr["Time"].asString();
-			if(!abuseResultNodeAbuseOcrsAbuseOcr["Object"].isNull())
-				abuseOcrObject.object = abuseResultNodeAbuseOcrsAbuseOcr["Object"].asString();
-			if(!abuseResultNodeAbuseOcrsAbuseOcr["Text"].isNull())
-				abuseOcrObject.text = abuseResultNodeAbuseOcrsAbuseOcr["Text"].asString();
-			jobListObject.result.abuseResult.abuseOcrs.push_back(abuseOcrObject);
+			Job::Result::SpamResult::SpamText spamTextObject;
+			if(!spamResultNodeSpamTextsSpamText["Suggestion"].isNull())
+				spamTextObject.suggestion = spamResultNodeSpamTextsSpamText["Suggestion"].asString();
+			if(!spamResultNodeSpamTextsSpamText["Score"].isNull())
+				spamTextObject.score = spamResultNodeSpamTextsSpamText["Score"].asString();
+			if(!spamResultNodeSpamTextsSpamText["Text"].isNull())
+				spamTextObject.text = spamResultNodeSpamTextsSpamText["Text"].asString();
+			jobListObject.result.spamResult.spamTexts.push_back(spamTextObject);
+		}
+		auto allSpamAudiosNode = spamResultNode["SpamAudios"]["SpamAudio"];
+		for (auto spamResultNodeSpamAudiosSpamAudio : allSpamAudiosNode)
+		{
+			Job::Result::SpamResult::SpamAudio spamAudioObject;
+			if(!spamResultNodeSpamAudiosSpamAudio["EndTime"].isNull())
+				spamAudioObject.endTime = spamResultNodeSpamAudiosSpamAudio["EndTime"].asString();
+			if(!spamResultNodeSpamAudiosSpamAudio["StartTime"].isNull())
+				spamAudioObject.startTime = spamResultNodeSpamAudiosSpamAudio["StartTime"].asString();
+			if(!spamResultNodeSpamAudiosSpamAudio["Suggestion"].isNull())
+				spamAudioObject.suggestion = spamResultNodeSpamAudiosSpamAudio["Suggestion"].asString();
+			if(!spamResultNodeSpamAudiosSpamAudio["Score"].isNull())
+				spamAudioObject.score = spamResultNodeSpamAudiosSpamAudio["Score"].asString();
+			if(!spamResultNodeSpamAudiosSpamAudio["Text"].isNull())
+				spamAudioObject.text = spamResultNodeSpamAudiosSpamAudio["Text"].asString();
+			if(!spamResultNodeSpamAudiosSpamAudio["Object"].isNull())
+				spamAudioObject.object = spamResultNodeSpamAudiosSpamAudio["Object"].asString();
+			jobListObject.result.spamResult.spamAudios.push_back(spamAudioObject);
+		}
+		auto allSpamOcrsNode = spamResultNode["SpamOcrs"]["SpamOcr"];
+		for (auto spamResultNodeSpamOcrsSpamOcr : allSpamOcrsNode)
+		{
+			Job::Result::SpamResult::SpamOcr spamOcrObject;
+			if(!spamResultNodeSpamOcrsSpamOcr["Time"].isNull())
+				spamOcrObject.time = spamResultNodeSpamOcrsSpamOcr["Time"].asString();
+			if(!spamResultNodeSpamOcrsSpamOcr["Suggestion"].isNull())
+				spamOcrObject.suggestion = spamResultNodeSpamOcrsSpamOcr["Suggestion"].asString();
+			if(!spamResultNodeSpamOcrsSpamOcr["Score"].isNull())
+				spamOcrObject.score = spamResultNodeSpamOcrsSpamOcr["Score"].asString();
+			if(!spamResultNodeSpamOcrsSpamOcr["Text"].isNull())
+				spamOcrObject.text = spamResultNodeSpamOcrsSpamOcr["Text"].asString();
+			if(!spamResultNodeSpamOcrsSpamOcr["Object"].isNull())
+				spamOcrObject.object = spamResultNodeSpamOcrsSpamOcr["Object"].asString();
+			jobListObject.result.spamResult.spamOcrs.push_back(spamOcrObject);
 		}
 		auto contrabandResultNode = resultNode["ContrabandResult"];
 		auto allContrabandAudiosNode = contrabandResultNode["ContrabandAudios"]["ContrabandAudio"];
 		for (auto contrabandResultNodeContrabandAudiosContrabandAudio : allContrabandAudiosNode)
 		{
 			Job::Result::ContrabandResult::ContrabandAudio contrabandAudioObject;
+			if(!contrabandResultNodeContrabandAudiosContrabandAudio["EndTime"].isNull())
+				contrabandAudioObject.endTime = contrabandResultNodeContrabandAudiosContrabandAudio["EndTime"].asString();
+			if(!contrabandResultNodeContrabandAudiosContrabandAudio["StartTime"].isNull())
+				contrabandAudioObject.startTime = contrabandResultNodeContrabandAudiosContrabandAudio["StartTime"].asString();
 			if(!contrabandResultNodeContrabandAudiosContrabandAudio["Suggestion"].isNull())
 				contrabandAudioObject.suggestion = contrabandResultNodeContrabandAudiosContrabandAudio["Suggestion"].asString();
 			if(!contrabandResultNodeContrabandAudiosContrabandAudio["Score"].isNull())
 				contrabandAudioObject.score = contrabandResultNodeContrabandAudiosContrabandAudio["Score"].asString();
-			if(!contrabandResultNodeContrabandAudiosContrabandAudio["StartTime"].isNull())
-				contrabandAudioObject.startTime = contrabandResultNodeContrabandAudiosContrabandAudio["StartTime"].asString();
-			if(!contrabandResultNodeContrabandAudiosContrabandAudio["EndTime"].isNull())
-				contrabandAudioObject.endTime = contrabandResultNodeContrabandAudiosContrabandAudio["EndTime"].asString();
 			if(!contrabandResultNodeContrabandAudiosContrabandAudio["Text"].isNull())
 				contrabandAudioObject.text = contrabandResultNodeContrabandAudiosContrabandAudio["Text"].asString();
 			if(!contrabandResultNodeContrabandAudiosContrabandAudio["Object"].isNull())
 				contrabandAudioObject.object = contrabandResultNodeContrabandAudiosContrabandAudio["Object"].asString();
 			jobListObject.result.contrabandResult.contrabandAudios.push_back(contrabandAudioObject);
+		}
+		auto allContrabandOcrsNode = contrabandResultNode["ContrabandOcrs"]["ContrabandOcr"];
+		for (auto contrabandResultNodeContrabandOcrsContrabandOcr : allContrabandOcrsNode)
+		{
+			Job::Result::ContrabandResult::ContrabandOcr contrabandOcrObject;
+			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Time"].isNull())
+				contrabandOcrObject.time = contrabandResultNodeContrabandOcrsContrabandOcr["Time"].asString();
+			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Suggestion"].isNull())
+				contrabandOcrObject.suggestion = contrabandResultNodeContrabandOcrsContrabandOcr["Suggestion"].asString();
+			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Score"].isNull())
+				contrabandOcrObject.score = contrabandResultNodeContrabandOcrsContrabandOcr["Score"].asString();
+			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Text"].isNull())
+				contrabandOcrObject.text = contrabandResultNodeContrabandOcrsContrabandOcr["Text"].asString();
+			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Object"].isNull())
+				contrabandOcrObject.object = contrabandResultNodeContrabandOcrsContrabandOcr["Object"].asString();
+			jobListObject.result.contrabandResult.contrabandOcrs.push_back(contrabandOcrObject);
 		}
 		auto allContrabandTextsNode = contrabandResultNode["ContrabandTexts"]["ContrabandText"];
 		for (auto contrabandResultNodeContrabandTextsContrabandText : allContrabandTextsNode)
@@ -529,68 +517,80 @@ void QueryMCJobListResult::parse(const std::string &payload)
 				contrabandTextObject.text = contrabandResultNodeContrabandTextsContrabandText["Text"].asString();
 			jobListObject.result.contrabandResult.contrabandTexts.push_back(contrabandTextObject);
 		}
-		auto allContrabandOcrsNode = contrabandResultNode["ContrabandOcrs"]["ContrabandOcr"];
-		for (auto contrabandResultNodeContrabandOcrsContrabandOcr : allContrabandOcrsNode)
+		auto terrorismResultNode = resultNode["TerrorismResult"];
+		auto allTerrorismOcrsNode = terrorismResultNode["TerrorismOcrs"]["TerrorismOcr"];
+		for (auto terrorismResultNodeTerrorismOcrsTerrorismOcr : allTerrorismOcrsNode)
 		{
-			Job::Result::ContrabandResult::ContrabandOcr contrabandOcrObject;
-			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Suggestion"].isNull())
-				contrabandOcrObject.suggestion = contrabandResultNodeContrabandOcrsContrabandOcr["Suggestion"].asString();
-			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Score"].isNull())
-				contrabandOcrObject.score = contrabandResultNodeContrabandOcrsContrabandOcr["Score"].asString();
-			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Time"].isNull())
-				contrabandOcrObject.time = contrabandResultNodeContrabandOcrsContrabandOcr["Time"].asString();
-			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Object"].isNull())
-				contrabandOcrObject.object = contrabandResultNodeContrabandOcrsContrabandOcr["Object"].asString();
-			if(!contrabandResultNodeContrabandOcrsContrabandOcr["Text"].isNull())
-				contrabandOcrObject.text = contrabandResultNodeContrabandOcrsContrabandOcr["Text"].asString();
-			jobListObject.result.contrabandResult.contrabandOcrs.push_back(contrabandOcrObject);
+			Job::Result::TerrorismResult::TerrorismOcr terrorismOcrObject;
+			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Time"].isNull())
+				terrorismOcrObject.time = terrorismResultNodeTerrorismOcrsTerrorismOcr["Time"].asString();
+			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Suggestion"].isNull())
+				terrorismOcrObject.suggestion = terrorismResultNodeTerrorismOcrsTerrorismOcr["Suggestion"].asString();
+			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Score"].isNull())
+				terrorismOcrObject.score = terrorismResultNodeTerrorismOcrsTerrorismOcr["Score"].asString();
+			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Text"].isNull())
+				terrorismOcrObject.text = terrorismResultNodeTerrorismOcrsTerrorismOcr["Text"].asString();
+			if(!terrorismResultNodeTerrorismOcrsTerrorismOcr["Object"].isNull())
+				terrorismOcrObject.object = terrorismResultNodeTerrorismOcrsTerrorismOcr["Object"].asString();
+			jobListObject.result.terrorismResult.terrorismOcrs.push_back(terrorismOcrObject);
 		}
-		auto spamResultNode = resultNode["SpamResult"];
-		auto allSpamAudiosNode = spamResultNode["SpamAudios"]["SpamAudio"];
-		for (auto spamResultNodeSpamAudiosSpamAudio : allSpamAudiosNode)
+		auto allTerrorismAudiosNode = terrorismResultNode["TerrorismAudios"]["TerrorismAudio"];
+		for (auto terrorismResultNodeTerrorismAudiosTerrorismAudio : allTerrorismAudiosNode)
 		{
-			Job::Result::SpamResult::SpamAudio spamAudioObject;
-			if(!spamResultNodeSpamAudiosSpamAudio["Suggestion"].isNull())
-				spamAudioObject.suggestion = spamResultNodeSpamAudiosSpamAudio["Suggestion"].asString();
-			if(!spamResultNodeSpamAudiosSpamAudio["Score"].isNull())
-				spamAudioObject.score = spamResultNodeSpamAudiosSpamAudio["Score"].asString();
-			if(!spamResultNodeSpamAudiosSpamAudio["StartTime"].isNull())
-				spamAudioObject.startTime = spamResultNodeSpamAudiosSpamAudio["StartTime"].asString();
-			if(!spamResultNodeSpamAudiosSpamAudio["EndTime"].isNull())
-				spamAudioObject.endTime = spamResultNodeSpamAudiosSpamAudio["EndTime"].asString();
-			if(!spamResultNodeSpamAudiosSpamAudio["Text"].isNull())
-				spamAudioObject.text = spamResultNodeSpamAudiosSpamAudio["Text"].asString();
-			if(!spamResultNodeSpamAudiosSpamAudio["Object"].isNull())
-				spamAudioObject.object = spamResultNodeSpamAudiosSpamAudio["Object"].asString();
-			jobListObject.result.spamResult.spamAudios.push_back(spamAudioObject);
+			Job::Result::TerrorismResult::TerrorismAudio terrorismAudioObject;
+			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["EndTime"].isNull())
+				terrorismAudioObject.endTime = terrorismResultNodeTerrorismAudiosTerrorismAudio["EndTime"].asString();
+			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["StartTime"].isNull())
+				terrorismAudioObject.startTime = terrorismResultNodeTerrorismAudiosTerrorismAudio["StartTime"].asString();
+			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["Suggestion"].isNull())
+				terrorismAudioObject.suggestion = terrorismResultNodeTerrorismAudiosTerrorismAudio["Suggestion"].asString();
+			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["Score"].isNull())
+				terrorismAudioObject.score = terrorismResultNodeTerrorismAudiosTerrorismAudio["Score"].asString();
+			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["Text"].isNull())
+				terrorismAudioObject.text = terrorismResultNodeTerrorismAudiosTerrorismAudio["Text"].asString();
+			if(!terrorismResultNodeTerrorismAudiosTerrorismAudio["Object"].isNull())
+				terrorismAudioObject.object = terrorismResultNodeTerrorismAudiosTerrorismAudio["Object"].asString();
+			jobListObject.result.terrorismResult.terrorismAudios.push_back(terrorismAudioObject);
 		}
-		auto allSpamTextsNode = spamResultNode["SpamTexts"]["SpamText"];
-		for (auto spamResultNodeSpamTextsSpamText : allSpamTextsNode)
+		auto allTerrorismVideosNode = terrorismResultNode["TerrorismVideos"]["TerrorismVideo"];
+		for (auto terrorismResultNodeTerrorismVideosTerrorismVideo : allTerrorismVideosNode)
 		{
-			Job::Result::SpamResult::SpamText spamTextObject;
-			if(!spamResultNodeSpamTextsSpamText["Suggestion"].isNull())
-				spamTextObject.suggestion = spamResultNodeSpamTextsSpamText["Suggestion"].asString();
-			if(!spamResultNodeSpamTextsSpamText["Score"].isNull())
-				spamTextObject.score = spamResultNodeSpamTextsSpamText["Score"].asString();
-			if(!spamResultNodeSpamTextsSpamText["Text"].isNull())
-				spamTextObject.text = spamResultNodeSpamTextsSpamText["Text"].asString();
-			jobListObject.result.spamResult.spamTexts.push_back(spamTextObject);
+			Job::Result::TerrorismResult::TerrorismVideo terrorismVideoObject;
+			if(!terrorismResultNodeTerrorismVideosTerrorismVideo["Time"].isNull())
+				terrorismVideoObject.time = terrorismResultNodeTerrorismVideosTerrorismVideo["Time"].asString();
+			if(!terrorismResultNodeTerrorismVideosTerrorismVideo["Suggestion"].isNull())
+				terrorismVideoObject.suggestion = terrorismResultNodeTerrorismVideosTerrorismVideo["Suggestion"].asString();
+			if(!terrorismResultNodeTerrorismVideosTerrorismVideo["Score"].isNull())
+				terrorismVideoObject.score = terrorismResultNodeTerrorismVideosTerrorismVideo["Score"].asString();
+			if(!terrorismResultNodeTerrorismVideosTerrorismVideo["Object"].isNull())
+				terrorismVideoObject.object = terrorismResultNodeTerrorismVideosTerrorismVideo["Object"].asString();
+			jobListObject.result.terrorismResult.terrorismVideos.push_back(terrorismVideoObject);
 		}
-		auto allSpamOcrsNode = spamResultNode["SpamOcrs"]["SpamOcr"];
-		for (auto spamResultNodeSpamOcrsSpamOcr : allSpamOcrsNode)
+		auto allTerrorismTextsNode = terrorismResultNode["TerrorismTexts"]["TerrorismText"];
+		for (auto terrorismResultNodeTerrorismTextsTerrorismText : allTerrorismTextsNode)
 		{
-			Job::Result::SpamResult::SpamOcr spamOcrObject;
-			if(!spamResultNodeSpamOcrsSpamOcr["Suggestion"].isNull())
-				spamOcrObject.suggestion = spamResultNodeSpamOcrsSpamOcr["Suggestion"].asString();
-			if(!spamResultNodeSpamOcrsSpamOcr["Score"].isNull())
-				spamOcrObject.score = spamResultNodeSpamOcrsSpamOcr["Score"].asString();
-			if(!spamResultNodeSpamOcrsSpamOcr["Time"].isNull())
-				spamOcrObject.time = spamResultNodeSpamOcrsSpamOcr["Time"].asString();
-			if(!spamResultNodeSpamOcrsSpamOcr["Object"].isNull())
-				spamOcrObject.object = spamResultNodeSpamOcrsSpamOcr["Object"].asString();
-			if(!spamResultNodeSpamOcrsSpamOcr["Text"].isNull())
-				spamOcrObject.text = spamResultNodeSpamOcrsSpamOcr["Text"].asString();
-			jobListObject.result.spamResult.spamOcrs.push_back(spamOcrObject);
+			Job::Result::TerrorismResult::TerrorismText terrorismTextObject;
+			if(!terrorismResultNodeTerrorismTextsTerrorismText["Suggestion"].isNull())
+				terrorismTextObject.suggestion = terrorismResultNodeTerrorismTextsTerrorismText["Suggestion"].asString();
+			if(!terrorismResultNodeTerrorismTextsTerrorismText["Score"].isNull())
+				terrorismTextObject.score = terrorismResultNodeTerrorismTextsTerrorismText["Score"].asString();
+			if(!terrorismResultNodeTerrorismTextsTerrorismText["Text"].isNull())
+				terrorismTextObject.text = terrorismResultNodeTerrorismTextsTerrorismText["Text"].asString();
+			jobListObject.result.terrorismResult.terrorismTexts.push_back(terrorismTextObject);
+		}
+		auto allTerrorismImagesNode = terrorismResultNode["TerrorismImages"]["TerrorismImage"];
+		for (auto terrorismResultNodeTerrorismImagesTerrorismImage : allTerrorismImagesNode)
+		{
+			Job::Result::TerrorismResult::TerrorismImage terrorismImageObject;
+			if(!terrorismResultNodeTerrorismImagesTerrorismImage["Suggestion"].isNull())
+				terrorismImageObject.suggestion = terrorismResultNodeTerrorismImagesTerrorismImage["Suggestion"].asString();
+			if(!terrorismResultNodeTerrorismImagesTerrorismImage["Score"].isNull())
+				terrorismImageObject.score = terrorismResultNodeTerrorismImagesTerrorismImage["Score"].asString();
+			if(!terrorismResultNodeTerrorismImagesTerrorismImage["Url"].isNull())
+				terrorismImageObject.url = terrorismResultNodeTerrorismImagesTerrorismImage["Url"].asString();
+			if(!terrorismResultNodeTerrorismImagesTerrorismImage["Text"].isNull())
+				terrorismImageObject.text = terrorismResultNodeTerrorismImagesTerrorismImage["Text"].asString();
+			jobListObject.result.terrorismResult.terrorismImages.push_back(terrorismImageObject);
 		}
 		jobList_.push_back(jobListObject);
 	}

@@ -43,14 +43,14 @@ void PlayerAuthResult::parse(const std::string &payload)
 	for (auto valueSwitchListSwitch : allSwitchListNode)
 	{
 		_Switch switchListObject;
-		if(!valueSwitchListSwitch["State"].isNull())
-			switchListObject.state = valueSwitchListSwitch["State"].asString();
 		if(!valueSwitchListSwitch["FunctionId"].isNull())
 			switchListObject.functionId = valueSwitchListSwitch["FunctionId"].asString();
-		if(!valueSwitchListSwitch["SwitchId"].isNull())
-			switchListObject.switchId = valueSwitchListSwitch["SwitchId"].asString();
 		if(!valueSwitchListSwitch["FunctionName"].isNull())
 			switchListObject.functionName = valueSwitchListSwitch["FunctionName"].asString();
+		if(!valueSwitchListSwitch["State"].isNull())
+			switchListObject.state = valueSwitchListSwitch["State"].asString();
+		if(!valueSwitchListSwitch["SwitchId"].isNull())
+			switchListObject.switchId = valueSwitchListSwitch["SwitchId"].asString();
 		switchList_.push_back(switchListObject);
 	}
 	if(!value["LogURL"].isNull())

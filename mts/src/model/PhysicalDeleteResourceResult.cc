@@ -39,28 +39,28 @@ void PhysicalDeleteResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Interrupt"].isNull())
-		interrupt_ = value["Interrupt"].asString() == "true";
-	if(!value["Invoker"].isNull())
-		invoker_ = value["Invoker"].asString();
-	if(!value["Pk"].isNull())
-		pk_ = value["Pk"].asString();
-	if(!value["Bid"].isNull())
-		bid_ = value["Bid"].asString();
+	if(!value["GmtWakeup"].isNull())
+		gmtWakeup_ = value["GmtWakeup"].asString();
 	if(!value["Hid"].isNull())
 		hid_ = std::stol(value["Hid"].asString());
-	if(!value["Country"].isNull())
-		country_ = value["Country"].asString();
+	if(!value["Invoker"].isNull())
+		invoker_ = value["Invoker"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["TaskIdentifier"].isNull())
 		taskIdentifier_ = value["TaskIdentifier"].asString();
 	if(!value["TaskExtraData"].isNull())
 		taskExtraData_ = value["TaskExtraData"].asString();
-	if(!value["GmtWakeup"].isNull())
-		gmtWakeup_ = value["GmtWakeup"].asString();
+	if(!value["Country"].isNull())
+		country_ = value["Country"].asString();
+	if(!value["Pk"].isNull())
+		pk_ = value["Pk"].asString();
+	if(!value["Bid"].isNull())
+		bid_ = value["Bid"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
+	if(!value["Interrupt"].isNull())
+		interrupt_ = value["Interrupt"].asString() == "true";
 
 }
 
@@ -79,14 +79,14 @@ std::string PhysicalDeleteResourceResult::getInvoker()const
 	return invoker_;
 }
 
-std::string PhysicalDeleteResourceResult::getTaskIdentifier()const
-{
-	return taskIdentifier_;
-}
-
 std::string PhysicalDeleteResourceResult::getMessage()const
 {
 	return message_;
+}
+
+std::string PhysicalDeleteResourceResult::getTaskIdentifier()const
+{
+	return taskIdentifier_;
 }
 
 std::string PhysicalDeleteResourceResult::getTaskExtraData()const
@@ -109,13 +109,13 @@ std::string PhysicalDeleteResourceResult::getBid()const
 	return bid_;
 }
 
-bool PhysicalDeleteResourceResult::getInterrupt()const
-{
-	return interrupt_;
-}
-
 bool PhysicalDeleteResourceResult::getSuccess()const
 {
 	return success_;
+}
+
+bool PhysicalDeleteResourceResult::getInterrupt()const
+{
+	return interrupt_;
 }
 

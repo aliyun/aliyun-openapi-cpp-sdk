@@ -40,12 +40,12 @@ void AddCategoryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto categoryNode = value["Category"];
-	if(!categoryNode["CateId"].isNull())
-		category_.cateId = categoryNode["CateId"].asString();
 	if(!categoryNode["CateName"].isNull())
 		category_.cateName = categoryNode["CateName"].asString();
 	if(!categoryNode["ParentId"].isNull())
 		category_.parentId = categoryNode["ParentId"].asString();
+	if(!categoryNode["CateId"].isNull())
+		category_.cateId = categoryNode["CateId"].asString();
 	if(!categoryNode["Level"].isNull())
 		category_.level = categoryNode["Level"].asString();
 

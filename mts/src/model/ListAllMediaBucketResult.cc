@@ -43,10 +43,10 @@ void ListAllMediaBucketResult::parse(const std::string &payload)
 	for (auto valueMediaBucketListMediaBucket : allMediaBucketListNode)
 	{
 		MediaBucket mediaBucketListObject;
-		if(!valueMediaBucketListMediaBucket["Bucket"].isNull())
-			mediaBucketListObject.bucket = valueMediaBucketListMediaBucket["Bucket"].asString();
 		if(!valueMediaBucketListMediaBucket["Type"].isNull())
 			mediaBucketListObject.type = valueMediaBucketListMediaBucket["Type"].asString();
+		if(!valueMediaBucketListMediaBucket["Bucket"].isNull())
+			mediaBucketListObject.bucket = valueMediaBucketListMediaBucket["Bucket"].asString();
 		mediaBucketList_.push_back(mediaBucketListObject);
 	}
 	if(!value["NextPageToken"].isNull())

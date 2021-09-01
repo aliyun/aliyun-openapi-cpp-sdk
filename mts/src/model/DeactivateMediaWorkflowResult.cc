@@ -40,16 +40,16 @@ void DeactivateMediaWorkflowResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto mediaWorkflowNode = value["MediaWorkflow"];
+	if(!mediaWorkflowNode["CreationTime"].isNull())
+		mediaWorkflow_.creationTime = mediaWorkflowNode["CreationTime"].asString();
 	if(!mediaWorkflowNode["MediaWorkflowId"].isNull())
 		mediaWorkflow_.mediaWorkflowId = mediaWorkflowNode["MediaWorkflowId"].asString();
+	if(!mediaWorkflowNode["State"].isNull())
+		mediaWorkflow_.state = mediaWorkflowNode["State"].asString();
 	if(!mediaWorkflowNode["Name"].isNull())
 		mediaWorkflow_.name = mediaWorkflowNode["Name"].asString();
 	if(!mediaWorkflowNode["Topology"].isNull())
 		mediaWorkflow_.topology = mediaWorkflowNode["Topology"].asString();
-	if(!mediaWorkflowNode["State"].isNull())
-		mediaWorkflow_.state = mediaWorkflowNode["State"].asString();
-	if(!mediaWorkflowNode["CreationTime"].isNull())
-		mediaWorkflow_.creationTime = mediaWorkflowNode["CreationTime"].asString();
 
 }
 

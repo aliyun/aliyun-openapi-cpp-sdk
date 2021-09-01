@@ -39,10 +39,10 @@ void CreateSessionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SessionId"].isNull())
-		sessionId_ = value["SessionId"].asString();
 	if(!value["Ticket"].isNull())
 		ticket_ = value["Ticket"].asString();
+	if(!value["SessionId"].isNull())
+		sessionId_ = value["SessionId"].asString();
 
 }
 

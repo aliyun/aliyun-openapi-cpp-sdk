@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct SubtitleJob
 				{
-					std::string inputConfig1;
+					std::string outputConfig;
 					std::string userData;
 					std::string state;
 					std::string inputConfig;

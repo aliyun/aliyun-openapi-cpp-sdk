@@ -34,10 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Pipeline
 				{
-					int quotaUsed;
 					std::string role;
-					long userId;
+					int quotaUsed;
 					std::string state;
+					long userId;
 					std::string priority;
 					std::string pipelineId;
 					std::string notifyConfig;

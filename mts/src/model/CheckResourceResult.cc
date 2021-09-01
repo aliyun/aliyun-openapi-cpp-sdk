@@ -39,34 +39,34 @@ void CheckResourceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["GmtWakeup"].isNull())
+		gmtWakeup_ = value["GmtWakeup"].asString();
+	if(!value["Hid"].isNull())
+		hid_ = std::stol(value["Hid"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["TaskIdentifier"].isNull())
+		taskIdentifier_ = value["TaskIdentifier"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["Url"].isNull())
+		url_ = value["Url"].asString();
 	if(!value["Interrupt"].isNull())
 		interrupt_ = value["Interrupt"].asString() == "true";
 	if(!value["Invoker"].isNull())
 		invoker_ = value["Invoker"].asString();
+	if(!value["TaskExtraData"].isNull())
+		taskExtraData_ = value["TaskExtraData"].asString();
+	if(!value["Country"].isNull())
+		country_ = value["Country"].asString();
+	if(!value["Prompt"].isNull())
+		prompt_ = value["Prompt"].asString();
+	if(!value["Level"].isNull())
+		level_ = std::stol(value["Level"].asString());
 	if(!value["Pk"].isNull())
 		pk_ = value["Pk"].asString();
 	if(!value["Bid"].isNull())
 		bid_ = value["Bid"].asString();
-	if(!value["Hid"].isNull())
-		hid_ = std::stol(value["Hid"].asString());
-	if(!value["Country"].isNull())
-		country_ = value["Country"].asString();
-	if(!value["TaskIdentifier"].isNull())
-		taskIdentifier_ = value["TaskIdentifier"].asString();
-	if(!value["TaskExtraData"].isNull())
-		taskExtraData_ = value["TaskExtraData"].asString();
-	if(!value["GmtWakeup"].isNull())
-		gmtWakeup_ = value["GmtWakeup"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Level"].isNull())
-		level_ = std::stol(value["Level"].asString());
-	if(!value["Url"].isNull())
-		url_ = value["Url"].asString();
-	if(!value["Prompt"].isNull())
-		prompt_ = value["Prompt"].asString();
 
 }
 
@@ -80,19 +80,14 @@ long CheckResourceResult::getHid()const
 	return hid_;
 }
 
-std::string CheckResourceResult::getTaskIdentifier()const
-{
-	return taskIdentifier_;
-}
-
 std::string CheckResourceResult::getMessage()const
 {
 	return message_;
 }
 
-bool CheckResourceResult::getInterrupt()const
+std::string CheckResourceResult::getTaskIdentifier()const
 {
-	return interrupt_;
+	return taskIdentifier_;
 }
 
 bool CheckResourceResult::getSuccess()const
@@ -103,6 +98,11 @@ bool CheckResourceResult::getSuccess()const
 std::string CheckResourceResult::getUrl()const
 {
 	return url_;
+}
+
+bool CheckResourceResult::getInterrupt()const
+{
+	return interrupt_;
 }
 
 std::string CheckResourceResult::getInvoker()const
@@ -120,14 +120,14 @@ std::string CheckResourceResult::getCountry()const
 	return country_;
 }
 
-long CheckResourceResult::getLevel()const
-{
-	return level_;
-}
-
 std::string CheckResourceResult::getPrompt()const
 {
 	return prompt_;
+}
+
+long CheckResourceResult::getLevel()const
+{
+	return level_;
 }
 
 std::string CheckResourceResult::getPk()const

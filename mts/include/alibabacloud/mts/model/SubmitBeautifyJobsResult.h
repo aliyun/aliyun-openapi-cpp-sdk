@@ -34,13 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Job
 				{
-					struct Input
-					{
-						std::string bucket;
-						std::string object;
-						std::string roleArn;
-						std::string location;
-					};
 					struct BeautifyConfig
 					{
 						struct OutputFile
@@ -51,6 +44,13 @@ namespace AlibabaCloud
 							std::string location;
 						};
 						OutputFile outputFile;
+					};
+					struct Input
+					{
+						std::string bucket;
+						std::string object;
+						std::string roleArn;
+						std::string location;
 					};
 					struct MNSMessageResult
 					{

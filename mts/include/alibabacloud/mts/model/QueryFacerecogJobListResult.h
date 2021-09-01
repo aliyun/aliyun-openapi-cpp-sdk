@@ -34,12 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct FacerecogJob
 				{
-					struct Input
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
 					struct VideoFacerecogResult
 					{
 						struct Facerecog
@@ -54,6 +48,12 @@ namespace AlibabaCloud
 							std::vector<Facerecog::Face> faces;
 						};
 						std::vector<Facerecog> facerecogs;
+					};
+					struct Input
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
 					};
 					Input input;
 					VideoFacerecogResult videoFacerecogResult;

@@ -40,25 +40,16 @@ void SubmitImageQualityJobResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto imageQualityJobNode = value["ImageQualityJob"];
+	if(!imageQualityJobNode["CreationTime"].isNull())
+		imageQualityJob_.creationTime = imageQualityJobNode["CreationTime"].asString();
+	if(!imageQualityJobNode["State"].isNull())
+		imageQualityJob_.state = imageQualityJobNode["State"].asString();
 	if(!imageQualityJobNode["JobId"].isNull())
 		imageQualityJob_.jobId = imageQualityJobNode["JobId"].asString();
 	if(!imageQualityJobNode["UserData"].isNull())
 		imageQualityJob_.userData = imageQualityJobNode["UserData"].asString();
 	if(!imageQualityJobNode["PipelineId"].isNull())
 		imageQualityJob_.pipelineId = imageQualityJobNode["PipelineId"].asString();
-	if(!imageQualityJobNode["State"].isNull())
-		imageQualityJob_.state = imageQualityJobNode["State"].asString();
-	if(!imageQualityJobNode["CreationTime"].isNull())
-		imageQualityJob_.creationTime = imageQualityJobNode["CreationTime"].asString();
-	auto inputNode = imageQualityJobNode["Input"];
-	if(!inputNode["Bucket"].isNull())
-		imageQualityJob_.input.bucket = inputNode["Bucket"].asString();
-	if(!inputNode["Location"].isNull())
-		imageQualityJob_.input.location = inputNode["Location"].asString();
-	if(!inputNode["Object"].isNull())
-		imageQualityJob_.input.object = inputNode["Object"].asString();
-	if(!inputNode["Url"].isNull())
-		imageQualityJob_.input.url = inputNode["Url"].asString();
 	auto resultNode = imageQualityJobNode["Result"];
 	if(!resultNode["Code"].isNull())
 		imageQualityJob_.result.code = resultNode["Code"].asString();
@@ -66,6 +57,15 @@ void SubmitImageQualityJobResult::parse(const std::string &payload)
 		imageQualityJob_.result.message = resultNode["Message"].asString();
 	if(!resultNode["Score"].isNull())
 		imageQualityJob_.result.score = resultNode["Score"].asString();
+	auto inputNode = imageQualityJobNode["Input"];
+	if(!inputNode["Url"].isNull())
+		imageQualityJob_.input.url = inputNode["Url"].asString();
+	if(!inputNode["Object"].isNull())
+		imageQualityJob_.input.object = inputNode["Object"].asString();
+	if(!inputNode["Location"].isNull())
+		imageQualityJob_.input.location = inputNode["Location"].asString();
+	if(!inputNode["Bucket"].isNull())
+		imageQualityJob_.input.bucket = inputNode["Bucket"].asString();
 
 }
 

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string finishTime;
 					std::string txHash;
 					std::string creationTime;
-					std::string fpDBId;
 					std::string jobId;
+					std::string fpDBId;
 					std::string detail;
 					std::string transactionId;
 				};

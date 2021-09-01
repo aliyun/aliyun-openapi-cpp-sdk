@@ -34,12 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Job
 				{
-					struct Input
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
 					struct VideoSplitResult
 					{
 						struct VideoSplit
@@ -49,6 +43,12 @@ namespace AlibabaCloud
 							std::string startTime;
 						};
 						std::vector<VideoSplit> videoSplitList;
+					};
+					struct Input
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
 					};
 					Input input;
 					std::string message;

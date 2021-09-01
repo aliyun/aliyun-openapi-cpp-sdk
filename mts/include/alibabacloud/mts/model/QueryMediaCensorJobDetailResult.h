@@ -41,12 +41,11 @@ namespace AlibabaCloud
 						std::string label;
 						std::string scene;
 					};
-					struct DescCensorResult
+					struct Input
 					{
-						std::string suggestion;
-						std::string rate;
-						std::string label;
-						std::string scene;
+						std::string bucket;
+						std::string object;
+						std::string location;
 					};
 					struct BarrageCensorResult
 					{
@@ -55,11 +54,12 @@ namespace AlibabaCloud
 						std::string label;
 						std::string scene;
 					};
-					struct Input
+					struct DescCensorResult
 					{
-						std::string bucket;
-						std::string object;
-						std::string location;
+						std::string suggestion;
+						std::string rate;
+						std::string label;
+						std::string scene;
 					};
 					struct VideoCensorConfig
 					{
@@ -75,27 +75,27 @@ namespace AlibabaCloud
 					};
 					struct VensorCensorResult
 					{
-						struct CensorResult
-						{
-							std::string suggestion;
-							std::string rate;
-							std::string label;
-							std::string scene;
-						};
 						struct VideoTimeline
 						{
-							struct CensorResult2
+							struct CensorResult
 							{
 								std::string suggestion;
 								std::string rate;
 								std::string label;
 								std::string scene;
 							};
-							std::vector<VideoTimeline::CensorResult2> censorResults1;
+							std::vector<VideoTimeline::CensorResult> censorResults1;
 							std::string object;
 							std::string timestamp;
 						};
-						std::vector<CensorResult> censorResults;
+						struct CensorResult2
+						{
+							std::string suggestion;
+							std::string rate;
+							std::string label;
+							std::string scene;
+						};
+						std::vector<CensorResult2> censorResults;
 						std::string nextPageToken;
 						std::vector<VideoTimeline> videoTimelines;
 					};

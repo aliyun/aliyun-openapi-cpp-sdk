@@ -43,18 +43,18 @@ void QueryFpImportResultResult::parse(const std::string &payload)
 	for (auto valueFpResultLogInfoListFpResultLogInfo : allFpResultLogInfoListNode)
 	{
 		FpResultLogInfo fpResultLogInfoListObject;
-		if(!valueFpResultLogInfoListFpResultLogInfo["LogPath"].isNull())
-			fpResultLogInfoListObject.logPath = valueFpResultLogInfoListFpResultLogInfo["LogPath"].asString();
-		if(!valueFpResultLogInfoListFpResultLogInfo["LogName"].isNull())
-			fpResultLogInfoListObject.logName = valueFpResultLogInfoListFpResultLogInfo["LogName"].asString();
 		if(!valueFpResultLogInfoListFpResultLogInfo["LogStartTime"].isNull())
 			fpResultLogInfoListObject.logStartTime = std::stol(valueFpResultLogInfoListFpResultLogInfo["LogStartTime"].asString());
-		if(!valueFpResultLogInfoListFpResultLogInfo["LogEndTime"].isNull())
-			fpResultLogInfoListObject.logEndTime = std::stol(valueFpResultLogInfoListFpResultLogInfo["LogEndTime"].asString());
-		if(!valueFpResultLogInfoListFpResultLogInfo["LogSize"].isNull())
-			fpResultLogInfoListObject.logSize = std::stol(valueFpResultLogInfoListFpResultLogInfo["LogSize"].asString());
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogPath"].isNull())
+			fpResultLogInfoListObject.logPath = valueFpResultLogInfoListFpResultLogInfo["LogPath"].asString();
 		if(!valueFpResultLogInfoListFpResultLogInfo["CreateTime"].isNull())
 			fpResultLogInfoListObject.createTime = std::stol(valueFpResultLogInfoListFpResultLogInfo["CreateTime"].asString());
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogSize"].isNull())
+			fpResultLogInfoListObject.logSize = std::stol(valueFpResultLogInfoListFpResultLogInfo["LogSize"].asString());
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogName"].isNull())
+			fpResultLogInfoListObject.logName = valueFpResultLogInfoListFpResultLogInfo["LogName"].asString();
+		if(!valueFpResultLogInfoListFpResultLogInfo["LogEndTime"].isNull())
+			fpResultLogInfoListObject.logEndTime = std::stol(valueFpResultLogInfoListFpResultLogInfo["LogEndTime"].asString());
 		fpResultLogInfoList_.push_back(fpResultLogInfoListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

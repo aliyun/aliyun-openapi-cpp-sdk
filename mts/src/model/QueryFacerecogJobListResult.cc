@@ -43,27 +43,20 @@ void QueryFacerecogJobListResult::parse(const std::string &payload)
 	for (auto valueFacerecogJobListFacerecogJob : allFacerecogJobListNode)
 	{
 		FacerecogJob facerecogJobListObject;
-		if(!valueFacerecogJobListFacerecogJob["Id"].isNull())
-			facerecogJobListObject.id = valueFacerecogJobListFacerecogJob["Id"].asString();
-		if(!valueFacerecogJobListFacerecogJob["UserData"].isNull())
-			facerecogJobListObject.userData = valueFacerecogJobListFacerecogJob["UserData"].asString();
-		if(!valueFacerecogJobListFacerecogJob["PipelineId"].isNull())
-			facerecogJobListObject.pipelineId = valueFacerecogJobListFacerecogJob["PipelineId"].asString();
+		if(!valueFacerecogJobListFacerecogJob["CreationTime"].isNull())
+			facerecogJobListObject.creationTime = valueFacerecogJobListFacerecogJob["CreationTime"].asString();
 		if(!valueFacerecogJobListFacerecogJob["State"].isNull())
 			facerecogJobListObject.state = valueFacerecogJobListFacerecogJob["State"].asString();
+		if(!valueFacerecogJobListFacerecogJob["UserData"].isNull())
+			facerecogJobListObject.userData = valueFacerecogJobListFacerecogJob["UserData"].asString();
 		if(!valueFacerecogJobListFacerecogJob["Code"].isNull())
 			facerecogJobListObject.code = valueFacerecogJobListFacerecogJob["Code"].asString();
 		if(!valueFacerecogJobListFacerecogJob["Message"].isNull())
 			facerecogJobListObject.message = valueFacerecogJobListFacerecogJob["Message"].asString();
-		if(!valueFacerecogJobListFacerecogJob["CreationTime"].isNull())
-			facerecogJobListObject.creationTime = valueFacerecogJobListFacerecogJob["CreationTime"].asString();
-		auto inputNode = value["Input"];
-		if(!inputNode["Bucket"].isNull())
-			facerecogJobListObject.input.bucket = inputNode["Bucket"].asString();
-		if(!inputNode["Location"].isNull())
-			facerecogJobListObject.input.location = inputNode["Location"].asString();
-		if(!inputNode["Object"].isNull())
-			facerecogJobListObject.input.object = inputNode["Object"].asString();
+		if(!valueFacerecogJobListFacerecogJob["PipelineId"].isNull())
+			facerecogJobListObject.pipelineId = valueFacerecogJobListFacerecogJob["PipelineId"].asString();
+		if(!valueFacerecogJobListFacerecogJob["Id"].isNull())
+			facerecogJobListObject.id = valueFacerecogJobListFacerecogJob["Id"].asString();
 		auto videoFacerecogResultNode = value["VideoFacerecogResult"];
 		auto allFacerecogsNode = videoFacerecogResultNode["Facerecogs"]["Facerecog"];
 		for (auto videoFacerecogResultNodeFacerecogsFacerecog : allFacerecogsNode)
@@ -71,20 +64,27 @@ void QueryFacerecogJobListResult::parse(const std::string &payload)
 			FacerecogJob::VideoFacerecogResult::Facerecog facerecogObject;
 			if(!videoFacerecogResultNodeFacerecogsFacerecog["Time"].isNull())
 				facerecogObject.time = videoFacerecogResultNodeFacerecogsFacerecog["Time"].asString();
-			auto allFacesNode = allFacerecogsNode["Faces"]["Face"];
-			for (auto allFacerecogsNodeFacesFace : allFacesNode)
+			auto allFacesNode = videoFacerecogResultNodeFacerecogsFacerecog["Faces"]["Face"];
+			for (auto videoFacerecogResultNodeFacerecogsFacerecogFacesFace : allFacesNode)
 			{
 				FacerecogJob::VideoFacerecogResult::Facerecog::Face facesObject;
-				if(!allFacerecogsNodeFacesFace["Name"].isNull())
-					facesObject.name = allFacerecogsNodeFacesFace["Name"].asString();
-				if(!allFacerecogsNodeFacesFace["Score"].isNull())
-					facesObject.score = allFacerecogsNodeFacesFace["Score"].asString();
-				if(!allFacerecogsNodeFacesFace["Target"].isNull())
-					facesObject.target = allFacerecogsNodeFacesFace["Target"].asString();
+				if(!videoFacerecogResultNodeFacerecogsFacerecogFacesFace["Score"].isNull())
+					facesObject.score = videoFacerecogResultNodeFacerecogsFacerecogFacesFace["Score"].asString();
+				if(!videoFacerecogResultNodeFacerecogsFacerecogFacesFace["Name"].isNull())
+					facesObject.name = videoFacerecogResultNodeFacerecogsFacerecogFacesFace["Name"].asString();
+				if(!videoFacerecogResultNodeFacerecogsFacerecogFacesFace["Target"].isNull())
+					facesObject.target = videoFacerecogResultNodeFacerecogsFacerecogFacesFace["Target"].asString();
 				facerecogObject.faces.push_back(facesObject);
 			}
 			facerecogJobListObject.videoFacerecogResult.facerecogs.push_back(facerecogObject);
 		}
+		auto inputNode = value["Input"];
+		if(!inputNode["Object"].isNull())
+			facerecogJobListObject.input.object = inputNode["Object"].asString();
+		if(!inputNode["Location"].isNull())
+			facerecogJobListObject.input.location = inputNode["Location"].asString();
+		if(!inputNode["Bucket"].isNull())
+			facerecogJobListObject.input.bucket = inputNode["Bucket"].asString();
 		facerecogJobList_.push_back(facerecogJobListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

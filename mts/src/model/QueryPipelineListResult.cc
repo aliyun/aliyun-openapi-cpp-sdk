@@ -43,29 +43,29 @@ void QueryPipelineListResult::parse(const std::string &payload)
 	for (auto valuePipelineListPipeline : allPipelineListNode)
 	{
 		Pipeline pipelineListObject;
-		if(!valuePipelineListPipeline["Id"].isNull())
-			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
-		if(!valuePipelineListPipeline["Name"].isNull())
-			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
-		if(!valuePipelineListPipeline["State"].isNull())
-			pipelineListObject.state = valuePipelineListPipeline["State"].asString();
 		if(!valuePipelineListPipeline["Speed"].isNull())
 			pipelineListObject.speed = valuePipelineListPipeline["Speed"].asString();
+		if(!valuePipelineListPipeline["State"].isNull())
+			pipelineListObject.state = valuePipelineListPipeline["State"].asString();
 		if(!valuePipelineListPipeline["SpeedLevel"].isNull())
 			pipelineListObject.speedLevel = std::stol(valuePipelineListPipeline["SpeedLevel"].asString());
-		if(!valuePipelineListPipeline["QuotaAllocate"].isNull())
-			pipelineListObject.quotaAllocate = std::stol(valuePipelineListPipeline["QuotaAllocate"].asString());
 		if(!valuePipelineListPipeline["Role"].isNull())
 			pipelineListObject.role = valuePipelineListPipeline["Role"].asString();
+		if(!valuePipelineListPipeline["Name"].isNull())
+			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
+		if(!valuePipelineListPipeline["Id"].isNull())
+			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
+		if(!valuePipelineListPipeline["QuotaAllocate"].isNull())
+			pipelineListObject.quotaAllocate = std::stol(valuePipelineListPipeline["QuotaAllocate"].asString());
 		auto notifyConfigNode = value["NotifyConfig"];
-		if(!notifyConfigNode["Topic"].isNull())
-			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();
-		if(!notifyConfigNode["QueueName"].isNull())
-			pipelineListObject.notifyConfig.queueName = notifyConfigNode["QueueName"].asString();
 		if(!notifyConfigNode["MqTopic"].isNull())
 			pipelineListObject.notifyConfig.mqTopic = notifyConfigNode["MqTopic"].asString();
+		if(!notifyConfigNode["QueueName"].isNull())
+			pipelineListObject.notifyConfig.queueName = notifyConfigNode["QueueName"].asString();
 		if(!notifyConfigNode["MqTag"].isNull())
 			pipelineListObject.notifyConfig.mqTag = notifyConfigNode["MqTag"].asString();
+		if(!notifyConfigNode["Topic"].isNull())
+			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();
 		pipelineList_.push_back(pipelineListObject);
 	}
 	auto allNonExistPids = value["NonExistPids"]["String"];

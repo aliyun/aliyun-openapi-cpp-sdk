@@ -34,6 +34,28 @@ namespace AlibabaCloud
 			public:
 				struct CensorJob
 				{
+					struct CensorTerrorismResult
+					{
+						struct Top
+						{
+							std::string score;
+							std::string label;
+							std::string index;
+							std::string object;
+							std::string timestamp;
+						};
+						struct Counter
+						{
+							std::string label;
+							int count;
+						};
+						std::vector<Counter> terrorismCounterList;
+						std::string suggestion;
+						std::string maxScore;
+						std::string averageScore;
+						std::string label;
+						std::vector<Top> terrorismTopList;
+					};
 					struct Input
 					{
 						std::string bucket;
@@ -56,28 +78,6 @@ namespace AlibabaCloud
 					};
 					struct CensorPornResult
 					{
-						struct Counter
-						{
-							std::string label;
-							int count;
-						};
-						struct Top
-						{
-							std::string score;
-							std::string label;
-							std::string index;
-							std::string object;
-							std::string timestamp;
-						};
-						std::string suggestion;
-						std::string maxScore;
-						std::string averageScore;
-						std::vector<Counter> pornCounterList;
-						std::vector<Top> pornTopList;
-						std::string label;
-					};
-					struct CensorTerrorismResult
-					{
 						struct Counter1
 						{
 							std::string label;
@@ -91,12 +91,12 @@ namespace AlibabaCloud
 							std::string object;
 							std::string timestamp;
 						};
-						std::vector<Counter1> terrorismCounterList;
 						std::string suggestion;
 						std::string maxScore;
 						std::string averageScore;
+						std::vector<Counter1> pornCounterList;
+						std::vector<Top2> pornTopList;
 						std::string label;
-						std::vector<Top2> terrorismTopList;
 					};
 					struct ImageCensorResult
 					{
@@ -108,8 +108,8 @@ namespace AlibabaCloud
 					CensorTerrorismResult censorTerrorismResult;
 					std::vector<CensorJob::ImageCensorResult> imageCensorResults;
 					std::string message;
-					std::string userData;
 					std::string descCensorResult;
+					std::string userData;
 					CensorPornResult censorPornResult;
 					std::string code;
 					Input input;

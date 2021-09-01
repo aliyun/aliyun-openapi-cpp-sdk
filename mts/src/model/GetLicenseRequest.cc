@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,100 @@
 
 using AlibabaCloud::Mts::Model::GetLicenseRequest;
 
-GetLicenseRequest::GetLicenseRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "GetLicense")
-{
-	setMethod(HttpRequest::Method::Post);
+GetLicenseRequest::GetLicenseRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "GetLicense") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetLicenseRequest::~GetLicenseRequest()
-{}
+GetLicenseRequest::~GetLicenseRequest() {}
 
-std::string GetLicenseRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+std::string GetLicenseRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void GetLicenseRequest::setResourceOwnerId(const std::string& resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+void GetLicenseRequest::setResourceOwnerId(const std::string &resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
 }
 
-std::string GetLicenseRequest::getData()const
-{
-	return data_;
+std::string GetLicenseRequest::getData() const {
+  return data_;
 }
 
-void GetLicenseRequest::setData(const std::string& data)
-{
-	data_ = data;
-	setParameter("Data", data);
+void GetLicenseRequest::setData(const std::string &data) {
+  data_ = data;
+  setParameter(std::string("Data"), data);
 }
 
-std::string GetLicenseRequest::getType()const
-{
-	return type_;
+std::string GetLicenseRequest::getType() const {
+  return type_;
 }
 
-void GetLicenseRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void GetLicenseRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-std::string GetLicenseRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string GetLicenseRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void GetLicenseRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void GetLicenseRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string GetLicenseRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string GetLicenseRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void GetLicenseRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void GetLicenseRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string GetLicenseRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string GetLicenseRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void GetLicenseRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void GetLicenseRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string GetLicenseRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string GetLicenseRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void GetLicenseRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void GetLicenseRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string GetLicenseRequest::getMediaId()const
-{
-	return mediaId_;
+std::string GetLicenseRequest::getMediaId() const {
+  return mediaId_;
 }
 
-void GetLicenseRequest::setMediaId(const std::string& mediaId)
-{
-	mediaId_ = mediaId;
-	setParameter("MediaId", mediaId);
+void GetLicenseRequest::setMediaId(const std::string &mediaId) {
+  mediaId_ = mediaId;
+  setParameter(std::string("MediaId"), mediaId);
 }
 
-std::string GetLicenseRequest::getHeader()const
-{
-	return header_;
+std::string GetLicenseRequest::getHeader() const {
+  return header_;
 }
 
-void GetLicenseRequest::setHeader(const std::string& header)
-{
-	header_ = header;
-	setParameter("Header", header);
+void GetLicenseRequest::setHeader(const std::string &header) {
+  header_ = header;
+  setParameter(std::string("Header"), header);
 }
 
-std::string GetLicenseRequest::getLicenseUrl()const
-{
-	return licenseUrl_;
+std::string GetLicenseRequest::getLicenseUrl() const {
+  return licenseUrl_;
 }
 
-void GetLicenseRequest::setLicenseUrl(const std::string& licenseUrl)
-{
-	licenseUrl_ = licenseUrl;
-	setParameter("LicenseUrl", licenseUrl);
+void GetLicenseRequest::setLicenseUrl(const std::string &licenseUrl) {
+  licenseUrl_ = licenseUrl;
+  setParameter(std::string("LicenseUrl"), licenseUrl);
 }
 

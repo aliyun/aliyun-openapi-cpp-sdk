@@ -40,41 +40,41 @@ void UpdateMediaResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto mediaNode = value["Media"];
-	if(!mediaNode["MediaId"].isNull())
-		media_.mediaId = mediaNode["MediaId"].asString();
-	if(!mediaNode["Title"].isNull())
-		media_.title = mediaNode["Title"].asString();
-	if(!mediaNode["Description"].isNull())
-		media_.description = mediaNode["Description"].asString();
-	if(!mediaNode["CoverURL"].isNull())
-		media_.coverURL = mediaNode["CoverURL"].asString();
-	if(!mediaNode["CateId"].isNull())
-		media_.cateId = std::stol(mediaNode["CateId"].asString());
-	if(!mediaNode["Duration"].isNull())
-		media_.duration = mediaNode["Duration"].asString();
-	if(!mediaNode["Format"].isNull())
-		media_.format = mediaNode["Format"].asString();
-	if(!mediaNode["Size"].isNull())
-		media_.size = mediaNode["Size"].asString();
-	if(!mediaNode["Bitrate"].isNull())
-		media_.bitrate = mediaNode["Bitrate"].asString();
-	if(!mediaNode["Width"].isNull())
-		media_.width = mediaNode["Width"].asString();
-	if(!mediaNode["Height"].isNull())
-		media_.height = mediaNode["Height"].asString();
-	if(!mediaNode["Fps"].isNull())
-		media_.fps = mediaNode["Fps"].asString();
-	if(!mediaNode["PublishState"].isNull())
-		media_.publishState = mediaNode["PublishState"].asString();
-	if(!mediaNode["CensorState"].isNull())
-		media_.censorState = mediaNode["CensorState"].asString();
 	if(!mediaNode["CreationTime"].isNull())
 		media_.creationTime = mediaNode["CreationTime"].asString();
+	if(!mediaNode["CateId"].isNull())
+		media_.cateId = std::stol(mediaNode["CateId"].asString());
+	if(!mediaNode["Height"].isNull())
+		media_.height = mediaNode["Height"].asString();
+	if(!mediaNode["CensorState"].isNull())
+		media_.censorState = mediaNode["CensorState"].asString();
+	if(!mediaNode["Bitrate"].isNull())
+		media_.bitrate = mediaNode["Bitrate"].asString();
+	if(!mediaNode["MediaId"].isNull())
+		media_.mediaId = mediaNode["MediaId"].asString();
+	if(!mediaNode["PublishState"].isNull())
+		media_.publishState = mediaNode["PublishState"].asString();
+	if(!mediaNode["Description"].isNull())
+		media_.description = mediaNode["Description"].asString();
+	if(!mediaNode["Width"].isNull())
+		media_.width = mediaNode["Width"].asString();
+	if(!mediaNode["Size"].isNull())
+		media_.size = mediaNode["Size"].asString();
+	if(!mediaNode["CoverURL"].isNull())
+		media_.coverURL = mediaNode["CoverURL"].asString();
+	if(!mediaNode["Duration"].isNull())
+		media_.duration = mediaNode["Duration"].asString();
+	if(!mediaNode["Fps"].isNull())
+		media_.fps = mediaNode["Fps"].asString();
+	if(!mediaNode["Title"].isNull())
+		media_.title = mediaNode["Title"].asString();
+	if(!mediaNode["Format"].isNull())
+		media_.format = mediaNode["Format"].asString();
 	auto fileNode = mediaNode["File"];
-	if(!fileNode["URL"].isNull())
-		media_.file.uRL = fileNode["URL"].asString();
 	if(!fileNode["State"].isNull())
 		media_.file.state = fileNode["State"].asString();
+	if(!fileNode["URL"].isNull())
+		media_.file.uRL = fileNode["URL"].asString();
 		auto allTags = mediaNode["Tags"]["Tag"];
 		for (auto value : allTags)
 			media_.tags.push_back(value.asString());

@@ -43,47 +43,47 @@ void QueryCoverJobListResult::parse(const std::string &payload)
 	for (auto valueCoverJobListCoverJob : allCoverJobListNode)
 	{
 		CoverJob coverJobListObject;
-		if(!valueCoverJobListCoverJob["Id"].isNull())
-			coverJobListObject.id = valueCoverJobListCoverJob["Id"].asString();
-		if(!valueCoverJobListCoverJob["UserData"].isNull())
-			coverJobListObject.userData = valueCoverJobListCoverJob["UserData"].asString();
-		if(!valueCoverJobListCoverJob["PipelineId"].isNull())
-			coverJobListObject.pipelineId = valueCoverJobListCoverJob["PipelineId"].asString();
+		if(!valueCoverJobListCoverJob["CreationTime"].isNull())
+			coverJobListObject.creationTime = valueCoverJobListCoverJob["CreationTime"].asString();
 		if(!valueCoverJobListCoverJob["State"].isNull())
 			coverJobListObject.state = valueCoverJobListCoverJob["State"].asString();
+		if(!valueCoverJobListCoverJob["UserData"].isNull())
+			coverJobListObject.userData = valueCoverJobListCoverJob["UserData"].asString();
 		if(!valueCoverJobListCoverJob["Code"].isNull())
 			coverJobListObject.code = valueCoverJobListCoverJob["Code"].asString();
 		if(!valueCoverJobListCoverJob["Message"].isNull())
 			coverJobListObject.message = valueCoverJobListCoverJob["Message"].asString();
-		if(!valueCoverJobListCoverJob["CreationTime"].isNull())
-			coverJobListObject.creationTime = valueCoverJobListCoverJob["CreationTime"].asString();
-		auto allCoverImageListNode = allCoverJobListNode["CoverImageList"]["CoverImage"];
-		for (auto allCoverJobListNodeCoverImageListCoverImage : allCoverImageListNode)
+		if(!valueCoverJobListCoverJob["PipelineId"].isNull())
+			coverJobListObject.pipelineId = valueCoverJobListCoverJob["PipelineId"].asString();
+		if(!valueCoverJobListCoverJob["Id"].isNull())
+			coverJobListObject.id = valueCoverJobListCoverJob["Id"].asString();
+		auto allCoverImageListNode = valueCoverJobListCoverJob["CoverImageList"]["CoverImage"];
+		for (auto valueCoverJobListCoverJobCoverImageListCoverImage : allCoverImageListNode)
 		{
 			CoverJob::CoverImage coverImageListObject;
-			if(!allCoverJobListNodeCoverImageListCoverImage["Score"].isNull())
-				coverImageListObject.score = allCoverJobListNodeCoverImageListCoverImage["Score"].asString();
-			if(!allCoverJobListNodeCoverImageListCoverImage["Url"].isNull())
-				coverImageListObject.url = allCoverJobListNodeCoverImageListCoverImage["Url"].asString();
-			if(!allCoverJobListNodeCoverImageListCoverImage["Time"].isNull())
-				coverImageListObject.time = allCoverJobListNodeCoverImageListCoverImage["Time"].asString();
+			if(!valueCoverJobListCoverJobCoverImageListCoverImage["Time"].isNull())
+				coverImageListObject.time = valueCoverJobListCoverJobCoverImageListCoverImage["Time"].asString();
+			if(!valueCoverJobListCoverJobCoverImageListCoverImage["Score"].isNull())
+				coverImageListObject.score = valueCoverJobListCoverJobCoverImageListCoverImage["Score"].asString();
+			if(!valueCoverJobListCoverJobCoverImageListCoverImage["Url"].isNull())
+				coverImageListObject.url = valueCoverJobListCoverJobCoverImageListCoverImage["Url"].asString();
 			coverJobListObject.coverImageList.push_back(coverImageListObject);
 		}
 		auto inputNode = value["Input"];
-		if(!inputNode["Bucket"].isNull())
-			coverJobListObject.input.bucket = inputNode["Bucket"].asString();
-		if(!inputNode["Location"].isNull())
-			coverJobListObject.input.location = inputNode["Location"].asString();
 		if(!inputNode["Object"].isNull())
 			coverJobListObject.input.object = inputNode["Object"].asString();
+		if(!inputNode["Location"].isNull())
+			coverJobListObject.input.location = inputNode["Location"].asString();
+		if(!inputNode["Bucket"].isNull())
+			coverJobListObject.input.bucket = inputNode["Bucket"].asString();
 		auto coverConfigNode = value["CoverConfig"];
 		auto outputFileNode = coverConfigNode["OutputFile"];
-		if(!outputFileNode["Bucket"].isNull())
-			coverJobListObject.coverConfig.outputFile.bucket = outputFileNode["Bucket"].asString();
-		if(!outputFileNode["Location"].isNull())
-			coverJobListObject.coverConfig.outputFile.location = outputFileNode["Location"].asString();
 		if(!outputFileNode["Object"].isNull())
 			coverJobListObject.coverConfig.outputFile.object = outputFileNode["Object"].asString();
+		if(!outputFileNode["Location"].isNull())
+			coverJobListObject.coverConfig.outputFile.location = outputFileNode["Location"].asString();
+		if(!outputFileNode["Bucket"].isNull())
+			coverJobListObject.coverConfig.outputFile.bucket = outputFileNode["Bucket"].asString();
 		coverJobList_.push_back(coverJobListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

@@ -43,26 +43,26 @@ void SearchMediaWorkflowResult::parse(const std::string &payload)
 	for (auto valueMediaWorkflowListMediaWorkflow : allMediaWorkflowListNode)
 	{
 		MediaWorkflow mediaWorkflowListObject;
+		if(!valueMediaWorkflowListMediaWorkflow["CreationTime"].isNull())
+			mediaWorkflowListObject.creationTime = valueMediaWorkflowListMediaWorkflow["CreationTime"].asString();
 		if(!valueMediaWorkflowListMediaWorkflow["MediaWorkflowId"].isNull())
 			mediaWorkflowListObject.mediaWorkflowId = valueMediaWorkflowListMediaWorkflow["MediaWorkflowId"].asString();
+		if(!valueMediaWorkflowListMediaWorkflow["State"].isNull())
+			mediaWorkflowListObject.state = valueMediaWorkflowListMediaWorkflow["State"].asString();
+		if(!valueMediaWorkflowListMediaWorkflow["TriggerMode"].isNull())
+			mediaWorkflowListObject.triggerMode = valueMediaWorkflowListMediaWorkflow["TriggerMode"].asString();
 		if(!valueMediaWorkflowListMediaWorkflow["Name"].isNull())
 			mediaWorkflowListObject.name = valueMediaWorkflowListMediaWorkflow["Name"].asString();
 		if(!valueMediaWorkflowListMediaWorkflow["Topology"].isNull())
 			mediaWorkflowListObject.topology = valueMediaWorkflowListMediaWorkflow["Topology"].asString();
-		if(!valueMediaWorkflowListMediaWorkflow["TriggerMode"].isNull())
-			mediaWorkflowListObject.triggerMode = valueMediaWorkflowListMediaWorkflow["TriggerMode"].asString();
-		if(!valueMediaWorkflowListMediaWorkflow["State"].isNull())
-			mediaWorkflowListObject.state = valueMediaWorkflowListMediaWorkflow["State"].asString();
-		if(!valueMediaWorkflowListMediaWorkflow["CreationTime"].isNull())
-			mediaWorkflowListObject.creationTime = valueMediaWorkflowListMediaWorkflow["CreationTime"].asString();
 		mediaWorkflowList_.push_back(mediaWorkflowListObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

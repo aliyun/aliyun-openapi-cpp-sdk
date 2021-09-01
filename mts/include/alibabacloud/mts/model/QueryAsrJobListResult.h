@@ -34,15 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct Job
 				{
+					struct AsrConfig
+					{
+						std::string scene;
+					};
 					struct Input
 					{
 						std::string bucket;
 						std::string object;
 						std::string location;
-					};
-					struct AsrConfig
-					{
-						std::string scene;
 					};
 					struct AsrResult
 					{

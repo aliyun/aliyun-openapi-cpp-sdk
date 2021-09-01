@@ -40,32 +40,32 @@ void UpdateMCTemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto _templateNode = value["Template"];
-	if(!_templateNode["TemplateId"].isNull())
-		_template_.templateId = _templateNode["TemplateId"].asString();
-	if(!_templateNode["Name"].isNull())
-		_template_.name = _templateNode["Name"].asString();
-	if(!_templateNode["State"].isNull())
-		_template_.state = _templateNode["State"].asString();
-	if(!_templateNode["Porn"].isNull())
-		_template_.porn = _templateNode["Porn"].asString();
-	if(!_templateNode["Terrorism"].isNull())
-		_template_.terrorism = _templateNode["Terrorism"].asString();
-	if(!_templateNode["Politics"].isNull())
-		_template_.politics = _templateNode["Politics"].asString();
-	if(!_templateNode["Ad"].isNull())
-		_template_.ad = _templateNode["Ad"].asString();
-	if(!_templateNode["Qrcode"].isNull())
-		_template_.qrcode = _templateNode["Qrcode"].asString();
-	if(!_templateNode["Live"].isNull())
-		_template_.live = _templateNode["Live"].asString();
 	if(!_templateNode["Logo"].isNull())
 		_template_.logo = _templateNode["Logo"].asString();
 	if(!_templateNode["Abuse"].isNull())
 		_template_.abuse = _templateNode["Abuse"].asString();
-	if(!_templateNode["Contraband"].isNull())
-		_template_.contraband = _templateNode["Contraband"].asString();
+	if(!_templateNode["State"].isNull())
+		_template_.state = _templateNode["State"].asString();
+	if(!_templateNode["Terrorism"].isNull())
+		_template_.terrorism = _templateNode["Terrorism"].asString();
+	if(!_templateNode["Politics"].isNull())
+		_template_.politics = _templateNode["Politics"].asString();
+	if(!_templateNode["Qrcode"].isNull())
+		_template_.qrcode = _templateNode["Qrcode"].asString();
+	if(!_templateNode["Live"].isNull())
+		_template_.live = _templateNode["Live"].asString();
 	if(!_templateNode["Spam"].isNull())
 		_template_.spam = _templateNode["Spam"].asString();
+	if(!_templateNode["Contraband"].isNull())
+		_template_.contraband = _templateNode["Contraband"].asString();
+	if(!_templateNode["Ad"].isNull())
+		_template_.ad = _templateNode["Ad"].asString();
+	if(!_templateNode["Porn"].isNull())
+		_template_.porn = _templateNode["Porn"].asString();
+	if(!_templateNode["Name"].isNull())
+		_template_.name = _templateNode["Name"].asString();
+	if(!_templateNode["TemplateId"].isNull())
+		_template_.templateId = _templateNode["TemplateId"].asString();
 
 }
 

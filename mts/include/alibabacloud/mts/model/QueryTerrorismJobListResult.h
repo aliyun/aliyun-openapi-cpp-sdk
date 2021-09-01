@@ -34,11 +34,27 @@ namespace AlibabaCloud
 			public:
 				struct TerrorismJob
 				{
-					struct Input
+					struct CensorTerrorismResult
 					{
-						std::string bucket;
-						std::string object;
-						std::string location;
+						struct Top
+						{
+							std::string score;
+							std::string label;
+							std::string index;
+							std::string object;
+							std::string timestamp;
+						};
+						struct Counter
+						{
+							std::string label;
+							int count;
+						};
+						std::vector<Counter> terrorismCounterList;
+						std::string suggestion;
+						std::string maxScore;
+						std::string averageScore;
+						std::string label;
+						std::vector<Top> terrorismTopList;
 					};
 					struct TerrorismConfig
 					{
@@ -52,30 +68,14 @@ namespace AlibabaCloud
 						std::string bizType;
 						std::string interval;
 					};
-					struct CensorTerrorismResult
+					struct Input
 					{
-						struct Counter
-						{
-							std::string label;
-							int count;
-						};
-						struct Top
-						{
-							std::string score;
-							std::string label;
-							std::string index;
-							std::string object;
-							std::string timestamp;
-						};
-						std::vector<Counter> terrorismCounterList;
-						std::string suggestion;
-						std::string maxScore;
-						std::string averageScore;
-						std::string label;
-						std::vector<Top> terrorismTopList;
+						std::string bucket;
+						std::string object;
+						std::string location;
 					};
-					Input input;
 					CensorTerrorismResult censorTerrorismResult;
+					Input input;
 					std::string message;
 					std::string userData;
 					std::string state;

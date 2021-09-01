@@ -34,31 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct FpShotJob
 				{
-					struct InputFile
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
-					struct FpShotConfig
-					{
-						std::string saveType;
-						std::string primaryKey;
-						std::string notary;
-						std::string fpDBId;
-					};
 					struct FpShotResult
 					{
 						struct FpShot
 						{
 							struct FpShotSlice
 							{
-								struct Input
+								struct Duplication
 								{
 									std::string start;
 									std::string duration;
 								};
-								struct Duplication
+								struct Input
 								{
 									std::string start;
 									std::string duration;
@@ -73,6 +60,19 @@ namespace AlibabaCloud
 						};
 						std::vector<FpShot> audioFpShots;
 						std::vector<FpShot> fpShots;
+					};
+					struct FpShotConfig
+					{
+						std::string saveType;
+						std::string primaryKey;
+						std::string notary;
+						std::string fpDBId;
+					};
+					struct InputFile
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
 					};
 					std::string message;
 					std::string userData;

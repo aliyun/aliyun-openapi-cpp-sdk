@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Mts::Model::QueryMCTemplateListRequest;
 
-QueryMCTemplateListRequest::QueryMCTemplateListRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "QueryMCTemplateList")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryMCTemplateListRequest::QueryMCTemplateListRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "QueryMCTemplateList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryMCTemplateListRequest::~QueryMCTemplateListRequest()
-{}
+QueryMCTemplateListRequest::~QueryMCTemplateListRequest() {}
 
-long QueryMCTemplateListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long QueryMCTemplateListRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryMCTemplateListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void QueryMCTemplateListRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string QueryMCTemplateListRequest::getTemplateIds()const
-{
-	return templateIds_;
+std::string QueryMCTemplateListRequest::getTemplateIds() const {
+  return templateIds_;
 }
 
-void QueryMCTemplateListRequest::setTemplateIds(const std::string& templateIds)
-{
-	templateIds_ = templateIds;
-	setParameter("TemplateIds", templateIds);
+void QueryMCTemplateListRequest::setTemplateIds(const std::string &templateIds) {
+  templateIds_ = templateIds;
+  setParameter(std::string("TemplateIds"), templateIds);
 }
 
-std::string QueryMCTemplateListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string QueryMCTemplateListRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void QueryMCTemplateListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void QueryMCTemplateListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string QueryMCTemplateListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string QueryMCTemplateListRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void QueryMCTemplateListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void QueryMCTemplateListRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long QueryMCTemplateListRequest::getOwnerId()const
-{
-	return ownerId_;
+long QueryMCTemplateListRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void QueryMCTemplateListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void QueryMCTemplateListRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QueryMCTemplateListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string QueryMCTemplateListRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void QueryMCTemplateListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void QueryMCTemplateListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

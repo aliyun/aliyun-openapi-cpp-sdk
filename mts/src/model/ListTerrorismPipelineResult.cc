@@ -43,14 +43,14 @@ void ListTerrorismPipelineResult::parse(const std::string &payload)
 	for (auto valuePipelineListPipeline : allPipelineListNode)
 	{
 		Pipeline pipelineListObject;
-		if(!valuePipelineListPipeline["Id"].isNull())
-			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
-		if(!valuePipelineListPipeline["Name"].isNull())
-			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
 		if(!valuePipelineListPipeline["State"].isNull())
 			pipelineListObject.state = valuePipelineListPipeline["State"].asString();
 		if(!valuePipelineListPipeline["Priority"].isNull())
 			pipelineListObject.priority = valuePipelineListPipeline["Priority"].asString();
+		if(!valuePipelineListPipeline["Name"].isNull())
+			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
+		if(!valuePipelineListPipeline["Id"].isNull())
+			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
 		auto notifyConfigNode = value["NotifyConfig"];
 		if(!notifyConfigNode["Topic"].isNull())
 			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();
@@ -60,10 +60,10 @@ void ListTerrorismPipelineResult::parse(const std::string &payload)
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

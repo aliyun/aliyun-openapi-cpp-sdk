@@ -43,39 +43,39 @@ void SearchMediaResult::parse(const std::string &payload)
 	for (auto valueMediaListMedia : allMediaListNode)
 	{
 		Media mediaListObject;
-		if(!valueMediaListMedia["MediaId"].isNull())
-			mediaListObject.mediaId = valueMediaListMedia["MediaId"].asString();
-		if(!valueMediaListMedia["Title"].isNull())
-			mediaListObject.title = valueMediaListMedia["Title"].asString();
-		if(!valueMediaListMedia["Description"].isNull())
-			mediaListObject.description = valueMediaListMedia["Description"].asString();
-		if(!valueMediaListMedia["CoverURL"].isNull())
-			mediaListObject.coverURL = valueMediaListMedia["CoverURL"].asString();
-		if(!valueMediaListMedia["CateId"].isNull())
-			mediaListObject.cateId = std::stol(valueMediaListMedia["CateId"].asString());
-		if(!valueMediaListMedia["Duration"].isNull())
-			mediaListObject.duration = valueMediaListMedia["Duration"].asString();
-		if(!valueMediaListMedia["Format"].isNull())
-			mediaListObject.format = valueMediaListMedia["Format"].asString();
-		if(!valueMediaListMedia["Size"].isNull())
-			mediaListObject.size = valueMediaListMedia["Size"].asString();
-		if(!valueMediaListMedia["Bitrate"].isNull())
-			mediaListObject.bitrate = valueMediaListMedia["Bitrate"].asString();
-		if(!valueMediaListMedia["Width"].isNull())
-			mediaListObject.width = valueMediaListMedia["Width"].asString();
-		if(!valueMediaListMedia["Height"].isNull())
-			mediaListObject.height = valueMediaListMedia["Height"].asString();
-		if(!valueMediaListMedia["Fps"].isNull())
-			mediaListObject.fps = valueMediaListMedia["Fps"].asString();
-		if(!valueMediaListMedia["PublishState"].isNull())
-			mediaListObject.publishState = valueMediaListMedia["PublishState"].asString();
 		if(!valueMediaListMedia["CreationTime"].isNull())
 			mediaListObject.creationTime = valueMediaListMedia["CreationTime"].asString();
+		if(!valueMediaListMedia["CateId"].isNull())
+			mediaListObject.cateId = std::stol(valueMediaListMedia["CateId"].asString());
+		if(!valueMediaListMedia["Height"].isNull())
+			mediaListObject.height = valueMediaListMedia["Height"].asString();
+		if(!valueMediaListMedia["Bitrate"].isNull())
+			mediaListObject.bitrate = valueMediaListMedia["Bitrate"].asString();
+		if(!valueMediaListMedia["MediaId"].isNull())
+			mediaListObject.mediaId = valueMediaListMedia["MediaId"].asString();
+		if(!valueMediaListMedia["PublishState"].isNull())
+			mediaListObject.publishState = valueMediaListMedia["PublishState"].asString();
+		if(!valueMediaListMedia["Description"].isNull())
+			mediaListObject.description = valueMediaListMedia["Description"].asString();
+		if(!valueMediaListMedia["Width"].isNull())
+			mediaListObject.width = valueMediaListMedia["Width"].asString();
+		if(!valueMediaListMedia["Size"].isNull())
+			mediaListObject.size = valueMediaListMedia["Size"].asString();
+		if(!valueMediaListMedia["CoverURL"].isNull())
+			mediaListObject.coverURL = valueMediaListMedia["CoverURL"].asString();
+		if(!valueMediaListMedia["Duration"].isNull())
+			mediaListObject.duration = valueMediaListMedia["Duration"].asString();
+		if(!valueMediaListMedia["Fps"].isNull())
+			mediaListObject.fps = valueMediaListMedia["Fps"].asString();
+		if(!valueMediaListMedia["Title"].isNull())
+			mediaListObject.title = valueMediaListMedia["Title"].asString();
+		if(!valueMediaListMedia["Format"].isNull())
+			mediaListObject.format = valueMediaListMedia["Format"].asString();
 		auto fileNode = value["File"];
-		if(!fileNode["URL"].isNull())
-			mediaListObject.file.uRL = fileNode["URL"].asString();
 		if(!fileNode["State"].isNull())
 			mediaListObject.file.state = fileNode["State"].asString();
+		if(!fileNode["URL"].isNull())
+			mediaListObject.file.uRL = fileNode["URL"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 			mediaListObject.tags.push_back(value.asString());
@@ -86,10 +86,10 @@ void SearchMediaResult::parse(const std::string &payload)
 	}
 	if(!value["TotalNum"].isNull())
 		totalNum_ = std::stol(value["TotalNum"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

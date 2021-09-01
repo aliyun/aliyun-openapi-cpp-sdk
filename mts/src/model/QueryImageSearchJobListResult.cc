@@ -43,49 +43,49 @@ void QueryImageSearchJobListResult::parse(const std::string &payload)
 	for (auto valueImageSearchJobListImageSearchJob : allImageSearchJobListNode)
 	{
 		ImageSearchJob imageSearchJobListObject;
-		if(!valueImageSearchJobListImageSearchJob["Id"].isNull())
-			imageSearchJobListObject.id = valueImageSearchJobListImageSearchJob["Id"].asString();
-		if(!valueImageSearchJobListImageSearchJob["UserData"].isNull())
-			imageSearchJobListObject.userData = valueImageSearchJobListImageSearchJob["UserData"].asString();
-		if(!valueImageSearchJobListImageSearchJob["PipelineId"].isNull())
-			imageSearchJobListObject.pipelineId = valueImageSearchJobListImageSearchJob["PipelineId"].asString();
-		if(!valueImageSearchJobListImageSearchJob["State"].isNull())
-			imageSearchJobListObject.state = valueImageSearchJobListImageSearchJob["State"].asString();
-		if(!valueImageSearchJobListImageSearchJob["Code"].isNull())
-			imageSearchJobListObject.code = valueImageSearchJobListImageSearchJob["Code"].asString();
-		if(!valueImageSearchJobListImageSearchJob["Message"].isNull())
-			imageSearchJobListObject.message = valueImageSearchJobListImageSearchJob["Message"].asString();
 		if(!valueImageSearchJobListImageSearchJob["CreationTime"].isNull())
 			imageSearchJobListObject.creationTime = valueImageSearchJobListImageSearchJob["CreationTime"].asString();
 		if(!valueImageSearchJobListImageSearchJob["FinishTime"].isNull())
 			imageSearchJobListObject.finishTime = valueImageSearchJobListImageSearchJob["FinishTime"].asString();
-		auto inputVideoNode = value["InputVideo"];
-		if(!inputVideoNode["Bucket"].isNull())
-			imageSearchJobListObject.inputVideo.bucket = inputVideoNode["Bucket"].asString();
-		if(!inputVideoNode["Location"].isNull())
-			imageSearchJobListObject.inputVideo.location = inputVideoNode["Location"].asString();
-		if(!inputVideoNode["Object"].isNull())
-			imageSearchJobListObject.inputVideo.object = inputVideoNode["Object"].asString();
-		auto inputImageNode = value["inputImage"];
-		if(!inputImageNode["Bucket"].isNull())
-			imageSearchJobListObject.inputImage.bucket = inputImageNode["Bucket"].asString();
-		if(!inputImageNode["Location"].isNull())
-			imageSearchJobListObject.inputImage.location = inputImageNode["Location"].asString();
-		if(!inputImageNode["Object"].isNull())
-			imageSearchJobListObject.inputImage.object = inputImageNode["Object"].asString();
+		if(!valueImageSearchJobListImageSearchJob["State"].isNull())
+			imageSearchJobListObject.state = valueImageSearchJobListImageSearchJob["State"].asString();
+		if(!valueImageSearchJobListImageSearchJob["UserData"].isNull())
+			imageSearchJobListObject.userData = valueImageSearchJobListImageSearchJob["UserData"].asString();
+		if(!valueImageSearchJobListImageSearchJob["Code"].isNull())
+			imageSearchJobListObject.code = valueImageSearchJobListImageSearchJob["Code"].asString();
+		if(!valueImageSearchJobListImageSearchJob["Message"].isNull())
+			imageSearchJobListObject.message = valueImageSearchJobListImageSearchJob["Message"].asString();
+		if(!valueImageSearchJobListImageSearchJob["PipelineId"].isNull())
+			imageSearchJobListObject.pipelineId = valueImageSearchJobListImageSearchJob["PipelineId"].asString();
+		if(!valueImageSearchJobListImageSearchJob["Id"].isNull())
+			imageSearchJobListObject.id = valueImageSearchJobListImageSearchJob["Id"].asString();
 		auto resultNode = value["Result"];
 		auto allImageSearchShotsNode = resultNode["ImageSearchShots"]["ImageSearchShotsItem"];
 		for (auto resultNodeImageSearchShotsImageSearchShotsItem : allImageSearchShotsNode)
 		{
 			ImageSearchJob::Result::ImageSearchShotsItem imageSearchShotsItemObject;
-			if(!resultNodeImageSearchShotsImageSearchShotsItem["MatchedTimestamp"].isNull())
-				imageSearchShotsItemObject.matchedTimestamp = resultNodeImageSearchShotsImageSearchShotsItem["MatchedTimestamp"].asString();
 			if(!resultNodeImageSearchShotsImageSearchShotsItem["MatchedFrame"].isNull())
 				imageSearchShotsItemObject.matchedFrame = resultNodeImageSearchShotsImageSearchShotsItem["MatchedFrame"].asString();
+			if(!resultNodeImageSearchShotsImageSearchShotsItem["MatchedTimestamp"].isNull())
+				imageSearchShotsItemObject.matchedTimestamp = resultNodeImageSearchShotsImageSearchShotsItem["MatchedTimestamp"].asString();
 			if(!resultNodeImageSearchShotsImageSearchShotsItem["Similarity"].isNull())
 				imageSearchShotsItemObject.similarity = resultNodeImageSearchShotsImageSearchShotsItem["Similarity"].asString();
 			imageSearchJobListObject.result.imageSearchShots.push_back(imageSearchShotsItemObject);
 		}
+		auto inputImageNode = value["inputImage"];
+		if(!inputImageNode["Object"].isNull())
+			imageSearchJobListObject.inputImage.object = inputImageNode["Object"].asString();
+		if(!inputImageNode["Location"].isNull())
+			imageSearchJobListObject.inputImage.location = inputImageNode["Location"].asString();
+		if(!inputImageNode["Bucket"].isNull())
+			imageSearchJobListObject.inputImage.bucket = inputImageNode["Bucket"].asString();
+		auto inputVideoNode = value["InputVideo"];
+		if(!inputVideoNode["Object"].isNull())
+			imageSearchJobListObject.inputVideo.object = inputVideoNode["Object"].asString();
+		if(!inputVideoNode["Location"].isNull())
+			imageSearchJobListObject.inputVideo.location = inputVideoNode["Location"].asString();
+		if(!inputVideoNode["Bucket"].isNull())
+			imageSearchJobListObject.inputVideo.bucket = inputVideoNode["Bucket"].asString();
 		imageSearchJobList_.push_back(imageSearchJobListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

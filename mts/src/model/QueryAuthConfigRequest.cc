@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Mts::Model::QueryAuthConfigRequest;
 
-QueryAuthConfigRequest::QueryAuthConfigRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "QueryAuthConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryAuthConfigRequest::QueryAuthConfigRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "QueryAuthConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryAuthConfigRequest::~QueryAuthConfigRequest()
-{}
+QueryAuthConfigRequest::~QueryAuthConfigRequest() {}
 
-std::string QueryAuthConfigRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+std::string QueryAuthConfigRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryAuthConfigRequest::setResourceOwnerId(const std::string& resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", resourceOwnerId);
+void QueryAuthConfigRequest::setResourceOwnerId(const std::string &resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), resourceOwnerId);
 }
 
-std::string QueryAuthConfigRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string QueryAuthConfigRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void QueryAuthConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void QueryAuthConfigRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string QueryAuthConfigRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string QueryAuthConfigRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void QueryAuthConfigRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void QueryAuthConfigRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string QueryAuthConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string QueryAuthConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void QueryAuthConfigRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void QueryAuthConfigRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string QueryAuthConfigRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string QueryAuthConfigRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void QueryAuthConfigRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void QueryAuthConfigRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

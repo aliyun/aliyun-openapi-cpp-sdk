@@ -40,16 +40,16 @@ void SubmitSubtitleJobResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto subtitleJobNode = value["SubtitleJob"];
-	if(!subtitleJobNode["JobId"].isNull())
-		subtitleJob_.jobId = subtitleJobNode["JobId"].asString();
-	if(!subtitleJobNode["InputConfig"].isNull())
-		subtitleJob_.inputConfig = subtitleJobNode["InputConfig"].asString();
-	if(!subtitleJobNode["InputConfig"].isNull())
-		subtitleJob_.inputConfig1 = subtitleJobNode["InputConfig"].asString();
-	if(!subtitleJobNode["UserData"].isNull())
-		subtitleJob_.userData = subtitleJobNode["UserData"].asString();
+	if(!subtitleJobNode["OutputConfig"].isNull())
+		subtitleJob_.outputConfig = subtitleJobNode["OutputConfig"].asString();
 	if(!subtitleJobNode["State"].isNull())
 		subtitleJob_.state = subtitleJobNode["State"].asString();
+	if(!subtitleJobNode["JobId"].isNull())
+		subtitleJob_.jobId = subtitleJobNode["JobId"].asString();
+	if(!subtitleJobNode["UserData"].isNull())
+		subtitleJob_.userData = subtitleJobNode["UserData"].asString();
+	if(!subtitleJobNode["InputConfig"].isNull())
+		subtitleJob_.inputConfig = subtitleJobNode["InputConfig"].asString();
 
 }
 

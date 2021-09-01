@@ -43,74 +43,74 @@ void QueryTerrorismJobListResult::parse(const std::string &payload)
 	for (auto valueTerrorismJobListTerrorismJob : allTerrorismJobListNode)
 	{
 		TerrorismJob terrorismJobListObject;
-		if(!valueTerrorismJobListTerrorismJob["Id"].isNull())
-			terrorismJobListObject.id = valueTerrorismJobListTerrorismJob["Id"].asString();
-		if(!valueTerrorismJobListTerrorismJob["UserData"].isNull())
-			terrorismJobListObject.userData = valueTerrorismJobListTerrorismJob["UserData"].asString();
-		if(!valueTerrorismJobListTerrorismJob["PipelineId"].isNull())
-			terrorismJobListObject.pipelineId = valueTerrorismJobListTerrorismJob["PipelineId"].asString();
+		if(!valueTerrorismJobListTerrorismJob["CreationTime"].isNull())
+			terrorismJobListObject.creationTime = valueTerrorismJobListTerrorismJob["CreationTime"].asString();
 		if(!valueTerrorismJobListTerrorismJob["State"].isNull())
 			terrorismJobListObject.state = valueTerrorismJobListTerrorismJob["State"].asString();
+		if(!valueTerrorismJobListTerrorismJob["UserData"].isNull())
+			terrorismJobListObject.userData = valueTerrorismJobListTerrorismJob["UserData"].asString();
 		if(!valueTerrorismJobListTerrorismJob["Code"].isNull())
 			terrorismJobListObject.code = valueTerrorismJobListTerrorismJob["Code"].asString();
 		if(!valueTerrorismJobListTerrorismJob["Message"].isNull())
 			terrorismJobListObject.message = valueTerrorismJobListTerrorismJob["Message"].asString();
-		if(!valueTerrorismJobListTerrorismJob["CreationTime"].isNull())
-			terrorismJobListObject.creationTime = valueTerrorismJobListTerrorismJob["CreationTime"].asString();
-		auto inputNode = value["Input"];
-		if(!inputNode["Bucket"].isNull())
-			terrorismJobListObject.input.bucket = inputNode["Bucket"].asString();
-		if(!inputNode["Location"].isNull())
-			terrorismJobListObject.input.location = inputNode["Location"].asString();
-		if(!inputNode["Object"].isNull())
-			terrorismJobListObject.input.object = inputNode["Object"].asString();
+		if(!valueTerrorismJobListTerrorismJob["PipelineId"].isNull())
+			terrorismJobListObject.pipelineId = valueTerrorismJobListTerrorismJob["PipelineId"].asString();
+		if(!valueTerrorismJobListTerrorismJob["Id"].isNull())
+			terrorismJobListObject.id = valueTerrorismJobListTerrorismJob["Id"].asString();
+		auto censorTerrorismResultNode = value["CensorTerrorismResult"];
+		if(!censorTerrorismResultNode["Suggestion"].isNull())
+			terrorismJobListObject.censorTerrorismResult.suggestion = censorTerrorismResultNode["Suggestion"].asString();
+		if(!censorTerrorismResultNode["AverageScore"].isNull())
+			terrorismJobListObject.censorTerrorismResult.averageScore = censorTerrorismResultNode["AverageScore"].asString();
+		if(!censorTerrorismResultNode["Label"].isNull())
+			terrorismJobListObject.censorTerrorismResult.label = censorTerrorismResultNode["Label"].asString();
+		if(!censorTerrorismResultNode["MaxScore"].isNull())
+			terrorismJobListObject.censorTerrorismResult.maxScore = censorTerrorismResultNode["MaxScore"].asString();
+		auto allTerrorismTopListNode = censorTerrorismResultNode["TerrorismTopList"]["Top"];
+		for (auto censorTerrorismResultNodeTerrorismTopListTop : allTerrorismTopListNode)
+		{
+			TerrorismJob::CensorTerrorismResult::Top topObject;
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Index"].isNull())
+				topObject.index = censorTerrorismResultNodeTerrorismTopListTop["Index"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Score"].isNull())
+				topObject.score = censorTerrorismResultNodeTerrorismTopListTop["Score"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Timestamp"].isNull())
+				topObject.timestamp = censorTerrorismResultNodeTerrorismTopListTop["Timestamp"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Object"].isNull())
+				topObject.object = censorTerrorismResultNodeTerrorismTopListTop["Object"].asString();
+			if(!censorTerrorismResultNodeTerrorismTopListTop["Label"].isNull())
+				topObject.label = censorTerrorismResultNodeTerrorismTopListTop["Label"].asString();
+			terrorismJobListObject.censorTerrorismResult.terrorismTopList.push_back(topObject);
+		}
+		auto allTerrorismCounterListNode = censorTerrorismResultNode["TerrorismCounterList"]["Counter"];
+		for (auto censorTerrorismResultNodeTerrorismCounterListCounter : allTerrorismCounterListNode)
+		{
+			TerrorismJob::CensorTerrorismResult::Counter counterObject;
+			if(!censorTerrorismResultNodeTerrorismCounterListCounter["Label"].isNull())
+				counterObject.label = censorTerrorismResultNodeTerrorismCounterListCounter["Label"].asString();
+			if(!censorTerrorismResultNodeTerrorismCounterListCounter["Count"].isNull())
+				counterObject.count = std::stoi(censorTerrorismResultNodeTerrorismCounterListCounter["Count"].asString());
+			terrorismJobListObject.censorTerrorismResult.terrorismCounterList.push_back(counterObject);
+		}
 		auto terrorismConfigNode = value["TerrorismConfig"];
 		if(!terrorismConfigNode["Interval"].isNull())
 			terrorismJobListObject.terrorismConfig.interval = terrorismConfigNode["Interval"].asString();
 		if(!terrorismConfigNode["BizType"].isNull())
 			terrorismJobListObject.terrorismConfig.bizType = terrorismConfigNode["BizType"].asString();
 		auto outputFileNode = terrorismConfigNode["OutputFile"];
-		if(!outputFileNode["Bucket"].isNull())
-			terrorismJobListObject.terrorismConfig.outputFile.bucket = outputFileNode["Bucket"].asString();
-		if(!outputFileNode["Location"].isNull())
-			terrorismJobListObject.terrorismConfig.outputFile.location = outputFileNode["Location"].asString();
 		if(!outputFileNode["Object"].isNull())
 			terrorismJobListObject.terrorismConfig.outputFile.object = outputFileNode["Object"].asString();
-		auto censorTerrorismResultNode = value["CensorTerrorismResult"];
-		if(!censorTerrorismResultNode["Label"].isNull())
-			terrorismJobListObject.censorTerrorismResult.label = censorTerrorismResultNode["Label"].asString();
-		if(!censorTerrorismResultNode["Suggestion"].isNull())
-			terrorismJobListObject.censorTerrorismResult.suggestion = censorTerrorismResultNode["Suggestion"].asString();
-		if(!censorTerrorismResultNode["MaxScore"].isNull())
-			terrorismJobListObject.censorTerrorismResult.maxScore = censorTerrorismResultNode["MaxScore"].asString();
-		if(!censorTerrorismResultNode["AverageScore"].isNull())
-			terrorismJobListObject.censorTerrorismResult.averageScore = censorTerrorismResultNode["AverageScore"].asString();
-		auto allTerrorismCounterListNode = censorTerrorismResultNode["TerrorismCounterList"]["Counter"];
-		for (auto censorTerrorismResultNodeTerrorismCounterListCounter : allTerrorismCounterListNode)
-		{
-			TerrorismJob::CensorTerrorismResult::Counter counterObject;
-			if(!censorTerrorismResultNodeTerrorismCounterListCounter["Count"].isNull())
-				counterObject.count = std::stoi(censorTerrorismResultNodeTerrorismCounterListCounter["Count"].asString());
-			if(!censorTerrorismResultNodeTerrorismCounterListCounter["Label"].isNull())
-				counterObject.label = censorTerrorismResultNodeTerrorismCounterListCounter["Label"].asString();
-			terrorismJobListObject.censorTerrorismResult.terrorismCounterList.push_back(counterObject);
-		}
-		auto allTerrorismTopListNode = censorTerrorismResultNode["TerrorismTopList"]["Top"];
-		for (auto censorTerrorismResultNodeTerrorismTopListTop : allTerrorismTopListNode)
-		{
-			TerrorismJob::CensorTerrorismResult::Top topObject;
-			if(!censorTerrorismResultNodeTerrorismTopListTop["Label"].isNull())
-				topObject.label = censorTerrorismResultNodeTerrorismTopListTop["Label"].asString();
-			if(!censorTerrorismResultNodeTerrorismTopListTop["Score"].isNull())
-				topObject.score = censorTerrorismResultNodeTerrorismTopListTop["Score"].asString();
-			if(!censorTerrorismResultNodeTerrorismTopListTop["Timestamp"].isNull())
-				topObject.timestamp = censorTerrorismResultNodeTerrorismTopListTop["Timestamp"].asString();
-			if(!censorTerrorismResultNodeTerrorismTopListTop["Index"].isNull())
-				topObject.index = censorTerrorismResultNodeTerrorismTopListTop["Index"].asString();
-			if(!censorTerrorismResultNodeTerrorismTopListTop["Object"].isNull())
-				topObject.object = censorTerrorismResultNodeTerrorismTopListTop["Object"].asString();
-			terrorismJobListObject.censorTerrorismResult.terrorismTopList.push_back(topObject);
-		}
+		if(!outputFileNode["Location"].isNull())
+			terrorismJobListObject.terrorismConfig.outputFile.location = outputFileNode["Location"].asString();
+		if(!outputFileNode["Bucket"].isNull())
+			terrorismJobListObject.terrorismConfig.outputFile.bucket = outputFileNode["Bucket"].asString();
+		auto inputNode = value["Input"];
+		if(!inputNode["Object"].isNull())
+			terrorismJobListObject.input.object = inputNode["Object"].asString();
+		if(!inputNode["Location"].isNull())
+			terrorismJobListObject.input.location = inputNode["Location"].asString();
+		if(!inputNode["Bucket"].isNull())
+			terrorismJobListObject.input.bucket = inputNode["Bucket"].asString();
 		terrorismJobList_.push_back(terrorismJobListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

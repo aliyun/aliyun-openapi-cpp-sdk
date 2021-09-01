@@ -39,10 +39,10 @@ void QueryAuthConfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Key1"].isNull())
-		key1_ = value["Key1"].asString();
 	if(!value["Key2"].isNull())
 		key2_ = value["Key2"].asString();
+	if(!value["Key1"].isNull())
+		key1_ = value["Key1"].asString();
 
 }
 

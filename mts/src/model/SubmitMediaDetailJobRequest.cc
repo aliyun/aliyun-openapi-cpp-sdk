@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Mts::Model::SubmitMediaDetailJobRequest;
 
-SubmitMediaDetailJobRequest::SubmitMediaDetailJobRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "SubmitMediaDetailJob")
-{
-	setMethod(HttpRequest::Method::Post);
+SubmitMediaDetailJobRequest::SubmitMediaDetailJobRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "SubmitMediaDetailJob") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SubmitMediaDetailJobRequest::~SubmitMediaDetailJobRequest()
-{}
+SubmitMediaDetailJobRequest::~SubmitMediaDetailJobRequest() {}
 
-long SubmitMediaDetailJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long SubmitMediaDetailJobRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void SubmitMediaDetailJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void SubmitMediaDetailJobRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string SubmitMediaDetailJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SubmitMediaDetailJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SubmitMediaDetailJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SubmitMediaDetailJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SubmitMediaDetailJobRequest::getUserData()const
-{
-	return userData_;
+std::string SubmitMediaDetailJobRequest::getUserData() const {
+  return userData_;
 }
 
-void SubmitMediaDetailJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setParameter("UserData", userData);
+void SubmitMediaDetailJobRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
 }
 
-std::string SubmitMediaDetailJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string SubmitMediaDetailJobRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void SubmitMediaDetailJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void SubmitMediaDetailJobRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string SubmitMediaDetailJobRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string SubmitMediaDetailJobRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void SubmitMediaDetailJobRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void SubmitMediaDetailJobRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long SubmitMediaDetailJobRequest::getOwnerId()const
-{
-	return ownerId_;
+long SubmitMediaDetailJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SubmitMediaDetailJobRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SubmitMediaDetailJobRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string SubmitMediaDetailJobRequest::getPipelineId()const
-{
-	return pipelineId_;
+std::string SubmitMediaDetailJobRequest::getPipelineId() const {
+  return pipelineId_;
 }
 
-void SubmitMediaDetailJobRequest::setPipelineId(const std::string& pipelineId)
-{
-	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+void SubmitMediaDetailJobRequest::setPipelineId(const std::string &pipelineId) {
+  pipelineId_ = pipelineId;
+  setParameter(std::string("PipelineId"), pipelineId);
 }
 
-std::string SubmitMediaDetailJobRequest::getInput()const
-{
-	return input_;
+std::string SubmitMediaDetailJobRequest::getInput() const {
+  return input_;
 }
 
-void SubmitMediaDetailJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setParameter("Input", input);
+void SubmitMediaDetailJobRequest::setInput(const std::string &input) {
+  input_ = input;
+  setParameter(std::string("Input"), input);
 }
 
-std::string SubmitMediaDetailJobRequest::getMediaDetailConfig()const
-{
-	return mediaDetailConfig_;
+std::string SubmitMediaDetailJobRequest::getMediaDetailConfig() const {
+  return mediaDetailConfig_;
 }
 
-void SubmitMediaDetailJobRequest::setMediaDetailConfig(const std::string& mediaDetailConfig)
-{
-	mediaDetailConfig_ = mediaDetailConfig;
-	setParameter("MediaDetailConfig", mediaDetailConfig);
+void SubmitMediaDetailJobRequest::setMediaDetailConfig(const std::string &mediaDetailConfig) {
+  mediaDetailConfig_ = mediaDetailConfig;
+  setParameter(std::string("MediaDetailConfig"), mediaDetailConfig);
 }
 

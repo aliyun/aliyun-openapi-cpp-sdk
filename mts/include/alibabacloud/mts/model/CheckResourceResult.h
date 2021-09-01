@@ -39,16 +39,16 @@ namespace AlibabaCloud
 				~CheckResourceResult();
 				std::string getGmtWakeup()const;
 				long getHid()const;
-				std::string getTaskIdentifier()const;
 				std::string getMessage()const;
-				bool getInterrupt()const;
+				std::string getTaskIdentifier()const;
 				bool getSuccess()const;
 				std::string getUrl()const;
+				bool getInterrupt()const;
 				std::string getInvoker()const;
 				std::string getTaskExtraData()const;
 				std::string getCountry()const;
-				long getLevel()const;
 				std::string getPrompt()const;
+				long getLevel()const;
 				std::string getPk()const;
 				std::string getBid()const;
 
@@ -57,16 +57,16 @@ namespace AlibabaCloud
 			private:
 				std::string gmtWakeup_;
 				long hid_;
-				std::string taskIdentifier_;
 				std::string message_;
-				bool interrupt_;
+				std::string taskIdentifier_;
 				bool success_;
 				std::string url_;
+				bool interrupt_;
 				std::string invoker_;
 				std::string taskExtraData_;
 				std::string country_;
-				long level_;
 				std::string prompt_;
+				long level_;
 				std::string pk_;
 				std::string bid_;
 

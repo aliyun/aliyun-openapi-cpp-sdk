@@ -43,30 +43,30 @@ void QueryAsrJobListResult::parse(const std::string &payload)
 	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!valueJobListJob["Id"].isNull())
-			jobListObject.id = valueJobListJob["Id"].asString();
-		if(!valueJobListJob["UserData"].isNull())
-			jobListObject.userData = valueJobListJob["UserData"].asString();
-		if(!valueJobListJob["PipelineId"].isNull())
-			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["CreationTime"].isNull())
+			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
 		if(!valueJobListJob["State"].isNull())
 			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
 		if(!valueJobListJob["Code"].isNull())
 			jobListObject.code = valueJobListJob["Code"].asString();
 		if(!valueJobListJob["Message"].isNull())
 			jobListObject.message = valueJobListJob["Message"].asString();
-		if(!valueJobListJob["CreationTime"].isNull())
-			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
-		auto inputNode = value["Input"];
-		if(!inputNode["Bucket"].isNull())
-			jobListObject.input.bucket = inputNode["Bucket"].asString();
-		if(!inputNode["Location"].isNull())
-			jobListObject.input.location = inputNode["Location"].asString();
-		if(!inputNode["Object"].isNull())
-			jobListObject.input.object = inputNode["Object"].asString();
+		if(!valueJobListJob["PipelineId"].isNull())
+			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["Id"].isNull())
+			jobListObject.id = valueJobListJob["Id"].asString();
 		auto asrConfigNode = value["AsrConfig"];
 		if(!asrConfigNode["Scene"].isNull())
 			jobListObject.asrConfig.scene = asrConfigNode["Scene"].asString();
+		auto inputNode = value["Input"];
+		if(!inputNode["Object"].isNull())
+			jobListObject.input.object = inputNode["Object"].asString();
+		if(!inputNode["Location"].isNull())
+			jobListObject.input.location = inputNode["Location"].asString();
+		if(!inputNode["Bucket"].isNull())
+			jobListObject.input.bucket = inputNode["Bucket"].asString();
 		auto asrResultNode = value["AsrResult"];
 		if(!asrResultNode["Duration"].isNull())
 			jobListObject.asrResult.duration = asrResultNode["Duration"].asString();
@@ -74,16 +74,16 @@ void QueryAsrJobListResult::parse(const std::string &payload)
 		for (auto asrResultNodeAsrTextListAsrText : allAsrTextListNode)
 		{
 			Job::AsrResult::AsrText asrTextObject;
-			if(!asrResultNodeAsrTextListAsrText["StartTime"].isNull())
-				asrTextObject.startTime = std::stoi(asrResultNodeAsrTextListAsrText["StartTime"].asString());
 			if(!asrResultNodeAsrTextListAsrText["EndTime"].isNull())
 				asrTextObject.endTime = asrResultNodeAsrTextListAsrText["EndTime"].asString();
+			if(!asrResultNodeAsrTextListAsrText["StartTime"].isNull())
+				asrTextObject.startTime = std::stoi(asrResultNodeAsrTextListAsrText["StartTime"].asString());
 			if(!asrResultNodeAsrTextListAsrText["ChannelId"].isNull())
 				asrTextObject.channelId = asrResultNodeAsrTextListAsrText["ChannelId"].asString();
-			if(!asrResultNodeAsrTextListAsrText["SpeechRate"].isNull())
-				asrTextObject.speechRate = asrResultNodeAsrTextListAsrText["SpeechRate"].asString();
 			if(!asrResultNodeAsrTextListAsrText["Text"].isNull())
 				asrTextObject.text = asrResultNodeAsrTextListAsrText["Text"].asString();
+			if(!asrResultNodeAsrTextListAsrText["SpeechRate"].isNull())
+				asrTextObject.speechRate = asrResultNodeAsrTextListAsrText["SpeechRate"].asString();
 			jobListObject.asrResult.asrTextList.push_back(asrTextObject);
 		}
 		jobList_.push_back(jobListObject);

@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string state;
 					std::string mediaWorkflowId;
 					std::string creationTime;
-					std::string topology;
 					std::string triggerMode;
+					std::string topology;
 					std::string name;
 				};
 

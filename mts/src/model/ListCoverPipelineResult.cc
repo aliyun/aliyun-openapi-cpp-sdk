@@ -43,34 +43,34 @@ void ListCoverPipelineResult::parse(const std::string &payload)
 	for (auto valuePipelineListPipeline : allPipelineListNode)
 	{
 		Pipeline pipelineListObject;
-		if(!valuePipelineListPipeline["UserId"].isNull())
-			pipelineListObject.userId = std::stol(valuePipelineListPipeline["UserId"].asString());
-		if(!valuePipelineListPipeline["PipelineId"].isNull())
-			pipelineListObject.pipelineId = valuePipelineListPipeline["PipelineId"].asString();
-		if(!valuePipelineListPipeline["Name"].isNull())
-			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
 		if(!valuePipelineListPipeline["State"].isNull())
 			pipelineListObject.state = valuePipelineListPipeline["State"].asString();
-		if(!valuePipelineListPipeline["Priority"].isNull())
-			pipelineListObject.priority = valuePipelineListPipeline["Priority"].asString();
 		if(!valuePipelineListPipeline["quotaNum"].isNull())
 			pipelineListObject.quotaNum = std::stoi(valuePipelineListPipeline["quotaNum"].asString());
-		if(!valuePipelineListPipeline["quotaUsed"].isNull())
-			pipelineListObject.quotaUsed = std::stoi(valuePipelineListPipeline["quotaUsed"].asString());
+		if(!valuePipelineListPipeline["UserId"].isNull())
+			pipelineListObject.userId = std::stol(valuePipelineListPipeline["UserId"].asString());
 		if(!valuePipelineListPipeline["NotifyConfig"].isNull())
 			pipelineListObject.notifyConfig = valuePipelineListPipeline["NotifyConfig"].asString();
-		if(!valuePipelineListPipeline["Role"].isNull())
-			pipelineListObject.role = valuePipelineListPipeline["Role"].asString();
 		if(!valuePipelineListPipeline["ExtendConfig"].isNull())
 			pipelineListObject.extendConfig = valuePipelineListPipeline["ExtendConfig"].asString();
+		if(!valuePipelineListPipeline["Priority"].isNull())
+			pipelineListObject.priority = valuePipelineListPipeline["Priority"].asString();
+		if(!valuePipelineListPipeline["Role"].isNull())
+			pipelineListObject.role = valuePipelineListPipeline["Role"].asString();
+		if(!valuePipelineListPipeline["Name"].isNull())
+			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
+		if(!valuePipelineListPipeline["PipelineId"].isNull())
+			pipelineListObject.pipelineId = valuePipelineListPipeline["PipelineId"].asString();
+		if(!valuePipelineListPipeline["quotaUsed"].isNull())
+			pipelineListObject.quotaUsed = std::stoi(valuePipelineListPipeline["quotaUsed"].asString());
 		pipelineList_.push_back(pipelineListObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

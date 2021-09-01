@@ -34,10 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct _Template
 				{
-					struct Container
-					{
-						std::string format;
-					};
 					struct Video
 					{
 						struct BitrateBnd
@@ -49,8 +45,8 @@ namespace AlibabaCloud
 						std::string qscale;
 						std::string scanMode;
 						std::string preset;
-						std::string fps;
 						std::string longShortMode;
+						std::string fps;
 						std::string gop;
 						std::string remove;
 						BitrateBnd bitrateBnd;
@@ -58,24 +54,14 @@ namespace AlibabaCloud
 						std::string bitrate;
 						std::string profile;
 						std::string crop;
+						std::string pad;
 						std::string codec;
 						std::string maxrate;
-						std::string pad;
-						std::string crf;
 						std::string maxFps;
+						std::string crf;
 						std::string height;
 						std::string degrain;
 						std::string width;
-					};
-					struct Audio
-					{
-						std::string codec;
-						std::string qscale;
-						std::string remove;
-						std::string samplerate;
-						std::string bitrate;
-						std::string profile;
-						std::string channels;
 					};
 					struct TransConfig
 					{
@@ -90,19 +76,33 @@ namespace AlibabaCloud
 					};
 					struct MuxConfig
 					{
+						struct Gif
+						{
+							std::string finalDelay;
+							std::string loop;
+							std::string ditherMode;
+							std::string isCustomPalette;
+						};
 						struct Segment
 						{
 							std::string duration;
 						};
-						struct Gif
-						{
-							std::string loop;
-							std::string finalDelay;
-							std::string ditherMode;
-							std::string isCustomPalette;
-						};
 						Gif gif;
 						Segment segment;
+					};
+					struct Audio
+					{
+						std::string codec;
+						std::string qscale;
+						std::string remove;
+						std::string samplerate;
+						std::string bitrate;
+						std::string profile;
+						std::string channels;
+					};
+					struct Container
+					{
+						std::string format;
 					};
 					Container container;
 					TransConfig transConfig;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Mts::Model::QueryPornPipelineListRequest;
 
-QueryPornPipelineListRequest::QueryPornPipelineListRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "QueryPornPipelineList")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryPornPipelineListRequest::QueryPornPipelineListRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "QueryPornPipelineList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryPornPipelineListRequest::~QueryPornPipelineListRequest()
-{}
+QueryPornPipelineListRequest::~QueryPornPipelineListRequest() {}
 
-long QueryPornPipelineListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long QueryPornPipelineListRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void QueryPornPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void QueryPornPipelineListRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string QueryPornPipelineListRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string QueryPornPipelineListRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void QueryPornPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void QueryPornPipelineListRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string QueryPornPipelineListRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string QueryPornPipelineListRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void QueryPornPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void QueryPornPipelineListRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long QueryPornPipelineListRequest::getOwnerId()const
-{
-	return ownerId_;
+long QueryPornPipelineListRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void QueryPornPipelineListRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void QueryPornPipelineListRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QueryPornPipelineListRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string QueryPornPipelineListRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void QueryPornPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void QueryPornPipelineListRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string QueryPornPipelineListRequest::getPipelineIds()const
-{
-	return pipelineIds_;
+std::string QueryPornPipelineListRequest::getPipelineIds() const {
+  return pipelineIds_;
 }
 
-void QueryPornPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
-{
-	pipelineIds_ = pipelineIds;
-	setParameter("PipelineIds", pipelineIds);
+void QueryPornPipelineListRequest::setPipelineIds(const std::string &pipelineIds) {
+  pipelineIds_ = pipelineIds;
+  setParameter(std::string("PipelineIds"), pipelineIds);
 }
 

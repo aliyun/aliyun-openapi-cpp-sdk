@@ -36,6 +36,82 @@ namespace AlibabaCloud
 				{
 					struct EditingConfig
 					{
+						struct Video
+						{
+							struct BitrateBnd
+							{
+								std::string min;
+								std::string max;
+							};
+							std::string bufsize;
+							std::string qscale;
+							std::string scanMode;
+							std::string preset;
+							std::string fps;
+							std::string gop;
+							BitrateBnd bitrateBnd;
+							std::string pixFmt;
+							std::string bitrate;
+							std::string profile;
+							std::string crop;
+							std::string pad;
+							std::string codec;
+							std::string maxrate;
+							std::string maxFps;
+							std::string crf;
+							std::string height;
+							std::string degrain;
+							std::string width;
+						};
+						struct TransConfig
+						{
+							std::string isCheckAudioBitrate;
+							std::string adjDarMethod;
+							std::string isCheckAudioBitrateFail;
+							std::string isCheckVideoBitrateFail;
+							std::string isCheckReso;
+							std::string duration;
+							std::string isCheckVideoBitrate;
+							std::string transMode;
+							std::string isCheckResoFail;
+						};
+						struct Encryption
+						{
+							std::string type;
+							std::string keyType;
+							std::string id;
+							std::string skipCnt;
+							std::string key;
+							std::string keyUri;
+						};
+						struct M3U8NonStandardSupport
+						{
+							struct TS
+							{
+								bool sizeSupport;
+								bool md5Support;
+							};
+							TS tS;
+						};
+						struct Audio
+						{
+							struct Volume
+							{
+								std::string level;
+								std::string method;
+							};
+							std::string codec;
+							std::string qscale;
+							Volume volume;
+							std::string samplerate;
+							std::string bitrate;
+							std::string profile;
+							std::string channels;
+						};
+						struct SuperReso
+						{
+							std::string isHalfSample;
+						};
 						struct DigiWaterMark
 						{
 							struct InputFile2
@@ -55,14 +131,126 @@ namespace AlibabaCloud
 							std::string roleArn;
 							std::string location;
 						};
-						struct M3U8NonStandardSupport
+						struct Editing
 						{
-							struct TS
+							struct Timeline
 							{
-								bool md5Support;
-								bool sizeSupport;
+								struct TimelineConfig
+								{
+									struct TimelineConfigAudio
+									{
+										std::string channelLayout;
+										std::string samplerate;
+										std::string channels;
+									};
+									struct TimelineConfigVideo
+									{
+										std::string renderRatio;
+										std::string reclosePrec;
+										std::string fps;
+										std::string isGpuData;
+										std::string height;
+										std::string bgColor;
+										std::string isOneTrackData;
+										std::string width;
+									};
+									TimelineConfigVideo timelineConfigVideo;
+									TimelineConfigAudio timelineConfigAudio;
+								};
+								struct Track
+								{
+									struct Clip3
+									{
+										struct ClipsConfig
+										{
+											struct ClipsConfigVideo
+											{
+												std::string t;
+												std::string l;
+											};
+											ClipsConfigVideo clipsConfigVideo;
+										};
+										std::string clipID;
+										std::string in;
+										ClipsConfig clipsConfig;
+										std::string out;
+									};
+									std::string order;
+									std::vector<Track::Clip3> clips;
+									std::string type;
+									std::string id;
+								};
+								std::vector<Track> trackList;
+								TimelineConfig timelineConfig;
 							};
-							TS tS;
+							struct Clip
+							{
+								struct Effect
+								{
+									std::string effect;
+									std::string effectConfig;
+								};
+								std::string type;
+								std::string in;
+								std::string sourceID;
+								std::string sourceType;
+								std::vector<Clip::Effect> effects;
+								std::string id;
+								std::string sourceStrmMap;
+								std::string out;
+							};
+							Timeline timeline;
+							std::vector<Clip> clipList;
+						};
+						struct Container
+						{
+							std::string format;
+						};
+						struct Clip4
+						{
+							struct TimeSpan
+							{
+								std::string duration;
+								std::string seek;
+							};
+							TimeSpan timeSpan;
+						};
+						struct MuxConfig
+						{
+							struct Gif
+							{
+								std::string finalDelay;
+								std::string loop;
+								std::string ditherMode;
+								std::string isCustomPalette;
+							};
+							struct Segment
+							{
+								std::string duration;
+							};
+							Gif gif;
+							Segment segment;
+						};
+						struct SubtitleConfig
+						{
+							struct ExtSubtitle
+							{
+								struct Input
+								{
+									std::string bucket;
+									std::string object;
+									std::string location;
+								};
+								std::string charEnc;
+								Input input;
+								std::string fontName;
+							};
+							struct Subtitle
+							{
+								std::string map;
+							};
+							std::vector<ExtSubtitle> extSubtitleList;
+							std::vector<Subtitle> subtitleList;
 						};
 						struct Properties
 						{
@@ -79,17 +267,17 @@ namespace AlibabaCloud
 									std::string codecTag;
 									std::string codecTimeBase;
 									std::string sar;
-									std::string fps;
 									std::string startTime;
+									std::string fps;
 									std::string index;
-									std::string duration;
 									std::string lang;
+									std::string duration;
 									std::string pixFmt;
 									NetworkCost networkCost;
-									std::string codecName;
 									std::string bitrate;
-									std::string profile;
+									std::string codecName;
 									std::string avgFPS;
+									std::string profile;
 									std::string timebase;
 									std::string codecTagString;
 									std::string hasBFrames;
@@ -97,8 +285,8 @@ namespace AlibabaCloud
 									std::string codecLongName;
 									std::string height;
 									std::string level;
-									std::string width;
 									std::string numFrames;
+									std::string width;
 								};
 								struct AudioStream
 								{
@@ -107,12 +295,12 @@ namespace AlibabaCloud
 									std::string channelLayout;
 									std::string startTime;
 									std::string index;
-									std::string duration;
 									std::string lang;
+									std::string duration;
 									std::string sampleFmt;
-									std::string codecName;
 									std::string samplerate;
 									std::string bitrate;
+									std::string codecName;
 									std::string channels;
 									std::string timebase;
 									std::string codecTagString;
@@ -149,194 +337,6 @@ namespace AlibabaCloud
 							Streams streams;
 							std::string fileSize;
 						};
-						struct Clip
-						{
-							struct TimeSpan
-							{
-								std::string duration;
-								std::string seek;
-							};
-							TimeSpan timeSpan;
-						};
-						struct SuperReso
-						{
-							std::string isHalfSample;
-						};
-						struct SubtitleConfig
-						{
-							struct Subtitle
-							{
-								std::string map;
-							};
-							struct ExtSubtitle
-							{
-								struct Input
-								{
-									std::string bucket;
-									std::string object;
-									std::string location;
-								};
-								std::string charEnc;
-								Input input;
-								std::string fontName;
-							};
-							std::vector<ExtSubtitle> extSubtitleList;
-							std::vector<Subtitle> subtitleList;
-						};
-						struct TransConfig
-						{
-							std::string isCheckAudioBitrate;
-							std::string adjDarMethod;
-							std::string isCheckAudioBitrateFail;
-							std::string isCheckVideoBitrateFail;
-							std::string isCheckReso;
-							std::string duration;
-							std::string isCheckVideoBitrate;
-							std::string transMode;
-							std::string isCheckResoFail;
-						};
-						struct MuxConfig
-						{
-							struct Segment
-							{
-								std::string duration;
-							};
-							struct Gif
-							{
-								std::string loop;
-								std::string finalDelay;
-								std::string ditherMode;
-								std::string isCustomPalette;
-							};
-							Gif gif;
-							Segment segment;
-						};
-						struct Audio
-						{
-							struct Volume
-							{
-								std::string level;
-								std::string method;
-							};
-							std::string codec;
-							std::string qscale;
-							Volume volume;
-							std::string samplerate;
-							std::string bitrate;
-							std::string profile;
-							std::string channels;
-						};
-						struct Video
-						{
-							struct BitrateBnd
-							{
-								std::string min;
-								std::string max;
-							};
-							std::string bufsize;
-							std::string qscale;
-							std::string scanMode;
-							std::string preset;
-							std::string fps;
-							std::string gop;
-							BitrateBnd bitrateBnd;
-							std::string pixFmt;
-							std::string bitrate;
-							std::string profile;
-							std::string crop;
-							std::string codec;
-							std::string maxrate;
-							std::string pad;
-							std::string crf;
-							std::string maxFps;
-							std::string height;
-							std::string degrain;
-							std::string width;
-						};
-						struct Container
-						{
-							std::string format;
-						};
-						struct Encryption
-						{
-							std::string type;
-							std::string keyType;
-							std::string id;
-							std::string skipCnt;
-							std::string key;
-							std::string keyUri;
-						};
-						struct Editing
-						{
-							struct Timeline
-							{
-								struct TimelineConfig
-								{
-									struct TimelineConfigVideo
-									{
-										std::string renderRatio;
-										std::string reclosePrec;
-										std::string fps;
-										std::string isGpuData;
-										std::string height;
-										std::string bgColor;
-										std::string isOneTrackData;
-										std::string width;
-									};
-									struct TimelineConfigAudio
-									{
-										std::string channelLayout;
-										std::string samplerate;
-										std::string channels;
-									};
-									TimelineConfigVideo timelineConfigVideo;
-									TimelineConfigAudio timelineConfigAudio;
-								};
-								struct Track
-								{
-									struct Clip4
-									{
-										struct ClipsConfig
-										{
-											struct ClipsConfigVideo
-											{
-												std::string t;
-												std::string l;
-											};
-											ClipsConfigVideo clipsConfigVideo;
-										};
-										std::string clipID;
-										std::string in;
-										ClipsConfig clipsConfig;
-										std::string out;
-									};
-									std::string order;
-									std::vector<Track::Clip4> clips;
-									std::string type;
-									std::string id;
-								};
-								std::vector<Track> trackList;
-								TimelineConfig timelineConfig;
-							};
-							struct Clip3
-							{
-								struct Effect
-								{
-									std::string effect;
-									std::string effectConfig;
-								};
-								std::string type;
-								std::string in;
-								std::string sourceType;
-								std::string sourceID;
-								std::vector<Clip3::Effect> effects;
-								std::string id;
-								std::string sourceStrmMap;
-								std::string out;
-							};
-							Timeline timeline;
-							std::vector<Clip3> clipList;
-						};
 						struct WaterMark
 						{
 							struct InputFile1
@@ -356,8 +356,8 @@ namespace AlibabaCloud
 						};
 						struct Merge
 						{
-							std::string mergeURL;
 							std::string start;
+							std::string mergeURL;
 							std::string duration;
 							std::string roleArn;
 						};
@@ -367,16 +367,16 @@ namespace AlibabaCloud
 						Editing editing;
 						Encryption encryption;
 						Properties properties;
-						Clip clip;
 						SuperReso superReso;
 						std::vector<WaterMark> waterMarkList;
 						Container container;
 						TransConfig transConfig;
 						std::string waterMarkConfigUrl;
-						SubtitleConfig subtitleConfig;
 						MuxConfig muxConfig;
+						SubtitleConfig subtitleConfig;
 						std::string templateId;
 						OutputFile outputFile;
+						Clip4 clip4;
 						std::string priority;
 						std::string mergeConfigUrl;
 						std::string deWatermark;
@@ -411,8 +411,8 @@ namespace AlibabaCloud
 						InputFile inputFile;
 					};
 					std::vector<Job::EditingInput> editingInputs;
-					std::string message;
 					std::string finishTime;
+					std::string message;
 					long percent;
 					std::string state;
 					MNSMessageResult mNSMessageResult;

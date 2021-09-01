@@ -34,12 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct PornJob
 				{
-					struct Input
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
 					struct PornConfig
 					{
 						struct OutputFile
@@ -73,6 +67,12 @@ namespace AlibabaCloud
 						std::vector<Counter> pornCounterList;
 						std::vector<Top> pornTopList;
 						std::string label;
+					};
+					struct Input
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
 					};
 					Input input;
 					std::string message;

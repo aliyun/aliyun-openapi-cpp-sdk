@@ -43,10 +43,10 @@ void QueryMcuTemplateResult::parse(const std::string &payload)
 	for (auto valueTemplatesJob : allTemplatesNode)
 	{
 		Job templatesObject;
-		if(!valueTemplatesJob["TemplateId"].isNull())
-			templatesObject.templateId = valueTemplatesJob["TemplateId"].asString();
 		if(!valueTemplatesJob["Template"].isNull())
 			templatesObject._template = valueTemplatesJob["Template"].asString();
+		if(!valueTemplatesJob["TemplateId"].isNull())
+			templatesObject.templateId = valueTemplatesJob["TemplateId"].asString();
 		templates_.push_back(templatesObject);
 	}
 

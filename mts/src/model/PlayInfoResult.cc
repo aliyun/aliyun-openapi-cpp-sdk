@@ -43,38 +43,38 @@ void PlayInfoResult::parse(const std::string &payload)
 	for (auto valuePlayInfoListPlayInfo : allPlayInfoListNode)
 	{
 		PlayInfo playInfoListObject;
-		if(!valuePlayInfoListPlayInfo["Url"].isNull())
-			playInfoListObject.url = valuePlayInfoListPlayInfo["Url"].asString();
-		if(!valuePlayInfoListPlayInfo["duration"].isNull())
-			playInfoListObject.duration = valuePlayInfoListPlayInfo["duration"].asString();
-		if(!valuePlayInfoListPlayInfo["size"].isNull())
-			playInfoListObject.size = valuePlayInfoListPlayInfo["size"].asString();
-		if(!valuePlayInfoListPlayInfo["width"].isNull())
-			playInfoListObject.width = valuePlayInfoListPlayInfo["width"].asString();
-		if(!valuePlayInfoListPlayInfo["height"].isNull())
-			playInfoListObject.height = valuePlayInfoListPlayInfo["height"].asString();
-		if(!valuePlayInfoListPlayInfo["bitrate"].isNull())
-			playInfoListObject.bitrate = valuePlayInfoListPlayInfo["bitrate"].asString();
-		if(!valuePlayInfoListPlayInfo["fps"].isNull())
-			playInfoListObject.fps = valuePlayInfoListPlayInfo["fps"].asString();
-		if(!valuePlayInfoListPlayInfo["format"].isNull())
-			playInfoListObject.format = valuePlayInfoListPlayInfo["format"].asString();
-		if(!valuePlayInfoListPlayInfo["definition"].isNull())
-			playInfoListObject.definition = valuePlayInfoListPlayInfo["definition"].asString();
-		if(!valuePlayInfoListPlayInfo["encryption"].isNull())
-			playInfoListObject.encryption = valuePlayInfoListPlayInfo["encryption"].asString();
-		if(!valuePlayInfoListPlayInfo["rand"].isNull())
-			playInfoListObject.rand = valuePlayInfoListPlayInfo["rand"].asString();
-		if(!valuePlayInfoListPlayInfo["plaintext"].isNull())
-			playInfoListObject.plaintext = valuePlayInfoListPlayInfo["plaintext"].asString();
-		if(!valuePlayInfoListPlayInfo["complexity"].isNull())
-			playInfoListObject.complexity = valuePlayInfoListPlayInfo["complexity"].asString();
-		if(!valuePlayInfoListPlayInfo["activityName"].isNull())
-			playInfoListObject.activityName = valuePlayInfoListPlayInfo["activityName"].asString();
-		if(!valuePlayInfoListPlayInfo["encryptionType"].isNull())
-			playInfoListObject.encryptionType = valuePlayInfoListPlayInfo["encryptionType"].asString();
 		if(!valuePlayInfoListPlayInfo["downloadType"].isNull())
 			playInfoListObject.downloadType = valuePlayInfoListPlayInfo["downloadType"].asString();
+		if(!valuePlayInfoListPlayInfo["width"].isNull())
+			playInfoListObject.width = valuePlayInfoListPlayInfo["width"].asString();
+		if(!valuePlayInfoListPlayInfo["definition"].isNull())
+			playInfoListObject.definition = valuePlayInfoListPlayInfo["definition"].asString();
+		if(!valuePlayInfoListPlayInfo["rand"].isNull())
+			playInfoListObject.rand = valuePlayInfoListPlayInfo["rand"].asString();
+		if(!valuePlayInfoListPlayInfo["Url"].isNull())
+			playInfoListObject.url = valuePlayInfoListPlayInfo["Url"].asString();
+		if(!valuePlayInfoListPlayInfo["complexity"].isNull())
+			playInfoListObject.complexity = valuePlayInfoListPlayInfo["complexity"].asString();
+		if(!valuePlayInfoListPlayInfo["encryption"].isNull())
+			playInfoListObject.encryption = valuePlayInfoListPlayInfo["encryption"].asString();
+		if(!valuePlayInfoListPlayInfo["fps"].isNull())
+			playInfoListObject.fps = valuePlayInfoListPlayInfo["fps"].asString();
+		if(!valuePlayInfoListPlayInfo["encryptionType"].isNull())
+			playInfoListObject.encryptionType = valuePlayInfoListPlayInfo["encryptionType"].asString();
+		if(!valuePlayInfoListPlayInfo["height"].isNull())
+			playInfoListObject.height = valuePlayInfoListPlayInfo["height"].asString();
+		if(!valuePlayInfoListPlayInfo["activityName"].isNull())
+			playInfoListObject.activityName = valuePlayInfoListPlayInfo["activityName"].asString();
+		if(!valuePlayInfoListPlayInfo["size"].isNull())
+			playInfoListObject.size = valuePlayInfoListPlayInfo["size"].asString();
+		if(!valuePlayInfoListPlayInfo["bitrate"].isNull())
+			playInfoListObject.bitrate = valuePlayInfoListPlayInfo["bitrate"].asString();
+		if(!valuePlayInfoListPlayInfo["plaintext"].isNull())
+			playInfoListObject.plaintext = valuePlayInfoListPlayInfo["plaintext"].asString();
+		if(!valuePlayInfoListPlayInfo["duration"].isNull())
+			playInfoListObject.duration = valuePlayInfoListPlayInfo["duration"].asString();
+		if(!valuePlayInfoListPlayInfo["format"].isNull())
+			playInfoListObject.format = valuePlayInfoListPlayInfo["format"].asString();
 		playInfoList_.push_back(playInfoListObject);
 	}
 	auto allNotFoundCDNDomain = value["NotFoundCDNDomain"]["String"];

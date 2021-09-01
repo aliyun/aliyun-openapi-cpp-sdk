@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Mts::Model::SubmitAsrJobRequest;
 
-SubmitAsrJobRequest::SubmitAsrJobRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "SubmitAsrJob")
-{
-	setMethod(HttpRequest::Method::Post);
+SubmitAsrJobRequest::SubmitAsrJobRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "SubmitAsrJob") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SubmitAsrJobRequest::~SubmitAsrJobRequest()
-{}
+SubmitAsrJobRequest::~SubmitAsrJobRequest() {}
 
-long SubmitAsrJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long SubmitAsrJobRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void SubmitAsrJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void SubmitAsrJobRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string SubmitAsrJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SubmitAsrJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SubmitAsrJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SubmitAsrJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SubmitAsrJobRequest::getUserData()const
-{
-	return userData_;
+std::string SubmitAsrJobRequest::getUserData() const {
+  return userData_;
 }
 
-void SubmitAsrJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setParameter("UserData", userData);
+void SubmitAsrJobRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
 }
 
-std::string SubmitAsrJobRequest::getAsrConfig()const
-{
-	return asrConfig_;
+std::string SubmitAsrJobRequest::getAsrConfig() const {
+  return asrConfig_;
 }
 
-void SubmitAsrJobRequest::setAsrConfig(const std::string& asrConfig)
-{
-	asrConfig_ = asrConfig;
-	setParameter("AsrConfig", asrConfig);
+void SubmitAsrJobRequest::setAsrConfig(const std::string &asrConfig) {
+  asrConfig_ = asrConfig;
+  setParameter(std::string("AsrConfig"), asrConfig);
 }
 
-std::string SubmitAsrJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string SubmitAsrJobRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void SubmitAsrJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void SubmitAsrJobRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string SubmitAsrJobRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string SubmitAsrJobRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void SubmitAsrJobRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void SubmitAsrJobRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long SubmitAsrJobRequest::getOwnerId()const
-{
-	return ownerId_;
+long SubmitAsrJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SubmitAsrJobRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SubmitAsrJobRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string SubmitAsrJobRequest::getPipelineId()const
-{
-	return pipelineId_;
+std::string SubmitAsrJobRequest::getPipelineId() const {
+  return pipelineId_;
 }
 
-void SubmitAsrJobRequest::setPipelineId(const std::string& pipelineId)
-{
-	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+void SubmitAsrJobRequest::setPipelineId(const std::string &pipelineId) {
+  pipelineId_ = pipelineId;
+  setParameter(std::string("PipelineId"), pipelineId);
 }
 
-std::string SubmitAsrJobRequest::getInput()const
-{
-	return input_;
+std::string SubmitAsrJobRequest::getInput() const {
+  return input_;
 }
 
-void SubmitAsrJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setParameter("Input", input);
+void SubmitAsrJobRequest::setInput(const std::string &input) {
+  input_ = input;
+  setParameter(std::string("Input"), input);
 }
 

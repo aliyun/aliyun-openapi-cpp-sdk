@@ -34,18 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct ImageQualityJob
 				{
+					struct Result
+					{
+						std::string score;
+						std::string message;
+						std::string code;
+					};
 					struct Input
 					{
 						std::string bucket;
 						std::string object;
 						std::string url;
 						std::string location;
-					};
-					struct Result
-					{
-						std::string score;
-						std::string message;
-						std::string code;
 					};
 					Input input;
 					std::string userData;

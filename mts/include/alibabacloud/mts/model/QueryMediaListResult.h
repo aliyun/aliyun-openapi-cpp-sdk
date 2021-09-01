@@ -55,17 +55,17 @@ namespace AlibabaCloud
 								std::string codecTimeBase;
 								std::string rotate;
 								std::string sar;
-								std::string fps;
 								std::string startTime;
+								std::string fps;
 								std::string index;
-								std::string duration;
 								std::string lang;
+								std::string duration;
 								std::string pixFmt;
 								NetworkCost networkCost;
-								std::string codecName;
 								std::string bitrate;
-								std::string profile;
+								std::string codecName;
 								std::string avgFPS;
+								std::string profile;
 								std::string timebase;
 								std::string codecTagString;
 								std::string hasBFrames;
@@ -83,12 +83,12 @@ namespace AlibabaCloud
 								std::string channelLayout;
 								std::string startTime;
 								std::string index;
-								std::string duration;
 								std::string lang;
+								std::string duration;
 								std::string sampleFmt;
-								std::string codecName;
 								std::string samplerate;
 								std::string bitrate;
+								std::string codecName;
 								std::string channels;
 								std::string timebase;
 								std::string codecTagString;
@@ -130,15 +130,15 @@ namespace AlibabaCloud
 						std::string size;
 						std::string mediaWorkflowId;
 						std::string fps;
-						std::string duration;
 						std::string height;
+						std::string duration;
 						std::string encryption;
-						std::string mediaWorkflowName;
 						std::string bitrate;
 						std::string width;
+						std::string mediaWorkflowName;
 						File1 file1;
 					};
-					struct Snapshot
+					struct Summary
 					{
 						struct File2
 						{
@@ -148,11 +148,10 @@ namespace AlibabaCloud
 						std::string type;
 						std::string activityName;
 						std::string mediaWorkflowId;
-						std::string count;
 						File2 file2;
 						std::string mediaWorkflowName;
 					};
-					struct Summary
+					struct Snapshot
 					{
 						struct File3
 						{
@@ -162,6 +161,7 @@ namespace AlibabaCloud
 						std::string type;
 						std::string activityName;
 						std::string mediaWorkflowId;
+						std::string count;
 						File3 file3;
 						std::string mediaWorkflowName;
 					};
@@ -181,8 +181,8 @@ namespace AlibabaCloud
 					std::string format;
 					std::string mediaId;
 					std::string creationTime;
-					std::string coverURL;
 					std::string height;
+					std::string coverURL;
 					File file;
 					std::string width;
 					std::vector<std::string> runIdList;

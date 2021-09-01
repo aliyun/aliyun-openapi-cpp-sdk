@@ -43,26 +43,26 @@ void QueryMediaFpDeleteJobListResult::parse(const std::string &payload)
 	for (auto valueMediaFpDeleteJobListMediaFpDeleteJob : allMediaFpDeleteJobListNode)
 	{
 		MediaFpDeleteJob mediaFpDeleteJobListObject;
-		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["Id"].isNull())
-			mediaFpDeleteJobListObject.id = valueMediaFpDeleteJobListMediaFpDeleteJob["Id"].asString();
-		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["UserData"].isNull())
-			mediaFpDeleteJobListObject.userData = valueMediaFpDeleteJobListMediaFpDeleteJob["UserData"].asString();
-		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["PipelineId"].isNull())
-			mediaFpDeleteJobListObject.pipelineId = valueMediaFpDeleteJobListMediaFpDeleteJob["PipelineId"].asString();
-		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["State"].isNull())
-			mediaFpDeleteJobListObject.state = valueMediaFpDeleteJobListMediaFpDeleteJob["State"].asString();
-		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["Code"].isNull())
-			mediaFpDeleteJobListObject.code = valueMediaFpDeleteJobListMediaFpDeleteJob["Code"].asString();
-		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["Message"].isNull())
-			mediaFpDeleteJobListObject.message = valueMediaFpDeleteJobListMediaFpDeleteJob["Message"].asString();
 		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["CreationTime"].isNull())
 			mediaFpDeleteJobListObject.creationTime = valueMediaFpDeleteJobListMediaFpDeleteJob["CreationTime"].asString();
 		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["FinishTime"].isNull())
 			mediaFpDeleteJobListObject.finishTime = valueMediaFpDeleteJobListMediaFpDeleteJob["FinishTime"].asString();
 		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["PrimaryKey"].isNull())
 			mediaFpDeleteJobListObject.primaryKey = valueMediaFpDeleteJobListMediaFpDeleteJob["PrimaryKey"].asString();
+		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["State"].isNull())
+			mediaFpDeleteJobListObject.state = valueMediaFpDeleteJobListMediaFpDeleteJob["State"].asString();
+		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["UserData"].isNull())
+			mediaFpDeleteJobListObject.userData = valueMediaFpDeleteJobListMediaFpDeleteJob["UserData"].asString();
+		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["Code"].isNull())
+			mediaFpDeleteJobListObject.code = valueMediaFpDeleteJobListMediaFpDeleteJob["Code"].asString();
+		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["Message"].isNull())
+			mediaFpDeleteJobListObject.message = valueMediaFpDeleteJobListMediaFpDeleteJob["Message"].asString();
+		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["PipelineId"].isNull())
+			mediaFpDeleteJobListObject.pipelineId = valueMediaFpDeleteJobListMediaFpDeleteJob["PipelineId"].asString();
 		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["FpDBId"].isNull())
 			mediaFpDeleteJobListObject.fpDBId = valueMediaFpDeleteJobListMediaFpDeleteJob["FpDBId"].asString();
+		if(!valueMediaFpDeleteJobListMediaFpDeleteJob["Id"].isNull())
+			mediaFpDeleteJobListObject.id = valueMediaFpDeleteJobListMediaFpDeleteJob["Id"].asString();
 		mediaFpDeleteJobList_.push_back(mediaFpDeleteJobListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

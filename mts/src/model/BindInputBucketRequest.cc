@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Mts::Model::BindInputBucketRequest;
 
-BindInputBucketRequest::BindInputBucketRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "BindInputBucket")
-{
-	setMethod(HttpRequest::Method::Post);
+BindInputBucketRequest::BindInputBucketRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "BindInputBucket") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-BindInputBucketRequest::~BindInputBucketRequest()
-{}
+BindInputBucketRequest::~BindInputBucketRequest() {}
 
-long BindInputBucketRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long BindInputBucketRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void BindInputBucketRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void BindInputBucketRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string BindInputBucketRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string BindInputBucketRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void BindInputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void BindInputBucketRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string BindInputBucketRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string BindInputBucketRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void BindInputBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void BindInputBucketRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string BindInputBucketRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string BindInputBucketRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void BindInputBucketRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void BindInputBucketRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long BindInputBucketRequest::getOwnerId()const
-{
-	return ownerId_;
+long BindInputBucketRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void BindInputBucketRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void BindInputBucketRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string BindInputBucketRequest::getBucket()const
-{
-	return bucket_;
+std::string BindInputBucketRequest::getBucket() const {
+  return bucket_;
 }
 
-void BindInputBucketRequest::setBucket(const std::string& bucket)
-{
-	bucket_ = bucket;
-	setParameter("Bucket", bucket);
+void BindInputBucketRequest::setBucket(const std::string &bucket) {
+  bucket_ = bucket;
+  setParameter(std::string("Bucket"), bucket);
 }
 
-std::string BindInputBucketRequest::getRoleArn()const
-{
-	return roleArn_;
+std::string BindInputBucketRequest::getRoleArn() const {
+  return roleArn_;
 }
 
-void BindInputBucketRequest::setRoleArn(const std::string& roleArn)
-{
-	roleArn_ = roleArn;
-	setParameter("RoleArn", roleArn);
+void BindInputBucketRequest::setRoleArn(const std::string &roleArn) {
+  roleArn_ = roleArn;
+  setParameter(std::string("RoleArn"), roleArn);
 }
 

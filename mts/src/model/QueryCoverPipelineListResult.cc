@@ -43,16 +43,16 @@ void QueryCoverPipelineListResult::parse(const std::string &payload)
 	for (auto valuePipelineListPipeline : allPipelineListNode)
 	{
 		Pipeline pipelineListObject;
-		if(!valuePipelineListPipeline["Id"].isNull())
-			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
-		if(!valuePipelineListPipeline["Name"].isNull())
-			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
 		if(!valuePipelineListPipeline["State"].isNull())
 			pipelineListObject.state = valuePipelineListPipeline["State"].asString();
 		if(!valuePipelineListPipeline["Priority"].isNull())
 			pipelineListObject.priority = valuePipelineListPipeline["Priority"].asString();
 		if(!valuePipelineListPipeline["Role"].isNull())
 			pipelineListObject.role = valuePipelineListPipeline["Role"].asString();
+		if(!valuePipelineListPipeline["Name"].isNull())
+			pipelineListObject.name = valuePipelineListPipeline["Name"].asString();
+		if(!valuePipelineListPipeline["Id"].isNull())
+			pipelineListObject.id = valuePipelineListPipeline["Id"].asString();
 		auto notifyConfigNode = value["NotifyConfig"];
 		if(!notifyConfigNode["Topic"].isNull())
 			pipelineListObject.notifyConfig.topic = notifyConfigNode["Topic"].asString();

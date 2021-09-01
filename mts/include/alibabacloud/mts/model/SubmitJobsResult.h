@@ -36,14 +36,84 @@ namespace AlibabaCloud
 				{
 					struct Job
 					{
-						struct Input
-						{
-							std::string bucket;
-							std::string object;
-							std::string location;
-						};
 						struct Output
 						{
+							struct Video
+							{
+								struct BitrateBnd
+								{
+									std::string min;
+									std::string max;
+								};
+								std::string bufsize;
+								std::string qscale;
+								std::string scanMode;
+								std::string preset;
+								std::string fps;
+								std::string gop;
+								BitrateBnd bitrateBnd;
+								std::string pixFmt;
+								std::string bitrate;
+								std::string profile;
+								std::string crop;
+								std::string pad;
+								std::string codec;
+								std::string maxrate;
+								std::string maxFps;
+								std::string crf;
+								std::string height;
+								std::string degrain;
+								std::string width;
+								std::string resoPriority;
+							};
+							struct TransConfig
+							{
+								std::string isCheckAudioBitrate;
+								std::string adjDarMethod;
+								std::string isCheckAudioBitrateFail;
+								std::string isCheckVideoBitrateFail;
+								std::string isCheckReso;
+								std::string isCheckVideoBitrate;
+								std::string transMode;
+								std::string isCheckResoFail;
+							};
+							struct Encryption
+							{
+								std::string type;
+								std::string keyType;
+								std::string id;
+								std::string skipCnt;
+								std::string key;
+								std::string keyUri;
+							};
+							struct M3U8NonStandardSupport
+							{
+								struct TS
+								{
+									bool sizeSupport;
+									bool md5Support;
+								};
+								TS tS;
+							};
+							struct Audio
+							{
+								struct Volume
+								{
+									std::string level;
+									std::string method;
+								};
+								std::string codec;
+								std::string qscale;
+								Volume volume;
+								std::string samplerate;
+								std::string bitrate;
+								std::string profile;
+								std::string channels;
+							};
+							struct SuperReso
+							{
+								std::string isHalfSample;
+							};
 							struct DigiWaterMark
 							{
 								struct InputFile1
@@ -63,14 +133,60 @@ namespace AlibabaCloud
 								std::string roleArn;
 								std::string location;
 							};
-							struct M3U8NonStandardSupport
+							struct Container
 							{
-								struct TS
+								std::string format;
+							};
+							struct Clip
+							{
+								struct TimeSpan
 								{
-									bool md5Support;
-									bool sizeSupport;
+									std::string duration;
+									std::string seek;
 								};
-								TS tS;
+								TimeSpan timeSpan;
+							};
+							struct MuxConfig
+							{
+								struct Webp
+								{
+									std::string loop;
+								};
+								struct Gif
+								{
+									std::string finalDelay;
+									std::string loop;
+									std::string ditherMode;
+									std::string isCustomPalette;
+								};
+								struct Segment
+								{
+									std::string duration;
+								};
+								Webp webp;
+								Gif gif;
+								Segment segment;
+							};
+							struct SubtitleConfig
+							{
+								struct ExtSubtitle
+								{
+									struct Input2
+									{
+										std::string bucket;
+										std::string object;
+										std::string location;
+									};
+									std::string charEnc;
+									std::string fontName;
+									Input2 input2;
+								};
+								struct Subtitle
+								{
+									std::string map;
+								};
+								std::vector<ExtSubtitle> extSubtitleList;
+								std::vector<Subtitle> subtitleList;
 							};
 							struct Properties
 							{
@@ -87,17 +203,17 @@ namespace AlibabaCloud
 										std::string codecTag;
 										std::string codecTimeBase;
 										std::string sar;
-										std::string fps;
 										std::string startTime;
+										std::string fps;
 										std::string index;
-										std::string duration;
 										std::string lang;
+										std::string duration;
 										std::string pixFmt;
 										NetworkCost networkCost;
-										std::string codecName;
 										std::string bitrate;
-										std::string profile;
+										std::string codecName;
 										std::string avgFPS;
+										std::string profile;
 										std::string timebase;
 										std::string codecTagString;
 										std::string hasBFrames;
@@ -105,8 +221,8 @@ namespace AlibabaCloud
 										std::string codecLongName;
 										std::string height;
 										std::string level;
-										std::string width;
 										std::string numFrames;
+										std::string width;
 									};
 									struct AudioStream
 									{
@@ -115,12 +231,12 @@ namespace AlibabaCloud
 										std::string channelLayout;
 										std::string startTime;
 										std::string index;
-										std::string duration;
 										std::string lang;
+										std::string duration;
 										std::string sampleFmt;
-										std::string codecName;
 										std::string samplerate;
 										std::string bitrate;
+										std::string codecName;
 										std::string channels;
 										std::string timebase;
 										std::string codecTagString;
@@ -157,128 +273,6 @@ namespace AlibabaCloud
 								Streams streams;
 								std::string fileSize;
 							};
-							struct Clip
-							{
-								struct TimeSpan
-								{
-									std::string duration;
-									std::string seek;
-								};
-								TimeSpan timeSpan;
-							};
-							struct SuperReso
-							{
-								std::string isHalfSample;
-							};
-							struct SubtitleConfig
-							{
-								struct Subtitle
-								{
-									std::string map;
-								};
-								struct ExtSubtitle
-								{
-									struct Input2
-									{
-										std::string bucket;
-										std::string object;
-										std::string location;
-									};
-									std::string charEnc;
-									std::string fontName;
-									Input2 input2;
-								};
-								std::vector<ExtSubtitle> extSubtitleList;
-								std::vector<Subtitle> subtitleList;
-							};
-							struct TransConfig
-							{
-								std::string isCheckAudioBitrate;
-								std::string adjDarMethod;
-								std::string isCheckAudioBitrateFail;
-								std::string isCheckVideoBitrateFail;
-								std::string isCheckReso;
-								std::string isCheckVideoBitrate;
-								std::string transMode;
-								std::string isCheckResoFail;
-							};
-							struct MuxConfig
-							{
-								struct Segment
-								{
-									std::string duration;
-								};
-								struct Gif
-								{
-									std::string loop;
-									std::string finalDelay;
-									std::string ditherMode;
-									std::string isCustomPalette;
-								};
-								struct Webp
-								{
-									std::string loop;
-								};
-								Gif gif;
-								Webp webp;
-								Segment segment;
-							};
-							struct Audio
-							{
-								struct Volume
-								{
-									std::string level;
-									std::string method;
-								};
-								std::string codec;
-								std::string qscale;
-								Volume volume;
-								std::string samplerate;
-								std::string bitrate;
-								std::string profile;
-								std::string channels;
-							};
-							struct Video
-							{
-								struct BitrateBnd
-								{
-									std::string min;
-									std::string max;
-								};
-								std::string bufsize;
-								std::string qscale;
-								std::string scanMode;
-								std::string preset;
-								std::string fps;
-								std::string gop;
-								BitrateBnd bitrateBnd;
-								std::string pixFmt;
-								std::string bitrate;
-								std::string profile;
-								std::string crop;
-								std::string codec;
-								std::string maxrate;
-								std::string pad;
-								std::string crf;
-								std::string maxFps;
-								std::string height;
-								std::string degrain;
-								std::string width;
-								std::string resoPriority;
-							};
-							struct Container
-							{
-								std::string format;
-							};
-							struct Encryption
-							{
-								std::string type;
-								std::string keyType;
-								std::string id;
-								std::string skipCnt;
-								std::string key;
-								std::string keyUri;
-							};
 							struct WaterMark
 							{
 								struct InputFile
@@ -298,27 +292,10 @@ namespace AlibabaCloud
 							};
 							struct Merge
 							{
-								std::string mergeURL;
 								std::string start;
+								std::string mergeURL;
 								std::string duration;
 								std::string roleArn;
-							};
-							struct Opening
-							{
-								std::string start;
-								std::string openUrl;
-								std::string height;
-								std::string width;
-							};
-							struct TailSlate
-							{
-								std::string tailUrl;
-								std::string start;
-								std::string blendDuration;
-								std::string height;
-								std::string bgColor;
-								std::string width;
-								bool isMergeAudio;
 							};
 							struct OutSubtitle
 							{
@@ -342,19 +319,36 @@ namespace AlibabaCloud
 								std::string duration;
 								std::string map;
 							};
+							struct Opening
+							{
+								std::string start;
+								std::string openUrl;
+								std::string height;
+								std::string width;
+							};
+							struct TailSlate
+							{
+								std::string tailUrl;
+								std::string start;
+								std::string blendDuration;
+								std::string height;
+								std::string bgColor;
+								std::string width;
+								bool isMergeAudio;
+							};
 							std::string rotate;
 							DigiWaterMark digiWaterMark;
 							std::string userData;
 							Encryption encryption;
 							Properties properties;
-							Clip clip;
 							SuperReso superReso;
+							Clip clip;
 							std::vector<WaterMark> waterMarkList;
 							Container container;
 							TransConfig transConfig;
 							std::string waterMarkConfigUrl;
-							SubtitleConfig subtitleConfig;
 							MuxConfig muxConfig;
+							SubtitleConfig subtitleConfig;
 							std::vector<Opening> openingList;
 							std::string templateId;
 							OutputFile outputFile;
@@ -371,6 +365,12 @@ namespace AlibabaCloud
 							Audio audio;
 							std::vector<Merge> mergeList;
 						};
+						struct Input
+						{
+							std::string bucket;
+							std::string object;
+							std::string location;
+						};
 						struct MNSMessageResult
 						{
 							std::string errorCode;
@@ -378,8 +378,8 @@ namespace AlibabaCloud
 							std::string messageId;
 						};
 						Input input;
-						std::string message;
 						std::string finishTime;
+						std::string message;
 						long percent;
 						std::string state;
 						Output output;

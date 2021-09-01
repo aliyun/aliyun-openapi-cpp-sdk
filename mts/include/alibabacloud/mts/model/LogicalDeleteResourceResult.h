@@ -40,14 +40,14 @@ namespace AlibabaCloud
 				std::string getGmtWakeup()const;
 				long getHid()const;
 				std::string getInvoker()const;
-				std::string getTaskIdentifier()const;
 				std::string getMessage()const;
+				std::string getTaskIdentifier()const;
 				std::string getTaskExtraData()const;
 				std::string getCountry()const;
 				std::string getPk()const;
 				std::string getBid()const;
-				bool getInterrupt()const;
 				bool getSuccess()const;
+				bool getInterrupt()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -55,14 +55,14 @@ namespace AlibabaCloud
 				std::string gmtWakeup_;
 				long hid_;
 				std::string invoker_;
-				std::string taskIdentifier_;
 				std::string message_;
+				std::string taskIdentifier_;
 				std::string taskExtraData_;
 				std::string country_;
 				std::string pk_;
 				std::string bid_;
-				bool interrupt_;
 				bool success_;
+				bool interrupt_;
 
 			};
 		}

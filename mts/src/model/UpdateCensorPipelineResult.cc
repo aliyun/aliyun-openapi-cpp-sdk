@@ -40,14 +40,14 @@ void UpdateCensorPipelineResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto pipelineNode = value["Pipeline"];
-	if(!pipelineNode["Id"].isNull())
-		pipeline_.id = pipelineNode["Id"].asString();
-	if(!pipelineNode["Name"].isNull())
-		pipeline_.name = pipelineNode["Name"].asString();
 	if(!pipelineNode["State"].isNull())
 		pipeline_.state = pipelineNode["State"].asString();
 	if(!pipelineNode["Priority"].isNull())
 		pipeline_.priority = std::stoi(pipelineNode["Priority"].asString());
+	if(!pipelineNode["Name"].isNull())
+		pipeline_.name = pipelineNode["Name"].asString();
+	if(!pipelineNode["Id"].isNull())
+		pipeline_.id = pipelineNode["Id"].asString();
 	auto notifyConfigNode = pipelineNode["NotifyConfig"];
 	if(!notifyConfigNode["Topic"].isNull())
 		pipeline_.notifyConfig.topic = notifyConfigNode["Topic"].asString();

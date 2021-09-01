@@ -34,13 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct MediaFpDeleteJob
 				{
-					std::string message;
 					std::string finishTime;
+					std::string message;
 					std::string userData;
 					std::string state;
 					std::string creationTime;
-					std::string pipelineId;
 					std::string primaryKey;
+					std::string pipelineId;
 					std::string id;
 					std::string code;
 					std::string fpDBId;

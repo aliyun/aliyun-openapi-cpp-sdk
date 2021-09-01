@@ -34,18 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct ImageSearchJob
 				{
-					struct InputVideo
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
-					struct InputImage
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
 					struct Result
 					{
 						struct ImageSearchShotsItem
@@ -56,8 +44,20 @@ namespace AlibabaCloud
 						};
 						std::vector<ImageSearchShotsItem> imageSearchShots;
 					};
-					std::string message;
+					struct InputImage
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
+					};
+					struct InputVideo
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
+					};
 					std::string finishTime;
+					std::string message;
 					InputVideo inputVideo;
 					std::string userData;
 					std::string state;

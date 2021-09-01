@@ -43,12 +43,12 @@ void ListAllCategoryResult::parse(const std::string &payload)
 	for (auto valueCategoryListCategory : allCategoryListNode)
 	{
 		Category categoryListObject;
-		if(!valueCategoryListCategory["CateId"].isNull())
-			categoryListObject.cateId = valueCategoryListCategory["CateId"].asString();
 		if(!valueCategoryListCategory["CateName"].isNull())
 			categoryListObject.cateName = valueCategoryListCategory["CateName"].asString();
 		if(!valueCategoryListCategory["ParentId"].isNull())
 			categoryListObject.parentId = valueCategoryListCategory["ParentId"].asString();
+		if(!valueCategoryListCategory["CateId"].isNull())
+			categoryListObject.cateId = valueCategoryListCategory["CateId"].asString();
 		if(!valueCategoryListCategory["Level"].isNull())
 			categoryListObject.level = valueCategoryListCategory["Level"].asString();
 		categoryList_.push_back(categoryListObject);

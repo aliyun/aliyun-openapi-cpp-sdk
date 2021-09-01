@@ -34,11 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct WaterMarkTemplate
 				{
-					struct Timeline
-					{
-						std::string start;
-						std::string duration;
-					};
 					struct RatioRefer
 					{
 						std::string dx;
@@ -46,8 +41,13 @@ namespace AlibabaCloud
 						std::string height;
 						std::string width;
 					};
-					Timeline timeline;
+					struct Timeline
+					{
+						std::string start;
+						std::string duration;
+					};
 					RatioRefer ratioRefer;
+					Timeline timeline;
 					std::string type;
 					std::string dx;
 					std::string dy;

@@ -43,45 +43,45 @@ void QueryVideoSummaryJobListResult::parse(const std::string &payload)
 	for (auto valueJobListJob : allJobListNode)
 	{
 		Job jobListObject;
-		if(!valueJobListJob["Id"].isNull())
-			jobListObject.id = valueJobListJob["Id"].asString();
-		if(!valueJobListJob["UserData"].isNull())
-			jobListObject.userData = valueJobListJob["UserData"].asString();
-		if(!valueJobListJob["PipelineId"].isNull())
-			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["CreationTime"].isNull())
+			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
 		if(!valueJobListJob["State"].isNull())
 			jobListObject.state = valueJobListJob["State"].asString();
+		if(!valueJobListJob["UserData"].isNull())
+			jobListObject.userData = valueJobListJob["UserData"].asString();
 		if(!valueJobListJob["Code"].isNull())
 			jobListObject.code = valueJobListJob["Code"].asString();
 		if(!valueJobListJob["Message"].isNull())
 			jobListObject.message = valueJobListJob["Message"].asString();
-		if(!valueJobListJob["CreationTime"].isNull())
-			jobListObject.creationTime = valueJobListJob["CreationTime"].asString();
-		auto inputNode = value["Input"];
-		if(!inputNode["Bucket"].isNull())
-			jobListObject.input.bucket = inputNode["Bucket"].asString();
-		if(!inputNode["Location"].isNull())
-			jobListObject.input.location = inputNode["Location"].asString();
-		if(!inputNode["Object"].isNull())
-			jobListObject.input.object = inputNode["Object"].asString();
+		if(!valueJobListJob["PipelineId"].isNull())
+			jobListObject.pipelineId = valueJobListJob["PipelineId"].asString();
+		if(!valueJobListJob["Id"].isNull())
+			jobListObject.id = valueJobListJob["Id"].asString();
 		auto videoSummaryResultNode = value["VideoSummaryResult"];
 		auto allVideoSummaryListNode = videoSummaryResultNode["VideoSummaryList"]["VideoSummary"];
 		for (auto videoSummaryResultNodeVideoSummaryListVideoSummary : allVideoSummaryListNode)
 		{
 			Job::VideoSummaryResult::VideoSummary videoSummaryObject;
-			if(!videoSummaryResultNodeVideoSummaryListVideoSummary["StartTime"].isNull())
-				videoSummaryObject.startTime = videoSummaryResultNodeVideoSummaryListVideoSummary["StartTime"].asString();
 			if(!videoSummaryResultNodeVideoSummaryListVideoSummary["EndTime"].isNull())
 				videoSummaryObject.endTime = videoSummaryResultNodeVideoSummaryListVideoSummary["EndTime"].asString();
+			if(!videoSummaryResultNodeVideoSummaryListVideoSummary["StartTime"].isNull())
+				videoSummaryObject.startTime = videoSummaryResultNodeVideoSummaryListVideoSummary["StartTime"].asString();
 			jobListObject.videoSummaryResult.videoSummaryList.push_back(videoSummaryObject);
 		}
 		auto outputFileNode = videoSummaryResultNode["OutputFile"];
-		if(!outputFileNode["Bucket"].isNull())
-			jobListObject.videoSummaryResult.outputFile.bucket = outputFileNode["Bucket"].asString();
-		if(!outputFileNode["Location"].isNull())
-			jobListObject.videoSummaryResult.outputFile.location = outputFileNode["Location"].asString();
 		if(!outputFileNode["Object"].isNull())
 			jobListObject.videoSummaryResult.outputFile.object = outputFileNode["Object"].asString();
+		if(!outputFileNode["Location"].isNull())
+			jobListObject.videoSummaryResult.outputFile.location = outputFileNode["Location"].asString();
+		if(!outputFileNode["Bucket"].isNull())
+			jobListObject.videoSummaryResult.outputFile.bucket = outputFileNode["Bucket"].asString();
+		auto inputNode = value["Input"];
+		if(!inputNode["Object"].isNull())
+			jobListObject.input.object = inputNode["Object"].asString();
+		if(!inputNode["Location"].isNull())
+			jobListObject.input.location = inputNode["Location"].asString();
+		if(!inputNode["Bucket"].isNull())
+			jobListObject.input.bucket = inputNode["Bucket"].asString();
 		jobList_.push_back(jobListObject);
 	}
 	auto allNonExistIds = value["NonExistIds"]["String"];

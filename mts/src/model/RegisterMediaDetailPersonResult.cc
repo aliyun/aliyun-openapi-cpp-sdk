@@ -43,42 +43,42 @@ void RegisterMediaDetailPersonResult::parse(const std::string &payload)
 	for (auto valueRegisteredPersonagesRegisteredPersonage : allRegisteredPersonagesNode)
 	{
 		RegisteredPersonage registeredPersonagesObject;
+		if(!valueRegisteredPersonagesRegisteredPersonage["Quality"].isNull())
+			registeredPersonagesObject.quality = valueRegisteredPersonagesRegisteredPersonage["Quality"].asString();
 		if(!valueRegisteredPersonagesRegisteredPersonage["PersonName"].isNull())
 			registeredPersonagesObject.personName = valueRegisteredPersonagesRegisteredPersonage["PersonName"].asString();
+		if(!valueRegisteredPersonagesRegisteredPersonage["Gender"].isNull())
+			registeredPersonagesObject.gender = valueRegisteredPersonagesRegisteredPersonage["Gender"].asString();
 		if(!valueRegisteredPersonagesRegisteredPersonage["FaceId"].isNull())
 			registeredPersonagesObject.faceId = valueRegisteredPersonagesRegisteredPersonage["FaceId"].asString();
 		if(!valueRegisteredPersonagesRegisteredPersonage["Target"].isNull())
 			registeredPersonagesObject.target = valueRegisteredPersonagesRegisteredPersonage["Target"].asString();
-		if(!valueRegisteredPersonagesRegisteredPersonage["Quality"].isNull())
-			registeredPersonagesObject.quality = valueRegisteredPersonagesRegisteredPersonage["Quality"].asString();
-		if(!valueRegisteredPersonagesRegisteredPersonage["Gender"].isNull())
-			registeredPersonagesObject.gender = valueRegisteredPersonagesRegisteredPersonage["Gender"].asString();
 		if(!valueRegisteredPersonagesRegisteredPersonage["ImageId"].isNull())
 			registeredPersonagesObject.imageId = valueRegisteredPersonagesRegisteredPersonage["ImageId"].asString();
 		auto imageFileNode = value["ImageFile"];
-		if(!imageFileNode["Bucket"].isNull())
-			registeredPersonagesObject.imageFile.bucket = imageFileNode["Bucket"].asString();
-		if(!imageFileNode["Location"].isNull())
-			registeredPersonagesObject.imageFile.location = imageFileNode["Location"].asString();
 		if(!imageFileNode["Object"].isNull())
 			registeredPersonagesObject.imageFile.object = imageFileNode["Object"].asString();
+		if(!imageFileNode["Location"].isNull())
+			registeredPersonagesObject.imageFile.location = imageFileNode["Location"].asString();
+		if(!imageFileNode["Bucket"].isNull())
+			registeredPersonagesObject.imageFile.bucket = imageFileNode["Bucket"].asString();
 		registeredPersonages_.push_back(registeredPersonagesObject);
 	}
 	auto allFailedImagesNode = value["FailedImages"]["FailedImage"];
 	for (auto valueFailedImagesFailedImage : allFailedImagesNode)
 	{
 		FailedImage failedImagesObject;
-		if(!valueFailedImagesFailedImage["Code"].isNull())
-			failedImagesObject.code = valueFailedImagesFailedImage["Code"].asString();
 		if(!valueFailedImagesFailedImage["Success"].isNull())
 			failedImagesObject.success = valueFailedImagesFailedImage["Success"].asString();
+		if(!valueFailedImagesFailedImage["Code"].isNull())
+			failedImagesObject.code = valueFailedImagesFailedImage["Code"].asString();
 		auto imageFile1Node = value["ImageFile"];
-		if(!imageFile1Node["Bucket"].isNull())
-			failedImagesObject.imageFile1.bucket = imageFile1Node["Bucket"].asString();
-		if(!imageFile1Node["Location"].isNull())
-			failedImagesObject.imageFile1.location = imageFile1Node["Location"].asString();
 		if(!imageFile1Node["Object"].isNull())
 			failedImagesObject.imageFile1.object = imageFile1Node["Object"].asString();
+		if(!imageFile1Node["Location"].isNull())
+			failedImagesObject.imageFile1.location = imageFile1Node["Location"].asString();
+		if(!imageFile1Node["Bucket"].isNull())
+			failedImagesObject.imageFile1.bucket = imageFile1Node["Bucket"].asString();
 		failedImages_.push_back(failedImagesObject);
 	}
 

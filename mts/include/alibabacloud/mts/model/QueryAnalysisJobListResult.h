@@ -34,12 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct AnalysisJob
 				{
-					struct InputFile
-					{
-						std::string bucket;
-						std::string object;
-						std::string location;
-					};
 					struct AnalysisConfig
 					{
 						struct QualityControl
@@ -69,12 +63,14 @@ namespace AlibabaCloud
 						std::string errorMessage;
 						std::string messageId;
 					};
+					struct InputFile
+					{
+						std::string bucket;
+						std::string object;
+						std::string location;
+					};
 					struct _Template
 					{
-						struct Container
-						{
-							std::string format;
-						};
 						struct Video
 						{
 							struct BitrateBnd
@@ -99,6 +95,24 @@ namespace AlibabaCloud
 							std::string degrain;
 							std::string width;
 						};
+						struct TransConfig
+						{
+							std::string transMode;
+						};
+						struct MuxConfig
+						{
+							struct Gif
+							{
+								std::string finalDelay;
+								std::string loop;
+							};
+							struct Segment
+							{
+								std::string duration;
+							};
+							Gif gif;
+							Segment segment;
+						};
 						struct Audio
 						{
 							std::string codec;
@@ -108,23 +122,9 @@ namespace AlibabaCloud
 							std::string profile;
 							std::string channels;
 						};
-						struct TransConfig
+						struct Container
 						{
-							std::string transMode;
-						};
-						struct MuxConfig
-						{
-							struct Segment
-							{
-								std::string duration;
-							};
-							struct Gif
-							{
-								std::string loop;
-								std::string finalDelay;
-							};
-							Gif gif;
-							Segment segment;
+							std::string format;
 						};
 						Container container;
 						TransConfig transConfig;
@@ -137,8 +137,8 @@ namespace AlibabaCloud
 					};
 					std::vector<AnalysisJob::_Template> templateList;
 					std::string message;
-					std::string userData;
 					long percent;
+					std::string userData;
 					std::string priority;
 					std::string code;
 					InputFile inputFile;

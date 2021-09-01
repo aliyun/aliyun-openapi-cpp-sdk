@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string initCapacity;
 					std::string instanceId;
-					std::string commodityCode;
 					std::string displayName;
+					std::string commodityCode;
 					std::string currCapacity;
 				};
 

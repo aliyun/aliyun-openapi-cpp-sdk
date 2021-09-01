@@ -34,15 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct SnapshotJob
 				{
-					struct Input
-					{
-						std::string bucket;
-						std::string object;
-						std::string roleArn;
-						std::string location;
-					};
 					struct SnapshotConfig
 					{
+						struct TileOut
+						{
+							std::string cellWidth;
+							std::string color;
+							std::string padding;
+							std::string columns;
+							std::string cellHeight;
+							std::string cellSelStep;
+							std::string margin;
+							std::string isKeepCellPic;
+							std::string lines;
+						};
 						struct OutputFile
 						{
 							std::string bucket;
@@ -57,22 +62,10 @@ namespace AlibabaCloud
 							std::string roleArn;
 							std::string location;
 						};
-						struct TileOut
-						{
-							std::string cellWidth;
-							std::string color;
-							std::string columns;
-							std::string padding;
-							std::string cellHeight;
-							std::string cellSelStep;
-							std::string lines;
-							std::string margin;
-							std::string isKeepCellPic;
-						};
 						OutputFile outputFile;
 						TileOutputFile tileOutputFile;
-						std::string num;
 						std::string frameType;
+						std::string num;
 						TileOut tileOut;
 						std::string time;
 						std::string height;
@@ -85,6 +78,13 @@ namespace AlibabaCloud
 						std::string errorMessage;
 						std::string messageId;
 					};
+					struct Input
+					{
+						std::string bucket;
+						std::string object;
+						std::string roleArn;
+						std::string location;
+					};
 					SnapshotConfig snapshotConfig;
 					Input input;
 					std::string message;
@@ -93,8 +93,8 @@ namespace AlibabaCloud
 					MNSMessageResult mNSMessageResult;
 					std::string creationTime;
 					std::string pipelineId;
-					std::string id;
 					std::string count;
+					std::string id;
 					std::string code;
 					std::string tileCount;
 				};

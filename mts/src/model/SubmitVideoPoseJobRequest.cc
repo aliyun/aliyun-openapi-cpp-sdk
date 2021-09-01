@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Mts::Model::SubmitVideoPoseJobRequest;
 
-SubmitVideoPoseJobRequest::SubmitVideoPoseJobRequest() :
-	RpcServiceRequest("mts", "2014-06-18", "SubmitVideoPoseJob")
-{
-	setMethod(HttpRequest::Method::Post);
+SubmitVideoPoseJobRequest::SubmitVideoPoseJobRequest()
+    : RpcServiceRequest("mts", "2014-06-18", "SubmitVideoPoseJob") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SubmitVideoPoseJobRequest::~SubmitVideoPoseJobRequest()
-{}
+SubmitVideoPoseJobRequest::~SubmitVideoPoseJobRequest() {}
 
-long SubmitVideoPoseJobRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long SubmitVideoPoseJobRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void SubmitVideoPoseJobRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void SubmitVideoPoseJobRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string SubmitVideoPoseJobRequest::getOutputConfig()const
-{
-	return outputConfig_;
+std::string SubmitVideoPoseJobRequest::getOutputConfig() const {
+  return outputConfig_;
 }
 
-void SubmitVideoPoseJobRequest::setOutputConfig(const std::string& outputConfig)
-{
-	outputConfig_ = outputConfig;
-	setParameter("OutputConfig", outputConfig);
+void SubmitVideoPoseJobRequest::setOutputConfig(const std::string &outputConfig) {
+  outputConfig_ = outputConfig;
+  setParameter(std::string("OutputConfig"), outputConfig);
 }
 
-std::string SubmitVideoPoseJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SubmitVideoPoseJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SubmitVideoPoseJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SubmitVideoPoseJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SubmitVideoPoseJobRequest::getUserData()const
-{
-	return userData_;
+std::string SubmitVideoPoseJobRequest::getUserData() const {
+  return userData_;
 }
 
-void SubmitVideoPoseJobRequest::setUserData(const std::string& userData)
-{
-	userData_ = userData;
-	setParameter("UserData", userData);
+void SubmitVideoPoseJobRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
 }
 
-std::string SubmitVideoPoseJobRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string SubmitVideoPoseJobRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void SubmitVideoPoseJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void SubmitVideoPoseJobRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string SubmitVideoPoseJobRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string SubmitVideoPoseJobRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void SubmitVideoPoseJobRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void SubmitVideoPoseJobRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long SubmitVideoPoseJobRequest::getOwnerId()const
-{
-	return ownerId_;
+long SubmitVideoPoseJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SubmitVideoPoseJobRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SubmitVideoPoseJobRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string SubmitVideoPoseJobRequest::getPipelineId()const
-{
-	return pipelineId_;
+std::string SubmitVideoPoseJobRequest::getPipelineId() const {
+  return pipelineId_;
 }
 
-void SubmitVideoPoseJobRequest::setPipelineId(const std::string& pipelineId)
-{
-	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+void SubmitVideoPoseJobRequest::setPipelineId(const std::string &pipelineId) {
+  pipelineId_ = pipelineId;
+  setParameter(std::string("PipelineId"), pipelineId);
 }
 
-std::string SubmitVideoPoseJobRequest::getInput()const
-{
-	return input_;
+std::string SubmitVideoPoseJobRequest::getInput() const {
+  return input_;
 }
 
-void SubmitVideoPoseJobRequest::setInput(const std::string& input)
-{
-	input_ = input;
-	setParameter("Input", input);
+void SubmitVideoPoseJobRequest::setInput(const std::string &input) {
+  input_ = input;
+  setParameter(std::string("Input"), input);
 }
 
