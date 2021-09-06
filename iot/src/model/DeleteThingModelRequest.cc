@@ -95,6 +95,17 @@ void DeleteThingModelRequest::setPropertyIdentifier(const std::vector<std::strin
 	}
 }
 
+std::string DeleteThingModelRequest::getDTModelId()const
+{
+	return dTModelId_;
+}
+
+void DeleteThingModelRequest::setDTModelId(const std::string& dTModelId)
+{
+	dTModelId_ = dTModelId;
+	setParameter("DTModelId", dTModelId);
+}
+
 std::string DeleteThingModelRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

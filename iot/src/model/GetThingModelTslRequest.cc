@@ -71,6 +71,17 @@ void GetThingModelTslRequest::setRealTripartiteKey(const std::string& realTripar
 	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
+std::string GetThingModelTslRequest::getDTModelId()const
+{
+	return dTModelId_;
+}
+
+void GetThingModelTslRequest::setDTModelId(const std::string& dTModelId)
+{
+	dTModelId_ = dTModelId;
+	setParameter("DTModelId", dTModelId);
+}
+
 std::string GetThingModelTslRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

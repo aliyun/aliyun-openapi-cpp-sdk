@@ -27,6 +27,17 @@ ListThingModelVersionRequest::ListThingModelVersionRequest() :
 ListThingModelVersionRequest::~ListThingModelVersionRequest()
 {}
 
+std::string ListThingModelVersionRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void ListThingModelVersionRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string ListThingModelVersionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void ListThingModelVersionRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListThingModelVersionRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void ListThingModelVersionRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string ListThingModelVersionRequest::getIotInstanceId()const

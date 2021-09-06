@@ -49,6 +49,17 @@ void TestSpeechRequest::setProjectCode(const std::string& projectCode)
 	setBodyParameter("ProjectCode", projectCode);
 }
 
+std::string TestSpeechRequest::getAudioFormat()const
+{
+	return audioFormat_;
+}
+
+void TestSpeechRequest::setAudioFormat(const std::string& audioFormat)
+{
+	audioFormat_ = audioFormat;
+	setBodyParameter("AudioFormat", audioFormat);
+}
+
 std::string TestSpeechRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

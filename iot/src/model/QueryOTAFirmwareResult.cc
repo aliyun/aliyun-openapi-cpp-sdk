@@ -74,6 +74,24 @@ void QueryOTAFirmwareResult::parse(const std::string &payload)
 		firmwareInfo_.verifyProgress = std::stoi(firmwareInfoNode["VerifyProgress"].asString());
 	if(!firmwareInfoNode["ModuleName"].isNull())
 		firmwareInfo_.moduleName = firmwareInfoNode["ModuleName"].asString();
+	if(!firmwareInfoNode["Udi"].isNull())
+		firmwareInfo_.udi = firmwareInfoNode["Udi"].asString();
+	auto allMultiFilesNode = firmwareInfoNode["MultiFiles"]["OtaPackageFileDTO"];
+	for (auto firmwareInfoNodeMultiFilesOtaPackageFileDTO : allMultiFilesNode)
+	{
+		FirmwareInfo::OtaPackageFileDTO otaPackageFileDTOObject;
+		if(!firmwareInfoNodeMultiFilesOtaPackageFileDTO["Name"].isNull())
+			otaPackageFileDTOObject.name = firmwareInfoNodeMultiFilesOtaPackageFileDTO["Name"].asString();
+		if(!firmwareInfoNodeMultiFilesOtaPackageFileDTO["Size"].isNull())
+			otaPackageFileDTOObject.size = std::stoi(firmwareInfoNodeMultiFilesOtaPackageFileDTO["Size"].asString());
+		if(!firmwareInfoNodeMultiFilesOtaPackageFileDTO["Url"].isNull())
+			otaPackageFileDTOObject.url = firmwareInfoNodeMultiFilesOtaPackageFileDTO["Url"].asString();
+		if(!firmwareInfoNodeMultiFilesOtaPackageFileDTO["SignValue"].isNull())
+			otaPackageFileDTOObject.signValue = firmwareInfoNodeMultiFilesOtaPackageFileDTO["SignValue"].asString();
+		if(!firmwareInfoNodeMultiFilesOtaPackageFileDTO["FileMd5"].isNull())
+			otaPackageFileDTOObject.fileMd5 = firmwareInfoNodeMultiFilesOtaPackageFileDTO["FileMd5"].asString();
+		firmwareInfo_.multiFiles.push_back(otaPackageFileDTOObject);
+	}
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

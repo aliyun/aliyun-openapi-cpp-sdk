@@ -82,6 +82,22 @@ void CreateOTAVerifyJobRequest::setIotInstanceId(const std::string& iotInstanceI
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::vector<CreateOTAVerifyJobRequest::Tag> CreateOTAVerifyJobRequest::getTag()const
+{
+	return tag_;
+}
+
+void CreateOTAVerifyJobRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
 std::string CreateOTAVerifyJobRequest::getFirmwareId()const
 {
 	return firmwareId_;

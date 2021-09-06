@@ -38,6 +38,25 @@ void CreateOTAFirmwareRequest::setSignMethod(const std::string& signMethod)
 	setParameter("SignMethod", signMethod);
 }
 
+std::vector<CreateOTAFirmwareRequest::MultiFiles> CreateOTAFirmwareRequest::getMultiFiles()const
+{
+	return multiFiles_;
+}
+
+void CreateOTAFirmwareRequest::setMultiFiles(const std::vector<MultiFiles>& multiFiles)
+{
+	multiFiles_ = multiFiles;
+	for(int dep1 = 0; dep1!= multiFiles.size(); dep1++) {
+		auto multiFilesObj = multiFiles.at(dep1);
+		std::string multiFilesObjStr = "MultiFiles." + std::to_string(dep1 + 1);
+		setParameter(multiFilesObjStr + ".Size", std::to_string(multiFilesObj.size));
+		setParameter(multiFilesObjStr + ".Name", multiFilesObj.name);
+		setParameter(multiFilesObjStr + ".SignValue", multiFilesObj.signValue);
+		setParameter(multiFilesObjStr + ".FileMd5", multiFilesObj.fileMd5);
+		setParameter(multiFilesObjStr + ".Url", multiFilesObj.url);
+	}
+}
+
 bool CreateOTAFirmwareRequest::getNeedToVerify()const
 {
 	return needToVerify_;
@@ -190,6 +209,17 @@ void CreateOTAFirmwareRequest::setApiRevision(const std::string& apiRevision)
 {
 	apiRevision_ = apiRevision;
 	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string CreateOTAFirmwareRequest::getUdi()const
+{
+	return udi_;
+}
+
+void CreateOTAFirmwareRequest::setUdi(const std::string& udi)
+{
+	udi_ = udi;
+	setParameter("Udi", udi);
 }
 
 std::string CreateOTAFirmwareRequest::getDestVersion()const

@@ -27,6 +27,28 @@ SyncSpeechByCombinationRequest::SyncSpeechByCombinationRequest() :
 SyncSpeechByCombinationRequest::~SyncSpeechByCombinationRequest()
 {}
 
+std::string SyncSpeechByCombinationRequest::getSpeechId()const
+{
+	return speechId_;
+}
+
+void SyncSpeechByCombinationRequest::setSpeechId(const std::string& speechId)
+{
+	speechId_ = speechId;
+	setBodyParameter("SpeechId", speechId);
+}
+
+std::string SyncSpeechByCombinationRequest::getAudioFormat()const
+{
+	return audioFormat_;
+}
+
+void SyncSpeechByCombinationRequest::setAudioFormat(const std::string& audioFormat)
+{
+	audioFormat_ = audioFormat;
+	setBodyParameter("AudioFormat", audioFormat);
+}
+
 std::string SyncSpeechByCombinationRequest::getIotId()const
 {
 	return iotId_;

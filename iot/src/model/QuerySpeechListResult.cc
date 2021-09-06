@@ -60,6 +60,8 @@ void QuerySpeechListResult::parse(const std::string &payload)
 			itemsObject.voice = dataNodeListItems["Voice"].asString();
 		if(!dataNodeListItems["SpeechType"].isNull())
 			itemsObject.speechType = dataNodeListItems["SpeechType"].asString();
+		if(!dataNodeListItems["AudioFormat"].isNull())
+			itemsObject.audioFormat = dataNodeListItems["AudioFormat"].asString();
 		auto allSpeechListNode = dataNodeListItems["SpeechList"]["Items"];
 		for (auto dataNodeListItemsSpeechListItems : allSpeechListNode)
 		{

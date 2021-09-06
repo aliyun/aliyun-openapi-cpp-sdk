@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				SyncSpeechByCombinationRequest();
 				~SyncSpeechByCombinationRequest();
 
+				std::string getSpeechId()const;
+				void setSpeechId(const std::string& speechId);
+				std::string getAudioFormat()const;
+				void setAudioFormat(const std::string& audioFormat);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
 				std::vector<std::string> getCombinationList()const;
@@ -51,6 +55,8 @@ namespace AlibabaCloud
 				void setDeviceName(const std::string& deviceName);
 
             private:
+				std::string speechId_;
+				std::string audioFormat_;
 				std::string iotId_;
 				std::vector<std::string> combinationList_;
 				std::string iotInstanceId_;

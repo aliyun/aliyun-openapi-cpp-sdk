@@ -68,6 +68,8 @@ void QueryEdgeDriverResult::parse(const std::string &payload)
 			driverObject.gmtCreateTimestamp = std::stol(dataNodeDriverListDriver["GmtCreateTimestamp"].asString());
 		if(!dataNodeDriverListDriver["GmtModifiedTimestamp"].isNull())
 			driverObject.gmtModifiedTimestamp = std::stol(dataNodeDriverListDriver["GmtModifiedTimestamp"].asString());
+		if(!dataNodeDriverListDriver["IsApply"].isNull())
+			driverObject.isApply = dataNodeDriverListDriver["IsApply"].asString() == "true";
 		data_.driverList.push_back(driverObject);
 	}
 	if(!value["Success"].isNull())

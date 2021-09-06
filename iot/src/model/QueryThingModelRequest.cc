@@ -71,6 +71,17 @@ void QueryThingModelRequest::setResourceGroupId(const std::string& resourceGroup
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string QueryThingModelRequest::getDTModelId()const
+{
+	return dTModelId_;
+}
+
+void QueryThingModelRequest::setDTModelId(const std::string& dTModelId)
+{
+	dTModelId_ = dTModelId;
+	setParameter("DTModelId", dTModelId);
+}
+
 std::string QueryThingModelRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

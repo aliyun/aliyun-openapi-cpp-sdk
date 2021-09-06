@@ -52,6 +52,8 @@ void SyncSpeechByCombinationResult::parse(const std::string &payload)
 		data_.deviceErrorCode = dataNode["DeviceErrorCode"].asString();
 	if(!dataNode["DeviceErrorMessage"].isNull())
 		data_.deviceErrorMessage = dataNode["DeviceErrorMessage"].asString();
+	if(!dataNode["Detail"].isNull())
+		data_.detail = dataNode["Detail"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

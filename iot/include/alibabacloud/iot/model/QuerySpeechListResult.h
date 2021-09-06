@@ -47,6 +47,7 @@ namespace AlibabaCloud
 						std::vector<Items::Items1> speechList;
 						std::string speechCode;
 						std::string text;
+						std::string audioFormat;
 						std::string voice;
 						std::string bizCode;
 					};

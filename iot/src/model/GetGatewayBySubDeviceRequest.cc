@@ -27,6 +27,17 @@ GetGatewayBySubDeviceRequest::GetGatewayBySubDeviceRequest() :
 GetGatewayBySubDeviceRequest::~GetGatewayBySubDeviceRequest()
 {}
 
+std::string GetGatewayBySubDeviceRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void GetGatewayBySubDeviceRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
 std::string GetGatewayBySubDeviceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -36,6 +47,17 @@ void GetGatewayBySubDeviceRequest::setAccessKeyId(const std::string& accessKeyId
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string GetGatewayBySubDeviceRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void GetGatewayBySubDeviceRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string GetGatewayBySubDeviceRequest::getIotId()const

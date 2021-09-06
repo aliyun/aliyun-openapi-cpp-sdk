@@ -49,6 +49,17 @@ void QuerySpeechListRequest::setPageId(int pageId)
 	setBodyParameter("PageId", std::to_string(pageId));
 }
 
+std::string QuerySpeechListRequest::getAudioFormat()const
+{
+	return audioFormat_;
+}
+
+void QuerySpeechListRequest::setAudioFormat(const std::string& audioFormat)
+{
+	audioFormat_ = audioFormat;
+	setBodyParameter("AudioFormat", audioFormat);
+}
+
 std::string QuerySpeechListRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

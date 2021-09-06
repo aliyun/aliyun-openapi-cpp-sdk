@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string deviceErrorCode;
 					std::string deviceErrorMessage;
 					bool success;
+					std::string detail;
 				};
 
 

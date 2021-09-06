@@ -30,6 +30,15 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT CreateOTAFirmwareRequest : public RpcServiceRequest
 			{
+			public:
+				struct MultiFiles
+				{
+					int size;
+					std::string name;
+					std::string signValue;
+					std::string fileMd5;
+					std::string url;
+				};
 
 			public:
 				CreateOTAFirmwareRequest();
@@ -37,6 +46,8 @@ namespace AlibabaCloud
 
 				std::string getSignMethod()const;
 				void setSignMethod(const std::string& signMethod);
+				std::vector<MultiFiles> getMultiFiles()const;
+				void setMultiFiles(const std::vector<MultiFiles>& multiFiles);
 				bool getNeedToVerify()const;
 				void setNeedToVerify(bool needToVerify);
 				int getType()const;
@@ -65,11 +76,14 @@ namespace AlibabaCloud
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getUdi()const;
+				void setUdi(const std::string& udi);
 				std::string getDestVersion()const;
 				void setDestVersion(const std::string& destVersion);
 
             private:
 				std::string signMethod_;
+				std::vector<MultiFiles> multiFiles_;
 				bool needToVerify_;
 				int type_;
 				std::string firmwareUrl_;
@@ -84,6 +98,7 @@ namespace AlibabaCloud
 				std::string srcVersion_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string udi_;
 				std::string destVersion_;
 
 			};

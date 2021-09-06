@@ -169,6 +169,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateThingScriptResult.h
 	include/alibabacloud/iot/model/CreateTopicRouteTableRequest.h
 	include/alibabacloud/iot/model/CreateTopicRouteTableResult.h
+	include/alibabacloud/iot/model/DeleteClientIdsRequest.h
+	include/alibabacloud/iot/model/DeleteClientIdsResult.h
 	include/alibabacloud/iot/model/DeleteConsumerGroupRequest.h
 	include/alibabacloud/iot/model/DeleteConsumerGroupResult.h
 	include/alibabacloud/iot/model/DeleteConsumerGroupSubscribeRelationRequest.h
@@ -183,6 +185,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/DeleteDeviceGroupResult.h
 	include/alibabacloud/iot/model/DeleteDevicePropRequest.h
 	include/alibabacloud/iot/model/DeleteDevicePropResult.h
+	include/alibabacloud/iot/model/DeleteDeviceSpeechRequest.h
+	include/alibabacloud/iot/model/DeleteDeviceSpeechResult.h
 	include/alibabacloud/iot/model/DeleteEdgeDriverRequest.h
 	include/alibabacloud/iot/model/DeleteEdgeDriverResult.h
 	include/alibabacloud/iot/model/DeleteEdgeDriverVersionRequest.h
@@ -271,6 +275,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetRuleActionResult.h
 	include/alibabacloud/iot/model/GetSceneRuleRequest.h
 	include/alibabacloud/iot/model/GetSceneRuleResult.h
+	include/alibabacloud/iot/model/GetSpeechDeviceDetailRequest.h
+	include/alibabacloud/iot/model/GetSpeechDeviceDetailResult.h
 	include/alibabacloud/iot/model/GetSpeechVoiceRequest.h
 	include/alibabacloud/iot/model/GetSpeechVoiceResult.h
 	include/alibabacloud/iot/model/GetStudioAppTokenOpenRequest.h
@@ -355,6 +361,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryBatchRegisterDeviceStatusResult.h
 	include/alibabacloud/iot/model/QueryCertUrlByApplyIdRequest.h
 	include/alibabacloud/iot/model/QueryCertUrlByApplyIdResult.h
+	include/alibabacloud/iot/model/QueryClientIdsRequest.h
+	include/alibabacloud/iot/model/QueryClientIdsResult.h
 	include/alibabacloud/iot/model/QueryConsumerGroupByGroupIdRequest.h
 	include/alibabacloud/iot/model/QueryConsumerGroupByGroupIdResult.h
 	include/alibabacloud/iot/model/QueryConsumerGroupListRequest.h
@@ -419,6 +427,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDevicePropertyStatusResult.h
 	include/alibabacloud/iot/model/QueryDeviceServiceDataRequest.h
 	include/alibabacloud/iot/model/QueryDeviceServiceDataResult.h
+	include/alibabacloud/iot/model/QueryDeviceSpeechRequest.h
+	include/alibabacloud/iot/model/QueryDeviceSpeechResult.h
 	include/alibabacloud/iot/model/QueryDeviceStatisticsRequest.h
 	include/alibabacloud/iot/model/QueryDeviceStatisticsResult.h
 	include/alibabacloud/iot/model/QueryEdgeDriverRequest.h
@@ -449,6 +459,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryJobStatisticsResult.h
 	include/alibabacloud/iot/model/QueryLoRaJoinPermissionsRequest.h
 	include/alibabacloud/iot/model/QueryLoRaJoinPermissionsResult.h
+	include/alibabacloud/iot/model/QueryMessageInfoRequest.h
+	include/alibabacloud/iot/model/QueryMessageInfoResult.h
 	include/alibabacloud/iot/model/QueryOTAFirmwareRequest.h
 	include/alibabacloud/iot/model/QueryOTAFirmwareResult.h
 	include/alibabacloud/iot/model/QueryOTAJobRequest.h
@@ -469,6 +481,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QuerySolutionDeviceGroupPageResult.h
 	include/alibabacloud/iot/model/QuerySpeechRequest.h
 	include/alibabacloud/iot/model/QuerySpeechResult.h
+	include/alibabacloud/iot/model/QuerySpeechDeviceRequest.h
+	include/alibabacloud/iot/model/QuerySpeechDeviceResult.h
 	include/alibabacloud/iot/model/QuerySpeechListRequest.h
 	include/alibabacloud/iot/model/QuerySpeechListResult.h
 	include/alibabacloud/iot/model/QuerySpeechPushJobRequest.h
@@ -521,6 +535,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/RemoveThingTopoResult.h
 	include/alibabacloud/iot/model/ReplaceEdgeInstanceGatewayRequest.h
 	include/alibabacloud/iot/model/ReplaceEdgeInstanceGatewayResult.h
+	include/alibabacloud/iot/model/RerunJobRequest.h
+	include/alibabacloud/iot/model/RerunJobResult.h
 	include/alibabacloud/iot/model/ResetConsumerGroupPositionRequest.h
 	include/alibabacloud/iot/model/ResetConsumerGroupPositionResult.h
 	include/alibabacloud/iot/model/ResetThingRequest.h
@@ -549,10 +565,14 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/StartRuleResult.h
 	include/alibabacloud/iot/model/StopRuleRequest.h
 	include/alibabacloud/iot/model/StopRuleResult.h
+	include/alibabacloud/iot/model/SubscribeTopicRequest.h
+	include/alibabacloud/iot/model/SubscribeTopicResult.h
 	include/alibabacloud/iot/model/SyncSpeechByCombinationRequest.h
 	include/alibabacloud/iot/model/SyncSpeechByCombinationResult.h
 	include/alibabacloud/iot/model/TestSpeechRequest.h
 	include/alibabacloud/iot/model/TestSpeechResult.h
+	include/alibabacloud/iot/model/TransformClientIdRequest.h
+	include/alibabacloud/iot/model/TransformClientIdResult.h
 	include/alibabacloud/iot/model/TriggerSceneRuleRequest.h
 	include/alibabacloud/iot/model/TriggerSceneRuleResult.h
 	include/alibabacloud/iot/model/UnbindApplicationFromEdgeInstanceRequest.h
@@ -756,6 +776,8 @@ set(iot_src
 	src/model/CreateThingScriptResult.cc
 	src/model/CreateTopicRouteTableRequest.cc
 	src/model/CreateTopicRouteTableResult.cc
+	src/model/DeleteClientIdsRequest.cc
+	src/model/DeleteClientIdsResult.cc
 	src/model/DeleteConsumerGroupRequest.cc
 	src/model/DeleteConsumerGroupResult.cc
 	src/model/DeleteConsumerGroupSubscribeRelationRequest.cc
@@ -770,6 +792,8 @@ set(iot_src
 	src/model/DeleteDeviceGroupResult.cc
 	src/model/DeleteDevicePropRequest.cc
 	src/model/DeleteDevicePropResult.cc
+	src/model/DeleteDeviceSpeechRequest.cc
+	src/model/DeleteDeviceSpeechResult.cc
 	src/model/DeleteEdgeDriverRequest.cc
 	src/model/DeleteEdgeDriverResult.cc
 	src/model/DeleteEdgeDriverVersionRequest.cc
@@ -858,6 +882,8 @@ set(iot_src
 	src/model/GetRuleActionResult.cc
 	src/model/GetSceneRuleRequest.cc
 	src/model/GetSceneRuleResult.cc
+	src/model/GetSpeechDeviceDetailRequest.cc
+	src/model/GetSpeechDeviceDetailResult.cc
 	src/model/GetSpeechVoiceRequest.cc
 	src/model/GetSpeechVoiceResult.cc
 	src/model/GetStudioAppTokenOpenRequest.cc
@@ -942,6 +968,8 @@ set(iot_src
 	src/model/QueryBatchRegisterDeviceStatusResult.cc
 	src/model/QueryCertUrlByApplyIdRequest.cc
 	src/model/QueryCertUrlByApplyIdResult.cc
+	src/model/QueryClientIdsRequest.cc
+	src/model/QueryClientIdsResult.cc
 	src/model/QueryConsumerGroupByGroupIdRequest.cc
 	src/model/QueryConsumerGroupByGroupIdResult.cc
 	src/model/QueryConsumerGroupListRequest.cc
@@ -1006,6 +1034,8 @@ set(iot_src
 	src/model/QueryDevicePropertyStatusResult.cc
 	src/model/QueryDeviceServiceDataRequest.cc
 	src/model/QueryDeviceServiceDataResult.cc
+	src/model/QueryDeviceSpeechRequest.cc
+	src/model/QueryDeviceSpeechResult.cc
 	src/model/QueryDeviceStatisticsRequest.cc
 	src/model/QueryDeviceStatisticsResult.cc
 	src/model/QueryEdgeDriverRequest.cc
@@ -1036,6 +1066,8 @@ set(iot_src
 	src/model/QueryJobStatisticsResult.cc
 	src/model/QueryLoRaJoinPermissionsRequest.cc
 	src/model/QueryLoRaJoinPermissionsResult.cc
+	src/model/QueryMessageInfoRequest.cc
+	src/model/QueryMessageInfoResult.cc
 	src/model/QueryOTAFirmwareRequest.cc
 	src/model/QueryOTAFirmwareResult.cc
 	src/model/QueryOTAJobRequest.cc
@@ -1056,6 +1088,8 @@ set(iot_src
 	src/model/QuerySolutionDeviceGroupPageResult.cc
 	src/model/QuerySpeechRequest.cc
 	src/model/QuerySpeechResult.cc
+	src/model/QuerySpeechDeviceRequest.cc
+	src/model/QuerySpeechDeviceResult.cc
 	src/model/QuerySpeechListRequest.cc
 	src/model/QuerySpeechListResult.cc
 	src/model/QuerySpeechPushJobRequest.cc
@@ -1108,6 +1142,8 @@ set(iot_src
 	src/model/RemoveThingTopoResult.cc
 	src/model/ReplaceEdgeInstanceGatewayRequest.cc
 	src/model/ReplaceEdgeInstanceGatewayResult.cc
+	src/model/RerunJobRequest.cc
+	src/model/RerunJobResult.cc
 	src/model/ResetConsumerGroupPositionRequest.cc
 	src/model/ResetConsumerGroupPositionResult.cc
 	src/model/ResetThingRequest.cc
@@ -1136,10 +1172,14 @@ set(iot_src
 	src/model/StartRuleResult.cc
 	src/model/StopRuleRequest.cc
 	src/model/StopRuleResult.cc
+	src/model/SubscribeTopicRequest.cc
+	src/model/SubscribeTopicResult.cc
 	src/model/SyncSpeechByCombinationRequest.cc
 	src/model/SyncSpeechByCombinationResult.cc
 	src/model/TestSpeechRequest.cc
 	src/model/TestSpeechResult.cc
+	src/model/TransformClientIdRequest.cc
+	src/model/TransformClientIdResult.cc
 	src/model/TriggerSceneRuleRequest.cc
 	src/model/TriggerSceneRuleResult.cc
 	src/model/UnbindApplicationFromEdgeInstanceRequest.cc

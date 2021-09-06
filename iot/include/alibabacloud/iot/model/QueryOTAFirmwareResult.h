@@ -34,6 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct FirmwareInfo
 				{
+					struct OtaPackageFileDTO
+					{
+						std::string fileMd5;
+						int size;
+						std::string url;
+						std::string name;
+						std::string signValue;
+					};
 					int status;
 					int verifyProgress;
 					int firmwareSize;
@@ -45,10 +53,12 @@ namespace AlibabaCloud
 					int type;
 					std::string utcCreate;
 					std::string firmwareDesc;
+					std::vector<OtaPackageFileDTO> multiFiles;
 					std::string firmwareUrl;
 					std::string utcModified;
 					std::string firmwareName;
 					std::string destVersion;
+					std::string udi;
 					std::string productKey;
 					std::string srcVersion;
 				};

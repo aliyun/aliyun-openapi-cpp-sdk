@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT CreateOTAVerifyJobRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				CreateOTAVerifyJobRequest();
@@ -45,6 +51,8 @@ namespace AlibabaCloud
 				void setNeedPush(bool needPush);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getFirmwareId()const;
 				void setFirmwareId(const std::string& firmwareId);
 				std::string getProductKey()const;
@@ -62,6 +70,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				bool needPush_;
 				std::string iotInstanceId_;
+				std::vector<Tag> tag_;
 				std::string firmwareId_;
 				std::string productKey_;
 				std::string apiProduct_;

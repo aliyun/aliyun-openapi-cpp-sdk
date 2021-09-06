@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setVoice(const std::string& voice);
 				std::string getProjectCode()const;
 				void setProjectCode(const std::string& projectCode);
+				std::string getAudioFormat()const;
+				void setAudioFormat(const std::string& audioFormat);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getText()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
             private:
 				std::string voice_;
 				std::string projectCode_;
+				std::string audioFormat_;
 				std::string iotInstanceId_;
 				std::string text_;
 				std::string speechType_;

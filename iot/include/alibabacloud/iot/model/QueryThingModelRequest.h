@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getDTModelId()const;
+				void setDTModelId(const std::string& dTModelId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string realTripartiteKey_;
 				std::string resourceGroupId_;
+				std::string dTModelId_;
 				std::string iotInstanceId_;
 				std::string productKey_;
 				std::string apiProduct_;

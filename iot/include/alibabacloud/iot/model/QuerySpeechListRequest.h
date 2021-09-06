@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setProjectCode(const std::string& projectCode);
 				int getPageId()const;
 				void setPageId(int pageId);
+				std::string getAudioFormat()const;
+				void setAudioFormat(const std::string& audioFormat);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string projectCode_;
 				int pageId_;
+				std::string audioFormat_;
 				std::string iotInstanceId_;
 				int pageSize_;
 				std::string apiProduct_;
